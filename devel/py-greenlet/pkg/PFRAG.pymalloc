@@ -1,3 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/07/17 19:24:47 landry Exp $
-include/python${MODPY_VERSION}m/greenlet/
-include/python${MODPY_VERSION}m/greenlet/greenlet.h

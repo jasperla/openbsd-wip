@@ -1,6 +1,6 @@
 @comment $OpenBSD: PLIST,v 1.1.1.1 2012/07/17 19:24:47 landry Exp $
-%%pymalloc%%
-!%%pymalloc%%
+${INCL_DIR}/greenlet/
+${INCL_DIR}/greenlet/greenlet.h
 lib/python${MODPY_VERSION}/site-packages/greenlet-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/greenlet.so
 share/doc/${MODPY_PY_PREFIX}greenlet/

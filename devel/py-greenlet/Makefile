@@ -28,12 +28,8 @@ MODPY_DISTUTILS_INSTALL=	install --prefix=${LOCALBASE} \
 FLAVORS =	python3
 FLAVOR ?=
 
-# Python3 version uses pymalloc
-.if ${FLAVOR:Mpython3}
-PKG_ARGS += -Dpymalloc=1
-.else
-PKG_ARGS += -Dpymalloc=0
-.endif
+INCL_DIR =	${MODPY_INCDIR:S/${LOCALBASE}\///}
+SUBST_VARS +=	INCL_DIR
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/${MODPY_PY_PREFIX}greenlet
