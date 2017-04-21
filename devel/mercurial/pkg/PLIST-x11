@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST-x11,v 1.2 2016/06/14 09:47:43 czarkoff Exp $
+bin/hgk
+lib/python${MODPY_VERSION}/site-packages/hgext/hgk.py
+lib/python${MODPY_VERSION}/site-packages/hgext/hgk.pyc
+share/mercurial/hgk
