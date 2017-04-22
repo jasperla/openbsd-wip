@@ -100,11 +100,14 @@ LIB_DEPENDS +=	x11/qt5/qtwebkit \
 		devel/kf5/kwidgetsaddons \
 		devel/kf5/kwindowsystem \
 		devel/kf5/kxmlgui \
+		devel/kf5/kross \
+		devel/kf5/ktexteditor \
 		devel/kf5/knotifications \
 		devel/kf5/kactivities \
 		devel/kf5/knotifyconfig \
 		devel/kf5/kcmutils \
 		devel/kf5/khtml \
+		devel/kf5/threadweaver \
 		devel/gsl \
 		graphics/jpeg \
 		graphics/openjpeg \
