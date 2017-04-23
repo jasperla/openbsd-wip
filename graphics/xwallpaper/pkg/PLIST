@@ -1,3 +1,0 @@
-@comment $OpenBSD$
-@bin bin/xwallpaper
-@man man/man1/xwallpaper.1
