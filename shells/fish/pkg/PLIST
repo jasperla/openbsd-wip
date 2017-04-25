@@ -432,6 +432,7 @@ share/fish/completions/rbenv.fish
 share/fish/completions/rc-service.fish
 share/fish/completions/rc-update.fish
 share/fish/completions/rc.d.fish
+share/fish/completions/rcctl.fish
 share/fish/completions/read.fish
 share/fish/completions/readlink.fish
 share/fish/completions/realpath.fish

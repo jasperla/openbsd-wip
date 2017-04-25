@@ -1,0 +1,8 @@
+$OpenBSD$
+--- share/completions/rcctl.fish.orig	Tue Apr 25 07:03:48 2017
++++ share/completions/rcctl.fish	Tue Apr 25 07:04:19 2017
+@@ -0,0 +1,4 @@
++
++complete -c rcctl -xa 'check ls reload restart stop start disable enable' -n 'not __fish_seen_subcommand_from list check ls reload restart stop start enable disable'
++complete -c rcctl -n '__fish_seen_subcommand_from check reload restart stop start enable disable' -xa '( ls /etc/rc.d )'
++
