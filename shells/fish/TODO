@@ -1,5 +1,4 @@
 * Tests never finish
-* Some completions may be wrong.  BSD- (jot, etc.) and OpenBSD-specific
-  completions (rcctl, pkg_add) should be added.  Linux-specific stuff should be
+* Some completions may be wrong.  BSD- (jot, etc.) Linux-specific stuff should be
   removed.
 * Figure out why errno test fails and remove the patch.

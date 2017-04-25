@@ -1,0 +1,13 @@
+$OpenBSD$
+--- share/completions/pkg_add.fish.orig	Tue Apr 25 07:11:53 2017
++++ share/completions/pkg_add.fish	Tue Apr 25 07:19:57 2017
+@@ -0,0 +1,9 @@
++#completion for pkg_add
++
++complete -c pkg_add -o D -d 'failsafe to overwrite' -xa 'allversions arch checksum dontmerge donttie downgrade installed libdepends nonroot paranoid repair scripts SIGNER snap unsigned updatedepends'
++complete -c pkg_add -o V -d 'Turn on stats'
++complete -c pkg_add -o a -d 'Automated package installation'
++complete -c pkg_add -o h -d 'Print help'
++complete -c pkg_add -o u -d 'Update packages'
++complete -c pkg_add -o z -d 'Fuzzy match'
++

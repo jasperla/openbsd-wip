@@ -402,6 +402,8 @@ share/fish/completions/ping.fish
 share/fish/completions/pinky.fish
 share/fish/completions/pkg-config.fish
 share/fish/completions/pkg.fish
+share/fish/completions/pkg_add.fish
+share/fish/completions/pkg_delete.fish
 share/fish/completions/pkgadd.fish
 share/fish/completions/pkgfile.fish
 share/fish/completions/pkginfo.fish
