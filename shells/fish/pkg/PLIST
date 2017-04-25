@@ -1,5 +1,5 @@
 @comment $OpenBSD$
-@bin bin/fish
+@shell bin/fish
 @bin bin/fish_indent
 @bin bin/fish_key_reader
 @man man/man1/fish.1
@@ -530,6 +530,7 @@ share/fish/completions/vi.fish
 share/fish/completions/vim-addons.fish
 share/fish/completions/vim.fish
 share/fish/completions/vimdiff.fish
+share/fish/completions/vmctl.fish
 share/fish/completions/w.fish
 share/fish/completions/wajig.fish
 share/fish/completions/watch.fish

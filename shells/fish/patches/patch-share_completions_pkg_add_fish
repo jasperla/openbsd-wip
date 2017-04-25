@@ -1,9 +1,19 @@
 $OpenBSD$
---- share/completions/pkg_add.fish.orig	Tue Apr 25 07:11:53 2017
-+++ share/completions/pkg_add.fish	Tue Apr 25 07:19:57 2017
-@@ -0,0 +1,9 @@
+--- share/completions/pkg_add.fish.orig	Tue Apr 25 15:26:21 2017
++++ share/completions/pkg_add.fish	Tue Apr 25 16:47:39 2017
+@@ -0,0 +1,19 @@
 +#completion for pkg_add
 +
++#function __fish_pkg_add_use_package --description 'Test if pkg_add should list packages'
++#	for i in (commandline -opc)
++#		if contains -- $i contains
++#			return 1
++#		end
++#	end
++#	return 0
++#end
++
++#complete -c pkg_add -n '__fish_pkg_add_use_package' -a '(__fish_print_packages)' --description 'Package'
 +complete -c pkg_add -o D -d 'failsafe to overwrite' -xa 'allversions arch checksum dontmerge donttie downgrade installed libdepends nonroot paranoid repair scripts SIGNER snap unsigned updatedepends'
 +complete -c pkg_add -o V -d 'Turn on stats'
 +complete -c pkg_add -o a -d 'Automated package installation'

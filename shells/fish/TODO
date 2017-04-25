@@ -1,4 +1,5 @@
 * Tests never finish
 * Some completions may be wrong.  BSD- (jot, etc.) Linux-specific stuff should be
   removed.
+  - Added vmctl, pkg_add, pkg_delete
 * Figure out why errno test fails and remove the patch.

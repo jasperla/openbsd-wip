@@ -1,8 +1,11 @@
 $OpenBSD$
---- share/completions/pkg_delete.fish.orig	Tue Apr 25 07:20:13 2017
-+++ share/completions/pkg_delete.fish	Tue Apr 25 07:21:45 2017
-@@ -0,0 +1,5 @@
+--- share/completions/pkg_delete.fish.orig	Tue Apr 25 15:26:21 2017
++++ share/completions/pkg_delete.fish	Tue Apr 25 16:47:04 2017
+@@ -0,0 +1,8 @@
 +#completion for pkg_delete
++
++
++complete -c pkg_delete -a '(__fish_print_packages)' --description 'Package'
 +
 +complete -c pkg_delete -o a -d 'Delete unsed deps'
 +complete -c pkg_delete -o V -d 'Turn on stats'

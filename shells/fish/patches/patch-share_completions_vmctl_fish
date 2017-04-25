@@ -1,0 +1,8 @@
+$OpenBSD$
+--- share/completions/vmctl.fish.orig	Tue Apr 25 11:09:48 2017
++++ share/completions/vmctl.fish	Tue Apr 25 11:16:36 2017
+@@ -0,0 +1,4 @@
++
++complete -c vmctl -xa 'console create load log reload reset start status stop' -n 'not __fish_seen_subcommand_from list console create load log reload reset start status stop'
++complete -c vmctl -n '__fish_seen_subcommand_from console reload reset start status stop' -xa '( vmctl status | grep -v NAME | awk \'{print $NF}\' )'
++
