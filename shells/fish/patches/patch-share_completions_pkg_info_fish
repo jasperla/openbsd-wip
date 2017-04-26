@@ -1,0 +1,9 @@
+$OpenBSD$
+--- share/completions/pkg_info.fish.orig	Wed Apr 26 08:59:16 2017
++++ share/completions/pkg_info.fish	Wed Apr 26 09:04:01 2017
+@@ -0,0 +1,5 @@
++#completion for pkg_info
++
++
++complete -c pkg_info -a '(__fish_print_packages)' --description 'Package'
++

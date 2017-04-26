@@ -1,0 +1,8 @@
+$OpenBSD$
+--- share/completions/signify.fish.orig	Wed Apr 26 07:40:39 2017
++++ share/completions/signify.fish	Wed Apr 26 07:40:54 2017
+@@ -0,0 +1,4 @@
++complete -c signify -n '__fish_use_subcommand' -s C --description 'Verify a signed checksum list'
++complete -c signify -n '__fish_use_subcommand' -s G --description 'Generate a new key pair'
++complete -c signify -n '__fish_use_subcommand' -s S --description 'Sign specified message'
++complete -c signify -n '__fish_use_subcommand' -s V --description 'Verify a signed message and sig'

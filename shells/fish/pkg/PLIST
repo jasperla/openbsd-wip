@@ -395,6 +395,7 @@ share/fish/completions/pdflatex.fish
 share/fish/completions/pdftex.fish
 share/fish/completions/pdftotext.fish
 share/fish/completions/perl.fish
+share/fish/completions/pfctl.fish
 share/fish/completions/pftp.fish
 share/fish/completions/pgrep.fish
 share/fish/completions/pine.fish
@@ -404,6 +405,7 @@ share/fish/completions/pkg-config.fish
 share/fish/completions/pkg.fish
 share/fish/completions/pkg_add.fish
 share/fish/completions/pkg_delete.fish
+share/fish/completions/pkg_info.fish
 share/fish/completions/pkgadd.fish
 share/fish/completions/pkgfile.fish
 share/fish/completions/pkginfo.fish
@@ -473,6 +475,7 @@ share/fish/completions/sha224sum.fish
 share/fish/completions/sha256sum.fish
 share/fish/completions/sha384sum.fish
 share/fish/completions/sha512sum.fish
+share/fish/completions/signify.fish
 share/fish/completions/sort.fish
 share/fish/completions/source.fish
 share/fish/completions/ssh.fish
