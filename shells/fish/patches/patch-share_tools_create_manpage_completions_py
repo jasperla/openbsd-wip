@@ -1,0 +1,25 @@
+$OpenBSD$
+--- share/tools/create_manpage_completions.py.orig	Wed Apr 26 13:04:14 2017
++++ share/tools/create_manpage_completions.py	Wed Apr 26 13:04:44 2017
+@@ -857,13 +857,17 @@ def parse_and_output_man_pages(paths, output_directory
+ def get_paths_from_manpath():
+     # Return all the paths to man(1) and man(8) files in the manpath
+     import subprocess, os
+-    proc = subprocess.Popen(['manpath'], stdout=subprocess.PIPE)
+-    manpath, err_data = proc.communicate()
+-    parent_paths = manpath.decode().strip().split(':')
++    result = []
++    parent_paths = []
++    if os.uname()[0] == 'OpenBSD':
++        parent_paths = ['/usr/share/man', '/usr/X11R6/man', '/usr/local/man']
++    else:
++        proc = subprocess.Popen(['manpath'], stdout=subprocess.PIPE)
++        manpath, err_data = proc.communicate()
++        parent_paths = manpath.decode().strip().split(':')
+     if not parent_paths:
+         sys.stderr.write("Unable to get the manpath (tried manpath)\n")
+         sys.exit(-1)
+-    result = []
+     for parent_path in parent_paths:
+         for section in ['man1', 'man6', 'man8']:
+             directory_path = os.path.join(parent_path, section)
