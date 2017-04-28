@@ -1560,6 +1560,8 @@ share/racket/collects/setup/private/compiled/dylib_rkt.dep
 share/racket/collects/setup/private/compiled/dylib_rkt.zo
 share/racket/collects/setup/private/compiled/elf_rkt.dep
 share/racket/collects/setup/private/compiled/elf_rkt.zo
+share/racket/collects/setup/private/compiled/encode-relative_rkt.dep
+share/racket/collects/setup/private/compiled/encode-relative_rkt.zo
 share/racket/collects/setup/private/compiled/format-error_rkt.dep
 share/racket/collects/setup/private/compiled/format-error_rkt.zo
 share/racket/collects/setup/private/compiled/lib-roots_rkt.dep
@@ -1571,6 +1573,7 @@ share/racket/collects/setup/private/compiled/pkg-deps_rkt.zo
 share/racket/collects/setup/private/dirs.rkt
 share/racket/collects/setup/private/dylib.rkt
 share/racket/collects/setup/private/elf.rkt
+share/racket/collects/setup/private/encode-relative.rkt
 share/racket/collects/setup/private/format-error.rkt
 share/racket/collects/setup/private/lib-roots.rkt
 share/racket/collects/setup/private/omitted-paths.rkt
