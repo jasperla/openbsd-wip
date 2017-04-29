@@ -21,11 +21,11 @@ WANTLIB += gtop-2.0 harfbuzz ltdl mate-panel-applet-4 ogg pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 vorbis vorbisfile
 
 MODULES=	devel/dconf \
-		x11/mate
+		x11/gnome
 
 LIB_DEPENDS=	devel/libgtop2 \
 		x11/mate/panel
 
-MODMATE_TOOLS=	desktop-file-utils gtk-update-icon-cache
+MODGNOME_TOOLS=	desktop-file-utils gtk-update-icon-cache
 
 .include <bsd.port.mk>

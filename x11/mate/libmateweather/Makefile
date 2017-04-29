@@ -20,9 +20,9 @@ WANTLIB += xml2 z harfbuzz pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += cairo cairo-gobject graphite2 soup-2.4 dbus-1 gdk-3
 WANTLIB += gtk-3 atk-1.0 atk-bridge-2.0 atspi
 
-MODULES=		x11/mate
+MODULES=		x11/gnome
 
-MODMATE_TOOLS=		gtk-update-icon-cache
+MODGNOME_TOOLS=		gtk-update-icon-cache
 
 LIB_DEPENDS=		devel/libsoup \
 			x11/gtk+3

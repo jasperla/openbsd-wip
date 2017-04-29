@@ -25,7 +25,7 @@ WANTLIB += vorbisfile xcb xcb-render xcb-shm xcb-util xkbfile
 WANTLIB += xklavier xml2 z marco-private mate-menu startup-notification-1
 WANTLIB += Xau kvm
 
-MODULES=		x11/mate
+MODULES=		x11/gnome
 
 LIB_DEPENDS=		devel/startup-notification \
 			x11/mate/marco \
@@ -40,7 +40,7 @@ RUN_DEPENDS=		x11/mate/settings-daemon \
 			devel/iso-codes \
 			devel/gsettings-desktop-schemas
 
-MODMATE_TOOLS+=		desktop-file-utils gtk-update-icon-cache
+MODGNOME_TOOLS+=		desktop-file-utils gtk-update-icon-cache
 
 FAKE_FLAGS=		sysconfdir=${PREFIX}/share/examples/mate-control-center
 

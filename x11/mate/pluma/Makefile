@@ -23,13 +23,13 @@ WANTLIB += gtk-3 gtksourceview-3.0 harfbuzz lzma pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 peas-1.0 peas-gtk-1.0 png xml2
 
 MODULES=	devel/dconf \
-		x11/mate
+		x11/gnome
 
 LIB_DEPENDS=	devel/libpeas \
 		textproc/enchant \
 		x11/gtksourceview3
 
-MODMATE_TOOLS=	desktop-file-utils
+MODGNOME_TOOLS=	desktop-file-utils
 
 CONFIGURE_ARGS=	--disable-tests
 

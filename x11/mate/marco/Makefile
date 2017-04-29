@@ -29,6 +29,6 @@ BUILD_DEPENDS=		x11/gnome/zenity
 RUN_DEPENDS=		x11/gnome/zenity
 
 MODULES=		devel/dconf \
-			x11/mate
+			x11/gnome
 
 .include <bsd.port.mk>

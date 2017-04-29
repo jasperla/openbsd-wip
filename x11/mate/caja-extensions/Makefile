@@ -20,7 +20,7 @@ WANTLIB += mate-desktop-2 pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += png soup-2.4 startup-notification-1 xml2
 
 MODULES=	devel/dconf \
-		x11/mate
+		x11/gnome
 
 LIB_DEPENDS=	net/gupnp/core \
 		x11/dbus-glib \

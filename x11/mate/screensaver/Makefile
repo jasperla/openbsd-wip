@@ -21,7 +21,7 @@ WANTLIB += pangoft2-1.0 xklavier
 WANTLIB += startup-notification-1 xcb-util
 
 MODULES=		devel/dconf \
-			x11/mate
+			x11/gnome
 
 LIB_DEPENDS=		devel/libnotify \
 			x11/dbus-glib \
@@ -36,7 +36,7 @@ AUTOCONF_VERSION=	2.69
 
 CONFIGURE_ARGS=		--enable-authentication-scheme=bsdauth
 
-MODMATE_TOOLS=		desktop-file-utils gtk-update-icon-cache
+MODGNOME_TOOLS=		desktop-file-utils gtk-update-icon-cache
 
 FAKE_FLAGS=		menudir=${PREFIX}/share/examples/mate-screensaver/xdg/menus
 

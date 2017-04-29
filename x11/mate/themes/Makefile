@@ -10,11 +10,11 @@ MASTER_SITES=		http://pub.mate-desktop.org/releases/themes/${MATE_VERSION:C/^([0
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes
 
-MODULES=		x11/mate
+MODULES=		x11/gnome
 
 BUILD_DEPENDS=		x11/gtk+3
 
-MODMATE_TOOLS=		gtk-update-icon-cache
+MODGNOME_TOOLS=		gtk-update-icon-cache
 
 # As explained here:
 # https://mail.gnome.org/archives/desktop-devel-list/2011-March/msg00017.html

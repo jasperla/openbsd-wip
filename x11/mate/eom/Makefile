@@ -13,7 +13,7 @@ USE_WXNEEDED=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=	devel/dconf \
-		x11/mate
+		x11/gnome
 
 WANTLIB += ICE SM X11 X11-xcb Xcomposite Xcursor Xdamage Xext
 WANTLIB += Xfixes Xi Xinerama Xrandr Xrender c dconf epoxy expat
@@ -34,6 +34,6 @@ LIB_DEPENDS=	devel/libpeas \
 		x11/dbus-glib \
 		x11/mate/desktop
 
-MODMATE_TOOLS=	desktop-file-utils gtk-update-icon-cache
+MODGNOME_TOOLS=	desktop-file-utils gtk-update-icon-cache
 
 .include <bsd.port.mk>

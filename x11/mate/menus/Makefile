@@ -16,11 +16,11 @@ WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB += pcre
 
 MODULES=		lang/python \
-			x11/mate
+			x11/gnome
 
 LIB_DEPENDS=		devel/glib2
 
-MODMATE_TOOLS=		gobject-introspection
+MODGNOME_TOOLS=		gobject-introspection
 
 FAKE_FLAGS=		sysconfdir=${PREFIX}/share/examples/mate-menus
 

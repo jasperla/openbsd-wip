@@ -19,7 +19,7 @@ WANTLIB += notify ogg pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += startup-notification-1 vorbis vorbisfile wnck-3
 
 MODULES=		devel/dconf \
-			x11/mate
+			x11/gnome
 
 LIB_DEPENDS=		audio/libcanberra,-gtk3 \
 			devel/libnotify \
@@ -27,6 +27,6 @@ LIB_DEPENDS=		audio/libcanberra,-gtk3 \
 			devel/startup-notification \
 			x11/dbus-glib
 
-MODMATE_TOOLS=		desktop-file-utils gtk-update-icon-cache
+MODGNOME_TOOLS=		desktop-file-utils gtk-update-icon-cache
 
 .include <bsd.port.mk>

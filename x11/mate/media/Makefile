@@ -20,13 +20,13 @@ WANTLIB += dconf lzma mate-desktop-2 matemixer xml2
 WANTLIB += X11-xcb startup-notification-1 xcb-util
 
 MODULES=	devel/dconf \
-		x11/mate
+		x11/gnome
 
 LIB_DEPENDS=	audio/libcanberra,-gtk3 \
 		x11/mate/desktop \
 		x11/mate/libmatemixer
 
-MODMATE_TOOLS=	desktop-file-utils gtk-update-icon-cache
+MODGNOME_TOOLS=	desktop-file-utils gtk-update-icon-cache
 
 FAKE_FLAGS=	desktopdir=${PREFIX}/share/examples/mate-media/xdg/autostart \
 		sysconfdir=${PREFIX}/share/examples/mate-media

@@ -33,7 +33,7 @@ WANTLIB += soup-2.4 spectre tasn1 tiff unistring webkit2gtk-4.0 webp xml2
 WANTLIB += z xslt
 
 MODULES=	devel/dconf \
-		x11/mate
+		x11/gnome
 
 LIB_DEPENDS=	multimedia/gstreamer1/plugins-base \
 		print/poppler \
@@ -47,6 +47,6 @@ LIB_DEPENDS=	multimedia/gstreamer1/plugins-base \
 BUILD_DEPENDS=	devel/gsettings-desktop-schemas
 RUN_DEPENDS=	devel/gsettings-desktop-schemas
 
-MODMATE_TOOLS=	desktop-file-utils gtk-update-icon-cache
+MODGNOME_TOOLS=	desktop-file-utils gtk-update-icon-cache
 
 .include <bsd.port.mk>

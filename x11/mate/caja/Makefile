@@ -25,7 +25,7 @@ WANTLIB += pangocairo-1.0 pangoft2-1.0 png exif
 WANTLIB += X11-xcb startup-notification-1 xcb-util
 
 MODULES=		devel/dconf \
-			x11/mate
+			x11/gnome
 
 RUN_DEPENDS=		x11/gnome/gvfs
 
@@ -34,7 +34,7 @@ LIB_DEPENDS=		devel/libnotify \
 			textproc/exempi \
 			x11/mate/desktop
 
-MODMATE_TOOLS=		shared-mime-info gobject-introspection \
+MODGNOME_TOOLS=		shared-mime-info gobject-introspection \
 			gtk-update-icon-cache
 
 .include <bsd.port.mk>

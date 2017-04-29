@@ -22,11 +22,11 @@ WANTLIB += cairo-gobject dbus-1 gdk-3 gdk_pixbuf-2.0 graphite2 lzma
 WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 png xml2 xkbfile xklavier
 
 MODULES=		devel/dconf \
-			x11/mate
+			x11/gnome
 
 LIB_DEPENDS=		x11/gnome/libxklavier \
 			x11/gtk+3
 
-MODMATE_TOOLS=		gobject-introspection
+MODGNOME_TOOLS=		gobject-introspection
 
 .include <bsd.port.mk>

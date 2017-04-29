@@ -26,7 +26,7 @@ WANTLIB += pangocairo-1.0 pangoft2-1.0 png rsvg-2 soup-2.4
 WANTLIB += startup-notification-1 wnck-3 xml2 mate-desktop-2
 
 MODULES=		devel/dconf \
-			x11/mate
+			x11/gnome
 
 LIB_DEPENDS=		devel/libwnck3 \
 			x11/dbus-glib \
@@ -39,7 +39,7 @@ BUILD_DEPENDS=		textproc/itstool
 RUN_DEPENDS=		x11/mate/settings-daemon \
 			x11/mate/screensaver
 
-MODMATE_TOOLS=		desktop-file-utils gtk-update-icon-cache \
+MODGNOME_TOOLS=		desktop-file-utils gtk-update-icon-cache \
 			gobject-introspection
 
 .include <bsd.port.mk>

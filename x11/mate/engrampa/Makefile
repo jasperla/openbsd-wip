@@ -22,7 +22,7 @@ WANTLIB += caja-extension dbus-1 gdk-3 graphite2 gtk-3 harfbuzz
 WANTLIB += json-glib-1.0 pango-1.0 pangocairo-1.0 pangoft2-1.0
 
 MODULES=	devel/dconf \
-		x11/mate
+		x11/gnome
 
 RUN_DEPENDS=	archivers/gtar \
 		archivers/unzip
@@ -32,6 +32,6 @@ LIB_DEPENDS=	devel/json-glib \
 
 CONFIGURE_ARGS=	--disable-packagekit
 
-MODMATE_TOOLS=	desktop-file-utils gtk-update-icon-cache
+MODGNOME_TOOLS=	desktop-file-utils gtk-update-icon-cache
 
 .include <bsd.port.mk>

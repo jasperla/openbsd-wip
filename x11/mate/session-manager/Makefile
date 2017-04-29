@@ -19,9 +19,9 @@ WANTLIB += pcre pixman-1 png pthread pthread-stubs xcb xcb-render
 WANTLIB += xcb-shm z execinfo dbus-glib-1
 
 MODULES=		devel/dconf \
-			x11/mate
+			x11/gnome
 
-MODMATE_TOOLS=		desktop-file-utils gtk-update-icon-cache
+MODGNOME_TOOLS=		desktop-file-utils gtk-update-icon-cache
 
 LIB_DEPENDS=		devel/libexecinfo \
 			x11/dbus-glib

@@ -23,9 +23,9 @@ WANTLIB += pangocairo-1.0 pangoft2-1.0 polkit-gobject-1 vorbis vorbisfile xklavi
 WANTLIB += X11-xcb startup-notification-1 xcb-util
 
 MODULES=		devel/dconf \
-			x11/mate
+			x11/gnome
 
-MODMATE_TOOLS=		gtk-update-icon-cache
+MODGNOME_TOOLS=		gtk-update-icon-cache
 
 LIB_DEPENDS=		audio/libcanberra,-gtk3 \
 			devel/libnotify \

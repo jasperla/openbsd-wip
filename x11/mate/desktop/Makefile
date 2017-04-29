@@ -22,12 +22,12 @@ WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 png
 WANTLIB += X11-xcb xcb-util startup-notification-1
 
 MODULES=		devel/dconf \
-			x11/mate
+			x11/gnome
 
 LIB_DEPENDS=		x11/gtk+3 \
 			devel/startup-notification
 
-MODMATE_TOOLS=		desktop-file-utils gobject-introspection
+MODGNOME_TOOLS=		desktop-file-utils gobject-introspection
 
 # https://bugzilla.gnome.org/show_bug.cgi?id=590059
 CONFIGURE_ARGS +=	--with-pnp-ids-path=${LOCALBASE}/share/hwdata \

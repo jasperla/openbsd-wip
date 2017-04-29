@@ -12,13 +12,13 @@ WANTLIB += atk-1.0 cairo-gobject cairo gdk-3 gdk_pixbuf-2.0 gtk-3
 WANTLIB += pango-1.0 pangocairo-1.0 xml2
 
 MODULES=	devel/dconf \
-		x11/mate
+		x11/gnome
 
 LIB_DEPENDS=	x11/gtk+3
 
 BUILD_DEPENDS=	devel/gsettings-desktop-schemas
 RUN_DEPENDS=	devel/gsettings-desktop-schemas
 
-MODMATE_TOOLS=	desktop-file-utils
+MODGNOME_TOOLS=	desktop-file-utils
 
 .include <bsd.port.mk>

@@ -19,9 +19,9 @@ WANTLIB += harfbuzz ltdl mate-panel-applet-4 notify ogg pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 upower-glib vorbis vorbisfile
 
 MODULES=		devel/dconf \
-			x11/mate
+			x11/gnome
 
-MODMATE_TOOLS=		desktop-file-utils gtk-update-icon-cache
+MODGNOME_TOOLS=		desktop-file-utils gtk-update-icon-cache
 
 CONFIGURE_STYLE=	autoconf
 AUTOCONF_VERSION=	2.69

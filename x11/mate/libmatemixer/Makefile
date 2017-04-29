@@ -16,7 +16,7 @@ WANTLIB += FLAC dbus-1 execinfo ffi gdbm glib-2.0 gmodule-2.0
 WANTLIB += gobject-2.0 iconv intl ogg pcre pulse-mainloop-glib
 WANTLIB += sndfile vorbis vorbisenc
 
-MODULES=		x11/mate
+MODULES=		x11/gnome
 
 LIB_DEPENDS=		audio/pulseaudio
 
