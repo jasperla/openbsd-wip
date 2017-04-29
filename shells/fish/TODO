@@ -1,3 +1,4 @@
+* come completions for fish_TAB cause fish to crash
 * Tests never finish
 * Some completions may be wrong.  BSD- (jot, etc.) Linux-specific stuff should be
   removed.
