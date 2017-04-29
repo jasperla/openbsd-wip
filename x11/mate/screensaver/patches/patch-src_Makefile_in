@@ -1,7 +1,7 @@
 $OpenBSD$
---- src/Makefile.in.orig	Mon Mar 13 12:21:47 2017
-+++ src/Makefile.in	Tue Mar 28 20:28:13 2017
-@@ -375,7 +375,6 @@ LIB_MATE_MENU_LIBS = @LIB_MATE_MENU_LIBS@
+--- src/Makefile.in.orig	Sun Apr 16 08:17:07 2017
++++ src/Makefile.in	Sat Apr 29 12:46:52 2017
+@@ -376,7 +376,6 @@ LIB_MATE_MENU_LIBS = @LIB_MATE_MENU_LIBS@
  LIPO = @LIPO@
  LN_S = @LN_S@
  LTLIBOBJS = @LTLIBOBJS@
@@ -9,7 +9,7 @@ $OpenBSD$
  MAINT = @MAINT@
  MAKEINFO = @MAKEINFO@
  MANIFEST_TOOL = @MANIFEST_TOOL@
-@@ -1213,9 +1212,13 @@ install-exec-hook:
+@@ -1214,9 +1213,13 @@ install-exec-hook:
  	@if [ "x@NEED_SETUID@" = "xyes" ]; then \
  	    echo "***" ; \
  	    echo "***  Warning: mate-screensaver has been compiled with support for" ; \
