@@ -26,7 +26,7 @@ MODGNOME_TOOLS=		desktop-file-utils gtk-update-icon-cache
 CONFIGURE_STYLE=	autoconf
 AUTOCONF_VERSION=	2.69
 
-MODMATE_LDFLAGS=	-lexecinfo
+MODGNOME_LDFLAGS=	-lexecinfo
 
 LIB_DEPENDS=		sysutils/upower \
 			devel/libexecinfo \
