@@ -1,0 +1,12 @@
+$OpenBSD$
+--- src/ticks/Makefile.orig	Sun Apr 30 15:31:54 2017
++++ src/ticks/Makefile	Sun Apr 30 15:32:08 2017
+@@ -1,8 +1,6 @@
+ 
+ OBJS = ticks.o hook_console.o hook_io.o hook_misc.o hook.o
+ 
+-CFLAGS += -g
+-
+ INSTALL ?= install
+ 
+ all: ticks$(EXESUFFIX)

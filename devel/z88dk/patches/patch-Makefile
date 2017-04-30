@@ -1,0 +1,12 @@
+$OpenBSD$
+--- Makefile.orig	Sun Apr 30 15:57:50 2017
++++ Makefile	Sun Apr 30 15:57:57 2017
+@@ -95,7 +95,7 @@ install:
+ 	cd src/sccz80 ; $(MAKE) PREFIX=$(DESTDIR)/$(prefix) install
+ 	cd src/z80asm ; $(MAKE) PREFIX=$(DESTDIR)/$(prefix) install
+ 	cd src/zcc ; $(MAKE) PREFIX=$(DESTDIR)/$(prefix) install
+-	./config.sh $(prefix_share)/z88dk/ $(DEFAULT)
++	$(INSTALL) lib/config/$(DEFAULT).cfg $(DESTDIR)/$(prefix_share)/z88dk/lib/config/
+ 	cp -R -p include $(DESTDIR)/$(prefix_share)/z88dk
+ 	cp -R -p lib $(DESTDIR)/$(prefix_share)/z88dk
+ 	find $(DESTDIR)/$(prefix_share)/z88dk -type f -exec chmod 644 {} \;
