@@ -1,14 +1,13 @@
 # $OpenBSD: Makefile.template,v 1.75 2016/03/20 17:19:49 naddy Exp $
-#
+
 COMMENT =	a continuation and extension of Vim
 
-# pre-0.2 testing version
-V =		20170419
+V =		0.2.0
 DISTNAME =	neovim-${V}
 
 GH_ACCOUNT =	neovim
 GH_PROJECT =	neovim
-GH_COMMIT =	14b1becb5466003a65fa6be0517352abb7bc0f42
+GH_COMMIT =	v${V}
 
 CATEGORIES =	editors devel
 HOMEPAGE =	http://neovim.org
@@ -36,6 +35,7 @@ LIB_DEPENDS =		devel/libtermkey \
 RUN_DEPENDS +=		devel/libmpack/lua \
 			devel/libmpack/main
 
+WRKDIST =		${WRKDIR}/neovim-${V}
 MAKE_FLAGS +=		USE_BUNDLED_DEPS=OFF
 CONFIGURE_ARGS +=	-DLUA_PRG=${MODLUA_BIN}
 

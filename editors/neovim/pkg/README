@@ -7,25 +7,16 @@ $OpenBSD: README.template,v 1.5 2016/08/27 09:47:26 ajacoutot Exp $
 Why is the Escape Key Not Working Right?
 ========================================
 
-If you use neovim under tmux, you are being bitten by a libtermkey bug. Read
-the libtermkey package README for a workaround.
+If you use Neovim under tmux, you are likely being bitten by a libtermkey bug.
+Read the libtermkey package README for a workaround.
 
 Migrating from Vim to Neovim
 ============================
 
-Note that in neovim some paths are different from traditional vim. The config
+Note that in Neovim some paths are different from traditional vim. The config
 dir is ~/.config/nvim, and the main config file is ~/.config/nvim/init.vim. You
 can symlink your existing traditional vim config and directory to the new
 paths, and this will work.
 
 The first time you invoke nvim, run ':CheckHealth' to see what else you might
 need to do to migrate.
-
-Xfce Terminal, Tiling WMs and Neovim
-====================================
-
-If you experience neovim crashes when spawning new windows under a tiling
-window manager, and you are running neovim under an Xfce terminal, switching to
-another terminal emulator may work around the crashes:
-
-https://github.com/neovim/neovim/issues/5692

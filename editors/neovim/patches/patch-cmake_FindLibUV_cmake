@@ -1,6 +1,6 @@
 $OpenBSD$
---- cmake/FindLibUV.cmake.orig	Mon Feb 13 16:06:55 2017
-+++ cmake/FindLibUV.cmake	Mon Feb 13 16:06:57 2017
+--- cmake/FindLibUV.cmake.orig	Mon May  1 21:13:23 2017
++++ cmake/FindLibUV.cmake	Tue May  2 09:45:33 2017
 @@ -65,7 +65,7 @@ if(HAVE_LIBKSTAT)
  endif()
  
@@ -9,3 +9,4 @@ $OpenBSD$
 +if(HAVE_LIBKVM AND NOT CMAKE_SYSTEM_NAME STREQUAL "OpenBSD")
    list(APPEND LIBUV_LIBRARIES kvm)
  endif()
+ 
