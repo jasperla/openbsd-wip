@@ -2,12 +2,9 @@
 
 COMMENT =	a continuation and extension of Vim
 
-V =		0.2.0
-DISTNAME =	neovim-${V}
-
 GH_ACCOUNT =	neovim
 GH_PROJECT =	neovim
-GH_COMMIT =	v${V}
+GH_TAGNAME =	v0.2.0
 
 CATEGORIES =	editors devel
 HOMEPAGE =	http://neovim.org
@@ -35,7 +32,6 @@ LIB_DEPENDS =		devel/libtermkey \
 RUN_DEPENDS +=		devel/libmpack/lua \
 			devel/libmpack/main
 
-WRKDIST =		${WRKDIR}/neovim-${V}
 MAKE_FLAGS +=		USE_BUNDLED_DEPS=OFF
 CONFIGURE_ARGS +=	-DLUA_PRG=${MODLUA_BIN}
 
