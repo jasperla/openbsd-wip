@@ -27,4 +27,6 @@ RUN_DEPENDS =	archivers/p5-Archive-Zip \
 		textproc/p5-XML-LibXML \
 		textproc/p5-XML-LibXSLT
 
+TEST_DEPENDS =  sysutils/p5-File-Which
+
 .include <bsd.port.mk>

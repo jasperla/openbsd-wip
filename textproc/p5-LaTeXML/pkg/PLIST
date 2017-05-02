@@ -1,4 +1,6 @@
 @comment $OpenBSD: PLIST,v 1.4 2015/09/04 06:38:41 benoit Exp $
+@exec %D/bin/mktexlsr %D/share/texmf-local > /dev/null 2>&1
+@unexec-delete %D/bin/mktexlsr %D/share/texmf-local > /dev/null 2>&1
 bin/latexml
 bin/latexmlc
 bin/latexmlfind
