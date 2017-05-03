@@ -168,7 +168,7 @@ lib/python${MODPY_VERSION}/site-packages/hgext3rd/
 lib/python${MODPY_VERSION}/site-packages/hgext3rd/__init__.py
 lib/python${MODPY_VERSION}/site-packages/hgext3rd/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/mercurial/
-lib/python${MODPY_VERSION}/site-packages/mercurial-4.2_rc-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/mercurial-4.2-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/mercurial/__init__.py
 lib/python${MODPY_VERSION}/site-packages/mercurial/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/mercurial/__modulepolicy__.py
