@@ -8,13 +8,13 @@ lib/python${MODPY_VERSION}/site-packages/neovim-${MODPY_EGG_VERSION}-py${MODPY_V
 lib/python${MODPY_VERSION}/site-packages/neovim-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
 lib/python${MODPY_VERSION}/site-packages/neovim-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/neovim/__init__.py
-${MODPY_COMMENT} lib/python${MODPY_VERSION}/site-packages/neovim/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/neovim/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/neovim/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/neovim/${MODPY_PYCACHE}compat.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/neovim/${MODPY_PYCACHE}util.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/neovim/api/
 lib/python${MODPY_VERSION}/site-packages/neovim/api/__init__.py
-${MODPY_COMMENT} lib/python${MODPY_VERSION}/site-packages/neovim/api/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/neovim/api/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/neovim/api/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/neovim/api/${MODPY_PYCACHE}buffer.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/neovim/api/${MODPY_PYCACHE}common.${MODPY_PYC_MAGIC_TAG}pyc
@@ -29,7 +29,7 @@ lib/python${MODPY_VERSION}/site-packages/neovim/api/window.py
 lib/python${MODPY_VERSION}/site-packages/neovim/compat.py
 lib/python${MODPY_VERSION}/site-packages/neovim/msgpack_rpc/
 lib/python${MODPY_VERSION}/site-packages/neovim/msgpack_rpc/__init__.py
-${MODPY_COMMENT} lib/python${MODPY_VERSION}/site-packages/neovim/msgpack_rpc/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/neovim/msgpack_rpc/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/neovim/msgpack_rpc/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/neovim/msgpack_rpc/${MODPY_PYCACHE}async_session.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/neovim/msgpack_rpc/${MODPY_PYCACHE}msgpack_stream.${MODPY_PYC_MAGIC_TAG}pyc
@@ -37,7 +37,7 @@ lib/python${MODPY_VERSION}/site-packages/neovim/msgpack_rpc/${MODPY_PYCACHE}sess
 lib/python${MODPY_VERSION}/site-packages/neovim/msgpack_rpc/async_session.py
 lib/python${MODPY_VERSION}/site-packages/neovim/msgpack_rpc/event_loop/
 lib/python${MODPY_VERSION}/site-packages/neovim/msgpack_rpc/event_loop/__init__.py
-${MODPY_COMMENT} lib/python${MODPY_VERSION}/site-packages/neovim/msgpack_rpc/event_loop/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/neovim/msgpack_rpc/event_loop/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/neovim/msgpack_rpc/event_loop/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/neovim/msgpack_rpc/event_loop/${MODPY_PYCACHE}asyncio.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/neovim/msgpack_rpc/event_loop/${MODPY_PYCACHE}base.${MODPY_PYC_MAGIC_TAG}pyc
@@ -49,7 +49,7 @@ lib/python${MODPY_VERSION}/site-packages/neovim/msgpack_rpc/msgpack_stream.py
 lib/python${MODPY_VERSION}/site-packages/neovim/msgpack_rpc/session.py
 lib/python${MODPY_VERSION}/site-packages/neovim/plugin/
 lib/python${MODPY_VERSION}/site-packages/neovim/plugin/__init__.py
-${MODPY_COMMENT} lib/python${MODPY_VERSION}/site-packages/neovim/plugin/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/neovim/plugin/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/neovim/plugin/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/neovim/plugin/${MODPY_PYCACHE}decorators.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/neovim/plugin/${MODPY_PYCACHE}host.${MODPY_PYC_MAGIC_TAG}pyc
