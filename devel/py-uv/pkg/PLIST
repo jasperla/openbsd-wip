@@ -6,7 +6,7 @@ lib/python${MODPY_VERSION}/site-packages/pyuv-${MODPY_EGG_VERSION}-py${MODPY_VER
 lib/python${MODPY_VERSION}/site-packages/pyuv-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
 lib/python${MODPY_VERSION}/site-packages/pyuv-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/pyuv/__init__.py
-${MODPY_COMMENT} lib/python${MODPY_VERSION}/site-packages/pyuv/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pyuv/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pyuv/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyuv/${MODPY_PYCACHE}_version.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyuv/_cpyuv.so
