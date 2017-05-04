@@ -19,6 +19,8 @@ PERMIT_PACKAGE_CDROM =	Yes
 NO_BUILD =		Yes
 NO_TEST =		Yes
 
+PKG_ARCH =	*
+
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/osmlr-tile-spec
 	${INSTALL_DATA} ${WRKSRC}/*.proto ${PREFIX}/share/osmlr-tile-spec
