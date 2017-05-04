@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.8 2017/04/17 05:10:17 rpointel Exp $
+@comment $OpenBSD: PLIST-main,v 1.9 2017/05/03 22:57:10 juanfra Exp $
 @pkgpath devel/mercurial
 @bin bin/chg
 bin/hg
@@ -87,8 +87,6 @@ lib/python${MODPY_VERSION}/site-packages/hgext/gpg.py
 lib/python${MODPY_VERSION}/site-packages/hgext/gpg.pyc
 lib/python${MODPY_VERSION}/site-packages/hgext/graphlog.py
 lib/python${MODPY_VERSION}/site-packages/hgext/graphlog.pyc
-lib/python${MODPY_VERSION}/site-packages/hgext/hgk.py
-lib/python${MODPY_VERSION}/site-packages/hgext/hgk.pyc
 lib/python${MODPY_VERSION}/site-packages/hgext/highlight/
 lib/python${MODPY_VERSION}/site-packages/hgext/highlight/__init__.py
 lib/python${MODPY_VERSION}/site-packages/hgext/highlight/__init__.pyc
@@ -168,7 +166,7 @@ lib/python${MODPY_VERSION}/site-packages/hgext3rd/
 lib/python${MODPY_VERSION}/site-packages/hgext3rd/__init__.py
 lib/python${MODPY_VERSION}/site-packages/hgext3rd/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/mercurial/
-lib/python${MODPY_VERSION}/site-packages/mercurial-4.2-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/mercurial-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/mercurial/__init__.py
 lib/python${MODPY_VERSION}/site-packages/mercurial/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/mercurial/__modulepolicy__.py
