@@ -2,7 +2,7 @@
 
 COMMENT =	K Desktop Environment, office suite
 HOMEPAGE =	https://www.calligra-suite.org/
-VERSION =	3.0.0.1
+VERSION =	3.0.1
 DISTNAME =	calligra-${VERSION}
 CATEGORIES =	editors
 
