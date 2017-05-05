@@ -1,6 +1,8 @@
 $OpenBSD$
---- plugins/videoshape/VideoThumbnailer.h.orig	Sat Feb 18 14:31:19 2017
-+++ plugins/videoshape/VideoThumbnailer.h	Sat Feb 18 14:31:50 2017
+
+Index: plugins/videoshape/VideoThumbnailer.h
+--- plugins/videoshape/VideoThumbnailer.h.orig
++++ plugins/videoshape/VideoThumbnailer.h
 @@ -20,9 +20,9 @@
  #ifndef VIDEOTHUMBNAILER_H
  #define VIDEOTHUMBNAILER_H

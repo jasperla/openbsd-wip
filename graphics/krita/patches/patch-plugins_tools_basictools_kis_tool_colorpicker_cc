@@ -1,6 +1,8 @@
 $OpenBSD$
---- plugins/tools/basictools/kis_tool_colorpicker.cc.orig	Sat Feb  4 11:38:29 2017
-+++ plugins/tools/basictools/kis_tool_colorpicker.cc	Sat Feb  4 11:39:20 2017
+
+Index: plugins/tools/basictools/kis_tool_colorpicker.cc
+--- plugins/tools/basictools/kis_tool_colorpicker.cc.orig
++++ plugins/tools/basictools/kis_tool_colorpicker.cc
 @@ -21,8 +21,6 @@
  #include "kis_tool_colorpicker.h"
  #include <string.h>

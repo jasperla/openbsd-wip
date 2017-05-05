@@ -1,6 +1,8 @@
 $OpenBSD$
---- plugins/videoshape/SelectVideoWidget.cpp.orig	Sat Feb 18 12:15:32 2017
-+++ plugins/videoshape/SelectVideoWidget.cpp	Sat Feb 18 12:17:00 2017
+
+Index: plugins/videoshape/SelectVideoWidget.cpp
+--- plugins/videoshape/SelectVideoWidget.cpp.orig
++++ plugins/videoshape/SelectVideoWidget.cpp
 @@ -22,7 +22,7 @@
  
  #include <klocalizedstring.h>

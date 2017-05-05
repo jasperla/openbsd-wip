@@ -1,6 +1,8 @@
 $OpenBSD$
---- plugins/videoshape/FullScreenPlayer.cpp.orig	Sat Feb 18 14:36:34 2017
-+++ plugins/videoshape/FullScreenPlayer.cpp	Sat Feb 18 14:37:00 2017
+
+Index: plugins/videoshape/FullScreenPlayer.cpp
+--- plugins/videoshape/FullScreenPlayer.cpp.orig
++++ plugins/videoshape/FullScreenPlayer.cpp
 @@ -24,11 +24,11 @@
  
  #include <klocalizedstring.h>

@@ -114,7 +114,6 @@ LIB_DEPENDS +=	x11/qt5/qtwebkit \
 		graphics/lcms2 \
 		print/poppler,,-qt5
 
-
 # Stuff we don't have ATM. Do not bother about CreateResources, it's
 # pure optional run-time dependency.
 CONFIGURE_ARGS +=	-DWITH_Cauchy:BOOL=Off \

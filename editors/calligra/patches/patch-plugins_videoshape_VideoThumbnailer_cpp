@@ -1,6 +1,8 @@
 $OpenBSD$
---- plugins/videoshape/VideoThumbnailer.cpp.orig	Sat Feb 18 15:08:57 2017
-+++ plugins/videoshape/VideoThumbnailer.cpp	Sat Feb 18 15:09:09 2017
+
+Index: plugins/videoshape/VideoThumbnailer.cpp
+--- plugins/videoshape/VideoThumbnailer.cpp.orig
++++ plugins/videoshape/VideoThumbnailer.cpp
 @@ -23,7 +23,7 @@
  #include "VideoData.h"
  #include "VideoDebug.h"

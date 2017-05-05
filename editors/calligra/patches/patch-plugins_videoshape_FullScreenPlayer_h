@@ -1,6 +1,8 @@
 $OpenBSD$
---- plugins/videoshape/FullScreenPlayer.h.orig	Sat Feb 18 12:22:48 2017
-+++ plugins/videoshape/FullScreenPlayer.h	Sat Feb 18 12:22:59 2017
+
+Index: plugins/videoshape/FullScreenPlayer.h
+--- plugins/videoshape/FullScreenPlayer.h.orig
++++ plugins/videoshape/FullScreenPlayer.h
 @@ -21,7 +21,7 @@
  #define FULLSCREENPLAYER_H
  

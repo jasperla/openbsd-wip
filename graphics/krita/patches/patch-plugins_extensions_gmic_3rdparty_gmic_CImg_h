@@ -1,10 +1,8 @@
 $OpenBSD$
 
-Variables starting by underscore ("_") sign are reserved and should not be used
-in applications.
-
---- plugins/extensions/gmic/3rdparty/gmic/CImg.h.orig	Tue Jan 31 14:18:49 2017
-+++ plugins/extensions/gmic/3rdparty/gmic/CImg.h	Thu Feb  2 23:48:09 2017
+Index: plugins/extensions/gmic/3rdparty/gmic/CImg.h
+--- plugins/extensions/gmic/3rdparty/gmic/CImg.h.orig
++++ plugins/extensions/gmic/3rdparty/gmic/CImg.h
 @@ -43386,21 +43386,21 @@ namespace cimg_library_suffixed {
              else { if (!visible_cursor) { disp.show_mouse(); visible_cursor = true; }}
              const int d = (depth()>1)?depth():0;

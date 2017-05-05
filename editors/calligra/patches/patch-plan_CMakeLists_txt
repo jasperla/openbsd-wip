@@ -1,7 +1,8 @@
 $OpenBSD$
-avoid build failure inside boost
---- plan/CMakeLists.txt.orig	Mon Jan 30 22:43:02 2017
-+++ plan/CMakeLists.txt	Mon Jan 30 22:43:53 2017
+
+Index: plan/CMakeLists.txt
+--- plan/CMakeLists.txt.orig
++++ plan/CMakeLists.txt
 @@ -4,6 +4,8 @@ project(kplato)
  # set kplato debug area
  add_definitions( -DKDE_DEFAULT_DEBUG_AREA=42000 )
