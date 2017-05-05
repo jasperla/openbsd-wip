@@ -159,7 +159,6 @@ lib/kritaplugins/kritaxcfimport.so
 @lib lib/libkritaversion.so.${LIBkritaversion_VERSION}
 @lib lib/libkritawidgets.so.${LIBkritawidgets_VERSION}
 @lib lib/libkritawidgetutils.so.${LIBkritawidgetutils_VERSION}
-share/applications/
 share/applications/krita_bmp.desktop
 share/applications/krita_brush.desktop
 share/applications/krita_csv.desktop
@@ -209,7 +208,6 @@ share/color/icc/krita/krita25_lcms-builtin-sRGB_g100-truegamma.icc
 share/color/icc/krita/sRGB-elle-V2-g10.icc
 share/color/icc/krita/sRGB-elle-V2-srgbtrc.icc
 share/color/icc/krita/scRGB.icm
-share/examples/xdg/
 share/examples/xdg/kritarc
 share/icons/hicolor/1024x1024/
 share/icons/hicolor/1024x1024/apps/
@@ -907,15 +905,11 @@ share/locale/eu/LC_MESSAGES/krita.mo
 share/locale/fa/LC_MESSAGES/krita.mo
 share/locale/fi/LC_MESSAGES/krita.mo
 share/locale/fr/LC_MESSAGES/krita.mo
-share/locale/fy/
-share/locale/fy/LC_MESSAGES/
 share/locale/fy/LC_MESSAGES/krita.mo
 share/locale/ga/LC_MESSAGES/krita.mo
 share/locale/gl/LC_MESSAGES/krita.mo
 share/locale/he/LC_MESSAGES/krita.mo
 share/locale/hi/LC_MESSAGES/krita.mo
-share/locale/hne/
-share/locale/hne/LC_MESSAGES/
 share/locale/hne/LC_MESSAGES/krita.mo
 share/locale/hr/LC_MESSAGES/krita.mo
 share/locale/hu/LC_MESSAGES/krita.mo
@@ -944,8 +938,6 @@ share/locale/pt/LC_MESSAGES/krita.mo
 share/locale/pt_BR/LC_MESSAGES/krita.mo
 share/locale/ro/LC_MESSAGES/krita.mo
 share/locale/ru/LC_MESSAGES/krita.mo
-share/locale/se/
-share/locale/se/LC_MESSAGES/
 share/locale/se/LC_MESSAGES/krita.mo
 share/locale/sk/LC_MESSAGES/krita.mo
 share/locale/sl/LC_MESSAGES/krita.mo
