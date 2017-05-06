@@ -1,5 +1,0 @@
-@comment $OpenBSD$
-${P5SITE}/Test/
-${P5SITE}/Test/Command/
-${P5SITE}/Test/Command/Simple.pm
-@man man/man3p/Test::Command::Simple.3p
