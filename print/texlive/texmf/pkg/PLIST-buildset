@@ -7,6 +7,7 @@
 @conflict texlive_texmf-context-<2016
 @pkgpath print/texlive/texmf-minimal
 @pkgpath print/teTeX/texmf
+share/texmf-local/
 share/texmf-dist/
 share/texmf-dist/bibtex/
 share/texmf-dist/bibtex/bib/
@@ -5056,24 +5057,6 @@ share/texmf-dist/tex/plain/knuth-local/
 share/texmf-dist/tex/plain/knuth-local/xepsf.tex
 share/texmf-dist/tex/plain/makeindex/
 share/texmf-dist/tex/plain/makeindex/idxmac.tex
-share/texmf-dist/tex/texinfo/
-share/texmf-dist/tex/texinfo/texinfo.ini
-share/texmf-dist/tex/texinfo/texinfo.tex
-share/texmf-dist/tex/texinfo/txi-cs.tex
-share/texmf-dist/tex/texinfo/txi-de.tex
-share/texmf-dist/tex/texinfo/txi-en.tex
-share/texmf-dist/tex/texinfo/txi-es.tex
-share/texmf-dist/tex/texinfo/txi-fr.tex
-share/texmf-dist/tex/texinfo/txi-it.tex
-share/texmf-dist/tex/texinfo/txi-nb.tex
-share/texmf-dist/tex/texinfo/txi-nl.tex
-share/texmf-dist/tex/texinfo/txi-nn.tex
-share/texmf-dist/tex/texinfo/txi-pl.tex
-share/texmf-dist/tex/texinfo/txi-pt.tex
-share/texmf-dist/tex/texinfo/txi-ru.tex
-share/texmf-dist/tex/texinfo/txi-sr.tex
-share/texmf-dist/tex/texinfo/txi-tr.tex
-share/texmf-dist/tex/texinfo/txi-uk.tex
 share/texmf-dist/texconfig/
 share/texmf-dist/texconfig/README
 share/texmf-dist/texconfig/g/

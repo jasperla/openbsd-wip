@@ -253,7 +253,7 @@ def write_plist(files, filename, top_matter=[], bottom_matter=[]):
 # Stuff which is ported separately from texlive in OpenBSD
 print(">>> neverset")
 never_pkgs = ["asymptote", "latexmk", "texworks", "t1utils",
-              "dvi2tty", "detex"]
+              "dvi2tty", "detex", "texinfo"]
 never_files = collect_files(never_pkgs)
 
 
@@ -272,8 +272,6 @@ buildset_pkgs = [
     "rotating", "stmaryrd", "subfigure",
     "fancybox", "listings", "pdfpages",
     "titlesec", "wasysym",
-    # gnustep/dbuskit, graphics/asymptote
-    "texinfo",
     # gnusetp/dbuskit
     "ec",
     # graphics/asymptote
@@ -304,6 +302,8 @@ buildset_top_matter = [
     "@conflict texlive_texmf-context-<%s" % YEAR,
     "@pkgpath print/texlive/texmf-minimal",
     "@pkgpath print/teTeX/texmf",
+    # Scaffold a dir for ports wishing to install extra tex macros.
+    "share/texmf-local",
 ]
 buildset_bottom_matter = [
     "@exec-update if [ -e \"%D/bin/mktexlsr\" ]; " +
