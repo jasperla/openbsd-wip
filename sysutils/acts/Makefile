@@ -1,6 +1,6 @@
 # $OpenBSD$
 COMMENT =		another calendar-based tarsnap script
-V =			1.3b2
+V =			1.3b3
 DISTNAME =		acts-${V}
 CATEGORIES =		sysutils
 
