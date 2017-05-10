@@ -74,6 +74,8 @@ lib/csound/plugins-6.0/libfareygen.so
 lib/csound/plugins-6.0/libfluidOpcodes.so
 lib/csound/plugins-6.0/libfractalnoise.so
 lib/csound/plugins-6.0/libframebuffer.so
+lib/csound/plugins-6.0/libftsamplebank.so
+lib/csound/plugins-6.0/libgetftargs.so
 lib/csound/plugins-6.0/libimage.so
 lib/csound/plugins-6.0/libipmidi.so
 lib/csound/plugins-6.0/libjackTransport.so
@@ -83,6 +85,7 @@ lib/csound/plugins-6.0/libosc.so
 lib/csound/plugins-6.0/libpadsynth.so
 lib/csound/plugins-6.0/libplaterev.so
 lib/csound/plugins-6.0/libpy.so
+lib/csound/plugins-6.0/libquadbezier.so
 lib/csound/plugins-6.0/librtjack.so
 lib/csound/plugins-6.0/librtpa.so
 lib/csound/plugins-6.0/librtpulse.so
