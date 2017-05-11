@@ -21,10 +21,8 @@ FLAVORS =		python3
 FLAVOR ?=
 
 RUN_DEPENDS =		net/py-msgpack${MODPY_FLAVOR} \
-			devel/py-uv${MODPY_FLAVOR}
-.if ${FLAVOR:Mpython3}
-RUN_DEPENDS +=		devel/py-greenlet${MODPY_FLAVOR}
-.endif
+			devel/py-uv${MODPY_FLAVOR} \
+			devel/py-greenlet${MODPY_FLAVOR}
 TEST_DEPENDS =		${RUN_DEPENDS} \
 			devel/py-nose${MODPY_FLAVOR}
 
