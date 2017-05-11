@@ -14,8 +14,6 @@ BUILD_DEPENDS =	devel/gettext-tools
 LIB_DEPENDS =	devel/gettext \
 			x11/qt5/qtscript
 
-CONFIGURE_ARGS =	-DCMAKE_POLICY_DEFAULT_CMP0037=OLD
-
 # for tests
 PORTHOME =	${WRKDIR}
 
