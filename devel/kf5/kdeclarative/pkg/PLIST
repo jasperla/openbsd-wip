@@ -49,6 +49,9 @@ lib/cmake/KF5Declarative/KF5DeclarativeTargets.cmake
 lib/qml/org/kde/draganddrop/
 lib/qml/org/kde/draganddrop/libdraganddropplugin.so
 lib/qml/org/kde/draganddrop/qmldir
+lib/qml/org/kde/kconfig/
+lib/qml/org/kde/kconfig/libkconfigplugin.so
+lib/qml/org/kde/kconfig/qmldir
 lib/qml/org/kde/kcoreaddons/
 lib/qml/org/kde/kcoreaddons/libkcoreaddonsplugin.so
 lib/qml/org/kde/kcoreaddons/qmldir

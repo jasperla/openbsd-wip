@@ -6,6 +6,7 @@ lib/cmake/KF5DesignerPlugin/KF5DesignerPluginConfigVersion.cmake
 lib/cmake/KF5DesignerPlugin/KF5DesignerPluginMacros.cmake
 lib/cmake/KF5DesignerPlugin/KF5DesignerPluginTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/KF5DesignerPlugin/KF5DesignerPluginTargets.cmake
+lib/qt5/plugins/designer/
 lib/qt5/plugins/designer/kdewebkit5widgets.so
 lib/qt5/plugins/designer/kf5widgets.so
 @man man/man1/kgendesignerplugin.1

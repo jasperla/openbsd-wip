@@ -1,15 +1,18 @@
 $OpenBSD: patch-src_runtime_kwalletd_backend_blowfish_cc,v 1.2 2016/12/25 14:54:49 zhuk Exp $
 Unbreak build.
---- src/runtime/kwalletd/backend/blowfish.cc.orig	Sat Nov  5 15:59:12 2016
-+++ src/runtime/kwalletd/backend/blowfish.cc	Sat Dec  3 16:23:16 2016
-@@ -38,18 +38,18 @@
+Index: src/runtime/kwalletd/backend/blowfish.cc
+--- src/runtime/kwalletd/backend/blowfish.cc.orig
++++ src/runtime/kwalletd/backend/blowfish.cc
+@@ -37,19 +37,19 @@
+ 
  BlowFish::BlowFish()
  {
-     _blksz = 8;
--    _key = 0L;
+-    _blksz = 8;
+-    _key = nullptr;
 -    _init = false;
-+    key = 0L;
-+    initialized = false;
++    blksz = 8;
++    key = nullptr;
++    bool_init = false;
  }
  
  bool BlowFish::init()
@@ -39,15 +42,15 @@ Unbreak build.
              }
          }
 -        _P[i] = P[i] ^ data;
-+        Pm[i] = P[i] ^ data;
++        P[i] = P[i] ^ data;
      }
  
      for (int i = 0; i < 18; i += 2) {
          encipher(&datal, &datar);
 -        _P[i] = datal;
 -        _P[i + 1] = datar;
-+        Pm[i] = datal;
-+        Pm[i + 1] = datar;
++        P[i] = datal;
++        P[i + 1] = datar;
      }
  
      for (int j = 0; j < 4; j++) {
@@ -74,7 +77,7 @@ Unbreak build.
      }
  
 -    _init = true;
-+    initialized = true;
++    bool_init = true;
  
      return true;
  }
@@ -82,9 +85,9 @@ Unbreak build.
  BlowFish::~BlowFish()
  {
 -    delete[](unsigned char *)_key;
--    _key = 0L;
+-    _key = nullptr;
 +    delete[](unsigned char *)key;
-+    key = 0L;
++    key = nullptr;
  }
  
  int BlowFish::keyLen() const
@@ -93,7 +96,7 @@ Unbreak build.
  bool BlowFish::readyToGo() const
  {
 -    return _init;
-+    return initialized;
++    return bool_init;
  }
  
 -bool BlowFish::setKey(void *key, int bitlength)
@@ -115,24 +118,34 @@ Unbreak build.
  
      return init();
  }
-@@ -149,7 +149,7 @@ int BlowFish::encrypt(void *block, int len)
+@@ -149,11 +149,11 @@ int BlowFish::encrypt(void *block, int len)
  {
      uint32_t *d = (uint32_t *)block;
  
 -    if (!_init || len % _blksz != 0) {
-+    if (!initialized || len % _blksz != 0) {
++    if (!bool_init || len % blksz != 0) {
          return -1;
      }
  
-@@ -173,7 +173,7 @@ int BlowFish::decrypt(void *block, int len)
+-    for (int i = 0; i < len / _blksz; i++) {
++    for (int i = 0; i < len / blksz; i++) {
+ #if Q_BYTE_ORDER == Q_BIG_ENDIAN
+         shuffle(*d);
+         shuffle(*(d + 1));
+@@ -173,11 +173,11 @@ int BlowFish::decrypt(void *block, int len)
  {
      uint32_t *d = (uint32_t *)block;
  
 -    if (!_init || len % _blksz != 0) {
-+    if (!initialized || len % _blksz != 0) {
++    if (!bool_init || len % blksz != 0) {
          return -1;
      }
  
+-    for (int i = 0; i < len / _blksz; i++) {
++    for (int i = 0; i < len / blksz; i++) {
+ #if Q_BYTE_ORDER == Q_BIG_ENDIAN
+         shuffle(*d);
+         shuffle(*(d + 1));
 @@ -206,9 +206,9 @@ uint32_t BlowFish::F(uint32_t x)
      x >>= 8;
      a = x & 0x000000ff;
@@ -151,7 +164,7 @@ Unbreak build.
  
      for (int i = 0; i < 16; ++i) {
 -        Xl ^= _P[i];
-+        Xl ^= Pm[i];
++        Xl ^= P[i];
          Xr ^= F(Xl);
          // Exchange
          temp = Xl; Xl = Xr; Xr = temp;
@@ -161,8 +174,8 @@ Unbreak build.
  
 -    Xr ^= _P[16];
 -    Xl ^= _P[17];
-+    Xr ^= Pm[16];
-+    Xl ^= Pm[17];
++    Xr ^= P[16];
++    Xl ^= P[17];
  
      *xl = Xl;
      *xr = Xr;
@@ -171,7 +184,7 @@ Unbreak build.
  
      for (int i = 17; i > 1; --i) {
 -        Xl ^= _P[i];
-+        Xl ^= Pm[i];
++        Xl ^= P[i];
          Xr ^= F(Xl);
          // Exchange
          temp = Xl; Xl = Xr; Xr = temp;
@@ -181,8 +194,8 @@ Unbreak build.
  
 -    Xr ^= _P[1];
 -    Xl ^= _P[0];
-+    Xr ^= Pm[1];
-+    Xl ^= Pm[0];
++    Xr ^= P[1];
++    Xl ^= P[0];
  
      *xl = Xl;
      *xr = Xr;

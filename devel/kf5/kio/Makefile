@@ -11,14 +11,14 @@ SHARED_LIBS +=	KF5KIOFileWidgets	1.0 # 5.20
 SHARED_LIBS +=	KF5KIONTLM		1.0 # 5.20
 SHARED_LIBS +=	KF5KIOWidgets		1.0 # 5.20
 
-WANTLIB =  KF5Archive KF5Auth KF5Bookmarks KF5Codecs KF5Completion
+WANTLIB += KF5Archive KF5Auth KF5Bookmarks KF5Codecs KF5Completion
 WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5CoreAddons
-WANTLIB += KF5DBusAddons KF5I18n KF5IconThemes KF5ItemViews KF5JobWidgets
-WANTLIB += KF5Notifications KF5Service KF5Solid KF5SonnetUi KF5TextWidgets
-WANTLIB += KF5Wallet KF5WidgetsAddons KF5WindowSystem KF5XmlGui
-WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Script
-WANTLIB += Qt5Widgets Qt5X11Extras Qt5Xml
-WANTLIB += c exslt m xml2 xslt
+WANTLIB += KF5DBusAddons KF5DocTools KF5I18n KF5IconThemes KF5ItemViews
+WANTLIB += KF5JobWidgets KF5Notifications KF5Service KF5Solid
+WANTLIB += KF5SonnetUi KF5TextWidgets KF5Wallet KF5WidgetsAddons
+WANTLIB += KF5WindowSystem KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus
+WANTLIB += Qt5Gui Qt5Network Qt5Script Qt5Widgets Qt5X11Extras
+WANTLIB += Qt5Xml c exslt m xml2 xslt
 
 BUILD_DEPENDS =	devel/gettext-tools \
 		devel/kf5/kdoctools
@@ -44,6 +44,7 @@ LIB_DEPENDS =	devel/kf5/karchive \
 		devel/kf5/kwindowsystem \
 		devel/kf5/kxmlgui \
 		devel/kf5/solid \
+		devel/kf5/kdoctools \
 		textproc/libxml \
 		textproc/libxslt \
 		x11/qt5/qtscript \
