@@ -3,7 +3,7 @@
 COMMENT =	integration of the HTML rendering engine WebKit into KDE
 DISTNAME =	kdewebkit-${VERSION}
 
-SHARED_LIBS =	KF5WebKit		1.0
+SHARED_LIBS =	KF5WebKit		2.0
 
 WANTLIB =  KF5Auth KF5Codecs KF5Completion KF5ConfigCore KF5ConfigGui
 WANTLIB += KF5ConfigWidgets KF5CoreAddons KF5I18n KF5JobWidgets

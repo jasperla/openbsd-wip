@@ -3,7 +3,7 @@
 COMMENT =		bar code generator
 DISTNAME =		prison-${VERSION}
 
-SHARED_LIBS =		KF5Prison	0.0 # 5.29
+SHARED_LIBS =		KF5Prison	1.0 # 5.29
 
 WANTLIB =		Qt5Core Qt5Gui dmtx m qrencode
 

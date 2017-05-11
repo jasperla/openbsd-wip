@@ -3,7 +3,7 @@
 COMMENT =	KDE Gettext-based UI text internationalization
 DISTNAME =	ki18n-${VERSION}
 
-SHARED_LIBS =	KF5I18n		1.0
+SHARED_LIBS =	KF5I18n		2.0
 
 WANTLIB =	Qt5Core Qt5Script intl m
 

@@ -3,11 +3,11 @@
 COMMENT =	KDE convenience classes for DBus
 DISTNAME =	kdbusaddons-${VERSION}
 
-SHARED_LIBS =	KF5DBusAddons		1.0
+SHARED_LIBS =	KF5DBusAddons		2.0
 
 WANTLIB =	Qt5Core Qt5DBus Qt5Gui Qt5X11Extras c m
 
-LIB_DEPENDS =		x11/qt5/qtx11extras
+LIB_DEPENDS =	x11/qt5/qtx11extras
 
 # XXX tests stuck anyway
 PORTHOME =		${WRKDIR}

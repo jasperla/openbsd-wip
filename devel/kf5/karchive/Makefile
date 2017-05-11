@@ -3,7 +3,7 @@
 COMMENT =		Qt5-based API for manipulating file archives
 DISTNAME =		karchive-${VERSION}
 
-SHARED_LIBS =		KF5Archive		1.0
+SHARED_LIBS =		KF5Archive		2.0
 
 WANTLIB =		Qt5Core bz2 lzma m z
 

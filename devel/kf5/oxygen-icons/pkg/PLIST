@@ -8710,3 +8710,4 @@ share/icons/oxygen/base/8x8/places/
 share/icons/oxygen/base/8x8/places/folder-activities.png
 share/icons/oxygen/index.theme
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/oxygen
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/oxygen

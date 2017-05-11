@@ -4,7 +4,7 @@ COMMENT =	KDE Plasma integration support for Qt-based apps
 DISTNAME =	frameworkintegration-${VERSION}
 REVISION =	0
 
-SHARED_LIBS =	KF5Style		1.0
+SHARED_LIBS =	KF5Style		2.0
 
 WANTLIB += KF5Attica KF5Auth KF5Codecs KF5ConfigCore KF5ConfigGui
 WANTLIB += KF5ConfigWidgets KF5CoreAddons KF5I18n KF5IconThemes

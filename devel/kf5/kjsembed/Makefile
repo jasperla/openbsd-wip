@@ -3,7 +3,7 @@
 COMMENT =		KDE framework for binding JavaScript object to QObjects
 DISTNAME =		kjsembed-${VERSION}
 
-SHARED_LIBS =		KF5JsEmbed		1.0
+SHARED_LIBS =		KF5JsEmbed		2.0
 
 WANTLIB =  KF5I18n KF5JS Qt5Core Qt5Gui Qt5Svg Qt5Widgets Qt5Xml
 WANTLIB += c m

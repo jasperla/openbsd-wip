@@ -3,7 +3,7 @@
 COMMENT =	KDE wrapper over su/sudo/doas commands
 DISTNAME =	kdesu-${VERSION}
 
-SHARED_LIBS =	KF5Su		1.0
+SHARED_LIBS =	KF5Su		2.0
 
 WANTLIB =  ICE KF5ConfigCore KF5CoreAddons KF5I18n KF5Pty KF5Service
 WANTLIB += Qt5Core SM X11 Xext c m

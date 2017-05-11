@@ -15012,4 +15012,6 @@ share/icons/breeze/status/symbolic/user-trash-full-symbolic.svg
 share/icons/breeze/status/symbolic/view-wrapped-symbolic-rtl.svg
 share/icons/breeze/status/symbolic/view-wrapped-symbolic.svg
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/breeze
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/breeze
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/breeze-dark
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/breeze-dark

@@ -3,8 +3,8 @@
 COMMENT =	core components and tools of the Plasma Workspaces
 DISTNAME =	plasma-framework-${VERSION}
 
-SHARED_LIBS =	KF5Plasma		1.0
-SHARED_LIBS +=	KF5PlasmaQuick		1.0
+SHARED_LIBS =	KF5Plasma		2.0
+SHARED_LIBS +=	KF5PlasmaQuick		2.0
 
 WANTLIB =  EGL GL ICE KF5Activities KF5Archive KF5Auth KF5CalendarEvents
 WANTLIB += KF5Codecs KF5Completion KF5ConfigCore KF5ConfigGui

@@ -3,7 +3,7 @@
 COMMENT =		highlighting engine for structured text and code
 DISTNAME =		syntax-highlighting-${VERSION}
 
-SHARED_LIBS =		KF5SyntaxHighlighting	0.0 # 5.29
+SHARED_LIBS =		KF5SyntaxHighlighting	1.0 # 5.29
 
 WANTLIB =		Qt5Core Qt5Gui Qt5Network c m
 

@@ -3,8 +3,8 @@
 COMMENT =		KDE framework for sharing additional application data
 DISTNAME =		knewstuff-${VERSION}
 
-SHARED_LIBS +=  KF5NewStuff               1.0
-SHARED_LIBS +=  KF5NewStuffCore           0.0
+SHARED_LIBS +=  KF5NewStuff               2.0
+SHARED_LIBS +=  KF5NewStuffCore           1.0
 
 WANTLIB += KF5Archive KF5Attica KF5Auth KF5Codecs KF5Completion
 WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5CoreAddons

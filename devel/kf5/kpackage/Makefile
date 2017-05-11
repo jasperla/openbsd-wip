@@ -3,7 +3,7 @@
 COMMENT =		installation and loading of content packages in KDE
 DISTNAME =		kpackage-${VERSION}
 
-SHARED_LIBS =		KF5Package		1.0
+SHARED_LIBS =		KF5Package		2.0
 
 WANTLIB += KF5Archive KF5CoreAddons KF5I18n Qt5Core c m
 

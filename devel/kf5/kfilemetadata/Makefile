@@ -6,7 +6,7 @@ DISTNAME =	kfilemetadata-${VERSION}
 PKGNAME-main =	kf5-kfilemetadata-${VERSION}
 PKGNAME-locale =kf5-kfilemetadata-l10n-${VERSION}
 
-SHARED_LIBS =	KF5FileMetaData		1.0 # 5.20
+SHARED_LIBS =	KF5FileMetaData		2.0 # 5.20
 
 # split l10n off main package to deconflict with KDE4's kfilemetadata
 # use -locale instead of -l10n to please update-plist

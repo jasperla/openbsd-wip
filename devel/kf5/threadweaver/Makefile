@@ -3,7 +3,7 @@
 COMMENT =	KDE helper for multithreaded programming
 DISTNAME =	threadweaver-${VERSION}
 
-SHARED_LIBS =	KF5ThreadWeaver		1.0
+SHARED_LIBS =	KF5ThreadWeaver		2.0
 
 WANTLIB =	Qt5Core m
 

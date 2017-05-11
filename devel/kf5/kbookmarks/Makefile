@@ -3,7 +3,7 @@
 COMMENT =		XBEL bookmarks format support for KDE
 DISTNAME =		kbookmarks-${VERSION}
 
-SHARED_LIBS =		KF5Bookmarks		1.0
+SHARED_LIBS =		KF5Bookmarks		2.0
 
 WANTLIB =  KF5Auth KF5Codecs KF5ConfigCore KF5ConfigGui KF5ConfigWidgets
 WANTLIB += KF5CoreAddons KF5IconThemes KF5WidgetsAddons KF5XmlGui

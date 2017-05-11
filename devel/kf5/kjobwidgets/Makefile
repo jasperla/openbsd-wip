@@ -3,7 +3,7 @@
 COMMENT =	KDE widgets for showing progress of asynchronous jobs
 DISTNAME =	kjobwidgets-${VERSION}
 
-SHARED_LIBS =	KF5JobWidgets		1.0
+SHARED_LIBS =	KF5JobWidgets		2.0
 
 WANTLIB =  KF5CoreAddons KF5WidgetsAddons Qt5Core Qt5DBus Qt5Gui
 WANTLIB += Qt5Widgets Qt5X11Extras m

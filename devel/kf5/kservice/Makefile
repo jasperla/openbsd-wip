@@ -3,7 +3,7 @@
 COMMENT =		plugin framework for KDE desktop services
 DISTNAME =		kservice-${VERSION}
 
-SHARED_LIBS =		KF5Service		1.0
+SHARED_LIBS =		KF5Service		2.0
 
 WANTLIB =  KF5ConfigCore KF5CoreAddons KF5Crash KF5DBusAddons
 WANTLIB += KF5I18n Qt5Core Qt5DBus Qt5Xml c m
