@@ -1,0 +1,88 @@
+@comment $OpenBSD$
+bin/sigil
+@bin bin/sigil-bin
+share/applications/sigil.desktop
+share/pixmaps/
+share/pixmaps/sigil.png
+share/sigil/
+share/sigil/examples/
+share/sigil/examples/clip_entries.ini
+share/sigil/examples/search_entries.ini
+share/sigil/hunspell_dictionaries/
+share/sigil/hunspell_dictionaries/About.txt
+share/sigil/hunspell_dictionaries/de_DE.aff
+share/sigil/hunspell_dictionaries/de_DE.dic
+share/sigil/hunspell_dictionaries/en_GB.aff
+share/sigil/hunspell_dictionaries/en_GB.dic
+share/sigil/hunspell_dictionaries/en_US.aff
+share/sigil/hunspell_dictionaries/en_US.dic
+share/sigil/hunspell_dictionaries/es.aff
+share/sigil/hunspell_dictionaries/es.dic
+share/sigil/hunspell_dictionaries/fr.aff
+share/sigil/hunspell_dictionaries/fr.dic
+share/sigil/hunspell_dictionaries/hyph_de_DE.dic
+share/sigil/hunspell_dictionaries/hyph_en_GB.dic
+share/sigil/hunspell_dictionaries/hyph_en_US.dic
+share/sigil/hunspell_dictionaries/hyph_es.dic
+share/sigil/hunspell_dictionaries/hyph_fr.dic
+share/sigil/plugin_launchers/
+share/sigil/plugin_launchers/python/
+share/sigil/plugin_launchers/python/bookcontainer.py
+share/sigil/plugin_launchers/python/compatibility_utils.py
+share/sigil/plugin_launchers/python/epub_utils.py
+share/sigil/plugin_launchers/python/inputcontainer.py
+share/sigil/plugin_launchers/python/launcher.py
+share/sigil/plugin_launchers/python/opf_parser.py
+share/sigil/plugin_launchers/python/outputcontainer.py
+share/sigil/plugin_launchers/python/preferences.py
+share/sigil/plugin_launchers/python/quickparser.py
+share/sigil/plugin_launchers/python/unipath.py
+share/sigil/plugin_launchers/python/validationcontainer.py
+share/sigil/plugin_launchers/python/validationresult.py
+share/sigil/plugin_launchers/python/wrapper.py
+share/sigil/translations/
+share/sigil/translations/sigil_bg.qm
+share/sigil/translations/sigil_ca.qm
+share/sigil/translations/sigil_cmn.qm
+share/sigil/translations/sigil_cs.qm
+share/sigil/translations/sigil_da_DK.qm
+share/sigil/translations/sigil_de.qm
+share/sigil/translations/sigil_el_GR.qm
+share/sigil/translations/sigil_en.qm
+share/sigil/translations/sigil_es.qm
+share/sigil/translations/sigil_es_419.qm
+share/sigil/translations/sigil_fi.qm
+share/sigil/translations/sigil_fr.qm
+share/sigil/translations/sigil_gl.qm
+share/sigil/translations/sigil_he.qm
+share/sigil/translations/sigil_hu_HU.qm
+share/sigil/translations/sigil_id_ID.qm
+share/sigil/translations/sigil_is.qm
+share/sigil/translations/sigil_it.qm
+share/sigil/translations/sigil_ja.qm
+share/sigil/translations/sigil_kk.qm
+share/sigil/translations/sigil_km.qm
+share/sigil/translations/sigil_ko.qm
+share/sigil/translations/sigil_lv_LV.qm
+share/sigil/translations/sigil_nl.qm
+share/sigil/translations/sigil_pl.qm
+share/sigil/translations/sigil_pt.qm
+share/sigil/translations/sigil_pt_BR.qm
+share/sigil/translations/sigil_ro_RO.qm
+share/sigil/translations/sigil_ru.qm
+share/sigil/translations/sigil_sk.qm
+share/sigil/translations/sigil_sv.qm
+share/sigil/translations/sigil_tr_TR.qm
+share/sigil/translations/sigil_ug.qm
+share/sigil/translations/sigil_uk.qm
+share/sigil/translations/sigil_uk_UA.qm
+share/sigil/translations/sigil_vi.qm
+share/sigil/translations/sigil_vi_VN.qm
+share/sigil/translations/sigil_zh_CN.qm
+share/sigil/translations/sigil_zh_TW.qm
+@exec %D/bin/update-mime-database %D/share/mime
+@unexec-delete %D/bin/update-mime-database %D/share/mime
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
