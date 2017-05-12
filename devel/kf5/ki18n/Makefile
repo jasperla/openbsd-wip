@@ -12,7 +12,7 @@ MODULES =	lang/python
 BUILD_DEPENDS =	devel/gettext-tools
 
 LIB_DEPENDS =	devel/gettext \
-			x11/qt5/qtscript
+		x11/qt5/qtscript
 
 # for tests
 PORTHOME =	${WRKDIR}

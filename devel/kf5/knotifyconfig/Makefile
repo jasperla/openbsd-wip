@@ -33,6 +33,6 @@ CONFIGURE_ARGS =	-DCMAKE_DISABLE_FIND_PACKAGE_Qt5TextToSpeech=Yes
 # for building knotifytest application, not installed
 CONFIGURE_ARGS +=	-DBUILD_TESTING=Yes
 
-#TEST_NO = 	Yes
+TEST_NO = 	Yes
 
 .include <bsd.port.mk>
