@@ -3,7 +3,7 @@
 COMMENT =	create documentation from DocBook
 DISTNAME =	kdoctools-${VERSION}
 
-SHARED_LIBS +=  KF5DocTools               0.0 # 5.33
+SHARED_LIBS +=  KF5DocTools               0.0 # 5.34
 
 WANTLIB =	KF5Archive Qt5Core c exslt m xml2 xslt
 

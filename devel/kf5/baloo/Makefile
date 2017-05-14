@@ -62,8 +62,4 @@ CONFIGURE_ARGS +=	-DCMAKE_POLICY_DEFAULT_CMP0063=OLD
 PORTHOME =		${WRKDIR}
 TEST_IS_INTERACTIVE =	X11
 
-#post-extract:
-#	mkdir -p ${WRKSRC}/cmake
-#	cp ${FILESDIR}/FindInotify.cmake ${WRKSRC}/cmake
-
 .include <bsd.port.mk>

@@ -158,6 +158,7 @@ lib/qml/org/kde/plasma/calendar/DaysCalendar.qml
 lib/qml/org/kde/plasma/calendar/MonthMenu.qml
 lib/qml/org/kde/plasma/calendar/MonthView.qml
 lib/qml/org/kde/plasma/calendar/libcalendarplugin.so
+lib/qml/org/kde/plasma/calendar/plugins.qmltypes
 lib/qml/org/kde/plasma/calendar/qmldir
 lib/qml/org/kde/plasma/components/
 lib/qml/org/kde/plasma/components.3/
@@ -188,6 +189,7 @@ lib/qml/org/kde/plasma/components.3/TextArea.qml
 lib/qml/org/kde/plasma/components.3/TextField.qml
 lib/qml/org/kde/plasma/components.3/ToolBar.qml
 lib/qml/org/kde/plasma/components.3/ToolButton.qml
+lib/qml/org/kde/plasma/components.3/qmldir
 lib/qml/org/kde/plasma/components/BusyIndicator.qml
 lib/qml/org/kde/plasma/components/Button.qml
 lib/qml/org/kde/plasma/components/ButtonColumn.qml
@@ -222,6 +224,7 @@ lib/qml/org/kde/plasma/components/ToolBar.qml
 lib/qml/org/kde/plasma/components/ToolBarLayout.qml
 lib/qml/org/kde/plasma/components/ToolButton.qml
 lib/qml/org/kde/plasma/components/libplasmacomponentsplugin.so
+lib/qml/org/kde/plasma/components/plugins.qmltypes
 lib/qml/org/kde/plasma/components/private/
 lib/qml/org/kde/plasma/components/private/AppManager.js
 lib/qml/org/kde/plasma/components/private/Config.js
@@ -236,6 +239,7 @@ lib/qml/org/kde/plasma/components/private/TabGroup.js
 lib/qml/org/kde/plasma/components/qmldir
 lib/qml/org/kde/plasma/core/
 lib/qml/org/kde/plasma/core/libcorebindingsplugin.so
+lib/qml/org/kde/plasma/core/plugins.qmltypes
 lib/qml/org/kde/plasma/core/private/
 lib/qml/org/kde/plasma/core/private/DefaultToolTip.qml
 lib/qml/org/kde/plasma/core/qmldir
@@ -254,9 +258,11 @@ lib/qml/org/kde/plasma/extras/animations/DisappearAnimation.qml
 lib/qml/org/kde/plasma/extras/animations/PressedAnimation.qml
 lib/qml/org/kde/plasma/extras/animations/ReleasedAnimation.qml
 lib/qml/org/kde/plasma/extras/libplasmaextracomponentsplugin.so
+lib/qml/org/kde/plasma/extras/plugins.qmltypes
 lib/qml/org/kde/plasma/extras/qmldir
 lib/qml/org/kde/plasma/platformcomponents/
 lib/qml/org/kde/plasma/platformcomponents/libplatformcomponentsplugin.so
+lib/qml/org/kde/plasma/platformcomponents/plugins.qmltypes
 lib/qml/org/kde/plasma/platformcomponents/qmldir
 lib/qt5/plugins/kpackage/
 lib/qt5/plugins/kpackage/packagestructure/
@@ -362,6 +368,22 @@ share/locale/ug/LC_MESSAGES/libplasma5.mo
 share/locale/uk/LC_MESSAGES/libplasma5.mo
 share/locale/zh_CN/LC_MESSAGES/libplasma5.mo
 share/locale/zh_TW/LC_MESSAGES/libplasma5.mo
+share/metainfo/
+share/metainfo/org.kde.autumn.appdata.xml
+share/metainfo/org.kde.example.bugreport.appdata.xml
+share/metainfo/org.kde.example.compactrepresentation.appdata.xml
+share/metainfo/org.kde.example.conditionalloader.appdata.xml
+share/metainfo/org.kde.example.configuration.appdata.xml
+share/metainfo/org.kde.example.dataenginemodel.appdata.xml
+share/metainfo/org.kde.example.helloworld.appdata.xml
+share/metainfo/org.kde.example.notes.appdata.xml
+share/metainfo/org.kde.example.tasks.appdata.xml
+share/metainfo/org.kde.example.testcomponents.appdata.xml
+share/metainfo/org.kde.example.testcontainment.appdata.xml
+share/metainfo/org.kde.example.testshaders.appdata.xml
+share/metainfo/org.kde.example.testtheme.appdata.xml
+share/metainfo/org.kde.example.widgetgallery.appdata.xml
+share/metainfo/org.kde.example.windowthumbnails.appdata.xml
 share/plasma/
 share/plasma/desktoptheme/
 share/plasma/desktoptheme/air/

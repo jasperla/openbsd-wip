@@ -50,4 +50,3 @@ lib/qt5/plugins/kf5/kfilemetadata/kfilemetadata_popplerextractor.so
 lib/qt5/plugins/kf5/kfilemetadata/kfilemetadata_taglibextractor.so
 lib/qt5/plugins/kf5/kfilemetadata/writers/
 lib/qt5/plugins/kf5/kfilemetadata/writers/kfilemetadata_taglibwriter.so
-share/locale/et/LC_MESSAGES/kfilemetadata.mo
