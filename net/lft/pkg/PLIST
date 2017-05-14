@@ -1,0 +1,5 @@
+@comment $OpenBSD$
+@bin bin/lft
+@bin bin/whob
+@man man/man8/lft.8
+@man man/man8/whob.8
