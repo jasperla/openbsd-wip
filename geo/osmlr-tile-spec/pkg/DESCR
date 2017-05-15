@@ -1,0 +1,7 @@
+OSMLR is a specification for identifying parts of a road network based
+on OpenLR. The aim is to identify road network parts useful for traffic
+segmentation without requiring a particular version of any data source.
+
+The specification is written in Google Protocol Buffers syntax, and there
+are many comments within the files to describe the function and intent of
+the various parts.

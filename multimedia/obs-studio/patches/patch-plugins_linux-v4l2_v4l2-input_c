@@ -1,0 +1,12 @@
+$OpenBSD$
+--- plugins/linux-v4l2/v4l2-input.c.orig	Mon Jan  9 17:51:07 2017
++++ plugins/linux-v4l2/v4l2-input.c	Mon Jan  9 17:51:19 2017
+@@ -26,7 +26,7 @@ along with this program.  If not, see <http://www.gnu.
+ #include <sys/ioctl.h>
+ #include <sys/select.h>
+ 
+-#include <linux/videodev2.h>
++#include <libv4l1-videodev2.h>
+ #include <libv4l2.h>
+ 
+ #include <util/threading.h>

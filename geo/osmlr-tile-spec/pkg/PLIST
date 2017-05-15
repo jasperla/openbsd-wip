@@ -1,0 +1,4 @@
+@comment $OpenBSD$
+share/osmlr-tile-spec/
+share/osmlr-tile-spec/segment.proto
+share/osmlr-tile-spec/tile.proto

@@ -1,0 +1,37 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2015/07/08 22:54:49 zhuk Exp $
+@pkgpath graphics/digikam-kde4,-face
+include/KF5/
+include/KF5/KFace/
+include/KF5/KFace/KFace/
+include/KF5/KFace/KFace/DataProviders
+include/KF5/KFace/KFace/FaceDetector
+include/KF5/KFace/KFace/Identity
+include/KF5/KFace/KFace/RecognitionDatabase
+include/KF5/KFace/kface/
+include/KF5/KFace/kface/dataproviders.h
+include/KF5/KFace/kface/facedetector.h
+include/KF5/KFace/kface/identity.h
+include/KF5/KFace/kface/libkface_export.h
+include/KF5/KFace/kface/recognitiondatabase.h
+include/KF5/libkface_version.h
+lib/cmake/KF5KFace/
+lib/cmake/KF5KFace/KF5KFaceConfig.cmake
+lib/cmake/KF5KFace/KF5KFaceConfigVersion.cmake
+lib/cmake/KF5KFace/KF5KFaceTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/KF5KFace/KF5KFaceTargets.cmake
+@lib lib/libKF5KFace.so.${LIBKF5KFace_VERSION}
+share/libkface/
+share/libkface/alignment-congealing/
+share/libkface/alignment-congealing/face-funnel.data
+share/libkface/database/
+share/libkface/database/dbfaceconfig.xml
+share/libkface/haarcascades/
+share/libkface/haarcascades/haarcascade_frontalface_alt.xml
+share/libkface/haarcascades/haarcascade_frontalface_alt2.xml
+share/libkface/haarcascades/haarcascade_frontalface_alt_tree.xml
+share/libkface/haarcascades/haarcascade_frontalface_default.xml
+share/libkface/haarcascades/haarcascade_mcs_lefteye.xml
+share/libkface/haarcascades/haarcascade_mcs_mouth.xml
+share/libkface/haarcascades/haarcascade_mcs_nose.xml
+share/libkface/haarcascades/haarcascade_mcs_righteye.xml
+share/libkface/haarcascades/haarcascade_profileface.xml

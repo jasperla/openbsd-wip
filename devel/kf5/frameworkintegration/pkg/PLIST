@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2016/05/26 23:58:57 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.2 2016/12/25 14:54:48 zhuk Exp $
 include/KF5/KStyle/
 include/KF5/KStyle/KStyle
 include/KF5/KStyle/kstyle.h
@@ -11,6 +11,8 @@ lib/cmake/KF5FrameworkIntegration/KF5FrameworkIntegrationTargets${MODCMAKE_BUILD
 lib/cmake/KF5FrameworkIntegration/KF5FrameworkIntegrationTargets.cmake
 @lib lib/libKF5Style.so.${LIBKF5Style_VERSION}
 lib/qt5/plugins/kf5/FrameworkIntegrationPlugin.so
+libexec/kf5/kpackagehandlers/
+@bin libexec/kf5/kpackagehandlers/knshandler
 share/kf5/infopage/
 share/kf5/infopage/bar-bottom-left.png
 share/kf5/infopage/bar-bottom-middle.png

@@ -1,4 +1,0 @@
-@comment $OpenBSD$
-@bin bin/xroar
-@info info/xroar.info
-@man man/man1/xroar.1

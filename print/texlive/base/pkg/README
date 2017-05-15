@@ -58,6 +58,22 @@ installation by searching for the files using kpsewhich(1). Eg:
 % kpsewhich acronym.sty
 /home/edd/texmf/tex/latex/acronym/acronym.sty
 
+LuaLaTeX Bugs
+=============
+
+Unfortunately, this version of TeX Live shipped with a slightly buggy version
+of LuaLaTeX which can lead to some confusing error messages when compiling
+documents.
+
+You can work around this by putting:
+
+    \RequirePackage{luatex85}
+
+as the first line in your source file.
+
+For more information, see:
+http://tex.stackexchange.com/questions/315198/datetime-package-does-not-work-with-lualatex-in-tl-2016
+
 Other Misc. Notes
 =================
 

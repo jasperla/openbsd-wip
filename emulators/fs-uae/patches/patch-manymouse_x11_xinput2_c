@@ -1,0 +1,11 @@
+$OpenBSD$
+--- manymouse/x11_xinput2.c.orig	Wed Mar 29 09:38:45 2017
++++ manymouse/x11_xinput2.c	Wed Mar 29 09:39:03 2017
+@@ -26,6 +26,7 @@
+ #include <string.h>
+ #include <dlfcn.h>
+ #include <X11/extensions/XInput2.h>
++#include <sys/time.h>
+ 
+ /* 32 is good enough for now. */
+ #define MAX_MICE 32

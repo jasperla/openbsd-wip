@@ -1,4 +1,6 @@
-* Tests fail.
-* Some completions may be wrong.  BSD- (jot, etc.) and OpenBSD-specific
-  completions (rcctl, pkg_add) should be added.  Linux-specific stuff should be
+* come completions for fish_TAB cause fish to crash
+* Tests never finish
+* Some completions may be wrong.  BSD- (jot, etc.) Linux-specific stuff should be
   removed.
+  - Added vmctl, pkg_add, pkg_delete
+* Figure out why errno test fails and remove the patch.

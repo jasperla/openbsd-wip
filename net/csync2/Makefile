@@ -8,7 +8,7 @@ CATEGORIES =	net
 
 HOMEPAGE =	http://oss.linbit.com/csync2/
 
-MAINTAINER =	Rafael Sadowski <rafael@sizeofvoid.org>
+MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 
 WANTLIB += c gnutls pthread rsync
 

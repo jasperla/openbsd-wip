@@ -16,7 +16,9 @@ WANTLIB += Qt5DBus Qt5Gui Qt5Network Qt5PrintSupport Qt5Svg Qt5Widgets
 WANTLIB += Qt5X11Extras Qt5Xml X11 c m pthread
 
 BUILD_DEPENDS =		devel/kf5/kdoctools \
-			devel/kf5/kinit
+			devel/kf5/kinit \
+			devel/gettext-tools
+
 RUN_DEPENDS =		devel/kf5/kdoctools \
 			devel/kf5/kinit
 

@@ -1,0 +1,18 @@
+$OpenBSD$
+
+gzclose_(w|r) variants aren't available in the version of zlib on OpenBSD;
+however they only seem useful to reduce binary size when static-linking
+if you only use compression (for gzclose_w) or decompression (for gzclose_r)
+so it's sane to just use gzclose instead.
+
+--- libobs/util/profiler.c.orig	Mon Jan  9 17:14:03 2017
++++ libobs/util/profiler.c	Mon Jan  9 17:15:29 2017
+@@ -1063,7 +1063,7 @@ bool profiler_snapshot_dump_csv_gz(const profiler_snap
+ 
+ 	profiler_snapshot_dump(snap, dump_csv_gzwrite, gz);
+ 
+-	gzclose_w(gz);
++	gzclose(gz);
+ 	return true;
+ }
+ 

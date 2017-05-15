@@ -1,0 +1,20 @@
+@comment $OpenBSD$
+go-pkg/
+go-pkg/pkg/
+${MODGO_PACKAGES}/
+${MODGO_PACKAGES}/github.com/
+${MODGO_PACKAGES}/github.com/btcsuite/
+${MODGO_PACKAGES}/github.com/btcsuite/btclog.a
+${MODGO_SOURCES}/
+${MODGO_SOURCES}/github.com/
+${MODGO_SOURCES}/github.com/btcsuite/
+${MODGO_SOURCES}/github.com/btcsuite/btclog/
+${MODGO_SOURCES}/github.com/btcsuite/btclog/.gitignore
+${MODGO_SOURCES}/github.com/btcsuite/btclog/.travis.yml
+${MODGO_SOURCES}/github.com/btcsuite/btclog/LICENSE
+${MODGO_SOURCES}/github.com/btcsuite/btclog/README.md
+${MODGO_SOURCES}/github.com/btcsuite/btclog/doc.go
+${MODGO_SOURCES}/github.com/btcsuite/btclog/goclean.sh
+${MODGO_SOURCES}/github.com/btcsuite/btclog/interface.go
+${MODGO_SOURCES}/github.com/btcsuite/btclog/subsystem.go
+${MODGO_SOURCES}/github.com/btcsuite/btclog/util.go

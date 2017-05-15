@@ -1,16 +1,14 @@
-# $OpenBSD: Makefile,v 1.65 2014/01/02 11:35:18 jasper Exp $
-
+# $OpenBSD: Makefile,v 1.73 2017/01/24 23:47:00 phessler Exp $
 
 COMMENT=	jabber client written in pygtk
-DISTNAME=	gajim-0.16.1
-EXTRACT_SUFX =	.tar.bz2
+DISTNAME=	gajim-0.16.7
 CATEGORIES=	net x11
 
-MASTER_SITES=	${HOMEPAGE}/downloads/0.16/
-
-HOMEPAGE=	http://www.gajim.org/
+HOMEPAGE=	https://www.gajim.org/
 
 MAINTAINER=	Pierre-Emmanuel Andre <pea@openbsd.org>
+
+MASTER_SITES=	${HOMEPAGE}/downloads/0.16/
 
 # GPLv3 only
 PERMIT_PACKAGE_CDROM=	Yes
@@ -18,7 +16,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	${CONFIGURE_SHARED}
 
 USE_GMAKE=	Yes
 LIBTOOL_FLAGS=	--tag=disable-static
@@ -26,16 +23,19 @@ LIBTOOL_FLAGS=	--tag=disable-static
 MODULES=	lang/python \
 		textproc/intltool
 
-COMMON_DEPENDS= databases/py-sqlite2 \
+PATCHORIG=	.orig.port
+
+COMMON_DEPENDS=	databases/py-sqlite2 \
+		devel/py-notify \
+		net/avahi,-python,no_mono \
 		net/py-dns \
-		x11/dbus-python \
-		x11/py-gtk2  \
-		security/py-openssl \
-		security/py-crypto \
-		net/avahi,-python,no_mono,no_qt3,no_qt4 \
 		net/py-nbxmpp \
+		security/py-crypto \
+		security/py-openssl \
+		security/py-gnupg \
 		textproc/gtkspell \
-		devel/py-notify
+		x11/dbus-python \
+		x11/py-gtk2
 
 BUILD_DEPENDS=	${COMMON_DEPENDS}
 

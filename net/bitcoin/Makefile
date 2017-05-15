@@ -2,9 +2,11 @@
 
 COMMENT =		P2P payment system
 
-V =			0.9.1
-DISTNAME =		bitcoin-bitcoin-v${V}
-PKGNAME =		bitcoin-${V}
+GH_ACCOUNT =		bitcoin
+GH_PROJECT =		bitcoin
+GH_TAGNAME =		v0.13.2
+
+SHARED_LIBS +=  bitcoinconsensus          0.0 # 0.0
 
 CATEGORIES =		net
 
@@ -15,19 +17,26 @@ MAINTAINER =		Pascal Stumpf <Pascal.Stumpf@cubes.de>
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB = boost_chrono-mt boost_filesystem boost_program_options-mt
-WANTLIB += boost_system boost_thread-mt c crypto db_cxx m pthread
-WANTLIB += ssl stdc++
-
-MASTER_SITES =		https://github.com/bitcoin/bitcoin/tarball/v${V}/
+WANTLIB += ICE SM X11 Xext Xi Xinerama Xrender boost_chrono-mt
+WANTLIB += boost_filesystem boost_program_options-mt boost_system
+WANTLIB += boost_system-mt boost_thread-mt c crypto db_cxx event_core
+WANTLIB += event_extra event_pthreads expat ffi fontconfig freetype
+WANTLIB += glib-2.0 gobject-2.0 gthread-2.0 iconv intl m pcre
+WANTLIB += png pthread pthread-stubs ssl xcb
 
 BUILD_DEPENDS =		${MODGNU_AUTOMAKE_DEPENDS} \
 			${MODGNU_AUTOCONF_DEPENDS}
 
 LIB_DEPENDS =		devel/boost>=1.53 \
+			devel/libevent2 \
 			databases/db/v4
 
 USE_GMAKE =		Yes
+
+MODULES =		lang/clang
+
+MODCLANG_ARCHS=	*
+MODCLANG_LANGS=	c++
 
 CONFIGURE_STYLE =	gnu
 AUTOCONF_VERSION =	2.69
@@ -53,20 +62,19 @@ WANTLIB += z
 
 RUN_DEPENDS +=		devel/desktop-file-utils
 
-MODULES =		x11/qt4
+MODULES +=		x11/qt4
 
 LIB_DEPENDS +=		devel/protobuf \
 			graphics/libqrencode \
 			net/miniupnp/miniupnpc
 
-CONFIGURE_ARGS +=	--with-gui
-CONFIGURE_ENV +=	LDFLAGS="-L${LOCALBASE}/lib/db4 -L${X11BASE}/lib -L${LOCALBASE}/lib" 
+CONFIGURE_ARGS +=	--with-gui=qt4
+
+CONFIGURE_ENV +=	LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib"
 .endif
 
 # see TODO
 NO_TEST =		Yes
-
-WRKDIST =		${WRKDIR}/bitcoin-bitcoin-66a2ae9
 
 BTCCONTRIBDIR =		${WRKDIST}/contrib/debian
 
@@ -95,7 +103,7 @@ post-install:
 	${INSTALL_DATA} ${WRKDIST}/share/pixmaps/bitcoin128.png \
 	    	${PREFIX}/share/pixmaps/bitcoin128.png
 	${INSTALL_DATA} ${WRKDIST}/share/pixmaps/bitcoin128.xpm \
-	    	${PREFIX}/share/pixmaps/bitcoin128.xpm
+		${PREFIX}/share/pixmaps/bitcoin128.xpm
 .endif
 
 

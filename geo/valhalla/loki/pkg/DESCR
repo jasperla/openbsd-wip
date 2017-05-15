@@ -1,7 +1,0 @@
-Valhalla is an open source routing engine and accompanying libraries for use
-with Open Street Map data. This library, Loki, can be used to associate
-location in formation to an underlying graph tile object for use in creating
-input to the routing engine. In keeping with the Norse mythological theme,
-the name Loki was chosen as a play on the word locate. Since the library
-deals mostly with correlating some input (minimally a lat,lon) to an object
-within a graph tile, this seemed like a fitting name!

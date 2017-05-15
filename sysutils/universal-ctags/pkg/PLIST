@@ -1,4 +1,0 @@
-@comment $OpenBSD$
-@bin bin/readtags
-@bin bin/uctags
-@man man/man1/uctags.1

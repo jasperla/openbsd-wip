@@ -1,0 +1,12 @@
+SQLCipher is an open source library that provides transparent, secure 256-bit
+AES encryption of SQLite database files.
+
+SQLCipher was developed by Zetetic LLC and initially released in November, 2008
+for iOS.  In 2011 the Guardian Project and Zetetic jointly released SQLCipher
+for Android.  Along the way, SQLCipher has also been used on other platforms as
+well, including Windows C/C++, .NET, Ruby, Java, PHP, Python, QT, Mac OS X,
+Linux, etc.
+
+SQLCipher's Community Edition source code is released under a BSD-style Open
+Source license, with Commercial Edition binary libraries available for Windows,
+.NET, Mac OS X, iOS, MonoTouch and Mono for Android.

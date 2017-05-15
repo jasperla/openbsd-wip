@@ -1,9 +1,10 @@
-odin needs protobuf 2.6.1 and xxd
+Needs protobuf newer than what's in base (2.4.1)
 
-odin also needs localedef to generate files/locales.h:
+Needs localedef to generate files/locales.h:
 http://pubs.opengroup.org/onlinepubs/9699919799/utilities/localedef.html
 
-meili needs rapidjson
+Needs rapidjson
 
-baldr and odin need xxd (from editors/vim) to build; seems like a weird dependency
+Needs xxd (from editors/vim) to build; seems like an excessive dependency
 
+Needs geo/osmlr-tile-spec which has not seen a formal release yet

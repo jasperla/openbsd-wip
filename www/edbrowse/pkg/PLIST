@@ -1,9 +1,0 @@
-@comment $OpenBSD$
-@bin bin/edbrowse
-@man man/man1/edbrowse.1
-share/doc/edbrowse/
-share/doc/edbrowse/usersguide.html
-share/doc/edbrowse/usersguide_fr.html
-share/examples/edbrowse/
-share/examples/edbrowse/sample.ebrc
-share/examples/edbrowse/sample_fr.ebrc

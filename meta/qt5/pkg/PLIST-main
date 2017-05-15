@@ -1,2 +1,0 @@
-@comment $OpenBSD: PLIST-main,v 1.10 2016/03/06 11:56:42 zhuk Exp $
-@pkgpath x11/qt5,-main

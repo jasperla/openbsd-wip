@@ -2,7 +2,7 @@
 
 COMMENT =		high-performance, easy-to-use data analysis for Python
 
-MODPY_EGG_VERSION =	0.19.1
+MODPY_EGG_VERSION =	0.19.2
 DISTNAME =		pandas-${MODPY_EGG_VERSION}
 PKGNAME =		py-pandas-${MODPY_EGG_VERSION}
 
@@ -17,14 +17,16 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB +=		m pthread ${MODPY_WANTLIB} stdc++
 
+MODULES =		lang/python
+
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 
-MODULES =		lang/python
-
 # These are optional runtime dependencies that should be around for
 # building the docs and running the tests.
-OPTIONAL_DEPENDS =	devel/py-html5lib${MODPY_FLAVOR} \
+OPTIONAL_DEPENDS =	devel/ipython${MODPY_FLAVOR} \
+			devel/py-html5lib${MODPY_FLAVOR} \
+			devel/py-xlsxwriter${MODPY_FLAVOR} \
 			graphics/py-matplotlib${MODPY_FLAVOR} \
 			math/py-bottleneck${MODPY_FLAVOR} \
 			math/py-numexpr${MODPY_FLAVOR} \
@@ -47,10 +49,6 @@ TEST_DEPENDS =		${RUN_DEPENDS} \
 
 FLAVORS =		python3
 FLAVOR ?=
-
-.if !${FLAVOR:Mpython3}
-TEST_DEPENDS +=		devel/ipython
-.endif
 
 pre-test:
 	@${MODPY_CMD} build_ext --inplace

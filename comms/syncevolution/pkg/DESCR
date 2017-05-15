@@ -1,7 +1,0 @@
-SyncEvolution synchronizes personal information management (PIM) 
-data such as contacts, appointments, tasks and memos using the 
-Synthesis sync engine, which provides support for the SyncML 
-synchronization protocol. SyncEvolution synchronizes with 
-SyncML servers over HTTP and with SyncML capable phones locally 
-over Bluetooth (new in 1.0). Plugins provide access to the data 
-which is to be synchronized.

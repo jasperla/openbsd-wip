@@ -2,20 +2,20 @@
 
 COMMENT =	Qt4 client for the X2Go system
 
-DISTNAME =	x2goclient-4.0.5.2
+DISTNAME =	x2goclient-4.1.0.0
 
 CATEGORIES =	x11
 
 HOMEPAGE =	http://www.x2go.org
 
-MAINTAINER =	Rafael Sadowski <rafael@sizeofvoid.org>
+MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += ICE QtGui QtNetwork QtSvg SM X11 Xext Xi Xinerama Xpm
 WANTLIB += Xrender c cups fontconfig freetype ldap m pthread ssh
-WANTLIB += stdc++
+WANTLIB += ${LIBCXX}
 
 MASTER_SITES =	http://code.x2go.org/releases/source/x2goclient/
 
@@ -25,10 +25,9 @@ LIB_DEPENDS +=	security/libssh \
 		databases/openldap \
 		print/cups,-libs
 
-BUILD_DEPENDS +=x11/nx/nxcomp \
-		x11/nx/nxproxy
-
-RUN_DEPENDS +=	shells/bash
+RUN_DEPENDS +=	x11/nx/nxcomp \
+		x11/nx/nxproxy \
+		shells/bash
 
 DOCSDIR =	${PREFIX}/share/doc/x2goclient
 EXAMPLESDIR =	${PREFIX}/share/examples/x2goclient
@@ -42,6 +41,8 @@ do-configure:
 	find ${WRKSRC} -type f -iname "*.h" -exec \
 		perl -pi -e 's,Q_OS_LINUX,Q_OS_UNIX,g;' \
 		-e 's,#include <linux/fs.h>,,g;' {} \;
+	sed -i -e 's,nxproxy -S nx,${LOCALBASE}/NX/bin/nxproxy -S nx,' \
+		${WRKSRC}/src/onmainwindow.cpp
 	cd ${WRKSRC} && ${LRELEASE} x2goclient.pro \
 		&& ${MODQT4_QMAKE} x2goclient.pro
 

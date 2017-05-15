@@ -1,7 +1,8 @@
 $OpenBSD$
---- po/CMakeLists.txt.orig	Thu Feb 11 09:31:57 2016
-+++ po/CMakeLists.txt	Thu Feb 11 09:35:00 2016
-@@ -1,29 +1,12 @@
+Index: po/CMakeLists.txt
+--- po/CMakeLists.txt.orig
++++ po/CMakeLists.txt
+@@ -1,29 +1,11 @@
 -# cmake 2.8.7 has a macro GETTEXT_PROCESS_PO_FILES
 -# We don't use it because it may be too new.
 -function(compile_po code _infile)
@@ -16,13 +17,12 @@ $OpenBSD$
 -        DESTINATION ${LOCALE_INSTALL_DIR}/${code}/LC_MESSAGES/
 -        RENAME "csound6.mo"
 -        )
--    add_custom_target(${code}.mo ALL DEPENDS ${_mofile})
--    add_dependencies(translations ${code}.mo)
+-    add_custom_target(pofile_${code} ALL DEPENDS ${_mofile})
+-    add_dependencies(translations pofile_${code})
 -endfunction(compile_po)
 -
-+# cmake >= 2.8.7 has a macro GETTEXT_PROCESS_PO_FILES
  if(USE_GETTEXT)
-     ADD_CUSTOM_TARGET(translations ALL echo "Building translations")
+     ADD_CUSTOM_TARGET(translations ALL)
 -    compile_po(en_US american.po)
 -    compile_po(es_CO es_CO.po)
 -    compile_po(fr french.po)
@@ -38,4 +38,4 @@ $OpenBSD$
 +    GETTEXT_PROCESS_PO_FILES(ro ${LOCALE_INSTALL_DIR}/ro/LC_MESSAGES/ romanian.po)
 +    GETTEXT_PROCESS_PO_FILES(ru ${LOCALE_INSTALL_DIR}/ru/LC_MESSAGES/ russian.po)
  endif()
- 
+

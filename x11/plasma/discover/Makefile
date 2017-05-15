@@ -20,12 +20,13 @@ BUILD_DEPENDS =		devel/kf5/karchive \
 			devel/kf5/ktextwidgets \
 			devel/kf5/kwallet \
 			devel/kf5/plasma-framework \
-			x11/polkit-qt4,qt5
+			x11/polkit-qt
+
 RUN_DEPENDS =		devel/kf5/karchive \
 			devel/kf5/ktextwidgets \
 			devel/kf5/kwallet \
 			devel/kf5/plasma-framework \
-			x11/polkit-qt4,qt5
+			x11/polkit-qt
 
 LIB_DEPENDS =		devel/kf5/attica \
 			devel/kf5/kconfig \
@@ -41,6 +42,7 @@ LIB_DEPENDS =		devel/kf5/attica \
 			devel/kf5/kitemviews \
 			devel/kf5/kwidgetsaddons \
 			devel/kf5/solid
+			# TODO devel/kirigami
 
 CONFIGURE_ARGS =	-DCMAKE_DISABLE_FIND_PACKAGE_QApt=Yes \
 			-DCMAKE_DISABLE_FIND_PACKAGE_AkabeiClient=Yes \

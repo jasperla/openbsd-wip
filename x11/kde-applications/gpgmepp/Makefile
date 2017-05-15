@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2016/09/09 09:47:42 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.3 2016/12/25 14:34:40 zhuk Exp $
 
 COMMENT =	C++ bindings/wrapper for gpgme
 DISTNAME =	gpgmepp-${VERSION}
 CATEGORIES =	security
+
+VERSION =	16.08.3
 
 SHARED_LIBS =	KF5QGpgme		0.0 # 4.80
 SHARED_LIBS +=	KF5Gpgmepp-pthread	0.0 # 4.80
@@ -15,5 +17,7 @@ KDE5 =		Yes
 BUILD_DEPENDS =	devel/boost
 LIB_DEPENDS =	security/gpgme
 RUN_DEPENDS =	devel/boost
+
+NO_TEST =	Yes
 
 .include <bsd.port.mk>

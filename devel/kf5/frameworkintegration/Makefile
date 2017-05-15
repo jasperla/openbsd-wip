@@ -1,29 +1,32 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/05/26 23:58:57 zhuk Exp $
+# $OpenBSD: Makefile,v 1.3 2016/12/28 18:49:16 zhuk Exp $
 
 COMMENT =	KDE Plasma integration support for Qt-based apps
 DISTNAME =	frameworkintegration-${VERSION}
+REVISION =	0
 
-SHARED_LIBS =	KF5Style		1.0
+SHARED_LIBS =	KF5Style		2.0
 
-WANTLIB =  KF5Auth KF5Bookmarks KF5Codecs KF5Completion KF5ConfigCore
-WANTLIB += KF5ConfigGui KF5ConfigWidgets KF5CoreAddons KF5I18n
-WANTLIB += KF5IconThemes KF5ItemViews KF5JobWidgets KF5KIOCore
-WANTLIB += KF5KIOFileWidgets KF5KIOWidgets KF5Notifications KF5Service
-WANTLIB += KF5Solid KF5WidgetsAddons KF5XmlGui Qt5Core Qt5DBus
-WANTLIB += Qt5Gui Qt5Network Qt5Widgets Qt5X11Extras Qt5Xml Xcursor
+WANTLIB += KF5Attica KF5Auth KF5Codecs KF5ConfigCore KF5ConfigGui
+WANTLIB += KF5ConfigWidgets KF5CoreAddons KF5I18n KF5IconThemes
+WANTLIB += KF5NewStuffCore KF5Notifications KF5WidgetsAddons Qt5Core
+WANTLIB += Qt5Gui Qt5Network Qt5Widgets Qt5X11Extras Qt5Xml c
 WANTLIB += m xcb
 
-BUILD_DEPENDS =	devel/gettext-tools
+BUILD_DEPENDS =	devel/gettext-tools \
+		devel/kf5/ki18n \
+		devel/kf5/kpackage
 
-RUN_DEPENDS =	fonts/noto/fonts
+RUN_DEPENDS =	fonts/noto/fonts \
+		devel/kf5/ki18n \
+		devel/kf5/kpackage
 
 LIB_DEPENDS =	devel/kf5/kconfig \
 		devel/kf5/kconfigwidgets \
-		devel/kf5/ki18n \
 		devel/kf5/kiconthemes \
-		devel/kf5/kio \
 		devel/kf5/knotifications \
-		devel/kf5/kwidgetsaddons
+		devel/kf5/kwidgetsaddons \
+		devel/kf5/knewstuff \
+		x11/qt5/qtx11extras
 
 CONFIGURE_ARGS =	-DCMAKE_DISABLE_FIND_PACKAGE_AppStreamQt=Yes \
 			-DCMAKE_DISABLE_FIND_PACKAGE_packagekitqt5=Yes

@@ -1,0 +1,5 @@
+@comment $OpenBSD$
+${P5SITE}/HTTP/
+${P5SITE}/HTTP/Response/
+${P5SITE}/HTTP/Response/Stringable.pm
+@man man/man3p/HTTP::Response::Stringable.3p

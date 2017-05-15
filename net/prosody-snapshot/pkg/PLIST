@@ -44,6 +44,11 @@ lib/prosody/modules/mod_http_files.lua
 lib/prosody/modules/mod_iq.lua
 lib/prosody/modules/mod_lastactivity.lua
 lib/prosody/modules/mod_legacyauth.lua
+@comment lib/prosody/modules/mod_mam/
+@comment lib/prosody/modules/mod_mam/fallback_archive.lib.lua
+@comment lib/prosody/modules/mod_mam/mamprefs.lib.lua
+@comment lib/prosody/modules/mod_mam/mamprefsxml.lib.lua
+@comment lib/prosody/modules/mod_mam/mod_mam.lua
 lib/prosody/modules/mod_message.lua
 lib/prosody/modules/mod_motd.lua
 lib/prosody/modules/mod_net_multiplex.lua
@@ -119,6 +124,7 @@ lib/prosody/util/helpers.lua
 lib/prosody/util/hex.lua
 lib/prosody/util/hmac.lua
 lib/prosody/util/http.lua
+lib/prosody/util/id.lua
 lib/prosody/util/import.lua
 lib/prosody/util/interpolation.lua
 lib/prosody/util/ip.lua
@@ -140,6 +146,7 @@ lib/prosody/util/queue.lua
 lib/prosody/util/random.lua
 lib/prosody/util/rfc6724.lua
 lib/prosody/util/ringbuffer.so
+lib/prosody/util/rsm.lua
 lib/prosody/util/sasl/
 lib/prosody/util/sasl.lua
 lib/prosody/util/sasl/anonymous.lua
@@ -180,6 +187,8 @@ share/examples/prosody/certs/
 @sample ${SYSCONFDIR}/prosody/certs/
 share/examples/prosody/certs/Makefile
 @sample ${SYSCONFDIR}/prosody/certs/Makefile
+share/examples/prosody/certs/example.com.crt
+share/examples/prosody/certs/example.com.key
 share/examples/prosody/certs/localhost.cnf
 share/examples/prosody/certs/localhost.crt
 @sample ${SYSCONFDIR}/prosody/certs/localhost.crt

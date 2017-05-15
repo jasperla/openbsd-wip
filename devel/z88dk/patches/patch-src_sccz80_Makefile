@@ -1,0 +1,12 @@
+$OpenBSD$
+--- src/sccz80/Makefile.orig	Sun Apr 30 15:31:32 2017
++++ src/sccz80/Makefile	Sun Apr 30 15:31:38 2017
+@@ -29,7 +29,7 @@ OBJS =	callfunc.o     	\
+ 
+ all: sccz80$(EXESUFFIX)
+ 
+-CFLAGS +=  -Wall -g
++CFLAGS +=  -Wall
+ 
+ sccz80$(EXESUFFIX): $(OBJS)
+ 	$(CC) $(LDFLAGS) -o sccz80$(EXESUFFIX) $(OBJS) -lm

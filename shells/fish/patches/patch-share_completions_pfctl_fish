@@ -1,0 +1,8 @@
+$OpenBSD$
+--- share/completions/pfctl.fish.orig	Wed Apr 26 09:49:07 2017
++++ share/completions/pfctl.fish	Wed Apr 26 10:41:53 2017
+@@ -0,0 +1,4 @@
++
++complete -c pfctl -s s --description 'Show a filter parameter by modifyer' -xa 'queue rules Anchors states Sources info labesl timeouts memory Tables ospf Interfaces all'
++complete -c pfctl -s F --description 'Flush the filter params specified by mod' -xa 'rules states Sources info Tables ospf all'
++complete -c pfctl -s T --description 'Table command' -xa 'kill flush add delete expire replace show test zero'

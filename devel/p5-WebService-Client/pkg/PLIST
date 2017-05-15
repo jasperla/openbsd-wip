@@ -1,0 +1,4 @@
+@comment $OpenBSD$
+${P5SITE}/WebService/
+${P5SITE}/WebService/Client.pm
+@man man/man3p/WebService::Client.3p

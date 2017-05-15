@@ -1,0 +1,3 @@
+- use autoconf to fixup lack of <inttypes.h> rather than patching directly
+- patch use of unsafe string methods that are causing warnings
+- should pledge this since it is setuid

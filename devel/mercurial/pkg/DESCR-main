@@ -1,0 +1,13 @@
+Mercurial is a distributed version control system which features:
+
+- High-performance delta-compressed storage scheme.
+- Optimized for disk layout and access efficiency.
+- Complete cross-indexing of files and changesets.
+- Bandwidth and CPU efficient HTTP and SSH sync protocols.
+- Distributed development model supports unlimited numbers of
+  developers.
+- Allows arbitrary merging between developer branches.
+- No waiting for locks.
+- Integrity checking on repository data.
+- Append-only storage model with transaction journalling.
+- Fast full-repository verification.

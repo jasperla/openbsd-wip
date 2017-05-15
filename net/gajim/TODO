@@ -1,2 +1,0 @@
- * Make fetch work.
-   HTTP redirects to a self-signed(?) SSL site, which ftp rejects.

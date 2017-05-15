@@ -5,7 +5,6 @@
 share/applications/
 share/applications/toxic.desktop
 share/toxic/
-share/toxic/DHTnodes
 share/toxic/nameservers
 share/toxic/sounds/
 share/toxic/sounds/ToxicContactOffline.wav

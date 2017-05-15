@@ -2,6 +2,8 @@
 @bin bin/opencv_annotation
 @bin bin/opencv_createsamples
 @bin bin/opencv_traincascade
+@bin bin/opencv_version
+@bin bin/opencv_visualisation
 include/opencv/
 include/opencv/cv.h
 include/opencv/cv.hpp
@@ -85,6 +87,7 @@ include/opencv2/core/ocl_genbase.hpp
 include/opencv2/core/opengl.hpp
 include/opencv2/core/operations.hpp
 include/opencv2/core/optim.hpp
+include/opencv2/core/ovx.hpp
 include/opencv2/core/persistence.hpp
 include/opencv2/core/private.cuda.hpp
 include/opencv2/core/private.hpp
@@ -153,6 +156,9 @@ include/opencv2/imgproc/
 include/opencv2/imgproc.hpp
 include/opencv2/imgproc/detail/
 include/opencv2/imgproc/detail/distortion_model.hpp
+include/opencv2/imgproc/hal/
+include/opencv2/imgproc/hal/hal.hpp
+include/opencv2/imgproc/hal/interface.h
 include/opencv2/imgproc/imgproc.hpp
 include/opencv2/imgproc/imgproc_c.h
 include/opencv2/imgproc/types_c.h
@@ -237,7 +243,6 @@ include/opencv2/videostab/wobble_suppression.hpp
 @lib lib/libopencv_shape.so.${LIBopencv_shape_VERSION}
 @lib lib/libopencv_stitching.so.${LIBopencv_stitching_VERSION}
 @lib lib/libopencv_superres.so.${LIBopencv_superres_VERSION}
-lib/libopencv_ts.a
 @lib lib/libopencv_video.so.${LIBopencv_video_VERSION}
 @lib lib/libopencv_videoio.so.${LIBopencv_videoio_VERSION}
 @lib lib/libopencv_videostab.so.${LIBopencv_videostab_VERSION}

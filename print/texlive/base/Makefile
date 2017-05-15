@@ -5,17 +5,13 @@ COMMENT =		base binaries for TeXLive typesetting distribution
 # This year they used a different datestamp on the -source tarball.
 DISTNAME =		texlive-${DIST_V}b-source
 PKGNAME =		texlive_base-${V}
-<<<<<<< Makefile
 WRKDIST =		${WRKDIR}/texlive-${DIST_V}-source
-=======
-REVISION =		0
->>>>>>> 1.85
 
 DISTFILES =		${DISTNAME}${EXTRACT_SUFX} \
 			texlive-${DIST_V}-extra${EXTRACT_SUFX}
 
-SHARED_LIBS =		kpathsea	8.0 # 8.2
-SHARED_LIBS +=		ptexenc		5.0 # 4.4
+SHARED_LIBS =		kpathsea	8.1 # 8.2
+SHARED_LIBS +=		ptexenc		5.1 # 4.4
 SHARED_LIBS +=		synctex		1.0 # 19.0
 SHARED_LIBS +=		texlua52	0.0 # 7.4
 
@@ -23,7 +19,7 @@ WANTLIB += ICE SM X11 Xau Xaw Xdmcp Xext Xi Xmu Xpm Xrender Xt
 WANTLIB += c cairo expat fontconfig freetype gd glib-2.0 graphite2
 WANTLIB += harfbuzz harfbuzz-icu iconv icudata icui18n icuio icuuc intl
 WANTLIB += jpeg lcms2 m openjp2 paper pcre pixman-1 png poppler
-WANTLIB += potrace pthread pthread-stubs stdc++ tiff vpx xcb
+WANTLIB += potrace pthread pthread-stubs ${LIBCXX} tiff vpx xcb
 WANTLIB += xcb-render xcb-shm z zzip
 
 RUN_DEPENDS =		print/ghostscript/gnu \
@@ -131,13 +127,14 @@ pre-install:
 # Run 'texlinks -u' and then observe the output of
 # 'texlinks -v'. Don't forget to check the links are in the PLIST.
 ALEPH_LN =	lamed
-LUATEX_LN =	dvilualatex dviluatex lualatex lualollipop
-PDFTEX_LN =	amstex cslatex csplain eplain etex jadetex latex lollipop mex mllatex mltex \
+LUATEX_LN =	dvilualatex dviluatex lualatex
+PDFTEX_LN =	amstex cslatex csplain eplain etex jadetex latex mex mllatex mltex \
 		pdfcslatex pdfcsplain pdfetex pdfjadetex pdflatex pdfmex \
 		pdfxmltex texsis utf8mex xmltex
 EPTEX_LN =	platex
-XETEX_LN =	xelatex xelollipop
 EUPTEX_LN =	uplatex
+XETEX_LN =	xelatex
+TEX_LN =	lollipop
 
 EXTRA_ROOT =	${WRKDIR}/texlive-${DIST_V}-extra
 

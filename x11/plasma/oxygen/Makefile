@@ -21,6 +21,8 @@ WANTLIB-main += c kdecorations2 m pthread xcb
 
 WANTLIB-cursors =
 
+BUILD_DEPENDS +=	devel/gettext-tools
+
 LIB_DEPENDS =		devel/kf5/frameworkintegration \
 			devel/kf5/kcmutils \
 			devel/kf5/kcompletion \

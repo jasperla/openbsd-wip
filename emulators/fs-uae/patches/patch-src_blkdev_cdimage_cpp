@@ -2,40 +2,42 @@ $OpenBSD: patch-src_blkdev_cdimage_cpp,v 1.1 2013/12/02 16:32:12 naddy Exp $
 
 Replace ftime() by gettimeofday().
 
---- src/blkdev_cdimage.cpp.orig	Fri Sep 25 16:15:29 2015
-+++ src/blkdev_cdimage.cpp	Tue Dec 29 13:40:06 2015
-@@ -14,7 +14,7 @@
- #include "sysconfig.h"
- #include "sysdeps.h"
- 
--#include <sys/timeb.h>
+--- src/blkdev_cdimage.cpp.orig	Sun Dec 11 14:08:24 2016
++++ src/blkdev_cdimage.cpp	Tue Mar 28 18:43:22 2017
+@@ -17,7 +17,7 @@
+ #ifdef HAVE_SYS_TIMEB_H
+ #include <sys/timeb.h>
+ #else
+-
 +#include <sys/time.h>
+ #endif
  
  #include "options.h"
- #include "blkdev.h"
-@@ -480,12 +480,12 @@ static void *cdda_play_func (void *v)
- 		if (oldplay != cdu->cdda_play) {
- 			struct cdtoc *t;
- 			int sector, diff;
--			struct _timeb tb1, tb2;
-+			struct timeval tb1, tb2;
+@@ -487,7 +487,7 @@ static void *cdda_play_func (void *v)
+ #ifdef HAVE_SYS_TIMEB_H
+ 			struct _timeb tb1, tb2;
+ #else
+-#warning Missing timing functions
++			struct timeval tv1, tv2;
+ #endif
  
  			idleframes = 0;
- 			silentframes = 0;
+@@ -495,6 +495,8 @@ static void *cdda_play_func (void *v)
  			foundsub = false;
--			_ftime (&tb1);
-+			gettimeofday (&tb1, NULL);
+ #ifdef HAVE_SYS_TIMEB_H
+ 			_ftime (&tb1);
++#else
++			gettimeofday (&tv1, NULL);
+ #endif
  			cdda_pos = cdu->cdda_start;
  			oldplay = cdu->cdda_play;
- 			sector = cdu->cd_last_pos = cdda_pos;
-@@ -539,8 +539,8 @@ static void *cdda_play_func (void *v)
- 			}
- 			cdda_pos -= idleframes;
- 
--			_ftime (&tb2);
--			diff = (tb2.time * (uae_s64)1000 + tb2.millitm) - (tb1.time * (uae_s64)1000 + tb1.millitm);
-+			gettimeofday (&tb2, NULL);
-+			diff = (tb2.tv_sec * (uae_s64)1000 + tb2.tv_usec / 1000) - (tb1.tv_sec * (uae_s64)1000 + tb1.tv_usec / 1000);
+@@ -554,7 +556,8 @@ static void *cdda_play_func (void *v)
+ 			diff = (tb2.time * (uae_s64)1000 + tb2.millitm) - (tb1.time * (uae_s64)1000 + tb1.millitm);
  			diff -= cdu->cdda_delay;
+ #else
+-			diff = 0;
++			gettimeofday (&tv2, NULL);
++			diff = (tv2.tv_sec * (uae_s64)1000 + tv2.tv_usec / 1000) - (tv1.tv_sec * (uae_s64)1000 + tv1.tv_usec / 1000);
+ #endif
  			if (idleframes >= 0 && diff < 0 && cdu->cdda_play > 0)
  				sleep_millis(-diff);

@@ -5,10 +5,10 @@ COMMENT =	an extensible sound processing language
 
 GH_ACCOUNT =	csound
 GH_PROJECT =	csound
-GH_TAGNAME =	6.06.0
+GH_TAGNAME =	6.08.0
 
-SHARED_LIBS +=	csnd6                     0.0 # 6.0
-SHARED_LIBS +=	csound64                  0.0 # 6.0
+SHARED_LIBS +=	csnd6                     1.0 # 6.0
+SHARED_LIBS +=	csound64                  1.0 # 6.0
 
 CATEGORIES =	audio
 

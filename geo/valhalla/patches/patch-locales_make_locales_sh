@@ -1,0 +1,9 @@
+$OpenBSD$
+--- locales/make_locales.sh.orig	Sun Feb  5 00:07:41 2017
++++ locales/make_locales.sh	Sun Feb  5 00:07:43 2017
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/bin/sh
+ set -e
+ 
+ #throw all the text into one big header

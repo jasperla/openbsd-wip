@@ -6,7 +6,7 @@ GH_PROJECT =		vis
 GH_TAGNAME =		v0.2
 CATEGORIES =		editors
 
-MAINTAINER =		Dmitrij D. Czarkoff <czarkoff@gmail.com>
+MAINTAINER =		Dmitrij D. Czarkoff <czarkoff@openbsd.org>
 
 # ISC with some BSD-style licenses for several files
 PERMIT_PACKAGE_CDROM =	Yes

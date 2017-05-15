@@ -1,9 +1,2 @@
-NFStest provides a set of tools for testing either 
-the NFS client or the NFS server, included tests focused mainly 
-on testing the client.
-
-nfstest_cache - Valid for any version of NFS
-nfstest_delegation - Valid for any version of NFS granting delegations
-nfstest_dio - Valid for NFSv4.0 and NFSv4.1 including pNFS
-nfstest_pnfs - Only valid using NFSv4.1 with pNFS enabled and file layout type
-nfstest_posix -	Valid for any version of NFS
+NFStest provides a set of tools for testing either the NFS client or the NFS
+server, included tests focused mainly on testing the client.

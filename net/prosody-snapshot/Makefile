@@ -2,7 +2,8 @@
 
 
 COMMENT=	communications server for Jabber/XMPP written in Lua
-BUILD =		303
+BUILD =		394
+
 DISTNAME =	prosody-0.10beta${BUILD}
 CATEGORIES=	net
 MASTER_SITES=	http://prosody.im/nightly/0.10/build${BUILD}/
@@ -41,6 +42,7 @@ CONFIGURE_ARGS+=--prefix="${PREFIX}" \
 		--ldflags="-I/usr/include -I${LOCALBASE}/include -L/usr/lib -L${LOCALBASE}/lib -shared" \
 		--cflags="${CFLAGS} -I${LOCALBASE}/include -fPIC"
 
+CFLAGS+=	'-std=c99'
 FAKE_FLAGS+=	CONFIG=${DESTDIR}${PREFIX}/share/examples/prosody
 
 WRKDIST =	${WRKDIR}/prosody-0.10-1nightly${BUILD}

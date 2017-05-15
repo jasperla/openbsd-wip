@@ -1,0 +1,3 @@
+@comment $OpenBSD$
+${P5SITE}/WebService/Coinbase.pm
+@man man/man3p/WebService::Coinbase.3p

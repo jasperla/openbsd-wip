@@ -1,0 +1,30 @@
+$OpenBSD: README.template,v 1.5 2016/08/27 09:47:26 ajacoutot Exp $
+
++-------------------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-------------------------------------------------------------------------------
+
+Live media input
+================
+
+Linux-orientated audio plugins don't seem to work correctly on OpenBSD,
+and the direct V4L2 input source plugin has not yet been ported, but
+both video and audio can be captured using FFmpeg.
+
+Video
+-----
+Set permissions/ownership on /dev/video0 so that the user running OBS
+has access to it (one option is to "chown $USER /dev/video0"). Then in
+OBS you can add a "Media Source". In the source's settings page, untick
+"local file", and enter the following:
+
+Input:		/dev/video0
+Source format:	video4linux2
+
+Audio
+-----
+Add another "Media Source". In the source's settings page, untick
+"local file", and enter the following:
+
+Input:		snd/0   (or other sndio port name as appropriate)
+Source format:	sndio

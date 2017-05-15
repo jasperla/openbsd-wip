@@ -1,0 +1,20 @@
+$OpenBSD$
+--- share/functions/__fish_print_packages.fish.orig	Tue Apr 25 15:29:00 2017
++++ share/functions/__fish_print_packages.fish	Tue Apr 25 16:45:35 2017
+@@ -35,6 +35,16 @@ function __fish_print_packages
+         return
+     end
+ 
++    # pkg_info on OpenBSD provides versioning info which we want for
++    # installed packages
++    if begin
++            type -q -f pkg_add
++            and test (uname) = "OpenBSD"
++        end
++        pkg_info -q
++        return
++    end
++
+     # Caches for 5 minutes
+     if type -q -f pacman
+         set cache_file $XDG_CACHE_HOME/.pac-cache.$USER

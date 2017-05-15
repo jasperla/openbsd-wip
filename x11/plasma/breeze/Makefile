@@ -10,7 +10,9 @@ WANTLIB += Qt5Gui Qt5Widgets Qt5X11Extras Qt5Xml c kdecorations2
 WANTLIB += m pthread xcb
 
 BUILD_DEPENDS =		devel/kf5/kpackage \
-			devel/kf5/plasma-framework
+			devel/kf5/plasma-framework \
+			devel/gettext-tools
+
 RUN_DEPENDS =		devel/kf5/kpackage \
 			devel/kf5/plasma-framework
 
@@ -23,5 +25,7 @@ LIB_DEPENDS =		devel/kf5/frameworkintegration \
 			devel/kf5/ki18n \
 			devel/kf5/kwindowsystem \
 			x11/plasma/kdecoration
+
+NO_TEST =		No
 
 .include <bsd.port.mk>

@@ -1,7 +1,7 @@
 $OpenBSD$
---- cmake/OpenCVUtils.cmake.orig	Wed Jun 10 17:27:00 2015
-+++ cmake/OpenCVUtils.cmake	Wed Jun 10 17:28:20 2015
-@@ -327,12 +327,31 @@ macro(CHECK_MODULE module_name define)
+--- cmake/OpenCVUtils.cmake.orig	Fri Dec 23 13:54:44 2016
++++ cmake/OpenCVUtils.cmake	Sun Feb 19 20:14:32 2017
+@@ -479,12 +479,31 @@ macro(CHECK_MODULE module_name define)
          endif()
        endforeach()
  

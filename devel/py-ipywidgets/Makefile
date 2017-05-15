@@ -16,13 +16,13 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =		lang/python
 
+MODPY_PI =		Yes
+
 RUN_DEPENDS =		devel/ipython${MODPY_FLAVOR}>=5.1.0 \
 			devel/py-ipykernel${MODPY_FLAVOR} \
 			devel/py-traitlets${MODPY_FLAVOR} \
 			devel/py-widgetsnbextension${MODPY_FLAVOR}
 TEST_DEPENDS =		devel/py-nose${MODPY_FLAVOR}
-
-MODPY_PI =		Yes
 
 FLAVORS =		python3
 FLAVOR ?=

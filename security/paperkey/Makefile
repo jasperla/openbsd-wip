@@ -2,7 +2,7 @@
 
 COMMENT =	an OpenPGP key archiver
 
-DISTNAME =	paperkey-1.3
+DISTNAME =	paperkey-1.4
 CATEGORIES =	security
 
 HOMEPAGE =	http://www.jabberwocky.com/software/paperkey/

@@ -12,8 +12,13 @@ WANTLIB += KF5XmlGui Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Qml
 WANTLIB += Qt5Widgets Qt5Xml c m pthread
 
 BUILD_DEPENDS =		devel/kf5/kded \
-			devel/kf5/plasma-framework
-RUN_DEPENDS =		devel/kf5/kded \
+			devel/kf5/plasma-framework \
+			devel/gettext-tools
+
+RUN_DEPENDS +=		devel/desktop-file-utils \
+			misc/shared-mime-info \
+			x11/gtk+3,-guic \
+			devel/kf5/kded \
 			devel/kf5/plasma-framework
 
 LIB_DEPENDS =		devel/kf5/bluez-qt \
@@ -25,5 +30,7 @@ LIB_DEPENDS =		devel/kf5/bluez-qt \
 			devel/kf5/knotifications \
 			devel/kf5/kwidgetsaddons \
 			devel/kf5/kwindowsystem
+
+NO_TEST =		Yes
 
 .include <bsd.port.mk>

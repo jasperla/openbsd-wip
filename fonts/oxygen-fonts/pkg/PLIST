@@ -1,0 +1,10 @@
+@comment $OpenBSD$
+lib/cmake/
+lib/cmake/OxygenFont/
+lib/cmake/OxygenFont/OxygenFontConfig.cmake
+lib/cmake/OxygenFont/OxygenFontConfigVersion.cmake
+share/fonts/
+@fontdir share/fonts/oxygen/
+share/fonts/oxygen/Oxygen-Sans-Bold.ttf
+share/fonts/oxygen/Oxygen-Sans.ttf
+share/fonts/oxygen/OxygenMono-Regular.ttf

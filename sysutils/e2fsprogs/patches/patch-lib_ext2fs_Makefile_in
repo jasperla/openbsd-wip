@@ -1,0 +1,14 @@
+$OpenBSD: patch-lib_ext2fs_Makefile_in,v 1.6 2014/11/08 11:28:04 sthen Exp $
+--- lib/ext2fs/Makefile.in.orig	Tue Jan 31 07:08:02 2017
++++ lib/ext2fs/Makefile.in	Sat Mar 18 14:47:41 2017
+@@ -227,8 +227,8 @@ HFILES_IN=  ext2_err.h ext2_types.h
+ LIBRARY= libext2fs
+ LIBDIR= ext2fs
+ 
+-ELF_VERSION = 2.4
+-ELF_SO_VERSION = 2
++ELF_VERSION = $(LIBext2fs_VERSION)
++ELF_SO_VERSION = $(LIBext2fs_VERSION)
+ ELF_IMAGE = libext2fs
+ ELF_MYDIR = ext2fs
+ ELF_INSTALL_DIR = $(root_libdir)

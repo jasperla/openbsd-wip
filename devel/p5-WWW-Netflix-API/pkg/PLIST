@@ -1,0 +1,5 @@
+@comment $OpenBSD$
+${P5SITE}/WWW/
+${P5SITE}/WWW/Netflix/
+${P5SITE}/WWW/Netflix/API.pm
+@man man/man3p/WWW::Netflix::API.3p

@@ -1,25 +1,26 @@
 $OpenBSD$
---- Top/csound.c.orig	Mon Nov  9 12:50:21 2015
-+++ Top/csound.c	Thu Feb 11 08:35:43 2016
+Index: Top/csound.c
+--- Top/csound.c.orig
++++ Top/csound.c
 @@ -60,7 +60,7 @@
  #include "cs_par_dispatch.h"
- #include "csound_orc_semantics.h"
- 
--#if defined(linux) || defined(__HAIKU__) || defined(__EMSCRIPTEN__)
-+#if defined(linux) || defined(__HAIKU__) || defined(__EMSCRIPTEN__) || defined(__OpenBSD__)
+ #include "find_opcode.h"
+
+-#if defined(linux) || defined(__HAIKU__) || defined(__EMSCRIPTEN__) || defined(__CYGWIN__)
++#if defined(linux) || defined(__HAIKU__) || defined(__EMSCRIPTEN__) || defined(__CYGWIN__) || defined(__OpenBSD__)
  #define PTHREAD_SPINLOCK_INITIALIZER 0
  #endif
- 
-@@ -1044,7 +1044,7 @@ static char *signal_to_string(int sig)
+
+@@ -1080,7 +1080,7 @@ static char *signal_to_string(int sig)
      }
  }
- 
+
 -#ifdef ANDROID
 +#if defined(ANDROID) || defined(__OpenBSD__)
  static void psignal_(int sig, char *str)
  {
      fprintf(stderr, "%s: %s\n", str, signal_to_string(sig));
-@@ -1066,7 +1066,7 @@ static void signal_handler(int sig)
+@@ -1104,7 +1104,7 @@ static void signal_handler(int sig)
  {
  #if defined(SIGPIPE)
      if (sig == (int) SIGPIPE) {
@@ -28,7 +29,7 @@ $OpenBSD$
        psignal_(sig, "Csound ignoring SIGPIPE");
  #else
        psignal(sig, "Csound ignoring SIGPIPE");
-@@ -1074,7 +1074,7 @@ static void signal_handler(int sig)
+@@ -1112,7 +1112,7 @@ static void signal_handler(int sig)
        return;
      }
  #endif

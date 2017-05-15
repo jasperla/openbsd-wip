@@ -1,0 +1,217 @@
+@comment $OpenBSD$
+@bin bin/valhalla_associate_segments
+@bin bin/valhalla_benchmark_adjacency_list
+@bin bin/valhalla_benchmark_admins
+@bin bin/valhalla_benchmark_loki
+@bin bin/valhalla_benchmark_skadi
+@bin bin/valhalla_build_admins
+bin/valhalla_build_config
+@bin bin/valhalla_build_connectivity
+bin/valhalla_build_elevation
+@bin bin/valhalla_build_speeds
+@bin bin/valhalla_build_statistics
+@bin bin/valhalla_build_tiles
+bin/valhalla_build_timezones
+@bin bin/valhalla_build_transit
+@bin bin/valhalla_elevation_service
+@bin bin/valhalla_export_edges
+@bin bin/valhalla_loki_worker
+@bin bin/valhalla_map_match_service
+@bin bin/valhalla_meili_worker
+@bin bin/valhalla_odin_worker
+@bin bin/valhalla_query_transit
+@bin bin/valhalla_route_service
+@bin bin/valhalla_run_isochrone
+@bin bin/valhalla_run_map_match
+@bin bin/valhalla_run_matrix
+@bin bin/valhalla_run_route
+@bin bin/valhalla_skadi_worker
+@bin bin/valhalla_thor_worker
+@bin bin/valhalla_tyr_worker
+@bin bin/valhalla_validate_transit
+@bin bin/valhalla_ways_to_edges
+include/valhalla/
+include/valhalla/baldr/
+include/valhalla/baldr/accessrestriction.h
+include/valhalla/baldr/admin.h
+include/valhalla/baldr/admininfo.h
+include/valhalla/baldr/complexrestriction.h
+include/valhalla/baldr/connectivity_map.h
+include/valhalla/baldr/datetime.h
+include/valhalla/baldr/directededge.h
+include/valhalla/baldr/double_bucket_queue.h
+include/valhalla/baldr/edgeinfo.h
+include/valhalla/baldr/edgetracker.h
+include/valhalla/baldr/errorcode_util.h
+include/valhalla/baldr/geojson.h
+include/valhalla/baldr/graphconstants.h
+include/valhalla/baldr/graphid.h
+include/valhalla/baldr/graphreader.h
+include/valhalla/baldr/graphtile.h
+include/valhalla/baldr/graphtileheader.h
+include/valhalla/baldr/json.h
+include/valhalla/baldr/location.h
+include/valhalla/baldr/merge.h
+include/valhalla/baldr/nodeinfo.h
+include/valhalla/baldr/pathlocation.h
+include/valhalla/baldr/reutil.h
+include/valhalla/baldr/sign.h
+include/valhalla/baldr/signinfo.h
+include/valhalla/baldr/streetname.h
+include/valhalla/baldr/streetname_us.h
+include/valhalla/baldr/streetnames.h
+include/valhalla/baldr/streetnames_factory.h
+include/valhalla/baldr/streetnames_us.h
+include/valhalla/baldr/tilehierarchy.h
+include/valhalla/baldr/trafficassociation.h
+include/valhalla/baldr/transitdeparture.h
+include/valhalla/baldr/transitroute.h
+include/valhalla/baldr/transitschedule.h
+include/valhalla/baldr/transitstop.h
+include/valhalla/baldr/transittransfer.h
+include/valhalla/baldr/turn.h
+include/valhalla/baldr/verbal_text_formatter.h
+include/valhalla/baldr/verbal_text_formatter_factory.h
+include/valhalla/baldr/verbal_text_formatter_us.h
+include/valhalla/baldr/verbal_text_formatter_us_co.h
+include/valhalla/baldr/verbal_text_formatter_us_tx.h
+include/valhalla/loki/
+include/valhalla/loki/node_search.h
+include/valhalla/loki/search.h
+include/valhalla/loki/service.h
+include/valhalla/meili/
+include/valhalla/meili/bucket_queue.h
+include/valhalla/meili/candidate_search.h
+include/valhalla/meili/geojson_reader.h
+include/valhalla/meili/geojson_writer.h
+include/valhalla/meili/geometry_helpers.h
+include/valhalla/meili/graph_helpers.h
+include/valhalla/meili/grid_range_query.h
+include/valhalla/meili/grid_traversal.h
+include/valhalla/meili/map_matcher.h
+include/valhalla/meili/map_matcher_factory.h
+include/valhalla/meili/map_matching.h
+include/valhalla/meili/match_result.h
+include/valhalla/meili/match_route.h
+include/valhalla/meili/measurement.h
+include/valhalla/meili/priority_queue.h
+include/valhalla/meili/routing.h
+include/valhalla/meili/service.h
+include/valhalla/meili/traffic_segment_matcher.h
+include/valhalla/meili/universal_cost.h
+include/valhalla/meili/viterbi_search.h
+include/valhalla/midgard/
+include/valhalla/midgard/aabb2.h
+include/valhalla/midgard/constants.h
+include/valhalla/midgard/distanceapproximator.h
+include/valhalla/midgard/ellipse.h
+include/valhalla/midgard/encoded.h
+include/valhalla/midgard/gridded_data.h
+include/valhalla/midgard/linesegment2.h
+include/valhalla/midgard/logging.h
+include/valhalla/midgard/obb2.h
+include/valhalla/midgard/point2.h
+include/valhalla/midgard/pointll.h
+include/valhalla/midgard/polyline2.h
+include/valhalla/midgard/sequence.h
+include/valhalla/midgard/shape_decoder.h
+include/valhalla/midgard/tiles.h
+include/valhalla/midgard/util.h
+include/valhalla/midgard/vector2.h
+include/valhalla/mjolnir/
+include/valhalla/mjolnir/admin.h
+include/valhalla/mjolnir/complexrestrictionbuilder.h
+include/valhalla/mjolnir/countryaccess.h
+include/valhalla/mjolnir/dataquality.h
+include/valhalla/mjolnir/directededgebuilder.h
+include/valhalla/mjolnir/edgeinfobuilder.h
+include/valhalla/mjolnir/ferry_connections.h
+include/valhalla/mjolnir/graphbuilder.h
+include/valhalla/mjolnir/graphenhancer.h
+include/valhalla/mjolnir/graphtilebuilder.h
+include/valhalla/mjolnir/graphvalidator.h
+include/valhalla/mjolnir/hierarchybuilder.h
+include/valhalla/mjolnir/idtable.h
+include/valhalla/mjolnir/linkclassification.h
+include/valhalla/mjolnir/luatagtransform.h
+include/valhalla/mjolnir/node_expander.h
+include/valhalla/mjolnir/osmaccess.h
+include/valhalla/mjolnir/osmaccessrestriction.h
+include/valhalla/mjolnir/osmadmin.h
+include/valhalla/mjolnir/osmdata.h
+include/valhalla/mjolnir/osmnode.h
+include/valhalla/mjolnir/osmpbfparser.h
+include/valhalla/mjolnir/osmrestriction.h
+include/valhalla/mjolnir/osmway.h
+include/valhalla/mjolnir/pbfadminparser.h
+include/valhalla/mjolnir/pbfgraphparser.h
+include/valhalla/mjolnir/restrictionbuilder.h
+include/valhalla/mjolnir/shortcutbuilder.h
+include/valhalla/mjolnir/transitbuilder.h
+include/valhalla/mjolnir/uniquenames.h
+include/valhalla/mjolnir/util.h
+include/valhalla/mjolnir/validatetransit.h
+include/valhalla/odin/
+include/valhalla/odin/directionsbuilder.h
+include/valhalla/odin/enhancedtrippath.h
+include/valhalla/odin/maneuver.h
+include/valhalla/odin/maneuversbuilder.h
+include/valhalla/odin/narrative_builder_factory.h
+include/valhalla/odin/narrative_dictionary.h
+include/valhalla/odin/narrativebuilder.h
+include/valhalla/odin/service.h
+include/valhalla/odin/sign.h
+include/valhalla/odin/signs.h
+include/valhalla/odin/transitrouteinfo.h
+include/valhalla/odin/transitstop.h
+include/valhalla/odin/util.h
+include/valhalla/proto/
+include/valhalla/proto/directions_options.pb.h
+include/valhalla/proto/tripcommon.pb.h
+include/valhalla/proto/tripdirections.pb.h
+include/valhalla/proto/trippath.pb.h
+include/valhalla/sif/
+include/valhalla/sif/autocost.h
+include/valhalla/sif/bicyclecost.h
+include/valhalla/sif/costconstants.h
+include/valhalla/sif/costfactory.h
+include/valhalla/sif/dynamiccost.h
+include/valhalla/sif/edgelabel.h
+include/valhalla/sif/hierarchylimits.h
+include/valhalla/sif/pedestriancost.h
+include/valhalla/sif/transitcost.h
+include/valhalla/sif/truckcost.h
+include/valhalla/skadi/
+include/valhalla/skadi/sample.h
+include/valhalla/skadi/service.h
+include/valhalla/skadi/util.h
+include/valhalla/thor/
+include/valhalla/thor/astar.h
+include/valhalla/thor/astarheuristic.h
+include/valhalla/thor/bidirectional_astar.h
+include/valhalla/thor/costmatrix.h
+include/valhalla/thor/edgestatus.h
+include/valhalla/thor/isochrone.h
+include/valhalla/thor/map_matcher.h
+include/valhalla/thor/multimodal.h
+include/valhalla/thor/optimizer.h
+include/valhalla/thor/pathalgorithm.h
+include/valhalla/thor/pathinfo.h
+include/valhalla/thor/route_matcher.h
+include/valhalla/thor/service.h
+include/valhalla/thor/timedistancematrix.h
+include/valhalla/thor/trafficalgorithm.h
+include/valhalla/thor/trip_path_controller.h
+include/valhalla/thor/trippathbuilder.h
+include/valhalla/tyr/
+include/valhalla/tyr/service.h
+include/valhalla/valhalla.h
+lib/libvalhalla.a
+lib/libvalhalla.la
+@lib lib/libvalhalla.so.${LIBvalhalla_VERSION}
+lib/pkgconfig/libvalhalla.pc
+lib/python${MODPY_VERSION}/
+lib/python${MODPY_VERSION}/site-packages/
+lib/python${MODPY_VERSION}/site-packages/valhalla.a
+lib/python${MODPY_VERSION}/site-packages/valhalla.la
+lib/python${MODPY_VERSION}/site-packages/valhalla.so

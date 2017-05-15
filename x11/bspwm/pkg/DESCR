@@ -1,7 +1,11 @@
-bspwm is a tiling window manager that represents windows as the leaves of a full
-binary tree.  It only responds to X events, and the messages it receives on a
-dedicated socket.  bspc is a program that writes messages on bspwm's socket.
+bspwm is a tiling window manager that represents windows as the leaves of a
+full binary tree.
 
-bspwm doesn't handle any keyboard or pointer inputs: a third party program (e.g.
-sxhkd) is needed in order to translate keyboard and pointer events to bspc
-invocations.
+It only responds to X events, and the messages it receives on a dedicated
+socket.
+
+bspc is a program that writes messages on bspwm's socket.
+
+bspwm doesn't handle any keyboard or pointer inputs: a third party program
+(e.g. sxhkd) is needed in order to translate keyboard and pointer events to
+bspc invocations.
