@@ -1,0 +1,13 @@
+$OpenBSD$
+
+Index: lft_types.h
+--- lft_types.h.orig
++++ lft_types.h
+@@ -90,6 +90,7 @@ typedef signed long n_time;
+ #include <string.h>
+ #include <arpa/inet.h>
+ #include <errno.h>
++#include <inttypes.h>
+ 
+ #ifdef BSD
+ #include <machine/limits.h>
