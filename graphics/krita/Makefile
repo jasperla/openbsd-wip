@@ -91,4 +91,6 @@ BUILD_DEPENDS +=	devel/boost \
 			devel/kf5/kdoctools \
 			devel/gettext-tools
 
+TEST_IS_INTERACTIVE =	X11
+
 .include <bsd.port.mk>

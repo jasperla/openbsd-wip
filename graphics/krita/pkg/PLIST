@@ -1,5 +1,5 @@
 @comment $OpenBSD$
-@conflict callingra-<=2.9.11
+@conflict calligra-<=2.9.11
 @bin bin/gmicparser
 @bin bin/krita
 lib/kritaplugins/
