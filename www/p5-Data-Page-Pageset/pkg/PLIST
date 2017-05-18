@@ -1,0 +1,7 @@
+@comment $OpenBSD$
+${P5SITE}/Data/
+${P5SITE}/Data/Page/
+${P5SITE}/Data/Page/Pageset/
+${P5SITE}/Data/Page/Pageset.pm
+${P5SITE}/Data/Page/Pageset/Chunk.pm
+@man man/man3p/Data::Page::Pageset.3p
