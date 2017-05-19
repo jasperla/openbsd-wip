@@ -1,3 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.4 2015/09/04 06:38:41 benoit Exp $
-${P5SITE}/Log/Dispatch/Perl.pm
-@man man/man3p/Log::Dispatch::Perl.3p
