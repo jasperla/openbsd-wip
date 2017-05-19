@@ -14,5 +14,9 @@ EXTRACT_SUFX ?=		.tar.xz
 V ?=		2016
 DIST_V ?=	${V}0523
 
-MASTER_SITES ?=	ftp://ftp.tug.org/texlive/historic/${V}/
+# Note: The TUG FTP server is frequently overloaded
+MASTER_SITES ?=	ftp://ftp.tug.org/texlive/historic/${V}/ \
+		http://ftp.math.utah.edu/pub/tex/historic/systems/texlive/${V}/ \
+		https://paclan.it/distfiles/
+
 PATCHORIG ?=	.origy
