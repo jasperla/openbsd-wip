@@ -15,8 +15,9 @@ V ?=		2016
 DIST_V ?=	${V}0523
 
 # Note: The TUG FTP server is frequently overloaded
-MASTER_SITES ?=	ftp://ftp.tug.org/texlive/historic/${V}/ \
-		http://ftp.math.utah.edu/pub/tex/historic/systems/texlive/${V}/ \
-		https://paclan.it/distfiles/
+MASTER_SITES ?=	http://ftp.heanet.ie/pub/ftp.frugalware.org/pub/frugalware/frugalware-2.1/source/xapps-extra/texlive/ \
+		ftp://ftp.tug.org/texlive/historic/${V}/ \
+		https://paclan.it/distfiles/ \
+		http://ftp.math.utah.edu/pub/tex/historic/systems/texlive/${V}/
 
 PATCHORIG ?=	.origy
