@@ -71,6 +71,7 @@ BUILD_DEPENDS +=devel/boost \
 		devel/kf5/kdoctools
 
 RUN_DEPENDS +=	devel/desktop-file-utils \
+		devel/gettext \
 		devel/kf5/threadweaver \
 		devel/kf5/ktexteditor \
 		devel/kf5/kross \
@@ -79,6 +80,7 @@ RUN_DEPENDS +=	devel/desktop-file-utils \
 		x11/gtk+3,-guic
 
 LIB_DEPENDS +=	x11/qt5/qtwebkit \
+		converters/libiconv \
 		graphics/openexr \
 		devel/kf5/karchive \
 		devel/kf5/kcodecs\
@@ -100,14 +102,11 @@ LIB_DEPENDS +=	x11/qt5/qtwebkit \
 		devel/kf5/kwidgetsaddons \
 		devel/kf5/kwindowsystem \
 		devel/kf5/kxmlgui \
-		devel/kf5/kross \
-		devel/kf5/ktexteditor \
 		devel/kf5/knotifications \
 		devel/kf5/kactivities \
 		devel/kf5/knotifyconfig \
 		devel/kf5/kcmutils \
 		devel/kf5/khtml \
-		devel/kf5/threadweaver \
 		devel/gsl \
 		graphics/jpeg \
 		graphics/openjpeg \
