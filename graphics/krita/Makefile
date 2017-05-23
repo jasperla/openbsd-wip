@@ -1,4 +1,4 @@
-# $OpenBSD:
+# $OpenBSD:$
 
 COMMENT =	advanced drawing and image manipulation
 
@@ -6,26 +6,27 @@ VERSION =	3.1.3
 DISTNAME =	krita-${VERSION}
 
 SHARED_LIBS +=  kritabasicflakes          0.0 # 16.0
-SHARED_LIBS +=  kritacolor                0.0 # 16.0
 SHARED_LIBS +=  kritacolord               0.0 # 16.0
 SHARED_LIBS +=  kritaflake                0.0 # 16.0
-SHARED_LIBS +=  kritaglobal               0.0 # 16.0
-SHARED_LIBS +=  kritaimage                0.0 # 16.0
-SHARED_LIBS +=  kritalibbrush             0.0 # 16.0
-SHARED_LIBS +=  kritalibpaintop           0.0 # 16.0
 SHARED_LIBS +=  kritaodf                  0.0 # 16.0
 SHARED_LIBS +=  kritapigment              0.0 # 16.0
 SHARED_LIBS +=  kritaplugin               0.0 # 16.0
-SHARED_LIBS +=  kritapsd                  0.0 # 16.0
 SHARED_LIBS +=  kritastore                0.0 # 16.0
 SHARED_LIBS +=  kritatext                 0.0 # 16.0
 SHARED_LIBS +=  kritatextlayout           0.0 # 16.0
-SHARED_LIBS +=  kritaui                   0.0 # 16.0
 SHARED_LIBS +=  kritaundo2                0.0 # 16.0
 SHARED_LIBS +=  kritavectorimage          0.0 # 16.0
 SHARED_LIBS +=  kritaversion              0.0 # 16.0
 SHARED_LIBS +=  kritawidgets              0.0 # 16.0
 SHARED_LIBS +=  kritawidgetutils          0.0 # 16.0
+# from the old editors/calligra port
+SHARED_LIBS +=  kritapsd                  1.0 # 14.0
+SHARED_LIBS +=  kritacolor                1.0 # 14.0
+SHARED_LIBS +=  kritaglobal               1.0 # 14.0
+SHARED_LIBS +=  kritaimage                51.0 # 0.0
+SHARED_LIBS +=  kritalibbrush             51.0 # 0.0
+SHARED_LIBS +=  kritalibpaintop           51.0 # 0.0
+SHARED_LIBS +=  kritaui                   51.0 # 0.0
 
 CATEGORIES =	graphics
 
@@ -35,7 +36,6 @@ MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 
 # GPLv2+, LGPLv2+ and GNU FDLv1.2
 PERMIT_PACKAGE_CDROM =	Yes
-
 
 WANTLIB += Half ICE Iex IlmImf IlmThread Imath KF5Archive KF5Completion
 WANTLIB += KF5ConfigCore KF5ConfigGui KF5CoreAddons KF5Crash KF5GuiAddons
@@ -56,6 +56,7 @@ MODGCC4_LANGS =	c++
 MODGCC4_ARCHS =	*
 
 RUN_DEPENDS +=	devel/desktop-file-utils \
+		devel/gettext \
 		x11/gtk+3,-guic
 
 LIB_DEPENDS +=		graphics/jpeg \
@@ -76,7 +77,6 @@ LIB_DEPENDS +=		graphics/jpeg \
 			devel/kf5/kcoreaddons \
 			devel/kf5/kguiaddons\
 			devel/kf5/ki18n \
-			devel/kf5/kitemmodels \
 			devel/kf5/kitemviews \
 			devel/kf5/kwindowsystem \
 			devel/kf5/kcrash \
@@ -89,6 +89,7 @@ LIB_DEPENDS +=		graphics/jpeg \
 BUILD_DEPENDS +=	devel/boost \
 			math/eigen3 \
 			devel/kf5/kdoctools \
+			devel/kf5/kitemmodels \
 			devel/gettext-tools
 
 TEST_IS_INTERACTIVE =	X11
