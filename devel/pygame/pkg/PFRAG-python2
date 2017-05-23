@@ -1,0 +1,4 @@
+lib/python${MODPY_VERSION}/site-packages/pygame/_camera.so
+lib/python${MODPY_VERSION}/site-packages/pygame/_numericsndarray.so
+lib/python${MODPY_VERSION}/site-packages/pygame/_numericsurfarray.so
+lib/python${MODPY_VERSION}/site-packages/pygame/scrap.so

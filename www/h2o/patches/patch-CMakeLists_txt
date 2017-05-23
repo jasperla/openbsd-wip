@@ -1,26 +1,22 @@
 $OpenBSD$
---- CMakeLists.txt.orig	Tue Jan 17 23:43:27 2017
-+++ CMakeLists.txt	Thu Jan 26 23:01:44 2017
-@@ -61,11 +61,11 @@ OPTION(WITH_BUNDLED_SSL "whether or not to use the bun
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -61,7 +61,7 @@ OPTION(WITH_BUNDLED_SSL "whether or not to use the bun
  OPTION(WITHOUT_LIBS "skip building libs even when possible" OFF)
  OPTION(BUILD_SHARED_LIBS "whether to build a shared library" OFF)
  
 -FIND_PROGRAM(RUBY ruby)
 +FIND_PROGRAM(RUBY ${RUBYEXE})
  FIND_PROGRAM(BISON bison)
- SET(MKMF_FOUND "NO")
- IF (RUBY)
--    EXECUTE_PROCESS(COMMAND ruby -e "require 'mkmf'" RESULT_VARIABLE REQUIRE_MKMF_RESULT ERROR_QUIET)
-+    EXECUTE_PROCESS(COMMAND ${RUBY} -e "require 'mkmf'" RESULT_VARIABLE REQUIRE_MKMF_RESULT ERROR_QUIET)
-     IF (${REQUIRE_MKMF_RESULT} EQUAL 0)
-         SET(MKMF_FOUND "YES")
-     ENDIF ()
-@@ -425,7 +425,7 @@ IF (WITH_MRUBY)
+ IF (RUBY AND BISON)
+     SET(WITH_MRUBY_DEFAULT "ON")
+@@ -445,7 +445,7 @@ IF (WITH_MRUBY)
      ELSE ()
          SET(MRUBY_TOOLCHAIN "gcc")
      ENDIF ()
 -    ADD_CUSTOM_TARGET(mruby MRUBY_TOOLCHAIN=${MRUBY_TOOLCHAIN} MRUBY_CONFIG=${CMAKE_CURRENT_SOURCE_DIR}/misc/mruby_config.rb MRUBY_BUILD_DIR=${CMAKE_CURRENT_BINARY_DIR}/mruby ruby minirake
-+    ADD_CUSTOM_TARGET(mruby MRUBY_TOOLCHAIN=${MRUBY_TOOLCHAIN} MRUBY_CONFIG=${CMAKE_CURRENT_SOURCE_DIR}/misc/mruby_config.rb MRUBY_BUILD_DIR=${CMAKE_CURRENT_BINARY_DIR}/mruby ${RUBY} minirake
++    ADD_CUSTOM_TARGET(mruby MRUBY_TOOLCHAIN=${MRUBY_TOOLCHAIN} MRUBY_CONFIG=${CMAKE_CURRENT_SOURCE_DIR}/misc/mruby_config.rb MRUBY_BUILD_DIR=${CMAKE_CURRENT_BINARY_DIR}/mruby ${RUBYEXE} minirake
          WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/deps/mruby)
      LIST(APPEND STANDALONE_SOURCE_FILES
          lib/handler/mruby.c
