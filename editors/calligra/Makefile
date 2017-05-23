@@ -68,13 +68,13 @@ BUILD_DEPENDS +=devel/boost \
 		math/eigen3 \
 		productivity/librcps \
 		devel/gettext-tools \
-		devel/kf5/kdoctools
+		devel/kf5/kdoctools \
+		devel/kf5/threadweaver \
+		devel/kf5/kross
 
 RUN_DEPENDS +=	devel/desktop-file-utils \
 		devel/gettext \
-		devel/kf5/threadweaver \
 		devel/kf5/ktexteditor \
-		devel/kf5/kross \
 		misc/shared-mime-info \
 		productivity/librcps \
 		x11/gtk+3,-guic
