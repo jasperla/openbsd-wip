@@ -2,7 +2,7 @@
 
 COMMENT =		high-performance, easy-to-use data analysis for Python
 
-MODPY_EGG_VERSION =	0.19.2
+MODPY_EGG_VERSION =	0.20.1
 DISTNAME =		pandas-${MODPY_EGG_VERSION}
 PKGNAME =		py-pandas-${MODPY_EGG_VERSION}
 
@@ -15,12 +15,15 @@ MAINTAINER =		Alexandr Shadchin <shadchin@openbsd.org>
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB +=		m pthread ${MODPY_WANTLIB} stdc++
+WANTLIB +=		m pthread ${MODPY_WANTLIB} ${LIBCXX}
 
 MODULES =		lang/python
 
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
+
+FLAVORS =		python3
+FLAVOR ?=
 
 # These are optional runtime dependencies that should be around for
 # building the docs and running the tests.
@@ -47,8 +50,7 @@ TEST_DEPENDS =		${RUN_DEPENDS} \
 			devel/py-nose${MODPY_FLAVOR} \
 			${OPTIONAL_DEPENDS}
 
-FLAVORS =		python3
-FLAVOR ?=
+PORTHOME =		${WRKSRC}
 
 pre-test:
 	@${MODPY_CMD} build_ext --inplace
