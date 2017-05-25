@@ -55,6 +55,19 @@ RUN_DEPENDS-server +=	databases/p5-DBD-SQLite \
 			www/p5-URI \
 			net/munin3,-main
 
+TEST_DEPENDS =		devel/p5-File-Slurp \
+			devel/p5-IO-stringy \
+			devel/p5-Parallel-ForkManager \
+			devel/p5-Test-Class \
+			devel/p5-Test-Deep \
+			devel/p5-Test-Differences \
+			devel/p5-Test-Exception \
+			devel/p5-Test-LongString \
+			devel/p5-Test-MockModule \
+			devel/p5-Test-MockObject \
+			net/p5-IO-Socket-INET6 \
+			net/p5-Net-SNMP
+
 CONFIGURE_ARGS += 	--install_path=share=${PREFIX}/libexec/munin \
 			--install_path=etc=${SYSCONFDIR}/munin
 PKG_ARCH =		*

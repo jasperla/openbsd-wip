@@ -1,0 +1,21 @@
+$OpenBSD$
+
+Index: t/munin_node_service.t
+--- t/munin_node_service.t.orig
++++ t/munin_node_service.t
+@@ -45,13 +45,13 @@ $config->reinitialize({
+ 
+         # testing group resolution
+         gid   => { group => [ 0      ] },
+-        gname => { group => [ 'root' ] },
++        gname => { group => [ 'wheel' ] },
+         bad_gname => { group => [ '%%SSKK¤¤' ] },
+         bad_gid   => { group => [ 999999999  ] },
+ 
+         # testing optional group resolution
+         opt_gid       => { group => [ '(0)'         ] },
+-        opt_gname     => { group => [ '(root)'      ] },
++        opt_gname     => { group => [ '(wheel)'      ] },
+         opt_bad_gname => { group => [ '(%%SSKK¤¤)'  ] },
+         opt_bad_gid   => { group => [ '(999999999)' ] },
+ 
