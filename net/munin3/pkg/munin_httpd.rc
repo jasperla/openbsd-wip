@@ -1,0 +1,13 @@
+#!/bin/sh
+#
+# $OpenBSD: munin_node.rc,v 1.7 2015/07/15 19:40:58 ajacoutot Exp $
+
+daemon="${TRUEPREFIX}/bin/munin-httpd"
+
+. /etc/rc.d/rc.subr
+
+pexp="/usr/bin/perl -T ${daemon}${daemon_flags:+ ${daemon_flags}}"
+
+rc_bg=YES
+
+rc_cmd $1

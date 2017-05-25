@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-server,v 1.6 2014/05/30 10:28:17 kirby Exp $
+@comment $OpenBSD: PLIST-server,v 1.8 2017/05/16 08:48:56 ajacoutot Exp $
 @extraunexec rm -rf /var/www/htdocs/munin/*
 @extraunexec rm -rf /var/db/munin/*
 @owner www
@@ -11,11 +11,9 @@ bin/munin-httpd
 bin/munin-limits
 bin/munin-run
 bin/munin-update
-libexec/munin/
 @man man/man1/munin-limits.1
 @man man/man1/munin-run.1
 @man man/man1/munin-update.1
-share/examples/munin/
 @sample ${SYSCONFDIR}/munin/munin-conf.d/
 share/examples/munin/munin.conf.sample
 @sample ${SYSCONFDIR}/munin/munin.conf
@@ -214,3 +212,4 @@ share/examples/munin/templates/partial/logo_navigation_problem.tmpl
 share/examples/munin/templates/partial/navigation.tmpl
 @sample ${SYSCONFDIR}/munin/templates/partial/navigation.tmpl
 share/doc/pkg-readmes/${FULLPKGNAME}
+@rcscript ${RCDIR}/munin_httpd
