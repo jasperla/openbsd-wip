@@ -1,0 +1,8 @@
+@comment $OpenBSD$
+@bin bin/tudu
+@man man/man1/tudu.1
+share/examples/tudu/
+share/examples/tudu/tudurc
+share/tudu/
+share/tudu/tudu.dtd
+share/tudu/welcome.xml
