@@ -1,0 +1,15 @@
+@comment $OpenBSD$
+@bin bin/prototracker
+share/doc/prototracker/
+share/doc/prototracker/EFFECTS.TXT
+share/doc/prototracker/FORMAT.TXT
+share/doc/prototracker/KEYS.TXT
+share/doc/prototracker/MERSENNE.TXT
+share/doc/prototracker/README.TXT
+share/prototracker/
+share/prototracker/assets/
+share/prototracker/assets/dub.song
+share/prototracker/assets/elements
+share/prototracker/assets/font.png
+share/prototracker/assets/gamecontrollerdb.txt
+share/prototracker/assets/gui.png
