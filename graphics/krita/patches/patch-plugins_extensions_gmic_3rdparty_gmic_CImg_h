@@ -1,5 +1,8 @@
 $OpenBSD$
 
+Variables starting by underscore ("_") sign are reserved and should not be used
+in applications.
+
 Index: plugins/extensions/gmic/3rdparty/gmic/CImg.h
 --- plugins/extensions/gmic/3rdparty/gmic/CImg.h.orig
 +++ plugins/extensions/gmic/3rdparty/gmic/CImg.h

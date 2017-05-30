@@ -2,7 +2,7 @@
 
 COMMENT =	advanced drawing and image manipulation
 
-VERSION =	3.1.3
+VERSION =	3.1.4
 DISTNAME =	krita-${VERSION}
 
 SHARED_LIBS +=  kritabasicflakes          0.0 # 16.0
@@ -19,7 +19,7 @@ SHARED_LIBS +=  kritavectorimage          0.0 # 16.0
 SHARED_LIBS +=  kritaversion              0.0 # 16.0
 SHARED_LIBS +=  kritawidgets              0.0 # 16.0
 SHARED_LIBS +=  kritawidgetutils          0.0 # 16.0
-# from the old editors/calligra port
+# XXX Version numbers from editors/calligra 2.x port
 SHARED_LIBS +=  kritapsd                  1.0 # 14.0
 SHARED_LIBS +=  kritacolor                1.0 # 14.0
 SHARED_LIBS +=  kritaglobal               1.0 # 14.0
@@ -70,6 +70,7 @@ LIB_DEPENDS +=		graphics/jpeg \
 			net/curl \
 			math/fftw3 \
 			print/poppler,,-qt5 \
+			devel/boost \
 			devel/kf5/karchive \
 			devel/kf5/kconfig \
 			devel/kf5/kwidgetsaddons \
@@ -86,8 +87,7 @@ LIB_DEPENDS +=		graphics/jpeg \
 			x11/qt5/qtsvg \
 			x11/qt5/qtmultimedia
 
-BUILD_DEPENDS +=	devel/boost \
-			math/eigen3 \
+BUILD_DEPENDS +=	math/eigen3 \
 			devel/kf5/kdoctools \
 			devel/kf5/kitemmodels \
 			devel/gettext-tools

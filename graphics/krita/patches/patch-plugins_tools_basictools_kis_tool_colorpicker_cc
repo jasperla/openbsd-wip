@@ -1,5 +1,7 @@
 $OpenBSD$
 
+XXX Compiler threading support is not turned on in our boost
+
 Index: plugins/tools/basictools/kis_tool_colorpicker.cc
 --- plugins/tools/basictools/kis_tool_colorpicker.cc.orig
 +++ plugins/tools/basictools/kis_tool_colorpicker.cc
