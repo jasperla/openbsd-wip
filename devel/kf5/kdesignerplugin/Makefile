@@ -14,7 +14,8 @@ WANTLIB += Qt5WebKit Qt5WebKitWidgets Qt5Widgets Qt5Xml c m
 BUILD_DEPENDS =	devel/gettext-tools \
 		devel/kf5/kdoctools
 
-RUN_DEPENDS =	devel/kf5/kdoctools
+RUN_DEPENDS =	devel/kf5/kdoctools \
+		x11/qt5/qttools
 
 LIB_DEPENDS =	devel/kf5/kcompletion \
 		devel/kf5/kconfig \
