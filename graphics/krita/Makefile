@@ -46,14 +46,10 @@ WANTLIB += Qt5Widgets Qt5X11Extras Qt5Xml SM X11 Xext Xi boost_system-mt
 WANTLIB += c curl exiv2 fftw3 gsl gslcblas jpeg lcms2 m png poppler-qt5
 WANTLIB += pthread raw tiff xcb xcb-util z
 
-MASTER_SITES ?=	${MASTER_SITE_KDE:=stable/krita/${VERSION}/}
+MASTER_SITES =	${MASTER_SITE_KDE:=stable/krita/${VERSION}/}
 EXTRACT_SUFX =	.tar.gz
 
-MODULES =	devel/kf5 \
-		gcc4
-
-MODGCC4_LANGS =	c++
-MODGCC4_ARCHS =	*
+MODULES =	devel/kf5
 
 RUN_DEPENDS +=	devel/desktop-file-utils \
 		devel/gettext \
