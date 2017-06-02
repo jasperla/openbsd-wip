@@ -1,21 +1,18 @@
-# $OpenBSD: Makefile,v 1.53 2016/11/03 07:45:29 kirby Exp $
+# $OpenBSD: Makefile,v 1.60 2017/05/16 08:48:56 ajacoutot Exp $
 
 PORTROACH = 	limitw:1,even
 
 COMMENT-main =	flexible network host monitoring, client
 COMMENT-server =flexible network host monitoring, server
 
-GH_ACCOUNT = 	munin-monitoring
-GH_PROJECT = 	munin
-GH_TAGNAME =	2.999.3
-V = 		${GH_TAGNAME}
-DISTNAME =	munin-$V
-PKGNAME-main =	munin-node-$V
-PKGNAME-server =munin-server-$V
+V = 		2.999.6
+DISTNAME = 	munin-${V}
+PKGNAME-main =	munin3-node-${V}
+PKGNAME-server =munin3-server-${V}
 CATEGORIES =	net
 
 HOMEPAGE =	http://munin-monitoring.org/
-#MASTER_SITES =	http://downloads.munin-monitoring.org/munin/stable/$V/
+MASTER_SITES = 	http://downloads.munin-monitoring.org/munin/dev/$V/
 
 # Mostly GPLv2.
 # DejaVuSans.ttf and DejaVuSansMono.ttf has a non-restrictive license.
@@ -32,6 +29,9 @@ MODULES =		lang/python lang/ruby
 # No need for MODx_RUNDEP as we already override RUN_DEPENDS-{main,server}
 MODPY_BUILDDEP =	No
 MODRUBY_BUILDDEP =	No
+
+# called from the build script; doesn't use standard CONFIGURE_STYLE=modbuild
+BUILD_DEPENDS +=	devel/p5-Module-Build
 
 RUN_DEPENDS-main =	logtail-*|logsentry-*:sysutils/logtail \
 			devel/p5-Log-Dispatch \
@@ -51,8 +51,22 @@ RUN_DEPENDS-server +=	databases/p5-DBD-SQLite \
 			www/p5-HTML-Template>=2.95 \
 			www/p5-HTML-Template-Pro \
 			www/p5-HTTP-Server-Simple \
+			www/p5-HTTP-Server-Simple-CGI-PreFork \
 			www/p5-URI \
-			net/munin,-main
+			net/munin3,-main
+
+TEST_DEPENDS =		devel/p5-File-Slurp \
+			devel/p5-IO-stringy \
+			devel/p5-Parallel-ForkManager \
+			devel/p5-Test-Class \
+			devel/p5-Test-Deep \
+			devel/p5-Test-Differences \
+			devel/p5-Test-Exception \
+			devel/p5-Test-LongString \
+			devel/p5-Test-MockModule \
+			devel/p5-Test-MockObject \
+			net/p5-IO-Socket-INET6 \
+			net/p5-Net-SNMP
 
 CONFIGURE_ARGS += 	--install_path=share=${PREFIX}/libexec/munin \
 			--install_path=etc=${SYSCONFDIR}/munin
@@ -64,7 +78,7 @@ MAKE_ENV +=		OSTYPE=openbsd \
 			PREFIX=${PREFIX} \
 			PYTHON=${MODPY_BIN} \
 			SHAREDIR=${PREFIX}/libexec/munin/ \
-			MUNIN_DBDIR=/var/db/munin
+			DBDIR=/var/db/munin
 
 CONFIGURE_ENV += 	${MAKE_ENV}
 
@@ -87,7 +101,6 @@ post-extract:
 	${SUBST_CMD} -m 444 -c ${SUBST_LIST}
 	chmod -R +x ${WRKSRC}/plugins/node.d.openbsd
 	rm ${WRKSRC}/plugins/node.d.openbsd/swap # we have no in/out fields
-	rm -r ${WRKSRC}/plugins/node.d/example-graphs
 
 # Fixup hardcoded paths in plugins to use TRUEPREFIX/LOCALBASE as appropriate,
 # there are far too many to handle this via patches/SUBST_CMD, and this method

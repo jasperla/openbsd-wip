@@ -8,7 +8,7 @@ CATEGORIES =	www
 
 GH_ACCOUNT =    h2o
 GH_PROJECT =    h2o
-GH_TAGNAME =    v2.1.0
+GH_TAGNAME =    v2.2.2
 
 HOMEPAGE =	https://h2o.examp1e.net/
 

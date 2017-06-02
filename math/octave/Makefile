@@ -2,7 +2,7 @@
 
 COMMENT =	high-level language for numerical computations
 
-VERSION =	4.2.0
+VERSION =	4.2.1
 DISTNAME =	octave-${VERSION}
 CATEGORIES =	math
 
@@ -74,7 +74,7 @@ CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS	=	--disable-java \
 			--with-qt=4
 CONFIGURE_ENV =	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include \
-		-I${LOCALBASE}/include/ereadline -g" \
+		-I${LOCALBASE}/include/ereadline" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
 		LRELEASE="${MODQT_LRELEASE}" \
 		F77=${FC}

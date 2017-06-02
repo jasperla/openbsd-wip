@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.16 2015/07/16 01:25:48 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.18 2017/05/16 08:48:56 ajacoutot Exp $
 @conflict munin-server-<2.0.21
 @newgroup _munin:644
 @newgroup _munin-plugin:645
@@ -45,7 +45,6 @@ ${P5SITE}/Munin/Master/HTML.pm
 ${P5SITE}/Munin/Master/Host.pm
 ${P5SITE}/Munin/Master/LimitsOld.pm
 ${P5SITE}/Munin/Master/Node.pm
-${P5SITE}/Munin/Master/ProcessManager.pm
 ${P5SITE}/Munin/Master/Update.pm
 ${P5SITE}/Munin/Master/UpdateWorker.pm
 ${P5SITE}/Munin/Master/Utils.pm
@@ -72,6 +71,7 @@ ${P5SITE}/Munin/Plugin/Framework.pm
 ${P5SITE}/Munin/Plugin/HTTP.pm
 ${P5SITE}/Munin/Plugin/Pgsql.pm
 ${P5SITE}/Munin/Plugin/SNMP.pm
+libexec/munin/
 libexec/munin/plugins/
 libexec/munin/plugins/amavis
 libexec/munin/plugins/apache
@@ -112,7 +112,6 @@ libexec/munin/plugins/haproxy_ng
 libexec/munin/plugins/hddtemp_smartctl
 libexec/munin/plugins/hddtempd
 libexec/munin/plugins/hp2000_
-libexec/munin/plugins/http_loadtime
 libexec/munin/plugins/if_
 libexec/munin/plugins/if_errcoll_
 libexec/munin/plugins/if_pps_
@@ -284,7 +283,6 @@ libexec/munin/plugins/zimbra_
 @man man/man3p/Munin::Master::Host.3p
 @man man/man3p/Munin::Master::LimitsOld.3p
 @man man/man3p/Munin::Master::Node.3p
-@man man/man3p/Munin::Master::ProcessManager.3p
 @man man/man3p/Munin::Master::Update.3p
 @man man/man3p/Munin::Master::UpdateWorker.3p
 @man man/man3p/Munin::Master::Utils.3p
@@ -310,6 +308,7 @@ libexec/munin/plugins/zimbra_
 @man man/man3p/Munin::Plugin::SNMP.3p
 share/doc/munin/
 share/doc/pkg-readmes/${FULLPKGNAME}
+share/examples/munin/
 share/examples/munin/munin-node.conf.sample
 @sample ${SYSCONFDIR}/munin/munin-node.conf
 share/examples/munin/plugin-conf.d/

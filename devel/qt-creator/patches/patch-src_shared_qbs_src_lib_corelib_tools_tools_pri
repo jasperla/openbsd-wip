@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_shared_qbs_src_lib_corelib_tools_tools_pri,v 1.2 2017/04/28 16:00:10 rsadowski Exp $
+Index: src/shared/qbs/src/lib/corelib/tools/tools.pri
+--- src/shared/qbs/src/lib/corelib/tools/tools.pri.orig
++++ src/shared/qbs/src/lib/corelib/tools/tools.pri
+@@ -102,6 +102,11 @@ osx {
+     LIBS += -framework Security
+ }
+ 
++openbsd {
++    LIBS += -lkvm
++}
++
++
+ qbs_enable_unit_tests {
+     HEADERS += $$PWD/tst_tools.h
+     SOURCES += $$PWD/tst_tools.cpp

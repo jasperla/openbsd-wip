@@ -1,0 +1,13 @@
+$OpenBSD$
+
+Index: Makefile.linux
+--- Makefile.linux.orig
++++ Makefile.linux
+@@ -2,6 +2,6 @@ OUTPUT=prototracker
+ SRC=src/*.cpp
+ 
+ $(OUTPUT): $(SRC) src/*.h
+-	g++ -O3 -Wformat -std=c++11 -o $@ $(SRC) -lSDL2_image -lSDL2main `sdl2-config --cflags --libs` -s
++	$(CXX) $(CXXFLAGS) -Wformat -std=c++11 -o $@ $(SRC) -lSDL2_image -lSDL2main `sdl2-config --cflags --libs` -s
+ 	
+ 	

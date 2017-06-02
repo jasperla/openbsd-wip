@@ -1,0 +1,35 @@
+@comment $OpenBSD$
+@conflict mono-*
+@bin bin/cfssl
+@bin bin/cfssl-bundle
+@bin bin/cfssl-certinfo
+@bin bin/cfssl-newkey
+@bin bin/cfssl-scan
+@bin bin/cfssljson
+@bin bin/mkbundle
+@bin bin/multirootca
+share/doc/cfssl/
+share/doc/cfssl/README.md
+share/doc/cfssl/README.txt
+share/doc/cfssl/api/
+share/doc/cfssl/api/endpoint_authsign.txt
+share/doc/cfssl/api/endpoint_bundle.txt
+share/doc/cfssl/api/endpoint_certinfo.txt
+share/doc/cfssl/api/endpoint_crl.txt
+share/doc/cfssl/api/endpoint_info.txt
+share/doc/cfssl/api/endpoint_init_ca.txt
+share/doc/cfssl/api/endpoint_newcert.txt
+share/doc/cfssl/api/endpoint_newkey.txt
+share/doc/cfssl/api/endpoint_revoke.txt
+share/doc/cfssl/api/endpoint_scan.txt
+share/doc/cfssl/api/endpoint_scaninfo.txt
+share/doc/cfssl/api/endpoint_sign.txt
+share/doc/cfssl/api/intro.txt
+share/doc/cfssl/authentication.txt
+share/doc/cfssl/bootstrap.txt
+share/doc/cfssl/ca-bundle.crt.metadata.sample
+share/doc/cfssl/cmd/
+share/doc/cfssl/cmd/cfssl.txt
+share/doc/cfssl/cmd/multiroot.txt
+share/doc/cfssl/errorcode.txt
+share/doc/cfssl/transport.txt

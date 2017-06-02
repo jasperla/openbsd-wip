@@ -1,0 +1,6 @@
+Prototracker is a multiplatform fakebit chiptune tracker.
+
+The synth is an absolutely minimal single-oscillator synth (with 256
+preset waveforms). Macros are used to create "instruments" and also
+some normal channel effects. Most keyboard shortcuts are the same as
+in Protracker.

@@ -3,3 +3,5 @@
  - replace GOODSH in shebangs
  - fix substitutions in i.e. munin-update
  - fix rc scripts
+ - check conflicts with munin-2.x
+ - add instructions on database creation
