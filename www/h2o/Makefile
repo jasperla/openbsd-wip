@@ -15,10 +15,8 @@ HOMEPAGE =	https://h2o.examp1e.net/
 PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =		devel/cmake \
-			gcc4 \
 			lang/ruby
-MODGCC4_LANGS =         c c++
-MODGCC4_ARCHS =         *
+COMPILER =              gcc4
 
 SUBST_VARS =            RUBY
 
