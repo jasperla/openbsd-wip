@@ -21,7 +21,6 @@ WANTLIB += Qt5Gui Qt5Network Qt5Script Qt5Widgets Qt5X11Extras
 WANTLIB += Qt5Xml c exslt m xml2 xslt
 
 BUILD_DEPENDS =	devel/gettext-tools \
-		devel/kf5/kinit \
 		devel/kf5/kdoctools
 
 RUN_DEPENDS =	devel/kf5/kdoctools \
