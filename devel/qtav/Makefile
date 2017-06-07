@@ -48,8 +48,4 @@ TEST_LIST =		"ao -ao Pulse" \
 			"ao -ao PortAudio" \
 			"ao -ao OpenAL"
 
-#post-install:
-#	rm -Rf ${PREFIX}/share/doc/QtAV-examples-common
-#	mv ${PREFIX}/share/doc/common ${PREFIX}/share/doc/QtAV-examples-common
-
 .include <bsd.port.mk>
