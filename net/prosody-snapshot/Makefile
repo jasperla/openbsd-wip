@@ -2,7 +2,7 @@
 
 
 COMMENT=	communications server for Jabber/XMPP written in Lua
-BUILD =		394
+BUILD =		400
 
 DISTNAME =	prosody-0.10beta${BUILD}
 CATEGORIES=	net
