@@ -1,9 +1,4 @@
 @comment $OpenBSD$
-include/X11/qt5/Config.h
-include/X11/qt5/Export.h
-include/X11/qt5/MediaMetaData.h
-include/X11/qt5/QQuickItemRenderer.h
-include/X11/qt5/QmlAVPlayer.h
 include/X11/qt5/QtAV/
 include/X11/qt5/QtAV/5.6.2/
 include/X11/qt5/QtAV/5.6.2/QtAV/
@@ -42,16 +37,18 @@ include/X11/qt5/QtAV/AudioFormat.h
 include/X11/qt5/QtAV/AudioFrame.h
 include/X11/qt5/QtAV/AudioOutput.h
 include/X11/qt5/QtAV/AudioResampler.h
-include/X11/qt5/QtAV/AudioResamplerTypes.h
-include/X11/qt5/QtAV/CommonTypes.h
+include/X11/qt5/QtAV/ConvolutionShader.h
 include/X11/qt5/QtAV/EncodeFilter.h
 include/X11/qt5/QtAV/FactoryDefine.h
 include/X11/qt5/QtAV/Filter.h
 include/X11/qt5/QtAV/FilterContext.h
 include/X11/qt5/QtAV/Frame.h
+include/X11/qt5/QtAV/FrameReader.h
+include/X11/qt5/QtAV/GLSLFilter.h
 include/X11/qt5/QtAV/LibAVFilter.h
 include/X11/qt5/QtAV/MediaIO.h
 include/X11/qt5/QtAV/OpenGLRendererBase.h
+include/X11/qt5/QtAV/OpenGLTypes.h
 include/X11/qt5/QtAV/OpenGLVideo.h
 include/X11/qt5/QtAV/OpenGLWindowRenderer.h
 include/X11/qt5/QtAV/Packet.h
@@ -60,20 +57,20 @@ include/X11/qt5/QtAV/QtAV
 include/X11/qt5/QtAV/QtAV.h
 include/X11/qt5/QtAV/QtAV_Global.h
 include/X11/qt5/QtAV/Statistics.h
+include/X11/qt5/QtAV/SubImage.h
 include/X11/qt5/QtAV/Subtitle.h
 include/X11/qt5/QtAV/SubtitleFilter.h
 include/X11/qt5/QtAV/SurfaceInterop.h
 include/X11/qt5/QtAV/VideoCapture.h
 include/X11/qt5/QtAV/VideoDecoder.h
-include/X11/qt5/QtAV/VideoDecoderTypes.h
 include/X11/qt5/QtAV/VideoEncoder.h
 include/X11/qt5/QtAV/VideoFormat.h
 include/X11/qt5/QtAV/VideoFrame.h
 include/X11/qt5/QtAV/VideoFrameExtractor.h
 include/X11/qt5/QtAV/VideoOutput.h
 include/X11/qt5/QtAV/VideoRenderer.h
-include/X11/qt5/QtAV/VideoRendererTypes.h
 include/X11/qt5/QtAV/VideoShader.h
+include/X11/qt5/QtAV/VideoShaderObject.h
 include/X11/qt5/QtAV/dptr.h
 include/X11/qt5/QtAV/version.h
 include/X11/qt5/QtAVWidgets/
@@ -86,15 +83,8 @@ include/X11/qt5/QtAVWidgets/VideoPreviewWidget.h
 include/X11/qt5/QtAVWidgets/WidgetRenderer.h
 include/X11/qt5/QtAVWidgets/global.h
 include/X11/qt5/QtAVWidgets/version.h
-include/X11/qt5/SGVideoNode.h
-include/X11/qt5/ScreenSaver.h
-include/X11/qt5/common.h
-include/X11/qt5/common_export.h
-include/X11/qt5/qoptions.h
+@bin lib/qt5/bin/Player
 @bin lib/qt5/bin/QMLPlayer
-lib/qt5/bin/libcommon.a
-lib/qt5/bin/libcommon.prl
-@bin lib/qt5/bin/player
 lib/qt5/libQtAV.prl
 @lib lib/qt5/libQtAV.so.${LIBQtAV_VERSION}
 lib/qt5/libQtAVWidgets.prl
@@ -110,18 +100,13 @@ lib/qt5/qml/QtAV/Video.qml
 lib/qt5/qml/QtAV/libQmlAV.so
 lib/qt5/qml/QtAV/plugins.qmltypes
 lib/qt5/qml/QtAV/qmldir
-share/applications/
+share/applications/Player.desktop
 share/applications/QMLPlayer.desktop
-share/applications/player.desktop
-share/doc/QmlAV/
-share/doc/QmlAV/README
-share/doc/QmlAV/changelog
-share/doc/QmlAV/copyright
+share/doc/Player/
+share/doc/Player/README
+share/doc/Player/changelog
+share/doc/Player/copyright
 share/doc/QtAV/
-share/doc/QtAV-examples-common/
-share/doc/QtAV-examples-common/README
-share/doc/QtAV-examples-common/changelog
-share/doc/QtAV-examples-common/copyright
 share/doc/QtAV/README
 share/doc/QtAV/changelog
 share/doc/QtAV/copyright
@@ -129,11 +114,7 @@ share/doc/QtAVWidgets/
 share/doc/QtAVWidgets/README
 share/doc/QtAVWidgets/changelog
 share/doc/QtAVWidgets/copyright
-share/doc/player/
-share/doc/player/README
-share/doc/player/changelog
-share/doc/player/copyright
-share/icons/hicolor/64x64/apps/QtAV.svg
+share/icons/hicolor/scalable/apps/QtAV.svg
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor

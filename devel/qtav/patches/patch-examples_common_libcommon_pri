@@ -1,8 +1,9 @@
 $OpenBSD$
 Fix installation paths.
---- examples/common/libcommon.pri.orig	Fri Jan 20 16:08:11 2017
-+++ examples/common/libcommon.pri	Fri Jan 20 16:13:27 2017
-@@ -135,7 +135,7 @@ DEPENDPATH *= $$PROJECT_SRCPATH
+Index: examples/common/libcommon.pri
+--- examples/common/libcommon.pri.orig
++++ examples/common/libcommon.pri
+@@ -134,7 +134,7 @@ DEPENDPATH *= $$PROJECT_SRCPATH
  		maemo5 {
  			target.path = /opt/usr/lib
  		} else {

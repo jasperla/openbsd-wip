@@ -2,7 +2,7 @@
 
 COMMENT =	FFmpeg-based Qt multimedia framework
 
-V =		1.8.0
+V =		1.11.0
 PKGNAME =	qtav-${V}
 
 GH_ACCOUNT =	wang-bin
@@ -48,8 +48,8 @@ TEST_LIST =		"ao -ao Pulse" \
 			"ao -ao PortAudio" \
 			"ao -ao OpenAL"
 
-post-install:
-	rm -Rf ${PREFIX}/share/doc/QtAV-examples-common
-	mv ${PREFIX}/share/doc/common ${PREFIX}/share/doc/QtAV-examples-common
+#post-install:
+#	rm -Rf ${PREFIX}/share/doc/QtAV-examples-common
+#	mv ${PREFIX}/share/doc/common ${PREFIX}/share/doc/QtAV-examples-common
 
 .include <bsd.port.mk>
