@@ -4,5 +4,6 @@
      SUBDIR += gpgmepp
      SUBDIR += libkface
      SUBDIR += libkgeomap
+     SUBDIR += kate
 
 .include <bsd.port.subdir.mk>
