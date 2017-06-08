@@ -48,7 +48,7 @@
      #SUBDIR += kbruch
      #SUBDIR += kcachegrind
      #SUBDIR += kcalc
-     #SUBDIR += kcalcore
+     SUBDIR += kcalcore
      #SUBDIR += kcalutils
      #SUBDIR += kcharselect
      #SUBDIR += kcolorchooser
