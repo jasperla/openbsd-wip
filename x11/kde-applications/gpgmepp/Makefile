@@ -1,6 +1,7 @@
 # $OpenBSD: Makefile,v 1.3 2016/12/25 14:34:40 zhuk Exp $
 
 COMMENT =	C++ bindings/wrapper for gpgme
+VERSION=	16.04.0
 DISTNAME =	gpgmepp-${VERSION}
 REVISION =	1
 CATEGORIES =	security
