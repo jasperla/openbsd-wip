@@ -183,7 +183,7 @@
      #SUBDIR += marble
      #SUBDIR += messagelib
      #SUBDIR += minuet
-     #SUBDIR += okteta
+     SUBDIR += okteta
      #SUBDIR += okular
      #SUBDIR += palapeli
      #SUBDIR += parley
