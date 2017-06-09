@@ -88,7 +88,7 @@
      #SUBDIR += kig
      #SUBDIR += kigo
      #SUBDIR += killbots
-     #SUBDIR += kimap
+     SUBDIR += kimap			100% tests passed, 0 tests failed out of 26
      #SUBDIR += kio-extras
      #SUBDIR += kiriki
      #SUBDIR += kiten
