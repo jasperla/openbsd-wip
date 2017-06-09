@@ -101,7 +101,7 @@
      #SUBDIR += kmag
      #SUBDIR += kmahjongg
      #SUBDIR += kmailtransport
-     #SUBDIR += kmbox
+     SUBDIR += kmbox			100% tests passed, 0 tests failed out of 2
      SUBDIR += kmime			100% tests passed, 0 tests failed out of 17
      #SUBDIR += kmines
      #SUBDIR += kmix
