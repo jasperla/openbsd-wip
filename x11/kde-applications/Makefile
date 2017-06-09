@@ -102,7 +102,7 @@
      #SUBDIR += kmahjongg
      #SUBDIR += kmailtransport
      #SUBDIR += kmbox
-     #SUBDIR += kmime
+     SUBDIR += kmime			100% tests passed, 0 tests failed out of 17
      #SUBDIR += kmines
      #SUBDIR += kmix
      #SUBDIR += kmousetool

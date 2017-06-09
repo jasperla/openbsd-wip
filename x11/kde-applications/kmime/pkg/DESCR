@@ -1,0 +1,11 @@
+KMime is a library for handling mail messages and newsgroup articles.
+
+KMime deals solely with the in-memory representation of messages, topics such a
+transport or storage of messages are handled by other libraries, for example by
+the mailtransport library or by the KIMAP library. Similary, this library does
+not deal with displaying messages or advanced composing, for those there are
+the messageviewer and the messagecomposer components in the KDEPIM module.
+
+KMime's main function is to parse, modify and assemble messages in-memory. In a
+later section, parsing and assembling is actually explained. KMime provides
+high-level classes that make these tasks easy.
