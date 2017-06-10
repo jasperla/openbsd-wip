@@ -47,6 +47,6 @@ LIB_DEPENDS =	devel/kf5/kbookmarks \
 		devel/kf5/kwidgetsaddons \
 		devel/kf5/kxmlgui
 
-# XXX TEST with X11 84% tests passed, 9 tests failed out of 55
+TEST_IS_INTERACTIVE =	X11
 
 .include <bsd.port.mk>

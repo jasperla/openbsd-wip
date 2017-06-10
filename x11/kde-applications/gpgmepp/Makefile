@@ -18,4 +18,6 @@ BUILD_DEPENDS =	devel/boost
 LIB_DEPENDS =	security/gpgme
 RUN_DEPENDS =	devel/boost
 
+NO_TEST =	Yes
+
 .include <bsd.port.mk>

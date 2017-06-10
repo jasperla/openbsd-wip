@@ -17,15 +17,13 @@ WANTLIB += KF5TextWidgets KF5UnitConversion KF5WidgetsAddons KF5WindowSystem
 WANTLIB += KF5XmlGui Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5PrintSupport
 WANTLIB += Qt5Widgets Qt5Xml ical icalss m
 
-#MODULES +=	lang/python
-
 BUILD_DEPENDS+=	devel/gettext-tools \
+		devel/kf5/kdesignerplugin \
 		devel/kf5/kdoctools
 
 RUN_DEPENDS +=	devel/kf5/kdoctools
 
 LIB_DEPENDS +=	devel/kf5/kdelibs4support \
-		devel/kf5/kdesignerplugin \
 		devel/kf5/kbookmarks \
 		devel/kf5/kauth \
 		devel/kf5/kcodecs \
@@ -40,9 +38,6 @@ LIB_DEPENDS +=	devel/kf5/kdelibs4support \
 		devel/kf5/kxmlgui \
 		devel/kf5/kwindowsystem \
 		devel/kf5/ktextwidgets \
-		devel/uuid \
 		textproc/libical
-
-TEST_IS_INTERACTIVE =	X11
 
 .include <bsd.port.mk>

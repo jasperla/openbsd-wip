@@ -20,7 +20,7 @@
      #SUBDIR += eventviews
      #SUBDIR += ffmpegthumbs
      #SUBDIR += filelight
-     SUBDIR += gpgmepp
+     SUBDIR += gpgmepp			# NO_TEST
      #SUBDIR += granatier
      #SUBDIR += grantleetheme
      #SUBDIR += gwenview
@@ -38,7 +38,7 @@
      #SUBDIR += kanagram
      #SUBDIR += kapman
      #SUBDIR += kapptemplate
-     SUBDIR += kate
+     SUBDIR += kate			# 83% tests passed, 1 tests failed out of 6
      #SUBDIR += katomic
      #SUBDIR += kblackbox
      #SUBDIR += kblocks
@@ -88,7 +88,7 @@
      #SUBDIR += kig
      #SUBDIR += kigo
      #SUBDIR += killbots
-     SUBDIR += kimap			100% tests passed, 0 tests failed out of 26
+     SUBDIR += kimap			# 100% tests passed, 0 tests failed out of 26
      #SUBDIR += kio-extras
      #SUBDIR += kiriki
      #SUBDIR += kiten
@@ -101,8 +101,8 @@
      #SUBDIR += kmag
      #SUBDIR += kmahjongg
      #SUBDIR += kmailtransport
-     SUBDIR += kmbox			100% tests passed, 0 tests failed out of 2
-     SUBDIR += kmime			100% tests passed, 0 tests failed out of 17
+     SUBDIR += kmbox			# 100% tests passed, 0 tests failed out of 2
+     SUBDIR += kmime			# 100% tests passed, 0 tests failed out of 17
      #SUBDIR += kmines
      #SUBDIR += kmix
      #SUBDIR += kmousetool
@@ -164,7 +164,7 @@
      #SUBDIR += libkcddb
      #SUBDIR += libkcompactdisc
      #SUBDIR += libkdcraw
-     #SUBDIR += libkdegames
+     SUBDIR += libkdegames		# 100% tests passed, 0 tests failed out of 2
      #SUBDIR += libkdepim
      #SUBDIR += libkeduvocdocument
      #SUBDIR += libkexiv2
@@ -183,7 +183,7 @@
      #SUBDIR += marble
      #SUBDIR += messagelib
      #SUBDIR += minuet
-     SUBDIR += okteta
+     SUBDIR += okteta			# 91% tests passed, 5 tests failed out of 55
      #SUBDIR += okular
      #SUBDIR += palapeli
      #SUBDIR += parley
