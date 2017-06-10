@@ -58,6 +58,7 @@ share/locale/he/LC_MESSAGES/bluedevil.mo
 share/locale/he/LC_MESSAGES/plasma_applet_org.kde.plasma.bluetooth.mo
 share/locale/hu/LC_MESSAGES/bluedevil.mo
 share/locale/ia/LC_MESSAGES/bluedevil.mo
+share/locale/ia/LC_MESSAGES/plasma_applet_org.kde.plasma.bluetooth.mo
 share/locale/id/LC_MESSAGES/bluedevil.mo
 share/locale/it/LC_MESSAGES/bluedevil.mo
 share/locale/it/LC_MESSAGES/plasma_applet_org.kde.plasma.bluetooth.mo
@@ -98,13 +99,13 @@ share/locale/sr@latin/LC_MESSAGES/plasma_applet_org.kde.plasma.bluetooth.mo
 share/locale/sv/LC_MESSAGES/bluedevil.mo
 share/locale/sv/LC_MESSAGES/plasma_applet_org.kde.plasma.bluetooth.mo
 share/locale/tr/LC_MESSAGES/bluedevil.mo
+share/locale/tr/LC_MESSAGES/plasma_applet_org.kde.plasma.bluetooth.mo
 share/locale/uk/LC_MESSAGES/bluedevil.mo
 share/locale/uk/LC_MESSAGES/plasma_applet_org.kde.plasma.bluetooth.mo
 share/locale/zh_CN/LC_MESSAGES/bluedevil.mo
 share/locale/zh_CN/LC_MESSAGES/plasma_applet_org.kde.plasma.bluetooth.mo
 share/locale/zh_TW/LC_MESSAGES/bluedevil.mo
 share/locale/zh_TW/LC_MESSAGES/plasma_applet_org.kde.plasma.bluetooth.mo
-share/metainfo/
 share/metainfo/org.kde.plasma.bluetooth.appdata.xml
 share/mime/packages/bluedevil-mime.xml
 share/plasma/plasmoids/org.kde.plasma.bluetooth/

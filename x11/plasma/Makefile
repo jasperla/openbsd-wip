@@ -1,12 +1,12 @@
 # $OpenBSD$
 SUBDIR =
-SUBDIR += bluedevil
-SUBDIR += breeze
+SUBDIR += bluedevil			# NO_TEST
+SUBDIR += breeze			# NO_TEST
 SUBDIR += breeze-gtk
 SUBDIR += discover
 SUBDIR += kde-cli-tools
 SUBDIR += kde-gtk-config
-SUBDIR += kdecoration
+SUBDIR += kdecoration			# 67% tests passed, 1 tests failed out of 3
 SUBDIR += kdeplasma-addons
 SUBDIR += kgamma5
 SUBDIR += khotkeys
