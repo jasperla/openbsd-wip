@@ -195,7 +195,7 @@
      #SUBDIR += signon-kwallet-extension
      #SUBDIR += spectacle
      #SUBDIR += step
-     #SUBDIR += svgpart
+     SUBDIR += svgpart
      #SUBDIR += sweeper
      #SUBDIR += syndication
      #SUBDIR += umbrello
