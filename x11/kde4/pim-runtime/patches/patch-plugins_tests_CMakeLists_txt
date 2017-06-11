@@ -1,0 +1,36 @@
+$OpenBSD: patch-plugins_tests_CMakeLists_txt,v 1.4 2014/07/09 20:03:30 zhuk Exp $
+Missing dependencies.
+--- plugins/tests/CMakeLists.txt.orig	Thu May  8 12:42:54 2014
++++ plugins/tests/CMakeLists.txt	Thu Jun 26 18:40:46 2014
+@@ -8,7 +8,7 @@ include_directories(
+ )
+ 
+ # convenience macro to add akonadi qtestlib unit-tests
+-macro(add_akonadiplugin_test _source _libs _additionalSources)
++macro(add_akonadiplugin_test _source _libs _additionalSources _depends)
+   set(_test ${_source})
+   get_filename_component(_name ${_source} NAME_WE)
+   set(srcs ${_test} ${_additionalSources})
+@@ -16,16 +16,17 @@ macro(add_akonadiplugin_test _source _libs _additional
+   target_link_libraries(${_name} ${KDEPIMLIBS_AKONADI_LIBS} ${KDEPIMLIBS_AKONADI_KMIME_LIBS} ${KDE4_KDECORE_LIBS}
+                         ${QT_QTGUI_LIBRARY} ${QT_QTTEST_LIBRARY} ${AKONADI_COMMON_LIBRARIES}
+                         ${AKONADI_COMMON_LIBRARIES} ${_libs})
++  add_dependencies(${_name} ${_depends})
+ endmacro()
+ 
+ # qtestlib unit tests
+-add_akonadiplugin_test(mailserializertest.cpp "${KDEPIMLIBS_KMIME_LIBS}" "")
+-add_akonadiplugin_test(mailserializerplugintest.cpp "${KDEPIMLIBS_KMIME_LIBS}" "")
++add_akonadiplugin_test(mailserializertest.cpp "${KDEPIMLIBS_KMIME_LIBS}" "" akonadi_serializer_mail)
++add_akonadiplugin_test(mailserializerplugintest.cpp "${KDEPIMLIBS_KMIME_LIBS}" "" akonadi_serializer_mail)
+ 
+-add_akonadiplugin_test(kcalcoreserializertest.cpp "${KDEPIMLIBS_KCALCORE_LIBS}" "")
++add_akonadiplugin_test(kcalcoreserializertest.cpp "${KDEPIMLIBS_KCALCORE_LIBS}" "" akonadi_serializer_kcalcore)
+ 
+-add_akonadiplugin_test(addresseeserializertest.cpp "${KDEPIMLIBS_KABC_LIBS};${KDEPIMLIBS_AKONADI_KABC_LIBS}" "../akonadi_serializer_addressee.cpp")
++add_akonadiplugin_test(addresseeserializertest.cpp "${KDEPIMLIBS_AKONADI_KABC_LIBS};${KDEPIMLIBS_KABC_LIBS}" "../akonadi_serializer_addressee.cpp" akonadi_serializer_addressee)
+ 
+ if (KDEPIMLIBS_KCAL_LIBS)
+-  add_akonadiplugin_test(kcalserializertest.cpp "${KDEPIMLIBS_KCAL_LIBS}" "")
++  add_akonadiplugin_test(kcalserializertest.cpp "${KDEPIMLIBS_KCAL_LIBS}" "" akonadi_serializer_kcal)
+ endif ()

@@ -1,0 +1,19 @@
+$OpenBSD: patch-kabc_CMakeLists_txt,v 1.2 2014/07/09 20:03:30 zhuk Exp $
+Fix linking.
+--- kabc/CMakeLists.txt.orig	Thu May  8 11:26:48 2014
++++ kabc/CMakeLists.txt	Sun May 18 20:22:24 2014
+@@ -91,12 +91,12 @@ endif()
+ add_library(kabc ${LIBRARY_TYPE} ${kabc_LIB_SRCS})
+ generate_export_header(kabc)
+ 
+-target_link_libraries(kabc ${KDE4_KDEUI_LIBS} ${KDE4_KDECORE_LIBS})
+-target_link_libraries(kabc LINK_INTERFACE_LIBRARIES ${KDE4_KDEUI_LIBS})
+ if(NOT KDEPIM_NO_KRESOURCES)
+   target_link_libraries(kabc kresources)
+   target_link_libraries(kabc LINK_INTERFACE_LIBRARIES kresources)
+ endif()
++target_link_libraries(kabc ${KDE4_KDEUI_LIBS} ${KDE4_KDECORE_LIBS})
++target_link_libraries(kabc LINK_INTERFACE_LIBRARIES ${KDE4_KDEUI_LIBS})
+ 
+ set_target_properties(
+   kabc PROPERTIES

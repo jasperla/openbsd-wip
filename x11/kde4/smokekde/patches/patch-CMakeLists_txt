@@ -1,0 +1,11 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.2 2013/10/14 13:42:52 zhuk Exp $
+--- CMakeLists.txt.orig	Fri Jun 28 21:15:08 2013
++++ CMakeLists.txt	Sun Oct 13 18:45:41 2013
+@@ -23,6 +23,7 @@ include_directories(${CMAKE_CURRENT_SOURCE_DIR} ${SMOK
+ 
+ add_definitions (${QT_DEFINITIONS} ${KDE4_DEFINITIONS} -DQT3_SUPPORT)
+ include_directories (${CMAKE_SOURCE_DIR} ${CMAKE_BINARY_DIR} ${KDE4_INCLUDES} )
++set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${KDE4_ENABLE_EXCEPTIONS}")
+ 
+ ## disable deprecation waringins
+ if(CMAKE_COMPILER_IS_GNUCXX)

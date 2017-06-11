@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.2 2013/08/24 17:33:38 zhuk Exp $
+lib/kde4/gsthumbnail.so
+lib/kde4/rawthumbnail.so
+share/kde4/services/gsthumbnail.desktop
+share/kde4/services/rawthumbnail.desktop

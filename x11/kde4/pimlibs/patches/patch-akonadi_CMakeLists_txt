@@ -1,0 +1,13 @@
+$OpenBSD: patch-akonadi_CMakeLists_txt,v 1.2 2014/07/09 20:03:30 zhuk Exp $
+Fix linking.
+--- akonadi/CMakeLists.txt.orig	Thu May  8 11:26:48 2014
++++ akonadi/CMakeLists.txt	Sun May 18 20:22:24 2014
+@@ -461,7 +461,7 @@ if(QT_QTDESIGNER_FOUND)
+ 
+   kde4_add_plugin(akonadiwidgets ${akonadiwidgets_PART_SRCS})
+ 
+-  target_link_libraries(akonadiwidgets ${KDE4_KIO_LIBS} akonadi-kde)
++  target_link_libraries(akonadiwidgets akonadi-kde ${KDE4_KIO_LIBS})
+ 
+   install(TARGETS akonadiwidgets DESTINATION ${PLUGIN_INSTALL_DIR}/plugins/designer)
+ endif()

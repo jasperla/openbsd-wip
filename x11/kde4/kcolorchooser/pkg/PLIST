@@ -1,0 +1,10 @@
+@comment $OpenBSD: PLIST,v 1.2 2013/07/04 00:44:55 zhuk Exp $
+@conflict kdegraphics-<4
+@bin bin/kcolorchooser
+share/applications/kde4/kcolorchooser.desktop
+share/icons/hicolor/16x16/apps/kcolorchooser.png
+share/icons/hicolor/22x22/apps/kcolorchooser.png
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
