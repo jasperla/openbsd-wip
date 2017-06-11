@@ -1,0 +1,33 @@
+$OpenBSD$
+Unbreak compilation.
+Index: core/libs/kmemoryinfo/kmemoryinfo_backend.cpp
+--- core/libs/kmemoryinfo/kmemoryinfo_backend.cpp.orig
++++ core/libs/kmemoryinfo/kmemoryinfo_backend.cpp
+@@ -50,6 +50,7 @@ static int fillMemoryInfo(Digikam::KMemoryInfo::KMemor
+     return 1;
+ }
+ 
++#include <QtGlobal>
+ 
+ #ifdef Q_OS_SOLARIS
+ #include <unistd.h>
+@@ -76,7 +77,8 @@ static int fillMemoryInfo(Digikam::KMemoryInfo::KMemor
+ #include <sys/param.h>
+ #include <sys/types.h>
+ #include <sys/sysctl.h>
+-#include <sys/unistd.h>
++#include <unistd.h>
++#include <sys/vmmeter.h>
+ #endif
+ #ifdef Q_OS_HPUX
+ #include <sys/param.h>
+@@ -542,6 +544,9 @@ int get_mem_stats(Digikam::KMemoryInfo::KMemoryInfoDat
+ #include <sys/time.h>
+ #include <uvm/uvm.h>
+ #include <unistd.h>
++#if defined(Q_OS_OPENBSD)
++#include <uvm/uvm_extern.h>
++#endif
+ #endif
+ #ifdef Q_OS_HPUX
+ #include <sys/param.h>

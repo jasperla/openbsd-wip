@@ -1,0 +1,13 @@
+$OpenBSD$
+error: ‘NULL’ was not declared in this scope
+Index: core/libs/pgfutils/PGFplatform.h
+--- core/libs/pgfutils/PGFplatform.h.orig
++++ core/libs/pgfutils/PGFplatform.h
+@@ -32,6 +32,7 @@
+ #include <cassert>
+ #include <cmath>
+ #include <cstdlib>
++#include <stddef.h>
+ 
+ //-------------------------------------------------------------------------------
+ // Endianess detection taken from lcms2 header.
