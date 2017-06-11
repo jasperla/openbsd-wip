@@ -57,7 +57,7 @@
      #SUBDIR += kde-baseapps
      #SUBDIR += kde-dev-scripts
      #SUBDIR += kde-dev-utils
-     #SUBDIR += kde-runtime
+     SUBDIR += kde-runtime
      #SUBDIR += kdebugsettings
      #SUBDIR += kdeedu-data
      #SUBDIR += kdegraphics-mobipocket
@@ -195,7 +195,7 @@
      #SUBDIR += signon-kwallet-extension
      #SUBDIR += spectacle
      #SUBDIR += step
-     SUBDIR += svgpart
+     SUBDIR += svgpart			# NO_TEST
      #SUBDIR += sweeper
      #SUBDIR += syndication
      #SUBDIR += umbrello
