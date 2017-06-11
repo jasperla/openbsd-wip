@@ -52,7 +52,7 @@
      #SUBDIR += kcalutils
      #SUBDIR += kcharselect
      #SUBDIR += kcolorchooser
-     #SUBDIR += kcontacts
+     SUBDIR += kcontacts		# 94% tests passed, 2 tests failed out of 32
      #SUBDIR += kcron
      #SUBDIR += kde-baseapps
      #SUBDIR += kde-dev-scripts
