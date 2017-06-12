@@ -1,11 +1,9 @@
 # $OpenBSD$
+
 COMMENT =	automatically scan for and configure wireless networks
-
-VERSION =	2
-
 GH_ACCOUNT =	farhaven
 GH_PROJECT =	wireless
-GH_TAGNAME =	v$(VERSION)
+GH_TAGNAME =	v2
 
 CATEGORIES =	net
 
