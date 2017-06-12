@@ -1,10 +1,10 @@
 # $OpenBSD$
 # separate port for Qt5 because it's too different from Qt4 case
-
 COMMENT =	Qt Cryptographic Architecture
 
-DISTNAME =	qca-2.1.0
-PKGNAME =	qca2-qt5-2.1.0
+V =		2.1.3
+DISTNAME =	qca-${V}
+PKGNAME =	qca2-qt5-${V}
 CATEGORIES =	security
 
 SHARED_LIBS =	qca-qt5		0.0
@@ -15,13 +15,13 @@ HOMEPAGE =	http://delta.affinix.com/qca/
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB =		Qt5Core c m pthread
-
-MASTER_SITES =		http://delta.affinix.com/download/qca/2.0/
+EXTRACT_SUFX =		.tar.xz
+MASTER_SITES =		${MASTER_SITE_KDE:=stable/qca/${V}/src/}
 
 MODULES =		devel/cmake x11/qt5
-BUILD_DEPENDS =		devel/doxygen
 
 CONFIGURE_ARGS =	-DBUILD_PLUGINS=none \
+			-DCMAKE_DISABLE_FIND_PACKAGE_Doxygen:Bool=Yes \
 			-DQCA_BINARY_INSTALL_DIR=${PREFIX}/bin \
 			-DQCA_SUFFIX=qt5 \
 			-DQT4_BUILD=Off
