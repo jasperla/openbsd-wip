@@ -10,6 +10,7 @@ CATEGORIES =	net
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
 
+# uses pledge()
 WANTLIB =	c
 
 do-install:
