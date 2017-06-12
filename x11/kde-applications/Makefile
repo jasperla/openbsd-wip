@@ -60,7 +60,7 @@
      SUBDIR += kde-runtime
      #SUBDIR += kdebugsettings
      #SUBDIR += kdeedu-data
-     #SUBDIR += kdegraphics-mobipocket
+     SUBDIR += kdegraphics-mobipocket
      #SUBDIR += kdegraphics-thumbnailers
      #SUBDIR += kdelibs
      #SUBDIR += kdenetwork-filesharing
