@@ -1,0 +1,13 @@
+$OpenBSD$
+
+Index: templates/lib/CMakeLists.txt
+--- templates/lib/CMakeLists.txt.orig
++++ templates/lib/CMakeLists.txt
+@@ -109,6 +109,7 @@ if (Qt5Script_FOUND)
+   target_include_directories(Grantlee_Templates PRIVATE ../scriptabletags)
+   target_link_libraries(Grantlee_Templates
+     LINK_PRIVATE Qt5::Script
++    c pthread
+   )
+ endif()
+ 
