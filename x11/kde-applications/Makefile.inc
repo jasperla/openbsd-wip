@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.5 2016/12/28 08:21:41 zhuk Exp $
+# $OpenBSD: Makefile.inc,v 1.6 2017/06/11 17:47:45 rsadowski Exp $
 
 .if !defined(CATEGORIES)
 ERRORS +=		"Fatal: missing CATEGORIES"
