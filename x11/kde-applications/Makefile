@@ -60,8 +60,8 @@
      SUBDIR += kde-runtime
      #SUBDIR += kdebugsettings
      #SUBDIR += kdeedu-data
-     SUBDIR += kdegraphics-mobipocket
-     #SUBDIR += kdegraphics-thumbnailers
+     SUBDIR += kdegraphics-mobipocket	# NO_TEST
+     SUBDIR += kdegraphics-thumbnailers	# NO_TEST
      #SUBDIR += kdelibs
      #SUBDIR += kdenetwork-filesharing
      #SUBDIR += kdenlive
@@ -103,7 +103,7 @@
      #SUBDIR += kmailtransport
      SUBDIR += kmbox			# 100% tests passed, 0 tests failed out of 2
      SUBDIR += kmime			# 100% tests passed, 0 tests failed out of 17
-     #SUBDIR += kmines
+     SUBDIR += kmines
      #SUBDIR += kmix
      #SUBDIR += kmousetool
      #SUBDIR += kmouth
@@ -163,14 +163,14 @@
      #SUBDIR += libgravatar
      #SUBDIR += libkcddb
      #SUBDIR += libkcompactdisc
-     #SUBDIR += libkdcraw
+     SUBDIR += libkdcraw
      SUBDIR += libkdegames		# 100% tests passed, 0 tests failed out of 2
      #SUBDIR += libkdepim
      #SUBDIR += libkeduvocdocument
-     #SUBDIR += libkexiv2
+     SUBDIR += libkexiv2
      SUBDIR += libkface
      SUBDIR += libkgeomap
-     #SUBDIR += libkipi
+     SUBDIR += libkipi
      #SUBDIR += libkleo
      #SUBDIR += libkmahjongg
      #SUBDIR += libkomparediff2
