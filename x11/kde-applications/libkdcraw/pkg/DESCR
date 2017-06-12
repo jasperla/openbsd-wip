@@ -1,0 +1,3 @@
+Libkdcraw is a C++ interface around LibRaw library used to decode RAW picture
+files.
+

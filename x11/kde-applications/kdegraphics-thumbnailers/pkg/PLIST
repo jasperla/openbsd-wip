@@ -1,0 +1,3 @@
+@comment $OpenBSD$
+lib/qt5/plugins/gsthumbnail.so
+share/kservices5/gsthumbnail.desktop
