@@ -1,0 +1,2 @@
+Upstream makes bad assumptions about what things are named (lwjgl, for example).
+Working with them to not make bad assumptions. This thing already basically works.
