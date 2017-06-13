@@ -2,10 +2,10 @@
 
 COMMENT =		template and text document library for Qt5
 
-V =			5.1.0
-#PLIST_VERSION =		${V:R}
-PKGNAME =		grantlee-qt5-${V}
-DISTNAME =		grantlee-${V}
+PKG_VERSION =		5.1.0
+PLIST_VERSION =		${PKG_VERSION:R}
+PKGNAME =		grantlee-qt5-${PKG_VERSION}
+DISTNAME =		grantlee-${PKG_VERSION}
 CATEGORIES =		devel x11
 HOMEPAGE =		https://github.com/steveire/grantlee
 
@@ -33,6 +33,6 @@ CONFIGURE_ARGS =	-DCMAKE_DISABLE_FIND_PACKAGE_Doxygen:Bool=Yes \
 			-DCMAKE_DISABLE_FIND_PACKAGE_LCov:Bool=Yes \
 			-DCMAKE_DISABLE_FIND_PACKAGE_Cccc:Bool=Yes
 
-#SUBST_VARS =		PLIST_VERSION
+SUBST_VARS =		PLIST_VERSION
 
 .include <bsd.port.mk>
