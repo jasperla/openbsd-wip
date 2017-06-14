@@ -15,11 +15,11 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 MASTER_SITES =	${MASTER_SITE_KDE:=stable/digikam/}
 
-MODULES =	devel/kf5
+# XXX Check after devel/camek update
 # https://gitlab.kitware.com/cmake/cmake/issues/15967
 USE_NINJA =	NO
 
-# XXX Version numbers from digikam-kde4
+# Version numbers from digikam-kde4
 SHARED_LIBS +=  digikamcore               1.0 # 5.5
 SHARED_LIBS +=  digikamdatabase           1.0 # 5.5
 SHARED_LIBS +=  digikamgui                1.0 # 5.5
@@ -42,6 +42,8 @@ WANTLIB += opencv_legacy opencv_ml opencv_nonfree opencv_objdetect
 WANTLIB += opencv_ocl opencv_photo opencv_video png pthread tiff
 WANTLIB += usb-1.0 z
 
+MODULES =	devel/kf5
+
 BUILD_DEPENDS =	misc/shared-desktop-ontologies \
 		x11/qt5/qtxmlpatterns \
 		devel/git \
@@ -55,7 +57,13 @@ BUILD_DEPENDS =	misc/shared-desktop-ontologies \
 RUN_DEPENDS =	devel/desktop-file-utils \
 		devel/kf5/kdoctools \
 		x11/gtk+3,-guic \
+		databases/sqlite \
 		devel/gettext
+
+# TODO
+# - MySQL Database Support
+# - libksane
+# - libakonadicontact
 
 LIB_DEPENDS +=	devel/kf5/kservice \
 		devel/kf5/kcoreaddons \
@@ -79,7 +87,8 @@ LIB_DEPENDS +=	devel/kf5/kservice \
 		graphics/opencv \
 		graphics/liblqr \
 		x11/qt5/qtwebkit \
-		x11/kde-applications/kcalcore
+		x11/kde-applications/kcalcore \
+		x11/kde-applications/libkipi
 
 # XXX Don't try to compile documentation translations for the moment.
 # https://www.mail-archive.com/kde-bugs-dist@kde.org/msg125271.html
@@ -90,6 +99,7 @@ CONFIGURE_ARGS =	-DCMAKE_DISABLE_FIND_PACKAGE_Doxygen:Bool=Yes \
 
 TEST_IS_INTERACTIVE =	X11
 
+# XXX Check after devel/camek update
 # https://gitlab.kitware.com/cmake/cmake/issues/15967
 #pre-build:
 #	cd ${WRKBUILD} && exec ${SETENV} ${MAKE_ENV} \
