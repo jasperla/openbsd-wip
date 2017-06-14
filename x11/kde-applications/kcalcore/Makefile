@@ -15,7 +15,9 @@ WANTLIB += KF5KDELibs4Support KF5KIOCore KF5KIOFileWidgets KF5KIOWidgets
 WANTLIB += KF5Notifications KF5Parts KF5Service KF5Solid KF5SonnetUi
 WANTLIB += KF5TextWidgets KF5UnitConversion KF5WidgetsAddons KF5WindowSystem
 WANTLIB += KF5XmlGui Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5PrintSupport
-WANTLIB += Qt5Widgets Qt5Xml ical icalss m
+WANTLIB += Qt5Widgets Qt5Xml ical icalss m uuid
+
+MODULES +=      lang/python
 
 BUILD_DEPENDS+=	devel/gettext-tools \
 		devel/kf5/kdesignerplugin \
@@ -38,6 +40,7 @@ LIB_DEPENDS +=	devel/kf5/kdelibs4support \
 		devel/kf5/kxmlgui \
 		devel/kf5/kwindowsystem \
 		devel/kf5/ktextwidgets \
+		sysutils/e2fsprogs \
 		textproc/libical
 
 .include <bsd.port.mk>
