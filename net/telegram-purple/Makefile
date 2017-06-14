@@ -6,7 +6,7 @@ DISTNAME =		telegram-purple_$V.orig
 PKGNAME =		telegram-purple-$V
 CATEGORIES =		net
 
-MAINTAINER =		Dmitrij D. Czarkoff <czarkoff@gmail.com>
+MAINTAINER =		Dmitrij D. Czarkoff <czarkoff@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes

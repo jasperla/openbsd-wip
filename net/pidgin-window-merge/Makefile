@@ -7,7 +7,7 @@ GH_PROJECT =		window_merge
 GH_COMMIT =		b4811ae1807a6c124fb06a717951bb2541be19f7
 CATEGORIES =		net
 
-MAINTAINER =		Dmitrij D. Czarkoff <czarkoff@gmail.com>
+MAINTAINER =		Dmitrij D. Czarkoff <czarkoff@openbsd.org>
 
 # GPLv3+
 PERMIT_PACKAGE_CDROM =	Yes
