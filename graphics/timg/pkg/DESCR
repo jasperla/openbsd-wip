@@ -1,0 +1,3 @@
+Timg uses 24-Bit color capabilities and unicode character blocks to display
+images in the terminal.  It displays regular images, plays animated gifs or
+allows to scroll static images.
