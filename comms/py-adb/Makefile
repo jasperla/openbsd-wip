@@ -1,10 +1,11 @@
 # $OpenBSD$
 
 COMMENT =		Python ADB + Fastboot implementation
-PKGNAME =		${MODPY_PY_PREFIX}adb-${MODPY_EGG_VERSION}
-GH_ACCOUNT =		google
-GH_PROJECT =		python-adb
-GH_COMMIT =		e8bd3244210da9134a336dfd75f84974f0a33604
+DISTNAME =		adb-${MODPY_EGG_VERSION}
+PKGNAME =		py-adb-${MODPY_EGG_VERSION}
+#GH_ACCOUNT =		google
+#GH_PROJECT =		python-adb
+#GH_COMMIT =		bed1a53d9574b6afbd63d783ed142371b0d1e584
 CATEGORIES =		comms sysutils
 
 MAINTAINER =		Dmitrij D. Czarkoff <czarkoff@openbsd.org>
@@ -13,13 +14,19 @@ MAINTAINER =		Dmitrij D. Czarkoff <czarkoff@openbsd.org>
 PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =		lang/python
-MODPY_EGG_VERSION =	1.1.0
+MODPY_EGG_VERSION =	1.2.0
 MODPY_SETUPTOOLS =	Yes
+MODPY_PI =		Yes
+MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 
 RUN_DEPENDS =		devel/py-libusb1 \
-			security/py-M2Crypto \
-			devel/py-progressbar
-TEST_DEPENDS =		${RUN_DEPENDS}
+			security/py-rsa${MODPY_FLAVOR} \
+			devel/py-progressbar${MODPY_FLAVOR}
+
+NO_TEST =		Yes
+
+post-patch:
+	rm ${WRKSRC}/adb/sign_m2crypto.py
 
 post-install:
 .for f in adb fastboot
