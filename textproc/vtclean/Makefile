@@ -1,10 +1,10 @@
 # $OpenBSD$
 
 COMMENT =		strip terminal escape sequences from text
-DISTNAME =		vtclean-0.0.20160125
+DISTNAME =		vtclean-0.0.20170504
 GH_ACCOUNT =		lunixbochs
 GH_PROJECT =		vtclean
-GH_COMMIT =		4fbf7632a2c6d3fbdb9931439bdbbeded02cbe36
+GH_COMMIT =		d14193dfc626125c831501c1c42340b4248e1f5a
 CATEGORIES =		textproc sysutils
 
 MAINTAINER =		Dmitrij D. Czarkoff <czarkoff@openbsd.org>
