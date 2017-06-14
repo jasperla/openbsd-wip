@@ -3,7 +3,7 @@
 COMMENT =		corrects and cleans up HTML and XML documents
 GH_ACCOUNT =		htacg
 GH_PROJECT =		tidy-html5
-GH_TAGNAME =		5.2.0
+GH_TAGNAME =		5.4.0
 SHARED_LIBS +=		tidy 0.0 # 5.2
 CATEGORIES =		textproc devel
 HOMEPAGE =		http://www.html-tidy.org/
