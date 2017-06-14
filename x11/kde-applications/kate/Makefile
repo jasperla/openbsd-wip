@@ -17,6 +17,8 @@ WANTLIB += KF5Wallet KF5WidgetsAddons KF5WindowSystem KF5XmlGui
 WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Script Qt5Sql
 WANTLIB += Qt5Widgets Qt5Xml c git2 m
 
+MODULES +=	lang/python
+
 BUILD_DEPENDS =	devel/kf5/kdoctools \
 		devel/kf5/kinit \
 		devel/gettext-tools
