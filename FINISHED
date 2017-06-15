@@ -81,3 +81,4 @@ www/p5-HTML-TreeBuilder-LibXML		ready to import (garcer)
 devel/deviceatlas-enterprise-c		ready to import (devnexen)
 devel/libangelscript			ready to import, sent to ports@ 2015-12-20
 devel/arm-none-eabi                     ready to import, sent to ports@ 2015-12-31, there is a patch ready to apply to the tree
+net/pidgin-window-merge			ready to import, sent to ports@ 2017-06-16 (czarkoff)
