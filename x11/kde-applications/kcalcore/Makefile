@@ -2,7 +2,7 @@
 
 COMMENT =	The KDE calendar access library
 DISTNAME =	kcalcore-${VERSION}
-CATEGORIES =	textproc
+CATEGORIES =	devel mail
 
 KDE5 =		Yes
 
@@ -17,7 +17,7 @@ WANTLIB += KF5TextWidgets KF5UnitConversion KF5WidgetsAddons KF5WindowSystem
 WANTLIB += KF5XmlGui Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5PrintSupport
 WANTLIB += Qt5Widgets Qt5Xml ical icalss m uuid
 
-MODULES +=      lang/python
+MODULES +=	lang/python
 
 BUILD_DEPENDS+=	devel/gettext-tools \
 		devel/kf5/kdesignerplugin \

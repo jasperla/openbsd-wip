@@ -2,7 +2,7 @@
 
 COMMENT =	interface to use kipi-plugins from a KDE application
 DISTNAME =	libkipi-${VERSION}
-CATEGORIES =	graphics
+CATEGORIES =	devel graphics
 
 KDE5 =		Yes
 

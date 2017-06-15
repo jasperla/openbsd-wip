@@ -2,7 +2,7 @@
 
 COMMENT =	KDE advanced text editor
 DISTNAME =	kate-${VERSION}
-CATEGORIES =	textproc
+CATEGORIES =	editors
 
 KDE5 =		Yes
 

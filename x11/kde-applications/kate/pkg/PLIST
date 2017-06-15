@@ -1,4 +1,6 @@
 @comment $OpenBSD$
+@pkgpath x11/kde4/kate
+@conflict krita-<17.04.1
 @bin bin/kate
 @bin bin/kwrite
 lib/qt5/plugins/ktexteditor/
