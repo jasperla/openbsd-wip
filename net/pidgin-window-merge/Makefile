@@ -23,8 +23,10 @@ WANTLIB += xml2 z
 
 BUILD_DEPENDS =		devel/autoconf/2.69 \
 			devel/automake/1.15 \
-			devel/libtool
-BUILD_DEPENDS =		net/pidgin
+			devel/libtool \
+			net/pidgin
+LIB_DEPENDS =		net/pidgin,-libpurple \
+			x11/gtk+2
 RUN_DEPENDS =		net/pidgin
 
 CONFIGURE_STYLE =	gnu
