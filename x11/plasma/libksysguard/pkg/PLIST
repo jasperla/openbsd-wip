@@ -29,8 +29,7 @@ lib/cmake/KF5SysGuard/KF5SysGuardLibraryTargets.cmake
 @lib lib/libprocessui.so.${LIBprocessui_VERSION}
 @bin libexec/kauth/ksysguardprocesslist_helper
 share/dbus-1/system-services/org.kde.ksysguard.processlisthelper.service
-share/examples/dbus-1/system.d/org.kde.ksysguard.processlisthelper.conf
-@sample ${SYSCONFDIR}/dbus-1/system.d/org.kde.ksysguard.processlisthelper.conf
+share/examples/kde/dbus-1/system.d/org.kde.ksysguard.processlisthelper.conf
 share/ksysguard/
 share/ksysguard/scripts/
 share/ksysguard/scripts/README
@@ -100,6 +99,7 @@ share/locale/es/LC_MESSAGES/ksgrd.mo
 share/locale/es/LC_MESSAGES/ksysguardlsofwidgets.mo
 share/locale/es/LC_MESSAGES/processcore.mo
 share/locale/es/LC_MESSAGES/processui.mo
+share/locale/et/LC_MESSAGES/ksgrd.mo
 share/locale/et/LC_MESSAGES/ksysguardlsofwidgets.mo
 share/locale/et/LC_MESSAGES/processcore.mo
 share/locale/et/LC_MESSAGES/processui.mo
@@ -129,6 +129,7 @@ share/locale/gl/LC_MESSAGES/processui.mo
 share/locale/gu/LC_MESSAGES/ksysguardlsofwidgets.mo
 share/locale/gu/LC_MESSAGES/processcore.mo
 share/locale/gu/LC_MESSAGES/processui.mo
+share/locale/he/LC_MESSAGES/ksgrd.mo
 share/locale/he/LC_MESSAGES/ksysguardlsofwidgets.mo
 share/locale/he/LC_MESSAGES/processcore.mo
 share/locale/he/LC_MESSAGES/processui.mo
