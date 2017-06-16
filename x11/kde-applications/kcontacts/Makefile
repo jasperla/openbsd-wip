@@ -11,6 +11,8 @@ SHARED_LIBS +=  KF5Contacts               0.0 # 5.5
 WANTLIB += KF5Codecs KF5ConfigCore KF5CoreAddons KF5I18n Qt5Core
 WANTLIB += Qt5DBus Qt5Gui m
 
+MODULES +=	lang/python
+
 BUILD_DEPENDS +=devel/gettext-tools
 
 RUN_DEPENDS =	devel/gettext
