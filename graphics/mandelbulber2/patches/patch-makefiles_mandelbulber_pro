@@ -1,0 +1,61 @@
+$OpenBSD$
+
+Not enough indirection.
+
+Index: makefiles/mandelbulber.pro
+--- makefiles/mandelbulber.pro.orig
++++ makefiles/mandelbulber.pro
+@@ -51,38 +51,33 @@ CONFIG += qt thread
+ 
+ CONFIG += console
+ 
+-SOURCES +=  ../src/*.cpp
+-SOURCES +=  ../qt/*.cpp
++SOURCES +=  ../../src/*.cpp
++SOURCES +=  ../../qt/*.cpp
+ 
+-HEADERS += ../src/*.hpp
+-HEADERS += ../src/*.h
+-HEADERS += ../qt/*.hpp
+-HEADERS += ../qt/*.h
++HEADERS += ../../src/*.hpp
++HEADERS += ../../src/*.h
++HEADERS += ../../qt/*.hpp
++HEADERS += ../../qt/*.h
+ 
+-FORMS   += ../qt/*.ui
++FORMS   += ../../qt/*.ui
+ 
+-RESOURCES = ../qt/icons.qrc
++RESOURCES = ../../qt/icons.qrc
+ 
+-UI_DIR = ../qt
++UI_DIR = ../../qt
+ 
+-INCLUDEPATH += ../qt/
++INCLUDEPATH += ../../qt/
+ 
+-TRANSLATIONS = ../language/en.ts\
+-               ../language/de.ts\
+-               ../language/pl.ts\
+-               ../language/it.ts\
+-               ../language/nl.ts
++TRANSLATIONS = ../../language/en.ts\
++               ../../language/de.ts\
++               ../../language/pl.ts\
++               ../../language/it.ts\
++               ../../language/nl.ts
+ 
+ QMAKE_CXXFLAGS += $$(CXXFLAGS)
+ QMAKE_CFLAGS += $$(CFLAGS)
+ QMAKE_CXXFLAGS += $$(CPPFLAGS)
+ QMAKE_CFLAGS += $$(CPPFLAGS)
+ QMAKE_LFLAGS += $$(LDFLAGS)
+-
+-QMAKE_CXXFLAGS_RELEASE -= -O2
+-QMAKE_CXXFLAGS_RELEASE += -O3
+- 
+-QMAKE_LFLAGS_RELEASE -= -O1
+ 
+ unix:!mac:QMAKE_CXXFLAGS += -ffast-math -fopenmp -std=c++11
+ macx:QMAKE_CXXFLAGS += -ffast-math -openmp -std=c++11
