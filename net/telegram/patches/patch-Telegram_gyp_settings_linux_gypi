@@ -1,0 +1,14 @@
+$OpenBSD$
+
+Index: Telegram/gyp/settings_linux.gypi
+--- Telegram/gyp/settings_linux.gypi.orig
++++ Telegram/gyp/settings_linux.gypi
+@@ -39,7 +39,7 @@
+         ],
+       },
+       'conditions': [
+-        [ '"<!(uname -p)" == "x86_64"', {
++        [ '"<!(uname -p)" == "amd64"', {
+           'defines': [
+             'Q_OS_LINUX64',
+           ],

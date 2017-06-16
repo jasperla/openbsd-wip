@@ -1,0 +1,14 @@
+$OpenBSD$
+
+Index: libdbusmenu-gtk/Makefile.in
+--- libdbusmenu-gtk/Makefile.in.orig
++++ libdbusmenu-gtk/Makefile.in
+@@ -507,7 +507,7 @@ libdbusmenu_gtk_la_CFLAGS = \
+ 	$(DBUSMENUGTK_CFLAGS) \
+ 	$(COVERAGE_CFLAGS) \
+ 	-I$(top_srcdir) \
+-	-Wall -Werror -Wno-error=deprecated-declarations \
++	-Wall  -Wno-error=deprecated-declarations \
+ 	-DG_LOG_DOMAIN="\"LIBDBUSMENU-GTK\""
+ 
+ libdbusmenu_gtk_la_LIBADD = \

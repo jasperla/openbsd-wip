@@ -1,0 +1,39 @@
+$OpenBSD$
+
+This is our configure script.
+
+Index: Telegram/gyp/refresh.sh
+--- Telegram/gyp/refresh.sh.orig
++++ Telegram/gyp/refresh.sh
+@@ -16,13 +16,13 @@ fi
+ MySystem=`uname -s`
+ cd $FullScriptPath
+ 
+-if [ "$MySystem" == "Linux" ]; then
+-  ../../../Libraries/gyp/gyp --depth=. --generator-output=.. -Goutput_dir=../out -Dofficial_build_target=$BuildTarget Telegram.gyp --format=cmake
+-  cd ../../out/Debug
+-  ../../../Libraries/cmake-3.6.2/bin/cmake .
+-  cd ../Release
+-  ../../../Libraries/cmake-3.6.2/bin/cmake .
+-  cd ../../Telegram/gyp
++if [ "$MySystem" == "OpenBSD" ]; then
++  gyp --depth=. --generator-output=.. -Goutput_dir=../out -Dofficial_build_target=linux32 Telegram.gyp --format=make
++  #cd ../../out/Debug
++  #../../../Libraries/cmake-3.6.2/bin/cmake .
++  #cd ../Release
++  #../../../Libraries/cmake-3.6.2/bin/cmake .
++  #cd ../../Telegram/gyp
+ else
+   #gyp --depth=. --generator-output=../.. -Goutput_dir=out Telegram.gyp --format=ninja
+   #gyp --depth=. --generator-output=../.. -Goutput_dir=out Telegram.gyp --format=xcode-ninja
+@@ -31,8 +31,8 @@ else
+   ../../../Libraries/gyp/gyp --depth=. --generator-output=.. -Goutput_dir=../out -Gxcode_upgrade_check_project_version=830 -Dofficial_build_target=$BuildTarget Telegram.gyp --format=xcode
+ fi
+ 
+-cd ../..
++#cd ../..
+ 
+-cd $FullExecPath
++#cd $FullExecPath
+ exit
+ 

@@ -1,0 +1,13 @@
+$OpenBSD$
+
+Index: Telegram/SourceFiles/base/observer.h
+--- Telegram/SourceFiles/base/observer.h.orig
++++ Telegram/SourceFiles/base/observer.h
+@@ -22,6 +22,7 @@ Copyright (c) 2014-2017 John Preston, https://desktop.
+ 
+ #include <vector>
+ #include <deque>
++#include "base/lambda.h"
+ #include "base/type_traits.h"
+ 
+ namespace base {

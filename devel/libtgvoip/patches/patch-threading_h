@@ -1,0 +1,28 @@
+$OpenBSD$
+
+Index: threading.h
+--- threading.h.orig
++++ threading.h
+@@ -13,6 +13,10 @@
+ #include <semaphore.h>
+ #include <sched.h>
+ 
++#if defined(__OpenBSD__)
++#include <pthread_np.h>
++#endif
++
+ typedef pthread_t tgvoip_thread_t;
+ typedef pthread_mutex_t tgvoip_mutex_t;
+ typedef pthread_cond_t tgvoip_lock_t;
+@@ -20,7 +24,11 @@ typedef pthread_cond_t tgvoip_lock_t;
+ #define start_thread(ref, entry, arg) pthread_create(&ref, NULL, entry, arg)
+ #define join_thread(thread) pthread_join(thread, NULL)
+ #ifndef __APPLE__
++#ifdef __OpenBSD__
++#define set_thread_name(thread, name) pthread_set_name_np(thread, name)
++#else
+ #define set_thread_name(thread, name) pthread_setname_np(thread, name)
++#endif
+ #else
+ #define set_thread_name(thread, name)
+ #endif

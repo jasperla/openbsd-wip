@@ -1,0 +1,62 @@
+$OpenBSD$
+
+Don't look for libtgvoip, we'll take care of it manually.
+Also don't try to build the packer and updater utilities, since you can't.
+
+Index: Telegram/gyp/Telegram.gyp
+--- Telegram/gyp/Telegram.gyp.orig
++++ Telegram/gyp/Telegram.gyp
+@@ -60,7 +60,7 @@
+         'pt-BR',
+       ],
+       'build_defines%': '',
+-      'list_sources_command': 'python <(DEPTH)/list_sources.py --input <(DEPTH)/telegram_sources.txt --replace src_loc=<(src_loc)',
++      'list_sources_command': '${MODPY_BIN} <(DEPTH)/list_sources.py --input <(DEPTH)/telegram_sources.txt --replace src_loc=<(src_loc)',
+     },
+     'includes': [
+       'common_executable.gypi',
+@@ -78,15 +78,15 @@
+       'codegen.gyp:codegen_lang',
+       'codegen.gyp:codegen_numbers',
+       'codegen.gyp:codegen_style',
+-      'utils.gyp:Updater',
+-      '../ThirdParty/libtgvoip/libtgvoip.gyp:libtgvoip',
++#     'utils.gyp:Updater',
++#     '../ThirdParty/libtgvoip/libtgvoip.gyp:libtgvoip',
+     ],
+ 
+     'defines': [
+       'AL_LIBTYPE_STATIC',
+       'AL_ALEXT_PROTOTYPES',
+       'TGVOIP_USE_CXX11_LIB',
+-      '<!@(python -c "for s in \'<(build_defines)\'.split(\',\'): print(s)")',
++      '<!@(${MODPY_BIN} -c "for s in \'<(build_defines)\'.split(\',\'): print(s)")',
+     ],
+ 
+     'include_dirs': [
+@@ -112,15 +112,15 @@
+     'sources!': [
+       '<!@(<(list_sources_command) <(qt_moc_list_sources_arg) --exclude_for <(build_os))',
+     ],
+-    'conditions': [
+-      [ '"<(official_build_target)" != ""', {
+-        'defines': [
+-          'CUSTOM_API_ID',
+-        ],
+-        'dependencies': [
+-          'utils.gyp:Packer',
+-        ],
+-      }],
+-    ],
++#   'conditions': [
++#     [ '"<(official_build_target)" != ""', {
++#       'defines': [
++#         'CUSTOM_API_ID',
++#       ],
++#       'dependencies': [
++#         'utils.gyp:Packer',
++#       ],
++#     }],
++#   ],
+   }],
+ }

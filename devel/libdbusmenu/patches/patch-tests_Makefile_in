@@ -1,0 +1,14 @@
+$OpenBSD$
+
+Index: tests/Makefile.in
+--- tests/Makefile.in.orig
++++ tests/Makefile.in
+@@ -979,7 +979,7 @@ TESTS_ENVIRONMENT = env GI_TYPELIB_PATH=$(top_builddir
+ # Shared vars for the dbusmenu-glib tests
+ ############################################
+ DBUSMENU_GLIB_TEST_CFLAGS = \
+-	-Wall -Werror \
++	-Wall  \
+ 	-DG_DISABLE_DEPRECATED \
+ 	-I$(top_srcdir) \
+ 	$(DBUSMENUTESTS_CFLAGS) \

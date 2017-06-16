@@ -1,0 +1,179 @@
+$OpenBSD$
+
+Index: Telegram/gyp/qt.gypi
+--- Telegram/gyp/qt.gypi.orig
++++ Telegram/gyp/qt.gypi
+@@ -32,20 +32,20 @@
+             ],
+           },
+           'qt_libs': [
+-            'qwebp',
++#           'qwebp',
+             'Qt5PrintSupport',
+             'Qt5PlatformSupport',
+             'Qt5Network',
+             'Qt5Widgets',
+             'Qt5Gui',
+-            'qtharfbuzzng',
++#           'qtharfbuzzng',
+           ],
+           'qt_version%': '<(qt_version)',
+           'conditions': [
+             [ 'build_macold', {
+               'linux_path_qt%': '/usr/local/macold/Qt-<(qt_version)',
+             }, {
+-              'linux_path_qt%': '/usr/local/tdesktop/Qt-<(qt_version)',
++              'linux_path_qt%': ' -I${TRUEPREFIX}/include/X11/qt5',
+             }]
+           ]
+         },
+@@ -62,7 +62,7 @@
+               'qtmain',
+               'qwindows',
+               'qtfreetype',
+-              'qtpcre',
++#             'qtpcre',
+             ],
+           }],
+           [ 'build_mac', {
+@@ -85,19 +85,19 @@
+             ],
+           }],
+           [ 'build_linux', {
+-            'qt_lib_prefix': 'lib',
+-            'qt_lib_debug_postfix': '.a',
+-            'qt_lib_release_postfix': '.a',
++            'qt_lib_prefix': '-l',
++            'qt_lib_debug_postfix': '',
++            'qt_lib_release_postfix': '',
+             'qt_libs': [
+               'qxcb',
+               'Qt5XcbQpa',
+-              'qconnmanbearer',
++#             'qconnmanbearer',
+               'qgenericbearer',
+-              'qnmbearer',
++#             'qnmbearer',
+               '<@(qt_libs)',
+               'Qt5DBus',
+               'Qt5Core',
+-              'qtpcre',
++#             'qtpcre',
+               'Xi',
+               'Xext',
+               'Xfixes',
+@@ -110,19 +110,19 @@
+               'xcb-shm',
+               'xcb-xfixes',
+               'xcb-render',
+-              'xcb-static',
++#             'xcb-static',
+             ],
+           }],
+         ],
+       },
+       'qt_version%': '<(qt_version)',
+       'qt_loc_unix': '<(qt_loc_unix)',
+-      'qt_version_loc': '<!(python -c "print(\'<(qt_version)\'.replace(\'.\', \'_\'))")',
++      'qt_version_loc': '<!(${MODPY_BIN} -c "print(\'<(qt_version)\'.replace(\'.\', \'_\'))")',
+       'qt_libs_debug': [
+-        '<!@(python -c "for s in \'<@(qt_libs)\'.split(\' \'): print(\'<(qt_lib_prefix)\' + s + \'<(qt_lib_debug_postfix)\')")',
++        '<!@(${MODPY_BIN} -c "for s in \'<@(qt_libs)\'.split(\' \'): print(\'<(qt_lib_prefix)\' + s + \'<(qt_lib_debug_postfix)\')")',
+       ],
+       'qt_libs_release': [
+-        '<!@(python -c "for s in \'<@(qt_libs)\'.split(\' \'): print(\'<(qt_lib_prefix)\' + s + \'<(qt_lib_release_postfix)\')")',
++        '<!@(${MODPY_BIN} -c "for s in \'<@(qt_libs)\'.split(\' \'): print(\'<(qt_lib_prefix)\' + s + \'<(qt_lib_release_postfix)\')")',
+       ],
+     },
+     'qt_libs_debug': [ '<@(qt_libs_debug)' ],
+@@ -137,14 +137,14 @@
+     ],
+ 
+     # If you need moc sources include a line in your 'sources':
+-    # '<!@(python <(DEPTH)/list_sources.py [sources] <(qt_moc_list_sources_arg))'
++    # '<!@(${MODPY_BIN} <(DEPTH)/list_sources.py [sources] <(qt_moc_list_sources_arg))'
+     # where [sources] contains all your source files
+     'qt_moc_list_sources_arg': '--moc-prefix SHARED_INTERMEDIATE_DIR/<(_target_name)/moc/moc_',
+ 
+     'linux_path_xkbcommon%': '/usr/local',
+-    'linux_lib_ssl%': '/usr/local/ssl/lib/libssl.a',
+-    'linux_lib_crypto%': '/usr/local/ssl/lib/libcrypto.a',
+-    'linux_lib_icu%': '/usr/lib/libicutu.a /usr/lib/libicui18n.a /usr/lib/libicuuc.a /usr/lib/libicudata.a',
++    'linux_lib_ssl%': '-lssl',
++    'linux_lib_crypto%': '-lcrypto',
++    'linux_lib_icu%': '-licutu -licui18n -licuuc -licudata',
+   },
+ 
+   'configurations': {
+@@ -193,20 +193,22 @@
+   },
+ 
+   'include_dirs': [
+-    '<(qt_loc)/include',
+-    '<(qt_loc)/include/QtCore',
+-    '<(qt_loc)/include/QtGui',
+-    '<(qt_loc)/include/QtCore/<(qt_version)',
+-    '<(qt_loc)/include/QtGui/<(qt_version)',
+-    '<(qt_loc)/include/QtCore/<(qt_version)/QtCore',
+-    '<(qt_loc)/include/QtGui/<(qt_version)/QtGui',
++    '<(qt_loc)/QtCore',
++    '<(qt_loc)/QtGui',
++    '<(qt_loc)/QtCore/<(qt_version)',
++    '<(qt_loc)/QtGui/<(qt_version)',
++    '<(qt_loc)/QtCore/<(qt_version)/QtCore',
++    '<(qt_loc)/QtGui/<(qt_version)/QtGui',
++    '${X11BASE}/include',
+   ],
+   'library_dirs': [
+-    '<(qt_loc)/lib',
+-    '<(qt_loc)/plugins',
+-    '<(qt_loc)/plugins/bearer',
+-    '<(qt_loc)/plugins/platforms',
+-    '<(qt_loc)/plugins/imageformats',
++    '${TRUEPREFIX}/lib',
++    '${TRUEPREFIX}/lib/qt5',
++    '${TRUEPREFIX}/lib/qt5/plugins',
++    '${TRUEPREFIX}/lib/qt5/plugins/bearer',
++    '${TRUEPREFIX}/lib/qt5/plugins/platforms',
++    '${TRUEPREFIX}/lib/qt5/plugins/imageformats',
++    '${X11BASE}/lib',
+   ],
+   'defines': [
+     'QT_WIDGETS_LIB',
+@@ -224,15 +226,10 @@
+         '<@(qt_libs_release)',
+         '<(linux_lib_ssl)',
+         '<(linux_lib_crypto)',
+-        '<!@(python -c "for s in \'<(linux_lib_icu)\'.split(\' \'): print(s)")',
+-        'xcb',
+-        'X11',
+-        'X11-xcb',
+-        'dbus-1',
+-        'dl',
+-        'gthread-2.0',
+-        'glib-2.0',
+-        'pthread',
++        '<!@(${MODPY_BIN} -c "for s in \'<(linux_lib_icu)\'.split(\' \'): print(s)")',
++        '-lxcb',
++        '-lX11',
++        '-pthread',
+       ],
+       'include_dirs': [
+         '<(qt_loc)/mkspecs/linux-g++',
+@@ -260,13 +257,13 @@
+       '<(SHARED_INTERMEDIATE_DIR)/<(_target_name)/moc/moc_<(RULE_INPUT_ROOT).cpp',
+     ],
+     'action': [
+-      '<(qt_loc)/bin/moc<(exe_ext)',
++      'moc-qt5',
+ 
+       # Silence "Note: No relevant classes found. No output generated."
+       '--no-notes',
+ 
+-      '<!@(python -c "for s in \'<@(_defines)\'.split(\' \'): print(\'-D\' + s)")',
+-      # '<!@(python -c "for s in \'<@(_include_dirs)\'.split(\' \'): print(\'-I\' + s)")',
++      '<!@(${MODPY_BIN} -c "for s in \'<@(_defines)\'.split(\' \'): print(\'-D\' + s)")',
++      # '<!@(${MODPY_BIN} -c "for s in \'<@(_include_dirs)\'.split(\' \'): print(\'-I\' + s)")',
+       '<(RULE_INPUT_PATH)',
+       '-o', '<(SHARED_INTERMEDIATE_DIR)/<(_target_name)/moc/moc_<(RULE_INPUT_ROOT).cpp',
+     ],
