@@ -1,0 +1,25 @@
+$OpenBSD: patch-Makefile_in,v 1.4 2015/02/09 15:52:13 dcoppa Exp $
+Index: Makefile.in
+--- Makefile.in.orig
++++ Makefile.in
+@@ -5307,7 +5307,6 @@ src/defaults.hh:
+ 
+ src/defaults.cc: force
+ 	@( \
+-		GITDIR=$(top_srcdir)/.git; \
+ 		echo '// This file is generated from Makefile. Do not edit!'; \
+ 		echo '#include "defaults.hh"'; \
+ 		echo ''; \
+@@ -5316,11 +5315,7 @@ src/defaults.cc: force
+ 		echo '}'; \
+ 		echo ''; \
+ 		echo 'const char* gitrevision() {'; \
+-		if test -r $$GITDIR/HEAD; then \
+-			echo '  return "'`cd $$GITDIR && git rev-parse HEAD`'";'; \
+-		else \
+-			echo '  return "unknown";'; \
+-		fi; \
++		echo '  return "unknown";'; \
+ 		echo '}' ) > $(top_builddir)/src/defaults_tmp.cc
+ 	@if ! cmp $(top_builddir)/src/defaults_tmp.cc $(top_builddir)/src/defaults.cc ; then cp $(top_builddir)/src/defaults_tmp.cc $(top_builddir)/src/defaults.cc; fi
+ 	@rm $(top_builddir)/src/defaults_tmp.cc
