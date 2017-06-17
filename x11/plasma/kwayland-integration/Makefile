@@ -1,12 +1,13 @@
 # $OpenBSD$
 
-COMMENT =		foo something
+COMMENT =		plugins for the wayland windowing system
 DISTNAME =		kwayland-integration-${VERSION}
 
-#SHARED_LIBS =		KF5Foo		0.0
+WANTLIB += KF5IdleTime KF5WaylandClient KF5WindowSystem Qt5Core
+WANTLIB += Qt5Gui Qt5Widgets m
 
-WANTLIB =		
-
-#LIB_DEPENDS =		foo/bar
+LIB_DEPENDS =		devel/kf5/kwayland \
+			devel/kf5/kwindowsystem \
+			devel/kf5/kidletime
 
 .include <bsd.port.mk>
