@@ -1,7 +1,7 @@
 # $OpenBSD$
 
 COMMENT =		X server replacement
-DISTNAME =		wayland-1.10.0
+DISTNAME =		wayland-1.13.0
 
 SHARED_LIBS =	wayland-client		0.0 # 3.0
 SHARED_LIBS +=	wayland-cursor		0.0 # 0.0
@@ -14,12 +14,13 @@ MAINTAINER =		Vadim Zhukov <persgray@gmail.com>
 # MIT, examples (not packaged) are GPL
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =		c expat ffi lzma m pthread xml2 z
+WANTLIB =		c expat ffi iconv lzma m pthread xml2 z
 
 MASTER_SITES =		http://wayland.freedesktop.org/releases/
 EXTRACT_SUFX =		.tar.xz
 
-BUILD_DEPENDS =		math/graphviz
+BUILD_DEPENDS =		math/graphviz \
+			textproc/xmlto
 LIB_DEPENDS =		archivers/xz \
 			devel/libffi \
 			converters/libiconv \
@@ -30,7 +31,6 @@ SEPARATE_BUILD =	Yes
 USE_GMAKE =		Yes
 
 CONFIGURE_STYLE =	gnu autoconf automake
-CONFIGURE_ARGS =	${CONFIGURE_SHARED}
 
 AUTOCONF_VERSION =	2.69
 AUTOMAKE_VERSION =	1.14

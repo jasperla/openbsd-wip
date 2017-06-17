@@ -1,8 +1,9 @@
 $OpenBSD$
 Allow manuals to be installed.
---- doc/doxygen/Makefile.am.orig	Mon Jan 11 09:44:29 2016
-+++ doc/doxygen/Makefile.am	Mon Jan 11 09:45:39 2016
-@@ -35,7 +35,7 @@ diagram_maps := $(patsubst $(diagramsdir)/%,xml/%,$(di
+Index: doc/doxygen/Makefile.am
+--- doc/doxygen/Makefile.am.orig
++++ doc/doxygen/Makefile.am
+@@ -49,7 +49,7 @@ diagram_maps := $(patsubst $(diagramsdir)/%,xml/%,$(di
  # find all man/man3/wl_foo.3 pages
  # for this to work, we need to create them before the man target (hence
  # all-local below)
@@ -10,4 +11,4 @@ Allow manuals to be installed.
 +dist_man3_MANS = $(shell test -d man && find man/man3 -name "wl_*.3")
  
  # Listing various directories that might need to be created.
- alldirs := xml xml/Client xml/Server man/man3
+ alldirs := xml xml/Client xml/Server man/man3 html/Client html/Server
