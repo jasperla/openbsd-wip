@@ -11,4 +11,6 @@ BUILD_DEPENDS =		print/fontforge
 
 CONFIGURE_ARGS =	-DOXYGEN_FONT_INSTALL_DIR=${PREFIX}/share/fonts/oxygen
 
+NO_TEST =		Yes
+
 .include <bsd.port.mk>
