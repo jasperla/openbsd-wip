@@ -16,14 +16,13 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB =		c expat ffi lzma m pthread xml2 z
 
-MODULES =		converters/libiconv
-
 MASTER_SITES =		http://wayland.freedesktop.org/releases/
 EXTRACT_SUFX =		.tar.xz
 
 BUILD_DEPENDS =		math/graphviz
 LIB_DEPENDS =		archivers/xz \
 			devel/libffi \
+			converters/libiconv \
 			textproc/libxml
 
 SEPARATE_BUILD =	Yes
