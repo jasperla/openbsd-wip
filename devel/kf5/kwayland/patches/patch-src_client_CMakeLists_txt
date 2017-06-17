@@ -1,0 +1,14 @@
+$OpenBSD$
+
+Index: src/client/CMakeLists.txt
+--- src/client/CMakeLists.txt.orig
++++ src/client/CMakeLists.txt
+@@ -3,7 +3,7 @@ remove_definitions(-DQT_NO_CAST_FROM_ASCII)
+ remove_definitions(-DQT_NO_CAST_TO_ASCII)
+ 
+ # needed to access QPA
+-include_directories(${Qt5Gui_PRIVATE_INCLUDE_DIRS})
++include_directories(SYSTEM "/usr/local/include/X11/qt5/QtGui/${Qt5_VERSION}/QtGui")
+ 
+ set(CLIENT_LIB_SRCS
+     buffer.cpp
