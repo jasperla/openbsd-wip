@@ -4,13 +4,16 @@ COMMENT =		PolicyKit-1 KDE5 agent
 DISTNAME =		polkit-kde-agent-1-${VERSION}
 PKGNAME =		polkit-kde-agent-${VERSION}
 
-WANTLIB =  KF5ConfigCore KF5CoreAddons KF5Crash KF5DBusAddons
-WANTLIB += KF5I18n KF5IconThemes KF5Notifications KF5WidgetsAddons
-WANTLIB += KF5WindowSystem Qt5Core Qt5DBus Qt5Gui Qt5Widgets c
-WANTLIB += m polkit-qt5-agent-1 polkit-qt5-core-1 polkit-qt5-gui-1
-WANTLIB += pthread
+WANTLIB += KF5CoreAddons KF5Crash KF5DBusAddons KF5I18n KF5IconThemes
+WANTLIB += KF5WidgetsAddons KF5WindowSystem Qt5Core Qt5DBus Qt5Gui
+WANTLIB += Qt5Widgets c m polkit-qt5-agent-1 polkit-qt5-core-1
+WANTLIB += polkit-qt5-gui-1
 
-MODULES =		devel/gettext
+MODULES +=	lang/python
+
+BUILD_DEPENDS =	devel/gettext-tools
+
+RUN_DEPENDS =	devel/gettext
 
 LIB_DEPENDS =		devel/kf5/kconfig \
 			devel/kf5/kcoreaddons \
