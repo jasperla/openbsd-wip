@@ -1,0 +1,15 @@
+$OpenBSD$
+
+Index: ksysguardd/OpenBSD/cpu.c
+--- ksysguardd/OpenBSD/cpu.c.orig
++++ ksysguardd/OpenBSD/cpu.c
+@@ -20,7 +20,8 @@
+ 
+ #include <sys/param.h>
+ #include <sys/sysctl.h>
+-#include <sys/dkstat.h>
++#include <sys/signal.h>
++#include <sys/sched.h>
+ 
+ #include <stdio.h>
+ #include <stdlib.h>
