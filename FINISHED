@@ -7,18 +7,14 @@
 # net/gnaughty				ready for import, sent to ports@ (jasperla)
 
 devel/libextractor			sent to ports 2013-06-29
-devel/libtap				ready to import
 geo/mtkbabel				sent to ports 2011-03-30
-graphics/jpegexiforient			ready to import
 math/p5-Math-GSL			ready for import, did not sent to ports@, regress depends on devel/p5-Test-Most (wenheping)
-misc/notebook				sent to ports 2013-06-29
 net/bitcoin				sent to ports 2013-03-19, and again 2013-06-29
 productivity/py-nv			send to ports 2013-10-21
 sysutils/fsx				sent to ports 2013-12-09
 sysutils/glean				sent to ports 2013-12-09
 security/paperkey			sent to ports 2011-06-07 and 2011-01-09
 sysutils/postmark			sent to ports 2013-12-09
-sysutils/py-anita			Ready for import. Sent to ports@ 2012-11-05.
 textproc/goldendict			sent to ports 2013-07-13  and 2011-10-19
 textproc/p5-String-Escape		ready for import, sent to ports@ 2014-03-07
 textproc/p5-String-Util			ready for import, sent to ports@ 2014-03-07
@@ -39,10 +35,6 @@ devel/p5-Sys-Info-Base			sent to ports@ 2014-04-03
 devel/p5-File-Pid			sent to ports@ 2014-04-03
 devel/p5-TAP-DOM			ready to import, sent to ports@ 2014-04-28
 devel/p5-Test-Mock-LWP			ready to import, sent to ports@ 2014-04-28
-www/p5-Tapper-Base			ready to import, sent to ports@ 2014-04-28
-www/p5-Tapper-Config			ready to import, sent to ports@ 2014-04-28
-www/p5-Tapper-TAP-Harness		ready to import, sent to ports@ 2014-04-28
-www/p5-Tapper-Producer			ready to import, sent to ports@ 2014-04-28
 www/p5-TAP-Formatter-HTML		ready to import, sent to ports@ 2014-04-28
 www/p5-Test-WWW-Selenium		ready to import, sent to ports@ 2014-04-28
 devel/p5-CHI				ready to import, sent to ports@ 2014-05-04
@@ -50,13 +42,9 @@ devel/p5-Hash-MoreUtils			ready to import, sent to ports@ 2014-05-04
 devel/p5-Test-Simple			ready to import, sent to ports@ 2014-05-04
 devel/p5-MooX-Types-MooseLike-Numeric	ready to import, sent to ports@ 2014-05-04
 security/p5-Digest-JHash		ready to import, sent to ports@ 2014-05-04, 2014-03-07
-www/p5-Tapper-Config			ready to import, sent to ports@ 2014-05-13
 devel/p5-Kwalify			ready to import, sent to ports@ 2014-05-13
 devel/p5-Object-Enum			ready to import, sent to ports@ 2014-05-23
 devel/p5-Data-Serializer		ready to import, sent to ports@ 2014-05-23
-www/p5-Tapper-Reports-DPath		ready to import, sent to ports@ 2014-05-23
-www/p5-Tapper-Reports-API		ready to import, sent to ports@ 2014-05-23
-www/p5-Tapper-Model			ready to import, sent to ports@ 2014-05-23
 textproc/p5-Text-Balanced		ready to import, sent to ports@ 2014-05-23
 www/p5-Starlet				ready to import, sent to ports@ 2015-01-08 (garcer)
 www/p5-Plack-Middleware-MethodOverride	ready to import
