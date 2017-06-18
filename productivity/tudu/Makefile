@@ -19,8 +19,10 @@ MASTER_SITES =	${HOMEPAGE}
 
 CONFIGURE_STYLE = simple
 
-CONFIGURE_ARGS = --sysconfdir=${PREFIX}/share/examples/tudu \
+CONFIGURE_ARGS = --sysconfdir=${SYSCONFDIR} \
 		 --mandir=${PREFIX}/man
+
+FAKE_FLAGS =	SYSCONFDIR=${TRUEPREFIX}/share/examples/tudu
 
 NO_TEST =	Yes
 
