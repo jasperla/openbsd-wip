@@ -1,8 +1,0 @@
-@comment $OpenBSD$
-@bin bin/bacon
-bin/bacon.sh
-lib/libbacon.a
-@man man/man1/bacon.1
-share/enscript/
-share/enscript/hl/
-share/enscript/hl/bacon.st
