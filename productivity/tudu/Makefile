@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/12/13 09:42:19 fcambus Exp $
+# $OpenBSD: Makefile.template,v 1.76 2017/02/25 16:04:20 danj Exp $
 
-COMMENT =	comand line interface to manage hierarchical todos
+COMMENT =	hierarchical todos manager
 
 DISTNAME =	tudu-0.10
 
