@@ -17,12 +17,12 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB +=	SDL2 SDL2_image c m pthread
 
-WANT_CXX =	base gcc
+COMPILER =	gcc
 
 LIB_DEPENDS =	devel/sdl2 \
 		devel/sdl2-image
 
-MAKE_ENV =	CXX=${CXX} \
+MAKE_ARGS =	CXX=${CXX} \
 		CXXFLAGS=${CXXFLAGS}
 
 ALL_TARGET =	linux
