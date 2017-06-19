@@ -1,5 +1,6 @@
 STATUS:
 - gpgmepp
+-- In CVS
 -- TEST: NO_TEST
 
 - kate
@@ -53,9 +54,11 @@ STATUS:
 -- TEST: NO_TEST
 
 - libkface
+-- In CVS
 -- TEST: NO_TEST
 
 - libkgeomap
+-- In CVS
 -- TEST: 100% tests passed, 0 tests failed out of 5
 
 - libkipi
