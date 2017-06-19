@@ -1,0 +1,9 @@
+$OpenBSD:$
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+To start KTouch, you have to improve yout QML2_IMPORT_PATH like:
+
+    export QML2_IMPORT_PATH=$QML2_IMPORT_PATH:${LOCALBASE}/lib/qml

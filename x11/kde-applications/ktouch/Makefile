@@ -16,7 +16,11 @@ WANTLIB += SM X11 Xext c m xcb xcb-xkb xkbfile
 
 BUILD_DEPENDS +=devel/gettext-tools
 
-RUN_DEPENDS =	devel/desktop-file-utils \
+RUN_DEPENDS =	x11/kde-applications/kqtquickcharts \
+		x11/qt5/qtgraphicaleffects \
+		x11/qt5/qtquickcontrols2 \
+		devel/kf5/kdeclarative \
+		devel/desktop-file-utils \
 		x11/gtk+3,-guic \
 		devel/gettext
 

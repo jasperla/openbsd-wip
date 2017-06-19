@@ -153,6 +153,7 @@ share/doc/HTML/uk/ktouch/statistics_over.png
 share/doc/HTML/uk/ktouch/statistics_show.png
 share/doc/HTML/uk/ktouch/training_options.png
 share/doc/HTML/uk/ktouch/welcome_screen.png
+share/doc/pkg-readmes/${FULLPKGNAME}
 share/icons/hicolor/128x128/apps/ktouch.png
 share/icons/hicolor/16x16/apps/ktouch.png
 share/icons/hicolor/22x22/apps/ktouch.png
