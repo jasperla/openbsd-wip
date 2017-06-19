@@ -883,3 +883,9 @@ share/okteta/structures/png/
 share/okteta/structures/png/main.osd
 share/okteta/structures/png/metadata.desktop
 share/okteta/structures/uuid.js
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
+@exec %D/bin/update-mime-database %D/share/mime
+@unexec-delete %D/bin/update-mime-database %D/share/mime
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor

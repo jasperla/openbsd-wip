@@ -63,6 +63,7 @@ STATUS:
 -- TEST: NO_TEST
 
 - okteta
+-- ready for ports@
 -- TEST: 91% tests passed, 5 tests failed out of 55
 
 - svgpart

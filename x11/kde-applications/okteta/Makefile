@@ -28,6 +28,7 @@ BUILD_DEPENDS +=devel/gettext-tools \
 		devel/kf5/kdoctools
 
 RUN_DEPENDS =	devel/desktop-file-utils \
+		misc/shared-mime-info \
 		devel/kf5/kdoctools \
 		x11/gtk+3,-guic \
 		devel/gettext
@@ -45,7 +46,8 @@ LIB_DEPENDS =	devel/kf5/kbookmarks \
 		devel/kf5/kio \
 		devel/kf5/kservice \
 		devel/kf5/kwidgetsaddons \
-		devel/kf5/kxmlgui
+		devel/kf5/kxmlgui \
+		x11/qt5/qtscript
 
 TEST_IS_INTERACTIVE =	X11
 
