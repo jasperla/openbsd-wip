@@ -20,7 +20,7 @@
      #SUBDIR += eventviews
      #SUBDIR += ffmpegthumbs
      #SUBDIR += filelight
-     SUBDIR += gpgmepp			# NO_TEST
+     SUBDIR += gpgmepp
      #SUBDIR += granatier
      #SUBDIR += grantleetheme
      #SUBDIR += gwenview
@@ -38,7 +38,7 @@
      #SUBDIR += kanagram
      #SUBDIR += kapman
      #SUBDIR += kapptemplate
-     SUBDIR += kate			# 83% tests passed, 1 tests failed out of 6
+     #SUBDIR += kate
      #SUBDIR += katomic
      #SUBDIR += kblackbox
      #SUBDIR += kblocks
@@ -52,7 +52,7 @@
      #SUBDIR += kcalutils
      #SUBDIR += kcharselect
      #SUBDIR += kcolorchooser
-     SUBDIR += kcontacts		# 94% tests passed, 2 tests failed out of 32
+     SUBDIR += kcontacts
      #SUBDIR += kcron
      #SUBDIR += kde-baseapps
      #SUBDIR += kde-dev-scripts
@@ -60,8 +60,8 @@
      SUBDIR += kde-runtime
      #SUBDIR += kdebugsettings
      #SUBDIR += kdeedu-data
-     SUBDIR += kdegraphics-mobipocket	# NO_TEST
-     SUBDIR += kdegraphics-thumbnailers	# NO_TEST
+     SUBDIR += kdegraphics-mobipocket
+     SUBDIR += kdegraphics-thumbnailers
      #SUBDIR += kdelibs
      #SUBDIR += kdenetwork-filesharing
      #SUBDIR += kdenlive
@@ -88,7 +88,7 @@
      #SUBDIR += kig
      #SUBDIR += kigo
      #SUBDIR += killbots
-     SUBDIR += kimap			# 100% tests passed, 0 tests failed out of 26
+     SUBDIR += kimap
      #SUBDIR += kio-extras
      #SUBDIR += kiriki
      #SUBDIR += kiten
@@ -101,8 +101,8 @@
      #SUBDIR += kmag
      #SUBDIR += kmahjongg
      #SUBDIR += kmailtransport
-     SUBDIR += kmbox			# 100% tests passed, 0 tests failed out of 2
-     SUBDIR += kmime			# 100% tests passed, 0 tests failed out of 17
+     SUBDIR += kmbox
+     SUBDIR += kmime
      SUBDIR += kmines
      #SUBDIR += kmix
      #SUBDIR += kmousetool
@@ -164,7 +164,7 @@
      #SUBDIR += libkcddb
      #SUBDIR += libkcompactdisc
      SUBDIR += libkdcraw
-     SUBDIR += libkdegames		# 100% tests passed, 0 tests failed out of 2
+     SUBDIR += libkdegames
      #SUBDIR += libkdepim
      #SUBDIR += libkeduvocdocument
      SUBDIR += libkexiv2
@@ -183,7 +183,7 @@
      #SUBDIR += marble
      #SUBDIR += messagelib
      #SUBDIR += minuet
-     SUBDIR += okteta			# 91% tests passed, 5 tests failed out of 55
+     SUBDIR += okteta
      #SUBDIR += okular
      #SUBDIR += palapeli
      #SUBDIR += parley
@@ -195,7 +195,7 @@
      #SUBDIR += signon-kwallet-extension
      #SUBDIR += spectacle
      #SUBDIR += step
-     SUBDIR += svgpart			# NO_TEST
+     SUBDIR += svgpart
      #SUBDIR += sweeper
      #SUBDIR += syndication
      #SUBDIR += umbrello
