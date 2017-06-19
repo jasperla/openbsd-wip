@@ -1,0 +1,40 @@
+STATUS:
+- gpgmepp
+
+- kate
+-- sent to ports@
+
+- kcalcore
+-- sent to ports@
+
+- kcontacts
+-- sent to ports@
+
+- kde-runtime
+- kdegraphics-mobipocket
+- kdegraphics-thumbnailers
+
+- kimap
+-- sent to ports@
+
+- kmbox
+-- sent to ports@
+-- DESCR tweaks from czarkoff@
+
+- kmime
+-- sent to ports@
+-- DESCR tweaks from czarkoff@
+
+- kmines
+- ktouch
+- libkdcraw
+- libkdegames
+- libkexiv2
+- libkface
+- libkgeomap
+
+- libkipi
+-- sent to ports@
+
+- okteta
+- svgpart
