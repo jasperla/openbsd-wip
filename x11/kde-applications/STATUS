@@ -1,40 +1,69 @@
 STATUS:
 - gpgmepp
+-- TEST: NO_TEST
 
 - kate
 -- sent to ports@
+-- TEST: kateapp-session_manager_test stuck
 
 - kcalcore
 -- sent to ports@
+-- TEST: RecursOn-RFC2445_RRULETest39.ics stuck
 
 - kcontacts
 -- sent to ports@
+-- TEST: 94% tests passed, 2 tests failed out of 32
 
 - kde-runtime
+-- TEST: filetypestest stuck
+
 - kdegraphics-mobipocket
+-- TEST: NO_TEST
+
 - kdegraphics-thumbnailers
+-- TEST: NO_TEST
 
 - kimap
 -- sent to ports@
+-- TEST: NO_TEST
 
 - kmbox
 -- sent to ports@
 -- DESCR tweaks from czarkoff@
+-- TEST: NO_TEST
 
 - kmime
 -- sent to ports@
 -- DESCR tweaks from czarkoff@
+-- TEST: 100% tests passed, 0 tests failed out of 17
 
 - kmines
+-- TEST: NO_TEST
+
 - ktouch
+-- TEST: NO_TEST
+
 - libkdcraw
+-- TEST: NO_TEST
+
 - libkdegames
+-- TEST: 100% tests passed, 0 tests failed out of 2
+
 - libkexiv2
+-- TEST: NO_TEST
+
 - libkface
+-- TEST: NO_TEST
+
 - libkgeomap
+-- TEST: 100% tests passed, 0 tests failed out of 5
 
 - libkipi
 -- sent to ports@
+-- TEST: NO_TEST
 
 - okteta
+-- TEST: 91% tests passed, 5 tests failed out of 55
+
 - svgpart
+-- TEST: NO_TEST
