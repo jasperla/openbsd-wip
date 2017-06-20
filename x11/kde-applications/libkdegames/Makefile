@@ -18,6 +18,8 @@ WANTLIB += KF5XmlGui Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Qml
 WANTLIB += Qt5Quick Qt5QuickWidgets Qt5Svg Qt5Widgets Qt5Xml m
 WANTLIB += openal sndfile
 
+MODULES =	lang/python
+
 BUILD_DEPENDS +=devel/gettext-tools
 
 RUN_DEPENDS =	devel/gettext
