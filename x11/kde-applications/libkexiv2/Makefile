@@ -1,8 +1,8 @@
 # $OpenBSD$
 
-COMMENT =	library to manipulate pictures metadata
+COMMENT =	EXIV2 Library interface for KDE
 DISTNAME =	libkexiv2-${VERSION}
-CATEGORIES =	graphics
+CATEGORIES =	graphics devel
 
 KDE5 =		Yes
 
