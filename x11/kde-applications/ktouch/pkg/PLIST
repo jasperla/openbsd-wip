@@ -1,4 +1,6 @@
 @comment $OpenBSD$
+@pkgpath x11/kde4/ktouch
+@conflict ktouch-<17.04.1
 @bin bin/ktouch
 @man man/man1/ktouch.1
 share/applications/org.kde.ktouch.desktop
