@@ -1,0 +1,17 @@
+@comment $OpenBSD$
+include/KF5/
+include/KF5/kqtquickcharts_version.h
+lib/cmake/KQtQuickCharts/
+lib/cmake/KQtQuickCharts/KQtQuickChartsVersion.cmake
+lib/qml/
+lib/qml/org/
+lib/qml/org/kde/
+lib/qml/org/kde/charts/
+lib/qml/org/kde/charts/BarChart.qml
+lib/qml/org/kde/charts/Label.qml
+lib/qml/org/kde/charts/LegendItem.qml
+lib/qml/org/kde/charts/LineChart.qml
+lib/qml/org/kde/charts/LineLabel.qml
+lib/qml/org/kde/charts/XYChart.qml
+lib/qml/org/kde/charts/libkqtquickcharts.so
+lib/qml/org/kde/charts/qmldir
