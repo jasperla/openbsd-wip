@@ -14,6 +14,8 @@ WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Qml Qt5Quick Qt5QuickWidgets
 WANTLIB += Qt5Script Qt5Sql Qt5Widgets Qt5X11Extras Qt5Xml Qt5XmlPatterns
 WANTLIB += SM X11 Xext c m xcb xcb-xkb xkbfile
 
+MODULES =	lang/python
+
 BUILD_DEPENDS +=devel/gettext-tools
 
 RUN_DEPENDS =	x11/kde-applications/kqtquickcharts \
