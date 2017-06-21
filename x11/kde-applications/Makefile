@@ -121,7 +121,7 @@
      #SUBDIR += kpat
      #SUBDIR += kpimtextedit
      #SUBDIR += kppp
-     #SUBDIR += kqtquickcharts
+     SUBDIR += kqtquickcharts
      #SUBDIR += krdc
      #SUBDIR += kremotecontrol
      #SUBDIR += kreversi
