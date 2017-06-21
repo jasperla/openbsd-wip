@@ -1,4 +1,6 @@
 @comment $OpenBSD$
+@pkgpath x11/kde4/okteta
+@conflict okteta-<17.04.1
 @bin bin/okteta
 bin/struct2osd
 include/Kasten/
