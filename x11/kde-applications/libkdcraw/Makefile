@@ -1,12 +1,12 @@
 # $OpenBSD$
 
-COMMENT =	C++ interface used to decode RAW picture
+COMMENT =	KDE wrapper around the LibRaw library
 DISTNAME =	libkdcraw-${VERSION}
-CATEGORIES =	devel grephics
+CATEGORIES =	devel graphics
 
 KDE5 =		Yes
 
-SHARED_LIBS +=  KF5KDcraw                 0.0 # 5.
+SHARED_LIBS +=  KF5KDcraw                 0.0 # 0.0
 
 WANTLIB += Qt5Core Qt5Gui m raw
 
