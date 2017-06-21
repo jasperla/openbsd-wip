@@ -1,0 +1,33 @@
+$OpenBSD$
+
+Index: jlibrary/system/config/base.cfg
+--- jlibrary/system/config/base.cfg.orig
++++ jlibrary/system/config/base.cfg
+@@ -40,7 +40,7 @@ NB. PDFReader read Adobe pdf files
+ NB. PDFReader_nox read Adobe pdf files (without X)
+ NB. XDiff external differencing program
+ NB. Editor external editor program, %f=file name  %l=line number
+-NB. Editor_nox external editor program (without X), used in Linux only
++NB. Editor_nox external editor program (without X), used in Linux/OpenBSD only
+ 
+ BoxPos=: 0 0
+ DirTreeX=: 'release'
+@@ -91,6 +91,18 @@ case. 'Linux' do.
+   PDFReader=: '/usr/bin/evince'
+   PDFReader_nox=: ''
+   XDiff=: '/usr/bin/meld'
++  Editor=: 'geany +%l %f'
++  Editor_nox=: 'vi -c%l %f'
++case. 'OpenBSD' do.
++  BoxForm=: 0
++  Browser=: ''
++  Browser_nox=: '/usr/local/bin/lynx'
++  EPSReader=: '/usr/local/bin/evince'
++  ImageViewer=: ''
++  ImageViewer_nox=: ''
++  PDFReader=: '/usr/local/bin/evince'
++  PDFReader_nox=: ''
++  XDiff=: '/usr/local/bin/meld'
+   Editor=: 'geany +%l %f'
+   Editor_nox=: 'vi -c%l %f'
+ case. 'Win' do.

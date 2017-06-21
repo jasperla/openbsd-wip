@@ -1,0 +1,21 @@
+$OpenBSD$
+
+Make sure j can find its libraries.
+
+Index: jlibrary/bin/profile.ijs
+--- jlibrary/bin/profile.ijs.orig
++++ jlibrary/bin/profile.ijs
+@@ -7,10 +7,10 @@ jpathsep_z_=: '/'&(('\' I.@:= ])})
+ BINPATH_z_=: jpathsep BINPATH_z_
+ 
+ NB. create SystemFolders
+-bin=. BINPATH
++bin=. ${TRUEPREFIX}/bin
+ install=. (bin i: '/'){.bin
+-fhs=. (FHS"_)^:(0=4!:0<'FHS')(5=systype)*.0=#1!:0<BINPATH,'/../system/util/boot.ijs'
+-install=. (0&~:fhs){::install;'/usr/share/j/8.0.4'
++fhs=. (FHS"_)^:(0=4!:0<'FHS')(5=systype)*.0=#1!:0<BINPATH,'/../share/j/system/util/boot.ijs'
++install=. (0&~:fhs){::install;'${TRUEPREFIX}/share/j'
+ install=. (INSTALLROOT"_)^:(0=4!:0<'INSTALLROOT') install
+ addons=. install,'/addons'
+ system=. install,'/system'

@@ -1,0 +1,58 @@
+$OpenBSD$
+
+Index: jlibrary/addons/ide/jhs/shortcut.ijs
+--- jlibrary/addons/ide/jhs/shortcut.ijs.orig
++++ jlibrary/addons/ide/jhs/shortcut.ijs
+@@ -1,4 +1,4 @@
+-NB. create jhs and jconsole desktop shortcuts for Win/Linux/Darwin
++NB. create jhs and jconsole desktop shortcuts for Win/Linux/OpenBSD/Darwin
+ 
+ shortcut=: 3 : 0
+ ".UNAME,'_jshortcut_'''''
+@@ -12,7 +12,7 @@ W=:   hostpathsep jpath'~'
+ A=:   ' ~addons/ide/jhs/config/jhs.cfg'
+ I=:   hostpathsep jpath'~bin/icons/'
+ N=:   (1 2 3{9!:14''),;IF64{'-32';''
+-DS=:  ;(('Win';'Linux';'Darwin')i.<UNAME){'.lnk';'.desktop';'.app'
++DS=:  ;(('Win';'Linux';'OpenBSD';'Darwin')i.<UNAME){'.lnk';'.desktop';'.desktop';'.app'
+ JHS=: 'jhs',N,DS
+ JC=:  'jc',N,DS
+ 
+@@ -60,6 +60,37 @@ linux JC
+ )
+ 
+ linux=: 3 : 0
++'icon arg'=. ;(y-:JHS){(<'jgray.png';''),<'jblue.png';A
++f=. L,y
++term=. ;{:<;._2[2!:0'ps -o comm -p',;{:<;._2[2!:0'ps -o ppid -p ',":2!:6''
++r=. desktop rplc '<T>';term NB. terminal command to run this session
++r=. r rplc '<N>';_8}.y
++r=. r rplc '<C>';C
++r=. r rplc '<A>';arg
++r=. r rplc '<W>';W
++r=. r rplc '<I>';I,icon
++r fwrite f
++2!:0'chmod +x ',f
++)
++
++NB. OpenBSD
++desktop=: 0 : 0
++[Desktop Entry]
++Version=1.0
++Type=Application
++Terminal=false
++Name=<N>
++Exec=<T> -e "\"<C>\"<A>"
++Path=<W>
++Icon=<I>
++)
++
++OpenBSD=: 3 : 0
++openbsd JHS
++openbsd JC
++)
++
++openbsd=: 3 : 0
+ 'icon arg'=. ;(y-:JHS){(<'jgray.png';''),<'jblue.png';A
+ f=. L,y
+ term=. ;{:<;._2[2!:0'ps -o comm -p',;{:<;._2[2!:0'ps -o ppid -p ',":2!:6''
