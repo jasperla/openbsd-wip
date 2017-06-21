@@ -1,4 +1,6 @@
 @comment $OpenBSD$
+@pkgpath x11/kde4/kmines
+@conflict kmines-<17.04.1
 @bin bin/kmines
 share/applications/org.kde.kmines.desktop
 share/doc/HTML/de/kmines/
