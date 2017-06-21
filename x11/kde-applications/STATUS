@@ -79,3 +79,7 @@ STATUS:
 - svgpart
 -- ready for ports@
 -- TEST: NO_TEST
+
+-- kqtquickcharts
+-- ready for ports@
+-- TEST: NO_TEST
