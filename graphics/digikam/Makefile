@@ -3,7 +3,7 @@
 COMMENT =	KDE digital photo management utility
 
 CATEGORIES =	graphics
-VERSION =	5.5.0
+VERSION =	5.6.0
 DISTNAME =	digikam-${VERSION}
 
 HOMEPAGE =	https://www.digikam.org/
@@ -19,28 +19,30 @@ MASTER_SITES =	${MASTER_SITE_KDE:=stable/digikam/}
 # https://gitlab.kitware.com/cmake/cmake/issues/15967
 USE_NINJA =	NO
 
+SHARED_LIBS +=  KF5kipiplugins            0.0 # 5.6
 # Version numbers from digikam-kde4
 SHARED_LIBS +=  digikamcore               1.0 # 5.5
 SHARED_LIBS +=  digikamdatabase           1.0 # 5.5
 SHARED_LIBS +=  digikamgui                1.0 # 5.5
 
-WANTLIB += GL GLU ICE KF5Auth KF5Bookmarks KF5CalendarCore KF5Codecs
-WANTLIB += KF5Completion KF5ConfigCore KF5ConfigGui KF5ConfigWidgets
-WANTLIB += KF5CoreAddons KF5Crash KF5FileMetaData KF5GuiAddons
-WANTLIB += KF5I18n KF5IconThemes KF5ItemViews KF5JobWidgets KF5KDELibs4Support
-WANTLIB += KF5KIOCore KF5KIOFileWidgets KF5KIOWidgets KF5Notifications
-WANTLIB += KF5NotifyConfig KF5Parts KF5Service KF5Solid KF5SonnetUi
-WANTLIB += KF5TextWidgets KF5ThreadWeaver KF5UnitConversion KF5WidgetsAddons
-WANTLIB += KF5WindowSystem KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus
-WANTLIB += Qt5Gui Qt5Network Qt5OpenGL Qt5PrintSupport Qt5Sql
-WANTLIB += Qt5WebKit Qt5WebKitWidgets Qt5Widgets Qt5X11Extras
-WANTLIB += Qt5Xml SM X11 Xext c exiv2 expat glib-2.0 gphoto2 gphoto2_port
-WANTLIB += ical icalss intl jasper jpeg lcms2 lensfun lqr-1 m
-WANTLIB += opencv_calib3d opencv_contrib opencv_core opencv_features2d
-WANTLIB += opencv_flann opencv_gpu opencv_highgui opencv_imgproc
-WANTLIB += opencv_legacy opencv_ml opencv_nonfree opencv_objdetect
-WANTLIB += opencv_ocl opencv_photo opencv_video png pthread tiff
-WANTLIB += usb-1.0 z
+WANTLIB += GL GLU ICE KF5Archive KF5Auth KF5Bookmarks KF5CalendarCore
+WANTLIB += KF5Codecs KF5Completion KF5ConfigCore KF5ConfigGui
+WANTLIB += KF5ConfigWidgets KF5CoreAddons KF5Crash KF5FileMetaData
+WANTLIB += KF5GuiAddons KF5I18n KF5IconThemes KF5ItemViews KF5JobWidgets
+WANTLIB += KF5KDELibs4Support KF5KIOCore KF5KIOFileWidgets KF5KIOWidgets
+WANTLIB += KF5Kipi KF5Notifications KF5NotifyConfig KF5Parts KF5Service
+WANTLIB += KF5Solid KF5SonnetUi KF5TextWidgets KF5ThreadWeaver
+WANTLIB += KF5UnitConversion KF5WidgetsAddons KF5WindowSystem
+WANTLIB += KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network
+WANTLIB += Qt5OpenGL Qt5PrintSupport Qt5Sql Qt5WebKit Qt5WebKitWidgets
+WANTLIB += Qt5Widgets Qt5X11Extras Qt5Xml SM X11 Xext c exiv2
+WANTLIB += expat exslt glib-2.0 gphoto2 gphoto2_port ical icalss
+WANTLIB += intl jasper jpeg lcms2 lensfun lqr-1 m opencv_calib3d
+WANTLIB += opencv_contrib opencv_core opencv_features2d opencv_flann
+WANTLIB += opencv_gpu opencv_highgui opencv_imgproc opencv_legacy
+WANTLIB += opencv_ml opencv_nonfree opencv_objdetect opencv_ocl
+WANTLIB += opencv_photo opencv_video png pthread tiff usb-1.0
+WANTLIB += xml2 xslt
 
 MODULES =	devel/kf5
 
