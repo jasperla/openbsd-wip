@@ -35,17 +35,13 @@ LIB_DEPENDS =	archivers/libzip \
 RUN_DEPENDS =	devel/desktop-file-utils \
 		x11/gtk+3,-guic
 
-# Needs its own data installed to run the tests.
-TEST_DEPENDS =	games/openrct2
+CONFIGURE_ARGS =	-DCMAKE_SHARED_LINKER_FLAGS="-L${X11BASE}/lib"
 
-CONFIGURE_ARGS =	-DCMAKE_SHARED_LINKER_FLAGS="-L${X11BASE}/lib" \
-			-DWITH_TESTS=on
+# Downloads things. But it's just gtest... so figure out how to disable.
+NO_TEST =	Yes
 
 pre-configure:
 	sed -i 's,$${TRUEPREFIX},${TRUEPREFIX},g' \
 		${WRKSRC}/src/openrct2/platform/linux.c
-
-do-test:
-	cd ${WRKBUILD} && ninja -v test
 
 .include <bsd.port.mk>
