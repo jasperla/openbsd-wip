@@ -1,0 +1,10 @@
+The FreeBASIC project is a set of cross-platform development tools
+consisting of a compiler, GNU-based assembler, linker and archiver, and
+supporting runtime libraries, including a software-based graphics
+library. The compiler, fbc, currently supports building for i386-based
+architectures. The project also contains thin bindings (header files) to
+some popular 3rd party libraries such as the C runtime library, Allegro,
+SDL, OpenGL, GTK+, the Windows API, and many others.
+
+When used in its "QB" language mode, FreeBASIC provides a high level of
+support for programs written in Microsoft QuickBASIC.
