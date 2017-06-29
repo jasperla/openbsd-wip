@@ -1,14 +1,18 @@
 # $OpenBSD$
+#
+# https://www.freedesktop.org/software/systemd/man/os-release.html
 
 NAME=OpenBSD
 VERSION=${OSREV}
 ID=openbsd
 #ID_LIKE=
+#VERSION_CODENAME=
 VERSION_ID=${OSREV}
 PRETTY_NAME="OpenBSD/${ARCH} ${OSREV}"
 #ANSI_COLOR=
 CPE_NAME="cpe:/o:openbsd:openbsd:${OSREV}"
-HOME_URL="http://www.openbsd.org/"
-SUPPORT_URL="http://www.openbsd.org/mail.html"
-BUG_REPORT_URL="http://www.openbsd.org/report.html"
+HOME_URL="https://www.openbsd.org/"
+#SUPPORT_URL=
+BUG_REPORT_URL="https://www.openbsd.org/report.html"
+#PRIVACY_POLICY_URL=
 #BUILD_ID=
