@@ -44,5 +44,4 @@ LIB_DEPENDS =	devel/kf5/ki18n\
 
 NO_TEST =	Yes
 
-
 .include <bsd.port.mk>
