@@ -83,3 +83,7 @@ STATUS:
 -- kqtquickcharts
 -- ready for ports@
 -- TEST: NO_TEST
+
+-- kcalc
+-- ready for ports@
+-- TEST: 100% tests passed, 0 tests failed out of 1

@@ -23,7 +23,7 @@
      SUBDIR += gpgmepp
      #SUBDIR += granatier
      #SUBDIR += grantleetheme
-     #SUBDIR += gwenview
+     SUBDIR += gwenview
      #SUBDIR += incidenceeditor
      #SUBDIR += jovie
      #SUBDIR += juk
@@ -47,7 +47,7 @@
      #SUBDIR += kbreakout
      #SUBDIR += kbruch
      #SUBDIR += kcachegrind
-     #SUBDIR += kcalc
+     SUBDIR += kcalc
      SUBDIR += kcalcore
      #SUBDIR += kcalutils
      #SUBDIR += kcharselect
@@ -83,7 +83,7 @@
      #SUBDIR += kgpg
      #SUBDIR += khangman
      #SUBDIR += khelpcenter
-     #SUBDIR += kholidays
+     SUBDIR += kholidays
      #SUBDIR += kidentitymanagement
      #SUBDIR += kig
      #SUBDIR += kigo
