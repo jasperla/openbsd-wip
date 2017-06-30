@@ -1,6 +1,6 @@
 @comment $OpenBSD$
-@pkgpath x11/kde4/gwenview
 @conflict gwenview-<17.04.1
+@pkgpath x11/kde4/gwenview
 @bin bin/gwenview
 @bin bin/gwenview_importer
 @lib lib/libgwenviewlib.so.${LIBgwenviewlib_VERSION}
