@@ -87,3 +87,7 @@ STATUS:
 -- kcalc
 -- ready for ports@
 -- TEST: 100% tests passed, 0 tests failed out of 1
+
+-- kholidays
+-- ready for ports@
+-- 80% tests passed, 1 tests failed out of 5
