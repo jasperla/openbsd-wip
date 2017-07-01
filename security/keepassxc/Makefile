@@ -1,7 +1,5 @@
 # $OpenBSD: Makefile,v 1.2 2017/05/02 20:41:04 rsadowski Exp $
 
-USE_WXNEEDED=	Yes
-
 COMMENT =	management tool for sensitive data
 
 CATEGORIES =	security
