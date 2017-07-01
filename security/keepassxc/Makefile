@@ -1,5 +1,7 @@
 # $OpenBSD: Makefile,v 1.2 2017/05/02 20:41:04 rsadowski Exp $
 
+USE_WXNEEDED=	Yes
+
 COMMENT =	management tool for sensitive data
 
 CATEGORIES =	security
@@ -15,9 +17,8 @@ MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Widgets Qt5X11Extras
-WANTLIB += c gcrypt gpg-error m z
-WANTLIB += X11 Xi Xtst
+WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Widgets
+WANTLIB += Qt5X11Extras X11 Xi Xtst c gcrypt gpg-error m z
 
 MODULES =	x11/qt5 \
 		devel/cmake
@@ -34,5 +35,11 @@ CONFIGURE_ARGS=	-DWITH_GUI_TESTS=ON \
 		-DWITH_XC_AUTOTYPE=ON
 
 TEST_IS_INTERACTIVE =	X11
+
+post-patch:
+	cd ${WRKSRC}/src/; perl -pi -e 's/Q_OS_LINUX/Q_OS_UNIX/g' \
+		core/ScreenLockListenerPrivate.cpp \
+		gui/MainWindow.cpp \
+		main.cpp
 
 .include <bsd.port.mk>
