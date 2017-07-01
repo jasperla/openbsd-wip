@@ -107,4 +107,4 @@ How to contribute
 
 Please let me know if you need write access to this repository. But please
 stick the workflow outlined in this document as well the pointers in
-<http://openbsd.org/porting.html>
+<https://openbsd.org/porting.html>
