@@ -1,6 +1,5 @@
 @comment $OpenBSD$
 @bin bin/gr-lida
-share/applications/
 share/applications/gr-lida.desktop
 share/doc/gr-lida/
 share/doc/gr-lida/AUTHORS.txt

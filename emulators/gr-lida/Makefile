@@ -1,6 +1,6 @@
 # $OpenBSD$
 
-COMMENT =		emulator
+COMMENT =		games cataloging tool and emulator launcher
 
 V =			0.11.0
 DISTNAME =		gr-lida-$V
@@ -24,6 +24,7 @@ GH_TAGNAME =		v$V
 
 MODULES =		x11/qt4
 LIB_DEPENDS =		print/poppler,,-qt4
+RUN_DEPENDS =		devel/desktop-file-utils
 
 FAKE_FLAGS +=		INSTALL_ROOT="${WRKINST}"
 
