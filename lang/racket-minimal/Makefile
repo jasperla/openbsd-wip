@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2017/03/09 01:56:52 juanfra Exp $
+# $OpenBSD: Makefile,v 1.36 2017/05/31 08:08:16 espie Exp $
 
 USE_WXNEEDED =		Yes
 
@@ -9,9 +9,9 @@ ONLY_FOR_ARCHS =	arm amd64 i386 powerpc sparc64
 
 COMMENT =		multi-paradigm programming language
 
-V =			6.9
+V =			6.9.0.6
 PKGNAME =		racket-minimal-$V
-DISTFILES =		racket-minimal-$V-src-builtpkgs${EXTRACT_SUFX} \
+DISTFILES =		min-racket-$V-src-builtpkgs${EXTRACT_SUFX} \
 			racket-openbsd-1${EXTRACT_SUFX}
 
 CATEGORIES =		lang
@@ -37,9 +37,10 @@ EXTRACT_SUFX =		.tgz
 
 # GCC4 is only needed by the TLS flavor. "places" and "futures" only work
 # correctly on amd64 for this version.
-MODULES +=		gcc4
-MODGCC4_LANGS =		c
+COMPILER =		gcc
+COMPILER_LANGS =	c
 MODGCC4_ARCHS =		arm amd64
+
 LIB_DEPENDS =		converters/libiconv \
 			databases/sqlite3 \
 			devel/libffi>=3.0.9p2
