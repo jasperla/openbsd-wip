@@ -81,7 +81,6 @@ lib/swipl-${V}/lib/${FULLARCH}/sgml2pl.so
 lib/swipl-${V}/lib/${FULLARCH}/sha4pl.so
 lib/swipl-${V}/lib/${FULLARCH}/snowball.so
 lib/swipl-${V}/lib/${FULLARCH}/socket.so
-lib/swipl-${V}/lib/${FULLARCH}/ssl4pl.so
 lib/swipl-${V}/lib/${FULLARCH}/streaminfo.so
 lib/swipl-${V}/lib/${FULLARCH}/syslog.so
 lib/swipl-${V}/lib/${FULLARCH}/table.so
@@ -318,7 +317,6 @@ lib/swipl-${V}/library/http/http_pwp.pl
 lib/swipl-${V}/library/http/http_server_files.pl
 lib/swipl-${V}/library/http/http_session.pl
 lib/swipl-${V}/library/http/http_sgml_plugin.pl
-lib/swipl-${V}/library/http/http_ssl_plugin.pl
 lib/swipl-${V}/library/http/http_stream.pl
 lib/swipl-${V}/library/http/http_unix_daemon.pl
 lib/swipl-${V}/library/http/http_wrapper.pl
@@ -488,7 +486,6 @@ lib/swipl-${V}/library/snowball.pl
 lib/swipl-${V}/library/socket.pl
 lib/swipl-${V}/library/solution_sequences.pl
 lib/swipl-${V}/library/sort.pl
-lib/swipl-${V}/library/ssl.pl
 lib/swipl-${V}/library/statistics.pl
 lib/swipl-${V}/library/streaminfo.pl
 lib/swipl-${V}/library/streampool.pl

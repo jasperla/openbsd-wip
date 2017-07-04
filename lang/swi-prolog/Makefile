@@ -20,8 +20,8 @@ MAINTAINER =		Edd Barrett <edd@openbsd.org>
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += ICE SM X11 Xext Xft Xinerama Xpm Xt c crypto execinfo
-WANTLIB += fontconfig freetype gmp jpeg m ncursesw pthread readline ssl
+WANTLIB += ICE SM X11 Xext Xft Xinerama Xpm Xt c execinfo
+WANTLIB += fontconfig freetype gmp jpeg m ncursesw pthread readline
 WANTLIB += z
 
 MASTER_SITES =		${HOMEPAGE}download/stable/src/ \
@@ -34,6 +34,8 @@ MODGNU_CONFIG_GUESS_DIRS =	${WRKSRC}/src \
 
 # error: trampoline code generation is not allowed without -ftrampolines
 CFLAGS +=		-ftrampolines
+
+USE_WXNEEDED =		Yes
 
 CONFIGURE_ENV +=	CIFLAGS=' -I${LOCALBASE}/include' \
 			LDFLAGS=' -L${LOCALBASE}/lib' \
@@ -65,6 +67,9 @@ post-install:
 	cd ${PREFIX}/lib && \
 		ln -sf swipl-$V/lib/${FULLARCH}/libpl.so.${LIBpl_VERSION}
 	mv ${PREFIX}/lib/swipl-${V}/doc ${PREFIX}/share/doc/swipl
+
+TEST_ENV +=		LD_LIBRARY_PATH=${LOCALBASE}/lib
+
 
 # Swipl multithreading flaky at best on OpenBSD.
 # We are not sure if this is our threading implementation or their code.
