@@ -1,0 +1,25 @@
+$OpenBSD$
+
+1) Fix build by defining AF_UNSPEC and SOCK_STREAM
+2) Get thread ID support for OpenBSD.
+
+Index: src/vmime/platforms/posix/posixHandler.cpp
+--- src/vmime/platforms/posix/posixHandler.cpp.orig
++++ src/vmime/platforms/posix/posixHandler.cpp
+@@ -43,6 +43,7 @@
+ 
+ #include <sys/types.h>
+ #include <sys/stat.h>
++#include <sys/socket.h>
+ 
+ #if VMIME_HAVE_SYSCALL
+ #	include <sys/syscall.h>
+@@ -259,6 +260,8 @@ unsigned int posixHandler::getThreadId() const
+ 	return static_cast <unsigned int>(::gettid());
+ #elif VMIME_HAVE_SYSCALL && VMIME_HAVE_SYSCALL_GETTID
+ 	return static_cast <unsigned int>(::syscall(SYS_gettid));
++#elif defined(__OpenBSD__)
++	return getthrid();
+ #else
+ 	#error We have no implementation of getThreadId() for this platform!
+ #endif
