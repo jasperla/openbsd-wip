@@ -1,12 +1,12 @@
 # $OpenBSD: Makefile,v 1.66 2016/05/12 01:17:13 naddy Exp $
 
 BROKEN-arm =		undefined reference to `__sync_fetch_and_add_4'
-BROKEN-hppa =		undefined reference to `__sync_fetch_and_add_4'
+BROKEN-hppa =		undefined reference to __sync_fetch_and_add_4
 BROKEN-sparc64 =	infinite loop or aborts during build
 
 COMMENT =		Prolog for the real world
 
-V =			7.2.3
+V =			7.4.2
 DISTNAME =		swipl-$V
 PKGNAME =		swi-prolog-$V
 CATEGORIES =		lang
@@ -20,17 +20,19 @@ MAINTAINER =		Edd Barrett <edd@openbsd.org>
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += ICE SM X11 Xext Xft Xinerama Xpm Xt c execinfo
-WANTLIB += fontconfig freetype gmp jpeg m ncursesw pthread readline
-WANTLIB += z
+WANTLIB += ICE SM X11 Xext Xft Xinerama Xpm Xt archive c db execinfo
+WANTLIB += fontconfig freetype gmp iodbc jpeg m ncursesw ossp-uuid
+WANTLIB += pthread readline z
 
 MASTER_SITES =		${HOMEPAGE}download/stable/src/ \
 			https://distfiles.nl/
 
 CONFIGURE_STYLE =		gnu
-MODGNU_CONFIG_GUESS_DIRS =	${WRKSRC}/src \
+MODGNU_CONFIG_GUESS_DIRS =	${WRKSRC}/packages/clib \
 				${WRKSRC}/packages/jpl \
-				${WRKSRC}/packages/xpce/src
+				${WRKSRC}/packages/xpce/ \
+				${WRKSRC}/packages/xpce/src \
+				${WRKSRC}/src
 
 # error: trampoline code generation is not allowed without -ftrampolines
 CFLAGS +=		-ftrampolines
@@ -44,21 +46,35 @@ CONFIGURE_ENV +=	CIFLAGS=' -I${LOCALBASE}/include' \
 CONFIGURE_ARGS =	--enable-mt \
 			--disable-custom-flags \
 			--with-world \
-			--with-jpeg=${LOCALBASE} \
 			--enable-shared
+
+# LibreSSL missing CRYPTO_ONCE API
+# https://github.com/SWI-Prolog/swipl-devel/issues/249
+CONFIGURE_ARGS +=	--without-ssl
 
 USE_GMAKE =		Yes
 
 # Don't pick up bash
 MAKE_ENV =		MAKESHELL=/bin/sh
 
+MAKE_ENV +=		LDFLAGS=-L${LOCALBASE}/lib
+
 MAKE_FLAGS =		SONAMEOPT= \
 			SHAREDV=libpl.so.${LIBpl_VERSION}
+
+MODULES =		gcc4
+# for atomic builtins
+MODGCC4_ARCHS =		arm
 
 BUILD_DEPENDS =		${RUN_DEPENDS}
 LIB_DEPENDS =		devel/gmp \
 			devel/libexecinfo \
-			graphics/jpeg
+			graphics/jpeg \
+			devel/uuid \
+			databases/db/v4 \
+			archivers/libarchive \
+			databases/iodbc \
+			devel/readline
 
 FULLARCH =		${MACHINE_ARCH:S/amd64/x86_64/}-openbsd${OSREV}
 SUBST_VARS +=		V BOOT FULLARCH
@@ -68,8 +84,8 @@ post-install:
 		ln -sf swipl-$V/lib/${FULLARCH}/libpl.so.${LIBpl_VERSION}
 	mv ${PREFIX}/lib/swipl-${V}/doc ${PREFIX}/share/doc/swipl
 
+# XXX needed?
 TEST_ENV +=		LD_LIBRARY_PATH=${LOCALBASE}/lib
-
 
 # Swipl multithreading flaky at best on OpenBSD.
 # We are not sure if this is our threading implementation or their code.

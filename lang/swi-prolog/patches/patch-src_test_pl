@@ -2,20 +2,23 @@ $OpenBSD: patch-src_test_pl,v 1.3 2014/04/04 17:53:49 edd Exp $
 
 Turn on verbose reporting.
 
-GMP test appears to use >64MB of stack!?
+One of the GMP tests deliberatley maxes out the stack to test the backtrace
+support, but it seems to be broken.
+
+https://github.com/SWI-Prolog/issues/issues/43
 
 Index: src/test.pl
 --- src/test.pl.orig
 +++ src/test.pl
-@@ -23,6 +23,7 @@
- 
+@@ -36,6 +36,7 @@
  %:- set_prolog_flag(optimise, true).
+ :- set_prolog_flag(optimise_debug, false).
  %:- set_prolog_flag(trace_gc, true).
 +:- set_prolog_flag(verbose, normal).
  :- asserta(user:file_search_path(library, '../packages/plunit')).
  :- [library(plunit)].
  :- set_test_options([load(always), silent(true), sto(true), cleanup(true)]).
-@@ -590,10 +591,10 @@ gmp(shift-1) :-
+@@ -606,10 +607,10 @@ gmp(shift-1) :-
  gmp(shift-2) :-
  	A is 1<<55, B is A<<8,
  	B =:= 9223372036854775808.

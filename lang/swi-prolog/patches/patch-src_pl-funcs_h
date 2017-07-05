@@ -2,9 +2,10 @@ $OpenBSD: patch-src_pl-funcs_h,v 1.2 2014/04/04 17:53:49 edd Exp $
 
 Silence annoying redefinition of getwd() warnings
 
---- src/pl-funcs.h.orig	Tue Aug 25 12:11:51 2015
-+++ src/pl-funcs.h	Thu Jul 21 12:32:47 2016
-@@ -357,7 +357,7 @@ COMMON(void)		setOSPrologFlags(void);
+Index: src/pl-funcs.h
+--- src/pl-funcs.h.orig
++++ src/pl-funcs.h
+@@ -378,7 +378,7 @@ COMMON(void)		setOSPrologFlags(void);
  COMMON(void)		RemoveTemporaryFiles(void);
  COMMON(bool)		OpenStream(int fd);
  COMMON(char *)		expandVars(const char *pattern, char *expanded, int len);
