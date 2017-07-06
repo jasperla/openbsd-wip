@@ -1,0 +1,15 @@
+$OpenBSD$
+
+Don't need an explicit extern vfprintf (implicit int, in any case).
+
+Index: err.c
+--- err.c.orig
++++ err.c
+@@ -47,7 +47,6 @@
+ 
+ #ifdef __STDC__
+ #include <stdarg.h>
+-extern vfprintf (FILE *, const char *, va_list);
+ #else /* ! __STDC__ */
+ #include <varargs.h>
+ extern vfprintf ();

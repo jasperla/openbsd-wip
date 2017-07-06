@@ -1,0 +1,28 @@
+$OpenBSD$
+
+Build and install xa60.
+
+Index: Makefile.in
+--- Makefile.in.orig
++++ Makefile.in
+@@ -155,7 +155,7 @@ XCFLAGS = $(FLAGS) $(PROF) $(DEFS) $(LIBDIRPATH)
+ ##
+ ## How to build the target:
+ ##
+-all:		$(PRG)
++all:		$(PRG) xa60
+ 
+ $(PRG):		$(OBJS)
+ 	$(CC) $(LDFLAGS) $(PROF) -o $(PRG) $(OBJS) $(LIBS)
+@@ -237,9 +237,10 @@ inst-man:
+ 	$(INSTALL_DATA) a60.man $(MANDIR)/$(PRG).$(MANSUFF)
+ 
+ inst-lib:
++	-mkdir -p $(LIBDIR)
+ 	-$(INSTALL_DATA) a60-mkc.inc $(LIBDIR)
+ 
+-install:	inst-man inst-bin inst-lib
++install:	inst-man inst-bin inst-lib xa60-install
+ 
+ xa60-install:	xa60
+ 	$(INSTALL_PROGRAM) xa60 $(BINDIR)
