@@ -1,4 +1,5 @@
 @comment $OpenBSD$
+@conflict grantlee-<5.1.0
 include/grantlee/
 include/grantlee/abstractlocalizer.h
 include/grantlee/abstractmarkupbuilder.h

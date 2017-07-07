@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2017/04/10 11:46:36 sthen Exp $
+# $OpenBSD:$
 
 COMMENT =		template and text document library for Qt5
 
