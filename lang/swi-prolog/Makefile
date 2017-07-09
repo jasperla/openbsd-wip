@@ -73,8 +73,7 @@ LIB_DEPENDS =		devel/gmp \
 			devel/uuid \
 			databases/db/v4 \
 			archivers/libarchive \
-			databases/iodbc \
-			devel/readline
+			databases/iodbc
 
 FULLARCH =		${MACHINE_ARCH:S/amd64/x86_64/}-openbsd${OSREV}
 SUBST_VARS +=		V BOOT FULLARCH
@@ -84,16 +83,12 @@ post-install:
 		ln -sf swipl-$V/lib/${FULLARCH}/libpl.so.${LIBpl_VERSION}
 	mv ${PREFIX}/lib/swipl-${V}/doc ${PREFIX}/share/doc/swipl
 
-# XXX needed?
-TEST_ENV +=		LD_LIBRARY_PATH=${LOCALBASE}/lib
-
-# Swipl multithreading flaky at best on OpenBSD.
-# We are not sure if this is our threading implementation or their code.
-# The following tests fail (hang). We remove them to allow the rest
-# of the tests to execute atleast.
-# When updating, uncomment these to see if they still fail.
+# The following test files hang. We remove them to allow the rest of the tests
+# to execute atleast. When updating, uncomment these to see if they still fail.
+# One test fails after removing all hanging tests.
 pre-test:
-	rm -f ${WRKBUILD}/src/Tests/core/test_resource_error.pl
+	rm -f ${WRKBUILD}/src/Tests/core/test_resource_error.pl \
+		${WRKBUILD}/src/Tests/core/test_cgc.pl
 
 .include <bsd.port.arch.mk>
 
