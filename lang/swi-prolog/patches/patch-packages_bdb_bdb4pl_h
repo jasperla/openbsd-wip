@@ -1,5 +1,7 @@
 $OpenBSD$
 
+Use the right version of bdb.
+
 Index: packages/bdb/bdb4pl.h
 --- packages/bdb/bdb4pl.h.orig
 +++ packages/bdb/bdb4pl.h

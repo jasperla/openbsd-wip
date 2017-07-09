@@ -1,0 +1,13 @@
+$OpenBSD$
+
+Index: packages/clib/nonblockio.h
+--- packages/clib/nonblockio.h.orig
++++ packages/clib/nonblockio.h
+@@ -55,6 +55,7 @@
+ 
+ #else /*__WINDOWS__*/
+ 
++#include <sys/select.h> /* fd_set */
+ #include <sys/types.h>
+ #ifdef HAVE_SYS_TIME_H
+ #include <sys/time.h>
