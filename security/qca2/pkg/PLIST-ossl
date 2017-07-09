@@ -1,4 +1,0 @@
-@comment $OpenBSD$
-lib/qca2/
-lib/qca2/crypto/
-lib/qca2/crypto/libqca-ossl.so
