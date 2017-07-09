@@ -1,0 +1,16 @@
+$OpenBSD$
+
+Use the right version of bdb.
+
+Index: packages/bdb/bdb4pl.h
+--- packages/bdb/bdb4pl.h.orig
++++ packages/bdb/bdb4pl.h
+@@ -37,7 +37,7 @@
+ #define DB4PL_H_INCLUDED
+ 
+ #include <SWI-Prolog.h>
+-#include <db.h>
++#include <db4/db.h>
+ 
+ /* Consider anything >= DB4.3 as DB43 */
+ #if DB_VERSION_MAJOR >= 4
