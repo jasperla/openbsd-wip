@@ -14,21 +14,19 @@ HOMEPAGE =	http://delta.affinix.com/qca/
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =		Qt5Core c m pthread
+WANTLIB += Qt5Core c m pthread
+
 EXTRACT_SUFX =		.tar.xz
 MASTER_SITES =		${MASTER_SITE_KDE:=stable/qca/${V}/src/}
 
-MODULES =		devel/cmake x11/qt5
+MODULES =		devel/cmake \
+			x11/qt5
 
-CONFIGURE_ARGS =	-DBUILD_PLUGINS=none \
-			-DCMAKE_DISABLE_FIND_PACKAGE_Doxygen:Bool=Yes \
+CONFIGURE_ARGS =	-DCMAKE_INSTALL_PREFIX=${LOCALBASE} \
 			-DQCA_BINARY_INSTALL_DIR=${PREFIX}/bin \
+			-DBUILD_PLUGINS:Bool=OFF \
+			-DCMAKE_DISABLE_FIND_PACKAGE_Doxygen:Bool=ON \
 			-DQCA_SUFFIX=qt5 \
-			-DQT4_BUILD=Off
-
-LIBFNAME =		libqca-qt5.so.${LIBqca-qt5_VERSION}
-
-post-install:
-	cd ${PREFIX}/lib; ln -sf ${MODQT_LIBDIR}/${LIBFNAME}
+			-DQT4_BUILD:Bool=OFF
 
 .include <bsd.port.mk>
