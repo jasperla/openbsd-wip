@@ -9,7 +9,7 @@ CATEGORIES =	security
 
 SHARED_LIBS =	qca-qt5		0.0
 
-HOMEPAGE =	http://delta.affinix.com/qca/
+HOMEPAGE =	https://userbase.kde.org/QCA
 
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM =	Yes
@@ -22,7 +22,11 @@ MASTER_SITES =		${MASTER_SITE_KDE:=stable/qca/${V}/src/}
 MODULES =		devel/cmake \
 			x11/qt5
 
+CFLAGS +=		-DOPENSSL_NO_SSL2 \
+			-DOPENSSL_NO_SSL3_METHOD
+
 CONFIGURE_ARGS =	-DCMAKE_INSTALL_PREFIX=${LOCALBASE} \
+			-DQCA_MAN_INSTALL_DIR=${LOCALBASE}/man \
 			-DQCA_BINARY_INSTALL_DIR=${PREFIX}/bin \
 			-DBUILD_PLUGINS:Bool=OFF \
 			-DCMAKE_DISABLE_FIND_PACKAGE_Doxygen:Bool=ON \
