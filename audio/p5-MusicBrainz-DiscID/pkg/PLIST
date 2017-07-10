@@ -1,0 +1,11 @@
+@comment $OpenBSD: PLIST,v 1.2 2010/10/01 21:57:53 jasper Exp $
+${P5ARCH}/
+${P5ARCH}/MusicBrainz/
+${P5ARCH}/MusicBrainz/DiscID.pm
+${P5ARCH}/auto/
+${P5ARCH}/auto/MusicBrainz/
+${P5ARCH}/auto/MusicBrainz/DiscID/
+${P5ARCH}/auto/MusicBrainz/DiscID/DiscID.so
+@man man/man3p/MusicBrainz::DiscID.3p
+share/examples/p5-MusicBrainz-DiscID/
+share/examples/p5-MusicBrainz-DiscID/discid.pl
