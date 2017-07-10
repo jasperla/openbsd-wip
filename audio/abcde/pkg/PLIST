@@ -1,0 +1,10 @@
+@comment $OpenBSD: PLIST,v 1.3 2012/11/21 20:38:48 sthen Exp $
+@pkgpath audio/abcde,lame
+bin/abcde
+bin/abcde-musicbrainz-tool
+bin/cddb-tool
+@man man/man1/abcde.1
+@man man/man1/cddb-tool.1
+share/examples/abcde/
+share/examples/abcde/abcde.conf
+@sample ${SYSCONFDIR}/abcde.conf
