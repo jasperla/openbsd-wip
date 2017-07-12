@@ -70,11 +70,11 @@ lib/cmake/KF5KDEGames/KF5KDEGamesLibraryDepends${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/KF5KDEGames/KF5KDEGamesLibraryDepends.cmake
 @lib lib/libKF5KDEGames.so.${LIBKF5KDEGames_VERSION}
 @lib lib/libKF5KDEGamesPrivate.so.${LIBKF5KDEGamesPrivate_VERSION}
-lib/qml/org/kde/games/
-lib/qml/org/kde/games/core/
-lib/qml/org/kde/games/core/KgItem.qml
-lib/qml/org/kde/games/core/libcorebindingsplugin.so
-lib/qml/org/kde/games/core/qmldir
+lib/qt5/qml/org/kde/games/
+lib/qt5/qml/org/kde/games/core/
+lib/qt5/qml/org/kde/games/core/KgItem.qml
+lib/qt5/qml/org/kde/games/core/libcorebindingsplugin.so
+lib/qt5/qml/org/kde/games/core/qmldir
 share/carddecks/
 share/carddecks/svg-ancient-egyptians/
 share/carddecks/svg-ancient-egyptians/11.png

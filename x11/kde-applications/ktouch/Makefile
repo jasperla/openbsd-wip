@@ -18,7 +18,7 @@ MODULES =	lang/python
 
 BUILD_DEPENDS +=devel/gettext-tools
 
-RUN_DEPENDS =	x11/kde-applications/kqtquickcharts \
+RUN_DEPENDS =	x11/kde-applications/kqtquickcharts>=5 \
 		x11/qt5/qtgraphicaleffects \
 		x11/qt5/qtquickcontrols2 \
 		devel/kf5/kdeclarative \

@@ -1,17 +1,17 @@
 @comment $OpenBSD$
+@pkgpath x11/kde4/kqtquickcharts
 include/KF5/
 include/KF5/kqtquickcharts_version.h
 lib/cmake/KQtQuickCharts/
 lib/cmake/KQtQuickCharts/KQtQuickChartsVersion.cmake
-lib/qml/
-lib/qml/org/
-lib/qml/org/kde/
-lib/qml/org/kde/charts/
-lib/qml/org/kde/charts/BarChart.qml
-lib/qml/org/kde/charts/Label.qml
-lib/qml/org/kde/charts/LegendItem.qml
-lib/qml/org/kde/charts/LineChart.qml
-lib/qml/org/kde/charts/LineLabel.qml
-lib/qml/org/kde/charts/XYChart.qml
-lib/qml/org/kde/charts/libkqtquickcharts.so
-lib/qml/org/kde/charts/qmldir
+lib/qt5/qml/org/
+lib/qt5/qml/org/kde/
+lib/qt5/qml/org/kde/charts/
+lib/qt5/qml/org/kde/charts/BarChart.qml
+lib/qt5/qml/org/kde/charts/Label.qml
+lib/qt5/qml/org/kde/charts/LegendItem.qml
+lib/qt5/qml/org/kde/charts/LineChart.qml
+lib/qt5/qml/org/kde/charts/LineLabel.qml
+lib/qt5/qml/org/kde/charts/XYChart.qml
+lib/qt5/qml/org/kde/charts/libkqtquickcharts.so
+lib/qt5/qml/org/kde/charts/qmldir

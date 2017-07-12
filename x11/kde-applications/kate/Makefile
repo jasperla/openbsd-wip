@@ -17,14 +17,17 @@ WANTLIB += KF5Wallet KF5WidgetsAddons KF5WindowSystem KF5XmlGui
 WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Script Qt5Sql
 WANTLIB += Qt5Widgets Qt5Xml c git2 m
 
+<<<<<<< Updated upstream
 MODULES +=	lang/python
 
 BUILD_DEPENDS =	devel/kf5/kdoctools \
 		devel/kf5/kinit \
+		devel/kf5/syntax-highlighting \
 		devel/gettext-tools
 
 RUN_DEPENDS =	devel/kf5/kdoctools \
 		devel/kf5/kinit \
+		devel/kf5/syntax-highlighting \
 		devel/gettext \
 		devel/desktop-file-utils \
 		x11/gtk+3,-guic
@@ -49,7 +52,12 @@ LIB_DEPENDS =	devel/kf5/kactivities \
 		devel/kf5/threadweaver \
 		devel/libgit2/libgit2
 
+CONFIGURE_ARGS =	-DCMAKE_POLICY_DEFAULT_CMP0063=NEW
+
 TEST_IS_INTERACTIVE =	X11
 PORTHOME =		${WRKDIR}
+
+#The following tests FAILED:
+#          2 - kateapp-session_manager_test (Failed)
 
 .include <bsd.port.mk>

@@ -26,12 +26,11 @@ lib/cmake/KF5Holidays/KF5HolidaysConfigVersion.cmake
 lib/cmake/KF5Holidays/KF5HolidaysTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/KF5Holidays/KF5HolidaysTargets.cmake
 @lib lib/libKF5Holidays.so.${LIBKF5Holidays_VERSION}
-lib/qml/
-lib/qml/org/
-lib/qml/org/kde/
-lib/qml/org/kde/kholidays/
-lib/qml/org/kde/kholidays/libkholidaysdeclarativeplugin.so
-lib/qml/org/kde/kholidays/qmldir
+lib/qt5/qml/org/
+lib/qt5/qml/org/kde/
+lib/qt5/qml/org/kde/kholidays/
+lib/qt5/qml/org/kde/kholidays/libkholidaysdeclarativeplugin.so
+lib/qt5/qml/org/kde/kholidays/qmldir
 share/kf5/
 share/kf5/libkholidays/
 share/kf5/libkholidays/plan2/
