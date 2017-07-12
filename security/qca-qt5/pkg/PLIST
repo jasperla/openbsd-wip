@@ -1,9 +1,6 @@
 @comment $OpenBSD$
-@conflict qca2-*
 @bin bin/mozcerts-qt5
 @bin bin/qcatool-qt5
-certs/
-certs/rootcerts.pem
 include/Qca-qt5/
 include/Qca-qt5/QtCrypto/
 include/Qca-qt5/QtCrypto/QtCrypto

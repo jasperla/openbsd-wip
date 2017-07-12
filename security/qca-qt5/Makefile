@@ -4,7 +4,7 @@ COMMENT =	Qt Cryptographic Architecture
 
 V =		2.1.3
 DISTNAME =	qca-${V}
-PKGNAME =	qca2-qt5-${V}
+PKGNAME =	qca-qt5-${V}
 CATEGORIES =	security
 
 SHARED_LIBS =	qca-qt5		0.0
@@ -31,6 +31,7 @@ CONFIGURE_ARGS =	-DCMAKE_INSTALL_PREFIX=${LOCALBASE} \
 			-DBUILD_PLUGINS:Bool=OFF \
 			-DCMAKE_DISABLE_FIND_PACKAGE_Doxygen:Bool=ON \
 			-DQCA_SUFFIX=qt5 \
+			-Dqca_CERTSTORE=/etc/ssl/cert.pem \
 			-DQT4_BUILD:Bool=OFF
 
 .include <bsd.port.mk>
