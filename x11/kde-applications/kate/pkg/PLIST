@@ -1,6 +1,6 @@
 @comment $OpenBSD$
-@pkgpath x11/kde4/kate
 @conflict krita-<17.04.1
+@pkgpath x11/kde4/kate
 @bin bin/kate
 @bin bin/kwrite
 lib/qt5/plugins/ktexteditor/
@@ -19,6 +19,7 @@ lib/qt5/plugins/ktexteditor/katesearchplugin.so
 lib/qt5/plugins/ktexteditor/katesnippetsplugin.so
 lib/qt5/plugins/ktexteditor/katesqlplugin.so
 lib/qt5/plugins/ktexteditor/katesymbolviewerplugin.so
+lib/qt5/plugins/ktexteditor/katexmlcheckplugin.so
 lib/qt5/plugins/ktexteditor/katexmltoolsplugin.so
 lib/qt5/plugins/ktexteditor/kterustcompletionplugin.so
 lib/qt5/plugins/ktexteditor/ktexteditor_lumen.so
@@ -48,7 +49,7 @@ share/doc/HTML/ca/kate/document-open-22.png
 share/doc/HTML/ca/kate/document-save-22.png
 share/doc/HTML/ca/kate/document-save-as-22.png
 share/doc/HTML/ca/kate/documentswitcher.png
-share/doc/HTML/ca/kate/edit-copy-22.png
+share/doc/HTML/ca/kate/edit-co${MODPY_PY_PREFIX}22.png
 share/doc/HTML/ca/kate/edit-delete-22.png
 share/doc/HTML/ca/kate/edit-select-all-22.png
 share/doc/HTML/ca/kate/format-text-superscript-22.png
@@ -140,29 +141,80 @@ share/doc/HTML/de/kwrite/
 share/doc/HTML/de/kwrite/index.cache.bz2
 share/doc/HTML/de/kwrite/index.docbook
 share/doc/HTML/en/kate/
+share/doc/HTML/en/kate/arrow-down-double-22.png
+share/doc/HTML/en/kate/arrow-up-double-22.png
+share/doc/HTML/en/kate/backtrace-settings.png
+share/doc/HTML/en/kate/bookmarks-22.png
+share/doc/HTML/en/kate/build-output.png
+share/doc/HTML/en/kate/close-except-like.png
 share/doc/HTML/en/kate/configdialog01.png
+share/doc/HTML/en/kate/configure-22.png
+share/doc/HTML/en/kate/configure-shortcuts-22.png
 share/doc/HTML/en/kate/configuring.docbook
+share/doc/HTML/en/kate/ctags-global-setting.png
+share/doc/HTML/en/kate/ctags-session-setting.png
 share/doc/HTML/en/kate/development.docbook
+share/doc/HTML/en/kate/dialog-ok-22.png
+share/doc/HTML/en/kate/document-new-22.png
+share/doc/HTML/en/kate/document-open-22.png
+share/doc/HTML/en/kate/document-save-22.png
+share/doc/HTML/en/kate/document-save-as-22.png
+share/doc/HTML/en/kate/documentswitcher.png
+share/doc/HTML/en/kate/edit-co${MODPY_PY_PREFIX}22.png
+share/doc/HTML/en/kate/edit-delete-22.png
+share/doc/HTML/en/kate/edit-select-all-22.png
+share/doc/HTML/en/kate/format-text-superscript-22.png
 share/doc/HTML/en/kate/fundamentals.docbook
+share/doc/HTML/en/kate/games-config-options-22.png
 share/doc/HTML/en/kate/gdb-call-stack.png
 share/doc/HTML/en/kate/gdb-io.png
 share/doc/HTML/en/kate/gdb-locals.png
 share/doc/HTML/en/kate/gdb-output.png
 share/doc/HTML/en/kate/gdb-settings.png
+share/doc/HTML/en/kate/go-down-22.png
+share/doc/HTML/en/kate/go-next-22.png
+share/doc/HTML/en/kate/go-previous-22.png
+share/doc/HTML/en/kate/go-up-22.png
 share/doc/HTML/en/kate/index.cache.bz2
 share/doc/HTML/en/kate/index.docbook
 share/doc/HTML/en/kate/kate.png
+share/doc/HTML/en/kate/list-add-22.png
+share/doc/HTML/en/kate/lumen-calltips.png
+share/doc/HTML/en/kate/lumen-completition-overload.png
+share/doc/HTML/en/kate/lumen-completition.png
+share/doc/HTML/en/kate/lumen-import.png
 share/doc/HTML/en/kate/mascot_kate.png
 share/doc/HTML/en/kate/menus.docbook
 share/doc/HTML/en/kate/plugins.docbook
+share/doc/HTML/en/kate/project-completition.png
+share/doc/HTML/en/kate/project-configure.png
+share/doc/HTML/en/kate/project-current-analysis.png
+share/doc/HTML/en/kate/project-quickopen.png
+share/doc/HTML/en/kate/project-search.png
+share/doc/HTML/en/kate/project-view.png
+share/doc/HTML/en/kate/rust-completion.png
+share/doc/HTML/en/kate/rust-configuration.png
 share/doc/HTML/en/kate/snippets-form.png
 share/doc/HTML/en/kate/snippets-panel.png
+share/doc/HTML/en/kate/snippets-repository.png
 share/doc/HTML/en/kate/snippets-usage.png
+share/doc/HTML/en/kate/symbolviewer-settings.png
+share/doc/HTML/en/kate/system-switch-user-22.png
+share/doc/HTML/en/kate/tab-duplicate-22.png
+share/doc/HTML/en/kate/tab-new-22.png
+share/doc/HTML/en/kate/textfilter.png
+share/doc/HTML/en/kate/view-refresh-22.png
+share/doc/HTML/en/kate/view-split-left-right-22.png
 share/doc/HTML/en/katepart/
 share/doc/HTML/en/katepart/advanced.docbook
+share/doc/HTML/en/katepart/arrow-down-double-22.png
+share/doc/HTML/en/katepart/arrow-up-double-22.png
 share/doc/HTML/en/katepart/comma-to.png
+share/doc/HTML/en/katepart/configure-shortcuts-22.png
 share/doc/HTML/en/katepart/configuring.docbook
 share/doc/HTML/en/katepart/development.docbook
+share/doc/HTML/en/katepart/edit-select-all-22.png
+share/doc/HTML/en/katepart/format-text-superscript-22.png
 share/doc/HTML/en/katepart/fundamentals.docbook
 share/doc/HTML/en/katepart/highlighted.png
 share/doc/HTML/en/katepart/index.cache.bz2
@@ -1403,10 +1455,6 @@ share/locale/zh_TW/LC_MESSAGES/kterustcompletion.mo
 share/locale/zh_TW/LC_MESSAGES/kwrite.mo
 share/locale/zh_TW/LC_MESSAGES/plasma_applet_org.kde.plasma.katesessions.mo
 share/locale/zh_TW/LC_MESSAGES/tabswitcherplugin.mo
-share/kxmlgui5/
-share/kxmlgui5/katexmltools/
-share/kxmlgui5/katexmltools/ui.rc
-share/metainfo/
 share/metainfo/org.kde.kate.appdata.xml
 share/metainfo/org.kde.kwrite.appdata.xml
 share/metainfo/org.kde.plasma.katesessions.appdata.xml
