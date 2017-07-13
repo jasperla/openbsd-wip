@@ -27,7 +27,5 @@ lib/cmake/Qca-qt5/Qca-qt5Targets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/Qca-qt5/Qca-qt5Targets.cmake
 @lib lib/libqca-qt5.so.${LIBqca-qt5_VERSION}
 lib/pkgconfig/qca2-qt5.pc
+lib/qt5/mkspecs/features/crypto.prf
 @man man/man1/qcatool-qt5.1
-mkspecs/
-mkspecs/features/
-mkspecs/features/crypto.prf
