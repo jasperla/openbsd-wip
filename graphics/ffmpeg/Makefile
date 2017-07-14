@@ -2,22 +2,20 @@
 
 COMMENT=	audio/video converter and streamer
 
-V=		20170610
-DISTNAME=	ffmpeg-git-${V}
-PKGNAME=	ffmpeg-${V}
+DISTNAME=	ffmpeg-3.3.2
 CATEGORIES=	graphics multimedia
-MASTER_SITES=	http://comstyle.com/source/
-EXTRACT_SUFX=	.tar.xz
+MASTER_SITES=	http://ffmpeg.org/releases/
+EPOCH=		0
 
-SHARED_LIBS=	avcodec		22.2 \
+SHARED_LIBS=	avcodec		23.0 \
 		avdevice	10.0 \
-		avfilter	7.3 \
-		avformat	19.4 \
+		avfilter	8.0 \
+		avformat	20.0 \
 		avresample	1.0 \
-		avutil		12.4 \
+		avutil		13.0 \
 		postproc	16.1 \
-		swresample	1.2 \
-		swscale		6.1
+		swresample	1.3 \
+		swscale		7.0
 
 HOMEPAGE=	http://ffmpeg.org/
 
@@ -27,7 +25,7 @@ MAINTAINER=	Brad Smith <brad@comstyle.com>
 PERMIT_PACKAGE_CDROM=	patents
 PERMIT_PACKAGE_FTP=	Yes
 
-WANTLIB=	SDL X11 Xext Xv ass bz2 c crypto fontconfig freetype fribidi \
+WANTLIB =	SDL2 X11 Xext Xv ass bz2 c crypto fontconfig freetype fribidi \
 		gsm m mp3lame opus pthread sndio speex ssl v4l2 vorbis \
 		vorbisenc vpx>=5 x264 x265>=2 xcb xcb-shape xcb-shm xcb-xfixes \
 		xvidcore z
@@ -46,7 +44,7 @@ LIB_DEPENDS=	archivers/bzip2 \
 		audio/opus \
 		audio/speex \
 		audio/gsm \
-		devel/sdl \
+		devel/sdl2 \
 		multimedia/libass \
 		multimedia/libv4l \
 		multimedia/libvpx>=1.3.0 \
@@ -93,14 +91,13 @@ CONFIGURE_ARGS+= --enable-shared \
 		--disable-lzma \
 		--disable-mips32r5 \
 		--disable-mips64r6 \
-		--disable-mipsdspr1 \
+		--disable-mipsdsp \
 		--disable-mipsdspr2 \
 		--disable-mipsfpu \
 		--disable-mmi \
 		--disable-msa \
 		--disable-neon \
 		--disable-outdev=oss \
-		--disable-outdev=sdl \
 		--disable-vfp \
 		--enable-avresample \
 		--enable-fontconfig \
@@ -152,7 +149,8 @@ CONFIGURE_ENV+=	LIBavcodec_EXTRALIBS="${LIBavcodec_EXTRALIBS}" \
 		LIBpostproc_REQUIRES="libavutil" \
 		LIBswresample_REQUIRES="libavutil" \
 		LIBswscale_REQUIRES="libavutil" \
-		TMPDIR=${WRKBUILD}
+		TMPDIR=${WRKBUILD} \
+		TERM=dumb
 
 VERSION_FLAGS=	libavcodec_VERSION=${LIBavcodec_VERSION} \
 		libavdevice_VERSION=${LIBavdevice_VERSION} \
