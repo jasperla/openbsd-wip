@@ -8,8 +8,7 @@ COMMENT =		movie player based on MPlayer/mplayer2
 
 GH_ACCOUNT =		mpv-player
 GH_PROJECT =		mpv
-GH_TAGNAME =		v0.22.0
-REVISION =		0
+GH_TAGNAME =		v0.25.0
 
 CATEGORIES =		multimedia x11
 
@@ -62,16 +61,17 @@ CONFIGURE_ARGS =	--confloaddir=${SYSCONFDIR}/mpv \
 			--mandir=${LOCALBASE}/man \
 			--docdir=${LOCALBASE}/share/examples/mpv \
 			--zshdir=${LOCALBASE}/share/zsh/vendor-completions \
+			--enable-cdda \
+			--enable-dvdread \
+			--enable-dvdnav \
 			--enable-encoding \
 			--enable-sndio \
 			--enable-sdl2 \
 			--enable-zsh-comp \
 			--disable-alsa \
 			--disable-caca \
-			--disable-enca \
 			--disable-jack \
 			--disable-libarchive \
-			--disable-libguess \
 			--disable-rubberband \
 			--disable-oss-audio \
 			--disable-openal \
