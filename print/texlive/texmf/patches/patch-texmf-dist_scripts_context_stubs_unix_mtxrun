@@ -1,0 +1,20 @@
+$OpenBSD: patch-texmf-dist_scripts_context_stubs_unix_mtxrun,v 1.4 2017/05/21 11:57:51 edd Exp $
+--- texmf-dist/scripts/context/stubs/unix/mtxrun.origy	Tue May 17 18:25:09 2016
++++ texmf-dist/scripts/context/stubs/unix/mtxrun	Thu Dec 29 20:55:14 2016
+@@ -19074,11 +19074,11 @@ messages = messages or { } -- for the moment
+ runners = runners  or { } -- global (might become local)
+ 
+ runners.applications = {
+-    ["lua"] = "luatex --luaonly",
+-    ["luc"] = "luatex --luaonly",
+-    ["pl"] = "perl",
+-    ["py"] = "python",
+-    ["rb"] = "ruby",
++    ["lua"] = "${LOCALBASE}/bin/luatex --luaonly",
++    ["luc"] = "${LOCALBASE}/bin/luatex --luaonly",
++    ["pl"] = "/usr/bin/perl",
++    ["py"] = "${MODPY_BIN}",
++    ["rb"] = "${RUBY}",
+ }
+ 
+ runners.suffixes = {
