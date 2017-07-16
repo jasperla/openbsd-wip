@@ -48,10 +48,6 @@ CONFIGURE_ARGS =	--enable-mt \
 			--with-world \
 			--enable-shared
 
-# LibreSSL missing CRYPTO_ONCE API
-# https://github.com/SWI-Prolog/swipl-devel/issues/249
-CONFIGURE_ARGS +=	--without-ssl
-
 USE_GMAKE =		Yes
 
 # Don't pick up bash

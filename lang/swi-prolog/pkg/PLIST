@@ -59,6 +59,7 @@ lib/swipl-${V}/lib/${FULLARCH}/archive4pl.so
 lib/swipl-${V}/lib/${FULLARCH}/bdb4pl.so
 lib/swipl-${V}/lib/${FULLARCH}/cgi.so
 lib/swipl-${V}/lib/${FULLARCH}/crypt.so
+lib/swipl-${V}/lib/${FULLARCH}/crypto4pl.so
 lib/swipl-${V}/lib/${FULLARCH}/double_metaphone.so
 lib/swipl-${V}/lib/${FULLARCH}/files.so
 lib/swipl-${V}/lib/${FULLARCH}/hashstream.so
@@ -87,6 +88,7 @@ lib/swipl-${V}/lib/${FULLARCH}/sgml2pl.so
 lib/swipl-${V}/lib/${FULLARCH}/sha4pl.so
 lib/swipl-${V}/lib/${FULLARCH}/snowball.so
 lib/swipl-${V}/lib/${FULLARCH}/socket.so
+lib/swipl-${V}/lib/${FULLARCH}/ssl4pl.so
 lib/swipl-${V}/lib/${FULLARCH}/streaminfo.so
 lib/swipl-${V}/lib/${FULLARCH}/syslog.so
 lib/swipl-${V}/lib/${FULLARCH}/table.so
@@ -197,6 +199,7 @@ lib/swipl-${V}/library/cql/sql_parser.pl
 lib/swipl-${V}/library/cql/sql_tokenizer.pl
 lib/swipl-${V}/library/cql/sql_write.pl
 lib/swipl-${V}/library/crypt.pl
+lib/swipl-${V}/library/crypto.pl
 lib/swipl-${V}/library/csv.pl
 lib/swipl-${V}/library/ctypes.pl
 lib/swipl-${V}/library/date.pl
@@ -285,6 +288,7 @@ lib/swipl-${V}/library/http/http_pwp.pl
 lib/swipl-${V}/library/http/http_server_files.pl
 lib/swipl-${V}/library/http/http_session.pl
 lib/swipl-${V}/library/http/http_sgml_plugin.pl
+lib/swipl-${V}/library/http/http_ssl_plugin.pl
 lib/swipl-${V}/library/http/http_stream.pl
 lib/swipl-${V}/library/http/http_unix_daemon.pl
 lib/swipl-${V}/library/http/http_wrapper.pl
@@ -421,6 +425,7 @@ lib/swipl-${V}/library/readutil.pl
 lib/swipl-${V}/library/record.pl
 lib/swipl-${V}/library/rewrite.pl
 lib/swipl-${V}/library/rlimit.pl
+lib/swipl-${V}/library/saml.pl
 lib/swipl-${V}/library/sandbox.pl
 lib/swipl-${V}/library/semweb/
 lib/swipl-${V}/library/semweb/INDEX.pl
@@ -460,6 +465,7 @@ lib/swipl-${V}/library/snowball.pl
 lib/swipl-${V}/library/socket.pl
 lib/swipl-${V}/library/solution_sequences.pl
 lib/swipl-${V}/library/sort.pl
+lib/swipl-${V}/library/ssl.pl
 lib/swipl-${V}/library/statistics.pl
 lib/swipl-${V}/library/streaminfo.pl
 lib/swipl-${V}/library/streampool.pl
@@ -495,6 +501,8 @@ lib/swipl-${V}/library/when.pl
 lib/swipl-${V}/library/win_menu.pl
 lib/swipl-${V}/library/writef.pl
 lib/swipl-${V}/library/www_browser.pl
+lib/swipl-${V}/library/xmldsig.pl
+lib/swipl-${V}/library/xmlenc.pl
 lib/swipl-${V}/library/xpath.pl
 lib/swipl-${V}/library/xsdp_types.pl
 lib/swipl-${V}/library/yall.pl
@@ -1813,6 +1821,31 @@ share/doc/swipl/packages/examples/protobufs/Makefile
 share/doc/swipl/packages/examples/protobufs/foo.cpp
 share/doc/swipl/packages/examples/protobufs/pb-vector.proto
 share/doc/swipl/packages/examples/protobufs/vector_demo.pl
+share/doc/swipl/packages/examples/ssl/
+share/doc/swipl/packages/examples/ssl/client.pl
+share/doc/swipl/packages/examples/ssl/etc/
+share/doc/swipl/packages/examples/ssl/etc/Makefile
+share/doc/swipl/packages/examples/ssl/etc/README
+share/doc/swipl/packages/examples/ssl/etc/client/
+share/doc/swipl/packages/examples/ssl/etc/client/client-cert.p12
+share/doc/swipl/packages/examples/ssl/etc/client/client-cert.pem
+share/doc/swipl/packages/examples/ssl/etc/client/client-key.pem
+share/doc/swipl/packages/examples/ssl/etc/demoCA/
+share/doc/swipl/packages/examples/ssl/etc/demoCA/cacert.pem
+share/doc/swipl/packages/examples/ssl/etc/demoCA/careq.pem
+share/doc/swipl/packages/examples/ssl/etc/demoCA/index.txt
+share/doc/swipl/packages/examples/ssl/etc/demoCA/index.txt.attr
+share/doc/swipl/packages/examples/ssl/etc/demoCA/newcerts/
+share/doc/swipl/packages/examples/ssl/etc/demoCA/newcerts/A611836B46298A71.pem
+share/doc/swipl/packages/examples/ssl/etc/demoCA/newcerts/A611836B46298A72.pem
+share/doc/swipl/packages/examples/ssl/etc/demoCA/private/
+share/doc/swipl/packages/examples/ssl/etc/demoCA/private/cakey.pem
+share/doc/swipl/packages/examples/ssl/etc/demoCA/serial
+share/doc/swipl/packages/examples/ssl/etc/server/
+share/doc/swipl/packages/examples/ssl/etc/server/server-cert.pem
+share/doc/swipl/packages/examples/ssl/etc/server/server-key.pem
+share/doc/swipl/packages/examples/ssl/https.pl
+share/doc/swipl/packages/examples/ssl/server.pl
 share/doc/swipl/packages/http.html
 share/doc/swipl/packages/httpserver.gif
 share/doc/swipl/packages/index.html
@@ -1833,6 +1866,7 @@ share/doc/swipl/packages/rdf2pl.html
 share/doc/swipl/packages/readline.html
 share/doc/swipl/packages/semweb.html
 share/doc/swipl/packages/sgml.html
+share/doc/swipl/packages/ssl.html
 share/doc/swipl/packages/table.html
 share/doc/swipl/packages/utf8proc.html
 share/doc/swipl/packages/zlib.html
