@@ -1,0 +1,4 @@
+@comment $OpenBSD$
+@bin bin/emojicode
+@bin bin/emojicodec
+share/emojicode/
