@@ -1,0 +1,30 @@
+$OpenBSD$
+
+No wordexp on OpenBSD.
+
+Index: lib/hobbes/util/str.C
+--- lib/hobbes/util/str.C.orig
++++ lib/hobbes/util/str.C
+@@ -1,7 +1,6 @@
+ 
+ #include <hobbes/util/str.H>
+ #include <memory>
+-#include <wordexp.h>
+ #include <glob.h>
+ 
+ namespace hobbes { namespace str {
+@@ -511,14 +510,7 @@ std::string expandVars(const std::string& x) {
+ }
+ 
+ std::string expandPath(const std::string& x) {
+-  wordexp_t we;
+-  if (wordexp(x.c_str(), &we, 0) == 0) {
+-    std::string result(we.we_wordv[0]);
+-    wordfree(&we);
+-    return result;
+-  } else {
+     return x;
+-  }
+ }
+ 
+ // display a byte count in typical units

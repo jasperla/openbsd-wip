@@ -1,0 +1,25 @@
+$OpenBSD$
+
+Index: include/hobbes/storage.H
+--- include/hobbes/storage.H.orig
++++ include/hobbes/storage.H
+@@ -37,7 +37,7 @@
+ 
+ // a few things have to be OS-specific here
+ //  * waiting in shared memory
+-#if defined(__APPLE__) && defined(__MACH__)
++#if defined(__OpenBSD__)
+ namespace hobbes { namespace storage {
+ static inline void waitForUpdate(volatile uint32_t* p, int eqV) {
+   while (true) {
+@@ -207,8 +207,8 @@ typedef std::pair<uint64_t, uint64_t> ProcThread;
+ inline ProcThread thisProcThread() {
+   ProcThread r;
+   r.first = (uint64_t)getpid();
+-#if defined(__APPLE__) && defined(__MACH__)
+-  pthread_threadid_np(0, &r.second);
++#if defined(__OpenBSD__)
++  r.second = 0;
+ #else
+   r.second = (uint64_t)syscall(SYS_gettid);
+ #endif
