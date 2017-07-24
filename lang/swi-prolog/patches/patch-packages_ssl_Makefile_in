@@ -1,0 +1,14 @@
+$OpenBSD$
+
+Index: packages/ssl/Makefile.in
+--- packages/ssl/Makefile.in.orig
++++ packages/ssl/Makefile.in
+@@ -117,7 +117,7 @@ check::		tests/test_certs
+ 		$(PL) -q -f test_ssl.pl -F none -g test_ssl,halt -t 'halt(1)'
+ 
+ tests/test_certs:
+-		(cd tests && ./mkcerts.sh >& /dev/null)
++		cd tests && /bin/sh mkcerts.sh
+ 
+ ################################################################
+ # Clean

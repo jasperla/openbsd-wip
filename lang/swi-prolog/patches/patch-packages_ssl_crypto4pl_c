@@ -1,7 +1,5 @@
 $OpenBSD$
 
-Make it work with LibreSSL.
-
 Index: packages/ssl/crypto4pl.c
 --- packages/ssl/crypto4pl.c.orig
 +++ packages/ssl/crypto4pl.c
@@ -14,30 +12,3 @@ Index: packages/ssl/crypto4pl.c
    if ( get_bn_arg(1, t, &rsa->n) &&
         get_bn_arg(2, t, &rsa->e) &&
         get_bn_arg(3, t, &rsa->d) &&
-@@ -1248,7 +1248,7 @@ based on mttest.c distributed with the OpenSSL library
- 
- #include <pthread.h>
- 
--#if OPENSSL_VERSION_NUMBER < 0x10100000L
-+#if OPENSSL_VERSION_NUMBER < 0x10100000L || defined(LIBRESSL_VERSION_NUMBER)
- static pthread_mutex_t *lock_cs;
- static long *lock_count;
- static void (*old_locking_callback)(int, int, const char*, int) = NULL;
-@@ -1321,7 +1321,7 @@ pthreads_thread_id(void)
- static int
- crypto_lib_init(void)
- {
--#if OPENSSL_VERSION_NUMBER < 0x10100000L
-+#if OPENSSL_VERSION_NUMBER < 0x10100000L || defined(LIBRESSL_VERSION_NUMBER)
-   if ( (old_id_callback=CRYPTO_THREADID_get_callback()) == 0 )
-   { int i;
- 
-@@ -1366,7 +1366,7 @@ crypto_lib_exit(void)
-  * If the module is being unloaded, we should remove callbacks pointing to
-  * our address space
-  */
--#if OPENSSL_VERSION_NUMBER < 0x10100000L
-+#if OPENSSL_VERSION_NUMBER < 0x10100000L || defined(LIBRESSL_VERSION_NUMBER)
- #ifdef _REENTRANT
- #ifndef __WINDOWS__
-     CRYPTO_THREADID_set_callback(old_id_callback);
