@@ -1,0 +1,15 @@
+$OpenBSD$
+
+Version the SO.
+
+Index: src/CMakeLists.txt
+--- src/CMakeLists.txt.orig
++++ src/CMakeLists.txt
+@@ -4,6 +4,7 @@ file(GLOB lily_SOURCES *.c *.h)
+ # library. The two use the same sources, put together in an object library.
+ add_library(liblily_obj OBJECT ${lily_SOURCES})
+ add_library(liblily SHARED $<TARGET_OBJECTS:liblily_obj>)
++set_target_properties(liblily PROPERTIES SOVERSION ${LIBlily_VERSION})
+ 
+ if(NOT MSVC)
+     if(LILY_NEED_DL)
