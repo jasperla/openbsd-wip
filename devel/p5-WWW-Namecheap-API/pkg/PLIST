@@ -1,0 +1,15 @@
+@comment $OpenBSD$
+${P5SITE}/WWW/
+${P5SITE}/WWW/Namecheap/
+${P5SITE}/WWW/Namecheap/API.pm
+${P5SITE}/WWW/Namecheap/DNS.pm
+${P5SITE}/WWW/Namecheap/Domain.pm
+${P5SITE}/WWW/Namecheap/NS.pm
+${P5SITE}/WWW/Namecheap/SSL.pm
+${P5SITE}/WWW/Namecheap/User.pm
+@man man/man3p/WWW::Namecheap::API.3p
+@man man/man3p/WWW::Namecheap::DNS.3p
+@man man/man3p/WWW::Namecheap::Domain.3p
+@man man/man3p/WWW::Namecheap::NS.3p
+@man man/man3p/WWW::Namecheap::SSL.3p
+@man man/man3p/WWW::Namecheap::User.3p
