@@ -7,7 +7,7 @@ GH_PROJECT=     vmime
 GH_COMMIT=      3d3ed7b26003bce0b2ce7aa355e46da4894fce39
 
 DISTNAME=	vmime
-PKGNAME=	vmime-0.9.4	# made-up version
+PKGNAME=	vmime-0.9.4
 
 SHARED_LIBS+=	vmime	4.0	# 0.0
 
@@ -20,18 +20,14 @@ MAINTAINER=	Robert Nagy <robert@openbsd.org>
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += ffi gmp gnutls hogweed idn2 m nettle p11-kit pthread ${LIBCXX}
-WANTLIB += tasn1 z
+WANTLIB += icuuc m pthread ${COMPILER_LIBCXX}
 
-MODULES=	devel/gettext \
-		devel/cmake \
-		gcc4
+MODULES=	devel/cmake
 
 BUILD_DEPENDS=	archivers/bzip2
-LIB_DEPENDS=	security/gnutls \
-		security/libgsasl
+LIB_DEPENDS=	textproc/icu4c
 
-MODGCC4_LANGS=	c c++
-MODGCC4_ARCHS=	*
+CONFIGURE_ARGS+=-DVMIME_HAVE_SASL_SUPPORT=OFF \
+		-DVMIME_HAVE_TLS_SUPPORT=OFF
 
 .include <bsd.port.mk>
