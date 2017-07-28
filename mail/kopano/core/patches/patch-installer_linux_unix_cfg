@@ -1,0 +1,10 @@
+$OpenBSD: patch-installer_linux_unix_cfg,v 1.2 2010/06/30 02:46:48 ajacoutot Exp $
+Index: installer/linux/unix.cfg
+--- installer/linux/unix.cfg.orig
++++ installer/linux/unix.cfg
+@@ -39,4 +39,4 @@ max_group_gid = 10000
+ # except_group_gids =
+ 
+ # Create a user as non-active when it has this Unix shell
+-non_login_shell = /bin/false
++non_login_shell = /sbin/nologin

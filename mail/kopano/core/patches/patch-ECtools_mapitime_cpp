@@ -1,0 +1,23 @@
+$OpenBSD$
+
+Index: ECtools/mapitime.cpp
+--- ECtools/mapitime.cpp.orig
++++ ECtools/mapitime.cpp
+@@ -59,6 +59,7 @@ static void mpt_stat_record(const struct mpt_stat_entr
+ 
+ static int mpt_setup_tick(void)
+ {
++#if !defined(__OpenBSD__) 
+ 	struct sigaction sa;
+ 	sa.sa_handler = mpt_stat_dump;
+ 	sa.sa_flags = SA_RESTART;
+@@ -84,6 +85,9 @@ static int mpt_setup_tick(void)
+ 		return -errno;
+ 	}
+ 	return 1;
++#else
++	return -1;
++#endif
+ }
+ 
+ static int mpt_main_init(void)

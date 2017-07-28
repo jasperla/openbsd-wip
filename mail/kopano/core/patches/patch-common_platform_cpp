@@ -1,0 +1,23 @@
+$OpenBSD$
+
+Index: common/platform.cpp
+--- common/platform.cpp.orig
++++ common/platform.cpp
+@@ -347,7 +347,7 @@ bool force_buffers_to_disk(const int fd)
+ 
+ void my_readahead(const int fd)
+ {
+-#ifdef LINUX
++#if defined(LINUX) && !defined(__OpenBSD__)
+ 	struct stat st;
+ 
+ 	if (fstat(fd, &st) == 0)
+@@ -357,7 +357,7 @@ void my_readahead(const int fd)
+ 
+ void give_filesize_hint(const int fd, const off_t len)
+ {
+-#ifdef LINUX
++#if defined(LINUX) && !defined(__OpenBSD__)
+ 	// this helps preventing filesystem fragmentation as the
+ 	// kernel can now look for the best disk allocation
+ 	// pattern as it knows how much date is going to be

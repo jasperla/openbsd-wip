@@ -1,0 +1,17 @@
+$OpenBSD$
+
+Index: provider/server/ECSoapServerConnection.cpp
+--- provider/server/ECSoapServerConnection.cpp.orig
++++ provider/server/ECSoapServerConnection.cpp
+@@ -26,6 +26,11 @@
+ #include <sys/un.h>
+ #endif
+ 
++#ifdef __OpenBSD__
++#include <sys/stat.h>
++#include <signal.h>
++#endif
++
+ #include "ECSoapServerConnection.h"
+ #include "ECServerEntrypoint.h"
+ #	include <dirent.h>

@@ -1,0 +1,53 @@
+$OpenBSD$
+
+Index: common/ECChannel.cpp
+--- common/ECChannel.cpp.orig
++++ common/ECChannel.cpp
+@@ -30,7 +30,7 @@
+ #include <netinet/in.h>
+ #include <netinet/tcp.h>
+ #include <arpa/inet.h>
+-#ifdef LINUX
++#if defined(LINUX) && !defined(__OpenBSD__)
+ #include <linux/rtnetlink.h>
+ #endif
+ 
+@@ -503,7 +503,11 @@ HRESULT ECChannel::HrReadBytes(std::string * strBuffer
+ }
+ 
+ HRESULT ECChannel::HrSelect(int seconds) {
++#ifndef __OpenBSD__
+ 	struct pollfd pollfd = {fd, POLLIN | POLLRDHUP, 0};
++#else
++	struct pollfd pollfd = {fd, POLLIN, 0};
++#endif
+ 
+ 	if(lpSSL && SSL_pending(lpSSL))
+ 		return hrSuccess;
+@@ -648,7 +652,7 @@ void ECChannel::SetIPAddress(const struct sockaddr *sa
+ 	peer_salen = slen;
+ }
+ 
+-#ifdef LINUX
++#if defined(LINUX) && !defined(__OpenBSD__)
+ static int peer_is_local2(int rsk, const struct nlmsghdr *nlh)
+ {
+ 	if (send(rsk, nlh, nlh->nlmsg_len, 0) < 0)
+@@ -687,7 +691,7 @@ int zcp_peeraddr_is_local(const struct sockaddr *peer_
+ 	} else {
+ 		return -EPROTONOSUPPORT;
+ 	}
+-#ifdef LINUX
++#if defined(LINUX) && !defined(__OpenBSD__)
+ 	int rsk = socket(AF_NETLINK, SOCK_DGRAM, NETLINK_ROUTE);
+ 	if (rsk < 0) {
+ 		fprintf(stderr, "socket AF_NETLINK: %s\n", strerror(errno));
+@@ -795,7 +799,7 @@ int zcp_bindtodevice(int fd, const char *i)
+ 	if (i == NULL || strcmp(i, "any") == 0 || strcmp(i, "all") == 0 ||
+ 	    strcmp(i, "") == 0)
+ 		return 0;
+-#ifdef LINUX
++#if defined(LINUX) && !defined(__OpenBSD__)
+ 	if (setsockopt(fd, SOL_SOCKET, SO_BINDTODEVICE, i, strlen(i)) >= 0)
+ 		return 0;
+ 	ec_log_err("Unable to bind to interface %s: %s", i, strerror(errno));

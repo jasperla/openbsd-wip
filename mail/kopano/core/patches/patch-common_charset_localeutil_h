@@ -1,0 +1,15 @@
+$OpenBSD$
+
+Index: common/charset/localeutil.h
+--- common/charset/localeutil.h.orig
++++ common/charset/localeutil.h
+@@ -23,7 +23,9 @@
+ namespace KC {
+ 
+ extern _kc_export bool forceUTF8Locale(bool output, std::string *prev_lcoale = nullptr);
++#ifndef __OpenBSD__
+ locale_t createUTF8Locale();
++#endif
+ 
+ } /* namespace */
+ 

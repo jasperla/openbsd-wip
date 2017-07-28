@@ -1,0 +1,34 @@
+$OpenBSD$
+
+Index: common/ustringutil.cpp
+--- common/ustringutil.cpp.orig
++++ common/ustringutil.cpp
+@@ -91,12 +91,18 @@ namespace KC {
+  */
+ const char* str_ifind(const char *haystack, const char *needle)
+ {
++#ifndef __OpenBSD__
+ 	locale_t loc = createlocale(LC_CTYPE, "C");
++#endif
+ 	const char *needlepos = needle;
+ 	const char *needlestart = haystack;
+ 
+ 	while(*haystack) {
++#ifndef __OpenBSD__
+ 		if (toupper_l(*haystack, loc) == toupper_l(*needlepos, loc)) {
++#else
++		if (toupper(*haystack) == toupper(*needlepos)) {
++#endif
+ 			++needlepos;
+ 
+ 			if(*needlepos == 0)
+@@ -111,7 +117,9 @@ const char* str_ifind(const char *haystack, const char
+ 	needlestart = NULL;
+ 
+ exit:
++#ifndef __OpenBSD__
+ 	freelocale(loc);
++#endif
+ 
+ 	return needlestart;
+ }

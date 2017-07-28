@@ -1,0 +1,42 @@
+$OpenBSD$
+
+Index: common/include/kopano/platform.linux.h
+--- common/include/kopano/platform.linux.h.orig
++++ common/include/kopano/platform.linux.h
+@@ -33,7 +33,9 @@
+ #include <dlfcn.h>
+ #include <cstddef>
+ #include <libgen.h>
++#ifndef __OpenBSD__
+ #include <byteswap.h>
++#endif
+ #include <cerrno>
+ #include <clocale>
+ 
+@@ -57,6 +59,8 @@
+ #define _vsnprintf vsnprintf
+ #ifdef HAVE_VSNPRINTF_L
+ #define _vsnprintf_l vsnprintf_l
++#elif defined __OpenBSD__
++#define _vsnprintf_l vsnprintf
+ #else
+ inline int _vsnprintf_l(char *str, size_t size, const char *format, locale_t locale, va_list ap) {
+ 	locale_t prev = uselocale(locale);
+@@ -498,8 +502,16 @@ namespace KC {
+ 
+ extern _kc_export time_t GetProcessTime(void);
+ 
++#ifdef __OpenBSD__
++#define POLLRDHUP 0
++#endif
++
+ #define OutputDebugStringA(dstr) fprintf(stderr,"%s",dstr)
+-#define kc_threadid() static_cast<unsigned long>(pthread_self())
++#ifndef __OpenBSD__
++#define kc_threadid() reinterpret_cast<unsigned long>(getthrid())
++#else
++#define kc_threadid() reinterpret_cast<unsigned long>(pthread_self())
++#endif
+ #define GetTickCount() 0L
+ 
+ #define TICKS_PER_SEC (sysconf(_SC_CLK_TCK))
