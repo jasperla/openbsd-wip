@@ -3,30 +3,21 @@ $OpenBSD$
 Index: common/include/kopano/ECKeyTable.h
 --- common/include/kopano/ECKeyTable.h.orig
 +++ common/include/kopano/ECKeyTable.h
-@@ -64,7 +64,7 @@
- 
- namespace KC {
- 
--struct sObjectTableKey {
-+struct _kc_export sObjectTableKey _kc_final {
-     sObjectTableKey(unsigned int obj_id, unsigned int order_id) : ulObjId(obj_id), ulOrderId(order_id) {}
- 	sObjectTableKey(void) = default;
- 	unsigned int ulObjId = 0;
-@@ -90,7 +90,7 @@ typedef std::list<sObjectTableKey> ECObjectTableList;
- #define TABLEROW_FLAG_FLOAT		0x00000002
- #define TABLEROW_FLAG_STRING	0x00000004
- 
--struct ECSortCol {
-+struct _kc_export ECSortCol _kc_final {
- 	public:
- 	uint8_t flags = 0;
- 	bool isnull = false; /* go use std::optional with C++17 */
-@@ -167,7 +167,7 @@ class _kc_export ECKeyTable _kc_final { (public)
+@@ -120,8 +120,6 @@ class ECSortColView {
+ class _kc_export ECTableRow _kc_final {
+ public:
+ 	ECTableRow(const sObjectTableKey &, const std::vector<ECSortCol> &, bool hidden);
+-	ECTableRow(const sObjectTableKey &, std::vector<ECSortCol> &&, bool hidden);
+-	ECTableRow(sObjectTableKey &&, std::vector<ECSortCol> &&, bool hidden);
+ 	ECTableRow(const ECTableRow &other);
+ 	_kc_hidden unsigned int GetObjectSize(void) const;
+ 	_kc_hidden static bool rowcompare(const ECTableRow *, const ECTableRow *);
+@@ -167,7 +165,7 @@ class _kc_export ECKeyTable _kc_final { (public)
  	
  	ECKeyTable();
  	~ECKeyTable();
 -	ECRESULT UpdateRow(UpdateType ulType, const sObjectTableKey *lpsRowItem, std::vector<ECSortCol> &&, sObjectTableKey *lpsPrevRow, bool fHidden = false, UpdateType *lpulAction = nullptr);
-+	ECRESULT UpdateRow(ECKeyTable::UpdateType ulType, const sObjectTableKey *lpsRowItem, std::vector<ECSortCol> &&, sObjectTableKey *lpsPrevRow, bool fHidden = false, ECKeyTable::UpdateType *lpulAction = nullptr);
++	ECRESULT UpdateRow(UpdateType ulType, const sObjectTableKey *lpsRowItem, const std::vector<ECSortCol> &, sObjectTableKey *lpsPrevRow, bool fHidden = false, UpdateType *lpulAction = nullptr);
  	ECRESULT	GetPreviousRow(const sObjectTableKey *lpsRowItem, sObjectTableKey *lpsPrevItem);
  	ECRESULT	SeekRow(unsigned int ulBookmark, int lSeekTo, int *lplRowsSought);
  	ECRESULT	SeekId(const sObjectTableKey *lpsRowItem);
