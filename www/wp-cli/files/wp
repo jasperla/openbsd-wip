@@ -1,0 +1,6 @@
+#!/bin/sh
+
+exec ${LOCALBASE}/bin/php-5.6 \
+	-d allow_url_fopen=1 \
+	-d suhosin.executor.include.whitelist=phar \
+	${LOCALBASE}/bin/wp-cli.phar "$@"
