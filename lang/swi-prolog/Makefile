@@ -58,9 +58,7 @@ MAKE_ENV +=		LDFLAGS=-L${LOCALBASE}/lib
 MAKE_FLAGS =		SONAMEOPT= \
 			SHAREDV=libpl.so.${LIBpl_VERSION}
 
-MODULES =		gcc4
-# for atomic builtins
-MODGCC4_ARCHS =		arm
+COMPILER =		gcc-only
 
 BUILD_DEPENDS =		${RUN_DEPENDS}
 LIB_DEPENDS =		devel/gmp \
