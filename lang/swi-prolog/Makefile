@@ -77,12 +77,17 @@ post-install:
 		ln -sf swipl-$V/lib/${FULLARCH}/libpl.so.${LIBpl_VERSION}
 	mv ${PREFIX}/lib/swipl-${V}/doc ${PREFIX}/share/doc/swipl
 
-# The following test files hang. We remove them to allow the rest of the tests
-# to execute atleast. When updating, uncomment these to see if they still fail.
+# A few tests crash or hang. We either patch them away or (if all tests in a
+# file are affected) remove the entire test file.
+#
+# Many of the crashes are due to libbacktrace not working properly with
+# SWI-Prolog.
+#
 # One test fails after removing all hanging tests.
 pre-test:
 	rm -f ${WRKBUILD}/src/Tests/core/test_resource_error.pl \
-		${WRKBUILD}/src/Tests/core/test_cgc.pl
+		${WRKBUILD}/src/Tests/core/test_cgc.pl \
+		${WRKBUILD}/src/Tests/thread/queue_resource.pl
 
 .include <bsd.port.arch.mk>
 
