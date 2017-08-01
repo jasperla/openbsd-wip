@@ -19,20 +19,21 @@ EXTRACT_SUFX =		.tar.bz2
 
 WANTLIB =  ICE SM X11 Xext Xi Xinerama Xrender Xtst fontconfig freetype
 WANTLIB += QtDBus QtGui QtNetwork QtWebKit QtXml phonon
-WANTLIB += c iconv m ogg pthread stdc++ vorbis vorbisfile z
-WANTLIB += hunspell-1.3
+WANTLIB += c iconv execinfo  m ogg pthread vorbis vorbisfile z
+WANTLIB += hunspell-1.6 ${COMPILER_LIBCXX}
 
 MODULES =		x11/qt4 devel/qmake
 
 RUN_DEPENDS =		devel/desktop-file-utils
-LIB_DEPENDS =		textproc/hunspell
+LIB_DEPENDS =		devel/libexecinfo \
+			textproc/hunspell
 
 WRKDIST =		${WRKDIR}
 SEPARATE_BUILD =	No
 NO_TEST =		Yes
 
 MODQMAKE_ARGS =		INCLUDEPATH+=${X11BASE}/include \
-			LIBS+=-L${LOCALBASE}/lib
+			LIBS+="-L${LOCALBASE}/lib -lexecinfo"
 
 ICONDIR =		${TRUEPREFIX}/share/goldendict
 
