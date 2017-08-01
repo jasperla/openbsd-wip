@@ -3,7 +3,7 @@
 
 COMMENT=		PyCharm Python IDE
 
-V=			2016.3.1
+V=			2017.1.5
 DISTNAME=		pycharm-community-${V}
 PKGNAME=		${DISTNAME:C/-community//}
 CATEGORIES=		devel
