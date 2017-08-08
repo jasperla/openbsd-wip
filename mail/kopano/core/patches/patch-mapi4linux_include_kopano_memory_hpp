@@ -1,0 +1,99 @@
+$OpenBSD$
+
+Index: mapi4linux/include/kopano/memory.hpp
+--- mapi4linux/include/kopano/memory.hpp.orig
++++ mapi4linux/include/kopano/memory.hpp
+@@ -33,10 +33,10 @@ template<typename _T> class memory_proxy _kc_final {
+ 	public:
+ 	memory_proxy(_T **__p) noexcept : _m_ptr(__p) {}
+ 	operator _T **(void) noexcept { return _m_ptr; }
+-	template<typename _U> _U **as(void) const noexcept
++	template<typename _ZCPU> _ZCPU **as(void) const noexcept
+ 	{
+-		static_assert(sizeof(_U *) == sizeof(_T *), "This hack won't work");
+-		return reinterpret_cast<_U **>(_m_ptr);
++		static_assert(sizeof(_ZCPU *) == sizeof(_T *), "This hack won't work");
++		return reinterpret_cast<_ZCPU **>(_m_ptr);
+ 	}
+ 	operator void **(void) noexcept { return as<void>(); }
+ 
+@@ -60,10 +60,10 @@ template<typename _T> class object_proxy _kc_final {
+ 	public:
+ 	object_proxy(_T **__p) noexcept : _m_ptr(__p) {}
+ 	operator _T **(void) noexcept { return _m_ptr; }
+-	template<typename _U> _U **as(void) const noexcept
++	template<typename _ZCPU> _ZCPU **as(void) const noexcept
+ 	{
+-		static_assert(sizeof(_U *) == sizeof(_T *), "This hack won't work");
+-		return reinterpret_cast<_U **>(_m_ptr);
++		static_assert(sizeof(_ZCPU *) == sizeof(_T *), "This hack won't work");
++		return reinterpret_cast<_ZCPU **>(_m_ptr);
+ 	}
+ 	operator void **(void) noexcept { return as<void>(); }
+ 	operator IUnknown **(void) noexcept { return as<IUnknown>(); }
+@@ -76,10 +76,10 @@ template<> class object_proxy<IUnknown> _kc_final {
+ 	public:
+ 	object_proxy(IUnknown **__p) noexcept : _m_ptr(__p) {}
+ 	operator IUnknown **(void) noexcept { return _m_ptr; }
+-	template<typename _U> _U **as(void) const noexcept
++	template<typename _ZCPU> _ZCPU **as(void) const noexcept
+ 	{
+-		static_assert(sizeof(_U *) == sizeof(IUnknown *), "This hack won't work");
+-		return reinterpret_cast<_U **>(_m_ptr);
++		static_assert(sizeof(_ZCPU *) == sizeof(IUnknown *), "This hack won't work");
++		return reinterpret_cast<_ZCPU **>(_m_ptr);
+ 	}
+ 	operator void **(void) noexcept { return as<void>(); }
+ 
+@@ -225,8 +225,8 @@ template<typename _T> class object_ptr {
+ 	_T *operator->(void) const noexcept { return _m_ptr; }
+ 	_T *get(void) const noexcept { return _m_ptr; }
+ 	operator _T *(void) const noexcept { return _m_ptr; }
+-	template<typename _U> HRESULT QueryInterface(_U &);
+-	template<typename _P> _P as();
++	template<typename _ZCPU> HRESULT QueryInterface(_ZCPU &);
++	template<typename _ZCPP> _ZCPP as();
+ 
+ 	/* Modifiers */
+ 	_T *release(void) noexcept
+@@ -309,22 +309,22 @@ swap(object_ptr<_T> &__x, object_ptr<_T> &__y) noexcep
+ 
+ namespace KC {
+ 
+-template<typename _U> static inline constexpr const IID &
+-iid_of(const KCHL::object_ptr<_U> &)
++template<typename _ZCPU> static inline constexpr const IID &
++iid_of(const KCHL::object_ptr<_ZCPU> &)
+ {
+-	return iid_of(static_cast<const _U *>(nullptr));
++	return iid_of(static_cast<const _ZCPU *>(nullptr));
+ }
+ 
+ } /* namespace KC */
+ 
+ namespace KCHL {
+ 
+-template<typename _T > template<typename _U>
+-HRESULT object_ptr<_T>::QueryInterface(_U &result)
++template<typename _T > template<typename _ZCPU>
++HRESULT object_ptr<_T>::QueryInterface(_ZCPU &result)
+ {
+ 	if (_m_ptr == nullptr)
+ 		return MAPI_E_NOT_INITIALIZED;
+-	typename _U::pointer newobj = nullptr;
++	typename _ZCPU::pointer newobj = nullptr;
+ 	HRESULT hr = _m_ptr->QueryInterface(iid_of(result), reinterpret_cast<void **>(&newobj));
+ 	if (hr == hrSuccess)
+ 		result.reset(newobj, false);
+@@ -356,9 +356,9 @@ HRESULT object_ptr<_T>::QueryInterface(_U &result)
+ 	return hr;
+ }
+ 
+-template<typename _T> template<typename _P> _P object_ptr<_T>::as(void)
++template<typename _T> template<typename _ZCPP> _ZCPP object_ptr<_T>::as(void)
+ {
+-	_P tmp = nullptr;
++	_ZCPP tmp = nullptr;
+ 	QueryInterface(tmp);
+ 	return tmp;
+ }

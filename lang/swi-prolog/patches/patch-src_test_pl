@@ -33,3 +33,18 @@ Index: src/test.pl
  gmp(fac-1) :-
  	fac(25, X),
  	X == 15511210043330985984000000. % computed with bc
+@@ -756,10 +757,10 @@ gmp(fmtf-1) :-
+ gmp(random) :-
+ 	A is random((1<<200)-((1<<200)-20)),
+ 	A < 20.
+-gmp(length) :-
+-	N is 1<<66,
+-	catch(length(_L, N), Error, true),
+-	Error = error(resource_error(stack), global).
++%gmp(length) :-
++%	N is 1<<66,
++%	catch(length(_L, N), Error, true),
++%	Error = error(resource_error(stack), global).
+ gmp(ar_add_ui) :-			% check realloc of gmp number
+ 	A = 1000000000000000000000,
+ 	X is A+1,

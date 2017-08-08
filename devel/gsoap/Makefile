@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2015/05/01 06:52:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2017/04/10 11:45:25 sthen Exp $
 
 COMMENT=		SOAP/REST Web Services and XML-Based apps toolkit
 
-V=			2.8.23
+V=			2.8.50
 DISTNAME=		gsoap_${V}
 PKGNAME=		gsoap-${V}
 EXTRACT_SUFX=		.zip
@@ -17,7 +17,7 @@ SHARED_LIBS +=		gsoapssl	0.0 # 0.0
 
 CATEGORIES=		devel
 
-HOMEPAGE=		http://www.genivia.com
+HOMEPAGE=		https://www.cs.fsu.edu/~engelen/soap.html
 
 # MPL-like - GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -30,12 +30,12 @@ AUTOCONF_VERSION=	2.67
 AUTOMAKE_VERSION=	1.11
 
 
-WANTLIB += c crypto m pthread ssl stdc++ z
+WANTLIB += c crypto m pthread ssl ${LIBCXX} z
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=gsoap2/gSOAP/}
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ENV=		LDFLAGS="-pthread"
+CONFIGURE_ENV=		CPPFLAGS="-DWITH_NO_C_LOCALE=1" LDFLAGS="-pthread"
 
 pre-configure:
 	cd ${WRKSRC} && env AUTOCONF_VERSION=${AUTOCONF_VERSION} \

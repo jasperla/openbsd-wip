@@ -1,0 +1,24 @@
+$OpenBSD$
+--- configure.orig	Wed Jan 11 21:33:21 2017
++++ configure	Wed Jan 11 21:35:12 2017
+@@ -491,9 +491,9 @@ if ! pkg-config --exists zlib; then
+   rm -f compat/gen_zlib_pc
+ fi
+ 
+-printf "Checking for zlib (>= 1.2.5.2)... "
++printf "Checking for zlib (>= 1.2.3)... "
+ have_zlib=0
+-if pkg-config --atleast-version=1.2.5.2 zlib; then
++if pkg-config --atleast-version=1.2.3 zlib; then
+     printf "Yes.\n"
+     have_zlib=1
+     zlib_cflags=$(pkg-config --cflags zlib)
+@@ -519,7 +519,7 @@ fi
+ printf "Checking for python... "
+ have_python=0
+ 
+-for name in ${PYTHON} python python2 python3; do
++for name in ${PYTHON} python python2 python2.7 python3; do
+     if command -v $name > /dev/null; then
+ 	have_python=1
+ 	python=$name

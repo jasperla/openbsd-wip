@@ -1,0 +1,2 @@
+Mostly works, IPC segfaults?
+We need a way of doing Mac OS X's pthread_threadid_np(3).

@@ -1,0 +1,72 @@
+$OpenBSD: patch-provider_libserver_StreamUtil_cpp,v 1.8 2016/04/20 18:38:41 robert Exp $
+Index: provider/libserver/StreamUtil.cpp
+--- provider/libserver/StreamUtil.cpp.orig
++++ provider/libserver/StreamUtil.cpp
+@@ -399,7 +399,9 @@ static ECRESULT SerializeDatabasePropVal(const StreamC
+ 	unsigned int ulKind;
+ 	unsigned int ulNameId;
+ 	std::string strNameString;
++#ifndef __OpenBSD__
+ 	locale_t loc = createlocale(LC_NUMERIC, "C");
++#endif
+ 	convert_context converter;
+ 
+ 	short i;
+@@ -446,7 +448,11 @@ static ECRESULT SerializeDatabasePropVal(const StreamC
+ 			er = KCERR_NOT_FOUND;
+ 			goto exit;
+ 		}
++#ifndef __OpenBSD__
+ 		flt = (float)strtod_l(lpRow[FIELD_NR_DOUBLE], NULL, loc);
++#else
++		flt = (float)strtod(lpRow[FIELD_NR_DOUBLE], NULL);
++#endif
+ 		er = lpSink->Write(&flt, sizeof(flt), 1);
+ 		break;
+ 	case PT_BOOLEAN:
+@@ -463,7 +469,11 @@ static ECRESULT SerializeDatabasePropVal(const StreamC
+ 			er = KCERR_NOT_FOUND;
+ 			goto exit;
+ 		}
++#ifndef __OpenBSD__
+ 		dbl = strtod_l(lpRow[FIELD_NR_DOUBLE], NULL, loc);
++#else
++		dbl = strtod(lpRow[FIELD_NR_DOUBLE], NULL);
++#endif
+ 		er = lpSink->Write(&dbl, sizeof(dbl), 1);
+ 		break;
+ 	case PT_CURRENCY:
+@@ -557,7 +567,11 @@ static ECRESULT SerializeDatabasePropVal(const StreamC
+ 		ulLastPos = 0;
+ 		for (unsigned int x = 0; er == erSuccess && x < ulCount; ++x) {
+ 			ParseMVProp(lpRow[FIELD_NR_DOUBLE], lpLen[FIELD_NR_DOUBLE], &ulLastPos, &strData);
++#ifndef __OpenBSD__
+ 			flt = (float)strtod_l(strData.c_str(), NULL, loc);
++#else
++			flt = (float)strtod(strData.c_str(), NULL);
++#endif
+ 			er = lpSink->Write(&flt, sizeof(flt), 1);
+ 		}
+ 		break;
+@@ -573,7 +587,11 @@ static ECRESULT SerializeDatabasePropVal(const StreamC
+ 		ulLastPos = 0;
+ 		for (unsigned int x = 0; er == erSuccess && x < ulCount; ++x) {
+ 			ParseMVProp(lpRow[FIELD_NR_DOUBLE], lpLen[FIELD_NR_DOUBLE], &ulLastPos, &strData);
++#ifndef __OpenBSD__
+ 			dbl = strtod_l(strData.c_str(), NULL, loc);
++#else
++			dbl = strtod(strData.c_str(), NULL);
++#endif
+ 			er = lpSink->Write(&dbl, sizeof(dbl), 1);
+ 		}
+ 		break;
+@@ -687,7 +705,9 @@ static ECRESULT SerializeDatabasePropVal(const StreamC
+ 	}
+ 
+ exit:
++#ifndef __OpenBSD__
+ 	freelocale(loc);
++#endif
+ 	return er;
+ }
+ 

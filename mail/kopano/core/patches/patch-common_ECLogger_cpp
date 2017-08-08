@@ -1,0 +1,117 @@
+$OpenBSD$
+
+Index: common/ECLogger.cpp
+--- common/ECLogger.cpp.orig
++++ common/ECLogger.cpp
+@@ -63,9 +63,11 @@ static ECLogger *ec_log_target = &ec_log_fallback_targ
+ 
+ ECLogger::ECLogger(int max_ll) {
+ 	max_loglevel = max_ll;
++#ifndef __OpenBSD__
+ 	// get system locale for time, NULL is returned if locale was not found.
+ 	timelocale = createlocale(LC_TIME, "C");
+ 	datalocale = createUTF8Locale();
++#endif
+ 	prefix = LP_NONE;
+ 	m_ulRef = 1;
+ }
+@@ -74,11 +76,13 @@ ECLogger::~ECLogger() {
+ 	if (ec_log_target == this)
+ 		ec_log_set(NULL);
+ 
++#ifndef __OpenBSD__
+ 	if (timelocale)
+ 		freelocale(timelocale);
+ 
+ 	if (datalocale)
+ 		freelocale(datalocale);
++#endif
+ }
+ 
+ void ECLogger::SetLoglevel(unsigned int max_ll) {
+@@ -92,9 +96,11 @@ std::string ECLogger::MakeTimestamp() {
+ 	localtime_r(&now, &local);
+ 	char buffer[_LOG_TSSIZE];
+ 
++#ifndef __OpenBSD__
+ 	if (timelocale)
+ 		strftime_l(buffer, sizeof buffer, "%c", &local, timelocale);
+ 	else
++#endif
+ 		strftime(buffer, sizeof buffer, "%c", &local);
+ 
+ 	return buffer;
+@@ -155,7 +161,11 @@ int ECLogger::snprintf(char *str, size_t size, const c
+ 	int len = 0;
+ 
+ 	va_start(va, format);
++#ifndef __OpenBSD__
+ 	len = _vsnprintf_l(str, size, format, datalocale, va);
++#else
++	len = _vsnprintf_l(str, size, format, va);
++#endif
+ 	va_end(va);
+ 
+ 	return len;
+@@ -376,7 +386,11 @@ void ECLogger_File::Log(unsigned int loglevel, const c
+ 
+ void ECLogger_File::LogVA(unsigned int loglevel, const char *format, va_list& va) {
+ 	char msgbuffer[_LOG_BUFSIZE];
++#ifndef __OpenBSD__
+ 	_vsnprintf_l(msgbuffer, sizeof msgbuffer, format, datalocale, va);
++#else
++	_vsnprintf_l(msgbuffer, sizeof msgbuffer, format, va);
++#endif
+ 
+ 	Log(loglevel, std::string(msgbuffer));
+ }
+@@ -439,7 +453,11 @@ void ECLogger_Syslog::LogVA(unsigned int loglevel, con
+ 	vsyslog(levelmap[loglevel & EC_LOGLEVEL_MASK], format, va);
+ #else
+ 	char msgbuffer[_LOG_BUFSIZE];
++#ifndef __OpenBSD__
+ 	_vsnprintf_l(msgbuffer, sizeof msgbuffer, format, datalocale, va);
++#else
++	_vsnprintf_l(msgbuffer, sizeof msgbuffer, format, va);
++#endif
+ 	syslog(levelmap[loglevel & EC_LOGLEVEL_MASK], "%s", msgbuffer);
+ #endif
+ }
+@@ -514,7 +532,11 @@ void ECLogger_Tee::Log(unsigned int loglevel, const ch
+ void ECLogger_Tee::LogVA(unsigned int loglevel, const char *format, va_list &va)
+ {
+ 	char msgbuffer[_LOG_BUFSIZE];
++#ifndef __OpenBSD__
+ 	_vsnprintf_l(msgbuffer, sizeof msgbuffer, format, datalocale, va);
++#else
++	_vsnprintf_l(msgbuffer, sizeof msgbuffer, format, va);
++#endif
+ 
+ 	for (auto log : m_loggers)
+ 		log->Log(loglevel, std::string(msgbuffer));
+@@ -616,7 +638,11 @@ void ECLogger_Pipe::LogVA(unsigned int loglevel, const
+ 		off += len;
+ 
+ 	// return value is what WOULD have been written if enough space were available in the buffer
++#ifndef __OpenBSD__
+ 	len = _vsnprintf_l(msgbuffer + off, sizeof msgbuffer - off - 1, format, datalocale, va);
++#else
++	len = _vsnprintf_l(msgbuffer + off, sizeof msgbuffer - off - 1, format, va);
++#endif
+ 	// -1 can be returned on formatting error (eg. %ls in C locale)
+ 	if (len < 0)
+ 		len = 0;
+@@ -986,8 +1012,13 @@ void generic_sigsegv_handler(ECLogger *lpLogger, const
+ 	ec_log_bt(EC_LOGLEVEL_CRIT, "Backtrace:");
+ 	ec_log_crit("Signal errno: %s, signal code: %d", strerror(si->si_errno), si->si_code);
+ 	ec_log_crit("Sender pid: %d, sender uid: %d, si_status: %d", si->si_pid, si->si_uid, si->si_status);
++#ifndef __OpenBSD__
+ 	ec_log_crit("User time: %ld, system time: %ld, signal value: %d", si->si_utime, si->si_stime, si->si_value.sival_int);
+ 	ec_log_crit("Faulting address: %p, affected fd: %d", si->si_addr, si->si_fd);
++#else
++	ec_log_crit("User time: %lld, system time: %lld, signal value: %d", si->si_utime, si->si_stime, si->si_value.sival_int);
++	ec_log_crit("Faulting address: %p", si->si_addr);
++#endif
+ 	lpLogger->Log(EC_LOGLEVEL_FATAL, "When reporting this traceback, please include Linux distribution name (and version), system architecture and Kopano version.");
+ 	/* Reset to DFL to avoid recursion */
+ 	if (signal(signr, SIG_DFL) == SIG_ERR)

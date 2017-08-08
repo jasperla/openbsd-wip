@@ -1,0 +1,21 @@
+@comment $OpenBSD: PLIST-mapi,v 1.1 2016/08/12 08:09:05 robert Exp $
+@extra ${SYSCONFDIR}/php-${MODPHP_VERSION}/mapi.ini
+lib/php-${MODPHP_VERSION}/
+lib/php-${MODPHP_VERSION}/modules/
+lib/php-${MODPHP_VERSION}/modules/mapi.la
+lib/php-${MODPHP_VERSION}/modules/mapi.so
+share/kopano/php/                                                              
+share/kopano/php/mapi/                                                         
+share/kopano/php/mapi/class.baseexception.php                                  
+share/kopano/php/mapi/class.baserecurrence.php                                 
+share/kopano/php/mapi/class.freebusypublish.php                                
+share/kopano/php/mapi/class.mapiexception.php                                  
+share/kopano/php/mapi/class.meetingrequest.php                                 
+share/kopano/php/mapi/class.recurrence.php                                     
+share/kopano/php/mapi/class.taskrecurrence.php                                 
+share/kopano/php/mapi/class.taskrequest.php                                    
+share/kopano/php/mapi/mapi.util.php                                            
+share/kopano/php/mapi/mapicode.php                                             
+share/kopano/php/mapi/mapidefs.php                                             
+share/kopano/php/mapi/mapiguid.php                                             
+share/kopano/php/mapi/mapitags.php                                             

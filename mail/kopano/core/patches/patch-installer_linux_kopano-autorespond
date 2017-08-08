@@ -1,0 +1,11 @@
+$OpenBSD$
+
+Index: installer/linux/kopano-autorespond
+--- installer/linux/kopano-autorespond.orig
++++ installer/linux/kopano-autorespond
+@@ -1,4 +1,4 @@
+-#! /usr/bin/env bash
++#!/bin/sh
+ 
+ FROM=$1
+ TO=$2

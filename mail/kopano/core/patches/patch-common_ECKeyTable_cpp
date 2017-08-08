@@ -1,0 +1,69 @@
+$OpenBSD$
+
+Index: common/ECKeyTable.cpp
+--- common/ECKeyTable.cpp.orig
++++ common/ECKeyTable.cpp
+@@ -88,18 +88,6 @@ ECTableRow::ECTableRow(const sObjectTableKey &k,
+ {
+ }
+ 
+-ECTableRow::ECTableRow(const sObjectTableKey &k, std::vector<ECSortCol> &&cols,
+-    bool hidden) :
+-	sKey(k), m_cols(std::move(cols)), fHidden(hidden)
+-{
+-}
+-
+-ECTableRow::ECTableRow(sObjectTableKey &&k, std::vector<ECSortCol> &&cols,
+-    bool hidden) :
+-	sKey(std::move(k)), m_cols(std::move(cols)), fHidden(hidden)
+-{
+-}
+-
+ ECTableRow::ECTableRow(const ECTableRow &other) :
+ 	sKey(other.sKey), m_cols(other.m_cols), fHidden(other.fHidden)
+ {
+@@ -220,7 +208,7 @@ ECKeyTable::ECKeyTable()
+ {
+ 	sObjectTableKey sKey;
+ 	memset(&sKey, 0, sizeof(sObjectTableKey));
+-	lpRoot = new ECTableRow(std::move(sKey), {}, false);
++	lpRoot = new ECTableRow(sKey, {}, false);
+ 	this->lpRoot->fRoot = true;
+ 	this->lpCurrent = lpRoot;
+ 
+@@ -274,7 +262,7 @@ ECRESULT ECKeyTable::UpdateCounts(ECTableRow *lpRow)
+ }
+ 
+ ECRESULT ECKeyTable::UpdateRow(UpdateType ulType,
+-    const sObjectTableKey *lpsRowItem, std::vector<ECSortCol> &&dat,
++    const sObjectTableKey *lpsRowItem, const std::vector<ECSortCol> &dat,
+     sObjectTableKey *lpsPrevRow, bool fHidden, UpdateType *lpulAction)
+ {
+ 	ECRESULT er = erSuccess;
+@@ -400,7 +388,7 @@ ECRESULT ECKeyTable::UpdateRow(UpdateType ulType,
+ 				*lpulAction = TABLE_ROW_MODIFY;
+ 
+ 			// Create a new node
+-			lpNewRow = new ECTableRow(*lpsRowItem, std::move(dat), fHidden);
++			lpNewRow = new ECTableRow(*lpsRowItem, dat, fHidden);
+ 			if (iterMap->second == lpCurrent)
+ 			    fRelocateCursor = true;
+ 
+@@ -456,7 +444,7 @@ ECRESULT ECKeyTable::UpdateRow(UpdateType ulType,
+ 
+ 		// Create the row that we will be inserting
+ 		if(lpNewRow == NULL)
+-			lpNewRow = new ECTableRow(*lpsRowItem, std::move(dat), fHidden);
++			lpNewRow = new ECTableRow(*lpsRowItem, dat, fHidden);
+ 
+ 		// Do a binary search in the tree
+ 		while(1) {
+@@ -1261,7 +1249,7 @@ ECRESULT ECKeyTable::UpdatePartialSortKey(sObjectTable
+ 	copy[ulColumn] = col;
+     if(lpfHidden)
+ 		*lpfHidden = lpCursor->fHidden;
+-	return UpdateRow(TABLE_ROW_MODIFY, lpsRowItem, std::move(copy),
++	return UpdateRow(TABLE_ROW_MODIFY, lpsRowItem, copy,
+ 	       lpsPrevRow, lpCursor->fHidden, lpulAction);
+ }
+ 

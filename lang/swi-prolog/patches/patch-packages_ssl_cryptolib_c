@@ -1,7 +1,5 @@
 $OpenBSD$
 
-Make it work with LibreSSL.
-
 Index: packages/ssl/cryptolib.c
 --- packages/ssl/cryptolib.c.orig
 +++ packages/ssl/cryptolib.c

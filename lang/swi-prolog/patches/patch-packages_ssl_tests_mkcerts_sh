@@ -1,0 +1,59 @@
+$OpenBSD$
+
+Index: packages/ssl/tests/mkcerts.sh
+--- packages/ssl/tests/mkcerts.sh.orig
++++ packages/ssl/tests/mkcerts.sh
+@@ -12,7 +12,7 @@ openssl req -new -config rootCA.cnf -keyout test_certs
+ openssl ca -config rootCA.cnf -notext -create_serial -selfsign -batch -key apenoot -extensions v3_ca -out test_certs/rootCA/cacert.pem -infiles test_certs/rootCA/careq.pem
+ 
+ # Certificates 1-17 are all signed by the CA, except 14
+-for i in $(seq 1 13); do
++for i in $(jot 13); do
+     # Generate a CSR
+     openssl req -new -config ${i}.cnf -out ${i}.csr -nodes -keyout test_certs/${i}-key.pem
+     # Sign the CSR. We need our own config here because we want copy_extensions on so we can preserve SubjectAltNames
+@@ -29,7 +29,7 @@ openssl ca -config 14.cnf -notext -create_serial -self
+ openssl req -new -config 14_tail.cnf -out 14.csr -nodes -keyout test_certs/14-key.pem
+ openssl ca -config 14_tail.cnf -notext -batch -key apenoot -policy policy_anything -out test_certs/14-cert.pem -infiles 14.csr
+ 
+-for i in $(seq 15 17); do
++for i in 15 16 17; do
+     # Generate a CSR
+     openssl req -new -config ${i}.cnf -out ${i}.csr -nodes -keyout test_certs/${i}-key.pem
+     # Sign the CSR. We need our own config here because we want copy_extensions on so we can preserve SubjectAltNames
+@@ -60,7 +60,7 @@ openssl req -outform PEM -inform DER -in 11.der -out 1
+ openssl ca -config 11.cnf -batch -key apenoot -policy policy_anything -out test_certs/11-cert.pem -infiles 11.csr
+ 
+ # Certificates 18-22 are all about intermediaries
+-for i in $(seq 18 22); do
++for i in $(jot 5 18); do
+     # First, generate the intermediary
+     mkdir -p test_certs/${i}_CA/{certs,crl,newcerts,private}
+     touch test_certs/${i}_CA/index.txt
+@@ -78,7 +78,7 @@ for i in $(seq 18 22); do
+ done
+ 
+ # Certificates 23-24 are about CRLs
+-for i in $(seq 23 24); do
++for i in 23 24; do
+     openssl req -new -config ${i}.cnf -out ${i}.csr -nodes -keyout test_certs/${i}-key.pem
+     openssl ca -config ${i}.cnf -batch -notext -key apenoot -policy policy_anything -out test_certs/${i}-cert.pem -infiles ${i}.csr
+ done
+@@ -88,7 +88,7 @@ done
+ openssl ca -config 24.cnf -revoke test_certs/24-cert.pem -batch -notext -key apenoot
+ 
+ # Certificates 25-27 needs their own CA
+-for i in $(seq 25 27); do
++for i in 25 26 27; do
+     # First, generate the intermediary
+     mkdir -p test_certs/${i}_CA/{certs,crl,newcerts,private}
+     touch test_certs/${i}_CA/index.txt
+@@ -115,7 +115,7 @@ openssl ca -config 26_tail.cnf -revoke test_certs/26-t
+ openssl ca -config 23.cnf -gencrl -out test_certs/rootCA-crl.pem
+ 
+ # Generate the 25-27 CA CRLS
+-for i in $(seq 25 27); do
++for i in 25 26 27; do
+     openssl ca -config ${i}_tail.cnf -gencrl -out test_certs/${i}-crl.pem
+ done
+ 

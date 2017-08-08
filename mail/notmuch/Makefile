@@ -1,25 +1,34 @@
 # $OpenBSD: Makefile.template,v 1.54 2008/01/13 16:43:57 espie Exp $
 
-SHARED_LIBS +=	notmuch                   0.0 # 3.0
-
 COMMENT=	mail indexer (and not much of an email program)
 
-DISTNAME=	notmuch-0.15.2
+DISTNAME=	notmuch-0.23.5
 
 CATEGORIES=	mail databases
 
 HOMEPAGE=	http://notmuchmail.org/
 
+MASTER_SITES=	${HOMEPAGE}releases/
+
 # GPLv3+
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c glib-2.0 gmime-2.6 gobject-2.0 stdc++ talloc xapian
+WANTLIB +=	c \
+		glib-2.0 \
+		gmime-2.6 \
+		gobject-2.0 \
+		pthread \
+		talloc \
+		z
 
-MASTER_SITES=	${HOMEPAGE}releases/
+SHARED_LIBS +=	notmuch 0.0 # 4.4
 
 LIB_DEPENDS=	databases/xapian-core \
 		devel/libtalloc \
 		mail/gmime
+
+BUILD_DEPENDS=	devel/doxygen \
+		textproc/py-sphinx
 
 # XXX emacs support needs 23.x (or maybe 22.x), no good with 21,
 # can't compile in bulk build due to dependency conflicts.

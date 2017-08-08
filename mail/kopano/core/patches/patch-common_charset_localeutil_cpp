@@ -1,0 +1,20 @@
+$OpenBSD: patch-common_charset_localeutil_cpp,v 1.4 2016/04/20 18:38:41 robert Exp $
+Index: common/charset/localeutil.cpp
+--- common/charset/localeutil.cpp.orig
++++ common/charset/localeutil.cpp
+@@ -23,6 +23,7 @@
+ 
+ namespace KC {
+ 
++#ifndef __OpenBSD__
+ locale_t createUTF8Locale()
+ {
+ 	locale_t loc;
+@@ -57,6 +58,7 @@ exit:
+ 
+ 	return loc;
+ }
++#endif /* !OpenBSD */
+ 
+ /**
+  * Initializes the locale to the current language, forced in UTF-8.

@@ -1,0 +1,23 @@
+$OpenBSD$
+
+Index: provider/server/ECThreadManager.cpp
+--- provider/server/ECThreadManager.cpp.orig
++++ provider/server/ECThreadManager.cpp
+@@ -151,7 +151,7 @@ void *ECWorkerThread::Work(void *lpParam)
+     bool fStop = false;
+ 	int err = 0;
+ 
+-	ec_log_debug("Started%sthread %08x", lpPrio ? " priority " : " ", (ULONG)pthread_self());
++	ec_log_debug("Started%sthread %08lx", lpPrio ? " priority " : " ", (uintptr_t)pthread_self());
+     
+     while(1) {
+ 		set_thread_name(pthread_self(), "z-s: idle thread");
+@@ -163,7 +163,7 @@ void *ECWorkerThread::Work(void *lpParam)
+             
+             // We were requested to exit due to idle state
+             if(fStop) {
+-				ec_log_debug("Thread %08x idle and requested to exit", (ULONG)pthread_self());
++				ec_log_debug("Thread %08lx idle and requested to exit", (uintptr_t)pthread_self());
+                 break;
+             }
+                 

@@ -1,0 +1,16 @@
+$OpenBSD$
+
+Index: common/include/kopano/ECLogger.h
+--- common/include/kopano/ECLogger.h.orig
++++ common/include/kopano/ECLogger.h
+@@ -107,8 +107,10 @@ class _kc_export ECLogger {
+ 		_kc_hidden std::string MakeTimestamp(void);
+ 
+ 		unsigned int max_loglevel;
++#ifndef __OpenBSD__
+ 		locale_t timelocale;
+ 		locale_t datalocale;
++#endif
+ 		logprefix prefix;
+ 
+ 		/**

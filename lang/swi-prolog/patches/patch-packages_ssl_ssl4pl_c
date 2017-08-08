@@ -1,7 +1,5 @@
 $OpenBSD$
 
-Make it work with LibreSSL.
-
 Index: packages/ssl/ssl4pl.c
 --- packages/ssl/ssl4pl.c.orig
 +++ packages/ssl/ssl4pl.c
@@ -23,51 +21,6 @@ Index: packages/ssl/ssl4pl.c
    return ( PL_unify_functor(item, FUNCTOR_rsa8) &&
  	   unify_bignum_arg(1, item, rsa->n) &&
  	   unify_bignum_arg(2, item, rsa->e) &&
-@@ -1647,7 +1647,7 @@ ssl_free(PL_SSL *config)
-   }
- }
- 
--#if OPENSSL_VERSION_NUMBER < 0x10100000L
-+#if OPENSSL_VERSION_NUMBER < 0x10100000L || defined(LIBRESSL_VERSION_NUMBER)
- static int
- #else
- static void
-@@ -1675,7 +1675,7 @@ ssl_config_new  ( void *            ctx
-         }
-     }
- 
--#if OPENSSL_VERSION_NUMBER < 0x10100000L
-+#if OPENSSL_VERSION_NUMBER < 0x10100000L || defined(LIBRESSL_VERSION_NUMBER)
-     /*
-      * 1 = success
-      * 0 = failure
-@@ -1687,7 +1687,7 @@ ssl_config_new  ( void *            ctx
- static int
- ssl_config_dup  ( CRYPTO_EX_DATA *  to
-                 ,
--#if OPENSSL_VERSION_NUMBER < 0x10100000L
-+#if OPENSSL_VERSION_NUMBER < 0x10100000L || defined(LIBRESSL_VERSION_NUMBER)
-                   CRYPTO_EX_DATA *  from
- #else
-                   const CRYPTO_EX_DATA *  from
-@@ -1863,7 +1863,7 @@ ssl_cb_cert_verify(int preverify_ok, X509_STORE_CTX *c
-          4) Otherwise, FAIL.
-       */
-       int i;
--#if OPENSSL_VERSION_NUMBER < 0x10100000L
-+#if OPENSSL_VERSION_NUMBER < 0x10100000L || defined(LIBRESSL_VERSION_NUMBER)
- #define ASN1_STRING_get0_data(D) ASN1_STRING_data(D)
- #define X509_STORE_CTX_get0_cert(C) ((C)->cert)
- #endif
-@@ -2147,7 +2147,7 @@ ssl_close(PL_SSL_INSTANCE *instance)
- 
-         free(instance);
-     }
--#if OPENSSL_VERSION_NUMBER < 0x10100000L
-+#if OPENSSL_VERSION_NUMBER < 0x10100000L || defined(LIBRESSL_VERSION_NUMBER)
-     ERR_free_strings();
- #endif
- 
 @@ -2467,7 +2467,7 @@ get_dh2048(void)
          DH *dh = DH_new();
          if (dh == NULL) return NULL;
@@ -77,15 +30,6 @@ Index: packages/ssl/ssl4pl.c
          dh->p=BN_bin2bn(dhp_2048,sizeof(dhp_2048),NULL);
          dh->g=BN_bin2bn(dhg_2048,sizeof(dhg_2048),NULL);
          if ((dh->p == NULL) || (dh->g == NULL))
-@@ -2626,7 +2626,7 @@ ssl_config(PL_SSL *config)
- #ifndef OPENSSL_NO_EC
-   EC_KEY *ecdh;
-   int nid;
--#if OPENSSL_VERSION_NUMBER < 0x10100000L
-+#if OPENSSL_VERSION_NUMBER < 0x10100000L || defined(LIBRESSL_VERSION_NUMBER)
-   char *curve = "prime256v1";
- #else
-   /* In OpenSSL >= 1.1.0, ECDH support is always enabled.  Therefore,
 @@ -2714,7 +2714,7 @@ ssl_lib_init(void)
      /* This call will ensure we only end up calling RAND_poll() once
         - preventing an ugly synchronization issue in OpenSSL */
@@ -95,39 +39,12 @@ Index: packages/ssl/ssl4pl.c
      (void) SSL_library_init();
      SSL_load_error_strings();
  #else
-@@ -2937,7 +2937,7 @@ pl_ssl_context(term_t role, term_t config, term_t opti
-   term_t tail;
-   term_t head = PL_new_term_ref();
-   module_t module = NULL;
--#if OPENSSL_VERSION_NUMBER < 0x10100000L
-+#if OPENSSL_VERSION_NUMBER < 0x10100000L || defined(LIBRESSL_VERSION_NUMBER)
-   atom_t method_name;
+@@ -2805,7 +2805,7 @@ ssl_ssl_bio(PL_SSL *config, IOSTREAM* sread, IOSTREAM*
+       SSL_set_tlsext_host_name(instance->ssl, config->host);
  #endif
-   const SSL_METHOD *ssl_method = NULL;
-@@ -2955,7 +2955,7 @@ pl_ssl_context(term_t role, term_t config, term_t opti
-   else
-     return PL_domain_error("ssl_role", role);
- 
--#if OPENSSL_VERSION_NUMBER < 0x10100000L
-+#if OPENSSL_VERSION_NUMBER < 0x10100000L || defined(LIBRESSL_VERSION_NUMBER)
-   if (!PL_get_atom(method, &method_name))
-      return PL_domain_error("ssl_method", method);
-   if (method_name == ATOM_sslv23)
-@@ -3508,7 +3508,7 @@ pl_ssl_session(term_t stream_t, term_t session_t)
-        !(session = SSL_get1_session(ssl)) )
-     return PL_existence_error("ssl_session", stream_t);
- 
--#if OPENSSL_VERSION_NUMBER < 0x10100000L
-+#if OPENSSL_VERSION_NUMBER < 0x10100000L || defined(LIBRESSL_VERSION_NUMBER)
-   version = session->ssl_version;
-   master_key = session->master_key;
-   master_key_length = session->master_key_length;
-@@ -3544,7 +3544,7 @@ pl_ssl_session(term_t stream_t, term_t session_t)
- 		       master_key_length, master_key) )
-     goto err;
- 
--#if OPENSSL_VERSION_NUMBER < 0x10100000L
-+#if OPENSSL_VERSION_NUMBER < 0x10100000L || defined(LIBRESSL_VERSION_NUMBER)
-   if ( !add_key_string(list_t, FUNCTOR_session_id1,
- 		       session->session_id_length, session->session_id) )
-     goto err;
+ #ifdef HAVE_X509_CHECK_HOST
+-#if defined(HAVE_X509_VERIFY_PARAM_ID) || OPENSSL_VERSION_NUMBER >= 0x10100000L
++#if (defined(HAVE_X509_VERIFY_PARAM_ID) || OPENSSL_VERSION_NUMBER >= 0x10100000L) && !defined(LIBRESSL_VERSION_NUMBER)
+     X509_VERIFY_PARAM *param = SSL_get0_param(instance->ssl);
+     /* This could in theory be user-configurable. The documentation at
+        https://wiki.openssl.org/index.php/Manual:X509_check_host(3)

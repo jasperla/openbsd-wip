@@ -1,0 +1,14 @@
+$OpenBSD$
+
+Index: provider/libserver/ECGenericObjectTable.cpp
+--- provider/libserver/ECGenericObjectTable.cpp.orig
++++ provider/libserver/ECGenericObjectTable.cpp
+@@ -2584,7 +2584,7 @@ ECRESULT ECGenericObjectTable::UpdateKeyTableRow(ECCat
+ 
+     // Update row
+ 	er = lpKeyTable->UpdateRow(ECKeyTable::TABLE_ROW_ADD, lpsRowKey,
+-	     std::move(zort), lpsPrevRow, fHidden, lpulAction);
++	     zort, lpsPrevRow, fHidden, lpulAction);
+ exit:
+ 	if (lpOrderedProps != nullptr)
+ 		for (unsigned int i = 0; i < cValues; ++i)
