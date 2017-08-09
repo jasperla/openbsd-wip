@@ -13,14 +13,25 @@ CATEGORIES =	converters
 HOMEPAGE =	http://willus.com/k2pdfopt/
 MAINTAINER =	Paul Irofti <pirofti@openbsd.org>
 
-# BSD
+# GPLv3
 PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =	devel/cmake
 
-LIB_DEPENDS+=	textproc/mupdf \
-		graphics/djvulibre
+# Required
+LIB_DEPENDS +=	graphics/png \
+		graphics/jpeg
+# MuPDF
+LIB_DEPENDS +=	graphics/jbig2dec \
+		graphics/openjpeg \
+		textproc/mupdf
+# DjVuLibre
+LIB_DEPENDS +=	graphics/djvulibre
+# OCR
+LIB_DEPENDS +=	graphics/gocr \
+		graphics/leptonica \
+		graphics/tesseract/tesseract
 
-WRKSRC =	k2pdfopt_v${V}
+WRKDIST =	${WRKDIR}/k2pdfopt_v${V}
 
 .include <bsd.port.mk>
