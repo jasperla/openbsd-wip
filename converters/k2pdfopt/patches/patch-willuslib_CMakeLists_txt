@@ -3,7 +3,7 @@ $OpenBSD$
 Index: willuslib/CMakeLists.txt
 --- willuslib/CMakeLists.txt.orig
 +++ willuslib/CMakeLists.txt
-@@ -6,7 +6,7 @@ include_directories(..)
+@@ -6,13 +6,32 @@ include_directories(..)
  set(WILLUSLIB_SRC
      ansi.c array.c bmp.c bmpdjvu.c bmpmupdf.c dtcompress.c filelist.c
      fontdata.c fontrender.c gslpolyfit.c linux.c math.c mem.c ocr.c
@@ -11,8 +11,34 @@ Index: willuslib/CMakeLists.txt
 +    ocrtess.c pdfwrite.c point2d.c render.c strbuf.c string.c
      token.c wfile.c wgs.c wgui.c willusversion.c win.c winbmp.c
      wincomdlg.c winmbox.c winshell.c wmupdf.c wmupdfinfo.c wpdf.c wsys.c
-     wzfile.c wleptonica.c
-@@ -21,10 +21,16 @@ endif(DJVU_FOUND)
+-    wzfile.c wleptonica.c
++    wzfile.c
++
++    # mupdf mods
++    ../mupdf_mod/font.c
++    ../mupdf_mod/pdf-annot.c
++    ../mupdf_mod/pdf-colorspace.c
++    ../mupdf_mod/pdf-font.c
++    ../mupdf_mod/pdf-parse.c
++    ../mupdf_mod/pdf-type3.c
++    ../mupdf_mod/stext-device.c
++    ../mupdf_mod/string.c
++
++    # tesseract mods
++    ../tesseract_mod/dawg.cpp
++    ../tesseract_mod/imagedata.cpp
++    ../tesseract_mod/tesscapi.cpp
++    ../tesseract_mod/tessedit.cpp
++    ../tesseract_mod/thresholder.cpp
+ )
++
+ # ocr.c  
+ # win.c  winbmp.c winmbox.c wincomdlg.c wgui.c winshell.c
++# wleptonica.c
+ 
+ if(DJVU_FOUND)
+   set(WILLUSLIB_SRC ${WILLUSLIB_SRC} bmpdjvu.c)
+@@ -21,10 +40,16 @@ endif(DJVU_FOUND)
  if(MUPDF_FOUND)
    set(WILLUSLIB_SRC ${WILLUSLIB_SRC} bmpmupdf.c wmupdf.c)
  endif(MUPDF_FOUND)

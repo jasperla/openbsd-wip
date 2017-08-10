@@ -16,21 +16,21 @@ Index: CMakeLists.txt
    )
  endif(MUPDF_FOUND)
  
-+#find_library(FREETYPE_LIB mupdf PATHS /usr/X11R6/lib)
-+#if(FREETYPE_LIB)
-+#  include_directories(SYSTEM /usr/X11R6/include)
-+#  message(STATUS "freetype libraries: ${FREETYPE_LIB}")
-+#  set(K2PDFOPT_LIB ${K2PDFOPT_LIB} ${FREETYPE_LIB})
-+#endif()
-+#
-+#find_library(MUPDF_LIB mupdf PATHS ${CMAKE_INSTALL_PREFIX}/lib)
-+#if(MUPDF_LIB)
-+#  set(HAVE_MUPDF_LIB 1) 
-+#  include_directories(SYSTEM ${CMAKE_INSTALL_PREFIX}/include)
-+#  message(STATUS "mupdf libraries: ${MUPDF_LIB}")
-+#  set(K2PDFOPT_LIB ${K2PDFOPT_LIB} ${MUPDF_LIB} 
-+#    -lopenjpeg -ljbig2dec -ljpeg)
-+#endif()
++find_library(FREETYPE_LIB freetype PATHS /usr/X11R6/lib)
++if(FREETYPE_LIB)
++  include_directories(SYSTEM /usr/X11R6/include /usr/X11R6/include/freetype2)
++  message(STATUS "freetype libraries: ${FREETYPE_LIB}")
++  set(K2PDFOPT_LIB ${K2PDFOPT_LIB} ${FREETYPE_LIB})
++endif()
++
++find_library(MUPDF_LIB mupdf PATHS ${CMAKE_INSTALL_PREFIX}/lib)
++if(MUPDF_LIB)
++  set(HAVE_MUPDF_LIB 1) 
++  include_directories(SYSTEM ${CMAKE_INSTALL_PREFIX}/include)
++  message(STATUS "mupdf libraries: ${MUPDF_LIB}")
++  set(K2PDFOPT_LIB ${K2PDFOPT_LIB} ${MUPDF_LIB} 
++    -lopenjpeg -ljbig2dec -ljpeg)
++endif()
 +
  pkg_check_modules(DJVU ddjvuapi)
  if(DJVU_FOUND)
@@ -50,13 +50,13 @@ Index: CMakeLists.txt
 +#endif()
 +
  # HAVE_TESSERACT_LIB
-+#find_library(TESSERACT_LIB tesseract PATHS ${CMAKE_INSTALL_PREFIX}/lib)
-+#if(TESSERACT_LIB)
-+#  set(HAVE_TESSERACT_LIB 1) 
-+#  include_directories(SYSTEM ${CMAKE_INSTALL_PREFIX}/include)
-+#  message(STATUS "tesseract libraries: ${TESSERACT_LIB}")
-+#  set(K2PDFOPT_LIB ${K2PDFOPT_LIB} ${TESSERACT_LIB}) 
-+#endif()
++find_library(TESSERACT_LIB tesseract PATHS ${CMAKE_INSTALL_PREFIX}/lib)
++if(TESSERACT_LIB)
++  set(HAVE_TESSERACT_LIB 1) 
++  include_directories(SYSTEM ${CMAKE_INSTALL_PREFIX}/include)
++  message(STATUS "tesseract libraries: ${TESSERACT_LIB}")
++  set(K2PDFOPT_LIB ${K2PDFOPT_LIB} ${TESSERACT_LIB}) 
++endif()
  
 +
  # ---- Describe project
@@ -64,7 +64,7 @@ Index: CMakeLists.txt
  SET(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -DUSE_CMAKE -Wall")
  
 -include_directories(. willuslib k2pdfoptlib)
-+include_directories(. ${PROJECT_BINARY_DIR} willuslib k2pdfoptlib)
++include_directories(. ${PROJECT_BINARY_DIR} include_mod willuslib k2pdfoptlib)
  
  configure_file (
    "${PROJECT_SOURCE_DIR}/config.h.in"

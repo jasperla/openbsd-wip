@@ -1,0 +1,25 @@
+$OpenBSD$
+
+Index: mupdf_mod/font.c
+--- mupdf_mod/font.c.orig
++++ mupdf_mod/font.c
+@@ -200,8 +200,8 @@ struct fz_font_context_s
+ 	int ctx_refs;
+ 	FT_Library ftlib;
+ 	int ftlib_refs;
+-	fz_load_system_font_func load_font;
+-	fz_load_system_cjk_font_func load_cjk_font;
++	fz_load_system_font_fn load_font;
++	fz_load_system_cjk_font_fn load_cjk_font;
+ 
+ 	/* Cached fallback fonts */
+ 	struct { fz_font *serif, *sans; } fallback[256];
+@@ -258,7 +258,7 @@ void fz_drop_font_context(fz_context *ctx)
+ 	}
+ }
+ 
+-void fz_install_load_system_font_funcs(fz_context *ctx, fz_load_system_font_func f, fz_load_system_cjk_font_func f_cjk)
++void fz_install_load_system_font_funcs(fz_context *ctx, fz_load_system_font_fn f, fz_load_system_cjk_font_fn f_cjk)
+ {
+ 	ctx->font->load_font = f;
+ 	ctx->font->load_cjk_font = f_cjk;
