@@ -2,7 +2,7 @@
 
 COMMENT =		friendly interactive shell
 
-V =			2.5.0
+V =			2.6.0
 DISTNAME =		fish-$V
 
 CATEGORIES =		shells
@@ -12,12 +12,13 @@ HOMEPAGE =		http://fishshell.com/
 # GPLv2 only
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += c intl m ncurses pcre2-32 pthread
+WANTLIB += ${COMPILER_LIBCXX} c intl m ncurses pcre2-32
 
 MASTER_SITES =		http://fishshell.com/files/$V/
 
-MODULES =		lang/clang \
-			lang/python
+MODULES =		lang/python
+
+COMPILER =		clang
 
 BUILD_DEPENDS =		devel/gettext-tools
 
@@ -26,9 +27,6 @@ LIB_DEPENDS =		devel/pcre2 \
 
 RUN_DEPENDS =		misc/gnugetopt
 TEST_DEPENDS =		${RUN_DEPENDS}
-
-MODCLANG_ARCHS =        *
-MODCLANG_LANGS =        c++
 
 MODPY_ADJ_FILES =	share/tools/create_manpage_completions.py \
 			share/tools/deroff.py \
