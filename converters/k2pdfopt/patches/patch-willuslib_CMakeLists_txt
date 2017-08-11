@@ -3,7 +3,13 @@ $OpenBSD$
 Index: willuslib/CMakeLists.txt
 --- willuslib/CMakeLists.txt.orig
 +++ willuslib/CMakeLists.txt
-@@ -6,13 +6,32 @@ include_directories(..)
+@@ -1,4 +1,4 @@
+-project(k2pdfopt C)
++project(k2pdfopt)
+ cmake_minimum_required(VERSION 2.6)
+ 
+ include_directories(..)
+@@ -6,13 +6,37 @@ include_directories(..)
  set(WILLUSLIB_SRC
      ansi.c array.c bmp.c bmpdjvu.c bmpmupdf.c dtcompress.c filelist.c
      fontdata.c fontrender.c gslpolyfit.c linux.c math.c mem.c ocr.c
@@ -16,6 +22,7 @@ Index: willuslib/CMakeLists.txt
 +
 +    # mupdf mods
 +    ../mupdf_mod/font.c
++    ../mupdf_mod/font-win32.c
 +    ../mupdf_mod/pdf-annot.c
 +    ../mupdf_mod/pdf-colorspace.c
 +    ../mupdf_mod/pdf-font.c
@@ -30,6 +37,10 @@ Index: willuslib/CMakeLists.txt
 +    ../tesseract_mod/tesscapi.cpp
 +    ../tesseract_mod/tessedit.cpp
 +    ../tesseract_mod/thresholder.cpp
++
++    # leptonica mods
++    wleptonica.c
++    ../leptonica_mod/dewarp2.c
  )
 +
  # ocr.c  
@@ -38,14 +49,26 @@ Index: willuslib/CMakeLists.txt
  
  if(DJVU_FOUND)
    set(WILLUSLIB_SRC ${WILLUSLIB_SRC} bmpdjvu.c)
-@@ -21,10 +40,16 @@ endif(DJVU_FOUND)
+@@ -21,10 +45,28 @@ endif(DJVU_FOUND)
  if(MUPDF_FOUND)
    set(WILLUSLIB_SRC ${WILLUSLIB_SRC} bmpmupdf.c wmupdf.c)
  endif(MUPDF_FOUND)
 +if(MUPDF_LIB)
 +  set(WILLUSLIB_SRC ${WILLUSLIB_SRC} bmpmupdf.c wmupdf.c)
++  include_directories(SYSTEM ../mupdf/source/fitz)
 +endif(MUPDF_LIB)
  
++if(LEPT_LIB)
++  include_directories(SYSTEM ../leptonica/src)
++endif()
++
++if(TESSERACT_LIB)
++  include_directories(SYSTEM ../tesseract/ccutil ../tesseract/api
++	../tesseract/ccmain ../tesseract/ccstruct ../tesseract/viewer
++	../tesseract/dict ../tesseract/textord ../tesseract/cutil 
++	../tesseract/wordrec ../tesseract/classify)
++endif()
++
  message("-- Willuslib sources: ${WILLUSLIB_SRC}")
  
  add_library(willuslib ${WILLUSLIB_SRC})
