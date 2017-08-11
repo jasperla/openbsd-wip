@@ -68,3 +68,11 @@ Index: CMakeLists.txt
  
  configure_file (
    "${PROJECT_SOURCE_DIR}/config.h.in"
+@@ -113,6 +147,7 @@ add_subdirectory(k2pdfoptlib)
+ add_executable(k2pdfopt k2pdfopt.c)
+ target_link_libraries (k2pdfopt k2pdfoptlib willuslib ${K2PDFOPT_LIB})
+
++install (TARGETS k2pdfopt RUNTIME DESTINATION ${CMAKE_INSTALL_PREFIX}/bin)
+
+ message("")
+ message("-- Summary --")
