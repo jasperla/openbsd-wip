@@ -44,4 +44,7 @@ post-extract:
 		${WRKSRC}/tesseract
 	ln -s ${WRKDIR}/textproc/mupdf/mupdf-* ${WRKSRC}/mupdf
 
+pre-patch:
+	@cd ${WRKSRC}; perl -i -pe 's/\r$$//' `find . -type f`
+
 .include <bsd.port.mk>
