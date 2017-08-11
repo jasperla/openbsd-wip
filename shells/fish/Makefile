@@ -40,8 +40,7 @@ CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 
 FAKE_FLAGS =		SYSCONFDIR=${PREFIX}/share/examples/fish
 
-TEST_TARGET =		test
-TEST_FLAGS =		DESTDIR=${WRKBUILD}/testdir
+NO_TEST =		yes
 
 pre-configure:
 	sed -i 's/getopt/gnugetopt/' ${WRKSRC}/share/functions/*.fish
