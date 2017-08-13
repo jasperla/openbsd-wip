@@ -18,8 +18,10 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =	devel/cmake
 
-WANTLIB += ${COMPILER_LIBCXX} c freetype jbig2dec jpeg m png z
+WANTLIB +=	${COMPILER_LIBCXX} c freetype jbig2dec jpeg m png z \
+		djvulibre jasper lept mupdf openjpeg tesseract
 
+# DEBUG="-g": modify installed mupdf/fitz/context.h to #undef FITZ_DEBUG_LOCKING
 BUILD_DEPENDS +=	textproc/mupdf:patch \
 			graphics/leptonica:configure \
 			graphics/tesseract/tesseract:patch
