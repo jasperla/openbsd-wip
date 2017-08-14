@@ -1,0 +1,16 @@
+$OpenBSD$
+
+Index: 3rdparty/bx/src/crtimpl.cpp
+--- 3rdparty/bx/src/crtimpl.cpp.orig
++++ 3rdparty/bx/src/crtimpl.cpp
+@@ -6,10 +6,6 @@
+ #include <bx/crtimpl.h>
+ #include <stdio.h>
+ 
+-#if BX_CONFIG_ALLOCATOR_CRT
+-#	include <malloc.h>
+-#endif // BX_CONFIG_ALLOCATOR_CRT
+-
+ namespace bx
+ {
+ #if BX_CONFIG_ALLOCATOR_CRT

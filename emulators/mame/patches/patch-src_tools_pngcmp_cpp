@@ -1,0 +1,14 @@
+$OpenBSD$
+
+Index: src/tools/pngcmp.cpp
+--- src/tools/pngcmp.cpp.orig
++++ src/tools/pngcmp.cpp
+@@ -14,7 +14,7 @@
+ #include <ctype.h>
+ #include <assert.h>
+ #include "osdcore.h"
+-#include "png.h"
++#include "localpng.h"
+ 
+ #include <new>
+ 

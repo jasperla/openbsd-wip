@@ -1,0 +1,43 @@
+$OpenBSD$
+
+Index: scripts/genie.lua
+--- scripts/genie.lua.orig
++++ scripts/genie.lua
+@@ -962,11 +962,6 @@ end
+ 
+ 
+ 		local version = str_to_version(_OPTIONS["gcc_version"])
+-		if string.find(_OPTIONS["gcc"], "clang") or string.find(_OPTIONS["gcc"], "pnacl") or string.find(_OPTIONS["gcc"], "asmjs") or string.find(_OPTIONS["gcc"], "android") then
+-			if (version < 30400) then
+-				print("Clang version 3.4 or later needed")
+-				os.exit(-1)
+-			end
+ 			buildoptions {
+ 				"-Wno-cast-align",
+ 				"-Wno-tautological-compare",
+@@ -975,25 +970,6 @@ end
+ 				"-Wno-missing-braces", -- clang is not as permissive as GCC about std::array initialization
+ 				"-fdiagnostics-show-note-include-stack",
+ 			}
+-			if (version >= 30500) then
+-				buildoptions {
+-					"-Wno-unknown-warning-option",
+-					"-Wno-extern-c-compat",
+-					"-Wno-unknown-attributes",
+-					"-Wno-ignored-qualifiers"
+-				}
+-			end
+-		else
+-			if (version < 50000) then
+-				print("GCC version 5.0 or later needed")
+-				os.exit(-1)
+-			end
+-				buildoptions {
+-					"-Wno-unused-result", -- needed for fgets,fread on linux
+-					-- array bounds checking seems to be buggy in 4.8.1 (try it on video/stvvdp1.c and video/model1.c without -Wno-array-bounds)
+-					"-Wno-array-bounds",
+-				}
+-		end
+ 	end
+ 
+ if (_OPTIONS["PLATFORM"]=="alpha") then

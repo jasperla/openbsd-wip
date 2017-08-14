@@ -1,0 +1,2 @@
+- Remove hardcoded -O3 optimizations
+- Make compilation more verbose

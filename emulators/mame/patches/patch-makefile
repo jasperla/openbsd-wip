@@ -1,0 +1,41 @@
+$OpenBSD$
+
+Index: makefile
+--- makefile.orig
++++ makefile
+@@ -192,7 +192,7 @@ GENIEOS := freebsd
+ endif
+ ifeq ($(firstword $(filter OpenBSD,$(UNAME))),OpenBSD)
+ OS := openbsd
+-GENIEOS := freebsd
++GENIEOS := bsd
+ endif
+ ifeq ($(firstword $(filter Darwin,$(UNAME))),Darwin)
+ OS := macosx
+@@ -916,7 +916,7 @@ endif
+ else
+ GCC_VERSION      := $(shell $(TOOLCHAIN)$(subst @,,$(CC)) -dumpversion 2> /dev/null)
+ ifneq ($(OS),solaris)
+-CLANG_VERSION    := $(shell $(TOOLCHAIN)$(subst @,,$(CC))  --version  2> /dev/null | head -n 1 | grep -e 'version [0-9]\.[0-9]\(\.[0-9]\)\?' -o | grep -e '[0-9]\.[0-9]\(\.[0-9]\)\?' -o | tail -n 1)
++CLANG_VERSION    := $(shell cc --version  2> /dev/null | head -n 1 | grep -e 'version [0-9]\.[0-9]\.[0-9]' -o | sed -e 's,version ,,' | tail -n 1)
+ endif
+ PYTHON_AVAILABLE := $(shell $(PYTHON) --version > /dev/null 2>&1 && echo python)
+ GIT_AVAILABLE := $(shell git --version > /dev/null 2>&1 && echo git)
+@@ -972,7 +972,7 @@ PROJECTDIR_SDL := $(BUILDDIR)/projects/sdl/$(FULLTARGE
+ PROJECTDIR_WIN := $(BUILDDIR)/projects/windows/$(FULLTARGET)
+ 
+ .PHONY: all clean regenie generate
+-all: $(GENIE) $(TARGETOS)$(ARCHITECTURE)
++all: $(GENIE) openbsd_x64
+ regenie:
+ 
+ #-------------------------------------------------
+@@ -1573,7 +1573,7 @@ $(SRC)/devices/cpu/m68000/m68kops.cpp: $(SRC)/devices/
+ ifeq ($(TARGETOS),asmjs)
+ 	$(SILENT) $(MAKE) -C $(SRC)/devices/cpu/m68000
+ else
+-	$(SILENT) $(MAKE) -C $(SRC)/devices/cpu/m68000 CC="$(CC)" CXX="$(CXX)"
++	$(SILENT) $(MAKE) -C $(SRC)/devices/cpu/m68000
+ endif
+ 
+ %.mo: %.po
