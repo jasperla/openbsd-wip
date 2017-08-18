@@ -16,8 +16,9 @@ DIST_V ?=	${V}0524
 
 # Note: The TUG FTP server is frequently overloaded and doesn't work with
 # ftp(1)'s keepalive implementation.
-MASTER_SITES ?=	http://ftp.heanet.ie/pub/ftp.frugalware.org/pub/frugalware/frugalware-2.1/source/xapps-extra/texlive/ \
-		ftp://ftp.tug.org/texlive/historic/${V}/ \
-		https://paclan.it/distfiles/
+MASTER_SITES ?=	http://ftp.math.utah.edu/pub/tex/historic/systems/texlive/2017/ \
+		http://ftp.heanet.ie/pub/ftp.frugalware.org/pub/frugalware/frugalware-2.1/source/xapps-extra/texlive/ \
+		https://paclan.it/distfiles/ \
+		ftp://ftp.tug.org/texlive/historic/${V}/
 
 PATCHORIG ?=	.origy
