@@ -3,7 +3,32 @@ $OpenBSD$
 Index: scripts/genie.lua
 --- scripts/genie.lua.orig
 +++ scripts/genie.lua
-@@ -962,11 +962,6 @@ end
+@@ -787,17 +787,19 @@ if _OPTIONS["NOWERROR"]==nil then
+ 	}
+ end
+ 
++-- add optional flags
++if _OPTIONS["OPT_FLAGS"] then
++	buildoptions {
++		_OPTIONS["OPT_FLAGS"]
++	}
++end
++
+ -- if we are optimizing, include optimization options
+ if _OPTIONS["OPTIMIZE"] then
+ 	buildoptions {
+ 		"-O".. _OPTIONS["OPTIMIZE"],
+ 		"-fno-strict-aliasing"
+ 	}
+-	if _OPTIONS["OPT_FLAGS"] then
+-		buildoptions {
+-			_OPTIONS["OPT_FLAGS"]
+-		}
+-	end
+ 	if _OPTIONS["LTO"]=="1" then
+ 		buildoptions {
+ -- windows native mingw GCC 5.2 fails with -flto=x with x > 1. bug unfixed as of this commit
+@@ -962,11 +964,6 @@ end
  
  
  		local version = str_to_version(_OPTIONS["gcc_version"])
@@ -15,7 +40,7 @@ Index: scripts/genie.lua
  			buildoptions {
  				"-Wno-cast-align",
  				"-Wno-tautological-compare",
-@@ -975,25 +970,6 @@ end
+@@ -975,25 +972,6 @@ end
  				"-Wno-missing-braces", -- clang is not as permissive as GCC about std::array initialization
  				"-fdiagnostics-show-note-include-stack",
  			}

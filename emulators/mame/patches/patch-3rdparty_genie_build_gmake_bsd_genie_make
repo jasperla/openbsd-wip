@@ -9,8 +9,8 @@ Index: 3rdparty/genie/build/gmake.bsd/genie.make
  
 -CC  = gcc
 -CXX = g++
-+CC  = cc
-+CXX = c++
++CC  ?= gcc
++CXX ?= g++
  AR  = ar
  
  ifndef RESCOMP

@@ -12,7 +12,19 @@ Index: makefile
  endif
  ifeq ($(firstword $(filter Darwin,$(UNAME))),Darwin)
  OS := macosx
-@@ -916,7 +916,7 @@ endif
+@@ -533,11 +533,6 @@ PROFILER =
+ SYMBOLS = 1
+ endif
+ 
+-# specify a default optimization level if none explicitly stated
+-ifndef OPTIMIZE
+-OPTIMIZE = 3
+-endif
+-
+ # set the symbols level
+ ifdef SYMBOLS
+ PARAMS += --SYMBOLS='$(SYMBOLS)'
+@@ -916,7 +911,7 @@ endif
  else
  GCC_VERSION      := $(shell $(TOOLCHAIN)$(subst @,,$(CC)) -dumpversion 2> /dev/null)
  ifneq ($(OS),solaris)
@@ -21,7 +33,7 @@ Index: makefile
  endif
  PYTHON_AVAILABLE := $(shell $(PYTHON) --version > /dev/null 2>&1 && echo python)
  GIT_AVAILABLE := $(shell git --version > /dev/null 2>&1 && echo git)
-@@ -972,7 +972,7 @@ PROJECTDIR_SDL := $(BUILDDIR)/projects/sdl/$(FULLTARGE
+@@ -972,7 +967,7 @@ PROJECTDIR_SDL := $(BUILDDIR)/projects/sdl/$(FULLTARGE
  PROJECTDIR_WIN := $(BUILDDIR)/projects/windows/$(FULLTARGET)
  
  .PHONY: all clean regenie generate
@@ -30,12 +42,3 @@ Index: makefile
  regenie:
  
  #-------------------------------------------------
-@@ -1573,7 +1573,7 @@ $(SRC)/devices/cpu/m68000/m68kops.cpp: $(SRC)/devices/
- ifeq ($(TARGETOS),asmjs)
- 	$(SILENT) $(MAKE) -C $(SRC)/devices/cpu/m68000
- else
--	$(SILENT) $(MAKE) -C $(SRC)/devices/cpu/m68000 CC="$(CC)" CXX="$(CXX)"
-+	$(SILENT) $(MAKE) -C $(SRC)/devices/cpu/m68000
- endif
- 
- %.mo: %.po
