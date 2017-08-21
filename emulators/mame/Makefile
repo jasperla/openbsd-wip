@@ -79,7 +79,7 @@ post-extract:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/mame64 ${PREFIX}/bin/mame
 	${INSTALL_DATA} ${WRKSRC}/docs/man/mame.6 ${PREFIX}/man/man6
-.for f in chdman jedutil ldresample ldverify romcmp
+.for f in castool chdman floptool jedutil imgtool ldresample ldverify romcmp
 	${INSTALL_PROGRAM} ${WRKSRC}/${f} ${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/docs/man/${f}.1 ${PREFIX}/man/man1
 .endfor

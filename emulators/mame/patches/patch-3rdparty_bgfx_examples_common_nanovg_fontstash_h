@@ -1,5 +1,7 @@
 $OpenBSD$
 
+Don't include malloc.h header on OpenBSD.
+
 Index: 3rdparty/bgfx/examples/common/nanovg/fontstash.h
 --- 3rdparty/bgfx/examples/common/nanovg/fontstash.h.orig
 +++ 3rdparty/bgfx/examples/common/nanovg/fontstash.h

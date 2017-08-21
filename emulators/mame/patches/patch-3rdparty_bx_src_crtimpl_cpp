@@ -1,5 +1,7 @@
 $OpenBSD$
 
+Don't use malloc.h header on OpenBSD.
+
 Index: 3rdparty/bx/src/crtimpl.cpp
 --- 3rdparty/bx/src/crtimpl.cpp.orig
 +++ 3rdparty/bx/src/crtimpl.cpp

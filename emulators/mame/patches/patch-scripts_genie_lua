@@ -1,5 +1,8 @@
 $OpenBSD$
 
+- Set OPT_FLAGS even when OPTIMIZE is unset, to allow passing CXXFLAGS
+- Remove broken GCC version detection
+
 Index: scripts/genie.lua
 --- scripts/genie.lua.orig
 +++ scripts/genie.lua
@@ -28,22 +31,24 @@ Index: scripts/genie.lua
  	if _OPTIONS["LTO"]=="1" then
  		buildoptions {
  -- windows native mingw GCC 5.2 fails with -flto=x with x > 1. bug unfixed as of this commit
-@@ -962,11 +964,6 @@ end
+@@ -961,39 +963,6 @@ end
  
  
- 		local version = str_to_version(_OPTIONS["gcc_version"])
+ 
+-		local version = str_to_version(_OPTIONS["gcc_version"])
 -		if string.find(_OPTIONS["gcc"], "clang") or string.find(_OPTIONS["gcc"], "pnacl") or string.find(_OPTIONS["gcc"], "asmjs") or string.find(_OPTIONS["gcc"], "android") then
 -			if (version < 30400) then
 -				print("Clang version 3.4 or later needed")
 -				os.exit(-1)
 -			end
- 			buildoptions {
- 				"-Wno-cast-align",
- 				"-Wno-tautological-compare",
-@@ -975,25 +972,6 @@ end
- 				"-Wno-missing-braces", -- clang is not as permissive as GCC about std::array initialization
- 				"-fdiagnostics-show-note-include-stack",
- 			}
+-			buildoptions {
+-				"-Wno-cast-align",
+-				"-Wno-tautological-compare",
+-				"-Wno-unused-value",
+-				"-Wno-constant-logical-operand",
+-				"-Wno-missing-braces", -- clang is not as permissive as GCC about std::array initialization
+-				"-fdiagnostics-show-note-include-stack",
+-			}
 -			if (version >= 30500) then
 -				buildoptions {
 -					"-Wno-unknown-warning-option",
