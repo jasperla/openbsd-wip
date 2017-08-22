@@ -1,0 +1,28 @@
+@comment $OpenBSD$
+${P5SITE}/Net/
+${P5SITE}/Net/Evernote/
+${P5SITE}/Net/Evernote.pm
+${P5SITE}/Net/Evernote/EDAMErrors/
+${P5SITE}/Net/Evernote/EDAMErrors/Constants.pm
+${P5SITE}/Net/Evernote/EDAMErrors/Types.pm
+${P5SITE}/Net/Evernote/EDAMLimits/
+${P5SITE}/Net/Evernote/EDAMLimits/Constants.pm
+${P5SITE}/Net/Evernote/EDAMLimits/Types.pm
+${P5SITE}/Net/Evernote/EDAMNoteStore/
+${P5SITE}/Net/Evernote/EDAMNoteStore/Constants.pm
+${P5SITE}/Net/Evernote/EDAMNoteStore/NoteStore.pm
+${P5SITE}/Net/Evernote/EDAMNoteStore/Types.pm
+${P5SITE}/Net/Evernote/EDAMTypes/
+${P5SITE}/Net/Evernote/EDAMTypes/Constants.pm
+${P5SITE}/Net/Evernote/EDAMTypes/Types.pm
+${P5SITE}/Net/Evernote/EDAMUserStore/
+${P5SITE}/Net/Evernote/EDAMUserStore/Constants.pm
+${P5SITE}/Net/Evernote/EDAMUserStore/Types.pm
+${P5SITE}/Net/Evernote/EDAMUserStore/UserStore.pm
+${P5SITE}/Net/Evernote/Note.pm
+${P5SITE}/Net/Evernote/Notebook.pm
+${P5SITE}/Net/Evernote/Tag.pm
+@man man/man3p/Net::Evernote.3p
+@man man/man3p/Net::Evernote::Note.3p
+@man man/man3p/Net::Evernote::Notebook.3p
+@man man/man3p/Net::Evernote::Tag.3p
