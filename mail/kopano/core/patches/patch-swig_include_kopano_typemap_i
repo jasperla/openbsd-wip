@@ -1,4 +1,5 @@
 $OpenBSD$
+
 Fix nullptr_t error: Do not initialize unsigned long with NULL.
 
 Index: swig/include/kopano/typemap.i
