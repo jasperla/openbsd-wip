@@ -1,0 +1,104 @@
+$OpenBSD$
+
+Index: mapi4linux/include/kopano/hl.hpp
+--- mapi4linux/include/kopano/hl.hpp.orig
++++ mapi4linux/include/kopano/hl.hpp
+@@ -33,9 +33,7 @@ class KEntryId;
+ class _kc_export KProp _kc_final {
+ 	public:
+ 	KProp(SPropValue *);
+-	KProp(KProp &&);
+ 	~KProp(void);
+-	KProp &operator=(KProp &&);
+ 	SPropValue *operator->(void) { return m_s; }
+ 	const SPropValue *operator->(void) const { return m_s; }
+ 	operator SPropValue *(void) { return m_s; }
+@@ -57,9 +55,7 @@ class _kc_export KProp _kc_final {
+ class _kc_export KAttach _kc_final {
+ 	public:
+ 	KAttach(IAttach *, unsigned int);
+-	KAttach(KAttach &&);
+ 	~KAttach(void);
+-	KAttach &operator=(KAttach &&);
+ 	IAttach *operator->(void) { return m_attach; }
+ 	operator IAttach *(void) { return m_attach; }
+ 
+@@ -74,10 +70,8 @@ class _kc_export KAttach _kc_final {
+ class _kc_export KEntryId _kc_final {
+ 	public:
+ 	KEntryId(void) = default;
+-	KEntryId(KEntryId &&);
+ 	KEntryId(ENTRYID *, size_t);
+ 	~KEntryId(void);
+-	KEntryId &operator=(KEntryId &&);
+ 
+ 	ENTRYID *lpb() { return m_eid; }
+ 	const ENTRYID *lpb() const { return m_eid; }
+@@ -105,9 +99,7 @@ class _kc_export KFolder _kc_final {
+ 	public:
+ 	KFolder(void) = default;
+ 	KFolder(IMAPIFolder *);
+-	KFolder(KFolder &&);
+ 	~KFolder(void);
+-	KFolder &operator=(KFolder &&);
+ 	IMAPIFolder *operator->(void) { return m_folder; }
+ 	operator IMAPIFolder *(void) { return m_folder; }
+ 
+@@ -124,9 +116,7 @@ class _kc_export KMessage _kc_final {
+ 	public:
+ 	KMessage(void) = default;
+ 	KMessage(IMessage *);
+-	KMessage(KMessage &&);
+ 	~KMessage(void);
+-	KMessage &operator=(KMessage &&);
+ 	IMessage *operator->(void) { return m_message; }
+ 	operator IMessage *(void) { return m_message; }
+ 
+@@ -144,7 +134,6 @@ class _kc_export KSession _kc_final {
+ 	KSession(void);
+ 	KSession(const wchar_t *, const wchar_t *);
+ 	KSession(IMAPISession *);
+-	KSession(KSession &&) = delete;
+ 	~KSession(void);
+ 	IMAPISession *operator->(void) { return m_session; }
+ 	operator IMAPISession *(void) { return m_session; }
+@@ -158,9 +147,7 @@ class _kc_export KSession _kc_final {
+ class _kc_export KStore _kc_final {
+ 	public:
+ 	KStore(IMsgStore *);
+-	KStore(KStore &&);
+ 	~KStore(void);
+-	KStore &operator=(KStore &&);
+ 	IMsgStore *operator->(void) { return m_store; }
+ 	operator IMsgStore *(void) { return m_store; }
+ 
+@@ -177,9 +164,7 @@ class _kc_export KStore _kc_final {
+ class _kc_export KStream _kc_final {
+ 	public:
+ 	KStream(IStream *);
+-	KStream(KStream &&);
+ 	~KStream(void);
+-	KStream &operator=(KStream &&);
+ 	IStream *operator->(void) { return m_stream; }
+ 	operator IStream *(void) { return m_stream; }
+ 	HRESULT write(const std::string &);
+@@ -218,9 +203,7 @@ class _kc_export KTable _kc_final {
+ 	};
+ 
+ 	KTable(IMAPITable *);
+-	KTable(KTable &&);
+ 	~KTable(void);
+-	KTable &operator=(KTable &&);
+ 	IMAPITable *operator->(void) { return m_table; }
+ 	operator IMAPITable *(void) { return m_table; }
+ 
+@@ -237,9 +220,7 @@ class _kc_export KTable _kc_final {
+ class _kc_export KUnknown _kc_final {
+ 	public:
+ 	KUnknown(IUnknown * = NULL);
+-	KUnknown(KUnknown &&);
+ 	~KUnknown(void);
+-	KUnknown &operator=(KUnknown &&);
+ 	operator KFolder(void) const;
+ 	operator KMessage(void) const;
+ 
