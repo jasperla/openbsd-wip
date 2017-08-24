@@ -1,5 +1,7 @@
 $OpenBSD$
 
+Current compilers can not export functions with rvalue references.
+
 Index: common/ECKeyTable.cpp
 --- common/ECKeyTable.cpp.orig
 +++ common/ECKeyTable.cpp

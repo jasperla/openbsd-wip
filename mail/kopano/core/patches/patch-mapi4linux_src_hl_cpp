@@ -1,5 +1,7 @@
 $OpenBSD$
 
+Current compilers can not export functions with rvalue references.
+
 Index: mapi4linux/src/hl.cpp
 --- mapi4linux/src/hl.cpp.orig
 +++ mapi4linux/src/hl.cpp

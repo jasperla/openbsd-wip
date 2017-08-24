@@ -1,5 +1,7 @@
 $OpenBSD$
 
+Current compilers can not export functions with rvalue references.
+
 Index: provider/libserver/ECGenericObjectTable.cpp
 --- provider/libserver/ECGenericObjectTable.cpp.orig
 +++ provider/libserver/ECGenericObjectTable.cpp

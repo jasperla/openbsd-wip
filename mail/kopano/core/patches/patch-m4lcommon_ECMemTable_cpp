@@ -1,5 +1,7 @@
 $OpenBSD$
 
+Current compilers can not export functions with rvalue references.
+
 Index: m4lcommon/ECMemTable.cpp
 --- m4lcommon/ECMemTable.cpp.orig
 +++ m4lcommon/ECMemTable.cpp

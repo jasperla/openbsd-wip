@@ -1,5 +1,7 @@
 $OpenBSD$
 
+Current compilers can not export functions with rvalue references.
+
 Index: mapi4linux/include/kopano/hl.hpp
 --- mapi4linux/include/kopano/hl.hpp.orig
 +++ mapi4linux/include/kopano/hl.hpp

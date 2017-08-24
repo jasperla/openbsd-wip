@@ -1,5 +1,7 @@
 $OpenBSD$
 
+Current compilers can not export functions with rvalue references.
+
 Index: common/include/kopano/ECKeyTable.h
 --- common/include/kopano/ECKeyTable.h.orig
 +++ common/include/kopano/ECKeyTable.h
