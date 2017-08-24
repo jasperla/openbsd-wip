@@ -1,0 +1,15 @@
+$OpenBSD$
+Fix nullptr_t error: Do not initialize unsigned long with NULL.
+
+Index: swig/include/kopano/typemap.i
+--- swig/include/kopano/typemap.i.orig
++++ swig/include/kopano/typemap.i
+@@ -271,7 +271,7 @@
+ // Output
+ %typemap(in,numinputs=0) (ULONG *OUTPUT, IUnknown **OUTPUT) (ULONG ulType, IUnknown *lpUnk)
+ {
+-	ulType = NULL;
++	ulType = 0;
+ 	lpUnk = NULL;
+ 
+ 	$1 = &ulType;
