@@ -75,6 +75,8 @@ post-extract:
 		${WRKSRC}/3rdparty/genie/build/gmake.bsd
 	@sed -i 's,"lua","lua${MODLUA_VERSION}",g' ${WRKSRC}/scripts/extlib.lua
 	@mv ${WRKSRC}/src/lib/util/png.h ${WRKSRC}/src/lib/util/localpng.h
+	@sed -i 's|"png.h"|"localpng.h"|' ${WRKSRC}/src/emu/*.cpp \
+		${WRKSRC}/src/lib/util/*.cpp ${WRKSRC}/src/tools/*.cpp
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/mame64 ${PREFIX}/bin/mame
