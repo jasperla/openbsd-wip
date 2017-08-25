@@ -83,5 +83,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${f} ${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/docs/man/${f}.1 ${PREFIX}/man/man1
 .endfor
+	${INSTALL_DATA_DIR} ${PREFIX}/share/mame
+	@cp -r ${WRKSRC}/artwork ${PREFIX}/share/mame
 
 .include <bsd.port.mk>
