@@ -1,0 +1,16 @@
+$OpenBSD$
+
+Force symbol export due to clang-binutils miss-match.
+
+Index: common/libkcmapi.sym.in
+--- common/libkcmapi.sym.in.orig
++++ common/libkcmapi.sym.in
+@@ -17,6 +17,8 @@ global:
+ 		VTT*;
+ 		std::*::_S_*;
+ 	};
++	_ZN2KC10ECKeyTable*;
++	_ZN2KC10ECTableRow*;
+ local:
+ 	*;
+ };
