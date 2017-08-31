@@ -1,7 +1,5 @@
 $OpenBSD$
 
-Current compilers can not export functions with rvalue references.
-
 Index: provider/libserver/ECConvenientDepthObjectTable.cpp
 --- provider/libserver/ECConvenientDepthObjectTable.cpp.orig
 +++ provider/libserver/ECConvenientDepthObjectTable.cpp
