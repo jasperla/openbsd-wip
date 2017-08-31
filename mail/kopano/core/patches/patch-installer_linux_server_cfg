@@ -41,12 +41,3 @@ Index: installer/linux/server.cfg
  
  # Compression level for attachments when attachment_storage is 'files'.
  # Set compression level for attachments disabled=0, max=9
-@@ -400,7 +400,7 @@ client_update_enabled = false
- 
- # Place the correct Kopano Outlook Client in this directory for
- # Windows clients to download through the storage server
--client_update_path = /var/lib/kopano/client
-+client_update_path = /var/db/kopano/client
- 
- # Recieve update information from the client (0 = disabled, 1 = only on error, 2 = log always)
- client_update_log_level = 1

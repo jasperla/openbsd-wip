@@ -12,7 +12,7 @@ Index: configure.ac
  		]
  	)
  	dnl We should be using ncurses.h - or is portability to non-ncurses
-@@ -692,6 +692,8 @@ ZCPPFLAGS="$ZCPPFLAGS $icu_uc_CFLAGS $icu_i18n_CFLAGS"
+@@ -687,6 +687,8 @@ ZCPPFLAGS="$ZCPPFLAGS $icu_uc_CFLAGS $icu_i18n_CFLAGS"
  # all libs for programs, because functions are in static common stuff
  PROG_LIBS="$UUID_LIBS $INTL_LIBS $ICONV_LIBS $GZ_LIBS"
  AC_SUBST(PROG_LIBS)
