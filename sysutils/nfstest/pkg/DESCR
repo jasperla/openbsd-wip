@@ -1,2 +1,0 @@
-NFStest provides a set of tools for testing either the NFS client or the NFS
-server, included tests focused mainly on testing the client.
