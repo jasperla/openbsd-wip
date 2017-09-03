@@ -1,4 +1,0 @@
-@comment $OpenBSD$
-${P5SITE}/Sys/
-${P5SITE}/Sys/Info.pm
-@man man/man3p/Sys::Info.3p

@@ -1,3 +1,0 @@
-AAAA::Crypt::DH is a Task distribution that makes sure that either
-Math::BigInt::GMP or Math::BigInt::Pari are installed so that Crypt::DH
-works at a speed approaching reasonable.

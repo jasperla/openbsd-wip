@@ -1,3 +1,0 @@
-With this module you can address points in a datastructure by describing
-a "path" to it using hash keys, array indexes or some wildcard-like
-steps. It is inspired by XPath but differs from it.
