@@ -1,11 +1,11 @@
 #!/bin/sh
 #
-# $OpenBSD: zarafa.rc,v 1.17 2015/11/29 15:50:20 ajacoutot Exp $
+# $OpenBSD: kopano.rc,v 1.17 2015/11/29 15:50:20 ajacoutot Exp $
 
 # "meta" script running the following rc.d(8) scripts with the given argument;
 # note that daemon_flags, daemon_user, daemon_timeout and daemon_class are not
 # passed to the child scripts.
-_pkg_scripts="zarafa_server zarafa_spooler zarafa_monitor zarafa_gateway zarafa_ical"
+_pkg_scripts="kopano_server kopano_spooler kopano_monitor kopano_gateway kopano_ical"
 
 if [ "$1" = restart ]; then
 	$0 stop && $0 start

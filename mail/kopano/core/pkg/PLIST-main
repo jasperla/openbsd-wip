@@ -1,7 +1,6 @@
 @comment $OpenBSD: PLIST-main,v 1.54 2016/08/12 08:09:05 robert Exp $
 @newgroup _kopano:627
 @newuser _kopano:627:_kopano:daemon:Zarafa Account:/var/empty:/sbin/nologin
-@comment chdir(2) to running_path which is set to /var/empty in the cfg files
 @extraunexec rm -rf /var/db/kopano/{0,1,2,3,4,5,6,7,8,9}
 @extraunexec rm -rf /var/db/kopano/attachments
 @extraunexec rm -rf /var/db/kopano/dagent/plugins/*
@@ -10,9 +9,9 @@
 @extraunexec rm -rf /var/db/kopano/index/*
 @extraunexec rm -rf /var/log/kopano/*.log
 @bin bin/kopano-fsck
-bin/kopano-migration-imap
+@bin bin/kopano-migration-imap
 @bin bin/kopano-passwd
-bin/kopano-set-oof
+@bin bin/kopano-set-oof
 @bin bin/kopano-stats
 include/icalmapi/
 include/icalmapi/ICalToMAPI.h
@@ -41,6 +40,7 @@ include/kopano/ECChannel.h
 include/kopano/ECConfig.h
 include/kopano/ECDebug.h
 include/kopano/ECDefs.h
+include/kopano/ECFeatures.hpp
 include/kopano/ECGetText.h
 include/kopano/ECGuid.h
 include/kopano/ECIConv.h
@@ -90,19 +90,7 @@ include/kopano/typemap.i
 include/kopano/typemap_python.i
 include/kopano/userutil.h
 include/kopano/ustringutil.h
-@comment lib/libarchiver-core.la
-@comment lib/libarchiver.la
-@comment lib/libcommon_mapi.la
-@comment lib/libcommon_service.la
-@comment lib/libcommon_ssl.la
-@comment lib/libcommon_util.la
-@comment lib/libkopanoclient.la
-@comment lib/libkopanocontacts.la
 include/kopano/zcdefs.h
-@comment lib/libfreebusy.la
-@comment lib/libicalmapi.la
-@comment lib/libinetmapi.la
-@comment lib/libkopanosync.la
 include/libfreebusy/
 include/libfreebusy/ECEnumFBBlock.h
 include/libfreebusy/ECFBBlockList.h
@@ -135,44 +123,46 @@ include/mapi4linux/mapitags.h
 include/mapi4linux/mapiutil.h
 include/mapi4linux/mapix.h
 lib/kopano/
-@comment lib/kopano/dbplugin.la
-lib/kopano/dbplugin.so
-lib/kopano/ldapmsplugin.so
-@comment lib/kopano/ldapplugin.la
-lib/kopano/ldapplugin.so
-lib/kopano/libkcclient.la
+lib/kopano/libkcclient.a
 lib/kopano/libkcclient.so
-lib/kopano/libkccontacts.la
+lib/kopano/libkccontacts.a
 lib/kopano/libkccontacts.so
-lib/libkcarchiver.la
+lib/libkcarchiver.a
 @lib lib/libkcarchiver.so.${LIBkcarchiver_VERSION}
-lib/libkcarchivercore.la
+lib/libkcarchivercore.a
 @lib lib/libkcarchivercore.so.${LIBkcarchivercore_VERSION}
-lib/libkcfreebusy.la
+lib/libkcfreebusy.a
 @lib lib/libkcfreebusy.so.${LIBkcfreebusy_VERSION}
-lib/libkchl.la
+lib/libkchl.a
 @lib lib/libkchl.so.${LIBkchl_VERSION}
-lib/libkcicalmapi.la
+lib/libkcicalmapi.a
 @lib lib/libkcicalmapi.so.${LIBkcicalmapi_VERSION}
-lib/libkcinetmapi.la
+lib/libkcinetmapi.a
 @lib lib/libkcinetmapi.so.${LIBkcinetmapi_VERSION}
-lib/libkcmapi.la
+lib/libkcmapi.a
 @lib lib/libkcmapi.so.${LIBkcmapi_VERSION}
-lib/libkcpyconv.la
-@lib lib/libkcpyconv.so.${LIBkcpyconv_VERSION}
-lib/libkcpydirector.la
-@lib lib/libkcpydirector.so.${LIBkcpydirector_VERSION}
-lib/libkcserver.la
+lib/libkcpyconv-${MODPY_VERSION}.so
+lib/libkcpyconv.a
+lib/libkcpyconv.so
+lib/libkcpydirector-${MODPY_VERSION}.so
+lib/libkcpydirector.a
+lib/libkcpydirector.so
+lib/libkcserver-db.a
+lib/libkcserver-db.so
+lib/libkcserver-ldap.a
+lib/libkcserver-ldap.so
+lib/libkcserver-ldapms.so
+lib/libkcserver.a
 @lib lib/libkcserver.so.${LIBkcserver_VERSION}
-lib/libkcsoap.la
+lib/libkcsoap.a
 @lib lib/libkcsoap.so.${LIBkcsoap_VERSION}
-lib/libkcssl.la
+lib/libkcssl.a
 @lib lib/libkcssl.so.${LIBkcssl_VERSION}
-lib/libkcsync.la
+lib/libkcsync.a
 @lib lib/libkcsync.so.${LIBkcsync_VERSION}
-lib/libkcutil.la
+lib/libkcutil.a
 @lib lib/libkcutil.so.${LIBkcutil_VERSION}
-@comment lib/libmapi.la
+lib/libmapi.a
 @lib lib/libmapi.so.${LIBmapi_VERSION}
 lib/pkgconfig/kopano.pc
 lib/python${MODPY_VERSION}/site-packages/MAPI/
@@ -200,13 +190,13 @@ lib/python${MODPY_VERSION}/site-packages/MAPI/__init__.py
 lib/python${MODPY_VERSION}/site-packages/MAPI/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/MAPICore.py
 lib/python${MODPY_VERSION}/site-packages/MAPICore.pyc
-lib/python${MODPY_VERSION}/site-packages/_MAPICore.la
+lib/python${MODPY_VERSION}/site-packages/_MAPICore.a
 lib/python${MODPY_VERSION}/site-packages/_MAPICore.so
-lib/python${MODPY_VERSION}/site-packages/_icalmapi.la
+lib/python${MODPY_VERSION}/site-packages/_icalmapi.a
 lib/python${MODPY_VERSION}/site-packages/_icalmapi.so
-lib/python${MODPY_VERSION}/site-packages/_inetmapi.la
+lib/python${MODPY_VERSION}/site-packages/_inetmapi.a
 lib/python${MODPY_VERSION}/site-packages/_inetmapi.so
-lib/python${MODPY_VERSION}/site-packages/_libfreebusy.la
+lib/python${MODPY_VERSION}/site-packages/_libfreebusy.a
 lib/python${MODPY_VERSION}/site-packages/_libfreebusy.so
 lib/python${MODPY_VERSION}/site-packages/icalmapi.py
 lib/python${MODPY_VERSION}/site-packages/icalmapi.pyc
@@ -392,8 +382,8 @@ libexec/kopano/
 @man man/man8/kopano-search.8
 @man man/man8/kopano-server.8
 @man man/man8/kopano-spooler.8
-sbin/kopano-admin
-sbin/kopano-archiver
+@bin sbin/kopano-admin
+@bin sbin/kopano-archiver
 sbin/kopano-archiver-aclset
 sbin/kopano-archiver-aclsync
 sbin/kopano-archiver-restore
@@ -401,8 +391,8 @@ sbin/kopano-autorespond
 sbin/kopano-backup
 sbin/kopano-cachestat
 sbin/kopano-cli
-sbin/kopano-dagent
-sbin/kopano-gateway
+@bin sbin/kopano-dagent
+@bin sbin/kopano-gateway
 @bin sbin/kopano-ical
 sbin/kopano-mailbox-permissions
 sbin/kopano-migration-pst
@@ -416,8 +406,9 @@ sbin/kopano-search
 sbin/kopano-search-upgrade-findroots.py
 sbin/kopano-search-xapian-compact.py
 @bin sbin/kopano-server
-sbin/kopano-spooler
+@bin sbin/kopano-spooler
 share/doc/kopano/
+share/doc/kopano-gateway/
 @mode 0555
 share/doc/kopano/audit-parse.pl
 share/doc/kopano/createuser.dotforward
@@ -425,20 +416,25 @@ share/doc/kopano/db-calc-storesize
 share/doc/kopano/db-convert-attachments-to-files
 share/doc/kopano/db-remove-orphaned-attachments
 @mode
+share/doc/kopano/example-config/
 share/doc/kopano/kopano-fix-ipm-subtree
 share/doc/kopano/kopano-localize-folders
 share/doc/kopano/kopano-recreate-systemfolders
-@mode
 share/doc/kopano/kopano-rules
 share/doc/kopano/kopano.ldif
 @mode 0555
 share/doc/kopano/ldap-switch-sendas.pl
 share/doc/kopano/optimize-imap.py
+@mode
+share/doc/kopano/ssl-certificates.sh
+@mode 0555
 share/doc/kopano/update-resource-recipients
 @mode
 share/doc/pkg-readmes/${FULLPKGNAME}
 share/examples/bash_completion.d/
 share/examples/bash_completion.d/kopano-bash-completion.sh
+share/examples/cron.daily/
+share/examples/cron.daily/kopano-client-update
 share/examples/kopano/
 @sample ${SYSCONFDIR}/kopano/
 @mode 750
@@ -452,7 +448,6 @@ share/examples/kopano/archiver.cfg
 share/examples/kopano/autorespond
 @sample ${SYSCONFDIR}/kopano/autorespond
 share/examples/kopano/backup.cfg
-@sample ${SYSCONFDIR}/kopano/backup.cfg
 share/examples/kopano/dagent.cfg
 @sample ${SYSCONFDIR}/kopano/dagent.cfg
 share/examples/kopano/gateway.cfg
@@ -460,15 +455,11 @@ share/examples/kopano/gateway.cfg
 share/examples/kopano/ical.cfg
 @sample ${SYSCONFDIR}/kopano/ical.cfg
 share/examples/kopano/kopano.inf
-@sample ${SYSCONFDIR}/kopano/kopano.infi
 share/examples/kopano/kopano.m4
-@sample ${SYSCONFDIR}/kopano/kopano.m4
 share/examples/kopano/kopano.schema
-@sample ${SYSCONFDIR}/kopano/kopano.schema
 share/examples/kopano/ldap.cfg
-@sample ${SYSCONFDIR}/kopano/ldap.cfg
+share/examples/kopano/license/
 share/examples/kopano/local_kopano.m4
-@sample ${SYSCONFDIR}/kopano/local_kopano.m4
 share/examples/kopano/mapi/
 @sample ${SYSCONFDIR}/mapi/
 share/examples/kopano/mapi/kopano.inf
@@ -479,7 +470,6 @@ share/examples/kopano/migration-pst.cfg
 share/examples/kopano/monitor.cfg
 @sample ${SYSCONFDIR}/kopano/monitor.cfg
 share/examples/kopano/presence.cfg
-@sample ${SYSCONFDIR}/kopano/presence.cfg
 share/examples/kopano/quotamail/
 @sample ${SYSCONFDIR}/kopano/quotamail/
 share/examples/kopano/quotamail/companywarning.mail
@@ -514,6 +504,7 @@ share/examples/kopano/server.cfg
 @group
 share/examples/kopano/spooler.cfg
 @sample ${SYSCONFDIR}/kopano/spooler.cfg
+share/examples/kopano/unix.cfg
 share/examples/kopano/userscripts/
 @sample ${SYSCONFDIR}/kopano/userscripts/
 @mode 755
@@ -556,7 +547,8 @@ share/examples/kopano/userscripts/users_common.sh
 @sample ${SYSCONFDIR}/kopano/userscripts/users_common.sh
 @mode
 share/examples/kopano/zcontacts.inf
-share/examples/php-${MODPHP_VERSION}/
+share/examples/logrotate.d/
+share/examples/logrotate.d/kopano
 share/gdb/
 share/gdb/auto-load/
 share/gdb/auto-load/usr/
@@ -623,19 +615,8 @@ share/kopano-spooler/python/zunit.pyc
 @owner
 @group
 share/kopano/ldap.active-directory.cfg
-@mode 640
-@group _kopano
-@sample ${SYSCONFDIR}/kopano/ldap.active-directory.cfg
-@mode
-@group
 share/kopano/ldap.openldap.cfg
-@mode 640
-@group _kopano
-@sample ${SYSCONFDIR}/kopano/ldap.cfg
-@mode
-@group
 share/kopano/ldap.propmap.cfg
-@sample ${SYSCONFDIR}/kopano/ldap.propmap.cfg
 share/locale/bg/LC_MESSAGES/kopano.mo
 share/locale/ca/LC_MESSAGES/kopano.mo
 share/locale/cs/LC_MESSAGES/kopano.mo
