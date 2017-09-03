@@ -13,7 +13,7 @@ Index: lddcheck
  		fi
  		real=$(dirname "$input")"/.libs/$dlname"
 -		if ldd -r "$real" | c++filt | grep "undefined symbol"; then
-+		if ldd "$real" | c++filt | grep "undefined symbol"; then
++		if nm -u "$real" | c++filt | grep "undefined symbol"; then
  			exit 1
  		fi
  		;;

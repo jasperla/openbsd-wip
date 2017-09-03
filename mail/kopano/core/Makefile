@@ -19,8 +19,6 @@ SHARED_LIBS +=  kchl                      0.0 # 0.0
 SHARED_LIBS +=  kcicalmapi                0.0 # 0.0
 SHARED_LIBS +=  kcinetmapi                0.0 # 0.0
 SHARED_LIBS +=  kcmapi                    0.0 # 0.0
-SHARED_LIBS +=  kcpyconv                  0.0 # 0.0
-SHARED_LIBS +=  kcpydirector              0.0 # 0.0
 SHARED_LIBS +=  kcserver                  0.0 # 0.0
 SHARED_LIBS +=  kcsoap                    0.0 # 0.0
 SHARED_LIBS +=  kcssl                     0.0 # 0.0
@@ -47,13 +45,13 @@ BUILD_DEPENDS += net/curl
 
 WANTLIB += ${MODGETTEXT_WANTLIB}
 WANTLIB += m pthread z vmime execinfo icudata icui18n icuuc
-WANTLIB += boost_filesystem-mt boost_system-mt lzma idn2 crypto
+WANTLIB += boost_filesystem-mt boost_system-mt lzma crypto
 
 WANTLIB-main += ${WANTLIB} ${MODPY_WANTLIB}
 WANTLIB-main += c ical icalss lber-2.4
 WANTLIB-main += mysqlclient ncurses sasl2 ssl util xml2
 WANTLIB-main += ldap_r-2.4 gsoapssl++
-WANTLIB-main += ffi gmp gnutls hogweed nettle p11-kit ${LIBCXX} tasn1
+WANTLIB-main += ffi ${LIBCXX}
 
 RUN_DEPENDS-main=${MODGETTEXT_RUN_DEPENDS} \
 		${MODPY_RUN_DEPENDS} \
@@ -75,7 +73,7 @@ LIB_DEPENDS-main= ${MODGETTEXT_LIB_DEPENDS} \
 WANTLIB-mapi += ${WANTLIB}
 WANTLIB-mapi += ical icalss mapi
 WANTLIB-mapi += xml2
-WANTLIB-mapi += ffi gmp gnutls hogweed nettle p11-kit ${LIBCXX} tasn1
+WANTLIB-mapi += ffi ${LIBCXX}
 
 LIB_DEPENDS-mapi= ${BASE_PKGPATH}>=${V}
 RUN_DEPENDS-mapi= ${MODPHP_RUN_DEPENDS} \
@@ -127,6 +125,7 @@ MAKE_FLAGS +=	CLUCENE_CFLAGS="$$(pkg-config --cflags libclucene-core)" \
 		CLUCENE_LIBS="$$(pkg-config --libs libclucene-core)"
 
 FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples \
+		phpsysconfdir=${PREFIX}/share/examples/php-${MODPHP_VERSION} \
 		USERSCRIPTDIR=${PREFIX}/share/examples/kopano/userscripts \
 		QUOTATEMPLATEDIR=${PREFIX}/share/examples/kopano/quotamail \
 		SEARCHSCRIPTSDIR=${PREFIX}/share/examples/kopano/searchscripts \
@@ -148,15 +147,8 @@ pre-configure:
 			perl -pi -e 's/\r\n/\n/;' $$i; done
 	for i in ${SUB_SCRIPTS}; do \
 		${SUBST_CMD} ${WRKSRC}/installer/userscripts/$$i; done
-	#${SUBST_CMD} ${WRKSRC}/php-ext/Makefile.in
 	${SUBST_CMD} ${WRKSRC}/spooler/{DAgent,Spooler}.cpp \
 		${WRKSRC}/tools/python-scripts/kopano-cachestat
-	perl -pi -e 's,/usr/share/kopano,${PREFIX}/share/examples/kopano,g;' \
-		-e 's,/etc/kopano,${SYSCONFDIR}/kopano,g;' \
-		-e 's,/usr/bin,${PREFIX}/bin,g;' \
-		-e 's,/var/lib/kopano,/var/db/kopano,g;' \
-		-e 's,ssl-certificate.sh,ssl-certificates.sh,g' \
-		${WRKSRC}/doc/manual.xml
 	perl -pi -e 's,/bin/bash,/bin/sh,g' \
 		${WRKSRC}/installer/searchscripts/{attachments_parser,zmktemp}
 
@@ -174,21 +166,16 @@ post-install:
 		${PREFIX}/share/examples/kopano
 	mv ${PREFIX}/share/doc/kopano/kopano.schema \
 		${PREFIX}/share/examples/kopano
-#	mv ${PREFIX}/share/examples/kopano.ini \
-#		${PREFIX}/share/examples/kopano
-#	mv ${PREFIX}/share/examples/kopano/kopano.ini \
-#		${PREFIX}/share/examples/php-${MODPHP_VERSION}/${MODPHP_DO_SAMPLE}.ini
-	rm ${PREFIX}/share/examples/cron.daily/kopano-client-update
-	rm ${PREFIX}/share/examples/kopano/unix.cfg
-	rm ${PREFIX}/share/doc/kopano/ssl-certificates.sh
-	rmdir ${PREFIX}/share/doc/{kopano/example-config,kopano-gateway}
-	rm -rf ${PREFIX}/share/examples/{cron.daily,init.d,logrotate.d,sysconfig,kopano/kopano-gateway,kopano/license}
+#X	mv ${PREFIX}/share/examples/kopano.ini \
+#X		${PREFIX}/share/examples/kopano
 	perl -pi -e 's,/usr/bin/env python,${MODPY_BIN},g' \
 		${PREFIX}/sbin/kopano-search \
 		${PREFIX}/sbin/kopano-search-xapian-compact.py \
 		${PREFIX}/lib/python${MODPY_VERSION}/site-packages/kopano_search/__init__.py \
 		${PREFIX}/lib/python${MODPY_VERSION}/site-packages/kopano_search/plaintext.py \
 		${PREFIX}/lib/python${MODPY_VERSION}/site-packages/kopano/daemon/version/version_info.py
+
+	find ${PREFIX} -name "*.la" -exec rm {} \;
 
 	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
 		${PREFIX}/share/kopano-dagent/python \
