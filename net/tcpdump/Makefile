@@ -11,8 +11,7 @@ HOMEPAGE=	http://www.tcpdump.org/
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
 
-# XXX MASTER_SITES=	http://www.tcpdump.org/release/
-MASTER_SITES= https://sources.archlinux.org/other/packages/tcpdump/
+MASTER_SITES=	http://www.tcpdump.org/release/
 
 WANTLIB += c crypto pcap
 
