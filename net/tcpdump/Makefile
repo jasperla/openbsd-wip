@@ -1,8 +1,8 @@
 # $OpenBSD$
 
-COMMENT=	insecure tcpdump
+COMMENT=	unsafe tcpdump
 
-DISTNAME=	tcpdump-4.5.1
+DISTNAME=	tcpdump-4.9.2
 
 CATEGORIES=	net
 
@@ -11,7 +11,8 @@ HOMEPAGE=	http://www.tcpdump.org/
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=	http://www.tcpdump.org/release/
+# XXX MASTER_SITES=	http://www.tcpdump.org/release/
+MASTER_SITES= https://sources.archlinux.org/other/packages/tcpdump/
 
 WANTLIB += c crypto pcap
 
