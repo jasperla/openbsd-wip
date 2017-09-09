@@ -1,0 +1,42 @@
+@comment $OpenBSD$
+bin/falltergeist
+share/applications/falltergeist.desktop
+share/doc/pkg-readmes/${FULLPKGNAME}
+share/falltergeist/
+share/falltergeist/data/
+share/falltergeist/data/egg.png
+share/falltergeist/data/hilight1.png
+share/falltergeist/data/hilight2.png
+share/falltergeist/data/moviecfgs.lst
+share/falltergeist/data/movies.lst
+share/falltergeist/data/shaders/
+share/falltergeist/data/shaders/21/
+share/falltergeist/data/shaders/21/animation.fp
+share/falltergeist/data/shaders/21/animation.vp
+share/falltergeist/data/shaders/21/default.fp
+share/falltergeist/data/shaders/21/default.vp
+share/falltergeist/data/shaders/21/font.fp
+share/falltergeist/data/shaders/21/font.vp
+share/falltergeist/data/shaders/21/lightmap.fp
+share/falltergeist/data/shaders/21/lightmap.vp
+share/falltergeist/data/shaders/21/sprite.fp
+share/falltergeist/data/shaders/21/sprite.vp
+share/falltergeist/data/shaders/21/tilemap.fp
+share/falltergeist/data/shaders/21/tilemap.vp
+share/falltergeist/data/shaders/32/
+share/falltergeist/data/shaders/32/animation.fp
+share/falltergeist/data/shaders/32/animation.vp
+share/falltergeist/data/shaders/32/default.fp
+share/falltergeist/data/shaders/32/default.vp
+share/falltergeist/data/shaders/32/font.fp
+share/falltergeist/data/shaders/32/font.vp
+share/falltergeist/data/shaders/32/lightmap.fp
+share/falltergeist/data/shaders/32/lightmap.vp
+share/falltergeist/data/shaders/32/sprite.fp
+share/falltergeist/data/shaders/32/sprite.vp
+share/falltergeist/data/shaders/32/tilemap.fp
+share/falltergeist/data/shaders/32/tilemap.vp
+share/falltergeist/data/subtitles.lst
+@bin share/falltergeist/falltergeist
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database

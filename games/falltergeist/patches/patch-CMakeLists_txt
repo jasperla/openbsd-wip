@@ -1,0 +1,14 @@
+$OpenBSD$
+
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -28,6 +28,8 @@ set(falltergeist_VERSION  0.3.0)
+ 
+ include_directories(src)
+ 
++include_directories(${OPENBSD_LOCALBASE}/include)
++
+ if(EXISTS ${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
+ 	set(USE_CONAN TRUE)
+ endif()

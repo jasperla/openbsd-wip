@@ -1,0 +1,18 @@
+$OpenBSD$
+
+Remove -Werror* flags.
+
+Index: meson.build
+--- meson.build.orig
++++ meson.build
+@@ -24,10 +24,8 @@ am_cflags = [
+     '-pedantic',
+     '-Wstrict-prototypes',
+     '-Wundef',
+-    '-Werror-implicit-function-declaration',
+     '-Wformat',
+     '-Wformat-security',
+-    '-Werror=format-security',
+     '-Wconversion',
+     '-Wunused-variable',
+     '-Wunreachable-code',

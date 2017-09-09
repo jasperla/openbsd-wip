@@ -1,0 +1,14 @@
+$OpenBSD$
+
+Index: src/raven/meson.build
+--- src/raven/meson.build.orig
++++ src/raven/meson.build
+@@ -41,7 +41,7 @@ top_vapidir = join_paths(meson.source_root(), 'vapi')
+ 
+ libraven = shared_library(
+     'raven', libraven_sources,
+-    version: '0.0.0',
++    version: '0.0',
+     dependencies: libraven_deps,
+     vala_args: [
+         '--vapidir', dir_libtheme,
