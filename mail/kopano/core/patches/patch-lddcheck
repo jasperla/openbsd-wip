@@ -1,4 +1,5 @@
-$OpenBSD: patch-lddcheck,v 1.1 2015/11/02 11:06:34 robert Exp $
+$OpenBSD$
+
 Index: lddcheck
 --- lddcheck.orig
 +++ lddcheck
@@ -8,7 +9,7 @@ Index: lddcheck
  
  if [ -z "$1" ]; then
  	exit 0
-@@ -14,7 +14,7 @@ case "$input" in #((
+@@ -14,12 +14,12 @@ case "$input" in #((
  			exit 0
  		fi
  		real=$(dirname "$input")"/.libs/$dlname"
@@ -17,3 +18,9 @@ Index: lddcheck
  			exit 1
  		fi
  		;;
+ 	*)
+-		if "${libtool}" --mode=execute ldd -r "$input" | c++filt | \
++		if "${libtool}" --mode=execute nm -u "$input" | c++filt | \
+ 		   grep "undefined symbol"; then
+ 			exit 1
+ 		fi

@@ -63,9 +63,9 @@ LIB_DEPENDS-main= ${MODGETTEXT_LIB_DEPENDS} \
 		databases/mariadb \
 		databases/openldap \
 		devel/boost \
-		devel/gsoap \
+		devel/gsoap>=2.8.50 \
 		devel/libexecinfo \
-		devel/libvmime>=0.9.2p1 \
+		devel/libvmime>=0.9.4 \
 		textproc/icu4c \
 		textproc/libical \
 		textproc/libxml

@@ -1,8 +1,6 @@
 @comment $OpenBSD: PLIST-mapi,v 1.1 2016/08/12 08:09:05 robert Exp $
-@conflict php5-mapi-*
-@pkgpath mail/kopano/webaccess
-@pkgpath mail/kopano/kopano,-php
-@pkgpath mail/kopano/kopano,-web
+@conflict zarafa-mapi-*
+@pkgpath mail/zarafa/zarafa,-mapi
 lib/php-${MODPHP_VERSION}/
 lib/php-${MODPHP_VERSION}/modules/
 lib/php-${MODPHP_VERSION}/modules/${MODULE_NAME}.a

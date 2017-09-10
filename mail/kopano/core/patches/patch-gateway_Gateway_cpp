@@ -14,7 +14,7 @@ Index: gateway/Gateway.cpp
  /**
   * @defgroup gateway Gateway for IMAP and POP3 
   * @{
-@@ -279,10 +283,10 @@ int main(int argc, char *argv[]) {
+@@ -289,10 +293,10 @@ int main(int argc, char *argv[]) {
  	const char *szConfig = ECConfig::GetDefaultPath("gateway.cfg");
  	static const configsetting_t lpDefaults[] = {
  		{ "server_bind", "" },

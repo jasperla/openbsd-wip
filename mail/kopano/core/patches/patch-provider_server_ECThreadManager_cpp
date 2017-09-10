@@ -3,7 +3,7 @@ $OpenBSD$
 Index: provider/server/ECThreadManager.cpp
 --- provider/server/ECThreadManager.cpp.orig
 +++ provider/server/ECThreadManager.cpp
-@@ -151,7 +151,7 @@ void *ECWorkerThread::Work(void *lpParam)
+@@ -142,7 +142,7 @@ void *ECWorkerThread::Work(void *lpParam)
      bool fStop = false;
  	int err = 0;
  
@@ -12,7 +12,7 @@ Index: provider/server/ECThreadManager.cpp
      
      while(1) {
  		set_thread_name(pthread_self(), "z-s: idle thread");
-@@ -163,7 +163,7 @@ void *ECWorkerThread::Work(void *lpParam)
+@@ -154,7 +154,7 @@ void *ECWorkerThread::Work(void *lpParam)
              
              // We were requested to exit due to idle state
              if(fStop) {

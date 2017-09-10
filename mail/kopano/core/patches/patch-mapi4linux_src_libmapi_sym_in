@@ -1,7 +1,5 @@
 $OpenBSD$
 
-Force symbol export due to clang-binutils miss-match.
-
 Index: mapi4linux/src/libmapi.sym.in
 --- mapi4linux/src/libmapi.sym.in.orig
 +++ mapi4linux/src/libmapi.sym.in

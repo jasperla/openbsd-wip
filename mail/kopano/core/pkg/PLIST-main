@@ -1,6 +1,8 @@
 @comment $OpenBSD: PLIST-main,v 1.54 2016/08/12 08:09:05 robert Exp $
-@newgroup _kopano:627
-@newuser _kopano:627:_kopano:daemon:Zarafa Account:/var/empty:/sbin/nologin
+@conflict zarafa-*
+@pkgpath mail/zarafa/zarafa,-main
+@newgroup _kopano:793
+@newuser _kopano:793:_kopano:daemon:Kopano Account:/var/empty:/sbin/nologin
 @extraunexec rm -rf /var/db/kopano/{0,1,2,3,4,5,6,7,8,9}
 @extraunexec rm -rf /var/db/kopano/attachments
 @extraunexec rm -rf /var/db/kopano/dagent/plugins/*
@@ -455,11 +457,17 @@ share/examples/kopano/gateway.cfg
 share/examples/kopano/ical.cfg
 @sample ${SYSCONFDIR}/kopano/ical.cfg
 share/examples/kopano/kopano.inf
+@sample ${SYSCONFDIR}/kopano/kopano.inf
 share/examples/kopano/kopano.m4
+@sample ${SYSCONFDIR}/kopano/kopano.m4
 share/examples/kopano/kopano.schema
+@sample ${SYSCONFDIR}/kopano/kopano.schema
 share/examples/kopano/ldap.cfg
+@sample ${SYSCONFDIR}/kopano/ldap.cfg
 share/examples/kopano/license/
+@sample ${SYSCONFDIR}/kopano/license/
 share/examples/kopano/local_kopano.m4
+@sample ${SYSCONFDIR}/kopano/local_kopano.m4
 share/examples/kopano/mapi/
 @sample ${SYSCONFDIR}/mapi/
 share/examples/kopano/mapi/kopano.inf
@@ -467,9 +475,11 @@ share/examples/kopano/mapi/kopano.inf
 share/examples/kopano/mapi/zcontacts.inf
 @sample ${SYSCONFDIR}/mapi/zcontacts.inf
 share/examples/kopano/migration-pst.cfg
+@sample ${SYSCONFDIR}/kopano/migration-pst.cfg
 share/examples/kopano/monitor.cfg
 @sample ${SYSCONFDIR}/kopano/monitor.cfg
 share/examples/kopano/presence.cfg
+@sample ${SYSCONFDIR}/kopano/presence.cfg
 share/examples/kopano/quotamail/
 @sample ${SYSCONFDIR}/kopano/quotamail/
 share/examples/kopano/quotamail/companywarning.mail
@@ -547,6 +557,7 @@ share/examples/kopano/userscripts/users_common.sh
 @sample ${SYSCONFDIR}/kopano/userscripts/users_common.sh
 @mode
 share/examples/kopano/zcontacts.inf
+@sample ${SYSCONFDIR}/kopano/zcontacts.inf
 share/examples/logrotate.d/
 share/examples/logrotate.d/kopano
 share/gdb/

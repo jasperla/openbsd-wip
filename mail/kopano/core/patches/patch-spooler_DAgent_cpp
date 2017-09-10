@@ -15,26 +15,7 @@ Index: spooler/DAgent.cpp
  /*
    This is actually from sysexits.h
    but since those windows lamers don't have it ..
-@@ -1547,12 +1552,18 @@ static HRESULT SendOutOfOffice(LPADRBOOK lpAdrBook, LP
- 	}
- 
- 	{
-+#ifndef __OpenBSD__
- 		locale_t timelocale = createlocale(LC_TIME, "C");
-+#endif
- 		time_t now = time(NULL);
- 		tm local;
- 		localtime_r(&now, &local);
-+#ifndef __OpenBSD__
- 		strftime_l(szHeader, PATH_MAX, "\nDate: %a, %d %b %Y %T %z", &local, timelocale);
- 		freelocale(timelocale);
-+#else
-+		strftime(szHeader, PATH_MAX, "\nDate: %a, %d %b %Y %T %z", &local);
-+#endif
- 	}
- 
- 	if (WriteOrLogError(fd, szHeader, strlen(szHeader)) != hrSuccess) {
-@@ -3577,7 +3588,7 @@ int main(int argc, char *argv[]) {
+@@ -3577,7 +3582,7 @@ int main(int argc, char *argv[]) {
  
  	DeliveryArgs sDeliveryArgs;
  	sDeliveryArgs.strPath = "";
@@ -43,7 +24,7 @@ Index: spooler/DAgent.cpp
  	sDeliveryArgs.bCreateFolder = false;
  	sDeliveryArgs.strDeliveryFolder.clear();
  	sDeliveryArgs.szPathSeperator = '\\';
-@@ -3623,8 +3634,8 @@ int main(int argc, char *argv[]) {
+@@ -3623,8 +3628,8 @@ int main(int argc, char *argv[]) {
  	static const configsetting_t lpDefaults[] = {
  		{ "server_bind", "" },
  		{ "server_bind_intf", "" },
@@ -54,7 +35,7 @@ Index: spooler/DAgent.cpp
  		{ "pid_file", "/var/run/kopano/dagent.pid" },
  		{"coredump_enabled", "systemdefault"},
  		{"lmtp_port", "2003", CONFIGSETTING_NONEMPTY},
-@@ -3643,11 +3654,11 @@ int main(int argc, char *argv[]) {
+@@ -3643,11 +3648,11 @@ int main(int argc, char *argv[]) {
  		{ "log_raw_message", "no", CONFIGSETTING_RELOADABLE },
  		{ "log_raw_message_path", "/tmp", CONFIGSETTING_RELOADABLE },
  		{ "archive_on_delivery", "no", CONFIGSETTING_RELOADABLE },
