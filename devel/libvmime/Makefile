@@ -7,7 +7,7 @@ GH_PROJECT=     vmime
 GH_COMMIT=      243efb267fe539958610ef1e2142a36dfbcd3c28
 
 DISTNAME=	vmime
-PKGNAME=	vmime-0.9.4
+PKGNAME=	libvmime-0.9.4
 
 SHARED_LIBS+=	vmime	4.0	# 0.0
 

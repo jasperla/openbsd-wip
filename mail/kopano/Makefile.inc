@@ -1,7 +1,7 @@
 # $OpenBSD: Makefile.inc,v 1.40 2016/08/13 10:03:25 robert Exp $
 
-V?=		8.3.4
-BUILD?=		1281
+V?=		8.3.5
+BUILD?=		1318
 DISTNAME?=	kopanocore-${V}~${BUILD}
 EXTRACT_SUFX?=	.tar.xz
 
