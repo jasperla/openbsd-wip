@@ -57,6 +57,7 @@ RUN_DEPENDS-main=${MODGETTEXT_RUN_DEPENDS} \
 		${MODPY_RUN_DEPENDS} \
 		databases/xapian-bindings,-python \
 		devel/libmagic \
+		devel/py-dateutil \
 		lang/python/2.7,-bsddb \
 		textproc/catdoc
 LIB_DEPENDS-main= ${MODGETTEXT_LIB_DEPENDS} \

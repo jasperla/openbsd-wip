@@ -673,5 +673,6 @@ share/locale/zh_TW/LC_MESSAGES/kopano.mo
 @rcscript ${RCDIR}/kopano_gateway
 @rcscript ${RCDIR}/kopano_ical
 @rcscript ${RCDIR}/kopano_monitor
+@rcscript ${RCDIR}/kopano_search
 @rcscript ${RCDIR}/kopano_server
 @rcscript ${RCDIR}/kopano_spooler
