@@ -8,7 +8,7 @@ Index: installer/linux/dagent.cfg
  
  # Path to the dagent plugin manager
 -plugin_manager_path = /usr/share/kopano-dagent/python
-+plugin_manager_path = /usr/local/kopano-dagent/python
++plugin_manager_path = /usr/local/share/kopano-dagent/python
  
  # Path to the activated dagent plugins.
  #   This folder contains symlinks to the kopano plugins and custom scripts. The plugins are
