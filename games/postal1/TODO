@@ -1,0 +1,2 @@
+Crashes on startup somewhere in the sound driver.
+Need to write support for sndio?
