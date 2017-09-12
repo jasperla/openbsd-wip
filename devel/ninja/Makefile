@@ -35,8 +35,6 @@ BUILD_DEPENDS =		devel/re2c
 
 MAKE_ENV =		CXX="${CXX}"
 
-NO_TEST =		Yes
-
 do-build:
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
 	    ${MODPY_BIN} ./configure.py --bootstrap \
@@ -54,5 +52,9 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/misc/write_fake_manifests.py ${PREFIX}/share/ninja
 	${INSTALL_DATA} ${WRKSRC}/misc/measure.py ${PREFIX}/share/ninja
 	${INSTALL_DATA} ${WRKSRC}/misc/zsh-completion ${PREFIX}/share/ninja
+
+do-test:
+	@cd ${WRKSRC} && ./ninja ninja_test \
+	&& ./ninja_test --gtest_filter=MyTest.Name
 
 .include <bsd.port.mk>
