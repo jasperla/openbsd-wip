@@ -42,7 +42,8 @@ LIB_DEPENDS =		converters/libiconv \
 			devel/harfbuzz,-icu \
 			print/libpaper \
 			archivers/zziplib \
-			graphics/potrace
+			graphics/potrace \
+			print/ghostscript/gnu
 
 MODULES =		textproc/intltool perl
 
