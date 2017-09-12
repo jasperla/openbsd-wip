@@ -55,6 +55,8 @@ include/dlib/bit_stream/bit_stream_kernel_c.h
 include/dlib/bit_stream/bit_stream_multi_1.h
 include/dlib/bit_stream/bit_stream_multi_abstract.h
 include/dlib/bit_stream/bit_stream_multi_c.h
+include/dlib/bits/
+include/dlib/bits/c++config.h
 include/dlib/bound_function_pointer/
 include/dlib/bound_function_pointer.h
 include/dlib/bound_function_pointer/bound_function_pointer_kernel_1.h
@@ -82,9 +84,14 @@ include/dlib/clustering/modularity_clustering_abstract.h
 include/dlib/clustering/spectral_cluster.h
 include/dlib/clustering/spectral_cluster_abstract.h
 include/dlib/cmake_utils/
+include/dlib/cmake_utils/add_global_compiler_switch.cmake
+include/dlib/cmake_utils/check_if_neon_available.cmake
+include/dlib/cmake_utils/tell_visual_studio_to_use_static_runtime.cmake
 include/dlib/cmake_utils/test_for_cpp11/
 include/dlib/cmake_utils/test_for_cuda/
 include/dlib/cmake_utils/test_for_cudnn/
+include/dlib/cmake_utils/test_for_neon/
+include/dlib/cmake_utils/use_cpp_11.cmake
 include/dlib/cmd_line_parser/
 include/dlib/cmd_line_parser.h
 include/dlib/cmd_line_parser/cmd_line_parser_check_1.h
@@ -171,11 +178,13 @@ include/dlib/dnn/core.h
 include/dlib/dnn/core_abstract.h
 include/dlib/dnn/cpu_dlib.h
 include/dlib/dnn/cublas_dlibapi.h
+include/dlib/dnn/cuda_data_ptr.h
 include/dlib/dnn/cuda_dlib.h
 include/dlib/dnn/cuda_errors.h
 include/dlib/dnn/cuda_utils.h
 include/dlib/dnn/cudnn_dlibapi.h
 include/dlib/dnn/curand_dlibapi.h
+include/dlib/dnn/cusolver_dlibapi.h
 include/dlib/dnn/gpu_data.h
 include/dlib/dnn/gpu_data_abstract.h
 include/dlib/dnn/input.h
@@ -430,6 +439,8 @@ include/dlib/image_processing/setup_hashed_features.h
 include/dlib/image_processing/setup_hashed_features_abstract.h
 include/dlib/image_processing/shape_predictor.h
 include/dlib/image_processing/shape_predictor_abstract.h
+include/dlib/image_processing/shape_predictor_trainer.h
+include/dlib/image_processing/shape_predictor_trainer_abstract.h
 include/dlib/image_saver/
 include/dlib/image_saver/dng_shared.h
 include/dlib/image_saver/image_saver.h
@@ -486,6 +497,9 @@ include/dlib/iosockstream.h
 include/dlib/iosockstream/iosockstream.h
 include/dlib/iosockstream/iosockstream_abstract.h
 include/dlib/is_kind.h
+include/dlib/java/
+include/dlib/java/java_array.h
+include/dlib/java/swig_api.h
 include/dlib/linker/
 include/dlib/linker.h
 include/dlib/linker/linker_kernel_1.h
@@ -752,7 +766,6 @@ include/dlib/sliding_buffer/sliding_buffer_kernel_c.h
 include/dlib/smart_pointers/
 include/dlib/smart_pointers.h
 include/dlib/smart_pointers/scoped_ptr.h
-include/dlib/smart_pointers/scoped_ptr_abstract.h
 include/dlib/smart_pointers/shared_ptr.h
 include/dlib/smart_pointers/shared_ptr_abstract.h
 include/dlib/smart_pointers/shared_ptr_thread_safe.h
@@ -1072,5 +1085,3 @@ lib/cmake/dlib/dlibConfigVersion.cmake
 lib/libdlib.a
 @lib lib/libdlib.so.${LIBdlib_VERSION}
 lib/pkgconfig/dlib-1.pc
-share/doc/dlib/
-share/doc/dlib/LICENSE.txt
