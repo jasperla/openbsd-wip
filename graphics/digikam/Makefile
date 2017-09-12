@@ -3,8 +3,7 @@
 COMMENT =	KDE digital photo management utility
 
 CATEGORIES =	graphics
-VERSION =	5.6.0
-DISTNAME =	digikam-${VERSION}
+DISTNAME =	digikam-5.6.0
 
 HOMEPAGE =	https://www.digikam.org/
 
