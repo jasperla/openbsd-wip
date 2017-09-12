@@ -9,8 +9,7 @@ COMMENT =		small build system with a focus on speed
 
 GH_ACCOUNT =		ninja-build
 GH_PROJECT =		ninja
-GH_TAGNAME =		v1.7.2
-REVISION =		1
+GH_TAGNAME =		v1.8.2
 
 CATEGORIES =		devel
 HOMEPAGE =		https://ninja-build.org/
@@ -36,6 +35,8 @@ BUILD_DEPENDS =		devel/re2c
 
 MAKE_ENV =		CXX="${CXX}"
 
+NO_TEST =		Yes
+
 do-build:
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
 	    ${MODPY_BIN} ./configure.py --bootstrap \
@@ -50,6 +51,8 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/misc/ninja-mode.el ${PREFIX}/share/ninja
 	${INSTALL_DATA} ${WRKSRC}/misc/ninja.vim ${PREFIX}/share/ninja
 	${INSTALL_DATA} ${WRKSRC}/misc/ninja_syntax.py ${PREFIX}/share/ninja
+	${INSTALL_DATA} ${WRKSRC}/misc/write_fake_manifests.py ${PREFIX}/share/ninja
+	${INSTALL_DATA} ${WRKSRC}/misc/measure.py ${PREFIX}/share/ninja
 	${INSTALL_DATA} ${WRKSRC}/misc/zsh-completion ${PREFIX}/share/ninja
 
 .include <bsd.port.mk>
