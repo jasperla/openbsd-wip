@@ -15,11 +15,9 @@ SHARED_LIBS +=	QmlEditorWidgets          0.0 # 0.0
 SHARED_LIBS +=	QmlJS                     2.0 # 0.0
 SHARED_LIBS +=	QtcSsh                    0.0 # 0.0
 SHARED_LIBS +=	Utils                     2.0 # 0.0
-SHARED_LIBS +=	qbscore                   2.0 # 0.0
 SHARED_LIBS +=	Clangbackendipc           2.1 # 1.0
 SHARED_LIBS +=	Sqlite                    1.1 # 1.0
 SHARED_LIBS +=	Timeline                  2.1 # 1.0
-SHARED_LIBS +=	qbsqtprofilesetup         1.4 # 1.4
 SHARED_LIBS +=	Modeling                  1.0 # 1.0
 SHARED_LIBS +=	FlameGraph                0.0 # 4.2
 
