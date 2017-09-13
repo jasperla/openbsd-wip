@@ -1,0 +1,23 @@
+@comment $OpenBSD$
+${P5SITE}/Net/
+${P5SITE}/Net/Evernote/
+${P5SITE}/Net/Evernote/Simple/
+${P5SITE}/Net/Evernote/Simple.pm
+${P5SITE}/Net/Evernote/Simple/EDAMErrors/
+${P5SITE}/Net/Evernote/Simple/EDAMErrors/Constants.pm
+${P5SITE}/Net/Evernote/Simple/EDAMErrors/Types.pm
+${P5SITE}/Net/Evernote/Simple/EDAMLimits/
+${P5SITE}/Net/Evernote/Simple/EDAMLimits/Constants.pm
+${P5SITE}/Net/Evernote/Simple/EDAMLimits/Types.pm
+${P5SITE}/Net/Evernote/Simple/EDAMNoteStore/
+${P5SITE}/Net/Evernote/Simple/EDAMNoteStore/Constants.pm
+${P5SITE}/Net/Evernote/Simple/EDAMNoteStore/NoteStore.pm
+${P5SITE}/Net/Evernote/Simple/EDAMNoteStore/Types.pm
+${P5SITE}/Net/Evernote/Simple/EDAMTypes/
+${P5SITE}/Net/Evernote/Simple/EDAMTypes/Constants.pm
+${P5SITE}/Net/Evernote/Simple/EDAMTypes/Types.pm
+${P5SITE}/Net/Evernote/Simple/EDAMUserStore/
+${P5SITE}/Net/Evernote/Simple/EDAMUserStore/Constants.pm
+${P5SITE}/Net/Evernote/Simple/EDAMUserStore/Types.pm
+${P5SITE}/Net/Evernote/Simple/EDAMUserStore/UserStore.pm
+@man man/man3p/Net::Evernote::Simple.3p
