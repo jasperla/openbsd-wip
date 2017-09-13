@@ -3,7 +3,7 @@ $OpenBSD$
 Index: spooler/python/Makefile.in
 --- spooler/python/Makefile.in.orig
 +++ spooler/python/Makefile.in
-@@ -771,8 +771,6 @@ uninstall-am: uninstall-kopano_dagentDATA uninstall-ko
+@@ -772,8 +772,6 @@ uninstall-am: uninstall-kopano_dagentDATA uninstall-ko
  
  
  install-data-hook:

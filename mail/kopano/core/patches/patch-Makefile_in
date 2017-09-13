@@ -1,26 +1,9 @@
-$OpenBSD: patch-Makefile_in,v 1.3 2016/04/20 18:38:41 robert Exp $
+$OpenBSD$
+
 Index: Makefile.in
 --- Makefile.in.orig
 +++ Makefile.in
-@@ -1355,7 +1355,7 @@ kopano_server_LDADD = \
- 	libkcutil.la libkcmapi.la libkcssl.la \
- 	libkcserver.la libkcsoap.la ${GSOAP_LIBS} \
- 	${PROG_LIBS} ${CRYPTO_LIBS} ${icu_uc_LIBS} ${icu_i18n_LIBS} ${DL_LIBS} \
--	${MYSQL_LIBS} ${SSL_LIBS} ${PAM_LIBS} ${KRB5_LIBS} -lpthread -lrt
-+	${MYSQL_LIBS} ${SSL_LIBS} ${PAM_LIBS} ${KRB5_LIBS} -lpthread ${RT_LIBS}
- 
- kopano_server_LDFLAGS = ${AM_LDFLAGS}
- 
-@@ -1859,7 +1859,7 @@ dist_phpdata_DATA = \
- # test programs
- #
- mapitime_SOURCES = ECtools/mapitime.cpp
--mapitime_LDADD = -lrt libmapi.la libkcmapi.la libkcutil.la \
-+mapitime_LDADD = ${RT_LIBS} libmapi.la libkcmapi.la libkcutil.la \
- 	${curl_LIBS} ${icu_uc_LIBS}
- 
- rosie_test_SOURCES = librosie/test.cpp
-@@ -4892,7 +4892,7 @@ provider/plugin.sym provider/provider.sym: ${top_build
+@@ -4894,7 +4894,7 @@ provider/plugin.sym provider/provider.sym: ${top_build
  
  .PHONY: source-moved-check
  source-moved-check:

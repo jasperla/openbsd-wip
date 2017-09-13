@@ -3,7 +3,7 @@ $OpenBSD$
 Index: ECtools/search/Makefile.in
 --- ECtools/search/Makefile.in.orig
 +++ ECtools/search/Makefile.in
-@@ -593,7 +593,6 @@ install-exec-local:
+@@ -594,7 +594,6 @@ install-exec-local:
  	rm -Rf build
  
  install-data-local:

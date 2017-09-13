@@ -15,27 +15,14 @@ Index: common/include/kopano/platform.linux.h
  #include <cerrno>
  #include <clocale>
  
-@@ -53,6 +57,10 @@
- #define UNUSED_VAR __attribute__((unused))
- #endif
+@@ -51,6 +55,10 @@
  
-+#ifdef __OpenBSD__
-+#define POLLRDHUP 0
+ #ifndef UNUSED_VAR
+ #define UNUSED_VAR __attribute__((unused))
 +#endif
 +
++#ifdef __OpenBSD__
++#define POLLRDHUP 0
+ #endif
+ 
  #include <cassert>
- #define _vsnprintf vsnprintf
- #ifdef HAVE_VSNPRINTF_L
-@@ -498,7 +506,11 @@ namespace KC {
- extern _kc_export time_t GetProcessTime(void);
- 
- #define OutputDebugStringA(dstr) fprintf(stderr,"%s",dstr)
--#define kc_threadid() static_cast<unsigned long>(pthread_self())
-+#ifndef __OpenBSD__
-+#define kc_threadid() reinterpret_cast<unsigned long>(getthrid())
-+#else
-+#define kc_threadid() reinterpret_cast<unsigned long>(pthread_self())
-+#endif
- #define GetTickCount() 0L
- 
- #define TICKS_PER_SEC (sysconf(_SC_CLK_TCK))

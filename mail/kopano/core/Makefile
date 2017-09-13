@@ -3,9 +3,8 @@
 COMMENT-main=	MS Exchange groupware suite replacement
 COMMENT-mapi=	kopano MAPI extensions for PHP
 
-PKGNAME=	kopano-core-${V}
-PKGNAME-main=	kopano-core-${V}
-PKGNAME-mapi=	kopano-mapi-${V}
+PKGNAME-main=	kopano-core-${V}.${BUILD}
+PKGNAME-mapi=	kopano-mapi-${V}.${BUILD}
 
 CATEGORIES=	mail www productivity
 

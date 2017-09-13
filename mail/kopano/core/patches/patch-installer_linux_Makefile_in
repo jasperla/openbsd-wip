@@ -3,7 +3,7 @@ $OpenBSD$
 Index: installer/linux/Makefile.in
 --- installer/linux/Makefile.in.orig
 +++ installer/linux/Makefile.in
-@@ -982,7 +982,6 @@ ldap.active-directory.cfg: ldap.m4
+@@ -983,7 +983,6 @@ ldap.active-directory.cfg: ldap.m4
  
  install-data-hook:
  	install -d -m 755 ${DESTDIR}/${sysconfdir}/kopano/license
