@@ -75,6 +75,9 @@ do-build:
 do-install:
 	cd ${WRKSRC} && env ${MAKE_ENV} ${LOCALBASE}/bin/bash -x build --install
 
+do-test:
+	cd ${WRKSRC} && ${MAKE_PROGRAM} check
+
 post-install:
 	cd ${PREFIX}/lib && \
 		ln -sf swipl-$V/lib/${FULLARCH}/libswipl.so.${LIBswipl_VERSION}
