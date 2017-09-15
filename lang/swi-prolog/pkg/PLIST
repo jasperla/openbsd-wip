@@ -3,7 +3,7 @@ bin/swipl
 bin/swipl-ld
 bin/swipl-rc
 @bin bin/xpce-client
-@lib lib/libpl.so.${LIBpl_VERSION}
+@lib lib/libswipl.so.${LIBswipl_VERSION}
 lib/pkgconfig/swipl.pc
 lib/swipl-${V}/
 lib/swipl-${V}/Makefile
@@ -66,14 +66,14 @@ lib/swipl-${V}/lib/${FULLARCH}/hashstream.so
 lib/swipl-${V}/lib/${FULLARCH}/http_stream.so
 lib/swipl-${V}/lib/${FULLARCH}/isub.so
 lib/swipl-${V}/lib/${FULLARCH}/json.so
-@lib lib/swipl-${V}/lib/${FULLARCH}/libpl.so.${LIBpl_VERSION}
+lib/swipl-${V}/lib/${FULLARCH}/libedit4pl.so
 lib/swipl-${V}/lib/${FULLARCH}/libswipl.a
-lib/swipl-${V}/lib/${FULLARCH}/libswipl.so
-lib/swipl-${V}/lib/${FULLARCH}/libswipl.so.${V}
+@lib lib/swipl-${V}/lib/${FULLARCH}/libswipl.so.${LIBswipl_VERSION}
 lib/swipl-${V}/lib/${FULLARCH}/md54pl.so
 lib/swipl-${V}/lib/${FULLARCH}/memfile.so
 lib/swipl-${V}/lib/${FULLARCH}/ntriples.so
 lib/swipl-${V}/lib/${FULLARCH}/odbc4pl.so
+lib/swipl-${V}/lib/${FULLARCH}/pcre4pl.so
 lib/swipl-${V}/lib/${FULLARCH}/pdt_console.so
 lib/swipl-${V}/lib/${FULLARCH}/pl2xpce.so
 lib/swipl-${V}/lib/${FULLARCH}/porter_stem.so
@@ -242,6 +242,7 @@ lib/swipl-${V}/library/doc_latex.pl
 lib/swipl-${V}/library/double_metaphone.pl
 lib/swipl-${V}/library/edinburgh.pl
 lib/swipl-${V}/library/edit.pl
+lib/swipl-${V}/library/editline.pl
 lib/swipl-${V}/library/error.pl
 lib/swipl-${V}/library/explain.pl
 lib/swipl-${V}/library/fastrw.pl
@@ -344,14 +345,16 @@ lib/swipl-${V}/library/optparse.pl
 lib/swipl-${V}/library/ordsets.pl
 lib/swipl-${V}/library/oset.pl
 lib/swipl-${V}/library/pairs.pl
+lib/swipl-${V}/library/pcre.pl
 lib/swipl-${V}/library/pdt_console.pl
 lib/swipl-${V}/library/pengines.pl
 lib/swipl-${V}/library/pengines_io.pl
+lib/swipl-${V}/library/pengines_sandbox.pl
 lib/swipl-${V}/library/persistency.pl
 lib/swipl-${V}/library/pio.pl
 lib/swipl-${V}/library/pldoc/
 lib/swipl-${V}/library/pldoc.pl
-lib/swipl-${V}/library/pldoc/README
+lib/swipl-${V}/library/pldoc/README.md
 lib/swipl-${V}/library/pldoc/doc_access.pl
 lib/swipl-${V}/library/pldoc/doc_colour.pl
 lib/swipl-${V}/library/pldoc/doc_html.pl
@@ -398,6 +401,7 @@ lib/swipl-${V}/library/prolog_colour.pl
 lib/swipl-${V}/library/prolog_format.pl
 lib/swipl-${V}/library/prolog_history.pl
 lib/swipl-${V}/library/prolog_install.pl
+lib/swipl-${V}/library/prolog_jiti.pl
 lib/swipl-${V}/library/prolog_metainference.pl
 lib/swipl-${V}/library/prolog_pack.pl
 lib/swipl-${V}/library/prolog_server.pl
@@ -1528,7 +1532,6 @@ lib/swipl-${V}/xpce/prolog/lib/xref/sicstus.pl
 @man man/man1/swipl-ld.1
 @man man/man1/swipl-rc.1
 @man man/man1/swipl.1
-@man man/man1/xpce-client.1
 share/doc/swipl/
 share/doc/swipl/Manual/
 share/doc/swipl/Manual/64bits.html
@@ -1655,6 +1658,7 @@ share/doc/swipl/Manual/listing.html
 share/doc/swipl/Manual/lists.html
 share/doc/swipl/Manual/loadfilehook.html
 share/doc/swipl/Manual/locale.html
+share/doc/swipl/Manual/main.html
 share/doc/swipl/Manual/manipatom.html
 share/doc/swipl/Manual/manipmodule.html
 share/doc/swipl/Manual/manipstack.html
@@ -1680,6 +1684,7 @@ share/doc/swipl/Manual/ordsets.html
 share/doc/swipl/Manual/otherlicenses.html
 share/doc/swipl/Manual/overrule.html
 share/doc/swipl/Manual/overview.html
+share/doc/swipl/Manual/packs.html
 share/doc/swipl/Manual/pairs.html
 share/doc/swipl/Manual/pceemacs.html
 share/doc/swipl/Manual/persistency.html
@@ -1853,6 +1858,7 @@ share/doc/swipl/packages/libedit.html
 share/doc/swipl/packages/modules.gif
 share/doc/swipl/packages/nlp.html
 share/doc/swipl/packages/odbc.html
+share/doc/swipl/packages/pcre.html
 share/doc/swipl/packages/pdt.html
 share/doc/swipl/packages/penarch.png
 share/doc/swipl/packages/pengines.html

@@ -6,12 +6,12 @@ BROKEN-sparc64 =	infinite loop or aborts during build
 
 COMMENT =		Prolog for the real world
 
-V =			7.4.2
+V =			7.5.15
 DISTNAME =		swipl-$V
 PKGNAME =		swi-prolog-$V
 CATEGORIES =		lang
 
-SHARED_LIBS =		pl	6.0
+SHARED_LIBS =		swipl	7.0 # XXX check
 
 HOMEPAGE =		http://www.swi-prolog.org/
 
@@ -24,10 +24,10 @@ WANTLIB += ICE SM X11 Xext Xft Xinerama Xpm Xt archive c db execinfo
 WANTLIB += fontconfig freetype gmp iodbc jpeg m ncursesw ossp-uuid
 WANTLIB += pthread readline z
 
-MASTER_SITES =		${HOMEPAGE}download/stable/src/ \
-			https://distfiles.nl/
+MASTER_SITES =		${HOMEPAGE}download/devel/src/ \
+#MASTER_SITES =		${HOMEPAGE}download/stable/src/ \
+#			https://distfiles.nl/
 
-CONFIGURE_STYLE =		gnu
 MODGNU_CONFIG_GUESS_DIRS =	${WRKSRC}/packages/clib \
 				${WRKSRC}/packages/jpl \
 				${WRKSRC}/packages/xpce/ \
@@ -35,32 +35,22 @@ MODGNU_CONFIG_GUESS_DIRS =	${WRKSRC}/packages/clib \
 				${WRKSRC}/src
 
 # error: trampoline code generation is not allowed without -ftrampolines
-CFLAGS +=		-ftrampolines
+#CFLAGS +=		-ftrampolines
+
+# substitute these into build.templ
+CFLAGS +=		-I${LOCALBASE}/include
+LDFLAGS +=		-L${LOCALBASE}/lib
+SUBST_VARS +=		LDFLAGS CFLAGS MAKE_PROGRAM PREFIX
 
 USE_WXNEEDED =		Yes
-
-CONFIGURE_ENV +=	CIFLAGS=' -I${LOCALBASE}/include' \
-			LDFLAGS=' -L${LOCALBASE}/lib' \
-			COFLAGS='${CFLAGS}'
-
-CONFIGURE_ARGS =	--enable-mt \
-			--disable-custom-flags \
-			--with-world \
-			--enable-shared
-
 USE_GMAKE =		Yes
 
-# Don't pick up bash
-MAKE_ENV =		MAKESHELL=/bin/sh
-
-MAKE_ENV +=		LDFLAGS=-L${LOCALBASE}/lib
-
-MAKE_FLAGS =		SONAMEOPT= \
-			SHAREDV=libpl.so.${LIBpl_VERSION}
-
-COMPILER =		gcc-only
+#MAKE_ENV +=		DESTDIR=${WRKINST}
+#COMPILER =		gcc-only
 
 BUILD_DEPENDS =		${RUN_DEPENDS}
+# build.templ uses bashisms
+BUILD_DEPENDS +=	shells/bash
 LIB_DEPENDS =		devel/gmp \
 			devel/libexecinfo \
 			graphics/jpeg \
@@ -72,9 +62,22 @@ LIB_DEPENDS =		devel/gmp \
 FULLARCH =		${MACHINE_ARCH:S/amd64/x86_64/}-openbsd${OSREV}
 SUBST_VARS +=		V BOOT FULLARCH
 
+pre-configure:
+	${SUBST_CMD} -c ${WRKSRC}/build.templ ${WRKSRC}/build
+	${SUBST_CMD} ${WRKSRC}/src/Makefile.in
+
+do-configure:
+	cd ${WRKSRC} && ${LOCALBASE}/bin/bash -x build --config
+
+do-build:
+	cd ${WRKSRC} && ${LOCALBASE}/bin/bash -x build --make
+
+do-install:
+	cd ${WRKSRC} && env ${MAKE_ENV} ${LOCALBASE}/bin/bash -x build --install
+
 post-install:
 	cd ${PREFIX}/lib && \
-		ln -sf swipl-$V/lib/${FULLARCH}/libpl.so.${LIBpl_VERSION}
+		ln -sf swipl-$V/lib/${FULLARCH}/libswipl.so.${LIBswipl_VERSION}
 	mv ${PREFIX}/lib/swipl-${V}/doc ${PREFIX}/share/doc/swipl
 
 # A few tests crash or hang. We either patch them away or (if all tests in a
@@ -84,10 +87,10 @@ post-install:
 # SWI-Prolog.
 #
 # One test fails after removing all hanging tests.
-pre-test:
-	rm -f ${WRKBUILD}/src/Tests/core/test_resource_error.pl \
-		${WRKBUILD}/src/Tests/core/test_cgc.pl \
-		${WRKBUILD}/src/Tests/thread/queue_resource.pl
+#pre-test:
+#	rm -f ${WRKBUILD}/src/Tests/core/test_resource_error.pl \
+#		${WRKBUILD}/src/Tests/core/test_cgc.pl \
+#		${WRKBUILD}/src/Tests/thread/queue_resource.pl
 
 .include <bsd.port.arch.mk>
 
