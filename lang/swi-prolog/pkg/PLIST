@@ -1532,6 +1532,7 @@ lib/swipl-${V}/xpce/prolog/lib/xref/sicstus.pl
 @man man/man1/swipl-ld.1
 @man man/man1/swipl-rc.1
 @man man/man1/swipl.1
+@man man/man1/xpce-client.1
 share/doc/swipl/
 share/doc/swipl/Manual/
 share/doc/swipl/Manual/64bits.html
