@@ -1,0 +1,24 @@
+$OpenBSD$
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+github-backup's user interface is somewhat intimidating and poorly documented.
+Fortunately, basic use cases are fairly simple. First, you need to generate a
+GitHub OAuth token (Settings -> Personal Access Tokens -> Generate New Token).
+Then choose your use case.
+
+To incrementally backup a user's profile (repositories, issues, pull requests,
+etc.):
+
+  $ github-backup <user> -i --all -o <output dir> -t <oauth token>
+
+To incrementally backup an organization's profile:
+
+  $ github-backup <organization> -O -i --all -o <output dir> -t <oauth token>
+
+To backup a single repository:
+
+  $ github-backup <organization> -N <repo regex> --all -o <output dir> \
+    -t <oauth token>
