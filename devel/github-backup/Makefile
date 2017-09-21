@@ -17,8 +17,6 @@ HOMEPAGE =	https://github.com/josegonzalez/python-github-backup
 MAINTAINER =		Laurence Tratt <laurie@tratt.net>
 
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 MODULES =		lang/python
 MODPY_SETUPTOOLS =	Yes
