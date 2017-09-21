@@ -5,7 +5,7 @@ BROKEN-sparc64 =	infinite loop or aborts during build
 
 COMMENT =		Prolog for the real world
 
-V =			7.5.15
+V =			7.6.0-rc1
 DISTNAME =		swipl-$V
 PKGNAME =		swi-prolog-$V
 CATEGORIES =		lang
@@ -23,9 +23,8 @@ WANTLIB += ICE SM X11 Xext Xft Xinerama Xpm Xt archive c crypto
 WANTLIB += db edit execinfo fontconfig freetype gmp iodbc jpeg
 WANTLIB += m ncursesw ossp-uuid pcre pthread readline ssl z
 
-MASTER_SITES =		${HOMEPAGE}download/devel/src/ \
-#MASTER_SITES =		${HOMEPAGE}download/stable/src/ \
-#			https://distfiles.nl/
+MASTER_SITES =		${HOMEPAGE}download/stable/src/ \
+			https://distfiles.nl/
 
 
 # The reccommended way to build is using build.templ. We mimick this as best
@@ -46,7 +45,6 @@ MAKE_ENV =		${CONFIGURE_ENV}
 CONFIGURE_ARGS +=	--enable-shared \
 			--with-world
 
-#USE_WXNEEDED =		Yes
 USE_GMAKE =		Yes
 
 # XXX is bash needed?
