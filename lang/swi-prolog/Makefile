@@ -47,9 +47,6 @@ CONFIGURE_ARGS +=	--enable-shared \
 
 USE_GMAKE =		Yes
 
-# XXX is bash needed?
-# MAKE_ENV =             MAKESHELL=/bin/sh
-
 BUILD_DEPENDS =		${RUN_DEPENDS}
 BUILD_DEPENDS +=	shells/bash
 LIB_DEPENDS =		devel/gmp \
