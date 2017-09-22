@@ -193,7 +193,8 @@ def filter_junk(filelist):
          # TeXmf bugs
          x not in BUG_MISSING_FILES and
          # Stuff provided by other ports
-         x not in CONFLICT_FILES
+         x not in CONFLICT_FILES and
+         not ("tlmgr" in x and "doc/texlive" not in x)
          ]
     return r
 

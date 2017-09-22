@@ -4057,8 +4057,6 @@ share/texmf-dist/scripts/texlive/texconfig-dialog.sh
 share/texmf-dist/scripts/texlive/texconfig-sys.sh
 share/texmf-dist/scripts/texlive/texconfig.sh
 share/texmf-dist/scripts/texlive/texlinks.sh
-share/texmf-dist/scripts/texlive/tlmgr.pl
-share/texmf-dist/scripts/texlive/tlmgrgui.pl
 share/texmf-dist/scripts/texlive/updmap-sys.sh
 share/texmf-dist/scripts/texlive/updmap-user.sh
 share/texmf-dist/scripts/texlive/updmap.pl

@@ -64,11 +64,8 @@ MODPERL_ADJ_FILES =	${SCRIPTS_DIR}/mkpic/mkpic \
 			${SCRIPTS_DIR}/glossaries/makeglossaries \
 			${SCRIPTS_DIR}/mkgrkindex/mkgrkindex \
 			${SCRIPTS_DIR}/texlive/updmap.pl \
-			${SCRIPTS_DIR}/texlive/uninstall-win32.pl \
 			${SCRIPTS_DIR}/texlive/e2pall.pl \
-			${SCRIPTS_DIR}/texlive/tlmgr.pl \
 			${SCRIPTS_DIR}/texlive/fmtutil.pl \
-			${SCRIPTS_DIR}/texlive/tlmgrgui.pl \
 			${SCRIPTS_DIR}/texlive/mktexlsr.pl \
 			${SCRIPTS_DIR}/dosepsbin/dosepsbin.pl \
 			${SCRIPTS_DIR}/fig4latex/fig4latex \
