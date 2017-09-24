@@ -1,0 +1,13 @@
+$OpenBSD: patch-makefiles_testing_mak,v 1.1.1.1 2017/04/12 20:00:30 rsadowski Exp $
+Index: makefiles/testing.mak
+--- makefiles/testing.mak.orig
++++ makefiles/testing.mak
+@@ -5,7 +5,7 @@ check: tmain units
+ 
+ clean-local: clean-units clean-tmain
+ 
+-CTAGS_TEST = ./ctags$(EXEEXT)
++CTAGS_TEST = ./$(CTAGS_PROG)$(EXEEXT)
+ READ_TEST = ./readtags$(EXEEXT)
+ 
+ if HAVE_TIMEOUT
