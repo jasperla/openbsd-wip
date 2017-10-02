@@ -4,7 +4,7 @@ ONLY_FOR_ARCHS = amd64
 
 USE_WXNEEDED =	Yes
 
-COMMENT =	Multiple Arcade Machine Emulator
+COMMENT =	Multi Emulator Super System
 
 V =		189
 
@@ -13,6 +13,7 @@ GH_PROJECT =	mame
 GH_TAGNAME =	mame0${V}
 
 DISTNAME =	mame-0.${V}
+PKGNAME =	mess-0.${V}
 
 CATEGORIES =	emulators
 
@@ -46,7 +47,7 @@ LIB_DEPENDS =	audio/flac \
 CFLAGS =	-I${PREFIX}/include -I${X11BASE}/include -I${MODLUA_INCL_DIR}
 CFLAGS +=	-Wno-ignored-qualifiers
 
-MAKE_ENV =	SUBTARGET=mame \
+MAKE_ENV =	SUBTARGET=mess \
 		NOWERROR=1 VERBOSE=1 TOOLS=1 \
 		OVERRIDE_CC="${CC}" OVERRIDE_CXX="${CXX}" \
 		OPT_FLAGS="${CXXFLAGS}" \
@@ -80,13 +81,13 @@ post-extract:
 		${WRKSRC}/src/lib/util/*.cpp ${WRKSRC}/src/tools/*.cpp
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/mame64 ${PREFIX}/bin/mame
-	${INSTALL_DATA} ${WRKSRC}/docs/man/mame.6 ${PREFIX}/man/man6
-.for f in chdman jedutil ldresample ldverify romcmp
+	${INSTALL_PROGRAM} ${WRKSRC}/mess64 ${PREFIX}/bin/mess
+	${INSTALL_DATA} ${WRKSRC}/docs/man/mess.6 ${PREFIX}/man/man6
+.for f in castool floptool imgtool
 	${INSTALL_PROGRAM} ${WRKSRC}/${f} ${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/docs/man/${f}.1 ${PREFIX}/man/man1
 .endfor
-	${INSTALL_DATA_DIR} ${PREFIX}/share/mame
-	@cp -r ${WRKSRC}/artwork ${PREFIX}/share/mame
+	${INSTALL_DATA_DIR} ${PREFIX}/share/mess
+	@cp -r ${WRKSRC}/artwork ${PREFIX}/share/mess
 
 .include <bsd.port.mk>
