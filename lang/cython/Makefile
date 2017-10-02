@@ -2,7 +2,7 @@
 
 COMMENT =		optimising static compiler for Python and Cython
 
-MODPY_EGG_VERSION =	0.27
+MODPY_EGG_VERSION =	0.27.1
 DISTNAME =		Cython-${MODPY_EGG_VERSION}
 PKGNAME =		py-cython-${MODPY_EGG_VERSION}
 CATEGORIES =		lang
