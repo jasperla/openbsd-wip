@@ -2,12 +2,12 @@
 
 COMMENT =	intercepting and handling application crashes in KDE
 DISTNAME =	kcrash-${VERSION}
-REVISION =	1
 
-SHARED_LIBS =	KF5Crash	2.0
+SHARED_LIBS =	KF5Crash	3.0
 
-WANTLIB =  ICE KF5CoreAddons KF5WindowSystem ${COMPILER_LIBCXX} Qt5Core Qt5Gui Qt5Widgets
-WANTLIB += Qt5X11Extras SM X11 Xext m
+WANTLIB += ${COMPILER_LIBCXX} ICE KF5CoreAddons KF5WindowSystem
+WANTLIB += Qt5Core Qt5Gui Qt5Widgets Qt5X11Extras SM X11 Xext
+WANTLIB += m
 
 LIB_DEPENDS =	devel/kf5/kcoreaddons \
 		devel/kf5/kwindowsystem \

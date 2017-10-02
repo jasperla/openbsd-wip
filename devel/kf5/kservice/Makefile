@@ -2,12 +2,11 @@
 
 COMMENT =		plugin framework for KDE desktop services
 DISTNAME =		kservice-${VERSION}
-REVISION =		0
 
-SHARED_LIBS =		KF5Service		2.0
+SHARED_LIBS =		KF5Service		3.0
 
-WANTLIB =  KF5ConfigCore KF5CoreAddons KF5Crash KF5DBusAddons
-WANTLIB += KF5I18n ${COMPILER_LIBCXX} Qt5Core Qt5DBus Qt5Xml c m
+WANTLIB += ${COMPILER_LIBCXX} KF5ConfigCore KF5CoreAddons KF5Crash
+WANTLIB += KF5DBusAddons KF5I18n Qt5Core Qt5DBus Qt5Xml c m
 
 MODULES =		lang/python
 

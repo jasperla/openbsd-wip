@@ -2,9 +2,8 @@
 
 COMMENT =	KDE data plotting framework
 DISTNAME =	kplotting-${VERSION}
-REVISION =	0
 
-SHARED_LIBS =	KF5Plotting		2.0
+SHARED_LIBS =	KF5Plotting		3.0
 
 WANTLIB =	${COMPILER_LIBCXX} Qt5Core Qt5Gui Qt5Widgets m
 

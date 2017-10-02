@@ -2,13 +2,13 @@
 
 COMMENT =		XBEL bookmarks format support for KDE
 DISTNAME =		kbookmarks-${VERSION}
-REVISION =		0
 
-SHARED_LIBS =		KF5Bookmarks		2.0
+SHARED_LIBS =		KF5Bookmarks		3.0
 
-WANTLIB =  KF5Auth KF5Codecs KF5ConfigCore KF5ConfigGui KF5ConfigWidgets
-WANTLIB += KF5CoreAddons KF5IconThemes KF5WidgetsAddons KF5XmlGui
-WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5DBus Qt5Gui Qt5Widgets Qt5Xml m
+WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5Codecs KF5ConfigCore
+WANTLIB += KF5ConfigGui KF5ConfigWidgets KF5CoreAddons KF5IconThemes
+WANTLIB += KF5WidgetsAddons KF5XmlGui Qt5Core Qt5DBus Qt5Gui Qt5Widgets
+WANTLIB += Qt5Xml m
 
 MODULES =		lang/python
 

@@ -2,14 +2,13 @@
 
 COMMENT =	global desktop keyboard shortcuts for KDE
 DISTNAME =	kglobalaccel-${VERSION}
-REVISION =	1
 
-SHARED_LIBS =	KF5GlobalAccel		2.0
-SHARED_LIBS +=	KF5GlobalAccelPrivate	2.0
+SHARED_LIBS =	KF5GlobalAccel		3.0
+SHARED_LIBS +=	KF5GlobalAccelPrivate	3.0
 
-WANTLIB += KF5ConfigCore KF5CoreAddons KF5Crash KF5DBusAddons
-WANTLIB += KF5Service KF5WindowSystem ${COMPILER_LIBCXX} Qt5Core Qt5DBus Qt5Gui Qt5Widgets
-WANTLIB += Qt5X11Extras c m xcb xcb-keysyms
+WANTLIB += ${COMPILER_LIBCXX} KF5ConfigCore KF5CoreAddons KF5Crash
+WANTLIB += KF5DBusAddons KF5WindowSystem Qt5Core Qt5DBus Qt5Gui
+WANTLIB += Qt5Widgets Qt5X11Extras c m xcb xcb-keysyms
 
 LIB_DEPENDS =	devel/kf5/kconfig \
 		devel/kf5/kcoreaddons \

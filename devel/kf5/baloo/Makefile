@@ -9,6 +9,16 @@ REVISION =	4
 SHARED_LIBS =	KF5Baloo		1.0
 SHARED_LIBS +=	KF5BalooXapian		1.0
 
+WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5Bookmarks KF5Codecs KF5Completion
+WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5CoreAddons
+WANTLIB += KF5Crash KF5DBusAddons KF5FileMetaData KF5GuiAddons
+WANTLIB += KF5I18n KF5IconThemes KF5IdleTime KF5ItemViews KF5JobWidgets
+WANTLIB += KF5KDELibs4Support KF5KIOCore KF5KIOFileWidgets KF5KIOWidgets
+WANTLIB += KF5Notifications KF5Parts KF5Service KF5Solid KF5SonnetUi
+WANTLIB += KF5TextWidgets KF5UnitConversion KF5WidgetsAddons KF5WindowSystem
+WANTLIB += KF5XmlGui Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5PrintSupport
+WANTLIB += Qt5Qml Qt5Sql Qt5Widgets Qt5Xml c m xapian
+
 #
 # Modern version requires LMDB, see databases/openldap/Makefile,
 # so we create our own tarball with sources for repository revision
@@ -21,16 +31,6 @@ SHARED_LIBS +=	KF5BalooXapian		1.0
 MASTER_SITES =	http://www.ohvost.ru/dnl/
 EXTRACT_SUFX =	.tar.gz
 
-WANTLIB =  KF5Auth KF5Bookmarks KF5Codecs KF5Completion KF5ConfigCore
-WANTLIB += KF5ConfigGui KF5ConfigWidgets KF5CoreAddons KF5Crash
-WANTLIB += KF5DBusAddons KF5FileMetaData KF5GuiAddons KF5I18n
-WANTLIB += KF5IconThemes KF5IdleTime KF5ItemViews KF5JobWidgets
-WANTLIB += KF5KDELibs4Support KF5KIOCore KF5KIOFileWidgets KF5KIOWidgets
-WANTLIB += KF5Notifications KF5Parts KF5Service KF5Solid KF5SonnetUi
-WANTLIB += KF5TextWidgets KF5UnitConversion KF5WidgetsAddons KF5WindowSystem
-WANTLIB += KF5XmlGui
-WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5PrintSupport Qt5Qml Qt5Sql
-WANTLIB += Qt5Widgets Qt5Xml c m pthread xapian
 
 BUILD_DEPENDS =	devel/gettext-tools
 

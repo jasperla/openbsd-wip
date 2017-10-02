@@ -31,14 +31,11 @@ LIB_DEPENDS-main =	audio/taglib \
 			graphics/exiv2 \
 			graphics/ffmpeg \
 			print/poppler,,-qt5 \
-			textproc/ebook-tools
+			textproc/ebook-tools \
+			x11/qt5/qtmultimedia
 
 PKG_ARCH-locale =	*
 
 MODKF5_L10N_CONFLICT-locale =	Yes
-
-# TODO: The following tests FAILED:
-# 9 - externalextractortest (Failed)
-# 11 - externalwritertest (Failed)
 
 .include <bsd.port.mk>

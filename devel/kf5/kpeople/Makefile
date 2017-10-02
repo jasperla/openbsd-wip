@@ -2,15 +2,14 @@
 
 COMMENT =		KDE framework for aggregating and accessing people contacts
 DISTNAME =		kpeople-${VERSION}
-REVISION =		1
 
-SHARED_LIBS =   	KF5People		2.0 # 5.17
-SHARED_LIBS +=  	KF5PeopleBackend	2.0 # 5.17
-SHARED_LIBS +=  	KF5PeopleWidgets	2.0 # 5.17
+SHARED_LIBS =   	KF5People		3.0 # 5.17
+SHARED_LIBS +=  	KF5PeopleBackend	3.0 # 5.17
+SHARED_LIBS +=  	KF5PeopleWidgets	3.0 # 5.17
 
-WANTLIB =  KF5ConfigCore KF5CoreAddons KF5I18n KF5ItemViews KF5Service
-WANTLIB += KF5WidgetsAddons ${COMPILER_LIBCXX} Qt5Core Qt5DBus Qt5Gui Qt5Network
-WANTLIB += Qt5Qml Qt5Sql Qt5Widgets m
+WANTLIB += ${COMPILER_LIBCXX} KF5ConfigCore KF5CoreAddons KF5I18n
+WANTLIB += KF5ItemViews KF5Service KF5WidgetsAddons Qt5Core Qt5DBus
+WANTLIB += Qt5Gui Qt5Network Qt5Qml Qt5Sql Qt5Widgets m
 
 BUILD_DEPENDS =		devel/gettext-tools
 

@@ -2,12 +2,11 @@
 
 COMMENT =		JavaScript/ECMAScript engine for KDE
 DISTNAME =		kjs-${VERSION}
-REVISION =		0
 
-SHARED_LIBS =		KF5JS		2.0
-SHARED_LIBS +=		KF5JSApi	2.0
+SHARED_LIBS =		KF5JS		3.0
+SHARED_LIBS +=		KF5JSApi	3.0
 
-WANTLIB =		${COMPILER_LIBCXX} Qt5Core c m pcre pcreposix pthread
+WANTLIB += ${COMPILER_LIBCXX} Qt5Core c m pcre pcreposix
 
 BUILD_DEPENDS =		devel/gettext-tools \
 			devel/kf5/kdoctools

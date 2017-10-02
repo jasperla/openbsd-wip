@@ -2,9 +2,8 @@
 
 COMMENT =		Qt wrapper for BlueZ 5 DBus API
 DISTNAME =		bluez-qt-${VERSION}
-REVISION =		1
 
-SHARED_LIBS =		KF5BluezQt		2.0
+SHARED_LIBS =		KF5BluezQt		3.0
 
 WANTLIB = ${COMPILER_LIBCXX} Qt5Core Qt5DBus Qt5Network Qt5Qml m
 

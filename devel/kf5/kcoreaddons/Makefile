@@ -2,9 +2,8 @@
 
 COMMENT =	core KDE extensions to Qt classes
 DISTNAME =	kcoreaddons-${VERSION}
-REVISION =	0
 
-SHARED_LIBS =	KF5CoreAddons		2.0
+SHARED_LIBS =	KF5CoreAddons		3.0
 
 WANTLIB =	${COMPILER_LIBCXX} Qt5Core c fam m pthread
 

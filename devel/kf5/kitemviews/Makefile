@@ -2,9 +2,8 @@
 
 COMMENT =		extensions for the Qt model-view framework
 DISTNAME =		kitemviews-${VERSION}
-REVISION =		0
 
-SHARED_LIBS =		KF5ItemViews		2.0
+SHARED_LIBS =		KF5ItemViews		3.0
 
 WANTLIB =		${COMPILER_LIBCXX} Qt5Core Qt5Gui Qt5Widgets m
 

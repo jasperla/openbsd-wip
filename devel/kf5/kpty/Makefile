@@ -2,11 +2,11 @@
 
 COMMENT =		interfacing with pseudo terminal devices in KDE
 DISTNAME =		kpty-${VERSION}
-REVISION =		0
 
-SHARED_LIBS =		KF5Pty		2.0
+SHARED_LIBS =		KF5Pty		3.0
 
-WANTLIB += KF5CoreAddons KF5I18n ${COMPILER_LIBCXX} Qt5Core m util
+WANTLIB += ${COMPILER_LIBCXX} KF5CoreAddons KF5I18n Qt5Core m
+WANTLIB += util
 
 BUILD_DEPENDS =		devel/gettext-tools
 

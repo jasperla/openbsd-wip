@@ -2,9 +2,8 @@
 
 COMMENT =	Utilities for graphical user interfaces
 DISTNAME =	kguiaddons-${VERSION}
-REVISION =	1
 
-SHARED_LIBS =	KF5GuiAddons		2.0
+SHARED_LIBS =	KF5GuiAddons		3.0
 
 WANTLIB =	ICE ${COMPILER_LIBCXX} Qt5Core Qt5Gui Qt5X11Extras SM X11 Xext m xcb
 

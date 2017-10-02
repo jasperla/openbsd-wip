@@ -2,13 +2,12 @@
 
 COMMENT =		widgets for KDE configuration dialogs
 DISTNAME =		kconfigwidgets-${VERSION}
-REVISION =		0
 
-SHARED_LIBS =		KF5ConfigWidgets	2.0
+SHARED_LIBS =		KF5ConfigWidgets	3.0
 
-WANTLIB =  KF5Auth KF5Codecs KF5ConfigCore KF5ConfigGui KF5CoreAddons
-WANTLIB += KF5GuiAddons KF5I18n KF5WidgetsAddons ${COMPILER_LIBCXX} Qt5Core Qt5DBus
-WANTLIB += Qt5Gui Qt5Widgets Qt5Xml m
+WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5Codecs KF5ConfigCore
+WANTLIB += KF5ConfigGui KF5CoreAddons KF5GuiAddons KF5I18n KF5WidgetsAddons
+WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Widgets Qt5Xml m
 
 MODULES =		lang/python
 

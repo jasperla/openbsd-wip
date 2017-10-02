@@ -2,9 +2,8 @@
 
 COMMENT =	KDE hardware abstraction layer
 DISTNAME =	solid-${VERSION}
-REVISION =	1
 
-SHARED_LIBS =	KF5Solid		2.0
+SHARED_LIBS =	KF5Solid		3.0
 
 WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Qml Qt5Widgets
 WANTLIB += Qt5Xml c m

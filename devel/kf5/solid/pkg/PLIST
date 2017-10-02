@@ -46,7 +46,6 @@ lib/cmake/KF5Solid/KF5SolidConfigVersion.cmake
 lib/cmake/KF5Solid/KF5SolidTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/KF5Solid/KF5SolidTargets.cmake
 @lib lib/libKF5Solid.so.${LIBKF5Solid_VERSION}
-lib/qt5/qml/
 lib/qt5/qml/org/
 lib/qt5/qml/org/kde/
 lib/qt5/qml/org/kde/solid/

@@ -2,10 +2,9 @@
 
 COMMENT =	KDE configuration system
 DISTNAME =	kconfig-${VERSION}
-REVISION =	0
 
-SHARED_LIBS =	KF5ConfigCore		2.0
-SHARED_LIBS +=	KF5ConfigGui		2.0
+SHARED_LIBS =	KF5ConfigCore		3.0
+SHARED_LIBS +=	KF5ConfigGui		3.0
 
 WANTLIB =	${COMPILER_LIBCXX} Qt5Core Qt5Gui Qt5Xml c m
 

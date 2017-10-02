@@ -2,9 +2,8 @@
 
 COMMENT =	KDE convenience classes for DBus
 DISTNAME =	kdbusaddons-${VERSION}
-REVISION =	1
 
-SHARED_LIBS =	KF5DBusAddons		2.0
+SHARED_LIBS =	KF5DBusAddons		3.0
 
 WANTLIB =	${COMPILER_LIBCXX} Qt5Core Qt5DBus Qt5Gui Qt5X11Extras c m
 

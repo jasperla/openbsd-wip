@@ -7,12 +7,9 @@ DISTNAME =		sonnet-${VERSION}
 PKGNAME-main =		${DISTNAME}
 PKGNAME-aspell =	sonnet-aspell-${VERSION}
 PKGNAME-hunspell =	sonnet-hunspell-${VERSION}
-REVISION-aspell =	0
-REVISION-hunspell =	0
-REVISION-main =		0
 
-SHARED_LIBS =		KF5SonnetCore		1.0
-SHARED_LIBS +=		KF5SonnetUi		1.0
+SHARED_LIBS =		KF5SonnetCore		2.0
+SHARED_LIBS +=		KF5SonnetUi		2.0
 
 MULTI_PACKAGES =	-main -aspell -hunspell
 

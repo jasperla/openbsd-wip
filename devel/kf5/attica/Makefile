@@ -3,9 +3,8 @@
 COMMENT =	Open Collaboration Services API implementation
 DISTNAME =	attica-${VERSION}
 PKGNAME =	kf5-${DISTNAME}
-REVISION =	0
 
-SHARED_LIBS =	KF5Attica		1.0
+SHARED_LIBS =	KF5Attica		2.0
 
 WANTLIB =	${COMPILER_LIBCXX} Qt5Core Qt5Network m
 

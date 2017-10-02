@@ -2,15 +2,12 @@
 
 COMMENT =		bar code generator
 DISTNAME =		prison-${VERSION}
-REVISION =		0
 
-SHARED_LIBS =		KF5Prison	1.0 # 5.29
+SHARED_LIBS =		KF5Prison	2.0 # 5.29
 
 WANTLIB =		${COMPILER_LIBCXX} Qt5Core Qt5Gui dmtx m qrencode
 
 LIB_DEPENDS =		graphics/libdmtx \
 			graphics/libqrencode
-
-NO_TEST =		Yes
 
 .include <bsd.port.mk>

@@ -91,6 +91,8 @@ lib/cmake/KF5Attica/KF5AtticaTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/KF5Attica/KF5AtticaTargets.cmake
 @lib lib/libKF5Attica.so.${LIBKF5Attica_VERSION}
 lib/pkgconfig/libKF5Attica.pc
+share/examples/xdg/
+share/examples/xdg/attica.categories
 share/kf5/
 share/kf5/mkspecs/
 share/kf5/mkspecs/qt_Attica.pri
