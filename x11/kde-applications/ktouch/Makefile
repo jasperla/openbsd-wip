@@ -6,13 +6,14 @@ CATEGORIES =	education
 
 KDE5 =		Yes
 
-WANTLIB += ICE KF5Auth KF5Codecs KF5Completion KF5ConfigCore KF5ConfigGui
-WANTLIB += KF5ConfigWidgets KF5CoreAddons KF5Declarative KF5I18n
-WANTLIB += KF5ItemViews KF5KCMUtils KF5Package KF5Service KF5SonnetUi
-WANTLIB += KF5TextWidgets KF5WidgetsAddons KF5WindowSystem KF5XmlGui
-WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Qml Qt5Quick Qt5QuickWidgets
-WANTLIB += Qt5Script Qt5Sql Qt5Widgets Qt5X11Extras Qt5Xml Qt5XmlPatterns
-WANTLIB += SM X11 Xext c m xcb xcb-xkb xkbfile
+WANTLIB += ${COMPILER_LIBCXX} ICE KF5Auth KF5Codecs KF5Completion
+WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5CoreAddons
+WANTLIB += KF5Declarative KF5I18n KF5ItemViews KF5KCMUtils KF5Package
+WANTLIB += KF5Service KF5SonnetUi KF5TextWidgets KF5WidgetsAddons
+WANTLIB += KF5WindowSystem KF5XmlGui Qt5Core Qt5DBus Qt5Gui Qt5Network
+WANTLIB += Qt5Qml Qt5Quick Qt5QuickWidgets Qt5Script Qt5Sql Qt5Widgets
+WANTLIB += Qt5X11Extras Qt5Xml Qt5XmlPatterns SM X11 Xext c m
+WANTLIB += xcb xcb-xkb xkbfile
 
 MODULES =	lang/python
 

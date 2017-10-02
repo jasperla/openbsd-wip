@@ -6,11 +6,12 @@ CATEGORIES =	games
 
 KDE5 =		Yes
 
-WANTLIB += KF5Auth KF5Codecs KF5ConfigCore KF5ConfigGui KF5ConfigWidgets
-WANTLIB += KF5CoreAddons KF5Crash KF5DBusAddons KF5I18n KF5KDEGames
-WANTLIB += KF5SonnetUi KF5TextWidgets KF5WidgetsAddons KF5XmlGui
-WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Qml Qt5Quick Qt5QuickWidgets
-WANTLIB += Qt5Widgets Qt5Xml c m
+WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5Codecs KF5ConfigCore
+WANTLIB += KF5ConfigGui KF5ConfigWidgets KF5CoreAddons KF5Crash
+WANTLIB += KF5DBusAddons KF5I18n KF5KDEGames KF5SonnetUi KF5TextWidgets
+WANTLIB += KF5WidgetsAddons KF5XmlGui Qt5Core Qt5DBus Qt5Gui Qt5Network
+WANTLIB += Qt5Qml Qt5Quick Qt5QuickWidgets Qt5Widgets Qt5Xml c
+WANTLIB += m
 
 MODULES =	lang/python
 

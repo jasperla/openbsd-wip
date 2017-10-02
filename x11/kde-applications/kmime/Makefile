@@ -8,7 +8,7 @@ KDE5 =		Yes
 
 SHARED_LIBS +=  KF5Mime                   0.0 # 5.5
 
-WANTLIB += KF5Codecs KF5I18n Qt5Core m
+WANTLIB += ${COMPILER_LIBCXX} KF5Codecs KF5I18n Qt5Core m
 
 BUILD_DEPENDS +=devel/gettext-tools
 

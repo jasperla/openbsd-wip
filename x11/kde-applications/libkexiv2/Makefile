@@ -9,7 +9,7 @@ KDE5 =		Yes
 
 SHARED_LIBS +=  KF5KExiv2                 0.0 # 5.0
 
-WANTLIB += Qt5Core Qt5Gui exiv2 m
+WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5Gui exiv2 m
 
 LIB_DEPENDS =	graphics/exiv2
 

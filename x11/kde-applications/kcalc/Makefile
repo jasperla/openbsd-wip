@@ -6,10 +6,10 @@ CATEGORIES =	x11 math
 
 KDE5 =		Yes
 
-WANTLIB += KF5Auth KF5Codecs KF5ConfigCore KF5ConfigGui KF5ConfigWidgets
-WANTLIB += KF5CoreAddons KF5GuiAddons KF5I18n KF5Notifications
-WANTLIB += KF5WidgetsAddons KF5XmlGui Qt5Core Qt5DBus Qt5Gui Qt5Widgets
-WANTLIB += Qt5Xml c gmp m
+WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5Codecs KF5ConfigCore
+WANTLIB += KF5ConfigGui KF5ConfigWidgets KF5CoreAddons KF5GuiAddons
+WANTLIB += KF5I18n KF5Notifications KF5WidgetsAddons KF5XmlGui
+WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Widgets Qt5Xml c gmp m
 
 MODULES =	lang/python
 

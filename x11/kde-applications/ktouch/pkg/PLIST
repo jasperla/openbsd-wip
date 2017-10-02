@@ -1,6 +1,6 @@
 @comment $OpenBSD$
-@pkgpath x11/kde4/ktouch
 @conflict ktouch-<17.04.1
+@pkgpath x11/kde4/ktouch
 @bin bin/ktouch
 @man man/man1/ktouch.1
 share/applications/org.kde.ktouch.desktop
@@ -155,7 +155,6 @@ share/doc/HTML/uk/ktouch/statistics_over.png
 share/doc/HTML/uk/ktouch/statistics_show.png
 share/doc/HTML/uk/ktouch/training_options.png
 share/doc/HTML/uk/ktouch/welcome_screen.png
-share/doc/pkg-readmes/${FULLPKGNAME}
 share/icons/hicolor/128x128/apps/ktouch.png
 share/icons/hicolor/16x16/apps/ktouch.png
 share/icons/hicolor/22x22/apps/ktouch.png
@@ -272,47 +271,6 @@ share/ktouch/keyboardlayouts/us.colemak.xml
 share/ktouch/keyboardlayouts/us.dvorak.xml
 share/ktouch/keyboardlayouts/us.workman.xml
 share/ktouch/keyboardlayouts/us.xml
-share/ktouch/qml/
-share/ktouch/qml/AccuracyMeter.qml
-share/ktouch/qml/Balloon.qml
-share/ktouch/qml/CharactersPerMinuteMeter.qml
-share/ktouch/qml/CourseDescriptionItem.qml
-share/ktouch/qml/CoursePage.qml
-share/ktouch/qml/CourseSelector.qml
-share/ktouch/qml/CustomLessonSelector.qml
-share/ktouch/qml/DetailedRadioButton.qml
-share/ktouch/qml/ElapsedTimeMeter.qml
-share/ktouch/qml/HomeScreen.qml
-share/ktouch/qml/InfoItem.qml
-share/ktouch/qml/InformationTable.qml
-share/ktouch/qml/InitialProfileForm.qml
-share/ktouch/qml/InlineToolbar.qml
-share/ktouch/qml/KeyItem.qml
-share/ktouch/qml/KeyLabel.qml
-share/ktouch/qml/Keyboard.qml
-share/ktouch/qml/KeyboardLayoutEditor.qml
-share/ktouch/qml/KeyboardUnavailableNotice.qml
-share/ktouch/qml/LearningProgressChart.qml
-share/ktouch/qml/LessonLockedNotice.qml
-share/ktouch/qml/LessonPreview.qml
-share/ktouch/qml/LessonSelector.qml
-share/ktouch/qml/LessonSelectorBase.qml
-share/ktouch/qml/ListItem.qml
-share/ktouch/qml/MessageBox.qml
-share/ktouch/qml/Meter.qml
-share/ktouch/qml/ProfileDetailsItem.qml
-share/ktouch/qml/ProfileForm.qml
-share/ktouch/qml/ProfileSelector.qml
-share/ktouch/qml/ScoreScreen.qml
-share/ktouch/qml/SelectionGrip.qml
-share/ktouch/qml/SelectionRectangle.qml
-share/ktouch/qml/SheetDialog.qml
-share/ktouch/qml/StatBox.qml
-share/ktouch/qml/TrainingScreen.qml
-share/ktouch/qml/TrainingScreenMenuOverlay.qml
-share/ktouch/qml/TrainingScreenToolbar.qml
-share/ktouch/qml/TrainingWidget.qml
-share/ktouch/qml/main.qml
 share/ktouch/schemata/
 share/ktouch/schemata/course.xsd
 share/ktouch/schemata/data.xsd

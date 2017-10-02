@@ -8,16 +8,16 @@ KDE5 =		Yes
 
 SHARED_LIBS +=  gwenviewlib               53.0 # 4.97
 
-WANTLIB += KF5Activities KF5Auth KF5Baloo KF5Bookmarks KF5Codecs
-WANTLIB += KF5Completion KF5ConfigCore KF5ConfigGui KF5ConfigWidgets
-WANTLIB += KF5CoreAddons KF5FileMetaData KF5I18n KF5IconThemes
-WANTLIB += KF5ItemModels KF5ItemViews KF5JobWidgets KF5KDcraw
-WANTLIB += KF5KIOCore KF5KIOFileWidgets KF5KIOWidgets KF5Kipi
-WANTLIB += KF5Notifications KF5Parts KF5Service KF5Solid KF5SonnetUi
-WANTLIB += KF5TextWidgets KF5WidgetsAddons KF5WindowSystem KF5XmlGui
-WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5OpenGL
-WANTLIB += Qt5PrintSupport Qt5Svg Qt5Widgets Qt5X11Extras Qt5Xml
-WANTLIB += X11 c exiv2 jpeg lcms2 m phonon4qt5 png pthread z
+WANTLIB += ${COMPILER_LIBCXX} KF5Activities KF5Auth KF5Baloo KF5Bookmarks
+WANTLIB += KF5Codecs KF5Completion KF5ConfigCore KF5ConfigGui
+WANTLIB += KF5ConfigWidgets KF5CoreAddons KF5FileMetaData KF5I18n
+WANTLIB += KF5IconThemes KF5ItemModels KF5ItemViews KF5JobWidgets
+WANTLIB += KF5KDcraw KF5KIOCore KF5KIOFileWidgets KF5KIOWidgets
+WANTLIB += KF5Kipi KF5Notifications KF5Parts KF5Service KF5Solid
+WANTLIB += KF5SonnetUi KF5TextWidgets KF5WidgetsAddons KF5WindowSystem
+WANTLIB += KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network
+WANTLIB += Qt5OpenGL Qt5PrintSupport Qt5Svg Qt5Widgets Qt5X11Extras
+WANTLIB += Qt5Xml X11 c exiv2 jpeg lcms2 m phonon4qt5 png z
 
 MODULES =	lang/python
 

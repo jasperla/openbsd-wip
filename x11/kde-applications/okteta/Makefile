@@ -15,14 +15,14 @@ SHARED_LIBS +=  kasten3okteta1gui         0.0 # 0.3
 SHARED_LIBS +=  okteta2core               0.0 # 0.9
 SHARED_LIBS +=  okteta2gui                0.0 # 0.9
 
-WANTLIB += KF5Attica KF5Auth KF5Bookmarks KF5Codecs KF5Completion
-WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5CoreAddons
-WANTLIB += KF5DBusAddons KF5I18n KF5IconThemes KF5ItemViews KF5JobWidgets
-WANTLIB += KF5KCMUtils KF5KIOCore KF5KIOFileWidgets KF5KIOWidgets
-WANTLIB += KF5NewStuff KF5NewStuffCore KF5Parts KF5Service KF5Solid
-WANTLIB += KF5SonnetUi KF5TextWidgets KF5WidgetsAddons KF5XmlGui
-WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5PrintSupport Qt5Script
-WANTLIB += Qt5Widgets Qt5Xml c m
+WANTLIB += ${COMPILER_LIBCXX} KF5Attica KF5Auth KF5Bookmarks KF5Codecs
+WANTLIB += KF5Completion KF5ConfigCore KF5ConfigGui KF5ConfigWidgets
+WANTLIB += KF5CoreAddons KF5Crash KF5DBusAddons KF5I18n KF5IconThemes
+WANTLIB += KF5ItemViews KF5JobWidgets KF5KCMUtils KF5KIOCore KF5KIOFileWidgets
+WANTLIB += KF5KIOWidgets KF5NewStuff KF5NewStuffCore KF5Parts
+WANTLIB += KF5Service KF5Solid KF5SonnetUi KF5TextWidgets KF5WidgetsAddons
+WANTLIB += KF5XmlGui Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5PrintSupport
+WANTLIB += Qt5Script Qt5Widgets Qt5Xml
 
 BUILD_DEPENDS +=devel/gettext-tools \
 		devel/kf5/kdoctools

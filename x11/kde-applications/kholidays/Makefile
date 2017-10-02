@@ -6,7 +6,7 @@ CATEGORIES =	graphics
 
 SHARED_LIBS +=  KF5Holidays               0.0 # 5.5
 
-WANTLIB += Qt5Core Qt5Network m
+WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5Network Qt5Qml m
 
 RUN_DEPENDS =	x11/qt5/qtdeclarative
 

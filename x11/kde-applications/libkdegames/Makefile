@@ -9,11 +9,11 @@ KDE5 =		Yes
 SHARED_LIBS +=  KF5KDEGames               0.0 # 7.0
 SHARED_LIBS +=  KF5KDEGamesPrivate        0.0 # 1.0
 
-WANTLIB += KF5Archive KF5Attica KF5Auth KF5Codecs KF5Completion
-WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5CoreAddons
-WANTLIB += KF5DNSSD KF5Declarative KF5GuiAddons KF5I18n KF5IconThemes
-WANTLIB += KF5JobWidgets KF5KIOCore KF5KIOWidgets KF5NewStuff
-WANTLIB += KF5NewStuffCore KF5Package KF5Service KF5WidgetsAddons
+WANTLIB += ${COMPILER_LIBCXX} KF5Archive KF5Attica KF5Auth KF5Codecs
+WANTLIB += KF5Completion KF5ConfigCore KF5ConfigGui KF5ConfigWidgets
+WANTLIB += KF5CoreAddons KF5DNSSD KF5Declarative KF5GuiAddons
+WANTLIB += KF5I18n KF5IconThemes KF5JobWidgets KF5KIOCore KF5KIOWidgets
+WANTLIB += KF5NewStuff KF5NewStuffCore KF5Package KF5Service KF5WidgetsAddons
 WANTLIB += KF5XmlGui Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Qml
 WANTLIB += Qt5Quick Qt5QuickWidgets Qt5Svg Qt5Widgets Qt5Xml m
 WANTLIB += openal sndfile

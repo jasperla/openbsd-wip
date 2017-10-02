@@ -8,8 +8,8 @@ KDE5 =		Yes
 
 SHARED_LIBS +=  KF5IMAP                   0.0 # 5.5
 
-WANTLIB += KF5Codecs KF5ConfigCore KF5CoreAddons KF5I18n KF5KIOCore
-WANTLIB += KF5Mime KF5Service Qt5Core m sasl2
+WANTLIB += ${COMPILER_LIBCXX} KF5Codecs KF5ConfigCore KF5CoreAddons
+WANTLIB += KF5I18n KF5KIOCore KF5Mime KF5Service Qt5Core m sasl2
 
 MODULES +=	lang/python
 

@@ -8,7 +8,7 @@ KDE5 =		Yes
 
 SHARED_LIBS +=  KF5KDcraw                 0.0 # 0.0
 
-WANTLIB += Qt5Core Qt5Gui m raw
+WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5Gui m raw
 
 LIB_DEPENDS =	graphics/libraw
 

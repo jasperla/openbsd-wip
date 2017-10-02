@@ -1,6 +1,6 @@
 @comment $OpenBSD$
-@pkgpath x11/kde4/okteta
 @conflict okteta-<17.04.1
+@pkgpath x11/kde4/okteta
 @bin bin/okteta
 bin/struct2osd
 include/Kasten/
@@ -563,6 +563,9 @@ share/doc/HTML/it/okteta/index.docbook
 share/doc/HTML/nl/okteta/
 share/doc/HTML/nl/okteta/index.cache.bz2
 share/doc/HTML/nl/okteta/index.docbook
+share/doc/HTML/pt/okteta/
+share/doc/HTML/pt/okteta/index.cache.bz2
+share/doc/HTML/pt/okteta/index.docbook
 share/doc/HTML/pt_BR/okteta/
 share/doc/HTML/pt_BR/okteta/index.cache.bz2
 share/doc/HTML/pt_BR/okteta/index.docbook

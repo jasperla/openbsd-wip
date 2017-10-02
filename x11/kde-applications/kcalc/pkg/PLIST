@@ -1,6 +1,6 @@
 @comment $OpenBSD$
-@pkgpath x11/kde4/kcalc
 @conflict kcalc-<17.04.1
+@pkgpath x11/kde4/kcalc
 @bin bin/kcalc
 lib/libkdeinit5_kcalc.so
 share/applications/org.kde.kcalc.desktop
