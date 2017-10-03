@@ -20,7 +20,6 @@
      #SUBDIR += eventviews
      #SUBDIR += ffmpegthumbs
      #SUBDIR += filelight
-     SUBDIR += gpgmepp
      #SUBDIR += granatier
      #SUBDIR += grantleetheme
      SUBDIR += gwenview
