@@ -92,6 +92,12 @@ pre-configure:
 	    perl -pi -e '($$. == 1) && s@^.*$$@#!${LOCALBASE}/bin/bash@' \
 	    ${WRKSRC}/$$F; \
 	done
+	for F in ${FONTFORGE_ADJ_FILES}; do \
+	    perl -pi -e '($$. == 1) && s@^.*$$@#!${LOCALBASE}/bin/fontforge@' \
+	    ${WRKSRC}/$$F; \
+	done
+
+	# This file contains a lookup table of interpreter paths
 	${SUBST_CMD} ${WRKSRC}/texmf-dist/scripts/context/stubs/unix/mtxrun
 
 do-install:
@@ -140,6 +146,11 @@ plist:
 	#	${TRUEPREFIX}/share/examples/py-texscythe/texlive2016.tlpdb.gz
 	cd ${FILESDIR} && env PYTHONPATH=/home/edd/texscythe \
 		${MODPY_BIN} mk_plists.py /home/edd/texscythe/texlive2017.tlpdb.gz
+
+# regenerate adj.mk
+adj:
+	${MODPY_BIN} ${FILESDIR}/mk_adj.py ${WRKINST}${PREFIX}/share/texmf-dist \
+		${WRKINST}${PREFIX}/share > adj.mk
 
 
 .include <bsd.port.mk>
