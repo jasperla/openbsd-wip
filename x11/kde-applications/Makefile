@@ -8,7 +8,7 @@
      SUBDIR += artikulate # WIP
      SUBDIR += audiocd-kio
      #SUBDIR += baloo
-     #SUBDIR += blinken
+     SUBDIR += blinken
      #SUBDIR += bomber
      #SUBDIR += bovo
      #SUBDIR += calendarsupport
