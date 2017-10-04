@@ -3,10 +3,10 @@
      SUBDIR =
      #SUBDIR += kde-l10n
      #SUBDIR += akonadi
-     #SUBDIR += analitza
-     #SUBDIR += ark
-     #SUBDIR += artikulate
-     #SUBDIR += audiocd-kio
+     SUBDIR += analitza
+     SUBDIR += ark
+     SUBDIR += artikulate # WIP
+     SUBDIR += audiocd-kio
      #SUBDIR += baloo
      #SUBDIR += blinken
      #SUBDIR += bomber
@@ -160,8 +160,8 @@
      #SUBDIR += kwalletmanager
      #SUBDIR += kwordquiz
      #SUBDIR += libgravatar
-     #SUBDIR += libkcddb
-     #SUBDIR += libkcompactdisc
+     SUBDIR += libkcddb # cleanup
+     SUBDIR += libkcompactdisc
      SUBDIR += libkdcraw
      SUBDIR += libkdegames
      #SUBDIR += libkdepim
