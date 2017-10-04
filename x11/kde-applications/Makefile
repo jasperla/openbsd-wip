@@ -37,7 +37,7 @@
      #SUBDIR += kanagram
      #SUBDIR += kapman
      #SUBDIR += kapptemplate
-     #SUBDIR += kate
+     SUBDIR += kate
      #SUBDIR += katomic
      #SUBDIR += kblackbox
      #SUBDIR += kblocks
