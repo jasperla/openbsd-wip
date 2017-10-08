@@ -5,8 +5,8 @@ DISTNAME =		kwindowsystem-${VERSION}
 
 SHARED_LIBS =		KF5WindowSystem		3.0
 
-WANTLIB =  ICE ${COMPILER_LIBCXX} Qt5Core Qt5Gui Qt5Widgets Qt5X11Extras SM X11 Xext
-WANTLIB += Xfixes Xrender m xcb xcb-keysyms
+WANTLIB += ${COMPILER_LIBCXX} ICE Qt5Core Qt5Gui Qt5Widgets Qt5X11Extras
+WANTLIB += SM X11 Xext Xfixes Xrender m xcb xcb-keysyms
 
 # tests are likely to fail outside KWin
 TEST_IS_INTERACTIVE =	X11

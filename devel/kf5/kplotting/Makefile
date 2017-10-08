@@ -5,7 +5,7 @@ DISTNAME =	kplotting-${VERSION}
 
 SHARED_LIBS =	KF5Plotting		3.0
 
-WANTLIB =	${COMPILER_LIBCXX} Qt5Core Qt5Gui Qt5Widgets m
+WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5Gui Qt5Widgets m
 
 TEST_IS_INTERACTIVE =	X11
 

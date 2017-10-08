@@ -6,7 +6,7 @@ DISTNAME =	kxmlrpcclient-${VERSION}
 SHARED_LIBS =	KF5XmlRpcClient		2.0
 
 WANTLIB += ${COMPILER_LIBCXX} KF5ConfigCore KF5CoreAddons KF5I18n
-WANTLIB += KF5KIOCore KF5Service Qt5Core Qt5Xml 
+WANTLIB += KF5KIOCore KF5Service Qt5Core Qt5Xml
 
 BUILD_DEPENDS =	devel/gettext-tools
 

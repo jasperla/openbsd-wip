@@ -5,7 +5,8 @@ DISTNAME =	kdbusaddons-${VERSION}
 
 SHARED_LIBS =	KF5DBusAddons		3.0
 
-WANTLIB =	${COMPILER_LIBCXX} Qt5Core Qt5DBus Qt5Gui Qt5X11Extras c m
+WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5DBus Qt5Gui Qt5X11Extras
+WANTLIB += c m
 
 LIB_DEPENDS =	x11/qt5/qtx11extras
 

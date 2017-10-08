@@ -5,19 +5,18 @@ COMMENT-locale =localization files of kfilemetadata
 DISTNAME =	kfilemetadata-${VERSION}
 PKGNAME-main =	kf5-kfilemetadata-${VERSION}
 PKGNAME-locale =kf5-kfilemetadata-l10n-${VERSION}
-REVISION-locale =	0
-REVISION-main =	1
 
-SHARED_LIBS =	KF5FileMetaData		2.0 # 5.20
+SHARED_LIBS =	KF5FileMetaData		3.0 # 5.20
 
 # split l10n off main package to deconflict with KDE4's kfilemetadata
 # use -locale instead of -l10n to please update-plist
 MULTI_PACKAGES =	-main -locale
 
 WANTLIB-locale =
-WANTLIB-main =	${WANTLIB} KF5Archive KF5I18n ${COMPILER_LIBCXX} Qt5Core Qt5Xml
-WANTLIB-main +=	avcodec avformat avutil epub exiv2 poppler-qt5 tag
-WANTLIB-main +=	m poppler
+
+WANTLIB += ${COMPILER_LIBCXX} KF5Archive KF5I18n Qt5Core Qt5Xml
+WANTLIB += avcodec avformat avutil epub exiv2 m poppler poppler-qt5
+WANTLIB += tag
 
 BUILD_DEPENDS =		devel/gettext-tools
 

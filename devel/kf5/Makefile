@@ -30,7 +30,6 @@ SUBDIR += sonnet		# 100% tests passed, 0 tests failed out of 4
 SUBDIR += threadweaver		# 100% tests passed, 0 tests failed out of 7
 SUBDIR += syntax-highlighting	# 100% tests passed, 0 tests failed out of 8
 SUBDIR += prison		# NO_TEST
-SUBDIR += kirigami2		# 
 
 # tier 2
 SUBDIR += kauth			# 100% tests passed, 0 tests failed out of 2
@@ -41,7 +40,7 @@ SUBDIR += kfilemetadata		# 100% tests passed, 0 tests failed out of 12
 SUBDIR += kimageformats		# 8% tests passed, 12 tests failed out of 13
 SUBDIR += kjobwidgets		# NO_TEST
 SUBDIR += knotifications	# 100% tests passed, 0 tests failed out of 1
-SUBDIR += kpty			# XXX
+SUBDIR += kpty			# 0% tests passed, 1 tests failed out of 1
 SUBDIR += kunitconversion	# 100% tests passed, 0 tests failed out of 3
 SUBDIR += kpackage		# 50% tests passed, 5 tests failed out of 10
 
@@ -69,19 +68,19 @@ SUBDIR += kxmlrpcclient		# 100% tests passed, 0 tests failed out of 2
 SUBDIR += kdeclarative		# 100% tests passed, 0 tests failed out of 2
 SUBDIR += kcmutils		# NO_TEST
 SUBDIR += kdewebkit		# NO_TEST
-SUBDIR += baloo			# TODO
+SUBDIR += baloo			# 79% tests passed, 4 tests failed out of 19
 SUBDIR += kdesignerplugin	# 100% tests passed, 0 tests failed out of 2
 SUBDIR += knotifyconfig		# NO_TEST
-SUBDIR += ktexteditor		# TODO
-SUBDIR += plasma-framework	# TODO
-SUBDIR += krunner		# TODO
+SUBDIR += ktexteditor		# 100% tests passed, 0 tests failed out of 66
+SUBDIR += plasma-framework	# 71% tests passed, 4 tests failed out of 14
+SUBDIR += krunner		# 50% tests passed, 1 tests failed out of 2
 
 # tier 4
 SUBDIR += frameworkintegration	# 100% tests passed, 0 tests failed out of 1
 
 # porting aids
-SUBDIR += kdelibs4support	# TODO
-SUBDIR += khtml			# TODO
+SUBDIR += kdelibs4support	# 90% tests passed, 4 tests failed out of 39
+SUBDIR += khtml			# 100% tests passed, 0 tests failed out of 2
 SUBDIR += kjs			# 100% tests passed, 0 tests failed out of 1
 SUBDIR += kjsembed		# NO_TEST
 SUBDIR += kmediaplayer		# 100% tests passed, 0 tests failed out of 2

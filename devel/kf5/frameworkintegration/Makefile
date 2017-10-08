@@ -2,15 +2,12 @@
 
 COMMENT =	KDE Plasma integration support for Qt-based apps
 DISTNAME =	frameworkintegration-${VERSION}
-REVISION =	2
 
-SHARED_LIBS =	KF5Style		2.0
+SHARED_LIBS =	KF5Style		3.0
 
-WANTLIB += KF5Attica KF5Auth KF5Codecs KF5ConfigCore KF5ConfigGui
-WANTLIB += KF5ConfigWidgets KF5CoreAddons KF5I18n KF5IconThemes
-WANTLIB += KF5NewStuffCore KF5Notifications KF5WidgetsAddons ${COMPILER_LIBCXX} Qt5Core
-WANTLIB += Qt5Gui Qt5Network Qt5Widgets Qt5X11Extras Qt5Xml c
-WANTLIB += m xcb
+WANTLIB += ${COMPILER_LIBCXX} KF5Attica KF5ConfigCore KF5CoreAddons
+WANTLIB += KF5I18n KF5NewStuffCore KF5Notifications KF5WidgetsAddons
+WANTLIB += Qt5Core Qt5Gui Qt5Network Qt5Widgets c m
 
 BUILD_DEPENDS =	devel/gettext-tools \
 		devel/kf5/ki18n \

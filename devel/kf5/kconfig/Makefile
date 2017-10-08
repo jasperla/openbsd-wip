@@ -6,7 +6,7 @@ DISTNAME =	kconfig-${VERSION}
 SHARED_LIBS =	KF5ConfigCore		3.0
 SHARED_LIBS +=	KF5ConfigGui		3.0
 
-WANTLIB =	${COMPILER_LIBCXX} Qt5Core Qt5Gui Qt5Xml c m
+WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5Gui Qt5Xml c m
 
 # for tests
 PORTHOME =		${WRKDIR}

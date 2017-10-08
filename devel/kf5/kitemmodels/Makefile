@@ -5,7 +5,7 @@ DISTNAME =		kitemmodels-${VERSION}
 
 SHARED_LIBS =		KF5ItemModels		3.0
 
-WANTLIB =		${COMPILER_LIBCXX} Qt5Core m
+WANTLIB += ${COMPILER_LIBCXX} Qt5Core m
 
 BUILD_DEPENDS =		x11/qt5/qtdeclarative \
 			x11/qt5/qtquickcontrols \

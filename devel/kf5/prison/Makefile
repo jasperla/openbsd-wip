@@ -5,7 +5,8 @@ DISTNAME =		prison-${VERSION}
 
 SHARED_LIBS =		KF5Prison	2.0 # 5.29
 
-WANTLIB =		${COMPILER_LIBCXX} Qt5Core Qt5Gui dmtx m qrencode
+WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5Gui dmtx m qrencode
+
 
 LIB_DEPENDS =		graphics/libdmtx \
 			graphics/libqrencode

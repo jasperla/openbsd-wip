@@ -5,7 +5,7 @@ DISTNAME =		kdnssd-${VERSION}
 
 SHARED_LIBS =		KF5DNSSD	3.0
 
-WANTLIB =		${COMPILER_LIBCXX} Qt5Core Qt5DBus Qt5Network m
+WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5DBus Qt5Network m
 
 BUILD_DEPENDS =		net/avahi
 RUN_DEPENDS =		net/avahi

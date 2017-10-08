@@ -2,18 +2,16 @@
 
 COMMENT =		fully featured text editor component
 DISTNAME =		ktexteditor-${VERSION}
-REVISION =		1
 
-SHARED_LIBS =		KF5TextEditor		2.0
+SHARED_LIBS =		KF5TextEditor		3.0
 
-WANTLIB += c ${COMPILER_LIBCXX}
-WANTLIB += KF5Archive KF5Auth KF5Codecs KF5Completion KF5ConfigCore
-WANTLIB += KF5ConfigGui KF5ConfigWidgets KF5CoreAddons KF5GuiAddons
-WANTLIB += KF5I18n KF5IconThemes KF5ItemViews KF5JobWidgets KF5KIOCore
-WANTLIB += KF5KIOWidgets KF5Parts KF5Service KF5SonnetCore KF5SonnetUi
-WANTLIB += KF5TextWidgets KF5WidgetsAddons KF5XmlGui Qt5Core Qt5DBus
-WANTLIB += Qt5Gui Qt5Network Qt5PrintSupport Qt5Script Qt5Widgets
-WANTLIB += Qt5Xml git2 m KF5SyntaxHighlighting
+WANTLIB += ${COMPILER_LIBCXX} KF5Archive KF5Auth KF5Codecs KF5Completion
+WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5CoreAddons
+WANTLIB += KF5GuiAddons KF5I18n KF5IconThemes KF5ItemViews KF5JobWidgets
+WANTLIB += KF5KIOCore KF5KIOWidgets KF5Parts KF5Service KF5SonnetCore
+WANTLIB += KF5SonnetUi KF5SyntaxHighlighting KF5TextWidgets KF5WidgetsAddons
+WANTLIB += KF5XmlGui Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5PrintSupport
+WANTLIB += Qt5Qml Qt5Widgets Qt5Xml c git2 m
 
 BUILD_DEPENDS =		devel/gettext-tools
 
