@@ -2,6 +2,14 @@
 """
 Generate adj.mk.
 
+This script recursively inspects a directory looking for files with shebangs
+(e.g. #!/bin/sh). Interpreter paths which are dynamic (depend upon LOCALBASE
+and are not in OpenBSD base) are emitted into adj.mk under the appropriate make
+variable for later substitution.
+
+In case an unknown interpreter is encountered, or an interpreter path requires
+manual patching, warnings are printed to stderr.
+
 Usage: mk_adj.py <root-dir> <strip-prefix>
 
 Arguments:
@@ -15,47 +23,38 @@ import re
 from collections import OrderedDict, defaultdict
 
 class UnknownInterpreterError(Exception): pass
+class ExtraInterpArgsError(Exception): pass
 
 
 # Decides if the first line of a file looks like a shebang and groups
-# the interpreter path for later inspection
-SHEBANG_PATTERN = re.compile("#\s*!\s*(\S+)")
-ENV_SHEBANG_PATTERN = re.compile("#\s*!\s*\S*\/env\s+(\S+)")
+# the interpreter path and arguments for later inspection
+SHEBANG_PATTERN = re.compile("#\s*!\s*(\S+)(.*)")
 
-# XXX use basenames to better match interpreters
-KNOWN_INTERPRETERS = [
-    # Allowed hard-coded paths
-    ("/bin/ksh", None),
-    ("/bin/sh", None),
-    ("/usr/bin/perl", None),
-    ("/usr/bin/awk", None),
-    ("/bin/csh", None),
-    # Stuff that should always be substituted
-    (".*bash$", "BASH_ADJ_FILES"),
-    (".*python2", "PYTHON2_ADJ_FILES"),
-    (".*python3", "PYTHON3_ADJ_FILES"),
-    (".*python$", "PYTHON2_ADJ_FILES"),  # assume Python2
-    (".*ruby$", "RUBY_ADJ_FILES"),
-    (".*texlua$", "TEXLUA_ADJ_FILES"),
-    (".*lua$", "LUA_ADJ_FILES"),  # must come after texlua XXX
-    (".*wish8.5$", "WISH_ADJ_FILES"),
-    (".*wish$", "WISH_ADJ_FILES"),
-    (".*perl$", "MODPERL_ADJ_FILES"),
-    (".*fontforge$", "FONTFORGE_ADJ_FILES"),
+# OpenBSD base interpreter paths (which can remain hard-coded).
+BASE_INTERPRETERS = [
+    "/bin/csh",
+    "/bin/ksh",
+    "/bin/sh",
+    "/usr/bin/awk",
+    "/usr/bin/perl",
 ]
-KNOWN_INTERPRETERS = OrderedDict((re.compile(pat), subst_var) for
-                                 pat, subst_var in KNOWN_INTERPRETERS)
 
-
-def match_interpreter(interp):
-    for interp_re, subst_var in KNOWN_INTERPRETERS.iteritems():
-        match = re.match(interp_re, interp)
-        if match:
-            return subst_var
-    raise UnknownInterpreterError(interp)
+SUBST_INTERPRETERS = {
+    "bash": "BASH_ADJ_FILES",
+    "fontforge": "FONTFORGE_ADJ_FILES",
+    "lua": "LUA_ADJ_FILES",
+    "perl": "MODPERL_ADJ_FILES",
+    "python": "PYTHON2_ADJ_FILES",
+    "python2": "PYTHON2_ADJ_FILES",
+    "python3": "PYTHON3_ADJ_FILES",
+    "ruby": "RUBY_ADJ_FILES",
+    "texlua": "TEXLUA_ADJ_FILES",
+    "wish": "WISH_ADJ_FILES",
+}
 
 def process_file(dirpath, filename, substs, strip_prefix):
     path = os.path.join(dirpath, filename)
+    stripped_path = os.path.relpath(path, strip_prefix)
 
     try:
         fh = open(path)
@@ -72,30 +71,56 @@ def process_file(dirpath, filename, substs, strip_prefix):
     if "@" in line1 and filename.endswith(".in"):
         return
 
-    # Search for a shebang and try to find the interpreter name
-    match = re.match(ENV_SHEBANG_PATTERN, line1)
+    match = re.match(SHEBANG_PATTERN, line1)
     if not match:
-        match = re.match(SHEBANG_PATTERN, line1)
-        if not match:
-            return
+        return  # No shebang
 
     interp = match.group(1)
-    subst_var = None
-    try:
-        subst_var = match_interpreter(interp)
-    except UnknownInterpreterError as e:
-        sys.stderr.write("warning: unknown interpreter: %s: %s\n" % (str(e), path))
+    if interp in BASE_INTERPRETERS:
+        # Fine as-is
         return
 
-    if subst_var:
-        substs[subst_var].add(os.path.relpath(path, strip_prefix))
+    interp = os.path.basename(interp)
+    interp_args = match.group(2).split()
+
+    # If the interpreter is `env`, we want to look at the next field
+    if interp == "env":
+        interp = interp_args[0]
+        interp_args = interp_args[1:]
+
+    subst_var = None
+    try:
+        subst_var = SUBST_INTERPRETERS[interp]
+    except KeyError as e:
+        raise UnknownInterpreterError(stripped_path, interp)
+        return
+
+    if interp_args:
+        raise ExtraInterpArgsError(stripped_path, interp, " ".join(interp_args))
+
+    substs[subst_var].add(os.path.relpath(path, strip_prefix))
 
 
 def main(root_dir, strip_prefix):
+    # subsitutions: maps make variables to a set of files
     substs = defaultdict(set)
+
+    # Files whose interpreters have extra args, thus need manual patching
+    # Contains triples: (filename, interpreter, args)
+    extra_interp_args_files = []
+
+    # Files whose interpreters are mysterious and unknown.
+    # Contains pairs: (filename, interpreter)
+    unknown_interp_files = []
+
     for dirpath, dirname, filenames in os.walk(root_dir):
         for filename in filenames:
-            process_file(dirpath, filename, substs, strip_prefix)
+            try:
+                process_file(dirpath, filename, substs, strip_prefix)
+            except UnknownInterpreterError as e:
+                unknown_interp_files.append(e.args)
+            except ExtraInterpArgsError as e:
+                extra_interp_args_files.append(e.args)
 
     print("# $OpenBSD$")
     print("#")
@@ -104,6 +129,18 @@ def main(root_dir, strip_prefix):
     for subst_var, paths in sorted(substs.iteritems(), key=lambda t: t[0]):
         joined_paths = " \\\n\t".join(sorted(paths))
         print("\n%s += \\\n\t%s" % (subst_var, joined_paths))
+
+    # Emit any errors to stderr
+    if extra_interp_args_files:
+        sys.stderr.write("\nwarning: the following files have extra intepreter args "
+                         "and should be manually patched:\n")
+        for tup in extra_interp_args_files:
+            sys.stderr.write("    %s: %s %s\n" % tup)
+
+    if unknown_interp_files:
+        sys.stderr.write("\nwarning: the following files have unknown interpreters:\n")
+        for tup in unknown_interp_files:
+            sys.stderr.write("    %s: %s\n" % tup)
 
 
 if __name__ == "__main__":
