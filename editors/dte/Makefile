@@ -1,6 +1,6 @@
 # $OpenBSD$
 
-V =		1.3
+V =		1.4
 COMMENT =	small and easy to use console text editor
 DISTNAME =	dte-${V}
 CATEGORIES =	editors
@@ -15,9 +15,6 @@ MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += c curses iconv
-
-# Needs C11
-COMPILER =	base-clang ports-clang ports-gcc
 
 LIB_DEPENDS =	converters/libiconv
 

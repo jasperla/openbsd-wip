@@ -1,0 +1,4 @@
+mined is a simple text editor, originally from Minix, primarily designed
+for use when a system is booted single-user and has no /usr (and thus no
+access to vi(1) or mg(1)). Help can be obtained by pressing the F1 key
+while in the editor.
