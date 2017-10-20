@@ -1,0 +1,14 @@
+Zig is an open-source programming language designed for robustness,
+optimality, and clarity. Zig is a new programming language that is
+designed to replace C.
+
+* Robust - behavior is correct even for edge cases such as out of
+  memory.
+
+* Optimal - write programs the best way they can behave and perform.
+
+* Clear - precisely communicate your intent to the compiler and other
+  programmers. The language imposes a low overhead to reading code.
+
+Zig can be used to integrate closely with existing C code, or
+independently, without libc.
