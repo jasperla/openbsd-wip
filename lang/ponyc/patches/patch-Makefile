@@ -1,0 +1,48 @@
+$OpenBSD$
+
+Index: Makefile
+--- Makefile.orig
++++ Makefile
+@@ -31,6 +31,12 @@ else
+     OSTYPE = bsd
+     CXX = c++
+   endif
++
++  ifeq ($(UNAME_S),OpenBSD)
++    OSTYPE = bsd
++    CXX = c++
++  endif
++
+ endif
+ 
+ ifdef LTO_PLUGIN
+@@ -81,9 +87,9 @@ prefix ?= /usr/local
+ destdir ?= $(prefix)/lib/pony/$(tag)
+ 
+ LIB_EXT ?= a
+-BUILD_FLAGS = -march=$(arch) -mtune=$(tune) -Werror -Wconversion \
++BUILD_FLAGS = -Wconversion \
+   -Wno-sign-conversion -Wextra -Wall
+-LINKER_FLAGS = -march=$(arch) -mtune=$(tune)
++LINKER_FLAGS =
+ AR_FLAGS ?= rcs
+ ALL_CFLAGS = -std=gnu11 -fexceptions \
+   -DPONY_VERSION=\"$(tag)\" -DLLVM_VERSION=\"$(llvm_version)\" \
+@@ -162,7 +168,7 @@ ifdef config
+ endif
+ 
+ ifeq ($(config),release)
+-  BUILD_FLAGS += -O3 -DNDEBUG
++  BUILD_FLAGS += -DNDEBUG
+ 
+   ifeq ($(lto),yes)
+     BUILD_FLAGS += -flto -DPONY_USE_LTO
+@@ -700,7 +706,7 @@ $($(1))/libponyrt.bc: $(depends) $(bcfiles)
+ 	@echo 'Generating bitcode for libponyrt'
+ 	$(SILENT)$(LLVM_LINK) -o $$@ $(bcfiles)
+     ifeq ($(config),release)
+-	$(SILENT)$(LLVM_OPT) -O3 -o $$@ $$@
++	$(SILENT)$(LLVM_OPT) -o $$@ $$@
+     endif
+ libponyrt: $($(1))/libponyrt.bc $($(1))/libponyrt.$(LIB_EXT)
+   else

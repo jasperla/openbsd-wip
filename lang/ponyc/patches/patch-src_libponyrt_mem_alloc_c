@@ -1,0 +1,16 @@
+$OpenBSD$
+
+Index: src/libponyrt/mem/alloc.c
+--- src/libponyrt/mem/alloc.c.orig
++++ src/libponyrt/mem/alloc.c
+@@ -13,6 +13,10 @@
+ #include <mach/vm_statistics.h>
+ #endif
+ 
++#ifdef PLATFORM_IS_OPENBSD
++#define MAP_ALIGNED_SUPER 0
++#endif
++
+ void* ponyint_virt_alloc(size_t bytes)
+ {
+   void* p;
