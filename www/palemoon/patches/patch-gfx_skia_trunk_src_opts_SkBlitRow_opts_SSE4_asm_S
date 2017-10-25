@@ -1,0 +1,16 @@
+$OpenBSD$
+
+Disable SSE4 assembly instructions.
+
+Index: gfx/skia/trunk/src/opts/SkBlitRow_opts_SSE4_asm.S
+--- gfx/skia/trunk/src/opts/SkBlitRow_opts_SSE4_asm.S.orig
++++ gfx/skia/trunk/src/opts/SkBlitRow_opts_SSE4_asm.S
+@@ -7,7 +7,7 @@
+ 
+ #include <SkPreConfig.h>
+ 
+-#if defined(__clang__) || (defined(__GNUC__) && !defined(SK_BUILD_FOR_MAC))
++#if 0
+ 
+ #define CFI_PUSH(REG) \
+     .cfi_adjust_cfa_offset 4; \
