@@ -2,7 +2,6 @@
 
 COMMENT =		base binaries for TeXLive typesetting distribution
 
-# This year they used a different datestamp on the -source tarball.
 DISTNAME =		texlive-${DIST_V}-source
 PKGNAME =		texlive_base-${V}
 WRKDIST =		${WRKDIR}/texlive-${DIST_V}-source

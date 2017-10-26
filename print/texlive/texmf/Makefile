@@ -37,15 +37,15 @@ MODRUBY_RUNDEP =	No
 MODPY_BUILDDEP =	No
 MODPY_RUNDEP =		No
 
-#RUN_DEPENDS-main +=	texlive_base-${V}:print/texlive/base \
-#			texlive_texmf-buildset-${V}:print/texlive/texmf,-buildset
-#RUN_DEPENDS-full =	texlive_texmf-minimal-${V}:print/texlive/texmf,-main \
-#			${MODPY_RUN_DEPENDS} \
-#			${_MODLUA_RUNDEPENDS}
-#RUN_DEPENDS-context +=	texlive_texmf-full-${V}:print/texlive/texmf,-full \
-#			${MODRUBY_RUNDEPENDS}
-#RUN_DEPENDS-docs +=	texlive_base-${V}:print/texlive/base \
-#			x11/p5-Tk
+RUN_DEPENDS-main +=	texlive_base-${V}:print/texlive/base \
+			texlive_texmf-buildset-${V}:print/texlive/texmf,-buildset
+RUN_DEPENDS-full =	texlive_texmf-minimal-${V}:print/texlive/texmf,-main \
+			${MODPY_RUN_DEPENDS} \
+			${_MODLUA_RUNDEPENDS}
+RUN_DEPENDS-context +=	texlive_texmf-full-${V}:print/texlive/texmf,-full \
+			${MODRUBY_RUNDEPENDS}
+RUN_DEPENDS-docs +=	texlive_base-${V}:print/texlive/base \
+			x11/p5-Tk
 
 MULTI_PACKAGES =	-context -docs -full -main -buildset
 
@@ -68,33 +68,48 @@ pre-configure:
 	@# Don't use substitution from the Python port, since we need to swap in
 	@# different versions.
 	for F in ${PYTHON2_ADJ_FILES}; do \
-	    perl -pi -e '($$. == 1) && s@^.*$$@#!${LOCALBASE}/bin/python${MODPY_DEFAULT_VERSION_2}@' ${WRKSRC}/$$F; \
+	    perl -pi \
+	    -e '$$. == 1 && s|^.*env python[0-9.]*([\s].*)?$$|\#!${LOCALBASE}/bin/python${MODPY_DEFAULT_VERSION_2}$$1|;' \
+	    -e '$$. == 1 && s|^.*python[0-9.]*([\s].*)?$$|\#!${LOCALBASE}/bin/python${MODPY_DEFAULT_VERSION_2}$$1|;' \
+	    -e 'close ARGV if eof;' ${WRKSRC}/$$F; \
 	done
 	for F in ${PYTHON3_ADJ_FILES}; do \
-	    perl -pi -e '($$. == 1) && s@^.*$$@#!${LOCALBASE}/bin/python${MODPY_DEFAULT_VERSION_3}@' ${WRKSRC}/$$F; \
+	    perl -pi \
+	    -e '$$. == 1 && s|^.*env python[0-9.]*([\s].*)?$$|\#!${LOCALBASE}/bin/python${MODPY_DEFAULT_VERSION_3}$$1|;' \
+	    -e '$$. == 1 && s|^.*python[0-9.]*([\s].*)?$$|\#!${LOCALBASE}/bin/python${MODPY_DEFAULT_VERSION_3}$$1|;' \
+	    -e 'close ARGV if eof;' ${WRKSRC}/$$F; \
 	done
-	@# Don't use builtin ruby.port.mk substitution. It uses
-	@# find, which takes an age on such a large directory.
+	@# Don't use ${MODRUBY_ADJ_FILES} as ruby.port.mk uses find(1) which
+	@# takes an age on such a large directory.
 	for F in ${RUBY_ADJ_FILES}; do \
-	    perl -pi -e '($$. == 1) && s@^.*$$@#!${RUBY}@' ${WRKSRC}/$$F; \
+		${MODRUBY_RUBY_ADJ} $$F; \
 	done
 	for F in ${WISH_ADJ_FILES}; do \
 	    ${MODTCL_WISH_ADJ} ${WRKSRC}/$$F; \
 	done
 	for F in ${TEXLUA_ADJ_FILES}; do \
-	    perl -pi -e '($$. == 1) && s@^.*$$@#!${PREFIX}/bin/texlua@' \
-	    ${WRKSRC}/$$F; \
+	    perl -pi \
+	    -e '$$. == 1 && s|^.*env texlua([\s].*)?$$|\#!${LOCALBASE}/bin/texlua$$1|;' \
+	    -e '$$. == 1 && s|^.*texlua([\s].*)?$$|\#!${LOCALBASE}/bin/texlua$$1|;' \
+	    -e 'close ARGV if eof;' ${WRKSRC}/$$F; \
 	done
 	for F in ${LUA_ADJ_FILES}; do \
-	    perl -pi -e '($$. == 1) && s@^.*$$@#!${MODLUA_BIN}@' ${WRKSRC}/$$F; \
+	    perl -pi \
+	    -e '$$. == 1 && s|^.*env lua([\s].*)?$$|\#!${LOCALBASE}/bin/lua$$1|;' \
+	    -e '$$. == 1 && s|^.*lua([\s].*)?$$|\#!${LOCALBASE}/bin/lua$$1|;' \
+	    -e 'close ARGV if eof;' ${WRKSRC}/$$F; \
 	done
 	for F in ${BASH_ADJ_FILES}; do \
-	    perl -pi -e '($$. == 1) && s@^.*$$@#!${LOCALBASE}/bin/bash@' \
-	    ${WRKSRC}/$$F; \
+	    perl -pi \
+	    -e '$$. == 1 && s|^.*env bash([\s].*)?$$|\#!${LOCALBASE}/bin/bash$$1|;' \
+	    -e '$$. == 1 && s|^.*bash([\s].*)?$$|\#!${LOCALBASE}/bin/bash$$1|;' \
+	    -e 'close ARGV if eof;' ${WRKSRC}/$$F; \
 	done
 	for F in ${FONTFORGE_ADJ_FILES}; do \
-	    perl -pi -e '($$. == 1) && s@^.*$$@#!${LOCALBASE}/bin/fontforge@' \
-	    ${WRKSRC}/$$F; \
+	    perl -pi \
+	    -e '$$. == 1 && s|^.*env fontforge([\s].*)?$$|\#!${LOCALBASE}/bin/fontforge$$1|;' \
+	    -e '$$. == 1 && s|^.*fontforge([\s].*)?$$|\#!${LOCALBASE}/bin/fontforge$$1|;' \
+	    -e 'close ARGV if eof;' ${WRKSRC}/$$F; \
 	done
 
 	# This file contains a lookup table of interpreter paths
@@ -149,8 +164,8 @@ plist:
 
 # regenerate adj.mk
 adj:
-	${MODPY_BIN} ${FILESDIR}/mk_adj.py ${WRKINST}${PREFIX}/share/texmf-dist \
-		${WRKINST}${PREFIX}/share > adj.mk
+	${MODPY_BIN} ${FILESDIR}/mk_adj.py ${WRKSRC}/texmf-dist \
+		${WRKSRC} > adj.mk
 
 
 .include <bsd.port.mk>

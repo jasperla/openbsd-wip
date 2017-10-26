@@ -20,10 +20,11 @@ Arguments:
 import os
 import sys
 import re
-from collections import OrderedDict, defaultdict
+from collections import defaultdict
 
-class UnknownInterpreterError(Exception): pass
-class ExtraInterpArgsError(Exception): pass
+
+class UnknownInterpreterError(Exception):
+    pass
 
 
 # Decides if the first line of a file looks like a shebang and groups
@@ -46,11 +47,15 @@ SUBST_INTERPRETERS = {
     "perl": "MODPERL_ADJ_FILES",
     "python": "PYTHON2_ADJ_FILES",
     "python2": "PYTHON2_ADJ_FILES",
+    "python2.7": "PYTHON2_ADJ_FILES",
     "python3": "PYTHON3_ADJ_FILES",
+    "python3.6": "PYTHON3_ADJ_FILES",
     "ruby": "RUBY_ADJ_FILES",
     "texlua": "TEXLUA_ADJ_FILES",
     "wish": "WISH_ADJ_FILES",
+    "wish8.5": "WISH_ADJ_FILES",
 }
+
 
 def process_file(dirpath, filename, substs, strip_prefix):
     path = os.path.join(dirpath, filename)
@@ -91,12 +96,9 @@ def process_file(dirpath, filename, substs, strip_prefix):
     subst_var = None
     try:
         subst_var = SUBST_INTERPRETERS[interp]
-    except KeyError as e:
+    except KeyError:
         raise UnknownInterpreterError(stripped_path, interp)
         return
-
-    if interp_args:
-        raise ExtraInterpArgsError(stripped_path, interp, " ".join(interp_args))
 
     substs[subst_var].add(os.path.relpath(path, strip_prefix))
 
@@ -107,7 +109,6 @@ def main(root_dir, strip_prefix):
 
     # Files whose interpreters have extra args, thus need manual patching
     # Contains triples: (filename, interpreter, args)
-    extra_interp_args_files = []
 
     # Files whose interpreters are mysterious and unknown.
     # Contains pairs: (filename, interpreter)
@@ -119,8 +120,6 @@ def main(root_dir, strip_prefix):
                 process_file(dirpath, filename, substs, strip_prefix)
             except UnknownInterpreterError as e:
                 unknown_interp_files.append(e.args)
-            except ExtraInterpArgsError as e:
-                extra_interp_args_files.append(e.args)
 
     print("# $OpenBSD$")
     print("#")
@@ -131,14 +130,9 @@ def main(root_dir, strip_prefix):
         print("\n%s += \\\n\t%s" % (subst_var, joined_paths))
 
     # Emit any errors to stderr
-    if extra_interp_args_files:
-        sys.stderr.write("\nwarning: the following files have extra intepreter args "
-                         "and should be manually patched:\n")
-        for tup in extra_interp_args_files:
-            sys.stderr.write("    %s: %s %s\n" % tup)
-
     if unknown_interp_files:
-        sys.stderr.write("\nwarning: the following files have unknown interpreters:\n")
+        sys.stderr.write("\nwarning: the following files have "
+                         "unknown interpreters:\n")
         for tup in unknown_interp_files:
             sys.stderr.write("    %s: %s\n" % tup)
 

@@ -86,7 +86,10 @@ BASH_ADJ_FILES += \
 	texmf-dist/source/latex/stex/bin/installFonts.sh
 
 FONTFORGE_ADJ_FILES += \
+	texmf-dist/doc/fonts/berenisadf/ff-ybd.pe \
 	texmf-dist/doc/fonts/drm/fontconvert.sh \
+	texmf-dist/doc/fonts/gnu-freefont/tools/report/kernclasses.py \
+	texmf-dist/doc/fonts/gnu-freefont/tools/utility/metafont/bulk_eps_import.py \
 	texmf-dist/source/fonts/arev/fonttokernsfd.ff \
 	texmf-dist/source/fonts/arev/fonttopfb.ff \
 	texmf-dist/source/fonts/cantarell/sfd2type1.pe \
@@ -129,6 +132,7 @@ MODPERL_ADJ_FILES += \
 	texmf-dist/doc/latex/register/reg_list.pl \
 	texmf-dist/doc/latex/songbook/contrib/crd2sb/crd2sb \
 	texmf-dist/doc/latex/unamth-template/Latex/Classes/urlbst \
+	texmf-dist/doc/metapost/metapost-examples/mp2html.pl \
 	texmf-dist/doc/pdftex/manual/syntaxform.pl \
 	texmf-dist/doc/support/dosepsbin/clean-case.pl \
 	texmf-dist/doc/support/dosepsbin/version.pl \
@@ -247,6 +251,7 @@ PYTHON2_ADJ_FILES += \
 	texmf-dist/doc/xelatex/xepersian/dkun-0.4.py \
 	texmf-dist/doc/xelatex/xepersian/undk-0.6.py \
 	texmf-dist/doc/xelatex/xepersian/unldk-0.2.py \
+	texmf-dist/scripts/de-macro/de-macro \
 	texmf-dist/scripts/dviasm/dviasm.py \
 	texmf-dist/scripts/ebong/ebong.py \
 	texmf-dist/scripts/latex-make/figdepth.py \
