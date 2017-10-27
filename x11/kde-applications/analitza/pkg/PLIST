@@ -55,6 +55,8 @@ lib/cmake/Analitza5/Analitza5Targets.cmake
 @lib lib/libAnalitzaGui.so.${LIBAnalitzaGui_VERSION}
 @lib lib/libAnalitzaPlot.so.${LIBAnalitzaPlot_VERSION}
 @lib lib/libAnalitzaWidgets.so.${LIBAnalitzaWidgets_VERSION}
+lib/qt5/qml/org/
+lib/qt5/qml/org/kde/
 lib/qt5/qml/org/kde/analitza/
 lib/qt5/qml/org/kde/analitza/Graph2D.qml
 lib/qt5/qml/org/kde/analitza/Graph3D.qml

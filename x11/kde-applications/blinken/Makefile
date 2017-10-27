@@ -23,13 +23,13 @@ BUILD_DEPENDS +=devel/gettext-tools \
 
 RUN_DEPENDS =	devel/gettext \
 		devel/kf5/kdoctools \
-		devel/kf5/kcrash
+		devel/kf5/kcrash \
+		x11/gtk+3,-guic \
+		devel/desktop-file-utils
 
 LIB_DEPENDS =	devel/kf5/ki18n \
 		devel/kf5/kguiaddons \
 		devel/kf5/kxmlgui \
 		devel/kf5/kdbusaddons
-
-TEST_IS_INTERACTIVE =	X11
 
 .include <bsd.port.mk>

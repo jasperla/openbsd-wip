@@ -1,7 +1,7 @@
 # $OpenBSD$
 
 # XXXshorter
-COMMENT =	Plugins and applications for KDE applications
+COMMENT =	plugins and applications for KDE applications
 DISTNAME =	kde-runtime-${VERSION}
 CATEGORIES =	devel
 
@@ -30,6 +30,7 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 LIB_DEPENDS =	x11/kde4/libs \
 		x11/kde4/pim \
 		devel/automoc \
+		graphics/libwebp \
 		devel/kf5/kactivities
 
 TEST_IS_INTERACTIVE =	X11

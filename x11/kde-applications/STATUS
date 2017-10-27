@@ -1,11 +1,43 @@
 STATUS:
-- gpgmepp
--- In CVS
+
+--  akonadi
+-- ready for ports@
+-- TEST: 
+
+-- analitza
+-- ready for ports@
+-- TEST: 50% tests passed, 9 tests failed out of 18
+
+-- ark
+-- ready for ports@
+-- TEST: 47% tests passed, 9 tests failed out of 17
+
+-- artikulate WIP
+-- cannot find -llibartikulatesound.so.0
+
+-- audiocd-kio
+-- ready for ports@
+-- TEST: NO_TEST
+
+-- blinken
+-- ready for ports@
+-- TEST: NO_TEST
+
+-- bomber
+-- ready for ports@
+-- TEST: NO_TEST
+
+-- gwenview
+-- ready for ports@
 -- TEST: NO_TEST
 
 - kate
 -- sent to ports@
 -- TEST: kateapp-session_manager_test stuck
+
+-- kcalc
+-- ready for ports@
+-- TEST: 100% tests passed, 0 tests failed out of 1
 
 - kcalcore
 -- sent to ports@
@@ -17,6 +49,7 @@ STATUS:
 
 - kde-runtime
 -- TEST: filetypestest stuck
+-- file not found webp
 
 - kdegraphics-mobipocket
 -- ready for ports@
@@ -25,6 +58,13 @@ STATUS:
 - kdegraphics-thumbnailers
 -- ready for ports@
 -- TEST: NO_TEST
+
+-- kdelibs
+-- WIP
+
+-- kholidays
+-- ready for ports@
+-- 80% tests passed, 1 tests failed out of 5
 
 - kimap
 -- sent to ports@
@@ -44,7 +84,19 @@ STATUS:
 -- ready for ports@
 -- TEST: NO_TEST
 
+-- kqtquickcharts
+-- ready for ports@
+-- TEST: NO_TEST
+
 - ktouch
+-- ready for ports@
+-- TEST: NO_TEST
+
+-- libkcddb
+-- ready for ports@
+-- TEST: 56% tests passed, 7 tests failed out of 16
+
+-- libkcompactdisc
 -- ready for ports@
 -- TEST: NO_TEST
 
@@ -72,26 +124,13 @@ STATUS:
 -- sent to ports@
 -- TEST: NO_TEST
 
+-- libkleo
+-- WIP
+
 - okteta
 -- ready for ports@
--- TEST: 91% tests passed, 5 tests failed out of 55
+-- TEST: 93% tests passed, 4 tests failed out of 55
 
 - svgpart
--- ready for ports@
--- TEST: NO_TEST
-
--- kqtquickcharts
--- ready for ports@
--- TEST: NO_TEST
-
--- kcalc
--- ready for ports@
--- TEST: 100% tests passed, 0 tests failed out of 1
-
--- kholidays
--- ready for ports@
--- 80% tests passed, 1 tests failed out of 5
-
--- gwenview
 -- ready for ports@
 -- TEST: NO_TEST

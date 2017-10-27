@@ -19,7 +19,6 @@ WANTLIB += KF5XmlGui Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5PrintSupport
 WANTLIB += Qt5Widgets Qt5Xml cdda_interface cdda_paranoia m ogg
 WANTLIB += phonon4qt5 vorbis vorbisenc vorbisfile
 
-
 MODULES =	lang/python
 
 BUILD_DEPENDS +=devel/gettext-tools \
@@ -46,18 +45,13 @@ LIB_DEPENDS =	x11/kde-applications/libkcddb \
 		devel/kf5/kconfigwidgets \
 		devel/kf5/kiconthemes \
 		devel/kf5/ki18n \
-		devel/kf5/knewstuff \
 		devel/kf5/kio \
 		devel/kf5/kservice \
 		devel/kf5/kwidgetsaddons \
-		devel/kf5/karchive \
-		devel/kf5/kdnssd \
-		devel/kf5/kdeclarative \
 		devel/kf5/kguiaddons \
 		devel/kf5/kjobwidgets \
 		devel/kf5/kxmlgui \
-		audio/openal
+		audio/cdparanoia
 
-TEST_IS_INTERACTIVE =	X11
 
 .include <bsd.port.mk>

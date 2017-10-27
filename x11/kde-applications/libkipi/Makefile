@@ -15,8 +15,13 @@ WANTLIB += Qt5Xml m
 
 RUN_DEPENDS =	x11/gtk+3,-guic \
 
-LIB_DEPENDS =	devel/kf5/kconfig \
-		devel/kf5/kxmlgui \
-		devel/kf5/kservice
+# XXX "KF5KExiv2", but CMake did not find one
+LIB_DEPENDS =		devel/kf5/kconfig \
+			devel/kf5/kxmlgui \
+			devel/kf5/kservice
+
+BUILD_DEPNENDS =	graphics/png \
+			graphics/jpeg \
+			graphics/tiff
 
 .include <bsd.port.mk>

@@ -13,7 +13,6 @@ WANTLIB += KF5Service KF5SonnetUi KF5TextWidgets KF5WidgetsAddons
 WANTLIB += KF5XmlGui Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Svg
 WANTLIB += Qt5Widgets Qt5Xml m
 
-
 MODULES =	lang/python
 
 BUILD_DEPENDS +=devel/gettext-tools

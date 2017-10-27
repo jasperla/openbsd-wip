@@ -22,7 +22,8 @@ WANTLIB += KF5ItemViews KF5JobWidgets KF5KCMUtils KF5KIOCore KF5KIOFileWidgets
 WANTLIB += KF5KIOWidgets KF5NewStuff KF5NewStuffCore KF5Parts
 WANTLIB += KF5Service KF5Solid KF5SonnetUi KF5TextWidgets KF5WidgetsAddons
 WANTLIB += KF5XmlGui Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5PrintSupport
-WANTLIB += Qt5Script Qt5Widgets Qt5Xml
+WANTLIB += Qt5Script Qt5Widgets Qt5Xml c m
+
 
 BUILD_DEPENDS +=devel/gettext-tools \
 		devel/kf5/kdoctools

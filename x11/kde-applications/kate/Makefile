@@ -6,6 +6,7 @@ CATEGORIES =	editors
 
 KDE5 =		Yes
 
+WANTLIB += ${COMPILER_LIBCXX} KF5Activities KF5Attica KF5Auth
 WANTLIB += KF5Bookmarks KF5Codecs KF5Completion KF5ConfigCore
 WANTLIB += KF5ConfigGui KF5ConfigWidgets KF5CoreAddons KF5Crash
 WANTLIB += KF5DBusAddons KF5GuiAddons KF5I18n KF5IconThemes KF5ItemModels
@@ -16,6 +17,7 @@ WANTLIB += KF5TextEditor KF5TextWidgets KF5ThreadWeaver KF5Wallet
 WANTLIB += KF5WidgetsAddons KF5WindowSystem KF5XmlGui Qt5Core
 WANTLIB += Qt5DBus Qt5Gui Qt5Network Qt5Script Qt5Sql Qt5Widgets
 WANTLIB += Qt5Xml c git2 m
+
 
 MODULES +=	lang/python
 

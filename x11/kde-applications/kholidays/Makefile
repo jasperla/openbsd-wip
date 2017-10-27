@@ -2,7 +2,7 @@
 
 COMMENT =	KDE library for regional holiday information
 DISTNAME =	kholidays-${VERSION}
-CATEGORIES =	graphics
+CATEGORIES =	devel
 
 SHARED_LIBS +=  KF5Holidays               0.0 # 5.5
 

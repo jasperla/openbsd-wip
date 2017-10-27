@@ -20,6 +20,7 @@ RUN_DEPENDS =	devel/gettext \
 		devel/kf5/kbookmarks \
 		devel/kf5/kcrash
 
+# XXX security/gpgme update with qt5 bindings
 LIB_DEPENDS =	devel/kf5/kconfig \
 		devel/kf5/kcoreaddons \
 		devel/kf5/kcodecs \
@@ -36,8 +37,10 @@ LIB_DEPENDS =	devel/kf5/kconfig \
 		devel/kf5/kdeclarative \
 		devel/kf5/kguiaddons \
 		devel/kf5/kjobwidgets \
+		devel/kf5/kitemmodels \
 		devel/kf5/kxmlgui \
-		audio/openal
+		audio/openal \
+		x11/kde-applications/gpgmepp
 
 TEST_IS_INTERACTIVE =	X11
 

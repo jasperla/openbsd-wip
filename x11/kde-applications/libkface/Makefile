@@ -12,7 +12,7 @@ WANTLIB += ${COMPILER_LIBCXX} QtDBus QtGui QtSql QtSvg QtXml kdeui
 WANTLIB += m opencv_calib3d opencv_contrib opencv_core opencv_features2d
 WANTLIB += opencv_flann opencv_gpu opencv_highgui opencv_imgproc
 WANTLIB += opencv_legacy opencv_ml opencv_nonfree opencv_objdetect
-WANTLIB += opencv_ocl opencv_photo opencv_video 
+WANTLIB += opencv_ocl opencv_photo opencv_video
 
 LIB_DEPENDS =		graphics/opencv
 

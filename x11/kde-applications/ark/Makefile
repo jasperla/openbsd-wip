@@ -2,7 +2,7 @@
 
 COMMENT =	archiving Tool
 DISTNAME =	ark-${VERSION}
-CATEGORIES =	devel
+CATEGORIES =	archivers
 
 KDE5 =		Yes
 
