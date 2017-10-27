@@ -172,6 +172,7 @@ lib/swipl-${V}/library/clp/clpqr/README
 lib/swipl-${V}/library/clp/clpqr/class.pl
 lib/swipl-${V}/library/clp/clpqr/dump.pl
 lib/swipl-${V}/library/clp/clpqr/geler.pl
+lib/swipl-${V}/library/clp/clpqr/highlight.pl
 lib/swipl-${V}/library/clp/clpqr/itf.pl
 lib/swipl-${V}/library/clp/clpqr/ordering.pl
 lib/swipl-${V}/library/clp/clpqr/project.pl
