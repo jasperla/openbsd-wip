@@ -5,7 +5,7 @@ COMMENT=		GnuPG Made Easy
 DISTNAME=		gpgme-1.9.0
 CATEGORIES=		security devel
 
-SHARED_LIBS +=  gpgme                20.0     # 25.0
+SHARED_LIBS +=  gpgme                21.0     # 29.0
 
 HOMEPAGE=		http://www.gnupg.org/gpgme.html
 
@@ -29,14 +29,9 @@ LIB_DEPENDS=		devel/gettext \
 			security/libgpg-error>=1.4 \
 			security/libassuan
 
-# XXX needed?
 TEST_DEPENDS +=		security/gnupg2
 
 # needed for the regression tests
 USE_GMAKE=		Yes
-
-# XXX needed?
-pre-test:
-	ln -sf ${LOCALBASE}/bin/gpg2 ${WRKDIR}/bin/gpg
 
 .include <bsd.port.mk>
