@@ -1,7 +1,7 @@
 # $OpenBSD: Makefile,v 1.44 2017/05/14 16:36:55 danj Exp $
 
 COMMENT=	communications server for Jabber/XMPP written in Lua
-DISTNAME=	prosody-0.9.12
+DISTNAME=	prosody-0.10.0
 CATEGORIES=	net
 MASTER_SITES=	http://prosody.im/downloads/source/
 
@@ -17,6 +17,8 @@ MODULES=	lang/lua
 LIB_DEPENDS=	devel/libidn
 MODLUA_RUN_DEPENDS+= archivers/luazlib \
 		databases/luadbi \
+		devel/luabitop \
+		devel/luaevent \
 		devel/luafs \
 		security/luasec \
 		textproc/luaexpat>=1.3.0
@@ -36,12 +38,13 @@ CONFIGURE_ARGS+=--prefix="${PREFIX}" \
 		--ldflags="-I/usr/include -I${LOCALBASE}/include -L/usr/lib -L${LOCALBASE}/lib -shared" \
 		--cflags="${CFLAGS} -I${LOCALBASE}/include -fPIC"
 
+CFLAGS+=	'-std=c99'
 FAKE_FLAGS+=	CONFIG=${DESTDIR}${PREFIX}/share/examples/prosody
 
 pre-configure:
-	${SUBST_CMD} ${WRKSRC}/certs/Makefile
-	cd ${WRKSRC}; sed -i -e 's,^#!/usr/bin/env lua,#!${MODLUA_BIN},' -e \
-		's,^lua ,${MODLUA_BIN} ,' prosody prosodyctl tests/run_tests.sh
+	${SUBST_CMD} ${WRKSRC}/prosody ${WRKSRC}/prosodyctl \
+		${WRKSRC}/certs/Makefile \
+		${WRKSRC}/tests/run_tests.sh
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/prosody
