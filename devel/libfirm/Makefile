@@ -1,23 +1,34 @@
-# $OpenBSD: Makefile.template,v 1.68 2013/10/02 07:34:45 ajacoutot Exp $
+# $OpenBSD$
 
-COMMENT =		compiler intermediate representation library
+# We only have these backends.
+ONLY_FOR_ARCHS =	amd64 arm i386
 
-DISTNAME =		libfirm-1.21.0
+# Must keep version number in sync with lang/cparser
+COMMENT =	graph based intermediate representation and backend
+DISTNAME =	libfirm-1.22.0
+CATEGORIES =	devel
 
-SHARED_LIBS +=  firm                      0.0 # 1.0
+SHARED_LIBS +=	firm                      0.0 # 0.0
 
-CATEGORIES =		devel
-
-HOMEPAGE =		http://pp.ipd.kit.edu/firm/
+HOMEPAGE =	https://pp.ipd.kit.edu/firm/
+MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # LGPLv2.1+
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += m
 
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=libfirm/}
-EXTRACT_SUFX =		.tar.bz2
+MASTER_SITES =	https://github.com/libfirm/libfirm/archive/
 
-CONFIGURE_STYLE =	gnu
+MODULES =	devel/cmake \
+		lang/python
+MODPY_RUNDEP =	No
+
+CONFIGURE_ARGS =	-DBUILD_SHARED_LIBS:Bool=On
+
+NO_TEST =	Yes
+
+# GitHub has silly naming practices.
+WRKDIST =	${WRKDIR}/libfirm-${DISTNAME}
 
 .include <bsd.port.mk>

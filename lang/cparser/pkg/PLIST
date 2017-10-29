@@ -1,0 +1,10 @@
+@comment $OpenBSD$
+@bin bin/cparser
+lib/cparser/
+lib/cparser/1.22.0/
+lib/cparser/1.22.0/float.h
+lib/cparser/1.22.0/iso646.h
+lib/cparser/1.22.0/limits.h
+lib/cparser/1.22.0/stdarg.h
+lib/cparser/1.22.0/stdbool.h
+lib/cparser/1.22.0/stddef.h

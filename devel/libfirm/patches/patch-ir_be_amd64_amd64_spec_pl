@@ -1,0 +1,16 @@
+$OpenBSD$
+
+Extreme hack for -fPIC.
+
+Index: ir/be/amd64/amd64_spec.pl
+--- ir/be/amd64/amd64_spec.pl.orig
++++ ir/be/amd64/amd64_spec.pl
+@@ -548,7 +548,7 @@ call => {
+ 	outs      => [ "M", "stack", "flags", "first_result" ],
+ 	attr_type => "amd64_call_addr_attr_t",
+ 	attr      => "const amd64_call_addr_attr_t *attr_init",
+-	emit      => "call %*AM",
++	emit      => "call %*AM@PLT",
+ },
+ 
+ ret => {
