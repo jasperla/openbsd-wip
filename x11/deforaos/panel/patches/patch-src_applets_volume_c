@@ -1,0 +1,14 @@
+$OpenBSD$
+
+Index: src/applets/volume.c
+--- src/applets/volume.c.orig
++++ src/applets/volume.c
+@@ -23,6 +23,8 @@
+ # include <sys/audioio.h>
+ #elif defined(__linux__)
+ # include <alsa/asoundlib.h>
++#elif defined(__OpenBSD__)
++# include <soundcard.h>
+ #else
+ # include <sys/soundcard.h>
+ #endif

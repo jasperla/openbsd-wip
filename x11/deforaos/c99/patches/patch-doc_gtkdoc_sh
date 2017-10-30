@@ -1,0 +1,14 @@
+$OpenBSD$
+
+Index: doc/gtkdoc.sh
+--- doc/gtkdoc.sh.orig
++++ doc/gtkdoc.sh
+@@ -108,7 +108,7 @@ fi
+ MODULE="$PACKAGE"
+ 
+ [ -z "$DATADIR" ] && DATADIR="$PREFIX/share"
+-instdir="$DATADIR/gtk-doc/html"
++instdir="$DATADIR/gtk-doc/html/deforaos"
+ 
+ while [ $# -gt 0 ]; do
+ 	target="$1"

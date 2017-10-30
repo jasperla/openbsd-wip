@@ -1,0 +1,82 @@
+@comment $OpenBSD$
+@bin bin/panel
+@bin bin/panel-embed
+@bin bin/panel-message
+@bin bin/panel-notify
+@bin bin/panelctl
+@bin bin/run
+@bin bin/settings
+@bin bin/wifibrowser
+include/Desktop/Panel/
+include/Desktop/Panel.h
+include/Desktop/Panel/applet.h
+include/Desktop/Panel/panel.h
+include/Desktop/Panel/window.h
+lib/Panel/
+lib/Panel/applets/
+lib/Panel/applets/battery.so
+lib/Panel/applets/bluetooth.so
+lib/Panel/applets/brightness.so
+lib/Panel/applets/clock.so
+lib/Panel/applets/close.so
+lib/Panel/applets/cpu.so
+lib/Panel/applets/cpufreq.so
+lib/Panel/applets/desktop.so
+lib/Panel/applets/embed.so
+lib/Panel/applets/gps.so
+lib/Panel/applets/gsm.so
+lib/Panel/applets/lock.so
+lib/Panel/applets/logout.so
+lib/Panel/applets/memory.so
+lib/Panel/applets/menu.so
+lib/Panel/applets/mixer.so
+lib/Panel/applets/network.so
+lib/Panel/applets/pager.so
+lib/Panel/applets/phone.so
+lib/Panel/applets/rotate.so
+lib/Panel/applets/separator.so
+lib/Panel/applets/spacer.so
+lib/Panel/applets/swap.so
+lib/Panel/applets/systray.so
+lib/Panel/applets/tasks.so
+lib/Panel/applets/title.so
+lib/Panel/applets/usb.so
+lib/Panel/applets/user.so
+lib/Panel/applets/volume.so
+lib/Panel/applets/wpa_supplicant.so
+lib/libPanel.a
+@lib lib/libPanel.so.${LIBPanel_VERSION}
+lib/pkgconfig/Panel.pc
+@man man/man1/panel-embed.1
+@man man/man1/panel-message.1
+@man man/man1/panel-notify.1
+@man man/man1/panel.1
+@man man/man1/panelctl.1
+@man man/man1/wifibrowser.1
+share/applications/deforaos-panel-settings.desktop
+share/applications/deforaos-settings.desktop
+share/applications/deforaos-wifibrowser.desktop
+share/icons/hicolor/16x16/apps/panel-applet-bluetooth.png
+share/icons/hicolor/16x16/apps/panel-applet-desktop.png
+share/icons/hicolor/16x16/apps/panel-applet-usb.png
+share/icons/hicolor/16x16/apps/panel-settings.png
+share/icons/hicolor/22x22/apps/panel-applet-bluetooth.png
+share/icons/hicolor/22x22/apps/panel-applet-desktop.png
+share/icons/hicolor/22x22/apps/panel-settings.png
+share/icons/hicolor/24x24/apps/panel-applet-bluetooth.png
+share/icons/hicolor/24x24/apps/panel-applet-desktop.png
+share/icons/hicolor/24x24/apps/panel-applet-usb.png
+share/icons/hicolor/24x24/apps/panel-settings.png
+share/icons/hicolor/32x32/apps/panel-applet-bluetooth.png
+share/icons/hicolor/32x32/apps/panel-applet-desktop.png
+share/icons/hicolor/32x32/apps/panel-settings.png
+share/icons/hicolor/48x48/apps/panel-applet-bluetooth.png
+share/icons/hicolor/48x48/apps/panel-applet-desktop.png
+share/icons/hicolor/48x48/apps/panel-settings.png
+share/icons/hicolor/scalable/apps/panel-applet-bluetooth.svg
+share/locale/es/LC_MESSAGES/Panel.mo
+share/locale/fr/LC_MESSAGES/Panel.mo
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor

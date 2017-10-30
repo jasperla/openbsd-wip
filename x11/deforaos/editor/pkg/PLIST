@@ -1,0 +1,13 @@
+@comment $OpenBSD$
+@bin bin/editor
+@bin bin/filter
+@man man/man1/editor.1
+@man man/man1/filter.1
+share/applications/
+share/applications/deforaos-editor.desktop
+share/locale/de/LC_MESSAGES/Editor.mo
+share/locale/es/LC_MESSAGES/Editor.mo
+share/locale/fr/LC_MESSAGES/Editor.mo
+share/locale/it/LC_MESSAGES/Editor.mo
+@exec %D/bin/update-desktop-database  
+@unexec-delete %D/bin/update-desktop-database

@@ -1,0 +1,14 @@
+$OpenBSD$
+
+Index: src/terminal.c
+--- src/terminal.c.orig
++++ src/terminal.c
+@@ -340,7 +340,7 @@ static int _terminal_open_tab(Terminal * terminal)
+ 	TerminalTab ** p;
+ 	TerminalTab * tab;
+ 	GtkWidget * widget;
+-	char * argv[] = { BINDIR "/xterm", "xterm", "-into", NULL,
++	char * argv[] = { X11DIR "/xterm", "xterm", "-into", NULL,
+ 		"-class", "Terminal", NULL, NULL, NULL };
+ 	char buf[32];
+ 	GSpawnFlags flags = G_SPAWN_FILE_AND_ARGV_ZERO

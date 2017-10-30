@@ -1,0 +1,78 @@
+TARGETS	= $(OBJDIR)libcpp.a $(OBJDIR)libcpp$(SOEXT).${LIBcpp_VERSION} $(OBJDIR)cpp$(EXEEXT)
+OBJDIR	=
+PREFIX	= /usr/local
+DESTDIR	=
+LIBDIR	= $(PREFIX)/lib
+CC	= cc
+CPPFLAGSF= -I ../include
+CPPFLAGS=
+CFLAGSF	= `pkg-config --cflags libSystem`
+CFLAGS	= -W -Wall -g -O2 -pedantic -D_FORTIFY_SOURCE=2 -fstack-protector-all
+LDFLAGSF= `pkg-config --libs libSystem`
+LDFLAGS	= 
+EXEEXT	=
+AR	= ar
+RANLIB	= ranlib
+CCSHARED= $(CC) -shared
+SOEXT	= .so
+BINDIR	= $(PREFIX)/bin
+SBINDIR	= $(PREFIX)/sbin
+RM	= rm -f
+LN	= ln -f
+MKDIR	= mkdir -m 0755 -p
+INSTALL	= install
+
+
+all: $(TARGETS)
+
+libcpp_OBJS = $(OBJDIR)cpp.o $(OBJDIR)parser.o $(OBJDIR)scanner.o
+libcpp_CFLAGS = $(CPPFLAGSF) $(CPPFLAGS) $(CFLAGSF) $(CFLAGS) -fPIC
+libcpp_LDFLAGS = $(LDFLAGSF) $(LDFLAGS)
+
+$(OBJDIR)libcpp.a: $(libcpp_OBJS)
+	$(AR) -rc $(OBJDIR)libcpp.a $(libcpp_OBJS)
+	$(RANLIB) $(OBJDIR)libcpp.a
+
+$(OBJDIR)libcpp$(SOEXT).${LIBcpp_VERSION}: $(libcpp_OBJS)
+	$(CCSHARED) -o $(OBJDIR)libcpp$(SOEXT).${LIBcpp_VERSION} -Wl,-soname,libcpp$(SOEXT).${LIBcpp_VERSION} $(libcpp_OBJS) $(libcpp_LDFLAGS)
+
+cpp_OBJS = $(OBJDIR)main.o
+cpp_CFLAGS = $(CPPFLAGSF) $(CPPFLAGS) $(CFLAGSF) $(CFLAGS) -fPIE
+cpp_LDFLAGS = $(LDFLAGSF) $(LDFLAGS) -L$(OBJDIR). -L$(LIBDIR) -Wl,-rpath,$(LIBDIR) -lcpp
+
+$(OBJDIR)cpp$(EXEEXT): $(cpp_OBJS) $(OBJDIR)libcpp$(SOEXT).${LIBcpp_VERSION}
+	$(CC) -o $(OBJDIR)cpp$(EXEEXT) $(cpp_OBJS) $(cpp_LDFLAGS)
+
+$(OBJDIR)cpp.o: cpp.c common.h ../include/CPP.h
+	$(CC) $(libcpp_CFLAGS) -o $(OBJDIR)cpp.o -c cpp.c
+
+$(OBJDIR)parser.o: parser.c parser.h ../include/CPP.h
+	$(CC) $(libcpp_CFLAGS) -o $(OBJDIR)parser.o -c parser.c
+
+$(OBJDIR)scanner.o: scanner.c common.h ../include/CPP.h
+	$(CC) $(libcpp_CFLAGS) -o $(OBJDIR)scanner.o -c scanner.c
+
+$(OBJDIR)main.o: main.c ../include/CPP.h
+	$(CC) $(cpp_CFLAGS) -o $(OBJDIR)main.o -c main.c
+
+clean:
+	$(RM) -- $(libcpp_OBJS) $(cpp_OBJS)
+
+distclean: clean
+	$(RM) -- $(TARGETS)
+
+install: $(TARGETS)
+	$(MKDIR) $(DESTDIR)$(LIBDIR)
+	$(INSTALL) -m 0644 $(OBJDIR)libcpp.a $(DESTDIR)$(LIBDIR)/libcpp.a
+	$(INSTALL) -m 0755 $(OBJDIR)libcpp$(SOEXT).${LIBcpp_VERSION} $(DESTDIR)$(LIBDIR)/libcpp$(SOEXT).${LIBcpp_VERSION}
+	$(MKDIR) $(DESTDIR)$(BINDIR)
+	$(INSTALL) -m 0755 $(OBJDIR)cpp$(EXEEXT) $(DESTDIR)$(BINDIR)/cpp$(EXEEXT)
+
+uninstall:
+	$(RM) -- $(DESTDIR)$(LIBDIR)/libcpp.a
+	$(RM) -- $(DESTDIR)$(LIBDIR)/libcpp$(SOEXT).0.0
+	$(RM) -- $(DESTDIR)$(LIBDIR)/libcpp$(SOEXT).0
+	$(RM) -- $(DESTDIR)$(LIBDIR)/libcpp$(SOEXT)
+	$(RM) -- $(DESTDIR)$(BINDIR)/cpp$(EXEEXT)
+
+.PHONY: all clean distclean install uninstall
