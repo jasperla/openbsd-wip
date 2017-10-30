@@ -2,7 +2,7 @@
 
 COMMENT =	 backup a github user or organization
 
-MODPY_EGG_VERSION =	0.13.2
+MODPY_EGG_VERSION =	0.14.1
 PKGNAME =	github-backup-${MODPY_EGG_VERSION}
 
 GH_ACCOUNT =	josegonzalez
