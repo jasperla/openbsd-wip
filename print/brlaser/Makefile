@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2013/08/09 16:53:45 ajacoutot Exp $
+# $OpenBSD: Makefile.template,v 1.76 2017/02/25 16:04:20 danj Exp $
 
 COMMENT =	CUPS printer driver for some Brother laser printers
 
@@ -7,12 +7,12 @@ DISTNAME =	brlaser-${V}
 
 CATEGORIES =	print
 
-HOMEPAGE=	https://github.com/pdewacht/brlaser
+HOMEPAGE =	https://github.com/pdewacht/brlaser
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM = Yes
 
-WANTLIB+=	c pthread cups cupsimage
+WANTLIB +=	${COMPILER_LIBCXX} c cupsimage iconv
 
 MASTER_SITES =	${HOMEPAGE}/releases/download/v$V/
 
