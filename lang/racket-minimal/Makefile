@@ -5,11 +5,11 @@ USE_WXNEEDED =		Yes
 PORTROACH_COMMENT =	hide pre-release versions (e.g. 6.1.90.900)
 PORTROACH =		limit:!.*\.[0-9][0-9][0-9]-src-builtpkgs$$
 
-ONLY_FOR_ARCHS =	arm amd64 i386 powerpc sparc64
+ONLY_FOR_ARCHS =	arm amd64 i386 mips64el powerpc sparc64
 
 COMMENT =		multi-paradigm programming language
 
-V =			6.10.1.900
+V =			6.11
 PKGNAME =		racket-minimal-$V
 DISTFILES =		racket-minimal-$V-src-builtpkgs${EXTRACT_SUFX} \
 			racket-openbsd-1${EXTRACT_SUFX}
