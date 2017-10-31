@@ -1,6 +1,8 @@
 $OpenBSD$
 
-cparser doesn't understand __only_inline.
+cparser doesn't understand __attribute__((__gnu_inline__)).
+This causes all sorts of multiple definition linker errors.
+So let's set the GCC compatibility to too old for it.
 
 Index: src/driver/predefs.c
 --- src/driver/predefs.c.orig

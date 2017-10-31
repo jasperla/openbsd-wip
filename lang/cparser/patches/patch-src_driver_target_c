@@ -16,7 +16,7 @@ Index: src/driver/target.c
  	} else if (streq(os, "elf") || streq(os, "octopos") || streq(os, "irtss")) {
  		init_generic_elf();
  	} else if (strstart(os, "darwin")) {
-@@ -510,6 +514,8 @@ static machine_triple_t *get_host_machine_triple(void)
+@@ -514,6 +518,8 @@ static machine_triple_t *get_host_machine_triple(void)
  	machine->operating_system = xstrdup("linux-gnu");
  #elif defined(__linux__)
  	machine->operating_system = xstrdup("linux");
