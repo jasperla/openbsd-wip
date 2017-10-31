@@ -32,7 +32,7 @@ LIB_DEPENDS =	databases/sqlite3 \
 		textproc/libxml \
 		net/curl
 
-MAKE_FLAGS =	CXX="${CXX}"
+MAKE_ENV =	CXX="${CXX}" CXXFLAGS="${CXXFLAGS}"
 FAKE_FLAGS =	mandir="${PREFIX}/man"
 
 USE_GMAKE =	Yes
