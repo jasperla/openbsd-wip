@@ -1,0 +1,4 @@
+@comment $OpenBSD$
+@bin bin/kwebapp
+@man man/man1/kwebapp.1
+@man man/man5/kwebapp.5
