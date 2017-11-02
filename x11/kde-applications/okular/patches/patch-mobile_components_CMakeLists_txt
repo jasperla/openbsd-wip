@@ -1,0 +1,16 @@
+$OpenBSD$
+
+Index: mobile/components/CMakeLists.txt
+--- mobile/components/CMakeLists.txt.orig
++++ mobile/components/CMakeLists.txt
+@@ -30,7 +30,9 @@ target_link_libraries(okularplugin
+         Qt5::Xml
+         Qt5::Svg
+         okularcore
+-        okularpart
++        KF5::IconThemes
++        KF5::Bookmarks
++        KF5::I18n
+         )
+ 
+ install(TARGETS okularplugin DESTINATION ${KDE_INSTALL_QMLDIR}/org/kde/okular)
