@@ -2,7 +2,7 @@
 
 COMMENT =	document viewer
 DISTNAME =	okular-${VERSION}
-CATEGORIES =	x11
+CATEGORIES =	textproc
 
 SHARED_LIBS +=  Okular5Core               0.0 # 7.0
 
