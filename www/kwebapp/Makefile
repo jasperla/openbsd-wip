@@ -2,7 +2,7 @@
 
 COMMENT =		web application source generator
 
-DISTNAME =		kwebapp-0.3.2
+DISTNAME =		kwebapp-0.3.3
 CATEGORIES =		www
 
 HOMEPAGE =		https://kristaps.bsd.lv/kwebapp/
