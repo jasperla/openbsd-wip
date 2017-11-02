@@ -1,0 +1,71 @@
+$OpenBSD$
+
+Index: db.txt
+--- db.txt.orig
++++ db.txt
+@@ -0,0 +1,65 @@
++struct company {
++  field name text limit gt 0 comment
++    "Name of the organisation.";
++  field id int rowid;
++  field somenum int null comment
++    "Simply a check for null values.";
++  list somenum isnull;
++  comment "Controlling organisation.";
++  insert;
++};
++
++enum gender {
++  item male 0;
++  item female 1;
++  item other 2;
++};
++
++struct user {
++  field company struct cid comment
++    "This struct will be filled in from an inner join
++    on the \"cid\" variable.";
++  field cid:company.id int actdel cascade comment 
++    "A foreign key reference.";
++  field gender enum gender comment
++    "User's gender.";
++  field hash password limit gt 0 comment
++    "Password hash.
++    This is passed to inserts and updates as a password,
++    then hashed within the implementation and extracted
++    (in listings and searches) as the hash value.";
++  field email email unique comment
++    "Unique e-mail address.";
++  field image blob null comment 
++    "A PNG image or something.";
++  field name text comment 
++    "User's full name.";
++  field uid int rowid;
++  iterate name: comment
++    "Create a function that searches for users by a given
++    name; and, when found, invokes a callback function
++    provided the user structure.";
++  search email,hash: name creds comment
++    "Search for a unique user with their e-mail and
++    password.
++    This is a quick way to verify that a user has entered
++    the correct password for logging in.";
++  search uid: comment "Lookup by unique identifier.";
++  update hash: uid;
++  update email: uid;
++  insert;
++  comment "A regular user.";
++};
++
++struct session { 
++  field user struct userid;
++  field userid:user.uid int comment "Associated user.";
++  field token int comment "Random cookie.";
++  field mtime epoch;
++  field id int rowid;
++  iterate user.company.name,mtime: name foo comment 
++    "Search for company's logged-in users.";
++  comment "Authenticated session.";
++  insert;
++  delete id;
++};
