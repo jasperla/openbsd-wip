@@ -66,6 +66,6 @@ LIB_DEPENDS =	devel/kf5/ki18n \
 		x11/kde-applications/libkexiv2 \
 		x11/kde-applications/kdegraphics-mobipocket
 
-CONFIGURE_ARGS =	-DBUILD_TESTING=OFF \
-			-DCMAKE_INCLUDE_CURRENT_DIR=ON
+TEST_IS_INTERACTIVE =	X11
+
 .include <bsd.port.mk>
