@@ -1,5 +1,5 @@
 @comment $OpenBSD$
-@conflict krita-<17.04.1
+@conflict kate-<17.04.1
 @pkgpath x11/kde4/kate
 @bin bin/kate
 @bin bin/kwrite
