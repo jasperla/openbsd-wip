@@ -4,9 +4,9 @@ COMMENT =	multilanguage reimplementation of the Unix ctags utility
 
 GH_ACCOUNT =	universal-ctags
 GH_PROJECT =	ctags
-GH_COMMIT =	b9537289952cc7b26526aaff3094599d714d1729
+GH_COMMIT =	96ceef695648a887c8befc4484eace7b3170e398
 # commit date YYYYMMDD
-DISTNAME =	universal-ctags-0.20170921
+DISTNAME =	universal-ctags-0.20170902
 
 CATEGORIES =	devel
 
@@ -14,7 +14,7 @@ HOMEPAGE =	https://ctags.io/
 
 MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 
-WANTLIB += c yaml xml2
+WANTLIB += c xml2 yaml
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
@@ -32,16 +32,17 @@ MAKE_FLAGS =		CC="${CC}" \
 CONFIGURE_ENV +=	CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib ${LDFLAGS}"
 
-CONFIGURE_ARGS =	--program-prefix=u \
-			--disable-iconv
+CONFIGURE_ARGS =	--program-prefix=u
 
 AUTOCONF_VERSION =	2.69
 AUTOMAKE_VERSION =	1.11
 
 BUILD_DEPENDS =		${MODGNU_AUTOCONF_DEPENDS} \
 			${MODGNU_AUTOMAKE_DEPENDS}
+
 LIB_DEPENDS+=		textproc/libxml \
 			devel/libyaml
+
 TEST_DEPENDS =		textproc/gdiff \
 			sysutils/coreutils
 
@@ -52,6 +53,8 @@ FLAVOR?=
 CONFIGURE_ARGS+=	--enable-iconv
 LIB_DEPENDS+=		converters/libiconv
 WANTLIB+=		iconv
+.else
+CONFIGURE_ARGS+=	--disable-iconv
 .endif
 
 pre-configure:
