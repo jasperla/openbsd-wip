@@ -19,7 +19,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += c m
 
-COMPILER =		ports-gcc    
+COMPILER =		ports-gcc   # imaginary constants are a GNU extension
 CONFIGURE_STYLE =	gnu
 
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
