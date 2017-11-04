@@ -50,4 +50,7 @@ LIB_DEPENDS =	devel/kf5/kcompletion \
 		textproc/libxml
 
 PORTHOME =	${WRKDIR}
+
+TEST_IS_INTERACTIVE =	Yes
+
 .include <bsd.port.mk>
