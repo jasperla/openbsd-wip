@@ -20,7 +20,7 @@ WANTLIB += expat ffi fontconfig freetype gd glib-2.0 gmp gnutls
 WANTLIB += graphite2 gs harfbuzz harfbuzz-icu hogweed iconv icudata
 WANTLIB += icui18n icuio icuuc idn2 ijs intl jbig2dec jpeg lcms2
 WANTLIB += m nettle openjp2 p11-kit paper pcre pixman-1 png poppler
-WANTLIB += potrace pthread pthread-stubs ${LIBCXX} tasn1 tiff
+WANTLIB += potrace pthread ${LIBCXX} tasn1 tiff
 WANTLIB += unistring webp xcb xcb-render xcb-shm z zzip
 
 RUN_DEPENDS =		print/ghostscript/gnu \
