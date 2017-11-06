@@ -1,0 +1,5 @@
+@comment $OpenBSD$
+@bin bin/qodem
+bin/xqodem
+@man man/man1/qodem.1
+@man man/man1/xqodem.1
