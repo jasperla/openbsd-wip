@@ -15,6 +15,8 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += c
 
+LIB_DEPENDS =		databases/sqlite3
+
 ALL_TARGET =		"kwebapp"
 CONFIGURE_STYLE =	simple
 CONFIGURE_ENV =		"PREFIX=${PREFIX}"
