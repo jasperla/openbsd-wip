@@ -1,0 +1,14 @@
+$OpenBSD$
+
+Index: src/hardware/voodoo_opengl.cpp
+--- src/hardware/voodoo_opengl.cpp.orig
++++ src/hardware/voodoo_opengl.cpp
+@@ -522,7 +522,7 @@ void voodoo_ogl_invalidate_paltex(void) {
+ }
+ 
+ 
+-GLhandleARB m_hProgramObject   = (GLhandleARB)NULL;
++GLhandleARB m_hProgramObject;
+ 
+ 
+ void ogl_printInfoLog(GLhandleARB obj)
