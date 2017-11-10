@@ -1,4 +1,4 @@
-CUPS driver for Brother laster printers.
+CUPS driver for Brother laser printers.
 
 Most Brother printers support a standard printer language such as PCL or
 PostScript, but not all do. If you have a monochrome Brother laser printer (or
