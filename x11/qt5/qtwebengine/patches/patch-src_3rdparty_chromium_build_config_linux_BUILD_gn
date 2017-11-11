@@ -1,0 +1,15 @@
+$OpenBSD$
+
+Index: src/3rdparty/chromium/build/config/linux/BUILD.gn
+--- src/3rdparty/chromium/build/config/linux/BUILD.gn.orig
++++ src/3rdparty/chromium/build/config/linux/BUILD.gn
+@@ -48,6 +48,9 @@ config("x11") {
+     "Xrender",
+     "Xtst",
+   ]
++
++  include_dirs = [ "${X11BASE}/include" ]
++  lib_dirs = [ "${X11BASE}/lib" ]
+ }
+ 
+ config("xcomposite") {

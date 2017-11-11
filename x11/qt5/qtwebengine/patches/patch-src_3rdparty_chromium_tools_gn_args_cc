@@ -1,0 +1,15 @@
+$OpenBSD$
+Automatically copied from www/chromium.
+
+Index: src/3rdparty/chromium/tools/gn/args.cc
+--- src/3rdparty/chromium/tools/gn/args.cc.orig
++++ src/3rdparty/chromium/tools/gn/args.cc
+@@ -258,6 +258,8 @@ void Args::SetSystemVarsLocked(Scope* dest) const {
+   os = "android";
+ #elif defined(OS_NETBSD)
+   os = "netbsd";
++#elif defined(OS_OPENBSD)
++  os = "openbsd";
+ #else
+   #error Unknown OS type.
+ #endif

@@ -1,0 +1,25 @@
+$OpenBSD$
+Automatically copied from www/chromium.
+
+Index: src/3rdparty/chromium/ui/gl/BUILD.gn
+--- src/3rdparty/chromium/ui/gl/BUILD.gn.orig
++++ src/3rdparty/chromium/ui/gl/BUILD.gn
+@@ -241,7 +241,6 @@ component("gl") {
+     data_deps = [
+       "//third_party/angle:libEGL",
+       "//third_party/angle:libGLESv2",
+-      "//third_party/mesa:osmesa",
+     ]
+   }
+   if (is_mac) {
+@@ -425,10 +424,6 @@ test("gl_unittests") {
+     "//ui/gfx",
+     "//ui/gfx/geometry",
+     "//ui/gl/init",
+-  ]
+-
+-  data_deps = [
+-    "//third_party/mesa:osmesa",
+   ]
+ }
+ 

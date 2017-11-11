@@ -1,0 +1,13 @@
+$OpenBSD$
+
+Index: src/3rdparty/chromium/third_party/libXNVCtrl/BUILD.gn
+--- src/3rdparty/chromium/third_party/libXNVCtrl/BUILD.gn.orig
++++ src/3rdparty/chromium/third_party/libXNVCtrl/BUILD.gn
+@@ -9,6 +9,7 @@ config("libXNVCtrl_config") {
+   # some older system headers are missing a "const" on the third parameter of
+   # XextAddDisplay which will cause a failure.
+   cflags = [ "-Wno-incompatible-pointer-types-discards-qualifiers" ]
++  include_dirs = [ "${X11BASE}/include" ]
+ }
+ 
+ static_library("libXNVCtrl") {

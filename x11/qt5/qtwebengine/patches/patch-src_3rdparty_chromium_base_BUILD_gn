@@ -1,0 +1,57 @@
+$OpenBSD$
+Automatically copied from www/chromium.
+
+Index: src/3rdparty/chromium/base/BUILD.gn
+--- src/3rdparty/chromium/base/BUILD.gn.orig
++++ src/3rdparty/chromium/base/BUILD.gn
+@@ -139,6 +139,8 @@ component("base") {
+     static_component_type = "source_set"
+   }
+ 
++  include_dirs = []
++
+   sources = [
+     "allocator/allocator_check.cc",
+     "allocator/allocator_check.h",
+@@ -1396,6 +1398,32 @@ component("base") {
+     }
+   }
+ 
++  if (is_openbsd) {
++    sources -= [
++      "files/file_path_watcher_linux.cc",
++      "files/file_util_linux.cc",
++      "process/memory_linux.cc",
++      "process/process_linux.cc",
++      "sys_info_linux.cc",
++      "process/process_iterator_linux.cc",
++      "process/process_metrics_linux.cc",
++      "process/process_handle_linux.cc"
++    ]
++    sources += [
++      "process/memory_stubs.cc",
++      "process/process_handle_openbsd.cc",
++      "process/process_iterator_openbsd.cc",
++      "process/process_metrics_openbsd.cc",
++      "sys_info_openbsd.cc",
++      "files/file_path_watcher_stub.cc",
++    ]
++
++    # for X/Mesa
++    include_dirs += [ "${X11BASE}/include" ]
++    # for execinfo.h
++    include_dirs += [ "${LOCALBASE}/include" ]
++  }
++
+   # iOS
+   if (is_ios) {
+     set_sources_assignment_filter([])
+@@ -2192,6 +2220,8 @@ test("base_unittests") {
+     # TODO(krasin): remove CFI_CAST_CHECK, see https://crbug.com/626794.
+     defines += [ "CFI_CAST_CHECK" ]
+   }
++
++  libs = [ "execinfo" ]
+ }
+ 
+ action("build_date") {

@@ -1,0 +1,15 @@
+$OpenBSD$
+Automatically copied from www/chromium.
+
+Index: src/3rdparty/chromium/chrome/common/chrome_switches.cc
+--- src/3rdparty/chromium/chrome/common/chrome_switches.cc.orig
++++ src/3rdparty/chromium/chrome/common/chrome_switches.cc
+@@ -1263,7 +1263,7 @@ const char kAllowNaClSocketAPI[]            = "allow-n
+ const char kEnableWaylandServer[] = "enable-wayland-server";
+ #endif
+ 
+-#if defined(OS_WIN) || defined(OS_LINUX)
++#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_BSD)
+ extern const char kDisableInputImeAPI[] = "disable-input-ime-api";
+ extern const char kEnableInputImeAPI[] = "enable-input-ime-api";
+ #endif

@@ -1,0 +1,19 @@
+$OpenBSD$
+Automatically copied from www/chromium.
+
+Index: src/3rdparty/chromium/third_party/pdfium/fpdfsdk/javascript/JS_Value.cpp
+--- src/3rdparty/chromium/third_party/pdfium/fpdfsdk/javascript/JS_Value.cpp.orig
++++ src/3rdparty/chromium/third_party/pdfium/fpdfsdk/javascript/JS_Value.cpp
+@@ -470,7 +470,12 @@ double _getLocalTZA() {
+   long timezone = 0;
+   _get_timezone(&timezone);
+ #endif
++#ifdef __OpenBSD__
++  struct tm *lt;
++  return (double)(-(lt->tm_gmtoff * 1000));
++#else
+   return (double)(-(timezone * 1000));
++#endif
+ }
+ 
+ int _getDaylightSavingTA(double d) {

@@ -1,0 +1,33 @@
+$OpenBSD$
+Automatically copied from www/chromium.
+
+Index: src/3rdparty/chromium/content/browser/renderer_host/render_message_filter.cc
+--- src/3rdparty/chromium/content/browser/renderer_host/render_message_filter.cc.orig
++++ src/3rdparty/chromium/content/browser/renderer_host/render_message_filter.cc
+@@ -92,7 +92,7 @@
+ #include "ui/accelerated_widget_mac/window_resize_helper_mac.h"
+ #endif
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+ #include "base/linux_util.h"
+ #include "base/threading/platform_thread.h"
+ #endif
+@@ -206,7 +206,7 @@ bool RenderMessageFilter::OnMessageReceived(const IPC:
+         OnAllocateLockedDiscardableSharedMemory)
+     IPC_MESSAGE_HANDLER(ChildProcessHostMsg_DeletedDiscardableSharedMemory,
+                         OnDeletedDiscardableSharedMemory)
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+     IPC_MESSAGE_HANDLER(ChildProcessHostMsg_SetThreadPriority,
+                         OnSetThreadPriority)
+ #endif
+@@ -409,7 +409,7 @@ void RenderMessageFilter::OnDeletedDiscardableSharedMe
+           this, id));
+ }
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+ void RenderMessageFilter::SetThreadPriorityOnFileThread(
+     base::PlatformThreadId ns_tid,
+     base::ThreadPriority priority) {

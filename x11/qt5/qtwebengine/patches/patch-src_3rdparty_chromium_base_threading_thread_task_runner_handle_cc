@@ -1,0 +1,29 @@
+$OpenBSD$
+Automatically copied from www/chromium.
+
+Index: src/3rdparty/chromium/base/threading/thread_task_runner_handle.cc
+--- src/3rdparty/chromium/base/threading/thread_task_runner_handle.cc.orig
++++ src/3rdparty/chromium/base/threading/thread_task_runner_handle.cc
+@@ -6,6 +6,7 @@
+ 
+ #include <utility>
+ 
++#include "base/callback_helpers.h"
+ #include "base/lazy_instance.h"
+ #include "base/logging.h"
+ #include "base/threading/sequenced_task_runner_handle.h"
+@@ -27,6 +28,7 @@ scoped_refptr<SingleThreadTaskRunner> ThreadTaskRunner
+   return current->task_runner_;
+ }
+ 
++#if defined(OS_BSD)
+ // static
+ bool ThreadTaskRunnerHandle::IsSet() {
+   return !!lazy_tls_ptr.Pointer()->Get();
+@@ -47,5 +49,6 @@ ThreadTaskRunnerHandle::~ThreadTaskRunnerHandle() {
+   DCHECK_EQ(lazy_tls_ptr.Pointer()->Get(), this);
+   lazy_tls_ptr.Pointer()->Set(nullptr);
+ }
++#endif
+ 
+ }  // namespace base

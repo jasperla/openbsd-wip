@@ -1,0 +1,167 @@
+$OpenBSD$
+
+Index: src/3rdparty/chromium/base/process/process_metrics_openbsd.cc
+--- src/3rdparty/chromium/base/process/process_metrics_openbsd.cc.orig
++++ src/3rdparty/chromium/base/process/process_metrics_openbsd.cc
+@@ -4,10 +4,21 @@
+ 
+ #include "base/process/process_metrics.h"
+ 
++#include "base/files/file_util.h"
++#include "base/logging.h"
++#include "base/process/internal_linux.h"
++#include "base/strings/string_number_conversions.h"
++#include "base/strings/string_split.h"
++#include "base/strings/string_tokenizer.h"
++#include "base/strings/string_util.h"
++#include "base/sys_info.h"
++#include "base/threading/thread_restrictions.h"
++
+ #include <stddef.h>
+ #include <stdint.h>
+ #include <sys/param.h>
+ #include <sys/sysctl.h>
++#include <sys/vmmeter.h>
+ 
+ #include "base/macros.h"
+ #include "base/memory/ptr_util.h"
+@@ -22,20 +33,27 @@ std::unique_ptr<ProcessMetrics> ProcessMetrics::Create
+ }
+ 
+ size_t ProcessMetrics::GetPagefileUsage() const {
+-  struct kinfo_proc info;
+-  size_t length;
++  struct kinfo_proc *info;
++  size_t length, pfu;
+   int mib[] = { CTL_KERN, KERN_PROC, KERN_PROC_PID, process_,
+                 sizeof(struct kinfo_proc), 0 };
+ 
+   if (sysctl(mib, arraysize(mib), NULL, &length, NULL, 0) < 0)
+     return -1;
+ 
++  info = (struct kinfo_proc *)malloc(length);
++
+   mib[5] = (length / sizeof(struct kinfo_proc));
+ 
+-  if (sysctl(mib, arraysize(mib), &info, &length, NULL, 0) < 0)
+-    return -1;
++  if (sysctl(mib, arraysize(mib), info, &length, NULL, 0) < 0) {
++    pfu = -1;
++    goto out;
++  }
++  pfu = (info->p_vm_tsize + info->p_vm_dsize + info->p_vm_ssize);
+ 
+-  return (info.p_vm_tsize + info.p_vm_dsize + info.p_vm_ssize);
++out:
++  free(info);
++  return pfu;
+ }
+ 
+ size_t ProcessMetrics::GetPeakPagefileUsage() const {
+@@ -43,20 +61,28 @@ size_t ProcessMetrics::GetPeakPagefileUsage() const {
+ }
+ 
+ size_t ProcessMetrics::GetWorkingSetSize() const {
+-  struct kinfo_proc info;
+-  size_t length;
++  struct kinfo_proc *info;
++  size_t length, wss;
+   int mib[] = { CTL_KERN, KERN_PROC, KERN_PROC_PID, process_,
+                 sizeof(struct kinfo_proc), 0 };
+ 
+   if (sysctl(mib, arraysize(mib), NULL, &length, NULL, 0) < 0)
+     return -1;
+ 
++  info = (struct kinfo_proc *)malloc(length);
++
+   mib[5] = (length / sizeof(struct kinfo_proc));
+ 
+-  if (sysctl(mib, arraysize(mib), &info, &length, NULL, 0) < 0)
+-    return -1;
++  if (sysctl(mib, arraysize(mib), info, &length, NULL, 0) < 0) {
++    wss = -1;
++    goto out;
++  }
+ 
+-  return info.p_vm_rssize * getpagesize();
++  wss = (info->p_vm_rssize * getpagesize());
++
++out:
++  free(info);
++  return wss;
+ }
+ 
+ size_t ProcessMetrics::GetPeakWorkingSetSize() const {
+@@ -96,20 +122,27 @@ bool ProcessMetrics::GetIOCounters(IoCounters* io_coun
+ }
+ 
+ static int GetProcessCPU(pid_t pid) {
+-  struct kinfo_proc info;
++  struct kinfo_proc *info;
+   size_t length;
++  int pctcpu = 0;
+   int mib[] = { CTL_KERN, KERN_PROC, KERN_PROC_PID, pid,
+                 sizeof(struct kinfo_proc), 0 };
+ 
+   if (sysctl(mib, arraysize(mib), NULL, &length, NULL, 0) < 0)
+     return -1;
+ 
++  info = (struct kinfo_proc *)malloc(length);
++
+   mib[5] = (length / sizeof(struct kinfo_proc));
+ 
+-  if (sysctl(mib, arraysize(mib), &info, &length, NULL, 0) < 0)
+-    return 0;
++  if (sysctl(mib, arraysize(mib), info, &length, NULL, 0) < 0)
++    goto out;
+ 
+-  return info.p_pctcpu;
++  pctcpu = info->p_pctcpu;
++
++out:
++  free(info);
++  return pctcpu;
+ }
+ 
+ double ProcessMetrics::GetCPUUsage() {
+@@ -123,7 +156,6 @@ double ProcessMetrics::GetCPUUsage() {
+   }
+ 
+   int64_t time_delta = (time - last_cpu_time_).InMicroseconds();
+-  DCHECK_NE(time_delta, 0);
+ 
+   if (time_delta == 0)
+     return 0;
+@@ -162,5 +194,32 @@ size_t GetSystemCommitCharge() {
+ 
+   return mem_total - (mem_free*pagesize) - (mem_inactive*pagesize);
+ }
++
++int ProcessMetrics::GetOpenFdCount() const {        
++  struct kinfo_proc *info;
++  size_t length;
++  int total_count = 0;
++
++  int mib[] = { CTL_KERN, KERN_PROC, KERN_PROC_PID, process_,                                            
++                sizeof(struct kinfo_proc), 0 };
++
++  if (sysctl(mib, arraysize(mib), NULL, &length, NULL, 0) < 0)                                           
++    return -1;
++
++  info = (struct kinfo_proc *)malloc(length);
++
++  mib[5] = (length / sizeof(struct kinfo_proc));    
++
++  if (sysctl(mib, arraysize(mib), info, &length, NULL, 0) < 0) {                                         
++    total_count = -1;
++    goto out;
++  }                                                 
++  //total_count = info->p_fd->fd_openfd;
++  total_count = info->p_fd;
++
++out:
++  free(info);
++  return total_count;
++}                                                   
+ 
+ }  // namespace base

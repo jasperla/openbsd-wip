@@ -1,0 +1,15 @@
+$OpenBSD$
+Automatically copied from www/chromium.
+
+Index: src/3rdparty/chromium/third_party/WebKit/Source/bindings/core/v8/V8ScriptRunner.cpp
+--- src/3rdparty/chromium/third_party/WebKit/Source/bindings/core/v8/V8ScriptRunner.cpp.orig
++++ src/3rdparty/chromium/third_party/WebKit/Source/bindings/core/v8/V8ScriptRunner.cpp
+@@ -46,7 +46,7 @@
+ 
+ #if OS(WIN)
+ #include <malloc.h>
+-#else
++#elif !OS(OPENBSD)
+ #include <alloca.h>
+ #endif
+ 

@@ -1,0 +1,19 @@
+$OpenBSD$
+Automatically copied from www/chromium.
+
+Index: src/3rdparty/chromium/base/debug/thread_heap_usage_tracker.cc
+--- src/3rdparty/chromium/base/debug/thread_heap_usage_tracker.cc.orig
++++ src/3rdparty/chromium/base/debug/thread_heap_usage_tracker.cc
+@@ -14,10 +14,12 @@
+ #include "base/threading/thread_local_storage.h"
+ #include "build/build_config.h"
+ 
++#if !defined(OS_OPENBSD)
+ #if defined(OS_MACOSX) || defined(OS_IOS)
+ #include <malloc/malloc.h>
+ #else
+ #include <malloc.h>
++#endif
+ #endif
+ 
+ namespace base {

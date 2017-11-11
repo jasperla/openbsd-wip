@@ -1,0 +1,30 @@
+$OpenBSD: patch-mkspecs_features_functions_prf,v 1.1.1.1 2016/12/25 14:13:18 zhuk Exp $
+Enable OpenBSD builds.
+Index: mkspecs/features/functions.prf
+--- mkspecs/features/functions.prf.orig
++++ mkspecs/features/functions.prf
+@@ -15,7 +15,7 @@ defineTest(isQtMinimum) {
+ 
+ defineTest(isPlatformSupported) {
+   QT_FOR_CONFIG += gui-private
+-  linux {
++  unix {
+     !gcc:!clang {
+       skipBuild("Qt WebEngine on Linux requires clang or GCC.")
+       return(false)
+@@ -356,6 +356,7 @@ defineReplace(gnArgs) {
+         contains(WEBENGINE_CONFIG, embedded_build): include($$QTWEBENGINE_ROOT/src/core/config/embedded_linux.pri)
+         else: include($$QTWEBENGINE_ROOT/src/core/config/desktop_linux.pri)
+     }
++    openbsd: include($$QTWEBENGINE_ROOT/src/core/config/desktop_openbsd.pri)
+     macos: include($$QTWEBENGINE_ROOT/src/core/config/mac_osx.pri)
+     win32: include($$QTWEBENGINE_ROOT/src/core/config/windows.pri)
+     isEmpty(gn_args): error(No gn_args found please make sure you have valid configuration.)
+@@ -377,6 +378,7 @@ defineReplace(gnOS) {
+     macos: return(mac)
+     win32: return(win)
+     linux: return(linux)
++    openbsd: return(openbsd)
+     error(Unsupported platform)
+     return(unknown)
+ }

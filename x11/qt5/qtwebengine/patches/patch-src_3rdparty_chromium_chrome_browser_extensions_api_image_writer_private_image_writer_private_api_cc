@@ -1,0 +1,19 @@
+$OpenBSD$
+Automatically copied from www/chromium.
+
+Index: src/3rdparty/chromium/chrome/browser/extensions/api/image_writer_private/image_writer_private_api.cc
+--- src/3rdparty/chromium/chrome/browser/extensions/api/image_writer_private/image_writer_private_api.cc.orig
++++ src/3rdparty/chromium/chrome/browser/extensions/api/image_writer_private/image_writer_private_api.cc
+@@ -166,10 +166,12 @@ ImageWriterPrivateListRemovableStorageDevicesFunction:
+ }
+ 
+ bool ImageWriterPrivateListRemovableStorageDevicesFunction::RunAsync() {
++#if !defined(OS_BSD)
+   RemovableStorageProvider::GetAllDevices(
+     base::Bind(
+       &ImageWriterPrivateListRemovableStorageDevicesFunction::OnDeviceListReady,
+       this));
++#endif
+   return true;
+ }
+ 

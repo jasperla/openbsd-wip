@@ -1,0 +1,30 @@
+$OpenBSD$
+Automatically copied from www/chromium.
+
+Index: src/3rdparty/chromium/content/browser/BUILD.gn
+--- src/3rdparty/chromium/content/browser/BUILD.gn.orig
++++ src/3rdparty/chromium/content/browser/BUILD.gn
+@@ -1421,17 +1421,18 @@ source_set("browser") {
+       "memory/memory_monitor_chromeos.cc",
+       "memory/memory_monitor_chromeos.h",
+     ]
+-  } else {
+-    sources += [
+-      "memory/memory_monitor_linux.cc",
+-      "memory/memory_monitor_linux.h",
+-    ]
+   }
+ 
+   if (!is_win) {
+     sources += [
+       "file_descriptor_info_impl.cc",
+       "file_descriptor_info_impl.h",
++    ]
++  }
++
++  if (is_openbsd) {
++    sources -= [
++      "download/quarantine_linux.cc",
+     ]
+   }
+ 

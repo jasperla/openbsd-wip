@@ -1,0 +1,29 @@
+$OpenBSD$
+Automatically copied from www/chromium.
+
+Index: src/3rdparty/chromium/content/utility/utility_main.cc
+--- src/3rdparty/chromium/content/utility/utility_main.cc.orig
++++ src/3rdparty/chromium/content/utility/utility_main.cc
+@@ -10,7 +10,13 @@
+ #include "base/timer/hi_res_timer_manager.h"
+ #include "build/build_config.h"
+ #include "content/child/child_process.h"
++
++#if defined(OS_OPENBSD)
++#include "content/common/sandbox_init_openbsd.h"
++#else
+ #include "content/common/sandbox_linux/sandbox_linux.h"
++#endif
++
+ #include "content/public/common/content_switches.h"
+ #include "content/public/common/main_function_params.h"
+ #include "content/public/common/sandbox_init.h"
+@@ -35,6 +41,8 @@ int UtilityMain(const MainFunctionParams& parameters) 
+   // Seccomp-BPF policy.
+   if (parameters.zygote_child)
+     LinuxSandbox::InitializeSandbox();
++#elif defined(OS_BSD)
++  InitializeSandbox();
+ #endif
+ 
+   ChildProcess utility_process;

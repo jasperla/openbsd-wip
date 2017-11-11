@@ -1,0 +1,23 @@
+$OpenBSD$
+
+Index: src/3rdparty/chromium/content/public/browser/content_browser_client.h
+--- src/3rdparty/chromium/content/public/browser/content_browser_client.h.orig
++++ src/3rdparty/chromium/content/public/browser/content_browser_client.h
+@@ -34,7 +34,7 @@
+ #include "ui/base/page_transition_types.h"
+ #include "ui/base/window_open_disposition.h"
+ 
+-#if defined(OS_POSIX) && !defined(OS_MACOSX)
++#if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_BSD)
+ #include "base/posix/global_descriptors.h"
+ #endif
+ 
+@@ -767,7 +767,7 @@ class CONTENT_EXPORT ContentBrowserClient {
+       int child_process_id,
+       content::FileDescriptorInfo* mappings,
+       std::map<int, base::MemoryMappedFile::Region>* regions) {}
+-#elif defined(OS_POSIX) && !defined(OS_MACOSX)
++#elif defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_BSD)
+   virtual void GetAdditionalMappedFilesForChildProcess(
+       const base::CommandLine& command_line,
+       int child_process_id,

@@ -1,0 +1,14 @@
+$OpenBSD$
+Automatically copied from www/chromium.
+
+--- src/3rdparty/chromium/build/config/linux/pkg-config.py.orig.port	Sun Aug 14 13:26:34 2016
++++ src/3rdparty/chromium/build/config/linux/pkg-config.py	Sun Aug 14 13:26:45 2016
+@@ -107,7 +107,7 @@ def main():
+   # If this is run on non-Linux platforms, just return nothing and indicate
+   # success. This allows us to "kind of emulate" a Linux build from other
+   # platforms.
+-  if "linux" not in sys.platform:
++  if "openbsd" not in sys.platform:
+     print "[[],[],[],[],[]]"
+     return 0
+ 

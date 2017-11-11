@@ -1,0 +1,60 @@
+$OpenBSD$
+Automatically copied from www/chromium.
+
+Index: src/3rdparty/chromium/content/gpu/gpu_main.cc
+--- src/3rdparty/chromium/content/gpu/gpu_main.cc.orig
++++ src/3rdparty/chromium/content/gpu/gpu_main.cc
+@@ -79,6 +79,10 @@
+ #include "content/common/sandbox_mac.h"
+ #endif
+ 
++#if defined(OS_BSD)
++#include "content/common/sandbox_init_openbsd.h"
++#endif
++
+ #if defined(OS_CHROMEOS) && defined(ARCH_CPU_X86_FAMILY)
+ #include "media/gpu/vaapi_wrapper.h"
+ #endif
+@@ -92,7 +96,7 @@ namespace content {
+ 
+ namespace {
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_OPENBSD)
+ bool StartSandboxLinux(gpu::GpuWatchdogThread*);
+ #elif defined(OS_WIN)
+ bool StartSandboxWindows(const sandbox::SandboxInterfaceInfo*);
+@@ -145,7 +149,7 @@ class ContentSandboxHelper : public gpu::GpuSandboxHel
+ 
+   bool EnsureSandboxInitialized(
+       gpu::GpuWatchdogThread* watchdog_thread) override {
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_OPENBSD)
+     return StartSandboxLinux(watchdog_thread);
+ #elif defined(OS_WIN)
+     return StartSandboxWindows(sandbox_info_);
+@@ -296,12 +300,13 @@ int GpuMain(const MainFunctionParams& parameters) {
+ 
+ namespace {
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_OPENBSD)
+ bool StartSandboxLinux(gpu::GpuWatchdogThread* watchdog_thread) {
+   TRACE_EVENT0("gpu,startup", "Initialize sandbox");
+ 
+   bool res = false;
+ 
++#if !defined(OS_BSD)
+   if (watchdog_thread) {
+     // LinuxSandbox needs to be able to ensure that the thread
+     // has really been stopped.
+@@ -326,6 +331,9 @@ bool StartSandboxLinux(gpu::GpuWatchdogThread* watchdo
+     options.timer_slack = base::TIMER_SLACK_MAXIMUM;
+     watchdog_thread->StartWithOptions(options);
+   }
++#else
++  res = InitializeSandbox();
++#endif
+ 
+   return res;
+ }

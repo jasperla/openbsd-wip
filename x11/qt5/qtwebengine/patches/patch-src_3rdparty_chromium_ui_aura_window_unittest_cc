@@ -1,0 +1,14 @@
+$OpenBSD$
+
+Index: src/3rdparty/chromium/ui/aura/window_unittest.cc
+--- src/3rdparty/chromium/ui/aura/window_unittest.cc.orig
++++ src/3rdparty/chromium/ui/aura/window_unittest.cc
+@@ -2034,7 +2034,7 @@ TEST_P(WindowObserverTest, PropertyChanged) {
+ 
+   // Sanity check to see if |PropertyChangeInfoAndClear| really clears.
+   EXPECT_EQ(PropertyChangeInfo(
+-      reinterpret_cast<const void*>(NULL), -3), PropertyChangeInfoAndClear());
++      static_cast<const void*>(NULL), -3), PropertyChangeInfoAndClear());
+ }
+ 
+ TEST_P(WindowObserverTest, AncestorTransformed) {
