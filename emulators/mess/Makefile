@@ -6,7 +6,7 @@ USE_WXNEEDED =	Yes
 
 COMMENT =	Multi Emulator Super System
 
-V =		189
+V =		191
 
 GH_ACCOUNT =	mamedev
 GH_PROJECT =	mame
@@ -49,7 +49,7 @@ CFLAGS +=	-Wno-ignored-qualifiers
 
 MAKE_ENV =	SUBTARGET=mess \
 		NOWERROR=1 VERBOSE=1 TOOLS=1 \
-		OVERRIDE_CC="${CC}" OVERRIDE_CXX="${CXX}" \
+		OVERRIDE_CC="${CC}" OVERRIDE_CXX="${CXX}" OVERRIDE_LD="${CXX}" \
 		OPT_FLAGS="${CXXFLAGS}" \
 		PYTHON_EXECUTABLE="${MODPY_BIN}" \
 		USE_SYSTEM_LIB_EXPAT=1 \
