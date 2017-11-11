@@ -17,7 +17,6 @@
 @info info/mf2pt1.info
 @info info/tds.info
 @info info/texdraw.info
-@info info/tlbuild.info
 @info info/web2c.info
 @man man/man1/afm2afm.1
 @man man/man1/afm2pl.1

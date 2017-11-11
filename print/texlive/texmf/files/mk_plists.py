@@ -194,7 +194,9 @@ def filter_junk(filelist):
          x not in BUG_MISSING_FILES and
          # Stuff provided by other ports
          x not in CONFLICT_FILES and
-         not ("tlmgr" in x and "doc/texlive" not in x)
+         not ("tlmgr" in x and "doc/texlive" not in x) and
+         # We don't need build instructions in our binary packages
+         not x.endswith("/tlbuild.info")
          ]
     return r
 
