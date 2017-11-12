@@ -2,7 +2,8 @@
 
      SUBDIR =
      #SUBDIR += kde-l10n
-     #SUBDIR += akonadi
+     SUBDIR += akonadi-mime
+     SUBDIR += akonadi
      SUBDIR += analitza
      SUBDIR += ark
      SUBDIR += artikulate # WIP
@@ -10,9 +11,9 @@
      #SUBDIR += baloo
      SUBDIR += blinken
      SUBDIR += bomber
-     #SUBDIR += bovo
+     SUBDIR += bovo
      #SUBDIR += calendarsupport
-     #SUBDIR += cantor
+     SUBDIR += cantor
      #SUBDIR += cervisia
      #SUBDIR += dolphin
      #SUBDIR += dolphin-plugins
@@ -48,7 +49,7 @@
      #SUBDIR += kcachegrind
      SUBDIR += kcalc
      SUBDIR += kcalcore
-     #SUBDIR += kcalutils
+     SUBDIR += kcalutils
      #SUBDIR += kcharselect
      #SUBDIR += kcolorchooser
      SUBDIR += kcontacts
@@ -83,7 +84,7 @@
      #SUBDIR += khangman
      #SUBDIR += khelpcenter
      SUBDIR += kholidays
-     #SUBDIR += kidentitymanagement
+     SUBDIR += kidentitymanagement
      #SUBDIR += kig
      #SUBDIR += kigo
      #SUBDIR += killbots
@@ -118,7 +119,7 @@
      #SUBDIR += kontactinterface
      #SUBDIR += kopete
      #SUBDIR += kpat
-     #SUBDIR += kpimtextedit
+     SUBDIR += kpimtextedit
      #SUBDIR += kppp
      SUBDIR += kqtquickcharts
      #SUBDIR += krdc
@@ -170,7 +171,7 @@
      SUBDIR += libkface
      SUBDIR += libkgeomap
      SUBDIR += libkipi
-     #SUBDIR += libkleo
+     SUBDIR += libkleo
      #SUBDIR += libkmahjongg
      #SUBDIR += libkomparediff2
      #SUBDIR += libksane
@@ -183,7 +184,7 @@
      #SUBDIR += messagelib
      #SUBDIR += minuet
      SUBDIR += okteta
-     #SUBDIR += okular
+     SUBDIR += okular
      #SUBDIR += palapeli
      #SUBDIR += parley
      #SUBDIR += picmi
@@ -197,7 +198,7 @@
      SUBDIR += svgpart
      #SUBDIR += sweeper
      #SUBDIR += syndication
-     #SUBDIR += umbrello
+     SUBDIR += umbrello
      #SUBDIR += zeroconf-ioslave
 
 .include <bsd.port.subdir.mk>
