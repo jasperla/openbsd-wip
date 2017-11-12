@@ -46,7 +46,7 @@ USE_GMAKE = Yes
 # "busted" test suite for Lua, which is not yet ported.
 # XXX one test failure
 do-test:
-	cd ${WRKSRC} && env LC_CTYPE=en_US.UTF-8 ${MAKE_PROGRAM}
+	cd ${WRKSRC} && env LC_CTYPE=en_US.UTF-8 ${MAKE_PROGRAM} \
 		-C src/nvim/testdir NVIM_PRG=${WRKBUILD}/bin/nvim ${MAKE_FLAGS}
 
 .include <bsd.port.mk>
