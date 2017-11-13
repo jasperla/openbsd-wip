@@ -10,7 +10,7 @@ CATEGORIES =	sysutils
 
 MAINTAINER =	Aaron Bieber <abieber@openbsd.org>
 
-# MIT
+# BSD
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += c pthread
