@@ -13,7 +13,7 @@ MAINTAINER =	Edd Barrett <edd@openbsd.org>
 # Apache 2.0 + Vim License
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += c lua5.1 m msgpackc pthread termkey unibilium util uv vterm
+WANTLIB += c ${MODLUA_WANTLIB} m msgpackc pthread termkey unibilium util uv vterm
 
 MODULES =		devel/cmake \
 			devel/gettext \
@@ -37,6 +37,8 @@ RUN_DEPENDS +=		devel/libmpack/lua \
 
 MAKE_FLAGS +=		USE_BUNDLED_DEPS=OFF
 CONFIGURE_ARGS +=	-DLUA_PRG=${MODLUA_BIN} \
+			-DLUA_INCLUDE_DIR=${MODLUA_INCL_DIR} \
+			-DLUA_LIBRARIES=${MODLUA_LIB} \
 			-DPREFER_LUA=ON # disables LuaJIT
 
 # Tests need gmake
