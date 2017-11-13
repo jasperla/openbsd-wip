@@ -19,7 +19,12 @@ MODULES =	lang/go
 MODGO_TYPE =	bin
 
 do-build:
-	cd ${WRKSRC} && go run -x build.go
+	cd ${WRKSRC} && ${MODGO_CMD} run -x build.go
+
+# Currently tests fail:
+# node_test.go:212: file: mode doesn't match (04000755 != 0600)
+do-test:
+	cd ${WRKSRC} && ${MODGO_CMD} test ./cmd/... ./internal/...
 
 do-install:
 	cp ${WRKSRC}/restic ${PREFIX}/bin/

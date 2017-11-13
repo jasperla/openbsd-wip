@@ -1,2 +1,1 @@
-Verify deps
-disable fuse?
+Figure out why test fails: node doesn't match (04000755 != 0600)
