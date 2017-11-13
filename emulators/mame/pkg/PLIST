@@ -1,4 +1,5 @@
 @comment $OpenBSD$
+@conflict sdlmame-*
 @bin bin/chdman
 @bin bin/jedutil
 @bin bin/ldresample

@@ -1,4 +1,5 @@
 @comment $OpenBSD$
+@conflict sdlmess-*
 @bin bin/castool
 @bin bin/floptool
 @bin bin/imgtool
