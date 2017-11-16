@@ -13,7 +13,8 @@ MAINTAINER =	Edd Barrett <edd@openbsd.org>
 # Apache 2.0 + Vim License
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += c ${MODLUA_WANTLIB} m msgpackc pthread termkey unibilium util uv vterm
+WANTLIB += c ${MODLUA_WANTLIB} m msgpackc pthread termkey unibilium util
+WANTLIB += uv vterm
 
 MODULES =		devel/cmake \
 			devel/gettext \
@@ -23,7 +24,7 @@ MODULES =		devel/cmake \
 BUILD_DEPENDS =		${RUN_DEPENDS} \
 			devel/gperf \
 			devel/lpeg \
-			devel/luabitop
+			devel/lua-bitop
 
 LIB_DEPENDS =		devel/libtermkey \
 			devel/libuv \
