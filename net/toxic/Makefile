@@ -6,7 +6,8 @@ CATEGORIES =		net
 
 HOMEPAGE =		https://github.com/Jfreegman/toxic
 
-MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
+#MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
+MAINTAINER =		aSourceFish <mazocomp@disroot.org>
 
 # GPLv3+
 PERMIT_PACKAGE_CDROM =	Yes
@@ -17,7 +18,7 @@ WANTLIB += qrencode toxav toxcore toxdns toxencryptsave vpx
 
 GH_ACCOUNT =		Jfreegman
 GH_PROJECT =		toxic
-GH_TAGNAME =		v0.7.2
+GH_TAGNAME =		v0.8.1
 
 LIB_DEPENDS =		audio/freealut \
 			net/toxcore \
