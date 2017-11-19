@@ -37,9 +37,9 @@ LIB_DEPENDS =	devel/kf5/kconfig \
 		devel/kf5/kguiaddons \
 		devel/kf5/kjobwidgets \
 		devel/kf5/kxmlgui \
+		x11/qt5/qtmultimedia \
 		audio/openal
 
-CONFIGURE_ARGS +=	-DBUILD_TESTING:Bool=Off \
 TEST_IS_INTERACTIVE =	X11
 
 .include <bsd.port.mk>
