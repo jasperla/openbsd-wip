@@ -1,0 +1,16 @@
+$OpenBSD$
+
+Correct directory searching.
+
+Index: lex_ucpp.c
+--- lex_ucpp.c.orig
++++ lex_ucpp.c
+@@ -99,7 +99,7 @@ initialize_ucpp(struct lexer_state *ls, FILE *in) {
+ 	/* step 9 -- we do not have any macro to define, but we add any
+ 	  argument as an include path */
+ /*	for (i = 1; i < argc; i ++) add_incpath(argv[i]);*/
+-	add_incpath("/usr/local/nwcc/include");  /* XXXXXXXXXXXXXXXX */
++	add_incpath("${LOCALBASE}/share/nwcc/include");  /* XXXXXXXXXXXXXXXX */
+ 	add_incpath("/usr/include");  /* XXXXXXXXXXXXXXXX */
+ 	for (i = 0; cpp_args[i] != NULL; ++i ){
+ 		if (strncmp(cpp_args[i], "-I", 2) == 0) {

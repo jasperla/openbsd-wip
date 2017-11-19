@@ -1,0 +1,18 @@
+$OpenBSD$
+
+Correct directory searching.
+
+Index: cpp/n_libc.c
+--- cpp/n_libc.c.orig
++++ cpp/n_libc.c
+@@ -203,8 +203,8 @@ void
+ 		struct stat	sbuf;
+ 		char		*path;
+ 
+-		if (stat("/usr/local/nwcc/bin/snake", &sbuf) == 0) {
+-			path = "/usr/local/nwcc/bin/snake";
++		if (stat("${LOCALBASE}/share/nwcc/bin/snake", &sbuf) == 0) {
++			path = "${LOCALBASE}/share/nwcc/bin/snake";
+ 		} else {
+ 			path = "./snake";
+ 		}	
