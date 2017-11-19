@@ -1,0 +1,33 @@
+$OpenBSD$
+
+Index: Makefile
+--- Makefile.orig
++++ Makefile
+@@ -49,9 +49,10 @@ CFLAGS_COMMON ?= \
+ 	-D_XOPEN_SOURCE \
+ 	-D_POSIX_C_SOURCE=200809L \
+ 	-pedantic \
++	-I${X11BASE}/include \
+ 	-std=c99
+ 
+-CFLAGS ?= $(CFLAGS_COMMON)
++CFLAGS += $(CFLAGS_COMMON)
+ 
+ CC ?= cc $(CFLAGS)
+ 
+@@ -66,14 +67,10 @@ debug: CFLAGS += $(WARN) \
+ 	-DDEBUG
+ debug: $(EXECUTABLE)
+ 
+-release: CFLAGS += \
+-	-s \
+-	-O2 \
+-	-DNDEBUG
+ release: $(EXECUTABLE)
+ 
+ $(EXECUTABLE): $(OBJECTS)
+-	$(CC) -o $@ $^ $(shell pkg-config --libs x11) $(CFLAGS)
++	$(CC) -o $@ $(OBJECTS) `pkg-config --libs x11` $(CFLAGS)
+ 
+ %.o: %.c
+ 	$(CC) -c $< $(shell pkg-config --cflags x11) $(CFLAGS)
