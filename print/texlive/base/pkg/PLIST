@@ -473,6 +473,8 @@ lib/pkgconfig/texlua52.pc
 @exec mktexlsr > /dev/null 2>&1
 @unexec-delete rm -f %D/share/texmf-dist/ls-R
 @unexec-delete rm -f %D/share/texmf-var/ls-R
+@unexec-delete rm -f %D/share/texmf-var/luatex-cache/context/0399a8df3aef8d154781d0a9c2b8e28d/trees/*
+@unexec-delete if [ -d %D/share/texmf-var/luatex-cache/context/0399a8df3aef8d154781d0a9c2b8e28d/trees/ ]; then rmdir %D/share/texmf-var/luatex-cache/context/0399a8df3aef8d154781d0a9c2b8e28d/trees/; fi
 @unexec-delete rm -f %D/share/texmf/ls-R
 @unexec-delete rm -f %D/share/texmf-local/ls-R
 ${P5SITE}/TeXLive/
