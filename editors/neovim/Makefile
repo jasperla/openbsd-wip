@@ -44,10 +44,11 @@ CONFIGURE_ARGS +=	-DLUA_PRG=${MODLUA_BIN} \
 
 # Tests need gmake
 USE_GMAKE = Yes
+# `test_startup_utf8.vim' requires either bash or zsh
+TEST_DEPENDS = shells/bash
 
 # These are the "old tests". There is also a new suite, but we would need the
 # "busted" test suite for Lua, which is not yet ported.
-# XXX one test failure
 do-test:
 	cd ${WRKSRC} && env LC_CTYPE=en_US.UTF-8 ${MAKE_PROGRAM} \
 		-C src/nvim/testdir NVIM_PRG=${WRKBUILD}/bin/nvim ${MAKE_FLAGS}
