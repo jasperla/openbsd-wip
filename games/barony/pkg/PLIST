@@ -1,3 +1,4 @@
 @comment $OpenBSD$
-@bin bin/${FULLPKGNAME}
-@bin bin/editor
+@bin bin/barony
+@bin bin/barony-editor
+share/barony/
