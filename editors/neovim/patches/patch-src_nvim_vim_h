@@ -7,7 +7,7 @@ https://github.com/jamessan/neovim/commit/9c58b502d85e4ac08a358d29d5bf4bdae20e8a
 Index: src/nvim/vim.h
 --- src/nvim/vim.h.orig
 +++ src/nvim/vim.h
-@@ -320,7 +320,7 @@ enum { FOLD_TEXT_LEN = 51 };  //!< buffer size for get
+@@ -314,7 +314,7 @@ enum { FOLD_TEXT_LEN = 51 };  //!< buffer size for get
  // Lowest number used for window ID. Cannot have this many windows per tab.
  #define LOWEST_WIN_ID 1000
  

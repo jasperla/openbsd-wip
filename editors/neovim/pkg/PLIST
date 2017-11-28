@@ -1,11 +1,8 @@
 @comment $OpenBSD: PLIST,v 1.1.1.1 2017/05/02 20:58:42 edd Exp $
 @bin bin/nvim
 @man man/man1/nvim.1
-share/applications/
 share/applications/nvim.desktop
 share/doc/pkg-readmes/${FULLPKGNAME}
-share/locale/af/
-share/locale/af/LC_MESSAGES/
 share/locale/af/LC_MESSAGES/nvim.mo
 share/locale/ca/LC_MESSAGES/nvim.mo
 share/locale/cs.cp1250/
@@ -13,8 +10,6 @@ share/locale/cs.cp1250/LC_MESSAGES/
 share/locale/cs.cp1250/LC_MESSAGES/nvim.mo
 share/locale/cs/LC_MESSAGES/nvim.mo
 share/locale/de/LC_MESSAGES/nvim.mo
-share/locale/en_GB/
-share/locale/en_GB/LC_MESSAGES/
 share/locale/en_GB/LC_MESSAGES/nvim.mo
 share/locale/eo/LC_MESSAGES/nvim.mo
 share/locale/es/LC_MESSAGES/nvim.mo
@@ -80,6 +75,7 @@ share/nvim/runtime/autoload/phpcomplete.vim
 share/nvim/runtime/autoload/provider/
 share/nvim/runtime/autoload/provider.vim
 share/nvim/runtime/autoload/provider/clipboard.vim
+share/nvim/runtime/autoload/provider/node.vim
 share/nvim/runtime/autoload/provider/python.vim
 share/nvim/runtime/autoload/provider/python3.vim
 share/nvim/runtime/autoload/provider/pythonx.vim
@@ -817,6 +813,7 @@ share/nvim/runtime/print/ks_roman.ps
 share/nvim/runtime/print/latin1.ps
 share/nvim/runtime/print/mac-roman.ps
 share/nvim/runtime/print/prolog.ps
+share/nvim/runtime/rgb.txt
 share/nvim/runtime/scripts.vim
 share/nvim/runtime/synmenu.vim
 share/nvim/runtime/syntax/

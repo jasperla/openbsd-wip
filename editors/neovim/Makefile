@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2017/10/15 10:53:55 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2017/11/21 00:13:00 naddy Exp $
 
 COMMENT =	continuation and extension of Vim
 
 GH_ACCOUNT =	neovim
 GH_PROJECT =	neovim
-GH_TAGNAME =	v0.2.1
+GH_TAGNAME =	v0.2.2
 
 CATEGORIES =	editors devel
 HOMEPAGE =	http://neovim.org
@@ -13,11 +13,10 @@ MAINTAINER =	Edd Barrett <edd@openbsd.org>
 # Apache 2.0 + Vim License
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += c ${MODLUA_WANTLIB} m msgpackc pthread termkey unibilium util
-WANTLIB += uv vterm
+WANTLIB += c iconv intl ${MODLUA_WANTLIB} m msgpackc pthread termkey
+WANTLIB += unibilium util uv vterm
 
 MODULES =		devel/cmake \
-			devel/gettext \
 			lang/lua \
 			textproc/intltool
 
@@ -26,7 +25,8 @@ BUILD_DEPENDS =		${RUN_DEPENDS} \
 			devel/lpeg \
 			devel/lua-bitop
 
-LIB_DEPENDS =		devel/libtermkey \
+LIB_DEPENDS =		devel/gettext \
+			devel/libtermkey \
 			devel/libuv \
 			devel/libvterm \
 			devel/msgpack \
