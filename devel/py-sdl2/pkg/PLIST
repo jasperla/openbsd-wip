@@ -152,6 +152,8 @@ lib/python${MODPY_VERSION}/site-packages/sdl2/test/__init__.py
 lib/python${MODPY_VERSION}/site-packages/sdl2/test/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/sdl2/test/audio_test.py
 lib/python${MODPY_VERSION}/site-packages/sdl2/test/audio_test.pyc
+lib/python${MODPY_VERSION}/site-packages/sdl2/test/blendmode_test.py
+lib/python${MODPY_VERSION}/site-packages/sdl2/test/blendmode_test.pyc
 lib/python${MODPY_VERSION}/site-packages/sdl2/test/clipboard_test.py
 lib/python${MODPY_VERSION}/site-packages/sdl2/test/clipboard_test.pyc
 lib/python${MODPY_VERSION}/site-packages/sdl2/test/cpuinfo_test.py
@@ -164,6 +166,8 @@ lib/python${MODPY_VERSION}/site-packages/sdl2/test/events_test.py
 lib/python${MODPY_VERSION}/site-packages/sdl2/test/events_test.pyc
 lib/python${MODPY_VERSION}/site-packages/sdl2/test/filesystem_test.py
 lib/python${MODPY_VERSION}/site-packages/sdl2/test/filesystem_test.pyc
+lib/python${MODPY_VERSION}/site-packages/sdl2/test/gamecontroller_test.py
+lib/python${MODPY_VERSION}/site-packages/sdl2/test/gamecontroller_test.pyc
 lib/python${MODPY_VERSION}/site-packages/sdl2/test/hints_test.py
 lib/python${MODPY_VERSION}/site-packages/sdl2/test/hints_test.pyc
 lib/python${MODPY_VERSION}/site-packages/sdl2/test/joystick_test.py
@@ -258,21 +262,12 @@ lib/python${MODPY_VERSION}/site-packages/sdl2/test/syswm_test.py
 lib/python${MODPY_VERSION}/site-packages/sdl2/test/syswm_test.pyc
 lib/python${MODPY_VERSION}/site-packages/sdl2/test/timer_test.py
 lib/python${MODPY_VERSION}/site-packages/sdl2/test/timer_test.pyc
-lib/python${MODPY_VERSION}/site-packages/sdl2/test/util/
-lib/python${MODPY_VERSION}/site-packages/sdl2/test/util/__init__.py
-lib/python${MODPY_VERSION}/site-packages/sdl2/test/util/__init__.pyc
-lib/python${MODPY_VERSION}/site-packages/sdl2/test/util/runtests.py
-lib/python${MODPY_VERSION}/site-packages/sdl2/test/util/runtests.pyc
-lib/python${MODPY_VERSION}/site-packages/sdl2/test/util/support.py
-lib/python${MODPY_VERSION}/site-packages/sdl2/test/util/support.pyc
-lib/python${MODPY_VERSION}/site-packages/sdl2/test/util/testrunner.py
-lib/python${MODPY_VERSION}/site-packages/sdl2/test/util/testrunner.pyc
-lib/python${MODPY_VERSION}/site-packages/sdl2/test/util/testutils.py
-lib/python${MODPY_VERSION}/site-packages/sdl2/test/util/testutils.pyc
 lib/python${MODPY_VERSION}/site-packages/sdl2/test/version_test.py
 lib/python${MODPY_VERSION}/site-packages/sdl2/test/version_test.pyc
 lib/python${MODPY_VERSION}/site-packages/sdl2/test/video_test.py
 lib/python${MODPY_VERSION}/site-packages/sdl2/test/video_test.pyc
+lib/python${MODPY_VERSION}/site-packages/sdl2/test/vulkan_test.py
+lib/python${MODPY_VERSION}/site-packages/sdl2/test/vulkan_test.pyc
 lib/python${MODPY_VERSION}/site-packages/sdl2/timer.py
 lib/python${MODPY_VERSION}/site-packages/sdl2/timer.pyc
 lib/python${MODPY_VERSION}/site-packages/sdl2/touch.py
@@ -281,3 +276,5 @@ lib/python${MODPY_VERSION}/site-packages/sdl2/version.py
 lib/python${MODPY_VERSION}/site-packages/sdl2/version.pyc
 lib/python${MODPY_VERSION}/site-packages/sdl2/video.py
 lib/python${MODPY_VERSION}/site-packages/sdl2/video.pyc
+lib/python${MODPY_VERSION}/site-packages/sdl2/vulkan.py
+lib/python${MODPY_VERSION}/site-packages/sdl2/vulkan.pyc

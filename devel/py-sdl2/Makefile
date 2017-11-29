@@ -1,16 +1,16 @@
 # $OpenBSD: Makefile.template,v 1.76 2017/02/25 16:04:20 danj Exp $
 
-COMMENT =	Python bindings for SDL2
+COMMENT =	Python ctypes wrapper around SDL2
 
-MODPY_EGG_VERSION = 0.9.5
+MODPY_EGG_VERSION = 0.9.6
 DISTNAME =	PySDL2-${MODPY_EGG_VERSION}
 PKGNAME =	py-sdl2-${MODPY_EGG_VERSION}
 
 CATEGORIES =	devel
 
-HOMEPAGE =	https://bitbucket.org/marcusva/py-sdl2/
+HOMEPAGE =	https://github.com/marcusva/py-sdl2
 
-# zlib
+# CC0 (Public Domain)
 PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =	lang/python
