@@ -6,7 +6,7 @@ USE_WXNEEDED =	Yes
 
 COMMENT =	Multi Emulator Super System
 
-V =		191
+V =		192
 
 GH_ACCOUNT =	mamedev
 GH_PROJECT =	mame
