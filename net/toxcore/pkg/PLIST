@@ -1,5 +1,4 @@
 @comment $OpenBSD$
-@bin bin/DHT_bootstrap
 include/tox/
 include/tox/tox.h
 include/tox/toxav.h
@@ -19,9 +18,3 @@ lib/libtoxencryptsave.la
 @lib lib/libtoxencryptsave.so.${LIBtoxencryptsave_VERSION}
 lib/pkgconfig/libtoxav.pc
 lib/pkgconfig/libtoxcore.pc
-share/doc/tox/
-share/doc/tox/Group-Chats.md
-share/doc/tox/Hardening.txt
-share/doc/tox/Hardening_docs.txt
-share/doc/tox/Prevent_Tracking.txt
-share/doc/tox/TCP_Network.txt

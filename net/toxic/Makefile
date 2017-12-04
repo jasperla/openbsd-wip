@@ -6,18 +6,16 @@ CATEGORIES =		net
 
 HOMEPAGE =		https://github.com/Jfreegman/toxic
 
-MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
-
 # GPLv3+
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += X11 alut c config curl gdk_pixbuf-2.0 gio-2.0 glib-2.0
+WANTLIB += X11 alut c config curses curl gdk_pixbuf-2.0 gio-2.0 glib-2.0
 WANTLIB += gobject-2.0 intl m ncursesw notify openal opus png pthread
-WANTLIB += qrencode toxav toxcore toxdns toxencryptsave vpx
+WANTLIB += qrencode toxav toxcore toxdns toxencryptsave vpx z
 
 GH_ACCOUNT =		Jfreegman
 GH_PROJECT =		toxic
-GH_TAGNAME =		v0.7.2
+GH_TAGNAME =		v0.8.1
 
 LIB_DEPENDS =		audio/freealut \
 			net/toxcore \
