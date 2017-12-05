@@ -20,7 +20,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =	devel/cmake
 
-WANTLIB += ${COMPILER_LIBCXX} c m
+WANTLIB += ${COMPILER_LIBCXX} c m pcre pcreposix
 
 LIB_DEPENDS =	devel/pcre
 
