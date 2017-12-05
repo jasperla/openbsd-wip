@@ -1,0 +1,108 @@
+$OpenBSD$
+
+strlcat
+
+Index: codemp/cgame/cg_players.c
+--- codemp/cgame/cg_players.c.orig
++++ codemp/cgame/cg_players.c
+@@ -546,7 +546,7 @@ retryModel:
+ 		slash = Q_strrchr( afilename, '/' );
+ 		if ( slash )
+ 		{
+-			strcpy(slash, "/animation.cfg");
++			strlcpy(slash, "/animation.cfg", sizeof(slash));
+ 		}	// Now afilename holds just the path to the animation.cfg
+ 		else
+ 		{	// Didn't find any slashes, this is a raw filename right in base (whish isn't a good thing)
+@@ -703,7 +703,7 @@ retryModel:
+         int i = 0;
+ 		int j;
+ 		char iconName[1024];
+-		strcpy(iconName, "icon_");
++		strlcpy(iconName, "icon_", sizeof(iconName));
+ 		j = strlen(iconName);
+ 		while (skinName[i] && skinName[i] != '|' && j < 1024)
+ 		{
+@@ -785,7 +785,7 @@ int CG_G2SkelForModel(void *g2)
+ 	slash = Q_strrchr( GLAName, '/' );
+ 	if ( slash )
+ 	{
+-		strcpy(slash, "/animation.cfg");
++		strlcpy(slash, "/animation.cfg", sizeof(slash));
+ 
+ 		animIndex = BG_ParseAnimationFile(GLAName, NULL, qfalse);
+ 	}
+@@ -1085,7 +1085,7 @@ void CG_LoadClientInfo( clientInfo_t *ci ) {
+ 		}
+ 	}
+ 	if( teamname[0] ) {
+-		strcat( teamname, "/" );
++		strlcat( teamname, "/" , sizeof(teamname));
+ 	}
+ 	modelloaded = qtrue;
+ 	if (cgs.gametype == GT_SIEGE &&
+@@ -1276,8 +1276,8 @@ static void CG_CopyClientInfoModel( clientInfo_t *from
+ 	//Don't do this, I guess. Just leave the saber info in the original, so it will be
+ 	//properly initialized.
+ 	/*
+-	strcpy(to->saberName, from->saberName);
+-	strcpy(to->saber2Name, from->saber2Name);
++	strlcpy(to->saberName, from->saberName, sizeof(to->saberName));
++	strlcpy(to->saber2Name, from->saber2Name, sizeof(to->saber2Name));
+ 
+ 	while (i < MAX_SABERS)
+ 	{
+@@ -6894,7 +6894,7 @@ int CG_HandleAppendedSkin(char *modelName)
+ 		{ //got it, register the skin under the model path.
+ 			char baseFolder[MAX_QPATH];
+ 
+-			strcpy(baseFolder, modelName);
++			strlcpy(baseFolder, modelName, sizeof(baseFolder));
+ 			p = Q_strrchr(baseFolder, '/'); //go back to the first /, should be the path point
+ 
+ 			if (p)
+@@ -6967,7 +6967,7 @@ void CG_CacheG2AnimInfo(char *modelName)
+ 		slash = Q_strrchr( GLAName, '/' );
+ 		if ( slash )
+ 		{
+-			strcpy(slash, "/animation.cfg" );
++			strlcpy(slash, "/animation.cfg" , sizeof(slash));
+ 
+ 			animIndex = BG_ParseAnimationFile(GLAName, NULL, qfalse);
+ 		}
+@@ -7059,7 +7059,7 @@ void CG_G2AnimEntModelLoad(centity_t *cent)
+ 		int skinID;
+ 		char *slash;
+ 
+-		strcpy(modelName, cModelName);
++		strlcpy(modelName, cModelName, sizeof(modelName));
+ 
+ 		if (cent->currentState.NPC_class == CLASS_VEHICLE && modelName[0] == '$')
+ 		{ //vehicles pass their veh names over as model names, then we get the model name from the veh type
+@@ -7109,7 +7109,7 @@ void CG_G2AnimEntModelLoad(centity_t *cent)
+ 			{
+ 				skinID = trap->R_RegisterSkin(va("models/players/%s/model_default.skin", modelName));
+ 			}
+-			strcpy(modelName, va("models/players/%s/model.glm", modelName));
++			strlcpy(modelName, va("models/players/%s/model.glm", modelName), sizeof(modelName));
+ 
+ 			//this sound is *only* used for vehicles now
+ 			cgs.media.noAmmoSound = trap->S_RegisterSound( "sound/weapons/noammo.wav" );
+@@ -7229,7 +7229,7 @@ void CG_G2AnimEntModelLoad(centity_t *cent)
+ 			GLAName[0] = 0;
+ 			trap->G2API_GetGLAName(cent->ghoul2, 0, GLAName);
+ 
+-			strcpy(originalModelName, modelName);
++			strlcpy(originalModelName, modelName, sizeof(originalModelName));
+ 
+ 			if (GLAName[0] &&
+ 				!strstr(GLAName, "players/_humanoid/") /*&&
+@@ -7238,7 +7238,7 @@ void CG_G2AnimEntModelLoad(centity_t *cent)
+ 				slash = Q_strrchr( GLAName, '/' );
+ 				if ( slash )
+ 				{
+-					strcpy(slash, "/animation.cfg");
++					strlcpy(slash, "/animation.cfg", sizeof(slash));
+ 
+ 					cent->localAnimIndex = BG_ParseAnimationFile(GLAName, NULL, qfalse);
+ 				}

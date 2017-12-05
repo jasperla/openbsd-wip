@@ -1,0 +1,18 @@
+$OpenBSD$
+
+strlcat
+
+Index: tools/ModView/shader.cpp
+--- tools/ModView/shader.cpp.orig
++++ tools/ModView/shader.cpp
+@@ -412,8 +412,8 @@ void ScanAndLoadShaderFiles( void )
+ 
+ 		// free in reverse order, so the temp files are all dumped
+ 		for ( i = numShaders - 1; i >= 0 ; i-- ) {
+-			strcat( s_shaderText, "\n" );
+-			strcat( s_shaderText, buffers[i] );
++			strlcat( s_shaderText, "\n" , sizeof(s_shaderText));
++			strlcat( s_shaderText, buffers[i] , sizeof(s_shaderText));
+ 			ri.FS_FreeFile( buffers[i] );
+ 		}
+ 

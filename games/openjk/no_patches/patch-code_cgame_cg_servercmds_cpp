@@ -1,0 +1,41 @@
+$OpenBSD$
+
+strlcpy
+
+Index: code/cgame/cg_servercmds.cpp
+--- code/cgame/cg_servercmds.cpp.orig
++++ code/cgame/cg_servercmds.cpp
+@@ -75,27 +75,27 @@ void CG_ParseServerinfo( void ) {
+ 		!stricmp(cgs.stripLevelName[0],"KEJIM_POST")
+ 		)
+ 	{
+-		strcpy( cgs.stripLevelName[1], "ARTUS_MINE" );
++		strlcpy( cgs.stripLevelName[1], "ARTUS_MINE" , sizeof(cgs.stripLevelName[1]));
+ 	}
+ 	if (!stricmp(cgs.stripLevelName[0],"DOOM_DETENTION") ||
+ 		!stricmp(cgs.stripLevelName[0],"DOOM_SHIELDS")
+ 		)
+ 	{
+-		strcpy( cgs.stripLevelName[1], "DOOM_COMM" );
++		strlcpy( cgs.stripLevelName[1], "DOOM_COMM" , sizeof(cgs.stripLevelName[1]));
+ 	}
+ 	if (!stricmp(cgs.stripLevelName[0],"DOOM_COMM"))
+ 	{
+-		strcpy( cgs.stripLevelName[1], "CAIRN_BAY" );
++		strlcpy( cgs.stripLevelName[1], "CAIRN_BAY" , sizeof(cgs.stripLevelName[1]));
+ 	}
+ 	if (!stricmp(cgs.stripLevelName[0],"NS_STARPAD"))
+ 	{
+-		strcpy( cgs.stripLevelName[1], "ARTUS_TOPSIDE" );	// for dream sequence...
++		strlcpy( cgs.stripLevelName[1], "ARTUS_TOPSIDE" , sizeof(cgs.stripLevelName[1]));	// for dream sequence...
+ 
+-		strcpy( cgs.stripLevelName[2], "BESPIN_UNDERCITY" );	// for dream sequence...
++		strlcpy( cgs.stripLevelName[2], "BESPIN_UNDERCITY" , sizeof(cgs.stripLevelName[2]));	// for dream sequence...
+ 	}
+ 	if (!stricmp(cgs.stripLevelName[0],"BESPIN_PLATFORM"))
+ 	{
+-		strcpy( cgs.stripLevelName[1], "BESPIN_UNDERCITY" );
++		strlcpy( cgs.stripLevelName[1], "BESPIN_UNDERCITY" , sizeof(cgs.stripLevelName[1]));
+ 	}
+ */
+ }

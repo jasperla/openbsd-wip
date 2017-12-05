@@ -1,0 +1,61 @@
+$OpenBSD$
+
+strlcpy
+
+Index: codemp/qcommon/GenericParser2.cpp
+--- codemp/qcommon/GenericParser2.cpp.orig
++++ codemp/qcommon/GenericParser2.cpp
+@@ -207,7 +207,7 @@ char *CTextPool::AllocText(char *text, bool addNULL, C
+ 		return 0;
+ 	}
+ 
+-	strcpy(mPool + mUsed, text);
++	strlcpy(mPool + mUsed, text, sizeof(mPool + mUsed));
+ 	mUsed += length;
+ 	mPool[mUsed] = 0;
+ 
+@@ -708,7 +708,7 @@ bool CGPGroup::Parse(char **dataPtr, CTextPool **textP
+ 			break;
+ 		}
+ 
+-		strcpy(lastToken, token);
++		strlcpy(lastToken, token, sizeof(lastToken));
+ 
+ 		// read ahead to see what we are doing
+ 		token = GetToken(dataPtr, true, true);
+@@ -987,7 +987,7 @@ bool GPG_GetName(TGPGroup GPG, char *Value)
+ 		return false;
+ 	}
+ 
+-	strcpy(Value, ((CGPGroup *)GPG)->GetName());
++	strlcpy(Value, ((CGPGroup *)GPG)->GetName(), sizeof(Value));
+ 	return true;
+ }
+ 
+@@ -1093,7 +1093,7 @@ const char *GPG_FindPairValue(TGPGroup GPG, const char
+ 
+ bool GPG_FindPairValue(TGPGroup GPG, const char *key, const char *defaultVal, char *Value)
+ {
+-	strcpy(Value, GPG_FindPairValue(GPG, key, defaultVal));
++	strlcpy(Value, GPG_FindPairValue(GPG, key, defaultVal), sizeof(Value));
+ 
+ 	return true;
+ }
+@@ -1120,7 +1120,7 @@ bool GPV_GetName(TGPValue GPV, char *Value)
+ 		return false;
+ 	}
+ 
+-	strcpy(Value, ((CGPValue *)GPV)->GetName());
++	strlcpy(Value, ((CGPValue *)GPV)->GetName(), sizeof(Value));
+ 	return true;
+ }
+ 
+@@ -1182,7 +1182,7 @@ bool GPV_GetTopValue(TGPValue GPV, char *Value)
+ 		return false;
+ 	}
+ 
+-	strcpy(Value, ((CGPValue *)GPV)->GetTopValue());
++	strlcpy(Value, ((CGPValue *)GPV)->GetTopValue(), sizeof(Value));
+ 
+ 	return true;
+ }

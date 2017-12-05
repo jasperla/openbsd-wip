@@ -1,0 +1,49 @@
+$OpenBSD$
+
+strlcat
+
+Index: codemp/cgame/cg_servercmds.c
+--- codemp/cgame/cg_servercmds.c.orig
++++ codemp/cgame/cg_servercmds.c
+@@ -453,7 +453,7 @@ static void CG_RegisterCustomSounds(clientInfo_t *ci, 
+ 			char modifiedSound[MAX_QPATH];
+ 			char *p;
+ 
+-			strcpy(modifiedSound, s);
++			strlcpy(modifiedSound, s, sizeof(modifiedSound));
+ 			p = strchr(modifiedSound,'.');
+ 
+ 			if (p)
+@@ -470,7 +470,7 @@ static void CG_RegisterCustomSounds(clientInfo_t *ci, 
+ 				{
+ 					*p = 0;
+ 
+-					strcat(modifiedSound, "1.wav");
++					strlcat(modifiedSound, "1.wav", sizeof(modifiedSound));
+ 
+ 					hSFX = trap->S_RegisterSound( va("sound/chars/%s/misc/%s", psDir, modifiedSound) );
+ 				}
+@@ -826,7 +826,7 @@ static void CG_ConfigStringModified( void ) {
+ 		cg.intermissionStarted = atoi( str );
+ 	} else if ( num >= CS_MODELS && num < CS_MODELS+MAX_MODELS ) {
+ 		char modelName[MAX_QPATH];
+-		strcpy(modelName, str);
++		strlcpy(modelName, str, sizeof(modelName));
+ 		if (strstr(modelName, ".glm") || modelName[0] == '$')
+ 		{ //Check to see if it has a custom skin attached.
+ 			CG_HandleAppendedSkin(modelName);
+@@ -1123,12 +1123,12 @@ void CG_CheckSVStringEdRef(char *buf, const char *str)
+ 	{
+ 		if (str)
+ 		{
+-			strcpy(buf, str);
++			strlcpy(buf, str, sizeof(buf));
+ 		}
+ 		return;
+ 	}
+ 
+-	strcpy(buf, str);
++	strlcpy(buf, str, sizeof(buf));
+ 
+ 	strLen = strlen(str);
+ 

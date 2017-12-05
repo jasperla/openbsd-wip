@@ -1,0 +1,32 @@
+$OpenBSD$
+
+strlcpy
+
+Index: tools/ModView/textures.cpp
+--- tools/ModView/textures.cpp.orig
++++ tools/ModView/textures.cpp
+@@ -18,7 +18,7 @@ static LPCSTR BackSlash(LPCSTR psFilename)
+ {
+ 	static char sTemp[1024];
+ 
+-	strcpy(sTemp,psFilename);
++	strlcpy(sTemp,psFilename, sizeof(sTemp));
+ 
+ 	char *p;
+ 	while( (p=strchr(sTemp,'/')) != NULL)
+@@ -234,7 +234,7 @@ static void TextureList_EnsureOneBad(void)
+ 	{
+ 		Texture_t Texture = {0};
+ 		Texture.gluiBind = 0;
+-		strcpy(Texture.sName,"default");
++		strlcpy(Texture.sName,"default", sizeof(Texture.sName));
+ 		Texture.bIsDefault = true;
+ 
+ 		TheTextures[TextureList_GetNewHandle()] = Texture;	
+@@ -1183,4 +1183,4 @@ void freeTextureRes()
+ #endif
+ 
+ 
+-//////////////// eof ///////////////
+\ No newline at end of file
++//////////////// eof ///////////////

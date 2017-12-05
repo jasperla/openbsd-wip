@@ -1,0 +1,16 @@
+$OpenBSD$
+
+strlcpy
+
+Index: tools/ModView/sequence.cpp
+--- tools/ModView/sequence.cpp.orig
++++ tools/ModView/sequence.cpp
+@@ -142,7 +142,7 @@ Sequence_t*	Sequence_CreateDefault(int iNumFrames)
+ 
+ 	Sequence_Clear(&Sequence);
+ 
+-	strcpy(Sequence.sName,"default");
++	strlcpy(Sequence.sName,"default", sizeof(Sequence.sName));
+ 	Sequence.iFrameCount= iNumFrames;
+ 	Sequence.bIsDefault	= true;
+ 

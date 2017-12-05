@@ -1,0 +1,103 @@
+$OpenBSD$
+
+strlcpy
+
+Index: codemp/icarus/Q3_Interface.cpp
+--- codemp/icarus/Q3_Interface.cpp.orig
++++ codemp/icarus/Q3_Interface.cpp
+@@ -334,8 +334,8 @@ static int Q3_PlaySound( int taskID, int entID, const 
+ 
+ 	sharedMem->taskID = taskID;
+ 	sharedMem->entID = entID;
+-	strcpy(sharedMem->name, name);
+-	strcpy(sharedMem->channel, channel);
++	strlcpy(sharedMem->name, name, sizeof(sharedMem->name));
++	strlcpy(sharedMem->channel, channel, sizeof(sharedMem->channel));
+ 
+ 	return GVM_ICARUS_PlaySound();
+ }
+@@ -409,8 +409,8 @@ static void Q3_Set( int taskID, int entID, const char 
+ 
+ 	sharedMem->taskID = taskID;
+ 	sharedMem->entID = entID;
+-	strcpy(sharedMem->type_name, type_name);
+-	strcpy(sharedMem->data, data);
++	strlcpy(sharedMem->type_name, type_name, sizeof(sharedMem->type_name));
++	strlcpy(sharedMem->data, data, sizeof(sharedMem->data));
+ 
+ 	if ( GVM_ICARUS_Set() )
+ 	{
+@@ -840,7 +840,7 @@ static int	Q3_GetTag( int entID, const char *name, int
+ 	T_G_ICARUS_GETTAG *sharedMem = (T_G_ICARUS_GETTAG *)sv.mSharedMemory;
+ 
+ 	sharedMem->entID = entID;
+-	strcpy(sharedMem->name, name);
++	strlcpy(sharedMem->name, name, sizeof(sharedMem->name));
+ 	sharedMem->lookup = lookup;
+ 	VectorCopy(info, sharedMem->info);
+ 
+@@ -876,7 +876,7 @@ static void Q3_Use( int entID, const char *target )
+ 	T_G_ICARUS_USE *sharedMem = (T_G_ICARUS_USE *)sv.mSharedMemory;
+ 
+ 	sharedMem->entID = entID;
+-	strcpy(sharedMem->target, target);
++	strlcpy(sharedMem->target, target, sizeof(sharedMem->target));
+ 
+ 	GVM_ICARUS_Use();
+ }
+@@ -886,7 +886,7 @@ static void Q3_Kill( int entID, const char *name )
+ 	T_G_ICARUS_KILL *sharedMem = (T_G_ICARUS_KILL *)sv.mSharedMemory;
+ 
+ 	sharedMem->entID = entID;
+-	strcpy(sharedMem->name, name);
++	strlcpy(sharedMem->name, name, sizeof(sharedMem->name));
+ 
+ 	GVM_ICARUS_Kill();
+ }
+@@ -896,7 +896,7 @@ static void Q3_Remove( int entID, const char *name )
+ 	T_G_ICARUS_REMOVE *sharedMem = (T_G_ICARUS_REMOVE *)sv.mSharedMemory;
+ 
+ 	sharedMem->entID = entID;
+-	strcpy(sharedMem->name, name);
++	strlcpy(sharedMem->name, name, sizeof(sharedMem->name));
+ 
+ 	GVM_ICARUS_Remove();
+ }
+@@ -907,8 +907,8 @@ static void Q3_Play( int taskID, int entID, const char
+ 
+ 	sharedMem->taskID = taskID;
+ 	sharedMem->entID = entID;
+-	strcpy(sharedMem->type, type);
+-	strcpy(sharedMem->name, name);
++	strlcpy(sharedMem->type, type, sizeof(sharedMem->type));
++	strlcpy(sharedMem->name, name, sizeof(sharedMem->name));
+ 
+ 	GVM_ICARUS_Play();
+ }
+@@ -920,7 +920,7 @@ static int Q3_GetFloat( int entID, int type, const cha
+ 
+ 	sharedMem->entID = entID;
+ 	sharedMem->type = type;
+-	strcpy(sharedMem->name, name);
++	strlcpy(sharedMem->name, name, sizeof(sharedMem->name));
+ 	sharedMem->value = 0;//*value;
+ 
+ 	r = GVM_ICARUS_GetFloat();
+@@ -935,7 +935,7 @@ static int Q3_GetVector( int entID, int type, const ch
+ 
+ 	sharedMem->entID = entID;
+ 	sharedMem->type = type;
+-	strcpy(sharedMem->name, name);
++	strlcpy(sharedMem->name, name, sizeof(sharedMem->name));
+ 	VectorCopy(value, sharedMem->value);
+ 
+ 	r = GVM_ICARUS_GetVector();
+@@ -950,7 +950,7 @@ static int Q3_GetString( int entID, int type, const ch
+ 
+ 	sharedMem->entID = entID;
+ 	sharedMem->type = type;
+-	strcpy(sharedMem->name, name);
++	strlcpy(sharedMem->name, name, sizeof(sharedMem->name));
+ 
+ 	r = GVM_ICARUS_GetString();
+ 	//rww - careful with this, next time shared memory is altered this will get stomped

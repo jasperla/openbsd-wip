@@ -1,0 +1,25 @@
+$OpenBSD$
+
+strlcpy
+
+Index: codemp/client/FxTemplate.cpp
+--- codemp/client/FxTemplate.cpp.orig
++++ codemp/client/FxTemplate.cpp
+@@ -89,7 +89,7 @@ CPrimitiveTemplate &CPrimitiveTemplate::operator=(cons
+ {
+ 	// I'm assuming that doing a memcpy wouldn't work here
+ 	// If you are looking at this and know a better way to do this, please tell me.
+-	strcpy( mName, that.mName );
++	strlcpy( mName, that.mName , sizeof(mName));
+ 
+ 	mType				= that.mType;
+ 
+@@ -2168,7 +2168,7 @@ bool CPrimitiveTemplate::ParsePrimitive( CGPGroup *grp
+ 			ParseSpawnFlags( val );
+ 		else if ( !Q_stricmp( key, "name" ) ) {
+ 			if ( val ) // just stash the descriptive name of the primitive
+-				strcpy( mName, val );
++				strlcpy( mName, val , sizeof(mName));
+ 		}
+ 		else if ( !Q_stricmp( key, "materialImpact" ) )
+ 			ParseMaterialImpact( val );

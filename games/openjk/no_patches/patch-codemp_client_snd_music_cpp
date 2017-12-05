@@ -1,0 +1,16 @@
+$OpenBSD$
+
+strlcpy
+
+Index: codemp/client/snd_music.cpp
+--- codemp/client/snd_music.cpp.orig
++++ codemp/client/snd_music.cpp
+@@ -399,7 +399,7 @@ static char *StripTrailingWhiteSpaceOnEveryLine(char *
+ 	}
+ 
+ 	char  *pNewText = (char *) Z_Malloc( strlen(strNewText.c_str())+1, TAG_TEMP_WORKSPACE, qfalse);
+-	strcpy(pNewText, strNewText.c_str());
++	strlcpy(pNewText, strNewText.c_str(), sizeof(pNewText));
+ 	return pNewText;
+ }
+ 

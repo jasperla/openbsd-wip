@@ -1,0 +1,18 @@
+$OpenBSD$
+
+strlcat
+
+Index: tools/Ibize/ibize.cpp
+--- tools/Ibize/ibize.cpp.orig
++++ tools/Ibize/ibize.cpp
+@@ -167,8 +167,8 @@ int main(int argc, char* argv[])
+ 		else
+ 		{
+ 			//Try adding on the SCR extension if it was left off
+-			strcpy((char *) &newfilename, filename);
+-			strcat((char *) &newfilename, SCRIPT_EXTENSION);
++			strlcpy((char *) &newfilename, filename, sizeof((char *) &newfilename));
++			strlcat((char *) &newfilename, SCRIPT_EXTENSION, sizeof((char *) &newfilename));
+ 
+ 			if (Tokenizer.AddParseFile( (char*) &newfilename ))
+ 			{

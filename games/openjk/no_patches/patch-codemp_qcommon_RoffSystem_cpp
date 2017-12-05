@@ -1,0 +1,16 @@
+$OpenBSD$
+
+strlcpy
+
+Index: codemp/qcommon/RoffSystem.cpp
+--- codemp/qcommon/RoffSystem.cpp.orig
++++ codemp/qcommon/RoffSystem.cpp
+@@ -43,7 +43,7 @@ CROFFSystem theROFFSystem;
+ //---------------------------------------------------------------------------
+ CROFFSystem::CROFF::CROFF( const char *file, int id )
+ {
+-	strcpy( mROFFFilePath, file );
++	strlcpy( mROFFFilePath, file , sizeof(mROFFFilePath));
+ 
+ 	mID				= id;
+ 	mMoveRotateList = NULL;

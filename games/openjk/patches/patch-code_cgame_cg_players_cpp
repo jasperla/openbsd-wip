@@ -1,0 +1,16 @@
+$OpenBSD$
+
+strlcat 
+
+Index: code/cgame/cg_players.cpp
+--- code/cgame/cg_players.cpp.orig
++++ code/cgame/cg_players.cpp
+@@ -291,7 +291,7 @@ static const char *GetCustomSound_VariantCapped(const 
+ 
+ 						int iRandom = bForceVariant1 ? 1 : (!i ? Q_irand(1,iVariantCap) : 1);
+ 
+-						strcat(sName,va("%d",iRandom));
++						strlcat(sName,va("%d",iRandom), sizeof(sName));
+ 
+ 						// does this exist in the entries before the original one?...
+ 						//

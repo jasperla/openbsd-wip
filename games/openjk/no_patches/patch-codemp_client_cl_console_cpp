@@ -1,0 +1,31 @@
+$OpenBSD$
+
+strlcat
+
+Index: codemp/client/cl_console.cpp
+--- codemp/client/cl_console.cpp.orig
++++ codemp/client/cl_console.cpp
+@@ -626,9 +626,9 @@ void Con_DrawNotify (void)
+ 			{
+ 				if ( ( (text[x]>>8)&Q_COLOR_BITS ) != currentColor ) {
+ 					currentColor = (text[x]>>8)&Q_COLOR_BITS;
+-					strcat(sTemp,va("^%i", (text[x]>>8)&Q_COLOR_BITS) );
++					strlcat(sTemp,va("^%i", (text[x]>>8)&Q_COLOR_BITS) , sizeof(sTemp));
+ 				}
+-				strcat(sTemp,va("%c",text[x] & 0xFF));
++				strlcat(sTemp,va("%c",text[x] & 0xFF), sizeof(sTemp));
+ 			}
+ 			//
+ 			// and print...
+@@ -806,9 +806,9 @@ void Con_DrawSolidConsole( float frac ) {
+ 			{
+ 				if ( ( (text[x]>>8)&Q_COLOR_BITS ) != currentColor ) {
+ 					currentColor = (text[x]>>8)&Q_COLOR_BITS;
+-					strcat(sTemp,va("^%i", (text[x]>>8)&Q_COLOR_BITS) );
++					strlcat(sTemp,va("^%i", (text[x]>>8)&Q_COLOR_BITS) , sizeof(sTemp));
+ 				}
+-				strcat(sTemp,va("%c",text[x] & 0xFF));
++				strlcat(sTemp,va("%c",text[x] & 0xFF), sizeof(sTemp));
+ 			}
+ 			//
+ 			// and print...

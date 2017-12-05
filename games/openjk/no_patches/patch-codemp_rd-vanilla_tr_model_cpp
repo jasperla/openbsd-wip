@@ -1,0 +1,52 @@
+$OpenBSD$
+
+strlcat
+
+Index: codemp/rd-vanilla/tr_model.cpp
+--- codemp/rd-vanilla/tr_model.cpp.orig
++++ codemp/rd-vanilla/tr_model.cpp
+@@ -650,7 +650,7 @@ void RE_InsertModelIntoHash(const char *name, model_t 
+ 
+ 	mh->next = mhHashTable[hash];
+ 	mh->handle = mod->index;
+-	strcpy(mh->name, name);
++	strlcpy(mh->name, name, sizeof(mh->name));
+ 	mhHashTable[hash] = mh;
+ }
+ /*
+@@ -1080,7 +1080,7 @@ Ghoul2 Insert End
+ 	for ( lod = iLODStart; lod >= 0 ; lod-- ) {
+ 		char filename[1024];
+ 
+-		strcpy( filename, name );
++		strlcpy( filename, name , sizeof(filename));
+ 
+ 		if ( lod != 0 ) {
+ 			char namebuf[80];
+@@ -1089,7 +1089,7 @@ Ghoul2 Insert End
+ 				*strrchr( filename, '.' ) = 0;
+ 			}
+ 			sprintf( namebuf, "_%d.md3", lod );
+-			strcat( filename, namebuf );
++			strlcat( filename, namebuf , sizeof(filename));
+ 		}
+ 
+ 		qboolean bAlreadyCached = qfalse;
+@@ -1295,7 +1295,7 @@ Ghoul2 Insert End
+ 	for ( lod = iLODStart; lod >= 0 ; lod-- ) {
+ 		char filename[1024];
+ 
+-		strcpy( filename, name );
++		strlcpy( filename, name , sizeof(filename));
+ 
+ 		if ( lod != 0 ) {
+ 			char namebuf[80];
+@@ -1304,7 +1304,7 @@ Ghoul2 Insert End
+ 				*strrchr( filename, '.' ) = 0;
+ 			}
+ 			sprintf( namebuf, "_%d.md3", lod );
+-			strcat( filename, namebuf );
++			strlcat( filename, namebuf , sizeof(filename));
+ 		}
+ 
+ 		qboolean bAlreadyCached = qfalse;

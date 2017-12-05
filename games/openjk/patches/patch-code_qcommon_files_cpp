@@ -1,0 +1,90 @@
+$OpenBSD$
+
+strlcat
+use a separate variable stringLength to keep track of max length of listbuf and buildBuffer[i].name
+
+Index: code/qcommon/files.cpp
+--- code/qcommon/files.cpp.orig
++++ code/qcommon/files.cpp
+@@ -1925,6 +1925,7 @@ static pack_t *FS_LoadZipFile( const char *zipfile, co
+ 	pack->handle = uf;
+ 	pack->numfiles = gi.number_entry;
+ 	unzGoToFirstFile(uf);
++	size_t stringLength = 0;
+ 
+ 	for (i = 0; i < gi.number_entry; i++)
+ 	{
+@@ -1938,7 +1939,8 @@ static pack_t *FS_LoadZipFile( const char *zipfile, co
+ 		Q_strlwr( filename_inzip );
+ 		hash = FS_HashFileName(filename_inzip, pack->hashSize);
+ 		buildBuffer[i].name = namePtr;
+-		strcpy( buildBuffer[i].name, filename_inzip );
++		stringLength += strlen(filename_inzip) + 1;
++		strlcpy( buildBuffer[i].name, filename_inzip, stringLength);
+ 		namePtr += strlen(filename_inzip) + 1;
+ 		// store the file position in the zip
+ 		buildBuffer[i].pos = unzGetOffset(uf);
+@@ -1998,7 +2000,7 @@ static int FS_ReturnPath( const char *zname, char *zpa
+ 		}
+ 		at++;
+ 	}
+-	strcpy(zpath, zname);
++	strlcpy(zpath, zname, sizeof(zpath));
+ 	zpath[len] = 0;
+ 	*depth = newdep;
+ 
+@@ -2192,6 +2194,7 @@ int	FS_GetFileList(  const char *path, const char *ext
+ 	*listbuf = 0;
+ 	nFiles = 0;
+ 	nTotal = 0;
++	size_t stringLength = 0;
+ 
+ 	if (Q_stricmp(path, "$modlist") == 0) {
+ 		return FS_GetModList(listbuf, bufsize);
+@@ -2201,8 +2204,9 @@ int	FS_GetFileList(  const char *path, const char *ext
+ 
+ 	for (i =0; i < nFiles; i++) {
+ 		nLen = strlen(pFiles[i]) + 1;
++		stringLength += nLen;
+ 		if (nTotal + nLen + 1 < bufsize) {
+-			strcpy(listbuf, pFiles[i]);
++			strlcpy(listbuf, pFiles[i], stringLength);
+ 			listbuf += nLen;
+ 			nTotal += nLen;
+ 		}
+@@ -2372,8 +2376,8 @@ int	FS_GetModList( char *listbuf, int bufsize ) {
+ 				// nLen is the length of the mod path
+ 				// we need to see if there is a description available
+ 				descPath[0] = '\0';
+-				strcpy(descPath, name);
+-				strcat(descPath, "/description.txt");
++				strlcpy(descPath, name, sizeof(descPath));
++				strlcat(descPath, "/description.txt", sizeof(descPath));
+ 				nDescLen = FS_SV_FOpenFileRead( descPath, &descHandle );
+ 				if ( nDescLen > 0 && descHandle) {
+ 					FILE *file;
+@@ -2385,19 +2389,19 @@ int	FS_GetModList( char *listbuf, int bufsize ) {
+ 					}
+ 					FS_FCloseFile(descHandle);
+ 				} else if ( isBase ) {
+-					strcpy(descPath, SE_GetString("MENUS_JEDI_ACADEMY"));
++					strlcpy(descPath, SE_GetString("MENUS_JEDI_ACADEMY"), sizeof(descPath));
+ 				} else {
+-					strcpy(descPath, name);
++					strlcpy(descPath, name, sizeof(descPath));
+ 				}
+ 				nDescLen = strlen(descPath) + 1;
+ 
+ 				if (nTotal + nLen + 1 + nDescLen + 1 < bufsize) {
+ 					if ( isBase )
+-						strcpy(listbuf, "");
++						strlcpy(listbuf, "", sizeof(listbuf));
+ 					else
+-						strcpy(listbuf, name);
++						strlcpy(listbuf, name, sizeof(listbuf));
+ 					listbuf += nLen;
+-					strcpy(listbuf, descPath);
++					strlcpy(listbuf, descPath, sizeof(listbuf));
+ 					listbuf += nDescLen;
+ 					nTotal += nLen + nDescLen;
+ 					nMods++;

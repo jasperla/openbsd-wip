@@ -1,0 +1,29 @@
+$OpenBSD$
+
+strlcat
+
+Index: codeJK2/game/g_breakable.cpp
+--- codeJK2/game/g_breakable.cpp.orig
++++ codeJK2/game/g_breakable.cpp
+@@ -909,18 +909,18 @@ void SP_misc_model_breakable( gentity_t *ent ) 
+ 	if (ent->takedamage) {
+ 		//Dead/damaged model
+ 		if( !(ent->spawnflags & 8) ) {	//no dmodel
+-			strcat( damageModel, "_d1.md3" );
++			strlcat( damageModel, "_d1.md3" , sizeof(damageModel));
+ 			ent->s.modelindex2 = G_ModelIndex( damageModel );
+ 		}
+ 		
+ 		//Chunk model
+-		strcat( chunkModel, "_c1.md3" );
++		strlcat( chunkModel, "_c1.md3" , sizeof(chunkModel));
+ 		ent->s.modelindex3 = G_ModelIndex( chunkModel );
+ 	}
+ 
+ 	//Use model
+ 	if( ent->spawnflags & 32 ) {	//has umodel
+-		strcat( useModel, "_u1.md3" );
++		strlcat( useModel, "_u1.md3" , sizeof(useModel));
+ 		ent->sound1to2 = G_ModelIndex( useModel );
+ 	}
+ 	if ( !ent->mins[0] && !ent->mins[1] && !ent->mins[2] )

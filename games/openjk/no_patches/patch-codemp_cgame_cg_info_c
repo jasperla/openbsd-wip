@@ -1,0 +1,16 @@
+$OpenBSD$
+
+strlcpy
+
+Index: codemp/cgame/cg_info.c
+--- codemp/cgame/cg_info.c.orig
++++ codemp/cgame/cg_info.c
+@@ -62,7 +62,7 @@ void CG_LoadingItem( int itemNum ) {
+ 		return;
+ 	}
+ 
+-	strcpy(upperKey, item->classname);
++	strlcpy(upperKey, item->classname, sizeof(upperKey));
+ 	CG_LoadingString( CG_GetStringEdString("SP_INGAME",Q_strupr(upperKey)) );
+ }
+ 

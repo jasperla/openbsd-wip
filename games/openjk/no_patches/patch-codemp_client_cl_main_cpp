@@ -1,0 +1,22 @@
+$OpenBSD$
+
+strlcpy
+
+Index: codemp/client/cl_main.cpp
+--- codemp/client/cl_main.cpp.orig
++++ codemp/client/cl_main.cpp
+@@ -1788,12 +1788,12 @@ static void CL_CheckSVStringEdRef(char *buf, const cha
+ 	{
+ 		if (str)
+ 		{
+-			strcpy(buf, str);
++			strlcpy(buf, str, sizeof(buf));
+ 		}
+ 		return;
+ 	}
+ 
+-	strcpy(buf, str);
++	strlcpy(buf, str, sizeof(buf));
+ 
+ 	strLen = strlen(str);
+ 

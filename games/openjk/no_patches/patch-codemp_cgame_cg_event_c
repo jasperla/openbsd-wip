@@ -1,0 +1,56 @@
+$OpenBSD$
+
+strlcat
+
+Index: codemp/cgame/cg_event.c
+--- codemp/cgame/cg_event.c.orig
++++ codemp/cgame/cg_event.c
+@@ -79,7 +79,7 @@ const char	*CG_PlaceString( int rank ) {
+ 	trap->SE_GetStringTextString("MP_INGAME_NUMBER_RD",sRD, sizeof(sRD) );
+ 	trap->SE_GetStringTextString("MP_INGAME_NUMBER_TH",sTH, sizeof(sTH) );
+ 	trap->SE_GetStringTextString("MP_INGAME_TIED_FOR" ,sTiedFor,sizeof(sTiedFor) );
+-	strcat(sTiedFor," ");	// save worrying about translators adding spaces or not
++	strlcat(sTiedFor," ", sizeof(sTiedFor));	// save worrying about translators adding spaces or not
+ 
+ 	if ( rank & RANK_TIED_FLAG ) {
+ 		rank &= ~RANK_TIED_FLAG;
+@@ -154,7 +154,7 @@ static void CG_Obituary( entityState_t *ent ) {
+ 		return;
+ 	}
+ 	Q_strncpyz( targetName, Info_ValueForKey( targetInfo, "n" ), sizeof(targetName) - 2);
+-	strcat( targetName, S_COLOR_WHITE );
++	strlcat( targetName, S_COLOR_WHITE , sizeof(targetName));
+ 
+ 	// check for single client messages
+ 
+@@ -297,7 +297,7 @@ clientkilled:
+ 				trap->SE_GetStringTextString("MP_INGAME_KILLED_MESSAGE", part1, sizeof(part1));
+ 				/*
+ 				kmsg1 = "for 0 points.\nGo for the saber!";
+-				strcpy(part2, kmsg1);
++				strlcpy(part2, kmsg1, sizeof(part2));
+ 
+ 				s = va("%s %s %s\n", part1, targetName, part2);
+ 				*/
+@@ -333,10 +333,10 @@ clientkilled:
+ 	// check for double client messages
+ 	if ( !attackerInfo ) {
+ 		attacker = ENTITYNUM_WORLD;
+-		strcpy( attackerName, "noname" );
++		strlcpy( attackerName, "noname" , sizeof(attackerName));
+ 	} else {
+ 		Q_strncpyz( attackerName, Info_ValueForKey( attackerInfo, "n" ), sizeof(attackerName) - 2);
+-		strcat( attackerName, S_COLOR_WHITE );
++		strlcat( attackerName, S_COLOR_WHITE , sizeof(attackerName));
+ 		// check for kill messages about the current clientNum
+ 		if ( target == cg.snap->ps.clientNum ) {
+ 			Q_strncpyz( cg.killerName, attackerName, sizeof( cg.killerName ) );
+@@ -662,7 +662,7 @@ static void CG_ItemPickup( int itemNum ) {
+ 		char	text[1024];
+ 		char	upperKey[1024];
+ 
+-		strcpy(upperKey, bg_itemlist[itemNum].classname);
++		strlcpy(upperKey, bg_itemlist[itemNum].classname, sizeof(upperKey));
+ 
+ 		if ( trap->SE_GetStringTextString( va("SP_INGAME_%s",Q_strupr(upperKey)), text, sizeof( text )))
+ 		{

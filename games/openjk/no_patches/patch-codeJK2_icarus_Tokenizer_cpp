@@ -1,0 +1,210 @@
+$OpenBSD$
+
+strlcpy
+
+Index: codeJK2/icarus/Tokenizer.cpp
+--- codeJK2/icarus/Tokenizer.cpp.orig
++++ codeJK2/icarus/Tokenizer.cpp
+@@ -90,7 +90,7 @@ void CSymbol::InitBaseSymbol(LPCTSTR symbolName)
+ {
+ 	m_symbolName = (char*)malloc(strlen(symbolName) + 1);
+ //	ASSERT(m_symbolName);
+-	strcpy(m_symbolName, symbolName);
++	strlcpy(m_symbolName, symbolName, sizeof(m_symbolName));
+ }
+ 
+ void CSymbol::Delete()
+@@ -145,7 +145,7 @@ void CDirectiveSymbol::SetValue(LPCTSTR value)
+ 		free(m_value);
+ 	}
+ 	m_value = (char*)malloc(strlen(value) + 1);
+-	strcpy(m_value, value);
++	strlcpy(m_value, value, sizeof(m_value));
+ }
+ 
+ LPCTSTR CDirectiveSymbol::GetValue()
+@@ -375,7 +375,7 @@ void CParsePutBack::Init(byte theByte, int curLine, LP
+ 	if (filename != NULL)
+ 	{
+ 		m_curFile = (char*)malloc(strlen(filename) + 1);
+-		strcpy(m_curFile, filename);
++		strlcpy(m_curFile, filename, sizeof(m_curFile));
+ 	}
+ 	else 
+ 	{
+@@ -408,7 +408,7 @@ void CParsePutBack::GetCurFilename(char** theBuff)
+ 		return;
+ 	}
+ 	*theBuff = (char*)malloc(strlen(m_curFile) + 1);
+-	strcpy(*theBuff, m_curFile);
++	strlcpy(*theBuff, m_curFile, sizeof(*theBuff));
+ }
+ 
+ //
+@@ -509,7 +509,7 @@ bool CParseFile::Init(LPCTSTR filename, CTokenizer* to
+ {
+ 	CParseStream::InitBaseStream();
+ 	m_fileName = (char*)malloc(strlen(filename) + 1);
+-	strcpy(m_fileName, filename);
++	strlcpy(m_fileName, filename, sizeof(m_fileName));
+ #ifdef WIN32_FILE_IO
+ 	DWORD dwAccess = GENERIC_READ;
+ 	DWORD dwShareMode = FILE_SHARE_WRITE | FILE_SHARE_READ;
+@@ -592,7 +592,7 @@ void CParseFile::GetCurFilename(char** theBuff)
+ 	if (m_fileName != NULL)
+ 	{
+ 		*theBuff = (char*)malloc(strlen(m_fileName) + 1);
+-		strcpy(*theBuff, m_fileName);
++		strlcpy(*theBuff, m_fileName, sizeof(*theBuff));
+ 	}
+ }
+ 
+@@ -925,37 +925,37 @@ void CCharToken::Init(byte theByte)
+ 	switch(theByte)
+ 	{
+ 		case '\0':
+-			strcpy(charString, "\\0");
++			strlcpy(charString, "\\0", sizeof(charString));
+ 			break;
+ 		case '\n':
+-			strcpy(charString, "\\n");
++			strlcpy(charString, "\\n", sizeof(charString));
+ 			break;
+ 		case '\\':
+-			strcpy(charString, "\\\\");
++			strlcpy(charString, "\\\\", sizeof(charString));
+ 			break;
+ 		case '\'':
+-			strcpy(charString, "\\'");
++			strlcpy(charString, "\\'", sizeof(charString));
+ 			break;
+ 		case '\?':
+-			strcpy(charString, "\\?");
++			strlcpy(charString, "\\?", sizeof(charString));
+ 			break;
+ 		case '\a':
+-			strcpy(charString, "\\a");
++			strlcpy(charString, "\\a", sizeof(charString));
+ 			break;
+ 		case '\b':
+-			strcpy(charString, "\\b");
++			strlcpy(charString, "\\b", sizeof(charString));
+ 			break;
+ 		case '\f':
+-			strcpy(charString, "\\f");
++			strlcpy(charString, "\\f", sizeof(charString));
+ 			break;
+ 		case '\r':
+-			strcpy(charString, "\\r");
++			strlcpy(charString, "\\r", sizeof(charString));
+ 			break;
+ 		case '\t':
+-			strcpy(charString, "\\t");
++			strlcpy(charString, "\\t", sizeof(charString));
+ 			break;
+ 		case '\v':
+-			strcpy(charString, "\\v");
++			strlcpy(charString, "\\v", sizeof(charString));
+ 			break;
+ 		default:
+ 			charString[0] = (char)theByte;
+@@ -963,7 +963,7 @@ void CCharToken::Init(byte theByte)
+ 			break;
+ 	}
+ 	m_string = (char*)malloc(strlen(charString) + 1);
+-	strcpy(m_string, charString);
++	strlcpy(m_string, charString, sizeof(m_string));
+ }
+ 
+ int CCharToken::GetType()
+@@ -1000,7 +1000,7 @@ void CStringToken::Init(LPCTSTR theString)
+ 	CToken::InitBaseToken();
+ 	m_string = (char*)malloc(strlen(theString) + 1);
+ //	ASSERT(m_string);
+-	strcpy(m_string, theString);
++	strlcpy(m_string, theString, sizeof(m_string));
+ }
+ 
+ int CStringToken::GetType()
+@@ -1063,7 +1063,7 @@ LPCTSTR CIntToken::GetStringValue()
+ 	char temp[128];
+ 	sprintf(temp, "%d", m_value);
+ 	m_string = (char*)malloc(strlen(temp) + 1);
+-	strcpy(m_string, temp);
++	strlcpy(m_string, temp, sizeof(m_string));
+ 	return m_string;
+ }
+ 
+@@ -1117,7 +1117,7 @@ LPCTSTR CFloatToken::GetStringValue()
+ 	char temp[128];
+ 	sprintf(temp, "%g", m_value);
+ 	m_string = (char*)malloc(strlen(temp) + 1);
+-	strcpy(m_string, temp);
++	strlcpy(m_string, temp, sizeof(m_string));
+ 	return m_string;
+ }
+ 
+@@ -1150,7 +1150,7 @@ void CIdentifierToken::Init(LPCTSTR name)
+ 	CToken::InitBaseToken();
+ 	m_string = (char*)malloc(strlen(name) + 1);
+ //	ASSERT(m_string);
+-	strcpy(m_string, name);
++	strlcpy(m_string, name, sizeof(m_string));
+ }
+ 
+ int CIdentifierToken::GetType()
+@@ -1187,7 +1187,7 @@ void CCommentToken::Init(LPCTSTR name)
+ 	CToken::InitBaseToken();
+ 	m_string = (char*)malloc(strlen(name) + 1);
+ //	ASSERT(m_string);
+-	strcpy(m_string, name);
++	strlcpy(m_string, name, sizeof(m_string));
+ }
+ 
+ int CCommentToken::GetType()
+@@ -1224,7 +1224,7 @@ void CUserToken::Init(int value, LPCTSTR string)
+ 	CToken::InitBaseToken();
+ 	m_value = value;
+ 	m_string = (char*)malloc(strlen(string) + 1);
+-	strcpy(m_string, string);
++	strlcpy(m_string, string, sizeof(m_string));
+ }
+ 
+ int CUserToken::GetType()
+@@ -1260,7 +1260,7 @@ void CUndefinedToken::Init(LPCTSTR string)
+ {
+ 	CToken::InitBaseToken();
+ 	m_string = (char*)malloc(strlen(string) + 1);
+-	strcpy(m_string, string);
++	strlcpy(m_string, string, sizeof(m_string));
+ }
+ 
+ int CUndefinedToken::GetType()
+@@ -1447,11 +1447,11 @@ void CTokenizer::Error(int theError)
+ 		{
+ 			i++;
+ 		}
+-		strcpy(lookupstring, m_errors[i].m_keyword);
++		strlcpy(lookupstring, m_errors[i].m_keyword, sizeof(lookupstring));
+ 	}
+ 	else
+ 	{
+-		strcpy(lookupstring, errorMessages[i].m_keyword);
++		strlcpy(lookupstring, errorMessages[i].m_keyword, sizeof(lookupstring));
+ 	}
+ 	sprintf(errString, "Error -- %d, %s", theError, lookupstring);
+ 	Error(errString, theError);
+@@ -1473,11 +1473,11 @@ void CTokenizer::Error(int theError, LPCTSTR errString
+ 		{
+ 			i++;
+ 		}
+-		strcpy(lookupstring, m_errors[i].m_keyword);
++		strlcpy(lookupstring, m_errors[i].m_keyword, sizeof(lookupstring));
+ 	}
+ 	else
+ 	{
+-		strcpy(lookupstring, errorMessages[i].m_keyword);
++		strlcpy(lookupstring, errorMessages[i].m_keyword, sizeof(lookupstring));
+ 	}
+ 	sprintf(errstring, "Error -- %d, %s - %s", theError, lookupstring, errString);
+ 	Error(errstring, theError);

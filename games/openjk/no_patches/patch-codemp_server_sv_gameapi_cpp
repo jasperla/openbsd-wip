@@ -1,0 +1,43 @@
+$OpenBSD$
+
+strlcpy
+
+Index: codemp/server/sv_gameapi.cpp
+--- codemp/server/sv_gameapi.cpp.orig
++++ codemp/server/sv_gameapi.cpp
+@@ -1533,7 +1533,7 @@ static void SV_G2API_GetGLAName( void *ghoul2, int mod
+ 
+ 	char *tmp = re->G2API_GetGLAName( *((CGhoul2Info_v *)ghoul2), modelIndex );
+ 	if ( tmp ) {
+-		strcpy( fillBuf, tmp );
++		strlcpy( fillBuf, tmp , sizeof(fillBuf));
+ 	}
+ }
+ 
+@@ -1713,7 +1713,7 @@ static qboolean SV_G2API_OverrideServer( void *serverI
+ static void SV_G2API_GetSurfaceName( void *ghoul2, int surfNumber, int modelIndex, char *fillBuf ) {
+ 	CGhoul2Info_v &g2 = *((CGhoul2Info_v *)ghoul2);
+ 	char *tmp = re->G2API_GetSurfaceName( g2, modelIndex, surfNumber );
+-	strcpy( fillBuf, tmp );
++	strlcpy( fillBuf, tmp , sizeof(fillBuf));
+ }
+ 
+ static void GVM_Cvar_Set( const char *var_name, const char *value ) {
+@@ -2637,7 +2637,7 @@ intptr_t SV_GameSystemCalls( intptr_t *args ) {
+ 			local = re->G2API_GetGLAName(*((CGhoul2Info_v *)args[1]), args[2]);
+ 			if (local)
+ 			{
+-				strcpy(point, local);
++				strlcpy(point, local, sizeof(point));
+ 			}
+ 		}
+ 
+@@ -2833,7 +2833,7 @@ intptr_t SV_GameSystemCalls( intptr_t *args ) {
+ 			local = re->G2API_GetSurfaceName(g2, modelindex, args[2]);
+ 			if (local)
+ 			{
+-				strcpy(point, local);
++				strlcpy(point, local, sizeof(point));
+ 			}
+ 		}
+ 

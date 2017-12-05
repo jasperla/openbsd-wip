@@ -1,0 +1,29 @@
+$OpenBSD$
+
+strlcat
+
+strcpy -> strlcpy etc
+
+Index: codemp/qcommon/q_shared.c
+--- codemp/qcommon/q_shared.c.orig
++++ codemp/qcommon/q_shared.c
+@@ -1013,8 +1013,8 @@ void Info_SetValueForKey( char *s, const char *key, co
+ 		return;
+ 	}
+ 
+-	strcat (newi, s);
+-	strcpy (s, newi);
++	strlcat (newi, s, sizeof(newi));
++	strlcpy (s, newi, sizeof(s));
+ }
+ 
+ /*
+@@ -1054,7 +1054,7 @@ void Info_SetValueForKey_Big( char *s, const char *key
+ 		return;
+ 	}
+ 
+-	strcat (s, newi);
++	strlcat (s, newi, sizeof(s));
+ }
+ 
+ /*

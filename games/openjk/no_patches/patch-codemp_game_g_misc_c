@@ -1,0 +1,20 @@
+$OpenBSD$
+
+strlcpy
+
+Index: codemp/game/g_misc.c
+--- codemp/game/g_misc.c.orig
++++ codemp/game/g_misc.c
+@@ -621,10 +621,10 @@ void SP_misc_bsp(gentity_t *ent)
+ 	level.mBSPInstanceDepth++;
+ 	/*
+ 	G_SpawnString("filter", "", &out);
+-	strcpy(level.mFilter, out);
++	strlcpy(level.mFilter, out, sizeof(level.mFilter));
+ 	*/
+ 	G_SpawnString("teamfilter", "", &out);
+-	strcpy(level.mTeamFilter, out);
++	strlcpy(level.mTeamFilter, out, sizeof(level.mTeamFilter));
+ 
+ 	VectorCopy( ent->s.origin, ent->s.pos.trBase );
+ 	VectorCopy( ent->s.origin, ent->r.currentOrigin );

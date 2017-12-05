@@ -1,0 +1,25 @@
+$OpenBSD$
+
+strlcpy
+
+Index: tools/ModView/GenericParser2.cpp
+--- tools/ModView/GenericParser2.cpp.orig
++++ tools/ModView/GenericParser2.cpp
+@@ -197,7 +197,7 @@ char *CTextPool::AllocText(char *text, bool addNULL, C
+ 		return 0;
+ 	}
+ 
+-	strcpy(mPool + mUsed, text);
++	strlcpy(mPool + mUsed, text, sizeof(mPool + mUsed));
+ 	mUsed += length;
+ 	mPool[mUsed] = 0;
+ 
+@@ -698,7 +698,7 @@ bool CGPGroup::Parse(char **dataPtr, CTextPool **textP
+ 			break;
+ 		}
+ 
+-		strcpy(lastToken, token);
++		strlcpy(lastToken, token, sizeof(lastToken));
+ 
+ 		// read ahead to see what we are doing
+ 		token = GetToken(dataPtr, true, true);

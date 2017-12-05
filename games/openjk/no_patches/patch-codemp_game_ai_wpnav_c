@@ -1,0 +1,49 @@
+$OpenBSD$
+
+strlcat
+
+Index: codemp/game/ai_wpnav.c
+--- codemp/game/ai_wpnav.c.orig
++++ codemp/game/ai_wpnav.c
+@@ -51,7 +51,7 @@ char *GetFlagStr( int flags )
+ 
+ 	if (!flags)
+ 	{
+-		strcpy(flagstr, "none\0");
++		strlcpy(flagstr, "none\0", sizeof(flagstr));
+ 		goto fend;
+ 	}
+ 
+@@ -221,7 +221,7 @@ char *GetFlagStr( int flags )
+ 
+ 	if (i == 0)
+ 	{
+-		strcpy(flagstr, "unknown\0");
++		strlcpy(flagstr, "unknown\0", sizeof(flagstr));
+ 	}
+ 
+ fend:
+@@ -2492,7 +2492,7 @@ int SavePathData(const char *filename)
+ 
+ 		Com_sprintf(storeString, 4096, "%s} %f\n", storeString, flLen);
+ 
+-		strcat(fileString, storeString);
++		strlcat(fileString, storeString, sizeof(fileString));
+ 
+ 		i++;
+ 	}
+@@ -2707,12 +2707,12 @@ void G_DebugNodeFile()
+ 
+ 	while (i < nodenum)
+ 	{
+-		strcat(fileString, va("%i-%f ", i, nodetable[i].weight));
++		strlcat(fileString, va("%i-%f ", i, nodetable[i].weight), sizeof(fileString));
+ 		placeX += DEFAULT_GRID_SPACING;
+ 
+ 		if (placeX >= terrain->r.absmax[0])
+ 		{
+-			strcat(fileString, "\n");
++			strlcat(fileString, "\n", sizeof(fileString));
+ 			placeX = terrain->r.absmin[0];
+ 		}
+ 		i++;

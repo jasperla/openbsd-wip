@@ -1,0 +1,25 @@
+$OpenBSD$
+
+strlcat
+
+Index: codemp/Ratl/ratl_common.h
+--- codemp/Ratl/ratl_common.h.orig
++++ codemp/Ratl/ratl_common.h
+@@ -220,7 +220,7 @@ namespace str
+ 
+ 	inline void	cpy(char *dest,const char *src)
+ 	{
+-		strcpy(dest,src);
++		strlcpy(dest,src, sizeof(dest));
+ 	}
+ 
+ 	inline void	ncpy(char *dest,const char *src,int destBufferLen)
+@@ -230,7 +230,7 @@ namespace str
+ 
+ 	inline void	cat(char *dest,const char *src)
+ 	{
+-		strcat(dest,src);
++		strlcat(dest,src, sizeof(dest));
+ 	}
+ 
+ 	inline void	ncat(char *dest,const char *src,int destBufferLen)

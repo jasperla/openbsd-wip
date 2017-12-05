@@ -1,0 +1,55 @@
+$OpenBSD$
+
+strlcpy
+
+Index: codemp/rd-dedicated/G2_API.cpp
+--- codemp/rd-dedicated/G2_API.cpp.orig
++++ codemp/rd-dedicated/G2_API.cpp
+@@ -502,20 +502,20 @@ void G2API_CleanGhoul2Models(CGhoul2Info_v **ghoul2Ptr
+ 
+ 				if (ghoul2[0].currentModel)
+ 				{
+-					strcpy(mName, ghoul2[0].currentModel->name);
++					strlcpy(mName, ghoul2[0].currentModel->name, sizeof(mName));
+ 				}
+ 				else
+ 				{
+-					strcpy(mName, "NULL!");
++					strlcpy(mName, "NULL!", sizeof(mName));
+ 				}
+ 
+ 				if (ghoul2[0].mFileName && ghoul2[0].mFileName[0])
+ 				{
+-					strcpy(fName, ghoul2[0].mFileName);
++					strlcpy(fName, ghoul2[0].mFileName, sizeof(fName));
+ 				}
+ 				else
+ 				{
+-					strcpy(fName, "None?!");
++					strlcpy(fName, "None?!", sizeof(fName));
+ 				}
+ 
+ 				Com_Printf("ERROR, GHOUL2 INSTANCE BEING REMOVED BELONGS TO A REFENTITY!\nThis is in caps because it's important. Tell Rich and save the following text.\n\n");
+@@ -625,7 +625,7 @@ int G2API_InitGhoul2Model(CGhoul2Info_v **ghoul2Ptr, c
+ 		ghoul2.push_back(CGhoul2Info());
+ 	}
+ 
+-	strcpy(ghoul2[model].mFileName, fileName);
++	strlcpy(ghoul2[model].mFileName, fileName, sizeof(ghoul2[model].mFileName));
+ 	ghoul2[model].mModelindex = model;
+ 	if (!G2_TestModelPointers(&ghoul2[model]))
+ 	{
+@@ -2406,11 +2406,11 @@ qboolean G2API_SetNewOrigin(CGhoul2Info_v &ghoul2, con
+ 			if (ghlInfo->currentModel &&
+ 				ghlInfo->currentModel->name[0])
+ 			{
+-				strcpy(modelName, ghlInfo->currentModel->name);
++				strlcpy(modelName, ghlInfo->currentModel->name, sizeof(modelName));
+ 			}
+ 			else
+ 			{
+-				strcpy(modelName, "None?!");
++				strlcpy(modelName, "None?!", sizeof(modelName));
+ 			}
+ 
+ 			Com_Error(ERR_DROP, "Bad boltindex (%i) trying to SetNewOrigin (naughty naughty!)\nModel %s\n", boltIndex, modelName);

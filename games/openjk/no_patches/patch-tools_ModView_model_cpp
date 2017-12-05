@@ -1,0 +1,43 @@
+$OpenBSD$
+
+strlcat
+
+Index: tools/ModView/model.cpp
+--- tools/ModView/model.cpp.orig
++++ tools/ModView/model.cpp
+@@ -569,14 +569,14 @@ LPCSTR Model_GetSupportedTypesFilter(bool bScriptsEtcA
+ {
+ 	static char sFilterString[1024];
+ 
+-	strcpy(sFilterString,"Model files (*.glm)|*.glm|");
++	strlcpy(sFilterString,"Model files (*.glm)|*.glm|", sizeof(sFilterString));
+ 
+ 	if (bScriptsEtcAlsoAllowed)
+ 	{
+-		strcat(sFilterString, Script_GetFilter(false));
++		strlcat(sFilterString, Script_GetFilter(false), sizeof(sFilterString));
+ 	}
+ 
+-	strcat(sFilterString,"All Files(*.*)|*.*||");
++	strlcat(sFilterString,"All Files(*.*)|*.*||", sizeof(sFilterString));
+ 
+ 	return sFilterString;
+ }
+@@ -3326,7 +3326,7 @@ static void ModelDraw_InfoText_Header(void)
+ 	// display main model's skin file data if applicable (SOF2 models only, currently)...
+ 	//
+ 	ModelContainer_t *pContainer = &AppVars.Container;	// primary model only
+-	strcpy(TextData.sString,"");
++	strlcpy(TextData.sString,"", sizeof(TextData.sString));
+ 	if (pContainer->SkinSets.size())
+ 	{
+ 		sprintf(TextData.sString,"Skin File: '%s'       Ethnic version: '%s'",
+@@ -3421,7 +3421,7 @@ static void ModelDraw_InfoText_Totals(void)
+ 	{
+ 		TextData.iTextX = TextData.iPrevX;
+ 		TextData.iTextY += TEXT_DEPTH;
+-		strcpy(TextData.sString,String_EnsureMinLength("( totals )",TextData.iModelNameCharsNeeded));
++		strlcpy(TextData.sString,String_EnsureMinLength("( totals )",TextData.iModelNameCharsNeeded), sizeof(TextData.sString));
+ 		TextData.iTextX = Text_DisplayFlat(TextData.sString, TextData.iTextX, TextData.iTextY, 255,255,0); // yellow		
+ 
+ 		TextData.iTextX = 

@@ -1,0 +1,16 @@
+$OpenBSD$
+
+strlcpy
+
+Index: codemp/rd-vanilla/tr_bsp.cpp
+--- codemp/rd-vanilla/tr_bsp.cpp.orig
++++ codemp/rd-vanilla/tr_bsp.cpp
+@@ -1898,7 +1898,7 @@ void R_LoadEntities( lump_t *l, world_t &worldData ) {
+ 
+ 	// store for reference by the cgame
+ 	w->entityString = (char *)Hunk_Alloc( l->filelen + 1, h_low );
+-	strcpy( w->entityString, p );
++	strlcpy( w->entityString, p , sizeof(w->entityString));
+ 	w->entityParsePoint = w->entityString;
+ 
+ 	COM_BeginParseSession ("R_LoadEntities");

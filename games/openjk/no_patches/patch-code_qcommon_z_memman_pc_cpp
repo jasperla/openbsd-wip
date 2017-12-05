@@ -1,0 +1,27 @@
+$OpenBSD$
+
+strlcpy
+try using strlen(in)+1 for strlcpy to fix game loading bug - caused problems with NPC AI
+works using strlen(out) + 2
+
+Index: code/qcommon/z_memman_pc.cpp
+--- code/qcommon/z_memman_pc.cpp.orig
++++ code/qcommon/z_memman_pc.cpp
+@@ -237,7 +237,7 @@ char *_D_Z_Filename_WithoutPath(const char *psFilename
+ 		psFilename++;
+ 	}
+ 
+-	strcpy(sString,psCopyPos);
++	strlcpy(sString,psCopyPos, sizeof(sString));
+ 
+ 	return sString;
+ }
+@@ -975,7 +975,7 @@ char *CopyString( const char *in ) {
+ 	}
+ 
+ 	out = (char *) S_Malloc (strlen(in)+1);
+-	strcpy (out, in);
++	strlcpy (out, in, strlen(in) + 2);
+ 
+ 	Z_Label(out,in);
+ 

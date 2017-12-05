@@ -1,0 +1,16 @@
+$OpenBSD$
+
+strlcpy
+
+Index: tools/ModView/glm_code.cpp
+--- tools/ModView/glm_code.cpp.orig
++++ tools/ModView/glm_code.cpp
+@@ -61,7 +61,7 @@ static void GLMModel_BuildDefaultGLA()
+ 				// setup flags...
+ 				//
+ 						pSkel->flags = 0;
+-				strcpy(	pSkel->name, "ModView internal default");	// doesn't matter what this is called
++				strlcpy(	pSkel->name, "ModView internal default", sizeof(pSkel->name));	// doesn't matter what this is called
+ 						pSkel->parent= -1;	// index of bone that is parent to this one, -1 = NULL/root
+ 
+ 				static const mdxaBone_t IdentityBone = 

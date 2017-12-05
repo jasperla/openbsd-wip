@@ -1,0 +1,25 @@
+$OpenBSD$
+
+strlcpy
+
+Index: code/cgame/FxScheduler.cpp
+--- code/cgame/FxScheduler.cpp.orig
++++ code/cgame/FxScheduler.cpp
+@@ -312,7 +312,7 @@ void SEffectTemplate::operator=(const SEffectTemplate 
+ {
+ 	mCopy = true;
+ 
+-	strcpy( mEffectName, that.mEffectName );
++	strlcpy( mEffectName, that.mEffectName , sizeof(mEffectName));
+ 
+ 	mPrimitiveCount = that.mPrimitiveCount;
+ 
+@@ -612,7 +612,7 @@ SEffectTemplate *CFxScheduler::GetNewEffectTemplate( i
+ 			if ( file )
+ 			{
+ 				mEffectIDs[file] = i;
+-				strcpy( effect->mEffectName, file );
++				strlcpy( effect->mEffectName, file , sizeof(effect->mEffectName));
+ 			}
+ 
+ 			effect->mInUse = true;

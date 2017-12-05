@@ -1,0 +1,52 @@
+$OpenBSD$
+
+strlcpy
+
+Index: tools/Assimilate/gla.cpp
+--- tools/Assimilate/gla.cpp.orig
++++ tools/Assimilate/gla.cpp
+@@ -28,7 +28,7 @@ char *Filename_WithoutPath(LPCSTR psFilename)
+ 			p=psFilename;
+ 	}
+ 
+-	strcpy(sString,p);
++	strlcpy(sString,p, sizeof(sString));
+ */
+ 
+ 	LPCSTR psCopyPos = psFilename;
+@@ -40,7 +40,7 @@ char *Filename_WithoutPath(LPCSTR psFilename)
+ 		psFilename++;
+ 	}
+ 
+-	strcpy(sString,psCopyPos);
++	strlcpy(sString,psCopyPos, sizeof(sString));
+ 
+ 	return sString;
+ 
+@@ -53,7 +53,7 @@ char *Filename_WithoutExt(LPCSTR psFilename)
+ {
+ 	static char sString[MAX_PATH];
+ 
+-	strcpy(sString,psFilename);
++	strlcpy(sString,psFilename, sizeof(sString));
+ 
+ 	char *p = strrchr(sString,'.');		
+ 	char *p2= strrchr(sString,'\\');
+@@ -78,7 +78,7 @@ char *Filename_PathOnly(LPCSTR psFilename)
+ {
+ 	static char sString[MAX_PATH];
+ 
+-	strcpy(sString,psFilename);	
++	strlcpy(sString,psFilename, sizeof(sString));	
+ 	
+ //	for (int i=0; i<strlen(sString); i++)
+ //	{
+@@ -107,7 +107,7 @@ char *Filename_ExtOnly(LPCSTR psFilename)
+ 	if (!p)
+ 		p=psFilename;
+ 
+-	strcpy(sString,p);
++	strlcpy(sString,p, sizeof(sString));
+ 
+ 	return sString;
+ 

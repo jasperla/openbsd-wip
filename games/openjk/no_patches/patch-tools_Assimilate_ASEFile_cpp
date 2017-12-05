@@ -1,0 +1,25 @@
+$OpenBSD$
+
+strlcpy
+
+Index: tools/Assimilate/ASEFile.cpp
+--- tools/Assimilate/ASEFile.cpp.orig
++++ tools/Assimilate/ASEFile.cpp
+@@ -139,7 +139,7 @@ void CASEFile::Init(LPCTSTR filename)
+ 	if ((filename != NULL) && (strlen(filename) > 0))
+ 	{
+ 		m_file = (char*)malloc(strlen(filename) + 1);
+-		strcpy(m_file, filename);
++		strlcpy(m_file, filename, sizeof(m_file));
+ 	}
+ 	else
+ 	{
+@@ -239,7 +239,7 @@ void CASEFile::ParseComment(CTokenizer* tokenizer)
+ 		return;
+ 	}
+ 	m_comment = (char*)malloc(strlen(token->GetStringValue()) + 1);
+-	strcpy(m_comment, token->GetStringValue());
++	strlcpy(m_comment, token->GetStringValue(), sizeof(m_comment));
+ 	token->Delete();
+ }
+ 

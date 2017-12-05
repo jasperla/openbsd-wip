@@ -1,0 +1,19 @@
+$OpenBSD$
+
+strlcat
+
+Index: tools/ModView/script.cpp
+--- tools/ModView/script.cpp.orig
++++ tools/ModView/script.cpp
+@@ -35,9 +35,9 @@ LPCSTR	Script_GetFilter(bool bStandAlone /* = true */)
+ {
+ 	static char sFilterString[1024];
+ 
+-	strcpy(sFilterString, "ModView script files (*" sSCRIPT_EXTENSION ")|*" sSCRIPT_EXTENSION "|");
++	strlcpy(sFilterString, "ModView script files (*" sSCRIPT_EXTENSION ")|*" sSCRIPT_EXTENSION "|", sizeof(sFilterString));
+ 
+-	strcat(sFilterString,bStandAlone?"|":"");
++	strlcat(sFilterString,bStandAlone?"|":"", sizeof(sFilterString));
+ 	return sFilterString;
+ }
+ 

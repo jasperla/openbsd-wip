@@ -1,0 +1,34 @@
+$OpenBSD$
+
+strlcpy
+
+Index: codemp/game/g_cmds.c
+--- codemp/game/g_cmds.c.orig
++++ codemp/game/g_cmds.c
+@@ -95,7 +95,7 @@ void DeathmatchScoreboardMessage( gentity_t *ent ) {
+ 		j = strlen(entry);
+ 		if (stringlength + j > 1022)
+ 			break;
+-		strcpy (string + stringlength, entry);
++		strlcpy (string + stringlength, entry, sizeof(string + stringlength));
+ 		stringlength += j;
+ 	}
+ 
+@@ -1239,7 +1239,7 @@ void Cmd_SiegeClass_f( gentity_t *ent )
+ 	BG_SiegeCheckClassLegality(team, className);
+ 
+ 	//Set the session data
+-	strcpy(ent->client->sess.siegeClass, className);
++	strlcpy(ent->client->sess.siegeClass, className, sizeof(ent->client->sess.siegeClass));
+ 
+ 	// get and distribute relevent paramters
+ 	if ( !ClientUserinfoChanged( ent->s.number ) )
+@@ -1286,7 +1286,7 @@ void Cmd_ForceChanged_f( gentity_t *ent )
+ 
+ 	buf = G_GetStringEdString("MP_SVGAME", "FORCEPOWERCHANGED");
+ 
+-	strcpy(fpChStr, buf);
++	strlcpy(fpChStr, buf, sizeof(fpChStr));
+ 
+ 	trap->SendServerCommand( ent-g_entities, va("print \"%s%s\n\"", S_COLOR_GREEN, fpChStr) );
+ 

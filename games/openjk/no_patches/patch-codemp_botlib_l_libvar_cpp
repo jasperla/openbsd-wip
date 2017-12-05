@@ -1,0 +1,34 @@
+$OpenBSD$
+
+strlcpy
+
+Index: codemp/botlib/l_libvar.cpp
+--- codemp/botlib/l_libvar.cpp.orig
++++ codemp/botlib/l_libvar.cpp
+@@ -92,7 +92,7 @@ libvar_t *LibVarAlloc(char *var_name)
+ 	v = (libvar_t *) GetMemory(sizeof(libvar_t));
+ 	Com_Memset(v, 0, sizeof(libvar_t));
+ 	v->name = (char *) GetMemory(strlen(var_name)+1);
+-	strcpy(v->name, var_name);
++	strlcpy(v->name, var_name, sizeof(v->name));
+ 	//add the variable in the list
+ 	v->next = libvarlist;
+ 	libvarlist = v;
+@@ -201,7 +201,7 @@ libvar_t *LibVar(char *var_name, char *value)
+ 	v = LibVarAlloc(var_name);
+ 	//variable string
+ 	v->string = (char *) GetMemory(strlen(value) + 1);
+-	strcpy(v->string, value);
++	strlcpy(v->string, value, sizeof(v->string));
+ 	//the value
+ 	v->value = LibVarStringValue(v->string);
+ 	//variable is modified
+@@ -256,7 +256,7 @@ void LibVarSet(char *var_name, char *value)
+ 	} //end else
+ 	//variable string
+ 	v->string = (char *) GetMemory(strlen(value) + 1);
+-	strcpy(v->string, value);
++	strlcpy(v->string, value, sizeof(v->string));
+ 	//the value
+ 	v->value = LibVarStringValue(v->string);
+ 	//variable is modified

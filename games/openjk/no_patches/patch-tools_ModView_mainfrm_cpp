@@ -1,0 +1,32 @@
+$OpenBSD$
+
+strlcpy
+
+Index: tools/ModView/mainfrm.cpp
+--- tools/ModView/mainfrm.cpp.orig
++++ tools/ModView/mainfrm.cpp
+@@ -1192,7 +1192,7 @@ void CMainFrame::OnFileViewSof2Npcs() 
+ 				return;
+ 		}
+ 
+-		strcpy(gamedir,psBasePathToCopy);
++		strlcpy(gamedir,psBasePathToCopy, sizeof(gamedir));
+ 	}
+ 
+ 	CString strScript;
+@@ -1720,7 +1720,7 @@ void CMainFrame::OnFileViewJk2Bots() 
+ 				return;
+ 		}
+ 
+-		strcpy(gamedir,psBasePathToCopy);
++		strlcpy(gamedir,psBasePathToCopy, sizeof(gamedir));
+ 	}
+ 
+ 	CString strScript;
+@@ -1823,4 +1823,4 @@ void CMainFrame::OnFileBatchconvert()
+ 	}
+ 
+ 	Sys_FreeFileList( ppsGLMFiles );
+-}
+\ No newline at end of file
++}

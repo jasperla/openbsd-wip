@@ -1,0 +1,36 @@
+$OpenBSD$
+
+strlcpy
+
+Index: code/rd-vanilla/tr_init.cpp
+--- code/rd-vanilla/tr_init.cpp.orig
++++ code/rd-vanilla/tr_init.cpp
+@@ -743,22 +743,22 @@ void GL_CheckErrors( void ) {
+     }
+     switch( err ) {
+         case GL_INVALID_ENUM:
+-            strcpy( s, "GL_INVALID_ENUM" );
++            strlcpy( s, "GL_INVALID_ENUM" , sizeof(s));
+             break;
+         case GL_INVALID_VALUE:
+-            strcpy( s, "GL_INVALID_VALUE" );
++            strlcpy( s, "GL_INVALID_VALUE" , sizeof(s));
+             break;
+         case GL_INVALID_OPERATION:
+-            strcpy( s, "GL_INVALID_OPERATION" );
++            strlcpy( s, "GL_INVALID_OPERATION" , sizeof(s));
+             break;
+         case GL_STACK_OVERFLOW:
+-            strcpy( s, "GL_STACK_OVERFLOW" );
++            strlcpy( s, "GL_STACK_OVERFLOW" , sizeof(s));
+             break;
+         case GL_STACK_UNDERFLOW:
+-            strcpy( s, "GL_STACK_UNDERFLOW" );
++            strlcpy( s, "GL_STACK_UNDERFLOW" , sizeof(s));
+             break;
+         case GL_OUT_OF_MEMORY:
+-            strcpy( s, "GL_OUT_OF_MEMORY" );
++            strlcpy( s, "GL_OUT_OF_MEMORY" , sizeof(s));
+             break;
+         default:
+             Com_sprintf( s, sizeof(s), "%i", err);

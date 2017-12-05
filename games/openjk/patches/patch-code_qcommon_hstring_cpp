@@ -1,0 +1,23 @@
+$OpenBSD$
+
+strlcpy
+
+Index: code/qcommon/hstring.cpp
+--- code/qcommon/hstring.cpp.orig
++++ code/qcommon/hstring.cpp
+@@ -482,13 +482,13 @@ void hstring::Init(const char *str)
+ 		id=HashHelper().FindNext();
+ 	}
+ 	char *raw=ThePool().Alloc(strlen(str),mId);
+-	strcpy(raw,str);
++	strlcpy(raw,str, sizeof(raw));
+ 	HashHelper().Add(hash,mId);
+ #ifdef _DEBUG
+ 	int test;
+ 	raw=TheDebugPool().Alloc(strlen(str),test);
+ 	assert(test==mId);
+-	strcpy(raw,str);
++	strlcpy(raw,str, sizeof(raw));
+ #endif
+ 
+ }
