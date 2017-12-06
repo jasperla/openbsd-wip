@@ -10,8 +10,6 @@ CATEGORIES =	www x11
 
 HOMEPAGE =	http://fanglingsu.github.io/vimb/
 
-MAINTAINER =	Frederic Cambus <fred@statdns.com>
-
 # GPLv3+
 PERMIT_PACKAGE_CDROM =	Yes
 
