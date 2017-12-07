@@ -1,0 +1,14 @@
+$OpenBSD$
+
+Index: lib/bgfx-cmake/bx/src/allocator.cpp
+--- lib/bgfx-cmake/bx/src/allocator.cpp.orig
++++ lib/bgfx-cmake/bx/src/allocator.cpp
+@@ -5,8 +5,6 @@
+ 
+ #include <bx/allocator.h>
+ 
+-#include <malloc.h>
+-
+ #ifndef BX_CONFIG_ALLOCATOR_NATURAL_ALIGNMENT
+ #	define BX_CONFIG_ALLOCATOR_NATURAL_ALIGNMENT 8
+ #endif // BX_CONFIG_ALLOCATOR_NATURAL_ALIGNMENT
