@@ -21,7 +21,9 @@ GH_ACCOUNT =		TokTok
 GH_PROJECT =		c-toxcore
 GH_TAGNAME =		v$V
 
-BUILD_DEPENDS +=	devel/check \
+BUILD_DEPENDS +=	${MODGNU_AUTOCONF_DEPENDS} \
+			${MODGNU_AUTOMAKE_DEPENDS} \
+			devel/check \
 			devel/libconfig \
 			devel/libtool
 LIB_DEPENDS =		audio/opus \
