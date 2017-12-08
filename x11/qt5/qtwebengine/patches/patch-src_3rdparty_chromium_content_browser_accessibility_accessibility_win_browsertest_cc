@@ -1,0 +1,23 @@
+$OpenBSD$
+
+Index: src/3rdparty/chromium/content/browser/accessibility/accessibility_win_browsertest.cc
+--- src/3rdparty/chromium/content/browser/accessibility/accessibility_win_browsertest.cc.orig
++++ src/3rdparty/chromium/content/browser/accessibility/accessibility_win_browsertest.cc
+@@ -823,7 +823,7 @@ IN_PROC_BROWSER_TEST_F(AccessibilityWinBrowserTest,
+           ui::AX_EVENT_BLUR));
+   base::win::ScopedComPtr<IAccessible> document_accessible(
+       GetRendererAccessible());
+-  ASSERT_NE(document_accessible.get(), reinterpret_cast<IAccessible*>(NULL));
++  ASSERT_NE(document_accessible.get(), static_castt<IAccessible*>(NULL));
+   base::win::ScopedVariant childid_self(CHILDID_SELF);
+   HRESULT hr = document_accessible->accSelect(SELFLAG_TAKEFOCUS, childid_self);
+   ASSERT_EQ(S_OK, hr);
+@@ -909,7 +909,7 @@ IN_PROC_BROWSER_TEST_F(AccessibilityWinBrowserTest,
+   // Get the IAccessible object for the document.
+   base::win::ScopedComPtr<IAccessible> document_accessible(
+       GetRendererAccessible());
+-  ASSERT_NE(document_accessible.get(), reinterpret_cast<IAccessible*>(NULL));
++  ASSERT_NE(document_accessible.get(), static_castt<IAccessible*>(NULL));
+ 
+   // Get the ISimpleDOM object for the document.
+   base::win::ScopedComPtr<IServiceProvider> service_provider;

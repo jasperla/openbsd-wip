@@ -1,0 +1,4 @@
+@comment $OpenBSD$
+${P5SITE}/Finance/
+${P5SITE}/Finance/BlockIO.pm
+@man man/man3p/Finance::BlockIO.3p

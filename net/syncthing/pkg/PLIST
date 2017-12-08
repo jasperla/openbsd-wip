@@ -1,0 +1,26 @@
+@comment $OpenBSD: PLIST,v 1.3 2016/08/30 21:05:50 edd Exp $
+@newgroup _syncthing:768
+@newuser _syncthing:768:_syncthing:daemon:Syncthing user:${VARBASE}/syncthing:/sbin/nologin
+@bin bin/syncthing
+@man man/man1/stdiscosrv.1
+@man man/man1/strelaysrv.1
+@man man/man1/syncthing.1
+@man man/man5/syncthing-config.5
+@man man/man5/syncthing-stignore.5
+@man man/man7/syncthing-bep.7
+@man man/man7/syncthing-device-ids.7
+@man man/man7/syncthing-event-api.7
+@man man/man7/syncthing-faq.7
+@man man/man7/syncthing-globaldisco.7
+@man man/man7/syncthing-localdisco.7
+@man man/man7/syncthing-networking.7
+@man man/man7/syncthing-relay.7
+@man man/man7/syncthing-rest-api.7
+@man man/man7/syncthing-security.7
+@man man/man7/syncthing-versioning.7
+share/doc/pkg-readmes/${FULLPKGNAME}
+@rcscript ${RCDIR}/syncthing
+@owner _syncthing
+@group _syncthing
+@sample ${VARBASE}/syncthing/
+@extraunexec rm -rf ${VARBASE}/syncthing/{.,}*

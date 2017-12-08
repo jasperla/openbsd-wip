@@ -2,8 +2,9 @@ $OpenBSD$
 Add *BSD support.
 
 Based on the work done by kwm81 at Github.
---- src/wayland-shm.c.orig	Fri Feb  5 03:37:40 2016
-+++ src/wayland-shm.c	Thu Mar 24 17:44:22 2016
+Index: src/wayland-shm.c
+--- src/wayland-shm.c.orig
++++ src/wayland-shm.c
 @@ -30,6 +30,8 @@
  
  #define _GNU_SOURCE
@@ -13,30 +14,19 @@ Based on the work done by kwm81 at Github.
  #include <stdbool.h>
  #include <stdio.h>
  #include <stdlib.h>
-@@ -55,6 +57,9 @@ struct wl_shm_pool {
- 	int refcount;
+@@ -59,6 +61,9 @@ struct wl_shm_pool {
  	char *data;
  	int32_t size;
+ 	int32_t new_size;
 +#ifdef HAVE_SYS_UCRED_H
 +	int fd;
 +#endif
  };
  
  struct wl_shm_buffer {
-@@ -79,6 +84,10 @@ shm_pool_unref(struct wl_shm_pool *pool)
- 	if (pool->refcount)
- 		return;
- 
-+#ifdef HAVE_SYS_UCRED_H
-+	close(pool->fd);
-+#endif
-+
- 	munmap(pool->data, pool->size);
- 	free(pool);
- }
-@@ -192,12 +201,80 @@ shm_pool_destroy(struct wl_client *client, struct wl_r
- 	wl_resource_destroy(resource);
- }
+@@ -76,15 +81,91 @@ struct wl_shm_sigbus_data {
+ 	int fallback_mapping_used;
+ };
  
 +#ifdef HAVE_MREMAP
 +static void *
@@ -106,33 +96,40 @@ Based on the work done by kwm81 at Github.
 +#endif
 +
  static void
- shm_pool_resize(struct wl_client *client, struct wl_resource *resource,
- 		int32_t size)
+ shm_pool_finish_resize(struct wl_shm_pool *pool)
  {
- 	struct wl_shm_pool *pool = wl_resource_get_user_data(resource);
  	void *data;
++#ifdef HAVE_SYS_UCRED_H
 +	int fd = -1;
++#endif
  
- 	if (size < pool->size) {
- 		wl_resource_post_error(resource,
-@@ -206,7 +283,13 @@ shm_pool_resize(struct wl_client *client, struct wl_re
+ 	if (pool->size == pool->new_size)
  		return;
- 	}
  
--	data = mremap(pool->data, pool->size, size, MREMAP_MAYMOVE);
 +#ifdef HAVE_SYS_UCRED_H
 +	fd = pool->fd;
++	data = mremap_compat_maymove(pool->data, pool->size, pool->new_size,
++	                             PROT_READ|PROT_WRITE, MAP_SHARED, fd);
++#else
+ 	data = mremap(pool->data, pool->size, pool->new_size, MREMAP_MAYMOVE);
++#endif
+ 	if (data == MAP_FAILED) {
+ 		wl_resource_post_error(pool->resource,
+ 				       WL_SHM_ERROR_INVALID_FD,
+@@ -110,6 +191,10 @@ shm_pool_unref(struct wl_shm_pool *pool, bool external
+ 	if (pool->internal_refcount + pool->external_refcount)
+ 		return;
+ 
++#ifdef HAVE_SYS_UCRED_H
++	close(pool->fd);
 +#endif
 +
-+	data = mremap_compat_maymove(pool->data, pool->size, size,
-+				     PROT_READ | PROT_WRITE, MAP_SHARED, fd);
-+
- 	if (data == MAP_FAILED) {
- 		wl_resource_post_error(resource,
- 				       WL_SHM_ERROR_INVALID_FD,
-@@ -253,7 +336,13 @@ shm_create_pool(struct wl_client *client, struct wl_re
+ 	munmap(pool->data, pool->size);
+ 	free(pool);
+ }
+@@ -284,7 +369,13 @@ shm_create_pool(struct wl_client *client, struct wl_re
  				       "failed mmap fd %d", fd);
- 		goto err_close;
+ 		goto err_free;
  	}
 +#ifdef HAVE_SYS_UCRED_H
 +	/* We need to keep the FD around on FreeBSD so we can implement
@@ -144,7 +141,7 @@ Based on the work done by kwm81 at Github.
  
  	pool->resource =
  		wl_resource_create(client, &wl_shm_pool_interface, 1, id);
-@@ -332,7 +421,6 @@ wl_shm_buffer_get_stride(struct wl_shm_buffer *buffer)
+@@ -363,7 +454,6 @@ wl_shm_buffer_get_stride(struct wl_shm_buffer *buffer)
  {
  	return buffer->stride;
  }

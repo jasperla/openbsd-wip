@@ -1,0 +1,10 @@
+ * Possibly split up port into -main and -lib subpackages since this port
+   provides both a utility (bin/shellcheck) and a library. Depending on that,
+   maybe the port should be renamed to ShellCheck or shellcheck.
+ * Build fails on i386:
+[ 7 of 18] Compiling ShellCheck.Parser ( ShellCheck/Parser.hs, dist/build/ShellCheck/Parser.o )
+ghc: /usr/local/lib/libiconv.a: unknown symbol `_GLOBAL_OFFSET_TABLE_'
+ghc: Could not on-demand load symbol 'libiconv_open'
+
+ghc: /usr/local/lib/ghc/base-4.9.0.0/HSbase-4.9.0.0.o: unknown symbol `libiconv_open'
+ghc: unable to load package `base-4.9.0.0

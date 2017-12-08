@@ -1,0 +1,17 @@
+$OpenBSD$
+
+Index: src/3rdparty/chromium/base/tracked_objects_unittest.cc
+--- src/3rdparty/chromium/base/tracked_objects_unittest.cc.orig
++++ src/3rdparty/chromium/base/tracked_objects_unittest.cc
+@@ -59,9 +59,9 @@ class TrackedObjectsTest : public testing::Test {
+     Births* birth = ThreadData::TallyABirthIfActive(location);
+ 
+     if (ThreadData::status() == ThreadData::DEACTIVATED)
+-      EXPECT_EQ(reinterpret_cast<Births*>(NULL), birth);
++      EXPECT_EQ(static_cast<Births*>(NULL), birth);
+     else
+-      EXPECT_NE(reinterpret_cast<Births*>(NULL), birth);
++      EXPECT_NE(static_cast<Births*>(NULL), birth);
+   }
+ 
+   // Helper function to verify the most common test expectations.

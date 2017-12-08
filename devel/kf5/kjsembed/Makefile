@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.2 2016/12/25 14:54:49 zhuk Exp $
+# $OpenBSD: Makefile,v 1.4 2017/07/27 09:34:38 sthen Exp $
 
 COMMENT =		KDE framework for binding JavaScript object to QObjects
 DISTNAME =		kjsembed-${VERSION}
 
-SHARED_LIBS =		KF5JsEmbed		2.0
+SHARED_LIBS =		KF5JsEmbed		3.0
 
-WANTLIB =  KF5I18n KF5JS Qt5Core Qt5Gui Qt5Svg Qt5Widgets Qt5Xml
-WANTLIB += c m
+WANTLIB += ${COMPILER_LIBCXX} KF5I18n Qt5Core Qt5Gui Qt5Svg Qt5Widgets
+WANTLIB += Qt5Xml c m
 
 BUILD_DEPENDS =		devel/gettext-tools \
 			devel/kf5/kdoctools
@@ -18,7 +18,5 @@ LIB_DEPENDS =		devel/kf5/ki18n \
 			x11/qt5/qtsvg
 
 IS_PORTING_AID =	Yes
-
-TEST_NO =		Yes
 
 .include <bsd.port.mk>

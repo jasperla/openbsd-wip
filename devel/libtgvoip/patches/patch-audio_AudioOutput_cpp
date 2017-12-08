@@ -1,0 +1,31 @@
+$OpenBSD$
+
+Index: audio/AudioOutput.cpp
+--- audio/AudioOutput.cpp.orig
++++ audio/AudioOutput.cpp
+@@ -24,6 +24,8 @@
+ #elif defined(__linux__)
+ #include "../os/linux/AudioOutputALSA.h"
+ #include "../os/linux/AudioOutputPulse.h"
++#elif defined(__OpenBSD__)
++#include "../os/linux/AudioOutputPulse.h"
+ #else
+ #error "Unsupported operating system"
+ #endif
+@@ -63,6 +65,16 @@ AudioOutput *AudioOutput::Create(std::string deviceID)
+ 		LOGW("out: PulseAudio available but not working; trying ALSA");
+ 	}
+ 	return new AudioOutputALSA(deviceID);
++#elif defined(__OpenBSD__)
++	if(AudioOutputPulse::IsAvailable()){
++		AudioOutputPulse* aop=new AudioOutputPulse(deviceID);
++		if(!aop->IsInitialized())
++			delete aop;
++		else
++			return aop;
++		LOGW("out: PulseAudio available but not working; sorry");
++	}
++	return new AudioOutputPulse(deviceID);
+ #endif
+ }
+ 

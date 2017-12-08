@@ -1,0 +1,13 @@
+@comment $OpenBSD$
+@bin bin/nwcc
+@bin bin/nwcc1
+@bin bin/nwcpp
+lib/dynlibnwcc.o
+lib/libnwcc.o
+share/nwcc/
+share/nwcc/bin/
+share/nwcc/bin/snake
+share/nwcc/include/
+share/nwcc/include/limits.h
+share/nwcc/include/stdarg.h
+share/nwcc/include/stddef.h

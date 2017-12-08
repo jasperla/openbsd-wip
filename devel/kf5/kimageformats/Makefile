@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2016/12/25 14:54:49 zhuk Exp $
+# $OpenBSD: Makefile,v 1.4 2017/07/27 09:34:38 sthen Exp $
 
 COMMENT =	KDE plugins for QImage supporting extra file formats
 DISTNAME =	kimageformats-${VERSION}
 
-WANTLIB += Half Iex IlmImf IlmThread Imath KF5Archive Qt5Core
-WANTLIB += Qt5Gui Qt5PrintSupport Qt5Widgets m
+WANTLIB += ${COMPILER_LIBCXX} Half Iex IlmImf IlmThread Imath
+WANTLIB += KF5Archive Qt5Core Qt5Gui Qt5PrintSupport Qt5Widgets
+WANTLIB += m
 
 LIB_DEPENDS =	devel/kf5/karchive \
 		graphics/openexr

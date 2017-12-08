@@ -1,0 +1,11 @@
+$OpenBSD$
+
+Index: src/Makefile
+--- src/Makefile.orig
++++ src/Makefile
+@@ -1,4 +1,4 @@
+-CXXFLAGS=-Wall -O3 -fPIC
++CXXFLAGS?=-Wall -O3 -fPIC
+ MAGICK_CXXFLAGS=`GraphicsMagick++-config --cppflags --cxxflags`
+ MAGICK_LDFLAGS=`GraphicsMagick++-config --ldflags --libs`
+ PREFIX?=/usr/local

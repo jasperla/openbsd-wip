@@ -1,0 +1,13 @@
+$OpenBSD$
+
+Index: include/bios_disk.h
+--- include/bios_disk.h.orig
++++ include/bios_disk.h
+@@ -20,6 +20,7 @@
+ #define DOSBOX_BIOS_DISK_H
+ 
+ #include <stdio.h>
++#include <stdlib.h>
+ #ifndef DOSBOX_MEM_H
+ #include "mem.h"
+ #endif

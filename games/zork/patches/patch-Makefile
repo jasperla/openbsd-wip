@@ -1,0 +1,30 @@
+$OpenBSD$
+
+Don't hardcode things.
+
+Index: Makefile
+--- Makefile.orig
++++ Makefile
+@@ -1,14 +1,5 @@
+ # Makefile for dungeon
+ 
+-# Where to install the program
+-BINDIR = /usr/games
+-
+-# Where to install the data file
+-DATADIR = /usr/games/lib
+-
+-# Where to install the man page
+-MANDIR = /usr/share/man
+-
+ # The dungeon program provides a ``more'' facility which tries to
+ # figure out how many rows the terminal has.  Several mechanisms are
+ # supported for determining this; the most common one has been left
+@@ -45,7 +36,6 @@ TERMFLAG =
+ GDTFLAG = -DALLOW_GDT
+ 
+ # Compilation flags
+-CFLAGS = -g #-static
+ # On SCO Unix Development System 3.2.2a, the const type qualifier does
+ # not work correctly when using cc.  The following line will cause it
+ # to not be used and should be uncommented.

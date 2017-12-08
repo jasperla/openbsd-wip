@@ -1,0 +1,16 @@
+$OpenBSD$
+
+Index: src/3rdparty/chromium/gpu/config/BUILD.gn
+--- src/3rdparty/chromium/gpu/config/BUILD.gn.orig
++++ src/3rdparty/chromium/gpu/config/BUILD.gn
+@@ -81,7 +81,9 @@ source_set("config_sources") {
+   ]
+ 
+   # Prefer mesa GL headers to system headers, which cause problems on Win.
+-  include_dirs = [ "//third_party/mesa/src/include" ]
++  if (!is_openbsd) {
++    include_dirs = [ "//third_party/mesa/src/include" ]
++  }
+ 
+   if (is_win) {
+     deps += [ "//third_party/libxml" ]

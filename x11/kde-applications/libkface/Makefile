@@ -1,22 +1,24 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/07/08 22:54:49 zhuk Exp $
+# $OpenBSD: Makefile,v 1.2 2017/05/28 15:54:08 rsadowski Exp $
 
-COMMENT =	face detection library for KDE
-DISTNAME =	libkface-${VERSION}
+COMMENT =		face detection library for KDE
+DISTNAME =		libkface-${VERSION}
 
-SHARED_LIBS =  KF5KFace                  0.0 # 5.0
+SHARED_LIBS =		kface		0.1
 
-CATEGORIES =	graphics math
+CATEGORIES =		graphics math
+HOMEPAGE =		https://projects.kde.org/projects/kde/kdegraphics/libs/libkface
 
-KDE5 =		Yes
+WANTLIB += ${COMPILER_LIBCXX} QtDBus QtGui QtSql QtSvg QtXml kdeui
+WANTLIB += m opencv_calib3d opencv_contrib opencv_core opencv_features2d
+WANTLIB += opencv_flann opencv_gpu opencv_highgui opencv_imgproc
+WANTLIB += opencv_legacy opencv_ml opencv_nonfree opencv_objdetect
+WANTLIB += opencv_ocl opencv_photo opencv_video
 
-WANTLIB += Qt5Core Qt5Gui Qt5Sql Qt5Widgets Qt5Xml m opencv_calib3d
-WANTLIB += opencv_contrib opencv_core opencv_features2d opencv_flann
-WANTLIB += opencv_gpu opencv_highgui opencv_imgproc opencv_legacy
-WANTLIB += opencv_ml opencv_nonfree opencv_objdetect opencv_ocl
-WANTLIB += opencv_photo opencv_video pthread
+LIB_DEPENDS =		graphics/opencv
 
-LIB_DEPENDS =	graphics/opencv
+MODKDE4_USE =		libs
 
-NO_TEST =	Yes
+KFACE_V =		3.5.0
+SUBST_VARS +=		KFACE_V
 
 .include <bsd.port.mk>

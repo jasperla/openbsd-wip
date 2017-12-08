@@ -1,0 +1,17 @@
+$OpenBSD$
+
+Guard against a Linux-specific include file.
+
+Index: xpcom/io/nsLocalFileUnix.cpp
+--- xpcom/io/nsLocalFileUnix.cpp.orig
++++ xpcom/io/nsLocalFileUnix.cpp
+@@ -13,7 +13,9 @@
+ 
+ #include <sys/types.h>
+ #include <sys/stat.h>
++#ifdef __linux__
+ #include <sys/sysmacros.h> // No longer implicitly included in later glibc
++#endif
+ #include <unistd.h>
+ #include <fcntl.h>
+ #include <errno.h>

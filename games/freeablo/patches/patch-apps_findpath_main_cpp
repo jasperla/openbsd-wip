@@ -1,0 +1,13 @@
+$OpenBSD$
+
+Index: apps/findpath/main.cpp
+--- apps/findpath/main.cpp.orig
++++ apps/findpath/main.cpp
+@@ -1,5 +1,5 @@
+-#include "../../freeablo/apps/freeablo/faworld/findpath.h"
+-#include "../../freeablo/apps/freeablo/faworld/gamelevel.h"
++#include "../apps/freeablo/faworld/findpath.h"
++#include "../apps/freeablo/faworld/gamelevel.h"
+ #include <iostream>
+ #include <stdio.h>
+ #include <stdlib.h>

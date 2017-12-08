@@ -12,14 +12,17 @@ SHARED_LIBS +=		oxygenstyleconfig5	0.0
 
 MULTI_PACKAGES =	-main -cursors
 
-WANTLIB-main =	${WANTLIB}
+
+WANTLIB-main=	${WANTLIB}
 WANTLIB-main += KF5Auth KF5Codecs KF5Completion KF5ConfigCore KF5ConfigGui
 WANTLIB-main += KF5ConfigWidgets KF5CoreAddons KF5GuiAddons KF5I18n
 WANTLIB-main += KF5KCMUtils KF5Service KF5Style KF5WidgetsAddons KF5WindowSystem
-WANTLIB-main += Qt5Core Qt5DBus Qt5Gui Qt5Widgets Qt5X11Extras Qt5Xml
-WANTLIB-main += c kdecorations2 m pthread xcb
+WANTLIB-main += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Qml Qt5Quick Qt5Widgets
+WANTLIB-main += Qt5X11Extras Qt5Xml c kdecorations2 m xcb
 
-WANTLIB-cursors =
+WANTLIB-main-cursors =
+
+MODULES+=		lang/python
 
 BUILD_DEPENDS +=	devel/gettext-tools
 

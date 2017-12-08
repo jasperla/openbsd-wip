@@ -9,8 +9,11 @@ WANTLIB += KF5Screen KF5WidgetsAddons KF5XmlGui Qt5Core Qt5DBus
 WANTLIB += Qt5Gui Qt5Network Qt5Qml Qt5Quick Qt5QuickWidgets Qt5Widgets
 WANTLIB += Qt5Xml c m pthread
 
-BUILD_DEPENDS =		devel/kf5/kded
-RUN_DEPENDS =		devel/kf5/kded
+BUILD_DEPENDS =		devel/gettext-tools \
+			devel/kf5/kded
+
+RUN_DEPENDS =		devel/gettext \
+			devel/kf5/kded
 
 LIB_DEPENDS =		devel/kf5/kconfig \
 			devel/kf5/kconfigwidgets \
@@ -19,6 +22,7 @@ LIB_DEPENDS =		devel/kf5/kconfig \
 			devel/kf5/ki18n \
 			devel/kf5/kwidgetsaddons \
 			devel/kf5/kxmlgui \
-			x11/plasma/libkscreen>=5
+			x11/plasma/libkscreen>=5 \
+			x11/qt5/qtgraphicaleffects
 
 .include <bsd.port.mk>

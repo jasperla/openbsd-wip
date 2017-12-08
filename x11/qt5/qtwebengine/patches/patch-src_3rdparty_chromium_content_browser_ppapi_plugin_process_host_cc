@@ -1,0 +1,33 @@
+$OpenBSD$
+Automatically copied from www/chromium.
+
+Index: src/3rdparty/chromium/content/browser/ppapi_plugin_process_host.cc
+--- src/3rdparty/chromium/content/browser/ppapi_plugin_process_host.cc.orig
++++ src/3rdparty/chromium/content/browser/ppapi_plugin_process_host.cc
+@@ -53,7 +53,7 @@
+ 
+ namespace content {
+ 
+-#if defined(OS_POSIX) && !defined(OS_ANDROID) && !defined(OS_MACOSX)
++#if defined(OS_POSIX) && !defined(OS_ANDROID) && !defined(OS_MACOSX) && !defined(OS_BSD)
+ ZygoteHandle g_ppapi_zygote;
+ #endif  // defined(OS_POSIX) && !defined(OS_ANDROID) && !defined(OS_MACOSX)
+ 
+@@ -109,7 +109,7 @@ class PpapiPluginSandboxedProcessLauncherDelegate
+     return true;
+   }
+ 
+-#elif defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_ANDROID)
++#elif defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_ANDROID) && !defined(OS_BSD)
+   ZygoteHandle* GetZygote() override {
+     const base::CommandLine& browser_command_line =
+         *base::CommandLine::ForCurrentProcess();
+@@ -203,7 +203,7 @@ PpapiPluginProcessHost* PpapiPluginProcessHost::Create
+   return NULL;
+ }
+ 
+-#if defined(OS_POSIX) && !defined(OS_ANDROID) && !defined(OS_MACOSX)
++#if defined(OS_POSIX) && !defined(OS_ANDROID) && !defined(OS_MACOSX) && !defined(OS_BSD)
+ // static
+ void PpapiPluginProcessHost::EarlyZygoteLaunch() {
+   DCHECK(!g_ppapi_zygote);

@@ -1,0 +1,16 @@
+$OpenBSD$
+Automatically copied from www/chromium.
+
+
+Index: src/3rdparty/chromium/third_party/zlib/BUILD.gn
+--- src/3rdparty/chromium/third_party/zlib/BUILD.gn.orig
++++ src/3rdparty/chromium/third_party/zlib/BUILD.gn
+@@ -147,7 +147,7 @@ static_library("bundled_minizip") {
+       "contrib/minizip/iowin32.h",
+     ]
+   }
+-  if (is_mac || is_ios || is_android) {
++  if (is_mac || is_ios || is_android || is_openbsd) {
+     # Mac, Android and the BSDs don't have fopen64, ftello64, or fseeko64. We
+     # use fopen, ftell, and fseek instead on these systems.
+     defines = [ "USE_FILE32API" ]

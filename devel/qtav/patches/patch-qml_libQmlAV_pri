@@ -1,8 +1,9 @@
 $OpenBSD$
 Fix installation paths.
---- qml/libQmlAV.pri.orig	Tue Sep  1 08:26:10 2015
-+++ qml/libQmlAV.pri	Fri Jan 20 16:13:27 2017
-@@ -131,7 +131,7 @@ DEPENDPATH *= $$PROJECT_SRCPATH
+Index: qml/libQmlAV.pri
+--- qml/libQmlAV.pri.orig
++++ qml/libQmlAV.pri
+@@ -130,7 +130,7 @@ DEPENDPATH *= $$PROJECT_SRCPATH
  		maemo5 {
  			target.path = /opt/usr/lib
  		} else {

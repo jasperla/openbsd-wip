@@ -1,0 +1,100 @@
+TARGETS	= $(OBJDIR)libPanel.a $(OBJDIR)libPanel$(SOEXT).${LIBPanel_VERSION} $(OBJDIR)panel$(EXEEXT) $(OBJDIR)panelctl$(EXEEXT) $(OBJDIR)run$(EXEEXT)
+OBJDIR	=
+PREFIX	= /usr/local
+DESTDIR	=
+LIBDIR	= $(PREFIX)/lib
+CC	= cc
+CPPFLAGSF=
+CPPFLAGS=
+CFLAGSF	=
+CFLAGS	= -W -Wall -g -O2 -pedantic -D_FORTIFY_SOURCE=2 -fstack-protector-all
+LDFLAGS	= -Wl,-z,relro -Wl,-z,now
+EXEEXT	=
+AR	= ar
+RANLIB	= ranlib
+CCSHARED= $(CC) -shared
+SOEXT	= .so
+BINDIR	= $(PREFIX)/bin
+SBINDIR	= $(PREFIX)/sbin
+RM	= rm -f
+LN	= ln -f
+MKDIR	= mkdir -m 0755 -p
+INSTALL	= install
+
+
+all: $(TARGETS)
+
+libPanel_OBJS = $(OBJDIR)panel.o $(OBJDIR)window.o
+libPanel_CFLAGS = $(CPPFLAGSF) $(CPPFLAGS) -D PREFIX=\"$(PREFIX)\" $(CFLAGSF) $(CFLAGS) `pkg-config --cflags libDesktop` -fPIC
+libPanel_LDFLAGS = $(LDFLAGSF) $(LDFLAGS) `pkg-config --libs libDesktop` -lintl
+
+$(OBJDIR)libPanel.a: $(libPanel_OBJS)
+	$(AR) -rc $(OBJDIR)libPanel.a $(libPanel_OBJS)
+	$(RANLIB) $(OBJDIR)libPanel.a
+
+$(OBJDIR)libPanel$(SOEXT).${LIBPanel_VERSION}: $(libPanel_OBJS)
+	$(CCSHARED) -o $(OBJDIR)libPanel$(SOEXT).${LIBPanel_VERSION} -Wl,-soname,libPanel$(SOEXT).${LIBPanel_VERSION} $(libPanel_OBJS) $(libPanel_LDFLAGS)
+
+panel_OBJS = $(OBJDIR)main.o
+panel_CFLAGS = $(CPPFLAGSF) $(CPPFLAGS) -D PREFIX=\"$(PREFIX)\" $(CFLAGSF) $(CFLAGS) `pkg-config --cflags libDesktop` -fPIE
+panel_LDFLAGS = $(LDFLAGSF) $(LDFLAGS) `pkg-config --libs libDesktop` -lintl -L$(OBJDIR). -Wl,-rpath,$(LIBDIR) -lPanel -Wl,-pie
+
+$(OBJDIR)panel$(EXEEXT): $(panel_OBJS) $(OBJDIR)libPanel$(SOEXT).${LIBPanel_VERSION}
+	$(CC) -o $(OBJDIR)panel$(EXEEXT) $(panel_OBJS) $(panel_LDFLAGS)
+
+panelctl_OBJS = $(OBJDIR)panelctl.o
+panelctl_CFLAGS = $(CPPFLAGSF) $(CPPFLAGS) $(CFLAGSF) $(CFLAGS) `pkg-config --cflags libDesktop` -fPIE
+panelctl_LDFLAGS = $(LDFLAGSF) $(LDFLAGS) `pkg-config --libs libDesktop` -lintl -Wl,-pie
+
+$(OBJDIR)panelctl$(EXEEXT): $(panelctl_OBJS)
+	$(CC) -o $(OBJDIR)panelctl$(EXEEXT) $(panelctl_OBJS) $(panelctl_LDFLAGS)
+
+run_OBJS = $(OBJDIR)run.o
+run_CFLAGS = $(CPPFLAGSF) $(CPPFLAGS) -D PREFIX=\"$(PREFIX)\" $(CFLAGSF) $(CFLAGS) `pkg-config --cflags libSystem gtk+-2.0` -fPIE
+run_LDFLAGS = $(LDFLAGSF) $(LDFLAGS) `pkg-config --libs libSystem gtk+-2.0` -lintl -Wl,-pie
+
+$(OBJDIR)run$(EXEEXT): $(run_OBJS)
+	$(CC) -o $(OBJDIR)run$(EXEEXT) $(run_OBJS) $(run_LDFLAGS)
+
+$(OBJDIR)panel.o: panel.c panel.h window.h ../include/Panel.h helper.c ../config.h
+	$(CC) $(libPanel_CFLAGS) -o $(OBJDIR)panel.o -c panel.c
+
+$(OBJDIR)window.o: window.c ../include/Panel.h panel.h window.h
+	$(CC) $(libPanel_CFLAGS) -o $(OBJDIR)window.o -c window.c
+
+$(OBJDIR)main.o: main.c ../include/Panel.h panel.h ../config.h
+	$(CC) $(panel_CFLAGS) -o $(OBJDIR)main.o -c main.c
+
+$(OBJDIR)panelctl.o: panelctl.c ../include/Panel.h panel.h ../config.h
+	$(CC) $(panelctl_CFLAGS) -o $(OBJDIR)panelctl.o -c panelctl.c
+
+$(OBJDIR)run.o: run.c
+	$(CC) $(run_CFLAGS) -o $(OBJDIR)run.o -c run.c
+
+clean:
+	$(RM) -- $(libPanel_OBJS) $(panel_OBJS) $(panelctl_OBJS) $(run_OBJS)
+
+distclean: clean
+	$(RM) -- $(TARGETS)
+
+install: $(TARGETS)
+	$(MKDIR) $(DESTDIR)$(LIBDIR)
+	$(INSTALL) -m 0644 $(OBJDIR)libPanel.a $(DESTDIR)$(LIBDIR)/libPanel.a
+	$(INSTALL) -m 0755 $(OBJDIR)libPanel$(SOEXT).${LIBPanel_VERSION} $(DESTDIR)$(LIBDIR)/libPanel$(SOEXT).${LIBPanel_VERSION}
+	$(MKDIR) $(DESTDIR)$(BINDIR)
+	$(INSTALL) -m 0755 $(OBJDIR)panel$(EXEEXT) $(DESTDIR)$(BINDIR)/panel$(EXEEXT)
+	$(MKDIR) $(DESTDIR)$(BINDIR)
+	$(INSTALL) -m 0755 $(OBJDIR)panelctl$(EXEEXT) $(DESTDIR)$(BINDIR)/panelctl$(EXEEXT)
+	$(MKDIR) $(DESTDIR)$(BINDIR)
+	$(INSTALL) -m 0755 $(OBJDIR)run$(EXEEXT) $(DESTDIR)$(BINDIR)/run$(EXEEXT)
+
+uninstall:
+	$(RM) -- $(DESTDIR)$(LIBDIR)/libPanel.a
+	$(RM) -- $(DESTDIR)$(LIBDIR)/libPanel$(SOEXT).${LIBPanel_VERSION}
+	$(RM) -- $(DESTDIR)$(LIBDIR)/libPanel$(SOEXT).0
+	$(RM) -- $(DESTDIR)$(LIBDIR)/libPanel$(SOEXT)
+	$(RM) -- $(DESTDIR)$(BINDIR)/panel$(EXEEXT)
+	$(RM) -- $(DESTDIR)$(BINDIR)/panelctl$(EXEEXT)
+	$(RM) -- $(DESTDIR)$(BINDIR)/run$(EXEEXT)
+
+.PHONY: all clean distclean install uninstall

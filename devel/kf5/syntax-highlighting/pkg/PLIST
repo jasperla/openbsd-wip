@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2016/12/27 19:54:02 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.2 2017/06/07 17:03:39 rsadowski Exp $
 @bin bin/kate-syntax-highlighter
 include/KF5/
 include/KF5/KSyntaxHighlighting/

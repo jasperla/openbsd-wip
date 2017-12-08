@@ -1,0 +1,16 @@
+$OpenBSD$
+
+Index: runtime/druntime/src/core/stdc/string.d
+--- runtime/druntime/src/core/stdc/string.d.orig
++++ runtime/druntime/src/core/stdc/string.d
+@@ -80,6 +80,10 @@ else version (FreeBSD)
+ {
+     int strerror_r(int errnum, char* buf, size_t buflen);
+ }
++else version (OpenBSD)
++{
++    int strerror_r(int errnum, char* buf, size_t buflen);
++}
+ else version (Solaris)
+ {
+     int strerror_r(int errnum, char* buf, size_t buflen);

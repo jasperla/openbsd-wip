@@ -1,0 +1,5 @@
+@comment $OpenBSD$
+@bin libexec/cups/filter/rastertobrlaser
+share/cups/drv/brlaser.drv
+share/doc/brlaser/
+share/doc/brlaser/README.md

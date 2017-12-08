@@ -1,0 +1,110 @@
+$OpenBSD$
+error: expected unqualified-id before numeric constant
+Index: kwalletd/backend/blowfish.cc
+--- kwalletd/backend/blowfish.cc.orig
++++ kwalletd/backend/blowfish.cc
+@@ -45,10 +45,10 @@ BlowFish::BlowFish() {
+ bool BlowFish::init() {
+ 	// Initialize the sboxes
+ 	for (int i = 0; i < 256; i++) {
+-		_S[0][i] = ks0[i];
+-		_S[1][i] = ks1[i];
+-		_S[2][i] = ks2[i];
+-		_S[3][i] = ks3[i];
++		mS[0][i] = ks0[i];
++		mS[1][i] = ks1[i];
++		mS[2][i] = ks2[i];
++		mS[3][i] = ks3[i];
+ 	}
+ 
+ 	uint32_t datal = 0;
+@@ -66,20 +66,20 @@ bool BlowFish::init() {
+ 				j = 0;
+ 			}
+ 		}
+-		_P[i] = P[i] ^ data;
++		mP[i] = P[i] ^ data;
+ 	}
+ 
+ 	for (int i = 0; i < 18; i += 2) {
+ 		encipher(&datal, &datar);
+-		_P[i] = datal;
+-		_P[i+1] = datar;
++		mP[i] = datal;
++		mP[i+1] = datar;
+ 	}
+ 
+ 	for (int j = 0; j < 4; j++) {
+ 		for (int i = 0; i < 256; i += 2) {
+ 			encipher(&datal, &datar);
+-			_S[j][i] = datal;
+-			_S[j][i+1] = datar;
++			mS[j][i] = datal;
++			mS[j][i+1] = datar;
+ 		}
+ 	}
+ 
+@@ -87,8 +87,8 @@ bool BlowFish::init() {
+ 	//     check to see if the key is weak and return error if so
+ 	for (int i = 0; i < 255; i++) {
+ 		for (int j = i + 1; j < 256; j++) {
+-			if ((_S[0][i] == _S[0][j]) || (_S[1][i] == _S[1][j]) ||
+-					(_S[2][i] == _S[2][j]) || (_S[3][i] == _S[3][j])) {
++			if ((mS[0][i] == mS[0][j]) || (mS[1][i] == mS[1][j]) ||
++					(mS[2][i] == mS[2][j]) || (mS[3][i] == mS[3][j])) {
+ 				return false;
+ 			}
+ 		}
+@@ -206,9 +206,9 @@ uint32_t BlowFish::F(uint32_t x) {
+ 	x >>= 8;
+ 	a = x & 0x000000ff;
+ 
+-	y = _S[0][a] + _S[1][b];
+-	y ^= _S[2][c];
+-	y += _S[3][d];
++	y = mS[0][a] + mS[1][b];
++	y ^= mS[2][c];
++	y += mS[3][d];
+ 
+ 	return y;
+ }
+@@ -218,7 +218,7 @@ void BlowFish::encipher(uint32_t *xl, uint32_t *xr) {
+ 	uint32_t Xl = *xl, Xr = *xr, temp;
+ 
+ 	for (int i = 0; i < 16; ++i) {
+-		Xl ^= _P[i];
++		Xl ^= mP[i];
+ 		Xr ^= F(Xl);
+ 		// Exchange
+ 		temp = Xl; Xl = Xr; Xr = temp;
+@@ -227,8 +227,8 @@ void BlowFish::encipher(uint32_t *xl, uint32_t *xr) {
+ 	// Exchange
+ 	temp = Xl; Xl = Xr; Xr = temp;
+ 
+-	Xr ^= _P[16];
+-	Xl ^= _P[17];
++	Xr ^= mP[16];
++	Xl ^= mP[17];
+ 
+ 	*xl = Xl;
+ 	*xr = Xr;
+@@ -239,7 +239,7 @@ void BlowFish::decipher(uint32_t *xl, uint32_t *xr) {
+ 	uint32_t Xl = *xl, Xr = *xr, temp;
+ 
+ 	for (int i = 17; i > 1; --i) {
+-		Xl ^= _P[i];
++		Xl ^= mP[i];
+ 		Xr ^= F(Xl);
+ 		// Exchange
+ 		temp = Xl; Xl = Xr; Xr = temp;
+@@ -248,8 +248,8 @@ void BlowFish::decipher(uint32_t *xl, uint32_t *xr) {
+ 	// Exchange
+ 	temp = Xl; Xl = Xr; Xr = temp;
+ 
+-	Xr ^= _P[1];
+-	Xl ^= _P[0];
++	Xr ^= mP[1];
++	Xl ^= mP[0];
+ 
+ 	*xl = Xl;
+ 	*xr = Xr;

@@ -1,4 +1,0 @@
-@comment $OpenBSD$
-${P5SITE}/App/
-${P5SITE}/App/Daemon.pm
-@man man/man3p/App::Daemon.3p

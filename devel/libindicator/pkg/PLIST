@@ -1,0 +1,34 @@
+@comment $OpenBSD$
+include/libindicator-0.4/
+include/libindicator-0.4/libindicator/
+include/libindicator-0.4/libindicator/indicator-desktop-shortcuts.h
+include/libindicator-0.4/libindicator/indicator-image-helper.h
+include/libindicator-0.4/libindicator/indicator-object.h
+include/libindicator-0.4/libindicator/indicator-service-manager.h
+include/libindicator-0.4/libindicator/indicator-service.h
+include/libindicator-0.4/libindicator/indicator.h
+lib/libdummy-indicator-blank.a
+lib/libdummy-indicator-blank.la
+lib/libdummy-indicator-blank.so
+lib/libdummy-indicator-entry-func.a
+lib/libdummy-indicator-entry-func.la
+lib/libdummy-indicator-entry-func.so
+lib/libdummy-indicator-null.a
+lib/libdummy-indicator-null.la
+lib/libdummy-indicator-null.so
+lib/libdummy-indicator-signaler.a
+lib/libdummy-indicator-signaler.la
+lib/libdummy-indicator-signaler.so
+lib/libdummy-indicator-simple.a
+lib/libdummy-indicator-simple.la
+lib/libdummy-indicator-simple.so
+lib/libdummy-indicator-visible.a
+lib/libdummy-indicator-visible.la
+lib/libdummy-indicator-visible.so
+lib/libindicator.a
+lib/libindicator.la
+@lib lib/libindicator.so.${LIBindicator_VERSION}
+lib/pkgconfig/indicator-0.4.pc
+@bin libexec/indicator-loader
+share/libindicator/
+share/libindicator/80indicator-debugging

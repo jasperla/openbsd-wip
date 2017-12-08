@@ -1,0 +1,14 @@
+$OpenBSD$
+Automatically copied from www/chromium.
+
+--- src/3rdparty/chromium/build/toolchain/gcc_solink_wrapper.py.orig.port	Fri Dec  2 17:57:17 2016
++++ src/3rdparty/chromium/build/toolchain/gcc_solink_wrapper.py	Fri Dec  2 17:57:28 2016
+@@ -33,7 +33,7 @@ def CollectDynSym(args):
+   """Replaces: nm --format=posix -g -D $sofile | cut -f1-2 -d' '"""
+   toc = ''
+   nm = subprocess.Popen(wrapper_utils.CommandToRun([
+-      args.nm, '--format=posix', '-g', '-D', args.sofile]),
++      args.nm, '-g', '-D', args.sofile]),
+                         stdout=subprocess.PIPE, bufsize=-1)
+   for line in nm.stdout:
+     toc += ' '.join(line.split(' ', 2)[:2]) + '\n'

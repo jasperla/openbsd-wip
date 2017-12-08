@@ -1,8 +1,8 @@
 # $OpenBSD$
 
-COMMENT=	insecure tcpdump
+COMMENT=	unsafe tcpdump
 
-DISTNAME=	tcpdump-4.5.1
+DISTNAME=	tcpdump-4.9.2
 
 CATEGORIES=	net
 

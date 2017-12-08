@@ -1,0 +1,14 @@
+$OpenBSD$
+
+Index: textdocument/lib/CMakeLists.txt
+--- textdocument/lib/CMakeLists.txt.orig
++++ textdocument/lib/CMakeLists.txt
+@@ -45,6 +45,8 @@ endif()
+ 
+ target_link_libraries(Grantlee_TextDocument
+   LINK_PUBLIC Qt5::Gui
++  c
++  pthread
+ )
+ 
+ if (NOT CMAKE_BUILD_TYPE MATCHES TestCocoon)

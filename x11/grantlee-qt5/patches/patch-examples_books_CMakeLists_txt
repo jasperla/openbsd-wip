@@ -1,0 +1,12 @@
+$OpenBSD$
+
+Index: examples/books/CMakeLists.txt
+--- examples/books/CMakeLists.txt.orig
++++ examples/books/CMakeLists.txt
+@@ -32,5 +32,5 @@ target_link_libraries(
+   Grantlee5::Templates
+   Qt5::Widgets
+   Qt5::Sql
+-
++  c pthread
+ )

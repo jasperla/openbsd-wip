@@ -1,0 +1,17 @@
+$OpenBSD$
+
+Index: utf8.c
+--- utf8.c.orig
++++ utf8.c
+@@ -23,9 +23,9 @@
+ #include <malloc.h>
+ #define snprintf _snprintf
+ #else
+-#ifndef __FreeBSD__
++#if !defined(__FreeBSD__) && !defined(__OpenBSD__)
+ #include <alloca.h>
+-#endif /* __FreeBSD__ */
++#endif /* !__FreeBSD__ && !__OpenBSD__ */
+ #endif
+ #include <assert.h>
+ 

@@ -1,0 +1,28 @@
+$OpenBSD$
+
+Index: Makefile
+--- Makefile.orig
++++ Makefile
+@@ -126,16 +126,12 @@ install:
+ 		if [ -n "$(OBJDIR)" ]; then \
+ 		$(MAKE) OBJDIR="$(OBJDIR)$$i/" install; \
+ 		else $(MAKE) install; fi) || exit; done
+-	$(MKDIR) $(DESTDIR)$(PREFIX)/share/doc/configure
+-	$(INSTALL) -m 0644 AUTHORS $(DESTDIR)$(PREFIX)/share/doc/configure/AUTHORS
+-	$(MKDIR) $(DESTDIR)$(PREFIX)/share/doc/configure
+-	$(INSTALL) -m 0644 BUGS $(DESTDIR)$(PREFIX)/share/doc/configure/BUGS
+-	$(MKDIR) $(DESTDIR)$(PREFIX)/share/doc/configure
+-	$(INSTALL) -m 0644 CHANGES $(DESTDIR)$(PREFIX)/share/doc/configure/CHANGES
+-	$(MKDIR) $(DESTDIR)$(PREFIX)/share/doc/configure
+-	$(INSTALL) -m 0644 INSTALL $(DESTDIR)$(PREFIX)/share/doc/configure/INSTALL
+-	$(MKDIR) $(DESTDIR)$(PREFIX)/share/doc/configure
+-	$(INSTALL) -m 0644 README.md $(DESTDIR)$(PREFIX)/share/doc/configure/README.md
++	$(MKDIR) $(DESTDIR)$(PREFIX)/share/doc/deforaos/configure
++	$(INSTALL) -m 0644 AUTHORS $(DESTDIR)$(PREFIX)/share/doc/deforaos/configure/AUTHORS
++	$(INSTALL) -m 0644 BUGS $(DESTDIR)$(PREFIX)/share/doc/deforaos/configure/BUGS
++	$(INSTALL) -m 0644 CHANGES $(DESTDIR)$(PREFIX)/share/doc/deforaos/configure/CHANGES
++	$(INSTALL) -m 0644 INSTALL $(DESTDIR)$(PREFIX)/share/doc/deforaos/configure/INSTALL
++	$(INSTALL) -m 0644 README.md $(DESTDIR)$(PREFIX)/share/doc/deforaos/configure/README.md
+ 
+ uninstall:
+ 	@for i in $(SUBDIRS); do (cd "$$i" && \

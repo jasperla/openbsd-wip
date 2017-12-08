@@ -1,0 +1,15 @@
+$OpenBSD$
+Automatically copied from www/chromium.
+
+--- src/3rdparty/chromium/base/process/process_iterator_openbsd.cc.orig.port	Thu Mar  3 09:49:21 2016
++++ src/3rdparty/chromium/base/process/process_iterator_openbsd.cc	Thu Mar  3 09:49:53 2016
+@@ -6,6 +6,9 @@
+ 
+ #include <errno.h>
+ #include <stddef.h>
++#include <unistd.h>
++#include <sys/param.h>
++#include <sys/proc.h>
+ #include <sys/sysctl.h>
+ 
+ #include "base/logging.h"

@@ -1,0 +1,12 @@
+@comment $OpenBSD$
+@bin bin/player
+@bin bin/playerctl
+include/Desktop/Player.h
+@man man/man1/player.1
+@man man/man1/playerctl.1
+share/Player/
+share/Player/splash.png
+share/applications/player.desktop
+share/locale/fr/LC_MESSAGES/Player.mo
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database

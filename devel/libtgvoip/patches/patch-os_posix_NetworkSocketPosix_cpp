@@ -1,0 +1,24 @@
+$OpenBSD$
+
+Index: os/posix/NetworkSocketPosix.cpp
+--- os/posix/NetworkSocketPosix.cpp.orig
++++ os/posix/NetworkSocketPosix.cpp
+@@ -49,12 +49,18 @@ void NetworkSocketPosix::SetMaxPriority(){
+ 		LOGE("error setting darwin-specific net priority: %d / %s", errno, strerror(errno));
+ 	}
+ #else
++#ifndef SO_PRIORITY
++#define SO_PRIORITY 0
++#endif
+ 	int prio=5;
+ 	int res=setsockopt(fd, SOL_SOCKET, SO_PRIORITY, &prio, sizeof(prio));
+ 	if(res<0){
+ 		LOGE("error setting priority: %d / %s", errno, strerror(errno));
+ 	}
+ 	prio=6 << 5;
++#ifndef SOL_IP
++#define SOL_IP IPPROTO_IP
++#endif
+ 	res=setsockopt(fd, SOL_IP, IP_TOS, &prio, sizeof(prio));
+ 	if(res<0){
+ 		LOGE("error setting ip tos: %d / %s", errno, strerror(errno));

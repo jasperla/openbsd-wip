@@ -21,8 +21,16 @@ PERMIT_PACKAGE_CDROM =	Yes
 WANTLIB +=	c pthread
 MODULES =	lang/go
 
+FLAVORS = devel
+FLAVOR?=
+
+.if ${FLAVOR:L:Mdevel}
+MODGO_TYPE= lib
+PKGNAME= btcd-devel-0.12.0-beta
+.else
 BUILD_DEPENDS+=	devel/go-btcsuite-websocket \
 		devel/go-btcsuite-btcutil \
 		devel/go-btcsuite-btclog
+.endif
 
 .include <bsd.port.mk>

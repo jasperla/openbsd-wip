@@ -38,6 +38,8 @@ lib/cmake/KF5Sonnet/KF5SonnetTargets.cmake
 @lib lib/libKF5SonnetUi.so.${LIBKF5SonnetUi_VERSION}
 lib/qt5/plugins/kf5/
 lib/qt5/plugins/kf5/sonnet/
+share/examples/xdg/
+share/examples/xdg/sonnet.categories
 share/kf5/
 share/kf5/mkspecs/
 share/kf5/mkspecs/qt_SonnetCore.pri

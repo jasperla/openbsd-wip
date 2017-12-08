@@ -44,6 +44,7 @@ lib/prosody/modules/mod_http_files.lua
 lib/prosody/modules/mod_iq.lua
 lib/prosody/modules/mod_lastactivity.lua
 lib/prosody/modules/mod_legacyauth.lua
+lib/prosody/modules/mod_limits.lua
 @comment lib/prosody/modules/mod_mam/
 @comment lib/prosody/modules/mod_mam/fallback_archive.lib.lua
 @comment lib/prosody/modules/mod_mam/mamprefs.lib.lua
@@ -70,6 +71,8 @@ lib/prosody/modules/mod_s2s/mod_s2s.lua
 lib/prosody/modules/mod_s2s/s2sout.lib.lua
 lib/prosody/modules/mod_s2s_auth_certs.lua
 lib/prosody/modules/mod_saslauth.lua
+lib/prosody/modules/mod_server_contact_info.lua
+lib/prosody/modules/mod_stanza_debug.lua
 lib/prosody/modules/mod_storage_internal.lua
 lib/prosody/modules/mod_storage_none.lua
 lib/prosody/modules/mod_storage_sql.lua
@@ -119,6 +122,7 @@ lib/prosody/util/encodings.so
 lib/prosody/util/envload.lua
 lib/prosody/util/events.lua
 lib/prosody/util/filters.lua
+lib/prosody/util/format.lua
 lib/prosody/util/hashes.so
 lib/prosody/util/helpers.lua
 lib/prosody/util/hex.lua

@@ -1,0 +1,763 @@
+@comment $OpenBSD$
+@bin bin/mandelbulber2
+share/mandelbulber2/
+share/mandelbulber2/data/
+share/mandelbulber2/data/mandelbulber_1.21_defaults.fract
+share/mandelbulber2/doc/
+share/mandelbulber2/doc/Mandelbulber_Manual.pdf
+share/mandelbulber2/doc/NEWS
+share/mandelbulber2/examples/
+share/mandelbulber2/examples/Graeme McLaren  collection - license Creative Commons  (CC-BY 4.0)/
+share/mandelbulber2/examples/Graeme McLaren  collection - license Creative Commons  (CC-BY 4.0)/Menger 4D Mod1.fract
+share/mandelbulber2/examples/Graeme McLaren  collection - license Creative Commons  (CC-BY 4.0)/Mix Pinski 4D hybrid.fract
+share/mandelbulber2/examples/Graeme McLaren  collection - license Creative Commons  (CC-BY 4.0)/Sierpinski 4D.fract
+share/mandelbulber2/examples/Graeme McLaren  collection - license Creative Commons  (CC-BY 4.0)/aBox 4D.fract
+share/mandelbulber2/examples/Graeme McLaren  collection - license Creative Commons  (CC-BY 4.0)/aboxMod1 V2.11.fract
+share/mandelbulber2/examples/Graeme McLaren  collection - license Creative Commons  (CC-BY 4.0)/collatz mod hybrid1.fract
+share/mandelbulber2/examples/Graeme McLaren  collection - license Creative Commons  (CC-BY 4.0)/pseudo kleinian maxiter10.fract
+share/mandelbulber2/examples/Graeme McLaren  collection - license Creative Commons  (CC-BY 4.0)/pseudoKleinianMod2 deep zoom.fract
+share/mandelbulber2/examples/IFS_001.fract
+share/mandelbulber2/examples/IFS_002.fract
+share/mandelbulber2/examples/Krzysztof Marczak collection - license Creative Commons (CC-BY 4.0)/
+share/mandelbulber2/examples/Krzysztof Marczak collection - license Creative Commons (CC-BY 4.0)/Bristorbrot.fract
+share/mandelbulber2/examples/Krzysztof Marczak collection - license Creative Commons (CC-BY 4.0)/Construct by Ectoplaz 2.fract
+share/mandelbulber2/examples/Krzysztof Marczak collection - license Creative Commons (CC-BY 4.0)/Construct by Ectoplaz 3.fract
+share/mandelbulber2/examples/Krzysztof Marczak collection - license Creative Commons (CC-BY 4.0)/FoldIntPow2 2.fract
+share/mandelbulber2/examples/Krzysztof Marczak collection - license Creative Commons (CC-BY 4.0)/FoldIntPow2 3.fract
+share/mandelbulber2/examples/Krzysztof Marczak collection - license Creative Commons (CC-BY 4.0)/GeneralizedFoldBox01.fract
+share/mandelbulber2/examples/Krzysztof Marczak collection - license Creative Commons (CC-BY 4.0)/GeneralizedFoldBox02.fract
+share/mandelbulber2/examples/Krzysztof Marczak collection - license Creative Commons (CC-BY 4.0)/GeneralizedFoldBox03_2.fract
+share/mandelbulber2/examples/Krzysztof Marczak collection - license Creative Commons (CC-BY 4.0)/Hybrid 1.fract
+share/mandelbulber2/examples/Krzysztof Marczak collection - license Creative Commons (CC-BY 4.0)/IFS 19 - maxiter.fract
+share/mandelbulber2/examples/Krzysztof Marczak collection - license Creative Commons (CC-BY 4.0)/IFS 20.fract
+share/mandelbulber2/examples/Krzysztof Marczak collection - license Creative Commons (CC-BY 4.0)/IFS 21.fract
+share/mandelbulber2/examples/Krzysztof Marczak collection - license Creative Commons (CC-BY 4.0)/IFS 21_2.fract
+share/mandelbulber2/examples/Krzysztof Marczak collection - license Creative Commons (CC-BY 4.0)/IFS 23.fract
+share/mandelbulber2/examples/Krzysztof Marczak collection - license Creative Commons (CC-BY 4.0)/IFS 25.fract
+share/mandelbulber2/examples/Krzysztof Marczak collection - license Creative Commons (CC-BY 4.0)/IFS 26.fract
+share/mandelbulber2/examples/Krzysztof Marczak collection - license Creative Commons (CC-BY 4.0)/IFS 27.fract
+share/mandelbulber2/examples/Krzysztof Marczak collection - license Creative Commons (CC-BY 4.0)/IFS 28.fract
+share/mandelbulber2/examples/Krzysztof Marczak collection - license Creative Commons (CC-BY 4.0)/IFS 29_2.fract
+share/mandelbulber2/examples/Krzysztof Marczak collection - license Creative Commons (CC-BY 4.0)/IFS 30_2.fract
+share/mandelbulber2/examples/Krzysztof Marczak collection - license Creative Commons (CC-BY 4.0)/IFS 31.fract
+share/mandelbulber2/examples/Krzysztof Marczak collection - license Creative Commons (CC-BY 4.0)/IFS 32.fract
+share/mandelbulber2/examples/Krzysztof Marczak collection - license Creative Commons (CC-BY 4.0)/IFS 33.fract
+share/mandelbulber2/examples/Krzysztof Marczak collection - license Creative Commons (CC-BY 4.0)/aexion01.fract
+share/mandelbulber2/examples/Krzysztof Marczak collection - license Creative Commons (CC-BY 4.0)/aexion02.fract
+share/mandelbulber2/examples/Krzysztof Marczak collection - license Creative Commons (CC-BY 4.0)/aexion04.fract
+share/mandelbulber2/examples/Krzysztof Marczak collection - license Creative Commons (CC-BY 4.0)/aexion05.fract
+share/mandelbulber2/examples/Krzysztof Marczak collection - license Creative Commons (CC-BY 4.0)/benesi03.fract
+share/mandelbulber2/examples/Krzysztof Marczak collection - license Creative Commons (CC-BY 4.0)/bristorbrot01.fract
+share/mandelbulber2/examples/Krzysztof Marczak collection - license Creative Commons (CC-BY 4.0)/constant factor 2.0  - mandelbox scale 2.0.fract
+share/mandelbulber2/examples/Krzysztof Marczak collection - license Creative Commons (CC-BY 4.0)/equirectangular mandelbox.fract
+share/mandelbulber2/examples/Krzysztof Marczak collection - license Creative Commons (CC-BY 4.0)/equirectangular menger sponge.fract
+share/mandelbulber2/examples/Krzysztof Marczak collection - license Creative Commons (CC-BY 4.0)/fish eye.fract
+share/mandelbulber2/examples/Krzysztof Marczak collection - license Creative Commons (CC-BY 4.0)/folded mender sponge.fract
+share/mandelbulber2/examples/Krzysztof Marczak collection - license Creative Commons (CC-BY 4.0)/hybrid animacja - background.fract
+share/mandelbulber2/examples/Krzysztof Marczak collection - license Creative Commons (CC-BY 4.0)/hybrid14.fract
+share/mandelbulber2/examples/Krzysztof Marczak collection - license Creative Commons (CC-BY 4.0)/hybrid15.fract
+share/mandelbulber2/examples/Krzysztof Marczak collection - license Creative Commons (CC-BY 4.0)/hybrid16.fract
+share/mandelbulber2/examples/Krzysztof Marczak collection - license Creative Commons (CC-BY 4.0)/hybrid17.fract
+share/mandelbulber2/examples/Krzysztof Marczak collection - license Creative Commons (CC-BY 4.0)/hybrid18_2.fract
+share/mandelbulber2/examples/Krzysztof Marczak collection - license Creative Commons (CC-BY 4.0)/hybrid19.fract
+share/mandelbulber2/examples/Krzysztof Marczak collection - license Creative Commons (CC-BY 4.0)/hybrid20.fract
+share/mandelbulber2/examples/Krzysztof Marczak collection - license Creative Commons (CC-BY 4.0)/hybrid21.fract
+share/mandelbulber2/examples/Krzysztof Marczak collection - license Creative Commons (CC-BY 4.0)/hybrid22 - foldigIntPow v 2.fract
+share/mandelbulber2/examples/Krzysztof Marczak collection - license Creative Commons (CC-BY 4.0)/hybrid23.fract
+share/mandelbulber2/examples/Krzysztof Marczak collection - license Creative Commons (CC-BY 4.0)/hybrid24.fract
+share/mandelbulber2/examples/Krzysztof Marczak collection - license Creative Commons (CC-BY 4.0)/hybrid25.fract
+share/mandelbulber2/examples/Krzysztof Marczak collection - license Creative Commons (CC-BY 4.0)/hybrid26.fract
+share/mandelbulber2/examples/Krzysztof Marczak collection - license Creative Commons (CC-BY 4.0)/hybrid31.fract
+share/mandelbulber2/examples/Krzysztof Marczak collection - license Creative Commons (CC-BY 4.0)/hybrid33.fract
+share/mandelbulber2/examples/Krzysztof Marczak collection - license Creative Commons (CC-BY 4.0)/hybrid34.fract
+share/mandelbulber2/examples/Krzysztof Marczak collection - license Creative Commons (CC-BY 4.0)/hybrid35.fract
+share/mandelbulber2/examples/Krzysztof Marczak collection - license Creative Commons (CC-BY 4.0)/hybrid38.fract
+share/mandelbulber2/examples/Krzysztof Marczak collection - license Creative Commons (CC-BY 4.0)/hybrid42.fract
+share/mandelbulber2/examples/Krzysztof Marczak collection - license Creative Commons (CC-BY 4.0)/hypercomplex 01.fract
+share/mandelbulber2/examples/Krzysztof Marczak collection - license Creative Commons (CC-BY 4.0)/hypercomplex 02.fract
+share/mandelbulber2/examples/Krzysztof Marczak collection - license Creative Commons (CC-BY 4.0)/hypercomplex 03.fract
+share/mandelbulber2/examples/Krzysztof Marczak collection - license Creative Commons (CC-BY 4.0)/interior - mandelbulb power 8.fract
+share/mandelbulber2/examples/Krzysztof Marczak collection - license Creative Commons (CC-BY 4.0)/iter fog 002_2.fract
+share/mandelbulber2/examples/Krzysztof Marczak collection - license Creative Commons (CC-BY 4.0)/iter fog 004.fract
+share/mandelbulber2/examples/Krzysztof Marczak collection - license Creative Commons (CC-BY 4.0)/iter fog 005.fract
+share/mandelbulber2/examples/Krzysztof Marczak collection - license Creative Commons (CC-BY 4.0)/iter fog 006.fract
+share/mandelbulber2/examples/Krzysztof Marczak collection - license Creative Commons (CC-BY 4.0)/iter fog 007.fract
+share/mandelbulber2/examples/Krzysztof Marczak collection - license Creative Commons (CC-BY 4.0)/iter fog 1.fract
+share/mandelbulber2/examples/Krzysztof Marczak collection - license Creative Commons (CC-BY 4.0)/iter fog 2.fract
+share/mandelbulber2/examples/Krzysztof Marczak collection - license Creative Commons (CC-BY 4.0)/iter fog 4.fract
+share/mandelbulber2/examples/Krzysztof Marczak collection - license Creative Commons (CC-BY 4.0)/mandelbox 22.fract
+share/mandelbulber2/examples/Krzysztof Marczak collection - license Creative Commons (CC-BY 4.0)/mandelbox10.fract
+share/mandelbulber2/examples/Krzysztof Marczak collection - license Creative Commons (CC-BY 4.0)/mandelbox11 - rotations.fract
+share/mandelbulber2/examples/Krzysztof Marczak collection - license Creative Commons (CC-BY 4.0)/mandelbox14 - interior.fract
+share/mandelbulber2/examples/Krzysztof Marczak collection - license Creative Commons (CC-BY 4.0)/mandelbox15 - rotations.fract
+share/mandelbulber2/examples/Krzysztof Marczak collection - license Creative Commons (CC-BY 4.0)/mandelbox17.fract
+share/mandelbulber2/examples/Krzysztof Marczak collection - license Creative Commons (CC-BY 4.0)/mandelbox18.fract
+share/mandelbulber2/examples/Krzysztof Marczak collection - license Creative Commons (CC-BY 4.0)/mandelbox19.fract
+share/mandelbulber2/examples/Krzysztof Marczak collection - license Creative Commons (CC-BY 4.0)/mandelbox20 - rotations.fract
+share/mandelbulber2/examples/Krzysztof Marczak collection - license Creative Commons (CC-BY 4.0)/mandelbox21.fract
+share/mandelbulber2/examples/Krzysztof Marczak collection - license Creative Commons (CC-BY 4.0)/mandelbox23 rotations.fract
+share/mandelbulber2/examples/Krzysztof Marczak collection - license Creative Commons (CC-BY 4.0)/mandelbox24.fract
+share/mandelbulber2/examples/Krzysztof Marczak collection - license Creative Commons (CC-BY 4.0)/mandelbox25_2.fract
+share/mandelbulber2/examples/Krzysztof Marczak collection - license Creative Commons (CC-BY 4.0)/mandelbox25_3.fract
+share/mandelbulber2/examples/Krzysztof Marczak collection - license Creative Commons (CC-BY 4.0)/mandelbox26 - rotations.fract
+share/mandelbulber2/examples/Krzysztof Marczak collection - license Creative Commons (CC-BY 4.0)/mandelbox27.fract
+share/mandelbulber2/examples/Krzysztof Marczak collection - license Creative Commons (CC-BY 4.0)/mandelbox28.fract
+share/mandelbulber2/examples/Krzysztof Marczak collection - license Creative Commons (CC-BY 4.0)/mandelbox29.fract
+share/mandelbulber2/examples/Krzysztof Marczak collection - license Creative Commons (CC-BY 4.0)/mandelbox30.fract
+share/mandelbulber2/examples/Krzysztof Marczak collection - license Creative Commons (CC-BY 4.0)/mandelbox31.fract
+share/mandelbulber2/examples/Krzysztof Marczak collection - license Creative Commons (CC-BY 4.0)/mandelbox32 - spiral.fract
+share/mandelbulber2/examples/Krzysztof Marczak collection - license Creative Commons (CC-BY 4.0)/mandelbox33 - spiral.fract
+share/mandelbulber2/examples/Krzysztof Marczak collection - license Creative Commons (CC-BY 4.0)/mandelbox34 - lights_2.fract
+share/mandelbulber2/examples/Krzysztof Marczak collection - license Creative Commons (CC-BY 4.0)/mandelbox36.fract
+share/mandelbulber2/examples/Krzysztof Marczak collection - license Creative Commons (CC-BY 4.0)/mandelbox37_2.fract
+share/mandelbulber2/examples/Krzysztof Marczak collection - license Creative Commons (CC-BY 4.0)/mandelbox38_2.fract
+share/mandelbulber2/examples/Krzysztof Marczak collection - license Creative Commons (CC-BY 4.0)/mandelbox40_2.fract
+share/mandelbulber2/examples/Krzysztof Marczak collection - license Creative Commons (CC-BY 4.0)/mandelbox41_2.fract
+share/mandelbulber2/examples/Krzysztof Marczak collection - license Creative Commons (CC-BY 4.0)/mandelbox42_2.fract
+share/mandelbulber2/examples/Krzysztof Marczak collection - license Creative Commons (CC-BY 4.0)/mandelbox44_2.fract
+share/mandelbulber2/examples/Krzysztof Marczak collection - license Creative Commons (CC-BY 4.0)/mandelbox45.fract
+share/mandelbulber2/examples/Krzysztof Marczak collection - license Creative Commons (CC-BY 4.0)/mandelbox46.fract
+share/mandelbulber2/examples/Krzysztof Marczak collection - license Creative Commons (CC-BY 4.0)/mandelbox47.fract
+share/mandelbulber2/examples/Krzysztof Marczak collection - license Creative Commons (CC-BY 4.0)/mandelbox48.fract
+share/mandelbulber2/examples/Krzysztof Marczak collection - license Creative Commons (CC-BY 4.0)/mandelbox49.fract
+share/mandelbulber2/examples/Krzysztof Marczak collection - license Creative Commons (CC-BY 4.0)/mandelbox50 - hearts.fract
+share/mandelbulber2/examples/Krzysztof Marczak collection - license Creative Commons (CC-BY 4.0)/mandelbox51.fract
+share/mandelbulber2/examples/Krzysztof Marczak collection - license Creative Commons (CC-BY 4.0)/mandelbox52_2.fract
+share/mandelbulber2/examples/Krzysztof Marczak collection - license Creative Commons (CC-BY 4.0)/mandelbox53.fract
+share/mandelbulber2/examples/Krzysztof Marczak collection - license Creative Commons (CC-BY 4.0)/mandelbox54_2.fract
+share/mandelbulber2/examples/Krzysztof Marczak collection - license Creative Commons (CC-BY 4.0)/mandelbox55.fract
+share/mandelbulber2/examples/Krzysztof Marczak collection - license Creative Commons (CC-BY 4.0)/mandelbox56.fract
+share/mandelbulber2/examples/Krzysztof Marczak collection - license Creative Commons (CC-BY 4.0)/mandelbox57.fract
+share/mandelbulber2/examples/Krzysztof Marczak collection - license Creative Commons (CC-BY 4.0)/mandelbox58.fract
+share/mandelbulber2/examples/Krzysztof Marczak collection - license Creative Commons (CC-BY 4.0)/mandelbox59.fract
+share/mandelbulber2/examples/Krzysztof Marczak collection - license Creative Commons (CC-BY 4.0)/mandelbox60.fract
+share/mandelbulber2/examples/Krzysztof Marczak collection - license Creative Commons (CC-BY 4.0)/mandelbox61.fract
+share/mandelbulber2/examples/Krzysztof Marczak collection - license Creative Commons (CC-BY 4.0)/mandelbox62.fract
+share/mandelbulber2/examples/Krzysztof Marczak collection - license Creative Commons (CC-BY 4.0)/mandelbox8 - maxiter.fract
+share/mandelbulber2/examples/Krzysztof Marczak collection - license Creative Commons (CC-BY 4.0)/mandelbulb powe 6 - circle.fract
+share/mandelbulber2/examples/Krzysztof Marczak collection - license Creative Commons (CC-BY 4.0)/mandelbulb power 2 - iter fog 02.fract
+share/mandelbulber2/examples/Krzysztof Marczak collection - license Creative Commons (CC-BY 4.0)/mandelbulb power 2 - iter fog 03.fract
+share/mandelbulber2/examples/Krzysztof Marczak collection - license Creative Commons (CC-BY 4.0)/mandelbulb power 2 - iter fog 04.fract
+share/mandelbulber2/examples/Krzysztof Marczak collection - license Creative Commons (CC-BY 4.0)/mandelbulb power 2 - iter fog.fract
+share/mandelbulber2/examples/Krzysztof Marczak collection - license Creative Commons (CC-BY 4.0)/mandelbulb power 2 - slice 3.fract
+share/mandelbulber2/examples/Krzysztof Marczak collection - license Creative Commons (CC-BY 4.0)/mandelbulb power 2 - slice 4.fract
+share/mandelbulber2/examples/Krzysztof Marczak collection - license Creative Commons (CC-BY 4.0)/mandelbulb power 2 - slice 5.fract
+share/mandelbulber2/examples/Krzysztof Marczak collection - license Creative Commons (CC-BY 4.0)/mandelbulb power 2 - slice 6.fract
+share/mandelbulber2/examples/Krzysztof Marczak collection - license Creative Commons (CC-BY 4.0)/mandelbulb power 3 - reflections_2.fract
+share/mandelbulber2/examples/Krzysztof Marczak collection - license Creative Commons (CC-BY 4.0)/mandelbulb power 4 - water.fract
+share/mandelbulber2/examples/Krzysztof Marczak collection - license Creative Commons (CC-BY 4.0)/mandelbulb power 8 - 3_2.fract
+share/mandelbulber2/examples/Krzysztof Marczak collection - license Creative Commons (CC-BY 4.0)/mandelbulb power 8 - 4_2.fract
+share/mandelbulber2/examples/Krzysztof Marczak collection - license Creative Commons (CC-BY 4.0)/mandelbulb power 8 - 5 - interior.fract
+share/mandelbulber2/examples/Krzysztof Marczak collection - license Creative Commons (CC-BY 4.0)/mandelbulb power 8 - 7 - volmetric fog.fract
+share/mandelbulber2/examples/Krzysztof Marczak collection - license Creative Commons (CC-BY 4.0)/mandelbulb power 8 - 8.fract
+share/mandelbulber2/examples/Krzysztof Marczak collection - license Creative Commons (CC-BY 4.0)/mandelbulb power 8.fract
+share/mandelbulber2/examples/Krzysztof Marczak collection - license Creative Commons (CC-BY 4.0)/mandelbulb_multi_001.fract
+share/mandelbulber2/examples/Krzysztof Marczak collection - license Creative Commons (CC-BY 4.0)/menger sponge 001.fract
+share/mandelbulber2/examples/Krzysztof Marczak collection - license Creative Commons (CC-BY 4.0)/menger sponge 002_2.fract
+share/mandelbulber2/examples/Krzysztof Marczak collection - license Creative Commons (CC-BY 4.0)/menger sponge 003_2.fract
+share/mandelbulber2/examples/Krzysztof Marczak collection - license Creative Commons (CC-BY 4.0)/menger sponge 004_2.fract
+share/mandelbulber2/examples/Krzysztof Marczak collection - license Creative Commons (CC-BY 4.0)/modified mandelbulb 001.fract
+share/mandelbulber2/examples/Krzysztof Marczak collection - license Creative Commons (CC-BY 4.0)/msltoe donuts 001.fract
+share/mandelbulber2/examples/Krzysztof Marczak collection - license Creative Commons (CC-BY 4.0)/orbitTraps 002.fract
+share/mandelbulber2/examples/Krzysztof Marczak collection - license Creative Commons (CC-BY 4.0)/orbitTraps 003.fract
+share/mandelbulber2/examples/Krzysztof Marczak collection - license Creative Commons (CC-BY 4.0)/orbitTraps 004.fract
+share/mandelbulber2/examples/Krzysztof Marczak collection - license Creative Commons (CC-BY 4.0)/orbitTraps 005.fract
+share/mandelbulber2/examples/Krzysztof Marczak collection - license Creative Commons (CC-BY 4.0)/orbitTraps 006.fract
+share/mandelbulber2/examples/Krzysztof Marczak collection - license Creative Commons (CC-BY 4.0)/primitive objects - inverted box.fract
+share/mandelbulber2/examples/Krzysztof Marczak collection - license Creative Commons (CC-BY 4.0)/primitive objects - water.fract
+share/mandelbulber2/examples/Krzysztof Marczak collection - license Creative Commons (CC-BY 4.0)/reflections 002.fract
+share/mandelbulber2/examples/Krzysztof Marczak collection - license Creative Commons (CC-BY 4.0)/reflections 003.fract
+share/mandelbulber2/examples/Krzysztof Marczak collection - license Creative Commons (CC-BY 4.0)/volumetricLight001.fract
+share/mandelbulber2/examples/Krzysztof Marczak collection - license Creative Commons (CC-BY 4.0)/volumetricLight002.fract
+share/mandelbulber2/examples/Krzysztof Marczak collection - license Creative Commons (CC-BY 4.0)/volumetricLight003.fract
+share/mandelbulber2/examples/Krzysztof Marczak collection - license Creative Commons (CC-BY 4.0)/xenodreambuie.fract
+share/mandelbulber2/examples/Krzysztof Marczak collection - license Creative Commons (CC-BY 4.0)/xenodreambuie2.fract
+share/mandelbulber2/examples/Krzysztof Marczak collection - license Creative Commons (CC-BY 4.0)/xenodreambuie3.fract
+share/mandelbulber2/examples/Makin3D-Julia_001.fract
+share/mandelbulber2/examples/Robert Pancoast collection - license Creative Commons (CC-BY 4.0)/
+share/mandelbulber2/examples/Robert Pancoast collection - license Creative Commons (CC-BY 4.0)/Abox4D8K.fract
+share/mandelbulber2/examples/Robert Pancoast collection - license Creative Commons (CC-BY 4.0)/Caves-PseudoKleinianMod2.fract
+share/mandelbulber2/examples/Robert Pancoast collection - license Creative Commons (CC-BY 4.0)/Caves2-PseudoKleinianMod2.fract
+share/mandelbulber2/examples/Robert Pancoast collection - license Creative Commons (CC-BY 4.0)/IFS31_anim.fract
+share/mandelbulber2/examples/Robert Pancoast collection - license Creative Commons (CC-BY 4.0)/RoadToExascale.fract
+share/mandelbulber2/examples/Robert Pancoast collection - license Creative Commons (CC-BY 4.0)/continuum.fract
+share/mandelbulber2/examples/Robert Pancoast collection - license Creative Commons (CC-BY 4.0)/hybrid77.fract
+share/mandelbulber2/examples/Robert Pancoast collection - license Creative Commons (CC-BY 4.0)/hybrid77_anim.fract
+share/mandelbulber2/examples/Robert Pancoast collection - license Creative Commons (CC-BY 4.0)/icoastahedron.fract
+share/mandelbulber2/examples/Robert Pancoast collection - license Creative Commons (CC-BY 4.0)/mandelbox22_anim.fract
+share/mandelbulber2/examples/Robert Pancoast collection - license Creative Commons (CC-BY 4.0)/menger-4D.fract
+share/mandelbulber2/examples/Robert Pancoast collection - license Creative Commons (CC-BY 4.0)/menger-AddConstant4D.fract
+share/mandelbulber2/examples/Robert Pancoast collection - license Creative Commons (CC-BY 4.0)/menger-BoxFold4D.fract
+share/mandelbulber2/examples/Robert Pancoast collection - license Creative Commons (CC-BY 4.0)/menger-FabsAddConditional4D.fract
+share/mandelbulber2/examples/Robert Pancoast collection - license Creative Commons (CC-BY 4.0)/menger-FabsAddConstant4D.fract
+share/mandelbulber2/examples/Robert Pancoast collection - license Creative Commons (CC-BY 4.0)/menger-FabsAddTgladFold4D.fract
+share/mandelbulber2/examples/Robert Pancoast collection - license Creative Commons (CC-BY 4.0)/menger-IterationWeight4D.fract
+share/mandelbulber2/examples/Robert Pancoast collection - license Creative Commons (CC-BY 4.0)/menger-Reciprocal4D.fract
+share/mandelbulber2/examples/Robert Pancoast collection - license Creative Commons (CC-BY 4.0)/menger-Rotation4D.fract
+share/mandelbulber2/examples/Robert Pancoast collection - license Creative Commons (CC-BY 4.0)/menger-Scale4D.fract
+share/mandelbulber2/examples/Robert Pancoast collection - license Creative Commons (CC-BY 4.0)/menger-SphericalFold4Dtransform.fract
+share/mandelbulber2/examples/Robert Pancoast collection - license Creative Commons (CC-BY 4.0)/menger-coastn.fract
+share/mandelbulber2/examples/Robert Pancoast collection - license Creative Commons (CC-BY 4.0)/menger-mod1_001_8k.fract
+share/mandelbulber2/examples/Robert Pancoast collection - license Creative Commons (CC-BY 4.0)/mountains_and_valleys.fract
+share/mandelbulber2/examples/Robert Pancoast collection - license Creative Commons (CC-BY 4.0)/msltoeDonut-coastn.fract
+share/mandelbulber2/examples/Robert Pancoast collection - license Creative Commons (CC-BY 4.0)/pine-Bulb.fract
+share/mandelbulber2/examples/Robert Pancoast collection - license Creative Commons (CC-BY 4.0)/quaternion_001_anim.fract
+share/mandelbulber2/examples/Robert Pancoast collection - license Creative Commons (CC-BY 4.0)/sponged.fract
+share/mandelbulber2/examples/Robert Pancoast collection - license Creative Commons (CC-BY 4.0)/toastn_stonemen_anim.fract
+share/mandelbulber2/examples/Sebastian Jennen collection - license Creative Commons  (CC-BY 4.0)/
+share/mandelbulber2/examples/Sebastian Jennen collection - license Creative Commons  (CC-BY 4.0)/hybrid 01 - mandelbox sponge with sphere.fract
+share/mandelbulber2/examples/Sebastian Jennen collection - license Creative Commons  (CC-BY 4.0)/hybrid 02 - rectangle hieroglyphs animation.fract
+share/mandelbulber2/examples/Sebastian Jennen collection - license Creative Commons  (CC-BY 4.0)/hybrid 02 - rectangle hieroglyphs.fract
+share/mandelbulber2/examples/aboxmod1_001.fract
+share/mandelbulber2/examples/aboxmod2_001.fract
+share/mandelbulber2/examples/aboxmodkalieiffie_001.fract
+share/mandelbulber2/examples/aboxvsicen1_001.fract
+share/mandelbulber2/examples/aexion001.fract
+share/mandelbulber2/examples/aexion002.fract
+share/mandelbulber2/examples/aexion_octopus_001.fract
+share/mandelbulber2/examples/amazing surf mod1 001.fract
+share/mandelbulber2/examples/amazing surf multi 001.fract
+share/mandelbulber2/examples/amazing_surf 001.fract
+share/mandelbulber2/examples/amazing_surf 002.fract
+share/mandelbulber2/examples/amoxmodkali_001.fract
+share/mandelbulber2/examples/benesi 001.fract
+share/mandelbulber2/examples/benesi pwr2 mandelbulbs 001.fract
+share/mandelbulber2/examples/benesi_mag_transforms_001.fract
+share/mandelbulber2/examples/benesi_pine_tree_001.fract
+share/mandelbulber2/examples/benesi_t1_pine_tree_001.fract
+share/mandelbulber2/examples/boolean001.fract
+share/mandelbulber2/examples/boolean002.fract
+share/mandelbulber2/examples/box_fold_bulb_pow2_001.fract
+share/mandelbulber2/examples/bristorbrot001.fract
+share/mandelbulber2/examples/buffalo003_2.fract
+share/mandelbulber2/examples/fabs_box_mod1_001.fract
+share/mandelbulber2/examples/flight_anim_menger sponge_3.fract
+share/mandelbulber2/examples/hybrid001.fract
+share/mandelbulber2/examples/hybrid002.fract
+share/mandelbulber2/examples/hybrid003.fract
+share/mandelbulber2/examples/hybrid004.fract
+share/mandelbulber2/examples/hybrid005.fract
+share/mandelbulber2/examples/hybrid006.fract
+share/mandelbulber2/examples/hybrid007.fract
+share/mandelbulber2/examples/hybrid008 - collatz.fract
+share/mandelbulber2/examples/hypercomplex001.fract
+share/mandelbulber2/examples/ides1_001.fract
+share/mandelbulber2/examples/ides2_001.fract
+share/mandelbulber2/examples/imaginary scator power2 001.fract
+share/mandelbulber2/examples/iq_bulb_001.fract
+share/mandelbulber2/examples/iteration fog.fract
+share/mandelbulber2/examples/kaliset001.fract
+share/mandelbulber2/examples/keyframe_anim_mandelbox_boxes.fract
+share/mandelbulber2/examples/keyframe_anim_mandelbulb.fract
+share/mandelbulber2/examples/lkmitch001.fract
+share/mandelbulber2/examples/mandelbox001.fract
+share/mandelbulber2/examples/mandelbox002.fract
+share/mandelbulber2/examples/mandelbox003.fract
+share/mandelbulber2/examples/mandelbox22_anim.fract
+share/mandelbulber2/examples/mandelbox_menger.fract
+share/mandelbulber2/examples/mandelbox_menger_morph.fract
+share/mandelbulber2/examples/mandelbox_vary_scale_4D_001.fract
+share/mandelbulber2/examples/mandelbulb001.fract
+share/mandelbulber2/examples/mandelbulb002.fract
+share/mandelbulber2/examples/mandelbulb2_001.fract
+share/mandelbulber2/examples/mandelbulb3_001.fract
+share/mandelbulber2/examples/mandelbulb4_001.fract
+share/mandelbulber2/examples/mandelbulb_bermarte 001.fract
+share/mandelbulber2/examples/mandelbulb_kali 001.fract
+share/mandelbulber2/examples/mandelbulb_kali_multi 001.fract
+share/mandelbulber2/examples/mandelbulb_power_2_001.fract
+share/mandelbulber2/examples/mandelbulb_vary_power_001.fract
+share/mandelbulber2/examples/menger 4D 001.fract
+share/mandelbulber2/examples/menger cross kifs 001.fract
+share/mandelbulber2/examples/menger cross mod1 001.fract
+share/mandelbulber2/examples/menger middle mod.fract
+share/mandelbulber2/examples/menger octo 001.fract
+share/mandelbulber2/examples/menger prism shape2 001.fract
+share/mandelbulber2/examples/menger pwr2 polynomial 001.fract
+share/mandelbulber2/examples/menger smooth 001.fract
+share/mandelbulber2/examples/menger smooth mod1.fract
+share/mandelbulber2/examples/menger sponge_with_orbit_trap_lights.fract
+share/mandelbulber2/examples/menger-mod1_001.fract
+share/mandelbulber2/examples/msltoe toroidal bulb 001.fract
+share/mandelbulber2/examples/msltoe toroidal multi 001.fract
+share/mandelbulber2/examples/msltoe_donut_001.fract
+share/mandelbulber2/examples/msltoe_julia_bulb_eiffie_001.fract
+share/mandelbulber2/examples/msltoe_julia_bulb_mod2_001.fract
+share/mandelbulber2/examples/msltoe_julia_bulb_mod3_001.fract
+share/mandelbulber2/examples/msltoe_sym4_mod 001.fract
+share/mandelbulber2/examples/msltoesym2_mod_001.fract
+share/mandelbulber2/examples/msltoesym2_mod_002.fract
+share/mandelbulber2/examples/msltoesym3_mod_001.fract
+share/mandelbulber2/examples/octahedron with box foldig_2.fract
+share/mandelbulber2/examples/orbittrap001.fract
+share/mandelbulber2/examples/primitives001.fract
+share/mandelbulber2/examples/primitives002.fract
+share/mandelbulber2/examples/pseudo kleinian 001.fract
+share/mandelbulber2/examples/pseudo kleinian mod 001.fract
+share/mandelbulber2/examples/pseudo kleinian std de 001.fract
+share/mandelbulber2/examples/pseudo kleinian std de 002.fract
+share/mandelbulber2/examples/quaternion4D_001.fract
+share/mandelbulber2/examples/quaternion_001.fract
+share/mandelbulber2/examples/quaternion_3DE_001.fract
+share/mandelbulber2/examples/quick-dudley_001.fract
+share/mandelbulber2/examples/quick-dudley_mod_001.fract
+share/mandelbulber2/examples/random lights.fract
+share/mandelbulber2/examples/riemann bulb msltoe mod2 001.fract
+share/mandelbulber2/examples/riemann sphere 001.fract
+share/mandelbulber2/examples/riemann_sphere_msltoe_001.fract
+share/mandelbulber2/examples/riemann_sphere_msltoe_v1_001.fract
+share/mandelbulber2/examples/sierpinski 3D 001.fract
+share/mandelbulber2/examples/smooth_mandelbox_001.fract
+share/mandelbulber2/examples/stereoscopic 001.fract
+share/mandelbulber2/examples/stereoscopic 002.fract
+share/mandelbulber2/examples/stereoscopic 003.fract
+share/mandelbulber2/examples/stereoscopic 004.fract
+share/mandelbulber2/examples/the grid 002.fract
+share/mandelbulber2/examples/transparent001.fract
+share/mandelbulber2/examples/voxel_export_with_Bristorbrot4D.fract
+share/mandelbulber2/icons/
+share/mandelbulber2/icons/mandelbulber.png
+share/mandelbulber2/language/
+share/mandelbulber2/language/de.qm
+share/mandelbulber2/language/de.ts
+share/mandelbulber2/language/en.qm
+share/mandelbulber2/language/en.ts
+share/mandelbulber2/language/it.qm
+share/mandelbulber2/language/it.ts
+share/mandelbulber2/language/nl.qm
+share/mandelbulber2/language/nl.ts
+share/mandelbulber2/language/pl.qm
+share/mandelbulber2/language/pl.ts
+share/mandelbulber2/language/qt_data_de.qm
+share/mandelbulber2/language/qt_data_de.ts
+share/mandelbulber2/language/qt_data_en.qm
+share/mandelbulber2/language/qt_data_en.ts
+share/mandelbulber2/language/qt_data_it.qm
+share/mandelbulber2/language/qt_data_it.ts
+share/mandelbulber2/language/qt_data_nl.qm
+share/mandelbulber2/language/qt_data_nl.ts
+share/mandelbulber2/language/qt_data_pl.qm
+share/mandelbulber2/language/qt_data_pl.ts
+share/mandelbulber2/materials/
+share/mandelbulber2/materials/black stone.fract
+share/mandelbulber2/materials/blue plastic.fract
+share/mandelbulber2/materials/copper.fract
+share/mandelbulber2/materials/diamond.fract
+share/mandelbulber2/materials/example of textured material.fract
+share/mandelbulber2/materials/glass.fract
+share/mandelbulber2/materials/gold.fract
+share/mandelbulber2/materials/green plastic.fract
+share/mandelbulber2/materials/metal.fract
+share/mandelbulber2/materials/red plastic.fract
+share/mandelbulber2/materials/water.fract
+share/mandelbulber2/materials/white plastic.fract
+share/mandelbulber2/materials/yellow glass.fract
+share/mandelbulber2/qt_data/
+share/mandelbulber2/qt_data/formula_and_transform_images/
+share/mandelbulber2/qt_data/formula_and_transform_images/abox4d.fract
+share/mandelbulber2/qt_data/formula_and_transform_images/abox4d.png
+share/mandelbulber2/qt_data/formula_and_transform_images/abox_mod1.png
+share/mandelbulber2/qt_data/formula_and_transform_images/abox_mod11.fract
+share/mandelbulber2/qt_data/formula_and_transform_images/abox_mod11.png
+share/mandelbulber2/qt_data/formula_and_transform_images/abox_mod2.png
+share/mandelbulber2/qt_data/formula_and_transform_images/abox_mod_kali.png
+share/mandelbulber2/qt_data/formula_and_transform_images/abox_mod_kali_eiffie.png
+share/mandelbulber2/qt_data/formula_and_transform_images/abox_vs_icen1.png
+share/mandelbulber2/qt_data/formula_and_transform_images/add.png
+share/mandelbulber2/qt_data/formula_and_transform_images/aexion.png
+share/mandelbulber2/qt_data/formula_and_transform_images/aexionOctopus.png
+share/mandelbulber2/qt_data/formula_and_transform_images/aexion_octopus_mod.png
+share/mandelbulber2/qt_data/formula_and_transform_images/amazing_surf.png
+share/mandelbulber2/qt_data/formula_and_transform_images/amazing_surf_mod1.png
+share/mandelbulber2/qt_data/formula_and_transform_images/amazing_surf_multi.png
+share/mandelbulber2/qt_data/formula_and_transform_images/benesi.png
+share/mandelbulber2/qt_data/formula_and_transform_images/benesi_mag_transforms.png
+share/mandelbulber2/qt_data/formula_and_transform_images/benesi_pine_tree.png
+share/mandelbulber2/qt_data/formula_and_transform_images/benesi_pwr2_mandelbulb.png
+share/mandelbulber2/qt_data/formula_and_transform_images/benesi_t1_pine_tree.png
+share/mandelbulber2/qt_data/formula_and_transform_images/benesi_transforms.png
+share/mandelbulber2/qt_data/formula_and_transform_images/box_fold_bulb_pow2.png
+share/mandelbulber2/qt_data/formula_and_transform_images/bristorbrot.png
+share/mandelbulber2/qt_data/formula_and_transform_images/bristorbrot4d.png
+share/mandelbulber2/qt_data/formula_and_transform_images/buffalo.png
+share/mandelbulber2/qt_data/formula_and_transform_images/collatz.png
+share/mandelbulber2/qt_data/formula_and_transform_images/collatz_mod.png
+share/mandelbulber2/qt_data/formula_and_transform_images/cross_menger_mod1.png
+share/mandelbulber2/qt_data/formula_and_transform_images/eiffie_msltoe.png
+share/mandelbulber2/qt_data/formula_and_transform_images/fabsBoxMod.png
+share/mandelbulber2/qt_data/formula_and_transform_images/fold_box_mod1.png
+share/mandelbulber2/qt_data/formula_and_transform_images/generalized_fold_box.png
+share/mandelbulber2/qt_data/formula_and_transform_images/hypercomplex.png
+share/mandelbulber2/qt_data/formula_and_transform_images/ides.png
+share/mandelbulber2/qt_data/formula_and_transform_images/ides2.png
+share/mandelbulber2/qt_data/formula_and_transform_images/imaginary_scator_power2.png
+share/mandelbulber2/qt_data/formula_and_transform_images/iq_bulb.png
+share/mandelbulber2/qt_data/formula_and_transform_images/kaleidoscopic_ifs.png
+share/mandelbulber2/qt_data/formula_and_transform_images/kalisets1.png
+share/mandelbulber2/qt_data/formula_and_transform_images/lkmitch.png
+share/mandelbulber2/qt_data/formula_and_transform_images/makin3d2.png
+share/mandelbulber2/qt_data/formula_and_transform_images/mandelbox.png
+share/mandelbulber2/qt_data/formula_and_transform_images/mandelbox_menger.png
+share/mandelbulber2/qt_data/formula_and_transform_images/mandelbox_smooth.png
+share/mandelbulber2/qt_data/formula_and_transform_images/mandelbox_vary_scale4d.png
+share/mandelbulber2/qt_data/formula_and_transform_images/mandelbulb.png
+share/mandelbulber2/qt_data/formula_and_transform_images/mandelbulb2.png
+share/mandelbulber2/qt_data/formula_and_transform_images/mandelbulb3.png
+share/mandelbulber2/qt_data/formula_and_transform_images/mandelbulb4.png
+share/mandelbulber2/qt_data/formula_and_transform_images/mandelbulb5.png
+share/mandelbulber2/qt_data/formula_and_transform_images/mandelbulb6_beta.png
+share/mandelbulber2/qt_data/formula_and_transform_images/mandelbulb_bermarte.png
+share/mandelbulber2/qt_data/formula_and_transform_images/mandelbulb_kali.png
+share/mandelbulber2/qt_data/formula_and_transform_images/mandelbulb_kali_multi.png
+share/mandelbulber2/qt_data/formula_and_transform_images/mandelbulb_multi.png
+share/mandelbulber2/qt_data/formula_and_transform_images/mandelbulb_multi2.fract
+share/mandelbulber2/qt_data/formula_and_transform_images/mandelbulb_multi2.png
+share/mandelbulber2/qt_data/formula_and_transform_images/mandelbulb_power2.png
+share/mandelbulber2/qt_data/formula_and_transform_images/mandelbulb_vary_power_v1.png
+share/mandelbulber2/qt_data/formula_and_transform_images/menger4d.fract
+share/mandelbulber2/qt_data/formula_and_transform_images/menger4d.png
+share/mandelbulber2/qt_data/formula_and_transform_images/menger4d_mod1.fract
+share/mandelbulber2/qt_data/formula_and_transform_images/menger4d_mod1.png
+share/mandelbulber2/qt_data/formula_and_transform_images/mengerMod.png
+share/mandelbulber2/qt_data/formula_and_transform_images/menger_cross_kifs.png
+share/mandelbulber2/qt_data/formula_and_transform_images/menger_cross_mod1.png
+share/mandelbulber2/qt_data/formula_and_transform_images/menger_middle_mod.png
+share/mandelbulber2/qt_data/formula_and_transform_images/menger_mod1.png
+share/mandelbulber2/qt_data/formula_and_transform_images/menger_octo.fract
+share/mandelbulber2/qt_data/formula_and_transform_images/menger_octo.png
+share/mandelbulber2/qt_data/formula_and_transform_images/menger_prism_shape.png
+share/mandelbulber2/qt_data/formula_and_transform_images/menger_prism_shape2.fract
+share/mandelbulber2/qt_data/formula_and_transform_images/menger_prism_shape2.png
+share/mandelbulber2/qt_data/formula_and_transform_images/menger_pwr2_poly.png
+share/mandelbulber2/qt_data/formula_and_transform_images/menger_smooth.fract
+share/mandelbulber2/qt_data/formula_and_transform_images/menger_smooth.png
+share/mandelbulber2/qt_data/formula_and_transform_images/menger_smooth_mod1.fract
+share/mandelbulber2/qt_data/formula_and_transform_images/menger_smooth_mod1.png
+share/mandelbulber2/qt_data/formula_and_transform_images/menger_sponge.png
+share/mandelbulber2/qt_data/formula_and_transform_images/menger_sponge105.png
+share/mandelbulber2/qt_data/formula_and_transform_images/mix_pinski4d.fract
+share/mandelbulber2/qt_data/formula_and_transform_images/mix_pinski4d.png
+share/mandelbulber2/qt_data/formula_and_transform_images/msltoe_donut.png
+share/mandelbulber2/qt_data/formula_and_transform_images/msltoe_sym2_mod.png
+share/mandelbulber2/qt_data/formula_and_transform_images/msltoe_sym3_mod.png
+share/mandelbulber2/qt_data/formula_and_transform_images/msltoe_sym3_mod2.png
+share/mandelbulber2/qt_data/formula_and_transform_images/msltoe_sym3_mod3.png
+share/mandelbulber2/qt_data/formula_and_transform_images/msltoe_sym4_mod.png
+share/mandelbulber2/qt_data/formula_and_transform_images/msltoe_toroidal.png
+share/mandelbulber2/qt_data/formula_and_transform_images/msltoe_toroidal_multi.png
+share/mandelbulber2/qt_data/formula_and_transform_images/msltoesym2.png
+share/mandelbulber2/qt_data/formula_and_transform_images/msltoesym3.png
+share/mandelbulber2/qt_data/formula_and_transform_images/msltoesym4.png
+share/mandelbulber2/qt_data/formula_and_transform_images/pseudo_kleinian.png
+share/mandelbulber2/qt_data/formula_and_transform_images/pseudo_kleinian_mod1.png
+share/mandelbulber2/qt_data/formula_and_transform_images/pseudo_kleinian_mod2.fract
+share/mandelbulber2/qt_data/formula_and_transform_images/pseudo_kleinian_mod2.png
+share/mandelbulber2/qt_data/formula_and_transform_images/pseudo_kleinian_std_de.png
+share/mandelbulber2/qt_data/formula_and_transform_images/quaternion.png
+share/mandelbulber2/qt_data/formula_and_transform_images/quaternion3d.png
+share/mandelbulber2/qt_data/formula_and_transform_images/quaternion4d.png
+share/mandelbulber2/qt_data/formula_and_transform_images/quick_dudley.png
+share/mandelbulber2/qt_data/formula_and_transform_images/quick_dudley_mod.png
+share/mandelbulber2/qt_data/formula_and_transform_images/riemann_bulb_msltoe_mod2.png
+share/mandelbulber2/qt_data/formula_and_transform_images/riemann_sphere_msltoe.png
+share/mandelbulber2/qt_data/formula_and_transform_images/riemann_sphere_msltoe_v1.png
+share/mandelbulber2/qt_data/formula_and_transform_images/sierpinski3d.fract
+share/mandelbulber2/qt_data/formula_and_transform_images/sierpinski3d.png
+share/mandelbulber2/qt_data/formula_and_transform_images/sierpinski4d.fract
+share/mandelbulber2/qt_data/formula_and_transform_images/sierpinski4d.png
+share/mandelbulber2/qt_data/formula_and_transform_images/transf_add_Cpixel_pos_neg.png
+share/mandelbulber2/qt_data/formula_and_transform_images/transf_add_constant.png
+share/mandelbulber2/qt_data/formula_and_transform_images/transf_add_constant4d.png
+share/mandelbulber2/qt_data/formula_and_transform_images/transf_add_constant_vary_v1.png
+share/mandelbulber2/qt_data/formula_and_transform_images/transf_add_cpixel.png
+share/mandelbulber2/qt_data/formula_and_transform_images/transf_add_cpixel_axis_swap.png
+share/mandelbulber2/qt_data/formula_and_transform_images/transf_add_cpixel_cx_cy_axis_swap.png
+share/mandelbulber2/qt_data/formula_and_transform_images/transf_add_cpixel_symmetrical.png
+share/mandelbulber2/qt_data/formula_and_transform_images/transf_add_cpixel_vary_v1.png
+share/mandelbulber2/qt_data/formula_and_transform_images/transf_add_exp2_z.fract
+share/mandelbulber2/qt_data/formula_and_transform_images/transf_add_exp2_z.png
+share/mandelbulber2/qt_data/formula_and_transform_images/transf_benesi_cube_sphere.png
+share/mandelbulber2/qt_data/formula_and_transform_images/transf_benesi_mag_backward.png
+share/mandelbulber2/qt_data/formula_and_transform_images/transf_benesi_mag_forward.png
+share/mandelbulber2/qt_data/formula_and_transform_images/transf_benesi_sphere_cube.png
+share/mandelbulber2/qt_data/formula_and_transform_images/transf_benesi_t1.png
+share/mandelbulber2/qt_data/formula_and_transform_images/transf_benesi_t1_mod.png
+share/mandelbulber2/qt_data/formula_and_transform_images/transf_benesi_t2.png
+share/mandelbulber2/qt_data/formula_and_transform_images/transf_benesi_t3.png
+share/mandelbulber2/qt_data/formula_and_transform_images/transf_benesi_t4.png
+share/mandelbulber2/qt_data/formula_and_transform_images/transf_benesi_t5b.png
+share/mandelbulber2/qt_data/formula_and_transform_images/transf_box_fold.png
+share/mandelbulber2/qt_data/formula_and_transform_images/transf_box_fold4d.png
+share/mandelbulber2/qt_data/formula_and_transform_images/transf_box_fold_vary_v1.png
+share/mandelbulber2/qt_data/formula_and_transform_images/transf_box_fold_xyz.png
+share/mandelbulber2/qt_data/formula_and_transform_images/transf_box_offset.png
+share/mandelbulber2/qt_data/formula_and_transform_images/transf_fabs_add_conditional.fract
+share/mandelbulber2/qt_data/formula_and_transform_images/transf_fabs_add_conditional.png
+share/mandelbulber2/qt_data/formula_and_transform_images/transf_fabs_add_conditional4d.fract
+share/mandelbulber2/qt_data/formula_and_transform_images/transf_fabs_add_conditional4d.png
+share/mandelbulber2/qt_data/formula_and_transform_images/transf_fabs_add_constant.png
+share/mandelbulber2/qt_data/formula_and_transform_images/transf_fabs_add_constant4d.png
+share/mandelbulber2/qt_data/formula_and_transform_images/transf_fabs_add_multi.png
+share/mandelbulber2/qt_data/formula_and_transform_images/transf_fabs_add_tglad_fold.png
+share/mandelbulber2/qt_data/formula_and_transform_images/transf_fabs_add_tglad_fold4d.png
+share/mandelbulber2/qt_data/formula_and_transform_images/transf_folding_tetra3d.png
+share/mandelbulber2/qt_data/formula_and_transform_images/transf_inv_cylindrical.png
+share/mandelbulber2/qt_data/formula_and_transform_images/transf_iteration_weight.png
+share/mandelbulber2/qt_data/formula_and_transform_images/transf_iteration_weight4d.png
+share/mandelbulber2/qt_data/formula_and_transform_images/transf_lin_combine_cxyz.png
+share/mandelbulber2/qt_data/formula_and_transform_images/transf_menger_fold.png
+share/mandelbulber2/qt_data/formula_and_transform_images/transf_multiple_angle.png
+share/mandelbulber2/qt_data/formula_and_transform_images/transf_neg_fabs_add_constant.png
+share/mandelbulber2/qt_data/formula_and_transform_images/transf_octo_fold.fract
+share/mandelbulber2/qt_data/formula_and_transform_images/transf_octo_fold.png
+share/mandelbulber2/qt_data/formula_and_transform_images/transf_parab_fold.fract
+share/mandelbulber2/qt_data/formula_and_transform_images/transf_parab_fold.png
+share/mandelbulber2/qt_data/formula_and_transform_images/transf_platonic_solid.png
+share/mandelbulber2/qt_data/formula_and_transform_images/transf_pwr2_polynomial.png
+share/mandelbulber2/qt_data/formula_and_transform_images/transf_quaternion_fold.png
+share/mandelbulber2/qt_data/formula_and_transform_images/transf_r_power.png
+share/mandelbulber2/qt_data/formula_and_transform_images/transf_reciprocal3.fract
+share/mandelbulber2/qt_data/formula_and_transform_images/transf_reciprocal3.png
+share/mandelbulber2/qt_data/formula_and_transform_images/transf_reciprocal4d.fract
+share/mandelbulber2/qt_data/formula_and_transform_images/transf_reciprocal4d.png
+share/mandelbulber2/qt_data/formula_and_transform_images/transf_rotation.png
+share/mandelbulber2/qt_data/formula_and_transform_images/transf_rotation4d.fract
+share/mandelbulber2/qt_data/formula_and_transform_images/transf_rotation4d.png
+share/mandelbulber2/qt_data/formula_and_transform_images/transf_rotation_folding.fract
+share/mandelbulber2/qt_data/formula_and_transform_images/transf_rotation_folding.png
+share/mandelbulber2/qt_data/formula_and_transform_images/transf_rotation_folding_plane.png
+share/mandelbulber2/qt_data/formula_and_transform_images/transf_rotation_vary_v1.png
+share/mandelbulber2/qt_data/formula_and_transform_images/transf_rpow3.png
+share/mandelbulber2/qt_data/formula_and_transform_images/transf_scale.png
+share/mandelbulber2/qt_data/formula_and_transform_images/transf_scale3d.png
+share/mandelbulber2/qt_data/formula_and_transform_images/transf_scale4d.png
+share/mandelbulber2/qt_data/formula_and_transform_images/transf_scale_vary_abox.fract
+share/mandelbulber2/qt_data/formula_and_transform_images/transf_scale_vary_abox.png
+share/mandelbulber2/qt_data/formula_and_transform_images/transf_scale_vary_v1.png
+share/mandelbulber2/qt_data/formula_and_transform_images/transf_scale_vary_vcl.fract
+share/mandelbulber2/qt_data/formula_and_transform_images/transf_scale_vary_vcl.png
+share/mandelbulber2/qt_data/formula_and_transform_images/transf_spherical_fold.png
+share/mandelbulber2/qt_data/formula_and_transform_images/transf_spherical_fold4d.png
+share/mandelbulber2/qt_data/formula_and_transform_images/transf_spherical_fold_abox.png
+share/mandelbulber2/qt_data/formula_and_transform_images/transf_spherical_fold_chs.fract
+share/mandelbulber2/qt_data/formula_and_transform_images/transf_spherical_fold_chs.png
+share/mandelbulber2/qt_data/formula_and_transform_images/transf_spherical_fold_parab.fract
+share/mandelbulber2/qt_data/formula_and_transform_images/transf_spherical_fold_parab.png
+share/mandelbulber2/qt_data/formula_and_transform_images/transf_spherical_fold_vary_v1.png
+share/mandelbulber2/qt_data/formula_and_transform_images/transf_spherical_fold_vary_vcl.fract
+share/mandelbulber2/qt_data/formula_and_transform_images/transf_spherical_fold_vary_vcl.png
+share/mandelbulber2/qt_data/formula_and_transform_images/transf_spherical_inv.png
+share/mandelbulber2/qt_data/formula_and_transform_images/transf_spherical_inv_c.png
+share/mandelbulber2/qt_data/formula_and_transform_images/transf_spherical_offset.png
+share/mandelbulber2/qt_data/formula_and_transform_images/transf_spherical_offset_vcl.fract
+share/mandelbulber2/qt_data/formula_and_transform_images/transf_spherical_offset_vcl.png
+share/mandelbulber2/qt_data/formula_and_transform_images/transf_spherical_pwr_fold.png
+share/mandelbulber2/qt_data/formula_and_transform_images/transf_surf_box_fold.fract
+share/mandelbulber2/qt_data/formula_and_transform_images/transf_surf_box_fold.png
+share/mandelbulber2/qt_data/formula_and_transform_images/transf_surf_fold_multi.png
+share/mandelbulber2/qt_data/formula_and_transform_images/transf_zvector_axis_swap.png
+share/mandelbulber2/qt_data/formula_and_transform_images/xenodreambuie.png
+share/mandelbulber2/qt_data/fractal_abox4d.ui
+share/mandelbulber2/qt_data/fractal_abox_mod1.ui
+share/mandelbulber2/qt_data/fractal_abox_mod11.ui
+share/mandelbulber2/qt_data/fractal_abox_mod2.ui
+share/mandelbulber2/qt_data/fractal_abox_mod_kali.ui
+share/mandelbulber2/qt_data/fractal_abox_mod_kali_eiffie.ui
+share/mandelbulber2/qt_data/fractal_abox_vs_icen1.ui
+share/mandelbulber2/qt_data/fractal_aexion.ui
+share/mandelbulber2/qt_data/fractal_aexion_octopus_mod.ui
+share/mandelbulber2/qt_data/fractal_amazing_surf.ui
+share/mandelbulber2/qt_data/fractal_amazing_surf_mod1.ui
+share/mandelbulber2/qt_data/fractal_amazing_surf_multi.ui
+share/mandelbulber2/qt_data/fractal_benesi.ui
+share/mandelbulber2/qt_data/fractal_benesi_mag_transforms.ui
+share/mandelbulber2/qt_data/fractal_benesi_pine_tree.ui
+share/mandelbulber2/qt_data/fractal_benesi_pwr2_mandelbulb.ui
+share/mandelbulber2/qt_data/fractal_benesi_t1_pine_tree.ui
+share/mandelbulber2/qt_data/fractal_box_fold_bulb_pow2.ui
+share/mandelbulber2/qt_data/fractal_bristorbrot.ui
+share/mandelbulber2/qt_data/fractal_bristorbrot4d.ui
+share/mandelbulber2/qt_data/fractal_buffalo.ui
+share/mandelbulber2/qt_data/fractal_collatz.ui
+share/mandelbulber2/qt_data/fractal_collatz_mod.ui
+share/mandelbulber2/qt_data/fractal_eiffie_msltoe.ui
+share/mandelbulber2/qt_data/fractal_fold_box_mod1.ui
+share/mandelbulber2/qt_data/fractal_generalized_fold_box.ui
+share/mandelbulber2/qt_data/fractal_hypercomplex.ui
+share/mandelbulber2/qt_data/fractal_ides.ui
+share/mandelbulber2/qt_data/fractal_ides2.ui
+share/mandelbulber2/qt_data/fractal_imaginary_scator_power2.ui
+share/mandelbulber2/qt_data/fractal_iq_bulb.ui
+share/mandelbulber2/qt_data/fractal_kaleidoscopic_ifs.ui
+share/mandelbulber2/qt_data/fractal_kalisets1.ui
+share/mandelbulber2/qt_data/fractal_lkmitch.ui
+share/mandelbulber2/qt_data/fractal_makin3d2.ui
+share/mandelbulber2/qt_data/fractal_mandelbox.ui
+share/mandelbulber2/qt_data/fractal_mandelbox_menger.ui
+share/mandelbulber2/qt_data/fractal_mandelbox_smooth.ui
+share/mandelbulber2/qt_data/fractal_mandelbox_vary_scale4d.ui
+share/mandelbulber2/qt_data/fractal_mandelbulb.ui
+share/mandelbulber2/qt_data/fractal_mandelbulb2.ui
+share/mandelbulber2/qt_data/fractal_mandelbulb3.ui
+share/mandelbulber2/qt_data/fractal_mandelbulb4.ui
+share/mandelbulber2/qt_data/fractal_mandelbulb_bermarte.ui
+share/mandelbulber2/qt_data/fractal_mandelbulb_kali.ui
+share/mandelbulber2/qt_data/fractal_mandelbulb_kali_multi.ui
+share/mandelbulber2/qt_data/fractal_mandelbulb_multi.ui
+share/mandelbulber2/qt_data/fractal_mandelbulb_multi2.ui
+share/mandelbulber2/qt_data/fractal_mandelbulb_power2.ui
+share/mandelbulber2/qt_data/fractal_mandelbulb_vary_power_v1.ui
+share/mandelbulber2/qt_data/fractal_menger4d.ui
+share/mandelbulber2/qt_data/fractal_menger4d_mod1.ui
+share/mandelbulber2/qt_data/fractal_menger_cross_kifs.ui
+share/mandelbulber2/qt_data/fractal_menger_cross_mod1.ui
+share/mandelbulber2/qt_data/fractal_menger_middle_mod.ui
+share/mandelbulber2/qt_data/fractal_menger_mod1.ui
+share/mandelbulber2/qt_data/fractal_menger_octo.ui
+share/mandelbulber2/qt_data/fractal_menger_prism_shape.ui
+share/mandelbulber2/qt_data/fractal_menger_prism_shape2.ui
+share/mandelbulber2/qt_data/fractal_menger_pwr2_poly.ui
+share/mandelbulber2/qt_data/fractal_menger_smooth.ui
+share/mandelbulber2/qt_data/fractal_menger_smooth_mod1.ui
+share/mandelbulber2/qt_data/fractal_menger_sponge.ui
+share/mandelbulber2/qt_data/fractal_mix_pinski4d.ui
+share/mandelbulber2/qt_data/fractal_msltoe_donut.ui
+share/mandelbulber2/qt_data/fractal_msltoe_sym2_mod.ui
+share/mandelbulber2/qt_data/fractal_msltoe_sym3_mod.ui
+share/mandelbulber2/qt_data/fractal_msltoe_sym3_mod2.ui
+share/mandelbulber2/qt_data/fractal_msltoe_sym3_mod3.ui
+share/mandelbulber2/qt_data/fractal_msltoe_sym4_mod.ui
+share/mandelbulber2/qt_data/fractal_msltoe_toroidal.ui
+share/mandelbulber2/qt_data/fractal_msltoe_toroidal_multi.ui
+share/mandelbulber2/qt_data/fractal_pseudo_kleinian.ui
+share/mandelbulber2/qt_data/fractal_pseudo_kleinian_mod1.ui
+share/mandelbulber2/qt_data/fractal_pseudo_kleinian_mod2.ui
+share/mandelbulber2/qt_data/fractal_pseudo_kleinian_std_de.ui
+share/mandelbulber2/qt_data/fractal_quaternion.ui
+share/mandelbulber2/qt_data/fractal_quaternion3d.ui
+share/mandelbulber2/qt_data/fractal_quaternion4d.ui
+share/mandelbulber2/qt_data/fractal_quick_dudley.ui
+share/mandelbulber2/qt_data/fractal_quick_dudley_mod.ui
+share/mandelbulber2/qt_data/fractal_riemann_bulb_msltoe_mod2.ui
+share/mandelbulber2/qt_data/fractal_riemann_sphere_msltoe.ui
+share/mandelbulber2/qt_data/fractal_riemann_sphere_msltoe_v1.ui
+share/mandelbulber2/qt_data/fractal_sierpinski3d.ui
+share/mandelbulber2/qt_data/fractal_sierpinski4d.ui
+share/mandelbulber2/qt_data/fractal_transf_add_constant.ui
+share/mandelbulber2/qt_data/fractal_transf_add_constant4d.ui
+share/mandelbulber2/qt_data/fractal_transf_add_constant_vary_v1.ui
+share/mandelbulber2/qt_data/fractal_transf_add_cpixel.ui
+share/mandelbulber2/qt_data/fractal_transf_add_cpixel_axis_swap.ui
+share/mandelbulber2/qt_data/fractal_transf_add_cpixel_cx_cy_axis_swap.ui
+share/mandelbulber2/qt_data/fractal_transf_add_cpixel_symmetrical.ui
+share/mandelbulber2/qt_data/fractal_transf_add_cpixel_vary_v1.ui
+share/mandelbulber2/qt_data/fractal_transf_add_exp2_z.ui
+share/mandelbulber2/qt_data/fractal_transf_benesi_cube_sphere.ui
+share/mandelbulber2/qt_data/fractal_transf_benesi_mag_backward.ui
+share/mandelbulber2/qt_data/fractal_transf_benesi_mag_forward.ui
+share/mandelbulber2/qt_data/fractal_transf_benesi_sphere_cube.ui
+share/mandelbulber2/qt_data/fractal_transf_benesi_t1.ui
+share/mandelbulber2/qt_data/fractal_transf_benesi_t1_mod.ui
+share/mandelbulber2/qt_data/fractal_transf_benesi_t2.ui
+share/mandelbulber2/qt_data/fractal_transf_benesi_t3.ui
+share/mandelbulber2/qt_data/fractal_transf_benesi_t4.ui
+share/mandelbulber2/qt_data/fractal_transf_benesi_t5b.ui
+share/mandelbulber2/qt_data/fractal_transf_box_fold.ui
+share/mandelbulber2/qt_data/fractal_transf_box_fold4d.ui
+share/mandelbulber2/qt_data/fractal_transf_box_fold_vary_v1.ui
+share/mandelbulber2/qt_data/fractal_transf_box_fold_xyz.ui
+share/mandelbulber2/qt_data/fractal_transf_box_offset.ui
+share/mandelbulber2/qt_data/fractal_transf_fabs_add_conditional.ui
+share/mandelbulber2/qt_data/fractal_transf_fabs_add_conditional4d.ui
+share/mandelbulber2/qt_data/fractal_transf_fabs_add_constant.ui
+share/mandelbulber2/qt_data/fractal_transf_fabs_add_constant4d.ui
+share/mandelbulber2/qt_data/fractal_transf_fabs_add_multi.ui
+share/mandelbulber2/qt_data/fractal_transf_fabs_add_tglad_fold.ui
+share/mandelbulber2/qt_data/fractal_transf_fabs_add_tglad_fold4d.ui
+share/mandelbulber2/qt_data/fractal_transf_folding_tetra3d.ui
+share/mandelbulber2/qt_data/fractal_transf_inv_cylindrical.ui
+share/mandelbulber2/qt_data/fractal_transf_iteration_weight.ui
+share/mandelbulber2/qt_data/fractal_transf_iteration_weight4d.ui
+share/mandelbulber2/qt_data/fractal_transf_lin_combine_cxyz.ui
+share/mandelbulber2/qt_data/fractal_transf_menger_fold.ui
+share/mandelbulber2/qt_data/fractal_transf_multiple_angle.ui
+share/mandelbulber2/qt_data/fractal_transf_neg_fabs_add_constant.ui
+share/mandelbulber2/qt_data/fractal_transf_octo_fold.ui
+share/mandelbulber2/qt_data/fractal_transf_parab_fold.ui
+share/mandelbulber2/qt_data/fractal_transf_platonic_solid.ui
+share/mandelbulber2/qt_data/fractal_transf_pwr2_polynomial.ui
+share/mandelbulber2/qt_data/fractal_transf_quaternion_fold.ui
+share/mandelbulber2/qt_data/fractal_transf_r_power.ui
+share/mandelbulber2/qt_data/fractal_transf_reciprocal3.ui
+share/mandelbulber2/qt_data/fractal_transf_reciprocal4d.ui
+share/mandelbulber2/qt_data/fractal_transf_rotation.ui
+share/mandelbulber2/qt_data/fractal_transf_rotation4d.ui
+share/mandelbulber2/qt_data/fractal_transf_rotation_folding.ui
+share/mandelbulber2/qt_data/fractal_transf_rotation_folding_plane.ui
+share/mandelbulber2/qt_data/fractal_transf_rotation_vary_v1.ui
+share/mandelbulber2/qt_data/fractal_transf_rpow3.ui
+share/mandelbulber2/qt_data/fractal_transf_scale.ui
+share/mandelbulber2/qt_data/fractal_transf_scale3d.ui
+share/mandelbulber2/qt_data/fractal_transf_scale4d.ui
+share/mandelbulber2/qt_data/fractal_transf_scale_vary_abox.ui
+share/mandelbulber2/qt_data/fractal_transf_scale_vary_v1.ui
+share/mandelbulber2/qt_data/fractal_transf_scale_vary_vcl.ui
+share/mandelbulber2/qt_data/fractal_transf_spherical_fold.ui
+share/mandelbulber2/qt_data/fractal_transf_spherical_fold4d.ui
+share/mandelbulber2/qt_data/fractal_transf_spherical_fold_abox.ui
+share/mandelbulber2/qt_data/fractal_transf_spherical_fold_chs.ui
+share/mandelbulber2/qt_data/fractal_transf_spherical_fold_parab.ui
+share/mandelbulber2/qt_data/fractal_transf_spherical_fold_vary_v1.ui
+share/mandelbulber2/qt_data/fractal_transf_spherical_fold_vary_vcl.ui
+share/mandelbulber2/qt_data/fractal_transf_spherical_inv.ui
+share/mandelbulber2/qt_data/fractal_transf_spherical_inv_c.ui
+share/mandelbulber2/qt_data/fractal_transf_spherical_offset.ui
+share/mandelbulber2/qt_data/fractal_transf_spherical_offset_vcl.ui
+share/mandelbulber2/qt_data/fractal_transf_spherical_pwr_fold.ui
+share/mandelbulber2/qt_data/fractal_transf_surf_box_fold.ui
+share/mandelbulber2/qt_data/fractal_transf_surf_fold_multi.ui
+share/mandelbulber2/qt_data/fractal_transf_zvector_axis_swap.ui
+share/mandelbulber2/qt_data/fractal_xenodreambuie.ui
+share/mandelbulber2/qt_data/primitive_box.ui
+share/mandelbulber2/qt_data/primitive_circle.ui
+share/mandelbulber2/qt_data/primitive_cone.ui
+share/mandelbulber2/qt_data/primitive_cylinder.ui
+share/mandelbulber2/qt_data/primitive_plane.ui
+share/mandelbulber2/qt_data/primitive_rectangle.ui
+share/mandelbulber2/qt_data/primitive_sphere.ui
+share/mandelbulber2/qt_data/primitive_torus.ui
+share/mandelbulber2/qt_data/primitive_water.ui
+share/mandelbulber2/sounds/
+share/mandelbulber2/sounds/Musopen_-_In_the_Hall_Of_The_Mountain_King.ogg
+share/mandelbulber2/textures/
+share/mandelbulber2/textures/background.jpg
+share/mandelbulber2/textures/background2.jpg
+share/mandelbulber2/textures/background3.jpg
+share/mandelbulber2/textures/background4.jpg
+share/mandelbulber2/textures/color_texture.jpg
+share/mandelbulber2/textures/colour palette.jpg
+share/mandelbulber2/textures/diffusion_texture.jpg
+share/mandelbulber2/textures/displacement_texture.jpg
+share/mandelbulber2/textures/envmap.jpg
+share/mandelbulber2/textures/envmap2.jpg
+share/mandelbulber2/textures/envmap3.jpg
+share/mandelbulber2/textures/envmap4.JPG
+share/mandelbulber2/textures/envmap5.JPG
+share/mandelbulber2/textures/envmap6.jpg
+share/mandelbulber2/textures/grid.png
+share/mandelbulber2/textures/lightmap.jpg
+share/mandelbulber2/textures/lightmap2.jpg
+share/mandelbulber2/textures/lightmap3.jpg
+share/mandelbulber2/textures/lightmap4.jpg
+share/mandelbulber2/textures/luminosity_texture.jpg
+share/mandelbulber2/textures/normal_map_texture.jpg
+share/mandelbulber2/toolbar/
+share/mandelbulber2/toolbar/dodecahedron.fract
+share/mandelbulber2/toolbar/icosahedron.fract
+share/mandelbulber2/toolbar/mandelbox scale -2.fract
+share/mandelbulber2/toolbar/mandelbox scale 2.fract
+share/mandelbulber2/toolbar/mandelbulb_power_2.fract
+share/mandelbulber2/toolbar/mandelbulb_power_9.fract
+share/mandelbulber2/toolbar/menger sponge.fract
+share/mandelbulber2/toolbar/octahedron.fract
+share/mandelbulber2/toolbar/quaternion.fract

@@ -1,0 +1,16 @@
+$OpenBSD$
+Automatically copied from www/chromium.
+
+Index: src/3rdparty/chromium/media/BUILD.gn
+--- src/3rdparty/chromium/media/BUILD.gn.orig
++++ src/3rdparty/chromium/media/BUILD.gn
+@@ -50,6 +50,9 @@ config("media_config") {
+       defines += [ "DLOPEN_PULSEAUDIO" ]
+     }
+   }
++  if (use_sndio) {
++    defines += [ "USE_SNDIO" ]
++  }
+   if (use_cras) {
+     defines += [ "USE_CRAS" ]
+   }

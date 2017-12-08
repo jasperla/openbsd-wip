@@ -1,0 +1,15 @@
+$OpenBSD$
+
+Index: src/3rdparty/chromium/base/third_party/libevent/BUILD.gn
+--- src/3rdparty/chromium/base/third_party/libevent/BUILD.gn.orig
++++ src/3rdparty/chromium/base/third_party/libevent/BUILD.gn
+@@ -31,6 +31,9 @@ static_library("bundled_libevent") {
+   if (is_mac || is_ios) {
+     sources += [ "kqueue.c" ]
+     include_dirs = [ "mac" ]
++  } else if (is_openbsd) {
++    sources += [ "kqueue.c" ]
++    include_dirs = [ "openbsd" ]
+   } else if (is_linux) {
+     sources += [ "epoll.c" ]
+     include_dirs = [ "linux" ]

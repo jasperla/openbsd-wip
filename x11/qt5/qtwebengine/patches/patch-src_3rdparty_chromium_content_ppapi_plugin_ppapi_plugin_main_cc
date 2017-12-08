@@ -1,0 +1,25 @@
+$OpenBSD$
+Automatically copied from www/chromium.
+
+--- src/3rdparty/chromium/content/ppapi_plugin/ppapi_plugin_main.cc.orig.port	Wed Oct 12 21:02:59 2016
++++ src/3rdparty/chromium/content/ppapi_plugin/ppapi_plugin_main.cc	Wed Oct 19 12:56:04 2016
+@@ -49,6 +49,10 @@
+ #include "gin/v8_initializer.h"
+ #endif
+ 
++#if defined(OS_OPENBSD)
++#include "content/common/sandbox_init_openbsd.h"
++#endif
++
+ #if defined(OS_POSIX) && !defined(OS_ANDROID)
+ #include <stdlib.h>
+ #endif
+@@ -122,6 +126,8 @@ int PpapiPluginMain(const MainFunctionParams& paramete
+ 
+ #if defined(OS_LINUX)
+   LinuxSandbox::InitializeSandbox();
++#elif defined(OS_BSD)
++  InitializeSandbox();
+ #endif
+ 
+   ChildProcess ppapi_process;

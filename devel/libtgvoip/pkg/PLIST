@@ -1,0 +1,25 @@
+@comment $OpenBSD$
+include/libtgvoip/
+include/libtgvoip/BlockingQueue.h
+include/libtgvoip/BufferInputStream.h
+include/libtgvoip/BufferOutputStream.h
+include/libtgvoip/BufferPool.h
+include/libtgvoip/CongestionControl.h
+include/libtgvoip/EchoCanceller.h
+include/libtgvoip/JitterBuffer.h
+include/libtgvoip/MediaStreamItf.h
+include/libtgvoip/NetworkSocket.h
+include/libtgvoip/OpusDecoder.h
+include/libtgvoip/OpusEncoder.h
+include/libtgvoip/VoIPController.h
+include/libtgvoip/VoIPServerConfig.h
+include/libtgvoip/audio/
+include/libtgvoip/audio/AudioInput.h
+include/libtgvoip/audio/AudioOutput.h
+include/libtgvoip/audio/Resampler.h
+include/libtgvoip/logging.h
+include/libtgvoip/os/
+include/libtgvoip/os/posix/
+include/libtgvoip/os/posix/NetworkSocketPosix.h
+include/libtgvoip/threading.h
+lib/libtgvoip.a

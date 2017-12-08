@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_kjs_collector_cpp,v 1.1.1.1 2016/05/26 23:58:59 zhuk Exp $
+$OpenBSD: patch-src_kjs_collector_cpp,v 1.2 2017/06/07 17:03:38 rsadowski Exp $
 Allow to build & run on OpenBSD.
 Index: src/kjs/collector.cpp
 --- src/kjs/collector.cpp.orig

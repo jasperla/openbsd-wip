@@ -1,6 +1,6 @@
-# $OpenBSD: kf5.port.mk,v 1.2 2016/12/25 14:54:47 zhuk Exp $
+# $OpenBSD: kf5.port.mk,v 1.4 2017/07/12 00:05:04 zhuk Exp $
 
-MODKF5_VERSION =	5.34.0
+MODKF5_VERSION =	5.38.0
 
 MAINTAINER ?=		KDE porting team <openbsd-kde@googlegroups.com>
 
@@ -24,7 +24,8 @@ CONFIGURE_ARGS += \
 	-DKDE_INSTALL_QTPLUGINDIR=${MODQT_LIBDIR}/plugins \
 	-DKDE_INSTALL_SHAREDSTATEDIR=/var \
 	-DKDE_INSTALL_SYSCONFDIR=/etc \
-	-DKDE_INSTALL_MANDIR=${PREFIX}/man
+	-DKDE_INSTALL_MANDIR=${PREFIX}/man \
+	-DKDE_INSTALL_QMLDIR=${MODQT_LIBDIR}/qml
 
 # XXX it's very strange this is off by default
 CONFIGURE_ARGS +=	-DALLOW_UNDEFINED_LIB_SYMBOLS=Yes

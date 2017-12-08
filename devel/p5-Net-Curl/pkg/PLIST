@@ -1,0 +1,22 @@
+@comment $OpenBSD$
+${P5ARCH}/
+${P5ARCH}/Net/
+${P5ARCH}/Net/Curl/
+${P5ARCH}/Net/Curl.pm
+${P5ARCH}/Net/Curl/Compat.pm
+${P5ARCH}/Net/Curl/Easy.pm
+${P5ARCH}/Net/Curl/Form.pm
+${P5ARCH}/Net/Curl/Multi.pm
+${P5ARCH}/Net/Curl/Share.pm
+${P5ARCH}/Net/Curl/examples.pod
+${P5ARCH}/auto/
+${P5ARCH}/auto/Net/
+${P5ARCH}/auto/Net/Curl/
+${P5ARCH}/auto/Net/Curl/Curl.so
+@man man/man3p/Net::Curl.3p
+@man man/man3p/Net::Curl::Compat.3p
+@man man/man3p/Net::Curl::Easy.3p
+@man man/man3p/Net::Curl::Form.3p
+@man man/man3p/Net::Curl::Multi.3p
+@man man/man3p/Net::Curl::Share.3p
+@man man/man3p/Net::Curl::examples.3p

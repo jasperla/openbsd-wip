@@ -1,0 +1,13 @@
+$OpenBSD$
+
+Index: src/misc/regionalloctracking.cpp
+--- src/misc/regionalloctracking.cpp.orig
++++ src/misc/regionalloctracking.cpp
+@@ -21,7 +21,6 @@
+ #include "regionalloctracking.h"
+ #include "parport.h"
+ #include <time.h>
+-#include <sys/timeb.h>
+ 
+ RegionAllocTracking::Block::Block() : start(0), end(0), free(true) {
+ }

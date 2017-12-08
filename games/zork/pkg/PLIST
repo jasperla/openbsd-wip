@@ -1,0 +1,5 @@
+@comment $OpenBSD$
+@bin bin/zork
+@man man/man6/zork.6
+share/zork/
+share/zork/dtextc.dat

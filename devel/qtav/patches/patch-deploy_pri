@@ -1,7 +1,8 @@
 $OpenBSD$
 Fix installation paths.
---- deploy.pri.orig	Tue Sep  1 08:26:10 2015
-+++ deploy.pri	Fri Jan 20 16:30:31 2017
+Index: deploy.pri
+--- deploy.pri.orig
++++ deploy.pri
 @@ -1,10 +1,10 @@
  isEmpty(PROJECTROOT): PROJECTROOT = $$PWD
 -INSTALL_PREFIX = /usr/local
@@ -15,7 +16,7 @@ Fix installation paths.
  
  isEqual(TEMPLATE, app) {
  	unix:!symbian {
-@@ -12,22 +13,22 @@ isEqual(TEMPLATE, app) {
+@@ -12,22 +12,22 @@ isEqual(TEMPLATE, app) {
  			DEFINES += CACHE_APPDIR
  			INSTALL_PREFIX = /opt/$${TARGET}
  			desktopfile.files = $$PROJECTROOT/qtc_packaging/debian_harmattan/$${TARGET}.desktop

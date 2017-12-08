@@ -1,0 +1,31 @@
+ac_add_options --enable-official-branding
+export MOZILLA_OFFICIAL=1
+ 
+mk_add_options MOZ_CO_PROJECT=browser
+ac_add_options --enable-application=browser
+ 
+mk_add_options MOZ_OBJDIR="${WRKBUILD}"
+ 
+ac_add_options --enable-optimize="${CFLAGS} -msse2 -mfpmath=sse"
+ac_add_options --with-pthreads
+ 
+ac_add_options --disable-installer
+ac_add_options --disable-updater
+ 
+ac_add_options --enable-release
+ac_add_options --enable-devtools
+ac_add_options --enable-shared-js
+ 
+ac_add_options --enable-strip
+ 
+ac_add_options --x-libraries="${X11BASE}/lib"
+
+ac_add_options --with-system-jpeg="${LOCALBASE}"
+ac_add_options --with-system-zlib
+ac_add_options --with-system-bz2="${LOCALBASE}"
+ac_add_options --with-system-libevent
+ac_add_options --with-system-icu
+ac_add_options --with-system-webp="${LOCALBASE}"
+ac_add_options --with-system-sqlite="${LOCALBASE}"
+ac_add_options --with-system-ffi="${LOCALBASE}"
+ac_add_options --with-system-pixman

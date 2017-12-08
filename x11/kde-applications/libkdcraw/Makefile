@@ -1,15 +1,17 @@
-# $OpenBSD:$
+# $OpenBSD$
 
-COMMENT =	KDE RAW picture decoding C++ library
-CATEGORIES =	graphics devel
+COMMENT =	KDE wrapper around the LibRaw library
 DISTNAME =	libkdcraw-${VERSION}
-
-SHARED_LIBS +=  KF5KDcraw                 0.0 # 5.0
-
-WANTLIB += Qt5Core Qt5Gui m raw
+CATEGORIES =	devel graphics
 
 KDE5 =		Yes
 
-LIB_DEPENDS= 	graphics/libraw
+SHARED_LIBS +=  KF5KDcraw                 0.0 # 0.0
+
+WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5Gui m raw
+
+LIB_DEPENDS =	graphics/libraw
+
+NO_TEST =	Yes
 
 .include <bsd.port.mk>

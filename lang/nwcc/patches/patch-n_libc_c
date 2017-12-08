@@ -1,0 +1,18 @@
+$OpenBSD$
+
+Correct directory searching.
+
+Index: n_libc.c
+--- n_libc.c.orig
++++ n_libc.c
+@@ -220,8 +220,8 @@ void
+ 		struct stat	sbuf;
+ 		char		*path;
+ 
+-		if (stat(INSTALLDIR "/nwcc/bin/snake", &sbuf) == 0) {
+-			path = INSTALLDIR "/nwcc/bin/snake";
++		if (stat(INSTALLDIR "/share/nwcc/bin/snake", &sbuf) == 0) {
++			path = INSTALLDIR "/share/nwcc/bin/snake";
+ 		} else {
+ 			path = "./snake";
+ 		}	

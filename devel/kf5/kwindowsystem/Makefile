@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.2 2016/12/25 14:54:49 zhuk Exp $
+# $OpenBSD: Makefile,v 1.5 2017/07/30 12:50:58 espie Exp $
 
 COMMENT =		access to the windowing system for KDE apps
 DISTNAME =		kwindowsystem-${VERSION}
 
-SHARED_LIBS =		KF5WindowSystem		2.0
+SHARED_LIBS =		KF5WindowSystem		3.0
 
-WANTLIB =  ICE Qt5Core Qt5Gui Qt5Widgets Qt5X11Extras SM X11 Xext
-WANTLIB += Xfixes Xrender m xcb xcb-keysyms
+WANTLIB += ${COMPILER_LIBCXX} ICE Qt5Core Qt5Gui Qt5Widgets Qt5X11Extras
+WANTLIB += SM X11 Xext Xfixes Xrender m xcb xcb-keysyms
 
 # tests are likely to fail outside KWin
 TEST_IS_INTERACTIVE =	X11

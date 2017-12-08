@@ -45,7 +45,7 @@ do-extract:
 		${LOCALBASE}/bin/git clone git://uglyman.kremlin.cc/git/systembsd.git
 
 post-install:
-	${SUBST_CMD} -c -o root -g wheel ${FILESDIR}/os-release.in \
+	${SUBST_CMD} -c -o root -g wheel -m 0644 ${FILESDIR}/os-release.in \
 		${PREFIX}/share/examples/systembsd/os-release
 
 .include <bsd.port.mk>

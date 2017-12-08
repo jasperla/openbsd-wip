@@ -1,0 +1,18 @@
+@comment $OpenBSD$
+@bin bin/lily
+include/lily/
+include/lily/lily_api_embed.h
+include/lily/lily_api_msgbuf.h
+include/lily/lily_api_value.h
+include/lily/lily_int_code_iter.h
+include/lily/lily_int_opcode.h
+@lib lib/liblily.so.${LIBlily_VERSION}
+share/examples/lily/
+share/examples/lily/fib.lily
+share/examples/lily/fizzbuzz.lily
+share/examples/lily/one_hundred_doors.lily
+share/examples/lily/rpn_calculator.lily
+share/examples/lily/show_classes.lily
+share/examples/lily/show_how_to_combine_functions.lily
+share/examples/lily/show_off_enums.lily
+share/examples/lily/sum_numbers_from_argv.lily

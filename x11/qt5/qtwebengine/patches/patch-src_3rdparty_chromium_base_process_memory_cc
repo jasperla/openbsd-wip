@@ -1,0 +1,23 @@
+$OpenBSD$
+Automatically copied from www/chromium.
+
+--- src/3rdparty/chromium/base/process/memory.cc.orig.port	Fri Oct 21 00:01:59 2016
++++ src/3rdparty/chromium/base/process/memory.cc	Sat Oct 22 15:54:28 2016
+@@ -10,7 +10,7 @@
+ namespace base {
+ 
+ // Defined in memory_win.cc for Windows.
+-#if !defined(OS_WIN)
++#if !defined(OS_WIN) && !defined(OS_BSD)
+ 
+ namespace {
+ 
+@@ -31,7 +31,7 @@ void TerminateBecauseOutOfMemory(size_t size) {
+ #endif
+ 
+ // Defined in memory_mac.mm for Mac.
+-#if !defined(OS_MACOSX)
++#if !defined(OS_MACOSX) && !defined(OS_BSD)
+ 
+ bool UncheckedCalloc(size_t num_items, size_t size, void** result) {
+   const size_t alloc_size = num_items * size;

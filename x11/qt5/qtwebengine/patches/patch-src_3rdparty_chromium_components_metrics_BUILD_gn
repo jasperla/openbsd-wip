@@ -1,0 +1,17 @@
+$OpenBSD$
+Automatically copied from www/chromium.
+
+Index: src/3rdparty/chromium/components/metrics/BUILD.gn
+--- src/3rdparty/chromium/components/metrics/BUILD.gn.orig
++++ src/3rdparty/chromium/components/metrics/BUILD.gn
+@@ -90,6 +90,10 @@ static_library("metrics") {
+     "//third_party/zlib:compression_utils",
+   ]
+ 
++  if (is_openbsd) {
++    sources -= [ "system_memory_stats_recorder_linux.cc" ]
++  }
++
+   if (is_chromeos) {
+     deps += [ ":serialization" ]
+   }

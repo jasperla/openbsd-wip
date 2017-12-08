@@ -1,0 +1,21 @@
+@comment $OpenBSD$
+${P5SITE}/Net/
+${P5SITE}/Net/Curl/
+${P5SITE}/Net/Curl/Simple/
+${P5SITE}/Net/Curl/Simple.pm
+${P5SITE}/Net/Curl/Simple/Async/
+${P5SITE}/Net/Curl/Simple/Async.pm
+${P5SITE}/Net/Curl/Simple/Async/AnyEvent.pm
+${P5SITE}/Net/Curl/Simple/Async/CoroEV.pm
+${P5SITE}/Net/Curl/Simple/Async/EV.pm
+${P5SITE}/Net/Curl/Simple/Async/Irssi.pm
+${P5SITE}/Net/Curl/Simple/Async/POE.pm
+${P5SITE}/Net/Curl/Simple/Async/Select.pm
+${P5SITE}/Net/Curl/Simple/Form.pm
+${P5SITE}/Net/Curl/Simple/UserAgent.pm
+${P5SITE}/Net/Curl/Simple/examples.pod
+@man man/man3p/Net::Curl::Simple.3p
+@man man/man3p/Net::Curl::Simple::Async.3p
+@man man/man3p/Net::Curl::Simple::Form.3p
+@man man/man3p/Net::Curl::Simple::UserAgent.3p
+@man man/man3p/Net::Curl::Simple::examples.3p

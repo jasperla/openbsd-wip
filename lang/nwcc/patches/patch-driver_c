@@ -1,0 +1,68 @@
+$OpenBSD$
+
+Correct directory searching.
+
+Index: driver.c
+--- driver.c.orig
++++ driver.c
+@@ -276,13 +276,13 @@ driver(char **cpp_flags, char *asm_flags, char *ld_fla
+ 			char		*crtend = NULL;
+ 
+ 			if (abiflag == ABI_POWER64) {
+-				if (stat(INSTALLDIR "/nwcc/lib/crtbegin-64.o", &sbuf)==0) {
+-					crtbegin = INSTALLDIR "/nwcc/lib/crtbegin-64.o";
++				if (stat(INSTALLDIR "/share/nwcc/lib/crtbegin-64.o", &sbuf)==0) {
++					crtbegin = INSTALLDIR "/share/nwcc/lib/crtbegin-64.o";
+ 				} else if (stat("./crtbegin-64.o", &sbuf) == 0) {
+ 					crtbegin = "./crtbegin-64.o";
+ 				}
+-				if (stat(INSTALLDIR "/nwcc/lib/crtend-64.o", &sbuf)==0) {
+-					crtend = INSTALLDIR "/nwcc/lib/crtend-64.o";
++				if (stat(INSTALLDIR "/share/nwcc/lib/crtend-64.o", &sbuf)==0) {
++					crtend = INSTALLDIR "/share/nwcc/lib/crtend-64.o";
+ 				} else if (stat("./crtend-64.o", &sbuf) == 0) {
+ 					crtend = "./crtend-64.o";
+ 				}
+@@ -312,12 +312,12 @@ driver(char **cpp_flags, char *asm_flags, char *ld_fla
+ 			if (!Sflag) {
+ 				if (crtbegin == NULL) {
+ 					(void) fprintf(stderr, "Warning: No crtbegin object found "
+-						"in " INSTALLDIR "/nwcc/lib or .!\n");
++						"in " INSTALLDIR "/share/nwcc/lib or .!\n");
+ 					crtbegin = "";
+ 				}
+ 				if (crtend == NULL) {
+ 					(void) fprintf(stderr, "Warning: No crtend object found "
+-						"in " INSTALLDIR "/nwcc/lib or .!\n");
++						"in " INSTALLDIR "/share/nwcc/lib or .!\n");
+ 					crtend = "";
+ 				}
+ 				if (abiflag == ABI_POWER64) {
+@@ -363,22 +363,22 @@ driver(char **cpp_flags, char *asm_flags, char *ld_fla
+ 			char		*crt1 = NULL;
+ 
+ 			if (abiflag == ABI_SPARC64) {
+-				if (stat(INSTALLDIR "/nwcc/lib/crt1-64.o", &sbuf)==0) {
+-					crt1 = INSTALLDIR "/nwcc/lib/crt1-64.o";
++				if (stat(INSTALLDIR "/share/nwcc/lib/crt1-64.o", &sbuf)==0) {
++					crt1 = INSTALLDIR "/share/nwcc/lib/crt1-64.o";
+ 				} else if (stat("./crt1-64.o", &sbuf) == 0) {
+ 					crt1 = "./crt1-64.o";
+ 				}
+ 			} else {
+ 				/* 32bit */
+-				if (stat(INSTALLDIR "/nwcc/lib/crt1-32.o", &sbuf)==0) {
+-					crt1 = INSTALLDIR "/nwcc/lib/crt1-324.o";
++				if (stat(INSTALLDIR "/share/nwcc/lib/crt1-32.o", &sbuf)==0) {
++					crt1 = INSTALLDIR "/share/nwcc/lib/crt1-324.o";
+ 				} else if (stat("./crt1-32.o", &sbuf) == 0) {
+ 					crt1 = "./crt1-32.o";
+ 				}
+ 			}
+ 			if (crt1 == NULL) {
+ 				(void) fprintf(stderr, "Warning: No crt1 object found "
+-					"in " INSTALLDIR "/nwcc/lib or .!\n");
++					"in " INSTALLDIR "/share/nwcc/lib or .!\n");
+ 				crt1 = "";
+ 			}
+ 

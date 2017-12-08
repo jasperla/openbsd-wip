@@ -1,8 +1,9 @@
 $OpenBSD$
 Fix tests: 20 msec isn't enough.
---- tests/event-loop-test.c.orig	Mon Jul  6 22:38:51 2015
-+++ tests/event-loop-test.c	Sat Mar 26 19:18:09 2016
-@@ -236,7 +236,7 @@ TEST(event_loop_timer)
+Index: tests/event-loop-test.c
+--- tests/event-loop-test.c.orig
++++ tests/event-loop-test.c
+@@ -237,7 +237,7 @@ TEST(event_loop_timer)
  	wl_event_source_timer_update(source, 10);
  	wl_event_loop_dispatch(loop, 0);
  	assert(!got_it);

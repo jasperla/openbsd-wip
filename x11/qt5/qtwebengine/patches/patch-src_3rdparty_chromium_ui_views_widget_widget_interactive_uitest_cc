@@ -1,0 +1,22 @@
+$OpenBSD$
+
+Index: src/3rdparty/chromium/ui/views/widget/widget_interactive_uitest.cc
+--- src/3rdparty/chromium/ui/views/widget/widget_interactive_uitest.cc.orig
++++ src/3rdparty/chromium/ui/views/widget/widget_interactive_uitest.cc
+@@ -310,14 +310,14 @@ TEST_F(WidgetTestInteractive, DesktopNativeWidgetAuraA
+   EXPECT_TRUE(activation_client2 != NULL);
+   EXPECT_EQ(activation_client2->GetActiveWindow(), widget2->GetNativeView());
+   EXPECT_EQ(activation_client1->GetActiveWindow(),
+-            reinterpret_cast<aura::Window*>(NULL));
++            static_cast<aura::Window*>(NULL));
+ 
+   // Now set focus back to widget 1 and expect the active window to be its
+   // window.
+   focusable_view1->RequestFocus();
+   ActivatePlatformWindow(widget1);
+   EXPECT_EQ(activation_client2->GetActiveWindow(),
+-            reinterpret_cast<aura::Window*>(NULL));
++            static_cast<aura::Window*>(NULL));
+   EXPECT_EQ(activation_client1->GetActiveWindow(), widget1->GetNativeView());
+ 
+   widget2->CloseNow();

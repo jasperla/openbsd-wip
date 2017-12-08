@@ -1,0 +1,24 @@
+$OpenBSD$
+Add OpenBSD support.
+
+Index: src/tools/qwebengine_convert_dict/qwebengine_convert_dict.pro
+--- src/tools/qwebengine_convert_dict/qwebengine_convert_dict.pro.orig
++++ src/tools/qwebengine_convert_dict/qwebengine_convert_dict.pro
+@@ -12,7 +12,7 @@ isEmpty(NINJA_LFLAGS): error("Missing linker flags fro
+ isEmpty(NINJA_ARCHIVES): error("Missing archive files from QtWebEngineCore linking pri")
+ isEmpty(NINJA_LIBS): error("Missing library files from QtWebEngineCore linking pri")
+ OBJECTS = $$eval($$list($$NINJA_OBJECTS))
+-linux {
++linux|bsd {
+     LIBS_PRIVATE = -Wl,--start-group $$NINJA_ARCHIVES -Wl,--end-group
+ } else {
+     LIBS_PRIVATE = $$NINJA_ARCHIVES
+@@ -22,7 +22,7 @@ QMAKE_LFLAGS += $$NINJA_LFLAGS
+ POST_TARGETDEPS += $$NINJA_TARGETDEPS
+ 
+ #ninja compiles with std::__debug
+-linux: CONFIG(debug, debug|release) {
++linux|bsd: CONFIG(debug, debug|release) {
+     DEFINES += _GLIBCXX_DEBUG
+ }
+ 

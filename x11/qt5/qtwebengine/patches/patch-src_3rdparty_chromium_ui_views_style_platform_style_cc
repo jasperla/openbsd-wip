@@ -1,0 +1,15 @@
+$OpenBSD$
+Automatically copied from www/chromium.
+
+Index: src/3rdparty/chromium/ui/views/style/platform_style.cc
+--- src/3rdparty/chromium/ui/views/style/platform_style.cc.orig
++++ src/3rdparty/chromium/ui/views/style/platform_style.cc
+@@ -17,7 +17,7 @@
+ #include "ui/views/controls/focusable_border.h"
+ #include "ui/views/controls/scrollbar/scroll_bar_views.h"
+ 
+-#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
++#if (defined(OS_BSD) || defined(OS_LINUX)) && !defined(OS_CHROMEOS)
+ #define DESKTOP_LINUX
+ #endif
+ 

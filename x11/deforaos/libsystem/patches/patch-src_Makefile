@@ -1,0 +1,42 @@
+$OpenBSD$
+
+Fixes for the shared lib.
+
+Index: src/Makefile
+--- src/Makefile.orig
++++ src/Makefile
+@@ -1,4 +1,4 @@
+-TARGETS	= $(OBJDIR)libSystem.a $(OBJDIR)libSystem$(SOEXT).0.0 $(OBJDIR)libSystem$(SOEXT).0 $(OBJDIR)libSystem$(SOEXT)
++TARGETS	= $(OBJDIR)libSystem.a $(OBJDIR)libSystem$(SOEXT).${LIBSystem_VERSION}
+ OBJDIR	=
+ PREFIX	= /usr/local
+ DESTDIR	=
+@@ -30,15 +30,9 @@ $(OBJDIR)libSystem.a: $(libSystem_OBJS)
+ 	$(AR) -rc $(OBJDIR)libSystem.a $(libSystem_OBJS)
+ 	$(RANLIB) $(OBJDIR)libSystem.a
+ 
+-$(OBJDIR)libSystem$(SOEXT).0.0: $(libSystem_OBJS)
+-	$(CCSHARED) -o $(OBJDIR)libSystem$(SOEXT).0.0 -Wl,-soname,libSystem$(SOEXT).0 $(libSystem_OBJS) $(libSystem_LDFLAGS)
++$(OBJDIR)libSystem$(SOEXT).${LIBSystem_VERSION} $(libSystem_OBJS)
++	$(CCSHARED) -o $(OBJDIR)libSystem$(SOEXT).${LIBSystem_VERSION} -Wl,-soname,libSystem$(SOEXT).${LIBSystem_VERSION} $(libSystem_OBJS) $(libSystem_LDFLAGS)
+ 
+-$(OBJDIR)libSystem$(SOEXT).0: $(OBJDIR)libSystem$(SOEXT).0.0
+-	$(LN) -s -- libSystem$(SOEXT).0.0 $(OBJDIR)libSystem$(SOEXT).0
+-
+-$(OBJDIR)libSystem$(SOEXT): $(OBJDIR)libSystem$(SOEXT).0.0
+-	$(LN) -s -- libSystem$(SOEXT).0.0 $(OBJDIR)libSystem$(SOEXT)
+-
+ $(OBJDIR)array.o: array.c
+ 	$(CC) $(libSystem_CFLAGS) -o $(OBJDIR)array.o -c array.c
+ 
+@@ -87,9 +81,7 @@ distclean: clean
+ install: $(TARGETS)
+ 	$(MKDIR) $(DESTDIR)$(LIBDIR)
+ 	$(INSTALL) -m 0644 $(OBJDIR)libSystem.a $(DESTDIR)$(LIBDIR)/libSystem.a
+-	$(INSTALL) -m 0755 $(OBJDIR)libSystem$(SOEXT).0.0 $(DESTDIR)$(LIBDIR)/libSystem$(SOEXT).0.0
+-	$(LN) -s -- libSystem$(SOEXT).0.0 $(DESTDIR)$(LIBDIR)/libSystem$(SOEXT).0
+-	$(LN) -s -- libSystem$(SOEXT).0.0 $(DESTDIR)$(LIBDIR)/libSystem$(SOEXT)
++	$(INSTALL) -m 0755 $(OBJDIR)libSystem$(SOEXT).${LIBSystem_VERSION} $(DESTDIR)$(LIBDIR)/libSystem$(SOEXT).${LIBSystem_VERSION}
+ 
+ uninstall:
+ 	$(RM) -- $(DESTDIR)$(LIBDIR)/libSystem.a

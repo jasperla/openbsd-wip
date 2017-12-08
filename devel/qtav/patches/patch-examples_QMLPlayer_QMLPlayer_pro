@@ -1,10 +1,11 @@
 $OpenBSD$
-Fix installation paths.
---- examples/QMLPlayer/QMLPlayer.pro.orig	Tue Sep  1 08:26:10 2015
-+++ examples/QMLPlayer/QMLPlayer.pro	Fri Jan 20 17:04:17 2017
-@@ -31,7 +31,7 @@ target.path = $$[QT_INSTALL_BINS]
- 
- 
+
+Index: examples/QMLPlayer/QMLPlayer.pro
+--- examples/QMLPlayer/QMLPlayer.pro.orig
++++ examples/QMLPlayer/QMLPlayer.pro
+@@ -31,7 +31,7 @@ SOURCES = qml/QMLPlayer/*.qml qml/QMLPlayer/*.js
+ # Installation path
+ target.path = $$[QT_INSTALL_BINS]
  desktopfile.files = $$PWD/../../qtc_packaging/debian_generic/QMLPlayer.desktop
 -desktopfile.path = /usr/share/applications
 +desktopfile.path = $$(TRUEPREFIX)/share/applications

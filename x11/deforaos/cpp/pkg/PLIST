@@ -1,0 +1,25 @@
+@comment $OpenBSD$
+@bin bin/cpp
+include/Devel/
+include/Devel/CPP.h
+lib/libcpp.a
+@lib lib/libcpp.so.${LIBcpp_VERSION}
+lib/pkgconfig/cpp.pc
+share/gtk-doc/
+share/gtk-doc/html/
+share/gtk-doc/html/deforaos/
+share/gtk-doc/html/deforaos/CPP/
+share/gtk-doc/html/deforaos/CPP/CPP-CPP:CAPS.html
+share/gtk-doc/html/deforaos/CPP/CPP.devhelp2
+share/gtk-doc/html/deforaos/CPP/api-index-full.html
+share/gtk-doc/html/deforaos/CPP/ch01.html
+share/gtk-doc/html/deforaos/CPP/deprecated-api-index.html
+share/gtk-doc/html/deforaos/CPP/home.png
+share/gtk-doc/html/deforaos/CPP/index.html
+share/gtk-doc/html/deforaos/CPP/left-insensitive.png
+share/gtk-doc/html/deforaos/CPP/left.png
+share/gtk-doc/html/deforaos/CPP/right-insensitive.png
+share/gtk-doc/html/deforaos/CPP/right.png
+share/gtk-doc/html/deforaos/CPP/style.css
+share/gtk-doc/html/deforaos/CPP/up-insensitive.png
+share/gtk-doc/html/deforaos/CPP/up.png

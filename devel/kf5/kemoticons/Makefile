@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.2 2016/12/25 14:54:48 zhuk Exp $
+# $OpenBSD: Makefile,v 1.5 2017/09/25 21:25:18 sthen Exp $
 
 COMMENT =	text emoticons to graphical emoticons KDE converter
 DISTNAME =	kemoticons-${VERSION}
 
-SHARED_LIBS =	KF5Emoticons		2.0
+SHARED_LIBS =	KF5Emoticons		3.0
 
-WANTLIB =  KF5Archive KF5ConfigCore KF5CoreAddons KF5Service Qt5Core
-WANTLIB += Qt5Gui Qt5Xml m
+WANTLIB += ${COMPILER_LIBCXX} KF5Archive KF5ConfigCore KF5CoreAddons
+WANTLIB += KF5Service Qt5Core Qt5DBus Qt5Gui Qt5Xml m
 
 LIB_DEPENDS =	devel/kf5/karchive \
 		devel/kf5/kconfig \

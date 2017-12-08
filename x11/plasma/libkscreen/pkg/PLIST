@@ -1,7 +1,5 @@
 @comment $OpenBSD$
-@option no-default-conflict
-@conflict libkscreen->=5
-include/KF5/
+@bin bin/kscreen-doctor
 include/KF5/KScreen/
 include/KF5/KScreen/KScreen/
 include/KF5/KScreen/KScreen/Config
@@ -9,6 +7,7 @@ include/KF5/KScreen/KScreen/ConfigMonitor
 include/KF5/KScreen/KScreen/ConfigOperation
 include/KF5/KScreen/KScreen/EDID
 include/KF5/KScreen/KScreen/GetConfigOperation
+include/KF5/KScreen/KScreen/Log
 include/KF5/KScreen/KScreen/Mode
 include/KF5/KScreen/KScreen/Output
 include/KF5/KScreen/KScreen/Screen
@@ -22,6 +21,7 @@ include/KF5/KScreen/kscreen/configoperation.h
 include/KF5/KScreen/kscreen/edid.h
 include/KF5/KScreen/kscreen/getconfigoperation.h
 include/KF5/KScreen/kscreen/kscreen_export.h
+include/KF5/KScreen/kscreen/log.h
 include/KF5/KScreen/kscreen/mode.h
 include/KF5/KScreen/kscreen/output.h
 include/KF5/KScreen/kscreen/screen.h
@@ -38,12 +38,11 @@ lib/pkgconfig/kscreen2.pc
 lib/qt5/plugins/kf5/
 lib/qt5/plugins/kf5/kscreen/
 lib/qt5/plugins/kf5/kscreen/KSC_Fake.so
+lib/qt5/plugins/kf5/kscreen/KSC_KWayland.so
 lib/qt5/plugins/kf5/kscreen/KSC_QScreen.so
 lib/qt5/plugins/kf5/kscreen/KSC_XRandR.so
 lib/qt5/plugins/kf5/kscreen/KSC_XRandR11.so
 libexec/kf5/
 @bin libexec/kf5/kscreen_backend_launcher
 share/dbus-1/services/org.kde.kscreen.service
-share/kf5/
-share/kf5/mkspecs/
 share/kf5/mkspecs/qt_KScreen.pri

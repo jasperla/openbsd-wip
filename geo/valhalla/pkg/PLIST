@@ -40,6 +40,7 @@ include/valhalla/baldr/connectivity_map.h
 include/valhalla/baldr/datetime.h
 include/valhalla/baldr/directededge.h
 include/valhalla/baldr/double_bucket_queue.h
+include/valhalla/baldr/edge_elevation.h
 include/valhalla/baldr/edgeinfo.h
 include/valhalla/baldr/edgetracker.h
 include/valhalla/baldr/errorcode_util.h
@@ -50,10 +51,12 @@ include/valhalla/baldr/graphreader.h
 include/valhalla/baldr/graphtile.h
 include/valhalla/baldr/graphtileheader.h
 include/valhalla/baldr/json.h
+include/valhalla/baldr/laneconnectivity.h
 include/valhalla/baldr/location.h
 include/valhalla/baldr/merge.h
 include/valhalla/baldr/nodeinfo.h
 include/valhalla/baldr/pathlocation.h
+include/valhalla/baldr/rapidjson_utils.h
 include/valhalla/baldr/reutil.h
 include/valhalla/baldr/sign.h
 include/valhalla/baldr/signinfo.h
@@ -80,12 +83,10 @@ include/valhalla/loki/node_search.h
 include/valhalla/loki/search.h
 include/valhalla/loki/service.h
 include/valhalla/meili/
-include/valhalla/meili/bucket_queue.h
 include/valhalla/meili/candidate_search.h
 include/valhalla/meili/geojson_reader.h
 include/valhalla/meili/geojson_writer.h
 include/valhalla/meili/geometry_helpers.h
-include/valhalla/meili/graph_helpers.h
 include/valhalla/meili/grid_range_query.h
 include/valhalla/meili/grid_traversal.h
 include/valhalla/meili/map_matcher.h
@@ -188,11 +189,13 @@ include/valhalla/skadi/util.h
 include/valhalla/thor/
 include/valhalla/thor/astar.h
 include/valhalla/thor/astarheuristic.h
+include/valhalla/thor/attributes_controller.h
 include/valhalla/thor/bidirectional_astar.h
 include/valhalla/thor/costmatrix.h
 include/valhalla/thor/edgestatus.h
 include/valhalla/thor/isochrone.h
 include/valhalla/thor/map_matcher.h
+include/valhalla/thor/match_result.h
 include/valhalla/thor/multimodal.h
 include/valhalla/thor/optimizer.h
 include/valhalla/thor/pathalgorithm.h
@@ -201,7 +204,6 @@ include/valhalla/thor/route_matcher.h
 include/valhalla/thor/service.h
 include/valhalla/thor/timedistancematrix.h
 include/valhalla/thor/trafficalgorithm.h
-include/valhalla/thor/trip_path_controller.h
 include/valhalla/thor/trippathbuilder.h
 include/valhalla/tyr/
 include/valhalla/tyr/service.h
@@ -210,8 +212,6 @@ lib/libvalhalla.a
 lib/libvalhalla.la
 @lib lib/libvalhalla.so.${LIBvalhalla_VERSION}
 lib/pkgconfig/libvalhalla.pc
-lib/python${MODPY_VERSION}/
-lib/python${MODPY_VERSION}/site-packages/
 lib/python${MODPY_VERSION}/site-packages/valhalla.a
 lib/python${MODPY_VERSION}/site-packages/valhalla.la
 lib/python${MODPY_VERSION}/site-packages/valhalla.so

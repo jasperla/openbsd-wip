@@ -1,0 +1,16 @@
+$OpenBSD$
+
+Index: kwalletd/backend/blowfish.h
+--- kwalletd/backend/blowfish.h.orig
++++ kwalletd/backend/blowfish.h
+@@ -53,8 +53,8 @@ class KWALLETBACKEND_EXPORT BlowFish : public BlockCip
+ 		virtual int decrypt(void *block, int len);
+ 
+ 	private:
+-		uint32_t _S[4][256];
+-		uint32_t _P[18];
++		uint32_t mS[4][256];
++		uint32_t mP[18];
+ 
+ 		void *_key;
+ 		int _keylen;  // in bits

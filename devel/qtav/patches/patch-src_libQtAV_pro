@@ -1,22 +1,27 @@
 $OpenBSD$
 The Unix world is slightly larger than Linux and OS X.
---- src/libQtAV.pro.orig	Tue Sep  1 08:26:10 2015
-+++ src/libQtAV.pro	Fri Jan 20 17:01:25 2017
-@@ -21,7 +21,7 @@ CONFIG *= qtav-buildlib
- staticlib: DEFINES += BUILD_QTAV_STATIC
+Index: src/libQtAV.pro
+--- src/libQtAV.pro.orig
++++ src/libQtAV.pro
+@@ -18,7 +18,7 @@ staticlib: DEFINES += BUILD_QTAV_STATIC
+ static: CONFIG *= static_ffmpeg
  INCLUDEPATH += $$[QT_INSTALL_HEADERS]
  icon.files = $$PWD/$${TARGET}.svg
--icon.path = /usr/share/icons/hicolor/64x64/apps
-+icon.path = $$(TRUEPREFIX)/share/icons/hicolor/64x64/apps
- INSTALLS += icon
+-icon.path = /usr/share/icons/hicolor/scalable/apps
++icon.path = $$(TRUEPREFIX)/share/icons/hicolor/scalable/apps
+ !contains(QMAKE_HOST.os, Windows):INSTALLS += icon
  
  #mac: simd.prf will load qt_build_config and the result is soname will prefixed with QT_INSTALL_LIBS and link flag will append soname after QMAKE_LFLAGS_SONAME
-@@ -515,7 +515,7 @@ mac {
-    }
+@@ -126,6 +126,12 @@ config_x11 {
+   DEFINES += QTAV_HAVE_X11=1
+   SOURCES *= filter/X11FilterContext.cpp
+   LIBS *= -lX11
++}
++config_xv {
++  DEFINES += QTAV_HAVE_X11=1
++  SOURCES *= filter/X11FilterContext.cpp
++  LIBS *= -L$$QMAKE_LIBDIR_X11 -lXv -lX11
++  INCLUDEPATH += $$QMAKE_INCDIR_X11
  }
- 
--unix:!android:!mac {
-+linux:!android {
- #debian
- DEB_INSTALL_LIST = .$$[QT_INSTALL_LIBS]/libQt*AV.so.*
- libqtav.target = libqtav.install
+ config_swresample {
+     DEFINES += QTAV_HAVE_SWRESAMPLE=1

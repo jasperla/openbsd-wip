@@ -1,0 +1,15 @@
+$OpenBSD$
+Automatically copied from www/chromium.
+
+Index: src/3rdparty/chromium/device/bluetooth/BUILD.gn
+--- src/3rdparty/chromium/device/bluetooth/BUILD.gn.orig
++++ src/3rdparty/chromium/device/bluetooth/BUILD.gn
+@@ -193,7 +193,7 @@ component("bluetooth") {
+     ]
+   }
+ 
+-  if (is_chromeos || is_linux) {
++  if (is_chromeos || (is_linux && !is_openbsd)) {
+     if (use_dbus) {
+       sources += [
+         "bluez/bluetooth_adapter_bluez.cc",

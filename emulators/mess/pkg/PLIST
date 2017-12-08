@@ -1,0 +1,50 @@
+@comment $OpenBSD$
+@conflict sdlmess-*
+@bin bin/castool
+@bin bin/floptool
+@bin bin/imgtool
+@bin bin/mess
+@man man/man1/castool.1
+@man man/man1/floptool.1
+@man man/man1/imgtool.1
+@man man/man6/mess.6
+share/mess/
+share/mess/artwork/
+share/mess/artwork/LICENSE
+share/mess/artwork/README.md
+share/mess/artwork/aperture-grille.png
+share/mess/artwork/aperture.png
+share/mess/artwork/aperture1x2rb.png
+share/mess/artwork/aperture1x3rb.png
+share/mess/artwork/aperture2x4bg.png
+share/mess/artwork/aperture2x4rb.png
+share/mess/artwork/aperture4x6.png
+share/mess/artwork/bgfx/
+share/mess/artwork/bgfx/border_blur/
+share/mess/artwork/bgfx/border_blur/default.lay
+share/mess/artwork/bgfx/chains/
+share/mess/artwork/bgfx/chains/crt-geom/
+share/mess/artwork/bgfx/chains/crt-geom/aperture_1_2_bgr.png
+share/mess/artwork/bgfx/chains/crt-geom/aperture_1_4_rgb.png
+share/mess/artwork/bgfx/chains/crt-geom/aperture_2_4_rgb.png
+share/mess/artwork/bgfx/chains/crt-geom/aperture_2_5_bgr.png
+share/mess/artwork/bgfx/chains/crt-geom/aperture_3_6_rgb.png
+share/mess/artwork/bgfx/chains/crt-geom/delta_1_2x1_bgr.png
+share/mess/artwork/bgfx/chains/crt-geom/delta_1_4x1_rgb.png
+share/mess/artwork/bgfx/chains/crt-geom/delta_2_4x1_rgb.png
+share/mess/artwork/bgfx/chains/crt-geom/delta_2_4x2_rgb.png
+share/mess/artwork/bgfx/chains/crt-geom/none.png
+share/mess/artwork/bgfx/chains/crt-geom/slot_2_4x4_rgb.png
+share/mess/artwork/bgfx/chains/crt-geom/slot_2_5x4_bgr.png
+share/mess/artwork/bgfx/chains/crt-geom/slot_3_7x6_rgb.png
+share/mess/artwork/bgfx/chains/hq2x.png
+share/mess/artwork/bgfx/chains/hq3x.png
+share/mess/artwork/bgfx/chains/hq4x.png
+share/mess/artwork/dir.txt
+share/mess/artwork/monochrome-chessboard.png
+share/mess/artwork/monochrome-matrix.png
+share/mess/artwork/scanlines.png
+share/mess/artwork/shadow-mask.png
+share/mess/artwork/slot-mask-aligned.png
+share/mess/artwork/slot-mask.png
+share/mess/artwork/white.png

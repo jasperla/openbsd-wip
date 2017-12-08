@@ -1,0 +1,15 @@
+$OpenBSD$
+Automatically copied from www/chromium.
+
+Index: src/3rdparty/chromium/content/child/child_process.cc
+--- src/3rdparty/chromium/content/child/child_process.cc.orig
++++ src/3rdparty/chromium/content/child/child_process.cc
+@@ -103,7 +103,7 @@ void ChildProcess::ReleaseProcess() {
+     main_thread_->OnProcessFinalRelease();
+ }
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+ void ChildProcess::SetIOThreadPriority(
+     base::ThreadPriority io_thread_priority) {
+   main_thread_->SetThreadPriority(io_thread_.GetThreadId(), io_thread_priority);

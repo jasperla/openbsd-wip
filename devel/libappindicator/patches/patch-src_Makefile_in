@@ -1,0 +1,14 @@
+$OpenBSD$
+
+Index: src/Makefile.in
+--- src/Makefile.in.orig
++++ src/Makefile.in
+@@ -471,7 +471,7 @@ libappindicator_la_LDFLAGS = \
+ libappindicator_la_CFLAGS = \
+ 	$(LIBRARY_CFLAGS) \
+ 	$(COVERAGE_CFLAGS) \
+-	-Wall -Werror \
++	-Wall  \
+ 	-DG_LOG_DOMAIN=\"libappindicator\"
+ 
+ libappindicator_la_LIBADD = \

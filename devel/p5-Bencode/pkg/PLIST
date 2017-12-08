@@ -1,3 +1,0 @@
-@comment $OpenBSD$
-${P5SITE}/Bencode.pm
-@man man/man3p/Bencode.3p

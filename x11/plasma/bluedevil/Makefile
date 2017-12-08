@@ -16,6 +16,7 @@ BUILD_DEPENDS =		devel/kf5/kded \
 			devel/gettext-tools
 
 RUN_DEPENDS +=		devel/desktop-file-utils \
+			devel/gettext \
 			misc/shared-mime-info \
 			x11/gtk+3,-guic \
 			devel/kf5/kded \

@@ -1,0 +1,17 @@
+$OpenBSD$
+
+Index: lib/bgfx-cmake/bx/src/mutex.cpp
+--- lib/bgfx-cmake/bx/src/mutex.cpp.orig
++++ lib/bgfx-cmake/bx/src/mutex.cpp
+@@ -12,8 +12,10 @@
+ 	|| BX_PLATFORM_IOS     \
+ 	|| BX_PLATFORM_OSX     \
+ 	|| BX_PLATFORM_PS4     \
+-	|| BX_PLATFORM_RPI
++	|| BX_PLATFORM_RPI	   \
++    || defined(__OpenBSD__)
+ #	include <pthread.h>
++#   include <pthread_np.h>
+ #elif  BX_PLATFORM_WINDOWS \
+ 	|| BX_PLATFORM_WINRT   \
+ 	|| BX_PLATFORM_XBOXONE

@@ -9,9 +9,9 @@ include/systemsettingsview/MenuModel.h
 include/systemsettingsview/MenuProxyModel.h
 include/systemsettingsview/ModuleView.h
 include/systemsettingsview/systemsettingsview_export.h
-lib/kf5/plugins/classic_mode.so
-lib/kf5/plugins/icon_mode.so
 @lib lib/libsystemsettingsview.so.${LIBsystemsettingsview_VERSION}
+lib/qt5/plugins/classic_mode.so
+lib/qt5/plugins/icon_mode.so
 share/applications/kdesystemsettings.desktop
 share/applications/systemsettings.desktop
 share/doc/HTML/ca/systemsettings/
@@ -29,13 +29,12 @@ share/doc/HTML/it/systemsettings/index.docbook
 share/doc/HTML/nl/systemsettings/
 share/doc/HTML/nl/systemsettings/index.cache.bz2
 share/doc/HTML/nl/systemsettings/index.docbook
-share/doc/HTML/pt_BR/
+share/doc/HTML/pt/systemsettings/
+share/doc/HTML/pt/systemsettings/index.cache.bz2
+share/doc/HTML/pt/systemsettings/index.docbook
 share/doc/HTML/pt_BR/systemsettings/
 share/doc/HTML/pt_BR/systemsettings/index.cache.bz2
 share/doc/HTML/pt_BR/systemsettings/index.docbook
-share/doc/HTML/sv/systemsettings/
-share/doc/HTML/sv/systemsettings/index.cache.bz2
-share/doc/HTML/sv/systemsettings/index.docbook
 share/doc/HTML/uk/systemsettings/
 share/doc/HTML/uk/systemsettings/index.cache.bz2
 share/doc/HTML/uk/systemsettings/index.docbook
@@ -51,12 +50,14 @@ share/kservices5/settings-hardware-input.desktop
 share/kservices5/settings-hardware-multimedia.desktop
 share/kservices5/settings-hardware-peripherals.desktop
 share/kservices5/settings-hardware-powermanagement.desktop
+share/kservices5/settings-hardware-removable-storage.desktop
 share/kservices5/settings-hardware.desktop
 share/kservices5/settings-icon-view.desktop
 share/kservices5/settings-network-bluetooth.desktop
 share/kservices5/settings-network-connectivity.desktop
 share/kservices5/settings-network-networksettings.desktop
 share/kservices5/settings-network.desktop
+share/kservices5/settings-personalization-accessibility.desktop
 share/kservices5/settings-personalization-accountdetails.desktop
 share/kservices5/settings-personalization-applications.desktop
 share/kservices5/settings-personalization-notification.desktop
@@ -71,6 +72,7 @@ share/kservices5/settings-workspace.desktop
 share/kservicetypes5/systemsettingscategory.desktop
 share/kservicetypes5/systemsettingsexternalapp.desktop
 share/kservicetypes5/systemsettingsview.desktop
+share/kxmlgui5/
 share/kxmlgui5/systemsettings/
 share/kxmlgui5/systemsettings/systemsettingsui.rc
 share/locale/ar/LC_MESSAGES/systemsettings.mo

@@ -1,0 +1,57 @@
+@comment $OpenBSD$
+@bin bin/browser
+@bin bin/copy
+@bin bin/deforaos-open
+@bin bin/delete
+@bin bin/desktop
+@bin bin/desktopctl
+@bin bin/move
+@bin bin/properties
+@bin bin/view
+include/Desktop/Browser/
+include/Desktop/Browser.h
+include/Desktop/Browser/desktop.h
+include/Desktop/Browser/plugin.h
+include/Desktop/Browser/vfs.h
+lib/Browser/
+lib/Browser/plugins/
+lib/Browser/plugins/cvs.so
+lib/Browser/plugins/dirtree.so
+lib/Browser/plugins/favorites.so
+lib/Browser/plugins/git.so
+lib/Browser/plugins/make.so
+lib/Browser/plugins/places.so
+lib/Browser/plugins/preview.so
+lib/Browser/plugins/properties.so
+lib/Browser/plugins/selection.so
+lib/Browser/plugins/subversion.so
+lib/Browser/plugins/trash.so
+lib/Browser/plugins/volumes.so
+lib/Desktop/
+lib/Desktop/widget/
+lib/Desktop/widget/browser.so
+lib/libBrowser.a
+@lib lib/libBrowser.so.${LIBBrowser_VERSION}
+lib/pkgconfig/Browser.pc
+@man man/man1/browser.1
+@man man/man1/copy.1
+@man man/man1/delete.1
+@man man/man1/desktop.1
+@man man/man1/desktopctl.1
+@man man/man1/move.1
+@man man/man1/open.1
+@man man/man1/properties.1
+@man man/man1/view.1
+share/applications/deforaos-browser.desktop
+share/applications/deforaos-desktop-settings.desktop
+share/icons/hicolor/16x16/apps/browser-view-details.png
+share/icons/hicolor/16x16/apps/browser-view-icons.png
+share/icons/hicolor/16x16/apps/browser-view-list.png
+share/locale/de/LC_MESSAGES/Browser.mo
+share/locale/es/LC_MESSAGES/Browser.mo
+share/locale/fr/LC_MESSAGES/Browser.mo
+share/locale/it/LC_MESSAGES/Browser.mo
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-locale,v 1.1.1.1 2016/05/26 23:59:01 zhuk Exp $
+@comment $OpenBSD: PLIST-locale,v 1.2 2017/06/07 17:03:37 rsadowski Exp $
 share/locale/ar/LC_MESSAGES/kfilemetadata5.mo
 share/locale/ast/LC_MESSAGES/kfilemetadata5.mo
 share/locale/bg/LC_MESSAGES/kfilemetadata5.mo

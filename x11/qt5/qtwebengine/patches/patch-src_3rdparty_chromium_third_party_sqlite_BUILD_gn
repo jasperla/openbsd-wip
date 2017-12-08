@@ -1,0 +1,23 @@
+$OpenBSD$
+Automatically copied from www/chromium.
+
+--- src/3rdparty/chromium/third_party/sqlite/BUILD.gn.orig.port	Thu Dec 15 00:02:28 2016
++++ src/3rdparty/chromium/third_party/sqlite/BUILD.gn	Tue Jan  3 20:30:01 2017
+@@ -126,7 +126,7 @@ if (!use_system_sqlite) {
+ 
+     # Pull in config.h on Linux.  This allows use of preprocessor macros which
+     # are not available to the build config.
+-    if (is_linux) {
++    if (is_linux && !is_openbsd) {
+       defines += [ "_HAVE_SQLITE_CONFIG_H" ]
+     }
+ 
+@@ -150,7 +150,7 @@ if (!use_system_sqlite) {
+       ":sqlite_warnings",
+     ]
+ 
+-    if (is_linux) {
++    if (is_linux && !is_openbsd) {
+       libs = [ "dl" ]
+     } else if (is_mac || is_ios) {
+       libs = [

@@ -1,8 +1,0 @@
-Tapper is an open source infrastructure originating at AMD for all
-aspects of testing including Operating Systems and Virtualization.
-Its goal is to help QA departments to maintain a complete test life
-cycle from planning to execution and reporting. It provides independent
-modules to adapt to different levels of QA requirements, from simple
-tracking and presenting test results to complete automation of
-machine pools multiplexing complex virtualization use-cases with
-detailed data evaluation.

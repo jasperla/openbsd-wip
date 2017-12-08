@@ -2,12 +2,13 @@
 
 COMMENT =	specification for identifying parts of a road network
 
-V =		1.0.0-rc.1
+V =		1.0.0-rc.1pl1
 DISTNAME =	osmlr-tile-spec-$V
 
 GH_ACCOUNT =	opentraffic
 GH_PROJECT =	osmlr-tile-spec
-GH_TAGNAME =	v$V
+#GH_TAGNAME =	v$V
+GH_COMMIT =	4cbcee6ca0665dc482db652a02bc1f75ae178f16
 
 CATEGORIES =	geo
 

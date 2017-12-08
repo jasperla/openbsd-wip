@@ -1,4 +1,0 @@
-@comment $OpenBSD:  $
-bin/gpsprune
-share/gpsprune/
-share/gpsprune/gpsprune.jar

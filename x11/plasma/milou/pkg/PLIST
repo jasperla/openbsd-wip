@@ -1,5 +1,4 @@
 @comment $OpenBSD$
-lib/kf5/plugins/miloutextplugin.so
 @lib lib/libmilou.so.${LIBmilou_VERSION}
 lib/qml/org/kde/milou/
 lib/qml/org/kde/milou/ResultDelegate.qml
@@ -9,6 +8,7 @@ lib/qml/org/kde/milou/ResultsView.qml
 lib/qml/org/kde/milou/globals.js
 lib/qml/org/kde/milou/libmilouqmlplugin.so
 lib/qml/org/kde/milou/qmldir
+lib/qt5/plugins/miloutextplugin.so
 share/kservices5/miloutextpreview.desktop
 share/kservices5/plasma-applet-org.kde.milou.desktop
 share/kservicetypes5/miloupreviewplugin.desktop
@@ -34,12 +34,16 @@ share/locale/en_GB/LC_MESSAGES/milou.mo
 share/locale/en_GB/LC_MESSAGES/plasma_applet_org.kde.milou.mo
 share/locale/es/LC_MESSAGES/milou.mo
 share/locale/es/LC_MESSAGES/plasma_applet_org.kde.milou.mo
+share/locale/et/LC_MESSAGES/milou.mo
+share/locale/et/LC_MESSAGES/plasma_applet_org.kde.milou.mo
 share/locale/fi/LC_MESSAGES/milou.mo
 share/locale/fi/LC_MESSAGES/plasma_applet_org.kde.milou.mo
 share/locale/fr/LC_MESSAGES/milou.mo
 share/locale/fr/LC_MESSAGES/plasma_applet_org.kde.milou.mo
 share/locale/gl/LC_MESSAGES/milou.mo
 share/locale/gl/LC_MESSAGES/plasma_applet_org.kde.milou.mo
+share/locale/he/LC_MESSAGES/milou.mo
+share/locale/he/LC_MESSAGES/plasma_applet_org.kde.milou.mo
 share/locale/hu/LC_MESSAGES/milou.mo
 share/locale/hu/LC_MESSAGES/plasma_applet_org.kde.milou.mo
 share/locale/ia/LC_MESSAGES/milou.mo
@@ -87,12 +91,14 @@ share/locale/sr@latin/LC_MESSAGES/plasma_applet_org.kde.milou.mo
 share/locale/sv/LC_MESSAGES/milou.mo
 share/locale/sv/LC_MESSAGES/plasma_applet_org.kde.milou.mo
 share/locale/tr/LC_MESSAGES/milou.mo
+share/locale/tr/LC_MESSAGES/plasma_applet_org.kde.milou.mo
 share/locale/uk/LC_MESSAGES/milou.mo
 share/locale/uk/LC_MESSAGES/plasma_applet_org.kde.milou.mo
 share/locale/zh_CN/LC_MESSAGES/milou.mo
 share/locale/zh_CN/LC_MESSAGES/plasma_applet_org.kde.milou.mo
 share/locale/zh_TW/LC_MESSAGES/milou.mo
 share/locale/zh_TW/LC_MESSAGES/plasma_applet_org.kde.milou.mo
+share/metainfo/org.kde.milou.appdata.xml
 share/plasma/plasmoids/org.kde.milou/
 share/plasma/plasmoids/org.kde.milou/contents/
 share/plasma/plasmoids/org.kde.milou/contents/code/
@@ -104,3 +110,4 @@ share/plasma/plasmoids/org.kde.milou/contents/ui/previews/
 share/plasma/plasmoids/org.kde.milou/contents/ui/previews/Audio.qml
 share/plasma/plasmoids/org.kde.milou/contents/ui/previews/TextPreview.qml
 share/plasma/plasmoids/org.kde.milou/metadata.desktop
+share/plasma/plasmoids/org.kde.milou/metadata.json

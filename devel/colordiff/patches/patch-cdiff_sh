@@ -1,0 +1,18 @@
+$OpenBSD$
+
+Use ftp(1) instead of tools from the ports tree.
+
+Index: cdiff.sh
+--- cdiff.sh.orig
++++ cdiff.sh
+@@ -30,7 +30,9 @@
+         case `echo "$file" | perl -ne 'print lc $_'` in
+         http:*|https:*|ftp:*)
+             if [ -z "$CDIFF_FETCH" ]; then
+-                if type curl >/dev/null 2>&1; then
++                if type ftp >/dev/null 2>&1; then
++                    CDIFF_FETCH="ftp -V -o -"
++                elif type curl >/dev/null 2>&1; then
+                     CDIFF_FETCH="curl -s"
+                 elif type wget >/dev/null 2>&1; then
+                     CDIFF_FETCH="wget -e timestamping=off -qO -"

@@ -1,0 +1,158 @@
+TARGETS	= $(OBJDIR)browser.1 $(OBJDIR)browser.html $(OBJDIR)browser.xml $(OBJDIR)copy.1 $(OBJDIR)copy.html $(OBJDIR)copy.xml $(OBJDIR)delete.1 $(OBJDIR)delete.html $(OBJDIR)delete.xml $(OBJDIR)desktop.1 $(OBJDIR)desktop.html $(OBJDIR)desktop.xml $(OBJDIR)desktopctl.1 $(OBJDIR)desktopctl.html $(OBJDIR)desktopctl.xml $(OBJDIR)move.1 $(OBJDIR)move.html $(OBJDIR)move.xml $(OBJDIR)open.1 $(OBJDIR)open.html $(OBJDIR)open.xml $(OBJDIR)properties.1 $(OBJDIR)properties.html $(OBJDIR)properties.xml $(OBJDIR)view.1 $(OBJDIR)view.html $(OBJDIR)view.xml
+OBJDIR	=
+PREFIX	= /usr/local
+DESTDIR	=
+RM	= rm -f
+LN	= ln -f
+MKDIR	= mkdir -m 0755 -p
+INSTALL	= install
+
+
+all: $(TARGETS)
+
+$(OBJDIR)browser.1: $(OBJDIR)browser.xml
+	./docbook.sh -P "$(PREFIX)" -- "$(OBJDIR)browser.1"
+
+$(OBJDIR)browser.html: browser.css.xml $(OBJDIR)browser.xml manual.css.xml
+	./docbook.sh -P "$(PREFIX)" -- "$(OBJDIR)browser.html"
+
+$(OBJDIR)browser.xml: browser.xml.in
+	../tools/subst.sh -P "$(PREFIX)" -- "$(OBJDIR)browser.xml"
+
+$(OBJDIR)copy.1: $(OBJDIR)copy.xml
+	./docbook.sh -P "$(PREFIX)" -- "$(OBJDIR)copy.1"
+
+$(OBJDIR)copy.html: copy.css.xml $(OBJDIR)copy.xml manual.css.xml
+	./docbook.sh -P "$(PREFIX)" -- "$(OBJDIR)copy.html"
+
+$(OBJDIR)copy.xml: copy.xml.in
+	../tools/subst.sh -P "$(PREFIX)" -- "$(OBJDIR)copy.xml"
+
+$(OBJDIR)delete.1: $(OBJDIR)delete.xml
+	./docbook.sh -P "$(PREFIX)" -- "$(OBJDIR)delete.1"
+
+$(OBJDIR)delete.html: delete.css.xml $(OBJDIR)delete.xml manual.css.xml
+	./docbook.sh -P "$(PREFIX)" -- "$(OBJDIR)delete.html"
+
+$(OBJDIR)delete.xml: delete.xml.in
+	../tools/subst.sh -P "$(PREFIX)" -- "$(OBJDIR)delete.xml"
+
+$(OBJDIR)desktop.1: $(OBJDIR)desktop.xml
+	./docbook.sh -P "$(PREFIX)" -- "$(OBJDIR)desktop.1"
+
+$(OBJDIR)desktop.html: desktop.css.xml $(OBJDIR)desktop.xml manual.css.xml
+	./docbook.sh -P "$(PREFIX)" -- "$(OBJDIR)desktop.html"
+
+$(OBJDIR)desktop.xml: desktop.xml.in
+	../tools/subst.sh -P "$(PREFIX)" -- "$(OBJDIR)desktop.xml"
+
+$(OBJDIR)desktopctl.1: $(OBJDIR)desktopctl.xml
+	./docbook.sh -P "$(PREFIX)" -- "$(OBJDIR)desktopctl.1"
+
+$(OBJDIR)desktopctl.html: desktopctl.css.xml $(OBJDIR)desktopctl.xml manual.css.xml
+	./docbook.sh -P "$(PREFIX)" -- "$(OBJDIR)desktopctl.html"
+
+$(OBJDIR)desktopctl.xml: desktopctl.xml.in
+	../tools/subst.sh -P "$(PREFIX)" -- "$(OBJDIR)desktopctl.xml"
+
+$(OBJDIR)move.1: $(OBJDIR)move.xml
+	./docbook.sh -P "$(PREFIX)" -- "$(OBJDIR)move.1"
+
+$(OBJDIR)move.html: manual.css.xml move.css.xml $(OBJDIR)move.xml
+	./docbook.sh -P "$(PREFIX)" -- "$(OBJDIR)move.html"
+
+$(OBJDIR)move.xml: move.xml.in
+	../tools/subst.sh -P "$(PREFIX)" -- "$(OBJDIR)move.xml"
+
+$(OBJDIR)open.1: $(OBJDIR)open.xml
+	./docbook.sh -P "$(PREFIX)" -- "$(OBJDIR)open.1"
+
+$(OBJDIR)open.html: manual.css.xml open.css.xml $(OBJDIR)open.xml
+	./docbook.sh -P "$(PREFIX)" -- "$(OBJDIR)open.html"
+
+$(OBJDIR)open.xml: open.xml.in
+	../tools/subst.sh -P "$(PREFIX)" -- "$(OBJDIR)open.xml"
+
+$(OBJDIR)properties.1: $(OBJDIR)properties.xml
+	./docbook.sh -P "$(PREFIX)" -- "$(OBJDIR)properties.1"
+
+$(OBJDIR)properties.html: manual.css.xml properties.css.xml $(OBJDIR)properties.xml
+	./docbook.sh -P "$(PREFIX)" -- "$(OBJDIR)properties.html"
+
+$(OBJDIR)properties.xml: properties.xml.in
+	../tools/subst.sh -P "$(PREFIX)" -- "$(OBJDIR)properties.xml"
+
+$(OBJDIR)view.1: $(OBJDIR)view.xml
+	./docbook.sh -P "$(PREFIX)" -- "$(OBJDIR)view.1"
+
+$(OBJDIR)view.html: manual.css.xml view.css.xml $(OBJDIR)view.xml
+	./docbook.sh -P "$(PREFIX)" -- "$(OBJDIR)view.html"
+
+$(OBJDIR)view.xml: view.xml.in
+	../tools/subst.sh -P "$(PREFIX)" -- "$(OBJDIR)view.xml"
+
+clean:
+	$(RM) -- $(browser.1_OBJS) $(browser.html_OBJS) $(browser.xml_OBJS) $(copy.1_OBJS) $(copy.html_OBJS) $(copy.xml_OBJS) $(delete.1_OBJS) $(delete.html_OBJS) $(delete.xml_OBJS) $(desktop.1_OBJS) $(desktop.html_OBJS) $(desktop.xml_OBJS) $(desktopctl.1_OBJS) $(desktopctl.html_OBJS) $(desktopctl.xml_OBJS) $(move.1_OBJS) $(move.html_OBJS) $(move.xml_OBJS) $(open.1_OBJS) $(open.html_OBJS) $(open.xml_OBJS) $(properties.1_OBJS) $(properties.html_OBJS) $(properties.xml_OBJS) $(view.1_OBJS) $(view.html_OBJS) $(view.xml_OBJS)
+	./docbook.sh -c -P "$(PREFIX)" -- "browser.1"
+	./docbook.sh -c -P "$(PREFIX)" -- "browser.html"
+	../tools/subst.sh -c -P "$(PREFIX)" -- "browser.xml"
+	./docbook.sh -c -P "$(PREFIX)" -- "copy.1"
+	./docbook.sh -c -P "$(PREFIX)" -- "copy.html"
+	../tools/subst.sh -c -P "$(PREFIX)" -- "copy.xml"
+	./docbook.sh -c -P "$(PREFIX)" -- "delete.1"
+	./docbook.sh -c -P "$(PREFIX)" -- "delete.html"
+	../tools/subst.sh -c -P "$(PREFIX)" -- "delete.xml"
+	./docbook.sh -c -P "$(PREFIX)" -- "desktop.1"
+	./docbook.sh -c -P "$(PREFIX)" -- "desktop.html"
+	../tools/subst.sh -c -P "$(PREFIX)" -- "desktop.xml"
+	./docbook.sh -c -P "$(PREFIX)" -- "desktopctl.1"
+	./docbook.sh -c -P "$(PREFIX)" -- "desktopctl.html"
+	../tools/subst.sh -c -P "$(PREFIX)" -- "desktopctl.xml"
+	./docbook.sh -c -P "$(PREFIX)" -- "move.1"
+	./docbook.sh -c -P "$(PREFIX)" -- "move.html"
+	../tools/subst.sh -c -P "$(PREFIX)" -- "move.xml"
+	./docbook.sh -c -P "$(PREFIX)" -- "open.1"
+	./docbook.sh -c -P "$(PREFIX)" -- "open.html"
+	../tools/subst.sh -c -P "$(PREFIX)" -- "open.xml"
+	./docbook.sh -c -P "$(PREFIX)" -- "properties.1"
+	./docbook.sh -c -P "$(PREFIX)" -- "properties.html"
+	../tools/subst.sh -c -P "$(PREFIX)" -- "properties.xml"
+	./docbook.sh -c -P "$(PREFIX)" -- "view.1"
+	./docbook.sh -c -P "$(PREFIX)" -- "view.html"
+	../tools/subst.sh -c -P "$(PREFIX)" -- "view.xml"
+
+distclean: clean
+	$(RM) -- $(TARGETS)
+
+install: $(TARGETS)
+	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -i -- "$(OBJDIR)browser.1"
+	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -i -- "$(OBJDIR)copy.1"
+	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -i -- "$(OBJDIR)delete.1"
+	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -i -- "$(OBJDIR)desktop.1"
+	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -i -- "$(OBJDIR)desktopctl.1"
+	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -i -- "$(OBJDIR)move.1"
+	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -i -- "$(OBJDIR)open.1"
+	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -i -- "$(OBJDIR)properties.1"
+	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -i -- "$(OBJDIR)view.1"
+
+uninstall:
+	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -u -- "browser.1"
+	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -u -- "browser.html"
+	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -u -- "copy.1"
+	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -u -- "copy.html"
+	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -u -- "delete.1"
+	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -u -- "delete.html"
+	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -u -- "desktop.1"
+	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -u -- "desktop.html"
+	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -u -- "desktopctl.1"
+	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -u -- "desktopctl.html"
+	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -u -- "move.1"
+	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -u -- "move.html"
+	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -u -- "open.1"
+	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -u -- "open.html"
+	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -u -- "properties.1"
+	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -u -- "properties.html"
+	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -u -- "view.1"
+	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -u -- "view.html"
+
+.PHONY: all clean distclean install uninstall

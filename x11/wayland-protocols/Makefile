@@ -1,7 +1,7 @@
 # $OpenBSD$
 
 COMMENT =		extensions to the Wayland protocol
-DISTNAME =		wayland-protocols-1.3
+DISTNAME =		wayland-protocols-1.8
 CATEGORIES =		x11
 HOMEPAGE =		http://wayland.freedesktop.org/
 

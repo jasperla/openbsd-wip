@@ -1,0 +1,47 @@
+$OpenBSD$
+use STL dynamic_pointer_cast<>
+Index: src/core/itempayloadinternals_p.h
+--- src/core/itempayloadinternals_p.h.orig
++++ src/core/itempayloadinternals_p.h
+@@ -40,14 +40,6 @@
+  * considered public API, and subject to change without notice
+  */
+ 
+-// Forward-declare boost::shared_ptr so that we don't have to explicitly include
+-// it. Caller that tries to use it will aready have it included anyway
+-namespace boost
+-{
+-template<typename T> class shared_ptr;
+-template<typename T, typename U>
+-shared_ptr<T> dynamic_pointer_cast(shared_ptr<U> const &ptr) noexcept;
+-}
+ 
+ namespace Akonadi
+ {
+@@ -266,22 +258,22 @@ struct PayloadTrait<boost::shared_ptr<T>> {
+     template <typename U>
+     static inline Type castFrom(const boost::shared_ptr<U> &p)
+     {
+-        const Type sp = boost::dynamic_pointer_cast<T, U>(p);
++        const Type sp = std::dynamic_pointer_cast<T, U>(p);
+         if (sp.get() != 0 || p.get() == 0) {
+             return sp;
+         }
+-        throw PayloadException("boost::dynamic_pointer_cast failed");
++        throw PayloadException("std::dynamic_pointer_cast failed");
+     }
+     template <typename U>
+     static inline bool canCastFrom(const boost::shared_ptr<U> &p)
+     {
+-        const Type sp = boost::dynamic_pointer_cast<T, U>(p);
++        const Type sp = std::dynamic_pointer_cast<T, U>(p);
+         return sp.get() != 0 || p.get() == 0;
+     }
+     template <typename U>
+     static inline boost::shared_ptr<U> castTo(const Type &p)
+     {
+-        const boost::shared_ptr<U> sp = boost::dynamic_pointer_cast<U>(p);
++        const boost::shared_ptr<U> sp = std::dynamic_pointer_cast<U>(p);
+         return sp;
+     }
+     static boost::shared_ptr<T> clone(const QSharedPointer<T> &t)

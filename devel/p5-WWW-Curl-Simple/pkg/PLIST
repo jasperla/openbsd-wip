@@ -1,0 +1,8 @@
+@comment $OpenBSD$
+${P5SITE}/WWW/
+${P5SITE}/WWW/Curl/
+${P5SITE}/WWW/Curl/Simple/
+${P5SITE}/WWW/Curl/Simple.pm
+${P5SITE}/WWW/Curl/Simple/Request.pm
+@man man/man3p/WWW::Curl::Simple.3p
+@man man/man3p/WWW::Curl::Simple::Request.3p

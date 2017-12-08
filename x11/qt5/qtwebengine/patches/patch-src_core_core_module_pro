@@ -1,0 +1,34 @@
+$OpenBSD$
+Add OpenBSD support.
+
+Index: src/core/core_module.pro
+--- src/core/core_module.pro.orig
++++ src/core/core_module.pro
+@@ -29,15 +29,15 @@ RSP_FILE = $$OUT_PWD/$$getConfigDir()/$${TARGET}.rsp
+ for(object, NINJA_OBJECTS): RSP_CONTENT += $$object
+ write_file($$RSP_FILE, RSP_CONTENT)
+ macos:LIBS_PRIVATE += -Wl,-filelist,$$shell_quote($$RSP_FILE)
+-linux:LIBS_PRIVATE += @$$RSP_FILE
++linux|bsd:LIBS_PRIVATE += @$$RSP_FILE
+ # QTBUG-58710 add main rsp file on windows
+ win32:QMAKE_LFLAGS += @$$RSP_FILE
+-linux: LIBS_PRIVATE += -Wl,--start-group $$NINJA_ARCHIVES -Wl,--end-group
++linux|bsd: LIBS_PRIVATE += -Wl,--start-group $$NINJA_ARCHIVES -Wl,--end-group
+ else: LIBS_PRIVATE += $$NINJA_ARCHIVES
+ LIBS_PRIVATE += $$NINJA_LIB_DIRS $$NINJA_LIBS
+ # GN's LFLAGS doesn't always work across all the Linux configurations we support.
+ # The Windows and macOS ones from GN does provide a few useful flags however
+-linux: QMAKE_LFLAGS += -Wl,--gc-sections -Wl,-O1 -Wl,-z,now -Wl,-z,defs
++linux|bsd: QMAKE_LFLAGS += -Wl,--gc-sections -Wl,-O1 -Wl,-z,now -Wl,-z,defs
+ else: QMAKE_LFLAGS += $$NINJA_LFLAGS
+ POST_TARGETDEPS += $$NINJA_TARGETDEPS
+ 
+@@ -65,7 +65,7 @@ CONFIG -= bsymbolic_functions
+ 
+ qtConfig(egl): CONFIG += egl
+ 
+-linux:qtConfig(separate_debug_info): QMAKE_POST_LINK="cd $(DESTDIR) && $(STRIP) --strip-unneeded $(TARGET)"
++linux|bsd:qtConfig(separate_debug_info): QMAKE_POST_LINK="cd $(DESTDIR) && $(STRIP) --strip-unneeded $(TARGET)"
+ 
+ REPACK_DIR = $$OUT_PWD/$$getConfigDir()
+ 

@@ -2,7 +2,7 @@
 
 CATEGORIES +=		x11 x11/plasma
 
-VERSION ?=		5.8.5
+VERSION ?=		5.10.1
 MAINTAINER ?=		KDE porting team <openbsd-kde@googlegroups.com>
 HOMEPAGE ?=		https://projects.kde.org/projects/kde/workspace/${DISTNAME:C/-[0-9].*//}
 

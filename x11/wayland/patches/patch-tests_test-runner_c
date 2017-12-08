@@ -2,8 +2,9 @@ $OpenBSD$
 Add *BSD support.
 
 Based on the work done by kwm81 at Github.
---- tests/test-runner.c.orig	Sat Jun 13 01:31:24 2015
-+++ tests/test-runner.c	Sun Jan 10 12:27:07 2016
+Index: tests/test-runner.c
+--- tests/test-runner.c.orig
++++ tests/test-runner.c
 @@ -25,6 +25,12 @@
  
  #define _GNU_SOURCE
@@ -79,7 +80,7 @@ Based on the work done by kwm81 at Github.
  
  static const struct test *
  find_test(const char *name)
-@@ -281,6 +306,10 @@ stderr_reset_color(void)
+@@ -282,6 +307,10 @@ stderr_reset_color(void)
  static int
  is_debugger_attached(void)
  {
@@ -90,7 +91,7 @@ Based on the work done by kwm81 at Github.
  	int status;
  	int rc;
  	pid_t pid;
-@@ -291,6 +320,8 @@ is_debugger_attached(void)
+@@ -292,6 +321,8 @@ is_debugger_attached(void)
  		return 0;
  	}
  
@@ -99,7 +100,7 @@ Based on the work done by kwm81 at Github.
  	pid = fork();
  	if (pid == -1) {
  		perror("fork");
-@@ -311,7 +342,7 @@ is_debugger_attached(void)
+@@ -312,7 +343,7 @@ is_debugger_attached(void)
  			_exit(1);
  		if (!waitpid(-1, NULL, 0))
  			_exit(1);
@@ -108,7 +109,7 @@ Based on the work done by kwm81 at Github.
  		ptrace(PTRACE_DETACH, ppid, NULL, NULL);
  		_exit(0);
  	} else {
-@@ -338,6 +369,7 @@ is_debugger_attached(void)
+@@ -339,6 +370,7 @@ is_debugger_attached(void)
  	}
  
  	return rc;
@@ -116,7 +117,7 @@ Based on the work done by kwm81 at Github.
  }
  
  int main(int argc, char *argv[])
-@@ -345,17 +377,19 @@ int main(int argc, char *argv[])
+@@ -346,17 +378,19 @@ int main(int argc, char *argv[])
  	const struct test *t;
  	pid_t pid;
  	int total, pass;
@@ -139,7 +140,7 @@ Based on the work done by kwm81 at Github.
  	if (is_debugger_attached()) {
  		leak_check_enabled = 0;
  		timeouts_enabled = 0;
-@@ -363,7 +397,17 @@ int main(int argc, char *argv[])
+@@ -364,7 +398,17 @@ int main(int argc, char *argv[])
  		leak_check_enabled = !getenv("WAYLAND_TEST_NO_LEAK_CHECK");
  		timeouts_enabled = !getenv("WAYLAND_TEST_NO_TIMEOUTS");
  	}
@@ -157,7 +158,7 @@ Based on the work done by kwm81 at Github.
  	if (argc == 2 && strcmp(argv[1], "--help") == 0)
  		usage(argv[0], EXIT_SUCCESS);
  
-@@ -394,7 +438,8 @@ int main(int argc, char *argv[])
+@@ -395,7 +439,8 @@ int main(int argc, char *argv[])
  		if (pid == 0)
  			run_test(t); /* never returns */
  
@@ -167,7 +168,7 @@ Based on the work done by kwm81 at Github.
  			stderr_set_color(RED);
  			fprintf(stderr, "waitid failed: %m\n");
  			stderr_reset_color();
-@@ -425,6 +470,25 @@ int main(int argc, char *argv[])
+@@ -426,6 +471,25 @@ int main(int argc, char *argv[])
  
  			break;
  		}

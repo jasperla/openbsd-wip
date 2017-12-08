@@ -1,8 +1,9 @@
 $OpenBSD$
 Add *BSD support.
---- tests/test-compositor.c.orig	Tue Jan 26 21:56:21 2016
-+++ tests/test-compositor.c	Thu Mar 24 17:45:13 2016
-@@ -85,8 +85,8 @@ get_socket_name(void)
+Index: tests/test-compositor.c
+--- tests/test-compositor.c.orig
++++ tests/test-compositor.c
+@@ -86,8 +86,8 @@ get_socket_name(void)
  	static char retval[64];
  
  	gettimeofday(&tv, NULL);
@@ -13,7 +14,7 @@ Add *BSD support.
  
  	return retval;
  }
-@@ -96,10 +96,15 @@ handle_client_destroy(void *data)
+@@ -97,10 +97,15 @@ handle_client_destroy(void *data)
  {
  	struct client_info *ci = data;
  	struct display *d;
@@ -29,7 +30,7 @@ Add *BSD support.
  	assert(waitid(P_PID, ci->pid, &status, WEXITED) != -1);
  
  	switch (status.si_code) {
-@@ -117,6 +122,20 @@ handle_client_destroy(void *data)
+@@ -118,6 +123,20 @@ handle_client_destroy(void *data)
  		ci->exit_code = status.si_status;
  		break;
  	}

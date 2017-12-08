@@ -3,8 +3,8 @@
 COMMENT =		write/wall listener
 DISTNAME =		kwrited-${VERSION}
 
-WANTLIB =  KF5CoreAddons KF5I18n KF5Notifications KF5Pty Qt5Core
-WANTLIB += Qt5Gui Qt5Widgets c m pthread
+WANTLIB += KF5CoreAddons KF5I18n KF5Notifications KF5Pty Qt5Core
+WANTLIB += Qt5Gui Qt5Widgets c m
 
 LIB_DEPENDS =		devel/kf5/kcoreaddons \
 			devel/kf5/ki18n \

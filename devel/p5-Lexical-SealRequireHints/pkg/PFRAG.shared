@@ -1,2 +1,0 @@
-@comment $OpenBSD$
-${INSTALLSITELIB}/${MACHINE_ARCH}-openbsd/auto/Lexical/SealRequireHints/SealRequireHints.so

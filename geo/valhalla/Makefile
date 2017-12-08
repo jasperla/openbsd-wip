@@ -4,7 +4,7 @@ COMMENT =	geographic routing engine
 
 GH_ACCOUNT =	valhalla
 GH_PROJECT =	valhalla
-GH_TAGNAME =	2.1.0
+GH_TAGNAME =	2.2.6
 
 SHARED_LIBS +=  valhalla                  0.0 # 0.0
 
@@ -33,7 +33,8 @@ MODGCC4_ARCHS =		*
 MODLUA_VERSION =	5.3
 BUILD_DEPENDS =		editors/vim,-main \
 			geo/osmlr-tile-spec \
-			geo/osmpbf:patch
+			geo/osmpbf:patch \
+			textproc/rapidjson
 RUN_DEPENDS =		archivers/unzip \
 			geo/spatialite/tools \
 			sysutils/coreutils \

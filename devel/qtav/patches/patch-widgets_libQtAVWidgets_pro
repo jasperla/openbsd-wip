@@ -1,11 +1,15 @@
 $OpenBSD$
-Fix installation paths.
---- widgets/libQtAVWidgets.pro.orig	Fri Jan 20 15:52:13 2017
-+++ widgets/libQtAVWidgets.pro	Fri Jan 20 15:52:38 2017
-@@ -175,5 +175,5 @@ MODULE_VERSION = $$VERSION
- include($$PROJECTROOT/deploy.pri)
- 
- icon.files = $$PWD/$${TARGET}.svg
--icon.path = /usr/share/icons/hicolor/64x64/apps
-+icon.path = $(TRUEPREFIX)/share/icons/hicolor/64x64/apps
- INSTALLS += icon
+
+Index: widgets/libQtAVWidgets.pro
+--- widgets/libQtAVWidgets.pro.orig
++++ widgets/libQtAVWidgets.pro
+@@ -100,7 +100,8 @@ config_direct2d {
+ config_xv {
+   DEFINES *= QTAV_HAVE_XV=1
+   SOURCES += XVRenderer.cpp
+-  LIBS *= -lXv -lX11 -lXext
++  LIBS *= -L$$QMAKE_LIBDIR_X11 -lXv -lX11 -lXext
++  INCLUDEPATH += $$QMAKE_INCDIR_X11
+ }
+ config_x11 {
+   DEFINES *= QTAV_HAVE_X11=1

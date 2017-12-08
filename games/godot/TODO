@@ -1,0 +1,22 @@
+Crash on startup in LibreSSL:
+
+Thread 1 received signal SIGSEGV, Segmentation fault.
+strlen () at /usr/src/lib/libc/arch/amd64/string/strlen.S:124
+124             movq    (%rax),%rdx             /* get bytes to check */
+(gdb) bt
+#0  strlen () at /usr/src/lib/libc/arch/amd64/string/strlen.S:124
+#1  0x0000149581bafc65 in mem_puts (bp=0x149545765e80, 
+    str=0x14950e10b024 "-----BEGIN CERTIFICATE-----\nMIIDzzCCAregAwIBAgIDAWweMA0GCSqGSIb3DQEBBQUAMIGNMQswCQYDVQQGEwJB\nVDFIMEYGA1UECgw/QS1UcnVzdCBHZXMuIGYuIFNpY2hlcmhlaXRzc3lzdGVtZSBp\nbSBlbGVrdHIuIERhdGVudmVya2VociBHbWJIMRkwFw"...)
+    at /usr/src/lib/libcrypto/bio/bss_mem.c:317
+#2  0x0000149581c1bcbc in BIO_puts (b=0x149545765e80, 
+    in=0x14950e10b024 "-----BEGIN CERTIFICATE-----\nMIIDzzCCAregAwIBAgIDAWweMA0GCSqGSIb3DQEBBQUAMIGNMQswCQYDVQQGEwJB\nVDFIMEYGA1UECgw/QS1UcnVzdCBHZXMuIGYuIFNpY2hlcmhlaXRzc3lzdGVtZSBp\nbSBlbGVrdHIuIERhdGVudmVya2VociBHbWJIMRkwFw"...)
+    at /usr/src/lib/libcrypto/bio/bio_lib.c:285
+#3  0x00001492b7def761 in StreamPeerOpenSSL::_load_certs (p_array=...)
+    at modules/openssl/stream_peer_openssl.cpp:540
+#4  0x00001492b8618419 in editor_initialize_certificates ()
+    at editor/editor_initialize_ssl.cpp:44
+#5  0x00001492b807e3d2 in ProjectListFilter::ProjectListFilter() ()
+#6  0x00001492b8079914 in ProjectManager::ProjectManager() ()
+#7  0x00001492b7d23057 in Main::start () at main/main.cpp:1451
+#8  0x00001492b7d02039 in main (argc=<optimized out>, argv=<optimized out>)
+    at platform/x11/godot_x11.cpp:50

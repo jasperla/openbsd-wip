@@ -1,0 +1,28 @@
+@comment $OpenBSD$
+@bin bin/c99
+include/Devel/C99/
+include/Devel/C99.h
+include/Devel/C99/c99.h
+include/Devel/C99/target.h
+lib/C99/
+lib/C99/target/
+lib/C99/target/asm.so
+lib/C99/target/graph.so
+lib/C99/target/indent.so
+lib/pkgconfig/C99.pc
+share/gtk-doc/html/deforaos/C99/
+share/gtk-doc/html/deforaos/C99/C99-c99.html
+share/gtk-doc/html/deforaos/C99/C99-target.html
+share/gtk-doc/html/deforaos/C99/C99.devhelp2
+share/gtk-doc/html/deforaos/C99/api-index-full.html
+share/gtk-doc/html/deforaos/C99/ch01.html
+share/gtk-doc/html/deforaos/C99/deprecated-api-index.html
+share/gtk-doc/html/deforaos/C99/home.png
+share/gtk-doc/html/deforaos/C99/index.html
+share/gtk-doc/html/deforaos/C99/left-insensitive.png
+share/gtk-doc/html/deforaos/C99/left.png
+share/gtk-doc/html/deforaos/C99/right-insensitive.png
+share/gtk-doc/html/deforaos/C99/right.png
+share/gtk-doc/html/deforaos/C99/style.css
+share/gtk-doc/html/deforaos/C99/up-insensitive.png
+share/gtk-doc/html/deforaos/C99/up.png

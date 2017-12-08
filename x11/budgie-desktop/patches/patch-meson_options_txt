@@ -1,0 +1,15 @@
+$OpenBSD$
+
+Disable bluetooth and docs.
+
+Index: meson_options.txt
+--- meson_options.txt.orig
++++ meson_options.txt
+@@ -1,5 +1,5 @@
+ option('with-stateless', type: 'boolean', value: false, description: 'Enable stateless XDG paths')
+ option('with-polkit', type: 'boolean', value: true, description: 'Enable PolKit support')
+ option('with-introspection', type: 'boolean', value: true, description: 'Enable GObject Introspection support')
+-option('with-bluetooth', type: 'boolean', value: true, description: 'Enable gnome-bluetooth support')
+-option('with-gtk-doc', type: 'boolean', value: true, description: 'Build gtk-doc documentation')
++option('with-bluetooth', type: 'boolean', value: false, description: 'Enable gnome-bluetooth support')
++option('with-gtk-doc', type: 'boolean', value: false, description: 'Build gtk-doc documentation')

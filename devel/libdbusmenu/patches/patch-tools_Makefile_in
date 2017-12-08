@@ -1,0 +1,14 @@
+$OpenBSD$
+
+Index: tools/Makefile.in
+--- tools/Makefile.in.orig
++++ tools/Makefile.in
+@@ -454,7 +454,7 @@ dbusmenu_dumper_CFLAGS = \
+ 	-I $(srcdir)/.. \
+ 	$(DBUSMENUGLIB_CFLAGS) \
+ 	$(DBUSMENUDUMPER_CFLAGS) \
+-	-Wall -Werror
++	-Wall 
+ 
+ dbusmenu_dumper_LDADD = \
+ 	../libdbusmenu-glib/libdbusmenu-glib.la \

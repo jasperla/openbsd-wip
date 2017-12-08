@@ -1,4 +1,0 @@
-This benchmark suite tries to run some stressful programs and outputs
-values that you can compare against other runs of this suite, e.g. with
-other versions of Perl, modified compile parameter, or another set of
-dependent libraries.

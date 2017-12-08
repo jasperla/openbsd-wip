@@ -1,0 +1,24 @@
+$OpenBSD$
+Automatically copied from www/chromium.
+
+Index: src/3rdparty/chromium/components/crash/content/app/BUILD.gn
+--- src/3rdparty/chromium/components/crash/content/app/BUILD.gn.orig
++++ src/3rdparty/chromium/components/crash/content/app/BUILD.gn
+@@ -115,7 +115,7 @@ source_set("app_non_mac_win") {
+     libs = [ "log" ]
+   }
+ 
+-  if (is_android || is_linux) {
++  if (is_android || (is_linux && !is_openbsd)) {
+     # Want these files on both Linux and Android.
+     set_sources_assignment_filter([])
+     sources += [
+@@ -145,7 +145,7 @@ source_set("app_non_mac_win") {
+       "//breakpad:breakpad_handler",
+       "//sandbox",
+     ]
+-  } else if (is_posix && !is_ios) {
++  } else if (is_posix && !is_ios && !is_openbsd) {
+     deps += [ "//breakpad:client" ]
+   }
+ }

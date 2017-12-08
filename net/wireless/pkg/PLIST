@@ -1,0 +1,3 @@
+@comment $OpenBSD$
+@bin bin/wireless
+@man man/man8/wireless.8

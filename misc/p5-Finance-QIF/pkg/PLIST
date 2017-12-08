@@ -1,0 +1,4 @@
+@comment $OpenBSD$
+${P5SITE}/Finance/
+${P5SITE}/Finance/QIF.pm
+@man man/man3p/Finance::QIF.3p

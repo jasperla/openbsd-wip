@@ -1,0 +1,59 @@
+$OpenBSD$
+
+Handle the shared library correctly.
+
+Index: Makefile
+--- Makefile.orig
++++ Makefile
+@@ -63,12 +63,12 @@ SOEXTVER00=$(SOEXT).$(SONAME).0.0
+ MAKE_SHARED_LIBRARY=$(CXX) -shared -Wl,-soname,libre2.$(SOEXTVER) $(RE2_LDFLAGS) $(LDFLAGS)
+ else
+ SOEXT=so
+-SOEXTVER=$(SOEXT).$(SONAME)
++SOEXTVER=$(SOEXT).${LIBre2_VERSION}
+ SOEXTVER00=$(SOEXT).$(SONAME).0.0
+ MAKE_SHARED_LIBRARY=$(CXX) -shared -Wl,-soname,libre2.$(SOEXTVER),--version-script,libre2.symbols $(RE2_LDFLAGS) $(LDFLAGS)
+ endif
+ 
+-all: obj/libre2.a obj/so/libre2.$(SOEXT)
++all: obj/libre2.a obj/so/libre2.$(SOEXTVER)
+ 
+ INSTALL_HFILES=\
+ 	re2/filtered_re2.h\
+@@ -194,10 +194,9 @@ obj/dbg/libre2.a: $(DOFILES)
+ 	@mkdir -p obj/dbg
+ 	$(AR) $(ARFLAGS) obj/dbg/libre2.a $(DOFILES)
+ 
+-obj/so/libre2.$(SOEXT): $(SOFILES)
++obj/so/libre2.$(SOEXTVER): $(SOFILES)
+ 	@mkdir -p obj/so
+ 	$(MAKE_SHARED_LIBRARY) -o obj/so/libre2.$(SOEXTVER) $(SOFILES)
+-	ln -sf libre2.$(SOEXTVER) $@
+ 
+ obj/dbg/test/%: obj/dbg/libre2.a obj/dbg/re2/testing/%.o $(DTESTOFILES) obj/dbg/util/test.o
+ 	@mkdir -p obj/dbg/test
+@@ -208,7 +207,7 @@ obj/test/%: obj/libre2.a obj/re2/testing/%.o $(TESTOFI
+ 	$(CXX) -o $@ obj/re2/testing/$*.o $(TESTOFILES) obj/util/test.o obj/libre2.a $(RE2_LDFLAGS) $(LDFLAGS)
+ 
+ # Test the shared lib, falling back to the static lib for private symbols
+-obj/so/test/%: obj/so/libre2.$(SOEXT) obj/libre2.a obj/re2/testing/%.o $(TESTOFILES) obj/util/test.o
++obj/so/test/%: obj/so/libre2.$(SOEXTVER) obj/libre2.a obj/re2/testing/%.o $(TESTOFILES) obj/util/test.o
+ 	@mkdir -p obj/so/test
+ 	$(CXX) -o $@ obj/re2/testing/$*.o $(TESTOFILES) obj/util/test.o -Lobj/so -lre2 obj/libre2.a $(RE2_LDFLAGS) $(LDFLAGS)
+ 
+@@ -276,13 +275,11 @@ benchmark: obj/test/regexp_benchmark
+ 
+ fuzz: obj/test/re2_fuzzer
+ 
+-install: obj/libre2.a obj/so/libre2.$(SOEXT)
++install: obj/libre2.a obj/so/libre2.$(SOEXTVER)
+ 	mkdir -p $(DESTDIR)$(includedir)/re2 $(DESTDIR)$(libdir)/pkgconfig
+ 	$(INSTALL_DATA) $(INSTALL_HFILES) $(DESTDIR)$(includedir)/re2
+ 	$(INSTALL) obj/libre2.a $(DESTDIR)$(libdir)/libre2.a
+-	$(INSTALL) obj/so/libre2.$(SOEXT) $(DESTDIR)$(libdir)/libre2.$(SOEXTVER00)
+-	ln -sf libre2.$(SOEXTVER00) $(DESTDIR)$(libdir)/libre2.$(SOEXTVER)
+-	ln -sf libre2.$(SOEXTVER00) $(DESTDIR)$(libdir)/libre2.$(SOEXT)
++	$(INSTALL) obj/so/libre2.$(SOEXTVER) $(DESTDIR)$(libdir)
+ 	$(INSTALL_DATA) re2.pc $(DESTDIR)$(libdir)/pkgconfig/re2.pc
+ 	$(SED_INPLACE) -e "s#@prefix@#${prefix}#" $(DESTDIR)$(libdir)/pkgconfig/re2.pc
+ 	$(SED_INPLACE) -e "s#@exec_prefix@#${exec_prefix}#" $(DESTDIR)$(libdir)/pkgconfig/re2.pc

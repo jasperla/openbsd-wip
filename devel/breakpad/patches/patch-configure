@@ -1,0 +1,15 @@
+$OpenBSD$
+
+Why?
+
+Index: configure
+--- configure.orig
++++ configure
+@@ -7446,7 +7446,6 @@ fi
+ 
+ done
+ 
+-as_fn_append WARN_CXXFLAGS " -Werror"
+ ac_ext=c
+ ac_cpp='$CPP $CPPFLAGS'
+ ac_compile='$CC -c $CFLAGS $CPPFLAGS conftest.$ac_ext >&5'

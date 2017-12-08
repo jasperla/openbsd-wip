@@ -267,6 +267,10 @@ share/themes/Breeze-Dark/gtk-2.0/widgets/styles
 share/themes/Breeze-Dark/gtk-2.0/widgets/toolbar
 share/themes/Breeze-Dark/gtk-3.0/
 share/themes/Breeze-Dark/gtk-3.0/gtk.css
+share/themes/Breeze-Dark/gtk-3.18/
+share/themes/Breeze-Dark/gtk-3.18/gtk.css
+share/themes/Breeze-Dark/gtk-3.20/
+share/themes/Breeze-Dark/gtk-3.20/gtk.css
 share/themes/Breeze/assets/
 share/themes/Breeze/assets/arrow-down-active.png
 share/themes/Breeze/assets/arrow-down-hover.png
@@ -529,3 +533,7 @@ share/themes/Breeze/gtk-2.0/widgets/styles
 share/themes/Breeze/gtk-2.0/widgets/toolbar
 share/themes/Breeze/gtk-3.0/
 share/themes/Breeze/gtk-3.0/gtk.css
+share/themes/Breeze/gtk-3.18/
+share/themes/Breeze/gtk-3.18/gtk.css
+share/themes/Breeze/gtk-3.20/
+share/themes/Breeze/gtk-3.20/gtk.css

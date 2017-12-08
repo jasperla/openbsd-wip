@@ -1,0 +1,24 @@
+$OpenBSD$
+Automatically copied from www/chromium.
+
+Index: src/3rdparty/chromium/base/process/process_metrics.h
+--- src/3rdparty/chromium/base/process/process_metrics.h.orig
++++ src/3rdparty/chromium/base/process/process_metrics.h
+@@ -178,7 +178,7 @@ class BASE_EXPORT ProcessMetrics {
+   // otherwise.
+   bool GetIOCounters(IoCounters* io_counters) const;
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+   // Returns the number of file descriptors currently open by the process, or
+   // -1 on error.
+   int GetOpenFdCount() const;
+@@ -254,7 +254,7 @@ BASE_EXPORT void SetFdLimit(unsigned int max_descripto
+ #endif  // defined(OS_POSIX)
+ 
+ #if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || \
+-    defined(OS_ANDROID)
++    defined(OS_ANDROID) || defined(OS_BSD)
+ // Data about system-wide memory consumption. Values are in KB. Available on
+ // Windows, Mac, Linux, Android and Chrome OS.
+ //

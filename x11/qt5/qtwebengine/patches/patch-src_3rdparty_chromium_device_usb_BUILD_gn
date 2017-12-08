@@ -1,0 +1,15 @@
+$OpenBSD$
+Automatically copied from www/chromium.
+
+Index: src/3rdparty/chromium/device/usb/BUILD.gn
+--- src/3rdparty/chromium/device/usb/BUILD.gn.orig
++++ src/3rdparty/chromium/device/usb/BUILD.gn
+@@ -87,7 +87,7 @@ static_library("usb") {
+     deps += [ "//third_party/libusb" ]
+   }
+ 
+-  if (is_android || is_chromeos || is_linux) {
++  if (is_android || is_chromeos || (is_linux && !is_openbsd)) {
+     sources += [
+       "usb_device_handle_usbfs.cc",
+       "usb_device_handle_usbfs.h",

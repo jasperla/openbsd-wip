@@ -1,0 +1,33 @@
+$OpenBSD$
+Automatically copied from www/chromium.
+
+Index: src/3rdparty/chromium/chrome/browser/resources/settings/appearance_page/appearance_page.html
+--- src/3rdparty/chromium/chrome/browser/resources/settings/appearance_page/appearance_page.html.orig
++++ src/3rdparty/chromium/chrome/browser/resources/settings/appearance_page/appearance_page.html
+@@ -57,7 +57,7 @@
+             </div>
+             <button class="icon-external" is="paper-icon-button-light"></button>
+           </div>
+-<if expr="not is_linux or chromeos">
++<if expr="not is_posix or chromeos">
+           <template is="dom-if" if="[[prefs.extensions.theme.id.value]]">
+             <div class="secondary-action">
+               <paper-button id="useDefault" on-tap="onUseDefaultTap_"
+@@ -67,7 +67,7 @@
+             </div>
+           </template>
+ </if>
+-<if expr="is_linux and not chromeos">
++<if expr="is_posix and not chromeos">
+           <div class="secondary-action" hidden="[[!showThemesSecondary_(
+             prefs.extensions.theme.id.value, useSystemTheme_)]]">
+             <template is="dom-if" if="[[showUseClassic_(
+@@ -124,7 +124,7 @@
+           </settings-checkbox>
+         </div>
+         <div class$="settings-box [[getFirst_(pageVisibility.bookmarksBar)]]">
+-<if expr="is_linux and not chromeos">
++<if expr="is_posix and not chromeos">
+           <settings-checkbox class="start" label="$i18n{showWindowDecorations}"
+               pref="{{prefs.browser.custom_chrome_frame}}" inverted>
+           </settings-checkbox>

@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.33 2017/03/09 01:56:52 juanfra Exp $
+# $OpenBSD: Makefile,v 1.38 2017/08/05 22:49:16 juanfra Exp $
 
 USE_WXNEEDED =		Yes
 
 PORTROACH_COMMENT =	hide pre-release versions (e.g. 6.1.90.900)
 PORTROACH =		limit:!.*\.[0-9][0-9][0-9]-src-builtpkgs$$
 
-ONLY_FOR_ARCHS =	arm amd64 i386 powerpc sparc64
+ONLY_FOR_ARCHS =	arm amd64 i386 mips64el powerpc sparc64
 
 COMMENT =		multi-paradigm programming language
 
-V =			6.9
+V =			6.11
 PKGNAME =		racket-minimal-$V
 DISTFILES =		racket-minimal-$V-src-builtpkgs${EXTRACT_SUFX} \
 			racket-openbsd-1${EXTRACT_SUFX}
@@ -35,11 +35,11 @@ MASTER_SITES =		https://mirror.racket-lang.org/installers/${V}/ \
 			ftp://download.tuxfamily.org/jod/lang/racket/
 EXTRACT_SUFX =		.tgz
 
-# GCC4 is only needed by the TLS flavor. "places" and "futures" only work
-# correctly on amd64 for this version.
-MODULES +=		gcc4
-MODGCC4_LANGS =		c
-MODGCC4_ARCHS =		arm amd64
+# "places" and "futures" require TLS.
+COMPILER =		gcc
+COMPILER_LANGS =	c
+MODGCC4_ARCHS =		arm
+
 LIB_DEPENDS =		converters/libiconv \
 			databases/sqlite3 \
 			devel/libffi>=3.0.9p2
@@ -83,7 +83,6 @@ CFLAGS += -ggdb3
 
 # - "places" and "futures" require thread-local storage, atomic CAS and JIT
 #   http://article.gmane.org/gmane.comp.lang.racket.user/16723
-# - Using gcc4 to enable "places". It broke Racket in the past.
 # - The JIT doesn't work on powerpc when TLS is enabled. "places" and
 #   "futures" don't work on arm and powerpc.
 #   https://github.com/racket/racket/issues/1239
@@ -94,11 +93,11 @@ ONLY_FOR_ARCHS =	arm amd64 i386 powerpc
 CONFIGURE_ARGS +=	--disable-jit \
 			--disable-places \
 			--disable-futures
-.elif ${MACHINE_ARCH} == "amd64"
+.elif ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "i386"
 CONFIGURE_ARGS +=	--enable-jit \
 			--enable-places \
 			--enable-futures
-.elif ${MACHINE_ARCH} == "arm" || ${MACHINE_ARCH} == "i386"
+.elif ${MACHINE_ARCH} == "arm"
 CONFIGURE_ARGS +=	--enable-jit \
 			--disable-places \
 			--disable-futures
