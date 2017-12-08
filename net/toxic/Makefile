@@ -13,7 +13,7 @@ GH_ACCOUNT =		Jfreegman
 GH_PROJECT =		toxic
 GH_TAGNAME =		v0.8.1
 
-WANTLIB += c config curl m ncursesw png pthread qrencode toxcore
+WANTLIB += c config curses curl m ncursesw png pthread qrencode toxcore
 WANTLIB += toxdns toxencryptsave z
 
 LIB_DEPENDS =		net/toxcore \
@@ -21,10 +21,15 @@ LIB_DEPENDS =		net/toxcore \
 			net/curl \
 			graphics/libqrencode \
 
-FLAVORS = no_x11 notify freealut av
+FLAVORS = python no_x11 notify sound
 FLAVOR ?=
 
 USE_GMAKE =		yes
+
+.if ${FLAVOR:Mpython}
+MAKE_ENV +=		PYTHON_ENABLE=1
+LIB_DEPENDS +=		lang/python/3.6
+.endif
 
 .if ${FLAVOR:Mno_x11}
 MAKE_ENV +=		DISABLE_X11=1
@@ -39,18 +44,13 @@ LIB_DEPENDS +=		devel/libnotify
 MAKE_ENV +=		DISABLE_DESKTOP_NOTIFY=1
 .endif
 
-.if ${FLAVOR:Mfreealut}
-WANTLIB +=		alut openal
-LIB_DEPENDS +=		audio/freealut
+.if ${FLAVOR:Msound}
+WANTLIB +=		alut openal opus toxav vpx
+LIB_DEPENDS +=		audio/freealut \
+			audio/openal
 .else
-MAKE_ENV +=		DISABLE_SOUND_NOTIFY=1
-.endif
-
-.if ${FLAVOR:Mav}
-WANTLIB +=		openal opus toxav vpx
-LIB_DEPENDS +=		audio/openal
-.else
-MAKE_ENV +=		DISABLE_AV=1
+MAKE_ENV +=		DISABLE_AV=1 \
+			DISABLE_SOUND_NOTIFY=1
 .endif
 
 NO_TEST =		Yes
