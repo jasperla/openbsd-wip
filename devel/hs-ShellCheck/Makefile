@@ -2,7 +2,7 @@
 
 COMMENT =		shell script analysis tool
 
-DISTNAME =		ShellCheck-0.4.6
+DISTNAME =		ShellCheck-0.4.7
 CATEGORIES =		devel
 HOMEPAGE =		https://www.shellcheck.net/
 
@@ -15,7 +15,7 @@ MODULES =		lang/ghc
 
 MODGHC_BUILD =		cabal hackage haddock register
 
-MODGHC_PACKAGE_KEY =	7idyMrgdEmYIkEyn8OLkK7
+MODGHC_PACKAGE_KEY =	AoQgffkRU8ABZAVU0rPeXH
 
 RUN_DEPENDS +=		devel/hs-mtl \
 			devel/hs-parsec \
