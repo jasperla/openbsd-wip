@@ -1,0 +1,25 @@
+vcmibuilder not working (which is a tool to extract HOMM3 data files)
+
+buggy after compiling with clang:
+
+Gem has assigned an empty path! Ignoring it...
+Player 3 has to answer queries  before attempting any further actions. Top query is A query of type 20CBlockingDialogQuery and qid=11 affecting players (3)!                                                                      System message: Server encountered a problem: Player 3 has to answer queries  before attempting any further actions. Top query is A query of type 20CBlockingDialogQuery and qid=11 affecting players (3)!                        Player 3 has to answer queries  before attempting any further actions. Top query is A query of type 20CBlockingDialogQuery and qid=11 affecting players (3)!
+System message: Server encountered a problem: Player 3 has to answer queries  before attempting any further actions. Top query is A query of type 20CBlockingDialogQuery and qid=11 affecting players (3)!
+
+doesn't compile with gcc4.9; namespace issue with a boost library:
+
+In file included from /usr/local/include/boost/align/align.hpp:15:0,
+from /usr/local/include/boost/smart_ptr/detail/array_allocator.hpp:12,
+from /usr/local/include/boost/smart_ptr/detail/array_count_impl.hpp:12,
+from /usr/local/include/boost/smart_ptr/make_shared_array.hpp:12,
+from /usr/local/include/boost/smart_ptr/make_shared.hpp:18,
+from /usr/local/include/boost/thread/csbl/memory/shared_ptr.hpp:17,
+from /usr/local/include/boost/thread/detail/nullary_function.hpp:16,
+from /usr/local/include/boost/thread/barrier.hpp:21,
+from /usr/local/include/boost/thread.hpp:23,
+from /usr/ports/pobj/vcmi-0.99/vcmi-0.99/lib/../Global.h:179,
+from /usr/ports/pobj/vcmi-0.99/vcmi-0.99/lib/StdInc.h:3,
+from /usr/ports/pobj/vcmi-0.99/build-amd64/lib/cotire/vcmi_CXX_prefix.cxx:4,
+from /usr/ports/pobj/vcmi-0.99/build-amd64/lib/cotire/vcmi_CXX_prefix.hxx:4:
+/usr/local/include/boost/align/detail/align_cxx11.hpp:16:20: error: 'std::align' has not been declared
+using std::align;

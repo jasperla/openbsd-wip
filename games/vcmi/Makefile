@@ -39,9 +39,11 @@ LIB_DEPENDS =		devel/boost \
 
 # Add -pthread to "enable" boost threading support.
 CONFIGURE_ARGS +=	-DCMAKE_CXX_FLAGS="${CXXFLAGS} -pthread -DUSE_FILE32API" \
-			-DCMAKE_SHARED_LINKER_FLAGS=-lexecinfo \
 			-DENABLE_LAUNCHER=OFF \
 			-Wno-dev
+#-DCMAKE_SHARED_LINKER_FLAGS=-lexecinfo
+
+#CXXFLAGS =		-I/usr/include/boost
 
 NO_TEST =		Yes
 

@@ -1,0 +1,22 @@
+$OpenBSD$
+
+attempt to fix issue with template
+change float to double to avoid undefined behavior with va_start
+
+Index: AI/FuzzyLite/fuzzylite/src/Operation.cpp
+--- AI/FuzzyLite/fuzzylite/src/Operation.cpp.orig
++++ AI/FuzzyLite/fuzzylite/src/Operation.cpp
+@@ -442,11 +442,11 @@ namespace fl {
+ 
+     template FL_API std::string Operation::join(int items, const std::string& separator,
+             int first, ...);
+-    template FL_API std::string Operation::join(int items, const std::string& separator,
++    template <> FL_API std::string Operation::join(int items, const std::string& separator,
+             double first, ...);
+ 
+     template <> FL_API std::string Operation::join(int items, const std::string& separator,
+-            float first, ...) {
++            double first, ...) {
+         std::ostringstream ss;
+         ss << str(first);
+         if (items > 1) ss << separator;
