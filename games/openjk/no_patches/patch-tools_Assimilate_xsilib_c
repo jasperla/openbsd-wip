@@ -1,0 +1,83 @@
+$OpenBSD$
+
+strlcpy
+
+Index: tools/Assimilate/xsilib.c
+--- tools/Assimilate/xsilib.c.orig
++++ tools/Assimilate/xsilib.c
+@@ -202,8 +202,8 @@ polyset_t *ASE_GetSurfaceAnimation( int which, int *pN
+ 	f=0;
+ 
+ 
+-	strcpy( psets[f].name, pObject->name );
+-	strcpy( psets[f].materialname, ase.materials[pObject->materialRef].name );
++	strlcpy( psets[f].name, pObject->name , sizeof(psets[f].name));
++	strlcpy( psets[f].materialname, ase.materials[pObject->materialRef].name , sizeof(psets[f].materialname));
+ 
+ 	psets[f].triangles = calloc( sizeof( triangle_t ) * pObject->anim.numFaces, 1 );
+ 	psets[f].numtriangles = pObject->anim.numFaces;
+@@ -374,7 +374,7 @@ static void ASE_KeyMAP_DIFFUSE( const char *token )
+ 	{
+ 		ASE_GetToken( qfalse );
+ 
+-		strcpy( buffer, s_token + 1 );
++		strlcpy( buffer, s_token + 1 , sizeof(buffer));
+ 		if ( strchr( buffer, '"' ) )
+ 			*strchr( buffer, '"' ) = 0;
+ 
+@@ -388,7 +388,7 @@ static void ASE_KeyMAP_DIFFUSE( const char *token )
+ 		_strlwr(buffer);
+ 		if ( strstr( buffer, gamedir + 2 ) )
+ 		{
+-			strcpy( ase.materials[ase.numMaterials].name, strstr( buffer, gamedir + 2 ) + strlen( gamedir ) - 2 );
++			strlcpy( ase.materials[ase.numMaterials].name, strstr( buffer, gamedir + 2 ) + strlen( gamedir ) - 2 , sizeof(ase.materials[ase.numMaterials].name));
+ 		}
+ 		else
+ 		{
+@@ -555,13 +555,13 @@ static void ASE_KeyMESH_TVERTLIST( const char *token )
+ 		ASE_GetToken( qfalse );
+ 
+ 		ASE_GetToken( qfalse );
+-		strcpy( u, s_token );
++		strlcpy( u, s_token , sizeof(u));
+ 
+ 		ASE_GetToken( qfalse );
+-		strcpy( v, s_token );
++		strlcpy( v, s_token , sizeof(v));
+ 
+ 		ASE_GetToken( qfalse );
+-		strcpy( w, s_token );
++		strlcpy( w, s_token , sizeof(w));
+ 
+ 		pMesh->tvertexes[pMesh->currentVertex].s = atof( u );
+ 		pMesh->tvertexes[pMesh->currentVertex].t = 1.0f - atof( v );
+@@ -668,9 +668,9 @@ static void ASE_KeyMESH_BONE_LIST( const char *token )
+ 		ASE_GetToken( qfalse );
+ 
+ 		if (*s_token=='"')
+-			strcpy( buffer, s_token + 1 );
++			strlcpy( buffer, s_token + 1 , sizeof(buffer));
+ 		else
+-			strcpy( buffer, s_token );
++			strlcpy( buffer, s_token , sizeof(buffer));
+ 		if ( strchr( buffer, '"' ) )
+ 			*strchr( buffer, '"' ) = 0;
+ 		for (i=0;i<ase.numBones;i++)
+@@ -680,7 +680,7 @@ static void ASE_KeyMESH_BONE_LIST( const char *token )
+ 		}
+ 		if (i>=ase.numBones)
+ 		{
+-			strcpy(ase.bones[i].name,buffer);
++			strlcpy(ase.bones[i].name,buffer, sizeof(ase.bones[i].name));
+ 			ase.numBones++;
+ 		}
+ 		pMesh->BoneRemap[pMesh->curBone]=i;
+@@ -776,7 +776,7 @@ static void ASE_KeyGEOMOBJECT( const char *token )
+ 
+ 		ASE_GetToken( qtrue );
+ 		VERBOSE( ( " %s\n", s_token ) );
+-		strcpy( ase.objects[ase.currentObject].name, s_token + 1 );
++		strlcpy( ase.objects[ase.currentObject].name, s_token + 1 , sizeof(ase.objects[ase.currentObject].name));
+ 		if ( strchr( ase.objects[ase.currentObject].name, '"' ) )
+ 			*strchr( ase.objects[ase.currentObject].name, '"' ) = 0;
+ 

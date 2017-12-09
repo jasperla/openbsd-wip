@@ -1,0 +1,21 @@
+$OpenBSD$
+
+strlcpy
+
+Index: tools/ModView/commarea.cpp
+--- tools/ModView/commarea.cpp.orig
++++ tools/ModView/commarea.cpp
+@@ -337,11 +337,11 @@ static LPCSTR CommArea_SetupAndLegaliseOutgoingData(LP
+ 	{
+ 		if (psCommand)
+ 		{
+-			strcpy(gpMappedCommArea->PassedData.sCommand,psCommand);
++			strlcpy(gpMappedCommArea->PassedData.sCommand,psCommand, sizeof(gpMappedCommArea->PassedData.sCommand));
+ 		}
+ 		else
+ 		{
+-			strcpy(gpMappedCommArea->PassedData.sCommand,"");
++			strlcpy(gpMappedCommArea->PassedData.sCommand,"", sizeof(gpMappedCommArea->PassedData.sCommand));
+ 		}
+ 
+ 		if (pbData)

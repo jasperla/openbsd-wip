@@ -1,0 +1,16 @@
+$OpenBSD$
+
+strcpy -> strlcpy
+
+Index: codemp/qcommon/cm_load.cpp
+--- codemp/qcommon/cm_load.cpp.orig
++++ codemp/qcommon/cm_load.cpp
+@@ -644,7 +644,7 @@ static void CM_LoadMap_Actual( const char *name, qbool
+ 		return;
+ 	}
+ 
+-	strcpy(origName, name);
++	strlcpy(origName, name, sizeof(origName));
+ 
+ 	if (&cm == &cmg)
+ 	{

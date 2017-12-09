@@ -1,0 +1,58 @@
+$OpenBSD$
+
+strlcat
+
+Index: tools/ModView/anims.cpp
+--- tools/ModView/anims.cpp.orig
++++ tools/ModView/anims.cpp
+@@ -57,12 +57,12 @@ bool Anims_ReadFile_FRAMES(ModelContainer_t *pContaine
+ 					str.TrimLeft();
+ 					str.TrimRight();
+ 					str.Replace("\"","");
+-				strcpy(sLine,str);
++				strlcpy(sLine,str, sizeof(sLine));
+ 
+ 			if (strstr(sLine,".xsi"))
+ 			{
+ 				Sequence_Clear(&Sequence);
+-				strcpy(Sequence.sName,Filename_WithoutPath(Filename_WithoutExt(sLine)));
++				strlcpy(Sequence.sName,Filename_WithoutPath(Filename_WithoutExt(sLine)), sizeof(Sequence.sName));
+ 
+ 				// these can be really long...
+ 				strncpy(Sequence.sNameWithPath,Filename_WithoutExt(sLine),sizeof(Sequence.sNameWithPath));
+@@ -178,7 +178,7 @@ static bool LoadAnimationCFG(LPCSTR psFullPath, ModelC
+ 			char *p = strstr(sLineBuffer,"//");
+ 			if (p)
+ 			{
+-				strcpy(sComment,p+2);
++				strlcpy(sComment,p+2, sizeof(sComment));
+ 				*p=0;
+ 			}
+ 
+@@ -268,7 +268,7 @@ static bool LoadAnimationCFG(LPCSTR psFullPath, ModelC
+ 
+ 			if (bElementsScannedOk)
+ 			{	
+-				strcpy(seq.sName,sLine);//seq.sName = sLine;
++				strlcpy(seq.sName,sLine, sizeof(seq.sName));//seq.sName = sLine;
+ 
+ 				pContainer->SequenceList.push_back(seq);
+ 
+@@ -351,7 +351,7 @@ static bool LoadAnimationCFG(LPCSTR psFullPath, ModelC
+ 				if (Size.cx >= iLongestTextMetric)
+ 					break;
+ 
+-				strcat(sLine," ");
++				strlcat(sLine," ", sizeof(sLine));
+ 			}
+ 
+ 			Menu_UpperAnims_AddItem(va("%s (%d...%d)%s",sLine,(*it).iStartFrame,((*it).iStartFrame+(*it).iFrameCount)-1,((*it).iLoopFrame==-1)?"":va("  Loop %d",(*it).iStartFrame+(*it).iLoopFrame)));
+@@ -371,7 +371,7 @@ static bool LoadAnimationCFG(LPCSTR psFullPath, ModelC
+ 				if (Size.cx >= iLongestTextMetric)
+ 					break;
+ 
+-				strcat(sLine," ");
++				strlcat(sLine," ", sizeof(sLine));
+ 			}
+ 
+ 			Menu_LowerAnims_AddItem(va("%s (%d...%d)%s",sLine,(*it).iStartFrame,((*it).iStartFrame+(*it).iFrameCount)-1,((*it).iLoopFrame==-1)?"":va("  Loop %d",(*it).iStartFrame+(*it).iLoopFrame)));

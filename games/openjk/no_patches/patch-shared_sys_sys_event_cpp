@@ -1,0 +1,16 @@
+$OpenBSD$
+
+strlcpy
+
+Index: shared/sys/sys_event.cpp
+--- shared/sys/sys_event.cpp.orig
++++ shared/sys/sys_event.cpp
+@@ -77,7 +77,7 @@ sysEvent_t Sys_GetEvent( void ) {
+ 
+ 		len = strlen( s ) + 1;
+ 		b = (char *)Z_Malloc( len,TAG_EVENT,qfalse );
+-		strcpy( b, s );
++		strlcpy( b, s , sizeof(b));
+ 		Sys_QueEvent( 0, SE_CONSOLE, 0, 0, len, b );
+ 	}
+ 

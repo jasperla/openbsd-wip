@@ -1,0 +1,16 @@
+$OpenBSD$
+
+strlcpy
+
+Index: tools/Assimilate/Module.cpp
+--- tools/Assimilate/Module.cpp.orig
++++ tools/Assimilate/Module.cpp
+@@ -47,7 +47,7 @@ void CModule::ReportError(int theError, LPCTSTR errStr
+ 	if (errString != NULL)
+ 	{
+ 		m_lastErrMsg = (char*)malloc(strlen(errString) + 1);
+-		strcpy(m_lastErrMsg, errString);
++		strlcpy(m_lastErrMsg, errString, sizeof(m_lastErrMsg));
+ 	}
+ 	if (m_errHandler != NULL)
+ 	{

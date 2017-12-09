@@ -1,0 +1,21 @@
+$OpenBSD$
+
+strlcpy
+
+Index: tools/Assimilate/AnimPicker.cpp
+--- tools/Assimilate/AnimPicker.cpp.orig
++++ tools/Assimilate/AnimPicker.cpp
+@@ -194,11 +194,11 @@ void CAnimPicker::HandleSelectionChange(CListBox* list
+ 		
+ 		GetDlgItem(IDC_STATIC_COMMENT)->SetWindowText(psComment?va("Comment: %s",psComment):"");
+ 
+-		strcpy(m_psReturnString,selectedString);
++		strlcpy(m_psReturnString,selectedString, sizeof(m_psReturnString));
+ 
+ 		if (!ReturnStringIsValid())
+ 		{
+-			strcpy(m_psReturnString,"");
++			strlcpy(m_psReturnString,"", sizeof(m_psReturnString));
+ 		}		
+ 	}
+ }

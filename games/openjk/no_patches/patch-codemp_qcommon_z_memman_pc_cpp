@@ -1,0 +1,16 @@
+$OpenBSD$
+
+strlcpy
+
+Index: codemp/qcommon/z_memman_pc.cpp
+--- codemp/qcommon/z_memman_pc.cpp.orig
++++ codemp/qcommon/z_memman_pc.cpp
+@@ -647,7 +647,7 @@ char *CopyString( const char *in ) {
+ 	}
+ 
+ 	out = (char *) S_Malloc (strlen(in)+1);
+-	strcpy (out, in);
++	strlcpy (out, in, sizeof(out));
+ 	return out;
+ }
+ 

@@ -1,0 +1,16 @@
+$OpenBSD$
+
+strlcpy
+
+Index: codemp/rd-dedicated/tr_shader.cpp
+--- codemp/rd-dedicated/tr_shader.cpp.orig
++++ codemp/rd-dedicated/tr_shader.cpp
+@@ -1623,7 +1623,7 @@ static qboolean ParseStage( shaderStage_t *stage, cons
+ 		{
+ 			char buffer[1024] = "";
+ 			char param[128];
+-			strcpy(param,token);
++			strlcpy(param,token, sizeof(param));
+ 
+ 			while ( 1 )
+ 			{

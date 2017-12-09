@@ -1,0 +1,52 @@
+$OpenBSD$
+
+strlcpy
+
+Index: codemp/botlib/be_ai_char.cpp
+--- codemp/botlib/be_ai_char.cpp.orig
++++ codemp/botlib/be_ai_char.cpp
+@@ -204,7 +204,7 @@ void BotDefaultCharacteristics(bot_character_t *ch, bo
+ 		{
+ 			ch->c[i].type = CT_STRING;
+ 			ch->c[i].value.string = (char *) GetMemory(strlen(defaultch->c[i].value.string)+1);
+-			strcpy(ch->c[i].value.string, defaultch->c[i].value.string);
++			strlcpy(ch->c[i].value.string, defaultch->c[i].value.string, sizeof(ch->c[i].value.string));
+ 		} //end else if
+ 	} //end for
+ } //end of the function BotDefaultCharacteristics
+@@ -232,7 +232,7 @@ bot_character_t *BotLoadCharacterFromFile(char *charfi
+ 	} //end if
+ 	ch = (bot_character_t *) GetClearedMemory(sizeof(bot_character_t) +
+ 					MAX_CHARACTERISTICS * sizeof(bot_characteristic_t));
+-	strcpy(ch->filename, charfile);
++	strlcpy(ch->filename, charfile, sizeof(ch->filename));
+ 	while(PC_ReadToken(source, &token))
+ 	{
+ 		if (!strcmp(token.string, "skill"))
+@@ -308,7 +308,7 @@ bot_character_t *BotLoadCharacterFromFile(char *charfi
+ 					{
+ 						StripDoubleQuotes(token.string);
+ 						ch->c[index].value.string = (char *)GetMemory(strlen(token.string)+1);
+-						strcpy(ch->c[index].value.string, token.string);
++						strlcpy(ch->c[index].value.string, token.string, sizeof(ch->c[index].value.string));
+ 						ch->c[index].type = CT_STRING;
+ 					} //end else if
+ 					else
+@@ -537,7 +537,7 @@ int BotInterpolateCharacters(int handle1, int handle2,
+ 	out = (bot_character_t *) GetClearedMemory(sizeof(bot_character_t) +
+ 					MAX_CHARACTERISTICS * sizeof(bot_characteristic_t));
+ 	out->skill = desiredskill;
+-	strcpy(out->filename, ch1->filename);
++	strlcpy(out->filename, ch1->filename, sizeof(out->filename));
+ 	botcharacters[handle] = out;
+ 
+ 	scale = (float) (desiredskill - ch1->skill) / (ch2->skill - ch1->skill);
+@@ -559,7 +559,7 @@ int BotInterpolateCharacters(int handle1, int handle2,
+ 		{
+ 			out->c[i].type = CT_STRING;
+ 			out->c[i].value.string = (char *) GetMemory(strlen(ch1->c[i].value.string)+1);
+-			strcpy(out->c[i].value.string, ch1->c[i].value.string);
++			strlcpy(out->c[i].value.string, ch1->c[i].value.string, sizeof(out->c[i].value.string));
+ 		} //end else if
+ 	} //end for
+ 	return handle;

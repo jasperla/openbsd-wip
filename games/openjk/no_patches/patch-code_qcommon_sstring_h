@@ -1,0 +1,53 @@
+$OpenBSD$
+
+strlcpy
+
+Index: code/qcommon/sstring.h
+--- code/qcommon/sstring.h.orig
++++ code/qcommon/sstring.h
+@@ -47,18 +47,18 @@ class sstring (public)
+ 	sstring(const sstring<oMaxSize> &o)
+ 	{
+ 		assert(strlen(o.mStorage.data)<MaxSize);
+-		strcpy(mStorage.data,o.mStorage.data);
++		strlcpy(mStorage.data,o.mStorage.data, sizeof(mStorage.data));
+ 	}
+ */
+ 	sstring(const sstring<MaxSize> &o)
+ 	{
+-		//strcpy(mStorage.data,o.mStorage.data);
++		//strlcpy(mStorage.data,o.mStorage.data, sizeof(mStorage.data));
+ 		Q_strncpyz(mStorage.data,o.mStorage.data,sizeof(mStorage.data));
+ 	}
+ 	sstring(const char *s)
+ 	{
+ 		//assert(strlen(s)<MaxSize);
+-		//strcpy(mStorage.data,s);
++		//strlcpy(mStorage.data,s, sizeof(mStorage.data));
+ 		Q_strncpyz(mStorage.data,s,sizeof(mStorage.data));
+ 	}
+ 	sstring( const gsl::cstring_view& v )
+@@ -79,20 +79,20 @@ class sstring (public)
+ 	sstring<oMaxSize> & operator =(const sstring<oMaxSize> &o)
+ 	{
+ 		assert(strlen(o.mStorage.data)<MaxSize);
+-		strcpy(mStorage.data,o.mStorage.data);
++		strlcpy(mStorage.data,o.mStorage.data, sizeof(mStorage.data));
+ 		return *this;
+ 	}
+ */
+ 	sstring<MaxSize> & operator=(const sstring<MaxSize> &o)
+ 	{
+-		//strcpy(mStorage.data,o.mStorage.data);
++		//strlcpy(mStorage.data,o.mStorage.data, sizeof(mStorage.data));
+ 		Q_strncpyz(mStorage.data,o.mStorage.data,sizeof(mStorage.data));
+ 		return *this;
+ 	}
+ 	sstring<MaxSize> & operator=(const char *s)
+ 	{
+ 		assert(strlen(s)<MaxSize);
+-		//strcpy(mStorage.data,s);
++		//strlcpy(mStorage.data,s, sizeof(mStorage.data));
+ 		Q_strncpyz(mStorage.data,s,sizeof(mStorage.data));
+ 		return *this;
+ 	}

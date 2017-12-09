@@ -1,0 +1,109 @@
+$OpenBSD$
+
+strlcpy
+
+Index: code/ui/ui_main.cpp
+--- code/ui/ui_main.cpp.orig
++++ code/ui/ui_main.cpp
+@@ -972,7 +972,7 @@ static qboolean UI_RunMenuScript ( const char **args )
+ //				s_savegame.yes.generic.flags	= QMF_HIGHLIGHT_IF_FOCUS;
+ //				s_savegame.no.generic.flags		= QMF_HIGHLIGHT_IF_FOCUS;
+ 
+-//				strcpy(fileName,s_savedata[s_savegame.currentLine].currentSaveFileName);
++//				strlcpy(fileName,s_savedata[s_savegame.currentLine].currentSaveFileName, sizeof(fileName));
+ //				s_savegame.awaitingSave = qtrue;
+ //				s_savegame.deletegame.generic.flags	= QMF_GRAYED;	// Turn off delete button
+ //				break;
+@@ -1665,12 +1665,12 @@ static void UI_CalcForceStatus(void)
+ 		index = FW_VERY_LIGHT;
+ 		if (who <50)
+ 		{
+-			strcpy(value,"vlk");	// Very light Kyle
++			strlcpy(value,"vlk", sizeof(value));	// Very light Kyle
+ 			lukeFlag = qfalse;
+ 		}
+ 		else
+ 		{
+-			strcpy(value,"vll");	// Very light Luke
++			strlcpy(value,"vll", sizeof(value));	// Very light Luke
+ 		}
+ 
+ 	}
+@@ -1679,12 +1679,12 @@ static void UI_CalcForceStatus(void)
+ 		index = FW_SEMI_LIGHT;
+ 		if ( who<50 )
+ 		{
+-			strcpy(value,"slk");	// Semi-light Kyle
++			strlcpy(value,"slk", sizeof(value));	// Semi-light Kyle
+ 			lukeFlag = qfalse;
+ 		}
+ 		else
+ 		{
+-			strcpy(value,"sll");	// Semi-light light Luke
++			strlcpy(value,"sll", sizeof(value));	// Semi-light light Luke
+ 		}
+ 	}
+ 	else if (percent > 0.40f )
+@@ -1692,12 +1692,12 @@ static void UI_CalcForceStatus(void)
+ 		index = FW_NEUTRAL;
+ 		if ( who<50 )
+ 		{
+-			strcpy(value,"ntk");	// Neutral Kyle
++			strlcpy(value,"ntk", sizeof(value));	// Neutral Kyle
+ 			lukeFlag = qfalse;
+ 		}
+ 		else
+ 		{
+-			strcpy(value,"ntl");	// Netural Luke
++			strlcpy(value,"ntl", sizeof(value));	// Netural Luke
+ 		}
+ 	}
+ 	else if (percent > 0.10f )
+@@ -1705,12 +1705,12 @@ static void UI_CalcForceStatus(void)
+ 		index = FW_SEMI_DARK;
+ 		if ( who<50 )
+ 		{
+-			strcpy(value,"sdk");	// Semi-dark Kyle
++			strlcpy(value,"sdk", sizeof(value));	// Semi-dark Kyle
+ 			lukeFlag = qfalse;
+ 		}
+ 		else
+ 		{
+-			strcpy(value,"sdl");	// Semi-Dark Luke
++			strlcpy(value,"sdl", sizeof(value));	// Semi-Dark Luke
+ 		}
+ 	}
+ 	else
+@@ -1718,12 +1718,12 @@ static void UI_CalcForceStatus(void)
+ 		index = FW_VERY_DARK;
+ 		if ( who<50 )
+ 		{
+-			strcpy(value,"vdk");	// Very dark Kyle
++			strlcpy(value,"vdk", sizeof(value));	// Very dark Kyle
+ 			lukeFlag = qfalse;
+ 		}
+ 		else
+ 		{
+-			strcpy(value,"vdl");	// Very Dark Luke
++			strlcpy(value,"vdl", sizeof(value));	// Very Dark Luke
+ 		}
+ 	}
+ 
+@@ -3004,7 +3004,7 @@ void UI_Load(void)
+ 
+ 	if (menu && menu->window.name)
+ 	{
+-		strcpy(lastName, menu->window.name);
++		strlcpy(lastName, menu->window.name, sizeof(lastName));
+ 	}
+ 	else
+ 	{
+@@ -6515,7 +6515,7 @@ void ReadSaveDirectory (void)
+ 
+ 					struct tm *localTime;
+ 					localTime = localtime( &result );
+-					strcpy(s_savedata[s_savegame.saveFileCnt].currentSaveFileDateTimeString,asctime( localTime ) );
++					strlcpy(s_savedata[s_savegame.saveFileCnt].currentSaveFileDateTimeString,asctime( localTime ) , sizeof(s_savedata[s_savegame.saveFileCnt].currentSaveFileDateTimeString));
+ 					s_savegame.saveFileCnt++;
+ 					if (s_savegame.saveFileCnt == MAX_SAVELOADFILES)
+ 					{

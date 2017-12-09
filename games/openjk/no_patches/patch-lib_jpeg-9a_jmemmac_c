@@ -1,0 +1,16 @@
+$OpenBSD$
+
+strlcpy
+
+Index: lib/jpeg-9a/jmemmac.c
+--- lib/jpeg-9a/jmemmac.c.orig
++++ lib/jpeg-9a/jmemmac.c
+@@ -238,7 +238,7 @@ jpeg_open_backing_store (j_common_ptr cinfo, backing_s
+     next_file_num++;		/* advance counter */
+ 
+     sprintf(info->temp_name, TEMP_FILE_NAME, next_file_num);
+-    strcpy ( (Ptr)fName+1, info->temp_name );
++    strlcpy ( (Ptr)fName+1, info->temp_name , sizeof((Ptr)fName+1));
+     *fName = strlen (info->temp_name);
+     osErr = FSMakeFSSpec ( vRefNum, dirID, fName, &theSpec );
+ 

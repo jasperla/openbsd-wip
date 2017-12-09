@@ -1,0 +1,18 @@
+$OpenBSD$
+
+strlcpy
+
+Index: codemp/ui/ui_main.c
+--- codemp/ui/ui_main.c.orig
++++ codemp/ui/ui_main.c
+@@ -2433,8 +2433,8 @@ static void UI_DrawOpponent(rectDef_t *rect) {
+ 
+ 	if (updateOpponentModel) {
+ 
+-		strcpy(model, UI_Cvar_VariableString("ui_opponentModel"));
+-	  strcpy(headmodel, UI_Cvar_VariableString("ui_opponentModel"));
++		strlcpy(model, UI_Cvar_VariableString("ui_opponentModel"), sizeof(model));
++	  strlcpy(headmodel, UI_Cvar_VariableString("ui_opponentModel"), sizeof(model));
+ 		team[0] = '\0';
+ 
+   	memset( &info2, 0, sizeof(playerInfo_t) );

@@ -1,0 +1,16 @@
+$OpenBSD$
+
+strlcpy
+
+Index: codemp/ui/ui_saber.c
+--- codemp/ui/ui_saber.c.orig
++++ codemp/ui/ui_saber.c
+@@ -210,7 +210,7 @@ qboolean UI_SaberProperNameForSaber( const char *saber
+ 	else
+ 	{
+ 		// no stringed so just use it as it
+-		strcpy( saberProperName, stringedSaberName );
++		strlcpy( saberProperName, stringedSaberName , sizeof(saberProperName));
+ 	}
+ 
+ 	return ret;

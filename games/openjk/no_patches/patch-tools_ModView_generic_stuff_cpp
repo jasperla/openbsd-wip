@@ -1,0 +1,172 @@
+$OpenBSD$
+
+strlcat
+
+Index: tools/ModView/generic_stuff.cpp
+--- tools/ModView/generic_stuff.cpp.orig
++++ tools/ModView/generic_stuff.cpp
+@@ -26,7 +26,7 @@ static bool SetQdirFromPath2( const char *path, const 
+ void SetQdirFromPath( const char *path )
+ {
+ 	char		prevQdir[1024];
+-	strcpy(prevQdir,qdir);
++	strlcpy(prevQdir,qdir, sizeof(prevQdir));
+ 
+ 	bXMenPathHack = false;	// MUST be here
+ 
+@@ -59,7 +59,7 @@ static bool SetQdirFromPath2( const char *path, const 
+ //		bDone = true;
+ 
+ 		char	temp[1024];
+-		strcpy(temp,path);
++		strlcpy(temp,path, sizeof(temp));
+ 		path = temp;
+ 		const char	*c;
+ 		const char *sep;
+@@ -68,7 +68,7 @@ static bool SetQdirFromPath2( const char *path, const 
+ //		if (!(path[0] == '/' || path[0] == '\\' || path[1] == ':'))
+ //		{	// path is partial
+ //			Q_getwd (temp);
+-//			strcat (temp, path);
++//			strlcat (temp, path, sizeof(temp));
+ //			path = temp;
+ //		}
+ 		
+@@ -204,7 +204,7 @@ char *Filename_WithoutPath(LPCSTR psFilename)
+ 			p=psFilename;
+ 	}
+ 
+-	strcpy(sString,p);
++	strlcpy(sString,p, sizeof(sString));
+ */
+ 
+ 	LPCSTR psCopyPos = psFilename;
+@@ -216,7 +216,7 @@ char *Filename_WithoutPath(LPCSTR psFilename)
+ 		psFilename++;
+ 	}
+ 
+-	strcpy(sString,psCopyPos);
++	strlcpy(sString,psCopyPos, sizeof(sString));
+ 
+ 	return sString;
+ 
+@@ -229,7 +229,7 @@ char *Filename_WithoutExt(LPCSTR psFilename)
+ {
+ 	static char sString[MAX_PATH];
+ 
+-	strcpy(sString,psFilename);
++	strlcpy(sString,psFilename, sizeof(sString));
+ 
+ 	char *p = strrchr(sString,'.');		
+ 	char *p2= strrchr(sString,'\\');
+@@ -254,7 +254,7 @@ char *Filename_PathOnly(LPCSTR psFilename)
+ {
+ 	static char sString[MAX_PATH];
+ 
+-	strcpy(sString,psFilename);	
++	strlcpy(sString,psFilename, sizeof(sString));	
+ 	
+ //	for (int i=0; i<strlen(sString); i++)
+ //	{
+@@ -283,7 +283,7 @@ char *Filename_ExtOnly(LPCSTR psFilename)
+ 	if (!p)
+ 		p=psFilename;
+ 
+-	strcpy(sString,p);
++	strlcpy(sString,p, sizeof(sString));
+ 
+ 	return sString;
+ 
+@@ -299,12 +299,12 @@ char *String_EnsureMinLength(LPCSTR psString, int iMin
+ 
+ 	i=(i+1)&7;
+ 
+-	strcpy(sString[i],psString);
++	strlcpy(sString[i],psString, sizeof(sString[i]));
+ 
+ 	// a bit slow and lazy, but who cares?...
+ 	//
+ 	while (strlen(sString[i])<(UINT)iMinLength)
+-		strcat(sString[i]," ");
++		strlcat(sString[i]," ", sizeof(sString[i]));
+ 
+ 	return sString[i];
+ 
+@@ -317,7 +317,7 @@ char *String_ToLower(LPCSTR psString)
+ {
+ 	static char sString[MAX_PATH];
+ 
+-	strcpy(sString,psString);
++	strlcpy(sString,psString, sizeof(sString));
+ 	return strlwr(sString);	
+ 
+ }
+@@ -328,7 +328,7 @@ char *String_ToUpper(LPCSTR psString)
+ {
+ 	static char sString[MAX_PATH];
+ 
+-	strcpy(sString,psString);
++	strlcpy(sString,psString, sizeof(sString));
+ 	return strupr(sString);	
+ 
+ }
+@@ -337,7 +337,7 @@ char *String_ForwardSlash(LPCSTR psString)
+ {
+ 	static char sString[MAX_PATH];
+ 
+-	strcpy(sString,psString);
++	strlcpy(sString,psString, sizeof(sString));
+ 
+ 	char *p;
+ 	while ( (p=strchr(sString,'\\')) != NULL)
+@@ -396,7 +396,7 @@ char *scGetTempPath(void)
+ 		{
+ 			// temp path too long to return, so forget it...
+ 			//
+-			strcpy(sBuffer,"c:");	// "c:\\");	// should be writeable
++			strlcpy(sBuffer,"c:", sizeof(sBuffer));	// "c:\\");	// should be writeable
+ 		}
+ 		
+ 		// strip any trailing backslash...
+@@ -429,7 +429,7 @@ LPCSTR InputSaveFileName(LPCSTR psInitialSaveName, LPC
+ 		
+ //	FileDlg.m_ofn.lpstrInitialDir=psInitialPath;		
+ //	FileDlg.m_ofn.lpstrTitle=psCaption;
+-//	strcpy(name,psInitialSaveName);
++//	strlcpy(name,psInitialSaveName, sizeof(name));
+ //	FileDlg.m_ofn.lpstrFile=name;
+    	
+ 	if (FileDlg.DoModal() == IDOK)
+@@ -471,7 +471,7 @@ LPCSTR InputLoadFileName(LPCSTR psInitialLoadName, LPC
+ 
+ 	CString strInitialLoadName(psInitialLoadName);
+ 			strInitialLoadName.Replace("/","\\");
+-	strcpy(name,(LPCSTR)strInitialLoadName);
++	strlcpy(name,(LPCSTR)strInitialLoadName, sizeof(name));
+ 	FileDlg.m_ofn.lpstrFile=name;
+ 		
+    	if (FileDlg.DoModal() == IDOK)
+@@ -683,9 +683,9 @@ LPCSTR scGetComputerName(void)
+     if (!i++)
+     	{
+     	dwTempBufferSize = (sizeof (cTempBuffer))-1;
+-    	strcpy(cTempBuffer,"");
++    	strlcpy(cTempBuffer,"", sizeof(cTempBuffer));
+     	if (!GetComputerName(cTempBuffer, &dwTempBufferSize))
+-			strcpy(cTempBuffer,"Unknown");	// error retrieving host computer name
++			strlcpy(cTempBuffer,"Unknown", sizeof(cTempBuffer));	// error retrieving host computer name
+     	}
+ 
+     return &cTempBuffer[0];
+@@ -700,9 +700,9 @@ LPCSTR scGetUserName(void)
+     if (!i++)
+    	{
+     	dwTempBufferSize = (sizeof (cTempBuffer))-1;
+-    	strcpy(cTempBuffer,"");
++    	strlcpy(cTempBuffer,"", sizeof(cTempBuffer));
+     	if (!GetUserName(cTempBuffer, &dwTempBufferSize))
+-			strcpy(cTempBuffer,"Unknown");	// error retrieving host computer name
++			strlcpy(cTempBuffer,"Unknown", sizeof(cTempBuffer));	// error retrieving host computer name
+    	}
+ 
+     return &cTempBuffer[0];

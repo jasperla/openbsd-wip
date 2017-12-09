@@ -1,0 +1,23 @@
+$OpenBSD$
+
+strlcpy
+
+Index: code/cgame/FxTemplate.cpp
+--- code/cgame/FxTemplate.cpp.orig
++++ code/cgame/FxTemplate.cpp
+@@ -91,7 +91,7 @@ void CPrimitiveTemplate::operator=(const CPrimitiveTem
+ {
+ 	// I'm assuming that doing a memcpy wouldn't work here
+ 	// If you are looking at this and know a better way to do this, please tell me.
+-	strcpy( mName, that.mName );
++	strlcpy( mName, that.mName , sizeof(mName));
+ 
+ 	mType				= that.mType;
+ 
+@@ -1872,4 +1872,4 @@ bool CPrimitiveTemplate::ParsePrimitive( const CGPGrou
+ 		}
+ 	}
+ 	return true;
+-}
+\ No newline at end of file
++}

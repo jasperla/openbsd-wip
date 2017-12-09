@@ -1,0 +1,25 @@
+$OpenBSD$
+
+strlcpy
+
+Index: tools/Assimilate/xsiimp.cpp
+--- tools/Assimilate/xsiimp.cpp.orig
++++ tools/Assimilate/xsiimp.cpp
+@@ -57,7 +57,7 @@ split_fn(char *path,char *file,char *pf)
+ 
+ 	do_split:
+ 	if(file)
+-		strcpy(file,&pf[fn_loc]);
++		strlcpy(file,&pf[fn_loc], sizeof(file));
+ 	if(path) {
+ 		if(bs_loc>0)  {
+ 			for(jx=0; jx<bs_loc; ++jx)
+@@ -880,7 +880,7 @@ int XSI_GetNumBones()
+ void XSI_GetBoneName(int bone,char *bonename)
+ {
+ 	assert(bone>=0&&bone<nsNodes);
+-	strcpy(bonename,sNodes[bone].name);
++	strlcpy(bonename,sNodes[bone].name, sizeof(bonename));
+ }
+ 
+ void XSI_Cleanup()

@@ -1,0 +1,23 @@
+$OpenBSD$
+
+strlcat etc
+
+Index: code/game/g_misc_model.cpp
+--- code/game/g_misc_model.cpp.orig
++++ code/game/g_misc_model.cpp
+@@ -47,13 +47,13 @@ void SetMiscModelModels( char *modelNameString, gentit
+ 		strncpy( damageModel, modelNameString, len );
+ 		damageModel[len] = 0;
+ 		strncpy( chunkModel, damageModel, sizeof(chunkModel));
+-		strcat( damageModel, "_d1.md3" );
++		strlcat( damageModel, "_d1.md3" , sizeof(damageModel));
+ 		ent->s.modelindex2 = G_ModelIndex( damageModel );
+ 
+ 		ent->spawnflags |= 4; // deadsolid
+ 
+ 		//Chunk model
+-		strcat( chunkModel, "_c1.md3" );
++		strlcat( chunkModel, "_c1.md3" , sizeof(chunkModel));
+ 		ent->s.modelindex3 = G_ModelIndex( chunkModel );
+ 	}
+ }

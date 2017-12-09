@@ -1,0 +1,25 @@
+$OpenBSD$
+
+strlcpy
+
+Index: tools/Assimilate/oddbits.cpp
+--- tools/Assimilate/oddbits.cpp.orig
++++ tools/Assimilate/oddbits.cpp
+@@ -68,7 +68,7 @@ char *scGetTempPath(void)
+ 			{
+ 			// temp path too long to return, so forget it...
+ 			//
+-			strcpy(sBuffer,"c:");	// "c:\\");	// should be writeable
++			strlcpy(sBuffer,"c:", sizeof(sBuffer));	// "c:\\");	// should be writeable
+ 			}
+ 
+ 		// strip any trailing backslash...
+@@ -91,7 +91,7 @@ char *InputLoadFileName(char *psInitialLoadName, char 
+ 		
+ 	FileDlg.m_ofn.lpstrInitialDir=psInitialDir;
+ 	FileDlg.m_ofn.lpstrTitle=psCaption;	
+-	strcpy(sName,psInitialLoadName);
++	strlcpy(sName,psInitialLoadName, sizeof(sName));
+ 	FileDlg.m_ofn.lpstrFile=sName;
+ 		
+ 	if (FileDlg.DoModal() == IDOK)

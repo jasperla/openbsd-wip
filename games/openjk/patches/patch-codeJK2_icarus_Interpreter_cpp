@@ -1,0 +1,38 @@
+$OpenBSD$
+
+strlcat
+
+Index: codeJK2/icarus/Interpreter.cpp
+--- codeJK2/icarus/Interpreter.cpp.orig
++++ codeJK2/icarus/Interpreter.cpp
+@@ -171,7 +171,7 @@ int CInterpreter::Error( char *format, ... )
+ 	vsprintf (error_msg, format, argptr);
+ 	va_end (argptr);
+ 
+-	strcpy((char *) work_dir, getcwd( (char *) &work_dir, 1024 ) );
++	strlcpy((char *) work_dir, getcwd( (char *) &work_dir, 1024 ) , sizeof((char *) work_dir));
+ 
+ 	if (error_file[1] == ':')
+ 	{
+@@ -184,9 +184,9 @@ int CInterpreter::Error( char *format, ... )
+ 
+ 	if (m_sCurrentLine.length())
+ 	{
+-		strcat(out_msg, "\nLine:\n\n");
+-		strcat(out_msg, m_sCurrentLine.c_str());
+-		strcat(out_msg, "\n");
++		strlcat(out_msg, "\nLine:\n\n", sizeof(out_msg));
++		strlcat(out_msg, m_sCurrentLine.c_str(), sizeof(out_msg));
++		strlcat(out_msg, "\n", sizeof(out_msg));
+ 	}
+ 
+ #ifdef __POP_UPS__	
+@@ -954,7 +954,7 @@ int CInterpreter::GetType( char *get )
+ 		return false;
+ 	}
+ 
+-	strcpy(get, string);
++	strlcpy(get, string, sizeof(get));
+ 
+ 	return true;
+ }

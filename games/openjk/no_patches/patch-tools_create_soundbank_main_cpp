@@ -1,0 +1,68 @@
+$OpenBSD$
+
+strlcat
+
+Index: tools/create_soundbank/main.cpp
+--- tools/create_soundbank/main.cpp.orig
++++ tools/create_soundbank/main.cpp
+@@ -36,9 +36,9 @@ void processfile( const char* path, const char* filena
+ 	// open the file and write it to the massive bank
+ 
+ 
+-	strcpy(name, path);
+-	strcat(name,"\\");
+-	strcat(name, filename);
++	strlcpy(name, path, sizeof(name));
++	strlcat(name,"\\", sizeof(name));
++	strlcat(name, filename, sizeof(name));
+ 
+ 	in	= fopen(name, "rb");
+ 	
+@@ -66,13 +66,13 @@ void processfile( const char* path, const char* filena
+ 
+ 	char osname[256];
+ 
+-	strcpy(osname, "d:\\base");
+-	strcat(osname, name + basesize);
++	strlcpy(osname, "d:\\base", sizeof(osname));
++	strlcat(osname, name + basesize, sizeof(osname));
+ 
+ 	unsigned int filecode	= crc32(0, (const byte *)osname, strlen(osname));
+ 
+ 	char qname[64];
+-	strcpy(qname, name + basesize + 1);
++	strlcpy(qname, name + basesize + 1, sizeof(qname));
+ 
+ 	fwrite(&filecode, sizeof(filecode), 1, out2);
+ 	fwrite(&offset, sizeof(offset), 1, out2);
+@@ -105,8 +105,8 @@ void processfile( const char* path, const char* filena
+ void process( const char* path)
+ {
+ 	char spec[256];
+-	strcpy(spec, path);
+-	strcat(spec, "\\*.*");
++	strlcpy(spec, path, sizeof(spec));
++	strlcat(spec, "\\*.*", sizeof(spec));
+ 
+ 	_finddata_t data;
+ 	int h = _findfirst(spec, &data);
+@@ -115,9 +115,9 @@ void process( const char* path)
+ 		if(data.attrib & _A_SUBDIR && strcmp(data.name,".") && strcmp(data.name,"..") )
+ 		{
+ 			char sub[256];
+-			strcpy(sub,path);
+-			strcat(sub,"\\");
+-			strcat(sub,data.name);
++			strlcpy(sub,path, sizeof(sub));
++			strlcat(sub,"\\", sizeof(sub));
++			strlcat(sub,data.name, sizeof(sub));
+ 			process(sub);
+ 		}
+ 		else if(strstr(data.name,".wxb"))
+@@ -168,4 +168,4 @@ int main(int argc, const char** argv)
+ 	printf("%d files processed.\n", count);
+ 
+ 	return 1;
+-}
+\ No newline at end of file
++}

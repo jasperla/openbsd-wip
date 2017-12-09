@@ -1,0 +1,16 @@
+$OpenBSD$
+
+strlcpy
+
+Index: codemp/client/cl_cin.cpp
+--- codemp/client/cl_cin.cpp.orig
++++ codemp/client/cl_cin.cpp
+@@ -1463,7 +1463,7 @@ int CIN_PlayCinematic( const char *arg, int x, int y, 
+ 
+ 	cin.currentHandle = currentHandle;
+ 
+-	strcpy(cinTable[currentHandle].fileName, name);
++	strlcpy(cinTable[currentHandle].fileName, name, sizeof(cinTable[currentHandle].fileName));
+ 
+ 	cinTable[currentHandle].ROQSize = 0;
+ 	cinTable[currentHandle].ROQSize = FS_FOpenFileRead (cinTable[currentHandle].fileName, &cinTable[currentHandle].iFile, qtrue);

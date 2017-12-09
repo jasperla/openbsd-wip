@@ -1,0 +1,74 @@
+$OpenBSD$
+
+strlcat
+
+Index: tools/Assimilate/Sequences.cpp
+--- tools/Assimilate/Sequences.cpp.orig
++++ tools/Assimilate/Sequences.cpp
+@@ -164,7 +164,7 @@ void ReadXSIHeader(LPCSTR psFilename, int &iStartFrame
+ 								if (isspace(*psSearch) || *psSearch=='"')
+ 									continue;
+ 
+-								strcat(sScanBuffer,va("%c",*psSearch));
++								strlcat(sScanBuffer,va("%c",*psSearch), sizeof(sScanBuffer));
+ 							}
+ 
+ 							char	sTemp[2048];
+@@ -244,10 +244,10 @@ static void ReadASEHeader_Actual(LPCSTR psFilename, in
+ 	if (bReadingGLA)
+ 	{
+ 		char sTemp[1024];
+-		strcpy(sTemp,psFilename);
++		strlcpy(sTemp,psFilename, sizeof(sTemp));
+ 		if (!(strstr(psFilename,".gla") || strstr(psFilename,".GLA")))
+ 		{
+-			strcat(sTemp,".gla");
++			strlcat(sTemp,".gla", sizeof(sTemp));
+ 		}
+ 
+ 		iStartFrame = 0;
+@@ -463,7 +463,7 @@ void CSequence::SetPath(LPCTSTR path)
+ 	else
+ 	{
+ 		m_path = (char*)malloc(strlen(path) + 1);
+-		strcpy(m_path, path);
++		strlcpy(m_path, path, sizeof(m_path));
+ 	}
+ }
+ 
+@@ -618,7 +618,7 @@ void CSequence::SetName(LPCTSTR name)
+ 	else
+ 	{
+ 		m_name = (char*)malloc(strlen(name) + 1);
+-		strcpy(m_name, name);
++		strlcpy(m_name, name, sizeof(m_name));
+ 	}
+ }
+ 
+@@ -898,7 +898,7 @@ void CSequence::SetSound(LPCTSTR name)
+ 	else
+ 	{
+ 		m_sound = (char*)malloc(strlen(name) + 1);
+-		strcpy(m_sound, name);
++		strlcpy(m_sound, name, sizeof(m_sound));
+ 	}
+ }
+ 
+@@ -920,7 +920,7 @@ void CSequence::SetAction(LPCTSTR name)
+ 	else
+ 	{
+ 		m_action = (char*)malloc(strlen(name) + 1);
+-		strcpy(m_action, name);
++		strlcpy(m_action, name, sizeof(m_action));
+ 	}
+ }
+ 
+@@ -948,7 +948,7 @@ void CSequence::SetEnum(LPCTSTR name)
+ 	else
+ 	{
+ 		m_enum = (char*)malloc(strlen(name) + 1);
+-		strcpy(m_enum, name);
++		strlcpy(m_enum, name, sizeof(m_enum));
+ 	}
+ 	*/
+ 	m_enum = name;

@@ -1,0 +1,25 @@
+$OpenBSD$
+
+strlcpy
+
+Index: tools/ModView/commtest/MainFrm.cpp
+--- tools/ModView/commtest/MainFrm.cpp.orig
++++ tools/ModView/commtest/MainFrm.cpp
+@@ -390,7 +390,7 @@ char *Filename_WithoutPath(LPCSTR psFilename)
+ 			p=psFilename;
+ 	}
+ 
+-	strcpy(sString,p);
++	strlcpy(sString,p, sizeof(sString));
+ */
+ 
+ 	LPCSTR psCopyPos = psFilename;
+@@ -402,7 +402,7 @@ char *Filename_WithoutPath(LPCSTR psFilename)
+ 		psFilename++;
+ 	}
+ 
+-	strcpy(sString,psCopyPos);
++	strlcpy(sString,psCopyPos, sizeof(sString));
+ 
+ 	return sString;
+ 

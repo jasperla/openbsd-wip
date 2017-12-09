@@ -1,0 +1,16 @@
+$OpenBSD$
+
+strlcpy
+
+Index: codemp/game/bg_saga.c
+--- codemp/game/bg_saga.c.orig
++++ codemp/game/bg_saga.c
+@@ -1466,7 +1466,7 @@ qboolean BG_SiegeCheckClassLegality(int team, char *cl
+ 	}
+ 
+ 	//Didn't find it, so copy the name of the first valid class over it.
+-	strcpy(classname, (*teamPtr)->classes[0]->name);
++	strlcpy(classname, (*teamPtr)->classes[0]->name, sizeof(classname));
+ 
+ 	return qfalse;
+ }

@@ -1,0 +1,34 @@
+$OpenBSD$
+
+strlcat
+
+Index: code/ui/ui_saber.cpp
+--- code/ui/ui_saber.cpp.orig
++++ code/ui/ui_saber.cpp
+@@ -153,7 +153,7 @@ qboolean UI_SaberParseParm( const char *saberName, con
+ 			{
+ 				continue;
+ 			}
+-			strcpy( saberData, value );
++			strlcpy( saberData, value , sizeof(saberData));
+ 			COM_EndParseSession(  );
+ 			return qtrue;
+ 		}
+@@ -320,7 +320,7 @@ void UI_SaberLoadParms( void )
+ 		{
+ 			if ( totallen && *(marker-1) == '}' )
+ 			{//don't let it end on a } because that should be a stand-alone token
+-				strcat( marker, " " );
++				strlcat( marker, " " , sizeof(marker));
+ 				totallen++;
+ 				marker++;
+ 			}
+@@ -329,7 +329,7 @@ void UI_SaberLoadParms( void )
+ 			if ( totallen + len >= MAX_SABER_DATA_SIZE ) {
+ 				Com_Error( ERR_FATAL, "UI_SaberLoadParms: ran out of space before reading %s\n(you must make the .npc files smaller)", holdChar );
+ 			}
+-			strcat( marker, buffer );
++			strlcat( marker, buffer , sizeof(marker));
+ 			ui.FS_FreeFile( buffer );
+ 
+ 			totallen += len;

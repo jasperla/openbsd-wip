@@ -1,0 +1,34 @@
+$OpenBSD$
+
+strlcat
+
+Index: code/ui/ui_shared.cpp
+--- code/ui/ui_shared.cpp.orig
++++ code/ui/ui_shared.cpp
+@@ -1329,7 +1329,7 @@ const char *String_Alloc(const char *p)
+ 	if (len + strPoolIndex + 1 < STRING_POOL_SIZE)
+ 	{
+ 		int ph = strPoolIndex;
+-		strcpy(&strPool[strPoolIndex], p);
++		strlcpy(&strPool[strPoolIndex], p, sizeof(strPool) - strPoolIndex);
+ 		strPoolIndex += len + 1;
+ 
+ 		str = strHandle[hash];
+@@ -8682,7 +8682,7 @@ void Item_Text_AutoWrapped_Paint(itemDef_t *item)
+ 					if ( *p && y + height + 4 > item->window.rect.h - height)
+ 					{
+ 						item->special = 1;
+-						strcat(buff,"...");//uhh, let's render some ellipses
++						strlcat(buff,"...", sizeof(buff));//uhh, let's render some ellipses
+ 					}
+ 				DC->drawText(item->textRect.x, item->textRect.y, item->textscale, color, buff, 0, item->textStyle, item->font);
+ 			}
+@@ -8695,7 +8695,7 @@ void Item_Text_AutoWrapped_Paint(itemDef_t *item)
+ 			}
+ 			else
+ 			{
+-				strcpy(buff,"...");
++				strlcpy(buff,"...", sizeof(buff));
+ 				len = 3;
+ 			}
+ 			if (*p == '\0')

@@ -1,0 +1,16 @@
+$OpenBSD$
+
+strlcpy
+
+Index: codemp/game/g_team.c
+--- codemp/game/g_team.c.orig
++++ codemp/game/g_team.c
+@@ -1252,7 +1252,7 @@ void TeamplayInfoMessage( gentity_t *ent ) {
+ 			j = strlen(entry);
+ 			if (stringlength + j >= sizeof(string))
+ 				break;
+-			strcpy (string + stringlength, entry);
++			strlcpy (string + stringlength, entry, sizeof(string + stringlength));
+ 			stringlength += j;
+ 			cnt++;
+ 		}

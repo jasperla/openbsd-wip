@@ -1,0 +1,62 @@
+$OpenBSD$
+
+strlcpy
+
+Index: code/qcommon/strip.cpp
+--- code/qcommon/strip.cpp.orig
++++ code/qcommon/strip.cpp
+@@ -356,8 +356,8 @@ void GetLine(char *&Data, int &Size, int &token, char 
+ 		return;
+ 	}
+ 
+-//	strcpy(temp_data, "   DATA \"test of the data\ntest test\ndfa dfd");
+-//	strcpy(temp_data, "   DATA");
++//	strlcpy(temp_data, "   DATA \"test of the data\ntest test\ndfa dfd", sizeof(temp_data));
++//	strlcpy(temp_data, "   DATA", sizeof(temp_data));
+ 
+ 	pos = temp_data;
+ 	while((*pos) && strchr(" \n\r", *pos))
+@@ -418,7 +418,7 @@ void GetLine(char *&Data, int &Size, int &token, char 
+ 		}
+ 		*pos = 0;
+ 
+-		strcpy(save_data, test_token);
++		strlcpy(save_data, test_token, sizeof(save_data));
+ 	}
+ }
+ 
+@@ -501,7 +501,7 @@ void cStrings::SetReference(char *newReference)
+ 	}
+ 
+ 	Reference = new char[strlen(newReference)+1];
+-	strcpy(Reference, newReference);
++	strlcpy(Reference, newReference, sizeof(Reference));
+ }
+ 
+ bool cStrings::UnderstandToken(int token, char *data )
+@@ -628,14 +628,14 @@ void cStringsSingle::SetText(const char *newText)
+ 	{
+ 		const char sDebugString[]="SP:";
+ 		Dest = Text = new char[length + strlen(sDebugString)];
+-		strcpy(Dest,sDebugString);
++		strlcpy(Dest,sDebugString, sizeof(Dest));
+ 		Dest += strlen(Dest);
+ 	}
+ 	else
+ 	{
+ 		Dest = Text = new char[length];
+ 	}
+-	strcpy(Dest, newText);
++	strlcpy(Dest, newText, sizeof(Dest));
+ }
+ 
+ 
+@@ -801,7 +801,7 @@ void cStringPackage::SetReference(char *newReference)
+ 	}
+ 
+ 	Reference = new char[strlen(newReference)+1];
+-	strcpy(Reference, newReference);
++	strlcpy(Reference, newReference, sizeof(Reference));
+ }
+ 
+ 

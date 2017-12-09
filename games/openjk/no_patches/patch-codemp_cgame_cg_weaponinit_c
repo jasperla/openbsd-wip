@@ -1,0 +1,16 @@
+$OpenBSD$
+
+strlcpy
+
+Index: codemp/cgame/cg_weaponinit.c
+--- codemp/cgame/cg_weaponinit.c.orig
++++ codemp/cgame/cg_weaponinit.c
+@@ -90,7 +90,7 @@ void CG_RegisterWeapon( int weaponNum) {
+ 		weaponInfo->ammoModel = trap->R_RegisterModel( ammo->world_model[0] );
+ 	}
+ 
+-//	strcpy( path, item->view_model );
++//	strlcpy( path, item->view_model , sizeof(path));
+ //	COM_StripExtension( path, path );
+ //	strcat( path, "_flash.md3" );
+ 	weaponInfo->flashModel = 0;//trap->R_RegisterModel( path );
