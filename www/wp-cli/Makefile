@@ -4,7 +4,7 @@ COMMENT =	command line tool for wordpress
 
 GH_ACCOUNT =	wp-cli
 GH_PROJECT =	wp-cli
-GH_TAGNAME =	v1.2.1
+GH_TAGNAME =	v1.4.1
 
 EXTRACT_ONLY =
 EXTRACT_SUFX =	.phar
