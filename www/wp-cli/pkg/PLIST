@@ -1,3 +1,0 @@
-@comment $OpenBSD$
-bin/wp
-bin/wp-cli.phar
