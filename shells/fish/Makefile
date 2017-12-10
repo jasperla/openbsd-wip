@@ -2,7 +2,7 @@
 
 COMMENT =		friendly interactive shell
 
-V =			2.6.0
+V =			2.7.0
 DISTNAME =		fish-$V
 
 CATEGORIES =		shells
@@ -12,7 +12,7 @@ HOMEPAGE =		http://fishshell.com/
 # GPLv2 only
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} c intl m ncurses pcre2-32
+WANTLIB += ${COMPILER_LIBCXX} c curses intl m pcre2-32
 
 MASTER_SITES =		http://fishshell.com/files/$V/
 
