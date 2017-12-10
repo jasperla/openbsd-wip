@@ -18,8 +18,6 @@ MASTER_SITES =		http://fishshell.com/files/$V/
 
 MODULES =		lang/python
 
-COMPILER =		clang
-
 BUILD_DEPENDS =		devel/gettext-tools
 
 LIB_DEPENDS =		devel/pcre2 \
@@ -31,6 +29,8 @@ TEST_DEPENDS =		${RUN_DEPENDS}
 MODPY_ADJ_FILES =	share/tools/create_manpage_completions.py \
 			share/tools/deroff.py \
 			share/tools/web_config/webconfig.py
+
+MAKE_FLAGS =		V=1
 
 USE_GMAKE =		Yes
 CONFIGURE_STYLE =	gnu

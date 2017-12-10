@@ -4,14 +4,14 @@ $OpenBSD$
 @@ -35,6 +35,16 @@ function __fish_print_packages
          return
      end
- 
+
 +    # pkg_info on OpenBSD provides versioning info which we want for
 +    # installed packages
 +    if begin
 +            type -q -f pkg_add
 +            and test (uname) = "OpenBSD"
 +        end
-+        pkg_info -q
++        ls -1 /var/db/pkg
 +        return
 +    end
 +
