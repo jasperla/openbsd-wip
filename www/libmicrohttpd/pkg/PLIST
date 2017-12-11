@@ -1,0 +1,10 @@
+@comment $OpenBSD$
+include/microhttpd.h
+@info info/libmicrohttpd-tutorial.info
+@info info/libmicrohttpd.info
+info/libmicrohttpd_performance_data.png
+lib/libmicrohttpd.a
+lib/libmicrohttpd.la
+@lib lib/libmicrohttpd.so.${LIBmicrohttpd_VERSION}
+lib/pkgconfig/libmicrohttpd.pc
+@man man/man3/libmicrohttpd.3
