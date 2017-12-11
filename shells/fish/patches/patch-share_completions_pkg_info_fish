@@ -1,6 +1,8 @@
 $OpenBSD$
---- share/completions/pkg_info.fish.orig	Wed Apr 26 08:59:16 2017
-+++ share/completions/pkg_info.fish	Wed Apr 26 09:04:01 2017
+
+Index: share/completions/pkg_info.fish
+--- share/completions/pkg_info.fish.orig
++++ share/completions/pkg_info.fish
 @@ -0,0 +1,5 @@
 +#completion for pkg_info
 +

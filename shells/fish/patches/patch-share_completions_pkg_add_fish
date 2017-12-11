@@ -1,4 +1,5 @@
 $OpenBSD$
+
 Index: share/completions/pkg_add.fish
 --- share/completions/pkg_add.fish.orig
 +++ share/completions/pkg_add.fish

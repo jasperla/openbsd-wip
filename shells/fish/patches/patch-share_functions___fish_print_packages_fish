@@ -1,20 +1,27 @@
 $OpenBSD$
---- share/functions/__fish_print_packages.fish.orig	Tue Apr 25 15:29:00 2017
-+++ share/functions/__fish_print_packages.fish	Tue Apr 25 16:45:35 2017
-@@ -35,6 +35,16 @@ function __fish_print_packages
-         return
-     end
 
-+    # pkg_info on OpenBSD provides versioning info which we want for
-+    # installed packages
-+    if begin
-+            type -q -f pkg_add
-+            and test (uname) = "OpenBSD"
-+        end
-+        ls -1 /var/db/pkg
+Index: share/functions/__fish_print_packages.fish
+--- share/functions/__fish_print_packages.fish.orig
++++ share/functions/__fish_print_packages.fish
+@@ -27,11 +27,17 @@ function __fish_print_packages
+ 
+     # Pkg is fast on FreeBSD and provides versioning info which we want for
+     # installed packages
+-    if begin
+-            type -q -f pkg
+-            and test (uname) = "FreeBSD"
+-        end
++    if type -q -f pkg
+         pkg query "%n-%v"
 +        return
 +    end
 +
-     # Caches for 5 minutes
-     if type -q -f pacman
-         set cache_file $XDG_CACHE_HOME/.pac-cache.$USER
++    # pkg_info on OpenBSD provides versioning info which we want for
++    # installed packages but, calling it directly can cause delays in
++    # returning information if another pkg_* tool have a lock.
++    # Listing /var/db/pkg is a clean alternative.
++    if type -q -f pkg_add
++        set -l files /var/db/pkg/*; string replace '/var/db/pkg/' '' -- $files
+         return
+     end
+ 
