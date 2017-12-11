@@ -2,7 +2,7 @@
 
 COMMENT =		web application source generator
 
-DISTNAME =		kwebapp-0.3.3
+DISTNAME =		kwebapp-0.3.9
 CATEGORIES =		www
 
 HOMEPAGE =		https://kristaps.bsd.lv/kwebapp/
@@ -15,7 +15,8 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += c
 
-LIB_DEPENDS =		databases/sqlite3
+RUN_DEPENDS =		databases/ksql \
+			www/kcgi
 
 ALL_TARGET =		"kwebapp"
 CONFIGURE_STYLE =	simple
