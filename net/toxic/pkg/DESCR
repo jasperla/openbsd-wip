@@ -1,3 +1,9 @@
 Toxic is a Tox-based instant messenging client which formerly resided
 in the Tox core repository, and is now available as a standalone
 application.
+
+Flavors:
+	python	 - build with Python scripting support
+	no_x11	 - build without X11 support
+	notify	 - build with dekstop notifications support
+	sound	 - build with audio call and sound notifications support

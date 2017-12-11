@@ -2,12 +2,10 @@
 
 COMMENT =		Tox client library
 
-V =			0.1.2
+V =			0.1.10
 DISTNAME =		toxcore-$V
 CATEGORIES =		net telephony
 HOMEPAGE =		https://tox.chat/
-
-MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 
 # GPLv3
 PERMIT_PACKAGE_CDROM =	Yes
@@ -17,13 +15,11 @@ SHARED_LIBS +=  toxcore                   0.0 # 0.0
 SHARED_LIBS +=  toxdns                    0.0 # 0.0
 SHARED_LIBS +=  toxencryptsave            0.0 # 0.0
 
-WANTLIB = c m opus pthread sodium vpx ${MODGCC4_CPPWANTLIB}
+WANTLIB = c m opus pthread sodium vpx ${COMPILER_LIBCXX}
 
 GH_ACCOUNT =		TokTok
 GH_PROJECT =		c-toxcore
 GH_TAGNAME =		v$V
-
-MODULES =		gnu gcc4
 
 BUILD_DEPENDS +=	${MODGNU_AUTOCONF_DEPENDS} \
 			${MODGNU_AUTOMAKE_DEPENDS} \
