@@ -1,8 +1,4 @@
 PR created upstream: https://github.com/fish-shell/fish-shell/pull/4584
 
-* some completions for fish_TAB cause fish to crash ( https://github.com/fish-shell/fish-shell/issues/3938 )
 * Tests never finish
-* Some completions may be wrong.  BSD- (jot, etc.) Linux-specific stuff should be
-  removed.
-* Figure out why errno test fails and remove the patch.
 
