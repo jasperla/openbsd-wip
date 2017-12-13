@@ -1,5 +1,8 @@
 $OpenBSD$
 
+This can be removed when 3.0 is released:
+https://github.com/fish-shell/fish-shell/pull/4584/
+
 Index: share/completions/pkg_add.fish
 --- share/completions/pkg_add.fish.orig
 +++ share/completions/pkg_add.fish

@@ -1,10 +1,13 @@
 $OpenBSD$
 
+This can be removed when 3.0 is released:
+https://github.com/fish-shell/fish-shell/pull/4584/
+
 Index: share/functions/__fish_print_packages.fish
 --- share/functions/__fish_print_packages.fish.orig
 +++ share/functions/__fish_print_packages.fish
 @@ -27,11 +27,17 @@ function __fish_print_packages
- 
+
      # Pkg is fast on FreeBSD and provides versioning info which we want for
      # installed packages
 -    if begin
@@ -24,4 +27,4 @@ Index: share/functions/__fish_print_packages.fish
 +        set -l files /var/db/pkg/*; string replace '/var/db/pkg/' '' -- $files
          return
      end
- 
+

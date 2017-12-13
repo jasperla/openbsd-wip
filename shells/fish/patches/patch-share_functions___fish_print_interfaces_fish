@@ -1,9 +1,12 @@
 $OpenBSD$
 
+This can be removed when 3.0 is released:
+https://github.com/fish-shell/fish-shell/pull/4584/
+
 Index: share/functions/__fish_print_interfaces.fish
 --- share/functions/__fish_print_interfaces.fish.orig
 +++ share/functions/__fish_print_interfaces.fish
-@@ -3,6 +3,11 @@ function __fish_print_interfaces --description "Print 
+@@ -3,6 +3,11 @@ function __fish_print_interfaces --description "Print
          set -l interfaces /sys/class/net/*
          string replace /sys/class/net/ '' $interfaces
      else # OSX/BSD

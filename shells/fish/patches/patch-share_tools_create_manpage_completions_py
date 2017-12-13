@@ -1,12 +1,15 @@
 $OpenBSD$
 
+This can be removed when 3.0 is released:
+https://github.com/fish-shell/fish-shell/pull/4584/
+
 Index: share/tools/create_manpage_completions.py
 --- share/tools/create_manpage_completions.py.orig
 +++ share/tools/create_manpage_completions.py
 @@ -857,7 +857,7 @@ def parse_and_output_man_pages(paths, output_directory
      add_diagnostic("Successfully parsed %d / %d pages" % (successful_count, total_count), BRIEF_VERBOSE)
      flush_diagnostics(sys.stderr)
- 
+
 -def get_paths_from_manpath():
 +def get_paths_from_man_locations():
      # Return all the paths to man(1) and man(8) files in the manpath
@@ -44,12 +47,12 @@ Index: share/tools/create_manpage_completions.py
      for parent_path in parent_paths:
 @@ -943,8 +950,8 @@ if __name__ == "__main__":
              assert False, "unhandled option"
- 
+
      if use_manpath:
 -        # Fetch all man1 and man8 files from the manpath
 -        file_paths.extend(get_paths_from_manpath())
 +        # Fetch all man1 and man8 files from the manpath or man.conf
 +        file_paths.extend(get_paths_from_man_locations())
- 
+
      if cleanup_directories:
          for cleanup_dir in cleanup_directories:

@@ -1,5 +1,8 @@
 $OpenBSD$
 
+This can be removed when 3.0 is released:
+https://github.com/fish-shell/fish-shell/pull/4584/
+
 Index: share/completions/signify.fish
 --- share/completions/signify.fish.orig
 +++ share/completions/signify.fish
