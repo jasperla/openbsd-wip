@@ -7,14 +7,14 @@ DISTNAME =		fish-$V
 
 CATEGORIES =		shells
 
-HOMEPAGE =		http://fishshell.com/
+HOMEPAGE =		https://fishshell.com/
 
 # GPLv2 only
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} c curses intl m pcre2-32
 
-MASTER_SITES =		http://fishshell.com/files/$V/
+MASTER_SITES =		https://fishshell.com/files/$V/
 
 MODULES =		lang/python
 
