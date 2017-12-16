@@ -1,0 +1,4 @@
+@comment $OpenBSD$
+@bin bin/openjazz
+share/openjazz/
+share/openjazz/openjazz.000

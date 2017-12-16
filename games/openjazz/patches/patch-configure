@@ -1,0 +1,191 @@
+$OpenBSD$
+
+Upstream says libxmp is better than libmodplug.
+But it searches for libmodplug first and uses it if found.
+So rip out the libmodplug detection from configure.
+
+Index: configure
+--- configure.orig
++++ configure
+@@ -3467,66 +3467,6 @@ $as_echo "yes" >&6; }
+ fi
+ 
+ pkg_failed=no
+-{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for libmodplug" >&5
+-$as_echo_n "checking for libmodplug... " >&6; }
+-
+-if test -n "$libmodplug_CFLAGS"; then
+-    pkg_cv_libmodplug_CFLAGS="$libmodplug_CFLAGS"
+- elif test -n "$PKG_CONFIG"; then
+-    if test -n "$PKG_CONFIG" && \
+-    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"libmodplug\""; } >&5
+-  ($PKG_CONFIG --exists --print-errors "libmodplug") 2>&5
+-  ac_status=$?
+-  $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
+-  test $ac_status = 0; }; then
+-  pkg_cv_libmodplug_CFLAGS=`$PKG_CONFIG --cflags "libmodplug" 2>/dev/null`
+-		      test "x$?" != "x0" && pkg_failed=yes
+-else
+-  pkg_failed=yes
+-fi
+- else
+-    pkg_failed=untried
+-fi
+-if test -n "$libmodplug_LIBS"; then
+-    pkg_cv_libmodplug_LIBS="$libmodplug_LIBS"
+- elif test -n "$PKG_CONFIG"; then
+-    if test -n "$PKG_CONFIG" && \
+-    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"libmodplug\""; } >&5
+-  ($PKG_CONFIG --exists --print-errors "libmodplug") 2>&5
+-  ac_status=$?
+-  $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
+-  test $ac_status = 0; }; then
+-  pkg_cv_libmodplug_LIBS=`$PKG_CONFIG --libs "libmodplug" 2>/dev/null`
+-		      test "x$?" != "x0" && pkg_failed=yes
+-else
+-  pkg_failed=yes
+-fi
+- else
+-    pkg_failed=untried
+-fi
+-
+-
+-
+-if test $pkg_failed = yes; then
+-   	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+-$as_echo "no" >&6; }
+-
+-if $PKG_CONFIG --atleast-pkgconfig-version 0.20; then
+-        _pkg_short_errors_supported=yes
+-else
+-        _pkg_short_errors_supported=no
+-fi
+-        if test $_pkg_short_errors_supported = yes; then
+-	        libmodplug_PKG_ERRORS=`$PKG_CONFIG --short-errors --print-errors --cflags --libs "libmodplug" 2>&1`
+-        else
+-	        libmodplug_PKG_ERRORS=`$PKG_CONFIG --print-errors --cflags --libs "libmodplug" 2>&1`
+-        fi
+-	# Put the nasty error message in config.log where it belongs
+-	echo "$libmodplug_PKG_ERRORS" >&5
+-
+-
+-
+-pkg_failed=no
+ { $as_echo "$as_me:${as_lineno-$LINENO}: checking for libxmp" >&5
+ $as_echo_n "checking for libxmp... " >&6; }
+ 
+@@ -3616,114 +3556,6 @@ else
+ $as_echo "yes" >&6; }
+ 
+ $as_echo "#define USE_XMP 1" >>confdefs.h
+-
+-fi
+-
+-elif test $pkg_failed = untried; then
+-     	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+-$as_echo "no" >&6; }
+-
+-
+-pkg_failed=no
+-{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for libxmp" >&5
+-$as_echo_n "checking for libxmp... " >&6; }
+-
+-if test -n "$libxmp_CFLAGS"; then
+-    pkg_cv_libxmp_CFLAGS="$libxmp_CFLAGS"
+- elif test -n "$PKG_CONFIG"; then
+-    if test -n "$PKG_CONFIG" && \
+-    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"libxmp\""; } >&5
+-  ($PKG_CONFIG --exists --print-errors "libxmp") 2>&5
+-  ac_status=$?
+-  $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
+-  test $ac_status = 0; }; then
+-  pkg_cv_libxmp_CFLAGS=`$PKG_CONFIG --cflags "libxmp" 2>/dev/null`
+-		      test "x$?" != "x0" && pkg_failed=yes
+-else
+-  pkg_failed=yes
+-fi
+- else
+-    pkg_failed=untried
+-fi
+-if test -n "$libxmp_LIBS"; then
+-    pkg_cv_libxmp_LIBS="$libxmp_LIBS"
+- elif test -n "$PKG_CONFIG"; then
+-    if test -n "$PKG_CONFIG" && \
+-    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"libxmp\""; } >&5
+-  ($PKG_CONFIG --exists --print-errors "libxmp") 2>&5
+-  ac_status=$?
+-  $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
+-  test $ac_status = 0; }; then
+-  pkg_cv_libxmp_LIBS=`$PKG_CONFIG --libs "libxmp" 2>/dev/null`
+-		      test "x$?" != "x0" && pkg_failed=yes
+-else
+-  pkg_failed=yes
+-fi
+- else
+-    pkg_failed=untried
+-fi
+-
+-
+-
+-if test $pkg_failed = yes; then
+-   	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+-$as_echo "no" >&6; }
+-
+-if $PKG_CONFIG --atleast-pkgconfig-version 0.20; then
+-        _pkg_short_errors_supported=yes
+-else
+-        _pkg_short_errors_supported=no
+-fi
+-        if test $_pkg_short_errors_supported = yes; then
+-	        libxmp_PKG_ERRORS=`$PKG_CONFIG --short-errors --print-errors --cflags --libs "libxmp" 2>&1`
+-        else
+-	        libxmp_PKG_ERRORS=`$PKG_CONFIG --print-errors --cflags --libs "libxmp" 2>&1`
+-        fi
+-	# Put the nasty error message in config.log where it belongs
+-	echo "$libxmp_PKG_ERRORS" >&5
+-
+-	as_fn_error $? "Package requirements (libxmp) were not met:
+-
+-$libxmp_PKG_ERRORS
+-
+-Consider adjusting the PKG_CONFIG_PATH environment variable if you
+-installed software in a non-standard prefix.
+-
+-Alternatively, you may set the environment variables libxmp_CFLAGS
+-and libxmp_LIBS to avoid the need to call pkg-config.
+-See the pkg-config man page for more details." "$LINENO" 5
+-elif test $pkg_failed = untried; then
+-     	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+-$as_echo "no" >&6; }
+-	{ { $as_echo "$as_me:${as_lineno-$LINENO}: error: in \`$ac_pwd':" >&5
+-$as_echo "$as_me: error: in \`$ac_pwd':" >&2;}
+-as_fn_error $? "The pkg-config script could not be found or is too old.  Make sure it
+-is in your PATH or set the PKG_CONFIG environment variable to the full
+-path to pkg-config.
+-
+-Alternatively, you may set the environment variables libxmp_CFLAGS
+-and libxmp_LIBS to avoid the need to call pkg-config.
+-See the pkg-config man page for more details.
+-
+-To get pkg-config, see <http://pkg-config.freedesktop.org/>.
+-See \`config.log' for more details" "$LINENO" 5; }
+-else
+-	libxmp_CFLAGS=$pkg_cv_libxmp_CFLAGS
+-	libxmp_LIBS=$pkg_cv_libxmp_LIBS
+-        { $as_echo "$as_me:${as_lineno-$LINENO}: result: yes" >&5
+-$as_echo "yes" >&6; }
+-
+-$as_echo "#define USE_XMP 1" >>confdefs.h
+-
+-fi
+-
+-else
+-	libmodplug_CFLAGS=$pkg_cv_libmodplug_CFLAGS
+-	libmodplug_LIBS=$pkg_cv_libmodplug_LIBS
+-        { $as_echo "$as_me:${as_lineno-$LINENO}: result: yes" >&5
+-$as_echo "yes" >&6; }
+-
+-$as_echo "#define USE_MODPLUG 1" >>confdefs.h
+ 
+ fi
+ 
