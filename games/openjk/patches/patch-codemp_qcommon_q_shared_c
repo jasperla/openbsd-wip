@@ -14,16 +14,7 @@ Index: codemp/qcommon/q_shared.c
 -	strcat (newi, s);
 -	strcpy (s, newi);
 +	strlcat (newi, s, sizeof(newi));
-+	strlcpy (s, newi, sizeof(s));
- }
- 
- /*
-@@ -1054,7 +1054,7 @@ void Info_SetValueForKey_Big( char *s, const char *key
- 		return;
- 	}
- 
--	strcat (s, newi);
-+	strlcat (s, newi, sizeof(s));
++	strlcpy (s, newi, MAX_INFO_STRING);
  }
  
  /*

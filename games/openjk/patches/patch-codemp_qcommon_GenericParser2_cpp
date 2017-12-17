@@ -5,15 +5,6 @@ strlcpy
 Index: codemp/qcommon/GenericParser2.cpp
 --- codemp/qcommon/GenericParser2.cpp.orig
 +++ codemp/qcommon/GenericParser2.cpp
-@@ -207,7 +207,7 @@ char *CTextPool::AllocText(char *text, bool addNULL, C
- 		return 0;
- 	}
- 
--	strcpy(mPool + mUsed, text);
-+	strlcpy(mPool + mUsed, text, sizeof(mPool + mUsed));
- 	mUsed += length;
- 	mPool[mUsed] = 0;
- 
 @@ -708,7 +708,7 @@ bool CGPGroup::Parse(char **dataPtr, CTextPool **textP
  			break;
  		}

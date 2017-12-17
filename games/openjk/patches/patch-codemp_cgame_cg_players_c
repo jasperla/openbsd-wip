@@ -1,37 +1,11 @@
 $OpenBSD$
 
 strlcat
+try strlen of slash + 1
 
 Index: codemp/cgame/cg_players.c
 --- codemp/cgame/cg_players.c.orig
 +++ codemp/cgame/cg_players.c
-@@ -546,7 +546,7 @@ retryModel:
- 		slash = Q_strrchr( afilename, '/' );
- 		if ( slash )
- 		{
--			strcpy(slash, "/animation.cfg");
-+			strlcpy(slash, "/animation.cfg", sizeof(slash));
- 		}	// Now afilename holds just the path to the animation.cfg
- 		else
- 		{	// Didn't find any slashes, this is a raw filename right in base (whish isn't a good thing)
-@@ -703,7 +703,7 @@ retryModel:
-         int i = 0;
- 		int j;
- 		char iconName[1024];
--		strcpy(iconName, "icon_");
-+		strlcpy(iconName, "icon_", sizeof(iconName));
- 		j = strlen(iconName);
- 		while (skinName[i] && skinName[i] != '|' && j < 1024)
- 		{
-@@ -785,7 +785,7 @@ int CG_G2SkelForModel(void *g2)
- 	slash = Q_strrchr( GLAName, '/' );
- 	if ( slash )
- 	{
--		strcpy(slash, "/animation.cfg");
-+		strlcpy(slash, "/animation.cfg", sizeof(slash));
- 
- 		animIndex = BG_ParseAnimationFile(GLAName, NULL, qfalse);
- 	}
 @@ -1085,7 +1085,7 @@ void CG_LoadClientInfo( clientInfo_t *ci ) {
  		}
  	}

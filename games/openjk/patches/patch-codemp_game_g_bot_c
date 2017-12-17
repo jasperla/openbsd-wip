@@ -5,7 +5,7 @@ strlcat
 Index: codemp/game/g_bot.c
 --- codemp/game/g_bot.c.orig
 +++ codemp/game/g_bot.c
-@@ -87,14 +87,14 @@ int G_ParseInfos( char *buf, int max, char *infos[] ) 
+@@ -87,7 +87,7 @@ int G_ParseInfos( char *buf, int max, char *infos[] ) 
  
  			token = COM_ParseExt( (const char **)(&buf), qfalse );
  			if ( !token[0] ) {
@@ -14,14 +14,6 @@ Index: codemp/game/g_bot.c
  			}
  			Info_SetValueForKey( info, key, token );
  		}
- 		//NOTE: extra space for arena number
- 		infos[count] = (char *) G_Alloc(strlen(info) + strlen("\\num\\") + strlen(va("%d", MAX_ARENAS)) + 1);
- 		if (infos[count]) {
--			strcpy(infos[count], info);
-+			strlcpy(infos[count], info, sizeof(infos[count]));
- 			count++;
- 		}
- 	}
 @@ -316,7 +316,7 @@ void G_LoadArenas( void ) {
  	for (i = 0; i < numdirs; i++, dirptr += dirlen+1) {
  		dirlen = strlen(dirptr);

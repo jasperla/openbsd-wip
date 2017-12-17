@@ -10,7 +10,7 @@ Index: codemp/qcommon/z_memman_pc.cpp
  
  	out = (char *) S_Malloc (strlen(in)+1);
 -	strcpy (out, in);
-+	strlcpy (out, in, sizeof(out));
++	strlcpy (out, in, strlen(in) + 2);
  	return out;
  }
  
