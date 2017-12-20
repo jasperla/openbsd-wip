@@ -1,7 +1,5 @@
-- patch remaining strcat/strcpy/sprintf
 - add MESSAGE with instructions to put GameData files in ~/.local/share/openjk
 - add comment on absence of JO (Jedi Outcast) support to MESSAGE
-- fix installation to put files in /usr/local/share
 - add wrapper script to go into /usr/local/bin
 - remove any .orig files
-- remove no_patches directory when not needed anymore (now serving as a mirror for patches while evaluating their impact and changing/removing from patches)
+- add MESSAGE about issues with fullscreen (crashes game) and changing resolution (not working, exits video output window)

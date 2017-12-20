@@ -3,21 +3,21 @@ ONLY_FOR_ARCHS =		i386 amd64
 
 COMMENT =				3d, first person roguelike.
 
-V =                     barony-next
-N =                     barony
-PKGNAME =               ${N}-${V}
-DISTNAME =				barony-next
+#V =                     barony-next	# commented out
+#N =                     barony		# commented out
+#PKGNAME =               ${N}-${V}	# commented out
+#DISTNAME =				barony-${GH_TAGNAME}	# changed from barony-next
 
 GH_ACCOUNT =			TurningWheel
 GH_PROJECT =			Barony
-GH_TAGNAME =			barony-next
+GH_TAGNAME =			v2.0.5-RELEASE	# changed from barony-next
 
 CATEGORIES =			games
 
 HOMEPAGE =				http://www.baronygame.com
 
-MASTER_SITES =          https://www.github.com/turningwheel/Barony/archive/
-EXTRACT_SUFX =          .zip
+#MASTER_SITES =          https://www.github.com/turningwheel/Barony/archive/	# commented out
+#EXTRACT_SUFX =          .zip	# commented out
 
 # GPL v3
 PERMIT_PACKAGE_CDROM =	Yes
@@ -43,7 +43,7 @@ CFLAGS =				-g -O2
 CXXFLAGS =  			-g -O2
 CONFIGURE_ENV =         -DCMAKE_C_FLAGS="${CFLAGS}" -DCMAKE_CXX_FLAGS="${CXXFLAGS}" \
 						-DOPENAL_ENABLED=On
-WRKDIST =				${WRKDIR}/Barony-${V}
+WRKDIST =				${WRKDIR}/Barony-2.0.5-RELEASE
 
 do-install:
 						${INSTALL_PROGRAM} ${WRKBUILD}/${N} ${PREFIX}/bin
