@@ -1,0 +1,19 @@
+- push patches upstream
+- convince upstream to provide non-.7z distfile
+- segfault when loading a ROM:
+
+#0  0x00000da277c64800 in co_swap_function ()
+#1  0x00000da27775d256 in Emulator::Scheduler::enter (
+    mode=Emulator::Scheduler::Mode::Run, this=<optimized out>)
+    at ./emulator/scheduler.hpp:43
+#2  SuperFamicom::System::run (this=<optimized out>)
+    at sfc/system/system.cpp:13
+#3  0x00000da277615ffe in Program::main (this=0xda510d09100)
+    at target-tomoko/program/program.cpp:92
+#4  0x00000da2776de311 in hiro::Application::run() ()
+    at ../nall/shared-pointer.hpp:79
+#5  0x00000da277603996 in nall::main (args=...) at target-tomoko/tomoko.cpp:36
+#6  0x00000da2776034d0 in nall::main (argc=<optimized out>, 
+    argv=<optimized out>) at ../nall/main.hpp:31
+#7  0x00000da277603ae9 in main (argc=-1453027328, 
+    argv=0xda277e55680 <co_active_buffer>) at ../nall/main.hpp:36
