@@ -1,0 +1,57 @@
+$OpenBSD$
+
+Index: configure
+--- configure.orig
++++ configure
+@@ -3612,13 +3612,13 @@ if test "$ac_res" != no; then :
+ 
+ fi
+ 
+-{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for event_base_new in -levent" >&5
+-$as_echo_n "checking for event_base_new in -levent... " >&6; }
++{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for event_base_new in -levent_core" >&5
++$as_echo_n "checking for event_base_new in -levent_core... " >&6; }
+ if ${ac_cv_lib_event_event_base_new+:} false; then :
+   $as_echo_n "(cached) " >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-levent  $LIBS"
++LIBS="-levent_core  $LIBS"
+ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ 
+@@ -3653,7 +3653,7 @@ if test "x$ac_cv_lib_event_event_base_new" = xyes; the
+ #define HAVE_LIBEVENT 1
+ _ACEOF
+ 
+-  LIBS="-levent $LIBS"
++  LIBS="-levent_core $LIBS"
+ 
+ else
+   as_fn_error $? "no libevent found" "$LINENO" 5
+@@ -4586,13 +4586,13 @@ $as_echo "#define HAVE_LIBZ 1" >>confdefs.h
+ fi
+ 
+ 
+-{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for rl_save_prompt in -lreadline" >&5
+-$as_echo_n "checking for rl_save_prompt in -lreadline... " >&6; }
++{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for rl_save_prompt in -lereadline" >&5
++$as_echo_n "checking for rl_save_prompt in -lereadline... " >&6; }
+ if ${ac_cv_lib_readline_rl_save_prompt+:} false; then :
+   $as_echo_n "(cached) " >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lreadline  $LIBS"
++LIBS="-lereadline  $LIBS"
+ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ 
+@@ -4623,7 +4623,7 @@ fi
+ { $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_readline_rl_save_prompt" >&5
+ $as_echo "$ac_cv_lib_readline_rl_save_prompt" >&6; }
+ if test "x$ac_cv_lib_readline_rl_save_prompt" = xyes; then :
+-   EXTRA_LIBS="${EXTRA_LIBS} -lreadline" ;
++   EXTRA_LIBS="${EXTRA_LIBS} -lereadline" ;
+ else
+   as_fn_error $? "no libreadline found" "$LINENO" 5
+ fi
