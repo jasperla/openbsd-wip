@@ -1,2 +1,1 @@
-/Barony-2.0.5-RELEASE/src/collision.cpp:1057:40: error: invalid operands to binary expression ('int' and 'nullptr_t')
-        if ( (my && (stats = my->getStats())) != NULL )
+* try to adjust data path - currently "./" -> ideally to something like "~/.local/share/barony"
