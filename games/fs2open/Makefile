@@ -181,7 +181,7 @@ CONFIGURE_ARGS =        -DCMAKE_INSTALL_PREFIX=${LOCALBASE}/share/fs2open
 
 # Overrides for default values
 #
-#CFLAGS =		???
+CFLAGS =		-g
 #LDFLAGS =		???
 #MAKE_FILE =		???
 #PKG_ARCH =		??? (* for arch-independent packages)
