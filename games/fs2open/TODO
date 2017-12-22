@@ -1,0 +1,6 @@
+* write/expand pkg/DESCR
+* pkg/MESSAGE with instructions
+* clean up Makefile
+* currently segfaults
+* set up wrapper script
+* set FS2PATH properly (to ~/.local/share/fs2open ?)
