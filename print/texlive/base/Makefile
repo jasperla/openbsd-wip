@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.88 2017/05/21 11:57:45 edd Exp $
+# $OpenBSD: Makefile,v 1.94 2017/10/23 17:11:02 sthen Exp $
 
 COMMENT =		base binaries for TeXLive typesetting distribution
 
@@ -14,13 +14,14 @@ SHARED_LIBS +=		ptexenc		5.1 # 4.4
 SHARED_LIBS +=		synctex		1.0 # 19.0
 SHARED_LIBS +=		texlua52	0.0 # 7.4
 
+# XXX re-format.
 WANTLIB += ICE SM X11 Xau Xaw Xdmcp Xext Xi Xmu Xpm Xrender Xt
 WANTLIB += avahi-client avahi-common c cairo cups cupsimage dbus-1
 WANTLIB += expat ffi fontconfig freetype gd glib-2.0 gmp gnutls
 WANTLIB += graphite2 gs harfbuzz harfbuzz-icu hogweed iconv icudata
 WANTLIB += icui18n icuio icuuc idn2 ijs intl jbig2dec jpeg lcms2
 WANTLIB += m nettle openjp2 p11-kit paper pcre pixman-1 png poppler
-WANTLIB += potrace pthread ${LIBCXX} tasn1 tiff
+WANTLIB += potrace pthread ${COMPILER_LIBCXX} tasn1 tiff
 WANTLIB += unistring webp xcb xcb-render xcb-shm z zzip
 
 RUN_DEPENDS =		print/ghostscript/gnu \
@@ -46,7 +47,7 @@ LIB_DEPENDS =		converters/libiconv \
 
 MODULES =		textproc/intltool perl
 
-COMPILER =		gcc
+COMPILER =		base-clang ports-gcc
 
 # Never set SEPARATE_BUILD
 CONFIGURE_STYLE =	gnu
@@ -54,6 +55,8 @@ CONFIGURE_STYLE =	gnu
 CPPFLAGS =	-I${X11BASE}/include \
 		-I${LOCALBASE}/include \
 		-I${LOCALBASE}/include/poppler
+
+CXXFLAGS +=	-std=c++11
 
 LDFLAGS =	-L${LOCALBASE}/lib \
 		-L${X11BASE}/lib
@@ -66,7 +69,8 @@ CONFIGURE_ENV +=	TL_MAKE=${GMAKE} \
 WRKBUILD =              ${WRKSRC}/Work
 CONFIGURE_SCRIPT =      ../configure
 MAKE_ENV =		${CONFIGURE_ENV}
-TEST_TARGET =		check
+# XXX probably not needed
+#TEST_TARGET =		check
 
 USE_GMAKE =	Yes
 

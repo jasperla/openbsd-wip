@@ -1,10 +1,10 @@
 @comment $OpenBSD$
 @conflict teTeX_texmf-*
-@conflict texlive_base-<2016
-@conflict texlive_texmf-docs-<2016
-@conflict texlive_texmf-full-<2016
-@conflict texlive_texmf-buildset-<2016
-@conflict texlive_texmf-context-<2016
+@conflict texlive_base-<2017
+@conflict texlive_texmf-docs-<2017
+@conflict texlive_texmf-full-<2017
+@conflict texlive_texmf-buildset-<2017
+@conflict texlive_texmf-context-<2017
 @pkgpath print/teTeX/texmf
 @info info/dvips.info
 @info info/eplain.info
