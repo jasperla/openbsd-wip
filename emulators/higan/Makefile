@@ -6,6 +6,8 @@ V =		106
 DISTNAME =	higan_v$V-source
 PKGNAME =	higan-$V
 
+USE_WXNEEDED =	Yes
+
 CATEGORIES =	emulators
 
 HOMEPAGE =	https://byuu.org/emulation/higan/
@@ -32,7 +34,7 @@ LIB_DEPENDS =	audio/openal \
 		x11/gtksourceview
 
 MAKE_FLAGS =	compiler="${CC}" \
-		cflags="${CFLAGS} -std=c11" \
+		cflags="${CFLAGS} -std=c11 -DLIBCO_MPROTECT" \
 		cppflags="${CXXFLAGS} -x c++ -std=c++14 \
 			-I${LOCALBASE}/include -I${X11BASE}/include" \
 		build=
