@@ -26,10 +26,9 @@ LIB_DEPENDS =		devel/sdl \
 			devel/physfs
 
 SEPARATE_BUILD =	simple
+
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
-
-#IS_INTERACTIVE =		Yes
 
 NO_TEST =		Yes
 
