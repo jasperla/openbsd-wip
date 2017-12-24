@@ -1,0 +1,26 @@
+$OpenBSD$
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+Arx Libertatis
+==============
+Arx Libertatis requires the original game files from Arx Fatalis to work
+properly.  These can come from an original CD or from GOG.com.
+
+If using the GOG.com version, you must extract the files from
+setup_arx_fatalis_2.0.0.7.exe using the innoextract package. The files
+will be in a directory named app. You must copy some of the contents of
+the app directory to the ~/.local/share/arx directory
+
+The easiest way to do this is to execute the following:
+$ mkdir -p ~/.local/share/arx
+$ cp app/*.pak ~/.local/share/arx
+$ cp -R app/misc ~/.local/share/arx
+
+You can then delete everything extracted from the exe, such as the tmp
+directory.
+
+The arx binary must be run from your home directory for game file
+autodetection to work.
