@@ -9,7 +9,6 @@ HOMEPAGE =	https://arx-libertatis.org/
 #MAINTAINER =	???
 
 # GPLv3+
-# Bitstream Vera Fonts, Arev Fonts: Public Domain
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} GL GLEW Qt5Core Qt5Gui Qt5Network
