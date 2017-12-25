@@ -1,0 +1,16 @@
+$OpenBSD$
+
+Put this in the share directory by default.
+
+Index: main.cpp
+--- main.cpp.orig
++++ main.cpp
+@@ -98,7 +98,7 @@ static void initOptions() {
+ 		{ "use_seq_cutscenes", &g_options.use_seq_cutscenes },
+ 		{ 0, 0 }
+ 	};
+-	static const char *filename = "rs.cfg";
++	static const char *filename = "${LOCALBASE}/share/reminiscence/rs.cfg";
+ 	FILE *fp = fopen(filename, "rb");
+ 	if (fp) {
+ 		char buf[256];

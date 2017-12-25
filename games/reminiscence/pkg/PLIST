@@ -1,0 +1,5 @@
+@comment $OpenBSD$
+@bin bin/reminiscence
+share/reminiscence/
+share/reminiscence/README.txt
+share/reminiscence/rs.cfg

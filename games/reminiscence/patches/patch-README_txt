@@ -1,0 +1,16 @@
+$OpenBSD$
+
+rs(1) is in base, so name the binary reminiscence.
+
+Index: README.txt
+--- README.txt.orig
++++ README.txt
+@@ -39,7 +39,7 @@ By default, the engine will try to load the game data 
+ directory (as the original game did). The savestates are saved in the current
+ directory. These paths can be changed using command line switches :
+ 
+-    Usage: rs [OPTIONS]...
++    Usage: reminiscence [OPTIONS]...
+     --datapath=PATH   Path to data files (default 'DATA')
+     --savepath=PATH   Path to save files (default '.')
+     --levelnum=NUM    Level to start from (default '0')
