@@ -14,15 +14,14 @@ SHARED_LIBS +=		ptexenc		5.1 # 4.4
 SHARED_LIBS +=		synctex		1.0 # 19.0
 SHARED_LIBS +=		texlua52	0.0 # 7.4
 
-# XXX re-format.
-WANTLIB += ICE SM X11 Xau Xaw Xdmcp Xext Xi Xmu Xpm Xrender Xt
-WANTLIB += avahi-client avahi-common c cairo cups cupsimage dbus-1
-WANTLIB += expat ffi fontconfig freetype gd glib-2.0 gmp gnutls
-WANTLIB += graphite2 gs harfbuzz harfbuzz-icu hogweed iconv icudata
-WANTLIB += icui18n icuio icuuc idn2 ijs intl jbig2dec jpeg lcms2
-WANTLIB += m nettle openjp2 p11-kit paper pcre pixman-1 png poppler
-WANTLIB += potrace pthread ${COMPILER_LIBCXX} tasn1 tiff
-WANTLIB += unistring webp xcb xcb-render xcb-shm z zzip
+WANTLIB += ${COMPILER_LIBCXX} ICE SM X11 Xau Xaw Xdmcp Xext Xi
+WANTLIB += Xmu Xpm Xrender Xt avahi-client avahi-common c cairo
+WANTLIB += cups cupsimage dbus-1 expat ffi fontconfig freetype
+WANTLIB += gd glib-2.0 gmp gnutls graphite2 gs harfbuzz harfbuzz-icu
+WANTLIB += hogweed iconv icudata icui18n icuio icuuc idn2 ijs
+WANTLIB += intl jbig2dec jpeg lcms2 m nettle p11-kit paper pcre
+WANTLIB += pixman-1 png potrace tasn1 tiff unistring webp xcb
+WANTLIB += xcb-render xcb-shm z zzip
 
 RUN_DEPENDS =		print/ghostscript/gnu \
 			print/detex \
@@ -35,7 +34,6 @@ RUN_DEPENDS =		print/ghostscript/gnu \
 LIB_DEPENDS =		converters/libiconv \
 			graphics/png \
 			graphics/gd \
-			print/poppler \
 			graphics/cairo \
 			textproc/icu4c \
 			graphics/graphite2 \
@@ -47,16 +45,11 @@ LIB_DEPENDS =		converters/libiconv \
 
 MODULES =		textproc/intltool perl
 
-COMPILER =		base-clang ports-gcc
-
 # Never set SEPARATE_BUILD
 CONFIGURE_STYLE =	gnu
 
 CPPFLAGS =	-I${X11BASE}/include \
-		-I${LOCALBASE}/include \
-		-I${LOCALBASE}/include/poppler
-
-CXXFLAGS +=	-std=c++11
+		-I${LOCALBASE}/include
 
 LDFLAGS =	-L${LOCALBASE}/lib \
 		-L${X11BASE}/lib
@@ -90,6 +83,10 @@ PKG_ARGS +=		-Dxindy=1
 PKG_ARGS +=		-Dxindy=0
 .endif
 
+# --with-system-poppler and --with-system-xpdf temporarily removed to
+# build it with the bundled poppler, because xpdftex fails to build
+# without patches and a newer poppler (> 0.58), and it fails at runtime
+# with my current patches to build with the new poppler object API.
 CONFIGURE_ARGS +=	--mandir=${PREFIX}/man \
 			--with-system-freetype2 \
 			--with-system-gd \
@@ -112,12 +109,10 @@ CONFIGURE_ARGS +=	--mandir=${PREFIX}/man \
 			--with-banner-add="-OpenBSD_Ports" \
 			--disable-luajittex \
 			--disable-mfluajit \
-			--with-system-xpdf \
 			--with-system-icu \
 			--with-system-cairo \
 			--with-system-harfbuzz \
 			--with-system-graphite2 \
-			--with-system-poppler \
 			--with-system-libpaper \
 			--with-system-zziplib \
 			--with-system-potrace
