@@ -19,6 +19,10 @@ $ mkdir -p ~/.local/share/arx
 $ cp app/*.pak ~/.local/share/arx
 $ cp -R app/misc ~/.local/share/arx
 
+NOTE: You need to convert all copied files to lower case for Arx
+Libertatis to find them. This does not appear to be an issue with the
+files in the misc directory.
+
 You can then delete everything extracted from the exe, such as the tmp
 directory.
 

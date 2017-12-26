@@ -3,7 +3,6 @@
 bin/arx-install-data
 @bin bin/arxsavetool
 @bin bin/arxunpak
-@bin libexec/arxcrashreporter
 @man man/man1/arxsavetool.1
 @man man/man1/arxunpak.1
 @man man/man6/arx.6
