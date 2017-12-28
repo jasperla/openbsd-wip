@@ -1,3 +1,0 @@
-Note a name clash between this port and `vis' utility from base.  It could be
-worked around by setting up an alias or by manipulating with PATH environment
-variable.
