@@ -3,7 +3,7 @@ Fix installation paths.
 Index: qml/libQmlAV.pri
 --- qml/libQmlAV.pri.orig
 +++ qml/libQmlAV.pri
-@@ -130,7 +130,7 @@ DEPENDPATH *= $$PROJECT_SRCPATH
+@@ -132,7 +132,7 @@ DEPENDPATH *= $$PROJECT_SRCPATH
  		maemo5 {
  			target.path = /opt/usr/lib
  		} else {

@@ -3,7 +3,7 @@ $OpenBSD$
 Index: widgets/libQtAVWidgets.pro
 --- widgets/libQtAVWidgets.pro.orig
 +++ widgets/libQtAVWidgets.pro
-@@ -100,7 +100,8 @@ config_direct2d {
+@@ -99,7 +99,8 @@ config_direct2d {
  config_xv {
    DEFINES *= QTAV_HAVE_XV=1
    SOURCES += XVRenderer.cpp

@@ -1,27 +1,27 @@
 @comment $OpenBSD$
 include/X11/qt5/QtAV/
-include/X11/qt5/QtAV/5.6.2/
-include/X11/qt5/QtAV/5.6.2/QtAV/
-include/X11/qt5/QtAV/5.6.2/QtAV/private/
-include/X11/qt5/QtAV/5.6.2/QtAV/private/AVCompat.h
-include/X11/qt5/QtAV/5.6.2/QtAV/private/AVDecoder_p.h
-include/X11/qt5/QtAV/5.6.2/QtAV/private/AVEncoder_p.h
-include/X11/qt5/QtAV/5.6.2/QtAV/private/AVOutput_p.h
-include/X11/qt5/QtAV/5.6.2/QtAV/private/AudioOutputBackend.h
-include/X11/qt5/QtAV/5.6.2/QtAV/private/AudioResampler_p.h
-include/X11/qt5/QtAV/5.6.2/QtAV/private/Filter_p.h
-include/X11/qt5/QtAV/5.6.2/QtAV/private/Frame_p.h
-include/X11/qt5/QtAV/5.6.2/QtAV/private/MediaIO_p.h
-include/X11/qt5/QtAV/5.6.2/QtAV/private/OpenGLRendererBase_p.h
-include/X11/qt5/QtAV/5.6.2/QtAV/private/PlayerSubtitle.h
-include/X11/qt5/QtAV/5.6.2/QtAV/private/QPainterRenderer_p.h
-include/X11/qt5/QtAV/5.6.2/QtAV/private/SubtitleProcessor.h
-include/X11/qt5/QtAV/5.6.2/QtAV/private/VideoRenderer_p.h
-include/X11/qt5/QtAV/5.6.2/QtAV/private/VideoShader_p.h
-include/X11/qt5/QtAV/5.6.2/QtAV/private/factory.h
-include/X11/qt5/QtAV/5.6.2/QtAV/private/mkid.h
-include/X11/qt5/QtAV/5.6.2/QtAV/private/prepost.h
-include/X11/qt5/QtAV/5.6.2/QtAV/private/singleton.h
+include/X11/qt5/QtAV/5.9.3/
+include/X11/qt5/QtAV/5.9.3/QtAV/
+include/X11/qt5/QtAV/5.9.3/QtAV/private/
+include/X11/qt5/QtAV/5.9.3/QtAV/private/AVCompat.h
+include/X11/qt5/QtAV/5.9.3/QtAV/private/AVDecoder_p.h
+include/X11/qt5/QtAV/5.9.3/QtAV/private/AVEncoder_p.h
+include/X11/qt5/QtAV/5.9.3/QtAV/private/AVOutput_p.h
+include/X11/qt5/QtAV/5.9.3/QtAV/private/AudioOutputBackend.h
+include/X11/qt5/QtAV/5.9.3/QtAV/private/AudioResampler_p.h
+include/X11/qt5/QtAV/5.9.3/QtAV/private/Filter_p.h
+include/X11/qt5/QtAV/5.9.3/QtAV/private/Frame_p.h
+include/X11/qt5/QtAV/5.9.3/QtAV/private/MediaIO_p.h
+include/X11/qt5/QtAV/5.9.3/QtAV/private/OpenGLRendererBase_p.h
+include/X11/qt5/QtAV/5.9.3/QtAV/private/PlayerSubtitle.h
+include/X11/qt5/QtAV/5.9.3/QtAV/private/QPainterRenderer_p.h
+include/X11/qt5/QtAV/5.9.3/QtAV/private/SubtitleProcessor.h
+include/X11/qt5/QtAV/5.9.3/QtAV/private/VideoRenderer_p.h
+include/X11/qt5/QtAV/5.9.3/QtAV/private/VideoShader_p.h
+include/X11/qt5/QtAV/5.9.3/QtAV/private/factory.h
+include/X11/qt5/QtAV/5.9.3/QtAV/private/mkid.h
+include/X11/qt5/QtAV/5.9.3/QtAV/private/prepost.h
+include/X11/qt5/QtAV/5.9.3/QtAV/private/singleton.h
 include/X11/qt5/QtAV/AVClock.h
 include/X11/qt5/QtAV/AVDecoder.h
 include/X11/qt5/QtAV/AVDemuxer.h
@@ -45,6 +45,8 @@ include/X11/qt5/QtAV/FilterContext.h
 include/X11/qt5/QtAV/Frame.h
 include/X11/qt5/QtAV/FrameReader.h
 include/X11/qt5/QtAV/GLSLFilter.h
+include/X11/qt5/QtAV/Geometry.h
+include/X11/qt5/QtAV/GeometryRenderer.h
 include/X11/qt5/QtAV/LibAVFilter.h
 include/X11/qt5/QtAV/MediaIO.h
 include/X11/qt5/QtAV/OpenGLRendererBase.h
@@ -114,7 +116,6 @@ share/doc/QtAVWidgets/
 share/doc/QtAVWidgets/README
 share/doc/QtAVWidgets/changelog
 share/doc/QtAVWidgets/copyright
-share/icons/hicolor/scalable/apps/QtAV.svg
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor

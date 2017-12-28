@@ -2,7 +2,7 @@
 
 COMMENT =	FFmpeg-based Qt multimedia framework
 
-V =		1.11.0
+V =		1.12.0
 PKGNAME =	qtav-${V}
 
 GH_ACCOUNT =	wang-bin

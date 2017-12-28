@@ -3,7 +3,7 @@ Fix installation paths.
 Index: widgets/libQtAVWidgets.pri
 --- widgets/libQtAVWidgets.pri.orig
 +++ widgets/libQtAVWidgets.pri
-@@ -133,7 +133,7 @@ DEPENDPATH *= $$PROJECT_SRCPATH
+@@ -135,7 +135,7 @@ DEPENDPATH *= $$PROJECT_SRCPATH
  		maemo5 {
  			target.path = /opt/usr/lib
  		} else {
