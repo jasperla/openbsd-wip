@@ -1,7 +1,0 @@
-$OpenBSD$
-Currently only builds for Descent 1. In order to play Descent 1, put the
-the game files in $HOME/.d1x-rebirth folder and change all filenames to
-lower case. In the gog.com version, the Windows executable can be
-extracted with innoextract (in ports) - the files are in the app folder.
-No other folders or subfolders are needed.  Then enter 'd1x-rebirth' to
-run the game.

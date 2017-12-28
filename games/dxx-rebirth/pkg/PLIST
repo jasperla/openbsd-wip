@@ -1,3 +1,0 @@
-@comment $OpenBSD$
-@bin bin/d1x-rebirth
-share/doc/pkg-readmes/${FULLPKGNAME}
