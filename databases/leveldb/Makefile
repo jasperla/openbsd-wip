@@ -15,7 +15,11 @@ WANTLIB += m pthread stdc++
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
 
+MAKE_ENV=		CC="${CC}" CXX="${CXX}"
+
 USE_GMAKE =		Yes
+
+TEST_TARGET=		check
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/include/leveldb
