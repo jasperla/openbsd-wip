@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile.template,v 1.76 2017/02/25 16:04:20 danj Exp $
+# $OpenBSD:
 
 COMMENT =	Qt oriented code checker based on clang framework
 #
 GH_ACCOUNT =	KDE
 GH_PROJECT =	clazy
-GH_TAGNAME =	v1.2
+GH_TAGNAME =	v1.3
 
 CATEGORIES =	devel
 
@@ -18,5 +18,7 @@ COMPILER =		ports-clang
 MODULES =		devel/cmake
 
 LIB_DEPENDS =		devel/llvm
+
+CONFIGURE_ARGS =	-DCLAZY_BUILD_UTILS_LIB:Bool=ON
 
 .include <bsd.port.mk>
