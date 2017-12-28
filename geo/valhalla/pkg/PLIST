@@ -15,10 +15,10 @@ bin/valhalla_build_timezones
 @bin bin/valhalla_build_transit
 @bin bin/valhalla_elevation_service
 @bin bin/valhalla_export_edges
+@bin bin/valhalla_fetch_transit
 @bin bin/valhalla_loki_worker
-@bin bin/valhalla_map_match_service
-@bin bin/valhalla_meili_worker
 @bin bin/valhalla_odin_worker
+@bin bin/valhalla_path_comparison
 @bin bin/valhalla_query_transit
 @bin bin/valhalla_route_service
 @bin bin/valhalla_run_isochrone
@@ -27,7 +27,6 @@ bin/valhalla_build_timezones
 @bin bin/valhalla_run_route
 @bin bin/valhalla_skadi_worker
 @bin bin/valhalla_thor_worker
-@bin bin/valhalla_tyr_worker
 @bin bin/valhalla_validate_transit
 @bin bin/valhalla_ways_to_edges
 include/valhalla/
@@ -43,7 +42,6 @@ include/valhalla/baldr/double_bucket_queue.h
 include/valhalla/baldr/edge_elevation.h
 include/valhalla/baldr/edgeinfo.h
 include/valhalla/baldr/edgetracker.h
-include/valhalla/baldr/errorcode_util.h
 include/valhalla/baldr/geojson.h
 include/valhalla/baldr/graphconstants.h
 include/valhalla/baldr/graphid.h
@@ -78,27 +76,28 @@ include/valhalla/baldr/verbal_text_formatter_factory.h
 include/valhalla/baldr/verbal_text_formatter_us.h
 include/valhalla/baldr/verbal_text_formatter_us_co.h
 include/valhalla/baldr/verbal_text_formatter_us_tx.h
+include/valhalla/exception.h
 include/valhalla/loki/
 include/valhalla/loki/node_search.h
 include/valhalla/loki/search.h
-include/valhalla/loki/service.h
+include/valhalla/loki/worker.h
 include/valhalla/meili/
 include/valhalla/meili/candidate_search.h
-include/valhalla/meili/geojson_reader.h
-include/valhalla/meili/geojson_writer.h
+include/valhalla/meili/emission_cost_model.h
 include/valhalla/meili/geometry_helpers.h
 include/valhalla/meili/grid_range_query.h
 include/valhalla/meili/grid_traversal.h
 include/valhalla/meili/map_matcher.h
 include/valhalla/meili/map_matcher_factory.h
-include/valhalla/meili/map_matching.h
 include/valhalla/meili/match_result.h
-include/valhalla/meili/match_route.h
 include/valhalla/meili/measurement.h
 include/valhalla/meili/priority_queue.h
 include/valhalla/meili/routing.h
-include/valhalla/meili/service.h
+include/valhalla/meili/state.h
+include/valhalla/meili/stateid.h
+include/valhalla/meili/topk_search.h
 include/valhalla/meili/traffic_segment_matcher.h
+include/valhalla/meili/transition_cost_model.h
 include/valhalla/meili/universal_cost.h
 include/valhalla/meili/viterbi_search.h
 include/valhalla/midgard/
@@ -160,14 +159,15 @@ include/valhalla/odin/maneuversbuilder.h
 include/valhalla/odin/narrative_builder_factory.h
 include/valhalla/odin/narrative_dictionary.h
 include/valhalla/odin/narrativebuilder.h
-include/valhalla/odin/service.h
 include/valhalla/odin/sign.h
 include/valhalla/odin/signs.h
 include/valhalla/odin/transitrouteinfo.h
-include/valhalla/odin/transitstop.h
 include/valhalla/odin/util.h
+include/valhalla/odin/worker.h
 include/valhalla/proto/
 include/valhalla/proto/directions_options.pb.h
+include/valhalla/proto/navigator.pb.h
+include/valhalla/proto/route.pb.h
 include/valhalla/proto/tripcommon.pb.h
 include/valhalla/proto/tripdirections.pb.h
 include/valhalla/proto/trippath.pb.h
@@ -179,13 +179,14 @@ include/valhalla/sif/costfactory.h
 include/valhalla/sif/dynamiccost.h
 include/valhalla/sif/edgelabel.h
 include/valhalla/sif/hierarchylimits.h
+include/valhalla/sif/motorscootercost.h
 include/valhalla/sif/pedestriancost.h
 include/valhalla/sif/transitcost.h
 include/valhalla/sif/truckcost.h
 include/valhalla/skadi/
 include/valhalla/skadi/sample.h
-include/valhalla/skadi/service.h
 include/valhalla/skadi/util.h
+include/valhalla/skadi/worker.h
 include/valhalla/thor/
 include/valhalla/thor/astar.h
 include/valhalla/thor/astarheuristic.h
@@ -201,13 +202,16 @@ include/valhalla/thor/optimizer.h
 include/valhalla/thor/pathalgorithm.h
 include/valhalla/thor/pathinfo.h
 include/valhalla/thor/route_matcher.h
-include/valhalla/thor/service.h
 include/valhalla/thor/timedistancematrix.h
 include/valhalla/thor/trafficalgorithm.h
 include/valhalla/thor/trippathbuilder.h
+include/valhalla/thor/worker.h
 include/valhalla/tyr/
-include/valhalla/tyr/service.h
+include/valhalla/tyr/actor.h
+include/valhalla/tyr/navigator.h
+include/valhalla/tyr/serializers.h
 include/valhalla/valhalla.h
+include/valhalla/worker.h
 lib/libvalhalla.a
 lib/libvalhalla.la
 @lib lib/libvalhalla.so.${LIBvalhalla_VERSION}

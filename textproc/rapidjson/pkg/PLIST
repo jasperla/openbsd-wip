@@ -1,6 +1,7 @@
 @comment $OpenBSD$
 include/rapidjson/
 include/rapidjson/allocators.h
+include/rapidjson/cursorstreamwrapper.h
 include/rapidjson/document.h
 include/rapidjson/encodedstream.h
 include/rapidjson/encodings.h
@@ -56,6 +57,8 @@ share/doc/RapidJSON/examples/filterkeydom/
 share/doc/RapidJSON/examples/filterkeydom/filterkeydom.cpp
 share/doc/RapidJSON/examples/jsonx/
 share/doc/RapidJSON/examples/jsonx/jsonx.cpp
+share/doc/RapidJSON/examples/lookaheadparser/
+share/doc/RapidJSON/examples/lookaheadparser/lookaheadparser.cpp
 share/doc/RapidJSON/examples/messagereader/
 share/doc/RapidJSON/examples/messagereader/messagereader.cpp
 share/doc/RapidJSON/examples/parsebyparts/
@@ -70,6 +73,8 @@ share/doc/RapidJSON/examples/serialize/
 share/doc/RapidJSON/examples/serialize/serialize.cpp
 share/doc/RapidJSON/examples/simpledom/
 share/doc/RapidJSON/examples/simpledom/simpledom.cpp
+share/doc/RapidJSON/examples/simplepullreader/
+share/doc/RapidJSON/examples/simplepullreader/simplepullreader.cpp
 share/doc/RapidJSON/examples/simplereader/
 share/doc/RapidJSON/examples/simplereader/simplereader.cpp
 share/doc/RapidJSON/examples/simplewriter/

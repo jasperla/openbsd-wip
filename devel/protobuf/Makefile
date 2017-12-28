@@ -23,9 +23,7 @@ MASTER_SITES =		https://github.com/google/protobuf/releases/download/v${V}/
 # New BSD
 PERMIT_PACKAGE_CDROM =	Yes
 
-MODULES =		gcc4
-MODGCC4_LANGS =		c++
-MODGCC4_ARCHS =		*
+COMPILER =		base-clang ports-gcc
 
 TEST_DEPENDS =		devel/gtest>=1.8.0
 
