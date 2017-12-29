@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2017/07/27 09:34:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2017/10/26 07:53:23 rsadowski Exp $
 
 COMMENT =		KDE item models extending the Qt model-view framework
 DISTNAME =		kitemmodels-${VERSION}

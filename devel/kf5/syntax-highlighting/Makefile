@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2017/07/27 09:34:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2017/10/26 07:53:24 rsadowski Exp $
 
 COMMENT =		highlighting engine for structured text and code
 DISTNAME =		syntax-highlighting-${VERSION}

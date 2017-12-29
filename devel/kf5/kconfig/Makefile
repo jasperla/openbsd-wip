@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2017/07/27 09:34:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2017/10/26 07:53:22 rsadowski Exp $
 
 COMMENT =	KDE configuration system
 DISTNAME =	kconfig-${VERSION}

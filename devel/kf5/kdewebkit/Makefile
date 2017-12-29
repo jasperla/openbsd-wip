@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2017/07/30 15:49:36 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2017/10/26 07:53:23 rsadowski Exp $
 
 COMMENT =	integration of the HTML rendering engine WebKit into KDE
 DISTNAME =	kdewebkit-${VERSION}

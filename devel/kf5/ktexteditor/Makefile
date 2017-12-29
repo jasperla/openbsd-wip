@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2017/09/25 21:25:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2017/10/26 07:53:23 rsadowski Exp $
 
 COMMENT =		fully featured text editor component
 DISTNAME =		ktexteditor-${VERSION}

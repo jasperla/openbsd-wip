@@ -1,4 +1,4 @@
-# $OpenBSD:$
+# $OpenBSD: Makefile,v 1.1.1.1 2017/10/26 08:05:56 rsadowski Exp $
 
 COMMENT =	QtQuick based components set
 DISTNAME =	kirigami2-${VERSION}
@@ -16,7 +16,6 @@ RUN_DEPENDS =	devel/kf5/plasma-framework \
 		x11/qt5/qtquickcontrols2 \
 		x11/qt5/qtdeclarative
 
-TEST_IS_INTERACTIVE =	X11
 PORTHOME =	${WRKDIR}
 
 .include <bsd.port.mk>

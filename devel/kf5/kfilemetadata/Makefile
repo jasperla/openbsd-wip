@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2017/09/25 21:25:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2017/10/26 07:53:23 rsadowski Exp $
 
 COMMENT-main =	KDE 5 library for extracting text and metadata
 COMMENT-locale =localization files of kfilemetadata

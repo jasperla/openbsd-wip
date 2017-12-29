@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2017/07/30 14:40:08 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2017/10/26 07:53:23 rsadowski Exp $
 
 COMMENT =	global desktop keyboard shortcuts for KDE
 DISTNAME =	kglobalaccel-${VERSION}

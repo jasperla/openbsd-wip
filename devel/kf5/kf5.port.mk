@@ -1,4 +1,4 @@
-# $OpenBSD: kf5.port.mk,v 1.4 2017/07/12 00:05:04 zhuk Exp $
+# $OpenBSD: kf5.port.mk,v 1.5 2017/10/26 07:53:22 rsadowski Exp $
 
 MODKF5_VERSION =	5.38.0
 
