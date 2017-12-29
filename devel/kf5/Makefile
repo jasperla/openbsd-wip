@@ -69,7 +69,7 @@ SUBDIR += kxmlrpcclient		# 100% tests passed, 0 tests failed out of 2
 SUBDIR += kdeclarative		# 100% tests passed, 0 tests failed out of 2
 SUBDIR += kcmutils		# NO_TEST
 SUBDIR += kdewebkit		# NO_TEST
-SUBDIR += baloo			# XXX
+SUBDIR += baloo			# 79% tests passed, 4 tests failed out of 19
 SUBDIR += kdesignerplugin	# 100% tests passed, 0 tests failed out of 2
 SUBDIR += knotifyconfig		# NO_TEST
 SUBDIR += ktexteditor		# 98% tests passed, 1 tests failed out of 66
@@ -77,10 +77,10 @@ SUBDIR += plasma-framework	# 50% tests passed, 7 tests failed out of 14
 SUBDIR += krunner		# 50% tests passed, 1 tests failed out of 2
 
 # tier 4
-SUBDIR += frameworkintegration	# 
+SUBDIR += frameworkintegration	# 100% tests passed, 0 tests failed out of 1
 
 # porting aids
-SUBDIR += kdelibs4support	# XXX
+SUBDIR += kdelibs4support	# stucks
 SUBDIR += khtml			# 100% tests passed, 0 tests failed out of 2
 SUBDIR += kjs			# 100% tests passed, 0 tests failed out of 1
 SUBDIR += kjsembed		# NO_TEST

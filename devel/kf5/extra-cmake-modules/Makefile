@@ -14,7 +14,6 @@ CONFIGURE_ARGS =	-DBUILD_QTHELP_DOCS=True \
 PKG_ARCH =		*
 
 # use depleted
-CONFIGURE_ARGS +=	-DMAN_INSTALL_DIR=${PREFIX}/man \
-			-DCMAKE_DISABLE_FIND_PACKAGE_PythonModuleGeneration:Bool=Yes
+CONFIGURE_ARGS +=	-DMAN_INSTALL_DIR=${PREFIX}/man
 
 .include <bsd.port.mk>

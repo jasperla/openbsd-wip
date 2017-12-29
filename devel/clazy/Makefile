@@ -19,6 +19,7 @@ MODULES =		devel/cmake
 
 LIB_DEPENDS =		devel/llvm
 
-CONFIGURE_ARGS =	-DCLAZY_BUILD_UTILS_LIB:Bool=ON
+CONFIGURE_ARGS =	-DCLAZY_BUILD_UTILS_LIB:Bool=ON \
+			-DCMAKE_CXX_FLAGS="${CXXFLAGS} -I${LOCALBASE}/include"
 
 .include <bsd.port.mk>

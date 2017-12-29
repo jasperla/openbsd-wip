@@ -41,7 +41,7 @@ LIB_DEPENDS =	databases/xapian-core \
 		devel/kf5/kconfig \
 		devel/kf5/kcrash \
 		devel/kf5/kdbusaddons \
-		devel/kf5/kdelibs4support \
+		devel/kf5/kdelibs4support<=5.39.0 \
 		devel/kf5/kfilemetadata \
 		devel/kf5/ki18n \
 		devel/kf5/kidletime \

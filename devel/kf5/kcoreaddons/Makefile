@@ -11,8 +11,6 @@ BUILD_DEPENDS =	misc/shared-mime-info
 RUN_DEPENDS =	misc/shared-mime-info
 LIB_DEPENDS =	sysutils/gamin
 
-CONFIGURE_ARGS +=	-DCMAKE_DISABLE_FIND_PACKAGE_PythonModuleGeneration:Bool=Yes
-
 # for tests
 PORTHOME =		${WRKDIR}
 TESTS_IS_INTERACTIVE =	X11

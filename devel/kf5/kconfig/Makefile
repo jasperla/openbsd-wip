@@ -8,8 +8,6 @@ SHARED_LIBS +=	KF5ConfigGui		4.0
 
 WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5Gui Qt5Xml c m
 
-CONFIGURE_ARGS +=	-DCMAKE_DISABLE_FIND_PACKAGE_PythonModuleGeneration:Bool=Yes
-
 # for tests
 PORTHOME =		${WRKDIR}
 TEST_IS_INTERACTIVE =	X11
