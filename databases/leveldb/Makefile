@@ -1,25 +1,30 @@
 # $OpenBSD:$
 
+#'atomic_pointer.h: error Please implement AtomicPointer for this platform' on other archs
+ONLY_FOR_ARCHS =	i386 amd64
+
 COMMENT =	fast key-value storage library
 
 GH_ACCOUNT =	google
 GH_PROJECT =	leveldb
 GH_TAGNAME =	v1.20
 
-SHARED_LIBS +=  leveldb                   0.0 # 0.0
+SHARED_LIBS +=  leveldb                   2.0 # 0.0
 
 CATEGORIES =	databases devel
 
-WANTLIB += m pthread stdc++
-
-# BSD
+# BSD3
 PERMIT_PACKAGE_CDROM =	Yes
 
-MAKE_ENV=		CC="${CC}" CXX="${CXX}"
+MAKE_ENV =		CC="${CC}" CXX="${CXX}" OPT="${CXXFLAGS}" \
+			SHARED_MAJOR=${LIBleveldb_VERSION:R} \
+			SHARED_MINOR=${LIBleveldb_VERSION:E}
 
 USE_GMAKE =		Yes
 
-TEST_TARGET=		check
+TEST_TARGET =		check
+
+DOC =			${PREFIX}/share/doc/leveldb/
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/include/leveldb
@@ -28,8 +33,8 @@ do-install:
 		${PREFIX}/lib
 	${INSTALL_DATA} ${WRKSRC}/out-shared/libleveldb.so.${GH_TAGNAME:S/v//} \
 		${PREFIX}/lib/libleveldb.so.${LIBleveldb_VERSION}
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/leveldb
-	${INSTALL_DATA} ${WRKSRC}/doc/*.md ${PREFIX}/share/doc/leveldb
-	${INSTALL_DATA} ${WRKSRC}/LICENSE ${PREFIX}/share/doc/leveldb
+	${INSTALL_DATA_DIR} ${DOC}
+	${INSTALL_DATA} ${WRKSRC}/doc/*.md ${DOC}
+	${INSTALL_DATA} ${WRKSRC}/LICENSE ${DOC}
 
 .include <bsd.port.mk>
