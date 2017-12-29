@@ -3,7 +3,7 @@
 COMMENT =		legacy support for kdelibs-4.x compatibility
 DISTNAME =		kdelibs4support-${VERSION}
 
-SHARED_LIBS =		KF5KDELibs4Support	3.0
+SHARED_LIBS =		KF5KDELibs4Support	4.0
 
 WANTLIB += ${COMPILER_LIBCXX} ICE KF5Auth KF5Bookmarks KF5Codecs
 WANTLIB += KF5Completion KF5ConfigCore KF5ConfigGui KF5ConfigWidgets

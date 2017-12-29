@@ -3,13 +3,15 @@
 COMMENT =	core KDE extensions to Qt classes
 DISTNAME =	kcoreaddons-${VERSION}
 
-SHARED_LIBS =	KF5CoreAddons		3.0
+SHARED_LIBS =	KF5CoreAddons		4.0
 
 WANTLIB =	${COMPILER_LIBCXX} Qt5Core c fam m pthread
 
 BUILD_DEPENDS =	misc/shared-mime-info
 RUN_DEPENDS =	misc/shared-mime-info
 LIB_DEPENDS =	sysutils/gamin
+
+CONFIGURE_ARGS +=	-DCMAKE_DISABLE_FIND_PACKAGE_PythonModuleGeneration:Bool=Yes
 
 # for tests
 PORTHOME =		${WRKDIR}

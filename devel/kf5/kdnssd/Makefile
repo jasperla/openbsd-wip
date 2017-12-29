@@ -3,7 +3,7 @@
 COMMENT =		network service discovery using Zeroconf for KDE
 DISTNAME =		kdnssd-${VERSION}
 
-SHARED_LIBS =		KF5DNSSD	3.0
+SHARED_LIBS =		KF5DNSSD	4.0
 
 WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5DBus Qt5Network m
 

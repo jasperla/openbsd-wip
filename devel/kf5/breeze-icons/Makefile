@@ -9,7 +9,4 @@ RUN_DEPENDS =	x11/gtk+3,-guic
 
 PKG_ARCH =	*
 
-# TODO: The following tests FAILED:
-# 3 - dupe (Failed)
-
 .include <bsd.port.mk>

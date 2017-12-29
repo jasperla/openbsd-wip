@@ -3,8 +3,8 @@
 COMMENT =	core components and tools of the Plasma Workspaces
 DISTNAME =	plasma-framework-${VERSION}
 
-SHARED_LIBS =	KF5Plasma		3.0
-SHARED_LIBS +=	KF5PlasmaQuick		3.0
+SHARED_LIBS =	KF5Plasma		4.0
+SHARED_LIBS +=	KF5PlasmaQuick		4.0
 
 WANTLIB += ${COMPILER_LIBCXX} EGL GL ICE KF5Activities KF5Archive
 WANTLIB += KF5Auth KF5CalendarEvents KF5Codecs KF5Completion KF5ConfigCore
@@ -52,8 +52,8 @@ LIB_DEPENDS =	devel/kf5/kactivities \
 		x11/qt5/qtsvg \
 		x11/qt5/qtx11extras
 
-CONFIGURE_ARGS =	-DBUILD_EXAMPLES=Yes \
-			-DCMAKE_DISABLE_FIND_PACKAGE_KF5Wayland=Yes
+#CONFIGURE_ARGS =	-DBUILD_EXAMPLES=Yes \
+#			-DCMAKE_DISABLE_FIND_PACKAGE_KF5Wayland=Yes
 
 # TODO: The following tests FAILED (some dependencies missing?):
 # 1 - plasma-dialogqmltest (Failed)

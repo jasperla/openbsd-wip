@@ -39,6 +39,7 @@ lib/cmake/KF5ConfigWidgets/KF5ConfigWidgetsTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/KF5ConfigWidgets/KF5ConfigWidgetsTargets.cmake
 @lib lib/libKF5ConfigWidgets.so.${LIBKF5ConfigWidgets_VERSION}
 @man man/man1/preparetips5.1
+share/examples/xdg/kconfigwidgets.categories
 share/kf5/mkspecs/qt_KConfigWidgets.pri
 share/locale/af/LC_MESSAGES/kconfigwidgets5.mo
 share/locale/af/kf5_entry.desktop

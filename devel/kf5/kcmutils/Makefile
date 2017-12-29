@@ -3,7 +3,7 @@
 COMMENT =	utility classes for KDE control modules
 DISTNAME =	kcmutils-${VERSION}
 
-SHARED_LIBS =	KF5KCMUtils	3.0
+SHARED_LIBS =	KF5KCMUtils	4.0
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5Codecs KF5ConfigCore
 WANTLIB += KF5ConfigGui KF5ConfigWidgets KF5CoreAddons KF5I18n

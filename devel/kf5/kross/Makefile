@@ -3,8 +3,8 @@
 COMMENT =	embedding of scripting into KDE applications
 DISTNAME =	kross-${VERSION}
 
-SHARED_LIBS =	KF5KrossCore		3.0 # 5.17
-SHARED_LIBS +=	KF5KrossUi		3.0 # 5.17
+SHARED_LIBS =	KF5KrossCore		4.0 # 5.17
+SHARED_LIBS +=	KF5KrossUi		4.0 # 5.17
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5Bookmarks KF5Codecs KF5Completion
 WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5CoreAddons

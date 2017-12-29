@@ -3,8 +3,8 @@
 COMMENT =		JavaScript/ECMAScript engine for KDE
 DISTNAME =		kjs-${VERSION}
 
-SHARED_LIBS =		KF5JS		3.0
-SHARED_LIBS +=		KF5JSApi	3.0
+SHARED_LIBS =		KF5JS		4.0
+SHARED_LIBS +=		KF5JSApi	4.0
 
 WANTLIB += ${COMPILER_LIBCXX} Qt5Core c m pcre pcreposix
 

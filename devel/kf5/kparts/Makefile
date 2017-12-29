@@ -3,7 +3,7 @@
 COMMENT =		KDE plugin framework for user interface components
 DISTNAME =		kparts-${VERSION}
 
-SHARED_LIBS =		KF5Parts	3.0
+SHARED_LIBS =		KF5Parts	4.0
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5Codecs KF5Completion
 WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5CoreAddons

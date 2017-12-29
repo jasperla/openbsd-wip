@@ -20,6 +20,8 @@ lib/cmake/KF5DBusAddons/KF5DBusAddonsConfigVersion.cmake
 lib/cmake/KF5DBusAddons/KF5DBusAddonsTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/KF5DBusAddons/KF5DBusAddonsTargets.cmake
 @lib lib/libKF5DBusAddons.so.${LIBKF5DBusAddons_VERSION}
+share/examples/xdg/
+share/examples/xdg/kdbusaddons.categories
 share/kf5/
 share/kf5/mkspecs/
 share/kf5/mkspecs/qt_KDBusAddons.pri
@@ -42,6 +44,7 @@ share/locale/gd/LC_MESSAGES/kdbusaddons5_qt.qm
 share/locale/gl/LC_MESSAGES/kdbusaddons5_qt.qm
 share/locale/hu/LC_MESSAGES/kdbusaddons5_qt.qm
 share/locale/ia/LC_MESSAGES/kdbusaddons5_qt.qm
+share/locale/id/LC_MESSAGES/kdbusaddons5_qt.qm
 share/locale/it/LC_MESSAGES/kdbusaddons5_qt.qm
 share/locale/ja/LC_MESSAGES/kdbusaddons5_qt.qm
 share/locale/ko/LC_MESSAGES/kdbusaddons5_qt.qm

@@ -23,6 +23,7 @@ lib/qt5/plugins/org.kde.kglobalaccel5.platforms/KF5GlobalAccelPrivateXcb.so
 share/dbus-1/interfaces/kf5_org.kde.KGlobalAccel.xml
 share/dbus-1/interfaces/kf5_org.kde.kglobalaccel.Component.xml
 share/dbus-1/services/org.kde.kglobalaccel.service
+share/examples/xdg/kglobalaccel.categories
 share/kf5/mkspecs/qt_KGlobalAccel.pri
 share/kservices5/
 share/kservices5/kglobalaccel5.desktop

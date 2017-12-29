@@ -3,7 +3,7 @@
 COMMENT =	central daemon of KDE workspaces
 DISTNAME =	kded-${VERSION}
 
-SHARED_LIBS =	kdeinit5_kded5		3.0
+SHARED_LIBS =	kdeinit5_kded5		4.0
 
 WANTLIB += ${COMPILER_LIBCXX} KF5ConfigCore KF5CoreAddons KF5Crash
 WANTLIB += KF5DBusAddons KF5Service Qt5Core Qt5DBus Qt5Gui Qt5Widgets

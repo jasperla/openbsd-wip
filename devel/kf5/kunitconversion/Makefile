@@ -5,8 +5,7 @@ DISTNAME =	kunitconversion-${VERSION}
 
 SHARED_LIBS =	KF5UnitConversion	3.0
 
-WANTLIB += ${COMPILER_LIBCXX} KF5I18n Qt5Core Qt5Network Qt5Xml
-WANTLIB += m
+WANTLIB += ${COMPILER_LIBCXX} KF5I18n Qt5Core Qt5Network m
 
 BUILD_DEPENDS =	devel/gettext-tools
 

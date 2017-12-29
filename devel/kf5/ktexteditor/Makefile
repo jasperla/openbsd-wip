@@ -3,7 +3,7 @@
 COMMENT =		fully featured text editor component
 DISTNAME =		ktexteditor-${VERSION}
 
-SHARED_LIBS =		KF5TextEditor		3.0
+SHARED_LIBS =		KF5TextEditor		4.0
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Archive KF5Auth KF5Codecs KF5Completion
 WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5CoreAddons

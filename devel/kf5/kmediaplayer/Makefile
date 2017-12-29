@@ -3,7 +3,7 @@
 COMMENT =		interface for media player KParts
 DISTNAME =		kmediaplayer-${VERSION}
 
-SHARED_LIBS =		KF5MediaPlayer		3.0
+SHARED_LIBS =		KF5MediaPlayer		4.0
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5Codecs KF5Completion
 WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5CoreAddons

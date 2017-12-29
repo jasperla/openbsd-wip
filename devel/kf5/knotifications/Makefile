@@ -3,7 +3,7 @@
 COMMENT =	KDE desktop notifications framework
 DISTNAME =	knotifications-${VERSION}
 
-SHARED_LIBS =	KF5Notifications	3.0
+SHARED_LIBS =	KF5Notifications	4.0
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Codecs KF5ConfigCore KF5CoreAddons
 WANTLIB += KF5WindowSystem Qt5Core Qt5DBus Qt5Gui Qt5Widgets Qt5X11Extras

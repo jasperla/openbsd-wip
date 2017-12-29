@@ -5,11 +5,11 @@
 COMMENT =	network transparent access to files and data in KDE
 DISTNAME =	kio-${VERSION}
 
-SHARED_LIBS =	KF5KIOCore		3.0 # 5.20
-SHARED_LIBS +=	KF5KIOGui		3.0 # 5.20
-SHARED_LIBS +=	KF5KIOFileWidgets	3.0 # 5.20
-SHARED_LIBS +=	KF5KIONTLM		3.0 # 5.20
-SHARED_LIBS +=	KF5KIOWidgets		3.0 # 5.20
+SHARED_LIBS =	KF5KIOCore		4.0 # 5.20
+SHARED_LIBS +=	KF5KIOGui		4.0 # 5.20
+SHARED_LIBS +=	KF5KIOFileWidgets	4.0 # 5.20
+SHARED_LIBS +=	KF5KIONTLM		4.0 # 5.20
+SHARED_LIBS +=	KF5KIOWidgets		4.0 # 5.20
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Archive KF5Auth KF5Bookmarks
 WANTLIB += KF5Codecs KF5Completion KF5ConfigCore KF5ConfigGui
@@ -58,16 +58,5 @@ CONFIGURE_ARGS =	-DCMAKE_DISABLE_FIND_PACKAGE_ACL=Yes \
 PORTHOME =		${WRKDIR}
 TEST_IS_INTERACTIVE =	X11
 TEST_DEPENDS =		${BUILD_PKGPATH}
-
-# The following tests FAILED:
-# 3 - kiocore-kacltest (Failed)
-# 5 - kiocore-kmountpointtest (Failed)
-# 12 - kiocore-ktcpsockettest (Failed)
-# 19 - kiocore-http_jobtest (OTHER_FAULT)
-# 21 - kiocore-klocalsocketservertest (Failed)
-# 24 - kiowidgets-dropjobtest (Failed)
-# 26 - kiowidgets-kdirlistertest (Failed)
-# 27 - kiowidgets-kdirmodeltest (OTHER_FAULT)
-# 41 - kiofilewidgets-kfilewidgettest (Failed)
 
 .include <bsd.port.mk>

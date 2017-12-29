@@ -3,7 +3,7 @@
 COMMENT =		access to the windowing system for KDE apps
 DISTNAME =		kwindowsystem-${VERSION}
 
-SHARED_LIBS =		KF5WindowSystem		3.0
+SHARED_LIBS =		KF5WindowSystem		4.0
 
 WANTLIB += ${COMPILER_LIBCXX} ICE Qt5Core Qt5Gui Qt5Widgets Qt5X11Extras
 WANTLIB += SM X11 Xext Xfixes Xrender m xcb xcb-keysyms

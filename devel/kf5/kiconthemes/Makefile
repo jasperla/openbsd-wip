@@ -3,7 +3,7 @@
 COMMENT =		KDE icon GUI utility library
 DISTNAME =		kiconthemes-${VERSION}
 
-SHARED_LIBS =		KF5IconThemes		2.0
+SHARED_LIBS =		KF5IconThemes		3.0
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Archive KF5Auth KF5Codecs KF5ConfigCore
 WANTLIB += KF5ConfigGui KF5ConfigWidgets KF5CoreAddons KF5I18n
