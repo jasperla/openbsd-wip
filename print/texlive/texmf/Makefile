@@ -11,7 +11,8 @@ COMMENT-buildset =	smallest texlive texmf for building ports
 #   * Add a more restrictive RUN_DEPEND upon the buildset.
 
 DISTNAME =		texlive-${DIST_V}-texmf
-MASTER_SITES0 =		https://spacehopper.org/mirrors/
+#MASTER_SITES0 =		https://spacehopper.org/mirrors/
+MASTER_SITES0 =		http://theunixzoo.co.uk/distfiles/
 DISTFILES =		${DISTNAME}${EXTRACT_SUFX} \
 			texlive-${DIST_V}-extra${EXTRACT_SUFX} \
 			texmf-var-pregen-${V}${EXTRACT_SUFX}:0
@@ -157,10 +158,8 @@ post-install:
 # This target requires py-texscythe.
 update-plist: plist
 plist:
-	#cd ${FILESDIR} && ${MODPY_BIN} mk_plists.py \
-	#	${TRUEPREFIX}/share/examples/py-texscythe/texlive2016.tlpdb.gz
-	cd ${FILESDIR} && env PYTHONPATH=/home/edd/texscythe \
-		${MODPY_BIN} mk_plists.py /home/edd/texscythe/texlive2017.tlpdb.gz
+	cd ${FILESDIR} && ${MODPY_BIN} mk_plists.py \
+		${TRUEPREFIX}/share/examples/py-texscythe/texlive2017.tlpdb.gz
 
 # regenerate adj.mk
 adj:
