@@ -4,9 +4,9 @@ COMMENT =	multilanguage reimplementation of the Unix ctags utility
 
 GH_ACCOUNT =	universal-ctags
 GH_PROJECT =	ctags
-GH_COMMIT =	96ceef695648a887c8befc4484eace7b3170e398
+GH_COMMIT =	4f9f6f83de929385c448e59d40e5b62588b6bbcb
 # commit date YYYYMMDD
-DISTNAME =	universal-ctags-0.20170902
+DISTNAME =	universal-ctags-0.20171229
 
 CATEGORIES =	devel
 
@@ -38,9 +38,10 @@ AUTOCONF_VERSION =	2.69
 AUTOMAKE_VERSION =	1.11
 
 BUILD_DEPENDS =		${MODGNU_AUTOCONF_DEPENDS} \
-			${MODGNU_AUTOMAKE_DEPENDS}
+			${MODGNU_AUTOMAKE_DEPENDS} \
+			textproc/py-docutils
 
-LIB_DEPENDS+=		textproc/libxml \
+LIB_DEPENDS +=		textproc/libxml \
 			devel/libyaml
 
 TEST_DEPENDS =		textproc/gdiff \
