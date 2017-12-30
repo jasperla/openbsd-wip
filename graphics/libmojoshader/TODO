@@ -1,8 +1,0 @@
-version is not set ${WRKSRC}/mojoshader_version.h
-likely not done by configure stage, see how to best fix this in a smart way
-
-Should be:
-#define MOJOSHADER_VERSION 1181
-#define MOJOSHADER_CHANGESET "hg-1181:b873f3b0f838"
-
-(This was not an issue when cmake building in a separate directory outside the ports tree.

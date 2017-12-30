@@ -1,0 +1,7 @@
+@comment $OpenBSD$
+include/mojoshader.h
+include/mojoshader_effects.h
+include/mojoshader_internal.h
+include/mojoshader_parser_hlsl.h
+include/mojoshader_version.h
+lib/libmojoshader.a
