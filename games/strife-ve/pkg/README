@@ -1,0 +1,21 @@
+$OpenBSD$
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+Strife-VE
+=========
+Strife-VE requires the original game files from The Original Strife:
+Veteran Edition to work properly.  This most often comes from the
+GOG.com release of the game.
+
+You must extract the files from
+setup_the_original_strife_-_veteran_edition_gog-2a_(12083)_(g).exe using
+using the innoextract package. The files will be in a directory named
+app. You must keep this directory, though it can be renamed and moved to
+a location of your choosing, and you can delete everything else that is
+extracted from the exe, such as the tmp directory.
+
+strife-ve should be launched from the app directory for full video and
+music support.
