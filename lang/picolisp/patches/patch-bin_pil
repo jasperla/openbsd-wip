@@ -1,0 +1,9 @@
+$OpenBSD$
+
+Index: ../bin/pil
+--- ../bin/pil.orig
++++ ../bin/pil
+@@ -1,2 +1,2 @@
+-#!/usr/bin/picolisp /usr/lib/picolisp/lib.l
++#!${LOCALBASE}/bin/picolisp ${LOCALBASE}/lib/picolisp/lib.l
+ (load "@lib/misc.l" "@lib/btree.l" "@lib/db.l" "@lib/pilog.l")
