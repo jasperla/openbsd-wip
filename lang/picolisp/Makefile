@@ -20,7 +20,7 @@ MODJAVA_JRERUN =        yes
 
 MAKE_FLAGS =		PATH=${PATH}:${JAVA_HOME}/bin
 
-RUN_DEPENDS =           java/javaPathHelper
+BUILD_DEPENDS =		java/javaPathHelper
 
 # BSD?
 PERMIT_PACKAGE_CDROM =	Yes
