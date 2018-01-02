@@ -17,8 +17,8 @@ CATEGORIES =	databases devel
 PERMIT_PACKAGE_CDROM =	Yes
 
 MAKE_ENV =		CC="${CC}" CXX="${CXX}" OPT="${CXXFLAGS}" \
-			SHARED_MAJOR=${LIBleveldb_VERSION:R} \
-			SHARED_MINOR=${LIBleveldb_VERSION:E}
+			SHARED_VERSION_MAJOR=${LIBleveldb_VERSION:R} \
+			SHARED_VERSION_MINOR=${LIBleveldb_VERSION:E}
 
 USE_GMAKE =		Yes
 
@@ -31,7 +31,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/include/leveldb/* ${PREFIX}/include/leveldb
 	${INSTALL_DATA} ${WRKSRC}/out-static/*.a \
 		${PREFIX}/lib
-	${INSTALL_DATA} ${WRKSRC}/out-shared/libleveldb.so.${GH_TAGNAME:S/v//} \
+	${INSTALL_DATA} ${WRKSRC}/out-shared/libleveldb.so.${LIBleveldb_VERSION} \
 		${PREFIX}/lib/libleveldb.so.${LIBleveldb_VERSION}
 	${INSTALL_DATA_DIR} ${DOC}
 	${INSTALL_DATA} ${WRKSRC}/doc/*.md ${DOC}
