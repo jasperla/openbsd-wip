@@ -1,7 +1,12 @@
 #!/usr/bin/env python2.7
-#
-# This is how we generate the OpenBSD packing lists for TeX Live.
-# It is hooked in to the plist target in the port makefile.
+"""
+Generate packing lists for the TeX Live texmf packages
+
+Usage: mk_plists.py <tlpdb>
+
+Arguments:
+    tlpdb: The TeX Live database file to use.
+"""
 
 import re
 import sys
@@ -18,7 +23,7 @@ YEAR = 2017
 MAN_INFO_REGEX = "texmf-dist\/doc\/(man\/man[0-9]\/.*[0-9]|info\/.*\.info)$"
 
 if len(sys.argv) != 2:
-    print("Please specify a tlpdb file")
+    print(__doc__)
     sys.exit(1)
 
 TLPDB = sys.argv[1]
