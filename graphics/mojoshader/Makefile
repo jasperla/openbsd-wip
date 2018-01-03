@@ -14,8 +14,12 @@ MAINTAINER =	Thomas Frohwein <frohwein@ymail.com>
 # zlib
 PERMIT_PACKAGE_CDROM =	Yes
 
-# How do I fetch from mercural repo? Or should host checkout tarball?
 MASTER_SITES =	https://hg.icculus.org/icculus/mojoshader/archive/
+
+# FLIP_VIEWPORT is needed by some FNA games (FEZ if I recall correctly)
+CONFIGURE_ARGS =	-DBUILD_SHARED=1 -DFLIP_VIEWPORT=1
+
+SHARED_LIBS +=	mojoshader		0.0
 
 MODULES =	devel/cmake
 
@@ -33,6 +37,6 @@ pre-configure:
 # No upstream install target
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/mojoshader*.h ${PREFIX}/include
-	${INSTALL_DATA} ${WRKBUILD}/libmojoshader.a ${PREFIX}/lib
+	${INSTALL_DATA} ${WRKBUILD}/libmojoshader.so ${PREFIX}/lib
 
 .include <bsd.port.mk>
