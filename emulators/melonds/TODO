@@ -1,0 +1,66 @@
+On OpenBSD, melonDS crashes instantly if I select "Input config" from the menu.
+
+Thread 1 received signal SIGSEGV, Segmentation fault.
+0x00000f529b34439b in uiKeyName (scancode=114)
+    at /usr/ports/pobj/melonds-0.6b/melonDS-2e82a4f26ac99a1a93afdcb6bbfc4095d0933cc6/src/libui_sdl/libui/unix/area.c:527
+527         int keyval = keyvals[0];
+(gdb) bt
+#0  0x00000f529b34439b in uiKeyName (scancode=114)
+    at /usr/ports/pobj/melonds-0.6b/melonDS-2e82a4f26ac99a1a93afdcb6bbfc4095d0933cc6/src/libui_sdl/libui/unix/area.c:527
+#1  0x00000f529b305f30 in DlgInputConfig::Open ()
+    at /usr/ports/pobj/melonds-0.6b/melonDS-2e82a4f26ac99a1a93afdcb6bbfc4095d0933cc6/src/libui_sdl/DlgInputConfig.cpp:323
+#2  0x00000f54b46de5c3 in g_closure_invoke (closure=0xf555f7fc920, 
+    return_value=0x0, n_param_values=1, param_values=0x7f7ffffe8ca0, 
+    invocation_hint=<optimized out>) at gclosure.c:804
+#3  0x00000f54b46f43b6 in signal_emit_unlocked_R (node=<optimized out>, 
+    detail=<optimized out>, instance=<optimized out>, 
+    emission_return=<optimized out>, instance_and_params=<optimized out>)
+    at gsignal.c:3635
+#4  0x00000f54b46f5172 in g_signal_emit_valist (instance=<optimized out>, 
+    signal_id=<optimized out>, detail=0, var_args=0x7f7ffffe8eb0)
+    at gsignal.c:3391
+#5  0x00000f54b46f582f in g_signal_emit (instance=0x0, signal_id=48, detail=32)
+    at gsignal.c:3447
+#6  0x00000f55001d0a08 in gtk_widget_activate (widget=0xf5591b9a690)
+    at gtkwidget.c:7765
+#7  0x00000f550007fa5d in gtk_menu_shell_activate_item (
+    menu_shell=0xf54a12bc880, menu_item=0xf5591b9a690, 
+    force_deactivate=<optimized out>) at gtkmenushell.c:1375
+#8  0x00000f5500080d7d in gtk_menu_shell_button_release (widget=0xf54a12bc880, 
+    event=<optimized out>) at gtkmenushell.c:791
+#9  0x00000f5500061fab in _gtk_marshal_BOOLEAN__BOXEDv (closure=0xf54b7211ce0, 
+    return_value=<optimized out>, instance=0xf54a12bc880, 
+    args=<optimized out>, marshal_data=<optimized out>, 
+    n_params=<optimized out>, param_types=<optimized out>)
+    at gtkmarshalers.c:128
+#10 0x00000f54b46de815 in _g_closure_invoke_va (closure=0xf54b7211ce0, 
+    return_value=0x7f7ffffe9140, instance=0xf54a12bc880, args=<optimized out>, 
+    n_params=<optimized out>, param_types=0xf54fcd6d910) at gclosure.c:867
+#11 0x00000f54b46f4e73 in g_signal_emit_valist (instance=<optimized out>, 
+    signal_id=<optimized out>, detail=0, var_args=0x7f7ffffe9280)
+    at gsignal.c:3300
+#12 0x00000f54b46f582f in g_signal_emit (instance=0x0, signal_id=48, detail=32)
+    at gsignal.c:3447
+#13 0x00000f55001d01dc in gtk_widget_event_internal (widget=0xf54a12bc880, 
+    event=0xf558a421030) at gtkwidget.c:7732
+#14 0x00000f5500060a30 in propagate_event_up (widget=0xf54a12bc880, 
+    event=<optimized out>, topmost=<optimized out>) at gtkmain.c:2578
+#15 propagate_event (widget=0xf54a12bc880, event=0xf558a421030, 
+    captured=-1590966144, topmost=0x0) at gtkmain.c:2681
+#16 0x00000f550005fe0d in gtk_main_do_event (event=0xf558a421030)
+    at gtkmain.c:1911
+#17 0x00000f555129f5c3 in _gdk_event_emit (event=0xf558a421030)
+    at gdkevents.c:73
+#18 0x00000f55512d7ab8 in gdk_event_source_dispatch (source=<optimized out>, 
+    callback=<optimized out>, user_data=<optimized out>)
+    at gdkeventsource.c:367
+#19 0x00000f54f7280df8 in g_main_dispatch (context=<optimized out>)
+    at gmain.c:3148
+#20 g_main_context_dispatch (context=<optimized out>) at gmain.c:3813
+#21 0x00000f54f72811e5 in g_main_context_iterate (context=<optimized out>, 
+    block=<optimized out>, dispatch=<optimized out>, self=<optimized out>)
+    at gmain.c:3886
+#22 0x00000f54f728154f in g_main_loop_run (loop=0xf5554590830) at gmain.c:4082
+#23 0x00000f550005f73b in gtk_main () at gtkmain.c:1322
+#24 0x00000f529b304e13 in main (argc=1, argv=0x7f7ffffe9618)
+    at /usr/ports/pobj/melonds-0.6b/melonDS-2e82a4f26ac99a1a93afdcb6bbfc4095d0933cc6/src/libui_sdl/main.cpp:1224
