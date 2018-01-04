@@ -1,0 +1,35 @@
+SDL2 2.0.7
+
+Changes in 2.0.7 (from the upstream announcement):
+===============================
+
+
+
+Thanks to all the people who contributed code and feedback, SDL 2.0.7 is
+now available!
+http://www.libsdl.org/download-2.0.php
+
+In addition to audio resampling improvements and fixed D-BUS support, here are the major changes in this release:
+
+Added audio stream conversion functions:
+SDL_NewAudioStream
+SDL_AudioStreamPut
+SDL_AudioStreamGet
+SDL_AudioStreamAvailable
+SDL_AudioStreamFlush
+SDL_AudioStreamClear
+SDL_FreeAudioStream
+Added functions to query and set the SDL memory allocation functions:
+SDL_GetMemoryFunctions()
+SDL_SetMemoryFunctions()
+SDL_GetNumAllocations()
+Added locking functions for multi-threaded access to the joystick and game controller APIs:
+SDL_LockJoysticks()
+SDL_UnlockJoysticks()
+The following functions are now thread-safe:
+SDL_SetEventFilter()
+SDL_GetEventFilter()
+SDL_AddEventWatch()
+SDL_DelEventWatch()
+
+Enjoy!

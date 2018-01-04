@@ -1,0 +1,26 @@
+$OpenBSD$
+
+disable breaking if no force feedback which disallows gamecontroller API
+fake Linux platform
+
+Index: src/SDL.c
+--- src/SDL.c.orig
++++ src/SDL.c
+@@ -230,8 +230,6 @@ SDL_InitSubSystem(Uint32 flags)
+             }
+         }
+         SDL_PrivateSubsystemRefCountIncr(SDL_INIT_HAPTIC);
+-#else
+-        return SDL_SetError("SDL not built with haptic (force feedback) support");
+ #endif
+     }
+ 
+@@ -428,7 +426,7 @@ SDL_GetPlatform()
+ #elif __NETBSD__
+     return "NetBSD";
+ #elif __OPENBSD__
+-    return "OpenBSD";
++    return "Linux";
+ #elif __OS2__
+     return "OS/2";
+ #elif __OSF__
