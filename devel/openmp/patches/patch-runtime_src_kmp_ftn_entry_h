@@ -1,0 +1,14 @@
+$OpenBSD$
+
+Index: runtime/src/kmp_ftn_entry.h
+--- runtime/src/kmp_ftn_entry.h.orig
++++ runtime/src/kmp_ftn_entry.h
+@@ -348,7 +348,7 @@ int FTN_STDCALL xexpand(FTN_GET_THREAD_NUM)(void) {
+ #else
+   int gtid;
+ 
+-#if KMP_OS_DARWIN || KMP_OS_FREEBSD || KMP_OS_NETBSD
++#if KMP_OS_DARWIN || KMP_OS_FREEBSD || KMP_OS_NETBSD || KMP_OS_OPENBSD
+   gtid = __kmp_entry_gtid();
+ #elif KMP_OS_WINDOWS
+   if (!__kmp_init_parallel ||

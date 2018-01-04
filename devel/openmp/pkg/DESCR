@@ -1,0 +1,4 @@
+The OpenMP subproject of LLVM contains the components required to build
+an executable OpenMP program that are outside the compiler itself.
+
+The resulting library can be used with both clang and gcc.

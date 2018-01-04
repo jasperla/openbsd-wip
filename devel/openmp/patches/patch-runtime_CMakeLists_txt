@@ -1,0 +1,14 @@
+$OpenBSD$
+
+Index: runtime/CMakeLists.txt
+--- runtime/CMakeLists.txt.orig
++++ runtime/CMakeLists.txt
+@@ -348,7 +348,7 @@ endif()
+ set(LIBOMP_LIB_NAME ${LIBOMP_DEFAULT_LIB_NAME} CACHE STRING "Base OMP library name")
+ 
+ if(${LIBOMP_ENABLE_SHARED})
+-  set(LIBOMP_LIBRARY_SUFFIX ${CMAKE_SHARED_LIBRARY_SUFFIX})
++  set(LIBOMP_LIBRARY_SUFFIX ${CMAKE_SHARED_LIBRARY_SUFFIX}.${LIBomp_VERSION})
+   set(LIBOMP_LIBRARY_KIND SHARED)
+   set(LIBOMP_INSTALL_KIND LIBRARY)
+ else()
