@@ -23,7 +23,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += pthread
 
-MASTER_SITES =	http://releases.llvm.org/${V}/
+MASTER_SITES =	https://releases.llvm.org/${V}/
 
 # C++11
 COMPILER =	base-clang ports-gcc ports-clang
