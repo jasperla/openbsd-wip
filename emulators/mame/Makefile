@@ -46,8 +46,7 @@ LIB_DEPENDS =	audio/flac \
 CFLAGS =	-I${PREFIX}/include -I${X11BASE}/include -I${MODLUA_INCL_DIR}
 CFLAGS +=	-Wno-ignored-qualifiers
 
-MAKE_ENV =	SUBTARGET=mame \
-		NOWERROR=1 TOOLS=1 verbose=1 \
+MAKE_ENV =	NOWERROR=1 TOOLS=1 verbose=1 \
 		OVERRIDE_CC="${CC}" OVERRIDE_CXX="${CXX}" OVERRIDE_LD="${CXX}" \
 		OPT_FLAGS="${CXXFLAGS}" \
 		PYTHON_EXECUTABLE="${MODPY_BIN}" \
@@ -82,7 +81,7 @@ post-extract:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/mame64 ${PREFIX}/bin/mame
 	${INSTALL_DATA} ${WRKSRC}/docs/man/mame.6 ${PREFIX}/man/man6
-.for f in chdman jedutil ldresample ldverify romcmp
+.for f in castool chdman floptool imgtool jedutil ldresample ldverify romcmp
 	${INSTALL_PROGRAM} ${WRKSRC}/${f} ${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/docs/man/${f}.1 ${PREFIX}/man/man1
 .endfor
