@@ -4,6 +4,7 @@ COMMENT =		the picolisp system
 
 V =			17.12
 DISTNAME =		picoLisp-$V
+PKGNAME =		picolisp-$V
 
 CATEGORIES =		lang
 
@@ -21,6 +22,8 @@ MODJAVA_JRERUN =        yes
 MAKE_FLAGS =		PATH=${PATH}:${JAVA_HOME}/bin
 
 BUILD_DEPENDS =		java/javaPathHelper
+
+WANTLIB += c m
 
 # BSD?
 PERMIT_PACKAGE_CDROM =	Yes
