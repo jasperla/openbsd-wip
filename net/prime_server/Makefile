@@ -15,9 +15,20 @@ PERMIT_PACKAGE_CDROM =	Yes
 WANTLIB += c czmq crypto curl m nghttp2 pthread sodium ssl z
 WANTLIB += zmq
 
-GH_ACCOUNT =		kevinkreiser
-GH_PROJECT =		prime_server
-GH_TAGNAME =		$V
+GH_ACCOUNT =	kevinkreiser
+GH_PROJECT =	prime_server
+GH_TAGNAME =	$V
+
+TESTING =	1c45352fa2c4e25a748cf1221b93a9aed4dbc34c
+LOGGING =	c5b9b40d1e47cd190d78582993fd07e4478540af
+MASTER_SITES0 =	https://gist.githubusercontent.com/kevinkreiser/ada902fb51a1ad1e5a27/raw/${TESTING}/
+MASTER_SITES1 =	https://gist.githubusercontent.com/kevinkreiser/39f2e39273c625d96790/raw/${LOGGING}/
+
+EXTRACT_ONLY =	${DISTNAME}${EXTRACT_SUFX}
+DISTFILES =	${DISTNAME}${EXTRACT_SUFX} \
+			testing-${TESTING}{testing}.hpp:0 \
+			logging-${LOGGING}{logging}.hpp:1
+DIST_SUBDIR =		prime_server
 
 BUILD_DEPENDS =		${MODGNU_AUTOCONF_DEPENDS} \
 			${MODGNU_AUTOMAKE_DEPENDS}
@@ -33,8 +44,8 @@ AUTOCONF_VERSION =	2.69
 AUTOMAKE_VERSION =	1.15
 
 post-extract:
-	cp ${FILESDIR}/logging.hpp ${WRKDIST}/prime_server/logging/
-	cp ${FILESDIR}/testing.hpp ${WRKDIST}/test/testing/
+	cp ${FULLDISTDIR}/logging-*.hpp ${WRKDIST}/prime_server/logging/logging.hpp
+	cp ${FULLDISTDIR}/testing-*.hpp ${WRKDIST}/test/testing/testing.hpp
 
 pre-configure:
 	cd ${WRKDIST} && \
