@@ -62,3 +62,14 @@ share/mame/artwork/shadow-mask.png
 share/mame/artwork/slot-mask-aligned.png
 share/mame/artwork/slot-mask.png
 share/mame/artwork/white.png
+share/mame/keymaps/
+share/mame/keymaps/km_be.map
+share/mame/keymaps/km_br.map
+share/mame/keymaps/km_ch.map
+share/mame/keymaps/km_de.map
+share/mame/keymaps/km_es.map
+share/mame/keymaps/km_fr.map
+share/mame/keymaps/km_gb.map
+share/mame/keymaps/km_it.map
+share/mame/keymaps/km_pt.map
+share/mame/keymaps/km_se.map
