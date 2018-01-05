@@ -87,5 +87,8 @@ do-install:
 .endfor
 	${INSTALL_DATA_DIR} ${PREFIX}/share/mame
 	@cp -r ${WRKSRC}/artwork ${PREFIX}/share/mame
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/mame
+	${SUBST_DATA} ${FILESDIR}/mame.ini \
+		${PREFIX}/share/examples/mame/mame.ini
 
 .include <bsd.port.mk>

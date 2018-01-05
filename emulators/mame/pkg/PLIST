@@ -20,6 +20,8 @@
 @man man/man1/ldverify.1
 @man man/man1/romcmp.1
 @man man/man6/mame.6
+share/examples/mame/
+share/examples/mame/mame.ini
 share/mame/
 share/mame/artwork/
 share/mame/artwork/LICENSE
