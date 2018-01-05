@@ -1,4 +1,4 @@
-$OpenBSD: patch-include_SDL_endian_h,v 1.1 2017/05/14 06:40:35 jsg Exp $
+$OpenBSD$
 
 <endian.h> is simpler and more reliable.
 
@@ -12,7 +12,7 @@ Index: include/SDL_endian.h
 -#else /* __linux__ */
 +#elif defined(__OpenBSD__)
 +#include <endian.h>
-+#define SDL_BYTEORDER  BYTE_ORDER
++#define SDL_BYTEORDER BYTE_ORDER
 +#else
  #if defined(__hppa__) || \
      defined(__m68k__) || defined(mc68000) || defined(_M_M68K) || \

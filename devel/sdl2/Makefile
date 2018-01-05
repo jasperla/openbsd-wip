@@ -10,6 +10,10 @@ PKGNAME=	sdl2-${V}
 CATEGORIES=	devel
 MASTER_SITES=	http://www.libsdl.org/release/
 
+LIB_DEPENDS=	audio/libsamplerate
+
+MAINTAINER=	Thomas Frohwein <frohwein@ymail.com>
+
 SHARED_LIBS=	SDL2	0.3
 SHARED_LIBS +=  SDL2-2.0                  0.3 # 0.3
 
@@ -41,6 +45,7 @@ CONFIGURE_ENV+= ac_cv_lib_usb_hid_init=no \
 WANTLIB=	m pthread sndio usbhid
 # GL/X11/Xext/Xrender/Xrandr are dlopen'd by SDL
 WANTLIB+=       GL X11 Xau Xdmcp Xext Xrandr Xrender xcb
+WANTLIB+=	samplerate
 
 NO_TEST=	Yes
 
