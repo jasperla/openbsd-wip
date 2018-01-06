@@ -7,6 +7,7 @@ GH_PROJECT =	qcad
 GH_TAGNAME =	v3.19.2.0
 
 CATEGORIES=	cad graphics
+
 QCAD_VERSION =	0.0
 QCAD_LIBS=	qcadcore \
 		qcadecmaapi \
@@ -55,5 +56,9 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/ts/*.qm ${PREFIX}/share/qcad/qm
 	${INSTALL_DATA_DIR} ${PREFIX}/share/qcad/fonts
 	${INSTALL_DATA} ${WRKSRC}/fonts/*.* ${PREFIX}/share/qcad/fonts
+
+# Don't require specific Qt version
+pre-configure:
+	sed -i "s|$${QT_VERSION}|${MODQT5_VERSION}|g" ${WRKSRC}/src/3rdparty/3rdparty.pro
 
 .include <bsd.port.mk>
