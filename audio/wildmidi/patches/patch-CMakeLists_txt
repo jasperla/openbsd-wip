@@ -1,0 +1,16 @@
+$OpenBSD$
+
+Don't hardcode optimization flags.
+
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -114,8 +114,6 @@ IF (CMAKE_COMPILER_IS_GNUCC OR (CMAKE_C_COMPILER_ID MA
+ 
+     IF (CMAKE_BUILD_TYPE STREQUAL "Debug")
+         ADD_DEFINITIONS(-ggdb3 -O0)
+-    ELSEIF (CMAKE_BUILD_TYPE STREQUAL "Release")
+-        ADD_DEFINITIONS(-O3)
+     ENDIF (CMAKE_BUILD_TYPE STREQUAL "Debug")
+ ENDIF ()
+ 
