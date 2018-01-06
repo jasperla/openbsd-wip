@@ -1,0 +1,14 @@
+$OpenBSD$
+
+Index: shared_app.pri
+--- shared_app.pri.orig
++++ shared_app.pri
+@@ -18,7 +18,7 @@ LIBS += \
+ !r_no_opennurbs {
+     LIBS += \
+         -lopennurbs \
+-        -lzlib
++        -lz
+ }
+ 
+ win32 {

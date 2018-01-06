@@ -1,0 +1,15 @@
+$OpenBSD$
+
+Index: src/3rdparty/3rdparty.pro
+--- src/3rdparty/3rdparty.pro.orig
++++ src/3rdparty/3rdparty.pro
+@@ -2,8 +2,7 @@ include (../../shared.pri)
+ TEMPLATE = subdirs
+ SUBDIRS = \
+     spatialindexnavel \
+-    stemmer \
+-    quazip
++    stemmer
+ 
+ !r_no_opennurbs {
+     SUBDIRS += opennurbs
