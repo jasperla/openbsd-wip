@@ -45,4 +45,6 @@ LIB_DEPENDS =	devel/kf5/ki18n \
 		textproc/libxslt \
 		textproc/libxml
 
+TEST_IS_INTERACTIVE =	X11
+
 .include <bsd.port.mk>

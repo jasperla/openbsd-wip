@@ -1,6 +1,6 @@
 STATUS:
 
---  akonadi
+-- akonadi
 -- ready for ports@
 -- TEST: 
 
@@ -27,6 +27,14 @@ STATUS:
 -- ready for ports@
 -- TEST: NO_TEST
 
+-- bovo
+-- ready for ports@
+-- TEST: NO_TEST
+
+-- cantor
+-- ready for ports@
+-- TEST: 100% tests passed, 0 tests failed out of 5
+
 -- gwenview
 -- ready for ports@
 -- TEST: NO_TEST
@@ -42,6 +50,9 @@ STATUS:
 - kcalcore
 -- sent to ports@
 -- TEST: RecursOn-RFC2445_RRULETest39.ics stuck
+
+-- kcalutils
+-- WIP
 
 - kcontacts
 -- sent to ports@
@@ -66,6 +77,13 @@ STATUS:
 -- ready for ports@
 -- 80% tests passed, 1 tests failed out of 5
 
+-- kidentitymanagement
+-- WIP
+
+- kig
+-- sent to ports@
+-- TEST: NO_TEST
+
 - kimap
 -- sent to ports@
 -- TEST: NO_TEST
@@ -83,6 +101,9 @@ STATUS:
 - kmines
 -- ready for ports@
 -- TEST: NO_TEST
+
+-- kpimtextedit
+-- WIP
 
 -- kqtquickcharts
 -- ready for ports@
@@ -127,6 +148,9 @@ STATUS:
 -- libkleo
 -- WIP
 
+- okular
+-- WIP
+
 - okteta
 -- ready for ports@
 -- TEST: 93% tests passed, 4 tests failed out of 55
@@ -134,3 +158,7 @@ STATUS:
 - svgpart
 -- ready for ports@
 -- TEST: NO_TEST
+
+- umbrello
+-- ready for ports@
+-- TEST: 100% tests passed, 0 tests failed out of 5

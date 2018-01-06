@@ -23,31 +23,35 @@ MODULES =	lang/lua \
 		lang/python
 
 BUILD_DEPENDS =	devel/kf5/kdoctools \
-		devel/gettext-tools
+		devel/kf5/kguiaddons \
+		devel/kf5/kitemmodels \
+		devel/kf5/kwindowsystem \
+		devel/kf5/threadweaver \
+		devel/gettext-tools \
+		math/R \
+		lang/gcc/4.9
 
 RUN_DEPENDS =	devel/kf5/kdoctools \
-		devel/gettext \
+		devel/kf5/kguiaddons \
+		devel/kf5/kitemmodels \
+		devel/kf5/kwindowsystem \
+		devel/kf5/threadweaver \
 		devel/desktop-file-utils \
+		math/R \
 		x11/gtk+3,-guic
 
 LIB_DEPENDS =	devel/kf5/kconfig \
 		devel/kf5/kcrash \
-		devel/kf5/kguiaddons \
 		devel/kf5/kiconthemes \
-		devel/kf5/kitemmodels \
 		devel/kf5/kjobwidgets \
 		devel/kf5/knewstuff \
 		devel/kf5/kparts \
 		devel/kf5/kservice \
 		devel/kf5/ktexteditor \
-		devel/kf5/kwindowsystem \
 		devel/kf5/kxmlgui \
-		devel/kf5/threadweaver \
 		devel/kf5/kpty \
 		x11/qt5/qtxmlpatterns \
-		lang/gcc/4.9 \
 		lang/luajit \
-		math/R \
 		math/libqalculate \
 		print/libspectre \
 		x11/kde-applications/analitza

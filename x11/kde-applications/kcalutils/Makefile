@@ -22,8 +22,6 @@ WANTLIB += Qt5Widgets Qt5Xml ical icalss m
 
 BUILD_DEPENDS +=devel/gettext-tools
 
-RUN_DEPENDS =	devel/gettext
-
 LIB_DEPENDS =	devel/kf5/ki18n \
 		devel/kf5/kconfig \
 		devel/kf5/kcoreaddons \

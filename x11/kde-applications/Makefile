@@ -85,7 +85,7 @@
      #SUBDIR += khelpcenter
      SUBDIR += kholidays
      SUBDIR += kidentitymanagement
-     #SUBDIR += kig
+     SUBDIR += kig
      #SUBDIR += kigo
      #SUBDIR += killbots
      SUBDIR += kimap
