@@ -1,6 +1,6 @@
 # $OpenBSD: Makefile.template,v 1.76 2017/02/25 16:04:20 danj Exp $
 
-COMMENT =	Lua library for reading MaxMind's MMDB databases
+COMMENT =	Lua library for MaxMind GeoIP2/GeoLite2 databases
 
 V =		0.1
 PKGNAME =	lua-mmdb-${V}
@@ -18,7 +18,12 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =	lang/lua
 
-MODLUA_VERSION = 5.3
+FLAVORS =	lua52 lua53
+FLAVOR ?=
+
+.if !${FLAVOR:Mlua53}
+RUN_DEPENDS =	devel/lua-compat53,${MODLUA_FLAVOR}
+.endif
 
 TEST_DEPENDS =	net/libmaxminddb
 
