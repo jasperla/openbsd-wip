@@ -1,0 +1,12 @@
+$OpenBSD$
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+OpenTESArena
+============
+OpenTESArena requires the original game files from The Elder Scrolls:
+Arena to work properly. As of now, this must come from the Floppy Disk
+version of the game, which Bethesda has released for free here:
+https://elderscrolls.bethesda.net/en/arena
