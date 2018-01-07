@@ -1,0 +1,311 @@
+$OpenBSD: patch-dist_Makefile_in,v 1.10 2010/10/28 10:33:16 steven Exp $
+--- dist/Makefile.in.orig	Thu Jul  5 20:35:02 2007
++++ dist/Makefile.in	Thu Oct 28 12:27:31 2010
+@@ -11,7 +11,8 @@ exec_prefix=@exec_prefix@
+ bindir=	@bindir@
+ includedir=@includedir@
+ libdir=	@libdir@
+-docdir=	$(prefix)/docs
++libsdir=	$(prefix)/lib
++docdir=	$(prefix)/share/doc/db4
+ 
+ dmode=	755
+ emode=	555
+@@ -41,7 +42,9 @@ INSTALLER=	@INSTALLER@
+ LIBTOOL=	@LIBTOOL@
+ 
+ POSTLINK=	@POSTLINK@
+-SOLINK=		@MAKEFILE_SOLINK@
++dbLINK=		@MAKEFILE_dbLINK@
++dbtclLINK=	@MAKEFILE_dbtclLINK@
++dbjavaLINK=	@MAKEFILE_dbjavaLINK@
+ SOFLAGS=	@SOFLAGS@
+ LIBMAJOR=	@DB_VERSION_MAJOR@
+ LIBVERSION=	@DB_VERSION_MAJOR@.@DB_VERSION_MINOR@
+@@ -62,11 +65,11 @@ LIBCSO_LIBS=	@LIBCSO_LIBS@ @LIBSO_LIBS@
+ 
+ libdb_base=	libdb
+ libdb=		$(libdb_base).a
+-libdb_version=	$(libdb_base)-$(LIBVERSION).a
+-libso=		$(libdb_base)-$(LIBVERSION)@SOSUFFIX@
+-libso_target=	$(libdb_base)-$(LIBVERSION).la
++libdb_version=	$(libdb_base).a
++libso=		$(libdb_base)@SOSUFFIX@.$(DBVERSION)
++libso_target=	$(libdb_base).la
+ libso_default=	$(libdb_base)@SOSUFFIX@
+-libso_major=	$(libdb_base)-$(LIBMAJOR)@SOSUFFIX@
++libso_major=	$(libdb_base)@SOSUFFIX@.$(LIBMAJOR)
+ 
+ ##################################################
+ # C++ API.
+@@ -81,11 +84,11 @@ LIBXSO_LIBS=	@LIBXSO_LIBS@ @LIBSO_LIBS@
+ 
+ libcxx_base=	libdb_cxx
+ libcxx=		$(libcxx_base).a
+-libcxx_version=	$(libcxx_base)-$(LIBVERSION).a
+-libxso=		$(libcxx_base)-$(LIBVERSION)@SOSUFFIX@
+-libxso_target=	$(libcxx_base)-$(LIBVERSION).la
++libcxx_version=	$(libcxx_base).a
++libxso=		$(libcxx_base)@SOSUFFIX@.$(DBCXXVERSION)
++libxso_target=	$(libcxx_base).la
+ libxso_default=	$(libcxx_base)@SOSUFFIX@
+-libxso_major=	$(libcxx_base)-$(LIBMAJOR)@SOSUFFIX@
++libxso_major=	$(libcxx_base)@SOSUFFIX@.$(LIBMAJOR)
+ 
+ ##################################################
+ # Java API.
+@@ -108,12 +111,12 @@ JAVA_SLEEPYCAT=	$(srcdir)/java/src/com/sleepycat
+ libj_jarfile=	db.jar
+ libj_exjarfile=	dbexamples.jar
+ libjso_base=	libdb_java
+-libjso=		$(libjso_base)-$(LIBVERSION)@JMODSUFFIX@
+-libjso_static=	$(libjso_base)-$(LIBVERSION).a
+-libjso_target=	$(libjso_base)-$(LIBVERSION).la
++libjso=		$(libjso_base)@JMODSUFFIX@.$(DBJVERSION)
++libjso_static=	$(libjso_base).a
++libjso_target=	$(libjso_base).la
+ libjso_default=	$(libjso_base)@JMODSUFFIX@
+-libjso_major=	$(libjso_base)-$(LIBMAJOR)@JMODSUFFIX@
+-libjso_g=	$(libjso_base)-$(LIBVERSION)_g@JMODSUFFIX@
++libjso_major=	$(libjso_base)@JMODSUFFIX@.$(LIBMAJOR)
++libjso_g=	$(libjso_base)_g@JMODSUFFIX@
+ 
+ ##################################################
+ # TCL API.
+@@ -123,11 +126,11 @@ libjso_g=	$(libjso_base)-$(LIBVERSION)_g@JMODSUFFIX@
+ TCL_INCLUDE_SPEC=	@TCL_INCLUDE_SPEC@
+ LIBTSO_LIBS=	@LIBTSO_LIBS@ @LIBSO_LIBS@
+ libtso_base=	libdb_tcl
+-libtso=		$(libtso_base)-$(LIBVERSION)@MODSUFFIX@
+-libtso_static=	$(libtso_base)-$(LIBVERSION).a
+-libtso_target=	$(libtso_base)-$(LIBVERSION).la
++libtso=		$(libtso_base)@MODSUFFIX@.$(DBTCLVERSION)
++libtso_static=	$(libtso_base).a
++libtso_target=	$(libtso_base).la
+ libtso_default=	$(libtso_base)@MODSUFFIX@
+-libtso_major=	$(libtso_base)-$(LIBMAJOR)@MODSUFFIX@
++libtso_major=	$(libtso_base)@MODSUFFIX@.$(LIBMAJOR)
+ 
+ ##################################################
+ # db_dump185 UTILITY
+@@ -531,9 +534,9 @@ RPC_CXXSRV_OBJS=\
+ 
+ UTIL_PROGS=\
+ 	@ADDITIONAL_PROGS@ \
+-	db_archive db_checkpoint db_codegen db_deadlock db_dump \
+-	db_hotbackup db_load db_printlog db_recover db_stat db_upgrade \
+-	db_verify
++	db4_archive db4_checkpoint db4_codegen db4_deadlock db4_dump \
++	db4_hotbackup db4_load db4_printlog db4_recover db4_stat db4_upgrade \
++	db4_verify
+ 
+ ##################################################
+ # List of files installed into the library directory.
+@@ -584,14 +587,10 @@ $(libdb): $(DEF_LIB)
+ $(libdb_version): $(C_OBJS)
+ 	$(AR) cr $@ $(C_OBJS)
+ 	$(RANLIB) $@
+-	$(RM) -f $(libdb)
+-	$(LN) -s $(libdb_version) $(libdb)
+ 
+ # Shared C library.
+ $(libso_target): $(C_OBJS)
+-	$(SOLINK) $(SOFLAGS) $(LDFLAGS) -o $@ $(C_OBJS) $(LIBCSO_LIBS)
+-	$(RM) -f $(libdb)
+-	$(LN) -s .libs/$(libdb_version) $(libdb)
++	$(dbLINK) $(SOFLAGS) $(LDFLAGS) -o $@ $(C_OBJS) $(LIBCSO_LIBS)
+ 
+ # Static C++ library named libdb_cxx.a.
+ $(libcxx): $(DEF_LIB_CXX)
+@@ -600,24 +599,20 @@ $(libcxx): $(DEF_LIB_CXX)
+ $(libcxx_version): $(CXX_OBJS) $(C_OBJS)
+ 	$(AR) cr $@ $(CXX_OBJS) $(C_OBJS)
+ 	$(RANLIB) $@
+-	$(RM) -f $(libcxx)
+-	$(LN) -s $(libcxx_version) $(libcxx)
+ 
+ # Shared C++ library.
+ $(libxso_target): $(CXX_OBJS) $(C_OBJS)
+ 	$(XSOLINK) $(SOFLAGS) $(LDFLAGS) \
+ 	    -o $@ $(CXX_OBJS) $(C_OBJS) $(LIBXSO_LIBS)
+-	$(RM) -f $(libcxx)
+-	$(LN) -s .libs/$(libcxx_version) $(libcxx)
+ 
+ # Shared Java library.
+ $(libjso_target): $(JAVA_OBJS) $(C_OBJS)
+-	$(SOLINK) -shrext @JMODSUFFIX@ $(SOFLAGS) $(LDFLAGS) \
++	$(dbjavaLINK) -shrext @JMODSUFFIX@ $(SOFLAGS) $(LDFLAGS) \
+ 	    -o $@ $(JAVA_OBJS) $(C_OBJS) $(LIBJSO_LIBS)
+ 
+ # Shared Tcl library.
+ $(libtso_target): $(TCL_OBJS) $(C_OBJS)
+-	$(SOLINK) @LIBTSO_MODULE@ $(SOFLAGS) $(LDFLAGS) \
++	$(dbtclLINK) @LIBTSO_MODULE@ $(SOFLAGS) $(LDFLAGS) \
+ 	    -o $@ $(TCL_OBJS) $(C_OBJS) $(LIBTSO_LIBS)
+ 
+ ##################################################
+@@ -654,66 +649,66 @@ berkeley_db_cxxsvc: $(RPC_CXXSRV_OBJS) util_log@o@ $(D
+ 	    $(RPC_CXXSRV_OBJS) util_log@o@ $(DEF_LIB_CXX) $(LIBS)
+ 	$(POSTLINK) $@
+ 
+-db_archive: db_archive@o@ util_sig@o@ $(DEF_LIB)
++db4_archive: db_archive@o@ util_sig@o@ $(DEF_LIB)
+ 	$(CCLINK) -o $@ $(LDFLAGS) \
+ 	    db_archive@o@ util_sig@o@ $(DEF_LIB) $(LIBS)
+ 	$(POSTLINK) $@
+ 
+-db_checkpoint: db_checkpoint@o@ util_log@o@ util_sig@o@ $(DEF_LIB)
++db4_checkpoint: db_checkpoint@o@ util_log@o@ util_sig@o@ $(DEF_LIB)
+ 	$(CCLINK) -o $@ $(LDFLAGS) \
+ 	    db_checkpoint@o@ util_log@o@ util_sig@o@ $(DEF_LIB) $(LIBS)
+ 	$(POSTLINK) $@
+ 
+-db_codegen: db_codegen@o@ code_capi@o@ code_parse@o@ $(DEF_LIB)
++db4_codegen: db_codegen@o@ code_capi@o@ code_parse@o@ $(DEF_LIB)
+ 	$(CCLINK) -o $@ $(LDFLAGS) \
+ 	    db_codegen@o@ code_capi@o@ code_parse@o@ $(DEF_LIB) $(LIBS)
+ 	$(POSTLINK) $@
+ 
+-db_deadlock: db_deadlock@o@ util_log@o@ util_sig@o@ $(DEF_LIB)
++db4_deadlock: db_deadlock@o@ util_log@o@ util_sig@o@ $(DEF_LIB)
+ 	$(CCLINK) -o $@ $(LDFLAGS) \
+ 	    db_deadlock@o@ util_log@o@ util_sig@o@ $(DEF_LIB) $(LIBS)
+ 	$(POSTLINK) $@
+ 
+-db_dump: db_dump@o@ util_cache@o@ util_sig@o@ $(DEF_LIB)
++db4_dump: db_dump@o@ util_cache@o@ util_sig@o@ $(DEF_LIB)
+ 	$(CCLINK) -o $@ $(LDFLAGS) \
+ 	    db_dump@o@ util_cache@o@ util_sig@o@ $(DEF_LIB) $(LIBS)
+ 	$(POSTLINK) $@
+ 
+-db_dump185: db_dump185@o@ @REPLACEMENT_OBJS@
++db4_dump185: db_dump185@o@ @REPLACEMENT_OBJS@
+ 	$(CCLINK) -o $@ $(LDFLAGS) db_dump185@o@ @REPLACEMENT_OBJS@ $(DB185LIB)
+ 	$(POSTLINK) $@
+ 
+-db_hotbackup: db_hotbackup@o@ util_sig@o@ $(DEF_LIB)
++db4_hotbackup: db_hotbackup@o@ util_sig@o@ $(DEF_LIB)
+ 	$(CCLINK) -o $@ $(LDFLAGS) \
+ 	    db_hotbackup@o@ util_sig@o@ $(DEF_LIB) $(LIBS)
+ 	$(POSTLINK) $@
+ 
+-db_load: db_load@o@ util_cache@o@ util_sig@o@ $(DEF_LIB)
++db4_load: db_load@o@ util_cache@o@ util_sig@o@ $(DEF_LIB)
+ 	$(CCLINK) -o $@ $(LDFLAGS) \
+ 	    db_load@o@ util_cache@o@ util_sig@o@ $(DEF_LIB) $(LIBS)
+ 	$(POSTLINK) $@
+ 
+-db_printlog: db_printlog@o@ $(PRINT_OBJS) util_sig@o@ $(DEF_LIB)
++db4_printlog: db_printlog@o@ $(PRINT_OBJS) util_sig@o@ $(DEF_LIB)
+ 	$(CCLINK) -o $@ $(LDFLAGS) \
+ 	    db_printlog@o@ $(PRINT_OBJS) util_sig@o@ $(DEF_LIB) $(LIBS)
+ 	$(POSTLINK) $@
+ 
+-db_recover: db_recover@o@ util_sig@o@ $(DEF_LIB)
++db4_recover: db_recover@o@ util_sig@o@ $(DEF_LIB)
+ 	$(CCLINK) -o $@ $(LDFLAGS) \
+ 	    db_recover@o@ util_sig@o@ $(DEF_LIB) $(LIBS)
+ 	$(POSTLINK) $@
+ 
+-db_stat: db_stat@o@ util_cache@o@ util_sig@o@ $(DEF_LIB)
++db4_stat: db_stat@o@ util_cache@o@ util_sig@o@ $(DEF_LIB)
+ 	$(CCLINK) -o $@ $(LDFLAGS) \
+ 	    db_stat@o@ util_cache@o@ util_sig@o@ $(DEF_LIB) $(LIBS)
+ 	$(POSTLINK) $@
+ 
+-db_upgrade: db_upgrade@o@ util_sig@o@ $(DEF_LIB)
++db4_upgrade: db_upgrade@o@ util_sig@o@ $(DEF_LIB)
+ 	$(CCLINK) -o $@ $(LDFLAGS) \
+ 	    db_upgrade@o@ util_sig@o@ $(DEF_LIB) $(LIBS)
+ 	$(POSTLINK) $@
+ 
+-db_verify: db_verify@o@ util_cache@o@ util_sig@o@ $(DEF_LIB)
++db4_verify: db_verify@o@ util_cache@o@ util_sig@o@ $(DEF_LIB)
+ 	$(CCLINK) -o $@ $(LDFLAGS) \
+ 	    db_verify@o@ util_cache@o@ util_sig@o@ $(DEF_LIB) $(LIBS)
+ 	$(POSTLINK) $@
+@@ -727,41 +722,36 @@ library_install: install_include install_lib install_u
+ uninstall: uninstall_include uninstall_lib uninstall_utilities uninstall_docs
+ 
+ install_setup:
+-	@test -d $(DESTDIR)$(prefix) || \
++	test -d $(DESTDIR)$(prefix) || \
+ 	    ($(MKDIR) -p $(DESTDIR)$(prefix) && \
+ 	    $(CHMOD) $(dmode) $(DESTDIR)$(prefix))
+ 
+ INCDOT=	db.h db_cxx.h @ADDITIONAL_INCS@
+ install_include:
+ 	@echo "Installing DB include files: $(DESTDIR)$(includedir) ..."
+-	@test -d $(DESTDIR)$(includedir) || \
++	test -d $(DESTDIR)$(includedir) || \
+ 	    ($(MKDIR) -p $(DESTDIR)$(includedir) && \
+ 	    $(CHMOD) $(dmode) $(DESTDIR)$(includedir))
+-	@cd $(DESTDIR)$(includedir) && $(RM) -f $(INCDOT)
+-	@$(CP) -p $(INCDOT) $(DESTDIR)$(includedir)
+-	@cd $(DESTDIR)$(includedir) && $(CHMOD) $(fmode) $(INCDOT)
++	cd $(DESTDIR)$(includedir) && $(RM) -f $(INCDOT)
++	${BSD_INSTALL_DATA} -p $(INCDOT) $(DESTDIR)$(includedir)
++	cd $(DESTDIR)$(includedir) && $(CHMOD) $(fmode) $(INCDOT)
+ 
+ uninstall_include:
+ 	@cd $(DESTDIR)$(includedir) && $(RM) -f $(INCDOT)
+ 
+ install_lib:
+ 	@echo "Installing DB library: $(DESTDIR)$(libdir) ..."
+-	@test -d $(DESTDIR)$(libdir) || \
++	test -d $(DESTDIR)$(libdir) || \
+ 	    ($(MKDIR) -p $(DESTDIR)$(libdir) && \
+ 	    $(CHMOD) $(dmode) $(DESTDIR)$(libdir))
+-	@cd $(DESTDIR)$(libdir) && $(RM) -f $(LIB_INSTALL_FILE_LIST)
+-	@$(INSTALLER) @INSTALL_LIBS@ $(DESTDIR)$(libdir)
+-	@(cd $(DESTDIR)$(libdir) && \
+-	    test -f $(libso) && $(LN) -s $(libso) $(libso_default); \
+-	    test -f $(libso) && $(LN) -s $(libso) $(libso_major); \
+-	    test -f $(libxso) && $(LN) -s $(libxso) $(libxso_default); \
+-	    test -f $(libxso) && $(LN) -s $(libxso) $(libxso_major); \
+-	    test -f $(libtso) && $(LN) -s $(libtso) $(libtso_default); \
+-	    test -f $(libtso) && $(LN) -s $(libtso) $(libtso_major); \
+-	    test -f $(libjso) && $(LN) -s $(libjso) $(libjso_default); \
+-	    test -f $(libjso) && $(LN) -s $(libjso) $(libjso_major); \
+-	    test -f $(libjso) && $(LN) -s $(libjso) $(libjso_g)) || exit 0
+-	@(test -f $(libj_jarfile) && \
++	cd $(DESTDIR)$(libdir) && $(RM) -f $(LIB_INSTALL_FILE_LIST)
++	$(INSTALLER) @INSTALL_LIBS@ $(DESTDIR)$(libdir)
++	(cd $(DESTDIR)$(libdir) && \
++	    test -f $(libso) && $(LN) -s db4/$(libso) ..; \
++	    test -f $(libxso) && $(LN) -s db4/$(libxso) ..; \
++	    test -f $(libtso) && $(LN) -s db4/$(libtso) ..; \
++	    test -f $(libjso) && $(LN) -s db4/$(libjso) ..) || exit 0
++	(test -f $(libj_jarfile) && \
+ 	    $(CP) $(libj_jarfile) $(DESTDIR)$(libdir) && \
+ 	    $(CHMOD) $(fmode) $(DESTDIR)$(libdir)/$(libj_jarfile)) || exit 0
+ 
+@@ -770,10 +760,10 @@ uninstall_lib:
+ 
+ install_utilities:
+ 	@echo "Installing DB utilities: $(DESTDIR)$(bindir) ..."
+-	@test -d $(DESTDIR)$(bindir) || \
++	test -d $(DESTDIR)$(bindir) || \
+ 	    ($(MKDIR) -p $(DESTDIR)$(bindir) && \
+ 	    $(CHMOD) $(dmode) $(DESTDIR)$(bindir))
+-	@for i in $(UTIL_PROGS); do \
++	for i in $(UTIL_PROGS); do \
+ 		test -f $$i.exe && i=$$i.exe || i=$$i; \
+ 		$(RM) -f $(DESTDIR)$(bindir)/$$i; \
+ 		$(INSTALLER) $$i $(DESTDIR)$(bindir)/$$i; \
+@@ -791,11 +781,12 @@ DOCLIST=api_c api_cxx api_tcl articles collections gsg
+ 
+ install_docs:
+ 	@echo "Installing documentation: $(DESTDIR)$(docdir) ..."
+-	@test -d $(DESTDIR)$(docdir) || \
++	test -d $(DESTDIR)$(docdir) || \
+ 	    ($(MKDIR) -p $(DESTDIR)$(docdir) && \
+ 	    $(CHMOD) $(dmode) $(DESTDIR)$(docdir))
+-	@cd $(DESTDIR)$(docdir) && $(RM) -rf $(DOCLIST)
+-	@cd $(srcdir)/docs && $(CP) -pr $(DOCLIST) $(DESTDIR)$(docdir)/
++	cd $(DESTDIR)$(docdir) && $(RM) -rf $(DOCLIST)
++	cd $(srcdir)/docs && $(CP) -pr $(DOCLIST) $(DESTDIR)$(docdir)/
++	chown -R root:wheel $(DESTDIR)$(docdir)/
+ 
+ uninstall_docs:
+ 	@cd $(DESTDIR)$(docdir) && $(RM) -rf $(DOCLIST)
