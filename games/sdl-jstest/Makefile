@@ -1,10 +1,8 @@
 # $OpenBSD: Makefile.template,v 1.76 2017/02/25 16:04:20 danj Exp $
 
-V =		20180105
-
 COMMENT =	simple SDL joystick test application
 
-DISTNAME =	sdl-jstest-${V}
+DISTNAME =	sdl-jstest-20180105
 
 GH_ACCOUNT =	Grumbel
 GH_PROJECT =	sdl-jstest
@@ -14,7 +12,7 @@ CATEGORIES =	games
 
 MAINTAINER =	Thomas Frohwein <frohwein@ymail.com>
 
-# GPLv2+ (as comment in sdl{,2}-jstest.c)
+# GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += SDL SDL2 c curses form pthread

@@ -70,5 +70,5 @@ editors/dte				ready to import (bcallah)
 editors/mined				ready to import (bcallah)
 converters/unsf				ready to import (bcallah)
 games/openjk				bcallah's version was sent to ports@ 2017-12-22 (beat me to it)
-devel/sdl2				update to 2.0.7 sent to ports@ 2018-01-04 (thfrwn)
 games/sdl-jstest			sent to ports@ 2018-01-05 (thfrwn)
+net/toxcore				outside version was sent to ports@ 2017-12-09 by aSourceFish
