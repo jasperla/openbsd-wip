@@ -1,0 +1,14 @@
+$OpenBSD$
+
+Index: abi-compliance-checker.pl
+--- abi-compliance-checker.pl.orig
++++ abi-compliance-checker.pl
+@@ -264,7 +264,7 @@ DESCRIPTION:
+ 
+ USAGE #1 (WITH ABI DUMPER):
+ 
+-  1. Library should be compiled with \"-g -Og\" GCC options
++  1. Library should be compiled with \"-g -O0\" GCC options
+      to contain DWARF debug info
+ 
+   2. Create ABI dumps for both library versions
