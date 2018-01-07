@@ -114,7 +114,7 @@
      #SUBDIR += kolourpaint
      #SUBDIR += kompare
      #SUBDIR += konquest
-     #SUBDIR += konsole
+     SUBDIR += konsole
      #SUBDIR += kontactinterface
      #SUBDIR += kopete
      #SUBDIR += kpat
