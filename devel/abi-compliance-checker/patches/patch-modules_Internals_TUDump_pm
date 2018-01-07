@@ -1,0 +1,19 @@
+$OpenBSD$
+
+use uctags
+
+Index: modules/Internals/TUDump.pm
+--- modules/Internals/TUDump.pm.orig
++++ modules/Internals/TUDump.pm
+@@ -539,9 +539,9 @@ sub checkCTags($$)
+     
+     if($In::Opt{"OS"} eq "bsd")
+     { # use ectags on BSD
+-        $CTags = getCmdPath("ectags");
++        $CTags = getCmdPath("uctags");
+         if(not $CTags) {
+-            printMsg("WARNING", "can't find \'ectags\' program");
++            printMsg("WARNING", "can't find \'uctags\' program");
+         }
+     }
+     if(not $CTags) {

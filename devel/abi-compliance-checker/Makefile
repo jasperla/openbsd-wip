@@ -1,22 +1,24 @@
 # $OpenBSD$
 
 COMMENT =	detecting ABI changes between releases of shared libs
-DISTNAME =	1.98.7
-PKGNAME =	abi-compliance-checker-${DISTNAME}
+
+GH_ACCOUNT =	lvc
+GH_PROJECT =	abi-compliance-checker
+GH_TAGNAME =	2.2
+
 CATEGORIES =	devel
+
 HOMEPAGE =	http://ispras.linuxbase.org/index.php/ABI_compliance_checker
-REVISION =	0
 
 # GPLv2+ or LGPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =	https://github.com/lvc/abi-compliance-checker/archive/
-WRKDIST =	${WRKDIR}/${PKGNAME}
-
-RUN_DEPENDS =	devel/ectags \
+RUN_DEPENDS =	devel/universal-ctags \
 		devel/p5-IPC-Run3
 
-NO_BUILD =		Yes
+TEST_DEPENDS =	${RUN_DEPENDS}
+
+NO_BUILD =	Yes
 
 do-install:
 	cd ${WRKSRC} && perl Makefile.pl -install --prefix=${TRUEPREFIX}
@@ -25,7 +27,7 @@ do-install:
 
 do-test:
 	cd ${WRKBUILD} && \
-	    perl ${WRKSRC}/abi-compliance-checker.pl -test-dump 2>&1 | \
-	    awk '{print} /ERROR/ {EC=1} END {exit EC}'
+		perl ${WRKSRC}/abi-compliance-checker.pl -test-dump 2>&1 | \
+		awk '{print} /ERROR/ {EC=1} END {exit EC}'
 
 .include <bsd.port.mk>

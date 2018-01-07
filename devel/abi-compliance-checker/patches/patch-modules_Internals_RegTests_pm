@@ -1,0 +1,35 @@
+$OpenBSD$
+
+Index: modules/Internals/RegTests.pm
+--- modules/Internals/RegTests.pm.orig
++++ modules/Internals/RegTests.pm
+@@ -4944,12 +4944,12 @@ sub runTests($$$$$$$$)
+                     changedDefaultVersion;
+                 };
+             ");
+-            $BuildCmd = $GccPath." -Wl,--version-script version -shared $ObjName.$SrcE -o $ObjName.$LExt -g -Og";
++            $BuildCmd = $GccPath." -Wl,--version-script version -shared $ObjName.$SrcE -o $ObjName.$LExt -g -O0";
+             $BuildCmd_Test = $GccPath." -Wl,--version-script version test.$SrcE -Wl,$ObjName.$LExt -o test";
+         }
+         else
+         {
+-            $BuildCmd = $GccPath." -shared -x c++ $ObjName.$SrcE -lstdc++ -o $ObjName.$LExt -g -Og";
++            $BuildCmd = $GccPath." -shared -x c++ $ObjName.$SrcE -lstdc++ -o $ObjName.$LExt -g -O0";
+             $BuildCmd_Test = $GccPath." -x c++ test.$SrcE -lstdc++ -Wl,$ObjName.$LExt -o test";
+         }
+         if(getArch_GCC(1)=~/\A(arm|x86_64)\Z/i)
+@@ -4986,12 +4986,12 @@ sub runTests($$$$$$$$)
+     { # default unix-like
+         if($Lang eq "C")
+         {
+-            $BuildCmd = $GccPath." -shared $ObjName.$SrcE -o $ObjName.$LExt -g -Og";
++            $BuildCmd = $GccPath." -shared $ObjName.$SrcE -o $ObjName.$LExt -g -O0";
+             $BuildCmd_Test = $GccPath." test.$SrcE -Wl,$ObjName.$LExt -o test";
+         }
+         else
+         { # C++
+-            $BuildCmd = $GccPath." -shared -x c++ $ObjName.$SrcE -lstdc++ -o $ObjName.$LExt -g -Og";
++            $BuildCmd = $GccPath." -shared -x c++ $ObjName.$SrcE -lstdc++ -o $ObjName.$LExt -g -O0";
+             $BuildCmd_Test = $GccPath." -x c++ test.$SrcE -Wl,$ObjName.$LExt -o test";
+         }
+         
