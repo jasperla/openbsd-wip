@@ -2,7 +2,7 @@
 
 COMMENT =		Tox client library
 
-V =			0.1.2
+V =			0.1.11
 DISTNAME =		toxcore-$V
 CATEGORIES =		net telephony
 HOMEPAGE =		https://tox.chat/
@@ -23,7 +23,7 @@ GH_ACCOUNT =		TokTok
 GH_PROJECT =		c-toxcore
 GH_TAGNAME =		v$V
 
-MODULES =		gnu gcc4
+MODULES =		gnu
 
 BUILD_DEPENDS +=	${MODGNU_AUTOCONF_DEPENDS} \
 			${MODGNU_AUTOMAKE_DEPENDS} \
