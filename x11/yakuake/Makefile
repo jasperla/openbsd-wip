@@ -33,7 +33,8 @@ BUILD_DEPENDS +=devel/gettext-tools \
 RUN_DEPENDS =	devel/desktop-file-utils \
 		misc/shared-mime-info \
 		devel/kf5/kdoctools \
-		x11/gtk+3,-guic
+		x11/gtk+3,-guic \
+		x11/kde-applications/konsole
 
 LIB_DEPENDS =	devel/kf5/karchive \
 		devel/kf5/attica \
