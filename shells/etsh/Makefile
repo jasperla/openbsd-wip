@@ -1,6 +1,6 @@
 # $OpenBSD$
 
-V =		5.0.0
+V =		5.0.1
 COMMENT =	enhanced Thompson shell from Sixth Edition Unix
 DISTNAME =	etsh-${V}
 CATEGORIES =	shells
