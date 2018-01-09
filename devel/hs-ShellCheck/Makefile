@@ -1,5 +1,7 @@
 # $OpenBSD$
 
+BROKEN-i386 =		needs a fixed rts/Linker.c in ghc
+
 COMMENT =		shell script analysis tool
 
 DISTNAME =		ShellCheck-0.4.7
