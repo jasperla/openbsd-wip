@@ -1,0 +1,25 @@
+$OpenBSD$
+
+Get ncpus.
+
+Index: source/vdrift/numprocessors.h
+--- source/vdrift/numprocessors.h.orig
++++ source/vdrift/numprocessors.h
+@@ -16,7 +16,7 @@ namespace NUMPROCESSORS
+ 	//#include <pthread.h>
+ 
+ 	// Required to get number of processors using get_nprocs_conf.
+-	#include <sys/sysinfo.h>
++	#include <unistd.h>
+ #else
+ 	#error This development environment doesnt support pthreads or windows threads
+ #endif
+@@ -63,7 +63,7 @@ namespace NUMPROCESSORS
+ 		// We'll just assume we have access to all processors.  (When setting 
+ 		// the number of threads, we default to this value, but the user 
+ 		// still has the option of setting any number of threads.)
+-		return (unsigned int)get_nprocs_conf();
++		return (unsigned int)sysconf(_SC_NPROCESSORS_ONLN);
+ #endif
+ 	}
+ 

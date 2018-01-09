@@ -1,0 +1,26 @@
+$OpenBSD$
+
+No -lrt
+
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -52,7 +52,7 @@ if(WIN32)
+ 	CACHE STRING "Data file install path. Must be a relative path (from CMAKE_INSTALL_PREFIX), with no trailing slash.")
+ else()
+ 	if(NOT SHARE_INSTALL)
+-		set(SHARE_INSTALL "share/games/stuntrally"
++		set(SHARE_INSTALL "share/stuntrally"
+ 		CACHE STRING "Data file install path. Must be a relative path (from CMAKE_INSTALL_PREFIX), with no trailing slash.")
+ 	endif()
+ endif()
+@@ -124,9 +124,6 @@ if(BUILD_GAME OR BUILD_EDITOR)
+ 		list(APPEND LIBS ${${lib}_LIBRARIES})
+ 	endforeach()
+ 
+-	if(UNIX)
+-		list(APPEND LIBS "rt")   # For clock_gettime()
+-	endif()
+ endif()
+ 
+ # only game has sound
