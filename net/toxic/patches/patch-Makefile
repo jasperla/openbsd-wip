@@ -1,7 +1,8 @@
 $OpenBSD$
---- Makefile.orig	Wed Feb 24 18:31:12 2016
-+++ Makefile	Wed Feb 24 18:31:32 2016
-@@ -59,20 +59,17 @@ OBJ := $(addprefix $(BUILD_DIR)/, $(OBJ))
+Index: Makefile
+--- Makefile.orig
++++ Makefile
+@@ -62,20 +62,17 @@ OBJ := $(addprefix $(BUILD_DIR)/, $(OBJ))
  all: $(BUILD_DIR)/toxic
  
  $(BUILD_DIR)/toxic: $(OBJ)

@@ -17,7 +17,7 @@ WANTLIB += qrencode toxav toxcore toxdns toxencryptsave vpx
 
 GH_ACCOUNT =		Jfreegman
 GH_PROJECT =		toxic
-GH_TAGNAME =		v0.7.2
+GH_TAGNAME =		v0.8.1
 
 LIB_DEPENDS =		audio/freealut \
 			net/toxcore \
