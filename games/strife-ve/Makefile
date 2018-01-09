@@ -30,8 +30,19 @@ NO_TEST =	Yes
 
 WRKSRC =	${WRKDIST}/${GH_PROJECT}-src
 
+# Fix up system-wide install paths
+post-extract:
+	@sed -i 's,/games/doom,/strife-ve,g' ${WRKSRC}/src/d_iwad.c
+	@sed -i 's,"movies/,"${TRUEPREFIX}/share/strife-ve/movies/,g' \
+		${WRKSRC}/src/strife/d_main.c
+
 # No upstream install target
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/${GH_PROJECT} ${PREFIX}/bin
+	${INSTALL_DATA_DIR} ${PREFIX}/share/strife-ve
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/strife-ve
+	${SUBST_CMD} -c -m ${SHAREMODE} -o ${SHAREOWN} -g ${SHAREGRP} \
+		${FILESDIR}/strife-music.cfg \
+		${PREFIX}/share/examples/strife-ve/strife-music.cfg
 
 .include <bsd.port.mk>

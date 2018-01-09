@@ -13,9 +13,14 @@ GOG.com release of the game.
 You must extract the files from
 setup_the_original_strife_-_veteran_edition_gog-2a_(12083)_(g).exe using
 using the innoextract package. The files will be in a directory named
-app. You must keep this directory, though it can be renamed and moved to
-a location of your choosing, and you can delete everything else that is
-extracted from the exe, such as the tmp directory.
+app.  Copy the game data files:
 
-strife-ve should be launched from the app directory for full video and
-music support.
+# cp {strife1,voices,SVE}.wad ${PREFIX}/share/strife-ve/
+
+Optionally, you may copy the movies/ and music/ directories to the same
+location for intro trailers and enhanced game music.  Copy the example
+configuration to enable the music substitutions:
+
+$ mkdir -p ~/.local/share/strife-ve/music
+$ cp ${PREFIX}/share/examples/strife-ve/strife-music.cfg \
+	~/.local/share/strife-ve/music/
