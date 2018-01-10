@@ -11,11 +11,11 @@ MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 # Artistic 2.0
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB +=		c perl
+WANTLIB +=	c perl
 
-MODULES =		cpan
+MODULES =	cpan
 
-TEST_DEPENDS =		devel/p5-Test-LeakTrace \
-			devel/p5-Test-Warnings>=0.006
+TEST_DEPENDS =	devel/p5-Test-LeakTrace \
+		devel/p5-Test-Warnings
 
 .include <bsd.port.mk>
