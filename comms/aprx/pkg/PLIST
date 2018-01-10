@@ -1,0 +1,5 @@
+@comment $OpenBSD$
+@man man/man8/aprx-stat.8
+@man man/man8/aprx.8
+@bin sbin/aprx
+@bin sbin/aprx-stat

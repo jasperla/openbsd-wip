@@ -1,0 +1,2 @@
+- fix install (/etc/aprx.conf needs to be added)
+- verify deps
