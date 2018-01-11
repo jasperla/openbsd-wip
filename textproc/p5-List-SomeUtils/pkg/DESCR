@@ -1,2 +1,0 @@
-List::SomeUtils provides some trivial but commonly needed functionality
-on lists which is not going to go into List::Util.
