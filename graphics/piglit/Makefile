@@ -4,11 +4,6 @@ COMMENT =	automated OpenGL and OpenCL testsuite
 
 DISTNAME =	piglit-20180108
 
-# This mirror has FreeBSD's adjustments in it
-#GH_ACCOUNT =	dumbbell
-#GH_PROJECT =	piglit
-#GH_COMMIT =	60996b829c85f3df192bc6228108c0a8eaa38afd
-
 # mesa3d github mirror (which should be official one)
 GH_ACCOUNT =	mesa3d
 GH_PROJECT =	piglit
