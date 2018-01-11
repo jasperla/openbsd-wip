@@ -33,7 +33,7 @@ WRKSRC =	${WRKDIST}/${GH_PROJECT}-src
 # Fix up system-wide install paths
 post-extract:
 	@sed -i 's,/games/doom,/strife-ve,g' ${WRKSRC}/src/d_iwad.c
-	@sed -i 's,"movies/,"${TRUEPREFIX}/share/strife-ve/movies/,g' \
+	@sed -i 's,"movies/,"${LOCALBASE}/share/strife-ve/movies/,g' \
 		${WRKSRC}/src/strife/d_main.c
 
 # No upstream install target
