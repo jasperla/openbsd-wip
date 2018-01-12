@@ -4,7 +4,6 @@ COMMENT =	automated OpenGL and OpenCL testsuite
 
 DISTNAME =	piglit-20180108
 
-# mesa3d github mirror (which should be official one)
 GH_ACCOUNT =	mesa3d
 GH_PROJECT =	piglit
 GH_COMMIT =	8eefd87ed7a7be9b181bbe7d12a6f6c54921d522
@@ -24,6 +23,8 @@ WANTLIB += png waffle-1
 
 MODULES =		devel/cmake \
 			lang/python
+
+MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 
 BUILD_DEPENDS =		${_MODPY_BUILD_DEPENDS} \
 			www/py-mako \
