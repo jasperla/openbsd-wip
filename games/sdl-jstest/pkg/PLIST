@@ -1,5 +1,0 @@
-@comment $OpenBSD$
-@bin bin/sdl-jstest
-@bin bin/sdl2-jstest
-@man man/man1/sdl-jstest.1
-@man man/man1/sdl2-jstest.1
