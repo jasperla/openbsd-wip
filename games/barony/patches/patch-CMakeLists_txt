@@ -1,0 +1,23 @@
+$OpenBSD$
+
+libexecinfo is necessary
+
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -316,6 +316,7 @@ else()
+ endif()
+ target_link_libraries(barony ${OPENGL_LIBRARIES})
+ target_link_libraries(barony ${THREADS_LIBRARIES})
++target_link_libraries(barony -lexecinfo)
+ target_link_libraries(barony -lm)
+ if( NOT WIN32 AND NOT APPLE)
+   #Remember, Windows and Mac aren't using find_package for FMOD and PNG.
+@@ -397,6 +398,7 @@ else()
+ endif()
+ target_link_libraries(editor ${OPENGL_LIBRARIES})
+ target_link_libraries(editor ${THREADS_LIBRARIES})
++target_link_libraries(editor -lexecinfo)
+ target_link_libraries(editor -lm)
+ # We need to link to Winsock if we're on Windows
+ if( NOT WIN32 AND NOT APPLE)
