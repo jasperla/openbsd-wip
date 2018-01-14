@@ -1,7 +1,6 @@
-# $OpenBSD: Makefile.inc,v 1.7 2017/07/29 00:07:13 zhuk Exp $
+# $OpenBSD: Makefile.inc,v 1.9 2018/01/04 09:34:24 bentley Exp $
 
 ONLY_FOR_ARCHS =	${GCC4_ARCHS} ${CLANG_ARCHS}
-BROKEN-powerpc =	never built - gcc ICE
 
 .include "Makefile.version"
 
@@ -40,7 +39,7 @@ RUN_DEPENDS-examples +=	${BUILD_PKGPATH},-main>=${VERSION:R},<${NEXT_VERSION}
 # A few components, including QtWebEngine, are LGPLv3 only, no LGPLv2.1.
 PERMIT_PACKAGE_CDROM ?=	Yes
 
-MASTER_SITES ?=		http://download.qt.io/official_releases/qt/${QT5_DIST_VERSION:R}/${QT5_DIST_VERSION}/submodules/
+MASTER_SITES ?=		https://download.qt.io/official_releases/qt/${QT5_DIST_VERSION:R}/${QT5_DIST_VERSION}/submodules/
 DIST_SUBDIR ?=		qt
 EXTRACT_SUFX ?=		.tar.xz
 

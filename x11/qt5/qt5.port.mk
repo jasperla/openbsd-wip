@@ -122,7 +122,7 @@ MODQT5_USE_GCC4_MODULE ?=	Yes
 COMPILER ?= base-clang ports-clang ports-gcc
 ONLY_FOR_ARCHS ?= ${CXX11_ARCHS}
 # useful?
-_MODQT5_SETUP +=	CC=cc CXX=c++ LINK_C=cc LINK=c++
+_MODQT5_SETUP +=	CC=cc CXX=c++
 .endif
 
 .include "Makefile.version"
