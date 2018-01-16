@@ -1,0 +1,27 @@
+$OpenBSD$
+TheoraPlay is a simple library to make decoding of Ogg Theora videos
+easier.
+
+A tiny example to pull data out of an .ogv file is about 50 lines of C
+code, and a complete SDL-based media player is about 300 lines of code.
+
+TheoraPlay is optimized for multicore CPUs, and is designed to be
+programmer-friendly. You will need libogg, libvorbis, and libtheora, of
+course, but then you just drop a .c file and two headers into your
+project and you're ready to hook up video decoding, without worrying
+about Ogg pages, Vorbis blocks, or Theora decoder state.
+
+Places TheoraPlay can be found in use: - Shank.  - Crypt of the
+Necrodancer.  - 20XX.  - FNA.
+
+What works: - Decoding video to YV12, IYUV, RGB, RGBA formats.  -
+Decoding audio to float32 PCM format.  - Decoding on background thread,
+for multicore/SMP support.  - Decoding from a file, or abstract i/o
+callbacks.  - Linux support.  - Mac OS X support.  - Windows support.  -
+Support x86 and PowerPC processors (and probably others).  - Supports 32
+and 64 bit builds.  - May compile and run elsewhere with little to no
+modification. Success stories and patches are welcome.
+
+What doesn't work: - No custom allocator support yet.  - Various things
+scattered in FIXMEs.  - Contributions of other ports are, of course,
+welcome.

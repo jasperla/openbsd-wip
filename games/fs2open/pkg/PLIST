@@ -1,3 +1,4 @@
 @comment $OpenBSD$
+bin/fs2open
 share/fs2open/
-@bin share/fs2open/fs2_open_3_8_0_x64
+@bin share/fs2open/fs2open

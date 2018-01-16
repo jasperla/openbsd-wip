@@ -1,6 +1,7 @@
 $OpenBSD$
 
 try to avoid get_target_property error
+remove cotire submodule dependency
 
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig

@@ -1,201 +1,64 @@
 # $OpenBSD: Makefile.template,v 1.76 2017/02/25 16:04:20 danj Exp $
-#
-# Replace ??? with appropriate values
-# Remove extraneous comments before commit
-# Use /usr/ports/infrastructure/bin/portcheck
 
-# Reasons why the port/package shouldn't be built
-#
-#ONLY_FOR_ARCHS =	???
-#NOT_FOR_ARCHS =	???
-#COMES_WITH =		???
-#BROKEN =		reason
+COMMENT =	Open source project based on the original FreeSpace 2 source
 
-#
-# Very short description of the package, 60 chars max
-#		|----------------------------------------------------------|
-COMMENT =	space sim
-# COMMENT-foo =	???	for multi packages
-
-#
-# What port/package will be created
-#
 DISTNAME =	fs2_open_3_8_0-source-Unix
-PKGNAME =	fs2open
-#PKGNAME-foo =	???	for multi packages
+PKGNAME =	fs2open-3.8.0
 
-#
-# For github: traditional tarballs in /releases/download are normally
-# preferred if available; use them with DISTNAME/MASTER_SITES lines as
-# normal. For projects using auto-generated tarballs, set GH_ACCOUNT,
-# GH_PROJECT, and *one* of GH_TAGNAME or GH_COMMIT. For GH_COMMIT, also
-# set DISTNAME. For GH_TAGNAME, set DISTNAME if the default is no good.
-#
 GH_ACCOUNT =	scp-fs2open
 GH_PROJECT =	fs2open.github.com
 GH_TAGNAME =	release_3_8_0
-#GH_COMMIT =	abab123456789abacafeabab123123b1e4ble4bl
 
-# for any port that creates shared libraries.
-# both libtool and cmake automatically set filenames based on this variable.
-# for libtool- or cmake-based ports, have a look at WRKBUILD/shared_libs.log
-#SHARED_LIBS =	???
+# Upstream pulls in cmake modules from the asarium's fork
+RPAVLIK_MODS =	ad436ee7be33ca291a59866a173b777b0e2d81ce
+COTIRE =	cotire-1.7.10
 
-# the category used in the directory name, /usr/ports/<category>/portname,
-# must be included and listed first.
+# asarium/cmake-modules is a mirror of rpavlik/cmake-modules
+MASTER_SITES0 =	https://github.com/rpavlik/cmake-modules/archive/
+MASTER_SITES1 =	https://github.com/sakra/cotire/archive/
+
+DISTFILES =	${DISTNAME}${EXTRACT_SUFX} \
+		${RPAVLIK_MODS}.tar.gz:0 \
+		${COTIRE}.tar.gz:1
+
 CATEGORIES =	games
 
-#HOMEPAGE =	???	URL
+MAINTAINER =	Thomas Frohwein <frohwein@ymail.com>
 
-# person who is responsible for the port. Use a complete email address with
-# a real name, e.g., "MAINTAINER = John Doe <doe57@machine.somewhere.org>".
-# If you maintain several ports, use the same line each time.
-# If you no longer use the port, or are unwilling/unable to handle issues
-# in a timely manner, *leave the field blank*.
-# Default value is ports@openbsd.org, no need to fill in
-#MAINTAINER =		???
-
-# Licensing:  This determines what we can distribute.
-# When you determine the license type, make sure to look at ALL distfiles.
-# Every distfile can have a different license.  The PERMIT_* values are
-# determined by the most restrictive license.  If you have two licenses
-# that are in conflict, set PERMIT_* based on the most restrictive one.
-# Make SURE you get these values right.
-
-# Put a comment there to state what's going on.
-# Can be as brief as `BSD' or `GPLv2+', but it'd better be easy to check,
-# if someone wants to double-check licensing.
-# For GPL, the applicable versions must be included (e.g. v2+, v2 only, v3+).
-# If all PERMIT_* are Yes, just setting 'PERMIT_PACKAGE_CDROM=Yes' is enough.
+# Volition license which is not free software
 PERMIT_PACKAGE_CDROM =	selling explicitly prohibited
 PERMIT_PACKAGE_FTP =	no license at all
 PERMIT_DISTFILES_FTP =	no license at all
 
-# If pledge is used, annotate with `uses pledge()' in a comment
+WANTLIB += ${COMPILER_LIBCXX} c m z
+WANTLIB += SDL2 lua5.1 openal
+WANTLIB += avcodec avformat avutil jpeg swresample swscale
+WANTLIB += jansson png
 
-# "make port-lib-depends-check" can help
-#WANTLIB =		???
+MODULES =		devel/cmake \
+			lang/lua
+BUILD_DEPENDS =		devel/doxygen
+LIB_DEPENDS =		audio/openal \
+			devel/sdl2 \
+			graphics/ffmpeg \
+			graphics/png \
+			devel/jansson
 
-# where the source files and patches can be fetched
-#
-#MASTER_SITES =		https://github.com/scp-fs2open/fs2open.github.com/releases/download/release_3_8_0/
-#MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=subdir/}
-#MASTER_SITES =		${MASTER_SITE_foo:=subdir/}
-
-# if more master sites are needed...
-#MASTER_SITES0 =
-# ...
-#DISTFILES =		???
-#EXTRACT_ONLY =		???
-#EXTRACT_SUFX =		.tar.bz2
-
-#DIST_SUBDIR =		???
-
-# PATCHFILES are also retrieved from MASTER_SITES*
-#PATCHFILES =		???
-#PATCH_DIST_STRIP =	-p0
-
-# Dependencies
-#
-MODULES =		devel/cmake
-BUILD_DEPENDS =		devel/git
-#RUN_DEPENDS =		???
-LIB_DEPENDS =		devel/doxygen
-#TEST_DEPENDS =		???
-
-#MAKE_FLAGS =		???
-#MAKE_ENV =		???
-#FAKE_FLAGS =		???
-#TEST_FLAGS =		???
-
-# build/configuration variables
-#
-#SEPARATE_BUILD =	Yes (build in a directory other than WRKSRC)
-#SEPARATE_BUILD =	flavored (distinct flavors may share a common WRKSRC)
-#USE_GMAKE =		Yes
-#USE_GROFF =		Yes
-# Programs that require GNU libtool to build instead of the OpenBSD one
-# should use this option. Add a comment explaining why. Don't use this if
-# a port requires libtool's .m4 files but otherwise can use OpenBSD libtool,
-# in that case use "BUILD_DEPENDS=devel/libtool" instead.
-#USE_LIBTOOL=		gnu
-# Set CONFIGURE_STYLE to value corresponding to some standard configuration
-# 	  perl [modbuild]: perl's MakeMaker Makefile.PL (modbuild: perl's
-#	  Module::Build Build.PL)
-# 	  gnu [autoconf] [old] [dest]: gnu style configure (old: no
-# 	  sysconfdir), (dest: add DESTDIR, does not handle it),
-# 	  (autoconf: needed by port, implies gnu)
-# 	XXX: cygnus products do NOT use autoconf for making the main
-# 		configure from configure.in
-# 	  imake [noman]: port uses imake for configuration.
-#	  (noman: no man page installation)
-# 	  simple: port has its own configure script
-#CONFIGURE_STYLE =	
-#CONFIGURE_SCRIPT =	??? (if other than configure)
-#CONFIGURE_ARGS =	???
-#CONFIGURE_ENV =	???
+# ${HOME} may HARDCODE path to home directory of installing user
 CONFIGURE_ARGS =        -DCMAKE_INSTALL_PREFIX=${LOCALBASE}/share/fs2open
 
-# for gnu stuff
-#AUTOCONF_VERSION =	??? (defaults to 2.13)
-#AUTOMAKE_VERSION =	??? (defaults to 1.4)
-# config.guess and others are copied here
-#MODGNU_CONFIG_GUESS_DIRS = ??? (defaults to ${WRKSRC})
+NO_TEST =		Yes
 
-# Is the build automagic or is it interactive
-#
-#IS_INTERACTIVE =		Yes
-#TEST_IS_INTERACTIVE =		Yes
-
-# Assume you have one multiple choice flavor: 1 2 3 and switches a b.
-# You would write
-#
-#FLAVORS =	1 2 3 a b
-#FLAVOR ?=
-# grab multiple choice value
-#CHOICE = ${FLAVOR:Na:Nb}
-# check that CHOICE is 1 OR 2 OR 3, or error out
-#.if ${CHOICE} == "1"
-# code for 1
-#.elif ${CHOICE} == "2"
-# code for 2
-#.elif ${CHOICE} == "3"
-# code for 3
-#.else
-#ERRORS += "Fatal: Conflicting flavor: ${FLAVOR}"
-#.endif
-# check for switches
-#.if ${FLAVOR:Ma}
-# code for a
-#.endif
-#.if ${FLAVOR:Mb}
-# code for b
-#.endif
-
-# Things that we don't want to do for this port/package
-# Generally, DON'T set anything to No if it's not needed.
-# The time gained is not worth it.
-#
-#NO_BUILD =		Yes
-#NO_TEST =		Yes
-
-# Overrides for default values
-#
-CFLAGS =		-g
-#LDFLAGS =		???
-#MAKE_FILE =		???
-#PKG_ARCH =		??? (* for arch-independent packages)
 WRKDIST =		${WRKDIR}/fs2open.github.com-release_3_8_0
-WRKSRC =		${WRKDIST}
-#WRKBUILD =		??? if other than ${WRKSRC}
-#WRKCONF =		??? if other than ${WRKBUILD}
-
-#ALL_TARGET =		???
-#INSTALL_TARGET =	???
-#TEST_TARGET =		???
 
 post-extract:
-	git clone https://github.com/asarium/cmake-modules.git ${WRKSRC}/cmake/external/rpavlik-cmake-modules
-	git clone https://github.com/sakra/cotire ${WRKSRC}/cmake/external/cotire
+	rmdir	${WRKSRC}/cmake/external/rpavlik-cmake-modules \
+		${WRKSRC}/cmake/external/cotire
+	ln -s	${WRKDIR}/cmake-modules-${RPAVLIK_MODS} \
+		${WRKSRC}/cmake/external/rpavlik-cmake-modules
+	ln -s	${WRKDIR}/cotire-${COTIRE} ${WRKSRC}/cmake/external/cotire
+
+post-install:
+	${SUBST_CMD} -c -m 755 ${FILESDIR}/fs2open ${PREFIX}/bin/fs2open
 
 .include <bsd.port.mk>

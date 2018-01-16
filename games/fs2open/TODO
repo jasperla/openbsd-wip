@@ -1,9 +1,4 @@
 * write/expand pkg/DESCR
-* pkg/MESSAGE with instructions
-* clean up Makefile
-* currently segfaults
-* set up wrapper script
+* pkg/README with instructions
 * set FS2PATH properly (to ~/.local/share/fs2open ?)
-* fix how to deal with the git submodules. currently in post-extract, but that won't fly (see https://github.com/jasperla/openbsd-wip/commit/4d029ca52a7cb1c792db8b501ebfe19b6339b5d3). Will likely need to roll and host own tarball
 * strip architecture from binary name (see https://github.com/jasperla/openbsd-wip/commit/4d029ca52a7cb1c792db8b501ebfe19b6339b5d3)
-* remove debug flag CFLAGS=-g from Makefile
