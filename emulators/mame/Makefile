@@ -35,15 +35,13 @@ MODLUA_VERSION = 5.3
 
 MODPY_RUNDEP = No
 
-BUILD_DEPENDS += lang/python/${MODPY_DEFAULT_VERSION_2}
-
 LIB_DEPENDS =	audio/flac \
 		databases/sqlite3 \
 		devel/sdl2 \
 		devel/sdl2-ttf \
 		graphics/jpeg
 
-CFLAGS =	-I${PREFIX}/include -I${X11BASE}/include -I${MODLUA_INCL_DIR}
+CFLAGS +=	-I${PREFIX}/include -I${X11BASE}/include -I${MODLUA_INCL_DIR}
 CFLAGS +=	-Wno-ignored-qualifiers
 
 MAKE_ENV =	NOWERROR=1 TOOLS=1 verbose=1 \
