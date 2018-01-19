@@ -26,8 +26,9 @@ WANTLIB += ogg theoradec vorbis
 LIB_DEPENDS =		audio/libogg \
 			audio/libvorbis \
 			multimedia/libtheora
+TEST_DEPENDS =		devel/sdl
 
-CFLAGS+=		-shared -I${LOCALBASE}/include
+CFLAGS+=		-shared -Wall -I${LOCALBASE}/include
 LDFLAGS+=		-L${LOCALBASE}/lib -lpthread -logg -lvorbis -ltheoradec
 WRKDIST =		${WRKDIR}/theoraplay-${HG_COMMIT}
 
@@ -35,12 +36,20 @@ SEPARATE_BUILD =	YES
 
 do-build:
 	cd ${WRKSRC} && \
-	${CC} ${CFLAGS} ${LDFLAGS} -o \
-		${WRKBUILD}/libtheoraplay.so.${LIBtheoraplay_VERSION}
+	${CC} ${CFLAGS} -o \
+		${WRKBUILD}/libtheoraplay.so.${LIBtheoraplay_VERSION} \
+		theoraplay.c ${LDFLAGS} 
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/*theora*.h ${PREFIX}/include
 	${INSTALL_DATA} ${WRKBUILD}/libtheoraplay.so.${LIBtheoraplay_VERSION} \
 		${PREFIX}/lib
+
+do-test:
+	cd ${WRKSRC}/test && CC=${CC} LOCALBASE=${LOCALBASE} \
+		${WRKSRC}/test/maketest.sh
+	${WRKSRC}/test/testtheoraplay
+	${WRKSRC}/test/simplesdl
+	${WRKSRC}/test/sdltheoraplay
 
 .include <bsd.port.mk>
