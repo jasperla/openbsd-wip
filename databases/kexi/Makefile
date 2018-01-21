@@ -1,5 +1,8 @@
 # $OpenBSD: $
 
+#Qt5Webkit
+USE_WXNEEDED =		Yes
+
 COMMENT =	visual database applications creator
 
 VERSION =	3.0.2
@@ -49,6 +52,7 @@ BUILD_DEPENDS =		devel/gettext-tools \
 			devel/kf5/breeze-icons
 
 RUN_DEPENDS =		devel/desktop-file-utils \
+			devel/kf5/kservice \
 			devel/kf5/breeze-icons
 
 LIB_DEPENDS =		devel/kf5/kcodecs \
