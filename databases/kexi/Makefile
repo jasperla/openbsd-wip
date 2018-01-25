@@ -75,10 +75,12 @@ LIB_DEPENDS =		devel/kf5/kcodecs \
 			x11/qt5/qtwebkit
 
 CONFIGURE_ARGS =	-DBUILD_TESTING:Bool=Yes \
-			-DBUILD_EXAMPLES:Bool=Yes
+			-DBUILD_EXAMPLES:Bool=Yes \
+			-DKEXI_QTGUI_RUNTIME_AVAILABLE:Bool=Yes \
+			-DKEXI_ENABLE_QTGUI_FOR_TESTS:Bool=No
 
 CONFIGURE_ENV =		LDFLAGS="-lc"
 
-TEST_IS_INTERACTIVE =	Yes
+TEST_IS_INTERACTIVE =	X11
 
 .include <bsd.port.mk>

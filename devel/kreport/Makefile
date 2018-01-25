@@ -37,4 +37,6 @@ CONFIGURE_ARGS =	-DBUILD_TESTING:Bool=Yes \
 
 CONFIGURE_ENV =		LDFLAGS="-lc"
 
+TEST_IS_INTERACTIVE =	X11
+
 .include <bsd.port.mk>
