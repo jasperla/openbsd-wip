@@ -16,6 +16,7 @@ DIST_V ?=	${V}0524
 
 # Note: The TUG FTP server is frequently overloaded and doesn't work with
 # ftp(1)'s keepalive implementation.
+FETCH_CMD =	/usr/bin/ftp -V -m -C -k0
 MASTER_SITES ?=	ftp://ftp.tug.org/texlive/historic/${V}/
 
 PATCHORIG ?=	.origy

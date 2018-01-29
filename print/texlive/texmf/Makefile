@@ -11,8 +11,8 @@ COMMENT-buildset =	smallest texlive texmf for building ports
 #   * Add a more restrictive RUN_DEPEND upon the buildset.
 
 DISTNAME =		texlive-${DIST_V}-texmf
-#MASTER_SITES0 =		https://spacehopper.org/mirrors/
-MASTER_SITES0 =		http://theunixzoo.co.uk/distfiles/
+MASTER_SITES0 =		https://spacehopper.org/mirrors/ \
+			http://theunixzoo.co.uk/distfiles/
 DISTFILES =		${DISTNAME}${EXTRACT_SUFX} \
 			texlive-${DIST_V}-extra${EXTRACT_SUFX} \
 			texmf-var-pregen-${V}${EXTRACT_SUFX}:0
