@@ -5,11 +5,11 @@ USE_WXNEEDED =		Yes
 PORTROACH_COMMENT =	hide pre-release versions (e.g. 6.1.90.900)
 PORTROACH =		limit:!.*\.[0-9][0-9][0-9]-src-builtpkgs$$
 
-ONLY_FOR_ARCHS =	arm amd64 i386 mips64el powerpc sparc64
+ONLY_FOR_ARCHS =	aarch64 amd64 arm i386 mips64el powerpc sparc64
 
 COMMENT =		multi-paradigm programming language
 
-V =			6.11
+V =			6.12
 PKGNAME =		racket-minimal-$V
 DISTFILES =		racket-minimal-$V-src-builtpkgs${EXTRACT_SUFX} \
 			racket-openbsd-1${EXTRACT_SUFX}
@@ -31,14 +31,9 @@ MASTER_SITES =		https://mirror.racket-lang.org/installers/${V}/ \
 			http://pre.racket-lang.org/installers/ \
 			https://www.cs.utah.edu/plt/snapshots/current/installers/ \
 			http://plt.eecs.northwestern.edu/snapshots/current/installers/ \
-			http://download.tuxfamily.org/jod/lang/racket/ \
+			https://download.tuxfamily.org/jod/lang/racket/ \
 			ftp://download.tuxfamily.org/jod/lang/racket/
 EXTRACT_SUFX =		.tgz
-
-# "places" and "futures" require TLS.
-COMPILER =		gcc
-COMPILER_LANGS =	c
-MODGCC4_ARCHS =		arm
 
 LIB_DEPENDS =		converters/libiconv \
 			databases/sqlite3 \
