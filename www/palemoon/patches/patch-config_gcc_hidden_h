@@ -1,0 +1,17 @@
+$OpenBSD$
+
+Maybe one day we'll run with a clang built binary.
+We'll need this when we do.
+
+Index: config/gcc_hidden.h
+--- config/gcc_hidden.h.orig
++++ config/gcc_hidden.h
+@@ -2,5 +2,7 @@
+  * License, v. 2.0. If a copy of the MPL was not distributed with this
+  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+ 
+-/* Begin all files as hidden visibility */
++/* Begin all files as hidden visibility, but only if using gcc */
++#ifndef __llvm__
+ #pragma GCC visibility push(hidden)
++#endif

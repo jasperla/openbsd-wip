@@ -1,16 +1,16 @@
 $OpenBSD$
 
-Something better?
+Need to be explicit with compilers.
 
 Index: client.mk
 --- client.mk.orig
 +++ client.mk
-@@ -319,6 +319,8 @@ CONFIG_STATUS_DEPS := \
+@@ -320,6 +320,8 @@ CONFIG_STATUS_DEPS := \
  
  CONFIGURE_ENV_ARGS += \
    MAKE='$(MAKE)' \
-+  CC='${WRKDIR}/bin/cc' \
-+  CXX='${WRKDIR}/bin/c++' \
++  CC='${CC}' \
++  CXX='${CXX}' \
    $(NULL)
  
  # configure uses the program name to determine @srcdir@. Calling it without

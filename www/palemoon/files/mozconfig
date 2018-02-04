@@ -6,7 +6,7 @@ ac_add_options --enable-application=browser
  
 mk_add_options MOZ_OBJDIR="${WRKBUILD}"
  
-ac_add_options --enable-optimize="${CFLAGS} -msse2 -mfpmath=sse"
+ac_add_options --enable-optimize="${CFLAGS} -msse2 -mfpmath=sse -I${LOCALBASE}/include"
 ac_add_options --with-pthreads
  
 ac_add_options --disable-installer
@@ -29,3 +29,6 @@ ac_add_options --with-system-webp="${LOCALBASE}"
 ac_add_options --with-system-sqlite="${LOCALBASE}"
 ac_add_options --with-system-ffi="${LOCALBASE}"
 ac_add_options --with-system-pixman
+ac_add_options --with-system-libvpx
+ac_add_options --with-system-nss
+ac_add_options --with-system-nspr

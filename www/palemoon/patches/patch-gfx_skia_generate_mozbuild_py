@@ -1,0 +1,47 @@
+$OpenBSD$
+
+Don't attempt SSSE3 or SSE4.
+
+Index: gfx/skia/generate_mozbuild.py
+--- gfx/skia/generate_mozbuild.py.orig
++++ gfx/skia/generate_mozbuild.py
+@@ -37,7 +37,7 @@ if not CONFIG['INTEL_ARCHITECTURE'] and CONFIG['CPU_AR
+             'trunk/src/opts/memset32_neon.S',
+         ]
+ 
+-if CONFIG['INTEL_ARCHITECTURE'] and CONFIG['GNU_CC'] and CONFIG['OS_ARCH'] != 'WINNT':
++if CONFIG['INTEL_ARCHITECTURE'] and CONFIG['GNU_CC'] and CONFIG['OS_ARCH'] == 'WINNT':
+     if CONFIG['CPU_ARCH'] == 'x86_64':
+         SOURCES += [
+             'trunk/src/opts/SkBlitRow_opts_SSE4_x64_asm.S',
+@@ -79,9 +79,6 @@ LOCAL_INCLUDES += [
+ if CONFIG['MOZ_WIDGET_TOOLKIT'] in ('android', 'gtk2', 'gtk3', 'qt', 'gonk', 'cocoa'):
+     DEFINES['SK_USE_POSIX_THREADS'] = 1
+ 
+-if CONFIG['INTEL_ARCHITECTURE'] and CONFIG['HAVE_TOOLCHAIN_SUPPORT_MSSSE3']:
+-    DEFINES['SK_BUILD_SSSE3'] = 1
+-
+ if CONFIG['MOZ_WIDGET_TOOLKIT'] in ('android', 'gonk'):
+     DEFINES['SK_FONTHOST_CAIRO_STANDALONE'] = 0
+ 
+@@ -115,20 +112,15 @@ if CONFIG['_MSC_VER']:
+ if CONFIG['INTEL_ARCHITECTURE'] and CONFIG['GNU_CC']:
+     SOURCES['trunk/src/opts/SkBitmapFilter_opts_SSE2.cpp'].flags += CONFIG['SSE2_FLAGS']
+     SOURCES['trunk/src/opts/SkBitmapProcState_opts_SSE2.cpp'].flags += CONFIG['SSE2_FLAGS']
+-    SOURCES['trunk/src/opts/SkBitmapProcState_opts_SSSE3.cpp'].flags += ['-mssse3']
+     SOURCES['trunk/src/opts/SkBlitRect_opts_SSE2.cpp'].flags += CONFIG['SSE2_FLAGS']
+     SOURCES['trunk/src/opts/SkBlitRow_opts_SSE2.cpp'].flags += CONFIG['SSE2_FLAGS']
+     SOURCES['trunk/src/opts/SkBlurImage_opts_SSE2.cpp'].flags += CONFIG['SSE2_FLAGS']
+-    SOURCES['trunk/src/opts/SkBlurImage_opts_SSE4.cpp'].flags += ['-msse4.1']
+     SOURCES['trunk/src/opts/SkMorphology_opts_SSE2.cpp'].flags += CONFIG['SSE2_FLAGS']
+     SOURCES['trunk/src/opts/SkUtils_opts_SSE2.cpp'].flags += CONFIG['SSE2_FLAGS']
+     SOURCES['trunk/src/opts/SkXfermode_opts_SSE2.cpp'].flags += CONFIG['SSE2_FLAGS']
+ elif CONFIG['CPU_ARCH'] == 'arm' and CONFIG['GNU_CC'] and CONFIG['BUILD_ARM_NEON']:
+     DEFINES['__ARM_HAVE_OPTIONAL_NEON_SUPPORT'] = 1
+     DEFINES['USE_ANDROID_NDK_CPU_FEATURES'] = 0
+-elif CONFIG['CLANG_CL']:
+-    SOURCES['trunk/src/opts/SkBitmapProcState_opts_SSSE3.cpp'].flags += ['-mssse3']
+-    SOURCES['trunk/src/opts/SkBlurImage_opts_SSE4.cpp'].flags += ['-msse4.1']
+ 
+ if CONFIG['GNU_CXX'] and CONFIG['CPU_ARCH'] == 'arm':
+     SOURCES['skia/src/opts/SkBlitRow_opts_arm.cpp'].flags += ['-fomit-frame-pointer']

@@ -1,0 +1,25 @@
+$OpenBSD$
+
+https://hg.mozilla.org/mozilla-central/rev/68da139d0866
+
+Index: config/make-stl-wrappers.py
+--- config/make-stl-wrappers.py.orig
++++ config/make-stl-wrappers.py
+@@ -30,7 +30,6 @@ def main(outdir, compiler, template_file, header_list_
+         os.mkdir(outdir)
+ 
+     template = open(template_file, 'r').read()
+-    path_to_new = header_path('new', compiler)
+ 
+     for header in open(header_list_file, 'r'):
+         header = header.rstrip()
+@@ -40,8 +39,7 @@ def main(outdir, compiler, template_file, header_list_
+         path = header_path(header, compiler)
+         with FileAvoidWrite(os.path.join(outdir, header)) as f:
+             f.write(string.Template(template).substitute(HEADER=header,
+-                                                         HEADER_PATH=path,
+-                                                         NEW_HEADER_PATH=path_to_new))
++                                                         HEADER_PATH=path))
+ 
+ 
+ if __name__ == '__main__':
