@@ -70,11 +70,7 @@ CONFIGURE_STYLE=gnu
 CXXFLAGS +=	-std=c++11
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-
-# temporarily disable NassiShneiderman as it fails port-lib-depends-check
-# CONFIGURE_ARGS=	--with-contrib-plugins=all
-CONFIGURE_ARGS=	--with-contrib-plugins=all,-NassiShneiderman
-
+CONFIGURE_ARGS=	--with-contrib-plugins=all
 CONFIGURE_ARGS += --enable-debug
 
 MAKE_ENV=	AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \

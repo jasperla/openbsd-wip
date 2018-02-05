@@ -1,3 +1,1 @@
-Figure out why the NassiShneiderman plugin causes a NOT_REACHABLE 
-failure looking for boost_system.8 -- this builds fine without it
-and is available for testing.
+Testing.
