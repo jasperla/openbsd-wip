@@ -4,7 +4,7 @@ COMMENT =	a backup program that is fast, efficient and secure.
 
 GH_ACCOUNT =	restic
 GH_PROJECT =	restic
-GH_TAGNAME =	v0.7.3
+GH_TAGNAME =	v0.8.1
 
 CATEGORIES =	sysutils
 
