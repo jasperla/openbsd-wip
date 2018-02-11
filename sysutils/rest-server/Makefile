@@ -20,6 +20,8 @@ MODGO_TYPE =	bin
 
 NO_TEST =	Yes
 
+SUBST_VARS +=	VARBASE
+
 do-build:
 	cd ${WRKSRC} && ${MODGO_CMD} run -x build.go
 
