@@ -1,4 +1,6 @@
 @comment $OpenBSD$
+@conflict koffice-*
+@conflict calligra-<3.0.0
 @bin bin/kexi
 @lib lib/libkexicore.so.${LIBkexicore_VERSION}
 @lib lib/libkexidatatable.so.${LIBkexidatatable_VERSION}

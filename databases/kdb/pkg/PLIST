@@ -1,4 +1,6 @@
 @comment $OpenBSD$
+@conflict koffice-*
+@conflict calligra-<3.0.0
 @bin bin/kdb3_sqlite3_dump
 include/KDb3/
 include/KDb3/KDb

@@ -1,4 +1,6 @@
 @comment $OpenBSD$
+@conflict koffice-*
+@conflict calligra-<3.0.0
 include/KReport3/
 include/KReport3/KReportAsyncItemBase
 include/KReport3/KReportAsyncItemBase.h

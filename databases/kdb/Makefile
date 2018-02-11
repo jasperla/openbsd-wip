@@ -27,7 +27,8 @@ MODULES =		devel/cmake \
 			x11/qt5
 
 BUILD_DEPENDS =		shells/bash \
-			devel/gettext-tools
+			devel/gettext-tools \
+			databases/postgresql,-server
 
 LIB_DEPENDS =		devel/kf5/kcoreaddons \
 			databases/mariadb \

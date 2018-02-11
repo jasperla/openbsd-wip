@@ -1,4 +1,6 @@
 @comment $OpenBSD$
+@conflict koffice-*
+@conflict calligra-<3.0.0
 include/KPropertyCore3/
 include/KPropertyCore3/KProperty
 include/KPropertyCore3/KProperty.h
