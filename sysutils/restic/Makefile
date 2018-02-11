@@ -21,8 +21,6 @@ MODGO_TYPE =	bin
 do-build:
 	cd ${WRKSRC} && ${MODGO_CMD} run -x build.go
 
-# Currently tests fail:
-# node_test.go:212: file: mode doesn't match (04000755 != 0600)
 do-test:
 	cd ${WRKSRC} && ${MODGO_CMD} test ./cmd/... ./internal/...
 
