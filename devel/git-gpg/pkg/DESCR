@@ -1,0 +1,7 @@
+git-gpg provides git-based, GPG-encrypted distributed version control.
+Specifically, it is useful for collaborating with other trusted endpoints
+through semi-trusted or untrusted middle-points (e.g., through a VPS on the
+cloud).
+
+At a high level, it encrypts the data objects in your .git directory, and then
+uploads those files to a remote directory using rsync-over-ssh. Simple.
