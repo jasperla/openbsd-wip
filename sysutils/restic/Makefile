@@ -13,8 +13,6 @@ MAINTAINER =	Aaron Bieber <abieber@openbsd.org>
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += c pthread
-
 MODULES =	lang/go
 MODGO_TYPE =	bin
 
