@@ -10,6 +10,8 @@ CATEGORIES =	sysutils
 
 MAINTAINER =	Aaron Bieber <abieber@openbsd.org>
 
+HOMEPAGE =	https://restic.net/
+
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
 
