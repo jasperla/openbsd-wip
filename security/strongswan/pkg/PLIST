@@ -1,4 +1,6 @@
 @comment $OpenBSD$
+@newgroup _strongswan:801
+@newuser _strongswan:801:_strongswan:daemon:strongswan user:/nonexistent:/sbin/nologin
 @bin bin/pki
 lib/ipsec/
 @lib lib/ipsec/libcharon.so.${LIBcharon_VERSION}
