@@ -54,6 +54,8 @@ CONFIGURE_ARGS= \
 	--enable-md4 \
 	--enable-xauth-eap
 
+#CONFIGURE_ARGS += --enable-kernel-pfkey
+
 TEST_IS_INTERACTIVE=	threading test suite: rwlock test hangs!
 
 post-install:
