@@ -31,7 +31,7 @@ BUILD_DEPENDS=	devel/bison
 CONFIGURE_ENV=	YACC="bison -y"
 USE_GMAKE=	Yes
 LIBTOOL_FLAGS=	--tag=disable-static
-SYSCONFDIR=	${BASE_SYSCONFDIR}/strongswan
+SYSCONFDIR=	${BASESYSCONFDIR}/strongswan
 
 LIB_DEPENDS=	devel/gmp \
 		devel/libexecinfo
@@ -40,16 +40,19 @@ CONFIGURE_ARGS= \
 	--disable-kernel-netlink \
 	--enable-kernel-pfroute \
 	--enable-kernel-libipsec \
-	--disable-scripts \
+	--with-group=_strongswan \
+	--with-user=_strongswan \
+	--enable-aesni \
+	--enable-eap-gtc \
+	--enable-eap-identity \
 	--enable-eap-mschapv2 \
-	--enable-md4 \
-	--enable-eap-tls \
-	--enable-eap-ttls \
 	--enable-eap-peap \
 	--enable-eap-radius \
-	--enable-eap-identity \
-	--enable-aesni \
-	--enable-gcm
+	--enable-eap-tls \
+	--enable-eap-ttls \
+	--enable-gcm \
+	--enable-md4 \
+	--enable-xauth-eap
 
 TEST_IS_INTERACTIVE=	threading test suite: rwlock test hangs!
 
@@ -57,5 +60,6 @@ post-install:
 	find ${PREFIX}/lib/ipsec -name '*.la' -delete
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/strongswan
 	mv ${WRKINST}${SYSCONFDIR}/{ipsec*,strong*,swan*} ${PREFIX}/share/examples/strongswan/
+	rmdir mv ${WRKINST}${SYSCONFDIR}/{ipsec*,strong*,swan*} ${PREFIX}/share/examples/strongswan/
 
 .include <bsd.port.mk>
