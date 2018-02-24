@@ -1,5 +1,7 @@
 # $OpenBSD$
 
+ONLY_FOR_ARCHS = aarch64 amd64 alpha mips64 mips64el sparc64
+
 COMMENT =	manipulate 128 bits integers in Perl
 
 DISTNAME =	Math-Int128-0.22
