@@ -30,6 +30,8 @@ CONFIGURE_STYLE = gnu
 
 CONFIGURE_ARGS = --disable-data-download
 
+NO_TEST =	Yes
+
 pre-configure:
 	cd ${WRKSRC} && ./bootstrap.sh
 
