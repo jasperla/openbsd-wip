@@ -62,6 +62,6 @@ post-install:
 	find ${PREFIX}/lib/ipsec -name '*.la' -delete
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/strongswan
 	mv ${WRKINST}${SYSCONFDIR}/{ipsec*,strong*,swan*} ${PREFIX}/share/examples/strongswan/
-	rmdir mv ${WRKINST}${SYSCONFDIR}/{ipsec*,strong*,swan*} ${PREFIX}/share/examples/strongswan/
+	rmdir ${WRKINST}${SYSCONFDIR}
 
 .include <bsd.port.mk>
