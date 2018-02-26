@@ -1,4 +1,5 @@
 @comment $OpenBSD$
+@bin bin/address_parser
 bin/libpostal_data
 include/libpostal/
 include/libpostal/libpostal.h
