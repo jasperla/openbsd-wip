@@ -1,0 +1,2 @@
+needs install target
+from WRKBUILD game starts to title screen and menus work (incl sound!), but no fonts and no gameplay. This may be because of running from WRKBUILD
