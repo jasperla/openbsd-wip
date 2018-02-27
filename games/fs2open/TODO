@@ -1,4 +1,0 @@
-* write/expand pkg/DESCR
-* pkg/README with instructions
-* set FS2PATH properly (to ~/.local/share/fs2open ?)
-* strip architecture from binary name (see https://github.com/jasperla/openbsd-wip/commit/4d029ca52a7cb1c792db8b501ebfe19b6339b5d3)
