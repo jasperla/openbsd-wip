@@ -15,6 +15,8 @@ PERMIT_PACKAGE_CDROM =   Yes
 
 MODULES =	lang/lua
 
+RUN_DEPENDS =	devel/luabasexx
+
 NO_BUILD =	Yes
 NO_TEST =	Yes
 
