@@ -2,9 +2,8 @@
 
 COMMENT =	fast, efficient and secure backup program
 
-GH_ACCOUNT =	restic
-GH_PROJECT =	restic
-GH_TAGNAME =	v0.8.2
+V =		0.8.3
+DISTNAME =	restic-${V}
 
 CATEGORIES =	sysutils
 
@@ -16,6 +15,8 @@ HOMEPAGE =	https://restic.net/
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += c pthread
+
+MASTER_SITES =	https://github.com/restic/restic/releases/download/v${V}/
 
 MODULES =	lang/go
 MODGO_TYPE =	bin
