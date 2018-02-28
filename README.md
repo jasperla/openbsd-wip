@@ -81,7 +81,7 @@ How to use this tree
 One way to use this tree is to clone it into your `/usr/ports/` directory and
 adjust `PORTSDIR_PATH` accordingly in /etc/mk.conf:
 
-	PORTSDIR_PATH=${PORTSDIR}:$(PORTSDIR)/openbsd-wip:${PORTSDIR}/mystuff
+	PORTSDIR_PATH=${PORTSDIR}:${PORTSDIR}/openbsd-wip:${PORTSDIR}/mystuff
 
 In the above example, a port with version 1 in cvs, version 2 in openbsd-wip.
 Then, the version in cvs will be picked up before the version in openbsd-wip.
