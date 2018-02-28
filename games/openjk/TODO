@@ -1,5 +1,0 @@
-- add MESSAGE with instructions to put GameData files in ~/.local/share/openjk
-- add comment on absence of JO (Jedi Outcast) support to MESSAGE
-- add wrapper script to go into /usr/local/bin
-- remove any .orig files
-- add MESSAGE about issues with fullscreen (crashes game) and changing resolution (not working, exits video output window)
