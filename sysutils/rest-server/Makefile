@@ -2,9 +2,8 @@
 
 COMMENT =	a REST backend for the restic backup tool
 
-GH_ACCOUNT =	restic
-GH_PROJECT =	rest-server
-GH_TAGNAME =	v0.9.6
+V =		0.9.7
+DISTNAME =	rest-server-${V}
 
 CATEGORIES =	sysutils
 
@@ -14,6 +13,8 @@ MAINTAINER =	Aaron Bieber <abieber@openbsd.org>
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += c pthread
+
+MASTER_SITES =	https://github.com/restic/rest-server/releases/download/v${V}/
 
 MODULES =	lang/go
 MODGO_TYPE =	bin
