@@ -7,9 +7,9 @@ DISTNAME =	restic-${V}
 
 CATEGORIES =	sysutils
 
-MAINTAINER =	Aaron Bieber <abieber@openbsd.org>
-
 HOMEPAGE =	https://restic.net/
+
+MAINTAINER =	Aaron Bieber <abieber@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
