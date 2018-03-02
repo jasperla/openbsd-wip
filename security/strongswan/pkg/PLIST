@@ -216,7 +216,7 @@ share/examples/strongswan/strongswan.d/charon/xauth-eap.conf
 share/examples/strongswan/strongswan.d/charon/xauth-generic.conf
 @sample ${SYSCONFDIR}/strongswan.d/charon/xauth-generic.conf
 share/examples/strongswan/strongswan.d/charon/xcbc.conf
-@sample ${SYSCONFDIR}/strongswan/strongswan.d/charon/xcbc.conf
+@sample ${SYSCONFDIR}/strongswan.d/charon/xcbc.conf
 share/examples/strongswan/strongswan.d/pki.conf
 @sample ${SYSCONFDIR}/strongswan.d/pki.conf
 share/examples/strongswan/strongswan.d/scepclient.conf

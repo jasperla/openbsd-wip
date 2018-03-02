@@ -5,8 +5,8 @@ both server and client side.
 
 The port currently provides only the "kernel-ipsec" plugin. This operates
 in userland via tun(4) devices and strongSwan's own IPsec implementation
-rather than using kernel IPsec, and is not not recommended for production
-use on security gateways.
+rather than using kernel IPsec, and is not recommended for production use
+on security gateways.
 
 To use this plugin, kernel ESP handling must be disabled:
 
