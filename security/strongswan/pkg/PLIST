@@ -110,7 +110,9 @@ share/examples/strongswan/ipsec.d/private/
 share/examples/strongswan/ipsec.d/reqs/
 @sample ${SYSCONFDIR}/ipsec.d/reqs/
 share/examples/strongswan/ipsec.secrets
+@mode 600
 @sample ${SYSCONFDIR}/ipsec.secrets
+@mode
 share/examples/strongswan/strongswan.conf
 @sample ${SYSCONFDIR}/strongswan.conf
 share/examples/strongswan/strongswan.d/
