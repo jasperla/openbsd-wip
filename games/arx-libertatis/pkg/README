@@ -12,12 +12,12 @@ properly.  These can come from an original CD or from GOG.com.
 If using the GOG.com version, you must extract the files from
 setup_arx_fatalis_2.0.0.7.exe using the innoextract package. The files
 will be in a directory named app. You must copy some of the contents of
-the app directory to the ~/.local/share/arx directory
+the app directory to the ~/.local/share/arx/datadir directory
 
 The easiest way to do this is to execute the following:
-$ mkdir -p ~/.local/share/arx
-$ cp app/*.pak ~/.local/share/arx
-$ cp -R app/misc ~/.local/share/arx
+$ mkdir -p ~/.local/share/arx/datadir
+$ cp app/*.pak ~/.local/share/datadir/arx
+$ cp -R app/misc ~/.local/share/datadir/arx
 
 NOTE: You need to convert all copied files to lower case for Arx
 Libertatis to find them. This does not appear to be an issue with the
@@ -25,6 +25,3 @@ files in the misc directory.
 
 You can then delete everything extracted from the exe, such as the tmp
 directory.
-
-The arx binary must be run from your home directory for game file
-autodetection to work.

@@ -1,1 +1,0 @@
-* datadir now hard-coded to home of installing user. find way to have cmake actually base it in $HOME (not hardcoded /home/user)

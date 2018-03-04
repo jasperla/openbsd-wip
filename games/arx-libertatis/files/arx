@@ -1,0 +1,7 @@
+#!/bin/sh
+
+# create config directory if it doesn't exist yet
+mkdir -p ~/.config/arx
+
+exec ${TRUEPREFIX}/share/arx/bin/arx --data-dir=~/.local/share/arx/datadir \
+	--user-dir=~/.local/share/userdir --config-dir=~/.config/arx $@
