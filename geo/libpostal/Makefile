@@ -15,7 +15,7 @@ MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB +=	m
+WANTLIB +=	c m
 
 AUTOMAKE_VERSION = 1.15
 AUTOCONF_VERSION = 2.69
