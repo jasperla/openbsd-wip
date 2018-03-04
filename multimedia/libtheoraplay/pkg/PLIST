@@ -1,4 +1,0 @@
-@comment $OpenBSD$
-include/theoraplay.h
-include/theoraplay_cvtrgb.h
-@lib lib/libtheoraplay.so.${LIBtheoraplay_VERSION}
