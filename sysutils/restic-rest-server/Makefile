@@ -4,6 +4,7 @@ COMMENT =	a REST backend for the restic backup tool
 
 V =		0.9.7
 DISTNAME =	rest-server-${V}
+PKGNAME =	restic-rest-server-${V}
 
 CATEGORIES =	sysutils
 

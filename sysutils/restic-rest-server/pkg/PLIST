@@ -1,0 +1,11 @@
+@comment $OpenBSD$
+@newgroup _restic:801
+@newuser _restic:801:_restic:daemon:Restic user:${VARBASE}/restic:/sbin/nologin
+@bin bin/rest-server
+@owner _restic
+@group _restic
+@sample ${VARBASE}/restic/
+@extraunexec rm -rf ${VARBASE}/restic/{.,}*
+@owner
+@group
+share/doc/pkg-readmes/${FULLPKGNAME}
