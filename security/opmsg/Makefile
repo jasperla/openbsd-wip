@@ -4,7 +4,7 @@ COMMENT =	a replacement for gpg which can encrypt/sign/verify
 
 GH_ACCOUNT =	stealth
 GH_PROJECT =	opmsg
-GH_TAGNAME =	rel-1.75s
+GH_TAGNAME =	rel-1.77s
 
 DISTNAME =	${GH_PROJECT}${GH_TAGNAME:S/^rel//:S/s$//}
 
