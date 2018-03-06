@@ -3,6 +3,8 @@ bin/luarocks
 bin/luarocks-${MODLUA_VERSION}
 bin/luarocks-admin
 bin/luarocks-admin-${MODLUA_VERSION}
+share/examples/luarocks/
+share/examples/luarocks/config-${MODLUA_VERSION}.lua
 share/lua/${MODLUA_VERSION}/luarocks/
 share/lua/${MODLUA_VERSION}/luarocks/add.lua
 share/lua/${MODLUA_VERSION}/luarocks/admin_remove.lua
@@ -80,10 +82,3 @@ share/lua/${MODLUA_VERSION}/luarocks/upload/multipart.lua
 share/lua/${MODLUA_VERSION}/luarocks/util.lua
 share/lua/${MODLUA_VERSION}/luarocks/validate.lua
 share/lua/${MODLUA_VERSION}/luarocks/write_rockspec.lua
-@mode 755
-@owner
-@group
-@sample ${SYSCONFDIR}/luarocks/
-@mode 644
-@sample ${SYSCONFDIR}/luarocks/config-${MODLUA_VERSION}.lua
-@mode
