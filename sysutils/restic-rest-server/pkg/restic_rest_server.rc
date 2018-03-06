@@ -1,9 +1,9 @@
 #!/bin/ksh
 #
-# $OpenBSD: $
+# $OpenBSD: restic_rest_server.rc,v 1.5 2018/03/06 19:27:08 abieber Exp $
 
 daemon="${TRUEPREFIX}/bin/restic-rest-server"
-daemon_flags="--path /var/restic"
+daemon_flags="--path ${VARBASE}/restic"
 daemon_user="_restic"
 
 . /etc/rc.d/rc.subr
