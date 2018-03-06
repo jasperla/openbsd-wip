@@ -2,7 +2,7 @@
 #
 # $OpenBSD: $
 
-daemon="${TRUEPREFIX}/bin/rest-server"
+daemon="${TRUEPREFIX}/bin/restic-rest-server"
 daemon_flags="--path /var/restic"
 daemon_user="_restic"
 

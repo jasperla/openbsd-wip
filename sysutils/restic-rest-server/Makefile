@@ -1,10 +1,10 @@
 # $OpenBSD: Makefile,v 1.2 2017/10/28 13:38:38 abieber Exp $
 
-COMMENT =	a REST backend for the restic backup tool
+COMMENT =	REST backend for the restic backup tool
 
 V =		0.9.7
 DISTNAME =	rest-server-${V}
-PKGNAME =	restic-rest-server-${V}
+PKGNAME =	restic-${DISTNAME}
 
 CATEGORIES =	sysutils
 
@@ -28,6 +28,6 @@ do-build:
 	cd ${WRKSRC} && ${MODGO_CMD} run -x build.go
 
 do-install:
-	cp ${WRKSRC}/rest-server ${PREFIX}/bin/
+	cp ${WRKSRC}/rest-server ${PREFIX}/bin/restic-rest-server
 
 .include <bsd.port.mk>
