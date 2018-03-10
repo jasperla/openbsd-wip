@@ -1,3 +1,0 @@
- * Possibly split up port into -main and -lib subpackages since this port
-   provides both a utility (bin/shellcheck) and a library. Depending on that,
-   maybe the port should be renamed to ShellCheck or shellcheck.
