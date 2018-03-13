@@ -3,32 +3,57 @@ $OpenBSD$
 Index: db.txt
 --- db.txt.orig
 +++ db.txt
-@@ -0,0 +1,65 @@
+@@ -0,0 +1,90 @@
++# This is a top-level structure.
++# It's output as a struct in C, a table in SQL, and an object in
++# JavaScript.
++
 +struct company {
++  # The "limit" clause is for input validation.
 +  field name text limit gt 0 comment
 +    "Name of the organisation.";
++  # SQL primary keys.
 +  field id int rowid;
 +  field somenum int null comment
 +    "Simply a check for null values.";
++  # Operations: a "list" function produces an in-memory  
++  # queue of responses.
++  # "Insert" allows us to insert into the table.
 +  list somenum isnull;
-+  comment "Controlling organisation.";
 +  insert;
++  comment "Controlling organisation.";
 +};
 +
-+enum gender {
-+  item male 0;
-+  item female 1;
-+  item other 2;
++# This is an enumeration.
++# It lets us validate input fields and use
++# better type-safety in the C API.
++# They're also export to JavaScript.
++
++enum sex {
++  item male comment "Male";
++  item female comment "Femmale";
++  item other comment "Other";
++  comment "Birthsex of individual";
 +};
 +
 +struct user {
++  # Foreign key support.
++  # This will produce a nested "struct company" filled
++  # in with the join on "cid" (see below).
 +  field company struct cid comment
 +    "This struct will be filled in from an inner join
 +    on the \"cid\" variable.";
++  # The foreign key itself.
++  # We also stipulate an action on delete.
 +  field cid:company.id int actdel cascade comment 
 +    "A foreign key reference.";
-+  field gender enum gender comment
-+    "User's gender.";
++  field sex enum sex comment
++    "User's birth sex.";
++  # Passwords are important and often screwed up.
++  # This automatically handles the logic of accepting
++  # passwords and hashing them on insertion.
++  # When we "search" on password fields, the system
++  # will do the hashing for us.
 +  field hash password limit gt 0 comment
 +    "Password hash.
 +    This is passed to inserts and updates as a password,
@@ -41,7 +66,7 @@ Index: db.txt
 +  field name text comment 
 +    "User's full name.";
 +  field uid int rowid;
-+  iterate name: comment
++  iterate name: limit 5 comment
 +    "Create a function that searches for users by a given
 +    name; and, when found, invokes a callback function
 +    provided the user structure.";
@@ -65,7 +90,7 @@ Index: db.txt
 +  field id int rowid;
 +  iterate user.company.name,mtime: name foo comment 
 +    "Search for company's logged-in users.";
-+  comment "Authenticated session.";
 +  insert;
 +  delete id;
++  comment "Authenticated session.";
 +};

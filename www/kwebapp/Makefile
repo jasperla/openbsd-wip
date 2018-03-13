@@ -2,11 +2,10 @@
 
 COMMENT =		web application source generator
 
-DISTNAME =		kwebapp-0.3.9
+DISTNAME =		kwebapp-0.4.7
 CATEGORIES =		www
 
 HOMEPAGE =		https://kristaps.bsd.lv/kwebapp/
-MASTER_SITES =		https://kristaps.bsd.lv/kwebapp/snapshots/
 
 MAINTAINER =		Aaron Bieber <abieber@openbsd.org>
 
@@ -14,6 +13,8 @@ MAINTAINER =		Aaron Bieber <abieber@openbsd.org>
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += c
+
+MASTER_SITES =		https://kristaps.bsd.lv/kwebapp/snapshots/
 
 RUN_DEPENDS =		databases/ksql \
 			www/kcgi
