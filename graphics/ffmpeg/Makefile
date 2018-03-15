@@ -7,15 +7,15 @@ CATEGORIES=	graphics multimedia
 MASTER_SITES=	http://ffmpeg.org/releases/
 EPOCH=		0
 
-SHARED_LIBS=	avcodec		23.0 \
+SHARED_LIBS=	avcodec		22.2 \
 		avdevice	10.0 \
-		avfilter	8.0 \
-		avformat	20.0 \
+		avfilter	7.3 \
+		avformat	19.4 \
 		avresample	1.0 \
-		avutil		13.0 \
+		avutil		12.4 \
 		postproc	16.1 \
-		swresample	1.3 \
-		swscale		7.0
+		swresample	1.2 \
+		swscale		6.1
 
 HOMEPAGE=	http://ffmpeg.org/
 
@@ -30,7 +30,7 @@ WANTLIB =	SDL2 X11 Xext Xv ass bz2 c crypto fontconfig freetype fribidi \
 		vorbisenc vpx>=5 x264 x265>=2 xcb xcb-shape xcb-shm xcb-xfixes \
 		xvidcore z
 
-COMPILER =	clang
+COMPILER =	base-clang ports-clang ports-gcc
 MODCLANG_ARCHS=	amd64
 COMPILER_LANGS =	c
 
