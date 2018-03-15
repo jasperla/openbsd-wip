@@ -1,0 +1,5 @@
+@comment $OpenBSD$
+${P5SITE}/Finance/
+${P5SITE}/Finance/Bank/
+${P5SITE}/Finance/Bank/Kraken.pm
+@man man/man3p/Finance::Bank::Kraken.3p

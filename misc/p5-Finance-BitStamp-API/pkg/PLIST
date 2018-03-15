@@ -1,0 +1,25 @@
+@comment $OpenBSD$
+${P5SITE}/Finance/
+${P5SITE}/Finance/BitStamp/
+${P5SITE}/Finance/BitStamp/API/
+${P5SITE}/Finance/BitStamp/API.pm
+${P5SITE}/Finance/BitStamp/API/DefaultPackage.pm
+${P5SITE}/Finance/BitStamp/API/Request/
+${P5SITE}/Finance/BitStamp/API/Request.pm
+${P5SITE}/Finance/BitStamp/API/Request/Balance.pm
+${P5SITE}/Finance/BitStamp/API/Request/BitcoinAddress.pm
+${P5SITE}/Finance/BitStamp/API/Request/BitcoinWithdrawal.pm
+${P5SITE}/Finance/BitStamp/API/Request/Buy.pm
+${P5SITE}/Finance/BitStamp/API/Request/Cancel.pm
+${P5SITE}/Finance/BitStamp/API/Request/ConversionRate.pm
+${P5SITE}/Finance/BitStamp/API/Request/OrderBook.pm
+${P5SITE}/Finance/BitStamp/API/Request/Orders.pm
+${P5SITE}/Finance/BitStamp/API/Request/PendingDeposits.pm
+${P5SITE}/Finance/BitStamp/API/Request/PublicTransactions.pm
+${P5SITE}/Finance/BitStamp/API/Request/RippleAddress.pm
+${P5SITE}/Finance/BitStamp/API/Request/RippleWithdrawal.pm
+${P5SITE}/Finance/BitStamp/API/Request/Sell.pm
+${P5SITE}/Finance/BitStamp/API/Request/Ticker.pm
+${P5SITE}/Finance/BitStamp/API/Request/Transactions.pm
+${P5SITE}/Finance/BitStamp/API/Request/Withdrawals.pm
+@man man/man3p/Finance::BitStamp::API.3p

@@ -1,0 +1,12 @@
+$OpenBSD$
+
+Index: Makefile.PL
+--- Makefile.PL.orig
++++ Makefile.PL
+@@ -15,5 +15,5 @@ WriteMakefile(
+     VERSION_FROM => VERSION_FROM,
+     # e.g., Module::Name => 1.1
+     PREREQ_PM    => PREREQ_PM,
+-    ($] >= KEYWORD_VERSION ? (ABSTRACT_FROM  => ABSTRACT_FROM, AUTHOR => AUTHOR) : ()),
++    ($] >= KEYWORD_VERSION ? (ABSTRACT_FROM  => ABSTRACTION_FROM, AUTHOR => AUTHOR) : ()),
+ );
