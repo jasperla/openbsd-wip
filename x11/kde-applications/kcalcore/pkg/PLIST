@@ -17,7 +17,6 @@ include/KF5/KCalCore/KCalCore/FreeBusy
 include/KF5/KCalCore/KCalCore/FreeBusyCache
 include/KF5/KCalCore/KCalCore/FreeBusyPeriod
 include/KF5/KCalCore/KCalCore/ICalFormat
-include/KF5/KCalCore/KCalCore/ICalTimeZones
 include/KF5/KCalCore/KCalCore/Incidence
 include/KF5/KCalCore/KCalCore/IncidenceBase
 include/KF5/KCalCore/KCalCore/Journal
@@ -50,7 +49,6 @@ include/KF5/KCalCore/kcalcore/freebusy.h
 include/KF5/KCalCore/kcalcore/freebusycache.h
 include/KF5/KCalCore/kcalcore/freebusyperiod.h
 include/KF5/KCalCore/kcalcore/icalformat.h
-include/KF5/KCalCore/kcalcore/icaltimezones.h
 include/KF5/KCalCore/kcalcore/incidence.h
 include/KF5/KCalCore/kcalcore/incidencebase.h
 include/KF5/KCalCore/kcalcore/journal.h
