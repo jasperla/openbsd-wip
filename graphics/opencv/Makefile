@@ -1,7 +1,6 @@
 # $OpenBSD: Makefile,v 1.34 2015/01/30 21:38:37 zhuk Exp $
 
-ONLY_FOR_ARCHS =	amd64 i386
-ONLY_FOR_ARCHS-java =	${ONLY_FOR_ARCHS}
+ONLY_FOR_ARCHS =	${GCC4_ARCHS} ${CLANG_ARCHS}
 
 CATEGORIES =		graphics devel
 COMMENT-docs =		OpenCV documentation and examples
@@ -10,47 +9,39 @@ COMMENT-java =		Java bindings for OpenCV
 
 V =			3.2.0
 DISTNAME =		opencv-${V}
-PKGNAME-main =		opencv3-${V}
-PKGNAME-docs =		opencv3-docs-$V
-PKGNAME-java =		opencv3-java-${V}
+PKGNAME-main =		opencv-${V}
+PKGNAME-docs =		opencv-docs-$V
+PKGNAME-java =		opencv-java-${V}
 
 HOMEPAGE =		http://www.opencv.org/
+
 MAINTAINER =		Rafael Sadowski <rsadowski@openbsd.org>
 
-SHARED_LIBS =		opencv_calib3d			2.0 #1.1
-SHARED_LIBS +=		opencv_core			2.0 #1.1
-SHARED_LIBS +=		opencv_features2d		2.0 #1.1
-SHARED_LIBS +=		opencv_flann			2.0 #1.1
-SHARED_LIBS +=		opencv_highgui			2.0 #1.1
-SHARED_LIBS +=		opencv_imgcodecs		0.0 #1.0
-SHARED_LIBS +=		opencv_imgproc			2.0 #1.1
-SHARED_LIBS +=		opencv_ml			2.0 #1.1
-SHARED_LIBS +=		opencv_objdetect		2.0 #1.1
-SHARED_LIBS +=		opencv_photo			1.0 #0.1
-SHARED_LIBS +=		opencv_shape			0.0 #1.0
-SHARED_LIBS +=		opencv_stitching		0.0 #1.0
-SHARED_LIBS +=		opencv_superres			1.0 #0.1
-SHARED_LIBS +=		opencv_video			2.0 #1.1
-SHARED_LIBS +=		opencv_videoio			0.0 #1.0
-SHARED_LIBS +=		opencv_videostab		1.0 #0.1
+.for i in opencv_calib3d opencv_core opencv_features2d \
+  opencv_flann opencv_highgui opencv_imgproc \
+  opencv_ml opencv_objdetect opencv_photo opencv_stitching \
+  opencv_superres opencv_video opencv_videostab opencv_imgcodecs \
+  opencv_shape opencv_videoio
+SHARED_LIBS += $i 4.0
+.endfor
 
-EXTRACT_SUFX =		.zip
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=opencvlibrary/}
+WANTLIB-main += ${COMPILER_LIBCXX} Half Iex IlmImf IlmThread Imath
+WANTLIB-main += atk-1.0 avcodec avformat avresample avutil c cairo
+WANTLIB-main += cairo-gobject gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0
+WANTLIB-main += gobject-2.0 gphoto2 gphoto2_port gstapp-1.0 gstbase-1.0
+WANTLIB-main += gstpbutils-1.0 gstreamer-1.0 gstriff-1.0 gstvideo-1.0
+WANTLIB-main += gthread-2.0 gtk-3 intl jasper jpeg m pango-1.0 pangocairo-1.0
+WANTLIB-main += png swscale tiff webp z
 
-WANTLIB-main = Half Iex IlmImf IlmThread Imath atk-1.0 avcodec avformat
-WANTLIB-main += avresample avutil bz2 c cairo cairo-gobject estdc++ intl
-WANTLIB-main += gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0 gstapp-1.0
-WANTLIB-main += gstbase-1.0 gstpbutils-1.0 gstreamer-1.0 gstriff-1.0
-WANTLIB-main += gstvideo-1.0 gthread-2.0 gtk-3 jasper jpeg m pango-1.0
-WANTLIB-main += pangocairo-1.0 png pthread swscale tiff webp z
-WANTLIB-main += gphoto2 gphoto2_port ${MODPY_WANTLIB}
+WANTLIB-java += ${COMPILER_LIBCXX} m opencv_calib3d opencv_core opencv_features2d
+WANTLIB-java += opencv_flann opencv_highgui opencv_imgcodecs opencv_imgproc
+WANTLIB-java += opencv_ml opencv_objdetect opencv_photo opencv_video
+WANTLIB-java += opencv_videoio
 
 WANTLIB-docs =
 
-WANTLIB-java =  m pthread estdc++
-WANTLIB-java += opencv_calib3d>=2.0 opencv_core>=2.0 opencv_features2d>=2.0 opencv_flann>=2.0
-WANTLIB-java += opencv_highgui>=2.0 opencv_imgproc>=2.0 opencv_ml>=2.0 opencv_objdetect>=2.0
-WANTLIB-java += opencv_photo>=1.0 opencv_video>=2.0 opencv_imgcodecs opencv_videoio
+MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=opencvlibrary/}
+EXTRACT_SUFX =		.zip
 
 MULTI_PACKAGES =	-main -docs -java
 PSEUDO_FLAVORS =	no_docs no_java
@@ -64,9 +55,6 @@ PERMIT_PACKAGE_CDROM =	Yes
 MODULES =		lang/clang \
 			devel/cmake \
 			lang/python
-
-MODCLANG_ARCHS =	amd64 i386
-MODCLANG_LANGS =	c c++
 
 BUILD_DEPENDS =		devel/doxygen>=1.8.10 \
 			math/py-numpy \
@@ -110,6 +98,8 @@ CONFIGURE_ARGS =	-DWITH_1394:Bool=Off \
 			-DENABLE_SSE3:Bool=Off \
 			-DBUILD_TESTS:Bool=On
 
+CONFIGURE_ARGS +=	-DCMAKE_POLICY_DEFAULT_CMP0058=NEW
+
 .if ${BUILD_PACKAGES:M-docs}
 BUILD_DEPENDS +=	textproc/py-sphinx
 ALL_TARGET =		all doxygen
@@ -138,6 +128,10 @@ CONFIG_ADJ_CMD +=	-e 's,lib${_l}.so([^.]),lib${_l}.so.${_v}$$1,g;'
 .endfor
 
 TEST_IS_INTERACTIVE =	X11
+
+post-patch:
+	perl -pi -e 's@^.*(#\s*include)@$$1@' \
+		${WRKSRC}/samples/cpp/tutorial_code/core/how_to_scan_images/how_to_scan_images.cpp
 
 post-install:
 	${CONFIG_ADJ_CMD} ${PREFIX}/share/OpenCV/OpenCVConfig.cmake
