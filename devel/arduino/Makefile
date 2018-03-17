@@ -12,24 +12,10 @@ HOMEPAGE=	https://www.arduino.cc/
 MASTER_SITES =	https://github.com/arduino/Arduino/releases/download/${V}/
 # Docs
 MASTER_SITES0 =	https://downloads.arduino.cc/
-# LiquidCrystal
-LCV =		1.0.7
-MASTER_SITES1 =	https://github.com/arduino-libraries/LiquidCrystal/archive/
-# Bridge
-BRIDGEV =	1.6.3
-MASTER_SITES2 = https://github.com/arduino-libraries/Bridge/archive/
-# SD
-SDV =		1.1.1
-MASTER_SITES3 = https://github.com/arduino-libraries/SD/archive/
-# Esplora
-ESPLORAV =	1.0.4
-MASTER_SITES4 =	https://github.com/arduino-libraries/Esplora/archive/
-# Servo
-SERVOV =	1.1.2
-MASTER_SITES5 =	https://github.com/arduino-libraries/Servo/archive/
+# arduino-libraries
+MASTER_SITES1 =	https://s3-us-west-2.amazonaws.com/openbsd-ports/
 DISTFILES +=	${DISTNAME}${EXTRACT_SUFX} reference-1.6.6-3.zip:0
-DISTFILES +=	${LCV}.tar.gz:1 ${BRIDGEV}.tar.gz:2 ${SDV}.tar.gz:3
-DISTFILES +=	${ESPLORAV}.tar.gz:4 ${SERVOV}.tar.gz:5
+DISTFILES +=	arduino-libraries_20180312.tar.gz:1
 
 # arduino core + libraries: LGPLv2.1
 # frontend application: GPLv2 (not shipped yet)
@@ -69,21 +55,8 @@ do-install:
 	@${INSTALL_DATA_DIR} ${PREFIX}/share/doc/arduino/reference
 	@cp -r	${WRKDIR}/bin ${WRKDIR}/code.jquery.com \
 		${WRKDIR}/www.arduino.cc ${PREFIX}/share/doc/arduino/reference
-	@${INSTALL_DATA_DIR} ${PREFIX}/share/arduino/libraries/LiquidCrystal
-	@cp -r 	${WRKDIR}/LiquidCrystal-${LCV}/* \
-		${PREFIX}/share/arduino/libraries/LiquidCrystal
-	@${INSTALL_DATA_DIR} ${PREFIX}/share/arduino/libraries/Bridge
-	@cp -r	${WRKDIR}/Bridge-${BRIDGEV}/* \
-		${PREFIX}/share/arduino/libraries/Bridge
-	@${INSTALL_DATA_DIR} ${PREFIX}/share/arduino/libraries/SD
-	@cp -r	${WRKDIR}/SD-${SDV}/* \
-		${PREFIX}/share/arduino/libraries/SD
-	@${INSTALL_DATA_DIR} ${PREFIX}/share/arduino/libraries/Esplora
-	@cp -r	${WRKDIR}/Esplora-${ESPLORAV}/* \
-		${PREFIX}/share/arduino/libraries/Esplora
-	@${INSTALL_DATA_DIR} ${PREFIX}/share/arduino/libraries/Servo
-	@cp -r	${WRKDIR}/Servo-${SERVOV}/* \
-		${PREFIX}/share/arduino/libraries/Servo
+	@cp -r 	${WRKDIR}/arduino-libraries/* \
+		${PREFIX}/share/arduino/libraries
 	@chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share
 	@find ${PREFIX} -type f -name \*.orig -exec rm '{}' \;
 	@${INSTALL_DATA_DIR} ${PREFIX}/share/arduino/mk
