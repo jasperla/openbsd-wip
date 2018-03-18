@@ -126,9 +126,8 @@ CINCS = $(LIBINC) \
 CSTANDARD = -std=gnu99
 CDEBUG = -g$(DEBUG)
 CWARN = -Wall -Wstrict-prototypes
-CTUNING = -ffunction-sections -fdata-sections
-#CTUNING = -funsigned-char -funsigned-bitfields -fpack-struct -fshort-enums
-#CEXTRA = -Wa,-adhlns=$(<:.c=.lst)
+CTUNING = -ffunction-sections -fdata-sections -fno-threadsafe-statics
+CEXTRA =
 CFLAGS = $(CDEBUG) $(CDEFS) $(CINCS) -O$(OPT) $(CWARN) \
 	 $(CSTANDARD) $(CEXTRA) $(CTUNING)
 
@@ -145,7 +144,8 @@ CXXFLAGS = $(CXXDEBUG) $(CXXDEFS) $(CXXINCS) -O$(CXXOPT) $(CXXWARN) \
 	 $(CXXSTANDARD) $(CXXEXTRA) $(CXXTUNING)
 
 # Linker stuff
-LDFLAGS = -lm -Wl,--gc-sections
+# For some reason to link you need to list -lm twice.
+LDFLAGS = -lm -lm -Wl,--gc-sections
 
 # Assembler stuff
 #ASFLAGS = -Wa,-adhlns=$(<:.S=.lst),-gstabs
