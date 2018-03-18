@@ -3,11 +3,12 @@ bin/motyl
 share/doc/motyl/
 share/doc/motyl/README.md
 share/examples/motyl/
-share/examples/motyl/Makefile
 share/examples/motyl/motyl.conf
 share/examples/motyl/pages/
 share/examples/motyl/pages/about.md
 share/examples/motyl/pages/about.yaml
+share/examples/motyl/pages/archives.md
+share/examples/motyl/pages/archives.yaml
 share/examples/motyl/posts/
 share/examples/motyl/posts/hello-world.md
 share/examples/motyl/posts/hello-world.yaml
