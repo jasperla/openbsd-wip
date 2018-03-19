@@ -126,7 +126,7 @@ CINCS = $(LIBINC) \
 CSTANDARD = -std=gnu99
 CDEBUG = -g$(DEBUG)
 CWARN = -Wall -Wstrict-prototypes
-CTUNING = -ffunction-sections -fdata-sections -fno-threadsafe-statics
+CTUNING = -ffunction-sections -fdata-sections
 CEXTRA =
 CFLAGS = $(CDEBUG) $(CDEFS) $(CINCS) -O$(OPT) $(CWARN) \
 	 $(CSTANDARD) $(CEXTRA) $(CTUNING)
@@ -138,7 +138,7 @@ CXXINCS = ${CINCS}
 CXXSTANDARD =
 CXXDEBUG = ${CDEBUG}
 CXXWARN =
-CXXTUNING = ${CTUNING}
+CXXTUNING = ${CTUNING} -fno-threadsafe-statics
 CXXEXTRA = ${CEXTRA}
 CXXFLAGS = $(CXXDEBUG) $(CXXDEFS) $(CXXINCS) -O$(CXXOPT) $(CXXWARN) \
 	 $(CXXSTANDARD) $(CXXEXTRA) $(CXXTUNING)
