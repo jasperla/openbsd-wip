@@ -8,19 +8,29 @@ CATEGORIES =	converters
 
 MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 
-# Perl
+# Perl, BSD, LGPLv2.1
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB +=	c perl
+WANTLIB =	c perl zstd
 
 MODULES =	cpan
 
-TEST_DEPENDS =	converters/p5-Sereal-Decoder \
+BUILD_DEPENDS =	devel/p5-Devel-CheckLib
+
+LIB_DEPENDS =	archivers/zstd
+
+TEST_DEPENDS =	converters/p5-Sereal-Decoder>=4.002 \
 		devel/p5-Test-Deep \
 		devel/p5-Test-Differences \
 		devel/p5-Test-LongString \
 		devel/p5-Test-Warn
 
 CPAN_AUTHOR =	YVES
+
+post-extract:
+	rm -r -- ${WRKSRC}/inc/Devel ${WRKSRC}/zstd
+
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/Makefile.PL
 
 .include <bsd.port.mk>
