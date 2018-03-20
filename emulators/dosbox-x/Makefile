@@ -29,7 +29,6 @@ SEPARATE_BUILD =	Yes
 USE_GMAKE =		Yes
 
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS =	--enable-sdl2=yes
 
 # probably needs CONFIGURE_ARGS += --disable-dynamic-core
 
