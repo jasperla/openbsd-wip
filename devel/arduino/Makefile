@@ -15,7 +15,7 @@ MASTER_SITES0 =	https://downloads.arduino.cc/
 # arduino-libraries
 MASTER_SITES1 =	https://s3-us-west-2.amazonaws.com/openbsd-ports/
 DISTFILES +=	${DISTNAME}${EXTRACT_SUFX} reference-1.6.6-3.zip:0
-DISTFILES +=	arduino-libraries_20180312.tar.gz:1
+DISTFILES +=	arduino-libraries-1.8.5.tar.gz:1
 
 # arduino core + libraries: LGPLv2.1
 # frontend application: GPLv2 (not shipped yet)
