@@ -1,7 +1,8 @@
 $OpenBSD: patch-CMakeLists_txt,v 1.5 2015/01/24 10:56:43 zhuk Exp $
---- CMakeLists.txt.orig	Fri Dec 23 13:54:44 2016
-+++ CMakeLists.txt	Sun Feb 19 20:14:32 2017
-@@ -543,9 +543,6 @@ if(IOS)
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -617,9 +617,6 @@ if(IOS)
    # test_big_endian needs try_compile, which doesn't work for iOS
    # http://public.kitware.com/Bug/view.php?id=12288
    set(WORDS_BIGENDIAN 0)

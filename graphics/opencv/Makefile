@@ -7,7 +7,7 @@ COMMENT-docs =		OpenCV documentation and examples
 COMMENT-main =		library of programming functions for real time cv
 COMMENT-java =		Java bindings for OpenCV
 
-V =			3.2.0
+V =			3.4.1
 DISTNAME =		opencv-${V}
 PKGNAME-main =		opencv-${V}
 PKGNAME-docs =		opencv-docs-$V
@@ -21,7 +21,7 @@ MAINTAINER =		Rafael Sadowski <rsadowski@openbsd.org>
   opencv_flann opencv_highgui opencv_imgproc \
   opencv_ml opencv_objdetect opencv_photo opencv_stitching \
   opencv_superres opencv_video opencv_videostab opencv_imgcodecs \
-  opencv_shape opencv_videoio
+  opencv_shape opencv_videoio opencv_dnn
 SHARED_LIBS += $i 4.0
 .endfor
 
@@ -95,6 +95,8 @@ CONFIGURE_ARGS =	-DWITH_1394:Bool=Off \
 			-DWITH_V4L:Bool=Off \
 			-DWITH_IPP:Bool=Off \
 			-DWITH_OPENCL:Bool=Off \
+			-DBUILD_ITT:Bool=Off \
+			-DBUILD_IPP_IW:Bool=Off \
 			-DENABLE_SSE3:Bool=Off \
 			-DBUILD_TESTS:Bool=On
 

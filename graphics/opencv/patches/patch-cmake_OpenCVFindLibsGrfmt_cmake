@@ -1,7 +1,8 @@
 $OpenBSD$
---- cmake/OpenCVFindLibsGrfmt.cmake.orig	Fri Dec 18 16:02:16 2015
-+++ cmake/OpenCVFindLibsGrfmt.cmake	Thu Mar 10 23:29:48 2016
-@@ -157,12 +157,7 @@ if(WITH_PNG)
+Index: cmake/OpenCVFindLibsGrfmt.cmake
+--- cmake/OpenCVFindLibsGrfmt.cmake.orig
++++ cmake/OpenCVFindLibsGrfmt.cmake
+@@ -162,12 +162,7 @@ if(WITH_PNG)
      include(FindPNG)
      if(PNG_FOUND)
        include(CheckIncludeFile)
