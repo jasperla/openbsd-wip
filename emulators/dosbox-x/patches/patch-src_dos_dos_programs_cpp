@@ -1,0 +1,134 @@
+$OpenBSD$
+
+fix function names *64
+
+Index: src/dos/dos_programs.cpp
+--- src/dos/dos_programs.cpp.orig
++++ src/dos/dos_programs.cpp
+@@ -746,7 +746,7 @@ class BOOT : public Program { (public)
+ 
+ 					if(diskSwap[i] != NULL) diskSwap[i]->Release();
+ 
+-                    fseeko64(usefile, 0L, SEEK_SET);
++                    fseeko(usefile, 0L, SEEK_SET);
+                     fread(tmp,256,1,usefile); // look for magic signatures
+ 
+                     if (!memcmp(tmp,"VFD1.",5)) { /* FDD files */
+@@ -1604,12 +1604,12 @@ restart_int:
+ 		sectors = (Bitu)(size / 512);
+ 
+ 		// create the image file
+-		f = fopen64(temp_line.c_str(),"wb+");
++		f = fopen(temp_line.c_str(),"wb+");
+ 		if (!f) {
+ 			WriteOut(MSG_Get("PROGRAM_IMGMAKE_CANNOT_WRITE"),temp_line.c_str());
+ 			return;
+ 		}
+-		if(fseeko64(f,size-1,SEEK_SET)) {
++		if(fseeko(f,size-1,SEEK_SET)) {
+ 			WriteOut(MSG_Get("PROGRAM_IMGMAKE_NOT_ENOUGH_SPACE"),size);
+ 			return;
+ 		}
+@@ -1647,7 +1647,7 @@ restart_int:
+ 				host_writed(&sbuf[0x1ca],((c-1)*h+(h-1))*s);
+ 
+ 				// write partition table
+-				fseeko64(f,0,SEEK_SET);
++				fseeko(f,0,SEEK_SET);
+ 				fwrite(&sbuf,512,1,f);
+ 				bootsect_pos = s;
+ 			}
+@@ -1709,17 +1709,17 @@ restart_int:
+ 			host_writew(&sbuf[0x1fe],0xAA55);
+ 
+ 			// write the boot sector
+-			fseeko64(f,bootsect_pos*512,SEEK_SET);
++			fseeko(f,bootsect_pos*512,SEEK_SET);
+ 			fwrite(&sbuf,512,1,f);
+ 			// write FATs
+ 			memset(sbuf,0,512);
+ 			if(mediadesc == 0xF8) host_writed(&sbuf[0],0xFFFFFFF8);
+ 			else host_writed(&sbuf[0],0xFFFFF0);
+ 			// 1st FAT
+-			fseeko64(f,(bootsect_pos+1)*512,SEEK_SET);
++			fseeko(f,(bootsect_pos+1)*512,SEEK_SET);
+ 			fwrite(&sbuf,512,1,f);
+ 			// 2nd FAT
+-			fseeko64(f,(bootsect_pos+1+sect_per_fat)*512,SEEK_SET);
++			fseeko(f,(bootsect_pos+1+sect_per_fat)*512,SEEK_SET);
+ 			fwrite(&sbuf,512,1,f);
+ 		}
+ 		// write VHD footer if requested, largely copied from RAW2VHD program, no license was included
+@@ -1760,7 +1760,7 @@ restart_int:
+ 			*(Bit32u*)(footer+0x40) = SDL_SwapBE32(~sum);
+ 
+ 			// write footer
+-			fseeko64(f, 0L, SEEK_END);
++			fseeko(f, 0L, SEEK_END);
+ 			fwrite(&footer,512,1,f);
+ 		}
+ 		fclose(f);
+@@ -2971,16 +2971,16 @@ class IMGMOUNT : public Program { (private)
+ 
+ 	bool DetectGeometry(Bitu sizes[]) {
+ 		bool yet_detected = false;
+-		FILE * diskfile = fopen64(temp_line.c_str(), "rb+");
++		FILE * diskfile = fopen(temp_line.c_str(), "rb+");
+ 		if (!diskfile) {
+ 			WriteOut(MSG_Get("PROGRAM_IMGMOUNT_INVALID_IMAGE"));
+ 			return false;
+ 		}
+-		fseeko64(diskfile, 0L, SEEK_END);
+-		Bit32u fcsize = (Bit32u)(ftello64(diskfile) / 512L);
++		fseeko(diskfile, 0L, SEEK_END);
++		Bit32u fcsize = (Bit32u)(ftello(diskfile) / 512L);
+ 		Bit8u buf[512];
+ 		// check for vhd signature
+-		fseeko64(diskfile, -512, SEEK_CUR);
++		fseeko(diskfile, -512, SEEK_CUR);
+ 		if (fread(buf, sizeof(Bit8u), 512, diskfile)<512) {
+ 			fclose(diskfile);
+ 			WriteOut(MSG_Get("PROGRAM_IMGMOUNT_INVALID_IMAGE"));
+@@ -3011,7 +3011,7 @@ class IMGMOUNT : public Program { (private)
+ 			yet_detected = true;
+ 		}
+ 
+-		fseeko64(diskfile, 0L, SEEK_SET);
++		fseeko(diskfile, 0L, SEEK_SET);
+ 		if (fread(buf, sizeof(Bit8u), 512, diskfile)<512) {
+ 			fclose(diskfile);
+ 			WriteOut(MSG_Get("PROGRAM_IMGMOUNT_INVALID_IMAGE"));
+@@ -3148,7 +3148,7 @@ class IMGMOUNT : public Program { (private)
+ 		/* auto-fill: sector size */
+ 		if (sizes[0] == 0) sizes[0] = 512;
+ 
+-		FILE *newDisk = fopen64(temp_line.c_str(), "rb+");
++		FILE *newDisk = fopen(temp_line.c_str(), "rb+");
+ 		if (!newDisk) {
+ 			WriteOut("Unable to open '%s'\n", temp_line.c_str());
+ 			return NULL;
+@@ -3171,19 +3171,19 @@ class IMGMOUNT : public Program { (private)
+ 		else {
+ 			char tmp[256];
+ 
+-			fseeko64(newDisk, 0L, SEEK_SET);
++			fseeko(newDisk, 0L, SEEK_SET);
+ 			fread(tmp, 256, 1, newDisk); // look for magic signatures
+ 
+ 			if (!memcmp(tmp, "VFD1.", 5)) { /* FDD files */
+-				fseeko64(newDisk, 0L, SEEK_END);
+-				sectors = (Bit64u)ftello64(newDisk) / (Bit64u)sizes[0];
++				fseeko(newDisk, 0L, SEEK_END);
++				sectors = (Bit64u)ftello(newDisk) / (Bit64u)sizes[0];
+ 				imagesize = (Bit32u)(sectors / 2); /* orig. code wants it in KBs */
+ 				setbuf(newDisk, NULL);
+ 				newImage = new imageDiskVFD(newDisk, (Bit8u *)temp_line.c_str(), imagesize, (imagesize > 2880));
+ 			}
+ 			else {
+-				fseeko64(newDisk, 0L, SEEK_END);
+-				sectors = (Bit64u)ftello64(newDisk) / (Bit64u)sizes[0];
++				fseeko(newDisk, 0L, SEEK_END);
++				sectors = (Bit64u)ftello(newDisk) / (Bit64u)sizes[0];
+ 				imagesize = (Bit32u)(sectors / 2); /* orig. code wants it in KBs */
+ 				setbuf(newDisk, NULL);
+ 				newImage = new imageDisk(newDisk, (Bit8u *)temp_line.c_str(), imagesize, (imagesize > 2880));
