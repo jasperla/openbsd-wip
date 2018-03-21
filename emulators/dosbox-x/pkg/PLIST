@@ -1,6 +1,0 @@
-@comment $OpenBSD$
-@bin bin/dosbox-x
-share/dosbox-x/
-share/dosbox-x/CHANGELOG
-share/dosbox-x/FREECG98.BMP
-share/dosbox-x/dosbox.reference.conf
