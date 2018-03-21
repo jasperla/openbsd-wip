@@ -3,7 +3,7 @@ $OpenBSD$
 Index: modules/dnn/src/torch/THGeneral.cpp
 --- modules/dnn/src/torch/THGeneral.cpp.orig
 +++ modules/dnn/src/torch/THGeneral.cpp
-@@ -1,10 +1,13 @@
+@@ -1,10 +1,12 @@
  #include "../precomp.hpp"
  
  #if defined(TH_DISABLE_HEAP_TRACKING)
@@ -12,8 +12,7 @@ Index: modules/dnn/src/torch/THGeneral.cpp
  #include <malloc.h>
  #elif defined(__APPLE__)
  #include <malloc/malloc.h>
-+#endif
-+#elif defined(__OpenBSD)
++#elif defined(__OpenBSD__)
 +#include <stdlib.h>
  #endif
  

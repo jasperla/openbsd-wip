@@ -65,7 +65,6 @@ RUN_DEPENDS-docs =	${BUILD_PKGPATH},-main
 RUN_DEPENDS-java =	${MODJAVA_RUN_DEPENDS}
 
 LIB_DEPENDS-main =	${LIB_DEPENDS} \
-			${MODPY_LIB_DEPENDS} \
 			multimedia/gstreamer1/plugins-base \
 			x11/gtk+3 \
 			graphics/ffmpeg \
