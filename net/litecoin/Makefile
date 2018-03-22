@@ -2,9 +2,9 @@
 
 COMMENT =		P2P payment system
 
-V =			0.8.6.1
-DISTNAME =		litecoin-project-litecoin-v${V}
-PKGNAME =		litecoin-${V}
+GH_ACCOUNT =		litecoin-project
+GH_PROJECT =		litecoin
+GH_TAGNAME =		v0.15.0.1rc1
 
 DIFF_ARGS =		-a
 
@@ -17,32 +17,51 @@ MAINTAINER =		Aaron Bieber <abieber@openbsd.org>
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += boost_filesystem-mt boost_program_options-mt boost_system-mt
-WANTLIB += boost_thread-mt c crypto db_cxx m miniupnpc pthread
-WANTLIB += ssl stdc++ z leveldb
+#WANTLIB += boost_filesystem-mt boost_program_options-mt boost_system-mt
 
-MODULES =		x11/qt4
+FLAVORS =		debug
+FLAVOR ?=
 
-MASTER_SITES =		https://github.com/litecoin-project/litecoin/tarball/v${V}/
+.if ${FLAVOR:Mdebug}
+CONFIGURE_ARGS +=	--enable-debug
+.endif
 
-LIB_DEPENDS =		devel/boost>=1.53 \
+USE_GMAKE =		Yes
+
+# C++11
+COMPILER =		base-clang ports-clang
+
+CONFIGURE_STYLE =	gnu
+AUTOCONF_VERSION =	2.69
+AUTOMAKE_VERSION =	1.14
+CONFIGURE_ARGS +=	--with-incompatible-bdb
+
+CONFIGURE_ENV +=	CPPFLAGS="-I${LOCALBASE}/include/db4 -I${LOCALBASE}/include" \
+			LDFLAGS="-L${LOCALBASE}/lib/db4 -L${X11BASE}/lib -L${LOCALBASE}/lib"
+
+MAKE_FLAGS =		CC="${CC}" CFLAGS="${CFLAGS}"
+
+CXXFLAGS +=		-std=c++11
+
+MODULES +=		x11/qt5
+
+LIB_DEPENDS +=		devel/protobuf \
+			graphics/libqrencode \
+			net/miniupnp/miniupnpc
+
+CONFIGURE_ARGS +=	--with-gui=qt5
+
+RUN_DEPENDS +=		devel/desktop-file-utils
+
+LIB_DEPENDS =		devel/boost \
+			net/zeromq \
 			databases/db/v4 \
 			net/miniupnp/miniupnpc \
 			databases/leveldb
 
-MAKE_ENV =		USE_UPNP=0 CXX="${CXX}" \
-			BOOST_LIB_SUFFIX=-mt LDFLAGS="-L${LOCALBASE}/lib \
-			-L${LOCALBASE}/lib/db4" CXXFLAGS="${CXXFLAGS} \
-			-I${LOCALBASE}/include -I${LOCALBASE}/include/db4"
-
-QMAKE =			${LOCALBASE}/bin/qmake4
-USE_GMAKE =		Yes
-
-WRKDIST =		${WRKDIR}/litecoin-project-litecoin-dab8fe6
-
-do-configure:
-	@cd ${WRKSRC} && \
-		${QMAKE} ${MAKE_ENV} bitcoin-qt.pro
+post-patch:
+	cd ${WRKSRC} && ${SETENV} AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
+		AUTOCONF_VERSION=${AUTOCONF_VERSION} ./autogen.sh
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/litecoin-qt ${PREFIX}/bin
@@ -56,3 +75,8 @@ do-install:
 		${PREFIX}/man/man5
 
 .include <bsd.port.mk>
+
+# fix build when ccache is installed but not enabled
+.if ${USE_CCACHE:L} != "yes"
+CONFIGURE_ARGS +=	--disable-ccache
+.endif
