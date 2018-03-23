@@ -1,17 +1,17 @@
 # $OpenBSD$
 
-COMMENT-main = 		real-time startegy game
+COMMENT-main = 		real-time strategy game
 COMMENT-data = 		7kaa data files
 
 GH_ACCOUNT = 		the3dfxdude
 GH_PROJECT = 		7kaa
-GH_TAGNAME = 		v2.14.5
+GH_TAGNAME = 		v2.14.7
 PKGNAME-main = 		${DISTNAME}
 PKGNAME-data = 		7kaa-data-${GH_TAGNAME:S/v//}
 
 MULTI_PACKAGES = 	-main -data
 
-CATEGORIES = 		games x11
+CATEGORIES = 		games
 
 HOMEPAGE = 		http://7kfans.com/
 
