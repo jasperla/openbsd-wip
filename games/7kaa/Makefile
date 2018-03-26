@@ -5,7 +5,7 @@ COMMENT-data = 		7kaa data files
 
 GH_ACCOUNT = 		the3dfxdude
 GH_PROJECT = 		7kaa
-GH_TAGNAME = 		v2.14.7
+GH_TAGNAME = 		v2.14.5
 PKGNAME-main = 		${DISTNAME}
 PKGNAME-data = 		7kaa-data-${GH_TAGNAME:S/v//}
 
