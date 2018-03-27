@@ -1,0 +1,15 @@
+@comment $OpenBSD$
+share/signing/
+share/signing/README
+share/doc/pkg-readmes/${FULLPKGNAME}
+share/signing/gnupg/
+share/signing/gnupg/crls.d/
+share/signing/gnupg/crls.d/DIR.txt
+share/signing/gnupg/gpg.conf
+share/signing/gnupg/private-keys-v1.d/
+share/signing/gnupg/pubring.kbx
+share/signing/gnupg/random_seed
+share/signing/gnupg/tofu.db
+share/signing/gnupg/trustdb.gpg
+share/signing/signify/
+share/signing/signify/landry-mozilla-pkg.pub

@@ -1,0 +1,45 @@
+$OpenBSD: README,v 1.1.1.1 2018/03/06 13:49:03 abieber Exp $
+
++-----------------------------------------------------------------------
+| Validating DISTFILE signatures on OpenBSD
++-----------------------------------------------------------------------
+
+This is  a repository of public keys used to validate upstream dist files.
+
+Using ${FULLPKGNAME}
+===================
+
+Currently you will need to add the following to your mk.conf file:
+
+  SIG_SUFX ?=             .asc
+  SIG_FILE ?=             $\{FULLPKGNAME}$\{EXTRACT_SUFX}$\{SIG_SUFX}
+  SIG_PATH ?=             ${DISTDIR}/$\{SIG_FILE}
+
+  fetch-sig:
+          @${ECHO_MSG} "===> Checking signature files for ${FULLPKGNAME}${_MASTER}"
+          @if [ ! -f ${SIG_PATH} ]; then \
+            for site in ${MASTER_SITES}; do \
+              if ${_PFETCH} ${FETCH_CMD} -o ${SIG_PATH} $${site}${SIG_FILE}; then \
+                exit 0; \
+              fi; \
+            done; exit 1; \
+          fi
+
+  verify: fetch fetch-sig
+          @GNUPGHOME=$\{PREFIX}/share/signing/gnupg/ \
+                  $\{PREFIX}/bin/gpg2 --verify \
+                  $\{DISTDIR}/$\{DISTNAME}$\{EXTRACT_SUFX}$\{SIG_SUFX}
+
+SIG_SUFX should be set per port. The most common extension is .asc, but
+.sig is a close second.  Currently only validating detatched signatures
+is supported.
+
+Adding keys
+===========
+
+TBD
+
+Deleting keys
+=============
+
+TBD
