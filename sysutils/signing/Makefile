@@ -2,11 +2,10 @@
 
 COMMENT =	tool to verify external signatures of ports
 
-V =		1.0.2
+V =		1.0.3
 DISTNAME =	signing-${V}
 CATEGORIES =	sysutils
 HOMEPAGE =	https://github.com/qbit/signing
-SIG_SUFX =	.sig
 
 MAINTAINER =	Aaron Bieber <abieber@openbsd.org>
 

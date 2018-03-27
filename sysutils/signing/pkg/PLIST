@@ -1,15 +1,19 @@
 @comment $OpenBSD$
-share/signing/
-share/signing/README
 share/doc/pkg-readmes/${FULLPKGNAME}
+share/signing/
+share/signing/README.md
 share/signing/gnupg/
 share/signing/gnupg/crls.d/
 share/signing/gnupg/crls.d/DIR.txt
 share/signing/gnupg/gpg.conf
-share/signing/gnupg/private-keys-v1.d/
 share/signing/gnupg/pubring.kbx
 share/signing/gnupg/random_seed
 share/signing/gnupg/tofu.db
 share/signing/gnupg/trustdb.gpg
+share/signing/opmsg/
+share/signing/opmsg/aa873e4fd0b17efc6c3874fa507b0669068c39a23a74561fd7ca907d0517f2a4/
+share/signing/opmsg/aa873e4fd0b17efc6c3874fa507b0669068c39a23a74561fd7ca907d0517f2a4/ec.pub.pem
+share/signing/opmsg/aa873e4fd0b17efc6c3874fa507b0669068c39a23a74561fd7ca907d0517f2a4/name
+share/signing/opmsg/config
 share/signing/signify/
 share/signing/signify/landry-mozilla-pkg.pub
