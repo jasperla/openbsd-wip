@@ -1,0 +1,21 @@
+$OpenBSD$
+
+fix ambiguity of abs (int vs double)
+
+Index: src/stc/scintilla/src/Editor.cxx
+--- src/stc/scintilla/src/Editor.cxx.orig
++++ src/stc/scintilla/src/Editor.cxx
+@@ -5841,9 +5841,11 @@ void Editor::GoToLine(int lineNo) {
+ }
+ 
+ static bool Close(Point pt1, Point pt2) {
+-	if (abs(pt1.x - pt2.x) > 3)
++	int xpts = pt1.x - pt2.x;
++	int ypts = pt1.y - pt2.y;
++	if (abs(xpts) > 3)
+ 		return false;
+-	if (abs(pt1.y - pt2.y) > 3)
++	if (abs(ypts) > 3)
+ 		return false;
+ 	return true;
+ }

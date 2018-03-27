@@ -35,8 +35,7 @@ MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=wxwindows/}
 EXTRACT_SUFX =		.zip
 WRKDIST =		${WRKDIR}
 
-MODULES	=		devel/gettext \
-			lang/python
+MODULES	=		lang/python
 
 WANTLIB += GL GLU SDL SM X11 Xcomposite Xcursor Xdamage Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0 c cairo
