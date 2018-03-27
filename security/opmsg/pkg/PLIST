@@ -1,2 +1,4 @@
 @comment $OpenBSD$
 @bin bin/opmsg
+share/examples/opmsg/
+share/examples/opmsg/sample.config
