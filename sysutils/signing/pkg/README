@@ -11,7 +11,9 @@ Using ${FULLPKGNAME}
 
 Currently you will need to add the following to your mk.conf file:
 
+  .if exists(${PREFIX}/share/signing/signing.mk)
   .include "${PREFIX}/share/signing/signing.mk"
+  .endif
 
 SIG_SUFX should be set per port. The most common extension is .asc, but
 .sig is a close second.  Currently only validating detatched signatures
