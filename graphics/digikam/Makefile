@@ -2,8 +2,9 @@
 
 COMMENT =	KDE digital photo management utility
 
+DISTNAME =	digikam-5.9.0
+
 CATEGORIES =	graphics
-DISTNAME =	digikam-5.8.0
 
 HOMEPAGE =	https://www.digikam.org/
 
@@ -29,11 +30,13 @@ WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5OpenGL Qt5PrintSupport
 WANTLIB += Qt5Sql Qt5WebKit Qt5WebKitWidgets Qt5Widgets Qt5X11Extras
 WANTLIB += Qt5Xml Qt5XmlPatterns SM X11 Xext c exiv2 expat exslt
 WANTLIB += glib-2.0 gphoto2 gphoto2_port intl jasper jpeg lcms2
-WANTLIB += lensfun lqr-1 m opencv_core opencv_highgui opencv_imgcodecs
-WANTLIB += opencv_imgproc opencv_ml opencv_objdetect opencv_videoio
-WANTLIB += png tiff usb-1.0 xml2 xslt z
+WANTLIB += lensfun lqr-1 m opencv_core opencv_imgcodecs opencv_imgproc
+WANTLIB += opencv_objdetect png tiff usb-1.0 xml2 xslt z
 
 MASTER_SITES =	${MASTER_SITE_KDE:=stable/digikam/}
+
+FLAVORS =	mysql
+FLAVOR ?=
 
 MODULES =	devel/kf5
 
@@ -54,7 +57,6 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 		devel/gettext
 
 # TODO
-# - MySQL Database Support
 # - libksane
 # - libakonadicontact
 
@@ -85,14 +87,16 @@ LIB_DEPENDS +=	devel/kf5/kservice \
 		x11/kde-applications/kcalcore \
 		x11/kde-applications/libkipi
 
-# XXX Don't try to compile documentation translations for the moment.
-# https://www.mail-archive.com/kde-bugs-dist@kde.org/msg125271.html
 CONFIGURE_ARGS =	-DCMAKE_DISABLE_FIND_PACKAGE_Doxygen:Bool=Yes \
-			-DDIGIKAMSC_COMPILE_DOC=OFF \
 			-DENABLE_MEDIAPLAYER=OFF \
-			-DENABLE_MYSQLSUPPORT=OFF
 
 CONFIGURE_ARGS +=	-DCMAKE_POLICY_DEFAULT_CMP0071=NEW
+
+.if ${FLAVOR:Mmysql}
+LIB_DEPENDS +=		databases/mariadb
+CONFIGURE_ARGS =	-DENABLE_MYSQLSUPPORT=ON
+#WANTLIB += yubikey ykpers-1
+.endif
 
 TEST_IS_INTERACTIVE =	X11
 
