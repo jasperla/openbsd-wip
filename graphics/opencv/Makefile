@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2015/01/30 21:38:37 zhuk Exp $
+# $OpenBSD: Makefile,v 1.43 2017/11/04 12:39:29 rsadowski Exp $
 
 ONLY_FOR_ARCHS =	${GCC4_ARCHS} ${CLANG_ARCHS}
 
@@ -13,7 +13,7 @@ PKGNAME-main =		opencv-${V}
 PKGNAME-docs =		opencv-docs-$V
 PKGNAME-java =		opencv-java-${V}
 
-HOMEPAGE =		http://www.opencv.org/
+HOMEPAGE =		https://www.opencv.org/
 
 MAINTAINER =		Rafael Sadowski <rsadowski@openbsd.org>
 
@@ -31,12 +31,12 @@ WANTLIB-main += cairo-gobject gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0
 WANTLIB-main += gobject-2.0 gphoto2 gphoto2_port gstapp-1.0 gstbase-1.0
 WANTLIB-main += gstpbutils-1.0 gstreamer-1.0 gstriff-1.0 gstvideo-1.0
 WANTLIB-main += gthread-2.0 gtk-3 intl jasper jpeg m pango-1.0 pangocairo-1.0
-WANTLIB-main += png swscale tiff webp z
+WANTLIB-main += png swscale tiff webp z xine
 
 WANTLIB-java += ${COMPILER_LIBCXX} m opencv_calib3d opencv_core opencv_features2d
 WANTLIB-java += opencv_flann opencv_highgui opencv_imgcodecs opencv_imgproc
 WANTLIB-java += opencv_ml opencv_objdetect opencv_photo opencv_video
-WANTLIB-java += opencv_videoio
+WANTLIB-java += opencv_videoio opencv_dnn
 
 WANTLIB-docs =
 
@@ -67,6 +67,7 @@ RUN_DEPENDS-java =	${MODJAVA_RUN_DEPENDS}
 LIB_DEPENDS-main =	${LIB_DEPENDS} \
 			multimedia/gstreamer1/plugins-base \
 			x11/gtk+3 \
+			multimedia/xine-lib \
 			graphics/ffmpeg \
 			graphics/ilmbase \
 			graphics/jpeg \
@@ -94,12 +95,14 @@ CONFIGURE_ARGS =	-DWITH_1394:Bool=Off \
 			-DWITH_V4L:Bool=Off \
 			-DWITH_IPP:Bool=Off \
 			-DWITH_OPENCL:Bool=Off \
+			-DWITH_XINE:Bool=On \
 			-DBUILD_ITT:Bool=Off \
-			-DBUILD_IPP_IW:Bool=Off \
-			-DENABLE_SSE3:Bool=Off \
-			-DBUILD_TESTS:Bool=On
+			-DBUILD_IPP_IW:Bool=Off
 
-CONFIGURE_ARGS +=	-DCMAKE_POLICY_DEFAULT_CMP0058=NEW
+#-DENABLE_SSE3:Bool=Off \
+#-DBUILD_TESTS:Bool=On
+
+#CONFIGURE_ARGS +=	-DCMAKE_POLICY_DEFAULT_CMP0058=NEW
 
 .if ${BUILD_PACKAGES:M-docs}
 BUILD_DEPENDS +=	textproc/py-sphinx

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-docs,v 1.7 2015/01/24 10:56:43 zhuk Exp $
+@comment $OpenBSD: PLIST-docs,v 1.10 2017/11/04 12:39:30 rsadowski Exp $
 share/OpenCV/doc/
 share/OpenCV/doc/html/
 share/OpenCV/doc/html/1-window-preferences.png
