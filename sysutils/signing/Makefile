@@ -2,7 +2,7 @@
 
 COMMENT =	tool to verify external signatures of ports
 
-V =		1.0.3
+V =		1.0.4
 DISTNAME =	signing-${V}
 CATEGORIES =	sysutils
 HOMEPAGE =	https://github.com/qbit/signing
@@ -17,7 +17,8 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 MASTER_SITES =		https://github.com/qbit/signing/releases/download/${V}/
 
-RUN_DEPENDS =		security/gnupg2
+RUN_DEPENDS =		security/gnupg2 \
+			security/opmsg
 
 NO_BUILD =		Yes
 
