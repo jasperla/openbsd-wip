@@ -1,15 +1,18 @@
 # $OpenBSD$
 
 # Avoid EPOCH bumps
-V =		2.0.7.20171126
+V =		3.1.1
 COMMENT =	3d, first person roguelike
-DISTNAME =	barony-${V}
+DISTNAME =	v${V}
 CATEGORIES =	games x11
+PKGNAME =       barony-${V}
 
 # Will become GH_TAGNAME=v3.0.0 soemday
 GH_ACCOUNT =	TurningWheel
 GH_PROJECT =	Barony
-GH_COMMIT =	316f40ebff2bd56dbf9a3f1a60fac5b28e80f7d1
+GH_TAG =        ${V}
+
+EXTRACT_SUFX =  .zip
 
 HOMEPAGE =	http://www.baronygame.com/
 
@@ -35,15 +38,16 @@ LIB_DEPENDS =	audio/libvorbis \
 
 CONFIGURE_ARGS =	-DCMAKE_C_FLAGS="${CFLAGS}" \
 			-DCMAKE_CXX_FLAGS="${CXXFLAGS}" \
-			-DOPENAL_ENABLED=ON
+			-DOPENAL_ENABLED=ON \
+			-DEDITOR_EXE_NAME="barony-editor" \
+			-DDATA_DIR=ON \
+			-DCMAKE_INSTALL_BINDIR="${LOCALBASE}/bin"
 
 NO_TEST =	Yes
 
+WRKDIST = ${WRKDIR}/Barony-${V}
+
 pre-configure:
 	sed -i 's,-O3,,g' ${WRKSRC}/CMakeLists.txt
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKBUILD}/barony ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKBUILD}/editor ${PREFIX}/bin/barony-editor
 
 .include <bsd.port.mk>

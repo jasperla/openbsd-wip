@@ -1,2 +1,1 @@
-* try to adjust data path - currently "./" -> ideally to something like "~/.local/share/barony"
 * add MESSAGE with instructions on where to put barony files, baronynext-dummy files

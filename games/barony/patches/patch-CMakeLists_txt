@@ -1,23 +1,62 @@
 $OpenBSD$
 
-libexecinfo is necessary
-
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -316,6 +316,7 @@ else()
+@@ -58,14 +58,14 @@ if( NOT WIN32 )
+   if(PANDORA)
+   set(CMAKE_C_FLAGS_DEBUG "${CMAKE_C_FLAGS_DEBUG} -Wall -ffast-math -funroll-loops -fstrict-aliasing -mcpu=cortex-a8 -mfpu=neon -mfloat-abi=softfp -g -fuse-ld=gold -fuse-linker-plugin")
+   set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -Wall ")
+-  set(CMAKE_C_FLAGS_RELEASE "${CMAKE_C_FLAGS_RELEASE} -O3 -ffast-math -funroll-loops -fstrict-aliasing -mcpu=cortex-a8 -mfpu=neon -mfloat-abi=softfp -g -fuse-ld=gold -fuse-linker-plugin -fsingle-precision-constant")
+-  set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -O3 -ffast-math -funroll-loops -fstrict-aliasing -mcpu=cortex-a8 -mfpu=neon -mfloat-abi=softfp -g -fuse-ld=gold -fuse-linker-plugin -fsingle-precision-constant")
++  set(CMAKE_C_FLAGS_RELEASE "${CMAKE_C_FLAGS_RELEASE}  -ffast-math -funroll-loops -fstrict-aliasing -mcpu=cortex-a8 -mfpu=neon -mfloat-abi=softfp -g -fuse-ld=gold -fuse-linker-plugin -fsingle-precision-constant")
++  set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE}  -ffast-math -funroll-loops -fstrict-aliasing -mcpu=cortex-a8 -mfpu=neon -mfloat-abi=softfp -g -fuse-ld=gold -fuse-linker-plugin -fsingle-precision-constant")
+   else()
+   set(CMAKE_C_FLAGS_DEBUG "${CMAKE_C_FLAGS_DEBUG} -Wall -pg -ffast-math -funroll-loops -fstrict-aliasing")
+   #set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -Wall -pg -fsanitize=address -fno-omit-frame-pointer -fsanitize=undefined -fno-sanitize-recover -Wreturn-type -Werror=return-type")
+   set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -Wall -pg")
+-  set(CMAKE_C_FLAGS_RELEASE "${CMAKE_C_FLAGS_RELEASE} -O3 -ffast-math -funroll-loops -fstrict-aliasing")
+-  set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -O3")
++  set(CMAKE_C_FLAGS_RELEASE "${CMAKE_C_FLAGS_RELEASE}  -ffast-math -funroll-loops -fstrict-aliasing")
++  set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} ")
+   endif()
+   if (APPLE)
+     set (Apple 1)
+@@ -97,8 +97,8 @@ if( NOT WIN32 )
+     set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -std=c++11 -Wl,-rpath=$ORIGIN -Wno-write-strings")
+   endif()
+ else()
+-  set(CMAKE_C_FLAGS_DEBUG "${CMAKE_C_FLAGS_DEBUG} -Wall -pg -O3 -ffast-math -funroll-loops -malign-double -fstrict-aliasing -mwindows")
+-  set(CMAKE_C_FLAGS_RELEASE "${CMAKE_C_FLAGS_RELEASE} -O3 -ffast-math -funroll-loops -malign-double -fstrict-aliasing -mwindows")
++  set(CMAKE_C_FLAGS_DEBUG "${CMAKE_C_FLAGS_DEBUG} -Wall -pg  -ffast-math -funroll-loops -malign-double -fstrict-aliasing -mwindows")
++  set(CMAKE_C_FLAGS_RELEASE "${CMAKE_C_FLAGS_RELEASE}  -ffast-math -funroll-loops -malign-double -fstrict-aliasing -mwindows")
+   set (Windows 1)
  endif()
- target_link_libraries(barony ${OPENGL_LIBRARIES})
- target_link_libraries(barony ${THREADS_LIBRARIES})
-+target_link_libraries(barony -lexecinfo)
- target_link_libraries(barony -lm)
- if( NOT WIN32 AND NOT APPLE)
-   #Remember, Windows and Mac aren't using find_package for FMOD and PNG.
-@@ -397,6 +398,7 @@ else()
- endif()
- target_link_libraries(editor ${OPENGL_LIBRARIES})
- target_link_libraries(editor ${THREADS_LIBRARIES})
-+target_link_libraries(editor -lexecinfo)
- target_link_libraries(editor -lm)
- # We need to link to Winsock if we're on Windows
- if( NOT WIN32 AND NOT APPLE)
+ 
+@@ -253,7 +253,7 @@ message("${CMAKE_CXX_FLAGS_DEBUG}")
+ message("Release flags: ")
+ message("${CMAKE_C_FLAGS_RELEASE}")
+ message("${CMAKE_CXX_FLAGS_RELEASE}")
+-#-O3 -DNDEBUG -Wall -pg -ffast-math -funroll-loops -fstrict-aliasing
++# -DNDEBUG -Wall -pg -ffast-math -funroll-loops -fstrict-aliasing
+ message("***************************")
+ 
+ 
+@@ -361,7 +361,7 @@ set(BASE_DATA_DIR "./" CACHE INTERNAL "Base data dir")
+ if (NOT APPLE AND UNIX)
+   include(GNUInstallDirs)
+   if (DATA_DIR)
+-    set(BASE_DATA_DIR "${CMAKE_INSTALL_FULL_DATAROOTDIR}/barony")
++    set(BASE_DATA_DIR "${CMAKE_INSTALL_FULL_DATAROOTDIR}/games/barony")
+   endif()
+   message(STATUS "Base data directory ${BASE_DATA_DIR}")
+ 
+@@ -445,7 +445,7 @@ if (NOT APPLE AND UNIX)
+     RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR} COMPONENT Runtime
+   )
+ 
+-  install(DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/lang DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/barony)
++  install(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/lang DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/games/barony)
+ 
+   if (EXISTS books)
+     install(DIRECTORY 
