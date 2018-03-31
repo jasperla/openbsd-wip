@@ -7,7 +7,6 @@ DISTNAME =	v${V}
 CATEGORIES =	games x11
 PKGNAME =       barony-${V}
 
-# Will become GH_TAGNAME=v3.0.0 soemday
 GH_ACCOUNT =	TurningWheel
 GH_PROJECT =	Barony
 GH_TAG =        ${V}

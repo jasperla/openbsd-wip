@@ -1,0 +1,11 @@
+In order to play the game, it needs the proprietary assets from
+the named "Blessed Edition", (e.g. 3.1.x) (the previous version, called 
+"Cursed Edition" (e.g. 2.0.x) is not workable with this package version).
+
+Those assets needs to be placed into the ${LOCALBASE}/share/games/barony folder
+or alternatively into a chosen folder but the barony executable needs to be
+launched with the -datadir option.
+
+At last an editor is provided (barony-editor).
+
+
