@@ -4,8 +4,6 @@ COMMENT =	a replacement for gpg which can encrypt/sign/verify
 
 DISTNAME =	opmsg-1.78s
 EXTRACT_SUFX =	.tgz
-SIG_TYPE =	opmsg
-SIG_FILE =	${DISTNAME}.sig
 
 CATEGORIES =	security
 
