@@ -2,7 +2,7 @@
 
 COMMENT =	tool to verify external signatures of ports
 
-V =		1.0.4
+V =		1.0.5
 DISTNAME =	signing-${V}
 CATEGORIES =	sysutils
 HOMEPAGE =	https://github.com/qbit/signing
@@ -11,9 +11,6 @@ MAINTAINER =	Aaron Bieber <abieber@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
-
-# "make port-lib-depends-check" can help
-#WANTLIB =		???
 
 MASTER_SITES =		https://github.com/qbit/signing/releases/download/${V}/
 
