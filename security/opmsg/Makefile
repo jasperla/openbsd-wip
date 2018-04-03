@@ -5,27 +5,28 @@ COMMENT =	a replacement for gpg which can encrypt/sign/verify
 DISTNAME =	opmsg-1.78s
 EXTRACT_SUFX =	.tgz
 
+FIX_EXTRACT_PERMISSIONS = Yes
+
 CATEGORIES =	security
 
 HOMEPAGE =	https://github.com/stealth/opmsg
 
 MAINTAINER =	Aaron Bieber <abieber@openbsd.org>
 
-# GPLv3
+# GPLv3+
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += c crypto m
 
 MASTER_SITES =		http://stealth.openwall.net/opmsg/
 
-MODULES =		lang/clang
-MODCLANG_ARCHS =	*
-MODCLANG_LANGS =	c++
+COMPILER =		base-clang ports-clang ports-gcc
 
-MAKE_FLAGS =		DEFS+="-DHAVE_BN_GENCB_NEW=0" \
-			DEFS+="-DHAVE_LIBRESSL"
+MAKE_FLAGS =		DEFS+="-DHAVE_BN_GENCB_NEW=0"
 
 WRKSRC =		${WRKDIR}/opmsg/src
+
+NO_TEST =		Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/opmsg ${PREFIX}/bin/
