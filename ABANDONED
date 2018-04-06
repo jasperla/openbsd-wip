@@ -8,3 +8,9 @@ archivers/p5-IO-Compress-Bzip2
 archivers/p5-IO-Compress-Lzf
 archivers/p5-IO-Compress-Lzma
 archivers/p5-IO-Compress-Lzop
+audio/qtscrobbler
+audio/seq24
+cad/brlcad
+comms/barry
+comms/barrybackup
+comms/svxlink
