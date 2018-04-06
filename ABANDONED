@@ -1,0 +1,10 @@
+# To help future archaeologists with a starting point if they wish to revive a port named below
+archivers/p5-Compress-LZF
+archivers/p5-Compress-Raw-Bzip2
+archivers/p5-Compress-Raw-Lzma
+archivers/p5-Compress-Raw-Zlib
+archivers/p5-IO-Compress
+archivers/p5-IO-Compress-Bzip2
+archivers/p5-IO-Compress-Lzf
+archivers/p5-IO-Compress-Lzma
+archivers/p5-IO-Compress-Lzop
