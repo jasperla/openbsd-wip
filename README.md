@@ -45,6 +45,8 @@ committers, please use the following files to keep the overview of what's here:
 - FINISHED: Described above
 - TODO: File in the ports' directory explaining what needs to be done
 - UPDATE: Explain the update, could contain a ready-to-use commit message? :)
+- ABANDONED: Ports that have not seen any activity in recent years nor have any
+  licensing restrictions that would prevent them from ever being imported into CVS.
 
 Workflow (open for discussion)
 ==================================
