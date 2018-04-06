@@ -14,3 +14,7 @@ cad/brlcad
 comms/barry
 comms/barrybackup
 comms/svxlink
+converters/p5-Convert-Bencode
+converters/p5-Convert-Bencode_XS
+net/p5-Net-BitTorrent-File
+www/p5-WWW-Opentracker-Stats
