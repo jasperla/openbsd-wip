@@ -16,5 +16,7 @@ comms/barrybackup
 comms/svxlink
 converters/p5-Convert-Bencode
 converters/p5-Convert-Bencode_XS
+games/falltergeist
+games/freeablo
 net/p5-Net-BitTorrent-File
 www/p5-WWW-Opentracker-Stats
