@@ -3,7 +3,7 @@ $OpenBSD$
 Index: runtime/CMakeLists.txt
 --- runtime/CMakeLists.txt.orig
 +++ runtime/CMakeLists.txt
-@@ -348,7 +348,7 @@ endif()
+@@ -342,7 +342,7 @@ endif()
  set(LIBOMP_LIB_NAME ${LIBOMP_DEFAULT_LIB_NAME} CACHE STRING "Base OMP library name")
  
  if(${LIBOMP_ENABLE_SHARED})

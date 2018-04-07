@@ -1,6 +1,8 @@
 @comment $OpenBSD$
 include/omp.h
+include/ompt.h
 @lib lib/libgomp.so.${LIBgomp_VERSION}
 lib/libgomp.spec
 @lib lib/libiomp5.so.${LIBiomp5_VERSION}
 @lib lib/libomp.so.${LIBomp_VERSION}
+lib/libomptarget.so

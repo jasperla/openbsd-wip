@@ -3,7 +3,7 @@ $OpenBSD$
 Index: runtime/src/kmp_wrapper_malloc.h
 --- runtime/src/kmp_wrapper_malloc.h.orig
 +++ runtime/src/kmp_wrapper_malloc.h
-@@ -96,7 +96,7 @@
+@@ -94,7 +94,7 @@
  #if KMP_OS_WINDOWS
  #include <malloc.h> // Windows* OS: _alloca() declared in "malloc.h".
  #define alloca _alloca // Allow to use alloca() with no underscore.

@@ -3,7 +3,7 @@ $OpenBSD$
 Index: runtime/src/kmp_platform.h
 --- runtime/src/kmp_platform.h.orig
 +++ runtime/src/kmp_platform.h
-@@ -21,6 +21,7 @@
+@@ -19,6 +19,7 @@
  #define KMP_OS_LINUX 0
  #define KMP_OS_FREEBSD 0
  #define KMP_OS_NETBSD 0
@@ -11,7 +11,7 @@ Index: runtime/src/kmp_platform.h
  #define KMP_OS_DARWIN 0
  #define KMP_OS_WINDOWS 0
  #define KMP_OS_CNK 0
-@@ -56,18 +57,23 @@
+@@ -54,18 +55,23 @@
  #define KMP_OS_NETBSD 1
  #endif
  

@@ -3,7 +3,7 @@ $OpenBSD$
 Index: runtime/src/kmp_runtime.cpp
 --- runtime/src/kmp_runtime.cpp.orig
 +++ runtime/src/kmp_runtime.cpp
-@@ -7507,8 +7507,8 @@ __kmp_determine_reduction_method(
+@@ -7647,8 +7647,8 @@ __kmp_determine_reduction_method(
  
  #if KMP_ARCH_X86_64 || KMP_ARCH_PPC64 || KMP_ARCH_AARCH64 || KMP_ARCH_MIPS64
  
@@ -14,7 +14,7 @@ Index: runtime/src/kmp_runtime.cpp
  
      int teamsize_cutoff = 4;
  
-@@ -7530,8 +7530,8 @@ __kmp_determine_reduction_method(
+@@ -7670,8 +7670,8 @@ __kmp_determine_reduction_method(
      }
  #else
  #error "Unknown or unsupported OS"

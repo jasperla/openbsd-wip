@@ -3,7 +3,7 @@ $OpenBSD$
 Index: runtime/src/z_Linux_util.cpp
 --- runtime/src/z_Linux_util.cpp.orig
 +++ runtime/src/z_Linux_util.cpp
-@@ -24,7 +24,7 @@
+@@ -22,7 +22,7 @@
  #include "kmp_wait_release.h"
  #include "kmp_wrapper_getpid.h"
  
@@ -12,7 +12,7 @@ Index: runtime/src/z_Linux_util.cpp
  #include <alloca.h>
  #endif
  #include <math.h> // HUGE_VAL.
-@@ -1787,7 +1787,7 @@ static int __kmp_get_xproc(void) {
+@@ -1751,7 +1751,7 @@ static int __kmp_get_xproc(void) {
  
    int r = 0;
  
@@ -21,9 +21,9 @@ Index: runtime/src/z_Linux_util.cpp
  
    r = sysconf(_SC_NPROCESSORS_ONLN);
  
-@@ -2045,9 +2045,9 @@ int __kmp_is_address_mapped(void *addr) {
+@@ -1997,9 +1997,9 @@ int __kmp_is_address_mapped(void *addr) {
      found = 1;
-   }; // if
+   }
  
 -#elif KMP_OS_FREEBSD || KMP_OS_NETBSD
 +#elif KMP_OS_FREEBSD || KMP_OS_NETBSD || KMP_OS_OPENBSD

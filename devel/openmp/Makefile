@@ -3,7 +3,7 @@
 # So say the LLVM people.
 ONLY_FOR_ARCHS =	amd64 arm64 armv7 i386 mips64 mips64el
 
-V =		5.0.1
+V =		6.0.0
 COMMENT =	LLVM OpenMP stand-alone implementation
 DISTNAME =	openmp-${V}.src
 PKGNAME =	openmp-${V}
@@ -21,7 +21,7 @@ MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 # Dual MIT/UIUC
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += pthread
+WANTLIB += ${COMPILER_LIBCXX} m
 
 MASTER_SITES =	https://releases.llvm.org/${V}/
 

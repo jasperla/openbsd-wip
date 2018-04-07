@@ -3,7 +3,7 @@ $OpenBSD$
 Index: runtime/src/kmp_ftn_entry.h
 --- runtime/src/kmp_ftn_entry.h.orig
 +++ runtime/src/kmp_ftn_entry.h
-@@ -348,7 +348,7 @@ int FTN_STDCALL xexpand(FTN_GET_THREAD_NUM)(void) {
+@@ -370,7 +370,7 @@ int FTN_STDCALL KMP_EXPAND_NAME(FTN_GET_THREAD_NUM)(vo
  #else
    int gtid;
  
