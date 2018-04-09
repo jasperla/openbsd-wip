@@ -1,6 +1,6 @@
 # $OpenBSD$
 
-V =		1.4
+V =		1.6
 COMMENT =	small and easy to use console text editor
 DISTNAME =	dte-${V}
 CATEGORIES =	editors
