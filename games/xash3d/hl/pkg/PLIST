@@ -1,0 +1,5 @@
+@comment $OpenBSD$
+lib/xash3d/
+lib/xash3d/valve/
+lib/xash3d/valve/libclient.so
+lib/xash3d/valve/libserver.so

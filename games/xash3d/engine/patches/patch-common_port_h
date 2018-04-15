@@ -1,0 +1,16 @@
+$OpenBSD$
+
+We don't want pointless arch-specific suffixes.
+
+Index: common/port.h
+--- common/port.h.orig
++++ common/port.h
+@@ -22,7 +22,7 @@ GNU General Public License for more details.
+ #endif
+ 
+ #ifdef XASH_64BIT
+-#define ARCH_SUFFIX "64"
++#define ARCH_SUFFIX
+ #else
+ #define ARCH_SUFFIX
+ #endif
