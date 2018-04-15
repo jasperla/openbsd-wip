@@ -1,0 +1,16 @@
+$OpenBSD$
+
+_N conflicts with a cpp define in ctype.h
+
+Index: render/triangleRasterizer/DrawScanline.h
+--- render/triangleRasterizer/DrawScanline.h.orig
++++ render/triangleRasterizer/DrawScanline.h
+@@ -40,7 +40,7 @@ namespace DrawScanline
+     extern bool _useFog;
+     extern Vector3 _avLightPos[4];
+     extern float _afIntens[4];
+-    extern Vector3 _N;
++    extern Vector3 _Ne;
+     extern float _sqrtTable[65537];
+     extern uint32_t *_pCurPal;
+     extern uint8_t _aTransTable_Blend[256*256];

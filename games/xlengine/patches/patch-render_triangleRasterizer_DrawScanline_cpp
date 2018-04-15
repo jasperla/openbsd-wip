@@ -1,0 +1,21 @@
+$OpenBSD$
+
+Index: render/triangleRasterizer/DrawScanline.cpp
+--- render/triangleRasterizer/DrawScanline.cpp.orig
++++ render/triangleRasterizer/DrawScanline.cpp
+@@ -27,7 +27,7 @@ namespace DrawScanline
+     bool _useFog = true;
+     Vector3 _avLightPos[4];
+     float _afIntens[4];
+-    Vector3 _N;
++    Vector3 _Ne;
+     uint32_t *_pCurPal;
+ 
+     float _sqrtTable[65537];
+@@ -1415,4 +1415,4 @@ namespace DrawScanline
+         int index = alpha + bilinear*3 + pow2*6 + bpp8*12 + gouraud*24 + (!perspCorrect)*48;
+         return drawTable[index];
+     }
+-}
+\ No newline at end of file
++}

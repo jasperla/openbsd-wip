@@ -1,0 +1,21 @@
+$OpenBSD$
+
+Index: render/triangleRasterizer/TriangleRasterizer.cpp
+--- render/triangleRasterizer/TriangleRasterizer.cpp.orig
++++ render/triangleRasterizer/TriangleRasterizer.cpp
+@@ -674,7 +674,7 @@ namespace TriangleRasterizer
+ 
+         //3. Now do camera based lighting.
+         DrawScanline::_nLightCnt = 0;
+-        DrawScanline::_N = N;
++        DrawScanline::_Ne = N;
+         if ( bRecLighting )
+         {
+             const Vector3 viewDir = pDriver->GetViewDir();
+@@ -1036,4 +1036,4 @@ namespace TriangleRasterizer
+             TopToBottom.Step();
+         };
+     }
+-};
+\ No newline at end of file
++};

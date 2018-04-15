@@ -1,0 +1,41 @@
+$OpenBSD$
+
+Index: render/triangleRasterizer/DrawScanline_Base.h
+--- render/triangleRasterizer/DrawScanline_Base.h.orig
++++ render/triangleRasterizer/DrawScanline_Base.h
+@@ -252,7 +252,7 @@
+                     float A  = MAX( 1.0f - D, 0 );
+                     float ooD = 1.0f/D;
+                     Vector3 LVec(dx*ooD, dy*ooD, dz*ooD);
+-                    float NDotL = MAX( LVec.Dot(_N)*_afIntens[l], 0 );
++                    float NDotL = MAX( LVec.Dot(_Ne)*_afIntens[l], 0 );
+                 #if bpp8 == 1
+                     L0 += (int)(NDotL*A*63);
+                 #else
+@@ -266,7 +266,7 @@
+                     A  = MAX( 1.0f - D, 0 );
+                     ooD = 1.0f/D;
+                     LVec.Set(dx*ooD, dy*ooD, dz*ooD);
+-                    NDotL = MAX( LVec.Dot(_N)*_afIntens[l], 0 );
++                    NDotL = MAX( LVec.Dot(_Ne)*_afIntens[l], 0 );
+                 #if bpp8 == 1
+                     L1 += (int)(NDotL*A*63);
+                 #else
+@@ -428,7 +428,7 @@
+                     float A  = MAX( 1.0f - D, 0 );
+                     float ooD = 1.0f/D;
+                     Vector3 LVec(dx*ooD, dy*ooD, dz*ooD);
+-                    float NDotL = MAX( LVec.Dot(_N)*_afIntens[l], 0 );
++                    float NDotL = MAX( LVec.Dot(_Ne)*_afIntens[l], 0 );
+                     #if bpp8 == 1
+                         L0 += (int)(NDotL*A*63);
+                     #else
+@@ -442,7 +442,7 @@
+                     A  = MAX( 1.0f - D, 0 );
+                     ooD = 1.0f/D;
+                     LVec.Set(dx*ooD, dy*ooD, dz*ooD);
+-                    NDotL = MAX( LVec.Dot(_N)*_afIntens[l], 0 );
++                    NDotL = MAX( LVec.Dot(_Ne)*_afIntens[l], 0 );
+                     #if bpp8 == 1
+                         L1 += (int)(NDotL*A*63);
+                     #else
