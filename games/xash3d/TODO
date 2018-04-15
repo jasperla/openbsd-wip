@@ -2,3 +2,13 @@
 - passed portcheck
 
 does this need special treatment for clang6?
+
+it seems like they have worked hard on making sure the engine is GPL'd
+with any questional bits removed, but I am unsure about the hlsdk itself.
+
+It has a file claiming GPLv3 but the actual valve license on valve's
+github page is under their own valve license...
+
+It is still free but would not be valid for PERMIT_PACKAGE_CDROM I think,
+if the valve license applies.  would appreciate some extra eyes to make
+sure the license marker for the hl mod isn't wrong.
