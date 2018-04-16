@@ -13,8 +13,18 @@ HOMEPAGE =	http://xash.su
 
 MAINTAINER =	ryan@slipgate.org
 
-# GPL v3+
-PERMIT_PACKAGE_CDROM =	Yes
+# Mixed license, GPL v3+, Valve source license, and Id software
+# licenses.  Includes copying.txt GPL file but some source headers
+# still have ``Valve LLC'' and ``Id Software'' mentioned.
+#
+# Example from engine/cdll_int.h:
+# "Use, distribution, and modification of this source code and/or resulting
+# object code is restricted to non-commercial enhancements to products from
+# Valve LLC.  All other use, distribution, or modification is prohibited
+# without written permission from Valve LLC."
+#
+PERMIT_PACKAGE_CDROM =	No
+PERMIT_PACKAGE_FTP =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} m
 
