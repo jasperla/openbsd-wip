@@ -14,7 +14,8 @@ HOMEPAGE =	http://xash.su
 
 MAINTAINER =	ryan@slipgate.org
 
-# GPL v3+
+# Mixed license, GPL v3+ for engine library, MIT for cmake files
+# Source: https://github.com/FWGS/xash3d/blob/master/README.md
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} c fontconfig freetype m z SDL2
