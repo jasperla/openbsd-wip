@@ -1,0 +1,17 @@
+@comment $OpenBSD$
+include/cblas.h
+include/f77blas.h
+include/lapacke.h
+include/lapacke_config.h
+include/lapacke_mangling.h
+include/lapacke_utils.h
+include/openblas_config.h
+lib/cmake/
+lib/cmake/openblas/
+lib/cmake/openblas/OpenBLASConfig.cmake
+lib/cmake/openblas/OpenBLASConfigVersion.cmake
+lib/libopenblas.a
+lib/libopenblas.so
+lib/libopenblas_nehalemp-r0.3.0.dev.a
+lib/libopenblas_nehalemp-r0.3.0.dev.so
+lib/pkgconfig/openblas.pc

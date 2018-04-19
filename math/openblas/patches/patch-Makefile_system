@@ -1,0 +1,21 @@
+$OpenBSD$
+
+Remove hardcoded -O2
+
+Index: Makefile.system
+--- Makefile.system.orig
++++ Makefile.system
+@@ -1068,11 +1068,11 @@ FCOMMON_OPT += -g
+ endif
+ 
+ ifndef COMMON_OPT
+-COMMON_OPT = -O2
++COMMON_OPT =
+ endif
+ 
+ ifndef FCOMMON_OPT
+-FCOMMON_OPT = -O2 -frecursive
++FCOMMON_OPT = -frecursive
+ endif
+ 
+ 
