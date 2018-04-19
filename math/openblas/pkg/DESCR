@@ -1,0 +1,8 @@
+OpenBLAS is an open source BLAS library forked from the GotoBLAS2-1.13
+BSD version. BLAS stands for Basic Linear Algebra Subprograms. BLAS
+provides standard interfaces for linear algebra, including BLAS1
+(vector-vector operations), BLAS2 (matrix-vector operations), and BLAS3
+(matrix-matrix operations). In general, BLAS is the computational kernel
+("the bottom of the food chain") in linear algebra or scientific
+applications. Thus, if BLAS implementation is highly optimized, the
+whole application can get substantial benefit.
