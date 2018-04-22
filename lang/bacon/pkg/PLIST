@@ -4,7 +4,6 @@ bin/bacon.sh
 @bin bin/bacongui-fltk
 lib/libbacon++.a
 lib/libbacon.a
-share/applications/
 share/applications/bacongui-fltk.desktop
 share/enscript/
 share/enscript/hl/

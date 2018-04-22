@@ -2,7 +2,7 @@
 
 COMMENT =		BASIC converter to C translator for Unix system
 
-DISTNAME =		bacon-3.7.1
+DISTNAME =		bacon-3.7.2
 
 CATEGORIES =		lang
 
