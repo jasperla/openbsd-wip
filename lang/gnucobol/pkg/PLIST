@@ -1,4 +1,5 @@
 @comment $OpenBSD$
+@conflict open-cobol-*
 bin/cob-config
 @bin bin/cobc
 @bin bin/cobcrun
