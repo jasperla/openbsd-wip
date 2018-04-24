@@ -17,11 +17,12 @@ WANTLIB += alut c config curses curl m ncursesw openal opus png pthread
 WANTLIB += qrencode toxav toxcore toxdns toxencryptsave vpx z
 
 LIB_DEPENDS =		audio/freealut \
-			audio/openal \
 			net/toxcore \
 			devel/libconfig \
 			net/curl \
 			graphics/libqrencode
+
+RUN_DEPENDS =		devel/desktop-file-utils
 
 FLAVORS = python no_x11 notify
 FLAVOR ?=
