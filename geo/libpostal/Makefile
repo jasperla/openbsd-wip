@@ -34,7 +34,10 @@ CONFIGURE_ARGS = --datadir=${LOCALSTATEDIR}/db \
 NO_TEST =	Yes
 
 pre-configure:
-	cd ${WRKSRC} && ./bootstrap.sh
+	cd ${WRKSRC} && \
+	AUTOCONF_VERSION=${AUTOCONF_VERSION} \
+	AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
+	./bootstrap.sh
 
 post-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/address_parser ${PREFIX}/bin
