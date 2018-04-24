@@ -1,4 +1,9 @@
-libpostal requires some data files which can be fetched using the
-following command:
+libpostal requires data files which can be fetched using libpostal_data.
 
-libpostal_data download all ${LOCALSTATEDIR}/db/libpostal
+The user running libpostal_data must be part of the _libpostal group:
+
+# usermod -G _libpostal <username>
+
+The data files can then be fetched as follows:
+
+$ libpostal_data download all ${LOCALSTATEDIR}/db/libpostal

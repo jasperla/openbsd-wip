@@ -1,4 +1,6 @@
 @comment $OpenBSD$
+@newgroup _libpostal:801
+@extraunexec rm -rf /var/db/libpostal
 @bin bin/address_parser
 bin/libpostal_data
 include/libpostal/
@@ -7,3 +9,6 @@ lib/libpostal.a
 lib/libpostal.la
 @lib lib/libpostal.so.${LIBpostal_VERSION}
 lib/pkgconfig/libpostal.pc
+@mode 664
+@group _libpostal
+@sample ${LOCALSTATEDIR}/db/libpostal/
