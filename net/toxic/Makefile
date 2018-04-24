@@ -30,7 +30,7 @@ FLAVOR ?=
 USE_GMAKE =		yes
 
 .if ${FLAVOR:Mpython}
-MAKE_ENV +=		PYTHON_ENABLE=1
+MAKE_ENV +=		ENABLE_PYTHON=1
 RUN_DEPENDS +=		lang/python/3.6
 .endif
 
