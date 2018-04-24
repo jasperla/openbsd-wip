@@ -1,20 +1,9 @@
 @comment $OpenBSD$
+@bin bin/tox-bootstrapd
 include/tox/
 include/tox/tox.h
 include/tox/toxav.h
-include/tox/toxdns.h
 include/tox/toxencryptsave.h
-lib/libtoxav.a
-lib/libtoxav.la
-@lib lib/libtoxav.so.${LIBtoxav_VERSION}
 lib/libtoxcore.a
-lib/libtoxcore.la
 @lib lib/libtoxcore.so.${LIBtoxcore_VERSION}
-lib/libtoxdns.a
-lib/libtoxdns.la
-@lib lib/libtoxdns.so.${LIBtoxdns_VERSION}
-lib/libtoxencryptsave.a
-lib/libtoxencryptsave.la
-@lib lib/libtoxencryptsave.so.${LIBtoxencryptsave_VERSION}
-lib/pkgconfig/libtoxav.pc
-lib/pkgconfig/libtoxcore.pc
+lib/pkgconfig/toxcore.pc

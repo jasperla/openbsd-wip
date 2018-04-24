@@ -2,7 +2,6 @@
 @bin bin/toxic
 @man man/man1/toxic.1
 @man man/man5/toxic.conf.5
-share/applications/
 share/applications/toxic.desktop
 share/toxic/
 share/toxic/nameservers
@@ -16,3 +15,5 @@ share/toxic/sounds/ToxicRecvMessage.wav
 share/toxic/sounds/ToxicTransferComplete.wav
 share/toxic/sounds/ToxicTransferStart.wav
 share/toxic/toxic.conf.example
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database

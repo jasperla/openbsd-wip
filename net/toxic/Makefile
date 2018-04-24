@@ -11,17 +11,18 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 GH_ACCOUNT =		Jfreegman
 GH_PROJECT =		toxic
-GH_TAGNAME =		v0.8.1
+GH_TAGNAME =		v0.8.2
 
-WANTLIB += alut c config curses curl m ncursesw openal opus png pthread
-WANTLIB += qrencode toxav toxcore toxdns toxencryptsave vpx z
+WANTLIB += alut c config curses curl m openal png pthread
+WANTLIB += qrencode toxcore vpx z
 
 LIB_DEPENDS =		audio/freealut \
-			audio/openal \
 			net/toxcore \
 			devel/libconfig \
 			net/curl \
 			graphics/libqrencode
+
+RUN_DEPENDS =		devel/desktop-file-utils
 
 FLAVORS = python no_x11 notify
 FLAVOR ?=
@@ -29,7 +30,7 @@ FLAVOR ?=
 USE_GMAKE =		yes
 
 .if ${FLAVOR:Mpython}
-MAKE_ENV +=		PYTHON_ENABLE=1
+MAKE_ENV +=		ENABLE_PYTHON=1
 RUN_DEPENDS +=		lang/python/3.6
 .endif
 
