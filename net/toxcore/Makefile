@@ -18,7 +18,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 SHARED_LIBS +=  	toxcore                   0.0 # 0.0
 
-WANTLIB = c config m opus pthread sodium vpx ${COMPILER_LIBCXX}
+WANTLIB = c config m opus pthread sodium vpx
 
 MODULES =		devel/cmake
 
@@ -29,8 +29,6 @@ LIB_DEPENDS =		audio/opus \
 			multimedia/libvpx \
 			security/libsodium
 
-SEPATATE_BUILD =	Yes
-
-TEST_TARGET =		check
+NO_TEST =		Yes
 
 .include <bsd.port.mk>

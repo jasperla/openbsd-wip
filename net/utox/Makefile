@@ -5,7 +5,7 @@ COMMENT =	lightweight Tox client
 V =		0.17.0
 
 DISTNAME =	uTox-${V}-full
-PKGNAME =	uTox-${V}
+PKGNAME =	utox-${V}
 MASTER_SITES =	https://github.com/uTox/uTox/releases/download/v${V}/
 
 CATEGORIES =	net
