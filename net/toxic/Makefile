@@ -2,16 +2,16 @@
 
 COMMENT =		ncurses-based Tox client
 
+GH_ACCOUNT =		Jfreegman
+GH_PROJECT =		toxic
+GH_TAGNAME =		v0.8.2
+
 CATEGORIES =		net
 
 HOMEPAGE =		https://github.com/Jfreegman/toxic
 
 # GPLv3+
 PERMIT_PACKAGE_CDROM =	Yes
-
-GH_ACCOUNT =		Jfreegman
-GH_PROJECT =		toxic
-GH_TAGNAME =		v0.8.2
 
 WANTLIB += alut c config curses curl m openal png pthread
 WANTLIB += qrencode toxcore vpx z
@@ -24,14 +24,15 @@ LIB_DEPENDS =		audio/freealut \
 
 RUN_DEPENDS =		devel/desktop-file-utils
 
-FLAVORS = python no_x11 notify
+FLAVORS = python3 no_x11 notify
 FLAVOR ?=
 
 USE_GMAKE =		yes
 
-.if ${FLAVOR:Mpython}
+.if ${FLAVOR:Mpython3}
 MAKE_ENV +=		ENABLE_PYTHON=1
-RUN_DEPENDS +=		lang/python/3.6
+MODULES =		lang/python
+CONFIGURE_STYLE =	none
 .endif
 
 .if ${FLAVOR:Mno_x11}

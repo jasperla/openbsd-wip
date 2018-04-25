@@ -1,5 +1,6 @@
 # $OpenBSD$
-COMMENT =	Lightweight Tox client
+
+COMMENT =	lightweight Tox client
 
 V =		0.17.0
 
@@ -24,7 +25,7 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 
 LIB_DEPENDS +=	audio/openal \
 		multimedia/libv4l \
-		net/toxcore \
+		net/toxcore
 
 WRKDIST =	${WRKDIR}/uTox
 
