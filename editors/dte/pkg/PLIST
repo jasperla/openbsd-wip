@@ -1,5 +1,0 @@
-@comment $OpenBSD$
-@bin bin/dte
-@man man/man1/dte.1
-@man man/man5/dterc.5
-@man man/man5/dte-syntax.5
