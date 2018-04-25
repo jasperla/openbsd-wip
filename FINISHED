@@ -64,6 +64,8 @@ www/p5-HTML-TreeBuilder-LibXML		ready to import (garcer)
 devel/deviceatlas-enterprise-c		ready to import (devnexen)
 devel/libangelscript			ready to import, sent to ports@ 2015-12-20
 editors/mined				ready to import (bcallah)
-net/toxcore				outside version was sent to ports@ 2017-12-09 by aSourceFish
 games/arx-libertatis			sent to ports@ 2018-03-03 (thfr)
 sysutils/rw				ready to import (bcallah)
+net/toxcore				sent to ports@ 2018-04-24
+net/toxic				sent to ports@ 2018-04-24
+net/utox				ready to import
