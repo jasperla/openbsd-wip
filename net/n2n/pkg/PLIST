@@ -1,3 +1,0 @@
-@comment $OpenBSD$
-@bin bin/supernode
-@man man/man1/supernode.1

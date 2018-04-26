@@ -74,5 +74,15 @@ misc/rpm
 multimedia/bashburn
 multimedia/miro
 multimedia/youtubeviewer
+net/chillispot
+net/djbns
+net/motsognir
+net/kannel
+net/n2n
+net/openafs
+net/opentracker
 net/p5-Net-BitTorrent-File
+net/pulse
+net/unison
+net/weplab
 www/p5-WWW-Opentracker-Stats
