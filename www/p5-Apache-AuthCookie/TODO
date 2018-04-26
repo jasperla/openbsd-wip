@@ -1,4 +1,0 @@
-mod_perl and ap2-mod_perl are supported.
-Same files are installed but separete tests are needed
-I am copy the test folder to t_ap2 to then run ap2-mod_perl tests there.
-Still in progress. I am going to just work on 3.19 version which will require p5-Apache-Test >= 1.35.
