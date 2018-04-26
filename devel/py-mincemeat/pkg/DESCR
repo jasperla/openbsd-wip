@@ -1,8 +1,0 @@
-mincemeat is a Python implementation of the MapReduce distributed
-computing framework.
-
-mincemeat is:
-  - lightweight
-  - fault tolerant
-  - secure
-  - open source

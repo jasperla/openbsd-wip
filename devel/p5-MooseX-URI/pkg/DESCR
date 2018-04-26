@@ -1,8 +1,0 @@
-MooseX::FollowPBP does not provide any methods. Simply loading it
-changes the default naming policy for the loading class so that
-accessors are separated into get and set methods. The get methods are
-prefixed with "get_" as the accessor, while set methods are prefixed
-with "set_".  MooseX::FollowPBP::Role::Attribute applies a method
-modifier to the "_process_options()" method, and tweaks the reader and
-writer parameters so that they follow the style recommended in Perl Best
-Practices.

@@ -1,3 +1,0 @@
-@comment $OpenBSD$
-lib/libtcl.so
-lib/libtk.so
