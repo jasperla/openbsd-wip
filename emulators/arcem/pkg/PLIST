@@ -1,4 +1,0 @@
-@comment $OpenBSD$
-@bin bin/arcem
-share/examples/arcem/
-share/examples/arcem/arcemrc

@@ -1,5 +1,0 @@
-@comment $OpenBSD$
-lib/facile/
-lib/facile/facile.cma
-lib/facile/facile.cmi
-%%native%%
