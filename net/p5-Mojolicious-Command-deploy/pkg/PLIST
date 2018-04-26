@@ -1,3 +1,0 @@
-@comment $OpenBSD$
-${P5SITE}/Mojolicious/Command/deploy.pm
-@man man/man3p/Mojolicious::Command::deploy.3p

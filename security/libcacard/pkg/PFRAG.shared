@@ -1,2 +1,0 @@
-@comment $OpenBSD$
-@lib lib/libcacard.so.${LIBcacard_VERSION}
