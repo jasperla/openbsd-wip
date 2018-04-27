@@ -1,7 +1,7 @@
 # $OpenBSD$
 
 # Avoid EPOCH bumps
-V =		3.1.2
+V =		3.1.4
 COMMENT =	3d, first person roguelike
 DISTNAME =	v${V}
 CATEGORIES =	games x11
