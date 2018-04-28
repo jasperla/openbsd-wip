@@ -2,11 +2,8 @@
 
 COMMENT =	opinionated blog-aware static site generator
 
-GH_ACCOUNT =	fcambus
-GH_PROJECT =	motyl
-GH_COMMIT =	9cafa647f072603a82137ef918725117f3d6ca83
-
-DISTNAME =	motyl-20180318
+V =		1.0.0
+DISTNAME =	motyl-${V}
 
 CATEGORIES =	www
 
@@ -14,6 +11,8 @@ MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
+
+MASTER_SITES =	https://github.com/fcambus/motyl/releases/download/$V/
 
 MODULES =	lang/ruby
 
