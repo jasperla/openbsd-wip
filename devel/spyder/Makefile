@@ -18,24 +18,33 @@ MODPY_PI =		Yes
 MODPY_SETUPTOOLS = 	Yes	
 
 BUILD_DEPENDS =		textproc/py-sphinx${MODPY_FLAVOR}
-RUN_DEPENDS = 		devel/py-cloudpickle${MODPY_FLAVOR} databases/py-pickleshare${MODPY_FLAVOR} \
-			devel/pyflakes${MODPY_FLAVOR} textproc/py-pygments${MODPY_FLAVOR}>=2.0 \
-			shells/py-qtconsole${MODPY_FLAVOR}>=4.2.0 devel/py-nbconvert${MODPY_FLAVOR} \
-			textproc/py-sphinx${MODPY_FLAVOR} devel/py-codestyle${MODPY_FLAVOR} \
-			sysutils/py-psutil${MODPY_FLAVOR} net/py-zmq${MODPY_FLAVOR} \
-			textproc/py-numpydoc${MODPY_FLAVOR} x11/py-qtpy${MODPY_FLAVOR}>=1.2.0 \
-			x11/py-qtawesome${MODPY_FLAVOR}>=0.4.1 textproc/py-chardet${MODPY_FLAVOR} \
-			devel/py-rope${MODPY_FLAVOR}>=0.9.4 devel/pylint${MODPY_FLAVOR} \
-		 	x11/py-qt5${MODPY_FLAVOR}>=5.2 devel/py-jedi${MODPY_FLAVOR} \
-			graphics/py-opengl${MODPY_FLAVOR}
+RUN_DEPENDS = 	devel/py-cloudpickle${MODPY_FLAVOR} \
+		databases/py-pickleshare${MODPY_FLAVOR} \
+		devel/pyflakes${MODPY_FLAVOR} \
+		textproc/py-pygments${MODPY_FLAVOR}>=2.0 \
+		shells/py-qtconsole${MODPY_FLAVOR}>=4.2.0 \
+		devel/py-nbconvert${MODPY_FLAVOR} \
+		textproc/py-sphinx${MODPY_FLAVOR} \
+		devel/py-codestyle${MODPY_FLAVOR} \
+		sysutils/py-psutil${MODPY_FLAVOR} \
+		net/py-zmq${MODPY_FLAVOR} \
+		textproc/py-numpydoc${MODPY_FLAVOR} \
+		x11/py-qtpy${MODPY_FLAVOR}>=1.2.0 \
+		x11/py-qtawesome${MODPY_FLAVOR}>=0.4.1 \
+		textproc/py-chardet${MODPY_FLAVOR} \
+		devel/py-rope${MODPY_FLAVOR}>=0.9.4 \
+		devel/pylint${MODPY_FLAVOR} \
+	 	x11/py-qt5${MODPY_FLAVOR}>=5.2 \
+		devel/py-jedi${MODPY_FLAVOR} \
+		graphics/py-opengl${MODPY_FLAVOR}
 
 FLAVORS=                python3
 FLAVOR?=
 
 MAJOR_VERSION=
 .if ${FLAVOR:Mpython3}
-MAJOR_VERSION=		3
-PKGNAME =               spyder${MODPY_MAJOR_VERSION}-${MODPY_EGG_VERSION}
+MAJOR_VERSION =	3
+PKGNAME =	spyder${MODPY_MAJOR_VERSION}-${MODPY_EGG_VERSION}
 .endif
 
 SUBST_VARS+=		MAJOR_VERSION
