@@ -8,7 +8,7 @@ GH_TAGNAME =		v0.8.2
 
 CATEGORIES =		net
 
-HOMEPAGE =		https://github.com/Jfreegman/toxic
+MAINTAINER =		Leonid Bobrov <mazocomp@disroot.org>
 
 # GPLv3+
 PERMIT_PACKAGE_CDROM =	Yes

@@ -13,7 +13,9 @@ CATEGORIES =		net telephony
 
 HOMEPAGE =		https://tox.chat/
 
-# GPLv3
+MAINTAINER =		Leonid Bobrov <mazocomp@disroot.org>
+
+# GPLv3+
 PERMIT_PACKAGE_CDROM =	Yes
 
 SHARED_LIBS +=  	toxcore                   0.0 # 0.0
@@ -22,8 +24,6 @@ WANTLIB = c config m opus pthread sodium vpx
 
 MODULES =		devel/cmake
 
-BUILD_DEPENDS +=	devel/check \
-			devel/libtool
 LIB_DEPENDS =		audio/opus \
 			devel/libconfig \
 			multimedia/libvpx \

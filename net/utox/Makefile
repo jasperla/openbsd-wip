@@ -12,6 +12,8 @@ CATEGORIES =	net
 
 HOMEPAGE =	https://utox.io
 
+MAINTAINER =	Leonid Bobrov <mazocomp@disroot.org>
+
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes
 
@@ -26,6 +28,10 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 LIB_DEPENDS +=	audio/openal \
 		multimedia/libv4l \
 		net/toxcore
+
+COMPILER =	base-clang ports-gcc
+
+NO_TEST =	yes
 
 WRKDIST =	${WRKDIR}/uTox
 
