@@ -1,9 +1,0 @@
-@comment $OpenBSD$
-@bin bin/tox-bootstrapd
-include/tox/
-include/tox/tox.h
-include/tox/toxav.h
-include/tox/toxencryptsave.h
-lib/libtoxcore.a
-@lib lib/libtoxcore.so.${LIBtoxcore_VERSION}
-lib/pkgconfig/toxcore.pc
