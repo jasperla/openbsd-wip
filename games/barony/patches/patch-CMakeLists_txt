@@ -42,21 +42,12 @@ Index: CMakeLists.txt
  message("***************************")
  
  
-@@ -361,7 +361,7 @@ set(BASE_DATA_DIR "./" CACHE INTERNAL "Base data dir")
- if (NOT APPLE AND UNIX)
-   include(GNUInstallDirs)
-   if (DATA_DIR)
--    set(BASE_DATA_DIR "${CMAKE_INSTALL_FULL_DATAROOTDIR}/barony")
-+    set(BASE_DATA_DIR "${CMAKE_INSTALL_FULL_DATAROOTDIR}/games/barony")
-   endif()
-   message(STATUS "Base data directory ${BASE_DATA_DIR}")
- 
 @@ -445,7 +445,7 @@ if (NOT APPLE AND UNIX)
      RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR} COMPONENT Runtime
    )
  
 -  install(DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/lang DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/barony)
-+  install(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/lang DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/games/barony)
++  install(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/lang DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/barony)
  
    if (EXISTS books)
      install(DIRECTORY 
