@@ -9,6 +9,6 @@ lib/libpostal.a
 lib/libpostal.la
 @lib lib/libpostal.so.${LIBpostal_VERSION}
 lib/pkgconfig/libpostal.pc
-@mode 664
+@mode 770
 @group _libpostal
 @sample ${LOCALSTATEDIR}/db/libpostal/
