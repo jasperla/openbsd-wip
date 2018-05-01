@@ -65,5 +65,5 @@ devel/deviceatlas-enterprise-c		ready to import (devnexen)
 devel/libangelscript			ready to import, sent to ports@ 2015-12-20
 editors/mined				ready to import (bcallah)
 games/arx-libertatis			sent to ports@ 2018-03-03 (thfr)
-sysutils/rw				ready to import (bcallah)
 devel/spyder				ready to import
+sysutils/free				ready to import (bcallah)
