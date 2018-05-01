@@ -1,0 +1,13 @@
+$OpenBSD: patch-deps_npm_lib_npm_js,v 1.4 2017/01/23 16:47:04 abieber Exp $
+Index: deps/npm/lib/npm.js
+--- deps/npm/lib/npm.js.orig
++++ deps/npm/lib/npm.js
+@@ -332,7 +332,7 @@
+ 
+         log.resume()
+ 
+-        var umask = npm.config.get('umask')
++        var umask = npm.config.get('umask') || 0022
+         npm.modes = {
+           exec: parseInt('0777', 8) & (~umask),
+           file: parseInt('0666', 8) & (~umask),
