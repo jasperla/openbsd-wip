@@ -3,7 +3,7 @@
 COMMENT =	go implementation of the ethereum protocol
 GH_ACCOUNT =	ethereum
 GH_PROJECT =	go-ethereum
-GH_TAGNAME =	v1.8.4
+GH_TAGNAME =	v1.8.7
 
 CATEGORIES =	net
 
