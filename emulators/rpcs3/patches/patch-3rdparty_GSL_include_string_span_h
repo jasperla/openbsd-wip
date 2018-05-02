@@ -1,0 +1,42 @@
+$OpenBSD$
+
+wcsnlen -> wcslen
+
+Index: 3rdparty/GSL/include/string_span.h
+--- 3rdparty/GSL/include/string_span.h.orig
++++ 3rdparty/GSL/include/string_span.h
+@@ -129,14 +129,14 @@ inline span<const char, dynamic_range> ensure_z(const 
+ 
+ inline span<wchar_t, dynamic_range> ensure_z(wchar_t* const& sz, std::ptrdiff_t max)
+ {
+-    auto len = wcsnlen(sz, narrow_cast<size_t>(max));
++    auto len = wcslen(sz);
+     Ensures(sz[len] == 0);
+     return{ sz, static_cast<std::ptrdiff_t>(len) };
+ }
+ 
+ inline span<const wchar_t, dynamic_range> ensure_z(const wchar_t* const& sz, std::ptrdiff_t max)
+ {
+-    auto len = wcsnlen(sz, narrow_cast<size_t>(max));
++    auto len = wcslen(sz);
+     Ensures(sz[len] == 0);
+     return{ sz, static_cast<std::ptrdiff_t>(len) };
+ }
+@@ -185,7 +185,7 @@ namespace details
+     {
+         std::ptrdiff_t operator()(wchar_t* const ptr, std::ptrdiff_t length) noexcept
+         {
+-            return narrow_cast<std::ptrdiff_t>(wcsnlen(ptr, narrow_cast<size_t>(length)));
++            return narrow_cast<std::ptrdiff_t>(wcslen(ptr));
+         }
+     };
+ 
+@@ -203,7 +203,7 @@ namespace details
+     {
+         std::ptrdiff_t operator()(const wchar_t* const ptr, std::ptrdiff_t length) noexcept
+         {
+-            return narrow_cast<std::ptrdiff_t>(wcsnlen(ptr, narrow_cast<size_t>(length)));
++            return narrow_cast<std::ptrdiff_t>(wcslen(ptr));
+         }
+     };
+ }

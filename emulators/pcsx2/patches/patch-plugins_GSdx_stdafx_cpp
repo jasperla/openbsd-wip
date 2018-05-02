@@ -1,0 +1,17 @@
+$OpenBSD$
+
+remove MAP_32BIT flag
+
+Index: plugins/GSdx/stdafx.cpp
+--- plugins/GSdx/stdafx.cpp.orig
++++ plugins/GSdx/stdafx.cpp
+@@ -155,9 +155,6 @@ void* vmalloc(size_t size, bool code)
+ 
+ 	if(code) {
+ 		prot |= PROT_EXEC;
+-#ifdef _M_AMD64
+-		flags |= MAP_32BIT;
+-#endif
+ 	}
+ 
+ 	return mmap(NULL, size, prot, flags, -1, 0);

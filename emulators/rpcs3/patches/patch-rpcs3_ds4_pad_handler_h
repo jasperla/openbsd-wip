@@ -1,0 +1,16 @@
+$OpenBSD$
+
+fix location of hidapi.h
+
+Index: rpcs3/ds4_pad_handler.h
+--- rpcs3/ds4_pad_handler.h.orig
++++ rpcs3/ds4_pad_handler.h
+@@ -3,7 +3,7 @@
+ #include "Emu/Io/PadHandler.h"
+ #include "Utilities/Thread.h"
+ #include "Utilities/CRC.h"
+-#include "hidapi.h"
++#include <hidapi/hidapi.h>
+ #include <limits>
+ #include <unordered_map>
+ 

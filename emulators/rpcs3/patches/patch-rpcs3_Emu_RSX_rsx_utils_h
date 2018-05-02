@@ -1,0 +1,16 @@
+$OpenBSD$
+
+fix include path
+
+Index: rpcs3/Emu/RSX/rsx_utils.h
+--- rpcs3/Emu/RSX/rsx_utils.h.orig
++++ rpcs3/Emu/RSX/rsx_utils.h
+@@ -5,7 +5,7 @@
+ #include <atomic>
+ 
+ // TODO: replace the code below by #include <optional> when C++17 or newer will be used
+-#include <optional.hpp>
++#include <experimental/optional>
+ namespace std
+ {
+ 	template<class T>

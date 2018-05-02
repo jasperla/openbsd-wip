@@ -1,0 +1,88 @@
+needs Qt5.10
+
+======
+
+Build Error:
+
+FAILED: rpcs3/CMakeFiles/rpcs3.dir/Emu/Cell/PPUTranslator.cpp.o 
+/usr/ports/pobj/rpcs3-0.0.5/bin/c++  -DCMAKE_BUILD -DGLX_GLXEXT_PROTOTYPES -DGL_GLEXT_PROTOTYPES -DHAVE_PULSE -DHAVE_QTDBUS -DLLVM_AVAILABLE -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -Irpcs3 -I/usr/ports/pobj/rpcs3-0.0.5/rpcs3-0.0.5/rpcs3 -Irpcs3/rpcs3_autogen/include -I/usr/local/include/X11/qt5/QtGui/5.9.4 -I/usr/local/include/X11/qt5/QtGui/5.9.4/QtGui -I/usr/local/include/X11/qt5/QtCore/5.9.4 -I/usr/local/include/X11/qt5/QtCore/5.9.4/QtCore -isystem /usr/local/include -I/usr/local/include/AL -I/usr/ports/pobj/rpcs3-0.0.5/rpcs3-0.0.5/rpcs3/../3rdparty/pugixml/src -I/usr/ports/pobj/rpcs3-0.0.5/rpcs3-0.0.5/rpcs3/Loader -I/usr/ports/pobj/rpcs3-0.0.5/rpcs3-0.0.5/rpcs3/Crypto -I/usr/ports/pobj/rpcs3-0.0.5/rpcs3-0.0.5/rpcs3/.. -I/usr/ports/pobj/rpcs3-0.0.5/rpcs3-0.0.5/rpcs3/../Utilities/yaml-cpp/include -I/usr/ports/pobj/rpcs3-0.0.5/rpcs3-0.0.5/rpcs3/../asmjit/src/asmjit -I/usr/ports/pobj/rpcs3-0.0.5/rpcs3-0.0.5/rpcs3/../3rdparty/GSL/include -I/usr/ports/pobj/rpcs3-0.0.5/rpcs3-0.0.5/rpcs3/../Vulkan/Vulkan-LoaderAndValidationLayers/include -I/usr/ports/pobj/rpcs3-0.0.5/rpcs3-0.0.5/rpcs3/../Vulkan/glslang/glslang/Public -I/usr/ports/pobj/rpcs3-0.0.5/rpcs3-0.0.5/rpcs3/../Vulkan/glslang -I/usr/ports/pobj/rpcs3-0.0.5/rpcs3-0.0.5/rpcs3/../3rdparty/hidapi/hidapi -I/usr/ports/pobj/rpcs3-0.0.5/rpcs3-0.0.5/rpcs3/../3rdparty/GL -I/usr/ports/pobj/rpcs3-0.0.5/rpcs3-0.0.5/rpcs3/../3rdparty/stblib -I/usr/ports/pobj/rpcs3-0.0.5/rpcs3-0.0.5/rpcs3/../3rdparty/cereal/include -I/usr/ports/pobj/rpcs3-0.0.5/rpcs3-0.0.5/rpcs3/../3rdparty/Optional -isystem /usr/local/include/X11/qt5 -isystem /usr/local/include/X11/qt5/QtWidgets -isystem /usr/local/include/X11/qt5/QtGui -isystem /usr/X11R6/include -isystem /usr/local/include/X11/qt5/QtCore -isystem /usr/local/lib/qt5/./mkspecs/openbsd-clang -isystem /usr/local/include/X11/qt5/QtDBus -isystem /usr/local/include/X11/qt5/QtNetwork -O2 -pipe -fexceptions -Wl,--exclude-libs,ALL -DNDEBUG -fPIC   -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -ftemplate-depth=1024 -msse -msse2 -mcx16 -mrtm -march=native -fPIC -std=gnu++14 -fno-rtti -MD -MT rpcs3/CMakeFiles/rpcs3.dir/Emu/Cell/PPUTranslator.cpp.o -MF rpcs3/CMakeFiles/rpcs3.dir/Emu/Cell/PPUTranslator.cpp.o.d -o rpcs3/CMakeFiles/rpcs3.dir/Emu/Cell/PPUTranslator.cpp.o -c /usr/ports/pobj/rpcs3-0.0.5/rpcs3-0.0.5/rpcs3/Emu/Cell/PPUTranslator.cpp
+c++: warning: -Wl,--exclude-libs,ALL: 'linker' input unused [-Wunused-command-line-argument]
+/usr/ports/pobj/rpcs3-0.0.5/rpcs3-0.0.5/rpcs3/Emu/Cell/PPUTranslator.cpp:17:4: error: no matching constructor for initialization of 'const llvm::AttributeSet'
+        , m_pure_attr(AttributeList::get(m_context, AttributeList::FunctionIndex, {Attribute::NoUnwind, Attribute::ReadNone}))
+          ^           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/local/include/llvm/IR/Attributes.h:217:12: note: candidate constructor not viable: no known conversion from 'llvm::AttributeList' to 'llvm::AttributeSetNode *' for 1st argument
+  explicit AttributeSet(AttributeSetNode *ASN) : SetNode(ASN) {}
+           ^
+/usr/local/include/llvm/IR/Attributes.h:222:3: note: candidate constructor not viable: no known conversion from 'llvm::AttributeList' to 'const llvm::AttributeSet' for 1st argument
+  AttributeSet(const AttributeSet &) = default;
+  ^
+/usr/local/include/llvm/IR/Attributes.h:221:3: note: candidate constructor not viable: requires 0 arguments, but 1 was provided
+  AttributeSet() = default;
+  ^
+In file included from /usr/ports/pobj/rpcs3-0.0.5/rpcs3-0.0.5/rpcs3/Emu/Cell/PPUTranslator.cpp:3:
+In file included from /usr/ports/pobj/rpcs3-0.0.5/rpcs3-0.0.5/rpcs3/Emu/Cell/PPUTranslator.h:5:
+In file included from /usr/ports/pobj/rpcs3-0.0.5/rpcs3-0.0.5/rpcs3/../rpcs3/Emu/CPU/CPUTranslator.h:10:
+In file included from /usr/local/include/llvm/IR/IRBuilder.h:37:
+/usr/local/include/llvm/IR/Module.h:344:43: error: no matching constructor for initialization of 'SmallVector<llvm::Type *, sizeof...(ArgsTy)>'
+    SmallVector<Type*, sizeof...(ArgsTy)> ArgTys{Args...};
+                                          ^     ~~~~~~~~~
+/usr/local/include/llvm/IR/Module.h:353:12: note: in instantiation of function template specialization 'llvm::Module::getOrInsertFunction<llvm::AttributeSet>' requested here
+    return getOrInsertFunction(Name, AttributeList{}, RetTy, Args...);
+           ^
+/usr/ports/pobj/rpcs3-0.0.5/rpcs3-0.0.5/rpcs3/Emu/Cell/PPUTranslator.h:303:37: note: in instantiation of function template specialization 'llvm::Module::getOrInsertFunction<llvm::AttributeSet>' requested here
+                return m_ir->CreateCall(m_module->getOrInsertFunction(name, llvm::FunctionType::get(ret, {args->getType()...}, false), attr), {args...});
+                                                  ^
+/usr/ports/pobj/rpcs3-0.0.5/rpcs3-0.0.5/rpcs3/Emu/Cell/PPUTranslator.h:310:10: note: in instantiation of function template specialization 'PPUTranslator::Call<llvm::LoadInst *>' requested here
+                return Call(ret, llvm::AttributeSet{}, name, args...);
+                       ^
+/usr/ports/pobj/rpcs3-0.0.5/rpcs3-0.0.5/rpcs3/Emu/Cell/PPUTranslator.cpp:521:30: note: in instantiation of function template specialization 'PPUTranslator::Call<llvm::LoadInst *>' requested here
+                return m_ir->CreateBitCast(Call(int_type, fmt::format("llvm.bswap.i%u", size), value), type);
+                                           ^
+/usr/local/include/llvm/ADT/SmallVector.h:871:12: note: candidate constructor not viable: no known conversion from 'llvm::AttributeSet' to 'size_t' (aka 'unsigned long') for 1st argument
+  explicit SmallVector(size_t Size, const T &Value = T())
+           ^
+/usr/local/include/llvm/ADT/SmallVector.h:890:3: note: candidate constructor not viable: no known conversion from 'llvm::AttributeSet' to 'std::initializer_list<Type *>' for 1st argument
+  SmallVector(std::initializer_list<T> IL) : SmallVectorImpl<T>(N) {
+  ^
+/usr/local/include/llvm/ADT/SmallVector.h:894:3: note: candidate constructor not viable: no known conversion from 'llvm::AttributeSet' to 'const llvm::SmallVector<llvm::Type *, 1>' for 1st argument
+  SmallVector(const SmallVector &RHS) : SmallVectorImpl<T>(N) {
+  ^
+/usr/local/include/llvm/ADT/SmallVector.h:904:3: note: candidate constructor not viable: no known conversion from 'llvm::AttributeSet' to 'llvm::SmallVector<llvm::Type *, 1>' for 1st argument
+  SmallVector(SmallVector &&RHS) : SmallVectorImpl<T>(N) {
+  ^
+/usr/local/include/llvm/ADT/SmallVector.h:909:3: note: candidate constructor not viable: no known conversion from 'llvm::AttributeSet' to 'SmallVectorImpl<llvm::Type *>' for 1st argument
+  SmallVector(SmallVectorImpl<T> &&RHS) : SmallVectorImpl<T>(N) {
+  ^
+/usr/local/include/llvm/ADT/SmallVector.h:885:12: note: candidate template ignored: could not match 'iterator_range<type-parameter-0-0>' against 'llvm::AttributeSet'
+  explicit SmallVector(const iterator_range<RangeTy> &R)
+           ^
+/usr/local/include/llvm/ADT/SmallVector.h:880:3: note: candidate constructor template not viable: requires 2 arguments, but 1 was provided
+  SmallVector(ItTy S, ItTy E) : SmallVectorImpl<T>(N) {
+  ^
+/usr/local/include/llvm/ADT/SmallVector.h:869:3: note: candidate constructor not viable: requires 0 arguments, but 1 was provided
+  SmallVector() : SmallVectorImpl<T>(N) {}
+  ^
+In file included from /usr/ports/pobj/rpcs3-0.0.5/rpcs3-0.0.5/rpcs3/Emu/Cell/PPUTranslator.cpp:3:
+In file included from /usr/ports/pobj/rpcs3-0.0.5/rpcs3-0.0.5/rpcs3/Emu/Cell/PPUTranslator.h:5:
+/usr/ports/pobj/rpcs3-0.0.5/rpcs3-0.0.5/rpcs3/../rpcs3/Emu/CPU/CPUTranslator.h:32:2: error: static_assert failed due to requirement 'std::is_same<unsigned long, void>::value' "llvm_value_t<> error: unknown type"
+        static_assert(std::is_same<T, void>::value, "llvm_value_t<> error: unknown type");
+        ^             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/ports/pobj/rpcs3-0.0.5/rpcs3-0.0.5/rpcs3/../rpcs3/Emu/CPU/CPUTranslator.h:694:10: note: in instantiation of template class 'llvm_value_t<unsigned long>' requested here
+                return llvm_value_t<T>::get_type(m_context);
+                       ^
+/usr/ports/pobj/rpcs3-0.0.5/rpcs3-0.0.5/rpcs3/Emu/Cell/PPUTranslator.cpp:2303:104: note: in instantiation of function template specialization 'cpu_translator::GetType<unsigned long>' requested here
+                Value* ln0 = m_ir->CreateIntToPtr(m_ir->CreatePtrToInt(m_ir->CreateStructGEP(nullptr, m_thread, 99), GetType<uptr>()), GetType<u8[16]>()->getPointerTo());
+                                                                                                                     ^
+In file included from /usr/ports/pobj/rpcs3-0.0.5/rpcs3-0.0.5/rpcs3/Emu/Cell/PPUTranslator.cpp:3:
+In file included from /usr/ports/pobj/rpcs3-0.0.5/rpcs3-0.0.5/rpcs3/Emu/Cell/PPUTranslator.h:5:
+/usr/ports/pobj/rpcs3-0.0.5/rpcs3-0.0.5/rpcs3/../rpcs3/Emu/CPU/CPUTranslator.h:694:25: error: incomplete definition of type 'llvm_value_t<unsigned long>'
+                return llvm_value_t<T>::get_type(m_context);
+                       ~~~~~~~~~~~~~~~^~
+/usr/ports/pobj/rpcs3-0.0.5/rpcs3-0.0.5/rpcs3/Emu/Cell/PPUTranslator.cpp:2303:104: note: in instantiation of function template specialization 'cpu_translator::GetType<unsigned long>' requested here
+                Value* ln0 = m_ir->CreateIntToPtr(m_ir->CreatePtrToInt(m_ir->CreateStructGEP(nullptr, m_thread, 99), GetType<uptr>()), GetType<u8[16]>()->getPointerTo());
+                                                                                                                     ^
+4 errors generated.
+ninja: build stopped: subcommand failed.
+*** Error 1 in . (/usr/ports/devel/cmake/cmake.port.mk:31 'do-build')
+*** Error 1 in . (/usr/ports/infrastructure/mk/bsd.port.mk:2744 '/usr/ports/pobj/rpcs3-0.0.5/build-amd64/.build_done')
+*** Error 1 in /usr/ports/mystuff/emulators/rpcs3 (/usr/ports/infrastructure/mk/bsd.port.mk:2425 'build')

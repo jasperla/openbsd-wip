@@ -1,0 +1,15 @@
+$OpenBSD$
+
+remove librt
+
+Index: cmake/FindLibc.cmake
+--- cmake/FindLibc.cmake.orig
++++ cmake/FindLibc.cmake
+@@ -19,7 +19,6 @@ elseif(Linux)
+ 	set(LIBC_LIBRARIES ${librt} ${libdl} ${libm})
+ else()
+ 	# FreeBSD doesn't have libdl
+-	find_library(librt NAMES rt)
+ 	set(LIBC_LIBRARIES ${librt} ${libm})
+ endif()
+ 
