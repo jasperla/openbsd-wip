@@ -2,19 +2,13 @@
 
 COMMENT = 	OpenBSD upgrade tool
 
-DISTNAME =  snap-${DISTVERS}
-DISTVERS =  1.1.3
-PKGNAME = 	${DISTNAME}
-PKG_ARCH = 	*
-
 GH_ACCOUNT = 	qbit
 GH_PROJECT = 	snap
-GH_TAGNAME = 	${DISTVERS}
+GH_TAGNAME = 	1.1.3
 
 CATEGORIES = 	sysutils
 
-HOMEPAGE =    https://github.com/qbit/snap
-
+# ISC
 PERMIT_PACKAGE_CDROM = 	Yes
 
 NO_BUILD = 	Yes
