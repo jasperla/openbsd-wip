@@ -1,24 +1,26 @@
 # $OpenBSD: Makefile,v 1.4 2017/04/22 21:57:42 shadchin Exp $
 
-COMMENT =	  	Scientific PYthon Development EnviRonment
-MODPY_EGG_VERSION =	3.2.6
-DISTNAME =		spyder-${MODPY_EGG_VERSION}
+COMMENT=		Scientific PYthon Development EnviRonment
 
-CATEGORIES =		devel
+MODPY_EGG_VERSION=	3.2.6
+DISTNAME=		spyder-${MODPY_EGG_VERSION}
 
-HOMEPAGE =		https://github.com/spyder-ide/spyder
+CATEGORIES=		devel
 
-MAINTAINER =		OpenBSD Mailing List <ports@openbsd.org>	
+HOMEPAGE=		https://github.com/spyder-ide/spyder
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE_CDROM=	Yes
 
-MODULES =		lang/python
-MODPY_PI =		Yes
-MODPY_SETUPTOOLS = 	Yes	
+MODULES=			lang/python
+FLAVORS=			python3
+FLAVOR?=
 
-BUILD_DEPENDS =		textproc/py-sphinx${MODPY_FLAVOR}
-RUN_DEPENDS = 	devel/py-cloudpickle${MODPY_FLAVOR} \
+MODPY_PI=			Yes
+MODPY_SETUPTOOLS=	Yes
+
+BUILD_DEPENDS=	textproc/py-sphinx${MODPY_FLAVOR}
+RUN_DEPENDS=	devel/py-cloudpickle${MODPY_FLAVOR} \
 		databases/py-pickleshare${MODPY_FLAVOR} \
 		devel/pyflakes${MODPY_FLAVOR} \
 		textproc/py-pygments${MODPY_FLAVOR}>=2.0 \
@@ -34,19 +36,18 @@ RUN_DEPENDS = 	devel/py-cloudpickle${MODPY_FLAVOR} \
 		textproc/py-chardet${MODPY_FLAVOR} \
 		devel/py-rope${MODPY_FLAVOR}>=0.9.4 \
 		devel/pylint${MODPY_FLAVOR} \
-	 	x11/py-qt5${MODPY_FLAVOR}>=5.2 \
+		x11/py-qt5${MODPY_FLAVOR}>=5.2 \
 		devel/py-jedi${MODPY_FLAVOR} \
 		graphics/py-opengl${MODPY_FLAVOR}
 
-FLAVORS=                python3
-FLAVOR?=
 
-MAJOR_VERSION=
 .if ${FLAVOR:Mpython3}
-MAJOR_VERSION =	3
-PKGNAME =	spyder${MODPY_MAJOR_VERSION}-${MODPY_EGG_VERSION}
+MAJOR_VERSION=	3
+PKGNAME=		spyder3-${MODPY_EGG_VERSION}
+.else
+MAJOR_VERSION=
 .endif
 
-SUBST_VARS+=		MAJOR_VERSION
+SUBST_VARS+=	MAJOR_VERSION
 
 .include <bsd.port.mk>
