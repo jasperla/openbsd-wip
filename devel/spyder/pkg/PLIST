@@ -1,8 +1,14 @@
 @comment $OpenBSD$
-bin/spyder${MAJOR_VERSION}
 @comment bin/spyder_win_post_install.py
+bin/spyder${MAJOR_VERSION}
 lib/python${MODPY_VERSION}/site-packages/spyder/
-lib/python${MODPY_VERSION}/site-packages/spyder-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/spyder-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/spyder-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/spyder-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/spyder-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/spyder-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/spyder-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
+lib/python${MODPY_VERSION}/site-packages/spyder-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/spyder/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/spyder/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/spyder/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
@@ -494,16 +500,24 @@ lib/python${MODPY_VERSION}/site-packages/spyder/plugins/tests/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/tests/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/spyder/plugins/tests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/spyder/plugins/tests/${MODPY_PYCACHE}test_editor.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/tests/${MODPY_PYCACHE}test_editor_introspection.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/tests/${MODPY_PYCACHE}test_findinfiles.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/spyder/plugins/tests/${MODPY_PYCACHE}test_help.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/spyder/plugins/tests/${MODPY_PYCACHE}test_init.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/tests/${MODPY_PYCACHE}test_ipythonconsole.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/tests/${MODPY_PYCACHE}test_layoutdialog.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/spyder/plugins/tests/${MODPY_PYCACHE}test_projects.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/tests/${MODPY_PYCACHE}test_shorcuts.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/tests/${MODPY_PYCACHE}test_variableexplorer.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/spyder/plugins/tests/test_editor.py
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/tests/test_editor_introspection.py
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/tests/test_findinfiles.py
+lib/python${MODPY_VERSION}/site-packages/spyder/plugins/tests/test_help.py
+lib/python${MODPY_VERSION}/site-packages/spyder/plugins/tests/test_init.py
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/tests/test_ipythonconsole.py
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/tests/test_layoutdialog.py
+lib/python${MODPY_VERSION}/site-packages/spyder/plugins/tests/test_projects.py
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/tests/test_shorcuts.py
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/tests/test_variableexplorer.py
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/variableexplorer.py
@@ -1006,6 +1020,7 @@ lib/python${MODPY_VERSION}/site-packages/spyder/widgets/${MODPY_PYCACHE}mixins.$
 lib/python${MODPY_VERSION}/site-packages/spyder/widgets/${MODPY_PYCACHE}onecolumntree.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/spyder/widgets/${MODPY_PYCACHE}pathmanager.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/spyder/widgets/${MODPY_PYCACHE}pydocgui.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/spyder/widgets/${MODPY_PYCACHE}reporterror.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/spyder/widgets/${MODPY_PYCACHE}shell.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/spyder/widgets/${MODPY_PYCACHE}shortcutssummary.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/spyder/widgets/${MODPY_PYCACHE}status.${MODPY_PYC_MAGIC_TAG}pyc
@@ -1075,6 +1090,7 @@ lib/python${MODPY_VERSION}/site-packages/spyder/widgets/projects/type/${MODPY_PY
 lib/python${MODPY_VERSION}/site-packages/spyder/widgets/projects/type/${MODPY_PYCACHE}python.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/spyder/widgets/projects/type/python.py
 lib/python${MODPY_VERSION}/site-packages/spyder/widgets/pydocgui.py
+lib/python${MODPY_VERSION}/site-packages/spyder/widgets/reporterror.py
 lib/python${MODPY_VERSION}/site-packages/spyder/widgets/shell.py
 lib/python${MODPY_VERSION}/site-packages/spyder/widgets/shortcutssummary.py
 lib/python${MODPY_VERSION}/site-packages/spyder/widgets/sourcecode/
@@ -1096,9 +1112,11 @@ lib/python${MODPY_VERSION}/site-packages/spyder/widgets/sourcecode/tests/${MODPY
 lib/python${MODPY_VERSION}/site-packages/spyder/widgets/sourcecode/tests/${MODPY_PYCACHE}test_autocolon.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/spyder/widgets/sourcecode/tests/${MODPY_PYCACHE}test_autoindent.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/spyder/widgets/sourcecode/tests/${MODPY_PYCACHE}test_breakpoints.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/spyder/widgets/sourcecode/tests/${MODPY_PYCACHE}test_codeeditor.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/spyder/widgets/sourcecode/tests/test_autocolon.py
 lib/python${MODPY_VERSION}/site-packages/spyder/widgets/sourcecode/tests/test_autoindent.py
 lib/python${MODPY_VERSION}/site-packages/spyder/widgets/sourcecode/tests/test_breakpoints.py
+lib/python${MODPY_VERSION}/site-packages/spyder/widgets/sourcecode/tests/test_codeeditor.py
 lib/python${MODPY_VERSION}/site-packages/spyder/widgets/status.py
 lib/python${MODPY_VERSION}/site-packages/spyder/widgets/tabs.py
 lib/python${MODPY_VERSION}/site-packages/spyder/widgets/tests/
@@ -1113,8 +1131,10 @@ lib/python${MODPY_VERSION}/site-packages/spyder/widgets/tests/${MODPY_PYCACHE}te
 lib/python${MODPY_VERSION}/site-packages/spyder/widgets/tests/${MODPY_PYCACHE}test_explorer.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/spyder/widgets/tests/${MODPY_PYCACHE}test_findinfiles.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/spyder/widgets/tests/${MODPY_PYCACHE}test_helperwidgets.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/spyder/widgets/tests/${MODPY_PYCACHE}test_mixins.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/spyder/widgets/tests/${MODPY_PYCACHE}test_pathmanager.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/spyder/widgets/tests/${MODPY_PYCACHE}test_pydocgui.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/spyder/widgets/tests/${MODPY_PYCACHE}test_reporterror.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/spyder/widgets/tests/${MODPY_PYCACHE}test_save.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/spyder/widgets/tests/${MODPY_PYCACHE}test_status.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/spyder/widgets/tests/data/
@@ -1129,8 +1149,10 @@ lib/python${MODPY_VERSION}/site-packages/spyder/widgets/tests/test_editor.py
 lib/python${MODPY_VERSION}/site-packages/spyder/widgets/tests/test_explorer.py
 lib/python${MODPY_VERSION}/site-packages/spyder/widgets/tests/test_findinfiles.py
 lib/python${MODPY_VERSION}/site-packages/spyder/widgets/tests/test_helperwidgets.py
+lib/python${MODPY_VERSION}/site-packages/spyder/widgets/tests/test_mixins.py
 lib/python${MODPY_VERSION}/site-packages/spyder/widgets/tests/test_pathmanager.py
 lib/python${MODPY_VERSION}/site-packages/spyder/widgets/tests/test_pydocgui.py
+lib/python${MODPY_VERSION}/site-packages/spyder/widgets/tests/test_reporterror.py
 lib/python${MODPY_VERSION}/site-packages/spyder/widgets/tests/test_save.py
 lib/python${MODPY_VERSION}/site-packages/spyder/widgets/tests/test_status.py
 lib/python${MODPY_VERSION}/site-packages/spyder/widgets/variableexplorer/
@@ -1162,6 +1184,7 @@ lib/python${MODPY_VERSION}/site-packages/spyder/widgets/variableexplorer/tests/$
 lib/python${MODPY_VERSION}/site-packages/spyder/widgets/variableexplorer/tests/${MODPY_PYCACHE}test_namespacebrowser.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/spyder/widgets/variableexplorer/tests/${MODPY_PYCACHE}test_texteditor.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/spyder/widgets/variableexplorer/tests/${MODPY_PYCACHE}test_utils.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/spyder/widgets/variableexplorer/tests/dom_element_test.xml
 lib/python${MODPY_VERSION}/site-packages/spyder/widgets/variableexplorer/tests/issue_2514.csv
 lib/python${MODPY_VERSION}/site-packages/spyder/widgets/variableexplorer/tests/issue_3896.csv
 lib/python${MODPY_VERSION}/site-packages/spyder/widgets/variableexplorer/tests/test_arrayeditor.py
@@ -1281,9 +1304,8 @@ lib/python${MODPY_VERSION}/site-packages/spyder_pylint/widgets/${MODPY_PYCACHE}_
 lib/python${MODPY_VERSION}/site-packages/spyder_pylint/widgets/${MODPY_PYCACHE}pylintgui.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/spyder_pylint/widgets/pylintgui.py
 share/applications/spyder${MAJOR_VERSION}.desktop
+share/icons/spyder${MAJOR_VERSION}.png
 ${MODPY_COMMENT}share/metainfo/
 ${MODPY_COMMENT}share/metainfo/spyder${MAJOR_VERSION}.appdata.xml
-share/pixmaps/
-share/pixmaps/spyder${MAJOR_VERSION}.png
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database

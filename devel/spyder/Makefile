@@ -2,7 +2,7 @@
 
 COMMENT=		Scientific PYthon Development EnviRonment
 
-MODPY_EGG_VERSION=	3.2.6
+MODPY_EGG_VERSION=	3.2.8
 DISTNAME=		spyder-${MODPY_EGG_VERSION}
 
 CATEGORIES=		devel
@@ -12,15 +12,15 @@ HOMEPAGE=		https://github.com/spyder-ide/spyder
 # MIT
 PERMIT_PACKAGE_CDROM=	Yes
 
-MODULES=			lang/python
-FLAVORS=			python3
+MODULES=		lang/python
+FLAVORS=		python3
 FLAVOR?=
 
-MODPY_PI=			Yes
+MODPY_PI=		Yes
 MODPY_SETUPTOOLS=	Yes
 
-BUILD_DEPENDS=	textproc/py-sphinx${MODPY_FLAVOR}
-RUN_DEPENDS=	devel/py-cloudpickle${MODPY_FLAVOR} \
+BUILD_DEPENDS+=	textproc/py-sphinx${MODPY_FLAVOR}
+RUN_DEPENDS+=	devel/py-cloudpickle${MODPY_FLAVOR} \
 		databases/py-pickleshare${MODPY_FLAVOR} \
 		devel/pyflakes${MODPY_FLAVOR} \
 		textproc/py-pygments${MODPY_FLAVOR}>=2.0 \
@@ -33,17 +33,17 @@ RUN_DEPENDS=	devel/py-cloudpickle${MODPY_FLAVOR} \
 		textproc/py-numpydoc${MODPY_FLAVOR} \
 		x11/py-qtpy${MODPY_FLAVOR}>=1.2.0 \
 		x11/py-qtawesome${MODPY_FLAVOR}>=0.4.1 \
-		textproc/py-chardet${MODPY_FLAVOR} \
-		devel/py-rope${MODPY_FLAVOR}>=0.9.4 \
+		textproc/py-chardet${MODPY_FLAVOR}>=2.0.0 \
+		devel/py-rope${MODPY_FLAVOR}>=0.10.5 \
 		devel/pylint${MODPY_FLAVOR} \
-		x11/py-qt5${MODPY_FLAVOR}>=5.2 \
-		devel/py-jedi${MODPY_FLAVOR} \
+		x11/py-qt5${MODPY_FLAVOR}<5.10 \
+		devel/py-jedi${MODPY_FLAVOR}>=0.9.0 \
 		graphics/py-opengl${MODPY_FLAVOR}
 
 
 .if ${FLAVOR:Mpython3}
 MAJOR_VERSION=	3
-PKGNAME=		spyder3-${MODPY_EGG_VERSION}
+PKGNAME=	spyder3-${MODPY_EGG_VERSION}
 .else
 MAJOR_VERSION=
 .endif
