@@ -1,3 +1,0 @@
-@comment $OpenBSD$
-@bin bin/free
-@man man/man1/free.1
