@@ -1,0 +1,123 @@
+$OpenBSD$
+
+From FreeBSD.
+
+Index: src/Sniffer.cc
+--- src/Sniffer.cc.orig
++++ src/Sniffer.cc
+@@ -55,7 +55,7 @@ void Sniffer::dest( PacketBuffer *npb )
+ 	assert( pthread_mutex_unlock(&pb_mutex)==0 );
+ }
+ 
+-void Sniffer::init(char *iface, char *fexp, char *test_file)
++void Sniffer::init(const char *iface, char *fexp, const char *test_file)
+ {
+ 	assert(pcap_initted==false);
+ 	assert(pthread_initted==false);
+@@ -81,7 +81,7 @@ void Sniffer::init(char *iface, char *fexp, char *test
+ 		throw PcapError("pcap_open_live",errbuf);
+ 	
+ 	dlt = pcap_datalink(handle);
+-	if( dlt!=DLT_EN10MB  &&  dlt!=DLT_LINUX_SLL && dlt!=DLT_RAW && dlt!=DLT_NULL) 
++	if( dlt!=DLT_EN10MB  &&  dlt!=DLT_RAW && dlt!=DLT_NULL) 
+ 		throw GenericError("The specified interface type is not supported yet.");
+ 	//if( dlt==DLT_LINUX_SLL )
+ 	//	cerr << "this is a LINUX_SLL interface\n";
+@@ -89,8 +89,6 @@ void Sniffer::init(char *iface, char *fexp, char *test
+ 	//
+ 	// prepare the filter	
+ 	//
+-	struct bpf_program filter; // the filter for the sniffer
+-	char *filter_app = fexp;  // The filter expression
+ 	bpf_u_int32 mask;  // The netmask of our sniffing device
+ 	bpf_u_int32 net;    // The IP of our sniffing device
+ 	if( pcap_lookupnet(iface, &net, &mask, errbuf) == -1 )
+@@ -102,30 +100,24 @@ void Sniffer::init(char *iface, char *fexp, char *test
+ 		net = 0;
+ 		mask = 0;
+ 	}
+-	if( pcap_compile(handle, &filter, filter_app, 0, net) == -1 )
+-	{
+-		pcap_close(handle);
+-		throw PcapError("pcap_compile",pcap_geterr(handle));
++	if (fexp != NULL && fexp[0] != '\0') {
++		struct bpf_program filter; // the filter for the sniffer
++		if (pcap_compile(handle, &filter, fexp, 0, net) == -1)
++		{
++			pcap_close(handle);
++			throw PcapError("pcap_compile", pcap_geterr(handle));
++		}
++		if (pcap_setfilter(handle, &filter)) // apply filter to sniffer
++		{
++			pcap_freecode(&filter);
++			pcap_close(handle);
++			throw PcapError("pcap_setfilter", pcap_geterr(handle));
++		}
+ 	}
+-	if( pcap_setfilter(handle, &filter) ) // apply filter to sniffer
+-	{
+-		pcap_freecode(&filter);
+-		pcap_close(handle);
+-		throw PcapError("pcap_setfilter",pcap_geterr(handle));
+-	}
+-	pcap_freecode(&filter); // filter code not needed after setfilter
+-	
++
+ 	pcap_initted=true;
+ 
+-
+-	pthread_attr_t attr;
+-
+-	if( pthread_attr_init( &attr ) != 0 )
+-		throw GenericError("pthread_attr_init() failed");
+-
+-	pthread_attr_setstacksize( &attr, SS_S );
+-
+-	if( pthread_create(&sniffer_tid,&attr,sniffer_thread_func,this) != 0 )
++	if( pthread_create(&sniffer_tid,NULL,sniffer_thread_func,this) != 0 )
+ 		throw GenericError("pthread_create() failed.");
+ 
+ 	pthread_initted=true;
+@@ -163,11 +155,13 @@ void Sniffer::run()
+ 
+ void Sniffer::processPacket( const pcap_pkthdr *header, const u_char *packet )
+ {
+-	assert( pthread_mutex_lock(&pb_mutex)==0 );
+ 
++	if (pthread_mutex_lock(&pb_mutex) != 0)
++		return;
++
+ 	if( pb==NULL ) 
+ 	{
+-		assert( pthread_mutex_unlock(&pb_mutex) == 0 );
++		pthread_mutex_unlock(&pb_mutex);
+ 		return;
+ 	}
+ 
+@@ -176,7 +170,7 @@ void Sniffer::processPacket( const pcap_pkthdr *header
+ 	struct nlp *n = getnlp(packet,dlt,header);
+ 	if( ! n )
+ 	{
+-		assert( pthread_mutex_unlock(&pb_mutex) == 0 );
++		pthread_mutex_unlock(&pb_mutex);
+ 		return;
+ 	}
+ 	
+@@ -185,7 +179,7 @@ void Sniffer::processPacket( const pcap_pkthdr *header
+ 		if( n->p != NULL )
+ 			free(n->p);
+ 		free(n);
+-		assert( pthread_mutex_unlock(&pb_mutex) == 0 );
++		pthread_mutex_unlock(&pb_mutex);
+ 		return;
+ 	}
+ 
+@@ -193,7 +187,7 @@ void Sniffer::processPacket( const pcap_pkthdr *header
+ 	// So far, PacketBuffer doesn't throw any exceptions here.
+ 	pb->pushPacket(n);
+ 	
+-	assert( pthread_mutex_unlock(&pb_mutex) == 0 );
++	pthread_mutex_unlock(&pb_mutex);
+ }
+ 
+ //////////////////////

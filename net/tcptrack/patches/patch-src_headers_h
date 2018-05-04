@@ -1,0 +1,19 @@
+$OpenBSD$
+
+No net/ethernet.h
+
+Index: src/headers.h
+--- src/headers.h.orig
++++ src/headers.h
+@@ -27,7 +27,11 @@
+ #include <unistd.h> // needed on BSD
+ #include <netinet/in.h>
+ #include <netinet/tcp.h>
++#ifdef __OpenBSD__ // no net/ethernet.h
++#include <net/ethertypes.h>
++#else
+ #include <net/ethernet.h>
++#endif
+ #include "config.h"
+ 
+ #ifndef BYTE_ORDER

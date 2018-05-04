@@ -1,0 +1,16 @@
+$OpenBSD$
+
+Don't -Werror
+
+Index: src/Makefile.in
+--- src/Makefile.in.orig
++++ src/Makefile.in
+@@ -211,7 +211,7 @@ man_MANS = tcptrack.1
+ EXTRA_DIST = tcptrack.1
+ 
+ # no-deprecated required due to hash_map
+-AM_CXXFLAGS = -Werror -Wno-deprecated -Wall
++AM_CXXFLAGS = -Wno-deprecated -Wall
+ all: all-am
+ 
+ .SUFFIXES:

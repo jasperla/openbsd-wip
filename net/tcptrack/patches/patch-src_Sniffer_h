@@ -1,0 +1,16 @@
+$OpenBSD$
+
+From FreeBSD.
+
+Index: src/Sniffer.h
+--- src/Sniffer.h.orig
++++ src/Sniffer.h
+@@ -43,7 +43,7 @@ class Sniffer (public)
+ 
+ 	// init performs some constructor-like activity. It is separate
+ 	// so that exceptions don't have to be thrown in the constructor.
+-	void init(char *iface, char *fexp, char *test_file);
++	void init(const char *iface, char *fexp, const char *test_file);
+ 
+ 	// set the place where sniffed packets are sent for further 
+ 	// processing. If NULL, packets are just dropped.

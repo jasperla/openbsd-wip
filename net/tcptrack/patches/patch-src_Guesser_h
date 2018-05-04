@@ -1,0 +1,16 @@
+$OpenBSD$
+
+From FreeBSD.
+
+Index: src/Guesser.h
+--- src/Guesser.h.orig
++++ src/Guesser.h
+@@ -19,7 +19,7 @@ using namespace __gnu_cxx;
+ class GEqFunc : public unary_function<SocketPair,bool>
+ {
+ public:
+-	bool operator()( const SocketPair &sp1, const SocketPair & sp2 )
++	bool operator()( const SocketPair &sp1, const SocketPair & sp2 ) const
+ 	{
+ 		if( sp1==sp2 )
+ 			return true;

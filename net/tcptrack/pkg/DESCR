@@ -1,0 +1,8 @@
+tcptrack displays the status of TCP connections that it sees on a given
+network interface. tcptrack monitors their state and displays
+information such as state, source/destination addresses and bandwidth
+usage in a sorted, updated list very much like the top(1) command.
+
+The filter expression is a standard pcap filter expression (identical to
+the expressions used by tcpdump(8)) which can be used to filter down the
+characteristics of TCP connections that tcptrack will see.

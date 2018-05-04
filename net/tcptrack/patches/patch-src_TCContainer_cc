@@ -1,0 +1,26 @@
+$OpenBSD$
+
+From FreeBSD.
+
+Index: src/TCContainer.cc
+--- src/TCContainer.cc.orig
++++ src/TCContainer.cc
+@@ -47,17 +47,10 @@ TCContainer::TCContainer()
+ 	//
+ 	state=TSTATE_IDLE;
+ 
+-	pthread_attr_t attr;
+-
+ 	pthread_mutex_init( &conlist_lock, NULL );
+ 	pthread_mutex_init( &state_mutex, NULL );
+ 
+-	if( pthread_attr_init( &attr ) != 0 )
+-		throw GenericError("pthread_attr_init() failed");
+-
+-	pthread_attr_setstacksize( &attr, SS_TCC );
+-
+-	if( pthread_create(&maint_thread_tid,&attr,maint_thread_func,this) != 0 )
++	if( pthread_create(&maint_thread_tid,NULL,maint_thread_func,this) != 0 )
+ 		throw GenericError("pthread_create() failed.");
+ 
+ 	state=TSTATE_RUNNING;

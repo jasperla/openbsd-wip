@@ -1,0 +1,33 @@
+$OpenBSD$
+
+Ugly.
+
+Index: src/util.cc
+--- src/util.cc.orig
++++ src/util.cc
+@@ -43,7 +43,8 @@ struct nlp *getnlp( const u_char *p, int dlt, const pc
+ 	struct nlp *n = (struct nlp *) malloc( sizeof(struct nlp) );
+ 
+ 	n->p=NULL;
+-	n->ts = pcap->ts;
++	n->ts.tv_sec = (u_int32_t)pcap->ts.tv_sec;
++	n->ts.tv_usec = (u_int32_t)pcap->ts.tv_usec;
+ 	n->len = 0;
+ 	int vlan_frame = 0;
+ 
+@@ -77,6 +78,7 @@ struct nlp *getnlp( const u_char *p, int dlt, const pc
+ 			return NULL;
+ 		}
+ 	}
++#if 0
+ 	else if( dlt==DLT_LINUX_SLL )
+ 	{
+ 		if( pcap->caplen < SLL_HEADER_LEN+IP_HEADER_LEN )
+@@ -89,6 +91,7 @@ struct nlp *getnlp( const u_char *p, int dlt, const pc
+ 		n->p = (u_char *) malloc( sizeof(u_char) * n->len );
+ 		memcpy( (void *)n->p, (void *)(p+SLL_HEADER_LEN), n->len);
+ 	}
++#endif
+ 	else if( dlt==DLT_RAW || dlt==DLT_NULL )
+ 	{
+ 		if( pcap->caplen < IP_HEADER_LEN )

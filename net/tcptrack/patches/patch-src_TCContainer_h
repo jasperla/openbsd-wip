@@ -1,0 +1,16 @@
+$OpenBSD$
+
+From FreeBSD.
+
+Index: src/TCContainer.h
+--- src/TCContainer.h.orig
++++ src/TCContainer.h
+@@ -58,7 +58,7 @@ using namespace __gnu_cxx;
+ class TCCEqFunc : public unary_function<SocketPair,bool>
+ {
+ public:
+-	bool operator()( const SocketPair &sp1, const SocketPair &sp2 ) 
++	bool operator()( const SocketPair &sp1, const SocketPair &sp2 ) const
+ 	{
+ 		if( sp1==sp2 )
+ 			return true;

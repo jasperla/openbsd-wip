@@ -1,0 +1,17 @@
+$OpenBSD$
+
+From FreeBSD.
+
+Index: src/defs.h
+--- src/defs.h.orig
++++ src/defs.h
+@@ -29,9 +29,3 @@
+ // if no fast mode, once per second.
+ //#define FASTMODE_INTERVAL 250000000 // one quarter of a second
+ #define FASTMODE_INTERVAL 100000000 // one tenth of a second
+-
+-// stack sizes for the different threads
+-#define SS_PB  2048 // PacketBuffer
+-#define SS_S   4096 // Sniffer 2048 -> segfault on freebsd
+-#define SS_TCC 4096 // TCContainer
+-#define SS_TUI 5120 // TextUI. 4096 -> segfault on solaris
