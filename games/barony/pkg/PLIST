@@ -1,6 +1,0 @@
-@comment $OpenBSD$
-@bin bin/barony
-@bin bin/barony-editor
-share/barony/lang/
-share/barony/lang/en.ttf
-share/barony/lang/en.txt
