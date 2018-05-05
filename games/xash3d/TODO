@@ -1,7 +1,6 @@
 - passed lib-depends-check and port-lib-depends-check
 - passed portcheck
-
-does this need special treatment for clang6?
+- works with clang6
 
 it seems like they have worked hard on making sure the engine is GPL'd
 with any questional bits removed, but I am unsure about the hlsdk itself.
@@ -20,3 +19,6 @@ mentioned as well as Id Software.  port for the half-life client/server
 libraries has been updated to indicate this with PERMIT_PACKAGE_CDROM
 set to No.  We might have to not even permit distribution of pacakge on ftp
 though if I understand this correctly...
+
+UPDATE May 5 2018:
+going to submit to ports@ to get wider opinion on licensing.
