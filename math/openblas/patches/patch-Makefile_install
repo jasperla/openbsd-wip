@@ -1,0 +1,34 @@
+$OpenBSD$
+
+Index: Makefile.install
+--- Makefile.install.orig
++++ Makefile.install
+@@ -61,7 +61,7 @@ ifndef NO_STATIC
+ 	@echo Copying the static library to $(DESTDIR)$(OPENBLAS_LIBRARY_DIR)
+ 	@install -pm644 $(LIBNAME) "$(DESTDIR)$(OPENBLAS_LIBRARY_DIR)"
+ 	@cd "$(DESTDIR)$(OPENBLAS_LIBRARY_DIR)" ; \
+-	ln -fs $(LIBNAME) $(LIBPREFIX).$(LIBSUFFIX)
++	mv $(LIBNAME) $(LIBPREFIX).$(LIBSUFFIX)
+ endif
+ #for install shared library
+ ifndef NO_SHARED
+@@ -73,9 +73,7 @@ ifeq ($(OSNAME), $(filter $(OSNAME),Linux SunOS Androi
+ 	ln -fs $(LIBSONAME) $(LIBPREFIX).so.$(MAJOR_VERSION)
+ endif
+ ifeq ($(OSNAME), $(filter $(OSNAME),FreeBSD OpenBSD NetBSD DragonFly))
+-	@cp $(LIBSONAME) "$(DESTDIR)$(OPENBLAS_LIBRARY_DIR)"
+-	@cd "$(DESTDIR)$(OPENBLAS_LIBRARY_DIR)" ; \
+-	ln -fs $(LIBSONAME) $(LIBPREFIX).so
++	@cp $(LIBPREFIX).so.${LIBopenblas_VERSION} "$(DESTDIR)$(OPENBLAS_LIBRARY_DIR)"
+ endif
+ ifeq ($(OSNAME), Darwin)
+ 	@-cp $(LIBDYNNAME) "$(DESTDIR)$(OPENBLAS_LIBRARY_DIR)"
+@@ -111,7 +109,7 @@ endif
+ ifndef NO_SHARED
+ #ifeq logical or
+ ifeq ($(OSNAME), $(filter $(OSNAME),Linux FreeBSD NetBSD OpenBSD DragonFly))
+-	@echo "SET(OpenBLAS_LIBRARIES ${OPENBLAS_LIBRARY_DIR}/$(LIBPREFIX).so)" >> "$(DESTDIR)$(OPENBLAS_CMAKE_DIR)/$(OPENBLAS_CMAKE_CONFIG)"
++	@echo "SET(OpenBLAS_LIBRARIES ${OPENBLAS_LIBRARY_DIR}/$(LIBPREFIX).so.${LIBopenblas_VERSION})" >> "$(DESTDIR)$(OPENBLAS_CMAKE_DIR)/$(OPENBLAS_CMAKE_CONFIG)"
+ endif
+ ifeq ($(OSNAME), $(filter $(OSNAME),WINNT CYGWIN_NT))
+ 	@echo "SET(OpenBLAS_LIBRARIES ${OPENBLAS_BINARY_DIR}/$(LIBDLLNAME))" >> "$(DESTDIR)$(OPENBLAS_CMAKE_DIR)/$(OPENBLAS_CMAKE_CONFIG)"

@@ -5,7 +5,7 @@ Remove hardcoded -O2
 Index: Makefile.system
 --- Makefile.system.orig
 +++ Makefile.system
-@@ -1068,11 +1068,11 @@ FCOMMON_OPT += -g
+@@ -1073,11 +1073,11 @@ FCOMMON_OPT += -g
  endif
  
  ifndef COMMON_OPT

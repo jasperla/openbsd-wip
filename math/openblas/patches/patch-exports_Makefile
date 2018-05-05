@@ -1,0 +1,20 @@
+$OpenBSD$
+
+Version shlib
+
+Index: exports/Makefile
+--- exports/Makefile.orig
++++ exports/Makefile
+@@ -167,10 +167,10 @@ else
+ 	$(OBJCOPY) --redefine-syms objcopy.def ../$(LIBNAME) ../$(LIBNAME).renamed
+ ../$(LIBSONAME) : ../$(LIBNAME).renamed linktest.c
+ endif
+-	$(CC) $(CFLAGS) $(LDFLAGS)  -shared -o ../$(LIBSONAME) \
++	$(CC) $(CFLAGS) $(LDFLAGS)  -shared -o ../$(LIBPREFIX).so.${LIBopenblas_VERSION} \
+ 	-Wl,--whole-archive $< -Wl,--no-whole-archive \
+ 	$(FEXTRALIB) $(EXTRALIB)
+-	$(CC) $(CFLAGS) $(LDFLAGS) -w -o linktest linktest.c ../$(LIBSONAME) $(FEXTRALIB) && echo OK.
++	$(CC) $(CFLAGS) $(LDFLAGS) -w -o linktest linktest.c ../$(LIBPREFIX).so.${LIBopenblas_VERSION} $(FEXTRALIB) && echo OK.
+ 	rm -f linktest
+ 
+ endif

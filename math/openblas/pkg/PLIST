@@ -11,7 +11,5 @@ lib/cmake/openblas/
 lib/cmake/openblas/OpenBLASConfig.cmake
 lib/cmake/openblas/OpenBLASConfigVersion.cmake
 lib/libopenblas.a
-lib/libopenblas.so
-lib/libopenblas_nehalemp-r0.3.0.dev.a
-lib/libopenblas_nehalemp-r0.3.0.dev.so
+@lib lib/libopenblas.so.${LIBopenblas_VERSION}
 lib/pkgconfig/openblas.pc

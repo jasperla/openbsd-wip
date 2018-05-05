@@ -1,0 +1,15 @@
+$OpenBSD$
+
+Don't create a symlink
+
+Index: Makefile
+--- Makefile.orig
++++ Makefile
+@@ -93,7 +93,6 @@ ifeq ($(OSNAME), $(filter $(OSNAME),Linux SunOS Androi
+ endif
+ ifeq ($(OSNAME), $(filter $(OSNAME),FreeBSD OpenBSD NetBSD DragonFly))
+ 	@$(MAKE) -C exports so
+-	@ln -fs $(LIBSONAME) $(LIBPREFIX).so
+ endif
+ ifeq ($(OSNAME), Darwin)
+ 	@$(MAKE) -C exports dyn

@@ -66,3 +66,4 @@ devel/libangelscript			ready to import, sent to ports@ 2015-12-20
 games/arx-libertatis			sent to ports@ 2018-03-03 (thfr)
 net/tcptrack				ready to import (bcallah, indirectly)
 devel/spyder				ready to import
+math/openblas				ready to import (bcallah)
