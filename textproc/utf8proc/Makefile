@@ -3,8 +3,7 @@
 COMMENT=	UTF-8 processing library
 
 VERSION=	2.1.1
-DISTNAME=	v${VERSION}
-PKGNAME=	utf8proc-${VERSION}
+DISTNAME=	utf8proc-${VERSION}
 
 CATEGORIES=	textproc
 
@@ -14,9 +13,8 @@ HOMEPAGE=	https://github.com/JuliaLang/utf8proc
 PERMIT_PACKAGE_CDROM=	Yes
 
 MASTER_SITES=	https://github.com/JuliaLang/utf8proc/archive/
-EXTRACT_SUFX=	.tar.gz
+DISTFILES=	v${VERSION}.tar.gz
 
-WRKDIST=	${WRKDIR}/${PKGNAME}
 USE_GMAKE=	Yes
 
 do-test:
