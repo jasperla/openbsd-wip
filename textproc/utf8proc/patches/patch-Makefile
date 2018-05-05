@@ -1,0 +1,53 @@
+$OpenBSD$
+
+Index: Makefile
+--- Makefile.orig
++++ Makefile
+@@ -19,9 +19,8 @@ UCFLAGS = $(CFLAGS) $(PICFLAG) $(C99FLAG) $(WCFLAGS) -
+ # compatibility is broken, even if the API is backward-compatible.
+ # The API version number is defined in utf8proc.h.
+ # Be sure to also update these ABI versions in MANIFEST and CMakeLists.txt!
+-MAJOR=2
+-MINOR=1
+-PATCH=1
++MAJOR=0
++MINOR=0
+ 
+ OS := $(shell uname)
+ ifeq ($(OS),Darwin) # MacOS X
+@@ -29,7 +28,7 @@ ifeq ($(OS),Darwin) # MacOS X
+   SHLIB_VERS_EXT = $(MAJOR).dylib
+ else # GNU/Linux, at least (Windows should probably use cmake)
+   SHLIB_EXT = so
+-  SHLIB_VERS_EXT = so.$(MAJOR).$(MINOR).$(PATCH)
++  SHLIB_VERS_EXT = so.$(MAJOR).$(MINOR)
+ endif
+ 
+ # installation directories (for 'make install')
+@@ -72,13 +71,11 @@ libutf8proc.a: utf8proc.o
+ 	rm -f libutf8proc.a
+ 	$(AR) rs libutf8proc.a utf8proc.o
+ 
+-libutf8proc.so.$(MAJOR).$(MINOR).$(PATCH): utf8proc.o
++libutf8proc.so.$(MAJOR).$(MINOR): utf8proc.o
+ 	$(CC) $(LDFLAGS) -shared -o $@ -Wl,-soname -Wl,libutf8proc.so.$(MAJOR) utf8proc.o
+ 	chmod a-x $@
+ 
+-libutf8proc.so: libutf8proc.so.$(MAJOR).$(MINOR).$(PATCH)
+-	ln -f -s libutf8proc.so.$(MAJOR).$(MINOR).$(PATCH) $@
+-	ln -f -s libutf8proc.so.$(MAJOR).$(MINOR).$(PATCH) $@.$(MAJOR)
++libutf8proc.so: libutf8proc.so.$(MAJOR).$(MINOR)
+ 
+ libutf8proc.$(MAJOR).dylib: utf8proc.o
+ 	$(CC) $(LDFLAGS) -dynamiclib -o $@ $^ -install_name $(libdir)/$@ -Wl,-compatibility_version -Wl,$(MAJOR) -Wl,-current_version -Wl,$(MAJOR).$(MINOR).$(PATCH)
+@@ -92,10 +89,6 @@ install: libutf8proc.a libutf8proc.$(SHLIB_EXT) libutf
+ 	mkdir -m 755 -p $(DESTDIR)$(libdir)
+ 	$(INSTALL) -m 644 libutf8proc.a $(DESTDIR)$(libdir)
+ 	$(INSTALL) -m 755 libutf8proc.$(SHLIB_VERS_EXT) $(DESTDIR)$(libdir)
+-	ln -f -s libutf8proc.$(SHLIB_VERS_EXT) $(DESTDIR)$(libdir)/libutf8proc.$(SHLIB_EXT)
+-ifneq ($(OS),Darwin)
+-	ln -f -s libutf8proc.$(SHLIB_VERS_EXT) $(DESTDIR)$(libdir)/libutf8proc.so.$(MAJOR)
+-endif
+ 
+ MANIFEST.new:
+ 	rm -rf tmp

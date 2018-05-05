@@ -1,6 +1,4 @@
 @comment $OpenBSD$
 include/utf8proc.h
 lib/libutf8proc.a
-lib/libutf8proc.so
-lib/libutf8proc.so.2
-@bin lib/libutf8proc.so.2.1.1
+@lib lib/libutf8proc.so.${LIButf8proc_VERSION}

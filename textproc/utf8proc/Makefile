@@ -9,6 +9,8 @@ CATEGORIES=	textproc
 
 HOMEPAGE=	https://github.com/JuliaLang/utf8proc
 
+SHARED_LIBS=	utf8proc	0.0 # 2.1.1
+
 # MIT
 PERMIT_PACKAGE_CDROM=	Yes
 
