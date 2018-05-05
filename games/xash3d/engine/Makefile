@@ -26,7 +26,6 @@ DISTFILES =	${DISTNAME}${EXTRACT_SUFX} \
 		${MAINUI_COMMIT}.tar.gz:0
 
 MODULES =		devel/cmake
-RUN_DEPENDS =		games/xash3d/hl
 LIB_DEPENDS =		devel/sdl2
 
 COMPILER =		base-clang ports-gcc

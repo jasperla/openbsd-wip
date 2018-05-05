@@ -29,6 +29,7 @@ PERMIT_PACKAGE_FTP =	Yes
 WANTLIB += ${COMPILER_LIBCXX} m
 
 MODULES =		devel/cmake
+RUN_DEPENDS =		games/xash3d/engine
 
 CONFIGURE_ARGS =	-DGAMEDIR=${PREFIX}/lib/xash3d \
 			-DSERVER_INSTALL_DIR=valve \
