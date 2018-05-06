@@ -1,11 +1,6 @@
 hhpc(1) is a utility that hides the mouse pointer in X11. The method it
 uses to hide the cursor was taken from the hhp program found in
-xmonad-utils. I found that after a while for some reason the original
-hhp stopped hiding my mouse pointer, so I recreated it in C to make it
-easier to debug. Should hhpc not work out for you, unclutter is a good
-alternative. I created hhpc because unclutter doesn't seem to
-interoperate properly with hardware accelerated surfaces like those of
-video players using VAAPI.
+xmonad-utils.
 
 It functions by grabbing your mouse pointer at startup and replacing its
 bitmap with an empty one (thus hiding it). It uses the XGrabPointer X11
