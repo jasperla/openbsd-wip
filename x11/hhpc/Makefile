@@ -7,8 +7,6 @@ GH_ACCOUNT =	aktau
 GH_PROJECT =	hhpc
 GH_TAGNAME =	v0.3.1
 
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
-
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
 
