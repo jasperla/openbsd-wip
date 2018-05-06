@@ -68,3 +68,5 @@ net/tcptrack				ready to import (bcallah, indirectly)
 devel/spyder				ready to import
 math/openblas				ready to import (bcallah)
 games/xash3d				sent to ports@ 2018-05-05 (rfreeman)
+math/gbc				ready to import (needs a MAINTAINTER! how about you?)
+math/nbc				ready to import (needs a MAINTAINTER! how about you?)
