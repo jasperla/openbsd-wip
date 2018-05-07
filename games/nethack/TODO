@@ -1,5 +1,0 @@
-- fix configure/build flags/env
-- merge with what's been done for nethack3.4.3
-- flesh out update
-- add DESCR
-- review license and check if can PERUMIT_PACKAGE_CDROM
