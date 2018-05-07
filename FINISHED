@@ -63,7 +63,6 @@ www/p5-Web-Query			ready to import (garcer)
 www/p5-HTML-TreeBuilder-LibXML		ready to import (garcer)
 devel/deviceatlas-enterprise-c		ready to import (devnexen)
 devel/libangelscript			ready to import, sent to ports@ 2015-12-20
-games/arx-libertatis			sent to ports@ 2018-03-03 (thfr)
 net/tcptrack				ready to import (bcallah, indirectly)
 devel/spyder				ready to import
 math/openblas				ready to import (bcallah)
@@ -72,3 +71,4 @@ math/gbc				ready to import (needs a MAINTAINTER! how about you?)
 math/nbc				ready to import (needs a MAINTAINTER! how about you?)
 sysutils/shuf				ready to import (needs a MAINTAINTER! how about you?)
 x11/hhpc				ready to import (needs a MAINTAINTER! how about you?)
+math/e					ready to import (needs a MAINTAINTER! how about you?)

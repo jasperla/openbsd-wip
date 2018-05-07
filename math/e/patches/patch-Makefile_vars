@@ -1,0 +1,29 @@
+$OpenBSD$
+
+Remove hardcoded cc and -O3
+Append port's CFLAGS so we get our CFLAGS too.
+
+Index: Makefile.vars
+--- Makefile.vars.orig
++++ Makefile.vars
+@@ -134,17 +134,17 @@ PROFFLAGS  = # -pg
+ DEBUGGER   = # -g -ggdb
+ LTOFLAGS   = # -flto
+ WFLAGS     = -Wall
+-OPTFLAGS   = -O3 -fomit-frame-pointer -fno-common
++OPTFLAGS   = -fomit-frame-pointer -fno-common
+ 
+ 
+ DEBUGFLAGS = $(PROFFLAGS) $(MEMDEBUG) $(DEBUGGER) $(NODEBUG)
+-CFLAGS     = $(OPTFLAGS) $(LTOFLAGS) $(WFLAGS) $(DEBUGFLAGS) $(BUILDFLAGS) -std=gnu99 -I../include
++CFLAGS     += $(OPTFLAGS) $(LTOFLAGS) $(WFLAGS) $(DEBUGFLAGS) $(BUILDFLAGS) -std=gnu99 -I../include
+ LDFLAGS    = $(OPTFLAGS) $(LTOFLAGS) $(PROFFLAGS) $(DEBUGGER)
+ LD         = $(CC) $(LDFLAGS)
+ 
+ # Generic
+    AR         = ar rcs
+-   CC         =  gcc
++   CC         ?=  gcc
+ 
+ # Builds with link time optimization
+ #
