@@ -1,0 +1,16 @@
+$OpenBSD$
+
+GNU make idiom?
+
+Index: Makefile
+--- Makefile.orig
++++ Makefile
+@@ -5,8 +5,6 @@ LDFLAGS=-s -lm
+ $(BIN): arcadia.o arc.o
+ 	$(CC) -o $(BIN) arcadia.o arc.o $(LDFLAGS)
+ 
+-readline: CFLAGS+=-DREADLINE
+-readline: LDFLAGS+=-lreadline
+ readline: $(BIN)
+ 
+ mingw: CC=mingw32-gcc

@@ -1,0 +1,10 @@
+lacc is a simple, self-hosting C compiler.
+
+Features:
+* Complete support for C89, in addition to some features from later
+  standards.
+* Target x86_64 assembly GNU syntax (-S), binary ELF object files (-c),
+  or pure preprocessing (-E).
+* Rich intermediate representation, building a control flow graph (CFG)
+  with basic blocks of three-address code for each function definition.
+  This is the target for basic dataflow analysis and optimization.

@@ -1,0 +1,9 @@
+@comment $OpenBSD$
+@bin bin/lacc
+lib/lacc/
+lib/lacc/include/
+lib/lacc/include/float.h
+lib/lacc/include/stdalign.h
+lib/lacc/include/stdarg.h
+lib/lacc/include/stdbool.h
+lib/lacc/include/stddef.h
