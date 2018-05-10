@@ -3,25 +3,25 @@ Index: Top/csound.c
 --- Top/csound.c.orig
 +++ Top/csound.c
 @@ -60,7 +60,7 @@
- #include "cs_par_dispatch.h"
+ //#include "cs_par_dispatch.h"
  #include "find_opcode.h"
-
--#if defined(linux) || defined(__HAIKU__) || defined(__EMSCRIPTEN__) || defined(__CYGWIN__)
-+#if defined(linux) || defined(__HAIKU__) || defined(__EMSCRIPTEN__) || defined(__CYGWIN__) || defined(__OpenBSD__)
+ 
+-#if defined(linux)||defined(__HAIKU__)|| defined(__EMSCRIPTEN__)||defined(__CYGWIN__)
++#if defined(linux)||defined(__HAIKU__)|| defined(__EMSCRIPTEN__)||defined(__CYGWIN__) || defined(__OpenBSD__)
  #define PTHREAD_SPINLOCK_INITIALIZER 0
  #endif
-
-@@ -1080,7 +1080,7 @@ static char *signal_to_string(int sig)
+ 
+@@ -1132,7 +1132,7 @@ static char *signal_to_string(int sig)
      }
  }
-
+ 
 -#ifdef ANDROID
 +#if defined(ANDROID) || defined(__OpenBSD__)
  static void psignal_(int sig, char *str)
  {
      fprintf(stderr, "%s: %s\n", str, signal_to_string(sig));
-@@ -1104,7 +1104,7 @@ static void signal_handler(int sig)
- {
+@@ -1184,7 +1184,7 @@ static void signal_handler(int sig)
+ 
  #if defined(SIGPIPE)
      if (sig == (int) SIGPIPE) {
 -#ifdef ANDROID
@@ -29,7 +29,7 @@ Index: Top/csound.c
        psignal_(sig, "Csound ignoring SIGPIPE");
  #else
        psignal(sig, "Csound ignoring SIGPIPE");
-@@ -1112,7 +1112,7 @@ static void signal_handler(int sig)
+@@ -1192,7 +1192,7 @@ static void signal_handler(int sig)
        return;
      }
  #endif

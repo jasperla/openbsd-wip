@@ -1,14 +1,13 @@
 # $OpenBSD: Makefile.template,v 1.73 2016/01/11 09:17:22 sthen Exp $
 
-
 COMMENT =	an extensible sound processing language
 
 GH_ACCOUNT =	csound
 GH_PROJECT =	csound
-GH_TAGNAME =	6.08.0
+GH_TAGNAME =	6.10.0
 
-SHARED_LIBS +=	csnd6                     1.0 # 6.0
-SHARED_LIBS +=	csound64                  1.0 # 6.0
+SHARED_LIBS +=	csnd6                     1.0 # 6.10
+SHARED_LIBS +=	csound64                  1.0 # 6.10
 
 CATEGORIES =	audio
 
@@ -19,34 +18,32 @@ MAINTAINER =		Aaron Bieber <abieber@openbsd.org>
 # LGPL
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += X11 Xau Xcursor Xdmcp Xext Xfixes Xft Xinerama c curl
-WANTLIB += fltk fltk_images fluidsynth fontconfig jack jpeg lo
-WANTLIB += m png pthread pulse pulse-simple ${MODPY_WANTLIB}
-WANTLIB += samplerate sndfile z luajit-${MODLUA_VERSION}
+WANTLIB += ${COMPILER_LIBCXX} ICE SM X11 Xext c curl fltk fltk_forms
+WANTLIB += fltk_images m png portaudio pulse pulse-simple python2.7
+WANTLIB += samplerate sndfile z
 
 MODULES =		devel/cmake \
-			devel/gettext \
-			gcc4 \
 			lang/lua \
 			lang/python
-
-MODGCC4_LANGS =         c c++
-MODGCC4_ARCHS =         *
 
 RUN_DEPENDS =		lang/luajit
 
 BUILD_DEPENDS =		audio/flac \
 			audio/libogg \
-			audio/portaudio-svn \
-			devel/boost
+			devel/bison \
+			devel/boost \
+			devel/gettext-tools
 
 LIB_DEPENDS =		audio/jack \
 			audio/fluidsynth \
-			audio/liblo \
+			audio/libsamplerate \
 			audio/libsndfile \
+			audio/portaudio-svn \
 			audio/pulseaudio \
 			net/curl \
 			x11/fltk
+
+COMPILER =		base-clang ports-gcc
 
 SUBST_VARS +=		LIBcsnd6_VERSION
 SUBST_VARS +=		LOCALBASE
