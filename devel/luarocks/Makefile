@@ -2,7 +2,7 @@
 
 COMMENT =	package manager for lua
 
-DISTNAME =	luarocks-2.4.3
+DISTNAME =	luarocks-2.4.4
 
 CATEGORIES =	devel
 
