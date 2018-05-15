@@ -1,0 +1,43 @@
+$OpenBSD$
+
+Fix and simplify device enumeration.
+
+Index: lib/driver/netbsd.c
+--- lib/driver/netbsd.c.orig
++++ lib/driver/netbsd.c
+@@ -543,8 +543,27 @@ cdio_get_devices_netbsd (void)
+ #ifndef HAVE_NETBSD_CDROM
+   return NULL;
+ #else
++#ifdef __OpenBSD__
+   char drive[40];
+   char **drives = NULL;
++  unsigned int num_drives = 0;
++  int cdfd;
++  int n;
++
++  for (n = 0; n <= 9; n++) {
++    snprintf(drive, sizeof(drive), "/dev/rcd%dc", n);
++    if (!cdio_is_device_quiet_generic(drive))
++      continue;
++    if ((cdfd = open(drive, O_RDONLY|O_NONBLOCK, 0)) == -1)
++      continue;
++    close(cdfd);
++    cdio_add_device_list(&drives, drive, &num_drives);
++  }
++  cdio_add_device_list(&drives, NULL, &num_drives);
++  return (drives);
++#else
++  char drive[40];
++  char **drives = NULL;
+   unsigned int num_drives=0;
+   int mib[2];
+   size_t len;
+@@ -587,6 +606,7 @@ cdio_get_devices_netbsd (void)
+   cdio_add_device_list(&drives, NULL, &num_drives);
+   free(data);
+   return drives;
++#endif
+ #endif /* HAVE_NETBSD_CDROM */
+ }
+ 
