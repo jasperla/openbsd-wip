@@ -1,0 +1,20 @@
+MARST is an Algol-to-C translator. It automatically translates programs
+written in the algorithmic language Algol 60 to the C programming
+language.
+
+The MARST package includes three main components:
+* the translator, MARST, that translates Algol 60 programs to the C
+  programming language.
+* the library, ALGLIB, that contains precompiled standard Algol 60
+  procedures and other necessary library routines. This library is to
+  be used at linking stage. (In the distribution the name libalgol.a is
+  used for this library.)
+* the converter, MACVT, that allows to convert existing Algol 60
+  programs from some other representations to MARST representation.
+
+The input language of the translator is a hardware representation of
+the full (level 0) Algol 60 as described in the following IFIP
+document:
+
+Modified Report on the Algorithmic Language Algol 60, The Computer
+Journal, Vol. 19, No. 4, Nov. 1976, pp. 364-79.
