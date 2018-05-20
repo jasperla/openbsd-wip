@@ -1,0 +1,32 @@
+# $OpenBSD: Makefile,v 1.2 2018/04/14 22:53:54 sthen Exp $
+
+COMMENT =	command-line fuzzy finder 
+
+V =		0.17.3
+DISTNAME =	fzf-${V}
+
+CATEGORIES =	sysutils
+
+HOMEPAGE =	https://github.com/junegunn/fzf
+
+MAINTAINER =	Aaron Bieber <abieber@openbsd.org>
+
+# BSD
+PERMIT_PACKAGE_CDROM =	Yes
+
+WANTLIB += c pthread
+
+MASTER_SITES =	https://deftly.net/
+
+MODULES =	lang/go
+MODGO_TYPE =	bin
+
+do-build:
+	cd ${WRKSRC} && ${MODGO_CMD} build
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/fzf* ${PREFIX}/bin
+	${INSTALL_DATA_DIR} ${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/man/man1/*.1 ${PREFIX}/man/man1
+
+.include <bsd.port.mk>

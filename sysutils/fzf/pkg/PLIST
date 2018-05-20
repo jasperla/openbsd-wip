@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v$
+@bin bin/fzf
+bin/fzf-tmux
+@man man/man1/fzf-tmux.1
+@man man/man1/fzf.1
