@@ -1,0 +1,9 @@
+libva-utils is a collection of utilities and examples to exercise VA-API in
+accordance with the libva project. --enable-tests (default = no) provides a
+suite of unit-tests based on Google Test Framework. A driver implementation is
+necessary to properly operate.
+
+VA-API is an open-source library and API specification, which provides access to
+graphics hardware acceleration capabilities for video processing. It consists of
+a main library and driver-specific acceleration backends for each supported
+hardware vendor.

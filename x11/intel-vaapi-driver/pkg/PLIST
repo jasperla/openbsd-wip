@@ -1,0 +1,5 @@
+@comment $OpenBSD$
+lib/dri/
+lib/dri/i965_drv_video.a
+lib/dri/i965_drv_video.la
+lib/dri/i965_drv_video.so

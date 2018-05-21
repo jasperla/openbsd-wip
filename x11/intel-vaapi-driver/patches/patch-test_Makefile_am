@@ -1,0 +1,36 @@
+$OpenBSD$
+Unbreak build and tests (must be improved before sending upstream).
+
+Index: test/Makefile.am
+--- test/Makefile.am.orig
++++ test/Makefile.am
+@@ -6,12 +6,12 @@ AM_CXXFLAGS =								\
+ 
+ AM_CPPFLAGS =								\
+ 	-DGTEST_HAS_PTHREAD=1						\
+-	-DGTEST_USE_OWN_TR1_TUPLE=0					\
++	-DGTEST_USE_OWN_TR1_TUPLE=1					\
+ 	-DGTEST_LANG_CXX11=1						\
+ 	-DGTEST_HAS_TR1_TUPLE=1						\
+ 	-DPTHREADS							\
+ 	-DVA_DRIVERS_PATH="\"$(LIBVA_DRIVERS_PATH)\""			\
+-	-DTEST_VA_DRIVERS_PATH="\"$(abs_top_srcdir)/src/.libs\""	\
++	-DTEST_VA_DRIVERS_PATH="\"$(abs_top_builddir)/src/.libs\""	\
+ 	-std=c++11							\
+ 	$(NULL)
+ 
+@@ -85,12 +85,12 @@ test_i965_drv_video_LDFLAGS =						\
+ 	$(NULL)
+ 
+ test_i965_drv_video_LDADD =						\
+-	$(top_srcdir)/src/libi965_drv_video.la				\
++	$(top_builddir)/src/libi965_drv_video.la				\
+ 	libgtest.la							\
+ 	$(DRM_LIBS)							\
+ 	$(LIBVA_DEPS_LIBS)						\
+ 	$(LIBVA_DRM_DEPS_LIBS)						\
+-	-ldrm_intel -lm -ldl						\
++	-ldrm_intel -lm							\
+ 	$(NULL)
+ 
+ test_i965_drv_video_CPPFLAGS =						\

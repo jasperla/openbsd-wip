@@ -1,0 +1,22 @@
+$OpenBSD$
+Unbreak build.
+
+Index: encode/mpeg2vaenc.c
+--- encode/mpeg2vaenc.c.orig
++++ encode/mpeg2vaenc.c
+@@ -162,6 +162,7 @@ struct __bitstream {
+ 
+ typedef struct __bitstream bitstream;
+ 
++#ifndef swap32
+ static unsigned int 
+ swap32(unsigned int val)
+ {
+@@ -172,6 +173,7 @@ swap32(unsigned int val)
+             (pval[2] << 8)      |
+             (pval[3] << 0));
+ }
++#endif	// defined(swap32)
+ 
+ static void
+ bitstream_start(bitstream *bs)

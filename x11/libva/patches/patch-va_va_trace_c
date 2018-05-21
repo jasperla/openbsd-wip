@@ -1,0 +1,71 @@
+$OpenBSD$
+Unbreak build.
+
+Index: va/va_trace.c
+--- va/va_trace.c.orig
++++ va/va_trace.c
+@@ -290,8 +290,14 @@ static void add_trace_config_info(
+ {
+     struct trace_config_info *pconfig_info;
+     int idx = 0;
+-    pid_t thd_id = syscall(__NR_gettid);
++    pid_t thd_id;
+ 
++#ifdef __OpenBSD__
++    thd_id = getthrid();
++#else
++    thd_id = syscall(__NR_gettid);
++#endif
++
+     LOCK_RESOURCE(pva_trace);
+ 
+     for (idx = 0;idx < MAX_TRACE_CTX_NUM;idx++) {
+@@ -668,9 +674,15 @@ static struct trace_log_file *start_tracing2log_file(
+ {
+     struct trace_log_files_manager *plog_files_mgr = NULL;
+     struct trace_log_file *plog_file = NULL;
+-    pid_t thd_id = syscall(__NR_gettid);
++    pid_t thd_id;
+     int i = 0;
+ 
++#ifdef __OpenBSD__
++    thd_id = getthrid();
++#else
++    thd_id = syscall(__NR_gettid);
++#endif
++
+     LOCK_RESOURCE(pva_trace);
+ 
+     plog_files_mgr = &pva_trace->log_files_manager;
+@@ -707,9 +719,15 @@ static void refresh_log_file(
+     struct trace_context *ptra_ctx)
+ {
+     struct trace_log_file *plog_file = NULL;
+-    pid_t thd_id = syscall(__NR_gettid);
++    pid_t thd_id;
+     int i = 0;
+ 
++#ifdef __OpenBSD__
++    thd_id = getthrid();
++#else
++    thd_id = syscall(__NR_gettid);
++#endif
++
+     plog_file = ptra_ctx->plog_file;
+     if(plog_file && plog_file->thread_id != thd_id) {
+         plog_file = start_tracing2log_file(pva_trace);
+@@ -1230,7 +1248,13 @@ static void internal_TraceUpdateContext (
+ {
+     struct trace_context *trace_ctx = NULL;
+     int i = 0, delete = 1;
+-    pid_t thd_id = syscall(__NR_gettid);
++    pid_t thd_id;
++
++#ifdef __OpenBSD__
++    thd_id = getthrid();
++#else
++    thd_id = syscall(__NR_gettid);
++#endif
+ 
+     if(tra_ctx_idx >= MAX_TRACE_CTX_NUM)
+         return;

@@ -1,0 +1,19 @@
+$OpenBSD$
+Unbreak build (must be improved before sending upstream).
+
+Index: src/Makefile.am
+--- src/Makefile.am.orig
++++ src/Makefile.am
+@@ -40,11 +40,10 @@ driver_cflags = \
+ driver_ldflags = \
+ 	-avoid-version		\
+ 	-no-undefined		\
+-	-Wl,--no-undefined	\
+ 	$(NULL)
+ 
+ driver_libs = \
+-	-lpthread -lm -ldl	\
++	-lpthread -lm	\
+ 	$(DRM_LIBS) -ldrm_intel	\
+ 	$(NULL)
+ 

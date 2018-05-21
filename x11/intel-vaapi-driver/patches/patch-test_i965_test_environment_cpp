@@ -1,0 +1,15 @@
+$OpenBSD$
+Allow tests to run.
+
+Index: test/i965_test_environment.cpp
+--- test/i965_test_environment.cpp.orig
++++ test/i965_test_environment.cpp
+@@ -57,6 +57,8 @@ void I965TestEnvironment::SetUp()
+     m_handle = open("/dev/dri/renderD128", O_RDWR);
+     if (m_handle < 0)
+         m_handle = open("/dev/dri/card0", O_RDWR);
++    if (m_handle < 0)
++        m_handle = open("/dev/drm0", O_RDWR);
+ 
+     m_vaDisplay = vaGetDisplayDRM(m_handle);
+ 

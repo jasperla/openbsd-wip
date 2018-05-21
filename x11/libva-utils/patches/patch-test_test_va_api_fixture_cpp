@@ -1,0 +1,24 @@
+$OpenBSD$
+Unbreak build and tests.
+
+Index: test/test_va_api_fixture.cpp
+--- test/test_va_api_fixture.cpp.orig
++++ test/test_va_api_fixture.cpp
+@@ -39,7 +39,7 @@ VAAPIFixture::VAAPIFixture()
+     , m_vaDisplay(NULL)
+     , m_restoreDriverName(getenv("LIBVA_DRIVER_NAME"))
+     , m_drmHandle(-1)
+-    , drmDevicePaths({ "/dev/dri/renderD128", "/dev/dri/card0" })
++    , drmDevicePaths{ "/dev/dri/renderD128", "/dev/dri/card0", "/dev/drm0" }
+     , m_configID(VA_INVALID_ID)
+     , m_contextID(VA_INVALID_ID)
+     , m_bufferID(VA_INVALID_ID)
+@@ -186,7 +186,7 @@ void VAAPIFixture::getConfigAttributes(const VAProfile
+     if (defaults) {
+         // fill config attributes with default config attributes
+         const auto op = [](const VAConfigAttribType& t) {
+-            return VAConfigAttrib{type: t, value: VA_ATTRIB_NOT_SUPPORTED};
++            return VAConfigAttrib{.type = t, .value = VA_ATTRIB_NOT_SUPPORTED};
+         };
+         std::transform(g_vaConfigAttribTypes.begin(),
+             g_vaConfigAttribTypes.end(), std::back_inserter(attribs), op);

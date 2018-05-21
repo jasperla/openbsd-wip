@@ -1,0 +1,15 @@
+$OpenBSD$
+Unbreak build.
+
+Index: test/test_va_api_display_attribs.cpp
+--- test/test_va_api_display_attribs.cpp.orig
++++ test/test_va_api_display_attribs.cpp
+@@ -134,7 +134,7 @@ TEST_F(VAAPIDisplayAttribs, GetDisplayAttribs)
+     m_attribs.resize(numAttribs);
+ 
+     for (const auto& type : types) {
+-        VADisplayAttribute attrib{type: type};
++        VADisplayAttribute attrib{.type = type};
+         ASSERT_STATUS(vaGetDisplayAttributes(m_vaDisplay, &attrib, 1));
+ 
+         if (findDisplayAttribInQueryList(attrib.type)) {

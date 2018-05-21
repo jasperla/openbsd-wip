@@ -1,0 +1,24 @@
+$OpenBSD$
+Unbreak build.
+
+Index: test/test_va_api_get_create_config.cpp
+--- test/test_va_api_get_create_config.cpp.orig
++++ test/test_va_api_get_create_config.cpp
+@@ -91,7 +91,7 @@ TEST_P(VAAPIGetCreateConfig, CreateConfigWithAttribute
+                     bitfield |= mask;
+                     createConfig(profile, entrypoint,
+                         ConfigAttributes(
+-                            1, {type : attrib.type, value : mask }));
++                            1, {.type = attrib.type, .value = mask }));
+                     destroyConfig();
+                 } else {
+                     // unsupported value
+@@ -101,7 +101,7 @@ TEST_P(VAAPIGetCreateConfig, CreateConfigWithAttribute
+                           VA_STATUS_ERROR_INVALID_VALUE);
+                     createConfig(profile, entrypoint,
+                         ConfigAttributes(
+-                            1, {type : attrib.type, value : mask}),
++                            1, {.type = attrib.type, .value = mask }),
+                         expectation);
+                     destroyConfig(VA_STATUS_ERROR_INVALID_CONFIG);
+                 }

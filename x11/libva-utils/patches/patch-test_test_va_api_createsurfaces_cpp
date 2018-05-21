@@ -1,0 +1,15 @@
+$OpenBSD$
+Unbreak build.
+
+Index: test/test_va_api_createsurfaces.cpp
+--- test/test_va_api_createsurfaces.cpp.orig
++++ test/test_va_api_createsurfaces.cpp
+@@ -74,7 +74,7 @@ class VAAPISurfaceFixture (protected)
+                 for (const auto mask : masks) { // for all bitmasks
+                     if ((attrib.value & mask) == mask) { // supported value
+                         const ConfigAttributes attribs(
+-                            1, {type : attrib.type, value : mask });
++                            1, {.type = attrib.type, .value = mask });
+                         createConfig(profile, entrypoint, attribs);
+                         test(attribs);
+                         destroyConfig();

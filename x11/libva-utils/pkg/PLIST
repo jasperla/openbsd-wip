@@ -1,0 +1,12 @@
+@comment $OpenBSD$
+@bin bin/avcenc
+@bin bin/h264encode
+@bin bin/jpegenc
+@bin bin/loadjpeg
+@bin bin/mpeg2vaenc
+@bin bin/mpeg2vldemo
+@bin bin/putsurface
+@bin bin/test_va_api
+@bin bin/vainfo
+@bin bin/vavpp
+@bin bin/vp9enc

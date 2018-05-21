@@ -1,0 +1,15 @@
+$OpenBSD$
+Unbreak compilation of some VA_STATUS_ERROR_UNKNOWN users.
+
+Index: va/va.h
+--- va/va.h.orig
++++ va/va.h
+@@ -210,7 +210,7 @@ typedef int VAStatus;	/** Return status type from func
+ #define VA_STATUS_ERROR_HW_BUSY	                0x00000022
+ /** \brief An unsupported memory type was supplied. */
+ #define VA_STATUS_ERROR_UNSUPPORTED_MEMORY_TYPE 0x00000024
+-#define VA_STATUS_ERROR_UNKNOWN			0xFFFFFFFF
++#define VA_STATUS_ERROR_UNKNOWN			0xFFFFFFFFU
+ 
+ /** De-interlacing flags for vaPutSurface() */
+ #define VA_FRAME_PICTURE        0x00000000 

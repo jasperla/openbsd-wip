@@ -1,0 +1,38 @@
+$OpenBSD$
+Unbreak build.
+
+Index: test/i965_jpeg_encode_test.cpp
+--- test/i965_jpeg_encode_test.cpp.orig
++++ test/i965_jpeg_encode_test.cpp
+@@ -210,7 +210,7 @@ class JPEGEncodeInputTest (protected)
+     {
+         ASSERT_INVALID_ID(config);
+         ConfigAttribs attributes(
+-            1, {type:VAConfigAttribRTFormat, value:input->image->format});
++            1, {.type=VAConfigAttribRTFormat, .value=input->image->format});
+         config = createConfig(profile, entrypoint, attributes);
+     }
+ 
+@@ -312,7 +312,7 @@ class JPEGEncodeInputTest (protected)
+                 pd->format));;
+ 
+         ConfigAttribs attribs(
+-            1, {type:VAConfigAttribRTFormat, value:pd->format});
++            1, {.type=VAConfigAttribRTFormat, .value=pd->format});
+         ASSERT_NO_FAILURE(
+             VAConfigID oconfig = createConfig(
+                 ::JPEG::profile, ::JPEG::Decode::entrypoint, attribs));
+@@ -380,9 +380,11 @@ class JPEGEncodeInputTest (protected)
+         std::copy(std::begin(expect->bytes), std::end(expect->bytes),
+             std::begin(ebytes));
+ 
+-        EXPECT_TRUE(std::abs(ebytes - rbytes).max() <= 2);
++        std::valarray<int16_t> r = ebytes - rbytes;
++        // std::abs is broken in Clang
++        std::for_each(std::begin(r), std::begin(r), [](int16_t &n){n*=(n>0)-(n<0);});
++        EXPECT_TRUE(r.max() <= 2);
+         if (HasFailure()) {
+-            std::valarray<int16_t> r = std::abs(ebytes - rbytes);
+             for (size_t i(0); i < expect->planes; ++i) {
+                 std::valarray<int16_t> plane = r[expect->slices[i]];
+                 size_t mismatch = std::count_if(

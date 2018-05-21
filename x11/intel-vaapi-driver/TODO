@@ -1,0 +1,7 @@
+libva info: VA-API version 1.1.0
+libva info: va_getDriverName() returns 0
+libva info: Trying to open /usr/local/lib/dri/i965_drv_video.so
+libva info: Found init function __vaDriverInit_1_1
+libva error: /usr/local/lib/dri/i965_drv_video.so init failed
+libva info: va_openDriver() returns -1
+vaInitialize failed with error code -1 (unknown libva error),exit

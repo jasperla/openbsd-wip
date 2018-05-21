@@ -1,0 +1,18 @@
+$OpenBSD$
+Unbreak build.
+
+Index: va/va_backend.h
+--- va/va_backend.h.orig
++++ va/va_backend.h
+@@ -30,7 +30,11 @@
+ #define _VA_BACKEND_H_
+ 
+ #include <va/va.h>
++#ifdef __linux__
+ #include <linux/videodev2.h>
++#else
++#include <sys/videoio.h>
++#endif
+ 
+ typedef struct VADriverContext *VADriverContextP;
+ typedef struct VADisplayContext *VADisplayContextP;

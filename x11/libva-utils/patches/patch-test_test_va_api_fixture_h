@@ -1,0 +1,15 @@
+$OpenBSD$
+Unbreak tests.
+
+Index: test/test_va_api_fixture.h
+--- test/test_va_api_fixture.h.orig
++++ test/test_va_api_fixture.h
+@@ -102,7 +102,7 @@ class VAAPIFixture : public ::testing::Test { (protect
+ private:
+     char *m_restoreDriverName;
+     int m_drmHandle;
+-    const std::string drmDevicePaths[2];
++    const std::string drmDevicePaths[3];
+ 
+     VAConfigID m_configID;
+     VAContextID m_contextID;

@@ -1,0 +1,15 @@
+$OpenBSD$
+Unbreak build.
+
+Index: test/i965_jpeg_test_data.cpp
+--- test/i965_jpeg_test_data.cpp.orig
++++ test/i965_jpeg_test_data.cpp
+@@ -23,7 +23,7 @@
+  */
+ 
+ #include "i965_jpeg_test_data.h"
+-#include "i965_drv_video.h"
++#include "../src/i965_drv_video.h"
+ #include "i965_streamable.h"
+ #include "test_utils.h"
+ 

@@ -1,0 +1,15 @@
+$OpenBSD$
+Unbreak build.
+
+Index: test/test.h
+--- test/test.h.orig
++++ test/test.h
+@@ -147,7 +147,7 @@ class VaapiStatus (public)
+             status = "VA_STATUS_ERROR_HW_BUSY"; break;
+         case VA_STATUS_ERROR_UNSUPPORTED_MEMORY_TYPE:
+             status = "VA_STATUS_ERROR_UNSUPPORTED_MEMORY_TYPE"; break;
+-        case VA_STATUS_ERROR_UNKNOWN:
++        case (int)VA_STATUS_ERROR_UNKNOWN:
+             status = "VA_STATUS_ERROR_UNKNOWN"; break;
+         default:
+             status = "Unknown VAStatus";

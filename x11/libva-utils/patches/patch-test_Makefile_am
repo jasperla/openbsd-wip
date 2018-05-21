@@ -1,0 +1,15 @@
+$OpenBSD$
+Unbreak build.
+
+Index: test/Makefile.am
+--- test/Makefile.am.orig
++++ test/Makefile.am
+@@ -6,7 +6,7 @@ AM_CXXFLAGS =							\
+ 
+ AM_CPPFLAGS =							\
+ 	-DGTEST_HAS_PTHREAD=1					\
+-	-DGTEST_USE_OWN_TR1_TUPLE=0				\
++	-DGTEST_USE_OWN_TR1_TUPLE=1				\
+ 	-DGTEST_LANG_CXX11=1					\
+ 	-DGTEST_HAS_TR1_TUPLE=1					\
+ 	-DPTHREADS						\

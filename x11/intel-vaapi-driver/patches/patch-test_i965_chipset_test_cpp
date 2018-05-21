@@ -1,0 +1,15 @@
+$OpenBSD$
+Unbreak build.
+
+Index: test/i965_chipset_test.cpp
+--- test/i965_chipset_test.cpp.orig
++++ test/i965_chipset_test.cpp
+@@ -61,7 +61,7 @@ const std::vector<Chipset>& getChipsets()
+ #undef CHIPSET
+ #define CHIPSET(id, family, dev, desc) {id, #family, #dev, #desc},
+     static std::vector<Chipset> chipsets = {
+-#include "i965_pciids.h"
++#include "../src/i965_pciids.h"
+     };
+ #undef CHIPSET
+     return chipsets;

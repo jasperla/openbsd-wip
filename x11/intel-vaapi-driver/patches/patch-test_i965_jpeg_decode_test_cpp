@@ -1,0 +1,15 @@
+$OpenBSD$
+Unbreak build.
+
+Index: test/i965_jpeg_decode_test.cpp
+--- test/i965_jpeg_decode_test.cpp.orig
++++ test/i965_jpeg_decode_test.cpp
+@@ -183,7 +183,7 @@ TEST_P(FourCCTest, Decode)
+         return;
+     }
+ 
+-    VAConfigAttrib a = { type:VAConfigAttribRTFormat, value:pd->format };
++    VAConfigAttrib a = { .type = VAConfigAttribRTFormat, .value = pd->format };
+     ConfigAttribs attribs(1, a);
+ 
+     ASSERT_NO_FAILURE(

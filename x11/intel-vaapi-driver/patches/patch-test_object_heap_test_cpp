@@ -1,0 +1,38 @@
+$OpenBSD$
+Unbreak build.
+
+Index: test/object_heap_test.cpp
+--- test/object_heap_test.cpp.orig
++++ test/object_heap_test.cpp
+@@ -25,7 +25,7 @@
+ #include "test.h"
+ 
+ extern "C" {
+-    #include "object_heap.h"
++    #include "../src/object_heap.h"
+ }
+ 
+ #include <algorithm>
+@@ -42,14 +42,14 @@ TEST(ObjectHeapTest, Init)
+     };
+ 
+     struct object_heap heap = {
+-        object_size: -1,
+-        id_offset: -1,
+-        next_free: -1,
+-        heap_size: -1,
+-        heap_increment: -1,
+-        mutex: {},
+-        bucket: NULL,
+-        num_buckets: -1,
++        .object_size = -1,
++        .id_offset = -1,
++        .next_free = -1,
++        .heap_size = -1,
++        .heap_increment = -1,
++        .mutex = {},
++        .bucket = NULL,
++        .num_buckets = -1,
+     };
+ 
+     EXPECT_EQ(0, object_heap_init(&heap, sizeof(test_object), 0xffffffff));

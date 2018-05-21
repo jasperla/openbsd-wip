@@ -1,0 +1,19 @@
+$OpenBSD$
+Unbreak build.
+
+Index: test/i965_internal_decl.h
+--- test/i965_internal_decl.h.orig
++++ test/i965_internal_decl.h
+@@ -26,9 +26,9 @@
+ #define I965_INTERNAL_DECL_H
+ 
+ extern "C" {
+-    #include "sysdeps.h"
+-    #include "i965_drv_video.h"
+-    #include "i965_encoder.h"
++    #include "../src/sysdeps.h"
++    #include "../src/i965_drv_video.h"
++    #include "../src/i965_encoder.h"
+ 
+     extern VAStatus i965_CreateConfig(
+         VADriverContextP, VAProfile, VAEntrypoint,
