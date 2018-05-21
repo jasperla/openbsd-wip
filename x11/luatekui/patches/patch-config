@@ -1,0 +1,14 @@
+$OpenBSD$
+
+Index: config
+--- config.orig
++++ config
+@@ -133,7 +133,7 @@ LUAVER ?= 5.1
+ 
+ LUA_DIR = $(PREFIX)
+ LUA_INCDIR = $(LUA_DIR)/include
+-LUA_DEFS = -I$(LUA_INCDIR) -I/usr/include/lua$(LUAVER)
++LUA_DEFS = -I$(LUA_INCDIR) -I/usr/local/include/lua-$(LUAVER)
+ # some known paths in distributions and toolchains:
+ LUA_DEFS += -I/usr/local/include/lua51 -I/usr/include/lua5.1
+ 
