@@ -1,28 +1,18 @@
 $OpenBSD$
 
-parentheses were disambiguated as redundant parentheses around declaration of variable named '_literal' [-Werror,-Wvexing-parse]
-                u256(_literal);
-                    ^~~~~~~~~~
-/home/ports/obj/solidity-0.4.24/solidity_0.4.24/libsolidity/inlineasm/AsmParser.cpp:609:3: note: add enclosing parentheses to perform a function-style cast
-                u256(_literal);
-                ^
-                (             )
-/home/ports/obj/solidity-0.4.24/solidity_0.4.24/libsolidity/inlineasm/AsmParser.cpp:609:7: note: remove parentheses to silence this warning
-                u256(_literal);
-                    ^        ~
-
-/home/ports/obj/solidity-0.4.24/solidity_0.4.24/libsolidity/inlineasm/AsmParser.cpp:609:8: error: unused variable '_literal' [-Werror,-Wunused-variable]
-                u256(_literal);
+Backport https://github.com/ethereum/solidity/commit/1d3a37faff9a82a5269c3414a2d6fe868593afb1
 
 Index: libsolidity/inlineasm/AsmParser.cpp
 --- libsolidity/inlineasm/AsmParser.cpp.orig
 +++ libsolidity/inlineasm/AsmParser.cpp
-@@ -606,7 +606,7 @@ bool Parser::isValidNumberLiteral(string const& _liter
+@@ -606,7 +606,9 @@ bool Parser::isValidNumberLiteral(string const& _liter
  {
  	try
  	{
 -		u256(_literal);
-+		(u256(_literal));
++		// Try to convert _literal to u256.
++		auto tmp = u256(_literal);
++		(void) tmp;
  	}
  	catch (...)
  	{

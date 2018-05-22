@@ -20,6 +20,8 @@ MASTER_SITES =		https://github.com/ethereum/solidity/releases/download/v$V/
 
 MODULES =		devel/cmake
 
+BUILD_DEPENDS =		devel/boost
+
 NO_TEST =		Yes
 
 .include <bsd.port.mk>
