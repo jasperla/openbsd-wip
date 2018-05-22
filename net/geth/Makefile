@@ -18,9 +18,11 @@ MODULES =	lang/go
 MODGO_TYPE =	bin
 
 do-build:
-	cd ${WRKSRC} && make geth
+	cd ${WRKSRC} && make all
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/build/bin/geth ${PREFIX}/bin/
+	for b in abigen bootnode evm geth puppeth rlpdump swarm wnode ; do \
+		${INSTALL_PROGRAM} ${WRKSRC}/build/bin/$$b ${PREFIX}/bin/; \
+	done
 
 .include <bsd.port.mk>
