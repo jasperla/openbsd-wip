@@ -1,0 +1,28 @@
+$OpenBSD$
+
+parentheses were disambiguated as redundant parentheses around declaration of variable named '_literal' [-Werror,-Wvexing-parse]
+                u256(_literal);
+                    ^~~~~~~~~~
+/home/ports/obj/solidity-0.4.24/solidity_0.4.24/libsolidity/inlineasm/AsmParser.cpp:609:3: note: add enclosing parentheses to perform a function-style cast
+                u256(_literal);
+                ^
+                (             )
+/home/ports/obj/solidity-0.4.24/solidity_0.4.24/libsolidity/inlineasm/AsmParser.cpp:609:7: note: remove parentheses to silence this warning
+                u256(_literal);
+                    ^        ~
+
+/home/ports/obj/solidity-0.4.24/solidity_0.4.24/libsolidity/inlineasm/AsmParser.cpp:609:8: error: unused variable '_literal' [-Werror,-Wunused-variable]
+                u256(_literal);
+
+Index: libsolidity/inlineasm/AsmParser.cpp
+--- libsolidity/inlineasm/AsmParser.cpp.orig
++++ libsolidity/inlineasm/AsmParser.cpp
+@@ -606,7 +606,7 @@ bool Parser::isValidNumberLiteral(string const& _liter
+ {
+ 	try
+ 	{
+-		u256(_literal);
++		(u256(_literal));
+ 	}
+ 	catch (...)
+ 	{
