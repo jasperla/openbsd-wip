@@ -5,7 +5,7 @@ COMMENT=		Scientific PYthon Development EnviRonment
 MODPY_EGG_VERSION=	3.2.8
 DISTNAME=		spyder-${MODPY_EGG_VERSION}
 
-CATEGORIES=		devel
+CATEGORIES=		devel editors
 
 HOMEPAGE=		https://github.com/spyder-ide/spyder
 
@@ -20,13 +20,13 @@ MODPY_PI=		Yes
 MODPY_SETUPTOOLS=	Yes
 
 BUILD_DEPENDS+=	textproc/py-sphinx${MODPY_FLAVOR}
-RUN_DEPENDS+=	devel/py-cloudpickle${MODPY_FLAVOR} \
+RUN_DEPENDS+=	devel/desktop-file-utils \
+		devel/py-cloudpickle${MODPY_FLAVOR} \
 		databases/py-pickleshare${MODPY_FLAVOR} \
 		devel/pyflakes${MODPY_FLAVOR} \
 		textproc/py-pygments${MODPY_FLAVOR}>=2.0 \
 		shells/py-qtconsole${MODPY_FLAVOR}>=4.2.0 \
 		devel/py-nbconvert${MODPY_FLAVOR} \
-		textproc/py-sphinx${MODPY_FLAVOR} \
 		devel/py-codestyle${MODPY_FLAVOR} \
 		sysutils/py-psutil${MODPY_FLAVOR} \
 		net/py-zmq${MODPY_FLAVOR} \
@@ -50,4 +50,10 @@ MAJOR_VERSION=
 
 SUBST_VARS+=	MAJOR_VERSION
 
+NO_TEST =	Yes
+
+post-install:
+	mv ${WRKINST}${MODPY_SITEPKG}/spyder/doc ${PREFIX}/share/doc/spyder
+
 .include <bsd.port.mk>
+
