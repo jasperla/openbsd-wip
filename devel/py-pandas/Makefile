@@ -17,7 +17,7 @@ MODULES=		lang/python
 MODPY_PI =              Yes
 MODPY_SETUPTOOLS=       Yes
 
-WANTLIB+=		${COMPILER_LIBCXX} m python2.7
+WANTLIB+=		${COMPILER_LIBCXX} m ${MODPY_WANTLIB}
 BUILD_DEPENDS+=		math/py-numpy${MODPY_FLAVOR}
 RUN_DEPENDS+=		math/py-numpy${MODPY_FLAVOR}>=1.9.0 \
 			devel/py-dateutil${MODPY_FLAVOR}>=2.5.0 \
