@@ -1,0 +1,23 @@
+$OpenBSD$
+
+Index: spyder/widgets/variableexplorer/tests/test_dataframeeditor.py
+--- spyder/widgets/variableexplorer/tests/test_dataframeeditor.py.orig
++++ spyder/widgets/variableexplorer/tests/test_dataframeeditor.py
+@@ -297,7 +297,7 @@ def test_dataframemodel_set_data_overflow(monkeypatch)
+     monkeypatch.setattr(attr_to_patch, MockQMessageBox)
+ 
+     # Numpy doesn't raise the OverflowError for ints smaller than 64 bits
+-    if platform.startswith('linux'):
++    if platform.startswith(('linux', 'openbsd')):
+         int32_bit_exponent = 66
+     else:
+         int32_bit_exponent = 34
+@@ -329,7 +329,7 @@ def test_dataframeeditor_edit_overflow(qtbot, monkeypa
+     monkeypatch.setattr(attr_to_patch, MockQMessageBox)
+ 
+     # Numpy doesn't raise the OverflowError for ints smaller than 64 bits
+-    if platform.startswith('linux'):
++    if platform.startswith(('linux', 'openbsd')):
+         int32_bit_exponent = 66
+     else:
+         int32_bit_exponent = 34
