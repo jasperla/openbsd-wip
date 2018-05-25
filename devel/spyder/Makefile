@@ -1,21 +1,16 @@
 # $OpenBSD: Makefile,v 1.4 2017/04/22 21:57:42 shadchin Exp $
 
-COMMENT-main=		Scientific PYthon Development EnviRonment
-COMMENT-docs=		Documentation for Spyder-IDE
+COMMENT=		Scientific PYthon Development EnviRonment
 
 MODPY_EGG_VERSION=	3.2.8
 DISTNAME=		spyder-${MODPY_EGG_VERSION}
-PKGNAME-main=		spyder-${MODPY_EGG_VERSION}
-PKGNAME-docs=		spyder-docs-${MODPY_EGG_VERSION}
+
 CATEGORIES=		devel editors
 
 HOMEPAGE=		https://github.com/spyder-ide/spyder
 
 # MIT
 PERMIT_PACKAGE_CDROM=	Yes
-
-MULTI_PACKAGES=		-main -docs
-SEPARATE_BUILD=		No
 
 MODULES=		lang/python
 FLAVORS=		python3
@@ -25,7 +20,7 @@ MODPY_PI=		Yes
 MODPY_SETUPTOOLS=	Yes
 
 BUILD_DEPENDS+=	textproc/py-sphinx${MODPY_FLAVOR}
-RUN_DEPENDS-main+=	devel/desktop-file-utils \
+RUN_DEPENDS+=	devel/desktop-file-utils \
 		devel/py-cloudpickle${MODPY_FLAVOR} \
 		databases/py-pickleshare${MODPY_FLAVOR} \
 		devel/pyflakes${MODPY_FLAVOR} \
@@ -48,7 +43,7 @@ RUN_DEPENDS-main+=	devel/desktop-file-utils \
 
 .if ${FLAVOR:Mpython3}
 MAJOR_VERSION=	3
-PKGNAME-main=	spyder3-${MODPY_EGG_VERSION}
+PKGNAME=	spyder3-${MODPY_EGG_VERSION}
 .else
 MAJOR_VERSION=
 .endif
@@ -58,7 +53,6 @@ SUBST_VARS+=	MAJOR_VERSION
 NO_TEST =	Yes
 
 post-install:
-	mv ${WRKINST}${MODPY_SITEPKG}/spyder/doc ${PREFIX}/share/doc/spyder
+	mv ${WRKINST}${MODPY_SITEPKG}/spyder/doc ${PREFIX}/share/doc/spyder${MAJOR_VERSION}
 
 .include <bsd.port.mk>
-
