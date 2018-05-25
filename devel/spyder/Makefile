@@ -51,13 +51,13 @@ MAJOR_VERSION=
 SUBST_VARS+=	MAJOR_VERSION
 
 #TEST_DEPENDS+=	devel/py-test${MODPY_FLAVOR} \
-##		devel/py-test-qt${MODPY_FLAVOR} \
+#		devel/py-test-qt${MODPY_FLAVOR} \
 #		devel/py-test-mock${MODPY_FLAVOR} \
 #		devel/py-test-cov${MODPY_FLAVOR} \
-##		devel/py-test-xvfb${MODPY_FLAVOR} \
-##		devel/py-test-timeout${MODPY_FLAVOR} \
+#		devel/py-test-xvfb${MODPY_FLAVOR} \
+#		devel/py-test-timeout${MODPY_FLAVOR} \
 #		devel/py-mock${MODPY_FLAVOR} \
-##		devel/py-flaky${MODPY_FLAVOR} \
+#		devel/py-flaky${MODPY_FLAVOR} \
 #		devel/py-pandas${MODPY_FLAVOR} \
 #		math/py-scipy${MODPY_FLAVOR} \
 #		math/py-sympy${MODPY_FLAVOR} \
