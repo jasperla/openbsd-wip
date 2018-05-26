@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v$
+lib/libnxt.a
+lib/python${MODPY_VERSION}.unit.so
+@bin sbin/unitd

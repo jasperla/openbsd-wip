@@ -1,1 +1,2 @@
 @comment $OpenBSD: PLIST,v$
+lib/perl.unit.so
