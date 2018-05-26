@@ -26,10 +26,26 @@ RUN_DEPENDS+=		math/py-numpy${MODPY_FLAVOR}>=1.9.0 \
 FLAVORS=                python3
 FLAVOR?=
 
-TEST_DEPENDS=		${RUN_DEPENDS} \
+.if !${FLAVOR:Mpython3}
+TEST_DEPENDS+=		databases/py-mysql${MODPY_FLAVOR} \
+			databases/py-sqlalchemy${MODPY_FLAVOR}
+.endif
+
+TEST_DEPENDS+=		${RUN_DEPENDS} \
 			devel/py-test${MODPY_FLAVOR} \
 			math/py-scipy${MODPY_FLAVOR} \
-			math/py-numexpr${MODPY_FLAVOR}
+			devel/py-xlsxwriter${MODPY_FLAVOR} \
+			www/py-beautifulsoup4${MODPY_FLAVOR} \
+			textproc/py-lxml${MODPY_FLAVOR} \
+			databases/py-psycopg2${MODPY_FLAVOR} \
+			graphics/py-matplotlib${MODPY_FLAVOR} \
+			math/py-bottleneck${MODPY_FLAVOR} \
+			www/py-jinja2${MODPY_FLAVOR} \
+			devel/py-html5lib${MODPY_FLAVOR} \
+			devel/ipython${MODPY_FLAVOR} \
+			devel/py-pathlib${MODPY_FLAVOR} \
+			math/py-numexpr${MODPY_FLAVOR} \
+			net/py-boto3${MODPY_FLAVOR}
 FAKE_TEST_DIR=		${WRKINST}${MODPY_SITEPKG}/pandas
 do-test:
 	cd ${WRKSRC} & ${MODPY_BIN} -m pytest ${FAKE_TEST_DIR}
