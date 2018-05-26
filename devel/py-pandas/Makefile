@@ -48,7 +48,7 @@ TEST_DEPENDS+=		${RUN_DEPENDS} \
 			net/py-boto3${MODPY_FLAVOR}
 FAKE_TEST_DIR=		${WRKINST}${MODPY_SITEPKG}/pandas
 do-test:
-	cd ${WRKSRC} & ${MODPY_BIN} -m pytest ${FAKE_TEST_DIR}
+	cd ${WRKSRC} && ${MODPY_BIN} -m pytest ${FAKE_TEST_DIR}
 
 
 .include <bsd.port.mk>
