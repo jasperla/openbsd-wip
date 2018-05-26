@@ -11,17 +11,7 @@ HOMEPAGE =			https://unit.nginx.org/
 
 PERMIT_PACKAGE_CDROM =	Yes
 
-# "make port-lib-depends-check" can help
-#WANTLIB =		???
-
 MASTER_SITES =		https://unit.nginx.org/download/
-
-#LIB_DEPENDS =		???
-
-#MAKE_FLAGS =		???
-#MAKE_ENV =		???
-#FAKE_FLAGS =		???
-#TEST_FLAGS =		???
 
 FLAVORS =			perl go python ruby
 FLAVOR ?=
@@ -48,15 +38,5 @@ post-configure:
 .endif
 
 NO_TEST =		Yes
-
-# Overrides for default values
-#
-#CFLAGS =		???
-#LDFLAGS =		???
-#PKG_ARCH =		??? (* for arch-independent packages)
-#WRKDIST =		??? if other than ${WRKDIR}/${DISTNAME}
-#WRKSRC =		??? if other than ${WRKDIST}
-#WRKBUILD =		??? if other than ${WRKSRC}
-#WRKCONF =		??? if other than ${WRKBUILD}
 
 .include <bsd.port.mk>
