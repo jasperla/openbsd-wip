@@ -18,17 +18,16 @@ MODPY_PI =              Yes
 MODPY_SETUPTOOLS=       Yes
 
 WANTLIB+=		${COMPILER_LIBCXX} m ${MODPY_WANTLIB}
-BUILD_DEPENDS+=		math/py-numpy${MODPY_FLAVOR}
+BUILD_DEPENDS+=		math/py-numpy${MODPY_FLAVOR}>=1.9.0
 RUN_DEPENDS+=		math/py-numpy${MODPY_FLAVOR}>=1.9.0 \
 			devel/py-dateutil${MODPY_FLAVOR}>=2.5.0 \
 			devel/py-tz${MODPY_FLAVOR}
 
-FLAVORS=                python3
+FLAVORS=                python3 test
 FLAVOR?=
 
 .if !${FLAVOR:Mpython3}
-TEST_DEPENDS+=		databases/py-mysql${MODPY_FLAVOR} \
-			databases/py-sqlalchemy${MODPY_FLAVOR}
+TEST_DEPENDS+=		databases/py-mysql${MODPY_FLAVOR}
 .endif
 
 TEST_DEPENDS+=		${RUN_DEPENDS} \
@@ -38,17 +37,19 @@ TEST_DEPENDS+=		${RUN_DEPENDS} \
 			www/py-beautifulsoup4${MODPY_FLAVOR} \
 			textproc/py-lxml${MODPY_FLAVOR} \
 			databases/py-psycopg2${MODPY_FLAVOR} \
+			databases/py-sqlalchemy${MODPY_FLAVOR} \
 			graphics/py-matplotlib${MODPY_FLAVOR} \
 			math/py-bottleneck${MODPY_FLAVOR} \
 			www/py-jinja2${MODPY_FLAVOR} \
 			devel/py-html5lib${MODPY_FLAVOR} \
 			devel/ipython${MODPY_FLAVOR} \
+			devel/py-ipykernel${MODPY_FLAVOR} \
 			devel/py-pathlib${MODPY_FLAVOR} \
 			math/py-numexpr${MODPY_FLAVOR} \
 			net/py-boto3${MODPY_FLAVOR}
+
 FAKE_TEST_DIR=		${WRKINST}${MODPY_SITEPKG}/pandas
 do-test:
-	cd ${WRKSRC} && ${MODPY_BIN} -m pytest ${FAKE_TEST_DIR}
-
+cd ${WRKSRC} && ${MODPY_BIN} -m pytest ${FAKE_TEST_DIR}
 
 .include <bsd.port.mk>
