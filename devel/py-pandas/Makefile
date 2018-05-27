@@ -10,7 +10,7 @@ CATEGORIES=		devel
 
 HOMEPAGE=		https://github.com/pandas-dev/pandas/
 
-# GPLv2
+# BSD 3-Clause
 PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=		lang/python
