@@ -23,7 +23,7 @@ RUN_DEPENDS+=		math/py-numpy${MODPY_FLAVOR}>=1.9.0 \
 			devel/py-dateutil${MODPY_FLAVOR}>=2.5.0 \
 			devel/py-tz${MODPY_FLAVOR}
 
-FLAVORS=                python3 test
+FLAVORS=                python3
 FLAVOR?=
 
 .if !${FLAVOR:Mpython3}
@@ -50,6 +50,6 @@ TEST_DEPENDS+=		${RUN_DEPENDS} \
 
 FAKE_TEST_DIR=		${WRKINST}${MODPY_SITEPKG}/pandas
 do-test:
-cd ${WRKSRC} && ${MODPY_BIN} -m pytest ${FAKE_TEST_DIR}
+	cd ${WRKSRC} && ${MODPY_BIN} -m pytest ${FAKE_TEST_DIR}
 
 .include <bsd.port.mk>
