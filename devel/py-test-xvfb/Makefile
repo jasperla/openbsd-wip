@@ -22,7 +22,8 @@ MODPY_SETUPTOOLS =	Yes
 FLAVORS =		python3
 FLAVOR ?=
 
-TEST_DEPENDS+=		${RUN_DEPENDS}
+TEST_DEPENDS+=		${RUN_DEPENDS} \
+			devel/py-test-xvfb${MODPY_FLAVOR}
 do-test:
 	@cd ${WRKSRC} && ${MODPY_BIN} -m pytest
 
