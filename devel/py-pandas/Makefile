@@ -46,10 +46,10 @@ TEST_DEPENDS+=		${RUN_DEPENDS} \
 			devel/py-ipykernel${MODPY_FLAVOR} \
 			devel/py-pathlib${MODPY_FLAVOR} \
 			math/py-numexpr${MODPY_FLAVOR} \
-			net/py-boto3${MODPY_FLAVOR}
+			net/py-boto3${MODPY_FLAVOR} \
+			devel/py-pandas${MODPY_FLAVOR}
 
-FAKE_TEST_DIR=		${WRKINST}${MODPY_SITEPKG}/pandas
 do-test:
-	cd ${WRKSRC} && ${MODPY_BIN} -m pytest ${FAKE_TEST_DIR}
+	cd ${WRKSRC} && ${MODPY_BIN} -m pytest ${MODPY_SITEPKG}/pandas
 
 .include <bsd.port.mk>
