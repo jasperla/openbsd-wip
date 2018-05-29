@@ -24,7 +24,8 @@ FLAVORS =		python3
 FLAVOR ?=
 
 TEST_DEPENDS+=		devel/py-test${MODPY_FLAVOR} \
-			x11/py-qt5${MODPY_FLAVOR}
+			x11/py-qt5${MODPY_FLAVOR} \
+			devel/py-test-qt${MODPY_FLAVOR}
 do-test:
 	@cd ${WRKSRC} && ${MODPY_BIN} -m pytest
 
