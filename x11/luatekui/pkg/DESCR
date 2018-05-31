@@ -1,17 +1,17 @@
- TekUI is a small, freestanding and portable graphical user interface (GUI) 
-toolkit written in Lua and C. It was initially developed for the X Window 
-System and has been ported to Linux framebuffer, raw framebuffer, DirectFB, 
-Windows, and other displays since. A VNC server option is available that allows 
+ TekUI is a small, freestanding and portable graphical user interface (GUI)
+toolkit written in Lua and C. It was initially developed for the X Window
+System and has been ported to Linux framebuffer, raw framebuffer, DirectFB,
+Windows, and other displays since. A VNC server option is available that allows
 the remote control of tekUI applications.
 
-Its main focus is the rapid development of custom-made applications with a 
-custom appearance, such as for embedded devices with a display controller (see 
-also fitness for the use in embedded systems). In the long term, it is intended 
-to feature a class library supporting regular, general-purpose desktop and 
+Its main focus is the rapid development of custom-made applications with a
+custom appearance, such as for embedded devices with a display controller (see
+also fitness for the use in embedded systems). In the long term, it is intended
+to feature a class library supporting regular, general-purpose desktop and
 mobile applications.
 
-Being mostly written in the Lua scripting language and using a simple 
-inheritance scheme and class library, tekUI is easily extensible with new user 
-interface elements. New controls can be written (or prototyped) in Lua and 
-ported to C later. The creation of new styles and themes and fitting the 
-software to a new device are equally simple. 
+Being mostly written in the Lua scripting language and using a simple
+inheritance scheme and class library, tekUI is easily extensible with new user
+interface elements. New controls can be written (or prototyped) in Lua and
+ported to C later. The creation of new styles and themes and fitting the
+software to a new device are equally simple.
