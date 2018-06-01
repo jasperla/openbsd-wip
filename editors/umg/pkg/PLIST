@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v$
+@bin bin/umg
+@man man/man1/umg.1
+share/doc/mg/
+share/doc/mg/tutorial
