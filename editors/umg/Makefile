@@ -1,10 +1,10 @@
 COMMENT =	mg(1)'s fork modified to add UTF-8 support
 
-DISTNAME =	umg-20180530
+DISTNAME =	umg-20180601
 
 GH_ACCOUNT =	hboetes
 GH_PROJECT =	mg
-GH_COMMIT =	9487105ac4c70959e04612dc855ce1e5615298a5
+GH_COMMIT =	cdf641e141acfc1786cf717a568bf1325f4e10ec
 
 CATEGORIES =	editors
 
