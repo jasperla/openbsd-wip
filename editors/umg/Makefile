@@ -8,6 +8,8 @@ GH_COMMIT =	9487105ac4c70959e04612dc855ce1e5615298a5
 
 CATEGORIES =	editors
 
+HOMEPAGE =	https://github.com/hboetes/mg/tree/display-wide-characters
+
 MAINTAINER =		Leonid Bobrov <mazocomp@disroot.org>
 
 # Public Domain
