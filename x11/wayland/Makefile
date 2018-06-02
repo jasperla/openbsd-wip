@@ -19,7 +19,8 @@ WANTLIB =		c expat ffi iconv lzma m pthread xml2 z
 MASTER_SITES =		http://wayland.freedesktop.org/releases/
 EXTRACT_SUFX =		.tar.xz
 
-BUILD_DEPENDS =		math/graphviz \
+BUILD_DEPENDS =		devel/doxygen \
+			math/graphviz \
 			textproc/xmlto
 LIB_DEPENDS =		archivers/xz \
 			devel/libffi \
