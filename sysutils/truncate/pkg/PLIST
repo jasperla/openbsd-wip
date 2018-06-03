@@ -1,3 +1,0 @@
-@comment $OpenBSD: PLIST,v$
-@bin bin/truncate
-@man man/man1/truncate.1
