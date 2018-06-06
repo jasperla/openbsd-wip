@@ -14,6 +14,7 @@ MAINTAINER =	Aaron Bieber <abieber@openbsd.org>
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
 
+# uses pledge()
 WANTLIB += c pthread
 
 MASTER_SITES =	https://deftly.net/
