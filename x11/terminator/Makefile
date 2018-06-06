@@ -16,17 +16,16 @@ MASTER_SITES =		http://launchpad.net/terminator/gtk3/${MODPY_EGG_VERSION}/+downl
 
 MODULES =		lang/python \
 			textproc/intltool
-RUN_DEPENDS =		devel/vte,-python \
-			devel/vte3 \
-			devel/py-notify \
-			sysutils/py-psutil \
-			devel/desktop-file-utils \
-			devel/py-gobject3 \
-			x11/gtk+3,-guic \
-			x11/keybinder3 \
-			x11/keybinder,-python
 
-NO_TEST =		Yes
+RUN_DEPENDS =		devel/desktop-file-utils \
+			devel/gsettings-desktop-schemas \
+			devel/py-gobject3 \
+			devel/py-notify \
+			devel/vte3 \
+			sysutils/py-psutil \
+			x11/gtk+3,-guic \
+			x11/gtk+3 \
+			x11/keybinder3
 
 MODPY_SETUPTOOLS =	Yes
 MODPY_SETUP_ARGS =	--without-icon-cache
