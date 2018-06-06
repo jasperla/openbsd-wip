@@ -2,8 +2,7 @@
 
 COMMENT =	command-line fuzzy finder
 
-V =		0.17.3
-DISTNAME =	fzf-${V}
+DISTNAME =	fzf-0.17.3
 
 CATEGORIES =	sysutils
 
