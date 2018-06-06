@@ -23,7 +23,7 @@ MODULES =	lang/go
 MODGO_TYPE =	bin
 
 do-build:
-	cd ${WRKSRC} && ${MODGO_CMD} build
+	cd ${WRKSRC} && ${MODGO_CMD} build -x
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/fzf* ${PREFIX}/bin
