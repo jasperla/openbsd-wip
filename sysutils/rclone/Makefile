@@ -19,6 +19,8 @@ MASTER_SITES =  https://github.com/ncw/rclone/releases/download/v${V}/
 MODULES =	lang/go
 MODGO_TYPE =	bin
 
+ALL_TARGET =	github.com/ncw/rclone
+
 do-install:
 	${INSTALL_PROGRAM} ${MODGO_WORKSPACE}/bin/rclone ${PREFIX}/bin/
 	${INSTALL_MAN} ${WRKSRC}/rclone.1 ${PREFIX}/man/man1
