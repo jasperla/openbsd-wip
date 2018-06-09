@@ -76,3 +76,5 @@ lang/o					ready to import (needs a MAINTAINER! how about you?)
 lang/arcadia				ready to import (needs a MAINTAINER! how about you?)
 lang/lacc				ready to import (bcallah)
 lang/marst				ready to import (bcallah)
+devel/py-progressbar2			sent to ports@ 2018-06-04
+devel/py-python_utils			sent to ports@ 2018-06-04
