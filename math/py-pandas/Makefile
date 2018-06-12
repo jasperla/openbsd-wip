@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2018/04/26 20:29:26 danj Exp $
+# $OpenBSD$
 
 COMMENT=		data analysis and manipulation library
 
@@ -8,7 +8,7 @@ PKGNAME=                py-${DISTNAME}
 
 CATEGORIES=		math
 
-HOMEPAGE=		https://github.com/pandas-dev/pandas/
+HOMEPAGE=		http://pandas.pydata.org/
 
 # BSD 3-Clause
 PERMIT_PACKAGE_CDROM=	Yes
@@ -49,7 +49,9 @@ TEST_DEPENDS+=		${RUN_DEPENDS} \
 			www/py-jinja2${MODPY_FLAVOR} \
 			x11/xclip
 
+#			textproc/py-xlrd${MODPY_FLAVOR}
 #			math/py-statsmodels${MODPY_FLAVOR}
+
 #NO py3-mysql for now... disabled test for python3 FLAVOR
 .if !${FLAVOR:Mpython3}
 TEST_DEPENDS+=		databases/py-mysql${MODPY_FLAVOR}
