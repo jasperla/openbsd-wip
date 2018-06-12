@@ -1,74 +1,66 @@
-# $OpenBSD: Makefile.template,v 1.71 2014/07/10 12:33:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2018/04/26 20:29:26 danj Exp $
 
-COMMENT =		high-performance, easy-to-use data analysis for Python
+COMMENT=		data analysis and manipulation library
 
-MODPY_EGG_VERSION =	0.20.1
-DISTNAME =		pandas-${MODPY_EGG_VERSION}
-PKGNAME =		py-pandas-${MODPY_EGG_VERSION}
+MODPY_EGG_VERSION=	0.23.0
+DISTNAME=		pandas-${MODPY_EGG_VERSION}
+PKGNAME=                py-${DISTNAME}
 
-CATEGORIES =		math graphics
+CATEGORIES=		math
 
-HOMEPAGE =		http://pandas.pydata.org/
+HOMEPAGE=		https://github.com/pandas-dev/pandas/
 
-MAINTAINER =		Alexandr Shadchin <shadchin@openbsd.org>
+# BSD 3-Clause
+PERMIT_PACKAGE_CDROM=	Yes
 
-# BSD
-PERMIT_PACKAGE_CDROM =	Yes
+FLAVORS=                python3 test
+FLAVOR?=
 
-WANTLIB +=		m pthread ${MODPY_WANTLIB} ${LIBCXX}
+MODULES=		lang/python
+MODPY_PI =              Yes
+MODPY_SETUPTOOLS=       Yes
 
-MODULES =		lang/python
+WANTLIB+=		${COMPILER_LIBCXX} m ${MODPY_WANTLIB}
 
-MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
+BUILD_DEPENDS+=		math/py-numpy${MODPY_FLAVOR}>=1.9.0
 
-FLAVORS =		python3
-FLAVOR ?=
+RUN_DEPENDS+=		math/py-numpy${MODPY_FLAVOR}>=1.9.0 \
+			devel/py-dateutil${MODPY_FLAVOR}>=2.5.0 \
+			devel/py-tz${MODPY_FLAVOR}
 
-# These are optional runtime dependencies that should be around for
-# building the docs and running the tests.
-OPTIONAL_DEPENDS =	devel/ipython${MODPY_FLAVOR} \
+.if ${FLAVOR:Mtest}
+TEST_DEPENDS+=		${RUN_DEPENDS} \
+			databases/py-psycopg2${MODPY_FLAVOR} \
+			databases/py-sqlalchemy${MODPY_FLAVOR} \
+			devel/ipython${MODPY_FLAVOR} \
 			devel/py-html5lib${MODPY_FLAVOR} \
+			devel/py-ipykernel${MODPY_FLAVOR} \
+			devel/py-pathlib${MODPY_FLAVOR} \
+			devel/py-test${MODPY_FLAVOR} \
 			devel/py-xlsxwriter${MODPY_FLAVOR} \
 			graphics/py-matplotlib${MODPY_FLAVOR} \
 			math/py-bottleneck${MODPY_FLAVOR} \
 			math/py-numexpr${MODPY_FLAVOR} \
-			math/py-statsmodels${MODPY_FLAVOR} \
+			math/py-scipy${MODPY_FLAVOR} \
 			net/py-boto${MODPY_FLAVOR} \
 			textproc/py-lxml${MODPY_FLAVOR} \
 			www/py-beautifulsoup4${MODPY_FLAVOR} \
 			www/py-httplib2${MODPY_FLAVOR} \
+			www/py-jinja2${MODPY_FLAVOR} \
 			x11/xclip
 
-BUILD_DEPENDS =		${RUN_DEPENDS}
+#			math/py-statsmodels${MODPY_FLAVOR}
+#NO py3-mysql for now... disabled test for python3 FLAVOR
+.if !${FLAVOR:Mpython3}
+TEST_DEPENDS+=		databases/py-mysql${MODPY_FLAVOR}
+.endif
 
-RUN_DEPENDS =		devel/py-dateutil${MODPY_FLAVOR} \
-			devel/py-tz${MODPY_FLAVOR} \
-			math/py-numpy${MODPY_FLAVOR}
+do-build:
+	cd ${WRKSRC} && ${MODPY_CMD} build_ext --inplace
 
-TEST_DEPENDS =		${RUN_DEPENDS} \
-			devel/py-nose${MODPY_FLAVOR} \
-			${OPTIONAL_DEPENDS}
+do-test:
+	cd ${WRKSRC} && env TZ=UTC ${MODPY_BIN} -m pytest pandas
 
-PORTHOME =		${WRKSRC}
-
-pre-test:
-	@${MODPY_CMD} build_ext --inplace
-
-
-# http://pandas.pydata.org/pandas-docs/stable/install.html
-#
-# "Note that you will not be able to import pandas if you open an
-# interpreter in the source directory unless you build the C extensions in
-# place"
-#
-# Building docs will fail if we don't do this.
-#post-build:
-#	cd ${WRKBUILD} && ${MODPY_CMD} build_ext --inplace
-#	cd ${WRKBUILD}/doc && ${MODPY_BIN} make.py
-
-#post-install:
-#	cp -r ${WRKBUILD}/doc/build/html ${PREFIX}/share/doc/${MODPY_PY_PREFIX}pandas
-#	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/doc/${MODPY_PY_PREFIX}pandas
+.endif
 
 .include <bsd.port.mk>
