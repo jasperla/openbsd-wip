@@ -21,7 +21,7 @@ MODPY_SETUPTOOLS =	Yes
 FLAVORS =		python3
 FLAVOR ?=
 
-RUN_DEPENDS+=		www/py-jinja2${MODPY_FLAVOR} \
+RUN_DEPENDS +=		www/py-jinja2${MODPY_FLAVOR} \
 			devel/py-nbconvert${MODPY_FLAVOR} \
 			devel/py-traitlets${MODPY_FLAVOR} \
 			devel/py-nbformat${MODPY_FLAVOR} \

@@ -1,5 +1,5 @@
 @comment $OpenBSD: PLIST,v$
-bin/runxlrd${PY_MAJOR}.py
+bin/runxlrd${MODPY_BIN_SUFFIX}
 lib/python${MODPY_VERSION}/site-packages/xlrd/
 lib/python${MODPY_VERSION}/site-packages/xlrd-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/xlrd-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
