@@ -1,27 +1,27 @@
 # $OpenBSD$
 
-COMMENT=		Scientific PYthon Development EnviRonment
+COMMENT =		Scientific PYthon Development EnviRonment
 
-MODPY_EGG_VERSION=	3.2.8
-DISTNAME=		spyder-${MODPY_EGG_VERSION}
+MODPY_EGG_VERSION =	3.2.8
+DISTNAME =		spyder-${MODPY_EGG_VERSION}
 
-CATEGORIES=		devel editors
+CATEGORIES =		devel editors
 
-HOMEPAGE=		https://github.com/spyder-ide/spyder
+HOMEPAGE =		https://github.com/spyder-ide/spyder
 
 # MIT
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_CDROM =	Yes
 
-MODULES=		lang/python
-FLAVORS=		python3
-FLAVOR?=
+MODULES =		lang/python
+FLAVORS =		python3
+FLAVOR ?=
 
-MODPY_PI=		Yes
-MODPY_SETUPTOOLS=	Yes
+MODPY_PI =		Yes
+MODPY_SETUPTOOLS =	Yes
 
-BUILD_DEPENDS+=	textproc/py-sphinx${MODPY_FLAVOR}
+BUILD_DEPENDS +=	textproc/py-sphinx${MODPY_FLAVOR}
 
-RUN_DEPENDS+=	databases/py-pickleshare${MODPY_FLAVOR} \
+RUN_DEPENDS +=	databases/py-pickleshare${MODPY_FLAVOR} \
 		devel/desktop-file-utils \
 		devel/py-cloudpickle${MODPY_FLAVOR} \
 		devel/py-codestyle${MODPY_FLAVOR} \
@@ -43,30 +43,31 @@ RUN_DEPENDS+=	databases/py-pickleshare${MODPY_FLAVOR} \
 
 
 .if ${FLAVOR:Mpython3}
-MAJOR_VERSION=	3
-PKGNAME=	spyder3-${MODPY_EGG_VERSION}
+MAJOR_VERSION =	3
+PKGNAME =	spyder3-${MODPY_EGG_VERSION}
 .else
-MAJOR_VERSION=
+MAJOR_VERSION =
 .endif
 
-SUBST_VARS+=	MAJOR_VERSION
+SUBST_VARS +=	MAJOR_VERSION
 
-#TEST_DEPENDS+=	devel/py-test${MODPY_FLAVOR} \
-#		devel/py-test-qt${MODPY_FLAVOR} \
-#		devel/py-test-mock${MODPY_FLAVOR} \
-#		devel/py-test-cov${MODPY_FLAVOR} \
-#		devel/py-test-xvfb${MODPY_FLAVOR} \
-#		devel/py-test-timeout${MODPY_FLAVOR} \
-#		devel/py-flaky${MODPY_FLAVOR} \
-#		devel/py-mock${MODPY_FLAVOR} \
-#		devel/py-pandas${MODPY_FLAVOR} \
-#		graphics/py-Pillow${MODPY_FLAVOR} \
-#		graphics/py-matplotlib${MODPY_FLAVOR} \
-#		lang/cython${MODPY_FLAVOR} \
-#		math/py-scipy${MODPY_FLAVOR} \
-#		math/py-sympy${MODPY_FLAVOR}
+#TEST_DEPENDS +=	devel/py-test${MODPY_FLAVOR} \
+#			devel/py-test-qt${MODPY_FLAVOR} \
+#			devel/py-test-mock${MODPY_FLAVOR} \
+#			devel/py-test-cov${MODPY_FLAVOR} \
+#			devel/py-test-xvfb${MODPY_FLAVOR} \
+#			devel/py-test-timeout${MODPY_FLAVOR} \
+#			devel/py-flaky${MODPY_FLAVOR} \
+#			devel/py-mock${MODPY_FLAVOR} \
+#			devel/py-pandas${MODPY_FLAVOR} \
+#			graphics/py-Pillow${MODPY_FLAVOR} \
+#			graphics/py-matplotlib${MODPY_FLAVOR} \
+#			lang/cython${MODPY_FLAVOR} \
+#			math/py-scipy${MODPY_FLAVOR} \
+#			math/py-sympy${MODPY_FLAVOR}
 
 post-install:
-	mv ${WRKINST}${MODPY_SITEPKG}/spyder/doc ${PREFIX}/share/doc/spyder${MAJOR_VERSION}
+	mv ${WRKINST}${MODPY_SITEPKG}/spyder/doc \
+		 ${PREFIX}/share/doc/spyder${MAJOR_VERSION}
 
 .include <bsd.port.mk>
