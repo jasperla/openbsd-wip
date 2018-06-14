@@ -20,4 +20,6 @@ FLAVOR ?=
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 
+TEST_DEPENDS +=		devel/py-tox${MODPY_FLAVOR}
+
 .include <bsd.port.mk>
