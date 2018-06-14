@@ -1,9 +1,14 @@
 # $OpenBSD$
 
-COMMENT =		Scientific PYthon Development EnviRonment
+COMMENT-main =		Scientific PYthon Development EnviRonment
+COMMENT-docs =		spyder-IDE Documentation
 
 MODPY_EGG_VERSION =	3.2.8
 DISTNAME =		spyder-${MODPY_EGG_VERSION}
+FULLPKGNAME-main =	spyder${MAJOR_VERSION}-${MODPY_EGG_VERSION}
+FULLPKGPATH-main =	devel/spyder${MODPY_FLAVOR}
+FULLPKGNAME-docs =	spyder-docs-${MODPY_EGG_VERSION}
+FULLPKGPATH-docs =	devel/spyder,-docs
 
 CATEGORIES =		devel editors
 
@@ -13,8 +18,19 @@ HOMEPAGE =		https://github.com/spyder-ide/spyder
 PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =		lang/python
+
+MULTI_PACKAGES =	-main -docs
 FLAVORS =		python3
 FLAVOR ?=
+
+.if ${FLAVOR:Mpython3}
+MAJOR_VERSION =	3
+PKGNAME =	spyder3-${MODPY_EGG_VERSION}
+.else
+MAJOR_VERSION =
+.endif
+
+SUBST_VARS +=	MAJOR_VERSION
 
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
@@ -39,17 +55,10 @@ RUN_DEPENDS +=	databases/py-pickleshare${MODPY_FLAVOR} \
 		textproc/py-pygments${MODPY_FLAVOR}>=2.0 \
 		x11/py-qt5${MODPY_FLAVOR}<5.10 \
 		x11/py-qtpy${MODPY_FLAVOR}>=1.2.0 \
-		x11/py-qtawesome${MODPY_FLAVOR}>=0.4.1
+		x11/py-qtawesome${MODPY_FLAVOR}>=0.4.1 \
+		devel/spyder,-docs${MODPY_FLAVOR}
 
-
-.if ${FLAVOR:Mpython3}
-MAJOR_VERSION =	3
-PKGNAME =	spyder3-${MODPY_EGG_VERSION}
-.else
-MAJOR_VERSION =
-.endif
-
-SUBST_VARS +=	MAJOR_VERSION
+RUN_DEPENDS-docs =	#empty
 
 #TEST_DEPENDS +=	devel/py-test${MODPY_FLAVOR} \
 #			devel/py-test-qt${MODPY_FLAVOR} \
@@ -68,6 +77,6 @@ SUBST_VARS +=	MAJOR_VERSION
 
 post-install:
 	mv ${WRKINST}${MODPY_SITEPKG}/spyder/doc \
-		 ${PREFIX}/share/doc/spyder${MAJOR_VERSION}
+		 ${PREFIX}/share/doc/spyder
 
 .include <bsd.port.mk>
