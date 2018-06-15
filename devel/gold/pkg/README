@@ -13,7 +13,7 @@ It can be easily used by clang by passing the flag
 on the command line during the linker step.
 
 Caveats:
-* gold can create static libs (libx.a), shared libs (libx.so.X.Y), and
-  regular pie execuatables. gold cannot yet create any other kind of
-  executable. Trying to, for example, pass -static -pie on the command
-  line during the linker step will end with an internal linker error.
+* gold can create shared libs (libx.so.X.Y) and regular pie executables.
+  gold cannot yet create any other kind of executable. Trying to, for
+  example, pass -static -pie on the command line during the linker step
+  will end with an internal linker error.
