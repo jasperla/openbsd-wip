@@ -1,0 +1,15 @@
+$OpenBSD$
+
+Taken from devel/gas, just in case.
+
+Index: gas/configure.tgt
+--- gas/configure.tgt.orig
++++ gas/configure.tgt
+@@ -130,6 +130,7 @@ case ${generic_target} in
+     case ${cpu}-${os} in
+       aarch64*-linux-gnu_ilp32)		arch=aarch64:32 ;;
+     esac ;;
++  aarch64-*-openbsd*)			fmt=elf ;;
+ 
+   alpha-*-*vms*)			fmt=evax ;;
+   alpha-*-osf*)				fmt=ecoff ;;

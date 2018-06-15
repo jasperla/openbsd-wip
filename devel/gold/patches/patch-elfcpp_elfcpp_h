@@ -1,0 +1,20 @@
+$OpenBSD$
+
+.openbsd.randomdata and .openbsd.wxneeded support
+
+Index: elfcpp/elfcpp.h
+--- elfcpp/elfcpp.h.orig
++++ elfcpp/elfcpp.h
+@@ -500,6 +500,12 @@ enum PT
+   PT_GNU_STACK = 0x6474e551,
+   // Read only after relocation.
+   PT_GNU_RELRO = 0x6474e552,
++  // Fill with random data.
++  PT_OPENBSD_RANDOMIZE = 0x65a3dbe6,
++  // Program does W^X violations.
++  PT_OPENBSD_WXNEEDED = 0x65a3dbe7,
++  // Section for boot arguments.
++  PT_OPENBSD_BOOTDATA = 0x65a41be6,
+   // Platform architecture compatibility information
+   PT_ARM_ARCHEXT = 0x70000000,
+   // Exception unwind tables

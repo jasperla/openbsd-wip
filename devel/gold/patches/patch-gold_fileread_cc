@@ -1,0 +1,37 @@
+$OpenBSD$
+
+This is hilarious but it works.
+But it will not work on every library.
+(For example: devel/atk has an atk-1.0 lib with a major of 21809!!!)
+But it will work for most libs and for me is a good enough(TM)
+  solution until I can code a more complete one.
+Help wanted!
+We need to be able to construct the correct libsoname.X.Y and then
+  search paths.
+The way lld does it is to construct the complete list of search dirs,
+  then see if libsoname.so is a partial match in any of those dirs,
+  then finds the highest X.Y, then uses that libsoname.X.Y as the
+  library to link against.
+Reported upstream: https://sourceware.org/bugzilla/show_bug.cgi?id=23295
+
+Index: gold/fileread.cc
+--- gold/fileread.cc.orig
++++ gold/fileread.cc
+@@ -1026,7 +1026,16 @@ Input_file::find_file(const Dirsearch& dirpath, int* p
+ 	    names.push_back(prefix + ".a");
+ 	  else
+ 	    {
+-	      names.push_back(prefix + ".so");
++	      char Maj[4], Min[3];
++              for (int i = 199; i >= 0; i--)
++		{
++		  snprintf(Maj, 4, "%d", i);
++		  for (int j = 99; j >= 0; j--)
++		    {
++		      snprintf(Min, 3, "%d", j);
++		      names.push_back(prefix + ".so." + Maj + "." + Min);
++		    }
++		}
+ 	      names.push_back(prefix + ".a");
+ 	    }
+ 	}

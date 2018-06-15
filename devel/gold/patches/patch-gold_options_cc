@@ -1,0 +1,44 @@
+$OpenBSD$
+
+Logic for -z wxallowed and -z nowxallowed options
+Allow -shared -pie and -static -pie
+.openbsd.wxneeded support
+
+Index: gold/options.cc
+--- gold/options.cc.orig
++++ gold/options.cc
+@@ -983,6 +983,7 @@ namespace gold
+ General_options::General_options()
+   : printed_version_(false),
+     execstack_status_(EXECSTACK_FROM_INPUT),
++    wxneeded_status_(WXNEEDED_FROM_INPUT),
+     icf_status_(ICF_NONE),
+     static_(false),
+     do_demangle_(false),
+@@ -1125,6 +1126,13 @@ General_options::finalize()
+   else if (this->noexecstack())
+     this->set_execstack_status(EXECSTACK_NO);
+ 
++  // wxneeded_status_ is a three-state variable; update it based on
++  // -z [no]wxneeded.
++  if (this->wxneeded())
++    this->set_wxneeded_status(WXNEEDED_YES);
++  else if (this->nowxneeded())
++    this->set_wxneeded_status(WXNEEDED_NO);
++
+   // icf_status_ is a three-state variable; update it based on the
+   // value of this->icf().
+   if (strcmp(this->icf(), "none") == 0)
+@@ -1288,10 +1296,12 @@ General_options::finalize()
+   // Now that we've normalized the options, check for contradictory ones.
+   if (this->shared() && this->is_static())
+     gold_fatal(_("-shared and -static are incompatible"));
++#if 0
+   if (this->shared() && this->pie())
+     gold_fatal(_("-shared and -pie are incompatible"));
+   if (this->pie() && this->is_static())
+     gold_fatal(_("-pie and -static are incompatible"));
++#endif
+ 
+   if (this->shared() && this->relocatable())
+     gold_fatal(_("-shared and -r are incompatible"));
