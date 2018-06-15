@@ -1,8 +1,9 @@
 # $OpenBSD$
 
+# gold does not follow binutils version numbering
 COMMENT =	GNU ELF-only linker
 DISTNAME =	binutils-2.30
-PKGNAME =	${DISTNAME:S/binutils/gold/}
+PKGNAME =	gold-1.15
 CATEGORIES =	devel
 
 HOMEPAGE =	https://sourceware.org/binutils/
