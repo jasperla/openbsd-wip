@@ -14,7 +14,7 @@ Index: gold/dirsearch.cc
  #include <cstring>
  #include <sys/types.h>
  #include <sys/stat.h>
-@@ -300,6 +302,82 @@ Dirsearch::find_file_in_dir_list(const std::string& na
+@@ -300,6 +302,98 @@ Dirsearch::find_file_in_dir_list(const std::string& na
          return full_name;
      }
    return name;
@@ -44,8 +44,8 @@ Index: gold/dirsearch.cc
 +       ++i)
 +    {
 +      const Search_directory* p = &this->directories_->at(i);
-+      f = strdup(p->name().c_str());
 +
++      f = strdup(p->name().c_str());
 +      if ((dirp = opendir(f)) == NULL)
 +	{
 +	  free(f);
@@ -66,31 +66,47 @@ Index: gold/dirsearch.cc
 +		  *u = '\0';
 +		  tMin = strtonum(u + 1, 0, LLONG_MAX, &e);
 +		  if (e != NULL)
-+		    return std::string();
++		    {
++		      closedir(dirp);
++		      return std::string();
++		    }
++
 +		  v = strrchr(t, '.');
 +		  tMaj = strtonum(v + 1, 0, LLONG_MAX, &e);
 +		  if (e != NULL)
-+		    return std::string();
-+		  if (Maj < tMaj)
 +		    {
-+		      Maj = tMaj;
++		      closedir(dirp);
++		      return std::string();
++		    }
++
++		  if (Maj == tMaj)
++		    {
 +		      if (Min < tMin)
 +			Min = tMin;
 +		    }
++		  else if (Maj < tMaj)
++		    {
++		      Maj = tMaj;
++		      Min = tMin;
++		    }
++
 +		  free(t);
 +		  t = NULL;
 +		}
 +	    }
++	    closedir(dirp);
 +	}
-+	closedir(dirp);
 +	if (Maj == -1 || Min == -1)
 +	  continue;
++
 +	snprintf(M, 21, "%lld", Maj);
 +	snprintf(m, 21, "%lld", Min);
++
 +	std::string version = ".";
 +	version += M;
 +	version += ".";
 +	version += m;
++
 +	return version;
 +    }
 +    return std::string();
