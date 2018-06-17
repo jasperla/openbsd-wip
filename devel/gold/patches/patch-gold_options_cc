@@ -1,6 +1,6 @@
 $OpenBSD$
 
-Logic for -z wxallowed and -z nowxallowed options
+Logic for -z wxneeded and -z nowxneeded options
 Allow -shared -pie and -static -pie
 .openbsd.wxneeded support
 

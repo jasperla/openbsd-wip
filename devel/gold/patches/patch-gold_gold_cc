@@ -1,0 +1,23 @@
+$OpenBSD$
+
+Remove artificial limitation.
+
+Index: gold/gold.cc
+--- gold/gold.cc.orig
++++ gold/gold.cc
+@@ -607,6 +607,7 @@ queue_middle_tasks(const General_options& options,
+     (!input_objects->any_dynamic()
+      && !parameters->options().output_is_position_independent());
+   set_parameters_doing_static_link(doing_static_link);
++#if 0
+   if (!doing_static_link && options.is_static())
+     {
+       // We print out just the first .so we see; there may be others.
+@@ -614,6 +615,7 @@ queue_middle_tasks(const General_options& options,
+       gold_error(_("cannot mix -static with dynamic object %s"),
+ 		 (*input_objects->dynobj_begin())->name().c_str());
+     }
++#endif
+   if (!doing_static_link && parameters->options().relocatable())
+     gold_fatal(_("cannot mix -r with dynamic object %s"),
+ 	       (*input_objects->dynobj_begin())->name().c_str());

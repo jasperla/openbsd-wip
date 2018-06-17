@@ -1,6 +1,6 @@
 $OpenBSD$
 
-.openbsd.randomdata and .openbsd.wxallowed support
+.openbsd.randomdata and .openbsd.wxneeded support
 
 Index: gold/layout.cc
 --- gold/layout.cc.orig

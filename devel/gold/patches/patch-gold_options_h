@@ -1,7 +1,7 @@
 $OpenBSD$
 
 Default to -pie
-Add -z wxallowed option (and -z nowxallowed option)
+Add -z wxneeded option (and -z nowxneeded option)
 .openbsd.randomdata and .openbsd.wxneeded support
 
 Index: gold/options.h
