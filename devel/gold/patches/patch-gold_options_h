@@ -56,7 +56,7 @@ Index: gold/options.h
 +    WXNEEDED_FROM_INPUT,
 +    // Mark the binary as wxneeded (-z wxneeded).
 +    WXNEEDED_YES,
-+    // Mark the binary as not exneeded (-z nowxneeded).
++    // Mark the binary as not wxneeded (-z nowxneeded).
 +    WXNEEDED_NO
 +  };
 +

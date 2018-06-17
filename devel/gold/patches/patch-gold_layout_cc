@@ -14,7 +14,7 @@ Index: gold/layout.cc
      increase_relro_(0),
      symtab_section_(NULL),
      symtab_xindex_(NULL),
-@@ -2105,6 +2107,24 @@ Layout::attach_allocated_section_to_segment(const Targ
+@@ -2105,6 +2107,26 @@ Layout::attach_allocated_section_to_segment(const Targ
  		       "may cause confusing PT_INTERP segment"));
        this->interp_segment_->add_output_section_to_nonload(os, seg_flags);
      }
@@ -31,15 +31,17 @@ Index: gold/layout.cc
 +  // PT_OPENBSD_WXNEEDED is an OpenBSD-specific header. It marks the
 +  // executable as expecting to perform W^X violations, which are
 +  // prohibited by default on OpenBSD.
++  // GNU ld and LLVM lld both make this section --x but gold wants to
++  // make it r-x by default. Force the section to have --x flags.
 +  if (parameters->options().is_wxneeded_set())
 +    {
 +      if (this->openbsd_wxneeded_segment_ == NULL)
-+	this->make_output_segment(elfcpp::PT_OPENBSD_WXNEEDED, seg_flags);
++	this->make_output_segment(elfcpp::PT_OPENBSD_WXNEEDED, seg_flags &~ elfcpp::PF_R);
 +    }
  }
  
  // Make an output section for a script.
-@@ -5379,6 +5399,10 @@ Layout::make_output_segment(elfcpp::Elf_Word type, elf
+@@ -5379,6 +5401,10 @@ Layout::make_output_segment(elfcpp::Elf_Word type, elf
      this->relro_segment_ = oseg;
    else if (type == elfcpp::PT_INTERP)
      this->interp_segment_ = oseg;
