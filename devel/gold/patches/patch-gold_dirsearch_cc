@@ -14,7 +14,7 @@ Index: gold/dirsearch.cc
  #include <cstring>
  #include <sys/types.h>
  #include <sys/stat.h>
-@@ -300,6 +302,98 @@ Dirsearch::find_file_in_dir_list(const std::string& na
+@@ -300,6 +302,103 @@ Dirsearch::find_file_in_dir_list(const std::string& na
          return full_name;
      }
    return name;
@@ -67,6 +67,8 @@ Index: gold/dirsearch.cc
 +		  tMin = strtonum(u + 1, 0, LLONG_MAX, &e);
 +		  if (e != NULL)
 +		    {
++		      free(t);
++		      t = NULL;
 +		      closedir(dirp);
 +		      return std::string();
 +		    }
@@ -75,6 +77,8 @@ Index: gold/dirsearch.cc
 +		  tMaj = strtonum(v + 1, 0, LLONG_MAX, &e);
 +		  if (e != NULL)
 +		    {
++		      free(t);
++		      t = NULL;
 +		      closedir(dirp);
 +		      return std::string();
 +		    }
@@ -109,6 +113,7 @@ Index: gold/dirsearch.cc
 +
 +	return version;
 +    }
++
 +    return std::string();
  }
  
