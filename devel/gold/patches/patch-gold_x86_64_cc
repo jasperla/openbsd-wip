@@ -1,0 +1,19 @@
+$OpenBSD$
+
+Work around a bug in our old strip on amd64.
+https://sourceware.org/bugzilla/show_bug.cgi?id=6498
+
+Index: gold/x86_64.cc
+--- gold/x86_64.cc.orig
++++ gold/x86_64.cc
+@@ -1261,8 +1261,8 @@ const Target::Target_info Target_x86_64<64>::x86_64_in
+   '\0',			// wrap_char
+   "/lib/ld64.so.1",     // program interpreter
+   0x400000,		// default_text_segment_address
+-  0x1000,		// abi_pagesize (overridable by -z max-page-size)
+-  0x1000,		// common_pagesize (overridable by -z common-page-size)
++  0x100000,		// abi_pagesize (overridable by -z max-page-size)
++  0x100000,		// common_pagesize (overridable by -z common-page-size)
+   false,                // isolate_execinstr
+   0,                    // rosegment_gap
+   elfcpp::SHN_UNDEF,	// small_common_shndx

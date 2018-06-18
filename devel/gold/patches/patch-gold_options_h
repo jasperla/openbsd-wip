@@ -1,0 +1,85 @@
+$OpenBSD$
+
+Default to -pie
+Add -z wxneeded option (and -z nowxneeded option)
+.openbsd.randomdata and .openbsd.wxneeded support
+
+Index: gold/options.h
+--- gold/options.h.orig
++++ gold/options.h
+@@ -1085,7 +1085,7 @@ class General_options
+   DEFINE_bool(p, options::ONE_DASH, 'p', false,
+ 	      N_("Ignored for ARM compatibility"), NULL);
+ 
+-  DEFINE_bool(pie, options::ONE_DASH, '\0', false,
++  DEFINE_bool(pie, options::ONE_DASH, '\0', true,
+ 	      N_("Create a position independent executable"),
+ 	      N_("Do not create a position independent executable"));
+   DEFINE_bool_alias(pic_executable, pie, options::TWO_DASHES, '\0',
+@@ -1482,6 +1482,8 @@ class General_options
+   DEFINE_bool(now, options::DASH_Z, '\0', false,
+ 	      N_("Mark object for immediate function binding"),
+ 	      NULL);
++  DEFINE_bool(nowxneeded, options::DASH_Z, '\0', false,
++	      N_("Mark output as not requiring wxneeded"), NULL);
+   DEFINE_bool(origin, options::DASH_Z, '\0', false,
+ 	      N_("Mark DSO to indicate that needs immediate $ORIGIN "
+ 		 "processing at runtime"), NULL);
+@@ -1500,6 +1502,8 @@ class General_options
+ 	      N_("Move .text.unlikely sections to a separate segment."),
+ 	      N_("Do not move .text.unlikely sections to a separate "
+ 		 "segment."));
++  DEFINE_bool(wxneeded, options::DASH_Z, '\0', false,
++	      N_("Mark output as requiring wxneeded"), NULL);
+ 
+ 
+  public:
+@@ -1588,6 +1592,10 @@ class General_options
+   { return this->execstack_status_ != EXECSTACK_FROM_INPUT; }
+ 
+   bool
++  is_wxneeded_set() const
++  { return this->wxneeded_status_ != WXNEEDED_FROM_INPUT; }
++
++  bool
+   is_stack_executable() const
+   { return this->execstack_status_ == EXECSTACK_YES; }
+ 
+@@ -1765,6 +1773,17 @@ class General_options
+     EXECSTACK_NO
+   };
+ 
++  // Whether to mark the binary as wxneeded.
++  enum Wxneeded
++  {
++    // Not set on command line.
++    WXNEEDED_FROM_INPUT,
++    // Mark the binary as wxneeded (-z wxneeded).
++    WXNEEDED_YES,
++    // Mark the binary as not wxneeded (-z nowxneeded).
++    WXNEEDED_NO
++  };
++
+   enum Icf_status
+   {
+     // Do not fold any functions (Default or --icf=none).
+@@ -1784,6 +1803,10 @@ class General_options
+   { this->execstack_status_ = value; }
+ 
+   void
++  set_wxneeded_status(Wxneeded value)
++  { this->wxneeded_status_ = value; }
++
++  void
+   set_do_demangle(bool value)
+   { this->do_demangle_ = value; }
+ 
+@@ -1819,6 +1842,8 @@ class General_options
+   bool printed_version_;
+   // Whether to mark the stack as executable.
+   Execstack execstack_status_;
++  // Whether to mark the binary wxneeded.
++  Wxneeded wxneeded_status_;
+   // Whether to do code folding.
+   Icf_status icf_status_;
+   // Whether to do a static link.

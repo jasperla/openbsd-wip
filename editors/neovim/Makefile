@@ -2,11 +2,9 @@
 
 COMMENT =	continuation and extension of Vim
 
-DISTNAME =	neovim-0.3.3-dev
-
 GH_ACCOUNT =	neovim
 GH_PROJECT =	neovim
-GH_COMMIT  =	e46534b4230242c0d41831cc7ad16863c976b151
+GH_TAGNAME =	v0.3.0
 
 CATEGORIES =	editors devel
 HOMEPAGE =	http://neovim.org
@@ -17,6 +15,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += c iconv intl ${MODLUA_WANTLIB} m msgpackc pthread termkey
 WANTLIB += unibilium util uv vterm
+WANTLIB += c++abi
 
 MODULES =		devel/cmake \
 			lang/lua \

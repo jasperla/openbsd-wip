@@ -1,0 +1,18 @@
+$OpenBSD$
+
+Find versioned sonames.
+
+Index: gold/dirsearch.h
+--- gold/dirsearch.h.orig
++++ gold/dirsearch.h
+@@ -74,6 +74,10 @@ class Dirsearch
+                         const General_options::Dir_list& directories,
+                         const std::string& extra_search_dir);
+ 
++  // OpenBSD extension.  Find versioned shared library name.
++  std::string
++  find_versioned_soname(const std::string& name, int* pindex) const;
++
+  private:
+   // We can not copy this class.
+   Dirsearch(const Dirsearch&);

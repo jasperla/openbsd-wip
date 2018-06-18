@@ -22,7 +22,7 @@ MODPY_SETUPTOOLS =	Yes
 FLAVORS =		python3
 FLAVOR ?=
 
-TEST_DEPENDS+=		devel/py-test${MODPY_FLAVOR} \
+TEST_DEPENDS +=		devel/py-test${MODPY_FLAVOR} \
 			devel/py-test-timeout${MODPY_FLAVOR} \
 			devel/py-pexpect${MODPY_FLAVOR}
 do-test:

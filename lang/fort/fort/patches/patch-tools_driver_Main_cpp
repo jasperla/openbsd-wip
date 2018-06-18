@@ -1,0 +1,35 @@
+$OpenBSD$
+
+Fix linking calls. Allow linking with lld.
+Force PIC until -fPIC is implemented.
+
+Index: tools/driver/Main.cpp
+--- tools/driver/Main.cpp.orig
++++ tools/driver/Main.cpp
+@@ -326,7 +326,7 @@ static bool EmitOutputFile(const std::string &Input,
+ }
+ 
+ static bool LinkFiles(ArrayRef<std::string> OutputFiles) {
+-  const char *Driver = "gcc";
++  const char *Driver = "${CC}";
+   std::string Cmd;
+   llvm::raw_string_ostream OS(Cmd);
+   OS << Driver;
+@@ -334,7 +334,7 @@ static bool LinkFiles(ArrayRef<std::string> OutputFile
+     OS << " " << I;
+   for(const std::string &I : LinkDirectories)
+     OS << " -L " << I;
+-  OS << " -l libfort";
++  OS << " -L${LOCALBASE}/lib -L/usr/lib -l libfort";
+   for(const std::string &I : LinkLibraries)
+     OS << " -l " << I;
+   // Link with the math library.
+@@ -479,7 +479,7 @@ static bool ParseFile(const std::string &Filename,
+     llvm::TargetOptions Options;
+ 
+     auto TM = TheTarget->createTargetMachine(TargetOptions->Triple, TargetOptions->CPU, "", Options,
+-                                             Reloc::Static, llvm::None,
++                                             Reloc::PIC_, llvm::None,
+                                              TMOptLevel);
+ 
+     if(!(EmitLLVM && OptLevel == 0)) {

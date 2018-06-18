@@ -14,8 +14,9 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =		lang/python
 
-BUILD_DEPENDS+=		devel/py-setuptools_scm${MODPY_FLAVOR}
-RUN_DEPENDS =		devel/py-test${MODPY_FLAVOR}
+BUILD_DEPENDS +=	devel/py-setuptools_scm${MODPY_FLAVOR}
+RUN_DEPENDS =		devel/py-test${MODPY_FLAVOR} \
+			x11/py-qt5${MODPY_FLAVOR}
 
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
@@ -23,9 +24,8 @@ MODPY_SETUPTOOLS =	Yes
 FLAVORS =		python3
 FLAVOR ?=
 
-TEST_DEPENDS+=		devel/py-test${MODPY_FLAVOR} \
-			x11/py-qt5${MODPY_FLAVOR} \
-			devel/py-test-qt${MODPY_FLAVOR}
+TEST_DEPENDS +=		devel/py-test-qt${MODPY_FLAVOR}
+
 do-test:
 	@cd ${WRKSRC} && ${MODPY_BIN} -m pytest
 

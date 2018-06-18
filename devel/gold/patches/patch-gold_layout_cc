@@ -1,0 +1,54 @@
+$OpenBSD$
+
+.openbsd.randomdata and .openbsd.wxneeded support
+
+Index: gold/layout.cc
+--- gold/layout.cc.orig
++++ gold/layout.cc
+@@ -435,6 +435,8 @@ Layout::Layout(int number_of_input_files, Script_optio
+     tls_segment_(NULL),
+     relro_segment_(NULL),
+     interp_segment_(NULL),
++    openbsd_randomize_segment_(NULL),
++    openbsd_wxneeded_segment_(NULL),
+     increase_relro_(0),
+     symtab_section_(NULL),
+     symtab_xindex_(NULL),
+@@ -2105,6 +2107,26 @@ Layout::attach_allocated_section_to_segment(const Targ
+ 		       "may cause confusing PT_INTERP segment"));
+       this->interp_segment_->add_output_section_to_nonload(os, seg_flags);
+     }
++
++  // PT_OPENBSD_RANDOMIZE is an OpenBSD-specific extension. It makes the
++  // dynamic linker fill the segment with random data.
++  if (strcmp(os->name(), ".openbsd.randomdata") == 0)
++    {
++      if (this->openbsd_randomize_segment_ == NULL)
++	this->make_output_segment(elfcpp::PT_OPENBSD_RANDOMIZE, seg_flags);
++      this->openbsd_randomize_segment_->add_output_section_to_nonload(os, seg_flags);
++    }
++
++  // PT_OPENBSD_WXNEEDED is an OpenBSD-specific header. It marks the
++  // executable as expecting to perform W^X violations, which are
++  // prohibited by default on OpenBSD.
++  // GNU ld and LLVM lld both make this section --x but gold wants to
++  // make it r-x by default. Force the section to have --x flags.
++  if (parameters->options().is_wxneeded_set())
++    {
++      if (this->openbsd_wxneeded_segment_ == NULL)
++	this->make_output_segment(elfcpp::PT_OPENBSD_WXNEEDED, seg_flags &~ elfcpp::PF_R);
++    }
+ }
+ 
+ // Make an output section for a script.
+@@ -5379,6 +5401,10 @@ Layout::make_output_segment(elfcpp::Elf_Word type, elf
+     this->relro_segment_ = oseg;
+   else if (type == elfcpp::PT_INTERP)
+     this->interp_segment_ = oseg;
++  else if (type == elfcpp::PT_OPENBSD_RANDOMIZE)
++    this->openbsd_randomize_segment_ = oseg;
++  else if (type == elfcpp::PT_OPENBSD_WXNEEDED)
++    this->openbsd_wxneeded_segment_ = oseg;
+ 
+   return oseg;
+ }
