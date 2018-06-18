@@ -14,7 +14,7 @@ Index: gold/dirsearch.cc
  #include <cstring>
  #include <sys/types.h>
  #include <sys/stat.h>
-@@ -300,6 +302,103 @@ Dirsearch::find_file_in_dir_list(const std::string& na
+@@ -300,6 +302,98 @@ Dirsearch::find_file_in_dir_list(const std::string& na
          return full_name;
      }
    return name;
@@ -33,7 +33,7 @@ Index: gold/dirsearch.cc
 +  const char *e;
 +  char *f, *t, *u, *v;
 +  char M[21], m[21];
-+  long long Maj = -1, Min = -1, tMaj = -1, tMin = -1;
++  long long Maj, Min, tMaj, tMin;
 +  size_t len = strlen(name.c_str());
 +
 +  gold_assert(!this->token_.is_blocked());
@@ -47,59 +47,54 @@ Index: gold/dirsearch.cc
 +
 +      f = strdup(p->name().c_str());
 +      if ((dirp = opendir(f)) == NULL)
-+	{
-+	  free(f);
-+	  f = NULL;
-+	  return std::string();
-+	}
++	continue;
 +      free(f);
 +      f = NULL;
 +
-+      if (dirp)
++      Maj = -1;
++      Min = -1;
++
++      while ((dp = readdir(dirp)) != NULL)
 +	{
-+	  while ((dp = readdir(dirp)) != NULL)
++	  if (!strncmp(dp->d_name, name.c_str(), len))
 +	    {
-+	      if (!strncmp(dp->d_name, name.c_str(), len))
++	      t = strdup(dp->d_name);
++	      u = strrchr(t, '.');
++	      *u = '\0';
++	      tMin = strtonum(u + 1, 0, LLONG_MAX, &e);
++	      if (e != NULL)
 +		{
-+		  t = strdup(dp->d_name);
-+		  u = strrchr(t, '.');
-+		  *u = '\0';
-+		  tMin = strtonum(u + 1, 0, LLONG_MAX, &e);
-+		  if (e != NULL)
-+		    {
-+		      free(t);
-+		      t = NULL;
-+		      closedir(dirp);
-+		      return std::string();
-+		    }
-+
-+		  v = strrchr(t, '.');
-+		  tMaj = strtonum(v + 1, 0, LLONG_MAX, &e);
-+		  if (e != NULL)
-+		    {
-+		      free(t);
-+		      t = NULL;
-+		      closedir(dirp);
-+		      return std::string();
-+		    }
-+
-+		  if (Maj == tMaj)
-+		    {
-+		      if (Min < tMin)
-+			Min = tMin;
-+		    }
-+		  else if (Maj < tMaj)
-+		    {
-+		      Maj = tMaj;
-+		      Min = tMin;
-+		    }
-+
 +		  free(t);
 +		  t = NULL;
++		  continue;
++		}
++
++	      v = strrchr(t, '.');
++	      tMaj = strtonum(v + 1, 0, LLONG_MAX, &e);
++	      if (e != NULL)
++		{
++		  free(t);
++		  t = NULL;
++		  continue;
++		}
++
++	      free(t);
++	      t = NULL;
++
++	      if (Maj == tMaj)
++		{
++		  if (Min < tMin)
++		    Min = tMin;
++		}
++	      else if (Maj < tMaj)
++		{
++		  Maj = tMaj;
++		  Min = tMin;
 +		}
 +	    }
-+	    closedir(dirp);
 +	}
++	closedir(dirp);
++
 +	if (Maj == -1 || Min == -1)
 +	  continue;
 +
