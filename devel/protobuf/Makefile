@@ -2,7 +2,7 @@
 
 COMMENT =		C++ protocol buffers
 
-V =			3.1.0
+V =			3.5.1
 DISTNAME =		protobuf-cpp-${V}
 PKGNAME = 		protobuf-${V}
 
