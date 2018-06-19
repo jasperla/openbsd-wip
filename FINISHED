@@ -81,6 +81,5 @@ devel/py-test-timeout			ready to import
 devel/py-test-xvfb			ready to import
 graphics/sk1				ready to import
 math/py-pandas				ready to import
-textproc/py-xlrd			ready to import
 devel/py-progressbar2			sent to ports@ 2018-06-04
 devel/py-python_utils			sent to ports@ 2018-06-04
