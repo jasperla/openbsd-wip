@@ -1,5 +1,10 @@
 $OpenBSD$
 
+Although this file is present in the upstream source tree, it was not
+included when the release tarball was created.  This file is needed to
+run unit tests and was copied from the release tag matching this
+version.
+
 Index: test/conftest.py
 --- test/conftest.py.orig
 +++ test/conftest.py

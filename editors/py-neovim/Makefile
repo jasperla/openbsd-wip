@@ -31,6 +31,8 @@ TEST_DEPENDS =		${RUN_DEPENDS} \
 
 WRKDIST =		${WRKDIR}/neovim-${MODPY_EGG_VERSION}
 
+# You may need to increase the number of open file descriptors for the tests to
+# pass.
 do-test:
 	cd ${WRKSRC} && ${LOCALBASE}/bin/py.test${MODPY_BIN_SUFFIX}
 
