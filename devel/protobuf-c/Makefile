@@ -2,18 +2,16 @@
 
 COMMENT =		c protocol buffers
 
-V =			1.0.2
-GH_ACCOUNT =		protobuf-c
-GH_PROJECT =		protobuf-c
-GH_TAGNAME =		v${V}
-DISTNAME =		${GH_PROJECT}-${V}
-REVISION =		0
+V =			1.3.0
+DISTNAME =		protobuf-c-$V
 
-SHARED_LIBS =		protobuf-c 1.0	# 1.0
+SHARED_LIBS =		protobuf-c 2.0	# 2.0
 
 CATEGORIES =		devel
 
 HOMEPAGE =		https://github.com/protobuf-c/protobuf-c/wiki
+
+MASTER_SITES=		https://github.com/protobuf-c/protobuf-c/releases/download/v$V/
 
 MAINTAINER =		Jonathon Sisson <sisson.j@gmail.com>
 
