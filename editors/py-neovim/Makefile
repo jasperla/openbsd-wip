@@ -13,7 +13,6 @@ MAINTAINER =	Edd Barrett <edd@openbsd.org>
 PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =		lang/python
-MODPY_PI =              Yes
 MODPY_SETUPTOOLS =	Yes
 
 # PyPI filename can clash with the main neovim distfile filename, so we host a
@@ -27,12 +26,12 @@ RUN_DEPENDS =		net/py-msgpack${MODPY_FLAVOR} \
 			devel/py-uv${MODPY_FLAVOR} \
 			devel/py-greenlet${MODPY_FLAVOR}
 TEST_DEPENDS =		${RUN_DEPENDS} \
-			devel/py-test${MODPY_FLAVOR}
+			devel/py-test${MODPY_FLAVOR} \
+			${BASE_PKGPATH}=${MODPY_EGG_VERSION}
 
 WRKDIST =		${WRKDIR}/neovim-${MODPY_EGG_VERSION}
 
-# You may need to increase the number of open file descriptors for the tests to
-# pass.
+# You may need to increase the file descriptor ulimits to run tests.
 do-test:
 	cd ${WRKSRC} && ${LOCALBASE}/bin/py.test${MODPY_BIN_SUFFIX}
 
