@@ -1,4 +1,18 @@
+The WIP port has been submitted to ports@:
+https://marc.info/?l=openbsd-ports&m=152960330613162&w=2
+
+The build on macppc is broken due to compiler segfaults.
+Optimization levels -O1 and -O0 don't help.
+
+A bulk build by jca@ on sparc64 is in progress.
+
 Regression tests seg:
 https://github.com/google/protobuf/issues/2452
+This issue is probably resolved, but there are other segfaults.
+Leaving this here just in case.
 
-Dependent ports in-tree are not tested.
+Dependent ports in-tree are tested.
+
+devel/protobuf-c needs to be updated to 1.3.0 (first version supporting proto3)
+
+On amd64 audio/mumble and games/poker need to be fixed.
