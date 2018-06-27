@@ -1,0 +1,17 @@
+$OpenBSD$
+
+Index: lxqt-session/src/wmselectdialog.cpp
+--- lxqt-session/src/wmselectdialog.cpp.orig
++++ lxqt-session/src/wmselectdialog.cpp
+@@ -114,7 +114,11 @@ void WmSelectDialog::selectFileDialog(const QModelInde
+     if (item->data(1, TYPE_ROLE) != SELECT_DLG_TYPE)
+         return;
+ 
++    #if defined(__OpenBSD__)
++    QString fname = QFileDialog::getOpenFileName(this, "", "/usr/local/bin/");
++    #else
+     QString fname = QFileDialog::getOpenFileName(this, "", "/usr/bin/");
++    #endif
+     if (fname.isEmpty())
+         return;
+ 

@@ -1,0 +1,15 @@
+@comment $OpenBSD: PLIST,v$
+@bin bin/pcmanfm-qt
+@man man/man1/pcmanfm-qt.1
+share/applications/pcmanfm-qt-desktop-pref.desktop
+share/applications/pcmanfm-qt.desktop
+share/examples/pcmanfm-qt/
+share/examples/pcmanfm-qt/xdg/
+share/examples/pcmanfm-qt/xdg/autostart/
+share/examples/pcmanfm-qt/xdg/autostart/lxqt-desktop.desktop
+@sample ${SYSCONFDIR}/xdg/autostart/lxqt-desktop.desktop
+share/pcmanfm-qt/
+share/pcmanfm-qt/lxqt/
+share/pcmanfm-qt/lxqt/settings.conf
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database

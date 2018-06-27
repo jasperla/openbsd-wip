@@ -1,0 +1,14 @@
+@comment $OpenBSD: PLIST,v$
+@bin bin/lxqt-config-powermanagement
+@bin bin/lxqt-powermanagement
+share/applications/lxqt-config-powermanagement.desktop
+share/examples/lxqt-powermanagement/
+share/examples/lxqt-powermanagement/xdg/
+share/examples/lxqt-powermanagement/xdg/autostart/
+share/examples/lxqt-powermanagement/xdg/autostart/lxqt-powermanagement.desktop
+@sample ${SYSCONFDIR}/xdg/autostart/lxqt-powermanagement.desktop
+share/icons/hicolor/scalable/devices/laptop-lid.svg
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
