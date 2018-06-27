@@ -8,6 +8,8 @@ CATEGORIES ?=	x11/lxqt
 
 MODULES +=	devel/cmake
 
+MAINTAINER ?=		LXQt porting team <openbsd-lxqt@googlegroups.com>
+
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM =	Yes
 

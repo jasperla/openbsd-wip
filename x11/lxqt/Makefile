@@ -26,13 +26,13 @@
      SUBDIR += sudo			#BUILD	P
      SUBDIR += themes			#BUILD	P
 # Related Releases
-#     SUBDIR += lximage-qt
-#     SUBDIR += compton-conf
-#     SUBDIR += obconf-qt
-#     SUBDIR += pavucontrol-qt
+     SUBDIR += lximage-qt
+     SUBDIR += compton-conf
+     SUBDIR += obconf-qt
+     SUBDIR += pavucontrol-qt
      SUBDIR += qterminal		#BUILD	P
      SUBDIR += qtermwidget		#BUILD	P
 #     SUBDIR += qps			#NO_OPENBSD?
-#     SUBDIR += screengrab
+     SUBDIR += screengrab
 
 .include <bsd.port.subdir.mk>

@@ -1,0 +1,11 @@
+@comment $OpenBSD: PLIST,v$
+@bin bin/compton-conf
+share/applications/compton-conf.desktop
+share/compton-conf/compton.conf.example
+share/examples/compton-conf/
+share/examples/compton-conf/xdg/
+share/examples/compton-conf/xdg/autostart/
+share/examples/compton-conf/xdg/autostart/lxqt-compton.desktop
+@sample ${SYSCONFDIR}/xdg/autostart/lxqt-compton.desktop
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database

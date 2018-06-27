@@ -36,5 +36,6 @@ share/kdm/sessions/
 share/kdm/sessions/lxqt.desktop
 share/xsessions/
 share/xsessions/lxqt.desktop
+share/doc/pkg-readmes/${FULLPKGNAME}
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
