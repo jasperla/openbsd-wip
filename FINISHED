@@ -67,14 +67,6 @@ net/tcptrack				ready to import (bcallah, indirectly)
 devel/spyder				ready to import
 math/openblas				ready to import (bcallah)
 games/xash3d				sent to ports@ 2018-05-05 (rfreeman)
-math/nbc				ready to import (needs a MAINTAINER! how about you?)
-sysutils/shuf				ready to import (needs a MAINTAINER! how about you?)
-x11/hhpc				ready to import (needs a MAINTAINER! how about you?)
-math/e					ready to import (needs a MAINTAINER! how about you?)
-lang/o					ready to import (needs a MAINTAINER! how about you?)
-lang/arcadia				ready to import (needs a MAINTAINER! how about you?)
-lang/lacc				ready to import (bcallah)
-lang/marst				ready to import (bcallah)
 devel/py-test-qt			ready to import
 devel/py-test-timeout			ready to import
 devel/py-test-xvfb			ready to import

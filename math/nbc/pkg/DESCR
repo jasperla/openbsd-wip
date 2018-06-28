@@ -1,8 +1,0 @@
-bc is an arbitrary precision calculator language. Syntax is similar to
-C, but differs in many substantial areas. It supports interactive
-execution of statements.
-
-It can also be used as a simple console-based calculator.
-
-This NetBSD version of bc contains several extensions beyond traditional
-bc implementations and the POSIX draft standard.

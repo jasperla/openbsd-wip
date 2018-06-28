@@ -1,7 +1,0 @@
-@comment $OpenBSD: PLIST,v$
-@bin bin/macvt
-@bin bin/marst
-include/algol.h
-lib/libalgol.a
-lib/libalgol.la
-@lib lib/libalgol.so.${LIBalgol_VERSION}

@@ -1,3 +1,0 @@
-@comment $OpenBSD: PLIST,v$
-@bin bin/nbc
-@man man/man1/nbc.1

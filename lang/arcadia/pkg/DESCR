@@ -1,9 +1,0 @@
-arcadia is an implementation of the Arc programming language, a dialect
-of Lisp. It is the programming language used to implement the HackerNews
-forums.
-
-Features:
-* Easy-to-understand mark-and-sweep garbage collection
-* Tail call optimization
-* Implicit indexing
-* Syntax sugar ([], ~, ., !, :)
