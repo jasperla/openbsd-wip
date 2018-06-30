@@ -1420,5 +1420,5 @@ share/icons/hicolor/scalable/apps/sk1.svg
 share/pixmaps/
 share/pixmaps/sk1.png
 share/pixmaps/sk1.xpm
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag gtk-update-icon-cache %D/share/icons/hicolor
+@tag update-desktop-database

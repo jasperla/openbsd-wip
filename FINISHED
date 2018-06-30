@@ -67,9 +67,6 @@ net/tcptrack				ready to import (bcallah, indirectly)
 devel/spyder				ready to import
 math/openblas				ready to import (bcallah)
 games/xash3d				sent to ports@ 2018-05-05 (rfreeman)
-devel/py-test-qt			ready to import
-devel/py-test-timeout			ready to import
-devel/py-test-xvfb			ready to import
 graphics/sk1				ready to import
 math/py-pandas				ready to import
 devel/py-progressbar2			sent to ports@ 2018-06-04
