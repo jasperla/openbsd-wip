@@ -1,5 +1,5 @@
 @comment $OpenBSD: PLIST-server,v$
-@conflict minetest-<=0.4.17.1p1
+@conflict minetest-<=0.4.17.1p2
 @bin bin/minetestserver
 @man man/man6/minetestserver.6
 share/doc/minetest/
