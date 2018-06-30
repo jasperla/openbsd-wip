@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2018/06/27 21:03:48 espie Exp $
+# $OpenBSD: Makefile,v 1.26 2018/06/29 22:16:14 espie Exp $
 
 COMMENT-main =		infinite-world block sandbox game client
 COMMENT-server =	infinite-world block sandbox game server
@@ -12,7 +12,7 @@ GH_TAGNAME =		0.4.17.1
 
 CATEGORIES =		games x11
 
-REVISION-main =		2
+REVISION-main =		3
 
 HOMEPAGE =		http://www.minetest.net/
 

@@ -95,6 +95,5 @@ share/minetest/locale/tr/LC_MESSAGES/minetest.mo
 share/minetest/locale/uk/
 share/minetest/locale/uk/LC_MESSAGES/
 share/minetest/locale/uk/LC_MESSAGES/minetest.mo
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database 
