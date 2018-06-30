@@ -11,13 +11,6 @@ SHARED_LIBS +=  sysstat-qt5               0.0 # 0.4
 
 WANTLIB += ${COMPILER_LIBCXX} Qt5Core m
 
-LIB_DEPENDS +=		x11/qt5/qtbase,-main
-
-BUILD_DEPENDS +=	x11/qt5/qttools \
-			x11/lxqt/build-tools
-
-
-CONFIGURE_ENV +=	Qt5Core_DIR=${LOCALBASE}/lib/qt5/cmake
-
+BUILD_DEPENDS +=	x11/lxqt/build-tools
 
 .include <bsd.port.mk>

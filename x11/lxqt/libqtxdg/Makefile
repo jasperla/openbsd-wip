@@ -13,14 +13,8 @@ SHARED_LIBS +=  Qt5XdgIconLoader          0.0 # 0.0
 WANTLIB +=	${COMPILER_LIBCXX} Qt5Core Qt5Gui Qt5Svg Qt5Widgets
 WANTLIB +=	m Qt5DBus Qt5Xml
 
-LIB_DEPENDS +=		x11/qt5/qtbase,-main \
-			x11/qt5/qtsvg
-
-BUILD_DEPENDS +=	x11/qt5/qttools
-
+LIB_DEPENDS +=		x11/qt5/qtsvg
 
 CONFIGURE_ARGS +=	-DBUILD_TESTS=Yes
-CONFIGURE_ENV +=	Qt5_DIR=${LOCALBASE}/lib/qt5/cmake
-
 
 .include <bsd.port.mk>

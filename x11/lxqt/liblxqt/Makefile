@@ -13,23 +13,16 @@ WANTLIB += ${COMPILER_LIBCXX} KF5WindowSystem Qt5Core Qt5DBus
 WANTLIB += Qt5Gui Qt5Widgets Qt5X11Extras Qt5Xml X11 Xss c m
 WANTLIB += Qt5Svg Qt5Xdg Qt5XdgIconLoader
 
-LIB_DEPENDS +=		x11/qt5/qtbase,-main \
-			x11/qt5/qtx11extras \
+LIB_DEPENDS +=		x11/qt5/qtx11extras \
 			devel/kf5/kwindowsystem \
 			x11/lxqt/libqtxdg
 
-BUILD_DEPENDS +=	x11/qt5/qttools \
-			x11/lxqt/build-tools \
+BUILD_DEPENDS +=	x11/lxqt/build-tools \
 			x11/polkit-qt,qt5
 
 RUN_DEPENDS +=		x11/lxqt/l10n,-main
 
 CONFIGURE_ARGS +=	-DPULL_TRANSLATIONS:BOOL=OFF
-CONFIGURE_ENV +=	Qt5_DIR=${LOCALBASE}/lib/qt5/cmake
-CONFIGURE_ENV +=	Qt5Core_DIR=${LOCALBASE}/lib/qt5/cmake
-CONFIGURE_ENV +=	Qt5Xdg_DIR=${LOCALBASE}/lib/qt5/cmake
-CONFIGURE_ENV +=	Qt5Xml_DIR=${LOCALBASE}/lib/qt5/cmake
-CONFIGURE_ENV +=	Qt5Svg_DIR=${LOCALBASE}/lib/qt5/cmake
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/${NAME}/xdg

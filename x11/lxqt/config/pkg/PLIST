@@ -20,7 +20,5 @@ share/examples/lxqt-config/xdg/menus/
 share/examples/lxqt-config/xdg/menus/lxqt-config.menu
 @sample ${SYSCONFDIR}/xdg/menus/lxqt-config.menu
 share/icons/hicolor/48x48/apps/brightnesssettings.svg
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@tag gtk-update-icon-cache %D/share/icons/hicolor
+@tag update-desktop-database

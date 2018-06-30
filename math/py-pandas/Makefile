@@ -44,12 +44,12 @@ TEST_DEPENDS +=		${RUN_DEPENDS} \
 			math/py-scipy${MODPY_FLAVOR} \
 			net/py-boto${MODPY_FLAVOR} \
 			textproc/py-lxml${MODPY_FLAVOR} \
+			textproc/py-xlrd${MODPY_FLAVOR} \
 			www/py-beautifulsoup4${MODPY_FLAVOR} \
 			www/py-httplib2${MODPY_FLAVOR} \
 			www/py-jinja2${MODPY_FLAVOR} \
 			x11/xclip
 
-#			textproc/py-xlrd${MODPY_FLAVOR}
 #			math/py-statsmodels${MODPY_FLAVOR}
 
 #NO py3-mysql for now... disabled test for python3 FLAVOR

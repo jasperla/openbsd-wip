@@ -39,5 +39,4 @@ share/examples/lxqt-globalkeys/xdg/lxqt/
 @sample ${SYSCONFDIR}/xdg/lxqt/
 share/examples/lxqt-globalkeys/xdg/lxqt/globalkeyshortcuts.conf
 @sample ${SYSCONFDIR}/xdg/lxqt/globalkeyshortcuts.conf
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database

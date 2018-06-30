@@ -11,5 +11,4 @@ share/examples/pcmanfm-qt/xdg/autostart/lxqt-desktop.desktop
 share/pcmanfm-qt/
 share/pcmanfm-qt/lxqt/
 share/pcmanfm-qt/lxqt/settings.conf
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database

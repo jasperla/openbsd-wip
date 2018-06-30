@@ -20,10 +20,5 @@ RUN_DEPENDS +=		devel/desktop-file-utils \
 			x11/lxqt/l10n,-qterminal
 
 CONFIGURE_ARGS +=	-DPULL_TRANSLATIONS:BOOL=OFF
-CONFIGURE_ENV +=	Qt5Gui_DIR=${LOCALBASE}/lib/qt5/cmake
-CONFIGURE_ENV +=	Qt5Widgets_DIR=${LOCALBASE}/lib/qt5/cmake
-CONFIGURE_ENV +=	Qt5LinguistTools_DIR=${LOCALBASE}/lib/qt5/cmake
-CONFIGURE_ENV +=	Qt5X11Extras_DIR=${LOCALBASE}/lib/qt5/cmake
-CONFIGURE_ENV +=	Qt5DBus_DIR=${LOCALBASE}/lib/qt5/cmake
 
 .include <bsd.port.mk>

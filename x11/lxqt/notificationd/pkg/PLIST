@@ -7,5 +7,4 @@ share/examples/lxqt-notificationd/xdg/
 share/examples/lxqt-notificationd/xdg/autostart/
 share/examples/lxqt-notificationd/xdg/autostart/lxqt-notifications.desktop
 @sample ${SYSCONFDIR}/xdg/autostart/lxqt-notifications.desktop
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database

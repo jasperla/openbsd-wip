@@ -24,12 +24,6 @@ RUN_DEPENDS +=		devel/xdg-user-dirs \
 
 CONFIGURE_ARGS +=	-DWITH_LIBUDEV=No
 CONFIGURE_ARGS +=	-DPULL_TRANSLATIONS:BOOL=OFF
-CONFIGURE_ENV +=	Qt5Widgets_DIR=${LOCALBASE}/lib/qt5/cmake
-CONFIGURE_ENV +=	Qt5DBus_DIR=${LOCALBASE}/lib/qt5/cmake
-CONFIGURE_ENV +=	Qt5LinguistTools_DIR=${LOCALBASE}/lib/qt5/cmake
-CONFIGURE_ENV +=	Qt5X11Extras_DIR=${LOCALBASE}/lib/qt5/cmake
-CONFIGURE_ENV +=	Qt5Xml_DIR=${LOCALBASE}/lib/qt5/cmake
-CONFIGURE_ENV +=	Qt5Svg_DIR=${LOCALBASE}/lib/qt5/cmake
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/${NAME}

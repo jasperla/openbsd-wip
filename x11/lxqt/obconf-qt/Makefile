@@ -23,8 +23,5 @@ RUN_DEPENDS +=		x11/lxqt/l10n,-obconf-qt \
 			x11/gtk+3,-guic
 
 CONFIGURE_ARGS +=	-DPULL_TRANSLATIONS:BOOL=OFF
-CONFIGURE_ENV +=	Qt5Widgets_DIR=${LOCALBASE}/lib/qt5/cmake
-CONFIGURE_ENV +=	Qt5LinguistTools_DIR=${LOCALBASE}/lib/qt5/cmake
-CONFIGURE_ENV +=	Qt5X11Extras_DIR=${LOCALBASE}/lib/qt5/cmake
 
 .include <bsd.port.mk>

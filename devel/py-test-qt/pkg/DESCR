@@ -1,2 +1,0 @@
-pytest-qt is a pytest plugin that allows programmers to write tests
-for PySide, PySide2 and PyQt applications.
