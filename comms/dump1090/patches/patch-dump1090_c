@@ -1,0 +1,14 @@
+$OpenBSD$
+
+Index: dump1090.c
+--- dump1090.c.orig
++++ dump1090.c
+@@ -1781,7 +1781,7 @@ struct aircraft *interactiveReceiveData(struct modesMe
+             }
+             /* If the two data is less than 10 seconds apart, compute
+              * the position. */
+-            if (abs(a->even_cprtime - a->odd_cprtime) <= 10000) {
++            if (llabs(a->even_cprtime - a->odd_cprtime) <= 10000) {
+                 decodeCPR(a);
+             }
+         } else if (mm->metype == 19) {
