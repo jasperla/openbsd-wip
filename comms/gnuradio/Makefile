@@ -2,7 +2,7 @@
 
 COMMENT=	signal-processing toolkit for SDR (software-defined radio)
 
-DISTNAME=	gnuradio-3.7.5
+DISTNAME=	gnuradio-3.7.13.3
 
 SHARED_LIBS +=  gnuradio-analog           0.0 # 3.7
 SHARED_LIBS +=  gnuradio-atsc             0.0 # 3.7
@@ -42,15 +42,15 @@ WANTLIB += qwt stdc++ usb-1.0 ${MODPY_WANTLIB}
 
 MASTER_SITES=	http://gnuradio.org/releases/gnuradio/
 
-MODULES=	converters/libiconv \
-		devel/cmake \
+MODULES=	devel/cmake \
 		lang/python
 
 USE_NINJA=	No
 
 BUILD_DEPENDS=	${RUN_DEPENDS} \
 		devel/cppunit \
-		devel/swig
+		devel/swig \
+		www/py-mako
 
 RUN_DEPENDS=	devel/desktop-file-utils \
 		devel/py-cheetah \
