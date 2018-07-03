@@ -1,0 +1,24 @@
+#!/bin/ksh
+#
+# $OpenBSD: wg_quick.rc,v$
+
+daemon="${TRUEPREFIX}/bin/wg-quick"
+daemonGo="wireguard-go"
+
+. /etc/rc.d/rc.subr
+
+rc_reload=NO
+
+rc_start () {
+    ${rcexec} "${daemon} up ${daemon_flags}" || return 1
+}
+
+rc_check() {
+    pgrep -T "${daemon_rtable}" -q -xf "${daemonGo} tun"
+}
+
+rc_stop () {
+    ${rcexec} "${daemon} down ${daemon_flags}" || return 1
+}
+
+rc_cmd $1

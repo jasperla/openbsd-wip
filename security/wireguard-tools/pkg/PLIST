@@ -1,0 +1,11 @@
+@comment $OpenBSD: PLIST,v$
+@bin bin/wg
+bin/wg-quick
+@man man/man8/wg-quick.8
+@man man/man8/wg.8
+share/bash-completion/
+share/bash-completion/completions/
+share/bash-completion/completions/wg
+share/bash-completion/completions/wg-quick
+@rcscript ${RCDIR}/wg
+@rcscript ${RCDIR}/wg_quick
