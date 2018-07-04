@@ -1,4 +1,4 @@
-@comment $OpenBSD$
+@comment $OpenBSD: PLIST,v$
 @conflict grantlee-<5.1.0
 include/grantlee/
 include/grantlee/abstractlocalizer.h
