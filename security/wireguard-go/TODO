@@ -1,0 +1,10 @@
+- update to latest snapshot version, from
+ https://xn--4db.cc/IKuBc62Z 
+
+get number of Snapshot here, insert/edit into Makefile of ports:
+ https://build.wireguard.com/distros.txt
+
+VERSION_GO="...  sed -E -n 's/^upstream go  
+
+- update to tagged version, once released
+

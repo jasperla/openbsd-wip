@@ -1,0 +1,17 @@
+#!/bin/ksh
+#
+# $OpenBSD: wg.rc v$
+
+daemon="${TRUEPREFIX}/bin/wireguard-go"
+
+. /etc/rc.d/rc.subr
+
+rc_reload=NO
+
+rc_start () {
+    ${rcexec} "${daemon} ${daemon_flags}" || return 1
+    /usr/local/bin/wg setconf "${daemon_flags}" "/etc/wireguard/${daemon_flags}.conf"
+}
+
+rc_cmd $1
+

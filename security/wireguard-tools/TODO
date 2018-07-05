@@ -1,0 +1,18 @@
+
+- debug wg-quick: brings up tun1 instead of using tun0!?
+
+- improve wg.rc
+  * implement stop, ...
+  * support wg and/or wg-quick
+
+
+- update to latest snapshot version, from
+ https://xn--4db.cc/IKuBc62Z
+
+get number of Snapshot here, insert/edit into Makefile of ports:
+ https://build.wireguard.com/distros.txt
+
+VERSION_KMODTOOLS="...  sed -E -n 's/^upstream  kmodtools
+
+
+- update to tagged version, once released
