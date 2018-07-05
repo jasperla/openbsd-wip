@@ -7,3 +7,4 @@ share/bash-completion/
 share/bash-completion/completions/
 share/bash-completion/completions/wg
 share/bash-completion/completions/wg-quick
+@rcscript ${RCDIR}/wg
