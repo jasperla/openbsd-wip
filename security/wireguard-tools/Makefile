@@ -5,7 +5,7 @@ COMMENT =	fast and secure VPN
 V =		0.0.20180625
 DISTNAME =	WireGuard-$V
 PKGNAME =	wireguard-tools-$V
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	security
 
