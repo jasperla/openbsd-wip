@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile.template,v 1.77 2018/02/09 17:08:33 sthen Exp $
+# $OpenBSD: Makefile,v$
 
 COMMENT =	go implementation of wireguard
 
 DISTNAME =	wireguard-go-0.0.20180613
+#REVISION =	0
 
 CATEGORIES =	security
 
