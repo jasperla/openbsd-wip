@@ -13,24 +13,18 @@ MAINTAINER =	Aaron Bieber <abieber@openbsd.org>
 # BSD?
 PERMIT_PACKAGE_CDROM =	Yes
 
-#MODULES =		???
+WANTLIB += ${COMPILER_LIBCXX} c crypto m sndio ssl
+
 BUILD_DEPENDS=	devel/popt \
 		devel/libconfig \
 		${MODGNU_AUTOCONF_DEPENDS} \
 		${MODGNU_AUTOMAKE_DEPENDS} \
-#RUN_DEPENDS =		???
-#LIB_DEPENDS =		???
-#TEST_DEPENDS =		???
 
-MAKE_FLAGS=		CC="${CC}" CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
-#MAKE_ENV =		???
-#FAKE_FLAGS =		???
-#TEST_FLAGS =		???
+CONFIGURE_ENV +=	CFLAGS="${CFLAGS} -I${PREFIX}/include"
 
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS =	--includedir=${PREFIX}/include \
-			--libdir=${PREFIX}/lib \
-			--sysconfdir=${SYSCONFDIR} \
+CONFIGURE_ARGS +=	--sysconfdir=${SYSCONFDIR} \
+			--with-ssl=openssl \
 			--with-avahi \
 			--with-sndio \
 			--with-os=openbsd
@@ -38,26 +32,14 @@ CONFIGURE_ARGS =	--includedir=${PREFIX}/include \
 AUTOCONF_VERSION =	2.69
 AUTOMAKE_VERSION =	1.15
 
-#NO_BUILD =		Yes
-#NO_TEST =		Yes
-
-# Overrides for default values
-#
-#CFLAGS =		???
-#LDFLAGS =		???
-#MAKE_FILE =		???
-#PKG_ARCH =		??? (* for arch-independent packages)
-#WRKDIST =		??? if other than ${WRKDIR}/${DISTNAME}
-#WRKSRC =		??? if other than ${WRKDIST}
-#WRKBUILD =		??? if other than ${WRKSRC}
-#WRKCONF =		??? if other than ${WRKBUILD}
-
-#ALL_TARGET =		???
-#INSTALL_TARGET =	???
-#TEST_TARGET =		???
+SUBST_VARS +=		VARBASE
 
 pre-configure:
 	cd ${WRKSRC} && ${SETENV} AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
-		AUTOCONF_VERSION=${AUTOCONF_VERSION} autoreconf --force --install
+		AUTOCONF_VERSION=${AUTOCONF_VERSION} autoreconf -i -f
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKBUILD}/shairport-sync ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/man/shairport-sync.7 ${PREFIX}/man/man7
 
 .include <bsd.port.mk>
