@@ -34,6 +34,7 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/${NAME}
 	mv ${WRKINST}${SYSCONFDIR}/xdg ${PREFIX}/share/examples/${NAME}/
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/${NAME}/xdg/lxqt/
-	mv ${PREFIX}/share/lxqt/panel.conf ${PREFIX}/share/examples/${NAME}/xdg/lxqt/panel.conf
+	mv ${PREFIX}/share/lxqt/panel.conf \
+		${PREFIX}/share/examples/${NAME}/xdg/lxqt/panel.conf
 
 .include <bsd.port.mk>

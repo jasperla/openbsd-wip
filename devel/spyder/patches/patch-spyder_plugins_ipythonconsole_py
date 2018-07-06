@@ -3,7 +3,7 @@ $OpenBSD$
 Index: spyder/plugins/ipythonconsole.py
 --- spyder/plugins/ipythonconsole.py.orig
 +++ spyder/plugins/ipythonconsole.py
-@@ -377,7 +377,7 @@ class IPythonConsoleConfigPage(PluginConfigPage):
+@@ -381,7 +381,7 @@ class IPythonConsoleConfigPage(PluginConfigPage):
  
          if sys.platform == 'darwin':
              backends.append( ("OS X", 4) )

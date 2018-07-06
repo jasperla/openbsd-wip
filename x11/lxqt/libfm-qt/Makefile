@@ -18,7 +18,8 @@ LIB_DEPENDS +=		x11/qt5/qtx11extras \
 
 BUILD_DEPENDS +=	x11/lxqt/build-tools
 
-RUN_DEPENDS +=		x11/lxqt/l10n,-libfm-qt
+RUN_DEPENDS +=		x11/lxqt/l10n,-libfm-qt \
+			misc/shared-mime-info
 
 CONFIGURE_ARGS +=	-DPULL_TRANSLATIONS:BOOL=OFF
 

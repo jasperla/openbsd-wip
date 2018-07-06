@@ -106,3 +106,4 @@ share/libfm-qt/
 share/libfm-qt/archivers.list
 share/libfm-qt/terminals.list
 share/mime/packages/libfm-qt-mimetypes.xml
+@tag update-mime-database

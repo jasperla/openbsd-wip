@@ -29,6 +29,7 @@ LIB_DEPENDS +=		devel/pango \
 			graphics/lcms2
 
 RUN_DEPENDS +=		devel/desktop-file-utils \
+			x11/gtk+3,-guic \
 			graphics/py-Pillow \
 			graphics/py-cairo \
 			print/py-cups \
