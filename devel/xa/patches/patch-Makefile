@@ -1,0 +1,21 @@
+$OpenBSD$
+
+Remove hardcoded compiler, linker and optimizations, pass CFLAGS correctly.
+
+Index: Makefile
+--- Makefile.orig
++++ Makefile
+@@ -1,11 +1,9 @@
+ # Unix gcc or DOS go32 cross-compiling gcc
+ #
+-CC = gcc
+-LD = gcc
++CC ?= gcc
++LD ?= gcc
+ # for testing. not to be used; build failures in misc/.
+ #CFLAGS = -O2 -W -Wall -pedantic -ansi
+-CFLAGS = -O2
+-LDFLAGS = -lc
+ 
+ # for DOS?
+ # CC = gcc-go32
