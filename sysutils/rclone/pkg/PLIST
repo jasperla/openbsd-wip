@@ -1,3 +1,0 @@
-@comment $OpenBSD$
-@bin bin/rclone
-@man man/man1/rclone.1
