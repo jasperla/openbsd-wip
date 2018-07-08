@@ -16,6 +16,8 @@ MASTER_SITES =	https://github.com/fcambus/motyl/releases/download/$V/
 
 MODULES =	lang/ruby
 
+MODRUBY_ADJ_FILES = *
+
 RUN_DEPENDS =	textproc/ruby-kramdown \
 		textproc/ruby-mustache \
 		textproc/ruby-rouge
