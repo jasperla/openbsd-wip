@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v$
+${P5SITE}/Pod/
+${P5SITE}/Pod/Eventual/
+${P5SITE}/Pod/Eventual.pm
+${P5SITE}/Pod/Eventual/Simple.pm
+@man man/man3p/Pod::Eventual.3p
+@man man/man3p/Pod::Eventual::Simple.3p
