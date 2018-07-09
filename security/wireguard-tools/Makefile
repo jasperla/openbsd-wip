@@ -2,10 +2,10 @@
 
 COMMENT =	fast and secure VPN
 
-V =		0.0.20180625
+V =		0.0.20180708
 DISTNAME =	WireGuard-$V
 PKGNAME =	wireguard-tools-$V
-REVISION =	2
+REVISION =	0
 
 CATEGORIES =	security
 
