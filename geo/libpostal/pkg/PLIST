@@ -1,8 +1,7 @@
-@comment $OpenBSD$
+@comment $OpenBSD: PLIST,v$
 @newgroup _libpostal:813
 @extraunexec rm -rf /var/db/libpostal
 @bin bin/address_parser
-bin/libpostal_data
 include/libpostal/
 include/libpostal/libpostal.h
 lib/libpostal.a

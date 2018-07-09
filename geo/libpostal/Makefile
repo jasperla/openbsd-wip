@@ -41,5 +41,6 @@ pre-configure:
 
 post-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/address_parser ${PREFIX}/bin
+	rm ${PREFIX}/bin/libpostal_data
 
 .include <bsd.port.mk>

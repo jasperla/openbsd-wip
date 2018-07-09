@@ -3,7 +3,7 @@ libpostal requires data files which should be fetched before use.
 Fetching data files requires 776M of free space, and the extracted data
 takes 1.8G.
 
-The user running libpostal_data must be part of the _libpostal group:
+The user fetching data must be part of the _libpostal group:
 
 # usermod -G _libpostal <username>
 
