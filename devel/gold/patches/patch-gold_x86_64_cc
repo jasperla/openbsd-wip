@@ -6,7 +6,7 @@ https://sourceware.org/bugzilla/show_bug.cgi?id=6498
 Index: gold/x86_64.cc
 --- gold/x86_64.cc.orig
 +++ gold/x86_64.cc
-@@ -1261,8 +1261,8 @@ const Target::Target_info Target_x86_64<64>::x86_64_in
+@@ -1402,8 +1402,8 @@ const Target::Target_info Target_x86_64<64>::x86_64_in
    '\0',			// wrap_char
    "/lib/ld64.so.1",     // program interpreter
    0x400000,		// default_text_segment_address

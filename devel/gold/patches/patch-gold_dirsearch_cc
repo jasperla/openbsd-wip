@@ -14,7 +14,7 @@ Index: gold/dirsearch.cc
  #include <cstring>
  #include <sys/types.h>
  #include <sys/stat.h>
-@@ -300,6 +302,98 @@ Dirsearch::find_file_in_dir_list(const std::string& na
+@@ -300,6 +302,95 @@ Dirsearch::find_file_in_dir_list(const std::string& na
          return full_name;
      }
    return name;
@@ -31,7 +31,7 @@ Index: gold/dirsearch.cc
 +  DIR *dirp;
 +  struct dirent *dp;
 +  const char *e;
-+  char *f, *t, *u, *v;
++  char *t, *u, *v;
 +  char M[21], m[21];
 +  long long Maj, Min, tMaj, tMin;
 +  size_t len = strlen(name.c_str());
@@ -45,11 +45,8 @@ Index: gold/dirsearch.cc
 +    {
 +      const Search_directory* p = &this->directories_->at(i);
 +
-+      f = strdup(p->name().c_str());
-+      if ((dirp = opendir(f)) == NULL)
++      if ((dirp = opendir(p->name().c_str())) == NULL)
 +	continue;
-+      free(f);
-+      f = NULL;
 +
 +      Maj = -1;
 +      Min = -1;

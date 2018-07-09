@@ -1,0 +1,8 @@
+TODO/Questions
+==============
+
+1. gold can create shared libs, regular pie executables, and -shared
+   -pie executables. It cannot create -nopie executables of any kind
+   yet. I may need help figuring this out.
+
+2. Would this ever be accepted into ports?

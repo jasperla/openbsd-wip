@@ -5,7 +5,7 @@ $OpenBSD$
 Index: gold/script.cc
 --- gold/script.cc.orig
 +++ gold/script.cc
-@@ -3279,7 +3279,10 @@ static struct
+@@ -3302,7 +3302,10 @@ static struct
    PHDR_TYPE(PT_TLS),
    PHDR_TYPE(PT_GNU_EH_FRAME),
    PHDR_TYPE(PT_GNU_STACK),

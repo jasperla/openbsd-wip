@@ -5,7 +5,7 @@ $OpenBSD$
 Index: gold/layout.h
 --- gold/layout.h.orig
 +++ gold/layout.h
-@@ -457,6 +457,12 @@ enum Output_section_order
+@@ -469,6 +469,12 @@ enum Output_section_order
    // first non-RELRO section.
    ORDER_NON_RELRO_FIRST,
  
@@ -18,7 +18,7 @@ Index: gold/layout.h
    // The regular data sections come after the RELRO sections.
    ORDER_DATA,
  
-@@ -1361,6 +1367,10 @@ class Layout
+@@ -1413,6 +1419,10 @@ class Layout
    Output_segment* relro_segment_;
    // A pointer to the PT_INTERP segment if there is one.
    Output_segment* interp_segment_;

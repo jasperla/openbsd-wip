@@ -5,7 +5,7 @@ Taken from devel/gas, to be safe.
 Index: bfd/config.bfd
 --- bfd/config.bfd.orig
 +++ bfd/config.bfd
-@@ -259,6 +259,11 @@ case "${targ}" in
+@@ -244,6 +244,11 @@ case "${targ}" in
      targ_selvecs="aarch64_elf64_be_vec arm_elf32_le_vec arm_elf32_be_vec"
      want64=true
      ;;
@@ -17,12 +17,12 @@ Index: bfd/config.bfd
    aarch64-*-fuchsia*)
      targ_defvec=aarch64_elf64_le_vec
      targ_selvecs="aarch64_elf64_be_vec arm_elf32_le_vec arm_elf32_be_vec"
-@@ -788,7 +793,7 @@ case "${targ}" in
+@@ -681,7 +686,7 @@ case "${targ}" in
      targ_selvecs="i386_elf32_fbsd_vec iamcu_elf32_vec i386_coff_vec i386_pei_vec x86_64_pei_vec i386_elf32_vec x86_64_elf64_vec l1om_elf64_vec l1om_elf64_fbsd_vec k1om_elf64_vec k1om_elf64_fbsd_vec"
      want64=true
      ;;
 -  x86_64-*-netbsd* | x86_64-*-openbsd*)
 +  x86_64-*-netbsd* | x86_64-*-openbsd* | amd64-*-openbsd*)
      targ_defvec=x86_64_elf64_vec
-     targ_selvecs="i386_elf32_vec iamcu_elf32_vec i386_aout_nbsd_vec i386_coff_vec i386_pei_vec x86_64_pei_vec l1om_elf64_vec k1om_elf64_vec"
+     targ_selvecs="i386_elf32_vec iamcu_elf32_vec i386_coff_vec i386_pei_vec x86_64_pei_vec l1om_elf64_vec k1om_elf64_vec"
      want64=true

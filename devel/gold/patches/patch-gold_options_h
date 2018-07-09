@@ -1,13 +1,13 @@
 $OpenBSD$
 
-Default to -pie
+Default to -pie. Let -nopie work.
 Add -z wxneeded option (and -z nowxneeded option)
 .openbsd.randomdata and .openbsd.wxneeded support
 
 Index: gold/options.h
 --- gold/options.h.orig
 +++ gold/options.h
-@@ -1085,7 +1085,7 @@ class General_options
+@@ -1089,13 +1089,17 @@ class General_options
    DEFINE_bool(p, options::ONE_DASH, 'p', false,
  	      N_("Ignored for ARM compatibility"), NULL);
  
@@ -16,7 +16,17 @@ Index: gold/options.h
  	      N_("Create a position independent executable"),
  	      N_("Do not create a position independent executable"));
    DEFINE_bool_alias(pic_executable, pie, options::TWO_DASHES, '\0',
-@@ -1482,6 +1482,8 @@ class General_options
+ 		    N_("Create a position independent executable"),
+ 		    N_("Do not create a position independent executable"),
+ 		    false);
++  DEFINE_bool_alias(nopie, pie, options::ONE_DASH, '\0',
++		    N_("Create a position independent executable"),
++		    N_("Do not create a position independent executable"),
++		    false);
+ 
+   DEFINE_bool(pic_veneer, options::TWO_DASHES, '\0', false,
+ 	      N_("Force PIC sequences for ARM/Thumb interworking veneers"),
+@@ -1488,6 +1492,8 @@ class General_options
    DEFINE_bool(now, options::DASH_Z, '\0', false,
  	      N_("Mark object for immediate function binding"),
  	      NULL);
@@ -25,16 +35,25 @@ Index: gold/options.h
    DEFINE_bool(origin, options::DASH_Z, '\0', false,
  	      N_("Mark DSO to indicate that needs immediate $ORIGIN "
  		 "processing at runtime"), NULL);
-@@ -1500,6 +1502,8 @@ class General_options
- 	      N_("Move .text.unlikely sections to a separate segment."),
- 	      N_("Do not move .text.unlikely sections to a separate "
- 		 "segment."));
+@@ -1510,6 +1516,8 @@ class General_options
+ 	      N_("Keep .text.hot, .text.startup, .text.exit and .text.unlikely "
+ 		 "as separate sections in the final binary."),
+ 	      N_("Merge all .text.* prefix sections."));
 +  DEFINE_bool(wxneeded, options::DASH_Z, '\0', false,
 +	      N_("Mark output as requiring wxneeded"), NULL);
  
  
   public:
-@@ -1588,6 +1592,10 @@ class General_options
+@@ -1539,7 +1547,7 @@ class General_options
+   // the output is position-independent or not.
+   bool
+   output_is_position_independent() const
+-  { return this->shared() || this->pie(); }
++  { return this->pie(); }
+ 
+   // Return true if the output is something that can be exec()ed, such
+   // as a static executable, or a position-dependent or
+@@ -1598,6 +1606,10 @@ class General_options
    { return this->execstack_status_ != EXECSTACK_FROM_INPUT; }
  
    bool
@@ -45,7 +64,7 @@ Index: gold/options.h
    is_stack_executable() const
    { return this->execstack_status_ == EXECSTACK_YES; }
  
-@@ -1765,6 +1773,17 @@ class General_options
+@@ -1775,6 +1787,17 @@ class General_options
      EXECSTACK_NO
    };
  
@@ -63,7 +82,7 @@ Index: gold/options.h
    enum Icf_status
    {
      // Do not fold any functions (Default or --icf=none).
-@@ -1784,6 +1803,10 @@ class General_options
+@@ -1794,6 +1817,10 @@ class General_options
    { this->execstack_status_ = value; }
  
    void
@@ -74,11 +93,11 @@ Index: gold/options.h
    set_do_demangle(bool value)
    { this->do_demangle_ = value; }
  
-@@ -1819,6 +1842,8 @@ class General_options
+@@ -1829,6 +1856,8 @@ class General_options
    bool printed_version_;
    // Whether to mark the stack as executable.
    Execstack execstack_status_;
-+  // Whether to mark the binary wxneeded.
++  // Whether to mark the binary as wxneeded.
 +  Wxneeded wxneeded_status_;
    // Whether to do code folding.
    Icf_status icf_status_;

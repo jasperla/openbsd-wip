@@ -12,9 +12,9 @@ It can be easily used by clang by passing the flag
 -fuse-ld=gold
 on the command line during the linker step.
 
-The easiest way to do this is to add "-fuse-ld=gold" to your LDFLAGS.
-
 Caveats:
-* gold can create shared libs (libx.so.X.Y), regular (aka -shared -pie),
-  and -static -pie executables. gold cannot yet create -nopie
-  executables. Trying to do so will end with an internal linker error.
+* gold can create shared libs, regular pie executables, and
+  -shared -pie executables. It cannot create -nopie executables of
+  any kind yet.
+
+  Help with this is greatly appreciated!
