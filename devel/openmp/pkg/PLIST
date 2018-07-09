@@ -1,4 +1,4 @@
-@comment $OpenBSD$
+@comment $OpenBSD: PLIST,v$
 include/omp.h
 include/ompt.h
 @lib lib/libgomp.so.${LIBgomp_VERSION}

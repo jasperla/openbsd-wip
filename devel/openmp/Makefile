@@ -3,7 +3,7 @@
 # So say the LLVM people.
 ONLY_FOR_ARCHS =	amd64 arm64 armv7 i386 mips64 mips64el
 
-V =		6.0.0
+V =		6.0.1
 COMMENT =	LLVM OpenMP stand-alone implementation
 DISTNAME =	openmp-${V}.src
 PKGNAME =	openmp-${V}
