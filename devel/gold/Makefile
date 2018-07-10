@@ -2,7 +2,7 @@
 
 # gold does not follow binutils version numbering
 COMMENT =	GNU ELF-only linker
-DISTNAME =	binutils-2.30.97
+DISTNAME =	binutils-2.31.51.20180709
 PKGNAME =	gold-1.16
 CATEGORIES =	devel
 
