@@ -1,3 +1,0 @@
-@comment $OpenBSD$
-${P5SITE}/Pod/Coverage/TrustPod.pm
-@man man/man3p/Pod::Coverage::TrustPod.3p
