@@ -29,7 +29,11 @@ CONFIGURE_ARGS +=	--disable-as \
 			--with-system-zlib \
 			--disable-install-libbfd \
 			--disable-shared \
-			--disable-host-shared
+			--disable-host-shared \
+			--disable-werror \
+			--disable-sim \
+			--disable-readline \
+			--disable-libdecnumber
 
 # gold can link gold
 # uncomment after installation and rebuild if you want to try
