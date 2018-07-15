@@ -1,14 +1,16 @@
-# $OpenBSD: Makefile,v 1.4 2017/04/22 21:57:42 shadchin Exp $
+# $OpenBSD$
 
 COMMENT =		python parser
 
-MODPY_EGG_VERSION =	0.3.0
+MODPY_EGG_VERSION =	0.3.1
 DISTNAME =		parso-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 
 CATEGORIES =		devel
 
-HOMEPAGE =		https://github.com/davidhalter/parso
+HOMEPAGE =		https://parso.readthedocs.org
+
+MAINTAINER =		Elias M. Mariani <marianielias@gmail.com>
 
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes

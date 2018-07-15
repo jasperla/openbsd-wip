@@ -9,17 +9,19 @@ CATEGORIES =	graphics
 
 HOMEPAGE =	https://sk1project.net/
 
-# GPL 3.0
+MAINTAINER =	Elias M. Mariani <marianielias@gmail.com>
+
+# GPLv3+
 PERMIT_PACKAGE_CDROM =  Yes
+
 MASTER_SITES =	https://downloads.sk1project.net/sk1/${VERSION}/
-EXTRACT_SUFX =	.tar.gz
 
 MODULES =	lang/python
 MODPY_SETUP =	setup-sk1.py
 
 WANTLIB += MagickCore-6.Q16 MagickWand-6.Q16 cairo fribidi glib-2.0
 WANTLIB += gobject-2.0 intl lcms2 pango-1.0 pangocairo-1.0 pthread
-WANTLIB += python2.7
+WANTLIB += ${MODPY_WANTLIB}
 
 BUILD_DEPENDS +=	graphics/py-cairo
 
@@ -38,5 +40,10 @@ RUN_DEPENDS +=		devel/desktop-file-utils \
 			x11/wxWidgets
 
 MAKE_ENV =	APP_INSTALL_PATH=${MODPY_SITEPKG}
+
+pre-build:
+	${SUBST_CMD} ${WRKSRC}/setup-sk1.py
+	${SUBST_CMD} ${WRKSRC}/setup.cfg_sk1
+	${SUBST_CMD} ${WRKSRC}/src/uc2/utils/fs.py
 
 .include <bsd.port.mk>

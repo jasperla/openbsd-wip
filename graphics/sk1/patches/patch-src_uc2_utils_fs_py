@@ -9,7 +9,7 @@ Index: src/uc2/utils/fs.py
          return ['/usr/share/fonts', os.path.join(home, '.fonts')]
 +    if system.get_os_family() == system.OPENBSD:
 +        home = os.path.expanduser('~')
-+        return ['/usr/local/share/fonts', os.path.join(home, '.fonts')]
++        return ['${PREFIX}/share/fonts', os.path.join(home, '.fonts')]
      if system.get_os_family() == system.WINDOWS:
          try:
              import _winreg

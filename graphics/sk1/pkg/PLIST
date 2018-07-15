@@ -1414,7 +1414,6 @@ lib/python${MODPY_VERSION}/site-packages/wal/treewidgets.py
 lib/python${MODPY_VERSION}/site-packages/wal/treewidgets.pyc
 lib/python${MODPY_VERSION}/site-packages/wal/widgets.py
 lib/python${MODPY_VERSION}/site-packages/wal/widgets.pyc
-share/applications/
 share/applications/sk1.desktop
 share/icons/hicolor/scalable/apps/sk1.svg
 share/pixmaps/

@@ -10,7 +10,7 @@ Index: setup.cfg_sk1
  install-purelib=$APP_INSTALL_PATH
  install-platlib=$APP_INSTALL_PATH
 -install-scripts=/usr/bin
-+install-scripts=/usr/local/bin
++install-scripts=${PREFIX}/bin
  install-data=$APP_INSTALL_PATH
  install-headers=$APP_INSTALL_PATH
  
