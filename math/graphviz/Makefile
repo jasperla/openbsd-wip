@@ -2,10 +2,12 @@
 
 COMMENT-main=	graph drawing software
 
-DISTNAME=	graphviz-2.36.0
-REVISION=	11
-PKGNAME-main=	${DISTNAME}
+VERSION =	2.40.1
+DISTNAME=	graphviz
+PKGNAME-main=	${DISTNAME}-${VERSION}
 CATEGORIES=	math devel graphics
+
+WRKDIST=${WRKDIR}/${PKGNAME-main}
 
 # there is only one multi-package due to legacy, but maybe more
 # will appear in the form of language bindings.
@@ -16,17 +18,18 @@ PATCHORIG=	.orig2
 
 MASTER_SITES=	${HOMEPAGE}pub/graphviz/ARCHIVE/
 
-SHARED_LIBS += gvplugin_core		1.0 # 6.0
-SHARED_LIBS += gvplugin_gd		1.0 # 6.0
-SHARED_LIBS += gvplugin_pango		1.0 # 6.0
-SHARED_LIBS += gvplugin_dot_layout	1.0 # 6.0
-SHARED_LIBS += gvplugin_neato_layout	1.0 # 6.0
-SHARED_LIBS += gvplugin_xlib		1.0 # 6.0
-SHARED_LIBS += gvplugin_gtk		1.0 # 6.0
-SHARED_LIBS += gvplugin_rsvg		0.0 # 6.0
-SHARED_LIBS += gvplugin_gdk		0.0 # 6.0
-SHARED_LIBS += gvplugin_poppler		0.0 # 6.0
+SHARED_LIBS += gvplugin_core		2.0 # 6.0
+SHARED_LIBS += gvplugin_gd		2.0 # 6.0
+SHARED_LIBS += gvplugin_pango		2.0 # 6.0
+SHARED_LIBS += gvplugin_dot_layout	2.0 # 6.0
+SHARED_LIBS += gvplugin_neato_layout	2.0 # 6.0
+SHARED_LIBS += gvplugin_xlib		2.0 # 6.0
+SHARED_LIBS += gvplugin_gtk		2.0 # 6.0
+SHARED_LIBS += gvplugin_rsvg		1.0 # 6.0
+SHARED_LIBS += gvplugin_gdk		1.0 # 6.0
+SHARED_LIBS += gvplugin_poppler		1.0 # 6.0
 
+SHARED_LIBS += lab_gamut		0.0 # 1.0
 SHARED_LIBS += cdt			1.0 # 5.0
 SHARED_LIBS += pathplan			2.0 # 4.0
 SHARED_LIBS += gvc			1.0 # 6.0
@@ -39,25 +42,26 @@ SHARED_LIBS += tcldot_builtin		3.0 # unknown
 SHARED_LIBS += tclplan			3.0 # unknown
 SHARED_LIBS += tkspline			3.0 # unknown
 
-HOMEPAGE=	http://www.graphviz.org/
+HOMEPAGE=	https://www.graphviz.org/
 
 MAINTAINER =	Edd Barrett <edd@openbsd.org>
 
 # Eclipse Public License v1.0
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += ICE SM X11 Xau Xaw Xcomposite Xcursor Xdamage Xdmcp
-WANTLIB += Xext Xfixes Xft Xi Xinerama Xmu Xpm Xrandr Xrender
-WANTLIB += Xss Xt atk-1.0 c cairo croco-0.6 expat ffi fontconfig
-WANTLIB += freetype gd gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0
-WANTLIB += gmodule-2.0 gmp gobject-2.0 graphite2 gthread-2.0 gtk-x11-2.0
-WANTLIB += guile harfbuzz iconv intl jpeg lcms2 ltdl lzma m openjp2 pango-1.0
-WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre perl pixman-1 png
-WANTLIB += poppler poppler-glib pthread rsvg-2 ${COMPILER_LIBCXX}
-WANTLIB += tiff tk85 webp xcb xcb-render xcb-shm xml2 z
+WANTLIB += ${COMPILER_LIBCXX} ICE SM X11 Xau Xaw Xcomposite Xcursor
+WANTLIB += Xdamage Xdmcp Xext Xfixes Xi Xinerama Xmu Xpm Xrandr
+WANTLIB += Xrender Xt atk-1.0 c cairo croco-0.6 expat ffi fontconfig
+WANTLIB += freetype fribidi gd gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
+WANTLIB += glib-2.0 gmodule-2.0 gmp gobject-2.0 graphite2 gthread-2.0
+WANTLIB += gtk-x11-2.0 guile harfbuzz iconv intl jpeg lcms2 ltdl
+WANTLIB += lzma m openjp2 pango-1.0 pangocairo-1.0 pangoft2-1.0
+WANTLIB += pcre perl pixman-1 png poppler poppler-glib rsvg-2
+WANTLIB += tiff webp xcb xcb-render xcb-shm xml2 z
 
 MODULES=	x11/tk \
 		perl
+
 LIB_DEPENDS =	graphics/jpeg \
 		graphics/png \
 		devel/libtool,-ltdl \
@@ -68,14 +72,17 @@ LIB_DEPENDS =	graphics/jpeg \
 		graphics/graphite2 \
 		devel/harfbuzz \
 		print/poppler \
-		lang/guile \
-		${MODTK_LIB_DEPENDS}
-BUILD_DEPENDS=	devel/swig
-TEST_DEPENDS =	${FULLPKGNAME}:math/graphviz
+		lang/guile
+
+BUILD_DEPENDS=	devel/swig \
+		${MODTK_BUILD_DEPENDS}
+
+RUN_DEPENDS =	${MODTK_RUN_DEPENDS}
 
 USE_GMAKE =	Yes
-USE_GROFF =	Yes
+
 CONFIGURE_STYLE=gnu
+
 # Note: --with-tclsh is misspelled "--with-tcl" in configure's help output
 CONFIGURE_ARGS=	--enable-tcl=yes \
 		--enable-perl \
@@ -123,13 +130,9 @@ FAKE_FLAGS=	htmldir="${DOCBASE}/html" \
 		undirecteddir="${EXBASE}/graphs/undirected" \
 		pkgtcldir="${MODTCL_TCLDIR}/graphviz"
 
-post-build:
-.for CMD in dotty lneato
-	echo "#! /bin/ksh" >${WRKBUILD}/cmd/${CMD}/${CMD}
-	echo ': $${LEFTYPATH:=$(LOCALBASE)/share/examples/graphviz/lefty}' >>${WRKBUILD}/cmd/${CMD}/${CMD}
-	echo 'export LEFTYPATH' >>${WRKBUILD}/cmd/${CMD}/${CMD}
-	cat ${WRKBUILD}/cmd/${CMD}/${CMD}.ksh >>${WRKBUILD}/cmd/${CMD}/${CMD}
-.endfor
+TEST_TARGET =	check
+TEST_DEPENDS =	shells/ksh93 \
+		${FULLPKGNAME}:math/graphviz
 
 post-install:
 # install pre-generated config6 to avoid @exec/@unexec-delete
@@ -143,16 +146,8 @@ post-install:
 	ln -s ${TRUEPREFIX}/lib/tcl/graphviz \
 		${PREFIX}/lib/tcl${MODTCL_VERSION}/graphviz
 
-# Local tests for OpenBSD
-# Can't run built in tests, as requires ksh93 (some specific arguments
-# to the typeset builtin). Currently, there is no port.
-TEST_TMP=${WRKDIR}/test_tmp
-do-test:
-	mkdir -p ${TEST_TMP}
-	cd ${FILESDIR}/tests && for i in *-test.* run_tests.sh; do \
-		${SUBST_CMD} -m 0644 -c $${i} ${TEST_TMP}/$${i}; \
-	done
-	cd ${TEST_TMP} && /bin/sh ./run_tests.sh
+pre-test:
+	sed -i s,#!/bin/ksh,#!/${LOCALBASE}/bin/ksh93, ${WRKSRC}/rtest/rtest.sh
 
 # NOTE: When updating this port:
 #  * Check we have commented .la and .a corresponding to unversioned .so files
