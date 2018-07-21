@@ -11,12 +11,13 @@ WANTLIB += KF5Bookmarks KF5Codecs KF5Completion KF5ConfigCore
 WANTLIB += KF5ConfigGui KF5ConfigWidgets KF5CoreAddons KF5I18n
 WANTLIB += KF5IconThemes KF5ItemViews KF5JS KF5JSApi KF5JobWidgets
 WANTLIB += KF5KExiv2 KF5KHtml KF5KIOCore KF5KIOFileWidgets KF5KIONTLM
-WANTLIB += KF5KIOWidgets KF5Parts KF5Pty KF5Service KF5Solid KF5SonnetUi
-WANTLIB += KF5TextWidgets KF5ThreadWeaver KF5Wallet KF5WidgetsAddons
-WANTLIB += KF5WindowSystem KF5XmlGui Qt5Core Qt5DBus Qt5Gui Qt5Network
-WANTLIB += Qt5PrintSupport Qt5Qml Qt5Quick Qt5Svg Qt5TextToSpeech
-WANTLIB += Qt5Widgets Qt5Xml c chm djvulibre epub freetype jpeg
-WANTLIB += m poppler poppler-qt5 qca-qt5 qmobipocket tiff z
+WANTLIB += KF5KIOWidgets KF5Parts KF5Pty KF5Purpose KF5PurposeWidgets
+WANTLIB += KF5Service KF5Solid KF5SonnetUi KF5TextWidgets KF5ThreadWeaver
+WANTLIB += KF5Wallet KF5WidgetsAddons KF5WindowSystem KF5XmlGui
+WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5PrintSupport
+WANTLIB += Qt5Qml Qt5Quick Qt5Svg Qt5TextToSpeech Qt5Widgets Qt5Xml
+WANTLIB += c chm djvulibre epub freetype jpeg m poppler poppler-qt5
+WANTLIB += qca-qt5 qmobipocket tiff z zip
 
 KDE5 =		Yes
 KF5_BUILD_PY =	Yes
@@ -54,17 +55,17 @@ LIB_DEPENDS =	devel/kf5/ki18n \
 		devel/kf5/threadweaver \
 		devel/kf5/kpty \
 		devel/kf5/khtml \
+		devel/kf5/purpose \
+		devel/chmlib \
 		x11/qt5/qtspeech \
 		x11/qt5/qtdeclarative \
-		security/qca-qt5 \
-		devel/chmlib \
+		x11/kde-applications/libkexiv2 \
+		x11/kde-applications/kdegraphics-mobipocket \
 		graphics/djvulibre \
 		graphics/tiff \
 		print/poppler,,-qt5 \
 		security/qca-qt5 \
-		textproc/ebook-tools \
-		x11/kde-applications/libkexiv2 \
-		x11/kde-applications/kdegraphics-mobipocket
+		textproc/ebook-tools
 
 TEST_IS_INTERACTIVE =	X11
 

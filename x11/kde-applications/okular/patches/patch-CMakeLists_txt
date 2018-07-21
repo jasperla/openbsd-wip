@@ -3,9 +3,9 @@ $OpenBSD$
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -341,7 +341,7 @@ target_link_libraries(okularpart okularcore
-     KF5::WindowSystem
- )
+@@ -362,7 +362,7 @@ if (KDEExperimentalPurpose_FOUND)
+     target_link_libraries(okularpart KDEExperimental::PurposeWidgets)
+ endif()
  
 -set_target_properties(okularpart PROPERTIES PREFIX "")
 +#set_target_properties(okularpart PROPERTIES PREFIX "")
