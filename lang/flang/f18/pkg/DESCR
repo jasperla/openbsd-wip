@@ -1,0 +1,4 @@
+F18 is a front-end for Fortran. It is intended to replace the existing
+front-end in the Flang compiler. Unlike Flang, F18 is written in C++17.
+It is believed that Flang is unfit to be integrated directly into LLVM,
+and so F18 aims to be an integratable replacement.
