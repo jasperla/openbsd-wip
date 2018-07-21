@@ -1,4 +1,5 @@
-@comment $OpenBSD$
+@comment $OpenBSD: PLIST,v$
+@conflict kde-l10n-*
 include/libkomparediff2/
 include/libkomparediff2/diff2_export.h
 include/libkomparediff2/difference.h
