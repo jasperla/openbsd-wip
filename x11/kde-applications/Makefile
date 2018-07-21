@@ -172,7 +172,7 @@
      SUBDIR += libkipi
      SUBDIR += libkleo
      SUBDIR += libkmahjongg
-     #SUBDIR += libkomparediff2
+     SUBDIR += libkomparediff2
      #SUBDIR += libksane
      #SUBDIR += libksieve
      #SUBDIR += lokalize
