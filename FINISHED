@@ -68,3 +68,4 @@ math/openblas				ready to import (bcallah)
 games/xash3d				sent to ports@ 2018-05-05 (rfreeman)
 devel/py-progressbar2			sent to ports@ 2018-06-04
 devel/py-python_utils			sent to ports@ 2018-06-04
+emulators/dolphin			imported 2018-07-22 (thfr)
