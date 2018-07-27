@@ -3,15 +3,12 @@ $OpenBSD$
 Index: lxqt-config-session/sessionconfigwindow.cpp
 --- lxqt-config-session/sessionconfigwindow.cpp.orig
 +++ lxqt-config-session/sessionconfigwindow.cpp
-@@ -122,7 +122,11 @@ void SessionConfigWindow::updateCfgComboBox(QComboBox 
+@@ -122,7 +122,7 @@ void SessionConfigWindow::updateCfgComboBox(QComboBox 
                                              const QString &prompt
                                             )
  {
-+    #if defined(__OpenBSD__)
-+    QString fname = QFileDialog::getOpenFileName(cb, prompt, "/usr/local/bin/");
-+    #else
-     QString fname = QFileDialog::getOpenFileName(cb, prompt, "/usr/bin/");
-+    #endif
+-    QString fname = QFileDialog::getOpenFileName(cb, prompt, "/usr/bin/");
++    QString fname = QFileDialog::getOpenFileName(cb, prompt, "${LOCALBASE}/bin/");
      if (fname.isEmpty())
          return;
  
