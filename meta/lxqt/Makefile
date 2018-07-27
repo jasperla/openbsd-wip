@@ -9,7 +9,7 @@ PKGNAME=	lxqt-${V}
 PKGNAME-main =		lxqt-${V}
 PKGNAME-extras =	lxqt-extras-${V}
 
-MAINTAINER ?=		LXQt porting team <openbsd-lxqt@googlegroups.com>
+MAINTAINER =		Elias M. Mariani <marianielias@gmail.com>
 
 MULTI_PACKAGES =	-main -extras
 
