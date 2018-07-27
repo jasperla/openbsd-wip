@@ -42,4 +42,7 @@ RUN_DEPENDS +=	databases/py-pickleshare${MODPY_FLAVOR} \
 		x11/py-qtawesome${MODPY_FLAVOR}>=0.4.1 \
 		devel/spyder/spyder-kernels${MODPY_FLAVOR}<1.0
 
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/spyder/__init__.py
+
 .include <bsd.port.mk>

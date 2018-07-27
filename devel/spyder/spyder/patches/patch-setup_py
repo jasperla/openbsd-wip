@@ -21,12 +21,12 @@ Index: setup.py
          if PY3:
              data_files = [('share/applications', ['scripts/spyder3.desktop']),
 -                          ('share/icons', ['img_src/spyder3.png']),
-+                          ('share/icons/spyder3', ['img_src/spyder3.png']),
++                          ('share/icons/hicolor/48x48/apps', ['img_src/spyder3.png']),
                            ('share/metainfo', ['scripts/spyder3.appdata.xml'])]
          else:
              data_files = [('share/applications', ['scripts/spyder.desktop']),
 -                          ('share/icons', ['img_src/spyder.png'])]
-+                          ('share/icons/spyder', ['img_src/spyder.png'])]
++                          ('share/icons/hicolor/48x48/apps', ['img_src/spyder.png'])]
      elif os.name == 'nt':
          data_files = [('scripts', ['img_src/spyder.ico',
                                     'img_src/spyder_reset.ico'])]
