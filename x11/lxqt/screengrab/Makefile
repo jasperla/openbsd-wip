@@ -2,7 +2,7 @@
 
 COMMENT =	tool for fast making screenshots
 
-VERSION =	1.98
+VERSION =	1.99
 
 NAME=		screengrab
 DISTNAME =	${NAME}-${VERSION}

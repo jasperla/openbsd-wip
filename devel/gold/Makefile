@@ -17,6 +17,9 @@ WANTLIB += ${COMPILER_LIBCXX} c m z
 #MASTER_SITES =	${MASTER_SITE_GNU:=binutils/}
 MASTER_SITES =	https://mirrors.nycbug.org/pub/distfiles/
 
+# There is a hidden dependency on C++11
+COMPILER =	base-clang ports-gcc
+
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS +=	--disable-as \
 			--disable-binutils \
@@ -39,7 +42,7 @@ CONFIGURE_ARGS +=	--disable-as \
 # uncomment after installation and rebuild if you want to try
 #CONFIGURE_ENV =		LDFLAGS="${LDFLAGS} -fuse-ld=gold"
 
-MAKE_FLAGS =	CXXFLAGS="${CXXFLAGS} -Wno-c++11-narrowing"
+MAKE_FLAGS =	CXXFLAGS="${CXXFLAGS} -std=gnu++11 -Wno-narrowing"
 
 LIBTOOL_FLAGS =	--tag=disable-shared
 

@@ -1,4 +1,4 @@
-@comment $OpenBSD$
+@comment $OpenBSD: PLIST,v$
 include/qmobipocket/
 include/qmobipocket/mobipocket.h
 include/qmobipocket/qfilestream.h

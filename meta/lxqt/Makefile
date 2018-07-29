@@ -9,7 +9,7 @@ PKGNAME=	lxqt-${V}
 PKGNAME-main =		lxqt-${V}
 PKGNAME-extras =	lxqt-extras-${V}
 
-MAINTAINER ?=		LXQt porting team <openbsd-lxqt@googlegroups.com>
+MAINTAINER =		Elias M. Mariani <marianielias@gmail.com>
 
 MULTI_PACKAGES =	-main -extras
 
@@ -27,17 +27,13 @@ RUN_DEPENDS-main += \
 		x11/lxqt/qtermwidget \
 		x11/lxqt/qterminal \
 		x11/lxqt/qtplugin \
+		x11/lxqt/obconf-qt \
 		x11/lxqt/themes
-
-# external deps
-RUN_DEPENDS-main += \
-		x11/openbox
 
 
 RUN_DEPENDS-extras += \
 		STEM-=${V}:${BASE_PKGPATH},-main \
 		x11/lxqt/lximage-qt \
-		x11/lxqt/obconf-qt \
 		x11/lxqt/openssh-askpass \
 		x11/lxqt/pavucontrol-qt \
 		x11/lxqt/runner \

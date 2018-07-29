@@ -1,0 +1,14 @@
+$OpenBSD$
+
+Index: SRC/CMakeLists.txt
+--- SRC/CMakeLists.txt.orig
++++ SRC/CMakeLists.txt
+@@ -241,6 +241,6 @@ install(TARGETS superlu
+ )
+ 
+ install(FILES ${headers}
+-#  DESTINATION ${CMAKE_INSTALL_PREFIX}/include
+-  DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
++  DESTINATION ${CMAKE_INSTALL_PREFIX}/include/superlu
++#  DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
+ )

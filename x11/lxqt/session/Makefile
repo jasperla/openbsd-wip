@@ -25,6 +25,11 @@ RUN_DEPENDS +=		devel/xdg-user-dirs \
 CONFIGURE_ARGS +=	-DWITH_LIBUDEV=No
 CONFIGURE_ARGS +=	-DPULL_TRANSLATIONS:BOOL=OFF
 
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/lxqt-config-session/autostartedit.cpp
+	${SUBST_CMD} ${WRKSRC}/lxqt-config-session/sessionconfigwindow.cpp
+	${SUBST_CMD} ${WRKSRC}/lxqt-session/src/wmselectdialog.cpp
+
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/${NAME}
 	mv ${WRKINST}${SYSCONFDIR}/xdg ${PREFIX}/share/examples/${NAME}/

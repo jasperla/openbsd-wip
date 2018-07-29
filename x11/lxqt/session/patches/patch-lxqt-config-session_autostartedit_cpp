@@ -3,15 +3,12 @@ $OpenBSD$
 Index: lxqt-config-session/autostartedit.cpp
 --- lxqt-config-session/autostartedit.cpp.orig
 +++ lxqt-config-session/autostartedit.cpp
-@@ -56,7 +56,11 @@ bool AutoStartEdit::needTray()
+@@ -56,7 +56,7 @@ bool AutoStartEdit::needTray()
  
  void AutoStartEdit::browse()
  {
-+    #if defined(__OpenBSD__)
-+    QString filePath = QFileDialog::getOpenFileName(this, tr("Select Application"), "/usr/local/bin/");
-+    #else
-     QString filePath = QFileDialog::getOpenFileName(this, tr("Select Application"), "/usr/bin/");
-+    #endif
+-    QString filePath = QFileDialog::getOpenFileName(this, tr("Select Application"), "/usr/bin/");
++    QString filePath = QFileDialog::getOpenFileName(this, tr("Select Application"), "${LOCALBASE}/bin/");
      if (!filePath.isEmpty())
          ui->commandEdit->setText(filePath);
  }

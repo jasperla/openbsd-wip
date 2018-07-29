@@ -20,10 +20,14 @@ share/examples/screengrab/screengrab.conf
 share/icons/hicolor/32x32/apps/screengrab.png
 share/screengrab/
 share/screengrab/translations/
+share/screengrab/translations/screengrab_ca.qm
 share/screengrab/translations/screengrab_de.qm
 share/screengrab/translations/screengrab_es.qm
 share/screengrab/translations/screengrab_fr.qm
+share/screengrab/translations/screengrab_he.qm
 share/screengrab/translations/screengrab_it.qm
+share/screengrab/translations/screengrab_lt.qm
+share/screengrab/translations/screengrab_pl.qm
 share/screengrab/translations/screengrab_pt_BR.qm
 share/screengrab/translations/screengrab_ru.qm
 share/screengrab/translations/screengrab_uk_UA.qm

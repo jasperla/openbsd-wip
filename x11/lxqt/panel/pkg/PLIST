@@ -12,7 +12,6 @@ lib/lxqt-panel/libkbindicator.so
 lib/lxqt-panel/libmount.so
 lib/lxqt-panel/libnetworkmonitor.so
 lib/lxqt-panel/libsysstat.so
-lib/lxqt-panel/libvolume.so
 @man man/man1/lxqt-panel.1
 share/desktop-directories/
 share/desktop-directories/lxqt-leave.directory
@@ -46,5 +45,4 @@ share/lxqt/lxqt-panel/statusnotifier.desktop
 share/lxqt/lxqt-panel/sysstat.desktop
 share/lxqt/lxqt-panel/taskbar.desktop
 share/lxqt/lxqt-panel/tray.desktop
-share/lxqt/lxqt-panel/volume.desktop
 share/lxqt/lxqt-panel/worldclock.desktop
