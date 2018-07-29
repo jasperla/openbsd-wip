@@ -25,12 +25,10 @@ EXTRACT_SUFX =	.tar.xz
 MODULES =		textproc/intltool 
 
 COMPILER =		ports-gcc
+COMPILER_LANGS =	c
 
 CONFIGURE_STYLE =	gnu
 USE_GMAKE =		Yes
-
-AUTOCONF_VERSION =	2.69
-AUTOMAKE_VERSION =	1.15
 
 WANTLIB += babl-0.1 ffi gegl-0.3 gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB += gobject-2.0 gthread-2.0 iconv intl json-c json-glib-1.0
