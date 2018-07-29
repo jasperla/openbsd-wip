@@ -1,0 +1,4 @@
+@comment $OpenBSD$
+@bin bin/hledger-ui
+share/doc/hs-${DISTNAME}/
+share/doc/hs-${DISTNAME}/LICENSE

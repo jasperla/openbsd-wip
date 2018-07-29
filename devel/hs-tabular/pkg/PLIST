@@ -1,0 +1,44 @@
+@comment $OpenBSD$
+@unexec /usr/bin/env HOME=/nonexistent %D/lib/ghc/${DISTNAME}/unregister.sh -v0 --force
+lib/ghc/${DISTNAME}/
+lib/ghc/${DISTNAME}/HS${DISTNAME}-${MODGHC_PACKAGE_KEY}.o
+lib/ghc/${DISTNAME}/Text/
+lib/ghc/${DISTNAME}/Text/Tabular/
+lib/ghc/${DISTNAME}/Text/Tabular.hi
+lib/ghc/${DISTNAME}/Text/Tabular.p_hi
+lib/ghc/${DISTNAME}/Text/Tabular/AsciiArt.hi
+lib/ghc/${DISTNAME}/Text/Tabular/AsciiArt.p_hi
+lib/ghc/${DISTNAME}/Text/Tabular/Csv.hi
+lib/ghc/${DISTNAME}/Text/Tabular/Csv.p_hi
+lib/ghc/${DISTNAME}/Text/Tabular/Html.hi
+lib/ghc/${DISTNAME}/Text/Tabular/Html.p_hi
+lib/ghc/${DISTNAME}/Text/Tabular/Latex.hi
+lib/ghc/${DISTNAME}/Text/Tabular/Latex.p_hi
+lib/ghc/${DISTNAME}/Text/Tabular/SimpleText.hi
+lib/ghc/${DISTNAME}/Text/Tabular/SimpleText.p_hi
+lib/ghc/${DISTNAME}/libHS${DISTNAME}-${MODGHC_PACKAGE_KEY}.a
+lib/ghc/${DISTNAME}/libHS${DISTNAME}-${MODGHC_PACKAGE_KEY}_p.a
+lib/ghc/${DISTNAME}/register.sh
+lib/ghc/${DISTNAME}/unregister.sh
+share/doc/hs-${DISTNAME}/
+share/doc/hs-${DISTNAME}/LICENSE
+share/doc/hs-${DISTNAME}/html/
+share/doc/hs-${DISTNAME}/html/Text-Tabular-AsciiArt.html
+share/doc/hs-${DISTNAME}/html/Text-Tabular-Csv.html
+share/doc/hs-${DISTNAME}/html/Text-Tabular-Html.html
+share/doc/hs-${DISTNAME}/html/Text-Tabular-Latex.html
+share/doc/hs-${DISTNAME}/html/Text-Tabular-SimpleText.html
+share/doc/hs-${DISTNAME}/html/Text-Tabular.html
+share/doc/hs-${DISTNAME}/html/doc-index.html
+share/doc/hs-${DISTNAME}/html/example/
+share/doc/hs-${DISTNAME}/html/example/sample1.hs
+share/doc/hs-${DISTNAME}/html/example/sample1.tex
+share/doc/hs-${DISTNAME}/html/haddock-util.js
+share/doc/hs-${DISTNAME}/html/hslogo-16.png
+share/doc/hs-${DISTNAME}/html/index.html
+share/doc/hs-${DISTNAME}/html/minus.gif
+share/doc/hs-${DISTNAME}/html/ocean.css
+share/doc/hs-${DISTNAME}/html/plus.gif
+share/doc/hs-${DISTNAME}/html/synopsis.png
+share/doc/hs-${DISTNAME}/html/tabular.haddock
+@exec /usr/bin/env HOME=/nonexistent %D/lib/ghc/${DISTNAME}/register.sh -v0

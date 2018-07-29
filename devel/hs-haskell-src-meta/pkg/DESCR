@@ -1,0 +1,2 @@
+haskell-src-meta is a package originally by Matt Morrow for converting a parsed
+AST from haskell-src-exts to a TH AST for use in splices and quasiquoters.

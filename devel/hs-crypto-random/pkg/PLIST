@@ -1,0 +1,43 @@
+@comment $OpenBSD$
+@unexec /usr/bin/env HOME=/nonexistent %D/lib/ghc/${DISTNAME}/unregister.sh -v0 --force
+lib/ghc/${DISTNAME}/
+lib/ghc/${DISTNAME}/Crypto/
+lib/ghc/${DISTNAME}/Crypto/Random/
+lib/ghc/${DISTNAME}/Crypto/Random.hi
+lib/ghc/${DISTNAME}/Crypto/Random.p_hi
+lib/ghc/${DISTNAME}/Crypto/Random/API.hi
+lib/ghc/${DISTNAME}/Crypto/Random/API.p_hi
+lib/ghc/${DISTNAME}/Crypto/Random/Entropy/
+lib/ghc/${DISTNAME}/Crypto/Random/Entropy.hi
+lib/ghc/${DISTNAME}/Crypto/Random/Entropy.p_hi
+lib/ghc/${DISTNAME}/Crypto/Random/Entropy/RDRand.hi
+lib/ghc/${DISTNAME}/Crypto/Random/Entropy/RDRand.p_hi
+lib/ghc/${DISTNAME}/Crypto/Random/Entropy/Source.hi
+lib/ghc/${DISTNAME}/Crypto/Random/Entropy/Source.p_hi
+lib/ghc/${DISTNAME}/Crypto/Random/Entropy/Unix.hi
+lib/ghc/${DISTNAME}/Crypto/Random/Entropy/Unix.p_hi
+lib/ghc/${DISTNAME}/Crypto/Random/Generator.hi
+lib/ghc/${DISTNAME}/Crypto/Random/Generator.p_hi
+lib/ghc/${DISTNAME}/Crypto/Random/Test.hi
+lib/ghc/${DISTNAME}/Crypto/Random/Test.p_hi
+lib/ghc/${DISTNAME}/HS${DISTNAME}-${MODGHC_PACKAGE_KEY}.o
+lib/ghc/${DISTNAME}/libHS${DISTNAME}-${MODGHC_PACKAGE_KEY}.a
+lib/ghc/${DISTNAME}/libHS${DISTNAME}-${MODGHC_PACKAGE_KEY}_p.a
+lib/ghc/${DISTNAME}/register.sh
+lib/ghc/${DISTNAME}/unregister.sh
+share/doc/hs-${DISTNAME}/
+share/doc/hs-${DISTNAME}/LICENSE
+share/doc/hs-${DISTNAME}/html/
+share/doc/hs-${DISTNAME}/html/Crypto-Random-API.html
+share/doc/hs-${DISTNAME}/html/Crypto-Random-Test.html
+share/doc/hs-${DISTNAME}/html/Crypto-Random.html
+share/doc/hs-${DISTNAME}/html/crypto-random.haddock
+share/doc/hs-${DISTNAME}/html/doc-index.html
+share/doc/hs-${DISTNAME}/html/haddock-util.js
+share/doc/hs-${DISTNAME}/html/hslogo-16.png
+share/doc/hs-${DISTNAME}/html/index.html
+share/doc/hs-${DISTNAME}/html/minus.gif
+share/doc/hs-${DISTNAME}/html/ocean.css
+share/doc/hs-${DISTNAME}/html/plus.gif
+share/doc/hs-${DISTNAME}/html/synopsis.png
+@exec /usr/bin/env HOME=/nonexistent %D/lib/ghc/${DISTNAME}/register.sh -v0

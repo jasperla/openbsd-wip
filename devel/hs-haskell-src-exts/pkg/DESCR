@@ -1,0 +1,3 @@
+Haskell-Source with Extensions (HSE, haskell-src-exts) is a standalone parser
+for Haskell. In addition to standard Haskell, all extensions implemented in GHC
+are supported.

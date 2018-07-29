@@ -1,0 +1,29 @@
+$OpenBSD$
+
+Index: hans.cabal
+--- hans.cabal.orig
++++ hans.cabal
+@@ -22,18 +22,12 @@ flag examples
+         default:        False
+ 
+ library
+-        if os(HALVM)
+-                cpp-options:            -DHANS_TARGET_XEN
+-                build-depends:          XenDevice >= 2.0.0 && < 3,
+-                                        HALVMCore >= 2.0.0 && < 3
+-                other-modules:          Hans.Device.Xen
+ 
+-        if os(darwin) || os(linux)
+-                cpp-options:            -DHANS_TARGET_UNIX
+-                build-depends:          unix
+-                other-modules:          Hans.Device.Tap
+-                include-dirs:           cbits
+-                c-sources:              cbits/tapdevice.c
++        cpp-options:            -DHANS_TARGET_UNIX
++        build-depends:          unix
++        other-modules:          Hans.Device.Tap
++        include-dirs:           cbits
++        c-sources:              cbits/tapdevice.c
+ 
+         -- XXX: Tap devices are supported on windows, someone should add support
+ 
