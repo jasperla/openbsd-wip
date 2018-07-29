@@ -17,8 +17,7 @@ MAINTAINER =		Elias M. Mariani <marianielias@gmail.com>
 # BSD 3 Clause
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =	https://github.com/xiaoyeli/${NAME}/archive/
-DISTFILES =	v${VERSION}.tar.gz
+MASTER_SITES =	https://github.com/xiaoyeli/${NAME}/archive/v${VERSION}/
 
 MODULES =	devel/cmake
 
