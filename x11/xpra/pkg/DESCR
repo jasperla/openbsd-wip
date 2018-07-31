@@ -1,2 +1,9 @@
-Xpra is an open-source multi-platform persistent remote display server
-and client for forwarding applications and desktop screens.
+Xpra is an open-source multi-platform persistent remote display
+server and client for forwarding applications and desktop screens.
+It gives you remote access to individual applications or full
+desktops. It can also be used to forward full desktops, from X11
+servers, MS Windows, or Mac OS X. Xpra also allows forwarding of
+sound, clipboard and printing services. Sessions can be accessed
+over SSH, or password protected over plain TCP sockets with or
+without SSL. Xpra is usable over reasonably slow links and does its
+best to adapt to changing network bandwidth constraints.

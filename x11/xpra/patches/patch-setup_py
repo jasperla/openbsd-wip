@@ -1,0 +1,51 @@
+$OpenBSD$
+
+Index: setup.py
+--- setup.py.orig
++++ setup.py
+@@ -155,7 +155,7 @@ client_ENABLED = DEFAULT
+ 
+ x11_ENABLED = DEFAULT and not WIN32 and not OSX
+ xinput_ENABLED = x11_ENABLED
+-uinput_ENABLED = x11_ENABLED
++uinput_ENABLED = None
+ dbus_ENABLED = DEFAULT and x11_ENABLED and not (OSX or WIN32)
+ gtk_x11_ENABLED = DEFAULT and not WIN32 and not OSX
+ gtk2_ENABLED = DEFAULT and client_ENABLED and not PYTHON3
+@@ -1476,7 +1476,7 @@ else:
+     if POSIX and not OSX:
+         libexec_scripts = []
+         from xpra.os_util import is_Fedora, is_CentOS
+-        if is_Fedora() or is_CentOS():
++        if is_Fedora() or is_CentOS() or OPENBSD:
+             libexec = "libexec"
+         else:
+             libexec = "lib"
+@@ -1496,7 +1496,6 @@ else:
+     add_data_files("share/mime/packages", ["xdg/application-x-xpraconfig.xml"])
+     add_data_files("share/icons",         ["xdg/xpra.png", "xdg/xpra-mdns.png"])
+     add_data_files("share/appdata",       ["xdg/xpra.appdata.xml"])
+-    add_data_files('share/xpra/',         ["bell.wav"])
+     add_data_files('share/xpra/http-headers', glob.glob("http-headers/*"))
+ 
+     #here, we override build and install so we can
+@@ -1545,7 +1544,7 @@ else:
+ 
+             if printing_ENABLED and POSIX:
+                 #install "/usr/lib/cups/backend" with 0700 permissions:
+-                copytodir("cups/xpraforwarder", "lib/cups/backend", chmod=0o700)
++                copytodir("cups/xpraforwarder", "libexec/cups/backend", chmod=0o700)
+ 
+             if x11_ENABLED:
+                 #install xpra_Xdummy if we need it:
+@@ -1585,8 +1584,8 @@ else:
+                     copytodir("etc/sysconfig/xpra", "/etc/default")
+             if sd_listen_ENABLED:
+                 copytodir("service/xpra.socket", systemd_dir)
+-            if dbus_ENABLED and proxy_ENABLED:
+-                copytodir("dbus/xpra.conf", "/etc/dbus-1/system.d")
++#            if dbus_ENABLED and proxy_ENABLED:
++#                copytodir("dbus/xpra.conf", "/etc/dbus-1/system.d")
+ 
+ 
+     # add build_conf to build step
