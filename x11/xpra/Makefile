@@ -20,7 +20,7 @@ WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender Xtst avutil expat ffi fribidi
 WANTLIB += gdk-x11-2.0 glib-2.0 gmodule-2.0 gobject-2.0 graphite2
 WANTLIB += gtk-x11-2.0 harfbuzz intl m pcre pixman-1 png pthread
-WANTLIB += python2.7 swscale vpx webp x264 x265 xcb xcb-render
+WANTLIB += ${MODPY_WANTLIB} swscale vpx webp x264 x265 xcb xcb-render
 WANTLIB += xcb-shm xkbfile z
 
 BUILD_DEPENDS =		lang/cython \
@@ -36,6 +36,7 @@ BUILD_DEPENDS =		lang/cython \
 			net/py-websocket-client \
 			net/websockify \
 			archivers/py-lzo \
+			archivers/py-lz4 \
 			textproc/py-yaml \
 			audio/libogg \
 			audio/flac \
@@ -59,6 +60,7 @@ RUN_DEPENDS =		x11/py-gtk2 \
 			net/py-websocket-client \
 			net/websockify \
 			archivers/py-lzo \
+			archivers/py-lz4 \
 			textproc/py-yaml \
 			audio/libogg \
 			audio/flac \
@@ -87,13 +89,17 @@ LIB_DEPENDS =		multimedia/libvpx \
 
 
 do-build:
-	cd ${WRKSRC} && ${MODPY_BIN} setup.py build --with-tests --with-bundle_tests --pkg-config-path=${LOCALBASE}/lib/pkgconfig
+	cd ${WRKSRC} && ${MODPY_BIN} setup.py build --without-Xdummy\
+	--without-Xdummy_wrapper --pkg-config-path=${LOCALBASE}/lib/pkgconfig\
+	--without-uinput
 
 do-install:
-	cd ${WRKSRC} && env ${MODPY_BIN} setup.py install --with-tests --with-bundle_tests --pkg-config-path=${LOCALBASE}/lib/pkgconfig --root=${WRKINST}
+	cd ${WRKSRC} && env ${MODPY_BIN} setup.py install --without-Xdummy\
+	--without-Xdummy_wrapper --pkg-config-path=${LOCALBASE}/lib/pkgconfig\
+	--without-uinput --root=${WRKINST}
 
 post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/xpra
-	mv ${WRKINST}${LOCALBASE}${SYSCONFDIR}/* ${PREFIX}/share/examples/xpra/.
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples
+	mv ${WRKINST}${LOCALBASE}${SYSCONFDIR} ${PREFIX}/share/examples/xpra
 
 .include <bsd.port.mk>
