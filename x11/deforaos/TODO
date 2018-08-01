@@ -1,4 +1,0 @@
-* Finish porting everything
-* Fix configure to not generate HTML man pages
-  * This will allow a number of patches go away
-* Test it!

@@ -1,2 +1,0 @@
-libSystem is the most essential library within DeforaOS, with the aim to
-become a complete C runtime. It is required for the rest of DeforaOS.

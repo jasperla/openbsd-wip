@@ -1,8 +1,0 @@
-Panel is the DeforaOS panel manager. It is meant to display an arbitrary
-number of desktop panels, with support for one per edge of the screen at
-the moment. Each panel can then host a number of applets, implemented as
-plug-ins to the main program.
-
-A number of additional utilities is also available, allowing tighter
-integration of external applications, as well as when responding to
-system events (notifications...).
