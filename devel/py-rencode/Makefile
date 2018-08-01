@@ -1,22 +1,33 @@
-# $OpenBSD: Makefile.template,v 1.68 2013/10/02 07:34:45 ajacoutot Exp $
+# $OpenBSD$
 
-COMMENT =		similar to bencode from the BitTorrent project
+COMMENT =	module for fast object serialization similar to bencode
 
-MODPY_EGG_VERSION =	1.0.3
+MODPY_EGG_VERSION =	1.0.5
 DISTNAME =		rencode-${MODPY_EGG_VERSION}
-PKGNAME =		py-rencode-${MODPY_EGG_VERSION}
+PKGNAME =		py-${DISTNAME}
 
-CATEGORIES =		devel
+CATEGORIES =	devel
 
-HOMEPAGE =		https://github.com/aresch/rencode
+HOMEPAGE =	https://github.com/aresch/rencode
 
-# GPLv3
+#
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =		${MASTER_SITE_PYPI:=r/rencode/}
+FLAVORS =		python3
+FLAVOR ?=
 
 MODULES =		lang/python
+MODPY_PI =		Yes
+MODPY_SETUPTOOLS =	Yes
 
-BUILD_DEPENDS =		lang/cython
+WANTLIB += 		pthread ${MODPY_WANTLIB}
+
+BUILD_DEPENDS =		lang/cython${MODPY_FLAVOR}
+
+do-build:
+	cd ${WRKSRC} && ${MODPY_BIN} setup.py build
+
+do-install:
+	cd ${WRKSRC} && ${MODPY_BIN} setup.py install --root=${WRKINST}
 
 .include <bsd.port.mk>
