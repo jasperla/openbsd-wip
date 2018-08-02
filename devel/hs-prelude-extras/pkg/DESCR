@@ -1,0 +1,4 @@
+Deprecated. in favor of base, transformers-compat
+
+Higher order versions of Prelude classes to ease programming with polymorphic
+recursion and reduce UndecidableInstances

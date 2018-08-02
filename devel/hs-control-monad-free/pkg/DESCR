@@ -1,0 +1,3 @@
+This package provides datatypes to construct Free monads, Free monad
+transformers, and useful instances. In addition it provides the constructs to
+avoid quadratic complexity of left associative bind, as explained in:

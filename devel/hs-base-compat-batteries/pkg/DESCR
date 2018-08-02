@@ -1,0 +1,2 @@
+Provides functions available in later versions of base to a wider range of
+compilers, without requiring you to use CPP pragmas in your code.

@@ -1,0 +1,2 @@
+Fixed-precision decimal numbers, where the precision is carried with the
+numbers at run-time.

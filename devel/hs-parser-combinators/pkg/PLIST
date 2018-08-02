@@ -1,0 +1,43 @@
+@comment $OpenBSD$
+@unexec /usr/bin/env HOME=/nonexistent %D/lib/ghc/${DISTNAME}/unregister.sh -v0 --force
+lib/ghc/${DISTNAME}/
+lib/ghc/${DISTNAME}/Control/
+lib/ghc/${DISTNAME}/Control/Applicative/
+lib/ghc/${DISTNAME}/Control/Applicative/Combinators/
+lib/ghc/${DISTNAME}/Control/Applicative/Combinators.hi
+lib/ghc/${DISTNAME}/Control/Applicative/Combinators.p_hi
+lib/ghc/${DISTNAME}/Control/Applicative/Combinators/NonEmpty.hi
+lib/ghc/${DISTNAME}/Control/Applicative/Combinators/NonEmpty.p_hi
+lib/ghc/${DISTNAME}/Control/Applicative/Permutations.hi
+lib/ghc/${DISTNAME}/Control/Applicative/Permutations.p_hi
+lib/ghc/${DISTNAME}/Control/Monad/
+lib/ghc/${DISTNAME}/Control/Monad/Combinators/
+lib/ghc/${DISTNAME}/Control/Monad/Combinators.hi
+lib/ghc/${DISTNAME}/Control/Monad/Combinators.p_hi
+lib/ghc/${DISTNAME}/Control/Monad/Combinators/NonEmpty.hi
+lib/ghc/${DISTNAME}/Control/Monad/Combinators/NonEmpty.p_hi
+lib/ghc/${DISTNAME}/HS${DISTNAME}-${MODGHC_PACKAGE_KEY}.o
+lib/ghc/${DISTNAME}/libHS${DISTNAME}-${MODGHC_PACKAGE_KEY}.a
+lib/ghc/${DISTNAME}/libHS${DISTNAME}-${MODGHC_PACKAGE_KEY}_p.a
+lib/ghc/${DISTNAME}/register.sh
+lib/ghc/${DISTNAME}/unregister.sh
+share/doc/hs-${DISTNAME}/
+share/doc/hs-${DISTNAME}/LICENSE.md
+share/doc/hs-${DISTNAME}/html/
+share/doc/hs-${DISTNAME}/html/CHANGELOG.md
+share/doc/hs-${DISTNAME}/html/Control-Applicative-Combinators-NonEmpty.html
+share/doc/hs-${DISTNAME}/html/Control-Applicative-Combinators.html
+share/doc/hs-${DISTNAME}/html/Control-Applicative-Permutations.html
+share/doc/hs-${DISTNAME}/html/Control-Monad-Combinators-NonEmpty.html
+share/doc/hs-${DISTNAME}/html/Control-Monad-Combinators.html
+share/doc/hs-${DISTNAME}/html/README.md
+share/doc/hs-${DISTNAME}/html/doc-index.html
+share/doc/hs-${DISTNAME}/html/haddock-util.js
+share/doc/hs-${DISTNAME}/html/hslogo-16.png
+share/doc/hs-${DISTNAME}/html/index.html
+share/doc/hs-${DISTNAME}/html/minus.gif
+share/doc/hs-${DISTNAME}/html/ocean.css
+share/doc/hs-${DISTNAME}/html/parser-combinators.haddock
+share/doc/hs-${DISTNAME}/html/plus.gif
+share/doc/hs-${DISTNAME}/html/synopsis.png
+@exec /usr/bin/env HOME=/nonexistent %D/lib/ghc/${DISTNAME}/register.sh -v0

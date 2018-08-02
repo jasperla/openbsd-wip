@@ -1,0 +1,8 @@
+Tabular provides a Haskell representation of two-dimensional data tables, the
+kind that you might find in a spreadsheet or or a research report. It also
+comes with some default rendering functions for turning those tables into ASCII
+art, simple text with an arbitrary delimiter, CSV, HTML or LaTeX.
+
+Below is an example of the kind of output this library produces. The tabular
+package can group rows and columns, each group having one of three separators
+(no line, single line, double line) between its members.

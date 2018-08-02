@@ -1,0 +1,2 @@
+A library wrapping Prelude/Data.List functions that can throw exceptions, such
+as head and !!. Each unsafe function has up to four variants, e.g. with tail:

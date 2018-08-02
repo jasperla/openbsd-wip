@@ -1,0 +1,8 @@
+@comment $OpenBSD$
+@unexec /usr/bin/env HOME=/nonexistent %D/lib/ghc/${DISTNAME}/unregister.sh -v0 --force
+lib/ghc/${DISTNAME}/
+lib/ghc/${DISTNAME}/register.sh
+lib/ghc/${DISTNAME}/unregister.sh
+share/doc/hs-${DISTNAME}/
+share/doc/hs-${DISTNAME}/LICENSE
+@exec /usr/bin/env HOME=/nonexistent %D/lib/ghc/${DISTNAME}/register.sh -v0

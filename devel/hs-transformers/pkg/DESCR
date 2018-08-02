@@ -1,0 +1,2 @@
+A portable library of functor and monad transformers, inspired by the paper
+"Functional Programming with Overloading and Higher-Order Polymorphism"
