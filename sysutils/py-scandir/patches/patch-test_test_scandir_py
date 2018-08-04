@@ -25,7 +25,7 @@ Index: test/test_scandir.py
      create_file(join(TEST_PATH, 'file2.txt'), contents='12345678')
  
 -    os.mkdir(join(TEST_PATH, 'subdir', 'unidir\u018F'))
-+    os.makedirs(join(TEST_PATH, 'subdir', 'unidir\u018F'))
++    os.makedirs(join(TEST_PATH, 'subdir', u'unidir\u018F'))
      create_file(join(TEST_PATH, 'subdir', 'file1.txt'))
 -    create_file(join(TEST_PATH, 'subdir', 'unicod\u018F.txt'))
 +    create_file(join(TEST_PATH, 'subdir', u'unicod\u018F.txt'))
