@@ -1,0 +1,17 @@
+$OpenBSD$
+
+Index: Source/ThirdParty/gtest/CMakeLists.txt
+--- Source/ThirdParty/gtest/CMakeLists.txt.orig
++++ Source/ThirdParty/gtest/CMakeLists.txt
+@@ -45,9 +45,10 @@ endif ()
+ 
+ target_link_libraries(gtest
+     WTF
++    c
+ )
+ 
+ if (CMAKE_USE_PTHREADS_INIT)
+-    target_link_libraries(gtest ${CMAKE_THREAD_LIBS_INIT})
++    target_link_libraries(gtest ${CMAKE_THREAD_LIBS_INIT} c)
+     add_definitions(-DGTEST_HAS_PTHREAD=1)
+ endif ()
