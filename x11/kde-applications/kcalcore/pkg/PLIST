@@ -1,4 +1,5 @@
-@comment $OpenBSD$
+@comment $OpenBSD: PLIST,v$
+include/KF5/
 include/KF5/KCalCore/
 include/KF5/KCalCore/KCalCore/
 include/KF5/KCalCore/KCalCore/Alarm
@@ -74,4 +75,6 @@ lib/cmake/KF5CalendarCore/KF5CalendarCoreConfigVersion.cmake
 lib/cmake/KF5CalendarCore/KF5CalendarCoreTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/KF5CalendarCore/KF5CalendarCoreTargets.cmake
 @lib lib/libKF5CalendarCore.so.${LIBKF5CalendarCore_VERSION}
+share/kf5/
+share/kf5/mkspecs/
 share/kf5/mkspecs/qt_KCalCore.pri

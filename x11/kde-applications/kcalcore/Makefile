@@ -1,6 +1,6 @@
 # $OpenBSD$
 
-COMMENT =	The KDE calendar access library
+COMMENT =	KDE calendar access library
 DISTNAME =	kcalcore-${VERSION}
 CATEGORIES =	devel mail
 
