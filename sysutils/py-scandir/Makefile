@@ -18,10 +18,16 @@ MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 
+FLAVORS =		python3
+FLAVOR ?=
+
 WANTLIB += pthread ${MODPY_WANTLIB}
 
-TEST_DEPENDS +=		devel/py-unittest2 \
-			sysutils/py-scandir
+TEST_DEPENDS +=		sysutils/py-scandir${MODPY_FLAVOR}
+
+.if !${FLAVOR:Mpython3}
+TEST_DEPENDS +=		devel/py-unittest2
+.endif
 
 do-test:
 	cd ${WRKSRC}/test &&\
