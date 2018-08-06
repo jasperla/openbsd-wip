@@ -1,4 +1,4 @@
-@comment $OpenBSD$
+@comment $OpenBSD: PLIST,v$
 include/KF5/KIdentityManagement/
 include/KF5/KIdentityManagement/KIdentityManagement/
 include/KF5/KIdentityManagement/KIdentityManagement/Identity
