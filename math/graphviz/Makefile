@@ -7,8 +7,6 @@ DISTNAME=	graphviz
 PKGNAME-main=	${DISTNAME}-${VERSION}
 CATEGORIES=	math devel graphics
 
-WRKDIST=${WRKDIR}/${PKGNAME-main}
-
 # there is only one multi-package due to legacy, but maybe more
 # will appear in the form of language bindings.
 MULTI_PACKAGES=	-main
@@ -40,7 +38,6 @@ SHARED_LIBS += gdtclft			3.0 # unknown
 SHARED_LIBS += tcldot			3.0 # unknown
 SHARED_LIBS += tcldot_builtin		3.0 # unknown
 SHARED_LIBS += tclplan			3.0 # unknown
-SHARED_LIBS += tkspline			3.0 # unknown
 
 HOMEPAGE=	https://www.graphviz.org/
 
@@ -62,6 +59,8 @@ WANTLIB += tiff webp xcb xcb-render xcb-shm xml2 z
 MODULES=	x11/tk \
 		perl
 
+MODTCL_VERSION=	8.6
+
 LIB_DEPENDS =	graphics/jpeg \
 		graphics/png \
 		devel/libtool,-ltdl \
@@ -75,9 +74,9 @@ LIB_DEPENDS =	graphics/jpeg \
 		lang/guile
 
 BUILD_DEPENDS=	devel/swig \
-		${MODTK_BUILD_DEPENDS}
+		${MODTCL_BUILD_DEPENDS}
 
-RUN_DEPENDS =	${MODTK_RUN_DEPENDS}
+RUN_DEPENDS =	${MODTCL_RUN_DEPENDS}
 
 USE_GMAKE =	Yes
 
@@ -88,7 +87,6 @@ CONFIGURE_ARGS=	--enable-tcl=yes \
 		--enable-perl \
 		--enable-guile \
 		--with-tclsh=${MODTCL_BIN} \
-		--with-wish=${MODTK_BIN} \
 		--disable-lua \
 		--disable-io \
 		--disable-java \
@@ -109,14 +107,12 @@ CONFIGURE_ARGS=	--enable-tcl=yes \
 
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
 		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib" \
-		TCLCONFIG=${MODTCL_CONFIG} \
-		TKCONFIG=${MODTK_CONFIG}
+		TCLCONFIG=${MODTCL_CONFIG}
 
 DOCBASE=	${PREFIX}/share/doc/graphviz
 EXBASE=		${PREFIX}/share/examples/graphviz
 
-MAKE_FLAGS=	TCL_STUB_LIB_SPEC='-L${LOCALBASE}/lib -ltclstub85_pic' \
-		TK_STUB_LIB_SPEC='-L${LOCALBASE}/lib -ltkstub85_pic'
+MAKE_FLAGS=	TCL_STUB_LIB_SPEC='-L${LOCALBASE}/lib -ltclstub86_pic'
 
 CFLAGS +=	-DLT_DEBUG_LOADERS
 
@@ -133,6 +129,8 @@ FAKE_FLAGS=	htmldir="${DOCBASE}/html" \
 TEST_TARGET =	check
 TEST_DEPENDS =	shells/ksh93 \
 		${FULLPKGNAME}:math/graphviz
+
+WRKDIST=	${WRKDIR}/${PKGNAME-main}
 
 post-install:
 # install pre-generated config6 to avoid @exec/@unexec-delete

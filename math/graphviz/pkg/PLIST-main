@@ -137,7 +137,6 @@ lib/pkgconfig/libgvpr.pc
 lib/pkgconfig/liblab_gamut.pc
 lib/pkgconfig/libpathplan.pc
 lib/pkgconfig/libxdot.pc
-lib/tcl/
 lib/tcl/graphviz/
 lib/tcl/graphviz/libgdtclft.a
 lib/tcl/graphviz/libgdtclft.la
@@ -155,8 +154,8 @@ lib/tcl/graphviz/libtclplan.a
 lib/tcl/graphviz/libtclplan.la
 @lib lib/tcl/graphviz/libtclplan.so.${LIBtclplan_VERSION}
 lib/tcl/graphviz/pkgIndex.tcl
-lib/tcl${MODTK_VERSION}/
-lib/tcl${MODTK_VERSION}/graphviz
+lib/tcl${MODTCL_VERSION}/
+lib/tcl${MODTCL_VERSION}/graphviz
 ${P5ARCH}/
 ${P5ARCH}/gv.pm
 ${P5ARCH}/gv.so
