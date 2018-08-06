@@ -1,4 +1,4 @@
-@comment $OpenBSD$
+@comment $OpenBSD: PLIST,v$
 include/KF5/KContacts/
 include/KF5/KContacts/KContacts/
 include/KF5/KContacts/KContacts/Address
