@@ -1,4 +1,4 @@
-@comment $OpenBSD$
+@comment $OpenBSD: PLIST,v$
 include/KF5/
 include/KF5/KDCRAW/
 include/KF5/KDCRAW/KDCRAW/
