@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2018/07/01 18:33:35 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2018/07/20 13:11:46 rsadowski Exp $
 @bin bin/kdev_dbus_socket_transformer
 @bin bin/kdev_format_source
 @bin bin/kdev_includepathsconverter
@@ -2993,12 +2993,12 @@ share/locale/zh_TW/LC_MESSAGES/plasma_runner_kdevelopsessions.mo
 share/metainfo/org.kde.kdevelop.appdata.xml
 share/mime/packages/kdevclang.xml
 share/mime/packages/kdevelop.xml
-@tag update-desktop-database
-@tag update-mime-database
-@tag gtk-update-icon-cache %D/share/icons/hicolor
 share/plasma/plasmoids/kdevelopsessions/
 share/plasma/plasmoids/kdevelopsessions/contents/
 share/plasma/plasmoids/kdevelopsessions/contents/ui/
 share/plasma/plasmoids/kdevelopsessions/contents/ui/kdevelopsessions.qml
 share/plasma/plasmoids/kdevelopsessions/metadata.desktop
 share/plasma/services/org.kde.plasma.dataengine.kdevelopsessions.operations
+@tag update-desktop-database
+@tag update-mime-database
+@tag gtk-update-icon-cache %D/share/icons/hicolor
