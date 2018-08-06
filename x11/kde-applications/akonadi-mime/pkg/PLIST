@@ -1,4 +1,5 @@
-@comment $OpenBSD$
+@comment $OpenBSD: PLIST,v$
+@conflict kdepimlibs-<=4
 @bin bin/akonadi_benchmarker
 include/KF5/Akonadi/
 include/KF5/Akonadi/KMime/
@@ -84,3 +85,4 @@ share/locale/uk/LC_MESSAGES/libakonadi-kmime5.mo
 share/locale/zh_CN/LC_MESSAGES/libakonadi-kmime5.mo
 share/locale/zh_TW/LC_MESSAGES/libakonadi-kmime5.mo
 share/mime/packages/x-vnd.kde.contactgroup.xml
+@tag update-mime-database
