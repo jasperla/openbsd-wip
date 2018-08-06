@@ -15,21 +15,19 @@ MULTI_PACKAGES =	-main -examples
 WANTLIB-main =		${WANTLIB}
 
 # BSD-like
-PERMIT_PACKAGE_CDROM=   patents
-PERMIT_PACKAGE_FTP =    Yes
+PERMIT_PACKAGE_CDROM=	patents
+PERMIT_PACKAGE_FTP =	Yes
 
 COMPILER =		base clang gcc
 MODULES =		lang/python
 MODPY_RUNDEP =		No
 
-BUILD_DEPENDS =		\
-			devel/re2c \
+BUILD_DEPENDS =		devel/re2c \
 			sysutils/pciutils \
 
 RUN_DEPENDS =		sysutils/pciutils
 
-LIB_DEPENDS =		\
-			archivers/minizip \
+LIB_DEPENDS =		archivers/minizip \
 			audio/pulseaudio \
 			archivers/snappy \
 			devel/glib2 \
