@@ -1,4 +1,4 @@
-@comment $OpenBSD$
+@comment $OpenBSD: PLIST,v$
 include/KF5/KF5KMahjongg/
 include/KF5/KF5KMahjongg/kmahjonggbackground.h
 include/KF5/KF5KMahjongg/kmahjonggconfigdialog.h

@@ -1,5 +1,5 @@
-@comment $OpenBSD$
-@conflict akonadi-<17.04.2
+@comment $OpenBSD: PLIST,v$
+@conflict kde-l10n-*
 @pkgpath productivity/akonadi
 @bin bin/akonadi2xml
 @bin bin/akonadi_agent_launcher
@@ -363,6 +363,8 @@ share/icons/hicolor/32x32/apps/akonadi.png
 share/icons/hicolor/48x48/apps/akonadi.png
 share/icons/hicolor/64x64/apps/akonadi.png
 share/icons/hicolor/scalable/apps/akonadi.svgz
+share/kdevappwizard/templates/akonadiresource.tar.bz2
+share/kdevappwizard/templates/akonadiserializer.tar.bz2
 share/kf5/akonadi/
 share/kf5/akonadi/akonadi-xml.xsd
 share/kf5/akonadi/kcfg2dbus.xsl
@@ -465,8 +467,6 @@ share/locale/zh_CN/LC_MESSAGES/libakonadi5.mo
 share/locale/zh_TW/LC_MESSAGES/akonadi_knut_resource.mo
 share/locale/zh_TW/LC_MESSAGES/libakonadi5.mo
 share/mime/packages/akonadi-mime.xml
-@unexec-delete %D/bin/update-desktop-database
-@exec %D/bin/update-mime-database %D/share/mime
-@unexec-delete %D/bin/update-mime-database %D/share/mime
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@tag update-desktop-database
+@tag gtk-update-icon-cache %D/share/icons/hicolor
+@tag update-mime-database

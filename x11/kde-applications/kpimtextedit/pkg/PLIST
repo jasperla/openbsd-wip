@@ -1,4 +1,5 @@
-@comment $OpenBSD$
+@comment $OpenBSD: PLIST,v$
+@conflict kde-l10n-*
 include/KF5/KPIMTextEdit/
 include/KF5/KPIMTextEdit/KPIMTextEdit/
 include/KF5/KPIMTextEdit/KPIMTextEdit/AbstractTextToSpeechInterface
@@ -24,7 +25,6 @@ include/KF5/KPIMTextEdit/KPIMTextEdit/RichTextEditorWidget
 include/KF5/KPIMTextEdit/KPIMTextEdit/RichTextExternalComposer
 include/KF5/KPIMTextEdit/KPIMTextEdit/SelectSpecialCharDialog
 include/KF5/KPIMTextEdit/KPIMTextEdit/SlideContainer
-include/KF5/KPIMTextEdit/KPIMTextEdit/SyntaxHighlighterBase
 include/KF5/KPIMTextEdit/KPIMTextEdit/TableActionMenu
 include/KF5/KPIMTextEdit/KPIMTextEdit/TableCellFormatDialog
 include/KF5/KPIMTextEdit/KPIMTextEdit/TableFormatDialog
@@ -62,7 +62,6 @@ include/KF5/KPIMTextEdit/kpimtextedit/richtexteditorwidget.h
 include/KF5/KPIMTextEdit/kpimtextedit/richtextexternalcomposer.h
 include/KF5/KPIMTextEdit/kpimtextedit/selectspecialchardialog.h
 include/KF5/KPIMTextEdit/kpimtextedit/slidecontainer.h
-include/KF5/KPIMTextEdit/kpimtextedit/syntaxhighlighterbase.h
 include/KF5/KPIMTextEdit/kpimtextedit/tableactionmenu.h
 include/KF5/KPIMTextEdit/kpimtextedit/tablecellformatdialog.h
 include/KF5/KPIMTextEdit/kpimtextedit/tableformatdialog.h
@@ -81,7 +80,6 @@ lib/cmake/KF5PimTextEdit/KF5PimTextEditConfigVersion.cmake
 lib/cmake/KF5PimTextEdit/KF5PimTextEditTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/KF5PimTextEdit/KF5PimTextEditTargets.cmake
 @lib lib/libKF5PimTextEdit.so.${LIBKF5PimTextEdit_VERSION}
-lib/qt5/plugins/designer/
 lib/qt5/plugins/designer/kpimtexteditwidgets.so
 share/examples/xdg/kpimtextedit.categories
 share/kf5/mkspecs/qt_KPIMTextEdit.pri

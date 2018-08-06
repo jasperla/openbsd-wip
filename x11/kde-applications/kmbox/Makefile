@@ -13,8 +13,7 @@ WANTLIB += ${COMPILER_LIBCXX} KF5Mime Qt5Core m
 BUILD_DEPENDS +=devel/gettext-tools \
 		devel/kf5/kdoctools
 
-RUN_DEPENDS =	devel/gettext \
-		devel/kf5/kdoctools
+RUN_DEPENDS =	devel/kf5/kdoctools
 
 LIB_DEPENDS =	x11/kde-applications/kmime
 

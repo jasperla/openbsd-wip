@@ -12,8 +12,6 @@ WANTLIB += ${COMPILER_LIBCXX} KF5Codecs KF5I18n Qt5Core m
 
 BUILD_DEPENDS +=devel/gettext-tools
 
-RUN_DEPENDS +=	devel/gettext
-
 LIB_DEPENDS +=	devel/kf5/kcodecs \
 		devel/kf5/ki18n
 

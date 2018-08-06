@@ -11,14 +11,14 @@ SHARED_LIBS +=  KF5AkonadiWidgets         0.0 # 5.6
 SHARED_LIBS +=  KF5AkonadiXml             0.0 # 5.6
 
 KDE5 =		Yes
-KF5_BUILD_PY =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5Codecs KF5Completion
 WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5CoreAddons
 WANTLIB += KF5Crash KF5DBusAddons KF5I18n KF5IconThemes KF5ItemModels
 WANTLIB += KF5ItemViews KF5KIOCore KF5Service KF5WidgetsAddons
-WANTLIB += KF5WindowSystem KF5XmlGui Qt5Core Qt5DBus Qt5Gui Qt5Network
-WANTLIB += Qt5Sql Qt5Widgets Qt5Xml c m sqlite3 xml2
+WANTLIB += KF5WindowSystem KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus
+WANTLIB += Qt5Gui Qt5Network Qt5Sql Qt5Widgets Qt5Xml c m sqlite3
+WANTLIB += xml2
 
 BUILD_DEPENDS +=devel/gettext-tools \
 		devel/kf5/kdesignerplugin \
@@ -47,7 +47,10 @@ LIB_DEPENDS =	devel/kf5/kcompletion \
 		devel/kf5/kwindowsystem \
 		devel/kf5/kxmlgui \
 		devel/kf5/kcrash \
-		textproc/libxml
+		textproc/libxml \
+		databases/sqlite3
+
+CONFIGURE_ARGS =	-DDATABASE_BACKEND:String=SQLITE
 
 PORTHOME =	${WRKDIR}
 

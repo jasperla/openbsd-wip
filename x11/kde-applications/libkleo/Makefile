@@ -1,6 +1,6 @@
 # $OpenBSD$
 
-COMMENT =	Common code and data for many KDE games
+COMMENT =	common code and data for many KDE games
 DISTNAME =	libkleo-${VERSION}
 CATEGORIES =	devel games
 
@@ -16,8 +16,7 @@ BUILD_DEPENDS +=devel/gettext-tools \
 		devel/kf5/kcrash \
 		devel/kf5/ktextwidgets
 
-RUN_DEPENDS =	devel/gettext \
-		devel/kf5/kbookmarks \
+RUN_DEPENDS =	devel/kf5/kbookmarks \
 		devel/kf5/kcrash
 
 LIB_DEPENDS =	devel/kf5/kconfig \
@@ -40,7 +39,7 @@ LIB_DEPENDS =	devel/kf5/kconfig \
 		devel/kf5/kxmlgui \
 		x11/kde-applications/kpimtextedit \
 		audio/openal \
-		security/gpgme
+		security/gpgme,,-qt
 
 TEST_IS_INTERACTIVE =	X11
 

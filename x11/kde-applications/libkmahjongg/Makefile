@@ -2,7 +2,7 @@
 
 COMMENT =	common sets for games using Mahjongg tiles
 DISTNAME =	libkmahjongg-${VERSION}
-CATEGORIES =	devel
+CATEGORIES =	devel games
 
 SHARED_LIBS +=  KF5KMahjongglib           0.0 # 5.0
 

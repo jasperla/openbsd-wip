@@ -1,4 +1,5 @@
-@comment $OpenBSD$
+@comment $OpenBSD: PLIST,v$
+@conflict kde-l10n-*
 lib/qt5/plugins/svgpart.so
 share/kservices5/svgpart.desktop
 share/kxmlgui5/

@@ -1,4 +1,4 @@
-@comment $OpenBSD$
+@comment $OpenBSD: PLIST,v$
 include/KF5/KMime/
 include/KF5/KMime/KMime/
 include/KF5/KMime/KMime/Codecs
