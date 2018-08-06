@@ -1,23 +1,22 @@
 # $OpenBSD: Makefile,v 1.11 2018/06/15 17:50:46 rsadowski Exp $
 
-#QT5NAME =		QtWebkit
-COMMENT =		old Webkit integration framework for Qt
+COMMENT =		unofficial maintained QtWebKit
 USE_WXNEEDED =		Yes
-DPB_PROPERTIES =	parallel
 
-DISTNAME =	qtwebkit-5.212.0-alpha2
-PKGNAME =	qtwebkit-${VERSION}
+DISTNAME =		qtwebkit-5.212.0-alpha2
+PKGNAME =		qtwebkit-${VERSION}
+REVISION =		0
 
-#GH_ACCOUNT =	annulen
-#GH_PROJECT =	webkit
-#GH_COMMIT =	4ce8ebc4094512b9916bfa5984065e95ac97c9d8
-
-SHARED_LIBS +=		Qt5WebKit		2.1
-SHARED_LIBS +=		Qt5WebKitWidgets	2.1
+SHARED_LIBS +=		Qt5WebKit		3.0
+SHARED_LIBS +=		Qt5WebKitWidgets	3.0
 
 CATEGORIES =		www
 
-# XXX
+# Mostly LGPLv2.1 or LGPLv3 for code; FDLv1.3 for documentation.
+# Some third-party parts are BSD-licensed.
+# Also, many parts have are dual-licensed having either commercial, GPL,
+# Apache 2.0 or other type of license as an alternative option.
+# A few components, including QtWebEngine, are LGPLv3 only, no LGPLv2.1.
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5Gui Qt5Network Qt5Positioning
@@ -63,17 +62,12 @@ LIB_DEPENDS =		databases/sqlite3 \
 
 CONFIGURE_ARGS +=	-DPORT=Qt \
 			-DENABLE_TOOLS=OFF
-#FLAVORS =		debug
-#PSEUDO_FLAVORS =	no_tests
 
 # See qtbase/tests/README for details
 TEST_IS_INTERACTIVE =	X11
 TEST_DEPENDS =		${MODPY_RUN_DEPENDS} \
 			${MODRUBY_RUN_DEPENDS} \
 			audio/sox
-
-CFLAGS +=		-I${X11BASE}/include -I${LOCALBASE}/include
-LDFLAGS =		-L${X11BASE}/lib -L${LOCALBASE}/lib
 
 CONFIGURE_ARGS +=	-DPORT=Qt \
 			-DCMAKE_EXE_LINKER_FLAGS="${LDFLAGS}" \
@@ -108,6 +102,7 @@ post-extract:
 	ln -sf ${RUBY} ${WRKDIR}/bin/ruby
 
 pre-configure:
-	${SUBST_CMD} ${WRKSRC}/Source/cmake/WebKitCommon.cmake
+	${SUBST_CMD} ${WRKSRC}/Source/cmake/WebKitCommon.cmake \
+		${WRKSRC}/Source/WebKit2/Shared/Plugins/unix/PluginSearchPath.cpp
 
 .include <bsd.port.mk>
