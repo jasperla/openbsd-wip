@@ -1,4 +1,6 @@
-@comment $OpenBSD$
+@comment $OpenBSD: PLIST,v$
+@pkgpath x11/kde4/ark
+@conflict kde-l10n-*
 @bin bin/ark
 @lib lib/libkerfuffle.so.${LIBkerfuffle_VERSION}
 lib/qt5/plugins/arkpart.so
@@ -90,9 +92,7 @@ share/kservices5/ark_part.desktop
 share/kservicetypes5/kerfufflePlugin.desktop
 share/kxmlgui5/
 share/kxmlgui5/ark/
-share/kxmlgui5/ark/ark_part.rc
 share/kxmlgui5/ark/ark_viewer.rc
-share/kxmlgui5/ark/arkui.rc
 share/locale/ar/LC_MESSAGES/ark.mo
 share/locale/ast/LC_MESSAGES/ark.mo
 share/locale/bg/LC_MESSAGES/ark.mo
@@ -150,9 +150,6 @@ share/locale/zh_TW/LC_MESSAGES/ark.mo
 share/metainfo/
 share/metainfo/org.kde.ark.appdata.xml
 share/mime/packages/kerfuffle.xml
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
-@exec %D/bin/update-mime-database %D/share/mime
-@unexec-delete %D/bin/update-mime-database %D/share/mime
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@tag gtk-update-icon-cache %D/share/icons/hicolor
+@tag update-mime-database
+@tag update-desktop-database
