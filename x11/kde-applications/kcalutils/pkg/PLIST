@@ -1,4 +1,4 @@
-@comment $OpenBSD$
+@comment $OpenBSD: PLIST,v$
 include/KF5/KCalUtils/
 include/KF5/KCalUtils/KCalUtils/
 include/KF5/KCalUtils/KCalUtils/DndFactory
