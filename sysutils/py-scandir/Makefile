@@ -24,6 +24,7 @@ TEST_DEPENDS +=		devel/py-unittest2 \
 			sysutils/py-scandir
 
 do-test:
-	cd ${WRKSRC}/test && ${MODPY_BIN} run_tests.py
+	cd ${WRKSRC}/test &&\
+	env LC_ALL=C.UTF-8 LANG=C.UTF-8 ${MODPY_BIN} run_tests.py
 
 .include <bsd.port.mk>
