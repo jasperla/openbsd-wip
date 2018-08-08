@@ -1,6 +1,8 @@
 @comment $OpenBSD: PLIST,v 1.2 2018/04/25 15:50:26 landry Exp $
 @newgroup _grafana:798
 @newuser _grafana:798:798:daemon:Grafana Daemon:/var/empty:/sbin/nologin
+@extraunexec rm -rf /var/log/grafana/
+@extraunexec rm -rf /var/grafana/
 @rcscript ${RCDIR}/grafana
 @bin bin/grafana-cli
 @bin bin/grafana-server
