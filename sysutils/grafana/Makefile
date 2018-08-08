@@ -20,9 +20,6 @@ PERMIT_PACKAGE_CDROM =	Yes
 MODULES =	lang/go
 WANTLIB += c pthread
 
-post-extract:
-	rm -Rf ${WRKSRC}/bin/grafana-{server,cli}{,.md5}
-
 do-build:
 	cd ${WRKSRC} && ${MODGO_CMD} build ${MODGO_FLAGS} -o bin/grafana-server ./pkg/cmd/grafana-server
 	cd ${WRKSRC} && ${MODGO_CMD} build ${MODGO_FLAGS} -o bin/grafana-cli ./pkg/cmd/grafana-cli
