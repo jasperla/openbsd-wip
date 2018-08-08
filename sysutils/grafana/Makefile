@@ -30,9 +30,11 @@ do-build:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/grafana-{server,cli} ${PREFIX}/bin
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/grafana
+	${SUBST_CMD} ${WRKSRC}/conf/sample.ini
 .for c in sample.ini ldap.toml
 	${INSTALL_DATA} ${WRKSRC}/conf/$c ${PREFIX}/share/examples/grafana
 .endfor
+	cd ${WRKSRC}/conf/ && pax -rw provisioning ${PREFIX}/share/examples/grafana/
 	${INSTALL_DATA_DIR} ${PREFIX}/share/grafana/conf
 	${INSTALL_DATA} ${WRKSRC}/conf/defaults.ini ${PREFIX}/share/grafana/conf/
 	cp -R ${WRKSRC}/public ${PREFIX}/share/grafana

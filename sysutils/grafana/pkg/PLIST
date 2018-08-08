@@ -11,6 +11,16 @@ share/examples/grafana/ldap.toml
 @sample ${SYSCONFDIR}/grafana/ldap.toml
 share/examples/grafana/sample.ini
 @sample ${SYSCONFDIR}/grafana/config.ini
+share/examples/grafana/provisioning/
+@sample ${SYSCONFDIR}/grafana/provisioning/
+share/examples/grafana/provisioning/dashboards/
+@sample ${SYSCONFDIR}/grafana/provisioning/dashboards/
+share/examples/grafana/provisioning/dashboards/sample.yaml
+@sample ${SYSCONFDIR}/grafana/provisioning/dashboards/sample.yaml
+share/examples/grafana/provisioning/datasources/
+@sample ${SYSCONFDIR}/grafana/provisioning/datasources/
+share/examples/grafana/provisioning/datasources/sample.yaml
+@sample ${SYSCONFDIR}/grafana/provisioning/datasources/sample.yaml
 share/grafana/
 share/grafana/conf/
 share/grafana/public/
