@@ -16,8 +16,6 @@ REVISION-main =		3
 
 HOMEPAGE =		http://www.minetest.net/
 
-MAINTAINER =		Leonid Bobrov <mazocomp@disroot.org>
-
 # source LGPLv2.1/ datas CC BY-SA 3.0
 PERMIT_PACKAGE_CDROM =	Yes
 
