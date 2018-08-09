@@ -1,3 +1,0 @@
-@comment $OpenBSD: PLIST,v$
-@bin bin/umg
-@man man/man1/umg.1
