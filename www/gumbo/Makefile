@@ -18,11 +18,20 @@ PERMIT_PACKAGE_CDROM =	Yes
 BUILD_DEPENDS =	${MODGNU_AUTOCONF_DEPENDS} \
 		${MODGNU_AUTOMAKE_DEPENDS}
 
+TEST_DEPENDS =	devel/gtest
+
 CONFIGURE_STYLE =	gnu
 AUTOCONF_VERSION =	2.69
 AUTOMAKE_VERSION =	1.15
 
+# Allow gtest detection
+CONFIGURE_ENV =	LDFLAGS=-L${LOCALBASE}/lib
+
 pre-configure:
 	@cd ${WRKSRC} && ${AUTOCONF_ENV} ./autogen.sh
+
+pre-test:
+	@mkdir ${WRKSRC}/gtest
+	@ln -s ${LOCALBASE}/include ${WRKSRC}/gtest/include
 
 .include <bsd.port.mk>
