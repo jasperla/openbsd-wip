@@ -13,6 +13,8 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB +=	c maxminddb perl
 
+COMPILER =	base-clang ports-gcc
+
 MODULES =	cpan
 
 LIB_DEPENDS =	net/libmaxminddb
