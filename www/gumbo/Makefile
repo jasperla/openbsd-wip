@@ -6,6 +6,8 @@ GH_ACCOUNT =	google
 GH_PROJECT =	gumbo-parser
 GH_TAGNAME =	v0.10.1
 
+PKGNAME =	${DISTNAME:S/-parser//}
+
 SHARED_LIBS +=	gumbo	0.0 # 1.0
 
 CATEGORIES =	www
@@ -21,11 +23,12 @@ BUILD_DEPENDS =	${MODGNU_AUTOCONF_DEPENDS} \
 TEST_DEPENDS =	devel/gtest
 
 CONFIGURE_STYLE =	gnu
-AUTOCONF_VERSION =	2.69
-AUTOMAKE_VERSION =	1.15
 
 # Allow gtest detection
 CONFIGURE_ENV =	LDFLAGS=-L${LOCALBASE}/lib
+
+AUTOCONF_VERSION =	2.69
+AUTOMAKE_VERSION =	1.15
 
 pre-configure:
 	@cd ${WRKSRC} && ${AUTOCONF_ENV} ./autogen.sh
