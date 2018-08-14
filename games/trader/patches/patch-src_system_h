@@ -1,0 +1,14 @@
+$OpenBSD$
+
+Index: src/system.h
+--- src/system.h.orig
++++ src/system.h
+@@ -69,7 +69,7 @@
+ #include <signal.h>
+ #include <sys/stat.h>
+ #include <sys/time.h>
+-#include <monetary.h>
++#include "strfmon.h"
+ #include <langinfo.h>
+ 
+ 
