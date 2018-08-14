@@ -25,10 +25,10 @@ def fatal(msg):
 
 # Read environment
 try:
-    FAKE_DIR = os.environ["FAKE_DIR"]
+    WRKINST = os.environ["WRKINST"]
     TRUEPREFIX = os.environ["TRUEPREFIX"][1:]
 except KeyError:
-    fatal("This requires FAKE_DIR and TRUEPREFIX environment vars set")
+    fatal("This requires WRKINST and TRUEPREFIX environment vars set")
 
 
 class NastyError(Exception):
@@ -40,22 +40,22 @@ CONFLICT_FILES = set([
     # ps2eps is included in a larger texlive package called pstools, so it
     # cannot be excluded by package. We disable this in the base build at
     # configure time.
-    "@man man/man1/bbox.1",
-    "@man man/man1/disdvi.1",
+    "man/man1/bbox.1",
+    "man/man1/disdvi.1",
     # We have a psutils port, but tex live's version includes some other
     # stuff (perl scripts). Best package those up.
     # a bunch of perl scripts.
-    "@man man/man1/epsffit.1",
-    "@man man/man1/extractres.1",
-    "@man man/man1/psutils.1",
-    "@man man/man1/psjoin.1",
-    "@man man/man1/includeres.1",
-    "@man man/man1/ps2eps.1",
-    "@man man/man1/psbook.1",
-    "@man man/man1/psnup.1",
-    "@man man/man1/psresize.1",
-    "@man man/man1/psselect.1",
-    "@man man/man1/pstops.1",
+    "man/man1/epsffit.1",
+    "man/man1/extractres.1",
+    "man/man1/psutils.1",
+    "man/man1/psjoin.1",
+    "man/man1/includeres.1",
+    "man/man1/ps2eps.1",
+    "man/man1/psbook.1",
+    "man/man1/psnup.1",
+    "man/man1/psresize.1",
+    "man/man1/psselect.1",
+    "man/man1/pstops.1",
 ])
 
 
@@ -66,8 +66,10 @@ def remove_if_in_list(el, ls):
 
 def relocate_mans_and_infos(filelist):
     filelist = filelist[:]
+
     remove_if_in_list("share/texmf-dist/doc/info/dir", filelist)
-    return [re.sub("^share/texmf-dist/doc/(man|info)/", "@\g<1> \g<1>/", i)
+    # XXX pre-compile
+    return [re.sub("^share/texmf-dist/doc/(man|info)/", "\g<1>/", i)
             for i in filelist]
 
 
@@ -87,7 +89,7 @@ def find_commented_files(file_list):
          # We don't want anything that isn't in the texmf tree.
          # Most of this is installer stuff which does not apply
          # to us.
-         not x.startswith("share/texmf") or
+         not x.startswith(("share/texmf", "man/", "info/")) or
          x.startswith("@") or # XXX what's this?
          # Stuff provided by other ports
          x in CONFLICT_FILES or
@@ -97,6 +99,12 @@ def find_commented_files(file_list):
          # We don't need build instructions in our binary packages
          x.endswith("/tlbuild.info")
          ]
+
+    # XXX
+    #for f in commented_files:
+    #    if f.startswith("man/") and f not in CONFLICT_FILES:
+    #        import pdb; pdb.set_trace()
+
     return commented_files
 
 
@@ -228,7 +236,8 @@ def build_subset_file_lists(tlpdb):
                                             commented_neverset_files)
 
     # MINIMAL
-    # Scheme-tetex minus anything we installed in the buildset
+    # Scheme-tetex minus anything we installed in the buildset.
+    # Note that the files in this subset go in "PLIST-main" (not "PLIST-minimal").
     minimal_pkgs = ["scheme-tetex"]
     minimal_specs = (runspecs(minimal_pkgs) +
                      manspecs(minimal_pkgs) +
@@ -295,7 +304,7 @@ class TargetPlist(object):
     STR_MAP = {
         UNREF: "unref",
         BUILDSET: "-buildset",
-        MINIMAL: "-minimal",
+        MINIMAL: "-main",
         FULL: "-full",
         CONTEXT: "-context",
         DOCS: "-docs",
@@ -331,14 +340,14 @@ def build_file_map(buildset_files, minimal_files,
 def walk_fake(file_map):
     """Walks the fake directory emitting one line to stdout for each file."""
 
-    strip_prefix = os.path.join(FAKE_DIR, TRUEPREFIX)
+    strip_prefix = os.path.join(WRKINST, TRUEPREFIX)
     if not strip_prefix.endswith(os.sep):
         strip_prefix += os.sep
 
-    for root, dirs, files in os.walk(FAKE_DIR):
+    for root, dirs, files in os.walk(WRKINST):
         for basename in files:
             # Ports tree writes some cookies. Don't classify those.
-            if root == FAKE_DIR and basename.startswith("."):
+            if root == WRKINST and basename.startswith("."):
                 continue
             filename = os.path.join(root, basename)
             assert filename.startswith(strip_prefix)
