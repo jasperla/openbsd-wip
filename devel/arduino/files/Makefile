@@ -196,6 +196,16 @@ mkdirs:
 		${LNDIR} ${LOCALBASE}/share/arduino ${ARDUINO}; \
 	fi
 
+tags:
+	@if [ ! -x ${LOCALBASE}/bin/ectags ]; then \
+		echo "devel/ectags required. Install it with pkg_add(1)."; \
+	else \
+		FTAGGED=$$(find ${LOCALBASE}/share/arduino \
+			-name '*.h' -o -name '*.c' -o -name '*.cpp'; \
+			find /usr/local/avr/include -name '*.h'); \
+		ectags --format=1 $${FTAGGED}; \
+	fi
+
 # Here is the "preprocessing".
 # It creates a .cpp file based with the same name as the .ino file.
 # On top of the new .cpp file comes the Arduino.h header.
