@@ -4,15 +4,15 @@ COMMENT =	GNU Image Manipulation Program
 
 DISTNAME =	gimp-2.10.4
 
-SHARED_LIBS +=  gimp-2.0                  0.0 # 1000.4
-SHARED_LIBS +=  gimpbase-2.0              0.0 # 1000.4
-SHARED_LIBS +=  gimpcolor-2.0             0.0 # 1000.4
-SHARED_LIBS +=  gimpconfig-2.0            0.0 # 1000.4
-SHARED_LIBS +=  gimpmath-2.0              0.0 # 1000.4
-SHARED_LIBS +=  gimpmodule-2.0            0.0 # 1000.4
-SHARED_LIBS +=  gimpthumb-2.0             0.0 # 1000.4
-SHARED_LIBS +=  gimpui-2.0                0.0 # 1000.4
-SHARED_LIBS +=  gimpwidgets-2.0           0.0 # 1000.4
+SHARED_LIBS +=  gimp-2.0                  273.0 # 1000.4
+SHARED_LIBS +=  gimpbase-2.0              273.0 # 1000.4
+SHARED_LIBS +=  gimpcolor-2.0             273.0 # 1000.4
+SHARED_LIBS +=  gimpconfig-2.0            273.0 # 1000.4
+SHARED_LIBS +=  gimpmath-2.0              273.0 # 1000.4
+SHARED_LIBS +=  gimpmodule-2.0            273.0 # 1000.4
+SHARED_LIBS +=  gimpthumb-2.0             273.0 # 1000.4
+SHARED_LIBS +=  gimpui-2.0                273.0 # 1000.4
+SHARED_LIBS +=  gimpwidgets-2.0           273.0 # 1000.4
 
 CATEGORIES =	graphics
 MAINTAINER =	Giovanni Bechis <giovanni@openbsd.org>
