@@ -73,41 +73,6 @@ def relocate_mans_and_infos(filelist):
             for i in filelist]
 
 
-def find_commented_files(file_list):
-    """Identify files which we'd like to see commented in the PLISTs"""
-
-    commented_files = [x for x in file_list if
-         # Windows junk
-         re.match(".*\.([Ee][Xx][Ee]|[Bb][Aa][Tt])$", x) or
-         # no win32 stuff, but should probably keep win32 images in tl docs.
-         ("win32" in x and "doc/texlive" not in x) or
-         "mswin" in x or
-         # Context source code -- seriously?
-         re.match("^share/texmf-dist/scripts/context/stubs/source/", x) or
-         # PDF versions of manuals
-         re.match("^.*.man[0-9]\.pdf$", x) or
-         # We don't want anything that isn't in the texmf tree.
-         # Most of this is installer stuff which does not apply
-         # to us.
-         not x.startswith(("share/texmf", "man/", "info/")) or
-         x.startswith("@") or # XXX what's this?
-         # Stuff provided by other ports
-         x in CONFLICT_FILES or
-         # TeX live installer, we never want
-         # XXX why not filter out the package?
-         ("tlmgr" in x and "doc/texlive" not in x) or
-         # We don't need build instructions in our binary packages
-         x.endswith("/tlbuild.info")
-         ]
-
-    # XXX
-    #for f in commented_files:
-    #    if f.startswith("man/") and f not in CONFLICT_FILES:
-    #        import pdb; pdb.set_trace()
-
-    return commented_files
-
-
 def collect_files(specs, tlpdb, regex=None):
     # XXX work with sets only
     cfg = config.Config(
@@ -122,8 +87,7 @@ def collect_files(specs, tlpdb, regex=None):
     files = subset.compute_subset(cfg, sess)
     sess.close()
     files = relocate_mans_and_infos(files)
-    commented_files = find_commented_files(files)
-    return files, commented_files
+    return files
 
 
 def manspecs(pkglist):
@@ -132,11 +96,6 @@ def manspecs(pkglist):
 
 def runspecs(pkglist):
     return ["%s:run" % pkg for pkg in pkglist]
-
-
-def writelines(fh, lines):
-    for i in lines:
-        fh.write(i + "\n")
 
 
 def list_subtract(l, rm):
@@ -149,7 +108,7 @@ def build_subset_file_lists(tlpdb):
     # XXX have these commented where they would have appeared.
     never_pkgs = ["asymptote", "latexmk", "texworks", "t1utils",
                   "dvi2tty", "detex", "texinfo"]
-    neverset_files, commented_neverset_files = collect_files(never_pkgs, tlpdb)
+    neverset_files = collect_files(never_pkgs, tlpdb)
 
     # BUILDSET
     # The smallest subset for building ports.
@@ -185,7 +144,7 @@ def build_subset_file_lists(tlpdb):
         ]
 
     buildset_specs = runspecs(buildset_pkgs)
-    buildset_files, commented_buildset_files = collect_files(buildset_specs, tlpdb)
+    buildset_files = collect_files(buildset_specs, tlpdb)
 
     # CONTEXT
     # Subset containing the ConTeXt packages (we list here the direct
@@ -229,11 +188,8 @@ def build_subset_file_lists(tlpdb):
     ]
 
     context_specs = runspecs(context_pkgs) + manspecs(context_pkgs)
-    context_files, commented_context_files = \
-        collect_files(context_specs, tlpdb)
+    context_files = collect_files(context_specs, tlpdb)
     context_files = list_subtract(context_files, neverset_files)
-    commented_context_files = list_subtract(commented_context_files,
-                                            commented_neverset_files)
 
     # MINIMAL
     # Scheme-tetex minus anything we installed in the buildset.
@@ -243,29 +199,20 @@ def build_subset_file_lists(tlpdb):
                      manspecs(minimal_pkgs) +
                      manspecs(buildset_pkgs))  # carry forward buildset manuals
 
-    minimal_files, commented_minimal_files = collect_files(minimal_specs, tlpdb)
+    minimal_files = collect_files(minimal_specs, tlpdb)
     minimal_files = list_subtract(minimal_files, buildset_files +
                                                  context_files +
                                                  neverset_files)
-    commented_minimal_files = list_subtract(commented_minimal_files,
-                                            commented_buildset_files +
-                                            commented_context_files +
-                                            commented_neverset_files)
 
     # FULL
     # Largest subset.
     full_pkgs = ["scheme-full"]
     full_specs = runspecs(full_pkgs) + manspecs(full_pkgs)
 
-    full_files, commented_full_files = collect_files(full_specs, tlpdb)
+    full_files = collect_files(full_specs, tlpdb)
     full_files = list_subtract(full_files,
                                minimal_files + buildset_files +
                                context_files + neverset_files)
-    commented_full_files = list_subtract(commented_full_files,
-                                         commented_minimal_files +
-                                         commented_buildset_files +
-                                         commented_context_files +
-                                         commented_neverset_files)
 
     # DOCS
     # Docs for TeX packages in -buildset and -minimal only (to save space).
@@ -274,23 +221,10 @@ def build_subset_file_lists(tlpdb):
         "(?!texmf-dist\/doc\/(man\/man[0-9]\/.*[0-9]|info\/.*\.info)$)"
 
     docs_specs = ["scheme-tetex:doc"]
-    docs_files, commented_docs_files = \
-        collect_files(docs_specs, tlpdb, regex=no_man_info_pdfman_regex)
+    docs_files = collect_files(docs_specs, tlpdb, regex=no_man_info_pdfman_regex)
     docs_files = list_subtract(docs_files, neverset_files)
-    commented_docs_files = list_subtract(commented_docs_files, neverset_files)
 
-    # XXX not elegant
-    all_commented_files = set()
-    all_commented_files.update(neverset_files)
-    all_commented_files.update(commented_neverset_files)
-    all_commented_files.update(commented_buildset_files)
-    all_commented_files.update(commented_minimal_files)
-    all_commented_files.update(commented_context_files)
-    all_commented_files.update(commented_full_files)
-    all_commented_files.update(commented_docs_files)
-
-    return (buildset_files, minimal_files, full_files, context_files,
-            docs_files, all_commented_files)
+    return (buildset_files, minimal_files, full_files, context_files, docs_files)
 
 
 class TargetPlist(object):
@@ -316,25 +250,48 @@ class TargetPlist(object):
 
 
 def build_file_map(buildset_files, minimal_files,
-                   full_files, context_files, docs_files, commented_files):
-    """Builds mapping for near constant time filename to subset lookups.
-
-    The mapping is from filename to a tuple of `(target, is_commented)`.
-    """
+                   full_files, context_files, docs_files):
+    """Builds mapping for near constant time filename to subset lookups."""
 
     sys.stderr.write("making file map\n")
     file_map = {}
     for f in buildset_files:
-        file_map[f] = (TargetPlist.BUILDSET, f in commented_files)
+        file_map[f] = TargetPlist.BUILDSET
     for f in minimal_files:
-        file_map[f] = (TargetPlist.MINIMAL, f in commented_files)
+        file_map[f] = TargetPlist.MINIMAL
     for f in full_files:
-        file_map[f] = (TargetPlist.FULL, f in commented_files)
+        file_map[f] = TargetPlist.FULL
     for f in context_files:
-        file_map[f] = (TargetPlist.CONTEXT, f in commented_files)
+        file_map[f] = TargetPlist.CONTEXT
     for f in docs_files:
-        file_map[f] = (TargetPlist.DOCS, f in commented_files)
+        file_map[f] = TargetPlist.DOCS
     return file_map
+
+
+def should_comment_file(f):
+    return (
+        # Windows junk
+        re.match(".*\.([Ee][Xx][Ee]|[Bb][Aa][Tt])$", f) or
+        # no win32 stuff, but should probably keep win32 images in tl docs.
+        ("win32" in f and "doc/texlive" not in f) or
+        "mswin" in f or
+        # Context source code -- seriously?
+        re.match("^share/texmf-dist/scripts/context/stubs/source/", f) or
+        # PDF versions of manuals
+        re.match("^.*.man[0-9]\.pdf$", f) or
+        # We don't want anything that isn't in the texmf tree.
+        # Most of this is installer stuff which does not apply
+        # to us.
+        not f.startswith(("share/texmf", "man/", "info/")) or
+        f.startswith("@") or # XXX what's this?
+        # Stuff provided by other ports
+        f in CONFLICT_FILES or
+        # TeX live installer, we never want
+        # XXX why not filter out the package?
+        ("tlmgr" in f and "doc/texlive" not in f) or
+        # We don't need build instructions in our binary packages
+        f.endswith("/tlbuild.info")
+    )
 
 
 def walk_fake(file_map):
@@ -353,18 +310,18 @@ def walk_fake(file_map):
             assert filename.startswith(strip_prefix)
             filename = filename[len(strip_prefix):]
 
-            comment = False
             if filename.startswith("share/texmf-var/"):
-                # texmf-var files are not in the DB.
+                # texmf-var files not in the DB, but belong in the buildset.
                 target = TargetPlist.BUILDSET
             else:
                 try:
-                    target, comment = file_map[filename]
+                    target = file_map[filename]
                 except KeyError:
                     target = TargetPlist.UNREF
 
-            if comment:
+            if should_comment_file(filename):
                 sys.stdout.write("#")
+
             print("%s %s" % (filename, TargetPlist.to_str(target)))
 
 
@@ -374,7 +331,7 @@ if __name__ == "__main__":
 
     lists = build_subset_file_lists(sys.argv[1])
     buildset_fls, minimal_fls, full_fls, context_fls, \
-        docs_fls, commented_files = lists
+        docs_fls = lists
     file_map = build_file_map(buildset_fls, minimal_fls, full_fls,
-                              context_fls, docs_fls, commented_files)
+                              context_fls, docs_fls)
     walk_fake(file_map)
