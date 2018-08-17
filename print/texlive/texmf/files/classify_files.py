@@ -103,12 +103,11 @@ def list_subtract(l, rm):
 
 
 def build_subset_file_lists(tlpdb):
-    # NEVERSET
-    # Packages we never want because it it ported separately to TeX live.
-    # XXX have these commented where they would have appeared.
-    never_pkgs = ["asymptote", "latexmk", "texworks", "t1utils",
+    # CONFLICTING PACKAGES
+    # Packages we never want because they are ported separately to TeX live.
+    conflict_pkgs = ["asymptote", "latexmk", "texworks", "t1utils",
                   "dvi2tty", "detex", "texinfo"]
-    neverset_files = collect_files(never_pkgs, tlpdb)
+    conflict_files = collect_files(conflict_pkgs, tlpdb)
 
     # BUILDSET
     # The smallest subset for building ports.
@@ -189,7 +188,6 @@ def build_subset_file_lists(tlpdb):
 
     context_specs = runspecs(context_pkgs) + manspecs(context_pkgs)
     context_files = collect_files(context_specs, tlpdb)
-    context_files = list_subtract(context_files, neverset_files)
 
     # MINIMAL
     # Scheme-tetex minus anything we installed in the buildset.
@@ -200,9 +198,8 @@ def build_subset_file_lists(tlpdb):
                      manspecs(buildset_pkgs))  # carry forward buildset manuals
 
     minimal_files = collect_files(minimal_specs, tlpdb)
-    minimal_files = list_subtract(minimal_files, buildset_files +
-                                                 context_files +
-                                                 neverset_files)
+    minimal_files = list_subtract(minimal_files,
+                                  buildset_files + context_files)
 
     # FULL
     # Largest subset.
@@ -211,8 +208,7 @@ def build_subset_file_lists(tlpdb):
 
     full_files = collect_files(full_specs, tlpdb)
     full_files = list_subtract(full_files,
-                               minimal_files + buildset_files +
-                               context_files + neverset_files)
+                               minimal_files + buildset_files + context_files)
 
     # DOCS
     # Docs for TeX packages in -buildset and -minimal only (to save space).
@@ -222,9 +218,9 @@ def build_subset_file_lists(tlpdb):
 
     docs_specs = ["scheme-tetex:doc"]
     docs_files = collect_files(docs_specs, tlpdb, regex=no_man_info_pdfman_regex)
-    docs_files = list_subtract(docs_files, neverset_files)
 
-    return (buildset_files, minimal_files, full_files, context_files, docs_files)
+    return (buildset_files, minimal_files, full_files,
+            context_files, docs_files, conflict_files)
 
 
 class TargetPlist(object):
@@ -268,8 +264,12 @@ def build_file_map(buildset_files, minimal_files,
     return file_map
 
 
-def should_comment_file(f):
+def should_comment_file(f, conflict_files):
     return (
+        # Stuff provided by other ports.
+        # XXX tidy
+        f in conflict_files or
+        f in CONFLICT_FILES or
         # Windows junk
         re.match(".*\.([Ee][Xx][Ee]|[Bb][Aa][Tt])$", f) or
         # no win32 stuff, but should probably keep win32 images in tl docs.
@@ -284,17 +284,16 @@ def should_comment_file(f):
         # to us.
         not f.startswith(("share/texmf", "man/", "info/")) or
         f.startswith("@") or # XXX what's this?
-        # Stuff provided by other ports
-        f in CONFLICT_FILES or
         # TeX live installer, we never want
         # XXX why not filter out the package?
+        # XXX it's in texlive.infra -- we could kill that
         ("tlmgr" in f and "doc/texlive" not in f) or
         # We don't need build instructions in our binary packages
         f.endswith("/tlbuild.info")
     )
 
 
-def walk_fake(file_map):
+def walk_fake(file_map, conflict_files):
     """Walks the fake directory emitting one line to stdout for each file."""
 
     strip_prefix = os.path.join(WRKINST, TRUEPREFIX)
@@ -319,7 +318,7 @@ def walk_fake(file_map):
                 except KeyError:
                     target = TargetPlist.UNREF
 
-            if should_comment_file(filename):
+            if should_comment_file(filename, conflict_files):
                 sys.stdout.write("#")
 
             print("%s %s" % (filename, TargetPlist.to_str(target)))
@@ -330,8 +329,7 @@ if __name__ == "__main__":
         fatal(__doc__)
 
     lists = build_subset_file_lists(sys.argv[1])
-    buildset_fls, minimal_fls, full_fls, context_fls, \
-        docs_fls = lists
+    buildset_fls, minimal_fls, full_fls, context_fls,  docs_fls, conflict_files = lists
     file_map = build_file_map(buildset_fls, minimal_fls, full_fls,
                               context_fls, docs_fls)
-    walk_fake(file_map)
+    walk_fake(file_map, conflict_files)
