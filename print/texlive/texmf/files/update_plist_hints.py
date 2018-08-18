@@ -203,7 +203,7 @@ class TargetPlist(object):
     DOCS = 5
 
     STR_MAP = {
-        UNREF: "unref",
+        # UNREF should never be used here.
         BUILDSET: "-buildset",
         MINIMAL: "-main",
         FULL: "-full",
@@ -271,6 +271,7 @@ def walk_fake(file_map, conflict_files):
             assert filename.startswith(strip_prefix)
             filename = filename[len(strip_prefix):]
 
+            unreferenced = False
             if filename.startswith("share/texmf-var/"):
                 # texmf-var files not in the DB, but belong in the buildset.
                 target = TargetPlist.BUILDSET
@@ -278,9 +279,11 @@ def walk_fake(file_map, conflict_files):
                 try:
                     target = file_map[filename]
                 except KeyError:
-                    target = TargetPlist.UNREF
+                    # Any un-referenced files go into PLIST-full commented.
+                    target = TargetPlist.FULL
+                    unreferenced = True
 
-            if should_comment_file(filename, conflict_files):
+            if unreferenced or should_comment_file(filename, conflict_files):
                 sys.stdout.write("#")
 
             print("%s %s" % (filename, TargetPlist.to_str(target)))

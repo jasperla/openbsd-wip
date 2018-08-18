@@ -122,9 +122,6 @@ def main():
 
         filename, plist = line.split()
 
-        if plist == "unref":
-            continue  # Skip unreferenced files for now.
-
         dir_ents[plist].update(dir_entries(filename, EXISTING_DIRS))
         all_files[plist].add(filename)
 
@@ -136,7 +133,6 @@ def main():
                 fh.write("@man ")
             elif re.match(INFO_RE, fl):
                 fh.write("@info ")
-
             fh.write(fl + "\n")
 
         for line in BOTTOM_MATTER[plist]:
