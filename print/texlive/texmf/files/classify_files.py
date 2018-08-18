@@ -12,6 +12,7 @@ Arguments:
 import re
 import sys
 import os
+from tlpdb_parser import PkgPartSpec, FileKind
 
 
 YEAR = 2017
@@ -72,10 +73,10 @@ def move_mans_and_infos(file_set):
                 for i in file_set])
 
 
-def collect_files(specs, db, regex=None, invert_regex=False):
+def collect_files(pp_specs, db, regex=None, invert_regex=False):
     """Query the database and get file sets"""
 
-    parts = db.get_pkg_parts(specs)
+    parts = db.expand_pkg_part_specs(pp_specs)
     files = move_mans_and_infos(db.get_pkg_part_files(parts, "share/"))
     if regex:
         if not invert_regex:
@@ -86,26 +87,33 @@ def collect_files(specs, db, regex=None, invert_regex=False):
         return files
 
 
-def docspecs(pkg_list):
-    return ["%s:doc" % (pkg) for pkg in pkg_list]
-
-
-def runspecs(pkglist):
-    return ["%s:run" % pkg for pkg in pkglist]
-
-
 def build_subset_file_lists(tlpdb):
     # Set up.
     from tlpdb_parser import Parser
     sys.stderr.write("parsing tlpdb...\n")
     db = Parser(tlpdb).parse()
+
+    # Helpers to build pkg part specifications.
+    def docspecs(pkg_list, include_deps=True):
+        return [PkgPartSpec(pkg, FileKind.DOC, include_deps)
+                for pkg in pkg_list]
+
+    def runspecs(pkg_list, include_deps=True):
+        return [PkgPartSpec(pkg, FileKind.RUN, include_deps)
+                for pkg in pkg_list]
+
+    def allspecs(pkg_list):
+        return [PkgPartSpec(pkg, kind)
+                for pkg in pkg_list
+                for kind in FileKind.all_kinds()]
+
     sys.stderr.write("making plist map...\n")
 
     # CONFLICTING PACKAGES
     # Whole packages that are ported elsewhere.
     conflict_pkgs = ["asymptote", "latexmk", "texworks", "t1utils",
                      "dvi2tty", "detex", "texinfo"]
-    conflict_pkg_files = collect_files(conflict_pkgs, db)
+    conflict_pkg_files = collect_files(allspecs(conflict_pkgs), db)
 
     # BUILDSET
     # The smallest subset for building ports.
@@ -145,49 +153,12 @@ def build_subset_file_lists(tlpdb):
         collect_files(docspecs(buildset_pkgs), db, MANS_INFOS_RE)
 
     # CONTEXT
-    # Subset containing the ConTeXt packages (we list here the direct
-    # dependencies of collection-context in the tldb, each prepended with a `!`
-    # so as to not follow dependencies).
-    context_pkgs = [
-        "!context",
-        "!context-notes-zh-cn",
-        "!context-account",
-        "!context-algorithmic",
-        "!context-animation",
-        "!context-annotation",
-        "!context-bnf",
-        "!context-chromato",
-        "!context-cmscbf",
-        "!context-cmttbf",
-        "!context-construction-plan",
-        "!context-cyrillicnumbers",
-        "!context-degrade",
-        "!context-fancybreak",
-        "!context-filter",
-        "!context-french",
-        "!context-fullpage",
-        "!context-gantt",
-        "!context-gnuplot",
-        "!context-inifile",
-        "!context-layout",
-        "!context-letter",
-        "!context-lettrine",
-        "!context-mathsets",
-        "!context-rst",
-        "!context-ruby",
-        "!context-simplefonts",
-        "!context-simpleslides",
-        "!context-title",
-        "!context-transliterator",
-        "!context-typearea",
-        "!context-typescripts",
-        "!context-vim",
-        "!context-visualcounter",
-    ]
-
-    context_files = collect_files(runspecs(context_pkgs), db)
-    context_files.update(
-        collect_files(docspecs(context_pkgs), db, MANS_INFOS_RE))
+    # Subset containing only ConTeXt itself and any ConTeXt packages.
+    context_pkgs = [p for p in db.pkgs() if p.startswith("context")]
+    context_files = collect_files(
+        runspecs(context_pkgs, include_deps=False), db)
+    context_files.update(collect_files(
+        docspecs(context_pkgs, include_deps=False), db, MANS_INFOS_RE))
 
     # MINIMAL
     # Scheme-tetex minus anything we installed in the buildset. Note that the

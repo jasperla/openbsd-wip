@@ -176,37 +176,6 @@ class DB(object):
     def __init__(self, map):
         self.map = map
 
-    @staticmethod
-    def parse_pkg_subset_spec(spec):
-        """Parse a string subset spec into a set of `PkgPartSpec`."""
-
-        elems = spec.split(":", 2)
-
-        if not (1 <= len(elems) <= 2):
-            raise DBError("Bad pkg spec: '%s'" % spec)
-
-        if len(elems) == 1:
-            elems.append(None)
-
-        (pkg_name, file_kinds) = elems
-
-        # If the package name is prefixed with a bang, it means, don't
-        # collect dependencies.
-        include_deps = True
-        if pkg_name.startswith("!"):
-            pkg_name = pkg_name[1:]
-            include_deps = False
-
-        # Parse file kinds
-        if file_kinds is None:
-            parsed_kinds = FileKind.all_kinds()
-        else:
-            parsed_kinds = [FileKind.from_str(k)
-                            for k in file_kinds.split(",")]
-
-        return set([PkgPartSpec(pkg_name, kind, include_deps=include_deps)
-                    for kind in parsed_kinds])
-
     def expand_pkg_part_specs(self, pkg_part_specs):
         work = set(pkg_part_specs)
         ret = set()
@@ -248,3 +217,6 @@ class DB(object):
                         for x in self.map[pp.pkg_name].files[pp.file_kind]])
 
         return ret
+
+    def pkgs(self):
+        return self.map.keys()
