@@ -1,11 +1,12 @@
 #!/usr/bin/env python2.7
 """
-Output update-plist hints for which files go into which PLIST.
+Output update-plist(1) hints for which files go into which PLIST.
 
-Usage: XXX
+Usage:
+  env WRKINST=... TRUEPREFIX=... python2.7 update_plist_hints.py <tlpdb-gz>
 
 Arguments:
-    tlpdb: The TeX Live database file to use.
+    tlpdb-gz: The (gzipped) TeX Live database file to use.
 """
 
 import re
@@ -36,6 +37,7 @@ class NastyError(Exception):
     pass
 
 
+# Individual files that conflict with other ports.
 CONFLICT_FILES = set([
     # Comes from print/ps2eps.
     # ps2eps is included in a larger texlive package called pstools, so it
@@ -71,9 +73,10 @@ def move_mans_and_infos(file_set):
 
 
 def collect_files(specs, db, regex=None, invert_regex=False):
+    """Query the database and get file sets"""
+
     parts = db.get_pkg_parts(specs)
-    files = db.get_pkg_part_files(parts, "share/")
-    files = move_mans_and_infos(files)
+    files = move_mans_and_infos(db.get_pkg_part_files(parts, "share/"))
     if regex:
         if not invert_regex:
             return [f for f in files if re.match(regex, f)]
@@ -96,13 +99,13 @@ def build_subset_file_lists(tlpdb):
     from tlpdb_parser import Parser
     sys.stderr.write("parsing tlpdb...\n")
     db = Parser(tlpdb).parse()
-    sys.stderr.write("computing subsets...\n")
+    sys.stderr.write("making plist map...\n")
 
     # CONFLICTING PACKAGES
-    # Packages we never want because they are ported separately to TeX live.
+    # Whole packages that are ported elsewhere.
     conflict_pkgs = ["asymptote", "latexmk", "texworks", "t1utils",
                      "dvi2tty", "detex", "texinfo"]
-    conflict_files = collect_files(conflict_pkgs, db)
+    conflict_pkg_files = collect_files(conflict_pkgs, db)
 
     # BUILDSET
     # The smallest subset for building ports.
@@ -196,11 +199,10 @@ def build_subset_file_lists(tlpdb):
     minimal_files.update(buildset_doc_files)
     minimal_files = minimal_files - buildset_files.union(context_files)
 
-
     # FULL
     # Largest subset.
     full_pkgs = ["scheme-full"]
-    full_files = collect_files(runspecs(full_pkgs), db) 
+    full_files = collect_files(runspecs(full_pkgs), db)
     full_files.update(collect_files(docspecs(full_pkgs), db, MANS_INFOS_RE))
     full_files = \
         full_files - minimal_files.union(buildset_files.union(context_files))
@@ -212,8 +214,14 @@ def build_subset_file_lists(tlpdb):
     docs_files = collect_files(docspecs(docs_pkgs), db,
                                regex=MANS_INFOS_RE, invert_regex=True)
 
-    return (buildset_files, minimal_files, full_files,
-            context_files, docs_files, conflict_files)
+    plist_map = {
+        TargetPlist.BUILDSET: buildset_files,
+        TargetPlist.MINIMAL: minimal_files,
+        TargetPlist.FULL: full_files,
+        TargetPlist.CONTEXT: context_files,
+        TargetPlist.DOCS: docs_files
+    }
+    return plist_map, CONFLICT_FILES.union(conflict_pkg_files)
 
 
 class TargetPlist(object):
@@ -238,31 +246,23 @@ class TargetPlist(object):
         return TargetPlist.STR_MAP[code]
 
 
-def build_file_map(buildset_files, minimal_files,
-                   full_files, context_files, docs_files):
-    """Builds mapping for near constant time filename to subset lookups."""
+def build_file_map(plist_map):
+    """Builds a mapping for fast filename to target PLIST lookups."""
 
     sys.stderr.write("making file map...\n")
     file_map = {}
-    for f in buildset_files:
-        file_map[f] = TargetPlist.BUILDSET
-    for f in minimal_files:
-        file_map[f] = TargetPlist.MINIMAL
-    for f in full_files:
-        file_map[f] = TargetPlist.FULL
-    for f in context_files:
-        file_map[f] = TargetPlist.CONTEXT
-    for f in docs_files:
-        file_map[f] = TargetPlist.DOCS
+    for plist in TargetPlist.STR_MAP.keys():
+        if plist == TargetPlist.UNREF:
+            continue
+        for f in plist_map[plist]:
+            file_map[f] = plist
     return file_map
 
 
 def should_comment_file(f, conflict_files):
     return (
         # Stuff provided by other ports.
-        # XXX tidy
         f in conflict_files or
-        f in CONFLICT_FILES or
         # Windows junk
         re.match(".*\.([Ee][Xx][Ee]|[Bb][Aa][Tt])$", f) or
         # no win32 stuff, but should probably keep win32 images in tl docs.
@@ -276,10 +276,7 @@ def should_comment_file(f, conflict_files):
         # Most of this is installer stuff which does not apply
         # to us.
         not f.startswith(("share/texmf", "man/", "info/")) or
-        f.startswith("@") or # XXX what's this?
         # TeX live installer, we never want
-        # XXX why not filter out the package?
-        # XXX it's in texlive.infra -- we could kill that
         ("tlmgr" in f and "doc/texlive" not in f) or
         # We don't need build instructions in our binary packages
         f.endswith("/tlbuild.info")
@@ -323,8 +320,6 @@ if __name__ == "__main__":
     if len(sys.argv) != 2:
         fatal(__doc__)
 
-    lists = build_subset_file_lists(sys.argv[1])
-    buildset_fls, minimal_fls, full_fls, context_fls,  docs_fls, conflict_files = lists
-    file_map = build_file_map(buildset_fls, minimal_fls, full_fls,
-                              context_fls, docs_fls)
+    plist_map, conflict_files = build_subset_file_lists(sys.argv[1])
+    file_map = build_file_map(plist_map)
     walk_fake(file_map, conflict_files)

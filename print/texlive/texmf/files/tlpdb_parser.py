@@ -1,3 +1,7 @@
+"""
+Lightweight TeX Live TLPDB parser.
+"""
+
 import gzip
 
 
@@ -62,9 +66,10 @@ class Pkg(object):
 class Parser(object):
     # Package fields that we don't care about.
     IGNORE_FIELDS = ("category", "revision", "catalogue", "shortdesc",
-        "longdesc", "catalogue-ctan", "catalogue-date", "catalogue-license",
-        "catalogue-topics", "catalogue-version", "catalogue-also",
-        "execute", "postaction")
+                     "longdesc", "catalogue-ctan", "catalogue-date",
+                     "catalogue-license", "catalogue-topics",
+                     "catalogue-version", "catalogue-also", "execute",
+                     "postaction")
 
     def __init__(self, filename):
         self.fh = gzip.GzipFile(filename)
@@ -143,7 +148,7 @@ class PkgPartSpec(object):
 
 class PkgPart(object):
     """A hashable pkg-name and file-kind combo."""
-    
+
     def __init__(self, pkg_name, file_kind):
         self.pkg_name = pkg_name
         self.file_kind = file_kind
@@ -171,7 +176,6 @@ class DB(object):
     def __init__(self, map):
         self.map = map
 
-
     @staticmethod
     def parse_pkg_subset_spec(spec):
         """Parse a string subset spec into a set of `PkgPartSpec`."""
@@ -197,10 +201,11 @@ class DB(object):
         if file_kinds is None:
             parsed_kinds = FileKind.all_kinds()
         else:
-            parsed_kinds = [FileKind.from_str(k) for k in file_kinds.split(",")]
+            parsed_kinds = [FileKind.from_str(k)
+                            for k in file_kinds.split(",")]
 
         return set([PkgPartSpec(pkg_name, kind, include_deps=include_deps)
-                for kind in parsed_kinds])
+                    for kind in parsed_kinds])
 
     def expand_pkg_part_specs(self, pkg_part_specs):
         work = set(pkg_part_specs)
@@ -239,13 +244,7 @@ class DB(object):
 
         ret = set()
         for pp in pps:
-            ret.update([fn_prefix + x for x in self.map[pp.pkg_name].files[pp.file_kind]])
+            ret.update([fn_prefix + x
+                        for x in self.map[pp.pkg_name].files[pp.file_kind]])
 
         return ret
-
-
-if __name__ == "__main__":
-    p = Parser("/usr/local/share/examples/py-texscythe/texlive2017.tlpdb.gz")
-    db = p.parse()
-    parts = db.get_pkg_parts(["scheme-basic:run"])
-    print(db.get_pkg_part_files(parts))
