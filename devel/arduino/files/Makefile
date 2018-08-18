@@ -198,12 +198,10 @@ mkdirs:
 
 tags:
 	@if [ ! -x ${LOCALBASE}/bin/ectags ]; then \
-		echo "devel/ectags required. Install it with pkg_add(1)."; \
+		echo "devel/universal-ctags required. Install it with pkg_add(1)."; \
 	else \
-		FTAGGED=$$(find ${LOCALBASE}/share/arduino \
-			-name '*.h' -o -name '*.c' -o -name '*.cpp'; \
-			find /usr/local/avr/include -name '*.h'); \
-		ectags --format=1 $${FTAGGED}; \
+		uctags -R --format=1 --languages=C,C++ \
+			${LOCALBASE}/share/arduino /usr/local/avr/include; \
 	fi
 
 # Here is the "preprocessing".
