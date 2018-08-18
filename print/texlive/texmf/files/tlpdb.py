@@ -1,6 +1,5 @@
-"""
-Lightweight TeX Live TLPDB parser.
-"""
+# $OpenBSD$
+"""Lightweight TeX Live TLPDB parser."""
 
 import gzip
 
@@ -88,19 +87,16 @@ class Parser(object):
                 pos = Pos.PKG
             elif line.startswith(tuple(FileKind.MAP.keys())):
                 assert pos != Pos.TOP
-                elems = fields(line)
-                file_kind = FileKind.from_str(elems[0][:3])
+                file_kind = FileKind.from_str(fields(line)[0][:3])
                 pos = Pos.FILES
             elif line.startswith(" "):
                 assert pos == Pos.FILES
-                elems = line.split()
-                pkg.files[file_kind].add(elems[0])
+                pkg.files[file_kind].add(fields(line)[0])
             elif line.startswith("depend"):
-                elems = fields(line)
-                dep = elems[1]
+                dep = fields(line)[1]
                 if dep.startswith("setting_available_architectures"):
-                    # There's one specially-formed package enrty used by the
-                    # tex live installer, but we don't care for.
+                    # There's one oddly formed package entry used by the
+                    # TeX Live installer. We don't care for it.
                     continue
                 pkg.deps.add(dep)
                 pos = Pos.PKG
@@ -116,8 +112,7 @@ class Parser(object):
                 pkg = Pkg()
             else:
                 # Some other field we don't care for.
-                elems = fields(line)
-                k = elems[0]
+                k = fields(line)[0]
                 assert k in Parser.IGNORE_FIELDS
                 pos = Pos.PKG
                 file_kind = None
@@ -215,7 +210,6 @@ class DB(object):
         for pp in pps:
             ret.update([fn_prefix + x
                         for x in self.map[pp.pkg_name].files[pp.file_kind]])
-
         return ret
 
     def pkgs(self):

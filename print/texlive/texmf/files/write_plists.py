@@ -1,3 +1,11 @@
+# $OpenBSD$
+"""
+Write PLISTs based on the output of update_plist_hints.py.
+
+This is temporary and will be removed once we are integrated with
+update-plist(1).
+"""
+
 import os
 import sys
 import re
