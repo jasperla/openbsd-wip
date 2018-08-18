@@ -34,10 +34,6 @@ except KeyError:
     fatal("This requires WRKINST and TRUEPREFIX environment vars set")
 
 
-class NastyError(Exception):
-    pass
-
-
 # Individual files that conflict with other ports.
 CONFLICT_FILES = set([
     # Comes from print/ps2eps.
@@ -63,11 +59,6 @@ CONFLICT_FILES = set([
 ])
 
 
-def remove_if_in_list(el, ls):
-    if el in ls:
-        ls.remove(el)
-
-
 def move_mans_and_infos(file_set):
     return set([re.sub(MOVE_MANS_INFOS_RE, "\g<1>/", i)
                 for i in file_set])
@@ -80,9 +71,9 @@ def collect_files(pp_specs, db, regex=None, invert_regex=False):
     files = move_mans_and_infos(db.get_pkg_part_files(parts, "share/"))
     if regex:
         if not invert_regex:
-            return [f for f in files if re.match(regex, f)]
+            return set([f for f in files if re.match(regex, f)])
         else:
-            return [f for f in files if not re.match(regex, f)]
+            return set([f for f in files if not re.match(regex, f)])
     else:
         return files
 
@@ -156,16 +147,18 @@ def build_subset_file_lists(tlpdb):
     context_pkgs = [p for p in db.pkgs() if p.startswith("context")]
     context_files = collect_files(
         runspecs(context_pkgs, include_deps=False), db)
-    context_files.update(collect_files(
-        docspecs(context_pkgs, include_deps=False), db, MANS_INFOS_RE))
+    context_doc_files = collect_files(
+        docspecs(context_pkgs, include_deps=False), db, MANS_INFOS_RE)
+    context_files.update(context_doc_files)
 
     # MINIMAL
     # Scheme-tetex minus anything we installed in the buildset. Note that the
     # files in this subset go in "PLIST-main" (not "PLIST-minimal").
     minimal_pkgs = ["scheme-tetex"]
     minimal_files = collect_files(runspecs(minimal_pkgs), db)
-    minimal_files.update(
-        collect_files(docspecs(minimal_pkgs), db, MANS_INFOS_RE))
+    minimal_doc_files = collect_files(
+        docspecs(minimal_pkgs), db, MANS_INFOS_RE)
+    minimal_files.update(minimal_doc_files)
     minimal_files.update(buildset_doc_files)
     minimal_files = minimal_files - buildset_files.union(context_files)
 
@@ -173,16 +166,22 @@ def build_subset_file_lists(tlpdb):
     # Largest subset.
     full_pkgs = ["scheme-full"]
     full_files = collect_files(runspecs(full_pkgs), db)
-    full_files.update(collect_files(docspecs(full_pkgs), db, MANS_INFOS_RE))
+    full_doc_files = collect_files(docspecs(full_pkgs), db, MANS_INFOS_RE)
+    full_files.update(full_doc_files)
     full_files = \
         full_files - minimal_files.union(buildset_files.union(context_files))
 
     # DOCS
-    # Docs for TeX packages in -buildset and -minimal only (to save space).
-    # exclude manuals and info files
-    docs_pkgs = ["scheme-tetex"]
-    docs_files = collect_files(docspecs(docs_pkgs), db,
-                               regex=MANS_INFOS_RE, invert_regex=True)
+    # We only include docs for scheme-tetex so as to save space, but we do this
+    # in such a way as to have all unincluded docs commented in PLIST-docs.
+    other_plist_doc_files = buildset_doc_files \
+        .union(minimal_doc_files) \
+        .union(context_doc_files) \
+        .union(full_doc_files)
+    docs_files = \
+        collect_files(docspecs(["scheme-full"]), db) - other_plist_doc_files
+    tetex_docs_files = collect_files(docspecs(["scheme-tetex"]), db)
+    commented_docs_files = docs_files - tetex_docs_files
 
     plist_map = {
         TargetPlist.BUILDSET: buildset_files,
@@ -191,7 +190,8 @@ def build_subset_file_lists(tlpdb):
         TargetPlist.CONTEXT: context_files,
         TargetPlist.DOCS: docs_files
     }
-    return plist_map, CONFLICT_FILES.union(conflict_pkg_files)
+    return plist_map, CONFLICT_FILES.union(conflict_pkg_files) \
+                                    .union(commented_docs_files)
 
 
 class TargetPlist(object):
@@ -229,10 +229,10 @@ def build_file_map(plist_map):
     return file_map
 
 
-def should_comment_file(f, conflict_files):
+def should_comment_file(f, commented_files):
     return (
         # Stuff provided by other ports.
-        f in conflict_files or
+        f in commented_files or
         # Windows junk
         re.match(".*\.([Ee][Xx][Ee]|[Bb][Aa][Tt])$", f) or
         # no win32 stuff, but should probably keep win32 images in tl docs.
@@ -253,7 +253,7 @@ def should_comment_file(f, conflict_files):
     )
 
 
-def walk_fake(file_map, conflict_files):
+def walk_fake(file_map, commented_files):
     """Walks the fake directory emitting one line to stdout for each file."""
 
     sys.stderr.write("writing hints...\n")
@@ -283,7 +283,7 @@ def walk_fake(file_map, conflict_files):
                     target = TargetPlist.FULL
                     unreferenced = True
 
-            if unreferenced or should_comment_file(filename, conflict_files):
+            if unreferenced or should_comment_file(filename, commented_files):
                 sys.stdout.write("#")
 
             print("%s %s" % (filename, TargetPlist.to_str(target)))
@@ -293,6 +293,6 @@ if __name__ == "__main__":
     if len(sys.argv) != 2:
         fatal(__doc__)
 
-    plist_map, conflict_files = build_subset_file_lists(sys.argv[1])
+    plist_map, commented_files = build_subset_file_lists(sys.argv[1])
     file_map = build_file_map(plist_map)
-    walk_fake(file_map, conflict_files)
+    walk_fake(file_map, commented_files)
