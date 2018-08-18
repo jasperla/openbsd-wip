@@ -12,7 +12,7 @@ Arguments:
 import re
 import sys
 import os
-from tlpdb_parser import PkgPartSpec, FileKind
+from tlpdb import PkgPartSpec, FileKind, Parser
 
 
 YEAR = 2017
@@ -89,7 +89,6 @@ def collect_files(pp_specs, db, regex=None, invert_regex=False):
 
 def build_subset_file_lists(tlpdb):
     # Set up.
-    from tlpdb_parser import Parser
     sys.stderr.write("parsing tlpdb...\n")
     db = Parser(tlpdb).parse()
 
