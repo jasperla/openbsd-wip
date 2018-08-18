@@ -88,8 +88,8 @@ class Parser(object):
                 pos = Pos.FILES
             elif line.startswith(" "):
                 assert pos == Pos.FILES
-                fl = line.strip()
-                pkg.files[file_kind].add(fl)
+                elems = line.split()
+                pkg.files[file_kind].add(elems[0])
             elif line.startswith("depend"):
                 elems = fields(line)
                 dep = elems[1]

@@ -14,7 +14,9 @@ import os
 
 
 YEAR = 2017
-MAN_INFO_REGEX = "texmf-dist\/doc\/(man\/man[0-9]\/.*[0-9]|info\/.*\.info)$"
+
+MANS_INFOS_RE = re.compile("(man\/man[0-9]\/.*[0-9]|info\/.*\.info)$")
+MOVE_MANS_INFOS_RE = re.compile("^share/texmf-dist/doc/(man|info)/")
 
 
 def fatal(msg):
@@ -63,21 +65,26 @@ def remove_if_in_list(el, ls):
         ls.remove(el)
 
 
-def relocate_mans_and_infos(file_set):
-    #remove_if_in_list("share/texmf-dist/doc/info/dir", filelist)
-    # XXX pre-compile
-    return set([re.sub("^share/texmf-dist/doc/(man|info)/", "\g<1>/", i)
-            for i in file_set])
+def move_mans_and_infos(file_set):
+    return set([re.sub(MOVE_MANS_INFOS_RE, "\g<1>/", i)
+                for i in file_set])
 
 
-def collect_files(specs, db, regex=None):
+def collect_files(specs, db, regex=None, invert_regex=False):
     parts = db.get_pkg_parts(specs)
     files = db.get_pkg_part_files(parts, "share/")
-    return relocate_mans_and_infos(files)
+    files = move_mans_and_infos(files)
+    if regex:
+        if not invert_regex:
+            return [f for f in files if re.match(regex, f)]
+        else:
+            return [f for f in files if not re.match(regex, f)]
+    else:
+        return files
 
 
 def docspecs(pkg_list):
-    return ["%s:doc" % (pkg) for pkg in pkg_list]  #, MAN_INFO_REGEX) for pkg in pkglist]
+    return ["%s:doc" % (pkg) for pkg in pkg_list]
 
 
 def runspecs(pkglist):
@@ -90,10 +97,6 @@ def build_subset_file_lists(tlpdb):
     sys.stderr.write("parsing tlpdb...\n")
     db = Parser(tlpdb).parse()
     sys.stderr.write("computing subsets...\n")
-
-    # XXX 1) Only install manual docs in most sets.
-    # XXX 2) Carry forward buildset manuals.
-    # XXX 3) Perform subset on PkgParts?
 
     # CONFLICTING PACKAGES
     # Packages we never want because they are ported separately to TeX live.
@@ -133,9 +136,10 @@ def build_subset_file_lists(tlpdb):
         # books/tex-by-topic
         "svn-multi", "avantgar", "ncntrsbk", "fontname",
         ]
-
-    buildset_specs = runspecs(buildset_pkgs)
-    buildset_files = collect_files(buildset_specs, db)
+    buildset_files = collect_files(runspecs(buildset_pkgs), db)
+    # Man and info files from the builset carry forward to the minimal set.
+    buildset_doc_files = \
+        collect_files(docspecs(buildset_pkgs), db, MANS_INFOS_RE)
 
     # CONTEXT
     # Subset containing the ConTeXt packages (we list here the direct
@@ -178,33 +182,35 @@ def build_subset_file_lists(tlpdb):
         "!context-visualcounter",
     ]
 
-    context_specs = runspecs(context_pkgs) + docspecs(context_pkgs)
-    context_files = collect_files(context_specs, db)
+    context_files = collect_files(runspecs(context_pkgs), db)
+    context_files.update(
+        collect_files(docspecs(context_pkgs), db, MANS_INFOS_RE))
 
     # MINIMAL
-    # Scheme-tetex minus anything we installed in the buildset.
-    # Note that the files in this subset go in "PLIST-main" (not "PLIST-minimal").
+    # Scheme-tetex minus anything we installed in the buildset. Note that the
+    # files in this subset go in "PLIST-main" (not "PLIST-minimal").
     minimal_pkgs = ["scheme-tetex"]
-    minimal_specs = (runspecs(minimal_pkgs) +
-                     docspecs(minimal_pkgs) +
-                     docspecs(buildset_pkgs))  # carry forward buildset manuals
+    minimal_files = collect_files(runspecs(minimal_pkgs), db)
+    minimal_files.update(
+        collect_files(docspecs(minimal_pkgs), db, MANS_INFOS_RE))
+    minimal_files.update(buildset_doc_files)
+    minimal_files = minimal_files - buildset_files.union(context_files)
 
-    minimal_files = collect_files(minimal_specs, db) - buildset_files.union(context_files)
 
     # FULL
     # Largest subset.
     full_pkgs = ["scheme-full"]
-    full_specs = runspecs(full_pkgs) + docspecs(full_pkgs)
-    full_files = collect_files(full_specs, db) - minimal_files.union(buildset_files.union(context_files))
+    full_files = collect_files(runspecs(full_pkgs), db) 
+    full_files.update(collect_files(docspecs(full_pkgs), db, MANS_INFOS_RE))
+    full_files = \
+        full_files - minimal_files.union(buildset_files.union(context_files))
 
     # DOCS
     # Docs for TeX packages in -buildset and -minimal only (to save space).
     # exclude manuals and info files
-    no_man_info_pdfman_regex = \
-        "(?!texmf-dist\/doc\/(man\/man[0-9]\/.*[0-9]|info\/.*\.info)$)"
-
-    docs_specs = ["scheme-tetex:doc"]
-    docs_files = collect_files(docs_specs, db, regex=no_man_info_pdfman_regex)
+    docs_pkgs = ["scheme-tetex"]
+    docs_files = collect_files(docspecs(docs_pkgs), db,
+                               regex=MANS_INFOS_RE, invert_regex=True)
 
     return (buildset_files, minimal_files, full_files,
             context_files, docs_files, conflict_files)
@@ -283,7 +289,7 @@ def should_comment_file(f, conflict_files):
 def walk_fake(file_map, conflict_files):
     """Walks the fake directory emitting one line to stdout for each file."""
 
-    sys.stderr.write("Writing hints...")
+    sys.stderr.write("writing hints...\n")
 
     strip_prefix = os.path.join(WRKINST, TRUEPREFIX)
     if not strip_prefix.endswith(os.sep):
