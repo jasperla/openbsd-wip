@@ -18,7 +18,8 @@ MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 PERMIT_PACKAGE_CDROM =	Yes
 
 BUILD_DEPENDS =	${MODGNU_AUTOCONF_DEPENDS} \
-		${MODGNU_AUTOMAKE_DEPENDS}
+		${MODGNU_AUTOMAKE_DEPENDS} \
+		devel/libtool
 
 TEST_DEPENDS =	devel/gtest
 
