@@ -1,2 +1,7 @@
-This package contains VCS plugins for KDE Dolphin file manager,
-allowing in-band manipulation of working copies and repositories.
+This package contains plugins that offer integration in Dolphin with the
+following version control systems:
+
+* Bzr
+* Git
+* Mercurial
+* Subversion

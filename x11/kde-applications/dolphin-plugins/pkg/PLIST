@@ -1,4 +1,5 @@
-@comment $OpenBSD$
+@comment $OpenBSD: PLIST,v$
+@conflict kde-l10n-*
 lib/qt5/plugins/fileviewbazaarplugin.so
 lib/qt5/plugins/fileviewdropboxplugin.so
 lib/qt5/plugins/fileviewgitplugin.so
@@ -8,6 +9,7 @@ share/config.kcfg/
 share/config.kcfg/fileviewgitpluginsettings.kcfg
 share/config.kcfg/fileviewhgpluginsettings.kcfg
 share/config.kcfg/fileviewsvnpluginsettings.kcfg
+share/kservices5/
 share/kservices5/fileviewbazaarplugin.desktop
 share/kservices5/fileviewdropboxplugin.desktop
 share/kservices5/fileviewgitplugin.desktop

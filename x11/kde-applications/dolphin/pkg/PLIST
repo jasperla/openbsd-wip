@@ -1,4 +1,7 @@
-@comment $OpenBSD$
+@comment $OpenBSD: PLIST,v$
+@conflict kde-l10n-*
+@conflict dolphin-plugins-<=4.14.3
+@conflict kde-baseapps-*
 @bin bin/dolphin
 bin/servicemenudeinstallation
 bin/servicemenuinstallation
@@ -235,5 +238,4 @@ share/locale/zh_CN/LC_MESSAGES/dolphin.mo
 share/locale/zh_TW/LC_MESSAGES/dolphin.mo
 share/metainfo/
 share/metainfo/org.kde.dolphin.appdata.xml
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database
