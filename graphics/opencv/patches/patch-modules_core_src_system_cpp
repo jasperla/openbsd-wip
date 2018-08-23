@@ -1,0 +1,18 @@
+$OpenBSD: patch-modules_core_src_system_cpp,v 1.4 2018/04/17 05:58:30 rsadowski Exp $
+Fix build on i386.
+Index: modules/core/src/system.cpp
+--- modules/core/src/system.cpp.orig
++++ modules/core/src/system.cpp
+@@ -185,9 +185,12 @@ std::wstring GetTempFileNameWinRT(std::wstring prefix)
+ 
+ #endif
+ #else
++#include <fcntl.h>
+ #include <pthread.h>
+ #include <sys/time.h>
++#include <stdlib.h>
+ #include <time.h>
++#include <unistd.h>
+ 
+ #if defined __MACH__ && defined __APPLE__
+ #include <mach/mach.h>

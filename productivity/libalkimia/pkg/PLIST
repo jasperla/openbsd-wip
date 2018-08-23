@@ -1,0 +1,17 @@
+@comment $OpenBSD: PLIST,v 1.2 2017/01/12 16:18:55 zhuk Exp $
+include/alkimia/
+include/alkimia/Qt5/
+include/alkimia/Qt5/alkimia/
+include/alkimia/Qt5/alkimia/alk_export.h
+include/alkimia/Qt5/alkimia/alkcompany.h
+include/alkimia/Qt5/alkimia/alkquoteitem.h
+include/alkimia/Qt5/alkimia/alkvalue.h
+lib/cmake/
+lib/cmake/LibAlkimia5-7.0/
+lib/cmake/LibAlkimia5-7.0/FindGMP.cmake
+lib/cmake/LibAlkimia5-7.0/LibAlkimia5Config.cmake
+lib/cmake/LibAlkimia5-7.0/LibAlkimia5ConfigVersion.cmake
+lib/cmake/LibAlkimia5-7.0/LibAlkimia5Targets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/LibAlkimia5-7.0/LibAlkimia5Targets.cmake
+@lib lib/libalkimia5.so.${LIBalkimia5_VERSION}
+lib/pkgconfig/libalkimia5.pc
