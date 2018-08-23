@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.2 2017/05/06 11:14:50 fcambus Exp $
+# $OpenBSD: Makefile.template,v 1.78 2018/07/09 15:00:06 jca Exp $
 
 COMMENT =	monospaced bitmap fonts for consoles and terminals
 
 GH_ACCOUNT =	fcambus
 GH_PROJECT =	spleen
-GH_COMMIT =	4c7ca838ad6d744f1d7047085a6470d9bd370673
+GH_COMMIT =	2b4eba55c1f659fd67ca2241c9416367f8e162a3
 
-DISTNAME =	spleen-20180815
+DISTNAME =	spleen-20180823
 
 CATEGORIES =	fonts
 
