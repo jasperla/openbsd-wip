@@ -14,7 +14,7 @@ MULTI_PACKAGES=	-main
 # to let update-patches work in a simpler way
 PATCHORIG=	.orig2
 
-MASTER_SITES=	${HOMEPAGE}pub/graphviz/ARCHIVE/
+MASTER_SITES=	${HOMEPAGE}pub/graphviz/stable/SOURCES/
 
 SHARED_LIBS += gvplugin_core		2.0 # 6.0
 SHARED_LIBS += gvplugin_gd		2.0 # 6.0
