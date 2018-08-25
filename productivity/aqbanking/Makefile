@@ -12,7 +12,6 @@ SHARED_LIBS +=	aqbankingpp          0.0      # unknown
 SHARED_LIBS +=	aqhbci               1.0      # 22.0
 SHARED_LIBS +=	aqnone               0.0      # 39.2
 SHARED_LIBS +=	aqofxconnect         0.2      # 7.2
-SHARED_LIBS +=	aqebics              0.0      # unknown
 
 CATEGORIES=	productivity
 
