@@ -2,9 +2,9 @@
 
 COMMENT-main=	graph drawing software
 
-VERSION =	2.40.1
-DISTNAME=	graphviz
-PKGNAME-main=	${DISTNAME}-${VERSION}
+V=	2.40.1
+DISTNAME =	graphviz
+PKGNAME-main=	${DISTNAME}-${V}
 CATEGORIES=	math devel graphics
 
 # there is only one multi-package due to legacy, but maybe more
@@ -14,7 +14,9 @@ MULTI_PACKAGES=	-main
 # to let update-patches work in a simpler way
 PATCHORIG=	.orig2
 
-MASTER_SITES=	${HOMEPAGE}pub/graphviz/stable/SOURCES/
+MASTER_SITES=	https://www.graphviz.org/
+
+DISTFILES=	${V}-{pub/graphviz/stable/SOURCES/}${DISTNAME}${EXTRACT_SUFX}
 
 SHARED_LIBS += gvplugin_core		2.0 # 6.0
 SHARED_LIBS += gvplugin_gd		2.0 # 6.0
@@ -128,7 +130,7 @@ FAKE_FLAGS=	htmldir="${DOCBASE}/html" \
 
 TEST_TARGET =	check
 TEST_DEPENDS =	shells/ksh93 \
-		${FULLPKGNAME}:math/graphviz
+		${FULLPKGNAME}:${FULLPKGPATH}
 
 WRKDIST=	${WRKDIR}/${PKGNAME-main}
 
