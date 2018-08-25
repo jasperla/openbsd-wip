@@ -12,10 +12,10 @@ include/gwenhywfar4/gwen-gui-cpp/api.h
 include/gwenhywfar4/gwen-gui-cpp/cppdialog.hpp
 include/gwenhywfar4/gwen-gui-cpp/cppgui.hpp
 include/gwenhywfar4/gwen-gui-cpp/cppwidget.hpp
-include/gwenhywfar4/gwen-gui-gtk2/
-include/gwenhywfar4/gwen-gui-gtk2/gtk2_gui.h
-include/gwenhywfar4/gwen-gui-qt4/
-include/gwenhywfar4/gwen-gui-qt4/qt4_gui.hpp
+include/gwenhywfar4/gwen-gui-gtk3/
+include/gwenhywfar4/gwen-gui-gtk3/gtk3_gui.h
+include/gwenhywfar4/gwen-gui-qt5/
+include/gwenhywfar4/gwen-gui-qt5/qt5_gui.hpp
 include/gwenhywfar4/gwenhywfar/
 include/gwenhywfar4/gwenhywfar/args.h
 include/gwenhywfar4/gwenhywfar/base64.h
@@ -49,6 +49,7 @@ include/gwenhywfar4/gwenhywfar/debug.h
 include/gwenhywfar4/gwenhywfar/dialog.h
 include/gwenhywfar4/gwenhywfar/dialog_be.h
 include/gwenhywfar4/gwenhywfar/directory.h
+include/gwenhywfar4/gwenhywfar/endianfns.h
 include/gwenhywfar4/gwenhywfar/error.h
 include/gwenhywfar4/gwenhywfar/fastbuffer.h
 include/gwenhywfar4/gwenhywfar/fslock.h
@@ -133,44 +134,58 @@ include/gwenhywfar4/gwenhywfar/widget_be.h
 include/gwenhywfar4/gwenhywfar/xml.h
 include/gwenhywfar4/gwenhywfar/xmlctx.h
 include/gwenhywfar4/gwenhywfar/xsdnode.h
-lib/cmake/gwengui-qt4-4.13/
-lib/cmake/gwengui-qt4-4.13/gwengui-qt4-config-version.cmake
-lib/cmake/gwengui-qt4-4.13/gwengui-qt4-config.cmake
-lib/cmake/gwenhywfar-4.13/
-lib/cmake/gwenhywfar-4.13/gwenhywfar-config-version.cmake
-lib/cmake/gwenhywfar-4.13/gwenhywfar-config.cmake
+lib/cmake/
+lib/cmake/gwengui-cpp-4.20/
+lib/cmake/gwengui-cpp-4.20/gwengui-cpp-config-version.cmake
+lib/cmake/gwengui-cpp-4.20/gwengui-cpp-config.cmake
+lib/cmake/gwengui-qt5-4.20/
+lib/cmake/gwengui-qt5-4.20/gwengui-qt5-config-version.cmake
+lib/cmake/gwengui-qt5-4.20/gwengui-qt5-config.cmake
+lib/cmake/gwenhywfar-4.20/
+lib/cmake/gwenhywfar-4.20/gwenhywfar-config-version.cmake
+lib/cmake/gwenhywfar-4.20/gwenhywfar-config.cmake
 lib/gwenhywfar/
 lib/gwenhywfar/plugins/
 lib/gwenhywfar/plugins/60/
 lib/gwenhywfar/plugins/60/configmgr/
+lib/gwenhywfar/plugins/60/configmgr/dir.a
 lib/gwenhywfar/plugins/60/configmgr/dir.la
 lib/gwenhywfar/plugins/60/configmgr/dir.so
 lib/gwenhywfar/plugins/60/configmgr/dir.xml
 lib/gwenhywfar/plugins/60/ct/
+lib/gwenhywfar/plugins/60/ct/ohbci.a
 lib/gwenhywfar/plugins/60/ct/ohbci.la
 lib/gwenhywfar/plugins/60/ct/ohbci.so
 lib/gwenhywfar/plugins/60/ct/ohbci.xml
 lib/gwenhywfar/plugins/60/dbio/
+lib/gwenhywfar/plugins/60/dbio/csv.a
 lib/gwenhywfar/plugins/60/dbio/csv.la
-lib/gwenhywfar/plugins/60/dbio/csv.so
+lib/gwenhywfar/plugins/60/dbio/csv.so.0.1
 lib/gwenhywfar/plugins/60/dbio/csv.xml
+lib/gwenhywfar/plugins/60/dbio/olddb.a
 lib/gwenhywfar/plugins/60/dbio/olddb.la
-lib/gwenhywfar/plugins/60/dbio/olddb.so
+lib/gwenhywfar/plugins/60/dbio/olddb.so.0.1
 lib/gwenhywfar/plugins/60/dbio/olddb.xml
+lib/gwenhywfar/plugins/60/dbio/xmldb.a
 lib/gwenhywfar/plugins/60/dbio/xmldb.la
-lib/gwenhywfar/plugins/60/dbio/xmldb.so
+lib/gwenhywfar/plugins/60/dbio/xmldb.so.0.1
 lib/gwenhywfar/plugins/60/dbio/xmldb.xml
+lib/libgwengui-cpp.a
 lib/libgwengui-cpp.la
 @lib lib/libgwengui-cpp.so.${LIBgwengui-cpp_VERSION}
-lib/libgwengui-gtk2.la
-@lib lib/libgwengui-gtk2.so.${LIBgwengui-gtk2_VERSION}
-lib/libgwengui-qt4.la
-@lib lib/libgwengui-qt4.so.${LIBgwengui-qt4_VERSION}
+lib/libgwengui-gtk3.a
+lib/libgwengui-gtk3.la
+@lib lib/libgwengui-gtk3.so.${LIBgwengui-gtk3_VERSION}
+lib/libgwengui-qt5.a
+lib/libgwengui-qt5.la
+@lib lib/libgwengui-qt5.so.${LIBgwengui-qt5_VERSION}
+lib/libgwenhywfar.a
 lib/libgwenhywfar.la
 @lib lib/libgwenhywfar.so.${LIBgwenhywfar_VERSION}
-lib/pkgconfig/gwengui-gtk2.pc
-lib/pkgconfig/gwengui-qt4.pc
+lib/pkgconfig/gwengui-gtk3.pc
+lib/pkgconfig/gwengui-qt5.pc
 lib/pkgconfig/gwenhywfar.pc
+share/aclocal/
 share/aclocal/gwenhywfar.m4
 share/gwenhywfar/
 share/gwenhywfar/ca-bundle.crt
@@ -210,4 +225,7 @@ share/gwenhywfar/typemaker2/c/uint32_t_array.tm2
 share/gwenhywfar/typemaker2/c/uint64_t.tm2
 share/gwenhywfar/typemaker2/c/uint8_t.tm2
 share/gwenhywfar/typemaker2/c/uint8_t_array.tm2
+share/locale/
+share/locale/de/
+share/locale/de/LC_MESSAGES/
 share/locale/de/LC_MESSAGES/gwenhywfar.mo

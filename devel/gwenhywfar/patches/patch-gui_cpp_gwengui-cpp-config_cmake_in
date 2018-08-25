@@ -1,0 +1,14 @@
+$OpenBSD$
+
+Index: gui/cpp/gwengui-cpp-config.cmake.in
+--- gui/cpp/gwengui-cpp-config.cmake.in.orig
++++ gui/cpp/gwengui-cpp-config.cmake.in
+@@ -25,7 +25,7 @@ set_and_check(prefix "@prefix@")
+ set_and_check(exec_prefix "@exec_prefix@")
+ set_and_check(includedir "@includedir@")
+ set_and_check(GWENGUI_CPP_INCLUDE_DIRS "@gwenhywfar_headerdir@")
+-set_and_check(GWENGUI_CPP_LIBRARIES "@libdir@/libgwengui-cpp.so")
++set_and_check(GWENGUI_CPP_LIBRARIES "@libdir@/libgwengui-cpp.so.${LIBgwengui-cpp_VERSION}")
+ set(GWENGUI_CPP_FOUND true)
+ 
+ if(GWENGUI_CPP_FOUND AND NOT TARGET gwenhywfar::gui-cpp)
