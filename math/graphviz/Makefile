@@ -2,9 +2,8 @@
 
 COMMENT-main=	graph drawing software
 
-V=	2.40.1
-DISTNAME =	graphviz
-PKGNAME-main=	${DISTNAME}-${V}
+DISTNAME =	graphviz-2.40.1
+PKGNAME-main=	${DISTNAME}
 CATEGORIES=	math devel graphics
 
 # there is only one multi-package due to legacy, but maybe more
@@ -14,9 +13,7 @@ MULTI_PACKAGES=	-main
 # to let update-patches work in a simpler way
 PATCHORIG=	.orig2
 
-MASTER_SITES=	https://www.graphviz.org/
-
-DISTFILES=	${V}-{pub/graphviz/stable/SOURCES/}${DISTNAME}${EXTRACT_SUFX}
+MASTER_SITES=	http://sizeofvoid.org/pub/OpenBSD/distfiles/
 
 SHARED_LIBS += gvplugin_core		2.0 # 6.0
 SHARED_LIBS += gvplugin_gd		2.0 # 6.0
