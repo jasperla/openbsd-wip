@@ -1,7 +1,6 @@
 @comment $OpenBSD: PLIST,v 1.1 2017/07/29 00:07:15 zhuk Exp $
 @conflict qt5-<5.6
 @pkgpath x11/qt5/qtwebkit,-main
-include/X11/qt5/
 include/X11/qt5/QtWebKit/
 include/X11/qt5/QtWebKit/5.212.0/
 include/X11/qt5/QtWebKit/5.212.0/QtWebKit/
@@ -69,7 +68,6 @@ include/X11/qt5/QtWebKitWidgets/qwebframe.h
 include/X11/qt5/QtWebKitWidgets/qwebinspector.h
 include/X11/qt5/QtWebKitWidgets/qwebpage.h
 include/X11/qt5/QtWebKitWidgets/qwebview.h
-lib/qt5/
 lib/qt5/lib/
 @lib lib/qt5/lib/libQt5WebKit.so.${LIBQt5WebKit_VERSION}
 @lib lib/qt5/lib/libQt5WebKitWidgets.so.${LIBQt5WebKitWidgets_VERSION}
@@ -78,11 +76,8 @@ lib/qt5/libexec/
 @bin lib/qt5/libexec/QtWebNetworkProcess
 @bin lib/qt5/libexec/QtWebPluginProcess
 @bin lib/qt5/libexec/QtWebProcess
-lib/qt5/mkspecs/
-lib/qt5/mkspecs/modules/
 lib/qt5/mkspecs/modules/qt_lib_webkit.pri
 lib/qt5/mkspecs/modules/qt_lib_webkitwidgets.pri
-lib/qt5/qml/
 lib/qt5/qml/QtWebKit/
 lib/qt5/qml/QtWebKit/experimental/
 lib/qt5/qml/QtWebKit/experimental/libqmlwebkitexperimentalplugin.so

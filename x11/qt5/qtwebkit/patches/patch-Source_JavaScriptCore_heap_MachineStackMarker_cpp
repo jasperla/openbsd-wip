@@ -19,7 +19,7 @@ Index: Source/JavaScriptCore/heap/MachineStackMarker.cpp
      thread->suspendedMachineContext = *userContext->uc_mcontext.uc_regs;
  #else
 -    thread->suspendedMachineContext = userContext->uc_mcontext;
-+    // XXX thread->suspendedMachineContext = userContext->uc_mcontext;
++    thread->suspendedMachineContext = *userContext;
  #endif
  
      // Allow suspend caller to see that this thread is suspended.
