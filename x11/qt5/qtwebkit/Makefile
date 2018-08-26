@@ -29,11 +29,11 @@ MASTER_SITES =		https://github.com/annulen/webkit/releases/download/${DISTNAME}/
 
 MODULES =		perl \
 			lang/ruby \
+			lang/python \
 			devel/cmake \
 			x11/qt5
 
-USE_NINJA =		No
-
+CONFIGURE_STYLE=	cmake
 MODPY_RUNDEP =		No
 MODRUBY_RUNDEP =	No
 
@@ -54,6 +54,7 @@ LIB_DEPENDS =		databases/sqlite3 \
 			textproc/icu4c \
 			textproc/libxslt \
 			graphics/libwebp \
+			textproc/hyphen \
 			x11/qt5/qtdeclarative>=${QT5_VERSION},<${QT5_NEXT_VERSION} \
 			x11/qt5/qtlocation>=${QT5_VERSION},<${QT5_NEXT_VERSION} \
 			x11/qt5/qtsensors>=${QT5_VERSION},<${QT5_NEXT_VERSION} \
@@ -96,6 +97,8 @@ CFLAGS +=		-march=i686
 CXXFLAGS +=		-march=i686
 .endif
 
+
+ALL_TARGET = # empty
 post-extract:
 	ln -sf ${MODPY_BIN} ${WRKDIR}/bin/python
 	ln -sf ${RUBY} ${WRKDIR}/bin/ruby
