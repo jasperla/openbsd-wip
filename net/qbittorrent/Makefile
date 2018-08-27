@@ -3,7 +3,6 @@
 COMMENT =		BitTorrent client with Qt interface
 VER =			4.1.2
 DISTNAME =		qbittorrent-${VER}
-PKGNAME =		qbittorrent-${VER}
 
 CATEGORIES =		net
 HOMEPAGE =		https://www.qbittorrent.org
