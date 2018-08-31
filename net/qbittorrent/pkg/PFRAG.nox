@@ -1,4 +1,0 @@
-@comment $OpenBSD: PLIST,v$
-@tag gtk-update-icon-cache %D/share/icons/hicolor
-@bin bin/qbittorrent-nox
-@man man/man1/qbittorrent-nox.1
