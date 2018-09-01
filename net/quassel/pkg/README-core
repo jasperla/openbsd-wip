@@ -1,0 +1,10 @@
+$OpenBSD$
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+If you want to use the PostgreSQL backend, make sure to install
+qt5-postgresql:
+
+    # pkg_add qt5-postgresql
