@@ -21,17 +21,21 @@ HOMEPAGE =		https://quassel-irc.org/
 # GPLv2/GPLv3
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB-main += ${WANTLIB} ${COMPILER_LIBCXX} c execinfo m z
-WANTLIB-main += dbusmenu-qt5 phonon4qt5experimental qca-qt5
-WANTLIB-main += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Script Qt5Sql Qt5Widgets
-WANTLIB-client += ${WANTLIB} ${COMPILER_LIBCXX} c execinfo m z
-WANTLIB-client += dbusmenu-qt5 phonon4qt5experimental
-WANTLIB-client += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Widgets
+WANTLIB-main += ${COMPILER_LIBCXX} KF5Auth KF5Codecs KF5ConfigCore
+WANTLIB-main += KF5ConfigGui KF5ConfigWidgets KF5CoreAddons KF5I18n
+WANTLIB-main += KF5Notifications KF5NotifyConfig KF5SonnetUi KF5TextWidgets
+WANTLIB-main += KF5WidgetsAddons KF5XmlGui Qt5Core Qt5DBus Qt5Gui Qt5Network
+WANTLIB-main += Qt5Script Qt5Sql Qt5Widgets Qt5Xml c dbusmenu-qt5 execinfo
+WANTLIB-main += m phonon4qt5 phonon4qt5experimental qca-qt5 z
+WANTLIB-client += ${COMPILER_LIBCXX} KF5Auth KF5Codecs KF5ConfigCore
+WANTLIB-client += KF5ConfigGui KF5ConfigWidgets KF5CoreAddons KF5I18n
+WANTLIB-client += KF5Notifications KF5NotifyConfig KF5SonnetUi KF5TextWidgets
+WANTLIB-client += KF5WidgetsAddons KF5XmlGui Qt5Core Qt5DBus Qt5Gui Qt5Network
+WANTLIB-client += Qt5Widgets Qt5Xml c dbusmenu-qt5 execinfo m
+WANTLIB-client += phonon4qt5 phonon4qt5experimental z
 WANTLIB-common =
-# XXX Don't include ${WANTLIB} for WANTLIB-core on purpose; no need for phonon
-WANTLIB-core += ${COMPILER_LIBCXX} c execinfo m z
-WANTLIB-core += qca-qt5
-WANTLIB-core += Qt5Core Qt5Network Qt5Script Qt5Sql
+WANTLIB-core += ${COMPILER_LIBCXX} Qt5Core Qt5Network Qt5Script Qt5Sql
+WANTLIB-core += c execinfo m qca-qt5 z
 
 MASTER_SITES =		https://quassel-irc.org/pub/
 
@@ -40,30 +44,61 @@ EXTRACT_SUFX =		.tar.bz2
 MULTI_PACKAGES =	-main -client -common -core
 
 MODULES =		devel/cmake multimedia/phonon x11/qt5
-#BUILD_DEPENDS =	???
-RUN_DEPENDS-main =	${RUN_DEPENDS} \
+
+BUILD_DEPENDS +=	devel/kf5/extra-cmake-modules
+
+RUN_DEPENDS-main =	${MODPHONON_RUN_DEPENDS} \
 			devel/desktop-file-utils \
 			${BASE_PKGPATH},-common=${V}
-RUN_DEPENDS-client =	${RUN_DEPENDS} \
+RUN_DEPENDS-client =	${MODPHONON_RUN_DEPENDS} \
 			devel/desktop-file-utils \
 			${BASE_PKGPATH},-common=${V}
 RUN_DEPENDS-common =	x11/gtk+3,-guic
 RUN_DEPENDS-core =
 
-LIB_DEPENDS-main +=	${LIB_DEPENDS} \
+LIB_DEPENDS-main =	${MODPHONON_LIB_DEPENDS} \
+			${MODQT5_LIB_DEPENDS} \
+			devel/kf5/kauth \
+			devel/kf5/kcodecs \
+			devel/kf5/kconfig \
+			devel/kf5/kconfigwidgets \
+			devel/kf5/kcoreaddons \
+			devel/kf5/ki18n \
+			devel/kf5/knotifications \
+			devel/kf5/knotifyconfig \
+			devel/kf5/ktextwidgets \
+			devel/kf5/kwidgetsaddons \
+			devel/kf5/kxmlgui \
+			devel/kf5/sonnet \
 			security/qca-qt5 \
 			x11/dbusmenu-qt,qt5 \
 			x11/qt5/qtscript
-LIB_DEPENDS-client +=	${LIB_DEPENDS} \
+LIB_DEPENDS-client =	${MODPHONON_LIB_DEPENDS} \
+			${MODQT5_LIB_DEPENDS} \
+			devel/kf5/kauth \
+			devel/kf5/kcodecs \
+			devel/kf5/kconfig \
+			devel/kf5/kconfigwidgets \
+			devel/kf5/kcoreaddons \
+			devel/kf5/ki18n \
+			devel/kf5/knotifications \
+			devel/kf5/knotifyconfig \
+			devel/kf5/ktextwidgets \
+			devel/kf5/kwidgetsaddons \
+			devel/kf5/kxmlgui \
+			devel/kf5/sonnet \
 			x11/dbusmenu-qt,qt5
-LIB_DEPENDS-common +=
-LIB_DEPENDS-core +=	${LIB_DEPENDS} \
+LIB_DEPENDS-common =
+LIB_DEPENDS-core =	${MODQT5_LIB_DEPENDS} \
 			security/qca-qt5 \
 			x11/qt5/qtscript
 
 SEPARATE_BUILD =	Yes
-CONFIGURE_ARGS =	-DGIT_EXECUTABLE="" \
-			-DUSE_QT5:Bool=on
+# XXX not using WITH_WEBKIT because safety of x11/qt5/qtwebkit is questionable;
+# XXX not using WITH_WEBENGINE because x11/qt5/qtwebengine is not available yet.
+CONFIGURE_ARGS +=	-DGIT_EXECUTABLE="" \
+			-DUSE_QT5:Bool=on \
+			-DWITH_KDE:Bool=on
 
 NO_TEST =		Yes
 
