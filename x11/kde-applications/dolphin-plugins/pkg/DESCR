@@ -1,7 +1,0 @@
-This package contains plugins that offer integration in Dolphin with the
-following version control systems:
-
-* Bzr
-* Git
-* Mercurial
-* Subversion
