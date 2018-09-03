@@ -102,7 +102,6 @@ share/cmake/fm-qt/fm-qt-config-version.cmake
 share/cmake/fm-qt/fm-qt-config.cmake
 share/cmake/fm-qt/fm-qt-targets${MODCMAKE_BUILD_SUFFIX}
 share/cmake/fm-qt/fm-qt-targets.cmake
-share/libfm-qt/
 share/libfm-qt/archivers.list
 share/libfm-qt/terminals.list
 share/mime/packages/libfm-qt-mimetypes.xml

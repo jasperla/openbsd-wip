@@ -13,4 +13,6 @@ WANTLIB += ${COMPILER_LIBCXX} Qt5Core m
 
 BUILD_DEPENDS +=	x11/lxqt/build-tools
 
+NO_TEST =		Yes
+
 .include <bsd.port.mk>

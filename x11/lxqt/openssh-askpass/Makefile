@@ -19,4 +19,6 @@ RUN_DEPENDS +=		x11/lxqt/l10n,-openssh-askpass
 
 CONFIGURE_ARGS +=	-DPULL_TRANSLATIONS:BOOL=OFF
 
+NO_TEST =		Yes
+
 .include <bsd.port.mk>
