@@ -3,8 +3,9 @@
      SUBDIR =
 # Base
      SUBDIR += libqtxdg
-     SUBDIR += libsysstat
      SUBDIR += build-tools
+     SUBDIR += libsysstat
+     SUBDIR += l10n
 # PcmanFM-qt
      SUBDIR += libfm-qt
      SUBDIR += pcmanfm-qt
@@ -13,7 +14,6 @@
      SUBDIR += about
      SUBDIR += config			#NO KScreen
      SUBDIR += globalkeys
-     SUBDIR += l10n
      SUBDIR += notificationd
      SUBDIR += openssh-askpass
      SUBDIR += panel			#NO ALSA

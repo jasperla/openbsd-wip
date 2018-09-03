@@ -25,6 +25,8 @@ RUN_DEPENDS +=		devel/desktop-file-utils \
 CONFIGURE_ARGS +=	-DWITH_MONITOR=No
 CONFIGURE_ARGS +=	-DPULL_TRANSLATIONS:BOOL=OFF
 
+NO_TEST =		Yes
+
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/${NAME}
 	mv ${WRKINST}${SYSCONFDIR}/xdg ${PREFIX}/share/examples/${NAME}/

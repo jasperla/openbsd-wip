@@ -13,4 +13,6 @@ BUILD_DEPENDS +=	x11/lxqt/build-tools
 
 RUN_DEPENDS +=		x11/gtk+3,-guic
 
+NO_TEST =		Yes
+
 .include <bsd.port.mk>

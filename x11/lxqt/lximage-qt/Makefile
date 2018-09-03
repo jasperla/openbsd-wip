@@ -24,4 +24,6 @@ RUN_DEPENDS +=		x11/lxqt/l10n,-lximage-qt \
 
 CONFIGURE_ARGS +=	-DPULL_TRANSLATIONS:BOOL=OFF
 
+NO_TEST =		Yes
+
 .include <bsd.port.mk>

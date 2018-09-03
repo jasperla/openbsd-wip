@@ -22,13 +22,15 @@ RUN_DEPENDS +=		devel/xdg-user-dirs \
 			devel/kf5/oxygen-icons \
 			x11/lxqt/l10n,-session
 
-CONFIGURE_ARGS +=	-DWITH_LIBUDEV=No
-CONFIGURE_ARGS +=	-DPULL_TRANSLATIONS:BOOL=OFF
+CONFIGURE_ARGS +=	-DWITH_LIBUDEV=No \
+			-DPULL_TRANSLATIONS:BOOL=OFF
+
+NO_TEST =		Yes
 
 pre-configure:
-	${SUBST_CMD} ${WRKSRC}/lxqt-config-session/autostartedit.cpp
-	${SUBST_CMD} ${WRKSRC}/lxqt-config-session/sessionconfigwindow.cpp
-	${SUBST_CMD} ${WRKSRC}/lxqt-session/src/wmselectdialog.cpp
+	${SUBST_CMD} ${WRKSRC}/lxqt-config-session/autostartedit.cpp \
+		${WRKSRC}/lxqt-config-session/sessionconfigwindow.cpp \
+		${WRKSRC}/lxqt-session/src/wmselectdialog.cpp
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/${NAME}

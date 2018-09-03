@@ -19,6 +19,8 @@ RUN_DEPENDS +=		x11/lxqt/l10n,-compton-conf \
 
 CONFIGURE_ARGS +=	-DPULL_TRANSLATIONS:BOOL=OFF
 
+NO_TEST =		Yes
+
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/${NAME}
 	mv ${WRKINST}${SYSCONFDIR}/xdg ${PREFIX}/share/examples/${NAME}/

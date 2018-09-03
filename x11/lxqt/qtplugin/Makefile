@@ -21,4 +21,6 @@ BUILD_DEPENDS +=	x11/lxqt/build-tools
 
 RUN_DEPENDS +=		x11/lxqt/liblxqt
 
+NO_TEST =		Yes
+
 .include <bsd.port.mk>

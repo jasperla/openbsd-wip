@@ -20,8 +20,10 @@ BUILD_DEPENDS +=	x11/lxqt/build-tools \
 RUN_DEPENDS +=		x11/menu-cache \
 			x11/lxqt/l10n,-runner
 
-CONFIGURE_ARGS +=	-DRUNNER_MATH=No
-CONFIGURE_ARGS +=	-DPULL_TRANSLATIONS:BOOL=OFF
+CONFIGURE_ARGS +=	-DRUNNER_MATH=No \
+			-DPULL_TRANSLATIONS:BOOL=OFF
+
+NO_TEST =		Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/${NAME}

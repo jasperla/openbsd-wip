@@ -9,4 +9,6 @@ DISTNAME =	${NAME}-${VERSION}
 
 CONFIGURE_ARGS +=	-DLXQT_ETC_XDG_DIR=${SYSCONFDIR}/xdg
 
+NO_TEST =	Yes
+
 .include <bsd.port.mk>

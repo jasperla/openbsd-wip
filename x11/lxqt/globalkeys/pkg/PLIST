@@ -36,7 +36,6 @@ share/examples/lxqt-globalkeys/xdg/autostart/
 share/examples/lxqt-globalkeys/xdg/autostart/lxqt-globalkeyshortcuts.desktop
 @sample ${SYSCONFDIR}/xdg/autostart/lxqt-globalkeyshortcuts.desktop
 share/examples/lxqt-globalkeys/xdg/lxqt/
-@sample ${SYSCONFDIR}/xdg/lxqt/
 share/examples/lxqt-globalkeys/xdg/lxqt/globalkeyshortcuts.conf
 @sample ${SYSCONFDIR}/xdg/lxqt/globalkeyshortcuts.conf
 @tag update-desktop-database
