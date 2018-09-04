@@ -1,2 +1,12 @@
 @comment $OpenBSD: PLIST,v$
+@newgroup _ipfs:818
+@newuser _ipfs:818:818:daemon:IPFS Account:${VARBASE}/empty:/sbin/nologin
+@rcscript ${RCDIR}/ipfs
+@mode 750
+@owner _ipfs
+@group _ipfs
+@sample ${VARBASE}/ipfs/
+@mode
+@owner
+@group
 @bin bin/ipfs

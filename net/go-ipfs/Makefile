@@ -24,6 +24,8 @@ MODULES =		lang/go
 
 ALL_TARGET =		github.com/ipfs/go-ipfs
 
+SUBST_VARS =		VARBASE
+
 EXTRACT_ONLY =
 
 post-extract:
