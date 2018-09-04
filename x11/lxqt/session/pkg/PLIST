@@ -36,5 +36,5 @@ share/kdm/sessions/
 share/kdm/sessions/lxqt.desktop
 share/xsessions/
 share/xsessions/lxqt.desktop
-share/doc/pkg-readmes/${FULLPKGNAME}
+share/doc/pkg-readmes/${PKGSTEM}
 @tag update-desktop-database
