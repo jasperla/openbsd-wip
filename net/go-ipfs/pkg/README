@@ -1,0 +1,25 @@
+$OpenBSD$
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+If you are installing IPFS for the first time, you have to initialize
+it first.
+
+	# su - _ipfs
+	$ IPFS_PATH=${VARBASE}/ipfs ipfs init
+
+By default, the _ipfs user, and so the ipfs process run in the
+login(1) class of "daemon". IPFS requires more open file descriptors
+than the default daemon class offers and they should be increased.
+
+For example, add this to the login.conf(5) file:
+
+	ipfs:\
+		:openfiles=2048:\
+		:tc=daemon:
+
+Rebuild the login.conf.db file if necessary:
+
+	# [ -f /etc/login.conf.db ] && cap_mkdb /etc/login.conf
