@@ -3,7 +3,7 @@
 COMMENT =	go implementation of the ethereum protocol
 GH_ACCOUNT =	ethereum
 GH_PROJECT =	go-ethereum
-GH_TAGNAME =	v1.8.12
+GH_TAGNAME =	v1.8.15
 
 CATEGORIES =	net
 
@@ -16,6 +16,8 @@ PERMIT_PACKAGE_CDROM = Yes
 
 MODULES =	lang/go
 MODGO_TYPE =	bin
+
+DEBUG =		Yes
 
 do-build:
 	cd ${WRKSRC} && make all
