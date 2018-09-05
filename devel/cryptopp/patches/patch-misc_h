@@ -1,0 +1,138 @@
+$OpenBSD: patch-misc_h,v 1.7 2016/11/22 17:20:25 dcoppa Exp $
+Index: misc.h
+--- misc.h.orig
++++ misc.h
+@@ -256,7 +256,7 @@ struct NewObject
+ #else
+ #if defined(CRYPTOPP_CXX11_ATOMICS)
+ # define MEMORY_BARRIER() std::atomic_thread_fence(std::memory_order_acq_rel)
+-#elif (_MSC_VER >= 1400)
++#elif (defined(_MSC_VER) && _MSC_VER >= 1400)
+ # pragma intrinsic(_ReadWriteBarrier)
+ # define MEMORY_BARRIER() _ReadWriteBarrier()
+ #elif defined(__INTEL_COMPILER)
+@@ -360,7 +360,7 @@ template <class T, class F, int instance>
+ 
+ // ************** misc functions ***************
+ 
+-#if (!__STDC_WANT_SECURE_LIB__ && !defined(_MEMORY_S_DEFINED)) || defined(CRYPTOPP_WANT_SECURE_LIB)
++#if (!defined(__STDC_WANT_SECURE_LIB__) && !defined(_MEMORY_S_DEFINED)) || defined(CRYPTOPP_WANT_SECURE_LIB)
+ 
+ /// \brief Bounds checking replacement for memcpy()
+ /// \param dest pointer to the desination memory block
+@@ -394,7 +394,7 @@ inline void memcpy_s(void *dest, size_t sizeInBytes, c
+ 	if (count > sizeInBytes)
+ 		throw InvalidArgument("memcpy_s: buffer overflow");
+ 
+-#if CRYPTOPP_MSC_VERSION
++#if defined(CRYPTOPP_MSC_VERSION)
+ # pragma warning(push)
+ # pragma warning(disable: 4996)
+ # if (CRYPTOPP_MSC_VERSION >= 1400)
+@@ -402,7 +402,7 @@ inline void memcpy_s(void *dest, size_t sizeInBytes, c
+ # endif
+ #endif
+ 	memcpy(dest, src, count);
+-#if CRYPTOPP_MSC_VERSION
++#if defined(CRYPTOPP_MSC_VERSION)
+ # pragma warning(pop)
+ #endif
+ }
+@@ -437,7 +437,7 @@ inline void memmove_s(void *dest, size_t sizeInBytes, 
+ 	if (count > sizeInBytes)
+ 		throw InvalidArgument("memmove_s: buffer overflow");
+ 
+-#if CRYPTOPP_MSC_VERSION
++#if defined(CRYPTOPP_MSC_VERSION)
+ # pragma warning(push)
+ # pragma warning(disable: 4996)
+ # if (CRYPTOPP_MSC_VERSION >= 1400)
+@@ -445,12 +445,12 @@ inline void memmove_s(void *dest, size_t sizeInBytes, 
+ # endif
+ #endif
+ 	memmove(dest, src, count);
+-#if CRYPTOPP_MSC_VERSION
++#if defined(CRYPTOPP_MSC_VERSION)
+ # pragma warning(pop)
+ #endif
+ }
+ 
+-#if __BORLANDC__ >= 0x620
++#if (defined(__BORLANDC__) && __BORLANDC__ >= 0x620)
+ // C++Builder 2010 workaround: can't use std::memcpy_s because it doesn't allow 0 lengths
+ # define memcpy_s CryptoPP::memcpy_s
+ # define memmove_s CryptoPP::memmove_s
+@@ -520,12 +520,12 @@ template <class T> inline const T& STDMAX(const T& a, 
+ 	return a < b ? b : a;
+ }
+ 
+-#if CRYPTOPP_MSC_VERSION
++#if defined(CRYPTOPP_MSC_VERSION)
+ # pragma warning(push)
+ # pragma warning(disable: 4389)
+ #endif
+ 
+-#if CRYPTOPP_GCC_DIAGNOSTIC_AVAILABLE
++#if defined(CRYPTOPP_GCC_DIAGNOSTIC_AVAILABLE)
+ # pragma GCC diagnostic push
+ # pragma GCC diagnostic ignored "-Wsign-compare"
+ # pragma GCC diagnostic ignored "-Wstrict-overflow"
+@@ -585,7 +585,7 @@ std::string IntToString(T value, unsigned int base = 1
+ 		return "0";
+ 
+ 	bool negate = false;
+-	if (value < 0)
++	if (IsNegative(value))
+ 	{
+ 		negate = true;
+ 		value = 0-value;	// VC .NET does not like -a
+@@ -633,11 +633,11 @@ std::string IntToString<word64>(word64 value, unsigned
+ template <> CRYPTOPP_DLL
+ std::string IntToString<Integer>(Integer value, unsigned int base);
+ 
+-#if CRYPTOPP_MSC_VERSION
++#if defined(CRYPTOPP_MSC_VERSION)
+ # pragma warning(pop)
+ #endif
+ 
+-#if CRYPTOPP_GCC_DIAGNOSTIC_AVAILABLE
++#if defined(CRYPTOPP_GCC_DIAGNOSTIC_AVAILABLE)
+ # pragma GCC diagnostic pop
+ #endif
+ 
+@@ -1005,7 +1005,7 @@ inline unsigned int GetAlignmentOf()
+ 
+ #if defined(CRYPTOPP_CXX11_ALIGNOF)
+ 	return alignof(T);
+-#elif (_MSC_VER >= 1300)
++#elif (defined(_MSC_VER) && _MSC_VER >= 1300)
+ 	return __alignof(T);
+ #elif defined(__GNUC__)
+ 	return __alignof__(T);
+@@ -1172,7 +1172,7 @@ void SecureWipeBuffer(T *buf, size_t n)
+ 		*(--p) = 0;
+ }
+ 
+-#if (_MSC_VER >= 1400 || defined(__GNUC__)) && (CRYPTOPP_BOOL_X64 || CRYPTOPP_BOOL_X86)
++#if ((defined(_MSC_VER) && _MSC_VER >= 1400) || defined(__GNUC__)) && (CRYPTOPP_BOOL_X64 || CRYPTOPP_BOOL_X86)
+ 
+ /// \brief Sets each byte of an array to 0
+ /// \param buf an array of bytes
+@@ -1236,7 +1236,7 @@ template<> inline void SecureWipeBuffer(word64 *buf, s
+ 
+ #endif	// #if (_MSC_VER >= 1400 || defined(__GNUC__)) && (CRYPTOPP_BOOL_X64 || CRYPTOPP_BOOL_X86)
+ 
+-#if (_MSC_VER >= 1700) && defined(_M_ARM)
++#if (defined(_MSC_VER) && _MSC_VER >= 1700) && defined(_M_ARM)
+ template<> inline void SecureWipeBuffer(byte *buf, size_t n)
+ {
+ 	char *p = reinterpret_cast<char*>(buf+n);
+@@ -1711,7 +1711,7 @@ template<> inline word64 rotrMod<word64>(word64 x, uns
+ 
+ #endif // #if _MSC_VER >= 1310
+ 
+-#if _MSC_VER >= 1400 && !defined(__INTEL_COMPILER)
++#if (defined(_MSC_VER) && _MSC_VER >= 1400) && !defined(__INTEL_COMPILER)
+ // Intel C++ Compiler 10.0 gives undefined externals with these
+ template<> inline word16 rotlFixed<word16>(word16 x, unsigned int y)
+ {

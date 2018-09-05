@@ -1,0 +1,22 @@
+$OpenBSD: patch-stdcpp_h,v 1.4 2016/11/22 17:20:25 dcoppa Exp $
+Index: stdcpp.h
+--- stdcpp.h.orig
++++ stdcpp.h
+@@ -6,7 +6,7 @@
+ #ifndef CRYPTOPP_STDCPP_H
+ #define CRYPTOPP_STDCPP_H
+ 
+-#if _MSC_VER >= 1500
++#if (defined(_MSC_VER) && _MSC_VER >= 1500)
+ #define _DO_NOT_DECLARE_INTERLOCKED_INTRINSICS_IN_MEMORY
+ #include <intrin.h>
+ #endif
+@@ -33,7 +33,7 @@ namespace std {
+ #endif
+ 
+ // make_unchecked_array_iterator
+-#if _MSC_VER >= 1600
++#if (defined(_MSC_VER) && _MSC_VER >= 1600)
+ #include <iterator>
+ #endif
+ 

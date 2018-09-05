@@ -1,0 +1,22 @@
+$OpenBSD: patch-seckey_h,v 1.1 2016/10/10 12:55:51 dcoppa Exp $
+Index: seckey.h
+--- seckey.h.orig
++++ seckey.h
+@@ -12,7 +12,7 @@
+ #include "simple.h"
+ #include "stdcpp.h"
+ 
+-#if CRYPTOPP_MSC_VERSION
++#if defined(CRYPTOPP_MSC_VERSION)
+ # pragma warning(push)
+ # pragma warning(disable: 4189)
+ #endif
+@@ -454,7 +454,7 @@ struct AuthenticatedSymmetricCipherDocumentation
+ 
+ NAMESPACE_END
+ 
+-#if CRYPTOPP_MSC_VERSION
++#if defined(CRYPTOPP_MSC_VERSION)
+ # pragma warning(pop)
+ #endif
+ 

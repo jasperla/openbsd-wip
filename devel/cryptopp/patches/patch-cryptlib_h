@@ -1,0 +1,22 @@
+$OpenBSD: patch-cryptlib_h,v 1.2 2016/11/22 17:20:25 dcoppa Exp $
+Index: cryptlib.h
+--- cryptlib.h.orig
++++ cryptlib.h
+@@ -103,7 +103,7 @@ and getting us started on the manual.
+ #include "stdcpp.h"
+ #include "trap.h"
+ 
+-#if CRYPTOPP_MSC_VERSION
++#if defined(CRYPTOPP_MSC_VERSION)
+ # pragma warning(push)
+ # pragma warning(disable: 4127 4189 4505 4702)
+ #endif
+@@ -3203,7 +3203,7 @@ inline int HeaderVersion()
+ 
+ NAMESPACE_END
+ 
+-#if CRYPTOPP_MSC_VERSION
++#if defined(CRYPTOPP_MSC_VERSION)
+ # pragma warning(pop)
+ #endif
+ 
