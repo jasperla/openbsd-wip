@@ -186,10 +186,10 @@ lib/cmake/KGantt/KGanttTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/KGantt/KGanttTargets.cmake
 @lib lib/libKChart.so.${LIBKChart_VERSION}
 @lib lib/libKGantt.so.${LIBKGantt_VERSION}
-mkspecs/
-mkspecs/modules/
-mkspecs/modules/qt_KChart.pri
-mkspecs/modules/qt_KGantt.pri
+share/kf5/
+share/kf5/mkspecs/
+share/kf5/mkspecs/qt_KChart.pri
+share/kf5/mkspecs/qt_KGantt.pri
 share/locale/ar/LC_MESSAGES/kchart_qt.qm
 share/locale/ar/LC_MESSAGES/kgantt_qt.qm
 share/locale/ast/LC_MESSAGES/kchart_qt.qm

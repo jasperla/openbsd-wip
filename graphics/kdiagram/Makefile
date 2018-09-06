@@ -15,11 +15,16 @@ MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
 
+WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5Gui Qt5PrintSupport Qt5Svg
+WANTLIB += Qt5Widgets c m
+
 MASTER_SITES =	${MASTER_SITE_KDE:=stable/kdiagram/${VERSION}/}
 EXTRACT_SUFX =	.tar.xz
 
 MODULES =	devel/cmake \
-		x11/qt5
+		devel/kf5
+
+LIB_DEPENDS +=	x11/qt5/qtsvg
 
 TEST_IS_INTERACTIVE =	X11
 
