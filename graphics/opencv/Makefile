@@ -7,7 +7,7 @@ COMMENT-docs =		OpenCV documentation and examples
 COMMENT-main =		library of programming functions for real time cv
 COMMENT-java =		Java bindings for OpenCV
 
-V =			3.4.2
+V =			3.4.3
 DISTNAME =		opencv-${V}
 PKGNAME-main =		opencv-${V}
 PKGNAME-docs =		opencv-docs-$V
