@@ -42,6 +42,4 @@ BUILD_DEPENDS +=	x11/lxqt/build-tools
 
 CONFIGURE_ARGS +=	-DWITH_LXQT_ADMIN:BOOL=OFF
 
-NO_TEST =		Yes
-
 .include <bsd.port.mk>

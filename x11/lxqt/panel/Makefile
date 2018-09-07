@@ -1,6 +1,6 @@
 # $OpenBSD$
 
-COMMENT =	lxqt desktop panel
+COMMENT =	desktop panel for LXQt
 
 VERSION =	0.13.0
 
@@ -28,8 +28,6 @@ RUN_DEPENDS +=		x11/lxqt/l10n,-panel
 CONFIGURE_ARGS +=	-DSENSORS_PLUGIN=No \
 			-DVOLUME_PLUGIN=No \
 			-DPULL_TRANSLATIONS:BOOL=OFF
-
-NO_TEST =		Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/${NAME}

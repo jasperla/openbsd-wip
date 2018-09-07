@@ -17,4 +17,6 @@ LIB_DEPENDS +=		x11/qt5/qtsvg
 
 CONFIGURE_ARGS +=	-DBUILD_TESTS=Yes
 
+NO_TEST =		No
+
 .include <bsd.port.mk>

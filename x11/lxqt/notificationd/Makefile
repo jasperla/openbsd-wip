@@ -1,6 +1,6 @@
 # $OpenBSD$
 
-COMMENT =	lxqt notification daemon
+COMMENT =	notification daemon for LXQt
 
 VERSION =	0.13.0
 
@@ -20,8 +20,6 @@ RUN_DEPENDS +=		devel/desktop-file-utils \
 			x11/lxqt/l10n,-notificationd
 
 CONFIGURE_ARGS +=	-DPULL_TRANSLATIONS:BOOL=OFF
-
-NO_TEST =		Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/${NAME}

@@ -1,6 +1,6 @@
 # $OpenBSD$
 
-COMMENT =	lxqt qt platform integration plugin
+COMMENT =	qt platform integration plugin for LXQt
 
 VERSION =	0.13.0
 
@@ -20,7 +20,5 @@ LIB_DEPENDS +=		x11/qt5/qtx11extras \
 BUILD_DEPENDS +=	x11/lxqt/build-tools
 
 RUN_DEPENDS +=		x11/lxqt/liblxqt
-
-NO_TEST =		Yes
 
 .include <bsd.port.mk>

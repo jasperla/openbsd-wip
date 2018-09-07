@@ -23,8 +23,6 @@ RUN_DEPENDS +=		x11/menu-cache \
 CONFIGURE_ARGS +=	-DRUNNER_MATH=No \
 			-DPULL_TRANSLATIONS:BOOL=OFF
 
-NO_TEST =		Yes
-
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/${NAME}
 	mv ${WRKINST}${SYSCONFDIR}/xdg ${PREFIX}/share/examples/${NAME}/

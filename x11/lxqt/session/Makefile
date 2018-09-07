@@ -1,6 +1,6 @@
 # $OpenBSD$
 
-COMMENT =	lxqt session manager
+COMMENT =	session manager for LXQt
 
 VERSION =	0.13.0
 
@@ -24,8 +24,6 @@ RUN_DEPENDS +=		devel/xdg-user-dirs \
 
 CONFIGURE_ARGS +=	-DWITH_LIBUDEV=No \
 			-DPULL_TRANSLATIONS:BOOL=OFF
-
-NO_TEST =		Yes
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/lxqt-config-session/autostartedit.cpp \

@@ -20,6 +20,4 @@ RUN_DEPENDS +=		security/sudo \
 
 CONFIGURE_ARGS +=	-DPULL_TRANSLATIONS:BOOL=OFF
 
-NO_TEST =		Yes
-
 .include <bsd.port.mk>

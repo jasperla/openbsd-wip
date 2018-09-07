@@ -1,6 +1,6 @@
 # $OpenBSD$
 
-COMMENT =	lxqt policy kit agent
+COMMENT =	policy kit agent for LXQt
 
 VERSION =	0.13.0
 

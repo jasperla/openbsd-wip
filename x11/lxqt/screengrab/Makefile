@@ -23,8 +23,6 @@ LIB_DEPENDS +=		x11/qt5/qtx11extras \
 RUN_DEPENDS +=		devel/desktop-file-utils \
 			x11/gtk+3,-guic
 
-NO_TEST =		Yes
-
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/${NAME}
 	mv ${PREFIX}/share/${NAME}/${NAME}.conf \

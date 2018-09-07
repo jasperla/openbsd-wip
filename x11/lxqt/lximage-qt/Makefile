@@ -1,6 +1,6 @@
 # $OpenBSD$
 
-COMMENT =	image viewer and screenshot tool for lxqt
+COMMENT =	image viewer and screenshot tool for LXQt
 
 VERSION =	0.7.0
 
@@ -23,7 +23,5 @@ RUN_DEPENDS +=		x11/lxqt/l10n,-lximage-qt \
 			x11/gtk+3,-guic
 
 CONFIGURE_ARGS +=	-DPULL_TRANSLATIONS:BOOL=OFF
-
-NO_TEST =		Yes
 
 .include <bsd.port.mk>

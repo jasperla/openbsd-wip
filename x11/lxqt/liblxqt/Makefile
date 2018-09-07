@@ -24,8 +24,6 @@ RUN_DEPENDS +=		x11/lxqt/l10n,-main
 
 CONFIGURE_ARGS +=	-DPULL_TRANSLATIONS:BOOL=OFF
 
-NO_TEST =		Yes
-
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/${NAME}/xdg
 	mv ${PREFIX}/share/lxqt ${PREFIX}/share/examples/${NAME}/xdg/

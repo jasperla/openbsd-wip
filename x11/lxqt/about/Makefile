@@ -18,6 +18,4 @@ RUN_DEPENDS +=		devel/desktop-file-utils \
 
 CONFIGURE_ARGS +=	-DPULL_TRANSLATIONS:BOOL=OFF
 
-NO_TEST =		Yes
-
 .include <bsd.port.mk>

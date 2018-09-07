@@ -1,6 +1,6 @@
 # $OpenBSD$
 
-COMMENT =	power management module for lxqt
+COMMENT =	power management module for LXQt
 
 VERSION =	0.13.0
 
@@ -25,8 +25,6 @@ RUN_DEPENDS +=		devel/desktop-file-utils \
 			x11/lxqt/l10n,-powermanagement
 
 CONFIGURE_ARGS +=	-DPULL_TRANSLATIONS:BOOL=OFF
-
-NO_TEST =		Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/${NAME}

@@ -16,3 +16,5 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 MASTER_SITES +=	https://downloads.lxqt.org/downloads/${NAME}/${VERSION}/
 EXTRACT_SUFX =	.tar.xz
+
+NO_TEST ?=	Yes
