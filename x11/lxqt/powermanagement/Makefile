@@ -4,7 +4,7 @@ COMMENT =	power management module for LXQt
 
 VERSION =	0.13.0
 
-NAME=		lxqt-powermanagement
+NAME =		lxqt-powermanagement
 DISTNAME =	${NAME}-${VERSION}
 
 WANTLIB += ${COMPILER_LIBCXX} KF5IdleTime KF5Solid KF5WindowSystem

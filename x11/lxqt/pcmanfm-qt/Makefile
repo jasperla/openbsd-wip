@@ -4,7 +4,7 @@ COMMENT =	file manager and desktop icon manager
 
 VERSION =	0.13.0
 
-NAME=		pcmanfm-qt
+NAME =		pcmanfm-qt
 DISTNAME =	${NAME}-${VERSION}
 
 WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5DBus Qt5Gui Qt5Widgets

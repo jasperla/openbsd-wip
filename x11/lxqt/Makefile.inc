@@ -1,6 +1,6 @@
 # $OpenBSD$
 
-DIST_SUBDIR=	lxqt
+DIST_SUBDIR =	lxqt
 
 HOMEPAGE ?=	https://lxqt.org/
 

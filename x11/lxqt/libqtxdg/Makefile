@@ -4,7 +4,7 @@ COMMENT =	qt implementation of freedesktop.org xdg specs
 
 VERSION =	3.2.0
 
-NAME=		libqtxdg
+NAME =		libqtxdg
 DISTNAME =	${NAME}-${VERSION}
 
 SHARED_LIBS +=  Qt5Xdg                    0.0 # 0.0

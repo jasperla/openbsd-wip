@@ -4,7 +4,7 @@ COMMENT =	image viewer and screenshot tool for LXQt
 
 VERSION =	0.7.0
 
-NAME=		lximage-qt
+NAME =		lximage-qt
 DISTNAME =	${NAME}-${VERSION}
 
 WANTLIB += ${COMPILER_LIBCXX} ICE Qt5Core Qt5DBus Qt5Gui Qt5Network

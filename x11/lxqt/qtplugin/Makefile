@@ -4,7 +4,7 @@ COMMENT =	qt platform integration plugin for LXQt
 
 VERSION =	0.13.0
 
-NAME=		lxqt-qtplugin
+NAME =		lxqt-qtplugin
 DISTNAME =	${NAME}-${VERSION}
 
 WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5DBus Qt5Gui Qt5Svg Qt5Widgets

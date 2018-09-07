@@ -4,7 +4,7 @@ COMMENT =	themes, graphics and icons for LXQt
 
 VERSION =	0.13.0
 
-NAME=		lxqt-themes
+NAME =		lxqt-themes
 DISTNAME =	${NAME}-${VERSION}
 
 LIB_DEPENDS +=		x11/lxqt/liblxqt

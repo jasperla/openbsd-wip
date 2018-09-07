@@ -4,7 +4,7 @@ COMMENT =	lightweight Qt terminal emulator based on QTermWidget
 
 VERSION =	0.9.0
 
-NAME=		qterminal
+NAME =		qterminal
 DISTNAME =	${NAME}-${VERSION}
 
 WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5DBus Qt5Gui Qt5Widgets

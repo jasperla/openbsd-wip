@@ -4,7 +4,7 @@ COMMENT =	information about LXQt and the system its running on
 
 VERSION =	0.13.0
 
-NAME=		lxqt-about
+NAME =		lxqt-about
 DISTNAME =	${NAME}-${VERSION}
 
 WANTLIB += ${COMPILER_LIBCXX} KF5WindowSystem Qt5Core Qt5DBus

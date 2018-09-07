@@ -4,7 +4,7 @@ COMMENT =	tool for fast making screenshots
 
 VERSION =	1.99
 
-NAME=		screengrab
+NAME =		screengrab
 DISTNAME =	${NAME}-${VERSION}
 
 SHARED_LIBS +=  extedit                   0.0 # 1.0

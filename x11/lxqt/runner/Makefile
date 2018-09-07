@@ -4,7 +4,7 @@ COMMENT =	launch programs quickly by typing their names
 
 VERSION =	0.13.0
 
-NAME=		lxqt-runner
+NAME =		lxqt-runner
 DISTNAME =	${NAME}-${VERSION}
 
 WANTLIB += ${COMPILER_LIBCXX} KF5WindowSystem Qt5Core Qt5DBus

@@ -4,7 +4,7 @@ COMMENT =	core utility library for all LXQt components
 
 VERSION =	0.13.0
 
-NAME=		liblxqt
+NAME =		liblxqt
 DISTNAME =	${NAME}-${VERSION}
 
 SHARED_LIBS +=  lxqt                      0.0 # 0.13

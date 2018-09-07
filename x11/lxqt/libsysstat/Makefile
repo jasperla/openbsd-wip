@@ -4,7 +4,7 @@ COMMENT =	library used to query system info and statistics
 
 VERSION =	0.4.1
 
-NAME=		libsysstat
+NAME =		libsysstat
 DISTNAME =	${NAME}-${VERSION}
 
 SHARED_LIBS +=  sysstat-qt5               0.0 # 0.4

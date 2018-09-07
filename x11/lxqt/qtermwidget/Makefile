@@ -4,7 +4,7 @@ COMMENT =	the terminal widget for QTerminal
 
 VERSION =	0.9.0
 
-NAME=		qtermwidget
+NAME =		qtermwidget
 DISTNAME =	${NAME}-${VERSION}
 
 SHARED_LIBS +=  qtermwidget5              0.0 # 0.9

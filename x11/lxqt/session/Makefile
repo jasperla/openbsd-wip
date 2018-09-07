@@ -4,7 +4,7 @@ COMMENT =	session manager for LXQt
 
 VERSION =	0.13.0
 
-NAME=		lxqt-session
+NAME =		lxqt-session
 DISTNAME =	${NAME}-${VERSION}
 
 WANTLIB += ${COMPILER_LIBCXX} ICE KF5WindowSystem Qt5Core Qt5DBus

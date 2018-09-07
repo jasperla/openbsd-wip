@@ -4,7 +4,7 @@ COMMENT =	daemon used to register global keyboard shortcuts
 
 VERSION =	0.13.0
 
-NAME=		lxqt-globalkeys
+NAME =		lxqt-globalkeys
 DISTNAME =	${NAME}-${VERSION}
 
 SHARED_LIBS +=  lxqt-globalkeys-ui        0.0 # 0.13

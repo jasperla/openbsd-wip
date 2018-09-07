@@ -4,7 +4,7 @@ COMMENT =	policy kit agent for LXQt
 
 VERSION =	0.13.0
 
-NAME=		lxqt-policykit
+NAME =		lxqt-policykit
 DISTNAME =	${NAME}-${VERSION}
 
 WANTLIB += ${COMPILER_LIBCXX} KF5WindowSystem Qt5Core Qt5DBus

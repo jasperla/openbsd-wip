@@ -4,7 +4,7 @@ COMMENT =	qt binding for libfm
 
 VERSION =	0.13.1
 
-NAME=		libfm-qt
+NAME =		libfm-qt
 DISTNAME =	${NAME}-${VERSION}
 
 SHARED_LIBS +=  fm-qt                     0.0 # 5.0

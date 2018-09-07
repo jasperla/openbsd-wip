@@ -2,8 +2,8 @@
 
 VERSION =	0.13.0
 
-NAME=		lxqt-l10n
-DISTNAME=	${NAME}-${VERSION}
+NAME =		lxqt-l10n
+DISTNAME =	${NAME}-${VERSION}
 
 MULTI_PACKAGES += -about -config -compton-conf
 MULTI_PACKAGES += -notificationd -openssh-askpass
@@ -13,7 +13,7 @@ MULTI_PACKAGES += -main -lximage-qt -obconf-qt -pavucontrol-qt
 MULTI_PACKAGES += -pcmanfm-qt -qterminal -qtermwidget
 
 .for i in ${MULTI_PACKAGES}
-COMMENT$i =             lxqt translations
+COMMENT$i =             LXQt translations
 # set standard PKGNAMEs, override below for some subpackages
 PKGNAME$i =             lxqt$i-l10n-${VERSION}
 .endfor

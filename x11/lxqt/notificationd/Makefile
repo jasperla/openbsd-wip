@@ -4,7 +4,7 @@ COMMENT =	notification daemon for LXQt
 
 VERSION =	0.13.0
 
-NAME=		lxqt-notificationd
+NAME =		lxqt-notificationd
 DISTNAME =	${NAME}-${VERSION}
 
 WANTLIB += ${COMPILER_LIBCXX} KF5WindowSystem Qt5Core Qt5DBus

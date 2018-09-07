@@ -4,7 +4,7 @@ COMMENT =	tools to configure LXQt and the underlying operating system
 
 VERSION =	0.13.0
 
-NAME=		lxqt-config
+NAME =		lxqt-config
 DISTNAME =	${NAME}-${VERSION}
 
 WANTLIB += ${COMPILER_LIBCXX} ICE KF5WindowSystem Qt5Concurrent

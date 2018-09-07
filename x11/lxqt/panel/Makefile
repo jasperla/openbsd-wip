@@ -4,7 +4,7 @@ COMMENT =	desktop panel for LXQt
 
 VERSION =	0.13.0
 
-NAME=		lxqt-panel
+NAME =		lxqt-panel
 DISTNAME =	${NAME}-${VERSION}
 
 WANTLIB += ${COMPILER_LIBCXX} ICE KF5Solid KF5WindowSystem Qt5Core

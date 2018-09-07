@@ -4,7 +4,7 @@ COMMENT =	configuration tool for compton X composite manager
 
 VERSION =	0.4.0
 
-NAME=		compton-conf
+NAME =		compton-conf
 DISTNAME =	${NAME}-${VERSION}
 
 WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5DBus Qt5Gui Qt5Widgets

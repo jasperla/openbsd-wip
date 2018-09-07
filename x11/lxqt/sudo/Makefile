@@ -4,7 +4,7 @@ COMMENT =	frontend for sudo
 
 VERSION =	0.13.0
 
-NAME=		lxqt-sudo
+NAME =		lxqt-sudo
 DISTNAME =	${NAME}-${VERSION}
 
 WANTLIB += ${COMPILER_LIBCXX} KF5WindowSystem Qt5Core Qt5DBus

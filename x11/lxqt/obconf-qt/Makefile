@@ -4,7 +4,7 @@ COMMENT =	configuration editor for openbox window manager
 
 VERSION =	0.13.0
 
-NAME=		obconf-qt
+NAME =		obconf-qt
 DISTNAME =	${NAME}-${VERSION}
 
 WANTLIB += ${COMPILER_LIBCXX} ICE Imlib2 Qt5Core Qt5Gui Qt5Widgets

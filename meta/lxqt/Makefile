@@ -4,7 +4,7 @@ COMMENT-main =		desktop meta-package for LXQt (base installation)
 COMMENT-extras =	desktop meta-package for LXQt (full installation)
 
 V =		0.13.0
-PKGNAME=	lxqt-${V}
+PKGNAME =	lxqt-${V}
 
 PKGNAME-main =		lxqt-${V}
 PKGNAME-extras =	lxqt-extras-${V}

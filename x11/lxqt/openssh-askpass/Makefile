@@ -4,7 +4,7 @@ COMMENT =	query passwords on behalf of ssh agents
 
 VERSION =	0.13.0
 
-NAME=		lxqt-openssh-askpass
+NAME =		lxqt-openssh-askpass
 DISTNAME =	${NAME}-${VERSION}
 
 WANTLIB += ${COMPILER_LIBCXX} KF5WindowSystem Qt5Core Qt5DBus
