@@ -1,0 +1,19 @@
+$OpenBSD$
+
+https://github.com/flang-compiler/f18/issues/158
+
+Index: lib/parser/unparse.cc
+--- lib/parser/unparse.cc.orig
++++ lib/parser/unparse.cc
+@@ -191,9 +191,9 @@ class UnparseVisitor { (public)
+         encoding_ == Encoding::EUC_JP ? EUC_JPCharacterBytes
+                                       : UTF8CharacterBytes)};
+     if (chars.has_value()) {
+-      Unparse(*chars);
++      Unparse(static_cast<std::uint64_t>(*chars));
+     } else {
+-      Unparse(x.v.size());
++      Unparse(static_cast<std::uint64_t>(x.v.size()));
+     }
+     Put('H');
+   }
