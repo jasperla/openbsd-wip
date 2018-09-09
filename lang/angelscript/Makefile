@@ -13,8 +13,6 @@ EXTRACT_SUFX =		.zip
 CATEGORIES =		lang
 HOMEPAGE =		http://www.angelcode.com/angelscript
 
-MAINTAINER =		David Carlier <devnexen@gmail.com>
-
 # ZLIB
 PERMIT_PACKAGE_CDROM =	Yes
 
