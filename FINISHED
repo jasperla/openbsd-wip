@@ -62,10 +62,10 @@ www/p5-HTML-Selector-XPath		ready to import (garcer)
 www/p5-Web-Query			ready to import (garcer)
 www/p5-HTML-TreeBuilder-LibXML		ready to import (garcer)
 devel/deviceatlas-enterprise-c		ready to import (devnexen)
-devel/libangelscript			ready to import, sent to ports@ 2015-12-20
 net/tcptrack				ready to import (bcallah, indirectly)
 math/openblas				ready to import (bcallah)
 games/xash3d				sent to ports@ 2018-05-05 (rfreeman)
 devel/py-progressbar2			sent to ports@ 2018-06-04
 devel/py-python_utils			sent to ports@ 2018-06-04
 emulators/dolphin			imported 2018-07-22 (thfr)
+lang/angelscript			ready to import
