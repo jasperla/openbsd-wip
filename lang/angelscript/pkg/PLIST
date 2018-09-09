@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v$
+include/angelscript.h
+lib/libangelscript.a
+@lib lib/libangelscript.so.${LIBangelscript_VERSION}

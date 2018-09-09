@@ -10,3 +10,8 @@ the functions, objects, and methods that the scripts should be able to work
 with and nothing more has to be done with your code. The same functions used
 by the application internally can also be used by the scripting engine, which
 eliminates the need to duplicate functionality. 
+
+For the script writer the scripting language follows the widely known syntax
+of C/C++, but without the need to worry about pointers and memory leaks.
+Contrary to most scripting languages, AngelScript uses the common C/C++
+datatypes for more efficient communication with the host application.
