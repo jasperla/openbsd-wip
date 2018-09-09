@@ -26,10 +26,12 @@ MAKE_FLAGS =		CXX='${CXX}' CXXFLAGS='${CXXFLAGS} ${PICFLAG}'
 WRKDIST =		${WRKDIR}/sdk
 WRKSRC =		${WRKDIR}/sdk/angelscript/projects/gnuc
 
+INSTALL_TARGET =	install_all
+
 pre-build:
 	sed -i -e 's|ifdef __OPTIMIZE__|if defined(__OPTIMIZE__) \&\&\ !defined(__clang__)|g' \
 		-e 's,ifdef __OPTIMIZE__ifdef __OPTIMIZE__,,g' ${WRKDIST}/angelscript/source/*.cpp
-	sed -i -e 's|\$$(DESTDIR)/||g' -e 's|^.*CP_SYMLINK.*$$||g' \
+	sed -i -e 's|\$$(DESTDIR)/||g' -e 's|^.*CP_SYMLINK.*$$||g' -e 's|-\$$(AS_VER)$$||' \
 		-e 's|"\$$(SHLIB)$$|"$$(LIBNAME).so.${LIBangelscript_VERSION}|' ${WRKSRC}/Makefile
 
 .include <bsd.port.mk>
