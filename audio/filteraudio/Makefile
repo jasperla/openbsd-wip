@@ -4,7 +4,6 @@ COMMENT =		easy to use audio filtering library
 V =			0.0.1
 PKGNAME =		filteraudio-$V
 CATEGORIES =		audio
-MAINTAINER =		Dmitrij D. Czarkoff <czarkoff@openbsd.org>
 
 SHARED_LIBS +=		filteraudio               0.0
 
