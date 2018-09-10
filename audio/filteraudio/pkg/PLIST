@@ -1,4 +1,4 @@
-@comment $OpenBSD$
+@comment $OpenBSD: PLIST,v$
 include/filter_audio.h
 lib/libfilteraudio.a
 @lib lib/libfilteraudio.so.${LIBfilteraudio_VERSION}
