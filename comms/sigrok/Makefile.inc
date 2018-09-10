@@ -3,8 +3,8 @@
 CATEGORIES +=		comms/sigrok
 
 MAINTAINER ?=		Anthony J. Bentley <anthony@anjbe.name>
-HOMEPAGE ?=		http://sigrok.org/
-MASTER_SITES ?=		http://sigrok.org/download/source/${SIGROK_PROJECT}/
+HOMEPAGE ?=		https://sigrok.org/
+MASTER_SITES ?=		https://sigrok.org/download/source/${SIGROK_PROJECT}/
 DISTNAME ?=		${SIGROK_PROJECT}-${SIGROK_VERSION}
 
 # GPLv3+

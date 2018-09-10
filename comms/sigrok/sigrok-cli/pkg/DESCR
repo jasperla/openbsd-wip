@@ -1,8 +1,11 @@
-The sigrok project aims at creating a portable, cross-platform,
-Free/Libre/Open-Source logic analyzer software that supports various
-logic analyzer hardware products.
+sigrok-cli is a command-line tool written in C, which uses both libsigrok
+and libsigrokdecode to provide basic signal analysis functionality from the
+command-line.
 
-sigrok-cli is a command-line tool written in C, which uses both
-libsigrok and libsigrokdecode to provide the basic sigrok functionality
-from the command-line. Among other things, it's useful for scripting
-purposes.
+It cannot display graphical output, but is still sufficient to run through
+the whole process of hardware initialization, acquisition, protocol decoding
+and saving the session.
+
+It is useful for running on remote or embedded systems, netbooks, PDAs, and
+for various other use-cases. It can display samples on standard output or
+save them in various file formats.
