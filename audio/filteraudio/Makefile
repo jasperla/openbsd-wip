@@ -28,7 +28,7 @@ USE_GMAKE =		Yes
 TEST_IS_INTERACTIVE =	Yes
 
 do-test:
-			${CC} -g -Wall -o ${WRKBUILD}/filteraudio-test \
+			${CC} -g3 -Wall -o ${WRKBUILD}/filteraudio-test \
 				-I${LOCALBASE}/include ${WRKSRC}/test/playback_mic.c \
 				-L${LOCALBASE}/lib -lsndfile -lportaudio -lpthread -lm -lfilteraudio
 			@echo "\n\tYou should hear your microphone input\n"
