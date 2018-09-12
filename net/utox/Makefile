@@ -35,8 +35,6 @@ LIB_DEPENDS +=	audio/filteraudio \
 		net/toxcore \
 		x11/dbus
 
-COMPILER =	base-clang ports-gcc
-
 WRKDIST =	${WRKDIR}/uTox
 
 .include <bsd.port.mk>
