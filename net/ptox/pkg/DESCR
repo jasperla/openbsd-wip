@@ -1,6 +1,6 @@
-uTox is a lightweight Tox client with minimal dependencies, It not only looks
+pTox is a portable Tox client with minimal dependencies, It not only looks
 pretty, it runs fast!
-uTox has full support for:
+pTox has full support for:
 * chat;
 * file transfers;
 * audio/video calling;
