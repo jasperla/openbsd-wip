@@ -7,7 +7,7 @@ V =		0.17.0
 DISTNAME =	uTox-${V}-full
 PKGNAME =	utox-${V}
 MASTER_SITES =	https://github.com/uTox/uTox/releases/download/v${V}/
-REVISION =	3
+REVISION =	4
 
 CATEGORIES =	net
 
