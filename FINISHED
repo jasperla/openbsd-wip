@@ -69,3 +69,6 @@ devel/py-progressbar2			sent to ports@ 2018-06-04
 devel/py-python_utils			sent to ports@ 2018-06-04
 emulators/dolphin			imported 2018-07-22 (thfr)
 lang/angelscript			ready to import, sent to ports@ 2018-09-09 (mazocomp)
+audio/abcde				imported 2018-08-31
+audio/p5-MusicBrainz-DiscID		imported 2018-08-29
+www/p5-Starlet				imported 2018-09-07 
