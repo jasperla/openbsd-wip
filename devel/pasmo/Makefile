@@ -16,7 +16,6 @@ MASTER_SITES =		http://pasmo.speccy.org/bin/
 EXTRACT_SUFX =		.tgz
 
 CONFIGURE_STYLE =	gnu
-TEST_DEPENDS =		emulators/fuse
 
 DOC_DIR =	${PREFIX}/share/doc/pasmo
 EXAMPLE_DIR =	${PREFIX}/share/examples/pasmo
@@ -26,9 +25,12 @@ post-install:
 	${INSTALL_DATA_DIR} ${EXAMPLE_DIR}
 	${INSTALL_DATA} ${WRKSRC}/*.asm ${EXAMPLE_DIR}
 
+# Compile a few examples.
+# 'all.asm' is a good test, as it exercises all (supported) Z80 instructions.
 do-test:
 	cd ${WRKBUILD} && \
-		./pasmo --tapbas ${FILESDIR}/test.asm test.tap && \
-		${LOCALBASE}/bin/fuse -g 3x test.tap
+		./pasmo --tapbas ${WRKSRC}/black.asm black.tap && \
+		./pasmo --tapbas ${WRKSRC}/hellospec.asm hellospec.tap && \
+		./pasmo ${WRKSRC}/all.asm ${WRKSRC}/all.bin
 
 .include <bsd.port.mk>

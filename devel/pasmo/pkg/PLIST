@@ -1,4 +1,4 @@
-@comment $OpenBSD$
+@comment $OpenBSD: PLIST,v$
 @bin bin/pasmo
 share/doc/pasmo/
 share/doc/pasmo/README
