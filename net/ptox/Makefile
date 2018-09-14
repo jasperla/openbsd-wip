@@ -4,7 +4,7 @@ COMMENT =	portable Tox client
 
 GH_ACCOUNT =	OrangeGrayCyan
 GH_PROJECT =	ptox
-GH_TAGNAME =	0.0
+GH_TAGNAME =	0.1
 
 CATEGORIES =	net
 

@@ -3,9 +3,6 @@
 @man man/man1/ptox.1
 share/applications/ptox.desktop
 share/icons/hicolor/128x128/apps/ptox-128x128.png
-share/icons/hicolor/14x14/
-share/icons/hicolor/14x14/apps/
-share/icons/hicolor/14x14/apps/ptox-14x14.png
 share/icons/hicolor/16x16/apps/ptox-16x16.png
 share/icons/hicolor/22x22/apps/ptox-22x22.png
 share/icons/hicolor/24x24/apps/ptox-24x24.png
