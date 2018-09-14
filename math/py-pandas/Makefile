@@ -8,7 +8,7 @@ PKGNAME =		py-${DISTNAME}
 
 CATEGORIES =		math
 
-HOMEPAGE =		http://pandas.pydata.org/
+HOMEPAGE =		https://pandas.pydata.org/
 
 MAINTAINER =		Elias M. Mariani <marianielias@gmail.com>
 
