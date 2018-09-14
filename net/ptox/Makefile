@@ -4,16 +4,15 @@ COMMENT =	portable Tox client
 
 GH_ACCOUNT =	OrangeGrayCyan
 GH_PROJECT =	ptox
-GH_TAGNAME =	0.1
+GH_TAGNAME =	0.2
 
 CATEGORIES =	net
 
 # GPLv3
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += ICE SM X11 Xext Xrender c dbus-1 filteraudio fontconfig
-WANTLIB += freetype m openal opus pthread sodium toxcore v4lconvert
-WANTLIB += vpx
+WANTLIB += ICE SM X11 Xext Xrender c filteraudio fontconfig freetype
+WANTLIB += m openal opus pthread sodium toxcore v4lconvert vpx
 
 MODULES =	devel/cmake
 
@@ -25,7 +24,6 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 LIB_DEPENDS +=	audio/filteraudio \
 		audio/openal \
 		multimedia/libv4l \
-		net/toxcore \
-		x11/dbus
+		net/toxcore
 
 .include <bsd.port.mk>
