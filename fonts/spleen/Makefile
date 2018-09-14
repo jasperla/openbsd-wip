@@ -4,9 +4,9 @@ COMMENT =	monospaced bitmap fonts for consoles and terminals
 
 GH_ACCOUNT =	fcambus
 GH_PROJECT =	spleen
-GH_COMMIT =	4255a3bc51b48eae17e639c67a99965bcf12846c
+GH_COMMIT =	0325130b553bdf295c551fe1577ed3c3da0df6e2
 
-DISTNAME =	spleen-20180904
+DISTNAME =	spleen-20180915
 
 CATEGORIES =	fonts
 
