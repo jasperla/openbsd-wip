@@ -14,7 +14,7 @@ MAINTAINER =	Fabian Raetz <fabian.raetz@gmail.com>
 # GPLv3+
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} c m
+WANTLIB += ${COMPILER_LIBCXX} c m z3
 WANTLIB += boost_filesystem-mt boost_program_options-mt boost_regex-mt
 WANTLIB += boost_system-mt
 
