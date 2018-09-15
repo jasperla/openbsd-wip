@@ -1,8 +1,0 @@
-pTox is a portable Tox client with minimal dependencies, It not only looks
-pretty, it runs fast!
-pTox has full support for:
-* chat;
-* file transfers;
-* audio/video calling;
-* desktop sharing (both as video and inline screenshots);
-* group chats.

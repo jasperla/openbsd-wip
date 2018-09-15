@@ -9,7 +9,6 @@
 devel/libextractor			sent to ports 2013-06-29
 geo/mtkbabel				sent to ports 2011-03-30
 math/p5-Math-GSL			ready for import, did not sent to ports@, regress depends on devel/p5-Test-Most (wenheping)
-net/bitcoin				sent to ports 2013-03-19, and again 2013-06-29
 productivity/py-nv			send to ports 2013-10-21
 sysutils/fsx				sent to ports 2013-12-09
 sysutils/glean				sent to ports 2013-12-09
@@ -68,7 +67,6 @@ games/xash3d				sent to ports@ 2018-05-05 (rfreeman)
 devel/py-progressbar2			sent to ports@ 2018-06-04
 devel/py-python_utils			sent to ports@ 2018-06-04
 emulators/dolphin			imported 2018-07-22 (thfr)
-lang/angelscript			ready to import, sent to ports@ 2018-09-09 (mazocomp)
 audio/abcde				imported 2018-08-31
 audio/p5-MusicBrainz-DiscID		imported 2018-08-29
 www/p5-Starlet				imported 2018-09-07 
