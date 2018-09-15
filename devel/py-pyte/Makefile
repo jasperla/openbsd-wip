@@ -25,4 +25,6 @@ MODPY_PI =	Yes
 
 MODPY_SETUPTOOLS = Yes
 
+NO_TEST =	Yes
+
 .include <bsd.port.mk>
