@@ -11,20 +11,20 @@ CATEGORIES =	net
 
 HOMEPAGE =	https://ipfs.io
 
-MAINTAINER =		Fabian Raetz <fabian.raetz@gmail.com>
+MAINTAINER =	Fabian Raetz <fabian.raetz@gmail.com>
 
 # MIT
 PERMIT_PACKAGE_CDROM = Yes
 
-WANTLIB =		c pthread
+WANTLIB =	c pthread
 
-MASTER_SITES =		https://github.com/ipfs/go-ipfs/releases/download/v$V/
+MASTER_SITES =	https://github.com/ipfs/go-ipfs/releases/download/v$V/
 
-MODULES =		lang/go
+MODULES =	lang/go
 
-ALL_TARGET =		github.com/ipfs/go-ipfs
+ALL_TARGET =	github.com/ipfs/go-ipfs
 
-SUBST_VARS =		VARBASE
+SUBST_VARS =	VARBASE
 
 EXTRACT_ONLY =
 

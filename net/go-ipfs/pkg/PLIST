@@ -1,6 +1,6 @@
 @comment $OpenBSD: PLIST,v$
-@newgroup _ipfs:818
-@newuser _ipfs:818:818:daemon:IPFS Account:${VARBASE}/empty:/bin/sh
+@newgroup _ipfs:819
+@newuser _ipfs:819:819:daemon:IPFS Account:${VARBASE}/empty:/bin/sh
 @rcscript ${RCDIR}/ipfs
 @mode 750
 @owner _ipfs
@@ -10,4 +10,4 @@
 @owner
 @group
 @bin bin/ipfs
-share/doc/pkg-readmes/${FULLPKGNAME}
+share/doc/pkg-readmes/${PKGSTEM}
