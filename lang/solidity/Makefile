@@ -1,7 +1,7 @@
 # $OpenBSD$
 COMMENT =	high-level language designed to target the Ethereum VM
 
-V=0.4.24
+V=0.4.25
 DISTNAME =	solidity_$V
 PKGNAME =	solidity-$V
 
