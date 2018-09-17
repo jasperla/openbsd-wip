@@ -4,9 +4,9 @@ COMMENT =	monospaced bitmap fonts for consoles and terminals
 
 GH_ACCOUNT =	fcambus
 GH_PROJECT =	spleen
-GH_COMMIT =	0325130b553bdf295c551fe1577ed3c3da0df6e2
+GH_COMMIT =	0b83e352351ddb4ceee608da69ce38000ae8f01b
 
-DISTNAME =	spleen-20180915
+DISTNAME =	spleen-20180917
 
 CATEGORIES =	fonts
 
@@ -27,14 +27,10 @@ do-build:
 		${X11BASE}/bin/bdftopcf -t -o $$font.pcf $$font.bdf; \
 	done
 	${GZIP_CMD} ${WRKSRC}/*.pcf
-	${X11BASE}/bin/mkfontdir ${WRKSRC}
-	rm -f ${WRKSRC}/fonts.alias
-	egrep '\.pcf\.gz' ${WRKSRC}/fonts.dir | \
-		sed 's/\.pcf\.gz//g' > ${WRKSRC}/fonts.alias
 
 do-install:
 	${INSTALL_DATA_DIR} ${FONTDIR}
 	${INSTALL_DATA} ${WRKSRC}/*.pcf.gz ${FONTDIR}
-	${INSTALL_DATA} ${WRKSRC}/fonts.alias ${FONTDIR}/fonts.alias-spleen
+	${INSTALL_DATA} ${WRKSRC}/fonts.alias-spleen ${FONTDIR}
 
 .include <bsd.port.mk>
