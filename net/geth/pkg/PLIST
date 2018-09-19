@@ -1,4 +1,16 @@
-@comment $OpenBSD$
+@comment $OpenBSD: PLIST,v$
+@newgroup _geth:820
+@newuser _geth:820:820:daemon:geth Account:${VARBASE}/geth:/bin/sh
+@rcscript ${RCDIR}/geth
+@mode 750
+@owner _geth
+@group _geth
+@sample ${VARBASE}/geth/
+@sample ${VARBASE}/geth/data/
+@sample ${VARBASE}/geth/ethash/
+@mode
+@owner
+@group
 @bin bin/abigen
 @bin bin/bootnode
 @bin bin/evm
@@ -7,3 +19,7 @@
 @bin bin/rlpdump
 @bin bin/swarm
 @bin bin/wnode
+@comment share/doc/pkg-readmes/${PKGSTEM}
+share/geth/
+share/geth/geth.conf
+@sample ${SYSCONFDIR}/geth.conf
