@@ -1,7 +1,0 @@
-@comment $OpenBSD: PLIST,v$
-@bin bin/lxqt-sudo
-bin/lxsu
-bin/lxsudo
-@man man/man1/lxqt-sudo.1
-@man man/man1/lxsu.1
-@man man/man1/lxsudo.1

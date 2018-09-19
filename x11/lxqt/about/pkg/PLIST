@@ -1,4 +1,0 @@
-@comment $OpenBSD: PLIST,v$
-@bin bin/lxqt-about
-share/applications/lxqt-about.desktop
-@tag update-desktop-database
