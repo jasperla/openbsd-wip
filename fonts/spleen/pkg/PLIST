@@ -1,9 +1,0 @@
-@comment $OpenBSD: PLIST,v$
-share/fonts/
-@fontdir share/fonts/spleen/
-share/fonts/spleen/fonts.alias-spleen
-share/fonts/spleen/spleen-12x24.pcf.gz
-share/fonts/spleen/spleen-16x32.pcf.gz
-share/fonts/spleen/spleen-32x64.pcf.gz
-share/fonts/spleen/spleen-5x8.pcf.gz
-share/fonts/spleen/spleen-8x16.pcf.gz
