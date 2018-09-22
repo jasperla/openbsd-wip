@@ -1,0 +1,19 @@
+$OpenBSD: patch-cmake_CMakeLists_txt,v 1.1.1.1 2017/07/17 21:06:37 zhuk Exp $
+Skip installing files we already have in either CMake base
+installation or somewhere else.
+Index: cmake/CMakeLists.txt
+--- cmake/CMakeLists.txt.orig
++++ cmake/CMakeLists.txt
+@@ -1,12 +1,9 @@
+ install(FILES cmake_uninstall.cmake.in
+               COPYING-CMAKE-SCRIPTS
+-              FindPackageHandleStandardArgs.cmake
+               FindPhononInternal.cmake
+               MacroEnsureVersion.cmake
+               MacroLogFeature.cmake
+               MacroOptionalFindPackage.cmake
+-              MacroPushRequiredVars.cmake
+               PhononMacros.cmake
+               PhononQt4.cmake
+-              PhononQt5.cmake
+         DESTINATION ${BUILDSYSTEM_INSTALL_DIR})
