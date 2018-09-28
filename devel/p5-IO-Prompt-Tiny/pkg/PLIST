@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v$
+${P5SITE}/IO/
+${P5SITE}/IO/Prompt/
+${P5SITE}/IO/Prompt/Tiny.pm
+@man man/man3p/IO::Prompt::Tiny.3p
