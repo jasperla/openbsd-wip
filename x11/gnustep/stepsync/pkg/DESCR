@@ -1,0 +1,11 @@
+StepSync allows keeping two folders synchronized, it can be thus used as
+a back-up utility.
+
+StepSync manages two trees, starting from a folder as root and recursing
+in them.
+
+StepSync first allows a comparison of source and destination trees.
+StepSync determines which files were added or removed or changed (based
+on last modification date) as well as addition or deletion of folders.
+Then it allows, distinctly, to insert new files, to update or delete. It
+allows also to apply changes from target to source.

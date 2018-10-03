@@ -1,0 +1,12 @@
+@comment $OpenBSD: PLIST,v$
+bin/StepSync
+libexec/GNUstep/StepSync.app/
+libexec/GNUstep/StepSync.app/Resources/
+libexec/GNUstep/StepSync.app/Resources/Info-gnustep.plist
+libexec/GNUstep/StepSync.app/Resources/MainMenu.gorm/
+libexec/GNUstep/StepSync.app/Resources/MainMenu.gorm/data.classes
+libexec/GNUstep/StepSync.app/Resources/MainMenu.gorm/data.info
+libexec/GNUstep/StepSync.app/Resources/MainMenu.gorm/objects.gorm
+libexec/GNUstep/StepSync.app/Resources/StepSync.desktop
+@bin libexec/GNUstep/StepSync.app/StepSync
+libexec/GNUstep/StepSync.app/stamp.make

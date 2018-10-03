@@ -70,3 +70,4 @@ emulators/dolphin			imported 2018-07-22 (thfr)
 audio/abcde				imported 2018-08-31
 audio/p5-MusicBrainz-DiscID		imported 2018-08-29
 www/p5-Starlet				imported 2018-09-07 
+x11/gnustep/stepsync			read to import (bcallah; do it after 6.4)
