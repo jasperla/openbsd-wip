@@ -1,6 +1,7 @@
-@comment $OpenBSD$
+@comment $OpenBSD: PLIST,v$
 bin/xash3d
+lib/xash3d/
 lib/xash3d/libxashmenu.so
 @bin lib/xash3d/xash3d
-share/doc/pkg-readmes/${FULLPKGNAME}
+share/doc/pkg-readmes/${PKGSTEM}
 share/xash3d/
