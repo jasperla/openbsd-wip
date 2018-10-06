@@ -2,9 +2,15 @@
 
 COMMENT=	compact disk input and control library
 
-DISTNAME=	libcdio-2.0.0
+# # XXX speculating the version number of the next release
+DISTNAME=	libcdio-2.1.0
 CATEGORIES=	audio devel
-MASTER_SITES=	${MASTER_SITE_GNU:=libcdio/}
+# XXX I'm fetching from my fork with a ton of fixes and where I've merged
+# ${FILESDIR}/openbsd.c into upstream's NetBSD driver.
+#MASTER_SITES=	${MASTER_SITE_GNU:=libcdio/}
+GH_ACCOUNT =	vext01
+GH_PROJECT = 	libcdio
+GH_COMMIT =	e2f3919357b76d9fadb3d57f20d2b1e8198f32d1
 
 SHARED_LIBS=	cdio		1.0 \
 		cdio++		1.0 \
@@ -26,7 +32,18 @@ LIB_DEPENDS=	audio/libcddb \
 USE_GMAKE=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--disable-vcd-info
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+#CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+#		LDFLAGS="-L${LOCALBASE}/lib"
+
+
+# XXX won't need autoconf for the final release
+BUILD_DEPENDS +=	${MODGNU_AUTOCONF_DEPENDS} \
+			${MODGNU_AUTOMAKE_DEPENDS}
+CONFIGURE_ARGS +=	--enable-maintainer-mode
+AUTOCONF_VERSION =	2.69
+AUTOMAKE_VERSION =	1.15
+
+pre-configure:
+	cd ${WRKSRC} && ${AUTOCONF_ENV} autoreconf --force --install
 
 .include <bsd.port.mk>
