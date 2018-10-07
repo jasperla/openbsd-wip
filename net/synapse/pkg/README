@@ -5,6 +5,7 @@ doas -u _synapse python2 -m synapse.app.homeserver \
 	--generate-keys --keys-directory /var/synapse
 
 Register a user:
+# XXX should it be http://localhost:8448 or http://localhost:8008 ?
 doas -u _synapse register_new_matrix_user -c /var/synapse/homeserver.yaml  http://localhost:8448 
 
 Nginx vhost:
