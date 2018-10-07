@@ -1,0 +1,10 @@
+This project provides AngularJS services for implementing the `Client-Server API`_
+on Matrix_ : an open standard for interoperable Instant Messaging and VoIP. It 
+comes shipped with Synapse_ : a home server reference implementation.
+
+This project also provides a complete, stand-alone client which can communicate 
+with Matrix home servers using a web browser.
+
+The Synapse_ homeserver ships the latest stable version of this library.  If you
+wish it to serve up a development copy instead, then you must configure this
+checkout to be picked up by synapse::

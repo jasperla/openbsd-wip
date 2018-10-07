@@ -1,0 +1,9 @@
+Matrix specifies a set of pragmatic RESTful HTTP JSON APIs as an open standard, which handle:
+
+* Creating and managing fully distributed chat rooms with no single points of control or failure
+* Eventually-consistent cryptographically secure synchronisation of room state across a global open network of federated servers and services
+* Sending and receiving extensible messages in a room with (optional) end-to-end encryption[1]
+* Inviting, joining, leaving, kicking, banning room members
+* Managing user accounts (registration, login, logout)
+* Using 3rd Party IDs (3PIDs) such as email addresses, phone numbers, Facebook accounts to authenticate, identify and discover users on Matrix.
+* Placing 1:1 VoIP and Video calls

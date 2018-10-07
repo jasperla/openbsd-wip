@@ -1,1 +1,3 @@
-An immutable dictionary
+frozendict is an immutable wrapper around dictionaries that implements the
+complete mapping interface. It can be used as a drop-in replacement for
+dictionaries where immutability is desired.
