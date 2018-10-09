@@ -70,6 +70,7 @@ emulators/dolphin			imported 2018-07-22 (thfr)
 audio/abcde				imported 2018-08-31
 audio/p5-MusicBrainz-DiscID		imported 2018-08-29
 www/p5-Starlet				imported 2018-09-07 
-x11/gnustep/stepsync			ready to import (bcallah; do it after 6.4)
-devel/py-parallel			ready to import (bcallah; do it after 6.4)
-lang/pcbasic				ready to import (bcallah; do it after 6.4)
+x11/gnustep/stepsync			ready to import (bcallah; after 6.4)
+devel/py-parallel			ready to import (bcallah; after 6.4)
+lang/pcbasic				ready to import (bcallah; after 6.4)
+audio/parlatype				ready to import (bcallah; after 6.4)
