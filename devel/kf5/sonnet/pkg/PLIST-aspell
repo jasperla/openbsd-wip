@@ -1,0 +1,2 @@
+@comment $OpenBSD: PLIST-aspell,v 1.2 2018/02/12 19:35:37 rsadowski Exp $
+lib/qt5/plugins/kf5/sonnet/sonnet_aspell.so
