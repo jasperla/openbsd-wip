@@ -1,0 +1,27 @@
+@comment $OpenBSD: PLIST,v$
+@bin bin/converseen
+share/appdata/
+share/appdata/converseen.appdata.xml
+share/applications/
+share/applications/converseen.desktop
+share/converseen/
+share/converseen/loc/
+share/converseen/loc/converseen_cs_CZ.qm
+share/converseen/loc/converseen_da_DK.qm
+share/converseen/loc/converseen_de_DE.qm
+share/converseen/loc/converseen_es_CL.qm
+share/converseen/loc/converseen_fr_FR.qm
+share/converseen/loc/converseen_hu_HU.qm
+share/converseen/loc/converseen_it_IT.qm
+share/converseen/loc/converseen_ja_JP.qm
+share/converseen/loc/converseen_pl_PL.qm
+share/converseen/loc/converseen_pt_BR.qm
+share/converseen/loc/converseen_ru_RU.qm
+share/converseen/loc/converseen_tr_TR.qm
+share/converseen/loc/converseen_uk_UA.qm
+share/kservices5/
+share/kservices5/ServiceMenus/
+share/kservices5/ServiceMenus/converseen_import.desktop
+share/pixmaps/
+share/pixmaps/converseen.png
+@tag update-desktop-database
