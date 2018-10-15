@@ -2,8 +2,10 @@
 
 COMMENT =	CUPS printer driver for some Brother laser printers
 
-V =		3
-DISTNAME =	brlaser-${V}
+V =		4
+DISTNAME =	v${V}
+DIST_SUBDIR = 	brlaser
+PKGNAME =	brlaser-${V}
 
 CATEGORIES =	print
 
@@ -14,15 +16,12 @@ PERMIT_PACKAGE_CDROM = Yes
 
 WANTLIB +=	${COMPILER_LIBCXX} c cupsimage iconv
 
-MASTER_SITES =	${HOMEPAGE}/releases/download/v$V/
+MASTER_SITES =	${HOMEPAGE}/archive/
+
+MODULES =	devel/cmake
 
 LIB_DEPENDS =	print/cups,-libs
 
-CONFIGURE_ENV += LDFLAGS="-L${LOCALBASE}/lib -lpthread"
-
-COMPILER =	base-clang ports-gcc
-
-CONFIGURE_STYLE = autoconf
-AUTOCONF_VERSION = 2.69
+WRKDIST =	${WRKDIR}/${PKGNAME}
 
 .include <bsd.port.mk>
