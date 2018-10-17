@@ -14,6 +14,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} c m z
 
+# When binutils-2.32 is released, switch MASTER_SITES
 #MASTER_SITES =	${MASTER_SITE_GNU:=binutils/}
 MASTER_SITES =	https://mirrors.nycbug.org/pub/distfiles/
 

@@ -1,0 +1,19 @@
+$OpenBSD$
+
+gold doesn't support -nopie (yet), give a clear error message about it.
+
+Index: gold/output.cc
+--- gold/output.cc.orig
++++ gold/output.cc
+@@ -4771,7 +4771,10 @@ Output_segment::set_offset(unsigned int increase)
+ 	  this->memsz_ = segment_end - this->vaddr_;
+ 	}
+       else
+-	gold_assert(segment_end == align_address(segment_end, page_align));
++	{
++	  if ((segment_end != align_address(segment_end, page_align)))
++	    gold_fatal(_("-nopie unsupported by gold"));
++	}
+     }
+ 
+   // If this is a TLS segment, align the memory size.  The code in
