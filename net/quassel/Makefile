@@ -99,7 +99,9 @@ SEPARATE_BUILD =	Yes
 # XXX not using WITH_WEBENGINE because x11/qt5/qtwebengine is not available yet.
 CONFIGURE_ARGS +=	-DGIT_EXECUTABLE="" \
 			-DUSE_QT5:Bool=on \
-			-DWITH_KDE:Bool=on
+			-DWITH_KDE:Bool=on \
+			-DWITH_WEBKIT:Bool=off \
+			-DWITH_WEBENGINE:Bool=off
 
 NO_TEST =		Yes
 
