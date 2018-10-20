@@ -45,7 +45,8 @@ MULTI_PACKAGES =	-main -client -common -core
 
 MODULES =		devel/cmake multimedia/phonon x11/qt5
 
-BUILD_DEPENDS +=	devel/kf5/extra-cmake-modules
+BUILD_DEPENDS +=	devel/gettext-tools \
+			devel/kf5/extra-cmake-modules
 
 RUN_DEPENDS-main =	${MODPHONON_RUN_DEPENDS} \
 			devel/desktop-file-utils \
