@@ -14,21 +14,15 @@ DISTNAME =		texlive-${DIST_V}-texmf
 MASTER_SITES0 =		https://spacehopper.org/mirrors/ \
 			http://theunixzoo.co.uk/distfiles/
 DISTFILES =		${DISTNAME}${EXTRACT_SUFX} \
-			texlive-${DIST_V}-extra${EXTRACT_SUFX}
-#texlive2017.tlpdb.gz:0
-#texmf-var-pregen-${V}${EXTRACT_SUFX}:0 \
+			texlive-${DIST_V}-extra${EXTRACT_SUFX} \
+			texlive-${DIST_V}-tlpdb-full.tar.gz \
+			texmf-var-pregen-${V}${EXTRACT_SUFX}:0 \
 
 PKGNAME-main =		texlive_texmf-minimal-${V}
 PKGNAME-full =		texlive_texmf-full-${V}
 PKGNAME-docs =		texlive_texmf-docs-${V}
 PKGNAME-context =	texlive_texmf-context-${V}
 PKGNAME-buildset =	texlive_texmf-buildset-${V}
-
-REVISION-main =		1
-REVISION-full =		1
-REVISION-buildset =	1
-REVISION-context =	0
-REVISION-docs =		0
 
 NO_BUILD =		Yes
 NO_TEST =		Yes
@@ -129,16 +123,17 @@ do-install:
 
 	# plug in my pregenerated map and formats
 	#
-	# These are created (as root) with:
+	# To make these, first check you are all hashed (all commands as root):
+	#   mktexlsr
+	#   mtxrun --generate
+	#
+	# Then create the necessary files with:
 	#   updmap-sys
 	#   fmtutil-sys --all
 	#   context --make
 	#
-	# Make sure you hashed the tree before running the above commands:
-	#   mktexlsr
-	#   mtxrun --generate
-	#mv ${WRKDIR}/texmf-var ${PREFIX}/share
-	# XXX
+	# Then you can tar them up and host them as the pregen tarball.
+	mv ${WRKDIR}/texmf-var ${PREFIX}/share
 
 	# Put manuals in the right place.
 	#
@@ -152,8 +147,7 @@ do-install:
 	mv ${PREFIX}/share/texmf-dist/doc/man/man5/*.5 ${PREFIX}/man/man5/
 
 	# Info pages
-	mv ${PREFIX}/share/texmf-dist/doc/info/*.info \
-		${PREFIX}/info/
+	mv ${PREFIX}/share/texmf-dist/doc/info/*.info ${PREFIX}/info/
 
 	# adjust permissions
 	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/{share/texmf*,man/man*/*,info/*}
@@ -169,7 +163,7 @@ update-plist: plist
 plist: fake
 	env WRKINST=${WRKINST} TRUEPREFIX=${TRUEPREFIX} ${MODPY_BIN} \
 		${FILESDIR}/update_plist_hints.py \
-		${DISTDIR}/texlive2017.tlpdb.gz | \
+		${WRKDIR}/texlive.tlpdb | \
 		${MODPY_BIN} ${FILESDIR}/write_plists.py
 
 # regenerate adj.mk

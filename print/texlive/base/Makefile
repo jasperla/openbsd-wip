@@ -39,7 +39,8 @@ RUN_DEPENDS-main =	print/ghostscript/gnu \
 			print/ps2eps \
 			print/psutils \
 			print/t1utils \
-			texlive_texmf-buildset-${V}:print/texlive/texmf,-buildset
+			texlive_texmf-buildset-${V}:print/texlive/texmf,-buildset \
+			devel/desktop-file-utils
 
 LIB_DEPENDS-main =	converters/libiconv \
 			graphics/png \
