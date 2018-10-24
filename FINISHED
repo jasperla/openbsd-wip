@@ -79,3 +79,6 @@ math/bcal				ready to import (bcallah; after 6.4)
 devel/pony-stable			ready to import (bcallah; after 6.4)
 graphics/converseen			ready to import (bcallah; after 6.4)
 devel/p5-IO-Pipely			imported 2018-10-24
+devel/p5-IO-Prompt-Tiny			imported 2018-10-24
+devel/p5-MooseX-InsideOut		imported 2018-10-24
+devel/p5-POE-Component-Pluggable	imported 2018-10-24

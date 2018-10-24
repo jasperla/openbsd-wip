@@ -1,9 +1,0 @@
-@comment $OpenBSD: PLIST,v$
-${P5SITE}/MooseX/
-${P5SITE}/MooseX/InsideOut/
-${P5SITE}/MooseX/InsideOut.pm
-${P5SITE}/MooseX/InsideOut/Role/
-${P5SITE}/MooseX/InsideOut/Role/Meta/
-${P5SITE}/MooseX/InsideOut/Role/Meta/Instance.pm
-@man man/man3p/MooseX::InsideOut.3p
-@man man/man3p/MooseX::InsideOut::Role::Meta::Instance.3p
