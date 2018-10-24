@@ -78,3 +78,4 @@ lang/flang/f18				ready to import (bcallah; after 6.4)
 math/bcal				ready to import (bcallah; after 6.4)
 devel/pony-stable			ready to import (bcallah; after 6.4)
 graphics/converseen			ready to import (bcallah; after 6.4)
+devel/p5-IO-Pipely			imported 2018-10-24
