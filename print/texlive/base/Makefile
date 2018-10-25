@@ -77,6 +77,7 @@ CONFIGURE_ENV +=	TL_MAKE=${GMAKE} \
 WRKBUILD =              ${WRKSRC}/Work
 CONFIGURE_SCRIPT =      ../configure
 MAKE_ENV =		${CONFIGURE_ENV}
+TEST_TARGET =		check
 
 USE_GMAKE =	Yes
 
