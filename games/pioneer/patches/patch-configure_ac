@@ -1,6 +1,7 @@
 $OpenBSD$
---- configure.ac.orig	Sun Aug  3 13:36:38 2014
-+++ configure.ac	Sat Aug  9 09:00:53 2014
+Index: configure.ac
+--- configure.ac.orig
++++ configure.ac
 @@ -59,9 +59,6 @@ AC_PROG_STRIP
  
  #AC_PROG_LIBTOOL
@@ -11,7 +12,7 @@ $OpenBSD$
  dnl ###########################################################################
  dnl Flags and options
  dnl ###########################################################################
-@@ -124,11 +121,6 @@ esac
+@@ -138,11 +135,6 @@ esac
  
  dnl Always add -Wall, where supported
  PIONEER_WARN_C_CXX_FLAG([-Wall])

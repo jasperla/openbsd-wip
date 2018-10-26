@@ -1,48 +1,54 @@
 # $OpenBSD: Makefile.template,v 1.71 2014/07/10 12:33:17 sthen Exp $
 
-COMMENT =		game of lonely space and adventure
+ONLY_FOR_ARCHS =	${LE_ARCHS}
 
-V =			20151102
-DISTNAME =		pioneer-0.$V
+COMMENT =		game of lonely space and adventure
 
 CATEGORIES =		games
 
-HOMEPAGE =		http://pioneerspacesim.net/
+HOMEPAGE =		https://pioneerspacesim.net/
 
 # GPLv3 only
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += GL SDL2 SDL2_image assimp c curl freetype m png pthread
+WANTLIB += ${COMPILER_LIBCXX}
+WANTLIB += GL SDL2 SDL2_image assimp c freetype m png pthread
 WANTLIB += sigc-2.0 vorbisfile z
 
 GH_ACCOUNT =		pioneerspacesim
 GH_PROJECT =		pioneer
-GH_TAGNAME =		${V}
+GH_TAGNAME =		20180203
 
-MODULES =		gcc4
-MODGCC4_LANGS =		c c++
-MODGCC4_ARCHS =		*
+COMPILER =		base-clang ports-gcc
 BUILD_DEPENDS =		${MODGNU_AUTOCONF_DEPENDS} \
 			${MODGNU_AUTOMAKE_DEPENDS}
 LIB_DEPENDS =		audio/libvorbis \
 			devel/libsigc++-2 \
 			devel/sdl2-image \
-			multimedia/assimp \
-			net/curl
+			multimedia/assimp
 
 USE_GMAKE =		Yes
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS +=	--with-no-optimise
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
-			PIONEER_DATA_DIR=${PREFIX}/share/pioneer/ \
-			OPTIMIZE=
+			PIONEER_DATA_DIR=${PREFIX}/share/pioneer/
+
+MAKE_FLAGS =		V=1
 
 AUTOCONF_VERSION =	2.69
-AUTOMAKE_VERSION =	1.11
+AUTOMAKE_VERSION =	1.15
 
 pre-configure:
-	cd ${WRKSRC} && env AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} sh bootstrap
+	cd ${WRKSRC} && env \
+		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
+		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
+		sh bootstrap
+
+post-extract:
+# disable profiler to unbreak build on !x86
+	sed -i -e '/^SUBDIRS/s/ profiler//' ${WRKSRC}/contrib/Makefile.am
+	sed -i -e '/libprofiler.a/d; $$!N; /libprofiler.a$$/s| \\||; P; D' \
+		${WRKSRC}/src/Makefile.am
+	sed -i -e '/contrib\/profiler/d' ${WRKSRC}/configure.ac
 
 .include <bsd.port.mk>
