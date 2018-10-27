@@ -166,7 +166,6 @@ post-test:
 	cd ${WRKBUILD}/test; ./run.py
 
 pre-test: fake
-	@echo GOPATH=${WRKINST}${PREFIX}/go-pkg:${GOPATH}
 	cd ${WRKBUILD}; ln -shf ${WRKINST}${GOPATH} go
 
 .include <bsd.port.mk>
