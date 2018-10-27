@@ -4,13 +4,13 @@ V =			1.5
 DISTNAME =		unit-${V}
 
 COMMENT-main =		dynamic web and application server
-COMMENT-go =		Golang support
-COMMENT-php71 =		PHP 7.1 support
-COMMENT-php72 =		PHP 7.2 support
-COMMENT-python27 =	Python 2.7 support
-COMMENT-python36 =	Python 3.6 support
-COMMENT-ruby24 =	Ruby 2.4 support
-COMMENT-ruby25 =	Ruby 2.5 support
+COMMENT-go =		Golang support for nGinx Unit
+COMMENT-php71 =		PHP 7.1 support for nGinx Unit
+COMMENT-php72 =		PHP 7.2 support for nGinx Unit
+COMMENT-python27 =	Python 2.7 support for nGinx Unit
+COMMENT-python36 =	Python 3.6 support for nGinx Unit
+COMMENT-ruby24 =	Ruby 2.4 support for nGinx Unit
+COMMENT-ruby25 =	Ruby 2.5 support for nGinx Unit
 
 PKGNAME-main =		${DISTNAME}
 PKGNAME-go =		unit-go-${V}

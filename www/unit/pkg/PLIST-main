@@ -4,7 +4,7 @@ lib/unit/modules/
 lib/unit/modules/perl.unit.so
 @bin sbin/unitd
 @cwd ${LOCALSTATEDIR}
+@mode 0700
 @owner www
 @group www
-@mode 0700
 unit/
