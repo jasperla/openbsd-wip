@@ -118,6 +118,7 @@ CONFIGURE-ruby25 =	ruby --ruby=ruby25
 
 TEST_TARGET =		tests
 TEST_DEPENDS =		lang/python/3.6
+TEST_ENV =		GOPATH=${WRKINST}${PREFIX}/go-pkg:${GOPATH}
 UNIT_MODULES =		perl.unit.so
 
 .if ${BUILD_PACKAGES:M-go}
@@ -163,5 +164,9 @@ post-configure:
 
 post-test:
 	cd ${WRKBUILD}/test; ./run.py
+
+pre-test: fake
+	@echo GOPATH=${WRKINST}${PREFIX}/go-pkg:${GOPATH}
+	cd ${WRKBUILD}; ln -shf ${WRKINST}${GOPATH} go
 
 .include <bsd.port.mk>
