@@ -3,4 +3,4 @@ in multiple languages. Unit is lightweigth, polyglot, and dynamically configure
 via API. The design of the server allows reconfiguration of specific
 application parameters as needed by the engineering or operations.
 
-This package contains Unit itself and support for Go, Node.JS and Perl.
+This package contains support for Ruby 2.3 applications.

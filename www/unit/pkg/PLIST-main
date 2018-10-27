@@ -1,3 +1,10 @@
-@comment $OpenBSD: PLIST,v$
-lib/libnxt.a
+@comment $OpenBSD: PLIST-main,v$
+lib/unit/
+lib/unit/modules/
+lib/unit/modules/perl.unit.so
 @bin sbin/unitd
+@cwd ${LOCALSTATEDIR}
+@owner www
+@group www
+@mode 0700
+unit/

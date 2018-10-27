@@ -1,0 +1,2 @@
+@comment $OpenBSD: PLIST-php72,v$
+lib/unit/modules/php72.unit.so

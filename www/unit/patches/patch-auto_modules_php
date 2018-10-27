@@ -1,0 +1,16 @@
+$OpenBSD$
+Unbreak build of PHP modules, due to symbols exported by Apache itself.
+
+Index: auto/modules/php
+--- auto/modules/php.orig
++++ auto/modules/php
+@@ -101,6 +101,9 @@ if /bin/sh -c "${NXT_PHP_CONFIG} --version" >> $NXT_AU
+         fi
+     fi
+ 
++    # allow linking to succeed when -z defs is on
++    NXT_PHP_LDFLAGS="${NXT_PHP_LDFLAGS}${NXT_PHP_LDFLAGS:+ }--shared"
++
+     nxt_feature="PHP embed SAPI"
+     nxt_feature_name=""
+     nxt_feature_run=no

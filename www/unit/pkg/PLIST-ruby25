@@ -1,0 +1,2 @@
+@comment $OpenBSD: PLIST-ruby25,v$
+lib/unit/modules/ruby25.unit.so
