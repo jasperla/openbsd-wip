@@ -143,7 +143,6 @@ UNIT_MODULES +=		python3.6.unit.so
 .endif
 .if ${BUILD_PACKAGES:M-ruby23}
 BUILD_DEPENDS +=	lang/ruby/2.3
-TEST_DEPENDS +=		www/ruby-rack,ruby23
 UNIT_MODULES +=		ruby23.unit.so
 .endif
 .if ${BUILD_PACKAGES:M-ruby24}
