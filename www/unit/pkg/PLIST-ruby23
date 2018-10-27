@@ -1,2 +1,0 @@
-@comment $OpenBSD: PLIST-ruby23,v$
-lib/unit/modules/ruby23.unit.so
