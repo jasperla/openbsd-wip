@@ -1,3 +1,0 @@
-This Perl module is a minimal subset of Net::IP with no dependencies.
-
-It can verify and guess valid IPv4/6 addresses.

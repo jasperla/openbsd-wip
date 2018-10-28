@@ -1,3 +1,0 @@
-This module converts warnings to Test::More fail() calls. It is
-designed to be used with done_testing, when you don't need to know
-the test count in advance.
