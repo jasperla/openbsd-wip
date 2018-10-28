@@ -100,8 +100,8 @@ SEPARATE_BUILD =	Yes
 CONFIGURE_ARGS +=	-DGIT_EXECUTABLE="" \
 			-DUSE_QT5:Bool=on \
 			-DWITH_KDE:Bool=on \
-			-DWITH_WEBKIT:Bool=off \
-			-DWITH_WEBENGINE:Bool=off
+			-DWITH_WEBENGINE:Bool=off \
+			-DWITH_WEBKIT:Bool=off
 
 NO_TEST =		Yes
 
