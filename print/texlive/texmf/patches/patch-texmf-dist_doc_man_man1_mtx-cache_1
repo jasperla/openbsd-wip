@@ -1,0 +1,13 @@
+$OpenBSD$
+
+Index: texmf-dist/doc/man/man1/mtx-cache.1
+--- texmf-dist/doc/man/man1/mtx-cache.1.orig
++++ texmf-dist/doc/man/man1/mtx-cache.1
+@@ -1,6 +1,6 @@
+ .TH "mtx-cache" "1" "01-01-2018" "version 0.10" "ConTeXt & MetaTeX Cache Management"
+ .SH NAME
+-.B mtx-cache
++mtx-cache \(en ConTeXt & MetaTeX Cache Management
+ .SH SYNOPSIS
+ .B mtxrun --script cache [
+ .I OPTIONS ...
