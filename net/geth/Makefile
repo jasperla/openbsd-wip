@@ -1,7 +1,7 @@
 # $OpenBSD$
 
 COMMENT =	go implementation of the ethereum protocol
-V =		1.8.15
+V =		1.8.17
 PKGNAME =	geth-$V
 GH_ACCOUNT =	ethereum
 GH_PROJECT =	go-ethereum
@@ -13,7 +13,7 @@ MAINTAINER =	Fabian Raetz <fabian.raetz@gmail.com>
 
 WANTLIB += 	c pthread
 
-# MIT
+# LGPL-3.0
 PERMIT_PACKAGE_CDROM = Yes
 
 MODULES =	lang/go
