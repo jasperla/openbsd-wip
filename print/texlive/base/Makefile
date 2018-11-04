@@ -81,8 +81,10 @@ TEST_TARGET =		check
 
 USE_GMAKE =	Yes
 
-.if ${MACHINE_ARCH} == "sparc64"
+.if ${MACHINE_ARCH} == "sparc64" || ${MACHINE_ARCH} == "powerpc"
 CFLAGS +=	-fPIC
+# somehow base libtool misses -lpng while linking xetex
+USE_LIBTOOL =	gnu
 .endif
 
 # clisp limits which arches we can use xindy on
