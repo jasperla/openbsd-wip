@@ -1,0 +1,11 @@
+@comment $OpenBSD: PLIST,v$
+@bin bin/polybar
+@bin bin/polybar-msg
+@man man/man1/polybar.1
+share/bash-completion/completions/polybar
+share/doc/polybar/
+share/doc/polybar/config
+share/examples/polybar/
+share/examples/polybar/config
+share/zsh/site-functions/_polybar
+share/zsh/site-functions/_polybar_msg

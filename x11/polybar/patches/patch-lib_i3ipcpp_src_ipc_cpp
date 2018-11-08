@@ -1,0 +1,16 @@
+$OpenBSD$
+
+Find the jsoncpp headers.
+
+Index: lib/i3ipcpp/src/ipc.cpp
+--- lib/i3ipcpp/src/ipc.cpp.orig
++++ lib/i3ipcpp/src/ipc.cpp
+@@ -3,7 +3,7 @@
+ #include <stdexcept>
+ #include <iostream>
+ 
+-#include <json/json.h>
++#include <jsoncpp/json/json.h>
+ #include <auss.hpp>
+ 
+ #include "i3ipc++/ipc-util.hpp"

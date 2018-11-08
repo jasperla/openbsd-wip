@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v$
+share/fonts/
+@fontdir share/fonts/Unifont/
+share/fonts/Unifont/Unifont.ttf

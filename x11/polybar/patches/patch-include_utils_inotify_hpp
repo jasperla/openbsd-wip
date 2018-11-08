@@ -1,0 +1,16 @@
+$OpenBSD$
+
+Find the inotify headers.
+
+Index: include/utils/inotify.hpp
+--- include/utils/inotify.hpp.orig
++++ include/utils/inotify.hpp
+@@ -1,7 +1,7 @@
+ #pragma once
+ 
+ #include <poll.h>
+-#include <sys/inotify.h>
++#include <inotify/sys/inotify.h>
+ #include <cstdio>
+ 
+ #include "common.hpp"

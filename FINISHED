@@ -66,23 +66,10 @@ math/openblas				ready to import (bcallah)
 games/xash3d				sent to ports@ 2018-05-05 (rfreeman)
 devel/py-progressbar2			sent to ports@ 2018-06-04
 devel/py-python_utils			sent to ports@ 2018-06-04
-emulators/dolphin			imported 2018-07-22 (thfr)
-audio/abcde				imported 2018-08-31
-audio/p5-MusicBrainz-DiscID		imported 2018-08-29
-www/p5-Starlet				imported 2018-09-07 
 x11/gnustep/stepsync			ready to import (bcallah; after 6.4)
-devel/py-parallel			ready to import (bcallah; after 6.4)
-lang/pcbasic				ready to import (bcallah; after 6.4)
 audio/parlatype				ready to import (bcallah; after 6.4)
 lang/flang/f18				ready to import (bcallah; after 6.4)
-math/bcal				ready to import (bcallah; after 6.4)
-devel/pony-stable			ready to import (bcallah; after 6.4)
 graphics/converseen			ready to import (bcallah; after 6.4)
-devel/p5-IO-Pipely			imported 2018-10-24
-devel/p5-IO-Prompt-Tiny			imported 2018-10-24
-devel/p5-MooseX-InsideOut		imported 2018-10-24
-devel/p5-POE-Component-Pluggable	imported 2018-10-24
-devel/p5-POE-Test-Loops			imported 2018-10-28
-devel/p5-Test-FailWarnings		imported 2018-10-28
-net/p5-Net-IP-Minimal			imported 2018-10-28
-textproc/p5-POE-Filter-XML		imported 2018-10-28
+fonts/siji				ready to import (bcallah)
+fonts/unifont				ready to import (bcallah)
+x11/polybar				technically ready but lacks module support (bcallah)

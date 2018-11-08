@@ -1,0 +1,25 @@
+$OpenBSD$
+
+Remove -O2 and -Werror
+Add -Wno-c99-extensions to remove these harmless warnings.
+
+Index: cmake/01-core.cmake
+--- cmake/01-core.cmake.orig
++++ cmake/01-core.cmake
+@@ -21,15 +21,13 @@ string(TOUPPER ${CMAKE_BUILD_TYPE} CMAKE_BUILD_TYPE_UP
+ # Compiler flags
+ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall")
+ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wextra")
+-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Werror")
+ if (CMAKE_CXX_COMPILER_ID MATCHES "GNU")
+   # there's no way to modify the code to avoid this warning, so we must
+   # suppress it if we use -Werror
+   set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-noexcept-type")
+ endif()
+-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O2")
+ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pedantic")
+-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pedantic-errors")
++set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-c99-extensions")
+ 
+ if (CMAKE_SYSTEM_NAME STREQUAL "FreeBSD")
+   # Need dprintf() for FreeBSD 11.1 and older

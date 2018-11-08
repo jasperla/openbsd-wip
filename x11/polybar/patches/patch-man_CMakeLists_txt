@@ -1,0 +1,13 @@
+$OpenBSD$
+
+Install manual page properly.
+
+Index: man/CMakeLists.txt
+--- man/CMakeLists.txt.orig
++++ man/CMakeLists.txt
+@@ -1,4 +1,4 @@
+ set(MAN_PAGES_1 polybar.1)
+ INSTALL(FILES ${MAN_PAGES_1}
+-  DESTINATION ${CMAKE_INSTALL_PREFIX}/share/man/man1
++  DESTINATION ${CMAKE_INSTALL_PREFIX}/man/man1
+   COMPONENT doc)
