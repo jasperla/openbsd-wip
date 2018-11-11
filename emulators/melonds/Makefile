@@ -3,11 +3,11 @@
 COMMENT =	Nintendo DS emulator
 
 # http://melonds.kuribo64.net/downloads.php
-DISTNAME =	melonds-0.6b
+DISTNAME =	melonds-0.7
 
 GH_ACCOUNT =	StapleButter
 GH_PROJECT =	melonDS
-GH_COMMIT =	2e82a4f26ac99a1a93afdcb6bbfc4095d0933cc6
+GH_COMMIT =	d4d4965b2fffc69958685a25a9d9fc0c78b54567
 
 CATEGORIES =	emulators
 
