@@ -2,11 +2,11 @@
 
 COMMENT =	Game & Watch core for retroarch
 
-DISTNAME =	gw-libretro-1.6.2
+DISTNAME =	gw-libretro-1.6.3.1
 
 GH_ACCOUNT =	libretro
 GH_PROJECT =	gw-libretro
-GH_COMMIT =	6eacbdbb45172164ef09eec609a502fa17647323
+GH_COMMIT =	1046a6ba3f73cc7949ca68ae172712b2ffc9b6f1
 
 CATEGORIES =	emulators
 

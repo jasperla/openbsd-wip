@@ -1,0 +1,14 @@
+$OpenBSD: README.template,v 1.6 2018/09/04 13:40:26 ajacoutot Exp $
+
++-------------------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-------------------------------------------------------------------------------
+
+Obtaining Game & Watch Simulators
+=================================
+The simulator files emulated by this libretro core are available from
+the libretro buildbot site:
+
+https://buildbot.libretro.com/assets/cores/HandheldElectronicGame/
+
+They are typically licensed CC BY-NC-SA 4.0.

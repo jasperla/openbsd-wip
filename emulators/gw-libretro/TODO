@@ -1,10 +1,5 @@
-At least Armor Battle, Bomb Fight, Caccia al Ladro, Egg crash on startup.
-Wait a bit to see if upstream fixes the bug:
+gw-libretro-1.6.3 has a crash bug that has since been fixed:
 
 https://github.com/libretro/gw-libretro/issues/38
 
-Games that work for me include:
-Banana
-Baseball
-Engine Room
-Tron
+Should be ready for import when the next version is released.
