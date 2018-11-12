@@ -16,7 +16,7 @@ MASTER_SITES0 =		https://spacehopper.org/mirrors/ \
 DISTFILES =		${DISTNAME}${EXTRACT_SUFX} \
 			texlive-${DIST_V}-extra${EXTRACT_SUFX} \
 			texlive-${DIST_V}-tlpdb-full.tar.gz \
-			texmf-var-pregen-${V}${EXTRACT_SUFX}:0 \
+			texmf-var-pregen-${V}.0${EXTRACT_SUFX}:0 \
 
 PKGNAME-main =		texlive_texmf-minimal-${V}
 PKGNAME-full =		texlive_texmf-full-${V}
