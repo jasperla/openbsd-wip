@@ -1,1 +1,21 @@
-see http://git.osmocom.org/gr-osmosdr/tree/README for details
+gr-osmosdr is a GNU Radio block for interfacing with various radio hardware.
+While primarily being developed for the OsmoSDR hardware, this block also
+supports:
+
+ - FUNcube Dongle
+ - FUNcube Dongle Pro+
+ - sysmocom OsmoSDR Devices
+ - RTL2832U based DVB-T dongles
+ - RTL-TCP spectrum server
+ - MSi2500 based DVB-T dongles
+ - SDRplay RSP
+ - gnuradio .cfile input
+ - RFSPACE SDR-IQ, SDR-IP, NetSDR (incl. X2 option)
+ - AirSpy Wideband Receiver
+ - CCCamp 2015 rad1o Badge
+ - Great Scott Gadgets HackRF
+ - Nuand LLC bladeRF
+ - Ettus USRP Devices
+ - Fairwaves UmTRX
+ - Red Pitaya SDR transceiver
+ - FreeSRP
