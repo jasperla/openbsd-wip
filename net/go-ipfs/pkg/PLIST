@@ -1,6 +1,6 @@
 @comment $OpenBSD: PLIST,v$
-@newgroup _ipfs:819
-@newuser _ipfs:819:819:daemon:IPFS Account:${VARBASE}/empty:/bin/sh
+@newgroup _ipfs:823
+@newuser _ipfs:823:823:daemon:IPFS Account:${VARBASE}/empty:/bin/sh
 @rcscript ${RCDIR}/ipfs
 @mode 750
 @owner _ipfs
