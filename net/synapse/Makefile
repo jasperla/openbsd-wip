@@ -2,7 +2,7 @@
 
 COMMENT =	open network for secure, decentralized communication
 
-MODPY_EGG_VERSION =	0.33.7
+MODPY_EGG_VERSION =	0.33.9
 GH_ACCOUNT =	matrix-org
 GH_PROJECT =	synapse
 GH_TAGNAME =	v${MODPY_EGG_VERSION}
@@ -40,7 +40,6 @@ RUN_DEPENDS =	devel/py-asn1 \
 		sysutils/py-psutil \
 		telephony/py-phonenumbers \
 		textproc/py-canonicaljson \
-		textproc/py-denticon \
 		textproc/py-lxml \
 		textproc/py-signedjson \
 		textproc/py-unpaddedbase64 \
