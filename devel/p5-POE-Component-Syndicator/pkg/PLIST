@@ -1,3 +1,0 @@
-@comment $OpenBSD: PLIST,v$
-${P5SITE}/POE/Component/Syndicator.pm
-@man man/man3p/POE::Component::Syndicator.3p

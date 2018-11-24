@@ -1,2 +1,0 @@
-POE::Component::Resolver performs Socket::getaddrinfo() calls in
-subprocesses where they're permitted to block as long as necessary.
