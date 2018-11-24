@@ -24,7 +24,7 @@ RUN_DEPENDS =	textproc/py-lxml \
 		textproc/py-signedjson \
 		textproc/py-canonicaljson \
 		textproc/py-denticon \
-		textproc/py-phonenumbers \
+		telephony/py-phonenumbers \
 		devel/py-asn1 \
 		devel/py-blist \
 		devel/py-dateutil \
