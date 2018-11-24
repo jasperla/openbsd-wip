@@ -19,7 +19,6 @@ MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 MODPY_SETUPTOOLS =	Yes
 
 RUN_DEPENDS =	devel/py-asn1 \
-		devel/py-blist \
 		devel/py-dateutil \
 		devel/py-frozendict \
 		devel/py-future \
@@ -40,7 +39,6 @@ RUN_DEPENDS =	devel/py-asn1 \
 		sysutils/py-psutil \
 		telephony/py-phonenumbers \
 		textproc/py-canonicaljson \
-		textproc/py-lxml \
 		textproc/py-signedjson \
 		textproc/py-unpaddedbase64 \
 		textproc/py-yaml \
