@@ -2,7 +2,7 @@
 
 COMMENT =	global, versioned, peer-to-peer filesystem
 
-V =		0.4.17
+V =		0.4.18
 DISTNAME =	go-ipfs-source
 PKGNAME =	go-ipfs-$V
 

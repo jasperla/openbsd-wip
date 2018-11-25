@@ -1,8 +1,0 @@
-@comment $OpenBSD: PLIST,v$
-${P5SITE}/POE/
-${P5SITE}/POE/Component/
-${P5SITE}/POE/Component/Resolver/
-${P5SITE}/POE/Component/Resolver.pm
-${P5SITE}/POE/Component/Resolver/Sidecar.pm
-@man man/man3p/POE::Component::Resolver.3p
-@man man/man3p/POE::Component::Resolver::Sidecar.3p

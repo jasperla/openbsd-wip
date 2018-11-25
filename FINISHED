@@ -73,3 +73,17 @@ graphics/converseen			ready to import (bcallah; after 6.4)
 fonts/siji				ready to import (bcallah)
 fonts/unifont				ready to import (bcallah)
 x11/polybar				technically ready but lacks module support (bcallah)
+devel/p5-POE				sent to ports@
+net/p5-POE-Component-Resolver		sent to ports@
+devel/p5-POE-API-Peek			sent to ports@
+devel/p5-POE-Component-IKC		sent to ports@
+devel/p5-POE-Component-Syndicator	sent to ports@
+devel/p5-POE-Loop-Event			sent to ports@
+devel/p5-POE-Loop-Tk			sent to ports@
+net/p5-POE-Component-Client-DNS		sent to ports@
+net/p5-POE-Component-Client-Keepalive	sent to ports@
+devel/p5-MooseX-POE 0.213		sent to ports@
+security/p5-POE-Component-SSLify	sent to ports@
+net/p5-POE-Component-Client-HTTP	sent to ports@
+net/p5-POE-Component-IRC		sent to ports@
+net/p5-POE-Component-IRC-Plugin-RSS-Headlines	sent to ports@
