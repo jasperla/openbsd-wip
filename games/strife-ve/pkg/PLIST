@@ -1,6 +1,6 @@
 @comment $OpenBSD$
 @bin bin/strife-ve
-share/doc/pkg-readmes/${FULLPKGNAME}
+share/doc/pkg-readmes/${PKGSTEM}
 share/examples/strife-ve/
 share/examples/strife-ve/strife-music.cfg
 share/strife-ve/
