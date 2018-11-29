@@ -1,0 +1,52 @@
+$OpenBSD$
+
+Don't link with -ldl
+Be verbose when building libtcod.a
+
+Index: src/libtcod-1.5.2/Makefile
+--- src/libtcod-1.5.2/Makefile.orig
++++ src/libtcod-1.5.2/Makefile
+@@ -14,11 +14,11 @@ SDL_LIBS=`sdl-config --libs`
+ #OPENGL
+ OPENGL_LIB=-lGL
+ 
+-LIBS=$(ZLIB_LIBS) $(SDL_LIBS) $(OPENGL_LIB) -lm -ldl -lX11 -lpthread -lz
++LIBS=$(ZLIB_LIBS) $(SDL_LIBS) $(OPENGL_LIB) -lm -lX11 -lpthread -lz
+ 
+ CFLAGS=$(FLAGS) -I$(INCDIR) -I$(INCDIR)/gui -Wall $(SDL_FLAGS) -fPIC
+ TEMP=/tmp
+-CC=gcc
++CC?=gcc
+ CPP=g++
+ .SUFFIXES: a .o .h .c
+ 
+@@ -31,9 +31,8 @@ $(TEMP)/libtcod/release/%.o : $(SRCDIR)/%.cpp
+ $(TEMP)/libtcod/release/gui/%.o : $(SRCDIR)/gui/%.cpp
+ 	@ echo Compiling release $(basename $<).cpp
+ 	@$(CPP) $(CFLAGS) -O2 -DNDEBUG -s -o $@ -c $< 
+-$(TEMP)/libtcod/debug/%.o : $(SRCDIR)/%.c
+-	@echo Compiling debug $(basename $<).c
+-	@$(CC) $(CFLAGS) -g -o $@ -c $<
++%.o : $(SRCDIR)/%.c
++	$(CC) $(CFLAGS) -g -o $@ -c $<
+ $(TEMP)/libtcod/debug/%.o : $(SRCDIR)/%.cpp
+ 	@echo Compiling debug $(basename $<).cpp
+ 	@$(CPP) $(CFLAGS) -g -o $@ -c $< 
+@@ -71,7 +70,7 @@ LIBOBJS_C= \
+ 	wrappers.o \
+ 	zip_c.o \
+ 	namegen_c.o \
+-	png/lodepng.o
++	lodepng.o
+ 
+ LIBOBJS_CPP= \
+ 	bresenham.o \
+@@ -109,7 +108,7 @@ GUIOBJS= \
+ 	gui/widget.o
+ 
+ 
+-LIBOBJS_C_DEBUG=$(addprefix $(TEMP)/libtcod/debug/, $(LIBOBJS_C))
++LIBOBJS_C_DEBUG=$(LIBOBJS_C)
+ LIBOBJS_CPP_DEBUG=$(addprefix $(TEMP)/libtcod/debug/, $(LIBOBJS_CPP))
+ GUIOBJS_DEBUG=$(addprefix $(TEMP)/libtcod/debug/, $(GUIOBJS))
+ LIBOBJS_C_RELEASE=$(addprefix $(TEMP)/libtcod/release/, $(LIBOBJS_C))

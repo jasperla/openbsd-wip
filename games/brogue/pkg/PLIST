@@ -1,0 +1,21 @@
+@comment $OpenBSD: PLIST,v$
+@bin bin/brogue
+share/applications/brogue.desktop
+share/brogue/
+share/brogue/fonts/
+share/brogue/fonts/font-1.png
+share/brogue/fonts/font-10.png
+share/brogue/fonts/font-11.png
+share/brogue/fonts/font-12.png
+share/brogue/fonts/font-13.png
+share/brogue/fonts/font-2.png
+share/brogue/fonts/font-3.png
+share/brogue/fonts/font-4.png
+share/brogue/fonts/font-5.png
+share/brogue/fonts/font-6.png
+share/brogue/fonts/font-7.png
+share/brogue/fonts/font-8.png
+share/brogue/fonts/font-9.png
+share/pixmaps/
+share/pixmaps/brogue.png
+@tag update-desktop-database

@@ -1,0 +1,23 @@
+$OpenBSD$
+
+Make this work correctly.
+
+Index: brogue.desktop
+--- brogue.desktop.orig
++++ brogue.desktop
+@@ -1,11 +1,10 @@
+ [Desktop Entry]
+ Version=1.0
+ Type=Application
+-Name=Brogue 1.7.2
++Name=Brogue
+ GenericName=Roguelike
+ Comment=Brave the Dungeons of Doom!
+-Exec=/home/o/brogue-linux-1.7.2/brogue-1.7.2/brogue
+-Path=/home/o/brogue-linux-1.7.2/brogue-1.7.2
+-Icon=/home/o/brogue-linux-1.7.2/brogue-1.7.2/bin/brogue-icon.png
++Exec=brogue
++TryExec=brogue
++Icon=brogue
+ Terminal=false
+-

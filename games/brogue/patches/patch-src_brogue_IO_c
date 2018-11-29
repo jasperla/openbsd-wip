@@ -1,0 +1,15 @@
+$OpenBSD$
+
+Ensure there's a return value.
+
+Index: src/brogue/IO.c
+--- src/brogue/IO.c.orig
++++ src/brogue/IO.c
+@@ -390,6 +390,7 @@ short actionMenu(short x, boolean playingBack) {
+         }
+     } while (takeActionOurselves[buttonChosen]);
+     brogueAssert(false);
++    return 0;
+ }
+ 
+ #define MAX_MENU_BUTTON_COUNT 5
