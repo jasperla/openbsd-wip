@@ -19,7 +19,8 @@ WANTLIB += ${COMPILER_LIBCXX} c m z
 MASTER_SITES =	https://mirrors.nycbug.org/pub/distfiles/
 
 # There is a hidden dependency on C++11
-COMPILER =	base-clang ports-gcc
+# Prefer clang over gcc to get a gold linked with gold
+COMPILER =	base-clang ports-clang ports-gcc
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS +=	--disable-as \
@@ -39,13 +40,28 @@ CONFIGURE_ARGS +=	--disable-as \
 			--disable-readline \
 			--disable-libdecnumber
 
-# gold can link gold
-# uncomment after installation and rebuild if you want to try
-#CONFIGURE_ENV =		LDFLAGS="${LDFLAGS} -fuse-ld=gold"
-
 MAKE_FLAGS =	CXXFLAGS="${CXXFLAGS} -std=gnu++11 -Wno-narrowing"
 
 LIBTOOL_FLAGS =	--tag=disable-shared
+
+.include <bsd.port.arch.mk>
+
+# Link gold with gold, as a test to ensure it is working.
+# Do a three-way link, to make sure that gold linked with
+# gold is useful.
+# But only do this if using clang, because the -fuse-ld
+# option on gcc is too stupid to understand full paths.
+post-build:
+.if ${PROPERTIES:Mclang}
+	mv ${WRKSRC}/gold/ld-new ${WRKSRC}/gold/ld-first
+	cd ${WRKSRC}/gold && ${SETENV} \
+		${MAKE_PROGRAM} ${MAKE_FLAGS} \
+		LDFLAGS='${LDFLAGS} -fuse-ld=${WRKSRC}/gold/ld-first'
+	mv ${WRKSRC}/gold/ld-new ${WRKSRC}/gold/ld-second
+	cd ${WRKSRC}/gold && ${SETENV} \
+		${MAKE_PROGRAM} ${MAKE_FLAGS} \
+		LDFLAGS='${LDFLAGS} -fuse-ld=${WRKSRC}/gold/ld-second'
+.endif
 
 # It installs these other things but we only want gold (and dwp).
 post-install:
