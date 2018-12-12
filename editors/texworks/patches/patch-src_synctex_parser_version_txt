@@ -1,0 +1,12 @@
+$OpenBSD$
+
+Make texworks build against a newer synctex:
+https://github.com/TeXworks/texworks/commit/496cc1785f335f0eb4451005025fe11ae295d3e4
+
+Index: src/synctex_parser_version.txt
+--- src/synctex_parser_version.txt.orig
++++ src/synctex_parser_version.txt
+@@ -1 +1 @@
+-1.18
+\ No newline at end of file
++1.19
