@@ -21,7 +21,7 @@ File Descriptors
 ${PKGSTEM} needs a lot of file descriptors. You will need an entry like this in
 your login.conf(5):
 
-	go-ipfs:\
+	go_ipfs:\
 		:openfiles=2048:\
 		:tc=daemon:
 
@@ -32,4 +32,6 @@ Don't forget to rebuild the login.conf.db file (if necessary):
 Web Interface
 =============
 
-${PKGSTEM} serves up a web interface on port 5001.
+${PKGSTEM} serves up a web interface on:
+
+	 http://localhost:5001/webui/
