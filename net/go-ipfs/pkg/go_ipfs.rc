@@ -3,7 +3,7 @@
 # $OpenBSD$
 
 daemon="${TRUEPREFIX}/bin/ipfs"
-daemon_user="_ipfs"
+daemon_user="_go-ipfs"
 daemon_flags="daemon"
 daemon_timeout=60
 
@@ -13,7 +13,7 @@ rc_bg=YES
 rc_reload=NO
 
 rc_start() {
-	${rcexec} "IPFS_PATH=\"${VARBASE}/ipfs\" ${daemon} ${daemon_flags}"
+	${rcexec} "IPFS_PATH=\"${VARBASE}/go-ipfs\" ${daemon} ${daemon_flags}"
 }
 
 rc_cmd $1

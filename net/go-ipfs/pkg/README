@@ -4,22 +4,32 @@ $OpenBSD$
 | Running ${PKGSTEM} on OpenBSD
 +-----------------------------------------------------------------------
 
-If you are installing IPFS for the first time, you have to initialize
-it first.
+First Run
+=========
 
-	# su - _ipfs
-	$ IPFS_PATH=${VARBASE}/ipfs ipfs init
+If you are running ${PKGSTEM} for the first time, you will have to initialize
+its database first.
 
-By default, the _ipfs user, and so the ipfs process run in the
-login(1) class of "daemon". IPFS requires more open file descriptors
-than the default daemon class offers and they should be increased.
+Run as root:
 
-For example, add this to the login.conf(5) file:
+	# su -l -s /bin/sh _go-ipfs -c \
+	    "IPFS_PATH=${VARBASE}/go-ipfs ${LOCALBASE}/bin/ipfs init"
 
-	ipfs:\
+File Descriptors
+================
+
+${PKGSTEM} needs a lot of file descriptors. You will need an entry like this in
+your login.conf(5):
+
+	go-ipfs:\
 		:openfiles=2048:\
 		:tc=daemon:
 
-Rebuild the login.conf.db file if necessary:
+Don't forget to rebuild the login.conf.db file (if necessary):
 
 	# [ -f /etc/login.conf.db ] && cap_mkdb /etc/login.conf
+
+Web Interface
+=============
+
+${PKGSTEM} serves up a web interface on port 5001.
