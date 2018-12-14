@@ -1,0 +1,14 @@
+$OpenBSD$
+
++-----------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-----------------------------------------------------------------------
+
+openhexagon
+===========
+Open Hexagon requires some manual setup before first use.
+
+The following will get everything set up:
+$ mkdir -p ~/.config/openhexagon
+$ cp ${TRUEPREFIX}/share/examples/openhexagon/{config,scores,users}.json \
+	~/.config/openhexagon

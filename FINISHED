@@ -88,3 +88,4 @@ net/p5-POE-Component-Client-HTTP	sent to ports@
 net/p5-POE-Component-IRC		sent to ports@
 net/p5-POE-Component-IRC-Plugin-RSS-Headlines	sent to ports@
 games/brogue				sent to ports@ (waiting for upstream to accept patches) (bcallah)
+games/openhexagon			ready to import (bcallah)
