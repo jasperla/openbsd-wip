@@ -75,8 +75,8 @@ SUBST_VARS +=		MODLUA-VERSION
 CONFIGURE_STYLE =	cmake
 CONFIGURE_ARGS +=	-Wno-dev \
 			-DWITH_PYTHON=ON \
-			-DTeXworks_MAN_DIR=man
-
+			-DTeXworks_MAN_DIR=man \
+			-DTeXworks_DIC_DIR=${TRUEPREFIX}/share/mozilla-dicts
 
 MAKE_ENV +=		MODLUA_VERSION=${MODLUA_VERSION}
 
