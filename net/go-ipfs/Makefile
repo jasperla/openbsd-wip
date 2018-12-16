@@ -8,7 +8,6 @@ PKGNAME =	go-ipfs-$V
 
 CATEGORIES =	net
 HOMEPAGE =	https://ipfs.io
-MAINTAINER =	Fabian Raetz <fabian.raetz@gmail.com>
 
 # MIT
 PERMIT_PACKAGE_CDROM = Yes
