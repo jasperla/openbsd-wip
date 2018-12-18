@@ -3,11 +3,13 @@
 COMMENT-main = 		real-time strategy game
 COMMENT-data = 		7kaa data files
 
-GH_ACCOUNT = 		the3dfxdude
-GH_PROJECT = 		7kaa
-GH_TAGNAME = 		v2.14.5
+V = 			2.15.0
+DISTNAME = 		7kaa-${V}
 PKGNAME-main = 		${DISTNAME}
-PKGNAME-data = 		7kaa-data-${GH_TAGNAME:S/v//}
+PKGNAME-data = 		7kaa-data-${V}
+
+MASTER_SITES = 		https://github.com/the3dfxdude/7kaa/releases/download/v${V}/
+EXTRACT_SUFX = 		.tar.xz
 
 MULTI_PACKAGES = 	-main -data
 
@@ -20,7 +22,7 @@ MAINTAINER = 		Kirill Bychkov <kirby@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE_CDROM =  Yes
 
-WANTLIB-main += SDL2 c enet iconv intl m openal pthread stdc++
+WANTLIB-main += ${COMPILER_LIBCXX} SDL2 c curl enet iconv intl m openal pthread
 WANTLIB-data =
 
 BUILD_DEPENDS = 	${MODGNU_AUTOCONF_DEPENDS} \
@@ -31,9 +33,11 @@ BUILD_DEPENDS = 	${MODGNU_AUTOCONF_DEPENDS} \
 LIB_DEPENDS-main = 	audio/openal \
 			devel/gettext \
 			devel/sdl2 \
+			net/curl \
 			net/enet
 RUN_DEPENDS-main = 	games/7kaa,-data
 
+SEPARATE_BUILD = 	Yes
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS +=	--bindir=${PREFIX}/share/7kaa
 CONFIGURE_ENV +=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
@@ -45,12 +49,6 @@ AUTOMAKE_VERSION = 	1.11
 NO_TEST =		Yes
 
 PKG_ARCH-data = 	*
-
-pre-configure:
-	cd ${WRKSRC} && \
-		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
-		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-		autoreconf -fi
 
 post-install:
 	echo "#!/bin/sh" > ${WRKSRC}/7kaa.sh
