@@ -1,0 +1,72 @@
+diff -ur m17n-lib-1.8.0/configure m17n-lib-1.8.0-new/configure
+--- m17n-lib-1.8.0/configure	Thu Feb  8 08:00:27 2018
++++ m17n-lib-1.8.0-new/configure	Sat Dec 22 20:23:28 2018
+@@ -16808,7 +16808,7 @@
+   $as_echo_n "(cached) " >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-ldl  $LIBS"
++#LIBS="-ldl  $LIBS"
+ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ 
+@@ -16912,7 +16912,7 @@
+   $as_echo_n "(cached) " >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-ldl  $LIBS"
++#LIBS="-ldl  $LIBS"
+ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ 
+diff -ur m17n-lib-1.8.0/example/Makefile.am m17n-lib-1.8.0-new/example/Makefile.am
+--- m17n-lib-1.8.0/example/Makefile.am	Mon Jan 11 07:07:57 2016
++++ m17n-lib-1.8.0-new/example/Makefile.am	Sat Dec 22 20:31:23 2018
+@@ -45,7 +45,8 @@
+ X_LD_FLAGS = ${X_PRE_LIBS} ${X_LIBS} @XAW_LD_FLAGS@ @X11_LD_FLAGS@ ${X_EXTRA_LIBS}
+ 
+ m17n_edit_SOURCES = medit.c
+-m17n_edit_LDADD = ${X_LD_FLAGS} ${common_ldflags_gui} -ldl
++#m17n_edit_LDADD = ${X_LD_FLAGS} ${common_ldflags_gui} -ldl
++m17n_edit_LDADD = ${X_LD_FLAGS} ${common_ldflags_gui}
+ 
+ m17n_view_SOURCES = mview.c
+ m17n_view_LDADD = ${X_LD_FLAGS} ${common_ldflags_gui}
+@@ -87,9 +88,9 @@
+ PURIFY=/usr/local/rational/releases/purify.sol.2002.05.00/purify
+ 
+ purify_medit: medit ../src/.libs/libm17n-core.so ../src/.libs/libm17n.so ../src/.libs/libm17n-X.so linebreak.c
+-	${PURIFY} gcc -g medit.o linebreak.o -lXaw -lXmu -L/usr/X11R6/lib -R/usr/X11R6/lib -lSM -lICE -lX11 -lXt -L../src/.libs -lm17n-core -lm17n -lm17n-X -ldl
++	${PURIFY} gcc -g medit.o linebreak.o -lXaw -lXmu -L/usr/X11R6/lib -R/usr/X11R6/lib -lSM -lICE -lX11 -lXt -L../src/.libs -lm17n-core -lm17n -lm17n-X
+ 
+ purify_mdate: mdate.o ../src/.libs/libm17n.so ../src/.libs/libm17n-X.so
+-	${PURIFY} gcc -g mdate.o -lXaw -lXmu -L/usr/X11R6/lib -R/usr/X11R6/lib -lSM -lICE -lX11 -lXt -L../src/.libs -lm17n -lm17n-X -ldl
++	${PURIFY} gcc -g mdate.o -lXaw -lXmu -L/usr/X11R6/lib -R/usr/X11R6/lib -lSM -lICE -lX11 -lXt -L../src/.libs -lm17n -lm17n-X
+ 
+ endif
+diff -ur m17n-lib-1.8.0/src/Makefile.am m17n-lib-1.8.0-new/src/Makefile.am
+--- m17n-lib-1.8.0/src/Makefile.am	Sun May 17 03:26:24 2015
++++ m17n-lib-1.8.0-new/src/Makefile.am	Sat Dec 22 20:19:12 2018
+@@ -53,7 +53,8 @@
+ 	language.h language.c \
+ 	mlocale.h locale.c \
+ 	m17n.h m17n.c
+-libm17n_la_LIBADD = ${top_builddir}/src/libm17n-core.la -ldl
++#libm17n_la_LIBADD = ${top_builddir}/src/libm17n-core.la -ldl
++libm17n_la_LIBADD = ${top_builddir}/src/libm17n-core.la
+ libm17n_la_LDFLAGS = -export-dynamic ${VINFO}
+ 
+ FLT_SOURCES = \
+diff -ur m17n-lib-1.8.0/src/Makefile.in m17n-lib-1.8.0-new/src/Makefile.in
+--- m17n-lib-1.8.0/src/Makefile.in	Thu Feb  8 08:00:30 2018
++++ m17n-lib-1.8.0-new/src/Makefile.in	Sat Dec 22 20:19:35 2018
+@@ -576,7 +576,8 @@
+ 	mlocale.h locale.c \
+ 	m17n.h m17n.c
+ 
+-libm17n_la_LIBADD = ${top_builddir}/src/libm17n-core.la -ldl
++#libm17n_la_LIBADD = ${top_builddir}/src/libm17n-core.la -ldl
++libm17n_la_LIBADD = ${top_builddir}/src/libm17n-core.la
+ libm17n_la_LDFLAGS = -export-dynamic ${VINFO}
+ FLT_SOURCES = \
+ 	internal-flt.h \
