@@ -15,7 +15,7 @@ MAINTAINER =		Eric Brown <brown@fastmail.com>
 # LGPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB = c freetype z
+WANTLIB += c freetype z
 
 MASTER_SITES =		http://download.savannah.gnu.org/releases/m17n/
 
