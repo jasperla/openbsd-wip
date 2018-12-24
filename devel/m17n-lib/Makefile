@@ -6,7 +6,7 @@ DISTNAME =		m17n-lib-${V}
 
 #SHARED_LIBS =		otf	1.0
 
-CATEGORIES = 		misc
+CATEGORIES = 		devel	
 
 HOMEPAGE =		https://www.nongnu.org/m17n/
 
