@@ -1,10 +1,14 @@
-The library "libotf" provides the following facilites.
+The m17n library is a multilingual text processing library for the C language.
+This library has following features:
 
-     Read Open Type Layout Tables from OTF file.  Currently these
-     tables are supported; head, name, cmap, GDEF, GSUB, and GPOS.
+ - The m17n library is an open source software.
+ - The m17n library for any Linux/Unix applications.
+ - The m17n library realizes multilingualization of many aspects of
+   applications.
+ - The m17n library represents multilingual text as an object named
+   M-text.  M-text is a string with attributes called text properties,
+   and designed to substitute for string in C.  Text properties carry any
+   information required to input, display and edit the text.
+ - The m17n library supports functions to handle M-texts.
 
-     Convert a Unicode character sequence to a glyph code sequence by
-     using the above tables.
-
-The combination of libotf and the FreeType library (Ver.2) realizes
-CTL (complex text layout) by OpenType fonts.
+m17n is an abbreviation of Multilingualization.
