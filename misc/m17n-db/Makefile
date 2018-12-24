@@ -4,8 +4,6 @@ COMMENT = 		multilingual text processing library - database
 V = 1.8.0
 DISTNAME =		m17n-db-${V}
 
-#SHARED_LIBS =		otf	1.0
-
 CATEGORIES = 		misc
 
 HOMEPAGE =		https://www.nongnu.org/m17n/
