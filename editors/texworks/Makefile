@@ -30,10 +30,6 @@ MODULES =		lang/python \
 			x11/qt5 \
 			devel/cmake
 
-MODQMAKE_PROJECTS =	plugins-src/TWLuaPlugin/TWLuaPlugin.pro \
-			plugins-src/TWPythonPlugin/TWPythonPlugin.pro \
-			TeXworks.pro
-
 # c++-11 required for poppler
 COMPILER =		base-clang ports-gcc
 
@@ -41,7 +37,6 @@ WANTLIB += ${COMPILER_LIBCXX} Qt5Concurrent Qt5Core Qt5DBus Qt5Gui
 WANTLIB += Qt5Script Qt5ScriptTools Qt5Widgets Qt5Xml c hunspell-1.6 m poppler poppler-qt5
 WANTLIB += synctex z
 
-# XXX finds lua-5.2 if installed, not MODLUA_VERSION.
 WANTLIB-lua += ${COMPILER_LIBCXX} ${MODLUA_WANTLIB} Qt5Concurrent Qt5Core Qt5DBus Qt5Gui
 WANTLIB-lua += Qt5Script Qt5ScriptTools Qt5Widgets Qt5Xml m
 
@@ -77,8 +72,6 @@ CONFIGURE_ARGS +=	-Wno-dev \
 			-DWITH_PYTHON=ON \
 			-DTeXworks_MAN_DIR=man \
 			-DTeXworks_DIC_DIR=${TRUEPREFIX}/share/mozilla-dicts
-
-MAKE_ENV +=		MODLUA_VERSION=${MODLUA_VERSION}
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/CMakeLists.txt
