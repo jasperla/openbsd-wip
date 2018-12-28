@@ -1,10 +1,19 @@
 $OpenBSD$
 
-Find the right version of Lua.
+Fix manual path, find the right version of Lua.
 
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
+@@ -168,7 +168,7 @@ IF (UNIX AND NOT APPLE)
+   SET(TeXworks_DIC_DIR /usr/share/myspell/dicts CACHE PATH "Path where TeXworks looks for spellchecking dictionaries")
+   SET(TeXworks_DOCS_DIR share/doc/texworks CACHE PATH "Path in which documentation files are installed")
+   SET(TeXworks_ICON_DIR share/pixmaps CACHE PATH "Path in which icons are installed")
+-  SET(TeXworks_MAN_DIR share/man/man1 CACHE PATH "Path in which manpages are installed")
++  SET(TeXworks_MAN_DIR man/man1 CACHE PATH "Path in which manpages are installed")
+   SET(TeXworks_DESKTOP_DIR share/applications CACHE PATH "Path in which .desktop files are installed")
+   SET(TeXworks_APPDATA_DIR share/appdata CACHE PATH "Path in which .appdata.xml files are installed")
+   MARK_AS_ADVANCED(TeXworks_HELP_DIR)
 @@ -327,7 +327,7 @@ ENDIF ()
  # -------------------------------
  

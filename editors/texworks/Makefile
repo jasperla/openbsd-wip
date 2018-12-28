@@ -68,7 +68,6 @@ SUBST_VARS +=		MODLUA-VERSION
 
 CONFIGURE_STYLE =	cmake
 CONFIGURE_ARGS +=	-DWITH_PYTHON=ON \
-			-DTeXworks_MAN_DIR=man \
 			-DTeXworks_DIC_DIR=${TRUEPREFIX}/share/mozilla-dicts
 
 pre-configure:
