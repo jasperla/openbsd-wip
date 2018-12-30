@@ -1,5 +1,6 @@
 @comment $OpenBSD: PLIST,v$
 @conflict kde-l10n-*
+@conflict kdepimlibs-*
 @pkgpath productivity/akonadi
 @bin bin/akonadi2xml
 @bin bin/akonadi_agent_launcher
@@ -29,6 +30,8 @@ include/KF5/AkonadiAgentBase/resourcesettings.h
 include/KF5/AkonadiAgentBase/transportresourcebase.h
 include/KF5/AkonadiCore/
 include/KF5/AkonadiCore/AbstractDifferencesReporter
+include/KF5/AkonadiCore/AgentConfigurationBase
+include/KF5/AkonadiCore/AgentConfigurationFactoryBase
 include/KF5/AkonadiCore/AgentFilterProxyModel
 include/KF5/AkonadiCore/AgentInstance
 include/KF5/AkonadiCore/AgentInstanceCreateJob
@@ -69,6 +72,7 @@ include/KF5/AkonadiCore/EntityOrderProxyModel
 include/KF5/AkonadiCore/EntityRightsFilterModel
 include/KF5/AkonadiCore/EntityTreeModel
 include/KF5/AkonadiCore/ExceptionBase
+include/KF5/AkonadiCore/FavoriteCollectionAttribute
 include/KF5/AkonadiCore/FavoriteCollectionsModel
 include/KF5/AkonadiCore/GidExtractorInterface
 include/KF5/AkonadiCore/IndexPolicyAttribute
@@ -130,6 +134,8 @@ include/KF5/AkonadiCore/TrashSettings
 include/KF5/AkonadiCore/UnlinkJob
 include/KF5/AkonadiCore/VectorHelper
 include/KF5/AkonadiCore/abstractdifferencesreporter.h
+include/KF5/AkonadiCore/agentconfigurationbase.h
+include/KF5/AkonadiCore/agentconfigurationfactorybase.h
 include/KF5/AkonadiCore/agentfilterproxymodel.h
 include/KF5/AkonadiCore/agentinstance.h
 include/KF5/AkonadiCore/agentinstancecreatejob.h
@@ -171,6 +177,7 @@ include/KF5/AkonadiCore/entityorderproxymodel.h
 include/KF5/AkonadiCore/entityrightsfiltermodel.h
 include/KF5/AkonadiCore/entitytreemodel.h
 include/KF5/AkonadiCore/exceptionbase.h
+include/KF5/AkonadiCore/favoritecollectionattribute.h
 include/KF5/AkonadiCore/favoritecollectionsmodel.h
 include/KF5/AkonadiCore/gidextractorinterface.h
 include/KF5/AkonadiCore/indexpolicyattribute.h
@@ -235,6 +242,8 @@ include/KF5/AkonadiCore/unlinkjob.h
 include/KF5/AkonadiCore/vectorhelper.h
 include/KF5/AkonadiWidgets/
 include/KF5/AkonadiWidgets/AgentActionManager
+include/KF5/AkonadiWidgets/AgentConfigurationDialog
+include/KF5/AkonadiWidgets/AgentConfigurationWidget
 include/KF5/AkonadiWidgets/AgentInstanceWidget
 include/KF5/AkonadiWidgets/AgentTypeDialog
 include/KF5/AkonadiWidgets/AgentTypeWidget
@@ -261,6 +270,8 @@ include/KF5/AkonadiWidgets/TagSelectWidget
 include/KF5/AkonadiWidgets/TagSelectionDialog
 include/KF5/AkonadiWidgets/TagWidget
 include/KF5/AkonadiWidgets/agentactionmanager.h
+include/KF5/AkonadiWidgets/agentconfigurationdialog.h
+include/KF5/AkonadiWidgets/agentconfigurationwidget.h
 include/KF5/AkonadiWidgets/agentinstancewidget.h
 include/KF5/AkonadiWidgets/agenttypedialog.h
 include/KF5/AkonadiWidgets/agenttypewidget.h
@@ -313,7 +324,6 @@ include/KF5/akonadi/private/protocol_p.h
 include/KF5/akonadi/private/scope_p.h
 include/KF5/akonadi/private/standarddirs_p.h
 include/KF5/akonadi/private/tristate_p.h
-include/KF5/akonadi/private/xdgbasedirs_p.h
 include/KF5/akonadi_version.h
 lib/cmake/KF5Akonadi/
 lib/cmake/KF5Akonadi/KF5AkonadiConfig.cmake
@@ -352,9 +362,13 @@ share/dbus-1/interfaces/org.freedesktop.Akonadi.TracerNotification.xml
 share/dbus-1/services/org.freedesktop.Akonadi.Control.service
 share/examples/xdg/akonadi/
 share/examples/xdg/akonadi.categories
+@sample ${SYSCONFDIR}/xdg/akonadi.categories
 share/examples/xdg/akonadi.renamecategories
+@sample ${SYSCONFDIR}/xdg/akonadi.renamecategories
 share/examples/xdg/akonadi/mysql-global-mobile.conf
+@sample ${SYSCONFDIR}/xdg/akonadi/mysql-global-mobile.conf
 share/examples/xdg/akonadi/mysql-global.conf
+@sample ${SYSCONFDIR}/xdg/akonadi/mysql-global.conf
 share/icons/hicolor/128x128/apps/akonadi.png
 share/icons/hicolor/16x16/apps/akonadi.png
 share/icons/hicolor/22x22/apps/akonadi.png
@@ -376,8 +390,6 @@ share/kf5/mkspecs/qt_AkonadiWidgets.pri
 share/kf5/mkspecs/qt_AkonadiXml.pri
 share/locale/ar/LC_MESSAGES/akonadi_knut_resource.mo
 share/locale/ar/LC_MESSAGES/libakonadi5.mo
-share/locale/ast/LC_MESSAGES/akonadi_knut_resource.mo
-share/locale/ast/LC_MESSAGES/libakonadi5.mo
 share/locale/bs/LC_MESSAGES/akonadi_knut_resource.mo
 share/locale/bs/LC_MESSAGES/libakonadi5.mo
 share/locale/ca/LC_MESSAGES/akonadi_knut_resource.mo

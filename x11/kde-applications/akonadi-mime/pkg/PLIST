@@ -40,10 +40,16 @@ lib/cmake/KF5AkonadiMime/KF5AkonadiMimeConfigVersion.cmake
 lib/cmake/KF5AkonadiMime/KF5AkonadiMimeTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/KF5AkonadiMime/KF5AkonadiMimeTargets.cmake
 @lib lib/libKF5AkonadiMime.so.${LIBKF5AkonadiMime_VERSION}
+lib/qt5/plugins/akonadi_serializer_mail.so
+share/akonadi/plugins/
+share/akonadi/plugins/serializer/
+share/akonadi/plugins/serializer/akonadi_serializer_mail.desktop
 share/config.kcfg/specialmailcollections.kcfg
+share/examples/akonadi-mime/
+share/examples/akonadi-mime/xdg/
+share/examples/akonadi-mime/xdg/akonadi-mime.categories
 share/kf5/mkspecs/qt_AkonadiMime.pri
 share/locale/ar/LC_MESSAGES/libakonadi-kmime5.mo
-share/locale/ast/LC_MESSAGES/libakonadi-kmime5.mo
 share/locale/bs/LC_MESSAGES/libakonadi-kmime5.mo
 share/locale/ca/LC_MESSAGES/libakonadi-kmime5.mo
 share/locale/ca@valencia/LC_MESSAGES/libakonadi-kmime5.mo

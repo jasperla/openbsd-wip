@@ -20,40 +20,40 @@ WANTLIB += KF5WindowSystem KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus
 WANTLIB += Qt5Gui Qt5Network Qt5Sql Qt5Widgets Qt5Xml c m sqlite3
 WANTLIB += xml2
 
-BUILD_DEPENDS +=devel/gettext-tools \
-		devel/kf5/kdesignerplugin \
+MODKDE5_DESKTOP_FILE = yes
+MODKDE5_ICON_CACHE = yes
+MODKDE5_TRANSLATIONS = yes
+MODKDE5_DOCS = yes
+
+MODULES +=	x11/kde-applications
+
+BUILD_DEPENDS +=devel/kf5/kdesignerplugin \
 		textproc/libxslt \
 		devel/boost \
 		misc/shared-mime-info
 
-RUN_DEPENDS =	devel/desktop-file-utils \
-		devel/kf5/kdesignerplugin \
-		misc/shared-mime-info \
-		x11/gtk+3,-guic \
-		databases/sqlite \
-		devel/gettext
+RUN_DEPENDS +=	devel/kf5/kdesignerplugin \
+		misc/shared-mime-info
 
-LIB_DEPENDS =	devel/kf5/kcompletion \
+LIB_DEPENDS +=	databases/sqlite3 \
+		devel/kf5/kauth \
+		devel/kf5/kcodecs \
+		devel/kf5/kcompletion \
 		devel/kf5/kconfig \
 		devel/kf5/kconfigwidgets \
 		devel/kf5/kcoreaddons \
+		devel/kf5/kcrash \
 		devel/kf5/kdbusaddons  \
 		devel/kf5/ki18n \
 		devel/kf5/kiconthemes \
+		devel/kf5/kio \
 		devel/kf5/kitemmodels \
 		devel/kf5/kitemviews \
-		devel/kf5/kio \
 		devel/kf5/kwidgetsaddons \
 		devel/kf5/kwindowsystem \
 		devel/kf5/kxmlgui \
-		devel/kf5/kcrash \
-		textproc/libxml \
-		databases/sqlite3
+		textproc/libxml
 
 CONFIGURE_ARGS =	-DDATABASE_BACKEND:String=SQLITE
-
-PORTHOME =	${WRKDIR}
-
-TEST_IS_INTERACTIVE =	Yes
 
 .include <bsd.port.mk>
