@@ -27,7 +27,7 @@ HOMEPAGE =		https://www.opencv.org/
 MAINTAINER =		Rafael Sadowski <rsadowski@openbsd.org>
 
 # "patents" means containing some patented algorithms, see
-# http://docs.opencv.org/modules/nonfree/doc/nonfree.html
+# https://docs.opencv.org/3.4.5/dc/dcb/nonfree_8hpp.html
 # As some source modules include this functionality, we couldn't
 # just subpackage "nonfree". Excluding this, here we have a usual
 # BSD license.
@@ -89,18 +89,18 @@ LIB_DEPENDS-java =	${BUILD_PKGPATH},-main=${V}
 
 # ATM opencv requires V4L1 compat, ask them to change it,
 # then see WITH_V4L below.
-CONFIGURE_ARGS =	-DBUILD_opencv_python2:Bool=On \
-			-DBUILD_IPP_IW:Bool=Off \
-			-DBUILD_ITT:Bool=Off \
-			-DBUILD_PERF_TESTS:Bool=Off \
-			-DBUILD_TESTS:Bool=On \
-			-DOPENCV_ENABLE_NONFREE:Bool=On \
-			-DWITH_1394:Bool=Off \
-			-DWITH_GPHOTO2:Bool=On \
-			-DWITH_IPP:Bool=Off \
-			-DWITH_ITT:Bool=Off \
-			-DWITH_OPENCL:Bool=Off \
-			-DWITH_V4L:Bool=Off
+CONFIGURE_ARGS =	-DBUILD_opencv_python2=On \
+			-DBUILD_IPP_IW=Off \
+			-DBUILD_ITT=Off \
+			-DBUILD_PERF_TESTS=Off \
+			-DBUILD_TESTS=On \
+			-DOPENCV_ENABLE_NONFREE=On \
+			-DWITH_1394=Off \
+			-DWITH_GPHOTO2=On \
+			-DWITH_IPP=Off \
+			-DWITH_ITT=Off \
+			-DWITH_OPENCL=Off \
+			-DWITH_V4L=Off
 
 
 
@@ -110,7 +110,7 @@ CONFIGURE_ARGS =	-DBUILD_opencv_python2:Bool=On \
 CONFIGURE_ENV =		CFLAGS="${CFLAGS} -fPIC" \
 			CXXFLAGS="${CXXFLAGS} -fPIC"
 # XXX Disable optimizations
-CONFIGURE_ARGS+=        -DCPU_DISPATCH:String=
+CONFIGURE_ARGS+=        -DCPU_DISPATCH=
 .endif
 
 .if ${BUILD_PACKAGES:M-java}
@@ -119,21 +119,20 @@ MODJAVA_VER =		1.8+
 BUILD_DEPENDS +=	devel/apache-ant
 .else
 # Safe: Java will be detected, if present, but won't be used
-CONFIGURE_ARGS +=	-DBUILD_opencv_java:Bool=Off
+CONFIGURE_ARGS +=	-DBUILD_opencv_java=Off
 .endif
 
 .if ${BUILD_PACKAGES:M-docs}
-BUILD_DEPENDS +=	textproc/py-sphinx
 ALL_TARGET = 		all doxygen
-CONFIGURE_ARGS +=	-DBUILD_DOCS:Bool=On \
-			-DBUILD_EXAMPLES:Bool=On \
-			-DINSTALL_C_EXAMPLES:Bool=On \
-			-DINSTALL_PYTHON_EXAMPLES:Bool=On
+CONFIGURE_ARGS +=	-DBUILD_DOCS=On \
+			-DBUILD_EXAMPLES=On \
+			-DINSTALL_C_EXAMPLES=On \
+			-DINSTALL_PYTHON_EXAMPLES=On
 .else
-CONFIGURE_ARGS +=	-DBUILD_DOCS:Bool=Off \
-			-DBUILD_EXAMPLES:Bool=Off \
-			-DINSTALL_C_EXAMPLES:Bool=Off \
-			-DINSTALL_PYTHON_EXAMPLES:Bool=Off
+CONFIGURE_ARGS +=	-DBUILD_DOCS=Off \
+			-DBUILD_EXAMPLES=Off \
+			-DINSTALL_C_EXAMPLES=Off \
+			-DINSTALL_PYTHON_EXAMPLES=Off
 .endif
 
 
@@ -154,7 +153,7 @@ do-test:
 	#accuracy tests
 	cd ${WRKBUILD}; \
 	env OPENCV_TEST_DATA_PATH=opencv_extra-${V}/testdata ${MODPY_BIN} ${WRKSRC}/modules/ts/misc/run.py -a
-#	#performance tests (needs -DBUILD_PERF_TESTS:Bool=On)
+#	#performance tests (needs -DBUILD_PERF_TESTS=On)
 #	cd ${WRKBUILD}; \
 #	env OPENCV_TEST_DATA_PATH=opencv_extra-${V}/testdata ${MODPY_BIN} ${WRKSRC}/modules/ts/misc/run.py
 
@@ -162,6 +161,6 @@ do-test:
 
 .if ${CHOSEN_COMPILER} != "base-clang"
 # XXX Disable optimizations
-CONFIGURE_ARGS+=	-DCPU_DISPATCH:String=
+CONFIGURE_ARGS+=	-DCPU_DISPATCH=
 .endif
 
