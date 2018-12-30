@@ -1,4 +1,5 @@
 $OpenBSD$
+
 Index: cmake/OpenCVPCHSupport.cmake
 --- cmake/OpenCVPCHSupport.cmake.orig
 +++ cmake/OpenCVPCHSupport.cmake
