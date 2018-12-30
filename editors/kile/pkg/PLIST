@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2018/07/01 18:33:35 espie Exp $
+@comment $OpenBSD: PLIST,v$
 @bin bin/kile
 lib/libkdeinit5_kile.so
 share/applications/org.kde.kile.desktop
@@ -297,7 +297,10 @@ share/doc/kile/ChangeLog
 share/doc/kile/README
 share/doc/kile/README.cwl
 share/doc/kile/kile-remote-control.txt
-share/examples/xdg/kile.categories
+share/examples/kile/
+share/examples/kile/xdg/
+share/examples/kile/xdg/kile.categories
+@sample ${SYSCONFDIR}/xdg/kile.categories
 share/icons/hicolor/128x128/apps/kile.png
 share/icons/hicolor/16x16/apps/kile.png
 share/icons/hicolor/22x22/apps/kile.png
@@ -1869,6 +1872,6 @@ share/locale/zh_CN/LC_MESSAGES/kile.mo
 share/locale/zh_TW/LC_MESSAGES/kile.mo
 share/metainfo/org.kde.kile.appdata.xml
 share/mime/packages/kile.xml
+@tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database
 @tag update-mime-database
-@tag gtk-update-icon-cache %D/share/icons/hicolor
