@@ -1,18 +1,20 @@
-$OpenBSD: patch-modules_core_src_system_cpp,v 1.4 2018/04/17 05:58:30 rsadowski Exp $
-Fix build on i386.
+$OpenBSD$
+
 Index: modules/core/src/system.cpp
 --- modules/core/src/system.cpp.orig
 +++ modules/core/src/system.cpp
-@@ -185,9 +185,12 @@ std::wstring GetTempFileNameWinRT(std::wstring prefix)
- 
+@@ -1,4 +1,4 @@
+-/*M///////////////////////////////////////////////////////////////////////////////////////
++//*M///////////////////////////////////////////////////////////////////////////////////////
+ //
+ //  IMPORTANT: READ BEFORE DOWNLOADING, COPYING, INSTALLING OR USING.
+ //
+@@ -94,7 +94,7 @@ void* allocSingletonBuffer(size_t size) { return fastM
+ #include <cstdlib>        // std::abort
  #endif
- #else
-+#include <fcntl.h>
- #include <pthread.h>
- #include <sys/time.h>
-+#include <stdlib.h>
- #include <time.h>
-+#include <unistd.h>
  
- #if defined __MACH__ && defined __APPLE__
- #include <mach/mach.h>
+-#if defined __ANDROID__ || defined __linux__ || defined __FreeBSD__ || defined __HAIKU__
++#if defined __ANDROID__ || defined __linux__ || defined __FreeBSD__ || defined __HAIKU__ || defined __OpenBSD__
+ #  include <unistd.h>
+ #  include <fcntl.h>
+ #  include <elf.h>
