@@ -89,20 +89,18 @@ LIB_DEPENDS-java =	${BUILD_PKGPATH},-main=${V}
 
 # ATM opencv requires V4L1 compat, ask them to change it,
 # then see WITH_V4L below.
-CONFIGURE_ARGS =	-DBUILD_opencv_python2=On \
+CONFIGURE_ARGS =	-DBUILD_TESTS=On \
+			-DBUILD_opencv_python2=On \
+			-DOPENCV_ENABLE_NONFREE=On \
+			-DWITH_GPHOTO2=On \
 			-DBUILD_IPP_IW=Off \
 			-DBUILD_ITT=Off \
 			-DBUILD_PERF_TESTS=Off \
-			-DBUILD_TESTS=On \
-			-DOPENCV_ENABLE_NONFREE=On \
 			-DWITH_1394=Off \
-			-DWITH_GPHOTO2=On \
 			-DWITH_IPP=Off \
 			-DWITH_ITT=Off \
 			-DWITH_OPENCL=Off \
 			-DWITH_V4L=Off
-
-
 
 .if ${ARCH:Mi386}
 # XXX PIE cannot be produced due to problems with inline assembly.
@@ -134,7 +132,6 @@ CONFIGURE_ARGS +=	-DBUILD_DOCS=Off \
 			-DINSTALL_C_EXAMPLES=Off \
 			-DINSTALL_PYTHON_EXAMPLES=Off
 .endif
-
 
 DOCDIR =		${PREFIX}/share/doc/OpenCV
 
