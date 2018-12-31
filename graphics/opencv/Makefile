@@ -8,9 +8,7 @@ COMMENT-main =		library of programming functions for real time cv
 COMMENT-java =		Java bindings for OpenCV
 
 V =			3.4.5
-GH_ACCOUNT =		opencv
-GH_PROJECT =		opencv
-GH_TAGNAME = 		${V}
+DISTNAME =		opencv-${V}
 
 PKGNAME-main =		${PKGNAME}
 PKGNAME-docs =		opencv-docs-$V
@@ -34,6 +32,12 @@ MAINTAINER =		Rafael Sadowski <rsadowski@openbsd.org>
 PERMIT_PACKAGE_FTP =		Yes
 PERMIT_PACKAGE_CDROM =		patents
 PERMIT_PACKAGE_CDROM-docs =	Yes
+
+
+MASTER_SITES=	https://sizeofvoid.org/pub/OpenBSD/distfiles/
+
+DISTFILES += 	${DISTNAME}.tar.gz \
+		opencv_contrib-${V}.tar.gz
 
 WANTLIB-main += ${MODPY_WANTLIB}
 WANTLIB-main += ${COMPILER_LIBCXX}
@@ -76,6 +80,7 @@ RUN_DEPENDS-java =	${MODJAVA_RUN_DEPENDS}
 LIB_DEPENDS-main =	${LIB_DEPENDS} \
 			multimedia/gstreamer1/plugins-base \
 			x11/gtk+3 \
+			math/hdf5 \
 			graphics/ffmpeg \
 			graphics/ilmbase \
 			graphics/jpeg \
@@ -89,7 +94,7 @@ LIB_DEPENDS-java =	${BUILD_PKGPATH},-main=${V}
 
 # ATM opencv requires V4L1 compat, ask them to change it,
 # then see WITH_V4L below.
-CONFIGURE_ARGS =	-DBUILD_TESTS=On \
+CONFIGURE_ARGS +=	-DBUILD_TESTS=On \
 			-DBUILD_opencv_python2=On \
 			-DOPENCV_ENABLE_NONFREE=On \
 			-DWITH_GPHOTO2=On \
@@ -102,13 +107,17 @@ CONFIGURE_ARGS =	-DBUILD_TESTS=On \
 			-DWITH_OPENCL=Off \
 			-DWITH_V4L=Off
 
+# opencv_contrib (enable face)
+CONFIGURE_ARGS +=	-DOPENCV_EXTRA_MODULES_PATH="${WRKDIR}/opencv_contrib-${V}/modules" \
+			-DBUILD_opencv_legacy=OFF
+
 .if ${ARCH:Mi386}
 # XXX PIE cannot be produced due to problems with inline assembly.
 # Since OpenCV is mostly used as a library, switch to PIC.
 CONFIGURE_ENV =		CFLAGS="${CFLAGS} -fPIC" \
 			CXXFLAGS="${CXXFLAGS} -fPIC"
 # XXX Disable optimizations
-CONFIGURE_ARGS+=        -DCPU_DISPATCH=
+CONFIGURE_ARGS+=	-DCPU_DISPATCH=
 .endif
 
 .if ${BUILD_PACKAGES:M-java}
