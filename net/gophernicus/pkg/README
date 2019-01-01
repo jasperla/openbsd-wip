@@ -1,0 +1,48 @@
+$OpenBSD: README,v 1.5 2018/09/04 12:46:17 espie Exp $
+
++-----------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-----------------------------------------------------------------------
+
+Setting up a gopher site
+========================
+
+After installing the gophernicus package, edit /etc/inetd.conf and add
+the following, all on one line:
+
+gopher stream tcp nowait _gophernicus ${TRUEPREFIX}/libexec/in.gophernicus	in.gophernicus -ne -nm -nu -h hostname
+
+Replace "hostname" with the system's hostname, this should be valid
+and resolvable as it is used to construct links.
+
+inetd(8) must be reloaded (or started). To enable it at boot, the
+following line needs to be added to rc.conf.local(8):
+inetd_flags=
+
+By default Gophernicus serves documents from /var/gopher and will
+only serve files which are world-readable; being readable by the
+server process is not enough.
+
+For more information, see ${TRUEPREFIX}/share/doc/gophernicus/README.
+
+pledge(2) / unveil(2)
+=====================
+
+The above inetd.conf(8) line starts ${PKGSTEM} in the most secure mode of
+operation with regards to pledge(2) and unveil(2). In this configuration, some
+features are disabled in favour of tighter security:
+
+ * The `-ne` argument disables executable gophermaps. If this argument is
+   removed, unveil(2) is totally disabled, since we cannot know what paths an
+   arbitrary popen(3)ed shell command might require. Additionally 'exec' is
+   passed to pledge(2).
+
+ * The `-nm` argument disables shared-memory usage. If this argument is
+   removed, pledge(2) will be totally disabled, as pledge(2) never allows
+   shared memory.
+
+ * The `-nu` argument disables personal gopher spaces. If this argument is
+   removed, we unveil(2) /home and /etc/pwd.db, and 'getpw' is passed to
+   pledge(2).
+
+If any of these arguments are not present, ${PKGSTEM} will warn via syslog(3).

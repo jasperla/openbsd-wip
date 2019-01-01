@@ -1,0 +1,17 @@
+$OpenBSD$
+
+Pledge and unveil. Based upon:
+https://github.com/0x16h/gophernicus/commit/1f61d46a5ebb061d5862a6a61e296b473c169ec6
+
+Index: gophernicus.h
+--- gophernicus.h.orig
++++ gophernicus.h
+@@ -351,6 +351,8 @@ typedef struct {
+ 	char opt_shm;
+ 	char opt_root;
+ 	char opt_proxy;
++	char opt_execmaps;
++	char opt_personal_spaces;
+ 	char debug;
+ } state;
+ 

@@ -1,0 +1,17 @@
+$OpenBSD$
+
+Pledge and unveil. Based upon:
+https://github.com/0x16h/gophernicus/commit/1f61d46a5ebb061d5862a6a61e296b473c169ec6
+
+Index: options.c
+--- options.c.orig
++++ options.c
+@@ -143,6 +143,8 @@ void parse_args(state *st, int argc, char *argv[])
+ 				if (*optarg == 'm') { st->opt_shm = FALSE; break; }
+ 				if (*optarg == 'r') { st->opt_root = FALSE; break; }
+ 				if (*optarg == 'p') { st->opt_proxy = FALSE; break; }
++				if (*optarg == 'e') { st->opt_execmaps = FALSE; break; }
++				if (*optarg == 'u') { st->opt_personal_spaces = FALSE; break; }
+ 				break;
+ 
+ 			case 'd': st->debug = TRUE; break;

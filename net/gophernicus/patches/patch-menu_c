@@ -1,0 +1,26 @@
+$OpenBSD$
+
+Pledge and unveil. Based upon:
+https://github.com/0x16h/gophernicus/commit/1f61d46a5ebb061d5862a6a61e296b473c169ec6
+
+Index: menu.c
+--- menu.c.orig
++++ menu.c
+@@ -306,8 +306,15 @@ int gophermap(state *st, char *mapfile, int depth)
+ 
+ 	/* Debug output */
+ 	if (st->debug) {
+-		if (exe) syslog(LOG_INFO, "parsing executable gophermap \"%s\"", mapfile);
+-		else syslog(LOG_INFO, "parsing static gophermap \"%s\"", mapfile);
++		if (exe) {
++			if (st->opt_execmaps)
++				syslog(LOG_INFO, "parsing executable gophermap: %s", mapfile);
++			else {
++				syslog(LOG_INFO, "ignoring executable gophermap: %s", mapfile);
++				return OK;
++			}
++		} else
++			syslog(LOG_INFO, "parsing static gophermap: %s", mapfile);
+ 	}
+ 
+ 	/* Try to execute or open the mapfile */
