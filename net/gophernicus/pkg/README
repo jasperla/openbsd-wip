@@ -42,7 +42,6 @@ features are disabled in favour of tighter security:
    shared memory.
 
  * The `-nu` argument disables personal gopher spaces. If this argument is
-   removed, we unveil(2) /home and /etc/pwd.db, and 'getpw' is passed to
-   pledge(2).
+   removed, we unveil(2) /home and 'getpw' is passed to pledge(2).
 
 If any of these arguments are not present, ${PKGSTEM} will warn via syslog(3).

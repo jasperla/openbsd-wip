@@ -6,15 +6,7 @@ https://github.com/0x16h/gophernicus/commit/1f61d46a5ebb061d5862a6a61e296b473c16
 Index: gophernicus.c
 --- gophernicus.c.orig
 +++ gophernicus.c
-@@ -25,7 +25,6 @@
- 
- #include "gophernicus.h"
- 
--
- /*
-  * Print gopher menu line
-  */
-@@ -219,7 +218,8 @@ void selector_to_path(state *st)
+@@ -219,7 +219,8 @@ void selector_to_path(state *st)
  
  #ifdef HAVE_PASSWD
  	/* Virtual userdir (~user -> /home/user/public_gopher)? */
@@ -24,7 +16,7 @@ Index: gophernicus.c
  
  		/* Parse userdir login name & path */;
  		sstrlcpy(buf, st->req_selector + 2);
-@@ -453,6 +453,8 @@ void init_state(state *st)
+@@ -453,6 +454,8 @@ void init_state(state *st)
  	st->opt_shm = TRUE;
  	st->opt_root = TRUE;
  	st->opt_proxy = TRUE;
@@ -33,7 +25,7 @@ Index: gophernicus.c
  	st->debug = FALSE;
  
  	/* Load default suffix -> filetype mappings */
-@@ -488,6 +490,9 @@ int main(int argc, char *argv[])
+@@ -488,6 +491,9 @@ int main(int argc, char *argv[])
  	char local[BUFSIZE];
  	int dummy;
  #endif
@@ -43,7 +35,7 @@ Index: gophernicus.c
  
  	/* Get the name of this binary */
  	if ((c = strrchr(argv[0], '/'))) sstrlcpy(self, c + 1);
-@@ -506,6 +511,78 @@ int main(int argc, char *argv[])
+@@ -506,6 +512,67 @@ int main(int argc, char *argv[])
  	/* Open syslog() */
  	if (st.opt_syslog) openlog(self, LOG_PID, LOG_DAEMON);
  
@@ -52,35 +44,25 @@ Index: gophernicus.c
 +	if (st.opt_execmaps) {
 +		/*
 +		 * We can't really unveil(2) if the user is expecting to shell-out
-+                 * to an arbitrary command.
++		 * to an arbitrary command.
 +		 */
 +		if (st.opt_syslog) {
 +			syslog(LOG_WARNING,
 +			    "executable gophermaps enabled, can't unveil(2)");
 +		}
 +	} else {
-+		/* These paths must always available */
-+		if (unveil("/tmp", "rcw") == -1)
-+			die(&st, NULL, "unveil");
-+		if (unveil("/etc/hosts", "r") == -1)
-+			die(&st, NULL, "unveil");
-+		if (unveil("/etc/resolv.conf", "r") == -1)
-+			die(&st, NULL, "unveil");
++		/* Always unveil the server root */
 +		if (unveil(st.server_root, "r") == -1)
 +			die(&st, NULL, "unveil");
 +
 +		/*
 +		 * Personal spaces serve "gopher://host/1/~user" from
-+		 * "/home/user/public_gopher" and also needs to read the
-+		 * password database to get the user's ~/public_gopher.
++		 * "/home/user/public_gopher".
 +		 */
 +		if (st.opt_personal_spaces) {
 +			syslog(LOG_WARNING,
-+			    "personal gopherspaces enabled, unveil(2) /home and /etc/pwd.db");
++			    "personal gopherspaces enabled, unveil(2) /home");
 +			if (unveil("/home", "r") == -1)
-+				die(&st, NULL, "unveil");
-+
-+			if (unveil("/etc/pwd.db", "r") == -1)
 +				die(&st, NULL, "unveil");
 +		}
 +	}
@@ -96,7 +78,7 @@ Index: gophernicus.c
 +		}
 +	} else {
 +		strlcpy(pledges,
-+		    "stdio rpath wpath cpath tmppath inet sendfd recvfd tty proc",
++		    "stdio rpath inet sendfd recvfd tty proc",
 +		    sizeof(pledges));
 +
 +		/* Executable maps shell-out using popen(3) */
@@ -116,13 +98,12 @@ Index: gophernicus.c
 +		if (pledge(pledges, NULL) == -1)
 +			die(&st, NULL, "pledge");
 +	}
-+
 +#endif
 +
  	/* Check if TCP wrappers have something to say about this connection */
  #ifdef HAVE_LIBWRAP
  	if (sstrncmp(st.req_remote_addr, UNKNOWN_ADDR) != MATCH &&
-@@ -527,30 +604,31 @@ int main(int argc, char *argv[])
+@@ -527,30 +594,31 @@ int main(int argc, char *argv[])
  
  	/* Try to get shared memory */
  #ifdef HAVE_SHMEM
