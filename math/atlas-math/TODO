@@ -1,0 +1,2 @@
+- add flags to optimize this port for SSE3 architectures
+- perhaps turn it into flavours (e.g. SSE, SSE2, SSE3)
