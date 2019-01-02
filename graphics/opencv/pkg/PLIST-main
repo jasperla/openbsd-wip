@@ -5,6 +5,7 @@
 @bin bin/opencv_traincascade
 @bin bin/opencv_version
 @bin bin/opencv_visualisation
+@bin bin/opencv_waldboost_detector
 bin/setup_vars_opencv3.sh
 include/opencv/
 include/opencv/cv.h
@@ -19,10 +20,26 @@ include/opencv/cxmisc.h
 include/opencv/highgui.h
 include/opencv/ml.h
 include/opencv2/
+include/opencv2/aruco/
+include/opencv2/aruco.hpp
+include/opencv2/aruco/charuco.hpp
+include/opencv2/aruco/dictionary.hpp
+include/opencv2/bgsegm.hpp
+include/opencv2/bioinspired/
+include/opencv2/bioinspired.hpp
+include/opencv2/bioinspired/bioinspired.hpp
+include/opencv2/bioinspired/retina.hpp
+include/opencv2/bioinspired/retinafasttonemapping.hpp
+include/opencv2/bioinspired/transientareassegmentationmodule.hpp
 include/opencv2/calib3d/
 include/opencv2/calib3d.hpp
 include/opencv2/calib3d/calib3d.hpp
 include/opencv2/calib3d/calib3d_c.h
+include/opencv2/ccalib/
+include/opencv2/ccalib.hpp
+include/opencv2/ccalib/multicalib.hpp
+include/opencv2/ccalib/omnidir.hpp
+include/opencv2/ccalib/randpattern.hpp
 include/opencv2/core/
 include/opencv2/core.hpp
 include/opencv2/core/affine.hpp
@@ -137,7 +154,38 @@ include/opencv2/core/va_intel.hpp
 include/opencv2/core/version.hpp
 include/opencv2/core/vsx_utils.hpp
 include/opencv2/core/wimage.hpp
+include/opencv2/core_detect.hpp
 include/opencv2/cvconfig.h
+include/opencv2/datasets/
+include/opencv2/datasets/ar_hmdb.hpp
+include/opencv2/datasets/ar_sports.hpp
+include/opencv2/datasets/dataset.hpp
+include/opencv2/datasets/fr_adience.hpp
+include/opencv2/datasets/fr_lfw.hpp
+include/opencv2/datasets/gr_chalearn.hpp
+include/opencv2/datasets/gr_skig.hpp
+include/opencv2/datasets/hpe_humaneva.hpp
+include/opencv2/datasets/hpe_parse.hpp
+include/opencv2/datasets/ir_affine.hpp
+include/opencv2/datasets/ir_robot.hpp
+include/opencv2/datasets/is_bsds.hpp
+include/opencv2/datasets/is_weizmann.hpp
+include/opencv2/datasets/msm_epfl.hpp
+include/opencv2/datasets/msm_middlebury.hpp
+include/opencv2/datasets/or_imagenet.hpp
+include/opencv2/datasets/or_mnist.hpp
+include/opencv2/datasets/or_pascal.hpp
+include/opencv2/datasets/or_sun.hpp
+include/opencv2/datasets/pd_caltech.hpp
+include/opencv2/datasets/pd_inria.hpp
+include/opencv2/datasets/slam_kitti.hpp
+include/opencv2/datasets/slam_tumindoor.hpp
+include/opencv2/datasets/tr_chars.hpp
+include/opencv2/datasets/tr_icdar.hpp
+include/opencv2/datasets/tr_svt.hpp
+include/opencv2/datasets/track_alov.hpp
+include/opencv2/datasets/track_vot.hpp
+include/opencv2/datasets/util.hpp
 include/opencv2/dnn/
 include/opencv2/dnn.hpp
 include/opencv2/dnn/all_layers.hpp
@@ -147,6 +195,18 @@ include/opencv2/dnn/dnn.inl.hpp
 include/opencv2/dnn/layer.details.hpp
 include/opencv2/dnn/layer.hpp
 include/opencv2/dnn/shape_utils.hpp
+include/opencv2/dpm.hpp
+include/opencv2/face/
+include/opencv2/face.hpp
+include/opencv2/face/bif.hpp
+include/opencv2/face/face_alignment.hpp
+include/opencv2/face/facemark.hpp
+include/opencv2/face/facemarkAAM.hpp
+include/opencv2/face/facemarkLBF.hpp
+include/opencv2/face/facemark_train.hpp
+include/opencv2/face/facerec.hpp
+include/opencv2/face/mace.hpp
+include/opencv2/face/predict_collector.hpp
 include/opencv2/features2d/
 include/opencv2/features2d.hpp
 include/opencv2/features2d/features2d.hpp
@@ -190,10 +250,29 @@ include/opencv2/flann/sampling.h
 include/opencv2/flann/saving.h
 include/opencv2/flann/simplex_downhill.h
 include/opencv2/flann/timer.h
+include/opencv2/freetype.hpp
+include/opencv2/fuzzy/
+include/opencv2/fuzzy.hpp
+include/opencv2/fuzzy/fuzzy_F0_math.hpp
+include/opencv2/fuzzy/fuzzy_F1_math.hpp
+include/opencv2/fuzzy/fuzzy_image.hpp
+include/opencv2/fuzzy/types.hpp
+include/opencv2/hdf/
+include/opencv2/hdf.hpp
+include/opencv2/hdf/hdf5.hpp
 include/opencv2/highgui/
 include/opencv2/highgui.hpp
 include/opencv2/highgui/highgui.hpp
 include/opencv2/highgui/highgui_c.h
+include/opencv2/img_hash/
+include/opencv2/img_hash.hpp
+include/opencv2/img_hash/average_hash.hpp
+include/opencv2/img_hash/block_mean_hash.hpp
+include/opencv2/img_hash/color_moment_hash.hpp
+include/opencv2/img_hash/img_hash_base.hpp
+include/opencv2/img_hash/marr_hildreth_hash.hpp
+include/opencv2/img_hash/phash.hpp
+include/opencv2/img_hash/radial_variance_hash.hpp
 include/opencv2/imgcodecs/
 include/opencv2/imgcodecs.hpp
 include/opencv2/imgcodecs/imgcodecs.hpp
@@ -209,6 +288,9 @@ include/opencv2/imgproc/hal/interface.h
 include/opencv2/imgproc/imgproc.hpp
 include/opencv2/imgproc/imgproc_c.h
 include/opencv2/imgproc/types_c.h
+include/opencv2/line_descriptor/
+include/opencv2/line_descriptor.hpp
+include/opencv2/line_descriptor/descriptor.hpp
 include/opencv2/ml/
 include/opencv2/ml.hpp
 include/opencv2/ml/ml.hpp
@@ -220,11 +302,40 @@ include/opencv2/objdetect/objdetect.hpp
 include/opencv2/objdetect/objdetect_c.h
 include/opencv2/opencv.hpp
 include/opencv2/opencv_modules.hpp
+include/opencv2/optflow/
+include/opencv2/optflow.hpp
+include/opencv2/optflow/motempl.hpp
+include/opencv2/optflow/pcaflow.hpp
+include/opencv2/optflow/sparse_matching_gpc.hpp
+include/opencv2/phase_unwrapping/
+include/opencv2/phase_unwrapping.hpp
+include/opencv2/phase_unwrapping/histogramphaseunwrapping.hpp
+include/opencv2/phase_unwrapping/phase_unwrapping.hpp
 include/opencv2/photo/
 include/opencv2/photo.hpp
 include/opencv2/photo/cuda.hpp
 include/opencv2/photo/photo.hpp
 include/opencv2/photo/photo_c.h
+include/opencv2/plot.hpp
+include/opencv2/reg/
+include/opencv2/reg/map.hpp
+include/opencv2/reg/mapaffine.hpp
+include/opencv2/reg/mapper.hpp
+include/opencv2/reg/mappergradaffine.hpp
+include/opencv2/reg/mappergradeuclid.hpp
+include/opencv2/reg/mappergradproj.hpp
+include/opencv2/reg/mappergradshift.hpp
+include/opencv2/reg/mappergradsimilar.hpp
+include/opencv2/reg/mapperpyramid.hpp
+include/opencv2/reg/mapprojec.hpp
+include/opencv2/reg/mapshift.hpp
+include/opencv2/rgbd/
+include/opencv2/rgbd.hpp
+include/opencv2/rgbd/linemod.hpp
+include/opencv2/saliency/
+include/opencv2/saliency.hpp
+include/opencv2/saliency/saliencyBaseClasses.hpp
+include/opencv2/saliency/saliencySpecializedClasses.hpp
 include/opencv2/shape/
 include/opencv2/shape.hpp
 include/opencv2/shape/emdL1.hpp
@@ -232,6 +343,11 @@ include/opencv2/shape/hist_cost.hpp
 include/opencv2/shape/shape.hpp
 include/opencv2/shape/shape_distance.hpp
 include/opencv2/shape/shape_transformer.hpp
+include/opencv2/stereo/
+include/opencv2/stereo.hpp
+include/opencv2/stereo/descriptor.hpp
+include/opencv2/stereo/matching.hpp
+include/opencv2/stereo/stereo.hpp
 include/opencv2/stitching/
 include/opencv2/stitching.hpp
 include/opencv2/stitching/detail/
@@ -248,9 +364,35 @@ include/opencv2/stitching/detail/util_inl.hpp
 include/opencv2/stitching/detail/warpers.hpp
 include/opencv2/stitching/detail/warpers_inl.hpp
 include/opencv2/stitching/warpers.hpp
+include/opencv2/structured_light/
+include/opencv2/structured_light.hpp
+include/opencv2/structured_light/graycodepattern.hpp
+include/opencv2/structured_light/sinusoidalpattern.hpp
+include/opencv2/structured_light/structured_light.hpp
 include/opencv2/superres/
 include/opencv2/superres.hpp
 include/opencv2/superres/optical_flow.hpp
+include/opencv2/surface_matching/
+include/opencv2/surface_matching.hpp
+include/opencv2/surface_matching/icp.hpp
+include/opencv2/surface_matching/pose_3d.hpp
+include/opencv2/surface_matching/ppf_helpers.hpp
+include/opencv2/surface_matching/ppf_match_3d.hpp
+include/opencv2/surface_matching/t_hash_int.hpp
+include/opencv2/text/
+include/opencv2/text.hpp
+include/opencv2/text/erfilter.hpp
+include/opencv2/text/ocr.hpp
+include/opencv2/text/textDetector.hpp
+include/opencv2/tracking/
+include/opencv2/tracking.hpp
+include/opencv2/tracking/feature.hpp
+include/opencv2/tracking/kalman_filters.hpp
+include/opencv2/tracking/onlineBoosting.hpp
+include/opencv2/tracking/onlineMIL.hpp
+include/opencv2/tracking/tldDataset.hpp
+include/opencv2/tracking/tracker.hpp
+include/opencv2/tracking/tracking.hpp
 include/opencv2/video/
 include/opencv2/video.hpp
 include/opencv2/video/background_segm.hpp
@@ -279,24 +421,85 @@ include/opencv2/videostab/outlier_rejection.hpp
 include/opencv2/videostab/ring_buffer.hpp
 include/opencv2/videostab/stabilizer.hpp
 include/opencv2/videostab/wobble_suppression.hpp
+include/opencv2/xfeatures2d/
+include/opencv2/xfeatures2d.hpp
+include/opencv2/xfeatures2d/cuda.hpp
+include/opencv2/xfeatures2d/nonfree.hpp
+include/opencv2/ximgproc/
+include/opencv2/ximgproc.hpp
+include/opencv2/ximgproc/brightedges.hpp
+include/opencv2/ximgproc/deriche_filter.hpp
+include/opencv2/ximgproc/disparity_filter.hpp
+include/opencv2/ximgproc/edge_filter.hpp
+include/opencv2/ximgproc/edgeboxes.hpp
+include/opencv2/ximgproc/estimated_covariance.hpp
+include/opencv2/ximgproc/fast_hough_transform.hpp
+include/opencv2/ximgproc/fast_line_detector.hpp
+include/opencv2/ximgproc/fourier_descriptors.hpp
+include/opencv2/ximgproc/lsc.hpp
+include/opencv2/ximgproc/paillou_filter.hpp
+include/opencv2/ximgproc/peilin.hpp
+include/opencv2/ximgproc/ridgefilter.hpp
+include/opencv2/ximgproc/seeds.hpp
+include/opencv2/ximgproc/segmentation.hpp
+include/opencv2/ximgproc/slic.hpp
+include/opencv2/ximgproc/sparse_match_interpolator.hpp
+include/opencv2/ximgproc/structured_edge_detection.hpp
+include/opencv2/ximgproc/weighted_median_filter.hpp
+include/opencv2/xobjdetect.hpp
+include/opencv2/xphoto/
+include/opencv2/xphoto.hpp
+include/opencv2/xphoto/bm3d_image_denoising.hpp
+include/opencv2/xphoto/dct_image_denoising.hpp
+include/opencv2/xphoto/inpainting.hpp
+include/opencv2/xphoto/tonemap.hpp
+include/opencv2/xphoto/white_balance.hpp
 lib/OpenCV/
+@lib lib/libopencv_aruco.so.${LIBopencv_aruco_VERSION}
+@lib lib/libopencv_bgsegm.so.${LIBopencv_bgsegm_VERSION}
+@lib lib/libopencv_bioinspired.so.${LIBopencv_bioinspired_VERSION}
 @lib lib/libopencv_calib3d.so.${LIBopencv_calib3d_VERSION}
+@lib lib/libopencv_ccalib.so.${LIBopencv_ccalib_VERSION}
 @lib lib/libopencv_core.so.${LIBopencv_core_VERSION}
+@lib lib/libopencv_datasets.so.${LIBopencv_datasets_VERSION}
 @lib lib/libopencv_dnn.so.${LIBopencv_dnn_VERSION}
+@lib lib/libopencv_dnn_objdetect.so.${LIBopencv_dnn_objdetect_VERSION}
+@lib lib/libopencv_dpm.so.${LIBopencv_dpm_VERSION}
+@lib lib/libopencv_face.so.${LIBopencv_face_VERSION}
 @lib lib/libopencv_features2d.so.${LIBopencv_features2d_VERSION}
 @lib lib/libopencv_flann.so.${LIBopencv_flann_VERSION}
+@lib lib/libopencv_freetype.so.${LIBopencv_freetype_VERSION}
+@lib lib/libopencv_fuzzy.so.${LIBopencv_fuzzy_VERSION}
+@lib lib/libopencv_hdf.so.${LIBopencv_hdf_VERSION}
 @lib lib/libopencv_highgui.so.${LIBopencv_highgui_VERSION}
+@lib lib/libopencv_img_hash.so.${LIBopencv_img_hash_VERSION}
 @lib lib/libopencv_imgcodecs.so.${LIBopencv_imgcodecs_VERSION}
 @lib lib/libopencv_imgproc.so.${LIBopencv_imgproc_VERSION}
+@lib lib/libopencv_line_descriptor.so.${LIBopencv_line_descriptor_VERSION}
 @lib lib/libopencv_ml.so.${LIBopencv_ml_VERSION}
 @lib lib/libopencv_objdetect.so.${LIBopencv_objdetect_VERSION}
+@lib lib/libopencv_optflow.so.${LIBopencv_optflow_VERSION}
+@lib lib/libopencv_phase_unwrapping.so.${LIBopencv_phase_unwrapping_VERSION}
 @lib lib/libopencv_photo.so.${LIBopencv_photo_VERSION}
+@lib lib/libopencv_plot.so.${LIBopencv_plot_VERSION}
+@lib lib/libopencv_reg.so.${LIBopencv_reg_VERSION}
+@lib lib/libopencv_rgbd.so.${LIBopencv_rgbd_VERSION}
+@lib lib/libopencv_saliency.so.${LIBopencv_saliency_VERSION}
 @lib lib/libopencv_shape.so.${LIBopencv_shape_VERSION}
+@lib lib/libopencv_stereo.so.${LIBopencv_stereo_VERSION}
 @lib lib/libopencv_stitching.so.${LIBopencv_stitching_VERSION}
+@lib lib/libopencv_structured_light.so.${LIBopencv_structured_light_VERSION}
 @lib lib/libopencv_superres.so.${LIBopencv_superres_VERSION}
+@lib lib/libopencv_surface_matching.so.${LIBopencv_surface_matching_VERSION}
+@lib lib/libopencv_text.so.${LIBopencv_text_VERSION}
+@lib lib/libopencv_tracking.so.${LIBopencv_tracking_VERSION}
 @lib lib/libopencv_video.so.${LIBopencv_video_VERSION}
 @lib lib/libopencv_videoio.so.${LIBopencv_videoio_VERSION}
 @lib lib/libopencv_videostab.so.${LIBopencv_videostab_VERSION}
+@lib lib/libopencv_xfeatures2d.so.${LIBopencv_xfeatures2d_VERSION}
+@lib lib/libopencv_ximgproc.so.${LIBopencv_ximgproc_VERSION}
+@lib lib/libopencv_xobjdetect.so.${LIBopencv_xobjdetect_VERSION}
+@lib lib/libopencv_xphoto.so.${LIBopencv_xphoto_VERSION}
 lib/pkgconfig/opencv.pc
 lib/python${MODPY_VERSION}/site-packages/cv2/
 lib/python${MODPY_VERSION}/site-packages/cv2/__init__.py

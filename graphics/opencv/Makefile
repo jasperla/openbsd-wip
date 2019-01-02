@@ -14,10 +14,18 @@ PKGNAME-main =		${PKGNAME}
 PKGNAME-docs =		opencv-docs-$V
 PKGNAME-java =		opencv-java-$V
 
-.for i in opencv_calib3d opencv_core opencv_dnn opencv_features2d \
-  opencv_flann opencv_highgui opencv_imgcodecs opencv_imgproc \
-  opencv_ml opencv_objdetect opencv_photo opencv_shape opencv_stitching \
-  opencv_superres opencv_video opencv_videoio opencv_videostab
+sharedlibs = opencv_aruco opencv_bgsegm opencv_bioinspired opencv_calib3d \
+opencv_ccalib opencv_core opencv_datasets opencv_dnn opencv_dnn_objdetect \
+opencv_dpm opencv_face opencv_features2d opencv_flann opencv_freetype \
+opencv_fuzzy opencv_hdf opencv_highgui opencv_img_hash opencv_imgcodecs \
+opencv_imgproc opencv_line_descriptor opencv_ml opencv_objdetect \
+opencv_optflow opencv_phase_unwrapping opencv_photo opencv_plot opencv_reg \
+opencv_rgbd opencv_saliency opencv_shape opencv_stereo opencv_stitching \
+opencv_structured_light opencv_superres opencv_surface_matching opencv_text \
+opencv_tracking opencv_video opencv_videoio opencv_videostab \
+opencv_xfeatures2d opencv_ximgproc opencv_xobjdetect opencv_xphoto
+
+.for i in ${sharedlibs}
 SHARED_LIBS += $i 4.0
 .endfor
 
@@ -46,16 +54,15 @@ WANTLIB-main += avresample avutil c cairo cairo-gobject gdk-3 gdk_pixbuf-2.0
 WANTLIB-main += gio-2.0 glib-2.0 gobject-2.0 gstapp-1.0 gstbase-1.0
 WANTLIB-main += gstpbutils-1.0 gstreamer-1.0 gstriff-1.0 gstvideo-1.0
 WANTLIB-main += gthread-2.0 gtk-3 intl jasper jpeg m pango-1.0 pangocairo-1.0
-WANTLIB-main += png16 swscale tiff z
-WANTLIB-main += webp gphoto2 gphoto2_port
+WANTLIB-main += png16 swscale tiff webp webp gphoto2 gphoto2_port z 
+WANTLIB-main += freetype harfbuzz hdf5
 
 WANTLIB-docs =
 
-WANTLIB-java += ${COMPILER_LIBCXX} m opencv_calib3d opencv_core opencv_dnn
-WANTLIB-java += opencv_features2d opencv_flann opencv_highgui opencv_imgcodecs
-WANTLIB-java += opencv_imgproc opencv_ml opencv_objdetect opencv_photo
-WANTLIB-java += opencv_shape opencv_stitching opencv_superres
-WANTLIB-java += opencv_video opencv_videoio opencv_videostab
+WANTLIB-java += ${COMPILER_LIBCXX} m
+.for i in ${sharedlibs}
+WANTLIB-java += $i
+.endfor
 
 COMPILER =		base-clang ports-gcc base-gcc
 
@@ -109,15 +116,18 @@ CONFIGURE_ARGS +=	-DBUILD_TESTS=On \
 
 # opencv_contrib (enable face)
 CONFIGURE_ARGS +=	-DOPENCV_EXTRA_MODULES_PATH="${WRKDIR}/opencv_contrib-${V}/modules" \
-			-DBUILD_opencv_legacy=OFF
+			-DBUILD_opencv_hfs=Off
+
+CONFIGURE_ENV =		CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
+			LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib"
 
 .if ${ARCH:Mi386}
 # XXX PIE cannot be produced due to problems with inline assembly.
 # Since OpenCV is mostly used as a library, switch to PIC.
-CONFIGURE_ENV =		CFLAGS="${CFLAGS} -fPIC" \
+CONFIGURE_ENV +=		CFLAGS="${CFLAGS} -fPIC" \
 			CXXFLAGS="${CXXFLAGS} -fPIC"
 # XXX Disable optimizations
-CONFIGURE_ARGS+=	-DCPU_DISPATCH=
+CONFIGURE_ARGS +=	-DCPU_DISPATCH=
 .endif
 
 .if ${BUILD_PACKAGES:M-java}
