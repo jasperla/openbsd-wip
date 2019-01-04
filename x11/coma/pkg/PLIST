@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v$
+@bin bin/coma
+share/doc/coma/
+share/doc/coma/README.md
