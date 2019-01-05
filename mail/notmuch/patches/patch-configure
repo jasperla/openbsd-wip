@@ -1,7 +1,25 @@
 $OpenBSD$
---- configure.orig	Wed Jan 11 21:33:21 2017
-+++ configure	Wed Jan 11 21:35:12 2017
-@@ -491,9 +491,9 @@ if ! pkg-config --exists zlib; then
+Index: configure
+--- configure.orig
++++ configure
+@@ -42,13 +42,13 @@ if [ "$srcdir" != "." ]; then
+ 
+     # Emacs only likes to generate compiled files next to the .el files
+     # by default so copy these as well (which is not ideal).
+-    cp -a "$srcdir"/emacs/*.el emacs
++    cp -p "$srcdir"/emacs/*.el emacs
+ 
+     # We were not able to create fully working Makefile using ruby mkmf.rb
+     # so ruby bindings source files are copied as well (ditto -- not ideal).
+     mkdir bindings/ruby
+-    cp -a "$srcdir"/bindings/ruby/*.[ch] bindings/ruby
+-    cp -a "$srcdir"/bindings/ruby/extconf.rb bindings/ruby
++    cp -p "$srcdir"/bindings/ruby/*.[ch] bindings/ruby
++    cp -p "$srcdir"/bindings/ruby/extconf.rb bindings/ruby
+ fi
+ 
+ # Set several defaults (optionally specified by the user in
+@@ -534,9 +534,9 @@ if ! pkg-config --exists zlib; then
    rm -f compat/gen_zlib_pc
  fi
  
@@ -13,12 +31,12 @@ $OpenBSD$
      printf "Yes.\n"
      have_zlib=1
      zlib_cflags=$(pkg-config --cflags zlib)
-@@ -519,7 +519,7 @@ fi
+@@ -582,7 +582,7 @@ fi
  printf "Checking for python... "
  have_python=0
  
--for name in ${PYTHON} python python2 python3; do
-+for name in ${PYTHON} python python2 python2.7 python3; do
+-for name in ${PYTHON} python3 python python2; do
++for name in ${PYTHON} python2.7; do
      if command -v $name > /dev/null; then
  	have_python=1
  	python=$name
