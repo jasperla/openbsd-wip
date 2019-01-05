@@ -336,6 +336,17 @@ include/opencv2/saliency/
 include/opencv2/saliency.hpp
 include/opencv2/saliency/saliencyBaseClasses.hpp
 include/opencv2/saliency/saliencySpecializedClasses.hpp
+include/opencv2/sfm/
+include/opencv2/sfm.hpp
+include/opencv2/sfm/conditioning.hpp
+include/opencv2/sfm/fundamental.hpp
+include/opencv2/sfm/io.hpp
+include/opencv2/sfm/numeric.hpp
+include/opencv2/sfm/projection.hpp
+include/opencv2/sfm/reconstruct.hpp
+include/opencv2/sfm/robust.hpp
+include/opencv2/sfm/simple_pipeline.hpp
+include/opencv2/sfm/triangulation.hpp
 include/opencv2/shape/
 include/opencv2/shape.hpp
 include/opencv2/shape/emdL1.hpp
@@ -485,6 +496,7 @@ lib/OpenCV/
 @lib lib/libopencv_reg.so.${LIBopencv_reg_VERSION}
 @lib lib/libopencv_rgbd.so.${LIBopencv_rgbd_VERSION}
 @lib lib/libopencv_saliency.so.${LIBopencv_saliency_VERSION}
+@lib lib/libopencv_sfm.so.${LIBopencv_sfm_VERSION}
 @lib lib/libopencv_shape.so.${LIBopencv_shape_VERSION}
 @lib lib/libopencv_stereo.so.${LIBopencv_stereo_VERSION}
 @lib lib/libopencv_stitching.so.${LIBopencv_stitching_VERSION}
@@ -515,6 +527,11 @@ lib/python${MODPY_VERSION}/site-packages/cv2/load_config_py3.pyc
 lib/python${MODPY_VERSION}/site-packages/cv2/python-${MODPY_VERSION}/
 lib/python${MODPY_VERSION}/site-packages/cv2/python-${MODPY_VERSION}/cv2.so
 share/OpenCV/
+share/OpenCV/3rdparty/
+share/OpenCV/3rdparty/lib/
+share/OpenCV/3rdparty/lib/libcorrespondence.a
+share/OpenCV/3rdparty/lib/libmultiview.a
+share/OpenCV/3rdparty/lib/libnumeric.a
 share/OpenCV/OpenCVConfig-version.cmake
 share/OpenCV/OpenCVConfig.cmake
 share/OpenCV/OpenCVModules${MODCMAKE_BUILD_SUFFIX}

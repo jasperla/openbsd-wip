@@ -23,7 +23,7 @@ opencv_optflow opencv_phase_unwrapping opencv_photo opencv_plot opencv_reg \
 opencv_rgbd opencv_saliency opencv_shape opencv_stereo opencv_stitching \
 opencv_structured_light opencv_superres opencv_surface_matching opencv_text \
 opencv_tracking opencv_video opencv_videoio opencv_videostab \
-opencv_xfeatures2d opencv_ximgproc opencv_xobjdetect opencv_xphoto
+opencv_xfeatures2d opencv_ximgproc opencv_xobjdetect opencv_xphoto opencv_sfm
 
 .for i in ${sharedlibs}
 SHARED_LIBS += $i 4.0
@@ -40,7 +40,6 @@ MAINTAINER =		Rafael Sadowski <rsadowski@openbsd.org>
 PERMIT_PACKAGE_FTP =		Yes
 PERMIT_PACKAGE_CDROM =		patents
 PERMIT_PACKAGE_CDROM-docs =	Yes
-
 
 MASTER_SITES=	https://sizeofvoid.org/pub/OpenBSD/distfiles/
 
@@ -72,13 +71,21 @@ FLAVOR ?=
 
 .include <bsd.port.arch.mk>
 
+WRKDIST = ${WRKDIR}
+WRKSRC = ${OPENCV_SRC}
+
+OPENCV_SRC = ${WRKDIST}/${DISTNAME:S/-${V}//}
+OPENCV_CONTRIB_SRC = ${WRKDIST}/opencv_contrib
+
 MODULES =		devel/cmake \
 			lang/python
 
 BUILD_DEPENDS =		devel/doxygen \
 			math/eigen3 \
 			math/py-numpy \
-			www/py-beautifulsoup4
+			www/py-beautifulsoup4 \
+			devel/gflags \
+			devel/glog
 
 RUN_DEPENDS-main =	math/py-numpy
 RUN_DEPENDS-docs =	${BUILD_PKGPATH},-main
@@ -115,7 +122,7 @@ CONFIGURE_ARGS +=	-DBUILD_TESTS=On \
 			-DWITH_V4L=Off
 
 # opencv_contrib (enable face)
-CONFIGURE_ARGS +=	-DOPENCV_EXTRA_MODULES_PATH="${WRKDIR}/opencv_contrib-${V}/modules" \
+CONFIGURE_ARGS +=	-DOPENCV_EXTRA_MODULES_PATH="${OPENCV_CONTRIB_SRC}/modules" \
 			-DBUILD_opencv_hfs=Off
 
 CONFIGURE_ENV =		CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
@@ -160,6 +167,11 @@ post-install:
 	rm -Rf ${DOCDIR}
 	mv ${PREFIX}/share/OpenCV/doc ${DOCDIR}
 .endif
+
+# Create version independent patches
+post-extract:
+	mv ${WRKDIR}/${DISTNAME} ${OPENCV_SRC}
+	mv ${WRKDIR}/opencv_contrib-${V} ${OPENCV_CONTRIB_SRC}
 
 do-test:
 	#download testdata
