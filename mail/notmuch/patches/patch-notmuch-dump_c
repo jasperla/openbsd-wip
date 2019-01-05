@@ -1,7 +1,8 @@
 $OpenBSD$
---- notmuch-dump.c.orig	Wed Jan 11 21:36:13 2017
-+++ notmuch-dump.c	Wed Jan 11 21:36:23 2017
-@@ -328,7 +328,7 @@ notmuch_database_dump (notmuch_database_t *notmuch,
+Index: notmuch-dump.c
+--- notmuch-dump.c.orig
++++ notmuch-dump.c
+@@ -329,7 +329,7 @@ notmuch_database_dump (notmuch_database_t *notmuch,
  	}
      }
  
@@ -10,7 +11,7 @@ $OpenBSD$
  	fprintf (stderr, "Error closing %s: %s\n", name_for_error,
  		 gzerror (output, NULL));
  	ret = EXIT_FAILURE;
-@@ -347,7 +347,7 @@ notmuch_database_dump (notmuch_database_t *notmuch,
+@@ -348,7 +348,7 @@ notmuch_database_dump (notmuch_database_t *notmuch,
      }
   DONE:
      if (ret != EXIT_SUCCESS && output)

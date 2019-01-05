@@ -1,7 +1,8 @@
 $OpenBSD$
---- lib/Makefile.local.orig	Mon Jan  9 11:25:01 2017
-+++ lib/Makefile.local	Wed Jan 11 21:07:03 2017
-@@ -8,7 +8,15 @@ SONAME = libnotmuch.$(LIBNOTMUCH_VERSION_MAJOR).$(LIBR
+Index: lib/Makefile.local
+--- lib/Makefile.local.orig
++++ lib/Makefile.local
+@@ -15,7 +15,15 @@ SONAME = libnotmuch.$(LIBNOTMUCH_VERSION_MAJOR).$(LIBR
  LIBNAME = libnotmuch.$(LIBNOTMUCH_VERSION_MAJOR).$(LIBNOTMUCH_VERSION_MINOR).$(LIBNOTMUCH_VERSION_RELEASE).$(LIBRARY_SUFFIX)
  LIBRARY_LINK_FLAG = -dynamiclib -install_name $(libdir)/$(SONAME) -compatibility_version $(LIBNOTMUCH_VERSION_MAJOR).$(LIBNOTMUCH_VERSION_MINOR) -current_version $(LIBNOTMUCH_VERSION_MAJOR).$(LIBNOTMUCH_VERSION_MINOR).$(LIBNOTMUCH_VERSION_RELEASE)
  else
@@ -10,24 +11,24 @@ $OpenBSD$
 +LINKER_NAME = libnotmuch.$(LIBRARY_SUFFIX).$(LIBNOTMUCH_VERSION_MAJOR).$(LIBNOTMUCH_VERSION_MINOR)
 +SONAME = $(LINKER_NAME)
 +LIBNAME = $(LINKER_NAME)
-+LIBRARY_LINK_FLAG = -shared -Wl,--version-script=notmuch.sym,-soname=$(SONAME)
++LIBRARY_LINK_FLAG = -shared -Wl,--version-script=$(srcdir)/lib/notmuch.sym,-soname=$(SONAME)
 +# ... -Wl,--no-undefined
 +else
 +LIBRARY_SUFFIX = so
  LINKER_NAME = libnotmuch.$(LIBRARY_SUFFIX)
  SONAME = $(LINKER_NAME).$(LIBNOTMUCH_VERSION_MAJOR)
  LIBNAME = $(SONAME).$(LIBNOTMUCH_VERSION_MINOR).$(LIBNOTMUCH_VERSION_RELEASE)
-@@ -22,6 +30,7 @@ LIBRARY_INSTALL_POST_COMMAND=ldconfig
+@@ -29,6 +37,7 @@ LIBRARY_INSTALL_POST_COMMAND=ldconfig
  endif
  endif
  endif
 +endif
  
- dir := lib
- extra_cflags += -I$(srcdir)/$(dir) -fPIC
-@@ -66,19 +75,23 @@ $(dir)/$(LIBNAME): $(libnotmuch_modules) notmuch.sym u
- notmuch.sym: $(srcdir)/$(dir)/notmuch.h $(libnotmuch_modules)
- 	sh $(srcdir)/$(lib)/gen-version-script.sh $< $(libnotmuch_modules) > $@
+ extra_cflags += -I$(srcdir)/$(dir) -fPIC -fvisibility=hidden
+ extra_cxxflags += -fvisibility-inlines-hidden
+@@ -69,19 +78,23 @@ $(dir)/libnotmuch.a: $(libnotmuch_modules)
+ $(dir)/$(LIBNAME): $(libnotmuch_modules) util/libnotmuch_util.a parse-time-string/libparse-time-string.a
+ 	$(call quiet,CXX $(CXXFLAGS)) $(libnotmuch_modules) $(FINAL_LIBNOTMUCH_LDFLAGS) $(LIBRARY_LINK_FLAG) -o $@ util/libnotmuch_util.a parse-time-string/libparse-time-string.a
  
 +ifneq ($(PLATFORM),OPENBSD)
  $(dir)/$(SONAME): $(dir)/$(LIBNAME)
