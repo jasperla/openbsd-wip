@@ -57,8 +57,7 @@ share/vifm/vim/plugin/
 share/vifm/vim/plugin/vifm.vim
 share/vifm/vim/syntax/
 share/vifm/vim/syntax/vifm.vim
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database
 share/zsh/
 share/zsh/site-functions/
 share/zsh/site-functions/_vifm

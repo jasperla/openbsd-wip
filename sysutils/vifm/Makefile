@@ -1,7 +1,7 @@
 # $OpenBSD$
 
 COMMENT =		ncurses file manager with vi keybindings
-DISTNAME =		vifm-0.9
+DISTNAME =		vifm-0.10
 CATEGORIES =		sysutils
 HOMEPAGE =		https://vifm.info/
 
