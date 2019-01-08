@@ -4,9 +4,9 @@ COMMENT =	minimalistic X11 window manager
 
 GH_ACCOUNT =	jorisvink
 GH_PROJECT =	coma
-GH_COMMIT =	1f456be6b4aa4cf01ce8fcbdf63cb8f0de509e48
+GH_COMMIT =	5444e3081b8c0e199b88084ba7475176a73e9e25
 
-DISTNAME =	coma-20190104
+DISTNAME =	coma-20190108
 
 CATEGORIES =	x11
 
