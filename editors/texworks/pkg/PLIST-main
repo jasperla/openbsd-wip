@@ -1,0 +1,15 @@
+@comment $OpenBSD: PLIST-main,v 1.6 2018/12/30 12:11:56 edd Exp $
+@pkgpath editors/texworks
+@bin bin/texworks
+lib/texworks/
+@man man/man1/texworks.1
+share/appdata/
+share/appdata/texworks.appdata.xml
+share/applications/texworks.desktop
+share/doc/texworks/
+share/doc/texworks/COPYING
+share/doc/texworks/NEWS
+share/doc/texworks/README.md
+share/pixmaps/
+share/pixmaps/TeXworks.png
+@tag update-desktop-database
