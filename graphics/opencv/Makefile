@@ -21,9 +21,9 @@ opencv_fuzzy opencv_hdf opencv_highgui opencv_img_hash opencv_imgcodecs \
 opencv_imgproc opencv_line_descriptor opencv_ml opencv_objdetect \
 opencv_optflow opencv_phase_unwrapping opencv_photo opencv_plot opencv_reg \
 opencv_rgbd opencv_saliency opencv_shape opencv_stereo opencv_stitching \
-opencv_structured_light opencv_superres opencv_surface_matching opencv_text \
-opencv_tracking opencv_video opencv_videoio opencv_videostab \
-opencv_xfeatures2d opencv_ximgproc opencv_xobjdetect opencv_xphoto opencv_sfm
+opencv_sfm opencv_structured_light opencv_superres opencv_surface_matching \
+opencv_text opencv_tracking opencv_video opencv_videoio opencv_videostab \
+opencv_xfeatures2d opencv_ximgproc opencv_xobjdetect opencv_xphoto
 
 .for i in ${sharedlibs}
 SHARED_LIBS += $i 4.0
@@ -54,7 +54,7 @@ WANTLIB-main += gio-2.0 glib-2.0 gobject-2.0 gstapp-1.0 gstbase-1.0
 WANTLIB-main += gstpbutils-1.0 gstreamer-1.0 gstriff-1.0 gstvideo-1.0
 WANTLIB-main += gthread-2.0 gtk-3 intl jasper jpeg m pango-1.0 pangocairo-1.0
 WANTLIB-main += png16 swscale tiff webp webp gphoto2 gphoto2_port z 
-WANTLIB-main += freetype harfbuzz hdf5
+WANTLIB-main += freetype harfbuzz hdf5 lept tesseract gflags glog
 
 WANTLIB-docs =
 
@@ -71,37 +71,33 @@ FLAVOR ?=
 
 .include <bsd.port.arch.mk>
 
-WRKDIST = ${WRKDIR}
-WRKSRC = ${OPENCV_SRC}
-
-OPENCV_SRC = ${WRKDIST}/${DISTNAME:S/-${V}//}
-OPENCV_CONTRIB_SRC = ${WRKDIST}/opencv_contrib
-
 MODULES =		devel/cmake \
 			lang/python
 
 BUILD_DEPENDS =		devel/doxygen \
 			math/eigen3 \
 			math/py-numpy \
-			www/py-beautifulsoup4 \
-			devel/gflags \
-			devel/glog
+			www/py-beautifulsoup4
 
 RUN_DEPENDS-main =	math/py-numpy
 RUN_DEPENDS-docs =	${BUILD_PKGPATH},-main
 RUN_DEPENDS-java =	${MODJAVA_RUN_DEPENDS}
 
 LIB_DEPENDS-main =	${LIB_DEPENDS} \
+			devel/gflags \
+			devel/glog \
 			multimedia/gstreamer1/plugins-base \
 			x11/gtk+3 \
 			math/hdf5 \
 			graphics/ffmpeg \
 			graphics/ilmbase \
 			graphics/jpeg \
+			graphics/leptonica \
 			graphics/libgphoto2 \
 			graphics/libwebp \
 			graphics/openexr \
 			graphics/png \
+			graphics/tesseract/tesseract \
 			graphics/tiff
 
 LIB_DEPENDS-java =	${BUILD_PKGPATH},-main=${V}
@@ -118,20 +114,21 @@ CONFIGURE_ARGS +=	-DBUILD_TESTS=On \
 			-DWITH_1394=Off \
 			-DWITH_IPP=Off \
 			-DWITH_ITT=Off \
+			-DWITH_LAPACK=Off \
 			-DWITH_OPENCL=Off \
 			-DWITH_V4L=Off
 
 # opencv_contrib (enable face)
-CONFIGURE_ARGS +=	-DOPENCV_EXTRA_MODULES_PATH="${OPENCV_CONTRIB_SRC}/modules" \
+CONFIGURE_ARGS +=	-DOPENCV_EXTRA_MODULES_PATH="${WRKDIR}/opencv-${V}/opencv_contrib/modules" \
 			-DBUILD_opencv_hfs=Off
 
-CONFIGURE_ENV =		CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
-			LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib"
+#XXX
+CONFIGURE_ENV =		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib"
 
 .if ${ARCH:Mi386}
 # XXX PIE cannot be produced due to problems with inline assembly.
 # Since OpenCV is mostly used as a library, switch to PIC.
-CONFIGURE_ENV +=		CFLAGS="${CFLAGS} -fPIC" \
+CONFIGURE_ENV +=	CFLAGS="${CFLAGS} -fPIC" \
 			CXXFLAGS="${CXXFLAGS} -fPIC"
 # XXX Disable optimizations
 CONFIGURE_ARGS +=	-DCPU_DISPATCH=
@@ -141,6 +138,7 @@ CONFIGURE_ARGS +=	-DCPU_DISPATCH=
 MODULES +=		java
 MODJAVA_VER =		1.8+
 BUILD_DEPENDS +=	devel/apache-ant
+CONFIGURE_ARGS +=	-DOPENCV_JAR_INSTALL_PATH="lib/OpenCV/java"
 .else
 # Safe: Java will be detected, if present, but won't be used
 CONFIGURE_ARGS +=	-DBUILD_opencv_java=Off
@@ -161,17 +159,15 @@ CONFIGURE_ARGS +=	-DBUILD_DOCS=Off \
 
 DOCDIR =		${PREFIX}/share/doc/OpenCV
 
+post-extract:
+	mv ${WRKDIR}/opencv_contrib-${V} ${WRKDIR}/opencv-${V}/opencv_contrib
+
 post-install:
 	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py ${WRKINST}${MODPY_SITEPKG}
 .if ${BUILD_PACKAGES:M-docs}
 	rm -Rf ${DOCDIR}
 	mv ${PREFIX}/share/OpenCV/doc ${DOCDIR}
 .endif
-
-# Create version independent patches
-post-extract:
-	mv ${WRKDIR}/${DISTNAME} ${OPENCV_SRC}
-	mv ${WRKDIR}/opencv_contrib-${V} ${OPENCV_CONTRIB_SRC}
 
 do-test:
 	#download testdata
