@@ -1,0 +1,18 @@
+$OpenBSD$
+
+Patch should be removed for 3.4.6 as fixed upstream
+
+Index: modules/dnn/src/torch/THGeneral.cpp
+--- modules/dnn/src/torch/THGeneral.cpp.orig
++++ modules/dnn/src/torch/THGeneral.cpp
+@@ -1,10 +1,2 @@
+ #include "../precomp.hpp"
+-
+-#if defined(TH_DISABLE_HEAP_TRACKING)
+-#elif (defined(__unix) || defined(_WIN32))
+-#include <malloc.h>
+-#elif defined(__APPLE__)
+-#include <malloc/malloc.h>
+-#endif
+-
+ #include "THGeneral.h"
