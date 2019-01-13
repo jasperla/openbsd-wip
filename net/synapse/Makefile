@@ -43,9 +43,9 @@ RUN_DEPENDS =	devel/py-asn1 \
 		textproc/py-unpaddedbase64 \
 		textproc/py-yaml \
 		www/py-jinja2 \
-		www/py-macaroons \
 		www/py-matrix-angular-sdk \
 		www/py-saml2 \
+		www/py-pymacaroons \
 		www/py-treq
 TEST_DEPENDS =	${RUN_DEPENDS}
 do-test:
