@@ -1,7 +1,7 @@
 # $OpenBSD$
 
 COMMENT =	go implementation of the ethereum protocol
-V =		1.8.17
+V =		1.8.20
 PKGNAME =	geth-$V
 GH_ACCOUNT =	ethereum
 GH_PROJECT =	go-ethereum
@@ -33,7 +33,7 @@ do-install:
 
 # helper to regenerate the config file
 regen-conf:
-	${PREFIX}/bin/geth dumpconfig > ${FILESDIR}/geth.conf
+	${WRKSRC}/build/bin/geth dumpconfig > ${FILESDIR}/geth.conf
 	sed -i -e '/^DataDir\ /  s/=.*/=\ "$${VARBASE}\/geth\/data"/' \
 		-e '/^DatasetDir\ /s/=.*/=\ \"$${VARBASE}\/geth\/ethash"/' \
 		${FILESDIR}/geth.conf
