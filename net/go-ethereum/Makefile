@@ -2,7 +2,6 @@
 
 COMMENT =	go implementation of the ethereum protocol
 V =		1.8.20
-PKGNAME =	geth-$V
 GH_ACCOUNT =	ethereum
 GH_PROJECT =	go-ethereum
 GH_TAGNAME =	v$V
@@ -24,9 +23,9 @@ do-build:
 	cd ${WRKSRC} && make all
 
 do-install:
-	mkdir -p ${PREFIX}/share/geth
-	cp ${FILESDIR}/geth.conf ${PREFIX}/share/geth/geth.conf
-	${SUBST_CMD} ${PREFIX}/share/geth/geth.conf
+	mkdir -p ${PREFIX}/share/go-ethereum
+	cp ${FILESDIR}/geth.conf ${PREFIX}/share/go-ethereum/geth.conf
+	${SUBST_CMD} ${PREFIX}/share/go-ethereum/geth.conf
 	for b in abigen bootnode evm geth puppeth rlpdump swarm wnode ; do \
 		${INSTALL_PROGRAM} ${WRKSRC}/build/bin/$$b ${PREFIX}/bin/; \
 	done

@@ -20,6 +20,6 @@
 @bin bin/swarm
 @bin bin/wnode
 @comment share/doc/pkg-readmes/${PKGSTEM}
-share/geth/
-share/geth/geth.conf
+share/go-ethereum/
+share/go-ethereum/geth.conf
 @sample ${SYSCONFDIR}/geth.conf
