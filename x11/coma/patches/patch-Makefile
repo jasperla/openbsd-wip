@@ -1,0 +1,15 @@
+$OpenBSD$
+
+Allow building with GCC.
+
+Index: Makefile
+--- Makefile.orig
++++ Makefile
+@@ -19,7 +19,6 @@ CFLAGS+=-Wpointer-arith
+ CFLAGS+=-Wcast-qual
+ CFLAGS+=-Wsign-compare
+ CFLAGS+=-std=c99
+-CFLAGS+=-pedantic
+ 
+ CFLAGS+=`pkg-config --cflags x11 xft`
+ LDFLAGS+=`pkg-config --libs x11 xft`
