@@ -1,29 +1,28 @@
 # $OpenBSD: Makefile.template,v 1.78 2018/07/09 15:00:06 jca Exp $
 
-COMMENT =	minimalistic X11 window manager
+COMMENT =	keyboard driven tiling window manager
 
 GH_ACCOUNT =	jorisvink
 GH_PROJECT =	coma
-GH_COMMIT =	5444e3081b8c0e199b88084ba7475176a73e9e25
+GH_COMMIT =	f569e824e92fd1a439b81c3ab0be86514abeeea0
 
-DISTNAME =	coma-20190108
+DISTNAME =	coma-20190115
 
 CATEGORIES =	x11
+
+HOMEPAGE =	https://coma.one/wm/
 
 MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 
 # ISC
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += X11 Xft c
-
-USE_GMAKE =	Yes
+WANTLIB +=	X11 Xft c
 
 NO_TEST =	Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/coma ${PREFIX}/bin
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/coma
-	${INSTALL_DATA} ${WRKSRC}/README.md ${PREFIX}/share/doc/coma
+	${INSTALL_DATA} ${WRKSRC}/coma.1 ${PREFIX}/man/man1
 
 .include <bsd.port.mk>
