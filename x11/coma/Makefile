@@ -2,11 +2,7 @@
 
 COMMENT =	keyboard driven tiling window manager
 
-GH_ACCOUNT =	jorisvink
-GH_PROJECT =	coma
-GH_COMMIT =	f569e824e92fd1a439b81c3ab0be86514abeeea0
-
-DISTNAME =	coma-20190115
+DISTNAME =	coma-1.0
 
 CATEGORIES =	x11
 
@@ -19,10 +15,8 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB +=	X11 Xft c
 
-NO_TEST =	Yes
+MASTER_SITES =	https://coma.one/releases/
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/coma ${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/coma.1 ${PREFIX}/man/man1
+NO_TEST =	Yes
 
 .include <bsd.port.mk>
