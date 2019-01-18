@@ -1,0 +1,40 @@
+$OpenBSD$
+
+Index: runtime/druntime/src/core/sys/posix/semaphore.d
+--- runtime/druntime/src/core/sys/posix/semaphore.d.orig
++++ runtime/druntime/src/core/sys/posix/semaphore.d
+@@ -81,6 +81,23 @@ else version( FreeBSD )
+ 
+     enum SEM_FAILED = cast(sem_t*) null;
+ }
++else version ( OpenBSD )
++{
++    // Located in OpenBSD src: sys/sys/sem.h
++    struct sem
++    {
++        ushort semval;      // semaphore value
++        pid_t sempid;       // pid of last operation
++        ushort semncnt;     // # awaiting semval > cval
++        ushort semzcnt;     // # awaiting semval = 0
++    }
++
++    // Make another alias to keep the struct name consistent here
++    // and with the OpenBSD source code.
++    alias sem sem_t;
++
++    enum SEM_FAILED = cast(sem_t*) null;
++}
+ else version( DragonFlyBSD )
+ {
+     struct sem_t
+@@ -149,6 +166,10 @@ else version( OSX )
+     int sem_timedwait(sem_t*, in timespec*);
+ }
+ else version( FreeBSD )
++{
++    int sem_timedwait(sem_t*, in timespec*);
++}
++else version( OpenBSD )
+ {
+     int sem_timedwait(sem_t*, in timespec*);
+ }

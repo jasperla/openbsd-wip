@@ -3,28 +3,30 @@ $OpenBSD$
 Index: runtime/druntime/src/core/stdc/fenv.d
 --- runtime/druntime/src/core/stdc/fenv.d.orig
 +++ runtime/druntime/src/core/stdc/fenv.d
-@@ -190,6 +190,20 @@ else version ( FreeBSD )
+@@ -190,6 +190,22 @@ else version ( FreeBSD )
  
      alias ushort fexcept_t;
  }
-+else version ( OpenBSD )
++else version (OpenBSD)
 +{
 +    struct fenv_t
 +    {
-+        ushort __control;
-+        ushort __mxcsr_hi;
-+        ushort __status;
-+        ushort __mxcsr_lo;
-+        uint __tag;
-+        byte[16] __other;
++        struct __x87
++        {
++            uint    __control;
++            uint    __status;
++            uint    __tag;
++            uint[4] __others;
++        }
 +    }
++    uint __mxcsr;
 +
-+    alias ushort fexcept_t;
++    alias fexcept_t = uint;
 +}
- else version( CRuntime_Bionic )
+ else version ( DragonFlyBSD )
  {
-     version(X86)
-@@ -299,6 +313,12 @@ else version( OSX )
+     struct fenv_t
+@@ -327,6 +343,12 @@ else version( OSX )
      enum FE_DFL_ENV = &_FE_DFL_ENV;
  }
  else version( FreeBSD )
@@ -33,7 +35,7 @@ Index: runtime/druntime/src/core/stdc/fenv.d
 +    ///
 +    enum FE_DFL_ENV = &__fe_dfl_env;
 +}
-+else version( OpenBSD )
++else version (OpenBSD)
  {
      private extern const fenv_t __fe_dfl_env;
      ///

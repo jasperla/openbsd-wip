@@ -1,9 +1,10 @@
 # $OpenBSD$
 
 # Keep in sync with lang/ldc
-V =		1.5.0
+V =		0.17.6
 COMMENT =	LLVM-based D compiler
-DISTNAME =	ldc-bootstrap-0.17.${V}
+PKGNAME =	ldc-bootstrap-${V}
+DISTNAME = 	ldc-${V}-src
 CATEGORIES =	lang
 
 HOMEPAGE =	https://wiki.dlang.org/LDC
@@ -16,7 +17,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 #WANTLIB += c m
 
-MASTER_SITES =	https://devio.us/~bcallah/source/
+MASTER_SITES = https://github.com/ldc-developers/ldc/releases/download/v${V}/
 
 # C++11
 COMPILER =	base-clang ports-clang ports-gcc
