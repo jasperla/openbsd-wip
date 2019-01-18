@@ -1,3 +1,0 @@
-@comment $OpenBSD: PLIST,v$
-@bin bin/coma
-@man man/man1/coma.1
