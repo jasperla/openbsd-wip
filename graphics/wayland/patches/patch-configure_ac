@@ -5,16 +5,14 @@ Based on the work done by kwm81 at Github.
 Index: configure.ac
 --- configure.ac.orig
 +++ configure.ac
-@@ -63,6 +63,40 @@ AC_SUBST(GCC_CFLAGS)
+@@ -65,6 +65,54 @@ AC_SUBST(GCC_CFLAGS)
+ AC_CHECK_HEADERS([sys/prctl.h])
+ AC_CHECK_FUNCS([accept4 mkostemp posix_fallocate prctl])
  
- AC_CHECK_FUNCS([accept4 mkostemp posix_fallocate])
- 
-+AC_CHECK_HEADERS([sys/signalfd.h sys/timerfd.h])
-+
 +# Use epoll on Linux or kqueue on BSD
 +AC_CHECK_HEADERS([sys/epoll.h sys/event.h])
 +if test "x$ac_cv_header_sys_epoll_h" != "xyes" && test "x$ac_cv_header_sys_event_h" != "xyes"; then
-+       AC_MSG_ERROR([Can't find sys/epoll.h or sys/event.h. Please ensure either epoll or kqueue is available.])
++	AC_MSG_ERROR([Can't find sys/epoll.h or sys/event.h. Please ensure either epoll or kqueue is available.])
 +fi
 +
 +# Credential support on BSD
@@ -32,12 +30,28 @@ Index: configure.ac
 +	AC_DEFINE(USE_LIBKVM, 1, [use libkvm on BSD])
 +fi
 +
-+# dlopen()
-+AC_CHECK_LIB([dl], [dlsym], [DL_LIBS=-ldl])
-+AC_SUBST([DL_LIBS])
++# *BSD don't have libdl, but they have its functions
++SAVE_LIBS="$LIBS"
++LIBS=
++AC_CHECK_LIB([dl], [dlsym])
++DL_LIBS="$LIBS"
++LIBS="$SAVE_LIBS"
++AC_SUBST(DL_LIBS)
++
++# *BSD don't have librt, but they have its functions
++SAVE_LIBS="$LIBS"
++LIBS=
++AC_CHECK_LIB([rt], [clock_gettime])
++RT_LIBS="$LIBS"
++LIBS="$SAVE_LIBS"
++AC_SUBST(RT_LIBS)
 +
 +# Defines __FreeBSD__ if we're on FreeBSD, same for other *BSD
 +AC_CHECK_HEADERS([sys/param.h])
++
++# mremap() and sys/mman.h are needed for the shm
++AC_CHECK_FUNCS([mremap])
++AC_CHECK_HEADERS([sys/mman.h])
 +
 +# waitid() and signal.h are needed for the test suite.
 +AC_CHECK_FUNCS([waitid])
@@ -46,7 +60,7 @@ Index: configure.ac
  AC_ARG_ENABLE([libraries],
  	      [AC_HELP_STRING([--disable-libraries],
  			      [Disable compilation of wayland libraries])],
-@@ -87,6 +121,12 @@ AC_ARG_ENABLE([dtd-validation],
+@@ -89,6 +137,12 @@ AC_ARG_ENABLE([dtd-validation],
  	      [],
  	      [enable_dtd_validation=yes])
  
@@ -59,18 +73,20 @@ Index: configure.ac
  AM_CONDITIONAL(USE_HOST_SCANNER, test "x$with_host_scanner" = xyes)
  
  AM_CONDITIONAL(ENABLE_LIBRARIES, test "x$enable_libraries" = xyes)
-@@ -98,11 +138,12 @@ AC_SUBST([ICONDIR])
+@@ -100,12 +154,14 @@ AC_SUBST([ICONDIR])
  
  if test "x$enable_libraries" = "xyes"; then
  	PKG_CHECK_MODULES(FFI, [libffi])
-+dnl convert SFD_CLOEXEC and TFD_CLOEXEC to warning while figuring out how to do this.
- 	AC_CHECK_DECL(SFD_CLOEXEC,[],
--		      [AC_MSG_ERROR("SFD_CLOEXEC is needed to compile wayland libraries")],
-+		      [AC_MSG_WARN("SFD_CLOEXEC is needed to compile wayland libraries")],
+-	AC_CHECK_DECL(SFD_CLOEXEC,[],
++	if test "x$ac_cv_header_sys_epoll_h" == "xyes"; then
++		AC_CHECK_DECL(SFD_CLOEXEC,[],
+ 		      [AC_MSG_ERROR("SFD_CLOEXEC is needed to compile wayland libraries")],
  		      [[#include <sys/signalfd.h>]])
- 	AC_CHECK_DECL(TFD_CLOEXEC,[],
--		      [AC_MSG_ERROR("TFD_CLOEXEC is needed to compile wayland libraries")],
-+		      [AC_MSG_WARN("TFD_CLOEXEC is needed to compile wayland libraries")],
+-	AC_CHECK_DECL(TFD_CLOEXEC,[],
++		AC_CHECK_DECL(TFD_CLOEXEC,[],
+ 		      [AC_MSG_ERROR("TFD_CLOEXEC is needed to compile wayland libraries")],
  		      [[#include <sys/timerfd.h>]])
++	fi
  	AC_CHECK_DECL(CLOCK_MONOTONIC,[],
  		      [AC_MSG_ERROR("CLOCK_MONOTONIC is needed to compile wayland libraries")],
+ 		      [[#include <time.h>]])

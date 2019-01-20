@@ -1,0 +1,118 @@
+$OpenBSD$
+Add *BSD support.
+
+Based on the work done by kwm81 at Github.
+Index: src/wayland-shm.c
+--- src/wayland-shm.c.orig
++++ src/wayland-shm.c
+@@ -28,6 +28,8 @@
+  *
+  */
+ 
++#include "config.h"
++
+ #define _GNU_SOURCE
+ 
+ #include <stdbool.h>
+@@ -40,6 +42,9 @@
+ #include <assert.h>
+ #include <signal.h>
+ #include <pthread.h>
++#ifdef HAVE_SYS_PARAM_H
++#include <sys/param.h>
++#endif
+ 
+ #include "wayland-util.h"
+ #include "wayland-private.h"
+@@ -59,6 +64,7 @@ struct wl_shm_pool {
+ 	char *data;
+ 	int32_t size;
+ 	int32_t new_size;
++	int fd;
+ };
+ 
+ struct wl_shm_buffer {
+@@ -83,9 +89,25 @@ shm_pool_finish_resize(struct wl_shm_pool *pool)
+ 
+ 	if (pool->size == pool->new_size)
+ 		return;
+-
++#ifdef HAVE_MREMAP
+ 	data = mremap(pool->data, pool->size, pool->new_size, MREMAP_MAYMOVE);
++#else
++	int32_t osize = (pool->size + PAGE_SIZE - 1) & ~PAGE_MASK;
++	if (pool->new_size <= osize) {
++		pool->size = pool->new_size;
++		return;
++	}
++	data = mmap(pool->data + osize, pool->new_size - osize, PROT_READ,
++		    MAP_SHARED | MAP_TRYFIXED, pool->fd, osize);
+ 	if (data == MAP_FAILED) {
++		munmap(pool->data, pool->size);
++		data = mmap(NULL, pool->new_size, PROT_READ, MAP_SHARED, pool->fd, 0);
++	} else {
++		pool->size = pool->new_size;
++		return;
++	}
++#endif
++	if (data == MAP_FAILED) {
+ 		wl_resource_post_error(pool->resource,
+ 				       WL_SHM_ERROR_INVALID_FD,
+ 				       "failed mremap");
+@@ -110,6 +132,10 @@ shm_pool_unref(struct wl_shm_pool *pool, bool external
+ 	if (pool->internal_refcount + pool->external_refcount)
+ 		return;
+ 
++#ifdef HAVE_SYS_UCRED_H
++	close(pool->fd);
++#endif
++
+ 	munmap(pool->data, pool->size);
+ 	free(pool);
+ }
+@@ -284,7 +310,13 @@ shm_create_pool(struct wl_client *client, struct wl_re
+ 				       "failed mmap fd %d: %m", fd);
+ 		goto err_free;
+ 	}
++#ifdef HAVE_SYS_UCRED_H
++	/* We need to keep the FD around on FreeBSD so we can implement
++	 * mremap(). See: mremap_compat_maymove(). */
++	pool->fd = fd;
++#else
+ 	close(fd);
++#endif
+ 
+ 	pool->resource =
+ 		wl_resource_create(client, &wl_shm_pool_interface, 1, id);
+@@ -364,7 +396,6 @@ wl_shm_buffer_get_stride(struct wl_shm_buffer *buffer)
+ 	return buffer->stride;
+ }
+ 
+-
+ /** Get a pointer to the memory for the SHM buffer
+  *
+  * \param buffer The buffer object
+@@ -495,6 +526,7 @@ sigbus_handler(int signum, siginfo_t *info, void *cont
+ 	sigbus_data->fallback_mapping_used = 1;
+ 
+ 	/* This should replace the previous mapping */
++#ifdef HAVE_MREMAP
+ 	if (mmap(pool->data, pool->size,
+ 		 PROT_READ | PROT_WRITE,
+ 		 MAP_PRIVATE | MAP_FIXED | MAP_ANONYMOUS,
+@@ -502,6 +534,15 @@ sigbus_handler(int signum, siginfo_t *info, void *cont
+ 		reraise_sigbus();
+ 		return;
+ 	}
++#else
++	if (mmap(pool->data, pool->size,
++		 PROT_READ,
++		 MAP_PRIVATE | MAP_FIXED | MAP_ANON,
++		 0, 0) == MAP_FAILED) {
++		reraise_sigbus();
++		return;
++	}
++#endif
+ }
+ 
+ static void

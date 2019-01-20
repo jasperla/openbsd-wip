@@ -1,0 +1,77 @@
+$OpenBSD$
+Add *BSD support.
+Index: Makefile.am
+--- Makefile.am.orig
++++ Makefile.am
+@@ -71,7 +71,7 @@ nodist_include_HEADERS =			\
+ 	protocol/wayland-client-protocol.h
+ 
+ libwayland_server_la_CFLAGS = $(FFI_CFLAGS) $(AM_CFLAGS) -pthread
+-libwayland_server_la_LIBADD = $(FFI_LIBS) libwayland-private.la libwayland-util.la -lrt -lm
++libwayland_server_la_LIBADD = $(FFI_LIBS) libwayland-private.la libwayland-util.la $(RT_LIBS) -lm
+ libwayland_server_la_LDFLAGS = -version-info 1:0:1
+ libwayland_server_la_SOURCES =			\
+ 	src/wayland-server.c			\
+@@ -83,7 +83,7 @@ nodist_libwayland_server_la_SOURCES =		\
+ 	protocol/wayland-protocol.c
+ 
+ libwayland_client_la_CFLAGS = $(FFI_CFLAGS) $(AM_CFLAGS) -pthread
+-libwayland_client_la_LIBADD = $(FFI_LIBS) libwayland-private.la libwayland-util.la -lrt -lm
++libwayland_client_la_LIBADD = $(FFI_LIBS) libwayland-private.la libwayland-util.la $(RT_LIBS) -lm
+ libwayland_client_la_LDFLAGS = -version-info 3:0:3
+ libwayland_client_la_SOURCES =			\
+ 	src/wayland-client.c
+@@ -210,12 +210,16 @@ noinst_PROGRAMS =				\
+ 	exec-fd-leak-checker			\
+ 	fixed-benchmark
+ 
+-noinst_LTLIBRARIES += libtest-runner.la
++noinst_LTLIBRARIES +=				\
++	libtest-runner.la			\
++	libtest-helpers.la
+ 
++libtest_helpers_la_SOURCES = tests/test-helpers.c
++libtest_helpers_la_LIBADD = $(KVM_LIBS)
++
+ libtest_runner_la_SOURCES =			\
+ 	tests/test-runner.c			\
+ 	tests/test-runner.h			\
+-	tests/test-helpers.c			\
+ 	tests/test-compositor.h			\
+ 	tests/test-compositor.c
+ libtest_runner_la_LIBADD =			\
+@@ -223,9 +227,9 @@ libtest_runner_la_LIBADD =			\
+ 	libwayland-util.la			\
+ 	libwayland-client.la			\
+ 	libwayland-server.la			\
+-	-lrt -ldl $(FFI_LIBS)
++	libtest-helpers.la			\
++	$(RT_LIBS) $(DL_LIBS) $(FFI_LIBS)
+ 
+-
+ array_test_SOURCES = tests/array-test.c
+ array_test_LDADD = libtest-runner.la
+ client_test_SOURCES = tests/client-test.c
+@@ -270,7 +274,6 @@ protocol_logger_test_LDADD = libtest-runner.la
+ headers_test_SOURCES = tests/headers-test.c \
+ 		       tests/headers-protocol-test.c \
+ 		       tests/headers-protocol-core-test.c
+-headers_test_LDADD = libtest-runner.la
+ nodist_headers_test_SOURCES =			\
+ 	protocol/wayland-server-protocol-core.h	\
+ 	protocol/wayland-client-protocol-core.h
+@@ -280,13 +283,12 @@ cpp_compile_test_SOURCES = tests/cpp-compile-test.cpp
+ endif
+ 
+ fixed_benchmark_SOURCES = tests/fixed-benchmark.c
+-fixed_benchmark_LDADD = libtest-runner.la
+ 
+ os_wrappers_test_SOURCES = tests/os-wrappers-test.c
+ os_wrappers_test_LDADD = libtest-runner.la
+ 
+ exec_fd_leak_checker_SOURCES = tests/exec-fd-leak-checker.c
+-exec_fd_leak_checker_LDADD = libtest-runner.la
++exec_fd_leak_checker_LDADD = libtest-helpers.la
+ 
+ EXTRA_DIST += tests/scanner-test.sh			\
+ 	protocol/tests.xml				\

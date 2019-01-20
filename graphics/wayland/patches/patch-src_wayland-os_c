@@ -2,16 +2,19 @@ $OpenBSD$
 Add *BSD support.
 
 Based on the work done by kwm81 at Github.
---- src/wayland-os.c.orig	Sat Jun 13 01:31:24 2015
-+++ src/wayland-os.c	Sun Jan 17 18:39:43 2016
-@@ -25,14 +25,20 @@
+Index: src/wayland-os.c
+--- src/wayland-os.c.orig
++++ src/wayland-os.c
+@@ -23,6 +23,8 @@
+  * SOFTWARE.
+  */
  
++#include "config.h"
++
  #define _GNU_SOURCE
  
-+#include "../config.h"
-+
  #include <sys/types.h>
- #include <sys/socket.h>
+@@ -30,9 +32,13 @@
  #include <unistd.h>
  #include <fcntl.h>
  #include <errno.h>
