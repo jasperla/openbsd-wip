@@ -357,7 +357,7 @@ Index: src/event-loop.c
  struct wl_event_source_interface signal_source_interface = {
  	wl_event_source_signal_dispatch,
  };
-@@ -354,32 +535,104 @@ struct wl_event_source_interface signal_source_interfa
+@@ -354,32 +535,103 @@ struct wl_event_source_interface signal_source_interfa
   * \sa wl_event_loop_signal_func_t
   * \memberof wl_event_source
   */
@@ -373,7 +373,7 @@ Index: src/event-loop.c
  	struct wl_event_source_signal *source;
  	sigset_t mask;
  
- 	source = malloc(sizeof *source);
+-	source = malloc(sizeof *source);
 +	source = calloc(1, sizeof(struct wl_event_source_signal));
  	if (source == NULL)
  		return NULL;
@@ -468,7 +468,7 @@ Index: src/event-loop.c
  /** \cond INTERNAL */
  
  struct wl_event_source_idle {
-@@ -470,15 +723,18 @@ wl_event_source_check(struct wl_event_source *source)
+@@ -470,15 +722,18 @@ wl_event_source_check(struct wl_event_source *source)
   *
   * \memberof wl_event_source
   */
@@ -490,7 +490,7 @@ Index: src/event-loop.c
  		close(source->fd);
  		source->fd = -1;
  	}
-@@ -488,7 +744,87 @@ wl_event_source_remove(struct wl_event_source *source)
+@@ -488,7 +743,87 @@ wl_event_source_remove(struct wl_event_source *source)
  
  	return 0;
  }
@@ -578,7 +578,7 @@ Index: src/event-loop.c
  static void
  wl_event_loop_process_destroy_list(struct wl_event_loop *loop)
  {
-@@ -518,20 +854,29 @@ WL_EXPORT struct wl_event_loop *
+@@ -518,20 +853,29 @@ WL_EXPORT struct wl_event_loop *
  wl_event_loop_create(void)
  {
  	struct wl_event_loop *loop;
@@ -611,7 +611,7 @@ Index: src/event-loop.c
  	wl_signal_init(&loop->destroy_signal);
  
  	return loop;
-@@ -556,22 +901,31 @@ wl_event_loop_destroy(struct wl_event_loop *loop)
+@@ -556,22 +900,31 @@ wl_event_loop_destroy(struct wl_event_loop *loop)
  	wl_signal_emit(&loop->destroy_signal, loop);
  
  	wl_event_loop_process_destroy_list(loop);
@@ -645,7 +645,7 @@ Index: src/event-loop.c
  		if (dispatch_result < 0) {
  			wl_log("Source dispatch function returned negative value!");
  			wl_log("This would previously accidentally suppress a follow-up dispatch");
-@@ -622,6 +976,7 @@ wl_event_loop_dispatch_idle(struct wl_event_loop *loop
+@@ -622,6 +975,7 @@ wl_event_loop_dispatch_idle(struct wl_event_loop *loop
   *
   * \memberof wl_event_loop
   */
@@ -653,7 +653,7 @@ Index: src/event-loop.c
  WL_EXPORT int
  wl_event_loop_dispatch(struct wl_event_loop *loop, int timeout)
  {
-@@ -631,7 +986,7 @@ wl_event_loop_dispatch(struct wl_event_loop *loop, int
+@@ -631,7 +985,7 @@ wl_event_loop_dispatch(struct wl_event_loop *loop, int
  
  	wl_event_loop_dispatch_idle(loop);
  
@@ -662,7 +662,7 @@ Index: src/event-loop.c
  	if (count < 0)
  		return -1;
  
-@@ -649,7 +1004,48 @@ wl_event_loop_dispatch(struct wl_event_loop *loop, int
+@@ -649,7 +1003,48 @@ wl_event_loop_dispatch(struct wl_event_loop *loop, int
  
  	return 0;
  }
@@ -711,7 +711,7 @@ Index: src/event-loop.c
  /** Get the event loop file descriptor
   *
   * \param loop The event loop context.
-@@ -669,7 +1065,7 @@ wl_event_loop_dispatch(struct wl_event_loop *loop, int
+@@ -669,7 +1064,7 @@ wl_event_loop_dispatch(struct wl_event_loop *loop, int
  WL_EXPORT int
  wl_event_loop_get_fd(struct wl_event_loop *loop)
  {
