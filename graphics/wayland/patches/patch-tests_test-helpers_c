@@ -1,10 +1,11 @@
 $OpenBSD$
 Add *BSD support.
---- tests/test-helpers.c.orig	Sat Jun 13 01:31:24 2015
-+++ tests/test-helpers.c	Sun Jan 10 16:17:47 2016
-@@ -23,6 +23,16 @@
-  * SOFTWARE.
-  */
+Index: tests/test-helpers.c
+--- tests/test-helpers.c.orig
++++ tests/test-helpers.c
+@@ -25,6 +25,16 @@
+ 
+ #include "config.h"
  
 +#include "../config.h"
 +
@@ -19,7 +20,7 @@ Add *BSD support.
  #include <assert.h>
  #include <errno.h>
  #include <dirent.h>
-@@ -35,6 +45,25 @@
+@@ -43,6 +53,25 @@
  int
  count_open_fds(void)
  {
@@ -45,7 +46,7 @@ Add *BSD support.
  	DIR *dir;
  	struct dirent *ent;
  	int count = 0;
-@@ -54,6 +83,7 @@ count_open_fds(void)
+@@ -62,6 +91,7 @@ count_open_fds(void)
  	closedir(dir);
  
  	return count;

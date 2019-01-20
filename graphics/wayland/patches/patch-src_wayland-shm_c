@@ -128,7 +128,7 @@ Index: src/wayland-shm.c
  	free(pool);
  }
 @@ -284,7 +369,13 @@ shm_create_pool(struct wl_client *client, struct wl_re
- 				       "failed mmap fd %d", fd);
+ 				       "failed mmap fd %d: %m", fd);
  		goto err_free;
  	}
 +#ifdef HAVE_SYS_UCRED_H

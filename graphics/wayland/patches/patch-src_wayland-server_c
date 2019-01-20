@@ -19,7 +19,7 @@ Index: src/wayland-server.c
  #include <stdlib.h>
  #include <stdint.h>
  #include <stddef.h>
-@@ -79,7 +86,13 @@ struct wl_client {
+@@ -77,7 +84,13 @@ struct wl_client {
  	struct wl_list link;
  	struct wl_map objects;
  	struct wl_priv_signal destroy_signal;
@@ -33,7 +33,19 @@ Index: src/wayland-server.c
  	int error;
  	struct wl_priv_signal resource_created_signal;
  };
-@@ -503,10 +516,29 @@ wl_client_create(struct wl_display *display, int fd)
+@@ -303,7 +316,11 @@ wl_resource_post_error(struct wl_resource *resource,
+ static void
+ destroy_client_with_error(struct wl_client *client, const char *reason)
+ {
++#ifdef HAVE_SYS_UCRED_H
++	wl_log("%s (uid %u)\n", reason, client->xucred.cr_uid);
++#else
+ 	wl_log("%s (pid %u)\n", reason, client->ucred.pid);
++#endif
+ 	wl_client_destroy(client);
+ }
+ 
+@@ -517,10 +534,29 @@ wl_client_create(struct wl_display *display, int fd)
  	if (!client->source)
  		goto err_client;
  
@@ -63,7 +75,7 @@ Index: src/wayland-server.c
  
  	client->connection = wl_connection_create(fd);
  	if (client->connection == NULL)
-@@ -560,12 +592,22 @@ WL_EXPORT void
+@@ -574,12 +610,22 @@ WL_EXPORT void
  wl_client_get_credentials(struct wl_client *client,
  			  pid_t *pid, uid_t *uid, gid_t *gid)
  {

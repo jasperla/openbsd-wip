@@ -1,0 +1,90 @@
+@comment $OpenBSD: PLIST,v$
+@bin bin/wayland-scanner
+include/wayland-client-core.h
+include/wayland-client-protocol.h
+include/wayland-client.h
+include/wayland-cursor.h
+include/wayland-egl-backend.h
+include/wayland-egl-core.h
+include/wayland-egl.h
+include/wayland-server-core.h
+include/wayland-server-protocol.h
+include/wayland-server.h
+include/wayland-util.h
+include/wayland-version.h
+lib/libwayland-client.a
+lib/libwayland-client.la
+@lib lib/libwayland-client.so.${LIBwayland-client_VERSION}
+lib/libwayland-cursor.a
+lib/libwayland-cursor.la
+@lib lib/libwayland-cursor.so.${LIBwayland-cursor_VERSION}
+lib/libwayland-egl.a
+lib/libwayland-egl.la
+@lib lib/libwayland-egl.so.${LIBwayland-egl_VERSION}
+lib/libwayland-server.a
+lib/libwayland-server.la
+@lib lib/libwayland-server.so.${LIBwayland-server_VERSION}
+lib/pkgconfig/wayland-client.pc
+lib/pkgconfig/wayland-cursor.pc
+lib/pkgconfig/wayland-egl-backend.pc
+lib/pkgconfig/wayland-egl.pc
+lib/pkgconfig/wayland-scanner.pc
+lib/pkgconfig/wayland-server.pc
+@man man/man3/wl_argument.3
+@man man/man3/wl_array.3
+@man man/man3/wl_client.3
+@man man/man3/wl_display.3
+@man man/man3/wl_display_connect.3
+@man man/man3/wl_display_connect_to_fd.3
+@man man/man3/wl_event_loop.3
+@man man/man3/wl_event_queue.3
+@man man/man3/wl_event_source.3
+@man man/man3/wl_global.3
+@man man/man3/wl_interface.3
+@man man/man3/wl_list.3
+@man man/man3/wl_listener.3
+@man man/man3/wl_message.3
+@man man/man3/wl_object.3
+@man man/man3/wl_protocol_logger.3
+@man man/man3/wl_protocol_logger_message.3
+@man man/man3/wl_proxy.3
+@man man/man3/wl_resource.3
+@man man/man3/wl_resource_iterator_context.3
+@man man/man3/wl_shm_buffer.3
+@man man/man3/wl_shm_pool.3
+@man man/man3/wl_shm_sigbus_data.3
+@man man/man3/wl_signal.3
+@man man/man3/wl_socket.3
+share/aclocal/wayland-scanner.m4
+share/doc/wayland/
+share/doc/wayland/Wayland/
+share/doc/wayland/Wayland/en-US/
+share/doc/wayland/Wayland/en-US/html/
+share/doc/wayland/Wayland/en-US/html/Wayland.proc
+share/doc/wayland/Wayland/en-US/html/apa.html
+share/doc/wayland/Wayland/en-US/html/apb.html
+share/doc/wayland/Wayland/en-US/html/apc.html
+share/doc/wayland/Wayland/en-US/html/ch01.html
+share/doc/wayland/Wayland/en-US/html/ch02.html
+share/doc/wayland/Wayland/en-US/html/ch03.html
+share/doc/wayland/Wayland/en-US/html/ch04.html
+share/doc/wayland/Wayland/en-US/html/ch05.html
+share/doc/wayland/Wayland/en-US/html/css/
+share/doc/wayland/Wayland/en-US/html/css/brand.css
+share/doc/wayland/Wayland/en-US/html/css/common.css
+share/doc/wayland/Wayland/en-US/html/css/default.css
+share/doc/wayland/Wayland/en-US/html/css/epub.css
+share/doc/wayland/Wayland/en-US/html/css/print.css
+share/doc/wayland/Wayland/en-US/html/images/
+share/doc/wayland/Wayland/en-US/html/images/icon.svg
+share/doc/wayland/Wayland/en-US/html/images/wayland-architecture.png
+share/doc/wayland/Wayland/en-US/html/images/wayland.png
+share/doc/wayland/Wayland/en-US/html/images/x-architecture.png
+share/doc/wayland/Wayland/en-US/html/images/xwayland-architecture.png
+share/doc/wayland/Wayland/en-US/html/index.html
+share/doc/wayland/Wayland/en-US/html/pr01.html
+share/doc/wayland/Wayland/en-US/html/pr02.html
+share/wayland/
+share/wayland/wayland-scanner.mk
+share/wayland/wayland.dtd
+share/wayland/wayland.xml

@@ -3,7 +3,7 @@ Add *BSD support.
 Index: Makefile.am
 --- Makefile.am.orig
 +++ Makefile.am
-@@ -198,7 +198,7 @@ libtest_runner_la_LIBADD =			\
+@@ -223,7 +223,7 @@ libtest_runner_la_LIBADD =			\
  	libwayland-util.la			\
  	libwayland-client.la			\
  	libwayland-server.la			\

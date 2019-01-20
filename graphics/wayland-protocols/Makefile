@@ -1,8 +1,8 @@
 # $OpenBSD$
 
 COMMENT =		extensions to the Wayland protocol
-DISTNAME =		wayland-protocols-1.8
-CATEGORIES =		x11
+DISTNAME =		wayland-protocols-1.17
+CATEGORIES =		graphics
 HOMEPAGE =		http://wayland.freedesktop.org/
 
 MAINTAINER =		Vadim Zhukov <persgray@gmail.com>
@@ -16,7 +16,7 @@ EXTRACT_SUFX =		.tar.xz
 SEPARATE_BUILD =	Yes
 CONFIGURE_STYLE =	gnu
 
-BUILD_DEPENDS =		x11/wayland
+BUILD_DEPENDS =		graphics/wayland
 
 PKG_ARCH =		*
 
