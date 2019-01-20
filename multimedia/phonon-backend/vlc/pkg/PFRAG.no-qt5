@@ -1,5 +1,0 @@
-@comment $OpenBSD: $
-share/kde4/
-share/kde4/services/
-share/kde4/services/phononbackends/
-share/kde4/services/phononbackends/vlc.desktop
