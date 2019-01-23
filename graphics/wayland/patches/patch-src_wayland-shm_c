@@ -5,16 +5,28 @@ Based on the work done by kwm81 at Github.
 Index: src/wayland-shm.c
 --- src/wayland-shm.c.orig
 +++ src/wayland-shm.c
-@@ -30,6 +30,8 @@
+@@ -30,6 +30,12 @@
  
  #define _GNU_SOURCE
  
 +#include "../config.h"
 +
++#ifdef HAVE_SYS_PARAM_H
++#include <sys/param.h>
++#endif
++
  #include <stdbool.h>
  #include <stdio.h>
  #include <stdlib.h>
-@@ -59,6 +61,9 @@ struct wl_shm_pool {
+@@ -40,6 +46,7 @@
+ #include <assert.h>
+ #include <signal.h>
+ #include <pthread.h>
++#include <errno.h>
+ 
+ #include "wayland-util.h"
+ #include "wayland-private.h"
+@@ -59,6 +66,9 @@ struct wl_shm_pool {
  	char *data;
  	int32_t size;
  	int32_t new_size;
@@ -24,128 +36,105 @@ Index: src/wayland-shm.c
  };
  
  struct wl_shm_buffer {
-@@ -76,15 +81,91 @@ struct wl_shm_sigbus_data {
- 	int fallback_mapping_used;
- };
- 
-+#ifdef HAVE_MREMAP
-+static void *
-+mremap_compat_maymove(void *old_address, size_t old_size, size_t new_size,
-+		      int old_prot, int old_flags, int old_fd)
-+{
-+	return mremap(old_address, old_size, new_size, MREMAP_MAYMOVE);
-+}
-+#else
-+static void *
-+mremap_compat_maymove(void *old_address, size_t old_size, size_t new_size,
-+		      int old_prot, int old_flags, int old_fd)
-+{
-+	/* FreeBSD doesn't support mremap() yet, so we have to emulate it.
-+	 * This assumes MREMAP_MAYMOVE is the only flag in use. */
-+	if (new_size == old_size) {
-+		return old_address;
-+	} else if (new_size < old_size) {
-+		/* Shrinking: munmap() the spare region. */
-+		munmap(old_address + old_size, new_size - old_size);
-+		return old_address;
-+	} else {
-+		void *ret;
-+
-+		/* Growing. Try and mmap() the extra region at the end of
-+		 * our existing allocation. If that gets mapped in the
-+		 * wrong place, fall back to mmap()ing an entirely new
-+		 * region of new_size and copying the data across. */
-+		ret = mmap(old_address + old_size, new_size - old_size,
-+			   old_prot, old_flags, old_fd, 0);
-+
-+/* FIXME TODO: msync() before munmap()? */
-+		if (ret == MAP_FAILED) {
-+			/* Total failure! */
-+			return ret;
-+		} else if (ret == old_address + old_size) {
-+			/* Success. */
-+			return old_address;
-+		} else if (ret != old_address + old_size) {
-+			/* Partial failure. Fall back to mapping an
-+			 * entirely new region. Unmap the region we
-+			 * just mapped first. */
-+			munmap(ret, new_size - old_size);
-+
-+			/* Map an entirely new region. */
-+			ret = mmap(NULL, new_size,
-+				   old_prot, old_flags, old_fd, 0);
-+			if (ret == MAP_FAILED) {
-+				/* Total failure! */
-+				return ret;
-+			}
-+
-+			/* Copy the old data across. Implicit assumption
-+			 * that the old and new regions don't overlap. */
-+			memcpy(ret, old_address, old_size);
-+
-+			/* Unmap the old region. */
-+			munmap(old_address, old_size);
-+
-+			return ret;
-+		}
-+	}
-+
-+	/* Unreachable. */
-+	return MAP_FAILED;
-+}
-+#endif
-+
- static void
- shm_pool_finish_resize(struct wl_shm_pool *pool)
- {
- 	void *data;
-+#ifdef HAVE_SYS_UCRED_H
-+	int fd = -1;
-+#endif
- 
+@@ -84,8 +94,25 @@ shm_pool_finish_resize(struct wl_shm_pool *pool)
  	if (pool->size == pool->new_size)
  		return;
  
-+#ifdef HAVE_SYS_UCRED_H
-+	fd = pool->fd;
-+	data = mremap_compat_maymove(pool->data, pool->size, pool->new_size,
-+	                             PROT_READ|PROT_WRITE, MAP_SHARED, fd);
+-	data = mremap(pool->data, pool->size, pool->new_size, MREMAP_MAYMOVE);
++#ifdef HAVE_MREMAP
++ 	data = mremap(pool->data, pool->size, size, MREMAP_MAYMOVE);
 +#else
- 	data = mremap(pool->data, pool->size, pool->new_size, MREMAP_MAYMOVE);
-+#endif
++	int32_t osize = (pool->size + PAGE_SIZE - 1) & ~PAGE_MASK;
++	if (pool->new_size <= osize) {
++		pool->size = pool->new_size;
++		return;
++	}
++	data = mmap(pool->data + osize, pool->new_size - osize, PROT_READ,
++	    MAP_SHARED | MAP_TRYFIXED, pool->fd, osize);
  	if (data == MAP_FAILED) {
++		munmap(pool->data, pool->size);
++		data = mmap(NULL, pool->new_size, PROT_READ, MAP_SHARED, pool->fd, 0);
++	} else {
++		pool->size = pool->new_size;
++		return;
++	}
++#endif
++	if (data == MAP_FAILED) {
  		wl_resource_post_error(pool->resource,
  				       WL_SHM_ERROR_INVALID_FD,
-@@ -110,6 +191,10 @@ shm_pool_unref(struct wl_shm_pool *pool, bool external
- 	if (pool->internal_refcount + pool->external_refcount)
+ 				       "failed mremap");
+@@ -111,6 +138,9 @@ shm_pool_unref(struct wl_shm_pool *pool, bool external
  		return;
  
+ 	munmap(pool->data, pool->size);
 +#ifdef HAVE_SYS_UCRED_H
 +	close(pool->fd);
 +#endif
-+
- 	munmap(pool->data, pool->size);
  	free(pool);
  }
-@@ -284,7 +369,13 @@ shm_create_pool(struct wl_client *client, struct wl_re
- 				       "failed mmap fd %d: %m", fd);
+ 
+@@ -235,6 +265,8 @@ shm_pool_resize(struct wl_client *client, struct wl_re
+ 				       "shrinking pool invalid");
+ 		return;
+ 	}
++	if (size == pool->size)
++		return;
+ 
+ 	pool->new_size = size;
+ 
+@@ -276,21 +308,28 @@ shm_create_pool(struct wl_client *client, struct wl_re
+ 	pool->external_refcount = 0;
+ 	pool->size = size;
+ 	pool->new_size = size;
+-	pool->data = mmap(NULL, size,
+-			  PROT_READ | PROT_WRITE, MAP_SHARED, fd, 0);
++	pool->data = mmap(NULL, size, PROT_READ, MAP_SHARED, fd, 0);
+ 	if (pool->data == MAP_FAILED) {
+ 		wl_resource_post_error(resource,
+ 				       WL_SHM_ERROR_INVALID_FD,
+-				       "failed mmap fd %d: %m", fd);
++				       "failed mmap fd %d: %s", fd,
++				       strerror(errno));
  		goto err_free;
  	}
+-	close(fd);
 +#ifdef HAVE_SYS_UCRED_H
-+	/* We need to keep the FD around on FreeBSD so we can implement
-+	 * mremap(). See: mremap_compat_maymove(). */
 +	pool->fd = fd;
 +#else
- 	close(fd);
++ 	close(fd);
 +#endif
  
  	pool->resource =
  		wl_resource_create(client, &wl_shm_pool_interface, 1, id);
-@@ -363,7 +454,6 @@ wl_shm_buffer_get_stride(struct wl_shm_buffer *buffer)
- {
- 	return buffer->stride;
- }
--
+ 	if (!pool->resource) {
+ 		wl_client_post_no_memory(client);
+ 		munmap(pool->data, pool->size);
++#ifdef HAVE_SYS_UCRED_H
++		close(fd);
++#endif
+ 		free(pool);
+ 		return;
+ 	}
+@@ -495,13 +534,22 @@ sigbus_handler(int signum, siginfo_t *info, void *cont
+ 	sigbus_data->fallback_mapping_used = 1;
  
- /** Get a pointer to the memory for the SHM buffer
-  *
+ 	/* This should replace the previous mapping */
++#ifdef HAVE_SYS_UCRED_H
+ 	if (mmap(pool->data, pool->size,
++		 PROT_READ, MAP_PRIVATE | MAP_FIXED | MAP_ANON,
++		 0, 0) == MAP_FAILED) {
++		reraise_sigbus();
++		return;
++	}
++#else
++	if (mmap(pool->data, pool->size,
+ 		 PROT_READ | PROT_WRITE,
+ 		 MAP_PRIVATE | MAP_FIXED | MAP_ANONYMOUS,
+ 		 0, 0) == (void *) -1) {
+ 		reraise_sigbus();
+ 		return;
+ 	}
++#endif
+ }
+ 
+ static void

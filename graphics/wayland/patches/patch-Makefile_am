@@ -3,7 +3,15 @@ Add *BSD support.
 Index: Makefile.am
 --- Makefile.am.orig
 +++ Makefile.am
-@@ -223,7 +223,7 @@ libtest_runner_la_LIBADD =			\
+@@ -170,7 +170,6 @@ built_test_programs =				\
+ 	interface-test				\
+ 	list-test				\
+ 	map-test				\
+-	os-wrappers-test			\
+ 	sanity-test				\
+ 	socket-test				\
+ 	queue-test				\
+@@ -223,7 +222,7 @@ libtest_runner_la_LIBADD =			\
  	libwayland-util.la			\
  	libwayland-client.la			\
  	libwayland-server.la			\
@@ -12,3 +20,21 @@ Index: Makefile.am
  
  
  array_test_SOURCES = tests/array-test.c
+@@ -270,7 +269,6 @@ protocol_logger_test_LDADD = libtest-runner.la
+ headers_test_SOURCES = tests/headers-test.c \
+ 		       tests/headers-protocol-test.c \
+ 		       tests/headers-protocol-core-test.c
+-headers_test_LDADD = libtest-runner.la
+ nodist_headers_test_SOURCES =			\
+ 	protocol/wayland-server-protocol-core.h	\
+ 	protocol/wayland-client-protocol-core.h
+@@ -281,9 +279,6 @@ endif
+ 
+ fixed_benchmark_SOURCES = tests/fixed-benchmark.c
+ fixed_benchmark_LDADD = libtest-runner.la
+-
+-os_wrappers_test_SOURCES = tests/os-wrappers-test.c
+-os_wrappers_test_LDADD = libtest-runner.la
+ 
+ exec_fd_leak_checker_SOURCES = tests/exec-fd-leak-checker.c
+ exec_fd_leak_checker_LDADD = libtest-runner.la

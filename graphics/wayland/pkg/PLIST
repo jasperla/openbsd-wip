@@ -34,8 +34,6 @@ lib/pkgconfig/wayland-server.pc
 @man man/man3/wl_array.3
 @man man/man3/wl_client.3
 @man man/man3/wl_display.3
-@man man/man3/wl_display_connect.3
-@man man/man3/wl_display_connect_to_fd.3
 @man man/man3/wl_event_loop.3
 @man man/man3/wl_event_queue.3
 @man man/man3/wl_event_source.3

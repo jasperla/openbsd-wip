@@ -19,21 +19,19 @@ Index: src/wayland-server.c
  #include <stdlib.h>
  #include <stdint.h>
  #include <stddef.h>
-@@ -77,7 +84,13 @@ struct wl_client {
+@@ -77,7 +84,11 @@ struct wl_client {
  	struct wl_list link;
  	struct wl_map objects;
  	struct wl_priv_signal destroy_signal;
 +#ifdef HAVE_SYS_UCRED_H
-+	/* BSD */
 +	struct xucred xucred;
 +#else
-+	/* Linux */
  	struct ucred ucred;
 +#endif
  	int error;
  	struct wl_priv_signal resource_created_signal;
  };
-@@ -303,7 +316,11 @@ wl_resource_post_error(struct wl_resource *resource,
+@@ -303,7 +314,11 @@ wl_resource_post_error(struct wl_resource *resource,
  static void
  destroy_client_with_error(struct wl_client *client, const char *reason)
  {
@@ -45,50 +43,31 @@ Index: src/wayland-server.c
  	wl_client_destroy(client);
  }
  
-@@ -517,10 +534,29 @@ wl_client_create(struct wl_display *display, int fd)
+@@ -517,9 +532,9 @@ wl_client_create(struct wl_display *display, int fd)
  	if (!client->source)
  		goto err_client;
  
-+#ifndef SO_PEERCRED
-+/* FreeBSD */
-+# define SO_PEERCRED LOCAL_PEERCRED
-+#endif
-+
-+#ifdef HAVE_SYS_UCRED_H
-+	/* BSD */
+-	len = sizeof client->ucred;
 +	len = sizeof client->xucred;
-+	if (getsockopt(fd, SOL_SOCKET, SO_PEERCRED,
-+		       &client->xucred, &len) < 0
-+# ifdef XUCRED_VERSION
-+	               /* FreeBSD */
-+		       || client->xucred.cr_version != XUCRED_VERSION
-+# endif
-+	              )
-+		goto err_source;
-+#else
-+	/* Linux */
- 	len = sizeof client->ucred;
  	if (getsockopt(fd, SOL_SOCKET, SO_PEERCRED,
- 		       &client->ucred, &len) < 0)
+-		       &client->ucred, &len) < 0)
++		       &client->xucred, &len) < 0)
  		goto err_source;
-+#endif
  
  	client->connection = wl_connection_create(fd);
- 	if (client->connection == NULL)
-@@ -574,12 +610,22 @@ WL_EXPORT void
+@@ -574,12 +589,21 @@ WL_EXPORT void
  wl_client_get_credentials(struct wl_client *client,
  			  pid_t *pid, uid_t *uid, gid_t *gid)
  {
 +#ifdef HAVE_SYS_UCRED_H
-+	/* BSD */
-+	*pid = 0; /* FIXME: pid is not defined on BSD */
+ 	if (pid)
++		*pid = 0;
 +	if (uid)
 +		*uid = client->xucred.cr_uid;
 +	if (gid)
 +		*gid = client->xucred.cr_gid;
 +#else
-+	/* Linux */
- 	if (pid)
++	if (pid)
  		*pid = client->ucred.pid;
  	if (uid)
  		*uid = client->ucred.uid;
@@ -98,3 +77,27 @@ Index: src/wayland-server.c
  }
  
  /** Get the file descriptor for the client
+@@ -1329,7 +1353,7 @@ socket_data(int fd, uint32_t mask, void *data)
+ 	client_fd = wl_os_accept_cloexec(fd, (struct sockaddr *) &name,
+ 					 &length);
+ 	if (client_fd < 0)
+-		wl_log("failed to accept: %m\n");
++		wl_log("failed to accept: %s\n", strerror(errno));
+ 	else
+ 		if (!wl_client_create(display, client_fd))
+ 			close(client_fd);
+@@ -1434,12 +1458,12 @@ _wl_display_add_socket(struct wl_display *display, str
+ 
+ 	size = offsetof (struct sockaddr_un, sun_path) + strlen(s->addr.sun_path);
+ 	if (bind(s->fd, (struct sockaddr *) &s->addr, size) < 0) {
+-		wl_log("bind() failed with error: %m\n");
++		wl_log("bind() failed with error: %s\n", strerror(errno));
+ 		return -1;
+ 	}
+ 
+ 	if (listen(s->fd, 128) < 0) {
+-		wl_log("listen() failed with error: %m\n");
++		wl_log("listen() failed with error: %s\n", strerror(errno));
+ 		return -1;
+ 	}
+ 

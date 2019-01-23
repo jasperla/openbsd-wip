@@ -21,7 +21,7 @@ Index: tests/test-compositor.c
 +#ifdef HAVE_WAITID
  	siginfo_t status;
 +#else
-+	int istatus;
++	int status;
 +#endif
  
  	d = ci->display;
@@ -35,17 +35,17 @@ Index: tests/test-compositor.c
  		break;
  	}
 +#else
-+	assert(waitpid(ci->pid, &istatus, WNOHANG) != -1);
++	assert(waitpid(ci->pid, &status, 0) != -1);
 +
-+	if (WIFSIGNALED(istatus)) {
-+		fprintf(stderr, "Client '%s' was killed by signal %d\n",
-+			ci->name, WTERMSIG(istatus));
-+		ci->exit_code = WEXITSTATUS(istatus);
-+	} else if (WIFEXITED(istatus)) {
-+		if (WEXITSTATUS(istatus) != EXIT_SUCCESS)
++	if (WIFEXITED(status)) {
++		if (WEXITSTATUS(status) != EXIT_SUCCESS)
 +			fprintf(stderr, "Client '%s' exited with code %d\n",
-+				ci->name, WEXITSTATUS(istatus));
-+		ci->exit_code = WEXITSTATUS(istatus);
++				ci->name, WEXITSTATUS(status));
++		ci->exit_code = WEXITSTATUS(status);
++	} else if (WIFSIGNALED(status) || WCOREDUMP(status)) {
++		fprintf(stderr, "Client '%s' was killed by signal %d\n",
++			ci->name, WTERMSIG(status));
++		ci->exit_code = WEXITSTATUS(status);
 +	}
 +#endif
  

@@ -42,6 +42,5 @@ AUTOMAKE_VERSION =	1.15
 post-patch:
 	cd ${WRKSRC}; AUTOCONF_VERSION=${AUTOCONF_VERSION} \
 		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} automake
-	touch ${WRKSRC}/aclocal.m4
 
 .include <bsd.port.mk>

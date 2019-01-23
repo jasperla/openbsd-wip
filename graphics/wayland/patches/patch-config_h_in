@@ -1,0 +1,23 @@
+$OpenBSD$
+
+Index: config.h.in
+--- config.h.in.orig
++++ config.h.in
+@@ -36,11 +36,17 @@
+ /* Define to 1 if you have the <string.h> header file. */
+ #undef HAVE_STRING_H
+ 
++/* Define to 1 if you have the <sys/param.h> header file. */
++#undef HAVE_SYS_PARAM_H
++
+ /* Define to 1 if you have the <sys/prctl.h> header file. */
+ #undef HAVE_SYS_PRCTL_H
+ 
+ /* Define to 1 if you have the <sys/stat.h> header file. */
+ #undef HAVE_SYS_STAT_H
++
++/* Define to 1 if you have the <sys/ucred.h> header file. */
++#undef HAVE_SYS_UCRED_H
+ 
+ /* Define to 1 if you have the <sys/types.h> header file. */
+ #undef HAVE_SYS_TYPES_H
