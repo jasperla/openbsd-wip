@@ -1,0 +1,17 @@
+$OpenBSD$
+
+Index: Makefile
+--- Makefile.orig
++++ Makefile
+@@ -1,7 +1,9 @@
+ # $FreeBSD$
+ 
+ PROG=		fetch
+-CSTD?=		c99
+-LIBADD=		fetch
++CFLAGS+=	-I${LOCALBASE}/include
++LDFLAGS+=	-L${LOCALBASE}/lib
++LDADD=		-lfetch
++DPADD=		${LIBFETCH}
+ 
+ .include <bsd.prog.mk>
