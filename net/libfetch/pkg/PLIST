@@ -1,0 +1,34 @@
+@comment $OpenBSD: PLIST,v$
+include/fetch.h
+lib/libfetch.a
+@lib lib/libfetch.so.${LIBfetch_VERSION}
+lib/libfetch_p.a
+@man man/man3/fetch.3
+@man man/man3/fetchFreeURL.3
+@man man/man3/fetchGet.3
+@man man/man3/fetchGetFTP.3
+@man man/man3/fetchGetFile.3
+@man man/man3/fetchGetHTTP.3
+@man man/man3/fetchGetURL.3
+@man man/man3/fetchList.3
+@man man/man3/fetchListFTP.3
+@man man/man3/fetchListFile.3
+@man man/man3/fetchListHTTP.3
+@man man/man3/fetchListURL.3
+@man man/man3/fetchMakeURL.3
+@man man/man3/fetchParseURL.3
+@man man/man3/fetchPut.3
+@man man/man3/fetchPutFTP.3
+@man man/man3/fetchPutFile.3
+@man man/man3/fetchPutHTTP.3
+@man man/man3/fetchPutURL.3
+@man man/man3/fetchStat.3
+@man man/man3/fetchStatFTP.3
+@man man/man3/fetchStatFile.3
+@man man/man3/fetchStatHTTP.3
+@man man/man3/fetchStatURL.3
+@man man/man3/fetchXGet.3
+@man man/man3/fetchXGetFTP.3
+@man man/man3/fetchXGetFile.3
+@man man/man3/fetchXGetHTTP.3
+@man man/man3/fetchXGetURL.3

@@ -1,0 +1,13 @@
+$OpenBSD$
+
+Index: fetch.c
+--- fetch.c.orig
++++ fetch.c
+@@ -29,7 +29,6 @@
+  */
+ 
+ #include <sys/cdefs.h>
+-__FBSDID("$FreeBSD$");
+ 
+ #include <sys/param.h>
+ 

@@ -1,0 +1,13 @@
+$OpenBSD$
+
+Index: file.c
+--- file.c.orig
++++ file.c
+@@ -29,7 +29,6 @@
+  */
+ 
+ #include <sys/cdefs.h>
+-__FBSDID("$FreeBSD$");
+ 
+ #include <sys/param.h>
+ #include <sys/stat.h>

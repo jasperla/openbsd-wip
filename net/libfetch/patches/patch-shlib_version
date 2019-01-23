@@ -1,0 +1,8 @@
+$OpenBSD$
+
+Index: shlib_version
+--- shlib_version.orig
++++ shlib_version
+@@ -0,0 +1,2 @@
++major=0
++minor=0
