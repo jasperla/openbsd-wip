@@ -53,15 +53,6 @@ Index: tests/test-runner.c
  /* when set to 1, check if tests are not leaking memory and opened files.
   * It is turned on by default. It can be turned off by
   * WAYLAND_TEST_NO_LEAK_CHECK environment variable. */
-@@ -57,7 +75,7 @@ int leak_check_enabled;
- 
- /* when this var is set to 0, every call to test_set_timeout() is
-  * suppressed - handy when debugging the test. Can be set by
-- * WAYLAND_TEST_NO_TIMEOUTS environment variable. */
-+ * WAYLAND_TESTS_NO_TIMEOUTS evnironment var */
- static int timeouts_enabled = 1;
- 
- /* set to one if the output goes to the terminal */
 @@ -282,6 +300,10 @@ stderr_reset_color(void)
  static int
  is_debugger_attached(void)
@@ -73,21 +64,13 @@ Index: tests/test-runner.c
  	int status;
  	int rc;
  	pid_t pid;
-@@ -308,17 +330,22 @@ is_debugger_attached(void)
- 		close(pipefd[0]);
- 		if (buf == '-')
+@@ -312,13 +334,14 @@ is_debugger_attached(void)
  			_exit(1);
-+#ifndef __DragonFly__
- 		if (ptrace(PTRACE_ATTACH, ppid, NULL, NULL) != 0)
- 			_exit(1);
-+#endif
  		if (!waitpid(-1, NULL, 0))
  			_exit(1);
 -		ptrace(PTRACE_CONT, NULL, NULL);
-+#ifndef __DragonFly__
 +		ptrace(PTRACE_CONT, ppid, NULL, NULL);
  		ptrace(PTRACE_DETACH, ppid, NULL, NULL);
-+#endif
  		_exit(0);
  	} else {
  		close(pipefd[0]);
@@ -97,7 +80,7 @@ Index: tests/test-runner.c
  		rc = prctl(PR_SET_PTRACER, pid);
  		if (rc != 0 && errno != EINVAL) {
  			/* An error prevents us from telling if a debugger is attached.
-@@ -332,6 +359,7 @@ is_debugger_attached(void)
+@@ -332,6 +355,7 @@ is_debugger_attached(void)
  			/* Signal to client that parent is ready by passing '+' */
  			write(pipefd[1], "+", 1);
  		}
@@ -105,7 +88,7 @@ Index: tests/test-runner.c
  		close(pipefd[1]);
  
  		waitpid(pid, &status, 0);
-@@ -339,6 +367,7 @@ is_debugger_attached(void)
+@@ -339,6 +363,7 @@ is_debugger_attached(void)
  	}
  
  	return rc;
@@ -113,7 +96,7 @@ Index: tests/test-runner.c
  }
  
  int main(int argc, char *argv[])
-@@ -346,7 +375,11 @@ int main(int argc, char *argv[])
+@@ -346,7 +371,11 @@ int main(int argc, char *argv[])
  	const struct test *t;
  	pid_t pid;
  	int total, pass;
@@ -125,7 +108,7 @@ Index: tests/test-runner.c
  
  	/* Load system malloc, free, and realloc */
  	sys_calloc = dlsym(RTLD_NEXT, "calloc");
-@@ -395,6 +428,7 @@ int main(int argc, char *argv[])
+@@ -395,6 +424,7 @@ int main(int argc, char *argv[])
  		if (pid == 0)
  			run_test(t); /* never returns */
  
@@ -133,7 +116,7 @@ Index: tests/test-runner.c
  		if (waitid(P_PID, pid, &info, WEXITED)) {
  			stderr_set_color(RED);
  			fprintf(stderr, "waitid failed: %m\n");
-@@ -426,6 +460,26 @@ int main(int argc, char *argv[])
+@@ -426,6 +456,26 @@ int main(int argc, char *argv[])
  
  			break;
  		}
