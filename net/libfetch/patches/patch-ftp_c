@@ -1,0 +1,13 @@
+$OpenBSD$
+
+Index: ftp.c
+--- ftp.c.orig
++++ ftp.c
+@@ -29,7 +29,6 @@
+  */
+ 
+ #include <sys/cdefs.h>
+-__FBSDID("$FreeBSD$");
+ 
+ /*
+  * Portions of this code were taken from or based on ftpio.c:

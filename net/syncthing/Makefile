@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.17 2017/06/17 07:26:50 feinerer Exp $
+# $OpenBSD: Makefile,v 1.23 2018/09/04 12:46:19 espie Exp $
 
 COMMENT =	open decentralized synchronization utility
 
-V =		0.14.40
+V =		1.0.0
 DISTNAME =	syncthing-${V}
 DISTFILES =	syncthing-source-v${V}${EXTRACT_SUFX}
 
