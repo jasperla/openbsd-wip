@@ -139,12 +139,15 @@ Index: runtime/druntime/src/core/sys/posix/signal.d
  else version( DragonFlyBSD )
  {
      enum SIG_CATCH = cast(sigfn_t2) 2;
-@@ -1736,6 +1851,122 @@ else version( FreeBSD )
+@@ -1736,6 +1851,134 @@ else version( FreeBSD )
      int sigpause(int);
      int sigrelse(int);
  }
 +else version (OpenBSD)
 +{
++    // Get _MAX_PAGE_SHIFT for the MINSIGSTKSZ and SIGSTKSZ values
++    import core.sys.openbsd.sys.types : _MAX_PAGE_SHIFT;
++
 +    // No SIGPOLL on *BSD
 +    enum SIGPROF        = 27;
 +    enum SIGSYS         = 12;
@@ -169,8 +172,17 @@ Index: runtime/druntime/src/core/sys/posix/signal.d
 +        SS_DISABLE = 0x0004,
 +    }
 +
-+    enum MINSIGSTKSZ = 8192;
-+    enum SIGSTKSZ    = (MINSIGSTKSZ + 32768);
++    // OpenBSD Src: src/sys/sys/signal.h: 183
++    enum MINSIGSTKSZ = (3U << _MAX_PAGE_SHIFT); // minimum allowable stack
++
++    if (_MAX_PAGE_SHIFT < 14) // Recommended stack size
++    {
++        enum SIGSTKSZ = (MINSIGSTKSZ + (1U << _MAX_PAGE_SHIFT) * 4);
++    }
++    else
++    {
++        enum SIGSTKSZ = (MINSIGSTKSZ + (1U << _MAX_PAGE_SHIFT) * 2);
++    }
 +
 +    //ucontext_t (defined in core.sys.posix.ucontext)
 +    //mcontext_t (defined in core.sys.posix.ucontext)
@@ -262,7 +274,7 @@ Index: runtime/druntime/src/core/sys/posix/signal.d
  else version( DragonFlyBSD )
  {
      // No SIGPOLL on *BSD
-@@ -2191,6 +2422,14 @@ else version( FreeBSD )
+@@ -2191,6 +2434,14 @@ else version( FreeBSD )
          c_long  tv_nsec;
      }
  }
@@ -277,7 +289,7 @@ Index: runtime/druntime/src/core/sys/posix/signal.d
  else version( DragonFlyBSD )
  {
      struct timespec
-@@ -2294,6 +2533,9 @@ else version( FreeBSD )
+@@ -2294,6 +2545,9 @@ else version( FreeBSD )
      int sigtimedwait(in sigset_t*, siginfo_t*, in timespec*);
      int sigwaitinfo(in sigset_t*, siginfo_t*);
  }
@@ -287,7 +299,7 @@ Index: runtime/druntime/src/core/sys/posix/signal.d
  else version( DragonFlyBSD )
  {
      union  _sigev_un_t
-@@ -2390,6 +2632,11 @@ else version( OSX )
+@@ -2390,6 +2644,11 @@ else version( OSX )
      int pthread_sigmask(int, in sigset_t*, sigset_t*);
  }
  else version( FreeBSD )

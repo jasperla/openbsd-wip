@@ -1,0 +1,22 @@
+$OpenBSD$
+
+Index: runtime/druntime/src/core/stdc/wchar_.d
+--- runtime/druntime/src/core/stdc/wchar_.d.orig
++++ runtime/druntime/src/core/stdc/wchar_.d
+@@ -40,6 +40,16 @@ version( CRuntime_Glibc )
+         ___value __value;
+     }
+ }
++else version (OpenBSD)
++{
++    // <sys/_types.h>
++    union __mbstate_t
++    {
++        char[128]   __mbstate8 = 0;
++        long        __mbstateL;
++    }
++    alias mbstate_t = __mbstate_t;
++}
+ else version (Solaris)
+ {
+     ///

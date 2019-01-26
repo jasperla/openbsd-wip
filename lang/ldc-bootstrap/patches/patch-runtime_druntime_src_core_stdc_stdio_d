@@ -14,7 +14,7 @@ Index: runtime/druntime/src/core/stdc/stdio.d
    else version (DragonFlyBSD)
    {
      import core.sys.posix.sys.types;
-@@ -170,6 +174,36 @@ else version ( FreeBSD )
+@@ -170,6 +174,30 @@ else version ( FreeBSD )
          long        _mbstateL;
      }
  }
@@ -41,17 +41,11 @@ Index: runtime/druntime/src/core/stdc/stdio.d
 +        ubyte *_base;
 +        int _size;
 +    }
-+
-+    union __mbstate_t // <sys/_types.h>
-+    {
-+        char[128]   __mbstate8;
-+        long        __mbstateL;
-+    }
 +}
  else version ( DragonFlyBSD )
  {
      enum
-@@ -452,6 +486,46 @@ else version( FreeBSD )
+@@ -452,6 +480,46 @@ else version( FreeBSD )
      ///
      alias shared(__sFILE) FILE;
  }
@@ -98,7 +92,7 @@ Index: runtime/druntime/src/core/stdc/stdio.d
  else version( DragonFlyBSD )
  {
      alias off_t fpos_t;
-@@ -756,6 +830,27 @@ else version( FreeBSD )
+@@ -756,6 +824,27 @@ else version( FreeBSD )
      ///
      alias __stderrp stderr;
  }
@@ -114,7 +108,7 @@ Index: runtime/druntime/src/core/stdc/stdio.d
 +        _IONBF = 2,
 +    }
 +
-+    private extern shared FILE[] __sF;
++    private extern shared FILE[3] __sF;
 +
 +    ///
 +    shared stdin  = &__sF[0];
@@ -126,7 +120,7 @@ Index: runtime/druntime/src/core/stdc/stdio.d
  else version( DragonFlyBSD )
  {
      enum
-@@ -1072,6 +1167,97 @@ else version( FreeBSD )
+@@ -1072,6 +1161,97 @@ else version( FreeBSD )
      int  snprintf(char* s, size_t n, in char* format, ...);
      ///
      int  vsnprintf(char* s, size_t n, in char* format, va_list arg);
