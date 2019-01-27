@@ -1,4 +1,4 @@
-0# $OpenBSD$
+# $OpenBSD$
 
 COMMENT =		the picolisp system
 
