@@ -2,7 +2,7 @@
 
 COMMENT =		the picolisp system
 
-V =			17.12
+V =			18.12
 DISTNAME =		picoLisp-$V
 PKGNAME =		picolisp-$V
 
@@ -16,7 +16,7 @@ EXTRACT_SUFX =		.tgz
 WRKDIST =		${WRKDIR}/picoLisp/src64
 
 MODULES =		java
-MODJAVA_VER =		1.7+
+MODJAVA_VER =		1.8+
 MODJAVA_JRERUN =        yes
 
 MAKE_FLAGS =		PATH=${PATH}:${JAVA_HOME}/bin
