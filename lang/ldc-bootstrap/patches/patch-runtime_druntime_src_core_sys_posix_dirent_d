@@ -30,7 +30,7 @@ Index: runtime/druntime/src/core/sys/posix/dirent.d
 +        ubyte     d_type;
 +        ubyte     d_namlen;
 +        ubyte[4]  __d_padding;
-+        char[256] d_name = 0;
++        char[256] d_name;
 +    }
 +
 +    alias void* DIR;

@@ -12,7 +12,7 @@ Index: runtime/druntime/src/core/stdc/wchar_.d
 +    // <sys/_types.h>
 +    union __mbstate_t
 +    {
-+        char[128]   __mbstate8 = 0;
++        char[128]   __mbstate8;
 +        long        __mbstateL;
 +    }
 +    alias mbstate_t = __mbstate_t;
