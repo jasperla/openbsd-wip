@@ -3,15 +3,11 @@ $OpenBSD$
 Index: runtime/druntime/src/core/sys/openbsd/time.d
 --- runtime/druntime/src/core/sys/openbsd/time.d.orig
 +++ runtime/druntime/src/core/sys/openbsd/time.d
-@@ -0,0 +1,23 @@
+@@ -0,0 +1,19 @@
 +//Written in the D programming language
 +
 +/++
 +    D header file for OpenBSD's extensions to POSIX's time.h.
-+
-+    Copyright: Copyright 2018
-+    License:   $(HTTP www.boost.org/LICENSE_1_0.txt, Boost License 1.0).
-+    Authors:   Ryan Boggs, boggsrm  at  gmail  dot  com
 ++/
 +module core.sys.openbsd.time;
 +

@@ -1,0 +1,96 @@
+$OpenBSD$
+
+Index: runtime/druntime/src/core/sys/posix/time.d
+--- runtime/druntime/src/core/sys/posix/time.d.orig
++++ runtime/druntime/src/core/sys/posix/time.d
+@@ -52,6 +52,10 @@ else version( FreeBSD )
+ {
+     time_t timegm(tm*); // non-standard
+ }
++else version( OpenBSD )
++{
++    time_t timegm(tm*); // non-standard
++}
+ else version( DragonFlyBSD )
+ {
+     time_t timegm(tm*); // non-standard
+@@ -119,6 +123,13 @@ else version (FreeBSD)
+     deprecated("Please import it from core.sys.freebsd.time instead.")
+         alias CLOCK_MONOTONIC_FAST = core.sys.freebsd.time.CLOCK_MONOTONIC_FAST;
+ }
++else version (OpenBSD)
++{
++    static import core.sys.openbsd.time;
++    
++    alias CLOCK_MONOTONIC = core.sys.openbsd.time.CLOCK_MONOTONIC;
++    // OpenBSD doesn't have CLOCK_MONOTONIC_PRECISE or CLOCK_MONOTONIC_FAST
++}
+ else version (DragonFlyBSD)
+ {   // time.h
+     enum CLOCK_MONOTONIC         = 4;
+@@ -259,6 +270,39 @@ else version( FreeBSD )
+     int timer_getoverrun(timer_t);
+     int timer_settime(timer_t, int, in itimerspec*, itimerspec*);
+ }
++else version ( OpenBSD )
++{
++    alias CLOCK_PROCESS_CPUTIME_ID = core.sys.openbsd.time.CLOCK_PROCESS_CPUTIME_ID;
++    alias CLOCK_THREAD_CPUTIME_ID = core.sys.openbsd.time.CLOCK_THREAD_CPUTIME_ID;
++
++    struct itimerspec
++    {
++        timespec it_interval;   // timer interval
++        timespec it_value;      // timer expiration
++    }
++
++    enum CLOCK_REALTIME     = core.sys.openbsd.time.CLOCK_REALTIME;
++    enum TIMER_RELTIME      = 0x0; // relative timer
++    enum TIMER_ABSTIME      = 0x1; // absolute timer
++
++    alias int clockid_t;    // <sys/_types.h>
++    alias int timer_t;
++
++    int clock_getres(clockid_t, timespec*);
++    int clock_gettime(clockid_t, timespec*);
++    int clock_settime(clockid_t, in timespec*);
++    int nanosleep(in timespec*, timespec*);
++
++    // OpenBSD doesn't seem to have the following timer_* functions
++    // that I can find...
++    /*
++    int timer_create(clockid_t, sigevent*, timer_t*);
++    int timer_delete(timer_t);
++    int timer_getoverrun(timer_t);
++    int timer_gettime(timer_t, itimerspec*);
++    int timer_settime(timer_t, int, in itimerspec*, itimerspec*);
++    */
++}
+ else version( DragonFlyBSD )
+ {
+     enum CLOCK_THREAD_CPUTIME_ID  = 15;
+@@ -378,6 +422,13 @@ else version( FreeBSD )
+     tm*   gmtime_r(in time_t*, tm*);
+     tm*   localtime_r(in time_t*, tm*);
+ }
++else version( OpenBSD )
++{
++    char* asctime_r(in tm*, char*);
++    char* ctime_r(in time_t*, char*);
++    tm*   gmtime_r(in time_t*, tm*);
++    tm*   localtime_r(in time_t*, tm*);
++}
+ else version( DragonFlyBSD )
+ {
+     char* asctime_r(in tm*, char*);
+@@ -434,6 +485,11 @@ else version( OSX )
+     char* strptime(in char*, in char*, tm*);
+ }
+ else version( FreeBSD )
++{
++    //tm*   getdate(in char*);
++    char* strptime(in char*, in char*, tm*);
++}
++else version( OpenBSD )
+ {
+     //tm*   getdate(in char*);
+     char* strptime(in char*, in char*, tm*);

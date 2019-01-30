@@ -3,13 +3,13 @@ $OpenBSD$
 Index: runtime/druntime/src/core/sys/posix/sys/stat.d
 --- runtime/druntime/src/core/sys/posix/sys/stat.d.orig
 +++ runtime/druntime/src/core/sys/posix/sys/stat.d
-@@ -777,6 +777,70 @@ else version( FreeBSD )
+@@ -777,6 +777,68 @@ else version( FreeBSD )
      extern (D) bool S_ISLNK( mode_t mode )  { return S_ISTYPE( mode, S_IFLNK );  }
      extern (D) bool S_ISSOCK( mode_t mode ) { return S_ISTYPE( mode, S_IFSOCK ); }
  }
 +else version (OpenBSD)
 +{
-+    struct stat
++    struct stat_t
 +    {
 +        mode_t    st_mode;              /* inode protection mode */
 +        dev_t     st_dev;               /* inode's device */
@@ -33,8 +33,6 @@ Index: runtime/druntime/src/core/sys/posix/sys/stat.d
 +        long      __st_birthtimensec;   /* nsec of time of creation */
 +        uint32_t[2]  st_spare;
 +    }
-+
-+    alias stat stat_t;
 +
 +    enum S_IRUSR    = 0x100; // octal 0000400
 +    enum S_IWUSR    = 0x080; // octal 0000200
@@ -74,7 +72,7 @@ Index: runtime/druntime/src/core/sys/posix/sys/stat.d
  else version( DragonFlyBSD )
  {
      struct stat_t {
-@@ -1194,6 +1258,12 @@ else version( FreeBSD )
+@@ -1194,6 +1256,12 @@ else version( FreeBSD )
      int   lstat(in char*, stat_t*);
      int   stat(in char*, stat_t*);
  }
@@ -87,7 +85,7 @@ Index: runtime/druntime/src/core/sys/posix/sys/stat.d
  else version( DragonFlyBSD )
  {
      int   fstat(int, stat_t*);
-@@ -1257,6 +1327,19 @@ else version( OSX )
+@@ -1257,6 +1325,19 @@ else version( OSX )
      int mknod(in char*, mode_t, dev_t);
  }
  else version( FreeBSD )

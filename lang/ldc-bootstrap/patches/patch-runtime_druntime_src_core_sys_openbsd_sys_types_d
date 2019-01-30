@@ -3,11 +3,9 @@ $OpenBSD$
 Index: runtime/druntime/src/core/sys/openbsd/sys/types.d
 --- runtime/druntime/src/core/sys/openbsd/sys/types.d.orig
 +++ runtime/druntime/src/core/sys/openbsd/sys/types.d
-@@ -0,0 +1,36 @@
+@@ -0,0 +1,34 @@
 +/**
 +  * D header file for OpenBSD
-+  *
-+  * Authors: Ryan Boggs
 +  */
 +module core.sys.openbsd.sys.types;
 +
