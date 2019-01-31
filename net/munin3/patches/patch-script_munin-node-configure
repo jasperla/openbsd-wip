@@ -1,7 +1,8 @@
 $OpenBSD$
---- script/munin-node-configure.orig	Sun Aug 16 07:47:06 2015
-+++ script/munin-node-configure	Fri Aug 21 17:57:18 2015
-@@ -22,6 +22,10 @@ use warnings;
+Index: script/munin-node-configure
+--- script/munin-node-configure.orig
++++ script/munin-node-configure
+@@ -20,6 +20,10 @@ use warnings;
  
  use Getopt::Long;
  

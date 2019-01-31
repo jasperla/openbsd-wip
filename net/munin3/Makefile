@@ -5,7 +5,7 @@ PORTROACH = 	limitw:1,even
 COMMENT-main =	flexible network host monitoring, client
 COMMENT-server =flexible network host monitoring, server
 
-V = 		2.999.6
+V = 		2.999.11
 DISTNAME = 	munin-${V}
 PKGNAME-main =	munin3-node-${V}
 PKGNAME-server =munin3-server-${V}
@@ -38,10 +38,13 @@ RUN_DEPENDS-main =	logtail-*|logsentry-*:sysutils/logtail \
 			devel/p5-Log-Log4perl \
 			devel/p5-Net-Server \
 			net/p5-Net-CIDR
-RUN_DEPENDS-server +=	databases/p5-DBD-SQLite \
+RUN_DEPENDS-server +=	converters/p5-JSON \
+			databases/p5-DBD-SQLite \
 			devel/p5-File-Copy-Recursive \
+			devel/p5-IO-String \
 			devel/p5-List-MoreUtils \
 			devel/p5-Net-Server \
+			devel/p5-Parallel-ForkManager \
 			devel/p5-Params-Validate>=1.13 \
 			devel/p5-Time-TimeDate \
 			net/p5-IO-Socket-INET6 \

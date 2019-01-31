@@ -1,6 +1,7 @@
 $OpenBSD$
---- Makefile.config.orig	Sun Aug 16 07:47:06 2015
-+++ Makefile.config	Fri Aug 21 17:57:18 2015
+Index: Makefile.config
+--- Makefile.config.orig
++++ Makefile.config
 @@ -16,10 +16,10 @@
  #
  # the base of the Munin installation.
@@ -66,13 +67,13 @@ $OpenBSD$
 @@ -68,7 +71,7 @@ STATEDIR   = $(DESTDIR)/var/run/munin
  PERL       := $(shell which perl)
  
- # The python interpreter to use (used by some plugins)
--PYTHON     := /usr/bin/env python
-+#PYTHON     := /usr/bin/env python
+ # The Python interpreter to use (used by some plugins)
+-PYTHON     := /usr/bin/env python3
++#PYTHON     := /usr/bin/env python3
  
  # The ruby interpreter to use (used by some plugins)
  RUBY       := /usr/bin/env ruby
-@@ -116,14 +119,14 @@ OSTYPE     := $(shell uname | LANG=C tr '[A-Z]' '[a-z]
+@@ -115,14 +118,14 @@ OSTYPE     := $(shell uname | LANG=C tr '[A-Z]' '[a-z]
  
  # How to figure out the hostname. (Only used in default configuration
  # files)
@@ -90,7 +91,7 @@ $OpenBSD$
  
  # Default user to run the plugins as
  PLUGINUSER := nobody
-@@ -135,8 +138,8 @@ CGIUSER := nobody
+@@ -134,8 +137,8 @@ CGIUSER := nobody
  # These will work on most modern OSes:
  #
  GETENT     := $(shell which getent || which true 2>/dev/null)
