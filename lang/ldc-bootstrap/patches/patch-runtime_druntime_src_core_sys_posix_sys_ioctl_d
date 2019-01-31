@@ -1,0 +1,24 @@
+$OpenBSD$
+
+Index: runtime/druntime/src/core/sys/posix/sys/ioctl.d
+--- runtime/druntime/src/core/sys/posix/sys/ioctl.d.orig
++++ runtime/druntime/src/core/sys/posix/sys/ioctl.d
+@@ -359,6 +359,18 @@ else version (FreeBSD)
+ 
+     int ioctl(int, c_ulong, ...);
+ }
++else version (OpenBSD)
++{
++    struct winsize
++    {
++        ushort ws_row;
++        ushort ws_col;
++        ushort ws_xpixel;
++        ushort ws_ypixel;
++    }
++
++    int ioctl(int, c_ulong, ...);
++}
+ else version (DragonFlyBSD)
+ {
+     struct fiodgname_arg
