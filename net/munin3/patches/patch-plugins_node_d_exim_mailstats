@@ -1,7 +1,8 @@
 $OpenBSD$
---- plugins/node.d/exim_mailstats.orig	Sun Aug 16 07:47:06 2015
-+++ plugins/node.d/exim_mailstats	Fri Aug 21 17:57:18 2015
-@@ -122,7 +122,7 @@ sub parseEximfile
+Index: plugins/node.d/exim_mailstats
+--- plugins/node.d/exim_mailstats.orig
++++ plugins/node.d/exim_mailstats
+@@ -126,7 +126,7 @@ sub parseEximfile
  }
  
  

@@ -6,6 +6,7 @@
 @owner _munin
 @sample /var/www/htdocs/munin/
 @owner
+@rcscript ${RCDIR}/munin_httpd
 bin/munin-cron
 bin/munin-httpd
 bin/munin-limits
@@ -14,6 +15,7 @@ bin/munin-update
 @man man/man1/munin-limits.1
 @man man/man1/munin-run.1
 @man man/man1/munin-update.1
+share/doc/pkg-readmes/${PKGSTEM}
 @sample ${SYSCONFDIR}/munin/munin-conf.d/
 share/examples/munin/munin.conf.sample
 @sample ${SYSCONFDIR}/munin/munin.conf
@@ -211,5 +213,3 @@ share/examples/munin/templates/partial/logo_navigation_problem.tmpl
 @sample ${SYSCONFDIR}/munin/templates/partial/logo_navigation_problem.tmpl
 share/examples/munin/templates/partial/navigation.tmpl
 @sample ${SYSCONFDIR}/munin/templates/partial/navigation.tmpl
-share/doc/pkg-readmes/${FULLPKGNAME}
-@rcscript ${RCDIR}/munin_httpd
