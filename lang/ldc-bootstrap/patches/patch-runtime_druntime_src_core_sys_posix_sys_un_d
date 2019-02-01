@@ -1,0 +1,21 @@
+$OpenBSD$
+
+Index: runtime/druntime/src/core/sys/posix/sys/un.d
+--- runtime/druntime/src/core/sys/posix/sys/un.d.orig
++++ runtime/druntime/src/core/sys/posix/sys/un.d
+@@ -60,6 +60,15 @@ else version( FreeBSD )
+         byte[104]   sun_path;
+     }
+ }
++else version( OpenBSD )
++{
++    struct sockaddr_un
++    {
++        ubyte       sun_len;
++        sa_family_t sun_family;
++        byte[104]   sun_path;
++    }
++}
+ else version( DragonFlyBSD )
+ {
+     struct sockaddr_un
