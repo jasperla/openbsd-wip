@@ -1,13 +1,24 @@
 $OpenBSD$
 
-Force -pie
+Add a dummy -nopie flag to not accidentally trigger -n
+Properly check for -nopie
+Force -pie by default
 Add -z wxneeded option (and -z nowxneeded option)
 .openbsd.randomdata and .openbsd.wxneeded support
 
 Index: gold/options.h
 --- gold/options.h.orig
 +++ gold/options.h
-@@ -1089,7 +1089,7 @@ class General_options
+@@ -1048,6 +1048,8 @@ class General_options
+ 
+   // n
+ 
++  DEFINE_bool(nopie, options::ONE_DASH, '\0', false,
++	      N_("Do not create a position independent executable"), NULL);
+   DEFINE_bool(nmagic, options::TWO_DASHES, 'n', false,
+ 	      N_("Do not page align data"), NULL);
+   DEFINE_bool(omagic, options::EXACTLY_TWO_DASHES, 'N', false,
+@@ -1089,7 +1091,7 @@ class General_options
    DEFINE_bool(p, options::ONE_DASH, 'p', false,
  	      N_("Ignored for ARM compatibility"), NULL);
  
@@ -16,7 +27,7 @@ Index: gold/options.h
  	      N_("Create a position independent executable"),
  	      N_("Do not create a position independent executable"));
    DEFINE_bool_alias(pic_executable, pie, options::TWO_DASHES, '\0',
-@@ -1488,6 +1488,8 @@ class General_options
+@@ -1488,6 +1490,8 @@ class General_options
    DEFINE_bool(now, options::DASH_Z, '\0', false,
  	      N_("Mark object for immediate function binding"),
  	      NULL);
@@ -25,7 +36,7 @@ Index: gold/options.h
    DEFINE_bool(origin, options::DASH_Z, '\0', false,
  	      N_("Mark DSO to indicate that needs immediate $ORIGIN "
  		 "processing at runtime"), NULL);
-@@ -1510,6 +1512,8 @@ class General_options
+@@ -1510,6 +1514,8 @@ class General_options
  	      N_("Keep .text.hot, .text.startup, .text.exit and .text.unlikely "
  		 "as separate sections in the final binary."),
  	      N_("Merge all .text.* prefix sections."));
@@ -34,16 +45,16 @@ Index: gold/options.h
  
  
   public:
-@@ -1539,7 +1543,7 @@ class General_options
+@@ -1539,7 +1545,7 @@ class General_options
    // the output is position-independent or not.
    bool
    output_is_position_independent() const
 -  { return this->shared() || this->pie(); }
-+  { return this->pie(); }
++  { return this->pie() && !this->nopie(); }
  
    // Return true if the output is something that can be exec()ed, such
    // as a static executable, or a position-dependent or
-@@ -1598,6 +1602,10 @@ class General_options
+@@ -1598,6 +1604,10 @@ class General_options
    { return this->execstack_status_ != EXECSTACK_FROM_INPUT; }
  
    bool
@@ -54,7 +65,7 @@ Index: gold/options.h
    is_stack_executable() const
    { return this->execstack_status_ == EXECSTACK_YES; }
  
-@@ -1775,6 +1783,17 @@ class General_options
+@@ -1775,6 +1785,17 @@ class General_options
      EXECSTACK_NO
    };
  
@@ -72,7 +83,7 @@ Index: gold/options.h
    enum Icf_status
    {
      // Do not fold any functions (Default or --icf=none).
-@@ -1794,6 +1813,10 @@ class General_options
+@@ -1794,6 +1815,10 @@ class General_options
    { this->execstack_status_ = value; }
  
    void
@@ -83,7 +94,7 @@ Index: gold/options.h
    set_do_demangle(bool value)
    { this->do_demangle_ = value; }
  
-@@ -1829,6 +1852,8 @@ class General_options
+@@ -1829,6 +1854,8 @@ class General_options
    bool printed_version_;
    // Whether to mark the stack as executable.
    Execstack execstack_status_;

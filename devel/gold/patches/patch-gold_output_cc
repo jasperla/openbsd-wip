@@ -1,19 +1,16 @@
 $OpenBSD$
 
-gold doesn't support -nopie (yet), give a clear error message about it.
+Always page align RELRO section so that -nopie works.
 
 Index: gold/output.cc
 --- gold/output.cc.orig
 +++ gold/output.cc
-@@ -4771,7 +4771,10 @@ Output_segment::set_offset(unsigned int increase)
- 	  this->memsz_ = segment_end - this->vaddr_;
- 	}
-       else
--	gold_assert(segment_end == align_address(segment_end, page_align));
-+	{
-+	  if ((segment_end != align_address(segment_end, page_align)))
-+	    gold_fatal(_("-nopie unsupported by gold"));
-+	}
-     }
- 
-   // If this is a TLS segment, align the memory size.  The code in
+@@ -4762,7 +4762,7 @@ Output_segment::set_offset(unsigned int increase)
+   if (this->type_ == elfcpp::PT_GNU_RELRO)
+     {
+       uint64_t page_align = parameters->target().abi_pagesize();
+-      uint64_t segment_end = this->vaddr_ + this->memsz_;
++      uint64_t segment_end = align_address(this->vaddr_ + this->memsz_, page_align);
+       if (parameters->incremental_update())
+ 	{
+ 	  // The INCREASE_RELRO calculation is bypassed for an incremental
