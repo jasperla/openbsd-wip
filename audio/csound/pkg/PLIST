@@ -34,6 +34,7 @@ include/csound/
 include/csound/CppSound.hpp
 include/csound/CsoundFile.hpp
 include/csound/OpcodeBase.hpp
+include/csound/arrays.h
 include/csound/cfgvar.h
 include/csound/csPerfThread.hpp
 include/csound/cs_par_structs.h
@@ -63,9 +64,9 @@ include/csound/text.h
 include/csound/version.h
 lib/csound/
 lib/csound/plugins64-6.0/
-lib/csound/plugins64-6.0/csladspa.so
 lib/csound/plugins64-6.0/libampmidid.so
 lib/csound/plugins64-6.0/libarrayops.so
+lib/csound/plugins64-6.0/libbeosc.so
 lib/csound/plugins64-6.0/libbuchla.so
 lib/csound/plugins64-6.0/libcellular.so
 lib/csound/plugins64-6.0/libcontrol.so
@@ -88,7 +89,6 @@ lib/csound/plugins64-6.0/libpvsops.so
 lib/csound/plugins64-6.0/libpy.so
 lib/csound/plugins64-6.0/libquadbezier.so
 lib/csound/plugins64-6.0/librtpa.so
-lib/csound/plugins64-6.0/librtpulse.so
 lib/csound/plugins64-6.0/libscansyn.so
 lib/csound/plugins64-6.0/libscugens.so
 lib/csound/plugins64-6.0/libselect.so
@@ -102,3 +102,6 @@ lib/csound/plugins64-6.0/libvirtual.so
 lib/csound/plugins64-6.0/libwidgets.so
 @lib lib/libcsnd6.so.${LIBcsnd6_VERSION}
 @lib lib/libcsound64.so.${LIBcsound64_VERSION}
+share/cmake/
+share/cmake/Csound/
+share/cmake/Csound/FindCsound.cmake
