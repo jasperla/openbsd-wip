@@ -1,21 +1,21 @@
 # $OpenBSD: Makefile,v 1.6 2017/02/11 22:21:58 danj Exp $
 
-COMMENT =	open network for secure, decentralized communication
+COMMENT =		open network for secure, decentralized communication
 
 MODPY_EGG_VERSION =	0.34.1.1
-GH_ACCOUNT =	matrix-org
-GH_PROJECT =	synapse
-GH_TAGNAME =	v${MODPY_EGG_VERSION}
-CATEGORIES =	net
+GH_ACCOUNT =		matrix-org
+GH_PROJECT =		synapse
+GH_TAGNAME =		v${MODPY_EGG_VERSION}
+CATEGORIES =		net
 
-HOMEPAGE =	https://matrix.org/
+HOMEPAGE =		https://matrix.org/
 
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =		lang/python
 
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
+MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 MODPY_SETUPTOOLS =	Yes
 
 RUN_DEPENDS =	devel/py-asn1${MODPY_FLAVOR} \
