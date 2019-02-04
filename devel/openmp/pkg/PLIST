@@ -5,4 +5,4 @@ include/ompt.h
 lib/libgomp.spec
 @lib lib/libiomp5.so.${LIBiomp5_VERSION}
 @lib lib/libomp.so.${LIBomp_VERSION}
-lib/libomptarget.so
+@lib lib/libomptarget.so.${LIBomptarget_VERSION}
