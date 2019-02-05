@@ -1,0 +1,48 @@
+$OpenBSD$
+
+Index: runtime/druntime/src/core/sys/posix/arpa/inet.d
+--- runtime/druntime/src/core/sys/posix/arpa/inet.d.orig
++++ runtime/druntime/src/core/sys/posix/arpa/inet.d
+@@ -124,6 +124,31 @@ else version( FreeBSD )
+     const(char)*    inet_ntop(int, in void*, char*, socklen_t);
+     int             inet_pton(int, in char*, void*);
+ }
++else version (OpenBSD)
++{
++    alias uint16_t in_port_t;
++    alias uint32_t in_addr_t;
++
++    struct in_addr
++    {
++        in_addr_t s_addr;
++    }
++
++    enum INET_ADDRSTRLEN    = 16;
++
++    @trusted pure
++    {
++    uint32_t htonl(uint32_t);
++    uint16_t htons(uint16_t);
++    uint32_t ntohl(uint32_t);
++    uint16_t ntohs(uint16_t);
++    }
++
++    in_addr_t       inet_addr(in char*);
++    char*           inet_ntoa(in_addr);
++    const(char)*    inet_ntop(int, in void*, char*, socklen_t);
++    int             inet_pton(int, in char*, void*);
++}
+ else version( DragonFlyBSD )
+ {
+     alias uint16_t in_port_t;
+@@ -257,6 +282,10 @@ else version( OSX )
+     enum INET6_ADDRSTRLEN = 46;
+ }
+ else version( FreeBSD )
++{
++    enum INET6_ADDRSTRLEN = 46;
++}
++else version (OpenBSD)
+ {
+     enum INET6_ADDRSTRLEN = 46;
+ }
