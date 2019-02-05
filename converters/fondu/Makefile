@@ -25,6 +25,8 @@ CONFIGURE_STYLE = Gnu
 
 CONFIGURE_ARGS = --bindir=${PREFIX}/bin
 
+MAKE_FLAGS =	CFLAGS="${CFLAGS}"
+
 NO_TEST =	Yes
 
 post-install:
