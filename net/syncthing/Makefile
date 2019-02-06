@@ -2,7 +2,7 @@
 
 COMMENT =	open decentralized synchronization utility
 
-V =		1.0.0
+V =		1.0.1
 DISTNAME =	syncthing-${V}
 DISTFILES =	syncthing-source-v${V}${EXTRACT_SUFX}
 
@@ -30,6 +30,9 @@ do-build:
 	cd ${WRKSRC} && ${MODGO_CMD} run build.go \
 		-version v${V} -no-upgrade
 
+# Some tests fail, but they are bugs in the test suite itself, not Syncthing.
+# We are working with upstream to fix these:
+# https://forum.syncthing.net/t/openbsd-test-debugging/12799
 do-test:
 	cd ${WRKSRC} && ${MODGO_CMD} run build.go test
 
