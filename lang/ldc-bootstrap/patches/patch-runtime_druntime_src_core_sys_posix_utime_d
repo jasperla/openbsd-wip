@@ -1,0 +1,22 @@
+$OpenBSD$
+
+Index: runtime/druntime/src/core/sys/posix/utime.d
+--- runtime/druntime/src/core/sys/posix/utime.d.orig
++++ runtime/druntime/src/core/sys/posix/utime.d
+@@ -65,6 +65,16 @@ else version( FreeBSD )
+ 
+     int utime(in char*, in utimbuf*);
+ }
++else version (OpenBSD)
++{
++    struct utimbuf
++    {
++        time_t  actime;
++        time_t  modtime;
++    }
++
++    int utime(in char*, in utimbuf*);
++}
+ else version( DragonFlyBSD )
+ {
+     struct utimbuf
