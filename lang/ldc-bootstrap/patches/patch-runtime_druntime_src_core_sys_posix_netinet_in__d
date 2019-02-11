@@ -3,7 +3,7 @@ $OpenBSD$
 Index: runtime/druntime/src/core/sys/posix/netinet/in_.d
 --- runtime/druntime/src/core/sys/posix/netinet/in_.d.orig
 +++ runtime/druntime/src/core/sys/posix/netinet/in_.d
-@@ -202,6 +202,63 @@ else version( FreeBSD )
+@@ -202,6 +202,62 @@ else version( FreeBSD )
  
      //enum INET_ADDRSTRLEN       = 16;
  }
@@ -52,7 +52,6 @@ Index: runtime/druntime/src/core/sys/posix/netinet/in_.d
 +        IPPROTO_CARP      = 112,            /* CARP */
 +        IPPROTO_MPLS      = 137,            /* unicast MPLS packet */
 +        IPPROTO_PFSYNC    = 240,            /* PFSYNC */
-+        IPPROTO_RAW       = 255,            /* raw IP packet */
 +        IPPROTO_MAX       = 256
 +    }
 +
@@ -67,7 +66,7 @@ Index: runtime/druntime/src/core/sys/posix/netinet/in_.d
  else version( DragonFlyBSD )
  {
      //alias uint16_t in_port_t;
-@@ -756,6 +813,171 @@ else version( FreeBSD )
+@@ -756,6 +812,171 @@ else version( FreeBSD )
                 __IPV6_ADDR_MC_SCOPE(a) == __IPV6_ADDR_SCOPE_GLOBAL;
      }
  }
@@ -239,7 +238,7 @@ Index: runtime/druntime/src/core/sys/posix/netinet/in_.d
  else version( DragonFlyBSD )
  {
      struct in6_addr
-@@ -1168,6 +1390,10 @@ else version( OSX )
+@@ -1168,6 +1389,10 @@ else version( OSX )
      enum uint IPPROTO_RAW = 255;
  }
  else version( FreeBSD )
