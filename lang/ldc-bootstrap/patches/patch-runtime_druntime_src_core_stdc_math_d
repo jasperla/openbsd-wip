@@ -117,7 +117,7 @@ Index: runtime/druntime/src/core/stdc/math.d
  else version( DragonFlyBSD )
  {
      enum
-@@ -1920,6 +2020,411 @@ else version( FreeBSD )
+@@ -1920,6 +2020,417 @@ else version( FreeBSD )
      double  fma(double x, double y, double z);
      ///
      float   fmaf(float x, float y, float z);
@@ -170,8 +170,6 @@ Index: runtime/druntime/src/core/stdc/math.d
 +    real    logb1pl(real x);
 +    ///
 +    real    logb2l(real x);
-+    ///
-+    real    logbl(real x);
 +    ///
 +    pure real    modfl(real value, real *iptr);
 +    ///
@@ -359,6 +357,14 @@ Index: runtime/druntime/src/core/stdc/math.d
 +    ///
 +    float   logbf(float x);
 +
++    ///
++    real logl(real x);
++    ///
++    real log10l(real x);
++    ///
++    real log1pl(real x);
++    ///
++    real logbl(real x);
 +    ///
 +    pure double  modf(double value, double* iptr);
 +    ///

@@ -26,7 +26,7 @@ Index: runtime/druntime/src/core/sys/openbsd/sys/link_elf.d
 +
 +    template ElfW(string type)
 +    {
-+        mixin("alias Elf"~__ELF_NATIVE_CLASS.stringof~"_"~type~" Elfw;");
++        mixin("alias Elf"~__ELF_NATIVE_CLASS.stringof~"_"~type~" ElfW;");
 +    }
 +
 +    struct link_map

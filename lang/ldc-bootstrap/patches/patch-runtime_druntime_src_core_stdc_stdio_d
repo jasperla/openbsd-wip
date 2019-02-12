@@ -120,7 +120,7 @@ Index: runtime/druntime/src/core/stdc/stdio.d
  else version( DragonFlyBSD )
  {
      enum
-@@ -1072,6 +1161,97 @@ else version( FreeBSD )
+@@ -1072,6 +1161,101 @@ else version( FreeBSD )
      int  snprintf(char* s, size_t n, in char* format, ...);
      ///
      int  vsnprintf(char* s, size_t n, in char* format, va_list arg);
@@ -128,24 +128,28 @@ Index: runtime/druntime/src/core/stdc/stdio.d
 +else version (OpenBSD)
 +{
 +    // No unsafe pointer manipulation.
-+    @trusted
-+    {
-+        ///
-+        void rewind(FILE*);
-+    }
 +    @trusted private
 +    {
 +        ///
 +        pure void clearerr(FILE*);
-+        alias __clearerr = clearerr;
 +        ///
 +        pure int  feof(FILE*);
-+        alias __feof = feof;
 +        ///
 +        pure int  ferror(FILE*);
-+        alias __ferror = ferror;
 +        ///
 +        int  fileno(FILE*);
++    }
++    @trusted
++    {
++        ///
++        void rewind(FILE*);
++        ///
++        alias __clearerr = clearerr;
++        ///
++        alias __feof = feof;
++        ///
++        alias __ferror = ferror;
++        ///
 +        alias __fileno = fileno;
 +    }
 +
@@ -168,7 +172,7 @@ Index: runtime/druntime/src/core/stdc/stdio.d
 +
 +    extern int __isthreaded;
 +
-+    extern (D)
++    extern (D) @trusted
 +    {
 +        void __sclearerr()(FILE* p)
 +        {
