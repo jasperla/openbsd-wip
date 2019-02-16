@@ -1,3 +1,0 @@
-Combines List::Util, List::SomeUtils and List::UtilsBy in one bite-sized
-package. This module will export all of the functions that either of those
-three modules defines.
