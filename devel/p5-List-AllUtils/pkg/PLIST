@@ -1,3 +1,0 @@
-@comment $OpenBSD$
-${P5SITE}/List/AllUtils.pm
-@man man/man3p/List::AllUtils.3p
