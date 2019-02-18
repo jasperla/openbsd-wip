@@ -1,4 +1,0 @@
-@comment $OpenBSD: PLIST,v$
-${P5SITE}/Data/
-${P5SITE}/Data/IEEE754.pm
-@man man/man3p/Data::IEEE754.3p
