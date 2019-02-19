@@ -2,7 +2,7 @@
 
 COMMENT =	fast XS implementation of MaxMind DB reader
 
-DISTNAME =	MaxMind-DB-Reader-XS-1.000005
+DISTNAME =	MaxMind-DB-Reader-XS-1.000007
 
 CATEGORIES =	net
 

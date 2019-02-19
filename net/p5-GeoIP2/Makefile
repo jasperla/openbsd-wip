@@ -2,7 +2,7 @@
 
 COMMENT =	Perl API for MaxMind's GeoIP2 web services and databases
 
-DISTNAME =	GeoIP2-2.005001
+DISTNAME =	GeoIP2-2.006001
 
 CATEGORIES =	net
 
