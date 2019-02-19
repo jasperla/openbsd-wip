@@ -58,7 +58,21 @@ Index: runtime/druntime/src/rt/sections_elf_shared.d
                  else version (DragonFlyBSD)
                      strtab = cast(const(char)*)(info.dlpi_addr + dyn.d_un.d_ptr); // relocate
                  else
-@@ -739,37 +750,46 @@ void scanSegments(in ref dl_phdr_info info, DSO* pdso)
+@@ -721,7 +732,12 @@ void scanSegments(in ref dl_phdr_info info, DSO* pdso)
+ 
+         case PT_TLS: // TLS segment
+             assert(!pdso._tlsSize); // is unique per DSO
+-            pdso._tlsMod = info.dlpi_tls_modid;
++            version (OpenBSD)
++            {
++                // OpenBSD doesn't provide a 'dlpi_tls_modid' definition
++            } 
++            else
++                pdso._tlsMod = info.dlpi_tls_modid;
+             pdso._tlsSize = phdr.p_memsz;
+             break;
+ 
+@@ -739,37 +755,46 @@ void scanSegments(in ref dl_phdr_info info, DSO* pdso)
   * References:
   *      http://linux.die.net/man/3/dl_iterate_phdr
   */
@@ -128,7 +142,7 @@ Index: runtime/druntime/src/rt/sections_elf_shared.d
  
  /*********************************
   * Determine if 'addr' lies within shared object 'info'.
-@@ -796,12 +816,14 @@ version (linux) import core.sys.linux.errno : program_
+@@ -796,12 +821,14 @@ version (linux) import core.sys.linux.errno : program_
  // should be in core.sys.freebsd.stdlib
  version (FreeBSD) extern(C) const(char)* getprogname() nothrow @nogc;
  version (DragonFlyBSD) extern(C) const(char)* getprogname() nothrow @nogc;
