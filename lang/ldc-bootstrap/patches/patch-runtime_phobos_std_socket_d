@@ -1,0 +1,20 @@
+$OpenBSD$
+
+Index: runtime/phobos/std/socket.d
+--- runtime/phobos/std/socket.d.orig
++++ runtime/phobos/std/socket.d
+@@ -189,6 +189,14 @@ string formatSocketError(int err) @trusted
+             else
+                 return "Socket error " ~ to!string(err);
+         }
++        else version (OpenBSD)
++        {
++            auto errs = strerror_r(err, buf.ptr, buf.length);
++            if (errs == 0)
++                cs = buf.ptr;
++            else
++                return "Socket error " ~ to!string(err);
++        }
+         else version (DragonFlyBSD)
+         {
+             auto errs = strerror_r(err, buf.ptr, buf.length);
