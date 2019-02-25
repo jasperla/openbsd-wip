@@ -14,3 +14,5 @@
 @man man/man1/showfond.1
 @man man/man1/tobin.1
 @man man/man1/ufond.1
+share/doc/fondu/
+share/doc/fondu/README

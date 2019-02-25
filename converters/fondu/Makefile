@@ -33,5 +33,7 @@ post-install:
 .for f in dfont2res fondu frombin lumper showfond tobin ufond
 	${INSTALL_MAN} ${WRKSRC}/${f}.1 ${PREFIX}/man/man1
 .endfor
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/fondu
+	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/fondu
 
 .include <bsd.port.mk>
