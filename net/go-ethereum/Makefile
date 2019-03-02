@@ -1,7 +1,7 @@
 # $OpenBSD$
 
 COMMENT =	go implementation of the ethereum protocol
-V =		1.8.21
+V =		1.8.23
 GH_ACCOUNT =	ethereum
 GH_PROJECT =	go-ethereum
 GH_TAGNAME =	v$V
