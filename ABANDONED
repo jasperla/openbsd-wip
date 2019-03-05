@@ -108,6 +108,7 @@ security/libcacard
 security/p5-Crypt-ECB
 security/p5-Crypt-PWSafe3
 security/p5-Crypt-RandPasswd
+sysutils/ovmf
 telephony/libexosip2
 telephony/linphone
 telephony/mediastreamer2
