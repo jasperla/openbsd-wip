@@ -2,7 +2,7 @@
 
 MULTI_PACKAGES=	-main -emacs -python2.7 -python3.6
 
-V=			0.28
+V=			0.28.3
 PKGNAME=		notmuch-${V}
 PKGNAME-main=		notmuch-${V}
 PKGNAME-emacs=		notmuch-emacs-${V}

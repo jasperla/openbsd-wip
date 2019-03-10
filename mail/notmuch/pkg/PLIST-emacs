@@ -7,8 +7,6 @@ man/man3/notmuch-emacs-mua.1
 man/man5/notmuch-emacs-mua.1
 man/man7/notmuch-emacs-mua.1
 share/applications/notmuch-emacs-mua.desktop
-share/emacs/
-share/emacs/site-lisp/
 share/emacs/site-lisp/coolj.el
 share/emacs/site-lisp/coolj.elc
 share/emacs/site-lisp/notmuch-address.el
@@ -52,3 +50,4 @@ share/emacs/site-lisp/notmuch-wash.el
 share/emacs/site-lisp/notmuch-wash.elc
 share/emacs/site-lisp/notmuch.el
 share/emacs/site-lisp/notmuch.elc
+@tag update-desktop-database

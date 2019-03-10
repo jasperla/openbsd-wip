@@ -19,10 +19,10 @@ Index: doc/Makefile.local
 -%.gz: %
 -	rm -f $@ && gzip --stdout $^ > $@
 -
- sphinx-html:
- 	$(SPHINXBUILD) -b html $(ALLSPHINXOPTS) $(DOCBUILDDIR)/html
- 
-@@ -44,7 +41,7 @@ sphinx-texinfo:
+ # Sequentialize the calls to sphinx-build to avoid races with
+ # reading/writing cached state. This uses GNU make specific
+ # "order-only" prerequisites.
+@@ -52,7 +49,7 @@ sphinx-texinfo:
  	$(SPHINXBUILD) -b texinfo $(ALLSPHINXOPTS) $(DOCBUILDDIR)/texinfo
  
  sphinx-info: sphinx-texinfo
@@ -31,7 +31,7 @@ Index: doc/Makefile.local
  
  # Use the man page converter that is available. We should never depend
  # on MAN_ROFF_FILES if a converter is not available.
-@@ -70,11 +67,11 @@ endif
+@@ -78,11 +75,11 @@ endif
  install-man: install-apidocs
  
  ifeq ($(HAVE_DOXYGEN),1)
@@ -46,7 +46,7 @@ Index: doc/Makefile.local
  
  $(APIMAN): $(dir)/config.dox $(srcdir)/$(dir)/doxygen.cfg $(srcdir)/lib/notmuch.h
  	mkdir -p $(DOCBUILDDIR)/man/man3
-@@ -93,15 +90,15 @@ build-man:
+@@ -101,15 +98,15 @@ build-man:
  install-man:
  	@echo "No sphinx, will not install man pages."
  else
@@ -68,7 +68,7 @@ Index: doc/Makefile.local
  endif
  
  ifneq ($(HAVE_SPHINX)$(HAVE_MAKEINFO),11)
-@@ -126,4 +123,4 @@ $(dir)/config.dox: version.stamp
+@@ -134,4 +131,4 @@ $(dir)/config.dox: version.stamp
  	echo "INPUT=${srcdir}/lib/notmuch.h" >> $@
  
  CLEAN := $(CLEAN) $(DOCBUILDDIR) $(DOCBUILDDIR)/.roff.stamp
