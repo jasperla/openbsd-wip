@@ -1,4 +1,5 @@
 $OpenBSD$
+
 Index: notmuch-dump.c
 --- notmuch-dump.c.orig
 +++ notmuch-dump.c
