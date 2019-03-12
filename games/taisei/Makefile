@@ -13,12 +13,9 @@ ONLY_FOR_ARCHS =	amd64 aarch64 i386
 
 COMMENT =		clone of the touhou games
 
-V =			1.2
-DISTNAME =		taisei-$V
-
 GH_ACCOUNT =		taisei-project
 GH_PROJECT =		taisei
-GH_TAGNAME =		v$V
+GH_TAGNAME =		v1.2
 
 CATEGORIES =		games
 
