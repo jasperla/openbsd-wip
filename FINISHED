@@ -67,7 +67,6 @@ games/xash3d				sent to ports@ 2018-05-05 (rfreeman)
 devel/py-progressbar2			sent to ports@ 2018-06-04
 devel/py-python_utils			sent to ports@ 2018-06-04
 x11/gnustep/stepsync			ready to import (bcallah; after 6.4)
-audio/parlatype				ready to import (bcallah; after 6.4)
 lang/flang/f18				ready to import (bcallah; after 6.4)
 graphics/converseen			ready to import (bcallah; after 6.4)
 fonts/siji				ready to import (bcallah)
