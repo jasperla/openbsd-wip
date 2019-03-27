@@ -53,7 +53,7 @@ Index: gold/layout.cc
    if (interp == NULL)
      {
        interp = target->dynamic_linker();
-@@ -5716,6 +5742,10 @@ Layout::make_output_segment(elfcpp::Elf_Word type, elf
+@@ -5717,6 +5743,10 @@ Layout::make_output_segment(elfcpp::Elf_Word type, elf
      this->relro_segment_ = oseg;
    else if (type == elfcpp::PT_INTERP)
      this->interp_segment_ = oseg;

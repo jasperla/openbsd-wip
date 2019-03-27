@@ -16,7 +16,7 @@ Index: bfd/config.bfd
   arm-*-oabi | \
   arm-*-riscix* | \
   arm-epoc-pe* | \
-@@ -244,6 +243,11 @@ case "${targ}" in
+@@ -245,6 +244,11 @@ case "${targ}" in
      targ_selvecs="aarch64_elf64_be_vec arm_elf32_le_vec arm_elf32_be_vec"
      want64=true
      ;;
@@ -28,7 +28,7 @@ Index: bfd/config.bfd
    aarch64-*-fuchsia*)
      targ_defvec=aarch64_elf64_le_vec
      targ_selvecs="aarch64_elf64_be_vec arm_elf32_le_vec arm_elf32_be_vec"
-@@ -358,6 +362,10 @@ case "${targ}" in
+@@ -359,6 +363,10 @@ case "${targ}" in
      targ_defvec=arm_elf32_le_vec
      targ_selvecs="arm_elf32_be_vec"
      ;;
@@ -39,7 +39,7 @@ Index: bfd/config.bfd
    arm-*-nto* | nto*arm*)
      targ_defvec=arm_elf32_le_vec
      targ_selvecs=arm_elf32_be_vec
-@@ -681,7 +689,7 @@ case "${targ}" in
+@@ -687,7 +695,7 @@ case "${targ}" in
      targ_selvecs="i386_elf32_fbsd_vec iamcu_elf32_vec i386_coff_vec i386_pei_vec x86_64_pei_vec i386_elf32_vec x86_64_elf64_vec l1om_elf64_vec l1om_elf64_fbsd_vec k1om_elf64_vec k1om_elf64_fbsd_vec"
      want64=true
      ;;
