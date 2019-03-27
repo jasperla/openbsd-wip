@@ -11,8 +11,3 @@ gold is an ELF-only linker developed by Google.
 It can be easily used by clang by passing the flag
 -fuse-ld=gold
 on the command line during the linker step.
-
-Caveats:
-* gold can create shared libs, regular pie executables, and
-  -static -pie executables. It cannot create -nopie executables of
-  any kind yet. Help with this is greatly appreciated!
