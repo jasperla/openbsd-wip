@@ -1,0 +1,20 @@
+$OpenBSD$
+
+Index: core/CMakeLists.txt
+--- core/CMakeLists.txt.orig
++++ core/CMakeLists.txt
+@@ -111,6 +111,14 @@ if (${CMAKE_SYSTEM_NAME} MATCHES "SunOS")
+    link_libraries(nsl socket curses)
+ endif()
+ 
++if (${CMAKE_SYSTEM_NAME} MATCHES "OpenBSD")
++   set(HAVE_OPENBSD_OS 1)
++   set(PSCMD "ps -ax -o pid,command")
++   include_directories(${LOCALBASE}/include)
++   link_directories(${LOCALBASE}/lib)
++   link_libraries(intl)
++endif()
++
+ if (${CMAKE_SYSTEM_NAME} MATCHES "FreeBSD")
+    set(HAVE_FREEBSD_OS 1)
+    set(PSCMD "ps -ax -o pid,command")
