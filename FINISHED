@@ -67,7 +67,6 @@ games/xash3d				sent to ports@ 2018-05-05 (rfreeman)
 devel/py-progressbar2			sent to ports@ 2018-06-04
 devel/py-python_utils			sent to ports@ 2018-06-04
 x11/gnustep/stepsync			ready to import (bcallah; after 6.4)
-lang/flang/f18				ready to import (bcallah; after 6.4)
 graphics/converseen			ready to import (bcallah; after 6.4)
 fonts/siji				ready to import (bcallah)
 fonts/unifont				ready to import (bcallah)
@@ -88,5 +87,4 @@ net/p5-POE-Component-IRC		sent to ports@
 net/p5-POE-Component-IRC-Plugin-RSS-Headlines	sent to ports@
 games/brogue				sent to ports@ (waiting for upstream to accept patches) (bcallah)
 games/openhexagon			ready to import (bcallah)
-net/libfetch				ready to import (bcallah)
-net/fetch				ready to import (bcallah)
+math/ebc				ready to import (bcallah)

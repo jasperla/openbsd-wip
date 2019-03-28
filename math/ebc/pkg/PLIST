@@ -1,0 +1,9 @@
+@comment $OpenBSD: PLIST,v$
+@bin bin/ebc
+bin/edc
+@man man/man1/ebc.1
+@man man/man1/edc.1
+share/locale/
+share/locale/ebc/
+share/locale/ebc/en.cat
+share/locale/ebc/en_US.cat

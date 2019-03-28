@@ -1,0 +1,40 @@
+$OpenBSD$
+
+Name the binaries ebc and edc, to not conflict with either
+base bc(1), dc(1), or GNU gbc(1), gdc(1) from ports.
+
+Index: Makefile.in
+--- Makefile.in.orig
++++ Makefile.in
+@@ -77,18 +77,18 @@ DC_HELP_GCNO = $(GEN_DIR)/dc_help.gcno
+ BIN = bin
+ LOCALES = locales
+ 
+-BC = bc
+-DC = dc
++BC = ebc
++DC = edc
+ BC_EXEC = $(BIN)/$(BC)
+ DC_EXEC = $(BIN)/$(DC)
+ EXEC_SUFFIX = %%EXECSUFFIX%%
+ 
+ MANUALS = manuals
+ BC_MANPAGE_NAME = $(BC).1
+-BC_MANPAGE = $(MANUALS)/$(BC_MANPAGE_NAME)
++BC_MANPAGE = $(MANUALS)/bc.1
+ BC_RONN = $(BC_MANPAGE).ronn
+ DC_MANPAGE_NAME = $(DC).1
+-DC_MANPAGE = $(MANUALS)/$(DC_MANPAGE_NAME)
++DC_MANPAGE = $(MANUALS)/dc.1
+ DC_RONN = $(DC_MANPAGE).ronn
+ 
+ MANPAGE_INSTALL_ARGS = -Dm644
+@@ -273,7 +273,7 @@ clean_tests: clean clean_config
+ 	@$(RM) -f $(DC_HELP_GCDA) $(DC_HELP_GCNO)
+ 
+ install_locales:
+-	$(LOCALES_INSTALL) $(LOCALEDIR)
++	$(LOCALES_INSTALL) $(DESTDIR)$(LOCALEDIR)
+ 
+ install_bc_manpage:
+ 	$(SAFE_INSTALL) $(MANPAGE_INSTALL_ARGS) $(BC_MANPAGE) $(DESTDIR)$(MAN1DIR)/$(BC_MANPAGE_NAME)
