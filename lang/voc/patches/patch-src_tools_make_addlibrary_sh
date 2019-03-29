@@ -1,0 +1,16 @@
+$OpenBSD$
+
+Don't run ldconfig
+
+Index: src/tools/make/addlibrary.sh
+--- src/tools/make/addlibrary.sh.orig
++++ src/tools/make/addlibrary.sh
+@@ -4,7 +4,7 @@
+ # $2 - location containing .so's
+ # $3 - oberon name
+ 
+-
++exit 0
+ if ! which ldconfig >/dev/null 2>&1; then exit 0; fi
+ 
+ if test -d /etc/ld.so.conf.d; then

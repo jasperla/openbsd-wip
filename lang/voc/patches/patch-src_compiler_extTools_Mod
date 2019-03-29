@@ -1,0 +1,17 @@
+$OpenBSD$
+
+Add -rpath to linker flags, for lld.
+
+Index: src/compiler/extTools.Mod
+--- src/compiler/extTools.Mod.orig
++++ src/compiler/extTools.Mod
+@@ -69,6 +69,9 @@ PROCEDURE LinkMain*(VAR moduleName: ARRAY OF CHAR; sta
+     Strings.Append(Configuration.linkflags,    cmd);
+     Strings.Append(OPM.InstallDir,             cmd);
+     Strings.Append('/lib"',                    cmd);
++    Strings.Append(Configuration.rpathflags,   cmd);
++    Strings.Append(OPM.InstallDir,             cmd);
++    Strings.Append('/lib"',                    cmd);
+     Strings.Append(Configuration.libspec,      cmd);
+     Strings.Append('-O',                       cmd);
+     Strings.Append(OPM.Model,                  cmd);

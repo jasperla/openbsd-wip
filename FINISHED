@@ -88,3 +88,4 @@ net/p5-POE-Component-IRC-Plugin-RSS-Headlines	sent to ports@
 games/brogue				sent to ports@ (waiting for upstream to accept patches) (bcallah)
 games/openhexagon			ready to import (bcallah)
 math/ebc				ready to import (bcallah)
+lang/voc				ready to import (bcallah)

@@ -1,0 +1,7 @@
+Vishap Oberon is a free and open source implementation of the Oberon-2
+language and libraries for use on conventional operating systems.
+
+Vishap's Oberon Compiler (voc) uses a C backend (gcc or clang) to
+compile Oberon programs. Vishap Oberon includes libraries from the Ulm,
+oo2c and Ofront Oberon compilers, as well as default libraries complying
+with the Oakwood Guidelines for Oberon-2 compilers.

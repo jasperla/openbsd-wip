@@ -1,0 +1,15 @@
+$OpenBSD$
+
+Remove hardcoded CFLAGS.
+
+Index: src/tools/make/oberon.mk
+--- src/tools/make/oberon.mk.orig
++++ src/tools/make/oberon.mk
+@@ -7,7 +7,6 @@
+ 
+ 
+ # Be independent of any CFLAGS settings in the calling environment
+-CFLAGS =
+ 
+ # Gnu make has the make initial directory in CURDIR, BSD make has it in .CURDIR.
+ ROOTDIR = $(CURDIR)$(.CURDIR)
