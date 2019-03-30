@@ -2,7 +2,7 @@
 
 COMMENT=	IPsec-based VPN software (IKEv1/IKEv2) with XAUTH and EAP
 
-DISTNAME=	strongswan-5.6.2
+DISTNAME=	strongswan-5.7.2
 EXTRACT_SUFX=	.tar.bz2
 
 SHARED_LIBS +=	charon                    0.0 # 0.0
@@ -21,7 +21,10 @@ MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c execinfo gmp m pthread
+WANTLIB += ${COMPILER_LIBCXX} botan-2 bz2 c crypto execinfo gmp
+WANTLIB += lzma m z
+
+COMPILER=	base-clang ports-gcc
 
 MASTER_SITES=	https://download.strongswan.org/
 
@@ -34,15 +37,12 @@ LIBTOOL_FLAGS=	--tag=disable-static
 SYSCONFDIR=	${BASESYSCONFDIR}/strongswan
 
 LIB_DEPENDS=	devel/gmp \
-		devel/libexecinfo
+		devel/libexecinfo \
+		security/botan2
 
-CONFIGURE_ARGS= \
-	--disable-kernel-netlink \
-	--enable-kernel-pfroute \
-	--enable-kernel-libipsec \
-	--with-group=_strongswan \
-	--with-user=_strongswan \
+CONFIGURE_ARGS+= \
 	--enable-aesni \
+	--enable-chapoly \
 	--enable-eap-gtc \
 	--enable-eap-identity \
 	--enable-eap-mschapv2 \
@@ -52,9 +52,28 @@ CONFIGURE_ARGS= \
 	--enable-eap-ttls \
 	--enable-gcm \
 	--enable-md4 \
+	--enable-pkcs11 \
 	--enable-xauth-eap
 
-#CONFIGURE_ARGS += --enable-kernel-pfkey
+# either botan or openssl for DH/ECDH/HMAC
+# (can probably be made to work with libressl with sufficient #ifdefs)
+CONFIGURE_ARGS+= --enable-botan
+
+# kernel-pfkey: support for kernel IPsec via pfkey; needs porting
+CONFIGURE_ARGS += --disable-kernel-pfkey
+
+# kernel-libipsec: userland IPsec library interfacing via tun(4) -
+# not recommended for gateways due to low performance
+CONFIGURE_ARGS += --enable-kernel-libipsec
+
+# can't use with kernel-libipsec as-is; needs ioctl on tun(4)
+#CONFIGURE_ARGS += --with-group=_strongswan \
+#	--with-user=_strongswan
+
+# BSD routing code
+CONFIGURE_ARGS+= \
+	--disable-kernel-netlink \
+	--enable-kernel-pfroute
 
 TEST_IS_INTERACTIVE=	threading test suite: rwlock test hangs!
 

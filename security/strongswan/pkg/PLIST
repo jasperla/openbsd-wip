@@ -1,6 +1,4 @@
-@comment $OpenBSD$
-@newgroup _strongswan:801
-@newuser _strongswan:801:_strongswan:daemon:strongswan user:/nonexistent:/sbin/nologin
+@comment $OpenBSD: PLIST,v$
 @bin bin/pki
 lib/ipsec/
 @lib lib/ipsec/libcharon.so.${LIBcharon_VERSION}
@@ -13,6 +11,8 @@ lib/ipsec/plugins/
 lib/ipsec/plugins/libstrongswan-aes.so
 lib/ipsec/plugins/libstrongswan-aesni.so
 lib/ipsec/plugins/libstrongswan-attr.so
+lib/ipsec/plugins/libstrongswan-botan.so
+lib/ipsec/plugins/libstrongswan-chapoly.so
 lib/ipsec/plugins/libstrongswan-cmac.so
 lib/ipsec/plugins/libstrongswan-constraints.so
 lib/ipsec/plugins/libstrongswan-counters.so
@@ -39,6 +39,7 @@ lib/ipsec/plugins/libstrongswan-nonce.so
 lib/ipsec/plugins/libstrongswan-pem.so
 lib/ipsec/plugins/libstrongswan-pgp.so
 lib/ipsec/plugins/libstrongswan-pkcs1.so
+lib/ipsec/plugins/libstrongswan-pkcs11.so
 lib/ipsec/plugins/libstrongswan-pkcs12.so
 lib/ipsec/plugins/libstrongswan-pkcs7.so
 lib/ipsec/plugins/libstrongswan-pkcs8.so
@@ -87,6 +88,7 @@ libexec/ipsec/_updown
 @man man/man8/swanctl.8
 sbin/ipsec
 @bin sbin/swanctl
+share/doc/pkg-readmes/${PKGSTEM}
 share/examples/strongswan/
 @sample ${SYSCONFDIR}/
 share/examples/strongswan/ipsec.conf
@@ -129,6 +131,10 @@ share/examples/strongswan/strongswan.d/charon/aesni.conf
 @sample ${SYSCONFDIR}/strongswan.d/charon/aesni.conf
 share/examples/strongswan/strongswan.d/charon/attr.conf
 @sample ${SYSCONFDIR}/strongswan.d/charon/attr.conf
+share/examples/strongswan/strongswan.d/charon/botan.conf
+@sample ${SYSCONFDIR}/strongswan.d/charon/botan.conf
+share/examples/strongswan/strongswan.d/charon/chapoly.conf
+@sample ${SYSCONFDIR}/strongswan.d/charon/chapoly.conf
 share/examples/strongswan/strongswan.d/charon/cmac.conf
 @sample ${SYSCONFDIR}/strongswan.d/charon/cmac.conf
 share/examples/strongswan/strongswan.d/charon/constraints.conf
@@ -181,6 +187,8 @@ share/examples/strongswan/strongswan.d/charon/pgp.conf
 @sample ${SYSCONFDIR}/strongswan.d/charon/pgp.conf
 share/examples/strongswan/strongswan.d/charon/pkcs1.conf
 @sample ${SYSCONFDIR}/strongswan.d/charon/pkcs1.conf
+share/examples/strongswan/strongswan.d/charon/pkcs11.conf
+@sample ${SYSCONFDIR}/strongswan.d/charon/pkcs11.conf
 share/examples/strongswan/strongswan.d/charon/pkcs12.conf
 @sample ${SYSCONFDIR}/strongswan.d/charon/pkcs12.conf
 share/examples/strongswan/strongswan.d/charon/pkcs7.conf
@@ -266,6 +274,8 @@ share/strongswan/templates/config/plugins/
 share/strongswan/templates/config/plugins/aes.conf
 share/strongswan/templates/config/plugins/aesni.conf
 share/strongswan/templates/config/plugins/attr.conf
+share/strongswan/templates/config/plugins/botan.conf
+share/strongswan/templates/config/plugins/chapoly.conf
 share/strongswan/templates/config/plugins/cmac.conf
 share/strongswan/templates/config/plugins/constraints.conf
 share/strongswan/templates/config/plugins/counters.conf
@@ -292,6 +302,7 @@ share/strongswan/templates/config/plugins/nonce.conf
 share/strongswan/templates/config/plugins/pem.conf
 share/strongswan/templates/config/plugins/pgp.conf
 share/strongswan/templates/config/plugins/pkcs1.conf
+share/strongswan/templates/config/plugins/pkcs11.conf
 share/strongswan/templates/config/plugins/pkcs12.conf
 share/strongswan/templates/config/plugins/pkcs7.conf
 share/strongswan/templates/config/plugins/pkcs8.conf
