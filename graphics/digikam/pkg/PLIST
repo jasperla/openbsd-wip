@@ -1,4 +1,6 @@
-@comment $OpenBSD$
+@comment $OpenBSD: PLIST,v$
+@conflict digikam-kde4-*
+@conflict kipi-plugins-<=4
 bin/cleanup_digikamdb
 @bin bin/digikam
 bin/digitaglinktree
@@ -2368,3 +2370,5 @@ share/solid/actions/digikam-opencamera.desktop
 @unexec-delete %D/bin/update-desktop-database
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@tag update-desktop-database
+@tag gtk-update-icon-cache %D/share/icons/hicolor
