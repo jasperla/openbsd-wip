@@ -1,17 +1,11 @@
 $OpenBSD: patch-src_CMakeLists_txt,v 1.1.1.1 2013/04/21 11:45:08 sthen Exp $
---- src/CMakeLists.txt.orig	Fri Sep 25 14:59:31 2015
-+++ src/CMakeLists.txt	Fri Sep 25 15:00:08 2015
-@@ -115,12 +115,17 @@ if(UNIX)
- target_link_libraries(rtl_fm m)
- target_link_libraries(rtl_adsb m)
- target_link_libraries(rtl_power m)
--if(APPLE)
--    target_link_libraries(rtl_test m)
--else()
--    target_link_libraries(rtl_test m rt)
--endif()
--endif()
-+
+Index: src/CMakeLists.txt
+--- src/CMakeLists.txt.orig
++++ src/CMakeLists.txt
+@@ -81,6 +81,14 @@ target_link_libraries(convenience_static
+ )
+ endif()
+ 
 +include(CheckFunctionExists)
 +check_function_exists(clock_gettime LIBRT_LIBC_HAS_CLOCK_GETTIME)
 +if(LIBRT_LIBC_HAS_CLOCK_GETTIME)
@@ -20,8 +14,19 @@ $OpenBSD: patch-src_CMakeLists_txt,v 1.1.1.1 2013/04/21 11:45:08 sthen Exp $
 +    find_library(LIBRT_LIBRARIES NAMES rt )
 +endif(LIBRT_LIBC_HAS_CLOCK_GETTIME)
 +
+ ########################################################################
+ # Build utility
+ ########################################################################
+@@ -125,11 +133,7 @@ if(UNIX)
+ target_link_libraries(rtl_fm m)
+ target_link_libraries(rtl_adsb m)
+ target_link_libraries(rtl_power m)
+-if(APPLE)
+-    target_link_libraries(rtl_test m)
+-else()
+-    target_link_libraries(rtl_test m rt)
+-endif()
 +target_link_libraries(rtl_test m ${LIBRT_LIBRARIES})
-+endif(UNIX)
+ endif()
  
  if(WIN32)
- target_link_libraries(rtl_sdr libgetopt_static)

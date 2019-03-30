@@ -1,2 +1,1 @@
-verify async stuff is working now (rtl_tcp, rtl_adsb, rtl_fm)
-poke sthen@
+- libusb1/ugen(4) async
