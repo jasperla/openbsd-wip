@@ -17,35 +17,27 @@ CATEGORIES =	devel multimedia
 
 HOMEPAGE =	http://www.qtav.org/
 
-MAINTAINER =	Vadim Zhukov <zhuk@openbsd.org>
-
 # LGPLv2.1 for libraries
 # GPLv3 for executables
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =  GL Qt5Core Qt5Gui Qt5Network Qt5OpenGL Qt5Qml Qt5Quick
-WANTLIB += Qt5Widgets Xv ass avcodec avdevice avfilter avformat
-WANTLIB += avresample avutil c m openal portaudio pthread pulse
-WANTLIB += swresample swscale
+WANTLIB += ${COMPILER_LIBCXX} GL Qt5Core Qt5Gui Qt5Network Qt5OpenGL
+WANTLIB += Qt5Qml Qt5Quick Qt5Sql Qt5Widgets X11 Xext Xv ass avcodec
+WANTLIB += avdevice avfilter avformat avresample avutil c m openal
+WANTLIB += pulse swresample swscale
 
 MODULES =		devel/qmake x11/qt5
 
 RUN_DEPENDS =		devel/desktop-file-utils \
 			x11/gtk+3,-guic
 
-LIB_DEPENDS =		graphics/ffmpeg \
-			audio/openal \
-			audio/portaudio-svn \
+LIB_DEPENDS =		audio/openal \
 			audio/pulseaudio \
+			graphics/ffmpeg \
 			x11/qt5/qtdeclarative
 
 CONFIGURE_ENV +=	TRUEPREFIX=${TRUEPREFIX}
 
-# Actually, there are many tests; many of them require
-# having external video/subtitles files, though.
-TEST_IS_INTERACTIVE =	X11
-TEST_LIST =		"ao -ao Pulse" \
-			"ao -ao PortAudio" \
-			"ao -ao OpenAL"
+NO_TESTS =		Yes
 
 .include <bsd.port.mk>
