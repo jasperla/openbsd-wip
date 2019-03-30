@@ -11,10 +11,9 @@ HOMEPAGE =	https://www.digikam.org/
 MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 
 SHARED_LIBS +=  KF5kipiplugins            0.0 # 5.6
-# Version numbers from digikam-kde4
-SHARED_LIBS +=  digikamcore               1.0 # 5.5
-SHARED_LIBS +=  digikamdatabase           1.0 # 5.5
-SHARED_LIBS +=  digikamgui                1.0 # 5.5
+SHARED_LIBS +=  digikamcore               0.0 # 5.6
+SHARED_LIBS +=  digikamdatabase           0.0 # 5.6
+SHARED_LIBS +=  digikamgui                0.0 # 5.6
 
 # LGPL, GPL and many others
 PERMIT_PACKAGE_CDROM =	Yes
@@ -31,7 +30,7 @@ WANTLIB += Qt5Sql Qt5WebKit Qt5WebKitWidgets Qt5Widgets Qt5X11Extras
 WANTLIB += Qt5Xml Qt5XmlPatterns SM X11 Xext c exiv2 expat exslt
 WANTLIB += glib-2.0 gphoto2 gphoto2_port intl jasper jpeg lcms2
 WANTLIB += lensfun lqr-1 m opencv_core opencv_imgcodecs opencv_imgproc
-WANTLIB += opencv_objdetect png tiff usb-1.0 xml2 xslt z
+WANTLIB += opencv_objdetect png16 tiff usb-1.0 xml2 xslt z
 
 MASTER_SITES =	${MASTER_SITE_KDE:=stable/digikam/}
 
@@ -57,8 +56,8 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 		devel/gettext
 
 # TODO
-# - libksane
 # - libakonadicontact
+# - libkvkontakte
 
 LIB_DEPENDS +=	devel/kf5/kservice \
 		devel/kf5/kcoreaddons \
@@ -79,15 +78,17 @@ LIB_DEPENDS +=	devel/kf5/kservice \
 		graphics/libgphoto2 \
 		graphics/jasper \
 		graphics/lensfun \
-		graphics/opencv \
+		graphics/opencv>=3\
 		graphics/liblqr \
 		graphics/exiv2 \
 		x11/qt5/qtwebkit \
 		x11/qt5/qtxmlpatterns \
 		x11/kde-applications/kcalcore \
-		x11/kde-applications/libkipi
+		x11/kde-applications/libksane \
+		x11/kde-applications/libkipi \
+		x11/kde-applications/marble
 
-CONFIGURE_ARGS =	-DCMAKE_DISABLE_FIND_PACKAGE_Doxygen:Bool=Yes \
+CONFIGURE_ARGS =	-DCMAKE_DISABLE_FIND_PACKAGE_Doxygen=Yes \
 			-DENABLE_MEDIAPLAYER=OFF \
 
 CONFIGURE_ARGS +=	-DCMAKE_POLICY_DEFAULT_CMP0071=NEW
