@@ -1,0 +1,14 @@
+$OpenBSD$
+
+Index: server/drivers/picolcd.h
+--- server/drivers/picolcd.h.orig
++++ server/drivers/picolcd.h
+@@ -12,7 +12,7 @@
+  */
+ 
+ #ifndef PICOLCD_H
+-#define PCIOLCD_H
++#define PICOLCD_H
+ 
+ #ifdef HAVE_LIBUSB_1_0
+ # include <libusb.h>

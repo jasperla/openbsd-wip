@@ -1,0 +1,39 @@
+$OpenBSD: README,v 1.4 2018/09/04 12:46:09 espie Exp $
+
++-----------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-----------------------------------------------------------------------
+
+Typical Usage
+=============
+
+ * Edit ${SYSCONFDIR}/LCDd.conf:
+   You will need to choose a driver and review your driver options.
+
+ * Start LCDd:
+   # ${RCDIR}/lcdd start
+
+ * Review ${SYSCONFDIR}/lcdproc.conf
+
+ * Start the lcdproc client:
+   # ${RCDIR}/lcdproc start
+
+Your LCD display should now be displaying system statistics.
+
+The default config file shipped with the OpenBSD package will log any
+errors to syslog.
+
+Using the Curses Output
+=======================
+
+LCDproc provides a curses output driver which is useful for testing.
+When using this driver, you should *not* run LCDd using the bundled rc
+script.
+
+Instead, choose the "curses" driver in ${SYSCONFDIR}/LCDd.conf and run:
+   LCDd -f
+
+Miscellaneous Notes
+===================
+
+ * Network statistics are not yet supported on OpenBSD.
