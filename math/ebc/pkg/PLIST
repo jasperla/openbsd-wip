@@ -5,14 +5,14 @@ bin/edc
 @man man/man1/edc.1
 share/locale/
 share/locale/en/
-share/locale/en/LC_MESSAGES/
-share/locale/en/LC_MESSAGES/ebc.cat
-share/locale/en_US/
-share/locale/en_US/LC_MESSAGES/
-share/locale/en_US/LC_MESSAGES/ebc.cat
 share/locale/en.UTF-8/
 share/locale/en.UTF-8/LC_MESSAGES/
 share/locale/en.UTF-8/LC_MESSAGES/ebc.cat
+share/locale/en/LC_MESSAGES/
+share/locale/en/LC_MESSAGES/ebc.cat
+share/locale/en_US/
 share/locale/en_US.UTF-8/
 share/locale/en_US.UTF-8/LC_MESSAGES/
 share/locale/en_US.UTF-8/LC_MESSAGES/ebc.cat
+share/locale/en_US/LC_MESSAGES/
+share/locale/en_US/LC_MESSAGES/ebc.cat

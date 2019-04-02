@@ -17,13 +17,14 @@ WANTLIB += c
 
 MASTER_SITES =	https://github.com/gavinhoward/bc/releases/download/${V}/
 
+# CONFIGURE_ARGS makes it so we don't run tests that need GNU bc to generate.
 CONFIGURE_STYLE =	simple
-CONFIGURE_ENV =		CC="${CC}" CFLAGS="${CFLAGS}" MANDIR="${PREFIX}/man" EXECPREFIX="e"
 CONFIGURE_SCRIPT =	configure.sh
-# This flag makes it so we don't run tests that need GNU bc to generate.
-CONFIGURE_ARGS = -G
-
-USE_GMAKE =	No
+CONFIGURE_ARGS =	-G
+CONFIGURE_ENV =		CC="${CC}" \
+			CFLAGS="${CFLAGS}" \
+			EXECPREFIX="e" \
+			MANDIR="${PREFIX}/man"
 
 FAKE_FLAGS =	DESTDIR="${DESTDIR}"
 
