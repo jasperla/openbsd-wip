@@ -1,4 +1,4 @@
-$OpenBSD$
+$OpenBSD: patch-core_app_utils_digikam_version_h_cmake_in,v 1.1 2019/04/02 09:59:39 rsadowski Exp $
 
 Index: core/app/utils/digikam_version.h.cmake.in
 --- core/app/utils/digikam_version.h.cmake.in.orig

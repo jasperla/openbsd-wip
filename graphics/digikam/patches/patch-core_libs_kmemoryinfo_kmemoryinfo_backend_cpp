@@ -1,4 +1,4 @@
-$OpenBSD$
+$OpenBSD: patch-core_libs_kmemoryinfo_kmemoryinfo_backend_cpp,v 1.1 2019/04/02 09:59:39 rsadowski Exp $
 
 Index: core/libs/kmemoryinfo/kmemoryinfo_backend.cpp
 --- core/libs/kmemoryinfo/kmemoryinfo_backend.cpp.orig

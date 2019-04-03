@@ -1,4 +1,4 @@
-$OpenBSD$
+$OpenBSD: patch-core_libs_pgfutils_PGFplatform_h,v 1.1 2019/04/02 09:59:39 rsadowski Exp $
 error: ‘NULL’ was not declared in this scope
 Index: core/libs/pgfutils/PGFplatform.h
 --- core/libs/pgfutils/PGFplatform.h.orig
