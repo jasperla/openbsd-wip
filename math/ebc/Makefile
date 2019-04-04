@@ -1,6 +1,6 @@
 # $OpenBSD$
 
-V =		1.2.2
+V =		1.2.3
 COMMENT =	implementation of POSIX bc with GNU extensions
 DISTNAME =	bc-${V}
 PKGNAME =	ebc-${V}
