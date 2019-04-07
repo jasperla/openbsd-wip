@@ -1,6 +1,4 @@
-@comment $OpenBSD$
-share/examples/angband/customize/font-sdl.prf
-@sample ${SYSCONFDIR}/angband/customize/font-sdl.prf
+@comment $OpenBSD: PFRAG.sdl,v$
 share/angband/fonts/
 share/angband/fonts/10x14x.fon
 share/angband/fonts/10x14xb.fon
@@ -266,4 +264,3 @@ share/angband/tiles/shockbolt/64x64.png
 share/angband/tiles/shockbolt/flvr-shb.prf
 share/angband/tiles/shockbolt/graf-shb.prf
 share/angband/tiles/shockbolt/xtra-shb.prf
-share/applications/angband-sdl.desktop
