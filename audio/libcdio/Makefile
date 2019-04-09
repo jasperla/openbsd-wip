@@ -38,7 +38,9 @@ CONFIGURE_ARGS=	--disable-vcd-info
 
 # XXX won't need autoconf for the final release
 BUILD_DEPENDS +=	${MODGNU_AUTOCONF_DEPENDS} \
-			${MODGNU_AUTOMAKE_DEPENDS}
+			${MODGNU_AUTOMAKE_DEPENDS} \
+			devel/libtool
+COMPILER =		base-clang ports-gcc
 CONFIGURE_ARGS +=	--enable-maintainer-mode
 AUTOCONF_VERSION =	2.69
 AUTOMAKE_VERSION =	1.15
