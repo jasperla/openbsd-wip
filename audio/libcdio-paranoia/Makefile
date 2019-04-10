@@ -6,8 +6,8 @@ COMMENT =	fork of cdparanoia that uses libcdio for CDROM access
 DISTNAME =	libcdio-paranoia-10.2+0.94+2
 PKGNAME =	libcdio-paranoia-0.94.2
 
-SHARED_LIBS +=  cdio_cdda                 0.0 # 2.0
-SHARED_LIBS +=  cdio_paranoia             0.0 # 2.0
+SHARED_LIBS +=  cdio_cdda                 1.0 # 2.0
+SHARED_LIBS +=  cdio_paranoia             1.0 # 2.0
 
 CATEGORIES =	audio
 HOMEPAGE =	https://www.gnu.org/software/libcdio/

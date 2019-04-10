@@ -14,11 +14,11 @@ GH_COMMIT =	e2f3919357b76d9fadb3d57f20d2b1e8198f32d1
 
 SHARED_LIBS=	cdio		1.0 \
 		cdio++		1.0 \
-		cdio_cdda	1.0 \
-		cdio_paranoia 	1.0 \
 		iso9660		1.0 \
 		iso9660++	1.0 \
 		udf		1.0
+#		cdio_cdda	1.0 \
+#		cdio_paranoia	1.0 \
 
 HOMEPAGE=	https://www.gnu.org/software/libcdio/
 
@@ -40,7 +40,6 @@ CONFIGURE_ARGS=	--disable-vcd-info
 BUILD_DEPENDS +=	${MODGNU_AUTOCONF_DEPENDS} \
 			${MODGNU_AUTOMAKE_DEPENDS} \
 			devel/libtool
-COMPILER =		base-clang ports-gcc
 CONFIGURE_ARGS +=	--enable-maintainer-mode
 AUTOCONF_VERSION =	2.69
 AUTOMAKE_VERSION =	1.15
