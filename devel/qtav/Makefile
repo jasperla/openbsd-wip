@@ -26,7 +26,8 @@ WANTLIB += Qt5Qml Qt5Quick Qt5Sql Qt5Widgets X11 Xext Xv ass avcodec
 WANTLIB += avdevice avfilter avformat avresample avutil c m openal
 WANTLIB += pulse swresample swscale
 
-MODULES =		devel/qmake x11/qt5
+MODULES =		devel/qmake \
+			x11/qt5
 
 RUN_DEPENDS =		devel/desktop-file-utils \
 			x11/gtk+3,-guic

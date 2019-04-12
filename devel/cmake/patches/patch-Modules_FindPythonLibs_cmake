@@ -1,0 +1,74 @@
+$OpenBSD: patch-Modules_FindPythonLibs_cmake,v 1.17 2018/06/14 17:04:45 sthen Exp $
+Index: Modules/FindPythonLibs.cmake
+--- Modules/FindPythonLibs.cmake.orig
++++ Modules/FindPythonLibs.cmake
+@@ -72,6 +72,9 @@ endif()
+ # To avoid picking up the system Python.h pre-maturely.
+ set(CMAKE_FIND_FRAMEWORK LAST)
+ 
++set(MODPY_VERSION $ENV{MODPY_VERSION})
++set(MODPY_INCDIR $ENV{MODPY_INCDIR})
++
+ set(_PYTHON1_VERSIONS 1.6 1.5)
+ set(_PYTHON2_VERSIONS 2.7 2.6 2.5 2.4 2.3 2.2 2.1 2.0)
+ set(_PYTHON3_VERSIONS 3.7 3.6 3.5 3.4 3.3 3.2 3.1 3.0)
+@@ -106,11 +109,15 @@ endif()
+ # If FindPythonInterp has already found the major and minor version,
+ # insert that version between the user supplied versions and the stock
+ # version list.
+-set(_Python_VERSIONS ${Python_ADDITIONAL_VERSIONS})
+-if(DEFINED PYTHON_VERSION_MAJOR AND DEFINED PYTHON_VERSION_MINOR)
+-  list(APPEND _Python_VERSIONS ${PYTHON_VERSION_MAJOR}.${PYTHON_VERSION_MINOR})
+-endif()
+-list(APPEND _Python_VERSIONS ${_PYTHON_FIND_OTHER_VERSIONS})
++if(MODPY_VERSION)
++  set(_Python_VERSIONS ${MODPY_VERSION})
++else(MODPY_VERSION)
++  set(_Python_VERSIONS ${Python_ADDITIONAL_VERSIONS})
++  if(DEFINED PYTHON_VERSION_MAJOR AND DEFINED PYTHON_VERSION_MINOR)
++    list(APPEND _Python_VERSIONS ${PYTHON_VERSION_MAJOR}.${PYTHON_VERSION_MINOR})
++  endif()
++  list(APPEND _Python_VERSIONS ${_PYTHON_FIND_OTHER_VERSIONS})
++endif(MODPY_VERSION)
+ 
+ unset(_PYTHON_FIND_OTHER_VERSIONS)
+ unset(_PYTHON1_VERSIONS)
+@@ -191,20 +198,24 @@ foreach(_CURRENT_VERSION ${_Python_VERSIONS})
+       endforeach()
+     endif()
+ 
+-    find_path(PYTHON_INCLUDE_DIR
+-      NAMES Python.h
+-      HINTS
+-        ${_Python_INCLUDE_PATH_HINT}
+-      PATHS
+-        ${PYTHON_FRAMEWORK_INCLUDES}
+-        [HKEY_LOCAL_MACHINE\\SOFTWARE\\Python\\PythonCore\\${_CURRENT_VERSION}\\InstallPath]/include
+-        [HKEY_CURRENT_USER\\SOFTWARE\\Python\\PythonCore\\${_CURRENT_VERSION}\\InstallPath]/include
+-      PATH_SUFFIXES
+-        python${_CURRENT_VERSION}mu
+-        python${_CURRENT_VERSION}m
+-        python${_CURRENT_VERSION}u
+-        python${_CURRENT_VERSION}
+-    )
++    if(MODPY_VERSION AND MODPY_INCDIR)
++      set(PYTHON_INCLUDE_DIR "${MODPY_INCDIR}")
++    else(MODPY_VERSION AND MODPY_INCDIR)
++      find_path(PYTHON_INCLUDE_DIR
++        NAMES Python.h
++        HINTS
++          ${_Python_INCLUDE_PATH_HINT}
++        PATHS
++          ${PYTHON_FRAMEWORK_INCLUDES}
++          [HKEY_LOCAL_MACHINE\\SOFTWARE\\Python\\PythonCore\\${_CURRENT_VERSION}\\InstallPath]/include
++          [HKEY_CURRENT_USER\\SOFTWARE\\Python\\PythonCore\\${_CURRENT_VERSION}\\InstallPath]/include
++        PATH_SUFFIXES
++          python${_CURRENT_VERSION}mu
++          python${_CURRENT_VERSION}m
++          python${_CURRENT_VERSION}u
++          python${_CURRENT_VERSION}
++      )
++    endif(MODPY_VERSION AND MODPY_INCDIR)
+   endif()
+ 
+   # For backward compatibility, set PYTHON_INCLUDE_PATH.

@@ -1,0 +1,13 @@
+$OpenBSD: patch-Modules_FindXMLRPC_cmake,v 1.8 2018/03/14 12:24:54 rsadowski Exp $
+Index: Modules/FindXMLRPC.cmake
+--- Modules/FindXMLRPC.cmake.orig
++++ Modules/FindXMLRPC.cmake
+@@ -97,6 +97,8 @@ if(XMLRPC_C_FOUND)
+       endif()
+     endforeach()
+ 
++    set(XMLRPC_LIBRARY_DIRS ${XMLRPC_LIBRARY_DIRS} "/usr/lib")
++
+     # Search for each library needed using the directories given.
+     foreach(name ${XMLRPC_LIBRARY_NAMES})
+       # Look for this library.
