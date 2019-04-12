@@ -29,15 +29,7 @@ the invalid use of the interface.
 Index: Source/cmSystemTools.cxx
 --- Source/cmSystemTools.cxx.orig
 +++ Source/cmSystemTools.cxx
-@@ -8,7 +8,6 @@
- 
- #if defined(CMAKE_BUILD_WITH_CMAKE)
- #include "cmArchiveWrite.h"
--#include "cmLocale.h"
- #include "cm_libarchive.h"
- #ifndef __LA_INT64_T
- #define __LA_INT64_T la_int64_t
-@@ -1671,8 +1670,6 @@ long copy_data(struct archive* ar, struct archive* aw)
+@@ -1744,8 +1744,6 @@ bool copy_data(struct archive* ar, struct archive* aw)
  
  bool extract_tar(const char* outFileName, bool verbose, bool extract)
  {

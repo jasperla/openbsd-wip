@@ -6,17 +6,17 @@ CMake using Ninja
 Index: Source/cmake.cxx
 --- Source/cmake.cxx.orig
 +++ Source/cmake.cxx
-@@ -76,9 +76,7 @@
- #include "cmGlobalWatcomWMakeGenerator.h"
+@@ -68,9 +68,7 @@
+ #  include "cmGlobalWatcomWMakeGenerator.h"
  #endif
  #include "cmGlobalUnixMakefileGenerator3.h"
 -#if defined(CMAKE_BUILD_WITH_CMAKE)
- #include "cmGlobalNinjaGenerator.h"
+ #  include "cmGlobalNinjaGenerator.h"
 -#endif
  #include "cmExtraCodeLiteGenerator.h"
  
  #if !defined(CMAKE_BOOT_MINGW)
-@@ -1662,9 +1660,7 @@ void cmake::AddDefaultGenerators()
+@@ -1724,9 +1722,7 @@ void cmake::AddDefaultGenerators()
    this->Generators.push_back(cmGlobalMinGWMakefileGenerator::NewFactory());
  #endif
    this->Generators.push_back(cmGlobalUnixMakefileGenerator3::NewFactory());

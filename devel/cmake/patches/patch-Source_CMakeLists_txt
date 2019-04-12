@@ -12,7 +12,7 @@ Index: Source/CMakeLists.txt
    ${CMAKE_TAR_INCLUDES}
    ${CMAKE_COMPRESS_INCLUDES}
    ${CMake_HAIKU_INCLUDE_DIRS}
-@@ -273,7 +276,6 @@ set(SRCS
+@@ -279,7 +282,6 @@ set(SRCS
    cmRulePlaceholderExpander.cxx
    cmRulePlaceholderExpander.h
    cmLocalUnixMakefileGenerator3.cxx

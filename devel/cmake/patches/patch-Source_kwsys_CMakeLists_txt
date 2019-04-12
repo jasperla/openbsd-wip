@@ -6,7 +6,7 @@ on ports-gcc arches.
 Index: Source/kwsys/CMakeLists.txt
 --- Source/kwsys/CMakeLists.txt.orig
 +++ Source/kwsys/CMakeLists.txt
-@@ -558,7 +558,7 @@ IF(KWSYS_USE_SystemInformation)
+@@ -595,7 +595,7 @@ IF(KWSYS_USE_SystemInformation)
      SET_PROPERTY(SOURCE SystemInformation.cxx APPEND PROPERTY
        COMPILE_DEFINITIONS KWSYS_CXX_HAS__ATOI64=1)
    ENDIF()

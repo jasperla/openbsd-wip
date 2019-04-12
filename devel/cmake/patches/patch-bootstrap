@@ -6,7 +6,7 @@ XXX: broken on m88k
 Index: bootstrap
 --- bootstrap.orig
 +++ bootstrap
-@@ -165,7 +165,11 @@ if ${cmake_system_mingw}; then
+@@ -166,7 +166,11 @@ if ${cmake_system_mingw}; then
    cmake_bootstrap_generator="MSYS Makefiles"
  else
    # Bootstrapping from a standard UNIX prompt.
@@ -19,12 +19,12 @@ Index: bootstrap
  fi
  
  # Choose tools and extensions for this platform.
-@@ -224,9 +228,9 @@ cmake_doc_dir_default="`cmake_install_dest_default DOC
+@@ -225,9 +229,9 @@ cmake_doc_dir_default="`cmake_install_dest_default DOC
  cmake_man_dir_default="`cmake_install_dest_default MAN ${cmake_man_dir_keyword}`"
  cmake_xdgdata_dir_default="`cmake_install_dest_default XDGDATA ${cmake_xdgdata_dir_keyword}`"
  
--CMAKE_KNOWN_C_COMPILERS="cc gcc xlc icc tcc"
--CMAKE_KNOWN_CXX_COMPILERS="aCC xlC CC g++ c++ icc como "
+-CMAKE_KNOWN_C_COMPILERS="cc gcc clang xlc icc tcc"
+-CMAKE_KNOWN_CXX_COMPILERS="aCC xlC CC g++ clang++ c++ icc como "
 -CMAKE_KNOWN_MAKE_PROCESSORS="gmake make"
 +CMAKE_KNOWN_C_COMPILERS="cc"
 +CMAKE_KNOWN_CXX_COMPILERS="c++"
@@ -32,23 +32,23 @@ Index: bootstrap
  
  CMAKE_PROBLEMATIC_FILES="\
    CMakeCache.txt \
-@@ -310,6 +314,7 @@ CMAKE_CXX_SOURCES="\
+@@ -311,6 +315,7 @@ CMAKE_CXX_SOURCES="\
    cmFindPathCommand \
    cmFindProgramCommand \
    cmForEachCommand \
 +  cmFortranParserImpl \
    cmFunctionCommand \
+   cmFSPermissions \
    cmGeneratedFileStream \
-   cmGeneratorExpression \
-@@ -330,6 +335,7 @@ CMAKE_CXX_SOURCES="\
+@@ -332,6 +337,7 @@ CMAKE_CXX_SOURCES="\
    cmGetTestPropertyCommand \
    cmGlobalCommonGenerator \
    cmGlobalGenerator \
 +  cmGlobalNinjaGenerator \
    cmGlobalUnixMakefileGenerator3 \
+   cmGlobVerificationManager \
    cmHexFileConverter \
-   cmIfCommand \
-@@ -350,10 +356,12 @@ CMAKE_CXX_SOURCES="\
+@@ -353,10 +359,12 @@ CMAKE_CXX_SOURCES="\
    cmInstalledFile \
    cmLinkDirectoriesCommand \
    cmLinkLineComputer \
@@ -61,7 +61,7 @@ Index: bootstrap
    cmLocalUnixMakefileGenerator3 \
    cmMSVC60LinkLineComputer \
    cmMacroCommand \
-@@ -368,6 +376,10 @@ CMAKE_CXX_SOURCES="\
+@@ -371,6 +379,10 @@ CMAKE_CXX_SOURCES="\
    cmMessageCommand \
    cmMessenger \
    cmNewLineStyle \
@@ -72,7 +72,15 @@ Index: bootstrap
    cmOSXBundleGenerator \
    cmOptionCommand \
    cmOrderDirectories \
-@@ -436,6 +448,8 @@ LexerParser_CXX_SOURCES="\
+@@ -428,6 +440,7 @@ CMAKE_CXX_SOURCES="\
+   cmake  \
+   cmakemain \
+   cmcmd  \
++  cmCryptoHash
+ "
+ 
+ if ${cmake_system_mingw}; then
+@@ -441,6 +454,8 @@ LexerParser_CXX_SOURCES="\
    cmCommandArgumentParser \
    cmExprLexer \
    cmExprParser \
@@ -81,12 +89,12 @@ Index: bootstrap
  "
  
  LexerParser_C_SOURCES="\
-@@ -1385,7 +1399,7 @@ cmake_cxx_flags="${cmake_cxx_flags} \
+@@ -1424,7 +1439,7 @@ cmake_cxx_flags="${cmake_cxx_flags} \
    -I`cmake_escape \"${cmake_source_dir}/Source/LexerParser\"` \
    -I`cmake_escape \"${cmake_source_dir}/Utilities\"`"
  echo "cmake: ${objs}" > "${cmake_bootstrap_dir}/Makefile"
 -echo "	${cmake_cxx_compiler} ${cmake_ld_flags} ${cmake_cxx_flags} ${objs} ${libs} -o cmake" >> "${cmake_bootstrap_dir}/Makefile"
-+echo "	${cmake_cxx_compiler} ${cmake_ld_flags} ${cmake_cxx_flags} ${objs} -o cmake -L${cmake_prefix_dir}/lib -ljsoncpp" >> "${cmake_bootstrap_dir}/Makefile"
++echo "	${cmake_cxx_compiler} ${cmake_ld_flags} ${cmake_cxx_flags} ${objs} -o cmake -L${cmake_prefix_dir}/lib -ljsoncpp -lrhash" >> "${cmake_bootstrap_dir}/Makefile"
  for a in ${CMAKE_CXX_SOURCES}; do
    src=`cmake_escape "${cmake_source_dir}/Source/${a}.cxx"`
    src_flags=`eval echo \\${cmake_cxx_flags_\${a}}`
