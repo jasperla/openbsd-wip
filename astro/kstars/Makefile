@@ -5,7 +5,7 @@ COMMENT =	planetarium simulator for KDE
 VERSION =	3.1.1
 DISTNAME =	kstars-${VERSION}
 
-CATEGORIES =	education
+CATEGORIES =	astro education
 
 HOMEPAGE =	https://edu.kde.org/kstars/
 
@@ -21,8 +21,8 @@ WANTLIB += KF5KIOCore KF5KIOFileWidgets KF5KIOWidgets KF5NewStuff
 WANTLIB += KF5NewStuffCore KF5Notifications KF5NotifyConfig KF5Plotting
 WANTLIB += KF5Service KF5Solid KF5WidgetsAddons KF5XmlGui Qt5Concurrent
 WANTLIB += Qt5Core Qt5DBus Qt5DataVisualization Qt5Gui Qt5Network
-WANTLIB += Qt5PrintSupport Qt5Qml Qt5Quick Qt5Sql Qt5Svg Qt5Widgets
-WANTLIB += Qt5Xml c m qt5keychain raw wcs z
+WANTLIB += Qt5PrintSupport Qt5Qml Qt5Quick Qt5Sql Qt5Svg Qt5WebSockets
+WANTLIB += Qt5Widgets Qt5Xml c cfitsio m qt5keychain raw wcs z
 
 MASTER_SITES =	${MASTER_SITE_KDE:=stable/kstars/}
 
@@ -60,12 +60,13 @@ LIB_DEPENDS +=		astro/wcslib \
 			math/cfitsio \
 			security/qtkeychain,qt5 \
 			x11/qt5/qtdatavis3d \
+			x11/qt5/qtwebsockets \
 			x11/qt5/qtdeclarative \
 			x11/qt5/qtsvg
 
 # not ported
-CONFIGURE_ARGS =	-DCMAKE_DISABLE_FIND_PACKAGE_AstrometryNet=Yes \
-			-DCMAKE_DISABLE_FIND_PACKAGE_Indy=Yes
+CONFIGURE_ARGS +=	-DCMAKE_DISABLE_FIND_PACKAGE_INDI=ON \
+			-DCMAKE_DISABLE_FIND_PACKAGE_AstrometryNet=ON
 
 TEST_IS_INTERACTIVE =	X11
 

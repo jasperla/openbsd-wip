@@ -760,7 +760,6 @@ share/doc/HTML/nl/kstars/viewops.png
 share/doc/HTML/nl/kstars/wut.docbook
 share/doc/HTML/nl/kstars/wut.png
 share/doc/HTML/nl/kstars/zenith.docbook
-share/doc/HTML/pt_BR/
 share/doc/HTML/pt_BR/kstars/
 share/doc/HTML/pt_BR/kstars/aavso.png
 share/doc/HTML/pt_BR/kstars/ai-contents.docbook
@@ -1107,7 +1106,6 @@ share/icons/hicolor/32x32/apps/kstars.png
 share/icons/hicolor/48x48/apps/kstars.png
 share/icons/hicolor/64x64/apps/kstars.png
 share/icons/hicolor/scalable/apps/kstars.svgz
-share/knotifications5/
 share/knotifications5/kstars.notifyrc
 share/kstars/
 share/kstars/Henry-Draper.idx
@@ -1813,7 +1811,6 @@ share/locale/zh_CN/LC_MESSAGES/kstars.mo
 share/locale/zh_TW/LC_MESSAGES/kstars.mo
 share/metainfo/
 share/metainfo/org.kde.kstars.appdata.xml
-share/sounds/
 share/sounds/KDE-KStars-Alert.ogg
 share/sounds/KDE-KStars-FITS-Received.ogg
 share/sounds/KDE-KStars-Finish-Success.ogg
