@@ -2,7 +2,6 @@
 @bin bin/cd-drive
 @bin bin/cd-info
 @bin bin/cd-read
-@bin bin/cdda-player
 @bin bin/iso-info
 @bin bin/iso-read
 @bin bin/mmc-tool
