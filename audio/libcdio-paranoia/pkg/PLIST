@@ -1,7 +1,6 @@
 @comment $OpenBSD: PLIST,v$
 @conflict libcdio-<2.0.0
 @bin bin/cd-paranoia
-include/cdio/
 include/cdio/paranoia/
 include/cdio/paranoia/cdda.h
 include/cdio/paranoia/paranoia.h
