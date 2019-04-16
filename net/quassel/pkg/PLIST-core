@@ -1,3 +1,0 @@
-@comment $OpenBSD: PLIST-core,v$
-@bin bin/quasselcore
-share/doc/pkg-readmes/${PKGSTEM}
