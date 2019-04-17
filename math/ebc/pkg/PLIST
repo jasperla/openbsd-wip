@@ -4,15 +4,27 @@ bin/edc
 @man man/man1/ebc.1
 @man man/man1/edc.1
 share/locale/
-share/locale/en/
-share/locale/en.UTF-8/
-share/locale/en.UTF-8/LC_MESSAGES/
-share/locale/en.UTF-8/LC_MESSAGES/ebc.cat
-share/locale/en/LC_MESSAGES/
-share/locale/en/LC_MESSAGES/ebc.cat
+share/locale/de_AT.UTF-8/
+share/locale/de_AT.UTF-8/ebc
+share/locale/de_CH.UTF-8/
+share/locale/de_CH.UTF-8/ebc
+share/locale/de_DE.UTF-8/
+share/locale/de_DE.UTF-8/ebc
+share/locale/en_AU.UTF-8/
+share/locale/en_AU.UTF-8/ebc
+share/locale/en_CA.UTF-8/
+share/locale/en_CA.UTF-8/ebc
+share/locale/en_GB.UTF-8/
+share/locale/en_GB.UTF-8/ebc
 share/locale/en_US/
+share/locale/en_US/ebc
 share/locale/en_US.UTF-8/
-share/locale/en_US.UTF-8/LC_MESSAGES/
-share/locale/en_US.UTF-8/LC_MESSAGES/ebc.cat
-share/locale/en_US/LC_MESSAGES/
-share/locale/en_US/LC_MESSAGES/ebc.cat
+share/locale/en_US.UTF-8/ebc
+share/locale/fr_BE.UTF-8/
+share/locale/fr_BE.UTF-8/ebc
+share/locale/fr_CA.UTF-8/
+share/locale/fr_CA.UTF-8/ebc
+share/locale/fr_CH.UTF-8/
+share/locale/fr_CH.UTF-8/ebc
+share/locale/fr_FR.UTF-8/
+share/locale/fr_FR.UTF-8/ebc
