@@ -1,6 +1,6 @@
 # $OpenBSD$
 
-V =		1.2.3
+V =		1.2.5
 COMMENT =	implementation of POSIX bc with GNU extensions
 DISTNAME =	bc-${V}
 PKGNAME =	ebc-${V}
@@ -24,7 +24,8 @@ CONFIGURE_ARGS =	-G
 CONFIGURE_ENV =		CC="${CC}" \
 			CFLAGS="${CFLAGS}" \
 			EXECPREFIX="e" \
-			MANDIR="${PREFIX}/man"
+			MANDIR="${PREFIX}/man" \
+			NLSPATH="${PREFIX}/share/locale/%L/%N"
 
 FAKE_FLAGS =	DESTDIR="${DESTDIR}"
 
