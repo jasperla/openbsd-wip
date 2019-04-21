@@ -7,8 +7,6 @@
 # Requires OpenGL>=3.3 or OpenGL ES>=3.0, so only for "modern" (>=2008)
 # architectures that may have compatible video controllers. i386 has been
 # added in case an amd64 machine runs an i386 install.
-# XXX Obviously we're leaving several arches behind compared to the
-# current CVS version.
 ONLY_FOR_ARCHS =	amd64 aarch64 i386
 
 COMMENT =		clone of the touhou games
@@ -30,7 +28,8 @@ WANTLIB +=		SDL2 SDL2_mixer SDL2_ttf c m png16 z
 MODULES =		devel/meson \
 			lang/python
 
-BUILD_DEPENDS =		lang/python/${MODPY_DEFAULT_VERSION_3}
+MODPY_RUNDEP =		No
+MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 
 RUN_DEPENDS =		devel/desktop-file-utils \
 			misc/shared-mime-info \
