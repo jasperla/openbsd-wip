@@ -2,13 +2,11 @@
 
 COMMENT=	compact disk input and control library
 
-DISTNAME=	libcdio-2.1.0rc1
-PKGNAME=	libcdio-2.1.0
+DISTNAME=	libcdio-2.1.0
 EXTRACT_SUFX=	.tar.bz2
 
 CATEGORIES=	audio devel
-#MASTER_SITES=	${MASTER_SITE_GNU:=libcdio/}
-MASTER_SITES=	http://bashdb.sf.net/
+MASTER_SITES=	${MASTER_SITE_GNU:=libcdio/}
 
 SHARED_LIBS=	cdio		1.0 \
 		cdio++		1.0 \
