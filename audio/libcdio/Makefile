@@ -22,6 +22,7 @@ WANTLIB=	c cddb iconv m ${COMPILER_LIBCXX}
 
 LIB_DEPENDS=	audio/libcddb \
 		converters/libiconv
+BUILD_DEPENDS=	devel/libtool
 
 USE_GMAKE=	Yes
 CONFIGURE_STYLE=gnu
