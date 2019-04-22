@@ -18,7 +18,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += c cdio iconv m
 
-USE_GMAKE =	Yes
+USE_GMAKE =		Yes
 
 MASTER_SITES =		${MASTER_SITE_GNU:=libcdio/}
 
