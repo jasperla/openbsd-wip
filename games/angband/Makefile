@@ -49,14 +49,16 @@ WANTLIB+=		ICE SM X11
 .endif
 
 .if ${FLAVOR:Msdl}	# funky graphical mode and sounds
+# Sound is currently broken:
+# http://trac.rephial.org/ticket/1977
 CONFIGURE_ARGS +=	--enable-sdl \
-			--enable-sdl-mixer \
+			--disable-sdl-mixer \
 			--with-sdl-prefix=/usr/local
 PKG_ARGS +=		-Dsdl=1
 LIB_DEPENDS +=		devel/sdl-mixer \
 			devel/sdl-image \
 			devel/sdl-ttf
-WANTLIB +=		SDL SDL_image SDL_mixer SDL_ttf pthread	
+WANTLIB +=		SDL SDL_image SDL_ttf pthread
 .else
 CONFIGURE_ARGS +=	--disable-sdl-mixer	# defaults to ON
 PKG_ARGS +=		-Dsdl=0
