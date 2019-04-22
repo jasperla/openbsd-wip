@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2017/07/26 22:45:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2018/10/24 14:27:58 sthen Exp $
 
 COMMENT=	compact disk input and control library
 
@@ -26,8 +26,5 @@ LIB_DEPENDS=	audio/libcddb \
 USE_GMAKE=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--disable-vcd-info
-
-BUILD_DEPENDS +=	devel/libtool
-CONFIGURE_ARGS +=	--enable-maintainer-mode
 
 .include <bsd.port.mk>
