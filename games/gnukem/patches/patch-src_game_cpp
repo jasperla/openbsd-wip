@@ -1,0 +1,14 @@
+$OpenBSD$
+
+Index: src/game.cpp
+--- src/game.cpp.orig
++++ src/game.cpp
+@@ -2014,7 +2014,7 @@ bool HeroIsHurting()
+ void DrawHealth()
+ {
+ 	// Build a string representing health bars (which are in the 8x8 font)
+-	char szHealth[MAX_HEALTH+1]={0};
++	unsigned char szHealth[MAX_HEALTH+1]={0};
+ 	for ( unsigned int i=0; i<MAX_HEALTH; ++i )
+ 	{
+ 		// 170 = health; 169 = not health
