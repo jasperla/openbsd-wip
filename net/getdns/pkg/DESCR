@@ -1,6 +1,0 @@
-getdns is a modern asynchronous DNS API. It implements DNS entry points
-from a design developed and vetted by application developers, in an API
-specification.
-
-It is intended to make all types of DNS information easily available to
-application developers and non-DNS experts.
