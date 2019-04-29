@@ -33,5 +33,7 @@ do-install:
 		${PREFIX}/bin/miniflux
 	${INSTALL_DATA_DIR} ${PREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/*.1 ${PREFIX}/man/man1
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/miniflux
+	${INSTALL_DATA} ${FILESDIR}/miniflux.conf ${PREFIX}/share/examples/miniflux
 
 .include <bsd.port.mk>
