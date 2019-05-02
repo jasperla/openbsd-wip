@@ -6,7 +6,7 @@
 # Drop tests, see below
 
 # py/3-acoustid works fine with it, there is no test but
-# # upstream provides some testing facility (see
+# upstream provides some testing facility (see
 # https://pypi.org/project/pyacoustid/ "running")
 
 COMMENT =		audio fingerprint extraction library
@@ -27,7 +27,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 WANTLIB += ${COMPILER_LIBCXX} avcodec avformat avutil c m swresample
 
 # C++11
-COMPILER =		base-clang ports-gcc base-gcc
+COMPILER =		base-clang ports-gcc
 
 MODULES =		devel/cmake
 
@@ -38,6 +38,6 @@ CONFIGURE_ARGS =	-DBUILD_TOOLS=ON
 
 # Tests requires a copy of devel/gtest *sources*
 # see https://github.com/acoustid/chromaprint#unit-tests
-NO_TEST =	Yes
+NO_TEST =		Yes
 
 .include <bsd.port.mk>
