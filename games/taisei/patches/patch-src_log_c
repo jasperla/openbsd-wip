@@ -1,17 +1,28 @@
 $OpenBSD$
 
-Fix: log.c:374:6: error: expected identifier or '('
-It happens because fileno(3) is defined as a macro.
+Fix build when fileno(3) is a macro.
+See https://github.com/taisei-project/taisei/issues/165
 
-see https://github.com/taisei-project/taisei/issues/165
+Can be dropped for taisei>1.3
 
 Index: src/log.c
 --- src/log.c.orig
 +++ src/log.c
-@@ -371,7 +371,6 @@ static bool output_supports_ansi_sequences(const SDL_R
- 	}
+@@ -361,6 +361,8 @@ static int log_fmtconsole_format_plain(FormatterObj *o
+ }
  
- 	int isatty(int);
+ #ifdef TAISEI_BUILDCONF_HAVE_POSIX
++#include <unistd.h>
++
+ static bool output_supports_ansi_sequences(const SDL_RWops *output) {
+ 	if(!strcmp(env_get("TERM", "dumb"), "dumb")) {
+ 		return false;
+@@ -369,9 +371,6 @@ static bool output_supports_ansi_sequences(const SDL_R
+ 	if(output->type != SDL_RWOPS_STDFILE) {
+ 		return false;
+ 	}
+-
+-	int isatty(int);
 -	int fileno(FILE*);
  
  	return isatty(fileno(output->hidden.stdio.fp));

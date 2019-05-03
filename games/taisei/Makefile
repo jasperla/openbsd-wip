@@ -17,7 +17,7 @@ COMMENT =		clone of the touhou games
 
 VERSION =		v1.3
 DISTNAME =		taisei-${VERSION}
-PKGNAME =		${DISTNAME:S/v//}
+PKGNAME =		taisei-${VERSION:S/^v//}
 
 CATEGORIES =		games
 
