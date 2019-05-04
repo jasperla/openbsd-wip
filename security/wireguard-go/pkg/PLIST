@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v$
+@rcscript ${RCDIR}/wireguard_go
+@bin bin/wireguard-go
+share/doc/pkg-readmes/${PKGSTEM}
