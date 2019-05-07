@@ -2,7 +2,7 @@
 
 COMMENT =	opinionated blog-aware static site generator
 
-V =		1.0.1
+V =		1.0.2
 DISTNAME =	motyl-${V}
 
 CATEGORIES =	www
