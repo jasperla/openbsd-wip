@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v$
+bin/reddit-wallpaper
+share/doc/reddit-wallpaper/
+share/doc/reddit-wallpaper/README.md
