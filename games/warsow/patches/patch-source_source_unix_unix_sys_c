@@ -1,0 +1,24 @@
+$OpenBSD$
+
+Index: source/source/unix/unix_sys.c
+--- source/source/unix/unix_sys.c.orig
++++ source/source/unix/unix_sys.c
+@@ -28,6 +28,9 @@ FIXME:  This will be remidied once a native Mac port i
+ #endif
+ 
+ #include <signal.h>
++#ifndef SIGIOT
++#define SIGIOT	SIGABRT
++#endif
+ #include <stdlib.h>
+ #include <limits.h>
+ #include <sys/time.h>
+@@ -43,7 +46,7 @@ FIXME:  This will be remidied once a native Mac port i
+ #include <errno.h>
+ #include <locale.h>
+ 
+-#if defined ( __FreeBSD__ )
++#if defined ( __FreeBSD__ ) || defined( __OpenBSD__ )
+ #include <machine/param.h>
+ #endif
+ 

@@ -1,0 +1,26 @@
+$OpenBSD$
+
+Index: source/source/tv_server/CMakeLists.txt
+--- source/source/tv_server/CMakeLists.txt.orig
++++ source/source/tv_server/CMakeLists.txt
+@@ -74,7 +74,12 @@ else()
+         "../null/sys_vfs_null.c"
+     )
+ 
+-    set(TV_SERVER_PLATFORM_LIBRARIES "pthread" "dl" "m")
++    if (${CMAKE_SYSTEM_NAME} MATCHES "Linux")
++        set(TV_SERVER_PLATFORM_LIBRARIES "pthread" "dl" "m")
++    else()
++        set(TV_SERVER_PLATFORM_LIBRARIES "pthread" "m")
++    endif()
++
+     set(TV_SERVER_BINARY_TYPE "")
+ endif()
+ 
+@@ -82,4 +87,4 @@ add_executable(${QFUSION_TVSERVER_NAME} ${TV_SERVER_BI
+ target_link_libraries(${QFUSION_TVSERVER_NAME} PRIVATE ${CURL_LIBRARY} ${ZLIB_LIBRARY} ${TV_SERVER_PLATFORM_LIBRARIES})
+ qf_set_output_dir(${QFUSION_TVSERVER_NAME} "")
+ 
+-set_target_properties(${QFUSION_TVSERVER_NAME} PROPERTIES COMPILE_DEFINITIONS "DEDICATED_ONLY;TV_SERVER_ONLY;TV_MODULE_HARD_LINKED")
+\ No newline at end of file
++set_target_properties(${QFUSION_TVSERVER_NAME} PROPERTIES COMPILE_DEFINITIONS "DEDICATED_ONLY;TV_SERVER_ONLY;TV_MODULE_HARD_LINKED")

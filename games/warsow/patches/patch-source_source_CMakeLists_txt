@@ -1,0 +1,51 @@
+$OpenBSD$
+
+Index: source/source/CMakeLists.txt
+--- source/source/CMakeLists.txt.orig
++++ source/source/CMakeLists.txt
+@@ -86,10 +86,9 @@ if (${CMAKE_SYSTEM_NAME} MATCHES "Windows")
+         set(CMAKE_C_FLAGS_RELWITHDEBINFO "${CMAKE_C_FLAGS_RELWITHDEBINFO} /MT /W4")
+         set(CMAKE_C_FLAGS_MINSIZEREL "${CMAKE_C_FLAGS_MINSIZEREL} /MT /W4")	
+     endif()
+-endif()
+ 
+ # OS X specific settings
+-if (${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
++elseif (${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
+     set(CMAKE_OSX_ARCHITECTURES "$(ARCHS_STANDARD_64_BIT)")    # Compile only 64-bit version
+     set(CMAKE_OSX_SYSROOT "macosx")                            # Compile with latest available OS X sdk
+     set(CMAKE_XCODE_ATTRIBUTE_MACOSX_DEPLOYMENT_TARGET "10.8") # Use 10.8 as deployment target
+@@ -107,10 +106,9 @@ if (${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
+     set(CMAKE_CXX_FLAGS "${CMAKE_C_FLAGS} -std=c++0x")
+     set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_C_FLAGS_DEBUG}")
+     set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_C_FLAGS_RELEASE}")
+-endif()
+ 
+-# Linux or mingw specific settings
+-if (${CMAKE_SYSTEM_NAME} MATCHES "Linux" OR MINGW)
++# Unix specific settings
++else()
+     # If no build type was specified - use release build settings
+     if (NOT CMAKE_BUILD_TYPE)
+         set(CMAKE_BUILD_TYPE "Release")
+@@ -118,9 +116,9 @@ if (${CMAKE_SYSTEM_NAME} MATCHES "Linux" OR MINGW)
+ 
+     add_definitions(-D_LARGEFILE64_SOURCE -D_LARGEFILE_SOURCE)
+ 
+-    set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -pipe -Wall -Wno-unused-function -fvisibility=hidden -Winvalid-pch")
++    set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall -Wno-unused-function -fvisibility=hidden -Winvalid-pch -I/usr/X11R6/include")
+     set(CMAKE_C_FLAGS_DEBUG "${CMAKE_C_FLAGS_DEBUG} -O0 -D_DEBUG")
+-    set(CMAKE_C_FLAGS_RELEASE "${CMAKE_C_FLAGS_RELEASE} -fno-strict-aliasing -ffast-math -funroll-loops -msse2 -O2")
++    set(CMAKE_C_FLAGS_RELEASE "${CMAKE_C_FLAGS_RELEASE} -fno-strict-aliasing -ffast-math -funroll-loops -msse2")
+ 
+     set(CMAKE_CXX_FLAGS "${CMAKE_C_FLAGS} -std=c++0x")
+     set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_C_FLAGS_DEBUG}")
+@@ -173,7 +171,7 @@ if (NOT GAME_MODULES_ONLY)
+     find_package(PNG REQUIRED)
+ 
+     # We need SDL only on non-Windows platforms or when with SDL2-backend
+-    if (USE_SDL2 OR (${CMAKE_SYSTEM_NAME} MATCHES "Linux"))
++    if (USE_SDL2 OR (${CMAKE_SYSTEM_NAME} MATCHES "Linux|BSD"))
+         set(USE_SDL2 1)
+         find_package(SDL2 REQUIRED)
+     endif()

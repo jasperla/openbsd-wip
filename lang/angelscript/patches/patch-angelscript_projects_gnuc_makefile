@@ -1,0 +1,23 @@
+$OpenBSD$
+
+Index: angelscript/projects/gnuc/makefile
+--- angelscript/projects/gnuc/makefile.orig
++++ angelscript/projects/gnuc/makefile
+@@ -7,7 +7,7 @@ INSTALL_LIBDIR ?= lib
+ 
+ # If you want to build a shared library, then run make with SHARED=1 and VERSION=version
+ ifdef SHARED
+-	LIB = libangelscript-$(VERSION).so
++	LIB = libangelscript.so.$(VERSION)
+ 	DEVLIB = libangelscript.so
+ else
+ 	LIB = libangelscript.a
+@@ -139,8 +139,6 @@ install: $(BIN)
+ 	@echo -------------------------------------------------------------------
+ ifdef SHARED
+ 	$(COPIER) $(LIBDIR)/$(LIB) $(LOCAL)/$(INSTALL_LIBDIR)
+-	ln -s $(LOCAL)/$(INSTALL_LIBDIR)/$(LIB) $(LOCAL)/$(INSTALL_LIBDIR)/$(DEVLIB)
+-	ln -s $(LOCAL)/$(INSTALL_LIBDIR)/$(LIB) $(LOCAL)/$(INSTALL_LIBDIR)/$(DEVLIB).$(VERSION)
+ endif
+ 	$(COPIER) $(BIN) $(LOCAL)/$(INSTALL_LIBDIR)
+ 	$(COPIER) $(INCDIR)/$(INC) $(LOCAL)/include

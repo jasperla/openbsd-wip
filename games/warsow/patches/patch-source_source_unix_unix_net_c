@@ -1,0 +1,31 @@
+$OpenBSD$
+
+Index: source/source/unix/unix_net.c
+--- source/source/unix/unix_net.c.orig
++++ source/source/unix/unix_net.c
+@@ -26,7 +26,7 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston,
+ #include <sys/param.h>
+ #include <sys/ioctl.h>
+ #include <sys/uio.h>
+-#if !defined ( __APPLE__ )
++#if !defined ( __APPLE__ ) && !defined ( __OpenBSD__ )
+ #include <sys/sendfile.h>
+ #endif
+ #include <errno.h>
+@@ -86,6 +86,16 @@ int64_t Sys_NET_SendFile( socket_handle_t handle, int 
+ 	len = count;
+ 	ssize_t result = sendfile( fileno, handle, _offset, &len, NULL, 0 );
+ 	result = len;
++#elif defined ( __OpenBSD__ )
++	void *sendfilebuf = malloc(count);
++	ssize_t result = pread(fileno, sendfilebuf, count, _offset);
++
++	if (result > 0) {
++		result = write(handle, sendfilebuf, (size_t) result);
++	}
++
++	len = result;
++	free(sendfilebuf);
+ #else
+ 	ssize_t result = sendfile( handle, fileno, &_offset, count );
+ 	len = result;
