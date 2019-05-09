@@ -1,0 +1,18 @@
+@comment $OpenBSD: PLIST,v$
+@bin bin/warsow
+@bin bin/wsw_server
+@bin bin/wswtv_server
+share/warsow/
+share/warsow/basewsw/
+share/warsow/basewsw/libcgame.so
+share/warsow/basewsw/libgame.so
+share/warsow/libs/
+share/warsow/libs/libangelwrap.so
+share/warsow/libs/libcin.so
+share/warsow/libs/libftlib.so
+share/warsow/libs/libirc.so
+share/warsow/libs/libref_gl.so
+share/warsow/libs/libsnd_openal.so
+share/warsow/libs/libsnd_qf.so
+share/warsow/libs/libsteamlib.so
+share/warsow/libs/libui.so
