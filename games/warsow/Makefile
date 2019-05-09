@@ -18,7 +18,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 MASTER_SITES =	http://slice.sh/warsow/
 
-COMPILER =	base-clang ports-gcc
+COMPILER =	base-clang
 MODULES =	devel/cmake
 
 RUN_DEPENDS =	devel/desktop-file-utils

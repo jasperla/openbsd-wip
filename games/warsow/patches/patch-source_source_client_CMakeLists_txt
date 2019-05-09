@@ -1,0 +1,40 @@
+$OpenBSD$
+
+Index: source/source/client/CMakeLists.txt
+--- source/source/client/CMakeLists.txt.orig
++++ source/source/client/CMakeLists.txt
+@@ -140,7 +140,7 @@ if (${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
+ 	endif()
+ endif()
+ 
+-if (${CMAKE_SYSTEM_NAME} MATCHES "Linux")
++if (${CMAKE_SYSTEM_NAME} MATCHES "Linux|BSD")
+ 	set(CLIENT_PLATFORM_HEADERS "")
+ 
+     if (USE_SDL2)
+@@ -162,7 +162,11 @@ if (${CMAKE_SYSTEM_NAME} MATCHES "Linux")
+             "../sdl/sdl_client.c"
+         )
+ 
+-        set(CLIENT_PLATFORM_LIBRARIES ${SDL2_LIBRARY} "pthread" "m" "dl" "rt")
++        if (${CMAKE_SYSTEM_NAME} MATCHES "Linux")
++            set(CLIENT_PLATFORM_LIBRARIES ${SDL2_LIBRARY} "pthread" "m" "dl" "rt")
++        else()
++            set(CLIENT_PLATFORM_LIBRARIES ${SDL2_LIBRARY} "pthread" "m")
++        endif()
+     else()
+         file(GLOB CLIENT_PLATFORM_SOURCES
+             "../unix/unix_fs.c"
+@@ -183,7 +187,11 @@ if (${CMAKE_SYSTEM_NAME} MATCHES "Linux")
+             "../sdl/sdl_input_joy.c"
+         )
+     
+-        set(CLIENT_PLATFORM_LIBRARIES ${SDL2_LIBRARY} "pthread" "dl" "m" "X11" "Xi" "Xext" "Xrandr" "rt")
++        if (${CMAKE_SYSTEM_NAME} MATCHES "Linux")
++            set(CLIENT_PLATFORM_LIBRARIES ${SDL2_LIBRARY} "pthread" "dl" "m" "X11" "Xi" "Xext" "Xrandr" "rt")
++        else()
++            set(CLIENT_PLATFORM_LIBRARIES ${SDL2_LIBRARY} "pthread" "m" "X11" "Xi" "Xext" "Xrandr")
++        endif()
+     endif()
+     set(CLIENT_BINARY_TYPE "")
+ 
