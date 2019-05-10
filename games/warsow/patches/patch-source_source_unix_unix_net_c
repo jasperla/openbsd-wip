@@ -8,15 +8,19 @@ Index: source/source/unix/unix_net.c
  #include <sys/ioctl.h>
  #include <sys/uio.h>
 -#if !defined ( __APPLE__ )
-+#if !defined ( __APPLE__ ) && !defined ( __OpenBSD__ )
++#if defined ( __linux__ )
  #include <sys/sendfile.h>
  #endif
  #include <errno.h>
-@@ -86,6 +86,16 @@ int64_t Sys_NET_SendFile( socket_handle_t handle, int 
+@@ -86,9 +86,19 @@ int64_t Sys_NET_SendFile( socket_handle_t handle, int 
  	len = count;
  	ssize_t result = sendfile( fileno, handle, _offset, &len, NULL, 0 );
  	result = len;
-+#elif defined ( __OpenBSD__ )
+-#else
++#elif defined ( __linux__ )
+ 	ssize_t result = sendfile( handle, fileno, &_offset, count );
+ 	len = result;
++#else
 +	void *sendfilebuf = malloc(count);
 +	ssize_t result = pread(fileno, sendfilebuf, count, _offset);
 +
@@ -26,6 +30,6 @@ Index: source/source/unix/unix_net.c
 +
 +	len = result;
 +	free(sendfilebuf);
- #else
- 	ssize_t result = sendfile( handle, fileno, &_offset, count );
- 	len = result;
+ #endif
+ 	if( result < 0 ) {
+ 		return result;

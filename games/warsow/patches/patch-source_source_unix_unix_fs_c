@@ -17,8 +17,8 @@ Index: source/source/unix/unix_fs.c
  
 -// Mac OS X and FreeBSD don't know the readdir64 and dirent64
 -#if ( defined (__FreeBSD__) || defined (__ANDROID__) || !defined(_LARGEFILE64_SOURCE) )
-+// Mac OS X, FreeBSD and OpenBSD don't know the readdir64 and dirent64
-+#if ( defined (__FreeBSD__) || defined (__OpenBSD__) || defined (__ANDROID__) || !defined(_LARGEFILE64_SOURCE) )
++// I am sure readdir64 and dirent64 are Linux-specific.
++#if ( !defined (__linux__) || !defined(_LARGEFILE64_SOURCE) )
  #define readdir64 readdir
  #define dirent64 dirent
  #endif

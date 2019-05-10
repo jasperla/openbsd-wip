@@ -62,17 +62,31 @@ Index: source/source/gameshared/q_arch.h
  #define HAVE_INLINE
  
  #ifndef HAVE_STRCASECMP // SDL_config.h seems to define this too...
-@@ -219,6 +263,9 @@ typedef UINT_PTR socket_handle_t;
+@@ -219,21 +263,30 @@ typedef UINT_PTR socket_handle_t;
  #if defined ( __FreeBSD__ )
  #define BUILDSTRING "FreeBSD"
  #define OSNAME "FreeBSD"
 +#elif defined ( __OpenBSD__ )
 +#define BUILDSTRING "OpenBSD"
 +#define OSNAME "OpenBSD"
++#elif defined ( __NetBSD__ )
++#define BUILDSTRING "NetBSD"
++#define OSNAME "NetBSD"
++#elif defined ( __DragonFly__ )
++#define BUILDSTRING "DragonFly BSD"
++#define OSNAME "DragonFly BSD"
  #elif defined ( __ANDROID__ )
  #define BUILDSTRING "Android"
  #define OSNAME "Android"
-@@ -230,10 +277,7 @@ typedef UINT_PTR socket_handle_t;
+-#else
++#elif defined ( __linux__ )
+ #define BUILDSTRING "Linux"
+ #define OSNAME "Linux"
++#else
++#define BUILDSTRING "Unknown"
++#define OSNAME "Unknown"
+ #endif
+ 
  #define STEAMQUERY_OS 'l'
  
  #ifdef __i386__
@@ -84,7 +98,7 @@ Index: source/source/gameshared/q_arch.h
  #define ARCH "android_x86"
  #define CPUSTRING "i386"
  #else
-@@ -241,13 +285,8 @@ typedef UINT_PTR socket_handle_t;
+@@ -241,13 +294,8 @@ typedef UINT_PTR socket_handle_t;
  #define CPUSTRING "i386"
  #endif
  #elif defined ( __x86_64__ )
@@ -98,7 +112,7 @@ Index: source/source/gameshared/q_arch.h
  #elif defined ( __powerpc__ )
  #define ARCH "ppc"
  #define CPUSTRING "ppc"
-@@ -277,61 +316,13 @@ typedef UINT_PTR socket_handle_t;
+@@ -277,61 +325,13 @@ typedef UINT_PTR socket_handle_t;
  
  #define VAR( x ) # x
  

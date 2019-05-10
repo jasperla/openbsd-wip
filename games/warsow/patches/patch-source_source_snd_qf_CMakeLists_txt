@@ -8,13 +8,13 @@ Index: source/source/snd_qf/CMakeLists.txt
  )
  
 -if (USE_SDL2 OR (${CMAKE_SYSTEM_NAME} MATCHES "Linux"))
-+if (USE_SDL2 OR (${CMAKE_SYSTEM_NAME} MATCHES "Linux|BSD"))
++if (USE_SDL2 OR (${CMAKE_SYSTEM_NAME} MATCHES "Linux|BSD|DragonFly"))
      file(GLOB SND_QF_PLATFORM_SOURCES
          "../sdl/sdl_snd.c"
      )
  
 -    if (${CMAKE_SYSTEM_NAME} MATCHES "Linux")
-+    if (${CMAKE_SYSTEM_NAME} MATCHES "Linux|BSD")
++    if (${CMAKE_SYSTEM_NAME} MATCHES "Linux|BSD|DragonFly")
  	set(SND_QF_PLATFORM_LIBRARIES ${SDL2_LIBRARY} "m")
      else()
  	set(SND_QF_PLATFORM_LIBRARIES ${SDL2_LIBRARY})

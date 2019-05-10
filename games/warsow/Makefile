@@ -16,7 +16,7 @@ MAINTAINER =	Leonid Bobrov <mazocomp@disroot.org>
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} SDL2 angelscript c curl freetype
+WANTLIB += ${COMPILER_LIBCXX} SDL2 c curl freetype
 WANTLIB += jpeg m ogg png theoradec vorbis vorbisfile z
 
 MASTER_SITES =	http://slice.sh/warsow/
@@ -28,7 +28,6 @@ LIB_DEPENDS =	audio/libvorbis \
 		devel/sdl2 \
 		graphics/jpeg \
 		graphics/png \
-		lang/angelscript \
 		multimedia/libtheora \
 		net/curl
 
