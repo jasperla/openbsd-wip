@@ -1,0 +1,12 @@
+$OpenBSD$
+
+Index: source/libsrcs/angelscript/sdk/angelscript/projects/cmake/CMakeLists.txt
+--- source/libsrcs/angelscript/sdk/angelscript/projects/cmake/CMakeLists.txt.orig
++++ source/libsrcs/angelscript/sdk/angelscript/projects/cmake/CMakeLists.txt
+@@ -155,6 +155,3 @@ if(MSVC)
+ endif()
+ 
+ set(RUNTIME_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/../../bin)
+-
+-add_subdirectory(../../../samples/game/projects/cmake/ ./game)
+-

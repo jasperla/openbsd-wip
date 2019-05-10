@@ -3,11 +3,12 @@ $OpenBSD$
 Index: source/source/ref_gl/r_cin.c
 --- source/source/ref_gl/r_cin.c.orig
 +++ source/source/ref_gl/r_cin.c
-@@ -19,6 +19,7 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston,
+@@ -19,6 +19,8 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston,
  */
  
  // r_cin.c
 +#include <stdlib.h>
++
  #include "r_local.h"
  
  #define MAX_CINEMATICS	256
