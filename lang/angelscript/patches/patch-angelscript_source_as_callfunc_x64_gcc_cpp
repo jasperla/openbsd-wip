@@ -1,0 +1,23 @@
+$OpenBSD$
+
+Index: angelscript/source/as_callfunc_x64_gcc.cpp
+--- angelscript/source/as_callfunc_x64_gcc.cpp.orig
++++ angelscript/source/as_callfunc_x64_gcc.cpp
+@@ -79,7 +79,7 @@ static asQWORD __attribute__((noinline)) X64_CallFunct
+ 
+ 	// Backup stack pointer in R15 that is guaranteed to maintain its value over function calls
+ 		"  movq %%rsp, %%r15 \n"
+-#ifdef __OPTIMIZE__
++#if defined(__OPTIMIZE__) && !defined(__clang__)
+ 	// Make sure the stack unwind logic knows we've backed up the stack pointer in register r15
+ 	// This should only be done if any optimization is done. If no optimization (-O0) is used,
+ 	// then the compiler already backups the rsp before entering the inline assembler code
+@@ -136,7 +136,7 @@ static asQWORD __attribute__((noinline)) X64_CallFunct
+ 
+ 	// Restore stack pointer
+ 		"  mov %%r15, %%rsp \n"
+-#ifdef __OPTIMIZE__
++#if defined(__OPTIMIZE__) && !defined(__clang__)
+ 	// Inform the stack unwind logic that the stack pointer has been restored
+ 	// This should only be done if any optimization is done. If no optimization (-O0) is used,
+ 	// then the compiler already backups the rsp before entering the inline assembler code

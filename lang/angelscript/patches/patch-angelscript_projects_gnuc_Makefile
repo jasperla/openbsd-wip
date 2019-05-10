@@ -1,0 +1,30 @@
+$OpenBSD$
+
+Index: angelscript/projects/gnuc/Makefile
+--- angelscript/projects/gnuc/Makefile.orig
++++ angelscript/projects/gnuc/Makefile
+@@ -32,7 +32,7 @@ PREFIX=/usr/local
+ endif
+ INCLUDEDIR_DEST=$(PREFIX)/include
+ LIBDIR_DEST=$(PREFIX)/lib
+-DOCDIR_BASEDIR=$(PREFIX)/share/doc/angelscript-$(AS_VER)
++DOCDIR_BASEDIR=$(PREFIX)/share/doc/angelscript
+ DOXYGEN_DEST=$(DOCDIR_BASEDIR)/html
+ SAMPLES_DEST=$(DOCDIR_BASEDIR)/samples
+ 
+@@ -43,7 +43,6 @@ INSTALL_DIR = $(INSTALL) -d
+ INSTALL_SHLIB = $(INSTALL) -m 755
+ INSTALL_ARLIB = $(INSTALL) -m 644
+ INSTALL_HEADER = $(INSTALL) -m 644
+-CP_SYMLINK = cp --no-dereference --preserve=links
+ CP_R = cp -R
+ 
+ 
+@@ -181,7 +180,6 @@ install_header: $(INCDIR)/$(HEADER)
+ install_shared:
+ 	$(INSTALL_DIR) "$(DESTDIR)/$(LIBDIR_DEST)"
+ 	$(INSTALL_SHLIB) "$(LIBDIR)"/$(SHLIB) "$(DESTDIR)/$(LIBDIR_DEST)/"$(SHLIB)
+-	$(CP_SYMLINK) "$(LIBDIR)"/$(LIBNAME).so "$(DESTDIR)/$(LIBDIR_DEST)/"$(LIBNAME).so
+ 
+ install_static: $(LIBDIR)/$(ARLIB) $(LIBDIR)/$(SHLIB)
+ 	$(INSTALL_DIR) "$(DESTDIR)/$(LIBDIR_DEST)"

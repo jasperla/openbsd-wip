@@ -2,11 +2,11 @@
 
 COMMENT =	cross-platform scripting library
 
-V =		2.29.2
+V =		2.33.0
 PKGNAME =	angelscript-${V}
 DISTNAME =	angelscript_${V}
 
-SHARED_LIBS =	angelscript 0.0 # 2.29.2
+SHARED_LIBS =	angelscript 0.0 # 2.33.0
 
 EXTRACT_SUFX =	.zip
 
@@ -23,16 +23,16 @@ MASTER_SITES =	${HOMEPAGE}/sdk/files/
 WANTLIB=	${COMPILER_LIBCXX} m
 
 USE_GMAKE =	Yes
-MAKE_FILE =	makefile
 MAKE_FLAGS =	CXX='${CXX}' CXXFLAGS='${CXXFLAGS} ${PICFLAG}' \
-		VERSION=${LIBangelscript_VERSION} SHARED=1 \
-		LOCAL=${DESTDIR}${PREFIX}
+		SHLIB_VERSION=${LIBangelscript_VERSION} \
+		PREFIX=${TRUEPREFIX}
 
 WRKDIST =	${WRKDIR}/sdk
 WRKSRC =	${WRKDIR}/sdk/angelscript/projects/gnuc
 
+INSTALL_TARGET =install_all
+
 post-extract:
-	perl -i -pe 's/\r$$//' ${WRKDIST}/angelscript/source/*.cpp \
-		${WRKSRC}/makefile
+	perl -i -pe 's/\r$$//' ${WRKDIST}/angelscript/source/*.cpp
 
 .include <bsd.port.mk>
