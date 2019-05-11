@@ -2,9 +2,8 @@
 
 COMMENT =	a go module datastore and proxy
 
-V =		0.3.1
+V =		0.4.0
 DISTNAME =	athens-${V}
-DATE =		FIXME
 
 CATEGORIES =	sysutils
 
@@ -22,7 +21,7 @@ MASTER_SITES =	https://deftly.net/dist/
 MODULES =	lang/go
 MODGO_TYPE =	bin
 MODGO_LDFLAGS =	-X "github.com/gomods/athens/pkg/build.version=${V}" \
-		-X "github.com/gomods/athens/pkg/build.buildDate=${DATE}"
+		-X "github.com/gomods/athens/pkg/build.buildDate=unknown"
 
 NO_TEST =	Yes
 
