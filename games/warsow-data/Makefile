@@ -1,6 +1,4 @@
 # $OpenBSD: Makefile.template,v 1.80 2019/04/01 07:35:45 bentley Exp $
-ONLY_FOR_ARCHS =	amd64 i386
-
 COMMENT =	Warsow game data
 
 DISTNAME =	warsow-2.1.2

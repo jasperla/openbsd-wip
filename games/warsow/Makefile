@@ -1,7 +1,5 @@
 # $OpenBSD: Makefile.template,v 1.80 2019/04/01 07:35:45 bentley Exp $
 
-ONLY_FOR_ARCHS =	amd64 i386
-
 COMMENT =	futuristic, fast-paced first person shooter
 
 DISTNAME =	warsow_21_sdk
