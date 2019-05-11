@@ -23,7 +23,8 @@ MASTER_SITES =	http://slice.sh/warsow/
 
 MODULES =	devel/cmake
 
-RUN_DEPENDS =	devel/desktop-file-utils
+RUN_DEPENDS =	devel/desktop-file-utils \
+		games/warsow-data
 LIB_DEPENDS =	audio/libvorbis \
 		devel/sdl2 \
 		graphics/jpeg \
