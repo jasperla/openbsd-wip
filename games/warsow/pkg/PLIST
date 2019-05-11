@@ -2,8 +2,6 @@
 @bin bin/warsow
 @bin bin/wsw_server
 @bin bin/wswtv_server
-share/warsow/
-share/warsow/basewsw/
 share/warsow/basewsw/libcgame.so
 share/warsow/basewsw/libgame.so
 share/warsow/libs/

@@ -32,7 +32,6 @@ LIB_DEPENDS =	audio/libvorbis \
 		multimedia/libtheora \
 		net/curl
 
-CFLAGS +=	-I/usr/local/include/SDL
 CONFIGURE_ARGS =	-DQFUSION_GAME=Warsow
 
 WRKSRC =	${WRKDIST}/source/source

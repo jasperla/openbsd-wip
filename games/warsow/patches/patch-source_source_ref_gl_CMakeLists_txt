@@ -1,0 +1,14 @@
+$OpenBSD$
+
+Index: source/source/ref_gl/CMakeLists.txt
+--- source/source/ref_gl/CMakeLists.txt.orig
++++ source/source/ref_gl/CMakeLists.txt
+@@ -44,7 +44,7 @@ else()
+         set(REF_GL_PLATFORM_LIBRARIES "")
+     endif()
+ 
+-    if (${CMAKE_SYSTEM_NAME} MATCHES "Linux")
++    if (${CMAKE_SYSTEM_NAME} MATCHES "Linux|BSD|DragonFly")
+         file(GLOB REF_GL_PLATFORM_SOURCES
+             "../unix/unix_glw.c"
+             "../unix/unix_qgl.c"
