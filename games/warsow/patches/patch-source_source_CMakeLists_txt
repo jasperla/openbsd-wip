@@ -45,7 +45,7 @@ Index: source/source/CMakeLists.txt
      # If no build type was specified - use release build settings
      if (NOT CMAKE_BUILD_TYPE)
          set(CMAKE_BUILD_TYPE "Release")
-@@ -118,9 +116,9 @@ if (${CMAKE_SYSTEM_NAME} MATCHES "Linux" OR MINGW)
+@@ -118,15 +116,15 @@ if (${CMAKE_SYSTEM_NAME} MATCHES "Linux" OR MINGW)
  
      add_definitions(-D_LARGEFILE64_SOURCE -D_LARGEFILE_SOURCE)
  
@@ -57,6 +57,13 @@ Index: source/source/CMakeLists.txt
  
      set(CMAKE_CXX_FLAGS "${CMAKE_C_FLAGS} -std=c++0x")
      set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_C_FLAGS_DEBUG}")
+     set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_C_FLAGS_RELEASE}")
+ 
+-    set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -std=gnu99 -D_POSIX_C_SOURCE=200112L -D_XOPEN_SOURCE=500")
++    set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -std=gnu99")
+ 
+     # -Wl,--as-needed
+     add_common_link_flags("-Wl,--as-needed")
 @@ -173,7 +171,7 @@ if (NOT GAME_MODULES_ONLY)
      find_package(PNG REQUIRED)
  
