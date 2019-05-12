@@ -1,4 +1,5 @@
 @comment $OpenBSD: PLIST,v$
+@conflict tidyp-*
 @bin bin/tidy
 include/tidy.h
 include/tidybuffio.h
