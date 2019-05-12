@@ -8,7 +8,7 @@ Index: source/source/ref_gl/CMakeLists.txt
      endif()
  
 -    if (${CMAKE_SYSTEM_NAME} MATCHES "Linux")
-+    if (${CMAKE_SYSTEM_NAME} MATCHES "Linux|BSD|DragonFly")
++    if (UNIX AND NOT APPLE)
          file(GLOB REF_GL_PLATFORM_SOURCES
              "../unix/unix_glw.c"
              "../unix/unix_qgl.c"

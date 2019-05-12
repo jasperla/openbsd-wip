@@ -8,7 +8,7 @@ Index: source/source/client/CMakeLists.txt
  endif()
  
 -if (${CMAKE_SYSTEM_NAME} MATCHES "Linux")
-+if (${CMAKE_SYSTEM_NAME} MATCHES "Linux|BSD|DragonFly")
++if (UNIX AND NOT APPLE)
  	set(CLIENT_PLATFORM_HEADERS "")
  
      if (USE_SDL2)

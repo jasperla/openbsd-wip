@@ -12,7 +12,7 @@ Index: source/source/unix/unix_net.c
  #include <sys/sendfile.h>
  #endif
  #include <errno.h>
-@@ -86,9 +86,22 @@ int64_t Sys_NET_SendFile( socket_handle_t handle, int 
+@@ -86,9 +86,21 @@ int64_t Sys_NET_SendFile( socket_handle_t handle, int 
  	len = count;
  	ssize_t result = sendfile( fileno, handle, _offset, &len, NULL, 0 );
  	result = len;
@@ -22,7 +22,6 @@ Index: source/source/unix/unix_net.c
  	len = result;
 +#elif defined ( __DragonFly__ ) || defined ( __FreeBSD__ )
 +	ssize_t result = sendfile( fileno, handle, _offset, count, NULL, &len, 0 );
-+	result = len;
 +#else
 +	void *sendfilebuf = malloc(count);
 +	ssize_t result = pread(fileno, sendfilebuf, count, _offset);
