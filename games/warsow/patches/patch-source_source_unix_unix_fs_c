@@ -3,15 +3,7 @@ $OpenBSD$
 Index: source/source/unix/unix_fs.c
 --- source/source/unix/unix_fs.c.orig
 +++ source/source/unix/unix_fs.c
-@@ -29,6 +29,7 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston,
- #include <linux/limits.h>
- #endif
- 
-+#include <stdlib.h>
- #include <unistd.h>
- #include <sys/stat.h>
- #include <sys/mman.h>
-@@ -37,8 +38,8 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston,
+@@ -37,8 +37,8 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston,
  #include "../android/android_sys.h"
  #endif
  
