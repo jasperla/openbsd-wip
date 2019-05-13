@@ -62,57 +62,70 @@ Index: source/source/gameshared/q_arch.h
  #define HAVE_INLINE
  
  #ifndef HAVE_STRCASECMP // SDL_config.h seems to define this too...
-@@ -219,21 +263,30 @@ typedef UINT_PTR socket_handle_t;
- #if defined ( __FreeBSD__ )
- #define BUILDSTRING "FreeBSD"
- #define OSNAME "FreeBSD"
-+#elif defined ( __OpenBSD__ )
-+#define BUILDSTRING "OpenBSD"
-+#define OSNAME "OpenBSD"
-+#elif defined ( __NetBSD__ )
-+#define BUILDSTRING "NetBSD"
-+#define OSNAME "NetBSD"
-+#elif defined ( __DragonFly__ )
-+#define BUILDSTRING "DragonFly BSD"
-+#define OSNAME "DragonFly BSD"
- #elif defined ( __ANDROID__ )
+@@ -216,122 +260,33 @@ typedef UINT_PTR socket_handle_t;
+ #define LIBTHEORA_LIBNAME "libtheora.so.0|libtheora.so"
+ #define LIBFREETYPE_LIBNAME "libfreetype.so.6|libfreetype.so"
+ 
+-#if defined ( __FreeBSD__ )
+-#define BUILDSTRING "FreeBSD"
+-#define OSNAME "FreeBSD"
+-#elif defined ( __ANDROID__ )
++#if defined ( __ANDROID__ )
  #define BUILDSTRING "Android"
  #define OSNAME "Android"
 -#else
-+#elif defined ( __linux__ )
- #define BUILDSTRING "Linux"
- #define OSNAME "Linux"
-+#else
-+#define BUILDSTRING "Unknown"
-+#define OSNAME "Unknown"
+-#define BUILDSTRING "Linux"
+-#define OSNAME "Linux"
  #endif
  
  #define STEAMQUERY_OS 'l'
  
++#if defined ( __ANDROID__ )
  #ifdef __i386__
 -#if defined ( __FreeBSD__ )
 -#define ARCH "freebsd_i386"
 -#define CPUSTRING "i386"
 -#elif defined ( __ANDROID__ )
-+#if defined ( __ANDROID__ )
  #define ARCH "android_x86"
  #define CPUSTRING "i386"
- #else
-@@ -241,13 +294,8 @@ typedef UINT_PTR socket_handle_t;
- #define CPUSTRING "i386"
- #endif
- #elif defined ( __x86_64__ )
+-#else
+-#define ARCH "i386"
+-#define CPUSTRING "i386"
+-#endif
+-#elif defined ( __x86_64__ )
 -#if defined __FreeBSD__
 -#define ARCH "freebsd_x86_64"
 -#define CPUSTRING "x86_64"
 -#else
- #define ARCH "x86_64"
- #define CPUSTRING "x86_64"
+-#define ARCH "x86_64"
+-#define CPUSTRING "x86_64"
 -#endif
- #elif defined ( __powerpc__ )
- #define ARCH "ppc"
- #define CPUSTRING "ppc"
-@@ -277,61 +325,13 @@ typedef UINT_PTR socket_handle_t;
+-#elif defined ( __powerpc__ )
+-#define ARCH "ppc"
+-#define CPUSTRING "ppc"
+-#elif defined ( __alpha__ )
+-#define ARCH "axp"
+-#define CPUSTRING "axp"
+ #elif defined ( __arm__ )
+-#if defined ( __ANDROID__ )
+ #define ARCH "android_armeabi-v7a"
+ #define CPUSTRING "arm"
+-#else
+-#define ARCH "arm"
+-#define CPUSTRING "arm"
+-#endif
+ #elif defined ( _MIPS_ARCH )
+-#if defined ( __ANDROID__ )
+ #define ARCH "android_mips"
+ #define CPUSTRING "mips"
+-#else
+-#define ARCH "mips"
+-#define CPUSTRING "mips"
+ #endif
+-#else
+-#define CPUSTRING "Unknown"
+-#define ARCH "Unknown"
+ #endif
  
  #define VAR( x ) # x
  
@@ -127,8 +140,6 @@ Index: source/source/gameshared/q_arch.h
 -#define SOCKET_ERROR (-1)
 -#define INVALID_SOCKET (-1)
 -
-+#else
-+#include <stdlib.h>
  #endif
  
 -//==============================================
