@@ -17,7 +17,8 @@ PERMIT_PACKAGE_CDROM =	Yes
 WANTLIB += ${COMPILER_LIBCXX} SDL2 c curl freetype
 WANTLIB += jpeg m ogg png theoradec vorbis vorbisfile z
 
-MASTER_SITES =	http://slice.sh/warsow/
+MASTER_SITES =	http://sebastian.network/warsow/ \
+		http://slice.sh/warsow/
 
 MODULES =	devel/cmake
 

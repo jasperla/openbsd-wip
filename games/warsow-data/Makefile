@@ -13,7 +13,8 @@ MAINTAINER =	Leonid Bobrov <mazocomp@disroot.org>
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =	http://slice.sh/warsow/
+MASTER_SITES =	http://sebastian.network/warsow/ \
+		http://slice.sh/warsow/
 
 NO_BUILD =	Yes
 NO_TEST =	Yes
