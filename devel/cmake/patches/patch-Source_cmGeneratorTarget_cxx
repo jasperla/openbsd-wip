@@ -2,7 +2,7 @@ $OpenBSD: patch-Source_cmGeneratorTarget_cxx,v 1.10 2018/06/14 17:04:45 sthen Ex
 Index: Source/cmGeneratorTarget.cxx
 --- Source/cmGeneratorTarget.cxx.orig
 +++ Source/cmGeneratorTarget.cxx
-@@ -1224,11 +1224,15 @@ std::string cmGeneratorTarget::GetCompilePDBPath(
+@@ -1303,11 +1303,15 @@ std::string cmGeneratorTarget::GetCompilePDBPath(
  
  bool cmGeneratorTarget::HasSOName(const std::string& config) const
  {
@@ -18,7 +18,7 @@ Index: Source/cmGeneratorTarget.cxx
  }
  
  bool cmGeneratorTarget::NeedRelinkBeforeInstall(
-@@ -3026,9 +3030,15 @@ void cmGeneratorTarget::GetLibraryNames(std::string& n
+@@ -3545,9 +3549,15 @@ void cmGeneratorTarget::GetLibraryNames(std::string& n
    // Check for library version properties.
    const char* version = this->GetProperty("VERSION");
    const char* soversion = this->GetProperty("SOVERSION");
@@ -35,7 +35,7 @@ Index: Source/cmGeneratorTarget.cxx
      // Versioning is supported only for shared libraries and modules,
      // and then only when the platform supports an soname flag.
      version = nullptr;
-@@ -3054,6 +3064,34 @@ void cmGeneratorTarget::GetLibraryNames(std::string& n
+@@ -3573,6 +3583,34 @@ void cmGeneratorTarget::GetLibraryNames(std::string& n
    // The library name.
    name = prefix + base + suffix;
  
@@ -59,7 +59,7 @@ Index: Source/cmGeneratorTarget.cxx
 +        msg += env_name;
 +        msg += " specification: ";
 +        msg += env_vers;
-+        this->LocalGenerator->IssueMessage(cmake::INTERNAL_ERROR, msg);
++        this->LocalGenerator->IssueMessage(MessageType::INTERNAL_ERROR, msg);
 +      } else {
 +        version = env_vers_cstr;
 +      }
@@ -70,7 +70,7 @@ Index: Source/cmGeneratorTarget.cxx
    if (this->IsFrameworkOnApple()) {
      realName = prefix;
      if (!this->Makefile->PlatformIsAppleEmbedded()) {
-@@ -3065,7 +3103,11 @@ void cmGeneratorTarget::GetLibraryNames(std::string& n
+@@ -3584,7 +3622,11 @@ void cmGeneratorTarget::GetLibraryNames(std::string& n
      soName = realName;
    } else {
      // The library's soname.
@@ -82,7 +82,7 @@ Index: Source/cmGeneratorTarget.cxx
  
      // The library's real name on disk.
      this->ComputeVersionedName(realName, prefix, base, suffix, name, version);
-@@ -4195,7 +4237,21 @@ void cmGeneratorTarget::ComputeVersionedName(std::stri
+@@ -4819,7 +4861,21 @@ void cmGeneratorTarget::ComputeVersionedName(std::stri
    vName = this->Makefile->IsOn("APPLE") ? (prefix + base) : name;
    if (version) {
      vName += ".";

@@ -37,7 +37,7 @@ Index: Source/cmArchiveWrite.cxx
  #include "cmSystemTools.h"
  #include "cm_get_date.h"
  #include "cm_libarchive.h"
-@@ -211,9 +210,6 @@ bool cmArchiveWrite::AddFile(const char* file, size_t 
+@@ -224,9 +223,6 @@ bool cmArchiveWrite::AddFile(const char* file, size_t 
      return true;
    }
    const char* out = file + skip;

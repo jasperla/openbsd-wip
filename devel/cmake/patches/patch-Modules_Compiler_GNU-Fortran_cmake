@@ -2,7 +2,7 @@ $OpenBSD: patch-Modules_Compiler_GNU-Fortran_cmake,v 1.7 2018/03/14 12:24:54 rsa
 Index: Modules/Compiler/GNU-Fortran.cmake
 --- Modules/Compiler/GNU-Fortran.cmake.orig
 +++ Modules/Compiler/GNU-Fortran.cmake
-@@ -9,10 +9,6 @@ set(CMAKE_Fortran_FORMAT_FREE_FLAG "-ffree-form")
+@@ -12,10 +12,6 @@ set(CMAKE_Fortran_FORMAT_FREE_FLAG "-ffree-form")
  
  set(CMAKE_Fortran_POSTPROCESS_FLAG "-fpreprocessed")
  

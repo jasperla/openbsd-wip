@@ -4,7 +4,7 @@ DPB_PROPERTIES =parallel
 
 COMMENT =	portable build system
 
-VER =		3.12.2
+VER =		3.14.3
 EPOCH =		0
 DISTNAME =	cmake-${VER}
 CATEGORIES =	devel
@@ -37,12 +37,13 @@ LIB_DEPENDS =		archivers/libarchive \
 			security/rhash
 
 CONFIGURE_STYLE =	simple
-CONFIGURE_ARGS =	--prefix=${PREFIX} \
-			--datadir=share/cmake \
+
+CONFIGURE_ARGS =	--datadir=share/cmake \
 			--docdir=share/doc/cmake \
 			--mandir=man \
 			--no-qt-gui \
 			--parallel=${MAKE_JOBS} \
+			--prefix=${PREFIX} \
 			--sphinx-build=${LOCALBASE}/bin/sphinx-build \
 			--sphinx-html \
 			--sphinx-man \
@@ -51,25 +52,36 @@ CONFIGURE_ARGS =	--prefix=${PREFIX} \
 
 CONFIGURE_ENV +=	MAKE=${MAKE_PROGRAM}
 
+MAKE_FLAGS +=		VERBOSE=1
+
 PORTHOME =		${WRKDIR}
 
 SEPARATE_BUILD =	Yes
 
 TEST_TARGET =		test
 
-MAKE_FLAGS +=		VERBOSE=1
+TEST_DEPENDS +=		devel/git
+
+SUBST_FILES =	${WRKSRC}/Source/cmLocalGenerator.cxx \
+		${WRKSRC}/Source/CPack/cmCPackGenerator.cxx \
+		${WRKSRC}/bootstrap
+
+post-patch:
+	(find ${WRKSRC}/Modules -name "*.cmake" -print0; \
+	find ${WRKSRC}/Tests -name "CMakeLists.txt" -print0) | \
+	xargs -0 perl -e 's,/usr/local,${LOCALBASE},g; \
+	s,/usr/X11R6,${LOCALBASE},g'
+	perl -e 's,/usr/local,${LOCALBASE},g' \
+		${SUBST_FILES}
+	perl -e 's,/usr/include,${LOCALBASE}/include,' \
+		${WRKSRC}/Modules/FindDCMTK.cmake
 
 pre-configure:
 	cp ${FILESDIR}/*.cmake ${WRKSRC}/Modules/
-	${SUBST_CMD} ${WRKSRC}/Modules/CMakeDetermineJavaCompiler.cmake \
-		${WRKSRC}/Modules/FindJNI.cmake \
-		${WRKSRC}/Modules/FindJava.cmake \
-		${WRKSRC}/Modules/FindMPEG.cmake \
-		${WRKSRC}/Modules/FindMPEG2.cmake \
-		${WRKSRC}/Modules/FindQt.cmake \
-		${WRKSRC}/Modules/FindQt4.cmake \
-		${WRKSRC}/Modules/FindSDL.cmake \
-		${WRKSRC}/Modules/FindTCL.cmake
+	(find ${WRKSRC}/Modules -name "*.cmake" -print0; \
+	find ${WRKSRC}/Tests -name "CMakeLists.txt" -print0) | \
+	xargs -0 ${SUBST_CMD}
+	${SUBST_CMD} ${SUBST_FILES}
 
 # XXX: Ninja is broken on m88k
 .if ${MACHINE_ARCH} != "m88k"
@@ -86,9 +98,9 @@ do-test:
 		${MAKE_JOBS} ${TEST_FLAGS} ${TEST_TARGET}
 .endif
 
-post-install:
-	rm ${WRKINST}${LOCALBASE}/share/cmake/Modules/*.{beforesubst,orig} \
-		${WRKINST}${LOCALBASE}/share/cmake/Modules/Compiler/*.orig \
-		${WRKINST}${LOCALBASE}/share/cmake/Modules/Platform/*.orig
+#post-install:
+#	rm ${WRKINST}${LOCALBASE}/share/cmake/Modules/*.{beforesubst,orig} \
+#		${WRKINST}${LOCALBASE}/share/cmake/Modules/Compiler/*.orig \
+#		${WRKINST}${LOCALBASE}/share/cmake/Modules/Platform/*.orig
 
 .include <bsd.port.mk>

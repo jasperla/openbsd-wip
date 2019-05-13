@@ -1,5 +1,7 @@
 $OpenBSD: patch-Utilities_cmjsoncpp_src_lib_json_json_value_cpp,v 1.1 2018/03/14 12:24:54 rsadowski Exp $
 
+Fix build with our jsoncpp
+
 Index: Utilities/cmjsoncpp/src/lib_json/json_value.cpp
 --- Utilities/cmjsoncpp/src/lib_json/json_value.cpp.orig
 +++ Utilities/cmjsoncpp/src/lib_json/json_value.cpp

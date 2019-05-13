@@ -1,5 +1,7 @@
 $OpenBSD: patch-Utilities_cmjsoncpp_include_json_value_h,v 1.1 2018/03/14 12:24:54 rsadowski Exp $
 
+Fix build with our jsoncpp
+
 Index: Utilities/cmjsoncpp/include/json/value.h
 --- Utilities/cmjsoncpp/include/json/value.h.orig
 +++ Utilities/cmjsoncpp/include/json/value.h

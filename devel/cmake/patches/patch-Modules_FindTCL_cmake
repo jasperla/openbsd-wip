@@ -2,7 +2,7 @@ $OpenBSD: patch-Modules_FindTCL_cmake,v 1.15 2018/06/14 17:04:45 sthen Exp $
 Index: Modules/FindTCL.cmake
 --- Modules/FindTCL.cmake.orig
 +++ Modules/FindTCL.cmake
-@@ -48,19 +48,36 @@ include(${CMAKE_CURRENT_LIST_DIR}/CMakeFindFrameworks.
+@@ -49,19 +49,36 @@ include(${CMAKE_CURRENT_LIST_DIR}/CMakeFindFrameworks.
  include(${CMAKE_CURRENT_LIST_DIR}/FindTclsh.cmake)
  include(${CMAKE_CURRENT_LIST_DIR}/FindWish.cmake)
  
@@ -43,7 +43,7 @@ Index: Modules/FindTCL.cmake
  
  get_filename_component(TCL_INCLUDE_PATH_PARENT "${TCL_INCLUDE_PATH}" PATH)
  get_filename_component(TK_INCLUDE_PATH_PARENT "${TK_INCLUDE_PATH}" PATH)
-@@ -75,15 +92,37 @@ get_filename_component(TK_LIBRARY_PATH_PARENT "${TK_LI
+@@ -76,15 +93,37 @@ get_filename_component(TK_LIBRARY_PATH_PARENT "${TK_LI
  string(REGEX REPLACE
    "^.*tk([0-9]\\.*[0-9]).*$" "\\1" TK_LIBRARY_VERSION "${TK_LIBRARY}")
  
@@ -89,7 +89,7 @@ Index: Modules/FindTCL.cmake
  set(TCLTK_POSSIBLE_LIB_PATH_SUFFIXES
    lib/tcl/tcl8.7
    lib/tcl/tk8.7
-@@ -166,16 +205,6 @@ if(Tk_FRAMEWORKS)
+@@ -167,16 +206,6 @@ if(Tk_FRAMEWORKS)
    endif()
  endif()
  
@@ -106,7 +106,7 @@ Index: Modules/FindTCL.cmake
  
  set(TCLTK_POSSIBLE_INCLUDE_PATH_SUFFIXES
    include/tcl${TK_LIBRARY_VERSION}
-@@ -192,6 +221,46 @@ set(TCLTK_POSSIBLE_INCLUDE_PATH_SUFFIXES
+@@ -193,6 +222,46 @@ set(TCLTK_POSSIBLE_INCLUDE_PATH_SUFFIXES
    include/tcl8.2
    include/tcl8.0
    )

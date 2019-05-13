@@ -2,16 +2,16 @@ $OpenBSD: patch-Modules_FindPythonInterp_cmake,v 1.11 2016/11/28 09:15:13 dcoppa
 Index: Modules/FindPythonInterp.cmake
 --- Modules/FindPythonInterp.cmake.orig
 +++ Modules/FindPythonInterp.cmake
-@@ -40,6 +40,8 @@
- # get the currently active Python version by default with a consistent version
- # of PYTHON_LIBRARIES.
+@@ -41,6 +41,8 @@ get the currently active Python version by default wit
+ of PYTHON_LIBRARIES.
+ #]=======================================================================]
  
 +set(MODPY_VERSION $ENV{MODPY_VERSION})
 +
  unset(_Python_NAMES)
  
  set(_PYTHON1_VERSIONS 1.6 1.5)
-@@ -72,19 +74,23 @@ find_program(PYTHON_EXECUTABLE NAMES ${_Python_NAMES})
+@@ -73,19 +75,23 @@ find_program(PYTHON_EXECUTABLE NAMES ${_Python_NAMES})
  
  # Set up the versions we know about, in the order we will search. Always add
  # the user supplied additional versions to the front.

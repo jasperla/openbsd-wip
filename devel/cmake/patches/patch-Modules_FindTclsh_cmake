@@ -2,9 +2,9 @@ $OpenBSD: patch-Modules_FindTclsh_cmake,v 1.5 2016/11/28 09:15:13 dcoppa Exp $
 Index: Modules/FindTclsh.cmake
 --- Modules/FindTclsh.cmake.orig
 +++ Modules/FindTclsh.cmake
-@@ -19,14 +19,21 @@
- # In cygwin, look for the cygwin version first.  Don't look for it later
- # to avoid finding the cygwin version on a Win32 build.
+@@ -20,14 +20,21 @@ In cygwin, look for the cygwin version first.  Don't l
+ to avoid finding the cygwin version on a Win32 build.
+ #]=======================================================================]
  
 +set(MODTCL_VERSION $ENV{MODTCL_VERSION})
 +set(MODTK_VERSION $ENV{MODTK_VERSION})

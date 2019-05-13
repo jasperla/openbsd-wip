@@ -2,9 +2,9 @@ $OpenBSD: patch-Modules_FindLua_cmake,v 1.6 2017/08/26 17:53:35 dcoppa Exp $
 Index: Modules/FindLua.cmake
 --- Modules/FindLua.cmake.orig
 +++ Modules/FindLua.cmake
-@@ -50,9 +50,16 @@ set(_lua_additional_paths
-       /opt/csw # Blastwave
-       /opt)
+@@ -44,9 +44,16 @@ unset(_lua_include_subdirs)
+ unset(_lua_library_names)
+ unset(_lua_append_versions)
  
 +set(MODLUA_VERSION $ENV{MODLUA_VERSION})
 +set(MODLUA_INCL_DIR $ENV{MODLUA_INCL_DIR})
@@ -20,7 +20,7 @@ Index: Modules/FindLua.cmake
  
      if (Lua_FIND_VERSION_EXACT)
          if (Lua_FIND_VERSION_COUNT GREATER 1)
-@@ -149,6 +156,9 @@ endfunction(_lua_get_header_version)
+@@ -143,6 +150,9 @@ endfunction(_lua_get_header_version)
  
  function(_lua_find_header)
      _lua_set_version_vars()

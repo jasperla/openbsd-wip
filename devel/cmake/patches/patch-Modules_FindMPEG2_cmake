@@ -2,7 +2,7 @@ $OpenBSD: patch-Modules_FindMPEG2_cmake,v 1.10 2018/06/14 17:04:45 sthen Exp $
 Index: Modules/FindMPEG2.cmake
 --- Modules/FindMPEG2.cmake.orig
 +++ Modules/FindMPEG2.cmake
-@@ -46,4 +46,4 @@ if(MPEG2_FOUND)
+@@ -47,4 +47,4 @@ if(MPEG2_FOUND)
    endif()
  endif()
  

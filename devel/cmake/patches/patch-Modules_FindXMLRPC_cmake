@@ -2,7 +2,7 @@ $OpenBSD: patch-Modules_FindXMLRPC_cmake,v 1.8 2018/03/14 12:24:54 rsadowski Exp
 Index: Modules/FindXMLRPC.cmake
 --- Modules/FindXMLRPC.cmake.orig
 +++ Modules/FindXMLRPC.cmake
-@@ -97,6 +97,8 @@ if(XMLRPC_C_FOUND)
+@@ -98,6 +98,8 @@ if(XMLRPC_C_FOUND)
        endif()
      endforeach()
  
