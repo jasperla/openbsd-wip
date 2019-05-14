@@ -42,11 +42,6 @@ post-patch:
 	/usr/bin/sed -i'' -e \
 		's|path", "\.|path", "${LOCALBASE}/share/warsow|' \
 		${WRKSRC}/qcommon/files.c
-# Disable pure check for library files, because they are built and placed to
-# ${DATADIR} base path instead of pack file(s)
-	/usr/bin/sed -i'' -e \
-		's|pure \&\& !FS_IsPureFile|0 \&\& !FS_IsPureFile|' \
-		${WRKSRC}/qcommon/library.c
 
 do-install:
 .for b in warsow wsw_server wswtv_server
