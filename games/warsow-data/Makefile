@@ -23,6 +23,5 @@ PKG_ARCH =	*
 do-install:
 	mkdir ${PREFIX}/share/warsow
 	cp -R ${WRKDIST}/basewsw ${PREFIX}/share/warsow/
-	rm ${PREFIX}/share/warsow/basewsw/modules_21.pk3
 
 .include <bsd.port.mk>
