@@ -3,7 +3,13 @@ $OpenBSD$
 Index: source/source/ref_gl/CMakeLists.txt
 --- source/source/ref_gl/CMakeLists.txt.orig
 +++ source/source/ref_gl/CMakeLists.txt
-@@ -40,18 +40,14 @@ else()
+@@ -35,23 +35,19 @@ if (USE_SDL2)
+ 
+     set(REF_GL_PLATFORM_LIBRARIES ${SDL2_LIBRARY})
+ else()
+-    if (${CMAKE_SYSTEM_NAME} MATCHES "Windows")
++    if (WIN32)
+         file(GLOB REF_GL_PLATFORM_SOURCES
              "../win32/win_glw.c"
              "../win32/win_qgl.c"
          )

@@ -3,14 +3,18 @@ $OpenBSD$
 Index: source/source/irc/CMakeLists.txt
 --- source/source/irc/CMakeLists.txt.orig
 +++ source/source/irc/CMakeLists.txt
-@@ -16,8 +16,6 @@ qf_set_output_dir(irc libs)
+@@ -14,10 +14,8 @@ file(GLOB IRC_SOURCES
+ add_library(irc SHARED ${IRC_SOURCES} ${IRC_HEADERS})
+ qf_set_output_dir(irc libs)
  
- if (${CMAKE_SYSTEM_NAME} MATCHES "Windows")
-     target_link_libraries(irc PRIVATE "ws2_32.lib")
+-if (${CMAKE_SYSTEM_NAME} MATCHES "Windows")
+-    target_link_libraries(irc PRIVATE "ws2_32.lib")
 -endif()
 -
 -if (${CMAKE_SYSTEM_NAME} MATCHES "Linux")
 -    target_link_libraries(irc PRIVATE "m")
++if (WIN32)
++    target_link_libraries(irc PRIVATE ws2_32.lib)
 +elseif (NOT APPLE)
 +    target_link_libraries(irc PRIVATE m)
  endif()

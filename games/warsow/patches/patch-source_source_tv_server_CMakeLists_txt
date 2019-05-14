@@ -3,6 +3,15 @@ $OpenBSD$
 Index: source/source/tv_server/CMakeLists.txt
 --- source/source/tv_server/CMakeLists.txt.orig
 +++ source/source/tv_server/CMakeLists.txt
+@@ -47,7 +47,7 @@ file(GLOB TV_SERVER_SOURCES
+     "tv_module/*.c"
+ )
+ 
+-if (${CMAKE_SYSTEM_NAME} MATCHES "Windows")
++if (WIN32)
+     file(GLOB TV_SERVER_PLATFORM_SOURCES 
+         "../win32/win_fs.c"
+         "../win32/win_net.c"
 @@ -60,7 +60,7 @@ if (${CMAKE_SYSTEM_NAME} MATCHES "Windows")
          "../win32/conproc.c"
      )

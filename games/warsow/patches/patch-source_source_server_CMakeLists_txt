@@ -3,6 +3,15 @@ $OpenBSD$
 Index: source/source/server/CMakeLists.txt
 --- source/source/server/CMakeLists.txt.orig
 +++ source/source/server/CMakeLists.txt
+@@ -52,7 +52,7 @@ file(GLOB SERVER_SOURCES
+     "../matchmaker/mm_*.c"
+ )
+ 
+-if (${CMAKE_SYSTEM_NAME} MATCHES "Windows")
++if (WIN32)
+     file(GLOB SERVER_PLATFORM_SOURCES 
+         "../win32/win_fs.c"
+         "../win32/win_net.c"
 @@ -65,7 +65,7 @@ if (${CMAKE_SYSTEM_NAME} MATCHES "Windows")
          "../win32/conproc.c"
      )
