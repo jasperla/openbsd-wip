@@ -21,7 +21,8 @@ NO_TEST =	Yes
 PKG_ARCH =	*
 
 do-install:
-	mkdir ${PREFIX}/share/warsow
-	cp -R ${WRKDIST}/basewsw ${PREFIX}/share/warsow/
+	${INSTALL_DATA_DIR} ${PREFIX}/share/warsow
+	${INSTALL_DATA_DIR} ${PREFIX}/share/warsow/basewsw
+	/bin/cp -R ${WRKDIST}/basewsw ${PREFIX}/share/warsow/
 
 .include <bsd.port.mk>

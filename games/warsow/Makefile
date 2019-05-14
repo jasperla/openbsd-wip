@@ -47,9 +47,9 @@ do-install:
 .for b in warsow wsw_server wswtv_server
 	${INSTALL_PROGRAM} ${WRKSRC}/build/${b} ${PREFIX}/bin
 .endfor
-	mkdir ${PREFIX}/share/warsow
-	mkdir ${PREFIX}/share/warsow/basewsw
-	mkdir ${PREFIX}/share/warsow/libs
+	${INSTALL_DATA_DIR} ${PREFIX}/share/warsow
+	${INSTALL_DATA_DIR} ${PREFIX}/share/warsow/basewsw
+	${INSTALL_DATA_DIR} ${PREFIX}/share/warsow/libs
 .for l in cgame game
 	${INSTALL_DATA} ${WRKSRC}/build/basewsw/lib${l}.so \
 		${PREFIX}/share/warsow/basewsw
