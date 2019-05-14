@@ -36,9 +36,9 @@ CONFIGURE_ARGS =	-DQFUSION_GAME=Warsow
 
 WRKSRC =	${WRKDIST}/source/source
 
-post-patch:
 # Search directory provided by warsow-data port instead of current (doing
 # so allows us not to install any wrapper scripts)
+post-patch:
 	/usr/bin/sed -i'' -e \
 		's|path", "\.|path", "${LOCALBASE}/share/warsow|' \
 		${WRKSRC}/qcommon/files.c
@@ -52,11 +52,11 @@ do-install:
 	mkdir ${PREFIX}/share/warsow/libs
 .for l in cgame game
 	${INSTALL_DATA} ${WRKSRC}/build/basewsw/lib${l}.so \
-		${PREFIX}/share/warsow/basewsw/lib${l}_openbsd_${ARCH}.so
+		${PREFIX}/share/warsow/basewsw
 .endfor
 .for l in angelwrap cin ftlib irc ref_gl snd_openal snd_qf steamlib ui
 	${INSTALL_DATA} ${WRKSRC}/build/libs/lib${l}.so \
-		${PREFIX}/share/warsow/libs/lib${l}_openbsd_${ARCH}.so
+		${PREFIX}/share/warsow/libs
 .endfor
 
 .include <bsd.port.mk>

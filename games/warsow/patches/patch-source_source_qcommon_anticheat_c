@@ -1,0 +1,14 @@
+$OpenBSD$
+
+Index: source/source/qcommon/anticheat.c
+--- source/source/qcommon/anticheat.c.orig
++++ source/source/qcommon/anticheat.c
+@@ -101,7 +101,7 @@ bool AC_LoadLibrary( void *imports, void *exports, uns
+ 		funcs[1].name = "InitClient";
+ 		funcs[1].funcPointer = (void **) &InitClient_f;
+ 		funcs[2].name = NULL;
+-		ac_libhandle = Com_LoadLibrary( LIB_DIRECTORY "/" LIB_PREFIX "ac_" ARCH LIB_SUFFIX, funcs );
++		ac_libhandle = Com_LoadLibrary( LIB_DIRECTORY "/" LIB_PREFIX "ac" LIB_SUFFIX, funcs );
+ 	}
+ 
+ 	// load succeeded or already loaded and exported functions retrieved
