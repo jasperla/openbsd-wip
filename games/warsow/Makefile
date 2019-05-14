@@ -43,9 +43,13 @@ do-install:
 	mkdir ${PREFIX}/share/warsow
 	mkdir ${PREFIX}/share/warsow/basewsw
 	mkdir ${PREFIX}/share/warsow/libs
-	${INSTALL_DATA} ${WRKSRC}/build/basewsw/* \
-		${PREFIX}/share/warsow/basewsw/
-	${INSTALL_DATA} ${WRKSRC}/build/libs/* \
-		${PREFIX}/share/warsow/libs
+.for l in cgame game
+	${INSTALL_DATA} ${WRKSRC}/build/basewsw/lib${l}.so \
+		${PREFIX}/share/warsow/basewsw/lib${l}_openbsd_${ARCH}.so
+.endfor
+.for l in angelwrap cin ftlib irc ref_gl snd_openal snd_qf steamlib ui
+	${INSTALL_DATA} ${WRKSRC}/build/libs/lib${l}.so \
+		${PREFIX}/share/warsow/libs/lib${l}_openbsd_${ARCH}.so
+.endfor
 
 .include <bsd.port.mk>
