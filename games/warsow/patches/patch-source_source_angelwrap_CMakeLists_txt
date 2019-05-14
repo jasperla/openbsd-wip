@@ -3,7 +3,16 @@ $OpenBSD$
 Index: source/source/angelwrap/CMakeLists.txt
 --- source/source/angelwrap/CMakeLists.txt.orig
 +++ source/source/angelwrap/CMakeLists.txt
-@@ -22,10 +22,5 @@ else ()
+@@ -15,17 +15,10 @@ file(GLOB angelwrap_SOURCES
+     "../gameshared/q_*.c"
+ )
+ 
+-if (${CMAKE_SYSTEM_NAME} MATCHES "Linux")
+-	set(ANGELWRAP_PLATFORM_LIBRARIES "pthread")
+-else ()
+-        set(ANGELWRAP_PLATFORM_LIBRARIES "")
++if (UNIX AND NOT APPLE)
++	set(ANGELWRAP_PLATFORM_LIBRARIES pthread)
  endif()
  
  add_library(angelwrap SHARED ${angelwrap_SOURCES} ${angelwrap_HEADERS})

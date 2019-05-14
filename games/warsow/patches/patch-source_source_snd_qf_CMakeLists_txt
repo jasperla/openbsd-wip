@@ -3,7 +3,7 @@ $OpenBSD$
 Index: source/source/snd_qf/CMakeLists.txt
 --- source/source/snd_qf/CMakeLists.txt.orig
 +++ source/source/snd_qf/CMakeLists.txt
-@@ -18,12 +18,12 @@ file(GLOB SND_QF_SOURCES
+@@ -18,15 +18,13 @@ file(GLOB SND_QF_SOURCES
      "../gameshared/q_*.c"
  )
  
@@ -14,7 +14,11 @@ Index: source/source/snd_qf/CMakeLists.txt
      )
  
 -    if (${CMAKE_SYSTEM_NAME} MATCHES "Linux")
+-	set(SND_QF_PLATFORM_LIBRARIES ${SDL2_LIBRARY} "m")
+-    else()
+-	set(SND_QF_PLATFORM_LIBRARIES ${SDL2_LIBRARY})
 +    if (UNIX AND NOT APPLE)
- 	set(SND_QF_PLATFORM_LIBRARIES ${SDL2_LIBRARY} "m")
-     else()
- 	set(SND_QF_PLATFORM_LIBRARIES ${SDL2_LIBRARY})
++	set(SND_QF_PLATFORM_LIBRARIES ${SDL2_LIBRARY} m)
+     endif()
+ else()
+     file(GLOB SND_QF_PLATFORM_SOURCES

@@ -1,0 +1,16 @@
+$OpenBSD$
+
+Index: source/source/cmake/FindSDL2.cmake
+--- source/source/cmake/FindSDL2.cmake.orig
++++ source/source/cmake/FindSDL2.cmake
+@@ -69,8 +69,10 @@ SET(SDL2_SEARCH_PATHS
+ 	~/Library/Frameworks
+ 	/Library/Frameworks
+ 	/usr/local
++	/usr/pkg # pkgsrc
+ 	/usr
+ 	/sw # Fink
++	/raven # Ravenports
+ 	/opt/local # DarwinPorts
+ 	/opt/csw # Blastwave
+ 	/opt

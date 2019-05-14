@@ -3,15 +3,24 @@ $OpenBSD$
 Index: source/source/server/CMakeLists.txt
 --- source/source/server/CMakeLists.txt.orig
 +++ source/source/server/CMakeLists.txt
+@@ -65,7 +65,7 @@ if (${CMAKE_SYSTEM_NAME} MATCHES "Windows")
+         "../win32/conproc.c"
+     )
+ 
+-    set(SERVER_PLATFORM_LIBRARIES "ws2_32.lib" "winmm.lib")
++    set(SERVER_PLATFORM_LIBRARIES ws2_32.lib winmm.lib)
+     set(SERVER_BINARY_TYPE WIN32)
+ else()
+     file(GLOB SERVER_PLATFORM_SOURCES 
 @@ -79,7 +79,12 @@ else()
          "../null/sys_vfs_null.c"
      )
  
 -    set(SERVER_PLATFORM_LIBRARIES "pthread" "dl" "m")
 +    if (${CMAKE_SYSTEM_NAME} MATCHES "Linux")
-+        set(SERVER_PLATFORM_LIBRARIES "pthread" "dl" "m")
++        set(SERVER_PLATFORM_LIBRARIES pthread dl m)
 +    else()
-+        set(SERVER_PLATFORM_LIBRARIES "pthread" "m")
++        set(SERVER_PLATFORM_LIBRARIES pthread m)
 +    endif()
 +
      set(SERVER_BINARY_TYPE "")
