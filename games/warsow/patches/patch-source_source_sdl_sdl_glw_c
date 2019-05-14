@@ -1,0 +1,14 @@
+$OpenBSD$
+
+Index: source/source/sdl/sdl_glw.c
+--- source/source/sdl/sdl_glw.c.orig
++++ source/source/sdl/sdl_glw.c
+@@ -30,7 +30,7 @@ static int GLimp_InitGL( int stencilbits, bool stereo 
+ 
+ void GLimp_SetWindowIcon( void )
+ {
+-#ifndef __APPLE__
++#if !(defined __APPLE__ || defined __OpenBSD__)
+ 	const int *xpm_icon = glw_state.applicationIcon;
+ 
+ 	if( xpm_icon )
