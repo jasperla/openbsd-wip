@@ -1,0 +1,185 @@
+GNU gdb (GDB) 7.12.1
+Copyright (C) 2017 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-unknown-openbsd6.5".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from warsow...done.
+[?1034h(gdb) r
+Starting program: /usr/local/bin/warsow 
+[New thread 279793]
+
+Thread 1 received signal SIGSEGV, Segmentation fault.
+0x0000000ebf1ba3dd in SDL_memcpyMMX (dst=0xe51fdbc00 "", src=0xe4d57ec08 "", 
+    len=1024)
+    at /usr/local/pobj/sdl2-2.0.9/SDL2-2.0.9/src/video/SDL_blit_copy.c:76
+76	        d64[7] = s64[7];
+(gdb) br[Kt
+#0  0x0000000ebf1ba3dd in SDL_memcpyMMX (dst=0xe51fdbc00 "", 
+    src=0xe4d57ec08 "", len=1024)
+    at /usr/local/pobj/sdl2-2.0.9/SDL2-2.0.9/src/video/SDL_blit_copy.c:76
+#1  0x0000000ebf1ba0b1 in SDL_BlitCopy (info=0xe3bea68a0)
+    at /usr/local/pobj/sdl2-2.0.9/SDL2-2.0.9/src/video/SDL_blit_copy.c:146
+#2  0x0000000ebf164053 in SDL_SoftBlit (src=0xe3bea6400, 
+    srcrect=0x7f7ffffd7ed8, dst=0xe43fa9480, dstrect=0x7f7ffffd7ed8)
+    at /usr/local/pobj/sdl2-2.0.9/SDL2-2.0.9/src/video/SDL_blit.c:88
+#3  0x0000000ebf1c9038 in SDL_LowerBlit_REAL (src=0xe3bea6400, 
+    srcrect=0x7f7ffffd7ed8, dst=0xe43fa9480, dstrect=0x7f7ffffd7ed8)
+    at /usr/local/pobj/sdl2-2.0.9/SDL2-2.0.9/src/video/SDL_surface.c:606
+#4  0x0000000ebf1ca240 in SDL_ConvertSurface_REAL (surface=0xe3bea6400, 
+    format=0xef9fcc380, flags=0)
+    at /usr/local/pobj/sdl2-2.0.9/SDL2-2.0.9/src/video/SDL_surface.c:1006
+#5  0x0000000ebf1ca92e in SDL_ConvertSurfaceFormat_REAL (surface=0xe3bea6400, 
+    pixel_format=372645892, flags=0)
+    at /usr/local/pobj/sdl2-2.0.9/SDL2-2.0.9/src/video/SDL_surface.c:1104
+#6  0x0000000ebf1d1b15 in SDL_SetWindowIcon_REAL (window=0xe6fd7ad00, 
+    icon=0xe3bea6400)
+    at /usr/local/pobj/sdl2-2.0.9/SDL2-2.0.9/src/video/SDL_video.c:1781
+#7  0x0000000ebf0cfcf1 in SDL_SetWindowIcon (a=0xe6fd7ad00, b=0xe3bea6400)
+    at /usr/local/pobj/sdl2-2.0.9/SDL2-2.0.9/src/dynapi/SDL_dynapi_procs.h:549
+#8  0x0000000e55cad98e in GLimp_SetWindowIcon ()
+    at /usr/local/pobj/warsow-2.1/warsow_21_sdk/source/source/sdl/sdl_glw.c:47
+#9  0x0000000e55cadd90 in GLimp_CreateWindow (x=-1, y=-1, width=1366, 
+    height=768)
+    at /usr/local/pobj/warsow-2.1/warsow_21_sdk/source/source/sdl/sdl_glw.c:89
+#10 0x0000000e55cadb3d in GLimp_SetMode (x=-1, y=-1, width=1366, height=768, 
+    displayFrequency=0, fullscreen=false, stereo=false)
+    at /usr/local/pobj/warsow-2.1/warsow_21_sdk/source/source/sdl/sdl_glw.c:111
+#11 0x0000000e55c7b151 in R_SetMode (x=-1, y=-1, width=1366, height=768, 
+    displayFrequency=0, fullScreen=false, stereo=false)
+    at /usr/local/pobj/warsow-2.1/warsow_21_sdk/source/source/ref_gl/r_register.c:1398
+#12 0x0000000e55c43b9d in RF_SetMode (x=-1, y=-1, width=1366, height=768, 
+    displayFrequency=0, fullScreen=false, stereo=false)
+    at /usr/local/pobj/warsow-2.1/warsow_21_sdk/source/source/ref_gl/r_frontend.c:218
+#13 0x0000000c24597437 in VID_ChangeMode ()
+    at /usr/local/pobj/warsow-2.1/warsow_21_sdk/source/source/client/cl_vid.c:202
+#14 0x0000000c245971ca in VID_CheckChanges ()
+    at /usr/local/pobj/warsow-2.1/warsow_21_sdk/source/source/client/cl_vid.c:601
+#15 0x0000000c2459846d in VID_Init ()
+    at /usr/local/pobj/warsow-2.1/warsow_21_sdk/source/source/client/cl_vid.c:740
+#16 0x0000000c2458573f in CL_Init ()
+    at /usr/local/pobj/warsow-2.1/warsow_21_sdk/source/source/client/cl_main.c:3079
+#17 0x0000000c24530c7b in Qcommon_Init (argc=1, argv=0x7f7ffffd8458)
+    at /usr/local/pobj/warsow-2.1/warsow_21_sdk/source/source/qcommon/common.c:1004
+#18 0x0000000c245bdc7f in main (argc=1, argv=0x7f7ffffd8458)
+    at /usr/local/pobj/warsow-2.1/warsow_21_sdk/source/source/sdl/sdl_sys.c:121
+(gdb) bt full
+#0  0x0000000ebf1ba3dd in SDL_memcpyMMX (dst=0xe51fdbc00 "", 
+    src=0xe4d57ec08 "", len=1024)
+    at /usr/local/pobj/sdl2-2.0.9/SDL2-2.0.9/src/video/SDL_blit_copy.c:76
+        remain = 0
+        i = 0
+        d64 = 0xe51fdbfc0
+        s64 = 0xe4d57efc8
+#1  0x0000000ebf1ba0b1 in SDL_BlitCopy (info=0xe3bea68a0)
+    at /usr/local/pobj/sdl2-2.0.9/SDL2-2.0.9/src/video/SDL_blit_copy.c:146
+        overlap = SDL_FALSE
+        src = 0xe4d57ec08 ""
+        dst = 0xe51fdbc00 ""
+        w = 1024
+        h = 0
+        srcskip = 1024
+        dstskip = 1024
+#2  0x0000000ebf164053 in SDL_SoftBlit (src=0xe3bea6400, 
+    srcrect=0x7f7ffffd7ed8, dst=0xe43fa9480, dstrect=0x7f7ffffd7ed8)
+    at /usr/local/pobj/sdl2-2.0.9/SDL2-2.0.9/src/video/SDL_blit.c:88
+        RunBlit = 0xebf1b9de0 <SDL_BlitCopy>
+        info = 0xe3bea68a0
+        okay = 1
+        src_locked = 0
+        dst_locked = 0
+#3  0x0000000ebf1c9038 in SDL_LowerBlit_REAL (src=0xe3bea6400, 
+    srcrect=0x7f7ffffd7ed8, dst=0xe43fa9480, dstrect=0x7f7ffffd7ed8)
+    at /usr/local/pobj/sdl2-2.0.9/SDL2-2.0.9/src/video/SDL_surface.c:606
+No locals.
+#4  0x0000000ebf1ca240 in SDL_ConvertSurface_REAL (surface=0xe3bea6400, 
+    format=0xef9fcc380, flags=0)
+    at /usr/local/pobj/sdl2-2.0.9/SDL2-2.0.9/src/video/SDL_surface.c:1006
+        convert = 0xe43fa9480
+        copy_flags = 16
+        copy_color = {r = 255 '\377', g = 255 '\377', b = 255 '\377', 
+          a = 255 '\377'}
+        bounds = {x = 0, y = 0, w = 256, h = 256}
+#5  0x0000000ebf1ca92e in SDL_ConvertSurfaceFormat_REAL (surface=0xe3bea6400, 
+    pixel_format=372645892, flags=0)
+    at /usr/local/pobj/sdl2-2.0.9/SDL2-2.0.9/src/video/SDL_surface.c:1104
+        fmt = 0xef9fcc380
+        convert = 0x0
+#6  0x0000000ebf1d1b15 in SDL_SetWindowIcon_REAL (window=0xe6fd7ad00, 
+    icon=0xe3bea6400)
+    at /usr/local/pobj/sdl2-2.0.9/SDL2-2.0.9/src/video/SDL_video.c:1781
+        sdl_assert_data = {always_ignore = 0, trigger_count = 0, 
+          condition = 0xebf07d6a0 "window && window->magic == &_this->window_magic", filename = 0x0, linenum = 0, function = 0x0, next = 0x0}
+#7  0x0000000ebf0cfcf1 in SDL_SetWindowIcon (a=0xe6fd7ad00, b=0xe3bea6400)
+    at /usr/local/pobj/sdl2-2.0.9/SDL2-2.0.9/src/dynapi/SDL_dynapi_procs.h:549
+No locals.
+#8  0x0000000e55cad98e in GLimp_SetWindowIcon ()
+    at /usr/local/pobj/warsow-2.1/warsow_21_sdk/source/source/sdl/sdl_glw.c:47
+        surface = 0xe3bea6400
+        xpm_icon = 0xe4d53f000
+#9  0x0000000e55cadd90 in GLimp_CreateWindow (x=-1, y=-1, width=1366, 
+    height=768)
+    at /usr/local/pobj/warsow-2.1/warsow_21_sdk/source/source/sdl/sdl_glw.c:89
+No locals.
+#10 0x0000000e55cadb3d in GLimp_SetMode (x=-1, y=-1, width=1366, height=768, 
+    displayFrequency=0, fullscreen=false, stereo=false)
+    at /usr/local/pobj/warsow-2.1/warsow_21_sdk/source/source/sdl/sdl_glw.c:111
+        win_fs = {0xe55c19a17 "W", 0xe55c1b797 "FS"}
+#11 0x0000000e55c7b151 in R_SetMode (x=-1, y=-1, width=1366, height=768, 
+    displayFrequency=0, fullScreen=false, stereo=false)
+    at /usr/local/pobj/warsow-2.1/warsow_21_sdk/source/source/ref_gl/r_register.c:1398
+        err = 609597294
+#12 0x0000000e55c43b9d in RF_SetMode (x=-1, y=-1, width=1366, height=768, 
+    displayFrequency=0, fullScreen=false, stereo=false)
+    at /usr/local/pobj/warsow-2.1/warsow_21_sdk/source/source/ref_gl/r_frontend.c:218
+        err = 609425534
+#13 0x0000000c24597437 in VID_ChangeMode ()
+    at /usr/local/pobj/warsow-2.1/warsow_21_sdk/source/source/client/cl_vid.c:202
+        x = -1
+        y = -1
+        w = 1366
+        h = 768
+        disp_freq = 0
+        fs = false
+        err = 609845304
+        stereo = false
+#14 0x0000000c245971ca in VID_CheckChanges ()
+    at /usr/local/pobj/warsow-2.1/warsow_21_sdk/source/source/client/cl_vid.c:601
+        cgameActive = false
+        num = "X\204\375\377\177\177\000\000\000\000\000\000\000\000\000"
+        err = rserr_ok
+        vid_ref_was_active = false
+        verbose = true
+#15 0x0000000c2459846d in VID_Init ()
+    at /usr/local/pobj/warsow-2.1/warsow_21_sdk/source/source/client/cl_vid.c:740
+No locals.
+#16 0x0000000c2458573f in CL_Init ()
+    at /usr/local/pobj/warsow-2.1/warsow_21_sdk/source/source/client/cl_main.c:3079
+        address = {type = 4085022016, address = {ipv4 = {ip = "@\211\300U", 
+              port = 14}, ipv6 = {
+              ip = "@\211\300U\016\000\000\000@\207\300U\016\000\000", 
+              port = 33344, scope_id = 64214563136}}}
+        cl_port = 0xef37c7d40
+        cl_port6 = 0xc244e3020
+#17 0x0000000c24530c7b in Qcommon_Init (argc=1, argv=0x7f7ffffd8458)
+    at /usr/local/pobj/warsow-2.1/warsow_21_sdk/source/source/qcommon/common.c:1004
+No locals.
+#18 0x0000000c245bdc7f in main (argc=1, argv=0x7f7ffffd8458)
+    at /usr/local/pobj/warsow-2.1/warsow_21_sdk/source/source/sdl/sdl_sys.c:121
+        oldtime = 4182417798
+        newtime = 3933247479
+        time = 0
+(gdb) quit[K[K[K[Kcontinue
+Continuing.
+
+Program terminated with signal SIGSEGV, Segmentation fault.
+The program no longer exists.
+(gdb) quit
