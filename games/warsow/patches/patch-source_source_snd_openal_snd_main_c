@@ -1,0 +1,25 @@
+$OpenBSD$
+
+Index: source/source/snd_openal/snd_main.c
+--- source/source/snd_openal/snd_main.c.orig
++++ source/source/snd_openal/snd_main.c
+@@ -113,19 +113,6 @@ bool SF_Init( void *hwnd, int maxEntities, bool verbos
+ 	
+ 	s_num_ent_spats = 0;
+ 
+-#ifdef OPENAL_RUNTIME
+-	if( !QAL_Init( ALDRIVER, verbose ) )
+-	{
+-#ifdef ALDRIVER_ALT
+-		if( !QAL_Init( ALDRIVER_ALT, verbose ) )
+-#endif
+-		{
+-			Com_Printf( "Failed to load OpenAL library: %s\n", ALDRIVER );
+-			return false;
+-		}
+-	}
+-#endif
+-
+ 	s_volume = trap_Cvar_Get( "s_volume", "0.8", CVAR_ARCHIVE );
+ 	s_musicvolume = trap_Cvar_Get( "s_musicvolume", "0.15", CVAR_ARCHIVE );
+ 	s_doppler = trap_Cvar_Get( "s_doppler", "1.0", CVAR_ARCHIVE );

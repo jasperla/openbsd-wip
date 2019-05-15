@@ -1,0 +1,14 @@
+$OpenBSD$
+
+Index: source/source/snd_openal/snd_local.h
+--- source/source/snd_openal/snd_local.h.orig
++++ source/source/snd_openal/snd_local.h
+@@ -19,8 +19,6 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston,
+ */
+ // snd_local.h -- private OpenAL sound functions
+ 
+-//#define VORBISLIB_RUNTIME // enable this define for dynamic linked vorbis libraries
+-
+ // it's in qcommon.h too, but we don't include it for modules
+ typedef struct { char *name; void **funcPointer; } dllfunc_t;
+ 

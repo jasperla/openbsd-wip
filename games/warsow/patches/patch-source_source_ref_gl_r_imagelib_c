@@ -1,0 +1,181 @@
+$OpenBSD$
+
+Index: source/source/ref_gl/r_imagelib.c
+--- source/source/ref_gl/r_imagelib.c.orig
++++ source/source/ref_gl/r_imagelib.c
+@@ -46,46 +46,6 @@ LIBS LOADING
+ 
+ void *jpegLibrary = NULL;
+ 
+-#ifdef LIBJPEG_RUNTIME
+-
+-static boolean (*qjpeg_resync_to_restart)(j_decompress_ptr, int);
+-static void (*qjpeg_CreateCompress)(j_compress_ptr, int, size_t);
+-static void (*qjpeg_CreateDecompress)(j_decompress_ptr, int, size_t);
+-static int (*qjpeg_read_header)(j_decompress_ptr, boolean);
+-static boolean (*qjpeg_start_decompress)(j_decompress_ptr cinfo);
+-static JDIMENSION (*qjpeg_read_scanlines)(j_decompress_ptr, JSAMPARRAY, JDIMENSION);
+-static struct jpeg_error_mgr *(*qjpeg_std_error)(struct jpeg_error_mgr * err);
+-static boolean (*qjpeg_finish_decompress)(j_decompress_ptr cinfo);
+-static void (*qjpeg_destroy_decompress)(j_decompress_ptr cinfo);
+-static void (*qjpeg_start_compress)(j_compress_ptr, boolean);
+-static void (*qjpeg_set_defaults)(j_compress_ptr cinfo);
+-static void (*qjpeg_set_quality)(j_compress_ptr, int, boolean);
+-static JDIMENSION (*qjpeg_write_scanlines)(j_compress_ptr, JSAMPARRAY scanlines, JDIMENSION);
+-static void (*qjpeg_finish_compress)(j_compress_ptr cinfo);
+-static void (*qjpeg_destroy_compress)(j_compress_ptr cinfo);
+-
+-static dllfunc_t libjpegfuncs[] =
+-{
+-	{ "jpeg_resync_to_restart", ( void ** )&qjpeg_resync_to_restart },
+-	{ "jpeg_CreateCompress", ( void ** )&qjpeg_CreateCompress },
+-	{ "jpeg_CreateDecompress", ( void ** )&qjpeg_CreateDecompress },
+-	{ "jpeg_read_header", ( void ** )&qjpeg_read_header },
+-	{ "jpeg_start_decompress", ( void ** )&qjpeg_start_decompress },
+-	{ "jpeg_read_scanlines", ( void ** )&qjpeg_read_scanlines },
+-	{ "jpeg_std_error", ( void ** )&qjpeg_std_error },
+-	{ "jpeg_finish_decompress", ( void ** )&qjpeg_finish_decompress },
+-	{ "jpeg_destroy_decompress", ( void ** )&qjpeg_destroy_decompress },
+-	{ "jpeg_start_compress", ( void ** )&qjpeg_start_compress },
+-	{ "jpeg_set_defaults", ( void ** )&qjpeg_set_defaults },
+-	{ "jpeg_set_quality", ( void ** )&qjpeg_set_quality },
+-	{ "jpeg_write_scanlines", ( void ** )&qjpeg_write_scanlines },
+-	{ "jpeg_finish_compress", ( void ** )&qjpeg_finish_compress },
+-	{ "jpeg_destroy_compress", ( void ** )&qjpeg_destroy_compress },
+-	{ NULL, NULL }
+-};
+-
+-#else
+-
+ #define qjpeg_resync_to_restart jpeg_resync_to_restart
+ #define qjpeg_CreateCompress jpeg_CreateCompress
+ #define qjpeg_CreateDecompress jpeg_CreateDecompress
+@@ -102,17 +62,11 @@ static dllfunc_t libjpegfuncs[] =
+ #define qjpeg_finish_compress jpeg_finish_compress
+ #define qjpeg_destroy_compress jpeg_destroy_compress
+ 
+-#endif
+-
+ /*
+ * R_Imagelib_UnloadLibjpeg
+ */
+ static void R_Imagelib_UnloadLibjpeg( void )
+ {
+-#ifdef LIBJPEG_RUNTIME
+-	if( jpegLibrary )
+-		ri.Com_UnloadLibrary( &jpegLibrary );
+-#endif
+ 	jpegLibrary = NULL;
+ }
+ 
+@@ -123,78 +77,13 @@ static void R_Imagelib_LoadLibjpeg( void )
+ {
+ 	R_Imagelib_UnloadLibjpeg();
+ 
+-#ifdef LIBJPEG_RUNTIME
+-	jpegLibrary = ri.Com_LoadSysLibrary( LIBJPEG_LIBNAME, libjpegfuncs );
+-#else
+ 	jpegLibrary = (void *)1;
+-#endif
+ }
+ 
+ // ======================================================
+ 
+ void *pngLibrary = NULL;
+ 
+-#ifdef LIBPNG_RUNTIME
+-
+-#ifndef PNGAPI
+-#define PNGAPI
+-#endif
+-
+-static int (PNGAPI *qpng_sig_cmp)(png_bytep, png_size_t, png_size_t);
+-static png_uint_32 (PNGAPI *qpng_access_version_number)(void);
+-static png_structp (PNGAPI *qpng_create_read_struct)(png_const_charp, png_voidp, png_error_ptr, png_error_ptr);
+-static png_infop (PNGAPI *qpng_create_info_struct)(png_structp png_ptr);
+-static void (PNGAPI *qpng_set_read_fn)(png_structp, png_voidp, png_rw_ptr);
+-static void (PNGAPI *qpng_set_sig_bytes)(png_structp, int);
+-static void (PNGAPI *qpng_read_info)(png_structp, png_infop);
+-static png_uint_32 (PNGAPI *qpng_get_IHDR)(png_structp, png_infop, png_uint_32 *, png_uint_32 *, int *, int *, int *, int *, int *);
+-static png_uint_32 (PNGAPI *qpng_get_valid)(png_structp, png_infop, png_uint_32);
+-static void (PNGAPI *qpng_set_palette_to_rgb)(png_structp);
+-static void (PNGAPI *qpng_set_gray_to_rgb)(png_structp);
+-static void (PNGAPI *qpng_set_tRNS_to_alpha)(png_structp);
+-static void (PNGAPI *qpng_set_expand)(png_structp);
+-static void (PNGAPI *qpng_read_update_info)(png_structp, png_infop);
+-static png_uint_32 (PNGAPI *qpng_get_rowbytes)(png_structp, png_infop);
+-static void (PNGAPI *qpng_read_image)(png_structp, png_bytepp);
+-static void (PNGAPI *qpng_read_end)(png_structp, png_infop);
+-static void (PNGAPI *qpng_destroy_read_struct)(png_structpp, png_infopp, png_infopp);
+-static png_voidp (PNGAPI *qpng_get_io_ptr)(png_structp);
+-
+-// Error handling in libpng pre-1.4 and 1.4+.
+-// In older versions, the jmp_buf is in the only public field of the struct, which is the first field.
+-// In 1.4 and newer, it is configured using png_set_longjmp_fn.
+-typedef void (*qpng_longjmp_ptr)(jmp_buf, int);
+-static jmp_buf *(PNGAPI *qpng_set_longjmp_fn)(png_structp, qpng_longjmp_ptr, size_t);
+-#define qpng_jmpbuf( png_ptr ) ( qpng_set_longjmp_fn ? \
+-	 *qpng_set_longjmp_fn( ( png_ptr ), longjmp, sizeof( jmp_buf ) ) : \
+-	 *( ( jmp_buf * )png_ptr ) )
+-
+-static dllfunc_t libpngfuncs[] =
+-{
+-	{ "png_sig_cmp", ( void ** )&qpng_sig_cmp },
+-	{ "png_access_version_number", ( void ** )&qpng_access_version_number },
+-	{ "png_create_read_struct", ( void ** )&qpng_create_read_struct },
+-	{ "png_create_info_struct", ( void ** )&qpng_create_info_struct },
+-	{ "png_set_read_fn", ( void ** )&qpng_set_read_fn },
+-	{ "png_set_sig_bytes", ( void ** )&qpng_set_sig_bytes },
+-	{ "png_read_info", ( void ** )&qpng_read_info },
+-	{ "png_get_IHDR", ( void ** )&qpng_get_IHDR },
+-	{ "png_get_valid", ( void ** )&qpng_get_valid },
+-	{ "png_set_palette_to_rgb", ( void ** )&qpng_set_palette_to_rgb },
+-	{ "png_set_gray_to_rgb", ( void ** )&qpng_set_gray_to_rgb },
+-	{ "png_set_tRNS_to_alpha", ( void ** )&qpng_set_tRNS_to_alpha },
+-	{ "png_set_expand", ( void ** )&qpng_set_expand },
+-	{ "png_read_update_info", ( void ** )&qpng_read_update_info },
+-	{ "png_get_rowbytes", ( void ** )&qpng_get_rowbytes },
+-	{ "png_read_image", ( void ** )&qpng_read_image },
+-	{ "png_read_end", ( void ** )&qpng_read_end },
+-	{ "png_destroy_read_struct", ( void ** )&qpng_destroy_read_struct },
+-	{ "png_get_io_ptr", ( void ** )&qpng_get_io_ptr },
+-	{ NULL, NULL }
+-};
+-
+-#else
+-
+ #define qpng_sig_cmp png_sig_cmp
+ #define qpng_access_version_number png_access_version_number
+ #define qpng_create_read_struct png_create_read_struct
+@@ -216,17 +105,11 @@ static dllfunc_t libpngfuncs[] =
+ #define qpng_destroy_read_struct png_destroy_read_struct
+ #define qpng_get_io_ptr png_get_io_ptr
+ 
+-#endif
+-
+ /*
+ * R_Imagelib_UnloadLibpng
+ */
+ static void R_Imagelib_UnloadLibpng( void )
+ {
+-#ifdef LIBPNG_RUNTIME
+-	if( pngLibrary )
+-		ri.Com_UnloadLibrary( &pngLibrary );
+-#endif
+ 	pngLibrary = NULL;
+ }
+ 
+@@ -237,13 +120,7 @@ static void R_Imagelib_LoadLibpng( void )
+ {
+ 	R_Imagelib_UnloadLibpng();
+ 
+-#ifdef LIBPNG_RUNTIME
+-	pngLibrary = ri.Com_LoadSysLibrary( LIBPNG_LIBNAME, libpngfuncs );
+-	if( pngLibrary )
+-		qpng_set_longjmp_fn = ri.Com_LibraryProcAddress( pngLibrary, "png_set_longjmp_fn" );
+-#else
+ 	pngLibrary =  (void *)1;
+-#endif
+ }
+ 
+ // ======================================================

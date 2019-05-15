@@ -22,8 +22,7 @@ MASTER_SITES =	http://sebastian.network/warsow/ \
 
 MODULES =	devel/cmake
 
-RUN_DEPENDS =	audio/openal \
-		devel/desktop-file-utils \
+RUN_DEPENDS =	devel/desktop-file-utils \
 		games/warsow-data
 LIB_DEPENDS =	audio/libvorbis \
 		devel/sdl2 \

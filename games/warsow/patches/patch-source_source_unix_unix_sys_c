@@ -3,22 +3,28 @@ $OpenBSD$
 Index: source/source/unix/unix_sys.c
 --- source/source/unix/unix_sys.c.orig
 +++ source/source/unix/unix_sys.c
-@@ -28,6 +28,9 @@ FIXME:  This will be remidied once a native Mac port i
+@@ -24,12 +24,12 @@ FIXME:  This will be remidied once a native Mac port i
+ #if defined ( __APPLE__ ) && !defined ( DEDICATED_ONLY )
+ #include <SDL.h>
+ #include <CoreFoundation/CoreFoundation.h>
+-#include <sys/param.h>
  #endif
  
  #include <signal.h>
-+#ifndef SIGIOT
-+#define SIGIOT	SIGABRT
-+#endif
  #include <stdlib.h>
  #include <limits.h>
++#include <sys/param.h>
  #include <sys/time.h>
-@@ -43,7 +46,7 @@ FIXME:  This will be remidied once a native Mac port i
+ #include <sys/types.h>
+ #include <unistd.h>
+@@ -42,10 +42,6 @@ FIXME:  This will be remidied once a native Mac port i
+ #include <sys/mman.h>
  #include <errno.h>
  #include <locale.h>
- 
+-
 -#if defined ( __FreeBSD__ )
-+#if defined ( __FreeBSD__ ) || defined( __OpenBSD__ ) || defined( __NetBSD__ ) || defined( __DragonFly__ )
- #include <machine/param.h>
- #endif
+-#include <machine/param.h>
+-#endif
  
+ #include "../qcommon/qcommon.h"
+ #include "glob.h"

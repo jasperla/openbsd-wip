@@ -1,0 +1,132 @@
+$OpenBSD$
+
+Index: source/source/qcommon/wswcurl.c
+--- source/source/qcommon/wswcurl.c.orig
++++ source/source/qcommon/wswcurl.c
+@@ -140,59 +140,6 @@ static void *curlLibrary = NULL;
+ static void *cryptoLibrary = NULL;
+ #endif
+ 
+-#ifdef LIBCURL_RUNTIME
+-
+-static CURLFORMcode (*qcurl_formadd)(struct curl_httppost **, struct curl_httppost **, ...);
+-static CURLcode (*qcurl_easy_setopt)(CURL *, CURLoption, ...);
+-static CURL *(*qcurl_easy_init)(void);
+-static char *(*qcurl_easy_escape)(CURL *, const char *, int );
+-static char *(*qcurl_easy_unescape)(CURL *, const char *, int , int *);
+-static void (*qcurl_free)(void *);
+-static CURLM *(*qcurl_multi_init)(void);
+-static CURLMcode (*qcurl_multi_cleanup)(CURLM *);
+-static CURLMcode (*qcurl_multi_perform)(CURLM *, int *);
+-static CURLMcode (*qcurl_multi_add_handle)(CURLM *, CURL *);
+-static CURLMcode (*qcurl_multi_remove_handle)(CURLM *, CURL *);
+-static struct curl_slist *(*qcurl_slist_append)(struct curl_slist *, const char *);
+-static void (*qcurl_slist_free_all)(struct curl_slist *);
+-static void (*qcurl_formfree)(struct curl_httppost *);
+-static void (*qcurl_easy_cleanup)(CURL *);
+-static CURLcode (*qcurl_easy_getinfo)(CURL *, CURLINFO , ...);
+-static const char *(*qcurl_easy_strerror)(CURLcode);
+-static CURLMsg *(*qcurl_multi_info_read)(CURLM *, int *);
+-static CURLcode (*qcurl_easy_pause)(CURL *, int );
+-static CURLcode (*qcurl_global_init)(long flags);
+-static void (*qcurl_global_cleanup)(void);
+-
+-static dllfunc_t libcurlfuncs[] =
+-{
+-	{ "curl_formadd", ( void ** )&qcurl_formadd },
+-	{ "curl_easy_setopt", ( void ** )&qcurl_easy_setopt },
+-	{ "curl_easy_init", ( void ** )&qcurl_easy_init },
+-	{ "curl_easy_escape", ( void ** )&qcurl_easy_escape },
+-	{ "curl_easy_unescape", ( void ** )&qcurl_easy_unescape },
+-	{ "curl_free", ( void ** )&qcurl_free },
+-	{ "curl_multi_init", ( void ** )&qcurl_multi_init },
+-	{ "curl_multi_cleanup", ( void ** )&qcurl_multi_cleanup },
+-	{ "curl_multi_perform", ( void ** )&qcurl_multi_perform },
+-	{ "curl_multi_add_handle", ( void ** )&qcurl_multi_add_handle },
+-	{ "curl_multi_remove_handle", ( void ** )&qcurl_multi_remove_handle },
+-	{ "curl_slist_append", ( void ** )&qcurl_slist_append },
+-	{ "curl_slist_free_all", ( void ** )&qcurl_slist_free_all },
+-	{ "curl_formfree", ( void ** )&qcurl_formfree },
+-	{ "curl_easy_cleanup", ( void ** )&qcurl_easy_cleanup },
+-	{ "curl_easy_getinfo", ( void ** )&qcurl_easy_getinfo },
+-	{ "curl_easy_strerror", ( void ** )&qcurl_easy_strerror },
+-	{ "curl_multi_info_read", ( void ** )&qcurl_multi_info_read },
+-	{ "curl_easy_pause", ( void ** )&qcurl_easy_pause },
+-	{ "curl_global_init", ( void ** )&qcurl_global_init },
+-	{ "curl_global_cleanup", ( void ** )&qcurl_global_cleanup },
+-
+-	{ NULL, NULL }
+-};
+-
+-#else
+-
+ #define qcurl_formadd curl_formadd
+ #define qcurl_easy_setopt curl_easy_setopt
+ #define qcurl_easy_init curl_easy_init
+@@ -215,47 +162,22 @@ static dllfunc_t libcurlfuncs[] =
+ #define qcurl_global_init curl_global_init
+ #define qcurl_global_cleanup curl_global_cleanup
+ 
+-#endif
+-
+ #ifdef USE_OPENSSL
+ 
+-#ifdef LIBCRYPTO_RUNTIME
+-
+-static int ( *qCRYPTO_num_locks )( void );
+-static void ( *qCRYPTO_set_locking_callback )( void ( *func )( int mode, int type, const char *file, int line ) );
+-static dllfunc_t libcryptofuncs[] =
+-{
+-	{ "CRYPTO_num_locks", ( void ** )&qCRYPTO_num_locks },
+-	{ "CRYPTO_set_locking_callback", ( void ** )&qCRYPTO_set_locking_callback },
+-	{ NULL, NULL }
+-};
+-
+-#else
+-
+ #define qCRYPTO_num_locks CRYPTO_num_locks
+ #define qCRYPTO_set_locking_callback CRYPTO_set_locking_callback
+ 
+ #endif
+ 
+-#endif
+-
+ /*
+ * wswcurl_unloadlib
+ */
+ static void wswcurl_unloadlib( void )
+ {
+ #ifdef USE_OPENSSL
+-#ifdef LIBCRYPTO_RUNTIME
+-	if( cryptoLibrary )
+-		Com_UnloadLibrary( &cryptoLibrary );
+-#endif
+ 	cryptoLibrary = NULL;
+ #endif
+ 
+-#ifdef LIBCURL_RUNTIME
+-	if( curlLibrary )
+-		Com_UnloadLibrary( &curlLibrary );
+-#endif
+ 	curlLibrary = NULL;
+ }
+ 
+@@ -266,18 +188,10 @@ static void wswcurl_loadlib( void )
+ {
+ 	wswcurl_unloadlib();
+ 
+-#ifdef LIBCURL_RUNTIME
+-	curlLibrary = Com_LoadSysLibrary( LIBCURL_LIBNAME, libcurlfuncs );
+-#else
+ 	curlLibrary = (void *)1;
+-#endif
+ 
+ #ifdef USE_OPENSSL
+-#ifdef LIBCRYPTO_RUNTIME
+-	cryptoLibrary = Com_LoadSysLibrary( LIBCRYPTO_LIBNAME, libcryptofuncs );
+-#else
+ 	cryptoLibrary = (void *)1;
+-#endif
+ #endif
+ }
+ 

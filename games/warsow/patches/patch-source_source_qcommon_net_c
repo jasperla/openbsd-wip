@@ -1,0 +1,14 @@
+$OpenBSD$
+
+Index: source/source/qcommon/net.c
+--- source/source/qcommon/net.c.orig
++++ source/source/qcommon/net.c
+@@ -41,7 +41,7 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston,
+ #	define SHUT_RDWR SD_BOTH
+ #endif
+ 
+-#if ( defined ( __FreeBSD__ ) && ( __FreeBSD_version < 600020 ) || defined ( __APPLE__ ) )
++#if defined ( __APPLE__ )
+ #	define USE_TCP_NOSIGPIPE
+ #endif
+ 
