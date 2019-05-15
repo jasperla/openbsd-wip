@@ -1,0 +1,14 @@
+$OpenBSD$
+
+Index: source/source/irc/irc_logic.c
+--- source/source/irc/irc_logic.c.orig
++++ source/source/irc/irc_logic.c
+@@ -545,7 +545,7 @@ static void Irc_Logic_CmdPrivmsg_f(irc_command_t cmd, 
+ 					; // NOT SUPPORTED
+ 				else if (!strcmp(trailing + 1, "VERSION" IRC_CTCP_MARKER_STR))
+ 					// The version and type of the client.
+-					Irc_Proto_Notice(nick, IRC_CTCP_MARKER_STR "VERSION " APPLICATION "IRC " IRC_LOGIC_VERSION " " BUILDSTRING " " ARCH IRC_CTCP_MARKER_STR);
++					Irc_Proto_Notice(nick, IRC_CTCP_MARKER_STR "VERSION " APPLICATION "IRC " IRC_LOGIC_VERSION " " BUILDSTRING " " CPUSTRING IRC_CTCP_MARKER_STR);
+ 				else if (!strcmp(trailing + 1, "SOURCE" IRC_CTCP_MARKER_STR))
+ 					// Where to obtain a copy of a client.
+ 					; // NOT SUPPORTED

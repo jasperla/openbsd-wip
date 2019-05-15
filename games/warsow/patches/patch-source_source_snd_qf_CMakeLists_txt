@@ -3,12 +3,12 @@ $OpenBSD$
 Index: source/source/snd_qf/CMakeLists.txt
 --- source/source/snd_qf/CMakeLists.txt.orig
 +++ source/source/snd_qf/CMakeLists.txt
-@@ -18,15 +18,13 @@ file(GLOB SND_QF_SOURCES
+@@ -18,22 +18,20 @@ file(GLOB SND_QF_SOURCES
      "../gameshared/q_*.c"
  )
  
 -if (USE_SDL2 OR (${CMAKE_SYSTEM_NAME} MATCHES "Linux"))
-+if (USE_SDL2 OR (UNIX AND NOT APPLE))
++if (USE_SDL2 OR UNIX)
      file(GLOB SND_QF_PLATFORM_SOURCES
          "../sdl/sdl_snd.c"
      )
@@ -17,8 +17,16 @@ Index: source/source/snd_qf/CMakeLists.txt
 -	set(SND_QF_PLATFORM_LIBRARIES ${SDL2_LIBRARY} "m")
 -    else()
 -	set(SND_QF_PLATFORM_LIBRARIES ${SDL2_LIBRARY})
-+    if (UNIX AND NOT APPLE)
++    if (UNIX)
 +	set(SND_QF_PLATFORM_LIBRARIES ${SDL2_LIBRARY} m)
      endif()
  else()
      file(GLOB SND_QF_PLATFORM_SOURCES
+         "../win32/win_snd.c"
+     )
+ 
+-    set(SND_QF_PLATFORM_LIBRARIES "winmm.lib")
++    set(SND_QF_PLATFORM_LIBRARIES winmm.lib)
+ endif()
+ 
+ add_library(snd_qf SHARED ${SND_QF_HEADERS} ${SND_QF_SOURCES} ${SND_QF_PLATFORM_SOURCES})

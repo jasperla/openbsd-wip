@@ -11,7 +11,7 @@ Index: source/source/angelwrap/CMakeLists.txt
 -	set(ANGELWRAP_PLATFORM_LIBRARIES "pthread")
 -else ()
 -        set(ANGELWRAP_PLATFORM_LIBRARIES "")
-+if (UNIX AND NOT APPLE)
++if (UNIX)
 +	set(ANGELWRAP_PLATFORM_LIBRARIES pthread)
  endif()
  

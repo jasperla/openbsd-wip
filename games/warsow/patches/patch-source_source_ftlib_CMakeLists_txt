@@ -11,7 +11,7 @@ Index: source/source/ftlib/CMakeLists.txt
 -        set(FTLIB_PLATFORM_LIBRARIES "m")
 -else ()
 -        set(FTLIB_PLATFORM_LIBRARIES "")
-+if (UNIX AND NOT APPLE)
++if (UNIX)
 +        set(FTLIB_PLATFORM_LIBRARIES m)
  endif()
  

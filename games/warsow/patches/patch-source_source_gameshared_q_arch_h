@@ -3,7 +3,21 @@ $OpenBSD$
 Index: source/source/gameshared/q_arch.h
 --- source/source/gameshared/q_arch.h.orig
 +++ source/source/gameshared/q_arch.h
-@@ -184,12 +184,56 @@ typedef unsigned long ioctl_param_t;
+@@ -150,13 +150,10 @@ extern "C" {
+ 
+ #ifdef _M_IX86
+ #define CPUSTRING "x86"
+-#define ARCH "x86"
+ #elif defined ( __x86_64__ ) || defined( _M_AMD64 )
+ #define CPUSTRING "x64"
+-#define ARCH "x64"
+ #elif defined ( _M_ALPHA )
+ #define CPUSTRING "axp"
+-#define ARCH	  "axp"
+ #endif
+ 
+ // doh, some compilers need a _ prefix for variables so they can be
+@@ -184,22 +181,53 @@ typedef unsigned long ioctl_param_t;
  // But we don't want to include all those Windows definitions there, do we?
  typedef UINT_PTR socket_handle_t;
  
@@ -21,10 +35,6 @@ Index: source/source/gameshared/q_arch.h
 +#define HAVE_STRCASECMP
 +#endif
  
-+#define LIB_DIRECTORY "libs"
-+#define LIB_PREFIX "lib"
-+#define LIB_SUFFIX ".dylib"
-+
 +#define MUMBLE_SUPPORT
 +#define OPENAL_RUNTIME
 +
@@ -39,12 +49,7 @@ Index: source/source/gameshared/q_arch.h
 +#define LIBTHEORA_LIBNAME "libtheora.0.dylib|libtheora.dylib"
 +#define LIBFREETYPE_LIBNAME "libfreetype.6.dylib|libfreetype.dylib"
 +
-+//Mac OSX has universal binaries, no need for cpu dependency
-+#define BUILDSTRING "MacOSX"
-+#define OSNAME "MacOSX"
 +#define STEAMQUERY_OS 'o'
-+#define CPUSTRING "universal"
-+#define ARCH "mac"
 +
 +#define VAR( x ) # x
 +
@@ -62,7 +67,17 @@ Index: source/source/gameshared/q_arch.h
  #define HAVE_INLINE
  
  #ifndef HAVE_STRCASECMP // SDL_config.h seems to define this too...
-@@ -216,122 +260,33 @@ typedef UINT_PTR socket_handle_t;
+ #define HAVE_STRCASECMP
+ #endif
+ 
+-#define LIB_DIRECTORY "libs"
+-#define LIB_PREFIX "lib"
+-#define LIB_SUFFIX ".so"
+-
+ #ifndef __ANDROID__
+ #define MUMBLE_SUPPORT
+ #define OPENAL_RUNTIME
+@@ -216,122 +244,33 @@ typedef UINT_PTR socket_handle_t;
  #define LIBTHEORA_LIBNAME "libtheora.so.0|libtheora.so"
  #define LIBFREETYPE_LIBNAME "libfreetype.so.6|libfreetype.so"
  
@@ -76,6 +91,9 @@ Index: source/source/gameshared/q_arch.h
 -#else
 -#define BUILDSTRING "Linux"
 -#define OSNAME "Linux"
++#define LIB_DIRECTORY "libs"
++#define LIB_PREFIX "lib"
++#define LIB_SUFFIX ".so"
  #endif
  
  #define STEAMQUERY_OS 'l'
@@ -84,10 +102,10 @@ Index: source/source/gameshared/q_arch.h
  #ifdef __i386__
 -#if defined ( __FreeBSD__ )
 -#define ARCH "freebsd_i386"
--#define CPUSTRING "i386"
--#elif defined ( __ANDROID__ )
- #define ARCH "android_x86"
  #define CPUSTRING "i386"
+-#elif defined ( __ANDROID__ )
+-#define ARCH "android_x86"
+-#define CPUSTRING "i386"
 -#else
 -#define ARCH "i386"
 -#define CPUSTRING "i386"
@@ -108,7 +126,7 @@ Index: source/source/gameshared/q_arch.h
 -#define CPUSTRING "axp"
  #elif defined ( __arm__ )
 -#if defined ( __ANDROID__ )
- #define ARCH "android_armeabi-v7a"
+-#define ARCH "android_armeabi-v7a"
  #define CPUSTRING "arm"
 -#else
 -#define ARCH "arm"
@@ -116,7 +134,7 @@ Index: source/source/gameshared/q_arch.h
 -#endif
  #elif defined ( _MIPS_ARCH )
 -#if defined ( __ANDROID__ )
- #define ARCH "android_mips"
+-#define ARCH "android_mips"
  #define CPUSTRING "mips"
 -#else
 -#define ARCH "mips"

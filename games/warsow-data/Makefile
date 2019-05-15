@@ -1,8 +1,9 @@
 # $OpenBSD: Makefile.template,v 1.80 2019/04/01 07:35:45 bentley Exp $
 COMMENT =	Warsow game data
 
-DISTNAME =	warsow-2.1.2
-PKGNAME =	warsow-data-2.1
+V =		2.1.2
+DISTNAME =	warsow-${V}
+PKGNAME =	warsow-data-${V}
 
 CATEGORIES =	games
 

@@ -8,7 +8,7 @@ Index: source/source/client/CMakeLists.txt
  include_directories(${ZLIB_INCLUDE_DIR} ${CURL_INCLUDE_DIR})
  
 -if (USE_SDL2 OR (${CMAKE_SYSTEM_NAME} MATCHES "Linux"))
-+if (USE_SDL2 OR (UNIX AND NOT APPLE))
++if (USE_SDL2 OR UNIX)
      include_directories(${SDL2_INCLUDE_DIR})
  endif()
  

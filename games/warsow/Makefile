@@ -3,7 +3,7 @@
 COMMENT =	futuristic, fast-paced first person shooter
 
 DISTNAME =	warsow_21_sdk
-PKGNAME =	warsow-2.1
+PKGNAME =	warsow-2.1.2
 
 CATEGORIES =	games
 
@@ -34,6 +34,7 @@ LIB_DEPENDS =	audio/libvorbis \
 
 CONFIGURE_ARGS =	-DQFUSION_GAME=Warsow
 
+CFLAGS +=	-I${X11BASE}/include
 WRKSRC =	${WRKDIST}/source/source
 
 # Search directory provided by warsow-data port instead of current (doing

@@ -11,7 +11,7 @@ Index: source/source/cin/CMakeLists.txt
 -        set(CIN_PLATFORM_LIBRARIES "m")
 -else ()
 -        set(CIN_PLATFORM_LIBRARIES "")
-+if (UNIX AND NOT APPLE)
++if (UNIX)
 +        set(CIN_PLATFORM_LIBRARIES m)
  endif()
  
