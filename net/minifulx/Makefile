@@ -20,8 +20,6 @@ MASTER_SITES =	https://deftly.net/dist/
 MODULES =	lang/go
 MODGO_TYPE =	bin
 
-RUN_DEPENDS =	databases/postgresql,-server
-
 NO_TEST =	Yes
 
 ALL_TARGET =	miniflux.app
