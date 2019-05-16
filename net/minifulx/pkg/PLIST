@@ -1,6 +1,6 @@
 @comment $OpenBSD: PLIST,v 1.2 2018/09/04 12:46:23 espie Exp $
-@newgroup _miniflux:833
-@newuser _miniflux:833:_miniflux:daemon:Miniflux user:${VARBASE}/miniflux:/sbin/nologin
+@newgroup _miniflux:836
+@newuser _miniflux:836:_miniflux:daemon:Miniflux user:${VARBASE}/miniflux:/sbin/nologin
 @rcscript ${RCDIR}/miniflux
 @bin bin/miniflux
 @owner _miniflux
@@ -13,5 +13,5 @@
 share/doc/pkg-readmes/${PKGSTEM}
 share/examples/miniflux/
 share/examples/miniflux/miniflux.conf
-@mode 755
+@mode 750
 @sample ${SYSCONFDIR}/miniflux.conf
