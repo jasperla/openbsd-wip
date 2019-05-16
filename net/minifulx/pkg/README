@@ -7,3 +7,31 @@ $OpenBSD: README,v 1.3 2019/03/08 14:04:24 sthen Exp $
 Initial Setup
 =============
 
+Create a user and database to be used:
+
+# su - _postgresql
+
+Create a database user for Miniflux
+
+$ createuser -U postgres -P miniflux
+
+Create a database for miniflux that belongs to our user
+
+$ createdb -U postgres -O miniflux miniflux
+
+Create the extension hstore as superuser
+
+$ psql -U postgres miniflux -c 'create extension hstore'
+CREATE EXTENSION
+
+Run the database migrations.
+
+# su -s/bin/sh - _miniflux
+$ . /etc/miniflux.conf
+$ miniflux -migrate
+
+Create the initial admin account.
+
+$ miniflux -create-admin
+
+Miniflux is now ready to be started via rcctl.
