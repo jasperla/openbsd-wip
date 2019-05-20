@@ -1,0 +1,123 @@
+# $OpenBSD$
+
+key = "your key here"
+accounting file = /var/log/tac_plus/tac.acct
+# authentication users not appearing elsewhere via
+# the file /etc/passwd
+# 
+# passwd backend needs tac_plus running a root,
+# `cleartext' and `des' backends can run as 
+# _tacacs:_tacacs
+# 
+default authentication = file /etc/passwd
+
+acl = dial_only {
+    # All access routers are in 192.168/16, but except for
+    # 192.168.0.1 all backbone router are in 198.168.0/24.
+    # deny access to the backbone routers.
+    permit = ^192\.168\.0\.1$
+    deny   = ^192\.168\.0\.
+    permit = ^192\.168\.
+}
+
+group = no_backbone {
+    # permit an exec to start and permit all commands and
+    # services by default
+    default service = permit
+
+    service = exec {
+        # When an exec is started, its connection access list
+        # will be 4. "acl" is quoted because it is a keyword.
+        # It also has an autocmd
+        "acl" = 4
+        autocmd = "telnet duffhost"
+    }
+
+    # group will only be allowed to login on NASes
+    acl = dial_only
+}
+group = admin {
+    # group members who don't have their own login password will be
+    # looked up in /etc/passwd
+    login = file /etc/passwd
+
+    # group members who have no expiry date set will use this one
+    #expires = "Jan 1 1997"
+    # deny access to backbone routers
+    acl = dial_only
+}
+
+user = DEFAULT {
+    service = ppp protocol = ip {
+        addr-pool=foobar
+    }
+}
+user = homer {
+    default service = permit
+
+    member = no_backbone
+}
+user = fred {
+    # "login = des" actually uses the OS crypt() function, it is not really
+    # using DES encryption. On OpenBSD this uses bcrypt. See encrypt(1) to
+    # generate suitable hashes.   test123
+    login = des $2b$10$rhfyMY/VeB7Tm1nCy4hDpeJNcfI32EcEZBYZ1sy/qpQf5YhAahVqG
+    name = "Fred Flintstone"
+    member = admin
+    expires = "May 23 2005"
+    arap = cleartext "Fred's arap secret"
+    chap = cleartext "Fred's chap secret"
+
+    service = exec {
+        # When Fred starts an exec, his connection access
+        # list is 5
+        "acl" = 5
+
+        # We require this autocmd to be done at startup
+        autocmd = "telnet foo"
+    }
+
+    # All commands except show system are denied for Fred
+    cmd = show {
+        # Fred can run the following show command
+
+        permit system
+        deny .*
+    }
+
+    service = ppp protocol = ip {
+        # Fred can run ip over ppp only if he uses one
+        # of the following mandatory addresses. If he
+        # supplies no address, the first one here will
+        # be mandated
+
+        addr=131.108.12.11
+        addr=131.108.12.12
+        addr=131.108.12.13
+        addr=131.108.12.14
+
+        # Fred's mandatory input access list number is 101
+        inacl=101
+
+        # We will suggest an output access list of 102, but the NAS may
+        # choose to ignore or override it
+
+        optional outacl=102
+    }
+
+    service = slip {
+        # Fred can run slip. When he does, he will have to use
+        # these mandatory access lists
+
+        inacl=101
+        outacl=102
+    }
+}
+
+user = wilma {
+    # Wilma has no password of her own, but she's a group member so
+    # she'll use the group password if there is one. Same for her
+    # password expiry date
+
+    member = admin
+}
