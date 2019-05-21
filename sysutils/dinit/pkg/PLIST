@@ -1,0 +1,17 @@
+@comment $OpenBSD: PLIST,v$
+@rcscript ${RCDIR}/dinit
+@man man/man5/dinit-service.5
+@man man/man8/dinit.8
+@man man/man8/dinitctl.8
+@bin sbin/dinit
+@bin sbin/dinitctl
+@sample ${SYSCONFDIR}/dinit.d/
+share/doc/dinit/
+share/doc/dinit/COMPARISON
+share/doc/dinit/DESIGN
+share/doc/dinit/README.md
+share/doc/pkg-readmes/${PKGSTEM}
+share/examples/dinit/
+share/examples/dinit/boot
+@sample /etc/dinit.d/boot
+share/examples/dinit/mpd

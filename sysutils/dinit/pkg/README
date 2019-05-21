@@ -1,0 +1,31 @@
+$OpenBSD: README.template,v 1.7 2019/05/09 17:45:05 ajacoutot Exp $
+
++-------------------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-------------------------------------------------------------------------------
+
+Although dinit can be used to boot a Linux system from scratch, you cannot use
+dinit as a replacement for OpenBSD's init system. This package does however
+allow you to use dinit as a generic process supervisor on OpenBSD.
+
+Running dinit as a Normal User
+==============================
+
+To run dinit as a normal user, run:
+
+ $ dinit -u -d /path/to/your/service/descriptions
+
+Process Group Issue
+===================
+
+By default dinit tries to kill services by sending the process group a signal.
+However, on OpenBSD dinit will fail to obtain the process group ID as
+getpgid(2) fails with EPERM. It works on Linux, because there getpgid(2) has
+different semantics.
+
+As a workaround, in your service descriptions you need to set:
+
+    options = signal-process-only
+
+As the name suggests, this causes dinit to signal only the PID of the service
+and not the whole process group.

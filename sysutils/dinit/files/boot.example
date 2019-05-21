@@ -1,0 +1,2 @@
+# You will always need a 'boot' service.
+type = internal
