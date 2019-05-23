@@ -4,13 +4,14 @@
 #  * Decide if we want to run a system instance as root or its own user.
 #  * Wait for a upstream release.
 
+V =		0.5.1
 COMMENT =	service monitoring / "init" system 
-DISTNAME =	dinit-0.6
+DISTNAME =	dinit-${V}
 
 GH_ACCOUNT =	davmac314
 GH_PROJECT =	dinit
-#GH_TAGNAME =	0.6
-GH_COMMIT =	80ba41b6ccd1506d12c80a8b0175b296e6872886
+#GH_TAGNAME =	${V}
+GH_COMMIT =	6824fdef7466f2a31c696923dcc29af0e885ce9d
 
 CATEGORIES =	sysutils
 HOMEPAGE =	https://github.com/davmac314/dinit

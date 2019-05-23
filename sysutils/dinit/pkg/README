@@ -13,19 +13,26 @@ Running dinit as a Normal User
 
 To run dinit as a normal user, run:
 
- $ dinit -u -d /path/to/your/service/descriptions
+ $ dinit -d /path/to/your/service/descriptions
 
-Process Group Issue
-===================
+Note that -u is implied when running as a non-root user.
+
+Signalling Process Groups
+=========================
 
 By default dinit tries to kill services by sending the process group a signal.
 However, on OpenBSD dinit will fail to obtain the process group ID as
-getpgid(2) fails with EPERM. It works on Linux, because there getpgid(2) has
-different semantics.
+getpgid(2) fails with EPERM (It works on Linux, because there getpgid(2) has
+different semantics).
 
-As a workaround, in your service descriptions you need to set:
+dinit is smart enough to realise that it should then try signalling the
+individual process instead of the process group, but it will emit warnings
+like:
+
+dinit: mail-loop: can't signal process group: Operation not permitted
+dinit: mail-loop: will signal process only (consider using option = signal-process-only)
+
+IF that bothers you, do as the message says, and put in your service
+descriptions:
 
     options = signal-process-only
-
-As the name suggests, this causes dinit to signal only the PID of the service
-and not the whole process group.
