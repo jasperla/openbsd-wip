@@ -5,7 +5,7 @@ COMMENT-client =	distributed IRC client (client)
 COMMENT-common =	distributed IRC client (common files)
 COMMENT-core =		distributed IRC client (core)
 
-V =			0.12.5
+V =			0.13.1
 DISTNAME =		quassel-${V}
 PKGNAME-main =		quassel-${V}
 PKGNAME-client =	quassel-client-${V}
@@ -45,7 +45,7 @@ MULTI_PACKAGES =	-main -client -common -core
 
 MODULES =		devel/cmake multimedia/phonon x11/qt5
 
-BUILD_DEPENDS +=	devel/gettext-tools \
+BUILD_DEPENDS +=	devel/gettext,-tools \
 			devel/kf5/extra-cmake-modules
 
 RUN_DEPENDS-main =	${MODPHONON_RUN_DEPENDS} \
@@ -98,7 +98,6 @@ SEPARATE_BUILD =	Yes
 # XXX not using WITH_WEBKIT because safety of x11/qt5/qtwebkit is questionable;
 # XXX not using WITH_WEBENGINE because x11/qt5/qtwebengine is not available yet.
 CONFIGURE_ARGS +=	-DGIT_EXECUTABLE="" \
-			-DUSE_QT5:Bool=on \
 			-DWITH_KDE:Bool=on \
 			-DWITH_WEBENGINE:Bool=off \
 			-DWITH_WEBKIT:Bool=off
