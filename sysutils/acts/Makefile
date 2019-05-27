@@ -1,6 +1,6 @@
 # $OpenBSD$
 COMMENT =		another calendar-based tarsnap script
-V =			1.3b3
+V =			1.4b1
 DISTNAME =		acts-${V}
 CATEGORIES =		sysutils
 
@@ -12,7 +12,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 GH_ACCOUNT =		alexjurkiewicz
 GH_PROJECT =		acts
-GH_TAGNAME =		${V}
+GH_TAGNAME =		v${V}
 
 NO_BUILD =		Yes
 RUN_DEPENDS =		sysutils/tarsnap
