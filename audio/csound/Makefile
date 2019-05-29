@@ -32,7 +32,7 @@ BUILD_DEPENDS =		audio/flac \
 			devel/bison \
 			devel/boost \
 			devel/help2man \
-			devel/gettext-tools \
+			devel/gettext,-tools \
 			devel/m4
 
 LIB_DEPENDS =		audio/libsamplerate \
