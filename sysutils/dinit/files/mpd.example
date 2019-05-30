@@ -1,4 +1,0 @@
-# This is how you'd start MPD from dinit.
-type = process
-command = /usr/local/sbin/mpd --no-daemon
-options = signal-process-only

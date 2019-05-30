@@ -8,31 +8,20 @@ Although dinit can be used to boot a Linux system from scratch, you cannot use
 dinit as a replacement for OpenBSD's init system. This package does however
 allow you to use dinit as a generic process supervisor on OpenBSD.
 
-Running dinit as a Normal User
-==============================
+Getting Started Guide
+=====================
 
-To run dinit as a normal user, run:
+The best way to get up an running quickly with Dinit is to read the getting
+started guide:
 
- $ dinit -d /path/to/your/service/descriptions
+ $ less ${TRUEPREFIX}/share/doc/dinit/getting_started.md
 
-Note that -u is implied when running as a non-root user.
+Running System-wide
+===================
 
-Signalling Process Groups
-=========================
+The provided rc script starts a system-wide instance of dinit. The instance
+will run as root so that services requiring root permissions can be managed
+under dinit. If your services don't need root permissions, then you should run
+dinit as a normal user instead.
 
-By default dinit tries to kill services by sending the process group a signal.
-However, on OpenBSD dinit will fail to obtain the process group ID as
-getpgid(2) fails with EPERM (It works on Linux, because there getpgid(2) has
-different semantics).
-
-dinit is smart enough to realise that it should then try signalling the
-individual process instead of the process group, but it will emit warnings
-like:
-
-dinit: mail-loop: can't signal process group: Operation not permitted
-dinit: mail-loop: will signal process only (consider using option = signal-process-only)
-
-IF that bothers you, do as the message says, and put in your service
-descriptions:
-
-    options = signal-process-only
+When running a system-wide instance, add `-s` to your dinitctl(8) invocations.
