@@ -1,0 +1,15 @@
+Netdata is a monitoring agent and statistics server.
+
+Using plugins it is able to collect a wide variety of system and
+application metrics. Metrics can be checked as they're collected to
+trigger alarms, streamed in real-time to other Netdata installations,
+stored in an internal metrics database, and archived to an external
+time-series database.
+
+Metrics can also be presented visually, with a low-latency web UI.
+
+Each Netdata installation is (by default) autonomous, but all can be
+integrated into one large distributed application.
+
+Netdata is lightweight, designed to permanently run on all systems
+without disrupting their core function. By default, it needs just 1% CPU

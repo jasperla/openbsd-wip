@@ -1,0 +1,14 @@
+$OpenBSD$
+
+Index: libnetdata/libnetdata.c
+--- libnetdata/libnetdata.c.orig
++++ libnetdata/libnetdata.c
+@@ -1179,7 +1179,7 @@ int recursively_delete_dir(const char *path, const cha
+ 
+ static int is_virtual_filesystem(const char *path, char **reason) {
+ 
+-#if defined(__APPLE__) || defined(__FreeBSD__)
++#if defined(__APPLE__) || defined(__FreeBSD__) || defined(__OpenBSD__)
+     (void)path;
+     (void)reason;
+ #else

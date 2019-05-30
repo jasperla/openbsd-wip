@@ -1,0 +1,72 @@
+$OpenBSD$
+
+Index: libnetdata/popen/popen.c
+--- libnetdata/popen/popen.c.orig
++++ libnetdata/popen/popen.c
+@@ -166,41 +166,34 @@ int mypclose(FILE *fp, pid_t pid) {
+ 
+     errno = 0;
+ 
+-    siginfo_t info;
+-    if(waitid(P_PID, (id_t) pid, &info, WEXITED) != -1) {
+-        switch(info.si_code) {
+-            case CLD_EXITED:
+-                if(info.si_status)
+-                    error("child pid %d exited with code %d.", info.si_pid, info.si_status);
+-                return(info.si_status);
+-
+-            case CLD_KILLED:
+-                error("child pid %d killed by signal %d.", info.si_pid, info.si_status);
+-                return(-1);
+-
+-            case CLD_DUMPED:
+-                error("child pid %d core dumped by signal %d.", info.si_pid, info.si_status);
+-                return(-2);
+-
+-            case CLD_STOPPED:
+-                error("child pid %d stopped by signal %d.", info.si_pid, info.si_status);
+-                return(0);
+-
+-            case CLD_TRAPPED:
+-                error("child pid %d trapped by signal %d.", info.si_pid, info.si_status);
+-                return(-4);
+-
+-            case CLD_CONTINUED:
+-                error("child pid %d continued by signal %d.", info.si_pid, info.si_status);
+-                return(0);
+-
+-            default:
+-                error("child pid %d gave us a SIGCHLD with code %d and status %d.", info.si_pid, info.si_code, info.si_status);
+-                return(-5);
++    int proc_status;
++    if(waitpid(pid, &proc_status, 0) > 0) {
++        if(WIFSIGNALED(proc_status)) {
++            int term_sig = WTERMSIG(proc_status);
++            if(WCOREDUMP(proc_status)) {
++                error("child pid %d core dumped by signal %d.", pid, term_sig);
++                return -2;
++            } else {
++                error("child pid %d killed by signal %d.", pid, term_sig);
++                return -1;
++            }
++        } else if(WIFSTOPPED(proc_status)) {
++            error("child pid %d stopped by signal %d.", pid, WSTOPSIG(proc_status));
++            return 0;
++        } else if(WIFCONTINUED(proc_status)) {
++            error("child pid %d continued by signal %d.", pid, SIGCONT);
++            return 0;
++        } else if(WIFEXITED(proc_status)) {
++            int exit_status = WEXITSTATUS(proc_status);
++            if(exit_status)
++                error("child pid %d exited with code %d.", pid, exit_status);
++            return exit_status;
++        } else {
++            error("this shouldn't have happened");
+         }
+     }
+     else
+-        error("Cannot waitid() for pid %d", pid);
++        error("Cannot waitpid() for pid %d", pid);
+     
+     return 0;
+ }

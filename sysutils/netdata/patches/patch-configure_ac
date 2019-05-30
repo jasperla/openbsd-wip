@@ -1,0 +1,24 @@
+$OpenBSD$
+
+Index: configure.ac
+--- configure.ac.orig
++++ configure.ac
+@@ -196,6 +196,10 @@ freebsd*)
+     build_target_id=2
+     CFLAGS="${CFLAGS} -I/usr/local/include -L/usr/local/lib"
+     ;;
++openbsd*)
++    build_target=openbsd
++    build_target_id=4
++    ;;
+ darwin*)
+     build_target=macos
+     build_target_id=3
+@@ -208,6 +212,7 @@ darwin*)
+ esac
+ 
+ AM_CONDITIONAL([FREEBSD], [test "${build_target}" = "freebsd"])
++AM_CONDITIONAL([OPENBSD], [test "${build_target}" = "openbsd"])
+ AM_CONDITIONAL([MACOS], [test "${build_target}" = "macos"])
+ AM_CONDITIONAL([LINUX], [test "${build_target}" = "linux"])
+ AC_MSG_RESULT([${build_target} with id ${build_target_id}])
