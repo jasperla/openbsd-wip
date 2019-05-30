@@ -3,10 +3,8 @@
 V =		0.5.1
 COMMENT =	service monitoring / "init" system
 DISTNAME =	dinit-${V}
-
-GH_ACCOUNT =	davmac314
-GH_PROJECT =	dinit
-GH_TAGNAME =	v${V}
+MASTER_SITES = 	https://github.com/davmac314/dinit/releases/download/v${V}/
+EXTRACT_SUFX =	.tar.xz
 
 CATEGORIES =	sysutils
 HOMEPAGE =	https://github.com/davmac314/dinit
