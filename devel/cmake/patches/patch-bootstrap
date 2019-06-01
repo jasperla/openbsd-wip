@@ -89,12 +89,35 @@ Index: bootstrap
  "
  
  LexerParser_C_SOURCES="\
-@@ -1432,7 +1447,7 @@ cmake_cxx_flags="${cmake_cxx_flags} \
+@@ -924,6 +939,11 @@ if ${cmake_system_cygwin}; then
+   cmake_ld_flags="${LDFLAGS} -Wl,--enable-auto-import"
+ fi
+ 
++# Add OpenBSD-specific flags
++if ${cmake_system_OpenBSD}; then
++  cmake_ld_flags="${LDFLAGS} -L${cmake_prefix_dir}/lib"
++fi
++
+ # Add CoreFoundation framework on Darwin
+ if ${cmake_system_darwin}; then
+   cmake_ld_flags="${LDFLAGS} -framework CoreFoundation"
+@@ -1377,6 +1397,9 @@ else
+     *kFreeBSD*)
+       libs="${libs} -lkvm -lfreebsd-glue"
+       ;;
++    *OpenBSD*)
++      libs="${libs} -lkvm -lrhash -ljsoncpp"
++      ;;
+     *BSD*)
+       libs="${libs} -lkvm"
+       ;;
+@@ -1430,7 +1453,8 @@ cmake_cxx_flags="${cmake_cxx_flags} \
+   -I`cmake_escape \"${cmake_bootstrap_dir}\"` \
+   -I`cmake_escape \"${cmake_source_dir}/Source\"` \
    -I`cmake_escape \"${cmake_source_dir}/Source/LexerParser\"` \
-   -I`cmake_escape \"${cmake_source_dir}/Utilities\"`"
+-  -I`cmake_escape \"${cmake_source_dir}/Utilities\"`"
++  -I`cmake_escape \"${cmake_source_dir}/Utilities\"` \
++  -I`cmake_escape \"${cmake_prefix_dir}/include\"`"
  echo "cmake: ${objs}" > "${cmake_bootstrap_dir}/Makefile"
--echo "	${cmake_cxx_compiler} ${cmake_ld_flags} ${cmake_cxx_flags} ${objs} ${libs} -o cmake" >> "${cmake_bootstrap_dir}/Makefile"
-+echo "	${cmake_cxx_compiler} ${cmake_ld_flags} ${cmake_cxx_flags} ${objs} -L${cmake_prefix_dir}/lib -lrhash -ljsoncpp -o cmake" >> "${cmake_bootstrap_dir}/Makefile"
+ echo "	${cmake_cxx_compiler} ${cmake_ld_flags} ${cmake_cxx_flags} ${objs} ${libs} -o cmake" >> "${cmake_bootstrap_dir}/Makefile"
  for a in ${CMAKE_CXX_SOURCES}; do
-   src=`cmake_escape "${cmake_source_dir}/Source/${a}.cxx"`
-   src_flags=`eval echo \\${cmake_cxx_flags_\${a}}`
