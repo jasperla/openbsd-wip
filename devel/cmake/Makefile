@@ -23,12 +23,8 @@ WANTLIB += jsoncpp m rhash uv z
 
 COMPILER =		base-clang ports-gcc
 
-# XXX: Ninja is broken on m88k
-.if ${MACHINE_ARCH} != "m88k"
-BUILD_DEPENDS =		devel/ninja>=1.5.1
-.endif
-
-BUILD_DEPENDS +=	textproc/py-sphinx>=1.4
+BUILD_DEPENDS +=	devel/ninja>=1.5.1 \
+			textproc/py-sphinx>=1.4 \
 
 LIB_DEPENDS =		archivers/libarchive \
 			devel/libuv \
@@ -78,9 +74,9 @@ post-patch:
 	# Use system jsoncpp
 	rm -rf ${WRKSRC}/Utilities/cmjsoncpp
 	find ${WRKSRC}/Source  -type f -name '*.cxx' -or -name '*.h' \
-		-exec sed -i 's,cm_jsoncpp_,jsoncpp/json/,g' {} +
+		-exec sed -i 's,cm_jsoncpp_,jsoncpp/json/,g' {} +; \
 	find ${WRKSRC}/Utilities -type f -name '*.h' \
-		exec sed -i 's,cmjsoncpp/include/json/,jsoncpp/json/,g' {} +
+		-exec sed -i 's,cmjsoncpp/include/json/,jsoncpp/json/,g' {} +;
 
 pre-configure:
 	cp ${FILESDIR}/*.cmake ${WRKSRC}/Modules/
@@ -89,8 +85,6 @@ pre-configure:
 	xargs -0 ${SUBST_CMD}
 	${SUBST_CMD} ${SUBST_FILES}
 
-# XXX: Ninja is broken on m88k
-.if ${MACHINE_ARCH} != "m88k"
 do-build:
 	cd ${WRKBUILD} && exec ${SETENV} ${MAKE_ENV} ninja -v -j \
 		${MAKE_JOBS} ${ALL_TARGET}
@@ -102,7 +96,6 @@ do-install:
 do-test:
 	cd ${WRKBUILD} && exec ${SETENV} ${ALL_TEST_ENV} ninja -v -j \
 		${MAKE_JOBS} ${TEST_FLAGS} ${TEST_TARGET}
-.endif
 
 post-install:
 	@find ${WRKINST}${LOCALBASE} \( -name "*.bak" -o -name "*.orig" -o -name "*.beforesubst" \) -exec rm {} \;

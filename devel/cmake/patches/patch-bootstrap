@@ -6,20 +6,16 @@ XXX: broken on m88k
 Index: bootstrap
 --- bootstrap.orig
 +++ bootstrap
-@@ -166,7 +166,11 @@ if ${cmake_system_mingw}; then
+@@ -166,7 +166,7 @@ if ${cmake_system_mingw}; then
    cmake_bootstrap_generator="MSYS Makefiles"
  else
    # Bootstrapping from a standard UNIX prompt.
 -  cmake_bootstrap_generator="Unix Makefiles"
-+  if arch -s | grep -q '^m88k'; then
-+    cmake_bootstrap_generator="Unix Makefiles"
-+  else
-+    cmake_bootstrap_generator="Ninja"
-+  fi
++  cmake_bootstrap_generator="Ninja"
  fi
  
  # Choose tools and extensions for this platform.
-@@ -225,9 +229,9 @@ cmake_doc_dir_default="`cmake_install_dest_default DOC
+@@ -225,9 +225,9 @@ cmake_doc_dir_default="`cmake_install_dest_default DOC
  cmake_man_dir_default="`cmake_install_dest_default MAN ${cmake_man_dir_keyword}`"
  cmake_xdgdata_dir_default="`cmake_install_dest_default XDGDATA ${cmake_xdgdata_dir_keyword}`"
  
@@ -32,7 +28,7 @@ Index: bootstrap
  
  CMAKE_PROBLEMATIC_FILES="\
    CMakeCache.txt \
-@@ -280,6 +284,7 @@ CMAKE_CXX_SOURCES="\
+@@ -280,6 +280,7 @@ CMAKE_CXX_SOURCES="\
    cmContinueCommand \
    cmCoreTryCompile \
    cmCreateTestSourceList \
@@ -40,7 +36,7 @@ Index: bootstrap
    cmCustomCommand \
    cmCustomCommandGenerator \
    cmDefinePropertyCommand \
-@@ -311,6 +316,7 @@ CMAKE_CXX_SOURCES="\
+@@ -311,6 +312,7 @@ CMAKE_CXX_SOURCES="\
    cmFindPathCommand \
    cmFindProgramCommand \
    cmForEachCommand \
@@ -48,7 +44,7 @@ Index: bootstrap
    cmFunctionCommand \
    cmFSPermissions \
    cmGeneratedFileStream \
-@@ -332,6 +338,7 @@ CMAKE_CXX_SOURCES="\
+@@ -332,6 +334,7 @@ CMAKE_CXX_SOURCES="\
    cmGetTestPropertyCommand \
    cmGlobalCommonGenerator \
    cmGlobalGenerator \
@@ -56,7 +52,7 @@ Index: bootstrap
    cmGlobalUnixMakefileGenerator3 \
    cmGlobVerificationManager \
    cmHexFileConverter \
-@@ -355,10 +362,12 @@ CMAKE_CXX_SOURCES="\
+@@ -355,10 +358,12 @@ CMAKE_CXX_SOURCES="\
    cmLinkDirectoriesCommand \
    cmLinkItem \
    cmLinkLineComputer \
@@ -69,7 +65,7 @@ Index: bootstrap
    cmLocalUnixMakefileGenerator3 \
    cmMSVC60LinkLineComputer \
    cmMacroCommand \
-@@ -373,6 +382,10 @@ CMAKE_CXX_SOURCES="\
+@@ -373,6 +378,10 @@ CMAKE_CXX_SOURCES="\
    cmMessageCommand \
    cmMessenger \
    cmNewLineStyle \
@@ -80,7 +76,7 @@ Index: bootstrap
    cmOSXBundleGenerator \
    cmOptionCommand \
    cmOrderDirectories \
-@@ -444,6 +457,8 @@ LexerParser_CXX_SOURCES="\
+@@ -444,6 +453,8 @@ LexerParser_CXX_SOURCES="\
    cmCommandArgumentParser \
    cmExprLexer \
    cmExprParser \
@@ -89,7 +85,7 @@ Index: bootstrap
  "
  
  LexerParser_C_SOURCES="\
-@@ -924,6 +939,11 @@ if ${cmake_system_cygwin}; then
+@@ -924,6 +935,11 @@ if ${cmake_system_cygwin}; then
    cmake_ld_flags="${LDFLAGS} -Wl,--enable-auto-import"
  fi
  
@@ -101,7 +97,7 @@ Index: bootstrap
  # Add CoreFoundation framework on Darwin
  if ${cmake_system_darwin}; then
    cmake_ld_flags="${LDFLAGS} -framework CoreFoundation"
-@@ -1377,6 +1397,9 @@ else
+@@ -1377,6 +1393,9 @@ else
      *kFreeBSD*)
        libs="${libs} -lkvm -lfreebsd-glue"
        ;;
@@ -111,7 +107,7 @@ Index: bootstrap
      *BSD*)
        libs="${libs} -lkvm"
        ;;
-@@ -1430,7 +1453,8 @@ cmake_cxx_flags="${cmake_cxx_flags} \
+@@ -1430,7 +1449,8 @@ cmake_cxx_flags="${cmake_cxx_flags} \
    -I`cmake_escape \"${cmake_bootstrap_dir}\"` \
    -I`cmake_escape \"${cmake_source_dir}/Source\"` \
    -I`cmake_escape \"${cmake_source_dir}/Source/LexerParser\"` \
