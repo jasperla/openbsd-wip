@@ -22,7 +22,7 @@ Index: Modules/FindRuby.cmake
  
  # if 1.9 is required, don't look for ruby18 and ruby1.8, default to version 1.8
  if(DEFINED Ruby_FIND_VERSION_MAJOR AND DEFINED Ruby_FIND_VERSION_MINOR)
-@@ -60,12 +68,10 @@ else()
+@@ -60,12 +68,11 @@ else()
  endif()
  
  if(NOT Ruby_FIND_VERSION_EXACT)
@@ -32,6 +32,7 @@ Index: Modules/FindRuby.cmake
 -  list(APPEND _RUBY_POSSIBLE_EXECUTABLE_NAMES ruby2.1 ruby21)
 -  list(APPEND _RUBY_POSSIBLE_EXECUTABLE_NAMES ruby2.0 ruby20)
 -  list(APPEND _RUBY_POSSIBLE_EXECUTABLE_NAMES ruby1.9 ruby19)
++  list(APPEND _RUBY_POSSIBLE_EXECUTABLE_NAMES ruby27 ruby2.7)
 +  list(APPEND _RUBY_POSSIBLE_EXECUTABLE_NAMES ruby26 ruby2.6)
 +  list(APPEND _RUBY_POSSIBLE_EXECUTABLE_NAMES ruby25 ruby2.5)
 +  list(APPEND _RUBY_POSSIBLE_EXECUTABLE_NAMES ruby24 ruby2.4)
@@ -39,7 +40,7 @@ Index: Modules/FindRuby.cmake
  
    # if we want a version below 1.9, also look for ruby 1.8
    if("${Ruby_FIND_VERSION_SHORT_NODOT}" VERSION_LESS "19")
-@@ -75,6 +81,9 @@ if(NOT Ruby_FIND_VERSION_EXACT)
+@@ -75,6 +82,9 @@ if(NOT Ruby_FIND_VERSION_EXACT)
    list(REMOVE_DUPLICATES _RUBY_POSSIBLE_EXECUTABLE_NAMES)
  endif()
  
@@ -49,7 +50,7 @@ Index: Modules/FindRuby.cmake
  find_program(RUBY_EXECUTABLE NAMES ${_RUBY_POSSIBLE_EXECUTABLE_NAMES})
  
  if(RUBY_EXECUTABLE  AND NOT  RUBY_VERSION_MAJOR)
-@@ -189,6 +198,16 @@ if(RUBY_EXECUTABLE AND NOT RUBY_VERSION_MAJOR)
+@@ -189,6 +199,21 @@ if(RUBY_EXECUTABLE AND NOT RUBY_VERSION_MAJOR)
        set(RUBY_VERSION_MAJOR 2)
        set(RUBY_VERSION_MINOR 4)
     endif()
@@ -63,10 +64,15 @@ Index: Modules/FindRuby.cmake
 +      set(RUBY_VERSION_MAJOR 2)
 +      set(RUBY_VERSION_MINOR 6)
 +   endif()
++   # check whether we found 2.7.x
++   if(${RUBY_EXECUTABLE} MATCHES "ruby2\\.?7")
++      set(RUBY_VERSION_MAJOR 2)
++      set(RUBY_VERSION_MINOR 7)
++   endif()
  endif()
  
  if(RUBY_VERSION_MAJOR)
-@@ -222,7 +241,8 @@ endif()
+@@ -222,7 +247,8 @@ endif()
  
  
  # Determine the list of possible names for the ruby library
