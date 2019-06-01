@@ -4,7 +4,7 @@ DPB_PROPERTIES =parallel
 
 COMMENT =	portable build system
 
-VER =		3.14.4
+VER =		3.14.5
 EPOCH =		0
 DISTNAME =	cmake-${VER}
 CATEGORIES =	devel
@@ -22,6 +22,7 @@ WANTLIB += ${COMPILER_LIBCXX} archive c curl curses expat form
 WANTLIB += jsoncpp m rhash uv z
 
 COMPILER =		base-clang ports-gcc base-gcc
+#COMPILER =		ports-gcc base-gcc
 
 # XXX: Ninja is broken on m88k
 .if ${MACHINE_ARCH} != "m88k"
@@ -98,9 +99,7 @@ do-test:
 		${MAKE_JOBS} ${TEST_FLAGS} ${TEST_TARGET}
 .endif
 
-#post-install:
-#	rm ${WRKINST}${LOCALBASE}/share/cmake/Modules/*.{beforesubst,orig} \
-#		${WRKINST}${LOCALBASE}/share/cmake/Modules/Compiler/*.orig \
-#		${WRKINST}${LOCALBASE}/share/cmake/Modules/Platform/*.orig
+post-install:
+	@find ${WRKINST}${LOCALBASE} \( -name "*.bak" -o -name "*.orig" -o -name "*.beforesubst" \) -exec rm {} \;
 
 .include <bsd.port.mk>
