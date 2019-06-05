@@ -3,7 +3,7 @@ $OpenBSD$
 Index: Makefile
 --- Makefile.orig
 +++ Makefile
-@@ -3,7 +3,7 @@
+@@ -3,13 +3,13 @@
  .SUFFIXES: .1 .5 .7 .1.scd .5.scd .7.scd
  VPATH=doc
  PREFIX?=/usr/local
@@ -12,3 +12,10 @@ Index: Makefile
  BINDIR?=$(_INSTDIR)/bin
  SHAREDIR?=$(_INSTDIR)/share/aerc
  MANDIR?=$(_INSTDIR)/share/man
+ GOFLAGS?=
+ 
+-GOSRC!=find -name '*.go'
++GOSRC!=find . -name '*.go'
+ GOSRC+=go.mod go.sum
+ 
+ aerc: $(GOSRC)

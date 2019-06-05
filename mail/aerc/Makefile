@@ -2,7 +2,7 @@
 
 COMMENT =	aerc is an email client for your terminal
 
-DISTNAME =	aerc-0.1.0
+DISTNAME =	aerc-0.1.1
 
 CATEGORIES =	mail
 
@@ -23,7 +23,8 @@ MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
 NO_TEST =	Yes
 
 BUILD_DEPENDS =	textproc/scdoc
-RUN_DEPENDS =	security/dante
+RUN_DEPENDS =	security/dante \
+		devel/py-colorama,python3
 
 MAKE_FLAGS =	PREFIX=${PREFIX}
 
