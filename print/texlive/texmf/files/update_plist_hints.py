@@ -17,8 +17,6 @@ import os
 from tlpdb import PkgPartSpec, FileKind, Parser
 
 
-YEAR = 2017
-
 MANS_INFOS_RE = re.compile("(man\/man[0-9]\/.*[0-9]|info\/.*\.info)$")
 MOVE_MANS_INFOS_RE = re.compile("^share/texmf-dist/doc/(man|info)/")
 

@@ -1,4 +1,5 @@
 # $OpenBSD: Makefile,v 1.57 2019/02/10 18:14:36 jca Exp $
+# XXX put back texdraw patch
 
 COMMENT-context =	texlive texmf for conTeXt
 COMMENT-docs =		texlive documentation
@@ -15,8 +16,8 @@ MASTER_SITES0 =		https://spacehopper.org/mirrors/ \
 			http://theunixzoo.co.uk/distfiles/
 DISTFILES =		${DISTNAME}${EXTRACT_SUFX} \
 			texlive-${DIST_V}-extra${EXTRACT_SUFX} \
-			texlive-${DIST_V}-tlpdb-full.tar.gz \
-			texmf-var-pregen-${V}.0${EXTRACT_SUFX}:0 \
+			texlive-${DIST_V}-tlpdb-full.tar.gz
+#texmf-var-pregen-${V}.0${EXTRACT_SUFX}:0 \
 
 PKGNAME-main =		texlive_texmf-minimal-${V}
 PKGNAME-full =		texlive_texmf-full-${V}
@@ -137,7 +138,8 @@ do-install:
 	#   context --make
 	#
 	# Then you can tar them up and host them as the pregen tarball.
-	mv ${WRKDIR}/texmf-var ${PREFIX}/share
+	# XXX put back.
+	#mv ${WRKDIR}/texmf-var ${PREFIX}/share
 
 	# Put manuals in the right place.
 	#
@@ -163,7 +165,7 @@ post-install:
 	${SUBST_CMD} ${PREFIX}/share/texmf-dist/web2c/texmfcnf.lua
 
 # Generating PLISTs is special for TeX Live.
-# This target requires Python-2.7.
+# This target requires Python3.
 update-plist: plist
 plist: fake
 	env WRKINST=${WRKINST} TRUEPREFIX=${TRUEPREFIX} ${MODPY_BIN} \

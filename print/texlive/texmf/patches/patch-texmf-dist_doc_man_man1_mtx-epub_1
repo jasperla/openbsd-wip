@@ -4,7 +4,7 @@ Index: texmf-dist/doc/man/man1/mtx-epub.1
 --- texmf-dist/doc/man/man1/mtx-epub.1.orig
 +++ texmf-dist/doc/man/man1/mtx-epub.1
 @@ -1,6 +1,6 @@
- .TH "mtx-epub" "1" "01-01-2018" "version 1.10" "ConTeXt EPUB Helpers"
+ .TH "mtx-epub" "1" "01-01-2019" "version 1.10" "ConTeXt EPUB Helpers"
  .SH NAME
 -.B mtx-epub
 +mtx-epub \(en ConTeXt EPUB Helpers

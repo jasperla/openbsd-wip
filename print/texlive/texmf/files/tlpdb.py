@@ -82,7 +82,11 @@ class Parser(object):
                      "catalogue-license", "catalogue-topics",
                      "catalogue-version", "catalogue-also", "execute",
                      "postaction", "containersize",
-                     "containerchecksum")
+                     "containerchecksum", "catalogue-contact-home",
+                     "catalogue-contact-repository",
+                     "catalogue-contact-announce", "catalogue-contact-bugs",
+                     "catalogue-contact-development",
+                     "catalogue-contact-support", "catalogue-alias")
 
     def __init__(self, filename):
         self.fh = open(filename, "r")
@@ -129,7 +133,7 @@ class Parser(object):
             else:
                 # Some other field we don't care for.
                 k = fields(line)[0]
-                assert k in Parser.IGNORE_FIELDS
+                assert k in Parser.IGNORE_FIELDS, "Don't know how to handle '%s' field" % k
                 pos = Pos.PKG
                 file_kind = None
         return DB(pkgs)

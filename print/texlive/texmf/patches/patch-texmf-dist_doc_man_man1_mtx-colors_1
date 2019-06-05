@@ -4,7 +4,7 @@ Index: texmf-dist/doc/man/man1/mtx-colors.1
 --- texmf-dist/doc/man/man1/mtx-colors.1.orig
 +++ texmf-dist/doc/man/man1/mtx-colors.1
 @@ -1,6 +1,6 @@
- .TH "mtx-colors" "1" "01-01-2018" "version 0.10" "ConTeXt Color Management"
+ .TH "mtx-colors" "1" "01-01-2019" "version 0.10" "ConTeXt Color Management"
  .SH NAME
 -.B mtx-colors
 +mtx-colors \(en ConTeXt Color Management
