@@ -1,0 +1,18 @@
+@comment $OpenBSD: PLIST,v 1.3 2019/01/23 00:54:08 abieber Exp $
+@bin bin/aerc
+@man man/man1/aerc.1
+@man man/man5/aerc-config.5
+@man man/man5/aerc-imap.5
+@man man/man5/aerc-smtp.5
+@man man/man7/aerc-tutorial.7
+share/aerc/
+share/aerc/accounts.conf
+share/aerc/aerc.conf
+share/aerc/binds.conf
+share/aerc/filters/
+${MODPY_COMMENT}share/aerc/filters/${MODPY_PYCACHE}/
+share/aerc/filters/${MODPY_PYCACHE}hldiff.${MODPY_PYC_MAGIC_TAG}pyc
+share/aerc/filters/${MODPY_PYCACHE}plaintext.${MODPY_PYC_MAGIC_TAG}pyc
+share/aerc/filters/hldiff.py
+share/aerc/filters/html
+share/aerc/filters/plaintext.py
