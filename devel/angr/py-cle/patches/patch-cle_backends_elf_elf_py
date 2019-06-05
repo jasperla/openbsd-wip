@@ -1,0 +1,36 @@
+$OpenBSD$
+
+Index: cle/backends/elf/elf.py
+--- cle/backends/elf/elf.py.orig
++++ cle/backends/elf/elf.py
+@@ -540,8 +540,8 @@ class ELF(MetaELF):
+                     'sh_flags': 0,
+                     'sh_addralign': 0,
+                 }
+-                self.dynsym = elffile.SymbolTableSection(fakesymtabheader, 'symtab_cle', self.reader, self.strtab)
+-                self.dynsym.stream = self.memory
++                self.dynsym = elffile.SymbolTableSection(fakesymtabheader, 'symtab_cle', stream=self.memory,
++                        elffile=self.reader, stringtable=self.strtab)
+ 
+                 # set up the hash table, prefering the gnu hash section to the old hash section
+                 # the hash table lets you get any symbol given its name
+@@ -594,8 +594,7 @@ class ELF(MetaELF):
+                         'sh_flags': 0,
+                         'sh_addralign': 0,
+                     }
+-                    readelf_relocsec = elffile.RelocationSection(fakerelheader, 'reloc_cle', self.reader)
+-                    readelf_relocsec.stream = self.memory
++                    readelf_relocsec = elffile.RelocationSection(fakerelheader, 'reloc_cle', stream=self.memory, elffile=self.reader)
+                     self.__register_relocs(readelf_relocsec)
+ 
+                 # try to parse relocations out of a table of type DT_JMPREL
+@@ -612,8 +611,7 @@ class ELF(MetaELF):
+                         'sh_flags': 0,
+                         'sh_addralign': 0,
+                     }
+-                    readelf_jmprelsec = elffile.RelocationSection(fakejmprelheader, 'jmprel_cle', self.reader)
+-                    readelf_jmprelsec.stream = self.memory
++                    readelf_jmprelsec = elffile.RelocationSection(fakejmprelheader, 'jmprel_cle', stream=self.memory, elffile=self.reader)
+                     self.__register_relocs(readelf_jmprelsec, force_jmprel=True)
+ 
+     def __parse_rpath(self, runpath, rpath):

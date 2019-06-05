@@ -1,0 +1,28 @@
+# $OpenBSD$
+
+COMMENT =		Python interface to libVEX and VEX IR
+
+ANGR_PYTHON_MODULE =	pyvex
+
+HOMEPAGE =		https://github.com/angr/pyvex
+
+USE_GMAKE =		Yes
+CFLAGS +=		-shared -fPIC -I${LOCALBASE}/include/angr-vex/
+
+MODPY_TEST =		Yes
+
+BUILD_DEPENDS +=	devel/angr/vex \
+			devel/py-cffi${MODPY_FLAVOR} \
+			devel/py-cparser${MODPY_FLAVOR} \
+
+RUN_DEPENDS +=		devel/angr/py-archinfo>=${MODPY_EGG_VERSION} \
+			devel/py-bitstring${MODPY_FLAVOR} \
+			devel/py-cffi${MODPY_FLAVOR} \
+			devel/py-cparser${MODPY_FLAVOR} \
+			devel/py-future${MODPY_FLAVOR}
+TEST_DEPENDS =		${RUN_DEPENDS}
+
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/pyvex_c/Makefile ${WRKSRC}/setup.py
+
+.include <bsd.port.mk>

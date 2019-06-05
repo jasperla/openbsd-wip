@@ -1,0 +1,2 @@
+A multi-architecture binary analysis toolkit, with the ability to perform
+dynamic symbolic execution and various static analyses on binaries
