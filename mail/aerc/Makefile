@@ -23,8 +23,9 @@ MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
 NO_TEST =	Yes
 
 BUILD_DEPENDS =	textproc/scdoc
-RUN_DEPENDS =	security/dante \
-		devel/py-colorama,python3
+RUN_DEPENDS =	devel/py-colorama,python3 \
+		security/dante \
+		www/w3m
 
 MAKE_FLAGS =	PREFIX=${PREFIX}
 
