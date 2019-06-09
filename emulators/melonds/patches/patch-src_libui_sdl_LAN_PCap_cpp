@@ -1,0 +1,14 @@
+$OpenBSD$
+
+Index: src/libui_sdl/LAN_PCap.cpp
+--- src/libui_sdl/LAN_PCap.cpp.orig
++++ src/libui_sdl/LAN_PCap.cpp
+@@ -22,7 +22,7 @@
+ #include <stdlib.h>
+ #include <string.h>
+ #include <SDL2/SDL.h>
+-#include <pcap/pcap.h>
++#include <pcap.h>
+ #include "../Wifi.h"
+ #include "LAN_PCap.h"
+ #include "PlatformConfig.h"

@@ -1,0 +1,10 @@
+@sample-ing everything is very ugly. The Debian install seems to put things
+in the expected system directories with no hassle. Investigate it for ideas?
+https://wiki.yacy.net/index.php/En:DebianInstall
+
+The config file should probably be chmod 770 since it can (and should) contain
+authentication details.
+
+By default, if the port YaCy listens on is accessible to the Internet, YaCy
+will attempt to join the P2P swarm. "Search only," which happens automatically
+if the port is not accessible, would be a better default.
