@@ -4,8 +4,6 @@ COMMENT =		Python interface to libVEX and VEX IR
 
 ANGR_PYTHON_MODULE =	pyvex
 
-HOMEPAGE =		https://github.com/angr/pyvex
-
 USE_GMAKE =		Yes
 CFLAGS +=		-shared -fPIC -I${LOCALBASE}/include/angr-vex/
 

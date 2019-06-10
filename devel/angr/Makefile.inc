@@ -10,6 +10,8 @@ CATEGORIES =		devel security
 PERMIT_PACKAGE ?=	Yes
 
 .if defined(ANGR_PYTHON_MODULE)
+HOMEPAGE ?=		https://github.com/angr/${ANGR_PYTHON_MODULE}/
+
 MODULES ?=		lang/python
 MODPY_PI ?=		Yes
 MODPY_SETUPTOOLS ?=	Yes
