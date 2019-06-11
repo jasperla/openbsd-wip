@@ -9,8 +9,9 @@ HOMEPAGE =	https://angr.io/
 # Not honored?
 #USE_GMAKE =	Yes
 
-BUILD_DEPENDS =	devel/py-unicorn${MODPY_FLAVOR} \
-		devel/angr/py-pyvex>=${MODPY_EGG_VERSION}
+BUILD_DEPENDS =	devel/angr/py-pyvex>=${MODPY_EGG_VERSION} \
+		devel/py-future${MODPY_FLAVOR} \
+		devel/py-unicorn${MODPY_FLAVOR}
 
 # AngrServer could use (unported) rpyc
 RUN_DEPENDS =	devel/angr/py-ailment>=${MODPY_EGG_VERSION} \
