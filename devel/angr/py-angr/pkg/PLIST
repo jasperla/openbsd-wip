@@ -1,6 +1,4 @@
 @comment $OpenBSD: PLIST,v$
-lib/python${MODPY_VERSION}/
-lib/python${MODPY_VERSION}/site-packages/
 lib/python${MODPY_VERSION}/site-packages/angr/
 lib/python${MODPY_VERSION}/site-packages/angr-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/angr-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
