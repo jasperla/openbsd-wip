@@ -8,7 +8,7 @@ RUN_DEPENDS =		devel/angr/py-archinfo>=${MODPY_EGG_VERSION} \
 			devel/angr/py-claripy>=${MODPY_EGG_VERSION} \
 			devel/angr/py-pyvex>=${MODPY_EGG_VERSION} \
 			devel/py-elftools${MODPY_FLAVOR} \
-			devel/py-pefile${MODPY_FLAVOR} \
-			devel/py-sortedcontainers${MODPY_FLAVOR}
+			devel/py-sortedcontainers${MODPY_FLAVOR} \
+			security/py-pefile${MODPY_FLAVOR}
 
 .include <bsd.port.mk>
