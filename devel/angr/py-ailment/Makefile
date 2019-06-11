@@ -2,7 +2,7 @@
 
 COMMENT =		angr intermediate language
 
-ANGR_PYTHON_MODULE=	ailment
+ANGR_PYTHON_MODULE =	ailment
 
 # ailment cannot be used standalone as it requires angr, however
 # since angr already requires ailment we'd create a cyclic
