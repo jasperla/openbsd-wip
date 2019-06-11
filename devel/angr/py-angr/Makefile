@@ -10,6 +10,7 @@ HOMEPAGE =	https://angr.io/
 #USE_GMAKE =	Yes
 
 BUILD_DEPENDS =	devel/angr/py-pyvex>=${MODPY_EGG_VERSION} \
+		devel/py-bitstring${MODPY_FLAVOR} \
 		devel/py-future${MODPY_FLAVOR} \
 		devel/py-unicorn${MODPY_FLAVOR}
 
