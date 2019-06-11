@@ -28,7 +28,7 @@ RUN_DEPENDS =	${BUILD_DEPENDS} \
 		devel/py-mulpyplexer${MODPY_FLAVOR} \
 		devel/py-progressbar${MODPY_FLAVOR} \
 		devel/py-sortedcontainers${MODPY_FLAVOR} \
-		math/py-networkx${MODPY_FLAVOR} \
+		math/py-networkx \
 		net/py-dpkt${MODPY_FLAVOR} \
 		sysutils/py-psutil${MODPY_FLAVOR} \
 
