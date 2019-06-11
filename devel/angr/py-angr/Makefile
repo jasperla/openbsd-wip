@@ -24,10 +24,10 @@ RUN_DEPENDS =	devel/angr/py-ailment>=${MODPY_EGG_VERSION} \
 		devel/py-cooldict${MODPY_FLAVOR} \
 		devel/py-cparser${MODPY_FLAVOR} \
 		devel/py-mulpyplexer${MODPY_FLAVOR} \
-		devel/py-networkx${MODPY_FLAVOR} \
 		devel/py-progressbar${MODPY_FLAVOR} \
 		devel/py-sortedcontainers${MODPY_FLAVOR} \
 		devel/py-unicorn${MODPY_FLAVOR} \
+		math/py-networkx${MODPY_FLAVOR} \
 		net/py-dpkt${MODPY_FLAVOR} \
 		sysutils/py-psutil${MODPY_FLAVOR} \
 
