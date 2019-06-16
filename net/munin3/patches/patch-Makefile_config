@@ -91,14 +91,14 @@ Index: Makefile.config
  
  # Default user to run the plugins as
  PLUGINUSER := nobody
-@@ -134,8 +137,8 @@ CGIUSER := nobody
- # These will work on most modern OSes:
- #
- GETENT     := $(shell which getent || which true 2>/dev/null)
--CHECKUSER  := $(shell $(GETENT) passwd $(USER) >/dev/null 2>/dev/null || (echo "echo User $(USER) nonexistent. Create the user and retry; exit 2"))
--CHECKGROUP := $(shell $(GETENT) group $(GROUP) >/dev/null 2>/dev/null || (echo "echo Group $(GROUP) nonexistent. Create the group and retry; exit 2"))
-+CHECKUSER  :=
-+CHECKGROUP :=
- 
- # For OSX, comment out the previous two lines and comment in these
- #
+@@ -133,8 +136,8 @@ CGIUSER := nobody
+ # Which command to use to check if the USER and GROUP to run Munin as, exists.
+ ifneq ($(shell which getent),)
+     # "getent" works on most modern OS
+-    CHECKUSER_COMMAND := getent passwd $(USER)
+-    CHECKGROUP_COMMAND := getent group $(GROUP)
++    CHECKUSER_COMMAND :=
++    CHECKGROUP_COMMAND :=
+ else
+     ifeq ($(OSTYPE),darwin)
+         # This should work for OSX 10.5 (Leopard) or later

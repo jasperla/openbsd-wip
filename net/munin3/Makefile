@@ -1,11 +1,9 @@
 # $OpenBSD: Makefile,v 1.60 2017/05/16 08:48:56 ajacoutot Exp $
 
-PORTROACH = 	limitw:1,even
-
 COMMENT-main =	flexible network host monitoring, client
 COMMENT-server =flexible network host monitoring, server
 
-V = 		2.999.11
+V = 		2.999.12
 DISTNAME = 	munin-${V}
 PKGNAME-main =	munin3-node-${V}
 PKGNAME-server =munin3-server-${V}
