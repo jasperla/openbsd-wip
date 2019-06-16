@@ -6,9 +6,6 @@ ANGR_PYTHON_MODULE =	angr
 
 HOMEPAGE =	https://angr.io/
 
-# Not honored?
-#USE_GMAKE =	Yes
-
 WANTLIB =	${COMPILER_LIBCXX} m
 
 # C++11
@@ -36,6 +33,8 @@ RUN_DEPENDS =	${BUILD_DEPENDS} \
 		math/py-networkx \
 		net/py-dpkt${MODPY_FLAVOR} \
 		sysutils/py-psutil${MODPY_FLAVOR}
+
+USE_GMAKE =	Yes
 
 MAKE_ENV +=	C++C=${CXX}
 
