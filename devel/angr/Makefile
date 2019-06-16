@@ -7,7 +7,7 @@
     SUBDIR += py-claripy
     SUBDIR += py-cle
     SUBDIR += py-pyvex
-    SUBDIR += py-z3-solver,python3
+    SUBDIR += py-z3-solver
     SUBDIR += vex
 
 .include <bsd.port.subdir.mk>

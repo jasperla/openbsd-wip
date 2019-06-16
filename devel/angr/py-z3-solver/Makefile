@@ -11,7 +11,4 @@ HOMEPAGE =		https://github.com/angr/angr-z3
 
 WANTLIB += 		${COMPILER_LIBCXX} c m
 
-FLAVORS =		python3
-FLAVOR ?=
-
 .include <bsd.port.mk>
