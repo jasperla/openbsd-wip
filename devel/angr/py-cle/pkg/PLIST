@@ -173,3 +173,5 @@ lib/python${MODPY_VERSION}/site-packages/cle/loader.py
 lib/python${MODPY_VERSION}/site-packages/cle/memory.py
 lib/python${MODPY_VERSION}/site-packages/cle/patched_stream.py
 lib/python${MODPY_VERSION}/site-packages/cle/utils.py
+share/doc/py-cle/
+share/doc/py-cle/README.md

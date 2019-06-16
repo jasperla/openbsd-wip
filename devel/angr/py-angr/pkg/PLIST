@@ -1255,3 +1255,5 @@ lib/python${MODPY_VERSION}/site-packages/angr/utils/constants.py
 lib/python${MODPY_VERSION}/site-packages/angr/utils/graph.py
 lib/python${MODPY_VERSION}/site-packages/angr/utils/library.py
 lib/python${MODPY_VERSION}/site-packages/angr/vaults.py
+share/doc/py-angr/
+share/doc/py-angr/README.md

@@ -63,3 +63,5 @@ lib/python${MODPY_VERSION}/site-packages/pyvex/lifting/util/vex_helper.py
 lib/python${MODPY_VERSION}/site-packages/pyvex/lifting/zerodivision.py
 lib/python${MODPY_VERSION}/site-packages/pyvex/stmt.py
 lib/python${MODPY_VERSION}/site-packages/pyvex/vex_ffi.py
+share/doc/py-pyvex/
+share/doc/py-pyvex/README.md

@@ -20,7 +20,13 @@ RUN_DEPENDS +=		devel/angr/py-archinfo>=${MODPY_EGG_VERSION} \
 			devel/py-future${MODPY_FLAVOR}
 TEST_DEPENDS =		${RUN_DEPENDS}
 
+DOCDIR =		${PREFIX}/share/doc/py-${ANGR_PYTHON_MODULE}
+
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/pyvex_c/Makefile ${WRKSRC}/setup.py
+
+post-install:
+	${INSTALL_DATA_DIR} ${DOCDIR}/
+	${INSTALL_DATA} ${WRKSRC}/README.md ${DOCDIR}/
 
 .include <bsd.port.mk>

@@ -11,4 +11,10 @@ RUN_DEPENDS =		devel/angr/py-archinfo>=${MODPY_EGG_VERSION} \
 			devel/py-sortedcontainers${MODPY_FLAVOR} \
 			security/py-pefile${MODPY_FLAVOR}
 
+DOCDIR =		${PREFIX}/share/doc/py-${ANGR_PYTHON_MODULE}
+
+post-install:
+	${INSTALL_DATA_DIR} ${DOCDIR}/
+	${INSTALL_DATA} ${WRKSRC}/README.md ${DOCDIR}/
+
 .include <bsd.port.mk>

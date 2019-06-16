@@ -38,7 +38,13 @@ USE_GMAKE =	Yes
 
 MAKE_ENV +=	C++C=${CXX}
 
+DOCDIR =	${PREFIX}/share/doc/py-${ANGR_PYTHON_MODULE}
+
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/native/Makefile
+
+post-install:
+	${INSTALL_DATA_DIR} ${DOCDIR}/
+	${INSTALL_DATA} ${WRKSRC}/README.md ${DOCDIR}/
 
 .include <bsd.port.mk>
