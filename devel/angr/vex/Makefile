@@ -12,9 +12,7 @@ DISTNAME =	angr-vex-0.1
 USE_GMAKE =	Yes
 MAKE_FILE =	Makefile-gcc
 
-NO_TEST =	Yes
-
-MAKE_ENV =	EXTRA_CFLAGS=-DVGA_amd64
+CFLAGS +=	-DVGA_amd64
 
 post-extract:
 	rm ${WRKSRC}/orig_arm/nanoarm.orig
