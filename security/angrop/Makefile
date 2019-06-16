@@ -19,4 +19,10 @@ MODPY_EGG_VERSION =	8.19.4.5
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 
+DOCDIR =		${PREFIX}/share/doc/angrop
+
+post-install:
+	${INSTALL_DATA_DIR} ${DOCDIR}/
+	${INSTALL_DATA} ${WRKSRC}/README.md ${DOCDIR}/
+
 .include <bsd.port.mk>
