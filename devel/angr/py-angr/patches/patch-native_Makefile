@@ -1,17 +1,19 @@
 $OpenBSD$
 
+- Support OpenBSD
+- honour compiler environment
+- remove hardcoded optimizations
+
 Index: native/Makefile
 --- native/Makefile.orig
 +++ native/Makefile
-@@ -1,19 +1,10 @@
--UNAME := $(shell uname)
--ifeq ($(UNAME), Darwin)
--	LIB_ANGR_NATIVE=angr_native.dylib
--endif
--ifeq ($(UNAME), Linux)
--	LIB_ANGR_NATIVE=angr_native.so
--endif
-+LIB_ANGR_NATIVE=angr_native.so
+@@ -5,15 +5,15 @@ endif
+ ifeq ($(UNAME), Linux)
+ 	LIB_ANGR_NATIVE=angr_native.so
+ endif
++ifeq ($(UNAME), OpenBSD)
++	LIB_ANGR_NATIVE=angr_native.so
++endif
  
 -CC := gcc
 -C++C := g++
@@ -23,7 +25,16 @@ Index: native/Makefile
 -ifneq ($(DEBUG), )
 -	CFLAGS := $(CFLAGS) -O0 -g
 -endif
-+	-O3 -fPIC -std=c++11 -I ${LOCALBASE}/include/angr-vex
++	-fPIC -std=c++11 ${CFLAGS}
  
  OBJS := log.o
  LIBS := -lunicorn -lpyvex
+@@ -21,7 +21,7 @@ LIBS := -lunicorn -lpyvex
+ all: ${LIB_ANGR_NATIVE}
+ 
+ log.o: log.c log.h
+-	${CC} -fPIC -c -O3 -o $@ $<
++	${CC} -fPIC -c -o $@ $<
+ 
+ ${LIB_ANGR_NATIVE}: ${OBJS} sim_unicorn.cpp
+ 	${C++C} ${CFLAGS} -shared -o $@ $^ ${LIBS}
