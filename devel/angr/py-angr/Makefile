@@ -9,6 +9,11 @@ HOMEPAGE =	https://angr.io/
 # Not honored?
 #USE_GMAKE =	Yes
 
+WANTLIB =	${COMPILER_LIBCXX} m
+
+# C++11
+COMPILER =	base-clang ports-gcc base-gcc
+
 BUILD_DEPENDS =	devel/angr/py-pyvex>=${MODPY_EGG_VERSION} \
 		devel/py-bitstring${MODPY_FLAVOR} \
 		devel/py-cffi${MODPY_FLAVOR} \
@@ -30,7 +35,7 @@ RUN_DEPENDS =	${BUILD_DEPENDS} \
 		devel/py-sortedcontainers${MODPY_FLAVOR} \
 		math/py-networkx \
 		net/py-dpkt${MODPY_FLAVOR} \
-		sysutils/py-psutil${MODPY_FLAVOR} \
+		sysutils/py-psutil${MODPY_FLAVOR}
 
 MAKE_ENV +=	C++C=${CXX}
 
