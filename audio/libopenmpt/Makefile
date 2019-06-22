@@ -2,7 +2,7 @@
 
 COMMENT =	OpenMPT based module player library and command-line player
 
-DISTNAME =	libopenmpt-0.4.4+release.autotools
+DISTNAME =	libopenmpt-0.4.5+release.autotools
 PKGNAME =	${DISTNAME:S/+release.autotools//}
 
 SHARED_LIBS +=	openmpt	0.0	# 1.1
@@ -29,6 +29,10 @@ LIB_DEPENDS =	audio/flac \
 
 CONFIGURE_STYLE = gnu
 
-CONFIGURE_ARGS+= --without-portaudiocpp
+CONFIGURE_ARGS += --without-portaudiocpp
+
+CXXFLAGS +=	-D_LIBCPP_HAS_C11_FEATURES
+
+NO_TEST =	Yes
 
 .include <bsd.port.mk>
