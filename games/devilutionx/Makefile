@@ -19,8 +19,7 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += SDL2 SDL2_mixer SDL2_ttf c m pthread
 
 # Does not build with clang. Reasons unknown.
-# This might only work with my hacks to gcc-8.3.0 that allow
-# libsupc++ and libc++abi to coexist in a program.
+# FreeBSD also uses gcc. Windows uses MSVC.
 COMPILER =	ports-gcc
 
 MODULES =	devel/cmake
