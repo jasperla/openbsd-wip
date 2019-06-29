@@ -16,11 +16,7 @@ PERMIT_PACKAGE =	Yes
 # Links with -static-libgcc -static-libstdc++
 # so `make port-lib-depends-check' reports
 # Extra:  estdc++
-WANTLIB += SDL2 SDL2_mixer SDL2_ttf c m pthread
-
-# Does not build with clang. Reasons unknown.
-# FreeBSD also uses gcc. Windows uses MSVC.
-COMPILER =	ports-gcc
+WANTLIB += ${COMPILER_LIBCXX} SDL2 SDL2_mixer SDL2_ttf c m pthread
 
 MODULES =	devel/cmake
 
