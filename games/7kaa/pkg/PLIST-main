@@ -4,5 +4,5 @@ bin/7kaa
 share/doc/7kaa/
 share/doc/7kaa/COPYING
 share/doc/7kaa/README
-share/doc/pkg-readmes/${FULLPKGNAME}
+share/doc/pkg-readmes/${PKGSTEM}
 share/locale/ru/LC_MESSAGES/7kaa.mo

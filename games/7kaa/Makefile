@@ -3,7 +3,7 @@
 COMMENT-main = 		real-time strategy game
 COMMENT-data = 		7kaa data files
 
-V = 			2.15.0
+V = 			2.15.1
 DISTNAME = 		7kaa-${V}
 PKGNAME-main = 		${DISTNAME}
 PKGNAME-data = 		7kaa-data-${V}
@@ -27,7 +27,7 @@ WANTLIB-data =
 
 BUILD_DEPENDS = 	${MODGNU_AUTOCONF_DEPENDS} \
 			${MODGNU_AUTOMAKE_DEPENDS} \
-			devel/gettext-tools \
+			devel/gettext,-tools \
 			devel/libtool
 
 LIB_DEPENDS-main = 	audio/openal \
@@ -37,7 +37,7 @@ LIB_DEPENDS-main = 	audio/openal \
 			net/enet
 RUN_DEPENDS-main = 	games/7kaa,-data
 
-SEPARATE_BUILD = 	Yes
+#SEPARATE_BUILD = 	Yes
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS +=	--bindir=${PREFIX}/share/7kaa
 CONFIGURE_ENV +=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
