@@ -1,0 +1,12 @@
+[Desktop Entry]
+Version=1.0
+Encoding=UTF-8
+Type=Application
+Name=CLion
+GenericName=CLion
+Comment=CLion Integrated Development Environment
+Icon=${TRUEPREFIX}/clion/clion.png
+Exec=${TRUEPREFIX}/bin/clion
+Terminal=false
+StartupNotify=true
+Categories=Application;Development;

@@ -1,0 +1,44 @@
+#!/bin/sh
+#
+# $OpenBSD: clion,v 1.2 2019/04/25 19:33:06 rsadowski Exp $
+#
+# OpenBSD-specific startup script for CLion IDE
+
+CLION_HOME=${TRUEPREFIX}/clion
+DATASIZE="2048000"
+[[ `arch -s` == i386 ]] && DATASIZE="1536000"
+
+#-----------------------------------------------------------------------------
+# Determine configuration settings
+#-----------------------------------------------------------------------------
+
+export CLION_JDK=$(javaPathHelper -c jetbrains-clion)
+export JAVA_HOME=$(javaPathHelper -h jetbrains-clion)
+
+if [ ! -x "${CLION_JDK}" ]; then
+	echo "Error: JAVA_HOME may not be defined correctly: ${JAVA_HOME}"
+	echo "       Unable to find Java binary ${CLION_JDK}"
+        exit 1
+fi
+
+# Check if 'clion' executable can be found
+if [ ! -x "${CLION_HOME}/bin/clion.sh" ]; then
+	echo "Error: CLION_HOME may not be defined correctly: ${CLION_HOME}"
+	echo -n "       Unable to find launcher binary: "
+	echo "${CLION_HOME}/bin/clion.sh"
+	exit 1
+fi
+
+xm_log() {
+	echo -n "$@\nDo you want to run PyCharm anyway?\n\
+(If you don't increase these limits, PyCharm might fail to work properly.)" | \
+		${X11BASE}/bin/xmessage -file - -center -buttons yes:0,no:1 -default no
+}
+
+if [ $(ulimit -Sd) -lt ${DATASIZE} ]; then
+	ulimit -Sd ${DATASIZE} || \
+		xm_log "Cannot increase datasize-cur to at least ${DATASIZE}"
+		[ $? -eq 0 ] || exit
+fi
+
+PATH=${JAVA_HOME}/bin:$PATH exec "${CLION_HOME}/bin/clion.sh" $@
