@@ -3,6 +3,7 @@
 COMMENT =		efficient SMT solver library (angr fork)
 
 ANGR_PYTHON_MODULE =	z3-solver
+# devel/angr/py-claripy requires this exact version, newer 4.8.5.0 breaks it.
 MODPY_EGG_VERSION =	4.5.1.0.post2
 
 CATEGORIES +=		math
