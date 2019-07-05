@@ -3,7 +3,7 @@ $OpenBSD$
 Honour CFLAGS and DEBUG.
 
 Index: Makefile-gcc
---- Makefile-gcc.orig
+--- Makefile-gcc.pat.orig
 +++ Makefile-gcc
 @@ -30,15 +30,7 @@ CFLAGS := -Ipub -Ipriv \
  	-Wcast-align -Wmissing-declarations \
