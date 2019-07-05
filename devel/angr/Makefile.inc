@@ -1,6 +1,7 @@
 # $OpenBSD$
 
-MAINTAINER ?=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
+MAINTAINER ?=		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
+			Klemens Nanni <kn@openbsd.org>
 
 CATEGORIES =		devel security
 
