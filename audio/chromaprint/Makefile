@@ -4,6 +4,9 @@
 # there as now tests are enabled)
 # Don't require boost anymore
 # Code uses modern ffmpeg api
+# Tests are working on macppc and amd64
+#
+# XXX next step: trying consumers
 
 COMMENT =		audio fingerprint extraction library
 
