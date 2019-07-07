@@ -1,4 +1,7 @@
 $OpenBSD: patch-cmake_modules_FindGTest_cmake,v 1.1 2014/05/09 09:00:19 sthen Exp $
+
+Find gtest from devel/gtest.
+
 Index: cmake/modules/FindGTest.cmake
 --- cmake/modules/FindGTest.cmake.orig
 +++ cmake/modules/FindGTest.cmake

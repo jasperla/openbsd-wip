@@ -1,4 +1,8 @@
 $OpenBSD: patch-tests_CMakeLists_txt,v 1.1 2014/05/09 09:00:19 sthen Exp $
+
+Using the port devel/gtest instead of using a third party one that we
+would need to download and extract
+
 Index: tests/CMakeLists.txt
 --- tests/CMakeLists.txt.orig
 +++ tests/CMakeLists.txt

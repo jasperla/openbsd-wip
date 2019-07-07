@@ -36,9 +36,7 @@ CONFIGURE_ARGS =	-DBUILD_TOOLS=ON \
 
 TEST_TARGET =		check
 
-SUBST_VARS =		LOCALBASE
-
-post-patch:
+pre-configure:
 	${SUBST_CMD} ${WRKSRC}/cmake/modules/FindGTest.cmake
 
 .include <bsd.port.mk>
