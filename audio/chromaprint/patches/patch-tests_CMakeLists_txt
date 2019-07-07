@@ -1,0 +1,25 @@
+$OpenBSD: patch-tests_CMakeLists_txt,v 1.1 2014/05/09 09:00:19 sthen Exp $
+Index: tests/CMakeLists.txt
+--- tests/CMakeLists.txt.orig
++++ tests/CMakeLists.txt
+@@ -3,11 +3,9 @@ find_package(GTest REQUIRED)
+ include_directories(
+ 	${CMAKE_CURRENT_SOURCE_DIR}
+ 	${GTEST_INCLUDE_DIRS}
+-	${GTEST_SOURCE_DIR}
+ )
+ 
+ set(SRCS
+-	${GTEST_SOURCE_DIR}/src/gtest-all.cc
+ 	main.cpp
+ 	test_api.cpp
+ 	test_utils.cpp
+@@ -37,6 +35,8 @@ if(BUILD_TOOLS)
+ 	set(SRCS ${SRCS} ../src/audio/ffmpeg_audio_reader_test.cpp)
+ 	link_libraries(fpcalc_libs)
+ endif()
++
++link_libraries(gtest)
+ 
+ add_executable(all_tests ${SRCS} $<TARGET_OBJECTS:chromaprint_objs>)
+ target_link_libraries(all_tests PRIVATE chromaprint ${CMAKE_THREAD_LIBS_INIT})
