@@ -165,10 +165,10 @@ post-install:
 	${SUBST_CMD} ${PREFIX}/share/texmf-dist/web2c/texmfcnf.lua
 
 # Generating PLISTs is special for TeX Live.
-# This target requires Python3.
+# This target requires Python3. XXX use correct python3
 update-plist: plist
 plist: fake
-	env WRKINST=${WRKINST} TRUEPREFIX=${TRUEPREFIX} ${MODPY_BIN} \
+	env WRKINST=${WRKINST} TRUEPREFIX=${TRUEPREFIX} python3 \
 		${FILESDIR}/update_plist_hints.py \
 		${WRKDIR}/texlive.tlpdb | \
 		${FILESDIR}/write_plists.py

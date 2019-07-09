@@ -2,6 +2,7 @@
 # $OpenBSD: tlpdb.py,v 1.2 2019/01/20 11:17:49 edd Exp $
 """Lightweight TeX Live TLPDB parser."""
 
+import sys
 
 class DBError(Exception):
     pass
@@ -54,6 +55,8 @@ class Pkg(object):
             self.files[k] = set()
         self.deps = set()
         self.relocated = False
+        # Set of <name, engine> pairs.
+        self.symlinks = set()
 
     def _reloc(self, fls):
         """If the package is "relocated" then we have to rewrite the "RELOC"
@@ -80,7 +83,7 @@ class Parser(object):
     IGNORE_FIELDS = ("category", "revision", "catalogue", "shortdesc",
                      "longdesc", "catalogue-ctan", "catalogue-date",
                      "catalogue-license", "catalogue-topics",
-                     "catalogue-version", "catalogue-also", "execute",
+                     "catalogue-version", "catalogue-also",
                      "postaction", "containersize",
                      "containerchecksum", "catalogue-contact-home",
                      "catalogue-contact-repository",
@@ -110,6 +113,24 @@ class Parser(object):
             elif line.startswith(" "):
                 assert pos == Pos.FILES
                 pkg.files[file_kind].add(fields(line)[0])
+            elif line.startswith("execute"):
+                flds = fields(line)
+                if flds[1] != "AddFormat":
+                    continue
+                sym_name, sym_engine = None, None
+                for kv in flds[2:]:
+                    if not kv.startswith(("name=", "engine=")):
+                        continue
+                    k, v = kv.split("=")
+                    if k == "name":
+                        sym_name = v
+                    elif k == "engine":
+                        sym_engine = v
+                    else:
+                        assert False
+                assert sym_name is not None
+                assert sym_engine is not None
+                pkg.symlinks.add((sym_name, sym_engine))
             elif line.startswith("depend"):
                 dep = fields(line)[1]
                 if dep.startswith("setting_available_architectures"):
@@ -231,6 +252,15 @@ class DB(object):
             ret.update([fn_prefix + x for x in
                         self.map[pp.pkg_name].get_files(pp.file_kind)])
         return ret
+
+    def get_pkg_part_symlinks(self, pps):
+        symlinks = set()
+        for pp in pps:
+            # If we are to install runfiles, then we need the symlink.
+            if pp.file_kind != FileKind.RUN:
+                continue
+            symlinks = symlinks.union(self.map[pp.pkg_name].symlinks)
+        return symlinks
 
     def pkgs(self):
         return self.map.keys()

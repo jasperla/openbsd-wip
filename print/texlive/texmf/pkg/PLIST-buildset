@@ -8,6 +8,21 @@
 @pkgpath print/texlive/texmf-minimal
 @pkgpath print/teTeX/texmf
 share/texmf-local/
+bin/
+bin/dvilualatex
+bin/dviluatex
+bin/etex
+bin/latex
+bin/luajitlatex
+bin/luajittex
+bin/lualatex
+bin/luatex
+bin/mf
+bin/mptopdf
+bin/pdfetex
+bin/pdflatex
+bin/pdftex
+bin/tex
 share/texmf-dist/
 share/texmf-dist/bibtex/
 share/texmf-dist/bibtex/bib/
