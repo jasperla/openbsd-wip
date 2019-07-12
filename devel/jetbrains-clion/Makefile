@@ -21,9 +21,10 @@ MODJAVA_VER =		11
 
 BUILD_DEPENDS =		${MODJAVA_RUN_DEPENDS}
 
-RUN_DEPENDS =		devel/desktop-file-utils \
-			java/javaPathHelper \
-			devel/gdb
+RUN_DEPENDS =		devel/clang-tools-extra \
+			devel/desktop-file-utils \
+			devel/gdb \
+			java/javaPathHelper
 
 NO_TEST =		Yes
 
@@ -46,6 +47,7 @@ do-install:
 	@rm -rf ${CL}/bin/lldb/linux
 	@${SUBST_PROGRAM} ${FILESDIR}/clion ${PREFIX}/bin/clion
 	@chmod ${BINMODE} ${PREFIX}/bin/clion
+	${INSTALL_DATA_DIR} ${CL}/bin/clang/linux
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications
 	cd ${WRKDIST}/lib && ${JAVA_HOME}/bin/jar xf icons.jar
 	${INSTALL_DATA} ${WRKDIST}/bin/clion.png ${CL}/clion.png

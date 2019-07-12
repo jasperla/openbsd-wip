@@ -2,6 +2,8 @@
 bin/clion
 clion/
 clion/bin/
+clion/bin/clang/
+clion/bin/clang/linux/
 clion/bin/clion.png
 clion/bin/clion.sh
 clion/bin/clion.svg
