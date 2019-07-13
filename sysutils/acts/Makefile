@@ -1,6 +1,6 @@
 # $OpenBSD$
 COMMENT =		another calendar-based tarsnap script
-V =			1.4b1
+V =			1.4.0
 DISTNAME =		acts-${V}
 CATEGORIES =		sysutils
 
@@ -8,7 +8,7 @@ HOMEPAGE =		https://github.com/alexjurkiewicz/acts
 MAINTAINER =		Josh Grosse <josh@jggimi.homeip.net>
 
 # Public Domain
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 GH_ACCOUNT =		alexjurkiewicz
 GH_PROJECT =		acts
