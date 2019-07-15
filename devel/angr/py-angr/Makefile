@@ -11,13 +11,15 @@ WANTLIB =	${COMPILER_LIBCXX} m
 # C++11
 COMPILER =	base-clang ports-gcc base-gcc
 
-LIB_DEPENDS =	devel/angr/vex
+# XXX: py-unicorn ships unicorn.so, but angr links against .1 - why?!
+# Missing lib: libunicorn.so.1 (/usr/local/lib/python3.7/site-packages/angr/lib/angr_native.so) (NOT REACHABLE)
+LIB_DEPENDS =	devel/angr/vex \
+		devel/py-unicorn${MODPY_FLAVOR}
 
 BUILD_DEPENDS =	devel/angr/py-pyvex>=${MODPY_EGG_VERSION} \
 		devel/py-bitstring${MODPY_FLAVOR} \
 		devel/py-cffi${MODPY_FLAVOR} \
-		devel/py-future${MODPY_FLAVOR} \
-		devel/py-unicorn${MODPY_FLAVOR}
+		devel/py-future${MODPY_FLAVOR}
 
 # AngrServer could use (unported) rpyc
 RUN_DEPENDS =	${BUILD_DEPENDS} \
@@ -44,7 +46,7 @@ CFLAGS +=	-I${LOCALBASE}/include/angr-vex/
 
 DOCDIR =	${PREFIX}/share/doc/py-${ANGR_PYTHON_MODULE}
 
-pre-configure:
+post-patch:
 	${SUBST_CMD} ${WRKSRC}/native/Makefile
 
 post-install:
