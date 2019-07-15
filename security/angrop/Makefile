@@ -8,7 +8,8 @@ CATEGORIES =		security
 
 HOMEPAGE =		https://github.com/salls/angrop
 
-MAINTAINER =		Jasper Lievisse Adriaanse <jasper@openbsd.org>
+MAINTAINER =		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
+			Klemens Nanni <kn@openbsd.org>
 
 # license field not set, consider bugging module's author
 PERMIT_PACKAGE =	Yes
@@ -18,6 +19,8 @@ MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 MODPY_EGG_VERSION =	8.19.4.5
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
+
+RUN_DEPENDS =		devel/angr/py-angr>=${MODPY_EGG_VERSION}
 
 DOCDIR =		${PREFIX}/share/doc/angrop
 
