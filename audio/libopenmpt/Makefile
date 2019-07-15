@@ -9,17 +9,19 @@ SHARED_LIBS +=	openmpt	0.0	# 1.1
 
 CATEGORIES =	audio devel
 
-MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
-
 HOMEPAGE =	https://lib.openmpt.org/libopenmpt/
 
+MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
+
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE = Yes
 
 WANTLIB +=	${COMPILER_LIBCXX} FLAC c m mpg123 ogg portaudio sndfile
 WANTLIB +=	sndio vorbis vorbisenc vorbisfile z
 
 MASTER_SITES =	https://lib.openmpt.org/files/libopenmpt/src/
+
+COMPILER =	base-clang ports-gcc
 
 LIB_DEPENDS =	audio/flac \
 		audio/libsndfile \
@@ -31,7 +33,8 @@ CONFIGURE_STYLE = gnu
 
 CONFIGURE_ARGS += --without-portaudiocpp
 
-CXXFLAGS +=	-D_LIBCPP_HAS_C11_FEATURES
+CXXFLAGS +=	-D_LIBCPP_HAS_C11_FEATURES \
+		-DMPG123_NO_LARGENAME
 
 NO_TEST =	Yes
 
