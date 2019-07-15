@@ -11,6 +11,8 @@ WANTLIB =	${COMPILER_LIBCXX} m
 # C++11
 COMPILER =	base-clang ports-gcc base-gcc
 
+LIB_DEPENDS =	devel/angr/vex
+
 BUILD_DEPENDS =	devel/angr/py-pyvex>=${MODPY_EGG_VERSION} \
 		devel/py-bitstring${MODPY_FLAVOR} \
 		devel/py-cffi${MODPY_FLAVOR} \
@@ -37,6 +39,8 @@ RUN_DEPENDS =	${BUILD_DEPENDS} \
 USE_GMAKE =	Yes
 
 MAKE_ENV +=	C++C=${CXX}
+
+CFLAGS +=	-I${LOCALBASE}/include/angr-vex/
 
 DOCDIR =	${PREFIX}/share/doc/py-${ANGR_PYTHON_MODULE}
 
