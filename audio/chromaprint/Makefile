@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2019/02/18 10:05:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 20:43:32 sthen Exp $
 
 # Update for chromaprint, fixes issues on arm/ppc (needs more testing
 # there as now tests are enabled)
 # Don't require boost anymore
 # Code uses modern ffmpeg api
 # Tests are working on macppc and amd64
-#
-# XXX next step: trying consumers
 
 COMMENT =		audio fingerprint extraction library
 
