@@ -23,8 +23,7 @@ MAINTAINER =	ryan@slipgate.org
 # Valve LLC.  All other use, distribution, or modification is prohibited
 # without written permission from Valve LLC."
 #
-PERMIT_PACKAGE_CDROM =	No
-PERMIT_PACKAGE_FTP =	Yes
+PERMIT_PACKAGE =	No
 
 WANTLIB += ${COMPILER_LIBCXX} m
 

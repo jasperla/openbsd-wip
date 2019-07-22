@@ -16,7 +16,7 @@ MAINTAINER =	ryan@slipgate.org
 
 # Mixed license, GPL v3+ for engine library, MIT for cmake files
 # Source: https://github.com/FWGS/xash3d/blob/master/README.md
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} c fontconfig freetype m z SDL2
 
