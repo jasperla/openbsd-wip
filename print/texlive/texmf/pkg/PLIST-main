@@ -6,6 +6,27 @@
 @conflict texlive_texmf-buildset-<2019p0
 @conflict texlive_texmf-context-<2019
 @pkgpath print/teTeX/texmf
+bin/
+bin/amstex
+bin/cslatex
+bin/csplain
+bin/eplain
+bin/jadetex
+bin/lamed
+bin/lollipop
+bin/luacsplain
+bin/mex
+bin/mllatex
+bin/mltex
+bin/pdfcslatex
+bin/pdfcsplain
+bin/pdfjadetex
+bin/pdfmex
+bin/pdfxmltex
+bin/texsis
+bin/utf8mex
+bin/xelatex
+bin/xmltex
 @info info/dvips.info
 @info info/eplain.info
 @info info/epspdf.info

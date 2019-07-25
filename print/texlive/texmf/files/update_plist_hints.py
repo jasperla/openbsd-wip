@@ -329,21 +329,24 @@ def process_symlinks(symlink_map):
                     continue
                 if name == "pdfcsplain" and engine != "pdftex":
                     continue
-                if name == "mf-nowin":
+                if name in ("mf-nowin", "mf", "mptopdf"):
                     continue
 
-                ln_cmds.append("\t\tln -s %s %s" % (name, engine))
+                if name == engine:
+                    continue
+
+                ln_cmds.append("\t\tln -s %s %s" % (engine, name))
 
                 # Ensure the file is included in the PLIST too.
-                # But not for the minimal set, as those will be included in the
+                # But not for the buildset, as those will be included in the
                 # texlive_base PLIST instead.
-                if target_plist != TargetPlist.MINIMAL:
+                if target_plist != TargetPlist.BUILDSET:
                     print("bin/%s %s" % (name, TargetPlist.to_str(target_plist)))
 
             fh.write("%s:\n" % make_target)
             if len(ln_cmds) > 0:
                 fh.write("\tcd ${PREFIX}/bin && \\\n")
-                fh.write(" \\\n".join(ln_cmds))
+                fh.write(" && \\\n".join(ln_cmds))
             else:
                 fh.write("\ttrue")
             fh.write("\n\n")

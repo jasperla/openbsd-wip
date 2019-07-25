@@ -1,5 +1,6 @@
 # $OpenBSD: Makefile,v 1.57 2019/02/10 18:14:36 jca Exp $
 # XXX put back texdraw patch
+# XXX no one-line description at package time for PLISTs
 
 COMMENT-context =	texlive texmf for conTeXt
 COMMENT-docs =		texlive documentation
@@ -44,14 +45,14 @@ MODRUBY_RUNDEP =	No
 MODPY_BUILDDEP =	No
 MODPY_RUNDEP =		No
 
-RUN_DEPENDS-main +=	texlive_base->=${V}p0:print/texlive/base,-main \
+RUN_DEPENDS-main +=	texlive_base->=${V}:print/texlive/base,-main \
 			${FULLPKGNAME-buildset}:print/texlive/texmf,-buildset
 RUN_DEPENDS-full =	${FULLPKGNAME-main}:print/texlive/texmf,-main \
 			${MODPY_RUN_DEPENDS} \
 			${_MODLUA_RUNDEPENDS}
 RUN_DEPENDS-context +=	${FULLPKGNAME-full}:print/texlive/texmf,-full \
 			${MODRUBY_RUNDEPENDS}
-RUN_DEPENDS-docs +=	texlive_base->=${V}p0:print/texlive/base,-main \
+RUN_DEPENDS-docs +=	texlive_base->=${V}:print/texlive/base,-main \
 			x11/p5-Tk
 RUN_DEPENDS-buildset +=	texlive_mktexlsr->=${V}:print/texlive/base,-mktexlsr
 
@@ -123,7 +124,8 @@ pre-configure:
 	# This file contains a lookup table of interpreter paths
 	${SUBST_CMD} ${WRKSRC}/texmf-dist/scripts/context/stubs/unix/mtxrun
 
-do-install:
+.include "symlinks.mk"
+do-install: tl-symlinks-main tl-symlinks-full tl-symlinks-context
 	mv ${WRKDIST}/texmf-dist ${PREFIX}/share
 
 	# plug in my pregenerated map and formats

@@ -3,6 +3,8 @@
 # XXX
 # Warning: texlive_base-2019 conflicts with EMBOSS-6.0.1p4 (biology/emboss):/usr/local/bin/wordcount
 # Was texlua supposed to go?
+#
+# Update luatex bits in PLIST.
 
 COMMENT-main =		base binaries for TeXLive typesetting distribution
 COMMENT-mktexlsr =	mktexlsr for TeXLive typesetting distribution
@@ -164,7 +166,9 @@ TEX_LN =	lollipop
 
 EXTRA_ROOT =	${WRKDIR}/texlive-${DIST_V}-extra
 
-post-install:
+.include "../texmf/symlinks.mk"
+
+post-install: tl-symlinks-buildset
 	rm -Rf ${WRKSRC}/inst
 
 	# Following upstream's process, we don't install any texmf
@@ -191,29 +195,6 @@ post-install:
 		${PREFIX}/libdata/perl5/site_perl/TeXLive/
 	${INSTALL} ${EXTRA_ROOT}/tlpkg/TeXLive/TLConfig.pm \
 		${PREFIX}/libdata/perl5/site_perl/TeXLive/
-
-	# emulate texlinks
-	for i in ${ALEPH_LN}; do \
-		ln -s ${TRUEPREFIX}/bin/aleph ${PREFIX}/bin/$$i; \
-	done
-	for i in ${LUATEX_LN}; do \
-		ln -s ${TRUEPREFIX}/bin/luatex ${PREFIX}/bin/$$i; \
-	done
-	for i in ${MPOST_LN}; do \
-		ln -s ${TRUEPREFIX}/bin/mpost ${PREFIX}/bin/$$i; \
-	done
-	for i in ${PDFTEX_LN}; do \
-		ln -s ${TRUEPREFIX}/bin/pdftex ${PREFIX}/bin/$$i; \
-	done
-	for i in ${EPTEX_LN}; do \
-		ln -s ${TRUEPREFIX}/bin/eptex ${PREFIX}/bin/$$i; \
-	done
-	for i in ${XETEX_LN}; do \
-		ln -s ${TRUEPREFIX}/bin/xetex ${PREFIX}/bin/$$i; \
-	done
-	for i in ${EUPTEX_LN}; do \
-		ln -s ${TRUEPREFIX}/bin/euptex ${PREFIX}/bin/$$i; \
-	done
 
 .include <bsd.port.mk>
 

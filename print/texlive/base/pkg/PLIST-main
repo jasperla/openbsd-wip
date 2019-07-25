@@ -18,7 +18,6 @@ bin/afm2afm
 bin/allcm
 bin/allec
 bin/allneeded
-bin/amstex
 bin/arara
 bin/arlatex
 bin/authorindex
@@ -65,8 +64,6 @@ bin/context
 bin/contextjit
 bin/convbkmk
 bin/convertgls2bib
-bin/cslatex
-bin/csplain
 bin/ctan-o-mat
 bin/ctanbib
 @bin bin/ctangle
@@ -118,7 +115,6 @@ bin/dvitomp
 bin/e2pall
 bin/ebb
 bin/ebong
-bin/eplain
 bin/epspdf
 bin/epspdftk
 bin/epstopdf
@@ -155,7 +151,6 @@ bin/htxetex
 bin/inimf
 bin/initex
 bin/installfont-tl
-bin/jadetex
 bin/jamo-normalize
 bin/jfmutil
 bin/kanji-config-updmap
@@ -169,7 +164,6 @@ bin/kpsewhere
 bin/kpsexpand
 bin/l3build
 @bin bin/lacheck
-bin/lamed
 bin/latex
 bin/latex-git-log
 bin/latex-papersize
@@ -192,6 +186,7 @@ bin/ltx2crossrefxml
 bin/ltxfileinfo
 bin/ltximg
 bin/lua2dox_filter
+bin/luajitlatex
 bin/lualatex
 bin/luaotfload-tool
 @bin bin/luatex
@@ -208,7 +203,6 @@ bin/makeglossaries-lite
 bin/match_parens
 bin/mathspic
 @bin bin/mendex
-bin/mex
 @bin bin/mf
 @bin bin/mf-nowin
 bin/mf2pt1
@@ -228,8 +222,6 @@ bin/mktexfmt
 bin/mktexmf
 bin/mktexpk
 bin/mktextfm
-bin/mllatex
-bin/mltex
 @bin bin/mmafm
 @bin bin/mmpfb
 @bin bin/mpost
@@ -264,11 +256,8 @@ bin/pdfbook
 bin/pdfbook2
 @bin bin/pdfclose
 bin/pdfcrop
-bin/pdfcslatex
-bin/pdfcsplain
 bin/pdfetex
 bin/pdfflip
-bin/pdfjadetex
 bin/pdfjam
 bin/pdfjam-pocketmod
 bin/pdfjam-slides3up
@@ -276,14 +265,12 @@ bin/pdfjam-slides6up
 bin/pdfjoin
 bin/pdflatex
 bin/pdflatexpicscale
-bin/pdfmex
 bin/pdfnup
 @bin bin/pdfopen
 bin/pdfpun
 @bin bin/pdftex
 bin/pdftex-quiet
 @bin bin/pdftosrc
-bin/pdfxmltex
 bin/pdfxup
 bin/pdvitomp
 @bin bin/pdvitype
@@ -296,7 +283,6 @@ bin/pkfix
 bin/pkfix-helper
 @bin bin/pktogf
 @bin bin/pktype
-bin/platex
 @bin bin/pltotf
 @bin bin/pmpost
 @bin bin/pmxab
@@ -367,7 +353,6 @@ bin/texmfstart
 bin/texosquery
 bin/texosquery-jre5
 bin/texosquery-jre8
-bin/texsis
 @bin bin/tftopl
 bin/thumbpdf
 @bin bin/tie
@@ -388,14 +373,12 @@ bin/updmap-sys
 bin/updmap-user
 bin/updvitomp
 @bin bin/updvitype
-bin/uplatex
 @bin bin/upmendex
 @bin bin/upmpost
 @bin bin/uppltotf
 @bin bin/uptex
 @bin bin/uptftopl
 bin/urlbst
-bin/utf8mex
 @bin bin/vftovp
 @bin bin/vlna
 bin/vpe
@@ -406,17 +389,15 @@ bin/vpl2vpl
 bin/webquiz
 @bin bin/wofm2opl
 @bin bin/wopl2ofm
-bin/wordcount
+@comment bin/wordcount
 @bin bin/wovf2ovp
 @bin bin/wovp2ovf
 bin/xdvi
 @bin bin/xdvi-xaw
 @bin bin/xdvipdfmx
-bin/xelatex
 @bin bin/xetex
 bin/xhlatex
 bin/xindex
-bin/xmltex
 bin/yplan
 include/ptexenc/
 include/ptexenc/ptexenc.h

@@ -3,55 +3,43 @@
 
 tl-symlinks-buildset:
 	cd ${PREFIX}/bin && \
-		ln -s latex pdftex \
-		ln -s etex pdftex \
-		ln -s dviluatex luatex \
-		ln -s tex tex \
-		ln -s pdfetex pdftex \
-		ln -s pdflatex pdftex \
-		ln -s luajitlatex luajittex \
-		ln -s luatex luatex \
-		ln -s mf mf-nowin \
-		ln -s lualatex luatex \
-		ln -s luajittex luajittex \
-		ln -s mptopdf pdftex \
-		ln -s pdftex pdftex \
-		ln -s dvilualatex luatex
+		ln -s pdftex latex && \
+		ln -s pdftex etex && \
+		ln -s luajittex luajitlatex && \
+		ln -s luatex lualatex && \
+		ln -s luatex dviluatex && \
+		ln -s pdftex pdflatex && \
+		ln -s pdftex pdfetex && \
+		ln -s luatex dvilualatex
 
 tl-symlinks-main:
 	cd ${PREFIX}/bin && \
-		ln -s mex pdftex \
-		ln -s mltex pdftex \
-		ln -s xetex xetex \
-		ln -s lamed aleph \
-		ln -s mllatex pdftex \
-		ln -s csplain pdftex \
-		ln -s xelatex xetex \
-		ln -s pdfmex pdftex \
-		ln -s eplain pdftex \
-		ln -s aleph aleph \
-		ln -s xmltex pdftex \
-		ln -s pdfjadetex pdftex \
-		ln -s amstex pdftex \
-		ln -s texsis pdftex \
-		ln -s lollipop tex \
-		ln -s jadetex pdftex \
-		ln -s pdfcslatex pdftex \
-		ln -s utf8mex pdftex \
-		ln -s pdfcsplain pdftex \
-		ln -s luacsplain luatex \
-		ln -s pdfxmltex pdftex \
-		ln -s cslatex pdftex
+		ln -s pdftex xmltex && \
+		ln -s aleph lamed && \
+		ln -s pdftex utf8mex && \
+		ln -s pdftex mllatex && \
+		ln -s pdftex mex && \
+		ln -s pdftex pdfcsplain && \
+		ln -s pdftex pdfxmltex && \
+		ln -s tex lollipop && \
+		ln -s pdftex cslatex && \
+		ln -s pdftex mltex && \
+		ln -s pdftex texsis && \
+		ln -s pdftex pdfcslatex && \
+		ln -s pdftex eplain && \
+		ln -s pdftex jadetex && \
+		ln -s luatex luacsplain && \
+		ln -s pdftex pdfjadetex && \
+		ln -s xetex xelatex && \
+		ln -s pdftex pdfmex && \
+		ln -s pdftex csplain && \
+		ln -s pdftex amstex
 
 tl-symlinks-full:
 	cd ${PREFIX}/bin && \
-		ln -s eptex eptex \
-		ln -s ptex ptex \
-		ln -s euptex euptex \
-		ln -s uptex uptex \
-		ln -s uplatex euptex \
-		ln -s mflua mflua-nowin \
-		ln -s platex eptex
+		ln -s euptex uplatex && \
+		ln -s eptex platex && \
+		ln -s mflua-nowin mflua
 
 tl-symlinks-context:
 	true
