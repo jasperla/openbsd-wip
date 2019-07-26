@@ -4,13 +4,14 @@
 COMMENT =	GNU ELF-only linker
 DISTNAME =	binutils-2.32
 PKGNAME =	gold-1.16
+REVISION =	0
 CATEGORIES =	devel
 
 HOMEPAGE =	https://sourceware.org/binutils/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # GPLv3+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} c m z
 
@@ -37,6 +38,10 @@ CONFIGURE_ARGS +=	--disable-as \
 			--disable-sim \
 			--disable-readline \
 			--disable-libdecnumber
+
+.if !${MACHINE_ARCH:Mmips64} && !${MACHINE_ARCH:Mmips64el}
+CONFIGURE_ARGS +=	--enable-default-hash-style=both
+.endif
 
 MAKE_FLAGS =	CXXFLAGS="${CXXFLAGS} -std=gnu++11 -Wno-narrowing"
 
