@@ -5,12 +5,12 @@ Find libraries with soname version numbers when linking.
 Index: gold/fileread.cc
 --- gold/fileread.cc.orig
 +++ gold/fileread.cc
-@@ -1027,6 +1027,8 @@ Input_file::find_file(const Dirsearch& dirpath, int* p
+@@ -1026,6 +1026,8 @@ Input_file::find_file(const Dirsearch& dirpath, int* p
+ 	    names.push_back(prefix + ".a");
  	  else
  	    {
- 	      names.push_back(prefix + ".so");
 +	      std::string soversion = prefix + ".so";
 +	      names.push_back(prefix + ".so" + dirpath.find_versioned_soname(soversion, pindex));
+ 	      names.push_back(prefix + ".so");
  	      names.push_back(prefix + ".a");
  	    }
- 	}

@@ -4,7 +4,7 @@
 COMMENT =	GNU ELF-only linker
 DISTNAME =	binutils-2.32
 PKGNAME =	gold-1.16
-REVISION =	0
+REVISION =	1
 CATEGORIES =	devel
 
 HOMEPAGE =	https://sourceware.org/binutils/
