@@ -4,7 +4,7 @@ DPB_PROPERTIES =parallel
 
 COMMENT =	portable build system
 
-VER =		3.14.5
+VER =		3.15.0
 EPOCH =		0
 DISTNAME =	cmake-${VER}
 CATEGORIES =	devel
@@ -14,15 +14,14 @@ HOMEPAGE =	https://www.cmake.org/
 MASTER_SITES =	${HOMEPAGE}files/v${VER:R}/
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} archive c curl curses expat form
 WANTLIB += jsoncpp m rhash uv z
 
 COMPILER =		base-clang ports-gcc
 
-BUILD_DEPENDS +=	devel/ninja>=1.5.1 \
-			textproc/py-sphinx>=1.4 \
+BUILD_DEPENDS +=	textproc/py-sphinx>=1.4 \
 
 LIB_DEPENDS =		archivers/libarchive \
 			devel/libuv \
@@ -69,12 +68,6 @@ post-patch:
 		${SUBST_FILES}
 	perl -e 's,/usr/include,${LOCALBASE}/include,' \
 		${WRKSRC}/Modules/FindDCMTK.cmake \
-	# Use system jsoncpp
-	rm -rf ${WRKSRC}/Utilities/cmjsoncpp
-	find ${WRKSRC}/Source  -type f -name '*.cxx' -or -name '*.h' \
-		-exec sed -i 's,cm_jsoncpp_,jsoncpp/json/,g' {} +; \
-	find ${WRKSRC}/Utilities -type f -name '*.h' \
-		-exec sed -i 's,cmjsoncpp/include/json/,jsoncpp/json/,g' {} +;
 
 pre-configure:
 	cp ${FILESDIR}/*.cmake ${WRKSRC}/Modules/
@@ -82,18 +75,6 @@ pre-configure:
 	find ${WRKSRC}/Tests -name "CMakeLists.txt" -print0) | \
 	xargs -0 ${SUBST_CMD}
 	${SUBST_CMD} ${SUBST_FILES}
-
-do-build:
-	cd ${WRKBUILD} && exec ${SETENV} ${MAKE_ENV} ninja -v -j \
-		${MAKE_JOBS} ${ALL_TARGET}
-
-do-install:
-	cd ${WRKBUILD} && exec ${SETENV} ${MAKE_ENV} \
-		${FAKE_SETUP} ninja -v -j ${MAKE_JOBS} ${FAKE_TARGET}
-
-do-test:
-	cd ${WRKBUILD} && exec ${SETENV} ${ALL_TEST_ENV} ninja -v -j \
-		${MAKE_JOBS} ${TEST_FLAGS} ${TEST_TARGET}
 
 post-install:
 	@find ${WRKINST}${LOCALBASE} \( -name "*.bak" -o -name "*.orig" -o -name "*.beforesubst" \) -exec rm {} \;
