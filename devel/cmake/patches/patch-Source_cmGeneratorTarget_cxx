@@ -3,15 +3,7 @@ $OpenBSD$
 Index: Source/cmGeneratorTarget.cxx
 --- Source/cmGeneratorTarget.cxx.orig
 +++ Source/cmGeneratorTarget.cxx
-@@ -9,6 +9,7 @@
- #include <iterator>
- #include <memory> // IWYU pragma: keep
- #include <queue>
-+#include <iostream>
- #include <sstream>
- #include <stdio.h>
- #include <stdlib.h>
-@@ -1552,11 +1553,15 @@ std::string cmGeneratorTarget::GetCompilePDBPath(
+@@ -1552,11 +1552,15 @@ std::string cmGeneratorTarget::GetCompilePDBPath(
  
  bool cmGeneratorTarget::HasSOName(const std::string& config) const
  {
@@ -27,7 +19,7 @@ Index: Source/cmGeneratorTarget.cxx
  }
  
  bool cmGeneratorTarget::NeedRelinkBeforeInstall(
-@@ -3759,9 +3764,16 @@ cmGeneratorTarget::Names cmGeneratorTarget::GetLibrary
+@@ -3759,9 +3763,16 @@ cmGeneratorTarget::Names cmGeneratorTarget::GetLibrary
    // Check for library version properties.
    const char* version = this->GetProperty("VERSION");
    const char* soversion = this->GetProperty("SOVERSION");
@@ -44,7 +36,7 @@ Index: Source/cmGeneratorTarget.cxx
      // Versioning is supported only for shared libraries and modules,
      // and then only when the platform supports an soname flag.
      version = nullptr;
-@@ -3785,6 +3797,35 @@ cmGeneratorTarget::Names cmGeneratorTarget::GetLibrary
+@@ -3785,6 +3796,35 @@ cmGeneratorTarget::Names cmGeneratorTarget::GetLibrary
  
    // The library name.
    targetNames.Output = prefix + targetNames.Base + suffix;

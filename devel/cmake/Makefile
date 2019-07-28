@@ -1,6 +1,6 @@
 # $OpenBSD: Makefile,v 1.173 2019/04/24 16:26:54 sthen Exp $
 
-DPB_PROPERTIES =parallel
+DPB_PROPERTIES =	parallel
 
 COMMENT =	portable build system
 
@@ -11,7 +11,7 @@ CATEGORIES =	devel
 
 HOMEPAGE =	https://www.cmake.org/
 
-MASTER_SITES =	${HOMEPAGE}files/v${VER:R}/
+MASTER_SITES =	https://www.cmake.org/files/v${VER:R}/
 
 # BSD
 PERMIT_PACKAGE =	Yes
