@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.173 2019/04/24 16:26:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.175 2019/07/12 20:44:05 sthen Exp $
 
 DPB_PROPERTIES =	parallel
 

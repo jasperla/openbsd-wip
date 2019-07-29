@@ -3,23 +3,7 @@ $OpenBSD$
 Index: Source/cmGeneratorTarget.cxx
 --- Source/cmGeneratorTarget.cxx.orig
 +++ Source/cmGeneratorTarget.cxx
-@@ -1552,11 +1552,15 @@ std::string cmGeneratorTarget::GetCompilePDBPath(
- 
- bool cmGeneratorTarget::HasSOName(const std::string& config) const
- {
-+#if !defined(__OpenBSD__)
-   // soname is supported only for shared libraries and modules,
-   // and then only when the platform supports an soname flag.
-   return ((this->GetType() == cmStateEnums::SHARED_LIBRARY) &&
-           !this->GetPropertyAsBool("NO_SONAME") &&
-           this->Makefile->GetSONameFlag(this->GetLinkerLanguage(config)));
-+#else
-+  return false;
-+#endif
- }
- 
- bool cmGeneratorTarget::NeedRelinkBeforeInstall(
-@@ -3759,9 +3763,16 @@ cmGeneratorTarget::Names cmGeneratorTarget::GetLibrary
+@@ -3759,9 +3759,16 @@ cmGeneratorTarget::Names cmGeneratorTarget::GetLibrary
    // Check for library version properties.
    const char* version = this->GetProperty("VERSION");
    const char* soversion = this->GetProperty("SOVERSION");
@@ -36,7 +20,7 @@ Index: Source/cmGeneratorTarget.cxx
      // Versioning is supported only for shared libraries and modules,
      // and then only when the platform supports an soname flag.
      version = nullptr;
-@@ -3785,6 +3796,35 @@ cmGeneratorTarget::Names cmGeneratorTarget::GetLibrary
+@@ -3785,6 +3792,35 @@ cmGeneratorTarget::Names cmGeneratorTarget::GetLibrary
  
    // The library name.
    targetNames.Output = prefix + targetNames.Base + suffix;
