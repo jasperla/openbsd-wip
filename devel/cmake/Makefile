@@ -21,7 +21,7 @@ WANTLIB += jsoncpp m rhash uv z
 
 COMPILER =		base-clang ports-gcc
 
-BUILD_DEPENDS +=	textproc/py-sphinx>=1.4 \
+BUILD_DEPENDS +=	textproc/py-sphinx>=1.4
 
 LIB_DEPENDS =		archivers/libarchive \
 			devel/libuv \
