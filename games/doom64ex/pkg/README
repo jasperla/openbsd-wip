@@ -1,0 +1,21 @@
+$OpenBSD$
+
++-------------------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-------------------------------------------------------------------------------
+
+Acquiring Game Data
+===================
+
+To play this game, one must have a valid Doom64 cartridge from the Nintendo 64
+game console, and a cartridge copier.  Using the cartridge copier, create a
+ROM dump of the cart.
+
+Once this is completed, you can run the doom64ex binary as follows:
+
+  doom64ex -wadgen /path/to/doom64.rom
+
+This will automatically create a `doom64.wad' file and a doomsnd.sf2 soundfont
+file, placing them in the ~/.local/share/doom64ex/ directory.
+
+After this step is complete, run the game as normal.
