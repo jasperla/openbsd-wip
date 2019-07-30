@@ -26,10 +26,6 @@ PKGNAME-docs =		texlive_texmf-docs-${V}
 PKGNAME-context =	texlive_texmf-context-${V}
 PKGNAME-buildset =	texlive_texmf-buildset-${V}
 
-REVISION-main =		1
-REVISION-docs =		1
-REVISION-buildset =	0
-
 NO_BUILD =		Yes
 NO_TEST =		Yes
 PKG_ARCH =		*
@@ -71,9 +67,10 @@ SUBST_VARS +=		RUBY
 
 WRKDIST =		${WRKDIR}/texlive-${DIST_V}-texmf
 
-# Substitute correct interpreter paths into scripts.
-# Some are done automatically by MODULES
-pre-configure:
+# Substitute correct interpreter paths into scripts and deal with linked manuals.
+# Some interpreter paths are done automatically by MODULES.
+.include "manual_symlinks.mk"
+pre-configure: tl-manual-symlinks
 	@# Don't use substitution from the Python port, since we need to swap in
 	@# different versions.
 	for F in ${PYTHON2_ADJ_FILES}; do \
