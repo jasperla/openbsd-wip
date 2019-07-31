@@ -1,10 +1,12 @@
 # $OpenBSD$
 
+ONLY_FOR_ARCHS =	aarch64 amd64 arm i386 macppc mips64 mips64el sparc64
+
 # gold does not follow binutils version numbering
 COMMENT =	GNU ELF-only linker
 DISTNAME =	binutils-2.32
 PKGNAME =	gold-1.16
-REVISION =	1
+REVISION =	2
 CATEGORIES =	devel
 
 HOMEPAGE =	https://sourceware.org/binutils/
@@ -17,9 +19,9 @@ WANTLIB += ${COMPILER_LIBCXX} c m z
 
 MASTER_SITES =	${MASTER_SITE_GNU:=binutils/}
 
-# There is a hidden dependency on C++11
-# Prefer clang over gcc to get a gold linked with gold
-COMPILER =	base-clang ports-clang ports-gcc
+# Prefer clang over gcc to get a gold linked with gold.
+# See the post-build target.
+COMPILER =	base-clang ports-clang
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS +=	--disable-as \
@@ -39,25 +41,26 @@ CONFIGURE_ARGS +=	--disable-as \
 			--disable-readline \
 			--disable-libdecnumber
 
+# The .gnu.hash section is not supported on MIPS.
+# See https://reviews.llvm.org/D55878
+# The default is --enable-default-hash-style=sysv, which
+# is the old style. That works for MIPS.
 .if !${MACHINE_ARCH:Mmips64} && !${MACHINE_ARCH:Mmips64el}
 CONFIGURE_ARGS +=	--enable-default-hash-style=both
 .endif
-
-MAKE_FLAGS =	CXXFLAGS="${CXXFLAGS} -std=gnu++11 -Wno-narrowing"
 
 LIBTOOL_FLAGS =	--tag=disable-shared
 
 NO_TEST =	Yes
 
-.include <bsd.port.arch.mk>
-
 # Link gold with gold, as a test to ensure it is working.
 # Do a three-way link, to make sure that gold linked with
 # gold is useful.
 # But only do this if using clang, because the -fuse-ld
-# option on gcc is too stupid to understand full paths.
+# option on gcc doesn't understand full paths.
+# These days, there aren't any archs that gold supports
+# that clang doesn't.
 post-build:
-.if ${PROPERTIES:Mclang}
 	mv ${WRKSRC}/gold/ld-new ${WRKSRC}/gold/ld-first
 	cd ${WRKSRC}/gold && ${SETENV} \
 		${MAKE_PROGRAM} ${MAKE_FLAGS} \
@@ -66,7 +69,6 @@ post-build:
 	cd ${WRKSRC}/gold && ${SETENV} \
 		${MAKE_PROGRAM} ${MAKE_FLAGS} \
 		LDFLAGS='${LDFLAGS} -fuse-ld=${WRKSRC}/gold/ld-second'
-.endif
 
 # It installs these other things but we only want gold (and dwp).
 post-install:

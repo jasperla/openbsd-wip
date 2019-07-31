@@ -1,0 +1,15 @@
+$OpenBSD$
+
+Fix a build error with gcc-10.
+
+Index: gold/errors.h
+--- gold/errors.h.orig
++++ gold/errors.h
+@@ -24,6 +24,7 @@
+ #define GOLD_ERRORS_H
+ 
+ #include <cstdarg>
++#include <string>
+ 
+ #include "gold-threads.h"
+ 
