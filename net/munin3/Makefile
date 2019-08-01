@@ -3,7 +3,7 @@
 COMMENT-main =	flexible network host monitoring, client
 COMMENT-server =flexible network host monitoring, server
 
-V = 		2.999.12
+V = 		2.999.14
 DISTNAME = 	munin-${V}
 PKGNAME-main =	munin3-node-${V}
 PKGNAME-server =munin3-server-${V}
@@ -14,7 +14,7 @@ MASTER_SITES = 	http://downloads.munin-monitoring.org/munin/dev/$V/
 
 # Mostly GPLv2.
 # DejaVuSans.ttf and DejaVuSansMono.ttf has a non-restrictive license.
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MAINTAINER =		Kirill Bychkov <kirby@openbsd.org>
 
