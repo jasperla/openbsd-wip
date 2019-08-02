@@ -65,6 +65,7 @@ do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/thedarkmod
 	${INSTALL_PROGRAM} ${WRKBUILD}/thedarkmod ${PREFIX}/share/thedarkmod/
 	${INSTALL_PROGRAM} ${WRKBUILD}/tdm_update/tdm_update ${PREFIX}/share/thedarkmod/
+	${INSTALL_DATA} ${FILESDIR}/Darkmod.cfg ${PREFIX}/share/thedarkmod/
 
 post-install:
 	${SUBST_CMD} -c -m 755 ${FILESDIR}/thedarkmod.sh ${PREFIX}/bin/thedarkmod
