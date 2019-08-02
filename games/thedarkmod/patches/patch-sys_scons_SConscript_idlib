@@ -1,0 +1,15 @@
+$OpenBSD$
+
+remove Frustum_gcc.cpp from build because of duplicate symbol error
+
+Index: sys/scons/SConscript.idlib
+--- sys/scons/SConscript.idlib.orig
++++ sys/scons/SConscript.idlib
+@@ -68,7 +68,6 @@ idlib_string = ' \
+ 
+ # greebo: Compile the token source with less aggressive optimisation, to resolve issue #3184
+ suppress_optimization_string = ' \
+-	bv/Frustum_gcc.cpp \
+ 	Token.cpp'
+ 
+ idlib_list = scons_utils.BuildList( '../../idlib', idlib_string)

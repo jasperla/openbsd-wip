@@ -1,0 +1,38 @@
+$OpenBSD$
+
+add include dir
+remove __linux__ define, librt, lib32 mentions
+add boost libs to linker
+
+Index: tdm_update/SConstruct
+--- tdm_update/SConstruct.orig
++++ tdm_update/SConstruct
+@@ -163,6 +163,14 @@ CORECPPFLAGS.append( '-DXTHREADS' )
+ # don't wrap gcc messages
+ BASECPPFLAGS.append( '-fmessage-length=0' )
+ 
++BASECPPFLAGS.append( '-I${LOCALBASE}/include' )
++BASELINKFLAGS.append( '-L${LOCALBASE}/lib' )
++BASELINKFLAGS.append( '-lboost_filesystem' )
++BASELINKFLAGS.append( '-lboost_program_options' )
++BASELINKFLAGS.append( '-lboost_system' )
++BASELINKFLAGS.append( '-lcurl' )
++BASELINKFLAGS.append( '-lz' )
++
+ if ( g_os == 'Linux' or g_os == 'MacOSX' ):
+ 	if ( TARGET_ARCH == 'x86' ):
+ 		BASECPPFLAGS.append( '-m32' )
+@@ -173,13 +181,7 @@ if ( g_os == 'Linux' or g_os == 'MacOSX' ):
+ 
+ 	if g_os == 'Linux':
+ 		# help 64 bit machines to find the compatibility 32bit libraries
+-		BASELINKFLAGS.append( '-L/lib32' )
+-		BASELINKFLAGS.append( '-L/usr/lib32' )
+ 		BASELINKFLAGS.append( '-pthread' )
+-		BASELINKFLAGS.append( '-lrt' )
+-	
+-		# Add the __linux__ define
+-		BASECPPFLAGS.append('-D__linux__')
+ 	else:
+ 		# Mac OS X
+ 		BASECPPFLAGS.append('-DMACOS_X')

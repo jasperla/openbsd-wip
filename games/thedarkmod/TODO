@@ -1,0 +1,6 @@
+the following libraries in WANTLIB look like masked by RUN_DEPENDS: avcodec avformat avutil curl jpeg swresample swscale
+LIB_DEPENDS graphics/openjpeg not needed for graphics/DevIL ?
+set March to use different args for 32bit build
+remove -O3 flag; honor CFLAGS/CXXFLAGS
+remove procfs stuff in sys/linux/main.cpp? (works without removing this)
+at this point needs to be set to windowed mode (disable r_*fullscreen in Darkmod.cfg)

@@ -1,0 +1,37 @@
+$OpenBSD$
+
+add some lib configuration
+add include dirs and lib dirs
+remove CPU arch from binary
+
+Index: SConstruct
+--- SConstruct.orig
++++ SConstruct
+@@ -225,6 +225,10 @@ CORELINKFLAGS = [ ]
+ OPTCPPFLAGS = [ ]
+ 
+ BASECPPFLAGS.append( BASEFLAGS )
++BASECPPFLAGS.append( '-I${LOCALBASE}/include' )
++BASELINKFLAGS.append( '-L${LOCALBASE}/lib' )
++BASECPPFLAGS.append( '-I${X11BASE}/include' )
++BASELINKFLAGS.append( '-L${X11BASE}/lib' )
+ BASECPPFLAGS.append( '-pipe' )
+ # warn all
+ BASECPPFLAGS.append( '-Wall' )
+@@ -305,6 +309,7 @@ if ( ID_MCHECK == '1' ):
+ 	
+ # create the build environements
+ g_env_base = Environment( ENV = os.environ, CC = CC, CXX = CXX, LINK = LINK, CPPFLAGS = BASECPPFLAGS, LINKFLAGS = BASELINKFLAGS, CPPPATH = CORECPPPATH, LIBPATH = CORELIBPATH )
++g_env_base.ParseConfig("pkg-config x11 --cflags --libs")
+ scons_utils.SetupUtils( g_env_base )
+ 
+ g_env_base.Prepend(CPPPATH=['.'])
+@@ -373,7 +378,7 @@ SConscript( g_build + '/core/glimp/sys/scons/SConscrip
+ VariantDir( g_build + '/core', '.', duplicate = 0 )
+ thedarkmod = SConscript( g_build + '/core/sys/scons/SConscript.darkmod' )
+ 
+-exe_name = 'thedarkmod.' + ('x64' if TARGET_ARCH == 'x64' else cpu)
++exe_name = 'thedarkmod'
+ # Note: this target only runs if you append ".." (without quotes) as the last argument to scons command line
+ # It copies executable into ../darkmod, which is default location of darkmod installation in development environment
+ InstallAs( '../darkmod/' + exe_name, thedarkmod )
