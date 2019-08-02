@@ -1,0 +1,18 @@
+$OpenBSD$
+
+fix include path
+
+Index: src/ints/bios.cpp
+--- src/ints/bios.cpp.orig
++++ src/ints/bios.cpp
+@@ -6552,8 +6552,8 @@ bool AdapterROM_Read(Bitu address,unsigned long *size)
+     return false;
+ }
+ 
+-#include "src/gui/dosbox.vga16.bmp.h"
+-#include "src/gui/dosbox.cga640.bmp.h"
++#include "../src/gui/dosbox.vga16.bmp.h"
++#include "../src/gui/dosbox.cga640.bmp.h"
+ 
+ void DrawDOSBoxLogoCGA6(unsigned int x,unsigned int y) {
+     unsigned char *s = dosbox_cga640_bmp;
