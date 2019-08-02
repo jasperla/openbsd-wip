@@ -1,3 +1,0 @@
-@comment $OpenBSD: PLIST,v$
-@bin bin/devilutionx
-share/doc/pkg-readmes/${PKGSTEM}
