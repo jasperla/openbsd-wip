@@ -3,6 +3,7 @@ $OpenBSD$
 add include dir
 remove __linux__ define, librt, lib32 mentions
 add boost libs to linker
+add environment flags
 
 Index: tdm_update/SConstruct
 --- tdm_update/SConstruct.orig
@@ -36,3 +37,17 @@ Index: tdm_update/SConstruct
  	else:
  		# Mac OS X
  		BASECPPFLAGS.append('-DMACOS_X')
+@@ -195,13 +197,6 @@ if ( g_os == 'Linux' or g_os == 'MacOSX' ):
+ 
+ if ( BUILD == 'debug' ):
+ 	OPTCPPFLAGS = [ '-g', '-O1', '-D_DEBUG' ]
+-elif ( BUILD == 'release' ):
+-	# -fomit-frame-pointer: "-O also turns on -fomit-frame-pointer on machines where doing so does not interfere with debugging."
+-	#   on x86 have to set it explicitely
+-	# -finline-functions: implicit at -O3
+-	# -fschedule-insns2: implicit at -O2
+-	# no-unsafe-math-optimizations: that should be on by default really. hit some wonko bugs in physics code because of that
+-	OPTCPPFLAGS = [ '-O3', '-ffast-math', '-fno-unsafe-math-optimizations', '-fomit-frame-pointer' ]
+ else:
+ 	print 'Unknown build configuration ' + BUILD
+ 	sys.exit(0)

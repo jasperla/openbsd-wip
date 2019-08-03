@@ -1,5 +1,7 @@
 # $OpenBSD: Makefile.template,v 1.76 2017/02/25 16:04:20 danj Exp $
 
+ONLY_FOR_ARCHS =	amd64 i386
+
 COMMENT =	first-person stealth game inspired by Thief
 
 DISTNAME =	thedarkmod.2.07
@@ -40,12 +42,18 @@ LDFLAGS +=		-L${LOCALBASE}/lib -L${X11BASE}/lib
 # "CC=c++" works around some sloppiness from upstream, but is deprecated for C code
 MODSCONS_FLAGS +=	BUILD="release" \
 			CC="c++" \
-			CFLAGS="${CFLAGS}" \
+			BASECPPFLAGS="${CXXFLAGS}" \
 			CPPPATH="-I${LOCALBASE}/include -I${X11BASE}/include" \
-			CXXFLAGS="${CXXFLAGS}" \
 			LINKFLAGS="${LDFLAGS}" \
 			NOCURL=1 \
-			TARGET_ARCH="x64"
+			LIBC_MALLOC=1
+
+.if ${MACHINE_ARCH} == "amd64"
+MODSCONS_FLAGS +=	TARGET_ARCH="x64"
+.elif ${MACHINE_ARCH} == "i386"
+MODSCONS_FLAGS +=	TARGET_ARCH="i386"
+.endif
+
 
 # remove bundled boost to make sure it's not picked up
 post-extract:

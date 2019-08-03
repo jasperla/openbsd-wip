@@ -1,6 +1,7 @@
+try SEPARATE_BUILD
+disable -DUSE_LIBC_MALLOC=0
+19:38 <@brynet> looks like the mbedtls package replaces polarssl, probably want to link with that..
+19:19 <@brynet> sysutils/random_run is an example port that conditionalizes linking stdc++fs for ports-gcc - if ever considered for non-x86 arches
 the following libraries in WANTLIB look like masked by RUN_DEPENDS: avcodec avformat avutil curl jpeg swresample swscale
 LIB_DEPENDS graphics/openjpeg not needed for graphics/DevIL ?
-set March to use different args for 32bit build
-remove -O3 flag; honor CFLAGS/CXXFLAGS
-remove procfs stuff in sys/linux/main.cpp? (works without removing this)
 at this point needs to be set to windowed mode (disable r_*fullscreen in Darkmod.cfg)
