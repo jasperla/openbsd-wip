@@ -27,6 +27,11 @@ EXTRACT_CASES =	*.7z) ${LOCALBASE}/bin/7z x -o${WRKSRC} ${DISTDIR}/$$archive > \
 # C++11
 COMPILER =	base-clang ports-gcc
 
+# need to add this for gcc
+# revisit when gcc drops it
+EXTRA_ports-gcc =	-lstdc++fs
+LDFLAGS +=		${EXTRA_${CHOSEN_COMPILER}}
+
 MODULES =		devel/scons
 BUILD_DEPENDS =		archivers/p7zip
 LIB_DEPENDS =		audio/openal \
@@ -35,8 +40,6 @@ LIB_DEPENDS =		audio/openal \
 			graphics/ffmpeg \
 			net/curl
 
-#SEPARATE_BUILD =	Yes (build in a directory other than WRKSRC)
-#SEPARATE_BUILD =	flavored (distinct flavors may share a common WRKSRC)
 LDFLAGS +=		-L${LOCALBASE}/lib -L${X11BASE}/lib
 
 # "CC=c++" works around some sloppiness from upstream, but is deprecated for C code
