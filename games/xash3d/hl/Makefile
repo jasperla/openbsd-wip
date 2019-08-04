@@ -1,11 +1,12 @@
 # $OpenBSD$
 
 COMMENT =	Half-Life client and server libraries for Xash3D
-DISTNAME =	xash3d-hl-0.19.1
+DISTNAME =	xash3d-hl-2.3
 
 GH_ACCOUNT =	FWGS
 GH_PROJECT =	hlsdk-xash3d
-GH_COMMIT =	2aab84f6432b78246d146348a5a4a29a6ad5decc
+#GH_COMMIT =	2aab84f6432b78246d146348a5a4a29a6ad5decc
+GH_COMMIT =	70bd3a2497920200843882c416eefd1876b0c12e
 
 CATEGORIES =	games
 

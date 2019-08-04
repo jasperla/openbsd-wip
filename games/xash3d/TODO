@@ -1,24 +1,17 @@
 - passed lib-depends-check and port-lib-depends-check
 - passed portcheck
-- works with clang6
+- works with clang8
 
 it seems like they have worked hard on making sure the engine is GPL'd
-with any questional bits removed, but I am unsure about the hlsdk itself.
-
-It has a file claiming GPLv3 but the actual valve license on valve's
-github page is under their own valve license...
-
-It is still free but would not be valid for PERMIT_PACKAGE_CDROM I think,
-if the valve license applies.  would appreciate some extra eyes to make
-sure the license marker for the hl mod isn't wrong.
-
-UPDATE April 16 2018:
-
-...further research finds some files in hlsdk-xash3d that have Valve LLC
-mentioned as well as Id Software.  port for the half-life client/server
-libraries has been updated to indicate this with PERMIT_PACKAGE_CDROM
-set to No.  We might have to not even permit distribution of pacakge on ftp
-though if I understand this correctly...
+with any questional bits removed.
 
 UPDATE May 5 2018:
 going to submit to ports@ to get wider opinion on licensing.
+
+UPDATE Aug 3 2019:
+Updated to xash3d engine 0.19.2, hlsdk current master.  set hlsdk version
+to match the actual version of the SDK, 2.3.
+
+upstream has set the license back to the Valve SDK license.  It permits
+redistribution in source or binary form so long as its distributed for free.
+ As of now, it would seem that is a green light to package.
