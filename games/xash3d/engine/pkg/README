@@ -13,24 +13,18 @@ the only ported mod so far.
 Half-Life
 ---------
 
-To play Half-Life, you must have a copy of your ``valve'' directory
-from steam.  You must have write access to this directory as well.
+To play Half-Life, you must have a copy of your `valve' directory from
+steam.  You must have write access to this directory as well.
 
-You can copy this directory from your steam cache of another machine,
-as of this time there is no way to natively fetch this data.
+Half-Life is available for purchase on Steam, if you do not have it yet.
+Utilize games/depotdownloader to get a copy of your Half-Life game files.
 
-It is unknown if Half-Life data from the original CDs works or not,
-YMMV if you try.
+It is unknown if Half-Life data from the original CDs works or not, YMMV.
 
-Steam example (path may vary depending on version):
+Add a link to your game data as follows:
 
-$ scp -r linuxhost:.steam/steam/steamapps/common/Half-Life/valve \
-	~/valve
+  $ cd ${TRUEPREFIX}/share/xash3d
+  $ doas ln -s ~/valve
 
-$ cd ${TRUEPREFIX}/share/xash3d
-$ doas ln -s ~/valve
-
-You may also copy the valve directory from a Windows host if available.
-
-The game can be started with the ``xash3d'' command once the game data
-is installed correctly.
+The game can be started with the `xash3d' command once the game data is
+installed correctly.
