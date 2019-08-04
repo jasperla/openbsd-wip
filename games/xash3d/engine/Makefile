@@ -10,7 +10,7 @@ MAINUI_COMMIT = 398b3fa27061519a6ba1ce9bdc1a705b11a32a15
 
 CATEGORIES =	games
 
-HOMEPAGE =	http://xash.su
+HOMEPAGE =	https://xash.su
 
 MAINTAINER =	ryan@slipgate.org
 

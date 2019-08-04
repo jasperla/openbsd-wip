@@ -9,7 +9,7 @@ GH_COMMIT =	70bd3a2497920200843882c416eefd1876b0c12e
 
 CATEGORIES =	games
 
-HOMEPAGE =	http://xash.su
+HOMEPAGE =	https://xash.su
 
 MAINTAINER =	ryan@slipgate.org
 
