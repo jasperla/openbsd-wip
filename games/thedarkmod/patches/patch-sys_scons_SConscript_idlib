@@ -1,6 +1,7 @@
 $OpenBSD$
 
 remove Frustum_gcc.cpp from build because of duplicate symbol error
+disable setting of -O1
 
 Index: sys/scons/SConscript.idlib
 --- sys/scons/SConscript.idlib.orig
@@ -13,3 +14,10 @@ Index: sys/scons/SConscript.idlib
  	Token.cpp'
  
  idlib_list = scons_utils.BuildList( '../../idlib', idlib_string)
+@@ -82,5 +81,5 @@ ret_list = []
+ for f in idlib_list:
+ 	ret_list += local_env.StaticObject( source = f )
+ for f in suppress_optimization_list:
+-	ret_list += local_env_noopt.StaticObject( source = f )
++	ret_list += local_env.StaticObject( source = f )
+ Return( 'ret_list' )
