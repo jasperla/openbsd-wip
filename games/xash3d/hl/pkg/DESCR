@@ -1,2 +1,2 @@
-Provides client and server game logic, built from GPLed release:
-Half-Life SDK for Xash3D & GoldSource with some fixes.
+Provides client and server game logic for Half-Life.  Based on official
+Half-Life SDK with mods for Xash3D & GoldSource, and gameplay fixes.
