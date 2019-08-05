@@ -1,0 +1,25 @@
+$OpenBSD$
+
++-------------------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-------------------------------------------------------------------------------
+
+Installing Game Data
+--------------------
+
+To play Half-Life: Blue Shift, you must have a copy of your `bshift' directory
+from Steam.  You must have write access to this directory as well, as the game
+will write configuration and save files to these locations.
+
+It is unknown if Half-Life: Blue Shift data from the original CD release will
+work or not.
+
+Half-Life: Blue Shift is available for purchase on Steam.  To fetch your game
+data, utilize the `games/depotdownloader' package.
+
+Add a link to your game data as follows:
+
+  $ cd ${TRUEPREFIX}/share/xash3d
+  $ doas ln -s ~/games/steamdepots/Half-Life:_Blue_Shift/bshift
+
+The game can now be started with the `blueshift' script.
