@@ -13,7 +13,7 @@ HOMEPAGE = https://github.com/equalsraf/neovim-qt/wiki
 MAINTAINER = Laurence Tratt <laurie@tratt.net>
 
 # ISC
-PERMIT_PACKAGE_CDROM = Yes
+PERMIT_PACKAGE = Yes
 
 WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5Gui Qt5Network Qt5Widgets
 WANTLIB += c m
