@@ -1,7 +1,7 @@
 # $OpenBSD$
 
 COMMENT =	Half-Life client and server libraries for Xash3D
-DISTNAME =	xash3d-hl-2.3
+DISTNAME =	xash3d-hl-0.0.70bd3a2
 
 GH_ACCOUNT =	FWGS
 GH_PROJECT =	hlsdk-xash3d
@@ -33,5 +33,8 @@ CONFIGURE_ARGS +=	-D64BIT=yes
 .endif
 
 NO_TEST =		Yes
+
+post-install:
+	${SUBST_CMD} -m 0755 -c ${FILESDIR}/halflife.sh ${PREFIX}/bin/halflife
 
 .include <bsd.port.mk>
