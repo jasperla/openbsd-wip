@@ -3,7 +3,7 @@
 COMMENT-main = 		real-time strategy game
 COMMENT-data = 		7kaa data files
 
-V = 			2.15.1
+V = 			2.15.2
 DISTNAME = 		7kaa-${V}
 PKGNAME-main = 		${DISTNAME}
 PKGNAME-data = 		7kaa-data-${V}
@@ -20,7 +20,7 @@ HOMEPAGE = 		http://7kfans.com/
 MAINTAINER = 		Kirill Bychkov <kirby@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =  Yes
+PERMIT_PACKAGE =  Yes
 
 WANTLIB-main += ${COMPILER_LIBCXX} SDL2 c curl enet iconv intl m openal pthread
 WANTLIB-data =

@@ -5,4 +5,7 @@ share/doc/7kaa/
 share/doc/7kaa/COPYING
 share/doc/7kaa/README
 share/doc/pkg-readmes/${PKGSTEM}
+share/locale/de/LC_MESSAGES/7kaa.mo
+share/locale/es/LC_MESSAGES/7kaa.mo
+share/locale/pt_BR/LC_MESSAGES/7kaa.mo
 share/locale/ru/LC_MESSAGES/7kaa.mo
