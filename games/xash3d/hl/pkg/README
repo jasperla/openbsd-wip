@@ -21,4 +21,10 @@ Add a link to your game data as follows:
   $ cd ${TRUEPREFIX}/share/xash3d
   $ doas ln -s ~/games/steamdepots/Half-Life/valve
 
+Xash3d requires some extra assets for the menus to work correctly.  This file
+can be fetched manually, and placed in the `valve' directory:
+
+  $ ftp -o ~/games/steamdepots/Half-Life/valve/extras.pak \
+	https://github.com/FWGS/xash-extras/releases/download/v0.19.2/extras.pak
+
 The game can now be started with the `halflife' script.
