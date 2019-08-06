@@ -15,3 +15,12 @@ to match the actual version of the SDK, 2.3.
 upstream has set the license back to the Valve SDK license.  It permits
 redistribution in source or binary form so long as its distributed for free.
  As of now, it would seem that is a green light to package.
+
+need to determine license of 'extras.pak'.  Issue opened here:
+https://github.com/FWGS/xash-extras/issues/2
+
+As of now I added to the engine port to fetch this file and install it
+under ${PREFIX}/share/xash3d, with the intention that the hl and bshift
+packages can then have their startup scripts modified to check for
+'extras.pak' in the game data directory, and copy it there automatically
+if it is missing.

@@ -21,9 +21,14 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += ${COMPILER_LIBCXX} c fontconfig freetype m z SDL2
 
 MASTER_SITES0 =	https://github.com/FWGS/mainui_cpp/archive/
+MASTER_SITES1 =	https://github.com/FWGS/xash-extras/releases/download/${GH_TAGNAME}/
 
 DISTFILES =	${DISTNAME}${EXTRACT_SUFX} \
-		${MAINUI_COMMIT}.tar.gz:0
+		${MAINUI_COMMIT}.tar.gz:0 \
+		xash3d-extras-${GH_TAGNAME}{extras}.pak:1
+
+EXTRACT_ONLY =	${DISTNAME}${EXTRACT_SUFX} \
+		${MAINUI_COMMIT}.tar.gz
 
 MODULES =		devel/cmake
 LIB_DEPENDS =		devel/sdl2
@@ -38,16 +43,19 @@ CONFIGURE_ARGS =	-DXASH_SINGLE_BINARY=yes \
 CONFIGURE_ARGS +=	-DXASH_64BIT=yes
 .endif
 
-CONFIGURE_ENV =		CFLAGS="-I${X11BASE}/include" LDFLAGS="-L${X11BASE}/lib"
+CONFIGURE_ENV =	CFLAGS="-I${X11BASE}/include" LDFLAGS="-L${X11BASE}/lib"
 
 NO_TEST =		Yes
 
 post-extract:
 	rmdir ${WRKSRC}/mainui
 	ln -s ${WRKDIR}/mainui_cpp-${MAINUI_COMMIT} ${WRKSRC}/mainui
-	${SUBST_CMD} -m 0755 -c ${FILESDIR}/xash3d.sh ${WRKSRC}/scripts/xash3d.sh
+	${SUBST_CMD} -m 0755 -c ${FILESDIR}/xash3d.sh \
+		${WRKSRC}/scripts/xash3d.sh
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/xash3d
+	${INSTALL_DATA} ${DISTDIR}/xash3d-extras-${GH_TAGNAME}.pak \
+		${PREFIX}/share/xash3d/extras.pak
 
 .include <bsd.port.mk>

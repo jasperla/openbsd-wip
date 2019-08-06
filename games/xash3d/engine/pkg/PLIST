@@ -5,3 +5,4 @@ lib/xash3d/libxashmenu.so
 @bin lib/xash3d/xash3d
 share/doc/pkg-readmes/${PKGSTEM}
 share/xash3d/
+share/xash3d/extras.pak
