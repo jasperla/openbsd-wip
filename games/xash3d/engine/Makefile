@@ -21,14 +21,9 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += ${COMPILER_LIBCXX} c fontconfig freetype m z SDL2
 
 MASTER_SITES0 =	https://github.com/FWGS/mainui_cpp/archive/
-MASTER_SITES1 =	https://github.com/FWGS/xash-extras/releases/download/${GH_TAGNAME}/
 
 DISTFILES =	${DISTNAME}${EXTRACT_SUFX} \
-		${MAINUI_COMMIT}.tar.gz:0 \
-		xash3d-extras-${GH_TAGNAME}{extras}.pak:1
-
-EXTRACT_ONLY =	${DISTNAME}${EXTRACT_SUFX} \
-		${MAINUI_COMMIT}.tar.gz
+		${MAINUI_COMMIT}.tar.gz:0
 
 MODULES =		devel/cmake
 LIB_DEPENDS =		devel/sdl2
@@ -55,7 +50,5 @@ post-extract:
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/xash3d
-	${INSTALL_DATA} ${DISTDIR}/xash3d-extras-${GH_TAGNAME}.pak \
-		${PREFIX}/share/xash3d/extras.pak
 
 .include <bsd.port.mk>
