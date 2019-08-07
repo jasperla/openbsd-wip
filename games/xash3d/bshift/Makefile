@@ -1,7 +1,7 @@
 # $OpenBSD$
 
 V =		12609cf
-COMMENT =	Half-Life: Blue Shift client and server libraries for Xash3D
+COMMENT =	Half-Life: Blue Shift game libraries mod
 DISTNAME =	hlsdk-xash3d-bshift-${V}
 PKGNAME =	xash3d-bshift-0.0.${V}
 
@@ -11,10 +11,12 @@ HOMEPAGE =	https://xash.su
 
 MAINTAINER =	ryan@slipgate.org
 
-# Valve Half Life 1 SDK LICENSE
-# 'You may distribute your modified Valve game in source and object
-# form, but only for free.'
-PERMIT_PACKAGE =	Yes
+# Half Life 1 SDK LICENSE
+# "You may, free of charge, download and use the SDK to develop a modified Valve
+# game running on the Half-Life 1 engine.  You may distribute your modified
+# Valve game in source and object code form, but only for free."
+# Can not distribute this for use with xash3d engine.
+PERMIT_PACKAGE =	No
 
 MASTER_SITES =	http://slipgate.org/distfiles/
 

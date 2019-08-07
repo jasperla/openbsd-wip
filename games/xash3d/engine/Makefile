@@ -14,9 +14,12 @@ HOMEPAGE =	https://xash.su
 
 MAINTAINER =	ryan@slipgate.org
 
-# Mixed license, GPL v3+ for engine library, MIT for cmake files
+# Mixed license, GPL v3+ for engine library, MIT for cmake files.
 # Source: https://github.com/FWGS/xash3d/blob/master/README.md
-PERMIT_PACKAGE =	Yes
+# Valve EULA on some headers.  Redistribution not permitted without
+# permission from Valve.
+# Source: https://github.com/FWGS/xash3d-fwgs/blob/master/engine/edict.h#L9
+PERMIT_PACKAGE =	No
 
 WANTLIB += ${COMPILER_LIBCXX} c fontconfig freetype m z SDL2
 

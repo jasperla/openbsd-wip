@@ -2,21 +2,9 @@
 - passed portcheck
 - works with clang8
 
-it seems like they have worked hard on making sure the engine is GPL'd
-with any questional bits removed.
-
-UPDATE May 5 2018:
-going to submit to ports@ to get wider opinion on licensing.
-
-UPDATE Aug 3 2019:
-Updated to xash3d engine 0.19.2, hlsdk current master.  set hlsdk version
-to match the actual version of the SDK, 2.3.
-
-upstream has set the license back to the Valve SDK license.  It permits
-redistribution in source or binary form so long as its distributed for free.
- As of now, it would seem that is a green light to package.
-
-need to determine license of 'extras.pak'.  Issue opened here:
-https://github.com/FWGS/xash-extras/issues/2  UPDATE: can't include this file,
-package README for halflife and blueshift game libraries updated to instead
-include URL the enduser can manually fetch and install the file from.
+- engine may also contain valve eula still?  unsafe to package
+- game code ports also unpackageable, license states permission to redistribute
+  in source or object but for use with original half-life engine.
+  https://github.com/FWGS/xash-extras/issues/2
+- extras.pak referenced in readme with url to fetch, but can't be
+  packaged, either.

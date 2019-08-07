@@ -1,6 +1,6 @@
 # $OpenBSD$
 
-COMMENT =	Half-Life client and server libraries for Xash3D
+COMMENT =	Half-Life game libraries mod
 DISTNAME =	xash3d-hl-0.0.70bd3a2
 
 GH_ACCOUNT =	FWGS
@@ -13,10 +13,12 @@ HOMEPAGE =	https://xash.su
 
 MAINTAINER =	ryan@slipgate.org
 
-# Valve Half Life 1 SDK LICENSE
-# 'You may distribute your modified Valve game in source and object
-# form, but only for free.'
-PERMIT_PACKAGE =	Yes
+# Half Life 1 SDK LICENSE
+# "You may, free of charge, download and use the SDK to develop a modified Valve
+# game running on the Half-Life 1 engine.  You may distribute your modified
+# Valve game in source and object code form, but only for free."
+# Can not distribute this for use with xash3d engine.
+PERMIT_PACKAGE =	No
 
 WANTLIB += ${COMPILER_LIBCXX} m
 
