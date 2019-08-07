@@ -1,23 +1,27 @@
 # $OpenBSD$
 
-COMMENT =	Lightweight pipelining: using Python functions as pipeline
+COMMENT =	lightweight pipelining: using Python functions as pipeline
 
-DISTNAME =	joblib-${MODPY_EGG_VERSION}
-PKGNAME =	py-${DISTNAME}
+MODPY_EGG_VERSION =	0.13.2
+DISTNAME =		joblib-${MODPY_EGG_VERSION}
+PKGNAME =		py-${DISTNAME}
 
-CATEGORIES =	sysutils
+CATEGORIES =		sysutils
 
-HOMEPAGE =	https://joblib.readthedocs.io
+HOMEPAGE =		https://joblib.readthedocs.io
 
 # BSD-3
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 
-FLAVORS =		python3
-FLAVOR ?=
-
-MODPY_EGG_VERSION =	0.13.2
 MODPY_PI =		Yes
+MODPY_SETUPTOOLS =	Yes
+MODPY_PYTEST =		Yes
+
+MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
+
+TEST_DEPENDS =		devel/py-test-cov${MODPY_FLAVOR} \
+			math/py-numpy${MODPY_FLAVOR}
 
 .include <bsd.port.mk>
