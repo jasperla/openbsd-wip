@@ -6,6 +6,7 @@
 # For example:
 # net/gnaughty				ready for import, sent to ports@ (jasperla)
 
+cad/qcad				sent to ports@ 2019-08-12 (feinerer)
 devel/libextractor			sent to ports 2013-06-29
 geo/mtkbabel				sent to ports 2011-03-30
 math/p5-Math-GSL			ready for import, did not sent to ports@, regress depends on devel/p5-Test-Most (wenheping)
