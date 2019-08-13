@@ -38,6 +38,7 @@ WANTLIB += Qt5XmlPatterns c cups jpeg m sqlite3 tiff z
 MODULES =	devel/qmake \
 		x11/qt5
 
+BUILD_DEPENDS =	x11/qt5/qtimageformats
 RUN_DEPENDS =	devel/desktop-file-utils
 LIB_DEPENDS =	x11/qt5/qtscript \
 		x11/qt5/qtsvg \
