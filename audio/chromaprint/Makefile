@@ -1,18 +1,12 @@
 # $OpenBSD: Makefile,v 1.12 2019/07/12 20:43:32 sthen Exp $
 
-# Update for chromaprint, fixes issues on arm/ppc (needs more testing
-# there as now tests are enabled)
-# Don't require boost anymore
-# Code uses modern ffmpeg api
-# Tests are working on macppc and amd64
-
 COMMENT =		audio fingerprint extraction library
 
 GH_ACCOUNT =		acoustid
 GH_PROJECT =		chromaprint
 GH_TAGNAME =		v1.4.3
 
-SHARED_LIBS =		chromaprint               2.0 # 0.1
+SHARED_LIBS =		chromaprint               2.0 # 1.4.3
 
 CATEGORIES =		audio devel
 
