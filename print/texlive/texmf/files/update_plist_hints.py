@@ -207,6 +207,12 @@ def build_subset_file_lists(tlpdb):
         # docs subset never contains symlinks, as asserted above.
     }
 
+    # man/man1/dvitype.1 is in the wrong set and has symlinks from another set
+    # pointing to it. This confuses makewhatis(8). We move it.
+    assert "man/man1/dvitype.1" in full_files
+    minimal_files.update(("man/man1/dvitype.1", ))
+    full_files.remove("man/man1/dvitype.1")
+
     plist_map = {
         TargetPlist.BUILDSET: buildset_files,
         TargetPlist.MINIMAL: minimal_files,

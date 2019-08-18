@@ -3,7 +3,7 @@
 @conflict texlive_base-<2019
 @conflict texlive_texmf-docs-<2019
 @conflict texlive_texmf-full-<2019
-@conflict texlive_texmf-buildset-<2019p0
+@conflict texlive_texmf-buildset-<2019
 @conflict texlive_texmf-context-<2019
 @pkgpath print/teTeX/texmf
 bin/
@@ -88,6 +88,7 @@ bin/xmltex
 @man man/man1/dviselect.1
 @man man/man1/dvitodvi.1
 @man man/man1/dvitomp.1
+@man man/man1/dvitype.1
 @man man/man1/e2pall.1
 @man man/man1/ebb.1
 @man man/man1/eplain.1

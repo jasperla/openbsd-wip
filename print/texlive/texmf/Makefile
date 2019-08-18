@@ -17,8 +17,8 @@ MASTER_SITES0 =		https://spacehopper.org/mirrors/ \
 			http://theunixzoo.co.uk/distfiles/
 DISTFILES =		${DISTNAME}${EXTRACT_SUFX} \
 			texlive-${DIST_V}-extra${EXTRACT_SUFX} \
-			texlive-${DIST_V}-tlpdb-full.tar.gz
-#texmf-var-pregen-${V}.0${EXTRACT_SUFX}:0 \
+			texlive-${DIST_V}-tlpdb-full.tar.gz \
+			texmf-var-pregen-${V}${EXTRACT_SUFX}:0 \
 
 PKGNAME-main =		texlive_texmf-minimal-${V}
 PKGNAME-full =		texlive_texmf-full-${V}
@@ -137,8 +137,7 @@ do-install: tl-symlinks-main tl-symlinks-full tl-symlinks-context
 	#   context --make
 	#
 	# Then you can tar them up and host them as the pregen tarball.
-	# XXX put back.
-	#mv ${WRKDIR}/texmf-var ${PREFIX}/share
+	mv ${WRKDIR}/texmf-var ${PREFIX}/share
 
 	# Put manuals in the right place.
 	#
