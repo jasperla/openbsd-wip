@@ -3,7 +3,7 @@ $OpenBSD$
 Index: Source/cmTarget.cxx
 --- Source/cmTarget.cxx.orig
 +++ Source/cmTarget.cxx
-@@ -268,7 +268,7 @@ cmTarget::cmTarget(std::string const& name, cmStateEnu
+@@ -269,7 +269,7 @@ cmTarget::cmTarget(std::string const& name, cmStateEnu
      InitProperty("BUILD_RPATH_USE_ORIGIN", nullptr);
      InitProperty("INSTALL_NAME_DIR", nullptr);
      InitProperty("INSTALL_RPATH", "");

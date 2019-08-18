@@ -1459,6 +1459,7 @@ share/cmake/Help/variable/CMAKE_SYSTEM_PROGRAM_PATH.rst
 share/cmake/Help/variable/CMAKE_SYSTEM_VERSION.rst
 share/cmake/Help/variable/CMAKE_Swift_LANGUAGE_VERSION.rst
 share/cmake/Help/variable/CMAKE_Swift_MODULE_DIRECTORY.rst
+share/cmake/Help/variable/CMAKE_Swift_NUM_THREADS.rst
 share/cmake/Help/variable/CMAKE_TOOLCHAIN_FILE.rst
 share/cmake/Help/variable/CMAKE_TRY_COMPILE_CONFIGURATION.rst
 share/cmake/Help/variable/CMAKE_TRY_COMPILE_PLATFORM_VARIABLES.rst
@@ -4069,6 +4070,7 @@ share/doc/cmake/html/_sources/variable/CMAKE_SYSTEM_PROGRAM_PATH.txt
 share/doc/cmake/html/_sources/variable/CMAKE_SYSTEM_VERSION.txt
 share/doc/cmake/html/_sources/variable/CMAKE_Swift_LANGUAGE_VERSION.txt
 share/doc/cmake/html/_sources/variable/CMAKE_Swift_MODULE_DIRECTORY.txt
+share/doc/cmake/html/_sources/variable/CMAKE_Swift_NUM_THREADS.txt
 share/doc/cmake/html/_sources/variable/CMAKE_TOOLCHAIN_FILE.txt
 share/doc/cmake/html/_sources/variable/CMAKE_TRY_COMPILE_CONFIGURATION.txt
 share/doc/cmake/html/_sources/variable/CMAKE_TRY_COMPILE_PLATFORM_VARIABLES.txt
@@ -5689,6 +5691,7 @@ share/doc/cmake/html/variable/CMAKE_SYSTEM_PROGRAM_PATH.html
 share/doc/cmake/html/variable/CMAKE_SYSTEM_VERSION.html
 share/doc/cmake/html/variable/CMAKE_Swift_LANGUAGE_VERSION.html
 share/doc/cmake/html/variable/CMAKE_Swift_MODULE_DIRECTORY.html
+share/doc/cmake/html/variable/CMAKE_Swift_NUM_THREADS.html
 share/doc/cmake/html/variable/CMAKE_TOOLCHAIN_FILE.html
 share/doc/cmake/html/variable/CMAKE_TRY_COMPILE_CONFIGURATION.html
 share/doc/cmake/html/variable/CMAKE_TRY_COMPILE_PLATFORM_VARIABLES.html
