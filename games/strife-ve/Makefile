@@ -9,7 +9,7 @@ GH_ACCOUNT =	svkaiser
 GH_PROJECT =	strife-ve
 GH_COMMIT =	1b7015956edd184fb9f94a912c8eb4c60f2b83f4
 
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
+MAINTAINER =	Thomas Frohwein <thfr@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE =	Yes
