@@ -12,7 +12,7 @@ GH_COMMIT =	1b7015956edd184fb9f94a912c8eb4c60f2b83f4
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += GL GLU SDL SDL_mixer SDL_net avcodec avformat avutil
 WANTLIB += c m png pthread swscale z
