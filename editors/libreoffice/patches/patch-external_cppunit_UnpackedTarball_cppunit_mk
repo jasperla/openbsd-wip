@@ -1,0 +1,13 @@
+$OpenBSD$
+
+Index: external/cppunit/UnpackedTarball_cppunit.mk
+--- external/cppunit/UnpackedTarball_cppunit.mk.orig
++++ external/cppunit/UnpackedTarball_cppunit.mk
+@@ -25,6 +25,7 @@ $(eval $(call gb_UnpackedTarball_add_patches,cppunit,\
+ 	external/cppunit/rtti.patch.0 \
+ 	external/cppunit/gcc9.patch.0 \
+ 	external/cppunit/0001-Unconditionally-use-C-11-noreturn.patch.1 \
++	external/cppunit/openbsd-cppunit.patch.0 \
+ ))
+ ifeq ($(DISABLE_DYNLOADING),TRUE)
+ $(eval $(call gb_UnpackedTarball_add_patches,cppunit,\

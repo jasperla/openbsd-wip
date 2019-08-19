@@ -1,0 +1,14 @@
+$OpenBSD: patch-sal_osl_unx_sockimpl_hxx,v 1.1 2019/02/28 22:09:41 robert Exp $
+
+Index: sal/osl/unx/sockimpl.hxx
+--- sal/osl/unx/sockimpl.hxx.orig
++++ sal/osl/unx/sockimpl.hxx
+@@ -26,7 +26,7 @@
+ 
+ #include "system.hxx"
+ 
+-#if defined(LINUX) || defined(FREEBSD) || defined(NETBSD)
++#if defined(LINUX) || defined(FREEBSD) || defined(NETBSD) || defined(OPENBSD)
+ #define CLOSESOCKET_DOESNT_WAKE_UP_ACCEPT 1
+ #endif
+ 

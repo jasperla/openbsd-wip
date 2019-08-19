@@ -1,0 +1,18 @@
+$OpenBSD$
+
+Index: vcl/Library_vclplug_gtk3.mk
+--- vcl/Library_vclplug_gtk3.mk.orig
++++ vcl/Library_vclplug_gtk3.mk
+@@ -113,10 +113,10 @@ $(eval $(call gb_Library_add_exception_objects,vclplug
+     vcl/unx/gtk3/gtk3hudawareness \
+ ))
+ 
+-ifeq ($(OS),LINUX)
++ifneq (,$(filter LINUX OPENBSD,$(OS)))
+ $(eval $(call gb_Library_add_libs,vclplug_gtk3,\
+ 	-lm \
+-	-ldl \
++	$(if $(filter LINUX,$(OS)),-ldl) \
+ ))
+ endif
+ 

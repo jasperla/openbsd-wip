@@ -1,0 +1,19 @@
+$OpenBSD$
+
+Index: external/libwps/ExternalProject_libwps.mk
+--- external/libwps/ExternalProject_libwps.mk.orig
++++ external/libwps/ExternalProject_libwps.mk
+@@ -25,10 +25,12 @@ libwps_CPPFLAGS+=-D_GLIBCXX_DEBUG
+ endif
+ endif
+ 
++libwps_CPPFLAGS+=-fPIC
++
+ libwps_CXXFLAGS=$(gb_CXXFLAGS) $(if $(ENABLE_OPTIMIZED),$(gb_COMPILEROPTFLAGS),$(gb_COMPILERNOOPTFLAGS))
+ 
+ libwps_LDFLAGS=
+-ifeq ($(OS),LINUX)
++ifeq ($(OS),OPENBSD)
+ ifeq ($(SYSTEM_REVENGE),)
+ libwps_LDFLAGS+=-Wl,-z,origin -Wl,-rpath,\$$$$ORIGIN
+ endif

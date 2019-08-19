@@ -1,0 +1,18 @@
+$OpenBSD$
+
+Index: vcl/Library_vclplug_gtk.mk
+--- vcl/Library_vclplug_gtk.mk.orig
++++ vcl/Library_vclplug_gtk.mk
+@@ -122,10 +122,10 @@ $(eval $(call gb_Library_add_exception_objects,vclplug
+ ))
+ endif
+ 
+-ifeq ($(OS),LINUX)
++ifneq (,$(filter LINUX OPENBSD,$(OS)))
+ $(eval $(call gb_Library_add_libs,vclplug_gtk,\
+ 	-lm \
+-	-ldl \
++	$(if $(filter LINUX,$(OS)),-ldl) \
+ ))
+ endif
+ 
