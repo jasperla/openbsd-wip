@@ -1,9 +1,10 @@
-$OpenBSD: patch-Makefile,v 1.4 2017/10/10 13:32:07 abieber Exp $
+$OpenBSD$
+
 Index: Makefile
 --- Makefile.orig
 +++ Makefile
-@@ -104,7 +104,7 @@ config.gypi: configure
- 	$(error Missing or stale $@, please run ./$<)
+@@ -155,7 +155,7 @@ config.gypi: configure configure.py
+ 	fi
  
  .PHONY: install
 -install: all ## Installs node into $PREFIX (default=/usr/local).
@@ -11,15 +12,7 @@ Index: Makefile
  	$(PYTHON) tools/install.py $@ '$(DESTDIR)' '$(PREFIX)'
  
  .PHONY: uninstall
-@@ -270,7 +270,6 @@ test-cov: all
- 	$(MAKE) build-addons-napi
- 	# $(MAKE) cctest
- 	$(MAKE) jstest
--	$(MAKE) lint
- 
- test-parallel: all
- 	$(PYTHON) tools/test.py --mode=release parallel -J
-@@ -351,6 +350,12 @@ test/addons/.buildstamp: config.gypi \
+@@ -420,6 +420,12 @@ test/addons/.buildstamp: $(ADDONS_PREREQS) \
  # TODO(bnoordhuis) Force rebuild after gyp update.
  build-addons: | $(NODE_EXE) test/addons/.buildstamp
  
@@ -29,14 +22,14 @@ Index: Makefile
 +		--nodedir="$(shell pwd)" && \
 +	$(RM) -rf deps/npm/node_modules/node-pledge/build/Release/{.deps,../Makefile,obj.target}
 +
- ADDONS_NAPI_BINDING_GYPS := \
- 	$(filter-out test/addons-napi/??_*/binding.gyp, \
- 		$(wildcard test/addons-napi/*/binding.gyp))
-@@ -510,7 +515,6 @@ test-hash-seed: all
+ JS_NATIVE_API_BINDING_GYPS := \
+ 	$(filter-out test/js-native-api/??_*/binding.gyp, \
+ 		$(wildcard test/js-native-api/*/binding.gyp))
+@@ -603,7 +609,6 @@ test-doc: doc-only ## Builds, lints, and verifies the 
+ 	@if [ "$(shell $(node_use_openssl))" != "true" ]; then \
+ 		echo "Skipping test-doc (no crypto)"; \
+ 	else \
+-		$(MAKE) lint; \
+ 		$(PYTHON) tools/test.py $(PARALLEL_ARGS) $(CI_DOC); \
+ 	fi
  
- .PHONY: test-doc
- test-doc: doc-only ## Builds, lints, and verifies the docs.
--	$(MAKE) lint
- 	$(PYTHON) tools/test.py $(CI_DOC)
- 
- test-known-issues: all

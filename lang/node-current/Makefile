@@ -1,19 +1,18 @@
-# $OpenBSD: Makefile,v 1.68 2018/02/10 14:50:35 abieber Exp $
+# $OpenBSD: Makefile,v 1.80 2019/07/12 20:47:21 sthen Exp $
 
 # XXX:
 # - Needs __ARM_NR_cacheflush (or the like) to work on arm-based ports.
 # - Needs bundled libcares as arpa/nameser.h does not include ns_t_a.
 
 ONLY_FOR_ARCHS =	amd64 aarch64 i386
+DPB_PROPERTIES =	parallel
 
 USE_WXNEEDED =		Yes
 
 COMMENT =		V8 JavaScript for clients and servers
 
-NODE_VERSION =		v9.11.1
-VERSION =		9
-
-PLEDGE_VER =		1.1.0
+NODE_VERSION =		v12.9.0
+PLEDGE_VER =		1.1.2
 DISTFILES =		node-pledge-{}${PLEDGE_VER}.tar.gz:0 ${DISTNAME}.tar.gz
 
 DISTNAME =		node-${NODE_VERSION}
@@ -28,13 +27,15 @@ HOMEPAGE =		http://nodejs.org/
 MAINTAINER =		Aaron Bieber <abieber@openbsd.org>
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =		${HOMEPAGE}dist/${NODE_VERSION}/
 
 MODULES =		lang/python
 
-WANTLIB += c execinfo kvm m pthread util z ${COMPILER_LIBCXX}
+WANTLIB += c execinfo kvm m pthread util ${COMPILER_LIBCXX}
+
+COMPILER =		base-clang ports-gcc
 
 LIB_DEPENDS =		devel/libexecinfo
 
@@ -50,8 +51,7 @@ CONFIGURE_STYLE =	simple
 
 # libpath and includes aren't picked up, but I added them here as a note.
 # The patch for node.gyp is where they are actually being set.
-CONFIGURE_ARGS =	--prefix=${PREFIX}/node-current \
-			--shared-zlib
+CONFIGURE_ARGS =	--prefix=${PREFIX}
 
 .if "${MACHINE_ARCH}" ==	"aarch64"
 CONFIGURE_ARGS +=	--openssl-no-asm
@@ -65,8 +65,7 @@ SUBST_VARS += 		PREFIX
 SUBST_VARS +=		WRKDIST
 
 MAKE_ENV +=		V=1 CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" \
-			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
-			TAG=${VERSION}
+			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 
 do-extract:
 	mkdir ${WRKSRC}; \
@@ -76,34 +75,32 @@ do-extract:
 	mv ${WRKSRC}/deps/npm/node_modules/node-pledge-${PLEDGE_VER} \
 		${WRKSRC}/deps/npm/node_modules/node-pledge
 
-post-extract:
-	# Currently tarbals exclude tools/eslint, while the tests that require it
-	# are still in tree
-	cd ${WRKSRC} && for x in $$(grep -r "tools/eslint" test/* | \
-		awk -F: '{print $$1}' | sort | uniq); do \
-		rm $$x; \
-	done
-
 pre-configure:
 	@# Bad practice, but prevents a whole stack of patches.
 	ln -sf ${LOCALBASE}/bin/python${MODPY_VERSION} ${WRKDIR}/bin/python
 	${SUBST_CMD} ${WRKDIST}/lib/module.js \
 		${WRKDIST}/deps/npm/bin/node-gyp-bin/node-gyp \
-		${WRKDIST}/deps/npm/node_modules/node-gyp/lib/configure.js \
+		${WRKDIST}/deps/npm/node_modules/node-gyp/lib/find-python.js \
 		${WRKDIST}/deps/npm/node_modules/node-gyp/lib/install.js \
 		${WRKDIST}/node.gyp \
 		${WRKDIST}/common.gypi \
 		${WRKDIST}/tools/test.py
+	cd ${WRKDIST}/deps/openssl/config && \
+		${MAKE_PROGRAM} ASM_ARCHS=BSD-x86-elf NO_ASM_ARCHS=
+
+post-configure:
+	sed -i 's/-ldl //' ${WRKSRC}/out/deps/openssl/openssl.target.mk
+	sed -i 's/-ldl //' ${WRKSRC}/out/deps/openssl/openssl-cli.target.mk
 
 post-install:
 	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
-		${PREFIX}/node-current/lib/node_modules/npm/node_modules/node-gyp/gyp
-	${INSTALL_DATA_DIR} ${PREFIX}/node-current/share/node
+		${PREFIX}/lib/node_modules/npm/node_modules/node-gyp/gyp
+	${INSTALL_DATA_DIR} ${PREFIX}/share/node
 	${INSTALL_DATA} ${FULLDISTDIR}/${DISTNAME}.tar.gz \
-		${PREFIX}/node-current/share/node/${DISTNAME}.tar.gz
-	ln -s ${TRUEPREFIX}/node-current/lib/node_modules/npm/bin/node-gyp-bin/node-gyp \
-		${PREFIX}/node-current/bin/node-gyp;
-	cd ${PREFIX}/node-current/lib/node_modules/npm/node_modules && for x in *; do \
+		${PREFIX}/share/node/${DISTNAME}.tar.gz
+	ln -s ${TRUEPREFIX}/lib/node_modules/npm/bin/node-gyp-bin/node-gyp \
+		${PREFIX}/bin/node-gyp;
+	cd ${PREFIX}/lib/node_modules/npm/node_modules && for x in *; do \
 		mv $$x ../..; \
 		ln -s ../../$$x $$x; \
 	done
@@ -112,7 +109,7 @@ do-test:
 	cd ${WRKSRC} && \
 	ulimit -n $$(ulimit -Hn) && \
 	ulimit -d $$(ulimit -Hd) && \
-	gmake test
+	${MAKE_PROGRAM} test
 
 
 .include <bsd.port.mk>

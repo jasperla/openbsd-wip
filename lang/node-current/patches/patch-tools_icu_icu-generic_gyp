@@ -1,8 +1,8 @@
-$OpenBSD: patch-tools_icu_icu-generic_gyp,v 1.1 2017/01/23 16:47:04 abieber Exp $
+$OpenBSD: patch-tools_icu_icu-generic_gyp,v 1.4 2019/01/21 23:46:01 abieber Exp $
 Index: tools/icu/icu-generic.gyp
 --- tools/icu/icu-generic.gyp.orig
 +++ tools/icu/icu-generic.gyp
-@@ -548,6 +548,7 @@
+@@ -546,6 +546,7 @@
        'toolsets': [ 'host' ],
        'type': 'executable',
        'dependencies': [ 'icutools' ],
