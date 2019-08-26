@@ -2,7 +2,7 @@
 
 COMMENT =	minimalist and opinionated feed reader
 
-DISTNAME =	miniflux-2.0.16
+DISTNAME =	miniflux-2.0.17
 
 CATEGORIES =	net
 
@@ -11,7 +11,7 @@ HOMEPAGE =	https://miniflux.app/
 MAINTAINER =	Aaron Bieber <abieber@openbsd.org>
 
 # Apache 2.0
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c pthread
 
