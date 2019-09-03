@@ -1,6 +1,6 @@
 $OpenBSD$
 
-Install manual page properly.
+Fix manual page path for OpenBSD
 
 Index: man/CMakeLists.txt
 --- man/CMakeLists.txt.orig

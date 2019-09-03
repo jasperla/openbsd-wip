@@ -8,9 +8,9 @@ HOMEPAGE =	https://polybar.github.io/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} c cairo curl fontconfig freetype
+WANTLIB += ${COMPILER_LIBCXX} c cairo curl fontconfig freetype intl
 WANTLIB += jsoncpp m mpdclient pulse xcb xcb-cursor xcb-ewmh xcb-icccm
 WANTLIB += xcb-image xcb-randr xcb-util xcb-xkb xcb-xrm z
 WANTLIB += lib/inotify/inotify
@@ -35,8 +35,8 @@ LIB_DEPENDS =	audio/libmpdclient \
 		net/curl
 
 RUN_DEPENDS =	x11/py-xcbgen \
-		fonts/siji \
-		fonts/unifont
+		fonts/siji
+#		fonts/unifont
 
 CONFIGURE_ARGS =	-DENABLE_CCACHE=OFF \
 			-DCMAKE_EXE_LINKER_FLAGS="-L${LOCALBASE}/lib -lintl -L${LOCALBASE}/lib/inotify -linotify -Wl,-rpath,${LOCALBASE}/lib/inotify"
