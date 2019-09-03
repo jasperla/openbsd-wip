@@ -12,7 +12,7 @@ GH_COMMIT =	9d88311bb127b21672b2d4b43eed1ab0e494f143
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # GPLv2 only
-PERMIT_PACKAGE_CDROM = Yes
+PERMIT_PACKAGE = Yes
 
 NO_TEST =	Yes
 

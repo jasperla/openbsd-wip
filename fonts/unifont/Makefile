@@ -8,7 +8,7 @@ HOMEPAGE =	http://unifoundry.com/unifont/index.html
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM = Yes
+PERMIT_PACKAGE = Yes
 
 MASTER_SITES =	https://mirrors.nycbug.org/pub/distfiles/
 
