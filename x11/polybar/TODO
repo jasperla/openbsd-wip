@@ -1,2 +1,1 @@
 - Lots of modules don't work; they need to be written specifically for OpenBSD.
-- fonts/unifont must be re-added when the distfile becomes fetchable again

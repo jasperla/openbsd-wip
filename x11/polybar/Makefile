@@ -1,23 +1,23 @@
 # $OpenBSD$
 
 COMMENT =	fast and easy-to-use status bar
-DISTNAME =	polybar-3.2.1
+V =		3.4.0
+DISTNAME =	polybar-$V
 CATEGORIES =	x11
 
 HOMEPAGE =	https://polybar.github.io/
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
+MAINTAINER =	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} c cairo curl fontconfig freetype intl
-WANTLIB += jsoncpp m mpdclient pulse xcb xcb-cursor xcb-ewmh xcb-icccm
+WANTLIB += ${COMPILER_LIBCXX} lib/inotify/inotify
+WANTLIB += c cairo curl fontconfig freetype intl jsoncpp m mpdclient
+WANTLIB += pulse xcb xcb-composite xcb-cursor xcb-ewmh xcb-icccm
 WANTLIB += xcb-image xcb-randr xcb-util xcb-xkb xcb-xrm z
-WANTLIB += lib/inotify/inotify
 
-# Have to checkout with git clone --recursive
-# So I'll just host a tarball myself
-MASTER_SITES =	https://mirrors.nycbug.org/pub/distfiles/
+MASTER_SITES =	https://github.com/polybar/polybar/releases/download/$V/
+EXTRACT_SUFX =	.tar
 
 # C++14
 COMPILER =	base-clang ports-gcc
@@ -35,16 +35,18 @@ LIB_DEPENDS =	audio/libmpdclient \
 		net/curl
 
 RUN_DEPENDS =	x11/py-xcbgen \
-		fonts/siji
-#		fonts/unifont
+		fonts/siji \
+		fonts/unifont
 
 CONFIGURE_ARGS =	-DENABLE_CCACHE=OFF \
 			-DCMAKE_EXE_LINKER_FLAGS="-L${LOCALBASE}/lib -lintl -L${LOCALBASE}/lib/inotify -linotify -Wl,-rpath,${LOCALBASE}/lib/inotify"
 
 NO_TEST =	Yes
 
+WRKDIST =	${WRKDIR}/polybar
+
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/polybar
-	${INSTALL_DATA} ${WRKSRC}/doc/config ${PREFIX}/share/examples/polybar
+	${INSTALL_DATA} ${WRKSRC}/config ${PREFIX}/share/examples/polybar
 
 .include <bsd.port.mk>
