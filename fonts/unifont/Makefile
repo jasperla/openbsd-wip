@@ -1,6 +1,6 @@
 # $OpenBSD$
 
-COMMENT =	iconic bitmap font based on Stlarch with additional glyphs
+COMMENT =	free unicode from from the GNU project
 DISTNAME =	unifont-12.1.03
 DISTFILES =	${DISTNAME}.ttf
 CATEGORIES =	fonts
