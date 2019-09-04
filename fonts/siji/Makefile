@@ -1,13 +1,13 @@
 # $OpenBSD$
 
 COMMENT =	iconic bitmap font based on Stlarch with additional glyphs
-DISTNAME =	${GH_PROJECT}-0.0.0.20171022
+DISTNAME =	${GH_PROJECT}-0.0.0.20190218
 CATEGORIES =	fonts
 
 # No releases... use GH_COMMIT
 GH_ACCOUNT =	stark
 GH_PROJECT =	siji
-GH_COMMIT =	9d88311bb127b21672b2d4b43eed1ab0e494f143
+GH_COMMIT =	c691f200c1c66e76daa2afc9cbbd1aa39045c906
 
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
