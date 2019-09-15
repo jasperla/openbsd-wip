@@ -2,9 +2,6 @@
 
 # XXX
 # Warning: texlive_base-2019 conflicts with EMBOSS-6.0.1p4 (biology/emboss):/usr/local/bin/wordcount
-# Was texlua supposed to go?
-#
-# Update luatex bits in PLIST.
 
 COMMENT-main =		base binaries for TeXLive typesetting distribution
 COMMENT-mktexlsr =	mktexlsr for TeXLive typesetting distribution

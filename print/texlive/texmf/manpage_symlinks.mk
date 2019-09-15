@@ -4,7 +4,7 @@
 # furthermore, `mandoc -Tlint` warns that `.so` is fragile and that we'd be
 # better off using ln(1).
 
-tl-manual-symlinks:
+tl-manpage-symlinks:
 	cd ${WRKBUILD}/texmf-dist/doc/man/man1 && \
 		ln -sf ptftopl.1 uptftopl.1 && \
 		ln -sf ptex.1 uptex.1 && \

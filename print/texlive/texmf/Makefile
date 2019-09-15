@@ -1,5 +1,5 @@
 # $OpenBSD: Makefile,v 1.57 2019/02/10 18:14:36 jca Exp $
-# XXX put back texdraw patch
+
 # XXX no one-line description at package time for PLISTs
 
 COMMENT-context =	texlive texmf for conTeXt
@@ -69,8 +69,8 @@ WRKDIST =		${WRKDIR}/texlive-${DIST_V}-texmf
 
 # Substitute correct interpreter paths into scripts and deal with linked manuals.
 # Some interpreter paths are done automatically by MODULES.
-.include "manual_symlinks.mk"
-pre-configure: tl-manual-symlinks
+.include "manpage_symlinks.mk"
+pre-configure: tl-manpage-symlinks
 	@# Don't use substitution from the Python port, since we need to swap in
 	@# different versions.
 	for F in ${PYTHON2_ADJ_FILES}; do \
@@ -163,16 +163,17 @@ post-install:
 	${SUBST_CMD} ${PREFIX}/share/texmf-dist/web2c/texmfcnf.lua
 
 # Generating PLISTs is special for TeX Live.
-# This target requires Python3. XXX use correct python3
+# This target requires Python3.
 update-plist: plist
 plist: fake
-	env WRKINST=${WRKINST} TRUEPREFIX=${TRUEPREFIX} python3 \
+	env WRKINST=${WRKINST} TRUEPREFIX=${TRUEPREFIX} python${MODPY_DEFAULT_VERSION_3} \
 		${FILESDIR}/update_plist_hints.py \
 		${WRKDIR}/texlive.tlpdb | \
 		${FILESDIR}/write_plists.py
 
 # regenerate adj.mk
 adj: patch
-	${FILESDIR}/mk_adj.py ${WRKSRC}/texmf-dist ${WRKSRC} > adj.mk
+	python${MODPY_DEFAULT_VERSION_3} ${FILESDIR}/mk_adj.py \
+		${WRKSRC}/texmf-dist ${WRKSRC} > adj.mk
 
 .include <bsd.port.mk>

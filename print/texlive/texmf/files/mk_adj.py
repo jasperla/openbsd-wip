@@ -49,9 +49,9 @@ SUBST_INTERPRETERS = {
     "python2": "PYTHON2_ADJ_FILES",
     "python2.7": "PYTHON2_ADJ_FILES",
     "python3": "PYTHON3_ADJ_FILES",
-    #"python3.6": "PYTHON3_ADJ_FILES",
     "python3.7": "PYTHON3_ADJ_FILES",
     "ruby": "RUBY_ADJ_FILES",
+    # See the note in the package README about ruby18.
     "ruby18": "RUBY_ADJ_FILES",
     "texlua": "TEXLUA_ADJ_FILES",
     "wish": "WISH_ADJ_FILES",
