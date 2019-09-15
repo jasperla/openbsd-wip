@@ -18,8 +18,8 @@ PLISTS = "-buildset", "-main", "-context", "-full", "-docs"
 EXISTING_DIRS = ["share", "info", "man"] + \
     ["man/man%d" % i for i in range(1, 9)] + ["man3f", "man3p"]
 
-MAN_RE = re.compile("^man/man[0-9]/.*\.[0-9]")
-INFO_RE = re.compile("^info/.*\.info")
+MAN_RE = re.compile(r'^man/man[0-9]/.*\.[0-9]')
+INFO_RE = re.compile(r'^info/.*\.info')
 
 
 TOP_MATTER = {

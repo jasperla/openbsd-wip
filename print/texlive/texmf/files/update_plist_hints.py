@@ -19,8 +19,8 @@ import os
 from tlpdb import PkgPartSpec, FileKind, Parser
 
 
-MANS_INFOS_RE = re.compile("(man\/man[0-9]\/.*[0-9]|info\/.*\.info)$")
-MOVE_MANS_INFOS_RE = re.compile("^share/texmf-dist/doc/(man|info)/")
+MANS_INFOS_RE = re.compile(r'(man\/man[0-9]\/.*[0-9]|info\/.*\.info)$')
+MOVE_MANS_INFOS_RE = re.compile(r'^share/texmf-dist/doc/(man|info)/')
 
 
 def fatal(msg):
@@ -62,7 +62,7 @@ CONFLICT_FILES = set([
 
 
 def move_mans_and_infos(file_set):
-    return set([re.sub(MOVE_MANS_INFOS_RE, "\g<1>/", i)
+    return set([re.sub(MOVE_MANS_INFOS_RE, r'\g<1>/', i)
                 for i in file_set])
 
 
@@ -107,7 +107,7 @@ def build_subset_file_lists(tlpdb):
     conflict_pkgs = ["asymptote", "latexmk", "texworks", "t1utils",
                      "dvi2tty", "detex", "texinfo"]
     conflict_pkg_files, conflict_symlinks = \
-            collect_files(allspecs(conflict_pkgs), db)
+        collect_files(allspecs(conflict_pkgs), db)
 
     # BUILDSET
     # The smallest subset for building ports.
@@ -142,7 +142,7 @@ def build_subset_file_lists(tlpdb):
         "svn-multi", "avantgar", "ncntrsbk", "fontname",
         ]
     buildset_files, buildset_symlinks = \
-            collect_files(runspecs(buildset_pkgs), db)
+        collect_files(runspecs(buildset_pkgs), db)
     # Man and info files from the builset carry forward to the minimal set.
     buildset_doc_files, _ = \
         collect_files(docspecs(buildset_pkgs), db, MANS_INFOS_RE)
@@ -168,7 +168,8 @@ def build_subset_file_lists(tlpdb):
     minimal_files.update(minimal_doc_files)
     minimal_files.update(buildset_doc_files)
     minimal_files = minimal_files - buildset_files.union(context_files)
-    minimal_symlinks = minimal_symlinks - (buildset_symlinks | context_symlinks)
+    minimal_symlinks = minimal_symlinks - \
+        (buildset_symlinks | context_symlinks)
 
     # FULL
     # Largest subset.
@@ -181,7 +182,7 @@ def build_subset_file_lists(tlpdb):
     full_files = \
         full_files - minimal_files.union(buildset_files.union(context_files))
     full_symlinks = full_symlinks - \
-            (minimal_symlinks | buildset_symlinks | context_symlinks)
+        (minimal_symlinks | buildset_symlinks | context_symlinks)
 
     # DOCS
     # We only include docs for scheme-tetex so as to save space, but we do this
@@ -194,7 +195,8 @@ def build_subset_file_lists(tlpdb):
         collect_files(docspecs(["scheme-full"]), db)
     assert len(no_symlinks) == 0
     docs_files -= other_plist_doc_files
-    tetex_docs_files, no_symlinks = collect_files(docspecs(["scheme-tetex"]), db)
+    tetex_docs_files, no_symlinks = \
+        collect_files(docspecs(["scheme-tetex"]), db)
     assert len(no_symlinks) == 0
     commented_docs_files = docs_files - tetex_docs_files
 
@@ -265,14 +267,14 @@ def should_comment_file(f, commented_files):
         # Stuff provided by other ports.
         f in commented_files or
         # Windows junk
-        re.match(".*\.([Ee][Xx][Ee]|[Bb][Aa][Tt])$", f) or
+        re.match(r'.*\.([Ee][Xx][Ee]|[Bb][Aa][Tt])$', f) or
         # no win32 stuff, but should probably keep win32 images in tl docs.
         ("win32" in f and "doc/texlive" not in f) or
         "mswin" in f or
         # Context source code -- seriously?
-        re.match("^share/texmf-dist/scripts/context/stubs/source/", f) or
+        re.match(r'^share/texmf-dist/scripts/context/stubs/source/', f) or
         # PDF versions of manuals
-        re.match("^.*.man[0-9]\.pdf$", f) or
+        re.match(r'^.*.man[0-9]\.pdf$', f) or
         # We don't want anything that isn't in the texmf tree.
         # Most of this is installer stuff which does not apply
         # to us.
@@ -347,7 +349,8 @@ def process_symlinks(symlink_map):
                 # But not for the buildset, as those will be included in the
                 # texlive_base PLIST instead.
                 if target_plist != TargetPlist.BUILDSET:
-                    print("bin/%s %s" % (name, TargetPlist.to_str(target_plist)))
+                    print("bin/%s %s" %
+                          (name, TargetPlist.to_str(target_plist)))
 
             fh.write("%s:\n" % make_target)
             if len(ln_cmds) > 0:
@@ -362,7 +365,8 @@ if __name__ == "__main__":
     if len(sys.argv) != 2:
         fatal(__doc__)
 
-    plist_map, commented_files, symlink_map = build_subset_file_lists(sys.argv[1])
+    plist_map, commented_files, symlink_map = \
+        build_subset_file_lists(sys.argv[1])
     file_map = build_file_map(plist_map)
     walk_fake(file_map, commented_files)
     process_symlinks(symlink_map)

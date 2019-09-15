@@ -2,7 +2,6 @@
 # $OpenBSD: tlpdb.py,v 1.2 2019/01/20 11:17:49 edd Exp $
 """Lightweight TeX Live TLPDB parser."""
 
-import sys
 
 class DBError(Exception):
     pass
@@ -154,7 +153,8 @@ class Parser(object):
             else:
                 # Some other field we don't care for.
                 k = fields(line)[0]
-                assert k in Parser.IGNORE_FIELDS, "Don't know how to handle '%s' field" % k
+                assert k in Parser.IGNORE_FIELDS, \
+                    "Don't know how to handle '%s' field" % k
                 pos = Pos.PKG
                 file_kind = None
         return DB(pkgs)

@@ -29,7 +29,7 @@ class UnknownInterpreterError(Exception):
 
 # Decides if the first line of a file looks like a shebang and groups
 # the interpreter path and arguments for later inspection
-SHEBANG_PATTERN = re.compile("#\s*!\s*(\S+)(.*)")
+SHEBANG_PATTERN = re.compile(r'#\s*!\s*(\S+)(.*)')
 
 # OpenBSD base interpreter paths (which can remain hard-coded).
 BASE_INTERPRETERS = [
