@@ -1,0 +1,14 @@
+$OpenBSD$
+
+Index: Makefile
+--- Makefile.orig
++++ Makefile
+@@ -7,7 +7,7 @@ ifneq "$(GIT_DESC)" ""
+ endif
+ 
+ CC	?= gcc
+-CFLAGS += -Wall -std=c99 -Os -DVERSION="\"$(VERSION)\"" -I/usr/include/freetype2
++CFLAGS += -Wall -std=c99 -Os -DVERSION="\"$(VERSION)\"" -I${X11BASE}/include/freetype2
+ LDFLAGS += -lxcb -lxcb-xinerama -lxcb-randr -lX11 -lX11-xcb -lXft -lfreetype -lz -lfontconfig
+ CFDEBUG = -g3 -pedantic -Wall -Wunused-parameter -Wlong-long \
+           -Wsign-conversion -Wconversion -Wimplicit-function-declaration
