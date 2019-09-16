@@ -2,14 +2,14 @@
 
 COMMENT =	aerc is an email client for your terminal
 
-DISTNAME =	aerc-0.1.1
+DISTNAME =	aerc-0.2.1
 
 CATEGORIES =	mail
 
 HOMEPAGE =	https://aerc-mail.org/
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c pthread
 

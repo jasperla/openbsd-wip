@@ -3,6 +3,8 @@
 @man man/man1/aerc.1
 @man man/man5/aerc-config.5
 @man man/man5/aerc-imap.5
+@man man/man5/aerc-maildir.5
+@man man/man5/aerc-sendmail.5
 @man man/man5/aerc-smtp.5
 @man man/man7/aerc-tutorial.7
 share/aerc/
@@ -10,9 +12,6 @@ share/aerc/accounts.conf
 share/aerc/aerc.conf
 share/aerc/binds.conf
 share/aerc/filters/
-${MODPY_COMMENT}share/aerc/filters/${MODPY_PYCACHE}/
-share/aerc/filters/${MODPY_PYCACHE}hldiff.${MODPY_PYC_MAGIC_TAG}pyc
-share/aerc/filters/${MODPY_PYCACHE}plaintext.${MODPY_PYC_MAGIC_TAG}pyc
-share/aerc/filters/hldiff.py
+share/aerc/filters/hldiff
 share/aerc/filters/html
-share/aerc/filters/plaintext.py
+share/aerc/filters/plaintext

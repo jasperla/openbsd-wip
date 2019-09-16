@@ -10,7 +10,7 @@ HOMEPAGE =		https://git.sr.ht/~sircmpwn/scdoc
 MASTER_SITES =		https://deftly.net/dist/
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c
 
