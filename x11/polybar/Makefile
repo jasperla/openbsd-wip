@@ -45,6 +45,9 @@ NO_TEST =	Yes
 
 WRKDIST =	${WRKDIR}/polybar
 
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/lib/i3ipcpp/CMakeLists.txt
+
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/polybar
 	${INSTALL_DATA} ${WRKSRC}/config ${PREFIX}/share/examples/polybar
