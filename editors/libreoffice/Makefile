@@ -13,7 +13,7 @@ SHARED_LIBS +=  orcus-parser-0.14         0.0 # 0.0
 SHARED_LIBS +=  staroffice-0.0-lo         0.0 # 0.0
 
 BV=		6.3
-VERSION=	${BV}.0.4
+VERSION=	${BV}.1.2
 DISTNAME=	libreoffice-${VERSION}
 WRKDIST=	${WRKDIR}/libreoffice-${VERSION}
 PKGNAME=	libreoffice-${VERSION}
@@ -292,10 +292,10 @@ CONFIGURE_ARGS+=\
 		--disable-fetch-external \
 		--disable-odk \
 		--disable-firebird-sdbc \
-		--disable-mergelibs \
 		--disable-dependency-tracking \
 		--disable-online-update \
 		--disable-libnumbertext \
+		--enable-mergelibs \
 		--enable-gio \
 		--enable-kde5 \
 		--enable-release-build \
