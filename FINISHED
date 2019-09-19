@@ -68,7 +68,6 @@ devel/py-progressbar2			sent to ports@ 2018-06-04
 devel/py-python_utils			sent to ports@ 2018-06-04
 x11/gnustep/stepsync			ready to import (bcallah; after 6.4)
 graphics/converseen			ready to import (bcallah; after 6.4)
-fonts/siji				ready to import (bcallah)
 x11/polybar				technically ready but lacks module support (bcallah)
 devel/p5-POE				sent to ports@
 net/p5-POE-Component-Resolver		sent to ports@
@@ -87,6 +86,5 @@ net/p5-POE-Component-IRC-Plugin-RSS-Headlines	sent to ports@
 games/brogue				sent to ports@ (waiting for upstream to accept patches) (bcallah)
 games/openhexagon			sent to ports@ (bcallah)
 lang/voc				ready to import (bcallah)
-games/freesynd				ready to import (bcallah)
 graphics/photoflare			ready to import (bcallah)
 x11/reddit-wallpaper			ready to import (bcallah)
