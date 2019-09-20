@@ -4,7 +4,7 @@ COMMENT = QT5 GUI front-end for neovim
 
 GH_ACCOUNT = equalsraf
 GH_PROJECT = neovim-qt
-GH_TAGNAME = v0.2.13
+GH_TAGNAME = v0.2.14
 
 CATEGORIES = editors
 
