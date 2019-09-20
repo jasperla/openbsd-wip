@@ -68,7 +68,6 @@ devel/py-progressbar2			sent to ports@ 2018-06-04
 devel/py-python_utils			sent to ports@ 2018-06-04
 x11/gnustep/stepsync			ready to import (bcallah; after 6.4)
 graphics/converseen			ready to import (bcallah; after 6.4)
-x11/polybar				technically ready but lacks module support (bcallah)
 devel/p5-POE				sent to ports@
 net/p5-POE-Component-Resolver		sent to ports@
 devel/p5-POE-API-Peek			sent to ports@
