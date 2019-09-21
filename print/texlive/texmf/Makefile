@@ -1,7 +1,5 @@
 # $OpenBSD: Makefile,v 1.57 2019/02/10 18:14:36 jca Exp $
 
-# XXX no one-line description at package time for PLISTs
-
 COMMENT-context =	texlive texmf for conTeXt
 COMMENT-docs =		texlive documentation
 COMMENT-full =		texlive texmf for extra macros
