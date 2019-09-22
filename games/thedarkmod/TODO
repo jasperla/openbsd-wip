@@ -1,3 +1,0 @@
-19:38 <@brynet> looks like the mbedtls package replaces polarssl, probably want to link with that..
-LIB_DEPENDS graphics/openjpeg not needed for graphics/DevIL ?
-at this point needs to be set to windowed mode (disable r_*fullscreen in Darkmod.cfg) -- not for neonking though!
