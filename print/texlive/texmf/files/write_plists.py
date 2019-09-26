@@ -129,7 +129,7 @@ def main():
     for plist, files in all_files.items():
         fh = plist_map[plist]
 
-        for fl in sorted(files.union(dir_ents[plist])):
+        for fl in sorted(files | dir_ents[plist]):
             if re.match(MAN_RE, fl):
                 fh.write("@man ")
             elif re.match(INFO_RE, fl):

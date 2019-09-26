@@ -3,43 +3,43 @@
 
 tl-symlinks-buildset:
 	cd ${PREFIX}/bin && \
-		ln -s luajittex luajitlatex && \
 		ln -s luatex dvilualatex && \
-		ln -s pdftex latex && \
-		ln -s pdftex pdflatex && \
 		ln -s luatex dviluatex && \
-		ln -s pdftex pdfetex && \
+		ln -s pdftex etex && \
+		ln -s pdftex latex && \
+		ln -s luajittex luajitlatex && \
 		ln -s luatex lualatex && \
-		ln -s pdftex etex
+		ln -s pdftex pdfetex && \
+		ln -s pdftex pdflatex
 
 tl-symlinks-main:
 	cd ${PREFIX}/bin && \
-		ln -s pdftex pdfxmltex && \
-		ln -s pdftex jadetex && \
 		ln -s pdftex amstex && \
-		ln -s pdftex mllatex && \
-		ln -s aleph lamed && \
-		ln -s xetex xelatex && \
-		ln -s pdftex mex && \
-		ln -s pdftex texsis && \
-		ln -s luatex luacsplain && \
 		ln -s pdftex cslatex && \
-		ln -s pdftex eplain && \
-		ln -s tex lollipop && \
-		ln -s pdftex pdfmex && \
-		ln -s pdftex mltex && \
-		ln -s pdftex xmltex && \
 		ln -s pdftex csplain && \
+		ln -s pdftex eplain && \
+		ln -s pdftex jadetex && \
+		ln -s aleph lamed && \
+		ln -s tex lollipop && \
+		ln -s luatex luacsplain && \
+		ln -s pdftex mex && \
+		ln -s pdftex mllatex && \
+		ln -s pdftex mltex && \
+		ln -s pdftex pdfcslatex && \
 		ln -s pdftex pdfcsplain && \
 		ln -s pdftex pdfjadetex && \
+		ln -s pdftex pdfmex && \
+		ln -s pdftex pdfxmltex && \
+		ln -s pdftex texsis && \
 		ln -s pdftex utf8mex && \
-		ln -s pdftex pdfcslatex
+		ln -s xetex xelatex && \
+		ln -s pdftex xmltex
 
 tl-symlinks-full:
 	cd ${PREFIX}/bin && \
 		ln -s mflua-nowin mflua && \
-		ln -s euptex uplatex && \
-		ln -s eptex platex
+		ln -s eptex platex && \
+		ln -s euptex uplatex
 
 tl-symlinks-context:
 	true

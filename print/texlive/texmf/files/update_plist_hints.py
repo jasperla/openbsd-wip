@@ -167,9 +167,9 @@ def build_subset_file_lists(tlpdb):
     assert len(no_symlinks) == 0
     minimal_files.update(minimal_doc_files)
     minimal_files.update(buildset_doc_files)
-    minimal_files = minimal_files - buildset_files.union(context_files)
-    minimal_symlinks = minimal_symlinks - \
-        (buildset_symlinks | context_symlinks)
+    minimal_files = minimal_files - (buildset_files | context_files)
+    minimal_symlinks = \
+        minimal_symlinks - (buildset_symlinks | context_symlinks)
 
     # FULL
     # Largest subset.
@@ -179,20 +179,16 @@ def build_subset_file_lists(tlpdb):
         collect_files(docspecs(full_pkgs), db, MANS_INFOS_RE)
     assert len(no_symlinks) == 0
     full_files.update(full_doc_files)
-    full_files = \
-        full_files - minimal_files.union(buildset_files.union(context_files))
+    full_files = full_files - (minimal_files | buildset_files | context_files)
     full_symlinks = full_symlinks - \
         (minimal_symlinks | buildset_symlinks | context_symlinks)
 
     # DOCS
     # We only include docs for scheme-tetex so as to save space, but we do this
     # in such a way as to have all unincluded docs commented in PLIST-docs.
-    other_plist_doc_files = buildset_doc_files \
-        .union(minimal_doc_files) \
-        .union(context_doc_files) \
-        .union(full_doc_files)
-    docs_files, no_symlinks = \
-        collect_files(docspecs(["scheme-full"]), db)
+    other_plist_doc_files = buildset_doc_files | minimal_doc_files | \
+        context_doc_files | full_doc_files
+    docs_files, no_symlinks = collect_files(docspecs(["scheme-full"]), db)
     assert len(no_symlinks) == 0
     docs_files -= other_plist_doc_files
     tetex_docs_files, no_symlinks = \
@@ -223,8 +219,8 @@ def build_subset_file_lists(tlpdb):
         TargetPlist.DOCS: docs_files
     }
 
-    return plist_map, CONFLICT_FILES.union(conflict_pkg_files) \
-                                    .union(commented_docs_files), symlink_map
+    comment_files = CONFLICT_FILES | conflict_pkg_files | commented_docs_files
+    return plist_map, comment_files, symlink_map
 
 
 class TargetPlist(object):
@@ -331,7 +327,7 @@ def process_symlinks(symlink_map):
         for target_plist, (make_target, symlinks) in symlink_map.items():
             ln_cmds = []
             # Write out to the makefile fragment.
-            for name, engine in symlinks:
+            for name, engine in sorted(symlinks, key=lambda tup: tup[0]):
                 # Mirror the special cases from upstream texlinks.sh.
                 if name.startswith("cont-"):
                     continue

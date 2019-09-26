@@ -259,7 +259,7 @@ class DB(object):
             # If we are to install runfiles, then we need the symlink.
             if pp.file_kind != FileKind.RUN:
                 continue
-            symlinks = symlinks.union(self.map[pp.pkg_name].symlinks)
+            symlinks = symlinks | self.map[pp.pkg_name].symlinks
         return symlinks
 
     def pkgs(self):
