@@ -25,7 +25,7 @@ HOMEPAGE =		https://taisei-project.org/
 
 # MIT
 # Soundtrack: CC-BY 4.0 / Photos: PD and CC-0
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += SDL2 SDL2_mixer c crypto freetype m png16 webpdecoder
 WANTLIB += z
