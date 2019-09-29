@@ -37,7 +37,6 @@ tl-symlinks-main:
 
 tl-symlinks-full:
 	cd ${PREFIX}/bin && \
-		ln -s mflua-nowin mflua && \
 		ln -s eptex platex && \
 		ln -s euptex uplatex
 

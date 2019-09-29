@@ -333,7 +333,7 @@ def process_symlinks(symlink_map):
                     continue
                 if name == "pdfcsplain" and engine != "pdftex":
                     continue
-                if name in ("mf-nowin", "mf", "mptopdf"):
+                if name in ("mflua", "mf-nowin", "mf", "mptopdf"):
                     continue
 
                 if name == engine:
