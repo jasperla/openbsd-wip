@@ -1,4 +1,5 @@
 $OpenBSD$
+Fix occurrences of code where char is considered as signed on all platforms.
 
 Index: src/other/FillPolygon.c
 --- src/other/FillPolygon.c.orig
