@@ -1,0 +1,9 @@
+What is fileb0x?
+
+A better customizable tool to embed files in go.
+
+It is an alternative to go-bindata that have better features and organized
+configuration.
+TL;DR
+
+a better go-bindata
