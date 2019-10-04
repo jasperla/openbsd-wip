@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v$
+bin/opposingforce
+lib/xash3d/gearbox/
+lib/xash3d/gearbox/libclient.so
+lib/xash3d/gearbox/libserver.so
+share/doc/pkg-readmes/${PKGSTEM}

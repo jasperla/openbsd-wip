@@ -23,7 +23,7 @@ Add a link to your game data as follows:
   $ doas ln -s ~/games/steamdepots/Half-Life:_Blue_Shift/bshift
 
 Xash3d requires some extra assets for the menus to work correctly.  This file
-can be fetched manually, and placed in the `valve' directory:
+can be fetched manually, and placed in the `bshift' directory:
 
   $ ftp -o ~/games/steamdepots/Half-Life:_Blue_Shift/bshift/extras.pak \
 	https://github.com/FWGS/xash-extras/releases/download/v0.19.2/extras.pak
