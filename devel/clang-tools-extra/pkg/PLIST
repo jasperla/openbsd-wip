@@ -41,6 +41,10 @@ lib/libclangTidyZirconModule.a
 lib/libfindAllSymbols.a
 share/clang/clang-include-fixer.el
 share/clang/clang-include-fixer.py
+share/clang/clang-include-fixer.pyc
 share/clang/clang-tidy-diff.py
+share/clang/clang-tidy-diff.pyc
 share/clang/run-clang-tidy.py
+share/clang/run-clang-tidy.pyc
 share/clang/run-find-all-symbols.py
+share/clang/run-find-all-symbols.pyc

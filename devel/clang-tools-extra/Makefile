@@ -1,40 +1,35 @@
 # $OpenBSD: Makefile $
 
 # XXX
-# This port is more or less a simple copy from devel/llvm and it tries to
+# This port is more or less a copy from devel/llvm and it tries to
 # package the clang extra tools without to increase the complexity of
 # devel/llvm.
 #
-# Please keep patches in sync with devel/llvm and just rmove the
-# lld and lldb patches: rm patches/patch-*lld*
-# The clang extra tools do not need to patch.
+# Please keep patches in sync with devel/llvm and just rmove the lld and lldb
+# patches: rm patches/patch-*lld*
 
-# XXX If broken on an architecture, remove the arch from LLVM_ARCHS.
 ONLY_FOR_ARCHS = ${LLVM_ARCHS}
 
 DPB_PROPERTIES = parallel
 
 COMMENT=	Clang extra tools
 
-LLVM_V =	8.0.0
+LLVM_V =	8.0.1
 DISTNAME =	llvm-${LLVM_V}.src
 PKGNAME=	clang-tools-extra-${LLVM_V}
 
 CATEGORIES =	devel
 
-# packager notes in http://llvm.org/docs/Packaging.html
-HOMEPAGE =	https://www.llvm.org/
+HOMEPAGE =	https://clang.llvm.org/extra/index.html
 
-MAINTAINER=	Jeremie Courreges-Anglas <jca@wxcvbn.org>
+MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} c curses edit m z
-
-# patches patch-tools_lld
-MASTER_SITES =	https://releases.llvm.org/${LLVM_V}/
+MASTER_SITES =	https://github.com/llvm/llvm-project/releases/download/llvmorg-${LLVM_V}/
 EXTRACT_SUFX =	.tar.xz
+
 DISTFILES =	llvm-${LLVM_V}.src${EXTRACT_SUFX} \
 		cfe-${LLVM_V}.src${EXTRACT_SUFX} \
 		clang-tools-extra-${LLVM_V}.src${EXTRACT_SUFX}
@@ -103,7 +98,6 @@ PKG_ARGS +=		-Dpowerpc=1
 PKG_ARGS +=		-Dpowerpc=0
 .endif
 
-# XXX sync
 GCC_VER =		8.3.0
 .if ${MACHINE_ARCH} == "amd64"
 GCC_CONFIG =		x86_64-unknown-openbsd${OSREV}
@@ -131,5 +125,7 @@ post-install:
 CONFIGURE_ENV+=LIB${_n}_VERSION=${_v}
 MAKE_ENV+=LIB${_n}_VERSION=${_v}
 .endfor
+
+FAKE_TARGET = tools/clang/tools/extra/install
 
 .include <bsd.port.mk>
