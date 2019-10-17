@@ -2,7 +2,7 @@
 
 COMMENT =	minimalist and opinionated feed reader
 
-DISTNAME =	miniflux-2.0.17
+DISTNAME =	miniflux-2.0.18
 
 CATEGORIES =	net
 
