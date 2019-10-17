@@ -15,7 +15,7 @@ Index: gold/layout.cc
      increase_relro_(0),
      symtab_section_(NULL),
      symtab_xindex_(NULL),
-@@ -2117,6 +2119,26 @@ Layout::attach_allocated_section_to_segment(const Targ
+@@ -2115,6 +2117,26 @@ Layout::attach_allocated_section_to_segment(const Targ
  		       "may cause confusing PT_INTERP segment"));
        this->interp_segment_->add_output_section_to_nonload(os, seg_flags);
      }
@@ -42,7 +42,7 @@ Index: gold/layout.cc
  }
  
  // Make an output section for a script.
-@@ -5011,6 +5033,10 @@ Layout::create_interp(const Target* target)
+@@ -5009,6 +5031,10 @@ Layout::create_interp(const Target* target)
    gold_assert(this->interp_segment_ == NULL);
  
    const char* interp = parameters->options().dynamic_linker();
@@ -53,7 +53,7 @@ Index: gold/layout.cc
    if (interp == NULL)
      {
        interp = target->dynamic_linker();
-@@ -5717,6 +5743,10 @@ Layout::make_output_segment(elfcpp::Elf_Word type, elf
+@@ -5715,6 +5741,10 @@ Layout::make_output_segment(elfcpp::Elf_Word type, elf
      this->relro_segment_ = oseg;
    else if (type == elfcpp::PT_INTERP)
      this->interp_segment_ = oseg;

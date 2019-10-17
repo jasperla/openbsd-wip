@@ -1,12 +1,11 @@
 # $OpenBSD$
 
-ONLY_FOR_ARCHS =	aarch64 amd64 arm i386 macppc mips64 mips64el sparc64
+ONLY_FOR_ARCHS =	${LLVM_ARCHS}
 
 # gold does not follow binutils version numbering
 COMMENT =	GNU ELF-only linker
-DISTNAME =	binutils-2.32
-PKGNAME =	gold-1.16
-REVISION =	2
+DISTNAME =	binutils-2.33.1
+PKGNAME =	gold-1.16pl0
 CATEGORIES =	devel
 
 HOMEPAGE =	https://sourceware.org/binutils/

@@ -16,7 +16,7 @@ Index: bfd/config.bfd
   arm-*-oabi | \
   arm-*-riscix* | \
   arm-epoc-pe* | \
-@@ -245,6 +244,11 @@ case "${targ}" in
+@@ -241,6 +240,11 @@ case "${targ}" in
      targ_selvecs="aarch64_elf64_be_vec arm_elf32_le_vec arm_elf32_be_vec"
      want64=true
      ;;
@@ -28,7 +28,7 @@ Index: bfd/config.bfd
    aarch64-*-fuchsia*)
      targ_defvec=aarch64_elf64_le_vec
      targ_selvecs="aarch64_elf64_be_vec arm_elf32_le_vec arm_elf32_be_vec"
-@@ -359,6 +363,10 @@ case "${targ}" in
+@@ -355,6 +359,10 @@ case "${targ}" in
      targ_defvec=arm_elf32_le_vec
      targ_selvecs="arm_elf32_be_vec"
      ;;
