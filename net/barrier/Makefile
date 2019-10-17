@@ -26,12 +26,14 @@ MODULES =		devel/cmake \
 
 NO_TEST =		Yes
 
-CONFIGURE_ARGS +=	-DCMAKE_C_FLAGS="${CFLAGS} -I${X11BASE}/include" \
-			-DCMAKE_CXX_FLAGS="${CXXFLAGS} -I${X11BASE}/include" \
-			-DCMAKE_EXE_LINKER_FLAGS="-L${WRKSRC}/lib"
+SLBST_VARS +=		LOCALBASE
+SLBST_VARS +=		X11BASE
 
+pre-configure:
+	${SUBST_CMD} ${WRKDIST}/*.txt
 do-install:
 	${INSTALL_PROGRAM} ${WRKDIR}/build-*/bin/barrier* ${PREFIX}/bin/
+	mv ${PREFIX}/bin/barrier ${PREFIX}/bin/barrier-gui
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/barrier
 	${INSTALL_DATA} ${WRKSRC}/doc/barrier.conf.exampl* \
 		${PREFIX}/share/examples/barrier/

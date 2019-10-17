@@ -1,5 +1,5 @@
 @comment $OpenBSD: PLIST,v 1.5 2014/06/03 13:45:41 bcallah Exp $
-@bin bin/barrier
+@bin bin/barrier-gui
 @bin bin/barrierc
 @bin bin/barriers
 @man man/man1/barrierc.1

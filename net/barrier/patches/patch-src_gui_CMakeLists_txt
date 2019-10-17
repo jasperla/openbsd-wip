@@ -1,5 +1,7 @@
 $OpenBSD$
 
+https://github.com/debauchee/barrier/pull/468
+
 Index: src/gui/CMakeLists.txt
 --- src/gui/CMakeLists.txt.orig
 +++ src/gui/CMakeLists.txt
@@ -8,6 +10,6 @@ Index: src/gui/CMakeLists.txt
  if (${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
      install (TARGETS barrier DESTINATION ${BARRIER_BUNDLE_BINARY_DIR})
 -elseif (${CMAKE_SYSTEM_NAME} MATCHES "Linux")
-+else()
++elseif (${CMAKE_SYSTEM_NAME} MATCHES "Linux" OR ${CMAKE_SYSTEM_NAME} MATCHES "BSD")
      install (TARGETS barrier DESTINATION bin)
  endif()
