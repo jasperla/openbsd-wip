@@ -1,18 +1,20 @@
 # $OpenBSD$
 
 COMMENT =	Double Ratchet cryptographic ratchet in C++
-DISTNAME =	olm-3.0.0
+V =		3.1.4
+DISTNAME =	olm-${V}
 CATEGORIES =	devel security
 
 SHARED_LIBS +=	olm       0.0 # 0.0
 
-MASTER_SITES =	https://git.matrix.org/git/olm/snapshot/
+MASTER_SITES =	https://gitlab.matrix.org/matrix-org/olm/-/archive/${V}/
 
 HOMEPAGE =	https://git.matrix.org/git/olm
+
 MAINTAINER =	Aaron Bieber <abieber@openbsd.org>
 
 # Apache 2.0
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} m
 
