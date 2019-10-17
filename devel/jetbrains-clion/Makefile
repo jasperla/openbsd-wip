@@ -2,7 +2,7 @@
 
 COMMENT =		cross-platform IDE for C and C++.
 
-V =			2019.1.4
+V =			2019.2.4
 DISTNAME =		CLion-${V}
 PKGNAME =		jetbrains-clion-${V}
 CATEGORIES =		devel
@@ -22,13 +22,14 @@ MODJAVA_VER =		11
 BUILD_DEPENDS =		${MODJAVA_RUN_DEPENDS}
 
 RUN_DEPENDS =		devel/clang-tools-extra \
+			devel/cmake \
 			devel/desktop-file-utils \
 			devel/gdb \
 			java/javaPathHelper
 
 NO_TEST =		Yes
 
-WRKDIST =		${WRKDIR}/clion-2019.1.4
+WRKDIST =		${WRKDIR}/clion-2019.2.4
 CL =			${PREFIX}/clion
 
 # If NO_BUILD is set, JAVA_HOME doesn't get defined. So do a no-op for
@@ -43,6 +44,8 @@ do-install:
 	@rm -rf ${CL}/lib/pty4j-native
 	@rm -rf ${CL}/bin/{fsnotifier,fsnotifier-arm,fsnotifier64,clang,cmake}
 	@rm -rf ${CL}/bin/lib*.so
+#	@rm -rf ${CL}/bin/clang/linux
+#	@rm -rf ${CL}/bin/cmake/linux
 	@rm -rf ${CL}/bin/gdb/linux
 	@rm -rf ${CL}/bin/lldb/linux
 	@${SUBST_PROGRAM} ${FILESDIR}/clion ${PREFIX}/bin/clion
