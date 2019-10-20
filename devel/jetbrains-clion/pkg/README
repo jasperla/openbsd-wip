@@ -10,10 +10,3 @@ If the splash-screen displays but you then only see a grey main screen,
 install the wmname package and run 'wmname LG3D'. This is a problem that
 has been seen with some Java-based applications used with a non-reparenting
 window manager (e.g. cwm).
-
-Clangd
-==================
-${PKGSTEM} expects clangd in ${LOCALBASE}/clion/bin/clang/linux. To use clangd
-in ${PKGSTEM} you have to create a simple link:
-
-ln -s ${LOCALBASE}/bin/clangd ${LOCALBASE}/clion/bin/clang/linux/

@@ -4,6 +4,9 @@ clion/
 clion/bin/
 clion/bin/clang/
 clion/bin/clang/linux/
+@bin clion/bin/clang/linux/clang-format
+@bin clion/bin/clang/linux/clang-tidy
+@bin clion/bin/clang/linux/clangd
 clion/bin/clion.png
 clion/bin/clion.sh
 clion/bin/clion.svg
