@@ -2,23 +2,20 @@
 
 COMMENT =	fast JSON parser/generator for C++
 
-V =		1.1.0pl20171204
+V =		1.1.0pl20191009
 #V =		1.1.0
 DISTNAME =	rapidjson-$V
 
 GH_ACCOUNT =	Tencent
 GH_PROJECT =	rapidjson
-#GH_TAGNAME =	v$V
-GH_COMMIT =	7caa4b2165ad1e01ee90f9028fe17f7655c13a83
+GH_COMMIT =	6a6bed2759d42891f9e29a37b21315d3192890ed
 
-CATEGORIES =	textproc
+CATEGORIES =	textproc devel
 
 HOMEPAGE =	http://rapidjson.org/
 
-COMPILER =	base-clang ports-gcc
-
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		devel/cmake
 

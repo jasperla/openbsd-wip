@@ -1,4 +1,4 @@
-@comment $OpenBSD$
+@comment $OpenBSD: PLIST,v$
 include/rapidjson/
 include/rapidjson/allocators.h
 include/rapidjson/cursorstreamwrapper.h
@@ -47,6 +47,10 @@ lib/pkgconfig/RapidJSON.pc
 share/doc/RapidJSON/
 share/doc/RapidJSON/examples/
 share/doc/RapidJSON/examples/CMakeLists.txt
+share/doc/RapidJSON/examples/archiver/
+share/doc/RapidJSON/examples/archiver/archiver.cpp
+share/doc/RapidJSON/examples/archiver/archiver.h
+share/doc/RapidJSON/examples/archiver/archivertest.cpp
 share/doc/RapidJSON/examples/capitalize/
 share/doc/RapidJSON/examples/capitalize/capitalize.cpp
 share/doc/RapidJSON/examples/condense/
@@ -79,6 +83,8 @@ share/doc/RapidJSON/examples/simplereader/
 share/doc/RapidJSON/examples/simplereader/simplereader.cpp
 share/doc/RapidJSON/examples/simplewriter/
 share/doc/RapidJSON/examples/simplewriter/simplewriter.cpp
+share/doc/RapidJSON/examples/sortkeys/
+share/doc/RapidJSON/examples/sortkeys/sortkeys.cpp
 share/doc/RapidJSON/examples/tutorial/
 share/doc/RapidJSON/examples/tutorial/tutorial.cpp
 share/doc/RapidJSON/readme.md
