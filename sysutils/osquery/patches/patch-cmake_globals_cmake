@@ -1,0 +1,15 @@
+$OpenBSD$
+
+Index: cmake/globals.cmake
+--- cmake/globals.cmake.orig
++++ cmake/globals.cmake
+@@ -29,6 +29,9 @@ if("${CMAKE_SYSTEM_NAME}" STREQUAL "Linux")
+ elseif("${CMAKE_SYSTEM_NAME}" STREQUAL "Darwin")
+   set(PLATFORM_POSIX 1)
+   set(PLATFORM_MACOS 1)
++elseif("${CMAKE_SYSTEM_NAME}" STREQUAL "OpenBSD")
++  set(PLATFORM_POSIX 1)
++  set(PLATFORM_OPENBSD 1)
+ elseif("${CMAKE_SYSTEM_NAME}" STREQUAL "Windows")
+   set(PLATFORM_WINDOWS 1)
+ else()

@@ -1,0 +1,48 @@
+$OpenBSD$
+
+Index: cmake/flags.cmake
+--- cmake/flags.cmake.orig
++++ cmake/flags.cmake
+@@ -122,6 +122,42 @@ function(setupBuildFlags)
+       target_link_libraries(cxx_settings INTERFACE
+         ${linux_cxx_link_libraries}
+       )
++    elseif(DEFINED PLATFORM_OPENBSD)
++      set(openbsd_cxx_compile_options
++        -Wabi-tag
++        -stdlib=libc++
++      )
++
++      set(openbsd_cxx_link_options
++        -stdlib=libc++
++      )
++
++      set(openbsd_cxx_link_libraries
++        iconv
++        cups
++        bsm
++        xar
++        c++abi
++      )
++
++      set(osquery_openbsd_common_defines
++	OPENBSD=1
++        BSD=1
++        OSQUERY_BUILD_PLATFORM=openbsd
++        OSQUERY_BUILD_DISTRO=6.6
++      )
++
++      target_compile_options(cxx_settings INTERFACE
++        ${openbsd_cxx_compile_options}
++      )
++      target_link_options(cxx_settings INTERFACE
++        ${openbsd_cxx_link_options}
++      )
++      target_link_libraries(cxx_settings INTERFACE
++        ${openbsd_cxx_link_libraries}
++      )
++
++      list(APPEND osquery_defines ${osquery_openbsd_common_defines})
+     elseif(DEFINED PLATFORM_MACOS)
+       set(macos_cxx_compile_options
+         -x objective-c++
