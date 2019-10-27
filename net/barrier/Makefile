@@ -2,13 +2,12 @@
 
 COMMENT =		mouse and keyboard sharing utility
 
-VERSION =		2.3.2
-DISTNAME =		barrier-${VERSION}
+V =			2.3.2
+DISTNAME =		deterministic-barrier-source
+PKGNAME =		barrier-${V}
 CATEGORIES =		net x11
 
-GH_ACCOUNT =		debauchee
-GH_PROJECT =		barrier
-GH_TAGNAME =		v${VERSION}
+MASTER_SITES =		https://github.com/debauchee/barrier/releases/download/v${V}/
 
 # GPLv2 only
 PERMIT_PACKAGE =	Yes
@@ -20,6 +19,8 @@ WANTLIB += m ssl
 LIB_DEPENDS =		net/curl
 
 BLUID_DEPENDS =		net/avahi
+
+WRKDIST =		${WRKDIR}/barrier
 
 MODULES =		devel/cmake \
 			x11/qt5
