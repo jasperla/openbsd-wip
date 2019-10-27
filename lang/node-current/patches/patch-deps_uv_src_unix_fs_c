@@ -3,7 +3,7 @@ $OpenBSD$
 Index: deps/uv/src/unix/fs.c
 --- deps/uv/src/unix/fs.c.orig
 +++ deps/uv/src/unix/fs.c
-@@ -554,7 +554,7 @@ static int uv__fs_statfs(uv_fs_t* req) {
+@@ -545,7 +545,7 @@ static int uv__fs_statfs(uv_fs_t* req) {
      return -1;
    }
  

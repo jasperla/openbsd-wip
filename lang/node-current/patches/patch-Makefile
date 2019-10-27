@@ -3,7 +3,7 @@ $OpenBSD$
 Index: Makefile
 --- Makefile.orig
 +++ Makefile
-@@ -155,7 +155,7 @@ config.gypi: configure configure.py
+@@ -157,7 +157,7 @@ config.gypi: configure configure.py src/node_version.h
  	fi
  
  .PHONY: install
@@ -12,24 +12,16 @@ Index: Makefile
  	$(PYTHON) tools/install.py $@ '$(DESTDIR)' '$(PREFIX)'
  
  .PHONY: uninstall
-@@ -420,6 +420,12 @@ test/addons/.buildstamp: $(ADDONS_PREREQS) \
+@@ -419,6 +419,12 @@ test/addons/.buildstamp: $(ADDONS_PREREQS) \
+ # Just goes to show that recursive make really is harmful...
  # TODO(bnoordhuis) Force rebuild after gyp update.
  build-addons: | $(NODE_EXE) test/addons/.buildstamp
- 
++
 +build-pledge: $(NODE_EXE)
 +	$(NODE) deps/npm/node_modules/node-gyp/bin/node-gyp rebuild \
 +		--directory="deps/npm/node_modules/node-pledge" \
 +		--nodedir="$(shell pwd)" && \
 +	$(RM) -rf deps/npm/node_modules/node-pledge/build/Release/{.deps,../Makefile,obj.target}
-+
+ 
  JS_NATIVE_API_BINDING_GYPS := \
  	$(filter-out test/js-native-api/??_*/binding.gyp, \
- 		$(wildcard test/js-native-api/*/binding.gyp))
-@@ -603,7 +609,6 @@ test-doc: doc-only ## Builds, lints, and verifies the 
- 	@if [ "$(shell $(node_use_openssl))" != "true" ]; then \
- 		echo "Skipping test-doc (no crypto)"; \
- 	else \
--		$(MAKE) lint; \
- 		$(PYTHON) tools/test.py $(PARALLEL_ARGS) $(CI_DOC); \
- 	fi
- 

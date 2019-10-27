@@ -2,7 +2,7 @@ $OpenBSD: patch-deps_npm_lib_npm_js,v 1.6 2018/09/19 19:10:27 abieber Exp $
 Index: deps/npm/lib/npm.js
 --- deps/npm/lib/npm.js.orig
 +++ deps/npm/lib/npm.js
-@@ -337,7 +337,7 @@
+@@ -357,7 +357,7 @@
  
          log.resume()
  
