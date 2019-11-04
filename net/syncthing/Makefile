@@ -31,7 +31,6 @@ ST_CMDS =	syncthing stdiscosrv strelaysrv stcli
 
 do-build:
 .for cmd in ${ST_CMDS}
-	echo "\n\nCMD: ${cmd}\n\n"
 	cd ${WRKSRC} && ${MODGO_CMD} run build.go -version v${V} \
 		-no-upgrade install ${cmd}
 .endfor
