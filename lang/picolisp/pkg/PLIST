@@ -17,6 +17,7 @@ lib/picolisp/lib/complete.l
 lib/picolisp/lib/conDbgc.l
 lib/picolisp/lib/db.l
 lib/picolisp/lib/db32-64.l
+lib/picolisp/lib/dbgc.l
 lib/picolisp/lib/debug.l
 lib/picolisp/lib/ed.l
 lib/picolisp/lib/edit.l

@@ -2,7 +2,7 @@
 
 COMMENT =		the picolisp system
 
-V =			18.12
+V =			19.6
 DISTNAME =		picoLisp-$V
 PKGNAME =		picolisp-$V
 
@@ -26,7 +26,7 @@ BUILD_DEPENDS =		java/javaPathHelper
 WANTLIB += c m
 
 # BSD?
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =		https://software-lab.de/
 
