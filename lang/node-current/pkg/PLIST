@@ -657,6 +657,17 @@ include/node/openssl/archs/linux64-mips64/asm/include/
 include/node/openssl/archs/linux64-mips64/asm/include/openssl/
 include/node/openssl/archs/linux64-mips64/asm/include/openssl/opensslconf.h
 include/node/openssl/archs/linux64-mips64/asm/include/progs.h
+include/node/openssl/archs/linux64-mips64/asm_avx2/
+include/node/openssl/archs/linux64-mips64/asm_avx2/crypto/
+include/node/openssl/archs/linux64-mips64/asm_avx2/crypto/buildinf.h
+include/node/openssl/archs/linux64-mips64/asm_avx2/crypto/include/
+include/node/openssl/archs/linux64-mips64/asm_avx2/crypto/include/internal/
+include/node/openssl/archs/linux64-mips64/asm_avx2/crypto/include/internal/bn_conf.h
+include/node/openssl/archs/linux64-mips64/asm_avx2/crypto/include/internal/dso_conf.h
+include/node/openssl/archs/linux64-mips64/asm_avx2/include/
+include/node/openssl/archs/linux64-mips64/asm_avx2/include/openssl/
+include/node/openssl/archs/linux64-mips64/asm_avx2/include/openssl/opensslconf.h
+include/node/openssl/archs/linux64-mips64/asm_avx2/include/progs.h
 include/node/openssl/archs/linux64-mips64/no-asm/
 include/node/openssl/archs/linux64-mips64/no-asm/crypto/
 include/node/openssl/archs/linux64-mips64/no-asm/crypto/buildinf.h
@@ -1428,11 +1439,11 @@ lib/node_modules/clone/clone.iml
 lib/node_modules/clone/clone.js
 lib/node_modules/clone/package.json
 lib/node_modules/cmd-shim/
-lib/node_modules/cmd-shim/.npmignore
-lib/node_modules/cmd-shim/.travis.yml
 lib/node_modules/cmd-shim/LICENSE
 lib/node_modules/cmd-shim/README.md
 lib/node_modules/cmd-shim/index.js
+lib/node_modules/cmd-shim/lib/
+lib/node_modules/cmd-shim/lib/to-batch-syntax.js
 lib/node_modules/cmd-shim/package.json
 lib/node_modules/co/
 lib/node_modules/co/History.md
@@ -1651,7 +1662,6 @@ lib/node_modules/dashdash/lib/dashdash.js
 lib/node_modules/dashdash/package.json
 lib/node_modules/debug/
 lib/node_modules/debug/.coveralls.yml
-lib/node_modules/debug/.eslintrc
 lib/node_modules/debug/.npmignore
 lib/node_modules/debug/.travis.yml
 lib/node_modules/debug/CHANGELOG.md
@@ -1704,7 +1714,6 @@ lib/node_modules/defaults/package.json
 lib/node_modules/defaults/test.js
 lib/node_modules/define-properties/
 lib/node_modules/define-properties/.editorconfig
-lib/node_modules/define-properties/.eslintrc
 lib/node_modules/define-properties/.jscs.json
 lib/node_modules/define-properties/.travis.yml
 lib/node_modules/define-properties/CHANGELOG.md
@@ -1867,7 +1876,6 @@ lib/node_modules/errno/package.json
 lib/node_modules/errno/test.js
 lib/node_modules/es-abstract/
 lib/node_modules/es-abstract/.editorconfig
-lib/node_modules/es-abstract/.eslintrc
 lib/node_modules/es-abstract/.jscs.json
 lib/node_modules/es-abstract/.nycrc
 lib/node_modules/es-abstract/.travis.yml
@@ -1898,7 +1906,6 @@ lib/node_modules/es-abstract/operations/es5.js
 lib/node_modules/es-abstract/package.json
 lib/node_modules/es-to-primitive/
 lib/node_modules/es-to-primitive/.editorconfig
-lib/node_modules/es-to-primitive/.eslintrc
 lib/node_modules/es-to-primitive/.jscs.json
 lib/node_modules/es-to-primitive/.travis.yml
 lib/node_modules/es-to-primitive/CHANGELOG.md
@@ -1972,7 +1979,6 @@ lib/node_modules/execa/package.json
 lib/node_modules/execa/readme.md
 lib/node_modules/extend/
 lib/node_modules/extend/.editorconfig
-lib/node_modules/extend/.eslintrc
 lib/node_modules/extend/.jscs.json
 lib/node_modules/extend/.travis.yml
 lib/node_modules/extend/CHANGELOG.md
@@ -2139,6 +2145,12 @@ lib/node_modules/fs-minipass/
 lib/node_modules/fs-minipass/LICENSE
 lib/node_modules/fs-minipass/README.md
 lib/node_modules/fs-minipass/index.js
+lib/node_modules/fs-minipass/node_modules/
+lib/node_modules/fs-minipass/node_modules/minipass/
+lib/node_modules/fs-minipass/node_modules/minipass/LICENSE
+lib/node_modules/fs-minipass/node_modules/minipass/README.md
+lib/node_modules/fs-minipass/node_modules/minipass/index.js
+lib/node_modules/fs-minipass/node_modules/minipass/package.json
 lib/node_modules/fs-minipass/package.json
 lib/node_modules/fs-vacuum/
 lib/node_modules/fs-vacuum/.eslintrc
@@ -2208,7 +2220,6 @@ lib/node_modules/fs.realpath/old.js
 lib/node_modules/fs.realpath/package.json
 lib/node_modules/function-bind/
 lib/node_modules/function-bind/.editorconfig
-lib/node_modules/function-bind/.eslintrc
 lib/node_modules/function-bind/.jscs.json
 lib/node_modules/function-bind/.npmignore
 lib/node_modules/function-bind/.travis.yml
@@ -2264,7 +2275,9 @@ lib/node_modules/gentle-fs/LICENSE
 lib/node_modules/gentle-fs/README.md
 lib/node_modules/gentle-fs/index.js
 lib/node_modules/gentle-fs/lib/
+lib/node_modules/gentle-fs/lib/chown.js
 lib/node_modules/gentle-fs/lib/link.js
+lib/node_modules/gentle-fs/lib/mkdir.js
 lib/node_modules/gentle-fs/lib/rm.js
 lib/node_modules/gentle-fs/node_modules/
 lib/node_modules/gentle-fs/node_modules/aproba/
@@ -2370,7 +2383,6 @@ lib/node_modules/has-flag/license
 lib/node_modules/has-flag/package.json
 lib/node_modules/has-flag/readme.md
 lib/node_modules/has-symbols/
-lib/node_modules/has-symbols/.eslintrc
 lib/node_modules/has-symbols/.npmignore
 lib/node_modules/has-symbols/.travis.yml
 lib/node_modules/has-symbols/CHANGELOG.md
@@ -2532,7 +2544,6 @@ lib/node_modules/ip/lib/ip.js
 lib/node_modules/ip/package.json
 lib/node_modules/is-callable/
 lib/node_modules/is-callable/.editorconfig
-lib/node_modules/is-callable/.eslintrc
 lib/node_modules/is-callable/.istanbul.yml
 lib/node_modules/is-callable/.jscs.json
 lib/node_modules/is-callable/.travis.yml
@@ -2565,7 +2576,6 @@ lib/node_modules/is-cidr/README.md
 lib/node_modules/is-cidr/index.js
 lib/node_modules/is-cidr/package.json
 lib/node_modules/is-date-object/
-lib/node_modules/is-date-object/.eslintrc
 lib/node_modules/is-date-object/.jscs.json
 lib/node_modules/is-date-object/.npmignore
 lib/node_modules/is-date-object/.travis.yml
@@ -2606,7 +2616,6 @@ lib/node_modules/is-redirect/license
 lib/node_modules/is-redirect/package.json
 lib/node_modules/is-redirect/readme.md
 lib/node_modules/is-regex/
-lib/node_modules/is-regex/.eslintrc
 lib/node_modules/is-regex/.jscs.json
 lib/node_modules/is-regex/.npmignore
 lib/node_modules/is-regex/.travis.yml
@@ -2629,7 +2638,6 @@ lib/node_modules/is-stream/package.json
 lib/node_modules/is-stream/readme.md
 lib/node_modules/is-symbol/
 lib/node_modules/is-symbol/.editorconfig
-lib/node_modules/is-symbol/.eslintrc
 lib/node_modules/is-symbol/.jscs.json
 lib/node_modules/is-symbol/.nvmrc
 lib/node_modules/is-symbol/.travis.yml
@@ -2663,7 +2671,6 @@ lib/node_modules/isexe/mode.js
 lib/node_modules/isexe/package.json
 lib/node_modules/isexe/windows.js
 lib/node_modules/isstream/
-lib/node_modules/isstream/.jshintrc
 lib/node_modules/isstream/.npmignore
 lib/node_modules/isstream/.travis.yml
 lib/node_modules/isstream/LICENSE.md
@@ -3167,9 +3174,6 @@ lib/node_modules/ms/license.md
 lib/node_modules/ms/package.json
 lib/node_modules/ms/readme.md
 lib/node_modules/mute-stream/
-lib/node_modules/mute-stream/.nyc_output/
-lib/node_modules/mute-stream/.nyc_output/33508.json
-lib/node_modules/mute-stream/.nyc_output/33510.json
 lib/node_modules/mute-stream/.travis.yml
 lib/node_modules/mute-stream/LICENSE
 lib/node_modules/mute-stream/README.md
@@ -3205,7 +3209,6 @@ lib/node_modules/node-gyp/
 lib/node_modules/node-gyp/.github/
 lib/node_modules/node-gyp/.github/ISSUE_TEMPLATE.md
 lib/node_modules/node-gyp/.github/PULL_REQUEST_TEMPLATE.md
-lib/node_modules/node-gyp/.jshintrc
 lib/node_modules/node-gyp/.travis.yml
 lib/node_modules/node-gyp/CHANGELOG.md
 lib/node_modules/node-gyp/CONTRIBUTING.md
@@ -3394,6 +3397,9 @@ lib/node_modules/node-pledge/build/Release/
 lib/node_modules/node-pledge/build/binding.Makefile
 lib/node_modules/node-pledge/build/config.gypi
 lib/node_modules/node-pledge/build/pledge.target.mk
+lib/node_modules/node-pledge/examples/
+lib/node_modules/node-pledge/examples/ddg
+lib/node_modules/node-pledge/examples/pp.js
 lib/node_modules/node-pledge/index.js
 lib/node_modules/node-pledge/package.json
 lib/node_modules/node-pledge/pledge.cc
@@ -3429,7 +3435,6 @@ lib/node_modules/normalize-package-data/node_modules/
 lib/node_modules/normalize-package-data/node_modules/resolve/
 lib/node_modules/normalize-package-data/node_modules/resolve/.editorconfig
 lib/node_modules/normalize-package-data/node_modules/resolve/.eslintignore
-lib/node_modules/normalize-package-data/node_modules/resolve/.eslintrc
 lib/node_modules/normalize-package-data/node_modules/resolve/.travis.yml
 lib/node_modules/normalize-package-data/node_modules/resolve/CHANGELOG.md
 lib/node_modules/normalize-package-data/node_modules/resolve/LICENSE
@@ -3766,14 +3771,12 @@ lib/node_modules/npm/lib/config/clear-credentials-by-uri.js
 lib/node_modules/npm/lib/config/cmd-list.js
 lib/node_modules/npm/lib/config/core.js
 lib/node_modules/npm/lib/config/defaults.js
-lib/node_modules/npm/lib/config/fetch-opts.js
 lib/node_modules/npm/lib/config/figgy-config.js
 lib/node_modules/npm/lib/config/gentle-fs.js
 lib/node_modules/npm/lib/config/get-credentials-by-uri.js
 lib/node_modules/npm/lib/config/lifecycle.js
 lib/node_modules/npm/lib/config/load-cafile.js
 lib/node_modules/npm/lib/config/load-prefix.js
-lib/node_modules/npm/lib/config/load-uid.js
 lib/node_modules/npm/lib/config/nerf-dart.js
 lib/node_modules/npm/lib/config/set-credentials-by-uri.js
 lib/node_modules/npm/lib/config/set-user.js
@@ -4413,6 +4416,7 @@ lib/node_modules/npm/scripts/gen-dev-ignores.js
 lib/node_modules/npm/scripts/index-build.js
 lib/node_modules/npm/scripts/install.sh
 lib/node_modules/npm/scripts/maketest
+lib/node_modules/npm/scripts/pr
 lib/node_modules/npm/scripts/publish-tag.js
 lib/node_modules/npm/scripts/release.sh
 lib/node_modules/npm/scripts/relocate.sh
@@ -4440,7 +4444,6 @@ lib/node_modules/object-assign/package.json
 lib/node_modules/object-assign/readme.md
 lib/node_modules/object-keys/
 lib/node_modules/object-keys/.editorconfig
-lib/node_modules/object-keys/.eslintrc
 lib/node_modules/object-keys/.jscs.json
 lib/node_modules/object-keys/.travis.yml
 lib/node_modules/object-keys/CHANGELOG.md
@@ -4451,7 +4454,6 @@ lib/node_modules/object-keys/isArguments.js
 lib/node_modules/object-keys/package.json
 lib/node_modules/object.getownpropertydescriptors/
 lib/node_modules/object.getownpropertydescriptors/.editorconfig
-lib/node_modules/object.getownpropertydescriptors/.eslintrc
 lib/node_modules/object.getownpropertydescriptors/.jscs.json
 lib/node_modules/object.getownpropertydescriptors/.npmignore
 lib/node_modules/object.getownpropertydescriptors/.travis.yml
@@ -4736,7 +4738,6 @@ lib/node_modules/pseudomap/package.json
 lib/node_modules/pseudomap/pseudomap.js
 lib/node_modules/psl/
 lib/node_modules/psl/.eslintignore
-lib/node_modules/psl/.eslintrc
 lib/node_modules/psl/.travis.yml
 lib/node_modules/psl/README.md
 lib/node_modules/psl/data/
@@ -4806,7 +4807,6 @@ lib/node_modules/qrcode-terminal/vendor/QRCode/index.js
 lib/node_modules/qs/
 lib/node_modules/qs/.editorconfig
 lib/node_modules/qs/.eslintignore
-lib/node_modules/qs/.eslintrc
 lib/node_modules/qs/CHANGELOG.md
 lib/node_modules/qs/LICENSE
 lib/node_modules/qs/README.md
@@ -4852,7 +4852,7 @@ lib/node_modules/rc/node_modules/minimist/readme.markdown
 lib/node_modules/rc/package.json
 lib/node_modules/read/
 lib/node_modules/read-cmd-shim/
-lib/node_modules/read-cmd-shim/.npmignore
+lib/node_modules/read-cmd-shim/LICENSE
 lib/node_modules/read-cmd-shim/README.md
 lib/node_modules/read-cmd-shim/index.js
 lib/node_modules/read-cmd-shim/package.json
@@ -4946,7 +4946,6 @@ lib/node_modules/request/lib/tunnel.js
 lib/node_modules/request/package.json
 lib/node_modules/request/request.js
 lib/node_modules/require-directory/
-lib/node_modules/require-directory/.jshintrc
 lib/node_modules/require-directory/.npmignore
 lib/node_modules/require-directory/.travis.yml
 lib/node_modules/require-directory/LICENSE
@@ -5425,12 +5424,6 @@ lib/node_modules/tar/node_modules/minipass/LICENSE
 lib/node_modules/tar/node_modules/minipass/README.md
 lib/node_modules/tar/node_modules/minipass/index.js
 lib/node_modules/tar/node_modules/minipass/package.json
-lib/node_modules/tar/node_modules/yallist/
-lib/node_modules/tar/node_modules/yallist/LICENSE
-lib/node_modules/tar/node_modules/yallist/README.md
-lib/node_modules/tar/node_modules/yallist/iterator.js
-lib/node_modules/tar/node_modules/yallist/package.json
-lib/node_modules/tar/node_modules/yallist/yallist.js
 lib/node_modules/tar/package.json
 lib/node_modules/term-size/
 lib/node_modules/term-size/index.js
@@ -5463,8 +5456,6 @@ lib/node_modules/through/package.json
 lib/node_modules/through/readme.markdown
 lib/node_modules/through2/
 lib/node_modules/through2/.npmignore
-lib/node_modules/through2/.nyc_output/
-lib/node_modules/through2/.nyc_output/28dcebf0-9c4a-47bb-900e-93fcef37bbe2.json
 lib/node_modules/through2/LICENSE.html
 lib/node_modules/through2/LICENSE.md
 lib/node_modules/through2/README.md
@@ -5678,9 +5669,6 @@ lib/node_modules/validate-npm-package-license/index.js
 lib/node_modules/validate-npm-package-license/package.json
 lib/node_modules/validate-npm-package-name/
 lib/node_modules/validate-npm-package-name/.npmignore
-lib/node_modules/validate-npm-package-name/.nyc_output/
-lib/node_modules/validate-npm-package-name/.nyc_output/aa4ee25ac41a9c3c7ee37ce965e6d1ac.json
-lib/node_modules/validate-npm-package-name/.nyc_output/bb918173e62b9517f55b630902d07ef4.json
 lib/node_modules/validate-npm-package-name/.travis.yml
 lib/node_modules/validate-npm-package-name/LICENSE
 lib/node_modules/validate-npm-package-name/README.md
@@ -5786,7 +5774,6 @@ lib/node_modules/xdg-basedir/license
 lib/node_modules/xdg-basedir/package.json
 lib/node_modules/xdg-basedir/readme.md
 lib/node_modules/xtend/
-lib/node_modules/xtend/.jshintrc
 lib/node_modules/xtend/.npmignore
 lib/node_modules/xtend/LICENCE
 lib/node_modules/xtend/Makefile
