@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v$
+@bin bin/hfuzz-cc
+@bin bin/hfuzz-clang
+@bin bin/hfuzz-clang++
+@bin bin/honggfuzz
