@@ -6,7 +6,7 @@ the next release of 1.x: https://github.com/libuv/libuv/pull/652
 Index: deps/uv/src/unix/openbsd.c
 --- deps/uv/src/unix/openbsd.c.orig
 +++ deps/uv/src/unix/openbsd.c
-@@ -222,7 +222,7 @@ int uv_cpu_info(uv_cpu_info_t** cpu_infos, int* count)
+@@ -186,7 +186,7 @@ int uv_cpu_info(uv_cpu_info_t** cpu_infos, int* count)
    int numcpus = 1;
    int which[] = {CTL_HW,HW_MODEL,0};
    size_t size;
