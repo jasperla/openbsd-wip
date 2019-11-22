@@ -35,9 +35,9 @@ pre-configure:
 	sed -i '/^CFLAGS/s/-Os //' ${WRKSRC}/Makefile
 
 do-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/lemonbar/
-	${INSTALL_PROGRAM} ${WRKSRC}/lemonbar ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/lemonbar.1 ${PREFIX}/man/man1
-	${INSTALL_DATA} ${WRKSRC}/LICENSE ${PREFIX}/share/doc/lemonbar/
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/lemonbar-xft/
+	${INSTALL_PROGRAM} ${WRKSRC}/lemonbar ${PREFIX}/bin/lemonbar-xft
+	${INSTALL_MAN} ${WRKSRC}/lemonbar.1 ${PREFIX}/man/man1/lemonbar-xft.1
+	${INSTALL_DATA} ${WRKSRC}/LICENSE ${PREFIX}/share/doc/lemonbar-xft
 
 .include <bsd.port.mk>
