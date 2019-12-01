@@ -1,0 +1,14 @@
+$OpenBSD$
+
+Index: Makefile.am
+--- Makefile.am.orig
++++ Makefile.am
+@@ -13,7 +13,7 @@ pkgconfig_DATA = libspiro.pc
+ ACLOCAL_AMFLAGS = -I m4 ${ACLOCAL_FLAGS}
+ 
+ AM_CFLAGS = $(WCFLAGS) $(LS_CFLAGS)
+-AM_LDFLAGS = $(WLSLIB) $(LS_LIB) -no-undefined --mode=link
++AM_LDFLAGS = $(WLSLIB) $(LS_LIB) -no-undefined
+ 
+ LIBTOOL_DEPS = @LIBTOOL_DEPS@
+ 
