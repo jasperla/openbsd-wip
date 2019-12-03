@@ -1,4 +1,4 @@
-@comment $OpenBSD$
+@comment $OpenBSD: PLIST,v$
 ${P5SITE}/HTTP/
 ${P5SITE}/HTTP/Response/
 ${P5SITE}/HTTP/Response/Stringable.pm

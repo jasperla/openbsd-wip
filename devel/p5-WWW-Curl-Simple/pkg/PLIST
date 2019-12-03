@@ -1,4 +1,4 @@
-@comment $OpenBSD$
+@comment $OpenBSD: PLIST,v$
 ${P5SITE}/WWW/
 ${P5SITE}/WWW/Curl/
 ${P5SITE}/WWW/Curl/Simple/

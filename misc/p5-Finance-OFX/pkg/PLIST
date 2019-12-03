@@ -1,4 +1,4 @@
-@comment $OpenBSD$
+@comment $OpenBSD: PLIST,v$
 ${P5SITE}/Finance/
 ${P5SITE}/Finance/Build.pl
 ${P5SITE}/Finance/OFX/

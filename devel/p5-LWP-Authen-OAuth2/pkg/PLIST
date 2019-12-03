@@ -1,4 +1,4 @@
-@comment $OpenBSD$
+@comment $OpenBSD: PLIST,v$
 ${P5SITE}/LWP/
 ${P5SITE}/LWP/Authen/
 ${P5SITE}/LWP/Authen/OAuth2/
@@ -10,10 +10,14 @@ ${P5SITE}/LWP/Authen/OAuth2/Args.pm
 ${P5SITE}/LWP/Authen/OAuth2/Overview.pod
 ${P5SITE}/LWP/Authen/OAuth2/ServiceProvider/
 ${P5SITE}/LWP/Authen/OAuth2/ServiceProvider.pm
+${P5SITE}/LWP/Authen/OAuth2/ServiceProvider/Dwolla.pm
 ${P5SITE}/LWP/Authen/OAuth2/ServiceProvider/Google.pm
+${P5SITE}/LWP/Authen/OAuth2/ServiceProvider/Strava.pm
 @man man/man3p/LWP::Authen::OAuth2.3p
 @man man/man3p/LWP::Authen::OAuth2::AccessToken.3p
 @man man/man3p/LWP::Authen::OAuth2::AccessToken::Bearer.3p
 @man man/man3p/LWP::Authen::OAuth2::Overview.3p
 @man man/man3p/LWP::Authen::OAuth2::ServiceProvider.3p
+@man man/man3p/LWP::Authen::OAuth2::ServiceProvider::Dwolla.3p
 @man man/man3p/LWP::Authen::OAuth2::ServiceProvider::Google.3p
+@man man/man3p/LWP::Authen::OAuth2::ServiceProvider::Strava.3p
