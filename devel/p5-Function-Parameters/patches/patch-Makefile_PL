@@ -1,0 +1,14 @@
+$OpenBSD$
+
+Index: Makefile.PL
+--- Makefile.PL.orig
++++ Makefile.PL
+@@ -23,7 +23,7 @@ sub find_tests_recursively_in {
+         keys %seen
+ }
+ 
+-my $settings_file = 'Makefile_PL_settings';
++my $settings_file = './Makefile_PL_settings';
+ my %settings = %{do $settings_file or die "Internal error: can't do $settings_file: ", $@ || $!};
+ 
+ {
