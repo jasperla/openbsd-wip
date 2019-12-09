@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v$
+@bin bin/bsnes
+share/applications/bsnes.desktop
+share/pixmaps/
+share/pixmaps/bsnes.png
+@tag update-desktop-database

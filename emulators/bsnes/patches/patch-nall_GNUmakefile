@@ -1,0 +1,14 @@
+$OpenBSD$
+
+Index: nall/GNUmakefile
+--- nall/GNUmakefile.orig
++++ nall/GNUmakefile
+@@ -154,7 +154,7 @@ nall.verbose:
+ 
+ %.o: $<
+ 	$(info Compiling $< ...)
+-	@$(call compile)
++	$(call compile)
+ 
+ # function compile([arguments])
+ compile = \
