@@ -2,7 +2,7 @@
 
 COMMENT =		simple man page generator for POSIX systems
 
-VERSION =		1.9.4
+VERSION =		1.10.0
 DISTNAME =		scdoc-${VERSION}
 CATEGORIES =		textproc
 

@@ -2,7 +2,7 @@
 
 COMMENT =	aerc is an email client for your terminal
 
-DISTNAME =	aerc-0.2.1
+DISTNAME =	aerc-0.3.0
 
 CATEGORIES =	mail
 
