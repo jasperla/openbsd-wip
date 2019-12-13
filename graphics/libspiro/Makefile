@@ -20,9 +20,8 @@ WANTLIB +=	m
 
 MASTER_SITES =	https://github.com/fontforge/libspiro/releases/download/${V}/
 
-AUTOCONF_VERSION =	2.69
-AUTOMAKE_VERSION =	1.16
+USE_LIBTOOL =	gnu
 
-CONFIGURE_STYLE =	autoreconf
+CONFIGURE_STYLE =	gnu
 
 .include <bsd.port.mk>
