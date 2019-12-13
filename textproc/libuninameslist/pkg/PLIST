@@ -1,7 +1,0 @@
-@comment $OpenBSD: PLIST,v$
-include/uninameslist.h
-lib/libuninameslist.a
-lib/libuninameslist.la
-@lib lib/libuninameslist.so.${LIBuninameslist_VERSION}
-lib/pkgconfig/libuninameslist.pc
-@man man/man3/libuninameslist.3
