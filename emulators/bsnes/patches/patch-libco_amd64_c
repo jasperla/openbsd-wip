@@ -13,7 +13,7 @@ Index: libco/amd64.c
  
  #ifdef __cplusplus
  extern "C" {
-@@ -140,9 +142,19 @@ cothread_t co_derive(void* memory, unsigned int size, 
+@@ -142,9 +144,19 @@ cothread_t co_derive(void* memory, unsigned int size, 
  }
  
  cothread_t co_create(unsigned int size, void (*entrypoint)(void)) {

@@ -2,7 +2,7 @@
 
 COMMENT =	multi-system Nintendo emulator
 
-V =		112
+V =		113
 DISTNAME =	bsnes_v$V-source
 PKGNAME =	bsnes-$V
 

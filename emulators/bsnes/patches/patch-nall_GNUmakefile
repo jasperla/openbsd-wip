@@ -3,7 +3,7 @@ $OpenBSD$
 Index: nall/GNUmakefile
 --- nall/GNUmakefile.orig
 +++ nall/GNUmakefile
-@@ -154,7 +154,7 @@ nall.verbose:
+@@ -160,7 +160,7 @@ nall.verbose:
  
  %.o: $<
  	$(info Compiling $< ...)
