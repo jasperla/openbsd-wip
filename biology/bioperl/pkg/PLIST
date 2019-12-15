@@ -2,7 +2,6 @@
 bin/bp_aacomp
 bin/bp_bioflat_index
 bin/bp_biogetseq
-bin/bp_chaos_plot
 bin/bp_dbsplit
 bin/bp_extract_feature_seq
 bin/bp_fastam9_to_table
@@ -578,7 +577,6 @@ ${P5SITE}/BioPerl.pm
 @man man/man1/bp_aacomp.1
 @man man/man1/bp_bioflat_index.1
 @man man/man1/bp_biogetseq.1
-@man man/man1/bp_chaos_plot.1
 @man man/man1/bp_dbsplit.1
 @man man/man1/bp_extract_feature_seq.1
 @man man/man1/bp_fastam9_to_table.1

@@ -1,8 +1,5 @@
 # $OpenBSD$
 
-# XXX the module is partly broken, see
-# https://github.com/bioperl/Bio-Cluster/issues/2
-
 COMMENT =	cluster modules for BioPerl
 
 DISTNAME =	Bio-Cluster-1.7.3
@@ -14,6 +11,7 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		cpan
 
-TEST_DEPENDS =	biology/bioperl
+TEST_DEPENDS =	biology/bioperl \
+		biology/p5-Bio-Variation
 
 .include <bsd.port.mk>

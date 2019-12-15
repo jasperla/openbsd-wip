@@ -1,0 +1,20 @@
+# $OpenBSD$
+
+COMMENT =	database object interface for EMBL entry retrieval
+
+DISTNAME =	Bio-DB-EMBL-1.7.4
+
+CATEGORIES =	biology
+
+# Perl
+PERMIT_PACKAGE =	Yes
+
+MODULES =		cpan
+
+RUN_DEPENDS =		biology/bioperl
+TEST_DEPENDS =		devel/p5-Test-Most \
+			devel/p5-Test-RequiresInternet
+
+PKG_ARCH =		*
+
+.include <bsd.port.mk>

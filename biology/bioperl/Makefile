@@ -1,21 +1,19 @@
 # $OpenBSD: Makefile,v 1.21 2019/07/12 20:43:43 sthen Exp $
 
-# XXX Broken tests, nothing bad as seen in cpantesters.
-
 COMMENT=	perl tools for bioinformatics
 
-DISTNAME=	BioPerl-1.7.6
+DISTNAME=	BioPerl-1.7.7
 PKGNAME=	${DISTNAME:L}# No p5-prefix here.
 CATEGORIES=	biology
 
 HOMEPAGE=	https://bioperl.org/
 
-# perl
+# Perl
 PERMIT_PACKAGE=	Yes
 
 MODULES=		cpan
 
-CPAN_AUTHOR=	CDRAUG
+CPAN_AUTHOR=		CJFIELDS
 MODCPAN_EXAMPLES=	Yes
 MODCPAN_EXAMPLES_DIR=	${PREFIX}/share/examples/bioperl/
 
@@ -46,7 +44,8 @@ RUN_DEPENDS =		devel/p5-Data-Stag \
 TEST_DEPENDS =		devel/p5-Test-Memory-Cycle \
 			devel/p5-Test-Weaken
 
-MAKE_ENV +=	TEST_POD=Yes
+
+MAKE_ENV +=		TEST_POD=Yes
 
 PKG_ARCH=		*
 

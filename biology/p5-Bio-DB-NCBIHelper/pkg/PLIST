@@ -1,0 +1,19 @@
+@comment $OpenBSD: PLIST,v$
+bin/bp_biofetch_genbank_proxy
+bin/bp_download_query_genbank
+bin/bp_query_entrez_taxa
+${P5SITE}/Bio/DB/EntrezGene.pm
+${P5SITE}/Bio/DB/GenBank.pm
+${P5SITE}/Bio/DB/GenPept.pm
+${P5SITE}/Bio/DB/NCBIHelper.pm
+${P5SITE}/Bio/DB/Query/GenBank.pm
+${P5SITE}/Bio/DB/Taxonomy/entrez.pm
+@man man/man1/bp_biofetch_genbank_proxy.1
+@man man/man1/bp_download_query_genbank.1
+@man man/man1/bp_query_entrez_taxa.1
+@man man/man3p/Bio::DB::EntrezGene.3p
+@man man/man3p/Bio::DB::GenBank.3p
+@man man/man3p/Bio::DB::GenPept.3p
+@man man/man3p/Bio::DB::NCBIHelper.3p
+@man man/man3p/Bio::DB::Query::GenBank.3p
+@man man/man3p/Bio::DB::Taxonomy::entrez.3p
