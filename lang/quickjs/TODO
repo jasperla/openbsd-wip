@@ -1,3 +1,0 @@
-- Respect CFLAGS
-- Figure out linking issue with base-clang
-- Investigate failure in the test suite
