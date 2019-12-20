@@ -1,0 +1,14 @@
+@comment $OpenBSD: PLIST,v$
+@bin bin/qjs
+@bin bin/qjsbn
+@bin bin/qjsbnc
+@bin bin/qjsc
+bin/qjscalc
+include/quickjs/
+include/quickjs/quickjs-libc.h
+include/quickjs/quickjs.h
+lib/quickjs/
+@static-lib lib/quickjs/libquickjs.a
+@static-lib lib/quickjs/libquickjs.bn.a
+@static-lib lib/quickjs/libquickjs.bn.lto.a
+@static-lib lib/quickjs/libquickjs.lto.a
