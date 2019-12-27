@@ -24,78 +24,23 @@ include/notmuch.h
 @man man/man1/notmuch-config.1
 @man man/man1/notmuch-count.1
 @man man/man1/notmuch-dump.1
-man/man1/notmuch-hooks.5
 @man man/man1/notmuch-insert.1
 @man man/man1/notmuch-new.1
-man/man1/notmuch-properties.7
 @man man/man1/notmuch-reindex.1
 @man man/man1/notmuch-reply.1
 @man man/man1/notmuch-restore.1
-man/man1/notmuch-search-terms.7
 @man man/man1/notmuch-search.1
 @man man/man1/notmuch-setup.1
 @man man/man1/notmuch-show.1
 @man man/man1/notmuch-tag.1
 @man man/man1/notmuch.1
-man/man1/notmuch.3
-man/man3/notmuch-address.1
-man/man3/notmuch-compact.1
-man/man3/notmuch-config.1
-man/man3/notmuch-count.1
-man/man3/notmuch-dump.1
-man/man3/notmuch-hooks.5
-man/man3/notmuch-insert.1
-man/man3/notmuch-new.1
-man/man3/notmuch-properties.7
-man/man3/notmuch-reindex.1
-man/man3/notmuch-reply.1
-man/man3/notmuch-restore.1
-man/man3/notmuch-search-terms.7
-man/man3/notmuch-search.1
-man/man3/notmuch-show.1
-man/man3/notmuch-tag.1
-man/man3/notmuch.1
 @man man/man3/notmuch.3
-man/man5/notmuch-address.1
-man/man5/notmuch-compact.1
-man/man5/notmuch-config.1
-man/man5/notmuch-count.1
-man/man5/notmuch-dump.1
 @man man/man5/notmuch-hooks.5
-man/man5/notmuch-insert.1
-man/man5/notmuch-new.1
-man/man5/notmuch-properties.7
-man/man5/notmuch-reindex.1
-man/man5/notmuch-reply.1
-man/man5/notmuch-restore.1
-man/man5/notmuch-search-terms.7
-man/man5/notmuch-search.1
-man/man5/notmuch-show.1
-man/man5/notmuch-tag.1
-man/man5/notmuch.1
-man/man5/notmuch.3
-man/man7/notmuch-address.1
-man/man7/notmuch-compact.1
-man/man7/notmuch-config.1
-man/man7/notmuch-count.1
-man/man7/notmuch-dump.1
-man/man7/notmuch-hooks.5
-man/man7/notmuch-insert.1
-man/man7/notmuch-new.1
 @man man/man7/notmuch-properties.7
-man/man7/notmuch-reindex.1
-man/man7/notmuch-reply.1
-man/man7/notmuch-restore.1
 @man man/man7/notmuch-search-terms.7
-man/man7/notmuch-search.1
-man/man7/notmuch-show.1
-man/man7/notmuch-tag.1
-man/man7/notmuch.1
-man/man7/notmuch.3
 share/zsh/
 share/zsh/functions/
 share/zsh/functions/Completion/
 share/zsh/functions/Completion/Unix/
 share/zsh/functions/Completion/Unix/_email-notmuch
 share/zsh/functions/Completion/Unix/_notmuch
-@tag update-desktop-database

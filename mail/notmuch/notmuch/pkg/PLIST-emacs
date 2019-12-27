@@ -1,11 +1,8 @@
-@comment $OpenBSD: PLIST-emacs,v$
+@comment $OpenBSD: PLIST-main,v$
 bin/notmuch-emacs-mua
 @info info/notmuch-emacs-mua.info
 @info info/notmuch-emacs.info
 @man man/man1/notmuch-emacs-mua.1
-man/man3/notmuch-emacs-mua.1
-man/man5/notmuch-emacs-mua.1
-man/man7/notmuch-emacs-mua.1
 share/applications/notmuch-emacs-mua.desktop
 share/emacs/site-lisp/coolj.el
 share/emacs/site-lisp/coolj.elc
