@@ -20,7 +20,7 @@ WANTLIB +=	m
 
 MASTER_SITES =	https://github.com/fontforge/libspiro/releases/download/${V}/
 
-USE_LIBTOOL =	gnu
+USE_LIBTOOL =	gnu # unsupported option '--mode=link'
 
 CONFIGURE_STYLE =	gnu
 
