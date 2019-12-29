@@ -77,6 +77,7 @@ TEST_DEPENDS =	${FULLPKGNAME}:math/graphviz
 USE_GMAKE =	Yes
 USE_GROFF =	Yes
 CONFIGURE_STYLE=gnu
+
 # Note: --with-tclsh is misspelled "--with-tcl" in configure's help output
 CONFIGURE_ARGS=	--enable-tcl=yes \
 		--enable-perl \
@@ -143,20 +144,15 @@ post-install:
 	rm -Rf ${PREFIX}/lib/tcl${MODTCL_VERSION}/graphviz
 	ln -s ${TRUEPREFIX}/lib/tcl/graphviz \
 		${PREFIX}/lib/tcl${MODTCL_VERSION}/graphviz
-
 # We never want to install .a or .la files. The shared libs will suffice.
 	find ${PREFIX}/lib/ -name '*.a' -or -name '*.la' | xargs rm
 
-# Local tests for OpenBSD
-# Can't run built in tests, as requires ksh93 (some specific arguments
-# to the typeset builtin). Currently, there is no port.
-TEST_TMP=${WRKDIR}/test_tmp
-do-test:
-	mkdir -p ${TEST_TMP}
-	cd ${FILESDIR}/tests && for i in *-test.* run_tests.sh; do \
-		${SUBST_CMD} -m 0644 -c $${i} ${TEST_TMP}/$${i}; \
-	done
-	cd ${TEST_TMP} && /bin/sh ./run_tests.sh
+TEST_DEPENDS =	shells/ksh93 \
+		${FULLPKGNAME}:${FULLPKGPATH}
+TEST_TARGET =	check
+
+pre-test:
+	sed -i s,#!/bin/ksh,#!/${LOCALBASE}/bin/ksh93, ${WRKSRC}/rtest/rtest.sh
 
 # NOTE: When updating this port run 'dot -c' (as root) to generate a
 # /usr/local/lib/graphviz/config6. Then substitute all hard-coded library
