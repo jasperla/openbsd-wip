@@ -2,6 +2,8 @@ $OpenBSD$
 
 A couple of tests have missing files in the source distribution.
 
+https://gitlab.com/graphviz/graphviz/issues/1647
+
 Index: tests/regression_tests/Makefile.in
 --- tests/regression_tests/Makefile.in.orig
 +++ tests/regression_tests/Makefile.in
