@@ -2,7 +2,7 @@
 
 COMMENT =	minimalist and opinionated feed reader
 
-DISTNAME =	miniflux-2.0.18
+DISTNAME =	miniflux-2.0.19
 
 CATEGORIES =	net
 
@@ -24,7 +24,8 @@ NO_TEST =	Yes
 
 ALL_TARGET =	miniflux.app
 
-SUBST_VARS =	VARBASE
+SUBST_VARS =	VARBASE \
+		SYSCONFDIR
 
 do-install:
 	${INSTALL_PROGRAM} ${MODGO_WORKSPACE}/bin/miniflux.app \
