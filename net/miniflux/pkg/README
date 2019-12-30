@@ -7,7 +7,8 @@ $OpenBSD: README,v 1.3 2019/03/08 14:04:24 sthen Exp $
 Initial Setup
 =============
 
-Create a user and database to be used:
+Configure ${SYSCONFDIR}/miniflux.conf to your liking. Create a user and
+database as defined in ${SYSCONFDIR}/miniflux.conf:
 
 # su - _postgresql
 
