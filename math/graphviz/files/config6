@@ -153,50 +153,6 @@ libgvplugin_dot_layout.so.${LIBgvplugin_dot_layout_VERSION} dot_layout {
 		dot 0
 	}
 }
-libgvplugin_gdk.so.${LIBgvplugin_gdk_VERSION} gdk {
-	device {
-		bmp:cairo 6
-		ico:cairo 6
-		jpe:cairo 6
-		jpeg:cairo 6
-		jpg:cairo 6
-		png:cairo 6
-		tif:cairo 6
-		tiff:cairo 6
-	}
-	loadimage {
-		bmp:cairo 1
-		jpe:cairo 2
-		jpg:cairo 2
-		jpeg:cairo 2
-		png:cairo -1
-		ico:cairo 1
-	}
-}
-libgvplugin_pango.so.${LIBgvplugin_pango_VERSION} cairo {
-	render {
-		cairo 10
-	}
-	textlayout {
-		textlayout 10
-	}
-	loadimage {
-		png:cairo 1
-#FAILS		png:lasi 2
-		png:ps 2
-	}
-	device {
-		png:cairo 10
-		ps:cairo -10
-		pdf:cairo 10
-		svg:cairo -10
-	}
-}
-libgvplugin_rsvg.so.${LIBgvplugin_rsvg_VERSION} rsvg {
-	loadimage {
-		svg:cairo 1
-	}
-}
 libgvplugin_gd.so.${LIBgvplugin_gd_VERSION} gd {
 	render {
 		gd 1
@@ -265,6 +221,26 @@ libgvplugin_gd.so.${LIBgvplugin_gd_VERSION} gd {
 		vrml:vrml 1
 	}
 }
+libgvplugin_gdk.so.${LIBgvplugin_gdk_VERSION} gdk {
+	device {
+		bmp:cairo 6
+		ico:cairo 6
+		jpe:cairo 6
+		jpeg:cairo 6
+		jpg:cairo 6
+		png:cairo 6
+		tif:cairo 6
+		tiff:cairo 6
+	}
+	loadimage {
+		bmp:cairo 1
+		jpe:cairo 2
+		jpg:cairo 2
+		jpeg:cairo 2
+		png:cairo -1
+		ico:cairo 1
+	}
+}
 libgvplugin_gtk.so.${LIBgvplugin_gtk_VERSION} gtk {
 	device {
 		gtk:cairo 0
@@ -284,9 +260,50 @@ libgvplugin_neato_layout.so.${LIBgvplugin_neato_layout_VERSION} neato_layout {
 		nop2 0
 	}
 }
+libgvplugin_pango.so.${LIBgvplugin_pango_VERSION} cairo {
+	render {
+		cairo 10
+	}
+	textlayout {
+		textlayout 10
+	}
+	loadimage {
+		png:cairo 1
+#FAILS		png:lasi 2
+		png:ps 2
+	}
+	device {
+		png:cairo 10
+		ps:cairo -10
+		eps:cairo -10
+		pdf:cairo 10
+		svg:cairo -10
+	}
+}
 libgvplugin_poppler.so.${LIBgvplugin_poppler_VERSION} poppler {
 	loadimage {
 		pdf:cairo 1
+	}
+}
+libgvplugin_rsvg.so.${LIBgvplugin_rsvg_VERSION} rsvg {
+	loadimage {
+		svg:cairo 1
+	}
+}
+libgvplugin_visio.so.${LIBgvplugin_visio_VERSION} visio {
+	device {
+		vdx:visio 1
+	}
+	render {
+		visio 1
+	}
+}
+libgvplugin_webp.so.${LIBgvplugin_webp_VERSION} webp {
+	device {
+		webp:cairo 1
+	}
+	loadimage {
+		webp:cairo 1
 	}
 }
 libgvplugin_xlib.so.${LIBgvplugin_xlib_VERSION} xlib {

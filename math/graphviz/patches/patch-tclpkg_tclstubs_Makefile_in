@@ -2,7 +2,7 @@ $OpenBSD: patch-tclpkg_tclstubs_Makefile_in,v 1.3 2014/02/06 17:32:27 edd Exp $
 Index: tclpkg/tclstubs/Makefile.in
 --- tclpkg/tclstubs/Makefile.in.orig
 +++ tclpkg/tclstubs/Makefile.in
-@@ -295,7 +295,7 @@ LIBLTDL = @LIBLTDL@
+@@ -299,7 +299,7 @@ LIBLTDL = @LIBLTDL@
  LIBLTDL_LDFLAGS = @LIBLTDL_LDFLAGS@
  LIBOBJS = @LIBOBJS@
  LIBPOSTFIX = @LIBPOSTFIX@

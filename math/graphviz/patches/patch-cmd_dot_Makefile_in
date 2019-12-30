@@ -7,7 +7,7 @@ there is a linker error. Sigh, obvious isn't it?
 Index: cmd/dot/Makefile.in
 --- cmd/dot/Makefile.in.orig
 +++ cmd/dot/Makefile.in
-@@ -657,7 +657,8 @@ dot_SOURCES = dot.c no_builtins.c
+@@ -646,7 +646,8 @@ dot_SOURCES = dot.c no_builtins.c
  dot_CPPFLAGS = $(AM_CPPFLAGS) -DDEMAND_LOADING=1
  dot_LDADD = \
  	$(top_builddir)/lib/gvc/libgvc.la \

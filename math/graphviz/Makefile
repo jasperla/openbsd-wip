@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.72 2017/11/14 20:10:11 naddy Exp $
+# $OpenBSD: Makefile,v 1.76 2019/11/18 19:57:44 ajacoutot Exp $
 
 COMMENT-main=	graph drawing software
 
-DISTNAME =	graphviz-2.40.1
+DISTNAME=	graphviz-2.42.3
 PKGNAME-main=	${DISTNAME}
 CATEGORIES=	math devel graphics
 
@@ -13,7 +13,7 @@ MULTI_PACKAGES=	-main
 # to let update-patches work in a simpler way
 PATCHORIG=	.orig2
 
-MASTER_SITES=	http://sizeofvoid.org/pub/OpenBSD/distfiles/
+MASTER_SITES=	https://www2.graphviz.org/Packages/stable/portable_source/
 
 SHARED_LIBS += gvplugin_core		2.0 # 6.0
 SHARED_LIBS += gvplugin_gd		2.0 # 6.0
@@ -25,73 +25,76 @@ SHARED_LIBS += gvplugin_gtk		2.0 # 6.0
 SHARED_LIBS += gvplugin_rsvg		1.0 # 6.0
 SHARED_LIBS += gvplugin_gdk		1.0 # 6.0
 SHARED_LIBS += gvplugin_poppler		1.0 # 6.0
+SHARED_LIBS += gvplugin_visio		0.0 # 6.0
+SHARED_LIBS += gvplugin_webp		0.0 # 6.0
 
+SHARED_LIBS += cdt			2.0 # 5.0
+SHARED_LIBS += pathplan			3.0 # 4.0
+SHARED_LIBS += gvc			2.0 # 6.0
+SHARED_LIBS += cgraph			1.0 # 6.0
+SHARED_LIBS += gvpr			1.0 # 2.0
+SHARED_LIBS += xdot			1.0 # 4.0
+SHARED_LIBS += gdtclft			4.0 # unknown
+SHARED_LIBS += tcldot			4.0 # unknown
+SHARED_LIBS += tcldot_builtin		4.0 # unknown
+SHARED_LIBS += tclplan			4.0 # unknown
 SHARED_LIBS += lab_gamut		0.0 # 1.0
-SHARED_LIBS += cdt			1.0 # 5.0
-SHARED_LIBS += pathplan			2.0 # 4.0
-SHARED_LIBS += gvc			1.0 # 6.0
-SHARED_LIBS += cgraph			0.0 # 6.0
-SHARED_LIBS += gvpr			0.0 # 2.0
-SHARED_LIBS += xdot			0.0 # 4.0
-SHARED_LIBS += gdtclft			3.0 # unknown
-SHARED_LIBS += tcldot			3.0 # unknown
-SHARED_LIBS += tcldot_builtin		3.0 # unknown
-SHARED_LIBS += tclplan			3.0 # unknown
 
-HOMEPAGE=	https://www.graphviz.org/
+HOMEPAGE=	http://www.graphviz.org/
 
 MAINTAINER =	Edd Barrett <edd@openbsd.org>
 
 # Eclipse Public License v1.0
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} ICE SM X11 Xau Xaw Xcomposite Xcursor
-WANTLIB += Xdamage Xdmcp Xext Xfixes Xi Xinerama Xmu Xpm Xrandr
-WANTLIB += Xrender Xt atk-1.0 c cairo croco-0.6 expat ffi fontconfig
-WANTLIB += freetype fribidi gd gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
-WANTLIB += glib-2.0 gmodule-2.0 gmp gobject-2.0 graphite2 gthread-2.0
-WANTLIB += gtk-x11-2.0 guile harfbuzz iconv intl jpeg lcms2 ltdl
-WANTLIB += lzma m openjp2 pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pcre perl pixman-1 png poppler poppler-glib rsvg-2
-WANTLIB += tiff webp xcb xcb-render xcb-shm xml2 z
+WANTLIB += ICE SM X11 Xau Xaw Xcomposite Xcursor Xdamage Xdmcp
+WANTLIB += Xext Xfixes Xi Xinerama Xmu Xpm Xrandr Xrender
+WANTLIB += Xt atk-1.0 c cairo cairo-gobject expat ffi fontconfig
+WANTLIB += freetype gd gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0
+WANTLIB += gmodule-2.0 gmp gobject-2.0 graphite2 gtk-x11-2.0
+WANTLIB += guile harfbuzz iconv intl jpeg lcms2 ltdl lzma m openjp2 pango-1.0
+WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre perl pixman-1 png
+WANTLIB += poppler poppler-glib pthread rsvg-2 ${COMPILER_LIBCXX}
+WANTLIB += tiff webp xcb xcb-render xcb-shm xml2 z zstd fribidi
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MODULES=	x11/tk \
 		perl
-
-MODTCL_VERSION=	8.6
-
 LIB_DEPENDS =	graphics/jpeg \
 		graphics/png \
 		devel/libtool,-ltdl \
 		graphics/gd>=2.0.34 \
 		x11/gtk+2 \
-		www/libcroco \
 		x11/gnome/librsvg \
 		graphics/graphite2 \
 		devel/harfbuzz \
 		print/poppler \
-		lang/guile
-
-BUILD_DEPENDS=	devel/swig \
-		${MODTCL_BUILD_DEPENDS}
-
-RUN_DEPENDS =	${MODTCL_RUN_DEPENDS}
+		lang/guile \
+		${MODTK_LIB_DEPENDS}
+BUILD_DEPENDS=	devel/swig
+TEST_DEPENDS =	${FULLPKGNAME}:math/graphviz
 
 USE_GMAKE =	Yes
-
+USE_GROFF =	Yes
 CONFIGURE_STYLE=gnu
+
+#USE_LIBTOOL = 		Yes
+#LIBTOOL_FLAGS +=	--disable-static
 
 # Note: --with-tclsh is misspelled "--with-tcl" in configure's help output
 CONFIGURE_ARGS=	--enable-tcl=yes \
 		--enable-perl \
 		--enable-guile \
 		--with-tclsh=${MODTCL_BIN} \
+		--with-wish=${MODTK_BIN} \
 		--disable-lua \
 		--disable-io \
 		--disable-java \
 		--disable-ocaml \
 		--disable-php \
-		--disable-python \
+		--disable-python2 \
+		--disable-python3 \
 		--disable-ruby \
 		--disable-rpath \
 		--disable-sharp \
@@ -102,16 +105,22 @@ CONFIGURE_ARGS=	--enable-tcl=yes \
 		--without-lasi \
 		--without-qt \
 		--without-glut \
-		--with-gd
+		--with-gd \
+		--with-gdincludedir=${LOCALBASE}/include \
+		--with-gdlibdir=${LOCALBASE}/lib \
+		--with-ltdl-include=${LOCALBASE}/include \
+		--with-ltdl-lib=${LOCALBASE}/lib
 
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
 		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib" \
-		TCLCONFIG=${MODTCL_CONFIG}
+		TCLCONFIG=${MODTCL_CONFIG} \
+		TKCONFIG=${MODTK_CONFIG}
 
 DOCBASE=	${PREFIX}/share/doc/graphviz
 EXBASE=		${PREFIX}/share/examples/graphviz
 
-MAKE_FLAGS=	TCL_STUB_LIB_SPEC='-L${LOCALBASE}/lib -ltclstub86_pic'
+MAKE_FLAGS=	TCL_STUB_LIB_SPEC='-L${LOCALBASE}/lib -ltclstub85_pic' \
+		TK_STUB_LIB_SPEC='-L${LOCALBASE}/lib -ltkstub85_pic'
 
 CFLAGS +=	-DLT_DEBUG_LOADERS
 
@@ -125,11 +134,13 @@ FAKE_FLAGS=	htmldir="${DOCBASE}/html" \
 		undirecteddir="${EXBASE}/graphs/undirected" \
 		pkgtcldir="${MODTCL_TCLDIR}/graphviz"
 
-TEST_TARGET =	check
-TEST_DEPENDS =	shells/ksh93 \
-		${FULLPKGNAME}:${FULLPKGPATH}
-
-WRKDIST=	${WRKDIR}/${PKGNAME-main}
+post-build:
+.for CMD in dotty lneato
+	echo "#! /bin/ksh" >${WRKBUILD}/cmd/${CMD}/${CMD}
+	echo ': $${LEFTYPATH:=$(LOCALBASE)/share/examples/graphviz/lefty}' >>${WRKBUILD}/cmd/${CMD}/${CMD}
+	echo 'export LEFTYPATH' >>${WRKBUILD}/cmd/${CMD}/${CMD}
+	cat ${WRKBUILD}/cmd/${CMD}/${CMD}.ksh >>${WRKBUILD}/cmd/${CMD}/${CMD}
+.endfor
 
 post-install:
 # install pre-generated config6 to avoid @exec/@unexec-delete
@@ -142,14 +153,22 @@ post-install:
 	rm -Rf ${PREFIX}/lib/tcl${MODTCL_VERSION}/graphviz
 	ln -s ${TRUEPREFIX}/lib/tcl/graphviz \
 		${PREFIX}/lib/tcl${MODTCL_VERSION}/graphviz
+# We never want to install .a or .la files. It should be possible to not build
+# them using --disable-static, but it doesn't seem to work.
+	find ${PREFIX}/lib/ -name '*.a' -or -name '*.la' | xargs rm
+
+TEST_DEPENDS =	shells/ksh93 \
+		${FULLPKGNAME}:${FULLPKGPATH}
+TEST_TARGET =	check
 
 pre-test:
 	sed -i s,#!/bin/ksh,#!/${LOCALBASE}/bin/ksh93, ${WRKSRC}/rtest/rtest.sh
 
-# NOTE: When updating this port:
-#  * Check we have commented .la and .a corresponding to unversioned .so files
-#    in the packing list.
-#  * Run 'dot -c' manually and subsitute all hardcoded library versions to
-#    ${LIB_libname_VERSION}. Put the file in files/config6
+# NOTE: When updating this port run 'dot -c' (as root) to generate a
+# /usr/local/lib/graphviz/config6. Then substitute all hard-coded library
+# versions to ${LIBlibname_VERSION}. Put the resulting file in files/config6.
+#
+# A vim regex for doing the substitution:
+# :%s/^lib\(.*\)\.so\.[0-9]\+\.[0-9]\+/lib\1.so.${LIB\1_VERSION}/g
 
 .include <bsd.port.mk>
