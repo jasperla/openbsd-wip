@@ -1,0 +1,14 @@
+#!/bin/ksh
+#
+# $OpenBSD: rc.template,v 1.12 2018/01/11 19:30:18 rpe Exp $
+
+daemon="${TRUEPREFIX}/sbin/uwsgi"
+daemon_user="_uwsgi"
+
+. /etc/rc.d/rc.subr
+
+pexp="${daemon}${daemon_flags:+ ${daemon_flags}}"
+rc_reload=NO
+
+rc_cmd $1
+

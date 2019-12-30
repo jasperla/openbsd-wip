@@ -1,0 +1,9 @@
+uwsgi on OpenBSD
+================
+
+As noted in the docs[1], you may need to raise the number of
+semaphores. To do so, add something like the following to
+/etc/sysctl.conf
+
+kern.seminfo.semmni=25
+

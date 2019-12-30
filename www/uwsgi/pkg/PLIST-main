@@ -1,7 +1,9 @@
-@comment $OpenBSD$
-lib/uwsgi/
-lib/uwsgi/cache_plugin.so
-lib/uwsgi/ping_plugin.so
-lib/uwsgi/psgi_plugin.so
-@bin sbin/uwsgi
+@comment $OpenBSD: PLIST-main,v$
+@newgroup _uwsgi:849
+@newuser _uwsgi:849:_uwsgi:daemon:UWSGI user:/nonexistent:/sbin/nologin
 @rcscript ${RCDIR}/uwsgi
+@so lib/uwsgi/cache_plugin.so
+@so lib/uwsgi/ping_plugin.so
+@so lib/uwsgi/psgi_plugin.so
+@bin sbin/uwsgi
+share/doc/pkg-readmes/${PKGSTEM}
