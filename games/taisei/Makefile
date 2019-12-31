@@ -1,10 +1,7 @@
 # $OpenBSD: Makefile,v 1.5 2018/06/29 22:16:14 espie Exp $
 
 # - Drop all upstreamed patches
-# - Fix a piece of code that doesn't take account of OSes
-#   where fileno(3) is a macro
 # - Now use git submodules, drop GH_* and use the full tar.xz bundle
-# XXX GLES would require a bunch of new port, i don't know if we want this.
 # XXX There may be more supported archs
 
 # =====================================================================
@@ -15,7 +12,7 @@ ONLY_FOR_ARCHS =		amd64 aarch64 i386
 
 COMMENT =		clone of the touhou games
 
-VERSION =		v1.3
+VERSION =		v1.3.1
 DISTNAME =		taisei-${VERSION}
 PKGNAME =		taisei-${VERSION:S/^v//}
 
@@ -27,7 +24,7 @@ HOMEPAGE =		https://taisei-project.org/
 # Soundtrack: CC-BY 4.0 / Photos: PD and CC-0
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += SDL2 SDL2_mixer c crypto freetype m png16 webpdecoder
+WANTLIB += SDL2 SDL2_mixer c crypto freetype m opusfile png webpdecoder
 WANTLIB += z
 
 MASTER_SITES=	https://github.com/taisei-project/taisei/releases/download/${VERSION}/
@@ -44,8 +41,9 @@ RUN_DEPENDS =		devel/desktop-file-utils \
 			misc/shared-mime-info \
 			x11/gtk+3,-guic
 
-LIB_DEPENDS =		devel/sdl2>=2.0.5 \
-			devel/sdl2-mixer \
+LIB_DEPENDS =		audio/opusfile \
+			devel/sdl2>=2.0.5 \
+			devel/sdl2-mixer>=2.0.4 \
 			graphics/libwebp>=0.5 \
 			graphics/png>=1.5.0
 
