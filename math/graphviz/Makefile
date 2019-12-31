@@ -79,8 +79,8 @@ USE_GMAKE =	Yes
 USE_GROFF =	Yes
 CONFIGURE_STYLE=gnu
 
-#USE_LIBTOOL = 		Yes
-#LIBTOOL_FLAGS +=	--disable-static
+# Don't build static libs.
+LIBTOOL_FLAGS =	--tag=disable-static
 
 # Note: --with-tclsh is misspelled "--with-tcl" in configure's help output
 CONFIGURE_ARGS=	--enable-tcl=yes \
@@ -93,6 +93,7 @@ CONFIGURE_ARGS=	--enable-tcl=yes \
 		--disable-java \
 		--disable-ocaml \
 		--disable-php \
+		--disable-python \
 		--disable-python2 \
 		--disable-python3 \
 		--disable-ruby \
@@ -100,6 +101,7 @@ CONFIGURE_ARGS=	--enable-tcl=yes \
 		--disable-sharp \
 		--disable-r \
 		--disable-gts \
+		--disable-go \
 		--without-ghostscript \
 		--without-devil \
 		--without-lasi \
@@ -153,9 +155,8 @@ post-install:
 	rm -Rf ${PREFIX}/lib/tcl${MODTCL_VERSION}/graphviz
 	ln -s ${TRUEPREFIX}/lib/tcl/graphviz \
 		${PREFIX}/lib/tcl${MODTCL_VERSION}/graphviz
-# We never want to install .a or .la files. It should be possible to not build
-# them using --disable-static, but it doesn't seem to work.
-	find ${PREFIX}/lib/ -name '*.a' -or -name '*.la' | xargs rm
+# We never want to install .la files.
+	find ${PREFIX}/lib/ -name '*.la' | xargs rm
 
 TEST_DEPENDS =	shells/ksh93 \
 		${FULLPKGNAME}:${FULLPKGPATH}

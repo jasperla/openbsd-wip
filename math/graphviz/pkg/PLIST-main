@@ -69,10 +69,6 @@ include/graphviz/usershape.h
 include/graphviz/xdot.h
 lib/graphviz/
 lib/graphviz/config6
-lib/graphviz/go/
-lib/graphviz/go/gv.go
-@so lib/graphviz/go/libgv_go.so
-lib/graphviz/go/runtime.h
 lib/graphviz/guile/
 @so lib/graphviz/guile/libgv_guile.so
 @lib lib/graphviz/libgvplugin_core.so.${LIBgvplugin_core_VERSION}
@@ -91,10 +87,6 @@ lib/graphviz/perl/
 lib/graphviz/perl/gv.pm
 @so lib/graphviz/perl/gv.so
 @so lib/graphviz/perl/libgv_perl.so
-lib/graphviz/python/
-@so lib/graphviz/python/_gv.so
-lib/graphviz/python/gv.py
-@so lib/graphviz/python/libgv_python.so
 @lib lib/libcdt.so.${LIBcdt_VERSION}
 @lib lib/libcgraph.so.${LIBcgraph_VERSION}
 @lib lib/libgvc.so.${LIBgvc_VERSION}
@@ -109,10 +101,6 @@ lib/pkgconfig/libgvpr.pc
 lib/pkgconfig/liblab_gamut.pc
 lib/pkgconfig/libpathplan.pc
 lib/pkgconfig/libxdot.pc
-lib/python2.7/
-lib/python2.7/site-packages/
-@so lib/python2.7/site-packages/_gv.so
-lib/python2.7/site-packages/gv.py
 lib/tcl/
 lib/tcl/graphviz/
 @lib lib/tcl/graphviz/libgdtclft.so.${LIBgdtclft_VERSION}
@@ -170,7 +158,6 @@ ${P5ARCH}/gv.pm
 @man man/man3/cgraph.3
 @man man/man3/expr.3
 man/man3/gdtclft.3tcl
-man/man3/gv.3go
 man/man3/gv.3guile
 man/man3/gv.3perl
 man/man3/gv.3python
@@ -396,7 +383,6 @@ share/doc/graphviz/pdf/gc.1.pdf
 share/doc/graphviz/pdf/gdtclft.3tcl.pdf
 share/doc/graphviz/pdf/gml2gv.1.pdf
 share/doc/graphviz/pdf/graphml2gv.1.pdf
-share/doc/graphviz/pdf/gv.3go.pdf
 share/doc/graphviz/pdf/gv.3guile.pdf
 share/doc/graphviz/pdf/gv.3perl.pdf
 share/doc/graphviz/pdf/gv.3python.pdf
@@ -540,7 +526,6 @@ share/examples/graphviz/lefty/tree.lefty
 share/graphviz/
 share/graphviz/demo/
 share/graphviz/demo/modgraph.pl
-share/graphviz/demo/modgraph.py
 share/graphviz/demo/modgraph.tcl
 share/graphviz/doc/
 share/graphviz/doc/html/
