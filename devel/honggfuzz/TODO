@@ -1,5 +1,0 @@
-Honggfuzz currently works as a dumb fuzzer on OpenBSD, with the caveat
-that the target program needs to be linked with -lc++abi manually for
-now.
-
-Coverage-guided fuzzing is currently not supported.

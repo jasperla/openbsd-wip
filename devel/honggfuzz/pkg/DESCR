@@ -1,7 +1,0 @@
-A security oriented, feedback-driven, evolutionary, easy-to-use fuzzer with
-interesting analysis options.
-
-It's multi-process and multi-threaded: there's no need to run multiple copies
-of your fuzzer, as honggfuzz can unlock potential of all your available CPU
-cores with a single running instance. The file corpus is automatically shared
-and improved between all fuzzed processes.
