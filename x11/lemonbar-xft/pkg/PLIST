@@ -1,6 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/02/23 17:28:48 feinerer Exp $
-@conflict lemonbar-*
-@bin bin/lemonbar-xft
-@man man/man1/lemonbar-xft.1
-share/doc/lemonbar-xft/
-share/doc/lemonbar-xft/LICENSE
