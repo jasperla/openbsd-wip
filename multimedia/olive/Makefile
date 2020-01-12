@@ -5,7 +5,7 @@ CATEGORIES =	multimedia x11
 
 GH_ACCOUNT =	olive-editor
 GH_PROJECT =	olive
-GH_TAGNAME =	0.1.0
+GH_TAGNAME =	0.1.2
 
 HOMEPAGE =	https://www.olivevideoeditor.org/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
