@@ -1,7 +1,5 @@
 # $OpenBSD$
 
-BROKEN-powerpc =	virtual memory exhausted (even with -O1)
-
 COMMENT =	2D puzzle platform indie game
 DISTNAME =	vvvvvv-2.2pl20200111
 CATEGORIES =	games x11
@@ -17,6 +15,8 @@ MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 PERMIT_PACKAGE =	Don't know...
 
 WANTLIB += ${COMPILER_LIBCXX} SDL2 SDL2_mixer c m
+
+COMPILER =	base-clang ports-gcc
 
 MODULES =	devel/cmake
 
