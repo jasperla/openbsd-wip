@@ -1,5 +1,7 @@
 # $OpenBSD$
 
+BROKEN-powerpc =	virtual memory exhausted (even with -O1)
+
 COMMENT =	2D puzzle platform indie game
 DISTNAME =	vvvvvv-2.2pl20200111
 CATEGORIES =	games x11
