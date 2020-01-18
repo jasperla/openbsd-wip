@@ -15,7 +15,7 @@ HOMEPAGE =		http://blobby.sourceforge.net/
 # GPLv2+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB +=		${COMPILER_LIBCXX} GL GLU c m physfs
+WANTLIB +=		${COMPILER_LIBCXX} GL GLU SDL2 c m physfs
 
 # C++11
 COMPILER =		base-clang ports-gcc
