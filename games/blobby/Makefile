@@ -4,9 +4,9 @@ COMMENT =		volleyball game with online play
 
 GH_ACCOUNT =		danielknobe
 GH_PROJECT =		blobbyvolley2
-GH_COMMIT =		91e5dcd106e7a38da97b17e7aa1dae737da87829
+GH_COMMIT =		bcea5be5eae91fda5455e7b77d9057d2780cc752
 
-DISTNAME =		blobby-1.020200118
+DISTNAME =		blobby-1.020200119
 
 CATEGORIES =		games
 
