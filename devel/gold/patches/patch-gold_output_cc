@@ -5,7 +5,7 @@ Always page align RELRO section so that -nopie works.
 Index: gold/output.cc
 --- gold/output.cc.orig
 +++ gold/output.cc
-@@ -4763,7 +4763,7 @@ Output_segment::set_offset(unsigned int increase)
+@@ -4767,7 +4767,7 @@ Output_segment::set_offset(unsigned int increase)
    if (this->type_ == elfcpp::PT_GNU_RELRO)
      {
        uint64_t page_align = parameters->target().abi_pagesize();

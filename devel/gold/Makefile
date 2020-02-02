@@ -4,8 +4,8 @@ ONLY_FOR_ARCHS =	${LLVM_ARCHS}
 
 # gold does not follow binutils version numbering
 COMMENT =	GNU ELF-only linker
-DISTNAME =	binutils-2.33.1
-PKGNAME =	gold-1.16pl0
+DISTNAME =	binutils-2.34
+PKGNAME =	gold-1.16pl1
 CATEGORIES =	devel
 
 HOMEPAGE =	https://sourceware.org/binutils/
@@ -17,6 +17,8 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += ${COMPILER_LIBCXX} c m z
 
 MASTER_SITES =	${MASTER_SITE_GNU:=binutils/}
+
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 # Prefer clang over gcc to get a gold linked with gold.
 # See the post-build target.
