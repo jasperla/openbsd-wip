@@ -1,0 +1,12 @@
+FFmpegSource (usually known as FFMS or FFMS2) is a cross-platform wrapper
+library around FFmpeg. It gives you an easy, convenient way to say "open and
+decompress this media file for me, I don't care how you do it" and get frame-
+and sample-accurate access (usually), without having to bother with the
+sometimes less than straightforward and less than perfectly documented FFmpeg
+API.
+
+The library is written in C++, but the public API is pure C, so if you can link
+to a C library, you can use FFMS2. The source is available under the MIT
+license, but the license of the binaries depends on how FFmpeg was compiled.
+There are optional components that require a GPL FFmpeg, and if those are
+compiled in FFMS2 itself becomes covered by the GPL as well.

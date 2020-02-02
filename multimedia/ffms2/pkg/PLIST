@@ -1,0 +1,11 @@
+@comment $OpenBSD: PLIST,v$
+@bin bin/ffmsindex
+include/ffms.h
+include/ffmscompat.h
+@static-lib lib/libffms2.a
+lib/libffms2.la
+@lib lib/libffms2.so.${LIBffms2_VERSION}
+lib/pkgconfig/ffms2.pc
+share/doc/ffms2/
+share/doc/ffms2/ffms2-api.md
+share/doc/ffms2/ffms2-changelog.md
