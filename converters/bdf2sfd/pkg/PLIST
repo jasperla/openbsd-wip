@@ -1,5 +1,0 @@
-@comment $OpenBSD: PLIST,v$
-@bin bin/bdf2sfd
-@man man/man1/bdf2sfd.1
-share/doc/bdf2sfd/
-share/doc/bdf2sfd/README.md
