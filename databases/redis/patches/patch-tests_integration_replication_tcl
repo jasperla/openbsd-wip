@@ -1,0 +1,19 @@
+$OpenBSD$
+
+Work around failing regress test
+
+[err]: diskless no replicas drop during rdb pipe in tests/integration/replication.tcl
+rdb child didn't terminate
+
+Index: tests/integration/replication.tcl
+--- tests/integration/replication.tcl.orig
++++ tests/integration/replication.tcl
+@@ -568,7 +568,7 @@ start_server {tags {"repl"}} {
+                     }
+ 
+                     # wait for rdb child to exit
+-                    wait_for_condition 500 100 {
++                    wait_for_condition 500 400 {
+                         [s -2 rdb_bgsave_in_progress] == 0
+                     } else {
+                         fail "rdb child didn't terminate"

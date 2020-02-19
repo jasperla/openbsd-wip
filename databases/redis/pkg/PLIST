@@ -1,0 +1,20 @@
+@comment $OpenBSD: PLIST,v 1.11 2018/09/02 11:08:51 kn Exp $
+@newgroup _redis:686
+@newuser _redis:686:_redis:daemon:redis account:${DBDIR}:/sbin/nologin
+@rcscript ${RCDIR}/redis
+@bin bin/redis-benchmark
+@bin bin/redis-check-aof
+@bin bin/redis-check-rdb
+@bin bin/redis-cli
+sbin/redis-sentinel
+@bin sbin/redis-server
+share/examples/redis/
+@sample ${SYSCONFDIR}/redis/
+share/examples/redis/redis.conf
+@sample ${SYSCONFDIR}/redis/redis.conf
+share/examples/redis/sentinel.conf
+@sample ${SYSCONFDIR}/redis/sentinel.conf
+@mode 0700
+@owner _redis
+@group _redis
+@sample ${DBDIR}/

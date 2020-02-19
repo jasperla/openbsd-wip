@@ -1,0 +1,91 @@
+$OpenBSD: patch-redis_conf,v 1.21 2020/02/11 08:11:13 tb Exp $
+Index: redis.conf
+--- redis.conf.orig
++++ redis.conf
+@@ -106,8 +106,8 @@ tcp-backlog 511
+ # incoming connections. There is no default, so Redis will not listen
+ # on a unix socket when not specified.
+ #
+-# unixsocket /tmp/redis.sock
+-# unixsocketperm 700
++# unixsocket /var/run/redis/redis.sock
++# unixsocketperm 770
+ 
+ # Close the connection after a client is idle for N seconds (0 to disable)
+ timeout 0
+@@ -202,8 +202,9 @@ tcp-keepalive 300
+ ################################# GENERAL #####################################
+ 
+ # By default Redis does not run as a daemon. Use 'yes' if you need it.
+-# Note that Redis will write a pid file in /var/run/redis.pid when daemonized.
+-daemonize no
++# Note that Redis will write a pid file in /var/run/redis/redis.pid
++# when daemonized.
++daemonize yes
+ 
+ # If you run Redis from upstart or systemd, Redis can interact with your
+ # supervision tree. Options:
+@@ -221,11 +222,11 @@ supervised no
+ #
+ # When the server runs non daemonized, no pid file is created if none is
+ # specified in the configuration. When the server is daemonized, the pid file
+-# is used even if not specified, defaulting to "/var/run/redis.pid".
++# is used even if not specified, defaulting to "/var/run/redis/redis.pid".
+ #
+ # Creating a pid file is best effort: if Redis is not able to create it
+ # nothing bad happens, the server will start and run normally.
+-pidfile /var/run/redis_6379.pid
++pidfile /var/run/redis/redis_6379.pid
+ 
+ # Specify the server verbosity level.
+ # This can be one of:
+@@ -238,17 +239,18 @@ loglevel notice
+ # Specify the log file name. Also the empty string can be used to force
+ # Redis to log on the standard output. Note that if you use standard
+ # output for logging but daemonize, logs will be sent to /dev/null
+-logfile ""
++# logfile ""
+ 
+ # To enable logging to the system logger, just set 'syslog-enabled' to yes,
+ # and optionally update the other syslog parameters to suit your needs.
+-# syslog-enabled no
++syslog-enabled yes
+ 
+ # Specify the syslog identity.
+-# syslog-ident redis
++syslog-ident redis
+ 
+-# Specify the syslog facility. Must be USER or between LOCAL0-LOCAL7.
+-# syslog-facility local0
++# Specify the syslog facility. Must be one of DAEMON, USER or between
++# LOCAL0-LOCAL7.
++syslog-facility daemon
+ 
+ # Set the number of databases. The default database is DB 0, you can select
+ # a different one on a per-connection basis using SELECT <dbid> where
+@@ -330,7 +332,7 @@ dbfilename dump.rdb
+ # The Append Only File will also be created inside this directory.
+ #
+ # Note that you must specify a directory here, not a file name.
+-dir ./
++dir ${DBDIR}
+ 
+ ################################# REPLICATION #################################
+ 
+@@ -743,7 +745,7 @@ replica-priority 100
+ # AUTH <password> as usually, or more explicitly with AUTH default <password>
+ # if they follow the new protocol: both will work.
+ #
+-# requirepass foobared
++# requirepass very-strong-password
+ 
+ # Command renaming (DEPRECATED).
+ #
+@@ -782,6 +784,7 @@ replica-priority 100
+ # an error 'max number of clients reached'.
+ #
+ # maxclients 10000
++maxclients 96
+ 
+ ############################## MEMORY MANAGEMENT ################################
+ 

@@ -1,0 +1,6 @@
+This builds on at least amd64, arm64, armv7, i386, macppc, sparc64.
+
+Tests pass on amd64, arm64, i386, sparc64.
+
+On macppc, tests run badly into swap on my 250M iBook before timing out.
+On armv7, the port is broken the same way as Redis 4 and Redis 5.
