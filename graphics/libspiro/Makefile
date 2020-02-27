@@ -11,8 +11,6 @@ CATEGORIES =	graphics
 
 HOMEPAGE =	https://github.com/fontforge/libspiro
 
-MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
-
 # GPLv3+
 PERMIT_PACKAGE =	Yes
 
