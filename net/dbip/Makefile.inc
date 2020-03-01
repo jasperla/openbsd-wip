@@ -10,6 +10,13 @@ HOMEPAGE =	https://db-ip.com/db/lite.php
 PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =	https://download.db-ip.com/free/
+EXTRACT_SUFX =	.gz
+
+WRKDIST =	${WRKDIR}
+
+NO_BUILD =	Yes
+
+NO_TEST =	Yes
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/dbip
