@@ -18,7 +18,8 @@ NO_BUILD =	Yes
 
 NO_TEST =	Yes
 
+PREFIX =	${LOCALSTATEDIR}
+
 do-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/dbip
-	${INSTALL_DATA} ${WRKDIST}/*.mmdb ${PREFIX}/share/examples/dbip
-	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/examples/dbip
+	${INSTALL_DATA_DIR} ${PREFIX}/db/dbip
+	${INSTALL_DATA} ${WRKDIST}/*.mmdb ${PREFIX}/db/dbip

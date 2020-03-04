@@ -1,5 +1,3 @@
 @comment $OpenBSD: PLIST,v$
-share/examples/dbip/
-@sample ${LOCALSTATEDIR}/db/dbip/
-share/examples/dbip/dbip-city-lite.mmdb
-@sample ${LOCALSTATEDIR}/db/dbip/dbip-city-lite.mmdb
+db/dbip/
+db/dbip/dbip-city-lite.mmdb
