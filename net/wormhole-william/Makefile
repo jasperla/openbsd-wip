@@ -3,8 +3,8 @@
 COMMENT =	magic wormhole implementation in Go
 
 V =		1.0.2
-DISTNAME =	wormhole-william-${V}
-DISTFILES =	wormhole-william-vendored-${V}${EXTRACT_SUFX}
+DISTNAME =	wormhole-william-vendored-${V}
+PKGNAME =	wormhole-william-${V}
 
 GH_ACCOUNT =	psanford
 GH_PROJECT =	wormhole-william
