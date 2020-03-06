@@ -63,7 +63,7 @@ Index: src/Makefile
  
  # redis-sentinel
  $(REDIS_SENTINEL_NAME): $(REDIS_SERVER_NAME)
-@@ -301,7 +303,7 @@ distclean: clean
+@@ -305,7 +307,7 @@ distclean: clean
  .PHONY: distclean
  
  test: $(REDIS_SERVER_NAME) $(REDIS_CHECK_AOF_NAME)
@@ -72,7 +72,7 @@ Index: src/Makefile
  
  test-sentinel: $(REDIS_SENTINEL_NAME)
  	@(cd ..; ./runtest-sentinel)
-@@ -345,13 +347,14 @@ src/help.h:
+@@ -349,13 +351,14 @@ src/help.h:
  	@../utils/generate-command-help.rb > help.h
  
  install: all

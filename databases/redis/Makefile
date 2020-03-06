@@ -1,7 +1,7 @@
 # $OpenBSD: Makefile,v 1.109 2020/02/11 08:11:13 tb Exp $
 
 COMMENT =		persistent key-value database
-DISTNAME =		redis-6.0-rc1
+DISTNAME =		redis-6.0-rc2
 PKGNAME =		${DISTNAME:S/-rc/rc/}
 CATEGORIES =		databases
 HOMEPAGE =		https://redis.io/
@@ -9,7 +9,7 @@ HOMEPAGE =		https://redis.io/
 # BSD
 PERMIT_PACKAGE =	Yes
 
-WANTLIB +=		c ${MODLUA_WANTLIB} m pthread
+WANTLIB +=		c crypto ssl ${MODLUA_WANTLIB} m pthread
 
 MASTER_SITES =		http://download.redis.io/releases/
 
@@ -22,7 +22,8 @@ COMPILER_LANGS =	c
 MODULES =		lang/lua \
 			lang/tcl
 
-MAKE_FLAGS =		CC="${CC}" \
+MAKE_FLAGS =		BUILD_TLS=yes \
+			CC="${CC}" \
 			DEBUG="${DEBUG}" \
 			DEBUG_FLAGS="${DEBUG}" \
 			USE_JEMALLOC=no \

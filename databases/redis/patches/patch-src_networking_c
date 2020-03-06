@@ -1,9 +1,11 @@
 $OpenBSD$
 
+time_t is long long, so use llabs to avoid truncation
+
 Index: src/networking.c
 --- src/networking.c.orig
 +++ src/networking.c
-@@ -2344,7 +2344,7 @@ void securityWarningCommand(client *c) {
+@@ -2444,7 +2444,7 @@ void securityWarningCommand(client *c) {
      static time_t logged_time;
      time_t now = time(NULL);
  
