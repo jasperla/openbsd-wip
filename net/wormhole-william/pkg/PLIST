@@ -1,2 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.7 2019/11/10 12:06:38 edd Exp $
-@bin bin/wormhole-william
