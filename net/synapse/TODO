@@ -1,7 +1,0 @@
- * group ID and user ID
- * more testing
- * verify dependencies
- * openbsd-wip/devel/py-prometheus_client is at 0.4.2 but according to
-   https://github.com/matrix-org/synapse/issues/4001 synapse is currently
-   incompatible with 0.4.2
-   
