@@ -18,7 +18,6 @@ WANTLIB += c pthread
 MASTER_SITES =	https://deftly.net/dist/
 
 MODULES =	lang/go
-MODGO_TYPE =	bin
 
 NO_TEST =	Yes
 
