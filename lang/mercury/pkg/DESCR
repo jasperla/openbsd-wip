@@ -1,0 +1,5 @@
+Mercury is a pure logic programming language intended for the creation
+of large, fast, reliable programs. The syntax of Mercury is based on
+the syntax of Prolog, but semantically the two languages are very
+different due to Mercury's purity, its type, mode, determinism and
+module systems.
