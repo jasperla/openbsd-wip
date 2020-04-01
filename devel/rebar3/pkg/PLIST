@@ -1,0 +1,2 @@
+@comment $OpenBSD: PLIST
+bin/rebar3
