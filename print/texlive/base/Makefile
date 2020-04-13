@@ -51,10 +51,9 @@ LIB_DEPENDS-main =	converters/libiconv \
 			graphics/cairo \
 			textproc/icu4c \
 			graphics/graphite2 \
-			devel/harfbuzz,-icu \
+			devel/harfbuzz \
 			print/libpaper \
 			archivers/zziplib \
-			graphics/potrace \
 			print/ghostscript/gnu \
 			${BASE_PKGPATH},-mktexlsr
 
@@ -134,8 +133,7 @@ CONFIGURE_ARGS +=	--mandir=${PREFIX}/man \
 			--with-system-harfbuzz \
 			--with-system-graphite2 \
 			--with-system-libpaper \
-			--with-system-zziplib \
-			--with-system-potrace
+			--with-system-zziplib
 
 SUBST_VARS +=		TRUEPREFIX LOCALBASE
 

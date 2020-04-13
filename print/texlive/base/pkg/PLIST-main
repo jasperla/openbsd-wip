@@ -188,7 +188,7 @@ bin/ltx2crossrefxml
 bin/ltxfileinfo
 bin/ltximg
 @bin bin/luahbtex
-bin/luajitlatex
+@comment bin/luajitlatex
 bin/lualatex
 bin/luaotfload-tool
 @bin bin/luatex
