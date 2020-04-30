@@ -72,7 +72,7 @@ Index: redis.conf
  
  ################################# REPLICATION #################################
  
-@@ -755,7 +757,7 @@ replica-priority 100
+@@ -767,7 +769,7 @@ acllog-max-len 128
  # AUTH <password> as usually, or more explicitly with AUTH default <password>
  # if they follow the new protocol: both will work.
  #
@@ -81,7 +81,7 @@ Index: redis.conf
  
  # Command renaming (DEPRECATED).
  #
-@@ -794,6 +796,7 @@ replica-priority 100
+@@ -806,6 +808,7 @@ acllog-max-len 128
  # an error 'max number of clients reached'.
  #
  # maxclients 10000

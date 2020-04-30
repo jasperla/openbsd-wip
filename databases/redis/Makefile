@@ -1,8 +1,7 @@
 # $OpenBSD: Makefile,v 1.109 2020/02/11 08:11:13 tb Exp $
 
 COMMENT =		persistent key-value database
-DISTNAME =		redis-6.0-rc2
-PKGNAME =		${DISTNAME:S/-rc/rc/}
+DISTNAME =		redis-6.0.0
 CATEGORIES =		databases
 HOMEPAGE =		https://redis.io/
 
@@ -32,7 +31,7 @@ MAKE_FLAGS =		BUILD_TLS=yes \
 			V=1
 
 # Fix "undefined reference to `__atomic_store_8'"
-.if ${MACHINE_ARCH:Mpowerpc} || ${MACHINE_ARCH:Mhppa}
+.if ${MACHINE_ARCH:Mhppa}
 WANTLIB +=		atomic
 LIB_DEPENDS +=		lang/gcc/${MODGCC4_VERSION},-libs
 MAKE_FLAGS +=		LDFLAGS="${LDFLAGS} -latomic"

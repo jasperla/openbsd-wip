@@ -1,12 +1,14 @@
 rc1 builds on at least amd64, arm64, armv7, i386, macppc, sparc64.
 rc2 builds on at least amd64, macppc, sparc64.
+GA  builds on amd64.
 
 rc1 tests pass on amd64, arm64, i386, sparc64.
-rc2 tests pass on amd64, sparc64
+rc2 tests pass on amd64, sparc64.
+GA  tests pass on amd64.
 
 Investigate whether tests can or should be run over TLS.
 Needs a dependency on security/tcltls, but naive attempts failed
 due to protocol version mismatches when running the tests.
 
 On macppc, tests run badly into swap on my 250M iBook before timing out.
-On armv7, the port is broken the same way as Redis 4 and Redis 5.
+On armv7, the Redis 6 port is broken the same way as Redis 4 and Redis 5.
