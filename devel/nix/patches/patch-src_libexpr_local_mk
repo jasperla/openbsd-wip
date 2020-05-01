@@ -1,0 +1,16 @@
+$OpenBSD$
+
+Index: src/libexpr/local.mk
+--- src/libexpr/local.mk.orig
++++ src/libexpr/local.mk
+@@ -8,8 +8,8 @@ libexpr_SOURCES := $(wildcard $(d)/*.cc) $(wildcard $(
+ 
+ libexpr_LIBS = libutil libstore
+ 
+-libexpr_LDFLAGS =
+-ifneq ($(OS), FreeBSD)
++libexpr_LDFLAGS = -lc
++ifneq ($(OS), OpenBSD)
+  libexpr_LDFLAGS += -ldl
+ endif
+ 
