@@ -38,6 +38,13 @@ LIB_DEPENDS =	archivers/brotli \
 
 RUN_DEPENDS =	shells/bash
 
+TEST_DEPENDS =	${PKGPATH} \
+		misc/findutils \
+		textproc/gdiff
+
+# Bash specific code using `declare' for associative arrays:
+# ./configure[7906]: syntax error: `(' unexpected
+CONFIGURE_SCRIPT =	${LOCALBASE}/bin/bash ./configure
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV =		CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
 			LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib" \
@@ -48,5 +55,28 @@ USE_GMAKE =	Yes
 MAKE_FLAGS =	LIBnixexpr_VERSION="${LIBnixexpr_VERSION}" V=1
 
 FAKE_FLAGS =	sysconfdir="${PREFIX}/share/examples/nix"
+
+TEST_TARGET =	installcheck
+
+# TMPDIR is picked up to construct TEST_ROOT in ${WRKSRC}/tests/common.sh.in
+# with this harcoded subdirectory
+TMPDIR =	${WRKDIR}
+TEST_ROOT =	${TMPDIR}/nix-test
+
+TEST_ENV =	TMPDIR=${TMPDIR}
+
+pre-test:
+	mkdir -p ${TEST_ROOT}
+	# running post-build-hook '/usr/ports/pobj/nix-2.3.4/nix-2.3.4/tests/push-to-store.sh'...
+	# ...
+	# post-build-hook: xargs: unknown option -- d
+	ln -sf ${LOCALBASE}/bin/gxargs ${WRKDIR}/bin/xargs
+	# running test tests/function-trace.sh... [FAIL]
+	# ...
+	#         Tracing expression 'builtins.tryEval (throw "example")'diff: unknown option -- B
+	ln -sf ${LOCALBASE}/bin/gdiff ${WRKDIR}/bin/diff
+	# XXX fix (only) realpath(1) usage in ${WRKSRC}/tests/common.sh.in
+	echo '/usr/bin/readlink -f "$$@"' >| ${WRKDIR}/bin/realpath
+	chmod +x ${WRKDIR}/bin/realpath
 
 .include <bsd.port.mk>

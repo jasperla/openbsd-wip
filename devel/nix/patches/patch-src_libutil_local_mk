@@ -1,5 +1,7 @@
 $OpenBSD$
 
+Link libutil against libboost_context-mt and libc.
+
 Index: src/libutil/local.mk
 --- src/libutil/local.mk.orig
 +++ src/libutil/local.mk

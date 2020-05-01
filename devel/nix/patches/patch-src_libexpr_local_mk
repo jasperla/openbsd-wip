@@ -1,5 +1,8 @@
 $OpenBSD$
 
+Link libexpr against libc.
+Recognise OpenBSD.
+
 Index: src/libexpr/local.mk
 --- src/libexpr/local.mk.orig
 +++ src/libexpr/local.mk

@@ -1,5 +1,7 @@
 $OpenBSD$
 
+Link libnix against libboost_{context,thread}-mt and libc.
+
 Index: src/nix/local.mk
 --- src/nix/local.mk.orig
 +++ src/nix/local.mk
