@@ -122,7 +122,6 @@ share/doc/manual/images/callouts/8.gif
 share/doc/manual/images/callouts/9.gif
 share/doc/manual/index.html
 share/doc/manual/manual.html
-share/doc/manual/style.css
 share/examples/nix/
 @sample ${SYSCONFDIR}/nix/
 share/examples/nix/profile.d/

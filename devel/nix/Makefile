@@ -1,15 +1,15 @@
 # $OpenBSD$
 
 COMMENT =	reproducable package manager for Unix
-DISTNAME =	nix-2.3.1
+DISTNAME =	nix-2.3.4
 EXTRACT_SUFX =	.tar.xz
 CATEGORIES =	devel
 
 # These four must always have the same major and minor!
-SHARED_LIBS +=	nixexpr                   0.0 # 2.3.1
-SHARED_LIBS +=	nixmain                   0.0 # 2.3.1
-SHARED_LIBS +=	nixstore                  0.0 # 2.3.1
-SHARED_LIBS +=	nixutil                   0.0 # 2.3.1
+SHARED_LIBS +=	nixexpr                   0.0 # 2.3.4
+SHARED_LIBS +=	nixmain                   0.0 # 2.3.4
+SHARED_LIBS +=	nixstore                  0.0 # 2.3.4
+SHARED_LIBS +=	nixutil                   0.0 # 2.3.4
 
 HOMEPAGE =	https://nixos.org/nix/
 
