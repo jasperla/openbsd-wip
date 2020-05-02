@@ -1,6 +1,6 @@
 # $OpenBSD$
 
-COMMENT =	reproducable package manager for Unix
+COMMENT =	reproducible package manager for Unix
 DISTNAME =	nix-2.3.4
 EXTRACT_SUFX =	.tar.xz
 CATEGORIES =	devel
