@@ -15,8 +15,10 @@ MASTER_SITES0 =		https://spacehopper.org/mirrors/ \
 			http://theunixzoo.co.uk/distfiles/
 DISTFILES =		${DISTNAME}${EXTRACT_SUFX} \
 			texlive-${DIST_V}-extra${EXTRACT_SUFX} \
-			texlive-${DIST_V}-tlpdb-full.tar.gz \
-			texmf-var-pregen-${V}.0${EXTRACT_SUFX}:0 \
+			texlive-${DIST_V}-tlpdb-full.tar.gz
+
+# XXX generate and add to distfiles
+#texmf-var-pregen-${V}.0${EXTRACT_SUFX}:0 \
 
 PKGNAME-main =		texlive_texmf-minimal-${V}
 PKGNAME-full =		texlive_texmf-full-${V}
@@ -39,16 +41,22 @@ MODRUBY_RUNDEP =	No
 MODPY_BUILDDEP =	No
 MODPY_RUNDEP =		No
 
-RUN_DEPENDS-main +=	texlive_base->=${V}:print/texlive/base,-main \
-			${FULLPKGNAME-buildset}:print/texlive/texmf,-buildset
-RUN_DEPENDS-full =	${FULLPKGNAME-main}:print/texlive/texmf,-main \
-			${MODPY_RUN_DEPENDS} \
+#RUN_DEPENDS-main +=	texlive_base->=${V}:print/texlive/base,-main \
+#			${FULLPKGNAME-buildset}:print/texlive/texmf,-buildset
+#RUN_DEPENDS-full =	${FULLPKGNAME-main}:print/texlive/texmf,-main \
+#			${MODPY_RUN_DEPENDS} \
+#			${_MODLUA_RUNDEPENDS}
+#RUN_DEPENDS-context +=	${FULLPKGNAME-full}:print/texlive/texmf,-full \
+#			${MODRUBY_RUNDEPENDS}
+#RUN_DEPENDS-docs +=	texlive_base->=${V}:print/texlive/base,-main \
+#			x11/p5-Tk
+#RUN_DEPENDS-buildset +=	texlive_mktexlsr->=${V}:print/texlive/base,-mktexlsr
+
+# XXX put back the above
+RUN_DEPENDS-full =	${MODPY_RUN_DEPENDS} \
 			${_MODLUA_RUNDEPENDS}
-RUN_DEPENDS-context +=	${FULLPKGNAME-full}:print/texlive/texmf,-full \
-			${MODRUBY_RUNDEPENDS}
-RUN_DEPENDS-docs +=	texlive_base->=${V}:print/texlive/base,-main \
-			x11/p5-Tk
-RUN_DEPENDS-buildset +=	texlive_mktexlsr->=${V}:print/texlive/base,-mktexlsr
+RUN_DEPENDS-context +=	${MODRUBY_RUNDEPENDS}
+RUN_DEPENDS-docs +=	x11/p5-Tk
 
 MULTI_PACKAGES =	-context -docs -full -main -buildset
 
@@ -123,6 +131,7 @@ pre-configure: tl-manpage-symlinks
 do-install: tl-symlinks-main tl-symlinks-full tl-symlinks-context
 	mv ${WRKDIST}/texmf-dist ${PREFIX}/share
 
+	# XXX put back
 	# plug in my pregenerated map and formats
 	#
 	# To make these, first check you are all hashed (all commands as root):
@@ -135,7 +144,7 @@ do-install: tl-symlinks-main tl-symlinks-full tl-symlinks-context
 	#   context --make
 	#
 	# Then you can tar them up and host them as the pregen tarball.
-	mv ${WRKDIR}/texmf-var ${PREFIX}/share
+	#mv ${WRKDIR}/texmf-var ${PREFIX}/share
 
 	# Put manuals in the right place.
 	#
@@ -167,7 +176,7 @@ plist: fake
 	env WRKINST=${WRKINST} TRUEPREFIX=${TRUEPREFIX} python${MODPY_DEFAULT_VERSION_3} \
 		${FILESDIR}/update_plist_hints.py \
 		${WRKDIR}/texlive.tlpdb | \
-		${FILESDIR}/write_plists.py
+		python${MODPY_DEFAULT_VERSION_3} ${FILESDIR}/write_plists.py
 
 # regenerate adj.mk
 adj: patch
