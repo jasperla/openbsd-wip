@@ -1,0 +1,78 @@
+$OpenBSD: README,v 1.5 2019/06/29 14:05:19 edd Exp $
+
++-----------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-----------------------------------------------------------------------
+
+Compatibility
+=============
+
+Please note that not all versions of Syncthing are compatible. The
+second number in the release string must match. E.g. 0.12.x is not
+compatible with 0.13.x. If you mismatch the versions, hosts will fail to
+discover each other.
+
+Starting Syncthing
+==================
+
+There are a couple of different ways to invoke Syncthing. Which is best
+for you will depend upon how many users will run Syncthing concurrently.
+
+Starting via RC script
+----------------------
+
+Syncthing can be started via the included RC script, thus running
+Syncthing as a system service. This is fine for single user
+configurations. Under this mode of operation, Syncthing will run as the
+_syncthing user and store the default 'Sync' folder under
+${VARBASE}/syncthing.
+
+Starting Manually
+-----------------
+
+The other way is to simply invoke ${TRUEPREFIX}/bin/syncthing manually.
+This is a better choice for situations where several users all want to
+run their own instances of Syncthing. Under this mode, the default
+'Sync' folder will be stored in the user's home directory. Users will
+have to configure Syncthing to listen on different TCP ports for this
+method to work.
+
+It might be desirable to have Syncthing executed on system reboot for
+each user individually. To achieve this a crontab entry can be created
+on per-user basis:
+
+@reboot tmux new-session -d '${TRUEPREFIX}/bin/syncthing'
+
+This will result in a new tmux(1) session being spawned each system
+boot. The user can later use `tmux attach` to view and control their
+Syncthing process.
+
+File Descriptor Limits
+======================
+
+Syncthing is fairly hungry for file descriptors and the default limits may be
+insufficient. On OpenBSD, Syncthing uses kqueue(2) to "watch" files, and since
+kqueue(2) doesn't support recursive watching, each file has be watched
+individually. The upshot of this is that each file in a watched folder will use
+one file descriptor.
+
+If you run Syncthing via the rc.d(8) script, then you can give
+Syncthing more file descriptors by adding the following to login.conf(5):
+
+       syncthing:\
+                :openfiles-cur=4096:\
+                :openfiles-max=4096:\
+                :tc=daemon:
+
+Don't forget to rebuild the login.conf.db file (if necessary):
+
+        # [ -f /etc/login.conf.db ] && cap_mkdb /etc/login.conf
+
+Note that in addition to ulimits, there is a kernel-level file descriptor limit
+which may also need to be adjusted. This limit is managed through the
+kern.maxfiles sysctl(8).
+
+Another option is to turn off the file watcher and use only periodic scans.
+This will result in much reduced file descriptor usage at the cost of a
+(configurable) latency. See "watch for changes" and "full rescan interval" in
+the "advanced" tab in a folder's settings (on the web UI).
