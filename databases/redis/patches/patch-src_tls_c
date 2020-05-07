@@ -2,6 +2,8 @@ $OpenBSD$
 
 Disable TLSv1.3 since the LibreSSL server is not ready.
 
+XXX: When enabling TLSv1.3, restore the TLSv1.3 specific bits in redis.conf!
+
 Index: src/tls.c
 --- src/tls.c.orig
 +++ src/tls.c

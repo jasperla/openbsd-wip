@@ -1,4 +1,5 @@
 $OpenBSD: patch-redis_conf,v 1.21 2020/02/11 08:11:13 tb Exp $
+
 Index: redis.conf
 --- redis.conf.orig
 +++ redis.conf
@@ -13,7 +14,41 @@ Index: redis.conf
  
  # Close the connection after a client is idle for N seconds (0 to disable)
  timeout 0
-@@ -201,8 +201,9 @@ tcp-keepalive 300
+@@ -154,6 +154,7 @@ tcp-keepalive 300
+ # of these, and will not implicitly use the system wide configuration.
+ #
+ # tls-ca-cert-file ca.crt
++# tls-ca-cert-file /etc/ssl/cert.pem
+ # tls-ca-cert-dir /etc/ssl/certs
+ 
+ # By default, clients (including replica servers) on a TLS port are required
+@@ -176,23 +177,17 @@ tcp-keepalive 300
+ # tls-cluster yes
+ 
+ # Explicitly specify TLS versions to support. Allowed values are case insensitive
+-# and include "TLSv1", "TLSv1.1", "TLSv1.2", "TLSv1.3" (OpenSSL >= 1.1.1) 
++# and include "TLSv1", "TLSv1.1", "TLSv1.2"
+ #
+ # tls-protocols TLSv1.2
+ 
+-# Configure allowed ciphers.  See the ciphers(1ssl) manpage for more information
++# Configure allowed ciphers.  See SSL_set_cipher_list(3) for more information
+ # about the syntax of this string.
+ #
+ # Note: this configuration applies only to <= TLSv1.2.
+ #
+ # tls-ciphers DEFAULT:!MEDIUM
+ 
+-# Configure allowed TLSv1.3 ciphersuites.  See the ciphers(1ssl) manpage for more
+-# information about the syntax of this string, and specifically for TLSv1.3
+-# ciphersuites.
+-#
+-# tls-ciphersuites TLS_CHACHA20_POLY1305_SHA256
+-
+ # When choosing a cipher, use the server's preference instead of the client
+ # preference. By default, the server follows the client's preference.
+ #
+@@ -201,8 +196,9 @@ tcp-keepalive 300
  ################################# GENERAL #####################################
  
  # By default Redis does not run as a daemon. Use 'yes' if you need it.
@@ -25,7 +60,7 @@ Index: redis.conf
  
  # If you run Redis from upstart or systemd, Redis can interact with your
  # supervision tree. Options:
-@@ -220,11 +221,11 @@ supervised no
+@@ -220,11 +216,11 @@ supervised no
  #
  # When the server runs non daemonized, no pid file is created if none is
  # specified in the configuration. When the server is daemonized, the pid file
@@ -39,7 +74,7 @@ Index: redis.conf
  
  # Specify the server verbosity level.
  # This can be one of:
-@@ -237,17 +238,18 @@ loglevel notice
+@@ -237,17 +233,18 @@ loglevel notice
  # Specify the log file name. Also the empty string can be used to force
  # Redis to log on the standard output. Note that if you use standard
  # output for logging but daemonize, logs will be sent to /dev/null
@@ -63,7 +98,7 @@ Index: redis.conf
  
  # Set the number of databases. The default database is DB 0, you can select
  # a different one on a per-connection basis using SELECT <dbid> where
-@@ -342,7 +344,7 @@ rdb-del-sync-files no
+@@ -342,7 +339,7 @@ rdb-del-sync-files no
  # The Append Only File will also be created inside this directory.
  #
  # Note that you must specify a directory here, not a file name.
@@ -72,7 +107,7 @@ Index: redis.conf
  
  ################################# REPLICATION #################################
  
-@@ -767,7 +769,7 @@ acllog-max-len 128
+@@ -767,7 +764,7 @@ acllog-max-len 128
  # AUTH <password> as usually, or more explicitly with AUTH default <password>
  # if they follow the new protocol: both will work.
  #
@@ -81,7 +116,7 @@ Index: redis.conf
  
  # Command renaming (DEPRECATED).
  #
-@@ -806,6 +808,7 @@ acllog-max-len 128
+@@ -806,6 +803,7 @@ acllog-max-len 128
  # an error 'max number of clients reached'.
  #
  # maxclients 10000
