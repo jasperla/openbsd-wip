@@ -1,0 +1,10 @@
+@comment $OpenBSD: PLIST,v$
+bin/ddgr
+lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}ddgr.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ddgr-1.8.1-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/ddgr-1.8.1-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/ddgr-1.8.1-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/ddgr-1.8.1-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/ddgr-1.8.1-py${MODPY_VERSION}.egg-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/ddgr-1.8.1-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/ddgr.py
