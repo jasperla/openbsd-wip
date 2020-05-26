@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST,v$
+bin/yarn
+@comment bin/yarn.cmd
+bin/yarn.js
+bin/yarnpkg
+@comment bin/yarnpkg.cmd
+lib/cli.js
+lib/v8-compile-cache.js
