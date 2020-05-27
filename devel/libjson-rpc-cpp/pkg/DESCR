@@ -1,2 +1,0 @@
-libjson-rpc-cpp provides cross platform JSON-RPC (remote procedure call)
-support for C++. It is fully JSON-RPC 2.0 & 1.0 compatible.
