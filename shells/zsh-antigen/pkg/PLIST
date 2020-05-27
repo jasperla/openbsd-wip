@@ -1,3 +1,0 @@
-@comment $OpenBSD: PLIST,v$
-share/zsh-antigen/
-share/zsh-antigen/antigen.zsh
