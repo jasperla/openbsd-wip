@@ -10,8 +10,6 @@ CATEGORIES =		devel
 
 HOMEPAGE =		https://www.jetbrains.com/clion/
 
-MAINTAINER  =		Rafael Sadowski <rsadowski@openbsd.org>
-
 # Trial software, there are commercial and academic licenses available.
 PERMIT_PACKAGE  =	Yes
 

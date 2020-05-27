@@ -10,8 +10,6 @@ CATEGORIES =	productivity
 
 HOMEPAGE =	https://electrum.org
 
-MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
-
 # MIT
 PERMIT_PACKAGE =	Yes
 
