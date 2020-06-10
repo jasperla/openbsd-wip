@@ -272,6 +272,8 @@ def should_comment_file(f, commented_files):
         re.match(r'^share/texmf-dist/scripts/context/stubs/source/', f) or
         # PDF versions of manuals
         re.match(r'^.*.man[0-9]\.pdf$', f) or
+        # LuaJIT-related manuals (we don't use LuaJIT for now).
+        re.match(r'^.*.man[0-9]/luajit.*\.[0-9]$', f) or
         # We don't want anything that isn't in the texmf tree.
         # Most of this is installer stuff which does not apply
         # to us.

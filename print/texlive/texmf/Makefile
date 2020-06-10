@@ -122,7 +122,6 @@ pre-configure: tl-manpage-symlinks
 do-install: tl-symlinks-main tl-symlinks-full tl-symlinks-context
 	mv ${WRKDIST}/texmf-dist ${PREFIX}/share
 
-	# XXX put back
 	# plug in my pregenerated map and formats
 	#
 	# To make these, first check you are all hashed (all commands as root):

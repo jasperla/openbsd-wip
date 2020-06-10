@@ -11,6 +11,13 @@ tl-manpage-symlinks:
 		ln -sf ppltotf.1 uppltotf.1 && \
 		ln -sf latex.1 uplatex.1 && \
 		ln -sf latex.1 platex.1 && \
+		ln -sf latex.1 dvilualatex.1 && \
+		ln -sf latex-dev.1 xelatex-dev.1 && \
+		ln -sf latex-dev.1 uplatex-dev.1 && \
+		ln -sf latex-dev.1 platex-dev.1 && \
+		ln -sf latex-dev.1 pdflatex-dev.1 && \
+		ln -sf latex-dev.1 lualatex-dev.1 && \
+		ln -sf latex-dev.1 dvilualatex-dev.1 && \
 		ln -sf ptex.1 euptex.1 && \
 		ln -sf ptex.1 eptex.1 && \
 		ln -sf dvipng.1 dvigif.1 && \
@@ -18,6 +25,8 @@ tl-manpage-symlinks:
 		ln -sf dvipdfmx.1 xdvipdfmx.1 && \
 		ln -sf updmap.1 updmap-user.1 && \
 		ln -sf updmap.1 updmap-sys.1 && \
+		ln -sf luatex.1 dviluatex.1 && \
+		ln -sf luatex.1 luahbtex.1 && \
 		ln -sf luatex.1 texluac.1 && \
 		ln -sf luatex.1 texlua.1 && \
 		ln -sf mktexlsr.1 texhash.1 && \
