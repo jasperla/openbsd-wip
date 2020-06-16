@@ -66,8 +66,7 @@ WRKDIST =		${WRKDIR}/texlive-${DIST_V}-texmf
 
 # Substitute correct interpreter paths into scripts and deal with linked manuals.
 # Some interpreter paths are done automatically by MODULES.
-.include "manpage_symlinks.mk"
-pre-configure: tl-manpage-symlinks
+pre-configure:
 	@# Don't use substitution from the Python port, since we need to swap in
 	@# different versions.
 	for F in ${PYTHON2_ADJ_FILES}; do \
@@ -150,6 +149,16 @@ do-install: tl-symlinks-main tl-symlinks-full tl-symlinks-context
 	# Info pages
 	mv ${PREFIX}/share/texmf-dist/doc/info/*.info \
 		${PREFIX}/info/
+
+	# A whole load of manual pages use a `.so` to "link" to another man
+	# page. This makes a warning at package time about a missing short
+	# description, and furthermore, `mandoc -Tlint` warns that `.so` is
+	# fragile and that we'd be better off using ln(1).
+	#
+	# This script searches for `.so` linked manpages and converts them to
+	# symlinks.
+	python${MODPY_DEFAULT_VERSION_3} ${FILESDIR}/man_symlinks.py \
+		${PREFIX}/man/
 
 	# adjust permissions
 	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/{share/texmf*,man/man*/*,info/*}
