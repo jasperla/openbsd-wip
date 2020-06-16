@@ -4,7 +4,7 @@ COMMENT = QT5 GUI front-end for neovim
 
 GH_ACCOUNT = equalsraf
 GH_PROJECT = neovim-qt
-GH_TAGNAME = v0.2.15
+GH_TAGNAME = v0.2.16
 
 CATEGORIES = editors
 
@@ -15,12 +15,15 @@ MAINTAINER = Laurence Tratt <laurie@tratt.net>
 # ISC
 PERMIT_PACKAGE = Yes
 
-WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5Gui Qt5Network Qt5Widgets
+WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5Gui Qt5Network Qt5Svg Qt5Widgets
 WANTLIB += c m
 
 MODULES = devel/cmake x11/qt5
 
-BUILD_DEPENDS = editors/neovim
+BUILD_DEPENDS = devel/cmake \
+                devel/ninja \
+                editors/neovim
+LIB_DEPENDS = x11/qt5/qtsvg
 RUN_DEPENDS = devel/desktop-file-utils \
               editors/neovim \
               x11/xclip
