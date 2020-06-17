@@ -1,5 +1,5 @@
 @comment $OpenBSD: PLIST-synctex,v 1.2 2019/11/11 22:54:13 edd Exp $
-@conflict texlive_base-<2019
+@conflict texlive_base-<2020
 @bin bin/synctex
 include/synctex/
 include/synctex/synctex_parser.h
