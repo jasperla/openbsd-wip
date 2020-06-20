@@ -118,6 +118,7 @@ pre-configure:
 	${SUBST_CMD} ${WRKSRC}/texmf-dist/scripts/context/stubs/unix/mtxrun
 
 .include "symlinks.mk"
+.include "man_symlinks.mk"
 do-install: tl-symlinks-main tl-symlinks-full tl-symlinks-context
 	mv ${WRKDIST}/texmf-dist ${PREFIX}/share
 
@@ -154,17 +155,13 @@ do-install: tl-symlinks-main tl-symlinks-full tl-symlinks-context
 	# page. This makes a warning at package time about a missing short
 	# description, and furthermore, `mandoc -Tlint` warns that `.so` is
 	# fragile and that we'd be better off using ln(1).
-	#
-	# This script searches for `.so` linked manpages and converts them to
-	# symlinks.
-	python${MODPY_DEFAULT_VERSION_3} ${FILESDIR}/man_symlinks.py \
-		${PREFIX}/man/
+	${MAN_SYMLINKS_CMD}
 
 	# adjust permissions
 	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/{share/texmf*,man/man*/*,info/*}
 
-# selfauto does not work with our legacy texmf paths, patch in paths.
 post-install:
+	# selfauto does not work with our legacy texmf paths, patch in paths.
 	${SUBST_CMD} ${PREFIX}/share/texmf-dist/web2c/texmf.cnf
 	${SUBST_CMD} ${PREFIX}/share/texmf-dist/web2c/texmfcnf.lua
 
@@ -177,9 +174,14 @@ plist: fake
 		${WRKDIR}/texlive.tlpdb | \
 		python${MODPY_DEFAULT_VERSION_3} ${FILESDIR}/write_plists.py
 
-# regenerate adj.mk
+# Regenerate adj.mk. Invoke after `make patch`.
 adj: patch
 	python${MODPY_DEFAULT_VERSION_3} ${FILESDIR}/mk_adj.py \
 		${WRKSRC}/texmf-dist ${WRKSRC} > adj.mk
+
+# Regenerate man_symlinks.mk. Invoke after `make patch`.
+man_symlinks:
+	python${MODPY_DEFAULT_VERSION_3} ${FILESDIR}/mk_man_symlinks.py \
+		${WRKSRC}/texmf-dist/doc/man > man_symlinks.mk
 
 .include <bsd.port.mk>
