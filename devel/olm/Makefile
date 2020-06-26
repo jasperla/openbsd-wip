@@ -19,14 +19,9 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += ${COMPILER_LIBCXX} m
 
 MODULES =	devel/cmake
-USE_GMAKE =	Yes
 
 COMPILER =	base-clang ports-gcc
 
 MAKE_FLAGS =	CXX="${CXX}" CXXFLAGS="${CXXFLAGS}"
-
-do-test:
-	cd ${WRKSRC} && \
-		${MAKE_FLAGS} ${MAKE_PROGRAM} test
 
 .include <bsd.port.mk>
