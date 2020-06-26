@@ -1,7 +1,7 @@
 # $OpenBSD$
 
 COMMENT =	Double Ratchet cryptographic ratchet in C++
-V =		3.1.4
+V =		3.1.5
 DISTNAME =	olm-${V}
 CATEGORIES =	devel security
 
