@@ -1,0 +1,17 @@
+horst is a small, lightweight IEEE802.11 WLAN analyzer with a text
+interface. Its basic function is similar to tcpdump, Wireshark
+or Kismet, but it's much smaller and shows different, aggregated
+information which is not easily available from other tools.
+
+It is made for debugging wireless LANs with a focus on getting a quick
+overview instead of deep packet inspection and has special features
+for Ad-hoc (IBSS) mode and mesh networks. It can be useful to get a
+quick overview of what's occurring on all wireless LAN channels and to
+identify problems.
+
+Note: it is only partially working on OpenBSD. Some features are not
+available as they use Linux 802.11 control methods (including scanning
+multiple channels), some display incorrect information (bytes per
+packet calculations come up with bogus answers), and it's unable to
+see frames with channel widths not available in OpenBSD. Nevertheless
+it still has some uses.

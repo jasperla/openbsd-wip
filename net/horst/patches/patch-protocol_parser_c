@@ -1,0 +1,13 @@
+$OpenBSD$
+
+Index: protocol_parser.c
+--- protocol_parser.c.orig
++++ protocol_parser.c
+@@ -21,6 +21,7 @@
+ #include <string.h>
+ #include <sys/socket.h>
+ #include <net/if_arp.h>
++#include <netinet/in.h>
+ #include <netinet/ip.h>
+ #define __FAVOR_BSD
+ #include <netinet/udp.h>
