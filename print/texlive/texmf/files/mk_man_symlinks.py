@@ -31,7 +31,6 @@ def main(root_dir):
 
 def process_mandir(direc):
     links = []
-    #direc = os.path.join(prefix, "man", man_dir)
     for f in os.scandir(direc):
         if not f.is_file():
             continue

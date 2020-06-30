@@ -8191,4 +8191,6 @@ share/texmf-var/web2c/xetex/pdfcsplain.fmt
 share/texmf-var/web2c/xetex/xelatex-dev.fmt
 share/texmf-var/web2c/xetex/xelatex.fmt
 share/texmf-var/web2c/xetex/xetex.fmt
+share/tlpkg/
+share/tlpkg/texlive.tlpdb
 @tag mktexlsr

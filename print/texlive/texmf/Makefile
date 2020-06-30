@@ -160,13 +160,18 @@ do-install: tl-symlinks-main tl-symlinks-full tl-symlinks-context
 	# adjust permissions
 	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/{share/texmf*,man/man*/*,info/*}
 
+	# texdoc needs a copy of the TLPDB in a specific path.
+	${INSTALL_DATA_DIR} ${PREFIX}/share/tlpkg/
+	${INSTALL_DATA} ${WRKDIR}/texlive.tlpdb ${PREFIX}/share/tlpkg/
+
 post-install:
 	# selfauto does not work with our legacy texmf paths, patch in paths.
 	${SUBST_CMD} ${PREFIX}/share/texmf-dist/web2c/texmf.cnf
 	${SUBST_CMD} ${PREFIX}/share/texmf-dist/web2c/texmfcnf.lua
 
+# The following targets are for development only and require Python3.
+
 # Generating PLISTs is special for TeX Live.
-# This target requires Python3.
 update-plist: plist
 plist: fake
 	env WRKINST=${WRKINST} TRUEPREFIX=${TRUEPREFIX} python${MODPY_DEFAULT_VERSION_3} \
@@ -174,13 +179,13 @@ plist: fake
 		${WRKDIR}/texlive.tlpdb | \
 		python${MODPY_DEFAULT_VERSION_3} ${FILESDIR}/write_plists.py
 
-# Regenerate adj.mk. Invoke after `make patch`.
+# Regenerate adj.mk.
 adj: patch
 	python${MODPY_DEFAULT_VERSION_3} ${FILESDIR}/mk_adj.py \
 		${WRKSRC}/texmf-dist ${WRKSRC} > adj.mk
 
-# Regenerate man_symlinks.mk. Invoke after `make patch`.
-man_symlinks:
+# Regenerate man_symlinks.mk.
+man_symlinks: patch
 	python${MODPY_DEFAULT_VERSION_3} ${FILESDIR}/mk_man_symlinks.py \
 		${WRKSRC}/texmf-dist/doc/man > man_symlinks.mk
 
