@@ -2,7 +2,6 @@
 
 COMMENT =	Audio Normalization
 VERSION =	1.19.1
-MODPY_EGG_VERSION =	${VERSION}
 
 DISTNAME =	v${VERSION}
 PKGNAME =	ffmpeg-normalize-${VERSION}
@@ -23,9 +22,12 @@ MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
 
 WRKDIST =		${WRKDIR}/ffmpeg-normalize-${VERSION}
 
-RUN_DEPENDS =		devel/py-tqdm,python3 \
-					devel/py-colorama,python3 \
+RUN_DEPENDS =		devel/py-tqdm${MODPY_FLAVOR} \
+					devel/py-colorama${MODPY_FLAVOR} \
 					graphics/ffmpeg
-TEST_DEPENDS =		graphics/ffmpeg
+TEST_DEPENDS =		${RUN_DEPENDS}
+
+do-test:
+	cd ${WRKSRC} && ${MODPY_BIN} test/test.py
 
 .include <bsd.port.mk>

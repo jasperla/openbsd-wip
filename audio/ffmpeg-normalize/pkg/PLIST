@@ -1,16 +1,14 @@
 @comment $OpenBSD: PLIST,v$
 bin/ffmpeg-normalize
-lib/python${MODPY_VERSION}/
-lib/python${MODPY_VERSION}/site-packages/
 lib/python${MODPY_VERSION}/site-packages/ffmpeg_normalize/
-lib/python${MODPY_VERSION}/site-packages/ffmpeg_normalize-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
-lib/python${MODPY_VERSION}/site-packages/ffmpeg_normalize-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
-lib/python${MODPY_VERSION}/site-packages/ffmpeg_normalize-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
-lib/python${MODPY_VERSION}/site-packages/ffmpeg_normalize-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
-lib/python${MODPY_VERSION}/site-packages/ffmpeg_normalize-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/entry_points.txt
-lib/python${MODPY_VERSION}/site-packages/ffmpeg_normalize-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/not-zip-safe
-lib/python${MODPY_VERSION}/site-packages/ffmpeg_normalize-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
-lib/python${MODPY_VERSION}/site-packages/ffmpeg_normalize-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/ffmpeg_normalize-1.19.1-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/ffmpeg_normalize-1.19.1-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/ffmpeg_normalize-1.19.1-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/ffmpeg_normalize-1.19.1-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/ffmpeg_normalize-1.19.1-py${MODPY_VERSION}.egg-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/ffmpeg_normalize-1.19.1-py${MODPY_VERSION}.egg-info/not-zip-safe
+lib/python${MODPY_VERSION}/site-packages/ffmpeg_normalize-1.19.1-py${MODPY_VERSION}.egg-info/requires.txt
+lib/python${MODPY_VERSION}/site-packages/ffmpeg_normalize-1.19.1-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/ffmpeg_normalize/__init__.py
 lib/python${MODPY_VERSION}/site-packages/ffmpeg_normalize/__main__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/ffmpeg_normalize/${MODPY_PYCACHE}/
