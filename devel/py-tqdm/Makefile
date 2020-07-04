@@ -23,6 +23,8 @@ MODPY_SETUPTOOLS =	Yes
 FLAVORS =	python3
 FLAVOR =	python3
 
+# The test suite has an idiosyncratic runner and some multi-threaded tests
+# sometimes fail.
 NO_TEST =	Yes
 
 .include <bsd.port.mk>
