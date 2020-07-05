@@ -2,9 +2,8 @@
 
 COMMENT =	Audio Normalization
 
-GH_ACCOUNT =	slhck
-GH_PROJECT =	ffmpeg-normalize
-GH_TAGNAME =	v1.19.1
+MODPY_EGG_VERSION =	1.20.0
+DISTNAME =	ffmpeg-normalize-${MODPY_EGG_VERSION}
 
 CATEGORIES =	audio
 
@@ -15,6 +14,7 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 
+MODPY_PI =	Yes
 MODPY_SETUPTOOLS =	Yes
 MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
 
