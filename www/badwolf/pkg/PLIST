@@ -1,0 +1,27 @@
+@comment $OpenBSD: PLIST,v$
+@bin bin/badwolf
+@man man/man1/badwolf.1
+share/applications/badwolf.desktop
+share/badwolf/
+share/badwolf/interface.css
+share/badwolf/locale/
+share/badwolf/locale/fr/
+share/badwolf/locale/fr/LC_MESSAGES/
+share/badwolf/locale/fr/LC_MESSAGES/Badwolf.mo
+share/badwolf/locale/pt_BR/
+share/badwolf/locale/pt_BR/LC_MESSAGES/
+share/badwolf/locale/pt_BR/LC_MESSAGES/Badwolf.mo
+share/doc/badwolf-1.0.0/
+share/doc/badwolf-1.0.0/KnowledgeBase.md
+share/doc/badwolf-1.0.0/README.md
+share/doc/badwolf-1.0.0/interface.txt
+share/doc/badwolf-1.0.0/usr.bin.badwolf
+share/icons/hicolor/128x128/apps/badwolf.png
+share/icons/hicolor/24x24/apps/badwolf.png
+share/icons/hicolor/256x256/apps/badwolf.png
+share/icons/hicolor/32x32/apps/badwolf.png
+share/icons/hicolor/48x48/apps/badwolf.png
+share/icons/hicolor/64x64/apps/badwolf.png
+share/icons/hicolor/scalable/apps/badwolf.svg
+@tag gtk-update-icon-cache %D/share/icons/hicolor
+@tag update-desktop-database
