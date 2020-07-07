@@ -1,0 +1,10 @@
+Cosmo-engine is a new game engine to play the MS-DOS game "Cosmo's
+Cosmic Adventure" on modern systems. Cosmo's Cosmic Adventure is a
+side-scrolling platform game similar in style to the Commander Keen
+series. The player controls Cosmo, a little alien boy trying to go to
+Disney World with his parents for his birthday.
+
+While this package and the game engine are open source, one still needs
+to provide the original game assets from Cosmo's Cosmic Adventure, which
+is not open source. You will need to purchase the original game to use
+this package.
