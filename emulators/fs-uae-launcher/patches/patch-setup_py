@@ -1,6 +1,8 @@
 $OpenBSD$
---- setup.py.orig	Fri Mar 31 23:48:12 2017
-+++ setup.py	Fri Mar 31 23:51:38 2017
+
+Index: setup.py
+--- setup.py.orig
++++ setup.py
 @@ -5,17 +5,6 @@ if sys.argv[1] == "build_exe":
  else:
      from distutils.core import setup
@@ -20,10 +22,10 @@ $OpenBSD$
  name = "fs-uae-launcher"
  py_name = "fs_uae_launcher"
 @@ -33,7 +22,6 @@ package_map = {
+     "fstd": ".",
+     "fsui": ".",
      "launcher": ".",
-     "OpenGL": ".",
+-    "OpenGL": ".",
      "oyoyo": ".",
--    "six": ".",
      "workspace": ".",
  }
- packages = sorted(package_map.keys())

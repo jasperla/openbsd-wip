@@ -1,11 +1,11 @@
 # $OpenBSD: Makefile,v 1.33 2019/07/26 22:00:42 cwen Exp $
 
-# XXX review old patches.
+# XXX put back cdimage gettimeofday() patch.
 
 BROKEN-alpha =		error: invalid 'asm': invalid %xn code
 
 COMMENT =		modern Amiga emulator
-V =			3.0.2
+V =			3.0.5
 MODPY_EGG_VERSION =	${V}
 DISTNAME =		fs-uae-$V
 CATEGORIES =		emulators
