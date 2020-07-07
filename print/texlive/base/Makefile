@@ -21,17 +21,17 @@ SHARED_LIBS +=		ptexenc		5.3 # 4.8
 SHARED_LIBS +=		synctex		3.0 # 2.0
 SHARED_LIBS +=		texlua53        0.1 # 8.5
 
-#WANTLIB-main += ${COMPILER_LIBCXX} ICE SM X11 Xau Xaw Xdmcp Xext Xi
-#WANTLIB-main += Xmu Xpm Xrender Xt avahi-client avahi-common c cairo
-#WANTLIB-main += cups dbus-1 expat ffi fontconfig freetype gd glib-2.0
-#WANTLIB-main += gmp gnutls graphite2 gs harfbuzz hogweed iconv icudata
-#WANTLIB-main += icui18n icuio icuuc idn2 ijs intl jbig2dec jpeg kpathsea
-#WANTLIB-main += lcms2 lzma m nettle p11-kit paper pixman-1 png tasn1
-#WANTLIB-main += tiff unistring webp xcb xcb-render xcb-shm z zstd zzip
-#
-#WANTLIB-mktexlsr = c
-#
-#WANTLIB-synctex = c m z
+WANTLIB += ${COMPILER_LIBCXX} ICE SM X11 Xau Xaw Xdmcp Xext Xi
+WANTLIB += Xmu Xpm Xrender Xt avahi-client avahi-common c cairo
+WANTLIB += cups dbus-1 expat ffi fontconfig freetype gd glib-2.0
+WANTLIB += gmp gnutls graphite2 gs harfbuzz hogweed iconv icudata
+WANTLIB += icui18n icuio icuuc idn2 ijs intl jbig2dec jpeg kpathsea
+WANTLIB += lcms2 lzma m nettle p11-kit paper pixman-1 png tasn1
+WANTLIB += tiff unistring webp xcb xcb-render xcb-shm z zstd zzip
+
+WANTLIB-mktexlsr += c
+
+WANTLIB-synctex += c m z
 
 RUN_DEPENDS-main =	print/ghostscript/gnu \
 			print/detex \

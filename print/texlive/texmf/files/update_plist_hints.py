@@ -143,7 +143,7 @@ def build_subset_file_lists(tlpdb):
         ]
     buildset_files, buildset_symlinks = \
         collect_files(runspecs(buildset_pkgs), db)
-    # Man and info files from the builset carry forward to the minimal set.
+    # Man and info files from the buildset carry forward to the minimal set.
     buildset_doc_files, _ = \
         collect_files(docspecs(buildset_pkgs), db, MANS_INFOS_RE)
 
