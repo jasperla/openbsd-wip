@@ -1,3 +1,0 @@
-@comment $OpenBSD: PLIST,v$
-@shell bin/ash
-@man man/man1/ash.1

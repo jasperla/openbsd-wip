@@ -1,3 +1,0 @@
-@comment $OpenBSD: PLIST,v$
-include/wordexp.h
-@static-lib lib/libwordexp.a
