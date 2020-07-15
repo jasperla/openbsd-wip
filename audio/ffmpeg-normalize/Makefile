@@ -1,6 +1,6 @@
 # $OpenBSD$
 
-COMMENT =		Audio Normalization
+COMMENT =		audio normalization
 
 MODPY_EGG_VERSION =	1.20.0
 DISTNAME =		ffmpeg-normalize-${MODPY_EGG_VERSION}

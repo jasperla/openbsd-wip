@@ -1,6 +1,6 @@
 # $OpenBSD$
 
-COMMENT =		Progress Bar for Python
+COMMENT =		progress bar for Python
 
 MODPY_EGG_VERSION =	4.47.0
 DISTNAME =		tqdm-${MODPY_EGG_VERSION}
