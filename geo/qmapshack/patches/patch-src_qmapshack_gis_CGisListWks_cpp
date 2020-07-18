@@ -1,0 +1,14 @@
+$OpenBSD$
+
+Index: src/qmapshack/gis/CGisListWks.cpp
+--- src/qmapshack/gis/CGisListWks.cpp.orig
++++ src/qmapshack/gis/CGisListWks.cpp
+@@ -20,7 +20,7 @@
+ 
+ #include "canvas/CCanvas.h"
+ #include "CMainWindow.h"
+-#if defined(Q_OS_LINUX) || defined(Q_OS_FREEBSD)
++#if defined(Q_OS_LINUX) || defined(Q_OS_FREEBSD) || defined (Q_OS_OPENBSD)
+ #include "device/CDeviceWatcherLinux.h"
+ #endif
+ #ifdef Q_OS_WIN

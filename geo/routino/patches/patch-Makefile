@@ -1,0 +1,14 @@
+$OpenBSD$
+
+Index: Makefile
+--- Makefile.orig
++++ Makefile
+@@ -24,7 +24,7 @@ include Makefile.conf
+ 
+ # Sub-directories and sub-makefiles
+ 
+-SUBDIRS=src xml doc web extras python
++SUBDIRS=src xml doc web extras
+ 
+ ########
+ 
