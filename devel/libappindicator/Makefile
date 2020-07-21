@@ -8,7 +8,7 @@ CATEGORIES =	devel
 SHARED_LIBS +=	appindicator3              0.0 # 1.0
 
 HOMPAGE =	https://launchpad.net/libappindicator
-MAINTAINER =	Brian Callahan <bcallah@devio.us>
+MAINTAINER =	Laurence Tratt <laurie@tratt.net>
 
 # LGPLv3+
 PERMIT_PACKAGE =	Yes

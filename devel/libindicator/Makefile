@@ -8,7 +8,7 @@ CATEGORIES =	devel
 SHARED_LIBS +=	indicator3                0.0 # 7.0
 
 HOMPAGE =	https://launchpad.net/libindicator
-MAINTAINER =	Brian Callahan <bcallah@devio.us>
+MAINTAINER =	Laurence Tratt <laurie@tratt.net>
 
 # GPLv3 only
 PERMIT_PACKAGE =	Yes
