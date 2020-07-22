@@ -64,8 +64,7 @@ SEPARATE_BUILD =	Yes
 
 MODCARGO_RUSTFLAGS =	-L${X11BASE}/lib
 
-do-install:
-	${INSTALL_PROGRAM} ${MODCARGO_TARGET_DIR}/release/xcolor ${PREFIX}/bin/
+post-install:
 	${INSTALL_MAN} ${WRKSRC}/man/xcolor.1 ${PREFIX}/man/man1/
 
 .include <bsd.port.mk>
