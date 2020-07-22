@@ -8,6 +8,8 @@ GH_TAGNAME =	0.4.0
 
 CATEGORIES =	x11
 
+HOMEPAGE =	https://soft.github.io/xcolor/
+
 MAINTAINER =	Laurence Tratt <laurie@tratt.net>
 
 # MIT
@@ -65,6 +67,7 @@ SEPARATE_BUILD =	Yes
 MODCARGO_RUSTFLAGS =	-L${X11BASE}/lib
 
 post-install:
+	rm -f ${PREFIX}/.crates2.json
 	${INSTALL_MAN} ${WRKSRC}/man/xcolor.1 ${PREFIX}/man/man1/
 
 .include <bsd.port.mk>
