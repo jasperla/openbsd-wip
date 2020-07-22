@@ -12,7 +12,7 @@ HOMEPAGE =	https://github.com/bk138/gromit-mpx
 
 MAINTAINER =	Laurence Tratt <laurie@tratt.net>
 
-# GPLv2
+# GPLv2+
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += X11 Xi appindicator3 atk-1.0 c cairo cairo-gobject
@@ -23,7 +23,9 @@ MODULES =	devel/cmake
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		x11/gtk+3,-guic
-LIB_DEPENDS =	devel/libappindicator \
+LIB_DEPENDS =	x11/libappindicator \
 		x11/gtk+3
+
+NO_TEST =	Yes
 
 .include <bsd.port.mk>

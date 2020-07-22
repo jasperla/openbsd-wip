@@ -1,8 +1,8 @@
 # $OpenBSD$
 
-V =		12.10
+V =		12.10.1
 COMMENT =	convenience functions for desktop indicators
-DISTNAME =	libindicator-${V}.1
+DISTNAME =	libindicator-${V}
 CATEGORIES =	x11
 
 SHARED_LIBS +=	indicator3                0.0 # 7.0
@@ -21,7 +21,7 @@ WANTLIB += gtk-3 harfbuzz iconv intl m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread xcb xcb-render
 WANTLIB += xcb-shm z
 
-MASTER_SITES =	https://launchpad.net/libindicator/${V}/${V}.1/+download/
+MASTER_SITES =  https://launchpad.net/libindicator/${V:R}/${V}/+download/
 
 LIB_DEPENDS =	x11/gtk+3
 
@@ -29,5 +29,7 @@ CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS =	--with-gtk=3
 
 USE_GMAKE =	Yes
+
+NO_TEST =	Yes
 
 .include <bsd.port.mk>
