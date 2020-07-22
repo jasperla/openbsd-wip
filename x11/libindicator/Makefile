@@ -3,7 +3,7 @@
 V =		12.10
 COMMENT =	convenience functions for desktop indicators
 DISTNAME =	libindicator-${V}.1
-CATEGORIES =	devel
+CATEGORIES =	x11
 
 SHARED_LIBS +=	indicator3                0.0 # 7.0
 

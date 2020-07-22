@@ -3,7 +3,7 @@
 V =		12.10
 COMMENT =	library for exporting menus to a desktop environment
 DISTNAME =	libappindicator-${V}.0
-CATEGORIES =	devel
+CATEGORIES =	x11
 
 SHARED_LIBS +=	appindicator3              0.0 # 1.0
 
