@@ -8,8 +8,6 @@ GH_TAGNAME =	0.4.0
 
 CATEGORIES =	x11
 
-HOMEPAGE =	https://soft.github.io/xcolor/
-
 MAINTAINER =	Laurence Tratt <laurie@tratt.net>
 
 # MIT
@@ -64,6 +62,10 @@ MODCARGO_CRATES +=	xcb	0.8.2	# MIT
 CONFIGURE_STYLE =	cargo
 SEPARATE_BUILD =	Yes
 
-MODCARGO_RUSTFLAGS =	-L /usr/X11R6/lib/
+MODCARGO_RUSTFLAGS =	-L${X11BASE}/lib
+
+do-install:
+	${INSTALL_PROGRAM} ${MODCARGO_TARGET_DIR}/release/xcolor ${PREFIX}/bin/
+	${INSTALL_MAN} ${WRKSRC}/man/xcolor.1 ${PREFIX}/man/man1/
 
 .include <bsd.port.mk>
