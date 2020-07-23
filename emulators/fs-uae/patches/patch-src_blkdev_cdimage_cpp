@@ -1,4 +1,4 @@
-$OpenBSD$
+$OpenBSD: patch-src_blkdev_cdimage_cpp,v 1.1 2013/12/02 16:32:12 naddy Exp $
 
 Use gettimeofday().
 

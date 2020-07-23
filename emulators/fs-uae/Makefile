@@ -1,6 +1,9 @@
-# $OpenBSD: Makefile,v 1.33 2019/07/26 22:00:42 cwen Exp $
+# $OpenBSD: Makefile,v 1.34 2020/02/13 15:57:00 kmos Exp $
 
 BROKEN-alpha =		error: invalid 'asm': invalid %xn code
+
+# Amiga FPU initialisation uses RWX pages, maybe other cases too.
+USE_WXNEEDED =		Yes
 
 COMMENT =		modern Amiga emulator
 V =			3.0.5
@@ -33,19 +36,23 @@ RUN_DEPENDS =		devel/desktop-file-utils \
 CONFIGURE_STYLE =	gnu
 USE_GMAKE =		Yes
 
+.include <bsd.port.arch.mk>
+.if ${PROPERTIES:Mclang}
+CXXFLAGS =		-std=gnu++03
+.endif
+
+.if ${MACHINE} == "sparc64"
+CXXFLAGS +=		-fpermissive
+.endif
+
 CONFIGURE_ARGS =	--disable-jit \
 			--disable-slirp
-
-CXXFLAGS +=		-std=gnu++03
 
 # Build system fails to pass down flags to include OpenAL stuff.
 CFLAGS +=		-DHAVE_AL_AL_H -DHAVE_AL_ALC_H
 
 MAKE_FLAGS +=		prefix=${PREFIX} CXXFLAGS="${CXXFLAGS}"
 MAKE_FLAGS +=		CFLAGS="${CFLAGS}" CXX="${CXX}"
-
-# Amiga FPU initialisation uses RWX pages, maybe other cases too.
-USE_WXNEEDED =		Yes
 
 NO_TEST =		Yes
 
