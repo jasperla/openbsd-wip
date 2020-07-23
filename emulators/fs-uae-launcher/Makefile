@@ -16,30 +16,31 @@ MASTER_SITES =		https://fs-uae.net/stable/${MODPY_EGG_VERSION}/
 MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 
 MODULES =		lang/python
+
+# fs-uae-launcher has some bundled Python deps in its distfifle:
+#
+#  - OpenGL: We don't install. We use py-opengl from the ports tree instead.
+#
+#  - amitools: XXX make a port edd...
+#
+#  - oyoyo: At the time of writing is at version 0.0.0dev (since 2012) so it
+#    hardly seems worth making a port for.
 RUN_DEPENDS =		emulators/fs-uae \
 			devel/pygame${MODPY_FLAVOR} \
 			devel/py-six${MODPY_FLAVOR} \
 			x11/py-qt5${MODPY_FLAVOR} \
 			graphics/py-opengl${MODPY_FLAVOR}
 
-# A note on bundled deps.
-#
-# fs-uae-launcher has some bundled Python deps in its distfifle:
-#
-#  - OpenGL: We don't install. We use py-opengl from the ports tree instead.
-#
-#  - amitools: probably niche enough to not require a separate port. If
-#     another port comes along that needs amitools later, we can split it out.
-#
-#  - oyoyo: At the time of writing is at version 0.0.0dev (since 2012) so it
-#    hardly seems worth making a port for.
-#
-# Note that the modules `arcade`, `workspace` and `launcher` are original
-# fs-uae-launcher components. I've raised an issue asking these be prefixed
-# `fs` like the other original components, as all three of these modules names
-# clash with unrelated modules on PyPI.
-#
-# https://github.com/FrodeSolheim/fs-uae-launcher/issues/85
+# fs-uae shouldn't be installed into the system Python tree as it contains some
+# modules whose names clash with unrelated modules on PyPI (arcade, workspace,
+# launcher). To avoid future name clashes, we install into a separate location
+# and patch the binary to update the PYTHONPATH.
+FS_PYTHONPATH=${TRUEPREFIX}/share/fs-uae-launcher/python${MODPY_VERSION}
+MODPY_DISTUTILS_INSTALLARGS += --install-lib=${FS_PYTHONPATH}
+SUBST_VARS += FS_PYTHONPATH
+
+post-install:
+	${SUBST_CMD} ${PREFIX}/bin/fs-uae-launcher
 
 NO_TEST =		Yes
 
