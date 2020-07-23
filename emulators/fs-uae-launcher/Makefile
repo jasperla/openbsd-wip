@@ -22,6 +22,25 @@ RUN_DEPENDS =		emulators/fs-uae \
 			x11/py-qt5${MODPY_FLAVOR} \
 			graphics/py-opengl${MODPY_FLAVOR}
 
+# A note on bundled deps.
+#
+# fs-uae-launcher has some bundled Python deps in its distfifle:
+#
+#  - OpenGL: We don't install. We use py-opengl from the ports tree instead.
+#
+#  - amitools: probably niche enough to not require a separate port. If
+#     another port comes along that needs amitools later, we can split it out.
+#
+#  - oyoyo: At the time of writing is at version 0.0.0dev (since 2012) so it
+#    hardly seems worth making a port for.
+#
+# Note that the modules `arcade`, `workspace` and `launcher` are original
+# fs-uae-launcher components. I've raised an issue asking these be prefixed
+# `fs` like the other original components, as all three of these modules names
+# clash with unrelated modules on PyPI.
+#
+# https://github.com/FrodeSolheim/fs-uae-launcher/issues/85
+
 NO_TEST =		Yes
 
 .include <bsd.port.mk>
