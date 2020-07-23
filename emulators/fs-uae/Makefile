@@ -1,7 +1,5 @@
 # $OpenBSD: Makefile,v 1.33 2019/07/26 22:00:42 cwen Exp $
 
-# XXX put back cdimage gettimeofday() patch.
-
 BROKEN-alpha =		error: invalid 'asm': invalid %xn code
 
 COMMENT =		modern Amiga emulator
@@ -38,14 +36,16 @@ USE_GMAKE =		Yes
 CONFIGURE_ARGS =	--disable-jit \
 			--disable-slirp
 
-# Fixes "error: C++ requires a type specifier for all declarations".
-# XXX -fpermissive probably isn't needed.
-CXXFLAGS +=		-fpermissive -std=gnu++03
+CXXFLAGS +=		-std=gnu++03
+
 # Build system fails to pass down flags to include OpenAL stuff.
 CFLAGS +=		-DHAVE_AL_AL_H -DHAVE_AL_ALC_H
 
 MAKE_FLAGS +=		prefix=${PREFIX} CXXFLAGS="${CXXFLAGS}"
 MAKE_FLAGS +=		CFLAGS="${CFLAGS}" CXX="${CXX}"
+
+# Amiga FPU initialisation uses RWX pages, maybe other cases too.
+USE_WXNEEDED =		Yes
 
 NO_TEST =		Yes
 
