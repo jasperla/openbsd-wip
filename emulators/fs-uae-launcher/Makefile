@@ -36,6 +36,8 @@ RUN_DEPENDS =		emulators/fs-uae \
 # modules whose names clash with unrelated modules on PyPI (arcade, workspace,
 # launcher). To avoid future name clashes, we install into a custom location
 # and patch the top-level script to update the PYTHONPATH.
+#
+# https://github.com/FrodeSolheim/fs-uae-launcher/issues/85
 FS_PYTHONPATH=${TRUEPREFIX}/share/fs-uae-launcher/python${MODPY_VERSION}
 MODPY_DISTUTILS_INSTALLARGS += --install-lib=${FS_PYTHONPATH}
 SUBST_VARS += FS_PYTHONPATH

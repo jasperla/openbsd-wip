@@ -5,6 +5,8 @@ Use gettimeofday().
 Without this, fs-uae would insert a dummy interval on account of us not having
 _ftime().
 
+https://github.com/FrodeSolheim/fs-uae/issues/233
+
 Index: src/blkdev_cdimage.cpp
 --- src/blkdev_cdimage.cpp.orig
 +++ src/blkdev_cdimage.cpp

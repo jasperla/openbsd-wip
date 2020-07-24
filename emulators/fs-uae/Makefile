@@ -3,6 +3,7 @@
 BROKEN-alpha =		error: invalid 'asm': invalid %xn code
 
 # Amiga FPU initialisation uses RWX pages, maybe other cases too.
+# https://github.com/FrodeSolheim/fs-uae/issues/232
 USE_WXNEEDED =		Yes
 
 COMMENT =		modern Amiga emulator
