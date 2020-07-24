@@ -17,11 +17,12 @@ MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 
 MODULES =		lang/python
 
-# fs-uae-launcher has some bundled Python deps in its distfifle:
+# The fs-uae-launcher distfile contains some bundled Python deps:
 #
-#  - OpenGL: We don't install. We use py-opengl from the ports tree instead.
+#  - OpenGL: We use py-opengl from the ports tree instead.
 #
-#  - amitools: XXX make a port edd...
+#  - A modified (stripped down) version amitools: For now we do use this, but
+#    if a dedicated port of amitools appears later, we can use it instead.
 #
 #  - oyoyo: At the time of writing is at version 0.0.0dev (since 2012) so it
 #    hardly seems worth making a port for.
@@ -33,8 +34,8 @@ RUN_DEPENDS =		emulators/fs-uae \
 
 # fs-uae shouldn't be installed into the system Python tree as it contains some
 # modules whose names clash with unrelated modules on PyPI (arcade, workspace,
-# launcher). To avoid future name clashes, we install into a separate location
-# and patch the binary to update the PYTHONPATH.
+# launcher). To avoid future name clashes, we install into a custom location
+# and patch the top-level script to update the PYTHONPATH.
 FS_PYTHONPATH=${TRUEPREFIX}/share/fs-uae-launcher/python${MODPY_VERSION}
 MODPY_DISTUTILS_INSTALLARGS += --install-lib=${FS_PYTHONPATH}
 SUBST_VARS += FS_PYTHONPATH
