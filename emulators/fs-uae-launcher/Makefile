@@ -32,10 +32,10 @@ RUN_DEPENDS =		emulators/fs-uae \
 			x11/py-qt5${MODPY_FLAVOR} \
 			graphics/py-opengl${MODPY_FLAVOR}
 
-# fs-uae shouldn't be installed into the system Python tree as it contains some
-# modules whose names clash with unrelated modules on PyPI (arcade, workspace,
-# launcher). To avoid future name clashes, we install into a custom location
-# and patch the top-level script to update the PYTHONPATH.
+# fs-uae-launcher shouldn't be installed into the system Python tree as it
+# contains some modules whose names clash with unrelated modules on PyPI
+# (arcade, workspace, launcher). To avoid future name clashes, we install into
+# a custom location and patch the top-level script to update the PYTHONPATH.
 #
 # https://github.com/FrodeSolheim/fs-uae-launcher/issues/85
 FS_PYTHONPATH=${TRUEPREFIX}/share/fs-uae-launcher/python${MODPY_VERSION}
