@@ -30,7 +30,8 @@ RUN_DEPENDS =		emulators/fs-uae \
 			devel/pygame${MODPY_FLAVOR} \
 			devel/py-six${MODPY_FLAVOR} \
 			x11/py-qt5${MODPY_FLAVOR} \
-			graphics/py-opengl${MODPY_FLAVOR}
+			graphics/py-opengl${MODPY_FLAVOR} \
+			www/py-requests${MODPY_FLAVOR}
 
 # fs-uae-launcher shouldn't be installed into the system Python tree as it
 # contains some modules whose names clash with unrelated modules on PyPI
