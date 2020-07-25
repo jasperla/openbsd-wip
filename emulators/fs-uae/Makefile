@@ -25,7 +25,8 @@ COMPILER =		base-clang ports-gcc base-gcc
 
 MASTER_SITES =		${HOMEPAGE}stable/$V/
 
-BUILD_DEPENDS =		devel/gettext,-tools
+BUILD_DEPENDS =		devel/gettext,-tools \
+			archivers/zip
 LIB_DEPENDS =		devel/sdl2 \
 			graphics/png \
 			graphics/libmpeg2 \
