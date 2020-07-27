@@ -42,7 +42,7 @@ Index: gold/layout.cc
  }
  
  // Make an output section for a script.
-@@ -5010,6 +5032,10 @@ Layout::create_interp(const Target* target)
+@@ -5013,6 +5035,10 @@ Layout::create_interp(const Target* target)
    gold_assert(this->interp_segment_ == NULL);
  
    const char* interp = parameters->options().dynamic_linker();
@@ -53,7 +53,7 @@ Index: gold/layout.cc
    if (interp == NULL)
      {
        interp = target->dynamic_linker();
-@@ -5716,6 +5742,10 @@ Layout::make_output_segment(elfcpp::Elf_Word type, elf
+@@ -5721,6 +5747,10 @@ Layout::make_output_segment(elfcpp::Elf_Word type, elf
      this->relro_segment_ = oseg;
    else if (type == elfcpp::PT_INTERP)
      this->interp_segment_ = oseg;

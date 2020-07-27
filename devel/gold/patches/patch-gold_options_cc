@@ -15,7 +15,7 @@ Index: gold/options.cc
      icf_status_(ICF_NONE),
      static_(false),
      do_demangle_(false),
-@@ -1123,6 +1124,13 @@ General_options::finalize()
+@@ -1124,6 +1125,13 @@ General_options::finalize()
    else if (this->noexecstack())
      this->set_execstack_status(EXECSTACK_NO);
  
@@ -29,7 +29,7 @@ Index: gold/options.cc
    // icf_status_ is a three-state variable; update it based on the
    // value of this->icf().
    if (strcmp(this->icf(), "none") == 0)
-@@ -1293,6 +1301,7 @@ General_options::finalize()
+@@ -1307,6 +1315,7 @@ General_options::finalize()
    // Now that we've normalized the options, check for contradictory ones.
    if (this->shared() && this->is_static())
      gold_fatal(_("-shared and -static are incompatible"));
@@ -37,7 +37,7 @@ Index: gold/options.cc
    if (this->shared() && this->pie())
      gold_fatal(_("-shared and -pie are incompatible"));
    if (this->pie() && this->is_static())
-@@ -1302,6 +1311,7 @@ General_options::finalize()
+@@ -1316,6 +1325,7 @@ General_options::finalize()
      gold_fatal(_("-shared and -r are incompatible"));
    if (this->pie() && this->relocatable())
      gold_fatal(_("-pie and -r are incompatible"));

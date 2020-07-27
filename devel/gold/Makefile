@@ -4,8 +4,8 @@ ONLY_FOR_ARCHS =	${LLVM_ARCHS}
 
 # gold does not follow binutils version numbering
 COMMENT =	GNU ELF-only linker
-DISTNAME =	binutils-2.34
-PKGNAME =	gold-1.16pl1
+DISTNAME =	binutils-2.35
+PKGNAME =	gold-1.16pl2
 CATEGORIES =	devel
 
 HOMEPAGE =	https://sourceware.org/binutils/
@@ -50,9 +50,11 @@ CONFIGURE_ARGS +=	--disable-as \
 CONFIGURE_ARGS +=	--enable-default-hash-style=both
 .endif
 
-LIBTOOL_FLAGS =	--tag=disable-shared
+USE_GMAKE =	Yes
 
 NO_TEST =	Yes
+
+LIBTOOL_FLAGS =	--tag=disable-shared
 
 # Link gold with gold, as a test to ensure it is working.
 # Do a three-way link, to make sure that gold linked with
