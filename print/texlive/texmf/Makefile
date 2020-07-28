@@ -6,6 +6,8 @@ COMMENT-full =		texlive texmf for extra macros
 COMMENT-main =		texlive texmf for basic functionality
 COMMENT-buildset =	smallest texlive texmf for building ports
 
+# Please do not directly edit the PLIST files. They are auto-generated.
+#
 # If you move things out of another texmf into the buildset, don't forget to:
 #   * Update the buildset conflict markers in PLIST-buildset.
 #   * Add a more restrictive RUN_DEPEND upon the buildset.
@@ -117,6 +119,9 @@ pre-configure:
 	# This file contains a lookup table of interpreter paths
 	${SUBST_CMD} ${WRKSRC}/texmf-dist/scripts/context/stubs/unix/mtxrun
 
+# Note that the engine symlinks will cause warnings about dead symlinks at
+# package time. This is because the symlinks point outside of the texmf
+# packages (to texlive_base). The warnings are harmless and can be disregarded.
 .include "symlinks.mk"
 .include "man_symlinks.mk"
 do-install: tl-symlinks-main tl-symlinks-full tl-symlinks-context
