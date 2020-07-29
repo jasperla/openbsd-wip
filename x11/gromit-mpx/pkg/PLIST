@@ -1,20 +1,14 @@
 @comment $OpenBSD: PLIST,v$
 @bin bin/gromit-mpx
-etc/
-etc/gromit-mpx/
-etc/gromit-mpx/gromit-mpx.cfg
 @man man/man1/gromit-mpx.1
-share/applications/
 share/applications/gromit-mpx.desktop
 share/doc/gromit-mpx/
 share/doc/gromit-mpx/AUTHORS
 share/doc/gromit-mpx/ChangeLog
 share/doc/gromit-mpx/NEWS
 share/doc/gromit-mpx/README.md
-share/icons/
-share/icons/hicolor/
-share/icons/hicolor/scalable/
-share/icons/hicolor/scalable/apps/
+share/examples/gromit-mpx/
+share/examples/gromit-mpx/gromit-mpx.cfg
 share/icons/hicolor/scalable/apps/gromit-mpx.svg
 share/pixmaps/
 share/pixmaps/gromit-mpx.png

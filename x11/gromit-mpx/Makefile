@@ -21,6 +21,8 @@ WANTLIB += harfbuzz intl m pango-1.0 pangocairo-1.0
 
 MODULES =	devel/cmake
 
+CONFIGURE_ARGS =	-DCMAKE_INSTALL_SYSCONFDIR=share/examples
+
 RUN_DEPENDS =	devel/desktop-file-utils \
 		x11/gtk+3,-guic
 LIB_DEPENDS =	x11/libappindicator \
