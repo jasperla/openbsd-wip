@@ -4,7 +4,7 @@ COMMENT =	draw annotations on X11
 
 GH_ACCOUNT =	bk138
 GH_PROJECT =	gromit-mpx
-GH_TAGNAME =	1.3
+GH_TAGNAME =	1.3.1
 
 CATEGORIES =	x11
 
@@ -16,8 +16,8 @@ MAINTAINER =	Laurence Tratt <laurie@tratt.net>
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += X11 Xi appindicator3 atk-1.0 c cairo cairo-gobject
-WANTLIB += gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0 gtk-3
-WANTLIB += harfbuzz intl m pango-1.0 pangocairo-1.0
+WANTLIB += dbusmenu-glib gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0
+WANTLIB += gobject-2.0 gtk-3 harfbuzz intl m pango-1.0 pangocairo-1.0
 
 MODULES =	devel/cmake
 
@@ -29,5 +29,8 @@ LIB_DEPENDS =	x11/libappindicator \
 		x11/gtk+3
 
 NO_TEST =	Yes
+
+post-install:
+	rm -f ${PREFIX}/share/doc/gromit-mpx/ChangeLog
 
 .include <bsd.port.mk>

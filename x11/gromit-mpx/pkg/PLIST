@@ -4,8 +4,7 @@
 share/applications/gromit-mpx.desktop
 share/doc/gromit-mpx/
 share/doc/gromit-mpx/AUTHORS
-share/doc/gromit-mpx/ChangeLog
-share/doc/gromit-mpx/NEWS
+share/doc/gromit-mpx/NEWS.md
 share/doc/gromit-mpx/README.md
 share/examples/gromit-mpx/
 share/examples/gromit-mpx/gromit-mpx.cfg
