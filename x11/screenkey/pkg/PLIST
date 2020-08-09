@@ -14,19 +14,14 @@ lib/python${MODPY_VERSION}/site-packages/Screenkey/keysyms.py
 lib/python${MODPY_VERSION}/site-packages/Screenkey/labelmanager.py
 lib/python${MODPY_VERSION}/site-packages/Screenkey/screenkey.py
 lib/python${MODPY_VERSION}/site-packages/Screenkey/xlib.py
-lib/python${MODPY_VERSION}/site-packages/screenkey-1.1-py${MODPY_VERSION}.egg-info/
-lib/python${MODPY_VERSION}/site-packages/screenkey-1.1-py${MODPY_VERSION}.egg-info/PKG-INFO
-lib/python${MODPY_VERSION}/site-packages/screenkey-1.1-py${MODPY_VERSION}.egg-info/SOURCES.txt
-lib/python${MODPY_VERSION}/site-packages/screenkey-1.1-py${MODPY_VERSION}.egg-info/dependency_links.txt
-lib/python${MODPY_VERSION}/site-packages/screenkey-1.1-py${MODPY_VERSION}.egg-info/requires.txt
-lib/python${MODPY_VERSION}/site-packages/screenkey-1.1-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/screenkey-1.2-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/screenkey-1.2-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/screenkey-1.2-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/screenkey-1.2-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/screenkey-1.2-py${MODPY_VERSION}.egg-info/requires.txt
+lib/python${MODPY_VERSION}/site-packages/screenkey-1.2-py${MODPY_VERSION}.egg-info/top_level.txt
 share/applications/screenkey.desktop
 share/doc/screenkey/
 share/doc/screenkey/NEWS.rst
 share/doc/screenkey/README.rst
-share/locale/ca/LC_MESSAGES/screenkey.mo
-share/locale/es/LC_MESSAGES/screenkey.mo
-share/locale/fr/LC_MESSAGES/screenkey.mo
-share/locale/uk/LC_MESSAGES/screenkey.mo
 @tag update-desktop-database
-share/locale/zh_CN/LC_MESSAGES/screenkey.mo
