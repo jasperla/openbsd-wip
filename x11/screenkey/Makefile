@@ -25,6 +25,8 @@ RUN_DEPENDS +=		devel/desktop-file-utils \
 			graphics/py-cairo${MODPY_FLAVOR} \
 			x11/py-xlib${MODPY_FLAVOR}
 
+NO_TEST =		Yes
+
 pre-build:
 	rm -rf ${WRKSRC}/po
 
