@@ -32,13 +32,15 @@ PKG_ARCH =		*
 BUILD_DEPENDS =		archivers/xz
 
 # We dont use auto module deps for these, as MODULES is not per SUBPACKAGE
-.include "adj.mk"
-MODULES +=		lang/ruby lang/python
-MODRUBY_REV =		1.8
+MODULES +=		lang/lua lang/ruby lang/python x11/tk perl
+MODLUA_RUNDEP =		No
+MODLUA_BUILDDEP =	No
 MODRUBY_BUILDDEP =	No
 MODRUBY_RUNDEP =	No
 MODPY_BUILDDEP =	No
 MODPY_RUNDEP =		No
+
+.include "adj.mk"
 
 RUN_DEPENDS-main +=	texlive_base->=${V}:print/texlive/base,-main \
 			${FULLPKGNAME-buildset}:print/texlive/texmf,-buildset
@@ -53,24 +55,16 @@ RUN_DEPENDS-buildset +=	texlive_mktexlsr->=${V}:print/texlive/base,-mktexlsr
 
 MULTI_PACKAGES =	-context -docs -full -main -buildset
 
-MODULES +=		lang/lua lang/ruby lang/python x11/tk perl
-MODLUA_RUNDEP =		No
-MODLUA_BUILDDEP =	No
 MODRUBY_REV =		1.8
-MODRUBY_BUILDDEP =	No
-MODRUBY_RUNDEP =	No
-MODPY_BUILDDEP =	No
-MODPY_RUNDEP =		No
-
 SUBST_VARS +=		RUBY
 
 WRKDIST =		${WRKDIR}/texlive-${DIST_V}-texmf
 
-# Substitute correct interpreter paths into scripts and deal with linked manuals.
-# Some interpreter paths are done automatically by MODULES.
+# Substitute correct interpreter paths into scripts and deal with linked
+# manuals.  Some interpreter paths are done automatically by MODULES.
 pre-configure:
-	@# Don't use substitution from the Python port, since we need to swap in
-	@# different versions.
+	@# Don't use substitution from the Python port, since we need to swap
+	@# in @# different versions.
 	for F in ${PYTHON2_ADJ_FILES}; do \
 	    perl -pi \
 	    -e '$$. == 1 && s|^.*env python[0-9.]*([\s].*)?$$|\#!${LOCALBASE}/bin/python${MODPY_DEFAULT_VERSION_2}$$1|;' \
@@ -163,7 +157,8 @@ do-install: tl-symlinks-main tl-symlinks-full tl-symlinks-context
 	${MAN_SYMLINKS_CMD}
 
 	# adjust permissions
-	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/{share/texmf*,man/man*/*,info/*}
+	chown -R ${SHAREOWN}:${SHAREGRP} \
+		${PREFIX}/{share/texmf*,man/man*/*,info/*}
 
 	# texdoc needs a copy of the TLPDB in a specific path.
 	${INSTALL_DATA_DIR} ${PREFIX}/share/tlpkg/
@@ -179,7 +174,8 @@ post-install:
 # Generating PLISTs is special for TeX Live.
 update-plist: plist
 plist: fake
-	env WRKINST=${WRKINST} TRUEPREFIX=${TRUEPREFIX} python${MODPY_DEFAULT_VERSION_3} \
+	env WRKINST=${WRKINST} TRUEPREFIX=${TRUEPREFIX} \
+		python${MODPY_DEFAULT_VERSION_3} \
 		${FILESDIR}/update_plist_hints.py \
 		${WRKDIR}/texlive.tlpdb | \
 		python${MODPY_DEFAULT_VERSION_3} ${FILESDIR}/write_plists.py

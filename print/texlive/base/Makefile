@@ -26,7 +26,7 @@ WANTLIB += Xmu Xpm Xrender Xt avahi-client avahi-common c cairo
 WANTLIB += cups dbus-1 expat ffi fontconfig freetype gd glib-2.0
 WANTLIB += gmp gnutls graphite2 gs harfbuzz hogweed iconv icudata
 WANTLIB += icui18n icuio icuuc idn2 ijs intl jbig2dec jpeg kpathsea
-WANTLIB += lcms2 lzma m nettle p11-kit paper pixman-1 png tasn1
+WANTLIB += lcms2 lzma m nettle p11-kit paper pcre pixman-1 png tasn1
 WANTLIB += tiff unistring webp xcb xcb-render xcb-shm z zstd zzip
 
 WANTLIB-mktexlsr += c
