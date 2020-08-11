@@ -27,7 +27,4 @@ RUN_DEPENDS +=		devel/desktop-file-utils \
 
 NO_TEST =		Yes
 
-pre-build:
-	rm -rf ${WRKSRC}/po
-
 .include <bsd.port.mk>
