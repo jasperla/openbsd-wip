@@ -1,0 +1,30 @@
+$OpenBSD$
+
+Index: steam_data.cpp
+--- steam_data.cpp.orig
++++ steam_data.cpp
+@@ -19,7 +19,7 @@ int news_count, tutorial_count;
+ void SteamUserInit()
+ {
+ 	m_pSteamUserStats = nullptr;
+-	m_pSteamUserStats = SteamUserStats();
++	m_pSteamUserStats = c_SteamUserStats();
+ 
+ 	if (m_pSteamUserStats != nullptr)
+ 	{
+@@ -104,8 +104,6 @@ bool SteamCheckAch(const T val, const char* ach_id, co
+ 
+ const char* SteamDisplayName()
+ {
+-	if (SteamFriends() != nullptr)
+-		return SteamFriends()->GetPersonaName();
+ 
+ 	return "Player";
+ }
+@@ -317,4 +315,4 @@ void OptionsCheckAch()
+ 
+ 	if (sync)
+ 		SteamSync();
+-}
+\ No newline at end of file
++}

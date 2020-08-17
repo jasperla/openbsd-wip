@@ -1,0 +1,30 @@
+$OpenBSD$
+
+Index: SteamLeaderboardMenu.cpp
+--- SteamLeaderboardMenu.cpp.orig
++++ SteamLeaderboardMenu.cpp
+@@ -65,7 +65,7 @@ void SteamLeaderboardMenu::Rebuild()
+ 				// Requesting for global scores around the user will return successfully with 0 results if the
+ 				// user does not have an entry on the leaderboard
+ 				notice.enabled = true;
+-				notice.text = SteamFriends()->GetPersonaName();
++				notice.text = "Unknown friend";
+ 				notice.text += " does not have a score for this leaderboard";
+ 				HideMenu();
+ 			}
+@@ -78,7 +78,7 @@ void SteamLeaderboardMenu::Rebuild()
+ 			for (int index = 0; index < score_data.m_nLeaderboardEntries; index++)
+ 			{
+ 				menu.element.at(index).SetText(score_data.m_leaderboardEntries[index].m_nGlobalRank,
+-					SteamFriends()->GetFriendPersonaName(score_data.m_leaderboardEntries[index].m_steamIDUser),
++					"Unknown friend",
+ 					score_data.m_leaderboardEntries[index].m_nScore);
+ 
+ 				menu.element.at(index).Visible(true);
+@@ -223,4 +223,4 @@ void SteamLeaderboardMenu::SetUI()
+ 
+ 	switcher_state.SetUI();
+ 	switcher_sort.SetUI();
+-}
+\ No newline at end of file
++}

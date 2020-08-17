@@ -1,0 +1,95 @@
+$OpenBSD$
+
+Index: steamworks/public/steam/steam_api.h
+--- steamworks/public/steam/steam_api.h.orig
++++ steamworks/public/steam/steam_api.h
+@@ -63,7 +63,7 @@
+ //----------------------------------------------------------------------------------------------------------------------------------------------------------//
+ 
+ // S_API void SteamAPI_Init(); (see below)
+-S_API void S_CALLTYPE SteamAPI_Shutdown();
++S_API void S_CALLTYPE c_SteamAPI_Shutdown();
+ 
+ // checks if a local Steam client is running 
+ S_API bool S_CALLTYPE SteamAPI_IsSteamRunning();
+@@ -105,13 +105,13 @@ S_API bool S_CALLTYPE SteamAPI_InitSafe();
+ 
+ #else
+ 
+-S_API bool S_CALLTYPE SteamAPI_Init();
++S_API bool S_CALLTYPE c_SteamAPI_Init();
+ 
+ S_API ISteamUser *S_CALLTYPE SteamUser();
+-S_API ISteamFriends *S_CALLTYPE SteamFriends();
++S_API ISteamFriends *S_CALLTYPE c_SteamFriends();
+ S_API ISteamUtils *S_CALLTYPE SteamUtils();
+ S_API ISteamMatchmaking *S_CALLTYPE SteamMatchmaking();
+-S_API ISteamUserStats *S_CALLTYPE SteamUserStats();
++S_API ISteamUserStats *S_CALLTYPE c_SteamUserStats();
+ S_API ISteamApps *S_CALLTYPE SteamApps();
+ S_API ISteamNetworking *S_CALLTYPE SteamNetworking();
+ S_API ISteamMatchmakingServers *S_CALLTYPE SteamMatchmakingServers();
+@@ -163,7 +163,7 @@ S_API void S_CALLTYPE SteamAPI_ReleaseCurrentThreadMem
+ 
+ // SteamAPI_RunCallbacks is safe to call from multiple threads simultaneously,
+ // but if you choose to do this, callback code may be executed on any thread.
+-S_API void S_CALLTYPE SteamAPI_RunCallbacks();
++S_API void S_CALLTYPE c_SteamAPI_RunCallbacks();
+ 
+ 
+ 
+@@ -184,8 +184,6 @@ S_API void S_CALLTYPE SteamAPI_RunCallbacks();
+ S_API void S_CALLTYPE SteamAPI_RegisterCallback( class CCallbackBase *pCallback, int iCallback );
+ S_API void S_CALLTYPE SteamAPI_UnregisterCallback( class CCallbackBase *pCallback );
+ // Internal functions used by the utility CCallResult objects to receive async call results
+-S_API void S_CALLTYPE SteamAPI_RegisterCallResult( class CCallbackBase *pCallback, SteamAPICall_t hAPICall );
+-S_API void S_CALLTYPE SteamAPI_UnregisterCallResult( class CCallbackBase *pCallback, SteamAPICall_t hAPICall );
+ 
+ 
+ //-----------------------------------------------------------------------------
+@@ -249,15 +247,11 @@ class CCallResult : private CCallbackBase (public)
+ 
+ 	void Set( SteamAPICall_t hAPICall, T *p, func_t func )
+ 	{
+-		if ( m_hAPICall )
+-			SteamAPI_UnregisterCallResult( this, m_hAPICall );
+ 
+ 		m_hAPICall = hAPICall;
+ 		m_pObj = p;
+ 		m_Func = func;
+ 
+-		if ( hAPICall )
+-			SteamAPI_RegisterCallResult( this, hAPICall );
+ 	}
+ 
+ 	bool IsActive() const
+@@ -269,7 +263,6 @@ class CCallResult : private CCallbackBase (public)
+ 	{
+ 		if ( m_hAPICall != k_uAPICallInvalid )
+ 		{
+-			SteamAPI_UnregisterCallResult( this, m_hAPICall );
+ 			m_hAPICall = k_uAPICallInvalid;
+ 		}
+ 		
+@@ -410,7 +403,7 @@ class CCallbackManual : public CCallback< T, P, bGameS
+ 
+ // Pumps out all the steam messages, calling registered callbacks.
+ // NOT THREADSAFE - do not call from multiple threads simultaneously.
+-S_API void Steam_RunCallbacks( HSteamPipe hSteamPipe, bool bGameServerCallbacks );
++S_API void c_Steam_RunCallbacks( HSteamPipe hSteamPipe, bool bGameServerCallbacks );
+ 
+ // register the callback funcs to use to interact with the steam dll
+ S_API void Steam_RegisterInterfaceFuncs( void *hModule );
+@@ -451,10 +444,10 @@ class CSteamAPIContext (public)
+ 	bool Init();
+ 
+ 	ISteamUser*			SteamUser()							{ return m_pSteamUser; }
+-	ISteamFriends*		SteamFriends()						{ return m_pSteamFriends; }
++	ISteamFriends*		c_SteamFriends()						{ return m_pSteamFriends; }
+ 	ISteamUtils*		SteamUtils()						{ return m_pSteamUtils; }
+ 	ISteamMatchmaking*	SteamMatchmaking()					{ return m_pSteamMatchmaking; }
+-	ISteamUserStats*	SteamUserStats()					{ return m_pSteamUserStats; }
++	ISteamUserStats*	c_SteamUserStats()					{ return m_pSteamUserStats; }
+ 	ISteamApps*			SteamApps()							{ return m_pSteamApps; }
+ 	ISteamMatchmakingServers*	SteamMatchmakingServers()	{ return m_pSteamMatchmakingServers; }
+ 	ISteamNetworking*	SteamNetworking()					{ return m_pSteamNetworking; }

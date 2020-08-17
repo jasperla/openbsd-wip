@@ -1,0 +1,33 @@
+$OpenBSD$
+
+Index: SteamLeaderboard.cpp
+--- SteamLeaderboard.cpp.orig
++++ SteamLeaderboard.cpp
+@@ -59,7 +59,7 @@ void SteamLeaderboard::OnFindLeaderboard(LeaderboardFi
+ 		return;
+ 
+ 	// check to see which leaderboard handle we just retrieved
+-	const char *pchName = SteamUserStats()->GetLeaderboardName(pFindLeaderboardResult->m_hSteamLeaderboard);
++	const char *pchName = c_SteamUserStats()->GetLeaderboardName(pFindLeaderboardResult->m_hSteamLeaderboard);
+ 	if (strcmp(pchName, LEADERBOARD_SCORE) == 0)
+ 		handle_score = pFindLeaderboardResult->m_hSteamLeaderboard;
+ 	else if (strcmp(pchName, LEADERBOARD_KILLS) == 0)
+@@ -97,14 +97,14 @@ void SteamLeaderboard::AddScore(int score, int kills)
+ 
+ 		if (handle_score != 0)
+ 		{
+-			SteamAPICall_t hSteamAPICall = SteamUserStats()->UploadLeaderboardScore(handle_score, k_ELeaderboardUploadScoreMethodKeepBest, score, NULL, 0);
++			SteamAPICall_t hSteamAPICall = c_SteamUserStats()->UploadLeaderboardScore(handle_score, k_ELeaderboardUploadScoreMethodKeepBest, score, NULL, 0);
+ 			m_SteamCallResultUploadScore.Set(hSteamAPICall, this, &SteamLeaderboard::OnUploadScore);
+ 		}
+ 
+ 		if (handle_kills != 0)
+ 		{
+-			SteamAPICall_t hSteamAPICall = SteamUserStats()->UploadLeaderboardScore(handle_kills, k_ELeaderboardUploadScoreMethodKeepBest, kills, NULL, 0);
++			SteamAPICall_t hSteamAPICall = c_SteamUserStats()->UploadLeaderboardScore(handle_kills, k_ELeaderboardUploadScoreMethodKeepBest, kills, NULL, 0);
+ 			m_SteamCallResultUploadScore.Set(hSteamAPICall, this, &SteamLeaderboard::OnUploadScore);
+ 		}
+ 	}
+-}
+\ No newline at end of file
++}
