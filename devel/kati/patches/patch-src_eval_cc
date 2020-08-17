@@ -1,0 +1,19 @@
+$OpenBSD$
+
+Do this the non-np way (correct?).
+
+Index: src/eval.cc
+--- src/eval.cc.orig
++++ src/eval.cc
+@@ -167,9 +167,8 @@ Evaluator::Evaluator()
+   stack_addr_ = (char*)pthread_get_stackaddr_np(pthread_self()) - stack_size_;
+ #else
+   pthread_attr_t attr;
+-  CHECK(pthread_getattr_np(pthread_self(), &attr) == 0);
+-  CHECK(pthread_attr_getstack(&attr, &stack_addr_, &stack_size_) == 0);
+-  CHECK(pthread_attr_destroy(&attr) == 0);
++  CHECK(pthread_attr_getstacksize(&attr, &stack_size_) == 0);
++  CHECK(pthread_attr_getstackaddr(&attr, &stack_addr_) == 0);
+ #endif
+ 
+   lowest_stack_ = (char*)stack_addr_ + stack_size_;
