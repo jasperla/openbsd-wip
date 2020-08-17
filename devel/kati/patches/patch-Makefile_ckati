@@ -1,12 +1,13 @@
 $OpenBSD$
 
 Remove hardcoded optimizations.
+!clang archs need explicit -lpthread.
 Let's not do the git thing. They use git commit as version string, and we already have that information.
 
 Index: Makefile.ckati
 --- Makefile.ckati.orig
 +++ Makefile.ckati
-@@ -70,9 +70,9 @@ KATI_CXX_TEST_OBJS := $(patsubst $(KATI_SRC_PATH)/%.cc
+@@ -70,13 +70,13 @@ KATI_CXX_TEST_OBJS := $(patsubst $(KATI_SRC_PATH)/%.cc
  KATI_CXX_TEST_EXES := $(patsubst $(KATI_INTERMEDIATES_PATH)/%.o,$(KATI_BIN_PATH)/%,\
  	$(KATI_CXX_TEST_OBJS))
  
@@ -18,7 +19,13 @@ Index: Makefile.ckati
 +KATI_CXXFLAGS += -DNOLOG
  #KATI_CXXFLAGS += -pg
  
- ifeq ($(shell uname),Linux)
+-ifeq ($(shell uname),Linux)
+-KATI_LIBS := -lrt -lpthread
++ifeq ($(shell uname),OpenBSD)
++KATI_LIBS := -lpthread
+ endif
+ 
+ # Rule to build ckati into KATI_BIN_PATH
 @@ -102,16 +102,7 @@ $(KATI_CXX_TEST_EXES): $(KATI_BIN_PATH)/%: $(KATI_INTE
  	$(KATI_LD) $^ -o $@ $(KATI_LIBS)
  
