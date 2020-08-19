@@ -21,6 +21,8 @@ WANTLIB += gobject-2.0 graphite2 gtk-3 harfbuzz iconv intl m pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png xcb xcb-render
 WANTLIB += xcb-shm z
 
+COMPILER =	base-clang ports-gcc
+
 MASTER_SITES =  https://launchpad.net/libindicator/${V:R}/${V}/+download/
 
 LIB_DEPENDS =	x11/gtk+3

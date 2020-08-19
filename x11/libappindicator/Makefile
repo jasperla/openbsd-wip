@@ -22,6 +22,8 @@ WANTLIB += gtk-3 harfbuzz iconv indicator3 intl m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png xcb xcb-render xcb-shm
 WANTLIB += z
 
+COMPILER =	base-clang ports-gcc
+
 MASTER_SITES =  https://launchpad.net/libappindicator/${V:R}/${V}/+download/
 
 LIB_DEPENDS =	x11/libdbusmenu \
