@@ -1,14 +1,15 @@
 @comment $OpenBSD: PLIST,v$
 bin/bp_flanks
+${P5SITE}/Bio/Variation/
 ${P5SITE}/Bio/Variation.pm
 ${P5SITE}/Bio/Variation/AAChange.pm
 ${P5SITE}/Bio/Variation/AAReverseMutate.pm
 ${P5SITE}/Bio/Variation/Allele.pm
 ${P5SITE}/Bio/Variation/DNAMutation.pm
+${P5SITE}/Bio/Variation/IO/
 ${P5SITE}/Bio/Variation/IO.pm
 ${P5SITE}/Bio/Variation/IO/flat.pm
 ${P5SITE}/Bio/Variation/IO/xml.pm
-${P5SITE}/Bio/Variation/README
 ${P5SITE}/Bio/Variation/RNAChange.pm
 ${P5SITE}/Bio/Variation/SNP.pm
 ${P5SITE}/Bio/Variation/SeqDiff.pm

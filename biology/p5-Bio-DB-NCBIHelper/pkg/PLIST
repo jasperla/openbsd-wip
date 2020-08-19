@@ -1,4 +1,5 @@
 @comment $OpenBSD: PLIST,v$
+@conflict bioperl-<1.7.*
 bin/bp_biofetch_genbank_proxy
 bin/bp_download_query_genbank
 bin/bp_query_entrez_taxa

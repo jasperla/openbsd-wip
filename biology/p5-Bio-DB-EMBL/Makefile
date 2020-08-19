@@ -11,7 +11,9 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		cpan
 
-RUN_DEPENDS =		biology/bioperl
+RUN_DEPENDS =		biology/bioperl>=1.7.7
+
+# XXX tests require network
 TEST_DEPENDS =		devel/p5-Test-Most \
 			devel/p5-Test-RequiresInternet
 

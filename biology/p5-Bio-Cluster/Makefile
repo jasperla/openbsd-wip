@@ -11,7 +11,7 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		cpan
 
-TEST_DEPENDS =	biology/bioperl \
+TEST_DEPENDS =	biology/bioperl>=1.7.7 \
 		biology/p5-Bio-Variation
 
 .include <bsd.port.mk>

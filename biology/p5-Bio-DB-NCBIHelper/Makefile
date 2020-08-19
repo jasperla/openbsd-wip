@@ -20,6 +20,8 @@ RUN_DEPENDS =		biology/p5-Bio-ASN1-EntrezGene \
 			www/p5-LWP-Protocol-https \
 			www/p5-URI \
 			www/p5-libwww
+
+# XXX tests require network
 TEST_DEPENDS =		devel/p5-Test-Exception \
 			devel/p5-Test-Most \
 			devel/p5-Test-RequiresInternet

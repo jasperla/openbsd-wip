@@ -13,7 +13,7 @@ MODULES =		cpan
 PKG_ARCH =		*
 MODCPAN_EXAMPLES=	Yes
 
-RUN_DEPENDS =		biology/bioperl \
+RUN_DEPENDS =		biology/bioperl>=1.7.7 \
 			biology/p5-Bio-Cluster
 
 .include <bsd.port.mk>

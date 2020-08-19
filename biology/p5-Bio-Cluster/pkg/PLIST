@@ -1,4 +1,5 @@
 @comment $OpenBSD: PLIST,v$
+@conflict bioperl-<1.7.*
 ${P5SITE}/Bio/
 ${P5SITE}/Bio/Cluster/
 ${P5SITE}/Bio/Cluster.pm

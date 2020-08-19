@@ -1,4 +1,5 @@
 @comment $OpenBSD: PLIST,v 1.3 2010/08/30 11:01:07 jasper Exp $
+@conflict bioperl-<1.7.*
 ${P5SITE}/Bio/ASN1/
 ${P5SITE}/Bio/ASN1/EntrezGene/
 ${P5SITE}/Bio/ASN1/EntrezGene.pm
