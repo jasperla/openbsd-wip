@@ -28,8 +28,9 @@ LIB_DEPENDS =	x11/libdbusmenu \
 		x11/libindicator \
 		x11/gtk+3
 
-CONFIGURE_STYLE =	gnu
+CONFIGURE_STYLE =	autoconf
 CONFIGURE_ARGS =	--with-gtk=3
+AUTOCONF_VERSION =	2.69
 
 USE_GMAKE =	Yes
 
