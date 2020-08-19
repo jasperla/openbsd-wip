@@ -1,4 +1,5 @@
 @comment $OpenBSD: PLIST,v$
+@conflict bioperl-<1.7.*
 bin/bp_flanks
 ${P5SITE}/Bio/Variation/
 ${P5SITE}/Bio/Variation.pm
