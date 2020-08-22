@@ -19,7 +19,7 @@ HOMEPAGE =		https://quassel-irc.org/
 #MAINTAINER =		Caspar Schutijser <caspar@schutijser.com>
 
 # GPLv2/GPLv3
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB-main += ${COMPILER_LIBCXX} KF5Auth KF5Codecs KF5ConfigCore
 WANTLIB-main += KF5ConfigGui KF5ConfigWidgets KF5CoreAddons KF5I18n
