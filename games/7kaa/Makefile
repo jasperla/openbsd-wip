@@ -3,7 +3,7 @@
 COMMENT-main = 		real-time strategy game
 COMMENT-data = 		7kaa data files
 
-V = 			2.15.2
+V = 			2.15.4
 DISTNAME = 		7kaa-${V}
 PKGNAME-main = 		${DISTNAME}
 PKGNAME-data = 		7kaa-data-${V}
@@ -15,7 +15,7 @@ MULTI_PACKAGES = 	-main -data
 
 CATEGORIES = 		games
 
-HOMEPAGE = 		http://7kfans.com/
+HOMEPAGE = 		https://7kfans.com/
 
 MAINTAINER = 		Kirill Bychkov <kirby@openbsd.org>
 
@@ -39,7 +39,8 @@ RUN_DEPENDS-main = 	games/7kaa,-data
 
 #SEPARATE_BUILD = 	Yes
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS +=	--bindir=${PREFIX}/share/7kaa
+CONFIGURE_ARGS +=	--bindir=${PREFIX}/share/7kaa \
+			--enable-multiplayer
 CONFIGURE_ENV +=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
 			LIBS="-pthread"
