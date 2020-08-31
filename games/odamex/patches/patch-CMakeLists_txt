@@ -1,7 +1,6 @@
 $OpenBSD$
 
-INSTALL_PREFIX is used to find various things (executables, wads...) and if it
-isn't set it defaults to the current working directory, which is wrong for us.
+INSTALL_PREFIX needs to be set to find executables and wads.
 
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
