@@ -1,0 +1,16 @@
+$OpenBSD$
+
+INSTALL_PREFIX is used to find various things (executables, wads...) and if it
+isn't set it defaults to the current working directory, which is wrong for us.
+
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -10,6 +10,7 @@ set(CMAKE_INSTALL_BINDIR "bin")
+ set(CMAKE_INSTALL_DATADIR "share")
+ include(GNUInstallDirs OPTIONAL)
+ 
++add_definitions(-DINSTALL_PREFIX="${PREFIX}")
+ add_definitions(-DINSTALL_BINDIR="${CMAKE_INSTALL_BINDIR}")
+ add_definitions(-DINSTALL_DATADIR="${CMAKE_INSTALL_DATADIR}")
+ 

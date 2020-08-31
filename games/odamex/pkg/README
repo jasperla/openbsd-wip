@@ -1,0 +1,10 @@
+$OpenBSD: README.template,v 1.7 2019/05/09 17:45:05 ajacoutot Exp $
+
++-------------------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-------------------------------------------------------------------------------
+
+To use odamex you will need to put WAD files in ${PREFIX}/share/doom.
+
+Alternatively you can run odamex from within a directory containing WADs, or
+you can specify a path using DOOMWADDIR or DOOMWADPATH in your environment.
