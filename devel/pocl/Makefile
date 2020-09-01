@@ -25,6 +25,7 @@ MODULES =	devel/cmake
 LIB_DEPENDS =	devel/hwloc \
 		devel/llvm
 
-CONFIGURE_ARGS =	-DWITH_LLVM_CONFIG="${LOCALBASE}/bin/llvm-config"
+CONFIGURE_ARGS =	-DWITH_LLVM_CONFIG="${LOCALBASE}/bin/llvm-config" \
+			-DKERNELLIB_HOST_CPU_VARIANTS="distro"
 
 .include <bsd.port.mk>

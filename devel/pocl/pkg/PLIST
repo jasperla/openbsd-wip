@@ -34,4 +34,11 @@ share/pocl/include/pocl_device.h
 share/pocl/include/pocl_image_types.h
 share/pocl/include/pocl_spir.h
 share/pocl/include/pocl_types.h
-share/pocl/kernel-amd64-unknown-openbsd6.7-skylake.bc
+share/pocl/kernel-amd64-unknown-openbsd6.7-avx.bc
+share/pocl/kernel-amd64-unknown-openbsd6.7-avx2.bc
+share/pocl/kernel-amd64-unknown-openbsd6.7-avx512.bc
+share/pocl/kernel-amd64-unknown-openbsd6.7-avx_f16c.bc
+share/pocl/kernel-amd64-unknown-openbsd6.7-avx_fma4.bc
+share/pocl/kernel-amd64-unknown-openbsd6.7-sse2.bc
+share/pocl/kernel-amd64-unknown-openbsd6.7-sse41.bc
+share/pocl/kernel-amd64-unknown-openbsd6.7-ssse3.bc
