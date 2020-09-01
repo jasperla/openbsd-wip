@@ -1,0 +1,20 @@
+Pocl is a portable open source (MIT-licensed) implementation of the
+OpenCL standard (1.2 with some 2.0 features supported). In addition to
+producing an easily portable open-source OpenCL implementation, another
+major goal of this project is improving performance portability of
+OpenCL programs with the kernel compiler and the task runtime, reducing
+the need for target-dependent manual optimizations.
+
+pocl uses Clang as an OpenCL C frontend and LLVM for kernel compiler
+implementation, and as a portability layer. Thus, if your desired target
+has an LLVM backend, it should be able to get OpenCL support easily by
+using pocl.
+
+pocl currently has backends supporting many CPUs, ASIPs (TCE/TTA),
+NVIDIA GPUs (via CUDA), HSA-supported GPUs and multiple private off-tree
+targets.
+
+In addition to providing an open source implementation of OpenCL for
+various platforms, an additional purpose of the project is to serve as a
+research platform for issues in parallel programming of heterogeneous
+platforms.
