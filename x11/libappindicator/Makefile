@@ -38,6 +38,4 @@ USE_GMAKE =	Yes
 
 NO_TEST =	Yes
 
-PORTHOME =	${WRKSRC}
-
 .include <bsd.port.mk>
