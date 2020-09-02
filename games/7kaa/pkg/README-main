@@ -10,11 +10,11 @@ The music files cannot be distributed in the OpenBSD package due to
 onerous licensing requirements. The game functions perfectly well
 without music. However, should you want music, you can download the
 files here:
-https://www.7kfans.com/downloads/7kaa-music.tar.bz2
+https://www.7kfans.com/downloads/7kaa-music-2.15.tar.bz2
 
 After untarring the file, copy the music/ directory to the 7kaa data
 directory.
 
-$ ftp https://www.7kfans.com/downloads/7kaa-music.tar.bz2
+$ ftp https://www.7kfans.com/downloads/7kaa-music-2.15.tar.bz2
 $ tar xjf 7kaa-music.tar.bz2
-$ doas cp -R 7kaa-music/music ${TRUEPREFIX}/share/7kaa
+$ doas cp -R 7kaa-music/MUSIC ${TRUEPREFIX}/share/7kaa
