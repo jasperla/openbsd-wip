@@ -3,7 +3,22 @@ $OpenBSD$
 Index: configure.ac
 --- configure.ac.orig
 +++ configure.ac
-@@ -104,75 +104,9 @@ AM_CONDITIONAL(HAVE_VALAC, [test "x$VALAC" != "x"])
+@@ -91,88 +91,22 @@ AM_CONDITIONAL(INTROSPECTION_TEN, [test "x$introspecti
+ ###########################
+ 
+ AC_PATH_PROG([VALA_API_GEN], [vapigen])
+-AM_CONDITIONAL(HAVE_VAPIGEN, [test "x$VALA_API_GEN" != "x"])
++AM_CONDITIONAL(HAVE_VAPIGEN, [false])
+ 
+ ###########################
+ # Vala Compiler support
+ ###########################
+ 
+ AM_PROG_VALAC([0.14.0])
+-AM_CONDITIONAL(HAVE_VALAC, [test "x$VALAC" != "x"])
++AM_CONDITIONAL(HAVE_VALAC, [false])
+ 
+ ###########################
  # Check for Mono support
  ###########################
  
