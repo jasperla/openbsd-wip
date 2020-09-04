@@ -1,0 +1,14 @@
+$OpenBSD$
+
+Index: lib/CL/pocl_timing.c
+--- lib/CL/pocl_timing.c.orig
++++ lib/CL/pocl_timing.c
+@@ -75,7 +75,7 @@ uint64_t pocl_gettimemono_ns() {
+   clock_gettime(CLOCK_MONOTONIC, &timespec);
+ #  endif
+ # elif defined(__DragonFly__) || defined(__FreeBSD__) || defined(__NetBSD__) || defined(__OpenBSD__) || defined(__FreeBSD_kernel__)
+-  clock_gettime(CLOCK_UPTIME_FAST, &timespec);
++  clock_gettime(CLOCK_UPTIME, &timespec);
+ # else
+ # warning Using clock_gettime with CLOCK_REALTIME for monotonic clocks
+   clock_gettime(CLOCK_REALTIME, &timespec);

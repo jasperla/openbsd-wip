@@ -1,0 +1,44 @@
+@comment $OpenBSD: PLIST,v$
+@bin bin/poclcc
+include/CL/
+include/CL/cl.h
+include/CL/cl.hpp
+include/CL/cl2.hpp
+include/CL/cl_d3d10.h
+include/CL/cl_d3d11.h
+include/CL/cl_dx9_media_sharing.h
+include/CL/cl_dx9_media_sharing_intel.h
+include/CL/cl_egl.h
+include/CL/cl_ext.h
+include/CL/cl_ext_intel.h
+include/CL/cl_gl.h
+include/CL/cl_gl_ext.h
+include/CL/cl_platform.h
+include/CL/cl_va_api_media_sharing_intel.h
+include/CL/cl_version.h
+include/CL/opencl.h
+@lib lib/libOpenCL.so.${LIBOpenCL_VERSION}
+lib/pkgconfig/pocl.pc
+lib/pocl/
+lib/pocl/libllvmopencl.so.14.0.0
+share/pocl/
+share/pocl/include/
+share/pocl/include/_builtin_renames.h
+share/pocl/include/_clang_opencl.h
+share/pocl/include/_enable_all_exts.h
+share/pocl/include/_kernel.h
+share/pocl/include/_kernel_c.h
+share/pocl/include/_kernel_constants.h
+share/pocl/include/pocl.h
+share/pocl/include/pocl_device.h
+share/pocl/include/pocl_image_types.h
+share/pocl/include/pocl_spir.h
+share/pocl/include/pocl_types.h
+share/pocl/kernel-amd64-unknown-openbsd6.7-avx.bc
+share/pocl/kernel-amd64-unknown-openbsd6.7-avx2.bc
+share/pocl/kernel-amd64-unknown-openbsd6.7-avx512.bc
+share/pocl/kernel-amd64-unknown-openbsd6.7-avx_f16c.bc
+share/pocl/kernel-amd64-unknown-openbsd6.7-avx_fma4.bc
+share/pocl/kernel-amd64-unknown-openbsd6.7-sse2.bc
+share/pocl/kernel-amd64-unknown-openbsd6.7-sse41.bc
+share/pocl/kernel-amd64-unknown-openbsd6.7-ssse3.bc
