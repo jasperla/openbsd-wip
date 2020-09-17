@@ -26,4 +26,7 @@ RUN_DEPENDS =		devel/py-decorator${MODPY_FLAVOR} \
 			graphics/py-imageio${MODPY_FLAVOR} \
 			math/py-numpy${MODPY_FLAVOR}
 
+# Needs a conflicting version of pytest.
+NO_TEST =		Yes
+
 .include <bsd.port.mk>
