@@ -14,7 +14,7 @@ MAINTAINER =	Edd Barrett <edd@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} ICE SDL2 SDL2_mixer SM X11 Xext
-WANTLIB += c execinfo m png portmidi wx_baseu-3.0 wx_baseu_net-3.0
+WANTLIB += c execinfo m miniupnpc png portmidi wx_baseu-3.0 wx_baseu_net-3.0
 WANTLIB += wx_baseu_xml-3.0 wx_gtk3u_adv-3.0 wx_gtk3u_core-3.0
 WANTLIB += wx_gtk3u_html-3.0 wx_gtk3u_qa-3.0 wx_gtk3u_xrc-3.0
 WANTLIB += z
@@ -26,14 +26,14 @@ COMPILER =		base-clang ports-gcc base-gcc
 
 MODULES =		devel/cmake
 
-CONFIGURE_ARGS +=	-DCMAKE_CXX_FLAGS=-I${LOCALBASE}/include \
-			-DUSE_MINIUPNP=OFF
+CONFIGURE_ARGS +=	-DCMAKE_CXX_FLAGS=-I${LOCALBASE}/include
 
 LIB_DEPENDS =		devel/libexecinfo \
 			x11/wxWidgets \
 			audio/portmidi \
 			graphics/png \
-			devel/sdl2-mixer
+			devel/sdl2-mixer \
+			net/miniupnp/miniupnpc
 
 NO_TEST =		Yes
 
