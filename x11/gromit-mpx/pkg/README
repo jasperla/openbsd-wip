@@ -1,0 +1,12 @@
++-------------------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-------------------------------------------------------------------------------
+
+You should probably use a compositor with ${PKGSTEM}.
+
+"When there is no compositing manager such as Compiz or xcompmgr running,
+Gromit-MPX falls back to a legacy drawing mode. This may drastically slow down
+your X-Server, especially when you draw very thin lines. It makes heavy use of
+the shape extension, which is quite expensive if you paint a complex pattern on
+screen. Especially terminal-programs tend to scroll incredibly slow if
+something is painted over their window."

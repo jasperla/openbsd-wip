@@ -6,8 +6,11 @@ share/doc/gromit-mpx/
 share/doc/gromit-mpx/AUTHORS
 share/doc/gromit-mpx/NEWS.md
 share/doc/gromit-mpx/README.md
+share/doc/pkg-readmes/${PKGSTEM}
 share/examples/gromit-mpx/
+@sample ${SYSCONFDIR}/gromit-mpx/
 share/examples/gromit-mpx/gromit-mpx.cfg
+@sample ${SYSCONFDIR}/gromit-mpx/gromit-mpx.cfg
 share/icons/hicolor/scalable/apps/gromit-mpx.svg
 share/pixmaps/
 share/pixmaps/gromit-mpx.png
