@@ -15,9 +15,9 @@ MAINTAINER =	Laurence Tratt <laurie@tratt.net>
 # GPLv2+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += X11 Xi appindicator3 atk-1.0 c cairo cairo-gobject
-WANTLIB += dbusmenu-glib gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0
-WANTLIB += gobject-2.0 gtk-3 harfbuzz intl m pango-1.0 pangocairo-1.0
+WANTLIB += X11 Xi atk-1.0 c cairo cairo-gobject gdk-3 gdk_pixbuf-2.0
+WANTLIB += gio-2.0 glib-2.0 gobject-2.0 gtk-3 harfbuzz intl m
+WANTLIB += pango-1.0 pangocairo-1.0
 
 MODULES =	devel/cmake
 
@@ -25,8 +25,7 @@ CONFIGURE_ARGS =	-DCMAKE_INSTALL_SYSCONFDIR=share/examples
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		x11/gtk+3,-guic
-LIB_DEPENDS =	x11/libappindicator \
-		x11/gtk+3
+LIB_DEPENDS =	x11/gtk+3
 
 NO_TEST =	Yes
 
