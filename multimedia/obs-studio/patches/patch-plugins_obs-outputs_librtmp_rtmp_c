@@ -1,0 +1,14 @@
+$OpenBSD$
+
+Index: plugins/obs-outputs/librtmp/rtmp.c
+--- plugins/obs-outputs/librtmp/rtmp.c.orig
++++ plugins/obs-outputs/librtmp/rtmp.c
+@@ -890,7 +890,7 @@ add_addr_info(struct sockaddr_storage *service, sockle
+         // since we're handling multiple addresses internally, fake the correct error response
+ #ifdef _WIN32
+         *socket_error = WSANO_DATA;
+-#elif __FreeBSD__
++#elif __FreeBSD__ || __OpenBSD__
+         *socket_error = ENOATTR;
+ #else
+         *socket_error = ENODATA;

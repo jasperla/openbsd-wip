@@ -5,6 +5,7 @@ COMMENT=	software for live-streaming and screen recording
 GH_ACCOUNT=	jp9000
 GH_PROJECT=	obs-studio
 GH_TAGNAME=	23.2.1
+REVISION=	0
 
 SHARED_LIBS=	obs			0.0 \
 		obs-frontend-api	0.0 \

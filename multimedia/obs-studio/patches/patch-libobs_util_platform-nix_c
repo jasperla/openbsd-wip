@@ -1,0 +1,31 @@
+$OpenBSD$
+
+Index: libobs/util/platform-nix.c
+--- libobs/util/platform-nix.c.orig
++++ libobs/util/platform-nix.c
+@@ -272,11 +272,15 @@ char *os_get_program_data_path_ptr(const char *name)
+ 
+ char *os_get_executable_path_ptr(const char *name)
+ {
+-	char exe[PATH_MAX];
+-	ssize_t count = readlink("/proc/self/exe", exe, PATH_MAX);
+ 	const char *path_out = NULL;
+ 	struct dstr path;
+ 
++#ifdef __OpenBSD__
++	path_out = "/usr/local/bin";
++#else
++	char exe[PATH_MAX];
++	ssize_t count = readlink("/proc/self/exe", exe, PATH_MAX);
++
+ 	if (count == -1) {
+ 		return NULL;
+ 	}
+@@ -285,6 +289,7 @@ char *os_get_executable_path_ptr(const char *name)
+ 	if (!path_out) {
+ 		return NULL;
+ 	}
++#endif
+ 
+ 	dstr_init_copy(&path, path_out);
+ 	dstr_cat(&path, "/");
