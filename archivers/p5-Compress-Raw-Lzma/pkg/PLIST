@@ -1,0 +1,12 @@
+@comment $OpenBSD: PLIST,v$
+${P5ARCH}/
+${P5ARCH}/Compress/
+${P5ARCH}/Compress/Raw/
+${P5ARCH}/Compress/Raw/Lzma.pm
+${P5ARCH}/auto/
+${P5ARCH}/auto/Compress/
+${P5ARCH}/auto/Compress/Raw/
+${P5ARCH}/auto/Compress/Raw/Lzma/
+@so ${P5ARCH}/auto/Compress/Raw/Lzma/Lzma.so
+${P5ARCH}/auto/Compress/Raw/Lzma/autosplit.ix
+@man man/man3p/Compress::Raw::Lzma.3p
