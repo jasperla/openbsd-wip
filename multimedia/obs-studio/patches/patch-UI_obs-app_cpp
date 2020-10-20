@@ -2,7 +2,7 @@ $OpenBSD$
 Index: UI/obs-app.cpp
 --- UI/obs-app.cpp.orig
 +++ UI/obs-app.cpp
-@@ -1327,6 +1327,8 @@ string OBSApp::GetVersionString() const
+@@ -1433,6 +1433,8 @@ string OBSApp::GetVersionString() const
  	ver << "windows)";
  #elif __APPLE__
  	ver << "mac)";

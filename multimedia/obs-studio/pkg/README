@@ -20,11 +20,3 @@ OBS you can add a "Media Source". In the source's settings page, untick
 
 Input:		/dev/video0
 Source format:	video4linux2
-
-Audio
------
-Add another "Media Source". In the source's settings page, untick
-"local file", and enter the following:
-
-Input:		snd/0   (or other sndio port name as appropriate)
-Source format:	sndio

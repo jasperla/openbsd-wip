@@ -55,10 +55,10 @@ Index: libobs/obs-nix.c
  	struct sysinfo info;
  	if (sysinfo(&info) < 0)
  		return;
-@@ -226,6 +242,7 @@ static void log_memory_info(void)
- 			(uint64_t)info.totalram * info.mem_unit / 1024 / 1024,
- 			((uint64_t)info.freeram + (uint64_t)info.bufferram) *
- 			info.mem_unit / 1024 / 1024);
+@@ -227,6 +243,7 @@ static void log_memory_info(void)
+ 	     (uint64_t)info.totalram * info.mem_unit / 1024 / 1024,
+ 	     ((uint64_t)info.freeram + (uint64_t)info.bufferram) *
+ 		     info.mem_unit / 1024 / 1024);
 +#endif
  }
  
