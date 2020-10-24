@@ -1,0 +1,60 @@
+$OpenBSD: patch-components_crash_core_app_BUILD_gn,v 1.3 2020/10/22 13:52:54 robert Exp $
+
+Index: components/crash/core/app/BUILD.gn
+--- components/crash/core/app/BUILD.gn.orig
++++ components/crash/core/app/BUILD.gn
+@@ -57,16 +57,15 @@ static_library("app") {
+     "crash_switches.h",
+     "crashpad.h",
+     "crashpad_android.cc",
+-    "crashpad_linux.cc",
+     "crashpad_mac.mm",
+     "crashpad_win.cc",
+   ]
+ 
+-  if (is_mac || is_win || is_android || is_linux || is_chromeos) {
++  if ((is_mac || is_win || is_android || is_linux || is_chromeos) && !is_openbsd) {
+     sources += [ "crashpad.cc" ]
+   }
+ 
+-  if (is_linux || is_chromeos) {
++  if ((is_linux || is_chromeos) && !is_openbsd) {
+     sources += [
+       "breakpad_linux.cc",
+       "breakpad_linux.h",
+@@ -83,7 +82,7 @@ static_library("app") {
+     "//content/public/common:content_descriptors",
+   ]
+ 
+-  if (is_mac || is_win || is_android || is_linux || is_chromeos) {
++  if ((is_mac || is_win || is_android || is_linux || is_chromeos) && !is_openbsd) {
+     deps += [
+       "//third_party/crashpad/crashpad/client",
+       "//third_party/crashpad/crashpad/util",
+@@ -99,7 +98,7 @@ static_library("app") {
+     ]
+   }
+ 
+-  if (is_android || is_linux || is_chromeos) {
++  if ((is_android || is_linux || is_chromeos) && !is_openbsd) {
+     deps += [
+       "//base:base_static",
+       "//components/crash/core/common",
+@@ -107,7 +106,7 @@ static_library("app") {
+     ]
+   }
+ 
+-  if (is_linux || is_chromeos) {
++  if ((is_linux || is_chromeos) && !is_openbsd) {
+     deps += [ "//third_party/breakpad:client" ]
+   }
+ 
+@@ -138,7 +137,7 @@ static_library("app") {
+     libs = [ "log" ]
+   }
+ 
+-  if (is_linux || is_chromeos) {
++  if ((is_linux || is_chromeos) && !is_openbsd) {
+     data_deps = [ "//third_party/crashpad/crashpad/handler:crashpad_handler" ]
+   }
+ }

@@ -1,0 +1,102 @@
+$OpenBSD: patch-base_BUILD_gn,v 1.40 2020/10/22 13:52:53 robert Exp $
+
+Index: base/BUILD.gn
+--- base/BUILD.gn.orig
++++ base/BUILD.gn
+@@ -59,7 +59,7 @@ declare_args() {
+   # replacement base::Location::Current(). On by default in non-official builds
+   # for testing purposes.
+   # TODO(https://crbug.com/974061): remove this eventually.
+-  from_here_uses_location_builtins = !is_official_build
++  from_here_uses_location_builtins = !is_official_build && !is_bsd
+ 
+   # Unsafe developer build. Has developer-friendly features that may weaken or
+   # disable security measures like sandboxing or ASLR.
+@@ -878,7 +878,7 @@ component("base") {
+       "timer/hi_res_timer_manager_posix.cc",
+     ]
+ 
+-    if (!is_nacl && !is_mac && !is_ios) {
++    if (!is_nacl && !is_mac && !is_ios && !is_openbsd) {
+       sources += [
+         "cpu_affinity_posix.cc",
+         "cpu_affinity_posix.h",
+@@ -889,6 +889,12 @@ component("base") {
+         "profiler/thread_delegate_posix.h",
+       ]
+     }
++
++    if (is_openbsd) {
++      sources += [
++        "profiler/stack_sampler_posix.cc",
++      ]
++    }
+   }
+ 
+   if (is_win) {
+@@ -1288,11 +1294,16 @@ component("base") {
+   # building inside the cros_sdk environment - use host_toolchain as a
+   # more robust check for this.
+   if (!use_sysroot &&
+-      (is_android || ((is_linux || is_chromeos) && !is_chromecast)) &&
++      (is_android || ((is_linux || is_chromeos) && !is_chromecast && !is_openbsd)) &&
+       host_toolchain != "//build/toolchain/cros:host") {
+     libs += [ "atomic" ]
+   }
+ 
++  # OpenBSD needs libkvm
++  if (is_openbsd) {
++    libs += [ "kvm" ]
++  }
++
+   if (use_allocator_shim) {
+     sources += [
+       "allocator/allocator_shim.cc",
+@@ -1308,7 +1319,7 @@ component("base") {
+         "allocator/winheap_stubs_win.cc",
+         "allocator/winheap_stubs_win.h",
+       ]
+-    } else if ((is_linux || is_chromeos) && use_allocator == "tcmalloc") {
++    } else if (((is_linux && !is_openbsd) || is_chromeos) && use_allocator == "tcmalloc") {
+       sources += [
+         "allocator/allocator_shim_default_dispatch_to_tcmalloc.cc",
+         "allocator/allocator_shim_override_glibc_weak_symbols.h",
+@@ -1930,6 +1941,29 @@ component("base") {
+     }
+   }
+ 
++  if (is_openbsd) {
++    sources -= [
++      "files/file_path_watcher_linux.cc",
++      "files/file_util_linux.cc",
++      "process/memory_linux.cc",
++      "process/process_linux.cc",
++      "system/sys_info_linux.cc",
++      "process/process_iterator_linux.cc",
++      "process/process_metrics_linux.cc",
++      "process/process_handle_linux.cc"
++    ]
++    sources += [
++      "process/memory_stubs.cc",
++      "process/process_handle_openbsd.cc",
++      "process/process_iterator_openbsd.cc",
++      "process/process_metrics_openbsd.cc",
++      "system/sys_info_openbsd.cc",
++      "files/file_path_watcher_kqueue.cc",
++      "files/file_path_watcher_kqueue.h",
++      "files/file_path_watcher_stub.cc",
++    ]
++  }
++
+   # iOS
+   if (is_ios) {
+     sources -= [
+@@ -2502,6 +2536,8 @@ if (is_win) {
+       "//base/win:base_win_buildflags",
+     ]
+   }
++
++  libs = [ "execinfo" ]
+ }
+ 
+ if ((is_win && (current_cpu == "x64" || current_cpu == "arm64")) || is_mac ||

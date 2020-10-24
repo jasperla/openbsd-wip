@@ -1,0 +1,14 @@
+$OpenBSD: patch-chrome_common_channel_info_h,v 1.2 2020/05/29 20:03:23 robert Exp $
+
+Index: chrome/common/channel_info.h
+--- chrome/common/channel_info.h.orig
++++ chrome/common/channel_info.h
+@@ -61,7 +61,7 @@ bool IsSideBySideCapable();
+ std::string GetChannelSuffixForDataDir();
+ #endif
+ 
+-#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
++#if (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || defined(OS_BSD)
+ // Returns the channel-specific filename of the desktop shortcut used to launch
+ // the browser.
+ std::string GetDesktopName(base::Environment* env);

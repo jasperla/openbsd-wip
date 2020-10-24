@@ -1,0 +1,14 @@
+$OpenBSD: patch-tools_gn_build_gen_py,v 1.10 2020/07/17 20:23:08 robert Exp $
+
+Index: tools/gn/build/gen.py
+--- tools/gn/build/gen.py.orig
++++ tools/gn/build/gen.py
+@@ -214,7 +214,7 @@ def WriteGenericNinja(path, static_libraries, executab
+       'linux': 'build_linux.ninja.template',
+       'freebsd': 'build_linux.ninja.template',
+       'aix': 'build_aix.ninja.template',
+-      'openbsd': 'build_openbsd.ninja.template',
++      'openbsd': 'build_linux.ninja.template',
+       'haiku': 'build_haiku.ninja.template',
+       'solaris': 'build_linux.ninja.template',
+       'netbsd': 'build_linux.ninja.template',

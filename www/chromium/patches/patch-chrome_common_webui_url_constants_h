@@ -1,0 +1,35 @@
+$OpenBSD: patch-chrome_common_webui_url_constants_h,v 1.21 2020/10/22 13:52:54 robert Exp $
+
+Index: chrome/common/webui_url_constants.h
+--- chrome/common/webui_url_constants.h.orig
++++ chrome/common/webui_url_constants.h
+@@ -292,7 +292,7 @@ bool IsSystemWebUIHost(base::StringPiece host);
+ #endif  // defined(OS_CHROMEOS)
+ 
+ #if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || \
+-    defined(OS_CHROMEOS)
++    defined(OS_CHROMEOS) || defined(OS_BSD)
+ extern const char kChromeUIDiscardsHost[];
+ extern const char kChromeUIDiscardsURL[];
+ extern const char kChromeUIHatsHost[];
+@@ -312,17 +312,17 @@ extern const char kChromeUILinuxProxyConfigHost[];
+ #endif
+ 
+ #if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_CHROMEOS) || \
+-    defined(OS_ANDROID)
++    defined(OS_ANDROID) || defined(OS_BSD)
+ extern const char kChromeUISandboxHost[];
+ #endif
+ 
+-#if defined(OS_WIN) || defined(OS_MAC) || \
++#if defined(OS_WIN) || defined(OS_MAC) || defined(OS_BSD) || \
+     (defined(OS_LINUX) && !defined(OS_CHROMEOS))
+ extern const char kChromeUIBrowserSwitchHost[];
+ extern const char kChromeUIBrowserSwitchURL[];
+ #endif
+ 
+-#if ((defined(OS_LINUX) || defined(OS_CHROMEOS)) && defined(TOOLKIT_VIEWS)) || \
++#if ((defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)) && defined(TOOLKIT_VIEWS)) || \
+     defined(USE_AURA)
+ extern const char kChromeUITabModalConfirmDialogHost[];
+ #endif

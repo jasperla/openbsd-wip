@@ -1,0 +1,19 @@
+$OpenBSD: patch-services_device_serial_BUILD_gn,v 1.3 2020/10/22 13:52:54 robert Exp $
+
+Index: services/device/serial/BUILD.gn
+--- services/device/serial/BUILD.gn.orig
++++ services/device/serial/BUILD.gn
+@@ -75,6 +75,13 @@ if (is_win || ((is_linux || is_chromeos) && use_udev) 
+       ]
+     }
+ 
++    if (is_openbsd) {
++      sources -= [
++        "serial_device_enumerator_linux.cc",
++        "serial_device_enumerator_linux.h"
++      ]
++    }
++
+     if (use_udev) {
+       deps += [ "//device/udev_linux" ]
+     }

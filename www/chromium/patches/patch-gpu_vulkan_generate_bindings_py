@@ -1,0 +1,23 @@
+$OpenBSD: patch-gpu_vulkan_generate_bindings_py,v 1.11 2020/10/22 13:52:54 robert Exp $
+
+Index: gpu/vulkan/generate_bindings.py
+--- gpu/vulkan/generate_bindings.py.orig
++++ gpu/vulkan/generate_bindings.py
+@@ -179,7 +179,7 @@ VULKAN_DEVICE_FUNCTIONS = [
+     ]
+   },
+   {
+-    'ifdef': 'defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_ANDROID)',
++    'ifdef': 'defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_ANDROID) || defined(OS_BSD)',
+     'extension': 'VK_KHR_EXTERNAL_SEMAPHORE_FD_EXTENSION_NAME',
+     'functions': [
+       'vkGetSemaphoreFdKHR',
+@@ -195,7 +195,7 @@ VULKAN_DEVICE_FUNCTIONS = [
+     ]
+   },
+   {
+-    'ifdef': 'defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_ANDROID)',
++    'ifdef': 'defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_ANDROID) || defined(OS_BSD)',
+     'extension': 'VK_KHR_EXTERNAL_MEMORY_FD_EXTENSION_NAME',
+     'functions': [
+       'vkGetMemoryFdKHR',

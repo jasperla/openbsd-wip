@@ -1,0 +1,32 @@
+$OpenBSD: patch-weblayer_browser_content_browser_client_impl_cc,v 1.8 2020/10/22 13:52:55 robert Exp $
+
+Index: weblayer/browser/content_browser_client_impl.cc
+--- weblayer/browser/content_browser_client_impl.cc.orig
++++ weblayer/browser/content_browser_client_impl.cc
+@@ -129,7 +129,7 @@
+ #include "weblayer/browser/tts_environment_android_impl.h"
+ #endif
+ 
+-#if defined(OS_LINUX) || defined(OS_ANDROID)
++#if defined(OS_LINUX) || defined(OS_ANDROID) || defined(OS_BSD)
+ #include "content/public/common/content_descriptors.h"
+ #endif
+ 
+@@ -375,7 +375,7 @@ void ContentBrowserClientImpl::ConfigureNetworkContext
+ 
+ void ContentBrowserClientImpl::OnNetworkServiceCreated(
+     network::mojom::NetworkService* network_service) {
+-#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
++#if (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || defined(OS_BSD)
+   network::mojom::CryptConfigPtr config = network::mojom::CryptConfig::New();
+   content::GetNetworkService()->SetCryptConfig(std::move(config));
+ #endif
+@@ -801,7 +801,7 @@ SafeBrowsingService* ContentBrowserClientImpl::GetSafe
+ }
+ #endif
+ 
+-#if defined(OS_LINUX) || defined(OS_ANDROID)
++#if defined(OS_LINUX) || defined(OS_ANDROID) || defined(OS_BSD)
+ void ContentBrowserClientImpl::GetAdditionalMappedFilesForChildProcess(
+     const base::CommandLine& command_line,
+     int child_process_id,

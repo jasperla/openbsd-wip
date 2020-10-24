@@ -1,0 +1,23 @@
+$OpenBSD: patch-components_crash_core_common_BUILD_gn,v 1.11 2020/07/17 20:23:08 robert Exp $
+
+Index: components/crash/core/common/BUILD.gn
+--- components/crash/core/common/BUILD.gn.orig
++++ components/crash/core/common/BUILD.gn
+@@ -7,7 +7,7 @@ import("//components/gwp_asan/buildflags/buildflags.gn
+ 
+ declare_args() {
+   # If set to true, this will stub out and disable the entire crash key system.
+-  use_crash_key_stubs = is_fuchsia
++  use_crash_key_stubs = is_fuchsia || is_openbsd
+ }
+ 
+ group("common") {
+@@ -184,7 +184,7 @@ source_set("unit_tests") {
+     sources += [ "crash_key_breakpad_ios_unittest.cc" ]
+     deps += [ "//third_party/breakpad:client" ]
+     include_dirs = [ "//third_party/breakpad/breakpad/src/" ]
+-  } else if (!is_mac && !is_win && !is_fuchsia && !is_android) {
++  } else if (!is_mac && !is_win && !is_fuchsia && !is_android && !is_openbsd) {
+     include_dirs = [ "//third_party/breakpad/breakpad/src/" ]
+     sources += [ "crash_key_breakpad_unittest.cc" ]
+   }

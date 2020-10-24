@@ -1,0 +1,15 @@
+$OpenBSD: patch-chrome_browser_extensions_BUILD_gn,v 1.34 2020/10/22 13:52:53 robert Exp $
+Index: chrome/browser/extensions/BUILD.gn
+--- chrome/browser/extensions/BUILD.gn.orig
++++ chrome/browser/extensions/BUILD.gn
+@@ -1219,6 +1219,10 @@ static_library("extensions") {
+     deps += [ "//chrome/common:service_process_mojom" ]
+   }
+ 
++  if (is_openbsd) {
++    sources -= [ "api/image_writer_private/removable_storage_provider_linux.cc" ]
++  }
++
+   if (enable_service_discovery) {
+     sources += [
+       "api/mdns/mdns_api.cc",

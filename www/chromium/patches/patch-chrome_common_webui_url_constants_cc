@@ -1,0 +1,52 @@
+$OpenBSD: patch-chrome_common_webui_url_constants_cc,v 1.23 2020/10/22 13:52:54 robert Exp $
+
+Index: chrome/common/webui_url_constants.cc
+--- chrome/common/webui_url_constants.cc.orig
++++ chrome/common/webui_url_constants.cc
+@@ -339,7 +339,7 @@ bool IsSystemWebUIHost(base::StringPiece host) {
+ #endif  // defined(OS_CHROMEOS)
+ 
+ #if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || \
+-    defined(OS_CHROMEOS)
++    defined(OS_CHROMEOS) || defined(OS_BSD)
+ const char kChromeUIDiscardsHost[] = "discards";
+ const char kChromeUIDiscardsURL[] = "chrome://discards/";
+ const char kChromeUIHatsHost[] = "hats";
+@@ -361,17 +361,17 @@ const char kChromeUILinuxProxyConfigHost[] = "linux-pr
+ #endif
+ 
+ #if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_CHROMEOS) || \
+-    defined(OS_ANDROID)
++    defined(OS_ANDROID) || defined(OS_BSD)
+ const char kChromeUISandboxHost[] = "sandbox";
+ #endif
+ 
+-#if defined(OS_WIN) || defined(OS_MAC) || \
++#if defined(OS_WIN) || defined(OS_MAC) || defined(OS_BSD) || \
+     (defined(OS_LINUX) && !defined(OS_CHROMEOS))
+ const char kChromeUIBrowserSwitchHost[] = "browser-switch";
+ const char kChromeUIBrowserSwitchURL[] = "chrome://browser-switch/";
+ #endif
+ 
+-#if ((defined(OS_LINUX) || defined(OS_CHROMEOS)) && defined(TOOLKIT_VIEWS)) || \
++#if ((defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)) && defined(TOOLKIT_VIEWS)) || \
+     defined(USE_AURA)
+ const char kChromeUITabModalConfirmDialogHost[] = "tab-modal-confirm-dialog";
+ #endif
+@@ -543,14 +543,14 @@ const char* const kChromeHostURLs[] = {
+     kChromeUIAssistantOptInHost,
+ #endif
+ #if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || \
+-    defined(OS_CHROMEOS)
++    defined(OS_CHROMEOS) || defined(OS_BSD)
+     kChromeUIDiscardsHost,
+ #endif
+ #if defined(OS_POSIX) && !defined(OS_MAC) && !defined(OS_ANDROID)
+     kChromeUILinuxProxyConfigHost,
+ #endif
+ #if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_CHROMEOS) || \
+-    defined(OS_ANDROID)
++    defined(OS_ANDROID) || defined(OS_BSD)
+     kChromeUISandboxHost,
+ #endif
+ #if defined(OS_WIN)

@@ -1,0 +1,33 @@
+$OpenBSD: patch-build_toolchain_gcc_toolchain_gni,v 1.26 2020/10/22 13:52:53 robert Exp $
+Index: build/toolchain/gcc_toolchain.gni
+--- build/toolchain/gcc_toolchain.gni.orig
++++ build/toolchain/gcc_toolchain.gni
+@@ -50,6 +50,11 @@ if (enable_resource_allowlist_generation) {
+       "enable_resource_allowlist_generation=true does not work for target_os=$target_os")
+ }
+ 
++declare_args() {
++  extra_cppflags = ""
++  extra_ldflags = ""
++}
++
+ # This template defines a toolchain for something that works like gcc
+ # (including clang).
+ #
+@@ -641,12 +646,12 @@ template("clang_toolchain") {
+   }
+ 
+   gcc_toolchain(target_name) {
+-    prefix = rebase_path("$clang_base_path/bin", root_build_dir)
+-    cc = "$prefix/clang"
+-    cxx = "$prefix/clang++"
++    prefix = "/usr/bin"
++    cc = "cc"
++    cxx = "c++"
+     ld = cxx
+     readelf = "${toolprefix}readelf"
+-    ar = "${prefix}/llvm-ar"
++    ar = "${prefix}/ar"
+     nm = "${toolprefix}nm"
+ 
+     forward_variables_from(invoker,

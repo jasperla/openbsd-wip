@@ -1,0 +1,23 @@
+$OpenBSD: patch-gpu_ipc_service_gpu_watchdog_thread_h,v 1.13 2020/09/22 11:47:41 robert Exp $
+
+Index: gpu/ipc/service/gpu_watchdog_thread.h
+--- gpu/ipc/service/gpu_watchdog_thread.h.orig
++++ gpu/ipc/service/gpu_watchdog_thread.h
+@@ -213,7 +213,7 @@ class GPU_IPC_SERVICE_EXPORT GpuWatchdogThreadImplV1
+   base::ThreadTicks GetWatchedThreadTime();
+ #endif
+ 
+-#if defined(USE_X11)
++#if defined(USE_X11) && !defined(OS_BSD)
+   void UpdateActiveTTY();
+ #endif
+ 
+@@ -261,7 +261,7 @@ class GPU_IPC_SERVICE_EXPORT GpuWatchdogThreadImplV1
+   base::Time check_time_;
+   base::TimeTicks check_timeticks_;
+ 
+-#if defined(USE_X11)
++#if defined(USE_X11) && !defined(OS_BSD)
+   FILE* tty_file_;
+   int host_tty_;
+   int active_tty_ = -1;

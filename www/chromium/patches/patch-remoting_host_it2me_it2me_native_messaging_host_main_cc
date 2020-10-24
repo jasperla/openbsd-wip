@@ -1,0 +1,23 @@
+$OpenBSD: patch-remoting_host_it2me_it2me_native_messaging_host_main_cc,v 1.9 2020/10/22 13:52:54 robert Exp $
+
+Index: remoting/host/it2me/it2me_native_messaging_host_main.cc
+--- remoting/host/it2me/it2me_native_messaging_host_main.cc.orig
++++ remoting/host/it2me/it2me_native_messaging_host_main.cc
+@@ -29,7 +29,7 @@
+ #include "remoting/host/switches.h"
+ #include "remoting/host/usage_stats_consent.h"
+ 
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
+ #include <gtk/gtk.h>
+ 
+ #include "base/linux_util.h"
+@@ -113,7 +113,7 @@ int It2MeNativeMessagingHostMain(int argc, char** argv
+ 
+   remoting::LoadResources("");
+ 
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
+   // Required in order for us to run multiple X11 threads.
+   XInitThreads();
+ 

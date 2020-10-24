@@ -1,0 +1,14 @@
+$OpenBSD$
+
+Index: third_party/crashpad/crashpad/util/misc/capture_context.h
+--- third_party/crashpad/crashpad/util/misc/capture_context.h.orig
++++ third_party/crashpad/crashpad/util/misc/capture_context.h
+@@ -38,7 +38,7 @@ using NativeCPUContext = arm_unified_thread_state;
+ #elif defined(OS_WIN)
+ using NativeCPUContext = CONTEXT;
+ #elif defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_ANDROID) || \
+-    defined(OS_FUCHSIA)
++    defined(OS_FUCHSIA) || defined(OS_BSD)
+ using NativeCPUContext = ucontext_t;
+ #endif  // OS_APPLE
+ 

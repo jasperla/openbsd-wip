@@ -1,0 +1,27 @@
+$OpenBSD: patch-chrome_browser_metrics_chrome_browser_main_extra_parts_metrics_cc,v 1.21 2020/10/22 13:52:53 robert Exp $
+
+Index: chrome/browser/metrics/chrome_browser_main_extra_parts_metrics.cc
+--- chrome/browser/metrics/chrome_browser_main_extra_parts_metrics.cc.orig
++++ chrome/browser/metrics/chrome_browser_main_extra_parts_metrics.cc
+@@ -48,8 +48,10 @@
+ #include <cpu-features.h>
+ #endif  // defined(OS_ANDROID) && defined(__arm__)
+ 
+-#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
++#if (defined(OS_BSD) || defined(OS_LINUX)) && !defined(OS_CHROMEOS)
++#if !defined(OS_BSD)
+ #include <gnu/libc-version.h>
++#endif
+ 
+ #include "base/linux_util.h"
+ #include "base/strings/string_split.h"
+@@ -174,7 +176,9 @@ void RecordStartupMetrics() {
+   base::UmaHistogramBoolean("Windows.ApplockerRunning", IsApplockerRunning());
+ #endif  // defined(OS_WIN)
+ 
++#if !defined(OS_BSD)
+   bluetooth_utility::ReportBluetoothAvailability();
++#endif
+ 
+   // Record whether Chrome is the default browser or not.
+   shell_integration::DefaultWebClientState default_state =
