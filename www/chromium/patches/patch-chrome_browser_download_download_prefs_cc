@@ -83,7 +83,7 @@ Index: chrome/browser/download/download_prefs.cc
    SetShouldOpenPdfInSystemReader(false);
  #endif
    auto_open_by_user_.clear();
-@@ -601,9 +604,15 @@ base::FilePath DownloadPrefs::SanitizeDownloadTargetPa
+@@ -601,9 +604,13 @@ base::FilePath DownloadPrefs::SanitizeDownloadTargetPa
    // Fall back to the default download directory for all other paths.
    return GetDefaultDownloadDirectoryForProfile();
  #else
@@ -94,8 +94,6 @@ Index: chrome/browser/download/download_prefs.cc
    // If the stored download directory is an absolute path, we presume it's
    // correct; there's not really much more validation we can do here.
 -  if (path.IsAbsolute())
-+  if (command_line->HasSwitch(sandbox::policy::switches::kDisableUnveil))
-+    LOG(ERROR) << "kDisableUnveil";
 +  if (command_line->HasSwitch(sandbox::policy::switches::kDisableUnveil) && path.IsAbsolute())
      return path;
  
