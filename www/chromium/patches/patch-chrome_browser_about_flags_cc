@@ -48,7 +48,7 @@ Index: chrome/browser/about_flags.cc
      {"enable-save-data", flag_descriptions::kEnableSaveDataName,
       flag_descriptions::kEnableSaveDataDescription, kOsCrOS | kOsLinux,
       SINGLE_VALUE_TYPE(
-@@ -3987,7 +3987,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -3990,7 +3990,7 @@ const FeatureEntry kFeatureEntries[] = {
       FEATURE_VALUE_TYPE(omnibox::kOmniboxTrendingZeroPrefixSuggestionsOnNTP)},
  
  #if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_MAC) || \
@@ -57,7 +57,7 @@ Index: chrome/browser/about_flags.cc
      {"omnibox-experimental-keyword-mode",
       flag_descriptions::kOmniboxExperimentalKeywordModeName,
       flag_descriptions::kOmniboxExperimentalKeywordModeDescription, kOsDesktop,
-@@ -4373,7 +4373,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -4376,7 +4376,7 @@ const FeatureEntry kFeatureEntries[] = {
       FEATURE_VALUE_TYPE(features::kClickToOpenPDFPlaceholder)},
  
  #if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || \
@@ -66,7 +66,7 @@ Index: chrome/browser/about_flags.cc
      {"direct-manipulation-stylus",
       flag_descriptions::kDirectManipulationStylusName,
       flag_descriptions::kDirectManipulationStylusDescription,
-@@ -5080,7 +5080,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -5083,7 +5083,7 @@ const FeatureEntry kFeatureEntries[] = {
  #endif  // BUILDFLAG(ENABLE_CLICK_TO_CALL)
  
  #if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || \
@@ -75,7 +75,7 @@ Index: chrome/browser/about_flags.cc
      {"remote-copy-receiver", flag_descriptions::kRemoteCopyReceiverName,
       flag_descriptions::kRemoteCopyReceiverDescription, kOsDesktop,
       FEATURE_VALUE_TYPE(kRemoteCopyReceiver)},
-@@ -5684,7 +5684,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -5687,7 +5687,7 @@ const FeatureEntry kFeatureEntries[] = {
  #endif  // defined(OS_ANDROID)
  
  #if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || \
@@ -84,7 +84,7 @@ Index: chrome/browser/about_flags.cc
      {"global-media-controls", flag_descriptions::kGlobalMediaControlsName,
       flag_descriptions::kGlobalMediaControlsDescription,
       kOsWin | kOsMac | kOsLinux,
-@@ -5911,7 +5911,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -5914,7 +5914,7 @@ const FeatureEntry kFeatureEntries[] = {
           password_manager::features::kEnablePasswordsAccountStorage)},
  
  #if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || \
@@ -93,7 +93,7 @@ Index: chrome/browser/about_flags.cc
      {"passwords-account-storage-iph",
       flag_descriptions::kEnablePasswordsAccountStorageIPHName,
       flag_descriptions::kEnablePasswordsAccountStorageIPHDescription,
-@@ -6645,7 +6645,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -6655,7 +6655,7 @@ const FeatureEntry kFeatureEntries[] = {
  #endif
  
  #if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || \
@@ -102,7 +102,7 @@ Index: chrome/browser/about_flags.cc
      {"enable-oop-print-drivers", flag_descriptions::kEnableOopPrintDriversName,
       flag_descriptions::kEnableOopPrintDriversDescription, kOsDesktop,
       FEATURE_VALUE_TYPE(printing::features::kEnableOopPrintDrivers)},
-@@ -6678,7 +6678,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -6688,7 +6688,7 @@ const FeatureEntry kFeatureEntries[] = {
       FEATURE_VALUE_TYPE(features::kMuteNotificationsDuringScreenShare)},
  #endif  // !defined(OS_ANDROID)
  

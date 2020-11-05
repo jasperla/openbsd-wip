@@ -3,7 +3,7 @@ $OpenBSD$
 Index: weblayer/browser/content_browser_client_impl.cc
 --- weblayer/browser/content_browser_client_impl.cc.orig
 +++ weblayer/browser/content_browser_client_impl.cc
-@@ -134,7 +134,7 @@
+@@ -135,7 +135,7 @@
  #include "weblayer/browser/weblayer_factory_impl_android.h"
  #endif
  
@@ -12,7 +12,7 @@ Index: weblayer/browser/content_browser_client_impl.cc
  #include "content/public/common/content_descriptors.h"
  #endif
  
-@@ -381,7 +381,7 @@ void ContentBrowserClientImpl::ConfigureNetworkContext
+@@ -382,7 +382,7 @@ void ContentBrowserClientImpl::ConfigureNetworkContext
  
  void ContentBrowserClientImpl::OnNetworkServiceCreated(
      network::mojom::NetworkService* network_service) {
@@ -21,7 +21,7 @@ Index: weblayer/browser/content_browser_client_impl.cc
    network::mojom::CryptConfigPtr config = network::mojom::CryptConfig::New();
    content::GetNetworkService()->SetCryptConfig(std::move(config));
  #endif
-@@ -824,7 +824,7 @@ SafeBrowsingService* ContentBrowserClientImpl::GetSafe
+@@ -825,7 +825,7 @@ SafeBrowsingService* ContentBrowserClientImpl::GetSafe
  }
  #endif
  
