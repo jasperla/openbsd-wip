@@ -1,4 +1,4 @@
-project(openbsd-sndio)
+project(sndio)
 
 if(DISABLE_SNDIO)
 	message(STATUS "Sndio support disabled")
@@ -18,18 +18,18 @@ include_directories(
 	${Sndio_INCLUDE_DIRS}
 )
 
-set(openbsd-sndio_SOURCES
-	openbsd-sndio.c
+set(sndio_SOURCES
+	sndio.c
 	sndio-input.c
 )
 
-add_library(openbsd-sndio MODULE
-	${openbsd-sndio_SOURCES}
+add_library(sndio MODULE
+	${sndio_SOURCES}
 )
-target_link_libraries(openbsd-sndio
+target_link_libraries(sndio
 	libobs
 	${Sndio_LIBRARIES}
 )
-set_target_properties(openbsd-sndio PROPERTIES FOLDER "plugins")
+set_target_properties(sndio PROPERTIES FOLDER "plugins")
 
-install_obs_plugin_with_data(openbsd-sndio data)
+install_obs_plugin_with_data(sndio data)

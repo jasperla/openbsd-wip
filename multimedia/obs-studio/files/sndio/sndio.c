@@ -17,7 +17,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include <obs-module.h>
 
 OBS_DECLARE_MODULE()
-OBS_MODULE_USE_DEFAULT_LOCALE("openbsd-sndio", "en-US")
+OBS_MODULE_USE_DEFAULT_LOCALE("sndio", "en-US")
 MODULE_EXPORT const char *obs_module_description(void)
 {
 	return "sndio output capture";
