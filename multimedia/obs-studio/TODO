@@ -21,3 +21,6 @@ video4linux2 available via ffmpeg (see pkg/README).
 
 If you "start recording" and "stop recording" then it sometimes seems
 to hang when stopping.
+
+There is a pull request open, based on the code from this port:
+https://github.com/obsproject/obs-studio/pull/3713
