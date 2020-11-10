@@ -33,12 +33,14 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "sndio-input.h"
 
-#define blog(level, msg, ...) blog(level, "sndio-input: %s: " msg, __func__, ##__VA_ARGS__);
+#define blog(level, msg, ...) \
+	blog(level, "sndio-input: %s: " msg, __func__, ##__VA_ARGS__);
 
-#define berr(level, msg, ...) do { \
-	const char *errstr = strerror_l(errno, NULL); \
-	blog(level, msg ": %s", ##__VA_ARGS__, errstr); \
-} while(0)
+#define berr(level, msg, ...)                                   \
+	do {                                                    \
+		const char *errstr = strerror_l(errno, NULL);   \
+		blog(level, msg ": %s", ##__VA_ARGS__, errstr); \
+	} while (0)
 
 #define NSEC_PER_SEC 1000000000LL
 
@@ -51,7 +53,8 @@ static const char *sndio_input_getname(void *unused)
 	return obs_module_text("SndioInput");
 }
 
-static enum speaker_layout sndio_channels_to_obs_speakers(int channels) {
+static enum speaker_layout sndio_channels_to_obs_speakers(int channels)
+{
 	switch (channels) {
 	case 1:
 		return SPEAKERS_MONO;
@@ -71,7 +74,8 @@ static enum speaker_layout sndio_channels_to_obs_speakers(int channels) {
 	return SPEAKERS_UNKNOWN;
 }
 
-static enum audio_format sndio_to_obs_audio_format(const struct sio_par *par) {
+static enum audio_format sndio_to_obs_audio_format(const struct sio_par *par)
+{
 	switch (par->bits) {
 	case 8:
 		return AUDIO_FORMAT_U8BIT;
@@ -88,24 +92,25 @@ static enum audio_format sndio_to_obs_audio_format(const struct sio_par *par) {
  * Whenever user chooses another device, this thread gets signalled to exit,
  * and another one starts immediately, without waiting for the previous.
  */
-static void* sndio_thread(void *attr)
+static void *sndio_thread(void *attr)
 {
-	struct sndio_thr_data	*thrdata = attr;
-	size_t			 msgread = 0;	// msg bytes read from socket
-	size_t			 nsiofds = sio_nfds(thrdata->hdl);
-	struct pollfd		 pfd[1 + nsiofds];
-	struct sio_par		 par;
-	uint64_t		 ts;
-	ssize_t			 nread;
-	int			 pollres;
-	uint8_t			*buf;
-	size_t			 bufsz;
+	struct sndio_thr_data *thrdata = attr;
+	size_t msgread = 0; // msg bytes read from socket
+	size_t nsiofds = sio_nfds(thrdata->hdl);
+	struct pollfd pfd[1 + nsiofds];
+	struct sio_par par;
+	uint64_t ts;
+	ssize_t nread;
+	int pollres;
+	uint8_t *buf;
+	size_t bufsz;
 
 	ts = os_gettime_ns();
 
 	bufsz = thrdata->par.appbufsz * thrdata->par.bps * 2;
 	if ((buf = bmalloc(bufsz * 2)) == NULL) {
-		blog(LOG_ERROR, "could not allocate record buffer of %zu bytes", bufsz);
+		blog(LOG_ERROR, "could not allocate record buffer of %zu bytes",
+		     bufsz);
 		goto finish;
 	}
 
@@ -118,7 +123,7 @@ static void* sndio_thread(void *attr)
 		pfd[0].events = POLLIN;
 		sio_pollfd(thrdata->hdl, pfd + 1, POLLIN);
 
-		if (poll(pfd, 1 + nsiofds, INFTIM) == -1) {
+		if (poll(pfd, 1 + nsiofds, /*INFTIM*/ -1) == -1) {
 			if (errno == EINTR)
 				continue;
 			berr(LOG_ERROR, "exiting due to poll error");
@@ -126,46 +131,59 @@ static void* sndio_thread(void *attr)
 		}
 
 		if ((pfd[0].revents & POLLHUP) == POLLHUP) {
-			blog(LOG_INFO, "exiting upon receiving EOF at IPC socket");
+			blog(LOG_INFO,
+			     "exiting upon receiving EOF at IPC socket");
 			goto finish;
 		}
 		if ((pfd[0].revents & POLLIN) == POLLIN) {
-			nread = read(pfd[0].fd, ((uint8_t*)&par)+msgread, sizeof(par)-msgread);
+			nread = read(pfd[0].fd, ((uint8_t *)&par) + msgread,
+				     sizeof(par) - msgread);
 			switch (nread) {
 			case -1:
 				if (errno == EAGAIN)
 					goto proceed_sio;
-				berr(LOG_ERROR, "reading from IPC socket failed");
+				berr(LOG_ERROR,
+				     "reading from IPC socket failed");
 				goto finish;
 
 			case 0:
-				blog(LOG_INFO, "exiting upon receiving EOF at IPC socket");
+				blog(LOG_INFO,
+				     "exiting upon receiving EOF at IPC socket");
 				goto finish;
 
 			default:
 				msgread += (size_t)nread;
 				if (msgread == sizeof(struct sio_par)) {
-					size_t	 tbufsz;
-					uint8_t	*tbuf;
+					size_t tbufsz;
+					uint8_t *tbuf;
 
 					msgread = 0;
 					sio_stop(thrdata->hdl);
 					if (!sio_setpar(thrdata->hdl, &par)) {
-						blog(LOG_WARNING, "sio_setpar failed, keeping old params");
+						blog(LOG_WARNING,
+						     "sio_setpar failed, keeping old params");
 					}
-blog(LOG_INFO, "after sio_setpar(): appbufsz=%u bps=%u", par.appbufsz, par.bps);
-					memcpy(&thrdata->par, &par, sizeof(struct sio_par));
+					blog(LOG_INFO,
+					     "after sio_setpar(): appbufsz=%u bps=%u",
+					     par.appbufsz, par.bps);
+					memcpy(&thrdata->par, &par,
+					       sizeof(struct sio_par));
 
-					tbufsz = thrdata->par.appbufsz * thrdata->par.bps * 2;
-					if ((tbuf = brealloc(buf, tbufsz)) == NULL) {
-						blog(LOG_ERROR, "could not reallocate record buffer of %zu bytes", tbufsz);
+					tbufsz = thrdata->par.appbufsz *
+						 thrdata->par.bps * 2;
+					if ((tbuf = brealloc(buf, tbufsz)) ==
+					    NULL) {
+						blog(LOG_ERROR,
+						     "could not reallocate record buffer of %zu bytes",
+						     tbufsz);
 						goto finish;
 					}
 					buf = tbuf;
 					bufsz = tbufsz;
 
 					if (!sio_start(thrdata->hdl)) {
-						blog(LOG_ERROR, "sio_start failed, exiting");
+						blog(LOG_ERROR,
+						     "sio_start failed, exiting");
 						goto finish;
 					}
 					ts = os_gettime_ns();
@@ -176,8 +194,8 @@ blog(LOG_INFO, "after sio_setpar(): appbufsz=%u bps=%u", par.appbufsz, par.bps);
 			}
 		}
 
-proceed_sio:
-		pollres = sio_revents(thrdata->hdl, pfd+1);
+	proceed_sio:
+		pollres = sio_revents(thrdata->hdl, pfd + 1);
 		if ((pollres & POLLHUP) == POLLHUP) {
 			blog(LOG_ERROR, "sndio device error happened, exiting");
 			goto finish;
@@ -189,28 +207,28 @@ proceed_sio:
 			nread = (ssize_t)sio_read(thrdata->hdl, buf, bufsz);
 			if (nread == 0) {
 				if (sio_eof(thrdata->hdl)) {
-					blog(LOG_ERROR, "sndio device EOF happened, exiting");
+					blog(LOG_ERROR,
+					     "sndio device EOF happened, exiting");
 					goto finish;
 				}
 				continue;
 			}
 			nframes = (unsigned int)nread / thrdata->par.bps;
-//blog(LOG_INFO, "sio_read returned %u, nframes = %u", nread, nframes);
+			//blog(LOG_INFO, "sio_read returned %u, nframes = %u", nread, nframes);
 
 			memset(&out, 0, sizeof(struct obs_source_audio));
 			out.data[0] = buf;
 			out.frames = nframes;
 			out.format = sndio_to_obs_audio_format(&thrdata->par);
-			out.speakers = sndio_channels_to_obs_speakers(thrdata->par.rchan);
+			out.speakers = sndio_channels_to_obs_speakers(
+				thrdata->par.rchan);
 			out.samples_per_sec = thrdata->par.rate;
 			out.timestamp = ts;
 
-			ts += util_mul_div64(nframes, NSEC_PER_SEC, thrdata->par.rate);
+			ts += util_mul_div64(nframes, NSEC_PER_SEC,
+					     thrdata->par.rate);
 
-//			if (!thrdata->first_ts)
-//				thrdata->first_ts = out.timestamp;		// XXX + STARTUP_TIMEOUT_NS;
-//			if (out.timestamp > thrdata->first_ts)
-				 obs_source_output_audio(thrdata->source, &out);
+			obs_source_output_audio(thrdata->source, &out);
 		}
 	}
 
@@ -243,17 +261,18 @@ static void sndio_destroy(void *vptr)
  */
 static void sndio_apply(struct sndio_data *data, obs_data_t *settings)
 {
-	struct sndio_thr_data	*thrdata;
-	pthread_t		 thread;
-	int			 ec;
-	int			 socks[2] = { -1, -1 };
-	const char		*devname = obs_data_get_string(settings, "device");
+	struct sndio_thr_data *thrdata;
+	pthread_t thread;
+	int ec;
+	int socks[2] = {-1, -1};
+	const char *devname = obs_data_get_string(settings, "device");
 
 	if ((thrdata = bzalloc(sizeof(struct sndio_thr_data))) == NULL) {
 		blog(LOG_ERROR, "malloc");
 		return;
 	}
-	if (socketpair(AF_UNIX, SOCK_STREAM | SOCK_NONBLOCK | SOCK_CLOEXEC, 0, socks) == -1) {
+	if (socketpair(AF_UNIX, SOCK_STREAM | SOCK_NONBLOCK | SOCK_CLOEXEC, 0,
+		       socks) == -1) {
 		berr(LOG_ERROR, "socketpair");
 		goto error;
 	}
@@ -277,15 +296,18 @@ static void sndio_apply(struct sndio_data *data, obs_data_t *settings)
 	thrdata->par.le = 1;
 	thrdata->par.rate = obs_data_get_int(settings, "rate");
 	thrdata->par.rchan = obs_data_get_int(settings, "channels");
-	thrdata->par.xrun = SIO_SYNC;	// makes timestamping easy
+	thrdata->par.xrun = SIO_SYNC; // makes timestamping easy
 	if (!sio_setpar(thrdata->hdl, &thrdata->par)) {
-		berr(LOG_ERROR, "could not set parameters for %s sndio device", devname);
+		berr(LOG_ERROR, "could not set parameters for %s sndio device",
+		     devname);
 		goto error;
 	}
-blog(LOG_INFO, "after initial sio_setpar(): appbufsz=%u bps=%u", thrdata->par.appbufsz, thrdata->par.bps);
+	blog(LOG_INFO, "after initial sio_setpar(): appbufsz=%u bps=%u",
+	     thrdata->par.appbufsz, thrdata->par.bps);
 
 	if (!sio_start(thrdata->hdl)) {
-		berr(LOG_ERROR, "could not start recording on %s sndio device", devname);
+		berr(LOG_ERROR, "could not start recording on %s sndio device",
+		     devname);
 		goto error;
 	}
 
@@ -351,23 +373,24 @@ static obs_properties_t *sndio_input_properties(void *unused)
 	obs_properties_t *props = obs_properties_create();
 
 	obs_properties_add_text(props, "device", obs_module_text("Device"),
-	                        OBS_TEXT_DEFAULT);
+				OBS_TEXT_DEFAULT);
 
 	rate = obs_properties_add_list(props, "rate", obs_module_text("Rate"),
 				       OBS_COMBO_TYPE_LIST,
 				       OBS_COMBO_FORMAT_INT);
-	obs_property_list_add_int(rate, "11025 Hz",  11025);
-	obs_property_list_add_int(rate, "22050 Hz",  22050);
-	obs_property_list_add_int(rate, "32000 Hz",  32000);
-	obs_property_list_add_int(rate, "44100 Hz",  44100);
-	obs_property_list_add_int(rate, "48000 Hz",  48000);
-	obs_property_list_add_int(rate, "96000 Hz",  96000);
+	obs_property_list_add_int(rate, "11025 Hz", 11025);
+	obs_property_list_add_int(rate, "22050 Hz", 22050);
+	obs_property_list_add_int(rate, "32000 Hz", 32000);
+	obs_property_list_add_int(rate, "44100 Hz", 44100);
+	obs_property_list_add_int(rate, "48000 Hz", 48000);
+	obs_property_list_add_int(rate, "96000 Hz", 96000);
 	obs_property_list_add_int(rate, "192000 Hz", 192000);
 
-	bits = obs_properties_add_list(props, "bits", obs_module_text("BitsPerSample"),
+	bits = obs_properties_add_list(props, "bits",
+				       obs_module_text("BitsPerSample"),
 				       OBS_COMBO_TYPE_LIST,
 				       OBS_COMBO_FORMAT_INT);
-	obs_property_list_add_int(bits,  "8",  8);
+	obs_property_list_add_int(bits, "8", 8);
 	obs_property_list_add_int(bits, "16", 16);
 	obs_property_list_add_int(bits, "32", 32);
 
