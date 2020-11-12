@@ -11,7 +11,10 @@ SHARED_LIBS +=  arcan_tui                 0.0 # 0.13
 
 GH_ACCOUNT =	letoram
 GH_PROJECT =	arcan
-GH_TAGNAME =	0.6.0-pre3
+#GH_TAGNAME =	0.6.0-pre3
+
+GH_COMMIT =	820ec644a21e482a2580c83a6b6fb50c1e16f03f
+DISTNAME =	arcan-0.6.0-pre4
 
 CATEGORIES =	graphics devel
 HOMEPAGE =	https://arcan-fe.com
