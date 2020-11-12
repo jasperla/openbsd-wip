@@ -1,0 +1,13 @@
+$OpenBSD$
+
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -48,5 +48,5 @@ add_executable(treesheets ${sources})
+ 
+ target_link_libraries(treesheets PRIVATE ${wxWidgets_LIBRARIES})
+ 
+-install(TARGETS treesheets DESTINATION .)
+-install(DIRECTORY TS/ DESTINATION .)
++install(TARGETS treesheets DESTINATION share/treesheets)
++install(DIRECTORY TS/ DESTINATION share/treesheets)
