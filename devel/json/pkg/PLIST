@@ -1,0 +1,9 @@
+@comment $OpenBSD: PLIST,v$
+include/nlohmann/
+include/nlohmann/json.hpp
+lib/cmake/
+lib/cmake/nlohmann_json/
+lib/cmake/nlohmann_json/nlohmann_jsonConfig.cmake
+lib/cmake/nlohmann_json/nlohmann_jsonConfigVersion.cmake
+lib/cmake/nlohmann_json/nlohmann_jsonTargets.cmake
+lib/pkgconfig/nlohmann_json.pc

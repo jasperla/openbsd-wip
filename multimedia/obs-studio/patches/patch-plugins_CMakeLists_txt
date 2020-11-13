@@ -7,13 +7,22 @@ V+A are supported via ffmpeg.
 Index: plugins/CMakeLists.txt
 --- plugins/CMakeLists.txt.orig
 +++ plugins/CMakeLists.txt
-@@ -49,6 +49,9 @@ elseif("${CMAKE_SYSTEM_NAME}" MATCHES "FreeBSD")
+@@ -41,6 +41,7 @@ elseif("${CMAKE_SYSTEM_NAME}" MATCHES "Linux")
+ 	add_subdirectory(linux-alsa)
+ 	add_subdirectory(decklink/linux)
+ 	add_subdirectory(vlc-video)
++	add_subdirectory(sndio)
+ elseif("${CMAKE_SYSTEM_NAME}" MATCHES "FreeBSD")
+ 	add_subdirectory(linux-capture)
+ 	add_subdirectory(linux-pulseaudio)
+@@ -49,6 +50,10 @@ elseif("${CMAKE_SYSTEM_NAME}" MATCHES "FreeBSD")
  	add_subdirectory(linux-alsa)
  	add_subdirectory(vlc-video)
  	add_subdirectory(oss-audio)
++	add_subdirectory(sndio)
 +elseif("${CMAKE_SYSTEM_NAME}" MATCHES "OpenBSD")
 +	add_subdirectory(linux-capture)
-+	add_subdirectory(openbsd-sndio)
++	add_subdirectory(sndio)
  endif()
  
  option(BUILD_BROWSER "Build browser plugin" OFF)

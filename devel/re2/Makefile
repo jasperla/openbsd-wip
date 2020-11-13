@@ -1,6 +1,6 @@
 # $OpenBSD$
 
-V =		2017-06-01
+V =		2020-11-01
 COMMENT =	fast C++ regex library
 DISTNAME =	re2-${V:S/-//g}
 CATEGORIES =	devel
@@ -14,18 +14,16 @@ GH_ACCOUNT =	google
 GH_PROJECT =	re2
 GH_TAGNAME =	${V}
 
-# BSD
-PERMIT_PACKAGE_CDROM =	Yes
+# BSD 3-clause
+PERMIT_PACKAGE =	Yes
 
-WANTLIB += m pthread
+WANTLIB += ${COMPILER_LIBCXX} m pthread
+
+MODULES =	devel/cmake
+
+CONFIGURE_ARGS = -DBUILD_SHARED_LIBS=Yes
 
 # Needs C++11
-COMPILER =	gcc
-
-USE_GMAKE =	Yes
-MAKE_FLAGS =	CXX="${CXX}" CXXFLAGS="${CXXFLAGS}"
-
-pre-configure:
-	sed -i 's,$${LIBre2_VERSION},${LIBre2_VERSION},g' ${WRKSRC}/Makefile
+COMPILER =	base-clang ports-gcc
 
 .include <bsd.port.mk>

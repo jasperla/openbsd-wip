@@ -44,7 +44,7 @@ LIB_DEPENDS=	audio/fdk-aac \
 NO_TEST=	Yes
 
 post-extract:
-	cp -R ${FILESDIR}/openbsd-sndio ${WRKSRC}/plugins/
+	cp -R ${FILESDIR}/sndio ${WRKSRC}/plugins/
 	cp ${FILESDIR}/FindSndio.cmake ${WRKSRC}/cmake/Modules/
 
 .include <bsd.port.mk>

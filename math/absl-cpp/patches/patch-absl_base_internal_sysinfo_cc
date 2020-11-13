@@ -1,0 +1,15 @@
+$OpenBSD$
+Unbreak build on OpenBSD.
+
+Index: absl/base/internal/sysinfo.cc
+--- absl/base/internal/sysinfo.cc.orig
++++ absl/base/internal/sysinfo.cc
+@@ -30,7 +30,7 @@
+ #include <sys/syscall.h>
+ #endif
+ 
+-#if defined(__APPLE__) || defined(__FreeBSD__)
++#if defined(__APPLE__) || defined(__FreeBSD__) || defined(__OpenBSD__)
+ #include <sys/sysctl.h>
+ #endif
+ 
