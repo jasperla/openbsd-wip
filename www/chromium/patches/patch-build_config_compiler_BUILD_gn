@@ -144,7 +144,7 @@ Index: build/config/compiler/BUILD.gn
      # gcc nacl is is_nacl && !is_clang, pnacl and nacl-clang are && is_clang.
      if (!is_nacl || is_clang) {
 -      cflags += [ "-g2" ]
-+      cflags += [ "${DEBUGFLAG}" ]
++      cflags += [ "-g0" ]
      }
  
      # TODO(https://crbug.com/1050118): Investigate missing debug info on mac.
