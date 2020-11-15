@@ -24,8 +24,8 @@ WANTLIB += ${COMPILER_LIBCXX} GL ICE Qt5Core Qt5Gui Qt5Svg Qt5Widgets
 WANTLIB += Qt5X11Extras Qt5Xml SM X11 X11-xcb Xcomposite Xext Xfixes
 WANTLIB += avcodec avdevice avfilter avformat avutil c curl dbus-1
 WANTLIB += fdk-aac fontconfig freetype jansson m mbedcrypto mbedtls
-WANTLIB += mbedx509 pulse sndio speexdsp swresample swscale x264 xcb
-WANTLIB += xcb-randr xcb-shm xcb-xfixes xcb-xinerama xcb-xinput z
+WANTLIB += mbedx509 pulse sndio speexdsp swresample swscale v4l2 x264
+WANTLIB += xcb xcb-randr xcb-shm xcb-xfixes xcb-xinerama xcb-xinput z
 
 COMPILER=	base-clang ports-gcc
 
@@ -36,6 +36,7 @@ LIB_DEPENDS=	audio/fdk-aac \
 		audio/pulseaudio \
 		devel/jansson \
 		graphics/ffmpeg \
+		multimedia/libv4l \
 		net/curl \
 		security/polarssl \
 		x11/qt5/qtsvg,-main \
