@@ -72,7 +72,7 @@ WANTLIB += harfbuzz harfbuzz-subset
 WANTLIB += ffi png
 WANTLIB += iconv lzma
 WANTLIB += fido2 cbor usbhid crypto
-WANTLIB += gbm xcb-dri3
+WANTLIB += gbm xkbcommon
 
 RUN_DEPENDS=	devel/xdg-utils \
 		devel/desktop-file-utils \
@@ -96,6 +96,7 @@ LIB_DEPENDS=	devel/harfbuzz \
 		security/nss \
 		textproc/libxslt \
 		x11/gtk+3 \
+		x11/xkbcommon \
 		print/cups,-libs \
 		${MODGCC4_CPPLIBDEP}
 
