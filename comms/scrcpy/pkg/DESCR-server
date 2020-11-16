@@ -1,0 +1,2 @@
+This package contains scrcpy-server, a Java executable that executes
+on the phone side during a scrcpy session.
