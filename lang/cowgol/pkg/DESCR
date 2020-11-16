@@ -1,0 +1,23 @@
+Cowgol is an experimental, Ada-inspired language for very small systems
+(6502, Z80, etc). It's different because it's intended to be self-hosted
+on these devices: the end goal is to be able to rebuild the entire
+compiler on an 8-bit micro, although we're not there yet.
+
+Features:
+* Properly type safe, modern language inspired by Ada
+* The compiler is written in itself and is fully bootstrapped
+* Table-driven, easy to port backend
+* Global analysis: dead code removal and static variable allocation
+
+The following targets are supported:
+* Z80 and 8080, on CP/M
+* 6502 and 65c02, on the BBC Micro with Tube second processor
+* 6303, on the 6303 version of Fuzix
+* 6502 interpreted bytecode, on the BBC Micro with Tube second
+  processor
+* 8086, on DOS (it emits tiny mode .com files)
+* PDP11, on V7 Unix
+* Generic and terrible C
+* Microsoft BASIC
+
+Simple emulators for various 8-bit platforms are included.

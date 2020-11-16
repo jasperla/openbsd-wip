@@ -1,0 +1,20 @@
+$OpenBSD$
+
+Don't build Linux i386 or Linux arm native executables.
+We would need Linux cross assembler packages for each.
+
+Note that the cross compilers remain, so you can still
+compile Cowgol code to binaries for those platforms.
+
+Index: toolchains.lua
+--- toolchains.lua.orig
++++ toolchains.lua
+@@ -162,8 +162,6 @@ ALL_TOOLCHAINS = {
+ 	toolchain_bbcti,
+ 	toolchain_bbctiny,
+ 	toolchain_fuzix6303,
+-	toolchain_lxthumb2,
+-	toolchain_lx386,
+ 	toolchain_msdos,
+ 	toolchain_ncgen,
+ 	toolchain_ncpm,

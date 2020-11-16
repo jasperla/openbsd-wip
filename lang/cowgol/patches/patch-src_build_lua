@@ -1,0 +1,16 @@
+$OpenBSD$
+
+It's gtimeout, from GNU coreutils.
+
+Index: src/build.lua
+--- src/build.lua.orig
++++ src/build.lua
+@@ -163,7 +163,7 @@ function simpletest(interpreter, e)
+ 	rule {
+ 		ins = e.ins,
+ 		outs = { badfile },
+-		cmd = "timeout 5s "..interpreter.." @1 > &1 && diff -u -w &1 "..e.goodfile,
++		cmd = "gtimeout 5s "..interpreter.." @1 > &1 && diff -u -w &1 "..e.goodfile,
+ 	}
+ end
+ 

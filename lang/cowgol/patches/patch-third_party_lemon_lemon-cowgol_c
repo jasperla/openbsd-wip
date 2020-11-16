@@ -1,0 +1,46 @@
+$OpenBSD$
+
+Fix warnings.
+
+Index: third_party/lemon/lemon-cowgol.c
+--- third_party/lemon/lemon-cowgol.c.orig
++++ third_party/lemon/lemon-cowgol.c
+@@ -4300,7 +4300,7 @@ void ReportTable(
+   /* Output the yy_lookahead table */
+   lemp->nlookaheadtab = n = acttab_lookahead_size(pActtab);
+   lemp->tablesize += n*szCodeType;
+-  fprintf(out,"var yy_lookahead: YYCODETYPE[] := {\n", n); lineno++;
++  fprintf(out,"var yy_lookahead: YYCODETYPE[] := {\n"); lineno++;
+   for(i=j=0; i<n; i++){
+     int la = acttab_yylookahead(pActtab, i);
+     if( la<0 ) la = lemp->nsymbol;
+@@ -4440,7 +4440,7 @@ void ReportTable(
+     struct symbol *sp = lemp->symbols[i];
+     if( sp==0 || sp->type==TERMINAL || sp->destructor==0 ) continue;
+     if( sp->destLineno<0 ) continue;  /* Already emitted */
+-	fprintf(out, "sub destructor_%d() is # \n", sp->index, sp->name); lineno++;
++	fprintf(out, "sub destructor_%d() is # \n", sp->index); lineno++;
+     emit_destructor_code(out,lemp->symbols[i],lemp,&lineno);
+ 	fprintf(out, "end sub;\n"); lineno++;
+   }
+@@ -4518,8 +4518,9 @@ void ReportTable(
+ 
+ 	fprintf(out, "  then destructor_%d();\n", sp->index); lineno++;
+   }
+-  if (!first)
+-  	fprintf(out, "end if;\n", lineno++);
++  if (!first) {
++  	fprintf(out, "end if;\n"); ++lineno;
++  }
+ 
+   tplt_xfer(lemp->name,in,out,&lineno);
+ 
+@@ -4574,7 +4575,7 @@ void ReportTable(
+     assert( rp->noCode );
+     fprintf(out,"  # (%d) ", rp->iRule);
+     writeRuleText(out, rp);
+-    fprintf(out, "\n", rp->iRule); lineno++;
++    fprintf(out, "\n"); lineno++;
+   }
+   fprintf(out,"end sub;\n"); lineno++;
+ 

@@ -1,0 +1,16 @@
+$OpenBSD$
+
+Fix warnings.
+
+Index: tools/newgen/utils.c
+--- tools/newgen/utils.c.orig
++++ tools/newgen/utils.c
+@@ -36,7 +36,7 @@ void warning(const char *fmt, ...) {
+                  fprintf(stderr, "\n");
+ }
+ 
+-void fatal(const char *fmt, ...) {
++__dead void fatal(const char *fmt, ...) {
+         va_list ap;
+ 
+         va_start(ap, fmt);
