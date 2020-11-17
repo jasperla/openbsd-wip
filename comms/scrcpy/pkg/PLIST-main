@@ -1,0 +1,3 @@
+@comment $OpenBSD: PLIST-main,v$
+@bin bin/scrcpy
+@man man/man1/scrcpy.1

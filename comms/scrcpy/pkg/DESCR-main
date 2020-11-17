@@ -1,0 +1,11 @@
+scrcpy provides display and control of Android devices connected to USB
+or TCP/IP. It does not require any root access on the phone.
+
+It focuses on:
+
+ - lightness (native, displays only the device screen)
+ - performance (30~60fps)
+ - quality (1920x1080 or above)
+ - low latency (35~70ms)
+ - low startup time (~1 second to display the first image)
+ - non-intrusiveness (nothing is left installed on the device)
