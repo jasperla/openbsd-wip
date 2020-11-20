@@ -2,7 +2,7 @@
 
 COMMENT =	network-wide ad and tracker blocking DNS server
 
-V =		0.104.1
+V =		0.104.3
 DISTNAME =	AdGuardHome-${V}
 
 CATEGORIES =	net
