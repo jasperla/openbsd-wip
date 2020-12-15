@@ -2,9 +2,9 @@
 
 COMMENT=	software for live-streaming and screen recording
 
-GH_ACCOUNT=	jp9000
+GH_ACCOUNT=	obsproject
 GH_PROJECT=	obs-studio
-GH_TAGNAME=	26.0.2
+GH_TAGNAME=	26.1.0
 
 SHARED_LIBS=	obs			0.0 \
 		obs-frontend-api	0.0 \
@@ -44,8 +44,8 @@ LIB_DEPENDS=	audio/fdk-aac \
 
 NO_TEST=	Yes
 
-post-extract:
-	cp -R ${FILESDIR}/sndio ${WRKSRC}/plugins/
-	cp ${FILESDIR}/FindSndio.cmake ${WRKSRC}/cmake/Modules/
+#post-extract:
+#	cp -R ${FILESDIR}/sndio ${WRKSRC}/plugins/
+#	cp ${FILESDIR}/FindSndio.cmake ${WRKSRC}/cmake/Modules/
 
 .include <bsd.port.mk>

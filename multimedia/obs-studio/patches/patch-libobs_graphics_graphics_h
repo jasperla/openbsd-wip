@@ -1,4 +1,6 @@
 $OpenBSD$
+Unbreak build. uint32_t is C99
+
 Index: libobs/graphics/graphics.h
 --- libobs/graphics/graphics.h.orig
 +++ libobs/graphics/graphics.h
@@ -7,7 +9,7 @@ Index: libobs/graphics/graphics.h
  #elif defined(__APPLE__)
  	__unsafe_unretained id view;
 -#elif defined(__linux__) || defined(__FreeBSD__)
-+#elif defined(__linux__) || defined(__FreeBSD__) || defined(__OpenBSD__)
++#else
  	/* I'm not sure how portable defining id to uint32_t is. */
  	uint32_t id;
  	void *display;

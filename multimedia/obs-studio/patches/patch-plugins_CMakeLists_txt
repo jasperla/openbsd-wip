@@ -1,29 +1,14 @@
 $OpenBSD$
-
-Link in sndio support.
-It should be possible to get linux-v4l2 working with a bit more effort.
-V+A are supported via ffmpeg.
+Add support for V4L2.
 
 Index: plugins/CMakeLists.txt
 --- plugins/CMakeLists.txt.orig
 +++ plugins/CMakeLists.txt
-@@ -41,6 +41,7 @@ elseif("${CMAKE_SYSTEM_NAME}" MATCHES "Linux")
- 	add_subdirectory(linux-alsa)
- 	add_subdirectory(decklink/linux)
- 	add_subdirectory(vlc-video)
-+	add_subdirectory(sndio)
- elseif("${CMAKE_SYSTEM_NAME}" MATCHES "FreeBSD")
+@@ -54,6 +54,7 @@ elseif("${CMAKE_SYSTEM_NAME}" MATCHES "FreeBSD")
+ 	add_subdirectory(sndio)
+ elseif("${CMAKE_SYSTEM_NAME}" MATCHES "OpenBSD")
  	add_subdirectory(linux-capture)
- 	add_subdirectory(linux-pulseaudio)
-@@ -49,6 +50,11 @@ elseif("${CMAKE_SYSTEM_NAME}" MATCHES "FreeBSD")
- 	add_subdirectory(linux-alsa)
- 	add_subdirectory(vlc-video)
- 	add_subdirectory(oss-audio)
-+	add_subdirectory(sndio)
-+elseif("${CMAKE_SYSTEM_NAME}" MATCHES "OpenBSD")
-+	add_subdirectory(linux-capture)
 +	add_subdirectory(linux-v4l2)
-+	add_subdirectory(sndio)
+ 	add_subdirectory(sndio)
  endif()
  
- option(BUILD_BROWSER "Build browser plugin" OFF)
