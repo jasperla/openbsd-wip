@@ -5,7 +5,7 @@ COMMENT =	GTK+ mastodon client
 GH_ACCOUNT =	bleakgrey
 GH_PROJECT =	tootle
 # Currently includes many many fixes -- alpha status
-GH_COMMIT =		3cf8d9ddd66feb98cdd4c23f3608a43c80cd7bdc
+GH_COMMIT =	3cf8d9ddd66feb98cdd4c23f3608a43c80cd7bdc
 DISTNAME =	${GH_PROJECT}-0.20201219
 
 CATEGORIES =	net
