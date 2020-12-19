@@ -1,0 +1,14 @@
+$OpenBSD$
+
+Don't run the post install script, it run commands on the build machine that
+are expected to be run on users machines.
+
+Index: meson.build
+--- meson.build.orig
++++ meson.build
+@@ -134,4 +134,4 @@ executable(
+ subdir('data')
+ subdir('po')
+ 
+-meson.add_install_script('meson/post_install.py')
++#meson.add_install_script('meson/post_install.py')
