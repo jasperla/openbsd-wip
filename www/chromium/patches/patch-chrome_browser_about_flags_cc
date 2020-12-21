@@ -3,7 +3,7 @@ $OpenBSD$
 Index: chrome/browser/about_flags.cc
 --- chrome/browser/about_flags.cc.orig
 +++ chrome/browser/about_flags.cc
-@@ -184,7 +184,7 @@
+@@ -187,7 +187,7 @@
  #include "ui/gl/gl_switches.h"
  #include "ui/native_theme/native_theme_features.h"
  
@@ -12,7 +12,7 @@ Index: chrome/browser/about_flags.cc
  #include "base/allocator/buildflags.h"
  #endif
  
-@@ -882,7 +882,7 @@ const FeatureEntry::Choice kMemlogSamplingRateChoices[
+@@ -886,7 +886,7 @@ const FeatureEntry::Choice kMemlogSamplingRateChoices[
  };
  
  #if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_MAC) || \
@@ -21,25 +21,16 @@ Index: chrome/browser/about_flags.cc
  const FeatureEntry::FeatureParam kOmniboxDocumentProviderServerScoring[] = {
      {"DocumentUseServerScore", "true"},
      {"DocumentUseClientScore", "false"},
-@@ -2857,7 +2857,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -2864,7 +2864,7 @@ const FeatureEntry kFeatureEntries[] = {
       FEATURE_VALUE_TYPE(ash::features::kSystemTrayMicGainSetting)},
  #endif  // OS_CHROMEOS
  
 -#if defined(OS_LINUX) && !defined(OS_CHROMEOS) && !defined(OS_ANDROID)
-+#if (defined(OS_LINUX) || defined(OS_BSD)) && !defined(OS_CHROMEOS) && !defined(OS_ANDROID)
++#if (defined(OS_LINUX) && !defined(OS_CHROMEOS) && !defined(OS_ANDROID)) || defined(OS_BSD)
      {
          "enable-accelerated-video-decode",
          flag_descriptions::kAcceleratedVideoDecodeName,
-@@ -2979,7 +2979,7 @@ const FeatureEntry kFeatureEntries[] = {
-      flag_descriptions::kForceEnableDevicesPageName,
-      flag_descriptions::kForceEnableDevicesPageDescription, kOsDesktop,
-      FEATURE_VALUE_TYPE(features::kForceEnableDevicesPage)},
--#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_CHROMEOS)
-+#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
-     {"enable-webgl2-compute-context",
-      flag_descriptions::kWebGL2ComputeContextName,
-      flag_descriptions::kWebGL2ComputeContextDescription,
-@@ -3182,7 +3182,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -3200,7 +3200,7 @@ const FeatureEntry kFeatureEntries[] = {
       flag_descriptions::kEnableOfflinePreviewsDescription, kOsAndroid,
       FEATURE_VALUE_TYPE(previews::features::kOfflinePreviews)},
  #endif  // OS_ANDROID
@@ -48,7 +39,7 @@ Index: chrome/browser/about_flags.cc
      {"enable-save-data", flag_descriptions::kEnableSaveDataName,
       flag_descriptions::kEnableSaveDataDescription, kOsCrOS | kOsLinux,
       SINGLE_VALUE_TYPE(
-@@ -3991,7 +3991,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -3970,7 +3970,7 @@ const FeatureEntry kFeatureEntries[] = {
       FEATURE_VALUE_TYPE(omnibox::kOmniboxTrendingZeroPrefixSuggestionsOnNTP)},
  
  #if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_MAC) || \
@@ -57,7 +48,7 @@ Index: chrome/browser/about_flags.cc
      {"omnibox-experimental-keyword-mode",
       flag_descriptions::kOmniboxExperimentalKeywordModeName,
       flag_descriptions::kOmniboxExperimentalKeywordModeDescription, kOsDesktop,
-@@ -4377,7 +4377,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -4337,7 +4337,7 @@ const FeatureEntry kFeatureEntries[] = {
       FEATURE_VALUE_TYPE(features::kClickToOpenPDFPlaceholder)},
  
  #if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || \
@@ -66,7 +57,7 @@ Index: chrome/browser/about_flags.cc
      {"direct-manipulation-stylus",
       flag_descriptions::kDirectManipulationStylusName,
       flag_descriptions::kDirectManipulationStylusDescription,
-@@ -5084,7 +5084,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -5036,7 +5036,7 @@ const FeatureEntry kFeatureEntries[] = {
  #endif  // BUILDFLAG(ENABLE_CLICK_TO_CALL)
  
  #if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || \
@@ -75,8 +66,8 @@ Index: chrome/browser/about_flags.cc
      {"remote-copy-receiver", flag_descriptions::kRemoteCopyReceiverName,
       flag_descriptions::kRemoteCopyReceiverDescription, kOsDesktop,
       FEATURE_VALUE_TYPE(kRemoteCopyReceiver)},
-@@ -5688,7 +5688,7 @@ const FeatureEntry kFeatureEntries[] = {
- #endif  // defined(OS_ANDROID)
+@@ -5636,7 +5636,7 @@ const FeatureEntry kFeatureEntries[] = {
+      FEATURE_VALUE_TYPE(features::kMouseSubframeNoImplicitCapture)},
  
  #if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || \
 -    defined(OS_CHROMEOS)
@@ -84,7 +75,7 @@ Index: chrome/browser/about_flags.cc
      {"global-media-controls", flag_descriptions::kGlobalMediaControlsName,
       flag_descriptions::kGlobalMediaControlsDescription,
       kOsWin | kOsMac | kOsLinux,
-@@ -5915,7 +5915,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -5854,7 +5854,7 @@ const FeatureEntry kFeatureEntries[] = {
           password_manager::features::kEnablePasswordsAccountStorage)},
  
  #if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || \
@@ -93,7 +84,7 @@ Index: chrome/browser/about_flags.cc
      {"passwords-account-storage-iph",
       flag_descriptions::kEnablePasswordsAccountStorageIPHName,
       flag_descriptions::kEnablePasswordsAccountStorageIPHDescription,
-@@ -6656,7 +6656,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -6595,7 +6595,7 @@ const FeatureEntry kFeatureEntries[] = {
  #endif
  
  #if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || \
@@ -102,12 +93,12 @@ Index: chrome/browser/about_flags.cc
      {"enable-oop-print-drivers", flag_descriptions::kEnableOopPrintDriversName,
       flag_descriptions::kEnableOopPrintDriversDescription, kOsDesktop,
       FEATURE_VALUE_TYPE(printing::features::kEnableOopPrintDrivers)},
-@@ -6689,7 +6689,7 @@ const FeatureEntry kFeatureEntries[] = {
-      FEATURE_VALUE_TYPE(features::kMuteNotificationsDuringScreenShare)},
+@@ -6629,7 +6629,7 @@ const FeatureEntry kFeatureEntries[] = {
  #endif  // !defined(OS_ANDROID)
  
--#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_MAC)
-+#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_MAC) || defined(OS_BSD)
+ #if defined(OS_WIN) || (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || \
+-    defined(OS_MAC)
++    defined(OS_MAC) || defined(OS_BSD)
      {"enable-ephemeral-guest-profiles-on-desktop",
       flag_descriptions::kEnableEphemeralGuestProfilesOnDesktopName,
       flag_descriptions::kEnableEphemeralGuestProfilesOnDesktopDescription,

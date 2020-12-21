@@ -12,7 +12,7 @@ Index: components/viz/service/display_embedder/software_output_surface.h
    void SetNeedsSwapSizeNotifications(
        bool needs_swap_size_notifications) override;
  #endif
-@@ -71,7 +71,7 @@ class VIZ_SERVICE_EXPORT SoftwareOutputSurface : publi
+@@ -68,7 +68,7 @@ class VIZ_SERVICE_EXPORT SoftwareOutputSurface : publi
    std::queue<std::vector<ui::LatencyInfo>> stored_latency_info_;
    ui::LatencyTracker latency_tracker_;
  

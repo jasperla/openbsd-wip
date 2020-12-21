@@ -3,7 +3,7 @@ $OpenBSD$
 Index: components/autofill/core/browser/personal_data_manager.cc
 --- components/autofill/core/browser/personal_data_manager.cc.orig
 +++ components/autofill/core/browser/personal_data_manager.cc
-@@ -1961,7 +1961,7 @@ bool PersonalDataManager::IsServerCard(const CreditCar
+@@ -1958,7 +1958,7 @@ bool PersonalDataManager::IsServerCard(const CreditCar
  bool PersonalDataManager::ShouldShowCardsFromAccountOption() const {
  // The feature is only for Linux, Windows and Mac.
  #if (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || defined(OS_WIN) || \

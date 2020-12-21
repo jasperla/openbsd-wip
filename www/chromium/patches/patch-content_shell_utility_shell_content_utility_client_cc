@@ -9,7 +9,7 @@ Index: content/shell/utility/shell_content_utility_client.cc
  
 -#if defined(OS_LINUX) || defined(OS_CHROMEOS)
 +#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
- #include "services/service_manager/tests/sandbox_status_service.h"
+ #include "content/test/sandbox_status_service.h"
  #endif
  
 @@ -143,7 +143,7 @@ void ShellContentUtilityClient::ExposeInterfacesToBrow
@@ -19,5 +19,5 @@ Index: content/shell/utility/shell_content_utility_client.cc
 -#if defined(OS_LINUX) || defined(OS_CHROMEOS)
 +#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
    if (register_sandbox_status_helper_) {
-     binders->Add<service_manager::mojom::SandboxStatusService>(
+     binders->Add<content::mojom::SandboxStatusService>(
          base::BindRepeating(

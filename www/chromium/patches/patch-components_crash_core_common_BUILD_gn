@@ -12,7 +12,7 @@ Index: components/crash/core/common/BUILD.gn
  }
  
  group("common") {
-@@ -184,7 +184,7 @@ source_set("unit_tests") {
+@@ -185,7 +185,7 @@ source_set("unit_tests") {
      sources += [ "crash_key_breakpad_ios_unittest.cc" ]
      deps += [ "//third_party/breakpad:client" ]
      include_dirs = [ "//third_party/breakpad/breakpad/src/" ]

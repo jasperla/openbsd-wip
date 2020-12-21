@@ -3,7 +3,7 @@ $OpenBSD$
 Index: chrome/browser/ui/views/web_apps/pwa_confirmation_bubble_view.cc
 --- chrome/browser/ui/views/web_apps/pwa_confirmation_bubble_view.cc.orig
 +++ chrome/browser/ui/views/web_apps/pwa_confirmation_bubble_view.cc
-@@ -35,7 +35,7 @@
+@@ -43,7 +43,7 @@
  namespace {
  
  #if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || \

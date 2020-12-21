@@ -12,7 +12,8 @@ DPB_PROPERTIES=		lonesome
 
 COMMENT=		Chromium browser
 
-V=			87.0.4280.66
+V=			88.0.4324.50
+#V=			88.0.4324.41
 
 DISTNAME=		chromium-${V}
 
@@ -145,6 +146,9 @@ GN_ARGS=	enable_nacl=false \
 		fieldtrial_testing_like_official_build=true \
 		extra_cppflags=\"-idirafter ${LOCALBASE}/include -idirafter ${X11BASE}/include\"
 
+# notyet
+GN_ARGS+=	use_vaapi=false
+
 .if ${MACHINE_ARCH} == "i386"
 GN_ARGS+=	extra_ldflags=\"-L${LOCALBASE}/lib -L${X11BASE}/lib -Wl,--no-keep-memory\"
 .else
@@ -169,10 +173,10 @@ GN_ARGS+=	google_api_key=\"AIzaSyA015yecfJyWi8UQpneQVrNzIKlxjv4MhI\" \
 DWZ = :
 
 .if ${FLAVOR:Mdebug}
-DEBUGFLAG=	-g2
+GN_ARGS+=	symbol_level=2
 DEBUG_PACKAGES=	${BUILD_PACKAGES}
 .else
-DEBUGFLAG=	-g0
+GN_ARGS+=	symbol_level=0
 .endif
 
 .if ${FLAVOR:Mcomponent}
@@ -197,7 +201,9 @@ pre-configure:
 	@ln -sf ${TRUEPREFIX}/bin/node ${WRKSRC}/third_party/node/openbsd/node-openbsd/bin/node
 	${SUBST_CMD} ${WRKSRC}/build/gn_run_binary.py ${WRKSRC}/v8/tools/run.py \
 		${WRKSRC}/tools/protoc_wrapper/protoc_wrapper.py \
-		${WRKSRC}/build/config/compiler/BUILD.gn
+		${WRKSRC}/build/config/compiler/BUILD.gn \
+		${WRKSRC}/build/util/python2_action.py \
+		${WRKSRC}/third_party/blink/renderer/build/scripts/run_with_pythonpath.py
 
 # Configuration consists of three steps:
 # 1. replace the specified bundled libraries with hooks to use the system libs

@@ -14,7 +14,7 @@ Index: build/toolchain/gcc_toolchain.gni
  # This template defines a toolchain for something that works like gcc
  # (including clang).
  #
-@@ -641,12 +646,12 @@ template("clang_toolchain") {
+@@ -626,12 +631,12 @@ template("clang_toolchain") {
    }
  
    gcc_toolchain(target_name) {

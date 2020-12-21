@@ -20,7 +20,7 @@ Index: ui/gfx/ipc/gfx_param_traits_macros.h
 +#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_FUCHSIA) || defined(OS_BSD)
    IPC_STRUCT_TRAITS_MEMBER(native_pixmap_handle)
  #elif defined(OS_APPLE)
-   IPC_STRUCT_TRAITS_MEMBER(mach_port)
+   IPC_STRUCT_TRAITS_MEMBER(io_surface)
 @@ -63,12 +63,12 @@ IPC_STRUCT_TRAITS_BEGIN(gfx::GpuMemoryBufferId)
    IPC_STRUCT_TRAITS_MEMBER(id)
  IPC_STRUCT_TRAITS_END()

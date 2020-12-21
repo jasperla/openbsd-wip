@@ -11,4 +11,4 @@ Index: third_party/skia/src/sksl/SkSLString.h
 +
  namespace SkSL {
  
- // Represents a (not necessarily null-terminated) slice of a string.
+ class String;

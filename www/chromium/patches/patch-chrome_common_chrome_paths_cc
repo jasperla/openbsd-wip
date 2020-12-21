@@ -3,9 +3,9 @@ $OpenBSD: patch-chrome_common_chrome_paths_cc,v 1.54 2020/10/22 13:52:54 robert 
 Index: chrome/common/chrome_paths.cc
 --- chrome/common/chrome_paths.cc.orig
 +++ chrome/common/chrome_paths.cc
-@@ -52,14 +52,14 @@ const base::FilePath::CharType kPepperFlashSystemBaseD
-     FILE_PATH_LITERAL("Internet Plug-Ins/PepperFlashPlayer");
- #endif
+@@ -47,14 +47,14 @@ namespace {
+ const base::FilePath::CharType kPepperFlashBaseDirectory[] =
+     FILE_PATH_LITERAL("PepperFlash");
  
 -#if defined(OS_LINUX) || defined(OS_CHROMEOS)
 +#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
@@ -21,7 +21,7 @@ Index: chrome/common/chrome_paths.cc
  #endif  // BUILDFLAG(GOOGLE_CHROME_BRANDING)
  
  // The path to the hint file that tells the pepper plugin loader
-@@ -207,7 +207,7 @@ bool PathProvider(int key, base::FilePath* result) {
+@@ -182,7 +182,7 @@ bool PathProvider(int key, base::FilePath* result) {
          return false;
        break;
      case chrome::DIR_DEFAULT_DOWNLOADS_SAFE:
@@ -30,7 +30,7 @@ Index: chrome/common/chrome_paths.cc
        if (!GetUserDownloadsDirectorySafe(&cur))
          return false;
        break;
-@@ -501,7 +501,7 @@ bool PathProvider(int key, base::FilePath* result) {
+@@ -460,7 +460,7 @@ bool PathProvider(int key, base::FilePath* result) {
      }
  #endif
  #if defined(OS_CHROMEOS) || \
@@ -39,7 +39,7 @@ Index: chrome/common/chrome_paths.cc
      case chrome::DIR_USER_EXTERNAL_EXTENSIONS: {
        if (!base::PathService::Get(chrome::DIR_USER_DATA, &cur))
          return false;
-@@ -509,7 +509,7 @@ bool PathProvider(int key, base::FilePath* result) {
+@@ -468,7 +468,7 @@ bool PathProvider(int key, base::FilePath* result) {
        break;
      }
  #endif
@@ -48,7 +48,7 @@ Index: chrome/common/chrome_paths.cc
      case chrome::DIR_STANDALONE_EXTERNAL_EXTENSIONS: {
        cur = base::FilePath(kFilepathSinglePrefExtensions);
        break;
-@@ -544,7 +544,7 @@ bool PathProvider(int key, base::FilePath* result) {
+@@ -503,7 +503,7 @@ bool PathProvider(int key, base::FilePath* result) {
  #endif
        break;
  
@@ -57,7 +57,7 @@ Index: chrome/common/chrome_paths.cc
      case chrome::DIR_NATIVE_MESSAGING:
  #if defined(OS_MAC)
  #if BUILDFLAG(GOOGLE_CHROME_BRANDING)
-@@ -578,7 +578,7 @@ bool PathProvider(int key, base::FilePath* result) {
+@@ -537,7 +537,7 @@ bool PathProvider(int key, base::FilePath* result) {
        cur = cur.Append(kGCMStoreDirname);
        break;
  #endif  // !defined(OS_ANDROID)

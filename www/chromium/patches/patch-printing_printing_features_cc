@@ -3,7 +3,7 @@ $OpenBSD$
 Index: printing/printing_features.cc
 --- printing/printing_features.cc.orig
 +++ printing/printing_features.cc
-@@ -48,7 +48,7 @@ bool ShouldPrintUsingXps(bool source_is_pdf) {
+@@ -50,7 +50,7 @@ bool ShouldPrintUsingXps(bool source_is_pdf) {
  #endif  // defined(OS_WIN)
  
  #if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || \

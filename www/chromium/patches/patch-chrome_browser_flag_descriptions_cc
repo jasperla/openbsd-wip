@@ -1,19 +1,10 @@
-$OpenBSD: patch-chrome_browser_flag_descriptions_cc,v 1.33 2020/10/22 13:52:53 robert Exp $
+$OpenBSD$
 
 Index: chrome/browser/flag_descriptions.cc
 --- chrome/browser/flag_descriptions.cc.orig
 +++ chrome/browser/flag_descriptions.cc
-@@ -4549,7 +4549,7 @@ const char kEnableNewBadgeOnMenuItemsDescription[] =
- 
+@@ -4602,7 +4602,7 @@ const char kEnableNewBadgeOnMenuItemsDescription[] =
  // Random platform combinations -----------------------------------------------
- 
--#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_CHROMEOS)
-+#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
- 
- const char kWebGL2ComputeContextName[] = "WebGL 2.0 Compute";
- const char kWebGL2ComputeContextDescription[] =
-@@ -4558,7 +4558,7 @@ const char kWebGL2ComputeContextDescription[] =
- #endif  // defined(OS_WIN) || defined(OS_LINUX) || defined(OS_CHROMEOS)
  
  #if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || \
 -    defined(OS_CHROMEOS)
@@ -21,7 +12,7 @@ Index: chrome/browser/flag_descriptions.cc
  
  const char kEnableMediaFeedsName[] = "Enables Media Feeds";
  const char kEnableMediaFeedsDescription[] =
-@@ -4605,7 +4605,7 @@ const char kRemoteCopyProgressNotificationDescription[
+@@ -4649,7 +4649,7 @@ const char kRemoteCopyProgressNotificationDescription[
          // defined(OS_CHROMEOS)
  
  #if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || \
@@ -30,7 +21,7 @@ Index: chrome/browser/flag_descriptions.cc
  
  const char kDirectManipulationStylusName[] = "Direct Manipulation Stylus";
  const char kDirectManipulationStylusDescription[] =
-@@ -4623,7 +4623,7 @@ const char kWebContentsOcclusionDescription[] =
+@@ -4667,7 +4667,7 @@ const char kWebContentsOcclusionDescription[] =
  
  #endif  // defined(OS_WIN) || defined(OS_MAC) || defined(OS_CHROMEOS)
  
@@ -39,12 +30,12 @@ Index: chrome/browser/flag_descriptions.cc
  #if BUILDFLAG(USE_TCMALLOC)
  const char kDynamicTcmallocName[] = "Dynamic Tcmalloc Tuning";
  const char kDynamicTcmallocDescription[] =
-@@ -4646,7 +4646,7 @@ const char kWebShareDescription[] =
-     "platforms.";
+@@ -4691,7 +4691,7 @@ const char kWebShareDescription[] =
  #endif  // defined(OS_WIN) || defined(OS_CHROMEOS)
  
--#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_MAC)
-+#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_MAC) || defined(OS_BSD)
+ #if defined(OS_WIN) || (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || \
+-    defined(OS_MAC)
++    defined(OS_MAC) || defined(OS_BSD)
  const char kEnableEphemeralGuestProfilesOnDesktopName[] =
      "Enable ephemeral Guest profiles on Desktop";
  const char kEnableEphemeralGuestProfilesOnDesktopDescription[] =

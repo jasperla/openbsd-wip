@@ -3,7 +3,7 @@ $OpenBSD: patch-chrome_browser_autocomplete_chrome_autocomplete_scheme_classifie
 Index: chrome/browser/autocomplete/chrome_autocomplete_scheme_classifier.cc
 --- chrome/browser/autocomplete/chrome_autocomplete_scheme_classifier.cc.orig
 +++ chrome/browser/autocomplete/chrome_autocomplete_scheme_classifier.cc
-@@ -86,7 +86,7 @@ ChromeAutocompleteSchemeClassifier::GetInputTypeForSch
+@@ -87,7 +87,7 @@ ChromeAutocompleteSchemeClassifier::GetInputTypeForSch
        return metrics::OmniboxInputType::QUERY;
  
      case ExternalProtocolHandler::UNKNOWN: {

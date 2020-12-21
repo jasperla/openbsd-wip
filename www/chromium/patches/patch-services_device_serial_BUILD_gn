@@ -3,7 +3,7 @@ $OpenBSD: patch-services_device_serial_BUILD_gn,v 1.3 2020/10/22 13:52:54 robert
 Index: services/device/serial/BUILD.gn
 --- services/device/serial/BUILD.gn.orig
 +++ services/device/serial/BUILD.gn
-@@ -75,6 +75,13 @@ if (is_win || ((is_linux || is_chromeos) && use_udev) 
+@@ -85,6 +85,13 @@ if (is_win || ((is_linux || is_chromeos) && use_udev) 
        ]
      }
  

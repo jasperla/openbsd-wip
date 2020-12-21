@@ -12,7 +12,7 @@ Index: components/services/paint_preview_compositor/paint_preview_compositor_col
  #include "components/services/font/public/cpp/font_loader.h"
  #include "third_party/skia/include/core/SkRefCnt.h"
  #endif
-@@ -74,7 +74,7 @@ class PaintPreviewCompositorCollectionImpl
+@@ -70,7 +70,7 @@ class PaintPreviewCompositorCollectionImpl
                   std::unique_ptr<PaintPreviewCompositorImpl>>
        compositors_;
  

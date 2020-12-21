@@ -20,4 +20,4 @@ Index: ui/gfx/gpu_memory_buffer.h
 +#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_FUCHSIA) || defined(OS_BSD)
    NativePixmapHandle native_pixmap_handle;
  #elif defined(OS_MAC)
-   ScopedRefCountedIOSurfaceMachPort mach_port;
+   gfx::ScopedIOSurface io_surface;

@@ -3,7 +3,7 @@ $OpenBSD: patch-services_tracing_public_cpp_perfetto_perfetto_config_cc,v 1.4 20
 Index: services/tracing/public/cpp/perfetto/perfetto_config.cc
 --- services/tracing/public/cpp/perfetto/perfetto_config.cc.orig
 +++ services/tracing/public/cpp/perfetto/perfetto_config.cc
-@@ -66,7 +66,7 @@ void AddDataSourceConfigs(
+@@ -79,7 +79,7 @@ void AddDataSourceConfigs(
    // Capture system trace events if supported and enabled. The datasources will
    // only emit events if system tracing is enabled in |chrome_config|.
    if (!privacy_filtering_enabled) {

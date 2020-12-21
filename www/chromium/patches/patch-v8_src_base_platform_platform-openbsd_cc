@@ -17,7 +17,7 @@ Index: v8/src/base/platform/platform-openbsd.cc
  void OS::AdjustSchedulingParams() {}
 +
 +// static
-+void* Stack::GetStackStart() {
++Stack::StackSlot Stack::GetStackStart() {
 +  stack_t ss;
 +  void *base;
 +  if (pthread_stackseg_np(pthread_self(), &ss) != 0)

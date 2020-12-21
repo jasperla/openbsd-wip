@@ -5,7 +5,7 @@ Append Linux x86_64 to the user agent because we have to lie ...
 Index: content/common/user_agent.cc
 --- content/common/user_agent.cc.orig
 +++ content/common/user_agent.cc
-@@ -214,6 +214,16 @@ std::string BuildOSCpuInfoFromOSVersionAndCpuType(cons
+@@ -213,6 +213,16 @@ std::string BuildOSCpuInfoFromOSVersionAndCpuType(cons
    );
  #endif
  

@@ -12,7 +12,7 @@ Index: chrome/browser/policy/device_management_service_configuration.cc
      ((defined(OS_LINUX) || defined(OS_CHROMEOS)) && !defined(OS_ANDROID))
  #include "chrome/browser/enterprise/connectors/common.h"
  #include "chrome/browser/enterprise/connectors/connectors_manager.h"
-@@ -85,7 +85,7 @@ std::string DeviceManagementServiceConfiguration::GetR
+@@ -94,7 +94,7 @@ DeviceManagementServiceConfiguration::GetEncryptedRepo
  
  std::string
  DeviceManagementServiceConfiguration::GetReportingConnectorServerUrl() {
