@@ -1,0 +1,20 @@
+$OpenBSD$
+
+Cheaply sync with our own version, needed to have ${LOCALBASE}/share/*
+directories matching with our own versioning.
+
+XXX XXX We should use SUBST_CMD if added to CVS, but the plan is to
+wait for the release so we won't need to play with -beta suffix anymore.
+
+Index: cmake/VERSION.cmake
+--- cmake/VERSION.cmake.orig
++++ cmake/VERSION.cmake
+@@ -3,7 +3,7 @@ set(FWBUILDER_XML_VERSION 24)
+ set(PROJECT_VERSION_MAJOR "6")
+ set(PROJECT_VERSION_MINOR "0")
+ set(PROJECT_VERSION_PATCH "0")
+-set(PROJECT_VERSION_EXTRA "-beta")
++set(PROJECT_VERSION_EXTRA "beta1")
+ set(PROJECT_GENERATION "${PROJECT_VERSION_MAJOR}.${PROJECT_VERSION_MINOR}")
+ set(PROJECT_GENERATION_SHORT "${PROJECT_VERSION_MAJOR}${PROJECT_VERSION_MINOR}")
+ set(PROJECT_VERSION "${PROJECT_VERSION_MAJOR}.${PROJECT_VERSION_MINOR}.${PROJECT_VERSION_PATCH}${PROJECT_VERSION_EXTRA}")

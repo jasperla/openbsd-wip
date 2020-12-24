@@ -1,0 +1,17 @@
+$OpenBSD$
+
+Let it find snmp headers
+See https://github.com/fwbuilder/fwbuilder/pull/116
+
+Index: cmake/FindNetSNMP.cmake
+--- cmake/FindNetSNMP.cmake.orig
++++ cmake/FindNetSNMP.cmake
+@@ -14,7 +14,7 @@ IF (NETSNMP_INCLUDE_DIR)
+ ENDIF (NETSNMP_INCLUDE_DIR)
+ 
+ FIND_PATH(NETSNMP_INCLUDE_DIR snmp.h
+-  /usr/include/net-snmp/library
++  ${LOCALBASE}/include/net-snmp/library
+ )
+ 
+ SET(NETSNMP_NAMES netsnmp)

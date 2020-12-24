@@ -1,0 +1,17 @@
+$OpenBSD$
+
+Don't try linking against libdl
+See https://github.com/fwbuilder/fwbuilder/pull/117
+
+Index: src/ipt/CMakeLists.txt
+--- src/ipt/CMakeLists.txt.orig
++++ src/ipt/CMakeLists.txt
+@@ -10,7 +10,7 @@ IF (WIN32)
+ ENDIF()
+ 
+ IF (UNIX)
+-  target_link_libraries(fwb_ipt c dl util)
++  target_link_libraries(fwb_ipt c ${CMAKE_DL_LIBS} util)
+ ENDIF()
+ 
+ target_compile_options(fwb_ipt PRIVATE ${CXX_DEFAULT_FLAGS})
