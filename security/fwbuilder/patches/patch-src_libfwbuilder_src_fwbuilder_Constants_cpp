@@ -1,6 +1,7 @@
 $OpenBSD$
 
 Fix missing include ...
+See https://github.com/fwbuilder/fwbuilder/pull/116
 
 Index: src/libfwbuilder/src/fwbuilder/Constants.cpp
 --- src/libfwbuilder/src/fwbuilder/Constants.cpp.orig

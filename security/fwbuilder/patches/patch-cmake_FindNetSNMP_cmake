@@ -1,7 +1,6 @@
 $OpenBSD$
 
 Let it find snmp headers
-See https://github.com/fwbuilder/fwbuilder/pull/116
 
 Index: cmake/FindNetSNMP.cmake
 --- cmake/FindNetSNMP.cmake.orig
