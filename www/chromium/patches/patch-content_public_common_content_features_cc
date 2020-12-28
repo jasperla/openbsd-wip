@@ -23,15 +23,6 @@ Index: content/public/common/content_features.cc
        base::FEATURE_ENABLED_BY_DEFAULT
  #else
        base::FEATURE_DISABLED_BY_DEFAULT
-@@ -651,7 +651,7 @@ const base::Feature kSpareRendererForSitePerProcess{
- 
- // Enables the out-of-process Storage Service.
- const base::Feature kStorageServiceOutOfProcess{
--    "StorageServiceOutOfProcess", base::FEATURE_ENABLED_BY_DEFAULT};
-+    "StorageServiceOutOfProcess", base::FEATURE_DISABLED_BY_DEFAULT};
- 
- // Controls whether site isolation should use origins instead of scheme and
- // eTLD+1.
 @@ -759,7 +759,7 @@ const base::Feature kWebAssemblyThreads {
  
  // Enable WebAssembly trap handler.
