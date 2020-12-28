@@ -1,0 +1,41 @@
+$OpenBSD$
+
+Index: src/wx-sdl2.c
+--- src/wx-sdl2.c.orig
++++ src/wx-sdl2.c
+@@ -238,7 +238,7 @@ int dir_exists(char* path)
+ 
+ void get_pcem_path(char *s, int size)
+ {
+-#ifdef __linux
++#ifdef __unix__
+         wx_get_home_directory(s);
+         strcat(s, ".pcem/");
+ #else
+@@ -399,7 +399,7 @@ void wx_initmenu()
+                         wx_appendmenu(cdrom_submenu, IDM_CDROM_REAL+c, s, wxITEM_RADIO);
+                 }
+         }
+-#elif __linux__
++#elif __unix__
+         wx_appendmenu(cdrom_submenu, IDM_CDROM_REAL+1, "Host CD/DVD Drive (/dev/cdrom)", wxITEM_RADIO);
+ #elif __APPLE__
+         int c;
+@@ -511,7 +511,7 @@ int pc_main(int argc, char** argv)
+ {
+         paths_init();
+ 
+-#ifdef __linux__
++#ifdef __unix__
+         char s[1024];
+         /* create directories if they don't exist */
+         if (!wx_setup(pcem_path))
+@@ -538,7 +538,7 @@ int pc_main(int argc, char** argv)
+ 
+         sound_init();
+ 
+-#ifdef __linux__
++#ifdef __unix__
+         /* check if cfg exists, and if not create it */
+         append_filename(s, pcem_path, "pcem.cfg", 511);
+         if (!wx_file_exists(s))

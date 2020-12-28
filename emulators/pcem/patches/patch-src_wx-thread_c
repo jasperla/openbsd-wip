@@ -1,0 +1,14 @@
+$OpenBSD$
+
+Index: src/wx-thread.c
+--- src/wx-thread.c.orig
++++ src/wx-thread.c
+@@ -171,7 +171,7 @@ int thread_wait_event(event_t *handle, int timeout)
+ 	event_pthread_t *event = (event_pthread_t *)handle;
+ 	struct timespec abstime;
+ 
+-#ifdef __linux__
++#ifdef __unix__
+ 	clock_gettime(CLOCK_REALTIME, &abstime);
+ #else
+         struct timeval now;
