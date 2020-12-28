@@ -2,7 +2,7 @@
 
 COMMENT =	network-wide ad and tracker blocking DNS server
 
-V =		0.104.3
+V =		0.105.0-beta.1
 DISTNAME =	AdGuardHome-${V}
 
 CATEGORIES =	net
@@ -14,6 +14,7 @@ HOMEPAGE =	https://adguard.com/en/adguard-home/overview.html
 # gmake build
 # rm -rf client/node_modules
 # rm AdGuardHome
+# go mod vendor
 # compress
 MASTER_SITES =	https://deftly.net/dist/
 
