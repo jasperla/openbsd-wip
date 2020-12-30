@@ -37,9 +37,9 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 # Requires itself to be installed for tests
 TEST_DEPENDS =	${FULLPKGNAME}:${BUILD_PKGPATH}
 
-CONFIGURE_ARGS+=	-DNETSNMP_INCLUDE_DIR="${LOCALBASE}/include/net-snmp/library" \
+CONFIGURE_ARGS +=	-DNETSNMP_INCLUDE_DIR="${LOCALBASE}/include/net-snmp/library" \
 			-DPROJECT_VERSION_EXTRA="${BETA}"
-CONFIGURE_ENV+=		CXXFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
+CONFIGURE_ENV +=	CXXFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
 			LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
 
 # 2 failures:
@@ -49,9 +49,6 @@ TEST_IS_INTERACTIVE =	X11
 
 # For PLIST
 SUBST_VARS +=	DISTNAME
-
-pre-build:
-	${SUBST_CMD} ${WRKDIST}/cmake/FindNetSNMP.cmake
 
 # gunzip all manpages, it's an hell to patch.
 post-install:
