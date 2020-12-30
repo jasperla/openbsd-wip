@@ -4,10 +4,12 @@ COMMENT =	firewall GUI
 
 GH_ACCOUNT =	fwbuilder
 GH_PROJECT =	fwbuilder
-# No proper release with CMake yet; as of 20201221:
-GH_COMMIT =	1ff9a82e80aa23da247d2c496ae6587c3cb97a7e
-# sync with patches/patch-cmake_VERSION_cmake (see comments there)
-DISTNAME =	${GH_PROJECT}-6.0.0beta1
+# No proper release with CMake yet; as of 20201230:
+GH_COMMIT =	a5b8af05e83c3824245207d8aa8b713d2d6add8b
+# We need to have ${LOCALBASE}/share/* directories matching with our own
+# versioning, see CONFIGURE_ARGS and patches/patch-cmake_VERSION_cmake as well.
+BETA =		beta1
+DISTNAME =	${GH_PROJECT}-6.0.0${BETA}
 
 CATEGORIES =	net security
 
@@ -21,6 +23,9 @@ WANTLIB += c crypto m netsnmp util xml2 xslt z
 MODULES =	devel/cmake \
 		x11/qt5
 
+# .orig produces too much spam in tests directories
+PATCHORIG =	.orig.port
+
 LIB_DEPENDS =	net/net-snmp \
 		textproc/libxml \
 		textproc/libxslt \
@@ -32,8 +37,10 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 # Requires itself to be installed for tests
 TEST_DEPENDS =	${FULLPKGNAME}:${BUILD_PKGPATH}
 
-CONFIGURE_ENV+=	CXXFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
-		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
+CONFIGURE_ARGS+=	-DNETSNMP_INCLUDE_DIR="${LOCALBASE}/include/net-snmp/library" \
+			-DPROJECT_VERSION_EXTRA="${BETA}"
+CONFIGURE_ENV+=		CXXFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
+			LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
 
 # 2 failures:
 # instDialogInstallTest: fails because it can't catch its own background process
@@ -43,7 +50,7 @@ TEST_IS_INTERACTIVE =	X11
 # For PLIST
 SUBST_VARS +=	DISTNAME
 
-pre-configure:
+pre-build:
 	${SUBST_CMD} ${WRKDIST}/cmake/FindNetSNMP.cmake
 
 # gunzip all manpages, it's an hell to patch.
