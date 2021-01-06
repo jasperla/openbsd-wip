@@ -1,0 +1,16 @@
+$OpenBSD$
+
+Override the built-in linker
+
+Index: tcc.c
+--- tcc.c.orig
++++ tcc.c
+@@ -370,7 +370,7 @@ redo:
+         } else {
+             if (!s->outfile)
+                 s->outfile = default_outputfile(s, first_file);
+-            if (tcc_output_file(s, s->outfile))
++            if (tcc_output_file(s, s->outfile, argv0))
+                 ret = 1;
+             else if (s->gen_deps)
+                 gen_makedeps(s, s->outfile, s->deps_outfile);
