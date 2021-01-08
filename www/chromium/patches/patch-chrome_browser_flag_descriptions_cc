@@ -3,7 +3,7 @@ $OpenBSD$
 Index: chrome/browser/flag_descriptions.cc
 --- chrome/browser/flag_descriptions.cc.orig
 +++ chrome/browser/flag_descriptions.cc
-@@ -4602,7 +4602,7 @@ const char kEnableNewBadgeOnMenuItemsDescription[] =
+@@ -4606,7 +4606,7 @@ const char kEnableNewBadgeOnMenuItemsDescription[] =
  // Random platform combinations -----------------------------------------------
  
  #if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || \
@@ -12,7 +12,7 @@ Index: chrome/browser/flag_descriptions.cc
  
  const char kEnableMediaFeedsName[] = "Enables Media Feeds";
  const char kEnableMediaFeedsDescription[] =
-@@ -4649,7 +4649,7 @@ const char kRemoteCopyProgressNotificationDescription[
+@@ -4653,7 +4653,7 @@ const char kRemoteCopyProgressNotificationDescription[
          // defined(OS_CHROMEOS)
  
  #if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || \
@@ -21,7 +21,7 @@ Index: chrome/browser/flag_descriptions.cc
  
  const char kDirectManipulationStylusName[] = "Direct Manipulation Stylus";
  const char kDirectManipulationStylusDescription[] =
-@@ -4667,7 +4667,7 @@ const char kWebContentsOcclusionDescription[] =
+@@ -4671,7 +4671,7 @@ const char kWebContentsOcclusionDescription[] =
  
  #endif  // defined(OS_WIN) || defined(OS_MAC) || defined(OS_CHROMEOS)
  
@@ -30,7 +30,7 @@ Index: chrome/browser/flag_descriptions.cc
  #if BUILDFLAG(USE_TCMALLOC)
  const char kDynamicTcmallocName[] = "Dynamic Tcmalloc Tuning";
  const char kDynamicTcmallocDescription[] =
-@@ -4691,7 +4691,7 @@ const char kWebShareDescription[] =
+@@ -4695,7 +4695,7 @@ const char kWebShareDescription[] =
  #endif  // defined(OS_WIN) || defined(OS_CHROMEOS)
  
  #if defined(OS_WIN) || (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || \
