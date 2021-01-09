@@ -5,12 +5,12 @@
 ONLY_FOR_ARCHS =	amd64
 
 COMMENT =	tiny C compiler
-DISTNAME =	tcc-0.9.27.20210108
+DISTNAME =	tcc-0.9.27.20210109
 CATEGORIES =	lang
 
 GH_ACCOUNT =	TinyCC
 GH_PROJECT =	tinycc
-GH_COMMIT =	aed4941e6b4a37a605d43a1fc565624c297618a3
+GH_COMMIT =	e6d15a5df132359418c766dfbe2556915169fcc3
 
 HOMEPAGE =	https://bellard.org/tcc/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
