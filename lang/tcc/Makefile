@@ -10,7 +10,7 @@ CATEGORIES =	lang
 
 GH_ACCOUNT =	TinyCC
 GH_PROJECT =	tinycc
-GH_COMMIT =	e6d15a5df132359418c766dfbe2556915169fcc3
+GH_COMMIT =	68744e3260d42370c8a9e34f72800d622851e20c
 
 HOMEPAGE =	https://bellard.org/tcc/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
