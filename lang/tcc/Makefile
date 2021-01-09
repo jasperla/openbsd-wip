@@ -1,12 +1,16 @@
 # $OpenBSD$
 
+# Has backends for amd64, arm64, armv7, and i386
+# But not all are working on OpenBSD...
+ONLY_FOR_ARCHS =	amd64
+
 COMMENT =	tiny C compiler
-DISTNAME =	tcc-0.9.27.20210105
+DISTNAME =	tcc-0.9.27.20210108
 CATEGORIES =	lang
 
 GH_ACCOUNT =	TinyCC
 GH_PROJECT =	tinycc
-GH_COMMIT =	f9c3b61884b0a3ae65b5b2af3f4937d1a06c3252
+GH_COMMIT =	aed4941e6b4a37a605d43a1fc565624c297618a3
 
 HOMEPAGE =	https://bellard.org/tcc/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
@@ -28,8 +32,5 @@ CONFIGURE_ARGS =	--cc="${CC}" \
 			--with-selinux
 
 USE_GMAKE =	Yes
-
-do-gen:
-	sed -i 's,LOCALBASE,${LOCALBASE},g' ${WRKSRC}/tccelf.c
 
 .include <bsd.port.mk>
