@@ -1,7 +1,7 @@
 $OpenBSD$
 
-Allow to follow our own beta versioning 'betaN', it's needed because fwbuilder
-needs to find its file in ${LOCALBASE}/share/fwbuilder-PROJECT_VERSION.
+Allow to follow our own versioning 'rcN', it's needed because fwbuilder
+needs to find its files in ${LOCALBASE}/share/fwbuilder-PROJECT_VERSION.
 
 Index: cmake/VERSION.cmake
 --- cmake/VERSION.cmake.orig
@@ -10,9 +10,9 @@ Index: cmake/VERSION.cmake
  set(PROJECT_VERSION_MAJOR "6")
  set(PROJECT_VERSION_MINOR "0")
  set(PROJECT_VERSION_PATCH "0")
--set(PROJECT_VERSION_EXTRA "-beta")
+-set(PROJECT_VERSION_EXTRA "-rc1")
 +if (NOT DEFINED PROJECT_VERSION_EXTRA)
-+	set(PROJECT_VERSION_EXTRA "-beta")
++	set(PROJECT_VERSION_EXTRA "-rc1")
 +endif()
  set(PROJECT_GENERATION "${PROJECT_VERSION_MAJOR}.${PROJECT_VERSION_MINOR}")
  set(PROJECT_GENERATION_SHORT "${PROJECT_VERSION_MAJOR}${PROJECT_VERSION_MINOR}")

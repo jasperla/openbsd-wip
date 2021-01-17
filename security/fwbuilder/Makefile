@@ -4,12 +4,11 @@ COMMENT =	firewall GUI
 
 GH_ACCOUNT =	fwbuilder
 GH_PROJECT =	fwbuilder
-# No proper release with CMake yet; as of 20201230:
-GH_COMMIT =	a5b8af05e83c3824245207d8aa8b713d2d6add8b
+GH_TAGNAME =	v6.0.0-rc1
 # We need to have ${LOCALBASE}/share/* directories matching with our own
 # versioning, see CONFIGURE_ARGS and patches/patch-cmake_VERSION_cmake as well.
-BETA =		beta1
-DISTNAME =	${GH_PROJECT}-6.0.0${BETA}
+RC =		rc1
+DISTNAME =	${GH_PROJECT}-6.0.0${RC}
 
 CATEGORIES =	net security
 
@@ -38,7 +37,7 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 TEST_DEPENDS =	${FULLPKGNAME}:${BUILD_PKGPATH}
 
 CONFIGURE_ARGS +=	-DNETSNMP_INCLUDE_DIR="${LOCALBASE}/include/net-snmp/library" \
-			-DPROJECT_VERSION_EXTRA="${BETA}"
+			-DPROJECT_VERSION_EXTRA="${RC}"
 CONFIGURE_ENV +=	CXXFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
 			LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
 
