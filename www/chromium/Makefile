@@ -107,7 +107,7 @@ BUILDTYPE=	Release
 
 SUBST_VARS+=	WRKSRC WRKDIR DEBUGFLAG
 
-ALL_TARGET=		chrome chromedriver
+ALL_TARGET?=		chrome chromedriver
 TEST_TARGET=		base_unittests
 DIST_TARGET_DIR=	chrome
 
