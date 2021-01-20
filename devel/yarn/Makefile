@@ -27,8 +27,9 @@ pre-configure:
 	${SUBST_CMD} ${WRKSRC}/lib/cli.js
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/* ${PREFIX}/bin/
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/* ${PREFIX}/bin/
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/
 	${INSTALL_DATA} ${WRKSRC}/lib/* ${PREFIX}/lib/
+	rm ${PREFIX}/lib/*.{beforesubst,orig}
 
 .include <bsd.port.mk>
