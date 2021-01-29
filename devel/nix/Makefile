@@ -1,24 +1,25 @@
 # $OpenBSD$
 
 COMMENT =	reproducible package manager for Unix
-DISTNAME =	nix-2.3.4
+DISTNAME =	nix-2.3.10
 EXTRACT_SUFX =	.tar.xz
 CATEGORIES =	devel
 
 # These four must always have the same major and minor!
-SHARED_LIBS +=	nixexpr                   0.0 # 2.3.4
-SHARED_LIBS +=	nixmain                   0.0 # 2.3.4
-SHARED_LIBS +=	nixstore                  0.0 # 2.3.4
-SHARED_LIBS +=	nixutil                   0.0 # 2.3.4
+SHARED_LIBS +=	nixexpr                   0.0 # 2.3.10
+SHARED_LIBS +=	nixmain                   0.0 # 2.3.10
+SHARED_LIBS +=	nixstore                  0.0 # 2.3.10
+SHARED_LIBS +=	nixutil                   0.0 # 2.3.10
 
 HOMEPAGE =	https://nixos.org/nix/
 
 # LGPLv2.1+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} boost_context-mt boost_system boost_thread-mt
-WANTLIB += brotlidec brotlienc bz2 c crypto curl lzma m readline
-WANTLIB += sodium sqlite3
+# TODO
+#WANTLIB += ${COMPILER_LIBCXX} boost_context-mt boost_system boost_thread-mt
+#WANTLIB += brotlidec brotlienc bz2 c crypto curl lzma m readline
+#WANTLIB += sodium sqlite3
 
 MASTER_SITES =	https://nixos.org/releases/nix/${DISTNAME}/
 
