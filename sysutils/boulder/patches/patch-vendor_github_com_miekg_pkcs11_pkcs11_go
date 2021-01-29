@@ -1,0 +1,13 @@
+$OpenBSD$
+
+Index: vendor/github.com/miekg/pkcs11/pkcs11.go
+--- vendor/github.com/miekg/pkcs11/pkcs11.go.orig
++++ vendor/github.com/miekg/pkcs11/pkcs11.go
+@@ -14,7 +14,6 @@ package pkcs11
+ #cgo windows CFLAGS: -DPACKED_STRUCTURES
+ #cgo linux LDFLAGS: -ldl
+ #cgo darwin LDFLAGS: -ldl
+-#cgo openbsd LDFLAGS: -ldl
+ #cgo freebsd LDFLAGS: -ldl
+ 
+ #include <stdlib.h>
