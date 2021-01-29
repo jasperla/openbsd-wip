@@ -1,4 +1,4 @@
-@comment $OpenBSD$
+@comment $OpenBSD: PLIST,v$
 ${P5ARCH}/DBD/ODBC/
 ${P5ARCH}/DBD/ODBC.pm
 ${P5ARCH}/DBD/ODBC/Changes.pm
@@ -6,5 +6,5 @@ ${P5ARCH}/DBD/ODBC/FAQ.pm
 ${P5ARCH}/DBD/ODBC/TO_DO.pm
 ${P5ARCH}/auto/DBD/
 ${P5ARCH}/auto/DBD/ODBC/
-${P5ARCH}/auto/DBD/ODBC/ODBC.so
+@so ${P5ARCH}/auto/DBD/ODBC/ODBC.so
 @man man/man3p/DBD::ODBC.3p

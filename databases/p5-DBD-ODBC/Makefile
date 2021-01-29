@@ -4,13 +4,13 @@
 COMMENT =		DBI driver for ODBC
 
 MODULES =		cpan
-DISTNAME =		DBD-ODBC-1.52
+DISTNAME =		DBD-ODBC-1.61
 CATEGORIES =		databases
 
 MAINTAINER =		Cesare Gargano <gar@plusiagamma.org>
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB +=		c iodbc
 
