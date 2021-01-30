@@ -6,15 +6,15 @@ Add back arm support.
 Index: gas/configure.tgt
 --- gas/configure.tgt.orig
 +++ gas/configure.tgt
-@@ -127,6 +127,7 @@ case ${generic_target} in
-     case ${cpu}-${os} in
+@@ -130,6 +130,7 @@ case ${generic_target} in
        aarch64*-linux-gnu_ilp32)		arch=aarch64:32 ;;
      esac ;;
+   aarch64*-*-netbsd*)			fmt=elf em=nbsd;;
 +  aarch64-*-openbsd*)			fmt=elf ;;
  
    alpha-*-*vms*)			fmt=evax ;;
    alpha-*-osf*)				fmt=ecoff ;;
-@@ -153,6 +154,7 @@ case ${generic_target} in
+@@ -156,6 +157,7 @@ case ${generic_target} in
    arm-*-uclinux*)			fmt=elf  em=linux ;;
    arm-*-nacl*)				fmt=elf  em=nacl ;;
    arm-*-netbsdelf*)			fmt=elf  em=nbsd ;;

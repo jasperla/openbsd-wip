@@ -5,7 +5,7 @@ $OpenBSD$
 Index: elfcpp/elfcpp.h
 --- elfcpp/elfcpp.h.orig
 +++ elfcpp/elfcpp.h
-@@ -500,6 +500,12 @@ enum PT
+@@ -505,6 +505,12 @@ enum PT
    PT_GNU_STACK = 0x6474e551,
    // Read only after relocation.
    PT_GNU_RELRO = 0x6474e552,

@@ -4,8 +4,8 @@ ONLY_FOR_ARCHS =	${LLVM_ARCHS}
 
 # gold does not follow binutils version numbering
 COMMENT =	GNU ELF-only linker
-DISTNAME =	binutils-2.35.1
-PKGNAME =	gold-1.16pl3
+DISTNAME =	binutils-2.36
+PKGNAME =	gold-1.16pl4
 CATEGORIES =	devel
 
 HOMEPAGE =	https://sourceware.org/binutils/
