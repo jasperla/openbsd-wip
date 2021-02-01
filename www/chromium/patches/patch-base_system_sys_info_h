@@ -1,4 +1,4 @@
-$OpenBSD: patch-base_system_sys_info_h,v 1.5 2020/10/22 13:52:53 robert Exp $
+$OpenBSD: patch-base_system_sys_info_h,v 1.6 2021/01/20 07:28:07 robert Exp $
 
 Index: base/system/sys_info.h
 --- base/system/sys_info.h.orig

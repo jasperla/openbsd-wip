@@ -1,4 +1,4 @@
-$OpenBSD$
+$OpenBSD: patch-content_test_BUILD_gn,v 1.6 2021/01/20 07:28:10 robert Exp $
 
 Index: content/test/BUILD.gn
 --- content/test/BUILD.gn.orig

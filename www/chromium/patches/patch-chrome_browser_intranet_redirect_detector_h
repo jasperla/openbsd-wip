@@ -1,4 +1,4 @@
-$OpenBSD$
+$OpenBSD: patch-chrome_browser_intranet_redirect_detector_h,v 1.2 2021/01/20 07:28:08 robert Exp $
 
 Index: chrome/browser/intranet_redirect_detector.h
 --- chrome/browser/intranet_redirect_detector.h.orig

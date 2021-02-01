@@ -1,4 +1,4 @@
-$OpenBSD$
+$OpenBSD: patch-ui_views_controls_textfield_textfield_cc,v 1.51 2021/01/20 07:28:12 robert Exp $
 
 Index: ui/views/controls/textfield/textfield.cc
 --- ui/views/controls/textfield/textfield.cc.orig

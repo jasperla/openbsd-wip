@@ -1,4 +1,4 @@
-$OpenBSD$
+$OpenBSD: patch-mojo_public_js_mojo_bindings_resources_grd,v 1.8 2021/01/20 07:28:11 robert Exp $
 
 Index: mojo/public/js/mojo_bindings_resources.grd
 --- mojo/public/js/mojo_bindings_resources.grd.orig

@@ -1,4 +1,4 @@
-$OpenBSD$
+$OpenBSD: patch-content_public_common_content_features_cc,v 1.18 2021/01/20 07:28:10 robert Exp $
 
 WebUSB is bad and it makes the chrome process spin the CPU anyway
 

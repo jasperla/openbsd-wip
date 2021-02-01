@@ -1,4 +1,4 @@
-$OpenBSD: patch-build_toolchain_gcc_toolchain_gni,v 1.26 2020/10/22 13:52:53 robert Exp $
+$OpenBSD: patch-build_toolchain_gcc_toolchain_gni,v 1.28 2021/01/20 07:28:07 robert Exp $
 Index: build/toolchain/gcc_toolchain.gni
 --- build/toolchain/gcc_toolchain.gni.orig
 +++ build/toolchain/gcc_toolchain.gni

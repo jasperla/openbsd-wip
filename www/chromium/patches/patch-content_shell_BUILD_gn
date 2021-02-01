@@ -1,4 +1,4 @@
-$OpenBSD: patch-content_shell_BUILD_gn,v 1.14 2020/10/22 13:52:54 robert Exp $
+$OpenBSD: patch-content_shell_BUILD_gn,v 1.16 2021/01/20 07:28:10 robert Exp $
 
 Index: content/shell/BUILD.gn
 --- content/shell/BUILD.gn.orig

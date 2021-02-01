@@ -1,4 +1,4 @@
-$OpenBSD$
+$OpenBSD: patch-services_network_network_service_cc,v 1.19 2021/01/20 07:28:11 robert Exp $
 
 Index: services/network/network_service.cc
 --- services/network/network_service.cc.orig

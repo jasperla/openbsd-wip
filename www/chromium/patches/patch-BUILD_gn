@@ -1,4 +1,4 @@
-$OpenBSD: patch-BUILD_gn,v 1.37 2020/10/22 13:52:53 robert Exp $
+$OpenBSD: patch-BUILD_gn,v 1.39 2021/01/20 07:28:06 robert Exp $
 
 Index: BUILD.gn
 --- BUILD.gn.orig

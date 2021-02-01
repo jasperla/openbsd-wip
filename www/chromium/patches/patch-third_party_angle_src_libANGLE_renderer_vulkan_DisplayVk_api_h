@@ -1,4 +1,4 @@
-$OpenBSD$
+$OpenBSD: patch-third_party_angle_src_libANGLE_renderer_vulkan_DisplayVk_api_h,v 1.2 2021/01/20 07:28:11 robert Exp $
 
 Index: third_party/angle/src/libANGLE/renderer/vulkan/DisplayVk_api.h
 --- third_party/angle/src/libANGLE/renderer/vulkan/DisplayVk_api.h.orig

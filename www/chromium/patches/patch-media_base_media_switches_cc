@@ -1,4 +1,4 @@
-$OpenBSD$
+$OpenBSD: patch-media_base_media_switches_cc,v 1.9 2021/01/20 07:28:10 robert Exp $
 
 Index: media/base/media_switches.cc
 --- media/base/media_switches.cc.orig

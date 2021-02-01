@@ -1,4 +1,4 @@
-$OpenBSD: patch-base_process_process_posix_cc,v 1.27 2020/05/29 20:03:22 robert Exp $
+$OpenBSD: patch-base_process_process_posix_cc,v 1.29 2021/01/20 07:28:07 robert Exp $
 
 Index: base/process/process_posix.cc
 --- base/process/process_posix.cc.orig

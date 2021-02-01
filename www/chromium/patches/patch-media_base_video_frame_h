@@ -1,4 +1,4 @@
-$OpenBSD: patch-media_base_video_frame_h,v 1.30 2020/10/22 13:52:54 robert Exp $
+$OpenBSD: patch-media_base_video_frame_h,v 1.32 2021/01/20 07:28:10 robert Exp $
 
 Index: media/base/video_frame.h
 --- media/base/video_frame.h.orig

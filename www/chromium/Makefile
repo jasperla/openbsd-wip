@@ -1,4 +1,7 @@
-# $OpenBSD: Makefile,v 1.530 2020/10/22 13:52:53 robert Exp $
+# $OpenBSD: Makefile,v 1.545 2021/01/24 07:15:04 robert Exp $
+
+# /usr/local/bin/chrome[60]: /usr/local/chrome/chrome: Cannot allocate memory
+BROKEN-i386=   runtime fails, cannot execve the built binary, immediate ENOMEM even with high limits
 
 .include <bsd.port.arch.mk>
 
@@ -13,6 +16,7 @@ DPB_PROPERTIES=		lonesome
 COMMENT=		Chromium browser
 
 V=			88.0.4324.96
+REVISION=		0
 
 DISTNAME=		chromium-${V}
 
@@ -107,7 +111,7 @@ BUILDTYPE=	Release
 
 SUBST_VARS+=	WRKSRC WRKDIR DEBUGFLAG
 
-ALL_TARGET?=		chrome chromedriver
+ALL_TARGET=		chrome chromedriver
 TEST_TARGET=		base_unittests
 DIST_TARGET_DIR=	chrome
 
@@ -162,10 +166,11 @@ PKG_ARGS+=	-Dswiftshader=1
 
 # Note: these keys are for OpenBSD use ONLY. For your own distribution,
 # please get your own set of keys. It's free!
-GN_ARGS+=	google_api_key=\"AIzaSyA015yecfJyWi8UQpneQVrNzIKlxjv4MhI\" \
-		google_default_client_id=\"451220141585.apps.googleusercontent.com\" \
-		google_default_client_secret=\"nQcDyaBvDyCeDrsRqKIWSHJn\" \
-		ffmpeg_branding=\"Chrome\" \
+#GN_ARGS+=	google_api_key=\"AIzaSyA015yecfJyWi8UQpneQVrNzIKlxjv4MhI\" \
+#		google_default_client_id=\"451220141585.apps.googleusercontent.com\" \
+#		google_default_client_secret=\"nQcDyaBvDyCeDrsRqKIWSHJn\" \
+
+GN_ARGS+=	ffmpeg_branding=\"Chrome\" \
 		proprietary_codecs=true
 
 # XXX dwz doesn't work with chromium yet

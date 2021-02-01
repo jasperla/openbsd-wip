@@ -1,4 +1,4 @@
-$OpenBSD: patch-ui_gfx_BUILD_gn,v 1.17 2020/10/22 13:52:55 robert Exp $
+$OpenBSD: patch-ui_gfx_BUILD_gn,v 1.19 2021/01/20 07:28:12 robert Exp $
 
 Index: ui/gfx/BUILD.gn
 --- ui/gfx/BUILD.gn.orig

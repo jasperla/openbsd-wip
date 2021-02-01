@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_prefs_browser_prefs_cc,v 1.17 2020/10/22 13:52:53 robert Exp $
+$OpenBSD: patch-chrome_browser_prefs_browser_prefs_cc,v 1.19 2021/01/20 07:28:08 robert Exp $
 
 Index: chrome/browser/prefs/browser_prefs.cc
 --- chrome/browser/prefs/browser_prefs.cc.orig

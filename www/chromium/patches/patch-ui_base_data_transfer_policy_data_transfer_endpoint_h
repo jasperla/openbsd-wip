@@ -1,4 +1,4 @@
-$OpenBSD$
+$OpenBSD: patch-ui_base_data_transfer_policy_data_transfer_endpoint_h,v 1.1 2021/01/20 07:28:12 robert Exp $
 
 Index: ui/base/data_transfer_policy/data_transfer_endpoint.h
 --- ui/base/data_transfer_policy/data_transfer_endpoint.h.orig

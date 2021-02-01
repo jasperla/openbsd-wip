@@ -1,4 +1,4 @@
-$OpenBSD$
+$OpenBSD: patch-third_party_abseil-cpp_absl_base_config_h,v 1.2 2021/01/20 07:28:11 robert Exp $
 
 Index: third_party/abseil-cpp/absl/base/config.h
 --- third_party/abseil-cpp/absl/base/config.h.orig

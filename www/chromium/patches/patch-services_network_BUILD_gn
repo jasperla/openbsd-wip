@@ -1,4 +1,4 @@
-$OpenBSD: patch-services_network_BUILD_gn,v 1.18 2020/10/22 13:52:54 robert Exp $
+$OpenBSD: patch-services_network_BUILD_gn,v 1.20 2021/01/20 07:28:11 robert Exp $
 
 Index: services/network/BUILD.gn
 --- services/network/BUILD.gn.orig

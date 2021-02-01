@@ -1,4 +1,4 @@
-$OpenBSD$
+$OpenBSD: patch-chrome_browser_web_applications_components_web_app_shortcut_cc,v 1.5 2021/01/20 07:28:09 robert Exp $
 
 Index: chrome/browser/web_applications/components/web_app_shortcut.cc
 --- chrome/browser/web_applications/components/web_app_shortcut.cc.orig

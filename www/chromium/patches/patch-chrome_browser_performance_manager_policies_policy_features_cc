@@ -1,4 +1,4 @@
-$OpenBSD$
+$OpenBSD: patch-chrome_browser_performance_manager_policies_policy_features_cc,v 1.1 2021/01/20 07:28:08 robert Exp $
 
 Index: chrome/browser/performance_manager/policies/policy_features.cc
 --- chrome/browser/performance_manager/policies/policy_features.cc.orig

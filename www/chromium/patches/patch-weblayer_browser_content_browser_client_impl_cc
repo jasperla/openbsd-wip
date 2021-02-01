@@ -1,4 +1,4 @@
-$OpenBSD$
+$OpenBSD: patch-weblayer_browser_content_browser_client_impl_cc,v 1.10 2021/01/20 07:28:12 robert Exp $
 
 Index: weblayer/browser/content_browser_client_impl.cc
 --- weblayer/browser/content_browser_client_impl.cc.orig
@@ -21,7 +21,7 @@ Index: weblayer/browser/content_browser_client_impl.cc
    network::mojom::CryptConfigPtr config = network::mojom::CryptConfig::New();
    content::GetNetworkService()->SetCryptConfig(std::move(config));
  #endif
-@@ -823,7 +823,7 @@ SafeBrowsingService* ContentBrowserClientImpl::GetSafe
+@@ -835,7 +835,7 @@ SafeBrowsingService* ContentBrowserClientImpl::GetSafe
  }
  #endif
  

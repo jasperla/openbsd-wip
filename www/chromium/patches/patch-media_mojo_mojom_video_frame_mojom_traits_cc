@@ -1,4 +1,4 @@
-$OpenBSD: patch-media_mojo_mojom_video_frame_mojom_traits_cc,v 1.6 2020/10/22 13:52:54 robert Exp $
+$OpenBSD: patch-media_mojo_mojom_video_frame_mojom_traits_cc,v 1.8 2021/01/20 07:28:10 robert Exp $
 
 Index: media/mojo/mojom/video_frame_mojom_traits.cc
 --- media/mojo/mojom/video_frame_mojom_traits.cc.orig

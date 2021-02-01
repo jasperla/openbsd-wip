@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_app_chrome_main_delegate_cc,v 1.62 2020/10/22 13:52:53 robert Exp $
+$OpenBSD: patch-chrome_app_chrome_main_delegate_cc,v 1.64 2021/01/20 07:28:07 robert Exp $
 
 Index: chrome/app/chrome_main_delegate.cc
 --- chrome/app/chrome_main_delegate.cc.orig

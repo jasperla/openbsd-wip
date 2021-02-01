@@ -1,4 +1,4 @@
-$OpenBSD$
+$OpenBSD: patch-third_party_libsync_src_sync_c,v 1.1 2021/01/20 07:28:11 robert Exp $
 
 Index: third_party/libsync/src/sync.c
 --- third_party/libsync/src/sync.c.orig

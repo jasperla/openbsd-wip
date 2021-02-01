@@ -1,4 +1,4 @@
-$OpenBSD: patch-ui_base_resource_resource_bundle_cc,v 1.39 2020/10/22 13:52:55 robert Exp $
+$OpenBSD: patch-ui_base_resource_resource_bundle_cc,v 1.40 2021/01/20 07:28:12 robert Exp $
 
 Index: ui/base/resource/resource_bundle.cc
 --- ui/base/resource/resource_bundle.cc.orig

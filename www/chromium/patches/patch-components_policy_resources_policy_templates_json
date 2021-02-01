@@ -1,4 +1,4 @@
-$OpenBSD$
+$OpenBSD: patch-components_policy_resources_policy_templates_json,v 1.54 2021/01/20 07:28:09 robert Exp $
 
 Index: components/policy/resources/policy_templates.json
 --- components/policy/resources/policy_templates.json.orig

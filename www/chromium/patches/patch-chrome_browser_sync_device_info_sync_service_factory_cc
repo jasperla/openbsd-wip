@@ -1,4 +1,4 @@
-$OpenBSD$
+$OpenBSD: patch-chrome_browser_sync_device_info_sync_service_factory_cc,v 1.1 2021/01/20 07:28:08 robert Exp $
 
 Index: chrome/browser/sync/device_info_sync_service_factory.cc
 --- chrome/browser/sync/device_info_sync_service_factory.cc.orig

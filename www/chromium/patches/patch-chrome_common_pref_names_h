@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_common_pref_names_h,v 1.62 2020/10/22 13:52:54 robert Exp $
+$OpenBSD: patch-chrome_common_pref_names_h,v 1.64 2021/01/20 07:28:09 robert Exp $
 
 Index: chrome/common/pref_names.h
 --- chrome/common/pref_names.h.orig

@@ -1,4 +1,4 @@
-$OpenBSD: patch-services_network_public_cpp_cert_verifier_cert_verifier_creation_cc,v 1.1 2020/07/17 20:23:08 robert Exp $
+$OpenBSD: patch-services_network_public_cpp_cert_verifier_cert_verifier_creation_cc,v 1.2 2021/01/20 07:28:11 robert Exp $
 
 Index: services/network/public/cpp/cert_verifier/cert_verifier_creation.cc
 --- services/network/public/cpp/cert_verifier/cert_verifier_creation.cc.orig

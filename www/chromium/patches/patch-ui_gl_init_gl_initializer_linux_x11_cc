@@ -1,4 +1,4 @@
-$OpenBSD: patch-ui_gl_init_gl_initializer_linux_x11_cc,v 1.1 2020/09/22 11:47:42 robert Exp $
+$OpenBSD: patch-ui_gl_init_gl_initializer_linux_x11_cc,v 1.2 2021/01/20 07:28:12 robert Exp $
 
 Index: ui/gl/init/gl_initializer_linux_x11.cc
 --- ui/gl/init/gl_initializer_linux_x11.cc.orig

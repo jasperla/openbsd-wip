@@ -1,4 +1,4 @@
-$OpenBSD$
+$OpenBSD: patch-ui_base_dragdrop_os_exchange_data_provider_h,v 1.1 2021/01/20 07:28:12 robert Exp $
 
 Index: ui/base/dragdrop/os_exchange_data_provider.h
 --- ui/base/dragdrop/os_exchange_data_provider.h.orig

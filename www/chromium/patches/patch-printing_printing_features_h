@@ -1,4 +1,4 @@
-$OpenBSD$
+$OpenBSD: patch-printing_printing_features_h,v 1.2 2021/01/20 07:28:11 robert Exp $
 
 Index: printing/printing_features.h
 --- printing/printing_features.h.orig

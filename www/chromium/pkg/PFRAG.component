@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.component,v 1.8 2020/04/10 18:51:32 robert Exp $
+@comment $OpenBSD: PFRAG.component,v 1.10 2021/01/20 07:28:13 robert Exp $
 @so chrome/libAPP_UPDATE.so
 @so chrome/libabsl.so
 @so chrome/libaccessibility.so

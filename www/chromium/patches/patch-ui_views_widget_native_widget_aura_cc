@@ -1,4 +1,4 @@
-$OpenBSD: patch-ui_views_widget_native_widget_aura_cc,v 1.6 2020/10/22 13:52:55 robert Exp $
+$OpenBSD: patch-ui_views_widget_native_widget_aura_cc,v 1.7 2021/01/20 07:28:12 robert Exp $
 
 Index: ui/views/widget/native_widget_aura.cc
 --- ui/views/widget/native_widget_aura.cc.orig

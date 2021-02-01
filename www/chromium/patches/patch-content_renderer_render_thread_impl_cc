@@ -1,4 +1,4 @@
-$OpenBSD: patch-content_renderer_render_thread_impl_cc,v 1.46 2020/10/22 13:52:54 robert Exp $
+$OpenBSD: patch-content_renderer_render_thread_impl_cc,v 1.48 2021/01/20 07:28:10 robert Exp $
 
 Index: content/renderer/render_thread_impl.cc
 --- content/renderer/render_thread_impl.cc.orig

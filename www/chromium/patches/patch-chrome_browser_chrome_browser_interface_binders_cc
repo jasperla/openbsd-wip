@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_chrome_browser_interface_binders_cc,v 1.5 2020/10/22 13:52:53 robert Exp $
+$OpenBSD: patch-chrome_browser_chrome_browser_interface_binders_cc,v 1.8 2021/01/20 07:28:08 robert Exp $
 
 Index: chrome/browser/chrome_browser_interface_binders.cc
 --- chrome/browser/chrome_browser_interface_binders.cc.orig

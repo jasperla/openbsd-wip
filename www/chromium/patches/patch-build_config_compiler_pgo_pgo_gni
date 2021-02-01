@@ -1,4 +1,4 @@
-$OpenBSD$
+$OpenBSD: patch-build_config_compiler_pgo_pgo_gni,v 1.2 2021/01/20 07:28:07 robert Exp $
 
 Index: build/config/compiler/pgo/pgo.gni
 --- build/config/compiler/pgo/pgo.gni.orig

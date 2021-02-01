@@ -1,4 +1,4 @@
-$OpenBSD$
+$OpenBSD: patch-media_video_video_encode_accelerator_adapter_cc,v 1.1 2021/01/20 07:28:11 robert Exp $
 
 Index: media/video/video_encode_accelerator_adapter.cc
 --- media/video/video_encode_accelerator_adapter.cc.orig

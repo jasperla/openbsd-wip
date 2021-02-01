@@ -1,4 +1,4 @@
-$OpenBSD: patch-ash_display_mirror_window_controller_cc,v 1.25 2020/05/29 20:03:22 robert Exp $
+$OpenBSD: patch-ash_display_mirror_window_controller_cc,v 1.26 2021/01/20 07:28:07 robert Exp $
 Index: ash/display/mirror_window_controller.cc
 --- ash/display/mirror_window_controller.cc.orig
 +++ ash/display/mirror_window_controller.cc

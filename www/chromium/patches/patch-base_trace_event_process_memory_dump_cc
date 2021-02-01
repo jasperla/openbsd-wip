@@ -1,4 +1,4 @@
-$OpenBSD: patch-base_trace_event_process_memory_dump_cc,v 1.15 2020/10/22 13:52:53 robert Exp $
+$OpenBSD: patch-base_trace_event_process_memory_dump_cc,v 1.16 2021/01/20 07:28:07 robert Exp $
 
 Index: base/trace_event/process_memory_dump.cc
 --- base/trace_event/process_memory_dump.cc.orig

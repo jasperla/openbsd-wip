@@ -1,4 +1,4 @@
-$OpenBSD$
+$OpenBSD: patch-chrome_browser_profiles_profile_cc,v 1.1 2021/01/20 07:28:08 robert Exp $
 
 Index: chrome/browser/profiles/profile.cc
 --- chrome/browser/profiles/profile.cc.orig

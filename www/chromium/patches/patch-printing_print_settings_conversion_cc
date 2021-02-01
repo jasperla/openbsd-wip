@@ -1,4 +1,4 @@
-$OpenBSD$
+$OpenBSD: patch-printing_print_settings_conversion_cc,v 1.4 2021/01/20 07:28:11 robert Exp $
 
 Index: printing/print_settings_conversion.cc
 --- printing/print_settings_conversion.cc.orig

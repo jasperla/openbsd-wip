@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_common_chrome_switches_cc,v 1.57 2020/10/22 13:52:54 robert Exp $
+$OpenBSD: patch-chrome_common_chrome_switches_cc,v 1.59 2021/01/20 07:28:09 robert Exp $
 
 Index: chrome/common/chrome_switches.cc
 --- chrome/common/chrome_switches.cc.orig

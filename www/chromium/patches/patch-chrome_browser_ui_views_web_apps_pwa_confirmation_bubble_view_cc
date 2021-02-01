@@ -1,4 +1,4 @@
-$OpenBSD$
+$OpenBSD: patch-chrome_browser_ui_views_web_apps_pwa_confirmation_bubble_view_cc,v 1.4 2021/01/20 07:28:09 robert Exp $
 
 Index: chrome/browser/ui/views/web_apps/pwa_confirmation_bubble_view.cc
 --- chrome/browser/ui/views/web_apps/pwa_confirmation_bubble_view.cc.orig

@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_first_run_first_run_internal_h,v 1.2 2020/10/22 13:52:53 robert Exp $
+$OpenBSD: patch-chrome_browser_first_run_first_run_internal_h,v 1.4 2021/01/20 07:28:08 robert Exp $
 
 Index: chrome/browser/first_run/first_run_internal.h
 --- chrome/browser/first_run/first_run_internal.h.orig

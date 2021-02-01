@@ -1,4 +1,4 @@
-$OpenBSD$
+$OpenBSD: patch-third_party_swiftshader_include_vulkan_vulkan_hpp,v 1.1 2021/01/20 07:28:12 robert Exp $
 
 Index: third_party/swiftshader/include/vulkan/vulkan.hpp
 --- third_party/swiftshader/include/vulkan/vulkan.hpp.orig

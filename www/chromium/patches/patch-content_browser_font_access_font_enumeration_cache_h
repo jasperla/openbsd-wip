@@ -1,4 +1,4 @@
-$OpenBSD$
+$OpenBSD: patch-content_browser_font_access_font_enumeration_cache_h,v 1.2 2021/01/20 07:28:09 robert Exp $
 
 Index: content/browser/font_access/font_enumeration_cache.h
 --- content/browser/font_access/font_enumeration_cache.h.orig

@@ -1,4 +1,4 @@
-$OpenBSD: patch-extensions_common_api__permission_features_json,v 1.17 2020/10/22 13:52:54 robert Exp $
+$OpenBSD: patch-extensions_common_api__permission_features_json,v 1.18 2021/01/20 07:28:10 robert Exp $
 
 Index: extensions/common/api/_permission_features.json
 --- extensions/common/api/_permission_features.json.orig

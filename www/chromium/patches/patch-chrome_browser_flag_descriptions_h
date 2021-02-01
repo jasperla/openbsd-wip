@@ -1,4 +1,4 @@
-$OpenBSD$
+$OpenBSD: patch-chrome_browser_flag_descriptions_h,v 1.36 2021/01/20 07:28:08 robert Exp $
 
 Index: chrome/browser/flag_descriptions.h
 --- chrome/browser/flag_descriptions.h.orig
@@ -12,7 +12,7 @@ Index: chrome/browser/flag_descriptions.h
  #include "base/allocator/buildflags.h"
  #endif  // defined(OS_LINUX) || defined(OS_CHROMEOS)
  
-@@ -2697,7 +2697,7 @@ extern const char kEnableNewBadgeOnMenuItemsDescriptio
+@@ -2700,7 +2700,7 @@ extern const char kEnableNewBadgeOnMenuItemsDescriptio
  // Random platform combinations -----------------------------------------------
  
  #if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || \
@@ -21,7 +21,7 @@ Index: chrome/browser/flag_descriptions.h
  
  extern const char kEnableMediaFeedsName[];
  extern const char kEnableMediaFeedsDescription[];
-@@ -2733,7 +2733,7 @@ extern const char kWebContentsOcclusionDescription[];
+@@ -2736,7 +2736,7 @@ extern const char kWebContentsOcclusionDescription[];
  
  #endif  // defined(OS_WIN) || defined(OS_MAC) || defined(OS_CHROMEOS)
  
@@ -30,7 +30,7 @@ Index: chrome/browser/flag_descriptions.h
  #if BUILDFLAG(USE_TCMALLOC)
  extern const char kDynamicTcmallocName[];
  extern const char kDynamicTcmallocDescription[];
-@@ -2751,7 +2751,7 @@ extern const char kWebShareDescription[];
+@@ -2754,7 +2754,7 @@ extern const char kWebShareDescription[];
  #endif  // defined(OS_WIN) || defined(OS_CHROMEOS)
  
  #if defined(OS_WIN) || (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || \

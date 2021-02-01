@@ -1,4 +1,4 @@
-$OpenBSD: patch-ui_gl_BUILD_gn,v 1.33 2020/10/22 13:52:55 robert Exp $
+$OpenBSD: patch-ui_gl_BUILD_gn,v 1.35 2021/01/20 07:28:12 robert Exp $
 
 Index: ui/gl/BUILD.gn
 --- ui/gl/BUILD.gn.orig

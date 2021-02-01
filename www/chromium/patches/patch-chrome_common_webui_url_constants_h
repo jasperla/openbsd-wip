@@ -1,4 +1,4 @@
-$OpenBSD$
+$OpenBSD: patch-chrome_common_webui_url_constants_h,v 1.23 2021/01/20 07:28:09 robert Exp $
 
 Index: chrome/common/webui_url_constants.h
 --- chrome/common/webui_url_constants.h.orig

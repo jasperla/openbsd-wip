@@ -1,4 +1,4 @@
-$OpenBSD$
+$OpenBSD: patch-third_party_angle_src_libANGLE_Display_cpp,v 1.19 2021/01/20 07:28:11 robert Exp $
 
 Index: third_party/angle/src/libANGLE/Display.cpp
 --- third_party/angle/src/libANGLE/Display.cpp.orig

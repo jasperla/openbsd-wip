@@ -1,4 +1,4 @@
-$OpenBSD$
+$OpenBSD: patch-components_viz_common_features_cc,v 1.6 2021/01/20 07:28:09 robert Exp $
 
 Index: components/viz/common/features.cc
 --- components/viz/common/features.cc.orig
