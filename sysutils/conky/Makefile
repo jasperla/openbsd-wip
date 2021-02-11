@@ -1,5 +1,7 @@
 # $OpenBSD: Makefile,v 1.60 2020/07/17 08:36:04 tb Exp $
 
+# XXX incomplete!
+
 ONLY_FOR_ARCHS= ${APM_ARCHS}
 
 COMMENT=	light-weight system monitor
@@ -13,7 +15,6 @@ CATEGORIES=	sysutils
 # mostly GPLv3; see COPYING
 PERMIT_PACKAGE=	Yes
 
-COMPILER=ports-gcc
 WANTLIB=	c crypto curl curses glib-2.0 iconv intl kvm lzma m \
 		nghttp2 ossaudio pcre pthread ssl xml2 z ${MODLUA_WANTLIB}
 
