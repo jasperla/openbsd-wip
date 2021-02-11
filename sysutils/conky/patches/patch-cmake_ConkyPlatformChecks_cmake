@@ -1,0 +1,22 @@
+$OpenBSD$
+
+Index: cmake/ConkyPlatformChecks.cmake
+--- cmake/ConkyPlatformChecks.cmake.orig
++++ cmake/ConkyPlatformChecks.cmake
+@@ -52,7 +52,7 @@ endif(NOT DEFINED CLOCK_GETTIME_LIB)
+ set(conky_libs ${conky_libs} ${CLOCK_GETTIME_LIB})
+ 
+ # standard path to search for includes
+-set(INCLUDE_SEARCH_PATH /usr/include /usr/local/include)
++set(INCLUDE_SEARCH_PATH /usr/include /usr/local/include /usr/X11R6/include)
+ 
+ # Set system vars
+ if(CMAKE_SYSTEM_NAME MATCHES "Linux")
+@@ -340,6 +340,7 @@ if(BUILD_X11)
+         find_path(freetype_INCLUDE_PATH
+                   freetype/config/ftconfig.h
+                   ${INCLUDE_SEARCH_PATH}
++                  /usr/X11R6/include/freetype2
+                   /usr/include/freetype2
+                   /usr/local/include/freetype2
+                   /usr/pkg/include/freetype2)
