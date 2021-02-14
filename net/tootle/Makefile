@@ -4,9 +4,9 @@ COMMENT =	GTK+ mastodon client
 
 GH_ACCOUNT =	bleakgrey
 GH_PROJECT =	tootle
-# Currently includes many many fixes -- alpha status
-GH_COMMIT =	3cf8d9ddd66feb98cdd4c23f3608a43c80cd7bdc
-DISTNAME =	${GH_PROJECT}-0.20201219
+# Follow HEAD since there are upstream bugs needing to be ironed out
+GH_COMMIT =	f5a823ba9705ab05e53499478c4be4f975d24a9f
+DISTNAME =	${GH_PROJECT}-1.0.20210214
 
 CATEGORIES =	net
 
@@ -29,6 +29,7 @@ LIB_DEPENDS =	devel/glib2>=2.30.0 \
 		x11/gtk+3>=3.22.0 \
 		x11/libhandy>=1.0.0
 RUN_DEPENDS =	devel/desktop-file-utils \
+		x11/gnome/keyring \
 		x11/gtk+3,-guic
 
 # Open image in your favorite image viewer via xdg-mime(1)

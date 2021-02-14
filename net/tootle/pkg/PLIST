@@ -8,6 +8,9 @@ share/icons/hicolor/symbolic/apps/com.github.bleakgrey.tootle-symbolic.svg
 share/locale/de_DE/
 share/locale/de_DE/LC_MESSAGES/
 share/locale/de_DE/LC_MESSAGES/com.github.bleakgrey.tootle.mo
+share/locale/es_ES/
+share/locale/es_ES/LC_MESSAGES/
+share/locale/es_ES/LC_MESSAGES/com.github.bleakgrey.tootle.mo
 share/locale/es_MX/
 share/locale/es_MX/LC_MESSAGES/
 share/locale/es_MX/LC_MESSAGES/com.github.bleakgrey.tootle.mo
