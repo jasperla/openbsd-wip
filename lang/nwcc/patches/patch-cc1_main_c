@@ -1,0 +1,16 @@
+$OpenBSD$
+
+Move this to real /tmp
+
+Index: cc1_main.c
+--- cc1_main.c.orig
++++ cc1_main.c
+@@ -157,7 +157,7 @@ do_cpp(char *file, char **args, int cppind) {
+ 	/* XXX FILENAME_MAX is broken on HP-UX */
+ 	static char	output_path[FILENAME_MAX + 1];
+ 	char		buf[FILENAME_MAX + 1];
+-	char		tmpbuf[128] = "/var/tmp/cpp";
++	char		tmpbuf[128] = "/tmp/cpp";
+ 	char		*arch;
+ 	char		*progname;
+ 	char		*progflag = "-E";

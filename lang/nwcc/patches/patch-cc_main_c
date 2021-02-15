@@ -1,0 +1,23 @@
+$OpenBSD$
+
+cc_main.c:1208:4: error: the value of the size argument in 'strncat' is too large, might lead to a buffer overflow [-Werror,-Wstrncat-size]
+                        sizeof asm_flags-strlen(asm_flags));
+                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+cc_main.c:1208:4: note: change the argument to be the free space in the destination buffer minus the terminating null byte
+                        sizeof asm_flags-strlen(asm_flags));
+                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                        sizeof(asm_flags) - strlen(asm_flags) - 1
+1 error generated.
+
+Index: cc_main.c
+--- cc_main.c.orig
++++ cc_main.c
+@@ -1205,7 +1205,7 @@ main(int argc, char *argv[]) {
+ 
+ 	if (asm_cmdline != NULL) {
+ 		strncat(asm_flags, asm_cmdline,
+-			sizeof asm_flags-strlen(asm_flags));
++			sizeof(asm_flags) - strlen(asm_flags) - 1);
+ 	}
+ 
+ 	if (custom_asm_args != NULL) {

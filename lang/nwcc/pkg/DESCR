@@ -1,0 +1,15 @@
+nwcc is a simple C compiler for Unix systems targeting a variety of
+architectures. Full source code is freely available under the (revised)
+BSD license.
+
+Apart from full C89 support, nwcc also provides many C99 and GNU C
+features, and can be used as a drop-in replacement for gcc in many
+cases. Cross-compilation and PIC code for shared libraries are also
+supported, albeit incompletely.
+
+nwcc has been known to compile many small and medium sized open-source
+applications correctly.
+
+Development priorities have traditionally favored language feature
+support, portability and compatibility. As a result, nwcc is completely
+lacking in optimization and support for debugging or profiling.
