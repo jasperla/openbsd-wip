@@ -1,8 +1,5 @@
 # $OpenBSD$
 
-# XXX: i386 too, eventually
-ONLY_FOR_ARCHS =	amd64
-
 V =		2.096.0
 COMMENT =	compiler for the D programming language
 DISTFILES =	dmd-${V}.tar.gz \
@@ -11,24 +8,13 @@ DISTFILES =	dmd-${V}.tar.gz \
 		phobos-${V}.tar.gz \
 		tools-${V}.tar.gz
 PKGNAME =	dmd-${V}
-CATEGORIES =	lang
-
-HOMEPAGE =	https://dlang.org/
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
-
-# Boost Software License 1.0
-PERMIT_PACKAGE =	Yes
 
 WANTLIB += c c++abi m pthread
-
-MASTER_SITES =	https://github.com/ibara/dmd/releases/download/bootstrap/
 
 USE_GMAKE =	Yes
 MAKE_ENV =	HOST_CXX="${CXX}" \
 		HOST_DMD="${WRKDIR}/dmd-2.096.0-bootstrap/openbsd/bin64/dmd"
 MAKE_FILE =	posix.mak
-
-NO_TEST =	Yes
 
 # Fix up the build system.
 do-gen:

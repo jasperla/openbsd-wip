@@ -1,4 +1,0 @@
-DMD is the reference compiler for the D programming language.
-
-This package contains the compiler, dmd, and the standard library,
-libphobos.a.
