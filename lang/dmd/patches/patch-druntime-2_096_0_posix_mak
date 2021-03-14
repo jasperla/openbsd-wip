@@ -8,7 +8,7 @@ Index: druntime-2.096.0/posix.mak
  QUIET:=
  
 -DMD_DIR=../dmd
-+DMD_DIR=../dmd-2.096.0
++DMD_DIR=TOPDIR/dmd-2.096.0
  DUB=dub
  TOOLS_DIR=../tools
  

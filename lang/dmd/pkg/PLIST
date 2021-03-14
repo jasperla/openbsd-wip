@@ -1,5 +1,15 @@
 @comment $OpenBSD: PLIST,v$
+@bin bin/changed
+@bin bin/checkwhitespace
+@bin bin/contributors
+@bin bin/ddemangle
+@bin bin/detab
+@bin bin/dget
 @bin bin/dmd
+@bin bin/dustmite
+@bin bin/rdmd
+@bin bin/tolf
+@bin bin/updatecopyright
 include/dmd/
 include/dmd/druntime/
 include/dmd/druntime/import/

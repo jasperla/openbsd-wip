@@ -8,7 +8,7 @@ Index: phobos-2.096.0/posix.mak
  DEBUGGER=gdb
  GIT_HOME=https://github.com/dlang
 -DMD_DIR=../dmd
-+DMD_DIR=../dmd-2.096.0
++DMD_DIR=TOPDIR/dmd-2.096.0
  
  include $(DMD_DIR)/src/osmodel.mak
  
