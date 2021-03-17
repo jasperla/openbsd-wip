@@ -1,0 +1,36 @@
+$OpenBSD$
+
+gcc8 suggested this change, it seems to work
+
+Index: include/imp/util/Endian
+--- include/imp/util/Endian.orig
++++ include/imp/util/Endian
+@@ -61,22 +61,22 @@ namespace imp {
+ #elif defined(__GNUC__) || defined(__clang__)
+ namespace imp {
+   inline int16 swap_bytes(int16 x) noexcept
+-  { return __bswap_16(x); }
++  { return __swap16md(x); }
+ 
+   inline uint16 swap_bytes(uint16 x) noexcept
+-  { return __bswap_16(x); }
++  { return __swap16md(x); }
+ 
+   inline int32 swap_bytes(int32 x) noexcept
+-  { return __bswap_32(x); }
++  { return __swap32md(x); }
+ 
+   inline uint32 swap_bytes(uint32 x) noexcept
+-  { return __bswap_32(x); }
++  { return __swap32md(x); }
+ 
+   inline int64 swap_bytes(int64 x) noexcept
+-  { return __bswap_64(x); }
++  { return __swap64md(x); }
+ 
+   inline uint64 swap_bytes(uint64 x) noexcept
+-  { return __bswap_64(x); }
++  { return __swap64md(x); }
+ }
+ #endif
+ 

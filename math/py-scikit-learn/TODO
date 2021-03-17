@@ -1,0 +1,6 @@
+Major update to 21.3
+====================
+  o Python (>= 3.5)
+  o NumPy (>= 1.11.0)
+  o SciPy (>= 0.17.0)
+  o joblib (>= 0.11)

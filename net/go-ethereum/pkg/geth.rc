@@ -1,0 +1,18 @@
+#!/bin/ksh
+#
+# $OpenBSD$
+
+daemon="${TRUEPREFIX}/bin/geth"
+daemon_user="_geth"
+daemon_flags="--config /etc/geth.conf"
+
+. /etc/rc.d/rc.subr
+
+rc_bg=YES
+rc_reload=NO
+
+rc_start() {
+	${rcexec} "${daemon} ${daemon_flags} 2>> ${VARBASE}/geth/geth.log"
+}
+
+rc_cmd $1

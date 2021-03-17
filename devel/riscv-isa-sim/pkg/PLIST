@@ -1,0 +1,31 @@
+@comment $OpenBSD: PLIST,v$
+@bin bin/elf2hex
+@bin bin/spike
+@bin bin/spike-dasm
+@bin bin/spike-log-parser
+@bin bin/termios-xspike
+@bin bin/xspike
+include/fesvr/
+include/fesvr/context.h
+include/fesvr/device.h
+include/fesvr/dtm.h
+include/fesvr/elf.h
+include/fesvr/elfloader.h
+include/fesvr/htif.h
+include/fesvr/htif_hexwriter.h
+include/fesvr/htif_pthread.h
+include/fesvr/memif.h
+include/fesvr/option_parser.h
+include/fesvr/rfb.h
+include/fesvr/syscall.h
+include/fesvr/term.h
+include/fesvr/tsi.h
+include/riscv/
+include/riscv/mmio_plugin.h
+@static-lib lib/libfesvr.a
+@so lib/libsoftfloat.so
+lib/pkgconfig/riscv-dummy_rocc.pc
+lib/pkgconfig/riscv-fesvr.pc
+lib/pkgconfig/riscv-riscv.pc
+lib/pkgconfig/riscv-softfloat.pc
+lib/pkgconfig/riscv-spike_main.pc

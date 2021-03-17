@@ -1,0 +1,43 @@
+$OpenBSD$
+
+Add -rpath to linker flags, for lld.
+Add CFLAGS during build (see also pre-configure target).
+Don't run ldconfig.
+
+Index: src/tools/make/configure.c
+--- src/tools/make/configure.c.orig
++++ src/tools/make/configure.c
+@@ -52,6 +52,7 @@ char *version   = macrotostring(O_VER);
+ char *objext    = ".o";
+ char *objflag   = " -o ";
+ char *linkflags = " -L\"";
++char *rpathflags = " -rpath \"";
+ char *libext    = "";
+ char *oname     = NULL;  // From O_NAME env var if present, or O_NAME macro otherwise.
+ 
+@@ -125,7 +126,7 @@ void determineOS() {
+   #endif
+ }
+ 
+-#define optimize "" // " -O1"
++#define optimize " CFLAGS" // " -O1"
+ 
+ void determineCCompiler() {
+   snprintf(libspec, sizeof(libspec), " -l %s", oname);
+@@ -197,7 +198,7 @@ void determineInstallDirectory() {
+ 
+ void determineLdconfig() {  // Generate appropriate ldconfig command for this OS
+   if (bsd) {
+-    snprintf(ldconfig, sizeof(ldconfig), "ldconfig -m \"%s/lib\"", installdir);
++    // snprintf(ldconfig, sizeof(ldconfig), "ldconfig -m \"%s/lib\"", installdir);
+   } else {
+     snprintf(
+       ldconfig, sizeof(ldconfig),
+@@ -411,6 +412,7 @@ void writeConfigurationMod() {
+   fprintf(fd, "  objext*      = '%s';\n", objext);
+   fprintf(fd, "  objflag*     = '%s';\n", objflag);
+   fprintf(fd, "  linkflags*   = '%s';\n", linkflags);
++  fprintf(fd, "  rpathflags*  = '%s';\n", rpathflags);
+   fprintf(fd, "  libspec*     = '%s';\n", libspec);
+   fprintf(fd, "  libext*      = '%s';\n", libext);
+   fprintf(fd, "  compile*     = '%s';\n", cc);

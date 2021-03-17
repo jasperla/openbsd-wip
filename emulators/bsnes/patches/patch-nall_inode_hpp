@@ -1,0 +1,14 @@
+$OpenBSD$
+
+Index: nall/inode.hpp
+--- nall/inode.hpp.orig
++++ nall/inode.hpp
+@@ -85,7 +85,7 @@ struct inode {
+     #elif defined(PLATFORM_BSD) || defined(PLATFORM_MACOS)
+     //st_birthtime may return -1 or st_atime if it is not supported by the file system
+     //the best that can be done in this case is to return st_mtime if it's older
+-    case time::create: return min((uint)data.st_birthtime, (uint)data.st_mtime);
++    case time::create: return min((uint)data.__st_birthtime, (uint)data.st_mtime);
+     #else
+     //Linux simply doesn't support file creation time at all
+     //this is also our fallback case for unsupported operating systems

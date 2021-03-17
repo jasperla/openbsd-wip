@@ -1,0 +1,50 @@
+$OpenBSD$
+
+Index: server/drivers/icp_a106.c
+--- server/drivers/icp_a106.c.orig
++++ server/drivers/icp_a106.c
+@@ -44,7 +44,6 @@
+ #include <errno.h>
+ #include <stdbool.h>
+ #include <sys/time.h>
+-#include <sys/timeb.h>
+ 
+ #ifdef HAVE_CONFIG_H
+ #include "config.h"
+@@ -61,7 +60,7 @@ typedef struct icp_a106_private_data {
+ 	unsigned char *last_framebuf;
+ 	unsigned char serial_buf[4];
+ 	int serial_buf_offset;
+-	struct timeb time_pressed[MAX_BUTTONS];
++	struct timeval time_pressed[MAX_BUTTONS];
+ 	bool buttonState[MAX_BUTTONS];
+ 	uint16_t buttonStates;
+ 	int width;
+@@ -478,9 +477,9 @@ icp_a106_get_key(Driver *drvthis)
+ 	PrivateData *p = (PrivateData *) drvthis->private_data;
+ 	char *button = NULL;
+ 	unsigned char byte;
+-	struct timeb tp;
++	struct timeval tp;
+ 
+-	ftime(&tp);
++	gettimeofday(&tp, NULL);
+ 	int nbuf = read(p->fd, &byte, 1);
+ 
+ 	if (nbuf != 1)
+@@ -526,12 +525,12 @@ icp_a106_get_key(Driver *drvthis)
+ 
+ 			if (buttonState) {
+ 				debug(RPT_INFO, "ICP_A106: Button %d pressed", i);
+-				memcpy(&p->time_pressed[i], &tp, sizeof(struct timeb));
++				memcpy(&p->time_pressed[i], &tp, sizeof(struct timeval));
+ 			}
+ 			else {
+ 				debug(RPT_INFO, "ICP_A106: Button %d released", i);
+-				mschange = (tp.time - p->time_pressed[i].time) * 1000 +
+-					tp.millitm - p->time_pressed[i].millitm;
++				mschange = (tp.tv_sec - p->time_pressed[i].tv_sec) * 1000 +
++					tp.tv_usec - p->time_pressed[i].tv_usec;
+ 				switch (i) {
+ 				case 0:	// Button 1
+ 					if (mschange < 300)

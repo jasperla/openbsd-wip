@@ -1,0 +1,349 @@
+$OpenBSD$
+
+Index: src/openbsd.cc
+--- src/openbsd.cc.orig
++++ src/openbsd.cc
+@@ -28,10 +28,11 @@
+  */
+ 
+ #include <kvm.h>
+-#include <sys/dkstat.h>
+ #include <sys/ioctl.h>
+ #include <sys/malloc.h>
+ #include <sys/param.h>
++#include <sys/sched.h>
++#include <sys/proc.h>
+ #include <sys/resource.h>
+ #include <sys/sensors.h>
+ #include <sys/socket.h>
+@@ -53,6 +54,7 @@
+ #include <limits.h>
+ #include <machine/apmvar.h>
+ #include <unistd.h>
++#include <pthread.h>
+ 
+ #include <net80211/ieee80211.h>
+ #include <net80211/ieee80211_ioctl.h>
+@@ -69,7 +71,7 @@
+ #define LOG1024 10
+ #define pagetok(size) ((size) << pageshift)
+ 
+-inline void proc_find_top(struct process **cpu, struct process **mem);
++static inline void proc_find_top(struct process **cpu, struct process **mem);
+ 
+ static short cpu_setup = 0;
+ static kvm_t *kd = 0;
+@@ -80,6 +82,8 @@ size_t len = 0;
+ int init_kvm = 0;
+ int init_sensors = 0;
+ 
++pthread_mutex_t kvm_mutex = PTHREAD_MUTEX_INITIALIZER;
++
+ static int kvm_init() {
+   if (init_kvm) { return 1; }
+ 
+@@ -132,7 +136,7 @@ int check_mount(struct text_object *obj) {
+   return 0;
+ }
+ 
+-void update_uptime() {
++int update_uptime() {
+   int mib[2] = {CTL_KERN, KERN_BOOTTIME};
+   struct timeval boottime;
+   time_t now;
+@@ -146,9 +150,10 @@ void update_uptime() {
+     NORM_ERR("Could not get uptime");
+     info.uptime = 0;
+   }
++  return 0;
+ }
+ 
+-void update_meminfo() {
++int update_meminfo() {
+   static int mib[2] = {CTL_VM, VM_METER};
+   struct vmtotal vmtotal;
+   size_t size;
+@@ -184,9 +189,10 @@ void update_meminfo() {
+     info.swap = 0;
+     info.swapfree = 0;
+   }
++  return 0;
+ }
+ 
+-void update_net_stats() {
++int update_net_stats() {
+   struct net_stat *ns;
+   double delta;
+   long long r, t, last_recv, last_trans;
+@@ -195,9 +201,9 @@ void update_net_stats() {
+ 
+   /* get delta */
+   delta = current_update_time - last_update_time;
+-  if (delta <= 0.0001) { return; }
++  if (delta <= 0.0001) { return 0; }
+ 
+-  if (getifaddrs(&ifap) < 0) { return; }
++  if (getifaddrs(&ifap) < 0) { return 0; }
+ 
+   for (ifa = ifap; ifa; ifa = ifa->ifa_next) {
+     ns = get_net_stat((const char *)ifa->ifa_name, nullptr, NULL);
+@@ -248,88 +254,83 @@ void update_net_stats() {
+   }
+ 
+   freeifaddrs(ifap);
++  return 0;
+ }
+ 
+ int update_total_processes() {
+-  int n_processes;
++  int n_processes = 0;
++  int max_size = sizeof(struct kinfo_proc);
+ 
+   kvm_init();
+-  kvm_getprocs(kd, KERN_PROC_ALL, 0, &n_processes);
++  pthread_mutex_lock(&kvm_mutex);
++  kvm_getprocs(kd, KERN_PROC_ALL, 0, max_size, &n_processes);
++  pthread_mutex_unlock(&kvm_mutex);
+ 
+   info.procs = n_processes;
+ 
+   return 0;
+ }
+ 
+-void update_running_processes() {
+-  struct kinfo_proc2 *p;
+-  int n_processes;
++int update_running_processes() {
++  struct kinfo_proc *p;
++  int n_processes = 0;
+   int i, cnt = 0;
+ 
+   kvm_init();
+-  int max_size = sizeof(struct kinfo_proc2);
++  int max_size = sizeof(struct kinfo_proc);
+ 
+-  p = kvm_getproc2(kd, KERN_PROC_ALL, 0, max_size, &n_processes);
++  pthread_mutex_lock(&kvm_mutex);
++  p = kvm_getprocs(kd, KERN_PROC_ALL, 0, max_size, &n_processes);
++  pthread_mutex_unlock(&kvm_mutex);
+   for (i = 0; i < n_processes; i++) {
+     if (p[i].p_stat == SRUN) { cnt++; }
+   }
+ 
+   info.run_procs = cnt;
++  return 0;
+ }
+ 
+-/* new SMP code can be enabled by commenting the following line */
+-#define OLDCPU
+-
+-#ifdef OLDCPU
+-struct cpu_load_struct {
+-  unsigned long load[5];
+-};
+-
+-struct cpu_load_struct fresh = {{0, 0, 0, 0, 0}};
+-long cpu_used, oldtotal, oldused;
+-#else
+ #include <assert.h>
+ int64_t *fresh = nullptr;
+ 
+ /* XXX is 8 enough? - What's the constant for MAXCPU? */
+ /* allocate this with malloc would be better */
+ int64_t oldtotal[8], oldused[8];
+-#endif
+ 
+ void get_cpu_count() {
+   int cpu_count = 1; /* default to 1 cpu */
+-#ifndef OLDCPU
++  static pthread_mutex_t count_mutex = PTHREAD_MUTEX_INITIALIZER;
++
+   int mib[2] = {CTL_HW, HW_NCPU};
+   size_t len = sizeof(cpu_count);
+ 
+   if (sysctl(mib, 2, &cpu_count, &len, nullptr, 0) != 0) {
+     NORM_ERR("error getting cpu count, defaulting to 1");
+   }
+-#endif
++  pthread_mutex_lock(&count_mutex);
++
++  if (info.cpu_count == cpu_count) {
++      pthread_mutex_unlock(&count_mutex);
++      return;
++  }
++
+   info.cpu_count = cpu_count;
++  free(info.cpu_usage);
+ 
+   info.cpu_usage = malloc(info.cpu_count * sizeof(float));
+   if (info.cpu_usage == nullptr) { CRIT_ERR(nullptr, NULL, "malloc"); }
+ 
+-#ifndef OLDCPU
+-  assert(fresh == nullptr); /* XXX Is this leaking memory? */
++  free(fresh);
+   /* XXX Where shall I free this? */
+   if (nullptr == (fresh = calloc(cpu_count, sizeof(int64_t) * CPUSTATES))) {
+     CRIT_ERR(nullptr, NULL, "calloc");
+   }
+-#endif
++  pthread_mutex_unlock(&count_mutex);
+ }
+ 
+-void update_cpu_usage() {
+-#ifdef OLDCPU
+-  int mib[2] = {CTL_KERN, KERN_CPTIME};
+-  long used, total;
+-  long cp_time[CPUSTATES];
+-  size_t len = sizeof(cp_time);
+-#else
++int update_cpu_usage() {
+   size_t size;
+   unsigned int i;
+-#endif
+ 
+   /* add check for !info.cpu_usage since that mem is freed on a SIGUSR1 */
+   if ((cpu_setup == 0) || (!info.cpu_usage)) {
+@@ -337,29 +338,6 @@ void update_cpu_usage() {
+     cpu_setup = 1;
+   }
+ 
+-#ifdef OLDCPU
+-  if (sysctl(mib, 2, &cp_time, &len, nullptr, 0) < 0) {
+-    NORM_ERR("Cannot get kern.cp_time");
+-  }
+-
+-  fresh.load[0] = cp_time[CP_USER];
+-  fresh.load[1] = cp_time[CP_NICE];
+-  fresh.load[2] = cp_time[CP_SYS];
+-  fresh.load[3] = cp_time[CP_IDLE];
+-  fresh.load[4] = cp_time[CP_IDLE];
+-
+-  used = fresh.load[0] + fresh.load[1] + fresh.load[2];
+-  total = fresh.load[0] + fresh.load[1] + fresh.load[2] + fresh.load[3];
+-
+-  if ((total - oldtotal) != 0) {
+-    info.cpu_usage[0] = ((double)(used - oldused)) / (double)(total - oldtotal);
+-  } else {
+-    info.cpu_usage[0] = 0;
+-  }
+-
+-  oldused = used;
+-  oldtotal = total;
+-#else
+   if (info.cpu_count > 1) {
+     size = CPUSTATES * sizeof(int64_t);
+     for (i = 0; i < info.cpu_count; i++) {
+@@ -399,13 +377,13 @@ void update_cpu_usage() {
+     oldused[i] = used;
+     oldtotal[i] = total;
+   }
+-#endif
++  return 0;
+ }
+ 
+ void free_cpu(struct text_object *) { /* no-op */
+ }
+ 
+-void update_load_average() {
++int update_load_average() {
+   double v[3];
+ 
+   getloadavg(v, 3);
+@@ -427,7 +405,7 @@ static conky::simple_config_setting<int> sensor_device
+                                                        false);
+ 
+ /* read sensors from sysctl */
+-void update_obsd_sensors() {
++int update_obsd_sensors() {
+   int sensor_cnt, dev, numt, mib[5] = {CTL_HW, HW_SENSORS, 0, 0, 0};
+   struct sensor sensor;
+   struct sensordev sensordev;
+@@ -490,21 +468,21 @@ void parse_obsd_sensor(struct text_object *obj, const 
+     obj->data.l = atoi(&arg[0]);
+ }
+ 
+-void print_obsd_sensors_temp(struct text_object *obj, char *p, int p_max_size) {
++void print_obsd_sensors_temp(struct text_object *obj, char *p, unsigned int p_max_size) {
+   obsd_sensors.device = sensor_device.get(*state);
+   update_obsd_sensors();
+   temp_print(p, p_max_size, obsd_sensors.temp[obsd_sensors.device][obj->data.l],
+              TEMP_CELSIUS, 1);
+ }
+ 
+-void print_obsd_sensors_fan(struct text_object *obj, char *p, int p_max_size) {
++void print_obsd_sensors_fan(struct text_object *obj, char *p, unsigned int p_max_size) {
+   obsd_sensors.device = sensor_device.get(*state);
+   update_obsd_sensors();
+   snprintf(p, p_max_size, "%d",
+            obsd_sensors.fan[obsd_sensors.device][obj->data.l]);
+ }
+ 
+-void print_obsd_sensors_volt(struct text_object *obj, char *p, int p_max_size) {
++void print_obsd_sensors_volt(struct text_object *obj, char *p, unsigned int p_max_size) {
+   obsd_sensors.device = sensor_device.get(*state);
+   update_obsd_sensors();
+   snprintf(p, p_max_size, "%.2f",
+@@ -513,7 +491,7 @@ void print_obsd_sensors_volt(struct text_object *obj, 
+ 
+ /* chipset vendor */
+ void get_obsd_vendor(struct text_object *obj, char *buf,
+-                     size_t client_buffer_size) {
++                     unsigned int client_buffer_size) {
+   int mib[2];
+   char vendor[64];
+   size_t size = sizeof(vendor);
+@@ -533,7 +511,7 @@ void get_obsd_vendor(struct text_object *obj, char *bu
+ 
+ /* chipset name */
+ void get_obsd_product(struct text_object *obj, char *buf,
+-                      size_t client_buffer_size) {
++                      unsigned int client_buffer_size) {
+   int mib[2];
+   char product[64];
+   size_t size = sizeof(product);
+@@ -576,7 +554,7 @@ char get_freq(char *p_client_buffer, size_t client_buf
+ 
+ #if 0
+ /* deprecated, will rewrite this soon in update_net_stats() -hifi */
+-void update_wifi_stats()
++int update_wifi_stats()
+ {
+ 	struct net_stat *ns;
+ 	struct ifaddrs *ifap, *ifa;
+@@ -627,23 +605,20 @@ cleanup:
+ }
+ #endif
+ 
+-void clear_diskio_stats() {}
++int update_diskio() { return 0; /* XXX: implement? hifi: not sure how */ }
+ 
+-struct diskio_stat *prepare_diskio_stat(const char *s) {}
+-
+-void update_diskio() { return; /* XXX: implement? hifi: not sure how */ }
+-
+ /* While topless is obviously better, top is also not bad. */
+ 
+ void get_top_info(void) {
+-  struct kinfo_proc2 *p;
++  struct kinfo_proc *p;
+   struct process *proc;
+-  int n_processes;
++  int n_processes = 0;
+   int i;
+ 
+   kvm_init();
+ 
+-  p = kvm_getproc2(kd, KERN_PROC_ALL, 0, sizeof(struct kinfo_proc2),
++  pthread_mutex_lock(&kvm_mutex);
++  p = kvm_getprocs(kd, KERN_PROC_ALL, 0, sizeof(struct kinfo_proc),
+                    &n_processes);
+ 
+   for (i = 0; i < n_processes; i++) {
+@@ -657,6 +632,7 @@ void get_top_info(void) {
+       /* TODO: vsize, rss, total_cpu_time */
+     }
+   }
++  pthread_mutex_unlock(&kvm_mutex);
+ }
+ 
+ /* empty stubs so conky links */

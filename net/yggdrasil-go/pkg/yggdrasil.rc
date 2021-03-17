@@ -1,0 +1,23 @@
+#!/bin/ksh
+#
+# $OpenBSD: yggdrasil.rc,v 1.1.1.1 2019/05/13 15:08:50 jasper Exp $
+
+conf="/etc/yggdrasil.conf"
+device=$(awk '$0 ~ "IfName" {gsub(/"[,]?/, "", $2); print $2}' ${conf})
+iface=$(echo $device | cut -d/ -f3)
+
+daemon="${LOCALBASE}/bin/yggdrasil"
+#daemon_user="_yggdrasil"
+daemon_flags="-useconffile ${conf}"
+
+. /etc/rc.d/rc.subr
+
+rc_start() {
+	ifconfig $iface 2>/dev/null || ifconfig create ${iface}
+	${rcexec} "${daemon} ${daemon_flags}"
+}
+
+rc_bg=YES
+rc_reload=NO
+
+rc_cmd $1

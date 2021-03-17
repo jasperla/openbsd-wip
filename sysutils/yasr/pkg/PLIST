@@ -1,0 +1,12 @@
+@comment $OpenBSD: PLIST,v$
+@bin bin/yasr
+@man man/man1/yasr.1
+share/locale/
+share/locale/es/
+share/locale/es/LC_MESSAGES/
+share/locale/es/LC_MESSAGES/yasr.mo
+share/locale/fr/
+share/locale/fr/LC_MESSAGES/
+share/locale/fr/LC_MESSAGES/yasr.mo
+share/yasr/
+share/yasr/yasr.conf

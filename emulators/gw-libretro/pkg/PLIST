@@ -1,3 +1,0 @@
-@comment $OpenBSD$
-lib/libretro/
-lib/libretro/gw_libretro.so

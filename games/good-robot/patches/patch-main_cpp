@@ -1,0 +1,49 @@
+$OpenBSD$
+
+Index: main.cpp
+--- main.cpp.orig
++++ main.cpp
+@@ -48,15 +48,6 @@
+ #define RANDOM_SEED   SystemTick ()
+ #endif
+ 
+-#pragma comment (lib, "opengl32.lib")                                       //OpenGL
+-#pragma comment (lib, "glu32.lib")                                          //OpenGL
+-#pragma comment (lib, ".\\sdl2\\lib\\x86\\sdl2.lib")                               //Good 'ol SDL.
+-#pragma comment (lib, ".\\openal\\libs\\win32\\openal32.lib")               //For Audio
+-#pragma comment (lib, ".\\openal\\libs\\win32\\alut.lib")                   //For Audio
+-#pragma comment (lib, ".\\openil\\lib\\DevIL.lib")                          //For loading images
+-#pragma comment (lib, ".\\freetype\\lib\\freetype.lib")                     //For fonts sake
+-#pragma comment (lib, ".\\steamworks\\redistributable_bin\\steam_api.lib") //Steam
+-
+ static bool             quit;
+ static int              time_counter;
+ static int              free_time;
+@@ -91,7 +82,7 @@ static void init()
+ 	PlayerInit();
+ 	ParticleInit();
+ 	HudInit();
+-	SteamAPI_Init();
++	c_SteamAPI_Init();
+ 	SteamUserInit();
+ }
+ 
+@@ -122,7 +113,7 @@ static void run()
+ 		FontUpdate();
+ 		ConsoleUpdate();
+ 		Render();
+-		SteamAPI_RunCallbacks();
++		c_SteamAPI_RunCallbacks();
+ 		leftover = next_frame - SystemTick();
+ 		if (leftover > 0)
+ 			time_counter += leftover;
+@@ -176,6 +167,6 @@ int main(int argc, char** argv)
+ 	init();
+ 	run();
+ 	term();
+-	SteamAPI_Shutdown();
++	c_SteamAPI_Shutdown();
+ 	return 0;
+-}
+\ No newline at end of file
++}

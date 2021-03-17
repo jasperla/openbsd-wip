@@ -1,0 +1,14 @@
+$OpenBSD$
+
+Index: cmake/packaging.cmake
+--- cmake/packaging.cmake.orig
++++ cmake/packaging.cmake
+@@ -285,7 +285,7 @@ if(DEFINED PLATFORM_LINUX)
+       /usr/lib/systemd/system
+     )
+   endif()
+-elseif(DEFINED PLATFORM_MACOS)
++elseif(DEFINED PLATFORM_MACOS OR DEFINED PLATFORM_OPENBSD)
+   set(CPACK_PACKAGE_FILE_NAME "${CPACK_PACKAGE_NAME}-${CPACK_PACKAGE_VERSION}")
+ elseif(DEFINED PLATFORM_WINDOWS)
+   file(COPY "${CMAKE_SOURCE_DIR}/tools/osquery.ico" DESTINATION "${CMAKE_BINARY_DIR}/package/wix")

@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v$
+bin/blueshift
+lib/xash3d/bshift/
+lib/xash3d/bshift/libclient.so
+lib/xash3d/bshift/libserver.so
+share/doc/pkg-readmes/${PKGSTEM}

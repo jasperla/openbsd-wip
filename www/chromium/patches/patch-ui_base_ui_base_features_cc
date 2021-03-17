@@ -1,0 +1,32 @@
+$OpenBSD$
+
+Index: ui/base/ui_base_features.cc
+--- ui/base/ui_base_features.cc.orig
++++ ui/base/ui_base_features.cc
+@@ -104,7 +104,7 @@ const base::Feature kCompositorThreadedScrollbarScroll
+ // native apps on Windows.
+ const base::Feature kExperimentalFlingAnimation {
+   "ExperimentalFlingAnimation",
+-#if defined(OS_WIN) || \
++#if defined(OS_WIN) || defined(OS_BSD) || \
+     (defined(OS_LINUX) && !defined(OS_CHROMEOS) && !BUILDFLAG(IS_LACROS))
+       base::FEATURE_ENABLED_BY_DEFAULT
+ #else
+@@ -138,7 +138,7 @@ const base::Feature kPrecisionTouchpadLogging{
+ #endif  // defined(OS_WIN)
+ 
+ #if defined(OS_WIN) || defined(OS_APPLE) || defined(OS_LINUX) || \
+-    defined(OS_CHROMEOS)
++    defined(OS_CHROMEOS) || defined(OS_BSD)
+ // Enables stylus appearing as touch when in contact with digitizer.
+ const base::Feature kDirectManipulationStylus = {
+     "DirectManipulationStylus",
+@@ -195,7 +195,7 @@ bool IsCSSColorSchemeUARenderingEnabled() {
+ // Mac launch bug.
+ const base::Feature kFormControlsRefresh = {"FormControlsRefresh",
+ #if defined(OS_WIN) || defined(OS_CHROMEOS) || defined(OS_LINUX) || \
+-    defined(OS_APPLE)
++    defined(OS_APPLE) || defined(OS_BSD)
+                                             base::FEATURE_ENABLED_BY_DEFAULT
+ #else
+                                             base::FEATURE_DISABLED_BY_DEFAULT

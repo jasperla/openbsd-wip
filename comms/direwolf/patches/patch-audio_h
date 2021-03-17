@@ -1,0 +1,14 @@
+$OpenBSD$
+
+Index: audio.h
+--- audio.h.orig
++++ audio.h
+@@ -306,7 +306,7 @@ struct audio_s {
+ #if USE_ALSA
+ #define DEFAULT_ADEVICE	"default"	/* Use default device for ALSA. */
+ #else
+-#define DEFAULT_ADEVICE	"/dev/dsp"	/* First audio device for OSS. */
++#define DEFAULT_ADEVICE	"/dev/audio0"	/* First audio device for OSS. */
+ #endif					
+ #endif
+ 

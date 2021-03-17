@@ -1,10 +1,3 @@
 @comment $OpenBSD: PLIST,v$
-@newgroup _shairport:816
-@newuser _shairport:816:_shairport:daemon:Shairport user:${VARBASE}/shairport:/sbin/nologin
-@rcscript ${RCDIR}/shairport_sync
 @bin bin/shairport-sync
 @man man/man7/shairport-sync.7
-@owner _shairport
-@group _shairport
-@sample ${VARBASE}/shairport
-@extraunexec rm -rf ${VARBASE}/restic/{.,}*

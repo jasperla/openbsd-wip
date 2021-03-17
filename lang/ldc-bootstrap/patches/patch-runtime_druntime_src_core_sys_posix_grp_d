@@ -1,0 +1,47 @@
+$OpenBSD$
+
+Index: runtime/druntime/src/core/sys/posix/grp.d
+--- runtime/druntime/src/core/sys/posix/grp.d.orig
++++ runtime/druntime/src/core/sys/posix/grp.d
+@@ -68,6 +68,16 @@ else version( FreeBSD )
+         char**  gr_mem;
+     }
+ }
++else version (OpenBSD)
++{
++    struct group
++    {
++        char*   gr_name;
++        char*   gr_passwd;
++        gid_t   gr_gid;
++        char**  gr_mem;
++    }
++}
+ else version( DragonFlyBSD )
+ {
+     struct group
+@@ -129,6 +139,11 @@ else version( FreeBSD )
+     int getgrnam_r(in char*, group*, char*, size_t, group**);
+     int getgrgid_r(gid_t, group*, char*, size_t, group**);
+ }
++else version (OpenBSD)
++{
++    int getgrnam_r(in char*, group*, char*, size_t, group**);
++    int getgrgid_r(gid_t, group*, char*, size_t, group**);
++}
+ else version( DragonFlyBSD )
+ {
+     int getgrnam_r(in char*, group*, char*, size_t, group**);
+@@ -169,6 +184,12 @@ else version( OSX )
+     @trusted void setgrent();
+ }
+ else version( FreeBSD )
++{
++    group* getgrent();
++    @trusted void endgrent();
++    @trusted void setgrent();
++}
++else version (OpenBSD)
+ {
+     group* getgrent();
+     @trusted void endgrent();

@@ -1,0 +1,20 @@
+@comment $OpenBSD: PLIST,v$
+bin/nwcc
+bin/nwcc1
+bin/nwcpp
+lib/dynlibnwcc.o
+lib/libnwcc.o
+nwcc/
+nwcc/bin/
+@bin nwcc/bin/nwcc
+@bin nwcc/bin/nwcc1
+@bin nwcc/bin/nwcpp
+@bin nwcc/bin/snake
+nwcc/include/
+nwcc/include/limits.h
+nwcc/include/stdarg.h
+nwcc/include/stddef.h
+nwcc/lib/
+nwcc/lib/dynlibnwcc.o
+nwcc/lib/fcatalog.idx
+nwcc/lib/libnwcc.o

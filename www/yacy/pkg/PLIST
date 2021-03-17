@@ -1,0 +1,3229 @@
+@comment $OpenBSD: PLIST,v$
+@newgroup _yacy:836
+@newuser _yacy:836:836:daemon:YaCy:/var/yacy:/sbin/nologin
+@rcscript ${RCDIR}/yacy
+@mode 775
+@group _yacy
+@sample ${LOCALSTATEDIR}/yacy/yacy/
+@mode
+@group
+share/yacy/
+share/yacy/defaults/
+@sample ${LOCALSTATEDIR}/yacy/defaults/
+share/yacy/defaults/RDFaParser.xsl
+@sample ${LOCALSTATEDIR}/yacy/defaults/RDFaParser.xsl
+share/yacy/defaults/federatecfg/
+@sample ${LOCALSTATEDIR}/yacy/defaults/federatecfg/
+share/yacy/defaults/federatecfg/datacite.solr.schema
+@sample ${LOCALSTATEDIR}/yacy/defaults/federatecfg/datacite.solr.schema
+share/yacy/defaults/freeworldKeystore
+@sample ${LOCALSTATEDIR}/yacy/defaults/freeworldKeystore
+share/yacy/defaults/heuristicopensearch.conf
+@sample ${LOCALSTATEDIR}/yacy/defaults/heuristicopensearch.conf
+share/yacy/defaults/httpd.mime
+@sample ${LOCALSTATEDIR}/yacy/defaults/httpd.mime
+share/yacy/defaults/oaiListFriendsSource.xml
+@sample ${LOCALSTATEDIR}/yacy/defaults/oaiListFriendsSource.xml
+share/yacy/defaults/sessionid.names
+@sample ${LOCALSTATEDIR}/yacy/defaults/sessionid.names
+share/yacy/defaults/solr/
+@sample ${LOCALSTATEDIR}/yacy/defaults/solr/
+share/yacy/defaults/solr.collection.schema
+@sample ${LOCALSTATEDIR}/yacy/defaults/solr.collection.schema
+share/yacy/defaults/solr.webgraph.schema
+@sample ${LOCALSTATEDIR}/yacy/defaults/solr.webgraph.schema
+share/yacy/defaults/solr/currency.xml
+@sample ${LOCALSTATEDIR}/yacy/defaults/solr/currency.xml
+share/yacy/defaults/solr/elevate.xml
+@sample ${LOCALSTATEDIR}/yacy/defaults/solr/elevate.xml
+share/yacy/defaults/solr/lang/
+@sample ${LOCALSTATEDIR}/yacy/defaults/solr/lang/
+share/yacy/defaults/solr/lang/contractions_ca.txt
+@sample ${LOCALSTATEDIR}/yacy/defaults/solr/lang/contractions_ca.txt
+share/yacy/defaults/solr/lang/contractions_fr.txt
+@sample ${LOCALSTATEDIR}/yacy/defaults/solr/lang/contractions_fr.txt
+share/yacy/defaults/solr/lang/contractions_ga.txt
+@sample ${LOCALSTATEDIR}/yacy/defaults/solr/lang/contractions_ga.txt
+share/yacy/defaults/solr/lang/contractions_it.txt
+@sample ${LOCALSTATEDIR}/yacy/defaults/solr/lang/contractions_it.txt
+share/yacy/defaults/solr/lang/hyphenations_ga.txt
+@sample ${LOCALSTATEDIR}/yacy/defaults/solr/lang/hyphenations_ga.txt
+share/yacy/defaults/solr/lang/stemdict_nl.txt
+@sample ${LOCALSTATEDIR}/yacy/defaults/solr/lang/stemdict_nl.txt
+share/yacy/defaults/solr/lang/stoptags_ja.txt
+@sample ${LOCALSTATEDIR}/yacy/defaults/solr/lang/stoptags_ja.txt
+share/yacy/defaults/solr/lang/stopwords_ar.txt
+@sample ${LOCALSTATEDIR}/yacy/defaults/solr/lang/stopwords_ar.txt
+share/yacy/defaults/solr/lang/stopwords_bg.txt
+@sample ${LOCALSTATEDIR}/yacy/defaults/solr/lang/stopwords_bg.txt
+share/yacy/defaults/solr/lang/stopwords_ca.txt
+@sample ${LOCALSTATEDIR}/yacy/defaults/solr/lang/stopwords_ca.txt
+share/yacy/defaults/solr/lang/stopwords_cz.txt
+@sample ${LOCALSTATEDIR}/yacy/defaults/solr/lang/stopwords_cz.txt
+share/yacy/defaults/solr/lang/stopwords_da.txt
+@sample ${LOCALSTATEDIR}/yacy/defaults/solr/lang/stopwords_da.txt
+share/yacy/defaults/solr/lang/stopwords_de.txt
+@sample ${LOCALSTATEDIR}/yacy/defaults/solr/lang/stopwords_de.txt
+share/yacy/defaults/solr/lang/stopwords_el.txt
+@sample ${LOCALSTATEDIR}/yacy/defaults/solr/lang/stopwords_el.txt
+share/yacy/defaults/solr/lang/stopwords_en.txt
+@sample ${LOCALSTATEDIR}/yacy/defaults/solr/lang/stopwords_en.txt
+share/yacy/defaults/solr/lang/stopwords_es.txt
+@sample ${LOCALSTATEDIR}/yacy/defaults/solr/lang/stopwords_es.txt
+share/yacy/defaults/solr/lang/stopwords_eu.txt
+@sample ${LOCALSTATEDIR}/yacy/defaults/solr/lang/stopwords_eu.txt
+share/yacy/defaults/solr/lang/stopwords_fa.txt
+@sample ${LOCALSTATEDIR}/yacy/defaults/solr/lang/stopwords_fa.txt
+share/yacy/defaults/solr/lang/stopwords_fi.txt
+@sample ${LOCALSTATEDIR}/yacy/defaults/solr/lang/stopwords_fi.txt
+share/yacy/defaults/solr/lang/stopwords_fr.txt
+@sample ${LOCALSTATEDIR}/yacy/defaults/solr/lang/stopwords_fr.txt
+share/yacy/defaults/solr/lang/stopwords_ga.txt
+@sample ${LOCALSTATEDIR}/yacy/defaults/solr/lang/stopwords_ga.txt
+share/yacy/defaults/solr/lang/stopwords_gl.txt
+@sample ${LOCALSTATEDIR}/yacy/defaults/solr/lang/stopwords_gl.txt
+share/yacy/defaults/solr/lang/stopwords_hi.txt
+@sample ${LOCALSTATEDIR}/yacy/defaults/solr/lang/stopwords_hi.txt
+share/yacy/defaults/solr/lang/stopwords_hu.txt
+@sample ${LOCALSTATEDIR}/yacy/defaults/solr/lang/stopwords_hu.txt
+share/yacy/defaults/solr/lang/stopwords_hy.txt
+@sample ${LOCALSTATEDIR}/yacy/defaults/solr/lang/stopwords_hy.txt
+share/yacy/defaults/solr/lang/stopwords_id.txt
+@sample ${LOCALSTATEDIR}/yacy/defaults/solr/lang/stopwords_id.txt
+share/yacy/defaults/solr/lang/stopwords_it.txt
+@sample ${LOCALSTATEDIR}/yacy/defaults/solr/lang/stopwords_it.txt
+share/yacy/defaults/solr/lang/stopwords_ja.txt
+@sample ${LOCALSTATEDIR}/yacy/defaults/solr/lang/stopwords_ja.txt
+share/yacy/defaults/solr/lang/stopwords_lv.txt
+@sample ${LOCALSTATEDIR}/yacy/defaults/solr/lang/stopwords_lv.txt
+share/yacy/defaults/solr/lang/stopwords_nl.txt
+@sample ${LOCALSTATEDIR}/yacy/defaults/solr/lang/stopwords_nl.txt
+share/yacy/defaults/solr/lang/stopwords_no.txt
+@sample ${LOCALSTATEDIR}/yacy/defaults/solr/lang/stopwords_no.txt
+share/yacy/defaults/solr/lang/stopwords_pt.txt
+@sample ${LOCALSTATEDIR}/yacy/defaults/solr/lang/stopwords_pt.txt
+share/yacy/defaults/solr/lang/stopwords_ro.txt
+@sample ${LOCALSTATEDIR}/yacy/defaults/solr/lang/stopwords_ro.txt
+share/yacy/defaults/solr/lang/stopwords_ru.txt
+@sample ${LOCALSTATEDIR}/yacy/defaults/solr/lang/stopwords_ru.txt
+share/yacy/defaults/solr/lang/stopwords_sv.txt
+@sample ${LOCALSTATEDIR}/yacy/defaults/solr/lang/stopwords_sv.txt
+share/yacy/defaults/solr/lang/stopwords_th.txt
+@sample ${LOCALSTATEDIR}/yacy/defaults/solr/lang/stopwords_th.txt
+share/yacy/defaults/solr/lang/stopwords_tr.txt
+@sample ${LOCALSTATEDIR}/yacy/defaults/solr/lang/stopwords_tr.txt
+share/yacy/defaults/solr/protwords.txt
+@sample ${LOCALSTATEDIR}/yacy/defaults/solr/protwords.txt
+share/yacy/defaults/solr/schema.xml
+@sample ${LOCALSTATEDIR}/yacy/defaults/solr/schema.xml
+share/yacy/defaults/solr/solr.xml
+@sample ${LOCALSTATEDIR}/yacy/defaults/solr/solr.xml
+share/yacy/defaults/solr/solrconfig.xml
+@sample ${LOCALSTATEDIR}/yacy/defaults/solr/solrconfig.xml
+share/yacy/defaults/solr/solrcore.properties
+@sample ${LOCALSTATEDIR}/yacy/defaults/solr/solrcore.properties
+share/yacy/defaults/solr/solrcore.x86.properties
+@sample ${LOCALSTATEDIR}/yacy/defaults/solr/solrcore.x86.properties
+share/yacy/defaults/solr/stopwords.txt
+@sample ${LOCALSTATEDIR}/yacy/defaults/solr/stopwords.txt
+share/yacy/defaults/solr/synonyms.txt
+@sample ${LOCALSTATEDIR}/yacy/defaults/solr/synonyms.txt
+share/yacy/defaults/solr/xslt/
+@sample ${LOCALSTATEDIR}/yacy/defaults/solr/xslt/
+share/yacy/defaults/solr/xslt/example.xsl
+@sample ${LOCALSTATEDIR}/yacy/defaults/solr/xslt/example.xsl
+share/yacy/defaults/solr/xslt/json.xsl
+@sample ${LOCALSTATEDIR}/yacy/defaults/solr/xslt/json.xsl
+share/yacy/defaults/web.xml
+@sample ${LOCALSTATEDIR}/yacy/defaults/web.xml
+share/yacy/defaults/yacy.badwords.example
+@sample ${LOCALSTATEDIR}/yacy/defaults/yacy.badwords.example
+share/yacy/defaults/yacy.init
+@sample ${LOCALSTATEDIR}/yacy/defaults/yacy.init
+share/yacy/defaults/yacy.logging
+@sample ${LOCALSTATEDIR}/yacy/defaults/yacy.logging
+share/yacy/defaults/yacy.network.allip.unit
+@sample ${LOCALSTATEDIR}/yacy/defaults/yacy.network.allip.unit
+share/yacy/defaults/yacy.network.freeworld.unit
+@sample ${LOCALSTATEDIR}/yacy/defaults/yacy.network.freeworld.unit
+share/yacy/defaults/yacy.network.intranet.unit
+@sample ${LOCALSTATEDIR}/yacy/defaults/yacy.network.intranet.unit
+share/yacy/defaults/yacy.network.metager.unit
+@sample ${LOCALSTATEDIR}/yacy/defaults/yacy.network.metager.unit
+share/yacy/defaults/yacy.network.readme
+@sample ${LOCALSTATEDIR}/yacy/defaults/yacy.network.readme
+share/yacy/defaults/yacy.network.webportal.unit
+@sample ${LOCALSTATEDIR}/yacy/defaults/yacy.network.webportal.unit
+share/yacy/defaults/yacy.network.zeronet.unit
+@sample ${LOCALSTATEDIR}/yacy/defaults/yacy.network.zeronet.unit
+share/yacy/defaults/yacy.networks
+@sample ${LOCALSTATEDIR}/yacy/defaults/yacy.networks
+share/yacy/defaults/yacy.stopwords
+@sample ${LOCALSTATEDIR}/yacy/defaults/yacy.stopwords
+share/yacy/defaults/yacy.stopwords.de
+@sample ${LOCALSTATEDIR}/yacy/defaults/yacy.stopwords.de
+share/yacy/htroot/
+@sample ${LOCALSTATEDIR}/yacy/htroot/
+share/yacy/htroot/AccessGrid_p.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/AccessGrid_p.class
+share/yacy/htroot/AccessGrid_p.html
+@sample ${LOCALSTATEDIR}/yacy/htroot/AccessGrid_p.html
+share/yacy/htroot/AccessGrid_p.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/AccessGrid_p.java
+share/yacy/htroot/AccessPicture_p.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/AccessPicture_p.class
+share/yacy/htroot/AccessPicture_p.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/AccessPicture_p.java
+share/yacy/htroot/AccessTracker_p.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/AccessTracker_p.class
+share/yacy/htroot/AccessTracker_p.html
+@sample ${LOCALSTATEDIR}/yacy/htroot/AccessTracker_p.html
+share/yacy/htroot/AccessTracker_p.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/AccessTracker_p.java
+share/yacy/htroot/AccessTracker_p.xml
+@sample ${LOCALSTATEDIR}/yacy/htroot/AccessTracker_p.xml
+share/yacy/htroot/AugmentedBrowsing_p.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/AugmentedBrowsing_p.class
+share/yacy/htroot/AugmentedBrowsing_p.html
+@sample ${LOCALSTATEDIR}/yacy/htroot/AugmentedBrowsing_p.html
+share/yacy/htroot/AugmentedBrowsing_p.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/AugmentedBrowsing_p.java
+share/yacy/htroot/Autocrawl_p.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/Autocrawl_p.class
+share/yacy/htroot/Autocrawl_p.html
+@sample ${LOCALSTATEDIR}/yacy/htroot/Autocrawl_p.html
+share/yacy/htroot/Autocrawl_p.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/Autocrawl_p.java
+share/yacy/htroot/Banner.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/Banner.class
+share/yacy/htroot/Banner.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/Banner.java
+share/yacy/htroot/BlacklistCleaner_p.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/BlacklistCleaner_p.class
+share/yacy/htroot/BlacklistCleaner_p.html
+@sample ${LOCALSTATEDIR}/yacy/htroot/BlacklistCleaner_p.html
+share/yacy/htroot/BlacklistCleaner_p.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/BlacklistCleaner_p.java
+share/yacy/htroot/BlacklistImpExp_p.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/BlacklistImpExp_p.class
+share/yacy/htroot/BlacklistImpExp_p.html
+@sample ${LOCALSTATEDIR}/yacy/htroot/BlacklistImpExp_p.html
+share/yacy/htroot/BlacklistImpExp_p.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/BlacklistImpExp_p.java
+share/yacy/htroot/BlacklistTest_p.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/BlacklistTest_p.class
+share/yacy/htroot/BlacklistTest_p.html
+@sample ${LOCALSTATEDIR}/yacy/htroot/BlacklistTest_p.html
+share/yacy/htroot/BlacklistTest_p.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/BlacklistTest_p.java
+share/yacy/htroot/Blacklist_p.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/Blacklist_p.class
+share/yacy/htroot/Blacklist_p.html
+@sample ${LOCALSTATEDIR}/yacy/htroot/Blacklist_p.html
+share/yacy/htroot/Blacklist_p.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/Blacklist_p.java
+share/yacy/htroot/Blog.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/Blog.class
+share/yacy/htroot/Blog.html
+@sample ${LOCALSTATEDIR}/yacy/htroot/Blog.html
+share/yacy/htroot/Blog.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/Blog.java
+share/yacy/htroot/Blog.rss
+@sample ${LOCALSTATEDIR}/yacy/htroot/Blog.rss
+share/yacy/htroot/Blog.xml
+@sample ${LOCALSTATEDIR}/yacy/htroot/Blog.xml
+share/yacy/htroot/BlogComments.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/BlogComments.class
+share/yacy/htroot/BlogComments.html
+@sample ${LOCALSTATEDIR}/yacy/htroot/BlogComments.html
+share/yacy/htroot/BlogComments.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/BlogComments.java
+share/yacy/htroot/Bookmarks.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/Bookmarks.class
+share/yacy/htroot/Bookmarks.html
+@sample ${LOCALSTATEDIR}/yacy/htroot/Bookmarks.html
+share/yacy/htroot/Bookmarks.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/Bookmarks.java
+share/yacy/htroot/Bookmarks.rss
+@sample ${LOCALSTATEDIR}/yacy/htroot/Bookmarks.rss
+share/yacy/htroot/CacheResource_p.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/CacheResource_p.class
+share/yacy/htroot/CacheResource_p.html
+@sample ${LOCALSTATEDIR}/yacy/htroot/CacheResource_p.html
+share/yacy/htroot/CacheResource_p.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/CacheResource_p.java
+share/yacy/htroot/Collage.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/Collage.class
+share/yacy/htroot/Collage.html
+@sample ${LOCALSTATEDIR}/yacy/htroot/Collage.html
+share/yacy/htroot/Collage.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/Collage.java
+share/yacy/htroot/ConfigAccounts_p.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/ConfigAccounts_p.class
+share/yacy/htroot/ConfigAccounts_p.html
+@sample ${LOCALSTATEDIR}/yacy/htroot/ConfigAccounts_p.html
+share/yacy/htroot/ConfigAccounts_p.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/ConfigAccounts_p.java
+share/yacy/htroot/ConfigAppearance_p.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/ConfigAppearance_p.class
+share/yacy/htroot/ConfigAppearance_p.html
+@sample ${LOCALSTATEDIR}/yacy/htroot/ConfigAppearance_p.html
+share/yacy/htroot/ConfigAppearance_p.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/ConfigAppearance_p.java
+share/yacy/htroot/ConfigBasic.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/ConfigBasic.class
+share/yacy/htroot/ConfigBasic.html
+@sample ${LOCALSTATEDIR}/yacy/htroot/ConfigBasic.html
+share/yacy/htroot/ConfigBasic.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/ConfigBasic.java
+share/yacy/htroot/ConfigHTCache_p.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/ConfigHTCache_p.class
+share/yacy/htroot/ConfigHTCache_p.html
+@sample ${LOCALSTATEDIR}/yacy/htroot/ConfigHTCache_p.html
+share/yacy/htroot/ConfigHTCache_p.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/ConfigHTCache_p.java
+share/yacy/htroot/ConfigHeuristics_p.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/ConfigHeuristics_p.class
+share/yacy/htroot/ConfigHeuristics_p.html
+@sample ${LOCALSTATEDIR}/yacy/htroot/ConfigHeuristics_p.html
+share/yacy/htroot/ConfigHeuristics_p.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/ConfigHeuristics_p.java
+share/yacy/htroot/ConfigLanguage_p.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/ConfigLanguage_p.class
+share/yacy/htroot/ConfigLanguage_p.html
+@sample ${LOCALSTATEDIR}/yacy/htroot/ConfigLanguage_p.html
+share/yacy/htroot/ConfigLanguage_p.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/ConfigLanguage_p.java
+share/yacy/htroot/ConfigNetwork_p.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/ConfigNetwork_p.class
+share/yacy/htroot/ConfigNetwork_p.html
+@sample ${LOCALSTATEDIR}/yacy/htroot/ConfigNetwork_p.html
+share/yacy/htroot/ConfigNetwork_p.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/ConfigNetwork_p.java
+share/yacy/htroot/ConfigParser.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/ConfigParser.class
+share/yacy/htroot/ConfigParser.html
+@sample ${LOCALSTATEDIR}/yacy/htroot/ConfigParser.html
+share/yacy/htroot/ConfigParser.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/ConfigParser.java
+share/yacy/htroot/ConfigPortal.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/ConfigPortal.class
+share/yacy/htroot/ConfigPortal.html
+@sample ${LOCALSTATEDIR}/yacy/htroot/ConfigPortal.html
+share/yacy/htroot/ConfigPortal.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/ConfigPortal.java
+share/yacy/htroot/ConfigProfile_p.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/ConfigProfile_p.class
+share/yacy/htroot/ConfigProfile_p.html
+@sample ${LOCALSTATEDIR}/yacy/htroot/ConfigProfile_p.html
+share/yacy/htroot/ConfigProfile_p.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/ConfigProfile_p.java
+share/yacy/htroot/ConfigProperties_p.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/ConfigProperties_p.class
+share/yacy/htroot/ConfigProperties_p.html
+@sample ${LOCALSTATEDIR}/yacy/htroot/ConfigProperties_p.html
+share/yacy/htroot/ConfigProperties_p.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/ConfigProperties_p.java
+share/yacy/htroot/ConfigRobotsTxt_p.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/ConfigRobotsTxt_p.class
+share/yacy/htroot/ConfigRobotsTxt_p.html
+@sample ${LOCALSTATEDIR}/yacy/htroot/ConfigRobotsTxt_p.html
+share/yacy/htroot/ConfigRobotsTxt_p.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/ConfigRobotsTxt_p.java
+share/yacy/htroot/ConfigSearchBox.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/ConfigSearchBox.class
+share/yacy/htroot/ConfigSearchBox.html
+@sample ${LOCALSTATEDIR}/yacy/htroot/ConfigSearchBox.html
+share/yacy/htroot/ConfigSearchBox.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/ConfigSearchBox.java
+share/yacy/htroot/ConfigSearchPage_p.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/ConfigSearchPage_p.class
+share/yacy/htroot/ConfigSearchPage_p.html
+@sample ${LOCALSTATEDIR}/yacy/htroot/ConfigSearchPage_p.html
+share/yacy/htroot/ConfigSearchPage_p.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/ConfigSearchPage_p.java
+share/yacy/htroot/ConfigUpdate_p.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/ConfigUpdate_p.class
+share/yacy/htroot/ConfigUpdate_p.html
+@sample ${LOCALSTATEDIR}/yacy/htroot/ConfigUpdate_p.html
+share/yacy/htroot/ConfigUpdate_p.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/ConfigUpdate_p.java
+share/yacy/htroot/Connections_p.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/Connections_p.class
+share/yacy/htroot/Connections_p.html
+@sample ${LOCALSTATEDIR}/yacy/htroot/Connections_p.html
+share/yacy/htroot/Connections_p.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/Connections_p.java
+share/yacy/htroot/ContentAnalysis_p.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/ContentAnalysis_p.class
+share/yacy/htroot/ContentAnalysis_p.html
+@sample ${LOCALSTATEDIR}/yacy/htroot/ContentAnalysis_p.html
+share/yacy/htroot/ContentAnalysis_p.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/ContentAnalysis_p.java
+share/yacy/htroot/ContentControl_p.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/ContentControl_p.class
+share/yacy/htroot/ContentControl_p.html
+@sample ${LOCALSTATEDIR}/yacy/htroot/ContentControl_p.html
+share/yacy/htroot/ContentControl_p.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/ContentControl_p.java
+share/yacy/htroot/ContentIntegrationPHPBB3_p.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/ContentIntegrationPHPBB3_p.class
+share/yacy/htroot/ContentIntegrationPHPBB3_p.html
+@sample ${LOCALSTATEDIR}/yacy/htroot/ContentIntegrationPHPBB3_p.html
+share/yacy/htroot/ContentIntegrationPHPBB3_p.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/ContentIntegrationPHPBB3_p.java
+share/yacy/htroot/CookieMonitorIncoming_p.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/CookieMonitorIncoming_p.class
+share/yacy/htroot/CookieMonitorIncoming_p.html
+@sample ${LOCALSTATEDIR}/yacy/htroot/CookieMonitorIncoming_p.html
+share/yacy/htroot/CookieMonitorIncoming_p.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/CookieMonitorIncoming_p.java
+share/yacy/htroot/CookieMonitorOutgoing_p.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/CookieMonitorOutgoing_p.class
+share/yacy/htroot/CookieMonitorOutgoing_p.html
+@sample ${LOCALSTATEDIR}/yacy/htroot/CookieMonitorOutgoing_p.html
+share/yacy/htroot/CookieMonitorOutgoing_p.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/CookieMonitorOutgoing_p.java
+share/yacy/htroot/CookieTest_p.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/CookieTest_p.class
+share/yacy/htroot/CookieTest_p.html
+@sample ${LOCALSTATEDIR}/yacy/htroot/CookieTest_p.html
+share/yacy/htroot/CookieTest_p.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/CookieTest_p.java
+share/yacy/htroot/CrawlCheck_p.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/CrawlCheck_p.class
+share/yacy/htroot/CrawlCheck_p.html
+@sample ${LOCALSTATEDIR}/yacy/htroot/CrawlCheck_p.html
+share/yacy/htroot/CrawlCheck_p.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/CrawlCheck_p.java
+share/yacy/htroot/CrawlMonitorRemoteStart.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/CrawlMonitorRemoteStart.class
+share/yacy/htroot/CrawlMonitorRemoteStart.html
+@sample ${LOCALSTATEDIR}/yacy/htroot/CrawlMonitorRemoteStart.html
+share/yacy/htroot/CrawlMonitorRemoteStart.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/CrawlMonitorRemoteStart.java
+share/yacy/htroot/CrawlProfileEditor_p.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/CrawlProfileEditor_p.class
+share/yacy/htroot/CrawlProfileEditor_p.html
+@sample ${LOCALSTATEDIR}/yacy/htroot/CrawlProfileEditor_p.html
+share/yacy/htroot/CrawlProfileEditor_p.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/CrawlProfileEditor_p.java
+share/yacy/htroot/CrawlProfileEditor_p.xml
+@sample ${LOCALSTATEDIR}/yacy/htroot/CrawlProfileEditor_p.xml
+share/yacy/htroot/CrawlResults.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/CrawlResults.class
+share/yacy/htroot/CrawlResults.html
+@sample ${LOCALSTATEDIR}/yacy/htroot/CrawlResults.html
+share/yacy/htroot/CrawlResults.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/CrawlResults.java
+share/yacy/htroot/CrawlStartExpert.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/CrawlStartExpert.class
+share/yacy/htroot/CrawlStartExpert.html
+@sample ${LOCALSTATEDIR}/yacy/htroot/CrawlStartExpert.html
+share/yacy/htroot/CrawlStartExpert.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/CrawlStartExpert.java
+share/yacy/htroot/CrawlStartScanner_p.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/CrawlStartScanner_p.class
+share/yacy/htroot/CrawlStartScanner_p.html
+@sample ${LOCALSTATEDIR}/yacy/htroot/CrawlStartScanner_p.html
+share/yacy/htroot/CrawlStartScanner_p.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/CrawlStartScanner_p.java
+share/yacy/htroot/CrawlStartSite.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/CrawlStartSite.class
+share/yacy/htroot/CrawlStartSite.html
+@sample ${LOCALSTATEDIR}/yacy/htroot/CrawlStartSite.html
+share/yacy/htroot/CrawlStartSite.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/CrawlStartSite.java
+share/yacy/htroot/Crawler_p.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/Crawler_p.class
+share/yacy/htroot/Crawler_p.html
+@sample ${LOCALSTATEDIR}/yacy/htroot/Crawler_p.html
+share/yacy/htroot/Crawler_p.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/Crawler_p.java
+share/yacy/htroot/DictionaryLoader_p.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/DictionaryLoader_p.class
+share/yacy/htroot/DictionaryLoader_p.html
+@sample ${LOCALSTATEDIR}/yacy/htroot/DictionaryLoader_p.html
+share/yacy/htroot/DictionaryLoader_p.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/DictionaryLoader_p.java
+share/yacy/htroot/Help.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/Help.class
+share/yacy/htroot/Help.html
+@sample ${LOCALSTATEDIR}/yacy/htroot/Help.html
+share/yacy/htroot/Help.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/Help.java
+share/yacy/htroot/HostBrowser$InfoCacheEntry.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/HostBrowser$InfoCacheEntry.class
+share/yacy/htroot/HostBrowser$StoreType.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/HostBrowser$StoreType.class
+share/yacy/htroot/HostBrowser.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/HostBrowser.class
+share/yacy/htroot/HostBrowser.html
+@sample ${LOCALSTATEDIR}/yacy/htroot/HostBrowser.html
+share/yacy/htroot/HostBrowser.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/HostBrowser.java
+share/yacy/htroot/HostBrowser.xml
+@sample ${LOCALSTATEDIR}/yacy/htroot/HostBrowser.xml
+share/yacy/htroot/HostBrowserAdmin_p.html
+@sample ${LOCALSTATEDIR}/yacy/htroot/HostBrowserAdmin_p.html
+share/yacy/htroot/IndexControlRWIs_p.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/IndexControlRWIs_p.class
+share/yacy/htroot/IndexControlRWIs_p.html
+@sample ${LOCALSTATEDIR}/yacy/htroot/IndexControlRWIs_p.html
+share/yacy/htroot/IndexControlRWIs_p.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/IndexControlRWIs_p.java
+share/yacy/htroot/IndexControlURLs_p.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/IndexControlURLs_p.class
+share/yacy/htroot/IndexControlURLs_p.html
+@sample ${LOCALSTATEDIR}/yacy/htroot/IndexControlURLs_p.html
+share/yacy/htroot/IndexControlURLs_p.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/IndexControlURLs_p.java
+share/yacy/htroot/IndexControlURLs_p.xml
+@sample ${LOCALSTATEDIR}/yacy/htroot/IndexControlURLs_p.xml
+share/yacy/htroot/IndexCreateLoaderQueue_p.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/IndexCreateLoaderQueue_p.class
+share/yacy/htroot/IndexCreateLoaderQueue_p.html
+@sample ${LOCALSTATEDIR}/yacy/htroot/IndexCreateLoaderQueue_p.html
+share/yacy/htroot/IndexCreateLoaderQueue_p.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/IndexCreateLoaderQueue_p.java
+share/yacy/htroot/IndexCreateParserErrors_p.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/IndexCreateParserErrors_p.class
+share/yacy/htroot/IndexCreateParserErrors_p.html
+@sample ${LOCALSTATEDIR}/yacy/htroot/IndexCreateParserErrors_p.html
+share/yacy/htroot/IndexCreateParserErrors_p.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/IndexCreateParserErrors_p.java
+share/yacy/htroot/IndexCreateQueues_p.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/IndexCreateQueues_p.class
+share/yacy/htroot/IndexCreateQueues_p.html
+@sample ${LOCALSTATEDIR}/yacy/htroot/IndexCreateQueues_p.html
+share/yacy/htroot/IndexCreateQueues_p.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/IndexCreateQueues_p.java
+share/yacy/htroot/IndexDeletion_p.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/IndexDeletion_p.class
+share/yacy/htroot/IndexDeletion_p.html
+@sample ${LOCALSTATEDIR}/yacy/htroot/IndexDeletion_p.html
+share/yacy/htroot/IndexDeletion_p.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/IndexDeletion_p.java
+share/yacy/htroot/IndexExport_p.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/IndexExport_p.class
+share/yacy/htroot/IndexExport_p.html
+@sample ${LOCALSTATEDIR}/yacy/htroot/IndexExport_p.html
+share/yacy/htroot/IndexExport_p.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/IndexExport_p.java
+share/yacy/htroot/IndexFederated_p.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/IndexFederated_p.class
+share/yacy/htroot/IndexFederated_p.html
+@sample ${LOCALSTATEDIR}/yacy/htroot/IndexFederated_p.html
+share/yacy/htroot/IndexFederated_p.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/IndexFederated_p.java
+share/yacy/htroot/IndexImportMediawiki_p.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/IndexImportMediawiki_p.class
+share/yacy/htroot/IndexImportMediawiki_p.html
+@sample ${LOCALSTATEDIR}/yacy/htroot/IndexImportMediawiki_p.html
+share/yacy/htroot/IndexImportMediawiki_p.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/IndexImportMediawiki_p.java
+share/yacy/htroot/IndexImportOAIPMHList_p.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/IndexImportOAIPMHList_p.class
+share/yacy/htroot/IndexImportOAIPMHList_p.html
+@sample ${LOCALSTATEDIR}/yacy/htroot/IndexImportOAIPMHList_p.html
+share/yacy/htroot/IndexImportOAIPMHList_p.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/IndexImportOAIPMHList_p.java
+share/yacy/htroot/IndexImportOAIPMH_p.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/IndexImportOAIPMH_p.class
+share/yacy/htroot/IndexImportOAIPMH_p.html
+@sample ${LOCALSTATEDIR}/yacy/htroot/IndexImportOAIPMH_p.html
+share/yacy/htroot/IndexImportOAIPMH_p.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/IndexImportOAIPMH_p.java
+share/yacy/htroot/IndexReIndexMonitor_p.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/IndexReIndexMonitor_p.class
+share/yacy/htroot/IndexReIndexMonitor_p.html
+@sample ${LOCALSTATEDIR}/yacy/htroot/IndexReIndexMonitor_p.html
+share/yacy/htroot/IndexReIndexMonitor_p.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/IndexReIndexMonitor_p.java
+share/yacy/htroot/IndexSchema_p.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/IndexSchema_p.class
+share/yacy/htroot/IndexSchema_p.html
+@sample ${LOCALSTATEDIR}/yacy/htroot/IndexSchema_p.html
+share/yacy/htroot/IndexSchema_p.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/IndexSchema_p.java
+share/yacy/htroot/IndexShare_p.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/IndexShare_p.class
+share/yacy/htroot/IndexShare_p.html
+@sample ${LOCALSTATEDIR}/yacy/htroot/IndexShare_p.html
+share/yacy/htroot/IndexShare_p.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/IndexShare_p.java
+share/yacy/htroot/Load_MediawikiWiki.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/Load_MediawikiWiki.class
+share/yacy/htroot/Load_MediawikiWiki.html
+@sample ${LOCALSTATEDIR}/yacy/htroot/Load_MediawikiWiki.html
+share/yacy/htroot/Load_MediawikiWiki.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/Load_MediawikiWiki.java
+share/yacy/htroot/Load_PHPBB3.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/Load_PHPBB3.class
+share/yacy/htroot/Load_PHPBB3.html
+@sample ${LOCALSTATEDIR}/yacy/htroot/Load_PHPBB3.html
+share/yacy/htroot/Load_PHPBB3.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/Load_PHPBB3.java
+share/yacy/htroot/Load_RSS_p.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/Load_RSS_p.class
+share/yacy/htroot/Load_RSS_p.html
+@sample ${LOCALSTATEDIR}/yacy/htroot/Load_RSS_p.html
+share/yacy/htroot/Load_RSS_p.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/Load_RSS_p.java
+share/yacy/htroot/MessageSend_p.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/MessageSend_p.class
+share/yacy/htroot/MessageSend_p.html
+@sample ${LOCALSTATEDIR}/yacy/htroot/MessageSend_p.html
+share/yacy/htroot/MessageSend_p.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/MessageSend_p.java
+share/yacy/htroot/Messages_p.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/Messages_p.class
+share/yacy/htroot/Messages_p.html
+@sample ${LOCALSTATEDIR}/yacy/htroot/Messages_p.html
+share/yacy/htroot/Messages_p.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/Messages_p.java
+share/yacy/htroot/Messages_p.rss
+@sample ${LOCALSTATEDIR}/yacy/htroot/Messages_p.rss
+share/yacy/htroot/Messages_p.xml
+@sample ${LOCALSTATEDIR}/yacy/htroot/Messages_p.xml
+share/yacy/htroot/Network.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/Network.class
+share/yacy/htroot/Network.html
+@sample ${LOCALSTATEDIR}/yacy/htroot/Network.html
+share/yacy/htroot/Network.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/Network.java
+share/yacy/htroot/Network.xml
+@sample ${LOCALSTATEDIR}/yacy/htroot/Network.xml
+share/yacy/htroot/NetworkHistory.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/NetworkHistory.class
+share/yacy/htroot/NetworkHistory.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/NetworkHistory.java
+share/yacy/htroot/NetworkPicture.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/NetworkPicture.class
+share/yacy/htroot/NetworkPicture.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/NetworkPicture.java
+share/yacy/htroot/News.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/News.class
+share/yacy/htroot/News.html
+@sample ${LOCALSTATEDIR}/yacy/htroot/News.html
+share/yacy/htroot/News.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/News.java
+share/yacy/htroot/News.rss
+@sample ${LOCALSTATEDIR}/yacy/htroot/News.rss
+share/yacy/htroot/PeerLoadPicture.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/PeerLoadPicture.class
+share/yacy/htroot/PeerLoadPicture.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/PeerLoadPicture.java
+share/yacy/htroot/PerformanceConcurrency_p.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/PerformanceConcurrency_p.class
+share/yacy/htroot/PerformanceConcurrency_p.html
+@sample ${LOCALSTATEDIR}/yacy/htroot/PerformanceConcurrency_p.html
+share/yacy/htroot/PerformanceConcurrency_p.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/PerformanceConcurrency_p.java
+share/yacy/htroot/PerformanceGraph.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/PerformanceGraph.class
+share/yacy/htroot/PerformanceGraph.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/PerformanceGraph.java
+share/yacy/htroot/PerformanceMemory_p.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/PerformanceMemory_p.class
+share/yacy/htroot/PerformanceMemory_p.html
+@sample ${LOCALSTATEDIR}/yacy/htroot/PerformanceMemory_p.html
+share/yacy/htroot/PerformanceMemory_p.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/PerformanceMemory_p.java
+share/yacy/htroot/PerformanceMemory_p.xml
+@sample ${LOCALSTATEDIR}/yacy/htroot/PerformanceMemory_p.xml
+share/yacy/htroot/PerformanceQueues_p.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/PerformanceQueues_p.class
+share/yacy/htroot/PerformanceQueues_p.html
+@sample ${LOCALSTATEDIR}/yacy/htroot/PerformanceQueues_p.html
+share/yacy/htroot/PerformanceQueues_p.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/PerformanceQueues_p.java
+share/yacy/htroot/PerformanceQueues_p.xml
+@sample ${LOCALSTATEDIR}/yacy/htroot/PerformanceQueues_p.xml
+share/yacy/htroot/PerformanceSearch_p.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/PerformanceSearch_p.class
+share/yacy/htroot/PerformanceSearch_p.html
+@sample ${LOCALSTATEDIR}/yacy/htroot/PerformanceSearch_p.html
+share/yacy/htroot/PerformanceSearch_p.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/PerformanceSearch_p.java
+share/yacy/htroot/Performance_p.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/Performance_p.class
+share/yacy/htroot/Performance_p.html
+@sample ${LOCALSTATEDIR}/yacy/htroot/Performance_p.html
+share/yacy/htroot/Performance_p.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/Performance_p.java
+share/yacy/htroot/ProxyIndexingMonitor_p.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/ProxyIndexingMonitor_p.class
+share/yacy/htroot/ProxyIndexingMonitor_p.html
+@sample ${LOCALSTATEDIR}/yacy/htroot/ProxyIndexingMonitor_p.html
+share/yacy/htroot/ProxyIndexingMonitor_p.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/ProxyIndexingMonitor_p.java
+share/yacy/htroot/QuickCrawlLink_p.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/QuickCrawlLink_p.class
+share/yacy/htroot/QuickCrawlLink_p.html
+@sample ${LOCALSTATEDIR}/yacy/htroot/QuickCrawlLink_p.html
+share/yacy/htroot/QuickCrawlLink_p.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/QuickCrawlLink_p.java
+share/yacy/htroot/QuickCrawlLink_p.xml
+@sample ${LOCALSTATEDIR}/yacy/htroot/QuickCrawlLink_p.xml
+share/yacy/htroot/RankingRWI_p.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/RankingRWI_p.class
+share/yacy/htroot/RankingRWI_p.html
+@sample ${LOCALSTATEDIR}/yacy/htroot/RankingRWI_p.html
+share/yacy/htroot/RankingRWI_p.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/RankingRWI_p.java
+share/yacy/htroot/RankingSolr_p.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/RankingSolr_p.class
+share/yacy/htroot/RankingSolr_p.html
+@sample ${LOCALSTATEDIR}/yacy/htroot/RankingSolr_p.html
+share/yacy/htroot/RankingSolr_p.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/RankingSolr_p.java
+share/yacy/htroot/RegexTest.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/RegexTest.class
+share/yacy/htroot/RegexTest.html
+@sample ${LOCALSTATEDIR}/yacy/htroot/RegexTest.html
+share/yacy/htroot/RegexTest.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/RegexTest.java
+share/yacy/htroot/RemoteCrawl_p.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/RemoteCrawl_p.class
+share/yacy/htroot/RemoteCrawl_p.html
+@sample ${LOCALSTATEDIR}/yacy/htroot/RemoteCrawl_p.html
+share/yacy/htroot/RemoteCrawl_p.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/RemoteCrawl_p.java
+share/yacy/htroot/SearchEventPicture.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/SearchEventPicture.class
+share/yacy/htroot/SearchEventPicture.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/SearchEventPicture.java
+share/yacy/htroot/ServerScannerList.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/ServerScannerList.class
+share/yacy/htroot/ServerScannerList.html
+@sample ${LOCALSTATEDIR}/yacy/htroot/ServerScannerList.html
+share/yacy/htroot/ServerScannerList.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/ServerScannerList.java
+share/yacy/htroot/SettingsAck_p.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/SettingsAck_p.class
+share/yacy/htroot/SettingsAck_p.html
+@sample ${LOCALSTATEDIR}/yacy/htroot/SettingsAck_p.html
+share/yacy/htroot/SettingsAck_p.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/SettingsAck_p.java
+share/yacy/htroot/Settings_Crawler.inc
+@sample ${LOCALSTATEDIR}/yacy/htroot/Settings_Crawler.inc
+share/yacy/htroot/Settings_MessageForwarding.inc
+@sample ${LOCALSTATEDIR}/yacy/htroot/Settings_MessageForwarding.inc
+share/yacy/htroot/Settings_Proxy.inc
+@sample ${LOCALSTATEDIR}/yacy/htroot/Settings_Proxy.inc
+share/yacy/htroot/Settings_ProxyAccess.inc
+@sample ${LOCALSTATEDIR}/yacy/htroot/Settings_ProxyAccess.inc
+share/yacy/htroot/Settings_Seed.inc
+@sample ${LOCALSTATEDIR}/yacy/htroot/Settings_Seed.inc
+share/yacy/htroot/Settings_Seed_UploadFile.inc
+@sample ${LOCALSTATEDIR}/yacy/htroot/Settings_Seed_UploadFile.inc
+share/yacy/htroot/Settings_Seed_UploadFtp.inc
+@sample ${LOCALSTATEDIR}/yacy/htroot/Settings_Seed_UploadFtp.inc
+share/yacy/htroot/Settings_Seed_UploadScp.inc
+@sample ${LOCALSTATEDIR}/yacy/htroot/Settings_Seed_UploadScp.inc
+share/yacy/htroot/Settings_ServerAccess.inc
+@sample ${LOCALSTATEDIR}/yacy/htroot/Settings_ServerAccess.inc
+share/yacy/htroot/Settings_p.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/Settings_p.class
+share/yacy/htroot/Settings_p.html
+@sample ${LOCALSTATEDIR}/yacy/htroot/Settings_p.html
+share/yacy/htroot/Settings_p.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/Settings_p.java
+share/yacy/htroot/Status.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/Status.class
+share/yacy/htroot/Status.html
+@sample ${LOCALSTATEDIR}/yacy/htroot/Status.html
+share/yacy/htroot/Status.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/Status.java
+share/yacy/htroot/Status_p.inc
+@sample ${LOCALSTATEDIR}/yacy/htroot/Status_p.inc
+share/yacy/htroot/Steering.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/Steering.class
+share/yacy/htroot/Steering.html
+@sample ${LOCALSTATEDIR}/yacy/htroot/Steering.html
+share/yacy/htroot/Steering.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/Steering.java
+share/yacy/htroot/Supporter.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/Supporter.class
+share/yacy/htroot/Supporter.html
+@sample ${LOCALSTATEDIR}/yacy/htroot/Supporter.html
+share/yacy/htroot/Supporter.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/Supporter.java
+share/yacy/htroot/Surftips.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/Surftips.class
+share/yacy/htroot/Surftips.html
+@sample ${LOCALSTATEDIR}/yacy/htroot/Surftips.html
+share/yacy/htroot/Surftips.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/Surftips.java
+share/yacy/htroot/Surftips.rss
+@sample ${LOCALSTATEDIR}/yacy/htroot/Surftips.rss
+share/yacy/htroot/Table_API_p.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/Table_API_p.class
+share/yacy/htroot/Table_API_p.html
+@sample ${LOCALSTATEDIR}/yacy/htroot/Table_API_p.html
+share/yacy/htroot/Table_API_p.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/Table_API_p.java
+share/yacy/htroot/Table_RobotsTxt_p.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/Table_RobotsTxt_p.class
+share/yacy/htroot/Table_RobotsTxt_p.html
+@sample ${LOCALSTATEDIR}/yacy/htroot/Table_RobotsTxt_p.html
+share/yacy/htroot/Table_RobotsTxt_p.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/Table_RobotsTxt_p.java
+share/yacy/htroot/Table_YMark_p.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/Table_YMark_p.class
+share/yacy/htroot/Table_YMark_p.html
+@sample ${LOCALSTATEDIR}/yacy/htroot/Table_YMark_p.html
+share/yacy/htroot/Table_YMark_p.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/Table_YMark_p.java
+share/yacy/htroot/Tables_p.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/Tables_p.class
+share/yacy/htroot/Tables_p.html
+@sample ${LOCALSTATEDIR}/yacy/htroot/Tables_p.html
+share/yacy/htroot/Tables_p.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/Tables_p.java
+share/yacy/htroot/Tables_p.xml
+@sample ${LOCALSTATEDIR}/yacy/htroot/Tables_p.xml
+share/yacy/htroot/Threaddump_p.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/Threaddump_p.class
+share/yacy/htroot/Threaddump_p.html
+@sample ${LOCALSTATEDIR}/yacy/htroot/Threaddump_p.html
+share/yacy/htroot/Threaddump_p.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/Threaddump_p.java
+share/yacy/htroot/Trails.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/Trails.class
+share/yacy/htroot/Trails.html
+@sample ${LOCALSTATEDIR}/yacy/htroot/Trails.html
+share/yacy/htroot/Trails.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/Trails.java
+share/yacy/htroot/TransNews_p.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/TransNews_p.class
+share/yacy/htroot/TransNews_p.html
+@sample ${LOCALSTATEDIR}/yacy/htroot/TransNews_p.html
+share/yacy/htroot/TransNews_p.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/TransNews_p.java
+share/yacy/htroot/Translator_p.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/Translator_p.class
+share/yacy/htroot/Translator_p.html
+@sample ${LOCALSTATEDIR}/yacy/htroot/Translator_p.html
+share/yacy/htroot/Translator_p.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/Translator_p.java
+share/yacy/htroot/User.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/User.class
+share/yacy/htroot/User.html
+@sample ${LOCALSTATEDIR}/yacy/htroot/User.html
+share/yacy/htroot/User.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/User.java
+share/yacy/htroot/ViewFavicon.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/ViewFavicon.class
+share/yacy/htroot/ViewFavicon.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/ViewFavicon.java
+share/yacy/htroot/ViewFile.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/ViewFile.class
+share/yacy/htroot/ViewFile.html
+@sample ${LOCALSTATEDIR}/yacy/htroot/ViewFile.html
+share/yacy/htroot/ViewFile.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/ViewFile.java
+share/yacy/htroot/ViewImage.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/ViewImage.class
+share/yacy/htroot/ViewImage.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/ViewImage.java
+share/yacy/htroot/ViewLog_p.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/ViewLog_p.class
+share/yacy/htroot/ViewLog_p.html
+@sample ${LOCALSTATEDIR}/yacy/htroot/ViewLog_p.html
+share/yacy/htroot/ViewLog_p.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/ViewLog_p.java
+share/yacy/htroot/ViewLog_p.json
+@sample ${LOCALSTATEDIR}/yacy/htroot/ViewLog_p.json
+share/yacy/htroot/ViewProfile.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/ViewProfile.class
+share/yacy/htroot/ViewProfile.html
+@sample ${LOCALSTATEDIR}/yacy/htroot/ViewProfile.html
+share/yacy/htroot/ViewProfile.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/ViewProfile.java
+share/yacy/htroot/ViewProfile.rdf
+@sample ${LOCALSTATEDIR}/yacy/htroot/ViewProfile.rdf
+share/yacy/htroot/ViewProfile.vcf
+@sample ${LOCALSTATEDIR}/yacy/htroot/ViewProfile.vcf
+share/yacy/htroot/ViewProfile.xml
+@sample ${LOCALSTATEDIR}/yacy/htroot/ViewProfile.xml
+share/yacy/htroot/Vocabulary_p.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/Vocabulary_p.class
+share/yacy/htroot/Vocabulary_p.html
+@sample ${LOCALSTATEDIR}/yacy/htroot/Vocabulary_p.html
+share/yacy/htroot/Vocabulary_p.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/Vocabulary_p.java
+share/yacy/htroot/Vocabulary_p.xml
+@sample ${LOCALSTATEDIR}/yacy/htroot/Vocabulary_p.xml
+share/yacy/htroot/WatchWebStructure_p.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/WatchWebStructure_p.class
+share/yacy/htroot/WatchWebStructure_p.html
+@sample ${LOCALSTATEDIR}/yacy/htroot/WatchWebStructure_p.html
+share/yacy/htroot/WatchWebStructure_p.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/WatchWebStructure_p.java
+share/yacy/htroot/WebStructurePicture_p.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/WebStructurePicture_p.class
+share/yacy/htroot/WebStructurePicture_p.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/WebStructurePicture_p.java
+share/yacy/htroot/Wiki.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/Wiki.class
+share/yacy/htroot/Wiki.html
+@sample ${LOCALSTATEDIR}/yacy/htroot/Wiki.html
+share/yacy/htroot/Wiki.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/Wiki.java
+share/yacy/htroot/WikiHelp.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/WikiHelp.class
+share/yacy/htroot/WikiHelp.html
+@sample ${LOCALSTATEDIR}/yacy/htroot/WikiHelp.html
+share/yacy/htroot/WikiHelp.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/WikiHelp.java
+share/yacy/htroot/YMarks.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/YMarks.class
+share/yacy/htroot/YMarks.html
+@sample ${LOCALSTATEDIR}/yacy/htroot/YMarks.html
+share/yacy/htroot/YMarks.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/YMarks.java
+share/yacy/htroot/YaCySearchPluginFF.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/YaCySearchPluginFF.class
+share/yacy/htroot/YaCySearchPluginFF.gif
+@sample ${LOCALSTATEDIR}/yacy/htroot/YaCySearchPluginFF.gif
+share/yacy/htroot/YaCySearchPluginFF.html
+@sample ${LOCALSTATEDIR}/yacy/htroot/YaCySearchPluginFF.html
+share/yacy/htroot/YaCySearchPluginFF.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/YaCySearchPluginFF.java
+share/yacy/htroot/YaCySearchPluginFF.src
+@sample ${LOCALSTATEDIR}/yacy/htroot/YaCySearchPluginFF.src
+share/yacy/htroot/api/
+@sample ${LOCALSTATEDIR}/yacy/htroot/api/
+share/yacy/htroot/api/blacklists/
+@sample ${LOCALSTATEDIR}/yacy/htroot/api/blacklists/
+share/yacy/htroot/api/blacklists.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/api/blacklists.class
+share/yacy/htroot/api/blacklists.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/api/blacklists.java
+share/yacy/htroot/api/blacklists.xml
+@sample ${LOCALSTATEDIR}/yacy/htroot/api/blacklists.xml
+share/yacy/htroot/api/blacklists/add_entry_p.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/api/blacklists/add_entry_p.class
+share/yacy/htroot/api/blacklists/add_entry_p.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/api/blacklists/add_entry_p.java
+share/yacy/htroot/api/blacklists/add_entry_p.json
+@sample ${LOCALSTATEDIR}/yacy/htroot/api/blacklists/add_entry_p.json
+share/yacy/htroot/api/blacklists/add_entry_p.xml
+@sample ${LOCALSTATEDIR}/yacy/htroot/api/blacklists/add_entry_p.xml
+share/yacy/htroot/api/blacklists/delete_entry_p.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/api/blacklists/delete_entry_p.class
+share/yacy/htroot/api/blacklists/delete_entry_p.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/api/blacklists/delete_entry_p.java
+share/yacy/htroot/api/blacklists/delete_entry_p.json
+@sample ${LOCALSTATEDIR}/yacy/htroot/api/blacklists/delete_entry_p.json
+share/yacy/htroot/api/blacklists/delete_entry_p.xml
+@sample ${LOCALSTATEDIR}/yacy/htroot/api/blacklists/delete_entry_p.xml
+share/yacy/htroot/api/blacklists/get_list_p.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/api/blacklists/get_list_p.class
+share/yacy/htroot/api/blacklists/get_list_p.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/api/blacklists/get_list_p.java
+share/yacy/htroot/api/blacklists/get_list_p.json
+@sample ${LOCALSTATEDIR}/yacy/htroot/api/blacklists/get_list_p.json
+share/yacy/htroot/api/blacklists/get_list_p.xml
+@sample ${LOCALSTATEDIR}/yacy/htroot/api/blacklists/get_list_p.xml
+share/yacy/htroot/api/blacklists/get_metadata_p.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/api/blacklists/get_metadata_p.class
+share/yacy/htroot/api/blacklists/get_metadata_p.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/api/blacklists/get_metadata_p.java
+share/yacy/htroot/api/blacklists/get_metadata_p.json
+@sample ${LOCALSTATEDIR}/yacy/htroot/api/blacklists/get_metadata_p.json
+share/yacy/htroot/api/blacklists/get_metadata_p.xml
+@sample ${LOCALSTATEDIR}/yacy/htroot/api/blacklists/get_metadata_p.xml
+share/yacy/htroot/api/blacklists_p.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/api/blacklists_p.class
+share/yacy/htroot/api/blacklists_p.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/api/blacklists_p.java
+share/yacy/htroot/api/blacklists_p.txt
+@sample ${LOCALSTATEDIR}/yacy/htroot/api/blacklists_p.txt
+share/yacy/htroot/api/blacklists_p.xml
+@sample ${LOCALSTATEDIR}/yacy/htroot/api/blacklists_p.xml
+share/yacy/htroot/api/bookmarks/
+@sample ${LOCALSTATEDIR}/yacy/htroot/api/bookmarks/
+share/yacy/htroot/api/bookmarks/get_bookmarks$DisplayType.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/api/bookmarks/get_bookmarks$DisplayType.class
+share/yacy/htroot/api/bookmarks/get_bookmarks.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/api/bookmarks/get_bookmarks.class
+share/yacy/htroot/api/bookmarks/get_bookmarks.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/api/bookmarks/get_bookmarks.java
+share/yacy/htroot/api/bookmarks/get_bookmarks.json
+@sample ${LOCALSTATEDIR}/yacy/htroot/api/bookmarks/get_bookmarks.json
+share/yacy/htroot/api/bookmarks/get_bookmarks.xml
+@sample ${LOCALSTATEDIR}/yacy/htroot/api/bookmarks/get_bookmarks.xml
+share/yacy/htroot/api/bookmarks/get_folders.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/api/bookmarks/get_folders.class
+share/yacy/htroot/api/bookmarks/get_folders.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/api/bookmarks/get_folders.java
+share/yacy/htroot/api/bookmarks/get_folders.json
+@sample ${LOCALSTATEDIR}/yacy/htroot/api/bookmarks/get_folders.json
+share/yacy/htroot/api/bookmarks/get_folders.xml
+@sample ${LOCALSTATEDIR}/yacy/htroot/api/bookmarks/get_folders.xml
+share/yacy/htroot/api/bookmarks/posts/
+@sample ${LOCALSTATEDIR}/yacy/htroot/api/bookmarks/posts/
+share/yacy/htroot/api/bookmarks/posts/add_p.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/api/bookmarks/posts/add_p.class
+share/yacy/htroot/api/bookmarks/posts/add_p.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/api/bookmarks/posts/add_p.java
+share/yacy/htroot/api/bookmarks/posts/add_p.xml
+@sample ${LOCALSTATEDIR}/yacy/htroot/api/bookmarks/posts/add_p.xml
+share/yacy/htroot/api/bookmarks/posts/all.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/api/bookmarks/posts/all.class
+share/yacy/htroot/api/bookmarks/posts/all.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/api/bookmarks/posts/all.java
+share/yacy/htroot/api/bookmarks/posts/all.xml
+@sample ${LOCALSTATEDIR}/yacy/htroot/api/bookmarks/posts/all.xml
+share/yacy/htroot/api/bookmarks/posts/delete_p.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/api/bookmarks/posts/delete_p.class
+share/yacy/htroot/api/bookmarks/posts/delete_p.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/api/bookmarks/posts/delete_p.java
+share/yacy/htroot/api/bookmarks/posts/delete_p.xml
+@sample ${LOCALSTATEDIR}/yacy/htroot/api/bookmarks/posts/delete_p.xml
+share/yacy/htroot/api/bookmarks/posts/get.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/api/bookmarks/posts/get.class
+share/yacy/htroot/api/bookmarks/posts/get.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/api/bookmarks/posts/get.java
+share/yacy/htroot/api/bookmarks/posts/get.xml
+@sample ${LOCALSTATEDIR}/yacy/htroot/api/bookmarks/posts/get.xml
+share/yacy/htroot/api/bookmarks/tags/
+@sample ${LOCALSTATEDIR}/yacy/htroot/api/bookmarks/tags/
+share/yacy/htroot/api/bookmarks/tags/addTag_p.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/api/bookmarks/tags/addTag_p.class
+share/yacy/htroot/api/bookmarks/tags/addTag_p.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/api/bookmarks/tags/addTag_p.java
+share/yacy/htroot/api/bookmarks/tags/addTag_p.xml
+@sample ${LOCALSTATEDIR}/yacy/htroot/api/bookmarks/tags/addTag_p.xml
+share/yacy/htroot/api/bookmarks/tags/editTag_p.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/api/bookmarks/tags/editTag_p.class
+share/yacy/htroot/api/bookmarks/tags/editTag_p.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/api/bookmarks/tags/editTag_p.java
+share/yacy/htroot/api/bookmarks/tags/editTag_p.xml
+@sample ${LOCALSTATEDIR}/yacy/htroot/api/bookmarks/tags/editTag_p.xml
+share/yacy/htroot/api/bookmarks/tags/getTag.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/api/bookmarks/tags/getTag.class
+share/yacy/htroot/api/bookmarks/tags/getTag.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/api/bookmarks/tags/getTag.java
+share/yacy/htroot/api/bookmarks/tags/getTag.xml
+@sample ${LOCALSTATEDIR}/yacy/htroot/api/bookmarks/tags/getTag.xml
+share/yacy/htroot/api/bookmarks/xbel/
+@sample ${LOCALSTATEDIR}/yacy/htroot/api/bookmarks/xbel/
+share/yacy/htroot/api/bookmarks/xbel/xbel.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/api/bookmarks/xbel/xbel.class
+share/yacy/htroot/api/bookmarks/xbel/xbel.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/api/bookmarks/xbel/xbel.java
+share/yacy/htroot/api/bookmarks/xbel/xbel.xml
+@sample ${LOCALSTATEDIR}/yacy/htroot/api/bookmarks/xbel/xbel.xml
+share/yacy/htroot/api/citation.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/api/citation.class
+share/yacy/htroot/api/citation.html
+@sample ${LOCALSTATEDIR}/yacy/htroot/api/citation.html
+share/yacy/htroot/api/citation.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/api/citation.java
+share/yacy/htroot/api/config_p.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/api/config_p.class
+share/yacy/htroot/api/config_p.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/api/config_p.java
+share/yacy/htroot/api/config_p.xml
+@sample ${LOCALSTATEDIR}/yacy/htroot/api/config_p.xml
+share/yacy/htroot/api/feed.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/api/feed.class
+share/yacy/htroot/api/feed.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/api/feed.java
+share/yacy/htroot/api/feed.rss
+@sample ${LOCALSTATEDIR}/yacy/htroot/api/feed.rss
+share/yacy/htroot/api/feed.xml
+@sample ${LOCALSTATEDIR}/yacy/htroot/api/feed.xml
+share/yacy/htroot/api/getpageinfo.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/api/getpageinfo.class
+share/yacy/htroot/api/getpageinfo.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/api/getpageinfo.java
+share/yacy/htroot/api/getpageinfo.json
+@sample ${LOCALSTATEDIR}/yacy/htroot/api/getpageinfo.json
+share/yacy/htroot/api/getpageinfo.xml
+@sample ${LOCALSTATEDIR}/yacy/htroot/api/getpageinfo.xml
+share/yacy/htroot/api/getpageinfo_p.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/api/getpageinfo_p.class
+share/yacy/htroot/api/getpageinfo_p.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/api/getpageinfo_p.java
+share/yacy/htroot/api/getpageinfo_p.xml
+@sample ${LOCALSTATEDIR}/yacy/htroot/api/getpageinfo_p.xml
+share/yacy/htroot/api/latency_p.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/api/latency_p.class
+share/yacy/htroot/api/latency_p.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/api/latency_p.java
+share/yacy/htroot/api/latency_p.xml
+@sample ${LOCALSTATEDIR}/yacy/htroot/api/latency_p.xml
+share/yacy/htroot/api/linkstructure.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/api/linkstructure.class
+share/yacy/htroot/api/linkstructure.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/api/linkstructure.java
+share/yacy/htroot/api/linkstructure.json
+@sample ${LOCALSTATEDIR}/yacy/htroot/api/linkstructure.json
+share/yacy/htroot/api/push_p.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/api/push_p.class
+share/yacy/htroot/api/push_p.html
+@sample ${LOCALSTATEDIR}/yacy/htroot/api/push_p.html
+share/yacy/htroot/api/push_p.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/api/push_p.java
+share/yacy/htroot/api/push_p.json
+@sample ${LOCALSTATEDIR}/yacy/htroot/api/push_p.json
+share/yacy/htroot/api/schema.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/api/schema.class
+share/yacy/htroot/api/schema.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/api/schema.java
+share/yacy/htroot/api/schema.xml
+@sample ${LOCALSTATEDIR}/yacy/htroot/api/schema.xml
+share/yacy/htroot/api/share.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/api/share.class
+share/yacy/htroot/api/share.html
+@sample ${LOCALSTATEDIR}/yacy/htroot/api/share.html
+share/yacy/htroot/api/share.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/api/share.java
+share/yacy/htroot/api/snapshot.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/api/snapshot.class
+share/yacy/htroot/api/snapshot.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/api/snapshot.java
+share/yacy/htroot/api/status_p.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/api/status_p.class
+share/yacy/htroot/api/status_p.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/api/status_p.java
+share/yacy/htroot/api/status_p.properties
+@sample ${LOCALSTATEDIR}/yacy/htroot/api/status_p.properties
+share/yacy/htroot/api/status_p.xml
+@sample ${LOCALSTATEDIR}/yacy/htroot/api/status_p.xml
+share/yacy/htroot/api/table_p.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/api/table_p.class
+share/yacy/htroot/api/table_p.html
+@sample ${LOCALSTATEDIR}/yacy/htroot/api/table_p.html
+share/yacy/htroot/api/table_p.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/api/table_p.java
+share/yacy/htroot/api/termlist_p.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/api/termlist_p.class
+share/yacy/htroot/api/termlist_p.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/api/termlist_p.java
+share/yacy/htroot/api/termlist_p.xml
+@sample ${LOCALSTATEDIR}/yacy/htroot/api/termlist_p.xml
+share/yacy/htroot/api/timeline_p.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/api/timeline_p.class
+share/yacy/htroot/api/timeline_p.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/api/timeline_p.java
+share/yacy/htroot/api/timeline_p.xml
+@sample ${LOCALSTATEDIR}/yacy/htroot/api/timeline_p.xml
+share/yacy/htroot/api/trail_p.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/api/trail_p.class
+share/yacy/htroot/api/trail_p.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/api/trail_p.java
+share/yacy/htroot/api/trail_p.json
+@sample ${LOCALSTATEDIR}/yacy/htroot/api/trail_p.json
+share/yacy/htroot/api/version.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/api/version.class
+share/yacy/htroot/api/version.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/api/version.java
+share/yacy/htroot/api/version.xml
+@sample ${LOCALSTATEDIR}/yacy/htroot/api/version.xml
+share/yacy/htroot/api/webstructure.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/api/webstructure.class
+share/yacy/htroot/api/webstructure.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/api/webstructure.java
+share/yacy/htroot/api/webstructure.xml
+@sample ${LOCALSTATEDIR}/yacy/htroot/api/webstructure.xml
+share/yacy/htroot/api/yacydoc.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/api/yacydoc.class
+share/yacy/htroot/api/yacydoc.html
+@sample ${LOCALSTATEDIR}/yacy/htroot/api/yacydoc.html
+share/yacy/htroot/api/yacydoc.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/api/yacydoc.java
+share/yacy/htroot/api/yacydoc.xml
+@sample ${LOCALSTATEDIR}/yacy/htroot/api/yacydoc.xml
+share/yacy/htroot/api/ymarks/
+@sample ${LOCALSTATEDIR}/yacy/htroot/api/ymarks/
+share/yacy/htroot/api/ymarks/add_ymark.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/api/ymarks/add_ymark.class
+share/yacy/htroot/api/ymarks/add_ymark.html
+@sample ${LOCALSTATEDIR}/yacy/htroot/api/ymarks/add_ymark.html
+share/yacy/htroot/api/ymarks/add_ymark.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/api/ymarks/add_ymark.java
+share/yacy/htroot/api/ymarks/add_ymark.xml
+@sample ${LOCALSTATEDIR}/yacy/htroot/api/ymarks/add_ymark.xml
+share/yacy/htroot/api/ymarks/delete_ymark.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/api/ymarks/delete_ymark.class
+share/yacy/htroot/api/ymarks/delete_ymark.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/api/ymarks/delete_ymark.java
+share/yacy/htroot/api/ymarks/delete_ymark.xml
+@sample ${LOCALSTATEDIR}/yacy/htroot/api/ymarks/delete_ymark.xml
+share/yacy/htroot/api/ymarks/get_metadata.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/api/ymarks/get_metadata.class
+share/yacy/htroot/api/ymarks/get_metadata.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/api/ymarks/get_metadata.java
+share/yacy/htroot/api/ymarks/get_metadata.xml
+@sample ${LOCALSTATEDIR}/yacy/htroot/api/ymarks/get_metadata.xml
+share/yacy/htroot/api/ymarks/get_tags.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/api/ymarks/get_tags.class
+share/yacy/htroot/api/ymarks/get_tags.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/api/ymarks/get_tags.java
+share/yacy/htroot/api/ymarks/get_tags.xml
+@sample ${LOCALSTATEDIR}/yacy/htroot/api/ymarks/get_tags.xml
+share/yacy/htroot/api/ymarks/get_treeview.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/api/ymarks/get_treeview.class
+share/yacy/htroot/api/ymarks/get_treeview.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/api/ymarks/get_treeview.java
+share/yacy/htroot/api/ymarks/get_treeview.json
+@sample ${LOCALSTATEDIR}/yacy/htroot/api/ymarks/get_treeview.json
+share/yacy/htroot/api/ymarks/get_treeview.xml
+@sample ${LOCALSTATEDIR}/yacy/htroot/api/ymarks/get_treeview.xml
+share/yacy/htroot/api/ymarks/get_xbel.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/api/ymarks/get_xbel.class
+share/yacy/htroot/api/ymarks/get_xbel.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/api/ymarks/get_xbel.java
+share/yacy/htroot/api/ymarks/get_xbel.xml
+@sample ${LOCALSTATEDIR}/yacy/htroot/api/ymarks/get_xbel.xml
+share/yacy/htroot/api/ymarks/get_ymark.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/api/ymarks/get_ymark.class
+share/yacy/htroot/api/ymarks/get_ymark.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/api/ymarks/get_ymark.java
+share/yacy/htroot/api/ymarks/get_ymark.json
+@sample ${LOCALSTATEDIR}/yacy/htroot/api/ymarks/get_ymark.json
+share/yacy/htroot/api/ymarks/get_ymark.xml
+@sample ${LOCALSTATEDIR}/yacy/htroot/api/ymarks/get_ymark.xml
+share/yacy/htroot/api/ymarks/import_ymark.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/api/ymarks/import_ymark.class
+share/yacy/htroot/api/ymarks/import_ymark.html
+@sample ${LOCALSTATEDIR}/yacy/htroot/api/ymarks/import_ymark.html
+share/yacy/htroot/api/ymarks/import_ymark.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/api/ymarks/import_ymark.java
+share/yacy/htroot/api/ymarks/import_ymark.xml
+@sample ${LOCALSTATEDIR}/yacy/htroot/api/ymarks/import_ymark.xml
+share/yacy/htroot/api/ymarks/info.html
+@sample ${LOCALSTATEDIR}/yacy/htroot/api/ymarks/info.html
+share/yacy/htroot/api/ymarks/manage_tags.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/api/ymarks/manage_tags.class
+share/yacy/htroot/api/ymarks/manage_tags.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/api/ymarks/manage_tags.java
+share/yacy/htroot/api/ymarks/manage_tags.xml
+@sample ${LOCALSTATEDIR}/yacy/htroot/api/ymarks/manage_tags.xml
+share/yacy/htroot/api/ymarks/test_import.html
+@sample ${LOCALSTATEDIR}/yacy/htroot/api/ymarks/test_import.html
+share/yacy/htroot/api/ymarks/test_treeview.html
+@sample ${LOCALSTATEDIR}/yacy/htroot/api/ymarks/test_treeview.html
+share/yacy/htroot/api/ynetSearch.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/api/ynetSearch.class
+share/yacy/htroot/api/ynetSearch.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/api/ynetSearch.java
+share/yacy/htroot/api/ynetSearch.json
+@sample ${LOCALSTATEDIR}/yacy/htroot/api/ynetSearch.json
+share/yacy/htroot/api/ynetSearch.xml
+@sample ${LOCALSTATEDIR}/yacy/htroot/api/ynetSearch.xml
+share/yacy/htroot/autoconfig.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/autoconfig.class
+share/yacy/htroot/autoconfig.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/autoconfig.java
+share/yacy/htroot/autoconfig.pac
+@sample ${LOCALSTATEDIR}/yacy/htroot/autoconfig.pac
+share/yacy/htroot/compare_yacy.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/compare_yacy.class
+share/yacy/htroot/compare_yacy.html
+@sample ${LOCALSTATEDIR}/yacy/htroot/compare_yacy.html
+share/yacy/htroot/compare_yacy.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/compare_yacy.java
+share/yacy/htroot/cytag.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/cytag.class
+share/yacy/htroot/cytag.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/cytag.java
+share/yacy/htroot/env/
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/
+share/yacy/htroot/env/base.css
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/base.css
+share/yacy/htroot/env/bootstrap/
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/bootstrap/
+share/yacy/htroot/env/bootstrap-base.css
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/bootstrap-base.css
+share/yacy/htroot/env/bootstrap/css/
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/bootstrap/css/
+share/yacy/htroot/env/bootstrap/css/bootstrap-switch.css
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/bootstrap/css/bootstrap-switch.css
+share/yacy/htroot/env/bootstrap/css/bootstrap-switch.min.css
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/bootstrap/css/bootstrap-switch.min.css
+share/yacy/htroot/env/bootstrap/css/bootstrap-theme.css
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/bootstrap/css/bootstrap-theme.css
+share/yacy/htroot/env/bootstrap/css/bootstrap-theme.css.map
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/bootstrap/css/bootstrap-theme.css.map
+share/yacy/htroot/env/bootstrap/css/bootstrap-theme.min.css
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/bootstrap/css/bootstrap-theme.min.css
+share/yacy/htroot/env/bootstrap/css/bootstrap-theme.min.css.map
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/bootstrap/css/bootstrap-theme.min.css.map
+share/yacy/htroot/env/bootstrap/css/bootstrap.css
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/bootstrap/css/bootstrap.css
+share/yacy/htroot/env/bootstrap/css/bootstrap.css.map
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/bootstrap/css/bootstrap.css.map
+share/yacy/htroot/env/bootstrap/css/bootstrap.min.css
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/bootstrap/css/bootstrap.min.css
+share/yacy/htroot/env/bootstrap/css/bootstrap.min.css.map
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/bootstrap/css/bootstrap.min.css.map
+share/yacy/htroot/env/bootstrap/fonts/
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/bootstrap/fonts/
+share/yacy/htroot/env/bootstrap/fonts/glyphicons-halflings-regular.eot
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/bootstrap/fonts/glyphicons-halflings-regular.eot
+share/yacy/htroot/env/bootstrap/fonts/glyphicons-halflings-regular.svg
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/bootstrap/fonts/glyphicons-halflings-regular.svg
+share/yacy/htroot/env/bootstrap/fonts/glyphicons-halflings-regular.ttf
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/bootstrap/fonts/glyphicons-halflings-regular.ttf
+share/yacy/htroot/env/bootstrap/fonts/glyphicons-halflings-regular.woff
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/bootstrap/fonts/glyphicons-halflings-regular.woff
+share/yacy/htroot/env/bootstrap/fonts/glyphicons-halflings-regular.woff2
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/bootstrap/fonts/glyphicons-halflings-regular.woff2
+share/yacy/htroot/env/bootstrap/js/
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/bootstrap/js/
+share/yacy/htroot/env/bootstrap/js/bootstrap-switch.js
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/bootstrap/js/bootstrap-switch.js
+share/yacy/htroot/env/bootstrap/js/bootstrap-switch.min.js
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/bootstrap/js/bootstrap-switch.min.js
+share/yacy/htroot/env/bootstrap/js/bootstrap.js
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/bootstrap/js/bootstrap.js
+share/yacy/htroot/env/bootstrap/js/bootstrap.min.js
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/bootstrap/js/bootstrap.min.js
+share/yacy/htroot/env/bootstrap/js/html5shiv.js
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/bootstrap/js/html5shiv.js
+share/yacy/htroot/env/bootstrap/js/html5shiv.min.js
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/bootstrap/js/html5shiv.min.js
+share/yacy/htroot/env/bootstrap/js/jquery.js
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/bootstrap/js/jquery.js
+share/yacy/htroot/env/bootstrap/js/jquery.min.js
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/bootstrap/js/jquery.min.js
+share/yacy/htroot/env/bootstrap/js/jquery.min.map
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/bootstrap/js/jquery.min.map
+share/yacy/htroot/env/bootstrap/js/respond.min.js
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/bootstrap/js/respond.min.js
+share/yacy/htroot/env/bootstrap/js/typeahead.jquery.js
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/bootstrap/js/typeahead.jquery.js
+share/yacy/htroot/env/bootstrap/js/typeahead.jquery.min.js
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/bootstrap/js/typeahead.jquery.min.js
+share/yacy/htroot/env/grafics/
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/grafics/
+share/yacy/htroot/env/grafics/CrawlNo.gif
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/grafics/CrawlNo.gif
+share/yacy/htroot/env/grafics/CrawlYes.gif
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/grafics/CrawlYes.gif
+share/yacy/htroot/env/grafics/CrawlYesOffline.gif
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/grafics/CrawlYesOffline.gif
+share/yacy/htroot/env/grafics/DHTReceiveNo.gif
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/grafics/DHTReceiveNo.gif
+share/yacy/htroot/env/grafics/DHTReceiveYes.gif
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/grafics/DHTReceiveYes.gif
+share/yacy/htroot/env/grafics/DHTReceiveYesOffline.gif
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/grafics/DHTReceiveYesOffline.gif
+share/yacy/htroot/env/grafics/JuniorDirect.gif
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/grafics/JuniorDirect.gif
+share/yacy/htroot/env/grafics/JuniorMentee.gif
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/grafics/JuniorMentee.gif
+share/yacy/htroot/env/grafics/JuniorOffline.gif
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/grafics/JuniorOffline.gif
+share/yacy/htroot/env/grafics/JuniorPassive.gif
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/grafics/JuniorPassive.gif
+share/yacy/htroot/env/grafics/NodeDisqualified.gif
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/grafics/NodeDisqualified.gif
+share/yacy/htroot/env/grafics/NodeDisqualifiedIPv4.gif
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/grafics/NodeDisqualifiedIPv4.gif
+share/yacy/htroot/env/grafics/NodeDisqualifiedIPv6.gif
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/grafics/NodeDisqualifiedIPv6.gif
+share/yacy/htroot/env/grafics/NodeQualified.gif
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/grafics/NodeQualified.gif
+share/yacy/htroot/env/grafics/NodeQualifiedIPv4.gif
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/grafics/NodeQualifiedIPv4.gif
+share/yacy/htroot/env/grafics/NodeQualifiedIPv6.gif
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/grafics/NodeQualifiedIPv6.gif
+share/yacy/htroot/env/grafics/PrincipalDirect.gif
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/grafics/PrincipalDirect.gif
+share/yacy/htroot/env/grafics/PrincipalOffline.gif
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/grafics/PrincipalOffline.gif
+share/yacy/htroot/env/grafics/PrincipalPassive.gif
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/grafics/PrincipalPassive.gif
+share/yacy/htroot/env/grafics/RankingCollects.gif
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/grafics/RankingCollects.gif
+share/yacy/htroot/env/grafics/RankingReceiveNo.gif
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/grafics/RankingReceiveNo.gif
+share/yacy/htroot/env/grafics/RankingReceiveYes.gif
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/grafics/RankingReceiveYes.gif
+share/yacy/htroot/env/grafics/SeniorDirect.gif
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/grafics/SeniorDirect.gif
+share/yacy/htroot/env/grafics/SeniorMentor.gif
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/grafics/SeniorMentor.gif
+share/yacy/htroot/env/grafics/SeniorOffline.gif
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/grafics/SeniorOffline.gif
+share/yacy/htroot/env/grafics/SeniorPassive.gif
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/grafics/SeniorPassive.gif
+share/yacy/htroot/env/grafics/Virgin.gif
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/grafics/Virgin.gif
+share/yacy/htroot/env/grafics/YaCyLogo_120ppi.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/grafics/YaCyLogo_120ppi.png
+share/yacy/htroot/env/grafics/YaCyLogo_60ppi.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/grafics/YaCyLogo_60ppi.png
+share/yacy/htroot/env/grafics/addlink.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/grafics/addlink.png
+share/yacy/htroot/env/grafics/ajax.gif
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/grafics/ajax.gif
+share/yacy/htroot/env/grafics/api.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/grafics/api.png
+share/yacy/htroot/env/grafics/bad.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/grafics/bad.png
+share/yacy/htroot/env/grafics/blog.gif
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/grafics/blog.gif
+share/yacy/htroot/env/grafics/bookmark.gif
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/grafics/bookmark.gif
+share/yacy/htroot/env/grafics/bookmarkpriv.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/grafics/bookmarkpriv.png
+share/yacy/htroot/env/grafics/bookmarkpub.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/grafics/bookmarkpub.png
+share/yacy/htroot/env/grafics/broadcast.gif
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/grafics/broadcast.gif
+share/yacy/htroot/env/grafics/burn-e.gif
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/grafics/burn-e.gif
+share/yacy/htroot/env/grafics/buttonImage.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/grafics/buttonImage.png
+share/yacy/htroot/env/grafics/chriskaskelix.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/grafics/chriskaskelix.png
+share/yacy/htroot/env/grafics/close.gif
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/grafics/close.gif
+share/yacy/htroot/env/grafics/closed.gif
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/grafics/closed.gif
+share/yacy/htroot/env/grafics/construction.gif
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/grafics/construction.gif
+share/yacy/htroot/env/grafics/crawl.gif
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/grafics/crawl.gif
+share/yacy/htroot/env/grafics/dfltfvcn.ico
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/grafics/dfltfvcn.ico
+share/yacy/htroot/env/grafics/dir.gif
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/grafics/dir.gif
+share/yacy/htroot/env/grafics/doc.gif
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/grafics/doc.gif
+share/yacy/htroot/env/grafics/doc2.gif
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/grafics/doc2.gif
+share/yacy/htroot/env/grafics/dot_blue.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/grafics/dot_blue.png
+share/yacy/htroot/env/grafics/dot_darkgrey.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/grafics/dot_darkgrey.png
+share/yacy/htroot/env/grafics/dot_green.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/grafics/dot_green.png
+share/yacy/htroot/env/grafics/dot_lightgrey.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/grafics/dot_lightgrey.png
+share/yacy/htroot/env/grafics/dot_red.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/grafics/dot_red.png
+share/yacy/htroot/env/grafics/dot_yellow.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/grafics/dot_yellow.png
+share/yacy/htroot/env/grafics/down.gif
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/grafics/down.gif
+share/yacy/htroot/env/grafics/earthsearch.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/grafics/earthsearch.png
+share/yacy/htroot/env/grafics/empty.gif
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/grafics/empty.gif
+share/yacy/htroot/env/grafics/external.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/grafics/external.png
+share/yacy/htroot/env/grafics/fileIcon.gif
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/grafics/fileIcon.gif
+share/yacy/htroot/env/grafics/fileIconSmall.gif
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/grafics/fileIconSmall.gif
+share/yacy/htroot/env/grafics/find.gif
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/grafics/find.gif
+share/yacy/htroot/env/grafics/flag_deutsch_28x17.gif
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/grafics/flag_deutsch_28x17.gif
+share/yacy/htroot/env/grafics/flag_english_28x17.gif
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/grafics/flag_english_28x17.gif
+share/yacy/htroot/env/grafics/folderIcon.gif
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/grafics/folderIcon.gif
+share/yacy/htroot/env/grafics/folderIconSmall.gif
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/grafics/folderIconSmall.gif
+share/yacy/htroot/env/grafics/forkme_right_green_007200.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/grafics/forkme_right_green_007200.png
+share/yacy/htroot/env/grafics/good.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/grafics/good.png
+share/yacy/htroot/env/grafics/green-block.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/grafics/green-block.png
+share/yacy/htroot/env/grafics/heuristic_new.gif
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/grafics/heuristic_new.gif
+share/yacy/htroot/env/grafics/heuristic_redundant.gif
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/grafics/heuristic_redundant.gif
+share/yacy/htroot/env/grafics/i16.gif
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/grafics/i16.gif
+share/yacy/htroot/env/grafics/i32.gif
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/grafics/i32.gif
+share/yacy/htroot/env/grafics/idea.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/grafics/idea.png
+share/yacy/htroot/env/grafics/indexmonitor.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/grafics/indexmonitor.png
+share/yacy/htroot/env/grafics/invisible.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/grafics/invisible.png
+share/yacy/htroot/env/grafics/kaskelix.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/grafics/kaskelix.png
+share/yacy/htroot/env/grafics/link.gif
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/grafics/link.gif
+share/yacy/htroot/env/grafics/loading.gif
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/grafics/loading.gif
+share/yacy/htroot/env/grafics/lock.gif
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/grafics/lock.gif
+share/yacy/htroot/env/grafics/lockopen.gif
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/grafics/lockopen.gif
+share/yacy/htroot/env/grafics/marker_blue.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/grafics/marker_blue.png
+share/yacy/htroot/env/grafics/marker_darkgrey.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/grafics/marker_darkgrey.png
+share/yacy/htroot/env/grafics/marker_green.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/grafics/marker_green.png
+share/yacy/htroot/env/grafics/marker_lightgrey.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/grafics/marker_lightgrey.png
+share/yacy/htroot/env/grafics/marker_red.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/grafics/marker_red.png
+share/yacy/htroot/env/grafics/marker_yellow.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/grafics/marker_yellow.png
+share/yacy/htroot/env/grafics/message.gif
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/grafics/message.gif
+share/yacy/htroot/env/grafics/minitree.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/grafics/minitree.png
+share/yacy/htroot/env/grafics/minus.gif
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/grafics/minus.gif
+share/yacy/htroot/env/grafics/navdl.gif
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/grafics/navdl.gif
+share/yacy/htroot/env/grafics/navdr.gif
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/grafics/navdr.gif
+share/yacy/htroot/env/grafics/nave.gif
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/grafics/nave.gif
+share/yacy/htroot/env/grafics/navsl.gif
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/grafics/navsl.gif
+share/yacy/htroot/env/grafics/navsr.gif
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/grafics/navsr.gif
+share/yacy/htroot/env/grafics/nok.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/grafics/nok.png
+share/yacy/htroot/env/grafics/ok.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/grafics/ok.png
+share/yacy/htroot/env/grafics/opened.gif
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/grafics/opened.gif
+share/yacy/htroot/env/grafics/pause.gif
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/grafics/pause.gif
+share/yacy/htroot/env/grafics/plus.gif
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/grafics/plus.gif
+share/yacy/htroot/env/grafics/profile.gif
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/grafics/profile.gif
+share/yacy/htroot/env/grafics/red-block.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/grafics/red-block.png
+share/yacy/htroot/env/grafics/red_bar.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/grafics/red_bar.png
+share/yacy/htroot/env/grafics/redpillmini.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/grafics/redpillmini.png
+share/yacy/htroot/env/grafics/right.gif
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/grafics/right.gif
+share/yacy/htroot/env/grafics/rss.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/grafics/rss.png
+share/yacy/htroot/env/grafics/searchmode_p2p_activated_32.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/grafics/searchmode_p2p_activated_32.png
+share/yacy/htroot/env/grafics/searchmode_p2p_deactivated_32.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/grafics/searchmode_p2p_deactivated_32.png
+share/yacy/htroot/env/grafics/searchmode_stealth_activated_32.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/grafics/searchmode_stealth_activated_32.png
+share/yacy/htroot/env/grafics/searchmode_stealth_deactivated_32.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/grafics/searchmode_stealth_deactivated_32.png
+share/yacy/htroot/env/grafics/star_blue.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/grafics/star_blue.png
+share/yacy/htroot/env/grafics/star_darkgrey.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/grafics/star_darkgrey.png
+share/yacy/htroot/env/grafics/star_green.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/grafics/star_green.png
+share/yacy/htroot/env/grafics/star_lightgrey.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/grafics/star_lightgrey.png
+share/yacy/htroot/env/grafics/star_red.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/grafics/star_red.png
+share/yacy/htroot/env/grafics/star_yellow.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/grafics/star_yellow.png
+share/yacy/htroot/env/grafics/start.gif
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/grafics/start.gif
+share/yacy/htroot/env/grafics/stop.gif
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/grafics/stop.gif
+share/yacy/htroot/env/grafics/trash.gif
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/grafics/trash.gif
+share/yacy/htroot/env/grafics/twitter_followme.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/grafics/twitter_followme.png
+share/yacy/htroot/env/grafics/usecase_freeworld.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/grafics/usecase_freeworld.png
+share/yacy/htroot/env/grafics/usecase_intranet.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/grafics/usecase_intranet.png
+share/yacy/htroot/env/grafics/usecase_webportal.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/grafics/usecase_webportal.png
+share/yacy/htroot/env/grafics/wiki.gif
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/grafics/wiki.gif
+share/yacy/htroot/env/grafics/yacy.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/grafics/yacy.png
+share/yacy/htroot/env/highslide.css
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/highslide.css
+share/yacy/htroot/env/hypertree.css
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/hypertree.css
+share/yacy/htroot/env/ie6.css
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/ie6.css
+share/yacy/htroot/env/ie7.css
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/ie7.css
+share/yacy/htroot/env/morris.css
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/morris.css
+share/yacy/htroot/env/oldie.css
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/oldie.css
+share/yacy/htroot/env/soundclips/
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/soundclips/
+share/yacy/htroot/env/soundclips/dhtin.wav
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/soundclips/dhtin.wav
+share/yacy/htroot/env/soundclips/newdoc.wav
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/soundclips/newdoc.wav
+share/yacy/htroot/env/soundclips/remotesearch.wav
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/soundclips/remotesearch.wav
+share/yacy/htroot/env/soundclips/sources.txt
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/soundclips/sources.txt
+share/yacy/htroot/env/style.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/style.class
+share/yacy/htroot/env/style.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/style.java
+share/yacy/htroot/env/templates/
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/templates/
+share/yacy/htroot/env/templates/embeddedSearchHeader.template
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/templates/embeddedSearchHeader.template
+share/yacy/htroot/env/templates/embeddedfooter.template
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/templates/embeddedfooter.template
+share/yacy/htroot/env/templates/embeddedheader.template
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/templates/embeddedheader.template
+share/yacy/htroot/env/templates/footer.template
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/templates/footer.template
+share/yacy/htroot/env/templates/header.template
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/templates/header.template
+share/yacy/htroot/env/templates/metas.template
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/templates/metas.template
+share/yacy/htroot/env/templates/simpleSearchHeader.template
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/templates/simpleSearchHeader.template
+share/yacy/htroot/env/templates/simplefooter.template
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/templates/simplefooter.template
+share/yacy/htroot/env/templates/simpleheader.template
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/templates/simpleheader.template
+share/yacy/htroot/env/templates/submenuAccessTracker.template
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/templates/submenuAccessTracker.template
+share/yacy/htroot/env/templates/submenuBlacklist.template
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/templates/submenuBlacklist.template
+share/yacy/htroot/env/templates/submenuComputation.template
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/templates/submenuComputation.template
+share/yacy/htroot/env/templates/submenuConfig.template
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/templates/submenuConfig.template
+share/yacy/htroot/env/templates/submenuCrawlMonitor.template
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/templates/submenuCrawlMonitor.template
+share/yacy/htroot/env/templates/submenuCrawler.template
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/templates/submenuCrawler.template
+share/yacy/htroot/env/templates/submenuDesign.template
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/templates/submenuDesign.template
+share/yacy/htroot/env/templates/submenuIndexControl.template
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/templates/submenuIndexControl.template
+share/yacy/htroot/env/templates/submenuIndexCreate.template
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/templates/submenuIndexCreate.template
+share/yacy/htroot/env/templates/submenuIndexImport.template
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/templates/submenuIndexImport.template
+share/yacy/htroot/env/templates/submenuMaintenance.template
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/templates/submenuMaintenance.template
+share/yacy/htroot/env/templates/submenuPortalConfiguration.template
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/templates/submenuPortalConfiguration.template
+share/yacy/htroot/env/templates/submenuPublication.template
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/templates/submenuPublication.template
+share/yacy/htroot/env/templates/submenuRanking.template
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/templates/submenuRanking.template
+share/yacy/htroot/env/templates/submenuSemantic.template
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/templates/submenuSemantic.template
+share/yacy/htroot/env/templates/submenuTargetAnalysis.template
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/templates/submenuTargetAnalysis.template
+share/yacy/htroot/env/templates/submenuUseCaseAccount.template
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/templates/submenuUseCaseAccount.template
+share/yacy/htroot/env/templates/submenuWebStructure.template
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/templates/submenuWebStructure.template
+share/yacy/htroot/env/terminal.css
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/terminal.css
+share/yacy/htroot/env/yacy-ymarks.css
+@sample ${LOCALSTATEDIR}/yacy/htroot/env/yacy-ymarks.css
+share/yacy/htroot/favicon.bmp
+@sample ${LOCALSTATEDIR}/yacy/htroot/favicon.bmp
+share/yacy/htroot/favicon.ico
+@sample ${LOCALSTATEDIR}/yacy/htroot/favicon.ico
+share/yacy/htroot/favicon.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/favicon.png
+share/yacy/htroot/goto_p.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/goto_p.class
+share/yacy/htroot/goto_p.html
+@sample ${LOCALSTATEDIR}/yacy/htroot/goto_p.html
+share/yacy/htroot/goto_p.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/goto_p.java
+share/yacy/htroot/imagetest.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/imagetest.class
+share/yacy/htroot/imagetest.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/imagetest.java
+share/yacy/htroot/index.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/index.class
+share/yacy/htroot/index.html
+@sample ${LOCALSTATEDIR}/yacy/htroot/index.html
+share/yacy/htroot/index.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/index.java
+share/yacy/htroot/jquery/
+@sample ${LOCALSTATEDIR}/yacy/htroot/jquery/
+share/yacy/htroot/jquery/css/
+@sample ${LOCALSTATEDIR}/yacy/htroot/jquery/css/
+share/yacy/htroot/jquery/css/jquery-ui-combobox.css
+@sample ${LOCALSTATEDIR}/yacy/htroot/jquery/css/jquery-ui-combobox.css
+share/yacy/htroot/jquery/css/jquery.multiselect.css
+@sample ${LOCALSTATEDIR}/yacy/htroot/jquery/css/jquery.multiselect.css
+share/yacy/htroot/jquery/css/jquery.multiselect.filter.css
+@sample ${LOCALSTATEDIR}/yacy/htroot/jquery/css/jquery.multiselect.filter.css
+share/yacy/htroot/jquery/css/jquery.tagsinput.css
+@sample ${LOCALSTATEDIR}/yacy/htroot/jquery/css/jquery.tagsinput.css
+share/yacy/htroot/jquery/flexigrid/
+@sample ${LOCALSTATEDIR}/yacy/htroot/jquery/flexigrid/
+share/yacy/htroot/jquery/flexigrid/css/
+@sample ${LOCALSTATEDIR}/yacy/htroot/jquery/flexigrid/css/
+share/yacy/htroot/jquery/flexigrid/css/flexigrid.pack.css
+@sample ${LOCALSTATEDIR}/yacy/htroot/jquery/flexigrid/css/flexigrid.pack.css
+share/yacy/htroot/jquery/flexigrid/css/images/
+@sample ${LOCALSTATEDIR}/yacy/htroot/jquery/flexigrid/css/images/
+share/yacy/htroot/jquery/flexigrid/css/images/bg.gif
+@sample ${LOCALSTATEDIR}/yacy/htroot/jquery/flexigrid/css/images/bg.gif
+share/yacy/htroot/jquery/flexigrid/css/images/btn-sprite.gif
+@sample ${LOCALSTATEDIR}/yacy/htroot/jquery/flexigrid/css/images/btn-sprite.gif
+share/yacy/htroot/jquery/flexigrid/css/images/ddn.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/jquery/flexigrid/css/images/ddn.png
+share/yacy/htroot/jquery/flexigrid/css/images/dn.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/jquery/flexigrid/css/images/dn.png
+share/yacy/htroot/jquery/flexigrid/css/images/fhbg.gif
+@sample ${LOCALSTATEDIR}/yacy/htroot/jquery/flexigrid/css/images/fhbg.gif
+share/yacy/htroot/jquery/flexigrid/css/images/first.gif
+@sample ${LOCALSTATEDIR}/yacy/htroot/jquery/flexigrid/css/images/first.gif
+share/yacy/htroot/jquery/flexigrid/css/images/hl.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/jquery/flexigrid/css/images/hl.png
+share/yacy/htroot/jquery/flexigrid/css/images/last.gif
+@sample ${LOCALSTATEDIR}/yacy/htroot/jquery/flexigrid/css/images/last.gif
+share/yacy/htroot/jquery/flexigrid/css/images/line.gif
+@sample ${LOCALSTATEDIR}/yacy/htroot/jquery/flexigrid/css/images/line.gif
+share/yacy/htroot/jquery/flexigrid/css/images/load.gif
+@sample ${LOCALSTATEDIR}/yacy/htroot/jquery/flexigrid/css/images/load.gif
+share/yacy/htroot/jquery/flexigrid/css/images/load.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/jquery/flexigrid/css/images/load.png
+share/yacy/htroot/jquery/flexigrid/css/images/magnifier.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/jquery/flexigrid/css/images/magnifier.png
+share/yacy/htroot/jquery/flexigrid/css/images/next.gif
+@sample ${LOCALSTATEDIR}/yacy/htroot/jquery/flexigrid/css/images/next.gif
+share/yacy/htroot/jquery/flexigrid/css/images/prev.gif
+@sample ${LOCALSTATEDIR}/yacy/htroot/jquery/flexigrid/css/images/prev.gif
+share/yacy/htroot/jquery/flexigrid/css/images/up.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/jquery/flexigrid/css/images/up.png
+share/yacy/htroot/jquery/flexigrid/css/images/uup.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/jquery/flexigrid/css/images/uup.png
+share/yacy/htroot/jquery/flexigrid/css/images/wbg.gif
+@sample ${LOCALSTATEDIR}/yacy/htroot/jquery/flexigrid/css/images/wbg.gif
+share/yacy/htroot/jquery/flexigrid/js/
+@sample ${LOCALSTATEDIR}/yacy/htroot/jquery/flexigrid/js/
+share/yacy/htroot/jquery/flexigrid/js/flexigrid.pack.js
+@sample ${LOCALSTATEDIR}/yacy/htroot/jquery/flexigrid/js/flexigrid.pack.js
+share/yacy/htroot/jquery/js/
+@sample ${LOCALSTATEDIR}/yacy/htroot/jquery/js/
+share/yacy/htroot/jquery/js/jquery-1.7.min.js
+@sample ${LOCALSTATEDIR}/yacy/htroot/jquery/js/jquery-1.7.min.js
+share/yacy/htroot/jquery/js/jquery-ui-1.8.16.custom.min.js
+@sample ${LOCALSTATEDIR}/yacy/htroot/jquery/js/jquery-ui-1.8.16.custom.min.js
+share/yacy/htroot/jquery/js/jquery-ui-combobox.js
+@sample ${LOCALSTATEDIR}/yacy/htroot/jquery/js/jquery-ui-combobox.js
+share/yacy/htroot/jquery/js/jquery.field-0.9.2.min.js
+@sample ${LOCALSTATEDIR}/yacy/htroot/jquery/js/jquery.field-0.9.2.min.js
+share/yacy/htroot/jquery/js/jquery.form-2.73.js
+@sample ${LOCALSTATEDIR}/yacy/htroot/jquery/js/jquery.form-2.73.js
+share/yacy/htroot/jquery/js/jquery.multiselect.filter.min.js
+@sample ${LOCALSTATEDIR}/yacy/htroot/jquery/js/jquery.multiselect.filter.min.js
+share/yacy/htroot/jquery/js/jquery.multiselect.min.js
+@sample ${LOCALSTATEDIR}/yacy/htroot/jquery/js/jquery.multiselect.min.js
+share/yacy/htroot/jquery/js/jquery.query-2.1.7.js
+@sample ${LOCALSTATEDIR}/yacy/htroot/jquery/js/jquery.query-2.1.7.js
+share/yacy/htroot/jquery/js/jquery.rdfquery.core-1.0.js
+@sample ${LOCALSTATEDIR}/yacy/htroot/jquery/js/jquery.rdfquery.core-1.0.js
+share/yacy/htroot/jquery/js/jquery.tagsinput.min.js
+@sample ${LOCALSTATEDIR}/yacy/htroot/jquery/js/jquery.tagsinput.min.js
+share/yacy/htroot/jquery/themes/
+@sample ${LOCALSTATEDIR}/yacy/htroot/jquery/themes/
+share/yacy/htroot/jquery/themes/smoothness/
+@sample ${LOCALSTATEDIR}/yacy/htroot/jquery/themes/smoothness/
+share/yacy/htroot/jquery/themes/smoothness/images/
+@sample ${LOCALSTATEDIR}/yacy/htroot/jquery/themes/smoothness/images/
+share/yacy/htroot/jquery/themes/smoothness/images/ui-bg_flat_0_aaaaaa_40x100.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/jquery/themes/smoothness/images/ui-bg_flat_0_aaaaaa_40x100.png
+share/yacy/htroot/jquery/themes/smoothness/images/ui-bg_flat_75_ffffff_40x100.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/jquery/themes/smoothness/images/ui-bg_flat_75_ffffff_40x100.png
+share/yacy/htroot/jquery/themes/smoothness/images/ui-bg_glass_55_fbf9ee_1x400.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/jquery/themes/smoothness/images/ui-bg_glass_55_fbf9ee_1x400.png
+share/yacy/htroot/jquery/themes/smoothness/images/ui-bg_glass_65_ffffff_1x400.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/jquery/themes/smoothness/images/ui-bg_glass_65_ffffff_1x400.png
+share/yacy/htroot/jquery/themes/smoothness/images/ui-bg_glass_75_dadada_1x400.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/jquery/themes/smoothness/images/ui-bg_glass_75_dadada_1x400.png
+share/yacy/htroot/jquery/themes/smoothness/images/ui-bg_glass_75_e6e6e6_1x400.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/jquery/themes/smoothness/images/ui-bg_glass_75_e6e6e6_1x400.png
+share/yacy/htroot/jquery/themes/smoothness/images/ui-bg_glass_95_fef1ec_1x400.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/jquery/themes/smoothness/images/ui-bg_glass_95_fef1ec_1x400.png
+share/yacy/htroot/jquery/themes/smoothness/images/ui-bg_highlight-soft_75_cccccc_1x100.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/jquery/themes/smoothness/images/ui-bg_highlight-soft_75_cccccc_1x100.png
+share/yacy/htroot/jquery/themes/smoothness/images/ui-icons_222222_256x240.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/jquery/themes/smoothness/images/ui-icons_222222_256x240.png
+share/yacy/htroot/jquery/themes/smoothness/images/ui-icons_2e83ff_256x240.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/jquery/themes/smoothness/images/ui-icons_2e83ff_256x240.png
+share/yacy/htroot/jquery/themes/smoothness/images/ui-icons_454545_256x240.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/jquery/themes/smoothness/images/ui-icons_454545_256x240.png
+share/yacy/htroot/jquery/themes/smoothness/images/ui-icons_888888_256x240.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/jquery/themes/smoothness/images/ui-icons_888888_256x240.png
+share/yacy/htroot/jquery/themes/smoothness/images/ui-icons_cd0a0a_256x240.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/jquery/themes/smoothness/images/ui-icons_cd0a0a_256x240.png
+share/yacy/htroot/jquery/themes/smoothness/jquery-ui-1.8.16.custom.css
+@sample ${LOCALSTATEDIR}/yacy/htroot/jquery/themes/smoothness/jquery-ui-1.8.16.custom.css
+share/yacy/htroot/jquery/themes/start/
+@sample ${LOCALSTATEDIR}/yacy/htroot/jquery/themes/start/
+share/yacy/htroot/jquery/themes/start/images/
+@sample ${LOCALSTATEDIR}/yacy/htroot/jquery/themes/start/images/
+share/yacy/htroot/jquery/themes/start/images/ui-bg_flat_55_999999_40x100.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/jquery/themes/start/images/ui-bg_flat_55_999999_40x100.png
+share/yacy/htroot/jquery/themes/start/images/ui-bg_flat_75_aaaaaa_40x100.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/jquery/themes/start/images/ui-bg_flat_75_aaaaaa_40x100.png
+share/yacy/htroot/jquery/themes/start/images/ui-bg_glass_45_0078ae_1x400.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/jquery/themes/start/images/ui-bg_glass_45_0078ae_1x400.png
+share/yacy/htroot/jquery/themes/start/images/ui-bg_glass_55_f8da4e_1x400.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/jquery/themes/start/images/ui-bg_glass_55_f8da4e_1x400.png
+share/yacy/htroot/jquery/themes/start/images/ui-bg_glass_75_79c9ec_1x400.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/jquery/themes/start/images/ui-bg_glass_75_79c9ec_1x400.png
+share/yacy/htroot/jquery/themes/start/images/ui-bg_gloss-wave_45_e14f1c_500x100.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/jquery/themes/start/images/ui-bg_gloss-wave_45_e14f1c_500x100.png
+share/yacy/htroot/jquery/themes/start/images/ui-bg_gloss-wave_50_6eac2c_500x100.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/jquery/themes/start/images/ui-bg_gloss-wave_50_6eac2c_500x100.png
+share/yacy/htroot/jquery/themes/start/images/ui-bg_gloss-wave_75_2191c0_500x100.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/jquery/themes/start/images/ui-bg_gloss-wave_75_2191c0_500x100.png
+share/yacy/htroot/jquery/themes/start/images/ui-bg_inset-hard_100_fcfdfd_1x100.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/jquery/themes/start/images/ui-bg_inset-hard_100_fcfdfd_1x100.png
+share/yacy/htroot/jquery/themes/start/images/ui-icons_0078ae_256x240.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/jquery/themes/start/images/ui-icons_0078ae_256x240.png
+share/yacy/htroot/jquery/themes/start/images/ui-icons_056b93_256x240.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/jquery/themes/start/images/ui-icons_056b93_256x240.png
+share/yacy/htroot/jquery/themes/start/images/ui-icons_d8e7f3_256x240.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/jquery/themes/start/images/ui-icons_d8e7f3_256x240.png
+share/yacy/htroot/jquery/themes/start/images/ui-icons_e0fdff_256x240.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/jquery/themes/start/images/ui-icons_e0fdff_256x240.png
+share/yacy/htroot/jquery/themes/start/images/ui-icons_f5e175_256x240.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/jquery/themes/start/images/ui-icons_f5e175_256x240.png
+share/yacy/htroot/jquery/themes/start/images/ui-icons_f7a50d_256x240.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/jquery/themes/start/images/ui-icons_f7a50d_256x240.png
+share/yacy/htroot/jquery/themes/start/images/ui-icons_fcd113_256x240.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/jquery/themes/start/images/ui-icons_fcd113_256x240.png
+share/yacy/htroot/jquery/themes/start/jquery-ui-1.8.16.custom.css
+@sample ${LOCALSTATEDIR}/yacy/htroot/jquery/themes/start/jquery-ui-1.8.16.custom.css
+share/yacy/htroot/js/
+@sample ${LOCALSTATEDIR}/yacy/htroot/js/
+share/yacy/htroot/js/Bookmarks.js
+@sample ${LOCALSTATEDIR}/yacy/htroot/js/Bookmarks.js
+share/yacy/htroot/js/Crawler.js
+@sample ${LOCALSTATEDIR}/yacy/htroot/js/Crawler.js
+share/yacy/htroot/js/IndexCreate.js
+@sample ${LOCALSTATEDIR}/yacy/htroot/js/IndexCreate.js
+share/yacy/htroot/js/WatchWebStructure.js
+@sample ${LOCALSTATEDIR}/yacy/htroot/js/WatchWebStructure.js
+share/yacy/htroot/js/ajax.js
+@sample ${LOCALSTATEDIR}/yacy/htroot/js/ajax.js
+share/yacy/htroot/js/d3.v3.min.js
+@sample ${LOCALSTATEDIR}/yacy/htroot/js/d3.v3.min.js
+share/yacy/htroot/js/highslide/
+@sample ${LOCALSTATEDIR}/yacy/htroot/js/highslide/
+share/yacy/htroot/js/highslide/graphics/
+@sample ${LOCALSTATEDIR}/yacy/htroot/js/highslide/graphics/
+share/yacy/htroot/js/highslide/graphics/controlbar2.gif
+@sample ${LOCALSTATEDIR}/yacy/htroot/js/highslide/graphics/controlbar2.gif
+share/yacy/htroot/js/highslide/graphics/controlbar3.gif
+@sample ${LOCALSTATEDIR}/yacy/htroot/js/highslide/graphics/controlbar3.gif
+share/yacy/htroot/js/highslide/graphics/controlbar4-hover.gif
+@sample ${LOCALSTATEDIR}/yacy/htroot/js/highslide/graphics/controlbar4-hover.gif
+share/yacy/htroot/js/highslide/graphics/controlbar4.gif
+@sample ${LOCALSTATEDIR}/yacy/htroot/js/highslide/graphics/controlbar4.gif
+share/yacy/htroot/js/highslide/graphics/fullexpand.gif
+@sample ${LOCALSTATEDIR}/yacy/htroot/js/highslide/graphics/fullexpand.gif
+share/yacy/htroot/js/highslide/graphics/geckodimmer.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/js/highslide/graphics/geckodimmer.png
+share/yacy/htroot/js/highslide/graphics/loader.gif
+@sample ${LOCALSTATEDIR}/yacy/htroot/js/highslide/graphics/loader.gif
+share/yacy/htroot/js/highslide/graphics/loader.white.gif
+@sample ${LOCALSTATEDIR}/yacy/htroot/js/highslide/graphics/loader.white.gif
+share/yacy/htroot/js/highslide/graphics/outlines/
+@sample ${LOCALSTATEDIR}/yacy/htroot/js/highslide/graphics/outlines/
+share/yacy/htroot/js/highslide/graphics/outlines/Outlines.psd
+@sample ${LOCALSTATEDIR}/yacy/htroot/js/highslide/graphics/outlines/Outlines.psd
+share/yacy/htroot/js/highslide/graphics/outlines/beveled.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/js/highslide/graphics/outlines/beveled.png
+share/yacy/htroot/js/highslide/graphics/outlines/drop-shadow.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/js/highslide/graphics/outlines/drop-shadow.png
+share/yacy/htroot/js/highslide/graphics/outlines/glossy-dark.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/js/highslide/graphics/outlines/glossy-dark.png
+share/yacy/htroot/js/highslide/graphics/outlines/outer-glow.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/js/highslide/graphics/outlines/outer-glow.png
+share/yacy/htroot/js/highslide/graphics/outlines/rounded-black.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/js/highslide/graphics/outlines/rounded-black.png
+share/yacy/htroot/js/highslide/graphics/outlines/rounded-white.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/js/highslide/graphics/outlines/rounded-white.png
+share/yacy/htroot/js/highslide/graphics/resize.gif
+@sample ${LOCALSTATEDIR}/yacy/htroot/js/highslide/graphics/resize.gif
+share/yacy/htroot/js/highslide/graphics/zoomin.cur
+@sample ${LOCALSTATEDIR}/yacy/htroot/js/highslide/graphics/zoomin.cur
+share/yacy/htroot/js/highslide/graphics/zoomout.cur
+@sample ${LOCALSTATEDIR}/yacy/htroot/js/highslide/graphics/zoomout.cur
+share/yacy/htroot/js/highslide/highslide.js
+@sample ${LOCALSTATEDIR}/yacy/htroot/js/highslide/highslide.js
+share/yacy/htroot/js/html.js
+@sample ${LOCALSTATEDIR}/yacy/htroot/js/html.js
+share/yacy/htroot/js/hypertree.js
+@sample ${LOCALSTATEDIR}/yacy/htroot/js/hypertree.js
+share/yacy/htroot/js/morris.js
+@sample ${LOCALSTATEDIR}/yacy/htroot/js/morris.js
+share/yacy/htroot/js/query.js
+@sample ${LOCALSTATEDIR}/yacy/htroot/js/query.js
+share/yacy/htroot/js/raphael-min.js
+@sample ${LOCALSTATEDIR}/yacy/htroot/js/raphael-min.js
+share/yacy/htroot/js/rdf/
+@sample ${LOCALSTATEDIR}/yacy/htroot/js/rdf/
+share/yacy/htroot/js/rdf/jquery.rdfquery.core-1.0.js
+@sample ${LOCALSTATEDIR}/yacy/htroot/js/rdf/jquery.rdfquery.core-1.0.js
+share/yacy/htroot/js/rss2.js
+@sample ${LOCALSTATEDIR}/yacy/htroot/js/rss2.js
+share/yacy/htroot/js/sorttable.js
+@sample ${LOCALSTATEDIR}/yacy/htroot/js/sorttable.js
+share/yacy/htroot/js/xml.js
+@sample ${LOCALSTATEDIR}/yacy/htroot/js/xml.js
+share/yacy/htroot/js/yacy-ymarks-bookmark-actions.js
+@sample ${LOCALSTATEDIR}/yacy/htroot/js/yacy-ymarks-bookmark-actions.js
+share/yacy/htroot/js/yacy-ymarks-tag-actions.js
+@sample ${LOCALSTATEDIR}/yacy/htroot/js/yacy-ymarks-tag-actions.js
+share/yacy/htroot/js/yacy-ymarks.js
+@sample ${LOCALSTATEDIR}/yacy/htroot/js/yacy-ymarks.js
+share/yacy/htroot/js/yacyinteractive.js
+@sample ${LOCALSTATEDIR}/yacy/htroot/js/yacyinteractive.js
+share/yacy/htroot/js/yacysearch.js
+@sample ${LOCALSTATEDIR}/yacy/htroot/js/yacysearch.js
+share/yacy/htroot/jslicense.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/jslicense.class
+share/yacy/htroot/jslicense.html
+@sample ${LOCALSTATEDIR}/yacy/htroot/jslicense.html
+share/yacy/htroot/jslicense.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/jslicense.java
+share/yacy/htroot/mediawiki_p.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/mediawiki_p.class
+share/yacy/htroot/mediawiki_p.html
+@sample ${LOCALSTATEDIR}/yacy/htroot/mediawiki_p.html
+share/yacy/htroot/mediawiki_p.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/mediawiki_p.java
+share/yacy/htroot/opensearchdescription.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/opensearchdescription.class
+share/yacy/htroot/opensearchdescription.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/opensearchdescription.java
+share/yacy/htroot/opensearchdescription.xml
+@sample ${LOCALSTATEDIR}/yacy/htroot/opensearchdescription.xml
+share/yacy/htroot/osm.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/osm.class
+share/yacy/htroot/osm.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/osm.java
+share/yacy/htroot/portalsearch/
+@sample ${LOCALSTATEDIR}/yacy/htroot/portalsearch/
+share/yacy/htroot/portalsearch/yacy-portalsearch.css
+@sample ${LOCALSTATEDIR}/yacy/htroot/portalsearch/yacy-portalsearch.css
+share/yacy/htroot/portalsearch/yacy-portalsearch.html
+@sample ${LOCALSTATEDIR}/yacy/htroot/portalsearch/yacy-portalsearch.html
+share/yacy/htroot/portalsearch/yacy-portalsearch.js
+@sample ${LOCALSTATEDIR}/yacy/htroot/portalsearch/yacy-portalsearch.js
+share/yacy/htroot/processing/
+@sample ${LOCALSTATEDIR}/yacy/htroot/processing/
+share/yacy/htroot/processing/domaingraph/
+@sample ${LOCALSTATEDIR}/yacy/htroot/processing/domaingraph/
+share/yacy/htroot/processing/domaingraph/applet/
+@sample ${LOCALSTATEDIR}/yacy/htroot/processing/domaingraph/applet/
+share/yacy/htroot/processing/domaingraph/applet/domaingraph.jar
+@sample ${LOCALSTATEDIR}/yacy/htroot/processing/domaingraph/applet/domaingraph.jar
+share/yacy/htroot/processing/domaingraph/applet/domaingraph.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/processing/domaingraph/applet/domaingraph.java
+share/yacy/htroot/processing/domaingraph/applet/domaingraph.pde
+@sample ${LOCALSTATEDIR}/yacy/htroot/processing/domaingraph/applet/domaingraph.pde
+share/yacy/htroot/processing/domaingraph/applet/index.html
+@sample ${LOCALSTATEDIR}/yacy/htroot/processing/domaingraph/applet/index.html
+share/yacy/htroot/processing/domaingraph/applet/loading.gif
+@sample ${LOCALSTATEDIR}/yacy/htroot/processing/domaingraph/applet/loading.gif
+share/yacy/htroot/processing/domaingraph/domaingraph.pde
+@sample ${LOCALSTATEDIR}/yacy/htroot/processing/domaingraph/domaingraph.pde
+share/yacy/htroot/processing/put_in_libraries/
+@sample ${LOCALSTATEDIR}/yacy/htroot/processing/put_in_libraries/
+share/yacy/htroot/processing/put_in_libraries/animation.zip
+@sample ${LOCALSTATEDIR}/yacy/htroot/processing/put_in_libraries/animation.zip
+share/yacy/htroot/processing/put_in_libraries/physics.zip
+@sample ${LOCALSTATEDIR}/yacy/htroot/processing/put_in_libraries/physics.zip
+share/yacy/htroot/proxymsg/
+@sample ${LOCALSTATEDIR}/yacy/htroot/proxymsg/
+share/yacy/htroot/proxymsg/authfail.inc
+@sample ${LOCALSTATEDIR}/yacy/htroot/proxymsg/authfail.inc
+share/yacy/htroot/proxymsg/error.html
+@sample ${LOCALSTATEDIR}/yacy/htroot/proxymsg/error.html
+share/yacy/htroot/proxymsg/proxylimits.inc
+@sample ${LOCALSTATEDIR}/yacy/htroot/proxymsg/proxylimits.inc
+share/yacy/htroot/proxymsg/unknownHost.inc
+@sample ${LOCALSTATEDIR}/yacy/htroot/proxymsg/unknownHost.inc
+share/yacy/htroot/proxymsg/urlproxyheader.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/proxymsg/urlproxyheader.class
+share/yacy/htroot/proxymsg/urlproxyheader.html
+@sample ${LOCALSTATEDIR}/yacy/htroot/proxymsg/urlproxyheader.html
+share/yacy/htroot/proxymsg/urlproxyheader.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/proxymsg/urlproxyheader.java
+share/yacy/htroot/rct_p.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/rct_p.class
+share/yacy/htroot/rct_p.html
+@sample ${LOCALSTATEDIR}/yacy/htroot/rct_p.html
+share/yacy/htroot/rct_p.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/rct_p.java
+share/yacy/htroot/robots.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/robots.class
+share/yacy/htroot/robots.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/robots.java
+share/yacy/htroot/robots.txt
+@sample ${LOCALSTATEDIR}/yacy/htroot/robots.txt
+share/yacy/htroot/rssTerminal.html
+@sample ${LOCALSTATEDIR}/yacy/htroot/rssTerminal.html
+share/yacy/htroot/sharedBlacklist_p.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/sharedBlacklist_p.class
+share/yacy/htroot/sharedBlacklist_p.html
+@sample ${LOCALSTATEDIR}/yacy/htroot/sharedBlacklist_p.html
+share/yacy/htroot/sharedBlacklist_p.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/sharedBlacklist_p.java
+share/yacy/htroot/ssitest.html
+@sample ${LOCALSTATEDIR}/yacy/htroot/ssitest.html
+share/yacy/htroot/ssitest.inc
+@sample ${LOCALSTATEDIR}/yacy/htroot/ssitest.inc
+share/yacy/htroot/ssitestservlet.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/ssitestservlet.class
+share/yacy/htroot/ssitestservlet.html
+@sample ${LOCALSTATEDIR}/yacy/htroot/ssitestservlet.html
+share/yacy/htroot/ssitestservlet.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/ssitestservlet.java
+share/yacy/htroot/suggest.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/suggest.class
+share/yacy/htroot/suggest.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/suggest.java
+share/yacy/htroot/suggest.json
+@sample ${LOCALSTATEDIR}/yacy/htroot/suggest.json
+share/yacy/htroot/suggest.xml
+@sample ${LOCALSTATEDIR}/yacy/htroot/suggest.xml
+share/yacy/htroot/terminal_p.html
+@sample ${LOCALSTATEDIR}/yacy/htroot/terminal_p.html
+share/yacy/htroot/test.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/test.class
+share/yacy/htroot/test.html
+@sample ${LOCALSTATEDIR}/yacy/htroot/test.html
+share/yacy/htroot/test.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/test.java
+share/yacy/htroot/test.xml
+@sample ${LOCALSTATEDIR}/yacy/htroot/test.xml
+share/yacy/htroot/www/
+@sample ${LOCALSTATEDIR}/yacy/htroot/www/
+share/yacy/htroot/yacy/
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/
+share/yacy/htroot/yacy/crawlReceipt.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/crawlReceipt.class
+share/yacy/htroot/yacy/crawlReceipt.html
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/crawlReceipt.html
+share/yacy/htroot/yacy/crawlReceipt.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/crawlReceipt.java
+share/yacy/htroot/yacy/hello.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/hello.class
+share/yacy/htroot/yacy/hello.html
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/hello.html
+share/yacy/htroot/yacy/hello.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/hello.java
+share/yacy/htroot/yacy/idx.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/idx.class
+share/yacy/htroot/yacy/idx.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/idx.java
+share/yacy/htroot/yacy/idx.json
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/idx.json
+share/yacy/htroot/yacy/list.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/list.class
+share/yacy/htroot/yacy/list.html
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/list.html
+share/yacy/htroot/yacy/list.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/list.java
+share/yacy/htroot/yacy/message.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/message.class
+share/yacy/htroot/yacy/message.html
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/message.html
+share/yacy/htroot/yacy/message.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/message.java
+share/yacy/htroot/yacy/profile.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/profile.class
+share/yacy/htroot/yacy/profile.html
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/profile.html
+share/yacy/htroot/yacy/profile.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/profile.java
+share/yacy/htroot/yacy/query.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/query.class
+share/yacy/htroot/yacy/query.html
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/query.html
+share/yacy/htroot/yacy/query.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/query.java
+share/yacy/htroot/yacy/search.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/search.class
+share/yacy/htroot/yacy/search.html
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/search.html
+share/yacy/htroot/yacy/search.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/search.java
+share/yacy/htroot/yacy/seedlist.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/seedlist.class
+share/yacy/htroot/yacy/seedlist.html
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/seedlist.html
+share/yacy/htroot/yacy/seedlist.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/seedlist.java
+share/yacy/htroot/yacy/seedlist.json
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/seedlist.json
+share/yacy/htroot/yacy/seedlist.xml
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/seedlist.xml
+share/yacy/htroot/yacy/transferRWI.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/transferRWI.class
+share/yacy/htroot/yacy/transferRWI.html
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/transferRWI.html
+share/yacy/htroot/yacy/transferRWI.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/transferRWI.java
+share/yacy/htroot/yacy/transferURL.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/transferURL.class
+share/yacy/htroot/yacy/transferURL.html
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/transferURL.html
+share/yacy/htroot/yacy/transferURL.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/transferURL.java
+share/yacy/htroot/yacy/ui/
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/
+share/yacy/htroot/yacy/ui/colorpicker_images/
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/colorpicker_images/
+share/yacy/htroot/yacy/ui/colorpicker_images/blank.gif
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/colorpicker_images/blank.gif
+share/yacy/htroot/yacy/ui/colorpicker_images/colorpicker_background.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/colorpicker_images/colorpicker_background.png
+share/yacy/htroot/yacy/ui/colorpicker_images/colorpicker_hex.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/colorpicker_images/colorpicker_hex.png
+share/yacy/htroot/yacy/ui/colorpicker_images/colorpicker_hsb_b.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/colorpicker_images/colorpicker_hsb_b.png
+share/yacy/htroot/yacy/ui/colorpicker_images/colorpicker_hsb_h.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/colorpicker_images/colorpicker_hsb_h.png
+share/yacy/htroot/yacy/ui/colorpicker_images/colorpicker_hsb_s.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/colorpicker_images/colorpicker_hsb_s.png
+share/yacy/htroot/yacy/ui/colorpicker_images/colorpicker_indic.gif
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/colorpicker_images/colorpicker_indic.gif
+share/yacy/htroot/yacy/ui/colorpicker_images/colorpicker_overlay.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/colorpicker_images/colorpicker_overlay.png
+share/yacy/htroot/yacy/ui/colorpicker_images/colorpicker_rgb_b.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/colorpicker_images/colorpicker_rgb_b.png
+share/yacy/htroot/yacy/ui/colorpicker_images/colorpicker_rgb_g.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/colorpicker_images/colorpicker_rgb_g.png
+share/yacy/htroot/yacy/ui/colorpicker_images/colorpicker_rgb_r.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/colorpicker_images/colorpicker_rgb_r.png
+share/yacy/htroot/yacy/ui/colorpicker_images/colorpicker_select.gif
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/colorpicker_images/colorpicker_select.gif
+share/yacy/htroot/yacy/ui/colorpicker_images/colorpicker_submit.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/colorpicker_images/colorpicker_submit.png
+share/yacy/htroot/yacy/ui/colorpicker_images/custom_background.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/colorpicker_images/custom_background.png
+share/yacy/htroot/yacy/ui/colorpicker_images/custom_hex.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/colorpicker_images/custom_hex.png
+share/yacy/htroot/yacy/ui/colorpicker_images/custom_hsb_b.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/colorpicker_images/custom_hsb_b.png
+share/yacy/htroot/yacy/ui/colorpicker_images/custom_hsb_h.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/colorpicker_images/custom_hsb_h.png
+share/yacy/htroot/yacy/ui/colorpicker_images/custom_hsb_s.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/colorpicker_images/custom_hsb_s.png
+share/yacy/htroot/yacy/ui/colorpicker_images/custom_indic.gif
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/colorpicker_images/custom_indic.gif
+share/yacy/htroot/yacy/ui/colorpicker_images/custom_rgb_b.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/colorpicker_images/custom_rgb_b.png
+share/yacy/htroot/yacy/ui/colorpicker_images/custom_rgb_g.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/colorpicker_images/custom_rgb_g.png
+share/yacy/htroot/yacy/ui/colorpicker_images/custom_rgb_r.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/colorpicker_images/custom_rgb_r.png
+share/yacy/htroot/yacy/ui/colorpicker_images/custom_submit.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/colorpicker_images/custom_submit.png
+share/yacy/htroot/yacy/ui/colorpicker_images/select.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/colorpicker_images/select.png
+share/yacy/htroot/yacy/ui/colorpicker_images/select2.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/colorpicker_images/select2.png
+share/yacy/htroot/yacy/ui/colorpicker_images/slider.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/colorpicker_images/slider.png
+share/yacy/htroot/yacy/ui/css/
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/
+share/yacy/htroot/yacy/ui/css/autocomplete.css
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/autocomplete.css
+share/yacy/htroot/yacy/ui/css/base.css
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/base.css
+share/yacy/htroot/yacy/ui/css/colorpicker.css
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/colorpicker.css
+share/yacy/htroot/yacy/ui/css/jquery.flexigrid.css
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/jquery.flexigrid.css
+share/yacy/htroot/yacy/ui/css/jquery.treeview.css
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/jquery.treeview.css
+share/yacy/htroot/yacy/ui/css/themes/
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/
+share/yacy/htroot/yacy/ui/css/themes/cupertino/
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/cupertino/
+share/yacy/htroot/yacy/ui/css/themes/cupertino/images/
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/cupertino/images/
+share/yacy/htroot/yacy/ui/css/themes/cupertino/images/ui-bg_diagonals-small_0_aaaaaa_40x40.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/cupertino/images/ui-bg_diagonals-small_0_aaaaaa_40x40.png
+share/yacy/htroot/yacy/ui/css/themes/cupertino/images/ui-bg_diagonals-thick_15_444444_40x40.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/cupertino/images/ui-bg_diagonals-thick_15_444444_40x40.png
+share/yacy/htroot/yacy/ui/css/themes/cupertino/images/ui-bg_glass_100_f0f0f0_1x400.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/cupertino/images/ui-bg_glass_100_f0f0f0_1x400.png
+share/yacy/htroot/yacy/ui/css/themes/cupertino/images/ui-bg_glass_50_99c2ff_1x400.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/cupertino/images/ui-bg_glass_50_99c2ff_1x400.png
+share/yacy/htroot/yacy/ui/css/themes/cupertino/images/ui-bg_glass_55_fbf5d0_1x400.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/cupertino/images/ui-bg_glass_55_fbf5d0_1x400.png
+share/yacy/htroot/yacy/ui/css/themes/cupertino/images/ui-bg_glass_80_e6e6e6_1x400.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/cupertino/images/ui-bg_glass_80_e6e6e6_1x400.png
+share/yacy/htroot/yacy/ui/css/themes/cupertino/images/ui-bg_glass_95_fef1ec_1x400.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/cupertino/images/ui-bg_glass_95_fef1ec_1x400.png
+share/yacy/htroot/yacy/ui/css/themes/cupertino/images/ui-bg_highlight-hard_100_f9f9f9_1x100.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/cupertino/images/ui-bg_highlight-hard_100_f9f9f9_1x100.png
+share/yacy/htroot/yacy/ui/css/themes/cupertino/images/ui-bg_highlight-soft_100_e7eef3_1x100.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/cupertino/images/ui-bg_highlight-soft_100_e7eef3_1x100.png
+share/yacy/htroot/yacy/ui/css/themes/cupertino/images/ui-icons_222222_256x240.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/cupertino/images/ui-icons_222222_256x240.png
+share/yacy/htroot/yacy/ui/css/themes/cupertino/images/ui-icons_2694e8_256x240.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/cupertino/images/ui-icons_2694e8_256x240.png
+share/yacy/htroot/yacy/ui/css/themes/cupertino/images/ui-icons_2e83ff_256x240.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/cupertino/images/ui-icons_2e83ff_256x240.png
+share/yacy/htroot/yacy/ui/css/themes/cupertino/images/ui-icons_72a7cf_256x240.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/cupertino/images/ui-icons_72a7cf_256x240.png
+share/yacy/htroot/yacy/ui/css/themes/cupertino/images/ui-icons_888888_256x240.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/cupertino/images/ui-icons_888888_256x240.png
+share/yacy/htroot/yacy/ui/css/themes/cupertino/images/ui-icons_cd0a0a_256x240.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/cupertino/images/ui-icons_cd0a0a_256x240.png
+share/yacy/htroot/yacy/ui/css/themes/cupertino/images/ui-icons_ffffff_256x240.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/cupertino/images/ui-icons_ffffff_256x240.png
+share/yacy/htroot/yacy/ui/css/themes/cupertino/jquery-ui.css
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/cupertino/jquery-ui.css
+share/yacy/htroot/yacy/ui/css/themes/cupertino/ui.accordion.css
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/cupertino/ui.accordion.css
+share/yacy/htroot/yacy/ui/css/themes/cupertino/ui.all.css
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/cupertino/ui.all.css
+share/yacy/htroot/yacy/ui/css/themes/cupertino/ui.base.css
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/cupertino/ui.base.css
+share/yacy/htroot/yacy/ui/css/themes/cupertino/ui.core.css
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/cupertino/ui.core.css
+share/yacy/htroot/yacy/ui/css/themes/cupertino/ui.datepicker.css
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/cupertino/ui.datepicker.css
+share/yacy/htroot/yacy/ui/css/themes/cupertino/ui.dialog.css
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/cupertino/ui.dialog.css
+share/yacy/htroot/yacy/ui/css/themes/cupertino/ui.progressbar.css
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/cupertino/ui.progressbar.css
+share/yacy/htroot/yacy/ui/css/themes/cupertino/ui.resizable.css
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/cupertino/ui.resizable.css
+share/yacy/htroot/yacy/ui/css/themes/cupertino/ui.slider.css
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/cupertino/ui.slider.css
+share/yacy/htroot/yacy/ui/css/themes/cupertino/ui.tabs.css
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/cupertino/ui.tabs.css
+share/yacy/htroot/yacy/ui/css/themes/cupertino/ui.theme.css
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/cupertino/ui.theme.css
+share/yacy/htroot/yacy/ui/css/themes/darkness/
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/darkness/
+share/yacy/htroot/yacy/ui/css/themes/darkness/images/
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/darkness/images/
+share/yacy/htroot/yacy/ui/css/themes/darkness/images/ui-bg_flat_30_cccccc_40x100.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/darkness/images/ui-bg_flat_30_cccccc_40x100.png
+share/yacy/htroot/yacy/ui/css/themes/darkness/images/ui-bg_flat_50_5c5c5c_40x100.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/darkness/images/ui-bg_flat_50_5c5c5c_40x100.png
+share/yacy/htroot/yacy/ui/css/themes/darkness/images/ui-bg_glass_20_555555_1x400.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/darkness/images/ui-bg_glass_20_555555_1x400.png
+share/yacy/htroot/yacy/ui/css/themes/darkness/images/ui-bg_glass_40_0078a3_1x400.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/darkness/images/ui-bg_glass_40_0078a3_1x400.png
+share/yacy/htroot/yacy/ui/css/themes/darkness/images/ui-bg_glass_40_ffc73d_1x400.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/darkness/images/ui-bg_glass_40_ffc73d_1x400.png
+share/yacy/htroot/yacy/ui/css/themes/darkness/images/ui-bg_gloss-wave_25_333333_500x100.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/darkness/images/ui-bg_gloss-wave_25_333333_500x100.png
+share/yacy/htroot/yacy/ui/css/themes/darkness/images/ui-bg_highlight-soft_80_eeeeee_1x100.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/darkness/images/ui-bg_highlight-soft_80_eeeeee_1x100.png
+share/yacy/htroot/yacy/ui/css/themes/darkness/images/ui-bg_inset-soft_25_000000_1x100.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/darkness/images/ui-bg_inset-soft_25_000000_1x100.png
+share/yacy/htroot/yacy/ui/css/themes/darkness/images/ui-bg_inset-soft_30_f58400_1x100.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/darkness/images/ui-bg_inset-soft_30_f58400_1x100.png
+share/yacy/htroot/yacy/ui/css/themes/darkness/images/ui-icons_222222_256x240.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/darkness/images/ui-icons_222222_256x240.png
+share/yacy/htroot/yacy/ui/css/themes/darkness/images/ui-icons_4b8e0b_256x240.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/darkness/images/ui-icons_4b8e0b_256x240.png
+share/yacy/htroot/yacy/ui/css/themes/darkness/images/ui-icons_a83300_256x240.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/darkness/images/ui-icons_a83300_256x240.png
+share/yacy/htroot/yacy/ui/css/themes/darkness/images/ui-icons_cccccc_256x240.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/darkness/images/ui-icons_cccccc_256x240.png
+share/yacy/htroot/yacy/ui/css/themes/darkness/images/ui-icons_ffffff_256x240.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/darkness/images/ui-icons_ffffff_256x240.png
+share/yacy/htroot/yacy/ui/css/themes/darkness/jquery-ui.css
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/darkness/jquery-ui.css
+share/yacy/htroot/yacy/ui/css/themes/darkness/ui.accordion.css
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/darkness/ui.accordion.css
+share/yacy/htroot/yacy/ui/css/themes/darkness/ui.all.css
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/darkness/ui.all.css
+share/yacy/htroot/yacy/ui/css/themes/darkness/ui.base.css
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/darkness/ui.base.css
+share/yacy/htroot/yacy/ui/css/themes/darkness/ui.core.css
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/darkness/ui.core.css
+share/yacy/htroot/yacy/ui/css/themes/darkness/ui.datepicker.css
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/darkness/ui.datepicker.css
+share/yacy/htroot/yacy/ui/css/themes/darkness/ui.dialog.css
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/darkness/ui.dialog.css
+share/yacy/htroot/yacy/ui/css/themes/darkness/ui.progressbar.css
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/darkness/ui.progressbar.css
+share/yacy/htroot/yacy/ui/css/themes/darkness/ui.resizable.css
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/darkness/ui.resizable.css
+share/yacy/htroot/yacy/ui/css/themes/darkness/ui.slider.css
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/darkness/ui.slider.css
+share/yacy/htroot/yacy/ui/css/themes/darkness/ui.tabs.css
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/darkness/ui.tabs.css
+share/yacy/htroot/yacy/ui/css/themes/darkness/ui.theme.css
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/darkness/ui.theme.css
+share/yacy/htroot/yacy/ui/css/themes/humanity/
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/humanity/
+share/yacy/htroot/yacy/ui/css/themes/humanity/images/
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/humanity/images/
+share/yacy/htroot/yacy/ui/css/themes/humanity/images/ui-bg_flat_75_aaaaaa_40x100.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/humanity/images/ui-bg_flat_75_aaaaaa_40x100.png
+share/yacy/htroot/yacy/ui/css/themes/humanity/images/ui-bg_glass_100_f5f0e5_1x400.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/humanity/images/ui-bg_glass_100_f5f0e5_1x400.png
+share/yacy/htroot/yacy/ui/css/themes/humanity/images/ui-bg_glass_25_cb842e_1x400.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/humanity/images/ui-bg_glass_25_cb842e_1x400.png
+share/yacy/htroot/yacy/ui/css/themes/humanity/images/ui-bg_glass_70_ede4d4_1x400.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/humanity/images/ui-bg_glass_70_ede4d4_1x400.png
+share/yacy/htroot/yacy/ui/css/themes/humanity/images/ui-bg_highlight-hard_100_f4f0ec_1x100.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/humanity/images/ui-bg_highlight-hard_100_f4f0ec_1x100.png
+share/yacy/htroot/yacy/ui/css/themes/humanity/images/ui-bg_highlight-hard_65_fee4bd_1x100.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/humanity/images/ui-bg_highlight-hard_65_fee4bd_1x100.png
+share/yacy/htroot/yacy/ui/css/themes/humanity/images/ui-bg_highlight-hard_75_f5f5b5_1x100.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/humanity/images/ui-bg_highlight-hard_75_f5f5b5_1x100.png
+share/yacy/htroot/yacy/ui/css/themes/humanity/images/ui-bg_inset-soft_100_f4f0ec_1x100.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/humanity/images/ui-bg_inset-soft_100_f4f0ec_1x100.png
+share/yacy/htroot/yacy/ui/css/themes/humanity/images/ui-icons_c47a23_256x240.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/humanity/images/ui-icons_c47a23_256x240.png
+share/yacy/htroot/yacy/ui/css/themes/humanity/images/ui-icons_cb672b_256x240.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/humanity/images/ui-icons_cb672b_256x240.png
+share/yacy/htroot/yacy/ui/css/themes/humanity/images/ui-icons_f08000_256x240.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/humanity/images/ui-icons_f08000_256x240.png
+share/yacy/htroot/yacy/ui/css/themes/humanity/images/ui-icons_f35f07_256x240.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/humanity/images/ui-icons_f35f07_256x240.png
+share/yacy/htroot/yacy/ui/css/themes/humanity/images/ui-icons_ff7519_256x240.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/humanity/images/ui-icons_ff7519_256x240.png
+share/yacy/htroot/yacy/ui/css/themes/humanity/images/ui-icons_ffffff_256x240.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/humanity/images/ui-icons_ffffff_256x240.png
+share/yacy/htroot/yacy/ui/css/themes/humanity/jquery-ui.css
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/humanity/jquery-ui.css
+share/yacy/htroot/yacy/ui/css/themes/humanity/ui.accordion.css
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/humanity/ui.accordion.css
+share/yacy/htroot/yacy/ui/css/themes/humanity/ui.all.css
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/humanity/ui.all.css
+share/yacy/htroot/yacy/ui/css/themes/humanity/ui.base.css
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/humanity/ui.base.css
+share/yacy/htroot/yacy/ui/css/themes/humanity/ui.core.css
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/humanity/ui.core.css
+share/yacy/htroot/yacy/ui/css/themes/humanity/ui.datepicker.css
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/humanity/ui.datepicker.css
+share/yacy/htroot/yacy/ui/css/themes/humanity/ui.dialog.css
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/humanity/ui.dialog.css
+share/yacy/htroot/yacy/ui/css/themes/humanity/ui.progressbar.css
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/humanity/ui.progressbar.css
+share/yacy/htroot/yacy/ui/css/themes/humanity/ui.resizable.css
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/humanity/ui.resizable.css
+share/yacy/htroot/yacy/ui/css/themes/humanity/ui.slider.css
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/humanity/ui.slider.css
+share/yacy/htroot/yacy/ui/css/themes/humanity/ui.tabs.css
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/humanity/ui.tabs.css
+share/yacy/htroot/yacy/ui/css/themes/humanity/ui.theme.css
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/humanity/ui.theme.css
+share/yacy/htroot/yacy/ui/css/themes/redmond/
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/redmond/
+share/yacy/htroot/yacy/ui/css/themes/redmond/images/
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/redmond/images/
+share/yacy/htroot/yacy/ui/css/themes/redmond/images/ui-bg_flat_0_aaaaaa_40x100.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/redmond/images/ui-bg_flat_0_aaaaaa_40x100.png
+share/yacy/htroot/yacy/ui/css/themes/redmond/images/ui-bg_flat_55_fbec88_40x100.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/redmond/images/ui-bg_flat_55_fbec88_40x100.png
+share/yacy/htroot/yacy/ui/css/themes/redmond/images/ui-bg_glass_75_d0e5f5_1x400.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/redmond/images/ui-bg_glass_75_d0e5f5_1x400.png
+share/yacy/htroot/yacy/ui/css/themes/redmond/images/ui-bg_glass_85_dfeffc_1x400.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/redmond/images/ui-bg_glass_85_dfeffc_1x400.png
+share/yacy/htroot/yacy/ui/css/themes/redmond/images/ui-bg_glass_95_fef1ec_1x400.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/redmond/images/ui-bg_glass_95_fef1ec_1x400.png
+share/yacy/htroot/yacy/ui/css/themes/redmond/images/ui-bg_gloss-wave_55_5c9ccc_500x100.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/redmond/images/ui-bg_gloss-wave_55_5c9ccc_500x100.png
+share/yacy/htroot/yacy/ui/css/themes/redmond/images/ui-bg_inset-hard_100_f5f8f9_1x100.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/redmond/images/ui-bg_inset-hard_100_f5f8f9_1x100.png
+share/yacy/htroot/yacy/ui/css/themes/redmond/images/ui-bg_inset-hard_100_fcfdfd_1x100.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/redmond/images/ui-bg_inset-hard_100_fcfdfd_1x100.png
+share/yacy/htroot/yacy/ui/css/themes/redmond/images/ui-icons_217bc0_256x240.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/redmond/images/ui-icons_217bc0_256x240.png
+share/yacy/htroot/yacy/ui/css/themes/redmond/images/ui-icons_2e83ff_256x240.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/redmond/images/ui-icons_2e83ff_256x240.png
+share/yacy/htroot/yacy/ui/css/themes/redmond/images/ui-icons_469bdd_256x240.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/redmond/images/ui-icons_469bdd_256x240.png
+share/yacy/htroot/yacy/ui/css/themes/redmond/images/ui-icons_6da8d5_256x240.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/redmond/images/ui-icons_6da8d5_256x240.png
+share/yacy/htroot/yacy/ui/css/themes/redmond/images/ui-icons_cd0a0a_256x240.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/redmond/images/ui-icons_cd0a0a_256x240.png
+share/yacy/htroot/yacy/ui/css/themes/redmond/images/ui-icons_d8e7f3_256x240.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/redmond/images/ui-icons_d8e7f3_256x240.png
+share/yacy/htroot/yacy/ui/css/themes/redmond/images/ui-icons_f9bd01_256x240.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/redmond/images/ui-icons_f9bd01_256x240.png
+share/yacy/htroot/yacy/ui/css/themes/redmond/jquery-ui.css
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/redmond/jquery-ui.css
+share/yacy/htroot/yacy/ui/css/themes/redmond/ui.accordion.css
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/redmond/ui.accordion.css
+share/yacy/htroot/yacy/ui/css/themes/redmond/ui.all.css
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/redmond/ui.all.css
+share/yacy/htroot/yacy/ui/css/themes/redmond/ui.base.css
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/redmond/ui.base.css
+share/yacy/htroot/yacy/ui/css/themes/redmond/ui.core.css
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/redmond/ui.core.css
+share/yacy/htroot/yacy/ui/css/themes/redmond/ui.datepicker.css
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/redmond/ui.datepicker.css
+share/yacy/htroot/yacy/ui/css/themes/redmond/ui.dialog.css
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/redmond/ui.dialog.css
+share/yacy/htroot/yacy/ui/css/themes/redmond/ui.progressbar.css
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/redmond/ui.progressbar.css
+share/yacy/htroot/yacy/ui/css/themes/redmond/ui.resizable.css
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/redmond/ui.resizable.css
+share/yacy/htroot/yacy/ui/css/themes/redmond/ui.slider.css
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/redmond/ui.slider.css
+share/yacy/htroot/yacy/ui/css/themes/redmond/ui.tabs.css
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/redmond/ui.tabs.css
+share/yacy/htroot/yacy/ui/css/themes/redmond/ui.theme.css
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/redmond/ui.theme.css
+share/yacy/htroot/yacy/ui/css/themes/smoothness/
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/smoothness/
+share/yacy/htroot/yacy/ui/css/themes/smoothness/images/
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/smoothness/images/
+share/yacy/htroot/yacy/ui/css/themes/smoothness/images/ui-bg_flat_0_aaaaaa_40x100.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/smoothness/images/ui-bg_flat_0_aaaaaa_40x100.png
+share/yacy/htroot/yacy/ui/css/themes/smoothness/images/ui-bg_flat_75_ffffff_40x100.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/smoothness/images/ui-bg_flat_75_ffffff_40x100.png
+share/yacy/htroot/yacy/ui/css/themes/smoothness/images/ui-bg_glass_55_fbf9ee_1x400.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/smoothness/images/ui-bg_glass_55_fbf9ee_1x400.png
+share/yacy/htroot/yacy/ui/css/themes/smoothness/images/ui-bg_glass_65_ffffff_1x400.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/smoothness/images/ui-bg_glass_65_ffffff_1x400.png
+share/yacy/htroot/yacy/ui/css/themes/smoothness/images/ui-bg_glass_75_dadada_1x400.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/smoothness/images/ui-bg_glass_75_dadada_1x400.png
+share/yacy/htroot/yacy/ui/css/themes/smoothness/images/ui-bg_glass_75_e6e6e6_1x400.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/smoothness/images/ui-bg_glass_75_e6e6e6_1x400.png
+share/yacy/htroot/yacy/ui/css/themes/smoothness/images/ui-bg_glass_95_fef1ec_1x400.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/smoothness/images/ui-bg_glass_95_fef1ec_1x400.png
+share/yacy/htroot/yacy/ui/css/themes/smoothness/images/ui-bg_highlight-soft_75_cccccc_1x100.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/smoothness/images/ui-bg_highlight-soft_75_cccccc_1x100.png
+share/yacy/htroot/yacy/ui/css/themes/smoothness/images/ui-icons_222222_256x240.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/smoothness/images/ui-icons_222222_256x240.png
+share/yacy/htroot/yacy/ui/css/themes/smoothness/images/ui-icons_2e83ff_256x240.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/smoothness/images/ui-icons_2e83ff_256x240.png
+share/yacy/htroot/yacy/ui/css/themes/smoothness/images/ui-icons_454545_256x240.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/smoothness/images/ui-icons_454545_256x240.png
+share/yacy/htroot/yacy/ui/css/themes/smoothness/images/ui-icons_888888_256x240.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/smoothness/images/ui-icons_888888_256x240.png
+share/yacy/htroot/yacy/ui/css/themes/smoothness/images/ui-icons_cd0a0a_256x240.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/smoothness/images/ui-icons_cd0a0a_256x240.png
+share/yacy/htroot/yacy/ui/css/themes/smoothness/jquery-ui.css
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/smoothness/jquery-ui.css
+share/yacy/htroot/yacy/ui/css/themes/smoothness/ui.accordion.css
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/smoothness/ui.accordion.css
+share/yacy/htroot/yacy/ui/css/themes/smoothness/ui.all.css
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/smoothness/ui.all.css
+share/yacy/htroot/yacy/ui/css/themes/smoothness/ui.base.css
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/smoothness/ui.base.css
+share/yacy/htroot/yacy/ui/css/themes/smoothness/ui.core.css
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/smoothness/ui.core.css
+share/yacy/htroot/yacy/ui/css/themes/smoothness/ui.datepicker.css
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/smoothness/ui.datepicker.css
+share/yacy/htroot/yacy/ui/css/themes/smoothness/ui.dialog.css
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/smoothness/ui.dialog.css
+share/yacy/htroot/yacy/ui/css/themes/smoothness/ui.progressbar.css
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/smoothness/ui.progressbar.css
+share/yacy/htroot/yacy/ui/css/themes/smoothness/ui.resizable.css
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/smoothness/ui.resizable.css
+share/yacy/htroot/yacy/ui/css/themes/smoothness/ui.slider.css
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/smoothness/ui.slider.css
+share/yacy/htroot/yacy/ui/css/themes/smoothness/ui.tabs.css
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/smoothness/ui.tabs.css
+share/yacy/htroot/yacy/ui/css/themes/smoothness/ui.theme.css
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/smoothness/ui.theme.css
+share/yacy/htroot/yacy/ui/css/themes/start/
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/start/
+share/yacy/htroot/yacy/ui/css/themes/start/images/
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/start/images/
+share/yacy/htroot/yacy/ui/css/themes/start/images/ui-bg_flat_55_999999_40x100.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/start/images/ui-bg_flat_55_999999_40x100.png
+share/yacy/htroot/yacy/ui/css/themes/start/images/ui-bg_flat_75_aaaaaa_40x100.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/start/images/ui-bg_flat_75_aaaaaa_40x100.png
+share/yacy/htroot/yacy/ui/css/themes/start/images/ui-bg_glass_45_0078ae_1x400.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/start/images/ui-bg_glass_45_0078ae_1x400.png
+share/yacy/htroot/yacy/ui/css/themes/start/images/ui-bg_glass_55_f8da4e_1x400.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/start/images/ui-bg_glass_55_f8da4e_1x400.png
+share/yacy/htroot/yacy/ui/css/themes/start/images/ui-bg_glass_75_79c9ec_1x400.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/start/images/ui-bg_glass_75_79c9ec_1x400.png
+share/yacy/htroot/yacy/ui/css/themes/start/images/ui-bg_gloss-wave_45_e14f1c_500x100.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/start/images/ui-bg_gloss-wave_45_e14f1c_500x100.png
+share/yacy/htroot/yacy/ui/css/themes/start/images/ui-bg_gloss-wave_50_6eac2c_500x100.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/start/images/ui-bg_gloss-wave_50_6eac2c_500x100.png
+share/yacy/htroot/yacy/ui/css/themes/start/images/ui-bg_gloss-wave_75_2191c0_500x100.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/start/images/ui-bg_gloss-wave_75_2191c0_500x100.png
+share/yacy/htroot/yacy/ui/css/themes/start/images/ui-bg_inset-hard_100_fcfdfd_1x100.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/start/images/ui-bg_inset-hard_100_fcfdfd_1x100.png
+share/yacy/htroot/yacy/ui/css/themes/start/images/ui-icons_0078ae_256x240.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/start/images/ui-icons_0078ae_256x240.png
+share/yacy/htroot/yacy/ui/css/themes/start/images/ui-icons_056b93_256x240.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/start/images/ui-icons_056b93_256x240.png
+share/yacy/htroot/yacy/ui/css/themes/start/images/ui-icons_d8e7f3_256x240.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/start/images/ui-icons_d8e7f3_256x240.png
+share/yacy/htroot/yacy/ui/css/themes/start/images/ui-icons_e0fdff_256x240.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/start/images/ui-icons_e0fdff_256x240.png
+share/yacy/htroot/yacy/ui/css/themes/start/images/ui-icons_f5e175_256x240.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/start/images/ui-icons_f5e175_256x240.png
+share/yacy/htroot/yacy/ui/css/themes/start/images/ui-icons_f7a50d_256x240.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/start/images/ui-icons_f7a50d_256x240.png
+share/yacy/htroot/yacy/ui/css/themes/start/images/ui-icons_fcd113_256x240.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/start/images/ui-icons_fcd113_256x240.png
+share/yacy/htroot/yacy/ui/css/themes/start/jquery-ui.css
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/start/jquery-ui.css
+share/yacy/htroot/yacy/ui/css/themes/start/ui.accordion.css
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/start/ui.accordion.css
+share/yacy/htroot/yacy/ui/css/themes/start/ui.all.css
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/start/ui.all.css
+share/yacy/htroot/yacy/ui/css/themes/start/ui.base.css
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/start/ui.base.css
+share/yacy/htroot/yacy/ui/css/themes/start/ui.core.css
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/start/ui.core.css
+share/yacy/htroot/yacy/ui/css/themes/start/ui.datepicker.css
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/start/ui.datepicker.css
+share/yacy/htroot/yacy/ui/css/themes/start/ui.dialog.css
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/start/ui.dialog.css
+share/yacy/htroot/yacy/ui/css/themes/start/ui.progressbar.css
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/start/ui.progressbar.css
+share/yacy/htroot/yacy/ui/css/themes/start/ui.resizable.css
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/start/ui.resizable.css
+share/yacy/htroot/yacy/ui/css/themes/start/ui.slider.css
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/start/ui.slider.css
+share/yacy/htroot/yacy/ui/css/themes/start/ui.tabs.css
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/start/ui.tabs.css
+share/yacy/htroot/yacy/ui/css/themes/start/ui.theme.css
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/themes/start/ui.theme.css
+share/yacy/htroot/yacy/ui/css/widget.css
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/widget.css
+share/yacy/htroot/yacy/ui/css/yacyui-portalsearch.css
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/css/yacyui-portalsearch.css
+share/yacy/htroot/yacy/ui/img/
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img/
+share/yacy/htroot/yacy/ui/img-1/
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img-1/
+share/yacy/htroot/yacy/ui/img-1/Add Appointment.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img-1/Add Appointment.png
+share/yacy/htroot/yacy/ui/img-1/Add Green Button.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img-1/Add Green Button.png
+share/yacy/htroot/yacy/ui/img-1/Add To Favorite.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img-1/Add To Favorite.png
+share/yacy/htroot/yacy/ui/img-1/Add.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img-1/Add.png
+share/yacy/htroot/yacy/ui/img-1/Appointment Cool.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img-1/Appointment Cool.png
+share/yacy/htroot/yacy/ui/img-1/Appointment Urgent.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img-1/Appointment Urgent.png
+share/yacy/htroot/yacy/ui/img-1/Audio CD.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img-1/Audio CD.png
+share/yacy/htroot/yacy/ui/img-1/Audio Document.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img-1/Audio Document.png
+share/yacy/htroot/yacy/ui/img-1/Backup Green Button.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img-1/Backup Green Button.png
+share/yacy/htroot/yacy/ui/img-1/Bandwidth.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img-1/Bandwidth.png
+share/yacy/htroot/yacy/ui/img-1/Blue Ball.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img-1/Blue Ball.png
+share/yacy/htroot/yacy/ui/img-1/CD.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img-1/CD.png
+share/yacy/htroot/yacy/ui/img-1/Cancel Red Button.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img-1/Cancel Red Button.png
+share/yacy/htroot/yacy/ui/img-1/Clear Green Button.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img-1/Clear Green Button.png
+share/yacy/htroot/yacy/ui/img-1/Coherence.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img-1/Coherence.png
+share/yacy/htroot/yacy/ui/img-1/Desktop.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img-1/Desktop.png
+share/yacy/htroot/yacy/ui/img-1/Discussion.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img-1/Discussion.png
+share/yacy/htroot/yacy/ui/img-1/Document.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img-1/Document.png
+share/yacy/htroot/yacy/ui/img-1/Donate.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img-1/Donate.png
+share/yacy/htroot/yacy/ui/img-1/Eject Blue Button.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img-1/Eject Blue Button.png
+share/yacy/htroot/yacy/ui/img-1/Export To Audio Document.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img-1/Export To Audio Document.png
+share/yacy/htroot/yacy/ui/img-1/Export To Document.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img-1/Export To Document.png
+share/yacy/htroot/yacy/ui/img-1/Export To Movie Document.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img-1/Export To Movie Document.png
+share/yacy/htroot/yacy/ui/img-1/Export To Picture Document.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img-1/Export To Picture Document.png
+share/yacy/htroot/yacy/ui/img-1/Favorite.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img-1/Favorite.png
+share/yacy/htroot/yacy/ui/img-1/Forward Mail.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img-1/Forward Mail.png
+share/yacy/htroot/yacy/ui/img-1/Fullscreen.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img-1/Fullscreen.png
+share/yacy/htroot/yacy/ui/img-1/Gear Alt.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img-1/Gear Alt.png
+share/yacy/htroot/yacy/ui/img-1/Gear.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img-1/Gear.png
+share/yacy/htroot/yacy/ui/img-1/Get Document.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img-1/Get Document.png
+share/yacy/htroot/yacy/ui/img-1/Get Info Blue Button.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img-1/Get Info Blue Button.png
+share/yacy/htroot/yacy/ui/img-1/Get Info Purple Button.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img-1/Get Info Purple Button.png
+share/yacy/htroot/yacy/ui/img-1/Get Mail.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img-1/Get Mail.png
+share/yacy/htroot/yacy/ui/img-1/Green Ball.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img-1/Green Ball.png
+share/yacy/htroot/yacy/ui/img-1/Grey Ball.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img-1/Grey Ball.png
+share/yacy/htroot/yacy/ui/img-1/Help Blue Button.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img-1/Help Blue Button.png
+share/yacy/htroot/yacy/ui/img-1/Help Purple Button.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img-1/Help Purple Button.png
+share/yacy/htroot/yacy/ui/img-1/History.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img-1/History.png
+share/yacy/htroot/yacy/ui/img-1/Import Audio Document.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img-1/Import Audio Document.png
+share/yacy/htroot/yacy/ui/img-1/Import Document.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img-1/Import Document.png
+share/yacy/htroot/yacy/ui/img-1/Import Movie Document.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img-1/Import Movie Document.png
+share/yacy/htroot/yacy/ui/img-1/Import Picture Document.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img-1/Import Picture Document.png
+share/yacy/htroot/yacy/ui/img-1/Internet History.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img-1/Internet History.png
+share/yacy/htroot/yacy/ui/img-1/Mail.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img-1/Mail.png
+share/yacy/htroot/yacy/ui/img-1/Menu Item.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img-1/Menu Item.png
+share/yacy/htroot/yacy/ui/img-1/Menu.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img-1/Menu.png
+share/yacy/htroot/yacy/ui/img-1/Minus Green Button.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img-1/Minus Green Button.png
+share/yacy/htroot/yacy/ui/img-1/Minus Red Button.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img-1/Minus Red Button.png
+share/yacy/htroot/yacy/ui/img-1/Movie CD.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img-1/Movie CD.png
+share/yacy/htroot/yacy/ui/img-1/Movie Document.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img-1/Movie Document.png
+share/yacy/htroot/yacy/ui/img-1/Mr. Bomb.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img-1/Mr. Bomb.png
+share/yacy/htroot/yacy/ui/img-1/Network.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img-1/Network.png
+share/yacy/htroot/yacy/ui/img-1/New Document.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img-1/New Document.png
+share/yacy/htroot/yacy/ui/img-1/New Mail.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img-1/New Mail.png
+share/yacy/htroot/yacy/ui/img-1/Orange Ball.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img-1/Orange Ball.png
+share/yacy/htroot/yacy/ui/img-1/Pause All.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img-1/Pause All.png
+share/yacy/htroot/yacy/ui/img-1/Pause Blue Button.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img-1/Pause Blue Button.png
+share/yacy/htroot/yacy/ui/img-1/Pause Green Button.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img-1/Pause Green Button.png
+share/yacy/htroot/yacy/ui/img-1/Pause.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img-1/Pause.png
+share/yacy/htroot/yacy/ui/img-1/Picture CD.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img-1/Picture CD.png
+share/yacy/htroot/yacy/ui/img-1/Picture Document.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img-1/Picture Document.png
+share/yacy/htroot/yacy/ui/img-1/Play All.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img-1/Play All.png
+share/yacy/htroot/yacy/ui/img-1/Play Blue Button.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img-1/Play Blue Button.png
+share/yacy/htroot/yacy/ui/img-1/Play Green Button.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img-1/Play Green Button.png
+share/yacy/htroot/yacy/ui/img-1/Play.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img-1/Play.png
+share/yacy/htroot/yacy/ui/img-1/Plugin Green Button.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img-1/Plugin Green Button.png
+share/yacy/htroot/yacy/ui/img-1/Purple Ball.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img-1/Purple Ball.png
+share/yacy/htroot/yacy/ui/img-1/Record Button.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img-1/Record Button.png
+share/yacy/htroot/yacy/ui/img-1/Record Red Button.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img-1/Record Red Button.png
+share/yacy/htroot/yacy/ui/img-1/Red Ball.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img-1/Red Ball.png
+share/yacy/htroot/yacy/ui/img-1/Remove Appointment.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img-1/Remove Appointment.png
+share/yacy/htroot/yacy/ui/img-1/Remove Document.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img-1/Remove Document.png
+share/yacy/htroot/yacy/ui/img-1/Remove.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img-1/Remove.png
+share/yacy/htroot/yacy/ui/img-1/Rename Document.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img-1/Rename Document.png
+share/yacy/htroot/yacy/ui/img-1/Run.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img-1/Run.png
+share/yacy/htroot/yacy/ui/img-1/Send Document.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img-1/Send Document.png
+share/yacy/htroot/yacy/ui/img-1/Send Mail.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img-1/Send Mail.png
+share/yacy/htroot/yacy/ui/img-1/Smiley Blue.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img-1/Smiley Blue.png
+share/yacy/htroot/yacy/ui/img-1/Smiley Sad Blue.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img-1/Smiley Sad Blue.png
+share/yacy/htroot/yacy/ui/img-1/Smiley Sad.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img-1/Smiley Sad.png
+share/yacy/htroot/yacy/ui/img-1/Smiley Star Pink.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img-1/Smiley Star Pink.png
+share/yacy/htroot/yacy/ui/img-1/Smiley Star Sad.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img-1/Smiley Star Sad.png
+share/yacy/htroot/yacy/ui/img-1/Smiley Star.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img-1/Smiley Star.png
+share/yacy/htroot/yacy/ui/img-1/Smiley.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img-1/Smiley.png
+share/yacy/htroot/yacy/ui/img-1/Spotlight Blue Button.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img-1/Spotlight Blue Button.png
+share/yacy/htroot/yacy/ui/img-1/Star.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img-1/Star.png
+share/yacy/htroot/yacy/ui/img-1/Stop All.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img-1/Stop All.png
+share/yacy/htroot/yacy/ui/img-1/Stop Green Button.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img-1/Stop Green Button.png
+share/yacy/htroot/yacy/ui/img-1/Stop Red Button.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img-1/Stop Red Button.png
+share/yacy/htroot/yacy/ui/img-1/Stop.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img-1/Stop.png
+share/yacy/htroot/yacy/ui/img-1/Terminal.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img-1/Terminal.png
+share/yacy/htroot/yacy/ui/img-1/Transfer Document.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img-1/Transfer Document.png
+share/yacy/htroot/yacy/ui/img-1/Transfer.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img-1/Transfer.png
+share/yacy/htroot/yacy/ui/img-1/Trash Empty.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img-1/Trash Empty.png
+share/yacy/htroot/yacy/ui/img-1/Trash Full.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img-1/Trash Full.png
+share/yacy/htroot/yacy/ui/img-1/Universal Binary.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img-1/Universal Binary.png
+share/yacy/htroot/yacy/ui/img-1/Unread Mail Alt.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img-1/Unread Mail Alt.png
+share/yacy/htroot/yacy/ui/img-1/Unread Mail.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img-1/Unread Mail.png
+share/yacy/htroot/yacy/ui/img-1/User.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img-1/User.png
+share/yacy/htroot/yacy/ui/img-1/Users.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img-1/Users.png
+share/yacy/htroot/yacy/ui/img-1/Web Browser.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img-1/Web Browser.png
+share/yacy/htroot/yacy/ui/img-1/Write Document.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img-1/Write Document.png
+share/yacy/htroot/yacy/ui/img-1/Yellow Ball.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img-1/Yellow Ball.png
+share/yacy/htroot/yacy/ui/img-1/home.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img-1/home.png
+share/yacy/htroot/yacy/ui/img-1/iChat Alt.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img-1/iChat Alt.png
+share/yacy/htroot/yacy/ui/img-1/iChat.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img-1/iChat.png
+share/yacy/htroot/yacy/ui/img-1/readme.txt
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img-1/readme.txt
+share/yacy/htroot/yacy/ui/img-2/
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img-2/
+share/yacy/htroot/yacy/ui/img-2/accept.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img-2/accept.png
+share/yacy/htroot/yacy/ui/img-2/accept_blue.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img-2/accept_blue.png
+share/yacy/htroot/yacy/ui/img-2/accept_green.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img-2/accept_green.png
+share/yacy/htroot/yacy/ui/img-2/arrow_2_left_round.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img-2/arrow_2_left_round.png
+share/yacy/htroot/yacy/ui/img-2/arrow_2_right_round.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img-2/arrow_2_right_round.png
+share/yacy/htroot/yacy/ui/img-2/arrow_left_blue_round.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img-2/arrow_left_blue_round.png
+share/yacy/htroot/yacy/ui/img-2/arrow_right_blue_round.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img-2/arrow_right_blue_round.png
+share/yacy/htroot/yacy/ui/img-2/article.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img-2/article.png
+share/yacy/htroot/yacy/ui/img-2/article_text.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img-2/article_text.png
+share/yacy/htroot/yacy/ui/img-2/bar_graph.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img-2/bar_graph.png
+share/yacy/htroot/yacy/ui/img-2/burst.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img-2/burst.png
+share/yacy/htroot/yacy/ui/img-2/calendar.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img-2/calendar.png
+share/yacy/htroot/yacy/ui/img-2/calendar2.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img-2/calendar2.png
+share/yacy/htroot/yacy/ui/img-2/cancel.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img-2/cancel.png
+share/yacy/htroot/yacy/ui/img-2/cancel_round.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img-2/cancel_round.png
+share/yacy/htroot/yacy/ui/img-2/clock.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img-2/clock.png
+share/yacy/htroot/yacy/ui/img-2/code.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img-2/code.png
+share/yacy/htroot/yacy/ui/img-2/comment_blue.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img-2/comment_blue.png
+share/yacy/htroot/yacy/ui/img-2/dollar.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img-2/dollar.png
+share/yacy/htroot/yacy/ui/img-2/double_comment.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img-2/double_comment.png
+share/yacy/htroot/yacy/ui/img-2/download.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img-2/download.png
+share/yacy/htroot/yacy/ui/img-2/envelope.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img-2/envelope.png
+share/yacy/htroot/yacy/ui/img-2/flag_black.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img-2/flag_black.png
+share/yacy/htroot/yacy/ui/img-2/flag_blue.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img-2/flag_blue.png
+share/yacy/htroot/yacy/ui/img-2/flag_green.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img-2/flag_green.png
+share/yacy/htroot/yacy/ui/img-2/flag_orange.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img-2/flag_orange.png
+share/yacy/htroot/yacy/ui/img-2/flag_red.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img-2/flag_red.png
+share/yacy/htroot/yacy/ui/img-2/flag_yellow.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img-2/flag_yellow.png
+share/yacy/htroot/yacy/ui/img-2/folder.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img-2/folder.png
+share/yacy/htroot/yacy/ui/img-2/info.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img-2/info.png
+share/yacy/htroot/yacy/ui/img-2/link.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img-2/link.png
+share/yacy/htroot/yacy/ui/img-2/lock.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img-2/lock.png
+share/yacy/htroot/yacy/ui/img-2/magnify.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img-2/magnify.png
+share/yacy/htroot/yacy/ui/img-2/minus.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img-2/minus.png
+share/yacy/htroot/yacy/ui/img-2/minus_round.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img-2/minus_round.png
+share/yacy/htroot/yacy/ui/img-2/money.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img-2/money.png
+share/yacy/htroot/yacy/ui/img-2/new.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img-2/new.png
+share/yacy/htroot/yacy/ui/img-2/pencil.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img-2/pencil.png
+share/yacy/htroot/yacy/ui/img-2/pictures.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img-2/pictures.png
+share/yacy/htroot/yacy/ui/img-2/plus.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img-2/plus.png
+share/yacy/htroot/yacy/ui/img-2/printer.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img-2/printer.png
+share/yacy/htroot/yacy/ui/img-2/question_blue.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img-2/question_blue.png
+share/yacy/htroot/yacy/ui/img-2/readme.txt
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img-2/readme.txt
+share/yacy/htroot/yacy/ui/img-2/refresh.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img-2/refresh.png
+share/yacy/htroot/yacy/ui/img-2/rss.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img-2/rss.png
+share/yacy/htroot/yacy/ui/img-2/rss_round.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img-2/rss_round.png
+share/yacy/htroot/yacy/ui/img-2/security_green.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img-2/security_green.png
+share/yacy/htroot/yacy/ui/img-2/security_orange.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img-2/security_orange.png
+share/yacy/htroot/yacy/ui/img-2/security_red.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img-2/security_red.png
+share/yacy/htroot/yacy/ui/img-2/star.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img-2/star.png
+share/yacy/htroot/yacy/ui/img-2/star_blue.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img-2/star_blue.png
+share/yacy/htroot/yacy/ui/img-2/stop.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img-2/stop.png
+share/yacy/htroot/yacy/ui/img-2/stop_round.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img-2/stop_round.png
+share/yacy/htroot/yacy/ui/img-2/upload.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img-2/upload.png
+share/yacy/htroot/yacy/ui/img-2/world.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img-2/world.png
+share/yacy/htroot/yacy/ui/img-2/world2.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img-2/world2.png
+share/yacy/htroot/yacy/ui/img/add.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img/add.png
+share/yacy/htroot/yacy/ui/img/asc.gif
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img/asc.gif
+share/yacy/htroot/yacy/ui/img/bg.gif
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img/bg.gif
+share/yacy/htroot/yacy/ui/img/blacklist.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img/blacklist.png
+share/yacy/htroot/yacy/ui/img/bookmark.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img/bookmark.png
+share/yacy/htroot/yacy/ui/img/cancel.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img/cancel.png
+share/yacy/htroot/yacy/ui/img/close.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img/close.png
+share/yacy/htroot/yacy/ui/img/crawl.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img/crawl.png
+share/yacy/htroot/yacy/ui/img/desc.gif
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img/desc.gif
+share/yacy/htroot/yacy/ui/img/first.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img/first.png
+share/yacy/htroot/yacy/ui/img/flexigrid/
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img/flexigrid/
+share/yacy/htroot/yacy/ui/img/flexigrid/bg.gif
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img/flexigrid/bg.gif
+share/yacy/htroot/yacy/ui/img/flexigrid/btn-sprite.gif
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img/flexigrid/btn-sprite.gif
+share/yacy/htroot/yacy/ui/img/flexigrid/ddn.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img/flexigrid/ddn.png
+share/yacy/htroot/yacy/ui/img/flexigrid/dn.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img/flexigrid/dn.png
+share/yacy/htroot/yacy/ui/img/flexigrid/fhbg.gif
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img/flexigrid/fhbg.gif
+share/yacy/htroot/yacy/ui/img/flexigrid/first.gif
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img/flexigrid/first.gif
+share/yacy/htroot/yacy/ui/img/flexigrid/hl.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img/flexigrid/hl.png
+share/yacy/htroot/yacy/ui/img/flexigrid/last.gif
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img/flexigrid/last.gif
+share/yacy/htroot/yacy/ui/img/flexigrid/line.gif
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img/flexigrid/line.gif
+share/yacy/htroot/yacy/ui/img/flexigrid/load.gif
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img/flexigrid/load.gif
+share/yacy/htroot/yacy/ui/img/flexigrid/load.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img/flexigrid/load.png
+share/yacy/htroot/yacy/ui/img/flexigrid/magnifier.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img/flexigrid/magnifier.png
+share/yacy/htroot/yacy/ui/img/flexigrid/next.gif
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img/flexigrid/next.gif
+share/yacy/htroot/yacy/ui/img/flexigrid/prev.gif
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img/flexigrid/prev.gif
+share/yacy/htroot/yacy/ui/img/flexigrid/up.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img/flexigrid/up.png
+share/yacy/htroot/yacy/ui/img/flexigrid/uup.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img/flexigrid/uup.png
+share/yacy/htroot/yacy/ui/img/flexigrid/wbg.gif
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img/flexigrid/wbg.gif
+share/yacy/htroot/yacy/ui/img/kaskelix.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img/kaskelix.png
+share/yacy/htroot/yacy/ui/img/last.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img/last.png
+share/yacy/htroot/yacy/ui/img/loading.gif
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img/loading.gif
+share/yacy/htroot/yacy/ui/img/loading2.gif
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img/loading2.gif
+share/yacy/htroot/yacy/ui/img/next.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img/next.png
+share/yacy/htroot/yacy/ui/img/prev.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img/prev.png
+share/yacy/htroot/yacy/ui/img/tags/
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img/tags/
+share/yacy/htroot/yacy/ui/img/tags/readme.txt
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img/tags/readme.txt
+share/yacy/htroot/yacy/ui/img/tags/tag_blue.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img/tags/tag_blue.png
+share/yacy/htroot/yacy/ui/img/tags/tag_blue_add.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img/tags/tag_blue_add.png
+share/yacy/htroot/yacy/ui/img/tags/tag_blue_delete.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img/tags/tag_blue_delete.png
+share/yacy/htroot/yacy/ui/img/tags/tag_blue_edit.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img/tags/tag_blue_edit.png
+share/yacy/htroot/yacy/ui/img/tags/tag_green.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img/tags/tag_green.png
+share/yacy/htroot/yacy/ui/img/tags/tag_orange.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img/tags/tag_orange.png
+share/yacy/htroot/yacy/ui/img/tags/tag_pink.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img/tags/tag_pink.png
+share/yacy/htroot/yacy/ui/img/tags/tag_purple.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img/tags/tag_purple.png
+share/yacy/htroot/yacy/ui/img/tags/tag_red.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img/tags/tag_red.png
+share/yacy/htroot/yacy/ui/img/tags/tag_yellow.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img/tags/tag_yellow.png
+share/yacy/htroot/yacy/ui/img/treeview/
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img/treeview/
+share/yacy/htroot/yacy/ui/img/treeview/file.gif
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img/treeview/file.gif
+share/yacy/htroot/yacy/ui/img/treeview/folder-closed.gif
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img/treeview/folder-closed.gif
+share/yacy/htroot/yacy/ui/img/treeview/folder.gif
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img/treeview/folder.gif
+share/yacy/htroot/yacy/ui/img/treeview/minus.gif
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img/treeview/minus.gif
+share/yacy/htroot/yacy/ui/img/treeview/plus.gif
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img/treeview/plus.gif
+share/yacy/htroot/yacy/ui/img/treeview/treeview-black-line.gif
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img/treeview/treeview-black-line.gif
+share/yacy/htroot/yacy/ui/img/treeview/treeview-black.gif
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img/treeview/treeview-black.gif
+share/yacy/htroot/yacy/ui/img/treeview/treeview-default-line.gif
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img/treeview/treeview-default-line.gif
+share/yacy/htroot/yacy/ui/img/treeview/treeview-default.gif
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img/treeview/treeview-default.gif
+share/yacy/htroot/yacy/ui/img/treeview/treeview-famfamfam-line.gif
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img/treeview/treeview-famfamfam-line.gif
+share/yacy/htroot/yacy/ui/img/treeview/treeview-famfamfam.gif
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img/treeview/treeview-famfamfam.gif
+share/yacy/htroot/yacy/ui/img/treeview/treeview-gray-line.gif
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img/treeview/treeview-gray-line.gif
+share/yacy/htroot/yacy/ui/img/treeview/treeview-gray.gif
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img/treeview/treeview-gray.gif
+share/yacy/htroot/yacy/ui/img/treeview/treeview-red-line.gif
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img/treeview/treeview-red-line.gif
+share/yacy/htroot/yacy/ui/img/treeview/treeview-red.gif
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img/treeview/treeview-red.gif
+share/yacy/htroot/yacy/ui/img/yacy-logo.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img/yacy-logo.png
+share/yacy/htroot/yacy/ui/img/yacy-logo2.png
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/img/yacy-logo2.png
+share/yacy/htroot/yacy/ui/index.html
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/index.html
+share/yacy/htroot/yacy/ui/js/
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/js/
+share/yacy/htroot/yacy/ui/js/jquery-1.3.2.min.js
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/js/jquery-1.3.2.min.js
+share/yacy/htroot/yacy/ui/js/jquery-faviconize-1.0.js
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/js/jquery-faviconize-1.0.js
+share/yacy/htroot/yacy/ui/js/jquery-flexigrid.js
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/js/jquery-flexigrid.js
+share/yacy/htroot/yacy/ui/js/jquery-ui-1.7.2.min.js
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/js/jquery-ui-1.7.2.min.js
+share/yacy/htroot/yacy/ui/js/jquery.autocomplete.yacy.js
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/js/jquery.autocomplete.yacy.js
+share/yacy/htroot/yacy/ui/js/jquery.colorpicker.js
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/js/jquery.colorpicker.js
+share/yacy/htroot/yacy/ui/js/jquery.dimensions.min.js
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/js/jquery.dimensions.min.js
+share/yacy/htroot/yacy/ui/js/jquery.field.min.js
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/js/jquery.field.min.js
+share/yacy/htroot/yacy/ui/js/jquery.form.js
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/js/jquery.form.js
+share/yacy/htroot/yacy/ui/js/jquery.metadata.min.js
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/js/jquery.metadata.min.js
+share/yacy/htroot/yacy/ui/js/jquery.query.js
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/js/jquery.query.js
+share/yacy/htroot/yacy/ui/js/jquery.scrollTo-min.js
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/js/jquery.scrollTo-min.js
+share/yacy/htroot/yacy/ui/js/jquery.serialScroll-min.js
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/js/jquery.serialScroll-min.js
+share/yacy/htroot/yacy/ui/js/jquery.tagcloud.js
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/js/jquery.tagcloud.js
+share/yacy/htroot/yacy/ui/js/jquery.tinysort.min.js
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/js/jquery.tinysort.min.js
+share/yacy/htroot/yacy/ui/js/jquery.treeview.async.js
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/js/jquery.treeview.async.js
+share/yacy/htroot/yacy/ui/js/jquery.treeview.min.js
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/js/jquery.treeview.min.js
+share/yacy/htroot/yacy/ui/js/jquery.ui.all.min.js
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/js/jquery.ui.all.min.js
+share/yacy/htroot/yacy/ui/js/yacyui-portalsearch.js
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/js/yacyui-portalsearch.js
+share/yacy/htroot/yacy/ui/sidebar/
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/sidebar/
+share/yacy/htroot/yacy/ui/sidebar/sidebar_1.html
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/sidebar/sidebar_1.html
+share/yacy/htroot/yacy/ui/sidebar/sidebar_2.html
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/sidebar/sidebar_2.html
+share/yacy/htroot/yacy/ui/xsl/
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/xsl/
+share/yacy/htroot/yacy/ui/xsl/xbel2folder-ul.xsl
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/xsl/xbel2folder-ul.xsl
+share/yacy/htroot/yacy/ui/yacyui-admin.html
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/yacyui-admin.html
+share/yacy/htroot/yacy/ui/yacyui-bookmarks.html
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/yacyui-bookmarks.html
+share/yacy/htroot/yacy/ui/yacyui-search.html
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/yacyui-search.html
+share/yacy/htroot/yacy/ui/yacyui-view-log.html
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/yacyui-view-log.html
+share/yacy/htroot/yacy/ui/yacyui-welcome.html
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/yacyui-welcome.html
+share/yacy/htroot/yacy/ui/yacyui-widget.html
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/yacyui-widget.html
+share/yacy/htroot/yacy/ui/yacyuisearch.html
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/ui/yacyuisearch.html
+share/yacy/htroot/yacy/urls.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/urls.class
+share/yacy/htroot/yacy/urls.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/urls.java
+share/yacy/htroot/yacy/urls.xml
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacy/urls.xml
+share/yacy/htroot/yacyinteractive.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacyinteractive.class
+share/yacy/htroot/yacyinteractive.html
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacyinteractive.html
+share/yacy/htroot/yacyinteractive.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacyinteractive.java
+share/yacy/htroot/yacysearch.atom
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacysearch.atom
+share/yacy/htroot/yacysearch.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacysearch.class
+share/yacy/htroot/yacysearch.html
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacysearch.html
+share/yacy/htroot/yacysearch.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacysearch.java
+share/yacy/htroot/yacysearch.json
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacysearch.json
+share/yacy/htroot/yacysearch.rss
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacysearch.rss
+share/yacy/htroot/yacysearch.xsl
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacysearch.xsl
+share/yacy/htroot/yacysearch_location.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacysearch_location.class
+share/yacy/htroot/yacysearch_location.html
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacysearch_location.html
+share/yacy/htroot/yacysearch_location.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacysearch_location.java
+share/yacy/htroot/yacysearch_location.kml
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacysearch_location.kml
+share/yacy/htroot/yacysearch_location.rss
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacysearch_location.rss
+share/yacy/htroot/yacysearch_location.xml
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacysearch_location.xml
+share/yacy/htroot/yacysearchitem.atom
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacysearchitem.atom
+share/yacy/htroot/yacysearchitem.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacysearchitem.class
+share/yacy/htroot/yacysearchitem.html
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacysearchitem.html
+share/yacy/htroot/yacysearchitem.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacysearchitem.java
+share/yacy/htroot/yacysearchitem.json
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacysearchitem.json
+share/yacy/htroot/yacysearchitem.xml
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacysearchitem.xml
+share/yacy/htroot/yacysearchlatestinfo.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacysearchlatestinfo.class
+share/yacy/htroot/yacysearchlatestinfo.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacysearchlatestinfo.java
+share/yacy/htroot/yacysearchlatestinfo.json
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacysearchlatestinfo.json
+share/yacy/htroot/yacysearchtrailer.class
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacysearchtrailer.class
+share/yacy/htroot/yacysearchtrailer.html
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacysearchtrailer.html
+share/yacy/htroot/yacysearchtrailer.java
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacysearchtrailer.java
+share/yacy/htroot/yacysearchtrailer.json
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacysearchtrailer.json
+share/yacy/htroot/yacysearchtrailer.xml
+@sample ${LOCALSTATEDIR}/yacy/htroot/yacysearchtrailer.xml
+share/yacy/lib/
+share/yacy/lib/J7Zip-modified.License
+share/yacy/lib/J7Zip-modified.jar
+share/yacy/lib/apache-mime4j-0.6.License
+share/yacy/lib/apache-mime4j-0.6.jar
+share/yacy/lib/bcmail-jdk15-1.46.License
+share/yacy/lib/bcmail-jdk15-1.46.jar
+share/yacy/lib/bcprov-jdk15-1.46.License
+share/yacy/lib/bcprov-jdk15-1.46.jar
+share/yacy/lib/chardet.License
+share/yacy/lib/chardet.jar
+share/yacy/lib/common-image-3.3.1.jar
+share/yacy/lib/common-io-3.3.1.jar
+share/yacy/lib/common-lang-3.3.1.jar
+share/yacy/lib/commons-codec-1.10.License
+share/yacy/lib/commons-codec-1.10.jar
+share/yacy/lib/commons-compress-1.12.License
+share/yacy/lib/commons-compress-1.12.jar
+share/yacy/lib/commons-fileupload-1.3.2.License
+share/yacy/lib/commons-fileupload-1.3.2.jar
+share/yacy/lib/commons-io-2.5.License
+share/yacy/lib/commons-io-2.5.jar
+share/yacy/lib/commons-jxpath-1.3.License
+share/yacy/lib/commons-jxpath-1.3.jar
+share/yacy/lib/commons-lang-2.6.jar
+share/yacy/lib/commons-logging-1.2.License
+share/yacy/lib/commons-logging-1.2.jar
+share/yacy/lib/fontbox-2.0.3.License
+share/yacy/lib/fontbox-2.0.3.jar
+share/yacy/lib/guava-18.0.jar
+share/yacy/lib/htmllexer.jar
+share/yacy/lib/httpclient-4.5.2.jar
+share/yacy/lib/httpclient-4.5.License
+share/yacy/lib/httpcore-4.4.5.License
+share/yacy/lib/httpcore-4.4.5.jar
+share/yacy/lib/httpmime-4.5.2.jar
+share/yacy/lib/httpmime-4.5.License
+share/yacy/lib/icu4j-57_1.jar
+share/yacy/lib/icu4j.license
+share/yacy/lib/imageio-bmp-3.3.1.jar
+share/yacy/lib/imageio-core-3.3.1.jar
+share/yacy/lib/imageio-metadata-3.3.1.jar
+share/yacy/lib/imageio-tiff-3.3.1.jar
+share/yacy/lib/jakarta-oro-2.0.8.License
+share/yacy/lib/jakarta-oro-2.0.8.jar
+share/yacy/lib/jaudiotagger-2.0.4-20111207.115108-15.License
+share/yacy/lib/jaudiotagger-2.0.4-20111207.115108-15.jar
+share/yacy/lib/javax.servlet-api-3.1.0.jar
+share/yacy/lib/jcifs-1.3.17-LICENSE.txt
+share/yacy/lib/jcifs-1.3.17.jar
+share/yacy/lib/jcl-over-slf4j-1.7.21.jar
+share/yacy/lib/jetty-9.2.19.v20160908.License
+share/yacy/lib/jetty-client-9.2.19.v20160908.jar
+share/yacy/lib/jetty-continuation-9.2.19.v20160908.jar
+share/yacy/lib/jetty-deploy-9.2.19.v20160908.jar
+share/yacy/lib/jetty-http-9.2.19.v20160908.jar
+share/yacy/lib/jetty-io-9.2.19.v20160908.jar
+share/yacy/lib/jetty-jmx-9.2.19.v20160908.jar
+share/yacy/lib/jetty-proxy-9.2.19.v20160908.jar
+share/yacy/lib/jetty-security-9.2.19.v20160908.jar
+share/yacy/lib/jetty-server-9.2.19.v20160908.jar
+share/yacy/lib/jetty-servlet-9.2.19.v20160908.jar
+share/yacy/lib/jetty-servlets-9.2.19.v20160908.jar
+share/yacy/lib/jetty-util-9.2.19.v20160908.jar
+share/yacy/lib/jetty-webapp-9.2.19.v20160908.jar
+share/yacy/lib/jetty-xml-9.2.19.v20160908.jar
+share/yacy/lib/jsch-0.1.53.License
+share/yacy/lib/jsch-0.1.53.jar
+share/yacy/lib/json-simple-1.1.1.License
+share/yacy/lib/json-simple-1.1.1.jar
+share/yacy/lib/jsonic-1.2.0.jar
+share/yacy/lib/jsoup-1.10.1.jar
+share/yacy/lib/jsoup.License
+share/yacy/lib/langdetect.jar
+share/yacy/lib/langdetect.jar.License
+share/yacy/lib/log4j-1.2.17.License
+share/yacy/lib/log4j-over-slf4j-1.7.21.jar
+share/yacy/lib/lucene-analyzers-common-5.5.2.jar
+share/yacy/lib/lucene-analyzers-phonetic-5.5.2.jar
+share/yacy/lib/lucene-backward-codecs-5.5.2.jar
+share/yacy/lib/lucene-classification-5.5.2.jar
+share/yacy/lib/lucene-codecs-5.5.2.jar
+share/yacy/lib/lucene-core-5.5.2.jar
+share/yacy/lib/lucene-facet-5.5.2.jar
+share/yacy/lib/lucene-grouping-5.5.2.jar
+share/yacy/lib/lucene-highlighter-5.5.2.jar
+share/yacy/lib/lucene-join-5.5.2.jar
+share/yacy/lib/lucene-memory-5.5.2.jar
+share/yacy/lib/lucene-misc-5.5.2.jar
+share/yacy/lib/lucene-queries-5.5.2.jar
+share/yacy/lib/lucene-queryparser-5.5.2.jar
+share/yacy/lib/lucene-spatial-5.5.2.jar
+share/yacy/lib/lucene-suggest-5.5.2.jar
+share/yacy/lib/lucene.License
+share/yacy/lib/metadata-extractor-2.9.1.License
+share/yacy/lib/metadata-extractor-2.9.1.jar
+share/yacy/lib/noggit-0.6.jar
+share/yacy/lib/org.restlet.License
+share/yacy/lib/org.restlet.jar
+share/yacy/lib/pdfbox-2.0.3.License
+share/yacy/lib/pdfbox-2.0.3.jar
+share/yacy/lib/poi-3.15.License
+share/yacy/lib/poi-3.15.jar
+share/yacy/lib/poi-scratchpad-3.15.jar
+share/yacy/lib/slf4j-LICENSE.txt
+share/yacy/lib/slf4j-api-1.7.21.jar
+share/yacy/lib/slf4j-jdk14-1.7.21.jar
+share/yacy/lib/solr-core-5.5.2.jar
+share/yacy/lib/solr-solrj-5.5.2.jar
+share/yacy/lib/solr.License
+share/yacy/lib/spatial4j-0.5.jar
+share/yacy/lib/stax2-api-3.1.4.jar
+share/yacy/lib/weupnp-0.1.4.jar
+share/yacy/lib/weupnp.license
+share/yacy/lib/woodstox-core-asl-4.4.1.jar
+share/yacy/lib/xercesImpl.jar
+share/yacy/lib/xercesImpl.license
+share/yacy/lib/xml-apis.jar
+share/yacy/lib/xml-apis.license
+share/yacy/lib/xmpcore-5.1.2.jar
+share/yacy/lib/xmpcore-5.1.2.license
+share/yacy/lib/yacycore.jar
+share/yacy/lib/zookeeper-3.4.6.jar

@@ -1,2 +1,0 @@
-This is a port of xiph.org's cdda paranoia to use libcdio for CDROM access. By
-doing this, cdparanoia runs on platforms other than GNU/Linux.

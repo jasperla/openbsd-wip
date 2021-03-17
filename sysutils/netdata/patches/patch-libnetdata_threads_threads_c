@@ -1,0 +1,14 @@
+$OpenBSD$
+
+Index: libnetdata/threads/threads.c
+--- libnetdata/threads/threads.c.orig
++++ libnetdata/threads/threads.c
+@@ -30,7 +30,7 @@ pid_t gettid(void) {
+ 
+     return (pid_t)pthread_getthreadid_np();
+ 
+-#elif defined(__APPLE__)
++#elif defined(__APPLE__) || defined(__OpenBSD__)
+ 
+     #if (defined __MAC_OS_X_VERSION_MIN_REQUIRED && __MAC_OS_X_VERSION_MIN_REQUIRED >= 1060)
+         uint64_t curthreadid;

@@ -1,0 +1,18 @@
+$OpenBSD$
+Unbreak build.
+
+Index: plugins/linux-v4l2/v4l2-controls.c
+--- plugins/linux-v4l2/v4l2-controls.c.orig
++++ plugins/linux-v4l2/v4l2-controls.c
+@@ -17,7 +17,11 @@ along with this program.  If not, see <http://www.gnu.
+ 
+ #include <fcntl.h>
+ 
++#if defined(__OpenBSD__)
++#include <sys/videoio.h>
++#else
+ #include <linux/videodev2.h>
++#endif
+ #include <libv4l2.h>
+ 
+ #include "v4l2-controls.h"

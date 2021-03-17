@@ -1,0 +1,27 @@
+$OpenBSD$
+
+Index: runtime/phobos/std/parallelism.d
+--- runtime/phobos/std/parallelism.d.orig
++++ runtime/phobos/std/parallelism.d
+@@ -99,6 +99,10 @@ else version(FreeBSD)
+ {
+     version = useSysctlbyname;
+ }
++else version(OpenBSD)
++{
++    version = useSysctlbyname;
++}
+ else version(DragonFlyBSD)
+ {
+     version = useSysctlbyname;
+@@ -173,6 +177,10 @@ else version(useSysctlbyname)
+             auto nameStr = "machdep.cpu.core_count\0".ptr;
+         }
+         else version(FreeBSD)
++        {
++            auto nameStr = "hw.ncpu\0".ptr;
++        }
++        else version(OpenBSD)
+         {
+             auto nameStr = "hw.ncpu\0".ptr;
+         }

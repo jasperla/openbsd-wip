@@ -1,0 +1,14 @@
+$OpenBSD$
+
+Index: druntime-2.096.0/posix.mak
+--- druntime-2.096.0/posix.mak.orig
++++ druntime-2.096.0/posix.mak
+@@ -5,7 +5,7 @@
+ 
+ QUIET:=
+ 
+-DMD_DIR=../dmd
++DMD_DIR=TOPDIR/dmd-2.096.0
+ DUB=dub
+ TOOLS_DIR=../tools
+ 

@@ -1,0 +1,9 @@
+Links main features:
+- Graphics and text browser
+- Easy and quick user control via pull-down menu in both text and
+  graphics mode, in 25 languages.
+- Tables, frames in both graphics and text mode, builtin image
+  display in graphics mode
+
+Flavors:
+	no_x11 - disable X support.

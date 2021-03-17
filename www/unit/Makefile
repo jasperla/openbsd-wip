@@ -1,70 +1,150 @@
 # $OpenBSD$
 
-COMMENT =			Dynamic web and application server
-COMMENT-main =		${COMMENT}
-COMMENT-perl =		Perl support
-COMMENT-go =	Golang support
-COMMENT-python3 =	Python support
-COMMENT-ruby24 =	Ruby support
+V =			1.5
+DISTNAME =		unit-${V}
 
-V =					1.1
-DISTNAME =			unit-${V}
+COMMENT-main =		dynamic web and application server
+COMMENT-go =		Golang support for nGinx Unit
+COMMENT-php71 =		PHP 7.1 support for nGinx Unit
+COMMENT-php72 =		PHP 7.2 support for nGinx Unit
+COMMENT-python27 =	Python 2.7 support for nGinx Unit
+COMMENT-python36 =	Python 3.6 support for nGinx Unit
+COMMENT-ruby24 =	Ruby 2.4 support for nGinx Unit
+COMMENT-ruby25 =	Ruby 2.5 support for nGinx Unit
+
+PKGNAME-main =		${DISTNAME}
+PKGNAME-go =		unit-go-${V}
+PKGNAME-php71 =		unit-php71-${V}
+PKGNAME-php72 =		unit-php72-${V}
+PKGNAME-python27 =	unit-python27-${V}
+PKGNAME-python36 =	unit-python36-${V}
+PKGNAME-ruby24 =	unit-ruby24-${V}
+PKGNAME-ruby25 =	unit-ruby25-${V}
 
 CATEGORIES =		www
-
-HOMEPAGE =			https://unit.nginx.org/
+HOMEPAGE =		https://unit.nginx.org/
 
 PERMIT_PACKAGE_CDROM =	Yes
-
 MASTER_SITES =		https://unit.nginx.org/download/
 
-FLAVORS =			perl go python3 ruby24
+# please keep sorted
+MULTI_PACKAGES =	-main -go -php71 -php72 \
+			-python27 -python36 \
+			-ruby24 -ruby25
+PSEUDO_FLAVORS =	no_go no_php71 no_php72 \
+			no_python27 no_python36 \
+			no_ruby24 no_ruby25
 FLAVOR ?=
+
+WANTLIB-main =		c crypto m perl pthread ssl
+WANTLIB-go =
+WANTLIB-php71 =
+WANTLIB-php72 =
+WANTLIB-python27 =	m pthread python2.7 util
+WANTLIB-python36 =	intl m pthread python3.6m util
+WANTLIB-ruby24 =	gmp m pthread ruby24
+WANTLIB-ruby25 =	gmp m pthread ruby25
+
+# NOTE: don't use port modules for Python/Ruby/PHP, since we need all versions
+
+# for BUILD_PKGPATH
+.include <bsd.port.arch.mk>
+
+RUN_DEPENDS =
+RUN_DEPENDS-go =	${BUILD_PKGPATH},-main \
+			lang/go
+RUN_DEPENDS-php71 =	${BUILD_PKGPATH},-main \
+			lang/php/7.1>=7.1,<7.2
+RUN_DEPENDS-php72 =	${BUILD_PKGPATH},-main \
+			lang/php/7.2>=7.2,<7.3
+RUN_DEPENDS-python27 =	${BUILD_PKGPATH},-main \
+			lang/python/2.7>=2.7,<2.8
+RUN_DEPENDS-python36 =	${BUILD_PKGPATH},-main \
+			lang/python/3.6>=3.6,<3.7
+RUN_DEPENDS-ruby24 =	${BUILD_PKGPATH},-main \
+			lang/ruby/2.4>=2.4,<2.5
+RUN_DEPENDS-ruby25 =	${BUILD_PKGPATH},-main \
+			lang/ruby/2.5>=2.5,<2.6
 
 CONFIGURE_STYLE = 	simple
 
-WANTLIB-main =
-WANTLIB-perl =
-WANTLIB-go =
-WANTLIB-python3 =
-WANTLIB-ruby24 =
-UNIT_MODULE =
+# must be synced with lang/go
+GOPATH =		${LOCALBASE}/go-pkg
+CONFIGURE_ENV =		GOPATH=${GOPATH}
+MAKE_ENV =		GOPATH=${GOPATH}
 
-.if ${FLAVOR:Mperl}
-RUN_DEPENDS-perl = www/unit,-main
-UNIT_MODULE = perl.unit.so
-.elif ${FLAVOR:Mgo}
-RUN_DEPENDS-go = www/unit,-main \
-				 lang/go
-.elif ${FLAVOR:Mpython3}
-RUN_DEPENDS-python3 = www/unit,-main
-MODULES = lang/python
-UNIT_MODULE = python${MODPY_VERSION}.unit.so
-.elif ${FLAVOR:Mruby24}
-RUN_DEPENDS-ruby24 = www/unit,-main
-MODULES = lang/ruby
-UNIT_MODULE = ruby${MODRUBY_BINREV}.unit.so
+# path options
+CONFIGURE_ARGS =	--prefix=${PREFIX} \
+			--modules=lib/unit/modules \
+			--state=${VARBASE}/unit \
+			--tests
+
+# linking options
+CONFIGURE_ARGS +=	--ld-opt="${LDFLAGS} -L${LOCALBASE}/lib" \
+			--openssl
+
+# TODO: separate user
+CONFIGURE_ARGS +=	--user=www \
+			--group=www
+
+CONFIGURE-main =	perl
+CONFIGURE-go =		go --go=${LOCALBASE}/bin/go --go-path=${GOPATH}
+CONFIGURE-php71 =	php --module=php71 \
+			--config=${LOCALBASE}/bin/php-config-7.1 \
+			--lib-path=${LOCALBASE}/lib/php-7.1
+CONFIGURE-php72 =	php --module=php72 \
+			--config=${LOCALBASE}/bin/php-config-7.2 \
+			--lib-path=${LOCALBASE}/lib/php-7.2
+CONFIGURE-python27 =	python --config=python2.7-config
+CONFIGURE-python36 =	python --config=python3.6-config
+CONFIGURE-ruby24 =	ruby --ruby=ruby24
+CONFIGURE-ruby25 =	ruby --ruby=ruby25
+
+.include <bsd.port.arch.mk>
+
+TEST_TARGET =		tests
+TEST_DEPENDS =		lang/python/3.6
+TEST_ENV =		GOPATH=${WRKINST}${PREFIX}/go-pkg:${GOPATH}
+UNIT_MODULES =		perl.unit.so
+
+.if ${BUILD_PACKAGES:M-go}
+BUILD_DEPENDS +=	lang/go
+PORTHOME =		${WRKDIR}
+.endif
+.if ${BUILD_PACKAGES:M-php71}
+BUILD_DEPENDS +=	lang/php/7.1
+.endif
+.if ${BUILD_PACKAGES:M-php72}
+BUILD_DEPENDS +=	lang/php/7.2
+.endif
+.if ${BUILD_PACKAGES:M-python27}
+BUILD_DEPENDS +=	lang/python/2.7
+UNIT_MODULES +=		python2.7.unit.so
+.endif
+.if ${BUILD_PACKAGES:M-python36}
+BUILD_DEPENDS +=	lang/python/3.6
+UNIT_MODULES +=		python3.6.unit.so
+.endif
+.if ${BUILD_PACKAGES:M-ruby24}
+BUILD_DEPENDS +=	lang/ruby/2.4
+TEST_DEPENDS +=		www/ruby-rack,ruby24
+UNIT_MODULES +=		ruby24.unit.so
+.endif
+.if ${BUILD_PACKAGES:M-ruby25}
+BUILD_DEPENDS +=	lang/ruby/2.5
+TEST_DEPENDS +=		www/ruby-rack,ruby25
+UNIT_MODULES +=		ruby25.unit.so
 .endif
 
 post-configure:
-.if ${FLAVOR:Mperl}
-	cd ${WRKBUILD} && ./configure perl
-.elif ${FLAVOR:Mgo}
-	cd ${WRKBUILD} && ./configure go --go-path=${LOCALBASE}/lib
-.elif ${FLAVOR:Mpython3}
-	cd ${WRKBUILD} && ./configure python --config=python${MODPY_VERSION}-config
-.elif ${FLAVOR:Mruby24}
-	cd ${WRKBUILD} && ./configure ruby --ruby=ruby${MODRUBY_BINREV}
-.endif
+.for _s in ${BUILD_PACKAGES}
+	cd ${WRKBUILD}; ./configure ${CONFIGURE${_s}}
+.endfor
 
-pre-install:
-	cp ${WRKSRC}/build/libnxt.a ${PREFIX}/lib 
-	cp ${WRKSRC}/build/unitd ${PREFIX}/sbin
-.if ${UNIT_MODULE}
-	cp ${WRKSRC}/build/${UNIT_MODULE} ${PREFIX}/lib
-.endif
+post-test:
+	cd ${WRKBUILD}/test; ./run.py
 
-
-NO_TEST =		Yes
+pre-test: fake
+	cd ${WRKBUILD}; ln -shf ${WRKINST}${GOPATH} go
 
 .include <bsd.port.mk>

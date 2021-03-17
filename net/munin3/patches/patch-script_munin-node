@@ -1,7 +1,8 @@
 $OpenBSD$
---- script/munin-node.orig	Sun Sep  4 23:04:49 2016
-+++ script/munin-node	Fri Nov  4 11:38:29 2016
-@@ -52,6 +52,9 @@ sub main
+Index: script/munin-node
+--- script/munin-node.orig
++++ script/munin-node
+@@ -55,6 +55,9 @@ sub main
          $ENV{$key} =~ /^(.*)$/;
          $ENV{$key} = $1;
      }

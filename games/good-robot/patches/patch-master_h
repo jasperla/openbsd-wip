@@ -1,0 +1,14 @@
+$OpenBSD$
+
+Index: master.h
+--- master.h.orig
++++ master.h
+@@ -52,7 +52,7 @@ typedef unsigned char uchar;
+ #include <io.h>
+ #include <sys/utime.h>
+ #include <steam/steam_api.h>
+-#elif defined(__linux__) || defined(__APPLE__)
++#elif defined(__linux__) || defined(__APPLE__) || defined(__OpenBSD__)
+ #include <unistd.h>
+ #define _stricmp strcasecmp
+ #define _strdup strdup

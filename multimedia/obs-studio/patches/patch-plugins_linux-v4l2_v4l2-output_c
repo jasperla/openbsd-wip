@@ -1,0 +1,19 @@
+$OpenBSD$
+Unbreak build.
+
+Index: plugins/linux-v4l2/v4l2-output.c
+--- plugins/linux-v4l2/v4l2-output.c.orig
++++ plugins/linux-v4l2/v4l2-output.c
+@@ -1,6 +1,12 @@
+ #include <obs-module.h>
+ #include <util/platform.h>
++
++#if defined(__OpenBSD__)
++#include <sys/videoio.h>
++#else
+ #include <linux/videodev2.h>
++#endif
++
+ #include <sys/ioctl.h>
+ #include <fcntl.h>
+ #include <unistd.h>

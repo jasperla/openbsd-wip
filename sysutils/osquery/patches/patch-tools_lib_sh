@@ -1,0 +1,23 @@
+$OpenBSD$
+
+Index: tools/lib.sh
+--- tools/lib.sh.orig
++++ tools/lib.sh
+@@ -41,6 +41,8 @@ function threads() {
+     eval $__out=`sysctl hw.ncpu | awk '{print $2}'`
+   elif [[ $OS = "freebsd" ]]; then
+     eval $__out=`sysctl -n kern.smp.cpus`
++  elif [[ $OS = "openbsd" ]]; then
++    eval $__out=`sysctl -n hw.ncpuonline`
+   else
+     eval $__out=`nproc`
+   fi
+@@ -154,7 +156,7 @@ function build() {
+   distro $PLATFORM DISTRO
+ 
+   MAKE=make
+-  if [[ "$PLATFORM" = "freebsd" ]]; then
++  if [[ "$PLATFORM" == *"bsd"* ]]; then
+     MAKE=gmake
+   fi
+ 

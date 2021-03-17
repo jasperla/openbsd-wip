@@ -1,0 +1,16 @@
+$OpenBSD$
+
+This needs to return something.
+
+Index: tools/fuzix6303emu/main.c
+--- tools/fuzix6303emu/main.c.orig
++++ tools/fuzix6303emu/main.c
+@@ -63,7 +63,7 @@ void m6800_port_output(struct m6800 *cpu, int port)
+ {}
+ 
+ uint8_t m6800_port_input(struct m6800 *cpu, int port)
+-{}
++{ return 0; }
+ 
+ void showregs(void)
+ {

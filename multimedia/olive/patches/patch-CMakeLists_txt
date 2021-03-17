@@ -1,0 +1,47 @@
+$OpenBSD$
+
+Needs ggrep for -P option but let's not bother with that.
+Don't do translations (they're broken).
+
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -63,7 +63,7 @@ if(EXISTS "${CMAKE_SOURCE_DIR}/.git")
+       OUTPUT_STRIP_TRAILING_WHITESPACE
+     )
+   endif()
+-elseif(UNIX AND NOT APPLE)
++elseif(UNIX AND NOT APPLE AND NOT ${CMAKE_SYSTEM_NAME} MATCHES "OpenBSD")
+   # Fallback for Ubuntu/Launchpad (extracts Git hash from debian/changelog rather than Git repo)
+   # (see https://answers.launchpad.net/launchpad/+question/678556)
+   execute_process(COMMAND sh -c "grep -Po '(?<=-)(([a-z0-9])\\w+)(?=\\+)' -m 1 changelog"
+@@ -417,23 +417,6 @@ set(OLIVE_EFFECTS
+   effects/shaders/wave.xml
+ )
+ 
+-qt5_add_translation(OLIVE_QM_FILES
+-  ts/olive_ar.ts
+-  ts/olive_bs.ts
+-  ts/olive_cs.ts
+-  ts/olive_de.ts
+-  ts/olive_es.ts
+-  ts/olive_fr.ts
+-  ts/olive_it.ts
+-  ts/olive_ru.ts
+-  ts/olive_sr.ts
+-  ts/olive_id.ts
+-  ts/olive_tr.ts
+-  ts/olive_pt-BR.ts
+-  ts/olive_zh-CN.ts
+-  ts/olive_zh-TW.ts
+-)
+-
+ set(OLIVE_TARGET "olive-editor")
+ if(APPLE)
+   set(OLIVE_TARGET "Olive")
+@@ -499,5 +482,4 @@ if(UNIX AND NOT APPLE)
+   install(FILES packaging/linux/icons/128x128/application-vnd.olive-project.png DESTINATION share/icons/hicolor/128x128/mimetypes)
+   install(FILES packaging/linux/icons/256x256/application-vnd.olive-project.png DESTINATION share/icons/hicolor/256x256/mimetypes)
+   install(FILES packaging/linux/icons/512x512/application-vnd.olive-project.png DESTINATION share/icons/hicolor/512x512/mimetypes)
+-  install(FILES ${OLIVE_QM_FILES} DESTINATION share/olive-editor/ts)
+ endif()

@@ -1,0 +1,28 @@
+$OpenBSD$
+
+Fix endianess detection on powerpc (and maybe more BE_ARCHS)
+
+Index: desktop_version/physfs/physfs_internal.h
+--- desktop_version/physfs/physfs_internal.h.orig
++++ desktop_version/physfs/physfs_internal.h
+@@ -221,6 +221,10 @@ extern void SZIP_global_init(void);
+ #include <endian.h>
+ #define PHYSFS_BYTEORDER  __BYTE_ORDER
+ #else /* __linux__ */
++#ifdef __OpenBSD__
++#include <endian.h>
++#define PHYSFS_BYTEORDER BYTE_ORDER
++#else /* __OpenBSD__ */
+ #if defined(__hppa__) || \
+     defined(__m68k__) || defined(mc68000) || defined(_M_M68K) || \
+     (defined(__MIPS__) && defined(__MISPEB__)) || \
+@@ -230,8 +234,8 @@ extern void SZIP_global_init(void);
+ #else
+ #define PHYSFS_BYTEORDER   PHYSFS_LIL_ENDIAN
+ #endif
++#endif /* __OpenBSD__ */
+ #endif /* __linux__ */
+-
+ 
+ /*
+  * When sorting the entries in an archive, we use a modified QuickSort.

@@ -1,0 +1,13 @@
+$OpenBSD$
+
+Index: external/pdfium/UnpackedTarball_pdfium.mk
+--- external/pdfium/UnpackedTarball_pdfium.mk.orig
++++ external/pdfium/UnpackedTarball_pdfium.mk
+@@ -14,6 +14,7 @@ pdfium_patches += ubsan.patch
+ pdfium_patches += build.patch.1
+ # Avoids Windows 8 build dependency.
+ pdfium_patches += windows7.patch.1
++pdfium_patches += pdfium-openbsd.patch
+ 
+ $(eval $(call gb_UnpackedTarball_UnpackedTarball,pdfium))
+ 

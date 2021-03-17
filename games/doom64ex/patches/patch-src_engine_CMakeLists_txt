@@ -1,0 +1,16 @@
+$OpenBSD$
+
+no -ldl on OpenBSD, but we need -lpthread
+
+Index: src/engine/CMakeLists.txt
+--- src/engine/CMakeLists.txt.orig
++++ src/engine/CMakeLists.txt
+@@ -76,7 +76,7 @@ else()
+     system/i_cpu_posix.cc)
+ 
+   set(PLATFORM_LIBRARIES
+-    dl
++    pthread
+     m)
+ 
+ endif()

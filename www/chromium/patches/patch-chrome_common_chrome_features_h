@@ -1,0 +1,23 @@
+$OpenBSD$
+
+Index: chrome/common/chrome_features.h
+--- chrome/common/chrome_features.h.orig
++++ chrome/common/chrome_features.h
+@@ -82,7 +82,7 @@ extern const base::Feature kAppShimNewCloseBehavior;
+ 
+ COMPONENT_EXPORT(CHROME_FEATURES) extern const base::Feature kAsyncDns;
+ 
+-#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_CHROMEOS)
++#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
+ COMPONENT_EXPORT(CHROME_FEATURES)
+ extern const base::Feature kBackgroundModeAllowRestart;
+ #endif  // defined(OS_WIN) || defined(OS_LINUX) || defined(OS_CHROMEOS)
+@@ -228,7 +228,7 @@ COMPONENT_EXPORT(CHROME_FEATURES)
+ extern const base::Feature kEnableAmbientAuthenticationInIncognito;
+ 
+ #if defined(OS_WIN) || (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || \
+-    defined(OS_MAC)
++    defined(OS_MAC) || defined(OS_BSD)
+ COMPONENT_EXPORT(CHROME_FEATURES)
+ extern const base::Feature kEnableEphemeralGuestProfilesOnDesktop;
+ #endif  // defined(OS_WIN) || (defined(OS_LINUX) &6 !defined(OS_CHROMEOS)) ||

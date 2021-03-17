@@ -1,12 +1,13 @@
 $OpenBSD$
---- plugins/node.d/postfix_mailvolume.orig	Sun Aug 16 07:47:06 2015
-+++ plugins/node.d/postfix_mailvolume	Fri Aug 21 17:57:18 2015
-@@ -49,7 +49,7 @@ use Munin::Plugin;
- my $pos   = undef;
- my $volume = 0;
+Index: plugins/node.d/postfix_mailvolume
+--- plugins/node.d/postfix_mailvolume.orig
++++ plugins/node.d/postfix_mailvolume
+@@ -65,7 +65,7 @@ my %expired_queue_ids = ();
+ use constant queue_id_expiry => 6 * 3600;
+ 
  my $LOGDIR  = $ENV{'logdir'}  || '/var/log';
 -my $LOGFILE = $ENV{'logfile'} || 'syslog';
 +my $LOGFILE = $ENV{'logfile'} || 'maillog';
  
+ 
  sub parseLogfile {
-     my ($fname, $start) = @_;

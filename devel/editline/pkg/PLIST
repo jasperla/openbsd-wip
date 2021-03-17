@@ -1,0 +1,10 @@
+@comment $OpenBSD: PLIST,v$
+include/editline.h
+@static-lib lib/libeditline.a
+lib/libeditline.la
+@lib lib/libeditline.so.${LIBeditline_VERSION}
+lib/pkgconfig/libeditline.pc
+@man man/man3/editline.3
+share/doc/editline/
+share/doc/editline/LICENSE
+share/doc/editline/README.md

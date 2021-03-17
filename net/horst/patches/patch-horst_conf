@@ -1,0 +1,14 @@
+$OpenBSD$
+
+Index: horst.conf
+--- horst.conf.orig
++++ horst.conf
+@@ -5,7 +5,7 @@
+ # quiet
+ # debug
+ # add_monitor
+-# interface = interface name (wlan0)
++interface = iwm0
+ # display_view = history|essid|statistics|spectrum
+ # display_interval = milliseconds (100)
+ # outfile = file name for packet dumps

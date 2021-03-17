@@ -1,0 +1,25 @@
+@comment $OpenBSD: PLIST,v$
+@newgroup _geth:831
+@newuser _geth:831:831:daemon:geth Account:${VARBASE}/geth:/sbin/nologin
+@rcscript ${RCDIR}/geth
+@mode 750
+@owner _geth
+@group _geth
+@sample ${VARBASE}/geth/
+@sample ${VARBASE}/geth/data/
+@sample ${VARBASE}/geth/ethash/
+@mode
+@owner
+@group
+@bin bin/abigen
+@bin bin/bootnode
+@bin bin/evm
+@bin bin/geth
+@bin bin/puppeth
+@bin bin/rlpdump
+@bin bin/swarm
+@bin bin/wnode
+@comment share/doc/pkg-readmes/${PKGSTEM}
+share/go-ethereum/
+share/go-ethereum/geth.conf
+@sample ${SYSCONFDIR}/geth.conf

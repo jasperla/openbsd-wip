@@ -1,0 +1,5 @@
+- Determine if we should just build with ports-gcc, as it silences
+  all warnings
+
+- Address segfault after doing `doom64ex -wadgen' step, despite the
+  fact that the file generation succeeds.

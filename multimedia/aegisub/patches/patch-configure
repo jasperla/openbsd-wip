@@ -1,0 +1,25 @@
+$OpenBSD$
+
+Index: configure
+--- configure.orig
++++ configure
+@@ -5941,19 +5941,6 @@ ac_compiler_gnu=$ac_cv_cxx_compiler_gnu
+ 
+ 	}
+ 
+-  # -O* messes with debugging.
+-  if test x$enable_debug = xyes; then :
+-
+-    CFLAGS="$CFLAGS -O0"
+-    CXXFLAGS="$CXXFLAGS -O0"
+-
+-else
+-
+-    CFLAGS="$CFLAGS -O3"
+-    CXXFLAGS="$CXXFLAGS -O3"
+-
+-fi
+-
+ fi
+ 
+ 

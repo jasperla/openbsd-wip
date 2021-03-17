@@ -1,0 +1,5 @@
+Doom64 EX is a recreation of Doom 64 from the Nintendo 64, originally
+created by Midway.  It uses a custom engine, Kex, originally based off
+the now-defunct Doom3D project.  It adds functionality expected from a
+game on a PC such as mouse-look, high-resolution video, networked
+multiplayer, and the ability to create custom Doom 64 mods.

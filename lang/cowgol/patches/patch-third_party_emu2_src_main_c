@@ -1,0 +1,15 @@
+$OpenBSD$
+
+Need signal.h
+
+Index: third_party/emu2/src/main.c
+--- third_party/emu2/src/main.c.orig
++++ third_party/emu2/src/main.c
+@@ -12,6 +12,7 @@
+ #include <errno.h>
+ #include <fcntl.h>
+ #include <math.h>
++#include <signal.h>
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <string.h>

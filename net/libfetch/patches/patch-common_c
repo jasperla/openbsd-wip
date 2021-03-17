@@ -1,0 +1,78 @@
+$OpenBSD$
+
+We don't have SO_NOSIGPIPE.
+Add the FreeBSD strnstr and strchrnul functions.
+
+Index: common.c
+--- common.c.orig
++++ common.c
+@@ -30,7 +30,6 @@
+  */
+ 
+ #include <sys/cdefs.h>
+-__FBSDID("$FreeBSD$");
+ 
+ #include <sys/param.h>
+ #include <sys/socket.h>
+@@ -217,13 +216,11 @@ conn_t *
+ fetch_reopen(int sd)
+ {
+ 	conn_t *conn;
+-	int opt = 1;
+ 
+ 	/* allocate and fill connection structure */
+ 	if ((conn = calloc(1, sizeof(*conn))) == NULL)
+ 		return (NULL);
+ 	fcntl(sd, F_SETFD, FD_CLOEXEC);
+-	setsockopt(sd, SOL_SOCKET, SO_NOSIGPIPE, &opt, sizeof opt);
+ 	conn->sd = sd;
+ 	++conn->ref;
+ 	return (conn);
+@@ -241,7 +238,19 @@ fetch_ref(conn_t *conn)
+ 	return (conn);
+ }
+ 
++static char *
++strchrnul(const char *p, int ch)
++{
++	char c;
+ 
++	c = ch;
++	for (;; ++p) {
++		if (*p == c || *p == '\0')
++			return ((char *)p);
++	}
++	/* NOTREACHED */
++}
++
+ /*
+  * Resolve an address
+  */
+@@ -494,6 +503,27 @@ fetch_ssl_hname_is_only_numbers(const char *hostname, 
+ 			return (0);
+ 	}
+ 	return (1);
++}
++
++static char *
++strnstr(const char *s, const char *find, size_t slen)
++{
++	char c, sc;
++	size_t len;
++
++	if ((c = *find++) != '\0') {
++		len = strlen(find);
++		do {
++			do {
++				if (slen-- < 1 || (sc = *s++) == '\0')
++					return (NULL);
++			} while (sc != c);
++			if (len > slen)
++				return (NULL);
++		} while (strncmp(s, find, len) != 0);
++		s--;
++	}
++	return ((char *)s);
+ }
+ 
+ /*

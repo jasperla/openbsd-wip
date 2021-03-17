@@ -1,6 +1,21 @@
-@comment $OpenBSD$
+@comment $OpenBSD: PLIST-main,v$
 bin/7kaa
 @bin share/7kaa/7kaa
+share/7kaa/RESOURCE/FNT_CASA_88592.RES
+share/7kaa/RESOURCE/FNT_MID_88592.RES
+share/7kaa/RESOURCE/FNT_NEWS_88592.RES
+share/7kaa/RESOURCE/FNT_SAN_88592.RES
+share/7kaa/RESOURCE/FNT_SMAL_88592.RES
+share/7kaa/RESOURCE/FNT_STD_88592.RES
+share/7kaa/SCENARI2/config.txt
+share/7kaa/SCENARIO/config.txt
+share/7kaa/TUTORIAL/config.txt
 share/doc/7kaa/
 share/doc/7kaa/COPYING
 share/doc/7kaa/README
+share/doc/pkg-readmes/${PKGSTEM}
+share/locale/de/LC_MESSAGES/7kaa.mo
+share/locale/es/LC_MESSAGES/7kaa.mo
+share/locale/pl/LC_MESSAGES/7kaa.mo
+share/locale/pt_BR/LC_MESSAGES/7kaa.mo
+share/locale/ru/LC_MESSAGES/7kaa.mo

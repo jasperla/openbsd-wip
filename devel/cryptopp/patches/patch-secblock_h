@@ -1,0 +1,22 @@
+$OpenBSD: patch-secblock_h,v 1.6 2016/10/10 12:55:51 dcoppa Exp $
+Index: secblock.h
+--- secblock.h.orig
++++ secblock.h
+@@ -10,7 +10,7 @@
+ #include "stdcpp.h"
+ #include "misc.h"
+ 
+-#if CRYPTOPP_MSC_VERSION
++#if defined(CRYPTOPP_MSC_VERSION)
+ # pragma warning(push)
+ # pragma warning(disable: 4231 4275 4700)
+ # if (CRYPTOPP_MSC_VERSION >= 1400)
+@@ -892,7 +892,7 @@ __stl_alloc_rebind(CryptoPP::AllocatorWithCleanup<_Tp1
+ 
+ NAMESPACE_END
+ 
+-#if CRYPTOPP_MSC_VERSION
++#if defined(CRYPTOPP_MSC_VERSION)
+ # pragma warning(pop)
+ #endif
+ 

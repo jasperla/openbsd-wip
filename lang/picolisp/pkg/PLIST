@@ -1,4 +1,4 @@
-@comment $OpenBSD$
+@comment $OpenBSD: PLIST,v$
 @bin bin/picolisp
 bin/pil
 lib/picolisp/
@@ -17,6 +17,7 @@ lib/picolisp/lib/complete.l
 lib/picolisp/lib/conDbgc.l
 lib/picolisp/lib/db.l
 lib/picolisp/lib/db32-64.l
+lib/picolisp/lib/dbgc.l
 lib/picolisp/lib/debug.l
 lib/picolisp/lib/ed.l
 lib/picolisp/lib/edit.l
@@ -40,12 +41,11 @@ lib/picolisp/lib/misc.l
 lib/picolisp/lib/native.l
 lib/picolisp/lib/nodroid.l
 lib/picolisp/lib/openGl.l
+lib/picolisp/lib/pdfPage.l
 lib/picolisp/lib/pilog.l
 lib/picolisp/lib/prof.l
 lib/picolisp/lib/ps.l
-lib/picolisp/lib/readline.l
 lib/picolisp/lib/role.l
-lib/picolisp/lib/rsa.l
 lib/picolisp/lib/scrape.l
 lib/picolisp/lib/simul.l
 lib/picolisp/lib/sq.l
@@ -55,9 +55,9 @@ lib/picolisp/lib/test.l
 lib/picolisp/lib/tex.l
 lib/picolisp/lib/tinymce.l
 lib/picolisp/lib/too.l
-lib/picolisp/lib/tsm.l
 lib/picolisp/lib/user.l
 lib/picolisp/lib/vip.l
+lib/picolisp/lib/wide.l
 lib/picolisp/lib/xhtml.l
 lib/picolisp/lib/xm.l
 lib/picolisp/lib/xml.l

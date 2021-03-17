@@ -1,0 +1,16 @@
+$OpenBSD$
+
+Fix build error
+
+Index: Makefile.skel
+--- Makefile.skel.orig
++++ Makefile.skel
+@@ -86,7 +86,7 @@ nwcc: $(CCOBJ) $(CC1OBJ) $(SNAKEOBJ) $(SWEEPEROBJ) lib
+ 	$(CC) $(CFLAGS) $(SNAKEOBJ) -o snake -lpthread
+ 	$(CC) $(CFLAGS) $(SWEEPEROBJ) -o sweeper
+ 	make $(BUILDCPP)
+-	./nwcc -write-fcat
++	-./nwcc -write-fcat
+ 	:
+ 	: All done, you may type "make install" now!
+ 	: You should also do "make test" to ensure that

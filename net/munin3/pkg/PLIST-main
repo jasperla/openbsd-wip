@@ -18,6 +18,8 @@
 @mode
 @owner
 @group
+@rcscript ${RCDIR}/munin_asyncd
+@rcscript ${RCDIR}/munin_node
 bin/munin-async
 bin/munin-asyncd
 bin/munin-doc
@@ -87,7 +89,6 @@ libexec/munin/plugins/courier_mta_mailstats
 libexec/munin/plugins/courier_mta_mailvolume
 libexec/munin/plugins/cpu
 libexec/munin/plugins/cupsys_pages
-libexec/munin/plugins/debug_sincos
 libexec/munin/plugins/df
 libexec/munin/plugins/df_inode
 libexec/munin/plugins/dhcpd3
@@ -112,6 +113,7 @@ libexec/munin/plugins/haproxy_ng
 libexec/munin/plugins/hddtemp_smartctl
 libexec/munin/plugins/hddtempd
 libexec/munin/plugins/hp2000_
+libexec/munin/plugins/http_loadtime
 libexec/munin/plugins/if_
 libexec/munin/plugins/if_errcoll_
 libexec/munin/plugins/if_pps_
@@ -121,11 +123,7 @@ libexec/munin/plugins/intr
 libexec/munin/plugins/ipmi_
 libexec/munin/plugins/ipmi_sensor_
 libexec/munin/plugins/ircu
-libexec/munin/plugins/jenkins_builds
-libexec/munin/plugins/jenkins_builds_results
-libexec/munin/plugins/jenkins_builds_results_summary
-libexec/munin/plugins/jenkins_builds_running
-libexec/munin/plugins/jenkins_jobs
+libexec/munin/plugins/jenkins_builds_and_jobs
 libexec/munin/plugins/load
 libexec/munin/plugins/loggrep
 libexec/munin/plugins/lpstat
@@ -141,12 +139,6 @@ libexec/munin/plugins/multips_memory
 libexec/munin/plugins/munin_stats
 libexec/munin/plugins/munin_update
 libexec/munin/plugins/mysql_
-libexec/munin/plugins/mysql_bytes
-libexec/munin/plugins/mysql_innodb
-libexec/munin/plugins/mysql_isam_space_
-libexec/munin/plugins/mysql_queries
-libexec/munin/plugins/mysql_slowqueries
-libexec/munin/plugins/mysql_threads
 libexec/munin/plugins/named
 libexec/munin/plugins/netopia
 libexec/munin/plugins/netstat
@@ -182,6 +174,7 @@ libexec/munin/plugins/postgres_autovacuum
 libexec/munin/plugins/postgres_bgwriter
 libexec/munin/plugins/postgres_cache_
 libexec/munin/plugins/postgres_checkpoints
+libexec/munin/plugins/postgres_checksums
 libexec/munin/plugins/postgres_connections_
 libexec/munin/plugins/postgres_connections_db
 libexec/munin/plugins/postgres_locks_
@@ -266,6 +259,7 @@ libexec/munin/plugins/zimbra_
 @man man/man1/munin-async.1
 @man man/man1/munin-asyncd.1
 @man man/man1/munin-doc.1
+@man man/man1/munin-httpd.1
 @man man/man1/munin-node-configure.1
 @man man/man1/munin-node.1
 @man man/man3p/Munin.3p
@@ -307,7 +301,7 @@ libexec/munin/plugins/zimbra_
 @man man/man3p/Munin::Plugin::Pgsql.3p
 @man man/man3p/Munin::Plugin::SNMP.3p
 share/doc/munin/
-share/doc/pkg-readmes/${FULLPKGNAME}
+share/doc/pkg-readmes/${PKGSTEM}
 share/examples/munin/
 share/examples/munin/munin-node.conf.sample
 @sample ${SYSCONFDIR}/munin/munin-node.conf
@@ -316,5 +310,3 @@ share/examples/munin/plugin-conf.d/
 share/examples/munin/plugin-conf.d/openbsd-packages
 @sample ${SYSCONFDIR}/munin/plugin-conf.d/openbsd-packages
 @sample ${SYSCONFDIR}/munin/plugins/
-@rcscript ${RCDIR}/munin_asyncd
-@rcscript ${RCDIR}/munin_node

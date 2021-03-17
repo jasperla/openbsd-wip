@@ -1,0 +1,14 @@
+$OpenBSD$
+
+Index: base/base_switches.h
+--- base/base_switches.h.orig
++++ base/base_switches.h
+@@ -55,7 +55,7 @@ extern const char kEnableIdleTracing[];
+ extern const char kForceFieldTrialParams[];
+ #endif
+ 
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
+ extern const char kEnableThreadInstructionCount[];
+ #endif
+ 

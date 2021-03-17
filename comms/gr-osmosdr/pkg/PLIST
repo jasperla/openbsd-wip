@@ -1,5 +1,4 @@
-@comment $OpenBSD$
-%%SHARED%%
+@comment $OpenBSD: PLIST,v$
 bin/osmocom_fft
 bin/osmocom_siggen
 bin/osmocom_siggen_nogui
@@ -16,21 +15,17 @@ include/osmosdr/swig/osmosdr_swig.i
 include/osmosdr/swig/osmosdr_swig_doc.i
 @lib lib/libgnuradio-osmosdr.so.${LIBgnuradio-osmosdr_VERSION}
 lib/pkgconfig/gnuradio-osmosdr.pc
-lib/python2.7/
-lib/python2.7/site-packages/
-lib/python2.7/site-packages/osmosdr/
-lib/python2.7/site-packages/osmosdr/__init__.py
-lib/python2.7/site-packages/osmosdr/__init__.pyc
-lib/python2.7/site-packages/osmosdr/__init__.pyo
-lib/python2.7/site-packages/osmosdr/osmocom_siggen_base.py
-lib/python2.7/site-packages/osmosdr/osmocom_siggen_base.pyc
-lib/python2.7/site-packages/osmosdr/osmocom_siggen_base.pyo
-lib/python2.7/site-packages/osmosdr/osmosdr_swig.py
-lib/python2.7/site-packages/osmosdr/osmosdr_swig.pyc
-lib/python2.7/site-packages/osmosdr/osmosdr_swig.pyo
-share/gnuradio/
-share/gnuradio/grc/
-share/gnuradio/grc/blocks/
+lib/python${MODPY_VERSION}/site-packages/osmosdr/
+lib/python${MODPY_VERSION}/site-packages/osmosdr/__init__.py
+lib/python${MODPY_VERSION}/site-packages/osmosdr/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/osmosdr/__init__.${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/osmosdr/_osmosdr_swig.so
+lib/python${MODPY_VERSION}/site-packages/osmosdr/osmocom_siggen_base.py
+lib/python${MODPY_VERSION}/site-packages/osmosdr/osmocom_siggen_base.pyc
+lib/python${MODPY_VERSION}/site-packages/osmosdr/osmocom_siggen_base.${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/osmosdr/osmosdr_swig.py
+lib/python${MODPY_VERSION}/site-packages/osmosdr/osmosdr_swig.pyc
+lib/python${MODPY_VERSION}/site-packages/osmosdr/osmosdr_swig.${MODPY_PYOEXTENSION}
 share/gnuradio/grc/blocks/osmosdr_sink.xml
 share/gnuradio/grc/blocks/osmosdr_source.xml
 share/gnuradio/grc/blocks/rtlsdr_source.xml

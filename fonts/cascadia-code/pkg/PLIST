@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v$
+share/fonts/
+@fontdir share/fonts/Cascadia/
+share/fonts/Cascadia/Cascadia.ttf
+share/fonts/Cascadia/CascadiaMono.ttf
+share/fonts/Cascadia/CascadiaMonoPL.ttf
+share/fonts/Cascadia/CascadiaPL.ttf

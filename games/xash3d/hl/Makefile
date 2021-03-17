@@ -1,30 +1,24 @@
 # $OpenBSD$
 
-COMMENT =	Half-Life client and server libraries for Xash3D
-DISTNAME =	xash3d-hl-0.19.1
+COMMENT =	Half-Life game libraries mod
+DISTNAME =	xash3d-hl-0.0.70bd3a2
 
 GH_ACCOUNT =	FWGS
 GH_PROJECT =	hlsdk-xash3d
-GH_COMMIT =	2aab84f6432b78246d146348a5a4a29a6ad5decc
+GH_COMMIT =	70bd3a2497920200843882c416eefd1876b0c12e
 
 CATEGORIES =	games
 
-HOMEPAGE =	http://xash.su
+HOMEPAGE =	https://xash.su
 
 MAINTAINER =	ryan@slipgate.org
 
-# Mixed license, GPL v3+, Valve source license, and Id software
-# licenses.  Includes copying.txt GPL file but some source headers
-# still have ``Valve LLC'' and ``Id Software'' mentioned.
-#
-# Example from engine/cdll_int.h:
-# "Use, distribution, and modification of this source code and/or resulting
-# object code is restricted to non-commercial enhancements to products from
-# Valve LLC.  All other use, distribution, or modification is prohibited
-# without written permission from Valve LLC."
-#
-PERMIT_PACKAGE_CDROM =	No
-PERMIT_PACKAGE_FTP =	Yes
+# Half Life 1 SDK LICENSE
+# "You may, free of charge, download and use the SDK to develop a modified Valve
+# game running on the Half-Life 1 engine.  You may distribute your modified
+# Valve game in source and object code form, but only for free."
+# Can not distribute this for use with xash3d engine.
+PERMIT_PACKAGE =	No
 
 WANTLIB += ${COMPILER_LIBCXX} m
 
@@ -41,5 +35,8 @@ CONFIGURE_ARGS +=	-D64BIT=yes
 .endif
 
 NO_TEST =		Yes
+
+post-install:
+	${SUBST_CMD} -m 0755 -c ${FILESDIR}/halflife.sh ${PREFIX}/bin/halflife
 
 .include <bsd.port.mk>

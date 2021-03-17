@@ -1,0 +1,16 @@
+$OpenBSD$
+
+Remove hardcoded path
+
+Index: src/Desktop.vala
+--- src/Desktop.vala.orig
++++ src/Desktop.vala
+@@ -10,7 +10,7 @@ public class Tootle.Desktop {
+ 		}
+ 		catch (Error e){
+ 			try {
+-				string[] spawn_args = {"/usr/bin/xdg-open", uri};
++				string[] spawn_args = {"${LOCALBASE}/bin/xdg-open", uri};
+ 				Process.spawn_sync (null, spawn_args, null, SpawnFlags.SEARCH_PATH, null, null, null);
+ 			}
+ 			catch (Error e){

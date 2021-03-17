@@ -1,0 +1,24 @@
+$OpenBSD$
+
+Index: libnetdata/os.h
+--- libnetdata/os.h.orig
++++ libnetdata/os.h
+@@ -37,6 +37,18 @@ extern int getsysctl(const char *name, int *mib, size_
+ 
+ 
+ // =====================================================================================================================
++// OpenBSD
++
++#elif (TARGET_OS == OS_OPENBSD)
++
++#include <sys/sysctl.h>
++
++// OpenBSD doesn't have O_NOATIME or MADV_DONTFORK
++#define O_NOATIME 0
++#define MADV_DONTFORK 0
++
++
++// =====================================================================================================================
+ // MacOS
+ 
+ #elif (TARGET_OS == OS_MACOS)

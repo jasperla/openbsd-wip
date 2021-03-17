@@ -7,7 +7,7 @@ Index: runtime/druntime/src/core/stdc/locale.d
      ///
      enum LC_MESSAGES       = 6;
  }
-+else version(OpenBSD)
++else version (OpenBSD)
 +{
 +    ///
 +    enum LC_ALL            = 0;
@@ -24,6 +24,6 @@ Index: runtime/druntime/src/core/stdc/locale.d
 +    ///
 +    enum LC_MESSAGES       = 6;
 +}
- else version(Solaris)
+ else version(DragonFlyBSD)
  {
-     enum LC_CTYPE          = 0;
+     ///

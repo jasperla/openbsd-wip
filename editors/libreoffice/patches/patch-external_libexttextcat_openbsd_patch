@@ -1,0 +1,16 @@
+$OpenBSD: patch-external_libexttextcat_openbsd_patch,v 1.2 2018/02/05 17:15:05 robert Exp $
+Index: external/libexttextcat/openbsd.patch
+--- external/libexttextcat/openbsd.patch.orig
++++ external/libexttextcat/openbsd.patch
+@@ -0,0 +1,11 @@
++--- UnpackedTarball/libexttextcat/src/Makefile.in.orig	Sun Feb  4 08:48:26 2018
+++++ UnpackedTarball/libexttextcat/src/Makefile.in	Sun Feb  4 08:49:09 2018
++@@ -90,7 +90,7 @@
++ POST_UNINSTALL = :
++ build_triplet = @build@
++ host_triplet = @host@
++-bin_PROGRAMS = createfp$(EXEEXT)
+++bin_PROGRAMS =
++ check_PROGRAMS = testtextcat$(EXEEXT)
++ subdir = src
++ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4

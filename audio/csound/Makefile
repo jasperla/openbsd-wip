@@ -4,7 +4,7 @@ COMMENT =	an extensible sound processing language
 
 GH_ACCOUNT =	csound
 GH_PROJECT =	csound
-GH_TAGNAME =	6.10.0
+GH_TAGNAME =	6.12.0
 
 SHARED_LIBS +=	csnd6                     1.0 # 6.10
 SHARED_LIBS +=	csound64                  1.0 # 6.10
@@ -19,8 +19,7 @@ MAINTAINER =		Aaron Bieber <abieber@openbsd.org>
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} ICE SM X11 Xext c curl fltk fltk_forms
-WANTLIB += fltk_images m png portaudio pulse pulse-simple python2.7
-WANTLIB += samplerate sndfile z
+WANTLIB += fltk_images m png portaudio python2.7 samplerate sndfile z
 
 MODULES =		devel/cmake \
 			lang/lua \
@@ -32,14 +31,13 @@ BUILD_DEPENDS =		audio/flac \
 			audio/libogg \
 			devel/bison \
 			devel/boost \
-			devel/gettext-tools
+			devel/help2man \
+			devel/gettext,-tools \
+			devel/m4
 
-LIB_DEPENDS =		audio/jack \
-			audio/fluidsynth \
-			audio/libsamplerate \
+LIB_DEPENDS =		audio/libsamplerate \
 			audio/libsndfile \
 			audio/portaudio-svn \
-			audio/pulseaudio \
 			net/curl \
 			x11/fltk
 
@@ -55,8 +53,7 @@ CONFIGURE_ARGS +=	-DCMAKE_C_FLAGS="${CFLAGS} -I${X11BASE}/include" \
 			-DCMAKE_EXE_LINKER_FLAGS="${LDFLAGS}" \
 
 pre-configure:
-	${SUBST_CMD} ${WRKDIST}/pluginSDK/SConstruct \
-		${WRKDIST}/InOut/CMakeLists.txt \
+	${SUBST_CMD} ${WRKDIST}/InOut/CMakeLists.txt \
 		${WRKDIST}/CMakeLists.txt
 
 

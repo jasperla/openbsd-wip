@@ -1,0 +1,16 @@
+$OpenBSD$
+
+-q is a GNU bc flag (to silence their verbose welcome message).
+
+Index: src/bcal.c
+--- src/bcal.c.orig
++++ src/bcal.c
+@@ -203,7 +203,7 @@ static int try_bc(char *expr)
+ 		dup2(pipe_cp[1], STDOUT_FILENO); // Give stdout to parent
+ 		dup2(pipe_cp[1], STDERR_FILENO); // Give stderr to parent
+ 
+-		ret = execlp("bc", "bc", "-q", (char*) NULL);
++		ret = execlp("bc", "bc", (char*) NULL);
+ 		log(ERROR, "execlp() failed!\n");
+ 		exit(ret);
+ 	}

@@ -1,0 +1,9 @@
+Open Hexagon is a free open-source clone of the game Super Hexagon.
+
+Gameplay is easy to learn but hard to master. You control a triangle
+that rotates around the center of the screen. Your goal is to stay
+alive as long as possible by avoiding the walls that move towards the
+center.
+
+Features JSON and LUA scripting for complete customization and level
+sharing.

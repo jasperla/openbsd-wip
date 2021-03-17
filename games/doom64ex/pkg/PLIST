@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v$
+@bin bin/doom64ex
+@man man/man6/doom64ex.6
+share/doc/pkg-readmes/${PKGSTEM}
+share/doom64ex/
+share/doom64ex/doom64ex.pk3

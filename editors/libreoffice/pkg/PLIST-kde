@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST-kde,v 1.10 2016/09/04 12:02:49 robert Exp $
+lib/libreoffice/program/libkde5be1lo.so
+lib/libreoffice/program/libvclplug_kde5lo.so
+lib/libreoffice/program/libvclplug_qt5lo.so

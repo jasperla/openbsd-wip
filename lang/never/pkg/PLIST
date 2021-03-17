@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v$
+@bin bin/never
+include/never/
+include/never/nev.h
+include/never/object.h
+include/never/program.h
+lib/libnev.a

@@ -1,0 +1,30 @@
+$OpenBSD$
+
++-------------------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-------------------------------------------------------------------------------
+
+Installing Game Data
+--------------------
+
+To play Half-Life, you must have a copy of your `valve' directory from steam.
+You must have write access to this directory as well, as the game will write
+configuration and save files to these locations.
+
+It is unknown if Half-Life data from the original CD will work or not.
+
+Half-Life is available for purchase on Steam.  To fetch your game data, utilize
+the `games/depotdownloader' package.
+
+Add a link to your game data as follows:
+
+  $ cd ${TRUEPREFIX}/share/xash3d
+  $ doas ln -s ~/games/steamdepots/Half-Life/valve
+
+Xash3d requires some extra assets for the menus to work correctly.  This file
+can be fetched manually, and placed in the `valve' directory:
+
+  $ ftp -o ~/games/steamdepots/Half-Life/valve/extras.pak \
+	https://github.com/FWGS/xash-extras/releases/download/v0.19.2/extras.pak
+
+The game can now be started with the `halflife' script.

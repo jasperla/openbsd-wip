@@ -1,12 +1,8 @@
 #!/bin/sh
-
-if [ -z "$XASH3D_BASEDIR" ]; then
-	export XASH3D_BASEDIR=${PREFIX}/share/xash3d/
-fi
-
-XASH_BIN_PATH=${PREFIX}/lib/xash3d
-HL_CLIENT_LIB=${PREFIX}/lib/xash3d/valve/libclient.so
-HL_SERVER_LIB=${PREFIX}/lib/xash3d/valve/libserver.so
-
-LD_LIBRARY_PATH=${XASH_BIN_PATH}:$LD_LIBRARY_PATH ${XASH_BIN_PATH}/xash3d \
-	-clientlib ${HL_CLIENT_LIB} -dll ${HL_SERVER_LIB} -console $@
+echo "Xash3d on OpenBSD requires one of the following to be installed:"
+echo
+echo "  o xash3d-hl       (Half-Life)"
+echo "  o xash3d-bshift   (Half-Life: Blue Shift)"
+echo
+echo "Please install one of these packages, and follow the instructions on"
+echo "how to acquire needed game data."

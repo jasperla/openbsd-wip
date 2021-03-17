@@ -1,5 +1,6 @@
-@comment $OpenBSD$
-lib/xash3d/
+@comment $OpenBSD: PLIST,v$
+bin/halflife
 lib/xash3d/valve/
 lib/xash3d/valve/libclient.so
 lib/xash3d/valve/libserver.so
+share/doc/pkg-readmes/${PKGSTEM}

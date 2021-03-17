@@ -1,0 +1,14 @@
+$OpenBSD$
+
+Index: Makefile
+--- Makefile.orig
++++ Makefile
+@@ -3,7 +3,7 @@
+ .SUFFIXES: .1 .5 .7 .1.scd .5.scd .7.scd
+ VPATH=doc
+ PREFIX?=/usr/local
+-_INSTDIR=$(DESTDIR)$(PREFIX)
++_INSTDIR=$(PREFIX)
+ BINDIR?=$(_INSTDIR)/bin
+ SHAREDIR?=$(_INSTDIR)/share/aerc
+ MANDIR?=$(_INSTDIR)/share/man

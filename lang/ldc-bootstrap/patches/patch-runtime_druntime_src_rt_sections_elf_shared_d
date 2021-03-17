@@ -1,0 +1,159 @@
+$OpenBSD$
+
+Index: runtime/druntime/src/rt/sections_elf_shared.d
+--- runtime/druntime/src/rt/sections_elf_shared.d.orig
++++ runtime/druntime/src/rt/sections_elf_shared.d
+@@ -12,6 +12,7 @@ module rt.sections_elf_shared;
+ 
+ version (CRuntime_Glibc) enum SharedELF = true;
+ else version (FreeBSD) enum SharedELF = true;
++else version (OpenBSD) enum SharedELF = true;
+ else version (DragonFlyBSD) enum SharedELF = true;
+ else enum SharedELF = false;
+ static if (SharedELF):
+@@ -33,6 +34,12 @@ else version (FreeBSD)
+     import core.sys.freebsd.sys.elf;
+     import core.sys.freebsd.sys.link_elf;
+ }
++else version (OpenBSD)
++{
++    import core.sys.openbsd.dlfcn;
++    import core.sys.openbsd.sys.elf;
++    import core.sys.openbsd.sys.link_elf;
++}
+ else version (DragonFlyBSD)
+ {
+     import core.sys.dragonflybsd.dlfcn;
+@@ -123,7 +130,7 @@ __gshared bool _isRuntimeInitialized;
+ 
+ version (FreeBSD) private __gshared void* dummy_ref;
+ version (DragonFlyBSD) private __gshared void* dummy_ref;
+-
++version (OpenBSD) private __gshared void* dummy_ref;
+ /****
+  * Gets called on program startup just before GC is initialized.
+  */
+@@ -133,6 +140,7 @@ void initSections()
+     // reference symbol to support weak linkage
+     version (FreeBSD) dummy_ref = &_d_dso_registry;
+     version (DragonFlyBSD) dummy_ref = &_d_dso_registry;
++    version (OpenBSD) dummy_ref = &_d_dso_registry;
+ }
+ 
+ 
+@@ -253,6 +261,7 @@ else (private)
+ // start of linked list for ModuleInfo references
+ version (FreeBSD) deprecated extern (C) __gshared void* _Dmodule_ref;
+ version (DragonFlyBSD) deprecated extern (C) __gshared void* _Dmodule_ref;
++version (OpenBSD) deprecated extern (C) __gshared void* _Dmodule_ref;
+ 
+ version (Shared)
+ {
+@@ -659,6 +668,8 @@ nothrow:
+                     strtab = cast(const(char)*)dyn.d_un.d_ptr;
+                 else version (FreeBSD)
+                     strtab = cast(const(char)*)(info.dlpi_addr + dyn.d_un.d_ptr); // relocate
++                else version (OpenBSD)
++                    strtab = cast(const(char)*)(info.dlpi_addr + dyn.d_un.d_ptr); // relocate
+                 else version (DragonFlyBSD)
+                     strtab = cast(const(char)*)(info.dlpi_addr + dyn.d_un.d_ptr); // relocate
+                 else
+@@ -721,7 +732,12 @@ void scanSegments(in ref dl_phdr_info info, DSO* pdso)
+ 
+         case PT_TLS: // TLS segment
+             assert(!pdso._tlsSize); // is unique per DSO
+-            pdso._tlsMod = info.dlpi_tls_modid;
++            version (OpenBSD)
++            {
++                // OpenBSD doesn't provide a 'dlpi_tls_modid' definition
++            } 
++            else
++                pdso._tlsMod = info.dlpi_tls_modid;
+             pdso._tlsSize = phdr.p_memsz;
+             break;
+ 
+@@ -739,37 +755,46 @@ void scanSegments(in ref dl_phdr_info info, DSO* pdso)
+  * References:
+  *      http://linux.die.net/man/3/dl_iterate_phdr
+  */
+-version (linux) bool findDSOInfoForAddr(in void* addr, dl_phdr_info* result=null) nothrow @nogc
++bool findDSOInfoForAddr(in void* addr, dl_phdr_info* result=null) nothrow @nogc
+ {
+-    static struct DG { const(void)* addr; dl_phdr_info* result; }
++    version (linux)         enum IterateManually = true;
++    else version (OpenBSD)  enum IterateManually = true;
++    else                    enum IterateManually = false;
+ 
+-    extern(C) int callback(dl_phdr_info* info, size_t sz, void* arg) nothrow @nogc
++    static if (IterateManually)
+     {
+-        auto p = cast(DG*)arg;
+-        if (findSegmentForAddr(*info, p.addr))
++        static struct DG { const(void)* addr; dl_phdr_info* result; }
++
++        extern(C) int callback(dl_phdr_info* info, size_t sz, void* arg) nothrow @nogc
+         {
+-            if (p.result !is null) *p.result = *info;
+-            return 1; // break;
++            auto p = cast(DG*)arg;
++            if (findSegmentForAddr(*info, p.addr))
++            {
++                if (p.result !is null) *p.result = *info;
++                return 1; // break;
++            }
++            return 0; // continue iteration
+         }
+-        return 0; // continue iteration
+-    }
+ 
+-    auto dg = DG(addr, result);
++        auto dg = DG(addr, result);
+ 
+-    /* Linux function that walks through the list of an application's shared objects and
+-     * calls 'callback' once for each object, until either all shared objects
+-     * have been processed or 'callback' returns a nonzero value.
+-     */
+-    return dl_iterate_phdr(&callback, &dg) != 0;
++        /* Linux function that walks through the list of an application's shared objects and
++         * calls 'callback' once for each object, until either all shared objects
++         * have been processed or 'callback' returns a nonzero value.
++         */
++        return dl_iterate_phdr(&callback, &dg) != 0;
++    }
++    else version (FreeBSD)
++    {
++        return !!_rtld_addr_phdr(addr, result);
++    }
++    else version (DragonFlyBSD)
++    {
++        return !!_rtld_addr_phdr(addr, result);
++    }
++    else
++        static assert(0, "unimplemented");
+ }
+-else version (FreeBSD) bool findDSOInfoForAddr(in void* addr, dl_phdr_info* result=null) nothrow @nogc
+-{
+-    return !!_rtld_addr_phdr(addr, result);
+-}
+-else version (DragonFlyBSD) bool findDSOInfoForAddr(in void* addr, dl_phdr_info* result=null) nothrow @nogc
+-{
+-    return !!_rtld_addr_phdr(addr, result);
+-}
+ 
+ /*********************************
+  * Determine if 'addr' lies within shared object 'info'.
+@@ -796,12 +821,14 @@ version (linux) import core.sys.linux.errno : program_
+ // should be in core.sys.freebsd.stdlib
+ version (FreeBSD) extern(C) const(char)* getprogname() nothrow @nogc;
+ version (DragonFlyBSD) extern(C) const(char)* getprogname() nothrow @nogc;
++version (OpenBSD) extern(C) const(char)* getprogname() nothrow @nogc;
+ 
+ @property const(char)* progname() nothrow @nogc
+ {
+     version (linux) return program_invocation_name;
+     version (FreeBSD) return getprogname();
+     version (DragonFlyBSD) return getprogname();
++    version (OpenBSD) return getprogname();
+ }
+ 
+ nothrow

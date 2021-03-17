@@ -1,0 +1,10 @@
+YASR ("Yet Another Screen Reader") is my attempt at a lightweight,
+portable screen reader. It works by opening a shell in a pty and
+intercepting all user input/output, maintaining a window of what
+should be on the screen by looking at the codes and text sent to the
+screen. It thus uses no Linuxisms such as /dev/vcsa0 and does not
+necessarily need to be setuid root (the only requirement being that
+the user be able to access the tts device).  Yasr is developed under
+GNU/Linux, but I have attempted to port it to FreeBSD, and it should
+work on similar Unix-like operating systems with minor tweaking.
+

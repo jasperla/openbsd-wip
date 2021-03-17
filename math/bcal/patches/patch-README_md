@@ -1,0 +1,16 @@
+$OpenBSD$
+
+We invoke our own bc(1) instead of GNU bc (which is gbc).
+
+Index: README.md
+--- README.md.orig
++++ README.md
+@@ -65,7 +65,7 @@ To perform non-storage general purpose calculations, t
+ 
+ #### Dependencies
+ 
+-`bcal` is written in C and depends on standard libc and libreadline. It invokes GNU `bc` for non-storage expressions.
++`bcal` is written in C and depends on standard libc and libreadline. It invokes `bc` for non-storage expressions.
+ 
+ #### From a package manager
+ 

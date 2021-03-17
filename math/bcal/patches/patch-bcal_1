@@ -1,0 +1,16 @@
+$OpenBSD$
+
+We invoke our own bc(1) instead of GNU bc (which is gbc).
+
+Index: bcal.1
+--- bcal.1.orig
++++ bcal.1
+@@ -5,7 +5,7 @@ bcal \- Storage expression calculator.
+ .B bcal [-c N] [-f FORMAT] [-s bytes] [expr] [N [unit]] [-b [expr]] [-m] [-d] [-h]
+ .SH DESCRIPTION
+ .B bcal
+-(Byte CALculator) is a command-line utility to help with numerical calculations and expressions involving data storage units, addressing, base conversion etc. It invokes GNU \fBbc\fR for non-storage expressions.
++(Byte CALculator) is a command-line utility to help with numerical calculations and expressions involving data storage units, addressing, base conversion etc. It invokes \fBbc\fR for non-storage expressions.
+ .PP
+ .B Features
+ .PP

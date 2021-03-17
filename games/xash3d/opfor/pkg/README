@@ -1,0 +1,31 @@
+$OpenBSD$
+
++-------------------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-------------------------------------------------------------------------------
+
+Installing Game Data
+--------------------
+
+To play Half-Life: Opposing Force, you must have a copy of your `gearbox'
+directory from Steam.  You must have write access to this directory as
+well, as the game will write configuration and save files to these locations.
+
+It is unknown if Half-Life: Opposing Force data from the original CD release
+will work or not.
+
+Half-Life: Opposing Force is available for purchase on Steam.  To fetch your
+game data, utilize the `games/depotdownloader' package.
+
+Add a link to your game data as follows:
+
+  $ cd ${TRUEPREFIX}/share/xash3d
+  $ doas ln -s ~/games/steamdepots/Half-Life:_Opposing_Force/gearbox
+
+Xash3d requires some extra assets for the menus to work correctly.  This file
+can be fetched manually, and placed in the `gearbox' directory:
+
+  $ ftp -o ~/games/steamdepots/Half-Life:_Opposing_Force/gearbox/extras.pak \
+	https://github.com/FWGS/xash-extras/releases/download/v0.19.2/extras.pak
+
+The game can now be started with the `opposingforce' script.

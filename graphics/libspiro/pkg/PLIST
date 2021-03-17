@@ -1,0 +1,9 @@
+@comment $OpenBSD: PLIST,v$
+include/bezctx.h
+include/bezctx_intf.h
+include/spiro.h
+include/spiroentrypoints.h
+@static-lib lib/libspiro.a
+lib/libspiro.la
+@lib lib/libspiro.so.${LIBspiro_VERSION}
+lib/pkgconfig/libspiro.pc

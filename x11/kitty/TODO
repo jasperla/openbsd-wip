@@ -1,0 +1,11 @@
+disable color output -- HOW? occurs with 'raise'
+-	doesn't occur when running make with '-jX' (number of jobs)
+-	maybe just remove the wayland check that triggers it?
+make test:
+	test_font_rendering (kitty_tests.fonts.Rendering) ... fast_data_types.FreeTypeError: Failed to load glyph, with error: unimplemented feature
+TERM is xterm-kitty. Doesn't play well with tmux
+Configuring kitty: https://sw.kovidgoyal.net/kitty/conf.html
+can't easily substitute /proc/{}/environ (kitty/child.py:53)
+fix "no controlling tty" issue when launching -- FIXED?
+fix selection of text with mouse cursor
+uses bundled glfw which may be causing issues with selection

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.17 2017/06/17 07:26:50 feinerer Exp $
+# $OpenBSD: Makefile,v 1.29 2020/01/03 17:57:34 edd Exp $
 
 COMMENT =	open decentralized synchronization utility
 
-V =		0.14.40
+V =		1.4.2
 DISTNAME =	syncthing-${V}
 DISTFILES =	syncthing-source-v${V}${EXTRACT_SUFX}
 
@@ -12,7 +12,7 @@ HOMEPAGE =	https://syncthing.net/
 MAINTAINER =	Edd Barrett <edd@openbsd.org>
 
 # MPL 2.0
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE = Yes
 
 WANTLIB += c pthread
 
@@ -24,17 +24,24 @@ SUBST_VARS +=		VARBASE
 
 MODULES =		lang/go
 MODGO_TYPE =		bin
-MODGO_ENV =		PATH="${PORTPATH}" HOME="${PORTHOME}"
+
+# Syncthing contains a lot of stuff that end users wouldn't be interested in,
+# so we package only these binaries.
+ST_CMDS =	syncthing stdiscosrv strelaysrv stcli
 
 do-build:
-	cd ${WRKSRC} && ${MODGO_CMD} run build.go \
-		-version v${V} -no-upgrade
+.for cmd in ${ST_CMDS}
+	cd ${WRKSRC} && ${MODGO_CMD} run build.go -version v${V} \
+		-no-upgrade install ${cmd}
+.endfor
 
 do-test:
 	cd ${WRKSRC} && ${MODGO_CMD} run build.go test
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/syncthing ${PREFIX}/bin/
+.for cmd in ${ST_CMDS}
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/${cmd} ${PREFIX}/bin/
+.endfor
 .for sec in 1 5 7
 	${INSTALL_MAN} ${WRKSRC}/man/*.${sec} ${PREFIX}/man/man${sec}/
 .endfor

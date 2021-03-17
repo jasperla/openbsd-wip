@@ -1,0 +1,3 @@
+@comment $OpenBSD: PLIST,v$
+bin/googler
+@man man/man1/googler.1

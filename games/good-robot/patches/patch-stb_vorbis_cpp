@@ -1,0 +1,21 @@
+$OpenBSD$
+
+Index: stb_vorbis.cpp
+--- stb_vorbis.cpp.orig
++++ stb_vorbis.cpp
+@@ -179,7 +179,7 @@
+ #include <string.h>
+ #include <assert.h>
+ #include <math.h>
+-#if !(defined(__APPLE__) || defined(MACOSX) || defined(macintosh) || defined(Macintosh))
++#if !(defined(__APPLE__) || defined(MACOSX) || defined(macintosh) || defined(Macintosh) || defined(__OpenBSD__))
+ #include <malloc.h>
+ #endif
+ #else
+@@ -5054,4 +5054,4 @@ int stb_vorbis_get_samples_float(stb_vorbis *f, int ch
+ }
+ #endif // STB_VORBIS_NO_PULLDATA_API
+ 
+-#endif // STB_VORBIS_HEADER_ONLY
+\ No newline at end of file
++#endif // STB_VORBIS_HEADER_ONLY

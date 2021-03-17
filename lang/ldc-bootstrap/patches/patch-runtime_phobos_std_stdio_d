@@ -1,0 +1,18 @@
+$OpenBSD$
+
+Index: runtime/phobos/std/stdio.d
+--- runtime/phobos/std/stdio.d.orig
++++ runtime/phobos/std/stdio.d
+@@ -68,6 +68,12 @@ version (FreeBSD)
+     version = HAS_GETDELIM;
+ }
+ 
++version (OpenBSD)
++{
++    version = GENERIC_IO;
++    version = HAS_GETDELIM;
++}
++
+ version (DragonFlyBSD)
+ {
+     version = GENERIC_IO;

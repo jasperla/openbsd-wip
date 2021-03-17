@@ -1,0 +1,52 @@
+$OpenBSD$
+
+disable procfs
+hardcode exe_dir
+
+Index: launcher.c
+--- launcher.c.orig
++++ launcher.c
+@@ -31,6 +31,7 @@
+ #define KITTY_LIB_DIR_NAME "lib"
+ #endif
+ 
++/*
+ static inline bool
+ safe_realpath(const char* src, char *buf, size_t buf_sz) {
+     char* ans = realpath(src, NULL);
+@@ -39,6 +40,7 @@ safe_realpath(const char* src, char *buf, size_t buf_s
+     free(ans);
+     return true;
+ }
++*/
+ 
+ static inline void
+ set_bundle_exe_dir(const wchar_t *exe_dir) {
+@@ -139,7 +141,7 @@ read_exe_path(char *exe, size_t buf_sz) {
+ 
+ static inline bool
+ read_exe_path(char *exe, size_t buf_sz) {
+-    if (!safe_realpath("/proc/curproc/exe", exe, buf_sz)) { fprintf(stderr, "Failed to read /proc/curproc/exe\n"); return false; }
++    //if (!safe_realpath("/proc/curproc/exe", exe, buf_sz)) { fprintf(stderr, "Failed to read /proc/curproc/exe\n"); return false; }
+     return true;
+ }
+ 
+@@ -147,7 +149,8 @@ read_exe_path(char *exe, size_t buf_sz) {
+ 
+ static inline bool
+ read_exe_path(char *exe, size_t buf_sz) {
+-    if (!safe_realpath("/proc/self/exe", exe, buf_sz)) { fprintf(stderr, "Failed to read /proc/self/exe\n"); return false; }
++    exe = "${PREFIX}/bin/kitty";
++    //if (!safe_realpath("/proc/self/exe", exe, buf_sz)) { fprintf(stderr, "Failed to read /proc/self/exe\n"); return false; }
+     return true;
+ }
+ #endif // }}}
+@@ -156,7 +159,7 @@ int main(int argc, char *argv[]) {
+     char exe[PATH_MAX+1] = {0};
+     if (!read_exe_path(exe, sizeof(exe))) return 1;
+ 
+-    char *exe_dir = dirname(exe);
++    char *exe_dir = "${PREFIX}/bin";
+     int num, num_args, i, ret=0;
+     char lib[PATH_MAX+1] = {0};
+     char *final_argv[MAX_ARGC + 1] = {0};

@@ -1,0 +1,23 @@
+$OpenBSD$
+
+Index: phobos-2.096.0/posix.mak
+--- phobos-2.096.0/posix.mak.orig
++++ phobos-2.096.0/posix.mak
+@@ -32,7 +32,7 @@ QUIET:=@
+ 
+ DEBUGGER=gdb
+ GIT_HOME=https://github.com/dlang
+-DMD_DIR=../dmd
++DMD_DIR=TOPDIR/dmd-2.096.0
+ 
+ include $(DMD_DIR)/src/osmodel.mak
+ 
+@@ -71,7 +71,7 @@ endif
+ 
+ # Configurable stuff that's rarely edited
+ INSTALL_DIR = ../install
+-DRUNTIME_PATH = ../druntime
++DRUNTIME_PATH = ../druntime-2.096.0
+ DLANG_ORG_DIR = ../dlang.org
+ ZIPFILE = phobos.zip
+ ROOT_OF_THEM_ALL = generated

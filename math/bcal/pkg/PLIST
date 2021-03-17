@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v$
+@bin bin/bcal
+@man man/man1/bcal.1
+share/doc/bcal/
+share/doc/bcal/README.md

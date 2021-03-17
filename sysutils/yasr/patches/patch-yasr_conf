@@ -1,0 +1,26 @@
+$OpenBSD$
+
+Index: yasr.conf
+--- yasr.conf.orig
++++ yasr.conf
+@@ -55,15 +55,15 @@ cursor tracking=full
+ #synthesizer=doubletalk
+ #synthesizer=bns
+ #synthesizer=apollo
+-synthesizer=emacspeak server
+-#synthesizer=speech dispatcher
++#synthesizer=emacspeak server
++synthesizer=speech dispatcher
+ #synthesizer port=S0
+ #synthesizer port=l0
+-synthesizer port=|/usr/local/bin/eflite
++#synthesizer port=|/usr/local/bin/eflite
+ # Below line appropriate for Speech Dispatcher in its default configuration
+-#synthesizer port=127.0.0.1:6560
++synthesizer port=127.0.0.1:6560
+ key echo=off
+-shell=/bin/bash
++shell=/bin/ksh
+ special=off
+ up and down arrows=speak line
+ DisableKey=6925

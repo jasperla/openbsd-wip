@@ -1,8 +1,8 @@
-@comment $OpenBSD$
+@comment $OpenBSD: PLIST,v$
 libexec/acts
 share/doc/acts/
 share/doc/acts/README.md
-share/doc/pkg-readmes/${FULLPKGNAME}
+share/doc/pkg-readmes/${PKGSTEM}
 share/examples/acts/
 share/examples/acts/acts-post.sh
 share/examples/acts/acts-pre.sh

@@ -1,0 +1,33 @@
+$OpenBSD: patch-config_h,v 1.10 2018/01/21 20:25:48 juanfra Exp $
+Index: config.h
+--- config.h.orig
++++ config.h
+@@ -3,6 +3,10 @@
+ /// \file config.h
+ /// \brief Library configuration file
+ 
++#if defined(__i386__)
++#define CRYPTOPP_DISABLE_ASM
++#endif
++
+ #ifndef CRYPTOPP_CONFIG_H
+ #define CRYPTOPP_CONFIG_H
+ 
+@@ -291,7 +295,7 @@ const lword LWORD_MAX = W64LIT(0xffffffffffffffff);
+ #endif
+ 
+ // Need GCC 4.6/Clang 1.7/Apple Clang 2.0 or above due to "GCC diagnostic {push|pop}"
+-#if (CRYPTOPP_GCC_VERSION >= 40600) || (CRYPTOPP_LLVM_CLANG_VERSION >= 10700) || (CRYPTOPP_APPLE_CLANG_VERSION >= 20000)
++#if (CRYPTOPP_GCC_VERSION >= 40600) || (defined(CRYPTOPP_LLVM_CLANG_VERSION) && (CRYPTOPP_LLVM_CLANG_VERSION >= 10700)) || (defined(CRYPTOPP_APPLE_CLANG_VERSION) && (CRYPTOPP_APPLE_CLANG_VERSION >= 20000))
+ 	#define CRYPTOPP_GCC_DIAGNOSTIC_AVAILABLE 1
+ #endif
+ 
+@@ -410,7 +414,7 @@ NAMESPACE_END
+ #endif
+ 
+ // [GCC Bug 53431] "C++ preprocessor ignores #pragma GCC diagnostic". Clang honors it.
+-#if CRYPTOPP_GCC_DIAGNOSTIC_AVAILABLE
++#if defined(CRYPTOPP_GCC_DIAGNOSTIC_AVAILABLE)
+ # pragma GCC diagnostic ignored "-Wunknown-pragmas"
+ # pragma GCC diagnostic ignored "-Wunused-function"
+ #endif

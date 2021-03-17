@@ -1,0 +1,23 @@
+$OpenBSD$
+
+Index: ruby/GNUmakefile
+--- ruby/GNUmakefile.orig
++++ ruby/GNUmakefile
+@@ -13,7 +13,7 @@ ifeq ($(ruby),)
+     ruby += input.sdl input.xlib input.udev
+   else ifeq ($(platform),bsd)
+     ruby += video.glx video.glx2 video.xvideo video.xshm
+-    ruby += audio.oss #audio.pulseaudio
++    ruby += audio.openal
+     ruby += input.sdl input.xlib
+   endif
+ endif
+@@ -72,7 +72,7 @@ ruby.objects := $(object.path)/ruby.o
+ 
+ $(object.path)/ruby.o: $(ruby.path)/ruby.cpp $(call rwildcard,$(ruby.path))
+ 	$(info Compiling $< ...)
+-	@$(compiler) $(ruby.flags) $(flags) $(flags.deps) -c $< -o $@
++	$(compiler) $(ruby.flags) $(flags) $(flags.deps) -c $< -o $@
+ 
+ ruby.verbose:
+ 	$(info ruby Drivers:)

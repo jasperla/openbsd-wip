@@ -18,7 +18,7 @@ Index: gold/layout.h
    // The regular data sections come after the RELRO sections.
    ORDER_DATA,
  
-@@ -1413,6 +1419,10 @@ class Layout
+@@ -1419,6 +1425,10 @@ class Layout
    Output_segment* relro_segment_;
    // A pointer to the PT_INTERP segment if there is one.
    Output_segment* interp_segment_;

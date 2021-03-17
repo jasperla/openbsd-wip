@@ -5,17 +5,19 @@ Remove artificial limitation.
 Index: gold/gold.cc
 --- gold/gold.cc.orig
 +++ gold/gold.cc
-@@ -607,13 +607,6 @@ queue_middle_tasks(const General_options& options,
+@@ -607,6 +607,7 @@ queue_middle_tasks(const General_options& options,
      (!input_objects->any_dynamic()
       && !parameters->options().output_is_position_independent());
    set_parameters_doing_static_link(doing_static_link);
--  if (!doing_static_link && options.is_static())
--    {
--      // We print out just the first .so we see; there may be others.
--      gold_assert(input_objects->dynobj_begin() != input_objects->dynobj_end());
--      gold_error(_("cannot mix -static with dynamic object %s"),
--		 (*input_objects->dynobj_begin())->name().c_str());
--    }
++#if 0
+   if (!doing_static_link && options.is_static())
+     {
+       // We print out just the first .so we see; there may be others.
+@@ -617,6 +618,7 @@ queue_middle_tasks(const General_options& options,
    if (!doing_static_link && parameters->options().relocatable())
      gold_fatal(_("cannot mix -r with dynamic object %s"),
  	       (*input_objects->dynobj_begin())->name().c_str());
++#endif
+   if (!doing_static_link
+       && options.oformat_enum() != General_options::OBJECT_FORMAT_ELF)
+     gold_fatal(_("cannot use non-ELF output format with dynamic object %s"),

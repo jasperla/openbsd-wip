@@ -1,0 +1,65 @@
+$OpenBSD$
+
+Index: runtime/druntime/src/core/sys/posix/dirent.d
+--- runtime/druntime/src/core/sys/posix/dirent.d.orig
++++ runtime/druntime/src/core/sys/posix/dirent.d
+@@ -142,6 +142,36 @@ else version( FreeBSD )
+ 
+     dirent* readdir(DIR*);
+ }
++else version (OpenBSD)
++{
++    enum
++    {
++        DT_UNKNOWN  = 0,
++        DT_FIFO     = 1,
++        DT_CHR      = 2,
++        DT_DIR      = 4,
++        DT_BLK      = 6,
++        DT_REG      = 8,
++        DT_LNK      = 10,
++        DT_SOCK     = 12,
++    }
++
++    align(4)
++    struct dirent
++    {
++        ino_t     d_fileno;
++        off_t     d_off;
++        ushort    d_reclen;
++        ubyte     d_type;
++        ubyte     d_namlen;
++        ubyte[4]  __d_padding;
++        char[256] d_name;
++    }
++
++    alias void* DIR;
++
++    dirent* readdir(DIR*);
++}
+ else version( DragonFlyBSD )
+ {
+     enum
+@@ -275,6 +305,10 @@ else version( FreeBSD )
+ {
+     int readdir_r(DIR*, dirent*, dirent**);
+ }
++else version (OpenBSD)
++{
++    int readdir_r(DIR*, dirent*, dirent**);
++}
+ else version( DragonFlyBSD )
+ {
+     int readdir_r(DIR*, dirent*, dirent**);
+@@ -314,6 +348,11 @@ version( CRuntime_Glibc )
+     c_long telldir(DIR*);
+ }
+ else version( FreeBSD )
++{
++    void   seekdir(DIR*, c_long);
++    c_long telldir(DIR*);
++}
++else version (OpenBSD)
+ {
+     void   seekdir(DIR*, c_long);
+     c_long telldir(DIR*);

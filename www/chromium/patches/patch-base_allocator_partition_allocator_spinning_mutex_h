@@ -1,0 +1,14 @@
+$OpenBSD$
+
+Index: base/allocator/partition_allocator/spinning_mutex.h
+--- base/allocator/partition_allocator/spinning_mutex.h.orig
++++ base/allocator/partition_allocator/spinning_mutex.h
+@@ -18,7 +18,7 @@
+ #include <windows.h>
+ #endif
+ 
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_ANDROID)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_ANDROID) || defined(OS_BSD)
+ #define PA_HAS_LINUX_KERNEL
+ #endif
+ 

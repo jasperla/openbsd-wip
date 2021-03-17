@@ -1,0 +1,2 @@
+@comment $OpenBSD: PLIST-python27,v$
+lib/unit/modules/python2.7.unit.so

@@ -1,0 +1,34 @@
+$OpenBSD$
+
+Unknown CMake command "pkg_check_modules"
+
+Use PERL_SITE*
+
+Index: xs/CMakeLists.txt
+--- xs/CMakeLists.txt.orig
++++ xs/CMakeLists.txt
+@@ -609,6 +609,7 @@ if (SLIC3R_PRUSACONTROL)
+         set(wxWidgets_LIBRARIES ${AlienWx_LIBRARIES})
+         # On Linux / gtk, we need to have a direct access to gtk+ for some workarounds.
+         if (AlienWx_GUI_TOOLKIT STREQUAL "gtk2")
++            find_package(PkgConfig REQUIRED)
+             pkg_check_modules(GTK2 gtk+-2.0)
+             include_directories(${GTK2_INCLUDE_DIRS})
+         endif()
+@@ -689,7 +690,7 @@ endif ()
+ include_directories(${GLEW_INCLUDE_DIRS})
+ target_link_libraries(XS ${GLEW_LIBRARIES})
+ # Install the XS.pm and XS.{so,dll,bundle} into the local-lib directory.
+-set(PERL_LOCAL_LIB_DIR "${PROJECT_SOURCE_DIR}/local-lib/lib/perl5/${PerlEmbed_ARCHNAME}")
++set(PERL_LOCAL_LIB_DIR "${PROJECT_SOURCE_DIR}/${PERL_SITELIB}")
+ add_custom_command(
+     TARGET XS
+     POST_BUILD
+@@ -756,5 +757,5 @@ target_link_libraries(libslic3r ${LIBNEST2D_LIBRARIES}
+ # ##############################################################################
+ 
+ # Installation
+-install(TARGETS XS DESTINATION ${PERL_VENDORARCH}/auto/Slic3r/XS)
+-install(FILES lib/Slic3r/XS.pm DESTINATION ${PERL_VENDORLIB}/Slic3r)
++install(TARGETS XS DESTINATION ${PERL_SITEARCH}/auto/Slic3r/XS)
++install(FILES lib/Slic3r/XS.pm DESTINATION ${PERL_SITELIB}/Slic3r)

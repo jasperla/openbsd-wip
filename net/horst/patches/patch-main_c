@@ -1,0 +1,15 @@
+$OpenBSD$
+
+Index: main.c
+--- main.c.orig
++++ main.c
+@@ -498,7 +498,9 @@ static void exit_handler(void)
+ 	free_lists();
+ 
+ 	if (conf.serveraddr[0] == '\0') {
++#ifndef __OpenBSD__ /* ugh... somehow this causes libpcap's atexit handler to be called twice */
+ 		close_packet_socket(mon);
++#endif
+ 	}
+ 
+ 	ifctrl_flags(conf.ifname, false, false);

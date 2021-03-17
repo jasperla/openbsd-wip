@@ -1,4 +1,2 @@
-@comment $OpenBSD: PLIST,v$
-lib/libnxt.a
-lib/ruby24.unit.so
-@bin sbin/unitd
+@comment $OpenBSD: PLIST-ruby24,v$
+lib/unit/modules/ruby24.unit.so

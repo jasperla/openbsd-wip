@@ -1,0 +1,13 @@
+$OpenBSD$
+
+Index: moviepy/config_defaults.py
+--- moviepy/config_defaults.py.orig
++++ moviepy/config_defaults.py
+@@ -50,5 +50,5 @@ IMAGEMAGICK_BINARY
+ 
+ import os
+ 
+-FFMPEG_BINARY = os.getenv('FFMPEG_BINARY', 'ffmpeg-imageio')
+-IMAGEMAGICK_BINARY = os.getenv('IMAGEMAGICK_BINARY', 'auto-detect')
++FFMPEG_BINARY = "/usr/local/bin/ffmpeg"
++IMAGEMAGICK_BINARY = "/usr/local/bin/convert"

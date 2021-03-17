@@ -1,0 +1,104 @@
+$OpenBSD$
+
+Index: chrome/browser/about_flags.cc
+--- chrome/browser/about_flags.cc.orig
++++ chrome/browser/about_flags.cc
+@@ -188,7 +188,7 @@
+ #include "ui/gl/gl_switches.h"
+ #include "ui/native_theme/native_theme_features.h"
+ 
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
+ #include "base/allocator/buildflags.h"
+ #endif
+ 
+@@ -887,7 +887,7 @@ const FeatureEntry::Choice kMemlogSamplingRateChoices[
+ };
+ 
+ #if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_MAC) || \
+-    defined(OS_WIN)
++    defined(OS_WIN) || defined(OS_BSD)
+ const FeatureEntry::FeatureParam kOmniboxDocumentProviderServerScoring[] = {
+     {"DocumentUseServerScore", "true"},
+     {"DocumentUseClientScore", "false"},
+@@ -2865,7 +2865,7 @@ const FeatureEntry kFeatureEntries[] = {
+      FEATURE_VALUE_TYPE(ash::features::kSystemTrayMicGainSetting)},
+ #endif  // OS_CHROMEOS
+ 
+-#if defined(OS_LINUX) && !defined(OS_CHROMEOS) && !defined(OS_ANDROID)
++#if (defined(OS_LINUX) && !defined(OS_CHROMEOS) && !defined(OS_ANDROID)) || defined(OS_BSD)
+     {
+         "enable-accelerated-video-decode",
+         flag_descriptions::kAcceleratedVideoDecodeName,
+@@ -3204,7 +3204,7 @@ const FeatureEntry kFeatureEntries[] = {
+      flag_descriptions::kEnableOfflinePreviewsDescription, kOsAndroid,
+      FEATURE_VALUE_TYPE(previews::features::kOfflinePreviews)},
+ #endif  // OS_ANDROID
+-#if defined(OS_CHROMEOS) || defined(OS_LINUX)
++#if defined(OS_CHROMEOS) || defined(OS_LINUX) || defined(OS_BSD)
+     {"enable-save-data", flag_descriptions::kEnableSaveDataName,
+      flag_descriptions::kEnableSaveDataDescription, kOsCrOS | kOsLinux,
+      SINGLE_VALUE_TYPE(
+@@ -3974,7 +3974,7 @@ const FeatureEntry kFeatureEntries[] = {
+      FEATURE_VALUE_TYPE(omnibox::kOmniboxTrendingZeroPrefixSuggestionsOnNTP)},
+ 
+ #if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_MAC) || \
+-    defined(OS_WIN)
++    defined(OS_WIN) || defined(OS_BSD)
+     {"omnibox-experimental-keyword-mode",
+      flag_descriptions::kOmniboxExperimentalKeywordModeName,
+      flag_descriptions::kOmniboxExperimentalKeywordModeDescription, kOsDesktop,
+@@ -4341,7 +4341,7 @@ const FeatureEntry kFeatureEntries[] = {
+      FEATURE_VALUE_TYPE(features::kClickToOpenPDFPlaceholder)},
+ 
+ #if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || \
+-    defined(OS_CHROMEOS)
++    defined(OS_CHROMEOS) || defined(OS_BSD)
+     {"direct-manipulation-stylus",
+      flag_descriptions::kDirectManipulationStylusName,
+      flag_descriptions::kDirectManipulationStylusDescription,
+@@ -5040,7 +5040,7 @@ const FeatureEntry kFeatureEntries[] = {
+ #endif  // BUILDFLAG(ENABLE_CLICK_TO_CALL)
+ 
+ #if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || \
+-    defined(OS_CHROMEOS)
++    defined(OS_CHROMEOS) || defined(OS_BSD)
+     {"remote-copy-receiver", flag_descriptions::kRemoteCopyReceiverName,
+      flag_descriptions::kRemoteCopyReceiverDescription, kOsDesktop,
+      FEATURE_VALUE_TYPE(kRemoteCopyReceiver)},
+@@ -5640,7 +5640,7 @@ const FeatureEntry kFeatureEntries[] = {
+      FEATURE_VALUE_TYPE(features::kMouseSubframeNoImplicitCapture)},
+ 
+ #if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || \
+-    defined(OS_CHROMEOS)
++    defined(OS_CHROMEOS) || defined(OS_BSD)
+     {"global-media-controls", flag_descriptions::kGlobalMediaControlsName,
+      flag_descriptions::kGlobalMediaControlsDescription,
+      kOsWin | kOsMac | kOsLinux,
+@@ -5858,7 +5858,7 @@ const FeatureEntry kFeatureEntries[] = {
+          password_manager::features::kEnablePasswordsAccountStorage)},
+ 
+ #if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || \
+-    defined(OS_CHROMEOS)
++    defined(OS_CHROMEOS) || defined(OS_BSD)
+     {"passwords-account-storage-iph",
+      flag_descriptions::kEnablePasswordsAccountStorageIPHName,
+      flag_descriptions::kEnablePasswordsAccountStorageIPHDescription,
+@@ -6599,7 +6599,7 @@ const FeatureEntry kFeatureEntries[] = {
+ #endif
+ 
+ #if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || \
+-    defined(OS_CHROMEOS)
++    defined(OS_CHROMEOS) || defined(OS_BSD)
+     {"enable-oop-print-drivers", flag_descriptions::kEnableOopPrintDriversName,
+      flag_descriptions::kEnableOopPrintDriversDescription, kOsDesktop,
+      FEATURE_VALUE_TYPE(printing::features::kEnableOopPrintDrivers)},
+@@ -6633,7 +6633,7 @@ const FeatureEntry kFeatureEntries[] = {
+ #endif  // !defined(OS_ANDROID)
+ 
+ #if defined(OS_WIN) || (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || \
+-    defined(OS_MAC)
++    defined(OS_MAC) || defined(OS_BSD)
+     {"enable-ephemeral-guest-profiles-on-desktop",
+      flag_descriptions::kEnableEphemeralGuestProfilesOnDesktopName,
+      flag_descriptions::kEnableEphemeralGuestProfilesOnDesktopDescription,

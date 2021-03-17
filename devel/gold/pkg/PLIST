@@ -1,4 +1,4 @@
 @comment $OpenBSD: PLIST,v$
 @bin bin/dwp
 @bin bin/ld.gold
-share/doc/pkg-readmes/${FULLPKGNAME}
+share/doc/pkg-readmes/${PKGSTEM}

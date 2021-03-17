@@ -9,6 +9,6 @@ Index: runtime/druntime/src/core/stdc/config.d
              alias real c_long_double;
 +        else version( OpenBSD )
 +            alias real c_long_double;
-         else version( Solaris )
+         else version( DragonFlyBSD )
              alias real c_long_double;
-         else version( OSX )
+         else version( Solaris )

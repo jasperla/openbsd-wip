@@ -1,0 +1,15 @@
+$OpenBSD$
+
+Need sys/wait.h for WIFEXITED and WEXITSTATUS
+
+Index: src/libexpr/primops/fetchGit.cc
+--- src/libexpr/primops/fetchGit.cc.orig
++++ src/libexpr/primops/fetchGit.cc
+@@ -6,6 +6,7 @@
+ #include "hash.hh"
+ 
+ #include <sys/time.h>
++#include <sys/wait.h>
+ 
+ #include <regex>
+ 

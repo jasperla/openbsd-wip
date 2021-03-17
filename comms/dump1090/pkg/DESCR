@@ -1,4 +1,0 @@
-dump1090 is an ADS-B Mode S decoder specifically designed for RTLSDR devices.
-Currently detected aircrafts can be displayed on the terminal or on Google Maps
-using an embedded HTTP server. Raw data can be sent to and received from other
-clients.

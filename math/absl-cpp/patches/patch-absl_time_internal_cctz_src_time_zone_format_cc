@@ -1,0 +1,31 @@
+$OpenBSD$
+Unbreak build on OpenBSD.
+
+Index: absl/time/internal/cctz/src/time_zone_format.cc
+--- absl/time/internal/cctz/src/time_zone_format.cc.orig
++++ absl/time/internal/cctz/src/time_zone_format.cc
+@@ -18,18 +18,21 @@
+ #endif
+ #endif
+ 
++// include before the _XOPEN_SOURCE, or vasprintf() may become unavailable
++#include <cstdio>
++
+ #if defined(HAS_STRPTIME) && HAS_STRPTIME
+ #if !defined(_XOPEN_SOURCE)
+ #define _XOPEN_SOURCE  // Definedness suffices for strptime.
+ #endif
+ #endif
+ 
+-#include "absl/base/config.h"
+-#include "absl/time/internal/cctz/include/cctz/time_zone.h"
+-
+ // Include time.h directly since, by C++ standards, ctime doesn't have to
+ // declare strptime.
+ #include <time.h>
++
++#include "absl/base/config.h"
++#include "absl/time/internal/cctz/include/cctz/time_zone.h"
+ 
+ #include <cctype>
+ #include <chrono>

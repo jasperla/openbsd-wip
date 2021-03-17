@@ -11,7 +11,7 @@ Index: Top/csound.c
  #define PTHREAD_SPINLOCK_INITIALIZER 0
  #endif
  
-@@ -1132,7 +1132,7 @@ static char *signal_to_string(int sig)
+@@ -1150,7 +1150,7 @@ static char *signal_to_string(int sig)
      }
  }
  
@@ -20,7 +20,7 @@ Index: Top/csound.c
  static void psignal_(int sig, char *str)
  {
      fprintf(stderr, "%s: %s\n", str, signal_to_string(sig));
-@@ -1184,7 +1184,7 @@ static void signal_handler(int sig)
+@@ -1202,7 +1202,7 @@ static void signal_handler(int sig)
  
  #if defined(SIGPIPE)
      if (sig == (int) SIGPIPE) {
@@ -29,7 +29,7 @@ Index: Top/csound.c
        psignal_(sig, "Csound ignoring SIGPIPE");
  #else
        psignal(sig, "Csound ignoring SIGPIPE");
-@@ -1192,7 +1192,7 @@ static void signal_handler(int sig)
+@@ -1210,7 +1210,7 @@ static void signal_handler(int sig)
        return;
      }
  #endif

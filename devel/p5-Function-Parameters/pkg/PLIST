@@ -1,4 +1,4 @@
-@comment $OpenBSD$
+@comment $OpenBSD: PLIST,v$
 ${P5ARCH}/
 ${P5ARCH}/Function/
 ${P5ARCH}/Function/Parameters/
@@ -7,6 +7,6 @@ ${P5ARCH}/Function/Parameters/Info.pm
 ${P5ARCH}/auto/
 ${P5ARCH}/auto/Function/
 ${P5ARCH}/auto/Function/Parameters/
-${P5ARCH}/auto/Function/Parameters/Parameters.so
+@so ${P5ARCH}/auto/Function/Parameters/Parameters.so
 @man man/man3p/Function::Parameters.3p
 @man man/man3p/Function::Parameters::Info.3p

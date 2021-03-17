@@ -1,0 +1,37 @@
+$OpenBSD$
+
+Index: libco/amd64.c
+--- libco/amd64.c.orig
++++ libco/amd64.c
+@@ -3,7 +3,9 @@
+ #include "settings.h"
+ 
+ #include <assert.h>
++#include <err.h>
+ #include <stdlib.h>
++#include <stdint.h>
+ 
+ #ifdef __cplusplus
+ extern "C" {
+@@ -142,9 +144,19 @@ cothread_t co_derive(void* memory, unsigned int size, 
+ }
+ 
+ cothread_t co_create(unsigned int size, void (*entrypoint)(void)) {
+-  void* memory = malloc(size);
++  long pagesize, newsize;
++  pagesize = sysconf(_SC_PAGESIZE);
++  if(pagesize == -1)
++    err(1, "sysconf failed");
++  newsize = size / pagesize * pagesize + !!(size % pagesize) * pagesize;
++  void* memory = malloc(newsize);
+   if(!memory) return (cothread_t)0;
+-  return co_derive(memory, size, entrypoint);
++  if((uintptr_t)memory % pagesize)
++    err(1, "misaligned allocation");
++  memory = mmap(memory, newsize, PROT_READ|PROT_WRITE, MAP_FIXED|MAP_STACK|MAP_PRIVATE|MAP_ANON, -1, 0);
++  if(memory == MAP_FAILED)
++    err(1, "mmap failed");
++  return co_derive(memory, newsize, entrypoint);
+ }
+ 
+ void co_delete(cothread_t handle) {

@@ -7,30 +7,11 @@ $OpenBSD$
 Supported Mods
 ==============
 
-The Xash3D engine supports multiple Goldsrc game mods.  Half-life is
-the only ported mod so far.
+The Xash3D engine supports multiple Goldsrc game mods.  The currently available
+game logic libraries are:
 
-Half-Life
----------
+  o xash3d-hl       (Half-Life)
+  o xash3d-bshift   (Half-Life: Blue Shift)
 
-To play Half-Life, you must have a copy of your ``valve'' directory
-from steam.  You must have write access to this directory as well.
-
-You can copy this directory from your steam cache of another machine,
-as of this time there is no way to natively fetch this data.
-
-It is unknown if Half-Life data from the original CDs works or not,
-YMMV if you try.
-
-Steam example (path may vary depending on version):
-
-$ scp -r linuxhost:.steam/steam/steamapps/common/Half-Life/valve \
-	~/valve
-
-$ cd ${TRUEPREFIX}/share/xash3d
-$ doas ln -s ~/valve
-
-You may also copy the valve directory from a Windows host if available.
-
-The game can be started with the ``xash3d'' command once the game data
-is installed correctly.
+Refer to the README for each of these packages for further instructions on game
+data installation.

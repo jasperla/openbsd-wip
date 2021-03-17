@@ -1,0 +1,16 @@
+$OpenBSD$
+
+Don't inline.
+
+Index: render.h
+--- render.h.orig
++++ render.h
+@@ -15,7 +15,7 @@ int       RenderListCompile(int owner);
+ void      RenderListEnd();
+ void      RenderListCall(int owner, int index);
+ void      RenderOverlay(GLcoord2 pos, GLcoord2 size, int texture, float intensity);
+-inline bool      RenderPointVisible (GLvector2 point);
++bool      RenderPointVisible (GLvector2 point);
+ void      RenderPushViewport(int width, int height);
+ void      RenderPopViewport();
+ void      RenderQuads();

@@ -1,0 +1,20 @@
+$OpenBSD$
+
+Index: system/netdata.conf
+--- system/netdata.conf.orig
++++ system/netdata.conf
+@@ -11,7 +11,7 @@
+ #
+ 
+ [global]
+-    run as user = netdata
++    run as user = _netdata
+ 
+     # the default database size - 1 hour
+     history = 3600
+@@ -21,4 +21,4 @@
+ 
+ [web]
+     web files owner = root
+-    web files group = netdata
++    web files group = _netdata

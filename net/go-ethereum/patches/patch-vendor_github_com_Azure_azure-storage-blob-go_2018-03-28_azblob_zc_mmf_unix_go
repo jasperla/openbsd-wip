@@ -1,0 +1,11 @@
+$OpenBSD$
+
+Index: vendor/github.com/Azure/azure-storage-blob-go/2018-03-28/azblob/zc_mmf_unix.go
+--- vendor/github.com/Azure/azure-storage-blob-go/2018-03-28/azblob/zc_mmf_unix.go.orig
++++ vendor/github.com/Azure/azure-storage-blob-go/2018-03-28/azblob/zc_mmf_unix.go
+@@ -1,4 +1,4 @@
+-// +build linux darwin freebsd
++// +build linux darwin freebsd openbsd
+ 
+ package azblob
+ 

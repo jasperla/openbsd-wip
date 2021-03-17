@@ -1,0 +1,16 @@
+$OpenBSD$
+
+This is an int.
+
+Index: src/brogue/Architect.c
+--- src/brogue/Architect.c.orig
++++ src/brogue/Architect.c
+@@ -1676,7 +1676,7 @@ void addMachines() {
+     // Add the amulet holder if it's depth 26:
+     if (rogue.depthLevel == AMULET_LEVEL) {
+         for (failsafe = 50; failsafe; failsafe--) {
+-            if (buildAMachine(MT_AMULET_AREA, -1, -1, NULL, NULL, NULL, NULL)) {
++            if (buildAMachine(MT_AMULET_AREA, -1, -1, 0, NULL, NULL, NULL)) {
+                 break;
+             }
+         }

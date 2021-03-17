@@ -3,7 +3,7 @@
 # So say the LLVM people.
 ONLY_FOR_ARCHS =	amd64 arm64 armv7 i386 mips64 mips64el
 
-V =		6.0.1
+V =		7.0.1
 COMMENT =	LLVM OpenMP stand-alone implementation
 DISTNAME =	openmp-${V}.src
 PKGNAME =	openmp-${V}
@@ -12,6 +12,7 @@ CATEGORIES =	devel lang
 
 # Keep in sync.
 SHARED_LIBS +=	omp                       0.0 # 0.0
+SHARED_LIBS +=	omptarget                 0.0 # 0.0
 SHARED_LIBS +=	gomp                      0.0 # 0.0
 SHARED_LIBS +=	iomp5                     0.0 # 0.0
 

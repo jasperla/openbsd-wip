@@ -12,7 +12,7 @@ Index: runtime/src/z_Linux_util.cpp
  #include <alloca.h>
  #endif
  #include <math.h> // HUGE_VAL.
-@@ -1751,7 +1751,7 @@ static int __kmp_get_xproc(void) {
+@@ -1765,7 +1765,7 @@ static int __kmp_get_xproc(void) {
  
    int r = 0;
  
@@ -21,7 +21,7 @@ Index: runtime/src/z_Linux_util.cpp
  
    r = sysconf(_SC_NPROCESSORS_ONLN);
  
-@@ -1997,9 +1997,9 @@ int __kmp_is_address_mapped(void *addr) {
+@@ -2011,9 +2011,9 @@ int __kmp_is_address_mapped(void *addr) {
      found = 1;
    }
  

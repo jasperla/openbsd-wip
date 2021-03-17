@@ -1,0 +1,15 @@
+$OpenBSD$
+
+rm -Werror
+
+Index: cmake/EthCompilerSettings.cmake
+--- cmake/EthCompilerSettings.cmake.orig
++++ cmake/EthCompilerSettings.cmake
+@@ -34,7 +34,6 @@ if (("${CMAKE_CXX_COMPILER_ID}" MATCHES "GNU") OR ("${
+ 	# to fix warnings as they arise, so they don't accumulate "to be fixed later".
+ 	add_compile_options(-Wall)
+ 	add_compile_options(-Wextra)
+-	add_compile_options(-Werror)
+ 
+ 	# Disable warnings about unknown pragmas (which is enabled by -Wall).  I assume we have external
+ 	# dependencies (probably Boost) which have some of these.   Whatever the case, we shouldn't be

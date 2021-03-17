@@ -1,0 +1,45 @@
+$OpenBSD$
+
+Remove hardcoded optimizations.
+!clang archs need explicit -lpthread.
+Let's not do the git thing. They use git commit as version string, and we already have that information.
+
+Index: Makefile.ckati
+--- Makefile.ckati.orig
++++ Makefile.ckati
+@@ -70,13 +70,13 @@ KATI_CXX_TEST_OBJS := $(patsubst $(KATI_SRC_PATH)/%.cc
+ KATI_CXX_TEST_EXES := $(patsubst $(KATI_INTERMEDIATES_PATH)/%.o,$(KATI_BIN_PATH)/%,\
+ 	$(KATI_CXX_TEST_OBJS))
+ 
+-KATI_CXXFLAGS := -g -W -Wall -MMD -MP
+-KATI_CXXFLAGS += -O -DNOLOG
+-KATI_CXXFLAGS += -march=native
++KATI_CXXFLAGS ?= $(CXXFLAGS)
++KATI_CXXFLAGS += -g -W -Wall -MMD -MP
++KATI_CXXFLAGS += -DNOLOG
+ #KATI_CXXFLAGS += -pg
+ 
+-ifeq ($(shell uname),Linux)
+-KATI_LIBS := -lrt -lpthread
++ifeq ($(shell uname),OpenBSD)
++KATI_LIBS := -lpthread
+ endif
+ 
+ # Rule to build ckati into KATI_BIN_PATH
+@@ -102,16 +102,7 @@ $(KATI_CXX_TEST_EXES): $(KATI_BIN_PATH)/%: $(KATI_INTE
+ 	$(KATI_LD) $^ -o $@ $(KATI_LIBS)
+ 
+ # Rule to generate version.cc
+-KATI_GIT_DIR := $(shell cd $(KATI_SRC_PATH); realpath `git rev-parse --git-dir`)
+ KATI_VERSION_DEPS :=
+-ifneq ($(KATI_GIT_DIR),)
+-KATI_VERSION_DEPS := $(wildcard $(KATI_GIT_DIR)/HEAD $(KATI_GIT_DIR)/index)
+-endif
+-ifneq ($(KATI_VERSION_DEPS),)
+-KATI_VERSION := $(shell git -C $(KATI_GIT_DIR) rev-parse HEAD)
+-else
+-KATI_VERSION := unknown
+-endif
+ $(KATI_INTERMEDIATES_PATH)/version.cc: $(KATI_VERSION_DEPS)
+ 	@mkdir -p $(dir $@)
+ 	echo '// +build ignore' > $@

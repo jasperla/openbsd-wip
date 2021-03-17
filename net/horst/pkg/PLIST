@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v$
+@man man/man5/horst.conf.5
+@man man/man8/horst.8
+@bin sbin/horst
+share/examples/horst/
+share/examples/horst/horst.conf
+@sample ${SYSCONFDIR}/horst.conf

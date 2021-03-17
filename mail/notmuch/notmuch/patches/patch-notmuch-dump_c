@@ -1,0 +1,45 @@
+$OpenBSD$
+
+OpenBSD zlib is too old for gzclose_w
+
+XXX various problems in gzip-related regression tests. many of them die with
+segfaults. some hang and are disabled in the port Makefile (NOTMUCH_SKIP_TESTS) -
+should be reenabled if testing any fixes to this.
+
+Index: notmuch-dump.c
+--- notmuch-dump.c.orig
++++ notmuch-dump.c
+@@ -329,13 +329,13 @@ notmuch_database_dump (notmuch_database_t *notmuch,
+ 	}
+     }
+ 
+-    ret = gzclose_w (output);
++    ret = gzclose (output);
+     if (ret) {
+ 	fprintf (stderr, "Error closing %s: %s\n", name_for_error,
+ 		 gzerror (output, NULL));
+ 	ret = EXIT_FAILURE;
+ 	output = NULL;
+-	goto DONE;
++	goto DONE2;
+     } else
+         output = NULL;
+ 
+@@ -344,14 +344,15 @@ notmuch_database_dump (notmuch_database_t *notmuch,
+ 	if (ret) {
+ 	    fprintf (stderr, "Error renaming %s to %s: %s\n",
+ 		     tempname, output_file_name, strerror (errno));
+-	    goto DONE;
++	    goto DONE2;
+ 	}
+ 
+     }
+  DONE:
+     if (ret != EXIT_SUCCESS && output)
+-	(void) gzclose_w (output);
++	(void) gzclose (output);
+ 
++ DONE2:
+     if (ret != EXIT_SUCCESS && output_file_name)
+ 	(void) unlink (tempname);
+ 

@@ -1,0 +1,14 @@
+$OpenBSD: patch-media_mojo_clients_mojo_video_encode_accelerator_cc,v 1.6 2020/10/22 13:52:54 robert Exp $
+
+Index: media/mojo/clients/mojo_video_encode_accelerator.cc
+--- media/mojo/clients/mojo_video_encode_accelerator.cc.orig
++++ media/mojo/clients/mojo_video_encode_accelerator.cc
+@@ -134,7 +134,7 @@ void MojoVideoEncodeAccelerator::Encode(scoped_refptr<
+   DCHECK_EQ(num_planes, frame->layout().num_planes());
+   DCHECK(vea_.is_bound());
+ 
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
+   // TODO(crbug.com/1003197): Remove this once we stop supporting STORAGE_DMABUF
+   // in VideoEncodeAccelerator.
+   if (frame->storage_type() == VideoFrame::STORAGE_DMABUFS) {

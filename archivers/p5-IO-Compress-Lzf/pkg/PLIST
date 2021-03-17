@@ -1,0 +1,12 @@
+@comment $OpenBSD: PLIST,v$
+${P5SITE}/IO/
+${P5SITE}/IO/Compress/
+${P5SITE}/IO/Compress/Adapter/
+${P5SITE}/IO/Compress/Adapter/Lzf.pm
+${P5SITE}/IO/Compress/Lzf.pm
+${P5SITE}/IO/Uncompress/
+${P5SITE}/IO/Uncompress/Adapter/
+${P5SITE}/IO/Uncompress/Adapter/Lzf.pm
+${P5SITE}/IO/Uncompress/UnLzf.pm
+@man man/man3p/IO::Compress::Lzf.3p
+@man man/man3p/IO::Uncompress::UnLzf.3p

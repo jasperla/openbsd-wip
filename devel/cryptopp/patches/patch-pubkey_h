@@ -1,0 +1,22 @@
+$OpenBSD: patch-pubkey_h,v 1.2 2016/11/22 17:20:25 dcoppa Exp $
+Index: pubkey.h
+--- pubkey.h.orig
++++ pubkey.h
+@@ -36,7 +36,7 @@
+ 
+ #include "config.h"
+ 
+-#if CRYPTOPP_MSC_VERSION
++#if defined(CRYPTOPP_MSC_VERSION)
+ # pragma warning(push)
+ # pragma warning(disable: 4702)
+ #endif
+@@ -2308,7 +2308,7 @@ class DL_ES : public KEYS (public)
+ 
+ NAMESPACE_END
+ 
+-#if CRYPTOPP_MSC_VERSION
++#if defined(CRYPTOPP_MSC_VERSION)
+ # pragma warning(pop)
+ #endif
+ 

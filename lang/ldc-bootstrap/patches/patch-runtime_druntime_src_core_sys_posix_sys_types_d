@@ -1,0 +1,93 @@
+$OpenBSD$
+
+Index: runtime/druntime/src/core/sys/posix/sys/types.d
+--- runtime/druntime/src/core/sys/posix/sys/types.d.orig
++++ runtime/druntime/src/core/sys/posix/sys/types.d
+@@ -138,6 +138,25 @@ else version( FreeBSD )
+     alias uint      uid_t;
+     alias uint      fflags_t;
+ }
++else version (OpenBSD)
++{
++    alias long      blkcnt_t;
++    alias int       blksize_t;
++    alias char*     caddr_t;
++    alias int       daddr32_t;
++    alias long      daddr_t;
++    alias int       dev_t;
++    alias uint      gid_t;
++    alias uint      ino_t;
++    alias uint      mode_t;
++    alias uint      nlink_t;
++    alias long      off_t;
++    alias int       pid_t;
++    //size_t (defined in core.stdc.stddef)
++    alias long      ssize_t;
++    alias long      time_t;
++    alias uint      uid_t;
++}
+ else version( DragonFlyBSD )
+ {
+     alias long      blkcnt_t;
+@@ -289,6 +308,16 @@ else version( FreeBSD )
+     alias c_long    suseconds_t;
+     alias uint      useconds_t;
+ }
++else version( OpenBSD )
++{
++    alias ulong     fsblkcnt_t;
++    alias ulong     fsfilcnt_t;
++    alias long      clock_t;
++    alias long      id_t;
++    alias long      key_t;
++    alias long      suseconds_t;
++    alias uint      useconds_t;
++}
+ else version( DragonFlyBSD )
+ {
+     alias ulong     fsblkcnt_t;
+@@ -675,6 +704,21 @@ else version( FreeBSD )
+     alias void* pthread_rwlockattr_t;
+     alias void* pthread_t;
+ }
++else version( OpenBSD )
++{
++    alias int lwpid_t;
++
++    alias void* pthread_attr_t;
++    alias void* pthread_cond_t;
++    alias void* pthread_condattr_t;
++    alias int   pthread_key_t;
++    alias void* pthread_mutex_t;
++    alias void* pthread_mutexattr_t;
++    alias void* pthread_once_t;
++    alias void* pthread_rwlock_t;
++    alias void* pthread_rwlockattr_t;
++    alias void* pthread_t;
++}
+ else version( DragonFlyBSD )
+ {
+     alias int lwpid_t;
+@@ -858,6 +902,11 @@ else version( FreeBSD )
+     alias void* pthread_barrier_t;
+     alias void* pthread_barrierattr_t;
+ }
++else version( OpenBSD )
++{
++    alias void* pthread_barrier_t;
++    alias void* pthread_barrierattr_t;
++}
+ else version( DragonFlyBSD )
+ {
+     alias void* pthread_barrier_t;
+@@ -903,6 +952,10 @@ version( CRuntime_Glibc )
+     alias int pthread_spinlock_t; // volatile
+ }
+ else version( FreeBSD )
++{
++    alias void* pthread_spinlock_t;
++}
++else version( OpenBSD )
+ {
+     alias void* pthread_spinlock_t;
+ }

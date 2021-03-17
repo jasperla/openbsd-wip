@@ -1,0 +1,14 @@
+$OpenBSD$
+
+Index: magefile.go
+--- magefile.go.orig
++++ magefile.go
+@@ -129,7 +129,7 @@ func Dev() error {
+ 	env := make(map[string]string)
+ 	err = sh.RunWith(
+ 		env,
+-		mg.GoCmd(), "build", "-race",
++		mg.GoCmd(), "build",
+ 		"-o", filepath.Join("output", name),
+ 		"-tags", "devel server_vql ",
+ 		"-ldflags=-s -w "+flags(),

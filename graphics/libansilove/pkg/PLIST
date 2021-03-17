@@ -1,3 +1,0 @@
-@comment $OpenBSD: PLIST,v$
-include/ansilove.h
-@lib lib/libansilove.so.${LIBansilove_VERSION}

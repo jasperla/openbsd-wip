@@ -1,0 +1,3 @@
+Provides client and server game logic for Half-Life: Blue Shift.
+Based on official Half-Life SDK with mods for Xash3D & GoldSource,
+and gameplay fixes.

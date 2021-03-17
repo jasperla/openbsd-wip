@@ -1,4 +1,0 @@
-@comment $OpenBSD: PLIST,v$
-@bin bin/pavucontrol-qt
-share/applications/pavucontrol-qt.desktop
-@tag update-desktop-database

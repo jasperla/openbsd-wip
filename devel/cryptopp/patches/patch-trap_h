@@ -1,0 +1,13 @@
+$OpenBSD: patch-trap_h,v 1.1 2016/11/22 17:20:25 dcoppa Exp $
+Index: trap.h
+--- trap.h.orig
++++ trap.h
+@@ -17,7 +17,7 @@
+ 
+ #include "config.h"
+ 
+-#if defined(CRYPTOPP_DEBUG)
++#if CRYPTOPP_DEBUG
+ #  include <iostream>
+ #  include <sstream>
+ #  if defined(UNIX_SIGNALS_AVAILABLE)

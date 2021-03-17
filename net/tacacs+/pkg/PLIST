@@ -1,0 +1,26 @@
+@comment $OpenBSD: PLIST,v$
+@newgroup _tacacs:511
+@newuser _tacacs:511:_tacacs:daemon:TACACS+ user:/nonexistent:/sbin/nologin
+@rcscript ${RCDIR}/tac_plus
+include/tacacs.h
+lib/libtacacs.a
+lib/libtacacs.la
+@lib lib/libtacacs.so.${LIBtacacs_VERSION}
+@man man/man5/tac_plus.conf.5
+@man man/man8/tac_plus.8
+@bin sbin/tac_plus
+share/tacacs/
+share/tacacs/do_auth.py
+share/tacacs/tac_convert
+share/tacacs/tac_plus.conf.sample
+@mode 640
+@owner root
+@group _tacacs
+@sample ${SYSCONFDIR}/tac_plus.conf
+@mode 750
+@owner _tacacs
+@sample /var/log/tac_plus/
+@mode
+@owner
+@group
+share/tacacs/users_guide

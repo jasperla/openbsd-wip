@@ -1,0 +1,37 @@
+Ethereum is a decentralized platform that runs smart contracts, applications
+that run exactly as programmed without possibility of downtime, censorship,
+fraud or third party interference. The go-ethereum project comes with:
+
+geth:
+   main Ethereum CLI client. It is the entry point into the Ethereum network
+   (main-, test- or private net), capable of running as a full node (default),
+   archive node (retaining all historical state) or a light node (retrieving
+   data live)
+
+abigen:
+   source code generator to convert Ethereum contract definitions into easy to
+   use, compile-time type-safe Go packages
+
+bootnode:
+   stripped down version of our Ethereum client implementation that only takes
+   part in the network node discovery protocol
+
+evm:
+   utility version of the EVM (Ethereum Virtual Machine) that is capable of
+   running bytecode snippets within a configurable environment and execution
+   mode
+
+gethrpctest:
+   utility tool to support the ethereum/rpc-test test suite which validates
+   baseline conformity to the Ethereum JSON RPC specs
+
+rlpdump:
+   utility tool to convert binary RLP (Recursive Length Prefix) dumps (data
+   encoding used by the Ethereum protocol both network as well as consensus
+   wise)
+
+swarm:
+   swarm daemon and tools. This is the entrypoint for the Swarm network
+
+puppeth:
+   CLI wizard that aids in creating a new Ethereum network
