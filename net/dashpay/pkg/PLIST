@@ -1,0 +1,59 @@
+@comment $OpenBSD: PLIST,v$
+@conflict bitcoin-*
+@newgroup _dashd:865
+@newuser _dashd:865:865:daemon:Dashpay Account:/var/empty:/sbin/nologin
+@mode 750
+@owner _dashd
+@group _dashd
+@sample ${VARBASE}/dashpay/
+@mode
+@owner
+@group
+@rcscript ${RCDIR}/dashd
+@bin bin/bench_dash
+@bin bin/dash-cli
+@bin bin/dash-tx
+@bin bin/dashd
+@comment @bin bin/test_dash
+include/dashconsensus.h
+include/secp256k1.h
+include/secp256k1_recovery.h
+include/univalue.h
+@static-lib lib/libdashconsensus.a
+lib/libdashconsensus.la
+@lib lib/libdashconsensus.so.${LIBdashconsensus_VERSION}
+@static-lib lib/libsecp256k1.a
+lib/libsecp256k1.la
+@lib lib/libsecp256k1.so.${LIBsecp256k1_VERSION}
+@static-lib lib/libunivalue.a
+lib/libunivalue.la
+@lib lib/libunivalue.so.${LIBunivalue_VERSION}
+lib/pkgconfig/libdashconsensus.pc
+lib/pkgconfig/libsecp256k1.pc
+lib/pkgconfig/libunivalue.pc
+@man man/man1/dash-cli.1
+@man man/man1/dash-tx.1
+@man man/man1/dashd.1
+share/bash-completion/
+share/bash-completion/completions/
+share/bash-completion/completions/dashpay/
+share/bash-completion/completions/dashpay/dash-cli.bash-completion
+share/bash-completion/completions/dashpay/dash-tx.bash-completion
+share/bash-completion/completions/dashpay/dashd.bash-completion
+share/dashpay/
+share/dashpay/rpcauth.py
+share/doc/dashpay/
+share/doc/dashpay/assets-attribution.md
+share/doc/dashpay/benchmarking.md
+share/doc/dashpay/bips.md
+share/doc/dashpay/dnsseed-policy.md
+share/doc/dashpay/fuzzing.md
+share/doc/dashpay/reduce-traffic.md
+share/doc/dashpay/tor.md
+share/doc/dashpay/translation_process.md
+share/doc/dashpay/translation_strings_policy.md
+share/doc/pkg-readmes/${PKGSTEM}
+share/examples/dashpay/
+share/examples/dashpay/dash.conf
+@sample ${SYSCONFDIR}/dash.conf
+!%%no_x11%%
