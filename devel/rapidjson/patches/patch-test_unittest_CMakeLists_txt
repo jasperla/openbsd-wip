@@ -1,0 +1,15 @@
+Index: test/unittest/CMakeLists.txt
+--- test/unittest/CMakeLists.txt.orig
++++ test/unittest/CMakeLists.txt
+@@ -37,9 +37,9 @@ if(CCACHE_FOUND)
+ endif(CCACHE_FOUND)
+ 
+ if ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "GNU")
+-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Werror -Wall -Wextra -Weffc++ -Wswitch-default -Wfloat-equal")
++    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wextra -Weffc++ -Wswitch-default -Wfloat-equal")
+ elseif (CMAKE_CXX_COMPILER_ID MATCHES "Clang")
+-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Werror -Wall -Wextra -Weffc++ -Wswitch-default -Wfloat-equal -Wimplicit-fallthrough -Weverything")
++    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wextra -Weffc++ -Wswitch-default -Wfloat-equal -Wimplicit-fallthrough -Weverything")
+     # If the user is running a newer version of Clang that includes the
+     # -Wdouble-promotion, we will ignore that warning.
+     if (CMAKE_CXX_COMPILER_VERSION VERSION_GREATER 3.7)
