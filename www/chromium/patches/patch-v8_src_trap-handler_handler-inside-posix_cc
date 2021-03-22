@@ -18,7 +18,7 @@ Index: v8/src/trap-handler/handler-inside-posix.cc
  }
  
  class SigUnmaskStack {
-@@ -114,6 +118,8 @@ bool TryHandleSignal(int signum, siginfo_t* info, void
+@@ -112,6 +116,8 @@ bool TryHandleSignal(int signum, siginfo_t* info, void
      auto* context_rip = &uc->uc_mcontext->__ss.__rip;
  #elif V8_OS_FREEBSD
      auto* context_rip = &uc->uc_mcontext.mc_rip;

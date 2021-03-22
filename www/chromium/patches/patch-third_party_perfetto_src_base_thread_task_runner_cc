@@ -3,7 +3,7 @@ $OpenBSD: patch-third_party_perfetto_src_base_thread_task_runner_cc,v 1.2 2020/0
 Index: third_party/perfetto/src/base/thread_task_runner.cc
 --- third_party/perfetto/src/base/thread_task_runner.cc.orig
 +++ third_party/perfetto/src/base/thread_task_runner.cc
-@@ -28,8 +28,9 @@
+@@ -27,8 +27,9 @@
  #include "perfetto/ext/base/thread_utils.h"
  #include "perfetto/ext/base/unix_task_runner.h"
  

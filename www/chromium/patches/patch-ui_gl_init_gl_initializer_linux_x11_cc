@@ -17,5 +17,5 @@ Index: ui/gl/init/gl_initializer_linux_x11.cc
  const char kEGLLibraryName[] = "libEGL.so.1";
 +#endif
  
- const char kGLESv2ANGLELibraryName[] = "libGLESv2.so";
- const char kEGLANGLELibraryName[] = "libEGL.so";
+ #if BUILDFLAG(ENABLE_SWIFTSHADER)
+ const char kGLESv2SwiftShaderLibraryName[] = "libGLESv2.so";

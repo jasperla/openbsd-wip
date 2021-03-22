@@ -3,7 +3,7 @@ $OpenBSD: patch-chrome_browser_ui_task_manager_task_manager_columns_cc,v 1.10 20
 Index: chrome/browser/ui/task_manager/task_manager_columns.cc
 --- chrome/browser/ui/task_manager/task_manager_columns.cc.orig
 +++ chrome/browser/ui/task_manager/task_manager_columns.cc
-@@ -93,7 +93,7 @@ const TableColumnData kColumns[] = {
+@@ -94,7 +94,7 @@ const TableColumnData kColumns[] = {
       base::size("100000") * kCharWidth, -1, true, false, false},
  #endif
  

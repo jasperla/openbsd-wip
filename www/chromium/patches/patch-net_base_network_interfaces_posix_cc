@@ -1,0 +1,15 @@
+$OpenBSD$
+
+Index: net/base/network_interfaces_posix.cc
+--- net/base/network_interfaces_posix.cc.orig
++++ net/base/network_interfaces_posix.cc
+@@ -62,4 +62,9 @@ std::unique_ptr<ScopedWifiOptions> SetWifiOptions(int 
+   return nullptr;
+ }
+ 
++bool GetNetworkList(NetworkInterfaceList* networks, int policy) {
++  NOTIMPLEMENTED();
++  return false;
++}
++
+ }  // namespace net

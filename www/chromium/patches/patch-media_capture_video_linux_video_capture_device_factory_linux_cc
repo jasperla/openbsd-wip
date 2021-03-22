@@ -37,7 +37,7 @@ Index: media/capture/video/linux/video_capture_device_factory_linux.cc
      const std::string file_name = ExtractFileNameFromDeviceId(device_id);
      const std::string interface_path =
          base::StringPrintf(kInterfacePathTemplate, file_name.c_str());
-@@ -246,7 +256,7 @@ void VideoCaptureDeviceFactoryLinux::GetDevicesInfo(
+@@ -260,7 +270,7 @@ void VideoCaptureDeviceFactoryLinux::GetDevicesInfo(
    std::move(callback).Run(std::move(devices_info));
  }
  

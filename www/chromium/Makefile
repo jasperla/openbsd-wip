@@ -15,8 +15,7 @@ DPB_PROPERTIES=		lonesome
 
 COMMENT=		Chromium browser
 
-V=			88.0.4324.96
-REVISION=		0
+V=			89.0.4389.90
 
 DISTNAME=		chromium-${V}
 
@@ -40,7 +39,10 @@ PERMIT_PACKAGE =	Yes
 MASTER_SITES=	https://commondatastorage.googleapis.com/chromium-browser-official/
 MASTER_SITES0=	http://nerd.hu/distfiles/
 
+FIX_CRLF_FILES=	third_party/vulkan_memory_allocator/src/vk_mem_alloc.h
+
 MODULES=	lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 COMPILER =	base-clang ports-clang ports-gcc
 
@@ -166,12 +168,13 @@ PKG_ARGS+=	-Dswiftshader=1
 
 # Note: these keys are for OpenBSD use ONLY. For your own distribution,
 # please get your own set of keys. It's free!
-#GN_ARGS+=	google_api_key=\"AIzaSyA015yecfJyWi8UQpneQVrNzIKlxjv4MhI\" \
-#		google_default_client_id=\"451220141585.apps.googleusercontent.com\" \
-#		google_default_client_secret=\"nQcDyaBvDyCeDrsRqKIWSHJn\" \
-
-GN_ARGS+=	ffmpeg_branding=\"Chrome\" \
+GN_ARGS+=	google_api_key=\"AIzaSyA015yecfJyWi8UQpneQVrNzIKlxjv4MhI\" \
+		ffmpeg_branding=\"Chrome\" \
 		proprietary_codecs=true
+
+# These are now restricted to use by Google, so bye-bye sync.
+#GN_ARGS+=	google_default_client_id=\"451220141585.apps.googleusercontent.com\"
+#GN_ARGS+=	google_default_client_secret=\"nQcDyaBvDyCeDrsRqKIWSHJn\" \
 
 # XXX dwz doesn't work with chromium yet
 DWZ = :

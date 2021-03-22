@@ -3,7 +3,7 @@ $OpenBSD: patch-base_threading_platform_thread_h,v 1.9 2021/01/20 07:28:07 rober
 Index: base/threading/platform_thread.h
 --- base/threading/platform_thread.h.orig
 +++ base/threading/platform_thread.h
-@@ -230,7 +230,7 @@ class BASE_EXPORT PlatformThread {
+@@ -231,7 +231,7 @@ class BASE_EXPORT PlatformThread {
    // Returns a realtime period provided by |delegate|.
    static TimeDelta GetRealtimePeriod(Delegate* delegate);
  

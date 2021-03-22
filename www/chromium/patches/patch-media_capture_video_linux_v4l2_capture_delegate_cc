@@ -26,7 +26,7 @@ Index: media/capture/video/linux/v4l2_capture_delegate.cc
  
  // TODO(aleksandar.stojiljkovic): Wrap this with kernel version check once the
  // format is introduced to kernel.
-@@ -650,7 +652,7 @@ base::WeakPtr<V4L2CaptureDelegate> V4L2CaptureDelegate
+@@ -658,7 +660,7 @@ base::WeakPtr<V4L2CaptureDelegate> V4L2CaptureDelegate
  
  V4L2CaptureDelegate::~V4L2CaptureDelegate() = default;
  
@@ -35,7 +35,7 @@ Index: media/capture/video/linux/v4l2_capture_delegate.cc
    int num_retries = 0;
    for (; DoIoctl(request, argp) < 0 && num_retries < kMaxIOCtrlRetries;
         ++num_retries) {
-@@ -660,7 +662,7 @@ bool V4L2CaptureDelegate::RunIoctl(int request, void* 
+@@ -668,7 +670,7 @@ bool V4L2CaptureDelegate::RunIoctl(int request, void* 
    return num_retries != kMaxIOCtrlRetries;
  }
  
