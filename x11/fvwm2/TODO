@@ -1,6 +1,0 @@
-man page for fvwm{,2}.1 is not installed any more
-it seems to be located in doc/fvwm/fvwm.1
-seems to be installed by doc/fvwm/Makefile.in
-?mention dependency of fvwm-menu-desktop (others?) on python3
-fix shebang in the scripts like bin/fvwm-menu-desktop
-quirks entry needed for fvwm2, fvicons etc?
