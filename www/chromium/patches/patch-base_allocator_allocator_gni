@@ -11,4 +11,4 @@ Index: base/allocator/allocator.gni
 +_is_using_sanitizers = is_asan || is_hwasan || is_lsan || is_tsan || is_msan || is_openbsd
  
  # - Windows: shims don't work for component builds and debug CRT is not
- # compatible, see below. On x86, there are some memory regresions.
+ # compatible, see below.

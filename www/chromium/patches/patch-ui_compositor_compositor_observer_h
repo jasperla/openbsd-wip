@@ -3,7 +3,7 @@ $OpenBSD$
 Index: ui/compositor/compositor_observer.h
 --- ui/compositor/compositor_observer.h.orig
 +++ ui/compositor/compositor_observer.h
-@@ -46,7 +46,7 @@ class COMPOSITOR_EXPORT CompositorObserver {
+@@ -48,7 +48,7 @@ class COMPOSITOR_EXPORT CompositorObserver {
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.

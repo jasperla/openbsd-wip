@@ -3,7 +3,7 @@ $OpenBSD: patch-chrome_browser_profiles_profiles_state_cc,v 1.1 2021/01/20 07:28
 Index: chrome/browser/profiles/profiles_state.cc
 --- chrome/browser/profiles/profiles_state.cc.orig
 +++ chrome/browser/profiles/profiles_state.cc
-@@ -181,7 +181,7 @@ bool IsGuestModeRequested(const base::CommandLine& com
+@@ -180,7 +180,7 @@ bool IsGuestModeRequested(const base::CommandLine& com
                            PrefService* local_state,
                            bool show_warning) {
  #if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_WIN) || \

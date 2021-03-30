@@ -17,5 +17,5 @@ Index: base/debug/elf_reader.cc
        }
 +#endif
  
-       size_t section_size = bits::Align(current_note->n_namesz, 4) +
-                             bits::Align(current_note->n_descsz, 4) +
+       size_t section_size = bits::AlignUp(current_note->n_namesz, 4) +
+                             bits::AlignUp(current_note->n_descsz, 4) +

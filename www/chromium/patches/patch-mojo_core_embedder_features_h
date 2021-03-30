@@ -1,0 +1,14 @@
+$OpenBSD$
+
+Index: mojo/core/embedder/features.h
+--- mojo/core/embedder/features.h.orig
++++ mojo/core/embedder/features.h
+@@ -13,7 +13,7 @@ namespace mojo {
+ namespace core {
+ 
+ #if defined(OS_POSIX) && !defined(OS_NACL) && !defined(OS_MAC)
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_ANDROID)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_ANDROID) || defined(OS_BSD)
+ extern const base::Feature kMojoLinuxChannelSharedMem;
+ extern const base::FeatureParam<int> kMojoLinuxChannelSharedMemPages;
+ #endif  // defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_ANDROID)

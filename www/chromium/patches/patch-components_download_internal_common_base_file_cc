@@ -3,7 +3,7 @@ $OpenBSD: patch-components_download_internal_common_base_file_cc,v 1.8 2020/10/2
 Index: components/download/internal/common/base_file.cc
 --- components/download/internal/common/base_file.cc.orig
 +++ components/download/internal/common/base_file.cc
-@@ -605,7 +605,7 @@ GURL GetEffectiveAuthorityURL(const GURL& source_url,
+@@ -608,7 +608,7 @@ GURL GetEffectiveAuthorityURL(const GURL& source_url,
  }  // namespace
  
  #if defined(OS_WIN) || defined(OS_APPLE) || defined(OS_LINUX) || \

@@ -3,7 +3,7 @@ $OpenBSD$
 Index: third_party/usrsctp/BUILD.gn
 --- third_party/usrsctp/BUILD.gn.orig
 +++ third_party/usrsctp/BUILD.gn
-@@ -12,7 +12,7 @@ config("usrsctp_config") {
+@@ -13,7 +13,7 @@ config("usrsctp_public_config") {
  
    # This is part of the public config because it's used both by usrsctp and
    # the client (WebRTC), to determine if the length field needs populating.

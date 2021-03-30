@@ -12,7 +12,7 @@ Index: chrome/browser/ui/views/chrome_browser_main_extra_parts_views.cc
  #include <sys/stat.h>
  #include <sys/types.h>
  #include <unistd.h>
-@@ -120,7 +120,7 @@ void ChromeBrowserMainExtraPartsViews::PreProfileInit(
+@@ -131,7 +131,7 @@ void ChromeBrowserMainExtraPartsViews::PreProfileInit(
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.

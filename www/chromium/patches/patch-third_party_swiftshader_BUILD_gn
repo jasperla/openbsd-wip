@@ -3,7 +3,7 @@ $OpenBSD: patch-third_party_swiftshader_BUILD_gn,v 1.13 2020/05/29 20:03:24 robe
 Index: third_party/swiftshader/BUILD.gn
 --- third_party/swiftshader/BUILD.gn.orig
 +++ third_party/swiftshader/BUILD.gn
-@@ -156,8 +156,6 @@ config("swiftshader_config") {
+@@ -170,8 +170,6 @@ config("swiftshader_config") {
            "-Wl,--hash-style=sysv",
            "-mips64r2",
          ]

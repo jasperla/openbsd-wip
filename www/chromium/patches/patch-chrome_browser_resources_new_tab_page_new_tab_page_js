@@ -12,5 +12,5 @@ Index: chrome/browser/resources/new_tab_page/new_tab_page.js
 -export {dummyDescriptor} from './modules/dummy/module.js';
 -// </if>
  export {ModuleDescriptor} from './modules/module_descriptor.js';
+ export {ModuleHeaderElement} from './modules/module_header.js';
  export {ModuleRegistry} from './modules/module_registry.js';
- export {recipeTasksDescriptor, shoppingTasksDescriptor} from './modules/task_module/module.js';

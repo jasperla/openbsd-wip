@@ -3,7 +3,7 @@ $OpenBSD: patch-third_party_perfetto_include_perfetto_ext_base_thread_utils_h,v 
 Index: third_party/perfetto/include/perfetto/ext/base/thread_utils.h
 --- third_party/perfetto/include/perfetto/ext/base/thread_utils.h.orig
 +++ third_party/perfetto/include/perfetto/ext/base/thread_utils.h
-@@ -35,9 +35,10 @@
+@@ -39,9 +39,10 @@
  namespace perfetto {
  namespace base {
  

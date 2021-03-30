@@ -3,7 +3,7 @@ $OpenBSD$
 Index: chrome/browser/ui/views/first_run_dialog.cc
 --- chrome/browser/ui/views/first_run_dialog.cc.orig
 +++ chrome/browser/ui/views/first_run_dialog.cc
-@@ -114,9 +114,11 @@ void FirstRunDialog::Done() {
+@@ -115,9 +115,11 @@ void FirstRunDialog::Done() {
  bool FirstRunDialog::Accept() {
    GetWidget()->Hide();
  

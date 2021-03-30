@@ -3,7 +3,7 @@ $OpenBSD$
 Index: components/autofill/core/browser/personal_data_manager.cc
 --- components/autofill/core/browser/personal_data_manager.cc.orig
 +++ components/autofill/core/browser/personal_data_manager.cc
-@@ -1918,7 +1918,7 @@ bool PersonalDataManager::ShouldShowCardsFromAccountOp
+@@ -1932,7 +1932,7 @@ bool PersonalDataManager::ShouldShowCardsFromAccountOp
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
  #if (defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)) || defined(OS_WIN) || \
