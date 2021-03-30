@@ -39,7 +39,19 @@ Index: content/public/common/content_features.cc
        base::FEATURE_DISABLED_BY_DEFAULT
  #else
        base::FEATURE_ENABLED_BY_DEFAULT
-@@ -979,7 +979,7 @@ const base::Feature kDesktopCaptureMacV2{"DesktopCaptu
+@@ -901,7 +901,11 @@ const base::Feature kWebUIReportOnlyTrustedTypes{
+ 
+ // Controls whether the WebUSB API is enabled:
+ // https://wicg.github.io/webusb
++#if defined(OS_BSD)
++const base::Feature kWebUsb{"WebUSB", base::FEATURE_DISABLED_BY_DEFAULT};
++#else
+ const base::Feature kWebUsb{"WebUSB", base::FEATURE_ENABLED_BY_DEFAULT};
++#endif
+ 
+ // Controls whether the WebXR Device API is enabled.
+ const base::Feature kWebXr{"WebXR", base::FEATURE_ENABLED_BY_DEFAULT};
+@@ -979,7 +983,7 @@ const base::Feature kDesktopCaptureMacV2{"DesktopCaptu
  
  #endif  // defined(OS_MAC)
  
