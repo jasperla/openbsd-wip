@@ -1,0 +1,22 @@
+$OpenBSD$
+
+Index: third_party/angle/BUILD.gn
+--- third_party/angle/BUILD.gn.orig
++++ third_party/angle/BUILD.gn
+@@ -356,7 +356,7 @@ angle_static_library("angle_common") {
+     all_dependent_configs = [ ":angle_disable_pool_alloc" ]
+   }
+ 
+-  if (is_linux || is_chromeos) {
++  if ((is_linux || is_chromeos) && !is_openbsd) {
+     libs = [ "dl" ]
+   }
+ 
+@@ -459,6 +459,7 @@ angle_static_library("angle_gpu_info_util") {
+         "X11",
+         "Xi",
+         "Xext",
++        "GL",
+       ]
+     }
+   }

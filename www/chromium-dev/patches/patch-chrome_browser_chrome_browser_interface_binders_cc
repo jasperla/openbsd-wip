@@ -1,0 +1,32 @@
+$OpenBSD: patch-chrome_browser_chrome_browser_interface_binders_cc,v 1.8 2021/01/20 07:28:08 robert Exp $
+
+Index: chrome/browser/chrome_browser_interface_binders.cc
+--- chrome/browser/chrome_browser_interface_binders.cc.orig
++++ chrome/browser/chrome_browser_interface_binders.cc
+@@ -150,7 +150,7 @@
+ #endif  // defined(OS_ANDROID)
+ 
+ #if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || \
+-    defined(OS_CHROMEOS)
++    defined(OS_CHROMEOS) || defined(OS_BSD)
+ #include "chrome/browser/ui/webui/discards/discards.mojom.h"
+ #include "chrome/browser/ui/webui/discards/discards_ui.h"
+ #include "chrome/browser/ui/webui/discards/site_data.mojom.h"
+@@ -609,7 +609,7 @@ void PopulateChromeFrameBinders(
+       base::BindRepeating(&BindCaptionContextHandler));
+ #endif
+ 
+-#if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX)
++#if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || defined(OS_BSD)
+   if (base::FeatureList::IsEnabled(features::kWebAppWindowControlsOverlay) &&
+       !render_frame_host->GetParent()) {
+     map->Add<chrome::mojom::DraggableRegions>(
+@@ -839,7 +839,7 @@ void PopulateChromeWebUIFrameBinders(
+ #endif
+ 
+ #if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || \
+-    defined(OS_CHROMEOS)
++    defined(OS_CHROMEOS) || defined(OS_BSD)
+   RegisterWebUIControllerInterfaceBinder<discards::mojom::DetailsProvider,
+                                          DiscardsUI>(map);
+ 

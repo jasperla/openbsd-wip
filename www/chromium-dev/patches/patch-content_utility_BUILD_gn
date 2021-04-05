@@ -1,0 +1,14 @@
+$OpenBSD$
+
+Index: content/utility/BUILD.gn
+--- content/utility/BUILD.gn.orig
++++ content/utility/BUILD.gn
+@@ -93,7 +93,7 @@ source_set("utility") {
+     deps += [ "//services/proxy_resolver:lib" ]
+   }
+ 
+-  if (is_linux || is_chromeos) {
++  if ((is_linux || is_chromeos) && !is_openbsd) {
+     deps += [
+       "//content/utility/speech:speech_recognition_sandbox_hook",
+       "//printing:printing_sandbox_hook",

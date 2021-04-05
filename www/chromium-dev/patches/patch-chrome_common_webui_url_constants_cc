@@ -1,0 +1,72 @@
+$OpenBSD$
+
+Index: chrome/common/webui_url_constants.cc
+--- chrome/common/webui_url_constants.cc.orig
++++ chrome/common/webui_url_constants.cc
+@@ -355,13 +355,13 @@ const char kChromeUIOSSettingsHost[] = "os-settings";
+ const char kChromeUIOSSettingsURL[] = "chrome://os-settings/";
+ #endif
+ 
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
+ const char kChromeUIWebUIJsErrorHost[] = "webuijserror";
+ const char kChromeUIWebUIJsErrorURL[] = "chrome://webuijserror/";
+ #endif
+ 
+ #if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || \
+-    defined(OS_CHROMEOS)
++    defined(OS_CHROMEOS) || defined(OS_BSD)
+ const char kChromeUIDiscardsHost[] = "discards";
+ const char kChromeUIDiscardsURL[] = "chrome://discards/";
+ #endif
+@@ -376,13 +376,13 @@ const char kChromeUILinuxProxyConfigHost[] = "linux-pr
+ #endif
+ 
+ #if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_CHROMEOS) || \
+-    defined(OS_ANDROID)
++    defined(OS_ANDROID) || defined(OS_BSD)
+ const char kChromeUISandboxHost[] = "sandbox";
+ #endif
+ 
+ // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
+ // of lacros-chrome is complete.
+-#if defined(OS_WIN) || defined(OS_MAC) || \
++#if defined(OS_WIN) || defined(OS_MAC) || defined(OS_BSD) || \
+     (defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS))
+ const char kChromeUIBrowserSwitchHost[] = "browser-switch";
+ const char kChromeUIBrowserSwitchURL[] = "chrome://browser-switch/";
+@@ -398,7 +398,7 @@ const char kChromeUIProfilePickerUrl[] = "chrome://pro
+ const char kChromeUIProfilePickerStartupQuery[] = "startup";
+ #endif
+ 
+-#if ((defined(OS_LINUX) || defined(OS_CHROMEOS)) && defined(TOOLKIT_VIEWS)) || \
++#if ((defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)) && defined(TOOLKIT_VIEWS)) || \
+     defined(USE_AURA)
+ const char kChromeUITabModalConfirmDialogHost[] = "tab-modal-confirm-dialog";
+ #endif
+@@ -580,14 +580,14 @@ const char* const kChromeHostURLs[] = {
+     kChromeUIAssistantOptInHost,
+ #endif
+ #if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || \
+-    defined(OS_CHROMEOS)
++    defined(OS_CHROMEOS) || defined(OS_BSD)
+     kChromeUIDiscardsHost,
+ #endif
+ #if defined(OS_POSIX) && !defined(OS_MAC) && !defined(OS_ANDROID)
+     kChromeUILinuxProxyConfigHost,
+ #endif
+ #if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_CHROMEOS) || \
+-    defined(OS_ANDROID)
++    defined(OS_ANDROID) || defined(OS_BSD)
+     kChromeUISandboxHost,
+ #endif
+ #if defined(OS_WIN)
+@@ -645,7 +645,7 @@ const char* const kChromeDebugURLs[] = {
+     content::kChromeUIGpuJavaCrashURL,
+     kChromeUIJavaCrashURL,
+ #endif
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
+     kChromeUIWebUIJsErrorURL,
+ #endif
+     kChromeUIQuitURL,

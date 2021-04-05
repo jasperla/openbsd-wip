@@ -1,0 +1,44 @@
+$OpenBSD$
+
+Index: ui/gtk/gtk_compat.cc
+--- ui/gtk/gtk_compat.cc.orig
++++ ui/gtk/gtk_compat.cc
+@@ -37,22 +37,38 @@ auto DlCast(void* symbol) {
+ }
+ 
+ void* GetLibGdkPixbuf() {
++#if defined(OS_BSD)
++  static void* libgdk_pixbuf = DlOpen("libgdk_pixbuf-2.0.so");
++#else
+   static void* libgdk_pixbuf = DlOpen("libgdk_pixbuf-2.0.so.0");
++#endif
+   return libgdk_pixbuf;
+ }
+ 
+ void* GetLibGdk3() {
++#if defined(OS_BSD)
++  static void* libgdk3 = DlOpen("libgdk-3.so");
++#else
+   static void* libgdk3 = DlOpen("libgdk-3.so.0");
++#endif
+   return libgdk3;
+ }
+ 
+ void* GetLibGtk3() {
++#if defined(OS_BSD)
++  static void* libgtk3 = DlOpen("libgtk-3.so");
++#else
+   static void* libgtk3 = DlOpen("libgtk-3.so.0");
++#endif
+   return libgtk3;
+ }
+ 
+ void* GetLibGtk4() {
++#if defined(OS_BSD)
++  static void* libgtk4 = DlOpen("libgtk-4.so");
++#else
+   static void* libgtk4 = DlOpen("libgtk-4.so.1");
++#endif
+   return libgtk4;
+ }
+ 

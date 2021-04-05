@@ -1,0 +1,13 @@
+$OpenBSD: patch-tools_json_schema_compiler_feature_compiler_py,v 1.12 2021/01/20 07:28:12 robert Exp $
+
+Index: tools/json_schema_compiler/feature_compiler.py
+--- tools/json_schema_compiler/feature_compiler.py.orig
++++ tools/json_schema_compiler/feature_compiler.py
+@@ -259,6 +259,7 @@ FEATURE_GRAMMAR = ({
+                 'linux': 'Feature::LINUX_PLATFORM',
+                 'mac': 'Feature::MACOSX_PLATFORM',
+                 'win': 'Feature::WIN_PLATFORM',
++                'openbsd': 'Feature::LINUX_PLATFORM',
+             }
+         }
+     },

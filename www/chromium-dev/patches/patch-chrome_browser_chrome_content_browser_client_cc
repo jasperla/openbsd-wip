@@ -1,0 +1,119 @@
+$OpenBSD$
+
+Index: chrome/browser/chrome_content_browser_client.cc
+--- chrome/browser/chrome_content_browser_client.cc.orig
++++ chrome/browser/chrome_content_browser_client.cc
+@@ -442,7 +442,7 @@
+ #include "components/user_manager/user.h"
+ #include "components/user_manager/user_manager.h"
+ #include "services/service_manager/public/mojom/interface_provider_spec.mojom.h"
+-#elif defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)
++#elif defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || defined(OS_BSD)
+ #include "chrome/browser/chrome_browser_main_linux.h"
+ #elif defined(OS_ANDROID)
+ #include "base/android/application_status_listener.h"
+@@ -502,12 +502,12 @@
+ 
+ // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
+ // of lacros-chrome is complete.
+-#if defined(OS_WIN) || defined(OS_MAC) || \
++#if defined(OS_WIN) || defined(OS_MAC) || defined(OS_BSD) || \
+     (defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS))
+ #include "chrome/browser/browser_switcher/browser_switcher_navigation_throttle.h"
+ #endif
+ 
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
+ #include "components/crash/core/app/crash_switches.h"
+ #include "components/crash/core/app/crashpad.h"
+ #endif
+@@ -522,7 +522,7 @@
+ 
+ // TODO(crbug/1169547) Remove `BUILDFLAG(IS_CHROMEOS_LACROS)` once the
+ // migration is complete.
+-#if defined(OS_LINUX) || defined(OS_MAC) || defined(OS_WIN)
++#if defined(OS_LINUX) || defined(OS_MAC) || defined(OS_WIN) || defined(OS_BSD)
+ #include "chrome/browser/enterprise/connectors/device_trust/navigation_throttle.h"
+ #endif  // defined(OS_LINUX) || defined(OS_MAC) || defined(OS_WIN)
+ 
+@@ -542,7 +542,7 @@
+ 
+ // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
+ // of lacros-chrome is complete.
+-#if defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)
++#if defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || defined(OS_BSD)
+ #include "chrome/browser/ui/views/chrome_browser_main_extra_parts_views_linux.h"
+ #endif
+ 
+@@ -936,7 +936,7 @@ blink::mojom::AutoplayPolicy GetAutoplayPolicyForWebCo
+ int GetCrashSignalFD(const base::CommandLine& command_line) {
+   return crashpad::CrashHandlerHost::Get()->GetDeathSignalSocket();
+ }
+-#elif defined(OS_POSIX) && !defined(OS_MAC)
++#elif defined(OS_POSIX) && !defined(OS_MAC) && !defined(OS_BSD)
+ breakpad::CrashHandlerHostLinux* CreateCrashHandlerHost(
+     const std::string& process_type) {
+   base::FilePath dumps_path;
+@@ -1374,7 +1374,7 @@ ChromeContentBrowserClient::CreateBrowserMainParts(
+ #elif BUILDFLAG(IS_CHROMEOS_LACROS)
+   main_parts = std::make_unique<ChromeBrowserMainPartsLacros>(parameters,
+                                                               &startup_data_);
+-#elif defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)
++#elif defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || defined(OS_BSD)
+   main_parts =
+       std::make_unique<ChromeBrowserMainPartsLinux>(parameters, &startup_data_);
+ #elif defined(OS_ANDROID)
+@@ -1405,7 +1405,7 @@ ChromeContentBrowserClient::CreateBrowserMainParts(
+       std::make_unique<ChromeBrowserMainExtraPartsViewsLacros>());
+ // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
+ // of lacros-chrome is complete.
+-#elif defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)
++#elif defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || defined(OS_BSD)
+   main_parts->AddParts(
+       std::make_unique<ChromeBrowserMainExtraPartsViewsLinux>());
+ #else
+@@ -2183,6 +2183,8 @@ void ChromeContentBrowserClient::AppendExtraCommandLin
+ #elif defined(OS_POSIX)
+ #if defined(OS_ANDROID)
+   bool enable_crash_reporter = true;
++#elif defined(OS_BSD)
++  bool enable_crash_reporter = false;
+ #else
+   bool enable_crash_reporter = false;
+   if (crash_reporter::IsCrashpadEnabled()) {
+@@ -2475,7 +2477,7 @@ void ChromeContentBrowserClient::AppendExtraCommandLin
+   ThreadProfilerConfiguration::Get()->AppendCommandLineSwitchForChildProcess(
+       command_line);
+ 
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
+   // Processes may only query perf_event_open with the BPF sandbox disabled.
+   if (browser_command_line.HasSwitch(switches::kEnableThreadInstructionCount) &&
+       command_line->HasSwitch(sandbox::policy::switches::kNoSandbox)) {
+@@ -3791,7 +3793,7 @@ void ChromeContentBrowserClient::GetAdditionalFileSyst
+   }
+ }
+ 
+-#if defined(OS_POSIX) && !defined(OS_MAC)
++#if defined(OS_POSIX) && !defined(OS_MAC) && !defined(OS_BSD)
+ void ChromeContentBrowserClient::GetAdditionalMappedFilesForChildProcess(
+     const base::CommandLine& command_line,
+     int child_process_id,
+@@ -4170,7 +4172,7 @@ ChromeContentBrowserClient::CreateThrottlesForNavigati
+         &throttles);
+   }
+ 
+-#if defined(OS_LINUX) || defined(OS_MAC) || defined(OS_WIN)
++#if defined(OS_LINUX) || defined(OS_MAC) || defined(OS_WIN) || defined(OS_BSD)
+   MaybeAddThrottle(enterprise_connectors::DeviceTrustNavigationThrottle::
+                        MaybeCreateThrottleFor(handle),
+                    &throttles);
+@@ -4195,7 +4197,7 @@ ChromeContentBrowserClient::CreateThrottlesForNavigati
+ 
+ // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
+ // of lacros-chrome is complete.
+-#if defined(OS_WIN) || defined(OS_MAC) || \
++#if defined(OS_WIN) || defined(OS_MAC) || defined(OS_BSD) || \
+     (defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS))
+   MaybeAddThrottle(browser_switcher::BrowserSwitcherNavigationThrottle::
+                        MaybeCreateThrottleFor(handle),

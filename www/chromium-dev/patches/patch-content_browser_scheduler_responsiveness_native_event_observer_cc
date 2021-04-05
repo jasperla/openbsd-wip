@@ -1,0 +1,23 @@
+$OpenBSD: patch-content_browser_scheduler_responsiveness_native_event_observer_cc,v 1.4 2020/10/22 13:52:54 robert Exp $
+
+Index: content/browser/scheduler/responsiveness/native_event_observer.cc
+--- content/browser/scheduler/responsiveness/native_event_observer.cc.orig
++++ content/browser/scheduler/responsiveness/native_event_observer.cc
+@@ -15,7 +15,7 @@
+ 
+ #include "ui/events/platform/platform_event_source.h"
+ 
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
+ #include "ui/aura/env.h"
+ #include "ui/events/event.h"
+ #endif
+@@ -39,7 +39,7 @@ NativeEventObserver::~NativeEventObserver() {
+   DeregisterObserver();
+ }
+ 
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
+ void NativeEventObserver::RegisterObserver() {
+   aura::Env::GetInstance()->AddWindowEventDispatcherObserver(this);
+ }

@@ -1,0 +1,32 @@
+$OpenBSD$
+
+Index: chrome/browser/performance_monitor/process_metrics_recorder.cc
+--- chrome/browser/performance_monitor/process_metrics_recorder.cc.orig
++++ chrome/browser/performance_monitor/process_metrics_recorder.cc
+@@ -68,7 +68,7 @@ void ProcessMetricsRecorder::OnMetricsSampled(
+           kDiskUsageHistogramBucketCount);
+ #endif
+ #if defined(OS_MAC) || defined(OS_LINUX) || defined(OS_CHROMEOS) || \
+-    defined(OS_AIX)
++    defined(OS_AIX) || defined(OS_BSD)
+       base::UmaHistogramCounts10000(
+           "PerformanceMonitor.IdleWakeups.BrowserProcess",
+           metrics.idle_wakeups);
+@@ -93,7 +93,7 @@ void ProcessMetricsRecorder::OnMetricsSampled(
+                                   true);
+       }
+ #if defined(OS_MAC) || defined(OS_LINUX) || defined(OS_CHROMEOS) || \
+-    defined(OS_AIX)
++    defined(OS_AIX) || defined(OS_BSD)
+       base::UmaHistogramCounts10000(
+           "PerformanceMonitor.IdleWakeups.RendererProcess",
+           metrics.idle_wakeups);
+@@ -118,7 +118,7 @@ void ProcessMetricsRecorder::OnMetricsSampled(
+         base::UmaHistogramBoolean("PerformanceMonitor.HighCPU.GPUProcess",
+                                   true);
+ #if defined(OS_MAC) || defined(OS_LINUX) || defined(OS_CHROMEOS) || \
+-    defined(OS_AIX)
++    defined(OS_AIX) || defined(OS_BSD)
+       base::UmaHistogramCounts10000("PerformanceMonitor.IdleWakeups.GPUProcess",
+                                     metrics.idle_wakeups);
+ #endif

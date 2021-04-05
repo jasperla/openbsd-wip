@@ -1,0 +1,17 @@
+$OpenBSD$
+
+Index: chrome/browser/ui/views/first_run_dialog.cc
+--- chrome/browser/ui/views/first_run_dialog.cc.orig
++++ chrome/browser/ui/views/first_run_dialog.cc
+@@ -115,9 +115,11 @@ void FirstRunDialog::Done() {
+ bool FirstRunDialog::Accept() {
+   GetWidget()->Hide();
+ 
++#if !defined(OS_BSD)
+   ChangeMetricsReportingStateWithReply(
+       report_crashes_->GetChecked(),
+       base::BindOnce(&InitCrashReporterIfEnabled));
++#endif
+ 
+   if (make_default_->GetChecked())
+     shell_integration::SetAsDefaultBrowser();
