@@ -12,7 +12,7 @@ Index: chrome/browser/chrome_browser_interface_binders.cc
  #include "chrome/browser/ui/webui/discards/discards.mojom.h"
  #include "chrome/browser/ui/webui/discards/discards_ui.h"
  #include "chrome/browser/ui/webui/discards/site_data.mojom.h"
-@@ -841,7 +841,7 @@ void PopulateChromeWebUIFrameBinders(
+@@ -842,7 +842,7 @@ void PopulateChromeWebUIFrameBinders(
  #endif
  
  #if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || \
