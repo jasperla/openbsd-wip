@@ -1,0 +1,12 @@
+$OpenBSD$
+
+install headers in correct path
+
+--- src/shaders/CMakeLists.txt.orig	2018-02-02 20:54:13 UTC
++++ src/shaders/CMakeLists.txt
+@@ -63,4 +63,4 @@ add_custom_target (shaders ALL
+                    SOURCES ${shader_source} ${shader_headers})
+ 
+ install (FILES ${shader_headers} ${shader_source} ${shader_objs}
+-        DESTINATION shaders)
++        DESTINATION include/OSL/shaders)
