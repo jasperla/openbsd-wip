@@ -1,0 +1,14 @@
+$OpenBSD$
+
+Index: Lith.pro
+--- Lith.pro.orig
++++ Lith.pro
+@@ -51,7 +51,7 @@ QML_IMPORT_PATH =
+ android {
+     #include(<path/to/android_openssl/openssl.pri)
+ }
+-linux:!android {
++linux|openbsd:!android {
+     QT += dbus
+ 
+     icon.files += \

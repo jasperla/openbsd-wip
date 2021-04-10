@@ -1,2 +1,18 @@
 @comment $OpenBSD: PLIST,v$
 @bin bin/Lith
+share/applications/app.lith.Lith.desktop
+share/icons/hicolor/128x128/apps/app.lith.Lith.png
+share/icons/hicolor/16x16/apps/app.lith.Lith.png
+share/icons/hicolor/192x192/apps/app.lith.Lith.png
+share/icons/hicolor/22x22/apps/app.lith.Lith.png
+share/icons/hicolor/24x24/apps/app.lith.Lith.png
+share/icons/hicolor/256x256/apps/app.lith.Lith.png
+share/icons/hicolor/32x32/apps/app.lith.Lith.png
+share/icons/hicolor/48x48/apps/app.lith.Lith.png
+share/icons/hicolor/512x512/apps/app.lith.Lith.png
+share/icons/hicolor/64x64/apps/app.lith.Lith.png
+share/icons/hicolor/96x96/apps/app.lith.Lith.png
+share/metainfo/
+share/metainfo/app.lith.Lith.appdata.xml
+@tag gtk-update-icon-cache %D/share/icons/hicolor
+@tag update-desktop-database

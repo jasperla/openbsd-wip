@@ -10,8 +10,8 @@ PKGNAME =		lith-${GH_TAGNAME}
 
 CATEGORIES =		net x11
 
-WANTLIB += ${COMPILER_LIBCXX} GL Qt5Core Qt5Gui Qt5Multimedia
-WANTLIB += Qt5Network Qt5Qml Qt5QmlModels Qt5Quick Qt5QuickControls2
+WANTLIB += GL Qt5Core Qt5DBus Qt5Gui Qt5Multimedia Qt5Network
+WANTLIB += Qt5Qml Qt5QmlModels Qt5Quick Qt5QuickControls2 Qt5WebSockets
 WANTLIB += Qt5Widgets Qt5Xml c m
 
 # GPLv2 only
@@ -22,9 +22,11 @@ MODULES =		devel/qmake \
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
-BUILD_DEPENDS =		x11/qt5/qtwebsockets
+RUN_DEPENDS =		x11/gtk+3,-guic \
+			devel/desktop-file-utils
 
 LIB_DEPENDS =		x11/qt5/qtmultimedia \
+			x11/qt5/qtwebsockets \
 			x11/qt5/qtquickcontrols2
 
 #NO_TEST =		Yes
