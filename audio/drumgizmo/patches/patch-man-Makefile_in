@@ -1,0 +1,17 @@
+$OpenBSD$
+
+remove fr man pages 
+
+--- man/Makefile.in.orig	Fri Jul 10 16:06:15 2020
++++ man/Makefile.in	Fri Jul 10 16:06:35 2020
+@@ -317,9 +317,7 @@ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+ man_MANS = \
+ 	drumgizmo.1 \
+-	drumgizmo.fr.1 \
+-	dgvalidator.1 \
+-	dgvalidator.fr.1
++	dgvalidator.1
+ 
+ EXTRA_DIST = $(man_MANS)
+ all: all-am
