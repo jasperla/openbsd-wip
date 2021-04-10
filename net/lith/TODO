@@ -1,2 +1,5 @@
 - fix segfault
+ - I would bet it is the same issue as x11/libquotient (neochat). If you build
+   libquotient with GCC it' fine, so I would bet if we can build this port with
+   GCC it will be okay. - note form rsadowski
 - fix bin name
