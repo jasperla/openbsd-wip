@@ -3,9 +3,6 @@
 COMMENT=	open standard for audio plugins, used by hundreds of plugins
 
 DISTNAME=	lv2-1.18.2
-#GH_ACCOUNT=	lv2
-#GH_PROJECT=	lv2
-#GH_TAGNAME=	v1.18.2
 
 CATEGORIES=	audio
 
