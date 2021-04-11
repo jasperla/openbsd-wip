@@ -1,0 +1,3 @@
+- TypeError: No constructor defined
+- possibly due to maturin according to upstream
+- still unusable
