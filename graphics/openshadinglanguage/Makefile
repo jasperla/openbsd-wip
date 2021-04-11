@@ -2,7 +2,7 @@
 
 COMMENT=	advanced shading language for production GI renderers
 
-V=		1.11.10.0
+V=		1.11.13.0
 GH_ACCOUNT=	imageworks
 GH_PROJECT=	OpenShadingLanguage
 GH_TAGNAME=	Release-${V}
