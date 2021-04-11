@@ -27,7 +27,7 @@ Index: chrome/browser/ui/webui/chrome_web_ui_controller_factory.cc
  #include "chrome/browser/ui/webui/sandbox/sandbox_internals_ui.h"
  #endif
  
-@@ -499,7 +499,7 @@ bool IsAboutUI(const GURL& url) {
+@@ -497,7 +497,7 @@ bool IsAboutUI(const GURL& url) {
  #if !defined(OS_ANDROID)
            || url.host_piece() == chrome::kChromeUITermsHost
  #endif
@@ -36,7 +36,7 @@ Index: chrome/browser/ui/webui/chrome_web_ui_controller_factory.cc
            || url.host_piece() == chrome::kChromeUILinuxProxyConfigHost
  #endif
  #if BUILDFLAG(IS_CHROMEOS_ASH)
-@@ -863,7 +863,7 @@ WebUIFactoryFunction GetWebUIFactoryFunction(WebUI* we
+@@ -859,7 +859,7 @@ WebUIFactoryFunction GetWebUIFactoryFunction(WebUI* we
    }
  #endif  // !defined(OFFICIAL_BUILD)
  #endif  // BUILDFLAG(IS_CHROMEOS_ASH)
@@ -45,7 +45,7 @@ Index: chrome/browser/ui/webui/chrome_web_ui_controller_factory.cc
    if (url.host_piece() == chrome::kChromeUIWebUIJsErrorHost)
      return &NewWebUI<WebUIJsErrorUI>;
  #endif
-@@ -925,7 +925,7 @@ WebUIFactoryFunction GetWebUIFactoryFunction(WebUI* we
+@@ -921,7 +921,7 @@ WebUIFactoryFunction GetWebUIFactoryFunction(WebUI* we
    if (url.host_piece() == chrome::kChromeUINaClHost)
      return &NewWebUI<NaClUI>;
  #endif
@@ -54,7 +54,7 @@ Index: chrome/browser/ui/webui/chrome_web_ui_controller_factory.cc
      defined(USE_AURA)
    if (url.host_piece() == chrome::kChromeUITabModalConfirmDialogHost)
      return &NewWebUI<ConstrainedWebDialogUI>;
-@@ -970,19 +970,19 @@ WebUIFactoryFunction GetWebUIFactoryFunction(WebUI* we
+@@ -966,19 +966,19 @@ WebUIFactoryFunction GetWebUIFactoryFunction(WebUI* we
    }
  #endif
  #if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_CHROMEOS) || \

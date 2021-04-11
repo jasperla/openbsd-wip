@@ -21,7 +21,7 @@ Index: BUILD.gn
      deps += [
        "//third_party/breakpad:breakpad_unittests",
        "//third_party/breakpad:core-2-minidump",
-@@ -473,8 +473,6 @@ group("gn_all") {
+@@ -474,8 +474,6 @@ group("gn_all") {
        "//net:disk_cache_memory_test",
        "//net:quic_client",
        "//net:quic_server",
@@ -30,7 +30,7 @@ Index: BUILD.gn
        "//testing:empty_main",
      ]
  
-@@ -529,10 +527,6 @@ group("gn_all") {
+@@ -530,10 +528,6 @@ group("gn_all") {
          "//chrome/test:load_library_perf_tests",
          "//chrome/test:sync_performance_tests",
          "//chrome/test/chromedriver:chromedriver",
@@ -41,7 +41,7 @@ Index: BUILD.gn
          "//media/cast:generate_barcode_video",
          "//media/cast:generate_timecode_audio",
          "//net:crash_cache",
-@@ -591,10 +585,6 @@ group("gn_all") {
+@@ -592,10 +586,6 @@ group("gn_all") {
        "//mojo:mojo_perftests",
        "//services/service_manager/public/cpp",
        "//testing/gmock:gmock_main",
@@ -52,7 +52,7 @@ Index: BUILD.gn
      ]
  
      if (!is_android) {
-@@ -672,7 +662,7 @@ group("gn_all") {
+@@ -673,7 +663,7 @@ group("gn_all") {
          host_os == "win") {
        deps += [ "//chrome/test/mini_installer:mini_installer_tests" ]
      }
@@ -61,7 +61,7 @@ Index: BUILD.gn
      deps += [ "//third_party/breakpad:symupload($host_toolchain)" ]
    }
  
-@@ -1101,7 +1091,7 @@ if (!is_ios) {
+@@ -1102,7 +1092,7 @@ if (!is_ios) {
        data_deps += [ "//content/web_test:web_test_common_mojom_js_data_deps" ]
      }
  
@@ -70,7 +70,7 @@ Index: BUILD.gn
        data_deps +=
            [ "//third_party/breakpad:minidump_stackwalk($host_toolchain)" ]
      }
-@@ -1110,7 +1100,7 @@ if (!is_ios) {
+@@ -1111,7 +1101,7 @@ if (!is_ios) {
        data_deps += [ "//third_party/breakpad:dump_syms($host_toolchain)" ]
      }
  
@@ -79,7 +79,7 @@ Index: BUILD.gn
        data_deps += [ "//third_party/breakpad:dump_syms($host_toolchain)" ]
      }
  
-@@ -1351,9 +1341,6 @@ group("chromium_builder_perf") {
+@@ -1355,9 +1345,6 @@ group("chromium_builder_perf") {
  
      if (is_win) {
        data_deps += [ "//chrome/installer/mini_installer:mini_installer" ]

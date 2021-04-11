@@ -26,5 +26,5 @@ Index: chrome/browser/ui/tab_helpers.cc
 -    defined(OS_CHROMEOS)
 +    defined(OS_CHROMEOS) || defined(OS_BSD)
    if (base::FeatureList::IsEnabled(
-           features::kHappinessTrackingSurveysForDesktop) ||
-       base::FeatureList::IsEnabled(
+           features::kHappinessTrackingSurveysForDesktopDemo)) {
+     HatsHelper::CreateForWebContents(web_contents);

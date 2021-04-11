@@ -39,7 +39,7 @@ Index: gpu/ipc/common/gpu_memory_buffer_support.cc
    return gfx::NATIVE_PIXMAP;
  #elif defined(OS_WIN)
    return gfx::DXGI_SHARED_HANDLE;
-@@ -204,7 +204,7 @@ GpuMemoryBufferSupport::CreateGpuMemoryBufferImplFromH
+@@ -207,7 +207,7 @@ GpuMemoryBufferSupport::CreateGpuMemoryBufferImplFromH
        return GpuMemoryBufferImplIOSurface::CreateFromHandle(
            std::move(handle), size, format, usage, std::move(callback));
  #endif

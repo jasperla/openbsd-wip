@@ -12,7 +12,7 @@ Index: services/device/hid/hid_service.cc
  #elif defined(OS_MAC)
  #include "services/device/hid/hid_service_mac.h"
  #elif defined(OS_WIN)
-@@ -58,6 +60,8 @@ constexpr base::TaskTraits HidService::kBlockingTaskTr
+@@ -61,6 +63,8 @@ constexpr base::TaskTraits HidService::kBlockingTaskTr
  std::unique_ptr<HidService> HidService::Create() {
  #if (defined(OS_LINUX) || defined(OS_CHROMEOS)) && defined(USE_UDEV)
    return base::WrapUnique(new HidServiceLinux());

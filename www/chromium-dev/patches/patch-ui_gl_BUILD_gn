@@ -20,7 +20,7 @@ Index: ui/gl/BUILD.gn
      "//ui/events/platform",
      "//ui/gfx",
      "//ui/gfx/geometry",
-@@ -375,7 +372,6 @@ component("gl") {
+@@ -376,7 +373,6 @@ component("gl") {
        data_deps += [
          "//third_party/angle:libEGL",
          "//third_party/angle:libGLESv2",
@@ -28,7 +28,7 @@ Index: ui/gl/BUILD.gn
        ]
        if (enable_swiftshader) {
          data_deps += [ "//third_party/swiftshader" ]
-@@ -613,8 +609,6 @@ test("gl_unittests") {
+@@ -614,8 +610,6 @@ test("gl_unittests") {
      "//ui/platform_window",
      "//ui/platform_window:platform_impls",
    ]

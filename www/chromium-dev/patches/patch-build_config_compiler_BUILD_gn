@@ -12,7 +12,7 @@ Index: build/config/compiler/BUILD.gn
  
    # Build with C++ RTTI enabled. Chromium builds without RTTI by default,
    # but some sanitizers are known to require it, like CFI diagnostics
-@@ -419,6 +419,7 @@ config("compiler") {
+@@ -418,6 +418,7 @@ config("compiler") {
      }
  
      ldflags += [
@@ -20,7 +20,7 @@ Index: build/config/compiler/BUILD.gn
        "-Wl,-z,noexecstack",
        "-Wl,-z,relro",
      ]
-@@ -427,13 +428,8 @@ config("compiler") {
+@@ -426,13 +427,8 @@ config("compiler") {
        ldflags += [ "-Wl,-z,now" ]
      }
  
@@ -36,7 +36,7 @@ Index: build/config/compiler/BUILD.gn
      }
    }
  
-@@ -519,7 +515,7 @@ config("compiler") {
+@@ -518,7 +514,7 @@ config("compiler") {
      ldflags += [ "-Wl,-z,keep-text-section-prefix" ]
    }
  
@@ -44,8 +44,8 @@ Index: build/config/compiler/BUILD.gn
 +  if (is_clang && !is_nacl && !use_xcode_clang && !is_openbsd) {
      cflags += [ "-fcrash-diagnostics-dir=" + clang_diagnostic_dir ]
  
-     cflags += [
-@@ -831,7 +827,7 @@ config("compiler_cpu_abi") {
+     # TODO(hans): Remove this once Clang generates better optimized debug info
+@@ -837,7 +833,7 @@ config("compiler_cpu_abi") {
          ]
        }
      } else if (current_cpu == "arm") {
@@ -54,7 +54,7 @@ Index: build/config/compiler/BUILD.gn
          cflags += [ "--target=arm-linux-gnueabihf" ]
          ldflags += [ "--target=arm-linux-gnueabihf" ]
        }
-@@ -845,7 +841,7 @@ config("compiler_cpu_abi") {
+@@ -851,7 +847,7 @@ config("compiler_cpu_abi") {
          cflags += [ "-mtune=$arm_tune" ]
        }
      } else if (current_cpu == "arm64") {
@@ -63,7 +63,7 @@ Index: build/config/compiler/BUILD.gn
          cflags += [ "--target=aarch64-linux-gnu" ]
          ldflags += [ "--target=aarch64-linux-gnu" ]
        }
-@@ -1582,11 +1578,6 @@ config("default_warnings") {
+@@ -1588,11 +1584,6 @@ config("default_warnings") {
          # Flags NaCl (Clang 3.7) and Xcode 9.2 (Clang clang-900.0.39.2) do not
          # recognize.
          cflags += [
@@ -75,7 +75,7 @@ Index: build/config/compiler/BUILD.gn
            # Ignore warnings about MSVC optimization pragmas.
            # TODO(thakis): Only for no_chromium_code? http://crbug.com/912662
            "-Wno-ignored-pragma-optimize",
-@@ -1602,9 +1593,6 @@ config("default_warnings") {
+@@ -1608,9 +1599,6 @@ config("default_warnings") {
  
            # TODO(https://crbug.com/1028110): Evaluate and possible enable.
            "-Wno-deprecated-copy",
@@ -85,7 +85,7 @@ Index: build/config/compiler/BUILD.gn
          ]
  
          cflags_c += [
-@@ -1612,12 +1600,6 @@ config("default_warnings") {
+@@ -1618,12 +1606,6 @@ config("default_warnings") {
            "-Wno-implicit-fallthrough",
          ]
  
@@ -98,7 +98,7 @@ Index: build/config/compiler/BUILD.gn
        }
      }
    }
-@@ -1748,7 +1730,7 @@ config("no_chromium_code") {
+@@ -1754,7 +1736,7 @@ config("no_chromium_code") {
        # suppressing them individually, we just blanket suppress them here.
        "-Wno-unused-variable",
      ]
@@ -107,7 +107,7 @@ Index: build/config/compiler/BUILD.gn
        cflags += [
          # TODO(https://crbug.com/1031169): Clean up and enable.
          "-Wno-misleading-indentation",
-@@ -1826,7 +1808,7 @@ config("export_dynamic") {
+@@ -1832,7 +1814,7 @@ config("export_dynamic") {
  config("thin_archive") {
    # The macOS and iOS default linker ld64 does not support reading thin
    # archives.
@@ -116,7 +116,7 @@ Index: build/config/compiler/BUILD.gn
      arflags = [ "-T" ]
    } else if (is_win && use_lld) {
      arflags = [ "/llvmlibthin" ]
-@@ -2259,7 +2241,7 @@ config("afdo_optimize_size") {
+@@ -2265,7 +2247,7 @@ config("afdo_optimize_size") {
  # between //base/allocator:tcmalloc and AFDO on GCC), so we provide a separate
  # config to allow AFDO to be disabled per-target.
  config("afdo") {
@@ -125,7 +125,7 @@ Index: build/config/compiler/BUILD.gn
      cflags = []
      if (clang_emit_debug_info_for_profiling) {
        # Add the following flags to generate debug info for profiling.
-@@ -2275,7 +2257,7 @@ config("afdo") {
+@@ -2281,7 +2263,7 @@ config("afdo") {
        cflags += [ "-fprofile-sample-use=${rebased_clang_sample_profile}" ]
        inputs = [ _clang_sample_profile ]
      }
@@ -134,7 +134,7 @@ Index: build/config/compiler/BUILD.gn
      cflags = [ "-fauto-profile=${auto_profile_path}" ]
      inputs = [ auto_profile_path ]
    }
-@@ -2331,7 +2313,7 @@ config("symbols") {
+@@ -2337,7 +2319,7 @@ config("symbols") {
      # All configs using /DEBUG should include this:
      configs = [ ":win_pdbaltpath" ]
  

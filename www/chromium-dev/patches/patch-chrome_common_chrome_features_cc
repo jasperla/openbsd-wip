@@ -21,12 +21,12 @@ Index: chrome/common/chrome_features.cc
  COMPONENT_EXPORT(CHROME_FEATURES)
  // Enables ephemeral Guest profiles on desktop.
  extern const base::Feature kEnableEphemeralGuestProfilesOnDesktop{
-@@ -523,7 +523,7 @@ const base::Feature kIncompatibleApplicationsWarning{
+@@ -522,7 +522,7 @@ const base::Feature kIncompatibleApplicationsWarning{
  #endif
  
  #if defined(OS_MAC) || defined(OS_WIN) || defined(OS_LINUX) || \
 -    defined(OS_CHROMEOS)
 +    defined(OS_CHROMEOS) || defined(OS_BSD)
  // When enabled, removes any theme or background customization done by the user
- // and also overrides any dark/light mode treatment on the Incognito UI.
+ // on the Incognito UI.
  const base::Feature kIncognitoBrandConsistencyForDesktop{

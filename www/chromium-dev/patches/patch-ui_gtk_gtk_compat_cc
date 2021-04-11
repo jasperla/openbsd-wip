@@ -3,7 +3,7 @@ $OpenBSD$
 Index: ui/gtk/gtk_compat.cc
 --- ui/gtk/gtk_compat.cc.orig
 +++ ui/gtk/gtk_compat.cc
-@@ -37,22 +37,38 @@ auto DlCast(void* symbol) {
+@@ -36,22 +36,38 @@ auto DlCast(void* symbol) {
  }
  
  void* GetLibGdkPixbuf() {
