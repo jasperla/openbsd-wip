@@ -1,3 +1,1 @@
-- Works fine with qutebrowser, but requires network while building.
-- All tests pass.
-- Force it offline or wait for a new release with updated pyo3 crate.
+- Update until submission
