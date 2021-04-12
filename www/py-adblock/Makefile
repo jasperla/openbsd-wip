@@ -102,6 +102,7 @@ TEST_ENV =	PYTHONPATH=${WRKSRC}${MODPY_SITEPKG}:${MODPY_SITEPKG}
 
 do-build:
 	${MODCARGO_CARGO_RUN} build \
+		-i python${MODPY_VERSION} \
 		--manifest-path ${MODCARGO_CARGOTOML} \
 		--release \
 		${MODCARGO_BUILD_ARGS} ;
