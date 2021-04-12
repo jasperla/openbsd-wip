@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v$
+@rcscript ${RCDIR}/athens
+@bin bin/athens-proxy
+share/athens/
+share/athens/athens.toml
+@mode 640
+@sample ${SYSCONFDIR}/athens.toml

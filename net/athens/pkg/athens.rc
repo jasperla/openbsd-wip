@@ -1,0 +1,14 @@
+#!/bin/ksh
+#
+# $OpenBSD: athens.rc,v 1.2 2019/03/05 13:49:50 abieber Exp $
+
+daemon="${TRUEPREFIX}/bin/athens-proxy"
+daemon_user="_athens"
+daemon_flags="-config_file ${SYSCONFDIR}/athens.toml"
+
+. /etc/rc.d/rc.subr
+
+rc_bg=YES
+rc_reload=NO
+
+rc_cmd $1
