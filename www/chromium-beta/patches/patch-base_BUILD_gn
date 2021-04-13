@@ -25,7 +25,7 @@ Index: base/BUILD.gn
    }
  
    if (is_win) {
-@@ -1366,11 +1372,16 @@ component("base") {
+@@ -1364,11 +1370,16 @@ component("base") {
    # building inside the cros_sdk environment - use host_toolchain as a
    # more robust check for this.
    if (!use_sysroot &&
@@ -43,7 +43,7 @@ Index: base/BUILD.gn
    if (use_allocator_shim) {
      sources += [
        "allocator/allocator_shim.cc",
-@@ -1389,7 +1400,7 @@ component("base") {
+@@ -1387,7 +1398,7 @@ component("base") {
      if (is_apple) {
        sources += [ "allocator/allocator_shim_override_mac_symbols.h" ]
      }
@@ -52,7 +52,7 @@ Index: base/BUILD.gn
        sources += [
          "allocator/allocator_shim_override_cpp_symbols.h",
          "allocator/allocator_shim_override_glibc_weak_symbols.h",
-@@ -2045,6 +2056,29 @@ component("base") {
+@@ -2043,6 +2054,29 @@ component("base") {
          "linux_util.h",
        ]
      }
