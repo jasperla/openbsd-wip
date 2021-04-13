@@ -4,8 +4,10 @@ COMMENT =	Brave's adblock library
 
 GH_ACCOUNT =	ArniDagur
 GH_PROJECT =	python-adblock
-GH_TAGNAME =	ccb00e70cd098d6500f422702a8a2e96a233f835
-DISTNAME =	py-adblock-0.4.3.20200321
+GH_TAGNAME =	0.4.4
+DISTNAME =	py-adblock-0.4.4
+#GH_TAGNAME =	ccb00e70cd098d6500f422702a8a2e96a233f835
+#DISTNAME =	py-adblock-0.4.3.20200321
 
 CATEGORIES =	www
 
