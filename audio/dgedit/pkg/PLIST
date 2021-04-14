@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST,v$
+@bin bin/dgedit
+share/applications/dgedit.desktop
+share/icons/hicolor/scalable/apps/dgedit.svg
+share/locale/dgedit_da.qm
+share/locale/dgedit_fr.qm
+@tag update-desktop-database
+@tag gtk-update-icon-cache %D/share/icons/hicolor

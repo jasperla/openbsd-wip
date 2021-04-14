@@ -1,0 +1,28 @@
+$OpenBSD$
+
+set proper commands for qt5
+
+--- src/Makefile.in.orig	Sat Jul 11 00:43:33 2020
++++ src/Makefile.in	Sat Jul 11 00:44:57 2020
+@@ -1270,7 +1270,7 @@ uninstall-am: uninstall-binPROGRAMS uninstall-dgeditDA
+ 
+ 
+ qrc_%.cc: %.qrc
+-	rcc $< > $@
++	$(QT_RCC) $< > $@
+ 
+ %.moc.cc: %.h
+ 	QT_SELECT=qt5 $(QT_MOC) -o $@ $<
+@@ -1288,10 +1288,10 @@ qrc_%.cc: %.qrc
+ 	rc $<
+ 
+ %.ts: $(dgedit_SOURCES) $(HDRS)
+-	QT_SELECT=qt5 lupdate $(dgedit_SOURCES) $(HDRS) -ts $@
++	QT_SELECT=qt5 lupdate-qt5 $(dgedit_SOURCES) $(HDRS) -ts $@
+ 
+ %.qm: %.ts
+-	QT_SELECT=qt5 lrelease $<
++	QT_SELECT=qt5 lrelease-qt5 $<
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
