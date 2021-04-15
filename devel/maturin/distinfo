@@ -100,7 +100,6 @@ SHA256 (cargo/llvm-bitcode-0.1.2.tar.gz) = i5Xf2TzDnT8J2ZblIQkFz5f1QqpUwIkGqOi19
 SHA256 (cargo/log-0.4.14.tar.gz) = Ubm75sR9Ufw+GpuUWWWUa0xEFCq4eSxQg1qYDTYsJxA=
 SHA256 (cargo/mailparse-0.13.2.tar.gz) = Md4fkEPFgu/efb2T3lZgDfErbESIpn7q76dOo2QBmyI=
 SHA256 (cargo/matches-0.1.8.tar.gz) = f/xcUzhGnU0+oX0mn6jqNRKtJHJHwwvS32nmgwntCgg=
-SHA256 (cargo/maturin-0.10.2.tar.gz) = mHXcvKuHyGDRIhyKMaq5IncdXUQy10GKubFnfrEQzxM=
 SHA256 (cargo/memchr-2.3.4.tar.gz) = DuHEeqolbsq8rqNR6uSpsB7zntgQAE4pjSUR7ShLFSU=
 SHA256 (cargo/mime-0.3.16.tar.gz) = KmDHzlAcceA6nJwNNbhhQTrpJb2XnMek4w0GAGmqrI0=
 SHA256 (cargo/mime_guess-2.0.3.tar.gz) = JoTUwul9mYSNMLMksAyPzH5ciXt8u1gZsJ58kOi68hI=
@@ -242,7 +241,7 @@ SHA256 (cargo/winapi-x86_64-pc-windows-gnu-0.4.0.tar.gz) = cS4ieEHQV8HuHNL7Ivp+W
 SHA256 (cargo/winreg-0.7.0.tar.gz) = ASDbguih4Ln7M0WlOcR4dnwASNhChgmU2WET1bZnvWk=
 SHA256 (cargo/xattr-0.2.2.tar.gz) = JEw3QfQkDvRidIYDl8fHTlDrI2JJlpMOSEwWZ5YzpUw=
 SHA256 (cargo/zip-0.5.6.tar.gz) = WCh8KNeFB/X5HypM8egxDix2/UxpMvk6xg/RzrQC230=
-SHA256 (maturin-0.10.2.20200411.tar.gz) = 6fd74G5Mt0A9rsehzcadoBkpNeDaJG6ee48/lCEeU5I=
+SHA256 (maturin-0.10.3.tar.gz) = SOQtx7naXUqlI9bm+2B0NL5KOsCGObnCeO33FiVe2Rs=
 SIZE (cargo/addr2line-0.14.1.tar.gz) = 31201
 SIZE (cargo/adler-1.0.2.tar.gz) = 12778
 SIZE (cargo/aes-0.6.0.tar.gz) = 86774
@@ -345,7 +344,6 @@ SIZE (cargo/llvm-bitcode-0.1.2.tar.gz) = 13096
 SIZE (cargo/log-0.4.14.tar.gz) = 34582
 SIZE (cargo/mailparse-0.13.2.tar.gz) = 31778
 SIZE (cargo/matches-0.1.8.tar.gz) = 2216
-SIZE (cargo/maturin-0.10.2.tar.gz) = 93443
 SIZE (cargo/memchr-2.3.4.tar.gz) = 23077
 SIZE (cargo/mime-0.3.16.tar.gz) = 15206
 SIZE (cargo/mime_guess-2.0.3.tar.gz) = 27437
@@ -487,4 +485,4 @@ SIZE (cargo/winapi-x86_64-pc-windows-gnu-0.4.0.tar.gz) = 2947998
 SIZE (cargo/winreg-0.7.0.tar.gz) = 21225
 SIZE (cargo/xattr-0.2.2.tar.gz) = 11750
 SIZE (cargo/zip-0.5.6.tar.gz) = 33064
-SIZE (maturin-0.10.2.20200411.tar.gz) = 209524
+SIZE (maturin-0.10.3.tar.gz) = 209504

@@ -4,8 +4,7 @@ COMMENT =	develop crates with pyo3, rust-cpython and cffi bindings
 
 GH_ACCOUNT =	PyO3
 GH_PROJECT =	maturin
-GH_TAGNAME =	bdf4bb23a12abec2f944167546966b057744d3eb
-DISTNAME =	maturin-0.10.2.20200411
+GH_TAGNAME =	v0.10.3
 
 CATEGORIES =	devel
 
@@ -126,7 +125,6 @@ MODCARGO_CRATES +=	llvm-bitcode	0.1.2	# MIT
 MODCARGO_CRATES +=	log	0.4.14	# MIT OR Apache-2.0
 MODCARGO_CRATES +=	mailparse	0.13.2	# 0BSD
 MODCARGO_CRATES +=	matches	0.1.8	# MIT
-MODCARGO_CRATES +=	maturin	0.10.2	# MIT OR Apache-2.0
 MODCARGO_CRATES +=	memchr	2.3.4	# Unlicense/MIT
 MODCARGO_CRATES +=	mime	0.3.16	# MIT/Apache-2.0
 MODCARGO_CRATES +=	mime_guess	2.0.3	# MIT
