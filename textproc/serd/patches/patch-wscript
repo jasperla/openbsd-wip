@@ -1,0 +1,16 @@
+$OpenBSD$
+
+set proper shared library version
+
+Index: wscript
+--- wscript.orig
++++ wscript
+@@ -103,7 +103,7 @@ def build(bld):
+                 'includes':        ['.', './src'],
+                 'cflags':          ['-fvisibility=hidden'],
+                 'lib':             ['m'],
+-                'vnum':            SERD_VERSION,
++                'vnum':            os.environ['libserd_0_ltversion'],
+                 'install_path':    '${LIBDIR}'}
+     if bld.env.MSVC_COMPILER:
+         lib_args['cflags'] = []
