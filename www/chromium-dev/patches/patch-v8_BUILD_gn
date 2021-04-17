@@ -13,7 +13,7 @@ Index: v8/BUILD.gn
    }
  
    # TODO(jochen): Support v8_enable_prof on Windows.
-@@ -4602,7 +4605,7 @@ v8_component("v8_libbase") {
+@@ -4600,7 +4603,7 @@ v8_component("v8_libbase") {
      }
    }
  
@@ -22,7 +22,7 @@ Index: v8/BUILD.gn
      sources += [
        "src/base/debug/stack_trace_posix.cc",
        "src/base/platform/platform-linux.cc",
-@@ -4612,6 +4615,12 @@ v8_component("v8_libbase") {
+@@ -4610,6 +4613,12 @@ v8_component("v8_libbase") {
        "dl",
        "rt",
      ]

@@ -21,7 +21,7 @@ Index: chrome/common/chrome_features.cc
  COMPONENT_EXPORT(CHROME_FEATURES)
  // Enables ephemeral Guest profiles on desktop.
  extern const base::Feature kEnableEphemeralGuestProfilesOnDesktop{
-@@ -522,7 +522,7 @@ const base::Feature kIncompatibleApplicationsWarning{
+@@ -528,7 +528,7 @@ const base::Feature kIncompatibleApplicationsWarning{
  #endif
  
  #if defined(OS_MAC) || defined(OS_WIN) || defined(OS_LINUX) || \

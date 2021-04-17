@@ -11,7 +11,7 @@ Index: chrome/browser/profiles/profile_impl.cc
  #include "ui/base/l10n/l10n_util.h"
  
  #if BUILDFLAG(IS_CHROMEOS_ASH)
-@@ -816,7 +817,13 @@ void ProfileImpl::DoFinalInit() {
+@@ -821,7 +822,13 @@ void ProfileImpl::DoFinalInit() {
  }
  
  base::FilePath ProfileImpl::last_selected_directory() {

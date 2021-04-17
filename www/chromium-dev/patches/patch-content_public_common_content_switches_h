@@ -11,7 +11,7 @@ Index: content/public/common/content_switches.h
  CONTENT_EXPORT extern const char kEnableNetworkInformationDownlinkMax[];
  CONTENT_EXPORT extern const char kEnableNewCanvas2DAPI[];
  CONTENT_EXPORT extern const char kDisableNv12DxgiVideo[];
-@@ -266,7 +267,7 @@ CONTENT_EXPORT extern const char kRendererWaitForJavaD
+@@ -265,7 +266,7 @@ CONTENT_EXPORT extern const char kRendererWaitForJavaD
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.

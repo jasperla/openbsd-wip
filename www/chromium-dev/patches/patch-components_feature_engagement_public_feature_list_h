@@ -12,7 +12,7 @@ Index: components/feature_engagement/public/feature_list.h
  DEFINE_VARIATION_PARAM(kIPHDesktopTabGroupsNewGroupFeature,
                         "IPH_DesktopTabGroupsNewGroup");
  DEFINE_VARIATION_PARAM(kIPHFocusModeFeature, "IPH_FocusMode");
-@@ -242,7 +242,7 @@ constexpr flags_ui::FeatureEntry::FeatureVariation
+@@ -243,7 +243,7 @@ constexpr flags_ui::FeatureEntry::FeatureVariation
          VARIATION_ENTRY(kIPHBadgedTranslateManualTriggerFeature),
          VARIATION_ENTRY(kIPHDiscoverFeedHeaderFeature),
  #elif defined(OS_WIN) || defined(OS_APPLE) || defined(OS_LINUX) || \

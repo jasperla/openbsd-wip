@@ -17,7 +17,7 @@ Index: content/browser/browser_main_loop.cc
  // One of the linux specific headers defines this as a macro.
  #ifdef DestroyAll
  #undef DestroyAll
-@@ -527,6 +534,12 @@ int BrowserMainLoop::EarlyInitialization() {
+@@ -528,6 +535,12 @@ int BrowserMainLoop::EarlyInitialization() {
    // by now since a thread to start the ServiceManager has been created
    // before the browser main loop starts.
    DCHECK(SandboxHostLinux::GetInstance()->IsInitialized());
@@ -30,7 +30,7 @@ Index: content/browser/browser_main_loop.cc
  #endif
  
  #if defined(USE_X11)
-@@ -561,7 +574,7 @@ int BrowserMainLoop::EarlyInitialization() {
+@@ -562,7 +575,7 @@ int BrowserMainLoop::EarlyInitialization() {
  
    // Up the priority of the UI thread unless it was already high (since Mac
    // and recent versions of Android (O+) do this automatically).

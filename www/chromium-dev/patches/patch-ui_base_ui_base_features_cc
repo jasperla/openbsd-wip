@@ -3,7 +3,7 @@ $OpenBSD$
 Index: ui/base/ui_base_features.cc
 --- ui/base/ui_base_features.cc.orig
 +++ ui/base/ui_base_features.cc
-@@ -141,7 +141,7 @@ const base::Feature kExperimentalFlingAnimation {
+@@ -148,7 +148,7 @@ const base::Feature kExperimentalFlingAnimation {
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
  #if defined(OS_WIN) || (defined(OS_LINUX) && !BUILDFLAG(IS_CHROMEOS_ASH) && \
@@ -12,7 +12,7 @@ Index: ui/base/ui_base_features.cc
        base::FEATURE_ENABLED_BY_DEFAULT
  #else
        base::FEATURE_DISABLED_BY_DEFAULT
-@@ -174,7 +174,7 @@ const base::Feature kPrecisionTouchpadLogging{
+@@ -181,7 +181,7 @@ const base::Feature kPrecisionTouchpadLogging{
  #endif  // defined(OS_WIN)
  
  #if defined(OS_WIN) || defined(OS_APPLE) || defined(OS_LINUX) || \
@@ -21,7 +21,7 @@ Index: ui/base/ui_base_features.cc
  // Enables stylus appearing as touch when in contact with digitizer.
  const base::Feature kDirectManipulationStylus = {
      "DirectManipulationStylus",
-@@ -202,7 +202,7 @@ bool IsForcedColorsEnabled() {
+@@ -209,7 +209,7 @@ bool IsForcedColorsEnabled() {
  // milestones.
  const base::Feature kEyeDropper {
    "EyeDropper",
@@ -30,7 +30,7 @@ Index: ui/base/ui_base_features.cc
        base::FEATURE_ENABLED_BY_DEFAULT
  #else
        base::FEATURE_DISABLED_BY_DEFAULT
-@@ -220,7 +220,7 @@ bool IsEyeDropperEnabled() {
+@@ -227,7 +227,7 @@ bool IsEyeDropperEnabled() {
  const base::Feature kCSSColorSchemeUARendering = {
      "CSSColorSchemeUARendering",
  #if defined(OS_WIN) || defined(OS_CHROMEOS) || defined(OS_LINUX) || \
@@ -39,7 +39,7 @@ Index: ui/base/ui_base_features.cc
                                              base::FEATURE_ENABLED_BY_DEFAULT
  #else
      base::FEATURE_DISABLED_BY_DEFAULT
-@@ -239,7 +239,7 @@ bool IsCSSColorSchemeUARenderingEnabled() {
+@@ -246,7 +246,7 @@ bool IsCSSColorSchemeUARenderingEnabled() {
  // Mac launch bug.
  const base::Feature kFormControlsRefresh = {"FormControlsRefresh",
  #if defined(OS_WIN) || defined(OS_CHROMEOS) || defined(OS_LINUX) || \
