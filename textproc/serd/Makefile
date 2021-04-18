@@ -2,9 +2,9 @@
 
 COMMENT=	lightweight C library for RDF syntax
 
-DISTNAME=	serd-0.30.4
+DISTNAME=	serd-0.30.10
 
-SHARED_LIBS=	serd-0	0.0 # 0.30.4
+SHARED_LIBS=	serd-0	0.0 # 0.30
 
 CATEGORIES=	textproc
 
@@ -22,6 +22,9 @@ MASTER_SITES=	http://download.drobilla.net/
 EXTRACT_SUFX=	.tar.bz2
 
 MODULES=	lang/python
+
+# requires compiler-rt
+NO_TEST=	Yes
 
 do-configure:
 	cd ${WRKSRC} && env -i ${CONFIGURE_ENV} \

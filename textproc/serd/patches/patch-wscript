@@ -5,8 +5,8 @@ set proper shared library version
 Index: wscript
 --- wscript.orig
 +++ wscript
-@@ -103,7 +103,7 @@ def build(bld):
-                 'includes':        ['.', './src'],
+@@ -186,7 +186,7 @@ def build(bld):
+                 'includes':        ['include'],
                  'cflags':          ['-fvisibility=hidden'],
                  'lib':             ['m'],
 -                'vnum':            SERD_VERSION,
