@@ -6,7 +6,7 @@ DISTNAME=	sord-0.16.4
 
 SHARED_LIBS=	sord-0	0.0 # 0.16
 
-CATEGORIES=	textproc
+CATEGORIES=	devel
 
 HOMEPAGE=	https://drobilla.net/software/sord
 
