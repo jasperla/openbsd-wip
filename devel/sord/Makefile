@@ -23,7 +23,7 @@ EXTRACT_SUFX=	.tar.bz2
 
 MODULES=	lang/python
 
-LIB_DEPENDS=	textproc/serd \
+LIB_DEPENDS=	devel/serd \
 		devel/pcre
 
 # requires compiler-rt
