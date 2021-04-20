@@ -6,7 +6,7 @@ DISTNAME=	serd-0.30.10
 
 SHARED_LIBS=	serd-0	0.0 # 0.30
 
-CATEGORIES=	textproc
+CATEGORIES=	devel
 
 HOMEPAGE=	https://drobilla.net/software/serd
 
