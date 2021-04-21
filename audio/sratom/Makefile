@@ -1,34 +1,38 @@
 # $OpenBSD$
 
-COMMENT =		library for serialising LV2 atoms to/from RDF
+COMMENT=	library for serialising LV2 atoms to/from RDF
 
-V =			0.6.4
-DISTNAME =		sratom-${V}
+V=		0.6.8
+DISTNAME=	sratom-${V}
 
-SHARED_LIBS =		sratom-0	0.0
+SHARED_LIBS=	sratom-0	0.0 # 0.6
 
-CATEGORIES =		audio
-HOMEPAGE =		https://drobilla.net/software/sratom
+CATEGORIES=	audio
+
+HOMEPAGE=	https://drobilla.net/software/sratom
+
+MAINTAINER=     Dimitri Karamazov <deserter666@danwin1210.me>
 
 # MIT
-PERMIT_PACKAGE =	Yes
+PERMIT_PACKAGE= Yes
 
-WANTLIB +=		m serd-0 sord-0
+WANTLIB += m serd-0 sord-0
 
-MASTER_SITES =		http://download.drobilla.net/
+MASTER_SITES=	http://download.drobilla.net/
 
-EXTRACT_SUFX =		.tar.bz2
+EXTRACT_SUFX=	.tar.bz2
 
-MODULES =		lang/python
+MODULES=	lang/python
 
-MODPY_VERSION=          ${MODPY_DEFAULT_VERSION_3}
+BUILD_DEPENDS=	audio/lv2
 
-LIB_DEPENDS =		devel/serd \
-			devel/sord
-BUILD_DEPENDS =		audio/lv2
+LIB_DEPENDS=	devel/serd \
+		devel/sord
+
+RUN_DEPENDS=	audio/lv2
 
 # requires compiler-rt
-NO_TEST =		Yes
+NO_TEST=	Yes
 
 do-configure:
 	cd ${WRKSRC} && env -i ${CONFIGURE_ENV} \
