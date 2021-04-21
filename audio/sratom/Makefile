@@ -27,22 +27,20 @@ LIB_DEPENDS =		devel/serd \
 			devel/sord
 BUILD_DEPENDS =		audio/lv2
 
-post-extract:
-	@sed -i "s/vnum[ ]*=[ ]*SRATOM_VERSION/vnum = '${LIBsratom-0_VERSION}'/g" \
-	    ${WRKSRC}/wscript
+# requires compiler-rt
+NO_TEST =		Yes
 
 do-configure:
-	cd ${WRKSRC} && PYTHON=${MODPY_BIN} CXX='${CXX}' CC='${CC}' \
+	cd ${WRKSRC} && env -i ${CONFIGURE_ENV} \
 	    ${MODPY_BIN} ./waf configure \
 		--prefix=${PREFIX} \
 		--mandir=${PREFIX}/man
 
 do-build:
-	cd ${WRKSRC} && ${MODPY_BIN} ./waf -v
+	cd ${WRKSRC} && env -i ${MAKE_ENV} ${MODPY_BIN} ./waf -v
 
 do-install:
-	cd ${WRKSRC} && ${MODPY_BIN} ./waf install
-
-NO_TEST = Yes
+	cd ${WRKSRC} && env -i ${MAKE_ENV} ${MODPY_BIN} ./waf install \
+		--destdir=${DESTDIR}
 
 .include <bsd.port.mk>
