@@ -22,33 +22,29 @@ MASTER_SITES =	http://download.drobilla.net/
 
 EXTRACT_SUFX =	.tar.bz2
 
-LIB_DEPENDS =	audio/libsndfile \
-		audio/sratom
-
 MODULES =	lang/python
 
-post-extract:
-	@sed -i "s/vnum[ ]*=[ ]*LILV_VERSION/vnum = '${LIBlilv-0_VERSION}'/g" \
-	    ${WRKSRC}/wscript
+LIB_DEPENDS =	audio/libsndfile \
+		audio/sratom
 
 # requires compiler-rt
 NO_TEST =	Yes
 
 do-configure:
-	cd ${WRKSRC} && PYTHON=${MODPY_BIN} CXX='${CXX}' CC='${CC}'  \
+	cd ${WRKSRC} && env -i ${CONFIGURE_ENV} \
 	   ${MODPY_BIN} ./waf configure \
 		--prefix=${PREFIX} \
-		--destdir=${DESTDIR} \
 		--mandir=${PREFIX}/man \
 		--default-lv2-path=${PREFIX}/lib/lv2 \
 		--no-bash-completion \
 		--dyn-manifest
 
 do-build:
-	cd ${WRKSRC} && ${MODPY_BIN} ./waf -v
+	cd ${WRKSRC} && env -i ${MAKE_ENV} ${MODPY_BIN} ./waf -v
 
 do-install:
-	cd ${WRKSRC} && ${MODPY_BIN} ./waf install
+	cd ${WRKSRC} && env -i ${MAKE_ENV} ${MODPY_BIN} ./waf install \
+		--destdir=${DESTDIR}
 
 post-install:
 	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
