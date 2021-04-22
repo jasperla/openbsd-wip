@@ -1,0 +1,57 @@
+# $OpenBSD$
+
+COMMENT =	library for simple use of LV2 plugins in applications
+
+DISTNAME =	lilv-0.24.8
+
+SHARED_LIBS =	lilv-0	0.0
+
+CATEGORIES =	audio
+
+HOMEPAGE =	https://drobilla.net/software/lilv
+
+#ISC
+PERMIT_PACKAGE = Yes
+
+WANTLIB += FLAC c ogg opus serd-0 sndfile sord-0 sratom-0 vorbis
+WANTLIB += vorbisenc
+
+MODULES +=	lang/python
+
+MASTER_SITES =	http://download.drobilla.net/
+
+EXTRACT_SUFX =	.tar.bz2
+
+LIB_DEPENDS =	audio/libsndfile \
+		audio/sratom
+
+MODULES =	lang/python
+
+post-extract:
+	@sed -i "s/vnum[ ]*=[ ]*LILV_VERSION/vnum = '${LIBlilv-0_VERSION}'/g" \
+	    ${WRKSRC}/wscript
+
+# requires compiler-rt
+NO_TEST =	Yes
+
+do-configure:
+	cd ${WRKSRC} && PYTHON=${MODPY_BIN} CXX='${CXX}' CC='${CC}'  \
+	   ${MODPY_BIN} ./waf configure \
+		--prefix=${PREFIX} \
+		--destdir=${DESTDIR} \
+		--mandir=${PREFIX}/man \
+		--default-lv2-path=${PREFIX}/lib/lv2 \
+		--no-bash-completion \
+		--dyn-manifest
+
+do-build:
+	cd ${WRKSRC} && ${MODPY_BIN} ./waf -v
+
+do-install:
+	cd ${WRKSRC} && ${MODPY_BIN} ./waf install
+
+post-install:
+	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
+	    ${DESTDIR}${MODPY_SITEPKG}/lilv.py
+
+.include <bsd.port.mk>
