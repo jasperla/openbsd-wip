@@ -1,34 +1,32 @@
 # $OpenBSD$
 
-COMMENT =	library for simple use of LV2 plugins in applications
+COMMENT=	library for simple use of LV2 plugins in applications
 
-DISTNAME =	lilv-0.24.12
+DISTNAME=	lilv-0.24.12
 
-SHARED_LIBS =	lilv-0	0.0
+SHARED_LIBS=	lilv-0		0.0 # 0.24
 
-CATEGORIES =	audio
+CATEGORIES=	audio
 
-HOMEPAGE =	https://drobilla.net/software/lilv
+HOMEPAGE=	https://drobilla.net/software/lilv
 
-#ISC
-PERMIT_PACKAGE = Yes
+# ISC
+PERMIT_PACKAGE= Yes
 
 WANTLIB += FLAC c ogg opus serd-0 sndfile sord-0 sratom-0 vorbis
 WANTLIB += vorbisenc
 
-MODULES +=	lang/python
+MASTER_SITES=	http://download.drobilla.net/
 
-MASTER_SITES =	http://download.drobilla.net/
+EXTRACT_SUFX=	.tar.bz2
 
-EXTRACT_SUFX =	.tar.bz2
+MODULES=	lang/python
 
-MODULES =	lang/python
-
-LIB_DEPENDS =	audio/libsndfile \
+LIB_DEPENDS=	audio/libsndfile \
 		audio/sratom
 
 # requires compiler-rt
-NO_TEST =	Yes
+NO_TEST=	Yes
 
 do-configure:
 	cd ${WRKSRC} && env -i ${CONFIGURE_ENV} \
