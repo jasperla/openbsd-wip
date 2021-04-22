@@ -12,7 +12,16 @@ Index: chrome/common/chrome_features.cc
  // Enables the Restart background mode optimization. When all Chrome UI is
  // closed and it goes in the background, allows to restart the browser to
  // discard memory.
-@@ -344,7 +344,7 @@ const base::Feature kEnableAllSystemWebApps{"EnableAll
+@@ -258,7 +258,7 @@ const base::Feature kDesktopPWAsFlashAppNameInsteadOfO
+ // Enables or disables Desktop PWAs to be auto-started on OS login.
+ const base::Feature kDesktopPWAsRunOnOsLogin {
+   "DesktopPWAsRunOnOsLogin",
+-#if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX)
++#if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || defined(OS_BSD)
+       base::FEATURE_ENABLED_BY_DEFAULT
+ #else
+       base::FEATURE_DISABLED_BY_DEFAULT
+@@ -350,7 +350,7 @@ const base::Feature kEnableAllSystemWebApps{"EnableAll
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
  #if defined(OS_WIN) || (defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)) || \
@@ -21,7 +30,7 @@ Index: chrome/common/chrome_features.cc
  COMPONENT_EXPORT(CHROME_FEATURES)
  // Enables ephemeral Guest profiles on desktop.
  extern const base::Feature kEnableEphemeralGuestProfilesOnDesktop{
-@@ -528,7 +528,7 @@ const base::Feature kIncompatibleApplicationsWarning{
+@@ -534,7 +534,7 @@ const base::Feature kIncompatibleApplicationsWarning{
  #endif
  
  #if defined(OS_MAC) || defined(OS_WIN) || defined(OS_LINUX) || \

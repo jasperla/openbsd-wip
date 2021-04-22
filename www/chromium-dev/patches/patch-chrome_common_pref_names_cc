@@ -57,7 +57,7 @@ Index: chrome/common/pref_names.cc
  // Boolean pref indicating whether the user is allowed to create secondary
  // profiles in Lacros browser. This is set by a policy, and the default value
  // for managed users is false.
-@@ -3010,7 +3010,7 @@ const char kBlockAutoplayEnabled[] = "media.block_auto
+@@ -3015,7 +3015,7 @@ const char kBlockAutoplayEnabled[] = "media.block_auto
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.

@@ -7,8 +7,8 @@ Index: chrome/browser/web_applications/components/web_app_protocol_handler_regis
  
  namespace web_app {
  
--#if !(defined(OS_WIN) || defined(OS_LINUX))
-+#if !(defined(OS_WIN) || defined(OS_LINUX) || defined(OS_BSD))
+-#if !(defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX))
++#if !(defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || defined(OS_BSD))
  // Registers a protocol handler for the web app with the OS.
  void RegisterProtocolHandlersWithOs(
      const AppId& app_id,

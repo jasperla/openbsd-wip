@@ -57,7 +57,7 @@ Index: chrome/common/pref_names.h
  extern const char kLacrosSecondaryProfilesAllowed[];
  #endif  // defined(OS_LINUX) || defined(OS_CHROMEOS)
  
-@@ -1041,7 +1041,7 @@ extern const char kBlockAutoplayEnabled[];
+@@ -1042,7 +1042,7 @@ extern const char kBlockAutoplayEnabled[];
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
