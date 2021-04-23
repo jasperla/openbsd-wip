@@ -1,4 +1,4 @@
-$OpenBSD: patch-content_utility_BUILD_gn,v 1.5 2020/10/22 13:52:54 robert Exp $
+$OpenBSD$
 
 Index: content/utility/BUILD.gn
 --- content/utility/BUILD.gn.orig
@@ -9,6 +9,6 @@ Index: content/utility/BUILD.gn
  
 -  if (is_linux || is_chromeos) {
 +  if ((is_linux || is_chromeos) && !is_openbsd) {
-     deps += [ "//content/utility/speech:speech_recognition_sandbox_hook" ]
-   }
- 
+     deps += [
+       "//content/utility/speech:speech_recognition_sandbox_hook",
+       "//printing:printing_sandbox_hook",

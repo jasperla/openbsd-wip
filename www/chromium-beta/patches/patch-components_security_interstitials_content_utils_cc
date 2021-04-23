@@ -3,7 +3,7 @@ $OpenBSD: patch-components_security_interstitials_content_utils_cc,v 1.3 2021/01
 Index: components/security_interstitials/content/utils.cc
 --- components/security_interstitials/content/utils.cc.orig
 +++ components/security_interstitials/content/utils.cc
-@@ -32,7 +32,7 @@ void LaunchDateAndTimeSettings() {
+@@ -33,7 +33,7 @@ void LaunchDateAndTimeSettings() {
  #if defined(OS_ANDROID)
    JNIEnv* env = base::android::AttachCurrentThread();
    Java_DateAndTimeSettingsHelper_openDateAndTimeSettings(env);

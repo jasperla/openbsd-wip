@@ -48,7 +48,7 @@ Index: gpu/vulkan/vulkan_function_pointers.h
  ALWAYS_INLINE VkResult vkGetMemoryFdKHR(VkDevice device,
                                          const VkMemoryGetFdInfoKHR* pGetFdInfo,
                                          int* pFd) {
-@@ -1125,7 +1125,7 @@ ALWAYS_INLINE VkResult vkQueuePresentKHR(VkQueue queue
+@@ -1140,7 +1140,7 @@ ALWAYS_INLINE VkResult vkQueuePresentKHR(VkQueue queue
                                                               pPresentInfo);
  }
  
@@ -57,7 +57,7 @@ Index: gpu/vulkan/vulkan_function_pointers.h
  ALWAYS_INLINE VkResult vkGetImageDrmFormatModifierPropertiesEXT(
      VkDevice device,
      VkImage image,
-@@ -1135,4 +1135,4 @@ ALWAYS_INLINE VkResult vkGetImageDrmFormatModifierProp
+@@ -1150,4 +1150,4 @@ ALWAYS_INLINE VkResult vkGetImageDrmFormatModifierProp
  }
  #endif  // defined(OS_LINUX) || defined(OS_CHROMEOS)
  

@@ -3,7 +3,7 @@ $OpenBSD$
 Index: chrome/browser/profiles/profile.cc
 --- chrome/browser/profiles/profile.cc.orig
 +++ chrome/browser/profiles/profile.cc
-@@ -357,7 +357,7 @@ bool Profile::IsEphemeralGuestProfileEnabled() {
+@@ -377,7 +377,7 @@ bool Profile::IsEphemeralGuestProfileEnabled() {
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
  #if defined(OS_WIN) || (defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)) || \

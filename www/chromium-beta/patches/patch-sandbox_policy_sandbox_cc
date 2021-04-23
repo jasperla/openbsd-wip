@@ -13,8 +13,8 @@ Index: sandbox/policy/sandbox.cc
 +
  #if defined(OS_MAC)
  #include "sandbox/mac/seatbelt.h"
- #include "sandbox/policy/mac/sandbox_mac.h"
-@@ -30,7 +34,7 @@
+ #endif  // defined(OS_MAC)
+@@ -29,7 +33,7 @@
  namespace sandbox {
  namespace policy {
  
