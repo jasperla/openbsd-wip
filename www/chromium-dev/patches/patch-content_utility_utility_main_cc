@@ -3,9 +3,9 @@ $OpenBSD$
 Index: content/utility/utility_main.cc
 --- content/utility/utility_main.cc.orig
 +++ content/utility/utility_main.cc
-@@ -26,13 +26,17 @@
- #include "sandbox/policy/sandbox.h"
- #include "services/tracing/public/cpp/trace_startup.h"
+@@ -28,13 +28,17 @@
+ #include "third_party/icu/source/common/unicode/unistr.h"
+ #include "third_party/icu/source/i18n/unicode/timezone.h"
  
 -#if defined(OS_LINUX) || defined(OS_CHROMEOS)
 +#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
@@ -22,7 +22,7 @@ Index: content/utility/utility_main.cc
  
  #if BUILDFLAG(IS_CHROMEOS_ASH)
  #include "chromeos/services/ime/ime_sandbox_hook.h"
-@@ -89,12 +93,13 @@ int UtilityMain(const MainFunctionParams& parameters) 
+@@ -98,12 +102,13 @@ int UtilityMain(const MainFunctionParams& parameters) 
    if (parameters.command_line.HasSwitch(switches::kUtilityStartupDialog))
      WaitForDebugger("Utility");
  
@@ -37,7 +37,7 @@ Index: content/utility/utility_main.cc
    if (parameters.zygote_child ||
        sandbox_type == sandbox::policy::SandboxType::kNetwork ||
  #if BUILDFLAG(IS_CHROMEOS_ASH)
-@@ -125,6 +130,12 @@ int UtilityMain(const MainFunctionParams& parameters) 
+@@ -134,6 +139,12 @@ int UtilityMain(const MainFunctionParams& parameters) 
          sandbox_type, std::move(pre_sandbox_hook),
          sandbox::policy::SandboxLinux::Options());
    }

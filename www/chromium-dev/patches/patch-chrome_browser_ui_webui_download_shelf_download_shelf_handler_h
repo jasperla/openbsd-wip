@@ -1,0 +1,37 @@
+$OpenBSD$
+
+commit 82b5be84165093c678a7a742a7f53268935d3628
+Author: Stephan Hartmann <stha09@googlemail.com>
+Date:   Thu Apr 22 16:32:32 2021 +0000
+
+    GCC: remove alias for GetDownloadsCallback
+    
+    GCC finds two GetDownloadsCallback definitions, one in
+    DownloadShelfHandler and one in PageHandler. Remove the alias from
+    DownloadShelfHandler and only use the one from PageHandler.
+    
+    Bug: 819294
+    Change-Id: I5fac82368bd42c70e36944cf7ad463d66fad4a8f
+    Reviewed-on: https://chromium-review.googlesource.com/c/chromium/src/+/2844829
+    Commit-Queue: Keren Zhu <kerenzhu@chromium.org>
+    Reviewed-by: Keren Zhu <kerenzhu@chromium.org>
+    Cr-Commit-Position: refs/heads/master@{#875199}
+
+Index: chrome/browser/ui/webui/download_shelf/download_shelf_handler.h
+--- chrome/browser/ui/webui/download_shelf/download_shelf_handler.h.orig
++++ chrome/browser/ui/webui/download_shelf/download_shelf_handler.h
+@@ -11,12 +11,10 @@
+ 
+ class DownloadShelfHandler {
+  public:
+-  using GetDownloadsCallback = base::OnceCallback<void(
+-      std::vector<download_shelf::mojom::DownloadItemPtr>)>;
+-
+   virtual ~DownloadShelfHandler() = default;
+ 
+-  virtual void GetDownloads(GetDownloadsCallback callback) = 0;
++  virtual void GetDownloads(
++      download_shelf::mojom::PageHandler::GetDownloadsCallback callback) = 0;
+ 
+   virtual void ShowContextMenu(uint32_t download_id,
+                                int32_t client_x,

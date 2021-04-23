@@ -4,7 +4,7 @@ Index: net/cert/cert_verifier.cc
 --- net/cert/cert_verifier.cc.orig
 +++ net/cert/cert_verifier.cc
 @@ -87,7 +87,7 @@ std::unique_ptr<CertVerifier> CertVerifier::CreateDefa
-   return std::unique_ptr<CertVerifier>();
+   return nullptr;
  #else
    scoped_refptr<CertVerifyProc> verify_proc;
 -#if defined(OS_FUCHSIA) || defined(OS_LINUX) || defined(OS_CHROMEOS)

@@ -12,7 +12,7 @@ Index: third_party/blink/renderer/core/layout/layout_view.cc
  #include "third_party/blink/renderer/platform/fonts/font_cache.h"
  #endif
  
-@@ -345,7 +345,7 @@ void LayoutView::UpdateLayout() {
+@@ -353,7 +353,7 @@ void LayoutView::UpdateLayout() {
    DCHECK(!layout_state_);
    LayoutState root_layout_state(*this);
  

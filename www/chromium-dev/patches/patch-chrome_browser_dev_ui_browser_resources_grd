@@ -3,7 +3,7 @@ $OpenBSD$
 Index: chrome/browser/dev_ui_browser_resources.grd
 --- chrome/browser/dev_ui_browser_resources.grd.orig
 +++ chrome/browser/dev_ui_browser_resources.grd
-@@ -47,7 +47,7 @@ This file specifies browser resources for developer-fa
+@@ -49,7 +49,7 @@ This file specifies browser resources for developer-fa
        <include name="IDR_MEDIA_SESSION_MOJOM_LITE_JS" file="${root_gen_dir}\services\media_session\public\mojom\media_session.mojom-lite.js" use_base_dir="false" type="BINDATA" />
        <include name="IDR_UI_GEOMETRY_MOJOM_LITE_JS" file="${root_gen_dir}\ui\gfx\geometry\mojom\geometry.mojom-lite.js" use_base_dir="false" type="BINDATA" />
  

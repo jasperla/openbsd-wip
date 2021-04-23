@@ -12,7 +12,7 @@ Index: chrome/common/chrome_features.h
  COMPONENT_EXPORT(CHROME_FEATURES)
  extern const base::Feature kBackgroundModeAllowRestart;
  #endif  // defined(OS_WIN) || defined(OS_LINUX) || defined(OS_CHROMEOS)
-@@ -230,7 +230,7 @@ extern const base::Feature kEnableAmbientAuthenticatio
+@@ -232,7 +232,7 @@ extern const base::Feature kEnableAmbientAuthenticatio
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
  #if defined(OS_WIN) || (defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)) || \
@@ -21,8 +21,8 @@ Index: chrome/common/chrome_features.h
  COMPONENT_EXPORT(CHROME_FEATURES)
  extern const base::Feature kEnableEphemeralGuestProfilesOnDesktop;
  #endif  // defined(OS_WIN) || (defined(OS_LINUX) ||
-@@ -351,7 +351,7 @@ extern const base::Feature kIncompatibleApplicationsWa
- #endif  // defined(OS_ANDROID)
+@@ -361,7 +361,7 @@ extern const base::Feature kIncognitoBrandConsistencyF
+ #endif
  
  #if defined(OS_MAC) || defined(OS_WIN) || defined(OS_LINUX) || \
 -    defined(OS_CHROMEOS)

@@ -48,7 +48,7 @@ Index: chrome/common/pref_names.h
  extern const char kAuthNegotiateDelegateByKdcPolicy[];
  #endif  // defined(OS_LINUX) || defined(OS_MAC) || defined(OS_CHROMEOS)
  
-@@ -927,7 +927,7 @@ extern const char kSigninAllowedOnNextStartup[];
+@@ -928,7 +928,7 @@ extern const char kSigninAllowedOnNextStartup[];
  extern const char kSigninInterceptionEnabled[];
  // TODO(crbug.com/1179280): Remove OS_LINUX once https://crbug.com/1169547 is
  // done.
@@ -57,7 +57,7 @@ Index: chrome/common/pref_names.h
  extern const char kLacrosSecondaryProfilesAllowed[];
  #endif  // defined(OS_LINUX) || defined(OS_CHROMEOS)
  
-@@ -1042,7 +1042,7 @@ extern const char kBlockAutoplayEnabled[];
+@@ -1043,7 +1043,7 @@ extern const char kBlockAutoplayEnabled[];
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.

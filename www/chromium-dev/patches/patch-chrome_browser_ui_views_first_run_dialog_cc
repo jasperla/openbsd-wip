@@ -3,7 +3,20 @@ $OpenBSD$
 Index: chrome/browser/ui/views/first_run_dialog.cc
 --- chrome/browser/ui/views/first_run_dialog.cc.orig
 +++ chrome/browser/ui/views/first_run_dialog.cc
-@@ -115,9 +115,11 @@ void FirstRunDialog::Done() {
+@@ -33,10 +33,12 @@
+ 
+ namespace {
+ 
++#if !defined(OS_BSD)
+ void InitCrashReporterIfEnabled(bool enabled) {
+   if (!crash_reporter::IsCrashpadEnabled() && enabled)
+     breakpad::InitCrashReporter(std::string());
+ }
++#endif
+ 
+ }  // namespace
+ 
+@@ -106,9 +108,11 @@ void FirstRunDialog::Done() {
  bool FirstRunDialog::Accept() {
    GetWidget()->Hide();
  

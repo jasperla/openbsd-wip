@@ -30,7 +30,7 @@ Index: content/browser/renderer_host/render_process_host_impl.cc
      if (auto font_receiver = receiver.As<font_service::mojom::FontService>()) {
        ConnectToFontService(std::move(font_receiver));
        return;
-@@ -3220,6 +3220,7 @@ void RenderProcessHostImpl::PropagateBrowserCommandLin
+@@ -3189,6 +3189,7 @@ void RenderProcessHostImpl::PropagateBrowserCommandLin
      switches::kDisableSpeechAPI,
      switches::kDisableThreadedCompositing,
      switches::kDisableTouchDragDrop,

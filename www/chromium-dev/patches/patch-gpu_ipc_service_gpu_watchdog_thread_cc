@@ -3,7 +3,7 @@ $OpenBSD: patch-gpu_ipc_service_gpu_watchdog_thread_cc,v 1.16 2021/01/20 07:28:1
 Index: gpu/ipc/service/gpu_watchdog_thread.cc
 --- gpu/ipc/service/gpu_watchdog_thread.cc.orig
 +++ gpu/ipc/service/gpu_watchdog_thread.cc
-@@ -73,7 +73,7 @@ GpuWatchdogThread::GpuWatchdogThread(base::TimeDelta t
+@@ -87,7 +87,7 @@ GpuWatchdogThread::GpuWatchdogThread(base::TimeDelta t
    }
  #endif
  
@@ -12,7 +12,7 @@ Index: gpu/ipc/service/gpu_watchdog_thread.cc
    tty_file_ = base::OpenFile(
        base::FilePath(FILE_PATH_LITERAL("/sys/class/tty/tty0/active")), "r");
    UpdateActiveTTY();
-@@ -101,7 +101,7 @@ GpuWatchdogThread::~GpuWatchdogThread() {
+@@ -115,7 +115,7 @@ GpuWatchdogThread::~GpuWatchdogThread() {
      CloseHandle(watched_thread_handle_);
  #endif
  
@@ -21,7 +21,7 @@ Index: gpu/ipc/service/gpu_watchdog_thread.cc
    if (tty_file_)
      fclose(tty_file_);
  #endif
-@@ -440,7 +440,7 @@ void GpuWatchdogThread::OnWatchdogTimeout() {
+@@ -448,7 +448,7 @@ void GpuWatchdogThread::OnWatchdogTimeout() {
    if (foregrounded_event_)
      num_of_timeout_after_foregrounded_++;
  
@@ -30,7 +30,7 @@ Index: gpu/ipc/service/gpu_watchdog_thread.cc
    UpdateActiveTTY();
  #endif
  
-@@ -773,7 +773,7 @@ bool GpuWatchdogThread::WithinOneMinFromForegrounded()
+@@ -781,7 +781,7 @@ bool GpuWatchdogThread::WithinOneMinFromForegrounded()
    return foregrounded_event_ && num_of_timeout_after_foregrounded_ <= count;
  }
  
@@ -39,7 +39,7 @@ Index: gpu/ipc/service/gpu_watchdog_thread.cc
  void GpuWatchdogThread::UpdateActiveTTY() {
    last_active_tty_ = active_tty_;
  
-@@ -790,7 +790,7 @@ void GpuWatchdogThread::UpdateActiveTTY() {
+@@ -798,7 +798,7 @@ void GpuWatchdogThread::UpdateActiveTTY() {
  #endif
  
  bool GpuWatchdogThread::ContinueOnNonHostX11ServerTty() {

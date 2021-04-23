@@ -21,7 +21,7 @@ Index: net/tools/cert_verify_tool/cert_verify_tool.cc
    // On Linux, use a fixed ProxyConfigService, since the default one
    // depends on glib.
    //
-@@ -192,7 +192,7 @@ std::unique_ptr<CertVerifyImpl> CreateCertVerifyImplFr
+@@ -183,7 +183,7 @@ std::unique_ptr<CertVerifyImpl> CreateCertVerifyImplFr
      base::StringPiece impl_name,
      scoped_refptr<net::CertNetFetcher> cert_net_fetcher,
      bool use_system_roots) {

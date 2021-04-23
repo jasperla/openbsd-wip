@@ -14,7 +14,7 @@ Index: base/debug/debugger_posix.cc
  #if defined(OS_FREEBSD)
  #include <sys/user.h>
  #endif
-@@ -106,32 +110,47 @@ bool BeingDebugged() {
+@@ -101,32 +105,47 @@ bool BeingDebugged() {
  
    // Caution: struct kinfo_proc is marked __APPLE_API_UNSTABLE.  The source and
    // binary interfaces may change.
