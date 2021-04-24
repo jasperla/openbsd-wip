@@ -326,7 +326,7 @@ Index: sandbox/policy/openbsd/sandbox_openbsd.cc
 +    else if (sandbox_type == SandboxType::kVideoCapture)
 +      SetPledge(NULL, "/etc/chromium/pledge.utility_video");
 +    else
-+      SetPledge("stdio rpath cpath wpath fattr sendfd recvfd prot_exec", NULL);
++      SetPledge("stdio rpath cpath wpath fattr flock sendfd recvfd prot_exec", NULL);
 +  } else {
 +    LOG(ERROR) << "non-pledge()'d process: " << process_type;
 +    return false;
