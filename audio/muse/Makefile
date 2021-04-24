@@ -48,7 +48,7 @@ LIB_DEPENDS=	audio/fluidsynth \
 		audio/rubberband \
 		devel/atk2mm \
 		textproc/liblrdf \
-		textproc/serd \
+		devel/serd \
 		x11/gtk+2 \
 		x11/gtk2mm \
 		x11/qt5/qtsvg
