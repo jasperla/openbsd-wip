@@ -1,0 +1,19 @@
+$OpenBSD$
+--- muse3/CMakeLists.txt.orig	Sat Jul 18 16:13:34 2020
++++ muse3/CMakeLists.txt	Sun Dec 27 19:50:01 2020
+@@ -270,6 +270,7 @@ LINK_DIRECTORIES(${Qt5Core_LIBRARY_DIRS})
+ LINK_DIRECTORIES(${Qt5UiTools_LIBRARY_DIRS})
+ LINK_DIRECTORIES(${Qt5Xml_LIBRARY_DIRS})
+ LINK_DIRECTORIES(${Qt5Svg_LIBRARY_DIRS})
++LINK_DIRECTORIES(${CMAKE_INSTALL_PREFIX}/lib)
+ 
+ SET(QT_LIBRARIES ${Qt5Widgets_LIBRARIES} ${Qt5UiTools_LIBRARIES} ${Qt5Xml_LIBRARIES} ${Qt5Svg_LIBRARIES} ${Qt5Core_LIBRARIES})
+ 
+@@ -671,6 +672,7 @@ include_directories(
+    ${PROJECT_BINARY_DIR}/muse/components
+    ${PROJECT_BINARY_DIR}/muse/instruments
+    ${PROJECT_BINARY_DIR}/muse/ctrl
++   ${CMAKE_INSTALL_PREFIX}/lib/atkmm-1.6/include
+    )
+ 
+ # include (pch.txt)

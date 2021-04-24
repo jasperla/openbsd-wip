@@ -1,0 +1,11 @@
+$OpenBSD$
+--- muse3/synti/libsimpleplugin/CMakeLists.txt.orig	Sun Dec 13 22:26:17 2020
++++ muse3/synti/libsimpleplugin/CMakeLists.txt	Sun Dec 13 22:27:28 2020
+@@ -90,7 +90,6 @@ target_link_libraries(simpler_plugingui
+ target_link_libraries(simpler_plugin
+       plugin_cache_reader_module
+       ${QT_LIBRARIES}
+-      dl
+       )
+ 
+ ##

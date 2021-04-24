@@ -1,0 +1,20 @@
+$OpenBSD$
+--- muse3/muse/thread.cpp.orig	Mon Dec 14 11:03:56 2020
++++ muse3/muse/thread.cpp	Mon Dec 14 11:56:41 2020
+@@ -33,6 +33,7 @@
+ #include <sys/poll.h>
+ #endif
+ #include <fcntl.h>
++#include <sys/resource.h>
+ 
+ #include "globals.h"
+ #include "errno.h"
+@@ -280,7 +281,7 @@ void Thread::loop()
+ 
+       int policy = buf[0]; // Initialize using buf[0] to keep the compiler from complaining about unused buf.
+       policy = 0;          // Now set the true desired initial value.
+-      if ((policy = sched_getscheduler (0)) < 0) {
++      if ((policy = getpriority (0,0)) < 0) {
+             printf("Thread: Cannot get current client scheduler: %s\n", strerror(errno));
+             }
+ 

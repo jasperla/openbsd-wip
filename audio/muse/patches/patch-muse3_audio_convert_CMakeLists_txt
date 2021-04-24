@@ -1,0 +1,11 @@
+$OpenBSD$
+--- muse3/audio_convert/CMakeLists.txt.orig	Sun Dec 13 22:25:34 2020
++++ muse3/audio_convert/CMakeLists.txt	Sun Dec 13 22:26:51 2020
+@@ -49,7 +49,6 @@ add_library(audio_converter_plugin ${MODULES_BUILD}
+ ##
+ target_link_libraries(audio_converter_plugin
+       xml_module
+-      dl
+       )
+ ##
+ ## Append to the list of translations

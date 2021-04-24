@@ -1,0 +1,11 @@
+$OpenBSD$
+--- muse3/muse/CMakeLists.txt.orig	Sun Dec 13 22:25:47 2020
++++ muse3/muse/CMakeLists.txt	Sun Dec 13 22:27:04 2020
+@@ -314,7 +314,6 @@ target_link_libraries(core
+       ${SAMPLERATE_LIBRARIES}
+       ${REM_LIB}
+       ${FST_LIB}
+-      dl
+       )
+ 
+ if(HAVE_LASH)

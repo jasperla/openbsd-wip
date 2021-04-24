@@ -1,0 +1,11 @@
+$OpenBSD$
+--- muse3/synti/simpledrums2/CMakeLists.txt.orig	Sun Dec 13 22:26:37 2020
++++ muse3/synti/simpledrums2/CMakeLists.txt	Sun Dec 13 22:27:40 2020
+@@ -97,7 +97,6 @@ target_link_libraries(simpledrums
+       mpevent_module
+       wavepreview_module
+       widgets
+-      dl
+       pthread
+       )
+ 
