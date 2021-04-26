@@ -53,7 +53,7 @@ DISTNAME =	flint-2.7.1
 # for any port that creates shared libraries.
 # both libtool and cmake automatically set filenames based on this variable.
 # for libtool- or cmake-based ports, have a look at WRKBUILD/shared_libs.log
-#SHARED_LIBS =	???	0.0
+SHARED_LIBS =	flint	0.0 # 15.0.1
 
 # the category used in the directory name, /usr/ports/<category>/portname,
 # must be included and listed first.
@@ -89,7 +89,7 @@ PERMIT_PACKAGE =	Yes
 # If pledge is used, annotate with `uses pledge()' in a comment
 
 # "make port-lib-depends-check" can help
-#WANTLIB =		???
+WANTLIB =		cblas gmp m mpfr pthread
 
 # where the source files and patches can be fetched
 #
