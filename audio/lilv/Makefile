@@ -25,7 +25,7 @@ MODULES=	lang/python
 LIB_DEPENDS=	audio/libsndfile \
 		audio/sratom
 
-# requires compiler-rt
+# requires library gcov
 NO_TEST=	Yes
 
 do-configure:

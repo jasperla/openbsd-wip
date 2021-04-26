@@ -25,6 +25,7 @@ LIB_DEPENDS=	devel/glib2
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--enable-static=no
 
+# requires library gcov
 NO_TEST =	Yes
 
 .include <bsd.port.mk>

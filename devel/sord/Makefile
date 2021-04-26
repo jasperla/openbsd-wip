@@ -26,7 +26,7 @@ MODULES=	lang/python
 LIB_DEPENDS=	devel/serd \
 		devel/pcre
 
-# requires compiler-rt
+# requires library gcov
 NO_TEST=	Yes
 
 do-configure:

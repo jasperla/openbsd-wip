@@ -31,7 +31,7 @@ LIB_DEPENDS=	devel/serd \
 
 RUN_DEPENDS=	audio/lv2
 
-# requires compiler-rt
+# requires library gcov
 NO_TEST=	Yes
 
 do-configure:

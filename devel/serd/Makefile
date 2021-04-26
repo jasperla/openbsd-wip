@@ -23,7 +23,7 @@ EXTRACT_SUFX=	.tar.bz2
 
 MODULES=	lang/python
 
-# requires compiler-rt
+# requires library gcov
 NO_TEST=	Yes
 
 do-configure:

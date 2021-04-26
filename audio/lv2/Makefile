@@ -37,6 +37,7 @@ MODPY_VERSION=	${MODPY_DEFAULT_VERSION_3}
 
 MODPY_ADJ_FILES=lv2specgen/lv2specgen.py
 
+# requires library gcov
 NO_TEST=	Yes
 
 do-configure:
