@@ -89,7 +89,8 @@ PERMIT_PACKAGE =	Yes
 # If pledge is used, annotate with `uses pledge()' in a comment
 
 # "make port-lib-depends-check" can help
-WANTLIB =		cblas gmp m mpfr pthread
+#WANTLIB =		cblas gmp m mpfr pthread
+WANTLIB += ${COMPILER_LIBCXX} cblas gmp m mpfr ntl
 
 # where the source files and patches can be fetched
 #
@@ -186,7 +187,7 @@ LIB_DEPENDS =		devel/mpfr \
 #	        (needed for some ports using lang/python, etc.)
 #CONFIGURE_STYLE =	
 #CONFIGURE_SCRIPT =	??? (if other than configure)
-#CONFIGURE_ARGS =	???
+CONFIGURE_ARGS =	-DWITH_NTL=ON
 #CONFIGURE_ENV =	???
 
 # if debug packages are a good idea, extra configure args may be necessary
