@@ -17,7 +17,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} cblas gmp m mpfr ntl
 
-COMPILER =	base-clang ports-gcc
+COMPILER=	base-clang ports-gcc
 
 MASTER_SITES=	${HOMEPAGE}
 
