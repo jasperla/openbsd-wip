@@ -1,2 +1,2 @@
-- Testing in blender
-- fix some tests
+- fix blender crash:
+  spills out some llvm link errors between the base & ports version
