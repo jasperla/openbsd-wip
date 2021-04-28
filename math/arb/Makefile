@@ -19,10 +19,10 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += flint gmp m mpfr pthread
 
-MODULES=		devel/cmake
+MODULES=	devel/cmake
 
-LIB_DEPENDS=		math/flint
+LIB_DEPENDS=	math/flint
 
-NO_TEST=		Yes
+NO_TEST=	Yes
 
 .include <bsd.port.mk>
