@@ -1,0 +1,16 @@
+$OpenBSD$
+
+realpath not available on OpenBSD
+
+Index: tests/Makefile.in
+--- tests/Makefile.in.orig
++++ tests/Makefile.in
+@@ -610,7 +610,7 @@ TOPBUILDDIR = $(builddir)/..
+ DEFINES = 
+ # include TOPBUILDIR for m4ri_config.h
+ AM_CFLAGS = -I$(TOPSRCDIR) -I$(TOPBUILDDIR) -D_XOPEN_SOURCE=600 $(DEFINES) @OPENMP_CFLAGS@ @PAPI_CFLAGS@
+-STAGEDIR := $(realpath -s $(TOPBUILDDIR)/.libs)
++STAGEDIR := $(TOPBUILDDIR)/.libs
+ AM_LDFLAGS = -L$(STAGEDIR) -Wl,-rpath,$(STAGEDIR) -lm4ri $(LIBM) @PAPI_LDFLAGS@ @PAPI_LIBS@ -no-install
+ test_smallops_SOURCES = test_smallops.c testing.c testing.h
+ all: all-am
