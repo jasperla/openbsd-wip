@@ -21,7 +21,7 @@ Index: chrome/common/chrome_features.h
  COMPONENT_EXPORT(CHROME_FEATURES)
  extern const base::Feature kEnableEphemeralGuestProfilesOnDesktop;
  #endif  // defined(OS_WIN) || (defined(OS_LINUX) ||
-@@ -351,7 +351,7 @@ extern const base::Feature kIncompatibleApplicationsWa
+@@ -354,7 +354,7 @@ extern const base::Feature kIncompatibleApplicationsWa
  #endif  // defined(OS_ANDROID)
  
  #if defined(OS_MAC) || defined(OS_WIN) || defined(OS_LINUX) || \
