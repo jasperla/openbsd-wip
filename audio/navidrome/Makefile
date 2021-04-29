@@ -9,16 +9,20 @@ DISTNAME =	navidrome-${MODGO_VERSION}
 
 CATEGORIES =	audio
 
-# GPLv3
-PERMIT_PACKAGE =	Yes
-
-MODULES =		lang/go
-
 # Built by running "npm i; npm run build" in ${WRKSRC}/ui
 DISTFILES +=		navidrome-build-${MODGO_VERSION}.tgz:0
 
 # ping abieber@ for hosting if you need it
 MASTER_SITES0 =		https://deftly.net/dist/
+
+# GPLv3
+PERMIT_PACKAGE =	Yes
+
+LIB_DEPENDS =		audio/taglib
+
+MODULES =		lang/go
+
+WANTLIB += ${COMPILER_LIBCXX} c m tag
 
 post-extract:
 	cd ${WRKSRC} && tar -C ${WRKSRC}/ui/ -zxf \
