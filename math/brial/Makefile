@@ -17,7 +17,8 @@ GH_ACCOUNT =	BRiAl
 GH_PROJECT =	BRiAl
 GH_TAGNAME =	1.2.10
 #GH_COMMIT =	abab123456789abacafeabab123123b1e4ble4bl
-#SHARED_LIBS =	???	0.0
+SHARED_LIBS +=	brial			0.0 # 3.6
+SHARED_LIBS +=	brial_groebner		0.0 # 3.6
 CATEGORIES =	math
 #HOMEPAGE =	???	URL
 MAINTAINER =	Dimitri Karamazov <deserter666@danwin1210.me>
@@ -25,6 +26,7 @@ MAINTAINER =	Dimitri Karamazov <deserter666@danwin1210.me>
 PERMIT_PACKAGE =	Yes
 #PERMIT_DISTFILES =	Yes | Reason if No
 #WANTLIB =		???
+WANTLIB += ${COMPILER_LIBCXX} m m4ri png z
 #MASTER_SITES =		???
 #MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=subdir/}
 #MASTER_SITES =		${MASTER_SITE_foo:=subdir/}
@@ -49,7 +51,7 @@ BUILD_DEPENDS =		devel/boost
 #RUN_DEPENDS =		???
 LIB_DEPENDS =		math/m4ri
 #TEST_DEPENDS =		???
-#MAKE_FLAGS =		???
+#MAKE_FLAGS =		
 #MAKE_ENV =		???
 #FAKE_FLAGS =		???
 #TEST_FLAGS =		???
@@ -59,13 +61,13 @@ LIB_DEPENDS =		math/m4ri
 #USE_GROFF =		Yes
 #USE_LIBTOOL=		gnu
 CONFIGURE_STYLE =	gnu
-#CONFIGURE_SCRIPT =	??? (if other than configure)
+#CONFIGURE_SCRIPT =	bootstrap.sh
 #CONFIGURE_ARGS =	???
-#CONFIGURE_ENV =	???
+CONFIGURE_ENV =		${AUTOCONF_ENV}
 # DEBUG_CONFIGURE_ARGS =	???
 # DEBUG_PACKAGES = ${BUILD_PACKAGES}
-#AUTOCONF_VERSION =	??? (defaults to 2.13)
-#AUTOMAKE_VERSION =	??? (defaults to 1.4)
+AUTOCONF_VERSION =	2.69
+AUTOMAKE_VERSION =	1.16
 #MODGNU_CONFIG_GUESS_DIRS = ??? (defaults to ${WRKSRC})
 #IS_INTERACTIVE =		Yes
 #TEST_IS_INTERACTIVE =		Yes
@@ -91,7 +93,7 @@ CONFIGURE_STYLE =	gnu
 #.endif
 #NO_BUILD =		Yes
 #NO_TEST =		Yes
-#CFLAGS =		???
+CXXFLAGS =		-I${LOCALBASE}/include
 #LDFLAGS =		???
 #MAKE_FILE =		???
 #PKG_ARCH =		??? (* for arch-independent packages)
@@ -105,6 +107,6 @@ CONFIGURE_STYLE =	gnu
 #BUILD_DEPENDS =	${MODGNU_AUTOCONF_DEPENDS} \
 #			${MODGNU_AUTOMAKE_DEPENDS} \
 #			devel/libtool
-#do-gen:
-#	cd ${WRKSRC}; ${AUTOCONF_ENV} ./autogen.sh
+do-gen:
+	cd ${WRKSRC}; ${AUTOCONF_ENV} ./bootstrap.sh
 .include <bsd.port.mk>
