@@ -12,7 +12,16 @@ Index: chrome/browser/enterprise/connectors/device_trust/device_trust_service.h
  #include "chrome/browser/enterprise/connectors/device_trust/device_trust_key_pair.h"
  #endif  // defined(OS_LINUX) || defined(OS_WIN) || defined(OS_MAC)
  
-@@ -59,7 +59,7 @@ class DeviceTrustService : public KeyedService {
+@@ -43,7 +43,7 @@ class DeviceTrustService : public KeyedService {
+       std::unique_ptr<DeviceTrustSignalReporter> reporter);
+   using SignalReportCallback = base::OnceCallback<void(bool)>;
+   void SetSignalReportCallbackForTesting(SignalReportCallback cb);
+-#if defined(OS_LINUX) || defined(OS_WIN) || defined(OS_MAC)
++#if defined(OS_LINUX) || defined(OS_WIN) || defined(OS_MAC) || defined(OS_BSD)
+   std::string GetAttestationCredentialForTesting() const;
+ #endif  // defined(OS_LINUX) || defined(OS_WIN) || defined(OS_MAC)
+ 
+@@ -64,7 +64,7 @@ class DeviceTrustService : public KeyedService {
  
    PrefService* prefs_;
  

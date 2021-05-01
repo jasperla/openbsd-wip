@@ -3,7 +3,7 @@ $OpenBSD$
 Index: weblayer/browser/content_browser_client_impl.cc
 --- weblayer/browser/content_browser_client_impl.cc.orig
 +++ weblayer/browser/content_browser_client_impl.cc
-@@ -146,7 +146,7 @@
+@@ -147,7 +147,7 @@
  
  // TODO(crbug.com/1052397): Revisit once build flag switch of lacros-chrome is
  // complete.
@@ -12,7 +12,7 @@ Index: weblayer/browser/content_browser_client_impl.cc
  #include "content/public/common/content_descriptors.h"
  #endif
  
-@@ -474,7 +474,7 @@ void ContentBrowserClientImpl::OnNetworkServiceCreated
+@@ -475,7 +475,7 @@ void ContentBrowserClientImpl::OnNetworkServiceCreated
          embedder_support::GetUserAgent());
  // TODO(crbug.com/1052397): Revisit once build flag switch of lacros-chrome is
  // complete.
@@ -21,7 +21,7 @@ Index: weblayer/browser/content_browser_client_impl.cc
    network::mojom::CryptConfigPtr config = network::mojom::CryptConfig::New();
    content::GetNetworkService()->SetCryptConfig(std::move(config));
  #endif
-@@ -959,7 +959,7 @@ SafeBrowsingService* ContentBrowserClientImpl::GetSafe
+@@ -965,7 +965,7 @@ SafeBrowsingService* ContentBrowserClientImpl::GetSafe
  
  // TODO(crbug.com/1052397): Revisit once build flag switch of lacros-chrome is
  // complete.

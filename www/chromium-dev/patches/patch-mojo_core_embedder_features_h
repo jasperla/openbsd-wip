@@ -3,7 +3,7 @@ $OpenBSD$
 Index: mojo/core/embedder/features.h
 --- mojo/core/embedder/features.h.orig
 +++ mojo/core/embedder/features.h
-@@ -13,7 +13,7 @@ namespace mojo {
+@@ -14,7 +14,7 @@ namespace mojo {
  namespace core {
  
  #if defined(OS_POSIX) && !defined(OS_NACL) && !defined(OS_MAC)

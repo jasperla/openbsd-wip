@@ -12,7 +12,7 @@ Index: chrome/utility/services.cc
  #include "chrome/services/printing/print_backend_service_impl.h"
  #include "chrome/services/printing/public/mojom/print_backend_service.mojom.h"
  #endif
-@@ -242,7 +242,7 @@ auto RunPaintPreviewCompositor(
+@@ -246,7 +246,7 @@ auto RunPaintPreviewCompositor(
  
  #if BUILDFLAG(ENABLE_PRINTING)
  #if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || \
@@ -21,7 +21,7 @@ Index: chrome/utility/services.cc
  auto RunPrintBackendService(
      mojo::PendingReceiver<printing::mojom::PrintBackendService> receiver) {
    return std::make_unique<printing::PrintBackendServiceImpl>(
-@@ -356,7 +356,7 @@ void RegisterMainThreadServices(mojo::ServiceFactory& 
+@@ -369,7 +369,7 @@ void RegisterMainThreadServices(mojo::ServiceFactory& 
  
  #if BUILDFLAG(ENABLE_PRINTING)
  #if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || \

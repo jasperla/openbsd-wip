@@ -3,7 +3,7 @@ $OpenBSD: patch-third_party_webrtc_rtc_base_BUILD_gn,v 1.27 2021/01/20 07:28:12 
 Index: third_party/webrtc/rtc_base/BUILD.gn
 --- third_party/webrtc/rtc_base/BUILD.gn.orig
 +++ third_party/webrtc/rtc_base/BUILD.gn
-@@ -1069,7 +1069,7 @@ rtc_library("rtc_base") {
+@@ -1077,7 +1077,7 @@ rtc_library("rtc_base") {
      sources += [ "mac_ifaddrs_converter.cc" ]
    }
  

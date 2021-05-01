@@ -3,7 +3,7 @@ $OpenBSD$
 Index: chrome/browser/ui/webui/chrome_web_ui_controller_factory.cc
 --- chrome/browser/ui/webui/chrome_web_ui_controller_factory.cc.orig
 +++ chrome/browser/ui/webui/chrome_web_ui_controller_factory.cc
-@@ -254,7 +254,7 @@
+@@ -253,7 +253,7 @@
  #include "chrome/browser/ui/webui/app_launcher_page_ui.h"
  #endif
  
@@ -12,7 +12,7 @@ Index: chrome/browser/ui/webui/chrome_web_ui_controller_factory.cc
  #include "chrome/browser/ui/webui/webui_js_error/webui_js_error_ui.h"
  #endif
  
-@@ -276,12 +276,12 @@
+@@ -275,12 +275,12 @@
  #endif
  
  #if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || \
@@ -27,7 +27,7 @@ Index: chrome/browser/ui/webui/chrome_web_ui_controller_factory.cc
  #include "chrome/browser/ui/webui/sandbox/sandbox_internals_ui.h"
  #endif
  
-@@ -509,7 +509,7 @@ bool IsAboutUI(const GURL& url) {
+@@ -504,7 +504,7 @@ bool IsAboutUI(const GURL& url) {
  #if !defined(OS_ANDROID)
            || url.host_piece() == chrome::kChromeUITermsHost
  #endif
@@ -36,7 +36,7 @@ Index: chrome/browser/ui/webui/chrome_web_ui_controller_factory.cc
            || url.host_piece() == chrome::kChromeUILinuxProxyConfigHost
  #endif
  #if BUILDFLAG(IS_CHROMEOS_ASH)
-@@ -884,7 +884,7 @@ WebUIFactoryFunction GetWebUIFactoryFunction(WebUI* we
+@@ -877,7 +877,7 @@ WebUIFactoryFunction GetWebUIFactoryFunction(WebUI* we
    }
  #endif  // !defined(OFFICIAL_BUILD)
  #endif  // BUILDFLAG(IS_CHROMEOS_ASH)
@@ -45,7 +45,7 @@ Index: chrome/browser/ui/webui/chrome_web_ui_controller_factory.cc
    if (url.host_piece() == chrome::kChromeUIWebUIJsErrorHost)
      return &NewWebUI<WebUIJsErrorUI>;
  #endif
-@@ -946,7 +946,7 @@ WebUIFactoryFunction GetWebUIFactoryFunction(WebUI* we
+@@ -939,7 +939,7 @@ WebUIFactoryFunction GetWebUIFactoryFunction(WebUI* we
    if (url.host_piece() == chrome::kChromeUINaClHost)
      return &NewWebUI<NaClUI>;
  #endif
@@ -54,7 +54,7 @@ Index: chrome/browser/ui/webui/chrome_web_ui_controller_factory.cc
      defined(USE_AURA)
    if (url.host_piece() == chrome::kChromeUITabModalConfirmDialogHost)
      return &NewWebUI<ConstrainedWebDialogUI>;
-@@ -991,19 +991,19 @@ WebUIFactoryFunction GetWebUIFactoryFunction(WebUI* we
+@@ -984,19 +984,19 @@ WebUIFactoryFunction GetWebUIFactoryFunction(WebUI* we
    }
  #endif
  #if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_CHROMEOS) || \

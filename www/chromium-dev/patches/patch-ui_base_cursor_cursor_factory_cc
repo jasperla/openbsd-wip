@@ -3,7 +3,7 @@ $OpenBSD$
 Index: ui/base/cursor/cursor_factory.cc
 --- ui/base/cursor/cursor_factory.cc.orig
 +++ ui/base/cursor/cursor_factory.cc
-@@ -69,7 +69,7 @@ void CursorFactory::ObserveThemeChanges() {
+@@ -65,7 +65,7 @@ void CursorFactory::ObserveThemeChanges() {
  
  void CursorFactory::SetDeviceScaleFactor(float scale) {}
  

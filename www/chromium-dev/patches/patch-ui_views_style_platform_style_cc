@@ -13,7 +13,7 @@ Index: ui/views/style/platform_style.cc
  #else
      true;
 @@ -88,7 +88,7 @@ gfx::Range PlatformStyle::RangeToDeleteBackwards(const
- #endif  // OS_APPLE
+ #endif  // OS_MAC
  
  #if !BUILDFLAG(ENABLE_DESKTOP_AURA) || \
 -    (!defined(OS_LINUX) && !defined(OS_CHROMEOS))

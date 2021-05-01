@@ -12,7 +12,7 @@ Index: chrome/browser/chrome_browser_interface_binders.cc
  #include "chrome/browser/ui/webui/discards/discards.mojom.h"
  #include "chrome/browser/ui/webui/discards/discards_ui.h"
  #include "chrome/browser/ui/webui/discards/site_data.mojom.h"
-@@ -613,7 +613,7 @@ void PopulateChromeFrameBinders(
+@@ -611,7 +611,7 @@ void PopulateChromeFrameBinders(
        base::BindRepeating(&BindCaptionContextHandler));
  #endif
  
@@ -21,7 +21,7 @@ Index: chrome/browser/chrome_browser_interface_binders.cc
    if (base::FeatureList::IsEnabled(features::kWebAppWindowControlsOverlay) &&
        !render_frame_host->GetParent()) {
      map->Add<chrome::mojom::DraggableRegions>(
-@@ -855,7 +855,7 @@ void PopulateChromeWebUIFrameBinders(
+@@ -849,7 +849,7 @@ void PopulateChromeWebUIFrameBinders(
  #endif
  
  #if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || \

@@ -3,7 +3,7 @@ $OpenBSD: patch-pdf_pdfium_pdfium_engine_cc,v 1.45 2021/01/20 07:28:11 robert Ex
 Index: pdf/pdfium/pdfium_engine.cc
 --- pdf/pdfium/pdfium_engine.cc.orig
 +++ pdf/pdfium/pdfium_engine.cc
-@@ -82,7 +82,7 @@
+@@ -83,7 +83,7 @@
  #include "v8/include/cppgc/platform.h"
  #endif
  
@@ -12,7 +12,7 @@ Index: pdf/pdfium/pdfium_engine.cc
  #include "pdf/pdfium/pdfium_font_linux.h"
  #endif
  
-@@ -512,7 +512,7 @@ void InitializeSDK(bool enable_v8) {
+@@ -513,7 +513,7 @@ void InitializeSDK(bool enable_v8) {
  
    FPDF_InitLibraryWithConfig(&config);
  
@@ -21,7 +21,7 @@ Index: pdf/pdfium/pdfium_engine.cc
    InitializeLinuxFontMapper();
  #endif
  
-@@ -543,7 +543,7 @@ PDFiumEngine::PDFiumEngine(PDFEngine::Client* client,
+@@ -544,7 +544,7 @@ PDFiumEngine::PDFiumEngine(PDFEngine::Client* client,
    IFSDK_PAUSE::user = nullptr;
    IFSDK_PAUSE::NeedToPauseNow = Pause_NeedToPauseNow;
  
@@ -30,7 +30,7 @@ Index: pdf/pdfium/pdfium_engine.cc
    // PreviewModeClient does not know its pp::Instance.
    SetLastInstance(client_->GetPluginInstance());
  #endif
-@@ -1000,7 +1000,7 @@ pp::Buffer_Dev PDFiumEngine::PrintPagesAsRasterPdf(
+@@ -1001,7 +1001,7 @@ pp::Buffer_Dev PDFiumEngine::PrintPagesAsRasterPdf(
  
    KillFormFocus();
  
@@ -48,7 +48,7 @@ Index: pdf/pdfium/pdfium_engine.cc
    SetLastInstance(client_->GetPluginInstance());
  #endif
  
-@@ -3644,7 +3644,7 @@ void PDFiumEngine::SetCurrentPage(int index) {
+@@ -3645,7 +3645,7 @@ void PDFiumEngine::SetCurrentPage(int index) {
      FORM_DoPageAAction(old_page, form(), FPDFPAGE_AACTION_CLOSE);
    }
    most_visible_page_ = index;

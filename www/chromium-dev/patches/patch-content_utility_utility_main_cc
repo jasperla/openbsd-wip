@@ -3,7 +3,7 @@ $OpenBSD$
 Index: content/utility/utility_main.cc
 --- content/utility/utility_main.cc.orig
 +++ content/utility/utility_main.cc
-@@ -28,13 +28,17 @@
+@@ -29,7 +29,8 @@
  #include "third_party/icu/source/common/unicode/unistr.h"
  #include "third_party/icu/source/i18n/unicode/timezone.h"
  
@@ -11,7 +11,9 @@ Index: content/utility/utility_main.cc
 +#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
 +#if !defined(OS_BSD)
  #include "content/utility/speech/speech_recognition_sandbox_hook_linux.h"
+ #if BUILDFLAG(ENABLE_PRINTING)
  #include "printing/sandbox/print_backend_sandbox_hook_linux.h"
+@@ -37,7 +38,10 @@
  #include "sandbox/policy/linux/sandbox_linux.h"
  #include "services/audio/audio_sandbox_hook_linux.h"
  #include "services/network/network_sandbox_hook_linux.h"
@@ -21,8 +23,8 @@ Index: content/utility/utility_main.cc
 +#endif
  
  #if BUILDFLAG(IS_CHROMEOS_ASH)
- #include "chromeos/services/ime/ime_sandbox_hook.h"
-@@ -98,12 +102,13 @@ int UtilityMain(const MainFunctionParams& parameters) 
+ #include "chromeos/assistant/buildflags.h"
+@@ -106,12 +110,13 @@ int UtilityMain(const MainFunctionParams& parameters) 
    if (parameters.command_line.HasSwitch(switches::kUtilityStartupDialog))
      WaitForDebugger("Utility");
  
@@ -37,7 +39,7 @@ Index: content/utility/utility_main.cc
    if (parameters.zygote_child ||
        sandbox_type == sandbox::policy::SandboxType::kNetwork ||
  #if BUILDFLAG(IS_CHROMEOS_ASH)
-@@ -134,6 +139,12 @@ int UtilityMain(const MainFunctionParams& parameters) 
+@@ -155,6 +160,12 @@ int UtilityMain(const MainFunctionParams& parameters) 
          sandbox_type, std::move(pre_sandbox_hook),
          sandbox::policy::SandboxLinux::Options());
    }

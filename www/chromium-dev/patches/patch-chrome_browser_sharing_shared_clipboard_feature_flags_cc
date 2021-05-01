@@ -3,7 +3,7 @@ $OpenBSD: patch-chrome_browser_sharing_shared_clipboard_feature_flags_cc,v 1.4 2
 Index: chrome/browser/sharing/shared_clipboard/feature_flags.cc
 --- chrome/browser/sharing/shared_clipboard/feature_flags.cc.orig
 +++ chrome/browser/sharing/shared_clipboard/feature_flags.cc
-@@ -8,7 +8,7 @@ const base::Feature kSharedClipboardUI{"SharedClipboar
+@@ -10,7 +10,7 @@ const base::Feature kSharedClipboardUI{"SharedClipboar
                                         base::FEATURE_DISABLED_BY_DEFAULT};
  
  #if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || \

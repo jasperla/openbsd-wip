@@ -12,6 +12,7 @@ chrome/icudtl.dat
 @so chrome/libGLESv2.so
 %%component%%
 @so chrome/libVkICD_mock_icd.so
+@so chrome/libvulkan.so
 chrome/locales/
 chrome/locales/am.pak
 chrome/locales/am.pak.info

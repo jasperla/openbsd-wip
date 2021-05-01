@@ -16,6 +16,6 @@ Index: build/util/python2_action.py
    exe = 'python2.7'
  
 -sys.exit(subprocess.call([exe] + sys.argv[1:]))
-+env = os.environ.copy()                                                        
++env = os.environ.copy()
 +env["LD_LIBRARY_PATH"] = "${WRKSRC}/out/Release"
 +sys.exit(subprocess.call([exe] + sys.argv[1:], env=env))
