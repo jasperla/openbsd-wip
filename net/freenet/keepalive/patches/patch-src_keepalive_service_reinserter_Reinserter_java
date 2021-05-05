@@ -1,0 +1,15 @@
+$OpenBSD$
+
+remove deprecated call
+
+--- src/keepalive/service/reinserter/Reinserter.java.orig	Fri Nov  6 15:36:01 2020
++++ src/keepalive/service/reinserter/Reinserter.java	Fri Nov  6 15:36:19 2020
+@@ -934,7 +934,7 @@ public final class Reinserter extends Thread {
+         private final FreenetURI uri;
+ 
+         VerySimpleGetter(short priorityClass, FreenetURI uri, RequestClient rc) {
+-            super(priorityClass, new FakeCallback(rc));
++            super(priorityClass, rc);
+             this.uri = uri;
+         }
+ 

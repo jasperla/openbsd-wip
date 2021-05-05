@@ -1,0 +1,17 @@
+Freenet is free software which lets you anonymously share files, browse and
+publish "freesites" (web sites accessible only through Freenet) and chat on
+forums, without fear of censorship. Freenet is decentralised to make it less
+vulnerable to attack, and if used in "darknet" mode, where users only connect to
+their friends, is very difficult to detect.
+
+Communications by Freenet nodes are encrypted and are routed through other nodes
+to make it extremely difficult to determine who is requesting the information
+and what its content is.
+
+Users contribute to the network by giving bandwidth and a portion of their hard
+drive (called the "data store") for storing files. Files are automatically kept
+or deleted depending on how popular they are, with the least popular being
+discarded to make way for newer or more popular content. Files are encrypted, so
+generally the user cannot easily discover what is in his datastore, and
+hopefully can't be held accountable for it. Chat forums, websites, and search
+functionality, are all built on top of this distributed data store.

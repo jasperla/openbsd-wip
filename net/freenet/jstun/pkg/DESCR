@@ -1,0 +1,7 @@
+Uses centralised STUN servers to detect your IP address and connectivity. It is
+important, especially on darknet, for Freenet to know what your IP address is
+(but it may be able to pick it up from your peers, especially if you have a lot
+of connections or are using opennet). STUN is used by other applications but
+this is centralised so could be used to find your node. If you can use UPnP
+instead then do so, but if UPnP can't find your IP address reliably you could
+load this as well.

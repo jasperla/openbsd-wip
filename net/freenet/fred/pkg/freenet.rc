@@ -1,0 +1,19 @@
+#!/bin/ksh
+#
+# $OpenBSD: rc.template,v 1.12 2018/01/11 19:30:18 rpe Exp $
+
+daemon="${TRUEPREFIX}/bin/freenet"
+daemon_flags="start"
+daemon_user="_freenet"
+
+. /etc/rc.d/rc.subr
+
+rc_check() {
+        ${rcexec} "${daemon} status"
+}
+
+rc_stop() {
+	${rcexec} "${daemon} stop"
+}
+
+rc_cmd $1

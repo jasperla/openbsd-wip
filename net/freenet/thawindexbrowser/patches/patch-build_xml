@@ -1,0 +1,18 @@
+--- build.xml.orig	Fri Nov  6 16:48:08 2020
++++ build.xml	Fri Nov  6 16:49:18 2020
+@@ -4,6 +4,7 @@
+ <project name="Freenet" default="dist" basedir=".">
+ 	<property name="freenet-cvs-snapshot.location" location="../fred/dist/freenet.jar"/>
+ 	<property name="freenet-ext.location" location="../fred/lib/freenet/freenet-ext.jar"/>
++	<property name="wrapper.location" location="${PREFIX}/share/java/classes/tanukiwrapper.jar"/>
+ 	<property name="svn.revision" value="@custom@"/>
+ 	<property name="source-version" value="1.5"/>
+ 	<property name="build" location="build/"/>
+@@ -39,6 +40,7 @@
+ 			<classpath>
+ 				<pathelement location="${freenet-ext.location}"/>
+ 				<pathelement location="${freenet-cvs-snapshot.location}"/>
++				<pathelement location="${wrapper.location}"/>
+ 			</classpath>
+ 			<include name="**/*.java"/>
+ 			<exclude name="**/*Test.java"/>

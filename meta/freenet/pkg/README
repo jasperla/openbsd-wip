@@ -1,0 +1,31 @@
+$OpenBSD$
+
++-----------------------------------------------------------------------
+| ${PKGSTEM} on OpenBSD
++-----------------------------------------------------------------------
+
+To start Freenet:
+
+  $ rcctl start freenet
+
+This will create new files in /var/freenet directory tree. To interact
+the web interface execute a browser of your choice and open
+127.0.0.1:8888
+
+Freenet stores all the downloaded material in /var/freenet/downloads
+
+As of the 0.7.5.1488 release freenet keeps its configurations in
+/var/freenet/conf/freenet.ini.
+
+Avoid unloading the plugins with 'Remove plugin from cache' option,
+since it simply deletes it.
+
+When you use freenet to change your configuration the above file is
+updated. Make sure freenet is not running when you manually edit the
+file ; if freenet is running it might overwrite your file.
+
+NOTE: The OpenBSD freenet port may not be compatible with plugins loaded
+from the freenet network.
+
+For more information about freenet in general please visit
+https://freenetproject.org

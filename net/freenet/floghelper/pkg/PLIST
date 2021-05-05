@@ -1,0 +1,22 @@
+@comment $OpenBSD: PLIST,v$
+${EXTDIR_ROOT}/plugins/
+@mode 0700
+@owner _freenet
+@group _freenet
+@sample ${DB_DIR}/plugins/
+@mode
+@owner
+@group
+${EXTDIR_ROOT}/plugins/FlogHelper.jar
+@mode 0700
+@owner _freenet
+@group _freenet
+@sample ${DB_DIR}/plugins/FlogHelper.jar
+@mode
+@owner
+@group
+${EXTDIR_ROOT}/plugins/data/
+@mode 0700
+@owner _freenet
+@group _freenet
+@sample ${DB_DIR}/plugins/data/

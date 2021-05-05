@@ -1,0 +1,4 @@
+Tool to create and automatically upload new format freesite search indexes, by
+automatically following links from your bookmarks. Causes very heavy load on
+your Freenet node, don't use it unless you have a powerful computer! Requires
+that the Library plugin also be loaded.
