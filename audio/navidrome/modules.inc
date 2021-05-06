@@ -431,6 +431,7 @@ MODGO_MODULES =	\
 	rsc.io/quote/v3						 v3.1.0 \
 	rsc.io/sampler						 v1.3.0 \
 	sigs.k8s.io/yaml					 v1.1.0
+
 MODGO_MODFILES =	\
 	cloud.google.com/go					 v0.26.0 \
 	cloud.google.com/go					 v0.34.0 \
@@ -1004,3 +1005,4 @@ MODGO_MODFILES =	\
 	honnef.co/go/tools					 v0.0.1-2019.2.3 \
 	honnef.co/go/tools					 v0.0.1-2020.1.3 \
 	honnef.co/go/tools					 v0.0.1-2020.1.4
+
