@@ -3,7 +3,7 @@ $OpenBSD$
 Index: chrome/browser/ui/startup/startup_browser_creator_impl.cc
 --- chrome/browser/ui/startup/startup_browser_creator_impl.cc.orig
 +++ chrome/browser/ui/startup/startup_browser_creator_impl.cc
-@@ -107,7 +107,7 @@ namespace {
+@@ -108,7 +108,7 @@ namespace {
  bool ShouldRestoreApps(bool is_post_restart) {
  #if BUILDFLAG(IS_CHROMEOS_ASH)
    return true;

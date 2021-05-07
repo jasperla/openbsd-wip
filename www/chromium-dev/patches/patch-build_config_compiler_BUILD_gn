@@ -84,8 +84,8 @@ Index: build/config/compiler/BUILD.gn
 -          "-Wno-non-c-typedef-for-linkage",
          ]
  
-         if (llvm_force_head_revision) {
-@@ -1625,12 +1613,6 @@ config("default_warnings") {
+         cflags_c += [
+@@ -1617,12 +1605,6 @@ config("default_warnings") {
            "-Wno-implicit-fallthrough",
          ]
  
@@ -98,7 +98,7 @@ Index: build/config/compiler/BUILD.gn
        }
      }
    }
-@@ -1766,7 +1748,7 @@ config("no_chromium_code") {
+@@ -1758,7 +1740,7 @@ config("no_chromium_code") {
        # suppressing them individually, we just blanket suppress them here.
        "-Wno-unused-variable",
      ]
@@ -107,7 +107,7 @@ Index: build/config/compiler/BUILD.gn
        cflags += [
          # TODO(https://crbug.com/1202159): Clean up and enable.
          "-Wno-misleading-indentation",
-@@ -1844,7 +1826,7 @@ config("export_dynamic") {
+@@ -1836,7 +1818,7 @@ config("export_dynamic") {
  config("thin_archive") {
    # The macOS and iOS default linker ld64 does not support reading thin
    # archives.
@@ -116,7 +116,7 @@ Index: build/config/compiler/BUILD.gn
      arflags = [ "-T" ]
    } else if (is_win && use_lld) {
      arflags = [ "/llvmlibthin" ]
-@@ -2277,7 +2259,7 @@ config("afdo_optimize_size") {
+@@ -2269,7 +2251,7 @@ config("afdo_optimize_size") {
  # between //base/allocator:tcmalloc and AFDO on GCC), so we provide a separate
  # config to allow AFDO to be disabled per-target.
  config("afdo") {
@@ -125,7 +125,7 @@ Index: build/config/compiler/BUILD.gn
      cflags = []
      if (clang_emit_debug_info_for_profiling) {
        # Add the following flags to generate debug info for profiling.
-@@ -2293,7 +2275,7 @@ config("afdo") {
+@@ -2285,7 +2267,7 @@ config("afdo") {
        cflags += [ "-fprofile-sample-use=${rebased_clang_sample_profile}" ]
        inputs = [ _clang_sample_profile ]
      }
@@ -134,12 +134,3 @@ Index: build/config/compiler/BUILD.gn
      cflags = [ "-fauto-profile=${auto_profile_path}" ]
      inputs = [ auto_profile_path ]
    }
-@@ -2349,7 +2331,7 @@ config("symbols") {
-     # All configs using /DEBUG should include this:
-     configs = [ ":win_pdbaltpath" ]
- 
--    if (is_clang) {
-+    if (is_clang && !is_openbsd) {
-       # Use constructor debug mode. This option reduces debug info more than
-       # -fno-standalone-debug by emitting class type information only when
-       # constructors are emitted.

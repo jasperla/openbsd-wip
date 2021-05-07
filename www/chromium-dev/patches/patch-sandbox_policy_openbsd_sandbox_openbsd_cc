@@ -387,8 +387,8 @@ Index: sandbox/policy/openbsd/sandbox_openbsd.cc
 +      return "Audio";
 +    case SandboxType::kSpeechRecognition:
 +      return "Speech Recognition";
-+    case SandboxType::kSharingService:
-+      return "Sharing";
++    case SandboxType::kService:
++      return "Service";
 +    case SandboxType::kVideoCapture:
 +      return "Video Capture";
 +    default:

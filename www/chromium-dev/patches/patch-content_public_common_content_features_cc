@@ -21,7 +21,7 @@ Index: content/public/common/content_features.cc
        base::FEATURE_ENABLED_BY_DEFAULT
  #else
        base::FEATURE_DISABLED_BY_DEFAULT
-@@ -851,7 +851,7 @@ const base::Feature kWebAssemblyThreads {
+@@ -847,7 +847,7 @@ const base::Feature kWebAssemblyThreads {
  // Enable WebAssembly trap handler.
  #if (defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_WIN) || \
       defined(OS_MAC)) &&                                             \
@@ -30,7 +30,7 @@ Index: content/public/common/content_features.cc
  const base::Feature kWebAssemblyTrapHandler{"WebAssemblyTrapHandler",
                                              base::FEATURE_ENABLED_BY_DEFAULT};
  #else
-@@ -872,7 +872,7 @@ const base::Feature kWebAuthCable {
+@@ -868,7 +868,7 @@ const base::Feature kWebAuthCable {
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
  // If updating this, also update kWebAuthCableServerLink.
@@ -39,7 +39,7 @@ Index: content/public/common/content_features.cc
        base::FEATURE_DISABLED_BY_DEFAULT
  #else
        base::FEATURE_ENABLED_BY_DEFAULT
-@@ -933,7 +933,11 @@ const base::Feature kWebUIReportOnlyTrustedTypes{
+@@ -934,7 +934,11 @@ const base::Feature kWebUIReportOnlyTrustedTypes{
  
  // Controls whether the WebUSB API is enabled:
  // https://wicg.github.io/webusb
@@ -51,7 +51,7 @@ Index: content/public/common/content_features.cc
  
  // Controls whether the WebXR Device API is enabled.
  const base::Feature kWebXr{"WebXR", base::FEATURE_ENABLED_BY_DEFAULT};
-@@ -1011,7 +1015,7 @@ const base::Feature kWindowCaptureMacV2{"WindowCapture
+@@ -1007,7 +1011,7 @@ const base::Feature kWindowCaptureMacV2{"WindowCapture
  
  #endif  // defined(OS_MAC)
  

@@ -3,7 +3,7 @@ $OpenBSD$
 Index: chrome/browser/ui/views/frame/browser_frame.cc
 --- chrome/browser/ui/views/frame/browser_frame.cc.orig
 +++ chrome/browser/ui/views/frame/browser_frame.cc
-@@ -43,7 +43,7 @@
+@@ -44,7 +44,7 @@
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
@@ -12,7 +12,7 @@ Index: chrome/browser/ui/views/frame/browser_frame.cc
  #include "ui/display/screen.h"
  #include "ui/views/linux_ui/linux_ui.h"
  #endif
-@@ -53,7 +53,7 @@ namespace {
+@@ -54,7 +54,7 @@ namespace {
  bool IsUsingGtkTheme(Profile* profile) {
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
@@ -21,7 +21,7 @@ Index: chrome/browser/ui/views/frame/browser_frame.cc
    return ThemeServiceFactory::GetForProfile(profile)->UsingSystemTheme();
  #else
    return false;
-@@ -233,7 +233,7 @@ void BrowserFrame::OnNativeWidgetWorkspaceChanged() {
+@@ -234,7 +234,7 @@ void BrowserFrame::OnNativeWidgetWorkspaceChanged() {
                                             IsVisibleOnAllWorkspaces());
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
@@ -30,8 +30,8 @@ Index: chrome/browser/ui/views/frame/browser_frame.cc
    // If the window was sent to a different workspace, prioritize it if
    // it was sent to the current workspace and deprioritize it
    // otherwise.  This is done by MoveBrowsersInWorkspaceToFront()
-@@ -343,7 +343,7 @@ void BrowserFrame::SelectNativeTheme() {
-     native_theme = ui::NativeTheme::GetInstanceForDarkUI();
+@@ -355,7 +355,7 @@ void BrowserFrame::SelectNativeTheme() {
+     }
    }
  
 -#if defined(OS_LINUX) || defined(IS_CHROMEOS_LACROS)
@@ -39,7 +39,7 @@ Index: chrome/browser/ui/views/frame/browser_frame.cc
    const views::LinuxUI* linux_ui = views::LinuxUI::instance();
    if (linux_ui)
      native_theme = linux_ui->GetNativeTheme(GetNativeWindow());
-@@ -357,7 +357,7 @@ bool BrowserFrame::RegenerateFrameOnThemeChange(
+@@ -369,7 +369,7 @@ bool BrowserFrame::RegenerateFrameOnThemeChange(
    bool need_regenerate = false;
    // TODO(crbug.com/1052397): Revisit the macro expression once build flag
    // switch of lacros-chrome is complete.

@@ -12,7 +12,7 @@ Index: net/BUILD.gn
    net_configs += [ "//build/config/linux:libresolv" ]
  }
  
-@@ -1362,7 +1362,7 @@ component("net") {
+@@ -1361,7 +1361,7 @@ component("net") {
        }
      }
  
@@ -21,7 +21,7 @@ Index: net/BUILD.gn
        sources += [
          "base/network_change_notifier_posix.cc",
          "base/network_change_notifier_posix.h",
-@@ -1395,13 +1395,20 @@ component("net") {
+@@ -1394,13 +1394,20 @@ component("net") {
      }
  
      # Use getifaddrs() on POSIX platforms, except Linux.
@@ -43,7 +43,7 @@ Index: net/BUILD.gn
      if (use_nss_certs) {
        sources += [
          "cert/internal/system_trust_store_nss.h",
-@@ -1511,6 +1518,15 @@ component("net") {
+@@ -1510,6 +1517,15 @@ component("net") {
        ]
      }
  
@@ -59,7 +59,7 @@ Index: net/BUILD.gn
      if (!disable_ftp_support) {
        sources += [
          "ftp/ftp_auth_cache.cc",
-@@ -4727,7 +4743,7 @@ test("net_unittests") {
+@@ -4725,7 +4741,7 @@ test("net_unittests") {
    }
  
    # Use getifaddrs() on POSIX platforms, except Linux and Android.

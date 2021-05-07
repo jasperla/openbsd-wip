@@ -9,6 +9,6 @@ Index: mojo/core/embedder/features.h
  #if defined(OS_POSIX) && !defined(OS_NACL) && !defined(OS_MAC)
 -#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_ANDROID)
 +#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_ANDROID) || defined(OS_BSD)
+ COMPONENT_EXPORT(MOJO_CORE_EMBEDDER_FEATURES)
  extern const base::Feature kMojoLinuxChannelSharedMem;
- extern const base::FeatureParam<int> kMojoLinuxChannelSharedMemPages;
- extern const base::FeatureParam<bool> kMojoLinuxChannelSharedMemEfdZeroOnWake;
+ 

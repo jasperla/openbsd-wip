@@ -21,7 +21,7 @@ Index: content/browser/download/download_manager_impl.cc
  base::FilePath GetTemporaryDownloadDirectory() {
    std::unique_ptr<base::Environment> env(base::Environment::Create());
    return base::nix::GetXDGDirectory(env.get(), "XDG_DATA_HOME", ".local/share");
-@@ -569,7 +569,7 @@ bool DownloadManagerImpl::InterceptDownload(
+@@ -568,7 +568,7 @@ bool DownloadManagerImpl::InterceptDownload(
  
  base::FilePath DownloadManagerImpl::GetDefaultDownloadDirectory() {
    base::FilePath default_download_directory;

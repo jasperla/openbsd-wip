@@ -10,5 +10,5 @@ Index: chrome/browser/performance_monitor/process_metrics_recorder_util.cc
 -    defined(OS_AIX)
 +    defined(OS_AIX) || defined(OS_BSD)
    base::UmaHistogramCounts10000(
-       base::JoinString({"PerformanceMonitor.IdleWakeUps.", histogram_suffix},
+       base::JoinString({"PerformanceMonitor.IdleWakeups.", histogram_suffix},
                         ""),
