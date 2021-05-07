@@ -10,13 +10,6 @@ GH_COMMIT =	c729640aa6235e9b9152d24e323c5736d88ee680
 # 8? oh god
 DISTNAME =	pharo-9.0.0
 
-# Might not be needed?!
-#DISTFILES =	pharo-generated-0b6e912.tar.gz:0 \
-#		${DISTNAME}.tar.gz
-
-
-MASTER_SITES0 =	https://deftly.net/dist/
-
 CATEGORIES =	lang
 
 HOMEPAGE =	https://pharo.org
@@ -52,8 +45,5 @@ LIB_DEPENDS =		devel/libgit2/libgit2 \
 #MAKE_ENV =		???
 #FAKE_FLAGS =		???
 #TEST_FLAGS =		???
-
-post-extract:
-	cp -v ${FILESDIR}/version.info ${WRKSRC}
 
 .include <bsd.port.mk>
