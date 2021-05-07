@@ -1,6 +1,6 @@
 @comment $OpenBSD: PLIST,v$
-@newgroup _geth:831
-@newuser _geth:831:831:daemon:geth Account:${VARBASE}/geth:/sbin/nologin
+@newgroup _geth:867
+@newuser _geth:867:867:daemon:geth Account:${VARBASE}/geth:/sbin/nologin
 @rcscript ${RCDIR}/geth
 @mode 750
 @owner _geth
@@ -11,15 +11,19 @@
 @mode
 @owner
 @group
+@bin bin/abidump
 @bin bin/abigen
 @bin bin/bootnode
+@bin bin/checkpoint-admin
+@bin bin/clef
+@bin bin/devp2p
+@bin bin/ethkey
 @bin bin/evm
 @bin bin/geth
+@bin bin/geth-faucet
+@bin bin/p2psim
 @bin bin/puppeth
 @bin bin/rlpdump
-@bin bin/swarm
-@bin bin/wnode
-@comment share/doc/pkg-readmes/${PKGSTEM}
 share/go-ethereum/
 share/go-ethereum/geth.conf
 @sample ${SYSCONFDIR}/geth.conf

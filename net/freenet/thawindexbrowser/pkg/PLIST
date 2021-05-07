@@ -1,0 +1,22 @@
+@comment $OpenBSD: PLIST,v$
+${EXTDIR_ROOT}/plugins/
+@mode 700
+@owner _freenet
+@group _freenet
+@sample ${DB_DIR}/plugins/
+@mode
+@owner
+@group
+${EXTDIR_ROOT}/plugins/ThawIndexBrowser.jar
+@mode 700
+@owner _freenet
+@group _freenet
+@sample ${DB_DIR}/plugins/ThawIndexBrowser.jar 
+@mode
+@owner
+@group
+${EXTDIR_ROOT}/plugins/data/
+@mode 700
+@owner _freenet
+@group _freenet
+@sample ${DB_DIR}/plugins/data/

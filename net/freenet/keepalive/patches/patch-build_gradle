@@ -1,0 +1,25 @@
+$OpenBSD$
+
+Set proper location for deps
+
+--- build.gradle.orig	Fri Nov  6 15:23:09 2020
++++ build.gradle	Fri Nov  6 15:25:43 2020
+@@ -5,6 +5,9 @@ targetCompatibility = 1.7
+ 
+ repositories {
+     mavenCentral()
++    flatDir {
++	dirs 'flatRepo'
++    }
+ }
+ 
+ configurations {
+@@ -12,7 +15,7 @@ configurations {
+ }
+ 
+ dependencies {
+-    compile files('../fred/build/libs/freenet.jar')
++    compile files('${PREFIX}/share/freenet/lib/freenet.jar')
+     compile group: 'org.apache.ant', name: 'ant', version: '1.10.5'
+     extraLibs group: 'com.h2database', name: 'h2', version: '1.4.199'
+     configurations.compile.extendsFrom(configurations.extraLibs)

@@ -4,23 +4,21 @@ COMMENT =		multiplatform WeeChat relay client
 
 GH_ACCOUNT =		LithApp
 GH_PROJECT =		Lith
-GH_TAGNAME =		1.2.1
+GH_TAGNAME =		1.2.3
 
 PKGNAME =		lith-${GH_TAGNAME}
 
 CATEGORIES =		net x11
 
-WANTLIB += GL Qt5Core Qt5DBus Qt5Gui Qt5Multimedia Qt5Network
-WANTLIB += Qt5Qml Qt5QmlModels Qt5Quick Qt5QuickControls2 Qt5WebSockets
-WANTLIB += Qt5Widgets Qt5Xml c m
+WANTLIB += ${COMPILER_LIBCXX} GL Qt5Core Qt5DBus Qt5Gui Qt5Multimedia
+WANTLIB += Qt5Network Qt5Qml Qt5QmlModels Qt5Quick Qt5QuickControls2
+WANTLIB += Qt5WebSockets Qt5Widgets Qt5Xml c m
 
 # GPLv2 only
 PERMIT_PACKAGE =	Yes
 
 MODULES =		devel/qmake \
 			x11/qt5
-
-DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 RUN_DEPENDS =		x11/gtk+3,-guic \
 			devel/desktop-file-utils
