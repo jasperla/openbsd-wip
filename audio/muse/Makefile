@@ -57,7 +57,7 @@ CONFIGURE_ARGS=	-DCMAKE_REQUIRED_INCLUDES="${LOCALBASE}/include"
 
 NO_TEST=	Yes
 
-WRKSRC=		${WRKDIST}/src
+WRKDIST=	${WRKDIR}/${DISTNAME}/src
 
 post-install:
 	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py ${PREFIX}/share/muse-4.0
