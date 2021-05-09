@@ -47,4 +47,6 @@ LIB_DEPENDS =		devel/libgit2/libgit2 \
 #FAKE_FLAGS =		???
 #TEST_FLAGS =		???
 
+NO_TEST =		Yes
+
 .include <bsd.port.mk>

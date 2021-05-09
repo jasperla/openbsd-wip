@@ -1,2 +1,2 @@
-Fix install prefix to be DESTDIR/PREFIX.
-
+Fix install:
+  00000d001fcac000 00000d001fe71000 rlib  0    1   0      /build/pobj/pharo-9.0.0.c729640aa/build-amd64/build/vm/libPharoVMCore.so
