@@ -2,11 +2,9 @@
 
 COMMENT=	digital audio workstation with support for Audio and MIDI
 
-V=		3.1.1
 GH_ACCOUNT=	muse-sequencer
 GH_PROJECT=	muse
-GH_TAGNAME=	muse_${V:S/./_/g}
-DISTNAME=	${GH_PROJECT}-${V}
+GH_TAGNAME=	4.0.0
 
 CATEGORIES=	audio
 
@@ -59,11 +57,11 @@ CONFIGURE_ARGS=	-DCMAKE_REQUIRED_INCLUDES="${LOCALBASE}/include"
 
 NO_TEST=	Yes
 
-WRKSRC=		${WRKDIST}/muse3
+WRKSRC=		${WRKDIST}/src
 
 post-install:
-	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py ${PREFIX}/share/muse-3.1
-	cp ${PREFIX}/share/man/man1/{grepmidi.1,muse3.1} ${PREFIX}/man/man1
+	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py ${PREFIX}/share/muse-4.0
+	cp ${PREFIX}/share/man/man1/{grepmidi.1,muse4.1} ${PREFIX}/man/man1
 	rm -rf ${PREFIX}/share/man
 
 .include <bsd.port.mk>
