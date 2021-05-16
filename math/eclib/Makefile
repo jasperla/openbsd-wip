@@ -52,7 +52,7 @@ LIB_DEPENDS =		devel/boost \
 			math/pari
 #TEST_DEPENDS =		???
 #MAKE_FLAGS =		???
-#MAKE_ENV =		???
+MAKE_ENV =		LDFLAGS="-L${LOCALBASE}/lib"
 #FAKE_FLAGS =		???
 #TEST_FLAGS =		???
 #SEPARATE_BUILD =	Yes (build in a directory other than WRKSRC)
@@ -62,7 +62,8 @@ LIB_DEPENDS =		devel/boost \
 #USE_LIBTOOL=		gnu
 CONFIGURE_STYLE =	gnu
 #CONFIGURE_SCRIPT =	??? (if other than configure)
-#CONFIGURE_ARGS =	???
+CONFIGURE_ARGS =	--with-pari=${LOCALBASE} \
+			--with-ntl=${LOCALBASE}
 #CONFIGURE_ENV =	???
 # DEBUG_CONFIGURE_ARGS =	???
 # DEBUG_PACKAGES = ${BUILD_PACKAGES}
@@ -94,7 +95,7 @@ CONFIGURE_STYLE =	gnu
 #NO_BUILD =		Yes
 #NO_TEST =		Yes
 #CFLAGS =		???
-#LDFLAGS =		???
+LDFLAGS =		-L${LOCALBASE}/lib
 #MAKE_FILE =		???
 #PKG_ARCH =		??? (* for arch-independent packages)
 #WRKDIST =		??? if other than ${WRKDIR}/${DISTNAME}
