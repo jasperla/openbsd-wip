@@ -21,7 +21,7 @@ Index: chrome/browser/chrome_browser_interface_binders.cc
    if (base::FeatureList::IsEnabled(features::kWebAppWindowControlsOverlay) &&
        !render_frame_host->GetParent()) {
      map->Add<chrome::mojom::DraggableRegions>(
-@@ -849,7 +849,7 @@ void PopulateChromeWebUIFrameBinders(
+@@ -853,7 +853,7 @@ void PopulateChromeWebUIFrameBinders(
  #endif
  
  #if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || \

@@ -12,7 +12,7 @@ Index: chrome/browser/flag_descriptions.h
  #include "base/allocator/buildflags.h"
  #endif  // defined(OS_LINUX) || defined(OS_CHROMEOS)
  
-@@ -2920,7 +2920,7 @@ extern const char kEnableNewBadgeOnMenuItemsDescriptio
+@@ -2918,7 +2918,7 @@ extern const char kEnableNewBadgeOnMenuItemsDescriptio
  // Random platform combinations -----------------------------------------------
  
  #if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || \
@@ -21,7 +21,7 @@ Index: chrome/browser/flag_descriptions.h
  
  extern const char kEnableOopPrintDriversName[];
  extern const char kEnableOopPrintDriversDescription[];
-@@ -2946,7 +2946,7 @@ extern const char kWebuiFeedbackDescription[];
+@@ -2944,7 +2944,7 @@ extern const char kWebuiFeedbackDescription[];
  #endif  // defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) ||
          // defined(OS_CHROMEOS)
  
@@ -30,7 +30,7 @@ Index: chrome/browser/flag_descriptions.h
  
  extern const char kCommanderName[];
  extern const char kCommanderDescription[];
-@@ -2959,7 +2959,7 @@ extern const char kDesktopDetailedLanguageSettingsDesc
+@@ -2957,7 +2957,7 @@ extern const char kDesktopDetailedLanguageSettingsDesc
  
  #endif  // defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX)
  
@@ -39,7 +39,7 @@ Index: chrome/browser/flag_descriptions.h
  #if BUILDFLAG(USE_TCMALLOC)
  extern const char kDynamicTcmallocName[];
  extern const char kDynamicTcmallocDescription[];
-@@ -2979,13 +2979,13 @@ extern const char kWebShareDescription[];
+@@ -2977,13 +2977,13 @@ extern const char kWebShareDescription[];
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
  #if defined(OS_WIN) || (defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)) || \
@@ -55,7 +55,7 @@ Index: chrome/browser/flag_descriptions.h
  extern const char kUseOzonePlatformName[];
  extern const char kUseOzonePlatformDescription[];
  #endif  // defined(OS_LINUX) && defined(USE_OZONE)
-@@ -3050,7 +3050,7 @@ extern const char kSendWebUIJavaScriptErrorReportsDesc
+@@ -3048,7 +3048,7 @@ extern const char kSendWebUIJavaScriptErrorReportsDesc
  #endif
  
  #if defined(OS_WIN) || (defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)) || \

@@ -3,7 +3,7 @@ $OpenBSD$
 Index: chrome/browser/enterprise/connectors/device_trust/device_trust_service.cc
 --- chrome/browser/enterprise/connectors/device_trust/device_trust_service.cc.orig
 +++ chrome/browser/enterprise/connectors/device_trust/device_trust_service.cc
-@@ -21,7 +21,7 @@ DeviceTrustService::DeviceTrustService(Profile* profil
+@@ -27,7 +27,7 @@ DeviceTrustService::DeviceTrustService(Profile* profil
        signal_report_callback_(
            base::BindOnce(&DeviceTrustService::OnSignalReported,
                           base::Unretained(this))) {
@@ -12,7 +12,7 @@ Index: chrome/browser/enterprise/connectors/device_trust/device_trust_service.cc
    key_pair_ = std::make_unique<DeviceTrustKeyPair>();
  #endif  // defined(OS_LINUX) || defined(OS_WIN) || defined(OS_MAC)
  
-@@ -62,7 +62,7 @@ void DeviceTrustService::OnPolicyUpdated() {
+@@ -69,7 +69,7 @@ void DeviceTrustService::OnPolicyUpdated() {
    }
  
    if (!first_report_sent_ && IsEnabled()) {  // Policy enabled for the 1st time.
@@ -21,7 +21,7 @@ Index: chrome/browser/enterprise/connectors/device_trust/device_trust_service.cc
      key_pair_->Init();
  #endif  // defined(OS_LINUX) || defined(OS_WIN) || defined(OS_MAC)
      reporter_->Init(MakePolicyCheck(),
-@@ -84,7 +84,7 @@ void DeviceTrustService::OnReporterInitialized(bool su
+@@ -91,7 +91,7 @@ void DeviceTrustService::OnReporterInitialized(bool su
  
    DeviceTrustReportEvent report;
  
@@ -30,7 +30,7 @@ Index: chrome/browser/enterprise/connectors/device_trust/device_trust_service.cc
    auto* credential = report.mutable_attestation_credential();
    credential->set_format(
        DeviceTrustReportEvent::Credential::EC_NID_X9_62_PRIME256V1_PUBLIC_DER);
-@@ -119,7 +119,7 @@ void DeviceTrustService::SetSignalReportCallbackForTes
+@@ -126,7 +126,7 @@ void DeviceTrustService::SetSignalReportCallbackForTes
        base::Unretained(this), std::move(cb));
  }
  

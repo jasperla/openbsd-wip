@@ -1,4 +1,4 @@
-$OpenBSD: patch-components_feature_engagement_public_feature_list_h,v 1.13 2021/01/20 07:28:09 robert Exp $
+$OpenBSD$
 
 Index: components/feature_engagement/public/feature_list.h
 --- components/feature_engagement/public/feature_list.h.orig
@@ -15,7 +15,7 @@ Index: components/feature_engagement/public/feature_list.h
 @@ -248,7 +248,7 @@ constexpr flags_ui::FeatureEntry::FeatureVariation
          VARIATION_ENTRY(kIPHBadgedTranslateManualTriggerFeature),
          VARIATION_ENTRY(kIPHDiscoverFeedHeaderFeature),
- #elif defined(OS_WIN) || defined(OS_APPLE) || defined(OS_LINUX) || \
+ #elif defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || \
 -    defined(OS_CHROMEOS)
 +    defined(OS_CHROMEOS) || defined(OS_BSD)
          VARIATION_ENTRY(kIPHDesktopTabGroupsNewGroupFeature),

@@ -3,7 +3,7 @@ $OpenBSD$
 Index: chrome/common/pref_names.cc
 --- chrome/common/pref_names.cc.orig
 +++ chrome/common/pref_names.cc
-@@ -1127,7 +1127,7 @@ const char kAllowedDomainsForApps[] = "settings.allowe
+@@ -1132,7 +1132,7 @@ const char kAllowedDomainsForApps[] = "settings.allowe
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
@@ -12,7 +12,7 @@ Index: chrome/common/pref_names.cc
  // Linux specific preference on whether we should match the system theme.
  const char kUsesSystemTheme[] = "extensions.theme.use_system";
  #endif
-@@ -1258,7 +1258,7 @@ const char kShowUpdatePromotionInfoBar[] =
+@@ -1263,7 +1263,7 @@ const char kShowUpdatePromotionInfoBar[] =
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
@@ -21,7 +21,7 @@ Index: chrome/common/pref_names.cc
  // Boolean that is false if we should show window manager decorations.  If
  // true, we draw a custom chrome frame (thicker title bar and blue border).
  const char kUseCustomChromeFrame[] = "browser.custom_chrome_frame";
-@@ -1717,7 +1717,7 @@ const char kDownloadDefaultDirectory[] = "download.def
+@@ -1722,7 +1722,7 @@ const char kDownloadDefaultDirectory[] = "download.def
  const char kDownloadDirUpgraded[] = "download.directory_upgrade";
  
  #if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_CHROMEOS) || \
@@ -30,7 +30,7 @@ Index: chrome/common/pref_names.cc
  const char kOpenPdfDownloadInSystemReader[] =
      "download.open_pdf_in_system_reader";
  #endif
-@@ -1987,7 +1987,7 @@ const char kWebAppsUninstalledDefaultChromeApps[] =
+@@ -1992,7 +1992,7 @@ const char kWebAppsUninstalledDefaultChromeApps[] =
  // outlive the app installation and uninstallation.
  const char kWebAppsPreferences[] = "web_apps.web_app_ids";
  
@@ -39,7 +39,7 @@ Index: chrome/common/pref_names.cc
      (defined(OS_LINUX) && !BUILDFLAG(IS_CHROMEOS_LACROS))
  // Dictionary that maps origins to web apps that can act as URL handlers.
  const char kWebAppsUrlHandlerInfo[] = "web_apps.url_handler_info";
-@@ -2104,7 +2104,7 @@ const char kAmbientAuthenticationInPrivateModesEnabled
+@@ -2109,7 +2109,7 @@ const char kAmbientAuthenticationInPrivateModesEnabled
  // requests.
  const char kBasicAuthOverHttpEnabled[] = "auth.basic_over_http_enabled";
  
@@ -48,7 +48,7 @@ Index: chrome/common/pref_names.cc
  // Boolean that specifies whether OK-AS-DELEGATE flag from KDC is respected
  // along with kAuthNegotiateDelegateAllowlist.
  const char kAuthNegotiateDelegateByKdcPolicy[] =
-@@ -2752,7 +2752,7 @@ const char kSigninInterceptionEnabled[] = "signin.inte
+@@ -2760,7 +2760,7 @@ const char kSigninInterceptionEnabled[] = "signin.inte
  
  // TODO(crbug.com/1179280): Remove OS_LINUX once https://crbug.com/1169547 is
  // done.
@@ -57,7 +57,7 @@ Index: chrome/common/pref_names.cc
  // Boolean pref indicating whether the user is allowed to create secondary
  // profiles in Lacros browser. This is set by a policy, and the default value
  // for managed users is false.
-@@ -3018,7 +3018,7 @@ const char kBlockAutoplayEnabled[] = "media.block_auto
+@@ -3026,7 +3026,7 @@ const char kBlockAutoplayEnabled[] = "media.block_auto
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.

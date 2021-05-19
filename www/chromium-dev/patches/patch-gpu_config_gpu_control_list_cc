@@ -3,7 +3,7 @@ $OpenBSD$
 Index: gpu/config/gpu_control_list.cc
 --- gpu/config/gpu_control_list.cc.orig
 +++ gpu/config/gpu_control_list.cc
-@@ -277,7 +277,7 @@ GpuControlList::GLType GpuControlList::More::GetDefaul
+@@ -278,7 +278,7 @@ GpuControlList::GLType GpuControlList::More::GetDefaul
  #if BUILDFLAG(IS_CHROMEOS_ASH)
    return kGLTypeGL;
  #elif (defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)) || \

@@ -21,7 +21,16 @@ Index: content/public/common/content_features.cc
        base::FEATURE_ENABLED_BY_DEFAULT
  #else
        base::FEATURE_DISABLED_BY_DEFAULT
-@@ -847,7 +847,7 @@ const base::Feature kWebAssemblyThreads {
+@@ -822,7 +822,7 @@ const base::Feature kWebAssemblyBaseline{"WebAssemblyB
+ const base::Feature kWebAssemblyCodeProtection{
+     "WebAssemblyCodeProtection", base::FEATURE_DISABLED_BY_DEFAULT};
+ 
+-#if defined(OS_LINUX) && defined(ARCH_CPU_X86_64)
++#if (defined(OS_LINUX) || defined(OS_BSD)) && defined(ARCH_CPU_X86_64)
+ // Use memory protection keys in userspace (PKU) (if available) to protect code
+ // JITed for WebAssembly. Fall back to traditional memory protection if
+ // WebAssemblyCodeProtection is also enabled.
+@@ -855,7 +855,7 @@ const base::Feature kWebAssemblyThreads {
  // Enable WebAssembly trap handler.
  #if (defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_WIN) || \
       defined(OS_MAC)) &&                                             \
@@ -30,7 +39,7 @@ Index: content/public/common/content_features.cc
  const base::Feature kWebAssemblyTrapHandler{"WebAssemblyTrapHandler",
                                              base::FEATURE_ENABLED_BY_DEFAULT};
  #else
-@@ -868,7 +868,7 @@ const base::Feature kWebAuthCable {
+@@ -876,7 +876,7 @@ const base::Feature kWebAuthCable {
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
  // If updating this, also update kWebAuthCableServerLink.
@@ -39,7 +48,7 @@ Index: content/public/common/content_features.cc
        base::FEATURE_DISABLED_BY_DEFAULT
  #else
        base::FEATURE_ENABLED_BY_DEFAULT
-@@ -934,7 +934,11 @@ const base::Feature kWebUIReportOnlyTrustedTypes{
+@@ -942,7 +942,11 @@ const base::Feature kWebUIReportOnlyTrustedTypes{
  
  // Controls whether the WebUSB API is enabled:
  // https://wicg.github.io/webusb
@@ -51,7 +60,7 @@ Index: content/public/common/content_features.cc
  
  // Controls whether the WebXR Device API is enabled.
  const base::Feature kWebXr{"WebXR", base::FEATURE_ENABLED_BY_DEFAULT};
-@@ -1007,7 +1011,7 @@ const base::Feature kWindowCaptureMacV2{"WindowCapture
+@@ -1015,7 +1019,7 @@ const base::Feature kWindowCaptureMacV2{"WindowCapture
  
  #endif  // defined(OS_MAC)
  

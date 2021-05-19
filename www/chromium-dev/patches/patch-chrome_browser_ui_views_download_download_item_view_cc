@@ -3,7 +3,7 @@ $OpenBSD: patch-chrome_browser_ui_views_download_download_item_view_cc,v 1.7 202
 Index: chrome/browser/ui/views/download/download_item_view.cc
 --- chrome/browser/ui/views/download/download_item_view.cc.orig
 +++ chrome/browser/ui/views/download/download_item_view.cc
-@@ -190,7 +190,7 @@ bool UseNewWarnings() {
+@@ -193,7 +193,7 @@ bool UseNewWarnings() {
  }
  
  int GetFilenameStyle(const views::Label& label) {
@@ -12,7 +12,7 @@ Index: chrome/browser/ui/views/download/download_item_view.cc
    if (UseNewWarnings())
      return STYLE_EMPHASIZED;
  #endif
-@@ -198,7 +198,7 @@ int GetFilenameStyle(const views::Label& label) {
+@@ -201,7 +201,7 @@ int GetFilenameStyle(const views::Label& label) {
  }
  
  int GetFilenameStyle(const views::StyledLabel& label) {

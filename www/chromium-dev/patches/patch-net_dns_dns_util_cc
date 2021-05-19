@@ -10,4 +10,4 @@ Index: net/dns/dns_util.cc
 +
  #if defined(OS_POSIX)
  #include <netinet/in.h>
- #if !defined(OS_NACL)
+ #include <net/if.h>

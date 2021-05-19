@@ -39,7 +39,7 @@ Index: pdf/pdfium/pdfium_engine.cc
    SetLastInstance(client_->GetPluginInstance());
  #endif
  
-@@ -3156,7 +3156,7 @@ bool PDFiumEngine::ContinuePaint(int progressive_index
+@@ -3152,7 +3152,7 @@ bool PDFiumEngine::ContinuePaint(int progressive_index
    DCHECK_LT(static_cast<size_t>(progressive_index), progressive_paints_.size());
  
    last_progressive_start_time_ = base::Time::Now();
@@ -48,7 +48,7 @@ Index: pdf/pdfium/pdfium_engine.cc
    SetLastInstance(client_->GetPluginInstance());
  #endif
  
-@@ -3645,7 +3645,7 @@ void PDFiumEngine::SetCurrentPage(int index) {
+@@ -3641,7 +3641,7 @@ void PDFiumEngine::SetCurrentPage(int index) {
      FORM_DoPageAAction(old_page, form(), FPDFPAGE_AACTION_CLOSE);
    }
    most_visible_page_ = index;

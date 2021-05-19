@@ -3,7 +3,7 @@ $OpenBSD$
 Index: chrome/browser/policy/configuration_policy_handler_list_factory.cc
 --- chrome/browser/policy/configuration_policy_handler_list_factory.cc.orig
 +++ chrome/browser/policy/configuration_policy_handler_list_factory.cc
-@@ -1289,7 +1289,7 @@ const PolicyToPreferenceMapEntry kSimplePolicyMap[] = 
+@@ -1292,7 +1292,7 @@ const PolicyToPreferenceMapEntry kSimplePolicyMap[] = 
  
  // TODO(crbug.com/1179280): Remove OS_LINUX once https://crbug.com/1169547 is
  // done.
@@ -12,7 +12,7 @@ Index: chrome/browser/policy/configuration_policy_handler_list_factory.cc
    { key::kLacrosSecondaryProfilesAllowed,
      prefs::kLacrosSecondaryProfilesAllowed,
      base::Value::Type::BOOLEAN },
-@@ -1301,7 +1301,7 @@ const PolicyToPreferenceMapEntry kSimplePolicyMap[] = 
+@@ -1304,7 +1304,7 @@ const PolicyToPreferenceMapEntry kSimplePolicyMap[] = 
      base::Value::Type::BOOLEAN },
  #endif // !defined(OS_MAC) && !defined(OS_CHROMEOS)
  
@@ -21,7 +21,7 @@ Index: chrome/browser/policy/configuration_policy_handler_list_factory.cc
    { key::kAuthNegotiateDelegateByKdcPolicy,
      prefs::kAuthNegotiateDelegateByKdcPolicy,
      base::Value::Type::BOOLEAN },
-@@ -1662,7 +1662,7 @@ std::unique_ptr<ConfigurationPolicyHandlerList> BuildH
+@@ -1665,7 +1665,7 @@ std::unique_ptr<ConfigurationPolicyHandlerList> BuildH
        SimpleSchemaValidatingPolicyHandler::MANDATORY_ALLOWED));
  #endif  // defined(OS_ANDROID)
  
@@ -30,7 +30,7 @@ Index: chrome/browser/policy/configuration_policy_handler_list_factory.cc
    handlers->AddHandler(
        std::make_unique<
            enterprise_connectors::EnterpriseConnectorsPolicyHandler>(
-@@ -2025,7 +2025,7 @@ std::unique_ptr<ConfigurationPolicyHandlerList> BuildH
+@@ -2028,7 +2028,7 @@ std::unique_ptr<ConfigurationPolicyHandlerList> BuildH
        SimpleSchemaValidatingPolicyHandler::RECOMMENDED_PROHIBITED,
        SimpleSchemaValidatingPolicyHandler::MANDATORY_ALLOWED));
  
@@ -39,7 +39,7 @@ Index: chrome/browser/policy/configuration_policy_handler_list_factory.cc
    handlers->AddHandler(std::make_unique<SimpleSchemaValidatingPolicyHandler>(
        key::kWebAppSettings, prefs::kWebAppSettings, chrome_schema,
        SCHEMA_ALLOW_UNKNOWN,
-@@ -2044,7 +2044,7 @@ std::unique_ptr<ConfigurationPolicyHandlerList> BuildH
+@@ -2047,7 +2047,7 @@ std::unique_ptr<ConfigurationPolicyHandlerList> BuildH
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
