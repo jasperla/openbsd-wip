@@ -5,7 +5,7 @@
      maven { url 'https://mvn.freenetproject.org' }
      jcenter()
 +    flatDir {
-+	dirs 'flatRepo', '${PREFIX}/local/share/freenet/lib'
++	dirs 'flatRepo', '${PREFIX}/share/freenet/lib'
 +    }
  }
  
