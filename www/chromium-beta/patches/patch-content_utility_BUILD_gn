@@ -3,7 +3,7 @@ $OpenBSD$
 Index: content/utility/BUILD.gn
 --- content/utility/BUILD.gn.orig
 +++ content/utility/BUILD.gn
-@@ -93,7 +93,7 @@ source_set("utility") {
+@@ -94,7 +94,7 @@ source_set("utility") {
      deps += [ "//services/proxy_resolver:lib" ]
    }
  

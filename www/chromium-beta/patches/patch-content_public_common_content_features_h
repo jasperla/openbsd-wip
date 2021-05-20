@@ -3,7 +3,7 @@ $OpenBSD$
 Index: content/public/common/content_features.h
 --- content/public/common/content_features.h.orig
 +++ content/public/common/content_features.h
-@@ -232,7 +232,7 @@ CONTENT_EXPORT extern const base::Feature kMacSyscallS
+@@ -231,7 +231,7 @@ CONTENT_EXPORT extern const base::Feature kMacSyscallS
  CONTENT_EXPORT extern const base::Feature kRetryGetVideoCaptureDeviceInfos;
  #endif  // defined(OS_MAC)
  
