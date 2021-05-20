@@ -1,6 +1,6 @@
 @comment $OpenBSD: PLIST,v$
-@newgroup _freenet:862
-@newuser _freenet:862:862:daemon:freenet account:${DB_DIR}:/sbin/nologin
+@newgroup _freenet:866
+@newuser _freenet:866:866:daemon:freenet account:${DB_DIR}:/sbin/nologin
 @rcscript ${RCDIR}/freenet
 bin/freenet
 @mode 0700
