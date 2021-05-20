@@ -2,6 +2,8 @@
 
 COMMENT=	Freenet meta package
 
+CATEGORIES=	net	meta
+
 MAINTAINER=	Dimitri Karamazov <deserter666@danwin1210.me>
 
 PKGNAME=	freenet-0.7.5.1488
