@@ -21,9 +21,11 @@ DISTNAME =	amfora-${MODGO_VERSION}
 CATEGORIES =	www
 #HOMEPAGE =	???	URL
 MAINTAINER =	Dimitri Karamazov <deserter666@danwin1210.me>
+# GPLv3
 PERMIT_PACKAGE =	Yes
 #PERMIT_DISTFILES =	Yes | Reason if No
 #WANTLIB =		???
+WANTLIB += c pthread
 #MASTER_SITES =		???
 #MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=subdir/}
 #MASTER_SITES =		${MASTER_SITE_foo:=subdir/}
@@ -45,7 +47,7 @@ MODULES =		lang/go
 #MODGO_MODULES =	modulename version
 #MODGO_MODFILES =	modulename version
 #BUILD_DEPENDS =	???
-#RUN_DEPENDS =		???
+RUN_DEPENDS =		devel/desktop-file-utils
 #LIB_DEPENDS =		???
 #TEST_DEPENDS =		???
 #MAKE_FLAGS =		???
@@ -106,5 +108,12 @@ ALL_TARGET =		github.com/makeworld-the-better-one/amfora
 #			devel/libtool
 #do-gen:
 #	cd ${WRKSRC}; ${AUTOCONF_ENV} ./autogen.sh
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/applications
+	${INSTALL_DATA} ${WRKSRC}/amfora.desktop ${PREFIX}/share/applications
+	${INSTALL_DATA_DIR} ${PREFIX}/share/pixmaps
+	${INSTALL_DATA} ${WRKSRC}/logo.png ${PREFIX}/share/pixmaps/amfora.png
+
 .include "./modules.inc"
+
 .include <bsd.port.mk>
