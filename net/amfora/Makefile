@@ -7,7 +7,7 @@ MODGO_VERSION=	v1.8.0
 
 DISTNAME=	amfora-${MODGO_VERSION}
 
-CATEGORIES=	www
+CATEGORIES=	net
 
 MAINTAINER=	Dimitri Karamazov <deserter666@danwin1210.me>
 
