@@ -1,0 +1,15 @@
+$OpenBSD$
+
+Index: libopenage/util/os.cpp
+--- libopenage/util/os.cpp.orig
++++ libopenage/util/os.cpp
+@@ -90,6 +90,9 @@ std::string self_exec_filename() {
+ 		return std::string{buf.get()};
+ 	}
+ 
++#elif __OpenBSD__
++	// TODO not yet implemented
++	return std::string("openage"); // FIXME: wild guess though
+ #elif _WIN32
+ 	// TODO not yet implemented
+ 	return std::string("openage.exe"); // FIXME: wild guess though

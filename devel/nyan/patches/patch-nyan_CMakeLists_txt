@@ -1,0 +1,14 @@
+$OpenBSD$
+
+Index: nyan/CMakeLists.txt
+--- nyan/CMakeLists.txt.orig
++++ nyan/CMakeLists.txt
+@@ -11,7 +11,7 @@ if (APPLE)
+ 	endif ()
+ endif ()
+ 
+-find_package(FLEX 2.6 REQUIRED)
++find_package(FLEX 2.5 REQUIRED)
+ 
+ set(nyanl_cpp "${CMAKE_CURRENT_BINARY_DIR}/flex.gen.cpp")
+ set(nyanl_h "${CMAKE_CURRENT_BINARY_DIR}/flex.gen.h")

@@ -1,0 +1,13 @@
+$OpenBSD$
+
+Index: libopenage/CMakeLists.txt
+--- libopenage/CMakeLists.txt.orig
++++ libopenage/CMakeLists.txt
+@@ -37,7 +37,6 @@ if(WIN32)
+ 	target_link_libraries(libopenage PRIVATE DbgHelp)
+ endif()
+ if(NOT APPLE AND NOT WIN32)
+-	find_library(RT_LIB rt)
+ 	if (${CMAKE_SYSTEM_NAME} STREQUAL "FreeBSD")
+ 		find_library(EXECINFO_LIB execinfo)
+ 	endif()

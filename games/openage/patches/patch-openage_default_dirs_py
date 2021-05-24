@@ -1,0 +1,15 @@
+$OpenBSD$
+
+Index: openage/default_dirs.py
+--- openage/default_dirs.py.orig
++++ openage/default_dirs.py
+@@ -54,6 +54,9 @@ def get_dir(which):
+     if sys.platform.startswith("linux"):
+         platform_table = LINUX_DIRS
+ 
++    elif sys.platform.startswith("openbsd"):
++        platform_table = LINUX_DIRS
++
+     elif sys.platform.startswith("darwin"):
+         raise Exception("macOS not really supported")
+ 

@@ -1,0 +1,14 @@
+$OpenBSD$
+
+Index: buildsystem/HandleCXXOptions.cmake
+--- buildsystem/HandleCXXOptions.cmake.orig
++++ buildsystem/HandleCXXOptions.cmake
+@@ -152,7 +152,7 @@ elseif("${CXX_OPTIMIZATION_LEVEL}" STREQUAL "1")
+ elseif("${CXX_OPTIMIZATION_LEVEL}" STREQUAL "2")
+ 	set_cxx_optimize_flags("-O2")
+ elseif("${CXX_OPTIMIZATION_LEVEL}" STREQUAL "3")
+-	set_cxx_optimize_flags("-O3")
++	set_cxx_optimize_flags("")
+ elseif("${CXX_OPTIMIZATION_LEVEL}" STREQUAL "g")
+ 	if("${CMAKE_CXX_COMPILER_ID}" STREQUAL "GNU")
+ 		set_cxx_optimize_flags("-Og")
