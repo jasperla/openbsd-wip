@@ -3,9 +3,9 @@
 COMMENT =	tool to insert RSS and ATOM feeds as freesites
 
 ADDON_NAME =	Freereader
-V =		6
+V =		20160603
 GH_PROJECT =	plugin-${ADDON_NAME}
-GH_TAGNAME =	${V}
+GH_TAGNAME =	6
 
 MASTER_SITES0 =	http://www.java2s.com/Code/JarDownload/
 

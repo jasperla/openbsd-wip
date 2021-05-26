@@ -3,7 +3,7 @@
 COMMENT =	tool to remotely monitor your node's status
 
 ADDON_NAME =	SNMP
-V =		0.0
+V =		20101112
 GH_PROJECT =	plugin-${ADDON_NAME}
 GH_TAGNAME =	49da5884b0127e7c8b4e487171f879352dcfce2a
 

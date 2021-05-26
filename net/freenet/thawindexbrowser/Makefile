@@ -3,7 +3,7 @@
 COMMENT =	tool to browse thaw file indexes within freenet
 
 ADDON_NAME =	ThawIndexBrowser
-V =		0.1
+V =		20150618
 GH_PROJECT =	plugin-${ADDON_NAME}
 GH_TAGNAME =	v6
 

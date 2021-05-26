@@ -3,9 +3,9 @@
 COMMENT =	tool to search freenet
 
 ADDON_NAME =	Library
-V =		37
+V =		20170225
 GH_PROJECT =	plugin-${ADDON_NAME}
-GH_TAGNAME =	v${V}
+GH_TAGNAME =	v37
 
 MASTER_SITES0 =	https://repo.maven.apache.org/maven2/
 

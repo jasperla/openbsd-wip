@@ -3,13 +3,11 @@
 COMMENT =	tool for examining freenet keys
 
 ADDON_NAME =	KeyUtils
-V =		0.5.4
+V =		20200906
 GH_PROJECT = 	plugin-${ADDON_NAME}
 GH_TAGNAME =	1b3cc6bd33443448afbaac8339157c052fcbaa24
 
 MASTER_SITES0 =	https://services.gradle.org/distributions/
-
-BUILD =		${GH_COMMIT}
 
 DISTFILES +=	${DISTNAME}.tar.gz \
 		gradle-4.10.3-bin.zip:0 \

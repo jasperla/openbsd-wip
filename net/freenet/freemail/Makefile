@@ -3,7 +3,7 @@
 COMMENT =	provides email facility over freenet
 
 ADDON_NAME =	Freemail_wot
-V =		0.2.7.5
+V =		20200820
 GH_PROJECT =	plugin-${ADDON_NAME:S/_wot//}
 GH_TAGNAME =	663da1e7944b00f61a29be29c65b1526141bcdab
 
@@ -16,4 +16,5 @@ MODJAVA_BUILD_ARGS=	-Dfreenet-cvs-snapshot.location=${PREFIX}/share/freenet/lib/
 
 post-build:
 	cd ${WRKSRC}/dist/ && cp ${ADDON_NAME:S/_wot//}.jar ${ADDON_NAME}.jar
+
 .include <bsd.port.mk>

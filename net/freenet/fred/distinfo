@@ -1,6 +1,6 @@
 SHA256 (bcprov-jdk15on-1.59.jar) = HDHkTjMdJeRtKTs+juLQcCimfbAR50yyRDKFrtHVnIU=
 SHA256 (build01480.tar.gz) = PrHqrvOSetH2tvydp3ivEUWfn7/e9tXtsaHHeDx4NOw=
-SHA256 (fred-build01488.tar.gz) = qVYDI2SekJvC/cpEJ6DeYekTsFmwD/3eth9Pzx2Ou3Y=
+SHA256 (fred-build01491.tar.gz) = 9u5q/lRBwHUU1C/cr7H9xY+9aquhhUUc2NzxYriOJdA=
 SHA256 (freenet-ext-29.jar) = MvKz1r7t9UE36i+aPr72dmbXafCWawjNF/19tZuk158=
 SHA256 (gradle-0.9.2.jar) = gX/QEcuyw4yF/39EWHwTsUCoRUrfk3/Do/KKZggULII=
 SHA256 (gradle-4.10.3-bin.zip) = hibL8ga04gGt57h3eQkGkERwVLyT8FKVTHhID6btGG4=
@@ -13,7 +13,7 @@ SHA256 (mockito-core-1.9.5.jar) = +XSDuglEufoTOqKWOHZN2+rbUew9vAIHTFj6LK7NB/o=
 SHA256 (objenesis-1.0.jar) = xWlLVdklJ0eTgvJUGZs8ax2HgPZSrWHpylmRmIf0kag=
 SIZE (bcprov-jdk15on-1.59.jar) = 4092400
 SIZE (build01480.tar.gz) = 12364
-SIZE (fred-build01488.tar.gz) = 6694030
+SIZE (fred-build01491.tar.gz) = 6704707
 SIZE (freenet-ext-29.jar) = 4685193
 SIZE (gradle-0.9.2.jar) = 910398
 SIZE (gradle-4.10.3-bin.zip) = 78422006

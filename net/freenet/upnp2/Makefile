@@ -3,9 +3,9 @@
 COMMENT =	tool to keep some keys within freenet accessible
 
 ADDON_NAME =	UPnP2
-V =		0.0.2
+V =		20200811
 GH_PROJECT =	plugin-${ADDON_NAME}
-GH_TAGNAME =	${V}
+GH_TAGNAME =	0.0.2
 
 MASTER_SITES0 = http://4thline.org/m2/
 MASTER_SITES1 = https://services.gradle.org/distributions/

@@ -3,7 +3,7 @@
 COMMENT =	provides port forwarding and globally-routable IP detection
 
 ADDON_NAME =	UPnP
-V =		1.7
+V =		20160102
 GH_PROJECT =	plugin-${ADDON_NAME}
 GH_TAGNAME =	10007
 

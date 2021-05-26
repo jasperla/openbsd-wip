@@ -3,7 +3,7 @@
 COMMENT =	tool to keep some keys within freenet accessible
 
 ADDON_NAME =	KeepAlive
-V =		0.3.3.11
+V =		20200522
 GH_PROJECT =	plugin-${ADDON_NAME}
 GH_TAGNAME =	build0009
 

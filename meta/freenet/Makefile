@@ -6,23 +6,23 @@ CATEGORIES=	net	meta
 
 MAINTAINER=	Dimitri Karamazov <deserter666@danwin1210.me>
 
-PKGNAME=	freenet-0.7.5.1488
+PKGNAME=	freenet-0.7.5.20210502
 
-RUN_DEPENDS=	net/freenet/fred>=0.7.5.1488 \
-		net/freenet/floghelper>=0.1.2 \
-		net/freenet/freemail>=0.2.7.5 \
-		net/freenet/freereader>=6 \
-		net/freenet/jstun>=1.4 \
-		net/freenet/keepalive>=0.3.3.11 \
-		net/freenet/keyutils>=0.5.4 \
-		net/freenet/library>=37 \
-		net/freenet/mdnsdiscovery>=2 \
-		net/freenet/sharesite>=0.4.8 \
-		net/freenet/snmp>=0.0 \
-		net/freenet/spider>=52 \
-		net/freenet/thawindexbrowser>=0.1 \
-		net/freenet/upnp>=1.7 \
-		net/freenet/upnp2>=0.0.2 \
-		net/freenet/weboftrust>=0.4.5
+RUN_DEPENDS=	net/freenet/fred>=0.7.5.20210502 \
+		net/freenet/floghelper>=20200906 \
+		net/freenet/freemail>=20200820 \
+		net/freenet/freereader>=20160603 \
+		net/freenet/jstun>=20140329 \
+		net/freenet/keepalive>=20200522 \
+		net/freenet/keyutils>=20200906 \
+		net/freenet/library>=20170225 \
+		net/freenet/mdnsdiscovery>=20131201 \
+		net/freenet/sharesite>=20200906 \
+		net/freenet/snmp>=20101112 \
+		net/freenet/spider>=20150519 \
+		net/freenet/thawindexbrowser>=20150618 \
+		net/freenet/upnp>=20160102 \
+		net/freenet/upnp2>=20200811 \
+		net/freenet/weboftrust>=20180531
 
 .include <bsd.port.mk>

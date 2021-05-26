@@ -3,7 +3,7 @@
 COMMENT =	tool to detect your IP address and connectivity
 
 ADDON_NAME =	JSTUN
-V =		1.4
+V =		20140329
 GH_PROJECT =	plugin-${ADDON_NAME}
 GH_TAGNAME =	v5
 

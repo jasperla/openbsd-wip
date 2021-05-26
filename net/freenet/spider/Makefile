@@ -3,9 +3,9 @@
 COMMENT =	tool to create and upload new freesite search indexes
 
 ADDON_NAME =	Spider
-V =		52
+V =		20150519
 GH_PROJECT =	plugin-${ADDON_NAME}
-GH_TAGNAME =	v${V}
+GH_TAGNAME =	v52
 
 MODJAVA_BUILD_TARGET_NAME=
 MODJAVA_BUILD_ARGS=	-Dfreenet-cvs-snapshot.location=${PREFIX}/share/freenet/lib/freenet.jar \

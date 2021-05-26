@@ -3,7 +3,7 @@
 COMMENT =	tool to allow connections to local clients
 
 ADDON_NAME =	MDNSDiscovery
-V =		2
+V =		20131201
 GH_PROJECT =	plugin-${ADDON_NAME}
 GH_TAGNAME =	b27d6e86db2f1a90dc6f7225db78c5a259b0cf37
 

@@ -3,7 +3,7 @@
 COMMENT =	tool for creating a blog on freenet
 
 ADDON_NAME =	FlogHelper
-V =		0.1.2
+V =		20200906
 GH_PROJECT =	plugin-FlogHelper
 GH_TAGNAME =	v36
 

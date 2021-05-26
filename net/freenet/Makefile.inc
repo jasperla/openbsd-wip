@@ -9,7 +9,7 @@ PERMIT_PACKAGE ?=Yes
 CATEGORIES =	net
 
 APP_NAME =	freenet
-APP_VER =	0.7.5.1488
+APP_VER =	0.7.5.20210502
 GH_ACCOUNT =	freenet
 
 DB_DIR =	${LOCALSTATEDIR}/freenet

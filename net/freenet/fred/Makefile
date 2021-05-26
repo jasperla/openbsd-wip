@@ -5,7 +5,7 @@ COMMENT =	A peer-to-peer platform for censorship-resistant network
 V =		${APP_VER}
 PKGNAME =	fred-${V}
 GH_PROJECT =	fred
-GH_TAGNAME =	build01488
+GH_TAGNAME =	build01491
 
 MASTER_SITES0 =	https://github.com/freenet/seedrefs/archive/
 MASTER_SITES1 = https://repo.maven.apache.org/maven2/
@@ -59,14 +59,14 @@ post-extract:
 do-build:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ./gradlew \
 	--offline \
-	-DtargetJavaVersion="1.8.0_265" \
+	-DtargetJavaVersion=${MODJAVA_VER} \
 	--no-build-cache --no-daemon \
 	copyRuntimeLibs
 
 do-test:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ./gradlew \
 	--offline \
-	-DtargetJavaVersion="1.8.0_265" \
+	-DtargetJavaVersion=${MODJAVA_VER} \
 	--no-build-cache --no-daemon \
 	test
 

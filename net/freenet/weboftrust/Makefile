@@ -3,7 +3,7 @@
 COMMENT =	collaborative spam filter for freenet
 
 ADDON_NAME =	WebOfTrust
-V =		0.4.5
+V =		20180531
 GH_PROJECT =	plugin-${ADDON_NAME}
 GH_TAGNAME =	build0020
 
@@ -32,7 +32,7 @@ MODJAVA_BUILD_ARGS=	-Dfreenet.lib.new.location=${PREFIX}/share/freenet/lib/ \
 
 post-extract:
 	tar zxf ${DISTDIR}/v34.tar.gz -C ${WRKSRC}
-	mv ${WRKSRC}/db4o-7.4-34/{.,}* ${WRKSRC}/db4o-7.4
+	cd ${WRKSRC}/db4o-7.4-34/ && pax -rw . ${WRKSRC}/db4o-7.4
 	mkdir ${WRKSRC}/flatRepo
 .for jar_file in ${JAR_DISTFILES:C/{.*}//}
 	cp ${DISTDIR}/${jar_file} ${WRKSRC}/flatRepo
