@@ -12,7 +12,7 @@ Index: content/shell/browser/shell_browser_main_parts.cc
  #include "ui/base/ime/init/input_method_initializer.h"
  #endif
  #if BUILDFLAG(IS_CHROMEOS_ASH)
-@@ -137,7 +137,7 @@ void ShellBrowserMainParts::PostMainMessageLoopStart()
+@@ -137,7 +137,7 @@ void ShellBrowserMainParts::PostCreateMainMessageLoop(
  }
  
  int ShellBrowserMainParts::PreEarlyInitialization() {

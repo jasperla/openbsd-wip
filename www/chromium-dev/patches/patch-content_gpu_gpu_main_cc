@@ -1,4 +1,4 @@
-$OpenBSD: patch-content_gpu_gpu_main_cc,v 1.47 2021/01/20 07:28:09 robert Exp $
+$OpenBSD$
 
 Index: content/gpu/gpu_main.cc
 --- content/gpu/gpu_main.cc.orig
@@ -43,7 +43,7 @@ Index: content/gpu/gpu_main.cc
    // is initialized however to avoid creating threads outside the sandbox.
    base::ThreadPoolInstance::Create("GPU");
  
-+  // pledge(2)
++  // pledge(2)                                                                
 +#if defined(OS_BSD)
 +  if (!features::IsUsingOzonePlatform() &&
 +      gpu_preferences.enable_native_gpu_memory_buffers) {
@@ -98,7 +98,7 @@ Index: content/gpu/gpu_main.cc
    if (watchdog_thread) {
      base::Thread::Options thread_options;
      thread_options.timer_slack = base::TIMER_SLACK_MAXIMUM;
-     watchdog_thread->StartWithOptions(thread_options);
+     watchdog_thread->StartWithOptions(std::move(thread_options));
    }
 +#endif
  

@@ -3,28 +3,21 @@ $OpenBSD$
 Index: chrome/browser/ui/views/first_run_dialog.cc
 --- chrome/browser/ui/views/first_run_dialog.cc.orig
 +++ chrome/browser/ui/views/first_run_dialog.cc
-@@ -33,10 +33,12 @@
+@@ -33,7 +33,7 @@
  
  namespace {
  
-+#if !defined(OS_BSD)
+-#if !defined(OS_MAC)
++#if !defined(OS_MAC) && !defined(OS_BSD)
  void InitCrashReporterIfEnabled(bool enabled) {
    if (!crash_reporter::IsCrashpadEnabled() && enabled)
      breakpad::InitCrashReporter(std::string());
- }
-+#endif
+@@ -121,7 +121,7 @@ bool FirstRunDialog::Accept() {
  
- }  // namespace
- 
-@@ -106,9 +108,11 @@ void FirstRunDialog::Done() {
- bool FirstRunDialog::Accept() {
-   GetWidget()->Hide();
- 
-+#if !defined(OS_BSD)
+ #if defined(OS_MAC)
+   ChangeMetricsReportingState(report_crashes_->GetChecked());
+-#else
++#elif !defined(OS_BSD)
    ChangeMetricsReportingStateWithReply(
        report_crashes_->GetChecked(),
        base::BindOnce(&InitCrashReporterIfEnabled));
-+#endif
- 
-   if (make_default_->GetChecked())
-     shell_integration::SetAsDefaultBrowser();

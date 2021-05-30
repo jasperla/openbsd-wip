@@ -3,7 +3,7 @@ $OpenBSD$
 Index: chrome/browser/resources/new_tab_page/new_tab_page.js
 --- chrome/browser/resources/new_tab_page/new_tab_page.js.orig
 +++ chrome/browser/resources/new_tab_page/new_tab_page.js
-@@ -20,10 +20,6 @@ export {ChromeCartProxy} from './modules/cart/chrome_c
+@@ -19,10 +19,6 @@ export {ChromeCartProxy} from './modules/cart/chrome_c
  export {chromeCartDescriptor} from './modules/cart/module.js';
  export {DriveProxy} from './modules/drive/drive_module_proxy.js';
  export {driveDescriptor} from './modules/drive/module.js';

@@ -30,7 +30,7 @@ Index: ui/views/controls/textfield/textfield.cc
    ui::TextEditKeyBindingsDelegateAuraLinux* delegate =
        ui::GetTextEditKeyBindingsDelegate();
    std::vector<ui::TextEditCommandAuraLinux> commands;
-@@ -887,7 +887,7 @@ void Textfield::AboutToRequestFocusFromTabTraversal(bo
+@@ -877,7 +877,7 @@ void Textfield::AboutToRequestFocusFromTabTraversal(bo
  bool Textfield::SkipDefaultKeyEventProcessing(const ui::KeyEvent& event) {
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
@@ -39,7 +39,7 @@ Index: ui/views/controls/textfield/textfield.cc
    // Skip any accelerator handling that conflicts with custom keybindings.
    ui::TextEditKeyBindingsDelegateAuraLinux* delegate =
        ui::GetTextEditKeyBindingsDelegate();
-@@ -2267,14 +2267,14 @@ ui::TextEditCommand Textfield::GetCommandForKeyEvent(
+@@ -2252,14 +2252,14 @@ ui::TextEditCommand Textfield::GetCommandForKeyEvent(
  #endif
          return ui::TextEditCommand::DELETE_BACKWARD;
        }

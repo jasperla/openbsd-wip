@@ -3,7 +3,7 @@ $OpenBSD$
 Index: components/autofill/core/common/autofill_payments_features.cc
 --- components/autofill/core/common/autofill_payments_features.cc.orig
 +++ components/autofill/core/common/autofill_payments_features.cc
-@@ -167,7 +167,7 @@ const base::Feature kAutofillUpstreamAllowAllEmailDoma
+@@ -164,7 +164,7 @@ const base::Feature kAutofillUpstreamAllowAllEmailDoma
  bool ShouldShowImprovedUserConsentForCreditCardSave() {
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.

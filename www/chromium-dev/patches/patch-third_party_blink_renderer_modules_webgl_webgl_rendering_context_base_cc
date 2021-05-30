@@ -3,7 +3,7 @@ $OpenBSD$
 Index: third_party/blink/renderer/modules/webgl/webgl_rendering_context_base.cc
 --- third_party/blink/renderer/modules/webgl/webgl_rendering_context_base.cc.orig
 +++ third_party/blink/renderer/modules/webgl/webgl_rendering_context_base.cc
-@@ -6047,7 +6047,7 @@ void WebGLRenderingContextBase::TexImageHelperMediaVid
+@@ -6062,7 +6062,7 @@ void WebGLRenderingContextBase::TexImageHelperMediaVid
    constexpr bool kAllowZeroCopyImages = true;
  #endif
  

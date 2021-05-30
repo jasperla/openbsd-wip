@@ -21,7 +21,7 @@ Index: content/renderer/render_process_impl.cc
    SetV8FlagIfFeature(features::kWebAssemblyCodeProtectionPku,
                       "--wasm-memory-protection-keys");
    SetV8FlagIfNotFeature(features::kWebAssemblyCodeProtectionPku,
-@@ -210,7 +210,7 @@ RenderProcessImpl::RenderProcessImpl()
+@@ -207,7 +207,7 @@ RenderProcessImpl::RenderProcessImpl()
  
    SetV8FlagIfNotFeature(features::kWebAssemblyTrapHandler,
                          "--no-wasm-trap-handler");

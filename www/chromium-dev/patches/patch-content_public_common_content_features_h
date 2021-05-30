@@ -3,7 +3,7 @@ $OpenBSD$
 Index: content/public/common/content_features.h
 --- content/public/common/content_features.h.orig
 +++ content/public/common/content_features.h
-@@ -210,7 +210,7 @@ CONTENT_EXPORT extern const base::Feature kV8VmFuture;
+@@ -215,7 +215,7 @@ CONTENT_EXPORT extern const base::Feature kV8VmFuture;
  CONTENT_EXPORT extern const base::Feature kWebAppWindowControlsOverlay;
  CONTENT_EXPORT extern const base::Feature kWebAssemblyBaseline;
  CONTENT_EXPORT extern const base::Feature kWebAssemblyCodeProtection;
@@ -12,7 +12,7 @@ Index: content/public/common/content_features.h
  CONTENT_EXPORT extern const base::Feature kWebAssemblyCodeProtectionPku;
  #endif  // defined(OS_LINUX) && defined(ARCH_CPU_X86_64)
  CONTENT_EXPORT extern const base::Feature kWebAssemblyLazyCompilation;
-@@ -257,7 +257,7 @@ CONTENT_EXPORT extern const base::Feature kMacSyscallS
+@@ -261,7 +261,7 @@ CONTENT_EXPORT extern const base::Feature kMacSyscallS
  CONTENT_EXPORT extern const base::Feature kRetryGetVideoCaptureDeviceInfos;
  #endif  // defined(OS_MAC)
  
