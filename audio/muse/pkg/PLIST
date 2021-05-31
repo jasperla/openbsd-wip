@@ -60,7 +60,6 @@ lib/muse-4.0/synthi/
 @so lib/muse-4.0/synthi/deicsonze.so
 @so lib/muse-4.0/synthi/fluid_synth.so
 @so lib/muse-4.0/synthi/organ.so
-@so lib/muse-4.0/synthi/simpledrums.so
 @so lib/muse-4.0/synthi/vam.so
 @man man/man1/grepmidi.1
 @man man/man1/muse4.1
@@ -180,10 +179,6 @@ share/doc/muse-4.0/muse_html/split/documentation/vam_synth.png
 share/doc/muse-4.0/muse_pdf/
 share/doc/muse-4.0/muse_pdf/developer_docs.pdf
 share/doc/muse-4.0/muse_pdf/documentation.pdf
-share/doc/muse-4.0/simpledrums/
-share/doc/muse-4.0/simpledrums/COPYING
-share/doc/muse-4.0/simpledrums/README
-share/doc/muse-4.0/simpledrums/ReleaseNotes.txt
 share/doc/muse-4.0/vam/
 share/doc/muse-4.0/vam/COPYING
 share/doc/muse-4.0/vam/ChangeLog

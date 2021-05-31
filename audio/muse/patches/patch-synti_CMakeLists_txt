@@ -1,0 +1,16 @@
+$OpenBSD$
+
+simpledrums causes segmentation fault
+
+Index: synti/CMakeLists.txt
+--- synti/CMakeLists.txt.orig
++++ synti/CMakeLists.txt
+@@ -39,7 +39,7 @@ set (SubDirs
+       # deicsonze2
+       organ
+       # simpledrums
+-      simpledrums2
++      # simpledrums2
+       vam
+       )
+ 
