@@ -11,4 +11,4 @@ Index: printing/print_settings.cc
 +#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
    advanced_settings_.clear();
  #endif  // defined(OS_LINUX) || defined(OS_CHROMEOS)
- #if BUILDFLAG(IS_CHROMEOS_ASH)
+ #if defined(OS_CHROMEOS)

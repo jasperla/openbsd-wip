@@ -4,11 +4,11 @@ Index: components/feature_engagement/public/feature_configurations.cc
 --- components/feature_engagement/public/feature_configurations.cc.orig
 +++ components/feature_engagement/public/feature_configurations.cc
 @@ -13,7 +13,7 @@ namespace feature_engagement {
- base::Optional<FeatureConfig> GetClientSideFeatureConfig(
+ absl::optional<FeatureConfig> GetClientSideFeatureConfig(
      const base::Feature* feature) {
  #if defined(OS_WIN) || defined(OS_APPLE) || defined(OS_LINUX) || \
 -    defined(OS_CHROMEOS)
 +    defined(OS_CHROMEOS) || defined(OS_BSD)
    if (kIPHPasswordsAccountStorageFeature.name == feature->name) {
-     base::Optional<FeatureConfig> config = FeatureConfig();
+     absl::optional<FeatureConfig> config = FeatureConfig();
      config->valid = true;

@@ -3,7 +3,7 @@ $OpenBSD$
 Index: media/base/media_switches.h
 --- media/base/media_switches.h.orig
 +++ media/base/media_switches.h
-@@ -37,7 +37,7 @@ MEDIA_EXPORT extern const char kDisableBackgroundMedia
+@@ -38,7 +38,7 @@ MEDIA_EXPORT extern const char kDisableBackgroundMedia
  MEDIA_EXPORT extern const char kReportVp9AsAnUnsupportedMimeType[];
  
  #if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_FREEBSD) || \
@@ -12,7 +12,7 @@ Index: media/base/media_switches.h
  MEDIA_EXPORT extern const char kAlsaInputDevice[];
  MEDIA_EXPORT extern const char kAlsaOutputDevice[];
  #endif
-@@ -179,7 +179,7 @@ MEDIA_EXPORT extern const base::Feature kUseFakeDevice
+@@ -181,7 +181,7 @@ MEDIA_EXPORT extern const base::Feature kUseFakeDevice
  MEDIA_EXPORT extern const base::Feature kUseMediaHistoryStore;
  MEDIA_EXPORT extern const base::Feature kUseR16Texture;
  MEDIA_EXPORT extern const base::Feature kUseSodaForLiveCaption;

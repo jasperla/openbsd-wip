@@ -11,7 +11,7 @@ DPB_PROPERTIES=		parallel parallel2
 
 COMMENT=		Chromium browser
 
-V=			91.0.4472.77
+V=			92.0.4515.40
 
 DISTNAME=		chromium-${V}
 
@@ -38,7 +38,7 @@ MASTER_SITES0=	http://nerd.hu/distfiles/
 FIX_CRLF_FILES=	third_party/vulkan_memory_allocator/src/vk_mem_alloc.h
 
 MODULES=	lang/python
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
 
 COMPILER =	base-clang ports-clang ports-gcc
 
@@ -190,6 +190,8 @@ GN_ARGS+=	is_component_build=false
 
 pre-configure:
 	@ln -sf ${MODPY_BIN} ${WRKDIR}/bin/python
+#	@ln -sf ${MODPY_BIN} ${WRKDIR}/bin/python${MODPY_VERSION}
+#	@ln -sf ${MODPY_BIN} ${WRKDIR}/bin/python3
 .for _arch in x64 ia32 arm64
 .  for _dir in avcodec avformat avutil
 	@cp -pR ${WRKSRC}/third_party/ffmpeg/chromium/config/Chrome/linux/${_arch}/lib${_dir} \
@@ -227,7 +229,7 @@ do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/${DIST_TARGET_DIR}
 	${INSTALL_PROGRAM} ${BUILDDIR}/${DIST_TARGET_DIR} ${PREFIX}/${DIST_TARGET_DIR}
 	${SUBST_PROGRAM} ${FILESDIR}/${DIST_TARGET_DIR} ${PREFIX}/bin/${DIST_TARGET_DIR}
-	${INSTALL_PROGRAM} ${BUILDDIR}/chromedriver ${PREFIX}/bin/chromedriver
+	${INSTALL_PROGRAM} ${BUILDDIR}/chromedriver.unstripped ${PREFIX}/bin/chromedriver
 	${INSTALL_MAN} ${WRKSRC}/chrome/app/resources/manpage.1.in ${PREFIX}/man/man1/chrome.1
 	@perl -pi -e "s,\@\@PACKAGE\@\@,chromium,g;s,\@\@MENUNAME\@\@,Chromium Web Browser,g" \
 		${PREFIX}/man/man1/chrome.1
@@ -250,6 +252,8 @@ do-install:
 .for f in libVkICD_mock_icd
 	${INSTALL_DATA} ${BUILDDIR}/${f}.so ${PREFIX}/${DIST_TARGET_DIR}
 .endfor
+	${INSTALL_DATA} ${BUILDDIR}/libvulkan.so.1 \
+		${PREFIX}/${DIST_TARGET_DIR}/libvulkan.so
 
 .if ${MACHINE_ARCH} != "aarch64"
 	# SwiftShader

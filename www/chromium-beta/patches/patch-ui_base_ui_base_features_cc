@@ -3,17 +3,17 @@ $OpenBSD$
 Index: ui/base/ui_base_features.cc
 --- ui/base/ui_base_features.cc.orig
 +++ ui/base/ui_base_features.cc
-@@ -148,7 +148,7 @@ const base::Feature kExperimentalFlingAnimation {
+@@ -140,7 +140,7 @@ const base::Feature kExperimentalFlingAnimation {
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
  #if defined(OS_WIN) || (defined(OS_LINUX) && !BUILDFLAG(IS_CHROMEOS_ASH) && \
 -                        !BUILDFLAG(IS_CHROMEOS_LACROS))
-+                        !BUILDFLAG(IS_CHROMEOS_LACROS) || defined(OS_BSD))
++                        !BUILDFLAG(IS_CHROMEOS_LACROS)) || defined(OS_BSD)
        base::FEATURE_ENABLED_BY_DEFAULT
  #else
        base::FEATURE_DISABLED_BY_DEFAULT
-@@ -181,7 +181,7 @@ const base::Feature kPrecisionTouchpadLogging{
- #endif  // defined(OS_WIN)
+@@ -183,7 +183,7 @@ bool IsImprovedKeyboardShortcutsEnabled() {
+ #endif  // defined(OS_CHROMEOS)
  
  #if defined(OS_WIN) || defined(OS_APPLE) || defined(OS_LINUX) || \
 -    defined(OS_CHROMEOS)
@@ -21,7 +21,7 @@ Index: ui/base/ui_base_features.cc
  // Enables stylus appearing as touch when in contact with digitizer.
  const base::Feature kDirectManipulationStylus = {
      "DirectManipulationStylus",
-@@ -209,7 +209,7 @@ bool IsForcedColorsEnabled() {
+@@ -211,7 +211,7 @@ bool IsForcedColorsEnabled() {
  // milestones.
  const base::Feature kEyeDropper {
    "EyeDropper",

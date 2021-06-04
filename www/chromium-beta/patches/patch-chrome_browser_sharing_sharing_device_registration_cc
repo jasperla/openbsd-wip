@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_sharing_sharing_device_registration_cc,v 1.5 2021/01/20 07:28:08 robert Exp $
+$OpenBSD$
 
 Index: chrome/browser/sharing/sharing_device_registration.cc
 --- chrome/browser/sharing/sharing_device_registration.cc.orig
@@ -9,6 +9,6 @@ Index: chrome/browser/sharing/sharing_device_registration.cc
  #if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || \
 -    defined(OS_CHROMEOS)
 +    defined(OS_CHROMEOS) || defined(OS_BSD)
-   return base::FeatureList::IsEnabled(kRemoteCopyReceiver);
+   return true;
  #else
    return false;
