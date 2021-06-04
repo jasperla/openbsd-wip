@@ -1,6 +1,8 @@
 $OpenBSD$
---- muse/midiseq.cpp.orig	Sat Jul 18 16:13:34 2020
-+++ muse/midiseq.cpp	Mon Dec 14 11:58:06 2020
+
+Index: muse/midiseq.cpp
+--- muse/midiseq.cpp.orig
++++ muse/midiseq.cpp
 @@ -35,6 +35,7 @@
  #endif
  #include "muse_math.h"

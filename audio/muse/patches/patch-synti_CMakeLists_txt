@@ -1,7 +1,5 @@
 $OpenBSD$
 
-simpledrums causes segmentation fault
-
 Index: synti/CMakeLists.txt
 --- synti/CMakeLists.txt.orig
 +++ synti/CMakeLists.txt
