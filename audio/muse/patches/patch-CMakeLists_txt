@@ -1,4 +1,5 @@
 $OpenBSD$
+
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
@@ -10,11 +11,11 @@ Index: CMakeLists.txt
  
  SET(QT_LIBRARIES ${Qt5Widgets_LIBRARIES} ${Qt5UiTools_LIBRARIES} ${Qt5Xml_LIBRARIES} ${Qt5Svg_LIBRARIES} ${Qt5Core_LIBRARIES})
  #~ set(CMAKE_AUTOUIC ON)
-@@ -669,6 +670,7 @@ include_directories(
-    ${PROJECT_BINARY_DIR}/muse/components
-    ${PROJECT_BINARY_DIR}/muse/instruments
-    ${PROJECT_BINARY_DIR}/muse/ctrl
-+   ${CMAKE_INSTALL_PREFIX}/lib/atkmm-1.6/include
-    )
+@@ -289,6 +290,7 @@ SET(QT_LIBRARIES ${Qt5Widgets_LIBRARIES} ${Qt5UiTools_
+ ## find ladspa.h
+ ##
  
- #
++SET(CMAKE_REQUIRED_INCLUDES ${CMAKE_INSTALL_PREFIX}/include)
+ CHECK_INCLUDE_FILE(ladspa.h HAVE_LADSPA_H)
+ if(NOT HAVE_LADSPA_H)
+       message(FATAL_ERROR "** ERROR: header file ladspa.h is required, but was not found."

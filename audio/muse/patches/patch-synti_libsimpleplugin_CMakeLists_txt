@@ -1,4 +1,5 @@
 $OpenBSD$
+
 Index: synti/libsimpleplugin/CMakeLists.txt
 --- synti/libsimpleplugin/CMakeLists.txt.orig
 +++ synti/libsimpleplugin/CMakeLists.txt

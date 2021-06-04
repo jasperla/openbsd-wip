@@ -1,6 +1,8 @@
 $OpenBSD$
---- muse/CMakeLists.txt.orig	Sun Dec 13 22:25:47 2020
-+++ muse/CMakeLists.txt	Sun Dec 13 22:27:04 2020
+
+Index: muse/CMakeLists.txt
+--- muse/CMakeLists.txt.orig
++++ muse/CMakeLists.txt
 @@ -314,7 +314,6 @@ target_link_libraries(core
        ${SAMPLERATE_LIBRARIES}
        ${REM_LIB}

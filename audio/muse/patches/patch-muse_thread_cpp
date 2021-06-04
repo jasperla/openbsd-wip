@@ -1,6 +1,8 @@
 $OpenBSD$
---- muse/thread.cpp.orig	Mon Dec 14 11:03:56 2020
-+++ muse/thread.cpp	Mon Dec 14 11:56:41 2020
+
+Index: muse/thread.cpp
+--- muse/thread.cpp.orig
++++ muse/thread.cpp
 @@ -33,6 +33,7 @@
  #include <sys/poll.h>
  #endif

@@ -28,15 +28,9 @@ MODULES=	devel/cmake \
 		lang/python \
 		x11/qt5
 
-MODPY_VERSION=	${MODPY_DEFAULT_VERSION_3}
-
 BUILD_DEPENDS=	audio/ladspa \
 		audio/lv2
-RUN_DEPENDS=	audio/ladspa \
-		audio/lv2 \
-		devel/desktop-file-utils \
-		misc/shared-mime-info \
-		x11/gtk+3,-guic
+
 LIB_DEPENDS=	audio/fluidsynth \
 		audio/jack \
 		audio/liblo \
@@ -51,9 +45,11 @@ LIB_DEPENDS=	audio/fluidsynth \
 		x11/gtk2mm \
 		x11/qt5/qtsvg
 
-MAKE_FLAGS=	CXXFLAGS+="-L${LOCALBASE}/lib" \
-		CPPFLAGS="-L${LOCALBASE}/lib/atkmm-1.6/include"
-CONFIGURE_ARGS=	-DCMAKE_REQUIRED_INCLUDES="${LOCALBASE}/include"
+RUN_DEPENDS=	audio/ladspa \
+		audio/lv2 \
+		devel/desktop-file-utils \
+		misc/shared-mime-info \
+		x11/gtk+3,-guic
 
 NO_TEST=	Yes
 

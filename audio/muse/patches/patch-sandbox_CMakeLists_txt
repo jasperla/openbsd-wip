@@ -1,6 +1,8 @@
 $OpenBSD$
---- sandbox/CMakeLists.txt.orig	Sun Dec 13 22:25:57 2020
-+++ sandbox/CMakeLists.txt	Sun Dec 13 22:27:17 2020
+
+Index: sandbox/CMakeLists.txt
+--- sandbox/CMakeLists.txt.orig
++++ sandbox/CMakeLists.txt
 @@ -38,7 +38,6 @@ add_executable ( muse_plugin_scan
  target_link_libraries(muse_plugin_scan
        plugin_scan_module
