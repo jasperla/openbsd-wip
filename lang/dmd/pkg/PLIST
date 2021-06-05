@@ -1,4 +1,5 @@
 @comment $OpenBSD: PLIST,v$
+@bin bin/catdocd
 @bin bin/changed
 @bin bin/checkwhitespace
 @bin bin/contributors
@@ -17,6 +18,7 @@ include/dmd/druntime/import/core/
 include/dmd/druntime/import/core/atomic.d
 include/dmd/druntime/import/core/attribute.d
 include/dmd/druntime/import/core/bitop.d
+include/dmd/druntime/import/core/builtins.d
 include/dmd/druntime/import/core/checkedint.d
 include/dmd/druntime/import/core/cpuid.d
 include/dmd/druntime/import/core/demangle.d
@@ -501,6 +503,7 @@ include/dmd/druntime/import/core/sys/windows/sspi.d
 include/dmd/druntime/import/core/sys/windows/stacktrace.d
 include/dmd/druntime/import/core/sys/windows/stat.d
 include/dmd/druntime/import/core/sys/windows/stdc/
+include/dmd/druntime/import/core/sys/windows/stdc/malloc.d
 include/dmd/druntime/import/core/sys/windows/stdc/time.d
 include/dmd/druntime/import/core/sys/windows/subauth.d
 include/dmd/druntime/import/core/sys/windows/threadaux.d
@@ -687,6 +690,9 @@ include/dmd/phobos/std/format/internal/floats.d
 include/dmd/phobos/std/format/internal/read.d
 include/dmd/phobos/std/format/internal/write.d
 include/dmd/phobos/std/format/package.d
+include/dmd/phobos/std/format/read.d
+include/dmd/phobos/std/format/spec.d
+include/dmd/phobos/std/format/write.d
 include/dmd/phobos/std/functional.d
 include/dmd/phobos/std/getopt.d
 include/dmd/phobos/std/internal/
@@ -714,7 +720,17 @@ include/dmd/phobos/std/internal/unicode_tables.d
 include/dmd/phobos/std/internal/windows/
 include/dmd/phobos/std/internal/windows/advapi32.d
 include/dmd/phobos/std/json.d
-include/dmd/phobos/std/math.d
+include/dmd/phobos/std/math/
+include/dmd/phobos/std/math/algebraic.d
+include/dmd/phobos/std/math/constants.d
+include/dmd/phobos/std/math/exponential.d
+include/dmd/phobos/std/math/hardware.d
+include/dmd/phobos/std/math/operations.d
+include/dmd/phobos/std/math/package.d
+include/dmd/phobos/std/math/remainder.d
+include/dmd/phobos/std/math/rounding.d
+include/dmd/phobos/std/math/traits.d
+include/dmd/phobos/std/math/trigonometry.d
 include/dmd/phobos/std/mathspecial.d
 include/dmd/phobos/std/meta.d
 include/dmd/phobos/std/mmfile.d

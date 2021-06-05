@@ -1,0 +1,37 @@
+$OpenBSD$
+
+Index: phobos-2.097.0/posix.mak
+--- phobos-2.097.0/posix.mak.orig
++++ phobos-2.097.0/posix.mak
+@@ -32,7 +32,7 @@ QUIET:=@
+ 
+ DEBUGGER=gdb
+ GIT_HOME=https://github.com/dlang
+-DMD_DIR=../dmd
++DMD_DIR=../dmd-2.097.0
+ 
+ include $(DMD_DIR)/src/osmodel.mak
+ 
+@@ -71,7 +71,7 @@ endif
+ 
+ # Configurable stuff that's rarely edited
+ INSTALL_DIR = ../install
+-DRUNTIME_PATH = ../druntime
++DRUNTIME_PATH = ../druntime-2.097.0
+ DLANG_ORG_DIR = ../dlang.org
+ ZIPFILE = phobos.zip
+ ROOT_OF_THEM_ALL = generated
+@@ -111,12 +111,10 @@ endif
+ OUTFILEFLAG = -o
+ NODEFAULTLIB=-defaultlib= -debuglib=
+ ifeq (,$(findstring win,$(OS)))
+-	CFLAGS=$(MODEL_FLAG) -fPIC -DHAVE_UNISTD_H
++	CFLAGS+=$(MODEL_FLAG) -fPIC -DHAVE_UNISTD_H
+ 	NODEFAULTLIB += -L-lpthread -L-lm
+ 	ifeq ($(BUILD),debug)
+ 		CFLAGS += -g
+-	else
+-		CFLAGS += -O3
+ 	endif
+ else
+ 	ifeq ($(OS),win32)

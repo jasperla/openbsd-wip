@@ -1,0 +1,36 @@
+$OpenBSD$
+
+Index: druntime-2.097.0/posix.mak
+--- druntime-2.097.0/posix.mak.orig
++++ druntime-2.097.0/posix.mak
+@@ -5,7 +5,7 @@
+ 
+ QUIET:=
+ 
+-DMD_DIR=../dmd
++DMD_DIR=TOPDIR/dmd-2.097.0
+ DUB=dub
+ TOOLS_DIR=../tools
+ 
+@@ -68,11 +68,9 @@ MAKEFILE = $(firstword $(MAKEFILE_LIST))
+ DDOCFLAGS=-conf= -c -w -o- -Isrc -Iimport -version=CoreDdoc
+ 
+ # Set CFLAGS
+-CFLAGS=$(MODEL_FLAG) -fPIC -DHAVE_UNISTD_H
++CFLAGS+=$(MODEL_FLAG) -fPIC -DHAVE_UNISTD_H
+ ifeq ($(BUILD),debug)
+ 	CFLAGS += -g
+-else
+-	CFLAGS += -O3
+ endif
+ ifeq (solaris,$(OS))
+ 	CFLAGS+=-D_REENTRANT  # for thread-safe errno
+@@ -346,7 +344,7 @@ $(IMPDIR)/%.d : src/%.d
+ ######################## Build DMD if non-existent ##############################
+ 
+ $(DMD):
+-	$(MAKE) -C $(DMD_DIR)/src -f posix.mak BUILD=$(BUILD) OS=$(OS) MODEL=$(MODEL)
++	$(MAKE) -C $(DMD_DIR) -f posix.mak BUILD=$(BUILD) OS=$(OS) MODEL=$(MODEL)
+ 
+ ################### C/ASM Targets ############################
+ 
