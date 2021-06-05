@@ -791,6 +791,7 @@ share/dmd/dmd.conf
 @sample ${SYSCONFDIR}/dmd.conf
 share/doc/dmd/
 share/doc/dmd/LICENSE.txt
+share/doc/pkg-readmes/${PKGSTEM}
 share/examples/dmd/
 share/examples/dmd/all.sh
 share/examples/dmd/build.bat
