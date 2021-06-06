@@ -3,7 +3,7 @@ $OpenBSD$
 Index: services/network/BUILD.gn
 --- services/network/BUILD.gn.orig
 +++ services/network/BUILD.gn
-@@ -290,7 +290,6 @@ if (is_linux || is_chromeos) {
+@@ -292,7 +292,6 @@ if (is_linux || is_chromeos) {
      ]
      deps = [
        "//base:base",

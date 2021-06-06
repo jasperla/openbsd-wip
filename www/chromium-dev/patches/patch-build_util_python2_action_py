@@ -17,5 +17,5 @@ Index: build/util/python2_action.py
  
 -sys.exit(subprocess.call([exe] + sys.argv[1:]))
 +env = os.environ.copy()
-+env["LD_LIBRARY_PATH"] = "${WRKSRC}/out/Release"
++env["LD_LIBRARY_PATH"] = "/home/pobj/chromium-92.0.4515.40/chromium-92.0.4515.40/out/Release"
 +sys.exit(subprocess.call([exe] + sys.argv[1:], env=env))

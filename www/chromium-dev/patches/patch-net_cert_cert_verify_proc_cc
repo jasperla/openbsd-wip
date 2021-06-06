@@ -3,7 +3,7 @@ $OpenBSD: patch-net_cert_cert_verify_proc_cc,v 1.2 2020/10/22 13:52:54 robert Ex
 Index: net/cert/cert_verify_proc.cc
 --- net/cert/cert_verify_proc.cc.orig
 +++ net/cert/cert_verify_proc.cc
-@@ -494,7 +494,7 @@ base::Value CertVerifyParams(X509Certificate* cert,
+@@ -493,7 +493,7 @@ base::Value CertVerifyParams(X509Certificate* cert,
  
  }  // namespace
  

@@ -1,0 +1,14 @@
+$OpenBSD$
+
+Index: ui/gl/gl_implementation.cc
+--- ui/gl/gl_implementation.cc.orig
++++ ui/gl/gl_implementation.cc
+@@ -183,7 +183,7 @@ GLImplementationParts GetSoftwareGLImplementation() {
+ 
+ GLImplementationParts GetSoftwareGLForTestsImplementation() {
+ #if defined(OS_WIN) || \
+-    (defined(OS_LINUX) && !defined(OS_FUCHSIA) && !defined(USE_OZONE))
++    ((defined(OS_LINUX) || defined(OS_BSD)) && !defined(OS_FUCHSIA) && !defined(USE_OZONE))
+   return GetSoftwareGLImplementation();
+ #else
+   return GetLegacySoftwareGLImplementation();

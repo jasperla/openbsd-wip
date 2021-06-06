@@ -3,7 +3,7 @@ $OpenBSD: patch-ui_views_widget_desktop_aura_desktop_window_tree_host_platform_c
 Index: ui/views/widget/desktop_aura/desktop_window_tree_host_platform.cc
 --- ui/views/widget/desktop_aura/desktop_window_tree_host_platform.cc.orig
 +++ ui/views/widget/desktop_aura/desktop_window_tree_host_platform.cc
-@@ -883,7 +883,7 @@ display::Display DesktopWindowTreeHostPlatform::GetDis
+@@ -887,7 +887,7 @@ display::Display DesktopWindowTreeHostPlatform::GetDis
  // DesktopWindowTreeHost:
  
  // Linux subclasses this host and adds some Linux specific bits.

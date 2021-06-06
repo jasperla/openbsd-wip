@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_download_download_prefs_cc,v 1.26 2021/01/20 07:28:08 robert Exp $
+$OpenBSD$
 
 Index: chrome/browser/download/download_prefs.cc
 --- chrome/browser/download/download_prefs.cc.orig
@@ -8,9 +8,9 @@ Index: chrome/browser/download/download_prefs.cc
  #include "base/callback_helpers.h"
  #include "base/check.h"
 +#include "base/command_line.h"
+ #include "base/cxx17_backports.h"
  #include "base/feature_list.h"
  #include "base/files/file_util.h"
- #include "base/no_destructor.h"
 @@ -58,6 +59,8 @@
  #include "chrome/browser/ui/pdf/adobe_reader_info_win.h"
  #endif

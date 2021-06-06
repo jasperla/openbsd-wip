@@ -3,7 +3,7 @@ $OpenBSD: patch-chrome_browser_chrome_browser_interface_binders_cc,v 1.8 2021/01
 Index: chrome/browser/chrome_browser_interface_binders.cc
 --- chrome/browser/chrome_browser_interface_binders.cc.orig
 +++ chrome/browser/chrome_browser_interface_binders.cc
-@@ -148,7 +148,7 @@
+@@ -145,7 +145,7 @@
  #endif  // defined(OS_ANDROID)
  
  #if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || \
@@ -21,7 +21,7 @@ Index: chrome/browser/chrome_browser_interface_binders.cc
    if (base::FeatureList::IsEnabled(features::kWebAppWindowControlsOverlay) &&
        !render_frame_host->GetParent()) {
      map->Add<chrome::mojom::DraggableRegions>(
-@@ -853,7 +853,7 @@ void PopulateChromeWebUIFrameBinders(
+@@ -864,7 +864,7 @@ void PopulateChromeWebUIFrameBinders(
  #endif
  
  #if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || \

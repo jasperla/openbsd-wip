@@ -1,8 +1,8 @@
 $OpenBSD$
 
-Index: chrome/browser/sharing/webrtc/proto/tachyon_common.proto
---- chrome/browser/sharing/webrtc/proto/tachyon_common.proto.orig
-+++ chrome/browser/sharing/webrtc/proto/tachyon_common.proto
+Index: chrome/browser/nearby_sharing/proto/tachyon_common.proto
+--- chrome/browser/nearby_sharing/proto/tachyon_common.proto.orig
++++ chrome/browser/nearby_sharing/proto/tachyon_common.proto
 @@ -63,8 +63,8 @@ message RequestHeader {
  
  message ClientInfo {

@@ -12,7 +12,7 @@ Index: content/renderer/renderer_blink_platform_impl.h
  #include "components/services/font/public/cpp/font_loader.h"  // nogncheck
  #include "third_party/skia/include/core/SkRefCnt.h"           // nogncheck
  #endif
-@@ -241,7 +241,7 @@ class CONTENT_EXPORT RendererBlinkPlatformImpl : publi
+@@ -267,7 +267,7 @@ class CONTENT_EXPORT RendererBlinkPlatformImpl : publi
    void Collect3DContextInformation(blink::Platform::GraphicsInfo* gl_info,
                                     const gpu::GPUInfo& gpu_info) const;
  
@@ -21,7 +21,7 @@ Index: content/renderer/renderer_blink_platform_impl.h
    std::unique_ptr<blink::WebSandboxSupport> sandbox_support_;
  #endif
  
-@@ -262,7 +262,7 @@ class CONTENT_EXPORT RendererBlinkPlatformImpl : publi
+@@ -288,7 +288,7 @@ class CONTENT_EXPORT RendererBlinkPlatformImpl : publi
    mojo::PendingRemote<blink::mojom::CodeCacheHost> code_cache_host_remote_;
    mojo::SharedRemote<blink::mojom::CodeCacheHost> code_cache_host_;
  

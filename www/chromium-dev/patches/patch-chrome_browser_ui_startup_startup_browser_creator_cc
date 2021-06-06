@@ -3,7 +3,7 @@ $OpenBSD$
 Index: chrome/browser/ui/startup/startup_browser_creator.cc
 --- chrome/browser/ui/startup/startup_browser_creator.cc.orig
 +++ chrome/browser/ui/startup/startup_browser_creator.cc
-@@ -126,13 +126,13 @@
+@@ -128,13 +128,13 @@
  #include "ui/base/ui_base_features.h"
  #endif
  
@@ -17,9 +17,9 @@ Index: chrome/browser/ui/startup/startup_browser_creator.cc
 -#if defined(OS_WIN) || defined(OS_MAC) || \
 +#if defined(OS_WIN) || defined(OS_MAC) || defined(OS_BSD) || \
      (defined(OS_LINUX) && !BUILDFLAG(IS_CHROMEOS_LACROS))
- #include "chrome/browser/web_applications/components/url_handler_launch_params.h"
- #include "chrome/browser/web_applications/components/url_handler_manager_impl.h"
-@@ -398,7 +398,7 @@ void FinalizeWebAppLaunch(
+ #include "chrome/browser/ui/startup/web_app_url_handling_startup_utils.h"
+ #endif
+@@ -401,7 +401,7 @@ void FinalizeWebAppLaunch(
    StartupBrowserCreatorImpl::MaybeToggleFullscreen(browser);
  }
  
@@ -28,16 +28,16 @@ Index: chrome/browser/ui/startup/startup_browser_creator.cc
  // Tries to launch the web app from a protocol handler url. Checks if the passed
  // in url is a potential protocol url, if it is, check the protocol handler
  // registry for an entry. If there is an entry, then check if we need approval
-@@ -559,7 +559,7 @@ bool MaybeLaunchApplication(
-   return false;
- }
- 
+@@ -794,7 +794,7 @@ void StartupBrowserCreator::RegisterProfilePrefs(PrefR
+ bool StartupBrowserCreator::MaybeHandleProfileAgnosticUrls(
+     const std::vector<GURL>& urls) {
+   // Web app URL handling.
 -#if defined(OS_WIN) || defined(OS_MAC) || \
 +#if defined(OS_WIN) || defined(OS_MAC) || defined(OS_BSD) || \
      (defined(OS_LINUX) && !BUILDFLAG(IS_CHROMEOS_LACROS))
- // If |command_line| contains a single URL argument and that URL matches URL
- // handling registration from installed web apps, show app options to user and
-@@ -1088,7 +1088,7 @@ bool StartupBrowserCreator::ProcessCmdLineImpl(
+   return web_app::startup::MaybeLaunchUrlHandlerWebAppFromUrls(
+       urls, base::BindOnce(&FinalizeWebAppLaunch,
+@@ -1056,7 +1056,7 @@ bool StartupBrowserCreator::ProcessCmdLineImpl(
      }
    }
  
@@ -46,12 +46,12 @@ Index: chrome/browser/ui/startup/startup_browser_creator.cc
    // Web app Protocol handling.
    if (MaybeLaunchProtocolHandlerWebApp(
            command_line, cur_dir, privacy_safe_profile,
-@@ -1117,7 +1117,7 @@ bool StartupBrowserCreator::ProcessCmdLineImpl(
+@@ -1085,7 +1085,7 @@ bool StartupBrowserCreator::ProcessCmdLineImpl(
    }
  
    // Web app URL handling.
 -#if defined(OS_WIN) || defined(OS_MAC) || \
 +#if defined(OS_WIN) || defined(OS_MAC) || defined(OS_BSD) || \
      (defined(OS_LINUX) && !BUILDFLAG(IS_CHROMEOS_LACROS))
-   if (MaybeLaunchUrlHandlerWebApp(command_line, cur_dir,
-                                   std::make_unique<LaunchModeRecorder>())) {
+   if (web_app::startup::MaybeLaunchUrlHandlerWebAppFromCmd(
+           command_line, cur_dir,

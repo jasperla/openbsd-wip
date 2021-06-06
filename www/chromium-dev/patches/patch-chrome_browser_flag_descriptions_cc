@@ -3,7 +3,7 @@ $OpenBSD$
 Index: chrome/browser/flag_descriptions.cc
 --- chrome/browser/flag_descriptions.cc.orig
 +++ chrome/browser/flag_descriptions.cc
-@@ -4958,7 +4958,7 @@ const char kInstallableInkDropDescription[] =
+@@ -4953,7 +4953,7 @@ const char kInstallableInkDropDescription[] =
  // Random platform combinations -----------------------------------------------
  
  #if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || \
@@ -12,7 +12,7 @@ Index: chrome/browser/flag_descriptions.cc
  
  const char kEnableOopPrintDriversName[] =
      "Enables Out-of-Process Printer Drivers";
-@@ -4984,7 +4984,7 @@ const char kSettingsLandingPageRedesignDescription[] =
+@@ -4979,7 +4979,7 @@ const char kSettingsLandingPageRedesignDescription[] =
  #endif  // defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) ||
          // defined(OS_CHROMEOS)
  
@@ -21,7 +21,7 @@ Index: chrome/browser/flag_descriptions.cc
  
  const char kCommanderName[] = "Commander";
  const char kCommanderDescription[] =
-@@ -5002,7 +5002,7 @@ const char kDesktopDetailedLanguageSettingsDescription
+@@ -4997,7 +4997,7 @@ const char kDesktopDetailedLanguageSettingsDescription
  
  #endif  // defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX)
  
@@ -30,7 +30,7 @@ Index: chrome/browser/flag_descriptions.cc
  #if BUILDFLAG(USE_TCMALLOC)
  const char kDynamicTcmallocName[] = "Dynamic Tcmalloc Tuning";
  const char kDynamicTcmallocDescription[] =
-@@ -5027,7 +5027,7 @@ const char kWebShareDescription[] =
+@@ -5022,7 +5022,7 @@ const char kWebShareDescription[] =
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
@@ -39,7 +39,7 @@ Index: chrome/browser/flag_descriptions.cc
      defined(OS_MAC)
  const char kEnableEphemeralGuestProfilesOnDesktopName[] =
      "Enable ephemeral Guest profiles on Desktop";
-@@ -5036,7 +5036,7 @@ const char kEnableEphemeralGuestProfilesOnDesktopDescr
+@@ -5031,7 +5031,7 @@ const char kEnableEphemeralGuestProfilesOnDesktopDescr
  #endif  // defined(OS_WIN) || (defined(OS_LINUX) ||
          // BUILDFLAG(IS_CHROMEOS_LACROS)) || defined(OS_MAC)
  

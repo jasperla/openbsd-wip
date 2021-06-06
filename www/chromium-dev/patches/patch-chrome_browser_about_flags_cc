@@ -12,7 +12,7 @@ Index: chrome/browser/about_flags.cc
  #include "base/allocator/buildflags.h"
  #endif
  
-@@ -939,7 +939,7 @@ const FeatureEntry::FeatureVariation kMemoriesVariatio
+@@ -931,7 +931,7 @@ const FeatureEntry::FeatureVariation kMemoriesVariatio
  }};
  
  #if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_MAC) || \
@@ -21,7 +21,7 @@ Index: chrome/browser/about_flags.cc
  const FeatureEntry::FeatureParam kOmniboxDocumentProviderServerScoring[] = {
      {"DocumentUseServerScore", "true"},
      {"DocumentUseClientScore", "false"},
-@@ -2417,7 +2417,7 @@ constexpr char kAssistantBetterOnboardingInternalName[
+@@ -2395,7 +2395,7 @@ constexpr char kAssistantBetterOnboardingInternalName[
      "enable-assistant-better-onboarding";
  #endif  // BUILDFLAG(IS_CHROMEOS_ASH)
  
@@ -30,7 +30,7 @@ Index: chrome/browser/about_flags.cc
  const FeatureEntry::FeatureParam
      kSendWebUIJavaScriptErrorReportsVariationSendToStaging[] = {
          {features::kSendWebUIJavaScriptErrorReportsSendToProductionVariation,
-@@ -2618,7 +2618,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -2602,7 +2602,7 @@ const FeatureEntry kFeatureEntries[] = {
       flag_descriptions::kWebrtcPipeWireCapturerDescription, kOsLinux,
       FEATURE_VALUE_TYPE(features::kWebRtcPipeWireCapturer)},
  #endif  // defined(WEBRTC_USE_PIPEWIRE)
@@ -39,7 +39,7 @@ Index: chrome/browser/about_flags.cc
      {"send-webui-javascript-error-reports",
       flag_descriptions::kSendWebUIJavaScriptErrorReportsName,
       flag_descriptions::kSendWebUIJavaScriptErrorReportsDescription,
-@@ -3040,7 +3040,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -3043,7 +3043,7 @@ const FeatureEntry kFeatureEntries[] = {
       FEATURE_VALUE_TYPE(media::kDeprecateLowUsageCodecs)},
  #endif  // defined(OS_CHROMEOS)
  
@@ -48,70 +48,16 @@ Index: chrome/browser/about_flags.cc
      {
          "enable-accelerated-video-decode",
          flag_descriptions::kAcceleratedVideoDecodeName,
-@@ -3390,7 +3390,7 @@ const FeatureEntry kFeatureEntries[] = {
-     {"enable-login-detection", flag_descriptions::kEnableLoginDetectionName,
-      flag_descriptions::kEnableLoginDetectionDescription, kOsAll,
-      FEATURE_VALUE_TYPE(login_detection::kLoginDetection)},
--#if defined(OS_CHROMEOS) || defined(OS_LINUX)
-+#if defined(OS_CHROMEOS) || defined(OS_LINUX) || defined(OS_BSD)
-     {"enable-save-data", flag_descriptions::kEnableSaveDataName,
-      flag_descriptions::kEnableSaveDataDescription, kOsCrOS | kOsLinux,
-      SINGLE_VALUE_TYPE(
-@@ -4223,7 +4223,7 @@ const FeatureEntry kFeatureEntries[] = {
-      FEATURE_VALUE_TYPE(omnibox::kOmniboxTrendingZeroPrefixSuggestionsOnNTP)},
- 
- #if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_MAC) || \
--    defined(OS_WIN)
-+    defined(OS_WIN) || defined(OS_BSD)
-     {"omnibox-experimental-keyword-mode",
-      flag_descriptions::kOmniboxExperimentalKeywordModeName,
-      flag_descriptions::kOmniboxExperimentalKeywordModeDescription, kOsDesktop,
-@@ -4598,7 +4598,7 @@ const FeatureEntry kFeatureEntries[] = {
- #endif  // !defined(OS_ANDROID)
- 
- #if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || \
--    defined(OS_CHROMEOS)
-+    defined(OS_CHROMEOS) || defined(OS_BSD)
-     {"direct-manipulation-stylus",
-      flag_descriptions::kDirectManipulationStylusName,
-      flag_descriptions::kDirectManipulationStylusDescription,
-@@ -5726,7 +5726,7 @@ const FeatureEntry kFeatureEntries[] = {
-      FEATURE_VALUE_TYPE(features::kMouseSubframeNoImplicitCapture)},
- 
- #if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || \
--    defined(OS_CHROMEOS)
-+    defined(OS_CHROMEOS) || defined(OS_BSD)
-     {"global-media-controls", flag_descriptions::kGlobalMediaControlsName,
-      flag_descriptions::kGlobalMediaControlsDescription,
-      kOsWin | kOsMac | kOsLinux,
-@@ -5959,7 +5959,7 @@ const FeatureEntry kFeatureEntries[] = {
-          "ButterForPasswords")},
- 
- #if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || \
--    defined(OS_CHROMEOS)
-+    defined(OS_CHROMEOS) || defined(OS_BSD)
-     {"passwords-account-storage-iph",
-      flag_descriptions::kEnablePasswordsAccountStorageIPHName,
-      flag_descriptions::kEnablePasswordsAccountStorageIPHDescription,
-@@ -6675,7 +6675,7 @@ const FeatureEntry kFeatureEntries[] = {
-      FEATURE_VALUE_TYPE(language::kDetailedLanguageSettings)},
- #endif
- 
--#if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX)
-+#if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || defined(OS_BSD)
-     {"commander", flag_descriptions::kCommanderName,
-      flag_descriptions::kCommanderDescription, kOsDesktop,
-      FEATURE_VALUE_TYPE(features::kCommander)},
-@@ -6698,7 +6698,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -6674,7 +6674,7 @@ const FeatureEntry kFeatureEntries[] = {
       FEATURE_VALUE_TYPE(switches::kSyncAutofillWalletOfferData)},
  
- #if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || \
--    defined(OS_CHROMEOS)
-+    defined(OS_CHROMEOS) || defined(OS_BSD)
+ #if (defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || \
+-     defined(OS_CHROMEOS)) &&                                   \
++     defined(OS_CHROMEOS) || defined(OS_BSD)) &&                \
+     BUILDFLAG(ENABLE_PRINTING)
      {"enable-oop-print-drivers", flag_descriptions::kEnableOopPrintDriversName,
       flag_descriptions::kEnableOopPrintDriversDescription, kOsDesktop,
-      FEATURE_VALUE_TYPE(printing::features::kEnableOopPrintDrivers)},
-@@ -6717,7 +6717,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -6694,7 +6694,7 @@ const FeatureEntry kFeatureEntries[] = {
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
  #if defined(OS_WIN) || (defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)) || \
@@ -120,7 +66,7 @@ Index: chrome/browser/about_flags.cc
      {"enable-ephemeral-guest-profiles-on-desktop",
       flag_descriptions::kEnableEphemeralGuestProfilesOnDesktopName,
       flag_descriptions::kEnableEphemeralGuestProfilesOnDesktopDescription,
-@@ -7010,7 +7010,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -6987,7 +6987,7 @@ const FeatureEntry kFeatureEntries[] = {
  #endif  // defined(OS_CHROMEOS)
  
  #if defined(OS_WIN) || (defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)) || \
@@ -129,3 +75,12 @@ Index: chrome/browser/about_flags.cc
      {
          "ui-debug-tools",
          flag_descriptions::kUIDebugToolsName,
+@@ -7063,7 +7063,7 @@ const FeatureEntry kFeatureEntries[] = {
+      FEATURE_VALUE_TYPE(metrics::structured::kBluetoothSessionizedMetrics)},
+ #endif
+ 
+-#if defined(OS_LINUX) && defined(USE_OZONE)
++#if (defined(OS_BSD) || defined(OS_LINUX)) && defined(USE_OZONE)
+     {"use-ozone-platform", flag_descriptions::kUseOzonePlatformName,
+      flag_descriptions::kUseOzonePlatformDescription, kOsLinux,
+      FEATURE_VALUE_TYPE(features::kUseOzonePlatform)},

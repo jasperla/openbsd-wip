@@ -12,7 +12,7 @@ Index: v8/src/api/api.cc
  #include <signal.h>
  #include "include/v8-wasm-trap-handler-posix.h"
  #include "src/trap-handler/handler-inside-posix.h"
-@@ -5832,7 +5832,7 @@ bool v8::V8::Initialize(const int build_config) {
+@@ -5842,7 +5842,7 @@ bool v8::V8::Initialize(const int build_config) {
    return true;
  }
  

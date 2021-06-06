@@ -3,9 +3,9 @@ $OpenBSD$
 Index: chrome/browser/web_applications/components/web_app_utils.cc
 --- chrome/browser/web_applications/components/web_app_utils.cc.orig
 +++ chrome/browser/web_applications/components/web_app_utils.cc
-@@ -159,7 +159,7 @@ std::u16string GetFileTypeAssociationsHandledByWebAppD
+@@ -179,7 +179,7 @@ std::u16string GetFileTypeAssociationsHandledByWebApps
    const apps::FileHandlers file_handlers =
-       GetFileHandlersForWebApp(profile, url);
+       GetFileHandlersForAllWebAppsWithOrigin(profile, url);
    std::vector<std::string> associations;
 -#if defined(OS_LINUX)
 +#if defined(OS_LINUX) || defined(OS_BSD)

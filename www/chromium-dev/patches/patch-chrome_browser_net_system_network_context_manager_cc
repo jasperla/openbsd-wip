@@ -39,7 +39,7 @@ Index: chrome/browser/net/system_network_context_manager.cc
    registry->RegisterBooleanPref(prefs::kAuthNegotiateDelegateByKdcPolicy,
                                  false);
  #endif  // defined(OS_LINUX) || defined(OS_MAC) || defined(OS_CHROMEOS)
-@@ -521,7 +521,7 @@ void SystemNetworkContextManager::OnNetworkServiceCrea
+@@ -552,7 +552,7 @@ void SystemNetworkContextManager::OnNetworkServiceCrea
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.

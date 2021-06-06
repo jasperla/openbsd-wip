@@ -1,9 +1,9 @@
 $OpenBSD$
 
-Index: chrome/browser/sync/profile_sync_service_factory.cc
---- chrome/browser/sync/profile_sync_service_factory.cc.orig
-+++ chrome/browser/sync/profile_sync_service_factory.cc
-@@ -216,7 +216,7 @@ KeyedService* ProfileSyncServiceFactory::BuildServiceI
+Index: chrome/browser/sync/sync_service_factory.cc
+--- chrome/browser/sync/sync_service_factory.cc.orig
++++ chrome/browser/sync/sync_service_factory.cc
+@@ -215,7 +215,7 @@ KeyedService* SyncServiceFactory::BuildServiceInstance
  // included
  // in lacros-chrome once build flag switch of lacros-chrome is
  // complete.

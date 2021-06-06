@@ -12,7 +12,7 @@ Index: media/base/media_switches.h
  MEDIA_EXPORT extern const char kAlsaInputDevice[];
  MEDIA_EXPORT extern const char kAlsaOutputDevice[];
  #endif
-@@ -180,7 +180,7 @@ MEDIA_EXPORT extern const base::Feature kUseFakeDevice
+@@ -181,7 +181,7 @@ MEDIA_EXPORT extern const base::Feature kUseFakeDevice
  MEDIA_EXPORT extern const base::Feature kUseMediaHistoryStore;
  MEDIA_EXPORT extern const base::Feature kUseR16Texture;
  MEDIA_EXPORT extern const base::Feature kUseSodaForLiveCaption;

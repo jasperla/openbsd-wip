@@ -12,7 +12,7 @@ Index: chrome/browser/flag_descriptions.h
  #include "base/allocator/buildflags.h"
  #endif  // defined(OS_LINUX) || defined(OS_CHROMEOS)
  
-@@ -2898,7 +2898,7 @@ extern const char kInstallableInkDropDescription[];
+@@ -2889,7 +2889,7 @@ extern const char kInstallableInkDropDescription[];
  // Random platform combinations -----------------------------------------------
  
  #if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || \
@@ -21,7 +21,7 @@ Index: chrome/browser/flag_descriptions.h
  
  extern const char kEnableOopPrintDriversName[];
  extern const char kEnableOopPrintDriversDescription[];
-@@ -2915,7 +2915,7 @@ extern const char kSettingsLandingPageRedesignDescript
+@@ -2906,7 +2906,7 @@ extern const char kSettingsLandingPageRedesignDescript
  #endif  // defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) ||
          // defined(OS_CHROMEOS)
  
@@ -30,7 +30,7 @@ Index: chrome/browser/flag_descriptions.h
  
  extern const char kCommanderName[];
  extern const char kCommanderDescription[];
-@@ -2928,7 +2928,7 @@ extern const char kDesktopDetailedLanguageSettingsDesc
+@@ -2919,7 +2919,7 @@ extern const char kDesktopDetailedLanguageSettingsDesc
  
  #endif  // defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX)
  
@@ -39,7 +39,7 @@ Index: chrome/browser/flag_descriptions.h
  #if BUILDFLAG(USE_TCMALLOC)
  extern const char kDynamicTcmallocName[];
  extern const char kDynamicTcmallocDescription[];
-@@ -2948,13 +2948,13 @@ extern const char kWebShareDescription[];
+@@ -2939,13 +2939,13 @@ extern const char kWebShareDescription[];
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
  #if defined(OS_WIN) || (defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)) || \
@@ -55,7 +55,7 @@ Index: chrome/browser/flag_descriptions.h
  extern const char kUseOzonePlatformName[];
  extern const char kUseOzonePlatformDescription[];
  #endif  // defined(OS_LINUX) && defined(USE_OZONE)
-@@ -3019,7 +3019,7 @@ extern const char kSendWebUIJavaScriptErrorReportsDesc
+@@ -3012,7 +3012,7 @@ extern const char kSendWebUIJavaScriptErrorReportsDesc
  #endif
  
  #if defined(OS_WIN) || (defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)) || \

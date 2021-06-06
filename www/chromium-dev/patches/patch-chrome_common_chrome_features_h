@@ -3,7 +3,7 @@ $OpenBSD$
 Index: chrome/common/chrome_features.h
 --- chrome/common/chrome_features.h.orig
 +++ chrome/common/chrome_features.h
-@@ -74,7 +74,7 @@ extern const base::Feature kAppShimNewCloseBehavior;
+@@ -69,7 +69,7 @@ extern const base::Feature kAppShimNewCloseBehavior;
  
  COMPONENT_EXPORT(CHROME_FEATURES) extern const base::Feature kAsyncDns;
  
@@ -29,4 +29,4 @@ Index: chrome/common/chrome_features.h
 +    defined(OS_CHROMEOS) || defined(OS_BSD)
  COMPONENT_EXPORT(CHROME_FEATURES)
  extern const base::Feature kIncognitoBrandConsistencyForDesktop;
- #endif
+ 
