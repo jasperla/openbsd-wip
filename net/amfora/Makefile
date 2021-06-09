@@ -9,6 +9,8 @@ DISTNAME=	amfora-${MODGO_VERSION}
 
 CATEGORIES=	net
 
+HOMEPAGE=	https://github.com/makeworld-the-better-one/amfora
+
 MAINTAINER=	Dimitri Karamazov <deserter666@danwin1210.me>
 
 # GPLv3
