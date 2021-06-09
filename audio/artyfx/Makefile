@@ -48,7 +48,9 @@ MODULES =		devel/cmake
 #MODGO_MODFILES =	modulename version
 #BUILD_DEPENDS =	???
 #RUN_DEPENDS =		???
-#LIB_DEPENDS =		???
+LIB_DEPENDS =		audio/libsndfile \
+			audio/lv2 \
+			graphics/cairo
 #TEST_DEPENDS =		???
 #MAKE_FLAGS =		???
 #MAKE_ENV =		LDFLAGS="-L${LOCALBASE}/lib"
