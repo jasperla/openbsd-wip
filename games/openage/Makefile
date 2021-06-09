@@ -36,7 +36,8 @@ LIB_DEPENDS =	audio/opusfile \
 		devel/sdl2-image \
 		x11/qt5/qtdeclarative
 
-RUN_DEPENDS =	devel/desktop-file-utils
+RUN_DEPENDS =	devel/desktop-file-utils \
+		x11/qt5/qtquickcontrols
 
 CONFIGURE_ARGS =	-DCMAKE_C_FLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 			-DCMAKE_EXE_LINKER_FLAGS="${LDFLAGS} -L${LOCALBASE}/lib" \
