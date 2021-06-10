@@ -1,6 +1,6 @@
 # $OpenBSD: Makefile.template,v 1.88 2020/05/15 01:32:48 abieber Exp $
 
-COMMENT=	digital audio workstation with support for Audio and MIDI
+COMMENT=	audio sequencer with recording/editing capabilities
 
 GH_ACCOUNT=	muse-sequencer
 GH_PROJECT=	muse
