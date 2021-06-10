@@ -55,6 +55,9 @@ NO_TEST=	Yes
 
 WRKDIST=	${WRKDIR}/${DISTNAME}/src
 
+post-patch:
+	${SUBST_CMD} ${WRKSRC}/CMakeLists.txt
+
 post-install:
 	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py ${PREFIX}/share/muse-4.0
 	cp ${PREFIX}/share/man/man1/{grepmidi.1,muse4.1} ${PREFIX}/man/man1

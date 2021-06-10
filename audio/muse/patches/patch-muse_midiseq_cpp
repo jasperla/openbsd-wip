@@ -1,22 +1,20 @@
 $OpenBSD$
 
+sched_getscheduler not available on OpenBSD
+
 Index: muse/midiseq.cpp
 --- muse/midiseq.cpp.orig
 +++ muse/midiseq.cpp
-@@ -35,6 +35,7 @@
- #endif
- #include "muse_math.h"
- #include <errno.h>
-+#include <sys/resource.h>
- 
- #include "config.h"
- #include "app.h"
-@@ -295,7 +296,7 @@ bool MidiSeq::deleteTimer()
+@@ -295,9 +295,12 @@ bool MidiSeq::deleteTimer()
  void MidiSeq::threadStart(void*)
        {
        int policy;
--      if ((policy = sched_getscheduler (0)) < 0) {
-+      if ((policy = getpriority (0,0)) < 0) {
++      policy = 0;
++#ifndef __OpenBSD__
+       if ((policy = sched_getscheduler (0)) < 0) {
              printf("Cannot get current client scheduler: %s\n", strerror(errno));
              }
++#endif
        if (policy != SCHED_FIFO)
+             printf("midi thread %d _NOT_ running SCHED_FIFO\n", getpid());
+       updatePollFd();

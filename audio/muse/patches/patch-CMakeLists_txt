@@ -1,5 +1,8 @@
 $OpenBSD$
 
+fix build by forcing library and include dirs
+since LDFLAGS, CPPFLAGS don't work
+
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
@@ -7,7 +10,7 @@ Index: CMakeLists.txt
  LINK_DIRECTORIES(${Qt5UiTools_LIBRARY_DIRS})
  LINK_DIRECTORIES(${Qt5Xml_LIBRARY_DIRS})
  LINK_DIRECTORIES(${Qt5Svg_LIBRARY_DIRS})
-+LINK_DIRECTORIES(${CMAKE_INSTALL_PREFIX}/lib)
++LINK_DIRECTORIES(${LOCALBASE}/lib)
  
  SET(QT_LIBRARIES ${Qt5Widgets_LIBRARIES} ${Qt5UiTools_LIBRARIES} ${Qt5Xml_LIBRARIES} ${Qt5Svg_LIBRARIES} ${Qt5Core_LIBRARIES})
  #~ set(CMAKE_AUTOUIC ON)
@@ -15,7 +18,7 @@ Index: CMakeLists.txt
  ## find ladspa.h
  ##
  
-+SET(CMAKE_REQUIRED_INCLUDES ${CMAKE_INSTALL_PREFIX}/include)
++SET(CMAKE_REQUIRED_INCLUDES ${LOCALBASE}/include)
  CHECK_INCLUDE_FILE(ladspa.h HAVE_LADSPA_H)
  if(NOT HAVE_LADSPA_H)
        message(FATAL_ERROR "** ERROR: header file ladspa.h is required, but was not found."

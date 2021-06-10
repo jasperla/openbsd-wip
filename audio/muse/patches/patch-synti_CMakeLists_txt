@@ -1,5 +1,7 @@
 $OpenBSD$
 
+simpledrums2 crashes on startup
+
 Index: synti/CMakeLists.txt
 --- synti/CMakeLists.txt.orig
 +++ synti/CMakeLists.txt
