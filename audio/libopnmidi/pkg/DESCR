@@ -1,0 +1,8 @@
+libADLMIDI is a free Software MIDI synthesizer library with OPL3 emulation
+
+Key features:
+* OPL3 emulation with four-operator mode support
+* Stereo sound
+* Pitch-bender with adjustable range
+* Vibrato that responds to RPN/NRPN parameters
+* MIDI and RMI file support
