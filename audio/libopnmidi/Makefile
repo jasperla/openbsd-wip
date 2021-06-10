@@ -4,7 +4,7 @@ COMMENT=	MIDI synthesizer library with OPL3 emulator
 
 GH_ACCOUNT=	Wohlstand
 GH_PROJECT=	libOPNMIDI
-GH_COMMIT=	88f9f068fc84302e26c2b5f5a79a0b3c5491c7f7
+GH_COMMIT=	90e8c2c0c10dfe8f1680b1155b8b9087a7baf4e2
 DISTNAME=	libopnmidi-1.5.0
 
 SHARED_LIBS=	OPNMIDI		0.0 # 1.5.0

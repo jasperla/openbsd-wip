@@ -1,7 +1,9 @@
-libADLMIDI is a free Software MIDI synthesizer library with OPL3 emulation
+bOPNMIDI is a free Software MIDI synthesizer library with OPN2
+and OPNA emulation.
 
 Key features:
-* OPL3 emulation with four-operator mode support
+* OPL2 emulation
+* Rudimentary OPNA emulation
 * Stereo sound
 * Pitch-bender with adjustable range
 * Vibrato that responds to RPN/NRPN parameters
