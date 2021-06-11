@@ -26,6 +26,8 @@ MAINTAINER =	Dimitri Karamazov <deserter666@danwin1210.me>
 PERMIT_PACKAGE =	Yes
 #PERMIT_DISTFILES =	Yes | Reason if No
 #WANTLIB =		???
+WANTLIB += ${COMPILER_LIBCXX} X11 c cairo m sndfile
+COMPILER=base-clang ports-gcc
 #MASTER_SITES =		???
 #MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=subdir/}
 #MASTER_SITES =		${MASTER_SITE_foo:=subdir/}
@@ -46,10 +48,9 @@ MODULES =		devel/cmake
 #MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 #MODGO_MODULES =	modulename version
 #MODGO_MODFILES =	modulename version
-#BUILD_DEPENDS =	???
+BUILD_DEPENDS =		audio/lv2
 #RUN_DEPENDS =		???
 LIB_DEPENDS =		audio/libsndfile \
-			audio/lv2 \
 			graphics/cairo
 #TEST_DEPENDS =		???
 #MAKE_FLAGS =		???
@@ -64,7 +65,7 @@ LIB_DEPENDS =		audio/libsndfile \
 #CONFIGURE_STYLE =	
 #CONFIGURE_SCRIPT =	??? (if other than configure)
 #CONFIGURE_ARGS =	-DCMAKE_CXX_FLAGS="-L${LOCALBASE}/lib"
-#CONFIGURE_ENV =	???
+CONFIGURE_ENV =		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 # DEBUG_CONFIGURE_ARGS =	???
 # DEBUG_PACKAGES = ${BUILD_PACKAGES}
 #AUTOCONF_VERSION =	??? (defaults to 2.13)
