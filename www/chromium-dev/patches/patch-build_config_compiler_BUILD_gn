@@ -75,17 +75,21 @@ Index: build/config/compiler/BUILD.gn
            # Ignore warnings about MSVC optimization pragmas.
            # TODO(thakis): Only for no_chromium_code? http://crbug.com/912662
            "-Wno-ignored-pragma-optimize",
-@@ -1618,9 +1609,6 @@ config("default_warnings") {
+@@ -1618,13 +1609,6 @@ config("default_warnings") {
  
            # TODO(https://crbug.com/1028110): Evaluate and possible enable.
            "-Wno-deprecated-copy",
 -
 -          # TODO(https://crbug.com/1050281): Clean up, enable.
 -          "-Wno-non-c-typedef-for-linkage",
+-
+-          # TODO(https://crbug.com/1203071): Clean up and enable.
+-          "-Wno-unused-but-set-parameter",
+-          "-Wno-unused-but-set-variable",
          ]
  
          cflags_c += [
-@@ -1628,12 +1616,6 @@ config("default_warnings") {
+@@ -1632,12 +1616,6 @@ config("default_warnings") {
            "-Wno-implicit-fallthrough",
          ]
  
@@ -98,7 +102,7 @@ Index: build/config/compiler/BUILD.gn
        }
      }
    }
-@@ -1769,7 +1751,7 @@ config("no_chromium_code") {
+@@ -1773,7 +1751,7 @@ config("no_chromium_code") {
        # suppressing them individually, we just blanket suppress them here.
        "-Wno-unused-variable",
      ]
@@ -107,7 +111,7 @@ Index: build/config/compiler/BUILD.gn
        cflags += [
          # TODO(https://crbug.com/1202159): Clean up and enable.
          "-Wno-misleading-indentation",
-@@ -1847,7 +1829,7 @@ config("export_dynamic") {
+@@ -1851,7 +1829,7 @@ config("export_dynamic") {
  config("thin_archive") {
    # The macOS and iOS default linker ld64 does not support reading thin
    # archives.
@@ -116,7 +120,7 @@ Index: build/config/compiler/BUILD.gn
      arflags = [ "-T" ]
    } else if (is_win && use_lld) {
      arflags = [ "/llvmlibthin" ]
-@@ -2280,7 +2262,7 @@ config("afdo_optimize_size") {
+@@ -2284,7 +2262,7 @@ config("afdo_optimize_size") {
  # between //base/allocator:tcmalloc and AFDO on GCC), so we provide a separate
  # config to allow AFDO to be disabled per-target.
  config("afdo") {
@@ -125,7 +129,7 @@ Index: build/config/compiler/BUILD.gn
      cflags = []
      if (clang_emit_debug_info_for_profiling) {
        # Add the following flags to generate debug info for profiling.
-@@ -2296,7 +2278,7 @@ config("afdo") {
+@@ -2300,7 +2278,7 @@ config("afdo") {
        cflags += [ "-fprofile-sample-use=${rebased_clang_sample_profile}" ]
        inputs = [ _clang_sample_profile ]
      }

@@ -19,9 +19,9 @@ Index: chrome/app/generated_resources.grd
 -      <if expr="is_win or is_macosx or is_linux">
 +      <if expr="is_win or is_macosx or is_posix">
          <part file="protocol_handler_intent_picker_strings.grdp" />
+         <part file="url_handler_intent_picker_strings.grdp" />
        </if>
- 
-@@ -5304,7 +5304,7 @@ Keep your key file in a safe place. You will need it t
+@@ -5318,7 +5318,7 @@ Keep your key file in a safe place. You will need it t
        </if>
  
        <!-- chrome://browser-switch strings -->
@@ -30,7 +30,7 @@ Index: chrome/app/generated_resources.grd
          <message name="IDS_ABOUT_BROWSER_SWITCH_TITLE" desc="about:browser-switch page title">
            Legacy Browser Support
          </message>
-@@ -7486,7 +7486,7 @@ Keep your key file in a safe place. You will need it t
+@@ -7506,7 +7506,7 @@ Keep your key file in a safe place. You will need it t
          Google Pay
        </message>
  
@@ -39,7 +39,7 @@ Index: chrome/app/generated_resources.grd
          <message name="IDS_SHOW_WINDOW_DECORATIONS" desc="The label of a radio button in the options dialog for using the system title bar and borders.">
            Use system title bar and borders
          </message>
-@@ -8517,7 +8517,7 @@ Please help our engineers fix this problem. Tell us wh
+@@ -8537,7 +8537,7 @@ Please help our engineers fix this problem. Tell us wh
          Set as default
        </message>
  

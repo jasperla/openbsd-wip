@@ -12,7 +12,7 @@ Index: gpu/command_buffer/service/external_vk_image_backing.cc
  #include "gpu/command_buffer/service/external_vk_image_dawn_representation.h"
  #endif
  
-@@ -601,7 +601,7 @@ std::unique_ptr<SharedImageRepresentationDawn>
+@@ -576,7 +576,7 @@ std::unique_ptr<SharedImageRepresentationDawn>
  ExternalVkImageBacking::ProduceDawn(SharedImageManager* manager,
                                      MemoryTypeTracker* tracker,
                                      WGPUDevice wgpuDevice) {
@@ -21,7 +21,7 @@ Index: gpu/command_buffer/service/external_vk_image_backing.cc
    auto wgpu_format = viz::ToWGPUFormat(format());
  
    if (wgpu_format == WGPUTextureFormat_Undefined) {
-@@ -633,7 +633,7 @@ GLuint ExternalVkImageBacking::ProduceGLTextureInterna
+@@ -608,7 +608,7 @@ GLuint ExternalVkImageBacking::ProduceGLTextureInterna
    gl::GLApi* api = gl::g_current_gl_context;
    absl::optional<ScopedDedicatedMemoryObject> memory_object;
    if (!use_separate_gl_texture()) {

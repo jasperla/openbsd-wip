@@ -21,7 +21,7 @@ Index: chrome/common/pref_names.h
  extern const char kUseCustomChromeFrame[];
  #endif
  #if BUILDFLAG(ENABLE_PLUGINS)
-@@ -565,7 +565,7 @@ extern const char kDownloadExtensionsToOpenByPolicy[];
+@@ -570,7 +570,7 @@ extern const char kDownloadExtensionsToOpenByPolicy[];
  extern const char kDownloadAllowedURLsForOpenByPolicy[];
  extern const char kDownloadDirUpgraded[];
  #if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_CHROMEOS) || \
@@ -30,16 +30,16 @@ Index: chrome/common/pref_names.h
  extern const char kOpenPdfDownloadInSystemReader[];
  #endif
  #if defined(OS_ANDROID)
-@@ -667,7 +667,7 @@ extern const char kWebAppsDidMigrateDefaultChromeApps[
- extern const char kWebAppsUninstalledDefaultChromeApps[];
+@@ -671,7 +671,7 @@ extern const char kWebAppsUninstalledDefaultChromeApps
  extern const char kWebAppsPreferences[];
+ extern const char kWebAppsIsolationState[];
  
 -#if defined(OS_WIN) || defined(OS_MAC) || \
 +#if defined(OS_WIN) || defined(OS_MAC) || defined(OS_BSD) || \
      (defined(OS_LINUX) && !BUILDFLAG(IS_CHROMEOS_LACROS))
  extern const char kWebAppsUrlHandlerInfo[];
  #endif
-@@ -807,7 +807,7 @@ extern const char kGloballyScopeHTTPAuthCacheEnabled[]
+@@ -811,7 +811,7 @@ extern const char kGloballyScopeHTTPAuthCacheEnabled[]
  extern const char kAmbientAuthenticationInPrivateModesEnabled[];
  extern const char kBasicAuthOverHttpEnabled[];
  
@@ -48,7 +48,7 @@ Index: chrome/common/pref_names.h
  extern const char kAuthNegotiateDelegateByKdcPolicy[];
  #endif  // defined(OS_LINUX) || defined(OS_MAC) || defined(OS_CHROMEOS)
  
-@@ -930,7 +930,7 @@ extern const char kSigninAllowedOnNextStartup[];
+@@ -934,7 +934,7 @@ extern const char kSigninAllowedOnNextStartup[];
  extern const char kSigninInterceptionEnabled[];
  // TODO(crbug.com/1179280): Remove OS_LINUX once https://crbug.com/1169547 is
  // done.
@@ -57,7 +57,7 @@ Index: chrome/common/pref_names.h
  extern const char kLacrosSecondaryProfilesAllowed[];
  #endif  // defined(OS_LINUX) || defined(OS_CHROMEOS)
  
-@@ -1045,7 +1045,7 @@ extern const char kBlockAutoplayEnabled[];
+@@ -1049,7 +1049,7 @@ extern const char kBlockAutoplayEnabled[];
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
