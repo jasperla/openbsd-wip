@@ -3,7 +3,7 @@ $OpenBSD$
 Index: chrome/browser/sessions/session_restore.cc
 --- chrome/browser/sessions/session_restore.cc.orig
 +++ chrome/browser/sessions/session_restore.cc
-@@ -932,7 +932,7 @@ void SessionRestore::RestoreSessionAfterCrash(Browser*
+@@ -958,7 +958,7 @@ void SessionRestore::RestoreSessionAfterCrash(Browser*
  // On linux, apps can be restored without the proper app frame,
  // disabling restorations on linux for now. http://crbug.com/1199109
  #if BUILDFLAG(ENABLE_APP_SESSION_SERVICE)

@@ -19,5 +19,5 @@ Index: chrome/browser/send_tab_to_self/receiving_ui_handler_registry.cc
 -    defined(OS_WIN)
 +    defined(OS_WIN) || defined(OS_BSD)
  
-   if (base::FeatureList::IsEnabled(kSendTabToSelfV2)) {
-     applicable_handlers_.push_back(
+   // If STTS 2.0 is enabled the handler will be created when the toolbar
+   // button registers itself as the delegate.
