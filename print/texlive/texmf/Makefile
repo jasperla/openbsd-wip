@@ -22,8 +22,9 @@ REVISION-buildset =	0
 MASTER_SITES0 =		http://theunixzoo.co.uk/distfiles/
 DISTFILES =		${DISTNAME}${EXTRACT_SUFX} \
 			texlive-${DIST_V}-extra${EXTRACT_SUFX} \
-			texmf-var-pregen-${V}${EXTRACT_SUFX}:0 \
 			texlive-${DIST_V}-tlpdb-full.tar.gz
+# XXX
+#texmf-var-pregen-${V}${EXTRACT_SUFX}:0 \
 
 PKGNAME-main =		texlive_texmf-minimal-${V}
 PKGNAME-full =		texlive_texmf-full-${V}
@@ -140,7 +141,8 @@ do-install: tl-symlinks-main tl-symlinks-full tl-symlinks-context
 	#   context --make
 	#
 	# Then you can tar them up and host them as the pregen tarball.
-	mv ${WRKDIR}/texmf-var ${PREFIX}/share
+	# FIXME
+	#mv ${WRKDIR}/texmf-var ${PREFIX}/share
 
 	# Put manuals in the right place.
 	#
