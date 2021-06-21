@@ -1,0 +1,10 @@
+@comment $OpenBSD: PLIST,v$
+@rcscript ${RCDIR}/tailscaled
+@bin bin/cloner
+@bin bin/derper
+@bin bin/hello
+@bin bin/microproxy
+@bin bin/mkpkg
+@bin bin/tailscale
+@bin bin/tailscaled
+@bin bin/tsshd
