@@ -18,7 +18,7 @@ Index: gpu/command_buffer/service/shared_image_factory.cc
      BUILDFLAG(ENABLE_VULKAN)
  #include "gpu/command_buffer/service/external_vk_image_factory.h"
  #elif defined(OS_ANDROID) && BUILDFLAG(ENABLE_VULKAN)
-@@ -65,7 +65,7 @@
+@@ -66,7 +66,7 @@
  
  namespace gpu {
  
@@ -27,7 +27,7 @@ Index: gpu/command_buffer/service/shared_image_factory.cc
      !BUILDFLAG(IS_CHROMEOS_LACROS) && !BUILDFLAG(IS_CHROMECAST) && \
      BUILDFLAG(ENABLE_VULKAN)
  
-@@ -142,7 +142,7 @@ SharedImageFactory::SharedImageFactory(
+@@ -143,7 +143,7 @@ SharedImageFactory::SharedImageFactory(
    // |gr_context_type|.
    if (gr_context_type_ == GrContextType::kVulkan) {
  #if BUILDFLAG(ENABLE_VULKAN)

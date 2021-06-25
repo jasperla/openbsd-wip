@@ -3,7 +3,7 @@ $OpenBSD$
 Index: chrome/browser/flag_descriptions.cc
 --- chrome/browser/flag_descriptions.cc.orig
 +++ chrome/browser/flag_descriptions.cc
-@@ -5000,7 +5000,7 @@ const char kInstallableInkDropDescription[] =
+@@ -5010,7 +5010,7 @@ const char kInstallableInkDropDescription[] =
  // Random platform combinations -----------------------------------------------
  
  #if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || \
@@ -12,7 +12,7 @@ Index: chrome/browser/flag_descriptions.cc
  
  const char kEnableOopPrintDriversName[] =
      "Enables Out-of-Process Printer Drivers";
-@@ -5026,7 +5026,7 @@ const char kSettingsLandingPageRedesignDescription[] =
+@@ -5036,7 +5036,7 @@ const char kSettingsLandingPageRedesignDescription[] =
  #endif  // defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) ||
          // defined(OS_CHROMEOS)
  
@@ -21,7 +21,7 @@ Index: chrome/browser/flag_descriptions.cc
  
  const char kCommanderName[] = "Commander";
  const char kCommanderDescription[] =
-@@ -5044,7 +5044,7 @@ const char kDesktopDetailedLanguageSettingsDescription
+@@ -5054,7 +5054,7 @@ const char kDesktopDetailedLanguageSettingsDescription
  
  #endif  // defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX)
  
@@ -30,7 +30,7 @@ Index: chrome/browser/flag_descriptions.cc
  #if BUILDFLAG(USE_TCMALLOC)
  const char kDynamicTcmallocName[] = "Dynamic Tcmalloc Tuning";
  const char kDynamicTcmallocDescription[] =
-@@ -5069,7 +5069,7 @@ const char kWebShareDescription[] =
+@@ -5079,7 +5079,7 @@ const char kWebShareDescription[] =
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
@@ -39,7 +39,7 @@ Index: chrome/browser/flag_descriptions.cc
      defined(OS_MAC)
  const char kEnableEphemeralGuestProfilesOnDesktopName[] =
      "Enable ephemeral Guest profiles on Desktop";
-@@ -5078,7 +5078,7 @@ const char kEnableEphemeralGuestProfilesOnDesktopDescr
+@@ -5088,7 +5088,7 @@ const char kEnableEphemeralGuestProfilesOnDesktopDescr
  #endif  // defined(OS_WIN) || (defined(OS_LINUX) ||
          // BUILDFLAG(IS_CHROMEOS_LACROS)) || defined(OS_MAC)
  
@@ -48,7 +48,7 @@ Index: chrome/browser/flag_descriptions.cc
  const char kUseOzonePlatformName[] = "Use ozone.";
  const char kUseOzonePlatformDescription[] =
      "Use the Ozone/X11 platform implementation on X11.";
-@@ -5177,7 +5177,7 @@ const char kSendWebUIJavaScriptErrorReportsDescription
+@@ -5187,7 +5187,7 @@ const char kSendWebUIJavaScriptErrorReportsDescription
      "will be sent to Google.";
  #endif
  
