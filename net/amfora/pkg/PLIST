@@ -1,6 +1,0 @@
-@comment $OpenBSD: PLIST,v$
-@bin bin/amfora
-share/applications/amfora.desktop
-share/pixmaps/
-share/pixmaps/amfora.png
-@tag update-desktop-database
