@@ -1,0 +1,24 @@
+@comment $OpenBSD: PLIST,v 1.4 2020/09/23 23:02:55 abieber Exp $
+@bin bin/admin-revoker
+@bin bin/akamai-purger
+@bin bin/bad-key-revoker
+@bin bin/boulder-ca
+@bin bin/boulder-janitor
+@bin bin/boulder-publisher
+@bin bin/boulder-ra
+@bin bin/boulder-sa
+@bin bin/boulder-va
+@bin bin/boulder-wfe
+@bin bin/boulder-wfe2
+@bin bin/caa-log-checker
+@bin bin/ceremony
+@bin bin/cert-checker
+@bin bin/expiration-mailer
+@bin bin/expired-authz-purger2
+@bin bin/id-exporter
+@bin bin/log-validator
+@bin bin/nonce-service
+@bin bin/notify-mailer
+@bin bin/ocsp-responder
+@bin bin/ocsp-updater
+@bin bin/orphan-finder

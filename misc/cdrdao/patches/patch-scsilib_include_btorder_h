@@ -1,0 +1,23 @@
+$OpenBSD: patch-scsilib_include_btorder_h,v 1.5 2015/05/01 06:15:46 ajacoutot Exp $
+Index: scsilib/include/btorder.h
+--- scsilib/include/btorder.h.orig
++++ scsilib/include/btorder.h
+@@ -28,6 +28,9 @@
+ #include <sys/types.h>			/* try to load isa_defs.h on Solaris */
+ #define	_INCL_SYS_TYPES_H
+ #endif
++#ifdef __OpenBSD__
++#include <endian.h>
++#endif
+ 
+ #ifndef _MCONFIG_H
+ #include <mconfig.h>			/* load bit/byte-oder from xmconfig.h*/
+@@ -109,7 +112,7 @@ error  Only one of _BIT_FIELDS_LTOH or _BIT_FIELDS_HTO
+ #	if defined(__ppc__) || defined(ppc) || defined(__ppc) || \
+ 	    defined(__PPC) || defined(powerpc) || defined(__powerpc__)
+ 
+-#		if	defined(__BIG_ENDIAN__)
++#		if	defined(__BIG_ENDIAN__) || BYTE_ORDER == BIG_ENDIAN
+ #			define _BIT_FIELDS_HTOL
+ #		else
+ #			define _BIT_FIELDS_LTOH

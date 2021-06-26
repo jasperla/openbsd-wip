@@ -1,0 +1,1 @@
+interface to write zstd comp. data to files or buffers

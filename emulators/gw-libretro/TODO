@@ -1,5 +1,0 @@
-gw-libretro-1.6.3 has a crash bug that has since been fixed:
-
-https://github.com/libretro/gw-libretro/issues/38
-
-Should be ready for import when the next version is released.

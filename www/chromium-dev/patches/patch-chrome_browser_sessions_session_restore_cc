@@ -1,0 +1,14 @@
+$OpenBSD$
+
+Index: chrome/browser/sessions/session_restore.cc
+--- chrome/browser/sessions/session_restore.cc.orig
++++ chrome/browser/sessions/session_restore.cc
+@@ -991,7 +991,7 @@ void SessionRestore::RestoreSessionAfterCrash(Browser*
+ // TODO(stahon@microsoft.com) http://crbug.com/1194201 covers this
+ // being disabled on mac. MacOS will not restore apps on crash restore.
+ #if BUILDFLAG(ENABLE_APP_SESSION_SERVICE)
+-#if !defined(OS_MAC)
++#if !defined(OS_MAC) && !defined(OS_BSD)
+   // Apps should always be restored on crash restore.
+   behavior |= SessionRestore::RESTORE_APPS;
+ #endif

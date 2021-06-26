@@ -1,7 +1,7 @@
 # $OpenBSD$
 
 COMMENT =	minimalist and privacy-oriented WebKitGTK+ browser
-DISTNAME =	badwolf-1.0.0
+DISTNAME =	badwolf-1.0.3
 CATEGORIES =	www x11
 
 HOMEPAGE =	https://hacktivis.me/projects/badwolf
@@ -28,5 +28,7 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 		x11/gtk+3,-guic
 
 FAKE_FLAGS =	DESTDIR= MANDIR="${DESTDIR}${PREFIX}/man"
+
+SUBST_VARS +=	DISTNAME
 
 .include <bsd.port.mk>

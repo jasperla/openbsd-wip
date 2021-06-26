@@ -1,0 +1,13 @@
+$OpenBSD$
+
+Index: audio_convert/CMakeLists.txt
+--- audio_convert/CMakeLists.txt.orig
++++ audio_convert/CMakeLists.txt
+@@ -47,7 +47,6 @@ add_library(audio_converter_plugin ${MODULES_BUILD}
+ ##
+ target_link_libraries(audio_converter_plugin
+       xml_module
+-      dl
+       )
+ ##
+ ## Append to the list of translations

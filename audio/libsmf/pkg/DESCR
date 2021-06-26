@@ -1,0 +1,3 @@
+LibSMF is a BSD-licensed C library for handling SMF ("*.mid") files.
+It transparently handles conversions between time and pulses, tempo map
+handling etc.

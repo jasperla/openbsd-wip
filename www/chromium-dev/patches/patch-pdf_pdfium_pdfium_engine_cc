@@ -1,0 +1,32 @@
+$OpenBSD$
+
+Index: pdf/pdfium/pdfium_engine.cc
+--- pdf/pdfium/pdfium_engine.cc.orig
++++ pdf/pdfium/pdfium_engine.cc
+@@ -85,7 +85,7 @@
+ #include "v8/include/cppgc/platform.h"
+ #endif
+ 
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
+ #include "pdf/pdfium/pdfium_font_linux.h"
+ #endif
+ 
+@@ -517,7 +517,7 @@ void InitializeSDK(bool enable_v8, FontMappingMode fon
+ 
+   FPDF_InitLibraryWithConfig(&config);
+ 
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
+   g_font_mapping_mode = font_mapping_mode;
+   InitializeLinuxFontMapper();
+ #endif
+@@ -4266,7 +4266,7 @@ void PDFiumEngine::RequestThumbnail(int page_index,
+ }
+ 
+ void PDFiumEngine::SetLastInstance() {
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
+   SetLastPepperInstance(client_->GetPluginInstance());
+ #endif
+ }

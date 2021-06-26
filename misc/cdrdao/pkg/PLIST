@@ -1,0 +1,15 @@
+@comment $OpenBSD: PLIST,v 1.8 2015/05/01 06:15:46 ajacoutot Exp $
+@bin bin/cdrdao
+@bin bin/cue2toc
+@bin bin/toc2cddb
+@bin bin/toc2cue
+%%audio%%
+@man man/man1/cdrdao.1
+@man man/man1/cue2toc.1
+@man man/man1/toc2cddb.1
+@man man/man1/toc2cue.1
+share/cdrdao/
+share/cdrdao/drivers
+share/doc/cdrdao/
+share/doc/cdrdao/README
+share/doc/cdrdao/README.PlexDAE

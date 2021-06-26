@@ -1,0 +1,11 @@
+--- src/net/java/textilej/parser/markup/ContentState.java.orig	Thu Nov  5 20:53:39 2020
++++ src/net/java/textilej/parser/markup/ContentState.java	Thu Nov  5 20:54:14 2020
+@@ -73,7 +73,7 @@ public class ContentState implements Locator {
+ 
+ 	/**
+ 	 * Get the 1-based line number of the current line.
+-	 * @return the line number or -1 if it is unknown.
++	 * @return the line number or -1 if it is unknown.
+ 	 */
+ 	public int getLineNumber() {
+ 		return lineNumber;

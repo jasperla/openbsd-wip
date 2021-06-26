@@ -1,0 +1,52 @@
+@comment $OpenBSD: PLIST,v$
+@newgroup _freenet:866
+@newuser _freenet:866:866:daemon:freenet account:${DB_DIR}:/sbin/nologin
+@rcscript ${RCDIR}/freenet
+bin/freenet
+@mode 0700
+@owner _freenet
+@group _freenet
+@sample ${DB_DIR}/
+@mode
+@owner
+@group
+share/freenet/
+share/freenet/conf/
+@mode 0700
+@owner _freenet
+@group _freenet
+@sample ${DB_DIR}/conf/
+@mode
+@owner
+@group
+share/freenet/conf/freenet.ini
+@mode 0700
+@owner _freenet
+@group _freenet
+@sample ${DB_DIR}/conf/freenet.ini
+@mode
+@owner
+@group
+share/freenet/lib/
+share/freenet/lib/bcprov-jdk15on-1.59.jar
+share/freenet/lib/freenet-ext-29.jar
+share/freenet/lib/freenet.jar
+share/freenet/lib/jna-4.5.2.jar
+share/freenet/lib/jna-platform-4.5.2.jar
+share/freenet/noderef/
+@mode 0700
+@owner _freenet
+@group _freenet
+@sample ${DB_DIR}/noderef/
+@mode
+@owner
+@group
+share/freenet/noderef/seednodes.fref
+@mode 0700
+@owner _freenet
+@group _freenet
+@sample ${DB_DIR}/noderef/seednodes.fref
+@mode
+@owner
+@group
+share/freenet/wrapper.config

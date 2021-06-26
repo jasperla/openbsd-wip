@@ -1,0 +1,19 @@
+$OpenBSD$
+
+Index: libopenage/util/pty.h
+--- libopenage/util/pty.h.orig
++++ libopenage/util/pty.h
+@@ -4,11 +4,11 @@
+ 
+ #ifdef __APPLE__
+ #  include <util.h>
+-#elif defined(__FreeBSD__)
++#elif defined(__FreeBSD__) || defined (__OpenBSD__)
+ #  include <sys/types.h>
+ #  include <sys/ioctl.h>
+ #  include <termios.h>
+-#  include <libutil.h>
++#  include <util.h>
+ #elif _WIN32
+ // TODO not yet implemented
+ #else

@@ -1,0 +1,36 @@
+$OpenBSD$
+
+Add flatDir to hold dependencies
+Verification fails for certain dependencies
+
+--- build.gradle.orig	Thu Oct  1 01:43:49 2020
++++ build.gradle	Wed Nov  4 16:04:22 2020
+@@ -1,6 +1,9 @@
+ buildscript {
+     repositories {
+         mavenCentral()
++	flatDir {
++		dirs 'flatRepo'
++	}
+     }
+     dependencies {
+         classpath 'com.android.tools.build:gradle:0.9.+'
+@@ -21,6 +24,9 @@ repositories {
+     mavenLocal() // TODO: use lib/ instead?
+     maven { url 'https://mvn.freenetproject.org' }
+     jcenter()
++    flatDir {
++	dirs 'flatRepo'
++    }
+ }
+ 
+ sourceSets {
+@@ -231,6 +237,8 @@ dependencies {
+     testCompile 'junit:junit:4.12'
+     testCompile "org.mockito:mockito-core:1.9.5"
+     testCompile "org.hamcrest:hamcrest-library:1.3"
++    testCompile "org.hamcrest:hamcrest-core:1.3"
++    testCompile "org.objenesis:objenesis:1.0"
+ }
+ 
+ dependencyVerification {

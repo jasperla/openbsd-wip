@@ -1,0 +1,46 @@
+@comment $OpenBSD: PLIST,v$
+@bin bin/bear
+@bin bin/citnames
+@bin bin/intercept
+@bin libexec/er
+@so libexec/libexec.so
+@bin libexec/wrapper
+libexec/wrapper.d/
+libexec/wrapper.d/ar
+libexec/wrapper.d/as
+libexec/wrapper.d/bison
+libexec/wrapper.d/c++
+libexec/wrapper.d/cc
+libexec/wrapper.d/cpp
+libexec/wrapper.d/ctangle
+libexec/wrapper.d/cweave
+libexec/wrapper.d/f77
+libexec/wrapper.d/flex
+libexec/wrapper.d/g++
+libexec/wrapper.d/gcc
+libexec/wrapper.d/ld
+libexec/wrapper.d/lex
+libexec/wrapper.d/lint
+libexec/wrapper.d/m2c
+libexec/wrapper.d/makeinfo
+libexec/wrapper.d/nm
+libexec/wrapper.d/objcopy
+libexec/wrapper.d/objdump
+libexec/wrapper.d/pc
+libexec/wrapper.d/ranlib
+libexec/wrapper.d/readelf
+libexec/wrapper.d/strip
+libexec/wrapper.d/tangle
+libexec/wrapper.d/tex
+libexec/wrapper.d/tex2dvi
+libexec/wrapper.d/weave
+libexec/wrapper.d/yacc
+@man man/man1/bear.1
+@man man/man1/citnames.1
+@man man/man1/intercept.1
+share/doc/Bear/
+share/doc/Bear/CODE_OF_CONDUCT.md
+share/doc/Bear/CONTRIBUTING.md
+share/doc/Bear/COPYING
+share/doc/Bear/INSTALL.md
+share/doc/Bear/README.md

@@ -1,0 +1,188 @@
+$OpenBSD$
+
+Identify OpenBSD, upstreamed: https://github.com/fortran-lang/fpm/pull/468
+On OpenBSD, gfortran is named egfortran.
+
+Index: fpm-0.2.0.f90
+--- fpm-0.2.0.f90.orig
++++ fpm-0.2.0.f90
+@@ -11645,12 +11645,13 @@ module fpm_environment
+     integer, parameter, public :: OS_CYGWIN  = 4
+     integer, parameter, public :: OS_SOLARIS = 5
+     integer, parameter, public :: OS_FREEBSD = 6
++    integer, parameter, public :: OS_OPENBSD = 7
+ contains
+     !> Determine the OS type
+     integer function get_os_type() result(r)
+         !!
+         !! Returns one of OS_UNKNOWN, OS_LINUX, OS_MACOS, OS_WINDOWS, OS_CYGWIN,
+-        !! OS_SOLARIS, OS_FREEBSD.
++        !! OS_SOLARIS, OS_FREEBSD, OS_OPENBSD.
+         !!
+         !! At first, the environment variable `OS` is checked, which is usually
+         !! found on Windows. Then, `OSTYPE` is read in and compared with common
+@@ -11711,6 +11712,12 @@ contains
+                 r = OS_FREEBSD
+                 return
+             end if
++
++            ! OpenBSD
++            if (index(val, 'OpenBSD') > 0 .or. index(val, 'openbsd') > 0) then
++                r = OS_OPENBSD
++                return
++            end if
+         end if
+ 
+         ! Linux
+@@ -13401,7 +13408,7 @@ module fpm_filesystem
+ use,intrinsic :: iso_fortran_env, only : stdin=>input_unit, stdout=>output_unit, stderr=>error_unit
+     use fpm_environment, only: get_os_type, &
+                                OS_UNKNOWN, OS_LINUX, OS_MACOS, OS_WINDOWS, &
+-                               OS_CYGWIN, OS_SOLARIS, OS_FREEBSD
++                               OS_CYGWIN, OS_SOLARIS, OS_FREEBSD, OS_OPENBSD
+     use fpm_strings, only: f_string, replace, string_t, split
+     implicit none
+     private
+@@ -13589,7 +13596,7 @@ logical function is_dir(dir)
+ 
+     select case (get_os_type())
+ 
+-    case (OS_UNKNOWN, OS_LINUX, OS_MACOS, OS_CYGWIN, OS_SOLARIS, OS_FREEBSD)
++    case (OS_UNKNOWN, OS_LINUX, OS_MACOS, OS_CYGWIN, OS_SOLARIS, OS_FREEBSD, OS_OPENBSD)
+         call execute_command_line("test -d " // dir , exitstat=stat)
+ 
+     case (OS_WINDOWS)
+@@ -13611,7 +13618,7 @@ function join_path(a1,a2,a3,a4,a5) result(path)
+     character(len=1)                       :: filesep
+ 
+     select case (get_os_type())
+-        case (OS_UNKNOWN, OS_LINUX, OS_MACOS, OS_CYGWIN, OS_SOLARIS, OS_FREEBSD)
++        case (OS_UNKNOWN, OS_LINUX, OS_MACOS, OS_CYGWIN, OS_SOLARIS, OS_FREEBSD, OS_OPENBSD)
+             filesep = '/'
+         case (OS_WINDOWS)
+             filesep = '\'
+@@ -13680,7 +13687,7 @@ subroutine mkdir(dir)
+     if (is_dir(dir)) return
+ 
+     select case (get_os_type())
+-        case (OS_UNKNOWN, OS_LINUX, OS_MACOS, OS_CYGWIN, OS_SOLARIS, OS_FREEBSD)
++        case (OS_UNKNOWN, OS_LINUX, OS_MACOS, OS_CYGWIN, OS_SOLARIS, OS_FREEBSD, OS_OPENBSD)
+             call execute_command_line('mkdir -p ' // dir, exitstat=stat)
+             write (*, '(" + ",2a)') 'mkdir -p ' // dir
+ 
+@@ -13719,7 +13726,7 @@ recursive subroutine list_files(dir, files, recurse)
+     allocate (temp_file, source=get_temp_filename())
+ 
+     select case (get_os_type())
+-        case (OS_UNKNOWN, OS_LINUX, OS_MACOS, OS_CYGWIN, OS_SOLARIS, OS_FREEBSD)
++        case (OS_UNKNOWN, OS_LINUX, OS_MACOS, OS_CYGWIN, OS_SOLARIS, OS_FREEBSD, OS_OPENBSD)
+             call execute_command_line('ls -A ' // dir // ' > ' // temp_file, &
+                                       exitstat=stat)
+         case (OS_WINDOWS)
+@@ -17728,7 +17735,7 @@ function get_compiler_id(compiler) result(id)
+     character(len=*), intent(in) :: compiler
+     integer(kind=compiler_enum) :: id
+ 
+-    if (check_compiler(compiler, "gfortran")) then
++    if (check_compiler(compiler, "egfortran")) then
+         id = id_gcc
+         return
+     end if
+@@ -18876,7 +18883,7 @@ end module fpm_targets
+ module fpm_command_line
+ use fpm_environment,  only : get_os_type, get_env, &
+                              OS_UNKNOWN, OS_LINUX, OS_MACOS, OS_WINDOWS, &
+-                             OS_CYGWIN, OS_SOLARIS, OS_FREEBSD
++                             OS_CYGWIN, OS_SOLARIS, OS_FREEBSD, OS_OPENBSD
+ use M_CLI2,           only : set_args, lget, sget, unnamed, remaining, specified
+ use fpm_strings,      only : lower, split, fnv_1a
+ use fpm_filesystem,   only : basename, canon_path, to_fortran_name
+@@ -18980,6 +18987,7 @@ contains
+             case (OS_CYGWIN);  os_type =  "OS Type:     Cygwin"
+             case (OS_SOLARIS); os_type =  "OS Type:     Solaris"
+             case (OS_FREEBSD); os_type =  "OS Type:     FreeBSD"
++            case (OS_OPENBSD); os_type =  "OS Type:     OpenBSD"
+             case (OS_UNKNOWN); os_type =  "OS Type:     Unknown"
+             case default     ; os_type =  "OS Type:     UNKNOWN"
+         end select
+@@ -19010,7 +19018,7 @@ contains
+             & --profile " "&
+             & --example F&
+             & --runner " " &
+-            & --compiler "'//get_env('FPM_COMPILER','gfortran')//'" &
++            & --compiler "'//get_env('FPM_COMPILER','egfortran')//'" &
+             & --flag:: " "&
+             & --verbose F&
+             & --',help_run,version_text)
+@@ -19060,7 +19068,7 @@ contains
+             & --profile " " &
+             & --list F &
+             & --show-model F &
+-            & --compiler "'//get_env('FPM_COMPILER','gfortran')//'" &
++            & --compiler "'//get_env('FPM_COMPILER','egfortran')//'" &
+             & --flag:: " "&
+             & --verbose F&
+             & --',help_build,version_text)
+@@ -19198,7 +19206,7 @@ contains
+         case('install')
+             call set_args('--profile " " --no-rebuild F --verbose F --prefix " " &
+                 & --list F &
+-                & --compiler "'//get_env('FPM_COMPILER','gfortran')//'" &
++                & --compiler "'//get_env('FPM_COMPILER','egfortran')//'" &
+                 & --flag:: " "&
+                 & --libdir "lib" --bindir "bin" --includedir "include"', &
+                 help_install, version_text)
+@@ -19235,7 +19243,7 @@ contains
+             & --list F&
+             & --profile " "&
+             & --runner " " &
+-            & --compiler "'//get_env('FPM_COMPILER','gfortran')//'" &
++            & --compiler "'//get_env('FPM_COMPILER','egfortran')//'" &
+             & --flag:: " "&
+             & --verbose F&
+             & --',help_test,version_text)
+@@ -19319,7 +19327,7 @@ contains
+ 
+         val_compiler=sget('compiler')
+         if(val_compiler.eq.'') then
+-            val_compiler='gfortran'
++            val_compiler='egfortran'
+         endif
+ 
+         val_flag = " " // sget('flag')
+@@ -19629,7 +19637,7 @@ contains
+     '                   Note object and .mod directory locations are always',&
+     '                   built in.',&
+     ' --compiler COMPILER_NAME  Specify a compiler name. The default is     ', &
+-    '                           "gfortran" unless set by the environment    ', &
++    '                           "egfortran" unless set by the environment   ', &
+     '                           variable FPM_COMPILER.                      ', &
+     ' --runner CMD  A command to prefix the program execution paths with.   ', &
+     '               see "fpm help runner" for further details.              ', &
+@@ -19701,7 +19709,7 @@ contains
+     '                   Note object and .mod directory locations are always',&
+     '                   built in.',&
+     ' --compiler   COMPILER_NAME  Specify a compiler name. The default is   ', &
+-    '                           "gfortran" unless set by the environment    ', &
++    '                           "egfortran" unless set by the environment   ', &
+     '                           variable FPM_COMPILER.                      ', &
+     ' --list       list candidates instead of building or running them      ', &
+     ' --show-model show the model and exit (do not build)                   ', &
+@@ -19884,7 +19892,7 @@ contains
+     '                   Note object and .mod directory locations are always',&
+     '                   built in.',&
+     ' --compiler COMPILER_NAME  Specify a compiler name. The default is     ', &
+-    '                           "gfortran" unless set by the environment    ', &
++    '                           "egfortran" unless set by the environment   ', &
+     '                           variable FPM_COMPILER.                      ', &
+     ' --runner CMD  A command to prefix the program execution paths with.   ', &
+     '               see "fpm help runner" for further details.              ', &
+@@ -21247,7 +21255,7 @@ subroutine build_model(model, settings, package, error
+     if (allocated(error)) return
+ 
+     if(settings%compiler.eq.'')then
+-        model%fortran_compiler = 'gfortran'
++        model%fortran_compiler = 'egfortran'
+     else
+         model%fortran_compiler = settings%compiler
+     endif

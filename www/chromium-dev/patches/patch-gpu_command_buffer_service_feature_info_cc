@@ -1,0 +1,14 @@
+$OpenBSD$
+
+Index: gpu/command_buffer/service/feature_info.cc
+--- gpu/command_buffer/service/feature_info.cc.orig
++++ gpu/command_buffer/service/feature_info.cc
+@@ -278,7 +278,7 @@ void FeatureInfo::InitializeForTesting(ContextType con
+ }
+ 
+ bool IsGL_REDSupportedOnFBOs() {
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
+   DCHECK(glGetError() == GL_NO_ERROR);
+   // Skia uses GL_RED with frame buffers, unfortunately, Mesa claims to support
+   // GL_EXT_texture_rg, but it doesn't support it on frame buffers.  To fix

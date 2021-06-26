@@ -1,0 +1,10 @@
+bOPNMIDI is a free Software MIDI synthesizer library with OPN2
+and OPNA emulation.
+
+Key features:
+* OPL2 emulation
+* Rudimentary OPNA emulation
+* Stereo sound
+* Pitch-bender with adjustable range
+* Vibrato that responds to RPN/NRPN parameters
+* MIDI and RMI file support

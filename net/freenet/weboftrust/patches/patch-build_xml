@@ -1,0 +1,23 @@
+$OpenBSD$
+
+Index: build.xml
+--- build.xml.orig
++++ build.xml
+@@ -135,7 +135,7 @@
+ 		</exec>
+ 	</target>
+ 
+-	<target name="db4o" depends="get-submodules" description="Compiles the database submodule">
++	<target name="db4o" description="Compiles the database submodule">
+ 		<echo>Compiling db4o submodule...</echo>
+ 		<ant dir="${db4o-submodule.location}" inheritAll="false" useNativeBasedir="true">
+ 			<property name="javac.source.version" value="${source-version}"/>
+@@ -143,7 +143,7 @@
+ 		</ant>
+ 	</target>
+ 
+-	<target name="clean-db4o" depends="get-submodules" description="Cleans the database submodule">
++	<target name="clean-db4o" description="Cleans the database submodule">
+ 		<echo>Cleaning db4o submodule...</echo>
+ 		<ant dir="${db4o-submodule.location}" target="clean" inheritAll="false"
+ 			useNativeBasedir="true"/>

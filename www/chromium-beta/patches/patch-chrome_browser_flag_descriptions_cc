@@ -1,0 +1,59 @@
+$OpenBSD$
+
+Index: chrome/browser/flag_descriptions.cc
+--- chrome/browser/flag_descriptions.cc.orig
++++ chrome/browser/flag_descriptions.cc
+@@ -5010,7 +5010,7 @@ const char kInstallableInkDropDescription[] =
+ // Random platform combinations -----------------------------------------------
+ 
+ #if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || \
+-    defined(OS_CHROMEOS)
++    defined(OS_CHROMEOS) || defined(OS_BSD)
+ 
+ const char kEnableOopPrintDriversName[] =
+     "Enables Out-of-Process Printer Drivers";
+@@ -5036,7 +5036,7 @@ const char kSettingsLandingPageRedesignDescription[] =
+ #endif  // defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) ||
+         // defined(OS_CHROMEOS)
+ 
+-#if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX)
++#if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || defined(OS_BSD)
+ 
+ const char kCommanderName[] = "Commander";
+ const char kCommanderDescription[] =
+@@ -5054,7 +5054,7 @@ const char kDesktopDetailedLanguageSettingsDescription
+ 
+ #endif  // defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX)
+ 
+-#if defined(OS_CHROMEOS) || defined(OS_LINUX)
++#if defined(OS_CHROMEOS) || defined(OS_LINUX) || defined(OS_BSD)
+ #if BUILDFLAG(USE_TCMALLOC)
+ const char kDynamicTcmallocName[] = "Dynamic Tcmalloc Tuning";
+ const char kDynamicTcmallocDescription[] =
+@@ -5079,7 +5079,7 @@ const char kWebShareDescription[] =
+ 
+ // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
+ // of lacros-chrome is complete.
+-#if defined(OS_WIN) || (defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)) || \
++#if defined(OS_WIN) || (defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || defined(OS_BSD)) || \
+     defined(OS_MAC)
+ const char kEnableEphemeralGuestProfilesOnDesktopName[] =
+     "Enable ephemeral Guest profiles on Desktop";
+@@ -5088,7 +5088,7 @@ const char kEnableEphemeralGuestProfilesOnDesktopDescr
+ #endif  // defined(OS_WIN) || (defined(OS_LINUX) ||
+         // BUILDFLAG(IS_CHROMEOS_LACROS)) || defined(OS_MAC)
+ 
+-#if defined(OS_LINUX) && defined(USE_OZONE)
++#if (defined(OS_BSD) || defined(OS_LINUX)) && defined(USE_OZONE)
+ const char kUseOzonePlatformName[] = "Use ozone.";
+ const char kUseOzonePlatformDescription[] =
+     "Use the Ozone/X11 platform implementation on X11.";
+@@ -5187,7 +5187,7 @@ const char kSendWebUIJavaScriptErrorReportsDescription
+     "will be sent to Google.";
+ #endif
+ 
+-#if defined(OS_WIN) || (defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)) || \
++#if defined(OS_WIN) || (defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || defined(OS_BSD)) || \
+     defined(OS_MAC)
+ const char kUIDebugToolsName[] = "Debugging tools for UI";
+ const char kUIDebugToolsDescription[] =

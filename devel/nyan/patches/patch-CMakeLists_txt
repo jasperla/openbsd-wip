@@ -1,0 +1,13 @@
+$OpenBSD$
+
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -56,7 +56,6 @@ string(TOUPPER "CMAKE_CXX_FLAGS_${CMAKE_BUILD_TYPE}" B
+ 
+ if(NOT MSVC)
+ 	set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wextra -pedantic")
+-	set(CMAKE_CXX_FLAGS_RELEASE "-O3")
+ 	set(CMAKE_CXX_FLAGS_DEBUG "-O0 -ggdb3")
+ endif()
+ 

@@ -1,0 +1,13 @@
+$OpenBSD$
+
+Index: nyxt-quicklisp.asd
+--- nyxt-quicklisp.asd.orig
++++ nyxt-quicklisp.asd
+@@ -67,7 +67,6 @@
+   (format t "; CL_SOURCE_REGISTRY: ~s~%" (uiop:getenv "CL_SOURCE_REGISTRY")))
+ 
+ (defsystem "nyxt-quicklisp"
+-  :depends-on (nyxt-quicklisp/submodules)
+   :perform (compile-op (o c)
+                        (load-quicklisp c)
+                        (register-submodules c)

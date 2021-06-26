@@ -1,0 +1,4 @@
+The Freenet plugin Web of Trust (WoT) tries to solve the problem of spam being
+an important threat to address in an anonymous, censorship-resistant network:
+Where an attacker cannot take down content they will attempt to get rid of it by
+drowning it in spam.

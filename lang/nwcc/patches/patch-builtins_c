@@ -1,0 +1,16 @@
+$OpenBSD$
+
+Add a missing NULL check to prevent a segfault.
+
+Index: builtins.c
+--- builtins.c.orig
++++ builtins.c
+@@ -195,7 +195,7 @@ builtin_parse_va_end(struct token **tok, struct fcall_
+ 	if ((ex = parse_expr(&t, TOK_PAREN_CLOSE, 0, 0 ,1)) == NULL) {
+ 		return -1;
+ 	}
+-	if (ex->op != 0 || ex->data->meat->type != TOK_IDENTIFIER) {
++	if (ex->op != 0 || (ex->data && ex->data->meat && (ex->data->meat->type != TOK_IDENTIFIER))) {
+ 		errorfl(t, "Bad second argument to va_start() - "
+ 			"Identifier expected");
+ 		return -1;

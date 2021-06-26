@@ -1,0 +1,10 @@
+@comment $OpenBSD: PLIST,v$
+@bin bin/dgvalidator
+@bin bin/drumgizmo
+lib/lv2/
+lib/lv2/drumgizmo.lv2/
+lib/lv2/drumgizmo.lv2/drumgizmo.a
+@so lib/lv2/drumgizmo.lv2/drumgizmo.so
+lib/lv2/drumgizmo.lv2/manifest.ttl
+@man man/man1/dgvalidator.1
+@man man/man1/drumgizmo.1

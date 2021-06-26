@@ -1,0 +1,16 @@
+@comment $OpenBSD: PLIST,v$
+@bin bin/cl
+include/cliquer/
+include/cliquer/cliquer.h
+include/cliquer/cliquerconf.h
+include/cliquer/graph.h
+include/cliquer/misc.h
+include/cliquer/reorder.h
+include/cliquer/set.h
+@static-lib lib/libcliquer.a
+lib/libcliquer.la
+@lib lib/libcliquer.so.${LIBcliquer_VERSION}
+share/cliquer/
+share/cliquer/testcase-large-w.b
+share/cliquer/testcase-large.b
+share/cliquer/testcase-small.a

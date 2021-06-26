@@ -1,0 +1,12 @@
+$OpenBSD: patch-third_party_node_node_py,v 1.2 2020/10/22 13:52:55 robert Exp $
+Index: third_party/node/node.py
+--- third_party/node/node.py.orig
++++ third_party/node/node.py
+@@ -20,6 +20,7 @@ def GetBinaryPath():
+   return os_path.join(os_path.dirname(__file__), *{
+     'Darwin': ('mac', 'node-darwin-x64', 'bin', 'node'),
+     'Linux': ('linux', 'node-linux-x64', 'bin', 'node'),
++    'OpenBSD': ('openbsd', 'node-openbsd', 'bin', 'node'),
+     'Windows': ('win', 'node.exe'),
+   }[platform.system()])
+ 

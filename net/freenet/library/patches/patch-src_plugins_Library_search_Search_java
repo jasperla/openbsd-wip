@@ -1,0 +1,39 @@
+$OpenBSD$
+
+Remove non-ASCII characters
+
+--- src/plugins/Library/search/Search.java.orig	Fri Nov  6 17:26:59 2020
++++ src/plugins/Library/search/Search.java	Fri Nov  6 17:31:00 2020
+@@ -287,7 +287,7 @@ public class Search extends AbstractExecution<Set<Term
+ 		while (nextPhrase.find())
+ 		{
+ 			String phrase = nextPhrase.group(1);
+-			nextPhrase.appendReplacement(sb, "£"+phrases.size()+"€");
++			nextPhrase.appendReplacement(sb, ""+phrases.size()+"");
+ 			phrases.add(phrase);
+ 		}
+ 		nextPhrase.appendTail(sb);
+@@ -304,7 +304,7 @@ public class Search extends AbstractExecution<Set<Term
+ 		while (nextPhrase.find())
+ 		{
+ 			String phrase = nextPhrase.group(1);
+-			nextPhrase.appendReplacement(sb, "£"+phrases.size()+"€");
++			nextPhrase.appendReplacement(sb, ""+phrases.size()+"");
+ 			phrases.add(phrase);
+ 		}
+ 		nextPhrase.appendTail(sb);
+@@ -321,12 +321,12 @@ public class Search extends AbstractExecution<Set<Term
+ 		if(logMINOR) Logger.minor(Search.class, "AND-subst query : "+formattedquery);
+ 
+ 		// Put phrases back in
+-		String[] phraseparts=formattedquery.split("£");
++		String[] phraseparts=formattedquery.split("");
+ 		formattedquery=phraseparts[0];
+ 		for (int i = 1; i < phraseparts.length; i++) {
+ 			String string = phraseparts[i];
+ 			if(logMINOR) Logger.minor(Search.class, "replacing phrase "+string.replaceFirst("(\\d+).*", "$1"));
+-			formattedquery += "\""+ phrases.get(Integer.parseInt(string.replaceFirst("(\\d+).*", "$1"))) +"\"" + string.replaceFirst("\\d+€(.*)", "$1");
++			formattedquery += "\""+ phrases.get(Integer.parseInt(string.replaceFirst("(\\d+).*", "$1"))) +"\"" + string.replaceFirst("\\d+(.*)", "$1");
+ 		}
+ 		if(logMINOR) Logger.minor(Search.class, "Phrase back query: "+formattedquery);
+ 

@@ -1,0 +1,21 @@
+$OpenBSD$
+
+Index: dmd-2.097.0/src/build.d
+--- dmd-2.097.0/src/build.d.orig
++++ dmd-2.097.0/src/build.d
+@@ -281,6 +281,7 @@ alias lexer = makeRuleWithArgs!((MethodInitializer!Bui
+         "-c",
+         "-of" ~ rule.target,
+         "-vtls",
++        "-L-L" ~ env["RES"] ~ "/../../dmd-2.097.0-bootstrap/openbsd/lib64",
+         "-J" ~ env["RES"]]
+         .chain(flags["DFLAGS"],
+             extraFlags,
+@@ -429,6 +430,7 @@ alias dmdExe = makeRuleWithArgs!((MethodInitializer!Bu
+             env["HOST_DMD_RUN"],
+             "-of" ~ rule.target,
+             "-vtls",
++            "-L-L" ~ env["RES"] ~ "/../../dmd-2.097.0-bootstrap/openbsd/lib64",
+             "-J" ~ env["RES"],
+             ].chain(extraFlags, platformArgs, flags["DFLAGS"],
+                 // source files need to have relative paths in order for the code coverage

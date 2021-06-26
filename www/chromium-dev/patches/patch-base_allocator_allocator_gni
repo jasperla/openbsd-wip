@@ -1,0 +1,14 @@
+$OpenBSD$
+
+Index: base/allocator/allocator.gni
+--- base/allocator/allocator.gni.orig
++++ base/allocator/allocator.gni
+@@ -6,7 +6,7 @@ import("//build/config/chromecast_build.gni")
+ import("//build/config/sanitizers/sanitizers.gni")
+ 
+ # Sanitizers replace the allocator, don't use our own.
+-_is_using_sanitizers = is_asan || is_hwasan || is_lsan || is_tsan || is_msan
++_is_using_sanitizers = is_asan || is_hwasan || is_lsan || is_tsan || is_msan || is_openbsd
+ 
+ # - Windows: shims don't work for component builds and debug CRT is not
+ # compatible, see below.

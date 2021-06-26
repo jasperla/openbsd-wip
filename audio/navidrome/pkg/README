@@ -1,0 +1,12 @@
+$OpenBSD: README,v 1.1.1.1 2018/12/18 11:58:21 edd Exp $
+
++-----------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-----------------------------------------------------------------------
+
+Web Interface
+=============
+
+${PKGSTEM} serves up a web interface on:
+
+	 http://localhost:4533

@@ -1,0 +1,24 @@
+$OpenBSD: patch-content_common_user_agent_cc,v 1.15 2021/01/20 07:28:09 robert Exp $
+
+Append Linux x86_64 to the user agent because we have to lie ...
+
+Index: content/common/user_agent.cc
+--- content/common/user_agent.cc.orig
++++ content/common/user_agent.cc
+@@ -238,6 +238,16 @@ std::string BuildOSCpuInfoFromOSVersionAndCpuType(cons
+   );
+ #endif
+ 
++#if defined(OS_OPENBSD)
++#if defined(__x86_64__)
++  base::StringAppendF(&os_cpu, "; Linux x86_64");
++#elif defined(__aarch64__)
++  base::StringAppendF(&os_cpu, "; Linux aarch64");
++#else
++  base::StringAppendF(&os_cpu, "; Linux i686");
++#endif
++#endif
++
+   return os_cpu;
+ }
+ 

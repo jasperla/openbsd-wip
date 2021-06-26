@@ -1,0 +1,13 @@
+$OpenBSD$
+
+Index: synti/libsimpleplugin/CMakeLists.txt
+--- synti/libsimpleplugin/CMakeLists.txt.orig
++++ synti/libsimpleplugin/CMakeLists.txt
+@@ -88,7 +88,6 @@ target_link_libraries(simpler_plugingui
+ target_link_libraries(simpler_plugin
+       plugin_cache_reader_module
+       ${QT_LIBRARIES}
+-      dl
+       )
+ 
+ ##

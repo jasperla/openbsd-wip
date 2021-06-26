@@ -1,0 +1,14 @@
+$OpenBSD$
+
+Index: src/mixer.cc
+--- src/mixer.cc.orig
++++ src/mixer.cc
+@@ -51,7 +51,7 @@
+ #include <unistd.h>
+ #endif
+ 
+-#define MIXER_DEV "/dev/mixer"
++#define MIXER_DEV "/dev/null"
+ 
+ static int mixer_fd;
+ static const char *devs[] = SOUND_DEVICE_NAMES;

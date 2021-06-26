@@ -1,0 +1,9 @@
+MusE is a Audio sequencer with recording and editing functionality.
+It aims to be a complete multitrack virtual studio with plugin support
+and automation.
+
+Features:
+* Realtime record/playback
+* Plugin support through VST, LV2 and LADSPA
+* Support for multi channel synths
+* External scripting support

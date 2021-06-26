@@ -1,0 +1,13 @@
+$OpenBSD$
+
+Index: muse/CMakeLists.txt
+--- muse/CMakeLists.txt.orig
++++ muse/CMakeLists.txt
+@@ -314,7 +314,6 @@ target_link_libraries(core
+       ${SAMPLERATE_LIBRARIES}
+       ${REM_LIB}
+       ${FST_LIB}
+-      dl
+       )
+ 
+ if(HAVE_LASH)

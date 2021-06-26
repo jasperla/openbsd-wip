@@ -1,0 +1,11 @@
+$OpenBSD$
+
+Index: bootstrap.sh
+--- bootstrap.sh.orig
++++ bootstrap.sh
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env bash
++#!/usr/bin/env sh
+ 
+ set -e
+ 

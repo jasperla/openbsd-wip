@@ -1,0 +1,3 @@
+unison-gitignore is a wrapper around Unison which walks the supplied paths,
+finding gitignore files, and passing those to Unison as ignore patterns.
+Arguments passed to unison-gitignore are passed to Unison unchanged.

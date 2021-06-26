@@ -1,0 +1,12 @@
+Cliquer is a set of C routines for finding cliques in an arbitrary weighted
+graph. The main features of Cliquer include:
+
+- support for both weighted and unweighted graphs (faster routines for
+  unweighted graphs)
+- search for maximum cliques / maximum-weight cliques
+- search for cliques with size / weight within a given range
+- restrict the search to maximal cliques
+- store cliques in memory
+- call a user-defined function for every clique found
+- Cliquer is re-entrant, so you can use the clique-searching functions
+  from within the callback function

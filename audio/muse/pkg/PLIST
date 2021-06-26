@@ -1,0 +1,405 @@
+@comment $OpenBSD: PLIST,v$
+@bin bin/grepmidi
+@bin bin/muse4
+@bin bin/muse_plugin_scan
+lib/muse-4.0/
+lib/muse-4.0/converters/
+@so lib/muse-4.0/converters/rubberband_converter.so
+@so lib/muse-4.0/converters/src_converter.so
+@so lib/muse-4.0/converters/zita_resampler_converter.so
+lib/muse-4.0/modules/
+@so lib/muse-4.0/modules/libaudio_converter_plugin.so
+@so lib/muse-4.0/modules/libmuse_al.so
+@so lib/muse-4.0/modules/libmuse_arranger.so
+@so lib/muse-4.0/modules/libmuse_audio_convert.so
+@so lib/muse-4.0/modules/libmuse_awl.so
+@so lib/muse-4.0/modules/libmuse_cliplist.so
+@so lib/muse-4.0/modules/libmuse_components.so
+@so lib/muse-4.0/modules/libmuse_core.so
+@so lib/muse-4.0/modules/libmuse_ctrl.so
+@so lib/muse-4.0/modules/libmuse_driver.so
+@so lib/muse-4.0/modules/libmuse_evdata_module.so
+@so lib/muse-4.0/modules/libmuse_icons.so
+@so lib/muse-4.0/modules/libmuse_instruments.so
+@so lib/muse-4.0/modules/libmuse_latency_compensator_module.so
+@so lib/muse-4.0/modules/libmuse_liste.so
+@so lib/muse-4.0/modules/libmuse_lv2_gtk2_support.so
+@so lib/muse-4.0/modules/libmuse_lv2host_module.so
+@so lib/muse-4.0/modules/libmuse_marker.so
+@so lib/muse-4.0/modules/libmuse_master.so
+@so lib/muse-4.0/modules/libmuse_memory_module.so
+@so lib/muse-4.0/modules/libmuse_midi_controller_module.so
+@so lib/muse-4.0/modules/libmuse_midiedit.so
+@so lib/muse-4.0/modules/libmuse_midnam_module.so
+@so lib/muse-4.0/modules/libmuse_mixer.so
+@so lib/muse-4.0/modules/libmuse_mpevent_module.so
+@so lib/muse-4.0/modules/libmuse_mplugins.so
+@so lib/muse-4.0/modules/libmuse_plugin_cache_reader_module.so
+@so lib/muse-4.0/modules/libmuse_plugin_cache_writer_module.so
+@so lib/muse-4.0/modules/libmuse_plugin_list_module.so
+@so lib/muse-4.0/modules/libmuse_plugin_rdf_module.so
+@so lib/muse-4.0/modules/libmuse_plugin_scan_module.so
+@so lib/muse-4.0/modules/libmuse_remote.so
+@so lib/muse-4.0/modules/libmuse_simpler_plugin.so
+@so lib/muse-4.0/modules/libmuse_simpler_plugingui.so
+@so lib/muse-4.0/modules/libmuse_string.so
+@so lib/muse-4.0/modules/libmuse_synti.so
+@so lib/muse-4.0/modules/libmuse_sysex_helper_module.so
+@so lib/muse-4.0/modules/libmuse_time_stretch_module.so
+@so lib/muse-4.0/modules/libmuse_wave_module.so
+@so lib/muse-4.0/modules/libmuse_waveedit.so
+@so lib/muse-4.0/modules/libmuse_wavepreview_module.so
+@so lib/muse-4.0/modules/libmuse_widgets.so
+@so lib/muse-4.0/modules/libmuse_widgets_functiondialogs.so
+@so lib/muse-4.0/modules/libmuse_xml_module.so
+lib/muse-4.0/plugins/
+@so lib/muse-4.0/plugins/doublechorus.so
+@so lib/muse-4.0/plugins/freeverb.so
+@so lib/muse-4.0/plugins/pandelay.so
+lib/muse-4.0/synthi/
+@so lib/muse-4.0/synthi/deicsonze.so
+@so lib/muse-4.0/synthi/fluid_synth.so
+@so lib/muse-4.0/synthi/organ.so
+@so lib/muse-4.0/synthi/vam.so
+@man man/man1/grepmidi.1
+@man man/man1/muse4.1
+share/applications/org.musesequencer.Muse4.desktop
+share/doc/muse-4.0/
+share/doc/muse-4.0/AUTHORS
+share/doc/muse-4.0/COPYING
+share/doc/muse-4.0/ChangeLog
+share/doc/muse-4.0/README
+share/doc/muse-4.0/README.developer
+share/doc/muse-4.0/README.developer.undo_system
+share/doc/muse-4.0/README.ladspaguis
+share/doc/muse-4.0/README.softsynth
+share/doc/muse-4.0/README.vstsdk
+share/doc/muse-4.0/README.win32
+share/doc/muse-4.0/SECURITY
+share/doc/muse-4.0/deicsonze/
+share/doc/muse-4.0/deicsonze/README
+share/doc/muse-4.0/deicsonze/TODO
+share/doc/muse-4.0/fluidsynth/
+share/doc/muse-4.0/fluidsynth/README.txt
+share/doc/muse-4.0/fluidsynth/TODO
+share/doc/muse-4.0/freeverb/
+share/doc/muse-4.0/freeverb/readme.txt
+share/doc/muse-4.0/libdivide_LICENSE
+share/doc/muse-4.0/muse_html/
+share/doc/muse-4.0/muse_html/single/
+share/doc/muse-4.0/muse_html/single/developer_docs/
+share/doc/muse-4.0/muse_html/single/developer_docs/developer_docs.css
+share/doc/muse-4.0/muse_html/single/developer_docs/developer_docs.html
+share/doc/muse-4.0/muse_html/single/developer_docs/img1.png
+share/doc/muse-4.0/muse_html/single/developer_docs/img2.png
+share/doc/muse-4.0/muse_html/single/developer_docs/img3.png
+share/doc/muse-4.0/muse_html/single/developer_docs/index.html
+share/doc/muse-4.0/muse_html/single/documentation/
+share/doc/muse-4.0/muse_html/single/documentation/arrow_tool.png
+share/doc/muse-4.0/muse_html/single/documentation/documentation.css
+share/doc/muse-4.0/muse_html/single/documentation/documentation.html
+share/doc/muse-4.0/muse_html/single/documentation/img1.png
+share/doc/muse-4.0/muse_html/single/documentation/index.html
+share/doc/muse-4.0/muse_html/single/documentation/main_window_add_track.png
+share/doc/muse-4.0/muse_html/single/documentation/main_window_annotated.png
+share/doc/muse-4.0/muse_html/single/documentation/main_window_with_arrangement.png
+share/doc/muse-4.0/muse_html/single/documentation/main_window_with_automation.png
+share/doc/muse-4.0/muse_html/single/documentation/main_window_with_midi_automation.png
+share/doc/muse-4.0/muse_html/single/documentation/main_window_with_midi_editor_vam.png
+share/doc/muse-4.0/muse_html/single/documentation/midi_config_window.png
+share/doc/muse-4.0/muse_html/single/documentation/midi_routing_matrix.png
+share/doc/muse-4.0/muse_html/single/documentation/mixer.png
+share/doc/muse-4.0/muse_html/single/documentation/mixer_with_one_input.png
+share/doc/muse-4.0/muse_html/single/documentation/mixer_with_one_input_buttons.png
+share/doc/muse-4.0/muse_html/single/documentation/muse2.png
+share/doc/muse-4.0/muse_html/single/documentation/no_audio.png
+share/doc/muse-4.0/muse_html/single/documentation/output_routing.png
+share/doc/muse-4.0/muse_html/single/documentation/project_my_first_song.png
+share/doc/muse-4.0/muse_html/single/documentation/soloing_window.png
+share/doc/muse-4.0/muse_html/single/documentation/vam_synth.png
+share/doc/muse-4.0/muse_html/split/
+share/doc/muse-4.0/muse_html/split/developer_docs/
+share/doc/muse-4.0/muse_html/split/developer_docs/developer_docs.css
+share/doc/muse-4.0/muse_html/split/developer_docs/developer_docs.html
+share/doc/muse-4.0/muse_html/split/developer_docs/img1.png
+share/doc/muse-4.0/muse_html/split/developer_docs/img2.png
+share/doc/muse-4.0/muse_html/split/developer_docs/img3.png
+share/doc/muse-4.0/muse_html/split/developer_docs/index.html
+share/doc/muse-4.0/muse_html/split/developer_docs/node1.html
+share/doc/muse-4.0/muse_html/split/developer_docs/node10.html
+share/doc/muse-4.0/muse_html/split/developer_docs/node11.html
+share/doc/muse-4.0/muse_html/split/developer_docs/node12.html
+share/doc/muse-4.0/muse_html/split/developer_docs/node13.html
+share/doc/muse-4.0/muse_html/split/developer_docs/node14.html
+share/doc/muse-4.0/muse_html/split/developer_docs/node15.html
+share/doc/muse-4.0/muse_html/split/developer_docs/node2.html
+share/doc/muse-4.0/muse_html/split/developer_docs/node3.html
+share/doc/muse-4.0/muse_html/split/developer_docs/node4.html
+share/doc/muse-4.0/muse_html/split/developer_docs/node5.html
+share/doc/muse-4.0/muse_html/split/developer_docs/node6.html
+share/doc/muse-4.0/muse_html/split/developer_docs/node7.html
+share/doc/muse-4.0/muse_html/split/developer_docs/node8.html
+share/doc/muse-4.0/muse_html/split/developer_docs/node9.html
+share/doc/muse-4.0/muse_html/split/documentation/
+share/doc/muse-4.0/muse_html/split/documentation/arrow_tool.png
+share/doc/muse-4.0/muse_html/split/documentation/documentation.css
+share/doc/muse-4.0/muse_html/split/documentation/documentation.html
+share/doc/muse-4.0/muse_html/split/documentation/img1.png
+share/doc/muse-4.0/muse_html/split/documentation/index.html
+share/doc/muse-4.0/muse_html/split/documentation/main_window_add_track.png
+share/doc/muse-4.0/muse_html/split/documentation/main_window_annotated.png
+share/doc/muse-4.0/muse_html/split/documentation/main_window_with_arrangement.png
+share/doc/muse-4.0/muse_html/split/documentation/main_window_with_automation.png
+share/doc/muse-4.0/muse_html/split/documentation/main_window_with_midi_automation.png
+share/doc/muse-4.0/muse_html/split/documentation/main_window_with_midi_editor_vam.png
+share/doc/muse-4.0/muse_html/split/documentation/midi_config_window.png
+share/doc/muse-4.0/muse_html/split/documentation/midi_routing_matrix.png
+share/doc/muse-4.0/muse_html/split/documentation/mixer.png
+share/doc/muse-4.0/muse_html/split/documentation/mixer_with_one_input.png
+share/doc/muse-4.0/muse_html/split/documentation/mixer_with_one_input_buttons.png
+share/doc/muse-4.0/muse_html/split/documentation/muse2.png
+share/doc/muse-4.0/muse_html/split/documentation/no_audio.png
+share/doc/muse-4.0/muse_html/split/documentation/node1.html
+share/doc/muse-4.0/muse_html/split/documentation/node10.html
+share/doc/muse-4.0/muse_html/split/documentation/node11.html
+share/doc/muse-4.0/muse_html/split/documentation/node12.html
+share/doc/muse-4.0/muse_html/split/documentation/node13.html
+share/doc/muse-4.0/muse_html/split/documentation/node2.html
+share/doc/muse-4.0/muse_html/split/documentation/node3.html
+share/doc/muse-4.0/muse_html/split/documentation/node4.html
+share/doc/muse-4.0/muse_html/split/documentation/node5.html
+share/doc/muse-4.0/muse_html/split/documentation/node6.html
+share/doc/muse-4.0/muse_html/split/documentation/node7.html
+share/doc/muse-4.0/muse_html/split/documentation/node8.html
+share/doc/muse-4.0/muse_html/split/documentation/node9.html
+share/doc/muse-4.0/muse_html/split/documentation/output_routing.png
+share/doc/muse-4.0/muse_html/split/documentation/project_my_first_song.png
+share/doc/muse-4.0/muse_html/split/documentation/soloing_window.png
+share/doc/muse-4.0/muse_html/split/documentation/vam_synth.png
+share/doc/muse-4.0/muse_pdf/
+share/doc/muse-4.0/muse_pdf/developer_docs.pdf
+share/doc/muse-4.0/muse_pdf/documentation.pdf
+share/doc/muse-4.0/vam/
+share/doc/muse-4.0/vam/COPYING
+share/doc/muse-4.0/vam/ChangeLog
+share/doc/muse-4.0/vam/README
+share/doc/muse-4.0/vam/TODO
+share/icons/hicolor/128x128/apps/muse.png
+share/icons/hicolor/64x64/apps/muse.png
+share/metainfo/
+share/metainfo/org.musesequencer.Muse4.appdata.xml
+share/mime/packages/muse.xml
+@tag gtk-update-icon-cache %D/share/icons/hicolor
+@tag update-desktop-database
+@tag update-mime-database
+share/muse-4.0/
+share/muse-4.0/demos/
+share/muse-4.0/demos/rasen.med
+share/muse-4.0/didyouknow.txt
+share/muse-4.0/drummaps/
+share/muse-4.0/drummaps/AKAI_SG01v_Bank_dr1.map
+share/muse-4.0/drummaps/AKAI_SG01v_Bank_dr2.map
+share/muse-4.0/drummaps/Drumgizmo_CrocellKit.map
+share/muse-4.0/drummaps/KURZWEIL_SP2X_Drum_Map_GM_ReMap.map
+share/muse-4.0/drummaps/KURZWEIL_SP2X_Drum_Map_Normal.map
+share/muse-4.0/drummaps/NoteNumbers.map
+share/muse-4.0/drummaps/addictive_drums.map
+share/muse-4.0/drummaps/dx200_drum.map
+share/muse-4.0/drummaps/sc88-pc1.map
+share/muse-4.0/instruments/
+share/muse-4.0/instruments/Access_Virus.idf
+share/muse-4.0/instruments/Akai-SG01v.idf
+share/muse-4.0/instruments/Alesis-QS-78R.idf
+share/muse-4.0/instruments/AlesisQS6.idf
+share/muse-4.0/instruments/Classic_cantabile_sp-250.idf
+share/muse-4.0/instruments/Drumgizmo - CrocellKit.idf
+share/muse-4.0/instruments/Emu-4mbgsgmmt-sf.idf
+share/muse-4.0/instruments/Hammond_XB-1.idf
+share/muse-4.0/instruments/KORG microSTATION combinations.idf
+share/muse-4.0/instruments/KORG microSTATION.idf
+share/muse-4.0/instruments/Korg Krome (Bank Map GM2).idf
+share/muse-4.0/instruments/Korg Krome (Bank Map KORG).idf
+share/muse-4.0/instruments/Korg Wavestation EX.idf
+share/muse-4.0/instruments/Korg-MS2000R.idf
+share/muse-4.0/instruments/Korg-X50.idf
+share/muse-4.0/instruments/Korg-X5DR-PresetA.idf
+share/muse-4.0/instruments/Korg-X5DR-PresetB.idf
+share/muse-4.0/instruments/Kurzweil-SP2X.idf
+share/muse-4.0/instruments/Lexicon-MX200.idf
+share/muse-4.0/instruments/MC303.idf
+share/muse-4.0/instruments/MC505.idf
+share/muse-4.0/instruments/Roland SD-50.idf
+share/muse-4.0/instruments/Roland-E28.idf
+share/muse-4.0/instruments/Roland-JV90.idf
+share/muse-4.0/instruments/Roland-MT32.idf
+share/muse-4.0/instruments/Roland-SC88.idf
+share/muse-4.0/instruments/Roland-SCD70.idf
+share/muse-4.0/instruments/Roland-XP30.idf
+share/muse-4.0/instruments/Roland_FantomXR.idf
+share/muse-4.0/instruments/Roland_SRX-02.idf
+share/muse-4.0/instruments/Roland_SRX-09.idf
+share/muse-4.0/instruments/Waldorf-Q.idf
+share/muse-4.0/instruments/Waldorf-microQ-Factory2000.idf
+share/muse-4.0/instruments/Waldorf-microQ-Factory2001.idf
+share/muse-4.0/instruments/Waldorf-microQ-Phoenix.idf
+share/muse-4.0/instruments/Waldorf-microQ.idf
+share/muse-4.0/instruments/Waldorf_Microwave-I.idf
+share/muse-4.0/instruments/Yamaha-01v.idf
+share/muse-4.0/instruments/Yamaha-9000pro.idf
+share/muse-4.0/instruments/Yamaha-CS1x.idf
+share/muse-4.0/instruments/Yamaha-MX49_MX61.idf
+share/muse-4.0/instruments/Yamaha-Motif XS.idf
+share/muse-4.0/instruments/Yamaha-Motif-Rack.idf
+share/muse-4.0/instruments/Yamaha-Motif.idf
+share/muse-4.0/instruments/Yamaha-P100.idf
+share/muse-4.0/instruments/Yamaha-P50m.idf
+share/muse-4.0/instruments/Yamaha-PSR275.idf
+share/muse-4.0/instruments/Yamaha-PSR530.idf
+share/muse-4.0/instruments/Yamaha-Rex50.idf
+share/muse-4.0/instruments/Yamaha-S30_S80.idf
+share/muse-4.0/instruments/Yamaha-S90.idf
+share/muse-4.0/instruments/ZynAdd-1_4.idf
+share/muse-4.0/instruments/emuproteus2000.idf
+share/muse-4.0/instruments/gm.idf
+share/muse-4.0/instruments/gm2.idf
+share/muse-4.0/instruments/gs.idf
+share/muse-4.0/instruments/ns5r.idf
+share/muse-4.0/instruments/xg.idf
+share/muse-4.0/instruments/yam_mo6_v4.idf
+share/muse-4.0/locale/
+share/muse-4.0/locale/muse_cs.qm
+share/muse-4.0/locale/muse_de.qm
+share/muse-4.0/locale/muse_en.qm
+share/muse-4.0/locale/muse_es.qm
+share/muse-4.0/locale/muse_fr.qm
+share/muse-4.0/locale/muse_it.qm
+share/muse-4.0/locale/muse_pl.qm
+share/muse-4.0/locale/muse_ru.qm
+share/muse-4.0/locale/muse_sv_SE.qm
+share/muse-4.0/metronome/
+share/muse-4.0/metronome/factory_presets.mdf
+share/muse-4.0/metronome/klick1.wav
+share/muse-4.0/metronome/klick2.wav
+share/muse-4.0/metronome/klick3.wav
+share/muse-4.0/metronome/klick4.wav
+share/muse-4.0/metronome/klick5.wav
+share/muse-4.0/metronome/klick6.wav
+share/muse-4.0/plugins/
+share/muse-4.0/plugins/2142.ui
+share/muse-4.0/presets/
+share/muse-4.0/presets/deicsonze/
+share/muse-4.0/presets/deicsonze/SutulaBank.dei
+share/muse-4.0/pybridge/
+${MODPY_COMMENT}share/muse-4.0/pybridge/${MODPY_PYCACHE}/
+share/muse-4.0/pybridge/${MODPY_PYCACHE}musepclient.${MODPY_PYC_MAGIC_TAG}pyc
+share/muse-4.0/pybridge/${MODPY_PYCACHE}museplauncher.${MODPY_PYC_MAGIC_TAG}pyc
+share/muse-4.0/pybridge/${MODPY_PYCACHE}musepstopserver.${MODPY_PYC_MAGIC_TAG}pyc
+share/muse-4.0/pybridge/${MODPY_PYCACHE}robert.${MODPY_PYC_MAGIC_TAG}pyc
+share/muse-4.0/pybridge/musepclient.py
+share/muse-4.0/pybridge/museplauncher.py
+share/muse-4.0/pybridge/musepstopserver.py
+share/muse-4.0/pybridge/robert.py
+share/muse-4.0/rdf/
+share/muse-4.0/rdf/README
+share/muse-4.0/rdf/blop.rdf
+share/muse-4.0/rdf/swh-plugins.rdf
+share/muse-4.0/rdf/swh-scales.rdf
+share/muse-4.0/scoreglyphs/
+share/muse-4.0/scoreglyphs/0.png
+share/muse-4.0/scoreglyphs/1.png
+share/muse-4.0/scoreglyphs/2.png
+share/muse-4.0/scoreglyphs/3.png
+share/muse-4.0/scoreglyphs/4.png
+share/muse-4.0/scoreglyphs/5.png
+share/muse-4.0/scoreglyphs/6.png
+share/muse-4.0/scoreglyphs/7.png
+share/muse-4.0/scoreglyphs/8.png
+share/muse-4.0/scoreglyphs/9.png
+share/muse-4.0/scoreglyphs/acc_b.png
+share/muse-4.0/scoreglyphs/acc_none.png
+share/muse-4.0/scoreglyphs/acc_sharp.png
+share/muse-4.0/scoreglyphs/clef_bass_big.png
+share/muse-4.0/scoreglyphs/clef_violin_big.png
+share/muse-4.0/scoreglyphs/dot.png
+share/muse-4.0/scoreglyphs/flags16d.png
+share/muse-4.0/scoreglyphs/flags16u.png
+share/muse-4.0/scoreglyphs/flags32d.png
+share/muse-4.0/scoreglyphs/flags32u.png
+share/muse-4.0/scoreglyphs/flags64d.png
+share/muse-4.0/scoreglyphs/flags64u.png
+share/muse-4.0/scoreglyphs/flags8d.png
+share/muse-4.0/scoreglyphs/flags8u.png
+share/muse-4.0/scoreglyphs/half.png
+share/muse-4.0/scoreglyphs/quarter.png
+share/muse-4.0/scoreglyphs/rest1.png
+share/muse-4.0/scoreglyphs/rest16.png
+share/muse-4.0/scoreglyphs/rest2.png
+share/muse-4.0/scoreglyphs/rest32.png
+share/muse-4.0/scoreglyphs/rest4.png
+share/muse-4.0/scoreglyphs/rest8.png
+share/muse-4.0/scoreglyphs/whole.png
+share/muse-4.0/scripts/
+share/muse-4.0/scripts/ConstantLength
+share/muse-4.0/scripts/ConstantVelocityForNote
+share/muse-4.0/scripts/CreateBassline
+share/muse-4.0/scripts/DoNothing
+share/muse-4.0/scripts/Humanize
+share/muse-4.0/scripts/RandomPosition1
+share/muse-4.0/scripts/RandomizeVelocityRelative
+share/muse-4.0/scripts/RemoveAftertouch
+share/muse-4.0/scripts/RemoveShortEvents
+share/muse-4.0/scripts/Rhythm1
+share/muse-4.0/scripts/SpeedDouble
+share/muse-4.0/scripts/SpeedHalf
+share/muse-4.0/scripts/SwingQuantize1
+share/muse-4.0/scripts/TempoDelay
+share/muse-4.0/splash.jpg
+share/muse-4.0/templates/
+share/muse-4.0/templates/audio.med
+share/muse-4.0/templates/default.med
+share/muse-4.0/templates/midiGM.med
+share/muse-4.0/templates/monorecord.med
+share/muse-4.0/templates/synti.med
+share/muse-4.0/themes/
+share/muse-4.0/themes/Ardour.cfc
+share/muse-4.0/themes/Ardour.qss
+share/muse-4.0/themes/Dark Flat.cfc
+share/muse-4.0/themes/Dark Flat.qss
+share/muse-4.0/themes/Dark Theme.cfc
+share/muse-4.0/themes/Dark Theme.qss
+share/muse-4.0/themes/Deep Ocean/
+share/muse-4.0/themes/Deep Ocean.cfc
+share/muse-4.0/themes/Deep Ocean.qss
+share/muse-4.0/themes/Deep Ocean/fileopen.svg
+share/muse-4.0/themes/Deep Ocean/monitor_off_default_col.svg
+share/muse-4.0/themes/Deep Ocean/monitor_on.svg
+share/muse-4.0/themes/Deep Ocean/mute_and_proxy_on.svg
+share/muse-4.0/themes/Deep Ocean/mute_off.svg
+share/muse-4.0/themes/Deep Ocean/mute_on.svg
+share/muse-4.0/themes/Deep Ocean/mute_proxy_on.svg
+share/muse-4.0/themes/Deep Ocean/pre_fader_on.svg
+share/muse-4.0/themes/Deep Ocean/rec_arm_off_default_col.svg
+share/muse-4.0/themes/Deep Ocean/rec_arm_on.svg
+share/muse-4.0/themes/Deep Ocean/routing_input.svg
+share/muse-4.0/themes/Deep Ocean/routing_output.svg
+share/muse-4.0/themes/Deep Ocean/solo_and_proxy_spotlight_on.svg
+share/muse-4.0/themes/Deep Ocean/solo_proxy_spotlight_on_alone.svg
+share/muse-4.0/themes/Deep Ocean/solo_spotlight_off.svg
+share/muse-4.0/themes/Deep Ocean/solo_spotlight_on_alone.svg
+share/muse-4.0/themes/Deep Ocean/stereo_on.svg
+share/muse-4.0/themes/Light Theme.cfc
+share/muse-4.0/themes/Light Theme.qss
+share/muse-4.0/utils/
+${MODPY_COMMENT}share/muse-4.0/utils/${MODPY_PYCACHE}/
+share/muse-4.0/utils/${MODPY_PYCACHE}muse-song-convert.${MODPY_PYC_MAGIC_TAG}pyc
+share/muse-4.0/utils/muse-find-unused-wavs
+share/muse-4.0/utils/muse-song-convert.py
+share/muse-4.0/wallpapers/
+share/muse-4.0/wallpapers/Muse2_Wallpaper_1.png
+share/muse-4.0/wallpapers/Muse2_Wallpaper_5.png
+share/muse-4.0/wallpapers/gray.gif
+share/muse-4.0/wallpapers/gray_rock.gif
+share/muse-4.0/wallpapers/gray_stucco.gif
+share/muse-4.0/wallpapers/paper1.jpg
+share/muse-4.0/wallpapers/paper2.jpg
+share/muse-4.0/wallpapers/stone1.gif

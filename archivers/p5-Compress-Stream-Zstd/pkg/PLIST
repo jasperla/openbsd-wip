@@ -1,0 +1,25 @@
+@comment $OpenBSD: PLIST,v$
+${P5ARCH}/
+${P5ARCH}/Compress/
+${P5ARCH}/Compress/Stream/
+${P5ARCH}/Compress/Stream/Zstd/
+${P5ARCH}/Compress/Stream/Zstd.pm
+${P5ARCH}/Compress/Stream/Zstd/CompressionContext.pm
+${P5ARCH}/Compress/Stream/Zstd/CompressionDictionary.pm
+${P5ARCH}/Compress/Stream/Zstd/Compressor.pm
+${P5ARCH}/Compress/Stream/Zstd/DecompressionContext.pm
+${P5ARCH}/Compress/Stream/Zstd/DecompressionDictionary.pm
+${P5ARCH}/Compress/Stream/Zstd/Decompressor.pm
+${P5ARCH}/auto/
+${P5ARCH}/auto/Compress/
+${P5ARCH}/auto/Compress/Stream/
+${P5ARCH}/auto/Compress/Stream/Zstd/
+${P5ARCH}/auto/Compress/Stream/Zstd/Zstd.bs
+@so ${P5ARCH}/auto/Compress/Stream/Zstd/Zstd.so
+@man man/man3p/Compress::Stream::Zstd.3p
+@man man/man3p/Compress::Stream::Zstd::CompressionContext.3p
+@man man/man3p/Compress::Stream::Zstd::CompressionDictionary.3p
+@man man/man3p/Compress::Stream::Zstd::Compressor.3p
+@man man/man3p/Compress::Stream::Zstd::DecompressionContext.3p
+@man man/man3p/Compress::Stream::Zstd::DecompressionDictionary.3p
+@man man/man3p/Compress::Stream::Zstd::Decompressor.3p

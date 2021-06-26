@@ -5,7 +5,7 @@ Taken from devel/gas, to be safe.
 Index: bfd/Makefile.in
 --- bfd/Makefile.in.orig
 +++ bfd/Makefile.in
-@@ -460,7 +460,7 @@ AUTOMAKE_OPTIONS = no-dist foreign
+@@ -461,7 +461,7 @@ AUTOMAKE_OPTIONS = no-dist foreign
  ACLOCAL_AMFLAGS = -I . -I .. -I ../config
  INCDIR = $(srcdir)/../include
  CSEARCH = -I. -I$(srcdir) -I$(INCDIR)

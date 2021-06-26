@@ -1,0 +1,15 @@
+$OpenBSD: patch-net_dns_host_resolver_proc_cc,v 1.6 2020/02/22 12:33:21 robert Exp $
+Index: net/dns/host_resolver_proc.cc
+--- net/dns/host_resolver_proc.cc.orig
++++ net/dns/host_resolver_proc.cc
+@@ -19,10 +19,6 @@
+ #include "net/dns/dns_util.h"
+ #include "net/dns/host_resolver.h"
+ 
+-#if defined(OS_OPENBSD)
+-#define AI_ADDRCONFIG 0
+-#endif
+-
+ namespace net {
+ 
+ HostResolverProc* HostResolverProc::default_proc_ = nullptr;

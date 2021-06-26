@@ -1,0 +1,25 @@
+$OpenBSD$
+
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -78,12 +78,18 @@ COLOR_MESSAGE( "
+ 
+ ADD_LIBRARY(artyfx SHARED ${sources} )
+ 
+-target_link_libraries( artyfx LINK_PUBLIC ${SND_LIBRARIES}   )
+ target_link_libraries( artyfx LINK_PUBLIC "-lpthread" )
++if(CMAKE_SYSTEM_NAME STREQUAL OpenBSD)
++  target_link_libraries( artyfx LINK_PUBLIC "-lc $ENV{LDFLAGS}" )
++endif()
++target_link_libraries( artyfx LINK_PUBLIC ${SND_LIBRARIES}   )
+ 
+ IF(BUILD_GUI)
+   ADD_LIBRARY( artyfx_ui SHARED ${ui_sources} )
+   add_dependencies( artyfx_ui avtk )
++  if(CMAKE_SYSTEM_NAME STREQUAL OpenBSD)
++    target_link_libraries( artyfx_ui "-lc $ENV{LDFLAGS}" )
++  endif()
+   target_link_libraries( artyfx_ui "-lavtk -lcairo -lX11" )
+   set_target_properties( artyfx_ui PROPERTIES PREFIX "")
+   install (TARGETS artyfx_ui DESTINATION lib/lv2/artyfx.lv2/)

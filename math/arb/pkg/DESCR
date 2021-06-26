@@ -1,0 +1,9 @@
+Arb is a C library for rigorous real and complex arithmetic with
+arbitrary precision. Arb tracks numerical errors automatically using
+ball arithmetic, a form of interval arithmetic based on a
+midpoint-radius representation. On top of this, Arb provides a wide
+range of mathematical functionality, including polynomials, power
+series, matrices, integration, root-finding, and many transcendental
+functions. Arb is designed with efficiency as a primary goal, and is
+usually competitive with or faster than other arbitrary-precision
+packages. The code is thread-safe, portable, and extensively tested.

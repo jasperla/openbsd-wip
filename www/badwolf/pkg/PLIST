@@ -11,11 +11,14 @@ share/badwolf/locale/fr/LC_MESSAGES/Badwolf.mo
 share/badwolf/locale/pt_BR/
 share/badwolf/locale/pt_BR/LC_MESSAGES/
 share/badwolf/locale/pt_BR/LC_MESSAGES/Badwolf.mo
-share/doc/badwolf-1.0.0/
-share/doc/badwolf-1.0.0/KnowledgeBase.md
-share/doc/badwolf-1.0.0/README.md
-share/doc/badwolf-1.0.0/interface.txt
-share/doc/badwolf-1.0.0/usr.bin.badwolf
+share/badwolf/locale/tr/
+share/badwolf/locale/tr/LC_MESSAGES/
+share/badwolf/locale/tr/LC_MESSAGES/Badwolf.mo
+share/doc/${DISTNAME}/
+share/doc/${DISTNAME}/KnowledgeBase.md
+share/doc/${DISTNAME}/README.md
+share/doc/${DISTNAME}/interface.txt
+@comment share/doc/${DISTNAME}/usr.bin.badwolf
 share/icons/hicolor/128x128/apps/badwolf.png
 share/icons/hicolor/24x24/apps/badwolf.png
 share/icons/hicolor/256x256/apps/badwolf.png

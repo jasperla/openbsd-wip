@@ -1,0 +1,19 @@
+$OpenBSD$
+
+sched_getscheduler not available on OpenBSD
+
+Index: muse/thread.cpp
+--- muse/thread.cpp.orig
++++ muse/thread.cpp
+@@ -280,9 +280,11 @@ void Thread::loop()
+ 
+       int policy = buf[0]; // Initialize using buf[0] to keep the compiler from complaining about unused buf.
+       policy = 0;          // Now set the true desired initial value.
++#ifndef __OpenBSD__
+       if ((policy = sched_getscheduler (0)) < 0) {
+             printf("Thread: Cannot get current client scheduler: %s\n", strerror(errno));
+             }
++#endif
+ 
+       if (MusEGlobal::debugMsg)
+             printf("Thread <%s, id %p> has %s priority %d\n",

@@ -1,0 +1,12 @@
+@comment $OpenBSD: PLIST,v$
+@bin bin/wopn2hpp
+include/opnmidi.h
+@static-lib lib/libOPNMIDI.a
+@lib lib/libOPNMIDI.so.${LIBOPNMIDI_VERSION}
+lib/pkgconfig/libOPNMIDI.pc
+share/doc/libOPNMIDI/
+share/doc/libOPNMIDI/AUTHORS
+share/doc/libOPNMIDI/LICENSE.GPL-3.txt
+share/doc/libOPNMIDI/LICENSE.LGPL-2.1.txt
+share/doc/libOPNMIDI/README.md
+share/doc/libOPNMIDI/wopn specification.txt

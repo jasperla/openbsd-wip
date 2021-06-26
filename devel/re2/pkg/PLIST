@@ -1,9 +1,11 @@
-@comment $OpenBSD$
+@comment $OpenBSD: PLIST,v$
 include/re2/
 include/re2/filtered_re2.h
 include/re2/re2.h
 include/re2/set.h
 include/re2/stringpiece.h
-lib/libre2.a
+lib/cmake/
+lib/cmake/re2/
+lib/cmake/re2/re2Config${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/re2/re2Config.cmake
 @lib lib/libre2.so.${LIBre2_VERSION}
-lib/pkgconfig/re2.pc

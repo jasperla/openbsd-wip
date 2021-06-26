@@ -4,7 +4,7 @@ COMMENT =	AirPlay audio player
 
 GH_ACCOUNT =	mikebrady
 GH_PROJECT =	shairport-sync
-GH_TAGNAME =	3.3.6
+GH_TAGNAME =	3.3.7
 
 CATEGORIES =	audio
 
@@ -13,12 +13,18 @@ MAINTAINER =	Aaron Bieber <abieber@openbsd.org>
 # BSD?
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} c crypto m sndio ssl
+COMPILER=	base-clang ports-gcc
 
-BUILD_DEPENDS=	devel/popt \
-		devel/libconfig \
+WANTLIB += ${COMPILER_LIBCXX} avahi-client avahi-common c config
+WANTLIB += crypto iconv intl m popt sndio ssl
+
+BUILD_DEPENDS =	devel/libconfig \
 		${MODGNU_AUTOCONF_DEPENDS} \
 		${MODGNU_AUTOMAKE_DEPENDS} \
+
+LIB_DEPENDS =	devel/libconfig \
+		devel/popt \
+		net/avahi
 
 CONFIGURE_ENV +=	CFLAGS="${CFLAGS} -I${PREFIX}/include"
 

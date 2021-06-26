@@ -100,28 +100,29 @@ libexec/nix/build-remote
 @man man/man1/nix-store.1
 @man man/man5/nix.conf.5
 @man man/man8/nix-daemon.8
-share/doc/manual/
-share/doc/manual/figures/
-share/doc/manual/figures/user-environments.png
-share/doc/manual/images/
-share/doc/manual/images/callouts/
-share/doc/manual/images/callouts/1.gif
-share/doc/manual/images/callouts/10.gif
-share/doc/manual/images/callouts/11.gif
-share/doc/manual/images/callouts/12.gif
-share/doc/manual/images/callouts/13.gif
-share/doc/manual/images/callouts/14.gif
-share/doc/manual/images/callouts/15.gif
-share/doc/manual/images/callouts/2.gif
-share/doc/manual/images/callouts/3.gif
-share/doc/manual/images/callouts/4.gif
-share/doc/manual/images/callouts/5.gif
-share/doc/manual/images/callouts/6.gif
-share/doc/manual/images/callouts/7.gif
-share/doc/manual/images/callouts/8.gif
-share/doc/manual/images/callouts/9.gif
-share/doc/manual/index.html
-share/doc/manual/manual.html
+share/doc/nix/
+share/doc/nix/manual/
+share/doc/nix/manual/figures/
+share/doc/nix/manual/figures/user-environments.png
+share/doc/nix/manual/images/
+share/doc/nix/manual/images/callouts/
+share/doc/nix/manual/images/callouts/1.gif
+share/doc/nix/manual/images/callouts/10.gif
+share/doc/nix/manual/images/callouts/11.gif
+share/doc/nix/manual/images/callouts/12.gif
+share/doc/nix/manual/images/callouts/13.gif
+share/doc/nix/manual/images/callouts/14.gif
+share/doc/nix/manual/images/callouts/15.gif
+share/doc/nix/manual/images/callouts/2.gif
+share/doc/nix/manual/images/callouts/3.gif
+share/doc/nix/manual/images/callouts/4.gif
+share/doc/nix/manual/images/callouts/5.gif
+share/doc/nix/manual/images/callouts/6.gif
+share/doc/nix/manual/images/callouts/7.gif
+share/doc/nix/manual/images/callouts/8.gif
+share/doc/nix/manual/images/callouts/9.gif
+share/doc/nix/manual/index.html
+share/doc/nix/manual/manual.html
 share/examples/nix/
 @sample ${SYSCONFDIR}/nix/
 share/examples/nix/profile.d/

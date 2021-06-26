@@ -1,0 +1,27 @@
+--- build.gradle.orig	Tue Nov 10 23:49:41 2020
++++ build.gradle	Wed Nov 11 00:00:07 2020
+@@ -20,6 +20,9 @@ repositories {
+     maven { url "http://4thline.org/m2" }
+     maven { url 'https://mvn.freenetproject.org' }
+     jcenter()
++    flatDir {
++	dirs 'flatRepo', '${PREFIX}/share/freenet/lib'
++    }
+ }
+ 
+ configurations {
+@@ -27,9 +30,13 @@ configurations {
+ }
+ 
+ dependencies {
+-    compile group: 'org.freenetproject', name: 'fred', version: 'build+'
++    compile group: 'org.freenetproject', name: 'freenet'
+     extraLibs group: 'org.fourthline.cling', name: 'cling-core', version: '2.1.0'
+     extraLibs group: 'org.fourthline.cling', name: 'cling-support', version: '2.1.0'
++    extraLibs group: 'org.seamless', name: 'seamless-util', version: '1.1.1'
++    extraLibs group: 'org.seamless', name: 'seamless-http', version: '1.1.1'
++    extraLibs group: 'org.seamless', name: 'seamless-xml', version: '1.1.1'
++    extraLibs group: 'org.seamless', name: 'seamless-swing', version: '1.1.1'
+     configurations.compile.extendsFrom(configurations.extraLibs)
+ }
+ 

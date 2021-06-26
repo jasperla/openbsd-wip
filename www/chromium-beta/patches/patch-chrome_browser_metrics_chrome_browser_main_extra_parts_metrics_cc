@@ -1,0 +1,27 @@
+$OpenBSD$
+
+Index: chrome/browser/metrics/chrome_browser_main_extra_parts_metrics.cc
+--- chrome/browser/metrics/chrome_browser_main_extra_parts_metrics.cc.orig
++++ chrome/browser/metrics/chrome_browser_main_extra_parts_metrics.cc
+@@ -60,8 +60,10 @@
+ 
+ // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
+ // of lacros-chrome is complete.
+-#if defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)
++#if defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || defined(OS_BSD)
++#if !defined(OS_BSD)
+ #include <gnu/libc-version.h>
++#endif
+ 
+ #include "base/linux_util.h"
+ #include "base/strings/string_split.h"
+@@ -224,7 +226,9 @@ void RecordStartupMetrics() {
+   base::UmaHistogramBoolean("Windows.ApplockerRunning", IsApplockerRunning());
+ #endif  // defined(OS_WIN)
+ 
++#if !defined(OS_BSD)
+   bluetooth_utility::ReportBluetoothAvailability();
++#endif
+ 
+   // Record whether Chrome is the default browser or not.
+   shell_integration::DefaultWebClientState default_state =

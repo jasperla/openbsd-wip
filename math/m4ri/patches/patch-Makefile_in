@@ -1,0 +1,16 @@
+$OpenBSD$
+
+Control shared library version
+
+Index: Makefile.in
+--- Makefile.in.orig
++++ Makefile.in
+@@ -496,7 +496,7 @@ nodist_pkgincludesub_HEADERS = m4ri/m4ri_config.h
+ EXTRA_DIST = m4ri/Doxyfile
+ pkgconfigdir = $(libdir)/pkgconfig
+ pkgconfig_DATA = m4ri.pc
+-libm4ri_la_LDFLAGS = -release 0.0.$(RELEASE) -no-undefined
++libm4ri_la_LDFLAGS = $(LIBm4ri_LTVERSION) -no-undefined
+ libm4ri_la_LIBADD = $(LIBPNG_LIBADD) $(LIBM)
+ SUBDIRS = . tests
+ DIST_SUBDIRS = $(SUBDIRS) bench

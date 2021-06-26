@@ -1,0 +1,25 @@
+$OpenBSD$
+
+Index: sandbox/policy/sandbox.h
+--- sandbox/policy/sandbox.h.orig
++++ sandbox/policy/sandbox.h
+@@ -13,6 +13,10 @@
+ #include "sandbox/policy/linux/sandbox_linux.h"
+ #endif
+ 
++#if defined(OS_BSD)
++#include "sandbox/policy/openbsd/sandbox_openbsd.h"
++#endif
++
+ namespace sandbox {
+ struct SandboxInterfaceInfo;
+ }  // namespace sandbox
+@@ -30,7 +34,7 @@ namespace policy {
+ 
+ class SANDBOX_POLICY_EXPORT Sandbox {
+  public:
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
+   static bool Initialize(SandboxType sandbox_type,
+                          SandboxLinux::PreSandboxHook hook,
+                          const SandboxLinux::Options& options);

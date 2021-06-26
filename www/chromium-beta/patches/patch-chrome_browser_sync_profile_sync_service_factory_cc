@@ -1,0 +1,14 @@
+$OpenBSD$
+
+Index: chrome/browser/sync/profile_sync_service_factory.cc
+--- chrome/browser/sync/profile_sync_service_factory.cc.orig
++++ chrome/browser/sync/profile_sync_service_factory.cc
+@@ -216,7 +216,7 @@ KeyedService* ProfileSyncServiceFactory::BuildServiceI
+ // included
+ // in lacros-chrome once build flag switch of lacros-chrome is
+ // complete.
+-#if defined(OS_WIN) || defined(OS_MAC) || \
++#if defined(OS_WIN) || defined(OS_MAC) || defined(OS_BSD) || \
+     (defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS))
+   syncer::SyncPrefs prefs(profile->GetPrefs());
+   local_sync_backend_enabled = prefs.IsLocalSyncEnabled();

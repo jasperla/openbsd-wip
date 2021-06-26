@@ -1,0 +1,10 @@
+@comment $OpenBSD: PLIST,v$
+include/adlmidi.h
+@static-lib lib/libADLMIDI.a
+@lib lib/libADLMIDI.so.${LIBADLMIDI_VERSION}
+lib/pkgconfig/libADLMIDI.pc
+share/doc/libADLMIDI/
+share/doc/libADLMIDI/AUTHORS
+share/doc/libADLMIDI/LICENSE.GPL-3.txt
+share/doc/libADLMIDI/LICENSE.LGPL-2.1.txt
+share/doc/libADLMIDI/README.md

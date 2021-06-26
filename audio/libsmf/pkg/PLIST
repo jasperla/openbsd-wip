@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST,v$
+@bin bin/smfsh
+include/smf.h
+@static-lib lib/libsmf.a
+lib/libsmf.la
+@lib lib/libsmf.so.${LIBsmf_VERSION}
+lib/pkgconfig/smf.pc
+@man man/man1/smfsh.1

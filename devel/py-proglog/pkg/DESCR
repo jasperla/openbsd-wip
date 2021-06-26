@@ -1,0 +1,2 @@
+Proglog is a progress logging system for Python. It allows you control over
+logs, callbacks and progress bars.
