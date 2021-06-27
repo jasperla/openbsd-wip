@@ -1,7 +1,7 @@
 $OpenBSD$
 
 Don't do git stuff.
-Use SLD2 and curl from ports.
+Use SDL2 and curl from ports.
 
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
