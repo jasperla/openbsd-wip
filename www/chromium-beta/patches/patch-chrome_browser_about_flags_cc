@@ -39,7 +39,7 @@ Index: chrome/browser/about_flags.cc
      {"send-webui-javascript-error-reports",
       flag_descriptions::kSendWebUIJavaScriptErrorReportsName,
       flag_descriptions::kSendWebUIJavaScriptErrorReportsDescription,
-@@ -3119,7 +3119,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -3123,7 +3123,7 @@ const FeatureEntry kFeatureEntries[] = {
       FEATURE_VALUE_TYPE(media::kDeprecateLowUsageCodecs)},
  #endif  // defined(OS_CHROMEOS)
  
@@ -48,7 +48,7 @@ Index: chrome/browser/about_flags.cc
      {
          "enable-accelerated-video-decode",
          flag_descriptions::kAcceleratedVideoDecodeName,
-@@ -6804,7 +6804,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -6808,7 +6808,7 @@ const FeatureEntry kFeatureEntries[] = {
       FEATURE_VALUE_TYPE(switches::kSyncAutofillWalletOfferData)},
  
  #if (defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || \
@@ -57,7 +57,7 @@ Index: chrome/browser/about_flags.cc
      BUILDFLAG(ENABLE_PRINTING)
      {"enable-oop-print-drivers", flag_descriptions::kEnableOopPrintDriversName,
       flag_descriptions::kEnableOopPrintDriversDescription, kOsDesktop,
-@@ -6824,7 +6824,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -6828,7 +6828,7 @@ const FeatureEntry kFeatureEntries[] = {
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
  #if defined(OS_WIN) || (defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)) || \
@@ -66,7 +66,7 @@ Index: chrome/browser/about_flags.cc
      {"enable-ephemeral-guest-profiles-on-desktop",
       flag_descriptions::kEnableEphemeralGuestProfilesOnDesktopName,
       flag_descriptions::kEnableEphemeralGuestProfilesOnDesktopDescription,
-@@ -7117,7 +7117,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -7121,7 +7121,7 @@ const FeatureEntry kFeatureEntries[] = {
  #endif  // defined(OS_CHROMEOS)
  
  #if defined(OS_WIN) || (defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)) || \
@@ -75,7 +75,7 @@ Index: chrome/browser/about_flags.cc
      {
          "ui-debug-tools",
          flag_descriptions::kUIDebugToolsName,
-@@ -7193,7 +7193,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -7197,7 +7197,7 @@ const FeatureEntry kFeatureEntries[] = {
       FEATURE_VALUE_TYPE(metrics::structured::kBluetoothSessionizedMetrics)},
  #endif
  

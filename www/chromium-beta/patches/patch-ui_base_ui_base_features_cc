@@ -12,7 +12,7 @@ Index: ui/base/ui_base_features.cc
        base::FEATURE_ENABLED_BY_DEFAULT
  #else
        base::FEATURE_DISABLED_BY_DEFAULT
-@@ -183,7 +183,7 @@ bool IsImprovedKeyboardShortcutsEnabled() {
+@@ -195,7 +195,7 @@ bool IsDeprecateAltBasedSixPackEnabled() {
  #endif  // defined(OS_CHROMEOS)
  
  #if defined(OS_WIN) || defined(OS_APPLE) || defined(OS_LINUX) || \
@@ -21,7 +21,7 @@ Index: ui/base/ui_base_features.cc
  // Enables stylus appearing as touch when in contact with digitizer.
  const base::Feature kDirectManipulationStylus = {
      "DirectManipulationStylus",
-@@ -211,7 +211,7 @@ bool IsForcedColorsEnabled() {
+@@ -223,7 +223,7 @@ bool IsForcedColorsEnabled() {
  // milestones.
  const base::Feature kEyeDropper {
    "EyeDropper",
