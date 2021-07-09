@@ -11,7 +11,7 @@ import os
 import sys
 import re
 
-YEAR = 2020
+YEAR = 2021
 THIS_DIR = os.path.abspath(os.path.dirname(__file__))
 PLIST_DIR = os.path.abspath(os.path.join(THIS_DIR, "..", "pkg"))
 PLISTS = "-buildset", "-main", "-context", "-full", "-docs"

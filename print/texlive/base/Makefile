@@ -143,21 +143,6 @@ SUBST_VARS +=		TRUEPREFIX LOCALBASE
 pre-install:
 	mkdir -p ${WRKSRC}/inst
 
-# Symlinks that would have been installed by texlinks.
-# texlinks can not do this itself in the fake dir, as it requires
-# a fully hashed texmf tree and working kpse configuration.
-# Run 'texlinks -u' and then observe the output of
-# 'texlinks -v'. Don't forget to check the links are in the PLIST.
-ALEPH_LN =	lamed
-LUATEX_LN =	dvilualatex dviluatex lualatex
-PDFTEX_LN =	amstex cslatex csplain eplain etex jadetex latex mex mllatex mltex \
-		pdfcslatex pdfcsplain pdfetex pdfjadetex pdflatex pdfmex \
-		pdfxmltex texsis utf8mex xmltex
-EPTEX_LN =	platex
-EUPTEX_LN =	uplatex
-XETEX_LN =	xelatex
-TEX_LN =	lollipop
-
 EXTRA_ROOT =	${WRKDIR}/texlive-${DIST_V}-extra
 
 .include "../texmf/symlinks.mk"
