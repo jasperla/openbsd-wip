@@ -1,5 +1,8 @@
 # $OpenBSD: Makefile,v 1.555 2021/03/22 18:04:53 robert Exp $
 
+BROKEN-powerpc64 =	Check failed: false. OS architecture not handled. (powerpc64)
+BROKEN-i386 =		../../third_party/angle/src/libANGLE/validationEGL.h:137:12: error: reference to type 'const egl::AttributeMap' could not bind to an lvalue of type 'const long *'
+
 USE_WXNEEDED=		Yes
 
 .include <bsd.port.arch.mk>
@@ -11,7 +14,7 @@ DPB_PROPERTIES=		parallel parallel2
 
 COMMENT=		Chromium browser
 
-V=			92.0.4515.81
+V=			92.0.4515.93
 
 DISTNAME=		chromium-${V}
 
@@ -70,11 +73,12 @@ WANTLIB += drm epoxy fontconfig freetype fribidi gmodule-2.0 graphite2
 WANTLIB += gthread-2.0 intl pangoft2-1.0 pcre pixman-1
 WANTLIB += plc4 plds4 util xcb-dri2 xcb-glx xcb-render xcb-shm
 WANTLIB += xml2 z
-WANTLIB += harfbuzz harfbuzz-subset
+WANTLIB += harfbuzz harfbuzz-subset harfbuzz-gobject
 WANTLIB += ffi png
 WANTLIB += iconv lzma
 WANTLIB += fido2 cbor usbhid crypto
 WANTLIB += gbm xkbcommon
+WANTLIB += tiff xshmfence
 
 RUN_DEPENDS=	devel/xdg-utils \
 		devel/desktop-file-utils \
@@ -94,7 +98,7 @@ BUILD_DEPENDS=	archivers/bzip2 \
 		x11/py-xcbgen \
 		${MODGCC4_CPPDEP}
 LIB_DEPENDS=	devel/harfbuzz \
-		devel/libexecinfo \
+		graphics/tiff \
 		security/nss \
 		textproc/libxslt \
 		x11/gtk+3 \
