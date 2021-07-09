@@ -1,12 +1,13 @@
 $OpenBSD$
---- test/TestPfsRotate.cpp.orig	Sat Dec 17 13:16:13 2016
-+++ test/TestPfsRotate.cpp	Sat Dec 17 13:16:28 2016
-@@ -27,7 +27,7 @@
- #ifdef __clang__
- #include <tr1/tuple>
- #else
+Index: test/TestPfsRotate.cpp
+--- test/TestPfsRotate.cpp.orig
++++ test/TestPfsRotate.cpp
+@@ -24,7 +24,7 @@
+ #if GTEST_HAS_COMBINE
+ 
+ #include <algorithm>
 -#include <tuple>
 +#include <boost/tuple/tuple.hpp>
- #endif
  
  #include <Libpfs/array2d.h>
+ #include <Libpfs/manip/rotate.h>

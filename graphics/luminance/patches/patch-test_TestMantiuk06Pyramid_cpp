@@ -1,12 +1,13 @@
 $OpenBSD$
---- test/TestMantiuk06Pyramid.cpp.orig	Sat Dec 17 13:14:42 2016
-+++ test/TestMantiuk06Pyramid.cpp	Sat Dec 17 13:14:57 2016
-@@ -24,7 +24,7 @@
- #ifdef __clang__
- #include <tr1/tuple>
- #else
+Index: test/TestMantiuk06Pyramid.cpp
+--- test/TestMantiuk06Pyramid.cpp.orig
++++ test/TestMantiuk06Pyramid.cpp
+@@ -21,7 +21,7 @@
+ 
+ #include <gtest/gtest.h>
+ #include <algorithm>
 -#include <tuple>
 +#include <boost/tuple/tuple.hpp>
- #endif
  
  #include "TonemappingOperators/mantiuk06/pyramid.h"
+ #include "mantiuk06/contrast_domain.h"

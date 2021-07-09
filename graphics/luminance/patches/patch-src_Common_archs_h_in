@@ -1,6 +1,8 @@
 $OpenBSD$
---- src/Common/archs.h.orig	Sun Jul  1 13:10:50 2012
-+++ src/Common/archs.h	Wed Jan  9 10:29:42 2013
+
+Index: src/Common/archs.h.in
+--- src/Common/archs.h.in.orig
++++ src/Common/archs.h.in
 @@ -25,8 +25,8 @@
   * Luminance HDR for FreeBSD
   */
@@ -10,5 +12,5 @@ $OpenBSD$
 +#if defined(__FreeBSD__) || defined(__OpenBSD__)
 +#define BASEDIR  "${LOCALBASE}"
  #else
- #define BASEDIR "/usr/"
+ #define BASEDIR @BASEDIR@
  #endif

@@ -1,0 +1,15 @@
+$OpenBSD$
+
+Index: src/Common/CommonFunctions.cpp
+--- src/Common/CommonFunctions.cpp.orig
++++ src/Common/CommonFunctions.cpp
+@@ -54,7 +54,9 @@
+ #include <Common/LuminanceOptions.h>
+ 
+ #include <boost/algorithm/minmax_element.hpp>
++#ifdef _OPENMP
+ #include <omp.h>
++#endif
+ 
+ using namespace std;
+ using namespace pfs;
