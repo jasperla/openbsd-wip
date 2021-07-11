@@ -5,7 +5,6 @@ COMMENT-mktexlsr =	mktexlsr for TeXLive typesetting distribution
 COMMENT-synctex =	synctex for TeXLive typesetting distribution
 
 DISTNAME =		texlive-${DIST_V}-source
-REVISION =		0
 PKGNAME =		texlive_base-${V}
 WRKDIST =		${WRKDIR}/texlive-${DIST_V}-source
 
@@ -41,10 +40,9 @@ RUN_DEPENDS-main =	print/ghostscript/gnu \
 			print/ps2eps \
 			print/psutils \
 			print/t1utils \
+			texlive_texmf-buildset-${V}:print/texlive/texmf,-buildset \
 			devel/desktop-file-utils \
 			${BASE_PKGPATH},-synctex
-# XXX put back.
-#texlive_texmf-buildset-${V}:print/texlive/texmf,-buildset \
 
 LIB_DEPENDS-main =	converters/libiconv \
 			graphics/png \

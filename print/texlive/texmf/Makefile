@@ -44,7 +44,7 @@ MODPY_RUNDEP =		No
 
 .include "adj.mk"
 
-RUN_DEPENDS-main +=	texlive_base->=${V}p0:print/texlive/base,-main \
+RUN_DEPENDS-main +=	texlive_base->=${V}:print/texlive/base,-main \
 			${FULLPKGNAME-buildset}:print/texlive/texmf,-buildset
 RUN_DEPENDS-full =	${FULLPKGNAME-main}:print/texlive/texmf,-main \
 			${MODPY_RUN_DEPENDS} \
@@ -66,7 +66,7 @@ WRKDIST =		${WRKDIR}/texlive-${DIST_V}-texmf
 # manuals.  Some interpreter paths are done automatically by MODULES.
 pre-configure:
 	@# Don't use substitution from the Python port, since we need to swap
-	@# in @# different versions.
+	@# in different versions.
 	for F in ${PYTHON2_ADJ_FILES}; do \
 	    perl -pi \
 	    -e '$$. == 1 && s|^.*env python[0-9.]*([\s].*)?$$|\#!${LOCALBASE}/bin/python${MODPY_DEFAULT_VERSION_2}$$1|;' \

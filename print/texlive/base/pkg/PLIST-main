@@ -400,8 +400,8 @@ lib/pkgconfig/ptexenc.pc
 @tag mktexlsr
 @unexec-delete rm -f %D/share/texmf-dist/ls-R
 @unexec-delete rm -f %D/share/texmf-var/ls-R
-@unexec-delete rm -f %D/share/texmf-var/luatex-cache/context/0399a8df3aef8d154781d0a9c2b8e28d/trees/*
-@unexec-delete if [ -d %D/share/texmf-var/luatex-cache/context/0399a8df3aef8d154781d0a9c2b8e28d/trees/ ]; then rmdir %D/share/texmf-var/luatex-cache/context/0399a8df3aef8d154781d0a9c2b8e28d/trees/; fi
+@unexec-delete rm -f %D/share/texmf-var/luatex-cache/context/0399a8df3aef8d154781d0a9c2b8e28d/*
+@unexec-delete if [ -d %D/share/texmf-var/luatex-cache/context/0399a8df3aef8d154781d0a9c2b8e28d/ ]; then rmdir %D/share/texmf-var/luatex-cache/context/0399a8df3aef8d154781d0a9c2b8e28d/; fi
 @unexec-delete rm -f %D/share/texmf/ls-R
 @unexec-delete rm -f %D/share/texmf-local/ls-R
 lib/pkgconfig/texlua53.pc

@@ -39,7 +39,7 @@ TOP_MATTER = {
     "-main": [
         "@comment $" "OpenBSD$",
         "@conflict teTeX_texmf-*",
-        "@conflict texlive_base-<%sp0" % YEAR,
+        "@conflict texlive_base-<%s" % YEAR,
         "@conflict texlive_texmf-docs-<%s" % YEAR,
         "@conflict texlive_texmf-full-<%s" % YEAR,
         "@conflict texlive_texmf-buildset-<%s" % YEAR,
@@ -83,7 +83,7 @@ BOTTOM_MATTER = {
     "-buildset": ["@tag mktexlsr"],
     "-main": ["@tag mktexlsr"],
     "-context": [
-        "@unexec rm -Rf %D/share/texmf-var/luatex-cache/trees",
+        "@unexec rm -Rf %D/share/texmf-var/luatex-cache/",
         "@exec %D/bin/mtxrun --generate > /dev/null 2>&1",
         "@tag mktexlsr"
     ],
