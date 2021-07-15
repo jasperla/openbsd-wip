@@ -21,7 +21,7 @@ Index: chrome/browser/about_flags.cc
  const FeatureEntry::FeatureParam kOmniboxDocumentProviderServerScoring[] = {
      {"DocumentUseServerScore", "true"},
      {"DocumentUseClientScore", "false"},
-@@ -2467,7 +2467,7 @@ constexpr char kAssistantBetterOnboardingInternalName[
+@@ -2495,7 +2495,7 @@ constexpr char kAssistantBetterOnboardingInternalName[
      "enable-assistant-better-onboarding";
  #endif  // BUILDFLAG(IS_CHROMEOS_ASH)
  
@@ -30,7 +30,7 @@ Index: chrome/browser/about_flags.cc
  const FeatureEntry::FeatureParam
      kSendWebUIJavaScriptErrorReportsVariationSendToStaging[] = {
          {features::kSendWebUIJavaScriptErrorReportsSendToProductionVariation,
-@@ -2674,7 +2674,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -2702,7 +2702,7 @@ const FeatureEntry kFeatureEntries[] = {
       flag_descriptions::kWebrtcPipeWireCapturerDescription, kOsLinux,
       FEATURE_VALUE_TYPE(features::kWebRtcPipeWireCapturer)},
  #endif  // defined(WEBRTC_USE_PIPEWIRE)
@@ -39,7 +39,7 @@ Index: chrome/browser/about_flags.cc
      {"send-webui-javascript-error-reports",
       flag_descriptions::kSendWebUIJavaScriptErrorReportsName,
       flag_descriptions::kSendWebUIJavaScriptErrorReportsDescription,
-@@ -3123,7 +3123,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -3151,7 +3151,7 @@ const FeatureEntry kFeatureEntries[] = {
       FEATURE_VALUE_TYPE(media::kDeprecateLowUsageCodecs)},
  #endif  // defined(OS_CHROMEOS)
  
@@ -48,7 +48,7 @@ Index: chrome/browser/about_flags.cc
      {
          "enable-accelerated-video-decode",
          flag_descriptions::kAcceleratedVideoDecodeName,
-@@ -6808,7 +6808,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -6836,7 +6836,7 @@ const FeatureEntry kFeatureEntries[] = {
       FEATURE_VALUE_TYPE(switches::kSyncAutofillWalletOfferData)},
  
  #if (defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || \
@@ -57,7 +57,7 @@ Index: chrome/browser/about_flags.cc
      BUILDFLAG(ENABLE_PRINTING)
      {"enable-oop-print-drivers", flag_descriptions::kEnableOopPrintDriversName,
       flag_descriptions::kEnableOopPrintDriversDescription, kOsDesktop,
-@@ -6828,7 +6828,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -6856,7 +6856,7 @@ const FeatureEntry kFeatureEntries[] = {
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
  #if defined(OS_WIN) || (defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)) || \
@@ -66,7 +66,7 @@ Index: chrome/browser/about_flags.cc
      {"enable-ephemeral-guest-profiles-on-desktop",
       flag_descriptions::kEnableEphemeralGuestProfilesOnDesktopName,
       flag_descriptions::kEnableEphemeralGuestProfilesOnDesktopDescription,
-@@ -7121,7 +7121,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -7149,7 +7149,7 @@ const FeatureEntry kFeatureEntries[] = {
  #endif  // defined(OS_CHROMEOS)
  
  #if defined(OS_WIN) || (defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)) || \
@@ -75,7 +75,7 @@ Index: chrome/browser/about_flags.cc
      {
          "ui-debug-tools",
          flag_descriptions::kUIDebugToolsName,
-@@ -7197,7 +7197,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -7225,7 +7225,7 @@ const FeatureEntry kFeatureEntries[] = {
       FEATURE_VALUE_TYPE(metrics::structured::kBluetoothSessionizedMetrics)},
  #endif
  
