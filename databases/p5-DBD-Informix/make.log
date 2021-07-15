@@ -1,0 +1,37 @@
+===>  Checking files for p5-DBD-Informix-2018.1031
+>> Fetch https://www.cpan.org/modules/by-module/../by-authors/id/J/JO/JOHNL/DBD-Informix-2018.1031.tar.gz
+DBD-Informix-2018.1031...   0% |                        |     0       --:-- ETADBD-Informix-2018.1031... 100% |************************|   289 KB    00:00    
+===>  Checking files for p5-DBD-Informix-2018.1031
+`/usr/ports/distfiles/DBD-Informix-2018.1031.tar.gz' is up to date.
+>> (SHA256) DBD-Informix-2018.1031.tar.gz: OK
+===>  Extracting for p5-DBD-Informix-2018.1031
+===>  Patching for p5-DBD-Informix-2018.1031
+===>  Compiler link: clang -> /usr/bin/clang
+===>  Compiler link: clang++ -> /usr/bin/clang++
+===>  Compiler link: cc -> /usr/bin/cc
+===>  Compiler link: c++ -> /usr/bin/c++
+===>  Generating configure for p5-DBD-Informix-2018.1031
+===>  Configuring for p5-DBD-Informix-2018.1031
+*** ExtUtils::AutoInstall version 0.63
+*** Checking for dependencies...
+[Core Features]
+- DBI         ...loaded. (1.643 >= 1.607)
+[High Resolution Timing]
+- Time::HiRes ...loaded. (1.976)
+[POD Format Testing]
+- Test::Pod   ...loaded. (1.52)
+*** ExtUtils::AutoInstall configuration finished.
+
+Configuring Informix Database Driver for Perl DBI Version 2018.1031 (2018-10-31) (aka DBD::Informix)
+        You are using DBI version 1.643 and Perl version 5.030003
+Remember to actually read the README file!
+
+Perl:     perl v5.030003 amd64-openbsd dl_dlopen.xs
+System:   openbsd
+
+*** You didn't read the README file!
+$INFORMIXDIR is not set
+
+*** Error 2 in . (/usr/ports/infrastructure/mk/bsd.port.mk:2893 'do-configure': @:;  arch=`perl -e 'use Config; print $Config{archname}, "\n...)
+*** Error 2 in . (/usr/ports/infrastructure/mk/bsd.port.mk:2913 '/usr/obj/ports/p5-DBD-Informix-2018.1031/.configure_done': @cd /usr/ports/o...)
+*** Error 2 in /usr/ports/openbsd-wip/databases/p5-DBD-Informix (/usr/ports/infrastructure/mk/bsd.port.mk:2591 'plist': @lock=p5-DBD-Informi...)

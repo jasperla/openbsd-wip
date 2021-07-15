@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v$
+${P5SITE}/WebService/
+${P5SITE}/WebService/Discord/
+${P5SITE}/WebService/Discord/Webhook.pm
+@man man/man3p/WebService::Discord::Webhook.3p

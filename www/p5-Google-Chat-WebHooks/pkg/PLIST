@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v$
+${P5SITE}/Google/
+${P5SITE}/Google/Chat/
+${P5SITE}/Google/Chat/WebHooks.pm
+@man man/man3p/Google::Chat::WebHooks.3p

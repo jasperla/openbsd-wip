@@ -1,0 +1,9 @@
+@comment $OpenBSD: PLIST,v$
+${P5SITE}/Meta/
+${P5SITE}/Meta/Builder/
+${P5SITE}/Meta/Builder.pm
+${P5SITE}/Meta/Builder/Base.pm
+${P5SITE}/Meta/Builder/Util.pm
+@man man/man3p/Meta::Builder.3p
+@man man/man3p/Meta::Builder::Base.3p
+@man man/man3p/Meta::Builder::Util.3p

@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v$
+${P5SITE}/Fennec/
+${P5SITE}/Fennec/Lite.pm
+@man man/man3p/Fennec::Lite.3p

@@ -1,0 +1,19 @@
+@comment $OpenBSD: PLIST,v$
+${P5SITE}/Mock/
+${P5SITE}/Mock/Quick/
+${P5SITE}/Mock/Quick.pm
+${P5SITE}/Mock/Quick/Class.pm
+${P5SITE}/Mock/Quick/Method.pm
+${P5SITE}/Mock/Quick/Object/
+${P5SITE}/Mock/Quick/Object.pm
+${P5SITE}/Mock/Quick/Object/Control.pm
+${P5SITE}/Mock/Quick/Util.pm
+${P5SITE}/Object/
+${P5SITE}/Object/Quick.pm
+@man man/man3p/Mock::Quick.3p
+@man man/man3p/Mock::Quick::Class.3p
+@man man/man3p/Mock::Quick::Method.3p
+@man man/man3p/Mock::Quick::Object.3p
+@man man/man3p/Mock::Quick::Object::Control.3p
+@man man/man3p/Mock::Quick::Util.3p
+@man man/man3p/Object::Quick.3p

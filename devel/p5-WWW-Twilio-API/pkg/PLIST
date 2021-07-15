@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v$
+${P5SITE}/WWW/
+${P5SITE}/WWW/Twilio/
+${P5SITE}/WWW/Twilio/API.pm
+${P5SITE}/WWW/Twilio/examples.pl
+@man man/man3p/WWW::Twilio::API.3p

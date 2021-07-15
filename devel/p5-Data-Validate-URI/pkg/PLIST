@@ -1,0 +1,16 @@
+@comment $OpenBSD: PLIST,v$
+${P5SITE}/Data/Validate/URI.pm
+${P5SITE}/auto/
+${P5SITE}/auto/Data/
+${P5SITE}/auto/Data/Validate/
+${P5SITE}/auto/Data/Validate/URI/
+${P5SITE}/auto/Data/Validate/URI/_split_uri.al
+${P5SITE}/auto/Data/Validate/URI/_test_uri.al
+${P5SITE}/auto/Data/Validate/URI/autosplit.ix
+${P5SITE}/auto/Data/Validate/URI/is_http_uri.al
+${P5SITE}/auto/Data/Validate/URI/is_https_uri.al
+${P5SITE}/auto/Data/Validate/URI/is_tel_uri.al
+${P5SITE}/auto/Data/Validate/URI/is_uri.al
+${P5SITE}/auto/Data/Validate/URI/is_web_uri.al
+${P5SITE}/auto/Data/Validate/URI/new.al
+@man man/man3p/Data::Validate::URI.3p

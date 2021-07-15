@@ -1,0 +1,1786 @@
+===>  Checking files for p5-Test2-Suite-0.000139
+>> Fetch https://www.cpan.org/modules/by-module/../by-authors/id/E/EX/EXODIST/Test2-Suite-0.000139.tar.gz
+Test2-Suite-0.000139.t...   0% |                        |     0       --:-- ETATest2-Suite-0.000139.t... 100% |************************|   221 KB    00:00    
+===>  Checking files for p5-Test2-Suite-0.000139
+`/usr/ports/distfiles/Test2-Suite-0.000139.tar.gz' is up to date.
+>> (SHA256) Test2-Suite-0.000139.tar.gz: OK
+===>  Extracting for p5-Test2-Suite-0.000139
+===>  Patching for p5-Test2-Suite-0.000139
+===>  Compiler link: clang -> /usr/bin/clang
+===>  Compiler link: clang++ -> /usr/bin/clang++
+===>  Compiler link: cc -> /usr/bin/cc
+===>  Compiler link: c++ -> /usr/bin/c++
+===>  Generating configure for p5-Test2-Suite-0.000139
+===>  Configuring for p5-Test2-Suite-0.000139
+Warning: prerequisite Importer 0.024 not found.
+Warning: prerequisite Scope::Guard 0 not found.
+Warning: prerequisite Sub::Info 0.002 not found.
+Warning: prerequisite Term::Table 0.013 not found.
+Warning: prerequisite Test2::API 1.302176 not found. We have 1.302162.
+Checking if your kit is complete...
+Looks good
+Generating a Unix-style Makefile
+Writing Makefile for Test2::Suite
+Writing MYMETA.yml and MYMETA.json
+===>  Building for p5-Test2-Suite-0.000139
+cp lib/Test2/Manual/Tooling/Nesting.pm blib/lib/Test2/Manual/Tooling/Nesting.pm
+cp lib/Test2/Tools.pm blib/lib/Test2/Tools.pm
+cp lib/Test2/Workflow/Task/Action.pm blib/lib/Test2/Workflow/Task/Action.pm
+cp lib/Test2/Manual/Testing/Introduction.pm blib/lib/Test2/Manual/Testing/Introduction.pm
+cp lib/Test2/Tools/GenTemp.pm blib/lib/Test2/Tools/GenTemp.pm
+cp lib/Test2/Manual/Tooling/Plugin/TestExit.pm blib/lib/Test2/Manual/Tooling/Plugin/TestExit.pm
+cp lib/Test2/Manual/Anatomy/Hubs.pm blib/lib/Test2/Manual/Anatomy/Hubs.pm
+cp lib/Test2/Manual/Testing/Planning.pm blib/lib/Test2/Manual/Testing/Planning.pm
+cp lib/Test2/Compare.pm blib/lib/Test2/Compare.pm
+cp lib/Test2/Manual/Anatomy/EndToEnd.pm blib/lib/Test2/Manual/Anatomy/EndToEnd.pm
+cp lib/Test2/Manual/Anatomy/IPC.pm blib/lib/Test2/Manual/Anatomy/IPC.pm
+cp lib/Test2/Tools/Spec.pm blib/lib/Test2/Tools/Spec.pm
+cp lib/Test2/AsyncSubtest/Event/Attach.pm blib/lib/Test2/AsyncSubtest/Event/Attach.pm
+cp lib/Test2/AsyncSubtest/Event/Detach.pm blib/lib/Test2/AsyncSubtest/Event/Detach.pm
+cp lib/Test2/Manual/Testing.pm blib/lib/Test2/Manual/Testing.pm
+cp lib/Test2/Util/Stash.pm blib/lib/Test2/Util/Stash.pm
+cp lib/Test2/Workflow/Build.pm blib/lib/Test2/Workflow/Build.pm
+cp lib/Test2/Bundle/Extended.pm blib/lib/Test2/Bundle/Extended.pm
+cp lib/Test2/Tools/Grab.pm blib/lib/Test2/Tools/Grab.pm
+cp lib/Test2/Compare/Meta.pm blib/lib/Test2/Compare/Meta.pm
+cp lib/Test2/Plugin.pm blib/lib/Test2/Plugin.pm
+cp lib/Test2/Mock.pm blib/lib/Test2/Mock.pm
+cp lib/Test2/Compare/OrderedSubset.pm blib/lib/Test2/Compare/OrderedSubset.pm
+cp lib/Test2/AsyncSubtest/Formatter.pm blib/lib/Test2/AsyncSubtest/Formatter.pm
+cp lib/Test2/Require/Perl.pm blib/lib/Test2/Require/Perl.pm
+cp lib/Test2/V0.pm blib/lib/Test2/V0.pm
+cp lib/Test2/Tools/Exception.pm blib/lib/Test2/Tools/Exception.pm
+cp lib/Test2/Util/Ref.pm blib/lib/Test2/Util/Ref.pm
+cp lib/Test2/Manual/Tooling/Testing.pm blib/lib/Test2/Manual/Tooling/Testing.pm
+cp lib/Test2/Workflow/BlockBase.pm blib/lib/Test2/Workflow/BlockBase.pm
+cp lib/Test2/Compare/Pattern.pm blib/lib/Test2/Compare/Pattern.pm
+cp lib/Test2/Manual/Anatomy/Event.pm blib/lib/Test2/Manual/Anatomy/Event.pm
+cp lib/Test2/Compare/String.pm blib/lib/Test2/Compare/String.pm
+cp lib/Test2/Tools/Defer.pm blib/lib/Test2/Tools/Defer.pm
+cp lib/Test2/Tools/Basic.pm blib/lib/Test2/Tools/Basic.pm
+cp lib/Test2/Plugin/Times.pm blib/lib/Test2/Plugin/Times.pm
+cp lib/Test2/Compare/Bag.pm blib/lib/Test2/Compare/Bag.pm
+cp lib/Test2/Manual/Testing/Migrating.pm blib/lib/Test2/Manual/Testing/Migrating.pm
+cp lib/Test2/Compare/Set.pm blib/lib/Test2/Compare/Set.pm
+cp lib/Test2/Tools/Target.pm blib/lib/Test2/Tools/Target.pm
+cp lib/Test2/Util/Grabber.pm blib/lib/Test2/Util/Grabber.pm
+cp lib/Test2/Compare/DeepRef.pm blib/lib/Test2/Compare/DeepRef.pm
+cp lib/Test2/Manual.pm blib/lib/Test2/Manual.pm
+cp lib/Test2/Require/AuthorTesting.pm blib/lib/Test2/Require/AuthorTesting.pm
+cp lib/Test2/Workflow.pm blib/lib/Test2/Workflow.pm
+cp lib/Test2/Tools/ClassicCompare.pm blib/lib/Test2/Tools/ClassicCompare.pm
+cp lib/Test2/Bundle/Simple.pm blib/lib/Test2/Bundle/Simple.pm
+cp lib/Test2/Require/Module.pm blib/lib/Test2/Require/Module.pm
+cp lib/Test2/Manual/Tooling/FirstTool.pm blib/lib/Test2/Manual/Tooling/FirstTool.pm
+cp lib/Test2/Manual/Anatomy/Utilities.pm blib/lib/Test2/Manual/Anatomy/Utilities.pm
+cp lib/Test2/Manual/Anatomy.pm blib/lib/Test2/Manual/Anatomy.pm
+cp lib/Test2/Tools/Subtest.pm blib/lib/Test2/Tools/Subtest.pm
+cp lib/Test2/Util/Times.pm blib/lib/Test2/Util/Times.pm
+cp lib/Test2/Tools/Tester.pm blib/lib/Test2/Tools/Tester.pm
+cp lib/Test2/Workflow/Task/Group.pm blib/lib/Test2/Workflow/Task/Group.pm
+cp lib/Test2/Require/EnvVar.pm blib/lib/Test2/Require/EnvVar.pm
+cp lib/Test2/Plugin/ExitSummary.pm blib/lib/Test2/Plugin/ExitSummary.pm
+cp lib/Test2/Suite.pm blib/lib/Test2/Suite.pm
+cp lib/Test2/Tools/Exports.pm blib/lib/Test2/Tools/Exports.pm
+cp lib/Test2/Manual/Concurrency.pm blib/lib/Test2/Manual/Concurrency.pm
+cp lib/Test2/Tools/Ref.pm blib/lib/Test2/Tools/Ref.pm
+cp lib/Test2/Tools/AsyncSubtest.pm blib/lib/Test2/Tools/AsyncSubtest.pm
+cp lib/Test2/AsyncSubtest/Hub.pm blib/lib/Test2/AsyncSubtest/Hub.pm
+cp lib/Test2/Manual/Tooling/Formatter.pm blib/lib/Test2/Manual/Tooling/Formatter.pm
+cp lib/Test2/Todo.pm blib/lib/Test2/Todo.pm
+cp lib/Test2/Util/Term.pm blib/lib/Test2/Util/Term.pm
+cp lib/Test2/Manual/Tooling/Plugin/ToolCompletes.pm blib/lib/Test2/Manual/Tooling/Plugin/ToolCompletes.pm
+cp lib/Test2/Compare/Wildcard.pm blib/lib/Test2/Compare/Wildcard.pm
+cp lib/Test2/Util/Sub.pm blib/lib/Test2/Util/Sub.pm
+cp lib/Test2/Manual/Tooling/TestBuilder.pm blib/lib/Test2/Manual/Tooling/TestBuilder.pm
+cp lib/Test2/Compare/Undef.pm blib/lib/Test2/Compare/Undef.pm
+cp lib/Test2/Bundle/More.pm blib/lib/Test2/Bundle/More.pm
+cp lib/Test2/Plugin/UTF8.pm blib/lib/Test2/Plugin/UTF8.pm
+cp lib/Test2/Compare/Regex.pm blib/lib/Test2/Compare/Regex.pm
+cp lib/Test2/Require/Fork.pm blib/lib/Test2/Require/Fork.pm
+cp lib/Test2/AsyncSubtest.pm blib/lib/Test2/AsyncSubtest.pm
+cp lib/Test2/Manual/Tooling/Subtest.pm blib/lib/Test2/Manual/Tooling/Subtest.pm
+cp lib/Test2/Compare/Hash.pm blib/lib/Test2/Compare/Hash.pm
+cp lib/Test2/Compare/Negatable.pm blib/lib/Test2/Compare/Negatable.pm
+cp lib/Test2/Util/Table.pm blib/lib/Test2/Util/Table.pm
+cp lib/Test2/Compare/Scalar.pm blib/lib/Test2/Compare/Scalar.pm
+cp lib/Test2/Manual/Tooling/Plugin/ToolStarts.pm blib/lib/Test2/Manual/Tooling/Plugin/ToolStarts.pm
+cp lib/Test2/Compare/Event.pm blib/lib/Test2/Compare/Event.pm
+cp lib/Test2/Compare/Base.pm blib/lib/Test2/Compare/Base.pm
+cp lib/Test2/Compare/Number.pm blib/lib/Test2/Compare/Number.pm
+cp lib/Test2/Plugin/BailOnFail.pm blib/lib/Test2/Plugin/BailOnFail.pm
+cp lib/Test2/Manual/Tooling/Plugin/TestingDone.pm blib/lib/Test2/Manual/Tooling/Plugin/TestingDone.pm
+cp lib/Test2/Compare/Float.pm blib/lib/Test2/Compare/Float.pm
+cp lib/Test2/Tools/Compare.pm blib/lib/Test2/Tools/Compare.pm
+cp lib/Test2/Manual/Anatomy/Context.pm blib/lib/Test2/Manual/Anatomy/Context.pm
+cp lib/Test2/Compare/Array.pm blib/lib/Test2/Compare/Array.pm
+cp lib/Test2/Compare/Ref.pm blib/lib/Test2/Compare/Ref.pm
+cp lib/Test2/Manual/Contributing.pm blib/lib/Test2/Manual/Contributing.pm
+cp lib/Test2/Manual/Tooling.pm blib/lib/Test2/Manual/Tooling.pm
+cp lib/Test2/Tools/Mock.pm blib/lib/Test2/Tools/Mock.pm
+cp lib/Test2/Tools/Event.pm blib/lib/Test2/Tools/Event.pm
+cp lib/Test2/Compare/Isa.pm blib/lib/Test2/Compare/Isa.pm
+cp lib/Test2/Manual/Testing/Todo.pm blib/lib/Test2/Manual/Testing/Todo.pm
+cp lib/Test2/Tools/Encoding.pm blib/lib/Test2/Tools/Encoding.pm
+cp lib/Test2/Tools/Class.pm blib/lib/Test2/Tools/Class.pm
+cp lib/Test2/Compare/Object.pm blib/lib/Test2/Compare/Object.pm
+cp lib/Test2/Require/Threads.pm blib/lib/Test2/Require/Threads.pm
+cp lib/Test2/Plugin/SRand.pm blib/lib/Test2/Plugin/SRand.pm
+cp lib/Test2/Compare/Custom.pm blib/lib/Test2/Compare/Custom.pm
+cp lib/Test2/Util/Table/LineBreak.pm blib/lib/Test2/Util/Table/LineBreak.pm
+cp lib/Test2/Require.pm blib/lib/Test2/Require.pm
+cp lib/Test2/Util/Table/Cell.pm blib/lib/Test2/Util/Table/Cell.pm
+cp lib/Test2/Compare/EventMeta.pm blib/lib/Test2/Compare/EventMeta.pm
+cp lib/Test2/Require/RealFork.pm blib/lib/Test2/Require/RealFork.pm
+cp lib/Test2/Compare/Delta.pm blib/lib/Test2/Compare/Delta.pm
+cp lib/Test2/Bundle.pm blib/lib/Test2/Bundle.pm
+cp lib/Test2/Workflow/Task.pm blib/lib/Test2/Workflow/Task.pm
+cp lib/Test2/Plugin/DieOnFail.pm blib/lib/Test2/Plugin/DieOnFail.pm
+cp lib/Test2/Compare/Bool.pm blib/lib/Test2/Compare/Bool.pm
+cp lib/Test2/Workflow/Runner.pm blib/lib/Test2/Workflow/Runner.pm
+cp lib/Test2/Manual/Anatomy/API.pm blib/lib/Test2/Manual/Anatomy/API.pm
+cp lib/Test2/Tools/Warnings.pm blib/lib/Test2/Tools/Warnings.pm
+Manifying 114 pod documents
+===>  Faking installation for p5-Test2-Suite-0.000139
+Manifying 114 pod documents
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/libdata/perl5/site_perl/Test2/Tools.pm
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/libdata/perl5/site_perl/Test2/Compare.pm
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/libdata/perl5/site_perl/Test2/Plugin.pm
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/libdata/perl5/site_perl/Test2/Mock.pm
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/libdata/perl5/site_perl/Test2/V0.pm
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/libdata/perl5/site_perl/Test2/Manual.pm
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/libdata/perl5/site_perl/Test2/Workflow.pm
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/libdata/perl5/site_perl/Test2/Suite.pm
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/libdata/perl5/site_perl/Test2/Todo.pm
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/libdata/perl5/site_perl/Test2/AsyncSubtest.pm
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/libdata/perl5/site_perl/Test2/Require.pm
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/libdata/perl5/site_perl/Test2/Bundle.pm
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/libdata/perl5/site_perl/Test2/Manual/Testing.pm
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/libdata/perl5/site_perl/Test2/Manual/Anatomy.pm
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/libdata/perl5/site_perl/Test2/Manual/Concurrency.pm
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/libdata/perl5/site_perl/Test2/Manual/Contributing.pm
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/libdata/perl5/site_perl/Test2/Manual/Tooling.pm
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/libdata/perl5/site_perl/Test2/Manual/Tooling/Nesting.pm
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/libdata/perl5/site_perl/Test2/Manual/Tooling/Testing.pm
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/libdata/perl5/site_perl/Test2/Manual/Tooling/FirstTool.pm
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/libdata/perl5/site_perl/Test2/Manual/Tooling/Formatter.pm
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/libdata/perl5/site_perl/Test2/Manual/Tooling/TestBuilder.pm
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/libdata/perl5/site_perl/Test2/Manual/Tooling/Subtest.pm
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/libdata/perl5/site_perl/Test2/Manual/Tooling/Plugin/TestExit.pm
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/libdata/perl5/site_perl/Test2/Manual/Tooling/Plugin/ToolCompletes.pm
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/libdata/perl5/site_perl/Test2/Manual/Tooling/Plugin/ToolStarts.pm
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/libdata/perl5/site_perl/Test2/Manual/Tooling/Plugin/TestingDone.pm
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/libdata/perl5/site_perl/Test2/Manual/Testing/Introduction.pm
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/libdata/perl5/site_perl/Test2/Manual/Testing/Planning.pm
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/libdata/perl5/site_perl/Test2/Manual/Testing/Migrating.pm
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/libdata/perl5/site_perl/Test2/Manual/Testing/Todo.pm
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/libdata/perl5/site_perl/Test2/Manual/Anatomy/Hubs.pm
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/libdata/perl5/site_perl/Test2/Manual/Anatomy/EndToEnd.pm
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/libdata/perl5/site_perl/Test2/Manual/Anatomy/IPC.pm
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/libdata/perl5/site_perl/Test2/Manual/Anatomy/Event.pm
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/libdata/perl5/site_perl/Test2/Manual/Anatomy/Utilities.pm
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/libdata/perl5/site_perl/Test2/Manual/Anatomy/Context.pm
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/libdata/perl5/site_perl/Test2/Manual/Anatomy/API.pm
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/libdata/perl5/site_perl/Test2/Workflow/Build.pm
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/libdata/perl5/site_perl/Test2/Workflow/BlockBase.pm
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/libdata/perl5/site_perl/Test2/Workflow/Task.pm
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/libdata/perl5/site_perl/Test2/Workflow/Runner.pm
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/libdata/perl5/site_perl/Test2/Workflow/Task/Action.pm
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/libdata/perl5/site_perl/Test2/Workflow/Task/Group.pm
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/libdata/perl5/site_perl/Test2/Tools/GenTemp.pm
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/libdata/perl5/site_perl/Test2/Tools/Spec.pm
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/libdata/perl5/site_perl/Test2/Tools/Grab.pm
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/libdata/perl5/site_perl/Test2/Tools/Exception.pm
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/libdata/perl5/site_perl/Test2/Tools/Defer.pm
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/libdata/perl5/site_perl/Test2/Tools/Basic.pm
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/libdata/perl5/site_perl/Test2/Tools/Target.pm
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/libdata/perl5/site_perl/Test2/Tools/ClassicCompare.pm
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/libdata/perl5/site_perl/Test2/Tools/Subtest.pm
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/libdata/perl5/site_perl/Test2/Tools/Tester.pm
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/libdata/perl5/site_perl/Test2/Tools/Exports.pm
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/libdata/perl5/site_perl/Test2/Tools/Ref.pm
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/libdata/perl5/site_perl/Test2/Tools/AsyncSubtest.pm
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/libdata/perl5/site_perl/Test2/Tools/Compare.pm
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/libdata/perl5/site_perl/Test2/Tools/Mock.pm
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/libdata/perl5/site_perl/Test2/Tools/Event.pm
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/libdata/perl5/site_perl/Test2/Tools/Encoding.pm
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/libdata/perl5/site_perl/Test2/Tools/Class.pm
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/libdata/perl5/site_perl/Test2/Tools/Warnings.pm
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/libdata/perl5/site_perl/Test2/AsyncSubtest/Formatter.pm
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/libdata/perl5/site_perl/Test2/AsyncSubtest/Hub.pm
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/libdata/perl5/site_perl/Test2/AsyncSubtest/Event/Attach.pm
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/libdata/perl5/site_perl/Test2/AsyncSubtest/Event/Detach.pm
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/libdata/perl5/site_perl/Test2/Util/Stash.pm
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/libdata/perl5/site_perl/Test2/Util/Ref.pm
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/libdata/perl5/site_perl/Test2/Util/Grabber.pm
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/libdata/perl5/site_perl/Test2/Util/Times.pm
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/libdata/perl5/site_perl/Test2/Util/Term.pm
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/libdata/perl5/site_perl/Test2/Util/Sub.pm
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/libdata/perl5/site_perl/Test2/Util/Table.pm
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/libdata/perl5/site_perl/Test2/Util/Table/LineBreak.pm
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/libdata/perl5/site_perl/Test2/Util/Table/Cell.pm
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/libdata/perl5/site_perl/Test2/Bundle/Extended.pm
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/libdata/perl5/site_perl/Test2/Bundle/Simple.pm
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/libdata/perl5/site_perl/Test2/Bundle/More.pm
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/libdata/perl5/site_perl/Test2/Compare/Meta.pm
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/libdata/perl5/site_perl/Test2/Compare/OrderedSubset.pm
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/libdata/perl5/site_perl/Test2/Compare/Pattern.pm
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/libdata/perl5/site_perl/Test2/Compare/String.pm
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/libdata/perl5/site_perl/Test2/Compare/Bag.pm
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/libdata/perl5/site_perl/Test2/Compare/Set.pm
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/libdata/perl5/site_perl/Test2/Compare/DeepRef.pm
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/libdata/perl5/site_perl/Test2/Compare/Wildcard.pm
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/libdata/perl5/site_perl/Test2/Compare/Undef.pm
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/libdata/perl5/site_perl/Test2/Compare/Regex.pm
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/libdata/perl5/site_perl/Test2/Compare/Hash.pm
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/libdata/perl5/site_perl/Test2/Compare/Negatable.pm
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/libdata/perl5/site_perl/Test2/Compare/Scalar.pm
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/libdata/perl5/site_perl/Test2/Compare/Event.pm
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/libdata/perl5/site_perl/Test2/Compare/Base.pm
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/libdata/perl5/site_perl/Test2/Compare/Number.pm
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/libdata/perl5/site_perl/Test2/Compare/Float.pm
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/libdata/perl5/site_perl/Test2/Compare/Array.pm
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/libdata/perl5/site_perl/Test2/Compare/Ref.pm
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/libdata/perl5/site_perl/Test2/Compare/Isa.pm
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/libdata/perl5/site_perl/Test2/Compare/Object.pm
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/libdata/perl5/site_perl/Test2/Compare/Custom.pm
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/libdata/perl5/site_perl/Test2/Compare/EventMeta.pm
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/libdata/perl5/site_perl/Test2/Compare/Delta.pm
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/libdata/perl5/site_perl/Test2/Compare/Bool.pm
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/libdata/perl5/site_perl/Test2/Require/Perl.pm
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/libdata/perl5/site_perl/Test2/Require/AuthorTesting.pm
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/libdata/perl5/site_perl/Test2/Require/Module.pm
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/libdata/perl5/site_perl/Test2/Require/EnvVar.pm
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/libdata/perl5/site_perl/Test2/Require/Fork.pm
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/libdata/perl5/site_perl/Test2/Require/Threads.pm
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/libdata/perl5/site_perl/Test2/Require/RealFork.pm
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/libdata/perl5/site_perl/Test2/Plugin/Times.pm
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/libdata/perl5/site_perl/Test2/Plugin/ExitSummary.pm
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/libdata/perl5/site_perl/Test2/Plugin/UTF8.pm
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/libdata/perl5/site_perl/Test2/Plugin/BailOnFail.pm
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/libdata/perl5/site_perl/Test2/Plugin/SRand.pm
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/libdata/perl5/site_perl/Test2/Plugin/DieOnFail.pm
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/man/man3p/Test2::AsyncSubtest.3p
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/man/man3p/Test2::AsyncSubtest::Event::Attach.3p
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/man/man3p/Test2::AsyncSubtest::Event::Detach.3p
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/man/man3p/Test2::AsyncSubtest::Hub.3p
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/man/man3p/Test2::Bundle.3p
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/man/man3p/Test2::Bundle::Extended.3p
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/man/man3p/Test2::Bundle::More.3p
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/man/man3p/Test2::Bundle::Simple.3p
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/man/man3p/Test2::Compare.3p
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/man/man3p/Test2::Compare::Array.3p
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/man/man3p/Test2::Compare::Bag.3p
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/man/man3p/Test2::Compare::Base.3p
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/man/man3p/Test2::Compare::Bool.3p
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/man/man3p/Test2::Compare::Custom.3p
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/man/man3p/Test2::Compare::DeepRef.3p
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/man/man3p/Test2::Compare::Delta.3p
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/man/man3p/Test2::Compare::Event.3p
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/man/man3p/Test2::Compare::EventMeta.3p
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/man/man3p/Test2::Compare::Float.3p
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/man/man3p/Test2::Compare::Hash.3p
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/man/man3p/Test2::Compare::Isa.3p
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/man/man3p/Test2::Compare::Meta.3p
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/man/man3p/Test2::Compare::Negatable.3p
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/man/man3p/Test2::Compare::Number.3p
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/man/man3p/Test2::Compare::Object.3p
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/man/man3p/Test2::Compare::OrderedSubset.3p
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/man/man3p/Test2::Compare::Pattern.3p
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/man/man3p/Test2::Compare::Ref.3p
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/man/man3p/Test2::Compare::Regex.3p
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/man/man3p/Test2::Compare::Scalar.3p
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/man/man3p/Test2::Compare::Set.3p
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/man/man3p/Test2::Compare::String.3p
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/man/man3p/Test2::Compare::Undef.3p
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/man/man3p/Test2::Compare::Wildcard.3p
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/man/man3p/Test2::Manual.3p
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/man/man3p/Test2::Manual::Anatomy.3p
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/man/man3p/Test2::Manual::Anatomy::API.3p
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/man/man3p/Test2::Manual::Anatomy::Context.3p
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/man/man3p/Test2::Manual::Anatomy::EndToEnd.3p
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/man/man3p/Test2::Manual::Anatomy::Event.3p
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/man/man3p/Test2::Mock.3p
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/man/man3p/Test2::Manual::Anatomy::Hubs.3p
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/man/man3p/Test2::Manual::Anatomy::IPC.3p
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/man/man3p/Test2::Manual::Anatomy::Utilities.3p
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/man/man3p/Test2::Manual::Concurrency.3p
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/man/man3p/Test2::Manual::Contributing.3p
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/man/man3p/Test2::Manual::Testing.3p
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/man/man3p/Test2::Manual::Testing::Introduction.3p
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/man/man3p/Test2::Manual::Testing::Migrating.3p
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/man/man3p/Test2::Manual::Testing::Planning.3p
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/man/man3p/Test2::Manual::Testing::Todo.3p
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/man/man3p/Test2::Manual::Tooling.3p
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/man/man3p/Test2::Manual::Tooling::FirstTool.3p
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/man/man3p/Test2::Manual::Tooling::Formatter.3p
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/man/man3p/Test2::Manual::Tooling::Nesting.3p
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/man/man3p/Test2::Manual::Tooling::Plugin::TestExit.3p
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/man/man3p/Test2::Manual::Tooling::Plugin::TestingDone.3p
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/man/man3p/Test2::Manual::Tooling::Plugin::ToolCompletes.3p
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/man/man3p/Test2::Manual::Tooling::Plugin::ToolStarts.3p
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/man/man3p/Test2::Manual::Tooling::Subtest.3p
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/man/man3p/Test2::Manual::Tooling::TestBuilder.3p
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/man/man3p/Test2::Manual::Tooling::Testing.3p
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/man/man3p/Test2::Plugin.3p
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/man/man3p/Test2::Plugin::SRand.3p
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/man/man3p/Test2::Plugin::BailOnFail.3p
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/man/man3p/Test2::Plugin::DieOnFail.3p
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/man/man3p/Test2::Plugin::ExitSummary.3p
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/man/man3p/Test2::Plugin::Times.3p
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/man/man3p/Test2::Plugin::UTF8.3p
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/man/man3p/Test2::Require.3p
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/man/man3p/Test2::Require::AuthorTesting.3p
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/man/man3p/Test2::Require::EnvVar.3p
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/man/man3p/Test2::Require::Fork.3p
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/man/man3p/Test2::Require::Module.3p
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/man/man3p/Test2::Require::Perl.3p
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/man/man3p/Test2::Require::RealFork.3p
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/man/man3p/Test2::Require::Threads.3p
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/man/man3p/Test2::Suite.3p
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/man/man3p/Test2::Todo.3p
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/man/man3p/Test2::Tools.3p
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/man/man3p/Test2::Tools::AsyncSubtest.3p
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/man/man3p/Test2::Tools::Basic.3p
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/man/man3p/Test2::Tools::Class.3p
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/man/man3p/Test2::Tools::ClassicCompare.3p
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/man/man3p/Test2::Tools::Compare.3p
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/man/man3p/Test2::Tools::Defer.3p
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/man/man3p/Test2::Tools::Encoding.3p
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/man/man3p/Test2::Tools::Event.3p
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/man/man3p/Test2::Tools::Exception.3p
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/man/man3p/Test2::Tools::Exports.3p
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/man/man3p/Test2::Tools::GenTemp.3p
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/man/man3p/Test2::Tools::Grab.3p
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/man/man3p/Test2::Tools::Mock.3p
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/man/man3p/Test2::Tools::Ref.3p
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/man/man3p/Test2::Tools::Spec.3p
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/man/man3p/Test2::Tools::Subtest.3p
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/man/man3p/Test2::Tools::Target.3p
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/man/man3p/Test2::Tools::Tester.3p
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/man/man3p/Test2::Tools::Warnings.3p
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/man/man3p/Test2::Util::Grabber.3p
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/man/man3p/Test2::Util::Ref.3p
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/man/man3p/Test2::Util::Stash.3p
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/man/man3p/Test2::Util::Sub.3p
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/man/man3p/Test2::Util::Table.3p
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/man/man3p/Test2::Util::Table::LineBreak.3p
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/man/man3p/Test2::Util::Times.3p
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/man/man3p/Test2::V0.3p
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/man/man3p/Test2::Workflow.3p
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/man/man3p/Test2::Workflow::BlockBase.3p
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/man/man3p/Test2::Workflow::Build.3p
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/man/man3p/Test2::Workflow::Runner.3p
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/man/man3p/Test2::Workflow::Task.3p
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/man/man3p/Test2::Workflow::Task::Action.3p
+Installing /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/local/man/man3p/Test2::Workflow::Task::Group.3p
+Appending installation info to /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64/usr/./libdata/perl5/amd64-openbsd/perllocal.pod
+===>  Updating plist for p5-Test2-Suite-0.000139
+Reading existing plist for p5-Test2-Suite-0.000139
+Scanning /usr/obj/ports/p5-Test2-Suite-0.000139/fake-amd64
+Removing .debug artefacts
+Figuring out tie points
+Tieing loose objects
+Copying objects
+Looking for unregistered conflicts
+/usr/ports/openbsd-wip/devel/p5-Test2-Suite/pkg/PLIST is new
+===>  Regression tests for p5-Test2-Suite-0.000139
+PERL_DL_NONLAZY=1 "/usr/bin/perl" "-MExtUtils::Command::MM" "-MTest::Harness" "-e" "undef *Test::Harness::Switches; test_harness(0, 'blib/lib', 'blib/arch')" t/*.t t/acceptance/*.t t/behavior/*.t t/modules/*.t t/modules/AsyncSubtest/*.t t/modules/AsyncSubtest/Event/*.t t/modules/Bundle/*.t t/modules/Compare/*.t t/modules/Plugin/*.t t/modules/Require/*.t t/modules/Tools/*.t t/modules/Util/*.t t/modules/Util/Table/*.t t/modules/Workflow/*.t t/modules/Workflow/Task/*.t t/regression/*.t
+Base class package "Term::Table" is empty.
+    (Perhaps you need to 'use' the module which defines that package first,
+    or make that module available in @INC (@INC contains: /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/arch /usr/local/libdata/perl5/site_perl/amd64-openbsd /usr/local/libdata/perl5/site_perl /usr/libdata/perl5/amd64-openbsd /usr/libdata/perl5 .).
+ at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Util/Table.pm line 7.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Util/Table.pm line 7.
+Compilation failed in require at t/00-report.t line 2.
+BEGIN failed--compilation aborted at t/00-report.t line 2.
+t/00-report.t ................................... 
+Dubious, test returned 2 (wstat 512, 0x200)
+No subtests run 
+Can't locate Importer.pm in @INC (you may need to install the Importer module) (@INC contains: /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/arch /usr/local/libdata/perl5/site_perl/amd64-openbsd /usr/local/libdata/perl5/site_perl /usr/libdata/perl5/amd64-openbsd /usr/libdata/perl5 .) at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+Compilation failed in require at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+Compilation failed in require at t/acceptance/OO.t line 1.
+BEGIN failed--compilation aborted at t/acceptance/OO.t line 1.
+t/acceptance/OO.t ............................... 
+Dubious, test returned 2 (wstat 512, 0x200)
+No subtests run 
+Can't locate Importer.pm in @INC (you may need to install the Importer module) (@INC contains: /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/arch /usr/local/libdata/perl5/site_perl/amd64-openbsd /usr/local/libdata/perl5/site_perl /usr/libdata/perl5/amd64-openbsd /usr/libdata/perl5 .) at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+Compilation failed in require at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+Compilation failed in require at t/acceptance/skip.t line 1.
+BEGIN failed--compilation aborted at t/acceptance/skip.t line 1.
+t/acceptance/skip.t ............................. 
+Dubious, test returned 2 (wstat 512, 0x200)
+No subtests run 
+Can't locate Importer.pm in @INC (you may need to install the Importer module) (@INC contains: /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/arch /usr/local/libdata/perl5/site_perl/amd64-openbsd /usr/local/libdata/perl5/site_perl /usr/libdata/perl5/amd64-openbsd /usr/libdata/perl5 .) at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+Compilation failed in require at t/acceptance/spec.t line 1.
+BEGIN failed--compilation aborted at t/acceptance/spec.t line 1.
+t/acceptance/spec.t ............................. 
+Dubious, test returned 2 (wstat 512, 0x200)
+No subtests run 
+Can't locate Importer.pm in @INC (you may need to install the Importer module) (@INC contains: /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/arch /usr/local/libdata/perl5/site_perl/amd64-openbsd /usr/local/libdata/perl5/site_perl /usr/libdata/perl5/amd64-openbsd /usr/libdata/perl5 .) at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+Compilation failed in require at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+Compilation failed in require at t/acceptance/Tools.t line 5.
+BEGIN failed--compilation aborted at t/acceptance/Tools.t line 5.
+t/acceptance/Tools.t ............................ 
+Dubious, test returned 2 (wstat 512, 0x200)
+No subtests run 
+Can't locate Importer.pm in @INC (you may need to install the Importer module) (@INC contains: /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/arch /usr/local/libdata/perl5/site_perl/amd64-openbsd /usr/local/libdata/perl5/site_perl /usr/libdata/perl5/amd64-openbsd /usr/libdata/perl5 .) at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+Compilation failed in require at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+Compilation failed in require at t/acceptance/Workflow-Acceptance.t line 3.
+BEGIN failed--compilation aborted at t/acceptance/Workflow-Acceptance.t line 3.
+t/acceptance/Workflow-Acceptance.t .............. 
+Dubious, test returned 2 (wstat 512, 0x200)
+No subtests run 
+Can't locate Importer.pm in @INC (you may need to install the Importer module) (@INC contains: /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/arch /usr/local/libdata/perl5/site_perl/amd64-openbsd /usr/local/libdata/perl5/site_perl /usr/libdata/perl5/amd64-openbsd /usr/libdata/perl5 .) at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+Compilation failed in require at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+Compilation failed in require at t/acceptance/Workflow-Acceptance2.t line 3.
+BEGIN failed--compilation aborted at t/acceptance/Workflow-Acceptance2.t line 3.
+t/acceptance/Workflow-Acceptance2.t ............. 
+Dubious, test returned 2 (wstat 512, 0x200)
+No subtests run 
+Can't locate Importer.pm in @INC (you may need to install the Importer module) (@INC contains: /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/arch /usr/local/libdata/perl5/site_perl/amd64-openbsd /usr/local/libdata/perl5/site_perl /usr/libdata/perl5/amd64-openbsd /usr/libdata/perl5 .) at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+Compilation failed in require at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+Compilation failed in require at t/acceptance/Workflow-Acceptance3.t line 1.
+BEGIN failed--compilation aborted at t/acceptance/Workflow-Acceptance3.t line 1.
+t/acceptance/Workflow-Acceptance3.t ............. 
+Dubious, test returned 2 (wstat 512, 0x200)
+No subtests run 
+Can't locate Importer.pm in @INC (you may need to install the Importer module) (@INC contains: /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/arch /usr/local/libdata/perl5/site_perl/amd64-openbsd /usr/local/libdata/perl5/site_perl /usr/libdata/perl5/amd64-openbsd /usr/libdata/perl5 .) at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+Compilation failed in require at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+Compilation failed in require at t/acceptance/Workflow-Acceptance4.t line 1.
+BEGIN failed--compilation aborted at t/acceptance/Workflow-Acceptance4.t line 1.
+t/acceptance/Workflow-Acceptance4.t ............. 
+Dubious, test returned 2 (wstat 512, 0x200)
+No subtests run 
+Can't locate Importer.pm in @INC (you may need to install the Importer module) (@INC contains: /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/arch /usr/local/libdata/perl5/site_perl/amd64-openbsd /usr/local/libdata/perl5/site_perl /usr/libdata/perl5/amd64-openbsd /usr/libdata/perl5 .) at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+Compilation failed in require at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+Compilation failed in require at t/acceptance/Workflow-Acceptance5.t line 1.
+BEGIN failed--compilation aborted at t/acceptance/Workflow-Acceptance5.t line 1.
+t/acceptance/Workflow-Acceptance5.t ............. 
+Dubious, test returned 2 (wstat 512, 0x200)
+No subtests run 
+Can't locate Scope/Guard.pm in @INC (you may need to install the Scope::Guard module) (@INC contains: /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/arch /usr/local/libdata/perl5/site_perl/amd64-openbsd /usr/local/libdata/perl5/site_perl /usr/libdata/perl5/amd64-openbsd /usr/libdata/perl5 .) at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/AsyncSubtest.pm line 16.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/AsyncSubtest.pm line 16.
+Compilation failed in require at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Tools/AsyncSubtest.pm line 8.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Tools/AsyncSubtest.pm line 8.
+Compilation failed in require at t/behavior/async_trace.t line 2.
+BEGIN failed--compilation aborted at t/behavior/async_trace.t line 2.
+t/behavior/async_trace.t ........................ 
+Dubious, test returned 2 (wstat 512, 0x200)
+No subtests run 
+Can't locate Importer.pm in @INC (you may need to install the Importer module) (@INC contains: /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/arch /usr/local/libdata/perl5/site_perl/amd64-openbsd /usr/local/libdata/perl5/site_perl /usr/libdata/perl5/amd64-openbsd /usr/libdata/perl5 .) at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+Compilation failed in require at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+Compilation failed in require at t/behavior/filtering.t line 1.
+BEGIN failed--compilation aborted at t/behavior/filtering.t line 1.
+t/behavior/filtering.t .......................... 
+Dubious, test returned 2 (wstat 512, 0x200)
+No subtests run 
+Can't locate Importer.pm in @INC (you may need to install the Importer module) (@INC contains: /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/arch /usr/local/libdata/perl5/site_perl/amd64-openbsd /usr/local/libdata/perl5/site_perl /usr/libdata/perl5/amd64-openbsd /usr/libdata/perl5 .) at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+Compilation failed in require at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+Compilation failed in require at t/behavior/Mocking.t line 1.
+BEGIN failed--compilation aborted at t/behavior/Mocking.t line 1.
+t/behavior/Mocking.t ............................ 
+Dubious, test returned 2 (wstat 512, 0x200)
+No subtests run 
+Can't locate Importer.pm in @INC (you may need to install the Importer module) (@INC contains: /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/arch /usr/local/libdata/perl5/site_perl/amd64-openbsd /usr/local/libdata/perl5/site_perl /usr/libdata/perl5/amd64-openbsd /usr/libdata/perl5 .) at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+Compilation failed in require at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+Compilation failed in require at t/behavior/no_done_testing.t line 1.
+BEGIN failed--compilation aborted at t/behavior/no_done_testing.t line 1.
+t/behavior/no_done_testing.t .................... 
+Dubious, test returned 2 (wstat 512, 0x200)
+No subtests run 
+Can't locate Importer.pm in @INC (you may need to install the Importer module) (@INC contains: /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/arch /usr/local/libdata/perl5/site_perl/amd64-openbsd /usr/local/libdata/perl5/site_perl /usr/libdata/perl5/amd64-openbsd /usr/libdata/perl5 .) at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+Compilation failed in require at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+Compilation failed in require at t/behavior/no_leaks_any.t line 1.
+BEGIN failed--compilation aborted at t/behavior/no_leaks_any.t line 1.
+t/behavior/no_leaks_any.t ....................... 
+Dubious, test returned 2 (wstat 512, 0x200)
+No subtests run 
+Can't locate Importer.pm in @INC (you may need to install the Importer module) (@INC contains: /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/arch /usr/local/libdata/perl5/site_perl/amd64-openbsd /usr/local/libdata/perl5/site_perl /usr/libdata/perl5/amd64-openbsd /usr/libdata/perl5 .) at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+Compilation failed in require at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+Compilation failed in require at t/behavior/no_leaks_no_fork.t line 1.
+BEGIN failed--compilation aborted at t/behavior/no_leaks_no_fork.t line 1.
+t/behavior/no_leaks_no_fork.t ................... 
+Dubious, test returned 2 (wstat 512, 0x200)
+No subtests run 
+Can't locate Importer.pm in @INC (you may need to install the Importer module) (@INC contains: /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/arch /usr/local/libdata/perl5/site_perl/amd64-openbsd /usr/local/libdata/perl5/site_perl /usr/libdata/perl5/amd64-openbsd /usr/libdata/perl5 .) at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+Compilation failed in require at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+Compilation failed in require at t/behavior/no_leaks_no_iso.t line 1.
+BEGIN failed--compilation aborted at t/behavior/no_leaks_no_iso.t line 1.
+t/behavior/no_leaks_no_iso.t .................... 
+Dubious, test returned 2 (wstat 512, 0x200)
+No subtests run 
+Can't locate Importer.pm in @INC (you may need to install the Importer module) (@INC contains: /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/arch /usr/local/libdata/perl5/site_perl/amd64-openbsd /usr/local/libdata/perl5/site_perl /usr/libdata/perl5/amd64-openbsd /usr/libdata/perl5 .) at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+Compilation failed in require at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+Compilation failed in require at t/behavior/no_leaks_no_threads.t line 1.
+BEGIN failed--compilation aborted at t/behavior/no_leaks_no_threads.t line 1.
+t/behavior/no_leaks_no_threads.t ................ 
+Dubious, test returned 2 (wstat 512, 0x200)
+No subtests run 
+Can't locate Importer.pm in @INC (you may need to install the Importer module) (@INC contains: /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/arch /usr/local/libdata/perl5/site_perl/amd64-openbsd /usr/local/libdata/perl5/site_perl /usr/libdata/perl5/amd64-openbsd /usr/libdata/perl5 .) at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+Compilation failed in require at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+Compilation failed in require at t/behavior/simple.t line 4.
+BEGIN failed--compilation aborted at t/behavior/simple.t line 4.
+t/behavior/simple.t ............................. 
+Dubious, test returned 2 (wstat 512, 0x200)
+No subtests run 
+t/load_manual.t ................................. ok
+Can't locate Importer.pm in @INC (you may need to install the Importer module) (@INC contains: /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/arch /usr/local/libdata/perl5/site_perl/amd64-openbsd /usr/local/libdata/perl5/site_perl /usr/libdata/perl5/amd64-openbsd /usr/libdata/perl5 .) at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+Compilation failed in require at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+Compilation failed in require at t/modules/AsyncSubtest.t line 1.
+BEGIN failed--compilation aborted at t/modules/AsyncSubtest.t line 1.
+t/modules/AsyncSubtest.t ........................ 
+Dubious, test returned 2 (wstat 512, 0x200)
+No subtests run 
+Can't locate Importer.pm in @INC (you may need to install the Importer module) (@INC contains: /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/arch /usr/local/libdata/perl5/site_perl/amd64-openbsd /usr/local/libdata/perl5/site_perl /usr/libdata/perl5/amd64-openbsd /usr/libdata/perl5 .) at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+Compilation failed in require at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+Compilation failed in require at t/modules/AsyncSubtest/Event/Attach.t line 1.
+BEGIN failed--compilation aborted at t/modules/AsyncSubtest/Event/Attach.t line 1.
+t/modules/AsyncSubtest/Event/Attach.t ........... 
+Dubious, test returned 2 (wstat 512, 0x200)
+No subtests run 
+Can't locate Importer.pm in @INC (you may need to install the Importer module) (@INC contains: /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/arch /usr/local/libdata/perl5/site_perl/amd64-openbsd /usr/local/libdata/perl5/site_perl /usr/libdata/perl5/amd64-openbsd /usr/libdata/perl5 .) at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+Compilation failed in require at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+Compilation failed in require at t/modules/AsyncSubtest/Event/Detach.t line 1.
+BEGIN failed--compilation aborted at t/modules/AsyncSubtest/Event/Detach.t line 1.
+t/modules/AsyncSubtest/Event/Detach.t ........... 
+Dubious, test returned 2 (wstat 512, 0x200)
+No subtests run 
+Can't locate Importer.pm in @INC (you may need to install the Importer module) (@INC contains: /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/arch /usr/local/libdata/perl5/site_perl/amd64-openbsd /usr/local/libdata/perl5/site_perl /usr/libdata/perl5/amd64-openbsd /usr/libdata/perl5 .) at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+Compilation failed in require at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+Compilation failed in require at t/modules/AsyncSubtest/Hub.t line 1.
+BEGIN failed--compilation aborted at t/modules/AsyncSubtest/Hub.t line 1.
+t/modules/AsyncSubtest/Hub.t .................... 
+Dubious, test returned 2 (wstat 512, 0x200)
+No subtests run 
+Can't locate Importer.pm in @INC (you may need to install the Importer module) (@INC contains: /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/arch /usr/local/libdata/perl5/site_perl/amd64-openbsd /usr/local/libdata/perl5/site_perl /usr/libdata/perl5/amd64-openbsd /usr/libdata/perl5 .) at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+Compilation failed in require at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+Compilation failed in require at t/modules/Bundle.t line 1.
+BEGIN failed--compilation aborted at t/modules/Bundle.t line 1.
+t/modules/Bundle.t .............................. 
+Dubious, test returned 2 (wstat 512, 0x200)
+No subtests run 
+Can't locate Importer.pm in @INC (you may need to install the Importer module) (@INC contains: /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/arch /usr/local/libdata/perl5/site_perl/amd64-openbsd /usr/local/libdata/perl5/site_perl /usr/libdata/perl5/amd64-openbsd /usr/libdata/perl5 .) at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+Compilation failed in require at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+Compilation failed in require at t/modules/Bundle/Extended.t line 1.
+BEGIN failed--compilation aborted at t/modules/Bundle/Extended.t line 1.
+t/modules/Bundle/Extended.t ..................... 
+Dubious, test returned 2 (wstat 512, 0x200)
+No subtests run 
+Base class package "Term::Table" is empty.
+    (Perhaps you need to 'use' the module which defines that package first,
+    or make that module available in @INC (@INC contains: /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/arch /usr/local/libdata/perl5/site_perl/amd64-openbsd /usr/local/libdata/perl5/site_perl /usr/libdata/perl5/amd64-openbsd /usr/libdata/perl5 .).
+ at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Util/Table.pm line 7.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Util/Table.pm line 7.
+Compilation failed in require at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Tools/ClassicCompare.pm line 16.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Tools/ClassicCompare.pm line 16.
+Compilation failed in require at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/More.pm line 14.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/More.pm line 16.
+Compilation failed in require at t/modules/Bundle/More.t line 3.
+BEGIN failed--compilation aborted at t/modules/Bundle/More.t line 3.
+t/modules/Bundle/More.t ......................... 
+Dubious, test returned 2 (wstat 512, 0x200)
+No subtests run 
+t/modules/Bundle/Simple.t ....................... ok
+Can't locate Sub/Info.pm in @INC (you may need to install the Sub::Info module) (@INC contains: /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/arch /usr/local/libdata/perl5/site_perl/amd64-openbsd /usr/local/libdata/perl5/site_perl /usr/libdata/perl5/amd64-openbsd /usr/libdata/perl5 .) at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Compare/Base.pm line 10.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Compare/Base.pm line 10.
+Compilation failed in require at /usr/libdata/perl5/base.pm line 137.
+	...propagated at /usr/libdata/perl5/base.pm line 159.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Compare/Array.pm line 5.
+Compilation failed in require at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Compare.pm line 73.
+BEGIN failed--compilation aborted at t/modules/Compare.t line 11.
+t/modules/Compare.t ............................. 
+Dubious, test returned 2 (wstat 512, 0x200)
+No subtests run 
+Can't locate Importer.pm in @INC (you may need to install the Importer module) (@INC contains: /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/arch /usr/local/libdata/perl5/site_perl/amd64-openbsd /usr/local/libdata/perl5/site_perl /usr/libdata/perl5/amd64-openbsd /usr/libdata/perl5 .) at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+Compilation failed in require at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+Compilation failed in require at t/modules/Compare/Array.t line 1.
+BEGIN failed--compilation aborted at t/modules/Compare/Array.t line 1.
+t/modules/Compare/Array.t ....................... 
+Dubious, test returned 2 (wstat 512, 0x200)
+No subtests run 
+Can't locate Importer.pm in @INC (you may need to install the Importer module) (@INC contains: /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/arch /usr/local/libdata/perl5/site_perl/amd64-openbsd /usr/local/libdata/perl5/site_perl /usr/libdata/perl5/amd64-openbsd /usr/libdata/perl5 .) at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+Compilation failed in require at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+Compilation failed in require at t/modules/Compare/Bag.t line 1.
+BEGIN failed--compilation aborted at t/modules/Compare/Bag.t line 1.
+t/modules/Compare/Bag.t ......................... 
+Dubious, test returned 2 (wstat 512, 0x200)
+No subtests run 
+Can't locate Importer.pm in @INC (you may need to install the Importer module) (@INC contains: /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/arch /usr/local/libdata/perl5/site_perl/amd64-openbsd /usr/local/libdata/perl5/site_perl /usr/libdata/perl5/amd64-openbsd /usr/libdata/perl5 .) at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+Compilation failed in require at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+Compilation failed in require at t/modules/Compare/Base.t line 1.
+BEGIN failed--compilation aborted at t/modules/Compare/Base.t line 1.
+t/modules/Compare/Base.t ........................ 
+Dubious, test returned 2 (wstat 512, 0x200)
+No subtests run 
+Can't locate Importer.pm in @INC (you may need to install the Importer module) (@INC contains: /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/arch /usr/local/libdata/perl5/site_perl/amd64-openbsd /usr/local/libdata/perl5/site_perl /usr/libdata/perl5/amd64-openbsd /usr/libdata/perl5 .) at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+Compilation failed in require at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+Compilation failed in require at t/modules/Compare/Bool.t line 1.
+BEGIN failed--compilation aborted at t/modules/Compare/Bool.t line 1.
+t/modules/Compare/Bool.t ........................ 
+Dubious, test returned 2 (wstat 512, 0x200)
+No subtests run 
+Can't locate Importer.pm in @INC (you may need to install the Importer module) (@INC contains: /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/arch /usr/local/libdata/perl5/site_perl/amd64-openbsd /usr/local/libdata/perl5/site_perl /usr/libdata/perl5/amd64-openbsd /usr/libdata/perl5 .) at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+Compilation failed in require at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+Compilation failed in require at t/modules/Compare/Custom.t line 1.
+BEGIN failed--compilation aborted at t/modules/Compare/Custom.t line 1.
+t/modules/Compare/Custom.t ...................... 
+Dubious, test returned 2 (wstat 512, 0x200)
+No subtests run 
+Can't locate Importer.pm in @INC (you may need to install the Importer module) (@INC contains: /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/arch /usr/local/libdata/perl5/site_perl/amd64-openbsd /usr/local/libdata/perl5/site_perl /usr/libdata/perl5/amd64-openbsd /usr/libdata/perl5 .) at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+Compilation failed in require at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+Compilation failed in require at t/modules/Compare/Delta.t line 1.
+BEGIN failed--compilation aborted at t/modules/Compare/Delta.t line 1.
+t/modules/Compare/Delta.t ....................... 
+Dubious, test returned 2 (wstat 512, 0x200)
+No subtests run 
+Can't locate Importer.pm in @INC (you may need to install the Importer module) (@INC contains: /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/arch /usr/local/libdata/perl5/site_perl/amd64-openbsd /usr/local/libdata/perl5/site_perl /usr/libdata/perl5/amd64-openbsd /usr/libdata/perl5 .) at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+Compilation failed in require at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+Compilation failed in require at t/modules/Compare/Event.t line 1.
+BEGIN failed--compilation aborted at t/modules/Compare/Event.t line 1.
+t/modules/Compare/Event.t ....................... 
+Dubious, test returned 2 (wstat 512, 0x200)
+No subtests run 
+Can't locate Importer.pm in @INC (you may need to install the Importer module) (@INC contains: /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/arch /usr/local/libdata/perl5/site_perl/amd64-openbsd /usr/local/libdata/perl5/site_perl /usr/libdata/perl5/amd64-openbsd /usr/libdata/perl5 .) at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+Compilation failed in require at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+Compilation failed in require at t/modules/Compare/EventMeta.t line 1.
+BEGIN failed--compilation aborted at t/modules/Compare/EventMeta.t line 1.
+t/modules/Compare/EventMeta.t ................... 
+Dubious, test returned 2 (wstat 512, 0x200)
+No subtests run 
+Can't locate Importer.pm in @INC (you may need to install the Importer module) (@INC contains: /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/arch /usr/local/libdata/perl5/site_perl/amd64-openbsd /usr/local/libdata/perl5/site_perl /usr/libdata/perl5/amd64-openbsd /usr/libdata/perl5 .) at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+Compilation failed in require at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+Compilation failed in require at t/modules/Compare/Float.t line 1.
+BEGIN failed--compilation aborted at t/modules/Compare/Float.t line 1.
+t/modules/Compare/Float.t ....................... 
+Dubious, test returned 2 (wstat 512, 0x200)
+No subtests run 
+Can't locate Importer.pm in @INC (you may need to install the Importer module) (@INC contains: /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/arch /usr/local/libdata/perl5/site_perl/amd64-openbsd /usr/local/libdata/perl5/site_perl /usr/libdata/perl5/amd64-openbsd /usr/libdata/perl5 .) at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+Compilation failed in require at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+Compilation failed in require at t/modules/Compare/Hash.t line 1.
+BEGIN failed--compilation aborted at t/modules/Compare/Hash.t line 1.
+t/modules/Compare/Hash.t ........................ 
+Dubious, test returned 2 (wstat 512, 0x200)
+No subtests run 
+Can't locate Importer.pm in @INC (you may need to install the Importer module) (@INC contains: /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/arch /usr/local/libdata/perl5/site_perl/amd64-openbsd /usr/local/libdata/perl5/site_perl /usr/libdata/perl5/amd64-openbsd /usr/libdata/perl5 .) at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+Compilation failed in require at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+Compilation failed in require at t/modules/Compare/Isa.t line 1.
+BEGIN failed--compilation aborted at t/modules/Compare/Isa.t line 1.
+t/modules/Compare/Isa.t ......................... 
+Dubious, test returned 2 (wstat 512, 0x200)
+No subtests run 
+Can't locate Importer.pm in @INC (you may need to install the Importer module) (@INC contains: /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/arch /usr/local/libdata/perl5/site_perl/amd64-openbsd /usr/local/libdata/perl5/site_perl /usr/libdata/perl5/amd64-openbsd /usr/libdata/perl5 .) at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+Compilation failed in require at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+Compilation failed in require at t/modules/Compare/Meta.t line 1.
+BEGIN failed--compilation aborted at t/modules/Compare/Meta.t line 1.
+t/modules/Compare/Meta.t ........................ 
+Dubious, test returned 2 (wstat 512, 0x200)
+No subtests run 
+Can't locate Importer.pm in @INC (you may need to install the Importer module) (@INC contains: /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/arch /usr/local/libdata/perl5/site_perl/amd64-openbsd /usr/local/libdata/perl5/site_perl /usr/libdata/perl5/amd64-openbsd /usr/libdata/perl5 .) at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+Compilation failed in require at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+Compilation failed in require at t/modules/Compare/Number.t line 1.
+BEGIN failed--compilation aborted at t/modules/Compare/Number.t line 1.
+t/modules/Compare/Number.t ...................... 
+Dubious, test returned 2 (wstat 512, 0x200)
+No subtests run 
+Can't locate Importer.pm in @INC (you may need to install the Importer module) (@INC contains: /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/arch /usr/local/libdata/perl5/site_perl/amd64-openbsd /usr/local/libdata/perl5/site_perl /usr/libdata/perl5/amd64-openbsd /usr/libdata/perl5 .) at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+Compilation failed in require at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+Compilation failed in require at t/modules/Compare/Object.t line 1.
+BEGIN failed--compilation aborted at t/modules/Compare/Object.t line 1.
+t/modules/Compare/Object.t ...................... 
+Dubious, test returned 2 (wstat 512, 0x200)
+No subtests run 
+Can't locate Importer.pm in @INC (you may need to install the Importer module) (@INC contains: /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/arch /usr/local/libdata/perl5/site_perl/amd64-openbsd /usr/local/libdata/perl5/site_perl /usr/libdata/perl5/amd64-openbsd /usr/libdata/perl5 .) at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+Compilation failed in require at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+Compilation failed in require at t/modules/Compare/OrderedSubset.t line 1.
+BEGIN failed--compilation aborted at t/modules/Compare/OrderedSubset.t line 1.
+t/modules/Compare/OrderedSubset.t ............... 
+Dubious, test returned 2 (wstat 512, 0x200)
+No subtests run 
+Can't locate Importer.pm in @INC (you may need to install the Importer module) (@INC contains: /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/arch /usr/local/libdata/perl5/site_perl/amd64-openbsd /usr/local/libdata/perl5/site_perl /usr/libdata/perl5/amd64-openbsd /usr/libdata/perl5 .) at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+Compilation failed in require at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+Compilation failed in require at t/modules/Compare/Pattern.t line 1.
+BEGIN failed--compilation aborted at t/modules/Compare/Pattern.t line 1.
+t/modules/Compare/Pattern.t ..................... 
+Dubious, test returned 2 (wstat 512, 0x200)
+No subtests run 
+Can't locate Importer.pm in @INC (you may need to install the Importer module) (@INC contains: /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/arch /usr/local/libdata/perl5/site_perl/amd64-openbsd /usr/local/libdata/perl5/site_perl /usr/libdata/perl5/amd64-openbsd /usr/libdata/perl5 .) at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+Compilation failed in require at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+Compilation failed in require at t/modules/Compare/Ref.t line 1.
+BEGIN failed--compilation aborted at t/modules/Compare/Ref.t line 1.
+t/modules/Compare/Ref.t ......................... 
+Dubious, test returned 2 (wstat 512, 0x200)
+No subtests run 
+Can't locate Importer.pm in @INC (you may need to install the Importer module) (@INC contains: /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/arch /usr/local/libdata/perl5/site_perl/amd64-openbsd /usr/local/libdata/perl5/site_perl /usr/libdata/perl5/amd64-openbsd /usr/libdata/perl5 .) at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+Compilation failed in require at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+Compilation failed in require at t/modules/Compare/Regex.t line 1.
+BEGIN failed--compilation aborted at t/modules/Compare/Regex.t line 1.
+t/modules/Compare/Regex.t ....................... 
+Dubious, test returned 2 (wstat 512, 0x200)
+No subtests run 
+Can't locate Importer.pm in @INC (you may need to install the Importer module) (@INC contains: /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/arch /usr/local/libdata/perl5/site_perl/amd64-openbsd /usr/local/libdata/perl5/site_perl /usr/libdata/perl5/amd64-openbsd /usr/libdata/perl5 .) at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+Compilation failed in require at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+Compilation failed in require at t/modules/Compare/Scalar.t line 1.
+BEGIN failed--compilation aborted at t/modules/Compare/Scalar.t line 1.
+t/modules/Compare/Scalar.t ...................... 
+Dubious, test returned 2 (wstat 512, 0x200)
+No subtests run 
+Can't locate Importer.pm in @INC (you may need to install the Importer module) (@INC contains: /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/arch /usr/local/libdata/perl5/site_perl/amd64-openbsd /usr/local/libdata/perl5/site_perl /usr/libdata/perl5/amd64-openbsd /usr/libdata/perl5 .) at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+Compilation failed in require at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+Compilation failed in require at t/modules/Compare/Set.t line 1.
+BEGIN failed--compilation aborted at t/modules/Compare/Set.t line 1.
+t/modules/Compare/Set.t ......................... 
+Dubious, test returned 2 (wstat 512, 0x200)
+No subtests run 
+Can't locate Importer.pm in @INC (you may need to install the Importer module) (@INC contains: /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/arch /usr/local/libdata/perl5/site_perl/amd64-openbsd /usr/local/libdata/perl5/site_perl /usr/libdata/perl5/amd64-openbsd /usr/libdata/perl5 .) at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+Compilation failed in require at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+Compilation failed in require at t/modules/Compare/String.t line 1.
+BEGIN failed--compilation aborted at t/modules/Compare/String.t line 1.
+t/modules/Compare/String.t ...................... 
+Dubious, test returned 2 (wstat 512, 0x200)
+No subtests run 
+Can't locate Importer.pm in @INC (you may need to install the Importer module) (@INC contains: /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/arch /usr/local/libdata/perl5/site_perl/amd64-openbsd /usr/local/libdata/perl5/site_perl /usr/libdata/perl5/amd64-openbsd /usr/libdata/perl5 .) at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+Compilation failed in require at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+Compilation failed in require at t/modules/Compare/Undef.t line 1.
+BEGIN failed--compilation aborted at t/modules/Compare/Undef.t line 1.
+t/modules/Compare/Undef.t ....................... 
+Dubious, test returned 2 (wstat 512, 0x200)
+No subtests run 
+Can't locate Importer.pm in @INC (you may need to install the Importer module) (@INC contains: /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/arch /usr/local/libdata/perl5/site_perl/amd64-openbsd /usr/local/libdata/perl5/site_perl /usr/libdata/perl5/amd64-openbsd /usr/libdata/perl5 .) at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+Compilation failed in require at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+Compilation failed in require at t/modules/Compare/Wildcard.t line 1.
+BEGIN failed--compilation aborted at t/modules/Compare/Wildcard.t line 1.
+t/modules/Compare/Wildcard.t .................... 
+Dubious, test returned 2 (wstat 512, 0x200)
+No subtests run 
+Can't locate Importer.pm in @INC (you may need to install the Importer module) (@INC contains: /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/arch /usr/local/libdata/perl5/site_perl/amd64-openbsd /usr/local/libdata/perl5/site_perl /usr/libdata/perl5/amd64-openbsd /usr/libdata/perl5 .) at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+Compilation failed in require at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+Compilation failed in require at t/modules/Mock.t line 1.
+BEGIN failed--compilation aborted at t/modules/Mock.t line 1.
+t/modules/Mock.t ................................ 
+Dubious, test returned 2 (wstat 512, 0x200)
+No subtests run 
+Can't locate Importer.pm in @INC (you may need to install the Importer module) (@INC contains: /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/arch /usr/local/libdata/perl5/site_perl/amd64-openbsd /usr/local/libdata/perl5/site_perl /usr/libdata/perl5/amd64-openbsd /usr/libdata/perl5 .) at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+Compilation failed in require at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+Compilation failed in require at t/modules/Plugin.t line 1.
+BEGIN failed--compilation aborted at t/modules/Plugin.t line 1.
+t/modules/Plugin.t .............................. 
+Dubious, test returned 2 (wstat 512, 0x200)
+No subtests run 
+Can't locate Importer.pm in @INC (you may need to install the Importer module) (@INC contains: /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/arch /usr/local/libdata/perl5/site_perl/amd64-openbsd /usr/local/libdata/perl5/site_perl /usr/libdata/perl5/amd64-openbsd /usr/libdata/perl5 .) at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+Compilation failed in require at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+Compilation failed in require at t/modules/Plugin/BailOnFail.t line 1.
+BEGIN failed--compilation aborted at t/modules/Plugin/BailOnFail.t line 1.
+t/modules/Plugin/BailOnFail.t ................... 
+Dubious, test returned 2 (wstat 512, 0x200)
+No subtests run 
+Can't locate Importer.pm in @INC (you may need to install the Importer module) (@INC contains: /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/arch /usr/local/libdata/perl5/site_perl/amd64-openbsd /usr/local/libdata/perl5/site_perl /usr/libdata/perl5/amd64-openbsd /usr/libdata/perl5 .) at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+Compilation failed in require at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+Compilation failed in require at t/modules/Plugin/DieOnFail.t line 1.
+BEGIN failed--compilation aborted at t/modules/Plugin/DieOnFail.t line 1.
+t/modules/Plugin/DieOnFail.t .................... 
+Dubious, test returned 2 (wstat 512, 0x200)
+No subtests run 
+Can't locate Sub/Info.pm in @INC (you may need to install the Sub::Info module) (@INC contains: /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/arch /usr/local/libdata/perl5/site_perl/amd64-openbsd /usr/local/libdata/perl5/site_perl /usr/libdata/perl5/amd64-openbsd /usr/libdata/perl5 .) at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Compare/Base.pm line 10.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Compare/Base.pm line 10.
+Compilation failed in require at /usr/libdata/perl5/base.pm line 137.
+	...propagated at /usr/libdata/perl5/base.pm line 159.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Compare/Array.pm line 5.
+Compilation failed in require at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Tools/Compare.pm line 19.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Tools/Compare.pm line 19.
+Compilation failed in require at t/modules/Plugin/ExitSummary.t line 12.
+BEGIN failed--compilation aborted at t/modules/Plugin/ExitSummary.t line 12.
+t/modules/Plugin/ExitSummary.t .................. 
+Dubious, test returned 2 (wstat 512, 0x200)
+No subtests run 
+Can't locate Sub/Info.pm in @INC (you may need to install the Sub::Info module) (@INC contains: /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/arch /usr/local/libdata/perl5/site_perl/amd64-openbsd /usr/local/libdata/perl5/site_perl /usr/libdata/perl5/amd64-openbsd /usr/libdata/perl5 .) at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Compare/Base.pm line 10.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Compare/Base.pm line 10.
+Compilation failed in require at /usr/libdata/perl5/base.pm line 137.
+	...propagated at /usr/libdata/perl5/base.pm line 159.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Compare/Array.pm line 5.
+Compilation failed in require at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Tools/Compare.pm line 19.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Tools/Compare.pm line 19.
+Compilation failed in require at t/modules/Plugin/SRand.t line 6.
+BEGIN failed--compilation aborted at t/modules/Plugin/SRand.t line 6.
+t/modules/Plugin/SRand.t ........................ 
+Dubious, test returned 2 (wstat 512, 0x200)
+No subtests run 
+Can't locate Sub/Info.pm in @INC (you may need to install the Sub::Info module) (@INC contains: /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/arch /usr/local/libdata/perl5/site_perl/amd64-openbsd /usr/local/libdata/perl5/site_perl /usr/libdata/perl5/amd64-openbsd /usr/libdata/perl5 .) at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Compare/Base.pm line 10.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Compare/Base.pm line 10.
+Compilation failed in require at /usr/libdata/perl5/base.pm line 137.
+	...propagated at /usr/libdata/perl5/base.pm line 159.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Compare/Array.pm line 5.
+Compilation failed in require at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Tools/Compare.pm line 19.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Tools/Compare.pm line 19.
+Compilation failed in require at t/modules/Plugin/Times.t line 22.
+BEGIN failed--compilation aborted at t/modules/Plugin/Times.t line 22.
+t/modules/Plugin/Times.t ........................ 
+Dubious, test returned 2 (wstat 512, 0x200)
+No subtests run 
+Can't locate Sub/Info.pm in @INC (you may need to install the Sub::Info module) (@INC contains: /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/arch /usr/local/libdata/perl5/site_perl/amd64-openbsd /usr/local/libdata/perl5/site_perl /usr/libdata/perl5/amd64-openbsd /usr/libdata/perl5 .) at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Compare/Base.pm line 10.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Compare/Base.pm line 10.
+Compilation failed in require at /usr/libdata/perl5/base.pm line 137.
+	...propagated at /usr/libdata/perl5/base.pm line 159.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Compare/Array.pm line 5.
+Compilation failed in require at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Tools/Compare.pm line 19.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Tools/Compare.pm line 19.
+Compilation failed in require at t/modules/Plugin/UTF8.t line 22.
+BEGIN failed--compilation aborted at t/modules/Plugin/UTF8.t line 22.
+t/modules/Plugin/UTF8.t ......................... 
+Dubious, test returned 2 (wstat 512, 0x200)
+No subtests run 
+Can't locate Importer.pm in @INC (you may need to install the Importer module) (@INC contains: /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/arch /usr/local/libdata/perl5/site_perl/amd64-openbsd /usr/local/libdata/perl5/site_perl /usr/libdata/perl5/amd64-openbsd /usr/libdata/perl5 .) at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+Compilation failed in require at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+Compilation failed in require at t/modules/Require.t line 1.
+BEGIN failed--compilation aborted at t/modules/Require.t line 1.
+t/modules/Require.t ............................. 
+Dubious, test returned 2 (wstat 512, 0x200)
+No subtests run 
+Can't locate Importer.pm in @INC (you may need to install the Importer module) (@INC contains: /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/arch /usr/local/libdata/perl5/site_perl/amd64-openbsd /usr/local/libdata/perl5/site_perl /usr/libdata/perl5/amd64-openbsd /usr/libdata/perl5 .) at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+Compilation failed in require at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+Compilation failed in require at t/modules/Require/AuthorTesting.t line 1.
+BEGIN failed--compilation aborted at t/modules/Require/AuthorTesting.t line 1.
+t/modules/Require/AuthorTesting.t ............... 
+Dubious, test returned 2 (wstat 512, 0x200)
+No subtests run 
+Can't locate Importer.pm in @INC (you may need to install the Importer module) (@INC contains: /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/arch /usr/local/libdata/perl5/site_perl/amd64-openbsd /usr/local/libdata/perl5/site_perl /usr/libdata/perl5/amd64-openbsd /usr/libdata/perl5 .) at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+Compilation failed in require at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+Compilation failed in require at t/modules/Require/EnvVar.t line 1.
+BEGIN failed--compilation aborted at t/modules/Require/EnvVar.t line 1.
+t/modules/Require/EnvVar.t ...................... 
+Dubious, test returned 2 (wstat 512, 0x200)
+No subtests run 
+Can't locate Importer.pm in @INC (you may need to install the Importer module) (@INC contains: /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/arch /usr/local/libdata/perl5/site_perl/amd64-openbsd /usr/local/libdata/perl5/site_perl /usr/libdata/perl5/amd64-openbsd /usr/libdata/perl5 .) at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+Compilation failed in require at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+Compilation failed in require at t/modules/Require/Fork.t line 12.
+BEGIN failed--compilation aborted at t/modules/Require/Fork.t line 12.
+t/modules/Require/Fork.t ........................ 
+Dubious, test returned 2 (wstat 512, 0x200)
+No subtests run 
+Can't locate Importer.pm in @INC (you may need to install the Importer module) (@INC contains: /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/arch /usr/local/libdata/perl5/site_perl/amd64-openbsd /usr/local/libdata/perl5/site_perl /usr/libdata/perl5/amd64-openbsd /usr/libdata/perl5 .) at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+Compilation failed in require at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+Compilation failed in require at t/modules/Require/Module.t line 1.
+BEGIN failed--compilation aborted at t/modules/Require/Module.t line 1.
+t/modules/Require/Module.t ...................... 
+Dubious, test returned 2 (wstat 512, 0x200)
+No subtests run 
+Can't locate Importer.pm in @INC (you may need to install the Importer module) (@INC contains: /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/arch /usr/local/libdata/perl5/site_perl/amd64-openbsd /usr/local/libdata/perl5/site_perl /usr/libdata/perl5/amd64-openbsd /usr/libdata/perl5 .) at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+Compilation failed in require at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+Compilation failed in require at t/modules/Require/Perl.t line 1.
+BEGIN failed--compilation aborted at t/modules/Require/Perl.t line 1.
+t/modules/Require/Perl.t ........................ 
+Dubious, test returned 2 (wstat 512, 0x200)
+No subtests run 
+Can't locate Importer.pm in @INC (you may need to install the Importer module) (@INC contains: /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/arch /usr/local/libdata/perl5/site_perl/amd64-openbsd /usr/local/libdata/perl5/site_perl /usr/libdata/perl5/amd64-openbsd /usr/libdata/perl5 .) at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+Compilation failed in require at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+Compilation failed in require at t/modules/Require/RealFork.t line 12.
+BEGIN failed--compilation aborted at t/modules/Require/RealFork.t line 12.
+t/modules/Require/RealFork.t .................... 
+Dubious, test returned 2 (wstat 512, 0x200)
+No subtests run 
+Can't locate Importer.pm in @INC (you may need to install the Importer module) (@INC contains: /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/arch /usr/local/libdata/perl5/site_perl/amd64-openbsd /usr/local/libdata/perl5/site_perl /usr/libdata/perl5/amd64-openbsd /usr/libdata/perl5 .) at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+Compilation failed in require at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+Compilation failed in require at t/modules/Require/Threads.t line 12.
+BEGIN failed--compilation aborted at t/modules/Require/Threads.t line 12.
+t/modules/Require/Threads.t ..................... 
+Dubious, test returned 2 (wstat 512, 0x200)
+No subtests run 
+Can't locate Importer.pm in @INC (you may need to install the Importer module) (@INC contains: /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/arch /usr/local/libdata/perl5/site_perl/amd64-openbsd /usr/local/libdata/perl5/site_perl /usr/libdata/perl5/amd64-openbsd /usr/libdata/perl5 .) at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+Compilation failed in require at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+Compilation failed in require at t/modules/Suite.t line 1.
+BEGIN failed--compilation aborted at t/modules/Suite.t line 1.
+t/modules/Suite.t ............................... 
+Dubious, test returned 2 (wstat 512, 0x200)
+No subtests run 
+Can't locate Importer.pm in @INC (you may need to install the Importer module) (@INC contains: /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/arch /usr/local/libdata/perl5/site_perl/amd64-openbsd /usr/local/libdata/perl5/site_perl /usr/libdata/perl5/amd64-openbsd /usr/libdata/perl5 .) at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+Compilation failed in require at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+Compilation failed in require at t/modules/Todo.t line 1.
+BEGIN failed--compilation aborted at t/modules/Todo.t line 1.
+t/modules/Todo.t ................................ 
+Dubious, test returned 2 (wstat 512, 0x200)
+No subtests run 
+Can't locate Importer.pm in @INC (you may need to install the Importer module) (@INC contains: /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/arch /usr/local/libdata/perl5/site_perl/amd64-openbsd /usr/local/libdata/perl5/site_perl /usr/libdata/perl5/amd64-openbsd /usr/libdata/perl5 .) at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+Compilation failed in require at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+Compilation failed in require at t/modules/Tools.t line 1.
+BEGIN failed--compilation aborted at t/modules/Tools.t line 1.
+t/modules/Tools.t ............................... 
+Dubious, test returned 2 (wstat 512, 0x200)
+No subtests run 
+Can't locate Importer.pm in @INC (you may need to install the Importer module) (@INC contains: /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/arch /usr/local/libdata/perl5/site_perl/amd64-openbsd /usr/local/libdata/perl5/site_perl /usr/libdata/perl5/amd64-openbsd /usr/libdata/perl5 .) at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+Compilation failed in require at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+Compilation failed in require at t/modules/Tools/AsyncSubtest.t line 1.
+BEGIN failed--compilation aborted at t/modules/Tools/AsyncSubtest.t line 1.
+t/modules/Tools/AsyncSubtest.t .................. 
+Dubious, test returned 2 (wstat 512, 0x200)
+No subtests run 
+Can't locate Importer.pm in @INC (you may need to install the Importer module) (@INC contains: /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/arch /usr/local/libdata/perl5/site_perl/amd64-openbsd /usr/local/libdata/perl5/site_perl /usr/libdata/perl5/amd64-openbsd /usr/libdata/perl5 .) at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+Compilation failed in require at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+Compilation failed in require at t/modules/Tools/Basic.t line 1.
+BEGIN failed--compilation aborted at t/modules/Tools/Basic.t line 1.
+t/modules/Tools/Basic.t ......................... 
+Dubious, test returned 2 (wstat 512, 0x200)
+No subtests run 
+Can't locate Importer.pm in @INC (you may need to install the Importer module) (@INC contains: /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/arch /usr/local/libdata/perl5/site_perl/amd64-openbsd /usr/local/libdata/perl5/site_perl /usr/libdata/perl5/amd64-openbsd /usr/libdata/perl5 .) at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+Compilation failed in require at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+Compilation failed in require at t/modules/Tools/Class.t line 1.
+BEGIN failed--compilation aborted at t/modules/Tools/Class.t line 1.
+t/modules/Tools/Class.t ......................... 
+Dubious, test returned 2 (wstat 512, 0x200)
+No subtests run 
+Can't locate Importer.pm in @INC (you may need to install the Importer module) (@INC contains: /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/arch /usr/local/libdata/perl5/site_perl/amd64-openbsd /usr/local/libdata/perl5/site_perl /usr/libdata/perl5/amd64-openbsd /usr/libdata/perl5 .) at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+Compilation failed in require at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+Compilation failed in require at t/modules/Tools/ClassicCompare.t line 1.
+BEGIN failed--compilation aborted at t/modules/Tools/ClassicCompare.t line 1.
+t/modules/Tools/ClassicCompare.t ................ 
+Dubious, test returned 2 (wstat 512, 0x200)
+No subtests run 
+Base class package "Term::Table" is empty.
+    (Perhaps you need to 'use' the module which defines that package first,
+    or make that module available in @INC (@INC contains: /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/arch /usr/local/libdata/perl5/site_perl/amd64-openbsd /usr/local/libdata/perl5/site_perl /usr/libdata/perl5/amd64-openbsd /usr/libdata/perl5 .).
+ at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Util/Table.pm line 7.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Util/Table.pm line 7.
+Compilation failed in require at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Tools/ClassicCompare.pm line 16.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Tools/ClassicCompare.pm line 16.
+Compilation failed in require at t/modules/Tools/ClassicCompare2.t line 1.
+BEGIN failed--compilation aborted at t/modules/Tools/ClassicCompare2.t line 1.
+t/modules/Tools/ClassicCompare2.t ............... 
+Dubious, test returned 2 (wstat 512, 0x200)
+No subtests run 
+Can't locate Importer.pm in @INC (you may need to install the Importer module) (@INC contains: /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/arch /usr/local/libdata/perl5/site_perl/amd64-openbsd /usr/local/libdata/perl5/site_perl /usr/libdata/perl5/amd64-openbsd /usr/libdata/perl5 .) at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+Compilation failed in require at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+Compilation failed in require at t/modules/Tools/Compare.t line 1.
+BEGIN failed--compilation aborted at t/modules/Tools/Compare.t line 1.
+t/modules/Tools/Compare.t ....................... 
+Dubious, test returned 2 (wstat 512, 0x200)
+No subtests run 
+Can't locate Importer.pm in @INC (you may need to install the Importer module) (@INC contains: /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/arch /usr/local/libdata/perl5/site_perl/amd64-openbsd /usr/local/libdata/perl5/site_perl /usr/libdata/perl5/amd64-openbsd /usr/libdata/perl5 .) at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+Compilation failed in require at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+Compilation failed in require at t/modules/Tools/Defer.t line 20.
+BEGIN failed--compilation aborted at t/modules/Tools/Defer.t line 20.
+t/modules/Tools/Defer.t ......................... 
+Dubious, test returned 2 (wstat 512, 0x200)
+No subtests run 
+Can't locate Importer.pm in @INC (you may need to install the Importer module) (@INC contains: /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/arch /usr/local/libdata/perl5/site_perl/amd64-openbsd /usr/local/libdata/perl5/site_perl /usr/libdata/perl5/amd64-openbsd /usr/libdata/perl5 .) at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+Compilation failed in require at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+Compilation failed in require at t/modules/Tools/Encoding.t line 1.
+BEGIN failed--compilation aborted at t/modules/Tools/Encoding.t line 1.
+t/modules/Tools/Encoding.t ...................... 
+Dubious, test returned 2 (wstat 512, 0x200)
+No subtests run 
+Can't locate Importer.pm in @INC (you may need to install the Importer module) (@INC contains: /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/arch /usr/local/libdata/perl5/site_perl/amd64-openbsd /usr/local/libdata/perl5/site_perl /usr/libdata/perl5/amd64-openbsd /usr/libdata/perl5 .) at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+Compilation failed in require at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+Compilation failed in require at t/modules/Tools/Event.t line 1.
+BEGIN failed--compilation aborted at t/modules/Tools/Event.t line 1.
+t/modules/Tools/Event.t ......................... 
+Dubious, test returned 2 (wstat 512, 0x200)
+No subtests run 
+Can't locate Importer.pm in @INC (you may need to install the Importer module) (@INC contains: /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/arch /usr/local/libdata/perl5/site_perl/amd64-openbsd /usr/local/libdata/perl5/site_perl /usr/libdata/perl5/amd64-openbsd /usr/libdata/perl5 .) at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+Compilation failed in require at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+Compilation failed in require at t/modules/Tools/Exception.t line 1.
+BEGIN failed--compilation aborted at t/modules/Tools/Exception.t line 1.
+t/modules/Tools/Exception.t ..................... 
+Dubious, test returned 2 (wstat 512, 0x200)
+No subtests run 
+Can't locate Importer.pm in @INC (you may need to install the Importer module) (@INC contains: /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/arch /usr/local/libdata/perl5/site_perl/amd64-openbsd /usr/local/libdata/perl5/site_perl /usr/libdata/perl5/amd64-openbsd /usr/libdata/perl5 .) at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+Compilation failed in require at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+Compilation failed in require at t/modules/Tools/Exports.t line 1.
+BEGIN failed--compilation aborted at t/modules/Tools/Exports.t line 1.
+t/modules/Tools/Exports.t ....................... 
+Dubious, test returned 2 (wstat 512, 0x200)
+No subtests run 
+Can't locate Importer.pm in @INC (you may need to install the Importer module) (@INC contains: /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/arch /usr/local/libdata/perl5/site_perl/amd64-openbsd /usr/local/libdata/perl5/site_perl /usr/libdata/perl5/amd64-openbsd /usr/libdata/perl5 .) at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+Compilation failed in require at t/modules/Tools/GenTemp.t line 1.
+BEGIN failed--compilation aborted at t/modules/Tools/GenTemp.t line 1.
+t/modules/Tools/GenTemp.t ....................... 
+Dubious, test returned 2 (wstat 512, 0x200)
+No subtests run 
+Can't locate Importer.pm in @INC (you may need to install the Importer module) (@INC contains: /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/arch /usr/local/libdata/perl5/site_perl/amd64-openbsd /usr/local/libdata/perl5/site_perl /usr/libdata/perl5/amd64-openbsd /usr/libdata/perl5 .) at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+Compilation failed in require at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+Compilation failed in require at t/modules/Tools/Grab.t line 1.
+BEGIN failed--compilation aborted at t/modules/Tools/Grab.t line 1.
+t/modules/Tools/Grab.t .......................... 
+Dubious, test returned 2 (wstat 512, 0x200)
+No subtests run 
+Can't locate Importer.pm in @INC (you may need to install the Importer module) (@INC contains: /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/arch /usr/local/libdata/perl5/site_perl/amd64-openbsd /usr/local/libdata/perl5/site_perl /usr/libdata/perl5/amd64-openbsd /usr/libdata/perl5 .) at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+Compilation failed in require at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+Compilation failed in require at t/modules/Tools/Mock.t line 1.
+BEGIN failed--compilation aborted at t/modules/Tools/Mock.t line 1.
+t/modules/Tools/Mock.t .......................... 
+Dubious, test returned 2 (wstat 512, 0x200)
+No subtests run 
+Can't locate Importer.pm in @INC (you may need to install the Importer module) (@INC contains: /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/arch /usr/local/libdata/perl5/site_perl/amd64-openbsd /usr/local/libdata/perl5/site_perl /usr/libdata/perl5/amd64-openbsd /usr/libdata/perl5 .) at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+Compilation failed in require at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+Compilation failed in require at t/modules/Tools/Ref.t line 1.
+BEGIN failed--compilation aborted at t/modules/Tools/Ref.t line 1.
+t/modules/Tools/Ref.t ........................... 
+Dubious, test returned 2 (wstat 512, 0x200)
+No subtests run 
+Can't locate Importer.pm in @INC (you may need to install the Importer module) (@INC contains: /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/arch /usr/local/libdata/perl5/site_perl/amd64-openbsd /usr/local/libdata/perl5/site_perl /usr/libdata/perl5/amd64-openbsd /usr/libdata/perl5 .) at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+Compilation failed in require at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+Compilation failed in require at t/modules/Tools/Spec.t line 1.
+BEGIN failed--compilation aborted at t/modules/Tools/Spec.t line 1.
+t/modules/Tools/Spec.t .......................... 
+Dubious, test returned 2 (wstat 512, 0x200)
+No subtests run 
+Can't locate Importer.pm in @INC (you may need to install the Importer module) (@INC contains: /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/arch /usr/local/libdata/perl5/site_perl/amd64-openbsd /usr/local/libdata/perl5/site_perl /usr/libdata/perl5/amd64-openbsd /usr/libdata/perl5 .) at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+Compilation failed in require at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+Compilation failed in require at t/modules/Tools/Subtest.t line 1.
+BEGIN failed--compilation aborted at t/modules/Tools/Subtest.t line 1.
+t/modules/Tools/Subtest.t ....................... 
+Dubious, test returned 2 (wstat 512, 0x200)
+No subtests run 
+Can't locate Importer.pm in @INC (you may need to install the Importer module) (@INC contains: /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/arch /usr/local/libdata/perl5/site_perl/amd64-openbsd /usr/local/libdata/perl5/site_perl /usr/libdata/perl5/amd64-openbsd /usr/libdata/perl5 .) at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+Compilation failed in require at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+Compilation failed in require at t/modules/Tools/Target.t line 1.
+BEGIN failed--compilation aborted at t/modules/Tools/Target.t line 1.
+t/modules/Tools/Target.t ........................ 
+Dubious, test returned 2 (wstat 512, 0x200)
+No subtests run 
+Can't locate Importer.pm in @INC (you may need to install the Importer module) (@INC contains: /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/arch /usr/local/libdata/perl5/site_perl/amd64-openbsd /usr/local/libdata/perl5/site_perl /usr/libdata/perl5/amd64-openbsd /usr/libdata/perl5 .) at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+Compilation failed in require at t/modules/Tools/Tester.t line 1.
+BEGIN failed--compilation aborted at t/modules/Tools/Tester.t line 1.
+t/modules/Tools/Tester.t ........................ 
+Dubious, test returned 2 (wstat 512, 0x200)
+No subtests run 
+Can't locate Importer.pm in @INC (you may need to install the Importer module) (@INC contains: /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/arch /usr/local/libdata/perl5/site_perl/amd64-openbsd /usr/local/libdata/perl5/site_perl /usr/libdata/perl5/amd64-openbsd /usr/libdata/perl5 .) at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+Compilation failed in require at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+Compilation failed in require at t/modules/Tools/Warnings.t line 1.
+BEGIN failed--compilation aborted at t/modules/Tools/Warnings.t line 1.
+t/modules/Tools/Warnings.t ...................... 
+Dubious, test returned 2 (wstat 512, 0x200)
+No subtests run 
+Can't locate Importer.pm in @INC (you may need to install the Importer module) (@INC contains: /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/arch /usr/local/libdata/perl5/site_perl/amd64-openbsd /usr/local/libdata/perl5/site_perl /usr/libdata/perl5/amd64-openbsd /usr/libdata/perl5 .) at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+Compilation failed in require at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+Compilation failed in require at t/modules/Util/Grabber.t line 1.
+BEGIN failed--compilation aborted at t/modules/Util/Grabber.t line 1.
+t/modules/Util/Grabber.t ........................ 
+Dubious, test returned 2 (wstat 512, 0x200)
+No subtests run 
+Can't locate Importer.pm in @INC (you may need to install the Importer module) (@INC contains: /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/arch /usr/local/libdata/perl5/site_perl/amd64-openbsd /usr/local/libdata/perl5/site_perl /usr/libdata/perl5/amd64-openbsd /usr/libdata/perl5 .) at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+Compilation failed in require at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+Compilation failed in require at t/modules/Util/Ref.t line 1.
+BEGIN failed--compilation aborted at t/modules/Util/Ref.t line 1.
+t/modules/Util/Ref.t ............................ 
+Dubious, test returned 2 (wstat 512, 0x200)
+No subtests run 
+Can't locate Importer.pm in @INC (you may need to install the Importer module) (@INC contains: /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/arch /usr/local/libdata/perl5/site_perl/amd64-openbsd /usr/local/libdata/perl5/site_perl /usr/libdata/perl5/amd64-openbsd /usr/libdata/perl5 .) at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+Compilation failed in require at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+Compilation failed in require at t/modules/Util/Stash.t line 1.
+BEGIN failed--compilation aborted at t/modules/Util/Stash.t line 1.
+t/modules/Util/Stash.t .......................... 
+Dubious, test returned 2 (wstat 512, 0x200)
+No subtests run 
+Can't locate Importer.pm in @INC (you may need to install the Importer module) (@INC contains: /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/arch /usr/local/libdata/perl5/site_perl/amd64-openbsd /usr/local/libdata/perl5/site_perl /usr/libdata/perl5/amd64-openbsd /usr/libdata/perl5 .) at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+Compilation failed in require at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+Compilation failed in require at t/modules/Util/Sub.t line 1.
+BEGIN failed--compilation aborted at t/modules/Util/Sub.t line 1.
+t/modules/Util/Sub.t ............................ 
+Dubious, test returned 2 (wstat 512, 0x200)
+No subtests run 
+Can't locate Importer.pm in @INC (you may need to install the Importer module) (@INC contains: /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/arch /usr/local/libdata/perl5/site_perl/amd64-openbsd /usr/local/libdata/perl5/site_perl /usr/libdata/perl5/amd64-openbsd /usr/libdata/perl5 .) at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+Compilation failed in require at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+Compilation failed in require at t/modules/Util/Table.t line 1.
+BEGIN failed--compilation aborted at t/modules/Util/Table.t line 1.
+t/modules/Util/Table.t .......................... 
+Dubious, test returned 2 (wstat 512, 0x200)
+No subtests run 
+Can't locate Importer.pm in @INC (you may need to install the Importer module) (@INC contains: /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/arch /usr/local/libdata/perl5/site_perl/amd64-openbsd /usr/local/libdata/perl5/site_perl /usr/libdata/perl5/amd64-openbsd /usr/libdata/perl5 .) at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+Compilation failed in require at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+Compilation failed in require at t/modules/Util/Table/Cell.t line 1.
+BEGIN failed--compilation aborted at t/modules/Util/Table/Cell.t line 1.
+t/modules/Util/Table/Cell.t ..................... 
+Dubious, test returned 2 (wstat 512, 0x200)
+No subtests run 
+Can't locate Importer.pm in @INC (you may need to install the Importer module) (@INC contains: /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/arch /usr/local/libdata/perl5/site_perl/amd64-openbsd /usr/local/libdata/perl5/site_perl /usr/libdata/perl5/amd64-openbsd /usr/libdata/perl5 .) at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+Compilation failed in require at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+Compilation failed in require at t/modules/Util/Table/LineBreak.t line 1.
+BEGIN failed--compilation aborted at t/modules/Util/Table/LineBreak.t line 1.
+t/modules/Util/Table/LineBreak.t ................ 
+Dubious, test returned 2 (wstat 512, 0x200)
+No subtests run 
+Can't locate Importer.pm in @INC (you may need to install the Importer module) (@INC contains: /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/arch /usr/local/libdata/perl5/site_perl/amd64-openbsd /usr/local/libdata/perl5/site_perl /usr/libdata/perl5/amd64-openbsd /usr/libdata/perl5 .) at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+Compilation failed in require at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+Compilation failed in require at t/modules/Util/Times.t line 1.
+BEGIN failed--compilation aborted at t/modules/Util/Times.t line 1.
+t/modules/Util/Times.t .......................... 
+Dubious, test returned 2 (wstat 512, 0x200)
+No subtests run 
+Can't locate Importer.pm in @INC (you may need to install the Importer module) (@INC contains: /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/arch /usr/local/libdata/perl5/site_perl/amd64-openbsd /usr/local/libdata/perl5/site_perl /usr/libdata/perl5/amd64-openbsd /usr/libdata/perl5 .) at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+Compilation failed in require at t/modules/V0.t line 1.
+BEGIN failed--compilation aborted at t/modules/V0.t line 1.
+t/modules/V0.t .................................. 
+Dubious, test returned 2 (wstat 512, 0x200)
+No subtests run 
+Can't locate Importer.pm in @INC (you may need to install the Importer module) (@INC contains: /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/arch /usr/local/libdata/perl5/site_perl/amd64-openbsd /usr/local/libdata/perl5/site_perl /usr/libdata/perl5/amd64-openbsd /usr/libdata/perl5 .) at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+Compilation failed in require at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+Compilation failed in require at t/modules/Workflow.t line 1.
+BEGIN failed--compilation aborted at t/modules/Workflow.t line 1.
+t/modules/Workflow.t ............................ 
+Dubious, test returned 2 (wstat 512, 0x200)
+No subtests run 
+Can't locate Importer.pm in @INC (you may need to install the Importer module) (@INC contains: /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/arch /usr/local/libdata/perl5/site_perl/amd64-openbsd /usr/local/libdata/perl5/site_perl /usr/libdata/perl5/amd64-openbsd /usr/libdata/perl5 .) at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+Compilation failed in require at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+Compilation failed in require at t/modules/Workflow/BlockBase.t line 1.
+BEGIN failed--compilation aborted at t/modules/Workflow/BlockBase.t line 1.
+t/modules/Workflow/BlockBase.t .................. 
+Dubious, test returned 2 (wstat 512, 0x200)
+No subtests run 
+Can't locate Importer.pm in @INC (you may need to install the Importer module) (@INC contains: /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/arch /usr/local/libdata/perl5/site_perl/amd64-openbsd /usr/local/libdata/perl5/site_perl /usr/libdata/perl5/amd64-openbsd /usr/libdata/perl5 .) at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+Compilation failed in require at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+Compilation failed in require at t/modules/Workflow/Build.t line 1.
+BEGIN failed--compilation aborted at t/modules/Workflow/Build.t line 1.
+t/modules/Workflow/Build.t ...................... 
+Dubious, test returned 2 (wstat 512, 0x200)
+No subtests run 
+Can't locate Importer.pm in @INC (you may need to install the Importer module) (@INC contains: /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/arch /usr/local/libdata/perl5/site_perl/amd64-openbsd /usr/local/libdata/perl5/site_perl /usr/libdata/perl5/amd64-openbsd /usr/libdata/perl5 .) at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+Compilation failed in require at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+Compilation failed in require at t/modules/Workflow/Runner.t line 1.
+BEGIN failed--compilation aborted at t/modules/Workflow/Runner.t line 1.
+t/modules/Workflow/Runner.t ..................... 
+Dubious, test returned 2 (wstat 512, 0x200)
+No subtests run 
+Can't locate Importer.pm in @INC (you may need to install the Importer module) (@INC contains: /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/arch /usr/local/libdata/perl5/site_perl/amd64-openbsd /usr/local/libdata/perl5/site_perl /usr/libdata/perl5/amd64-openbsd /usr/libdata/perl5 .) at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+Compilation failed in require at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+Compilation failed in require at t/modules/Workflow/Task.t line 1.
+BEGIN failed--compilation aborted at t/modules/Workflow/Task.t line 1.
+t/modules/Workflow/Task.t ....................... 
+Dubious, test returned 2 (wstat 512, 0x200)
+No subtests run 
+Can't locate Importer.pm in @INC (you may need to install the Importer module) (@INC contains: /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/arch /usr/local/libdata/perl5/site_perl/amd64-openbsd /usr/local/libdata/perl5/site_perl /usr/libdata/perl5/amd64-openbsd /usr/libdata/perl5 .) at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+Compilation failed in require at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+Compilation failed in require at t/modules/Workflow/Task/Action.t line 1.
+BEGIN failed--compilation aborted at t/modules/Workflow/Task/Action.t line 1.
+t/modules/Workflow/Task/Action.t ................ 
+Dubious, test returned 2 (wstat 512, 0x200)
+No subtests run 
+Can't locate Importer.pm in @INC (you may need to install the Importer module) (@INC contains: /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/arch /usr/local/libdata/perl5/site_perl/amd64-openbsd /usr/local/libdata/perl5/site_perl /usr/libdata/perl5/amd64-openbsd /usr/libdata/perl5 .) at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+Compilation failed in require at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+Compilation failed in require at t/modules/Workflow/Task/Group.t line 1.
+BEGIN failed--compilation aborted at t/modules/Workflow/Task/Group.t line 1.
+t/modules/Workflow/Task/Group.t ................. 
+Dubious, test returned 2 (wstat 512, 0x200)
+No subtests run 
+Can't locate Importer.pm in @INC (you may need to install the Importer module) (@INC contains: /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/arch /usr/local/libdata/perl5/site_perl/amd64-openbsd /usr/local/libdata/perl5/site_perl /usr/libdata/perl5/amd64-openbsd /usr/libdata/perl5 .) at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+Compilation failed in require at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+Compilation failed in require at t/regression/10-set_and_dne.t line 1.
+BEGIN failed--compilation aborted at t/regression/10-set_and_dne.t line 1.
+t/regression/10-set_and_dne.t ................... 
+Dubious, test returned 2 (wstat 512, 0x200)
+No subtests run 
+t/regression/132-bool.t ......................... skipped: Author test, set the $AUTHOR_TESTING environment variable to run it
+Base class package "Term::Table" is empty.
+    (Perhaps you need to 'use' the module which defines that package first,
+    or make that module available in @INC (@INC contains: /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/arch /usr/local/libdata/perl5/site_perl/amd64-openbsd /usr/local/libdata/perl5/site_perl /usr/libdata/perl5/amd64-openbsd /usr/libdata/perl5 .).
+ at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Util/Table.pm line 7.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Util/Table.pm line 7.
+Compilation failed in require at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Tools/ClassicCompare.pm line 16.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Tools/ClassicCompare.pm line 16.
+Compilation failed in require at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/More.pm line 14.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/More.pm line 16.
+Compilation failed in require at t/regression/27-1-Test2-Bundle-More.t line 1.
+BEGIN failed--compilation aborted at t/regression/27-1-Test2-Bundle-More.t line 1.
+t/regression/27-1-Test2-Bundle-More.t ........... 
+Dubious, test returned 2 (wstat 512, 0x200)
+No subtests run 
+Can't locate Sub/Info.pm in @INC (you may need to install the Sub::Info module) (@INC contains: /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/arch /usr/local/libdata/perl5/site_perl/amd64-openbsd /usr/local/libdata/perl5/site_perl /usr/libdata/perl5/amd64-openbsd /usr/libdata/perl5 .) at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Compare/Base.pm line 10.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Compare/Base.pm line 10.
+Compilation failed in require at /usr/libdata/perl5/base.pm line 137.
+	...propagated at /usr/libdata/perl5/base.pm line 159.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Compare/Array.pm line 5.
+Compilation failed in require at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Tools/Compare.pm line 19.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Tools/Compare.pm line 19.
+Compilation failed in require at t/regression/27-2-Test2-Tools-Compare.t line 1.
+BEGIN failed--compilation aborted at t/regression/27-2-Test2-Tools-Compare.t line 1.
+t/regression/27-2-Test2-Tools-Compare.t ......... 
+Dubious, test returned 2 (wstat 512, 0x200)
+No subtests run 
+Base class package "Term::Table" is empty.
+    (Perhaps you need to 'use' the module which defines that package first,
+    or make that module available in @INC (@INC contains: /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/arch /usr/local/libdata/perl5/site_perl/amd64-openbsd /usr/local/libdata/perl5/site_perl /usr/libdata/perl5/amd64-openbsd /usr/libdata/perl5 .).
+ at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Util/Table.pm line 7.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Util/Table.pm line 7.
+Compilation failed in require at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Tools/ClassicCompare.pm line 16.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Tools/ClassicCompare.pm line 16.
+Compilation failed in require at t/regression/27-3-Test2-Tools-ClassicCompare.t line 1.
+BEGIN failed--compilation aborted at t/regression/27-3-Test2-Tools-ClassicCompare.t line 1.
+t/regression/27-3-Test2-Tools-ClassicCompare.t .. 
+Dubious, test returned 2 (wstat 512, 0x200)
+No subtests run 
+Can't locate Importer.pm in @INC (you may need to install the Importer module) (@INC contains: /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/arch /usr/local/libdata/perl5/site_perl/amd64-openbsd /usr/local/libdata/perl5/site_perl /usr/libdata/perl5/amd64-openbsd /usr/libdata/perl5 .) at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+Compilation failed in require at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+Compilation failed in require at t/regression/43-bag-on-empty.t line 1.
+BEGIN failed--compilation aborted at t/regression/43-bag-on-empty.t line 1.
+t/regression/43-bag-on-empty.t .................. 
+Dubious, test returned 2 (wstat 512, 0x200)
+No subtests run 
+Can't locate Importer.pm in @INC (you may need to install the Importer module) (@INC contains: /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/arch /usr/local/libdata/perl5/site_perl/amd64-openbsd /usr/local/libdata/perl5/site_perl /usr/libdata/perl5/amd64-openbsd /usr/libdata/perl5 .) at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+Compilation failed in require at t/regression/async_subtest_missing_parent.t line 1.
+BEGIN failed--compilation aborted at t/regression/async_subtest_missing_parent.t line 1.
+t/regression/async_subtest_missing_parent.t ..... 
+Dubious, test returned 2 (wstat 512, 0x200)
+No subtests run 
+Can't locate Importer.pm in @INC (you may need to install the Importer module) (@INC contains: /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/arch /usr/local/libdata/perl5/site_perl/amd64-openbsd /usr/local/libdata/perl5/site_perl /usr/libdata/perl5/amd64-openbsd /usr/libdata/perl5 .) at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/V0.pm line 5.
+Compilation failed in require at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/Extended.pm line 5.
+Compilation failed in require at t/regression/Test2-Mock.t line 1.
+BEGIN failed--compilation aborted at t/regression/Test2-Mock.t line 1.
+t/regression/Test2-Mock.t ....................... 
+Dubious, test returned 2 (wstat 512, 0x200)
+No subtests run 
+t/regression/Test2-Tools-Class.t ................ ok
+t/regression/todo_and_facets.t .................. ok
+Base class package "Term::Table" is empty.
+    (Perhaps you need to 'use' the module which defines that package first,
+    or make that module available in @INC (@INC contains: /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/arch /usr/local/libdata/perl5/site_perl/amd64-openbsd /usr/local/libdata/perl5/site_perl /usr/libdata/perl5/amd64-openbsd /usr/libdata/perl5 .).
+ at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Util/Table.pm line 7.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Util/Table.pm line 7.
+Compilation failed in require at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Tools/ClassicCompare.pm line 16.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Tools/ClassicCompare.pm line 16.
+Compilation failed in require at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/More.pm line 14.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139/blib/lib/Test2/Bundle/More.pm line 16.
+Compilation failed in require at t/regression/utf8-mock.t line 2.
+BEGIN failed--compilation aborted at t/regression/utf8-mock.t line 2.
+t/regression/utf8-mock.t ........................ 
+Dubious, test returned 2 (wstat 512, 0x200)
+No subtests run 
+
+Test Summary Report
+-------------------
+t/00-report.t                                 (Wstat: 512 Tests: 0 Failed: 0)
+  Non-zero exit status: 2
+  Parse errors: No plan found in TAP output
+t/acceptance/OO.t                             (Wstat: 512 Tests: 0 Failed: 0)
+  Non-zero exit status: 2
+  Parse errors: No plan found in TAP output
+t/acceptance/skip.t                           (Wstat: 512 Tests: 0 Failed: 0)
+  Non-zero exit status: 2
+  Parse errors: No plan found in TAP output
+t/acceptance/spec.t                           (Wstat: 512 Tests: 0 Failed: 0)
+  Non-zero exit status: 2
+  Parse errors: No plan found in TAP output
+t/acceptance/Tools.t                          (Wstat: 512 Tests: 0 Failed: 0)
+  Non-zero exit status: 2
+  Parse errors: No plan found in TAP output
+t/acceptance/Workflow-Acceptance.t            (Wstat: 512 Tests: 0 Failed: 0)
+  Non-zero exit status: 2
+  Parse errors: No plan found in TAP output
+t/acceptance/Workflow-Acceptance2.t           (Wstat: 512 Tests: 0 Failed: 0)
+  Non-zero exit status: 2
+  Parse errors: No plan found in TAP output
+t/acceptance/Workflow-Acceptance3.t           (Wstat: 512 Tests: 0 Failed: 0)
+  Non-zero exit status: 2
+  Parse errors: No plan found in TAP output
+t/acceptance/Workflow-Acceptance4.t           (Wstat: 512 Tests: 0 Failed: 0)
+  Non-zero exit status: 2
+  Parse errors: No plan found in TAP output
+t/acceptance/Workflow-Acceptance5.t           (Wstat: 512 Tests: 0 Failed: 0)
+  Non-zero exit status: 2
+  Parse errors: No plan found in TAP output
+t/behavior/async_trace.t                      (Wstat: 512 Tests: 0 Failed: 0)
+  Non-zero exit status: 2
+  Parse errors: No plan found in TAP output
+t/behavior/filtering.t                        (Wstat: 512 Tests: 0 Failed: 0)
+  Non-zero exit status: 2
+  Parse errors: No plan found in TAP output
+t/behavior/Mocking.t                          (Wstat: 512 Tests: 0 Failed: 0)
+  Non-zero exit status: 2
+  Parse errors: No plan found in TAP output
+t/behavior/no_done_testing.t                  (Wstat: 512 Tests: 0 Failed: 0)
+  Non-zero exit status: 2
+  Parse errors: No plan found in TAP output
+t/behavior/no_leaks_any.t                     (Wstat: 512 Tests: 0 Failed: 0)
+  Non-zero exit status: 2
+  Parse errors: No plan found in TAP output
+t/behavior/no_leaks_no_fork.t                 (Wstat: 512 Tests: 0 Failed: 0)
+  Non-zero exit status: 2
+  Parse errors: No plan found in TAP output
+t/behavior/no_leaks_no_iso.t                  (Wstat: 512 Tests: 0 Failed: 0)
+  Non-zero exit status: 2
+  Parse errors: No plan found in TAP output
+t/behavior/no_leaks_no_threads.t              (Wstat: 512 Tests: 0 Failed: 0)
+  Non-zero exit status: 2
+  Parse errors: No plan found in TAP output
+t/behavior/simple.t                           (Wstat: 512 Tests: 0 Failed: 0)
+  Non-zero exit status: 2
+  Parse errors: No plan found in TAP output
+t/modules/AsyncSubtest.t                      (Wstat: 512 Tests: 0 Failed: 0)
+  Non-zero exit status: 2
+  Parse errors: No plan found in TAP output
+t/modules/AsyncSubtest/Event/Attach.t         (Wstat: 512 Tests: 0 Failed: 0)
+  Non-zero exit status: 2
+  Parse errors: No plan found in TAP output
+t/modules/AsyncSubtest/Event/Detach.t         (Wstat: 512 Tests: 0 Failed: 0)
+  Non-zero exit status: 2
+  Parse errors: No plan found in TAP output
+t/modules/AsyncSubtest/Hub.t                  (Wstat: 512 Tests: 0 Failed: 0)
+  Non-zero exit status: 2
+  Parse errors: No plan found in TAP output
+t/modules/Bundle.t                            (Wstat: 512 Tests: 0 Failed: 0)
+  Non-zero exit status: 2
+  Parse errors: No plan found in TAP output
+t/modules/Bundle/Extended.t                   (Wstat: 512 Tests: 0 Failed: 0)
+  Non-zero exit status: 2
+  Parse errors: No plan found in TAP output
+t/modules/Bundle/More.t                       (Wstat: 512 Tests: 0 Failed: 0)
+  Non-zero exit status: 2
+  Parse errors: No plan found in TAP output
+t/modules/Compare.t                           (Wstat: 512 Tests: 0 Failed: 0)
+  Non-zero exit status: 2
+  Parse errors: No plan found in TAP output
+t/modules/Compare/Array.t                     (Wstat: 512 Tests: 0 Failed: 0)
+  Non-zero exit status: 2
+  Parse errors: No plan found in TAP output
+t/modules/Compare/Bag.t                       (Wstat: 512 Tests: 0 Failed: 0)
+  Non-zero exit status: 2
+  Parse errors: No plan found in TAP output
+t/modules/Compare/Base.t                      (Wstat: 512 Tests: 0 Failed: 0)
+  Non-zero exit status: 2
+  Parse errors: No plan found in TAP output
+t/modules/Compare/Bool.t                      (Wstat: 512 Tests: 0 Failed: 0)
+  Non-zero exit status: 2
+  Parse errors: No plan found in TAP output
+t/modules/Compare/Custom.t                    (Wstat: 512 Tests: 0 Failed: 0)
+  Non-zero exit status: 2
+  Parse errors: No plan found in TAP output
+t/modules/Compare/Delta.t                     (Wstat: 512 Tests: 0 Failed: 0)
+  Non-zero exit status: 2
+  Parse errors: No plan found in TAP output
+t/modules/Compare/Event.t                     (Wstat: 512 Tests: 0 Failed: 0)
+  Non-zero exit status: 2
+  Parse errors: No plan found in TAP output
+t/modules/Compare/EventMeta.t                 (Wstat: 512 Tests: 0 Failed: 0)
+  Non-zero exit status: 2
+  Parse errors: No plan found in TAP output
+t/modules/Compare/Float.t                     (Wstat: 512 Tests: 0 Failed: 0)
+  Non-zero exit status: 2
+  Parse errors: No plan found in TAP output
+t/modules/Compare/Hash.t                      (Wstat: 512 Tests: 0 Failed: 0)
+  Non-zero exit status: 2
+  Parse errors: No plan found in TAP output
+t/modules/Compare/Isa.t                       (Wstat: 512 Tests: 0 Failed: 0)
+  Non-zero exit status: 2
+  Parse errors: No plan found in TAP output
+t/modules/Compare/Meta.t                      (Wstat: 512 Tests: 0 Failed: 0)
+  Non-zero exit status: 2
+  Parse errors: No plan found in TAP output
+t/modules/Compare/Number.t                    (Wstat: 512 Tests: 0 Failed: 0)
+  Non-zero exit status: 2
+  Parse errors: No plan found in TAP output
+t/modules/Compare/Object.t                    (Wstat: 512 Tests: 0 Failed: 0)
+  Non-zero exit status: 2
+  Parse errors: No plan found in TAP output
+t/modules/Compare/OrderedSubset.t             (Wstat: 512 Tests: 0 Failed: 0)
+  Non-zero exit status: 2
+  Parse errors: No plan found in TAP output
+t/modules/Compare/Pattern.t                   (Wstat: 512 Tests: 0 Failed: 0)
+  Non-zero exit status: 2
+  Parse errors: No plan found in TAP output
+t/modules/Compare/Ref.t                       (Wstat: 512 Tests: 0 Failed: 0)
+  Non-zero exit status: 2
+  Parse errors: No plan found in TAP output
+t/modules/Compare/Regex.t                     (Wstat: 512 Tests: 0 Failed: 0)
+  Non-zero exit status: 2
+  Parse errors: No plan found in TAP output
+t/modules/Compare/Scalar.t                    (Wstat: 512 Tests: 0 Failed: 0)
+  Non-zero exit status: 2
+  Parse errors: No plan found in TAP output
+t/modules/Compare/Set.t                       (Wstat: 512 Tests: 0 Failed: 0)
+  Non-zero exit status: 2
+  Parse errors: No plan found in TAP output
+t/modules/Compare/String.t                    (Wstat: 512 Tests: 0 Failed: 0)
+  Non-zero exit status: 2
+  Parse errors: No plan found in TAP output
+t/modules/Compare/Undef.t                     (Wstat: 512 Tests: 0 Failed: 0)
+  Non-zero exit status: 2
+  Parse errors: No plan found in TAP output
+t/modules/Compare/Wildcard.t                  (Wstat: 512 Tests: 0 Failed: 0)
+  Non-zero exit status: 2
+  Parse errors: No plan found in TAP output
+t/modules/Mock.t                              (Wstat: 512 Tests: 0 Failed: 0)
+  Non-zero exit status: 2
+  Parse errors: No plan found in TAP output
+t/modules/Plugin.t                            (Wstat: 512 Tests: 0 Failed: 0)
+  Non-zero exit status: 2
+  Parse errors: No plan found in TAP output
+t/modules/Plugin/BailOnFail.t                 (Wstat: 512 Tests: 0 Failed: 0)
+  Non-zero exit status: 2
+  Parse errors: No plan found in TAP output
+t/modules/Plugin/DieOnFail.t                  (Wstat: 512 Tests: 0 Failed: 0)
+  Non-zero exit status: 2
+  Parse errors: No plan found in TAP output
+t/modules/Plugin/ExitSummary.t                (Wstat: 512 Tests: 0 Failed: 0)
+  Non-zero exit status: 2
+  Parse errors: No plan found in TAP output
+t/modules/Plugin/SRand.t                      (Wstat: 512 Tests: 0 Failed: 0)
+  Non-zero exit status: 2
+  Parse errors: No plan found in TAP output
+t/modules/Plugin/Times.t                      (Wstat: 512 Tests: 0 Failed: 0)
+  Non-zero exit status: 2
+  Parse errors: No plan found in TAP output
+t/modules/Plugin/UTF8.t                       (Wstat: 512 Tests: 0 Failed: 0)
+  Non-zero exit status: 2
+  Parse errors: No plan found in TAP output
+t/modules/Require.t                           (Wstat: 512 Tests: 0 Failed: 0)
+  Non-zero exit status: 2
+  Parse errors: No plan found in TAP output
+t/modules/Require/AuthorTesting.t             (Wstat: 512 Tests: 0 Failed: 0)
+  Non-zero exit status: 2
+  Parse errors: No plan found in TAP output
+t/modules/Require/EnvVar.t                    (Wstat: 512 Tests: 0 Failed: 0)
+  Non-zero exit status: 2
+  Parse errors: No plan found in TAP output
+t/modules/Require/Fork.t                      (Wstat: 512 Tests: 0 Failed: 0)
+  Non-zero exit status: 2
+  Parse errors: No plan found in TAP output
+t/modules/Require/Module.t                    (Wstat: 512 Tests: 0 Failed: 0)
+  Non-zero exit status: 2
+  Parse errors: No plan found in TAP output
+t/modules/Require/Perl.t                      (Wstat: 512 Tests: 0 Failed: 0)
+  Non-zero exit status: 2
+  Parse errors: No plan found in TAP output
+t/modules/Require/RealFork.t                  (Wstat: 512 Tests: 0 Failed: 0)
+  Non-zero exit status: 2
+  Parse errors: No plan found in TAP output
+t/modules/Require/Threads.t                   (Wstat: 512 Tests: 0 Failed: 0)
+  Non-zero exit status: 2
+  Parse errors: No plan found in TAP output
+t/modules/Suite.t                             (Wstat: 512 Tests: 0 Failed: 0)
+  Non-zero exit status: 2
+  Parse errors: No plan found in TAP output
+t/modules/Todo.t                              (Wstat: 512 Tests: 0 Failed: 0)
+  Non-zero exit status: 2
+  Parse errors: No plan found in TAP output
+t/modules/Tools.t                             (Wstat: 512 Tests: 0 Failed: 0)
+  Non-zero exit status: 2
+  Parse errors: No plan found in TAP output
+t/modules/Tools/AsyncSubtest.t                (Wstat: 512 Tests: 0 Failed: 0)
+  Non-zero exit status: 2
+  Parse errors: No plan found in TAP output
+t/modules/Tools/Basic.t                       (Wstat: 512 Tests: 0 Failed: 0)
+  Non-zero exit status: 2
+  Parse errors: No plan found in TAP output
+t/modules/Tools/Class.t                       (Wstat: 512 Tests: 0 Failed: 0)
+  Non-zero exit status: 2
+  Parse errors: No plan found in TAP output
+t/modules/Tools/ClassicCompare.t              (Wstat: 512 Tests: 0 Failed: 0)
+  Non-zero exit status: 2
+  Parse errors: No plan found in TAP output
+t/modules/Tools/ClassicCompare2.t             (Wstat: 512 Tests: 0 Failed: 0)
+  Non-zero exit status: 2
+  Parse errors: No plan found in TAP output
+t/modules/Tools/Compare.t                     (Wstat: 512 Tests: 0 Failed: 0)
+  Non-zero exit status: 2
+  Parse errors: No plan found in TAP output
+t/modules/Tools/Defer.t                       (Wstat: 512 Tests: 0 Failed: 0)
+  Non-zero exit status: 2
+  Parse errors: No plan found in TAP output
+t/modules/Tools/Encoding.t                    (Wstat: 512 Tests: 0 Failed: 0)
+  Non-zero exit status: 2
+  Parse errors: No plan found in TAP output
+t/modules/Tools/Event.t                       (Wstat: 512 Tests: 0 Failed: 0)
+  Non-zero exit status: 2
+  Parse errors: No plan found in TAP output
+t/modules/Tools/Exception.t                   (Wstat: 512 Tests: 0 Failed: 0)
+  Non-zero exit status: 2
+  Parse errors: No plan found in TAP output
+t/modules/Tools/Exports.t                     (Wstat: 512 Tests: 0 Failed: 0)
+  Non-zero exit status: 2
+  Parse errors: No plan found in TAP output
+t/modules/Tools/GenTemp.t                     (Wstat: 512 Tests: 0 Failed: 0)
+  Non-zero exit status: 2
+  Parse errors: No plan found in TAP output
+t/modules/Tools/Grab.t                        (Wstat: 512 Tests: 0 Failed: 0)
+  Non-zero exit status: 2
+  Parse errors: No plan found in TAP output
+t/modules/Tools/Mock.t                        (Wstat: 512 Tests: 0 Failed: 0)
+  Non-zero exit status: 2
+  Parse errors: No plan found in TAP output
+t/modules/Tools/Ref.t                         (Wstat: 512 Tests: 0 Failed: 0)
+  Non-zero exit status: 2
+  Parse errors: No plan found in TAP output
+t/modules/Tools/Spec.t                        (Wstat: 512 Tests: 0 Failed: 0)
+  Non-zero exit status: 2
+  Parse errors: No plan found in TAP output
+t/modules/Tools/Subtest.t                     (Wstat: 512 Tests: 0 Failed: 0)
+  Non-zero exit status: 2
+  Parse errors: No plan found in TAP output
+t/modules/Tools/Target.t                      (Wstat: 512 Tests: 0 Failed: 0)
+  Non-zero exit status: 2
+  Parse errors: No plan found in TAP output
+t/modules/Tools/Tester.t                      (Wstat: 512 Tests: 0 Failed: 0)
+  Non-zero exit status: 2
+  Parse errors: No plan found in TAP output
+t/modules/Tools/Warnings.t                    (Wstat: 512 Tests: 0 Failed: 0)
+  Non-zero exit status: 2
+  Parse errors: No plan found in TAP output
+t/modules/Util/Grabber.t                      (Wstat: 512 Tests: 0 Failed: 0)
+  Non-zero exit status: 2
+  Parse errors: No plan found in TAP output
+t/modules/Util/Ref.t                          (Wstat: 512 Tests: 0 Failed: 0)
+  Non-zero exit status: 2
+  Parse errors: No plan found in TAP output
+t/modules/Util/Stash.t                        (Wstat: 512 Tests: 0 Failed: 0)
+  Non-zero exit status: 2
+  Parse errors: No plan found in TAP output
+t/modules/Util/Sub.t                          (Wstat: 512 Tests: 0 Failed: 0)
+  Non-zero exit status: 2
+  Parse errors: No plan found in TAP output
+t/modules/Util/Table.t                        (Wstat: 512 Tests: 0 Failed: 0)
+  Non-zero exit status: 2
+  Parse errors: No plan found in TAP output
+t/modules/Util/Table/Cell.t                   (Wstat: 512 Tests: 0 Failed: 0)
+  Non-zero exit status: 2
+  Parse errors: No plan found in TAP output
+t/modules/Util/Table/LineBreak.t              (Wstat: 512 Tests: 0 Failed: 0)
+  Non-zero exit status: 2
+  Parse errors: No plan found in TAP output
+t/modules/Util/Times.t                        (Wstat: 512 Tests: 0 Failed: 0)
+  Non-zero exit status: 2
+  Parse errors: No plan found in TAP output
+t/modules/V0.t                                (Wstat: 512 Tests: 0 Failed: 0)
+  Non-zero exit status: 2
+  Parse errors: No plan found in TAP output
+t/modules/Workflow.t                          (Wstat: 512 Tests: 0 Failed: 0)
+  Non-zero exit status: 2
+  Parse errors: No plan found in TAP output
+t/modules/Workflow/BlockBase.t                (Wstat: 512 Tests: 0 Failed: 0)
+  Non-zero exit status: 2
+  Parse errors: No plan found in TAP output
+t/modules/Workflow/Build.t                    (Wstat: 512 Tests: 0 Failed: 0)
+  Non-zero exit status: 2
+  Parse errors: No plan found in TAP output
+t/modules/Workflow/Runner.t                   (Wstat: 512 Tests: 0 Failed: 0)
+  Non-zero exit status: 2
+  Parse errors: No plan found in TAP output
+t/modules/Workflow/Task.t                     (Wstat: 512 Tests: 0 Failed: 0)
+  Non-zero exit status: 2
+  Parse errors: No plan found in TAP output
+t/modules/Workflow/Task/Action.t              (Wstat: 512 Tests: 0 Failed: 0)
+  Non-zero exit status: 2
+  Parse errors: No plan found in TAP output
+t/modules/Workflow/Task/Group.t               (Wstat: 512 Tests: 0 Failed: 0)
+  Non-zero exit status: 2
+  Parse errors: No plan found in TAP output
+t/regression/10-set_and_dne.t                 (Wstat: 512 Tests: 0 Failed: 0)
+  Non-zero exit status: 2
+  Parse errors: No plan found in TAP output
+t/regression/27-1-Test2-Bundle-More.t         (Wstat: 512 Tests: 0 Failed: 0)
+  Non-zero exit status: 2
+  Parse errors: No plan found in TAP output
+t/regression/27-2-Test2-Tools-Compare.t       (Wstat: 512 Tests: 0 Failed: 0)
+  Non-zero exit status: 2
+  Parse errors: No plan found in TAP output
+t/regression/27-3-Test2-Tools-ClassicCompare.t (Wstat: 512 Tests: 0 Failed: 0)
+  Non-zero exit status: 2
+  Parse errors: No plan found in TAP output
+t/regression/43-bag-on-empty.t                (Wstat: 512 Tests: 0 Failed: 0)
+  Non-zero exit status: 2
+  Parse errors: No plan found in TAP output
+t/regression/async_subtest_missing_parent.t   (Wstat: 512 Tests: 0 Failed: 0)
+  Non-zero exit status: 2
+  Parse errors: No plan found in TAP output
+t/regression/Test2-Mock.t                     (Wstat: 512 Tests: 0 Failed: 0)
+  Non-zero exit status: 2
+  Parse errors: No plan found in TAP output
+t/regression/utf8-mock.t                      (Wstat: 512 Tests: 0 Failed: 0)
+  Non-zero exit status: 2
+  Parse errors: No plan found in TAP output
+Files=118, Tests=15,  7 wallclock secs ( 0.60 usr  1.01 sys +  2.94 cusr  2.85 csys =  7.40 CPU)
+Result: FAIL
+Failed 113/118 test programs. 0/15 subtests failed.
+*** Error 2 in /tlaptop.a/obj/ports/p5-Test2-Suite-0.000139/Test2-Suite-0.000139 (Makefile:1338 'test_dynamic')
+*** Error 2 in . (/usr/ports/infrastructure/mk/bsd.port.mk:2960 '/usr/obj/ports/p5-Test2-Suite-0.000139/.test_done': @cd /usr/obj/ports/p5-T...)
+*** Error 2 in /usr/ports/openbsd-wip/devel/p5-Test2-Suite (/usr/ports/infrastructure/mk/bsd.port.mk:2584 'test': @lock=p5-Test2-Suite-0.000...)

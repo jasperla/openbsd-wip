@@ -1,0 +1,66 @@
+===>  Checking files for p5-WebService-Discord-Webhook-1.10
+>> Fetch https://www.cpan.org/modules/by-module/../by-authors/id/G/GR/GREGK/WebService-Discord-Webhook-1.10.tar.gz
+WebService-Discord-Web...   0% |                        |     0       --:-- ETAWebService-Discord-Web... 100% |************************|  9291       00:00    
+===>  Checking files for p5-WebService-Discord-Webhook-1.10
+`/usr/ports/distfiles/WebService-Discord-Webhook-1.10.tar.gz' is up to date.
+>> (SHA256) WebService-Discord-Webhook-1.10.tar.gz: OK
+===>  Extracting for p5-WebService-Discord-Webhook-1.10
+===>  Patching for p5-WebService-Discord-Webhook-1.10
+===>  Compiler link: clang -> /usr/bin/clang
+===>  Compiler link: clang++ -> /usr/bin/clang++
+===>  Compiler link: cc -> /usr/bin/cc
+===>  Compiler link: c++ -> /usr/bin/c++
+===>  Generating configure for p5-WebService-Discord-Webhook-1.10
+===>  Configuring for p5-WebService-Discord-Webhook-1.10
+WARNING: Older versions of ExtUtils::MakeMaker may errantly install README.pod as part of this distribution. It is recommended to avoid using this path in CPAN modules.
+Checking if your kit is complete...
+Looks good
+Generating a Unix-style Makefile
+Writing Makefile for WebService::Discord::Webhook
+Writing MYMETA.yml and MYMETA.json
+===>  Building for p5-WebService-Discord-Webhook-1.10
+cp lib/WebService/Discord/Webhook.pm blib/lib/WebService/Discord/Webhook.pm
+Manifying 1 pod document
+===>  Faking installation for p5-WebService-Discord-Webhook-1.10
+Manifying 1 pod document
+Installing /usr/obj/ports/p5-WebService-Discord-Webhook-1.10/fake-amd64/usr/local/libdata/perl5/site_perl/WebService/Discord/Webhook.pm
+Installing /usr/obj/ports/p5-WebService-Discord-Webhook-1.10/fake-amd64/usr/local/man/man3p/WebService::Discord::Webhook.3p
+Appending installation info to /usr/obj/ports/p5-WebService-Discord-Webhook-1.10/fake-amd64/usr/./libdata/perl5/amd64-openbsd/perllocal.pod
+===>  Updating plist for p5-WebService-Discord-Webhook-1.10
+Reading existing plist for p5-WebService-Discord-Webhook-1.10
+Scanning /usr/obj/ports/p5-WebService-Discord-Webhook-1.10/fake-amd64
+Removing .debug artefacts
+Figuring out tie points
+Tieing loose objects
+Copying objects
+Looking for unregistered conflicts
+/usr/ports/openbsd-wip/www/p5-WebService-Discord-Webhook/pkg/PLIST is new
+===>  Regression tests for p5-WebService-Discord-Webhook-1.10
+PERL_DL_NONLAZY=1 "/usr/bin/perl" "-MExtUtils::Command::MM" "-MTest::Harness" "-e" "undef *Test::Harness::Switches; test_harness(0, 'blib/lib', 'blib/arch')" t/*.t
+t/webhook.t .. ok
+All tests successful.
+Files=1, Tests=11,  1 wallclock secs ( 0.04 usr  0.01 sys +  0.22 cusr  0.10 csys =  0.37 CPU)
+Result: PASS
+===>  Looking for p5-WebService-Discord-Webhook-1.10.tgz in $PKG_PATH - Error: /dev/sd2e on /usr/local is read-only (/usr/local/libdata/perl5/site_perl/OpenBSD/Quirks.pm)
+Error: /dev/sd2e on /usr/local is read-only (/usr/local/libdata/perl5/site_perl/OpenBSD/Quirks/ghc.pm)
+Error: /dev/sd2e on /usr/local is read-only (/usr/local/libdata/perl5/site_perl/OpenBSD/Quirks.pm)
+Error: ... more files for /dev/sd2e on /usr/local
+Can't find p5-WebService-Discord-Webhook-1.10.tgz
+Couldn't find updates for quirks-3.499
+Couldn't install p5-WebService-Discord-Webhook-1.10 quirks-3.456
+not found
+*** Error 1 in . (/usr/ports/infrastructure/mk/bsd.port.mk:2104 '/usr/ports/packages/amd64/cache/p5-WebService-Discord-Webhook-1.10.tgz': @i...)
+`/usr/obj/ports/p5-WebService-Discord-Webhook-1.10/fake-amd64/.fake_done' is up to date.
+===>  Building package for p5-WebService-Discord-Webhook-1.10
+Create /usr/ports/packages/amd64/all/p5-WebService-Discord-Webhook-1.10.tgz
+Creating package p5-WebService-Discord-Webhook-1.10
+reading plist|[K[Kchecking dependencies|[K[Kchecksumming|[K[K[14G                                                             | 0%[K[14G*****                                                        | 8%[K[19G*****                                                   | 17%[K[24G*****                                              | 25%[K[29G*****                                         | 33%[K[34G*****                                    | 42%[K[39G******                              | 50%[K[45G*****                         | 58%[K[50G*****                    | 67%[K[55G*****               | 75%[K[60G*****          | 83%[K[65G*****     | 92%[K[70G*****|100%[K[Karchiving|[K[K[11G                                                                | 0%[K[11G                                                                | 1%[K[11G***************************************                         | 61%[K[50G*************************|100%[K[KLink to /usr/ports/packages/amd64/ftp/p5-WebService-Discord-Webhook-1.10.tgz
+===>  Installing p5-WebService-Discord-Webhook-1.10 from /usr/ports/packages/amd64/all/
+Error: /dev/sd2e on /usr/local is read-only (/usr/local/libdata/perl5/site_perl/OpenBSD/Quirks.pm)
+Error: /dev/sd2e on /usr/local is read-only (/usr/local/libdata/perl5/site_perl/OpenBSD/Quirks/ghc.pm)
+Error: /dev/sd2e on /usr/local is read-only (/usr/local/libdata/perl5/site_perl/OpenBSD/Quirks.pm)
+Error: ... more files for /dev/sd2e on /usr/local
+Couldn't find updates for quirks-3.499
+Couldn't install p5-WebService-Discord-Webhook-1.10 quirks-3.502
+*** Error 1 in . (/usr/ports/infrastructure/mk/bsd.port.mk:2141 '/var/db/pkg/p5-WebService-Discord-Webhook-1.10/+CONTENTS': @/usr/bin/env -i...)
+*** Error 2 in /usr/ports/openbsd-wip/www/p5-WebService-Discord-Webhook (/usr/ports/infrastructure/mk/bsd.port.mk:2584 'install': @lock=p5-W...)

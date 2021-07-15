@@ -1,0 +1,9 @@
+@comment $OpenBSD: PLIST,v$
+${P5SITE}/Mojo/
+${P5SITE}/Mojo/UserAgent/
+${P5SITE}/Mojo/UserAgent/Role/
+${P5SITE}/Mojo/UserAgent/Role/Queued/
+${P5SITE}/Mojo/UserAgent/Role/Queued.pm
+${P5SITE}/Mojo/UserAgent/Role/Queued/Queue.pm
+@man man/man3p/Mojo::UserAgent::Role::Queued.3p
+@man man/man3p/Mojo::UserAgent::Role::Queued::Queue.3p

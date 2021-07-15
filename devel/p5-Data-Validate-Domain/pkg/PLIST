@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v$
+${P5SITE}/Data/
+${P5SITE}/Data/Validate/
+${P5SITE}/Data/Validate/Domain.pm
+@man man/man3p/Data::Validate::Domain.3p

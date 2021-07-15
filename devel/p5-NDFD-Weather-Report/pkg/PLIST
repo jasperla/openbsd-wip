@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v$
+${P5SITE}/NDFD/
+${P5SITE}/NDFD/Weather/
+${P5SITE}/NDFD/Weather/GenerateXML.pm
+${P5SITE}/NDFD/Weather/Report.pm
+${P5SITE}/NDFD/Weather/RequestProcess.pm
+@man man/man3p/NDFD::Weather::Report.3p

@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v$
+${P5SITE}/WWW/YouTube/Download/
+${P5SITE}/WWW/YouTube/Download/Channel.pm
+@man man/man3p/WWW::YouTube::Download::Channel.3p

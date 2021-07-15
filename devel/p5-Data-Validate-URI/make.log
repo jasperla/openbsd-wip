@@ -1,0 +1,109 @@
+===>  Checking files for p5-Data-Validate-URI-0.07
+>> Fetch https://www.cpan.org/modules/by-module/../by-authors/id/S/SO/SONNEN/Data-Validate-URI-0.07.tar.gz
+Data-Validate-URI-0.07...   0% |                        |     0       --:-- ETAData-Validate-URI-0.07... 100% |************************| 12505       00:00    
+===>  Checking files for p5-Data-Validate-URI-0.07
+`/usr/ports/distfiles/Data-Validate-URI-0.07.tar.gz' is up to date.
+>> (SHA256) Data-Validate-URI-0.07.tar.gz: OK
+===>  Extracting for p5-Data-Validate-URI-0.07
+===>  Patching for p5-Data-Validate-URI-0.07
+===>  Compiler link: clang -> /usr/bin/clang
+===>  Compiler link: clang++ -> /usr/bin/clang++
+===>  Compiler link: cc -> /usr/bin/cc
+===>  Compiler link: c++ -> /usr/bin/c++
+===>  Generating configure for p5-Data-Validate-URI-0.07
+===>  Configuring for p5-Data-Validate-URI-0.07
+Warning: prerequisite Data::Validate::Domain 0 not found.
+Warning: prerequisite Data::Validate::IP 0 not found.
+Checking if your kit is complete...
+Looks good
+Generating a Unix-style Makefile
+Writing Makefile for Data::Validate::URI
+Writing MYMETA.yml and MYMETA.json
+===>  Building for p5-Data-Validate-URI-0.07
+cp lib/Data/Validate/URI.pm blib/lib/Data/Validate/URI.pm
+AutoSplitting blib/lib/Data/Validate/URI.pm (blib/lib/auto/Data/Validate/URI)
+Manifying 1 pod document
+===>  Faking installation for p5-Data-Validate-URI-0.07
+Manifying 1 pod document
+Installing /usr/obj/ports/p5-Data-Validate-URI-0.07/fake-amd64/usr/local/libdata/perl5/site_perl/Data/Validate/URI.pm
+Installing /usr/obj/ports/p5-Data-Validate-URI-0.07/fake-amd64/usr/local/libdata/perl5/site_perl/auto/Data/Validate/URI/new.al
+Installing /usr/obj/ports/p5-Data-Validate-URI-0.07/fake-amd64/usr/local/libdata/perl5/site_perl/auto/Data/Validate/URI/is_uri.al
+Installing /usr/obj/ports/p5-Data-Validate-URI-0.07/fake-amd64/usr/local/libdata/perl5/site_perl/auto/Data/Validate/URI/_test_uri.al
+Installing /usr/obj/ports/p5-Data-Validate-URI-0.07/fake-amd64/usr/local/libdata/perl5/site_perl/auto/Data/Validate/URI/is_http_uri.al
+Installing /usr/obj/ports/p5-Data-Validate-URI-0.07/fake-amd64/usr/local/libdata/perl5/site_perl/auto/Data/Validate/URI/is_https_uri.al
+Installing /usr/obj/ports/p5-Data-Validate-URI-0.07/fake-amd64/usr/local/libdata/perl5/site_perl/auto/Data/Validate/URI/is_web_uri.al
+Installing /usr/obj/ports/p5-Data-Validate-URI-0.07/fake-amd64/usr/local/libdata/perl5/site_perl/auto/Data/Validate/URI/is_tel_uri.al
+Installing /usr/obj/ports/p5-Data-Validate-URI-0.07/fake-amd64/usr/local/libdata/perl5/site_perl/auto/Data/Validate/URI/_split_uri.al
+Installing /usr/obj/ports/p5-Data-Validate-URI-0.07/fake-amd64/usr/local/libdata/perl5/site_perl/auto/Data/Validate/URI/autosplit.ix
+Installing /usr/obj/ports/p5-Data-Validate-URI-0.07/fake-amd64/usr/local/man/man3p/Data::Validate::URI.3p
+Appending installation info to /usr/obj/ports/p5-Data-Validate-URI-0.07/fake-amd64/usr/./libdata/perl5/amd64-openbsd/perllocal.pod
+===>  Updating plist for p5-Data-Validate-URI-0.07
+Reading existing plist for p5-Data-Validate-URI-0.07
+Scanning /usr/obj/ports/p5-Data-Validate-URI-0.07/fake-amd64
+Removing .debug artefacts
+Figuring out tie points
+Tieing loose objects
+Copying objects
+Looking for unregistered conflicts
+/usr/ports/openbsd-wip/devel/p5-Data-Validate-URI/pkg/PLIST is new
+===>  Regression tests for p5-Data-Validate-URI-0.07
+PERL_DL_NONLAZY=1 "/usr/bin/perl" "-MExtUtils::Command::MM" "-MTest::Harness" "-e" "undef *Test::Harness::Switches; test_harness(0, 'blib/lib', 'blib/arch')" t/*.t
+Can't locate Data/Validate/Domain.pm in @INC (you may need to install the Data::Validate::Domain module) (@INC contains: ./blib ./t /tlaptop.a/obj/ports/p5-Data-Validate-URI-0.07/Data-Validate-URI-0.07/blib/lib /tlaptop.a/obj/ports/p5-Data-Validate-URI-0.07/Data-Validate-URI-0.07/blib/arch /usr/local/libdata/perl5/site_perl/amd64-openbsd /usr/local/libdata/perl5/site_perl /usr/libdata/perl5/amd64-openbsd /usr/libdata/perl5 .) at /tlaptop.a/obj/ports/p5-Data-Validate-URI-0.07/Data-Validate-URI-0.07/blib/lib/Data/Validate/URI.pm line 9.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Data-Validate-URI-0.07/Data-Validate-URI-0.07/blib/lib/Data/Validate/URI.pm line 9.
+Compilation failed in require at t/is_http_uri.t line 13.
+BEGIN failed--compilation aborted at t/is_http_uri.t line 13.
+t/is_http_uri.t ... 
+Dubious, test returned 2 (wstat 512, 0x200)
+No subtests run 
+Can't locate Data/Validate/Domain.pm in @INC (you may need to install the Data::Validate::Domain module) (@INC contains: ./blib ./t /tlaptop.a/obj/ports/p5-Data-Validate-URI-0.07/Data-Validate-URI-0.07/blib/lib /tlaptop.a/obj/ports/p5-Data-Validate-URI-0.07/Data-Validate-URI-0.07/blib/arch /usr/local/libdata/perl5/site_perl/amd64-openbsd /usr/local/libdata/perl5/site_perl /usr/libdata/perl5/amd64-openbsd /usr/libdata/perl5 .) at /tlaptop.a/obj/ports/p5-Data-Validate-URI-0.07/Data-Validate-URI-0.07/blib/lib/Data/Validate/URI.pm line 9.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Data-Validate-URI-0.07/Data-Validate-URI-0.07/blib/lib/Data/Validate/URI.pm line 9.
+Compilation failed in require at t/is_https_uri.t line 13.
+BEGIN failed--compilation aborted at t/is_https_uri.t line 13.
+t/is_https_uri.t .. 
+Dubious, test returned 2 (wstat 512, 0x200)
+No subtests run 
+Can't locate Data/Validate/Domain.pm in @INC (you may need to install the Data::Validate::Domain module) (@INC contains: ./blib ./t /tlaptop.a/obj/ports/p5-Data-Validate-URI-0.07/Data-Validate-URI-0.07/blib/lib /tlaptop.a/obj/ports/p5-Data-Validate-URI-0.07/Data-Validate-URI-0.07/blib/arch /usr/local/libdata/perl5/site_perl/amd64-openbsd /usr/local/libdata/perl5/site_perl /usr/libdata/perl5/amd64-openbsd /usr/libdata/perl5 .) at /tlaptop.a/obj/ports/p5-Data-Validate-URI-0.07/Data-Validate-URI-0.07/blib/lib/Data/Validate/URI.pm line 9.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Data-Validate-URI-0.07/Data-Validate-URI-0.07/blib/lib/Data/Validate/URI.pm line 9.
+Compilation failed in require at t/is_tel_uri.t line 13.
+BEGIN failed--compilation aborted at t/is_tel_uri.t line 13.
+t/is_tel_uri.t .... 
+Dubious, test returned 2 (wstat 512, 0x200)
+No subtests run 
+Can't locate Data/Validate/Domain.pm in @INC (you may need to install the Data::Validate::Domain module) (@INC contains: ./blib ./t /tlaptop.a/obj/ports/p5-Data-Validate-URI-0.07/Data-Validate-URI-0.07/blib/lib /tlaptop.a/obj/ports/p5-Data-Validate-URI-0.07/Data-Validate-URI-0.07/blib/arch /usr/local/libdata/perl5/site_perl/amd64-openbsd /usr/local/libdata/perl5/site_perl /usr/libdata/perl5/amd64-openbsd /usr/libdata/perl5 .) at /tlaptop.a/obj/ports/p5-Data-Validate-URI-0.07/Data-Validate-URI-0.07/blib/lib/Data/Validate/URI.pm line 9.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Data-Validate-URI-0.07/Data-Validate-URI-0.07/blib/lib/Data/Validate/URI.pm line 9.
+Compilation failed in require at t/is_uri.t line 13.
+BEGIN failed--compilation aborted at t/is_uri.t line 13.
+t/is_uri.t ........ 
+Dubious, test returned 2 (wstat 512, 0x200)
+No subtests run 
+Can't locate Data/Validate/Domain.pm in @INC (you may need to install the Data::Validate::Domain module) (@INC contains: ./blib ./t /tlaptop.a/obj/ports/p5-Data-Validate-URI-0.07/Data-Validate-URI-0.07/blib/lib /tlaptop.a/obj/ports/p5-Data-Validate-URI-0.07/Data-Validate-URI-0.07/blib/arch /usr/local/libdata/perl5/site_perl/amd64-openbsd /usr/local/libdata/perl5/site_perl /usr/libdata/perl5/amd64-openbsd /usr/libdata/perl5 .) at /tlaptop.a/obj/ports/p5-Data-Validate-URI-0.07/Data-Validate-URI-0.07/blib/lib/Data/Validate/URI.pm line 9.
+BEGIN failed--compilation aborted at /tlaptop.a/obj/ports/p5-Data-Validate-URI-0.07/Data-Validate-URI-0.07/blib/lib/Data/Validate/URI.pm line 9.
+Compilation failed in require at t/is_web_uri.t line 13.
+BEGIN failed--compilation aborted at t/is_web_uri.t line 13.
+t/is_web_uri.t .... 
+Dubious, test returned 2 (wstat 512, 0x200)
+No subtests run 
+
+Test Summary Report
+-------------------
+t/is_http_uri.t (Wstat: 512 Tests: 0 Failed: 0)
+  Non-zero exit status: 2
+  Parse errors: No plan found in TAP output
+t/is_https_uri.t (Wstat: 512 Tests: 0 Failed: 0)
+  Non-zero exit status: 2
+  Parse errors: No plan found in TAP output
+t/is_tel_uri.t  (Wstat: 512 Tests: 0 Failed: 0)
+  Non-zero exit status: 2
+  Parse errors: No plan found in TAP output
+t/is_uri.t      (Wstat: 512 Tests: 0 Failed: 0)
+  Non-zero exit status: 2
+  Parse errors: No plan found in TAP output
+t/is_web_uri.t  (Wstat: 512 Tests: 0 Failed: 0)
+  Non-zero exit status: 2
+  Parse errors: No plan found in TAP output
+Files=5, Tests=0,  1 wallclock secs ( 0.05 usr  0.03 sys +  0.17 cusr  0.21 csys =  0.46 CPU)
+Result: FAIL
+Failed 5/5 test programs. 0/0 subtests failed.
+*** Error 2 in /tlaptop.a/obj/ports/p5-Data-Validate-URI-0.07/Data-Validate-URI-0.07 (Makefile:854 'test_dynamic')
+*** Error 2 in . (/usr/ports/infrastructure/mk/bsd.port.mk:2960 '/usr/obj/ports/p5-Data-Validate-URI-0.07/.test_done': @cd /usr/obj/ports/p5...)
+*** Error 2 in /usr/ports/openbsd-wip/devel/p5-Data-Validate-URI (/usr/ports/infrastructure/mk/bsd.port.mk:2584 'test': @lock=p5-Data-Valida...)

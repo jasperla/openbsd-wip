@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v$
+${P5SITE}/Role/
+${P5SITE}/Role/EventEmitter.pm
+@man man/man3p/Role::EventEmitter.3p

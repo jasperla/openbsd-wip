@@ -1,0 +1,20 @@
+@comment $OpenBSD: PLIST,v$
+${P5SITE}/Exporter/
+${P5SITE}/Exporter/Declare/
+${P5SITE}/Exporter/Declare.pm
+${P5SITE}/Exporter/Declare/Export/
+${P5SITE}/Exporter/Declare/Export.pm
+${P5SITE}/Exporter/Declare/Export/Alias.pm
+${P5SITE}/Exporter/Declare/Export/Generator.pm
+${P5SITE}/Exporter/Declare/Export/Sub.pm
+${P5SITE}/Exporter/Declare/Export/Variable.pm
+${P5SITE}/Exporter/Declare/Meta.pm
+${P5SITE}/Exporter/Declare/Specs.pm
+@man man/man3p/Exporter::Declare.3p
+@man man/man3p/Exporter::Declare::Export.3p
+@man man/man3p/Exporter::Declare::Export::Alias.3p
+@man man/man3p/Exporter::Declare::Export::Generator.3p
+@man man/man3p/Exporter::Declare::Export::Sub.3p
+@man man/man3p/Exporter::Declare::Export::Variable.3p
+@man man/man3p/Exporter::Declare::Meta.3p
+@man man/man3p/Exporter::Declare::Specs.3p

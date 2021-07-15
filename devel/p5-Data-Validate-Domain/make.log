@@ -1,0 +1,93 @@
+===>  Checking files for p5-Data-Validate-Domain-0.14
+>> Fetch https://www.cpan.org/modules/by-module/../by-authors/id/D/DR/DROLSKY/Data-Validate-Domain-0.14.tar.gz
+Data-Validate-Domain-0...   0% |                        |     0       --:-- ETAData-Validate-Domain-0... 100% |************************| 31962       00:00    
+===>  Checking files for p5-Data-Validate-Domain-0.14
+`/usr/ports/distfiles/Data-Validate-Domain-0.14.tar.gz' is up to date.
+>> (SHA256) Data-Validate-Domain-0.14.tar.gz: OK
+===>  Extracting for p5-Data-Validate-Domain-0.14
+===>  Patching for p5-Data-Validate-Domain-0.14
+===>  Compiler link: clang -> /usr/bin/clang
+===>  Compiler link: clang++ -> /usr/bin/clang++
+===>  Compiler link: cc -> /usr/bin/cc
+===>  Compiler link: c++ -> /usr/bin/c++
+===>  Generating configure for p5-Data-Validate-Domain-0.14
+===>  Configuring for p5-Data-Validate-Domain-0.14
+Checking if your kit is complete...
+Looks good
+Generating a Unix-style Makefile
+Writing Makefile for Data::Validate::Domain
+Writing MYMETA.yml and MYMETA.json
+===>  Building for p5-Data-Validate-Domain-0.14
+cp lib/Data/Validate/Domain.pm blib/lib/Data/Validate/Domain.pm
+Manifying 1 pod document
+===>  Faking installation for p5-Data-Validate-Domain-0.14
+Manifying 1 pod document
+Installing /usr/obj/ports/p5-Data-Validate-Domain-0.14/fake-amd64/usr/local/libdata/perl5/site_perl/Data/Validate/Domain.pm
+Installing /usr/obj/ports/p5-Data-Validate-Domain-0.14/fake-amd64/usr/local/man/man3p/Data::Validate::Domain.3p
+Appending installation info to /usr/obj/ports/p5-Data-Validate-Domain-0.14/fake-amd64/usr/./libdata/perl5/amd64-openbsd/perllocal.pod
+===>  Updating plist for p5-Data-Validate-Domain-0.14
+Reading existing plist for p5-Data-Validate-Domain-0.14
+Scanning /usr/obj/ports/p5-Data-Validate-Domain-0.14/fake-amd64
+Removing .debug artefacts
+Figuring out tie points
+Tieing loose objects
+Copying objects
+Looking for unregistered conflicts
+/usr/ports/openbsd-wip/devel/p5-Data-Validate-Domain/pkg/PLIST is new
+===>  Regression tests for p5-Data-Validate-Domain-0.14
+PERL_DL_NONLAZY=1 "/usr/bin/perl" "-MExtUtils::Command::MM" "-MTest::Harness" "-e" "undef *Test::Harness::Switches; test_harness(0, 'blib/lib', 'blib/arch')" t/*.t
+# 
+# Versions for all modules listed in MYMETA.json (including optional ones):
+# 
+# === Configure Requires ===
+# 
+#     Module              Want Have
+#     ------------------- ---- ----
+#     ExtUtils::MakeMaker  any 7.34
+# 
+# === Build Requires ===
+# 
+#     Module              Want Have
+#     ------------------- ---- ----
+#     ExtUtils::MakeMaker  any 7.34
+# 
+# === Test Requires ===
+# 
+#     Module                  Want     Have
+#     ------------------- -------- --------
+#     ExtUtils::MakeMaker      any     7.34
+#     File::Spec               any     3.78
+#     Test2::Plugin::UTF8      any 0.000139
+#     Test::More          1.302015 1.302162
+# 
+# === Test Recommends ===
+# 
+#     Module         Want     Have
+#     ---------- -------- --------
+#     CPAN::Meta 2.120900 2.150010
+# 
+# === Runtime Requires ===
+# 
+#     Module           Want Have
+#     ---------------- ---- ----
+#     Exporter          any 5.73
+#     Net::Domain::TLD 1.74 1.75
+#     strict            any 1.11
+#     warnings          any 1.44
+# 
+t/00-report-prereqs.t ..... ok
+t/Data-Validate-Domain.t .. ok
+All tests successful.
+Files=2, Tests=82,  1 wallclock secs ( 0.09 usr  0.02 sys +  0.74 cusr  0.12 csys =  0.97 CPU)
+Result: PASS
+===>  Looking for p5-Data-Validate-Domain-0.14.tgz in $PKG_PATH - Can't find p5-Data-Validate-Domain-0.14.tgz
+Couldn't install p5-Data-Validate-Domain-0.14
+not found
+*** Error 1 in . (/usr/ports/infrastructure/mk/bsd.port.mk:2104 '/usr/ports/packages/amd64/cache/p5-Data-Validate-Domain-0.14.tgz': @if /usr...)
+`/usr/obj/ports/p5-Data-Validate-Domain-0.14/fake-amd64/.fake_done' is up to date.
+===>  Building package for p5-Data-Validate-Domain-0.14
+Create /usr/ports/packages/amd64/all/p5-Data-Validate-Domain-0.14.tgz
+Creating package p5-Data-Validate-Domain-0.14
+reading plist|[K[Kchecking dependencies|[K[Kchecksumming|[K[K[14G                                                             | 0%[K[14G*****                                                        | 8%[K[19G*****                                                   | 17%[K[24G*****                                              | 25%[K[29G*****                                         | 33%[K[34G*****                                    | 42%[K[39G******                              | 50%[K[45G*****                         | 58%[K[50G*****                    | 67%[K[55G*****               | 75%[K[60G*****          | 83%[K[65G*****     | 92%[K[70G*****|100%[K[Karchiving|[K[K[11G                                                                | 0%[K[11G*                                                               | 1%[K[12G********************************                               | 51%[K[44G*******************************|100%[K[KLink to /usr/ports/packages/amd64/ftp/p5-Data-Validate-Domain-0.14.tgz
+===>  Installing p5-Data-Validate-Domain-0.14 from /usr/ports/packages/amd64/all/
+|No change in quirks-3.502[K[Kp5-Data-Validate-Domain-0.14 (extracting)|                                | 0%[K[43G****************                | 50%[K[59G****************| 99%[Kp5-Data-Validate-Domain-0.14 (installing)|                                | 0%[K[43G                                | 1%[K[43G****************                | 51%[K[59G****************|100%[K[Kp5-Data-Validate-Domain-0.14: ok

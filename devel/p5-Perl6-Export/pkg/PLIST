@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v$
+${P5SITE}/Perl6/
+${P5SITE}/Perl6/Export.pm
+@man man/man3p/Perl6::Export.3p
