@@ -1090,7 +1090,7 @@ SHA256 (go_modules/rsc.io/binaryregexp/@v/v0.2.0.mod) = AyRzu+VUpUpEX6hVu7K/piNN
 SHA256 (go_modules/rsc.io/binaryregexp/@v/v0.2.0.zip) = s+cGqiePp/iA0y+hzEDvgoLR/H1uADVlee0NuI87AEc=
 SHA256 (go_modules/rsc.io/goversion/@v/v1.2.0.mod) = /O2jsLyMrYKBaQYffth6g/aJ1SUzIHXEa2qEYASGMKM=
 SHA256 (go_modules/rsc.io/goversion/@v/v1.2.0.zip) = +EJvYHix0bTimoxiI2A2gBacfAqHidKu5+QBpG/2ND8=
-SHA256 (tailscale.com-v1.10.1.zip) = 2Ybq8dIqNHNcHsDS0Zw1BznUvKqUnKE+ouOe7i4Uq+w=
+SHA256 (tailscale.com-v1.10.2.zip) = ksazkmxjjKhiqHYqmTRcgLCZCXujp7Jzh9q5GdO4Orc=
 SIZE (go_modules/4d63.com/gochecknoglobals/@v/v0.0.0-20201008074935-acfc0b28355a.mod) = 105
 SIZE (go_modules/4d63.com/gochecknoglobals/@v/v0.0.0-20201008074935-acfc0b28355a.zip) = 14082
 SIZE (go_modules/cloud.google.com/go/@v/v0.26.0.mod) = 27
@@ -2183,4 +2183,4 @@ SIZE (go_modules/rsc.io/binaryregexp/@v/v0.2.0.mod) = 36
 SIZE (go_modules/rsc.io/binaryregexp/@v/v0.2.0.zip) = 450232
 SIZE (go_modules/rsc.io/goversion/@v/v1.2.0.mod) = 24
 SIZE (go_modules/rsc.io/goversion/@v/v1.2.0.zip) = 10585
-SIZE (tailscale.com-v1.10.1.zip) = 964673
+SIZE (tailscale.com-v1.10.2.zip) = 964695

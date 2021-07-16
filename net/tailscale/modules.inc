@@ -1,4 +1,4 @@
-MODGO_VERSION =	v1.10.1
+MODGO_VERSION =	v1.10.2
 
 MODGO_MODULES =	\
 	4d63.com/gochecknoglobals				 v0.0.0-20201008074935-acfc0b28355a \
