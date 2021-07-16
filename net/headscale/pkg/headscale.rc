@@ -3,7 +3,9 @@
 # $OpenBSD: go_ipfs.rc,v 1.2 2018/12/18 14:56:13 edd Exp $
 
 daemon="${TRUEPREFIX}/bin/headscale"
-daemon_user="root"
+daemon_logger="daemon.info"
+daemon_user="_headscale"
+daemon_flags="serve"
 
 . /etc/rc.d/rc.subr
 
