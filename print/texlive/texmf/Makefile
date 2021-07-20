@@ -50,14 +50,13 @@ RUN_DEPENDS-full =	${FULLPKGNAME-main}:print/texlive/texmf,-main \
 			${MODPY_RUN_DEPENDS} \
 			${_MODLUA_RUNDEPENDS}
 RUN_DEPENDS-context +=	${FULLPKGNAME-full}:print/texlive/texmf,-full \
-			${MODRUBY_RUNDEPENDS}
+			${MODRUBY_RUN_DEPENDS}
 RUN_DEPENDS-docs +=	texlive_base->=${V}:print/texlive/base,-main \
 			x11/p5-Tk
 RUN_DEPENDS-buildset +=	texlive_mktexlsr->=${V}:print/texlive/base,-mktexlsr
 
 MULTI_PACKAGES =	-context -docs -full -main -buildset
 
-MODRUBY_REV =		1.8
 SUBST_VARS +=		RUBY
 
 WRKDIST =		${WRKDIR}/texlive-${DIST_V}-texmf
