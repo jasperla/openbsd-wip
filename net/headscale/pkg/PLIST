@@ -1,0 +1,27 @@
+@comment $OpenBSD: PLIST,v$
+@newgroup _headscale:999
+@newuser _headscale:999:_headscale:daemon:headscale user:/nonexistent:/sbin/nologin
+@rcscript ${RCDIR}/headscale
+@mode 750
+@group _headscale
+@sample ${SYSCONFDIR}/headscale/
+@owner _headscale
+@sample /var/headscale/
+@owner
+@group
+@mode
+@bin bin/headscale
+share/examples/headscale/
+share/examples/headscale/config.json.postgres.example
+share/examples/headscale/config.json.sqlite.example
+@mode 640
+@group _headscale
+@sample ${SYSCONFDIR}/headscale/config.json
+@group
+@mode
+share/examples/headscale/derp.yaml
+@mode 644
+@group _headscale
+@sample ${SYSCONFDIR}/headscale/derp.yaml
+@group
+@mode
