@@ -51,6 +51,8 @@ RUN_DEPENDS=	audio/ladspa \
 		misc/shared-mime-info \
 		x11/gtk+3,-guic
 
+DEBUG_PACKAGES=	${BUILD_PACKAGES}
+
 NO_TEST=	Yes
 
 WRKDIST=	${WRKDIR}/${DISTNAME}/src
