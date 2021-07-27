@@ -2,7 +2,7 @@
 
 COMMENT =	network-wide ad and tracker blocking DNS server
 
-V =		0.105.0
+V =		0.106.3
 DISTNAME =	AdGuardHome-${V}
 
 CATEGORIES =	net
@@ -30,9 +30,6 @@ NO_TEST =	Yes
 
 MODGO_LDFLAGS =	-X main.version=v${V}
 
-# Need to use -mod vendor, which requires GO111MODULE=on. This can be removed
-# in Go 1.16 once our ports tree has been updated to work with modules being
-# on by default.
 do-build:
 	cd ${WRKSRC} && \
 		env GO111MODULE=on GOCACHE="${MODGO_GOCACHE}" \
