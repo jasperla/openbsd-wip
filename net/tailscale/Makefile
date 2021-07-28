@@ -3,12 +3,16 @@
 COMMENT =	easiest, most secure way to use WireGuard and 2FA
 
 MODGO_MODNAME =	tailscale.com
-MODGO_VERSION =	v1.10.2
+MODGO_VERSION =	v1.12.1
 
 DISTNAME =	tailscale.com-${MODGO_VERSION}
-PKGNAME =	tailscale-1.10.2
+PKGNAME =	tailscale-${MODGO_VERSION:S/v//}
 
 CATEGORIES =	net
+
+HOMEPAGE =	https://tailscale.com/
+
+MAINTAINER =	Aaron Bieber <abieber@openbsd.org>
 
 # BSD-3
 PERMIT_PACKAGE =	Yes
