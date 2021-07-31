@@ -7,9 +7,9 @@
 @sample ${SYSCONFDIR}/headscale/
 @owner _headscale
 @sample /var/headscale/
+@mode
 @owner
 @group
-@mode
 @bin bin/headscale
 share/examples/headscale/
 share/examples/headscale/config.json.postgres.example
@@ -17,11 +17,9 @@ share/examples/headscale/config.json.sqlite.example
 @mode 640
 @group _headscale
 @sample ${SYSCONFDIR}/headscale/config.json
-@group
 @mode
+@group
 share/examples/headscale/derp.yaml
 @mode 644
 @group _headscale
 @sample ${SYSCONFDIR}/headscale/derp.yaml
-@group
-@mode
