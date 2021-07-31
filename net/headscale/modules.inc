@@ -1,4 +1,4 @@
-MODGO_VERSION =	v0.3.4
+# $OpenBSD$
 
 MODGO_MODULES =	\
 	4d63.com/gochecknoglobals					 v0.0.0-20201008074935-acfc0b28355a \
@@ -9,6 +9,7 @@ MODGO_MODULES =	\
 	cloud.google.com/go/pubsub					 v1.3.1 \
 	cloud.google.com/go/storage					 v1.10.0 \
 	dmitri.shuralyov.com/gpu/mtl					 v0.0.0-20190408044501-666a987793e9 \
+	github.com/!alec!aivazis/survey/v2				 v2.0.5 \
 	github.com/!burnt!sushi/toml					 v0.3.1 \
 	github.com/!burnt!sushi/xgb					 v0.0.0-20160522181843-27f122750802 \
 	github.com/!djarvur/go-err113					 v0.1.0 \
@@ -18,6 +19,7 @@ MODGO_MODULES =	\
 	github.com/!masterminds/semver/v3				 v3.1.1 \
 	github.com/!masterminds/sprig					 v2.22.0+incompatible \
 	github.com/!microsoft/go-winio					 v0.4.16 \
+	github.com/!netflix/go-expect					 v0.0.0-20180615182759-c93bf25de8e8 \
 	github.com/!one!of!one/xxhash					 v1.2.2 \
 	github.com/!open!pee!dee!p/depguard				 v1.0.1 \
 	github.com/!shopify/sarama					 v1.19.0 \
@@ -196,6 +198,7 @@ MODGO_MODULES =	\
 	github.com/hashicorp/mdns					 v1.0.0 \
 	github.com/hashicorp/memberlist					 v0.1.3 \
 	github.com/hashicorp/serf					 v0.8.2 \
+	github.com/hinshun/vt10x					 v0.0.0-20180616224451-1954e6464174 \
 	github.com/hpcloud/tail						 v1.0.0 \
 	github.com/huandu/xstrings					 v1.3.2 \
 	github.com/hudl/fargo						 v1.3.0 \
@@ -268,6 +271,7 @@ MODGO_MODULES =	\
 	github.com/mdlayher/netlink					 v1.4.1 \
 	github.com/mdlayher/sdnotify					 v0.0.0-20210228150836-ea3ec207d697 \
 	github.com/mdlayher/socket					 v0.0.0-20210307095302-262dc9984e00 \
+	github.com/mgutz/ansi						 v0.0.0-20170206155736-9520e82c474b \
 	github.com/miekg/dns						 v1.1.42 \
 	github.com/mitchellh/cli					 v1.0.0 \
 	github.com/mitchellh/copystructure				 v1.0.0 \
@@ -677,6 +681,7 @@ MODGO_MODFILES =	\
 	github.com/konsorten/go-windows-terminal-sequences	 v1.0.2 \
 	github.com/kr/pretty					 v0.1.0 \
 	github.com/kr/pty					 v1.1.1 \
+	github.com/kr/pty					 v1.1.4 \
 	github.com/kr/text					 v0.1.0 \
 	github.com/lib/pq					 v1.0.0 \
 	github.com/lib/pq					 v1.1.0 \
@@ -780,6 +785,7 @@ MODGO_MODFILES =	\
 	github.com/stretchr/objx				 v0.1.0 \
 	github.com/stretchr/objx				 v0.1.1 \
 	github.com/stretchr/objx				 v0.2.0 \
+	github.com/stretchr/testify				 v1.2.1 \
 	github.com/stretchr/testify				 v1.2.2 \
 	github.com/stretchr/testify				 v1.3.0 \
 	github.com/stretchr/testify				 v1.4.0 \
@@ -823,6 +829,7 @@ MODGO_MODFILES =	\
 	golang.org/x/crypto					 v0.0.0-20190325154230-a5d413f7728c \
 	golang.org/x/crypto					 v0.0.0-20190411191339-88737f569e3a \
 	golang.org/x/crypto					 v0.0.0-20190510104115-cbcb75029529 \
+	golang.org/x/crypto					 v0.0.0-20190530122614-20be4c3c3ed5 \
 	golang.org/x/crypto					 v0.0.0-20190605123033-f99c8df09eb5 \
 	golang.org/x/crypto					 v0.0.0-20190701094942-4def268fd1a4 \
 	golang.org/x/crypto					 v0.0.0-20190820162420-60c769a6c586 \
@@ -956,6 +963,7 @@ MODGO_MODFILES =	\
 	golang.org/x/sys					 v0.0.0-20190422165155-953cdadca894 \
 	golang.org/x/sys					 v0.0.0-20190502145724-3ef323f4f1fd \
 	golang.org/x/sys					 v0.0.0-20190507160741-ecd444e8653b \
+	golang.org/x/sys					 v0.0.0-20190530182044-ad28b68e88f1 \
 	golang.org/x/sys					 v0.0.0-20190606165138-5da285871e9c \
 	golang.org/x/sys					 v0.0.0-20190624142023-c5567b49c5d0 \
 	golang.org/x/sys					 v0.0.0-20190726091711-fc99dfbffb4e \
