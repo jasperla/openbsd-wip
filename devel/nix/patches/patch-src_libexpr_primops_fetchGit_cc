@@ -1,6 +1,7 @@
 $OpenBSD$
 
 Need sys/wait.h for WIFEXITED and WEXITSTATUS
+Use gtar(1) not tar(1) due to dynamic compression support
 
 Index: src/libexpr/primops/fetchGit.cc
 --- src/libexpr/primops/fetchGit.cc.orig
@@ -12,4 +13,13 @@ Index: src/libexpr/primops/fetchGit.cc
 +#include <sys/wait.h>
  
  #include <regex>
+ 
+@@ -174,7 +174,7 @@ GitInfo exportGit(ref<Store> store, const std::string 
+     Path tmpDir = createTempDir();
+     AutoDelete delTmpDir(tmpDir, true);
+ 
+-    runProgram("tar", true, { "x", "-C", tmpDir }, tar);
++    runProgram("gtar", true, { "x", "-C", tmpDir }, tar);
+ 
+     gitInfo.storePath = store->addToStore(name, tmpDir);
  
