@@ -1,0 +1,14 @@
+$OpenBSD$
+
+Index: odalaunch/CMakeLists.txt
+--- odalaunch/CMakeLists.txt.orig
++++ odalaunch/CMakeLists.txt
+@@ -1,5 +1,8 @@
+ include(OdalaunchCopyLibs)
+ include(OdamexTargetSettings)
++
++add_definitions(-DINSTALL_PREFIX="${CMAKE_INSTALL_PREFIX}")
++
+ 
+ # API
+ set(API_DIR ../odalpapi)

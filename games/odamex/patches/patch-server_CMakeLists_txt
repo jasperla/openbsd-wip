@@ -1,0 +1,23 @@
+$OpenBSD$
+
+Index: server/CMakeLists.txt
+--- server/CMakeLists.txt.orig
++++ server/CMakeLists.txt
+@@ -42,6 +42,8 @@ if(NOT APPLE AND NOT WIN32)
+   add_definitions(-DINSTALL_PREFIX="${CMAKE_INSTALL_PREFIX}")
+ endif()
+ 
++link_directories(${LOCALBASE}/lib)
++
+ add_executable(odasrv
+   ${COMMON_SOURCES} ${SERVER_SOURCES} ${SERVER_WIN32_SOURCES})
+ odamex_target_settings(odasrv)
+@@ -66,7 +68,7 @@ elseif(UNIX)
+ endif()
+ 
+ if(UNIX AND NOT APPLE)
+-  target_link_libraries(odasrv rt)
++  target_link_libraries(odasrv execinfo)
+ endif()
+ 
+ odamex_copy_wad(odasrv)
