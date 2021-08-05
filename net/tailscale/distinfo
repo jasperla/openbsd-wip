@@ -698,8 +698,8 @@ SHA256 (go_modules/github.com/tailscale/certstore/@v/v0.0.0-20210528134328-066c9
 SHA256 (go_modules/github.com/tailscale/certstore/@v/v0.0.0-20210528134328-066c94b793d3.zip) = ir4dGDNAxgSqizGpsDU5KG2xoacdTUjASDLy62JeYY0=
 SHA256 (go_modules/github.com/tailscale/depaware/@v/v0.0.0-20201214215404-77d1e9757027.mod) = HHhjj6V8Te7J7O5sPFrvhSLK/S0P49EEnA2p58LE4VY=
 SHA256 (go_modules/github.com/tailscale/depaware/@v/v0.0.0-20201214215404-77d1e9757027.zip) = PLjcqqUmo0WQOEQVi9nlWlRzxBuOFyr6NphPy23we7Y=
-SHA256 (go_modules/github.com/tailscale/goupnp/@v/v1.0.1-0.20210710010003-1cf2d718bbb2.mod) = V+D/to3P9UGJiWTF/sJEw/ZyOifmKaOev2V9Z8NSjRc=
-SHA256 (go_modules/github.com/tailscale/goupnp/@v/v1.0.1-0.20210710010003-1cf2d718bbb2.zip) = 5NC00i3xHn7hfCJQvDxuSkx+UFZA5JZIkf1HMO0zAH0=
+SHA256 (go_modules/github.com/tailscale/goupnp/@v/v1.0.1-0.20210804011211-c64d0f06ea05.mod) = V+D/to3P9UGJiWTF/sJEw/ZyOifmKaOev2V9Z8NSjRc=
+SHA256 (go_modules/github.com/tailscale/goupnp/@v/v1.0.1-0.20210804011211-c64d0f06ea05.zip) = HH7W7MFrb0AsIluuiKBnqLwVdM3tiUY4uCDF2nUYI8w=
 SHA256 (go_modules/github.com/tailscale/hujson/@v/v0.0.0-20200924210142-dde312d0d6a2.mod) = Z2OL4BGPn6D/RoDfi/FPGhFOef+LZGmZD4EtDL5N5tI=
 SHA256 (go_modules/github.com/tailscale/hujson/@v/v0.0.0-20200924210142-dde312d0d6a2.zip) = fDM1iWwIIAvJKOBxoPczrvdDWeUbMTpNWoFGhkLVGhg=
 SHA256 (go_modules/github.com/tcnksm/go-httpstat/@v/v0.2.0.mod) = i+cBK+LGu1CBF3NLa5Kcv59iUzkJ381zXoH4T1x3zP0=
@@ -1098,7 +1098,7 @@ SHA256 (go_modules/rsc.io/binaryregexp/@v/v0.2.0.mod) = AyRzu+VUpUpEX6hVu7K/piNN
 SHA256 (go_modules/rsc.io/binaryregexp/@v/v0.2.0.zip) = s+cGqiePp/iA0y+hzEDvgoLR/H1uADVlee0NuI87AEc=
 SHA256 (go_modules/rsc.io/goversion/@v/v1.2.0.mod) = /O2jsLyMrYKBaQYffth6g/aJ1SUzIHXEa2qEYASGMKM=
 SHA256 (go_modules/rsc.io/goversion/@v/v1.2.0.zip) = +EJvYHix0bTimoxiI2A2gBacfAqHidKu5+QBpG/2ND8=
-SHA256 (tailscale.com-v1.12.1.zip) = LXH7jSlPEI+9u1FlHuEVwn+qlmJY1lfAmLD5fiR/0Dw=
+SHA256 (tailscale.com-v1.12.3.zip) = NXahxc/9DFXshGGLFyjO3YrP5ZlgJZa/5+iEcUQz41o=
 SIZE (go_modules/4d63.com/gochecknoglobals/@v/v0.0.0-20201008074935-acfc0b28355a.mod) = 105
 SIZE (go_modules/4d63.com/gochecknoglobals/@v/v0.0.0-20201008074935-acfc0b28355a.zip) = 14082
 SIZE (go_modules/cloud.google.com/go/@v/v0.26.0.mod) = 27
@@ -1799,8 +1799,8 @@ SIZE (go_modules/github.com/tailscale/certstore/@v/v0.0.0-20210528134328-066c94b
 SIZE (go_modules/github.com/tailscale/certstore/@v/v0.0.0-20210528134328-066c94b793d3.zip) = 22704
 SIZE (go_modules/github.com/tailscale/depaware/@v/v0.0.0-20201214215404-77d1e9757027.mod) = 207
 SIZE (go_modules/github.com/tailscale/depaware/@v/v0.0.0-20201214215404-77d1e9757027.zip) = 12165
-SIZE (go_modules/github.com/tailscale/goupnp/@v/v1.0.1-0.20210710010003-1cf2d718bbb2.mod) = 118
-SIZE (go_modules/github.com/tailscale/goupnp/@v/v1.0.1-0.20210710010003-1cf2d718bbb2.zip) = 47339
+SIZE (go_modules/github.com/tailscale/goupnp/@v/v1.0.1-0.20210804011211-c64d0f06ea05.mod) = 118
+SIZE (go_modules/github.com/tailscale/goupnp/@v/v1.0.1-0.20210804011211-c64d0f06ea05.zip) = 47472
 SIZE (go_modules/github.com/tailscale/hujson/@v/v0.0.0-20200924210142-dde312d0d6a2.mod) = 44
 SIZE (go_modules/github.com/tailscale/hujson/@v/v0.0.0-20200924210142-dde312d0d6a2.zip) = 199003
 SIZE (go_modules/github.com/tcnksm/go-httpstat/@v/v0.2.0.mod) = 37
@@ -2199,4 +2199,4 @@ SIZE (go_modules/rsc.io/binaryregexp/@v/v0.2.0.mod) = 36
 SIZE (go_modules/rsc.io/binaryregexp/@v/v0.2.0.zip) = 450232
 SIZE (go_modules/rsc.io/goversion/@v/v1.2.0.mod) = 24
 SIZE (go_modules/rsc.io/goversion/@v/v1.2.0.zip) = 10585
-SIZE (tailscale.com-v1.12.1.zip) = 1036763
+SIZE (tailscale.com-v1.12.3.zip) = 1041118

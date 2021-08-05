@@ -3,7 +3,7 @@
 COMMENT =	easiest, most secure way to use WireGuard and 2FA
 
 MODGO_MODNAME =	tailscale.com
-MODGO_VERSION =	v1.12.1
+MODGO_VERSION =	v1.12.3
 
 DISTNAME =	tailscale.com-${MODGO_VERSION}
 PKGNAME =	tailscale-${MODGO_VERSION:S/v//}
