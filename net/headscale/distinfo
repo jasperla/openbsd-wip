@@ -961,7 +961,8 @@ SHA256 (go_modules/github.com/rs/xid/@v/v1.2.1.mod) = mCWmgvNFFCuH4NCj3hzod7RTGW
 SHA256 (go_modules/github.com/rs/xid/@v/v1.2.1.zip) = Sr3txN5prcuaRXX5nFnYq1QhkeGAC2qR4SpOnqjaACY=
 SHA256 (go_modules/github.com/rs/zerolog/@v/v1.13.0.mod) = we4hVTv+2UddE2QdSacjWF0OMFv0LQRANEW19EA8h/Y=
 SHA256 (go_modules/github.com/rs/zerolog/@v/v1.15.0.mod) = pT/LWAdOmzH6a8Wyu4eFPNUdG00pSJAV3L5DnHmJa1M=
-SHA256 (go_modules/github.com/rs/zerolog/@v/v1.15.0.zip) = jpjEjn/RMqr78SlmTo/WUinQZ9dyv/S9cSpJe3ovAMQ=
+SHA256 (go_modules/github.com/rs/zerolog/@v/v1.23.0.mod) = pCnHSAXnAZ+r6Hv2CpH8VJ90lER88eOtz3Bd5UCruMo=
+SHA256 (go_modules/github.com/rs/zerolog/@v/v1.23.0.zip) = EUmlkeHJDQRfvlRBmbQvo5e2Vqfek4+6sr/LdfMNups=
 SHA256 (go_modules/github.com/russross/blackfriday/v2/@v/v2.0.1.mod) = w5VHzOboZujPo5XSk3vOMIAc0H8LkBwhMySPH7oS9Y0=
 SHA256 (go_modules/github.com/russross/blackfriday/v2/@v/v2.0.1.zip) = SWB5u8jEgxzQUHIT4FmpJdLCK9HqmtpN2FgV1RtIUig=
 SHA256 (go_modules/github.com/ryancurrah/gomodguard/@v/v1.1.0.mod) = wWjASAtiWIMprmmlM2R0xrl8ToKtOftS5WHQ4inzjdU=
@@ -1737,7 +1738,7 @@ SHA256 (go_modules/sourcegraph.com/sourcegraph/appdash/@v/v0.0.0-20190731080439-
 SHA256 (go_modules/sourcegraph.com/sourcegraph/appdash/@v/v0.0.0-20190731080439-ebfcffb1b5c0.zip) = vSSS2dsFNiwv7NCz0PYALImm2Q1nj7k7QVgpiriDc28=
 SHA256 (go_modules/tailscale.com/@v/v1.10.0.mod) = whPTLbH2fsZ1k2EsMA8OmH4nqNrCSN1WfsOp3/2rnAk=
 SHA256 (go_modules/tailscale.com/@v/v1.10.0.zip) = iZ7rXy28NtbOPiJH2l/Dxm+sEoUFaacgmeqLCk/ph3Y=
-SHA256 (headscale-v0.4.0.zip) = oULsbko3kD4VNNSPcm/MDquB5EECY/SavBQs9xeEYBU=
+SHA256 (headscale-v0.5.0.zip) = etYZrEKNSIQGO9MgPdo1n0rsLZNOMo1/uipPZeQSg1s=
 SIZE (go_modules/4d63.com/gochecknoglobals/@v/v0.0.0-20201008074935-acfc0b28355a.mod) = 105
 SIZE (go_modules/4d63.com/gochecknoglobals/@v/v0.0.0-20201008074935-acfc0b28355a.zip) = 14082
 SIZE (go_modules/cloud.google.com/go/@v/v0.26.0.mod) = 27
@@ -2701,7 +2702,8 @@ SIZE (go_modules/github.com/rs/xid/@v/v1.2.1.mod) = 25
 SIZE (go_modules/github.com/rs/xid/@v/v1.2.1.zip) = 12755
 SIZE (go_modules/github.com/rs/zerolog/@v/v1.13.0.mod) = 29
 SIZE (go_modules/github.com/rs/zerolog/@v/v1.15.0.mod) = 249
-SIZE (go_modules/github.com/rs/zerolog/@v/v1.15.0.zip) = 239060
+SIZE (go_modules/github.com/rs/zerolog/@v/v1.23.0.mod) = 176
+SIZE (go_modules/github.com/rs/zerolog/@v/v1.23.0.zip) = 189837
 SIZE (go_modules/github.com/russross/blackfriday/v2/@v/v2.0.1.mod) = 42
 SIZE (go_modules/github.com/russross/blackfriday/v2/@v/v2.0.1.zip) = 110026
 SIZE (go_modules/github.com/ryancurrah/gomodguard/@v/v1.1.0.mod) = 349
@@ -3477,4 +3479,4 @@ SIZE (go_modules/sourcegraph.com/sourcegraph/appdash/@v/v0.0.0-20190731080439-eb
 SIZE (go_modules/sourcegraph.com/sourcegraph/appdash/@v/v0.0.0-20190731080439-ebfcffb1b5c0.zip) = 158069
 SIZE (go_modules/tailscale.com/@v/v1.10.0.mod) = 2044
 SIZE (go_modules/tailscale.com/@v/v1.10.0.zip) = 963595
-SIZE (headscale-v0.4.0.zip) = 112159
+SIZE (headscale-v0.5.0.zip) = 113112

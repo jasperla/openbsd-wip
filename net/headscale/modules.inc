@@ -338,7 +338,7 @@ MODGO_MODULES =	\
 	github.com/rogpeppe/fastuuid					 v1.2.0 \
 	github.com/rogpeppe/go-internal					 v1.6.2 \
 	github.com/rs/xid						 v1.2.1 \
-	github.com/rs/zerolog						 v1.15.0 \
+	github.com/rs/zerolog						 v1.23.0 \
 	github.com/russross/blackfriday/v2				 v2.0.1 \
 	github.com/ryancurrah/gomodguard				 v1.1.0 \
 	github.com/ryanrolds/sqlclosecheck				 v0.3.0 \
@@ -764,6 +764,7 @@ MODGO_MODFILES =	\
 	github.com/rogpeppe/go-internal				 v1.5.2 \
 	github.com/rogpeppe/go-internal				 v1.6.1 \
 	github.com/rs/zerolog					 v1.13.0 \
+	github.com/rs/zerolog					 v1.15.0 \
 	github.com/sergi/go-diff				 v1.0.0 \
 	github.com/shopspring/decimal				 v0.0.0-20180709203117-cd690d0c9e24 \
 	github.com/sirupsen/logrus				 v1.2.0 \
