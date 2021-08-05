@@ -8156,6 +8156,14 @@ share/texmf-var/fonts/map/pdftex/updmap/
 share/texmf-var/fonts/map/pdftex/updmap/pdftex.map
 share/texmf-var/fonts/map/pdftex/updmap/pdftex_dl14.map
 share/texmf-var/fonts/map/pdftex/updmap/pdftex_ndl14.map
+share/texmf-var/luatex-cache/
+share/texmf-var/luatex-cache/context/
+share/texmf-var/luatex-cache/context/0399a8df3aef8d154781d0a9c2b8e28d/
+share/texmf-var/luatex-cache/context/0399a8df3aef8d154781d0a9c2b8e28d/formats/
+share/texmf-var/luatex-cache/context/0399a8df3aef8d154781d0a9c2b8e28d/formats/luatex/
+share/texmf-var/luatex-cache/context/0399a8df3aef8d154781d0a9c2b8e28d/formats/luatex/cont-en.fmt
+share/texmf-var/luatex-cache/context/0399a8df3aef8d154781d0a9c2b8e28d/formats/luatex/cont-en.lui
+share/texmf-var/luatex-cache/context/0399a8df3aef8d154781d0a9c2b8e28d/formats/luatex/cont-en.luv
 share/texmf-var/web2c/
 share/texmf-var/web2c/aleph/
 share/texmf-var/web2c/aleph/aleph.fmt
