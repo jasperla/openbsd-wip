@@ -1,5 +1,6 @@
 # $OpenBSD$
 
+
 MODGO_MODULES =	\
 	4d63.com/gochecknoglobals					 v0.0.0-20201008074935-acfc0b28355a \
 	cloud.google.com/go						 v0.81.0 \
@@ -86,6 +87,7 @@ MODGO_MODULES =	\
 	github.com/eapache/go-xerial-snappy				 v0.0.0-20180814174437-776d5712da21 \
 	github.com/eapache/queue					 v1.1.0 \
 	github.com/edsrzf/mmap-go					 v1.0.0 \
+	github.com/efekarakus/termcolor					 v1.0.1 \
 	github.com/emirpasic/gods					 v1.12.0 \
 	github.com/envoyproxy/go-control-plane				 v0.9.9-0.20210217033140-668b12f5399d \
 	github.com/envoyproxy/protoc-gen-validate			 v0.1.0 \
@@ -695,6 +697,7 @@ MODGO_MODFILES =	\
 	github.com/mattn/go-colorable				 v0.1.2 \
 	github.com/mattn/go-colorable				 v0.1.4 \
 	github.com/mattn/go-colorable				 v0.1.6 \
+	github.com/mattn/go-isatty				 v0.0.10 \
 	github.com/mattn/go-isatty				 v0.0.11 \
 	github.com/mattn/go-isatty				 v0.0.3 \
 	github.com/mattn/go-isatty				 v0.0.4 \
@@ -976,6 +979,7 @@ MODGO_MODFILES =	\
 	golang.org/x/sys					 v0.0.0-20191005200804-aed5e4c7ecf9 \
 	golang.org/x/sys					 v0.0.0-20191008105621-543471e840be \
 	golang.org/x/sys					 v0.0.0-20191026070338-33540a1f6037 \
+	golang.org/x/sys					 v0.0.0-20191113165036-4c7a9d0fe056 \
 	golang.org/x/sys					 v0.0.0-20191120155948-bd437916bb0e \
 	golang.org/x/sys					 v0.0.0-20191204072324-ce4227a45e2e \
 	golang.org/x/sys					 v0.0.0-20191220142924-d4481acd189f \

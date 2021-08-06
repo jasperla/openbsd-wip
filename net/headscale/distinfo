@@ -223,6 +223,8 @@ SHA256 (go_modules/github.com/eapache/queue/@v/v1.1.0.mod) = 3EeHFjCCWJVR3eBskc8
 SHA256 (go_modules/github.com/eapache/queue/@v/v1.1.0.zip) = HcG0ly6FBcR2PGVCSxlgTGXJRJEdFsGMXL01quRWJvs=
 SHA256 (go_modules/github.com/edsrzf/mmap-go/@v/v1.0.0.mod) = 1z0rItwxcrn3wBMZfztxGmOw/9SkFwKrZ/Rc7xeGkGw=
 SHA256 (go_modules/github.com/edsrzf/mmap-go/@v/v1.0.0.zip) = hRodTW4w+XqyO35Kan2p0YQvEm1zj3OGAQxu57+CUY4=
+SHA256 (go_modules/github.com/efekarakus/termcolor/@v/v1.0.1.mod) = jFQKkiuf7nSUv6DkCgJVf6Zk23/3CgU/1xTy4qeQJ1U=
+SHA256 (go_modules/github.com/efekarakus/termcolor/@v/v1.0.1.zip) = lclFyrG1CDZLJAKDdEliYYKJezdtrb1whXDCjWTLNlQ=
 SHA256 (go_modules/github.com/emirpasic/gods/@v/v1.12.0.mod) = i4yrL7cXETtIWN1ZYkzwFr3P4LXJ9RASHXzI4Phcb3A=
 SHA256 (go_modules/github.com/emirpasic/gods/@v/v1.12.0.zip) = cp6gvahr+AG2H/ZusBnlua3FWc0heUSr8QuxA/ylc+4=
 SHA256 (go_modules/github.com/envoyproxy/go-control-plane/@v/v0.6.9.mod) = xDJmNKoYX6MVN3TlGJubBO9TdObX+Looz548dMj8hUg=
@@ -735,6 +737,7 @@ SHA256 (go_modules/github.com/mattn/go-colorable/@v/v0.1.4.mod) = oRYeaUrDvf6/hV
 SHA256 (go_modules/github.com/mattn/go-colorable/@v/v0.1.6.mod) = rf8+JDhLzS7PDG1qGp5OMQZUAem10pzmoSAlWrPAIxM=
 SHA256 (go_modules/github.com/mattn/go-colorable/@v/v0.1.8.mod) = rf8+JDhLzS7PDG1qGp5OMQZUAem10pzmoSAlWrPAIxM=
 SHA256 (go_modules/github.com/mattn/go-colorable/@v/v0.1.8.zip) = ekiIZsqNvvwrnmKpp6tt49tOG4WppmWQj/A1FdNlzcE=
+SHA256 (go_modules/github.com/mattn/go-isatty/@v/v0.0.10.mod) = 6m9w/n49ohYs2qhoCXQIXqSTEdfdaNhs+OihIk6oeX4=
 SHA256 (go_modules/github.com/mattn/go-isatty/@v/v0.0.11.mod) = +k9n/vFs3r71SyTkPgH4rSpt3C2zxC4CyqQySRuzmyA=
 SHA256 (go_modules/github.com/mattn/go-isatty/@v/v0.0.12.mod) = GgYuVsAmbQBL6lERWs+MK1l9FAfKVa1WzOAel62j2ks=
 SHA256 (go_modules/github.com/mattn/go-isatty/@v/v0.0.12.zip) = B5QdJOCJTCncQrzSnWRIFc17XuhOPBS75tUa0T78vwc=
@@ -1348,6 +1351,7 @@ SHA256 (go_modules/golang.org/x/sys/@v/v0.0.0-20191001151750-bb3f8db39f24.mod) =
 SHA256 (go_modules/golang.org/x/sys/@v/v0.0.0-20191005200804-aed5e4c7ecf9.mod) = GBl56L1X0tngZBgtqGyaYRGqaXVeiI8IQx7OR0Kuw0M=
 SHA256 (go_modules/golang.org/x/sys/@v/v0.0.0-20191008105621-543471e840be.mod) = GBl56L1X0tngZBgtqGyaYRGqaXVeiI8IQx7OR0Kuw0M=
 SHA256 (go_modules/golang.org/x/sys/@v/v0.0.0-20191026070338-33540a1f6037.mod) = GBl56L1X0tngZBgtqGyaYRGqaXVeiI8IQx7OR0Kuw0M=
+SHA256 (go_modules/golang.org/x/sys/@v/v0.0.0-20191113165036-4c7a9d0fe056.mod) = GBl56L1X0tngZBgtqGyaYRGqaXVeiI8IQx7OR0Kuw0M=
 SHA256 (go_modules/golang.org/x/sys/@v/v0.0.0-20191120155948-bd437916bb0e.mod) = GBl56L1X0tngZBgtqGyaYRGqaXVeiI8IQx7OR0Kuw0M=
 SHA256 (go_modules/golang.org/x/sys/@v/v0.0.0-20191204072324-ce4227a45e2e.mod) = GBl56L1X0tngZBgtqGyaYRGqaXVeiI8IQx7OR0Kuw0M=
 SHA256 (go_modules/golang.org/x/sys/@v/v0.0.0-20191220142924-d4481acd189f.mod) = GBl56L1X0tngZBgtqGyaYRGqaXVeiI8IQx7OR0Kuw0M=
@@ -1738,7 +1742,7 @@ SHA256 (go_modules/sourcegraph.com/sourcegraph/appdash/@v/v0.0.0-20190731080439-
 SHA256 (go_modules/sourcegraph.com/sourcegraph/appdash/@v/v0.0.0-20190731080439-ebfcffb1b5c0.zip) = vSSS2dsFNiwv7NCz0PYALImm2Q1nj7k7QVgpiriDc28=
 SHA256 (go_modules/tailscale.com/@v/v1.10.0.mod) = whPTLbH2fsZ1k2EsMA8OmH4nqNrCSN1WfsOp3/2rnAk=
 SHA256 (go_modules/tailscale.com/@v/v1.10.0.zip) = iZ7rXy28NtbOPiJH2l/Dxm+sEoUFaacgmeqLCk/ph3Y=
-SHA256 (headscale-v0.5.0.zip) = etYZrEKNSIQGO9MgPdo1n0rsLZNOMo1/uipPZeQSg1s=
+SHA256 (headscale-v0.5.1.zip) = 8+H31NUS2AIOUYRCRytE8zYD9Yef30nXxhKOAnxqhnk=
 SIZE (go_modules/4d63.com/gochecknoglobals/@v/v0.0.0-20201008074935-acfc0b28355a.mod) = 105
 SIZE (go_modules/4d63.com/gochecknoglobals/@v/v0.0.0-20201008074935-acfc0b28355a.zip) = 14082
 SIZE (go_modules/cloud.google.com/go/@v/v0.26.0.mod) = 27
@@ -1964,6 +1968,8 @@ SIZE (go_modules/github.com/eapache/queue/@v/v1.1.0.mod) = 32
 SIZE (go_modules/github.com/eapache/queue/@v/v1.1.0.zip) = 4517
 SIZE (go_modules/github.com/edsrzf/mmap-go/@v/v1.0.0.mod) = 33
 SIZE (go_modules/github.com/edsrzf/mmap-go/@v/v1.0.0.zip) = 7269
+SIZE (go_modules/github.com/efekarakus/termcolor/@v/v1.0.1.mod) = 150
+SIZE (go_modules/github.com/efekarakus/termcolor/@v/v1.0.1.zip) = 9249
 SIZE (go_modules/github.com/emirpasic/gods/@v/v1.12.0.mod) = 33
 SIZE (go_modules/github.com/emirpasic/gods/@v/v1.12.0.zip) = 148704
 SIZE (go_modules/github.com/envoyproxy/go-control-plane/@v/v0.6.9.mod) = 46
@@ -2476,6 +2482,7 @@ SIZE (go_modules/github.com/mattn/go-colorable/@v/v0.1.4.mod) = 80
 SIZE (go_modules/github.com/mattn/go-colorable/@v/v0.1.6.mod) = 160
 SIZE (go_modules/github.com/mattn/go-colorable/@v/v0.1.8.mod) = 160
 SIZE (go_modules/github.com/mattn/go-colorable/@v/v0.1.8.zip) = 13690
+SIZE (go_modules/github.com/mattn/go-isatty/@v/v0.0.10.mod) = 104
 SIZE (go_modules/github.com/mattn/go-isatty/@v/v0.0.11.mod) = 104
 SIZE (go_modules/github.com/mattn/go-isatty/@v/v0.0.12.mod) = 104
 SIZE (go_modules/github.com/mattn/go-isatty/@v/v0.0.12.zip) = 8902
@@ -3089,6 +3096,7 @@ SIZE (go_modules/golang.org/x/sys/@v/v0.0.0-20191001151750-bb3f8db39f24.mod) = 3
 SIZE (go_modules/golang.org/x/sys/@v/v0.0.0-20191005200804-aed5e4c7ecf9.mod) = 33
 SIZE (go_modules/golang.org/x/sys/@v/v0.0.0-20191008105621-543471e840be.mod) = 33
 SIZE (go_modules/golang.org/x/sys/@v/v0.0.0-20191026070338-33540a1f6037.mod) = 33
+SIZE (go_modules/golang.org/x/sys/@v/v0.0.0-20191113165036-4c7a9d0fe056.mod) = 33
 SIZE (go_modules/golang.org/x/sys/@v/v0.0.0-20191120155948-bd437916bb0e.mod) = 33
 SIZE (go_modules/golang.org/x/sys/@v/v0.0.0-20191204072324-ce4227a45e2e.mod) = 33
 SIZE (go_modules/golang.org/x/sys/@v/v0.0.0-20191220142924-d4481acd189f.mod) = 33
@@ -3479,4 +3487,4 @@ SIZE (go_modules/sourcegraph.com/sourcegraph/appdash/@v/v0.0.0-20190731080439-eb
 SIZE (go_modules/sourcegraph.com/sourcegraph/appdash/@v/v0.0.0-20190731080439-ebfcffb1b5c0.zip) = 158069
 SIZE (go_modules/tailscale.com/@v/v1.10.0.mod) = 2044
 SIZE (go_modules/tailscale.com/@v/v1.10.0.zip) = 963595
-SIZE (headscale-v0.5.0.zip) = 113112
+SIZE (headscale-v0.5.1.zip) = 113540
