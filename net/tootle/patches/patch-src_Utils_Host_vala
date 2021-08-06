@@ -1,11 +1,9 @@
 $OpenBSD$
 
-Remove hardcoded path
-
-Index: src/Desktop.vala
---- src/Desktop.vala.orig
-+++ src/Desktop.vala
-@@ -10,7 +10,7 @@ public class Tootle.Desktop {
+Index: src/Utils/Host.vala
+--- src/Utils/Host.vala.orig
++++ src/Utils/Host.vala
+@@ -16,7 +16,7 @@ public class Tootle.Host {
  		}
  		catch (Error e){
  			try {
