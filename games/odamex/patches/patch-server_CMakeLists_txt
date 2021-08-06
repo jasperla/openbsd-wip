@@ -3,15 +3,15 @@ $OpenBSD$
 Index: server/CMakeLists.txt
 --- server/CMakeLists.txt.orig
 +++ server/CMakeLists.txt
-@@ -42,6 +42,8 @@ if(NOT APPLE AND NOT WIN32)
-   add_definitions(-DINSTALL_PREFIX="${CMAKE_INSTALL_PREFIX}")
+@@ -53,7 +55,7 @@ endif()
+ target_link_libraries(odasrv jsoncpp odamex-common)
+ 
+ if(USE_MINIUPNP)
+-  target_link_libraries(odasrv upnpc-static)
++  target_link_libraries(odasrv miniupnpc)
  endif()
  
-+link_directories(${LOCALBASE}/lib)
-+
- add_executable(odasrv
-   ${COMMON_SOURCES} ${SERVER_SOURCES} ${SERVER_WIN32_SOURCES})
- odamex_target_settings(odasrv)
+ if(WIN32)
 @@ -66,7 +68,7 @@ elseif(UNIX)
  endif()
  

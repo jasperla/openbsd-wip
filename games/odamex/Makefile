@@ -14,10 +14,9 @@ MAINTAINER =	Edd Barrett <edd@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} ICE SDL2 SDL2_mixer SM X11 Xext
-WANTLIB += c execinfo m miniupnpc png portmidi wx_baseu-3.0 wx_baseu_net-3.0
-WANTLIB += wx_baseu_xml-3.0 wx_gtk3u_adv-3.0 wx_gtk3u_core-3.0
-WANTLIB += wx_gtk3u_html-3.0 wx_gtk3u_qa-3.0 wx_gtk3u_xrc-3.0
-WANTLIB += z
+WANTLIB += c curl execinfo m miniupnpc png portmidi wx_baseu-3.0
+WANTLIB += wx_baseu_net-3.0 wx_gtk3u_adv-3.0 wx_gtk3u_core-3.0
+WANTLIB += wx_gtk3u_xrc-3.0 z
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=odamex/}
 EXTRACT_SUFX =		.tar.bz2
@@ -28,20 +27,20 @@ COMPILER =		base-clang ports-gcc base-gcc
 
 MODULES =		devel/cmake
 
-# XXX bundled upnpc?
-# XXX wantlib
+# Note that odamex won't build against the system libjsoncpp (doesn't build
+# with std=gnu++98), so we use the bundled one. Upstream notified.
+CONFIGURE_ENV +=	CXXFLAGS=-I${LOCALBASE}/include/miniupnpc \
+			LDFLAGS=-L${LOCALBASE}/lib
 CONFIGURE_ARGS +=	-DNO_AG-ODALAUNCH_TARGET=YES
 
 LIB_DEPENDS =		x11/wxWidgets \
 			audio/portmidi \
 			graphics/png \
 			devel/sdl2-mixer \
-			net/miniupnp/miniupnpc
+			net/miniupnp/miniupnpc \
+			net/curl
 
 NO_TEST =		Yes
-
-pre-build:
-	${SUBST_CMD} ${WRKSRC}/server/CMakeLists.txt
 
 EXAMPLES_DIR =	${PREFIX}/share/examples/odamex
 post-install:
