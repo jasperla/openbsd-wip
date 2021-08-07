@@ -3,7 +3,7 @@
 COMMENT =	open source implementation of the Tailscale control server
 
 MODGO_MODNAME =	github.com/juanfont/headscale
-MODGO_VERSION =	v0.5.1
+MODGO_VERSION =	v0.5.2
 
 DISTNAME =	headscale-${MODGO_VERSION}
 
