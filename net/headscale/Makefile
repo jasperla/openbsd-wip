@@ -13,7 +13,7 @@ CATEGORIES =	net
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/go
-MODGO_LDFLAGS =		-X "main.version=${MODGO_VERISON}"
+MODGO_LDFLAGS =		-X "main.version=${MODGO_VERSION}"
 
 .include "./modules.inc"
 
