@@ -3,7 +3,7 @@
 COMMENT =	open source implementation of the Tailscale control server
 
 MODGO_MODNAME =	github.com/juanfont/headscale
-MODGO_VERSION =	v0.6.0
+MODGO_VERSION =	v0.6.1
 
 DISTNAME =	headscale-${MODGO_VERSION}
 
@@ -13,6 +13,7 @@ CATEGORIES =	net
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/go
+MODGO_LDFLAGS =		-X "main.version=${MODGO_VERISON}"
 
 .include "./modules.inc"
 
