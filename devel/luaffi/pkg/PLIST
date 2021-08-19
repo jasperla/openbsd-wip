@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v$
+include/lua/
+include/lua/${MODLUA_VERSION}/
+include/lua/${MODLUA_VERSION}/ffi.h
+@so lib/lua/${MODLUA_VERSION}/ffi.so
