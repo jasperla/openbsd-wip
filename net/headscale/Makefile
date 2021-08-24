@@ -13,7 +13,7 @@ CATEGORIES =	net
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/go
-MODGO_LDFLAGS =		-X "main.version=${MODGO_VERSION}"
+MODGO_LDFLAGS =		-X ${MODGO_MODNAME}/cmd/headscale/cli.version=${MODGO_VERSION}
 
 WRKDIST =	${WRKSRC}
 
