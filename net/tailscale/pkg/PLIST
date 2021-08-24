@@ -5,9 +5,9 @@
 @bin bin/derper
 @bin bin/derpprobe
 @bin bin/hello
-@bin bin/microproxy
 @bin bin/mkpkg
 @bin bin/speedtest
 @bin bin/tailscale
 @bin bin/tailscaled
+@bin bin/testcontrol
 @bin bin/tsshd
