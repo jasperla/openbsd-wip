@@ -1,0 +1,18 @@
+$OpenBSD$
+
+Index: test.lua
+--- test.lua.orig
++++ test.lua
+@@ -21,11 +21,7 @@ local function loadlib(lib)
+     error("Unable to load", lib)
+ end
+ 
+-if _VERSION == 'Lua 5.1' then
+-    dlls.__cdecl = loadlib('ffi/libtest')
+-else
+-    dlls.__cdecl = ffi.load(package.searchpath('ffi.libtest', package.cpath))
+-end
++dlls.__cdecl = ffi.load('./test')
+ 
+ if ffi.arch == 'x86' and ffi.os == 'Windows' then
+     dlls.__stdcall = ffi.load('test_stdcall')

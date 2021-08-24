@@ -40,4 +40,11 @@ do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/include/lua/${MODLUA_VERSION}
 	${INSTALL_DATA} ${WRKDIST}/ffi.h ${PREFIX}/include/lua/${MODLUA_VERSION}
 
+do-test:
+	cd ${WRKBUILD} && \
+		${CC} ${CFLAGS} -fPIC -I${MODLUA_INCL_DIR} -I${WRKSRC}/dynasm \
+		-c ${WRKSRC}/test.c -o ${WRKBUILD}/test.o
+	cd ${WRKBUILD} && ${CC} -shared -o test.so test.o
+	cd ${WRKBUILD} && LD_LIBRARY_PATH=${PREFIX}/lib ${MODLUA_BIN} ${WRKSRC}/test.lua
+
 .include <bsd.port.mk>
