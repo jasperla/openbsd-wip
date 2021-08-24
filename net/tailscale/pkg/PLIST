@@ -1,13 +1,13 @@
 @comment $OpenBSD: PLIST,v$
 @rcscript ${RCDIR}/tailscaled
-@bin bin/addlicense
-@bin bin/cloner
-@bin bin/derper
-@bin bin/derpprobe
-@bin bin/hello
-@bin bin/mkpkg
-@bin bin/speedtest
+@comment bin/addlicense
+@comment bin/cloner
+@comment bin/derper
+@comment bin/derpprobe
+@comment bin/hello
+@comment bin/mkpkg
+@comment bin/speedtest
 @bin bin/tailscale
 @bin bin/tailscaled
-@bin bin/testcontrol
-@bin bin/tsshd
+@comment bin/testcontrol
+@comment bin/tsshd
