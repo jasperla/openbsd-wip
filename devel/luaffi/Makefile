@@ -29,10 +29,10 @@ COMPILE_LEAFS =	call.c ctype.c ffi.c parser.c
 do-build:
 .for l in ${COMPILE_LEAFS}
 	cd ${WRKBUILD} && \
-		${CC} ${CFLAGS} -fPIC -I${MODLUA_INCL_DIR} -I${WRKDIST}/dynasm \
-		-c ${WRKDIST}/${l} -o ${WRKBUILD}/${l:.c=.o}
+		${CC} ${CFLAGS} -fPIC -I${MODLUA_INCL_DIR} -I${WRKSRC}/dynasm \
+		-c ${WRKSRC}/${l} -o ${WRKBUILD}/${l:.c=.o}
 .endfor
-	cd ${WRKBUILD} && ${CC} -shared -o ffi.so -L${PREFIX}/lib ${COMPILE_LEAFS:.c=.o}
+	cd ${WRKBUILD} && ${CC} -shared -o ffi.so ${COMPILE_LEAFS:.c=.o}
 
 do-install:
 	${INSTALL_DATA_DIR} ${MODLUA_LIBDIR}
