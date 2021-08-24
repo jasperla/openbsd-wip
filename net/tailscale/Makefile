@@ -19,6 +19,6 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/go
 
-.include "./modules.inc"
+.include "modules.inc"
 
 .include <bsd.port.mk>
