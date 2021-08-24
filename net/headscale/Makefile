@@ -27,4 +27,6 @@ post-install:
 	${SUBST_DATA} ${WRKSRC}/config.json.sqlite.example \
 		${PREFIX}/share/examples/headscale/config.json.sqlite.example
 
+.include "modules.inc"
+
 .include <bsd.port.mk>

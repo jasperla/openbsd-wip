@@ -6,11 +6,12 @@
 @group _headscale
 @sample ${SYSCONFDIR}/headscale/
 @owner _headscale
-@sample /var/headscale/
+@sample ${VARBASE}/headscale/
 @mode
 @owner
 @group
 @bin bin/headscale
+share/doc/pkg-readmes/${PKGSTEM}
 share/examples/headscale/
 share/examples/headscale/config.json.postgres.example
 share/examples/headscale/config.json.sqlite.example
