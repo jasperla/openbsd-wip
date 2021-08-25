@@ -1,6 +1,6 @@
 # $OpenBSD$
 
-COMMENT =	easiest, most secure way to use WireGuard and 2FA
+COMMENT =	modern overlay-like VPN built on top of WireGuard
 
 MODGO_MODNAME =	tailscale.com
 MODGO_VERSION =	v1.14.0
