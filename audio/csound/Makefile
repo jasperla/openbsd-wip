@@ -4,7 +4,7 @@ COMMENT =	an extensible sound processing language
 
 GH_ACCOUNT =	csound
 GH_PROJECT =	csound
-GH_TAGNAME =	6.12.0
+GH_TAGNAME =	6.16.2
 
 SHARED_LIBS +=	csnd6                     1.0 # 6.10
 SHARED_LIBS +=	csound64                  1.0 # 6.10
@@ -16,10 +16,11 @@ HOMEPAGE =	https://csound.github.io/
 MAINTAINER =		Aaron Bieber <abieber@openbsd.org>
 
 # LGPL
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} ICE SM X11 Xext c curl fltk fltk_forms
-WANTLIB += fltk_images m png portaudio python2.7 samplerate sndfile z
+WANTLIB += fltk_images m portaudio pulse pulse-simple samplerate
+WANTLIB += sndfile
 
 MODULES =		devel/cmake \
 			lang/lua \
@@ -38,6 +39,7 @@ BUILD_DEPENDS =		audio/flac \
 LIB_DEPENDS =		audio/libsamplerate \
 			audio/libsndfile \
 			audio/portaudio-svn \
+			audio/pulseaudio \
 			net/curl \
 			x11/fltk
 
