@@ -1,3 +1,0 @@
-Tailscale is a modern VPN built on top of Wireguard. It works like an overlay
-network between the computers of your networks - using all kinds of NAT
-traversal sorcery.
