@@ -17,6 +17,8 @@ MAINTAINER =	Aaron Bieber <abieber@openbsd.org>
 # BSD-3
 PERMIT_PACKAGE =	Yes
 
+WANTLIB += c pthread
+
 MODULES =		lang/go
 
 .include "modules.inc"

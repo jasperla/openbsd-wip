@@ -14,6 +14,8 @@ MAINTAINER =	Aaron Bieber <abieber@openbsd.org>
 # BSD-3
 PERMIT_PACKAGE =	Yes
 
+WANTLIB += c pthread
+
 MODULES =		lang/go
 MODGO_LDFLAGS =		-X ${MODGO_MODNAME}/cmd/headscale/cli.version=${MODGO_VERSION}
 
