@@ -1,12 +1,14 @@
 # $OpenBSD: Makefile.template,v 1.88 2020/05/15 01:32:48 abieber Exp $
 
+BROKEN=hard depend on libadwaita-1.0-alpha2, that is not in CVS yet.
+
 COMMENT =	GTK+ mastodon client
 
 GH_ACCOUNT =	bleakgrey
 GH_PROJECT =	tootle
 # Follow HEAD since there are upstream bugs needing to be ironed out
-GH_COMMIT =	f5a823ba9705ab05e53499478c4be4f975d24a9f
-DISTNAME =	${GH_PROJECT}-1.0.20210214
+GH_COMMIT =	1f3a8d24e3a31cd9d0e7f77bc26303923a029258
+DISTNAME =	${GH_PROJECT}-1.0pl20210726
 
 CATEGORIES =	net
 
@@ -21,23 +23,24 @@ MODULES =	devel/dconf \
 		x11/gnome
 
 BUILD_DEPENDS =	devel/gettext,-tools \
-		lang/vala>=0.48
-LIB_DEPENDS =	devel/glib2>=2.30.0 \
-		devel/json-glib>=1.4.4 \
-		devel/libgee>=0.8.5 \
-		devel/libsoup>=2.64 \
-		x11/gtk+3>=3.22.0 \
-		x11/libhandy>=1.0.0
+		lang/vala
+LIB_DEPENDS =	devel/glib2 \
+		devel/json-glib \
+		devel/libgee \
+		devel/libsoup \
+		textproc/libxml \
+		x11/gnome/libadwaita \
+		x11/gnome/libsecret \
+		x11/gtk+4 \
+		x11/libhandy
 RUN_DEPENDS =	devel/desktop-file-utils \
-		x11/gnome/keyring \
-		x11/gtk+3,-guic
+		x11/gnome/keyring
 
 # Open image in your favorite image viewer via xdg-mime(1)
 RUN_DEPENDS +=	devel/xdg-utils
 
-# For patches/patch-src_Desktop_vala
 pre-configure:
-	${SUBST_CMD} ${WRKDIST}/src/Desktop.vala
+	${SUBST_CMD} ${WRKDIST}/src/Utils/Host.vala
 
 # Put user friendly command name
 post-install:

@@ -50,6 +50,7 @@ include/csound/csound_threaded.hpp
 include/csound/csound_type_system.h
 include/csound/cwindow.h
 include/csound/filebuilding.h
+include/csound/find_opcode.h
 include/csound/float-version.h
 include/csound/interlocks.h
 include/csound/modload.h
@@ -64,44 +65,57 @@ include/csound/text.h
 include/csound/version.h
 lib/csound/
 lib/csound/plugins64-6.0/
-lib/csound/plugins64-6.0/libampmidid.so
-lib/csound/plugins64-6.0/libarrayops.so
-lib/csound/plugins64-6.0/libbeosc.so
-lib/csound/plugins64-6.0/libbuchla.so
-lib/csound/plugins64-6.0/libcellular.so
-lib/csound/plugins64-6.0/libcontrol.so
-lib/csound/plugins64-6.0/libcs_date.so
-lib/csound/plugins64-6.0/libdoppler.so
-lib/csound/plugins64-6.0/libemugens.so
-lib/csound/plugins64-6.0/libexciter.so
-lib/csound/plugins64-6.0/libfareygen.so
-lib/csound/plugins64-6.0/libfractalnoise.so
-lib/csound/plugins64-6.0/libframebuffer.so
-lib/csound/plugins64-6.0/libftsamplebank.so
-lib/csound/plugins64-6.0/libgetftargs.so
-lib/csound/plugins64-6.0/libimage.so
-lib/csound/plugins64-6.0/libipmidi.so
-lib/csound/plugins64-6.0/libliveconv.so
-lib/csound/plugins64-6.0/libmixer.so
-lib/csound/plugins64-6.0/libpadsynth.so
-lib/csound/plugins64-6.0/libplaterev.so
-lib/csound/plugins64-6.0/libpvsops.so
-lib/csound/plugins64-6.0/libpy.so
-lib/csound/plugins64-6.0/libquadbezier.so
-lib/csound/plugins64-6.0/librtpa.so
-lib/csound/plugins64-6.0/libscansyn.so
-lib/csound/plugins64-6.0/libscugens.so
-lib/csound/plugins64-6.0/libselect.so
-lib/csound/plugins64-6.0/libserial.so
-lib/csound/plugins64-6.0/libsignalflowgraph.so
-lib/csound/plugins64-6.0/libstackops.so
-lib/csound/plugins64-6.0/libstdutil.so
-lib/csound/plugins64-6.0/libsystem_call.so
-lib/csound/plugins64-6.0/liburandom.so
-lib/csound/plugins64-6.0/libvirtual.so
-lib/csound/plugins64-6.0/libwidgets.so
+@so lib/csound/plugins64-6.0/libampmidid.so
+@so lib/csound/plugins64-6.0/libarrayops.so
+@so lib/csound/plugins64-6.0/libbuchla.so
+@so lib/csound/plugins64-6.0/libcellular.so
+@so lib/csound/plugins64-6.0/libcontrol.so
+@so lib/csound/plugins64-6.0/libcounter.so
+@so lib/csound/plugins64-6.0/libcs_date.so
+@so lib/csound/plugins64-6.0/libdoppler.so
+@so lib/csound/plugins64-6.0/libemugens.so
+@so lib/csound/plugins64-6.0/libexciter.so
+@so lib/csound/plugins64-6.0/libfareygen.so
+@so lib/csound/plugins64-6.0/libfractalnoise.so
+@so lib/csound/plugins64-6.0/libframebuffer.so
+@so lib/csound/plugins64-6.0/libftsamplebank.so
+@so lib/csound/plugins64-6.0/libgetftargs.so
+@so lib/csound/plugins64-6.0/libgtf.so
+@so lib/csound/plugins64-6.0/libipmidi.so
+@so lib/csound/plugins64-6.0/liblfsr.so
+@so lib/csound/plugins64-6.0/libliveconv.so
+@so lib/csound/plugins64-6.0/libmixer.so
+@so lib/csound/plugins64-6.0/libpadsynth.so
+@so lib/csound/plugins64-6.0/libplaterev.so
+@so lib/csound/plugins64-6.0/libpvsops.so
+@so lib/csound/plugins64-6.0/libquadbezier.so
+@so lib/csound/plugins64-6.0/librtpa.so
+@so lib/csound/plugins64-6.0/librtpulse.so
+@so lib/csound/plugins64-6.0/libscansyn.so
+@so lib/csound/plugins64-6.0/libscugens.so
+@so lib/csound/plugins64-6.0/libselect.so
+@so lib/csound/plugins64-6.0/libserial.so
+@so lib/csound/plugins64-6.0/libsignalflowgraph.so
+@so lib/csound/plugins64-6.0/libstackops.so
+@so lib/csound/plugins64-6.0/libstdutil.so
+@so lib/csound/plugins64-6.0/libsterrain.so
+@so lib/csound/plugins64-6.0/libsystem_call.so
+@so lib/csound/plugins64-6.0/libtrigenvsegs.so
+@so lib/csound/plugins64-6.0/liburandom.so
+@so lib/csound/plugins64-6.0/libvirtual.so
+@so lib/csound/plugins64-6.0/libwidgets.so
 @lib lib/libcsnd6.so.${LIBcsnd6_VERSION}
 @lib lib/libcsound64.so.${LIBcsound64_VERSION}
+lib/python${MODPY_VERSION}/site-packages/ctcsound.py
 share/cmake/
 share/cmake/Csound/
 share/cmake/Csound/FindCsound.cmake
+share/samples/
+share/samples/README
+share/samples/hrtf-44100-left.dat
+share/samples/hrtf-44100-right.dat
+share/samples/hrtf-48000-left.dat
+share/samples/hrtf-48000-right.dat
+share/samples/hrtf-96000-left.dat
+share/samples/hrtf-96000-right.dat
+share/samples/sf_GMbank.sf2

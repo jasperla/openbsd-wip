@@ -1,15 +1,16 @@
 # $OpenBSD$
 
 COMMENT =	reproducible package manager for Unix
-DISTNAME =	nix-2.3.10
+DISTNAME =	nix-2.3.13
 EXTRACT_SUFX =	.tar.xz
 CATEGORIES =	devel
 
 # These four must always have the same major and minor!
-SHARED_LIBS +=	nixexpr                   0.0 # 2.3.10
-SHARED_LIBS +=	nixmain                   0.0 # 2.3.10
-SHARED_LIBS +=	nixstore                  0.0 # 2.3.10
-SHARED_LIBS +=	nixutil                   0.0 # 2.3.10
+LIB_VER =	0.0	# 2.3.13
+SHARED_LIBS +=	nixexpr		${LIB_VER}
+SHARED_LIBS +=	nixmain		${LIB_VER}
+SHARED_LIBS +=	nixstore	${LIB_VER}
+SHARED_LIBS +=	nixutil		${LIB_VER}
 
 HOMEPAGE =	https://nixos.org/nix/
 
@@ -37,7 +38,8 @@ LIB_DEPENDS =	archivers/brotli \
 		net/curl \
 		security/libsodium
 
-RUN_DEPENDS =	shells/bash
+RUN_DEPENDS =	archivers/gtar \
+		shells/bash
 
 TEST_DEPENDS =	${PKGPATH} \
 		misc/findutils \

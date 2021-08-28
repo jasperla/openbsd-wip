@@ -96,17 +96,6 @@ As far as I know:
 
 If you know more, please mail the package maintainer.
 
-Ruby-1.8 Scripts
-----------------
-
-Many Ruby scripts in TeX Live are supposed to use Ruby-1.8, which is no longer
-packaged by OpenBSD. The scale of TeX Live makes it difficult to systematically
-review the scripts to see which ones need to be fixed. For now we've updated
-the interpreter shebangs to use a 2.x Ruby.
-
-If you encounter Ruby-related issues, please email the package maintainer and
-we will see if we can fix it.
-
 Notes for Developers
 --------------------
 

@@ -1,7 +1,7 @@
 # $OpenBSD$
 COMMENT =		application that aims to provide a workflow for HDR imaging
 
-DISTNAME =		luminance-hdr-2.6.0
+DISTNAME =		luminance-hdr-2.6.1.1
 
 CATEGORIES =		graphics
 
