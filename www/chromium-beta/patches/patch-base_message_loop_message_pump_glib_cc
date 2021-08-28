@@ -13,9 +13,9 @@ Index: base/message_loop/message_pump_glib.cc
 +#endif
 +
  #include "base/logging.h"
+ #include "base/notreached.h"
  #include "base/numerics/safe_conversions.h"
- #include "base/posix/eintr_wrapper.h"
-@@ -48,9 +53,13 @@ int GetTimeIntervalMilliseconds(TimeTicks next_task_ti
+@@ -49,9 +54,13 @@ int GetTimeIntervalMilliseconds(TimeTicks next_task_ti
  }
  
  bool RunningOnMainThread() {

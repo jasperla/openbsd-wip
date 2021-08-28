@@ -3,7 +3,7 @@ $OpenBSD$
 Index: ui/compositor/compositor.h
 --- ui/compositor/compositor.h.orig
 +++ ui/compositor/compositor.h
-@@ -377,7 +377,7 @@ class COMPOSITOR_EXPORT Compositor : public cc::LayerT
+@@ -378,7 +378,7 @@ class COMPOSITOR_EXPORT Compositor : public cc::LayerT
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.

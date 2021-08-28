@@ -5,7 +5,7 @@ Index: third_party/pdfium/core/fxge/linux/fx_linux_impl.cpp
 +++ third_party/pdfium/core/fxge/linux/fx_linux_impl.cpp
 @@ -17,7 +17,7 @@
  #include "third_party/base/check.h"
- #include "third_party/base/stl_util.h"
+ #include "third_party/base/cxx17_backports.h"
  
 -#if !defined(OS_LINUX) && !defined(OS_CHROMEOS) && !defined(OS_ASMJS)
 +#if !defined(OS_LINUX) && !defined(OS_CHROMEOS) && !defined(OS_ASMJS) && !defined(OS_BSD)

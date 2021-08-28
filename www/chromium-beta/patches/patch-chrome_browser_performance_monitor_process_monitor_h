@@ -3,7 +3,7 @@ $OpenBSD$
 Index: chrome/browser/performance_monitor/process_monitor.h
 --- chrome/browser/performance_monitor/process_monitor.h.orig
 +++ chrome/browser/performance_monitor/process_monitor.h
-@@ -45,7 +45,7 @@ class ProcessMonitor {
+@@ -49,7 +49,7 @@ class ProcessMonitor {
      double cpu_usage = 0.0;
  
  #if defined(OS_MAC) || defined(OS_LINUX) || defined(OS_CHROMEOS) || \

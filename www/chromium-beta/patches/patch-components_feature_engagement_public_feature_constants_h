@@ -12,3 +12,12 @@ Index: components/feature_engagement/public/feature_constants.h
  extern const base::Feature kIPHDesktopTabGroupsNewGroupFeature;
  extern const base::Feature kIPHFocusModeFeature;
  extern const base::Feature kIPHGlobalMediaControlsFeature;
+@@ -124,7 +124,7 @@ extern const base::Feature kIPHDiscoverFeedHeaderFeatu
+ #endif  // defined(OS_IOS)
+ 
+ #if defined(OS_WIN) || defined(OS_APPLE) || defined(OS_LINUX) || \
+-    defined(OS_CHROMEOS) || defined(OS_ANDROID)
++    defined(OS_CHROMEOS) || defined(OS_ANDROID) || defined(OS_BSD)
+ extern const base::Feature kIPHUpdatedConnectionSecurityIndicatorsFeature;
+ #endif
+ 

@@ -12,7 +12,7 @@ Index: weblayer/browser/content_browser_client_impl.cc
  #include "content/public/common/content_descriptors.h"
  #endif
  
-@@ -488,7 +488,7 @@ void ContentBrowserClientImpl::OnNetworkServiceCreated
+@@ -492,7 +492,7 @@ void ContentBrowserClientImpl::OnNetworkServiceCreated
          embedder_support::GetUserAgent());
  // TODO(crbug.com/1052397): Revisit once build flag switch of lacros-chrome is
  // complete.
@@ -21,7 +21,7 @@ Index: weblayer/browser/content_browser_client_impl.cc
    network::mojom::CryptConfigPtr config = network::mojom::CryptConfig::New();
    content::GetNetworkService()->SetCryptConfig(std::move(config));
  #endif
-@@ -974,7 +974,7 @@ SafeBrowsingService* ContentBrowserClientImpl::GetSafe
+@@ -991,7 +991,7 @@ SafeBrowsingService* ContentBrowserClientImpl::GetSafe
  
  // TODO(crbug.com/1052397): Revisit once build flag switch of lacros-chrome is
  // complete.

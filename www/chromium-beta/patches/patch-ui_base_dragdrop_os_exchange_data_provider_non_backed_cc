@@ -3,7 +3,7 @@ $OpenBSD$
 Index: ui/base/dragdrop/os_exchange_data_provider_non_backed.cc
 --- ui/base/dragdrop/os_exchange_data_provider_non_backed.cc.orig
 +++ ui/base/dragdrop/os_exchange_data_provider_non_backed.cc
-@@ -102,7 +102,7 @@ void OSExchangeDataProviderNonBacked::SetPickledData(
+@@ -103,7 +103,7 @@ void OSExchangeDataProviderNonBacked::SetPickledData(
  }
  
  bool OSExchangeDataProviderNonBacked::GetString(std::u16string* data) const {

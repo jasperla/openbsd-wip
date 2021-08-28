@@ -3,7 +3,7 @@ $OpenBSD$
 Index: printing/print_settings_conversion.cc
 --- printing/print_settings_conversion.cc.orig
 +++ printing/print_settings_conversion.cc
-@@ -211,7 +211,7 @@ std::unique_ptr<PrintSettings> PrintSettingsFromJobSet
+@@ -212,7 +212,7 @@ std::unique_ptr<PrintSettings> PrintSettingsFromJobSet
  #endif
    }
  

@@ -1,0 +1,23 @@
+$OpenBSD$
+
+Index: chrome/browser/ui/views/profiles/signin_view_controller_delegate_views.cc
+--- chrome/browser/ui/views/profiles/signin_view_controller_delegate_views.cc.orig
++++ chrome/browser/ui/views/profiles/signin_view_controller_delegate_views.cc
+@@ -84,7 +84,7 @@ SigninViewControllerDelegateViews::CreateReauthConfirm
+ }
+ 
+ #if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || \
+-    BUILDFLAG(IS_CHROMEOS_LACROS)
++    BUILDFLAG(IS_CHROMEOS_LACROS) || defined(OS_BSD)
+ // static
+ std::unique_ptr<views::WebView>
+ SigninViewControllerDelegateViews::CreateEnterpriseConfirmationWebView(
+@@ -335,7 +335,7 @@ SigninViewControllerDelegate::CreateReauthConfirmation
+ }
+ 
+ #if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || \
+-    BUILDFLAG(IS_CHROMEOS_LACROS)
++    BUILDFLAG(IS_CHROMEOS_LACROS) || defined(OS_BSD)
+ // static
+ SigninViewControllerDelegate*
+ SigninViewControllerDelegate::CreateEnterpriseConfirmationDelegate(

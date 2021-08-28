@@ -3,7 +3,7 @@ $OpenBSD: patch-chromecast_browser_cast_content_browser_client_receiver_bindings
 Index: chromecast/browser/cast_content_browser_client_receiver_bindings.cc
 --- chromecast/browser/cast_content_browser_client_receiver_bindings.cc.orig
 +++ chromecast/browser/cast_content_browser_client_receiver_bindings.cc
-@@ -35,7 +35,7 @@
+@@ -34,7 +34,7 @@
  #include "media/mojo/services/media_service.h"  // nogncheck
  #endif  // BUILDFLAG(ENABLE_CAST_RENDERER)
  
@@ -12,7 +12,7 @@ Index: chromecast/browser/cast_content_browser_client_receiver_bindings.cc
  #include "chromecast/browser/webview/js_channel_service.h"
  #include "chromecast/common/mojom/js_channel.mojom.h"
  #endif
-@@ -217,7 +217,7 @@ void CastContentBrowserClient::RunServiceInstance(
+@@ -214,7 +214,7 @@ void CastContentBrowserClient::RunServiceInstance(
  void CastContentBrowserClient::BindHostReceiverForRenderer(
      content::RenderProcessHost* render_process_host,
      mojo::GenericPendingReceiver receiver) {

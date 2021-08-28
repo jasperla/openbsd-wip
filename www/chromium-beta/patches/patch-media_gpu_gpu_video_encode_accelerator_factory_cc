@@ -3,7 +3,7 @@ $OpenBSD$
 Index: media/gpu/gpu_video_encode_accelerator_factory.cc
 --- media/gpu/gpu_video_encode_accelerator_factory.cc.orig
 +++ media/gpu/gpu_video_encode_accelerator_factory.cc
-@@ -93,7 +93,7 @@ std::vector<VEAFactoryFunction> GetVEAFactoryFunctions
+@@ -94,7 +94,7 @@ std::vector<VEAFactoryFunction> GetVEAFactoryFunctions
      return vea_factory_functions;
  
  #if BUILDFLAG(USE_VAAPI)

@@ -15,7 +15,7 @@ Index: chrome/browser/policy/device_management_service_configuration.cc
 @@ -97,7 +97,7 @@ DeviceManagementServiceConfiguration::GetEncryptedRepo
  std::string
  DeviceManagementServiceConfiguration::GetReportingConnectorServerUrl(
-     content::BrowserContext* context) {
+     content::BrowserContext* context) const {
 -#if defined(OS_WIN) || defined(OS_MAC) || \
 +#if defined(OS_WIN) || defined(OS_MAC) || defined(OS_BSD) || \
      ((defined(OS_LINUX) || defined(OS_CHROMEOS)) && !defined(OS_ANDROID))

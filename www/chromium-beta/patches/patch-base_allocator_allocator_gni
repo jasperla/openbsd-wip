@@ -10,5 +10,5 @@ Index: base/allocator/allocator.gni
 -_is_using_sanitizers = is_asan || is_hwasan || is_lsan || is_tsan || is_msan
 +_is_using_sanitizers = is_asan || is_hwasan || is_lsan || is_tsan || is_msan || is_openbsd
  
- # - Windows: shims don't work for component builds and debug CRT is not
- # compatible, see below.
+ # - Component build support is disabled on all platforms. It is known to cause
+ #   issues on some (e.g. Windows with shims, Android with non-universal symbol

@@ -3,7 +3,7 @@ $OpenBSD$
 Index: chrome/updater/installer.cc
 --- chrome/updater/installer.cc.orig
 +++ chrome/updater/installer.cc
-@@ -251,7 +251,7 @@ absl::optional<base::FilePath> Installer::GetCurrentIn
+@@ -249,7 +249,7 @@ absl::optional<base::FilePath> Installer::GetCurrentIn
    return path->AppendASCII(pv_.GetString());
  }
  

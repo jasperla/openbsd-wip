@@ -3,7 +3,7 @@ $OpenBSD$
 Index: net/url_request/url_fetcher.h
 --- net/url_request/url_fetcher.h.orig
 +++ net/url_request/url_fetcher.h
-@@ -353,7 +353,7 @@ class NET_EXPORT URLFetcher {
+@@ -354,7 +354,7 @@ class NET_EXPORT URLFetcher {
  // TODO(crbug.com/1052397): Revisit once build flag switch of lacros-chrome is
  // complete.
  #if (!defined(OS_WIN) &&                                       \

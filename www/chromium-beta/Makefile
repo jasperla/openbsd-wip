@@ -14,7 +14,7 @@ DPB_PROPERTIES=		parallel parallel2
 
 COMMENT=		Chromium browser
 
-V=			92.0.4515.107
+V=			93.0.4577.58
 
 DISTNAME=		chromium-${V}
 
@@ -37,8 +37,6 @@ PERMIT_PACKAGE =	Yes
 
 MASTER_SITES=	https://commondatastorage.googleapis.com/chromium-browser-official/
 MASTER_SITES0=	http://nerd.hu/distfiles/
-
-FIX_CRLF_FILES=	third_party/vulkan_memory_allocator/src/vk_mem_alloc.h
 
 MODULES=	lang/python
 MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
@@ -149,7 +147,8 @@ GN_ARGS=	enable_nacl=false \
 		clang_use_chrome_plugins=false \
 		use_allocator=\"none\" \
 		fieldtrial_testing_like_official_build=true \
-		extra_cppflags=\"-idirafter ${LOCALBASE}/include -idirafter ${X11BASE}/include\"
+		extra_cppflags=\"-idirafter ${LOCALBASE}/include -idirafter ${X11BASE}/include\" \
+		fatal_linker_warnings=false
 
 # notyet
 GN_ARGS+=	use_vaapi=false
