@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile.template,v 1.77 2018/02/09 17:08:33 sthen Exp $
+# $OpenBSD$
 
 COMMENT =	package manager for lua
 
-DISTNAME =	luarocks-2.4.4
+DISTNAME =	luarocks-3.7.0
 
 CATEGORIES =	devel
 
 HOMEPAGE =	https://luarocks.org/
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =		https://luarocks.org/releases/
 
