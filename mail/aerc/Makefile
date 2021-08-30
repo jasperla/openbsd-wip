@@ -2,7 +2,7 @@
 
 COMMENT =	aerc is an email client for your terminal
 
-DISTNAME =	aerc-0.3.0
+DISTNAME =	aerc-0.5.2
 
 CATEGORIES =	mail
 
@@ -15,31 +15,29 @@ WANTLIB += c pthread
 
 MASTER_SITES =	https://deftly.net/dist/
 
-MODULES =	lang/go lang/python
+MODULES =	lang/go \
+		lang/python
+
 MODGO_TYPE =	bin
-
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
-
-NO_TEST =	Yes
+MODGO_FLAGS +=	-mod=vendor
 
 BUILD_DEPENDS =	textproc/scdoc
-RUN_DEPENDS =	devel/py-colorama,python3 \
+RUN_DEPENDS =	devel/py-colorama${MODPY_FLAVOR} \
 		security/dante \
 		www/w3m
 
-MAKE_FLAGS =	PREFIX=${PREFIX}
+MAKE_ENV =	GOFLAGS=${MODGO_FLAGS:Q} \
+		CGO_CFLAGS=-I${LOCALBASE}/include
+FAKE_ENV =	MANDIR=${PREFIX}/man
 
 USE_GMAKE =	Yes
+NO_TEST =	Yes
 
 do-build:
-	cd ${WRKSRC} && ${MAKE_FLAGS} ${MAKE_PROGRAM}
+	${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} -C${WRKSRC} ${MAKE_FLAGS} ${ALL_TARGET}
 
 do-install:
-	cd ${WRKSRC} && ${MAKE_ENV} MANDIR=${PREFIX}/man \
-		${MAKE_PROGRAM} install
-
-post-install:
-	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
-		${PREFIX}/share/aerc/filters/*.py
+	${SETENV} ${FAKE_ENV} ${MAKE_PROGRAM} -C${WRKSRC} ${FAKE_FLAGS} ${FAKE_TARGET}
+	${MODPY_BIN} -m compileall ${PREFIX}/share/aerc/filters/*.py
 
 .include <bsd.port.mk>
