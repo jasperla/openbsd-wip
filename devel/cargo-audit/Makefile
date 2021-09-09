@@ -2,8 +2,9 @@
 
 COMMENT =		audit Cargo.lock files for security vulnerabilities
 
+# https://github.com/rustsec/rustsec/issues/429
+V =			0.13.1
 CRATE =			cargo-audit
-V =			0.15.0
 PKGNAME =		${CRATE}-${V}
 
 DISTFILES =		${PKGNAME}${EXTRACT_SUFX}{${CRATE}/${V}/download}
@@ -17,9 +18,12 @@ HOMEPAGE =		https://github.com/RustSec/rustsec/tree/main/cargo-audit
 # Apache 2/MIT
 PERMIT_PACKAGE =	Yes
 
-WANTLIB =		c pthread
+WANTLIB += c c++abi crypto m pthread ssl
 
 MODULES =		devel/cargo
+
+CONFIGURE_STYLE =	cargo
+SEPARATE_BUILD =	Yes
 
 WRKSRC =		${WRKDIR}/${PKGNAME}
 
