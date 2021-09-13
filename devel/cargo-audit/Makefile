@@ -2,8 +2,7 @@
 
 COMMENT =		audit Cargo.lock files for security vulnerabilities
 
-# https://github.com/rustsec/rustsec/issues/429
-V =			0.13.1
+V =			0.15.2
 CRATE =			cargo-audit
 PKGNAME =		${CRATE}-${V}
 
@@ -18,14 +17,23 @@ HOMEPAGE =		https://github.com/RustSec/rustsec/tree/main/cargo-audit
 # Apache 2/MIT
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += c c++abi crypto m pthread ssl
+WANTLIB += c c++abi crypto git2 m pthread ssh2 ssl
+
+LIB_DEPENDS =		devel/libgit2/libgit2 \
+			security/libssh2
 
 MODULES =		devel/cargo
 
 CONFIGURE_STYLE =	cargo
 SEPARATE_BUILD =	Yes
+PATCHORIG =		.openbsd.orig
 
 WRKSRC =		${WRKDIR}/${PKGNAME}
+
+MODCARGO_FEATURES =	vendored-libgit2
+
+post-patch:
+	${SUBST_CMD} ${WRKSRC}/modcargo-crates/canonical-path-2.0.2/src/lib.rs
 
 .include "crates.inc"
 
