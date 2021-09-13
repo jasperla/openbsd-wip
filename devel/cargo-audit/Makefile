@@ -2,7 +2,8 @@
 
 COMMENT =		audit Cargo.lock files for security vulnerabilities
 
-V =			0.15.2
+# https://github.com/rustsec/rustsec/issues/429
+V =			0.13.1
 CRATE =			cargo-audit
 PKGNAME =		${CRATE}-${V}
 
@@ -29,8 +30,6 @@ SEPARATE_BUILD =	Yes
 PATCHORIG =		.openbsd.orig
 
 WRKSRC =		${WRKDIR}/${PKGNAME}
-
-MODCARGO_FEATURES =	vendored-libgit2
 
 post-patch:
 	${SUBST_CMD} ${WRKSRC}/modcargo-crates/canonical-path-2.0.2/src/lib.rs
