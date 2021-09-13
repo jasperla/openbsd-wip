@@ -15,6 +15,8 @@ CATEGORIES =		devel
 
 HOMEPAGE =		https://github.com/RustSec/rustsec/tree/main/cargo-audit
 
+MAINTAINER =		Aaron Bieber <abieber@openbsd.org>
+
 # Apache 2/MIT
 PERMIT_PACKAGE =	Yes
 
