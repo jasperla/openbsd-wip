@@ -5,6 +5,9 @@ share/applications/badwolf.desktop
 share/badwolf/
 share/badwolf/interface.css
 share/badwolf/locale/
+share/badwolf/locale/de/
+share/badwolf/locale/de/LC_MESSAGES/
+share/badwolf/locale/de/LC_MESSAGES/Badwolf.mo
 share/badwolf/locale/fr/
 share/badwolf/locale/fr/LC_MESSAGES/
 share/badwolf/locale/fr/LC_MESSAGES/Badwolf.mo
