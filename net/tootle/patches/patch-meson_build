@@ -1,22 +1,12 @@
 $OpenBSD$
 
-Hunk #1: lower gtk+4 dependency, we don't ship unstable version ;)
-Hunk #2: Don't run the post install script, it run commands on the build
-         machine that are expected to be run on users machines.
+Don't run the post install script, it run commands on the build machine that
+are expected to be run on users machines.
 
 Index: meson.build
 --- meson.build.orig
 +++ meson.build
-@@ -26,7 +26,7 @@ asresources = gnome.compile_resources(
-   c_name: 'as'
- )
- 
--libgtk_dep = dependency('gtk4', version: '>=4.3.0', required: true)
-+libgtk_dep = dependency('gtk4', version: '>=4.2.1', required: true)
- libadwaita_dep = dependency('libadwaita-1', version: '>=1.0.0', required: true)
- 
- sources = files(
-@@ -131,4 +131,4 @@ executable(
+@@ -132,4 +132,4 @@ executable(
  subdir('data')
  subdir('po')
  
