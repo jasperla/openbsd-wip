@@ -1,4 +1,4 @@
-$OpenBSD: patch-content_public_common_common_param_traits_macros_h,v 1.18 2021/01/20 07:28:10 robert Exp $
+$OpenBSD: patch-content_public_common_common_param_traits_macros_h,v 1.23 2021/09/01 16:54:39 robert Exp $
 
 Index: content/public/common/common_param_traits_macros.h
 --- content/public/common/common_param_traits_macros.h.orig

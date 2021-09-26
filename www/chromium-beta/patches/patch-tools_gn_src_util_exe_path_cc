@@ -90,4 +90,4 @@ Index: tools/gn/src/util/exe_path.cc
 +  return base::FilePath();
  }
  
- #else
+ #elif defined(OS_ZOS)

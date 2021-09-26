@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.105 2021/01/20 07:28:13 robert Exp $
+@comment $OpenBSD: PLIST,v 1.109 2021/05/27 04:21:03 robert Exp $
 @pkgpath www/chromium,proprietary
 bin/chrome
 @bin bin/chromedriver

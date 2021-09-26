@@ -1,4 +1,4 @@
-$OpenBSD$
+$OpenBSD: patch-chrome_browser_ui_browser_dialogs_h,v 1.2 2021/09/01 16:54:38 robert Exp $
 
 Index: chrome/browser/ui/browser_dialogs.h
 --- chrome/browser/ui/browser_dialogs.h.orig
@@ -10,9 +10,9 @@ Index: chrome/browser/ui/browser_dialogs.h
 -#if defined(OS_WIN) || defined(OS_MAC) || \
 +#if defined(OS_WIN) || defined(OS_MAC) || defined(OS_BSD) || \
      (defined(OS_LINUX) && !BUILDFLAG(IS_CHROMEOS_LACROS))
- #include "chrome/browser/web_applications/components/web_app_id.h"
+ #include "chrome/browser/web_applications/web_app_id.h"
  #endif
-@@ -76,7 +76,7 @@ class WebDialogDelegate;
+@@ -77,7 +77,7 @@ class WebDialogDelegate;
  struct SelectedFileInfo;
  }  // namespace ui
  
@@ -21,7 +21,7 @@ Index: chrome/browser/ui/browser_dialogs.h
      (defined(OS_LINUX) && !BUILDFLAG(IS_CHROMEOS_LACROS))
  namespace web_app {
  struct UrlHandlerLaunchParams;
-@@ -173,7 +173,7 @@ void ShowWebAppProtocolHandlerIntentPicker(
+@@ -175,7 +175,7 @@ void ShowWebAppProtocolHandlerIntentPicker(
      WebAppProtocolHandlerAcceptanceCallback close_callback);
  #endif  // !defined(OS_ANDROID)
  

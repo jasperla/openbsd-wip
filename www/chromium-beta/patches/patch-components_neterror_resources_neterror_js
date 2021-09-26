@@ -1,4 +1,4 @@
-$OpenBSD: patch-components_neterror_resources_neterror_js,v 1.13 2021/01/20 07:28:09 robert Exp $
+$OpenBSD: patch-components_neterror_resources_neterror_js,v 1.14 2021/09/01 16:54:39 robert Exp $
 
 Index: components/neterror/resources/neterror.js
 --- components/neterror/resources/neterror.js.orig

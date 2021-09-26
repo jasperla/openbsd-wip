@@ -3,15 +3,6 @@ $OpenBSD$
 Index: remoting/host/me2me_desktop_environment.cc
 --- remoting/host/me2me_desktop_environment.cc.orig
 +++ remoting/host/me2me_desktop_environment.cc
-@@ -86,7 +86,7 @@ std::string Me2MeDesktopEnvironment::GetCapabilities()
-   }
- #endif  // defined(OS_WIN)
- 
--#if defined(OS_LINUX)
-+#if defined(OS_LINUX) || defined(OS_BSD)
-   capabilities += " ";
-   capabilities += protocol::kRemoteOpenUrlCapability;
- #endif  // defined(OS_LINUX)
 @@ -136,7 +136,7 @@ bool Me2MeDesktopEnvironment::InitializeSecurity(
  
    // Otherwise, if the session is shared with the local user start monitoring

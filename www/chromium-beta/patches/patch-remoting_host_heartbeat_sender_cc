@@ -1,4 +1,4 @@
-$OpenBSD$
+$OpenBSD: patch-remoting_host_heartbeat_sender_cc,v 1.8 2021/09/01 16:54:40 robert Exp $
 
 Index: remoting/host/heartbeat_sender.cc
 --- remoting/host/heartbeat_sender.cc.orig

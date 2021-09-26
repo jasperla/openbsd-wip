@@ -1,4 +1,4 @@
-$OpenBSD$
+$OpenBSD: patch-gpu_vulkan_vulkan_image_cc,v 1.5 2021/09/01 16:54:39 robert Exp $
 
 Index: gpu/vulkan/vulkan_image.cc
 --- gpu/vulkan/vulkan_image.cc.orig

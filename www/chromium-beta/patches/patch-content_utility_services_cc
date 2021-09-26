@@ -1,4 +1,4 @@
-$OpenBSD: patch-content_utility_services_cc,v 1.1 2020/10/22 13:52:54 robert Exp $
+$OpenBSD: patch-content_utility_services_cc,v 1.6 2021/09/01 16:54:39 robert Exp $
 
 Index: content/utility/services.cc
 --- content/utility/services.cc.orig

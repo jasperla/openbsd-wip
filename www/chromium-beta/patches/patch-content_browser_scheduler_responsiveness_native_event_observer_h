@@ -1,4 +1,4 @@
-$OpenBSD: patch-content_browser_scheduler_responsiveness_native_event_observer_h,v 1.4 2020/10/22 13:52:54 robert Exp $
+$OpenBSD: patch-content_browser_scheduler_responsiveness_native_event_observer_h,v 1.5 2021/09/01 16:54:39 robert Exp $
 
 Index: content/browser/scheduler/responsiveness/native_event_observer.h
 --- content/browser/scheduler/responsiveness/native_event_observer.h.orig

@@ -1,4 +1,4 @@
-$OpenBSD$
+$OpenBSD: patch-base_allocator_allocator_gni,v 1.11 2021/09/01 16:54:37 robert Exp $
 
 Index: base/allocator/allocator.gni
 --- base/allocator/allocator.gni.orig

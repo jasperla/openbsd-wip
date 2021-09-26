@@ -1,4 +1,4 @@
-$OpenBSD$
+$OpenBSD: patch-headless_public_headless_browser_cc,v 1.1 2021/09/01 16:54:40 robert Exp $
 
 Index: headless/public/headless_browser.cc
 --- headless/public/headless_browser.cc.orig

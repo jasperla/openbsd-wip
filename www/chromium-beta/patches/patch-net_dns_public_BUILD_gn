@@ -1,0 +1,14 @@
+$OpenBSD$
+
+Index: net/dns/public/BUILD.gn
+--- net/dns/public/BUILD.gn.orig
++++ net/dns/public/BUILD.gn
+@@ -37,7 +37,7 @@ source_set("public") {
+     "util.h",
+   ]
+ 
+-  if (is_linux) {
++  if (is_linux && !is_openbsd) {
+     sources += [
+       "resolv_reader.cc",
+       "resolv_reader.h",

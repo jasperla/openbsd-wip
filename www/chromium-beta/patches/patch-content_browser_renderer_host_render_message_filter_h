@@ -1,4 +1,4 @@
-$OpenBSD: patch-content_browser_renderer_host_render_message_filter_h,v 1.17 2021/01/20 07:28:09 robert Exp $
+$OpenBSD: patch-content_browser_renderer_host_render_message_filter_h,v 1.21 2021/09/01 16:54:39 robert Exp $
 
 Index: content/browser/renderer_host/render_message_filter.h
 --- content/browser/renderer_host/render_message_filter.h.orig

@@ -1,4 +1,4 @@
-$OpenBSD$
+$OpenBSD: patch-content_renderer_renderer_blink_platform_impl_cc,v 1.32 2021/09/01 16:54:39 robert Exp $
 
 Index: content/renderer/renderer_blink_platform_impl.cc
 --- content/renderer/renderer_blink_platform_impl.cc.orig

@@ -1,4 +1,4 @@
-$OpenBSD: patch-sandbox_linux_services_libc_interceptor_cc,v 1.4 2020/07/17 20:23:08 robert Exp $
+$OpenBSD: patch-sandbox_linux_services_libc_interceptor_cc,v 1.5 2021/09/01 16:54:40 robert Exp $
 
 Index: sandbox/linux/services/libc_interceptor.cc
 --- sandbox/linux/services/libc_interceptor.cc.orig

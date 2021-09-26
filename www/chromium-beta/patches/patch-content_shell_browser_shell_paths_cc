@@ -1,4 +1,4 @@
-$OpenBSD$
+$OpenBSD: patch-content_shell_browser_shell_paths_cc,v 1.1 2021/09/01 16:54:39 robert Exp $
 
 Index: content/shell/browser/shell_paths.cc
 --- content/shell/browser/shell_paths.cc.orig

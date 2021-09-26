@@ -1,4 +1,4 @@
-$OpenBSD: patch-components_policy_tools_generate_policy_source_py,v 1.20 2020/07/17 20:23:08 robert Exp $
+$OpenBSD$
 
 Index: components/policy/tools/generate_policy_source.py
 --- components/policy/tools/generate_policy_source.py.orig
@@ -9,8 +9,8 @@ Index: components/policy/tools/generate_policy_source.py
      'chrome.linux': ['linux'],
 +    'chrome.openbsd': ['openbsd'],
      'chrome.mac': ['mac'],
--    'chrome.*': ['win', 'mac', 'linux'],
-+    'chrome.*': ['win', 'mac', 'linux', 'openbsd'],
-     'chrome.win7': ['win']
+-    'chrome.*': ['win', 'mac', 'linux', 'fuchsia'],
++    'chrome.*': ['win', 'mac', 'linux', 'fuchsia', 'openbsd'],
+     'chrome.win7': ['win'],
  }
  

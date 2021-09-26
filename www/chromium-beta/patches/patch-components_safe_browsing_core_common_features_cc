@@ -1,9 +1,9 @@
-$OpenBSD$
+$OpenBSD: patch-components_safe_browsing_core_common_features_cc,v 1.1 2021/09/01 16:54:39 robert Exp $
 
 Index: components/safe_browsing/core/common/features.cc
 --- components/safe_browsing/core/common/features.cc.orig
 +++ components/safe_browsing/core/common/features.cc
-@@ -106,7 +106,7 @@ const base::Feature
+@@ -119,7 +119,7 @@ const base::Feature
  
  const base::Feature kSafeBrowsingSeparateNetworkContexts {
    "SafeBrowsingSeparateNetworkContexts",
@@ -12,7 +12,7 @@ Index: components/safe_browsing/core/common/features.cc
        base::FEATURE_ENABLED_BY_DEFAULT
  #else
        base::FEATURE_DISABLED_BY_DEFAULT
-@@ -115,7 +115,7 @@ const base::Feature kSafeBrowsingSeparateNetworkContex
+@@ -128,7 +128,7 @@ const base::Feature kSafeBrowsingSeparateNetworkContex
  
  const base::Feature kSafeBrowsingRemoveCookies {
    "SafeBrowsingRemoveCookies",

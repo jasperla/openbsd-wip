@@ -1,9 +1,9 @@
-$OpenBSD$
+$OpenBSD: patch-chrome_browser_web_applications_web_app_provider_cc,v 1.1 2021/09/01 16:54:39 robert Exp $
 
 Index: chrome/browser/web_applications/web_app_provider.cc
 --- chrome/browser/web_applications/web_app_provider.cc.orig
 +++ chrome/browser/web_applications/web_app_provider.cc
-@@ -267,7 +267,7 @@ void WebAppProvider::CreateWebAppsSubsystems(Profile* 
+@@ -260,7 +260,7 @@ void WebAppProvider::CreateSubsystems(Profile* profile
          protocol_handler_manager.get());
  
      std::unique_ptr<UrlHandlerManager> url_handler_manager;
