@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.555 2021/03/22 18:04:53 robert Exp $
+# $OpenBSD: Makefile,v 1.586 2021/09/14 06:19:48 robert Exp $
+
+BROKEN-powerpc64 =	Check failed: false. OS architecture not handled. (powerpc64)
 
 USE_WXNEEDED=		Yes
 
@@ -11,7 +13,7 @@ DPB_PROPERTIES=		parallel parallel2
 
 COMMENT=		Chromium browser
 
-V=			93.0.4535.3
+V=			96.0.4651.0
 
 DISTNAME=		chromium-${V}
 
@@ -34,8 +36,6 @@ PERMIT_PACKAGE =	Yes
 
 MASTER_SITES=	https://commondatastorage.googleapis.com/chromium-browser-official/
 MASTER_SITES0=	http://nerd.hu/distfiles/
-
-FIX_CRLF_FILES=	third_party/vulkan_memory_allocator/src/vk_mem_alloc.h
 
 MODULES=	lang/python
 MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
@@ -70,11 +70,12 @@ WANTLIB += drm epoxy fontconfig freetype fribidi gmodule-2.0 graphite2
 WANTLIB += gthread-2.0 intl pangoft2-1.0 pcre pixman-1
 WANTLIB += plc4 plds4 util xcb-dri2 xcb-glx xcb-render xcb-shm
 WANTLIB += xml2 z
-WANTLIB += harfbuzz harfbuzz-subset
+WANTLIB += harfbuzz harfbuzz-subset harfbuzz-gobject
 WANTLIB += ffi png
 WANTLIB += iconv lzma
 WANTLIB += fido2 cbor usbhid crypto
 WANTLIB += gbm xkbcommon
+WANTLIB += tiff xshmfence
 
 RUN_DEPENDS=	devel/xdg-utils \
 		devel/desktop-file-utils \
@@ -94,7 +95,7 @@ BUILD_DEPENDS=	archivers/bzip2 \
 		x11/py-xcbgen \
 		${MODGCC4_CPPDEP}
 LIB_DEPENDS=	devel/harfbuzz \
-		devel/libexecinfo \
+		graphics/tiff \
 		security/nss \
 		textproc/libxslt \
 		x11/gtk+3 \
@@ -144,8 +145,9 @@ GN_ARGS=	enable_nacl=false \
 		treat_warnings_as_errors=false \
 		clang_use_chrome_plugins=false \
 		use_allocator=\"none\" \
-		fieldtrial_testing_like_official_build=true \
-		extra_cppflags=\"-idirafter ${LOCALBASE}/include -idirafter ${X11BASE}/include\"
+		disable_fieldtrial_testing_config=true \
+		extra_cppflags=\"-idirafter ${LOCALBASE}/include -idirafter ${X11BASE}/include\" \
+		fatal_linker_warnings=false
 
 # notyet
 GN_ARGS+=	use_vaapi=false
@@ -205,7 +207,6 @@ pre-configure:
 	@ln -sf ${TRUEPREFIX}/bin/node ${WRKSRC}/third_party/node/openbsd/node-openbsd/bin/node
 	${SUBST_CMD} ${WRKSRC}/build/gn_run_binary.py ${WRKSRC}/v8/tools/run.py \
 		${WRKSRC}/tools/protoc_wrapper/protoc_wrapper.py \
-		${WRKSRC}/build/util/python2_action.py \
 		${WRKSRC}/third_party/blink/renderer/build/scripts/run_with_pythonpath.py
 
 # Configuration consists of three steps:

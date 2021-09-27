@@ -12,38 +12,7 @@ Index: net/BUILD.gn
    net_configs += [ "//build/config/linux:libresolv" ]
  }
  
-@@ -1350,7 +1350,7 @@ component("net") {
-     }
-   }
- 
--  if (is_android || is_chromeos_ash) {
-+  if (is_android || is_chromeos_ash || is_openbsd) {
-     sources += [
-       "base/network_change_notifier_posix.cc",
-       "base/network_change_notifier_posix.h",
-@@ -1383,13 +1383,20 @@ component("net") {
-   }
- 
-   # Use getifaddrs() on POSIX platforms, except Linux.
--  if (is_posix && !is_linux && !is_chromeos) {
-+  if (is_posix && !is_linux && !is_chromeos && !is_openbsd) {
-     sources += [
-       "base/network_interfaces_getifaddrs.cc",
-       "base/network_interfaces_getifaddrs.h",
-     ]
-   }
- 
-+  if (is_openbsd) {
-+    sources += [
-+      "base/network_interfaces_getifaddrs.cc",
-+      "base/network_interfaces_getifaddrs.h",
-+    ]
-+  }
-+
-   if (use_nss_certs) {
-     sources += [
-       "cert/internal/system_trust_store_nss.h",
-@@ -1497,6 +1504,15 @@ component("net") {
+@@ -1209,6 +1209,15 @@ component("net") {
      ]
    }
  
@@ -56,10 +25,28 @@ Index: net/BUILD.gn
 +    ]
 +  }
 +
-   if (!disable_ftp_support) {
+   if (is_mac) {
      sources += [
-       "ftp/ftp_auth_cache.cc",
-@@ -4708,7 +4724,7 @@ test("net_unittests") {
+       "base/network_notification_thread_mac.cc",
+@@ -1345,7 +1354,7 @@ component("net") {
+     }
+   }
+ 
+-  if (is_android || is_chromeos_ash) {
++  if (is_android || is_chromeos_ash || is_openbsd) {
+     sources += [
+       "base/network_change_notifier_posix.cc",
+       "base/network_change_notifier_posix.h",
+@@ -1378,7 +1387,7 @@ component("net") {
+   }
+ 
+   # Use getifaddrs() on POSIX platforms, except Linux.
+-  if (is_posix && !is_linux && !is_chromeos) {
++  if ((is_posix && !is_linux && !is_chromeos) || is_openbsd) {
+     sources += [
+       "base/network_interfaces_getifaddrs.cc",
+       "base/network_interfaces_getifaddrs.h",
+@@ -4688,7 +4697,7 @@ test("net_unittests") {
    }
  
    # Use getifaddrs() on POSIX platforms, except Linux and Android.

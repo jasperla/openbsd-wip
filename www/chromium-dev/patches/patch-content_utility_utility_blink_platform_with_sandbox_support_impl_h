@@ -12,7 +12,7 @@ Index: content/utility/utility_blink_platform_with_sandbox_support_impl.h
  #include "components/services/font/public/cpp/font_loader.h"  // nogncheck
  #include "third_party/skia/include/core/SkRefCnt.h"           // nogncheck
  #endif
-@@ -33,10 +33,10 @@ class UtilityBlinkPlatformWithSandboxSupportImpl : pub
+@@ -39,10 +39,10 @@ class UtilityBlinkPlatformWithSandboxSupportImpl : pub
    blink::WebSandboxSupport* GetSandboxSupport() override;
  
   private:
@@ -24,4 +24,4 @@ Index: content/utility/utility_blink_platform_with_sandbox_support_impl.h
 +#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
    sk_sp<font_service::FontLoader> font_loader_;
  #endif
- 
+ };

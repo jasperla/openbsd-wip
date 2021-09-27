@@ -3,7 +3,7 @@ $OpenBSD$
 Index: chrome/browser/ui/views/first_run_dialog.cc
 --- chrome/browser/ui/views/first_run_dialog.cc.orig
 +++ chrome/browser/ui/views/first_run_dialog.cc
-@@ -33,7 +33,7 @@
+@@ -38,7 +38,7 @@
  
  namespace {
  
@@ -12,12 +12,12 @@ Index: chrome/browser/ui/views/first_run_dialog.cc
  void InitCrashReporterIfEnabled(bool enabled) {
    if (!crash_reporter::IsCrashpadEnabled() && enabled)
      breakpad::InitCrashReporter(std::string());
-@@ -121,7 +121,7 @@ bool FirstRunDialog::Accept() {
+@@ -126,7 +126,7 @@ bool FirstRunDialog::Accept() {
  
  #if defined(OS_MAC)
    ChangeMetricsReportingState(report_crashes_->GetChecked());
 -#else
 +#elif !defined(OS_BSD)
-   ChangeMetricsReportingStateWithReply(
-       report_crashes_->GetChecked(),
-       base::BindOnce(&InitCrashReporterIfEnabled));
+ #if BUILDFLAG(IS_CHROMEOS_ASH)
+   metrics::structured::NeutrinoDevicesLog(
+       metrics::structured::NeutrinoDevicesLocation::kFirstRunDialog);

@@ -1,9 +1,9 @@
-$OpenBSD$
+$OpenBSD: patch-chrome_browser_ui_views_chrome_browser_main_extra_parts_views_cc,v 1.30 2021/09/01 16:54:38 robert Exp $
 
 Index: chrome/browser/ui/views/chrome_browser_main_extra_parts_views.cc
 --- chrome/browser/ui/views/chrome_browser_main_extra_parts_views.cc.orig
 +++ chrome/browser/ui/views/chrome_browser_main_extra_parts_views.cc
-@@ -42,7 +42,7 @@
+@@ -41,7 +41,7 @@
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
@@ -12,7 +12,7 @@ Index: chrome/browser/ui/views/chrome_browser_main_extra_parts_views.cc
  #include <sys/stat.h>
  #include <sys/types.h>
  #include <unistd.h>
-@@ -137,7 +137,7 @@ void ChromeBrowserMainExtraPartsViews::PreProfileInit(
+@@ -136,7 +136,7 @@ void ChromeBrowserMainExtraPartsViews::PreProfileInit(
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.

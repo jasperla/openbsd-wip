@@ -1,0 +1,41 @@
+$OpenBSD$
+
+Index: chrome/browser/renderer_context_menu/render_view_context_menu.cc
+--- chrome/browser/renderer_context_menu/render_view_context_menu.cc.orig
++++ chrome/browser/renderer_context_menu/render_view_context_menu.cc
+@@ -228,7 +228,7 @@
+ #include "ui/base/resource/resource_bundle.h"
+ #endif
+ 
+-#if (defined(OS_WIN) || defined(OS_CHROMEOS) || defined(OS_LINUX)) && \
++#if (defined(OS_WIN) || defined(OS_CHROMEOS) || defined(OS_LINUX) || defined(OS_BSD)) && \
+     BUILDFLAG(GOOGLE_CHROME_BRANDING)
+ #include "chrome/browser/lens/region_search/lens_region_search_controller.h"
+ #endif
+@@ -617,7 +617,7 @@ bool ShouldUseShareMenu() {
+ }
+ 
+ #if BUILDFLAG(IS_CHROMEOS_ASH) || BUILDFLAG(IS_CHROMEOS_LACROS) ||    \
+-    (defined(OS_WIN) || defined(OS_CHROMEOS) || defined(OS_LINUX)) && \
++    (defined(OS_WIN) || defined(OS_CHROMEOS) || defined(OS_LINUX) || defined(OS_BSD)) && \
+         BUILDFLAG(GOOGLE_CHROME_BRANDING)
+ ui::MenuSourceType GetMenuSourceType(int event_flags) {
+   if (event_flags & ui::EF_LEFT_MOUSE_BUTTON)
+@@ -1662,7 +1662,7 @@ void RenderViewContextMenu::AppendPageItems() {
+                                   IDS_CONTENT_CONTEXT_SAVEPAGEAS);
+   menu_model_.AddItemWithStringId(IDC_PRINT, IDS_CONTENT_CONTEXT_PRINT);
+   AppendMediaRouterItem();
+-#if (defined(OS_WIN) || defined(OS_CHROMEOS) || defined(OS_LINUX)) && \
++#if (defined(OS_WIN) || defined(OS_CHROMEOS) || defined(OS_LINUX) || defined(OS_BSD)) && \
+     BUILDFLAG(GOOGLE_CHROME_BRANDING)
+   if (IsLensRegionSearchEnabled()) {
+     AppendLensRegionSearchItem();
+@@ -3319,7 +3319,7 @@ void RenderViewContextMenu::ExecSearchLensForImage() {
+ }
+ 
+ void RenderViewContextMenu::ExecLensRegionSearch(int event_flags) {
+-#if (defined(OS_WIN) || defined(OS_CHROMEOS) || defined(OS_LINUX)) && \
++#if (defined(OS_WIN) || defined(OS_CHROMEOS) || defined(OS_LINUX) || defined(OS_BSD)) && \
+     BUILDFLAG(GOOGLE_CHROME_BRANDING)
+   if (!lens_region_search_controller_)
+     lens_region_search_controller_ =

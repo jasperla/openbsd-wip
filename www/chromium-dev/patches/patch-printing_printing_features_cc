@@ -1,14 +1,14 @@
-$OpenBSD: patch-printing_printing_features_cc,v 1.2 2021/01/20 07:28:11 robert Exp $
+$OpenBSD$
 
 Index: printing/printing_features.cc
 --- printing/printing_features.cc.orig
 +++ printing/printing_features.cc
-@@ -44,7 +44,7 @@ bool ShouldPrintUsingXps(bool source_is_pdf) {
- #endif  // defined(OS_WIN)
+@@ -8,7 +8,7 @@
+ #include "printing/buildflags/buildflags.h"
  
  #if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || \
 -    defined(OS_CHROMEOS)
 +    defined(OS_CHROMEOS) || defined(OS_BSD)
- // Enables printing interactions with the operating system to be performed
- // out-of-process.
- const base::Feature kEnableOopPrintDrivers{"EnableOopPrintDrivers",
+ #include "base/metrics/field_trial_params.h"
+ #endif
+ 

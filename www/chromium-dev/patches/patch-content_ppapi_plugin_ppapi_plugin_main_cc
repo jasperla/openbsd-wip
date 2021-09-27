@@ -1,4 +1,4 @@
-$OpenBSD: patch-content_ppapi_plugin_ppapi_plugin_main_cc,v 1.16 2021/01/20 07:28:10 robert Exp $
+$OpenBSD: patch-content_ppapi_plugin_ppapi_plugin_main_cc,v 1.21 2021/09/01 16:54:39 robert Exp $
 
 Index: content/ppapi_plugin/ppapi_plugin_main.cc
 --- content/ppapi_plugin/ppapi_plugin_main.cc.orig
