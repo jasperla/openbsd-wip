@@ -1,16 +1,19 @@
 # $OpenBSD$
 
 COMMENT =	reproducible package manager for Unix
-DISTNAME =	nix-2.3.13
-EXTRACT_SUFX =	.tar.xz
+DISTNAME =	nix-2.3.15
+GH_ACCOUNT =	klemensn
+GH_PROJECT =	nix
+GH_TAGNAME =	efe27327499e39feebcc3aef177ae84de848c09f
+#EXTRACT_SUFX =	.tar.xz
 CATEGORIES =	devel
 
 # These four must always have the same major and minor!
-LIB_VER =	0.0	# 2.3.13
-SHARED_LIBS +=	nixexpr		${LIB_VER}
-SHARED_LIBS +=	nixmain		${LIB_VER}
-SHARED_LIBS +=	nixstore	${LIB_VER}
-SHARED_LIBS +=	nixutil		${LIB_VER}
+SO_VERSION =	0.0	# 2.3.15
+SHARED_LIBS +=	nixexpr		${SO_VERSION}
+SHARED_LIBS +=	nixmain		${SO_VERSION}
+SHARED_LIBS +=	nixstore	${SO_VERSION}
+SHARED_LIBS +=	nixutil		${SO_VERSION}
 
 HOMEPAGE =	https://nixos.org/nix/
 
@@ -22,7 +25,7 @@ PERMIT_PACKAGE =	Yes
 #WANTLIB += brotlidec brotlienc bz2 c crypto curl lzma m readline
 #WANTLIB += sodium sqlite3
 
-MASTER_SITES =	https://nixos.org/releases/nix/${DISTNAME}/
+#MASTER_SITES =	https://nixos.org/releases/nix/${DISTNAME}/
 
 # C++17
 COMPILER =	base-clang ports-gcc
@@ -48,14 +51,19 @@ TEST_DEPENDS =	${PKGPATH} \
 # Bash specific code using `declare' for associative arrays:
 # ./configure[7906]: syntax error: `(' unexpected
 CONFIGURE_SCRIPT =	${LOCALBASE}/bin/bash ./configure
-CONFIGURE_STYLE =	gnu
+#CONFIGURE_STYLE =	gnu
+CONFIGURE_STYLE =	autoreconf
+AUTORECONF =		./bootstrap.sh
+AUTOMAKE_VERSION =	1.16
+AUTOCONF_VERSION =	2.71
 CONFIGURE_ENV =		CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
 			LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib" \
 			EDITLINE_CFLAGS="-I/usr/include/readline -DREADLINE" \
 			EDITLINE_LIBS="-lreadline"
 
 USE_GMAKE =	Yes
-MAKE_FLAGS =	LIBnixexpr_VERSION="${LIBnixexpr_VERSION}" V=1
+MAKE_FLAGS =	SO_VERSION=${SO_VERSION} \
+		V=1
 
 FAKE_FLAGS =	sysconfdir="${PREFIX}/share/examples/nix"
 
