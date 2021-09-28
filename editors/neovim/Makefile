@@ -19,13 +19,13 @@ LUAJIT_VER =	787736990ac3b7d5ceaba2697c7d0f58f77bb782
 
 MASTER_SITES0 =	https://github.com/luvit/luv/releases/download/${LUV_VER}/
 MASTER_SITES1 = https://github.com/LuaJIT/LuaJIT/archive/
-MASTER_SITES2 = https://github.com/libmpack/libmpack-lua/releases/download/1.0.8/
-MASTER_SITES3 = http://www.inf.puc-rio.br/~roberto/lpeg/
+#MASTER_SITES2 = https://github.com/libmpack/libmpack-lua/releases/download/1.0.8/
+#MASTER_SITES3 = http://www.inf.puc-rio.br/~roberto/lpeg/
 DISTFILES =	${DISTNAME}${EXTRACT_SUFX} \
 		${LUV}${EXTRACT_SUFX}:0 \
-		${LUAJIT_VER}${EXTRACT_SUFX}:1 \
-		libmpack-lua-1.0.8${EXTRACT_SUFX}:2 \
-		lpeg-1.0.2${EXTRACT_SUFX}:3
+		${LUAJIT_VER}${EXTRACT_SUFX}:1
+#libmpack-lua-1.0.8${EXTRACT_SUFX}:2 \
+#lpeg-1.0.2${EXTRACT_SUFX}:3
 
 # Apache 2.0 + Vim License
 PERMIT_PACKAGE =	Yes
@@ -38,10 +38,15 @@ WANTLIB += tree-sitter unibilium util uv vterm
 COMPILER =		base-clang ports-gcc base-gcc
 
 MODULES =		devel/cmake \
+			lang/lua \
 			textproc/intltool
+
+# XXX comment.
+MODLUA_VERSION =	5.1
 
 BUILD_DEPENDS =		${RUN_DEPENDS} \
 			devel/gperf \
+			devel/lpeg \
 			devel/lua-bitop # XXX needed?
 
 LIB_DEPENDS =		devel/gettext,-runtime \
@@ -54,16 +59,18 @@ LIB_DEPENDS =		devel/gettext,-runtime \
 
 RUN_DEPENDS +=		devel/libmpack/lua \
 			devel/libmpack/main \
-			devel/desktop-file-utils
+			devel/desktop-file-utils \
+			devel/lua-compat53
 
 CONFIGURE_ARGS +=	-DUSE_BUNDLED=OFF \
 			-DLUA_PRG=${WRKDIR}/deps/luajit/bin/luajit-2.1.0-beta3 \
 			-DLUAJIT_INCLUDE_DIR=${WRKDIR}/deps/luajit/include/luajit-2.1 \
 			-DLUAJIT_LIBRARY=${WRKDIR}/deps/luajit/lib/libluajit-5.1.a \
-			-DLIBLUV_INCLUDE_DIR=${WRKBUILD}/deps/luv/include \
-			-DLIBLUV_LIBRARY=${WRKBUILD}/deps/luv/lib/libluv.a
+			-DLIBLUV_INCLUDE_DIR=${WRKDIR}/deps/luv/include \
+			-DLIBLUV_LIBRARY=${WRKDIR}/deps/luv/lib/libluv.a
+#-DNVIM_EXE_EXTRA_LINK="-l${MODLUA_LIBDIR}/compat53/string.so -l${MODLUA_LIBDIR}/compat53/table.so ${MODLUA_LIBDIR}/compat53/utf8.so"
 
-MAKE_ENV +=		LUA_PATH=${WRKBUILD}/deps/luajit/lib/lua/5.1/
+#MAKE_ENV +=		LUA_PATH=${WRKBUILD}/deps/luajit/lib/lua/5.1/
 
 # Tests need gmake
 USE_GMAKE = Yes
@@ -80,8 +87,8 @@ post-extract:
 	mkdir ${WRKDIST}/static-deps
 	mv ${WRKDIR}/LuaJIT-${LUAJIT_VER} ${WRKDIST}/static-deps/luajit
 	mv ${WRKDIR}/luv-${LUV_VER} ${WRKDIST}/static-deps/luv
-	mv ${WRKDIR}/libmpack-lua-1.0.8 ${WRKDIST}/static-deps/libmpack-lua
-	mv ${WRKDIR}/lpeg-1.0.2 ${WRKDIST}/static-deps/lpeg
+	#mv ${WRKDIR}/libmpack-lua-1.0.8 ${WRKDIST}/static-deps/libmpack-lua
+	#mv ${WRKDIR}/lpeg-1.0.2 ${WRKDIST}/static-deps/lpeg
 
 # FIXME: comment
 # Build libluv first as a static library. We opted not to create a libluv
@@ -120,11 +127,11 @@ pre-configure:
 		-DCMAKE_COLOR_MAKEFILE=OFF \
 		-DCMAKE_SKIP_INSTALL_ALL_DEPENDENCY=ON \
 		-DCMAKE_SUPPRESS_REGENERATION=ON \
-		-DCMAKE_INSTALL_PREFIX=${WRKBUILD}/deps/luv \
+		-DCMAKE_INSTALL_PREFIX=${WRKDIR}/deps/luv \
 		-DLUA_BUILD_TYPE=System \
-		-DLUA_INCLUDE_DIR=${WRKDIR}/deps/luajit/include \
-		-DLUA_LIBRARIES=${WRKDIR}/deps/luajit/lib \
-		-DWITH_LUA_ENGINE=Lua \
+		-DLUAJIT_INCLUDE_DIR=${WRKDIR}/deps/luajit/include/luajit-2.1 \
+		-DLUAJIT_LIBRARIES=${WRKDIR}/deps/luajit/lib \
+		-DWITH_LUA_ENGINE=LuaJIT \
 		${WRKSRC}/static-deps/luv
 	cd ${WRKBUILD}/build/luv && \
 		${SETENV} ${MAKE_ENV} VERBOSE=1 \
@@ -132,23 +139,23 @@ pre-configure:
 	cd ${WRKBUILD}/build/luv && \
 		${SETENV} ${MAKE_ENV} VERBOSE=1 \
 		${MAKE_PROGRAM} install
-	mkdir -p ${WRKDIR}/deps/luajit/lib/lua/5.1
+	#mkdir -p ${WRKDIR}/deps/luajit/lib/lua/5.1
 
 	# XXX should this be a static obj built in to neovim?
-	cp -r ${WRKSRC}/static-deps/libmpack-lua ${WRKBUILD}/build/libmpack-lua
-	cd ${WRKBUILD}/build/libmpack-lua && \
-		${MAKE_ENV} ${CC} ${CFLAGS} -I ${WRKDIR}/deps/luajit/include/luajit-2.1 ${LDFLAGS} -shared -o lmpack.so lmpack.c
-	cp ${WRKBUILD}/build/libmpack-lua/lmpack.so ${WRKDIR}/deps/luajit/lib/lua/5.1/
+	#cp -r ${WRKSRC}/static-deps/libmpack-lua ${WRKBUILD}/build/libmpack-lua
+	#cd ${WRKBUILD}/build/libmpack-lua && \
+	#	${MAKE_ENV} ${CC} ${CFLAGS} -I ${WRKDIR}/deps/luajit/include/luajit-2.1 ${LDFLAGS} -shared -o lmpack.so lmpack.c
+	#cp ${WRKBUILD}/build/libmpack-lua/lmpack.so ${WRKDIR}/deps/luajit/lib/lua/5.1/
 
-	cp -r ${WRKSRC}/static-deps/lpeg ${WRKBUILD}/build/lpeg
-	cd ${WRKBUILD}/build/lpeg && \
-		${MAKE_ENV} ${MAKE} CC=${CC} \
-		LUADIR=${WRKDIR}/deps/luajit/include/luajit-2.1 \
-		COPT="${CFLAGS}" \
-		MAKE=${MAKE} lpeg.so \
-		DLLFLAGS="-shared"
-	#DLLFLAGS="${LDFLAGS} -L${WRKDIR}/deps/luajit/lib -lluajit-5.1 -shared"
-	cp ${WRKBUILD}/build/lpeg/lpeg.so ${WRKDIR}/deps/luajit/lib/lua/5.1/
+	#cp -r ${WRKSRC}/static-deps/lpeg ${WRKBUILD}/build/lpeg
+	#cd ${WRKBUILD}/build/lpeg && \
+	#	${MAKE_ENV} ${MAKE} CC=${CC} \
+	#	LUADIR=${WRKDIR}/deps/luajit/include/luajit-2.1 \
+	#	COPT="${CFLAGS}" \
+	#	MAKE=${MAKE} lpeg.so \
+	#	DLLFLAGS="-shared"
+	##DLLFLAGS="${LDFLAGS} -L${WRKDIR}/deps/luajit/lib -lluajit-5.1 -shared"
+	#cp ${WRKBUILD}/build/lpeg/lpeg.so ${WRKDIR}/deps/luajit/lib/lua/5.1/
 
 # These are the "old tests". There is also a new suite, but we would need the
 # "busted" test suite for Lua, which is not yet ported.

@@ -6,14 +6,12 @@ luajit (we use lua instead).
 Index: src/nvim/CMakeLists.txt
 --- src/nvim/CMakeLists.txt.orig
 +++ src/nvim/CMakeLists.txt
-@@ -414,10 +414,6 @@ endforeach()
- 
- # Our dependencies come first.
- 
--if (CMAKE_SYSTEM_NAME MATCHES "OpenBSD")
--  list(APPEND NVIM_LINK_LIBRARIES pthread c++abi)
--endif()
--
- if (LibIntl_FOUND)
-   list(APPEND NVIM_LINK_LIBRARIES ${LibIntl_LIBRARY})
+@@ -456,7 +456,7 @@ if(UNIX)
+   )
  endif()
+ 
+-set(NVIM_EXEC_LINK_LIBRARIES ${NVIM_LINK_LIBRARIES} ${LUA_PREFERRED_LIBRARIES})
++set(NVIM_EXEC_LINK_LIBRARIES ${NVIM_LINK_LIBRARIES} ${LUA_PREFERRED_LIBRARIES} ${NVIM_EXE_EXTRA_LINK})
+ 
+ # Add IPO flags (for LTO), or error if CMake does not know the flags. #8654
+ if(POLICY CMP0069)

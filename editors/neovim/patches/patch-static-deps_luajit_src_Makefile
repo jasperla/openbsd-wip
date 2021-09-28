@@ -3,6 +3,19 @@ $OpenBSD$
 Index: static-deps/luajit/src/Makefile
 --- static-deps/luajit/src/Makefile.orig
 +++ static-deps/luajit/src/Makefile
+@@ -71,10 +71,10 @@ CCWARN= -Wall
+ # as dynamic mode.
+ #
+ # Mixed mode creates a static + dynamic library and a statically linked luajit.
+-BUILDMODE= mixed
++#BUILDMODE= mixed
+ #
+ # Static mode creates a static library and a statically linked luajit.
+-#BUILDMODE= static
++BUILDMODE= static
+ #
+ # Dynamic mode creates a dynamic library and a dynamically linked luajit.
+ # Note: this executable will only run when the library is installed!
 @@ -712,7 +712,7 @@ $(LUAJIT_SO): $(LJVMCORE_O)
  
  $(LUAJIT_T): $(TARGET_O) $(LUAJIT_O) $(TARGET_DEP)
