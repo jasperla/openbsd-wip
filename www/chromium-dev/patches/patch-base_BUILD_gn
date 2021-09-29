@@ -52,7 +52,7 @@ Index: base/BUILD.gn
        sources += [
          "allocator/allocator_shim_override_cpp_symbols.h",
          "allocator/allocator_shim_override_glibc_weak_symbols.h",
-@@ -2120,6 +2131,30 @@ component("base") {
+@@ -2123,6 +2134,30 @@ component("base") {
          "linux_util.h",
        ]
      }

@@ -30,7 +30,7 @@ Index: chrome/app/generated_resources.grd
          <message name="IDS_ABOUT_BROWSER_SWITCH_TITLE" desc="about:browser-switch page title">
            Legacy Browser Support
          </message>
-@@ -7819,7 +7819,7 @@ Keep your key file in a safe place. You will need it t
+@@ -7835,7 +7835,7 @@ Keep your key file in a safe place. You will need it t
          Google Pay
        </message>
  
@@ -39,7 +39,7 @@ Index: chrome/app/generated_resources.grd
          <message name="IDS_SHOW_WINDOW_DECORATIONS" desc="The label of a radio button in the options dialog for using the system title bar and borders.">
            Use system title bar and borders
          </message>
-@@ -8890,7 +8890,7 @@ Please help our engineers fix this problem. Tell us wh
+@@ -8906,7 +8906,7 @@ Please help our engineers fix this problem. Tell us wh
          Set as default
        </message>
  

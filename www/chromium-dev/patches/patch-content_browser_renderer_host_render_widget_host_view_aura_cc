@@ -21,6 +21,15 @@ Index: content/browser/renderer_host/render_widget_host_view_aura.cc
    BrowserAccessibilityManager* manager =
        host()->GetOrCreateRootBrowserAccessibilityManager();
    if (manager && manager->GetRoot())
+@@ -1507,7 +1507,7 @@ bool RenderWidgetHostViewAura::ShouldDoLearning() {
+   return GetTextInputManager() && GetTextInputManager()->should_do_learning();
+ }
+ 
+-#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_CHROMEOS)
++#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
+ bool RenderWidgetHostViewAura::SetCompositionFromExistingText(
+     const gfx::Range& range,
+     const std::vector<ui::ImeTextSpan>& ui_ime_text_spans) {
 @@ -2315,7 +2315,7 @@ bool RenderWidgetHostViewAura::NeedsInputGrab() {
  }
  

@@ -12,7 +12,7 @@ Index: chrome/browser/enterprise/connectors/device_trust/signals/signals_service
  #include "base/check.h"
  #include "chrome/browser/browser_process.h"
  #include "chrome/browser/enterprise/connectors/device_trust/signals/decorators/browser/browser_signals_decorator.h"
-@@ -27,7 +27,7 @@ std::unique_ptr<SignalsService> CreateSignalsService()
+@@ -28,7 +28,7 @@ std::unique_ptr<SignalsService> CreateSignalsService()
  
    decorators.push_back(std::make_unique<CommonSignalsDecorator>());
  

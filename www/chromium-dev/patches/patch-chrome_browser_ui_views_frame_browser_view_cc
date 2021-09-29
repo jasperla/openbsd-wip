@@ -3,7 +3,7 @@ $OpenBSD: patch-chrome_browser_ui_views_frame_browser_view_cc,v 1.38 2021/09/01 
 Index: chrome/browser/ui/views/frame/browser_view.cc
 --- chrome/browser/ui/views/frame/browser_view.cc.orig
 +++ chrome/browser/ui/views/frame/browser_view.cc
-@@ -1636,7 +1636,7 @@ void BrowserView::TabDraggingStatusChanged(bool is_dra
+@@ -1672,7 +1672,7 @@ void BrowserView::TabDraggingStatusChanged(bool is_dra
    // CrOS cleanup is done.
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
