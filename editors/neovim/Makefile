@@ -10,24 +10,18 @@ CATEGORIES =	editors devel
 HOMEPAGE =	https://neovim.io
 MAINTAINER =	Edd Barrett <edd@openbsd.org>
 
-# XXX: Big-ass comment explaining why we are doing this evil.
-# Neovim must be statically linked with libluv, which isn't yet ported.
 LUV_VER =	1.30.1-1
-LUV =		luv-${LUV_VER}
 LUAJIT_VER =	787736990ac3b7d5ceaba2697c7d0f58f77bb782
-# XXX luajit distfile has a silly name.
 
 MASTER_SITES0 =	https://github.com/luvit/luv/releases/download/${LUV_VER}/
 MASTER_SITES1 = https://github.com/LuaJIT/LuaJIT/archive/
-#MASTER_SITES2 = https://github.com/libmpack/libmpack-lua/releases/download/1.0.8/
-#MASTER_SITES3 = http://www.inf.puc-rio.br/~roberto/lpeg/
 DISTFILES =	${DISTNAME}${EXTRACT_SUFX} \
-		${LUV}${EXTRACT_SUFX}:0 \
-		${LUAJIT_VER}${EXTRACT_SUFX}:1
-#libmpack-lua-1.0.8${EXTRACT_SUFX}:2 \
-#lpeg-1.0.2${EXTRACT_SUFX}:3
+		luv-${LUV_VER}${EXTRACT_SUFX}:0 \
+		luajit-{}${LUAJIT_VER}${EXTRACT_SUFX}:1
 
-# Apache 2.0 + Vim License
+# Neovim: Apache 2.0 + Vim License
+# LuaJIT: MIT + public domain
+# libluv: Apache 2.0
 PERMIT_PACKAGE =	Yes
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
@@ -41,7 +35,9 @@ MODULES =		devel/cmake \
 			lang/lua \
 			textproc/intltool
 
-# XXX comment.
+# LuaJIT is binary compatible with Lua-5.1 extension modules, so we can use
+# them directly, even on architectures where we will be embedding LuaJIT.
+# https://luajit.org/extensions.html
 MODLUA_VERSION =	5.1
 
 BUILD_DEPENDS =		${RUN_DEPENDS} \
@@ -63,59 +59,61 @@ RUN_DEPENDS +=		devel/libmpack/lua \
 			devel/lua-compat53
 
 CONFIGURE_ARGS +=	-DUSE_BUNDLED=OFF \
-			-DLUA_PRG=${WRKDIR}/deps/luajit/bin/luajit-2.1.0-beta3 \
-			-DLUAJIT_INCLUDE_DIR=${WRKDIR}/deps/luajit/include/luajit-2.1 \
-			-DLUAJIT_LIBRARY=${WRKDIR}/deps/luajit/lib/libluajit-5.1.a \
-			-DLIBLUV_INCLUDE_DIR=${WRKDIR}/deps/luv/include \
-			-DLIBLUV_LIBRARY=${WRKDIR}/deps/luv/lib/libluv.a
-#-DNVIM_EXE_EXTRA_LINK="-l${MODLUA_LIBDIR}/compat53/string.so -l${MODLUA_LIBDIR}/compat53/table.so ${MODLUA_LIBDIR}/compat53/utf8.so"
-
-#MAKE_ENV +=		LUA_PATH=${WRKBUILD}/deps/luajit/lib/lua/5.1/
+			-DLUA_PRG=${STATIC_DEPS_INST}/bin/luajit-2.1.0-beta3 \
+			-DLUAJIT_INCLUDE_DIR=${STATIC_DEPS_INST}/include/luajit-2.1 \
+			-DLUAJIT_LIBRARY=${STATIC_DEPS_INST}/lib/libluajit-5.1.a \
+			-DLIBLUV_INCLUDE_DIR=${STATIC_DEPS_INST}/include \
+			-DLIBLUV_LIBRARY=${STATIC_DEPS_INST}/lib/libluv.a
 
 # Tests need gmake
 USE_GMAKE = Yes
 # `test_startup_utf8.vim' requires either bash or zsh
 MODULES +=	lang/python
 MODPY_RUNDEP =	No
-MODPY_BUILDDEP =	No
+MODPY_BUILDDEP =No
 TEST_DEPENDS =	shells/bash \
 		editors/py-neovim \
 		editors/py-neovim${MODPY_FLAVOR}
 
-# Move static dependency source code under WRKDIST so that we can patch them.
+# Move static deps source code under WRKDIST so that they can be patched.
+STATIC_DEPS_WRKSRC=${WRKDIST}/static-deps/
 post-extract:
-	mkdir ${WRKDIST}/static-deps
-	mv ${WRKDIR}/LuaJIT-${LUAJIT_VER} ${WRKDIST}/static-deps/luajit
-	mv ${WRKDIR}/luv-${LUV_VER} ${WRKDIST}/static-deps/luv
-	#mv ${WRKDIR}/libmpack-lua-1.0.8 ${WRKDIST}/static-deps/libmpack-lua
-	#mv ${WRKDIR}/lpeg-1.0.2 ${WRKDIST}/static-deps/lpeg
+	mkdir ${STATIC_DEPS_WRKSRC}
+	mv ${WRKDIR}/LuaJIT-${LUAJIT_VER} ${STATIC_DEPS_WRKSRC}/luajit
+	mv ${WRKDIR}/luv-${LUV_VER} ${STATIC_DEPS_WRKSRC}/luv
 
-# FIXME: comment
-# Build libluv first as a static library. We opted not to create a libluv
+# Build LuaJIT and libluv as static libraries. We opted not to create a libluv
 # port because it must be built for a specific Lua version and we don't know
 # what version future ports might need. Currently no other port requires
 # libluv, so it's simpler to build a static library here.
 #
-# Most of this target is lifted from ${MODCMAKE_configure} in cmake.port.mk.
-# Unfortunately we can't use it directly, as some of the arguments make
-# assumptions that can't work for us here.
-DEPS_DIR=${WRKBUILD}/deps
+# Most of the libluv target is lifted from ${MODCMAKE_configure} in
+# cmake.port.mk. Unfortunately we can't use it directly, as some of the
+# arguments make assumptions that can't work for us here.
+#
+# Also Neovim plugins expect a very specific version of LuaJIT, so it only
+# really makes sense to embed it.
+STATIC_DEPS_WRKBUILD=${WRKBUILD}/static-deps-build
+STATIC_DEPS_INST=${WRKBUILD}/static-deps-inst
 pre-configure:
-	mkdir -p ${WRKBUILD}/build
-	mkdir -p ${WRKBUILD}/deps
-	# We can't build LuaJIT out-of-src-dir, so copy it so that we can do
-	# SEPARATE_BUILD=Yes.
-	cp -r ${WRKSRC}/static-deps/luajit ${WRKBUILD}/build/luajit
-	cd ${WRKBUILD}/build/luajit && \
-		${SETENV} ${MAKE_ENV} VERBOSE=1 ${MAKE_PROGRAM} PREFIX=${WRKDIR}/deps/luajit
-	cd ${WRKBUILD}/build/luajit && \
+	mkdir -p ${STATIC_DEPS_WRKBUILD} ${STATIC_DEPS_PREFIX}
+
+	# Build LuaJIT.
+	# We can't build LuaJIT out of its src dir, so copy it so that we can
+	# support SEPARATE_BUILD.
+	cp -r ${STATIC_DEPS_WRKSRC}/luajit ${STATIC_DEPS_WRKBUILD}/luajit
+	cd ${STATIC_DEPS_WRKBUILD}/luajit && \
+		${SETENV} ${MAKE_ENV} VERBOSE=1 ${MAKE_PROGRAM} \
+		PREFIX=${STATIC_DEPS_INST}
+	cd ${STATIC_DEPS_WRKBUILD}/luajit && \
 		${SETENV} ${MAKE_ENV} VERBOSE=1 \
-		${MAKE_PROGRAM} install PREFIX=${WRKDIR}/deps/luajit \
+		${MAKE_PROGRAM} install PREFIX=${STATIC_DEPS_INST} \
 		CC=${CC} CCOPT="${CFLAGS}" \
 		CCOPT_x86="" Q=""
 
-	mkdir -p ${WRKBUILD}/build/luv
-	cd ${WRKBUILD}/build/luv && \
+	# Build luv.
+	mkdir -p ${STATIC_DEPS_WRKBUILD}/luv
+	cd ${STATIC_DEPS_WRKBUILD}/luv && \
 		${SETENV} CC="${CC}" \
 		CXX="${CXX}" \
 		CFLAGS="${CFLAGS}" \
@@ -127,41 +125,26 @@ pre-configure:
 		-DCMAKE_COLOR_MAKEFILE=OFF \
 		-DCMAKE_SKIP_INSTALL_ALL_DEPENDENCY=ON \
 		-DCMAKE_SUPPRESS_REGENERATION=ON \
-		-DCMAKE_INSTALL_PREFIX=${WRKDIR}/deps/luv \
+		-DCMAKE_INSTALL_PREFIX=${STATIC_DEPS_INST} \
 		-DLUA_BUILD_TYPE=System \
-		-DLUAJIT_INCLUDE_DIR=${WRKDIR}/deps/luajit/include/luajit-2.1 \
-		-DLUAJIT_LIBRARIES=${WRKDIR}/deps/luajit/lib \
+		-DLUAJIT_INCLUDE_DIR=${STATIC_DEPS_INST}/include/luajit-2.1 \
+		-DLUAJIT_LIBRARIES=${STATIC_DEPS_INST}/luajit/lib \
 		-DWITH_LUA_ENGINE=LuaJIT \
-		${WRKSRC}/static-deps/luv
-	cd ${WRKBUILD}/build/luv && \
+		${STATIC_DEPS_WRKSRC}/luv
+	cd ${STATIC_DEPS_WRKBUILD}/luv && \
 		${SETENV} ${MAKE_ENV} VERBOSE=1 \
 		${MAKE_PROGRAM}
-	cd ${WRKBUILD}/build/luv && \
+	cd ${STATIC_DEPS_WRKBUILD}/luv && \
 		${SETENV} ${MAKE_ENV} VERBOSE=1 \
 		${MAKE_PROGRAM} install
-	#mkdir -p ${WRKDIR}/deps/luajit/lib/lua/5.1
-
-	# XXX should this be a static obj built in to neovim?
-	#cp -r ${WRKSRC}/static-deps/libmpack-lua ${WRKBUILD}/build/libmpack-lua
-	#cd ${WRKBUILD}/build/libmpack-lua && \
-	#	${MAKE_ENV} ${CC} ${CFLAGS} -I ${WRKDIR}/deps/luajit/include/luajit-2.1 ${LDFLAGS} -shared -o lmpack.so lmpack.c
-	#cp ${WRKBUILD}/build/libmpack-lua/lmpack.so ${WRKDIR}/deps/luajit/lib/lua/5.1/
-
-	#cp -r ${WRKSRC}/static-deps/lpeg ${WRKBUILD}/build/lpeg
-	#cd ${WRKBUILD}/build/lpeg && \
-	#	${MAKE_ENV} ${MAKE} CC=${CC} \
-	#	LUADIR=${WRKDIR}/deps/luajit/include/luajit-2.1 \
-	#	COPT="${CFLAGS}" \
-	#	MAKE=${MAKE} lpeg.so \
-	#	DLLFLAGS="-shared"
-	##DLLFLAGS="${LDFLAGS} -L${WRKDIR}/deps/luajit/lib -lluajit-5.1 -shared"
-	#cp ${WRKBUILD}/build/lpeg/lpeg.so ${WRKDIR}/deps/luajit/lib/lua/5.1/
 
 # These are the "old tests". There is also a new suite, but we would need the
 # "busted" test suite for Lua, which is not yet ported.
 #
 # If cscope is installed, one test fails:
 # https://github.com/neovim/neovim/issues/12744
+#
+# XXX: This is broken.
 do-test:
 	cd ${WRKSRC}/src/nvim/testdir && ${SETENV} LC_CTYPE=en_US.UTF-8 \
 		${MAKE_PROGRAM} NVIM_PRG=${WRKBUILD}/bin/nvim ${MAKE_FLAGS}
