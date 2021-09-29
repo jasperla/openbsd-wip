@@ -105,7 +105,7 @@ pre-configure:
 	cd ${STATIC_DEPS_WRKBUILD}/luajit/src && \
 		${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} \
 		PREFIX=${STATIC_DEPS_INST} CC=${CC} CCOPT="${CFLAGS}" \
-		CCOPT_x86="" Q="" 
+		CCOPT_x86="" Q="" LDFLAGS="-lstdc++" BUILDMODE=static
 	cd ${STATIC_DEPS_WRKBUILD}/luajit && \
 		${SETENV} ${MAKE_ENV} Q="" ${MAKE_PROGRAM} install \
 		PREFIX=${STATIC_DEPS_INST}
