@@ -102,14 +102,13 @@ pre-configure:
 	# We can't build LuaJIT out of its src dir, so copy it so that we can
 	# support SEPARATE_BUILD.
 	cp -r ${STATIC_DEPS_WRKSRC}/luajit ${STATIC_DEPS_WRKBUILD}/luajit
+	cd ${STATIC_DEPS_WRKBUILD}/luajit/src && \
+		${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} \
+		PREFIX=${STATIC_DEPS_INST} CC=${CC} CCOPT="${CFLAGS}" \
+		CCOPT_x86="" Q="" 
 	cd ${STATIC_DEPS_WRKBUILD}/luajit && \
-		${SETENV} ${MAKE_ENV} VERBOSE=1 ${MAKE_PROGRAM} \
+		${SETENV} ${MAKE_ENV} Q="" ${MAKE_PROGRAM} install \
 		PREFIX=${STATIC_DEPS_INST}
-	cd ${STATIC_DEPS_WRKBUILD}/luajit && \
-		${SETENV} ${MAKE_ENV} VERBOSE=1 \
-		${MAKE_PROGRAM} install PREFIX=${STATIC_DEPS_INST} \
-		CC=${CC} CCOPT="${CFLAGS}" \
-		CCOPT_x86="" Q=""
 
 	# Build luv.
 	mkdir -p ${STATIC_DEPS_WRKBUILD}/luv
