@@ -143,7 +143,9 @@ pre-configure:
 # If cscope is installed, one test fails:
 # https://github.com/neovim/neovim/issues/12744
 #
-# XXX: This is broken.
+# XXX: This is broken. The tarball doesn't contain the necessary 'ci'
+# directory.
+# https://github.com/neovim/neovim/issues/15856
 do-test:
 	cd ${WRKSRC}/src/nvim/testdir && ${SETENV} LC_CTYPE=en_US.UTF-8 \
 		${MAKE_PROGRAM} NVIM_PRG=${WRKBUILD}/bin/nvim ${MAKE_FLAGS}
