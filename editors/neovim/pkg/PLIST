@@ -844,6 +844,7 @@ share/nvim/runtime/lua/vim/highlight.lua
 share/nvim/runtime/lua/vim/inspect.lua
 share/nvim/runtime/lua/vim/lsp/
 share/nvim/runtime/lua/vim/lsp.lua
+share/nvim/runtime/lua/vim/lsp/_snippet.lua
 share/nvim/runtime/lua/vim/lsp/buf.lua
 share/nvim/runtime/lua/vim/lsp/codelens.lua
 share/nvim/runtime/lua/vim/lsp/diagnostic.lua
@@ -1610,3 +1611,4 @@ share/nvim/runtime/tutor/en/vim-01-beginner.tutor.json
 share/nvim/runtime/tutor/tutor.tutor
 share/nvim/runtime/tutor/tutor.tutor.json
 @tag update-desktop-database
+@tag gtk-update-icon-cache %D/share/icons/hicolor

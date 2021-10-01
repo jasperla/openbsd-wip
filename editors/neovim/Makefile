@@ -4,13 +4,14 @@ COMMENT =	continuation and extension of Vim
 
 GH_ACCOUNT =	neovim
 GH_PROJECT =	neovim
-GH_TAGNAME =	v0.5.0
+GH_TAGNAME =	v0.5.1
 
 CATEGORIES =	editors devel
 HOMEPAGE =	https://neovim.io
 MAINTAINER =	Edd Barrett <edd@openbsd.org>
 
 LUV_VER =	1.30.1-1
+# This must match the version in LUAJIT_URL in third-party/CMakeLists.txt.
 LUAJIT_VER =	787736990ac3b7d5ceaba2697c7d0f58f77bb782
 
 MASTER_SITES0 =	https://github.com/luvit/luv/releases/download/${LUV_VER}/
@@ -29,6 +30,9 @@ DEBUG_PACKAGES =	${BUILD_PACKAGES}
 WANTLIB += c iconv intl m msgpackc pthread termkey
 WANTLIB += tree-sitter unibilium util uv vterm
 
+# XXX For Luajit arches only.
+WANTLIB +=	${COMPILER_LIBCXX}
+
 COMPILER =		base-clang ports-gcc base-gcc
 
 MODULES =		devel/cmake \
@@ -43,7 +47,7 @@ MODLUA_VERSION =	5.1
 BUILD_DEPENDS =		${RUN_DEPENDS} \
 			devel/gperf \
 			devel/lpeg \
-			devel/lua-bitop # XXX needed?
+			devel/lua-bitop
 
 LIB_DEPENDS =		devel/gettext,-runtime \
 			devel/libtermkey \
@@ -56,7 +60,8 @@ LIB_DEPENDS =		devel/gettext,-runtime \
 RUN_DEPENDS +=		devel/libmpack/lua \
 			devel/libmpack/main \
 			devel/desktop-file-utils \
-			devel/lua-compat53
+			devel/lua-compat53 \
+			x11/gtk+3,-guic
 
 CONFIGURE_ARGS +=	-DUSE_BUNDLED=OFF \
 			-DLUA_PRG=${STATIC_DEPS_INST}/bin/luajit-2.1.0-beta3 \
