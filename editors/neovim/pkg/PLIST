@@ -4,10 +4,6 @@ lib/nvim/
 @man man/man1/nvim.1
 share/applications/nvim.desktop
 share/doc/pkg-readmes/${PKGSTEM}
-share/icons/
-share/icons/hicolor/
-share/icons/hicolor/128x128/
-share/icons/hicolor/128x128/apps/
 share/icons/hicolor/128x128/apps/nvim.png
 share/locale/af/LC_MESSAGES/nvim.mo
 share/locale/ca/LC_MESSAGES/nvim.mo
