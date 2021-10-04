@@ -1,11 +1,11 @@
 # $OpenBSD: Makefile,v 1.23 2021/07/18 09:18:07 paco Exp $
 
-# Use LuaJIT where possible, as some plugins assume it is available.  Arches
+# Use LuaJIT where possible, as some plugins assume it's available. Arches
 # that can't use LuaJIT have to use the system Lua (and some plugins may not
 # work).
-.if ${MACHINE_ARCH} == "aarch" || ${MACHINE_ARCH} == "aarch64" || \
-	${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "arm" || \
-	${MACHINE_ARCH} == "i386" || ${MACHINE_ARCH} == "powerpc"
+.if ${MACHINE_ARCH} == "arm" || ${MACHINE_ARCH} == "aarch64" || \
+	${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "i386" || \
+	${MACHINE_ARCH} == "powerpc"
 EMBED_LUAJIT =	Yes
 .else
 EMBED_LUAJIT =	No
@@ -146,7 +146,6 @@ pre-configure:
 		CXX="${CXX}" \
 		CFLAGS="${CFLAGS}" \
 		CXXFLAGS="${CXXFLAGS}" \
-		TARGET_ALDFLAGS="-lexecinfo" \
 		${CONFIGURE_ENV} \
 		${LOCALBASE}/bin/cmake \
 		-DBUILD_MODULE=OFF \
