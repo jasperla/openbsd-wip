@@ -21,8 +21,8 @@ CATEGORIES =	editors devel
 HOMEPAGE =	https://neovim.io
 MAINTAINER =	Edd Barrett <edd@openbsd.org>
 
+# The versions listed here must match those in third-party/CMakeLists.txt.
 LUV_VER =	1.30.1-1
-# This must match the version in LUAJIT_URL in third-party/CMakeLists.txt.
 LUAJIT_VER =	787736990ac3b7d5ceaba2697c7d0f58f77bb782
 
 MASTER_SITES0 =	https://github.com/luvit/luv/releases/download/${LUV_VER}/
@@ -38,8 +38,12 @@ PERMIT_PACKAGE =	Yes
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
-WANTLIB += ${COMPILER_LIBCXX} ${MODLUA_WANTLIB} c iconv intl m msgpackc
-WANTLIB += pthread termkey tree-sitter unibilium util uv vterm
+WANTLIB += ${COMPILER_LIBCXX} c iconv intl m msgpackc pthread termkey
+WANTLIB += tree-sitter unibilium util uv vterm
+
+.if ${EMBED_LUAJIT} != "Yes"
+WANTLIB += ${MODLUA_WANTLIB}
+.endif
 
 COMPILER =		base-clang ports-gcc base-gcc
 
@@ -71,6 +75,7 @@ RUN_DEPENDS +=		devel/libmpack/lua \
 			devel/lua-compat53 \
 			x11/gtk+3,-guic
 
+SEPARATE_BUILD =	Yes
 CONFIGURE_ARGS +=	-DUSE_BUNDLED=OFF \
 			-DLIBLUV_INCLUDE_DIR=${STATIC_DEPS_INST}/include \
 			-DLIBLUV_LIBRARY=${STATIC_DEPS_INST}/lib/libluv.a
@@ -117,16 +122,6 @@ post-extract:
 # makes sense to embed it.
 STATIC_DEPS_WRKBUILD=${WRKBUILD}/static-deps-build
 STATIC_DEPS_INST=${WRKBUILD}/static-deps-inst
-# XXX this can be simplified.
-.if ${EMBED_LUAJIT} == "Yes"
-LUV_LUA_CONFIGURE_ARGS = -DLUAJIT_INCLUDE_DIR=${STATIC_DEPS_INST}/include/luajit-2.1 \
-			 -DLUAJIT_LIBRARIES=${STATIC_DEPS_INST}/luajit/lib \
-			 -DWITH_LUA_ENGINE=LuaJIT
-.else
-LUV_LUA_CONFIGURE_ARGS = -DLUA_INCLUDE_DIR=${MODLUA_INCL_DIR} \
-			 -DLUA_LIBRARIES=${MODLUA_LIBDIR} \
-			 -DWITH_LUA_ENGINE=Lua
-.endif
 pre-configure:
 	mkdir -p ${STATIC_DEPS_WRKBUILD} ${STATIC_DEPS_PREFIX}
 
@@ -160,7 +155,9 @@ pre-configure:
 		-DCMAKE_SUPPRESS_REGENERATION=ON \
 		-DCMAKE_INSTALL_PREFIX=${STATIC_DEPS_INST} \
 		-DLUA_BUILD_TYPE=System \
-		${LUV_LUA_CONFIGURE_ARGS} \
+		-DLUA_INCLUDE_DIR=${MODLUA_INCL_DIR} \
+		-DLUA_LIBRARIES=${MODLUA_LIBDIR} \
+		-DWITH_LUA_ENGINE=Lua \
 		${STATIC_DEPS_WRKSRC}/luv
 	cd ${STATIC_DEPS_WRKBUILD}/luv && \
 		${SETENV} ${MAKE_ENV} VERBOSE=1 \
