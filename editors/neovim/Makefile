@@ -122,6 +122,12 @@ post-extract:
 # makes sense to embed it.
 STATIC_DEPS_WRKBUILD=${WRKBUILD}/static-deps-build
 STATIC_DEPS_INST=${WRKBUILD}/static-deps-inst
+.include <bsd.port.arch.mk>
+.if ${PROPERTIES:Mclang}
+LUAJIT_TARGET_LIBS =	"-lc++abi -lpthread"
+# Note we already have COMPILER_LIBCXX in WANTLIB.
+WANTLIB +=		pthread
+.endif
 pre-configure:
 	mkdir -p ${STATIC_DEPS_WRKBUILD} ${STATIC_DEPS_PREFIX}
 
@@ -133,7 +139,8 @@ pre-configure:
 	cd ${STATIC_DEPS_WRKBUILD}/luajit/src && \
 		${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} \
 		PREFIX=${STATIC_DEPS_INST} CC=${CC} CCOPT="${CFLAGS}" \
-		CCOPT_x86="" Q="" LDFLAGS="-lstdc++" BUILDMODE=static
+		CCOPT_x86="" Q="" TARGET_LIBS=${LUAJIT_TARGET_LIBS} \
+		BUILDMODE=static
 	cd ${STATIC_DEPS_WRKBUILD}/luajit && \
 		${SETENV} ${MAKE_ENV} Q="" ${MAKE_PROGRAM} install \
 		PREFIX=${STATIC_DEPS_INST}
