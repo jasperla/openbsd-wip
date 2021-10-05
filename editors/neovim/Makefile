@@ -107,7 +107,7 @@ post-extract:
 	mv ${WRKDIR}/LuaJIT-${LUAJIT_VER} ${STATIC_DEPS_WRKSRC}/luajit
 	mv ${WRKDIR}/luv-${LUV_VER} ${STATIC_DEPS_WRKSRC}/luv
 
-# Build LuaJIT (if requiried) and libluv as static libraries.
+# Build LuaJIT (if required) and libluv as static libraries.
 #
 # We opted not to create a libluv port because it must be built for a specific
 # Lua version and we don't know what version future ports might need. Currently
@@ -125,8 +125,7 @@ STATIC_DEPS_INST=${WRKBUILD}/static-deps-inst
 .include <bsd.port.arch.mk>
 .if ${PROPERTIES:Mclang}
 LUAJIT_TARGET_LIBS =	"-lc++abi -lpthread"
-# Note we already have COMPILER_LIBCXX in WANTLIB.
-WANTLIB +=		pthread
+WANTLIB +=		c++abi pthread
 .endif
 pre-configure:
 	mkdir -p ${STATIC_DEPS_WRKBUILD} ${STATIC_DEPS_PREFIX}
@@ -146,7 +145,7 @@ pre-configure:
 		PREFIX=${STATIC_DEPS_INST}
 .endif
 
-	# Build luv.
+	# Build libluv.
 	mkdir -p ${STATIC_DEPS_WRKBUILD}/luv
 	cd ${STATIC_DEPS_WRKBUILD}/luv && \
 		${SETENV} CC="${CC}" \
