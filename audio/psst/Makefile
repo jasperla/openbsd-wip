@@ -3,11 +3,10 @@
 # miniaudio-rs lacks other bindings
 ONLY_FOR_ARCHS =	amd64
 
-#FIX_EXTRACT_PERMISSIONS = Yes
-
 COMMENT =		Fast Spotify client with native GUI
 
 # kn@ fork bundling all porting work to avoid in-tree patches and MODCARGO_*
+# see "Support OpenBSD" https://github.com/jpochyla/psst/pull/191
 GH_ACCOUNT =		klemensn
 #GH_ACCOUNT =		jpochyla
 GH_PROJECT =		psst
@@ -25,6 +24,9 @@ PERMIT_PACKAGE =	Yes
 #WANTLIB =		
 
 MODULES =		devel/cargo
+
+LIB_DEPENDS =		graphics/cairo \
+			x11/gtk+3,-main
 
 SEPARATE_BUILD =	Yes
 NO_TEST =		Yes
