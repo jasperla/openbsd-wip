@@ -14,14 +14,8 @@ MASTER_SITES =		https://github.com/klemensn/psst/releases/download/${V}/
 #GH_PROJECT =		psst
 #GH_TAGNAME =		v0.8.1
 
-# XXX no idea yet why this is needed.
-# with GH_COMMIT instead of a proper release `make extract' would require this
-# to be unset but `make modcargo-gen-crates' would require it to be set...
-# now both as well as `make modcargo-gen-crates-licenses' work but `make build'
-# fails with
-#	error: manifest path `/usr/ports/pobj/psst-0.8.1pl1/Cargo.toml` does not exist
-# XXX how does the Cargo.toml disappear?
-WRKDIST =		${WRKDIR}
+# XXX why is this needed again? (from semarie, thanks!)
+DISTFILES +=		${DISTNAME}${EXTRACT_SUFX}
 
 CATEGORIES =		audio
 
