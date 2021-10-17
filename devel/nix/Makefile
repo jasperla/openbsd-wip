@@ -1,15 +1,15 @@
 # $OpenBSD$
 
 COMMENT =	reproducible package manager for Unix
-DISTNAME =	nix-2.3.15
+# ${WRKSRC}/.version
+PKGNAME =	nix-2.5.0
 GH_ACCOUNT =	klemensn
 GH_PROJECT =	nix
-GH_TAGNAME =	efe27327499e39feebcc3aef177ae84de848c09f
-#EXTRACT_SUFX =	.tar.xz
+GH_TAGNAME =	1ccee0c2f7de180a95707284d5e586c31809b47d
 CATEGORIES =	devel
 
 # These four must always have the same major and minor!
-SO_VERSION =	0.0	# 2.3.15
+SO_VERSION =	0.0	# 2.5
 SHARED_LIBS +=	nixexpr		${SO_VERSION}
 SHARED_LIBS +=	nixmain		${SO_VERSION}
 SHARED_LIBS +=	nixstore	${SO_VERSION}
@@ -26,11 +26,14 @@ PERMIT_PACKAGE =	Yes
 #WANTLIB += sodium sqlite3
 
 #MASTER_SITES =	https://nixos.org/releases/nix/${DISTNAME}/
+#EXTRACT_SUFX =	.tar.xz
 
 # C++17
 COMPILER =	base-clang ports-gcc
 
-BUILD_DEPENDS =	${RUN_DEPENDS}
+BUILD_DEPENDS =	archivers/gtar \
+		shells/bash \
+		textproc/jq
 
 LIB_DEPENDS =	archivers/brotli \
 		archivers/bzip2 \
@@ -39,7 +42,8 @@ LIB_DEPENDS =	archivers/brotli \
 		devel/boost \
 		devel/boost,-md \
 		net/curl \
-		security/libsodium
+		security/libsodium \
+		textproc/lowdown
 
 RUN_DEPENDS =	archivers/gtar \
 		shells/bash
@@ -67,16 +71,15 @@ MAKE_FLAGS =	SO_VERSION=${SO_VERSION} \
 
 FAKE_FLAGS =	sysconfdir="${PREFIX}/share/examples/nix"
 
-TEST_TARGET =	installcheck
-
-# TMPDIR is picked up to construct TEST_ROOT in ${WRKSRC}/tests/common.sh.in
-# with this harcoded subdirectory
 TMPDIR =	${WRKDIR}
+# constructed in ${WRKSRC}/tests/common.sh.in with this harcoded subdirectory
 TEST_ROOT =	${TMPDIR}/nix-test
 
+TEST_TARGET =	installcheck
 TEST_ENV =	TMPDIR=${TMPDIR}
 
 pre-test:
+	# not created by tests
 	mkdir -p ${TEST_ROOT}
 	# running post-build-hook '/usr/ports/pobj/nix-2.3.4/nix-2.3.4/tests/push-to-store.sh'...
 	# ...
