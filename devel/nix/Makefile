@@ -22,7 +22,7 @@ PERMIT_PACKAGE =	Yes
 
 # TODO
 #WANTLIB += ${COMPILER_LIBCXX} boost_context-mt boost_system boost_thread-mt
-#WANTLIB += brotlidec brotlienc bz2 c crypto curl lzma m readline
+#WANTLIB += brotlidec brotlienc c crypto curl m readline
 #WANTLIB += sodium sqlite3
 
 #MASTER_SITES =	https://nixos.org/releases/nix/${DISTNAME}/
@@ -31,35 +31,40 @@ PERMIT_PACKAGE =	Yes
 # C++17
 COMPILER =	base-clang ports-gcc
 
-BUILD_DEPENDS =	archivers/gtar \
+BUILD_DEPENDS =	devel/bison>=2.6 \
 		shells/bash \
 		textproc/jq
 
 LIB_DEPENDS =	archivers/brotli \
-		archivers/bzip2 \
+		archivers/libarchive \
 		archivers/xz \
-		databases/sqlite3 \
-		devel/boost \
-		devel/boost,-md \
+		databases/sqlite3>=3.6.19 \
+		devel/boehm-gc,-main \
+		devel/boost>=1.66.0 \
+		devel/boost,-md>=1.66.0 \
 		net/curl \
 		security/libsodium \
 		textproc/lowdown
 
+# XXX unported
+#LIB_DEPENDS +=	textproc/libeditline
+
 RUN_DEPENDS =	archivers/gtar \
-		shells/bash
+		shells/bash \
 
 TEST_DEPENDS =	${PKGPATH} \
 		misc/findutils \
+		devel/gtest \
 		textproc/gdiff
 
-# Bash specific code using `declare' for associative arrays:
-# ./configure[7906]: syntax error: `(' unexpected
+SEPARATE_BUILD =	Yes
+# Bash specific code using `declare' for associative arrays
 CONFIGURE_SCRIPT =	${LOCALBASE}/bin/bash ./configure
-#CONFIGURE_STYLE =	gnu
 CONFIGURE_STYLE =	autoreconf
 AUTORECONF =		./bootstrap.sh
 AUTOMAKE_VERSION =	1.16
 AUTOCONF_VERSION =	2.71
+CONFIGURE_ARGS =	--enable-gc
 CONFIGURE_ENV =		CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
 			LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib" \
 			EDITLINE_CFLAGS="-I/usr/include/readline -DREADLINE" \
