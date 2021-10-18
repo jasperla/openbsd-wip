@@ -1,0 +1,10 @@
+@comment $OpenBSD: PLIST,v$
+@bin bin/cpuid_tool
+include/libcpuid/
+include/libcpuid/libcpuid.h
+include/libcpuid/libcpuid_constants.h
+include/libcpuid/libcpuid_types.h
+@static-lib lib/libcpuid.a
+lib/libcpuid.la
+@lib lib/libcpuid.so.${LIBcpuid_VERSION}
+lib/pkgconfig/libcpuid.pc
