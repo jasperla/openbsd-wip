@@ -2,10 +2,10 @@
 
 COMMENT =	reproducible package manager for Unix
 # ${WRKSRC}/.version
-PKGNAME =	nix-2.5.0
+PKGNAME =	nix-2.5.0-pre1
 GH_ACCOUNT =	klemensn
 GH_PROJECT =	nix
-GH_TAGNAME =	1ccee0c2f7de180a95707284d5e586c31809b47d
+GH_TAGNAME =	8a9ae930c095230d472a1a4b3a25e00ae1822472
 CATEGORIES =	devel
 
 # These four must always have the same major and minor!
