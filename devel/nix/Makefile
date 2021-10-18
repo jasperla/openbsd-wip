@@ -2,10 +2,10 @@
 
 COMMENT =	reproducible package manager for Unix
 # ${WRKSRC}/.version
-PKGNAME =	nix-2.5.0-pre1
+PKGNAME =	nix-2.5.0pre1
 GH_ACCOUNT =	klemensn
 GH_PROJECT =	nix
-GH_TAGNAME =	8a9ae930c095230d472a1a4b3a25e00ae1822472
+GH_TAGNAME =	7f047dea6e7de2312a03ac7d4fc95f7387a4418c
 CATEGORIES =	devel
 
 # These four must always have the same major and minor!
@@ -54,7 +54,7 @@ LIB_DEPENDS +=	sysutils/libcpuid
 .endif
 
 RUN_DEPENDS =	archivers/gtar \
-		shells/bash \
+		shells/bash
 
 TEST_DEPENDS =	${PKGPATH} \
 		misc/findutils \
@@ -68,24 +68,22 @@ CONFIGURE_STYLE =	autoreconf
 AUTORECONF =		./bootstrap.sh
 AUTOMAKE_VERSION =	1.16
 AUTOCONF_VERSION =	2.71
-CONFIGURE_ARGS =	--enable-gc
+# configure.ac:108: error: possibly undefined macro: AC_MSG_ERROR
+BUILD_DEPENDS +=	devel/autoconf-archive
+
+CONFIGURE_ARGS =	--enable-gc \
+			--disable-doc-gen \
+			--with-boost=${LOCALBASE} \
+			--with-boot-libdir=${LOCALBASE}/lib
 CONFIGURE_ENV =		CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
-			LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
+			LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib" \
+			GTEST_CFLAGS="-I${LOCALBASE}/include/gtest" \
+			GTEST_LIBS="-lgtest"
 
 # LIB_DEPENDS +=	textproc/libeditline
 # use editline(3) from base instead
 CONFIGURE_ENV +=	EDITLINE_CFLAGS="-I/usr/include/readline -DREADLINE" \
 			EDITLINE_LIBS="-lreadline"
-
-# shouldn't gtest provide pkg-config files?
-CONFIGURE_ENV +=	GTEST_CFLAGS="-I${LOCALBASE}/include/gtest" \
-			GTEST_LIBS="-lgtest"
-
-# XXX for now
-CONFIGURE_ARGS +=	--disable-doc-gen
-
-# configure.ac:108: error: possibly undefined macro: AC_MSG_ERROR
-BUILD_DEPENDS +=	devel/autoconf-archive
 
 USE_GMAKE =	Yes
 MAKE_FLAGS =	SO_VERSION=${SO_VERSION} \
@@ -94,6 +92,8 @@ MAKE_FLAGS =	SO_VERSION=${SO_VERSION} \
 # DEBUG's value is eventually ignored;  use it as switch
 .ifdef DEBUG
 MAKE_FLAGS +=	OPTIMIZE=0
+.else
+MAKE_FLAGS +=	BUILD_DEBUG=0
 .endif
 
 FAKE_FLAGS =	sysconfdir=${PREFIX}/share/examples/nix
