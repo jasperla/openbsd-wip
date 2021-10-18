@@ -32,6 +32,7 @@ PERMIT_PACKAGE =	Yes
 COMPILER =	base-clang ports-gcc
 
 BUILD_DEPENDS =	devel/bison>=2.6 \
+		devel/gtest \
 		shells/bash \
 		textproc/jq
 
@@ -44,37 +45,51 @@ LIB_DEPENDS =	archivers/brotli \
 		devel/boost,-md>=1.66.0 \
 		net/curl \
 		security/libsodium \
-		textproc/lowdown
+		textproc/lowdown>=0.8.0
 
-# XXX unported
-#LIB_DEPENDS +=	textproc/libeditline
+.include <bsd.port.arch.mk>
+.if ${ARCH:Mamd64}
+LIB_DEPENDS +=	sysutils/libcpuid
+.endif
 
 RUN_DEPENDS =	archivers/gtar \
 		shells/bash \
 
 TEST_DEPENDS =	${PKGPATH} \
 		misc/findutils \
-		devel/gtest \
 		textproc/gdiff
 
 SEPARATE_BUILD =	Yes
 # Bash specific code using `declare' for associative arrays
-CONFIGURE_SCRIPT =	${LOCALBASE}/bin/bash ./configure
+CONFIGURE_SCRIPT =	${LOCALBASE}/bin/bash ${WRKSRC}/configure
 CONFIGURE_STYLE =	autoreconf
 AUTORECONF =		./bootstrap.sh
 AUTOMAKE_VERSION =	1.16
 AUTOCONF_VERSION =	2.71
 CONFIGURE_ARGS =	--enable-gc
 CONFIGURE_ENV =		CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
-			LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib" \
-			EDITLINE_CFLAGS="-I/usr/include/readline -DREADLINE" \
+			LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
+
+# LIB_DEPENDS +=	textproc/libeditline
+# use editline(3) from base instead
+CONFIGURE_ENV +=	EDITLINE_CFLAGS="-I/usr/include/readline -DREADLINE" \
 			EDITLINE_LIBS="-lreadline"
+
+# shouldn't gtest provide pkg-config files?
+CONFIGURE_ENV +=	GTEST_CFLAGS="-I${LOCALBASE}/include/gtest" \
+			GTEST_LIBS="-lgtest"
+
+# XXX for now
+CONFIGURE_ARGS +=	--disable-doc-gen
+
+# configure.ac:108: error: possibly undefined macro: AC_MSG_ERROR
+BUILD_DEPENDS +=	devel/autoconf-archive
 
 USE_GMAKE =	Yes
 MAKE_FLAGS =	SO_VERSION=${SO_VERSION} \
 		V=1
 
-FAKE_FLAGS =	sysconfdir="${PREFIX}/share/examples/nix"
+FAKE_FLAGS =	sysconfdir=${PREFIX}/share/examples/nix
 
 TMPDIR =	${WRKDIR}
 # constructed in ${WRKSRC}/tests/common.sh.in with this harcoded subdirectory
@@ -82,6 +97,11 @@ TEST_ROOT =	${TMPDIR}/nix-test
 
 TEST_TARGET =	installcheck
 TEST_ENV =	TMPDIR=${TMPDIR}
+
+post-extract:
+	# XXX
+	# configure.ac:1: warning: AC_INIT: not a literal: "m4_esyscmd(bash -c "echo -n $(cat ./.version)$VERSION_SUFFIX")"
+	sed -i s/AC_INIT.*/'AC_INIT([nix],[2.5.0])'/ ${WRKSRC}/configure.ac
 
 pre-test:
 	# not created by tests
