@@ -29,7 +29,8 @@ PERMIT_PACKAGE =	Yes
 #EXTRACT_SUFX =	.tar.xz
 
 # C++17
-COMPILER =	base-clang ports-gcc
+COMPILER =		base-clang ports-gcc
+COMPILER_LANGS =	c++
 
 BUILD_DEPENDS =	devel/bison>=2.6 \
 		devel/gtest \
@@ -59,7 +60,8 @@ TEST_DEPENDS =	${PKGPATH} \
 		misc/findutils \
 		textproc/gdiff
 
-SEPARATE_BUILD =	Yes
+# none of the Makefile/*.mk files exist in WRKBUILD
+SEPARATE_BUILD =	No
 # Bash specific code using `declare' for associative arrays
 CONFIGURE_SCRIPT =	${LOCALBASE}/bin/bash ${WRKSRC}/configure
 CONFIGURE_STYLE =	autoreconf
@@ -89,6 +91,11 @@ USE_GMAKE =	Yes
 MAKE_FLAGS =	SO_VERSION=${SO_VERSION} \
 		V=1
 
+# DEBUG's value is eventually ignored;  use it as switch
+.ifdef DEBUG
+MAKE_FLAGS +=	OPTIMIZE=0
+.endif
+
 FAKE_FLAGS =	sysconfdir=${PREFIX}/share/examples/nix
 
 TMPDIR =	${WRKDIR}
@@ -102,6 +109,8 @@ post-extract:
 	# XXX
 	# configure.ac:1: warning: AC_INIT: not a literal: "m4_esyscmd(bash -c "echo -n $(cat ./.version)$VERSION_SUFFIX")"
 	sed -i s/AC_INIT.*/'AC_INIT([nix],[2.5.0])'/ ${WRKSRC}/configure.ac
+	# XXX "fix" hardcoded optimizations
+	grep -rFl -- -O3 ${WRKSRC} | xargs sed -i s/-O3/-O2/
 
 pre-test:
 	# not created by tests
