@@ -2,10 +2,10 @@
 
 COMMENT =	reproducible package manager for Unix
 # ${WRKSRC}/.version
-PKGNAME =	nix-2.5.0-pre1
+PKGNAME =	nix-2.5.0pre1
 GH_ACCOUNT =	klemensn
 GH_PROJECT =	nix
-GH_TAGNAME =	8a9ae930c095230d472a1a4b3a25e00ae1822472
+GH_TAGNAME =	49a4fb2cfd962b3046e6c9ca4db4dd94c6f52f3c
 CATEGORIES =	devel
 
 # These four must always have the same major and minor!
@@ -94,6 +94,8 @@ MAKE_FLAGS =	SO_VERSION=${SO_VERSION} \
 # DEBUG's value is eventually ignored;  use it as switch
 .ifdef DEBUG
 MAKE_FLAGS +=	OPTIMIZE=0
+.else
+MAKE_FLAGS +=	BUILD_DEBUG=0
 .endif
 
 FAKE_FLAGS =	sysconfdir=${PREFIX}/share/examples/nix
