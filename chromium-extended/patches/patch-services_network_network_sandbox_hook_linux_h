@@ -1,0 +1,17 @@
+$OpenBSD: patch-services_network_network_sandbox_hook_linux_h,v 1.4 2021/09/01 16:54:40 robert Exp $
+
+Index: services/network/network_sandbox_hook_linux.h
+--- services/network/network_sandbox_hook_linux.h.orig
++++ services/network/network_sandbox_hook_linux.h
+@@ -10,7 +10,11 @@
+ #include "base/component_export.h"
+ #include "sandbox/linux/syscall_broker/broker_command.h"
+ #include "sandbox/linux/syscall_broker/broker_file_permission.h"
++#if defined(OS_BSD)
++#include "sandbox/policy/openbsd/sandbox_openbsd.h"
++#else
+ #include "sandbox/policy/linux/sandbox_linux.h"
++#endif
+ 
+ namespace network {
+ 

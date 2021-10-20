@@ -1,0 +1,14 @@
+$OpenBSD: patch-chrome_browser_performance_monitor_process_monitor_h,v 1.5 2021/10/03 21:26:51 robert Exp $
+
+Index: chrome/browser/performance_monitor/process_monitor.h
+--- chrome/browser/performance_monitor/process_monitor.h.orig
++++ chrome/browser/performance_monitor/process_monitor.h
+@@ -58,7 +58,7 @@ class ProcessMonitor {
+     double cpu_usage = 0.0;
+ 
+ #if defined(OS_MAC) || defined(OS_LINUX) || defined(OS_CHROMEOS) || \
+-    defined(OS_AIX)
++    defined(OS_AIX) || defined(OS_BSD)
+     // Returns the number of average idle cpu wakeups per second since the last
+     // time the metric was sampled.
+     int idle_wakeups = 0;

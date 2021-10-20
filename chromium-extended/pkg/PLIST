@@ -1,0 +1,170 @@
+@comment $OpenBSD: PLIST,v 1.109 2021/05/27 04:21:03 robert Exp $
+@pkgpath www/chromium,proprietary
+bin/chrome
+@bin bin/chromedriver
+chrome/
+@bin chrome/chrome
+chrome/chrome_100_percent.pak
+chrome/chrome_200_percent.pak
+chrome/headless_lib.pak
+chrome/icudtl.dat
+@so chrome/libEGL.so
+@so chrome/libGLESv2.so
+%%component%%
+@so chrome/libVkICD_mock_icd.so
+@so chrome/libvulkan.so
+chrome/locales/
+chrome/locales/am.pak
+chrome/locales/am.pak.info
+chrome/locales/ar.pak
+chrome/locales/ar.pak.info
+chrome/locales/bg.pak
+chrome/locales/bg.pak.info
+chrome/locales/bn.pak
+chrome/locales/bn.pak.info
+chrome/locales/ca.pak
+chrome/locales/ca.pak.info
+chrome/locales/cs.pak
+chrome/locales/cs.pak.info
+chrome/locales/da.pak
+chrome/locales/da.pak.info
+chrome/locales/de.pak
+chrome/locales/de.pak.info
+chrome/locales/el.pak
+chrome/locales/el.pak.info
+chrome/locales/en-GB.pak
+chrome/locales/en-GB.pak.info
+chrome/locales/en-US.pak
+chrome/locales/en-US.pak.info
+chrome/locales/es-419.pak
+chrome/locales/es-419.pak.info
+chrome/locales/es.pak
+chrome/locales/es.pak.info
+chrome/locales/et.pak
+chrome/locales/et.pak.info
+chrome/locales/fa.pak
+chrome/locales/fa.pak.info
+chrome/locales/fi.pak
+chrome/locales/fi.pak.info
+chrome/locales/fil.pak
+chrome/locales/fil.pak.info
+chrome/locales/fr.pak
+chrome/locales/fr.pak.info
+chrome/locales/gu.pak
+chrome/locales/gu.pak.info
+chrome/locales/he.pak
+chrome/locales/he.pak.info
+chrome/locales/hi.pak
+chrome/locales/hi.pak.info
+chrome/locales/hr.pak
+chrome/locales/hr.pak.info
+chrome/locales/hu.pak
+chrome/locales/hu.pak.info
+chrome/locales/id.pak
+chrome/locales/id.pak.info
+chrome/locales/it.pak
+chrome/locales/it.pak.info
+chrome/locales/ja.pak
+chrome/locales/ja.pak.info
+chrome/locales/kn.pak
+chrome/locales/kn.pak.info
+chrome/locales/ko.pak
+chrome/locales/ko.pak.info
+chrome/locales/lt.pak
+chrome/locales/lt.pak.info
+chrome/locales/lv.pak
+chrome/locales/lv.pak.info
+chrome/locales/ml.pak
+chrome/locales/ml.pak.info
+chrome/locales/mr.pak
+chrome/locales/mr.pak.info
+chrome/locales/ms.pak
+chrome/locales/ms.pak.info
+chrome/locales/nb.pak
+chrome/locales/nb.pak.info
+chrome/locales/nl.pak
+chrome/locales/nl.pak.info
+chrome/locales/pl.pak
+chrome/locales/pl.pak.info
+chrome/locales/pt-BR.pak
+chrome/locales/pt-BR.pak.info
+chrome/locales/pt-PT.pak
+chrome/locales/pt-PT.pak.info
+chrome/locales/ro.pak
+chrome/locales/ro.pak.info
+chrome/locales/ru.pak
+chrome/locales/ru.pak.info
+chrome/locales/sk.pak
+chrome/locales/sk.pak.info
+chrome/locales/sl.pak
+chrome/locales/sl.pak.info
+chrome/locales/sr.pak
+chrome/locales/sr.pak.info
+chrome/locales/sv.pak
+chrome/locales/sv.pak.info
+chrome/locales/sw.pak
+chrome/locales/sw.pak.info
+chrome/locales/ta.pak
+chrome/locales/ta.pak.info
+chrome/locales/te.pak
+chrome/locales/te.pak.info
+chrome/locales/th.pak
+chrome/locales/th.pak.info
+chrome/locales/tr.pak
+chrome/locales/tr.pak.info
+chrome/locales/uk.pak
+chrome/locales/uk.pak.info
+chrome/locales/vi.pak
+chrome/locales/vi.pak.info
+chrome/locales/zh-CN.pak
+chrome/locales/zh-CN.pak.info
+chrome/locales/zh-TW.pak
+chrome/locales/zh-TW.pak.info
+chrome/product_logo_48.png
+chrome/resources/
+chrome/resources.pak
+chrome/resources/inspector_overlay/
+chrome/resources/inspector_overlay/inspector_overlay_resources.grd
+chrome/resources/inspector_overlay/main.js
+chrome/snapshot_blob.bin
+%%swiftshader%%
+chrome/v8_context_snapshot.bin
+@man man/man1/chrome.1
+share/applications/chromium-browser.desktop
+share/doc/pkg-readmes/${PKGSTEM}
+share/examples/chromium/
+@sample ${SYSCONFDIR}/chromium/
+share/examples/chromium/pledge.main
+@sample ${SYSCONFDIR}/chromium/pledge.main
+share/examples/chromium/pledge.utility_audio
+@sample ${SYSCONFDIR}/chromium/pledge.utility_audio
+share/examples/chromium/pledge.utility_network
+@sample ${SYSCONFDIR}/chromium/pledge.utility_network
+share/examples/chromium/pledge.utility_video
+@sample ${SYSCONFDIR}/chromium/pledge.utility_video
+share/examples/chromium/unveil.gpu
+@sample ${SYSCONFDIR}/chromium/unveil.gpu
+share/examples/chromium/unveil.main
+@sample ${SYSCONFDIR}/chromium/unveil.main
+share/examples/chromium/unveil.plugin
+@sample ${SYSCONFDIR}/chromium/unveil.plugin
+share/examples/chromium/unveil.renderer
+@sample ${SYSCONFDIR}/chromium/unveil.renderer
+share/examples/chromium/unveil.utility
+@sample ${SYSCONFDIR}/chromium/unveil.utility
+share/examples/chromium/unveil.utility_audio
+@sample ${SYSCONFDIR}/chromium/unveil.utility_audio
+share/examples/chromium/unveil.utility_network
+@sample ${SYSCONFDIR}/chromium/unveil.utility_network
+share/examples/chromium/unveil.utility_video
+@sample ${SYSCONFDIR}/chromium/unveil.utility_video
+share/icons/hicolor/128x128/apps/chrome.png
+share/icons/hicolor/22_monox22_mono/
+share/icons/hicolor/22_monox22_mono/apps/
+share/icons/hicolor/22_monox22_mono/apps/chrome.png
+share/icons/hicolor/24x24/apps/chrome.png
+share/icons/hicolor/256x256/apps/chrome.png
+share/icons/hicolor/48x48/apps/chrome.png
+share/icons/hicolor/64x64/apps/chrome.png
+@tag update-desktop-database
+@tag gtk-update-icon-cache %D/share/icons/hicolor

@@ -1,0 +1,13 @@
+$OpenBSD: patch-chrome_test_chromedriver_chrome_launcher_cc,v 1.7 2020/10/22 13:52:54 robert Exp $
+
+Index: chrome/test/chromedriver/chrome_launcher.cc
+--- chrome/test/chromedriver/chrome_launcher.cc.orig
++++ chrome/test/chromedriver/chrome_launcher.cc
+@@ -66,6 +66,7 @@
+ #include <fcntl.h>
+ #include <sys/stat.h>
+ #include <sys/types.h>
++#include <sys/wait.h>
+ #include <unistd.h>
+ #elif defined(OS_WIN)
+ #include "chrome/test/chromedriver/keycode_text_conversion.h"

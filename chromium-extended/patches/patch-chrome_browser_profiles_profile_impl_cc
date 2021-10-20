@@ -1,0 +1,28 @@
+$OpenBSD: patch-chrome_browser_profiles_profile_impl_cc,v 1.22 2021/10/03 21:26:51 robert Exp $
+
+Index: chrome/browser/profiles/profile_impl.cc
+--- chrome/browser/profiles/profile_impl.cc.orig
++++ chrome/browser/profiles/profile_impl.cc
+@@ -170,6 +170,7 @@
+ #include "services/preferences/public/mojom/preferences.mojom.h"
+ #include "services/preferences/public/mojom/tracked_preference_validation_delegate.mojom.h"
+ #include "services/service_manager/public/cpp/service.h"
++#include "sandbox/policy/switches.h"
+ #include "ui/base/l10n/l10n_util.h"
+ 
+ #if BUILDFLAG(IS_CHROMEOS_ASH)
+@@ -843,7 +844,13 @@ void ProfileImpl::DoFinalInit(CreateMode create_mode) 
+ }
+ 
+ base::FilePath ProfileImpl::last_selected_directory() {
+-  return GetPrefs()->GetFilePath(prefs::kSelectFileLastDirectory);
++  // If unveil(2) is used, force the file dialog directory to something we
++  // know is available.
++  base::CommandLine* command_line = base::CommandLine::ForCurrentProcess();
++  if (!command_line->HasSwitch(sandbox::policy::switches::kDisableUnveil))
++    return GetPrefs()->GetFilePath(prefs::kDownloadDefaultDirectory);
++  else
++    return GetPrefs()->GetFilePath(prefs::kSelectFileLastDirectory);
+ }
+ 
+ void ProfileImpl::set_last_selected_directory(const base::FilePath& path) {

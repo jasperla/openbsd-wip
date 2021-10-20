@@ -1,0 +1,14 @@
+$OpenBSD: patch-printing_print_settings_conversion_cc,v 1.10 2021/10/03 21:26:52 robert Exp $
+
+Index: printing/print_settings_conversion.cc
+--- printing/print_settings_conversion.cc.orig
++++ printing/print_settings_conversion.cc
+@@ -217,7 +217,7 @@ std::unique_ptr<PrintSettings> PrintSettingsFromJobSet
+ #endif
+   }
+ 
+-#if defined(OS_CHROMEOS) || (defined(OS_LINUX) && defined(USE_CUPS))
++#if defined(OS_CHROMEOS) || ((defined(OS_BSD) || defined(OS_LINUX)) && defined(USE_CUPS))
+   const base::Value* advanced_settings =
+       job_settings.FindDictKey(kSettingAdvancedSettings);
+   if (advanced_settings) {

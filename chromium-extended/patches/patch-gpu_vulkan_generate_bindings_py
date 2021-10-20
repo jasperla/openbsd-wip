@@ -1,0 +1,32 @@
+$OpenBSD: patch-gpu_vulkan_generate_bindings_py,v 1.16 2021/09/01 16:54:39 robert Exp $
+
+Index: gpu/vulkan/generate_bindings.py
+--- gpu/vulkan/generate_bindings.py.orig
++++ gpu/vulkan/generate_bindings.py
+@@ -184,7 +184,7 @@ VULKAN_DEVICE_FUNCTIONS = [
+     ]
+   },
+   {
+-    'ifdef': 'defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_ANDROID)',
++    'ifdef': 'defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_ANDROID) || defined(OS_BSD)',
+     'extension': 'VK_KHR_EXTERNAL_SEMAPHORE_FD_EXTENSION_NAME',
+     'functions': [
+       'vkGetSemaphoreFdKHR',
+@@ -200,7 +200,7 @@ VULKAN_DEVICE_FUNCTIONS = [
+     ]
+   },
+   {
+-    'ifdef': 'defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_ANDROID)',
++    'ifdef': 'defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_ANDROID) || defined(OS_BSD)',
+     'extension': 'VK_KHR_EXTERNAL_MEMORY_FD_EXTENSION_NAME',
+     'functions': [
+       'vkGetMemoryFdKHR',
+@@ -251,7 +251,7 @@ VULKAN_DEVICE_FUNCTIONS = [
+     ]
+   },
+   {
+-    'ifdef': 'defined(OS_LINUX) || defined(OS_CHROMEOS)',
++    'ifdef': 'defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)',
+     'extension': 'VK_EXT_IMAGE_DRM_FORMAT_MODIFIER_EXTENSION_NAME',
+     'functions': [
+       'vkGetImageDrmFormatModifierPropertiesEXT',
