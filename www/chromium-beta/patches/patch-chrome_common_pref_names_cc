@@ -21,7 +21,7 @@ Index: chrome/common/pref_names.cc
  // Boolean that is false if we should show window manager decorations.  If
  // true, we draw a custom chrome frame (thicker title bar and blue border).
  const char kUseCustomChromeFrame[] = "browser.custom_chrome_frame";
-@@ -1709,7 +1709,7 @@ const char kDownloadDefaultDirectory[] = "download.def
+@@ -1713,7 +1713,7 @@ const char kDownloadDefaultDirectory[] = "download.def
  const char kDownloadDirUpgraded[] = "download.directory_upgrade";
  
  #if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_CHROMEOS) || \
@@ -30,7 +30,7 @@ Index: chrome/common/pref_names.cc
  const char kOpenPdfDownloadInSystemReader[] =
      "download.open_pdf_in_system_reader";
  #endif
-@@ -1980,7 +1980,7 @@ const char kWebAppsPreferences[] = "web_apps.web_app_i
+@@ -1984,7 +1984,7 @@ const char kWebAppsPreferences[] = "web_apps.web_app_i
  // its isolation requirements.
  const char kWebAppsIsolationState[] = "web_apps.isolation_state";
  
@@ -39,7 +39,7 @@ Index: chrome/common/pref_names.cc
      (defined(OS_LINUX) && !BUILDFLAG(IS_CHROMEOS_LACROS))
  // Dictionary that maps origins to web apps that can act as URL handlers.
  const char kWebAppsUrlHandlerInfo[] = "web_apps.url_handler_info";
-@@ -2103,7 +2103,7 @@ const char kAmbientAuthenticationInPrivateModesEnabled
+@@ -2107,7 +2107,7 @@ const char kAmbientAuthenticationInPrivateModesEnabled
  // requests.
  const char kBasicAuthOverHttpEnabled[] = "auth.basic_over_http_enabled";
  
@@ -48,7 +48,7 @@ Index: chrome/common/pref_names.cc
  // Boolean that specifies whether OK-AS-DELEGATE flag from KDC is respected
  // along with kAuthNegotiateDelegateAllowlist.
  const char kAuthNegotiateDelegateByKdcPolicy[] =
-@@ -3072,7 +3072,7 @@ const char kAutoplayWhitelist[] = "media.autoplay_whit
+@@ -3076,7 +3076,7 @@ const char kAutoplayWhitelist[] = "media.autoplay_whit
  const char kBlockAutoplayEnabled[] = "media.block_autoplay";
  #endif  // !defined(OS_ANDROID)
  
