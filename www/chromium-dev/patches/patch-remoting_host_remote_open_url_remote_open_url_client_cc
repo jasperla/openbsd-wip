@@ -13,7 +13,7 @@ Index: remoting/host/remote_open_url/remote_open_url_client.cc
  #elif defined(OS_WIN)
  #include "remoting/host/remote_open_url/remote_open_url_client_delegate_win.h"
 @@ -27,7 +27,7 @@ namespace {
- constexpr base::TimeDelta kRequestTimeout = base::TimeDelta::FromSeconds(5);
+ constexpr base::TimeDelta kRequestTimeout = base::Seconds(5);
  
  std::unique_ptr<RemoteOpenUrlClient::Delegate> CreateDelegate() {
 -#if defined(OS_LINUX)

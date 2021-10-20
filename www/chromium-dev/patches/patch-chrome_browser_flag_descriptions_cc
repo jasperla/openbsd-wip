@@ -3,7 +3,7 @@ $OpenBSD$
 Index: chrome/browser/flag_descriptions.cc
 --- chrome/browser/flag_descriptions.cc.orig
 +++ chrome/browser/flag_descriptions.cc
-@@ -5258,7 +5258,7 @@ const char kDownloadShelfWebUIDescription[] =
+@@ -5271,7 +5271,7 @@ const char kDownloadShelfWebUIDescription[] =
  // Random platform combinations -----------------------------------------------
  
  #if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || \
@@ -12,7 +12,7 @@ Index: chrome/browser/flag_descriptions.cc
  
  const char kWebUIBrandingUpdateName[] = "WebUI Branding Update";
  const char kWebUIBrandingUpdateDescription[] =
-@@ -5278,7 +5278,7 @@ const char kSettingsLandingPageRedesignDescription[] =
+@@ -5291,7 +5291,7 @@ const char kSettingsLandingPageRedesignDescription[] =
  #endif  // defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) ||
          // defined(OS_CHROMEOS) || defined(OS_FUCHSIA)
  
@@ -21,7 +21,7 @@ Index: chrome/browser/flag_descriptions.cc
  
  const char kCommanderName[] = "Commander";
  const char kCommanderDescription[] =
-@@ -5296,7 +5296,7 @@ const char kDesktopDetailedLanguageSettingsDescription
+@@ -5309,7 +5309,7 @@ const char kDesktopDetailedLanguageSettingsDescription
  
  #endif  // defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX)
  
@@ -30,7 +30,7 @@ Index: chrome/browser/flag_descriptions.cc
  #if BUILDFLAG(USE_TCMALLOC)
  const char kDynamicTcmallocName[] = "Dynamic Tcmalloc Tuning";
  const char kDynamicTcmallocDescription[] =
-@@ -5424,7 +5424,7 @@ const char kElasticOverscrollDescription[] =
+@@ -5437,7 +5437,7 @@ const char kElasticOverscrollDescription[] =
  #endif  // defined(OS_WIN) || defined(OS_ANDROID)
  
  #if defined(OS_WIN) || (defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)) || \

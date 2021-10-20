@@ -30,7 +30,7 @@ Index: chrome/common/pref_names.h
  extern const char kOpenPdfDownloadInSystemReader[];
  #endif
  #if defined(OS_ANDROID)
-@@ -682,7 +682,7 @@ extern const char kWebAppsUninstalledDefaultChromeApps
+@@ -685,7 +685,7 @@ extern const char kWebAppsUninstalledDefaultChromeApps
  extern const char kWebAppsPreferences[];
  extern const char kWebAppsIsolationState[];
  
@@ -39,7 +39,7 @@ Index: chrome/common/pref_names.h
      (defined(OS_LINUX) && !BUILDFLAG(IS_CHROMEOS_LACROS))
  extern const char kWebAppsUrlHandlerInfo[];
  #endif
-@@ -825,7 +825,7 @@ extern const char kGloballyScopeHTTPAuthCacheEnabled[]
+@@ -829,7 +829,7 @@ extern const char kGloballyScopeHTTPAuthCacheEnabled[]
  extern const char kAmbientAuthenticationInPrivateModesEnabled[];
  extern const char kBasicAuthOverHttpEnabled[];
  
@@ -48,9 +48,9 @@ Index: chrome/common/pref_names.h
  extern const char kAuthNegotiateDelegateByKdcPolicy[];
  #endif  // defined(OS_LINUX) || defined(OS_MAC) || defined(OS_CHROMEOS)
  
-@@ -1072,7 +1072,7 @@ extern const char kAutoplayWhitelist[];
- extern const char kBlockAutoplayEnabled[];
+@@ -1077,7 +1077,7 @@ extern const char kBlockAutoplayEnabled[];
  #endif
+ extern const char kSandboxExternalProtocolBlocked[];
  
 -#if defined(OS_LINUX)
 +#if defined(OS_LINUX) || defined(OS_BSD)

@@ -3,7 +3,7 @@ $OpenBSD$
 Index: chrome/common/webui_url_constants.h
 --- chrome/common/webui_url_constants.h.orig
 +++ chrome/common/webui_url_constants.h
-@@ -320,13 +320,13 @@ extern const char kChromeUIOSSettingsHost[];
+@@ -324,18 +324,18 @@ extern const char kChromeUIOSSettingsHost[];
  extern const char kChromeUIOSSettingsURL[];
  #endif
  
@@ -14,12 +14,18 @@ Index: chrome/common/webui_url_constants.h
  #endif
  
  #if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || \
+-    defined(OS_CHROMEOS)
++    defined(OS_CHROMEOS) || defined(OS_BSD)
+ extern const char kChromeUIConnectorsInternalsHost[];
+ #endif
+ 
+ #if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || \
 -    defined(OS_CHROMEOS) || defined(OS_FUCHSIA)
 +    defined(OS_CHROMEOS) || defined(OS_FUCHSIA) || defined(OS_BSD)
  extern const char kChromeUIDiscardsHost[];
  extern const char kChromeUIDiscardsURL[];
  #endif
-@@ -341,14 +341,14 @@ extern const char kChromeUILinuxProxyConfigHost[];
+@@ -350,14 +350,14 @@ extern const char kChromeUILinuxProxyConfigHost[];
  #endif
  
  #if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_CHROMEOS) || \
@@ -36,7 +42,7 @@ Index: chrome/common/webui_url_constants.h
  extern const char kChromeUIBrowserSwitchHost[];
  extern const char kChromeUIBrowserSwitchURL[];
  extern const char kChromeUIEnterpriseProfileWelcomeHost[];
-@@ -360,7 +360,7 @@ extern const char kChromeUIProfilePickerUrl[];
+@@ -369,7 +369,7 @@ extern const char kChromeUIProfilePickerUrl[];
  extern const char kChromeUIProfilePickerStartupQuery[];
  #endif
  

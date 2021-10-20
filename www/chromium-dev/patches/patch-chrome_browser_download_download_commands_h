@@ -3,7 +3,7 @@ $OpenBSD$
 Index: chrome/browser/download/download_commands.h
 --- chrome/browser/download/download_commands.h.orig
 +++ chrome/browser/download/download_commands.h
-@@ -53,7 +53,7 @@ class DownloadCommands {
+@@ -54,7 +54,7 @@ class DownloadCommands {
    void ExecuteCommand(Command command);
  
  #if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_CHROMEOS) || \

@@ -21,7 +21,7 @@ Index: remoting/host/remoting_me2me_host.cc
  // The command line switch used to pass name of the pipe to capture audio on
  // linux.
  const char kAudioPipeSwitchName[] = "audio-pipe-name";
-@@ -360,7 +360,7 @@ class HostProcess : public ConfigWatcher::Delegate,
+@@ -363,7 +363,7 @@ class HostProcess : public ConfigWatcher::Delegate,
  
    std::unique_ptr<ChromotingHostContext> context_;
  
@@ -30,7 +30,7 @@ Index: remoting/host/remoting_me2me_host.cc
    // Watch for certificate changes and kill the host when changes occur
    std::unique_ptr<CertificateWatcher> cert_watcher_;
  #endif
-@@ -778,7 +778,7 @@ void HostProcess::CreateAuthenticatorFactory() {
+@@ -779,7 +779,7 @@ void HostProcess::CreateAuthenticatorFactory() {
      DCHECK(third_party_auth_config_.token_url.is_valid());
      DCHECK(third_party_auth_config_.token_validation_url.is_valid());
  
@@ -39,7 +39,7 @@ Index: remoting/host/remoting_me2me_host.cc
      if (!cert_watcher_) {
        cert_watcher_ = std::make_unique<CertificateWatcher>(
            base::BindRepeating(&HostProcess::ShutdownHost, this,
-@@ -876,7 +876,7 @@ void HostProcess::StartOnUiThread() {
+@@ -877,7 +877,7 @@ void HostProcess::StartOnUiThread() {
        base::BindRepeating(&HostProcess::OnPolicyUpdate, base::Unretained(this)),
        base::BindRepeating(&HostProcess::OnPolicyError, base::Unretained(this)));
  
@@ -48,7 +48,7 @@ Index: remoting/host/remoting_me2me_host.cc
    // If an audio pipe is specific on the command-line then initialize
    // AudioCapturerLinux to capture from it.
    base::FilePath audio_pipe_name = base::CommandLine::ForCurrentProcess()->
-@@ -934,7 +934,7 @@ void HostProcess::ShutdownOnUiThread() {
+@@ -935,7 +935,7 @@ void HostProcess::ShutdownOnUiThread() {
    // It is now safe for the HostProcess to be deleted.
    self_ = nullptr;
  
@@ -75,7 +75,7 @@ Index: remoting/host/remoting_me2me_host.cc
    // Create an X11EventSource on all UI threads, so the global X11 connection
    // (x11::Connection::Get()) can dispatch X events.
    auto event_source =
-@@ -1834,7 +1834,7 @@ int HostProcessMain() {
+@@ -1833,7 +1833,7 @@ int HostProcessMain() {
    // Run the main (also UI) task executor until the host no longer needs it.
    run_loop.Run();
  

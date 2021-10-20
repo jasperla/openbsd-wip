@@ -21,7 +21,7 @@ Index: chrome/utility/services.cc
  auto RunDocumentAnalysis(
      mojo::PendingReceiver<chrome::mojom::DocumentAnalysisService> receiver) {
    return std::make_unique<DocumentAnalysisService>(std::move(receiver));
-@@ -368,7 +368,7 @@ void RegisterMainThreadServices(mojo::ServiceFactory& 
+@@ -375,7 +375,7 @@ void RegisterMainThreadServices(mojo::ServiceFactory& 
    services.Add(RunFileUtil);
  #endif
  
