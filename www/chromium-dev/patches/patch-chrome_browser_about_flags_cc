@@ -30,7 +30,7 @@ Index: chrome/browser/about_flags.cc
  const FeatureEntry::FeatureParam
      kSendWebUIJavaScriptErrorReportsVariationSendToStaging[] = {
          {features::kSendWebUIJavaScriptErrorReportsSendToProductionVariation,
-@@ -2768,7 +2768,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -2786,7 +2786,7 @@ const FeatureEntry kFeatureEntries[] = {
       flag_descriptions::kWebKioskEnableLacrosDescription, kOsCrOS,
       FEATURE_VALUE_TYPE(features::kWebKioskEnableLacros)},
  #endif  // BUILDFLAG(IS_CHROMEOS_ASH)
@@ -39,7 +39,7 @@ Index: chrome/browser/about_flags.cc
      {"send-webui-javascript-error-reports",
       flag_descriptions::kSendWebUIJavaScriptErrorReportsName,
       flag_descriptions::kSendWebUIJavaScriptErrorReportsDescription,
-@@ -3229,7 +3229,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -3247,7 +3247,7 @@ const FeatureEntry kFeatureEntries[] = {
       FEATURE_VALUE_TYPE(media::kDeprecateLowUsageCodecs)},
  #endif  // defined(OS_CHROMEOS)
  
@@ -48,7 +48,7 @@ Index: chrome/browser/about_flags.cc
      {
          "enable-accelerated-video-decode",
          flag_descriptions::kAcceleratedVideoDecodeName,
-@@ -3610,7 +3610,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -3628,7 +3628,7 @@ const FeatureEntry kFeatureEntries[] = {
      {"enable-login-detection", flag_descriptions::kEnableLoginDetectionName,
       flag_descriptions::kEnableLoginDetectionDescription, kOsAll,
       FEATURE_VALUE_TYPE(login_detection::kLoginDetection)},
@@ -57,7 +57,7 @@ Index: chrome/browser/about_flags.cc
      {"enable-save-data", flag_descriptions::kEnableSaveDataName,
       flag_descriptions::kEnableSaveDataDescription, kOsCrOS | kOsLinux,
       SINGLE_VALUE_TYPE(
-@@ -4473,7 +4473,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -4491,7 +4491,7 @@ const FeatureEntry kFeatureEntries[] = {
       FEATURE_VALUE_TYPE(omnibox::kOmniboxTrendingZeroPrefixSuggestionsOnNTP)},
  
  #if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_MAC) || \
@@ -66,7 +66,7 @@ Index: chrome/browser/about_flags.cc
      {"omnibox-experimental-keyword-mode",
       flag_descriptions::kOmniboxExperimentalKeywordModeName,
       flag_descriptions::kOmniboxExperimentalKeywordModeDescription, kOsDesktop,
-@@ -4846,7 +4846,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -4864,7 +4864,7 @@ const FeatureEntry kFeatureEntries[] = {
  #endif  // !defined(OS_ANDROID)
  
  #if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || \
@@ -75,7 +75,7 @@ Index: chrome/browser/about_flags.cc
      {"webui-feedback", flag_descriptions::kWebuiFeedbackName,
       flag_descriptions::kWebuiFeedbackDescription, kOsDesktop,
       FEATURE_VALUE_TYPE(features::kWebUIFeedback)},
-@@ -5474,7 +5474,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -5492,7 +5492,7 @@ const FeatureEntry kFeatureEntries[] = {
       flag_descriptions::kSharingSendViaSyncDescription, kOsAll,
       FEATURE_VALUE_TYPE(kSharingSendViaSync)},
  
@@ -84,7 +84,7 @@ Index: chrome/browser/about_flags.cc
      {"sharing-hub-desktop-app-menu",
       flag_descriptions::kSharingHubDesktopAppMenuName,
       flag_descriptions::kSharingHubDesktopAppMenuDescription, kOsDesktop,
-@@ -5952,7 +5952,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -5970,7 +5970,7 @@ const FeatureEntry kFeatureEntries[] = {
       FEATURE_VALUE_TYPE(features::kMouseSubframeNoImplicitCapture)},
  
  #if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || \
@@ -93,7 +93,7 @@ Index: chrome/browser/about_flags.cc
      {"global-media-controls", flag_descriptions::kGlobalMediaControlsName,
       flag_descriptions::kGlobalMediaControlsDescription,
       kOsWin | kOsMac | kOsLinux,
-@@ -6866,7 +6866,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -6884,7 +6884,7 @@ const FeatureEntry kFeatureEntries[] = {
       FEATURE_VALUE_TYPE(language::kForceAppLanguagePrompt)},
  #endif
  
@@ -102,7 +102,7 @@ Index: chrome/browser/about_flags.cc
      {"commander", flag_descriptions::kCommanderName,
       flag_descriptions::kCommanderDescription, kOsDesktop,
       FEATURE_VALUE_TYPE(features::kCommander)},
-@@ -7113,7 +7113,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -7131,7 +7131,7 @@ const FeatureEntry kFeatureEntries[] = {
  #endif  // defined(ARCH_CPU_X86_FAMILY) && BUILDFLAG(IS_CHROMEOS_ASH)
  
  #if defined(OS_WIN) || (defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)) || \
@@ -111,7 +111,7 @@ Index: chrome/browser/about_flags.cc
      {
          "ui-debug-tools",
          flag_descriptions::kUIDebugToolsName,
-@@ -7256,7 +7256,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -7274,7 +7274,7 @@ const FeatureEntry kFeatureEntries[] = {
       FEATURE_VALUE_TYPE(chromeos::features::kLauncherAppSort)},
  #endif
  
@@ -120,7 +120,7 @@ Index: chrome/browser/about_flags.cc
      {"enable-desktop-pwas-app-icon-shortcuts-menu-ui",
       flag_descriptions::kDesktopPWAsAppIconShortcutsMenuUIName,
       flag_descriptions::kDesktopPWAsAppIconShortcutsMenuUIDescription,
-@@ -7501,7 +7501,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -7519,7 +7519,7 @@ const FeatureEntry kFeatureEntries[] = {
  #endif
  
  #if defined(OS_WIN) || (defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)) || \
