@@ -12,7 +12,7 @@ Index: components/feature_engagement/public/feature_constants.h
  extern const base::Feature kIPHDesktopTabGroupsNewGroupFeature;
  extern const base::Feature kIPHFocusModeFeature;
  extern const base::Feature kIPHGlobalMediaControlsFeature;
-@@ -130,7 +130,7 @@ extern const base::Feature kIPHBadgedTranslateManualTr
+@@ -137,7 +137,7 @@ extern const base::Feature kIPHBadgedTranslateManualTr
  extern const base::Feature kIPHDiscoverFeedHeaderFeature;
  #endif  // defined(OS_IOS)
  

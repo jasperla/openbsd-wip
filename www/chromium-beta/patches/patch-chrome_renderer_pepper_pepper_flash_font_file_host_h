@@ -12,7 +12,7 @@ Index: chrome/renderer/pepper/pepper_flash_font_file_host.h
  #include "base/files/file.h"
  #elif defined(OS_WIN)
  #include "third_party/skia/include/core/SkRefCnt.h"
-@@ -50,7 +50,7 @@ class PepperFlashFontFileHost : public ppapi::host::Re
+@@ -54,7 +54,7 @@ class PepperFlashFontFileHost : public ppapi::host::Re
                           uint32_t table);
    bool GetFontData(uint32_t table, void* buffer, size_t* length);
  

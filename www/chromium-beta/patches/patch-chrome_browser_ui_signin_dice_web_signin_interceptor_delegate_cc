@@ -3,7 +3,7 @@ $OpenBSD$
 Index: chrome/browser/ui/signin/dice_web_signin_interceptor_delegate.cc
 --- chrome/browser/ui/signin/dice_web_signin_interceptor_delegate.cc.orig
 +++ chrome/browser/ui/signin/dice_web_signin_interceptor_delegate.cc
-@@ -57,7 +57,7 @@ class ForcedEnterpriseSigninInterceptionHandle
+@@ -58,7 +58,7 @@ class ForcedEnterpriseSigninInterceptionHandle
    void ShowEnterpriseProfileInterceptionDialog(const AccountInfo& account_info,
                                                 SkColor profile_color) {
  #if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || \

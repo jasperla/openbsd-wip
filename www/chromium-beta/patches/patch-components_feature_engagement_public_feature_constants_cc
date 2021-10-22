@@ -12,7 +12,7 @@ Index: components/feature_engagement/public/feature_constants.cc
  const base::Feature kIPHDesktopTabGroupsNewGroupFeature{
      "IPH_DesktopTabGroupsNewGroup", base::FEATURE_DISABLED_BY_DEFAULT};
  const base::Feature kIPHFocusModeFeature{"IPH_FocusMode",
-@@ -211,7 +211,7 @@ const base::Feature kIPHDiscoverFeedHeaderFeature{
+@@ -225,7 +225,7 @@ const base::Feature kIPHDiscoverFeedHeaderFeature{
      "IPH_DiscoverFeedHeaderMenu", base::FEATURE_DISABLED_BY_DEFAULT};
  #endif  // defined(OS_IOS)
  

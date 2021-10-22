@@ -10,5 +10,5 @@ Index: ui/views/widget/desktop_aura/desktop_screen_ozone.cc
 -#if !defined(OS_LINUX) && !defined(OS_CHROMEOS)
 +#if !defined(OS_LINUX) && !defined(OS_CHROMEOS) && !defined(OS_BSD)
  std::unique_ptr<display::Screen> CreateDesktopScreen() {
-   return std::make_unique<aura::ScreenOzone>();
- }
+   auto screen = std::make_unique<aura::ScreenOzone>();
+   screen->Initialize();

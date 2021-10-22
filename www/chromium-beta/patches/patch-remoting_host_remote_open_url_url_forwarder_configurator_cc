@@ -1,8 +1,8 @@
 $OpenBSD$
 
-Index: remoting/host/url_forwarder_configurator.cc
---- remoting/host/url_forwarder_configurator.cc.orig
-+++ remoting/host/url_forwarder_configurator.cc
+Index: remoting/host/remote_open_url/url_forwarder_configurator.cc
+--- remoting/host/remote_open_url/url_forwarder_configurator.cc.orig
++++ remoting/host/remote_open_url/url_forwarder_configurator.cc
 @@ -13,7 +13,7 @@ UrlForwarderConfigurator::UrlForwarderConfigurator() =
  
  UrlForwarderConfigurator::~UrlForwarderConfigurator() = default;

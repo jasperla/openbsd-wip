@@ -12,7 +12,7 @@ Index: net/base/network_change_notifier.cc
  #include "net/base/network_change_notifier_posix.h"
  #elif defined(OS_FUCHSIA)
  #include "net/base/network_change_notifier_fuchsia.h"
-@@ -241,9 +241,13 @@ std::unique_ptr<NetworkChangeNotifier> NetworkChangeNo
+@@ -303,9 +303,13 @@ std::unique_ptr<NetworkChangeNotifier> NetworkChangeNo
    // service in a separate process.
    return std::make_unique<NetworkChangeNotifierPosix>(initial_type,
                                                        initial_subtype);

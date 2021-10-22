@@ -30,7 +30,7 @@ Index: ui/gl/sync_control_vsync_provider.cc
    // The actual clock used for the system time returned by glXGetSyncValuesOML
    // is unspecified. In practice, the clock used is likely to be either
    // CLOCK_REALTIME or CLOCK_MONOTONIC, so we compare the returned time to the
-@@ -160,7 +160,7 @@ bool SyncControlVSyncProvider::GetVSyncParametersIfAva
+@@ -159,7 +159,7 @@ bool SyncControlVSyncProvider::GetVSyncParametersIfAva
  }
  
  bool SyncControlVSyncProvider::SupportGetVSyncParametersIfAvailable() const {

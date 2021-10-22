@@ -3,7 +3,7 @@ $OpenBSD: patch-extensions_renderer_bindings_api_binding_util_cc,v 1.1 2021/09/0
 Index: extensions/renderer/bindings/api_binding_util.cc
 --- extensions/renderer/bindings/api_binding_util.cc.orig
 +++ extensions/renderer/bindings/api_binding_util.cc
-@@ -130,7 +130,7 @@ std::string GetPlatformString() {
+@@ -132,7 +132,7 @@ std::string GetPlatformString() {
    return "lacros";
  #elif BUILDFLAG(IS_CHROMEOS_ASH) && !BUILDFLAG(IS_CHROMEOS_LACROS)
    return "chromeos";

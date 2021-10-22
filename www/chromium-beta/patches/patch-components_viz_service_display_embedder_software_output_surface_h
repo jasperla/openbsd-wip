@@ -3,7 +3,7 @@ $OpenBSD: patch-components_viz_service_display_embedder_software_output_surface_
 Index: components/viz/service/display_embedder/software_output_surface.h
 --- components/viz/service/display_embedder/software_output_surface.h.orig
 +++ components/viz/service/display_embedder/software_output_surface.h
-@@ -51,7 +51,7 @@ class VIZ_SERVICE_EXPORT SoftwareOutputSurface : publi
+@@ -55,7 +55,7 @@ class VIZ_SERVICE_EXPORT SoftwareOutputSurface : publi
    gfx::OverlayTransform GetDisplayTransform() override;
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
@@ -12,7 +12,7 @@ Index: components/viz/service/display_embedder/software_output_surface.h
    void SetNeedsSwapSizeNotifications(
        bool needs_swap_size_notifications) override;
  #endif
-@@ -73,7 +73,7 @@ class VIZ_SERVICE_EXPORT SoftwareOutputSurface : publi
+@@ -77,7 +77,7 @@ class VIZ_SERVICE_EXPORT SoftwareOutputSurface : publi
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
