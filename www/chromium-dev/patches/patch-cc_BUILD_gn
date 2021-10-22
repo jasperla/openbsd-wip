@@ -12,7 +12,7 @@ Index: cc/BUILD.gn
      data_deps = [ "//third_party/mesa_headers" ]
    }
  }
-@@ -864,7 +864,6 @@ cc_test("cc_unittests") {
+@@ -866,7 +866,6 @@ cc_test("cc_unittests") {
    ]
    data_deps = [
      "//testing/buildbot/filters:cc_unittests_filters",

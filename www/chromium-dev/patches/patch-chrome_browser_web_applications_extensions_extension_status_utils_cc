@@ -3,7 +3,7 @@ $OpenBSD$
 Index: chrome/browser/web_applications/extensions/extension_status_utils.cc
 --- chrome/browser/web_applications/extensions/extension_status_utils.cc.orig
 +++ chrome/browser/web_applications/extensions/extension_status_utils.cc
-@@ -76,7 +76,7 @@ bool IsExternalExtensionUninstalled(content::BrowserCo
+@@ -75,7 +75,7 @@ bool IsExternalExtensionUninstalled(content::BrowserCo
    return prefs && prefs->IsExternalExtensionUninstalled(extension_id);
  }
  

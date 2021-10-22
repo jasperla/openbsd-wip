@@ -12,7 +12,7 @@ Index: chrome/browser/web_applications/web_app_shortcut.cc
  // Linux supports icons of any size. FreeDesktop Icon Theme Specification states
  // that "Minimally you should install a 48x48 icon in the hicolor theme."
  const int kDesiredIconSizesForShortcut[] = {16, 32, 48, 128, 256, 512};
-@@ -109,7 +109,7 @@ ScopedShortcutOverrideForTesting::~ScopedShortcutOverr
+@@ -108,7 +108,7 @@ ScopedShortcutOverrideForTesting::~ScopedShortcutOverr
    directories = {&desktop, &application_menu, &quick_launch, &startup};
  #elif defined(OS_MAC)
    directories = {&chrome_apps_folder};
@@ -21,7 +21,7 @@ Index: chrome/browser/web_applications/web_app_shortcut.cc
    directories = {&desktop};
  #endif
    for (base::ScopedTempDir* dir : directories) {
-@@ -150,7 +150,7 @@ std::unique_ptr<ScopedShortcutOverrideForTesting> Over
+@@ -149,7 +149,7 @@ std::unique_ptr<ScopedShortcutOverrideForTesting> Over
          scoped_override->chrome_apps_folder.CreateUniqueTempDirUnderPath(
              base_path);
      DCHECK(success);
@@ -30,7 +30,7 @@ Index: chrome/browser/web_applications/web_app_shortcut.cc
      bool success =
          scoped_override->desktop.CreateUniqueTempDirUnderPath(base_path);
      DCHECK(success);
-@@ -168,7 +168,7 @@ std::unique_ptr<ScopedShortcutOverrideForTesting> Over
+@@ -167,7 +167,7 @@ std::unique_ptr<ScopedShortcutOverrideForTesting> Over
  #elif defined(OS_MAC)
      bool success = scoped_override->chrome_apps_folder.CreateUniqueTempDir();
      DCHECK(success);

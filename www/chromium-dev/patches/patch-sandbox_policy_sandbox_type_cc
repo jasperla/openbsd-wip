@@ -3,7 +3,7 @@ $OpenBSD$
 Index: sandbox/policy/sandbox_type.cc
 --- sandbox/policy/sandbox_type.cc.orig
 +++ sandbox/policy/sandbox_type.cc
-@@ -34,7 +34,7 @@ bool IsUnsandboxedSandboxType(SandboxType sandbox_type
+@@ -35,7 +35,7 @@ bool IsUnsandboxedSandboxType(SandboxType sandbox_type
  #endif
      case SandboxType::kAudio:
        return false;
@@ -12,7 +12,7 @@ Index: sandbox/policy/sandbox_type.cc
      case SandboxType::kVideoCapture:
        return false;
  #endif
-@@ -120,7 +120,7 @@ void SetCommandLineFlagsForSandboxType(base::CommandLi
+@@ -121,7 +121,7 @@ void SetCommandLineFlagsForSandboxType(base::CommandLi
  #endif
      case SandboxType::kPrintCompositor:
      case SandboxType::kAudio:
@@ -21,7 +21,7 @@ Index: sandbox/policy/sandbox_type.cc
      case SandboxType::kVideoCapture:
  #endif
  #if defined(OS_WIN)
-@@ -248,7 +248,7 @@ std::string StringFromUtilitySandboxType(SandboxType s
+@@ -250,7 +250,7 @@ std::string StringFromUtilitySandboxType(SandboxType s
        return switches::kUtilitySandbox;
      case SandboxType::kAudio:
        return switches::kAudioSandbox;
@@ -30,7 +30,7 @@ Index: sandbox/policy/sandbox_type.cc
      case SandboxType::kVideoCapture:
        return switches::kVideoCaptureSandbox;
  #endif
-@@ -350,7 +350,7 @@ SandboxType UtilitySandboxTypeFromString(const std::st
+@@ -356,7 +356,7 @@ SandboxType UtilitySandboxTypeFromString(const std::st
      return SandboxType::kAudio;
    if (sandbox_string == switches::kSpeechRecognitionSandbox)
      return SandboxType::kSpeechRecognition;

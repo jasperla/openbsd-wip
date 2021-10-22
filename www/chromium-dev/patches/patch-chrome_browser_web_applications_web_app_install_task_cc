@@ -3,7 +3,7 @@ $OpenBSD: patch-chrome_browser_web_applications_web_app_install_task_cc,v 1.1 20
 Index: chrome/browser/web_applications/web_app_install_task.cc
 --- chrome/browser/web_applications/web_app_install_task.cc.orig
 +++ chrome/browser/web_applications/web_app_install_task.cc
-@@ -852,7 +852,7 @@ void WebAppInstallTask::OnInstallFinalizedCreateShortc
+@@ -908,7 +908,7 @@ void WebAppInstallTask::OnInstallFinalizedCreateShortc
    options.os_hooks[OsHookType::kFileHandlers] = true;
    options.os_hooks[OsHookType::kProtocolHandlers] = true;
    options.os_hooks[OsHookType::kUninstallationViaOsSettings] = true;

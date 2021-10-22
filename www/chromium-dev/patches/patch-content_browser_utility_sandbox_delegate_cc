@@ -3,7 +3,7 @@ $OpenBSD$
 Index: content/browser/utility_sandbox_delegate.cc
 --- content/browser/utility_sandbox_delegate.cc.orig
 +++ content/browser/utility_sandbox_delegate.cc
-@@ -57,7 +57,7 @@ UtilitySandboxedProcessLauncherDelegate::
+@@ -59,7 +59,7 @@ UtilitySandboxedProcessLauncherDelegate::
  #if BUILDFLAG(ENABLE_PLUGINS)
        sandbox_type_ == sandbox::policy::SandboxType::kPpapi ||
  #endif

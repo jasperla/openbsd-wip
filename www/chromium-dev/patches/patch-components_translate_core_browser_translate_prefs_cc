@@ -3,7 +3,7 @@ $OpenBSD: patch-components_translate_core_browser_translate_prefs_cc,v 1.1 2021/
 Index: components/translate/core/browser/translate_prefs.cc
 --- components/translate/core/browser/translate_prefs.cc.orig
 +++ components/translate/core/browser/translate_prefs.cc
-@@ -840,7 +840,7 @@ bool TranslatePrefs::CanTranslateLanguage(
+@@ -842,7 +842,7 @@ bool TranslatePrefs::CanTranslateLanguage(
  bool TranslatePrefs::IsDetailedLanguageSettingsEnabled() {
  #if defined(OS_ANDROID)
    return base::FeatureList::IsEnabled(language::kDetailedLanguageSettings);

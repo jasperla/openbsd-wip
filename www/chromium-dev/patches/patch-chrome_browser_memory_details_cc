@@ -12,7 +12,7 @@ Index: chrome/browser/memory_details.cc
  #include "content/public/browser/zygote_host/zygote_host_linux.h"
  #endif
  
-@@ -321,7 +321,7 @@ void MemoryDetails::CollectChildInfoOnUIThread() {
+@@ -326,7 +326,7 @@ void MemoryDetails::CollectChildInfoOnUIThread() {
        process.titles.push_back(title);
      }
  

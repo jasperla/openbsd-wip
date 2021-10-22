@@ -3,7 +3,7 @@ $OpenBSD$
 Index: chrome/common/webui_url_constants.cc
 --- chrome/common/webui_url_constants.cc.orig
 +++ chrome/common/webui_url_constants.cc
-@@ -380,18 +380,18 @@ const char kChromeUIOSSettingsHost[] = "os-settings";
+@@ -378,18 +378,18 @@ const char kChromeUIOSSettingsHost[] = "os-settings";
  const char kChromeUIOSSettingsURL[] = "chrome://os-settings/";
  #endif
  
@@ -25,7 +25,7 @@ Index: chrome/common/webui_url_constants.cc
  const char kChromeUIDiscardsHost[] = "discards";
  const char kChromeUIDiscardsURL[] = "chrome://discards/";
  #endif
-@@ -406,14 +406,14 @@ const char kChromeUILinuxProxyConfigHost[] = "linux-pr
+@@ -404,14 +404,14 @@ const char kChromeUILinuxProxyConfigHost[] = "linux-pr
  #endif
  
  #if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_CHROMEOS) || \
@@ -42,7 +42,7 @@ Index: chrome/common/webui_url_constants.cc
  const char kChromeUIBrowserSwitchHost[] = "browser-switch";
  const char kChromeUIBrowserSwitchURL[] = "chrome://browser-switch/";
  const char kChromeUIEnterpriseProfileWelcomeHost[] =
-@@ -428,7 +428,7 @@ const char kChromeUIProfilePickerUrl[] = "chrome://pro
+@@ -426,7 +426,7 @@ const char kChromeUIProfilePickerUrl[] = "chrome://pro
  const char kChromeUIProfilePickerStartupQuery[] = "startup";
  #endif
  
@@ -51,7 +51,7 @@ Index: chrome/common/webui_url_constants.cc
      defined(USE_AURA)
  const char kChromeUITabModalConfirmDialogHost[] = "tab-modal-confirm-dialog";
  #endif
-@@ -618,18 +618,18 @@ const char* const kChromeHostURLs[] = {
+@@ -615,18 +615,18 @@ const char* const kChromeHostURLs[] = {
      kChromeUIAssistantOptInHost,
  #endif
  #if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || \
@@ -73,7 +73,7 @@ Index: chrome/common/webui_url_constants.cc
      kChromeUISandboxHost,
  #endif
  #if defined(OS_WIN)
-@@ -691,7 +691,7 @@ const char* const kChromeDebugURLs[] = {
+@@ -685,7 +685,7 @@ const char* const kChromeDebugURLs[] = {
      blink::kChromeUIGpuJavaCrashURL,
      kChromeUIJavaCrashURL,
  #endif

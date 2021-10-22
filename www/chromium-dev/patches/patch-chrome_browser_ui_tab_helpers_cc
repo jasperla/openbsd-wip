@@ -3,7 +3,7 @@ $OpenBSD$
 Index: chrome/browser/ui/tab_helpers.cc
 --- chrome/browser/ui/tab_helpers.cc.orig
 +++ chrome/browser/ui/tab_helpers.cc
-@@ -166,7 +166,7 @@
+@@ -169,7 +169,7 @@
  #endif
  
  #if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || \
@@ -12,7 +12,7 @@ Index: chrome/browser/ui/tab_helpers.cc
  #include "chrome/browser/ui/blocked_content/framebust_block_tab_helper.h"
  #include "chrome/browser/ui/hats/hats_helper.h"
  #endif
-@@ -445,13 +445,13 @@ void TabHelpers::AttachTabHelpers(WebContents* web_con
+@@ -448,13 +448,13 @@ void TabHelpers::AttachTabHelpers(WebContents* web_con
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.

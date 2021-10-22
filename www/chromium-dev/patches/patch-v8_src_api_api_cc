@@ -3,7 +3,7 @@ $OpenBSD: patch-v8_src_api_api_cc,v 1.18 2021/09/01 16:54:41 robert Exp $
 Index: v8/src/api/api.cc
 --- v8/src/api/api.cc.orig
 +++ v8/src/api/api.cc
-@@ -132,7 +132,7 @@
+@@ -133,7 +133,7 @@
  #include "src/wasm/wasm-serialization.h"
  #endif  // V8_ENABLE_WEBASSEMBLY
  
@@ -12,7 +12,7 @@ Index: v8/src/api/api.cc
  #include <signal.h>
  #include "include/v8-wasm-trap-handler-posix.h"
  #include "src/trap-handler/handler-inside-posix.h"
-@@ -5975,7 +5975,7 @@ bool v8::V8::Initialize(const int build_config) {
+@@ -5996,7 +5996,7 @@ bool v8::V8::Initialize(const int build_config) {
    return true;
  }
  

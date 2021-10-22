@@ -3,7 +3,7 @@ $OpenBSD$
 Index: chrome/browser/web_applications/web_app_shortcut.h
 --- chrome/browser/web_applications/web_app_shortcut.h.orig
 +++ chrome/browser/web_applications/web_app_shortcut.h
-@@ -18,7 +18,7 @@
+@@ -19,7 +19,7 @@
  #include "ui/gfx/image/image_family.h"
  #include "url/gurl.h"
  
@@ -12,7 +12,7 @@ Index: chrome/browser/web_applications/web_app_shortcut.h
  #include "chrome/browser/web_applications/web_app_shortcut_linux.h"
  #endif  // defined(OS_LINUX)
  
-@@ -46,7 +46,7 @@ struct ScopedShortcutOverrideForTesting {
+@@ -47,7 +47,7 @@ struct ScopedShortcutOverrideForTesting {
    base::ScopedTempDir startup;
  #elif defined(OS_MAC)
    base::ScopedTempDir chrome_apps_folder;
@@ -21,7 +21,7 @@ Index: chrome/browser/web_applications/web_app_shortcut.h
    base::ScopedTempDir desktop;
  #endif
  };
-@@ -88,7 +88,7 @@ struct ShortcutInfo {
+@@ -89,7 +89,7 @@ struct ShortcutInfo {
    std::set<std::string> file_handler_extensions;
    std::set<std::string> file_handler_mime_types;
    std::set<std::string> protocol_handlers;
