@@ -48,7 +48,7 @@ Index: components/policy/resources/policy_templates.json
        'features': {
          'dynamic_refresh': True,
          'per_profile': False,
-@@ -9939,7 +9939,7 @@
+@@ -9942,7 +9942,7 @@
        'owners': ['file://net/cert/OWNERS', 'rsleevi@chromium.org'],
        'type': 'main',
        'schema': { 'type': 'boolean' },
@@ -57,7 +57,7 @@ Index: components/policy/resources/policy_templates.json
        'features': {
          'dynamic_refresh': True,
          'per_profile': False,
-@@ -10033,7 +10033,7 @@
+@@ -10036,7 +10036,7 @@
        'owners': ['file://components/policy/resources/OWNERS', 'pmarko@chromium.org'],
        'type': 'main',
        'schema': { 'type': 'boolean' },
@@ -66,7 +66,7 @@ Index: components/policy/resources/policy_templates.json
        'features': {
          'dynamic_refresh': False,
          'per_profile': False,
-@@ -11945,7 +11945,7 @@
+@@ -11948,7 +11948,7 @@
        'owners': ['file://components/policy/resources/OWNERS', 'pmarko@chromium.org'],
        'type': 'main',
        'schema': { 'type': 'boolean' },
@@ -75,7 +75,7 @@ Index: components/policy/resources/policy_templates.json
        'features': {
          'can_be_recommended': True,
          'dynamic_refresh': True,
-@@ -12792,7 +12792,7 @@
+@@ -12795,7 +12795,7 @@
        'owners': ['file://components/policy/resources/OWNERS', 'bartfab@chromium.org'],
        'type': 'main',
        'schema': { 'type': 'boolean' },
@@ -84,7 +84,7 @@ Index: components/policy/resources/policy_templates.json
        'features': {
          'dynamic_refresh': True,
          'per_profile': True,
-@@ -19599,7 +19599,7 @@
+@@ -19600,7 +19600,7 @@
          'items': { 'type': 'string' }
        },
        # Spell checking is provided by macOS, so can't be controlled on Mac.
@@ -93,7 +93,7 @@ Index: components/policy/resources/policy_templates.json
        'features': {
          'can_be_recommended': False,
          'dynamic_refresh': True,
-@@ -19630,7 +19630,7 @@
+@@ -19631,7 +19631,7 @@
          'items': { 'type': 'string' }
        },
        # Spell checking is provided by macOS, so can't be controlled on Mac.
@@ -102,7 +102,7 @@ Index: components/policy/resources/policy_templates.json
        'deprecated': True,
        'features': {
          'can_be_recommended': False,
-@@ -19664,7 +19664,7 @@
+@@ -19665,7 +19665,7 @@
          'items': { 'type': 'string' }
        },
        # Spell checking is provided by macOS, so can't be controlled on Mac.
@@ -111,7 +111,7 @@ Index: components/policy/resources/policy_templates.json
        'features': {
          'can_be_recommended': False,
          'dynamic_refresh': True,
-@@ -20403,7 +20403,7 @@
+@@ -20404,7 +20404,7 @@
        'owners': ['fbeaufort@chromium.org', 'beccahughes@chromium.org'],
        'type': 'main',
        'schema': { 'type': 'boolean' },
@@ -120,7 +120,7 @@ Index: components/policy/resources/policy_templates.json
        'features': {
          'dynamic_refresh': True,
          'per_profile': True,
-@@ -24470,7 +24470,7 @@
+@@ -24471,7 +24471,7 @@
        'owners': ['file://services/audio/OWNERS', 'dalecurtis@chromium.org'],
        'type': 'main',
        'schema': { 'type': 'boolean' },
@@ -129,7 +129,7 @@ Index: components/policy/resources/policy_templates.json
        'features': {
          'dynamic_refresh': False,
          'per_profile': False,
-@@ -25812,7 +25812,7 @@ If this policy is left unset, privacy screen is disabl
+@@ -25813,7 +25813,7 @@ If this policy is left unset, privacy screen is disabl
        'owners': ['file://chrome/browser/notifications/OWNERS', 'knollr@chromium.org'],
        'type': 'main',
        'schema': { 'type': 'boolean' },

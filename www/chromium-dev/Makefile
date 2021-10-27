@@ -13,7 +13,7 @@ DPB_PROPERTIES=		parallel parallel2
 
 COMMENT=		Chromium browser
 
-V=			97.0.4676.0
+V=			97.0.4681.0
 
 DISTNAME=		chromium-${V}
 
@@ -92,7 +92,7 @@ BUILD_DEPENDS=	archivers/bzip2 \
 		sysutils/pciutils \
 		devel/ninja \
 		x11/gtk+3 \
-		x11/py-xcbgen \
+		x11/py-xcbgen${MODPY_FLAVOR} \
 		${MODGCC4_CPPDEP}
 LIB_DEPENDS=	devel/harfbuzz \
 		graphics/tiff \

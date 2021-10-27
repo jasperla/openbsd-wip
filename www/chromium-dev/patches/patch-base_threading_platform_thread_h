@@ -4,7 +4,7 @@ Index: base/threading/platform_thread.h
 --- base/threading/platform_thread.h.orig
 +++ base/threading/platform_thread.h
 @@ -240,7 +240,7 @@ class BASE_EXPORT PlatformThread {
-   // Returns a realtime period provided by |delegate|.
+   // Returns a realtime period provided by `delegate`.
    static TimeDelta GetRealtimePeriod(Delegate* delegate);
  
 -#if defined(OS_LINUX) || defined(OS_CHROMEOS)

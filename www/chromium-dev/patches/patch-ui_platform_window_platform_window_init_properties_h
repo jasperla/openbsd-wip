@@ -12,7 +12,7 @@ Index: ui/platform_window/platform_window_init_properties.h
  class X11ExtensionDelegate;
  #endif
  
-@@ -106,7 +106,7 @@ struct COMPONENT_EXPORT(PLATFORM_WINDOW) PlatformWindo
+@@ -112,7 +112,7 @@ struct COMPONENT_EXPORT(PLATFORM_WINDOW) PlatformWindo
  
    PlatformWindowShadowType shadow_type = PlatformWindowShadowType::kDefault;
  

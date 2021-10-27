@@ -12,9 +12,9 @@ Index: gpu/command_buffer/common/gpu_memory_buffer_support.cc
    return GL_TEXTURE_EXTERNAL_OES;
  #elif defined(OS_FUCHSIA)
    return GL_TEXTURE_2D;
-@@ -165,7 +165,7 @@ GPU_EXPORT uint32_t GetBufferTextureTarget(gfx::Buffer
- GPU_EXPORT bool NativeBufferNeedsPlatformSpecificTextureTarget(
-     gfx::BufferFormat format) {
+@@ -166,7 +166,7 @@ GPU_EXPORT bool NativeBufferNeedsPlatformSpecificTextu
+     gfx::BufferFormat format,
+     gfx::BufferPlane plane) {
  #if defined(USE_OZONE) || defined(OS_LINUX) || defined(OS_CHROMEOS) || \
 -    defined(OS_WIN)
 +    defined(OS_WIN) || defined(OS_BSD)

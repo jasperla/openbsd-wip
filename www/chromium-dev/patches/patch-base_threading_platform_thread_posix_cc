@@ -14,7 +14,7 @@ Index: base/threading/platform_thread_posix.cc
  #if BUILDFLAG(USE_PARTITION_ALLOC_AS_MALLOC)
      internal::PCScan::NotifyThreadCreated(internal::GetStackPointer());
  #endif
-@@ -328,6 +328,9 @@ bool PlatformThread::CanIncreaseThreadPriority(ThreadP
+@@ -331,6 +331,9 @@ bool PlatformThread::CanChangeThreadPriority(ThreadPri
  // static
  void PlatformThread::SetCurrentThreadPriorityImpl(ThreadPriority priority) {
  #if defined(OS_NACL)

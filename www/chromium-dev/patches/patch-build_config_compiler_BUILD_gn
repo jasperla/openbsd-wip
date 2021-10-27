@@ -83,25 +83,16 @@ Index: build/config/compiler/BUILD.gn
            # Ignore warnings about MSVC optimization pragmas.
            # TODO(thakis): Only for no_chromium_code? http://crbug.com/912662
            "-Wno-ignored-pragma-optimize",
-@@ -1528,7 +1520,7 @@ config("default_warnings") {
-         ]
- 
-         # NaCl does not support flags from ToT.
--        if (!is_nacl) {
-+        if (!is_nacl && !is_openbsd) {
-           cflags += [
-             # TODO(https://crbug.com/1203071): Clean up and enable.
-             "-Wno-unused-but-set-parameter",
-@@ -1680,7 +1672,7 @@ config("no_chromium_code") {
+@@ -1673,7 +1665,7 @@ config("no_chromium_code") {
        # third-party libraries.
        "-Wno-c++11-narrowing",
      ]
 -    if (!is_nacl && (current_toolchain == host_toolchain || !use_xcode_clang)) {
 +    if (!is_nacl && (current_toolchain == host_toolchain || !use_xcode_clang) && !is_openbsd) {
        cflags += [
-         # TODO(https://crbug.com/1202159): Clean up and enable.
-         "-Wno-misleading-indentation",
-@@ -1760,7 +1752,7 @@ config("thin_archive") {
+         # Disabled for similar reasons as -Wunused-variable.
+         "-Wno-unused-but-set-variable",
+@@ -1756,7 +1748,7 @@ config("thin_archive") {
    # archives.
    # TODO(crbug.com/1221615): Enable on is_apple if use_lld once that no longer
    # confuses lldb.
@@ -110,7 +101,7 @@ Index: build/config/compiler/BUILD.gn
      arflags = [ "-T" ]
    } else if (is_win && use_lld) {
      arflags = [ "/llvmlibthin" ]
-@@ -2162,7 +2154,7 @@ config("afdo_optimize_size") {
+@@ -2158,7 +2150,7 @@ config("afdo_optimize_size") {
  # between //base/allocator:tcmalloc and AFDO on GCC), so we provide a separate
  # config to allow AFDO to be disabled per-target.
  config("afdo") {
@@ -119,7 +110,7 @@ Index: build/config/compiler/BUILD.gn
      cflags = []
      if (clang_emit_debug_info_for_profiling) {
        # Add the following flags to generate debug info for profiling.
-@@ -2178,7 +2170,7 @@ config("afdo") {
+@@ -2174,7 +2166,7 @@ config("afdo") {
        cflags += [ "-fprofile-sample-use=${rebased_clang_sample_profile}" ]
        inputs = [ _clang_sample_profile ]
      }
@@ -128,3 +119,12 @@ Index: build/config/compiler/BUILD.gn
      cflags = [ "-fauto-profile=${auto_profile_path}" ]
      inputs = [ auto_profile_path ]
    }
+@@ -2303,7 +2295,7 @@ config("symbols") {
+     }
+   }
+ 
+-  if (is_clang && !is_nacl && !use_xcode_clang) {
++  if (is_clang && !is_nacl && !use_xcode_clang && !is_openbsd) {
+     if (is_apple) {
+       # TODO(https://crbug.com/1050118): Investigate missing debug info on mac.
+       # Make sure we don't use constructor homing on mac.

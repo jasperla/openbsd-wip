@@ -39,7 +39,7 @@ Index: media/base/media_switches.cc
  // Enable vaapi video decoding on linux. This is already enabled by default on
  // chromeos, but needs an experiment on linux.
  const base::Feature kVaapiVideoDecodeLinux{"VaapiVideoDecoder",
-@@ -948,7 +948,7 @@ bool IsLiveCaptionFeatureEnabled() {
+@@ -942,7 +942,7 @@ bool IsLiveCaptionFeatureEnabled() {
      return false;
  #endif
  

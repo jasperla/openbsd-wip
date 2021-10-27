@@ -3,7 +3,7 @@ $OpenBSD$
 Index: chrome/browser/chrome_content_browser_client.cc
 --- chrome/browser/chrome_content_browser_client.cc.orig
 +++ chrome/browser/chrome_content_browser_client.cc
-@@ -367,7 +367,7 @@
+@@ -368,7 +368,7 @@
  #include "components/user_manager/user_manager.h"
  #include "services/service_manager/public/mojom/interface_provider_spec.mojom.h"
  #include "storage/browser/file_system/external_mount_points.h"
@@ -12,7 +12,7 @@ Index: chrome/browser/chrome_content_browser_client.cc
  #include "chrome/browser/chrome_browser_main_linux.h"
  #elif defined(OS_ANDROID)
  #include "base/android/application_status_listener.h"
-@@ -430,12 +430,12 @@
+@@ -431,12 +431,12 @@
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
@@ -27,7 +27,7 @@ Index: chrome/browser/chrome_content_browser_client.cc
  #include "components/crash/core/app/crash_switches.h"
  #include "components/crash/core/app/crashpad.h"
  #endif
-@@ -449,7 +449,7 @@
+@@ -450,7 +450,7 @@
  #endif
  
  #if defined(OS_LINUX) || defined(OS_MAC) || defined(OS_WIN) || \
@@ -36,7 +36,7 @@ Index: chrome/browser/chrome_content_browser_client.cc
  #include "chrome/browser/enterprise/connectors/device_trust/navigation_throttle.h"
  #endif  // defined(OS_LINUX) || defined(OS_MAC) || defined(OS_WIN) ||
          // BUILDFLAG(IS_CHROMEOS_ASH)
-@@ -470,11 +470,11 @@
+@@ -471,11 +471,11 @@
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
@@ -50,7 +50,7 @@ Index: chrome/browser/chrome_content_browser_client.cc
  #include "chrome/browser/chrome_browser_main_extra_parts_linux.h"
  #elif defined(USE_OZONE)
  #include "chrome/browser/chrome_browser_main_extra_parts_ozone.h"
-@@ -858,7 +858,7 @@ blink::mojom::AutoplayPolicy GetAutoplayPolicyForWebCo
+@@ -859,7 +859,7 @@ blink::mojom::AutoplayPolicy GetAutoplayPolicyForWebCo
  int GetCrashSignalFD(const base::CommandLine& command_line) {
    return crashpad::CrashHandlerHost::Get()->GetDeathSignalSocket();
  }
@@ -59,7 +59,7 @@ Index: chrome/browser/chrome_content_browser_client.cc
  breakpad::CrashHandlerHostLinux* CreateCrashHandlerHost(
      const std::string& process_type) {
    base::FilePath dumps_path;
-@@ -1346,7 +1346,7 @@ ChromeContentBrowserClient::CreateBrowserMainParts(
+@@ -1349,7 +1349,7 @@ ChromeContentBrowserClient::CreateBrowserMainParts(
  #elif BUILDFLAG(IS_CHROMEOS_LACROS)
    main_parts = std::make_unique<ChromeBrowserMainPartsLacros>(parameters,
                                                                &startup_data_);
@@ -68,7 +68,7 @@ Index: chrome/browser/chrome_content_browser_client.cc
    main_parts =
        std::make_unique<ChromeBrowserMainPartsLinux>(parameters, &startup_data_);
  #elif defined(OS_ANDROID)
-@@ -1380,7 +1380,7 @@ ChromeContentBrowserClient::CreateBrowserMainParts(
+@@ -1383,7 +1383,7 @@ ChromeContentBrowserClient::CreateBrowserMainParts(
        std::make_unique<ChromeBrowserMainExtraPartsViewsLacros>());
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
@@ -77,7 +77,7 @@ Index: chrome/browser/chrome_content_browser_client.cc
    main_parts->AddParts(
        std::make_unique<ChromeBrowserMainExtraPartsViewsLinux>());
  #else
-@@ -1397,7 +1397,7 @@ ChromeContentBrowserClient::CreateBrowserMainParts(
+@@ -1400,7 +1400,7 @@ ChromeContentBrowserClient::CreateBrowserMainParts(
    main_parts->AddParts(std::make_unique<ChromeBrowserMainExtraPartsLacros>());
  #endif
  
@@ -86,7 +86,7 @@ Index: chrome/browser/chrome_content_browser_client.cc
    main_parts->AddParts(std::make_unique<ChromeBrowserMainExtraPartsLinux>());
  #elif defined(USE_OZONE)
    main_parts->AddParts(std::make_unique<ChromeBrowserMainExtraPartsOzone>());
-@@ -2176,6 +2176,8 @@ void ChromeContentBrowserClient::AppendExtraCommandLin
+@@ -2179,6 +2179,8 @@ void ChromeContentBrowserClient::AppendExtraCommandLin
  #elif defined(OS_POSIX)
  #if defined(OS_ANDROID)
    bool enable_crash_reporter = true;
@@ -95,7 +95,7 @@ Index: chrome/browser/chrome_content_browser_client.cc
  #else
    bool enable_crash_reporter = false;
    if (crash_reporter::IsCrashpadEnabled()) {
-@@ -2490,7 +2492,7 @@ void ChromeContentBrowserClient::AppendExtraCommandLin
+@@ -2493,7 +2495,7 @@ void ChromeContentBrowserClient::AppendExtraCommandLin
    ThreadProfilerConfiguration::Get()->AppendCommandLineSwitchForChildProcess(
        command_line);
  
@@ -104,7 +104,7 @@ Index: chrome/browser/chrome_content_browser_client.cc
    // Processes may only query perf_event_open with the BPF sandbox disabled.
    if (browser_command_line.HasSwitch(switches::kEnableThreadInstructionCount) &&
        command_line->HasSwitch(sandbox::policy::switches::kNoSandbox)) {
-@@ -3848,7 +3850,7 @@ void ChromeContentBrowserClient::GetAdditionalFileSyst
+@@ -3851,7 +3853,7 @@ void ChromeContentBrowserClient::GetAdditionalFileSyst
    }
  }
  
@@ -113,7 +113,7 @@ Index: chrome/browser/chrome_content_browser_client.cc
  void ChromeContentBrowserClient::GetAdditionalMappedFilesForChildProcess(
      const base::CommandLine& command_line,
      int child_process_id,
-@@ -4257,7 +4259,7 @@ ChromeContentBrowserClient::CreateThrottlesForNavigati
+@@ -4260,7 +4262,7 @@ ChromeContentBrowserClient::CreateThrottlesForNavigati
    }
  
  #if defined(OS_LINUX) || defined(OS_MAC) || defined(OS_WIN) || \
@@ -122,7 +122,7 @@ Index: chrome/browser/chrome_content_browser_client.cc
    MaybeAddThrottle(enterprise_connectors::DeviceTrustNavigationThrottle::
                         MaybeCreateThrottleFor(handle),
                     &throttles);
-@@ -4289,7 +4291,7 @@ ChromeContentBrowserClient::CreateThrottlesForNavigati
+@@ -4292,7 +4294,7 @@ ChromeContentBrowserClient::CreateThrottlesForNavigati
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
