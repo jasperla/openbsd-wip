@@ -128,3 +128,12 @@ Index: build/config/compiler/BUILD.gn
      cflags = [ "-fauto-profile=${auto_profile_path}" ]
      inputs = [ auto_profile_path ]
    }
+@@ -2311,7 +2303,7 @@ config("symbols") {
+     }
+   }
+ 
+-  if (is_clang && !is_nacl && !use_xcode_clang) {
++  if (is_clang && !is_nacl && !use_xcode_clang && !is_openbsd) {
+     if (is_apple) {
+       # TODO(https://crbug.com/1050118): Investigate missing debug info on mac.
+       # Make sure we don't use constructor homing on mac.

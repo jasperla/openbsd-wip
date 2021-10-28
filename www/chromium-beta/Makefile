@@ -38,7 +38,6 @@ MASTER_SITES=	https://commondatastorage.googleapis.com/chromium-browser-official
 MASTER_SITES0=	http://nerd.hu/distfiles/
 
 MODULES=	lang/python
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
 
 COMPILER =	base-clang ports-clang ports-gcc
 
@@ -92,7 +91,7 @@ BUILD_DEPENDS=	archivers/bzip2 \
 		sysutils/pciutils \
 		devel/ninja \
 		x11/gtk+3 \
-		x11/py-xcbgen \
+		x11/py-xcbgen${MODPY_FLAVOR} \
 		${MODGCC4_CPPDEP}
 LIB_DEPENDS=	devel/harfbuzz \
 		graphics/tiff \
