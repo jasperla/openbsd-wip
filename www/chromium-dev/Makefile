@@ -38,7 +38,6 @@ MASTER_SITES=	https://commondatastorage.googleapis.com/chromium-browser-official
 MASTER_SITES0=	http://nerd.hu/distfiles/
 
 MODULES=	lang/python
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
 
 COMPILER =	base-clang ports-clang ports-gcc
 
