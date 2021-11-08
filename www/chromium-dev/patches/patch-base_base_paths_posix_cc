@@ -98,4 +98,4 @@ Index: base/base_paths_posix.cc
 +#endif
  #endif
      }
-     case DIR_SOURCE_ROOT: {
+     case DIR_SRC_TEST_DATA_ROOT: {

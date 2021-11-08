@@ -12,7 +12,7 @@ Index: chrome/browser/flag_descriptions.h
  #include "base/allocator/buildflags.h"
  #endif  // defined(OS_LINUX) || defined(OS_CHROMEOS)
  
-@@ -3058,7 +3058,7 @@ extern const char kDownloadShelfWebUIDescription[];
+@@ -3040,7 +3040,7 @@ extern const char kDownloadShelfWebUIDescription[];
  // Random platform combinations -----------------------------------------------
  
  #if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || \
@@ -21,7 +21,7 @@ Index: chrome/browser/flag_descriptions.h
  
  extern const char kWebUIBrandingUpdateName[];
  extern const char kWebUIBrandingUpdateDescription[];
-@@ -3072,7 +3072,7 @@ extern const char kSettingsLandingPageRedesignDescript
+@@ -3054,7 +3054,7 @@ extern const char kSettingsLandingPageRedesignDescript
  #endif  // defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) ||
          // defined(OS_CHROMEOS) || defined(OS_FUCHSIA)
  
@@ -30,7 +30,7 @@ Index: chrome/browser/flag_descriptions.h
  
  extern const char kCommanderName[];
  extern const char kCommanderDescription[];
-@@ -3085,7 +3085,7 @@ extern const char kDesktopDetailedLanguageSettingsDesc
+@@ -3067,7 +3067,7 @@ extern const char kDesktopDetailedLanguageSettingsDesc
  
  #endif  // defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX)
  
@@ -39,7 +39,7 @@ Index: chrome/browser/flag_descriptions.h
  #if BUILDFLAG(USE_TCMALLOC)
  extern const char kDynamicTcmallocName[];
  extern const char kDynamicTcmallocDescription[];
-@@ -3102,7 +3102,7 @@ extern const char kWebShareName[];
+@@ -3084,7 +3084,7 @@ extern const char kWebShareName[];
  extern const char kWebShareDescription[];
  #endif  // defined(OS_WIN) || defined(OS_CHROMEOS) || defined(OS_MAC)
  
@@ -48,7 +48,7 @@ Index: chrome/browser/flag_descriptions.h
  extern const char kOzonePlatformHintChoiceDefault[];
  extern const char kOzonePlatformHintChoiceAuto[];
  extern const char kOzonePlatformHintChoiceX11[];
-@@ -3184,7 +3184,7 @@ extern const char kElasticOverscrollDescription[];
+@@ -3166,7 +3166,7 @@ extern const char kElasticOverscrollDescription[];
  #endif  // defined(OS_WIN) || defined(OS_ANDROID)
  
  #if defined(OS_WIN) || (defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)) || \

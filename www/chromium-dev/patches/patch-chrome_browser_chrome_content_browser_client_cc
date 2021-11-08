@@ -95,7 +95,7 @@ Index: chrome/browser/chrome_content_browser_client.cc
  #else
    bool enable_crash_reporter = false;
    if (crash_reporter::IsCrashpadEnabled()) {
-@@ -2493,7 +2495,7 @@ void ChromeContentBrowserClient::AppendExtraCommandLin
+@@ -2488,7 +2490,7 @@ void ChromeContentBrowserClient::AppendExtraCommandLin
    ThreadProfilerConfiguration::Get()->AppendCommandLineSwitchForChildProcess(
        command_line);
  
@@ -104,7 +104,7 @@ Index: chrome/browser/chrome_content_browser_client.cc
    // Processes may only query perf_event_open with the BPF sandbox disabled.
    if (browser_command_line.HasSwitch(switches::kEnableThreadInstructionCount) &&
        command_line->HasSwitch(sandbox::policy::switches::kNoSandbox)) {
-@@ -3851,7 +3853,7 @@ void ChromeContentBrowserClient::GetAdditionalFileSyst
+@@ -3834,7 +3836,7 @@ void ChromeContentBrowserClient::GetAdditionalFileSyst
    }
  }
  
@@ -113,7 +113,7 @@ Index: chrome/browser/chrome_content_browser_client.cc
  void ChromeContentBrowserClient::GetAdditionalMappedFilesForChildProcess(
      const base::CommandLine& command_line,
      int child_process_id,
-@@ -4260,7 +4262,7 @@ ChromeContentBrowserClient::CreateThrottlesForNavigati
+@@ -4243,7 +4245,7 @@ ChromeContentBrowserClient::CreateThrottlesForNavigati
    }
  
  #if defined(OS_LINUX) || defined(OS_MAC) || defined(OS_WIN) || \
@@ -122,7 +122,7 @@ Index: chrome/browser/chrome_content_browser_client.cc
    MaybeAddThrottle(enterprise_connectors::DeviceTrustNavigationThrottle::
                         MaybeCreateThrottleFor(handle),
                     &throttles);
-@@ -4292,7 +4294,7 @@ ChromeContentBrowserClient::CreateThrottlesForNavigati
+@@ -4275,7 +4277,7 @@ ChromeContentBrowserClient::CreateThrottlesForNavigati
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.

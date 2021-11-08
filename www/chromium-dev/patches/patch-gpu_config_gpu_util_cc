@@ -3,7 +3,7 @@ $OpenBSD$
 Index: gpu/config/gpu_util.cc
 --- gpu/config/gpu_util.cc.orig
 +++ gpu/config/gpu_util.cc
-@@ -775,7 +775,7 @@ bool EnableSwiftShaderIfNeeded(base::CommandLine* comm
+@@ -797,7 +797,7 @@ bool EnableSwiftShaderIfNeeded(base::CommandLine* comm
        gpu_feature_info.status_values[GPU_FEATURE_TYPE_ACCELERATED_GL] !=
            kGpuFeatureStatusEnabled) {
      bool legacy_software_gl = true;

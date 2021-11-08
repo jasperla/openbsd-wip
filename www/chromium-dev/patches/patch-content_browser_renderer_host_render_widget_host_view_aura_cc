@@ -30,7 +30,7 @@ Index: content/browser/renderer_host/render_widget_host_view_aura.cc
  bool RenderWidgetHostViewAura::SetCompositionFromExistingText(
      const gfx::Range& range,
      const std::vector<ui::ImeTextSpan>& ui_ime_text_spans) {
-@@ -2343,7 +2343,7 @@ bool RenderWidgetHostViewAura::NeedsInputGrab() {
+@@ -2341,7 +2341,7 @@ bool RenderWidgetHostViewAura::NeedsInputGrab() {
  }
  
  bool RenderWidgetHostViewAura::NeedsMouseCapture() {
@@ -39,7 +39,7 @@ Index: content/browser/renderer_host/render_widget_host_view_aura.cc
    return NeedsInputGrab();
  #else
    return false;
-@@ -2520,7 +2520,7 @@ void RenderWidgetHostViewAura::ForwardKeyboardEventWit
+@@ -2518,7 +2518,7 @@ void RenderWidgetHostViewAura::ForwardKeyboardEventWit
    if (!target_host)
      return;
  

@@ -3,7 +3,7 @@ $OpenBSD$
 Index: ui/base/resource/resource_bundle.cc
 --- ui/base/resource/resource_bundle.cc.orig
 +++ ui/base/resource/resource_bundle.cc
-@@ -846,7 +846,7 @@ void ResourceBundle::ReloadFonts() {
+@@ -866,7 +866,7 @@ void ResourceBundle::ReloadFonts() {
  }
  
  ResourceScaleFactor ResourceBundle::GetMaxResourceScaleFactor() const {
@@ -12,7 +12,7 @@ Index: ui/base/resource/resource_bundle.cc
    return max_scale_factor_;
  #else
    return GetSupportedResourceScaleFactors().back();
-@@ -900,7 +900,7 @@ void ResourceBundle::InitSharedInstance(Delegate* dele
+@@ -920,7 +920,7 @@ void ResourceBundle::InitSharedInstance(Delegate* dele
    // For Windows we have a separate case in this function.
    supported_scale_factors.push_back(k100Percent);
  #if defined(OS_MAC) || defined(OS_LINUX) || defined(OS_CHROMEOS) || \

@@ -12,7 +12,7 @@ Index: chrome/browser/ui/views/first_run_dialog.cc
  void InitCrashReporterIfEnabled(bool enabled) {
    if (!crash_reporter::IsCrashpadEnabled() && enabled)
      breakpad::InitCrashReporter(std::string());
-@@ -126,7 +126,7 @@ bool FirstRunDialog::Accept() {
+@@ -122,7 +122,7 @@ bool FirstRunDialog::Accept() {
  
  #if defined(OS_MAC)
    ChangeMetricsReportingState(report_crashes_->GetChecked());

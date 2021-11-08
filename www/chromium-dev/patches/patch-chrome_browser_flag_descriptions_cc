@@ -3,7 +3,7 @@ $OpenBSD$
 Index: chrome/browser/flag_descriptions.cc
 --- chrome/browser/flag_descriptions.cc.orig
 +++ chrome/browser/flag_descriptions.cc
-@@ -5283,7 +5283,7 @@ const char kDownloadShelfWebUIDescription[] =
+@@ -5244,7 +5244,7 @@ const char kDownloadShelfWebUIDescription[] =
  // Random platform combinations -----------------------------------------------
  
  #if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || \
@@ -12,7 +12,7 @@ Index: chrome/browser/flag_descriptions.cc
  
  const char kWebUIBrandingUpdateName[] = "WebUI Branding Update";
  const char kWebUIBrandingUpdateDescription[] =
-@@ -5303,7 +5303,7 @@ const char kSettingsLandingPageRedesignDescription[] =
+@@ -5264,7 +5264,7 @@ const char kSettingsLandingPageRedesignDescription[] =
  #endif  // defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) ||
          // defined(OS_CHROMEOS) || defined(OS_FUCHSIA)
  
@@ -21,7 +21,7 @@ Index: chrome/browser/flag_descriptions.cc
  
  const char kCommanderName[] = "Commander";
  const char kCommanderDescription[] =
-@@ -5321,7 +5321,7 @@ const char kDesktopDetailedLanguageSettingsDescription
+@@ -5282,7 +5282,7 @@ const char kDesktopDetailedLanguageSettingsDescription
  
  #endif  // defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX)
  
@@ -30,7 +30,7 @@ Index: chrome/browser/flag_descriptions.cc
  #if BUILDFLAG(USE_TCMALLOC)
  const char kDynamicTcmallocName[] = "Dynamic Tcmalloc Tuning";
  const char kDynamicTcmallocDescription[] =
-@@ -5344,7 +5344,7 @@ const char kWebShareDescription[] =
+@@ -5305,7 +5305,7 @@ const char kWebShareDescription[] =
      "platforms.";
  #endif  // defined(OS_WIN) || defined(OS_CHROMEOS) || defined(OS_MAC)
  
@@ -39,7 +39,7 @@ Index: chrome/browser/flag_descriptions.cc
  const char kOzonePlatformHintChoiceDefault[] = "Default";
  const char kOzonePlatformHintChoiceAuto[] = "Auto";
  const char kOzonePlatformHintChoiceX11[] = "X11";
-@@ -5462,7 +5462,7 @@ const char kElasticOverscrollDescription[] =
+@@ -5423,7 +5423,7 @@ const char kElasticOverscrollDescription[] =
  #endif  // defined(OS_WIN) || defined(OS_ANDROID)
  
  #if defined(OS_WIN) || (defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)) || \

@@ -7,8 +7,8 @@ Index: chrome/renderer/chrome_render_frame_observer.cc
  
  void ChromeRenderFrameObserver::DraggableRegionsChanged() {
  #if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || \
--    BUILDFLAG(IS_CHROMEOS_ASH)
-+    BUILDFLAG(IS_CHROMEOS_ASH) || defined(OS_BSD)
+-    defined(OS_CHROMEOS)
++    defined(OS_CHROMEOS) || defined(OS_BSD)
    // Only the main frame is allowed to control draggable regions, to avoid other
    // frames manipulate the regions in the browser process.
    if (!render_frame()->IsMainFrame())

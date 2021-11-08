@@ -12,7 +12,7 @@ Index: content/test/BUILD.gn
      deps += [ "//content/common:set_process_title_linux" ]
    }
  }
-@@ -2778,7 +2778,7 @@ test("content_unittests") {
+@@ -2779,7 +2779,7 @@ test("content_unittests") {
      deps += [ "//ui/gfx/x" ]
    }
  

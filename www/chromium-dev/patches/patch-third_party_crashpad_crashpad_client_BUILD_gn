@@ -3,7 +3,7 @@ $OpenBSD: patch-third_party_crashpad_crashpad_client_BUILD_gn,v 1.11 2021/09/01 
 Index: third_party/crashpad/crashpad/client/BUILD.gn
 --- third_party/crashpad/crashpad/client/BUILD.gn.orig
 +++ third_party/crashpad/crashpad/client/BUILD.gn
-@@ -128,6 +128,13 @@ static_library("common") {
+@@ -130,6 +130,13 @@ static_library("common") {
    if (crashpad_is_win) {
      sources += [ "crash_report_database_win.cc" ]
    }

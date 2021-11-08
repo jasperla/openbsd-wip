@@ -3,7 +3,7 @@ $OpenBSD$
 Index: components/feature_engagement/public/feature_constants.h
 --- components/feature_engagement/public/feature_constants.h.orig
 +++ components/feature_engagement/public/feature_constants.h
-@@ -20,7 +20,7 @@ extern const base::Feature kIPHSnooze;
+@@ -25,7 +25,7 @@ extern const base::Feature kUseClientConfigIPH;
  extern const base::Feature kIPHDummyFeature;
  
  #if defined(OS_WIN) || defined(OS_APPLE) || defined(OS_LINUX) || \
@@ -12,7 +12,7 @@ Index: components/feature_engagement/public/feature_constants.h
  extern const base::Feature kIPHDesktopTabGroupsNewGroupFeature;
  extern const base::Feature kIPHFocusHelpBubbleScreenReaderPromoFeature;
  extern const base::Feature kIPHGMCCastStartStopFeature;
-@@ -136,7 +136,7 @@ extern const base::Feature kIPHBadgedTranslateManualTr
+@@ -141,7 +141,7 @@ extern const base::Feature kIPHBadgedTranslateManualTr
  extern const base::Feature kIPHDiscoverFeedHeaderFeature;
  #endif  // defined(OS_IOS)
  

@@ -9,6 +9,6 @@ Index: chrome/browser/enterprise/connectors/device_trust/device_trust_service_fa
  
 -#if defined(OS_LINUX) || defined(OS_WIN) || defined(OS_MAC)
 +#if defined(OS_LINUX) || defined(OS_WIN) || defined(OS_MAC) || defined(OS_BSD)
- #include "chrome/browser/browser_process.h"
  #include "chrome/browser/enterprise/connectors/device_trust/attestation/desktop/desktop_attestation_service.h"
- #include "chrome/browser/policy/chrome_browser_policy_connector.h"
+ #endif  // defined(OS_LINUX) || defined(OS_WIN) || defined(OS_MAC)
+ 
