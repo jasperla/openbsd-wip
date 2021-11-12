@@ -39,7 +39,7 @@ Index: chrome/common/pref_names.h
      (defined(OS_LINUX) && !BUILDFLAG(IS_CHROMEOS_LACROS))
  extern const char kWebAppsUrlHandlerInfo[];
  #endif
-@@ -833,7 +833,7 @@ extern const char kGloballyScopeHTTPAuthCacheEnabled[]
+@@ -831,7 +831,7 @@ extern const char kGloballyScopeHTTPAuthCacheEnabled[]
  extern const char kAmbientAuthenticationInPrivateModesEnabled[];
  extern const char kBasicAuthOverHttpEnabled[];
  
@@ -48,7 +48,7 @@ Index: chrome/common/pref_names.h
  extern const char kAuthNegotiateDelegateByKdcPolicy[];
  #endif  // defined(OS_LINUX) || defined(OS_MAC) || defined(OS_CHROMEOS)
  
-@@ -1081,7 +1081,7 @@ extern const char kBlockAutoplayEnabled[];
+@@ -1079,7 +1079,7 @@ extern const char kBlockAutoplayEnabled[];
  #endif
  extern const char kSandboxExternalProtocolBlocked[];
  

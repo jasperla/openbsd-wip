@@ -12,3 +12,12 @@ Index: chrome/browser/web_applications/web_app_utils.cc
    std::set<std::string> mime_types_set =
        apps::GetMimeTypesFromFileHandlers(file_handlers);
    associations.reserve(mime_types_set.size());
+@@ -275,7 +275,7 @@ std::u16string GetFileTypeAssociationsHandledByWebAppF
+       provider->registrar().GetAppFileHandlers(app_id);
+ 
+   std::vector<std::string> associations;
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+   // TODO(estade): on Linux both the MIME type and extension must match. Should
+   // we just show the extensions like on other platforms?
+   std::set<std::string> mime_types_set =

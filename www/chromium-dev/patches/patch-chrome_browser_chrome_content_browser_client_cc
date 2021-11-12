@@ -122,7 +122,7 @@ Index: chrome/browser/chrome_content_browser_client.cc
    MaybeAddThrottle(enterprise_connectors::DeviceTrustNavigationThrottle::
                         MaybeCreateThrottleFor(handle),
                     &throttles);
-@@ -4275,7 +4277,7 @@ ChromeContentBrowserClient::CreateThrottlesForNavigati
+@@ -4276,7 +4278,7 @@ ChromeContentBrowserClient::CreateThrottlesForNavigati
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.

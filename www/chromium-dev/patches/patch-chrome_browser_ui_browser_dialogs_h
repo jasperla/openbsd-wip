@@ -21,8 +21,8 @@ Index: chrome/browser/ui/browser_dialogs.h
      (defined(OS_LINUX) && !BUILDFLAG(IS_CHROMEOS_LACROS))
  namespace web_app {
  struct UrlHandlerLaunchParams;
-@@ -202,7 +202,7 @@ void ShowWebAppProtocolHandlerIntentPicker(
-     WebAppProtocolHandlerAcceptanceCallback close_callback);
+@@ -207,7 +207,7 @@ void ShowWebAppFileLaunchDialog(const std::vector<base
+                                 WebAppLaunchAcceptanceCallback close_callback);
  #endif  // !defined(OS_ANDROID)
  
 -#if defined(OS_WIN) || defined(OS_MAC) || \

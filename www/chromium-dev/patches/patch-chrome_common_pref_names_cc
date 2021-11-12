@@ -48,7 +48,7 @@ Index: chrome/common/pref_names.cc
  // Boolean that specifies whether OK-AS-DELEGATE flag from KDC is respected
  // along with kAuthNegotiateDelegateAllowlist.
  const char kAuthNegotiateDelegateByKdcPolicy[] =
-@@ -3139,7 +3139,7 @@ const char kBlockAutoplayEnabled[] = "media.block_auto
+@@ -3135,7 +3135,7 @@ const char kBlockAutoplayEnabled[] = "media.block_auto
  const char kSandboxExternalProtocolBlocked[] =
      "profile.sandbox_external_protocol_blocked";
  

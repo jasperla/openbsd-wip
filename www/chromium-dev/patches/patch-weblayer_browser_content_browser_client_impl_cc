@@ -21,7 +21,7 @@ Index: weblayer/browser/content_browser_client_impl.cc
    network::mojom::CryptConfigPtr config = network::mojom::CryptConfig::New();
    content::GetNetworkService()->SetCryptConfig(std::move(config));
  #endif
-@@ -1003,7 +1003,7 @@ SafeBrowsingService* ContentBrowserClientImpl::GetSafe
+@@ -1005,7 +1005,7 @@ SafeBrowsingService* ContentBrowserClientImpl::GetSafe
  
  // TODO(crbug.com/1052397): Revisit once build flag switch of lacros-chrome is
  // complete.

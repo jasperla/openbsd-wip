@@ -57,7 +57,7 @@ Index: remoting/host/remoting_me2me_host.cc
    // Cause the global AudioPipeReader to be freed, otherwise the audio
    // thread will remain in-use and prevent the process from exiting.
    // TODO(wez): DesktopEnvironmentFactory should own the pipe reader.
-@@ -1861,7 +1861,7 @@ void HostProcess::CrashHostProcess(const std::string& 
+@@ -1862,7 +1862,7 @@ void HostProcess::CrashHostProcess(const std::string& 
  int HostProcessMain() {
    HOST_LOG << "Starting host process: version " << STRINGIZE(VERSION);
  
@@ -66,7 +66,7 @@ Index: remoting/host/remoting_me2me_host.cc
    // Initialize Xlib for multi-threaded use, allowing non-Chromium code to
    // use X11 safely (such as the WebRTC capturer, GTK ...)
    x11::InitXlib();
-@@ -1898,7 +1898,7 @@ int HostProcessMain() {
+@@ -1899,7 +1899,7 @@ int HostProcessMain() {
    std::unique_ptr<net::NetworkChangeNotifier> network_change_notifier(
        net::NetworkChangeNotifier::CreateIfNeeded());
  
@@ -75,7 +75,7 @@ Index: remoting/host/remoting_me2me_host.cc
    // Create an X11EventSource on all UI threads, so the global X11 connection
    // (x11::Connection::Get()) can dispatch X events.
    auto event_source =
-@@ -1919,7 +1919,7 @@ int HostProcessMain() {
+@@ -1920,7 +1920,7 @@ int HostProcessMain() {
    // Run the main (also UI) task executor until the host no longer needs it.
    run_loop.Run();
  

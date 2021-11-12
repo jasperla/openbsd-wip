@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.586 2021/09/14 06:19:48 robert Exp $
+# $OpenBSD: Makefile,v 1.597 2021/11/08 12:53:49 robert Exp $
 
 BROKEN-powerpc64 =	Check failed: false. OS architecture not handled. (powerpc64)
 
@@ -13,7 +13,7 @@ DPB_PROPERTIES=		parallel parallel2
 
 COMMENT=		Chromium browser
 
-V=			97.0.4688.2
+V=			97.0.4692.8
 
 DISTNAME=		chromium-${V}
 
@@ -144,6 +144,7 @@ GN_ARGS=	enable_nacl=false \
 		treat_warnings_as_errors=false \
 		clang_use_chrome_plugins=false \
 		use_allocator=\"none\" \
+		use_allocator_shim=false \
 		disable_fieldtrial_testing_config=true \
 		extra_cppflags=\"-idirafter ${LOCALBASE}/include -idirafter ${X11BASE}/include\" \
 		fatal_linker_warnings=false
@@ -191,7 +192,6 @@ GN_ARGS+=	is_component_build=false
 
 pre-configure:
 	@ln -sf ${MODPY_BIN} ${WRKDIR}/bin/python
-	@ln -sf ${MODPY_BIN} ${WRKDIR}/bin/python3
 .for _arch in x64 ia32 arm64
 .  for _dir in avcodec avformat avutil
 	@cp -pR ${WRKSRC}/third_party/ffmpeg/chromium/config/Chrome/linux/${_arch}/lib${_dir} \

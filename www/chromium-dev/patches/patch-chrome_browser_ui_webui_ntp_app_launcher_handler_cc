@@ -21,7 +21,7 @@ Index: chrome/browser/ui/webui/ntp/app_launcher_handler.cc
    if (extensions::IsExtensionUnsupportedDeprecatedApp(profile, extension_id)) {
      // TODO(crbug.com/1225779): Show the deprecated apps dialog.
      return;
-@@ -1358,7 +1358,7 @@ void AppLauncherHandler::InstallOsHooks(const web_app:
+@@ -1362,7 +1362,7 @@ void AppLauncherHandler::InstallOsHooks(const web_app:
    options.os_hooks[web_app::OsHookType::kProtocolHandlers] = true;
    options.os_hooks[web_app::OsHookType::kRunOnOsLogin] = false;
    options.os_hooks[web_app::OsHookType::kUninstallationViaOsSettings] = true;

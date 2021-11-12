@@ -9,10 +9,10 @@ Index: components/feature_engagement/public/feature_constants.cc
  #if defined(OS_WIN) || defined(OS_APPLE) || defined(OS_LINUX) || \
 -    defined(OS_CHROMEOS) || defined(OS_FUCHSIA)
 +    defined(OS_CHROMEOS) || defined(OS_FUCHSIA) || defined(OS_BSD)
+ const base::Feature kIPHDesktopSharedHighlightingFeature{
+     "IPH_DesktopSharedHighlighting", base::FEATURE_DISABLED_BY_DEFAULT};
  const base::Feature kIPHDesktopTabGroupsNewGroupFeature{
-     "IPH_DesktopTabGroupsNewGroup", base::FEATURE_DISABLED_BY_DEFAULT};
- const base::Feature kIPHFocusHelpBubbleScreenReaderPromoFeature{
-@@ -228,7 +228,7 @@ const base::Feature kIPHDiscoverFeedHeaderFeature{
+@@ -230,7 +230,7 @@ const base::Feature kIPHDiscoverFeedHeaderFeature{
      "IPH_DiscoverFeedHeaderMenu", base::FEATURE_DISABLED_BY_DEFAULT};
  #endif  // defined(OS_IOS)
  

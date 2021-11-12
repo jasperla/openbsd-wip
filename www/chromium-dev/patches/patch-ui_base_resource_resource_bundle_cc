@@ -12,12 +12,3 @@ Index: ui/base/resource/resource_bundle.cc
    return max_scale_factor_;
  #else
    return GetSupportedResourceScaleFactors().back();
-@@ -920,7 +920,7 @@ void ResourceBundle::InitSharedInstance(Delegate* dele
-   // For Windows we have a separate case in this function.
-   supported_scale_factors.push_back(k100Percent);
- #if defined(OS_MAC) || defined(OS_LINUX) || defined(OS_CHROMEOS) || \
--    defined(OS_WIN)
-+    defined(OS_WIN) || defined(OS_BSD)
-   supported_scale_factors.push_back(k200Percent);
- #endif
- #endif

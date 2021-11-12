@@ -10,9 +10,9 @@ Index: chrome/browser/ui/tab_helpers.cc
 -    defined(OS_CHROMEOS) || defined(OS_FUCHSIA)
 +    defined(OS_CHROMEOS) || defined(OS_FUCHSIA) || defined(OS_BSD)
  #include "chrome/browser/ui/blocked_content/framebust_block_tab_helper.h"
+ #include "chrome/browser/ui/browser_finder.h"
  #include "chrome/browser/ui/hats/hats_helper.h"
- #endif
-@@ -448,13 +448,13 @@ void TabHelpers::AttachTabHelpers(WebContents* web_con
+@@ -450,13 +450,13 @@ void TabHelpers::AttachTabHelpers(WebContents* web_con
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
@@ -28,3 +28,12 @@ Index: chrome/browser/ui/tab_helpers.cc
    if (base::FeatureList::IsEnabled(
            features::kHappinessTrackingSurveysForDesktopDemo) ||
        base::FeatureList::IsEnabled(features::kTrustSafetySentimentSurvey) ||
+@@ -467,7 +467,7 @@ void TabHelpers::AttachTabHelpers(WebContents* web_con
+ #endif
+ 
+ #if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || \
+-    defined(OS_CHROMEOS)
++    defined(OS_CHROMEOS) || defined(OS_BSD)
+   if (Browser* browser = chrome::FindBrowserWithProfile(profile)) {
+     SharedHighlightingPromo::CreateForWebContents(web_contents, browser);
+   }
