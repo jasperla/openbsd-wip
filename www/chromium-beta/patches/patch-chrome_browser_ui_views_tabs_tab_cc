@@ -3,7 +3,7 @@ $OpenBSD: patch-chrome_browser_ui_views_tabs_tab_cc,v 1.14 2021/09/01 16:54:39 r
 Index: chrome/browser/ui/views/tabs/tab.cc
 --- chrome/browser/ui/views/tabs/tab.cc.orig
 +++ chrome/browser/ui/views/tabs/tab.cc
-@@ -580,7 +580,7 @@ void Tab::MaybeUpdateHoverStatus(const ui::MouseEvent&
+@@ -575,7 +575,7 @@ void Tab::MaybeUpdateHoverStatus(const ui::MouseEvent&
    if (mouse_hovered_ || !GetWidget()->IsMouseEventsEnabled())
      return;
  

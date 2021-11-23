@@ -12,7 +12,7 @@ Index: base/syslog_logging.cc
  // <syslog.h> defines LOG_INFO, LOG_WARNING macros that could conflict with
  // base::LOG_INFO, base::LOG_WARNING.
  #include <syslog.h>
-@@ -134,7 +134,7 @@ EventLogMessage::~EventLogMessage() {
+@@ -145,7 +145,7 @@ EventLogMessage::~EventLogMessage() {
  
    if (user_sid != nullptr)
      ::LocalFree(user_sid);

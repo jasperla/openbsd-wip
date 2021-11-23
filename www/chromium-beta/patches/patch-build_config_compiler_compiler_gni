@@ -1,4 +1,4 @@
-$OpenBSD: patch-build_config_compiler_compiler_gni,v 1.25 2021/09/01 16:54:38 robert Exp $
+$OpenBSD$
 
 Index: build/config/compiler/compiler.gni
 --- build/config/compiler/compiler.gni.orig
@@ -9,7 +9,7 @@ Index: build/config/compiler/compiler.gni
    # Chrome's clang. crbug.com/1033839
 -  use_thin_lto =
 -      is_cfi ||
--      (is_official_build && chrome_pgo_phase != 1 &&
+-      (is_clang && is_official_build && chrome_pgo_phase != 1 &&
 -       (is_linux || is_win || (is_android && target_os != "chromeos") ||
 -        ((is_chromeos_ash || is_chromeos_lacros) && is_chromeos_device)))
 +  use_thin_lto = false

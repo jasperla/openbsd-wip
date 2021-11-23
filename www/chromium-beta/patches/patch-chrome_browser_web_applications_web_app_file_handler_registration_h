@@ -3,9 +3,9 @@ $OpenBSD$
 Index: chrome/browser/web_applications/web_app_file_handler_registration.h
 --- chrome/browser/web_applications/web_app_file_handler_registration.h.orig
 +++ chrome/browser/web_applications/web_app_file_handler_registration.h
-@@ -43,7 +43,7 @@ void UnregisterFileHandlersWithOs(const AppId& app_id,
+@@ -44,7 +44,7 @@ void UnregisterFileHandlersWithOs(const AppId& app_id,
                                    Profile* profile,
-                                   base::OnceCallback<void(bool)> callback);
+                                   ResultCallback callback);
  
 -#if defined(OS_LINUX)
 +#if defined(OS_LINUX) || defined(OS_BSD)

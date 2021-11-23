@@ -3,7 +3,7 @@ $OpenBSD$
 Index: components/download/public/common/download_features.cc
 --- components/download/public/common/download_features.cc.orig
 +++ components/download/public/common/download_features.cc
-@@ -72,7 +72,7 @@ const base::Feature kDeleteOverwrittenDownloads{
+@@ -68,7 +68,7 @@ const base::Feature kDeleteOverwrittenDownloads{
  
  const base::Feature kAllowFileBufferSizeControl{
    "AllowFileBufferSizeControl",

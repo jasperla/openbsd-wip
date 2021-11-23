@@ -21,7 +21,7 @@ Index: chrome/browser/safe_browsing/download_protection/file_analyzer.cc
    } else if (base::FeatureList::IsEnabled(
                   safe_browsing::kClientSideDetectionDocumentScanning) &&
               inspection_type == DownloadFileType::OFFICE_DOCUMENT) {
-@@ -291,7 +291,7 @@ void FileAnalyzer::OnDmgAnalysisFinished(
+@@ -289,7 +289,7 @@ void FileAnalyzer::OnDmgAnalysisFinished(
  }
  #endif  // defined(OS_MAC)
  

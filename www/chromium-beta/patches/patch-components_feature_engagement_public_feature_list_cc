@@ -10,5 +10,5 @@ Index: components/feature_engagement/public/feature_list.cc
 -    defined(OS_CHROMEOS) || defined(OS_FUCHSIA)
 +    defined(OS_CHROMEOS) || defined(OS_FUCHSIA) || defined(OS_BSD)
      &kIPHDesktopTabGroupsNewGroupFeature,
-     &kIPHFocusModeFeature,
-     &kIPHGlobalMediaControlsFeature,
+     &kIPHFocusHelpBubbleScreenReaderPromoFeature,
+     &kIPHGMCCastStartStopFeature,
