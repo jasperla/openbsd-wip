@@ -1,3 +1,12 @@
 @comment $OpenBSD: PLIST,v$
+@newgroup _shairport:872
+@newuser _shairport:872:872:daemon:Sharport-sync Account:${VARBASE}/empty:/sbin/nologin
+@rcscript ${RCDIR}/shairport_sync
 @bin bin/shairport-sync
 @man man/man7/shairport-sync.7
+share/doc/pkg-readmes/${PKGSTEM}
+@owner _shairport
+@group _shairport
+share/examples/shairport-sync/
+share/examples/shairport-sync/shairport-sync.conf
+@sample ${SYSCONFDIR}/shairport-sync.conf

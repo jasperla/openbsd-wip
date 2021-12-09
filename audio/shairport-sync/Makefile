@@ -4,7 +4,7 @@ COMMENT =	AirPlay audio player
 
 GH_ACCOUNT =	mikebrady
 GH_PROJECT =	shairport-sync
-GH_TAGNAME =	3.3.7
+GH_TAGNAME =	3.3.9
 
 CATEGORIES =	audio
 
@@ -18,13 +18,12 @@ COMPILER=	base-clang ports-gcc
 WANTLIB += ${COMPILER_LIBCXX} avahi-client avahi-common c config
 WANTLIB += crypto iconv intl m popt sndio ssl
 
-BUILD_DEPENDS =	devel/libconfig \
-		${MODGNU_AUTOCONF_DEPENDS} \
+BUILD_DEPENDS = ${MODGNU_AUTOCONF_DEPENDS} \
 		${MODGNU_AUTOMAKE_DEPENDS} \
 
 LIB_DEPENDS =	devel/libconfig \
 		devel/popt \
-		net/avahi
+		net/avahi,-libs
 
 CONFIGURE_ENV +=	CFLAGS="${CFLAGS} -I${PREFIX}/include"
 
@@ -46,6 +45,9 @@ pre-configure:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/shairport-sync ${PREFIX}/bin
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/shairport-sync
+	${INSTALL_DATA} ${WRKBUILD}/scripts/shairport-sync.conf \
+		${PREFIX}/share/examples/shairport-sync
 	${INSTALL_MAN} ${WRKSRC}/man/shairport-sync.7 ${PREFIX}/man/man7
 
 .include <bsd.port.mk>
