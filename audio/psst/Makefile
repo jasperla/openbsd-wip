@@ -1,21 +1,13 @@
 # $OpenBSD: $
 
-# miniaudio-rs lacks other bindings
-ONLY_FOR_ARCHS =	amd64
-
 COMMENT =		Fast Spotify client with native GUI
 
 # kn@ fork bundling all porting work to avoid in-tree patches and MODCARGO_*
 # see "Support OpenBSD" https://github.com/jpochyla/psst/pull/191
-V =			0.8.1pl1
-DISTNAME =		psst-${V}
-MASTER_SITES =		https://github.com/klemensn/psst/releases/download/${V}/
-#GH_ACCOUNT =		jpochyla
-#GH_PROJECT =		psst
-#GH_TAGNAME =		v0.8.1
-
-# XXX why is this needed again? (from semarie, thanks!)
-DISTFILES +=		${DISTNAME}${EXTRACT_SUFX}
+GH_ACCOUNT =		klemensn
+GH_PROJECT =		psst
+GH_TAGNAME =		0.8.1pl2
+DISTFILES +=		${GH_DISTFILE}
 
 CATEGORIES =		audio
 
