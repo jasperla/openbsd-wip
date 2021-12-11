@@ -1,0 +1,10 @@
+@comment $OpenBSD: PLIST,v$
+include/rnnoise.h
+@static-lib lib/librnnoise.a
+lib/librnnoise.la
+@lib lib/librnnoise.so.${LIBrnnoise_VERSION}
+lib/pkgconfig/rnnoise.pc
+share/doc/rnnoise/
+share/doc/rnnoise/AUTHORS
+share/doc/rnnoise/COPYING
+share/doc/rnnoise/README
