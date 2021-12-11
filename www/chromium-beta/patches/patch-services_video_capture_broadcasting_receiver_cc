@@ -12,7 +12,7 @@ Index: services/video_capture/broadcasting_receiver.cc
    // |source| is unwrapped to a |PlatformSharedMemoryRegion|, from whence a file
    // descriptor can be extracted which is then mojo-wrapped.
    base::subtle::PlatformSharedMemoryRegion platform_region =
-@@ -232,7 +232,7 @@ void BroadcastingReceiver::BufferContext::
+@@ -240,7 +240,7 @@ void BroadcastingReceiver::BufferContext::
      ConvertRawFileDescriptorToSharedBuffer() {
    DCHECK(buffer_handle_->is_shared_memory_via_raw_file_descriptor());
  
