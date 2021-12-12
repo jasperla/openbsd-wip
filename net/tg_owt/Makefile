@@ -1,4 +1,4 @@
-#	$ OpenBSD: $
+# $OpenBSD: $
 
 COMMENT =		WebRTC build for Telegram
 
@@ -6,7 +6,7 @@ GH_ACCOUNT =		desktop-app
 GH_PROJECT =		tg_owt
 # no releases or tags, use latest master
 GH_COMMIT =		d5c3d43b959c7e9e7d8004b9b7fdadd12ce7d589
-DISTNAME =		${GH_PROJECT}-20211207
+DISTNAME =		${GH_PROJECT}-0.0.20211207
 CATEGORIES =		net
 
 # Fetch SUPDISTFILES as per ${WRKSRC}/.gitmodules
@@ -18,6 +18,8 @@ CATEGORIES =		net
 LIBYUV_COMMIT =		742791f13a8ca9e8a297c323699aff8af30a360b
 LIBYUV_SUPNAME =	libyuv-20210205-${LIBYUV_COMMIT:C/(........).*/\1/}
 SUPDISTFILES +=		${LIBYUV_SUPNAME}{${LIBYUV_COMMIT}}${EXTRACT_SUFX}:0
+# Henry Hy maintains the FreeBSD package, they probably forked/clone precisely
+# to have stable tarballs
 MASTER_SITES0 =		https://github.com/HenryHu/libyuv/archive/
 
 # mirror of https://chromium.googlesource.com/webm/libvpx which has
@@ -25,7 +27,7 @@ MASTER_SITES0 =		https://github.com/HenryHu/libyuv/archive/
 # use GitHub mirror with stable tarballs;
 # no releases, use latest tag
 LIBVPX_TAGNAME =	v1.11.0
-# just like multimedia/libvpx
+# same as multimedia/libvpx DISTNAME
 LIBVPX_SUPNAME =	libvpx-${LIBVPX_TAGNAME:S,v,,}
 SUPDISTFILES +=		${LIBVPX_SUPNAME}{${LIBVPX_TAGNAME}}${EXTRACT_SUFX}:1
 MASTER_SITES1 =		https://github.com/webmproject/libvpx/archive/refs/tags/
@@ -41,15 +43,12 @@ COMPILER =		base-clang ports-gcc
 
 MODULES =		devel/cmake
 
-BUILD_DEPENDS +=	\
-			devel/yasm \
+BUILD_DEPENDS =		devel/yasm \
 			multimedia/libv4l,-compat
 
-LIB_DEPENDS =		\
-			audio/opus \
+LIB_DEPENDS =		audio/opus \
 			graphics/ffmpeg \
-			graphics/jpeg \
-
+			graphics/jpeg
 # XXX cmake checks for it despite requiring git-submoduled version;
 # libvpx is a transitive dependency through ffmpeg, anyway
 LIB_DEPENDS +=		multimedia/libvpx>=1.10.0
