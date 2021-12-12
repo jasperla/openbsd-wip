@@ -3,7 +3,7 @@
 # upstream officially says so, just like net/tdlib
 ONLY_FOR_ARCHS =	${LE_ARCHS}
 
-COMMENT =		Telegram Desktop messaging app
+COMMENT =		Official Telegram Desktop messenger
 V =			3.3.0
 DISTNAME =		tdesktop-${V}-full
 PKGNAME =		tdesktop-${V}
@@ -17,12 +17,17 @@ MAINTAINER =		Klemens Nanni <kn@openbsd.org>
 # GPLv3
 PERMIT_PACKAGE =	Yes
 
-WANTLIB =		tg_owt
-
 MODULES =		devel/cmake \
+			lang/python \
 			x11/qt5
+MODPY_RUNDEP =		No
+# XXX we have x11/qt6 but it is too new
+CONFIGURE_ARGS +=	-DDESKTOP_APP_QT6=OFF
 
 LIB_DEPENDS =		audio/rnnoise \
+			audio/openal \
+			audio/pulseaudio \
+			graphics/jpeg \
 			net/tg_owt
 
 RUN_DEPENDS =		devel/desktop-file-utils \
@@ -31,14 +36,13 @@ RUN_DEPENDS =		devel/desktop-file-utils \
 # C++17
 COMPILER =		base-clang ports-gcc
 
-CONFIGURE_ARGS =	\
-			-DDESKTOP_APP_SPECIAL_TARGET="" \
-			-Ddisable_autoupdate=1 \
-			-DDESKTOP_APP_USE_PACKAGED=ON \
-			-DDESKTOP_APP_DISABLE_CRASH_REPORTS=ON \
-			-DDESKTOP_APP_DISABLE_WAYLAND_INTEGRATION=ON \
-			-DDESKTOP_APP_QT6=OFF \
-			-DDESKTOP_APP_USED_PACKAGED_FONTS=OFF \
+# XXX use limited TEST ONLY credentials and register at
+# https://core.telegram.org/api/obtaining_api_id once porting is done
+# -DTDESKTOP_API_ID=foo -DTDESKTOP_API_HASH=bar
+CONFIGURE_ARGS +=	-DTDESKTOP_API_TEST=ON
 
+# OpenBSD is detected as Linux, disable unported/unwanted components
+CONFIGURE_ARGS +=	-DLIBTGVOIP_DISABLE_ALSA=ON \
+			-DDESKTOP_APP_DISABLE_WAYLAND_INTEGRATION=ON
 
 .include <bsd.port.mk>
