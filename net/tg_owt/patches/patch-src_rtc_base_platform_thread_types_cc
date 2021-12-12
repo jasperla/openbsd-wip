@@ -1,0 +1,33 @@
+$OpenBSD$
+
+Use pthread_self(3) to fix WEBRTC_OPENBSD build
+
+Index: src/rtc_base/platform_thread_types.cc
+--- src/rtc_base/platform_thread_types.cc.orig
++++ src/rtc_base/platform_thread_types.cc
+@@ -30,6 +30,10 @@ typedef HRESULT(WINAPI* RTC_SetThreadDescription)(HAND
+ #include <pthread_np.h>
+ #endif
+ 
++#if defined(WEBRTC_OPENBSD)
++#include <pthread.h>
++#endif
++
+ namespace rtc {
+ 
+ PlatformThreadId CurrentThreadId() {
+@@ -48,10 +52,13 @@ PlatformThreadId CurrentThreadId() {
+   long tid;
+   thr_self(&tid);
+   return tid;
++#elif defined(WEBRTC_OPENBSD)
++  pthread_t tid = pthread_self();
++  return reinterpret_cast<long>(tid);
+ #elif defined(__EMSCRIPTEN__)
+   return static_cast<PlatformThreadId>(pthread_self());
+ #else
+-  // Default implementation for nacl and solaris.
++  // Default implementation for openbsd, nacl and solaris.
+   return reinterpret_cast<PlatformThreadId>(pthread_self());
+ #endif
+ #endif  // defined(WEBRTC_POSIX)

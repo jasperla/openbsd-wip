@@ -1,0 +1,19 @@
+$OpenBSD$
+
+Identify as OpenBSD
+
+Index: cmake/libwebrtcbuild.cmake
+--- cmake/libwebrtcbuild.cmake.orig
++++ cmake/libwebrtcbuild.cmake
+@@ -81,6 +81,11 @@ else()
+         INTERFACE
+             WEBRTC_FREEBSD
+         )
++    elseif (CMAKE_SYSTEM_NAME STREQUAL "OpenBSD")
++        target_compile_definitions(libwebrtcbuild
++        INTERFACE
++            WEBRTC_OPENBSD
++        )
+     endif()
+ endif()
+ 
