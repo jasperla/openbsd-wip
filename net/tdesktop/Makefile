@@ -17,13 +17,16 @@ MAINTAINER =		Klemens Nanni <kn@openbsd.org>
 # GPLv3
 PERMIT_PACKAGE =	Yes
 
-MODULES =		devel/desktop-file-utils \
-			devel/cmake \
-			x11/gtk+3,-guic \
+WANTLIB =		tg_owt
+
+MODULES =		devel/cmake \
 			x11/qt5
 
 LIB_DEPENDS =		audio/rnnoise \
 			net/tg_owt
+
+RUN_DEPENDS =		devel/desktop-file-utils \
+			x11/gtk+3,-guic
 
 # C++17
 COMPILER =		base-clang ports-gcc
