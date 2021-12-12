@@ -41,7 +41,8 @@ PERMIT_PACKAGE =	Yes
 # -std=gnu++20
 COMPILER =		base-clang ports-gcc
 
-MODULES =		devel/cmake
+MODULES =		devel/cmake \
+			lang/python
 
 BUILD_DEPENDS =		devel/yasm \
 			multimedia/libv4l,-compat
@@ -53,12 +54,15 @@ LIB_DEPENDS =		audio/opus \
 # libvpx is a transitive dependency through ffmpeg, anyway
 LIB_DEPENDS +=		multimedia/libvpx>=1.10.0
 
+# indicate an official package build;  implies shared not static libraries
+CONFIGURE_ARGS =	-DTG_OWT_PACKAGED_BUILD=ON
 
-CONFIGURE_ARGS =	\
-			-DBUILD_SHARED_LIBS=OFF \
-			-DTG_OWT_BUILD_AUDIO_BACKENDS=OFF \
-			-DTG_OWT_USE_PIPEWIRE=OFF \
-
+# do not use unported pipewire for desktop capture (or anything else)
+CONFIGURE_ARGS +=	-DTG_OWT_USE_PIPEWIRE=OFF
+# do not use unported ALSA, start with a simple port
+# XXX once/if this runs but there is no sound, revise cmake/libwebrtcbuild.cmake
+# and try -DWEBRTC_ENABLE_LINUX_ALSA=OFF -DWEBRTC_ENABLE_LINUX_PULSE=ON
+CONFIGURE_ARGS +=	-DTG_OWT_BUILD_AUDIO_BACKENDS=OFF
 
 post-extract:
 	# extract git submodules, see ${WRKSRC}/.gitmodules
