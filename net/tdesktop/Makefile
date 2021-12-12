@@ -1,6 +1,6 @@
-# $	OpenBSD: $
+# $OpenBSD: $
 
-# just like net/tdlib
+# upstream officially says so, just like net/tdlib
 ONLY_FOR_ARCHS =	${LE_ARCHS}
 
 COMMENT =		Telegram Desktop messaging app
@@ -9,7 +9,7 @@ DISTNAME =		tdesktop-${V}-full
 PKGNAME =		tdesktop-${V}
 CATEGORIES =		net
 
-HOMEPAGE =		https://https://desktop.telegram.org
+HOMEPAGE =		https://desktop.telegram.org
 MASTER_SITES =		https://github.com/telegramdesktop/tdesktop/releases/download/v${V}/
 
 MAINTAINER =		Klemens Nanni <kn@openbsd.org>
@@ -17,10 +17,13 @@ MAINTAINER =		Klemens Nanni <kn@openbsd.org>
 # GPLv3
 PERMIT_PACKAGE =	Yes
 
-MODULES =		devel/cmake \
+MODULES =		devel/desktop-file-utils \
+			devel/cmake \
+			x11/gtk+3,-guic \
 			x11/qt5
 
-LIB_DEPENDS =		audio/rnnoise
+LIB_DEPENDS =		audio/rnnoise \
+			net/tg_owt
 
 # C++17
 COMPILER =		base-clang ports-gcc
