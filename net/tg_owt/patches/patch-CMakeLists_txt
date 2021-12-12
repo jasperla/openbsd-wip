@@ -1,0 +1,18 @@
+$OpenBSD$
+
+Neuter unconditionally included pipewire related sources to fix the build
+
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -2077,8 +2077,8 @@ PRIVATE
+     modules/desktop_capture/window_capturer_null.cc
+ 
+     # linux specific
+-    modules/desktop_capture/linux/base_capturer_pipewire.cc
+-    modules/desktop_capture/linux/base_capturer_pipewire.h
++    #modules/desktop_capture/linux/base_capturer_pipewire.cc
++    #modules/desktop_capture/linux/base_capturer_pipewire.h
+     modules/desktop_capture/linux/mouse_cursor_monitor_x11.cc
+     modules/desktop_capture/linux/mouse_cursor_monitor_x11.h
+     modules/desktop_capture/linux/screen_capturer_x11.cc
