@@ -1,10 +1,20 @@
 $OpenBSD$
 
-Neuter unconditionally included pipewire related sources to fix the build
+- pass down shared library version
+- Neuter unconditionally included pipewire related sources to fix the build
 
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
+@@ -108,7 +108,7 @@ if (TG_OWT_USE_PIPEWIRE)
+     endif()
+ endif()
+ 
+-set_target_properties(tg_owt PROPERTIES SOVERSION 0 VERSION 0.0.0)
++set_target_properties(tg_owt PROPERTIES SOVERSION 0 VERSION ${LIBtg_owt_VERSION})
+ 
+ target_link_libraries(tg_owt
+ PRIVATE
 @@ -2077,8 +2077,8 @@ PRIVATE
      modules/desktop_capture/window_capturer_null.cc
  

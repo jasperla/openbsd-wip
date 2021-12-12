@@ -4022,10 +4022,8 @@ include/tg_owt/video/video_stream_decoder.h
 include/tg_owt/video/video_stream_decoder2.h
 include/tg_owt/video/video_stream_decoder_impl.h
 include/tg_owt/video/video_stream_encoder.h
-lib/cmake/
 lib/cmake/tg_owt/
 lib/cmake/tg_owt/tg_owtConfig.cmake
 lib/cmake/tg_owt/tg_owtTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/tg_owt/tg_owtTargets.cmake
-lib/libtg_owt.so.0
-lib/libtg_owt.so.0.0.0
+@lib lib/libtg_owt.so.${LIBtg_owt_VERSION}

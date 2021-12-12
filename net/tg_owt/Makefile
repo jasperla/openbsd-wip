@@ -9,6 +9,8 @@ GH_COMMIT =		d5c3d43b959c7e9e7d8004b9b7fdadd12ce7d589
 DISTNAME =		${GH_PROJECT}-0.0.20211207
 CATEGORIES =		net
 
+SHARED_LIBS =		tg_owt	0.0	# 0.0.0
+
 # Fetch SUPDISTFILES as per ${WRKSRC}/.gitmodules
 #
 # clone of https://chromium.googlesource.com/libyuv/libyuv which has
@@ -72,6 +74,9 @@ CONFIGURE_ARGS +=	-DTG_OWT_USE_PIPEWIRE=OFF
 # XXX once/if this runs but there is no sound, revise cmake/libwebrtcbuild.cmake
 # and try -DWEBRTC_ENABLE_LINUX_ALSA=OFF -DWEBRTC_ENABLE_LINUX_PULSE=ON
 CONFIGURE_ARGS +=	-DTG_OWT_BUILD_AUDIO_BACKENDS=OFF
+
+post-patch:
+	${SUBST_CMD} ${WRKSRC}/CMakeLists.txt
 
 post-extract:
 	# extract git submodules, see ${WRKSRC}/.gitmodules
