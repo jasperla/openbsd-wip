@@ -42,7 +42,8 @@ COMPILER =		base-clang ports-gcc
 MODULES =		devel/cmake
 
 BUILD_DEPENDS +=	\
-			devel/yasm
+			devel/yasm \
+			multimedia/libv4l,-compat
 
 LIB_DEPENDS =		\
 			audio/opus \

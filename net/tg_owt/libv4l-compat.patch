@@ -1,0 +1,264 @@
+Index: Makefile
+===================================================================
+RCS file: /cvs/ports/multimedia/libv4l/Makefile,v
+retrieving revision 1.26
+diff -u -p -r1.26 Makefile
+--- Makefile	9 Jun 2021 19:50:09 -0000	1.26
++++ Makefile	12 Dec 2021 18:26:09 -0000
+@@ -1,11 +1,17 @@
+ # $OpenBSD: Makefile,v 1.26 2021/06/09 19:50:09 sthen Exp $
+ 
+-COMMENT =		libv4l userspace library
++COMMENT-main =		libv4l userspace library
++COMMENT-compat =	V4L ioctl header files
+ 
+ VERSION =		1.20.0
+ DISTNAME =		v4l-utils-${VERSION}
+-PKGNAME =		libv4l-${VERSION}
+-REVISION =		0
++PKGNAME-main =		libv4l-${VERSION}
++PKGNAME-compat =	v4l-compat-${VERSION}
++REVISION-main =		1
++
++PKG_ARCH-compat =	*
++
++MULTI_PACKAGES =	-main -compat
+ 
+ SHARED_LIBS +=	v4l1		0.0 # 0.0
+ SHARED_LIBS +=	v4l2		0.0 # 0.0
+@@ -21,14 +27,14 @@ MAINTAINER =		Ingo Feinerer <feinerer@lo
+ # LGPLv2+
+ PERMIT_PACKAGE =	Yes
+ 
+-WANTLIB += c execinfo jpeg m pthread
++WANTLIB-main += c execinfo jpeg m pthread
+ 
+ MASTER_SITES =		https://linuxtv.org/downloads/v4l-utils/
+ 
+ EXTRACT_SUFX =		.tar.bz2
+ 
+ BUILD_DEPENDS =		devel/argp-standalone
+-LIB_DEPENDS =		graphics/jpeg>=1.5.0v0
++LIB_DEPENDS-main =	graphics/jpeg>=1.5.0v0
+ 
+ SEPARATE_BUILD =	Yes
+ LIBTOOL_FLAGS =		--tag=disable-static
+@@ -39,5 +45,8 @@ CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE
+ 			LDFLAGS="-L${LOCALBASE}/lib"
+ 
+ AUTOCONF_VERSION =	2.69
++
++post-install:
++	cd ${WRKSRC}/contrib/freebsd && pax -rw include ${PREFIX}/
+ 
+ .include <bsd.port.mk>
+Index: patches/patch-contrib_freebsd_include_linux_input_h
+===================================================================
+RCS file: patches/patch-contrib_freebsd_include_linux_input_h
+diff -N patches/patch-contrib_freebsd_include_linux_input_h
+--- /dev/null	1 Jan 1970 00:00:00 -0000
++++ patches/patch-contrib_freebsd_include_linux_input_h	12 Dec 2021 17:01:00 -0000
+@@ -0,0 +1,16 @@
++$OpenBSD$
++
++Treat OpenBSD like FreeBSD.
++
++Index: contrib/freebsd/include/linux/input.h
++--- contrib/freebsd/include/linux/input.h.orig
+++++ contrib/freebsd/include/linux/input.h
++@@ -43,7 +43,7 @@ typedef int8_t __s8;
++ #endif
++ #endif
++ 
++-#if defined(__FreeBSD__) || defined(__FreeBSD_kernel__)
+++#if defined(__FreeBSD__) || defined(__FreeBSD_kernel__) || defined(__OpenBSD__)
++ #define __user
++ #define	_IOC_READ   IOC_OUT
++ #define	_IOC_WRITE  IOC_IN
+Index: patches/patch-contrib_freebsd_include_linux_v4l2-controls_h
+===================================================================
+RCS file: patches/patch-contrib_freebsd_include_linux_v4l2-controls_h
+diff -N patches/patch-contrib_freebsd_include_linux_v4l2-controls_h
+--- /dev/null	1 Jan 1970 00:00:00 -0000
++++ patches/patch-contrib_freebsd_include_linux_v4l2-controls_h	12 Dec 2021 18:07:07 -0000
+@@ -0,0 +1,17 @@
++$OpenBSD$
++
++No <linux/types.h> on OpenBSD
++
++Index: contrib/freebsd/include/linux/v4l2-controls.h
++--- contrib/freebsd/include/linux/v4l2-controls.h.orig
+++++ contrib/freebsd/include/linux/v4l2-controls.h
++@@ -50,7 +50,9 @@
++ #ifndef __LINUX_V4L2_CONTROLS_H
++ #define __LINUX_V4L2_CONTROLS_H
++ 
+++#if !defined(__OpenBSD__)
++ #include <linux/types.h>
+++#endif
++ 
++ /* Control classes */
++ #define V4L2_CTRL_CLASS_USER		0x00980000	/* Old-style 'user' controls */
+Index: pkg/DESCR
+===================================================================
+RCS file: pkg/DESCR
+diff -N pkg/DESCR
+--- pkg/DESCR	7 Jan 2016 17:12:21 -0000	1.1.1.1
++++ /dev/null	1 Jan 1970 00:00:00 -0000
+@@ -1,4 +0,0 @@
+-libv4l is a collection of libraries which adds a thin abstraction layer on top
+-of video4linux2 devices. The purpose of this (thin) layer is to make it easy
+-for application writers to support a wide variety of devices without having to
+-write separate code for different devices in the same class.
+Index: pkg/DESCR-compat
+===================================================================
+RCS file: pkg/DESCR-compat
+diff -N pkg/DESCR-compat
+--- /dev/null	1 Jan 1970 00:00:00 -0000
++++ pkg/DESCR-compat	12 Dec 2021 17:08:12 -0000
+@@ -0,0 +1 @@
++This package provides the Video4Linux user space API header files.
+Index: pkg/DESCR-main
+===================================================================
+RCS file: pkg/DESCR-main
+diff -N pkg/DESCR-main
+--- /dev/null	1 Jan 1970 00:00:00 -0000
++++ pkg/DESCR-main	12 Dec 2021 17:06:50 -0000
+@@ -0,0 +1,4 @@
++libv4l is a collection of libraries which adds a thin abstraction layer on top
++of video4linux2 devices. The purpose of this (thin) layer is to make it easy
++for application writers to support a wide variety of devices without having to
++write separate code for different devices in the same class.
+Index: pkg/PLIST
+===================================================================
+RCS file: pkg/PLIST
+diff -N pkg/PLIST
+--- pkg/PLIST	15 May 2020 09:55:55 -0000	1.5
++++ /dev/null	1 Jan 1970 00:00:00 -0000
+@@ -1,51 +0,0 @@
+-@comment $OpenBSD: PLIST,v 1.5 2020/05/15 09:55:55 feinerer Exp $
+-include/libv4l-plugin.h
+-include/libv4l1-videodev.h
+-include/libv4l1.h
+-include/libv4l2.h
+-include/libv4l2rds.h
+-include/libv4lconvert.h
+-lib/libv4l/
+-@bin lib/libv4l/ov511-decomp
+-@bin lib/libv4l/ov518-decomp
+-lib/libv4l/plugins/
+-@comment lib/libv4l/plugins/libv4l-mplane.la
+-@so lib/libv4l/plugins/libv4l-mplane.so
+-@comment lib/libv4l/v4l1compat.la
+-@so lib/libv4l/v4l1compat.so
+-@comment lib/libv4l/v4l2convert.la
+-@so lib/libv4l/v4l2convert.so
+-lib/libv4l1.la
+-@lib lib/libv4l1.so.${LIBv4l1_VERSION}
+-lib/libv4l2.la
+-@lib lib/libv4l2.so.${LIBv4l2_VERSION}
+-lib/libv4l2rds.la
+-@lib lib/libv4l2rds.so.${LIBv4l2rds_VERSION}
+-lib/libv4lconvert.la
+-@lib lib/libv4lconvert.so.${LIBv4lconvert_VERSION}
+-lib/pkgconfig/libv4l1.pc
+-lib/pkgconfig/libv4l2.pc
+-lib/pkgconfig/libv4l2rds.pc
+-lib/pkgconfig/libv4lconvert.pc
+-@so lib/v4l1compat.so
+-@so lib/v4l2convert.so
+-@comment share/locale/
+-@comment share/locale/ca/
+-@comment share/locale/ca/LC_MESSAGES/
+-@comment share/locale/ca/LC_MESSAGES/libdvbv5.mo
+-@comment share/locale/ca/LC_MESSAGES/v4l-utils.mo
+-@comment share/locale/de/
+-@comment share/locale/de/LC_MESSAGES/
+-@comment share/locale/de/LC_MESSAGES/libdvbv5.mo
+-@comment share/locale/de/LC_MESSAGES/v4l-utils.mo
+-@comment share/locale/fr/
+-@comment share/locale/fr/LC_MESSAGES/
+-@comment share/locale/fr/LC_MESSAGES/v4l-utils.mo
+-@comment share/locale/pt_BR/
+-@comment share/locale/pt_BR/LC_MESSAGES/
+-@comment share/locale/pt_BR/LC_MESSAGES/libdvbv5.mo
+-@comment share/locale/pt_BR/LC_MESSAGES/v4l-utils.mo
+-@comment share/locale/uk/
+-@comment share/locale/uk/LC_MESSAGES/
+-@comment share/locale/uk/LC_MESSAGES/libdvbv5.mo
+-@comment share/locale/uk/LC_MESSAGES/v4l-utils.mo
+Index: pkg/PLIST-compat
+===================================================================
+RCS file: pkg/PLIST-compat
+diff -N pkg/PLIST-compat
+--- /dev/null	1 Jan 1970 00:00:00 -0000
++++ pkg/PLIST-compat	12 Dec 2021 17:02:37 -0000
+@@ -0,0 +1,9 @@
++@comment $OpenBSD: $
++include/linux/
++include/linux/input-event-codes.h
++include/linux/input.h
++include/linux/ivtv.h
++include/linux/uinput.h
++include/linux/v4l2-common.h
++include/linux/v4l2-controls.h
++include/linux/videodev2.h
+Index: pkg/PLIST-main
+===================================================================
+RCS file: pkg/PLIST-main
+diff -N pkg/PLIST-main
+--- /dev/null	1 Jan 1970 00:00:00 -0000
++++ pkg/PLIST-main	12 Dec 2021 17:02:39 -0000
+@@ -0,0 +1,52 @@
++@comment $OpenBSD: $
++@pkgpath multimedia/libv4l
++include/libv4l-plugin.h
++include/libv4l1-videodev.h
++include/libv4l1.h
++include/libv4l2.h
++include/libv4l2rds.h
++include/libv4lconvert.h
++lib/libv4l/
++@bin lib/libv4l/ov511-decomp
++@bin lib/libv4l/ov518-decomp
++lib/libv4l/plugins/
++@comment lib/libv4l/plugins/libv4l-mplane.la
++@so lib/libv4l/plugins/libv4l-mplane.so
++@comment lib/libv4l/v4l1compat.la
++@so lib/libv4l/v4l1compat.so
++@comment lib/libv4l/v4l2convert.la
++@so lib/libv4l/v4l2convert.so
++lib/libv4l1.la
++@lib lib/libv4l1.so.${LIBv4l1_VERSION}
++lib/libv4l2.la
++@lib lib/libv4l2.so.${LIBv4l2_VERSION}
++lib/libv4l2rds.la
++@lib lib/libv4l2rds.so.${LIBv4l2rds_VERSION}
++lib/libv4lconvert.la
++@lib lib/libv4lconvert.so.${LIBv4lconvert_VERSION}
++lib/pkgconfig/libv4l1.pc
++lib/pkgconfig/libv4l2.pc
++lib/pkgconfig/libv4l2rds.pc
++lib/pkgconfig/libv4lconvert.pc
++@so lib/v4l1compat.so
++@so lib/v4l2convert.so
++@comment share/locale/
++@comment share/locale/ca/
++@comment share/locale/ca/LC_MESSAGES/
++@comment share/locale/ca/LC_MESSAGES/libdvbv5.mo
++@comment share/locale/ca/LC_MESSAGES/v4l-utils.mo
++@comment share/locale/de/
++@comment share/locale/de/LC_MESSAGES/
++@comment share/locale/de/LC_MESSAGES/libdvbv5.mo
++@comment share/locale/de/LC_MESSAGES/v4l-utils.mo
++@comment share/locale/fr/
++@comment share/locale/fr/LC_MESSAGES/
++@comment share/locale/fr/LC_MESSAGES/v4l-utils.mo
++@comment share/locale/pt_BR/
++@comment share/locale/pt_BR/LC_MESSAGES/
++@comment share/locale/pt_BR/LC_MESSAGES/libdvbv5.mo
++@comment share/locale/pt_BR/LC_MESSAGES/v4l-utils.mo
++@comment share/locale/uk/
++@comment share/locale/uk/LC_MESSAGES/
++@comment share/locale/uk/LC_MESSAGES/libdvbv5.mo
++@comment share/locale/uk/LC_MESSAGES/v4l-utils.mo
