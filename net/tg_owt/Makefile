@@ -42,7 +42,7 @@ PERMIT_PACKAGE =	Yes
 WANTLIB +=	${COMPILER_LIBCXX} X11 Xcomposite Xdamage Xext Xfixes
 WANTLIB +=	Xrandr Xrender Xtst avcodec avformat avutil crypto
 WANTLIB +=	gio-2.0 glib-2.0 gobject-2.0 intl jpeg m opus ssl swresample
-WANTLIB +=	swscale vpx
+WANTLIB +=	swscale protobuf vpx
 
 # XXX requires __atomic builtins (copied from multimedia/vpx)
 # -std=gnu++20
