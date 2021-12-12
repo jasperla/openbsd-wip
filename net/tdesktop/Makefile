@@ -4,7 +4,7 @@
 ONLY_FOR_ARCHS =	${LE_ARCHS}
 
 COMMENT =		Telegram Desktop messaging app
-V =			3.2.5
+V =			3.3.0
 DISTNAME =		tdesktop-${V}-full
 PKGNAME =		tdesktop-${V}
 CATEGORIES =		net
