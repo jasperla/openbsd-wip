@@ -12,6 +12,9 @@ CATEGORIES =		net
 HOMEPAGE =		https://desktop.telegram.org
 MASTER_SITES =		https://github.com/telegramdesktop/tdesktop/releases/download/v${V}/
 
+# ${WRKSRC}/Telegram/ThirdParty/hunspell/tests/suggestiontest/Makefile.orig
+PATCHORIG =		.pat.orig
+
 MAINTAINER =		Klemens Nanni <kn@openbsd.org>
 
 # GPLv3
@@ -27,6 +30,7 @@ CONFIGURE_ARGS +=	-DDESKTOP_APP_QT6=OFF
 LIB_DEPENDS =		audio/rnnoise \
 			audio/openal \
 			audio/pulseaudio \
+			graphics/ffmpeg \
 			graphics/jpeg \
 			net/tg_owt
 

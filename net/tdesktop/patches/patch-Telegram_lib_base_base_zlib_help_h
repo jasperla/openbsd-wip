@@ -1,0 +1,17 @@
+$OpenBSD$
+
+- include <minizip/mz_compat.h> for `unzLocateFile()'
+- include <zconf.h> for `voidpf' and `uLong' definitions
+
+Index: Telegram/lib_base/base/zlib_help.h
+--- Telegram/lib_base/base/zlib_help.h.orig
++++ Telegram/lib_base/base/zlib_help.h
+@@ -6,6 +6,8 @@
+ //
+ #pragma once
+ 
++#include <minizip/mz_compat.h>
++#include <zconf.h>
+ #include <zip.h>
+ #include <unzip.h>
+ #include "logs.h"

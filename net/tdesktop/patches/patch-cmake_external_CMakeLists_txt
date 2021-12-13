@@ -1,0 +1,17 @@
+$OpenBSD$
+
+Neuter jemalloc inclusion
+
+Index: cmake/external/CMakeLists.txt
+--- cmake/external/CMakeLists.txt.orig
++++ cmake/external/CMakeLists.txt
+@@ -37,9 +37,6 @@ if (add_hunspell_library)
+ 	add_checked_subdirectory(hunspell)
+ endif()
+ add_checked_subdirectory(iconv)
+-if (LINUX)
+-    add_checked_subdirectory(jemalloc)
+-endif()
+ add_checked_subdirectory(jpeg)
+ if (LINUX AND NOT DESKTOP_APP_DISABLE_WAYLAND_INTEGRATION)
+     add_checked_subdirectory(kwayland)
