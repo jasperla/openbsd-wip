@@ -1,0 +1,7 @@
+Neuter jemalloc usage during build for good:
+
+FAILED: cmake/external/jemalloc/jemalloc-prefix/src/jemalloc-stamp/jemalloc-configure 
+cd /usr/ports/pobj/tdesktop-3.3.0/tdesktop-3.3.0-full/Telegram/ThirdParty/jemalloc && cd /usr/ports/pobj/tdesktop-3.3.0/tdesktop-3.3.0-full/Telegram/ThirdParty/jemalloc && export "EXTRA_CFLAGS=-fstack-protector-all -fPIC -D_FORTIFY_SOURCE=2" && export "EXTRA_CXXFLAGS=-fstack-protector-all -fPIC -D_FORTIFY_SOURCE=2" && CC=clang CXX=clang++ ./autogen.sh && /usr/local/bin/cmake -E touch /usr/ports/pobj/tdesktop-3.3.0/build-amd64/cmake/external/jemalloc/jemalloc-prefix/src/jemalloc-stamp/jemalloc-configure
+autoconf
+Provide an AUTOCONF_VERSION environment variable, please
+Error 0 in autoconf
