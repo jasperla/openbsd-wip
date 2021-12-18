@@ -79,7 +79,7 @@ Index: BUILD.gn
        data_deps += [ "//third_party/breakpad:dump_syms($host_toolchain)" ]
      }
  
-@@ -1534,9 +1524,6 @@ group("chromium_builder_perf") {
+@@ -1530,9 +1520,6 @@ group("chromium_builder_perf") {
  
      if (is_win) {
        data_deps += [ "//chrome/installer/mini_installer:mini_installer" ]
