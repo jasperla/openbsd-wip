@@ -22,10 +22,6 @@ WANTLIB += gstaudio-1.0 gstbase-1.0 gstpbutils-1.0 gstreamer-1.0
 WANTLIB += gsttag-1.0 gstvideo-1.0 iconv intl m mtp protobuf pulse
 WANTLIB += sqlite3 tag xcb z
 
-# XXX still needed?
-# dlopened
-#WANTLIB += plist
-
 MODULES =		devel/cmake \
 			x11/qt5
 
@@ -45,7 +41,6 @@ LIB_DEPENDS =		audio/chromaprint \
 			audio/pulseaudio \
 			audio/taglib \
 			devel/libmtp \
-			devel/libplist \
 			devel/protobuf \
 			graphics/glew \
 			math/fftw3 \
