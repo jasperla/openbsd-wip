@@ -1,0 +1,13 @@
+$OpenBSD$
+
+Index: tests/CMakeLists.txt
+--- tests/CMakeLists.txt.orig
++++ tests/CMakeLists.txt
+@@ -1,7 +1,5 @@
+ enable_testing()
+ 
+-add_definitions(-DGTEST_USE_OWN_TR1_TUPLE=1)
+-
+ set(TESTUTILS-SOURCES
+   src/mock_networkaccessmanager.cpp
+   src/mock_playlistitem.cpp
