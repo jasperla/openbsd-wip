@@ -1,0 +1,11 @@
+# $OpenBSD$
+#
+# See https://lbry.tech/resources/daemon-settings for all configuration keys and values.
+
+data_dir: /var/lbry/data
+wallet_dir: /var/lbry/wallet
+download_dir: /var/lbry/downloads
+
+save_blobs: true
+save_files: false
+use_upnp: true

@@ -682,3 +682,6 @@ lib/python${MODPY_VERSION}/site-packages/tests/unit/wallet/test_stream_controlle
 lib/python${MODPY_VERSION}/site-packages/tests/unit/wallet/test_transaction.py
 lib/python${MODPY_VERSION}/site-packages/tests/unit/wallet/test_utils.py
 lib/python${MODPY_VERSION}/site-packages/tests/unit/wallet/test_wallet.py
+share/examples/lbry-sdk/
+share/examples/lbry-sdk/daemon_settings.yml
+@sample ${SYSCONFDIR}/lbry.yml

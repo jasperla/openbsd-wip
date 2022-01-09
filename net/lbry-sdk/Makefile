@@ -44,4 +44,9 @@ RUN_DEPENDS +=		devel/py-appdirs${MODPY_FLAVOR} \
 TEST_DEPENDS +=		${RUN_DEPENDS} \
 			devel/py-coverage${MODPY_FLAVOR}
 
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/lbry-sdk
+	${INSTALL_DATA} ${FILESDIR}/daemon_settings.yml \
+	    ${PREFIX}/share/examples/lbry-sdk
+
 .include <bsd.port.mk>
