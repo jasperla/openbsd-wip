@@ -1,0 +1,27 @@
+@comment $OpenBSD: PLIST,v$
+lib/python${MODPY_VERSION}/site-packages/coincurve/
+lib/python${MODPY_VERSION}/site-packages/coincurve-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/coincurve-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/coincurve-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/coincurve-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/coincurve-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/not-zip-safe
+lib/python${MODPY_VERSION}/site-packages/coincurve-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
+lib/python${MODPY_VERSION}/site-packages/coincurve-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/coincurve/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/coincurve/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/coincurve/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/coincurve/${MODPY_PYCACHE}_windows_libsecp256k1.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/coincurve/${MODPY_PYCACHE}context.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/coincurve/${MODPY_PYCACHE}ecdsa.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/coincurve/${MODPY_PYCACHE}flags.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/coincurve/${MODPY_PYCACHE}keys.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/coincurve/${MODPY_PYCACHE}types.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/coincurve/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}pyc
+@so lib/python${MODPY_VERSION}/site-packages/coincurve/_libsecp256k1.${MODPY_PYC_MAGIC_TAG}so
+lib/python${MODPY_VERSION}/site-packages/coincurve/context.py
+lib/python${MODPY_VERSION}/site-packages/coincurve/ecdsa.py
+lib/python${MODPY_VERSION}/site-packages/coincurve/flags.py
+lib/python${MODPY_VERSION}/site-packages/coincurve/keys.py
+lib/python${MODPY_VERSION}/site-packages/coincurve/py.typed
+lib/python${MODPY_VERSION}/site-packages/coincurve/types.py
+lib/python${MODPY_VERSION}/site-packages/coincurve/utils.py
