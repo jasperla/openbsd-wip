@@ -1,4 +1,14 @@
 @comment $OpenBSD: PLIST,v$
+@newgroup _lbrynet:872
+@newuser _lbrynet:872:872:daemon:LBRYnet daemon:/var/lbry:/sbin/nologin
+@rcscript ${RCDIR}/lbrynet
+@mode 750
+@owner _lbrynet
+@group _lbrynet
+@sample /var/lbry/
+@mode
+@owner
+@group
 bin/lbry-hub
 bin/lbry-hub-elastic-sync
 bin/lbrynet

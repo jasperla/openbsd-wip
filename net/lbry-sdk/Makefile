@@ -6,7 +6,7 @@ GH_ACCOUNT =		lbryio
 GH_PROJECT =		lbry-sdk
 GH_TAGNAME =		v${MODPY_EGG_VERSION}
 
-CATEGORIES =		www net
+CATEGORIES =		net www
 HOMEPAGE =		https://lbry.com/
 
 MAINTAINER =		Dmitrij D. Czarkoff <czarkoff@gmail.com>
