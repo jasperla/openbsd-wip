@@ -1,0 +1,22 @@
+The port does not use upstream dependencies' versions (which are too
+old for ports),  so special care is required to make sure that things
+work.
+
+Currently a lot of tests is broken because of py-elasticsearch seems
+to be broken on python 3.9.  (Our port appears to be too outdated.)
+
+This port creates a new user,  so this change to infrastructure is
+required for the package to be built:
+
+Index: user.list
+===================================================================
+RCS file: /cvs/ports/infrastructure/db/user.list,v
+retrieving revision 1.392
+diff -u -p -r1.392 user.list
+--- user.list	17 Nov 2021 20:32:34 -0000	1.392
++++ user.list	9 Jan 2022 23:59:28 -0000
+@@ -380,3 +380,4 @@ id  user		group		port
+ 869 _headscale		_headscale	net/headscale
+ 870 _unit		_unit		www/unit
+ 871 _gelatod		_gelatod	net/gelatod
++872 _lbrynet		_lbrynet	net/lbry-sdk
