@@ -1,0 +1,15 @@
+@comment $OpenBSD: PLIST,v 1.4 2020/01/26 17:37:08 rsadowski Exp $
+@bin bin/strawberry
+@bin bin/strawberry-tagreader
+share/applications/org.strawberrymusicplayer.strawberry.desktop
+share/icons/hicolor/128x128/apps/strawberry.png
+share/icons/hicolor/48x48/apps/strawberry.png
+share/icons/hicolor/64x64/apps/strawberry.png
+@mandir share/man/
+share/man/man1/
+@man share/man/man1/strawberry-tagreader.1
+@man share/man/man1/strawberry.1
+share/metainfo/
+@tag update-desktop-database
+@tag gtk-update-icon-cache %D/share/icons/hicolor
+share/metainfo/org.strawberrymusicplayer.strawberry.appdata.xml

@@ -1,0 +1,14 @@
+$OpenBSD$
+
+Index: setup_support.py
+--- setup_support.py.orig
++++ setup_support.py
+@@ -68,7 +68,7 @@ def _find_lib():
+     ffi = FFI()
+     try:
+         ffi.dlopen('secp256k1')
+-        if os.path.exists('/usr/include/secp256k1_ecdh.h'):
++        if os.path.exists(os.path.join(os.environ['LOCALBASE'], 'include/secp256k1_ecdh.h')):
+             return True
+         else:
+             # The system library lacks the ecdh module

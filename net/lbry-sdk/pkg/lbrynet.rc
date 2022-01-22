@@ -1,0 +1,14 @@
+#!/bin/ksh
+#
+# $OpenBSD$
+
+daemon="${TRUEPREFIX}/bin/lbrynet"
+daemon_user="_lbrynet"
+daemon_flags="start --config=/etc/lbry.yml"
+
+. /etc/rc.d/rc.subr
+
+rc_reload=NO
+rc_bg=YES
+
+rc_cmd $1

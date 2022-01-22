@@ -1,0 +1,27 @@
+2022-01-09 11:03:39,148 INFO     lbry.extras.daemon.daemon:459: Starting LBRYNet Daemon
+2022-01-09 11:03:39,150 INFO     lbry.extras.daemon.daemon:461: Platform: {
+  "processor": "amd64",
+  "python_version": "3.9.9",
+  "platform": "OpenBSD-7.0-amd64-64bit-ELF",
+  "os_release": "7.0",
+  "os_system": "OpenBSD",
+  "lbrynet_version": "0.101.2",
+  "version": "0.101.2",
+  "build": "dev"
+}
+2022-01-09 11:03:39,153 INFO     lbry.extras.daemon.daemon:471: RPC server listening on TCP 127.0.0.1:5279
+2022-01-09 11:03:39,154 INFO     lbry.extras.daemon.daemon:481: media server listening on TCP ::1:5280
+2022-01-09 11:03:39,155 ERROR    lbry.extras.daemon.daemon:506: Failed to start lbrynet
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/lbry/extras/daemon/daemon.py", line 499, in start
+    await self.initialize()
+  File "/usr/local/lib/python3.9/site-packages/lbry/extras/daemon/daemon.py", line 512, in initialize
+    self.ensure_data_dir()
+  File "/usr/local/lib/python3.9/site-packages/lbry/extras/daemon/daemon.py", line 445, in ensure_data_dir
+    os.makedirs(self.conf.data_dir)
+  File "/usr/local/lib/python3.9/os.py", line 225, in makedirs
+    mkdir(name, mode)
+FileNotFoundError: [Errno 2] No such file or directory: ''
+2022-01-09 11:03:39,160 INFO     lbry.extras.daemon.daemon:534: stopped api components
+2022-01-09 11:03:39,160 INFO     lbry.extras.daemon.daemon:538: stopped api server
+2022-01-09 11:03:39,161 INFO     lbry.extras.daemon.daemon:541: finished shutting down
