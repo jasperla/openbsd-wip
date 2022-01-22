@@ -1,4 +1,4 @@
-$OpenBSD$
+$OpenBSD: patch-chrome_browser_about_flags_cc,v 1.84 2022/01/06 06:24:04 robert Exp $
 
 Index: chrome/browser/about_flags.cc
 --- chrome/browser/about_flags.cc.orig

@@ -1,4 +1,4 @@
-$OpenBSD$
+$OpenBSD: patch-sandbox_linux_BUILD_gn,v 1.23 2022/01/06 06:24:05 robert Exp $
 
 Index: sandbox/linux/BUILD.gn
 --- sandbox/linux/BUILD.gn.orig

@@ -1,4 +1,4 @@
-$OpenBSD$
+$OpenBSD: patch-chrome_common_chrome_features_h,v 1.37 2022/01/06 06:24:04 robert Exp $
 
 Index: chrome/common/chrome_features.h
 --- chrome/common/chrome_features.h.orig

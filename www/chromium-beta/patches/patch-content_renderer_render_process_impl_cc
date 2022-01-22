@@ -1,4 +1,4 @@
-$OpenBSD: patch-content_renderer_render_process_impl_cc,v 1.19 2021/09/01 16:54:39 robert Exp $
+$OpenBSD: patch-content_renderer_render_process_impl_cc,v 1.23 2022/01/06 06:24:05 robert Exp $
 
 Index: content/renderer/render_process_impl.cc
 --- content/renderer/render_process_impl.cc.orig

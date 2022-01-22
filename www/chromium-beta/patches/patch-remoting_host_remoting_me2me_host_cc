@@ -1,4 +1,4 @@
-$OpenBSD$
+$OpenBSD: patch-remoting_host_remoting_me2me_host_cc,v 1.30 2022/01/06 06:24:05 robert Exp $
 
 Index: remoting/host/remoting_me2me_host.cc
 --- remoting/host/remoting_me2me_host.cc.orig

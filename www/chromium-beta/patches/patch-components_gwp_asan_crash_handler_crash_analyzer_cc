@@ -1,4 +1,4 @@
-$OpenBSD$
+$OpenBSD: patch-components_gwp_asan_crash_handler_crash_analyzer_cc,v 1.4 2022/01/06 06:24:04 robert Exp $
 
 Index: components/gwp_asan/crash_handler/crash_analyzer.cc
 --- components/gwp_asan/crash_handler/crash_analyzer.cc.orig

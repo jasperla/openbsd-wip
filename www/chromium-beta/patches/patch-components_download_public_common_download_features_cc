@@ -1,4 +1,4 @@
-$OpenBSD$
+$OpenBSD: patch-components_download_public_common_download_features_cc,v 1.2 2022/01/06 06:24:04 robert Exp $
 
 Index: components/download/public/common/download_features.cc
 --- components/download/public/common/download_features.cc.orig

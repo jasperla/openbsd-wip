@@ -1,4 +1,4 @@
-$OpenBSD$
+$OpenBSD: patch-chrome_app_generated_resources_grd,v 1.58 2022/01/06 06:24:04 robert Exp $
 
 Index: chrome/app/generated_resources.grd
 --- chrome/app/generated_resources.grd.orig

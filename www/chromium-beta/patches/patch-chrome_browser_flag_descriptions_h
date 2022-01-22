@@ -1,4 +1,4 @@
-$OpenBSD$
+$OpenBSD: patch-chrome_browser_flag_descriptions_h,v 1.46 2022/01/06 06:24:04 robert Exp $
 
 Index: chrome/browser/flag_descriptions.h
 --- chrome/browser/flag_descriptions.h.orig

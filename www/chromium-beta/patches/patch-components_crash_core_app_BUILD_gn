@@ -1,4 +1,4 @@
-$OpenBSD$
+$OpenBSD: patch-components_crash_core_app_BUILD_gn,v 1.14 2022/01/06 06:24:04 robert Exp $
 
 Index: components/crash/core/app/BUILD.gn
 --- components/crash/core/app/BUILD.gn.orig

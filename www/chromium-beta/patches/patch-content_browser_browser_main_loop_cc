@@ -1,4 +1,4 @@
-$OpenBSD: patch-content_browser_browser_main_loop_cc,v 1.77 2021/09/01 16:54:39 robert Exp $
+$OpenBSD: patch-content_browser_browser_main_loop_cc,v 1.82 2022/01/06 06:24:05 robert Exp $
 
 Index: content/browser/browser_main_loop.cc
 --- content/browser/browser_main_loop.cc.orig

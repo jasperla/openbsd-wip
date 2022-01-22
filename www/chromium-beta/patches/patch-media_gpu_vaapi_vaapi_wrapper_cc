@@ -1,4 +1,4 @@
-$OpenBSD$
+$OpenBSD: patch-media_gpu_vaapi_vaapi_wrapper_cc,v 1.2 2022/01/06 06:24:05 robert Exp $
 
 Index: media/gpu/vaapi/vaapi_wrapper.cc
 --- media/gpu/vaapi/vaapi_wrapper.cc.orig

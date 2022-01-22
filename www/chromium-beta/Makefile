@@ -1,19 +1,14 @@
-# $OpenBSD: Makefile,v 1.597 2021/11/08 12:53:49 robert Exp $
+# $OpenBSD: Makefile,v 1.609 2022/01/20 18:12:10 robert Exp $
 
 BROKEN-powerpc64 =	Check failed: false. OS architecture not handled. (powerpc64)
 
 USE_WXNEEDED=		Yes
 
-.include <bsd.port.arch.mk>
-.if ${MACHINE_ARCH} == "i386"
-DPB_PROPERTIES=		lonesome
-.else
 DPB_PROPERTIES=		parallel parallel2
-.endif
 
 COMMENT=		Chromium browser
 
-V=			97.0.4692.71
+V=			97.0.4692.99
 
 DISTNAME=		chromium-${V}
 
@@ -75,6 +70,7 @@ WANTLIB += iconv lzma
 WANTLIB += fido2 cbor usbhid crypto
 WANTLIB += gbm xkbcommon
 WANTLIB += tiff xshmfence
+WANTLIB += lzo2
 
 RUN_DEPENDS=	devel/xdg-utils \
 		devel/desktop-file-utils \
@@ -178,7 +174,7 @@ GN_ARGS+=	google_api_key=\"AIzaSyA015yecfJyWi8UQpneQVrNzIKlxjv4MhI\" \
 DWZ = :
 
 .if ${FLAVOR:Mdebug}
-GN_ARGS+=	symbol_level=2
+GN_ARGS+=	symbol_level=1
 DEBUG_PACKAGES=	${BUILD_PACKAGES}
 .else
 GN_ARGS+=	symbol_level=0

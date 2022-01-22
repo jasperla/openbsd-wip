@@ -1,4 +1,4 @@
-$OpenBSD: patch-net_dns_address_sorter_posix_cc,v 1.4 2016/07/31 13:11:44 robert Exp $
+$OpenBSD: patch-net_dns_address_sorter_posix_cc,v 1.6 2022/01/06 06:24:05 robert Exp $
 Index: net/dns/address_sorter_posix.cc
 --- net/dns/address_sorter_posix.cc.orig
 +++ net/dns/address_sorter_posix.cc

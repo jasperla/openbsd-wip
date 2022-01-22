@@ -1,4 +1,4 @@
-$OpenBSD$
+$OpenBSD: patch-chrome_browser_ui_webui_chrome_web_ui_controller_factory_cc,v 1.56 2022/01/06 06:24:04 robert Exp $
 
 Index: chrome/browser/ui/webui/chrome_web_ui_controller_factory.cc
 --- chrome/browser/ui/webui/chrome_web_ui_controller_factory.cc.orig

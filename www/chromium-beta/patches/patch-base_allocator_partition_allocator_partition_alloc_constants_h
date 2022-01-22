@@ -1,4 +1,4 @@
-$OpenBSD$
+$OpenBSD: patch-base_allocator_partition_allocator_partition_alloc_constants_h,v 1.1 2022/01/06 06:24:03 robert Exp $
 
 Index: base/allocator/partition_allocator/partition_alloc_constants.h
 --- base/allocator/partition_allocator/partition_alloc_constants.h.orig

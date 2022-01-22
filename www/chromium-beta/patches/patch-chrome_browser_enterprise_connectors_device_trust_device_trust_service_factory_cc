@@ -1,4 +1,4 @@
-$OpenBSD$
+$OpenBSD: patch-chrome_browser_enterprise_connectors_device_trust_device_trust_service_factory_cc,v 1.4 2022/01/06 06:24:04 robert Exp $
 
 Index: chrome/browser/enterprise/connectors/device_trust/device_trust_service_factory.cc
 --- chrome/browser/enterprise/connectors/device_trust/device_trust_service_factory.cc.orig

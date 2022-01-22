@@ -1,4 +1,4 @@
-$OpenBSD$
+$OpenBSD: patch-chrome_browser_policy_configuration_policy_handler_list_factory_cc,v 1.27 2022/01/06 06:24:04 robert Exp $
 
 Index: chrome/browser/policy/configuration_policy_handler_list_factory.cc
 --- chrome/browser/policy/configuration_policy_handler_list_factory.cc.orig

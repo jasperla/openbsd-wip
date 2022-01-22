@@ -1,4 +1,4 @@
-$OpenBSD: patch-ui_gfx_gpu_memory_buffer_h,v 1.18 2021/09/01 16:54:41 robert Exp $
+$OpenBSD: patch-ui_gfx_gpu_memory_buffer_h,v 1.19 2022/01/06 06:24:06 robert Exp $
 
 Index: ui/gfx/gpu_memory_buffer.h
 --- ui/gfx/gpu_memory_buffer.h.orig

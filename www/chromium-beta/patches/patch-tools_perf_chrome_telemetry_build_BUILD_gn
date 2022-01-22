@@ -1,4 +1,4 @@
-$OpenBSD: patch-tools_perf_chrome_telemetry_build_BUILD_gn,v 1.10 2021/09/01 16:54:40 robert Exp $
+$OpenBSD: patch-tools_perf_chrome_telemetry_build_BUILD_gn,v 1.13 2022/01/06 06:24:05 robert Exp $
 
 Index: tools/perf/chrome_telemetry_build/BUILD.gn
 --- tools/perf/chrome_telemetry_build/BUILD.gn.orig

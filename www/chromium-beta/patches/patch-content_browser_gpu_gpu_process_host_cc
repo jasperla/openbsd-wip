@@ -1,4 +1,4 @@
-$OpenBSD: patch-content_browser_gpu_gpu_process_host_cc,v 1.25 2021/09/01 16:54:39 robert Exp $
+$OpenBSD: patch-content_browser_gpu_gpu_process_host_cc,v 1.29 2022/01/06 06:24:05 robert Exp $
 
 Index: content/browser/gpu/gpu_process_host.cc
 --- content/browser/gpu/gpu_process_host.cc.orig

@@ -1,4 +1,4 @@
-$OpenBSD$
+$OpenBSD: patch-net_proxy_resolution_configured_proxy_resolution_service_cc,v 1.13 2022/01/06 06:24:05 robert Exp $
 
 Index: net/proxy_resolution/configured_proxy_resolution_service.cc
 --- net/proxy_resolution/configured_proxy_resolution_service.cc.orig

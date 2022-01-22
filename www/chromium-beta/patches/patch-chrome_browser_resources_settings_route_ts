@@ -1,4 +1,4 @@
-$OpenBSD$
+$OpenBSD: patch-chrome_browser_resources_settings_route_ts,v 1.2 2022/01/06 06:24:04 robert Exp $
 
 Index: chrome/browser/resources/settings/route.ts
 --- chrome/browser/resources/settings/route.ts.orig

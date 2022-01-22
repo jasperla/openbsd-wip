@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_crashpad_crashpad_build_crashpad_buildconfig_gni,v 1.5 2020/10/22 13:52:55 robert Exp $
+$OpenBSD: patch-third_party_crashpad_crashpad_build_crashpad_buildconfig_gni,v 1.8 2022/01/06 06:24:05 robert Exp $
 
 Index: third_party/crashpad/crashpad/build/crashpad_buildconfig.gni
 --- third_party/crashpad/crashpad/build/crashpad_buildconfig.gni.orig

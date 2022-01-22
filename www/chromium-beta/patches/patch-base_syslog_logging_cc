@@ -1,4 +1,4 @@
-$OpenBSD: patch-base_syslog_logging_cc,v 1.5 2021/01/20 07:28:07 robert Exp $
+$OpenBSD: patch-base_syslog_logging_cc,v 1.6 2022/01/06 06:24:03 robert Exp $
 
 Index: base/syslog_logging.cc
 --- base/syslog_logging.cc.orig
