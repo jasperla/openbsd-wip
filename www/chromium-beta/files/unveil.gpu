@@ -1,7 +1,0 @@
-# $OpenBSD: unveil.gpu,v 1.2 2021/10/26 08:32:58 robert Exp $
-
-/dev/dri rwx
-/usr/X11R6/lib r
-/usr/X11R6/share r
-/usr/lib r
-/usr/local/chrome r
