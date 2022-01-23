@@ -4,7 +4,7 @@ COMMENT =	music player and music collection organizer
 
 GH_ACCOUNT =	strawberrymusicplayer
 GH_PROJECT =	strawberry
-GH_TAGNAME =	1.0.0
+GH_TAGNAME =	1.0.1
 PKGNAME =	strawberry-${GH_TAGNAME}
 
 CATEGORIES =	audio x11
@@ -37,18 +37,18 @@ RUN_DEPENDS =		devel/desktop-file-utils \
 LIB_DEPENDS =		audio/chromaprint \
 			audio/libcdio \
 			audio/libgpod \
-			audio/liblastfm>=1.1.0 \
 			audio/pulseaudio \
 			audio/taglib \
 			devel/libmtp \
 			devel/protobuf \
-			graphics/glew \
 			math/fftw3 \
 			multimedia/gstreamer1/core \
 			multimedia/gstreamer1/plugins-base \
-			net/libmygpo-qt>=1.1.0 \
 			x11/qt5/qtx11extras
 
+# XXX: tests currently broken:
+# https://github.com/strawberrymusicplayer/strawberry/issues/881
+NO_TEST =		Yes
 TEST_DEPENDS =		${MODPY_BUILD_DEPENDS}
 TEST_TARGET =		strawberry_tests
 
@@ -58,7 +58,11 @@ CONFIGURE_ENV +=	QT_DIR=${MODQT5_LIBDIR}/cmake/Qt5/
 # Disable VLC support for now.
 CONFIGURE_ARGS +=	-DENABLE_VLC=OFF
 
-# Tries to use ccache by default.
+# Tries to use ccache if it is installed.
 CONFIGURE_ARGS +=	-DCCACHE_EXECUTABLE=
+
+post-install:
+	mv ${PREFIX}/share/man/* ${PREFIX}/man/
+	rmdir ${PREFIX}/share/man
 
 .include <bsd.port.mk>
