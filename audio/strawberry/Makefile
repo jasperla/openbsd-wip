@@ -46,11 +46,12 @@ LIB_DEPENDS =		audio/chromaprint \
 			multimedia/gstreamer1/plugins-base \
 			x11/qt5/qtx11extras
 
-# XXX: tests currently broken:
-# https://github.com/strawberrymusicplayer/strawberry/issues/881
-NO_TEST =		Yes
+# Character encoding test fails:
+# https://github.com/strawberrymusicplayer/strawberry/issues/886
 TEST_DEPENDS =		${MODPY_BUILD_DEPENDS}
 TEST_TARGET =		strawberry_tests
+TEST_IS_INTERACTIVE =	X11
+TEST_ENV +=		LC_ALL=en_US.UTF-8
 
 # Should this be in qt5.port.mk with the other *_DIR envs?
 CONFIGURE_ENV +=	QT_DIR=${MODQT5_LIBDIR}/cmake/Qt5/

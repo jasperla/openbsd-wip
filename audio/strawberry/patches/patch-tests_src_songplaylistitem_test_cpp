@@ -1,0 +1,17 @@
+$OpenBSD$
+
+Make the suite run with our old gtest:
+https://github.com/strawberrymusicplayer/strawberry/issues/886
+
+Index: tests/src/songplaylistitem_test.cpp
+--- tests/src/songplaylistitem_test.cpp.orig
++++ tests/src/songplaylistitem_test.cpp
+@@ -61,7 +61,7 @@ class SongPlaylistItemTest : public ::testing::TestWit
+   std::unique_ptr<SongPlaylistItem> item_;  // NOLINT(cppcoreguidelines-non-private-member-variables-in-classes)
+ };
+ 
+-INSTANTIATE_TEST_SUITE_P(RealFiles, SongPlaylistItemTest, testing::Values(  // clazy:exclude=function-args-by-value,clazy-non-pod-global-static
++INSTANTIATE_TEST_CASE_P(RealFiles, SongPlaylistItemTest, testing::Values(  // clazy:exclude=function-args-by-value,clazy-non-pod-global-static
+     "normalfile.flac",
+     "file with spaces.flac",
+     "file with # hash.flac",
