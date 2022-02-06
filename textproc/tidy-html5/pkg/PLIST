@@ -1,10 +1,11 @@
-@comment $OpenBSD$
+@comment $OpenBSD: PLIST,v$
 @conflict tidyp-*
 @bin bin/tidy
 include/tidy.h
 include/tidybuffio.h
 include/tidyenum.h
 include/tidyplatform.h
+@static-lib lib/libtidy.a
 @lib lib/libtidy.so.${LIBtidy_VERSION}
-lib/libtidys.a
+lib/pkgconfig/tidy.pc
 @man man/man1/tidy.1
