@@ -1,2 +1,3 @@
-@comment $OpenBSD$
+@comment $OpenBSD: PLIST,v$
 @bin bin/timg
+@man man/man1/timg.1
