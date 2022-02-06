@@ -1,2 +1,2 @@
-@comment $OpenBSD$
+@comment $OpenBSD: PLIST,v$
 @bin bin/vtclean

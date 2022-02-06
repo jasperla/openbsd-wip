@@ -1,16 +1,15 @@
 # $OpenBSD$
 
 COMMENT =		strip terminal escape sequences from text
-DISTNAME =		vtclean-0.0.20170504
 GH_ACCOUNT =		lunixbochs
 GH_PROJECT =		vtclean
-GH_COMMIT =		d14193dfc626125c831501c1c42340b4248e1f5a
+GH_TAGNAME =		v1.0.0
 CATEGORIES =		textproc sysutils
 
 MAINTAINER =		Dmitrij D. Czarkoff <czarkoff@openbsd.org>
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/go
 
