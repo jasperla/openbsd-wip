@@ -1,0 +1,16 @@
+$OpenBSD$
+
+Index: config.mk
+--- config.mk.orig
++++ config.mk
+@@ -21,8 +21,8 @@ FREETYPEINC = /usr/include/freetype2
+ #FREETYPEINC = ${X11INC}/freetype2
+ 
+ # Includes and libs
+-INCS = -I${X11INC} -I${FREETYPEINC}
+-LIBS = -L${X11LIB} -lX11 ${XINERAMALIBS} ${FREETYPELIBS}
++INCS = -I${X11INC} -I${X11INC}/freetype2 -I${FREETYPEINC} -I${PREFIX}/include
++LIBS = -L${X11LIB} -L${PREFIX}/lib -lX11 ${XINERAMALIBS} ${FREETYPELIBS}
+ 
+ # Flags
+ CPPFLAGS = -D_DEFAULT_SOURCE -D_POSIX_C_SOURCE=200809L -DVERSION=\"${VERSION}\" ${XINERAMAFLAGS} -DPACKAGE_VERSION=\"${VERSION}\" -DPACKAGE_BUGREPORT=\"${BUGREPORT}\"

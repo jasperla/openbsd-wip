@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v$
+@bin bin/pinentry-dmenu
+@mandir share/man/
+share/man/man1/
+@man share/man/man1/pinentry-dmenu.1
