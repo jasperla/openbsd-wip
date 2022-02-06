@@ -11,10 +11,10 @@ CATEGORIES =		comms sysutils
 MAINTAINER =		Dmitrij D. Czarkoff <czarkoff@openbsd.org>
 
 # Apache 2.0
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
-MODPY_EGG_VERSION =	1.2.0
+MODPY_EGG_VERSION =	1.3.0
 MODPY_SETUPTOOLS =	Yes
 MODPY_PI =		Yes
 MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}

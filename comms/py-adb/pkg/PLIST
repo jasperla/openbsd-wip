@@ -1,15 +1,18 @@
-@comment $OpenBSD$
+@comment $OpenBSD: PLIST,v$
 bin/adb
 bin/fastboot
+bin/pyadb
+bin/pyfastboot
 lib/python${MODPY_VERSION}/site-packages/adb/
 lib/python${MODPY_VERSION}/site-packages/adb-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/adb-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/adb-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
 lib/python${MODPY_VERSION}/site-packages/adb-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/adb-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/entry_points.txt
 lib/python${MODPY_VERSION}/site-packages/adb-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
 lib/python${MODPY_VERSION}/site-packages/adb-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/adb/__init__.py
-${MODPY_COMMENT} lib/python${MODPY_VERSION}/site-packages/adb/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/adb/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/adb/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/adb/${MODPY_PYCACHE}adb_commands.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/adb/${MODPY_PYCACHE}adb_debug.${MODPY_PYC_MAGIC_TAG}pyc
@@ -19,6 +22,7 @@ lib/python${MODPY_VERSION}/site-packages/adb/${MODPY_PYCACHE}common_cli.${MODPY_
 lib/python${MODPY_VERSION}/site-packages/adb/${MODPY_PYCACHE}fastboot.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/adb/${MODPY_PYCACHE}fastboot_debug.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/adb/${MODPY_PYCACHE}filesync_protocol.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/adb/${MODPY_PYCACHE}sign_pycryptodome.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/adb/${MODPY_PYCACHE}sign_pythonrsa.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/adb/${MODPY_PYCACHE}usb_exceptions.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/adb/adb_commands.py
@@ -29,5 +33,6 @@ lib/python${MODPY_VERSION}/site-packages/adb/common_cli.py
 lib/python${MODPY_VERSION}/site-packages/adb/fastboot.py
 lib/python${MODPY_VERSION}/site-packages/adb/fastboot_debug.py
 lib/python${MODPY_VERSION}/site-packages/adb/filesync_protocol.py
+lib/python${MODPY_VERSION}/site-packages/adb/sign_pycryptodome.py
 lib/python${MODPY_VERSION}/site-packages/adb/sign_pythonrsa.py
 lib/python${MODPY_VERSION}/site-packages/adb/usb_exceptions.py
