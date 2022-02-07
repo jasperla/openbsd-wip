@@ -115,6 +115,8 @@ telephony/libexosip2
 telephony/linphone
 telephony/mediastreamer2
 textproc/p5-Text-FIGlet
+textproc/tidy-html5
+textproc/vtclean
 textproc/xalan-c
 www/mod_rpaf
 www/p5-Apache-AuthCookie

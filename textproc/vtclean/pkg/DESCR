@@ -1,2 +1,0 @@
-Clean up raw terminal output by stripping escape sequences, optionally
-preserving color.
