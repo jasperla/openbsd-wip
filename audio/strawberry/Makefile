@@ -16,7 +16,7 @@ PERMIT_PACKAGE = Yes
 
 WANTLIB += ${COMPILER_LIBCXX} ICE Qt5Concurrent Qt5Core Qt5DBus
 WANTLIB += Qt5Gui Qt5Network Qt5Sql Qt5Widgets Qt5X11Extras SM
-WANTLIB += X11 Xext c cdio chromaprint execinfo fftw3 gdk_pixbuf-2.0
+WANTLIB += X11 Xext c chromaprint execinfo fftw3 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gnutls gobject-2.0 gpod gstapp-1.0
 WANTLIB += gstaudio-1.0 gstbase-1.0 gstpbutils-1.0 gstreamer-1.0
 WANTLIB += gsttag-1.0 gstvideo-1.0 iconv intl m mtp protobuf pulse
@@ -35,7 +35,6 @@ RUN_DEPENDS =		devel/desktop-file-utils \
 			x11/gtk+3,-guic
 
 LIB_DEPENDS =		audio/chromaprint \
-			audio/libcdio \
 			audio/libgpod \
 			audio/pulseaudio \
 			audio/taglib \
@@ -58,6 +57,10 @@ CONFIGURE_ENV +=	QT_DIR=${MODQT5_LIBDIR}/cmake/Qt5/
 
 # Disable VLC support for now.
 CONFIGURE_ARGS +=	-DENABLE_VLC=OFF
+
+# CD audio broken:
+# https://github.com/strawberrymusicplayer/strawberry/issues/887
+CONFIGURE_ARGS +=	-DENABLE_AUDIOCD=OFF
 
 # Tries to use ccache if it is installed.
 CONFIGURE_ARGS +=	-DCCACHE_EXECUTABLE=
