@@ -1,0 +1,2 @@
+This port provides python string methods in the form of C++
+functions with similar interface and behaviour.

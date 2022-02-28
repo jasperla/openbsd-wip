@@ -1,0 +1,19 @@
+$OpenBSD$
+
+Set proper library dir
+Use default compiler set by ports
+
+Index: Makefile
+--- Makefile.orig
++++ Makefile
+@@ -1,7 +1,7 @@
+ LIBTOOL = libtool
+-LIBDIR = /usr/lib
+-CXX = g++
+-CXXFLAGS = -g -O3 -Wall -Wextra -Wshadow -Wconversion -Wcast-qual -Wformat=2
++LIBDIR = ${PREFIX}/lib
++CXX = ${CC}
++CXXFLAGS = -g ${CFLAGS} -Wextra -Wshadow -Wconversion -Wcast-qual -Wformat=2
+ 
+ all: libpystring.la
+ 
