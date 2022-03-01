@@ -50,7 +50,7 @@ PERMIT_PACKAGE =	Yes
 #LIB_DEPENDS =		???
 #TEST_DEPENDS =		???
 #MAKE_FLAGS =		???
-#MAKE_ENV =		???
+MAKE_ENV =		CXX=${CXX}
 #FAKE_FLAGS =		???
 #TEST_FLAGS =		???
 #SEPARATE_BUILD =	Yes (build in a directory other than WRKSRC)

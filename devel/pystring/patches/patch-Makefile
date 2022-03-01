@@ -13,7 +13,7 @@ Index: Makefile
 -CXXFLAGS = -g -O3 -Wall -Wextra -Wshadow -Wconversion -Wcast-qual -Wformat=2
 +INCLUDEDIR = ${PREFIX}/include/pystring
 +LIBDIR = ${PREFIX}/lib
-+CXX = ${CC}
++CXX ?= g++
 +CXXFLAGS = -g ${CFLAGS} -Wextra -Wshadow -Wconversion -Wcast-qual -Wformat=2
  
  all: libpystring.la
