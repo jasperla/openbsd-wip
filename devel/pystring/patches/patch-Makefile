@@ -1,7 +1,9 @@
 $OpenBSD$
 
+Set proper header file dir
 Set proper library dir
-Use default compiler set by ports
+Use default compiler env set by ports
+Install library & header files
 
 Index: Makefile
 --- Makefile.orig
