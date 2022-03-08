@@ -1,0 +1,9 @@
+Index: internal/receivermaincmd/generatorsymlink.go
+--- internal/receivermaincmd/generatorsymlink.go.orig
++++ internal/receivermaincmd/generatorsymlink.go
+@@ -1,4 +1,4 @@
+-//go:build linux || darwin
++//go:build linux || darwin || openbsd
+ 
+ package receivermaincmd
+ 

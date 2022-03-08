@@ -1,0 +1,8 @@
+gokr-rsync is a pure Go implementation of rsync.
+
+- gokr-rsyncd, a read-only rsync daemon sender-only Go implementation of rsyncd.
+It implements the rsync daemon network protocol (port 873/tcp by default), but
+can be used over SSH or locally as well.
+
+- gokr-rsync is an rsync receiver implementation that can download files via
+rsync (daemon protocol or SSH).
