@@ -4,8 +4,9 @@ ONLY_FOR_ARCHS =	${LLVM_ARCHS}
 
 # gold does not follow binutils version numbering
 COMMENT =	GNU ELF-only linker
-DISTNAME =	binutils-2.36.1
-PKGNAME =	gold-1.16pl5
+DISTNAME =	binutils-2.38
+PKGNAME =	gold-1.16pl6
+EXTRACT_SUFX =	.tar.lz
 CATEGORIES =	devel
 
 HOMEPAGE =	https://sourceware.org/binutils/
@@ -52,7 +53,7 @@ CONFIGURE_ARGS +=	--enable-default-hash-style=both
 
 USE_GMAKE =	Yes
 
-NO_TEST =	Yes
+#NO_TEST =	Yes
 
 LIBTOOL_FLAGS =	--tag=disable-shared
 
@@ -67,11 +68,11 @@ post-build:
 	mv ${WRKSRC}/gold/ld-new ${WRKSRC}/gold/ld-first
 	cd ${WRKSRC}/gold && ${SETENV} \
 		${MAKE_PROGRAM} ${MAKE_FLAGS} \
-		LDFLAGS='${LDFLAGS} -fuse-ld=${WRKSRC}/gold/ld-first'
+		LDFLAGS='${LDFLAGS} --ld-path=${WRKSRC}/gold/ld-first'
 	mv ${WRKSRC}/gold/ld-new ${WRKSRC}/gold/ld-second
 	cd ${WRKSRC}/gold && ${SETENV} \
 		${MAKE_PROGRAM} ${MAKE_FLAGS} \
-		LDFLAGS='${LDFLAGS} -fuse-ld=${WRKSRC}/gold/ld-second'
+		LDFLAGS='${LDFLAGS} --ld-path=${WRKSRC}/gold/ld-second'
 
 # It installs these other things but we only want gold (and dwp).
 post-install:
@@ -79,5 +80,8 @@ post-install:
 		${PREFIX}/info/as.info \
 		${PREFIX}/man/man1/as.1 \
 		${PREFIX}/*openbsd*
+
+do-test:
+	cd ${WRKSRC}/gold && ${MAKE_PROGRAM} check
 
 .include <bsd.port.mk>

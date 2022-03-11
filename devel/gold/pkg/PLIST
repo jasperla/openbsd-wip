@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v$
 @bin bin/dwp
 @bin bin/ld.gold
+@info info/ctf-spec.info
 share/doc/pkg-readmes/${PKGSTEM}

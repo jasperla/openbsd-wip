@@ -1,11 +1,9 @@
-$OpenBSD$
-
 Always page align RELRO section so that -nopie works.
 
 Index: gold/output.cc
 --- gold/output.cc.orig
 +++ gold/output.cc
-@@ -4768,7 +4768,7 @@ Output_segment::set_offset(unsigned int increase)
+@@ -4722,7 +4722,7 @@ Output_segment::set_offset(unsigned int increase)
    if (this->type_ == elfcpp::PT_GNU_RELRO)
      {
        uint64_t page_align = parameters->target().abi_pagesize();

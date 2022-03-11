@@ -1,0 +1,12 @@
+Index: gold/testsuite/Makefile.in
+--- gold/testsuite/Makefile.in.orig
++++ gold/testsuite/Makefile.in
+@@ -2811,7 +2811,7 @@ TEST_STRIP = $(top_builddir)/../binutils/strip-new
+ TEST_AR = $(top_builddir)/../binutils/ar
+ TEST_NM = $(top_builddir)/../binutils/nm-new
+ TEST_AS = $(top_builddir)/../gas/as-new
+-@PLUGINS_TRUE@LIBDL = -ldl
++@PLUGINS_TRUE@LIBDL =
+ @THREADS_TRUE@THREADFLAGS = @PTHREAD_CFLAGS@
+ @THREADS_TRUE@THREADLIBS = @PTHREAD_LIBS@
+ @OMP_SUPPORT_TRUE@TLS_TEST_C_CFLAGS = -fopenmp

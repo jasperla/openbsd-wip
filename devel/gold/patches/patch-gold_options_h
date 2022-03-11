@@ -9,7 +9,7 @@ Add -z wxneeded option (and -z nowxneeded option)
 Index: gold/options.h
 --- gold/options.h.orig
 +++ gold/options.h
-@@ -1052,6 +1052,8 @@ class General_options
+@@ -1061,6 +1061,8 @@ class General_options
  
    // n
  
@@ -18,7 +18,7 @@ Index: gold/options.h
    DEFINE_bool(nmagic, options::TWO_DASHES, 'n', false,
  	      N_("Do not page align data"), NULL);
    DEFINE_bool(omagic, options::EXACTLY_TWO_DASHES, 'N', false,
-@@ -1093,7 +1095,7 @@ class General_options
+@@ -1102,7 +1104,7 @@ class General_options
    DEFINE_bool(p, options::ONE_DASH, 'p', false,
  	      N_("Ignored for ARM compatibility"), NULL);
  
@@ -27,7 +27,7 @@ Index: gold/options.h
  	      N_("Create a position independent executable"),
  	      N_("Do not create a position independent executable"));
    DEFINE_bool_alias(pic_executable, pie, options::TWO_DASHES, '\0',
-@@ -1505,6 +1507,8 @@ class General_options
+@@ -1514,6 +1516,8 @@ class General_options
    DEFINE_bool(now, options::DASH_Z, '\0', false,
  	      N_("Mark object for immediate function binding"),
  	      NULL);
@@ -36,7 +36,7 @@ Index: gold/options.h
    DEFINE_bool(origin, options::DASH_Z, '\0', false,
  	      N_("Mark DSO to indicate that needs immediate $ORIGIN "
  		 "processing at runtime"), NULL);
-@@ -1532,6 +1536,8 @@ class General_options
+@@ -1541,6 +1545,8 @@ class General_options
  	      N_("Keep .text.hot, .text.startup, .text.exit and .text.unlikely "
  		 "as separate sections in the final binary."),
  	      N_("Merge all .text.* prefix sections."));
@@ -45,7 +45,7 @@ Index: gold/options.h
  
  
   public:
-@@ -1561,7 +1567,7 @@ class General_options
+@@ -1570,7 +1576,7 @@ class General_options
    // the output is position-independent or not.
    bool
    output_is_position_independent() const
@@ -54,7 +54,7 @@ Index: gold/options.h
  
    // Return true if the output is something that can be exec()ed, such
    // as a static executable, or a position-dependent or
-@@ -1620,6 +1626,10 @@ class General_options
+@@ -1629,6 +1635,10 @@ class General_options
    { return this->execstack_status_ != EXECSTACK_FROM_INPUT; }
  
    bool
@@ -65,7 +65,7 @@ Index: gold/options.h
    is_stack_executable() const
    { return this->execstack_status_ == EXECSTACK_YES; }
  
-@@ -1815,6 +1825,17 @@ class General_options
+@@ -1839,6 +1849,17 @@ class General_options
      EXECSTACK_NO
    };
  
@@ -83,7 +83,7 @@ Index: gold/options.h
    enum Icf_status
    {
      // Do not fold any functions (Default or --icf=none).
-@@ -1834,6 +1855,10 @@ class General_options
+@@ -1858,6 +1879,10 @@ class General_options
    { this->execstack_status_ = value; }
  
    void
@@ -94,7 +94,7 @@ Index: gold/options.h
    set_do_demangle(bool value)
    { this->do_demangle_ = value; }
  
-@@ -1877,6 +1902,8 @@ class General_options
+@@ -1903,6 +1928,8 @@ class General_options
    bool printed_version_;
    // Whether to mark the stack as executable.
    Execstack execstack_status_;

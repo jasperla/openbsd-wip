@@ -1,12 +1,10 @@
-$OpenBSD$
-
 Taken from devel/gas, just in case.
 Add back arm support.
 
 Index: gas/configure.tgt
 --- gas/configure.tgt.orig
 +++ gas/configure.tgt
-@@ -130,6 +130,7 @@ case ${generic_target} in
+@@ -134,6 +134,7 @@ case ${generic_target} in
        aarch64*-linux-gnu_ilp32)		arch=aarch64:32 ;;
      esac ;;
    aarch64*-*-netbsd*)			fmt=elf em=nbsd;;
@@ -14,10 +12,10 @@ Index: gas/configure.tgt
  
    alpha-*-*vms*)			fmt=evax ;;
    alpha-*-osf*)				fmt=ecoff ;;
-@@ -156,6 +157,7 @@ case ${generic_target} in
+@@ -159,6 +160,7 @@ case ${generic_target} in
    arm-*-uclinux*)			fmt=elf  em=linux ;;
    arm-*-nacl*)				fmt=elf  em=nacl ;;
-   arm-*-netbsdelf*)			fmt=elf  em=nbsd ;;
+   arm-*-netbsd*)			fmt=elf  em=nbsd ;;
 +  arm-*-openbsd*)			fmt=elf  em=nbsd ;;
    arm-*-nto*)				fmt=elf ;;
    arm-wince-pe | arm-*-wince | arm*-*-mingw32ce* | arm*-*-cegcc*)

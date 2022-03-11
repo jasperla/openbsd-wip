@@ -1,5 +1,3 @@
-$OpenBSD$
-
 Permit -shared -pie executables to build.
 .openbsd.randomdata and .openbsd.wxneeded support
 
@@ -42,7 +40,7 @@ Index: gold/layout.cc
  }
  
  // Make an output section for a script.
-@@ -5026,6 +5048,10 @@ Layout::create_interp(const Target* target)
+@@ -5027,6 +5049,10 @@ Layout::create_interp(const Target* target)
    gold_assert(this->interp_segment_ == NULL);
  
    const char* interp = parameters->options().dynamic_linker();
@@ -53,7 +51,7 @@ Index: gold/layout.cc
    if (interp == NULL)
      {
        interp = target->dynamic_linker();
-@@ -5740,6 +5766,10 @@ Layout::make_output_segment(elfcpp::Elf_Word type, elf
+@@ -5741,6 +5767,10 @@ Layout::make_output_segment(elfcpp::Elf_Word type, elf
      this->relro_segment_ = oseg;
    else if (type == elfcpp::PT_INTERP)
      this->interp_segment_ = oseg;
