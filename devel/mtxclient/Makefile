@@ -12,7 +12,10 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =	devel/cmake
 
-LIB_DEPENDS =	devel/olm
+LIB_DEPENDS =	devel/coeurl \
+		devel/json \
+		devel/spdlog \
+		devel/olm \
 
 BUILD_DEPENDS =	devel/gtest
 
