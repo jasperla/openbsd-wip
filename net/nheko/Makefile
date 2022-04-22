@@ -26,12 +26,12 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 		x11/gtk+3,-guic
 
 BUILD_DEPENDS = devel/boost \
-		devel/mtxclient \
 		textproc/asciidoc \
 		x11/qt5/qtbase
 
 LIB_DEPENDS =	databases/lmdb \
 		devel/coeurl \
+		devel/mtxclient \
 		devel/olm \
 		multimedia/gstreamer1/core \
 		multimedia/gstreamer1/plugins-base \
