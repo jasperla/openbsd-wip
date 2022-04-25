@@ -14,7 +14,7 @@ HOMEPAGE =	https://github.com/aleaxit/gmpy
 # LGPL3+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB	=	gmp mpc mpfr pthread
+WANTLIB =	gmp mpc mpfr pthread
 
 MODULES =	lang/python
 
