@@ -31,7 +31,7 @@ LIB_DEPENDS =	devel/gmp,-main \
 		devel/libmpc
 
 TEST_DEPENDS =	devel/py-future${MODPY_FLAVOR} \
-		math/py-gmpy2${MODPY_FLAVOR}
+		${BASE_PKGPATH}=${MODPY_EGG_VERSION}
 
 do-test:
 	cd ${WRKSRC}/test && ${MODPY_BIN} runtests.py
