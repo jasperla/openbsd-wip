@@ -25,7 +25,8 @@ COMPILER =	base-clang ports-gcc
 RUN_DEPENDS =	devel/desktop-file-utils \
 		x11/gtk+3,-guic
 
-BUILD_DEPENDS = devel/boost \
+BUILD_DEPENDS = databases/lmdbxx \
+		devel/boost \
 		textproc/asciidoc \
 		x11/qt5/qtbase
 
