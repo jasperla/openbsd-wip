@@ -30,7 +30,7 @@ COMPILER =		base-clang ports-gcc
 MODULES =		devel/cmake
 
 # Header-only library
-BUILD_DEPENDS =		devel/json
+BUILD_DEPENDS =		devel/nlohmann-json
 
 LIB_DEPENDS =		devel/grpc \
 			devel/fmtlib \

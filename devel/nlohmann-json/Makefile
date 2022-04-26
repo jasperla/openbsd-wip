@@ -3,9 +3,11 @@
 COMMENT =	JSON for modern C++
 
 # the "release" contain only json.hpp, and we want tests and CMake config file
+V =		3.9.1
 GH_ACCOUNT =	nlohmann
 GH_PROJECT =	json
-GH_TAGNAME =	v3.9.1
+GH_TAGNAME =	v${V}
+DISTNAME =	nlohmann-json-${V}
 
 CATEGORIES =	devel
 
