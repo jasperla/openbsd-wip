@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile.template,v 1.78 2018/07/09 15:00:06 jca Exp $
-
 COMMENT-main =		distributed IRC client (monolithic client)
 COMMENT-client =	distributed IRC client (client)
 COMMENT-common =	distributed IRC client (common files)
 COMMENT-core =		distributed IRC client (core)
 
-V =			0.13.1
+V =			0.14.0
 DISTNAME =		quassel-${V}
 PKGNAME-main =		quassel-${V}
 PKGNAME-client =	quassel-client-${V}
@@ -102,10 +100,10 @@ LIB_DEPENDS-core =	${MODQT5_LIB_DEPENDS} \
 			x11/qt5/qtscript
 
 SEPARATE_BUILD =	Yes
-CONFIGURE_ARGS +=	-DGIT_EXECUTABLE="" \
+CONFIGURE_ARGS +=	-DENABLE_SHARED=OFF \
+			-DGIT_EXECUTABLE="" \
 			-DWITH_KDE:Bool=on \
-			-DWITH_WEBENGINE:Bool=on \
-			-DWITH_WEBKIT:Bool=off
+			-DWITH_WEBENGINE:Bool=on
 
 NO_TEST =		Yes
 

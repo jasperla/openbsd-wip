@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST-client,v$
 @bin bin/quasselclient
 share/applications/quasselclient.desktop
 @tag update-desktop-database
