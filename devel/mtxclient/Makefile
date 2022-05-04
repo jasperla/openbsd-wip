@@ -14,7 +14,7 @@ WANTLIB += ${COMPILER_LIBCXX} coeurl crypto m olm ssl
 
 MODULES =	devel/cmake
 
-BUILD_DEPENDS = devel/json \
+BUILD_DEPENDS = devel/nlohmann-json \
 		devel/gtest \
 		devel/libevent2 \
 		devel/spdlog
