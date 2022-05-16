@@ -1,4 +1,3 @@
-$OpenBSD$
 Index: plugins/node.d/named
 --- plugins/node.d/named.orig
 +++ plugins/node.d/named

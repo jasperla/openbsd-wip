@@ -1,0 +1,48 @@
+Index: script/munin-get
+--- script/munin-get.orig
++++ script/munin-get
+@@ -168,7 +168,7 @@ check_doc_dependencies() {
+ verify_simple_name() {
+     local label_name="$1"
+     local text="$2"
+-    echo "$text" | grep -q '^[[:alnum:]-]\+$' \
++    echo "$text" | grep -q '^[[:alnum:]-\/]\+$' \
+         || error_die "The '$label_name' parameter contains invalid characters. Only letters and numbers are allowed."
+ }
+ 
+@@ -264,7 +264,7 @@ get_repository_names() {
+         if [ -d "$REPOSITORY_CONFIG_DIR" ]; then
+             find "$REPOSITORY_CONFIG_DIR" -type d -mindepth 1 -maxdepth 1 -print0 \
+                 | xargs --null --no-run-if-empty basename --multiple \
+-                | grep -x '^[[:alnum:]-]\+$'
++                | grep -x '^[[:alnum:]-\/]\+$'
+         fi
+     } | sort | uniq
+ }
+@@ -435,7 +435,7 @@ list_repository_plugin_files() {
+     plugins_dir=$(get_repository_config_value "$repo_name" "plugins_dir")
+     [ -z "$plugins_dir" ] && plugins_dir="."
+     cd "$REPOSITORY_CACHE_BASE_DIR/$repo_name"
+-    find "$plugins_dir" -type f -executable | sed 's#^\./##' | sort
++    find "$plugins_dir" -type f -perm -u=x | sed 's#^\./##' | sort
+ }
+ 
+ 
+@@ -508,7 +508,7 @@ case "$ACTION" in
+         check_dependencies
+         get_repository_names | while read -r repo_name; do
+             plugins_dir=$(get_repository_config_value "$repo_name" "plugins_dir")
+-            find "$REPOSITORY_CACHE_BASE_DIR/$repo_name/$plugins_dir" -type f -executable -print0 \
++            find "$REPOSITORY_CACHE_BASE_DIR/$repo_name/$plugins_dir" -type f -perm -u=x -print0 \
+                 | xargs --null -r grep --files-with-matches "$regex" \
+                 | xargs -r basename --multiple | sed "s#^#$repo_name #"
+         done | sort | while read -r repo_name plugin_name; do
+@@ -528,7 +528,7 @@ case "$ACTION" in
+         check_dependencies
+         get_repository_names | while read -r repo_name; do
+             [ -d "$PLUGINS_INSTALL_DIR/$repo_name" ] || continue
+-            find "$PLUGINS_INSTALL_DIR/$repo_name" -type f -executable -print0 \
++            find "$PLUGINS_INSTALL_DIR/$repo_name" -type f -perm -u=x -print0 \
+                 | xargs -r -0 -n 100 basename --multiple \
+                 | sed "s#^#$repo_name/#"
+         done

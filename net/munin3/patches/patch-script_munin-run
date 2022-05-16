@@ -1,8 +1,7 @@
-$OpenBSD$
 Index: script/munin-run
 --- script/munin-run.orig
 +++ script/munin-run
-@@ -72,6 +72,9 @@ sub main
+@@ -310,6 +310,9 @@ sub execute_plugin {
          print STDERR "# Unknown service '$plugin'\n";
          exit 1;
      }

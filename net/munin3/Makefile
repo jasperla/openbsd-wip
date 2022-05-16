@@ -1,16 +1,14 @@
-# $OpenBSD: Makefile,v 1.60 2017/05/16 08:48:56 ajacoutot Exp $
-
 COMMENT-main =	flexible network host monitoring, client
 COMMENT-server =flexible network host monitoring, server
 
-V = 		2.999.14
+V = 		2.999.16
 DISTNAME = 	munin-${V}
 PKGNAME-main =	munin3-node-${V}
 PKGNAME-server =munin3-server-${V}
 CATEGORIES =	net
 
-HOMEPAGE =	http://munin-monitoring.org/
-MASTER_SITES = 	http://downloads.munin-monitoring.org/munin/dev/$V/
+HOMEPAGE =	https://munin-monitoring.org/
+MASTER_SITES = 	${MASTER_SITE_SOURCEFORGE:=munin/}
 
 # Mostly GPLv2.
 # DejaVuSans.ttf and DejaVuSansMono.ttf has a non-restrictive license.
@@ -43,13 +41,13 @@ RUN_DEPENDS-server +=	converters/p5-JSON \
 			devel/p5-List-MoreUtils \
 			devel/p5-Net-Server \
 			devel/p5-Parallel-ForkManager \
-			devel/p5-Params-Validate>=1.13 \
+			devel/p5-Params-Validate \
 			devel/p5-Time-TimeDate \
 			net/p5-IO-Socket-INET6 \
 			net/rrdtool \
-			security/p5-Net_SSLeay \
+			security/p5-Net-SSLeay \
 			textproc/p5-XML-Dumper \
-			www/p5-HTML-Template>=2.95 \
+			www/p5-HTML-Template \
 			www/p5-HTML-Template-Pro \
 			www/p5-HTTP-Server-Simple \
 			www/p5-HTTP-Server-Simple-CGI-PreFork \
@@ -77,7 +75,6 @@ CONFIGURE_STYLE =	modbuild
 
 MAKE_ENV +=		OSTYPE=openbsd \
 			PREFIX=${PREFIX} \
-			PYTHON=${MODPY_BIN} \
 			SHAREDIR=${PREFIX}/libexec/munin/ \
 			DBDIR=/var/db/munin
 

@@ -1,4 +1,3 @@
-$OpenBSD$
 Index: plugins/node.d/exim_mailstats
 --- plugins/node.d/exim_mailstats.orig
 +++ plugins/node.d/exim_mailstats

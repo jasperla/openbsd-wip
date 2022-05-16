@@ -1,4 +1,3 @@
-$OpenBSD$
 Index: plugins/node.d/postfix_mailvolume
 --- plugins/node.d/postfix_mailvolume.orig
 +++ plugins/node.d/postfix_mailvolume

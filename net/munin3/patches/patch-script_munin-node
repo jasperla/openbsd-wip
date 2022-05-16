@@ -1,8 +1,7 @@
-$OpenBSD$
 Index: script/munin-node
 --- script/munin-node.orig
 +++ script/munin-node
-@@ -55,6 +55,9 @@ sub main
+@@ -56,6 +56,9 @@ sub main
          $ENV{$key} =~ /^(.*)$/;
          $ENV{$key} = $1;
      }

@@ -1,4 +1,3 @@
-$OpenBSD$
 Index: plugins/node.d/squeezebox_
 --- plugins/node.d/squeezebox_.orig
 +++ plugins/node.d/squeezebox_

@@ -1,4 +1,3 @@
-$OpenBSD$
 Index: script/munin-node-configure
 --- script/munin-node-configure.orig
 +++ script/munin-node-configure

@@ -1,4 +1,3 @@
-$OpenBSD$
 Index: script/munin-check
 --- script/munin-check.orig
 +++ script/munin-check

@@ -1,4 +1,3 @@
-$OpenBSD$
 --- plugins/node.d/psu_.orig	Sun Aug 16 07:47:06 2015
 +++ plugins/node.d/psu_	Fri Aug 21 17:57:18 2015
 @@ -34,7 +34,7 @@ suggestions.

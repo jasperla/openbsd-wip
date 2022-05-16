@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST-main,v 1.18 2017/05/16 08:48:56 ajacoutot Exp $
 @conflict munin-server-<2.0.21
 @newgroup _munin:644
 @newgroup _munin-plugin:645
@@ -23,6 +22,7 @@
 bin/munin-async
 bin/munin-asyncd
 bin/munin-doc
+bin/munin-get
 bin/munin-node
 bin/munin-node-configure
 @sample ${SYSCONFDIR}/munin/
@@ -30,6 +30,7 @@ ${P5SITE}/Munin/
 ${P5SITE}/Munin.pm
 ${P5SITE}/Munin/Common/
 ${P5SITE}/Munin/Common/Config.pm
+${P5SITE}/Munin/Common/Daemon.pm
 ${P5SITE}/Munin/Common/Defaults.pm
 ${P5SITE}/Munin/Common/Logger.pm
 ${P5SITE}/Munin/Common/SyncDictFile.pm
@@ -259,11 +260,13 @@ libexec/munin/plugins/zimbra_
 @man man/man1/munin-async.1
 @man man/man1/munin-asyncd.1
 @man man/man1/munin-doc.1
+@man man/man1/munin-get.1
 @man man/man1/munin-httpd.1
 @man man/man1/munin-node-configure.1
 @man man/man1/munin-node.1
 @man man/man3p/Munin.3p
 @man man/man3p/Munin::Common::Config.3p
+@man man/man3p/Munin::Common::Daemon.3p
 @man man/man3p/Munin::Common::Defaults.3p
 @man man/man3p/Munin::Common::Logger.3p
 @man man/man3p/Munin::Common::TLS.3p

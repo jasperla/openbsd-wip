@@ -1,4 +1,3 @@
-$OpenBSD$
 Index: plugins/node.d/sendmail_mailqueue
 --- plugins/node.d/sendmail_mailqueue.orig
 +++ plugins/node.d/sendmail_mailqueue

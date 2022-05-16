@@ -1,4 +1,3 @@
-$OpenBSD$
 Index: Makefile.config
 --- Makefile.config.orig
 +++ Makefile.config
