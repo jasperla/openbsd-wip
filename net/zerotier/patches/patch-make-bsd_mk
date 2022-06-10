@@ -1,0 +1,16 @@
+Index: make-bsd.mk
+--- make-bsd.mk.orig
++++ make-bsd.mk
+@@ -188,9 +188,9 @@ debug:	FORCE
+ 
+ install:	one
+ 	rm -f /usr/local/sbin/zerotier-one
+-	cp zerotier-one /usr/local/sbin
+-	ln -sf /usr/local/sbin/zerotier-one /usr/local/sbin/zerotier-cli
+-	ln -sf /usr/local/sbin/zerotier-one /usr/local/bin/zerotier-idtool
++	cp zerotier-one ${PREFIX}/sbin
++	ln -sf /usr/local/sbin/zerotier-one ${PREFIX}/sbin/zerotier-cli
++	ln -sf /usr/local/sbin/zerotier-one ${PREFIX}/bin/zerotier-idtool
+ 
+ uninstall:	FORCE
+ 	rm -rf /usr/local/sbin/zerotier-one /usr/local/sbin/zerotier-cli /usr/local/bin/zerotier-idtool /var/db/zerotier-one/zerotier-one.port /var/db/zerotier-one/zerotier-one.pid /var/db/zerotier-one/iddb.d

@@ -1,0 +1,3 @@
+bin/zerotier-idtool
+sbin/zerotier-cli
+@bin sbin/zerotier-one
