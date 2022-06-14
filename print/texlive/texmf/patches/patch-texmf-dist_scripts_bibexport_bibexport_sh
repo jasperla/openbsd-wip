@@ -1,0 +1,18 @@
+Index: texmf-dist/scripts/bibexport/bibexport.sh
+--- texmf-dist/scripts/bibexport/bibexport.sh.orig
++++ texmf-dist/scripts/bibexport/bibexport.sh
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/bin/sh
+ ##
+ ## This is file `bibexport.sh',
+ ## generated with the docstrip utility.
+@@ -261,7 +261,7 @@ FINALFILE=${OUTPUT};
+ if [ ! "${FINALFILE}" ]; then
+     FINALFILE="bibexport.bib";
+ fi
+-TMPFILE="bibexp.`date +%s`";
++TMPFILE="`mktemp bibexp.XXXXXXXX`";
+ if [ -z "${EXT}" ]; then ## we export all entries
+     if [ -z "${EXTRA}" ]; then ## we have no extra files
+         cat > ${TMPFILE}.aux <<EOF

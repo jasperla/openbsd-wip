@@ -1,0 +1,10 @@
+@conflict texlive_base-<2021
+@bin bin/synctex
+include/synctex/
+include/synctex/synctex_parser.h
+include/synctex/synctex_parser_utils.h
+include/synctex/synctex_version.h
+@static-lib lib/libsynctex.a
+lib/libsynctex.la
+@lib lib/libsynctex.so.${LIBsynctex_VERSION}
+lib/pkgconfig/synctex.pc

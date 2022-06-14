@@ -1,0 +1,17 @@
+Add dir info entry to silence pkg_{add,delete} warning.
+
+Index: texmf-dist/doc/info/texdraw.info
+--- texmf-dist/doc/info/texdraw.info.orig
++++ texmf-dist/doc/info/texdraw.info
+@@ -15,6 +15,11 @@ START-INFO-DIR-ENTRY
+ * TeXdraw: (texdraw).           Drawing PostScript diagrams within TeX.
+ END-INFO-DIR-ENTRY
+ 
++INFO-DIR-SECTION TeX
++START-INFO-DIR-ENTRY
++* Texdraw: (texdraw).         macros for drawing in TeX
++END-INFO-DIR-ENTRY
++
+ 
+ File: texdraw.info,  Node: Top,  Next: Introduction,  Prev: (dir),  Up: (dir)
+ 
