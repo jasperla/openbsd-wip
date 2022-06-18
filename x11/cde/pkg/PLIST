@@ -1,6 +1,6 @@
 @rcscript ${RCDIR}/dtlogin
-@sample ${SYSCONFDIR}/dt
-@sample ${LOCALSTATEDIR}/dt
+@sample ${SYSCONFDIR}/dt/
+@sample ${LOCALSTATEDIR}/dt/
 app-defaults/
 app-defaults/C/
 app-defaults/C/Dtbuilder
