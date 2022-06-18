@@ -1,10 +1,9 @@
 @rcscript ${RCDIR}/dtlogin
+@sample ${SYSCONFDIR}/dt
+@sample ${LOCALSTATEDIR}/dt
 app-defaults/
 app-defaults/C/
 app-defaults/C/Dtbuilder
-@comment @man dt/share/man/man1/ksh.1
-@sample ${SYSCONFDIR}/
-@sample ${LOCALSTATEDIR}/
 bin/
 bin/Xsession
 @bin bin/dsdm
@@ -239,7 +238,7 @@ man/man1/
 @man man/man1/dtudcfonted.1
 @man man/man1/dtwm.1
 @man man/man1/huffcode.1
-@man man/man1/ksh.1
+@comment @man man/man1/ksh.1
 @man man/man1/tt_type_comp.1
 @man man/man1/ttcp.1
 @man man/man1/ttmv.1
