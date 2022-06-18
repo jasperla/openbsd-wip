@@ -1,0 +1,11 @@
+Index: cde/configure.ac
+--- cde/configure.ac.orig
++++ cde/configure.ac
+@@ -34,7 +34,6 @@ AC_PROG_CC([cc gcc clang])
+ AC_PROG_CXX([c++ g++ clang++])
+ 
+ LT_INIT
+-AC_PREFIX_DEFAULT(/usr/dt)
+ 
+ 
+ PKG_PROG_PKG_CONFIG
