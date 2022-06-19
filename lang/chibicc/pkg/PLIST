@@ -1,0 +1,9 @@
+@bin bin/chibicc
+libexec/chibicc/
+libexec/chibicc/include/
+libexec/chibicc/include/amd64/
+libexec/chibicc/include/amd64/endian.h
+libexec/chibicc/include/machine/
+libexec/chibicc/include/machine/endian.h
+libexec/chibicc/include/stdarg.h
+libexec/chibicc/include/stddef.h

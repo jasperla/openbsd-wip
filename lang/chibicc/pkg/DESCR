@@ -1,0 +1,6 @@
+chibicc is yet another small C compiler that implements most C11
+features. chibicc supports almost all mandatory features and most
+optional features of C11 as well as a few GCC language extensions.
+chibicc does not support complex numbers, K&R-style function prototypes
+or GCC-style inline assembly. Digraphs and trigraphs are intentionally
+left out.
