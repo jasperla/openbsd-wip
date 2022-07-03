@@ -1,0 +1,31 @@
+Nuke OpenSSL^WLibreSSL deps since ports OpenSSL is forced through compiler flags
+XXX TODO
+
+Index: cmake/modules/FindXmlSecurityC.cmake
+--- cmake/modules/FindXmlSecurityC.cmake.orig
++++ cmake/modules/FindXmlSecurityC.cmake
+@@ -10,7 +10,6 @@ if(XmlSecurityC_FIND_REQUIRED)
+   set(XmlSecurityC_REQUIRED REQUIRED)
+ endif()
+ find_package(XercesC ${XmlSecurityC_REQUIRED})
+-find_package(OpenSSL ${XmlSecurityC_REQUIRED})
+ find_package(XalanC)
+ unset(XmlSecurityC_REQUIRED)
+ 
+@@ -22,12 +21,12 @@ select_library_configurations(XmlSecurityC)
+ mark_as_advanced(XmlSecurityC_INCLUDE_DIR XmlSecurityC_LIBRARY_RELEASE XmlSecurityC_LIBRARY_DEBUG)
+ 
+ include(FindPackageHandleStandardArgs)
+-FIND_PACKAGE_HANDLE_STANDARD_ARGS(XmlSecurityC DEFAULT_MSG XmlSecurityC_LIBRARY XmlSecurityC_INCLUDE_DIR XalanC_FOUND XercesC_FOUND OPENSSL_FOUND)
++FIND_PACKAGE_HANDLE_STANDARD_ARGS(XmlSecurityC DEFAULT_MSG XmlSecurityC_LIBRARY XmlSecurityC_INCLUDE_DIR XalanC_FOUND XercesC_FOUND)
+ 
+ if(XmlSecurityC_FOUND)
+-  set(XmlSecurityC_INCLUDE_DIRS ${XmlSecurityC_INCLUDE_DIR} ${XercesC_INCLUDE_DIR} ${OPENSSL_INCLUDE_DIR})
+-  set(XmlSecurityC_LIBRARIES ${XmlSecurityC_LIBRARY} ${XercesC_LIBRARY} ${OPENSSL_LIBRARIES})
+-  set(XmlSecurityC_DEPS XercesC::XercesC OpenSSL::SSL)
++  set(XmlSecurityC_INCLUDE_DIRS ${XmlSecurityC_INCLUDE_DIR} ${XercesC_INCLUDE_DIR})
++  set(XmlSecurityC_LIBRARIES ${XmlSecurityC_LIBRARY} ${XercesC_LIBRARY})
++  set(XmlSecurityC_DEPS XercesC::XercesC)
+ 
+   if(XalanC_FOUND)
+     list(INSERT XmlSecurityC_INCLUDE_DIRS 1 ${XalanC_INCLUDE_DIR})

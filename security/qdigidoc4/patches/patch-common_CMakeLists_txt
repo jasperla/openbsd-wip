@@ -1,0 +1,21 @@
+- Nuke OpenSSL^WLibreSSL deps since ports OpenSSL is forced through compiler flags
+  XXX TODO
+
+Index: common/CMakeLists.txt
+--- common/CMakeLists.txt.orig
++++ common/CMakeLists.txt
+@@ -1,5 +1,4 @@
+ set_env( CONFIG_URL "https://id.eesti.ee/config.json" CACHE STRING "Set Config URL" )
+-find_package( OpenSSL REQUIRED )
+ 
+ configure_file( translations/common_tr.qrc common_tr.qrc COPYONLY )
+ qt5_add_translation( SOURCES  translations/qtbase_et.ts translations/qtbase_ru.ts
+@@ -12,7 +11,7 @@ add_library( qdigidoccommon STATIC ${SOURCES}
+ 	QPCSC.cpp
+ )
+ target_include_directories(qdigidoccommon PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
+-target_link_libraries(qdigidoccommon PUBLIC Qt5::Network Qt5::Widgets OpenSSL::SSL)
++target_link_libraries(qdigidoccommon PUBLIC Qt5::Network Qt5::Widgets)
+ 
+ if(UNIX AND NOT APPLE)
+ 	find_package(PkgConfig REQUIRED)
