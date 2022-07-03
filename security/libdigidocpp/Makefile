@@ -58,7 +58,9 @@ CONFIGURE_ARGS +=	-DCMAKE_DISABLE_FIND_PACKAGE_PoDoFo=ON
 # but minizip is still found through a later pkg_check_modules()
 CONFIGURE_ARGS +=	-DCMAKE_DISABLE_FIND_PACKAGE_MiniZip=ON
 
-# force ports OpenSSL until upstream supports LibreSSL or we patch it in
+# Can't use LibreSSL since X509_VERIFY_PARAM_get_time missing from libcrypto.
+# Need to add OPENSSL_memdup with patch and neuter SHA-3;
+# choice between the 1.1 and 1.0 codepaths is a bit tricky.
 BUILD_DEPENDS +=	security/openssl/1.1>=1.1.1m,<3
 CXXFLAGS +=		-I/usr/local/include/eopenssl11
 # link statically since other dependencies may link against LibreSSL
