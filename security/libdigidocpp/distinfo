@@ -1,0 +1,4 @@
+SHA256 (libdigidocpp-3.14.8.tar.gz) = U5i5IAyJF4359q6M6mQemEuG7+inPYIXqLy8GHv4dkg=
+SHA256 (libdigidocpp-fix-openssl-42a8cfd.patch) = ZIzQMqU+28Oahwq8G5PDSjnHx40pcmsWIhY/H8JfEO4=
+SIZE (libdigidocpp-3.14.8.tar.gz) = 2666986
+SIZE (libdigidocpp-fix-openssl-42a8cfd.patch) = 6297
