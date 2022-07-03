@@ -14,17 +14,6 @@ PERMIT_PACKAGE =	Yes
 HOMEPAGE =		https://www.id.ee/
 MASTER_SITES =		https://github.com/open-eid/libdigidocpp/releases/download/v${V}/
 
-MASTER_SITES0 =		https://github.com/open-eid/libdigidocpp/
-# committed "Upgrade openssl 1.1.1m and fix crash with new openssl version (#453)"
-OSSL_FIX_ID =		42a8cfd
-PATCHFILES +=		libdigidocpp-fix-openssl-{commit/}${OSSL_FIX_ID}.patch:0
-# exclude irrelevant/failing hunks
-PATCH_CASES +=		*-${OSSL_FIX_ID}.patch) \
-				filterdiff -x \*.yml -x \*.sh -- $$patchfile | \
-				    ${PATCH} ${PATCH_DIST_ARGS} ;;
-
-PATCH_DIST_STRIP =	-p1
-
 # ${WRKSRC}/etc/schema/.../*.xsd.orig
 PATCHORIG =		.pat.orig
 
@@ -38,11 +27,9 @@ WANTLIB +=		xerces-c xml-security-c z
 
 MODULES =		devel/cmake
 
-BUILD_DEPENDS =		devel/xsd>=4.0 \
+BUILD_DEPENDS =		devel/boost \
+			devel/xsd>=4.0 \
 			editors/vim,-main
-
-# for filterdiff(1) in PATCH_CASES, remove on next update
-BUILD_DEPENDS +=	textproc/patchutils
 
 LIB_DEPENDS =		archivers/minizip \
 			converters/libiconv \
@@ -51,10 +38,6 @@ LIB_DEPENDS =		archivers/minizip \
 			textproc/xerces-c
 
 RUN_DEPENDS =		# empty
-
-TEST_DEPENDS =		devel/boost
-BUILD_DEPENDS +=	${TEST_DEPENDS}
-
 
 # move DIGIDOCPP_CONFIG_DIR out of /usr/local/ into /etc/ (PLIST @sample)
 CONFIGURE_ARGS =	-DCMAKE_INSTALL_SYSCONFDIR=share/examples
@@ -75,7 +58,7 @@ CONFIGURE_ARGS +=	-DCMAKE_DISABLE_FIND_PACKAGE_PoDoFo=ON
 # but minizip is still found through a later pkg_check_modules()
 CONFIGURE_ARGS +=	-DCMAKE_DISABLE_FIND_PACKAGE_MiniZip=ON
 
-# force ports OpenSSL until new upstream version supports LibreSSL
+# force ports OpenSSL until upstream supports LibreSSL or we patch it in
 BUILD_DEPENDS +=	security/openssl/1.1>=1.1.1m,<3
 CXXFLAGS +=		-I/usr/local/include/eopenssl11
 # link statically since other dependencies may link against LibreSSL
@@ -87,6 +70,5 @@ CONFIGURE_ENV +=	LDFLAGS=${LDFLAGS:Q}
 LIB_DEPEPNDS +=		security/opensc
 CONFIGURE_ARGS +=	-DCMAKE_SHARED_LINKER_FLAGS="${LDFLAGS} \
 			    -Wl,-rpath,/usr/local/lib/pkcs11"
-
 
 .include <bsd.port.mk>
