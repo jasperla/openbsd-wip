@@ -1,10 +1,36 @@
+Provide OPENSSL_memdup() and TS accessors for LibreSSL
+
 "Upgrade openssl 1.1.1m and fix crash with new openssl version (#453)"
 https://github.com/open-eid/libdigidocpp/commit/42a8cfd
 
 Index: src/crypto/TS.cpp
 --- src/crypto/TS.cpp.orig
 +++ src/crypto/TS.cpp
-@@ -48,6 +48,7 @@ static void TS_VERIFY_CTX_set_flags(TS_VERIFY_CTX *ctx
+@@ -40,7 +40,22 @@
+ using namespace digidoc;
+ using namespace std;
+ 
+-#if OPENSSL_VERSION_NUMBER < 0x10100000L
++#if defined(LIBRESSL_VERSION_NUMBER)
++void *OPENSSL_memdup(const void *data, size_t size)
++{
++	void *copy;
++
++	if (data == NULL || size >= INT_MAX)
++		return NULL;
++
++	if ((copy = malloc(size)) == NULL)
++		return NULL;
++
++	return memcpy(copy, data, size);
++}
++#endif
++
++#if OPENSSL_VERSION_NUMBER < 0x10100000L || defined(LIBRESSL_VERSION_NUMBER)
+ static void TS_VERIFY_CTX_set_flags(TS_VERIFY_CTX *ctx, int f)
+ {
+     ctx->flags = unsigned(f);
+@@ -48,6 +63,7 @@ static void TS_VERIFY_CTX_set_flags(TS_VERIFY_CTX *ctx
  
  static void TS_VERIFY_CTX_set_imprint(TS_VERIFY_CTX *ctx, unsigned char *hexstr, long len)
  {
@@ -12,7 +38,7 @@ Index: src/crypto/TS.cpp
      ctx->imprint = hexstr;
      ctx->imprint_len = unsigned(len);
  }
-@@ -257,11 +258,10 @@ void TS::verify(const Digest &digest)
+@@ -257,11 +273,10 @@ void TS::verify(const Digest &digest)
      {
          SCOPE(TS_VERIFY_CTX, ctx, TS_VERIFY_CTX_new());
          TS_VERIFY_CTX_set_flags(ctx.get(), TS_VFY_IMPRINT|TS_VFY_VERSION|TS_VFY_SIGNATURE);

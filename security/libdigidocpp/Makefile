@@ -22,7 +22,7 @@ MAINTAINER =		Klemens Nanni <kn@openbsd.org>
 # C++11
 COMPILER =		base-clang ports-gcc
 
-WANTLIB +=		${COMPILER_LIBCXX} c iconv m minizip xalan-c
+WANTLIB +=		${COMPILER_LIBCXX} c crypto iconv m minizip ssl xalan-c
 WANTLIB +=		xerces-c xml-security-c z
 
 MODULES =		devel/cmake
@@ -58,14 +58,6 @@ CONFIGURE_ARGS +=	-DCMAKE_DISABLE_FIND_PACKAGE_PoDoFo=ON
 # but minizip is still found through a later pkg_check_modules()
 CONFIGURE_ARGS +=	-DCMAKE_DISABLE_FIND_PACKAGE_MiniZip=ON
 
-# Can't use LibreSSL since X509_VERIFY_PARAM_get_time is missing from libcrypto.
-# Need to add OPENSSL_memdup with patch and neuter SHA-3;
-# choice between the 1.1 and 1.0 codepaths is a bit tricky.
-BUILD_DEPENDS +=	security/openssl/1.1>=1.1.1m,<3
-CXXFLAGS +=		-I/usr/local/include/eopenssl11
-# link statically since other dependencies may link against LibreSSL
-LDFLAGS +=		/usr/local/lib/eopenssl11/libcrypto.a \
-			/usr/local/lib/eopenssl11/libssl.a
 CONFIGURE_ENV +=	LDFLAGS=${LDFLAGS:Q}
 
 # dlopen()'ed "opensc-pkcs11.so" in libdigidocpp.so
