@@ -35,7 +35,7 @@ EXTRACT_ONLY =		${DISTFILE_SRC}
 MAINTAINER =		Klemens Nanni <kn@openbsd.org>
 
 WANTLIB +=		${COMPILER_LIBCXX} Qt5Core Qt5Gui Qt5Network Qt5PrintSupport
-WANTLIB +=		Qt5Svg Qt5Widgets c digidocpp lber ldap m pcsclite
+WANTLIB +=		Qt5Svg Qt5Widgets c crypto digidocpp lber ldap m pcsclite ssl
 
 MODULES =		devel/cmake \
 			x11/qt5
@@ -52,14 +52,6 @@ LIB_DEPENDS =		databases/openldap,-main \
 
 RUN_DEPENDS =		x11/qt5/qttranslations
 
-# Can't use LibreSSL since X509_VERIFY_PARAM_get_time is missing from libcrypto.
-# Need to add OPENSSL_memdup with patch and neuter SHA-3;
-# choice between the 1.1 and 1.0 codepaths is a bit tricky.
-BUILD_DEPENDS +=	security/openssl/1.1>=1.1.1m,<3
-CXXFLAGS +=		-I/usr/local/include/eopenssl11
-# link statically since dependencies (libldap) may link against LibreSSL
-LDFLAGS +=		/usr/local/lib/eopenssl11/libcrypto.a \
-			/usr/local/lib/eopenssl11/libssl.a
 CONFIGURE_ENV +=	LDFLAGS=${LDFLAGS:Q}
 
 # dlopen()'ed "opensc-pkcs11.so" in qdigidoc4
