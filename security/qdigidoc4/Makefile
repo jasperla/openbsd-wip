@@ -23,8 +23,8 @@ DISTFILES +=		qdigidoc4-{}config.json:0 \
 CONFIGURE_ENV +=	CONFIG_URL=file://${DISTDIR}/${PKGSTEM}-config.json
 
 MASTER_SITES1 =		https://ec.europa.eu/tools/lotl/
-DISTFILES +=		qdigidoc4-{}eu-lotl.xml:1
-CONFIGURE_ENV +=	TSL_URL=file://${DISTDIR}/qdigidoc4-eu-lotl.xml
+DISTFILES +=		qdigidoc4-{}eu-lotl-pivot-300.xml:1
+CONFIGURE_ENV +=	TSL_URL=file://${DISTDIR}/qdigidoc4-eu-lotl-pivot-300.xml
 
 # simpler than handrolling DISTFILES *and* EXTRACT_ONLY
 EXTRACT_CASES +=	*.json|*.pub|*.rsa|*.xml)	;;
