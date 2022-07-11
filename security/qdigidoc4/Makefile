@@ -43,7 +43,7 @@ DISTFILES +=		open-eid-digidoc-extensions-{archive/}${EXTENSIONS_COMMIT}${EXTRAC
 MASTER_SITES5 =		https://github.com/open-eid/qt-common/
 COMMON_COMMIT =		d9623b38d2bf722e958619093c1651c8c6d8a653
 DISTFILES +=		open-eid-qt-common-{archive/}${COMMON_COMMIT}${EXTRACT_SUFX}:5
-PATCHFILES +=		open-eid-qt-common-pcsc-lite-{pull/}121.patch:4
+PATCHFILES +=		open-eid-qt-common-pcsc-lite-{pull/}121.patch:5
 PATCH_CASES +=		open-eid-qt-common-*.patch) \
 				${PATCH} ${PATCH_DIST_ARGS} < $$patchfile \
 				    -d${WRKSRC}/common ;;
