@@ -3,8 +3,8 @@ COMMENT =		library for creating DigiDoc signature files
 V =			3.14.8
 GH_ACCOUNT =		open-eid
 GH_PROJECT =		libdigidocpp
-GH_COMMIT =		d9fd05330c80b846e1ee14686b05a19bf0acce52
-DISTNAME =		libdigidocpp-${V}pl20220607
+GH_COMMIT =		06a755d4adb34b64b819a7ecff79e687171ade01
+DISTNAME =		libdigidocpp-${V}pl20220713
 DISTFILES =		${GH_DISTFILE}
 CATEGORIES =		security
 
@@ -21,7 +21,10 @@ MASTER_SITES0 =		https://github.com/open-eid/libdigidocpp/
 PATCHFILES +=		libdigidocpp-iconv-{pull/}470.patch:0
 PATCHFILES +=		libdigidocpp-pkcs11-path-{pull/}473.patch:0
 PATCHFILES +=		libdigidocpp-libressl-{pull/}482.patch:0
-PATCHFILES +=		libdigidocpp-openssl-errors-{pull/}481.patch:0
+# 481.patch is partially merged already and pull/N/commits/ID.patch needs
+# full-length commit id
+OSSL_ERRS_COMMIT =	f8c1d017b947947b8156bc222a2fa7c80d0ac9cd
+PATCHFILES +=		libdigidocpp-openssl-errors-{pull/481/commits/}${OSSL_ERRS_COMMIT}.patch:0
 
 PATCH_DIST_STRIP =	-p1
 

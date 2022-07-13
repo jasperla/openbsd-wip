@@ -62,7 +62,7 @@ BUILD_DEPENDS =		devel/gettext,-tools \
 			x11/qt5/qttools
 
 LIB_DEPENDS =		databases/openldap,-main \
-			security/libdigidocpp>=3.14.8pl20220607 \
+			security/libdigidocpp>=3.14.8pl20220713 \
 			security/pcsc-lite \
 			x11/qt5/qtsvg \
 
