@@ -15,36 +15,37 @@ PERMIT_PACKAGE =	Yes
 
 HOMEPAGE =		https://www.id.ee/
 
+DIST_SUBDIR =		qdigidoc4
 MASTER_SITES0 =		https://id.eesti.ee/
-DISTFILES +=		qdigidoc4-{}config.json:0 \
-			qdigidoc4-{}config.pub:0 \
-			qdigidoc4-{}config.rsa:0
+DISTFILES +=		config.json:0 \
+			config.pub:0 \
+			config.rsa:0
 # ${WRKSRC}/common/CMakeLists.txt itself substitutes suffix in CONFIG_URL
-CONFIGURE_ENV +=	CONFIG_URL=file://${DISTDIR}/${PKGSTEM}-config.json
+CONFIGURE_ENV +=	CONFIG_URL=file://${FULLDISTDIR}/config.json
 
 MASTER_SITES1 =		https://ec.europa.eu/tools/lotl/
-DISTFILES +=		qdigidoc4-{}eu-lotl-pivot-300.xml:1
-CONFIGURE_ENV +=	TSL_URL=file://${DISTDIR}/qdigidoc4-eu-lotl-pivot-300.xml
+DISTFILES +=		eu-lotl-pivot-300.xml:1
+CONFIGURE_ENV +=	TSL_URL=file://${FULLDISTDIR}/eu-lotl-pivot-300.xml
 
 # simpler than handrolling DISTFILES *and* EXTRACT_ONLY
 EXTRACT_CASES +=	*.json|*.pub|*.rsa|*.xml)	;;
 
 MASTER_SITES2 =		https://github.com/open-eid/DigiDoc4-Client/
-PATCHFILES +=		qdigidoc4-bsd-{pull/}1072.patch:2
+PATCHFILES +=		bsd-{pull/}1072.patch:2
 
 MASTER_SITES3 =		https://github.com/open-eid/cmake/
 CMAKE_COMMIT =		eececc017b2d40e025018727afb9d925482e1a14
-DISTFILES +=		open-eid-cmake-{archive/}${CMAKE_COMMIT}${EXTRACT_SUFX}:3
+DISTFILES +=		cmake-{archive/}${CMAKE_COMMIT}${EXTRACT_SUFX}:3
 
 MASTER_SITES4 =		https://github.com/open-eid/digidoc-extensions/
 EXTENSIONS_COMMIT =	963dfabaf8592f0e1190dfb8697bc6bba7a3cd33
-DISTFILES +=		open-eid-digidoc-extensions-{archive/}${EXTENSIONS_COMMIT}${EXTRACT_SUFX}:4
+DISTFILES +=		digidoc-extensions-{archive/}${EXTENSIONS_COMMIT}${EXTRACT_SUFX}:4
 
 MASTER_SITES5 =		https://github.com/open-eid/qt-common/
 COMMON_COMMIT =		d9623b38d2bf722e958619093c1651c8c6d8a653
-DISTFILES +=		open-eid-qt-common-{archive/}${COMMON_COMMIT}${EXTRACT_SUFX}:5
-PATCHFILES +=		open-eid-qt-common-pcsc-lite-{pull/}121.patch:5
-PATCH_CASES +=		open-eid-qt-common-*.patch) \
+DISTFILES +=		qt-common-{archive/}${COMMON_COMMIT}${EXTRACT_SUFX}:5
+PATCHFILES +=		qt-common-pcsc-lite-{pull/}121.patch:5
+PATCH_CASES +=		qt-common-*.patch) \
 				${PATCH} ${PATCH_DIST_ARGS} < $$patchfile \
 				    -d${WRKSRC}/common ;;
 

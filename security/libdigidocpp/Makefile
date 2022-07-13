@@ -17,20 +17,21 @@ PERMIT_PACKAGE =	Yes
 
 HOMEPAGE =		https://www.id.ee/
 
+DIST_SUBDIR =		libdigidocpp
 MASTER_SITES0 =		https://github.com/open-eid/libdigidocpp/
-PATCHFILES +=		libdigidocpp-iconv-{pull/}470.patch:0
-PATCHFILES +=		libdigidocpp-pkcs11-path-{pull/}473.patch:0
-PATCHFILES +=		libdigidocpp-libressl-{pull/}482.patch:0
+PATCHFILES +=		iconv-{pull/}470.patch:0
+PATCHFILES +=		pkcs11-path-{pull/}473.patch:0
+PATCHFILES +=		libressl-{pull/}482.patch:0
 # 481.patch is partially merged already and pull/N/commits/ID.patch needs
 # full-length commit id
 OSSL_ERRS_COMMIT =	f8c1d017b947947b8156bc222a2fa7c80d0ac9cd
-PATCHFILES +=		libdigidocpp-openssl-errors-{pull/481/commits/}${OSSL_ERRS_COMMIT}.patch:0
+PATCHFILES +=		openssl-errors-{pull/481/commits/}${OSSL_ERRS_COMMIT}.patch:0
 
 PATCH_DIST_STRIP =	-p1
 
 MASTER_SITES1 =		https://github.com/open-eid/cmake/
 CMAKE_COMMIT =		eececc017b2d40e025018727afb9d925482e1a14
-DISTFILES +=		open-eid-cmake-{archive/}${CMAKE_COMMIT}${EXTRACT_SUFX}:1
+DISTFILES +=		cmake-{archive/}${CMAKE_COMMIT}${EXTRACT_SUFX}:1
 
 # ${WRKSRC}/etc/schema/.../*.xsd.orig
 PATCHORIG =		.pat.orig
