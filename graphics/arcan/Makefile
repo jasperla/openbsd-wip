@@ -11,7 +11,7 @@ SHARED_LIBS +=  arcan_tui                 0.0 # 0.13
 
 GH_ACCOUNT =	letoram
 GH_PROJECT =	arcan
-GH_TAGNAME =	0.6.1
+GH_TAGNAME =	0.6.2
 
 CATEGORIES =	graphics devel
 HOMEPAGE =	https://arcan-fe.com
@@ -24,7 +24,7 @@ WRKSRC =		${WRKDIST}/src
 WANTLIB += ${COMPILER_LIBCXX} EGL GL SDL2 archive avcodec avdevice
 WANTLIB += avfilter avformat avutil bz2 c curl drm freetype gbm
 WANTLIB += iconv lua5.1 lzma m openal sqlite3 swresample swscale
-WANTLIB += tesseract util vlc vncclient vncserver wayland-server
+WANTLIB += tesseract util vlc vncclient vncserver
 WANTLIB += xcb xcb-composite xcb-icccm xcb-util xcb-xfixes xkbcommon
 WANTLIB += z
 
@@ -39,7 +39,6 @@ LIB_DEPENDS =		archivers/bzip2 \
 			graphics/ffmpeg \
 			graphics/tesseract/tesseract \
 			net/libvncserver \
-			wayland/wayland \
 			x11/vlc \
 			x11/xkbcommon
 
@@ -47,6 +46,7 @@ CONFIGURE_ARGS =	-DVIDEO_PLATFORM=egl-dri \
 			-DHYBRID_SDL=ON \
 			-DHYBRID_HEADLESS=ON \
 			-DDISABLE_JIT=ON \
+			-DDISABLE_WAYLAND=ON \
 			-DLIBVNC_INCLUDE_DIRS=${LOCALBASE}/include
 
 .include <bsd.port.mk>
