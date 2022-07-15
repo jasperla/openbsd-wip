@@ -3,8 +3,8 @@ COMMENT =		DigiDoc4 GUI client for signing and encrypting documents
 V =			4.2.11
 GH_ACCOUNT =		open-eid
 GH_PROJECT =		DigiDoc4-Client
-GH_COMMIT =		3365785677791e81c9ac8243092b0e2105f9c1d5
-DISTNAME =		qdigidoc4-${V}pl20220707
+GH_COMMIT =		0b158fcfc2ca8ea04a0dd07a711073217e19e68d
+DISTNAME =		qdigidoc4-${V}pl20220713
 DISTFILES =		${GH_DISTFILE}
 CATEGORIES =		security x11
 
