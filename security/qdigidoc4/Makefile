@@ -3,8 +3,8 @@ COMMENT =		DigiDoc4 GUI client for signing and encrypting documents
 V =			4.2.11
 GH_ACCOUNT =		open-eid
 GH_PROJECT =		DigiDoc4-Client
-GH_COMMIT =		3365785677791e81c9ac8243092b0e2105f9c1d5
-DISTNAME =		qdigidoc4-${V}pl20220707
+GH_COMMIT =		0b158fcfc2ca8ea04a0dd07a711073217e19e68d
+DISTNAME =		qdigidoc4-${V}pl20220713
 DISTFILES =		${GH_DISTFILE}
 CATEGORIES =		security x11
 
@@ -45,6 +45,7 @@ MASTER_SITES5 =		https://github.com/open-eid/qt-common/
 COMMON_COMMIT =		d9623b38d2bf722e958619093c1651c8c6d8a653
 DISTFILES +=		qt-common-{archive/}${COMMON_COMMIT}${EXTRACT_SUFX}:5
 PATCHFILES +=		qt-common-pcsc-lite-{pull/}121.patch:5
+PATCHFILES +=		qt-common-fix-i386-{pull/}124.patch:5
 PATCH_CASES +=		qt-common-*.patch) \
 				${PATCH} ${PATCH_DIST_ARGS} < $$patchfile \
 				    -d${WRKSRC}/common ;;
