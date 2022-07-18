@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.21 2020/08/18 19:15:54 edd Exp $
-
 COMMENT =	powerful display server and multimedia framework
 
 SHARED_LIBS +=  arcan_a12                 0.0 # 0.1
@@ -22,11 +20,9 @@ PERMIT_PACKAGE =	Yes
 WRKSRC =		${WRKDIST}/src
 
 WANTLIB += ${COMPILER_LIBCXX} EGL GL SDL2 archive avcodec avdevice
-WANTLIB += avfilter avformat avutil bz2 c curl drm freetype gbm
-WANTLIB += iconv lua5.1 lzma m openal sqlite3 swresample swscale
-WANTLIB += tesseract util vlc vncclient vncserver
-WANTLIB += xcb xcb-composite xcb-icccm xcb-util xcb-xfixes xkbcommon
-WANTLIB += z
+WANTLIB += avfilter avformat avutil bz2 c curl drm espeak freetype
+WANTLIB += gbm iconv lua5.1 lzma m openal sqlite3 swresample swscale
+WANTLIB += tesseract util vlc vncclient vncserver xkbcommon z
 
 COMPILER =		base-clang ports-gcc base-gcc
 
@@ -34,6 +30,7 @@ MODULES =		devel/cmake \
 			lang/lua
 
 LIB_DEPENDS =		archivers/bzip2 \
+			audio/espeak \
 			audio/openal \
 			databases/sqlite3 \
 			graphics/ffmpeg \
