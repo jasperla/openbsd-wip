@@ -1,4 +1,6 @@
 XXX Relax CMake to not require Qt6 AND Qt5, stick to Qt5
+relevant issue:    https://github.com/open-eid/DigiDoc4-Client/issues/1097
+qt6 build failure: https://github.com/open-eid/DigiDoc4-Client/pull/1098
 
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
