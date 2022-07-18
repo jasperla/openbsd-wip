@@ -7,6 +7,7 @@ SHA256 (qdigidoc4/digidoc-extensions-963dfabaf8592f0e1190dfb8697bc6bba7a3cd33.ta
 SHA256 (qdigidoc4/eu-lotl-pivot-300.xml) = DSmCpZOMKFf1lEcM4XkKac7R65hkcovZZw/exM34M7I=
 SHA256 (qdigidoc4/qdigidoc4-4.2.11pl20220713-0b158fcf.tar.gz) = 3w2PJBV9AY9+Dhq/8L9WU1sjsifWwy7xiaZAPz+he3k=
 SHA256 (qdigidoc4/qt-common-d9623b38d2bf722e958619093c1651c8c6d8a653.tar.gz) = q7Et8alifoHtgjRO1DhurxQ15aoQLBD1SCRbgUfCoV8=
+SHA256 (qdigidoc4/qt-common-fix-i386-124.patch) = RqNRZmbXRhI/ni/uGK3Z5heSv3fqLmBAIE1aG+0iVrY=
 SHA256 (qdigidoc4/qt-common-pcsc-lite-121.patch) = 6mZNDCrZszL/7CdD7b12zcC5klsi0+GDLxoZ3S3U+OM=
 SIZE (qdigidoc4/bsd-1072.patch) = 5862
 SIZE (qdigidoc4/cmake-eececc017b2d40e025018727afb9d925482e1a14.tar.gz) = 28186
@@ -17,4 +18,5 @@ SIZE (qdigidoc4/digidoc-extensions-963dfabaf8592f0e1190dfb8697bc6bba7a3cd33.tar.
 SIZE (qdigidoc4/eu-lotl-pivot-300.xml) = 424989
 SIZE (qdigidoc4/qdigidoc4-4.2.11pl20220713-0b158fcf.tar.gz) = 3777539
 SIZE (qdigidoc4/qt-common-d9623b38d2bf722e958619093c1651c8c6d8a653.tar.gz) = 134544
+SIZE (qdigidoc4/qt-common-fix-i386-124.patch) = 1755
 SIZE (qdigidoc4/qt-common-pcsc-lite-121.patch) = 2040
