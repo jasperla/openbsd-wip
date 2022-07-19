@@ -32,6 +32,11 @@ EXTRACT_CASES +=	*.json|*.pub|*.rsa|*.xml)	;;
 
 MASTER_SITES2 =		https://github.com/open-eid/DigiDoc4-Client/
 PATCHFILES +=		bsd-{pull/}1072.patch:2
+PATCHFILES +=		qt6-{pull/}1082.patch:2
+BUILD_DEPENDS +=	textproc/patchutils
+# source fixes only
+PATCH_CASES +=		qt6-1082.patch)	filterdiff -i \*.cpp -- $$patchfile | \
+				${PATCH} ${PATCH_DIST_ARGS} ;;
 
 MASTER_SITES3 =		https://github.com/open-eid/cmake/
 CMAKE_COMMIT =		eececc017b2d40e025018727afb9d925482e1a14
@@ -54,23 +59,25 @@ PATCH_DIST_STRIP =	-p1
 
 MAINTAINER =		Klemens Nanni <kn@openbsd.org>
 
-WANTLIB +=		${COMPILER_LIBCXX} Qt5Core Qt5Gui Qt5Network Qt5PrintSupport
-WANTLIB +=		Qt5Svg Qt5Widgets c crypto digidocpp lber ldap m pcsclite ssl
+WANTLIB +=		${COMPILER_LIBCXX} GL Qt6Core Qt6Core5Compat Qt6Gui
+WANTLIB +=		Qt6Network Qt6PrintSupport Qt6Svg Qt6SvgWidgets Qt6Widgets
+WANTLIB +=		c crypto digidocpp lber ldap m pcsclite ssl
 
 MODULES =		devel/cmake \
-			x11/qt5
+			x11/qt6
 
 BUILD_DEPENDS =		devel/gettext,-tools \
-			x11/qt5/qttools
+			x11/qt6/qttools
 
 LIB_DEPENDS =		databases/openldap,-main \
 			security/libdigidocpp>=3.14.8pl20220713 \
 			security/pcsc-lite \
-			x11/qt5/qtsvg \
+			x11/qt6/qt5compat \
+			x11/qt6/qtsvg
 
 RUN_DEPENDS =		devel/desktop-file-utils \
 			misc/shared-mime-info \
-			x11/qt5/qttranslations \
+			x11/qt6/qttranslations \
 			x11/gtk+3,-guic
 
 CONFIGURE_ENV +=	LDFLAGS=${LDFLAGS:Q}
