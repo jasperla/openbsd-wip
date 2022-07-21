@@ -1,10 +1,10 @@
 COMMENT =		library for creating DigiDoc signature files
 
-V =			3.14.8
+V =			3.14.10
 GH_ACCOUNT =		open-eid
 GH_PROJECT =		libdigidocpp
-GH_COMMIT =		06a755d4adb34b64b819a7ecff79e687171ade01
-DISTNAME =		libdigidocpp-${V}pl20220713
+GH_COMMIT =		8bee4503e9d306d4bf92e49eb9f55f301fb2fd82
+DISTNAME =		libdigidocpp-${V}pl20220721
 DISTFILES =		${GH_DISTFILE}
 CATEGORIES =		security
 
@@ -20,7 +20,6 @@ HOMEPAGE =		https://www.id.ee/
 DIST_SUBDIR =		libdigidocpp
 MASTER_SITES0 =		https://github.com/open-eid/libdigidocpp/
 PATCHFILES +=		iconv-{pull/}470.patch:0
-PATCHFILES +=		pkcs11-path-{pull/}473.patch:0
 PATCHFILES +=		libressl-{pull/}482.patch:0
 PATCHFILES +=		minizip-{pull/}485.patch:0
 # 481.patch is partially merged already and pull/N/commits/ID.patch needs
@@ -87,6 +86,7 @@ CONFIGURE_ARGS +=	-DCMAKE_SHARED_LINKER_FLAGS="${LDFLAGS} \
 
 # fix src/minizip/ioapi.c warnings: off_t is always 64 bit,
 # no need for ftello64()
+# see upstream "Avoid f*64() on BSDs" https://github.com/madler/zlib/pull/678
 CFLAGS +=		-DIOAPI_NO_64
 
 post-extract:
