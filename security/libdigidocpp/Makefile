@@ -3,8 +3,8 @@ COMMENT =		library for creating DigiDoc signature files
 V =			3.14.10
 GH_ACCOUNT =		open-eid
 GH_PROJECT =		libdigidocpp
-GH_COMMIT =		8bee4503e9d306d4bf92e49eb9f55f301fb2fd82
-DISTNAME =		libdigidocpp-${V}pl20220721
+GH_COMMIT =		3d40b5d10411587b1bbc4d084429a8a7105e298d
+DISTNAME =		libdigidocpp-${V}pl20220726
 DISTFILES =		${GH_DISTFILE}
 CATEGORIES =		security
 
@@ -20,8 +20,6 @@ HOMEPAGE =		https://www.id.ee/
 DIST_SUBDIR =		libdigidocpp
 MASTER_SITES0 =		https://github.com/open-eid/libdigidocpp/
 PATCHFILES +=		iconv-{pull/}470.patch:0
-PATCHFILES +=		libressl-{pull/}482.patch:0
-PATCHFILES +=		minizip-{pull/}485.patch:0
 # 481.patch is partially merged already and pull/N/commits/ID.patch needs
 # full-length commit id
 OSSL_ERRS_COMMIT =	f8c1d017b947947b8156bc222a2fa7c80d0ac9cd
@@ -30,7 +28,7 @@ PATCHFILES +=		openssl-errors-{pull/481/commits/}${OSSL_ERRS_COMMIT}.patch:0
 PATCH_DIST_STRIP =	-p1
 
 MASTER_SITES1 =		https://github.com/open-eid/cmake/
-CMAKE_COMMIT =		eececc017b2d40e025018727afb9d925482e1a14
+CMAKE_COMMIT =		587667bbd3c911a08e8d96b784a4aa3c5c91ccba
 DISTFILES +=		cmake-{archive/}${CMAKE_COMMIT}${EXTRACT_SUFX}:1
 
 # ${WRKSRC}/etc/schema/.../*.xsd.orig
