@@ -40,9 +40,8 @@ RUN_DEPENDS-main =	print/ghostscript/gnu \
 			print/psutils \
 			print/t1utils \
 			devel/desktop-file-utils \
+			texlive_texmf-buildset-${V}:print/texlive/texmf,-buildset \
 			${BASE_PKGPATH},-synctex
-# put back
-# texlive_texmf-buildset-${V}:print/texlive/texmf,-buildset \
 
 LIB_DEPENDS-main =	converters/libiconv \
 			graphics/png \

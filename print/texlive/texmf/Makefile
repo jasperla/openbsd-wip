@@ -15,17 +15,14 @@ DISTNAME =		texlive-${DIST_V}-texmf
 MASTER_SITES0 =		http://theunixzoo.co.uk/distfiles/
 DISTFILES =		${DISTNAME}${EXTRACT_SUFX} \
 			texlive-${DIST_V}-extra${EXTRACT_SUFX} \
-			texlive-20220325-tlpdb-full.tar.gz
-# XXX: do pregen
-#			texmf-var-pregen-${V}${EXTRACT_SUFX}:0
+			texlive-20220325-tlpdb-full.tar.gz \
+			texmf-var-pregen-${V}${EXTRACT_SUFX}:0
 
 PKGNAME-main =		texlive_texmf-minimal-${V}
 PKGNAME-full =		texlive_texmf-full-${V}
 PKGNAME-docs =		texlive_texmf-docs-${V}
 PKGNAME-context =	texlive_texmf-context-${V}
 PKGNAME-buildset =	texlive_texmf-buildset-${V}
-
-REVISION-context =	0
 
 NO_BUILD =		Yes
 NO_TEST =		Yes
@@ -45,17 +42,16 @@ MODPY_RUNDEP =		No
 
 .include "adj.mk"
 
-RUN_DEPENDS-main +=	texlive_base->=${V}:print/texlive/base,-main
-#			${FULLPKGNAME-buildset}:print/texlive/texmf,-buildset
-#RUN_DEPENDS-full =	${FULLPKGNAME-main}:print/texlive/texmf,-main
+RUN_DEPENDS-main +=	texlive_base->=${V}:print/texlive/base,-main \
+			${FULLPKGNAME-buildset}:print/texlive/texmf,-buildset
 RUN_DEPENDS-full =	${FULLPKGNAME-main}:print/texlive/texmf,-main \
 			${MODPY_RUN_DEPENDS} \
 			${_MODLUA_RUNDEPENDS}
-#RUN_DEPENDS-context +=	${FULLPKGNAME-full}:print/texlive/texmf,-full
-RUN_DEPENDS-context +=	${MODRUBY_RUN_DEPENDS}
-#RUN_DEPENDS-docs +=	texlive_base->=${V}:print/texlive/base,-main
-RUN_DEPENDS-docs +=	x11/p5-Tk
-#RUN_DEPENDS-buildset +=	texlive_mktexlsr->=${V}:print/texlive/base,-mktexlsr
+RUN_DEPENDS-context +=	${FULLPKGNAME-full}:print/texlive/texmf,-full \
+			${MODRUBY_RUN_DEPENDS}
+RUN_DEPENDS-docs +=	texlive_base->=${V}:print/texlive/base,-main \
+			x11/p5-Tk
+RUN_DEPENDS-buildset +=	texlive_mktexlsr->=${V}:print/texlive/base,-mktexlsr
 
 MULTI_PACKAGES =	-context -docs -full -main -buildset
 
@@ -139,8 +135,7 @@ do-install: tl-symlinks-main tl-symlinks-full tl-symlinks-context
 	#
 	# (Don't forget to remove ls-R files, log files and the luatex cache
 	# before making the tarball).
-	# XXX: put back
-	#mv ${WRKDIR}/texmf-var ${PREFIX}/share
+	mv ${WRKDIR}/texmf-var ${PREFIX}/share
 
 	# Put manuals in the right place.
 	#
@@ -180,6 +175,8 @@ post-install:
 
 # Generating PLISTs is special for TeX Live.
 update-plist: plist
+	@true
+
 plist: fake
 	env WRKINST=${WRKINST} TRUEPREFIX=${TRUEPREFIX} \
 		python${MODPY_DEFAULT_VERSION_3} \
