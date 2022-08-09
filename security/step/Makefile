@@ -1,6 +1,6 @@
 COMMENT =	swiss army knife for working with X509, OAuth, JWT, OATH OTP
 
-V =		0.19.0
+V =		0.21.0
 MODGO_VERSION =	v${V}
 
 DISTNAME =	cli-${V}
