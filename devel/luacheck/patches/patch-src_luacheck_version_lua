@@ -1,0 +1,9 @@
+Index: src/luacheck/version.lua
+--- src/luacheck/version.lua.orig
++++ src/luacheck/version.lua
+@@ -1,4 +1,4 @@
+-local argparse = require "argparse"
++local argparse = require "luacheck.argparse"
+ local lfs = require "lfs"
+ local luacheck = require "luacheck"
+ local multithreading = require "luacheck.multithreading"
