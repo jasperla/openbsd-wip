@@ -4,7 +4,7 @@ MODGO_MODNAME = github.com/junegunn/fzf
 
 V =	0.32.1
 DISTNAME =	fzf-${V}
-COMMIT_ID = 	4993d19
+COMMIT_ID =	4993d19
 
 CATEGORIES =	sysutils
 
