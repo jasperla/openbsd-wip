@@ -1,4 +1,4 @@
-SHA256 (gdu-5.15.0.zip) = F0PCOJ1q6KK4K1xBLrf2lG30YE5YJ5I2A6/CH5VssWI=
+SHA256 (gdu-v5.15.0.zip) = F0PCOJ1q6KK4K1xBLrf2lG30YE5YJ5I2A6/CH5VssWI=
 SHA256 (go_modules/github.com/cpuguy83/go-md2man/v2/@v/v2.0.2.mod) = FMOvou9iNVXBtINNH4ixTfd1Sa/uheV1DBkQJGW3iro=
 SHA256 (go_modules/github.com/cpuguy83/go-md2man/v2/@v/v2.0.2.zip) = cKfmCYCc8qksVTUQTbXrgtdcVL/P7S0iTofdL9lyn2I=
 SHA256 (go_modules/github.com/davecgh/go-spew/@v/v1.1.0.mod) = vLKTkyUSN7eaF7bBm/KRNPQ+j0OMMZiYj81GGhzfBcw=
@@ -81,7 +81,7 @@ SHA256 (go_modules/gopkg.in/yaml.v2/@v/v2.4.0.zip) = 7eSeJ8TMps3S7HGa7Y6k02NxDM6
 SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.0-20200313102051-9f266ea9e77c.mod) = IVeYYKIDBvz0OxvSNNH7oxlJnHdhG3HAX5vzupDauTk=
 SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.0-20210107192922-496545a6307b.mod) = IVeYYKIDBvz0OxvSNNH7oxlJnHdhG3HAX5vzupDauTk=
 SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.0-20210107192922-496545a6307b.zip) = UWm1Yl08NR8T6KTsSAL3CQcnAbRB7ZIYHGBR7OU2Fak=
-SIZE (gdu-5.15.0.zip) = 84942
+SIZE (gdu-v5.15.0.zip) = 84942
 SIZE (go_modules/github.com/cpuguy83/go-md2man/v2/@v/v2.0.2.mod) = 100
 SIZE (go_modules/github.com/cpuguy83/go-md2man/v2/@v/v2.0.2.zip) = 12539
 SIZE (go_modules/github.com/davecgh/go-spew/@v/v1.1.0.mod) = 34

@@ -1,10 +1,9 @@
 COMMENT =	disk usage analyzer with console interface written in Go
 
 MODGO_MODNAME =	github.com/dundee/gdu/v5
-MODGO_VERSION =	v${VERSION}
+MODGO_VERSION =	v5.15.0
 
-DISTNAME =	gdu-${VERSION}
-VERSION =	5.15.0
+DISTNAME =	gdu-${MODGO_VERSION}
 
 CATEGORIES =	sysutils
 
@@ -23,7 +22,7 @@ MODGO_TYPE =	bin
 _BUILD_DATE =	$$(date +%Y-%m-%d)
 _BUILD_USER =	$$(id -u -n)
 
-MODGO_FLAGS +=	-ldflags "-s -w -X '${MODGO_MODNAME}/build.Version=${VERSION}' \
+MODGO_FLAGS +=	-ldflags "-s -w -X '${MODGO_MODNAME}/build.Version=${MODGO_VERSION}' \
 		-X '$(MODGO_MODNAME)/build.Time=${_BUILD_DATE}' \
 		-X '$(MODGO_MODNAME)/build.User=${_BUILD_USER}'"
 
