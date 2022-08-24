@@ -1,10 +1,10 @@
 COMMENT =	disk usage analyzer with console interface written in Go
 
 MODGO_MODNAME =	github.com/dundee/gdu/v5
-MODGO_VERSION =	v5.15.0
+MODGO_VERSION =	v${VERSION}
 
 DISTNAME =	gdu-${VERSION}
-VERSION = 	5.15.0
+VERSION =	5.15.0
 
 CATEGORIES =	sysutils
 
@@ -15,7 +15,7 @@ MAINTAINER =	Laurent Cheylus <foxy@free.fr>
 # MIT
 PERMIT_PACKAGE =	Yes
 
-WANTLIB +=	c pthread			
+WANTLIB +=	c pthread
 
 MODULES =	lang/go
 MODGO_TYPE =	bin
@@ -30,7 +30,7 @@ MODGO_FLAGS +=	-ldflags "-s -w -X '${MODGO_MODNAME}/build.Version=${VERSION}' \
 .include "modules.inc"
 
 do-install:
-	${INSTALL_PROGRAM} ${MODGO_WORKSPACE}/bin/gdu ${PREFIX}/bin	
+	${INSTALL_PROGRAM} ${MODGO_WORKSPACE}/bin/gdu ${PREFIX}/bin
 	${INSTALL_MAN_DIR} ${PREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/gdu.1 ${PREFIX}/man/man1
 
