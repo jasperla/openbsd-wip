@@ -1,4 +1,4 @@
-COMMENT =	an opinionated Lua code formatter
+COMMENT =	opinionated Lua code formatter
 
 GH_ACCOUNT =	JohnnyMorganz
 GH_PROJECT =	StyLua
