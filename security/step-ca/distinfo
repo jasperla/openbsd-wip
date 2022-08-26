@@ -1,4 +1,3 @@
-SHA256 (.zip) = PRWCCmjedY2zs5KnUXG0NublIfr3FfLN/TAj3Cub1Sw=
 SHA256 (go_modules/cloud.google.com/go/@v/v0.100.1.mod) = g1DSfrc4MeqzR2KEtq5clptkyG1rAuFIRYZBkd2kZIg=
 SHA256 (go_modules/cloud.google.com/go/@v/v0.100.2.mod) = cPe3to8oTy0/58pOR4cxqrk9yHgbQs4I6Gy5MhbbxkA=
 SHA256 (go_modules/cloud.google.com/go/@v/v0.100.2.zip) = eeR9bNP4ZHfWrhSNUhiRUBYIR+ELTd0RoOx3/Ov0noA=
@@ -1569,7 +1568,7 @@ SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.1.0.mod) = JC1yDRxq7+SjBcM0GoBXXhmlRRe
 SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.1.0.zip) = oNOSUuhmWkKKjLnU38nL6ge3rpCuYufPNlG+cZrfUVo=
 SHA256 (go_modules/sourcegraph.com/sourcegraph/appdash/@v/v0.0.0-20190731080439-ebfcffb1b5c0.mod) = W6+HkS6bnGFVJJiJDke0WyjQPHOLYw7fbXxwxlsKxGI=
 SHA256 (go_modules/sourcegraph.com/sourcegraph/appdash/@v/v0.0.0-20190731080439-ebfcffb1b5c0.zip) = vSSS2dsFNiwv7NCz0PYALImm2Q1nj7k7QVgpiriDc28=
-SIZE (.zip) = 18192304
+SHA256 (step-ca-0.22.0.zip) = PRWCCmjedY2zs5KnUXG0NublIfr3FfLN/TAj3Cub1Sw=
 SIZE (go_modules/cloud.google.com/go/@v/v0.100.1.mod) = 495
 SIZE (go_modules/cloud.google.com/go/@v/v0.100.2.mod) = 531
 SIZE (go_modules/cloud.google.com/go/@v/v0.100.2.zip) = 567152
@@ -3140,3 +3139,4 @@ SIZE (go_modules/sigs.k8s.io/yaml/@v/v1.1.0.mod) = 24
 SIZE (go_modules/sigs.k8s.io/yaml/@v/v1.1.0.zip) = 18120
 SIZE (go_modules/sourcegraph.com/sourcegraph/appdash/@v/v0.0.0-20190731080439-ebfcffb1b5c0.mod) = 43
 SIZE (go_modules/sourcegraph.com/sourcegraph/appdash/@v/v0.0.0-20190731080439-ebfcffb1b5c0.zip) = 158069
+SIZE (step-ca-0.22.0.zip) = 18192304

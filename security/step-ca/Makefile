@@ -3,7 +3,7 @@ COMMENT =	private certificate authority and ACME server
 V =		0.22.0
 MODGO_MODNAME =	github.com/smallstep/certificates
 MODGO_VERSION =	v${V}
-PKGNAME =	step-ca-${V}
+DISTNAME =	step-ca-${V}
 
 CATEGORIES =	security
 
