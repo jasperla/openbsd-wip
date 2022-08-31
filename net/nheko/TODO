@@ -1,3 +1,0 @@
-Figure out why glyphs fail to load:
-[2022-04-21 17:06:34.469] [qml] [warning] load glyph failed err=7 face=0xe4c69fe9000, glyph=481 (:0, )
-
