@@ -1,0 +1,12 @@
+include/mimalloc-new-delete.h
+include/mimalloc-override.h
+include/mimalloc.h
+lib/cmake/
+lib/cmake/mimalloc/
+lib/cmake/mimalloc/mimalloc-config-version.cmake
+lib/cmake/mimalloc/mimalloc-config.cmake
+lib/cmake/mimalloc/mimalloc${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/mimalloc/mimalloc.cmake
+@static-lib lib/libmimalloc.a
+@lib lib/libmimalloc.so.${LIBmimalloc_VERSION}
+lib/mimalloc.o
