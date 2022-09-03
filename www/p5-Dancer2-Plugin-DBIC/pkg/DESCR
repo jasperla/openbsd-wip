@@ -1,3 +1,0 @@
-Dancer2 plugin which makes very easy to create applications that interface
-with databases. It automatically exports the keyword schema which returns a
-DBIx::Class::Schema object. 

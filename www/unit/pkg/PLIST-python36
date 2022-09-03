@@ -1,2 +1,0 @@
-@comment $OpenBSD: PLIST-python36,v$
-lib/unit/modules/python3.6.unit.so

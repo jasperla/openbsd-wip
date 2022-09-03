@@ -1,6 +1,0 @@
-NGINX Unit is a dynamic web and application server, designed to run applications
-in multiple languages. Unit is lightweigth, polyglot, and dynamically configure
-via API. The design of the server allows reconfiguration of specific
-application parameters as needed by the engineering or operations.
-
-This package contains support for PHP 7.1 applications.

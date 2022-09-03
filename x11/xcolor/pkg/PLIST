@@ -1,3 +1,0 @@
-@comment $OpenBSD: PLIST,v$
-@bin bin/xcolor
-@man man/man1/xcolor.1
