@@ -1,0 +1,21 @@
+Index: dlls/nsiproxy.sys/tcp.c
+--- dlls/nsiproxy.sys/tcp.c.orig
++++ dlls/nsiproxy.sys/tcp.c
+@@ -43,6 +43,8 @@
+ #endif
+ 
+ #ifdef HAVE_NETINET_IN_PCB_H
++#include <net/route.h>
++#include <netinet/ip.h>
+ #include <netinet/in_pcb.h>
+ #endif
+ 
+@@ -55,6 +57,8 @@
+ #endif
+ 
+ #ifdef HAVE_NETINET_TCP_VAR_H
++#include <netinet/tcp.h>
++#include <netinet/tcp_timer.h>
+ #include <netinet/tcp_var.h>
+ #endif
+ 
