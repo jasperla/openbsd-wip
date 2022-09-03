@@ -1,0 +1,11 @@
+Index: dlls/nsiproxy.sys/ip.c
+--- dlls/nsiproxy.sys/ip.c.orig
++++ dlls/nsiproxy.sys/ip.c
+@@ -60,6 +60,7 @@
+ #endif
+ 
+ #ifdef HAVE_NETINET_IF_ETHER_H
++#include <net/if_arp.h>
+ #include <netinet/if_ether.h>
+ #endif
+ 

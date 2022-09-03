@@ -1,0 +1,12 @@
+Index: dlls/ws2_32/unixlib.c
+--- dlls/ws2_32/unixlib.c.orig
++++ dlls/ws2_32/unixlib.c
+@@ -109,6 +109,8 @@ static pthread_mutex_t host_mutex = PTHREAD_MUTEX_INIT
+ 
+ #define MAP(x) {WS_ ## x, x}
+ 
++#define AI_ALL 0x00000100	/* XXX Why do we need this here? */
++
+ static const int addrinfo_flag_map[][2] =
+ {
+     MAP( AI_PASSIVE ),
