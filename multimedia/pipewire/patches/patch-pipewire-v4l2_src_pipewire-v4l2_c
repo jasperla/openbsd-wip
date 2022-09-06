@@ -1,0 +1,12 @@
+Index: pipewire-v4l2/src/pipewire-v4l2.c
+--- pipewire-v4l2/src/pipewire-v4l2.c.orig
++++ pipewire-v4l2/src/pipewire-v4l2.c
+@@ -1756,7 +1756,7 @@ static int v4l2_ioctl(int fd, unsigned long int reques
+ 	if ((file = find_file(fd)) == NULL)
+ 		return globals.old_fops.ioctl(fd, request, arg);
+ 
+-#if defined(__FreeBSD__) || defined(__MidnightBSD__)
++#if defined(__FreeBSD__) || defined(__MidnightBSD__) || defined(__OpenBSD__)
+ 	if (arg == NULL && (request & IOC_DIRMASK != IOC_VOID)) {
+ #else
+ 	if (arg == NULL && (_IOC_DIR(request) & (_IOC_WRITE | _IOC_READ))) {
