@@ -2,15 +2,12 @@ Force preloader to be built
 Index: dlls/ntdll/unix/loader.c
 --- dlls/ntdll/unix/loader.c.orig
 +++ dlls/ntdll/unix/loader.c
-@@ -367,11 +367,7 @@ SYSTEM_SERVICE_TABLE KeServiceDescriptorTable[4];
+@@ -367,7 +367,7 @@ SYSTEM_SERVICE_TABLE KeServiceDescriptorTable[4];
  static void fatal_error( const char *err, ... ) __attribute__((noreturn, format(printf,1,2)));
  #endif
  
 -#if defined(linux) || defined(__APPLE__)
++#if defined(linux) || defined(__APPLE__) || defined(__OpenBSD__)
  static const BOOL use_preloader = TRUE;
--#else
--static const BOOL use_preloader = FALSE;
--#endif
- 
- static char *argv0;
- static const char *bin_dir;
+ #else
+ static const BOOL use_preloader = FALSE;
