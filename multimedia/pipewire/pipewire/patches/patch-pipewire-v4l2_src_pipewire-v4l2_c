@@ -1,7 +1,19 @@
 Index: pipewire-v4l2/src/pipewire-v4l2.c
 --- pipewire-v4l2/src/pipewire-v4l2.c.orig
 +++ pipewire-v4l2/src/pipewire-v4l2.c
-@@ -1756,7 +1756,7 @@ static int v4l2_ioctl(int fd, unsigned long int reques
+@@ -34,7 +34,11 @@
+ #include <sys/socket.h>
+ #include <pthread.h>
+ #include <limits.h>
++#ifdef __OpenBSD__
++#include <sys/videoio.h>
++#else
+ #include <linux/videodev2.h>
++#endif
+ 
+ #include "pipewire-v4l2.h"
+ 
+@@ -1756,7 +1760,7 @@ static int v4l2_ioctl(int fd, unsigned long int reques
  	if ((file = find_file(fd)) == NULL)
  		return globals.old_fops.ioctl(fd, request, arg);
  

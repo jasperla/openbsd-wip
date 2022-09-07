@@ -1,20 +1,27 @@
 @bin bin/pipewire
 @bin bin/pipewire-avb
 @bin bin/pipewire-pulse
+@bin bin/pw-cat
 @bin bin/pw-cli
 @bin bin/pw-dot
+bin/pw-dsdplay
 @bin bin/pw-dump
 @bin bin/pw-link
 @bin bin/pw-loopback
 @bin bin/pw-metadata
 @bin bin/pw-mididump
+bin/pw-midiplay
+bin/pw-midirecord
 @bin bin/pw-mon
+bin/pw-play
 @bin bin/pw-profiler
+bin/pw-record
 @bin bin/pw-reserve
 @bin bin/pw-top
 @bin bin/spa-inspect
 @bin bin/spa-json-dump
 @bin bin/spa-monitor
+@bin bin/spa-resample
 include/pipewire-0.3/
 include/pipewire-0.3/pipewire/
 include/pipewire-0.3/pipewire/array.h
@@ -197,12 +204,15 @@ lib/pipewire-0.3/
 @so lib/pipewire-0.3/libpipewire-module-protocol-native.so
 @so lib/pipewire-0.3/libpipewire-module-protocol-pulse.so
 @so lib/pipewire-0.3/libpipewire-module-protocol-simple.so
+@so lib/pipewire-0.3/libpipewire-module-raop-discover.so
 @so lib/pipewire-0.3/libpipewire-module-rt.so
 @so lib/pipewire-0.3/libpipewire-module-session-manager.so
 @so lib/pipewire-0.3/libpipewire-module-spa-device-factory.so
 @so lib/pipewire-0.3/libpipewire-module-spa-device.so
 @so lib/pipewire-0.3/libpipewire-module-spa-node-factory.so
 @so lib/pipewire-0.3/libpipewire-module-spa-node.so
+@so lib/pipewire-0.3/libpipewire-module-x11-bell.so
+@so lib/pipewire-0.3/libpipewire-module-zeroconf-discover.so
 lib/pkgconfig/libpipewire-0.3.pc
 lib/pkgconfig/libspa-0.2.pc
 lib/spa-0.2/

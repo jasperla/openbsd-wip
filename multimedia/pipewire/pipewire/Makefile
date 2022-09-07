@@ -7,14 +7,19 @@ SHARED_LIBS += pipewire-0.3              0.0 # 0.357.0
 
 CATEGORIES=		audio
 
-WANTLIB += c curses dbus-1 epoll-shim glib-2.0 gobject-2.0
-WANTLIB += gstallocators-1.0 gstaudio-1.0 gstbase-1.0 gstreamer-1.0
-WANTLIB += gstvideo-1.0 intl m pthread readline
+WANTLIB += X11 Xfixes avahi-client avahi-common c canberra curses
+WANTLIB += dbus-1 epoll-shim glib-2.0 gobject-2.0 gstallocators-1.0
+WANTLIB += gstaudio-1.0 gstbase-1.0 gstreamer-1.0 gstvideo-1.0
+WANTLIB += intl m pthread readline sndfile
 
 BUILD_DEPENDS=		devel/gettext,-tools
 
-LIB_DEPENDS=		devel/epoll-shim \
-			multimedia/gstreamer1/plugins-base
+LIB_DEPENDS=		audio/libcanberra \
+			audio/libsndfile \
+			audio/pulseaudio \
+			devel/epoll-shim \
+			multimedia/gstreamer1/plugins-base \
+			net/avahi,-libs
 
 CONFIGURE_ARGS=		-Dsystemd=disabled \
 			-Dsystemd-user-service=disabled \
@@ -26,28 +31,33 @@ CONFIGURE_ARGS=		-Dsystemd=disabled \
 # until proven useful
 CONFIGURE_ARGS +=	-Dpipewire-alsa=disabled \
 			-Dpipewire-jack=disabled \
-			-Dpipewire-v4l2=disabled \
 			-Dbluez5=disabled \
 			-Djack=disabled \
-			-Dv4l2=disabled \
 			-Dlibcamera=disabled \
-			-Dsdl2=disabled \
-			-Dsndfile=disabled \
-			-Dlibpulse=disabled \
 			-Droc=disabled \
-			-Davahi=disabled \
 			-Decho-cancel-webrtc=disabled \
-			-Dlibusb=disabled \
 			-Draop=disabled \
 			-Dlv2=disabled \
-			-Dlibcanberra=disabled \
 			-Davb=disabled
 
-# depends on libsndfile (which we disable above)
-CONFIGURE_ARGS +=	-Dpw-cat=disabled
+# only useful for examples which we don't install
+CONFIGURE_ARGS +=	-Dsdl2=disabled
 
-# XXX needs alsa
+# only usesul for bluez5 which we disable above
+CONFIGURE_ARGS +=	-Dlibusb=disabled
+
+# needs udev
+CONFIGURE_ARGS +=	-Dv4l2=disabled
+
+# needs alsa
 CONFIGURE_ARGS +=	-Dsession-managers=[]
+
+# XXX needs O_TMPFILE
+CONFIGURE_ARGS +=	-Dpipewire-v4l2=disabled
+
+# XXX to be revisited; useful to replace the pulseaudio daemon but it seems to
+# depend on systemd activation for now
+CONFIGURE_ARGS +=	-Dlibpulse=disabled
 
 # libintl
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
