@@ -11,6 +11,7 @@
 @bin bin/pw-mon
 @bin bin/pw-profiler
 @bin bin/pw-reserve
+@bin bin/pw-top
 @bin bin/spa-inspect
 @bin bin/spa-json-dump
 @bin bin/spa-monitor

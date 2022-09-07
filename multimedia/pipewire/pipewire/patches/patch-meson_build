@@ -1,7 +1,19 @@
 Index: meson.build
 --- meson.build.orig
 +++ meson.build
-@@ -343,10 +343,13 @@ cdata.set('HAVE_WEBRTC', webrtc_dep.found())
+@@ -267,7 +267,11 @@ endif
+ 
+ summary({'readline (for pw-cli)': readline_dep.found()}, bool_yn: true, section: 'Misc dependencies')
+ cdata.set('HAVE_READLINE', readline_dep.found())
++if host_machine.system() == 'openbsd'
++ncurses_dep = cc.find_library('ncursesw', required : false)
++else
+ ncurses_dep = dependency('ncursesw', required : false)
++endif
+ sndfile_dep = dependency('sndfile', version : '>= 1.0.20', required : get_option('sndfile'))
+ summary({'sndfile': sndfile_dep.found()}, bool_yn: true, section: 'pw-cat/pw-play/pw-dump/filter-chain')
+ cdata.set('HAVE_SNDFILE', sndfile_dep.found())
+@@ -343,10 +347,13 @@ cdata.set('HAVE_WEBRTC', webrtc_dep.found())
  
  # On FreeBSD and MidnightBSD, epoll-shim library is required for eventfd() and timerfd()
  epoll_shim_dep = (host_machine.system() == 'freebsd' or host_machine.system() == 'midnightbsd'

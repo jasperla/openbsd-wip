@@ -1,7 +1,3 @@
-- add ncursesw support to build pw-top; missing pkg-config file, see:
-https://cgit.freebsd.org/ports/tree/multimedia/pipewire/Makefile
-https://cgit.freebsd.org/src/commit/?id=396851c20aeb
-
 - add support for pw_get_application_name in pipewire
 src/pipewire/pipewire.c
 

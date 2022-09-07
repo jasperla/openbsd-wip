@@ -7,9 +7,9 @@ SHARED_LIBS += pipewire-0.3              0.0 # 0.357.0
 
 CATEGORIES=		audio
 
-WANTLIB += c dbus-1 epoll-shim glib-2.0 gobject-2.0 gstallocators-1.0
-WANTLIB += gstaudio-1.0 gstbase-1.0 gstreamer-1.0 gstvideo-1.0
-WANTLIB += m pthread readline
+WANTLIB += c curses dbus-1 epoll-shim glib-2.0 gobject-2.0
+WANTLIB += gstallocators-1.0 gstaudio-1.0 gstbase-1.0 gstreamer-1.0
+WANTLIB += gstvideo-1.0 intl m pthread readline
 
 BUILD_DEPENDS=		devel/gettext,-tools
 
