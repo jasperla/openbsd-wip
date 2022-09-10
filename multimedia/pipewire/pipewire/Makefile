@@ -1,3 +1,6 @@
+# XXX- add support for pw_get_application_name in pipewire                           
+# src/pipewire/pipewire.c
+
 COMMENT=		server and user space API for multimedia pipelines
 
 PW_PROJECT=		pipewire

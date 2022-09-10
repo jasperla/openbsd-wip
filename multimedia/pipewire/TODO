@@ -1,5 +1,0 @@
-- add support for pw_get_application_name in pipewire
-src/pipewire/pipewire.c
-
-- port wireplumber
-https://gitlab.freedesktop.org/pipewire/wireplumber
