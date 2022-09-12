@@ -1,0 +1,5 @@
+known problems so far:
+
+- _hashlib is broken
+- tkinter .so doesn't build
+- readline is broken (same as in 3.10)
