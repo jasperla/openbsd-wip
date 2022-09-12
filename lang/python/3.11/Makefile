@@ -8,10 +8,15 @@ SHARED_LIBS =		python3.11 0.0
 VERSION_SPEC =		>=3.11,<3.12
 PORTROACH =		limit:^3\.11
 
+PSUBDIR =		python/${FULL_VERSION:C/rc.*//}
+
 # <tab><tab># in makefile; probably just a mistake in the rc
 USE_GMAKE =		Yes
 
 # the new PY_CHECK_FUNC somehow thinks we have this
 CONFIGURE_ENV +=	ac_cv_func_ctermid_r=no
+
+LIB_DEPENDS-main +=	security/libb2
+WANTLIB-main +=		b2
 
 .include <bsd.port.mk>
