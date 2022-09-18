@@ -1,0 +1,11 @@
+include/grapheme.h
+@static-lib lib/libgrapheme.a
+@so lib/libgrapheme.so
+@mandir share/man/
+share/man/man3/
+@man share/man/man3/grapheme_decode_utf8.3
+@man share/man/man3/grapheme_encode_utf8.3
+@man share/man/man3/grapheme_is_character_break.3
+@man share/man/man3/grapheme_next_character_break.3
+share/man/man7/
+@man share/man/man7/libgrapheme.7
