@@ -1,0 +1,45 @@
+Index: Makefile
+--- Makefile.orig
++++ Makefile
+@@ -32,7 +32,7 @@ MAN3 =\
+ 
+ MAN7 = man/libgrapheme.7
+ 
+-all: libgrapheme.a libgrapheme.so
++all: libgrapheme.a libgrapheme.so.$(SO_VERSION)
+ 
+ gen/character-prop.o: gen/character-prop.c config.mk gen/util.h
+ gen/character-test.o: gen/character-test.c config.mk gen/util.h
+@@ -81,7 +81,7 @@ libgrapheme.a: $(SRC:=.o)
+ 	$(AR) rc $@ $?
+ 	$(RANLIB) $@
+ 
+-libgrapheme.so: $(SRC:=.o)
++libgrapheme.so.$(SO_VERSION): $(SRC:=.o)
+ 	$(CC) -o $@ -shared $?
+ 
+ test: $(TEST)
+@@ -95,7 +95,7 @@ install: all
+ 	cp -f $(MAN3) "$(DESTDIR)$(MANPREFIX)/man3"
+ 	cp -f $(MAN7) "$(DESTDIR)$(MANPREFIX)/man7"
+ 	cp -f libgrapheme.a "$(DESTDIR)$(LIBPREFIX)"
+-	cp -f libgrapheme.so "$(DESTDIR)$(LIBPREFIX)"
++	cp -f libgrapheme.so.$(SO_VERSION) "$(DESTDIR)$(LIBPREFIX)"
+ 	cp -f grapheme.h "$(DESTDIR)$(INCPREFIX)"
+ 	ldconfig || true
+ 
+@@ -103,12 +103,12 @@ uninstall:
+ 	for m in $(MAN3); do rm -f "$(DESTDIR)$(MANPREFIX)/man3/`basename $$m`"; done
+ 	for m in $(MAN7); do rm -f "$(DESTDIR)$(MANPREFIX)/man7/`basename $$m`"; done
+ 	rm -f "$(DESTDIR)$(LIBPREFIX)/libgrapheme.a"
+-	rm -f "$(DESTDIR)$(LIBPREFIX)/libgrapheme.so"
++	rm -f "$(DESTDIR)$(LIBPREFIX)/libgrapheme.so.$(SO_VERSION)"
+ 	rm -f "$(DESTDIR)$(INCPREFIX)/grapheme.h"
+ 	ldconfig || true
+ 
+ clean:
+-	rm -f $(GEN:=.h) $(GEN:=.o) gen/util.o $(GEN) $(SRC:=.o) src/util.o $(TEST:=.o) test/util.o $(TEST) libgrapheme.a libgrapheme.so
++	rm -f $(GEN:=.h) $(GEN:=.o) gen/util.o $(GEN) $(SRC:=.o) src/util.o $(TEST:=.o) test/util.o $(TEST) libgrapheme.a libgrapheme.so.$(SO_VERSION)
+ 
+ clean-data:
+ 	rm -f $(DATA)
