@@ -1,0 +1,12 @@
+Index: config.mk
+--- config.mk.orig
++++ config.mk
+@@ -7,7 +7,7 @@ VERSION = 1
+ PREFIX = /usr/local
+ INCPREFIX = $(PREFIX)/include
+ LIBPREFIX = $(PREFIX)/lib
+-MANPREFIX = $(PREFIX)/share/man
++MANPREFIX = $(PREFIX)/man
+ 
+ # flags
+ CPPFLAGS = -D_DEFAULT_SOURCE
