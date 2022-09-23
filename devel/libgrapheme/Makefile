@@ -16,6 +16,4 @@ WANTLIB =	c
 
 MAKE_FLAGS=	SO_VERSION="${LIBgrapheme_VERSION}"
 
-NO_TEST=	Yes
-
 .include <bsd.port.mk>
