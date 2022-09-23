@@ -1,4 +1,4 @@
-COMMENT=	UTF8 support library
+COMMENT=	unicode string library
 
 DISTNAME=	libgrapheme-1
 
