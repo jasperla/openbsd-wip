@@ -4,16 +4,19 @@ DISTNAME=	libgrapheme-1
 
 SHARED_LIBS=	grapheme	0.0
 
-CATEGORIES=	devel
+CATEGORIES=	devel textproc
 MASTER_SITES=	https://dl.suckless.org/libgrapheme/
 HOMEPAGE=	https://libs.suckless.org/libgrapheme/
 
 MAINTAINER=	Jan Klemkow <j.klemkow@wemelug.de>
 
+# ISC
 PERMIT_PACKAGE=	Yes
 
-WANTLIB =	c
+FAKE_FLAGS=	MANPREFIX=${PREFIX}/man
 
-MAKE_FLAGS=	SO_VERSION="${LIBgrapheme_VERSION}"
+post-install:
+	mv ${PREFIX}/lib/libgrapheme.so \
+	   ${PREFIX}/lib/libgrapheme.so.${LIBgrapheme_VERSION}
 
 .include <bsd.port.mk>
