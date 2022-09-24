@@ -1,0 +1,12 @@
+Index: C/7zip_gcc_c.mak
+--- C/7zip_gcc_c.mak.orig
++++ C/7zip_gcc_c.mak
+@@ -12,7 +12,7 @@ PROGPATH_STATIC = $(O)/$(PROG)s
+ CFLAGS_BASE_LIST = -c
+ # for ASM file
+ # CFLAGS_BASE_LIST = -S
+-CFLAGS_BASE = $(MY_ARCH_2) -O2 $(CFLAGS_BASE_LIST) -Wall -Werror -Wextra $(CFLAGS_WARN) \
++CFLAGS_BASE = $(MY_ARCH_2) -O2 $(CFLAGS_BASE_LIST) -Wall -Wextra $(CFLAGS_WARN) \
+  -DNDEBUG -D_REENTRANT -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE
+ 
+ 

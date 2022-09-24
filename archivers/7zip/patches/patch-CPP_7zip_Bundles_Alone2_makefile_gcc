@@ -1,0 +1,9 @@
+Index: CPP/7zip/Bundles/Alone2/makefile.gcc
+--- CPP/7zip/Bundles/Alone2/makefile.gcc.orig
++++ CPP/7zip/Bundles/Alone2/makefile.gcc
+@@ -1,4 +1,5 @@
+ PROG = 7zz
++DISABLE_RAR_COMPRESS = 1
+ 
+ # IS_X64 = 1
+ # USE_ASM = 1

@@ -1,0 +1,12 @@
+Index: CPP/7zip/Common/FileStreams.cpp
+--- CPP/7zip/Common/FileStreams.cpp.orig
++++ CPP/7zip/Common/FileStreams.cpp
+@@ -12,7 +12,7 @@
+ #include <pwd.h>
+ 
+ // for major()/minor():
+-#if defined(__FreeBSD__) || defined(BSD)
++#if defined(__FreeBSD__) || defined(__OpenBSD__)
+ #include <sys/types.h>
+ #else
+ #include <sys/sysmacros.h>

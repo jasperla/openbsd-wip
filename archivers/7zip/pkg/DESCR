@@ -1,0 +1,7 @@
+This is the standalone command line 7-zip executable, "7zz", which
+supports many archive and compression formats. Use `$ 7zz` without
+options for a list of subcommands and switches.
+
+Flavors:
+
+unrar   Adds restrictive-licensed unRAR decompression.

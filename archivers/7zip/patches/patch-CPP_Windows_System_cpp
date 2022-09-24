@@ -1,0 +1,21 @@
+Index: CPP/Windows/System.cpp
+--- CPP/Windows/System.cpp.orig
++++ CPP/Windows/System.cpp
+@@ -4,7 +4,7 @@
+ 
+ #ifndef _WIN32
+ #include <unistd.h>
+-#ifdef __APPLE__
++#if defined(__APPLE__) || defined(__OpenBSD__)
+ #include <sys/sysctl.h>
+ #else
+ #include <sys/sysinfo.h>
+@@ -183,7 +183,7 @@ bool GetRamSize(UInt64 &size)
+ {
+   size = (UInt64)(sizeof(size_t)) << 29;
+ 
+-  #ifdef __APPLE__
++  #if defined __APPLE__ || defined __OpenBSD__
+ 
+     #ifdef HW_MEMSIZE
+       uint64_t val = 0; // support 2Gb+ RAM
