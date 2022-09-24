@@ -1,0 +1,15 @@
+Index: include/winnt.h
+--- include/winnt.h.orig
++++ include/winnt.h
+@@ -32,11 +32,9 @@
+ #include <string.h>
+ #endif
+ 
+-
+ #if defined(_MSC_VER) && (defined(__arm__) || defined(__aarch64__))
+ #include <intrin.h>
+ #endif
+-
+ 
+ #ifdef __cplusplus
+ extern "C" {

@@ -1,0 +1,21 @@
+Index: dlls/ntdll/unix/server.c
+--- dlls/ntdll/unix/server.c.orig
++++ dlls/ntdll/unix/server.c
+@@ -1423,6 +1423,7 @@ size_t server_init_process(void)
+     struct sigaction sig_act;
+     size_t info_size;
+     DWORD pid, tid;
++    struct ntdll_thread_data *teb;
+ 
+     server_pid = -1;
+     if (env_socket)
+@@ -1454,7 +1455,8 @@ size_t server_init_process(void)
+     pthread_sigmask( SIG_BLOCK, &server_block_set, NULL );
+ 
+     /* receive the first thread request fd on the main socket */
+-    ntdll_get_thread_data()->request_fd = receive_fd( &version );
++    teb = ntdll_get_thread_data();
++    teb->request_fd = receive_fd( &version );
+ 
+ #ifdef SO_PASSCRED
+     /* now that we hopefully received the server_pid, disable SO_PASSCRED */
