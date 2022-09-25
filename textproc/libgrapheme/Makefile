@@ -4,7 +4,7 @@ DISTNAME=	libgrapheme-1
 
 SHARED_LIBS=	grapheme	0.0
 
-CATEGORIES=	devel textproc
+CATEGORIES=	textproc devel
 MASTER_SITES=	https://dl.suckless.org/libgrapheme/
 HOMEPAGE=	https://libs.suckless.org/libgrapheme/
 
