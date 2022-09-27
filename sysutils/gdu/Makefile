@@ -22,9 +22,9 @@ MODGO_TYPE =	bin
 _BUILD_DATE =	$$(date +%Y-%m-%d)
 _BUILD_USER =	$$(id -u -n)
 
-MODGO_FLAGS +=	-ldflags "-s -w -X '${MODGO_MODNAME}/build.Version=${MODGO_VERSION}' \
-		-X '$(MODGO_MODNAME)/build.Time=${_BUILD_DATE}' \
-		-X '$(MODGO_MODNAME)/build.User=${_BUILD_USER}'"
+MODGO_LDFLAGS +=	-X ${MODGO_MODNAME}/build.Version=${MODGO_VERSION}
+MODGO_LDFLAGS +=	-X $(MODGO_MODNAME)/build.Time=${_BUILD_DATE}
+MODGO_LDFLAGS +=	-X $(MODGO_MODNAME)/build.User=${_BUILD_USER}
 
 .include "modules.inc"
 
