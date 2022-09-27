@@ -1,7 +1,7 @@
 COMMENT =	disk usage analyzer with console interface written in Go
 
 MODGO_MODNAME =	github.com/dundee/gdu/v5
-MODGO_VERSION =	v5.15.0
+MODGO_VERSION =	v5.18.1
 
 DISTNAME =	gdu-${MODGO_VERSION}
 
