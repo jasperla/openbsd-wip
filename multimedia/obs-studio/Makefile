@@ -2,7 +2,7 @@ COMMENT=	software for live-streaming and screen recording
 
 GH_ACCOUNT=	obsproject
 GH_PROJECT=	obs-studio
-GH_TAGNAME=	27.0.0-rc1
+GH_TAGNAME=	27.0.0-rc2
 
 SHARED_LIBS=	obs			0.0 \
 		obs-frontend-api	0.0 \
@@ -41,7 +41,9 @@ LIB_DEPENDS=	audio/fdk-aac \
 		x11/qt5/qtx11extras
 
 CONFIGURE_ARGS =	-DCMAKE_VERBOSE_MAKEFILE=true \
-			-DENABLE_PIPEWIRE=OFF
+			-DENABLE_PIPEWIRE=OFF \
+			-DBUILD_BROWSER=OFF \
+			-DBUILD_VST=OFF
 
 NO_TEST=	Yes
 
