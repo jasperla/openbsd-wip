@@ -29,6 +29,7 @@ include/obs/graphics/matrix4.h
 include/obs/graphics/plane.h
 include/obs/graphics/quat.h
 include/obs/graphics/shader-parser.h
+include/obs/graphics/srgb.h
 include/obs/graphics/vec2.h
 include/obs/graphics/vec3.h
 include/obs/graphics/vec4.h
