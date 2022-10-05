@@ -55,7 +55,9 @@ include/obs/obs-hotkey.h
 include/obs/obs-hotkeys.h
 include/obs/obs-interaction.h
 include/obs/obs-internal.h
+include/obs/obs-missing-files.h
 include/obs/obs-module.h
+include/obs/obs-nix-platform.h
 include/obs/obs-output.h
 include/obs/obs-properties.h
 include/obs/obs-scene.h
@@ -463,9 +465,11 @@ share/obs/obs-plugins/obs-filters/blend_add_filter.effect
 share/obs/obs-plugins/obs-filters/blend_mul_filter.effect
 share/obs/obs-plugins/obs-filters/blend_sub_filter.effect
 share/obs/obs-plugins/obs-filters/chroma_key_filter.effect
+share/obs/obs-plugins/obs-filters/chroma_key_filter_v2.effect
 share/obs/obs-plugins/obs-filters/color_correction_filter.effect
 share/obs/obs-plugins/obs-filters/color_grade_filter.effect
 share/obs/obs-plugins/obs-filters/color_key_filter.effect
+share/obs/obs-plugins/obs-filters/color_key_filter_v2.effect
 share/obs/obs-plugins/obs-filters/crop_filter.effect
 share/obs/obs-plugins/obs-filters/locale/
 share/obs/obs-plugins/obs-filters/locale/ar-SA.ini
@@ -518,6 +522,7 @@ share/obs/obs-plugins/obs-filters/locale/vi-VN.ini
 share/obs/obs-plugins/obs-filters/locale/zh-CN.ini
 share/obs/obs-plugins/obs-filters/locale/zh-TW.ini
 share/obs/obs-plugins/obs-filters/luma_key_filter.effect
+share/obs/obs-plugins/obs-filters/luma_key_filter_v2.effect
 share/obs/obs-plugins/obs-filters/mask_alpha_filter.effect
 share/obs/obs-plugins/obs-filters/mask_color_filter.effect
 share/obs/obs-plugins/obs-filters/sharpness.effect
@@ -718,6 +723,7 @@ share/obs/obs-plugins/obs-transitions/luma_wipes/wipes.json
 share/obs/obs-plugins/obs-transitions/luma_wipes/zigzag-h.png
 share/obs/obs-plugins/obs-transitions/luma_wipes/zigzag-v.png
 share/obs/obs-plugins/obs-transitions/slide_transition.effect
+share/obs/obs-plugins/obs-transitions/stinger_matte_transition.effect
 share/obs/obs-plugins/obs-transitions/swipe_transition.effect
 share/obs/obs-plugins/obs-x264/
 share/obs/obs-plugins/obs-x264/locale/
@@ -1013,10 +1019,12 @@ share/obs/obs-studio/themes/Acri/sizegrip.png
 share/obs/obs-studio/themes/Acri/top_hook.png
 share/obs/obs-studio/themes/Dark/
 share/obs/obs-studio/themes/Dark.qss
+share/obs/obs-studio/themes/Dark/alert.svg
 share/obs/obs-studio/themes/Dark/close.svg
 share/obs/obs-studio/themes/Dark/down.svg
 share/obs/obs-studio/themes/Dark/expand.svg
 share/obs/obs-studio/themes/Dark/filter.svg
+share/obs/obs-studio/themes/Dark/interact.svg
 share/obs/obs-studio/themes/Dark/locked.svg
 share/obs/obs-studio/themes/Dark/media/
 share/obs/obs-studio/themes/Dark/media-pause.svg

@@ -3,7 +3,7 @@ Unbreak build. uint32_t is C99
 Index: libobs/graphics/graphics.h
 --- libobs/graphics/graphics.h.orig
 +++ libobs/graphics/graphics.h
-@@ -474,7 +474,7 @@ struct gs_window {
+@@ -483,7 +483,7 @@ struct gs_window {
  	void *hwnd;
  #elif defined(__APPLE__)
  	__unsafe_unretained id view;

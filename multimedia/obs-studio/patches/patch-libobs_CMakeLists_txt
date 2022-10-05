@@ -1,0 +1,20 @@
+We don't have libdl
+Index: libobs/CMakeLists.txt
+--- libobs/CMakeLists.txt.orig
++++ libobs/CMakeLists.txt
+@@ -22,7 +22,6 @@ if(UNIX)
+ 		find_package(XCB OPTIONAL_COMPONENTS XINPUT)
+ 		find_package(XCB)
+ 		find_library(M_LIBRARY NAMES m)
+-		find_library(DL_LIBRARY NAMES dl)
+ 		if (XCB_XINPUT_FOUND)
+ 			set(USE_XINPUT "1")
+ 		else()
+@@ -242,7 +241,6 @@ elseif(UNIX)
+ 		${X11_XCB_DEFINITIONS})
+ 	set(libobs_PLATFORM_DEPS
+ 		${libobs_PLATFORM_DEPS}
+-		${DL_LIBRARY}
+ 		${M_LIBRARY}
+ 		${X11_X11_LIB}
+ 		${XCB_LIBRARIES}
