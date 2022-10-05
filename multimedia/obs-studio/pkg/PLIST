@@ -111,6 +111,7 @@ include/obs/util/text-lookup.h
 include/obs/util/threading-posix.h
 include/obs/util/threading.h
 include/obs/util/utf8.h
+include/obs/util/util.hpp
 include/obs/util/util_uint128.h
 include/obs/util/util_uint64.h
 lib/cmake/LibObs/
