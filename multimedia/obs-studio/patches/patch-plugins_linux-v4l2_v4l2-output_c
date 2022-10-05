@@ -17,12 +17,3 @@ Index: plugins/linux-v4l2/v4l2-output.c
  #include <sys/ioctl.h>
  #include <fcntl.h>
  #include <unistd.h>
-@@ -185,7 +191,7 @@ static bool virtualcam_start(void *data)
- 			return false;
- 	}
- 
--	n = scandir("/dev", &list, scanfilter, versionsort);
-+	n = scandir("/dev", &list, scanfilter, alphasort);
- 	if (n == -1)
- 		return false;
- 
