@@ -3,7 +3,7 @@ Unbreak build. uint32_t is C99
 Index: libobs/graphics/graphics.h
 --- libobs/graphics/graphics.h.orig
 +++ libobs/graphics/graphics.h
-@@ -491,7 +491,7 @@ struct gs_window {
+@@ -492,7 +492,7 @@ struct gs_window {
  	void *hwnd;
  #elif defined(__APPLE__)
  	__unsafe_unretained id view;
@@ -12,7 +12,7 @@ Index: libobs/graphics/graphics.h
  	/* I'm not sure how portable defining id to uint32_t is. */
  	uint32_t id;
  	void *display;
-@@ -935,7 +935,7 @@ EXPORT gs_stagesurf_t *gs_stagesurface_create_nv12(uin
+@@ -936,7 +936,7 @@ EXPORT gs_stagesurf_t *gs_stagesurface_create_nv12(uin
  EXPORT void gs_register_loss_callbacks(const struct gs_device_loss *callbacks);
  EXPORT void gs_unregister_loss_callbacks(void *data);
  

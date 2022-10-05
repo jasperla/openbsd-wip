@@ -2,7 +2,7 @@ COMMENT=	software for live-streaming and screen recording
 
 GH_ACCOUNT=	obsproject
 GH_PROJECT=	obs-studio
-GH_TAGNAME=	27.2.0-beta4
+GH_TAGNAME=	27.2.0-rc1
 
 SHARED_LIBS=	obs			0.0 \
 		obs-frontend-api	0.0 \
