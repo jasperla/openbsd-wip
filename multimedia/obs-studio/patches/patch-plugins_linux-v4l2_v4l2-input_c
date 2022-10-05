@@ -15,7 +15,7 @@ Index: plugins/linux-v4l2/v4l2-input.c
  #include <libv4l2.h>
  
  #include <util/threading.h>
-@@ -356,7 +360,7 @@ static void v4l2_device_list(obs_property_t *prop, obs
+@@ -349,7 +353,7 @@ static void v4l2_device_list(obs_property_t *prop, obs
  	size_t cur_device_index;
  	const char *cur_device_name;
  
@@ -24,7 +24,7 @@ Index: plugins/linux-v4l2/v4l2-input.c
  	dirp = opendir("/dev");
  #else
  	dirp = opendir("/sys/class/video4linux");
-@@ -376,8 +380,8 @@ static void v4l2_device_list(obs_property_t *prop, obs
+@@ -369,8 +373,8 @@ static void v4l2_device_list(obs_property_t *prop, obs
  		uint32_t caps;
  		struct v4l2_capability video_cap;
  
