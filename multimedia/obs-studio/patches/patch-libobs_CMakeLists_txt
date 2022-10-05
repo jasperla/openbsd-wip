@@ -10,7 +10,7 @@ Index: libobs/CMakeLists.txt
  		if (XCB_XINPUT_FOUND)
  			set(USE_XINPUT "1")
  		else()
-@@ -242,7 +241,6 @@ elseif(UNIX)
+@@ -243,7 +242,6 @@ elseif(UNIX)
  		${X11_XCB_DEFINITIONS})
  	set(libobs_PLATFORM_DEPS
  		${libobs_PLATFORM_DEPS}
