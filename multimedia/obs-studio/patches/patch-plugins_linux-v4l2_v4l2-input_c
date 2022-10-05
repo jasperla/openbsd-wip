@@ -1,4 +1,3 @@
-$OpenBSD$
 Unbreak build and allow to find V4L2 device at runtime.
 
 Index: plugins/linux-v4l2/v4l2-input.c

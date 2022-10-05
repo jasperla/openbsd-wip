@@ -1,4 +1,3 @@
-$OpenBSD$
 Add support for V4L2.
 
 Index: plugins/CMakeLists.txt

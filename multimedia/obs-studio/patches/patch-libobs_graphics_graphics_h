@@ -1,4 +1,3 @@
-$OpenBSD$
 Unbreak build. uint32_t is C99
 
 Index: libobs/graphics/graphics.h

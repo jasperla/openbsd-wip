@@ -1,5 +1,3 @@
-$OpenBSD$
-
 Flip the default setting so that jackd is started automatically. Otherwise
 obs is unable to connect to the JACK socket, as a result it doesn't display
 the settings page, so you can't tell it to auto-start JACK.
