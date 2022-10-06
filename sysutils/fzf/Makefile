@@ -2,9 +2,8 @@ COMMENT =	command-line fuzzy finder
 
 MODGO_MODNAME = github.com/junegunn/fzf
 
-V =	0.33.0
+V =	0.34.0
 DISTNAME =	fzf-${V}
-COMMIT_ID =	e03ac31
 
 CATEGORIES =	sysutils
 
@@ -19,8 +18,8 @@ WANTLIB +=	c pthread
 MODULES =	lang/go
 MODGO_TYPE =	bin
 
-MODGO_FLAGS +=	-a -ldflags "-s -w -X main.version=${V} \
-		-X main.revision=git-${COMMIT_ID}"
+MODGO_LDFLAGS +=	-X main.version=${V}
+MODGO_LDFLAGS +=	-X main.revision=""
 
 RUN_DEPENDS =	shells/bash
 
