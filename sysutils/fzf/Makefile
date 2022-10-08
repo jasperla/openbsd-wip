@@ -1,6 +1,7 @@
 COMMENT =	command-line fuzzy finder
 
 MODGO_MODNAME = github.com/junegunn/fzf
+MODGO_VERSION =	v0.0.0-20220928142231-04d0b0223fd6
 
 V =	0.34.0
 DISTNAME =	fzf-${V}
@@ -9,10 +10,11 @@ CATEGORIES =	sysutils
 
 HOMEPAGE =	https://github.com/junegunn/fzf
 
-MAINTAINER =	Laurent Cheylus <foxy@free.fr>
+MAINTAINER =	Edd Barrett <edd@openbsd.org>
 # BSD
 PERMIT_PACKAGE =	Yes
 
+# uses pledge()
 WANTLIB +=	c pthread
 
 MODULES =	lang/go
@@ -22,8 +24,6 @@ MODGO_LDFLAGS +=	-X main.version=${V}
 MODGO_LDFLAGS +=	-X main.revision=""
 
 RUN_DEPENDS =	shells/bash
-
-.include "modules.inc"
 
 # for patch to apply
 WRKDIST =	${WRKOBJDIR}/${DISTNAME}/${MODGO_MODNAME}@${MODGO_VERSION}
@@ -66,5 +66,7 @@ do-install:
 	${INSTALL_DATA_DIR} ${VIM_DOC}
 	${INSTALL_DATA} ${WRKSRC}/plugin/fzf.vim ${VIM_PLUGIN}/fzf.vim
 	${INSTALL_DATA} ${WRKSRC}/doc/fzf.txt ${VIM_DOC}/fzf.txt
+
+.include "modules.inc"
 
 .include <bsd.port.mk>

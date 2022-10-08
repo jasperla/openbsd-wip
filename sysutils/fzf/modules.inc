@@ -1,5 +1,3 @@
-MODGO_VERSION =	v0.0.0-20220928142231-04d0b0223fd6
-
 MODGO_MODULES =	\
 	github.com/gdamore/encoding		 v1.0.0 \
 	github.com/gdamore/tcell/v2		 v2.5.3 \
