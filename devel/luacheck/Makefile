@@ -3,9 +3,9 @@ CATEGORIES=	devel
 
 GH_ACCOUNT=	lunarmodules
 GH_PROJECT=	luacheck
-GH_TAGNAME=	v0.26.1
+GH_TAGNAME=	v1.0.0
 
-MAINTAINER=	Laurent Cheylus <foxy@free.fr>
+MAINTAINER=	Jonathan Gray <jsg@openbsd.org>
 
 BUILD_DEPENDS=	textproc/py-sphinx,python3>=4.0.2 \
 		textproc/py-sphinx_rtd_theme,python3>=0.4.3

@@ -62,6 +62,7 @@ share/lua/${MODLUA_VERSION}/luacheck/builtin_standards/
 share/lua/${MODLUA_VERSION}/luacheck/builtin_standards/init.lua
 share/lua/${MODLUA_VERSION}/luacheck/builtin_standards/love.lua
 share/lua/${MODLUA_VERSION}/luacheck/builtin_standards/ngx.lua
+share/lua/${MODLUA_VERSION}/luacheck/builtin_standards/playdate.lua
 share/lua/${MODLUA_VERSION}/luacheck/cache.lua
 share/lua/${MODLUA_VERSION}/luacheck/check.lua
 share/lua/${MODLUA_VERSION}/luacheck/check_state.lua
