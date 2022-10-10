@@ -1,5 +1,3 @@
-MODGO_VERSION =	v0.16.4
-
 MODGO_MODULES =	\
 	4d63.com/gochecknoglobals					 v0.1.0 \
 	atomicgo.dev/cursor						 v0.1.1 \
