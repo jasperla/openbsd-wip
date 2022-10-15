@@ -57,7 +57,6 @@ share/doc/luacheck/search.html
 share/doc/luacheck/searchindex.js
 share/doc/luacheck/warnings.html
 share/lua/${MODLUA_VERSION}/luacheck/
-share/lua/${MODLUA_VERSION}/luacheck/argparse.lua
 share/lua/${MODLUA_VERSION}/luacheck/builtin_standards/
 share/lua/${MODLUA_VERSION}/luacheck/builtin_standards/init.lua
 share/lua/${MODLUA_VERSION}/luacheck/builtin_standards/love.lua
