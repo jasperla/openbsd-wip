@@ -1,7 +1,7 @@
-$OpenBSD$
---- lib/Interprocess.h.orig	Mon Mar 14 15:28:17 2016
-+++ lib/Interprocess.h	Sat Apr  2 02:34:56 2016
-@@ -1,6 +1,7 @@
+Index: lib/Interprocess.h
+--- lib/Interprocess.h.orig
++++ lib/Interprocess.h
+@@ -10,6 +10,7 @@
  #pragma once
  
  #include <boost/interprocess/sync/scoped_lock.hpp>
@@ -9,9 +9,12 @@ $OpenBSD$
  #include <boost/interprocess/sync/interprocess_mutex.hpp>
  #include <boost/interprocess/sync/interprocess_condition.hpp>
  #include <boost/interprocess/mapped_region.hpp>
-@@ -55,4 +56,4 @@ struct SharedMem 
- 		delete mr;
- 		boost::interprocess::shared_memory_object::remove("vcmi_memory");
- 	}
--};
+@@ -64,7 +65,7 @@ struct SharedMemory
+ 		{
+ 			//if the application has previously crashed, the memory may not have been removed. to avoid problems - try to destroy it
+ 			boost::interprocess::shared_memory_object::remove(name.c_str());
+-		}
 +};
+ 		smo = boost::interprocess::shared_memory_object(boost::interprocess::open_or_create, name.c_str(), boost::interprocess::read_write);
+ 		smo.truncate(sizeof(ServerReady));
+ 		mr = new boost::interprocess::mapped_region(smo,boost::interprocess::read_write);
