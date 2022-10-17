@@ -1,0 +1,56 @@
+Index: lib/CModHandler.cpp
+--- lib/CModHandler.cpp.orig
++++ lib/CModHandler.cpp
+@@ -543,42 +543,42 @@ CModInfo::Version CModInfo::Version::GameVersion()
+ 
+ CModInfo::Version CModInfo::Version::fromString(std::string from)
+ {
+-	int major = 0, minor = 0, patch = 0;
++	int vcmi_major = 0, vcmi_minor = 0, vcmi_patch = 0;
+ 	try
+ 	{
+ 		auto pointPos = from.find('.');
+-		major = std::stoi(from.substr(0, pointPos));
++		vcmi_major = std::stoi(from.substr(0, pointPos));
+ 		if(pointPos != std::string::npos)
+ 		{
+ 			from = from.substr(pointPos + 1);
+ 			pointPos = from.find('.');
+-			minor = std::stoi(from.substr(0, pointPos));
++			vcmi_minor = std::stoi(from.substr(0, pointPos));
+ 			if(pointPos != std::string::npos)
+-				patch = std::stoi(from.substr(pointPos + 1));
++				vcmi_patch = std::stoi(from.substr(pointPos + 1));
+ 		}
+ 	}
+ 	catch(const std::invalid_argument & e)
+ 	{
+ 		return Version();
+ 	}
+-	return Version(major, minor, patch);
++	return Version(vcmi_major, vcmi_minor, vcmi_patch);
+ }
+ 
+ std::string CModInfo::Version::toString() const
+ {
+-	return std::to_string(major) + '.' + std::to_string(minor) + '.' + std::to_string(patch);
++	return std::to_string(vcmi_major) + '.' + std::to_string(vcmi_minor) + '.' + std::to_string(vcmi_patch);
+ }
+ 
+ bool CModInfo::Version::compatible(const Version & other, bool checkMinor, bool checkPatch) const
+ {
+-	return  (major == other.major &&
+-			(!checkMinor || minor >= other.minor) &&
+-			(!checkPatch || minor > other.minor || (minor == other.minor && patch >= other.patch)));
++	return  (vcmi_major == other.vcmi_major &&
++			(!checkMinor || vcmi_minor >= other.vcmi_minor) &&
++			(!checkPatch || vcmi_minor > other.vcmi_minor || (vcmi_minor == other.vcmi_minor && vcmi_patch >= other.vcmi_patch)));
+ }
+ 
+ bool CModInfo::Version::isNull() const
+ {
+-	return major == 0 && minor == 0 && patch == 0;
++	return vcmi_major == 0 && vcmi_minor == 0 && vcmi_patch == 0;
+ }
+ 
+ CModInfo::CModInfo():

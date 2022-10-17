@@ -27,6 +27,7 @@ WANTLIB += ${COMPILER_LIBCXX}
 MODULES =		devel/cmake
 
 RUN_DEPENDS =		devel/desktop-file-utils \
+			shells/bash \
 			x11/gtk+3,-guic
 LIB_DEPENDS =		archivers/minizip \
 			devel/boost \
@@ -49,5 +50,7 @@ NO_TEST =		Yes
 FIX_CRLF_FILES = 	Global.h lib/CStopWatch.h lib/Interprocess.h \
 			lib/CModHandler.h lib/CModHandler.cpp \
 			server/CVCMIServer.cpp
+post-extract:
+	sed -i 's,/bin/bash,${LOCALBASE}/bin/bash,' ${WRKSRC}/vcmibuilder
 
 .include <bsd.port.mk>

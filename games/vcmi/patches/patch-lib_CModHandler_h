@@ -1,0 +1,33 @@
+Index: lib/CModHandler.h
+--- lib/CModHandler.h.orig
++++ lib/CModHandler.h
+@@ -182,12 +182,12 @@ class DLL_LINKAGE CModInfo (public)
+ 	
+ 	struct Version
+ 	{
+-		int major = 0;
+-		int minor = 0;
+-		int patch = 0;
++		int vcmi_major = 0;
++		int vcmi_minor = 0;
++		int vcmi_patch = 0;
+ 		
+ 		Version() = default;
+-		Version(int mj, int mi, int p): major(mj), minor(mi), patch(p) {}
++		Version(int mj, int mi, int p): vcmi_major(mj), vcmi_minor(mi), vcmi_patch(p) {}
+ 		
+ 		static Version GameVersion();
+ 		static Version fromString(std::string from);
+@@ -198,9 +198,9 @@ class DLL_LINKAGE CModInfo (public)
+ 		
+ 		template <typename Handler> void serialize(Handler &h, const int version)
+ 		{
+-			h & major;
+-			h & minor;
+-			h & patch;
++			h & vcmi_major;
++			h & vcmi_minor;
++			h & vcmi_patch;
+ 		}
+ 	};
+ 
