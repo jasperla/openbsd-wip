@@ -24,6 +24,9 @@ WANTLIB += boost_filesystem-mt boost_locale-mt boost_program_options-mt
 WANTLIB += boost_thread-mt c m minizip pthread swscale tbb z
 WANTLIB += ${COMPILER_LIBCXX}
 
+# C++14
+COMPILER = 		base-clang ports-gcc
+
 MODULES =		devel/cmake
 
 RUN_DEPENDS =		devel/desktop-file-utils \
@@ -41,6 +44,7 @@ LIB_DEPENDS =		archivers/minizip \
 CONFIGURE_ARGS +=	-DCMAKE_CXX_FLAGS="${CXXFLAGS} -pthread -DUSE_FILE32API" \
 			-DENABLE_LAUNCHER=OFF \
 			-DENABLE_TEST=OFF \
+			-DLIB_DIR=${PREFIX}/lib/ \
 			-Wno-dev
 
 CXXFLAGS +=		"-I${X11BASE}/include"

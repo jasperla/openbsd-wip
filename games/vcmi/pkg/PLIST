@@ -1,6 +1,7 @@
 bin/vcmibuilder
 @bin bin/vcmiclient
 @bin bin/vcmiserver
+@lib lib/libvcmi.so.${LIBvcmi_VERSION}
 lib/vcmi/
 lib/vcmi/AI/
 @so lib/vcmi/AI/libBattleAI.so
@@ -8,7 +9,6 @@ lib/vcmi/AI/
 @so lib/vcmi/AI/libNullkiller.so
 @so lib/vcmi/AI/libStupidAI.so
 @so lib/vcmi/AI/libVCAI.so
-@lib lib/vcmi/libvcmi.so.${LIBvcmi_VERSION}
 share/applications/vcmiclient.desktop
 share/doc/pkg-readmes/${PKGSTEM}
 share/icons/hicolor/256x256/apps/vcmiclient.png
@@ -194,9 +194,5 @@ share/vcmi/config/startres.json
 share/vcmi/config/terrainViewPatterns.json
 share/vcmi/config/terrains.json
 share/vcmi/config/translate.json
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @tag update-desktop-database
 @tag gtk-update-icon-cache %D/share/icons/hicolor

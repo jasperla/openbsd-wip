@@ -1,0 +1,12 @@
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -414,7 +414,7 @@ if(APPLE_IOS)
+ 	set(AI_LIB_DIR "${LIB_DIR}")
+ 	set(SCRIPTING_LIB_DIR "${LIB_DIR}")
+ else()
+-	set(AI_LIB_DIR "${LIB_DIR}/AI")
++	set(AI_LIB_DIR "${LIB_DIR}/vcmi/AI")
+ 	set(SCRIPTING_LIB_DIR "${LIB_DIR}/scripting")
+ endif()
+ 

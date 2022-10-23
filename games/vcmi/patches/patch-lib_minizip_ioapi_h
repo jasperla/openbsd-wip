@@ -1,4 +1,3 @@
-$OpenBSD$
 --- lib/minizip/ioapi.h.orig	Mon Nov  4 12:25:28 2013
 +++ lib/minizip/ioapi.h	Mon Nov  4 12:26:24 2013
 @@ -29,7 +29,7 @@
