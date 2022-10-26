@@ -1,9 +1,7 @@
-# $OpenBSD$
-
 COMMENT-main = 		real-time strategy game
 COMMENT-data = 		7kaa data files
 
-V = 			2.15.4
+V = 			2.15.5
 DISTNAME = 		7kaa-${V}
 PKGNAME-main = 		${DISTNAME}
 PKGNAME-data = 		7kaa-data-${V}
