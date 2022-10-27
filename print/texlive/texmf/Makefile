@@ -32,7 +32,6 @@ BUILD_DEPENDS =		archivers/xz
 
 # We dont use auto module deps for these, as MODULES is not per SUBPACKAGE
 MODULES +=		lang/lua lang/ruby lang/python x11/tk perl
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 MODLUA_RUNDEP =		No
 MODLUA_BUILDDEP =	No
 MODRUBY_BUILDDEP =	No

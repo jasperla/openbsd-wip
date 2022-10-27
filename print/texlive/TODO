@@ -1,0 +1,13 @@
+base:
+ - check if SHARED_LIBS need bump
+
+
+general:
+ - test more exotic typesetters:
+   - xelatex
+   - a lua one
+   - context
+
+ - check a bulk still works.
+
+ - don't forget the port that needed a fix.
