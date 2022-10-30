@@ -2,8 +2,6 @@ COMMENT=		minimalist IRC client
 
 DISTNAME=		ii-2.0
 CATEGORIES=		net
-FIX_EXTRACT_PERMISSIONS=Yes
-
 
 HOMEPAGE=		http://tools.suckless.org/ii
 MASTER_SITES=		http://dl.suckless.org/tools/
