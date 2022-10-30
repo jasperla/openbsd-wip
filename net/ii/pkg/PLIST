@@ -1,0 +1,6 @@
+@bin bin/ii
+@man man/man1/ii.1
+share/doc/ii/
+share/doc/ii/FAQ
+share/doc/ii/README
+share/doc/ii/query.sh
