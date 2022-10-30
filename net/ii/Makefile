@@ -11,7 +11,7 @@ MASTER_SITES1=		${HOMEPAGE}/patches/ucspi/
 MAINTAINER=		Gleydson Soares <gsoares@openbsd.org>
 
 # MIT/X
-PERMIT_PACKAGE=	Yes
+PERMIT_PACKAGE=		Yes
 
 # uses pledge()
 WANTLIB=		c
