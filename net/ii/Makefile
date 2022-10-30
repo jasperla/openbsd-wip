@@ -1,7 +1,6 @@
 COMMENT=		minimalist IRC client
 
-DISTNAME=		ii-1.7
-REVISION=		3
+DISTNAME=		ii-2.0
 CATEGORIES=		net
 FIX_EXTRACT_PERMISSIONS=Yes
 
@@ -41,11 +40,6 @@ WANTLIB+=		crypto ssl
 SUPDISTFILES+=		${DISTNAME}-ssl.diff:0
 SUPDISTFILES+=		${DISTNAME}-ucspi.diff:0
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/ii ${PREFIX}/bin
-	${INSTALL_DATA_DIR} ${PREFIX}/man/man1/
-	${INSTALL_MAN} ${WRKSRC}/ii.1 ${PREFIX}/man/man1/
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/ii
-	${INSTALL_DATA} ${WRKSRC}/{README,FAQ,query.sh} ${PREFIX}/share/doc/ii
+FAKE_FLAGS=		MANPREFIX=${PREFIX}/man
 
 .include <bsd.port.mk>
