@@ -1,8 +1,7 @@
 COMMENT =	post-modern modal text editor
 
-GH_ACCOUNT =	helix-editor
-GH_PROJECT =	helix
-GH_TAGNAME =	22.08.1
+VER =		22.08.1
+DISTNAME =	helix-${VER}
 
 CATEGORIES =	editors
 
@@ -15,16 +14,22 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB +=	c c++abi m pthread
 
-# as devel/cargo MODULES adds DISTFILES, GH_* didn't
-DISTFILES +=	${DISTNAME}${EXTRACT_SUFX}
+MASTER_SITES =	https://github.com/helix-editor/helix/releases/download/${VER}/
+
+EXTRACT_SUFX =	.tar.xz
+DISTFILES +=	${DISTNAME}-source${EXTRACT_SUFX}
+
+# avoid WRKDIST = ${WRKDIR}
+EXTRACT_CASES= *.tar.xz) \
+	xz -dc ${FULLDISTDIR}/$$archive | ${TAR} xf - -C ${WRKDIST};;
 
 MODULES =	devel/cargo
 
-.include "crates.inc"
-
 CONFIGURE_STYLE =       cargo
-
 SEPARATE_BUILD =        Yes
+
+pre-extract:
+	@mkdir -p ${WRKDIST}
 
 post-patch:
 	grep -F -Rl '%%DATADIR%%' ${WRKSRC} | xargs sed -i \
@@ -33,10 +38,21 @@ post-patch:
 do-install:
 	${INSTALL_PROGRAM} ${MODCARGO_TARGET_DIR}/release/hx ${PREFIX}/bin/
 
-# TODO
-# post-install:
-# Fetch grammars with `hx --grammar fetch`
-# Build grammars with `hx --grammer build`
-# instalL *.so from runtime/grammars/ => ${PREFIX}/share/helix/runtime/
+	${INSTALL_DATA_DIR} ${PREFIX}/share/helix/runtime/themes
+	${INSTALL_DATA} ${WRKSRC}/runtime/themes/* \
+		${PREFIX}/share/helix/runtime/themes
+
+	${INSTALL_DATA_DIR} ${PREFIX}/share/helix/runtime/queries
+	find ${WRKSRC}/runtime/queries/ -type d -exec \
+		cp -a {} ${PREFIX}/share/helix/runtime/queries \;
+
+	${INSTALL_DATA_DIR} ${PREFIX}/share/helix/runtime/grammars
+	find ${WRKSRC}/runtime/grammars/ -type f -name '*.so' -exec \
+		cp -a {} ${PREFIX}/share/helix/runtime/grammars \;
+
+	${INSTALL_DATA} ${WRKSRC}/runtime/tutor.txt \
+		${PREFIX}/share/helix/runtime/tutor.txt
+
+.include "crates.inc"
 
 .include <bsd.port.mk>

@@ -144,7 +144,7 @@ SHA256 (cargo/windows_i686_gnu-0.36.1.tar.gz) = GA5szwHa9MQmuEbfxm2x/FGPB0uqeTqn
 SHA256 (cargo/windows_i686_msvc-0.36.1.tar.gz) = 4ueRcUiygS0e6vrrIql+SBPfpgo/j3jr4gS8yI8S8CQ=
 SHA256 (cargo/windows_x86_64_gnu-0.36.1.tar.gz) = Tc0XG4d2xBuXUh5doSei2GrSgBFIB9Cyqx5GK8dk2eE=
 SHA256 (cargo/windows_x86_64_msvc-0.36.1.tar.gz) = yBHKSoyFPvQgq9hZK6U927rJBBD6tpA7PnmXKmMfdoA=
-SHA256 (helix-22.08.1.tar.gz) = ybGE1TurUeep/oHcjBkahTF3q7pn6kCOlok38xtQtFo=
+SHA256 (helix-22.08.1-source.tar.xz) = liz7kTtAtrXjiW/OXVJZDYP6Lpw137pF/fomutpU80M=
 SIZE (cargo/aho-corasick-0.7.18.tar.gz) = 112923
 SIZE (cargo/android_system_properties-0.1.5.tar.gz) = 5243
 SIZE (cargo/anyhow-1.0.63.tar.gz) = 43461
@@ -291,4 +291,4 @@ SIZE (cargo/windows_i686_gnu-0.36.1.tar.gz) = 818115
 SIZE (cargo/windows_i686_msvc-0.36.1.tar.gz) = 724575
 SIZE (cargo/windows_x86_64_gnu-0.36.1.tar.gz) = 790934
 SIZE (cargo/windows_x86_64_msvc-0.36.1.tar.gz) = 661999
-SIZE (helix-22.08.1.tar.gz) = 1810204
+SIZE (helix-22.08.1-source.tar.xz) = 76642336
