@@ -6,6 +6,7 @@ CATEGORIES=		net
 HOMEPAGE=		http://tools.suckless.org/ii
 MASTER_SITES=		http://dl.suckless.org/tools/
 MASTER_SITES0=		${HOMEPAGE}/patches/tls/
+MASTER_SITES1=		${HOMEPAGE}/patches/ucspi/
 
 MAINTAINER=		Gleydson Soares <gsoares@openbsd.org>
 
@@ -25,8 +26,7 @@ PATCH_DIST_STRIP=	-p1
 
 .if ${FLAVOR} == "ucspi"
 # adds unix client server programming interface support
-PATCHFILES+=		${DISTNAME}-ucspi.diff:0
-PATCH_LIST=		patch-* ucspipatch-*
+PATCHFILES+=		${DISTNAME}-ucspi.diff:1
 RUN_DEPENDS=		net/ucspi-tools
 .else
 # adds tls encryption support
@@ -35,7 +35,7 @@ WANTLIB+=		crypto tls
 .endif
 
 SUPDISTFILES+=		${DISTNAME}-tls.diff:0
-SUPDISTFILES+=		${DISTNAME}-ucspi.diff:0
+SUPDISTFILES+=		${DISTNAME}-ucspi.diff:1
 
 FAKE_FLAGS=		MANPREFIX=${PREFIX}/man
 
