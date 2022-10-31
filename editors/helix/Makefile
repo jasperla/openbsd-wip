@@ -12,7 +12,7 @@ MAINTAINER =	Laurent Cheylus <foxy@free.fr>
 # MPL-2.0
 PERMIT_PACKAGE =	Yes
 
-WANTLIB +=	c c++abi m pthread
+WANTLIB +=	${COMPILER_LIBCXX} c c++abi m pthread
 
 MASTER_SITES =	https://github.com/helix-editor/helix/releases/download/${VER}/
 
