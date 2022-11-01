@@ -1,7 +1,8 @@
-A Kakoune / Neovim inspired editor, written in Rust.
+A Kakoune / Neovim inspired text editor.
 
 Features:
   - Vim-like modal editing
   - Multiple selections
   - Built-in language server support
-  - Smart, incremental syntax highlighting and code editing via tree-sitter
+  - Smart, incremental syntax highlighting and code editing
+  via tree-sitter

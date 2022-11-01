@@ -1,4 +1,4 @@
-COMMENT =	post-modern modal text editor
+COMMENT =	modal text editor
 
 VER =		22.08.1
 DISTNAME =	helix-${VER}
@@ -51,7 +51,8 @@ do-install:
 		cp -a {} ${PREFIX}/share/helix/runtime/grammars \;
 
 	${INSTALL_DATA} ${WRKSRC}/runtime/tutor.txt \
-		${PREFIX}/share/helix/runtime/tutor.txt
+		${PREFIX}/share/helix/runtime
+	${INSTALL_DATA} ${WRKSRC}/languages.toml ${PREFIX}/share/helix
 
 .include "crates.inc"
 

@@ -1,5 +1,6 @@
 @bin bin/hx
 share/helix/
+share/helix/languages.toml
 share/helix/runtime/
 share/helix/runtime/grammars/
 @so share/helix/runtime/grammars/awk.so
