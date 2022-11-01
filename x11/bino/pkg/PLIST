@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v$
 @bin bin/bino
 @info info/bino.info
 @man man/man1/bino.1
@@ -55,7 +54,5 @@ share/locale/ru/LC_MESSAGES/bino.mo
 share/locale/zh_cn/
 share/locale/zh_cn/LC_MESSAGES/
 share/locale/zh_cn/LC_MESSAGES/bino.mo
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@tag update-desktop-database
+@tag gtk-update-icon-cache %D/share/icons/hicolor
