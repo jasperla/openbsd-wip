@@ -14,9 +14,8 @@ PKGNAME-synctex =	texlive_synctex-${V}
 DISTFILES =		${DISTNAME}${EXTRACT_SUFX} \
 			texlive-${DIST_V}-extra${EXTRACT_SUFX}
 
-# XXX check if these need to be bumped.
 SHARED_LIBS =		kpathsea	9.0 # 9.2
-SHARED_LIBS +=		ptexenc		5.3 # 4.8
+SHARED_LIBS +=		ptexenc		6.0 # 5.0
 SHARED_LIBS +=		synctex		3.0 # 2.0
 SHARED_LIBS +=		texlua53        0.1 # 8.5
 
