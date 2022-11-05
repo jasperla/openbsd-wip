@@ -3,12 +3,12 @@ COMMENT=		minimalist IRC client
 DISTNAME=		ii-2.0
 CATEGORIES=		net
 
-HOMEPAGE=		http://tools.suckless.org/ii
-MASTER_SITES=		http://dl.suckless.org/tools/
+HOMEPAGE=		https://tools.suckless.org/ii
+MASTER_SITES=		https://dl.suckless.org/tools/
 MASTER_SITES0=		${HOMEPAGE}/patches/tls/
 MASTER_SITES1=		${HOMEPAGE}/patches/ucspi/
 
-MAINTAINER=		Gleydson Soares <gsoares@openbsd.org>
+MAINTAINER=		Jan Klemkow <j.klemkow@wemelug.de>
 
 # MIT/X
 PERMIT_PACKAGE=		Yes
@@ -21,7 +21,7 @@ NO_TEST=		Yes
 FLAVORS=		ucspi
 FLAVOR?=
 
-# patches from http://tools.suckless.org/ii/patches
+# patches from https://tools.suckless.org/ii/patches
 PATCH_DIST_STRIP=	-p1
 
 .if ${FLAVOR} == "ucspi"
@@ -31,7 +31,7 @@ RUN_DEPENDS=		net/ucspi-tools
 .else
 # adds tls encryption support
 PATCHFILES+=		${DISTNAME}-tls.diff:0
-WANTLIB+=		crypto tls
+WANTLIB+=		tls
 .endif
 
 SUPDISTFILES+=		${DISTNAME}-tls.diff:0
