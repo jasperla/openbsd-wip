@@ -21,12 +21,12 @@ SHARED_LIBS +=		texlua53        0.1 # 8.5
 
 WANTLIB += ${COMPILER_LIBCXX} ICE SM X11 Xau Xaw Xdmcp Xext Xi
 WANTLIB += Xmu Xpm Xrender Xt avahi-client avahi-common c cairo
-WANTLIB += cups dbus-1 expat fontconfig freetype gd glib-2.0
-WANTLIB += graphite2 gs harfbuzz iconv icudata crypto ssl
-WANTLIB += icui18n icuio icuuc ijs intl jbig2dec jpeg kpathsea
-WANTLIB += lzma m paper pcre pixman-1 png
-WANTLIB += tiff webp xcb xcb-render xcb-shm z zstd zzip
-WANTLIB += execinfo idn openjp2
+WANTLIB += crypto cups dbus-1 execinfo expat fontconfig freetype
+WANTLIB += gd glib-2.0 graphite2 gs harfbuzz iconv icudata icui18n
+WANTLIB += icuio icuuc idn ijs intl jbig2dec jpeg kpathsea lzma
+WANTLIB += m openjp2 paper pcre2-8 pixman-1 png ssl tiff webp
+WANTLIB += xcb xcb-render xcb-shm z zstd zzip
+
 
 WANTLIB-mktexlsr += c
 
@@ -50,6 +50,7 @@ LIB_DEPENDS-main =	converters/libiconv \
 			textproc/icu4c \
 			graphics/graphite2 \
 			devel/harfbuzz \
+			devel/pcre2 \
 			print/libpaper \
 			archivers/zziplib \
 			print/ghostscript/gnu \

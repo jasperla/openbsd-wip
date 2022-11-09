@@ -1,9 +1,9 @@
 @conflict teTeX_texmf-*
-@conflict texlive_base-<2021
-@conflict texlive_texmf-docs-<2021
-@conflict texlive_texmf-full-<2021
-@conflict texlive_texmf-buildset-<2021
-@conflict texlive_texmf-minimal-<2021
+@conflict texlive_base-<2022
+@conflict texlive_texmf-docs-<2022
+@conflict texlive_texmf-full-<2022
+@conflict texlive_texmf-buildset-<2022
+@conflict texlive_texmf-minimal-<2022
 @man man/man1/context.1
 @man man/man1/luatools.1
 @man man/man1/mtx-babel.1
@@ -3923,6 +3923,5 @@ share/texmf-dist/tex/latex/context/ppchtex/m-ch-de.sty
 share/texmf-dist/tex/latex/context/ppchtex/m-ch-en.sty
 share/texmf-dist/tex/latex/context/ppchtex/m-ch-nl.sty
 share/texmf-dist/tex/latex/context/ppchtex/m-pictex.sty
-@unexec rm -Rf %D/share/texmf-var/luatex-cache/
 @exec %D/bin/mtxrun --generate > /dev/null 2>&1
 @tag mktexlsr
