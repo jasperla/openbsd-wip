@@ -1,0 +1,3 @@
+@bin bin/rust-analyzer
+share/doc/rust-analyzer/
+share/doc/rust-analyzer/manual.html
