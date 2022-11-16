@@ -2,7 +2,7 @@ COMMENT =	opinionated Lua code formatter
 
 GH_ACCOUNT =	JohnnyMorganz
 GH_PROJECT =	StyLua
-GH_TAGNAME =	v0.14.2
+GH_TAGNAME =	v0.15.2
 
 CATEGORIES =	devel
 
@@ -11,7 +11,7 @@ MAINTAINER =	Laurent Cheylus <foxy@free.fr>
 # MPL-2.0
 PERMIT_PACKAGE =	Yes
 
-WANTLIB +=	c c++abi pthread
+WANTLIB +=	${MODCARGO_WANTLIB}
 
 # as devel/cargo MODULES adds DISTFILES, GH_* didn't
 DISTFILES +=	${DISTNAME}${EXTRACT_SUFX}
