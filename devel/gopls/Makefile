@@ -1,7 +1,7 @@
 COMMENT =	official Go language server developed by the Go team
 
 MODGO_MODNAME =	golang.org/x/tools/gopls
-MODGO_VERSION =	v0.9.5
+MODGO_VERSION =	v0.10.1
 
 DISTNAME =	gopls-${MODGO_VERSION}
 
@@ -18,16 +18,18 @@ WANTLIB +=	c pthread
 
 MODULES =	lang/go
 
-.include "modules.inc"
-
 DOCDIR =        ${PREFIX}/share/doc/gopls
 
 post-install:
 	${INSTALL_DATA_DIR} ${DOCDIR}
 	${INSTALL_DATA} ${WRKSRC}/README.md ${DOCDIR}
+
 	${INSTALL_DATA_DIR} ${DOCDIR}/doc
 	${INSTALL_DATA} ${WRKSRC}/doc/*.md ${DOCDIR}/doc
+
 	${INSTALL_DATA_DIR} ${DOCDIR}/doc/design
 	${INSTALL_DATA} ${WRKSRC}/doc/design/*.md ${DOCDIR}/doc/design
+
+.include "modules.inc"
 
 .include <bsd.port.mk>
