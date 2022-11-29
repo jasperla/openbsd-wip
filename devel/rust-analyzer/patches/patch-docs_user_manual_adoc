@@ -1,7 +1,7 @@
 Index: docs/user/manual.adoc
 --- docs/user/manual.adoc.orig
 +++ docs/user/manual.adoc
-@@ -567,7 +567,764 @@ Logs should show both the JSON that `rust-analyzer` se
+@@ -567,7 +567,768 @@ Logs should show both the JSON that `rust-analyzer` se
  
  This is the list of config options `rust-analyzer` supports:
  
@@ -198,11 +198,15 @@ Index: docs/user/manual.adoc
 +```
 +.
 +--
-+[[rust-analyzer.checkOnSave.target]]rust-analyzer.checkOnSave.target (default: `null`)::
++[[rust-analyzer.checkOnSave.target]]rust-analyzer.checkOnSave.target (default: `[]`)::
 ++
 +--
-+Check for a specific target. Defaults to
-+`#rust-analyzer.cargo.target#`.
++Check for specific targets. Defaults to `#rust-analyzer.cargo.target#` if empty.
++
++Can be a single target, e.g. `"x86_64-unknown-linux-gnu"` or a list of targets, e.g.
++`["aarch64-apple-darwin", "x86_64-apple-darwin"]`.
++
++Aliased as `"checkOnSave.targets"`.
 +--
 +[[rust-analyzer.completion.autoimport.enable]]rust-analyzer.completion.autoimport.enable (default: `true`)::
 ++

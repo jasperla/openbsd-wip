@@ -2,7 +2,7 @@ COMMENT =	experimental Rust compiler front-end for IDEs
 
 GH_ACCOUNT =	rust-lang
 GH_PROJECT =	rust-analyzer
-GH_TAGNAME =	2022-11-14
+GH_TAGNAME =	2022-11-28
 
 PKGNAME =	rust-analyzer-${GH_TAGNAME:S/-//g}
 
