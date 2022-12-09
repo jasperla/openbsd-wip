@@ -56,7 +56,8 @@ CONFIGURE_ARGS =	--with-tcl="${MODTCL_LIBDIR}" \
 			--sysconfdir="${SYSCONFDIR}"
 CONFIGURE_ENV =		LIBRARY_PATH="${LOCALBASE}/lib" \
 			LDFLAGS="-L${LOCALBASE}/lib" \
-			PREFIX="${CDEPREFIX}"
+			PREFIX="${CDEPREFIX}" \
+			KSH="${LOCALBASE}/bin/ksh93"
 
 USE_GMAKE =		Yes
 MAKE_FLAGS =		PREFIX="${CDEPREFIX}" \
@@ -72,7 +73,7 @@ post-patch:
 		AUTOMAKE_VERSION="${AUTOMAKE_VERSION}" ./autogen.sh
 
 pre-install:
-	mkdir -p ${WRKINST}${CDEPREFIX}/share/terminfo \
+	mkdir -p ${CDEPREFIX}/share/terminfo \
 		${PREFIX}/share/examples/cde
 
 

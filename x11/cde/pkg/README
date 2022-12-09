@@ -2,11 +2,13 @@
 | Running ${FULLPKGNAME} on OpenBSD
 +-----------------------------------------------------------------------
 CDE is installed under its own hierarchy in ${TRUEPREFIX}/dt.  For
-convenience, you may want to add a symlink from /usr/dt.
+now, you have to add a symlink from /usr/dt.
 
 Add ${TRUEPREFIX}/dt/lib to the library search path in /etc/rc.conf.local:
 
 shlib_dirs="${TRUEPREFIX}/dt/lib"
+
+Create an entry in /etc/hosts with your machine's fully qualified hostname.
 
 You will need to enable portmap to run CDE:
 

@@ -2908,7 +2908,6 @@ dt/man/man1/
 @man dt/man/man1/dtudcfonted.1
 @man dt/man/man1/dtwm.1
 @man dt/man/man1/huffcode.1
-@comment @man dt/man/man1/ksh.1
 @man dt/man/man1/tt_type_comp.1
 @man dt/man/man1/ttcp.1
 @man dt/man/man1/ttmv.1
