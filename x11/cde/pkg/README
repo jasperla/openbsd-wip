@@ -1,26 +1,31 @@
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
 +-----------------------------------------------------------------------
+CDE is installed under its own hierarchy in ${TRUEPREFIX}/dt.  For
+convenience, you may want to add a symlink from /usr/dt.
+
 Add ${TRUEPREFIX}/dt/lib to the library search path in /etc/rc.conf.local:
 
 shlib_dirs="${TRUEPREFIX}/dt/lib"
 
-You will need to enable portmap.  Put
+You will need to enable portmap to run CDE:
 
-portmap_flags=
+# rcctl enable portmap
+# rcctl start portmap
 
-into /etc/rc.conf.local.
-
++-----------------------------------------------------------------------
 To start dtlogin(1) as your default display manager, use:
 
-xenodm_flags=NO
-pkg_scripts=dtlogin
+# rcctl disable xenodm
+# rcctl enable dtlogin
 
++-----------------------------------------------------------------------
 If you want to be able to exchange calendar data with other users, put
 the following line in your /etc/inetd.conf:
 
 rpc.cmsd/1      dgram   rpc/tcp wait    root    ${TRUEPREFIX}/dt/bin/rpc.cmsd rpc.cmsd
 
-To make man pages accessible by man(1), add the following to /etc/man.conf:
+and enable inetd:
 
-manpath ${TRUEPREFIX}/man
+# rcctl enable inetd
+# rcctl start inetd

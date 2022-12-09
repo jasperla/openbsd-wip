@@ -1,9 +1,7 @@
 COMMENT =		Common Deskop Environment
 
-#V =			2.4.0
-#DISTNAME =		cde-$V
-DISTNAME =		cdesktopenv-code-2a988df4c36a1b782b8221532dfc8b1ccdfc5993
-PKGNAME =		cde-2.4.0a
+V =			2.5.1
+DISTNAME =		cde-$V
 
 SHARED_LIBS +=  DtHelp                    0.0 # 2.1
 SHARED_LIBS +=  DtMmdb                    0.0 # 2.1
@@ -30,9 +28,7 @@ WANTLIB += ${COMPILER_LIBCXX} ICE Mrm SM Uil X11 Xau Xdmcp Xext
 WANTLIB += Xft Xinerama Xm Xmu Xpm Xrender Xss Xt c expat fontconfig
 WANTLIB += freetype iconv jpeg m png tcl86 util xcb z
 
-#MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=cdesktopenv/}
-MASTER_SITES =		http://distfiles.stumpf.co/
-EXTRACT_SUFX =		.zip
+MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=cdesktopenv/}
 
 MODULES =		lang/tcl
 MODTCL_VERSION =	8.6
@@ -46,29 +42,38 @@ RUN_DEPENDS =		shells/ksh93
 LIB_DEPENDS =		x11/motif \
 			${MODTCL_LIB_DEPENDS}
 
+CDEPREFIX =		${PREFIX}/dt
+
 USE_GROFF =		Yes
-CONFIGURE_STYLE =	gnu automake
+CONFIGURE_STYLE =	old gnu automake
 AUTOCONF_VERSION =	2.69
 AUTOMAKE_VERSION =	1.16
-CONFIGURE_ARGS =	--with-tcl="${MODTCL_LIBDIR}"
+CONFIGURE_ARGS =	--with-tcl="${MODTCL_LIBDIR}" \
+			--exec-prefix="${CDEPREFIX}" \
+			--includedir="${CDEPREFIX}/include" \
+			--mandir="${CDEPREFIX}/man" \
+			--datarootdir="${CDEPREFIX}/share" \
+			--sysconfdir="${SYSCONFDIR}"
 CONFIGURE_ENV =		LIBRARY_PATH="${LOCALBASE}/lib" \
-			LDFLAGS="-L${LOCALBASE}/lib"
+			LDFLAGS="-L${LOCALBASE}/lib" \
+			PREFIX="${CDEPREFIX}"
 
 USE_GMAKE =		Yes
-MAKE_FLAGS =		CDE_INSTALLATION_TOP="${PREFIX}"
-FAKE_FLAGS =		TERMINFO="${WRKINST}${PREFIX}/share/terminfo"
+MAKE_FLAGS =		PREFIX="${CDEPREFIX}" \
+			CDE_INSTALLATION_TOP="${CDEPREFIX}"
+FAKE_FLAGS =		PREFIX="${WRKINST}${CDEPREFIX}" \
+			TERMINFO="${WRKINST}${CDEPREFIX}/share/terminfo" \
+			fontaliasesconfdir="${PREFIX}/share/examples/cde"
 
 NO_TEST =		Yes
-
-WRKSRC =		${WRKDIST}/cde
-
-PREFIX =		${LOCALBASE}/dt
 
 post-patch:
 	cd ${WRKSRC} && env AUTOCONF_VERSION="${AUTOCONF_VERSION}" \
 		AUTOMAKE_VERSION="${AUTOMAKE_VERSION}" ./autogen.sh
 
 pre-install:
-	mkdir -p ${PREFIX}/share/terminfo
+	mkdir -p ${WRKINST}${CDEPREFIX}/share/terminfo \
+		${PREFIX}/share/examples/cde
+
 
 .include <bsd.port.mk>
