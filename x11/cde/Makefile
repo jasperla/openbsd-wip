@@ -71,6 +71,11 @@ NO_TEST =		Yes
 post-patch:
 	cd ${WRKSRC} && env AUTOCONF_VERSION="${AUTOCONF_VERSION}" \
 		AUTOMAKE_VERSION="${AUTOMAKE_VERSION}" ./autogen.sh
+	perl -pi -e "s,/usr/dt,${CDEPREFIX},g" \
+		${WRKSRC}/programs/types/*.{dt,src} \
+		${WRKSRC}/programs/tttypes/*.ptype \
+		${WRKSRC}/programs/dthelp/dthelpgen/dthelpgen.dtsh \
+		${WRKSRC}/programs/dtprintegrate/*.src
 
 pre-install:
 	mkdir -p ${CDEPREFIX}/share/terminfo \
