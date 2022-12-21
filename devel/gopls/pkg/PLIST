@@ -15,6 +15,7 @@ share/doc/gopls/doc/design/integrating.md
 share/doc/gopls/doc/emacs.md
 share/doc/gopls/doc/features.md
 share/doc/gopls/doc/inlayHints.md
+share/doc/gopls/doc/releases.md
 share/doc/gopls/doc/semantictokens.md
 share/doc/gopls/doc/settings.md
 share/doc/gopls/doc/subl.md
