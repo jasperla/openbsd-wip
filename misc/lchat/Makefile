@@ -1,12 +1,5 @@
-# Replace ??? with appropriate values
-# Use /usr/ports/infrastructure/bin/portcheck
-
 COMMENT=	line oriented chat frontend for ii
 DISTNAME=	lchat-1.0
-
-GH_ACCOUNT=	younix
-GH_PROJECT=	lchat
-GH_COMMIT=	b04323cbd25293b64b73cf544cb3af077e7a0050
 
 CATEGORIES=	misc
 HOMEPAGE=	https://github.com/younix/lchat
@@ -19,8 +12,8 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB +=	c grapheme
 
-#MASTER_SITES =		???
+MASTER_SITES =	https://dl.suckless.org/tools/
 
-LIB_DEPENDS =		textproc/libgrapheme
+LIB_DEPENDS =	textproc/libgrapheme
 
 .include <bsd.port.mk>
