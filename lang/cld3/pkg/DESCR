@@ -1,0 +1,4 @@
+CLD3 is a neural network model for language identification.
+This package contains the inference code and a trained model.
+The inference code extracts character ngrams from the input text
+and computes the fraction of times each of them appears.
