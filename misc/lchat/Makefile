@@ -8,12 +8,13 @@ MAINTAINER=	Jan Klemkow <j.klemkow@wemelug.de>
 # ISC
 PERMIT_PACKAGE=	Yes
 
-# If pledge is used, annotate with `uses pledge()' in a comment
-
 WANTLIB +=	c grapheme
 
 MASTER_SITES =	https://dl.suckless.org/tools/
 
 LIB_DEPENDS =	textproc/libgrapheme
+
+CFLAGS +=	-I${LOCALBASE}/include
+MAKE_FLAGS +=	CFLAGS="${CFLAGS}"
 
 .include <bsd.port.mk>
