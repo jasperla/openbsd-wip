@@ -1,5 +1,3 @@
-MODGO_VERSION =	v0.5.4
-
 MODGO_MODULES =	\
 	cloud.google.com/go						 v0.37.0 \
 	dmitri.shuralyov.com/app/changes				 v0.0.0-20180602232624-0a106ad413e3 \
