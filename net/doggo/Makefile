@@ -7,7 +7,7 @@ DISTNAME =	doggo-${MODGO_VERSION}
 
 CATEGORIES =	net
 
-HOMEPAGE =	https://github.com/dundee/gdu
+HOMEPAGE =	https://github.com/mr-karan/doggo
 
 MAINTAINER =	Laurent Cheylus <foxy@free.fr>
 
