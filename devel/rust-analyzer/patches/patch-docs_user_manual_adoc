@@ -1,7 +1,7 @@
 Index: docs/user/manual.adoc
 --- docs/user/manual.adoc.orig
 +++ docs/user/manual.adoc
-@@ -567,7 +567,768 @@ Logs should show both the JSON that `rust-analyzer` se
+@@ -567,7 +567,783 @@ Logs should show both the JSON that `rust-analyzer` se
  
  This is the list of config options `rust-analyzer` supports:
  
@@ -198,7 +198,7 @@ Index: docs/user/manual.adoc
 +```
 +.
 +--
-+[[rust-analyzer.checkOnSave.target]]rust-analyzer.checkOnSave.target (default: `[]`)::
++[[rust-analyzer.checkOnSave.target]]rust-analyzer.checkOnSave.target (default: `null`)::
 ++
 +--
 +Check for specific targets. Defaults to `#rust-analyzer.cargo.target#` if empty.
@@ -462,10 +462,20 @@ Index: docs/user/manual.adoc
 +--
 +Whether to show inlay type hints for return types of closures.
 +--
++[[rust-analyzer.inlayHints.discriminantHints.enable]]rust-analyzer.inlayHints.discriminantHints.enable (default: `"never"`)::
+++
++--
++Whether to show enum variant discriminant hints.
++--
 +[[rust-analyzer.inlayHints.expressionAdjustmentHints.enable]]rust-analyzer.inlayHints.expressionAdjustmentHints.enable (default: `"never"`)::
 ++
 +--
 +Whether to show inlay hints for type adjustments.
++--
++[[rust-analyzer.inlayHints.expressionAdjustmentHints.hideOutsideUnsafe]]rust-analyzer.inlayHints.expressionAdjustmentHints.hideOutsideUnsafe (default: `false`)::
+++
++--
++Whether to hide inlay hints for type adjustments outside of `unsafe` blocks.
 +--
 +[[rust-analyzer.inlayHints.lifetimeElisionHints.enable]]rust-analyzer.inlayHints.lifetimeElisionHints.enable (default: `"never"`)::
 ++
@@ -476,6 +486,11 @@ Index: docs/user/manual.adoc
 ++
 +--
 +Whether to prefer using parameter names as the name for elided lifetime hints if possible.
++--
++[[rust-analyzer.inlayHints.locationLinks]]rust-analyzer.inlayHints.locationLinks (default: `true`)::
+++
++--
++Whether to use location links for parts of type mentioned in inlay hints.
 +--
 +[[rust-analyzer.inlayHints.maxLength]]rust-analyzer.inlayHints.maxLength (default: `25`)::
 ++

@@ -2,7 +2,7 @@ COMMENT =	experimental Rust compiler front-end for IDEs
 
 GH_ACCOUNT =	rust-lang
 GH_PROJECT =	rust-analyzer
-GH_TAGNAME =	2022-11-28
+GH_TAGNAME =	2023-01-09
 
 PKGNAME =	rust-analyzer-${GH_TAGNAME:S/-//g}
 
@@ -15,8 +15,7 @@ CATEGORIES =	devel
 # Apache-2.0, MIT
 PERMIT_PACKAGE =	Yes
 
-# as devel/cargo MODULES adds DISTFILES, GH_* didn't
-DISTFILES +=	${DISTNAME}${EXTRACT_SUFX}
+DISTFILES +=	${GH_DISTFILE}
 MODULES =	devel/cargo
 BUILD_DEPENDS =	textproc/asciidoctor
 
