@@ -15,6 +15,9 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =	lang/lua
 
+FLAVORS =	lua52 lua53 lua54
+FLAVOR? =
+
 # No need to build, only a Lua source package
 do-build:
 
