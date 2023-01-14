@@ -85,6 +85,7 @@ share/lua/${MODLUA_VERSION}/luacheck/runner.lua
 share/lua/${MODLUA_VERSION}/luacheck/serializer.lua
 share/lua/${MODLUA_VERSION}/luacheck/stages/
 share/lua/${MODLUA_VERSION}/luacheck/stages/detect_bad_whitespace.lua
+share/lua/${MODLUA_VERSION}/luacheck/stages/detect_compound_operators.lua
 share/lua/${MODLUA_VERSION}/luacheck/stages/detect_cyclomatic_complexity.lua
 share/lua/${MODLUA_VERSION}/luacheck/stages/detect_empty_blocks.lua
 share/lua/${MODLUA_VERSION}/luacheck/stages/detect_empty_statements.lua
