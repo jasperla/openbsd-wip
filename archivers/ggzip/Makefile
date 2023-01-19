@@ -1,7 +1,10 @@
 COMMENT =		GNU Gzip
-CATEGORIES =		archivers
 DISTNAME =		gzip-1.12
+PKGNAME =		g${DISTNAME}
+CATEGORIES =		archivers
 HOMEPAGE =		http://www.gnu.org/software/gzip/
+
+MAINTAINER =		Klemens Nanni <kn@openbsd.org>
 
 # GPLv3
 PERMIT_PACKAGE =	Yes
