@@ -1,4 +1,4 @@
-COMMENT =	command line parser for Lua inspired by argparse for Python
+COMMENT =	command line parser for Lua
 
 GH_ACCOUNT =	luarocks
 GH_PROJECT =	argparse
@@ -18,8 +18,7 @@ MODULES =	lang/lua
 FLAVORS =	lua52 lua53 lua54
 FLAVOR? =
 
-# No need to build, only a Lua source package
-do-build:
+NO_BUILD =	Yes
 
 do-install:
 	${INSTALL_DATA_DIR} ${MODLUA_DATADIR}
