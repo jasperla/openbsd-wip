@@ -1,3 +1,5 @@
+PKG_ARCH =	*
+
 COMMENT =	command line parser for Lua
 
 GH_ACCOUNT =	luarocks
@@ -19,6 +21,7 @@ FLAVORS =	lua52 lua53 lua54
 FLAVOR? =
 
 NO_BUILD =	Yes
+NO_TEST =	Yes
 
 do-install:
 	${INSTALL_DATA_DIR} ${MODLUA_DATADIR}
