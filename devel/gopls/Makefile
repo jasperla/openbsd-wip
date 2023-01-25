@@ -18,18 +18,13 @@ WANTLIB +=	c pthread
 
 MODULES =	lang/go
 
-DOCDIR =        ${PREFIX}/share/doc/gopls
+DOCDIR =	${PREFIX}/share/doc/gopls
 
 post-install:
-	${INSTALL_DATA_DIR} ${DOCDIR}
-	${INSTALL_DATA} ${WRKSRC}/README.md ${DOCDIR}
-
-	${INSTALL_DATA_DIR} ${DOCDIR}/doc
-	${INSTALL_DATA} ${WRKSRC}/doc/*.md ${DOCDIR}/doc
-
 	${INSTALL_DATA_DIR} ${DOCDIR}/doc/design
+	${INSTALL_DATA} ${WRKSRC}/README.md ${DOCDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/*.md ${DOCDIR}/doc
 	${INSTALL_DATA} ${WRKSRC}/doc/design/*.md ${DOCDIR}/doc/design
 
 .include "modules.inc"
-
 .include <bsd.port.mk>

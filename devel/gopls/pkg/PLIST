@@ -1,3 +1,4 @@
+@conflict go-tools-<=1.12.20190226p2
 @bin bin/gopls
 share/doc/gopls/
 share/doc/gopls/README.md
