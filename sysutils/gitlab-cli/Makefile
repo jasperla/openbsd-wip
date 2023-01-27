@@ -13,9 +13,11 @@ HOMEPAGE =		https://docs.gitlab.com/ee/integration/glab/
 # MIT
 PERMIT_PACKAGE =	Yes
 
-WANTLIB +=		c pthread
+WANTLIB =		c pthread
 
 MODULES =		lang/go
+MODGO_LDFLAGS =		-X main.build=1970-01-01 \
+			-X main.version=${V}
 
 post-extract:
 	# move WRKDIST where MODGO_SETUP_WORKSPACE expects it
