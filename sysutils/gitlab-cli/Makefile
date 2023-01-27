@@ -8,11 +8,7 @@ PKGNAME =		gitlab-cli-${V}
 COMMIT =		e02b30c6e3ff7801f22d37ed63850211ca0c7bb6
 MODGO_MODNAME =		gitlab.com/gitlab-org/cli
 MODGO_VERSION =		v${V}
-# MODGO_SUBDIR, WRKDIST, WRKSRC... I don't know;  looks like github-cli
-# but works differently, upstreams wants to run their Makefile which is
-# NOT compatible
 WRKDIST =		${WRKDIR}/${DISTNAME}-${COMMIT}
-WRKSRC =		${WRKDIST}
 
 HOMEPAGE =		https://docs.gitlab.com/ee/integration/glab/
 
@@ -20,6 +16,11 @@ HOMEPAGE =		https://docs.gitlab.com/ee/integration/glab/
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/go
+
+post-extract:
+	# move WRKDIST where MODGO_SETUP_WORKSPACE expects it
+	mkdir -p ${WRKDIR}/${MODGO_MODNAME:H}
+	mv ${MODGO_SUBDIR} ${WRKSRC}
 
 .include "modules.inc"
 .include <bsd.port.mk>
