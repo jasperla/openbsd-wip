@@ -1,0 +1,2 @@
+@bin bin/gen-docs
+@bin bin/glab
