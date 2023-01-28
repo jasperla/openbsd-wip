@@ -19,11 +19,6 @@ MODULES =		lang/go
 MODGO_LDFLAGS =		-X main.build=1970-01-01 \
 			-X main.version=${V}
 
-post-extract:
-	# move WRKDIST where MODGO_SETUP_WORKSPACE expects it
-	mkdir -p ${WRKDIR}/${MODGO_MODNAME:H}
-	mv ${WRKDIR}/${DISTNAME}-* ${WRKSRC}
-
 do-test:
 	cd ${WRKSRC} && ${MODGO_TEST_CMD} ./...
 
