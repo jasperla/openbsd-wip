@@ -1,5 +1,3 @@
-# $OpenBSD: $
-
 COMMENT =		Fast Spotify client with native GUI
 
 # kn@ fork bundling all porting work to avoid in-tree patches and MODCARGO_*
