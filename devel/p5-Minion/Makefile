@@ -16,6 +16,6 @@ RUN_DEPENDS =		databases/p5-DBM-Deep>=2.0011 \
 			www/p5-Mojo>=5.64
 
 # Artistic
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 .include <bsd.port.mk>

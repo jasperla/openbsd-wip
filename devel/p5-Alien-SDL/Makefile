@@ -12,13 +12,13 @@ CPAN_AUTHOR=		FROGGS
 MAINTAINER=		Todd T. Fries <todd@fries.net>
 
 # Artistic
-PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=     Yes
-PERMIT_DISTFILES_FTP=   Yes
+PERMIT_PACKAGE=		Yes
 
 RUN_DEPENDS+= ${BUILD_DEPENDS}
 BUILD_DEPENDS+= sysutils/p5-File-Which \
 		archivers/p5-Archive-Extract \
+		archivers/p5-Archive-Zip \
+		sysutils/p5-Capture-Tiny \
 		devel/p5-Text-Patch
 
 CONFIGURE_STYLE= perl modbuild

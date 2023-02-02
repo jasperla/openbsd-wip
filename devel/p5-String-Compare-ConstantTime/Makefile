@@ -9,7 +9,7 @@ CATEGORIES =		devel
 MAINTAINER =		Cesare Gargano <gar@plusiagamma.org>
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB +=		c
 
