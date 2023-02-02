@@ -8,7 +8,7 @@ CATEGORIES=	net
 MAINTAINER=	Andrew Fresh <andrew@cpan.org>
 
 # perl
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=   Yes
 
 MODULES=	cpan
 CPAN_AUTHOR=    JHTHORSEN

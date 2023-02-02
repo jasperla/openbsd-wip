@@ -10,7 +10,7 @@ CPAN_AUTHOR=	MARKOV
 MAINTAINER =    Todd T. Fries <todd@OpenBSD.org>
 
 # Perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 #RUN_DEPENDS=	
 
