@@ -7,7 +7,7 @@ CATEGORIES=	perl5 misc
 
 MAINTAINER=	Andrew Fresh <andrew@cpan.org>
 
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=   Yes
 
 MODULES=	cpan
 CPAN_AUTHOR=	ANDREW

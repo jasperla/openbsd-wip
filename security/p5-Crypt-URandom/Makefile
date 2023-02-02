@@ -9,6 +9,6 @@ CATEGORIES =		security
 MAINTAINER =		Cesare Gargano <gar@plusiagamma.org>
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
  
 .include <bsd.port.mk>

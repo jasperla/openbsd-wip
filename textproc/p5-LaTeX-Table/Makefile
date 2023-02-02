@@ -8,7 +8,7 @@ PKGNAME =	p5-${DISTNAME:S/-v/-/}
 CATEGORIES =	textproc
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 RUN_DEPENDS =	textproc/p5-LaTeX-Encode \
 		textproc/p5-LaTeX-Driver \

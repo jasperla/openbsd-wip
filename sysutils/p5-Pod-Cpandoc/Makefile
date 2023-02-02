@@ -7,7 +7,7 @@ DISTNAME=	Pod-Cpandoc-0.15
 CATEGORIES=	sysutils
 
 # Perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MAINTAINER=	Andrew Fresh <andrew@afresh1.com>
 

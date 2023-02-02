@@ -7,7 +7,7 @@ CATEGORIES=		astro
 MAINTAINER=		Todd T. Fries <todd@openbsd.org>
 
 # Artistic
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=		Yes
 
 RUN_DEPENDS+= ${BUILD_DEPENDS}
 BUILD_DEPENDS+= devel/p5-WWW-Wunderground-API \

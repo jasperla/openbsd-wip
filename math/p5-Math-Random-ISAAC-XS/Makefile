@@ -9,7 +9,7 @@ CATEGORIES =		math
 MAINTAINER =		Cesare Gargano <gar@plusiagamma.org>
 
 # CC0 License
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANT_LIBS +=		c
 
