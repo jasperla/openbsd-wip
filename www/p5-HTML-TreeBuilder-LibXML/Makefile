@@ -9,7 +9,7 @@ CATEGORIES =		www
 MAINTAINER =		Cesare Gargano <gar@plusiagamma.org>
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 RUN_DEPENDS =		www/p5-HTML-TreeBuilder-XPath \
 			www/p5-libwww \

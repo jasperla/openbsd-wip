@@ -10,7 +10,7 @@ CATEGORIES=	www perl5
 MAINTAINER=	Andrew Fresh <afresh1@openbsd.org>
 
 # GPL2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 CONFIGURE_ARGS =	PREFIX=${DESTDIR}${PREFIX} --skipdeps
 NO_TEST =		Yes

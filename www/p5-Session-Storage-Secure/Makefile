@@ -11,7 +11,7 @@ MAINTAINER =		Cesare Gargano <gar@plusiagamma.org>
 CPAN_AUTHOR =		DAGOLDEN
 
 # Apachev2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 BUILD_DEPENDS =		${RUN_DEPENDS}
 
