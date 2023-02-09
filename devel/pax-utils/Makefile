@@ -7,6 +7,8 @@ CATEGORIES =	devel
 
 HOMEPAGE =	https://wiki.gentoo.org/wiki/Hardened/PaX_Utilities
 
+MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
+
 # GPLv2
 PERMIT_PACKAGE =	Yes
 
@@ -14,19 +16,17 @@ WANTLIB +=	c
 
 MASTER_SITES =	https://dev.gentoo.org/~sam/distfiles/app-misc/pax-utils/
 
-MODULES =	devel/meson \
-		lang/python
+MODULES =	devel/meson
 
-MODPY_ADJ_FILES =	lddtree.py
+RUN_DEPENDS =		shells/bash
 
-RUN_DEPENDS =		devel/py-elftools${MODPY_FLAVOR} \
-			shells/bash
-
-CONFIGURE_ARGS =	-Dbuild_manpages=disabled \
+CONFIGURE_ARGS =	-Dlddtree_implementation=sh \
+			-Dbuild_manpages=disabled \
 			-Duse_libcap=disabled \
 			-Duse_fuzzing=false
 
 pre-configure:
+	sed -i 's,bin/bash,${LOCALBASE}/bin/bash,' ${WRKSRC}/lddtree.sh
 	sed -i 's,bin/bash,${LOCALBASE}/bin/bash,' ${WRKSRC}/symtree.sh
 
 .include <bsd.port.mk>
