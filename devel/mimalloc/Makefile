@@ -2,7 +2,7 @@ COMMENT =	general-purpose allocator with excellent performance
 
 GH_ACCOUNT =	microsoft
 GH_PROJECT =	mimalloc
-GH_TAGNAME =	v2.0.6
+GH_TAGNAME =	v2.0.9
 
 SHARED_LIBS +=	mimalloc	0.0 # 0.0
 

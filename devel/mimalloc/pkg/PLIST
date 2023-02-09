@@ -10,3 +10,4 @@ lib/cmake/mimalloc/mimalloc.cmake
 @static-lib lib/libmimalloc.a
 @lib lib/libmimalloc.so.${LIBmimalloc_VERSION}
 lib/mimalloc.o
+lib/pkgconfig/mimalloc.pc
