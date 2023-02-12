@@ -1,7 +1,7 @@
 Index: lib/CModHandler.cpp
 --- lib/CModHandler.cpp.orig
 +++ lib/CModHandler.cpp
-@@ -543,42 +543,42 @@ CModInfo::Version CModInfo::Version::GameVersion()
+@@ -575,42 +575,42 @@ CModInfo::Version CModInfo::Version::GameVersion()
  
  CModInfo::Version CModInfo::Version::fromString(std::string from)
  {
@@ -23,7 +23,7 @@ Index: lib/CModHandler.cpp
 +				vcmi_patch = std::stoi(from.substr(pointPos + 1));
  		}
  	}
- 	catch(const std::invalid_argument & e)
+ 	catch(const std::invalid_argument &)
  	{
  		return Version();
  	}

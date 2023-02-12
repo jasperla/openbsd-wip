@@ -88,6 +88,17 @@ share/vcmi/Mods/vcmi/Sprites/vcmi/battleQueue/statesBig.json
 share/vcmi/Mods/vcmi/Sprites/vcmi/battleQueue/statesSmall.json
 share/vcmi/Mods/vcmi/Sprites/vcmi/battleQueue/waitBig.png
 share/vcmi/Mods/vcmi/Sprites/vcmi/battleQueue/waitSmall.png
+share/vcmi/Mods/vcmi/Sprites/vcmi/creatureIcons/
+share/vcmi/Mods/vcmi/Sprites/vcmi/creatureIcons/towerLarge.png
+share/vcmi/Mods/vcmi/Sprites/vcmi/creatureIcons/towerSmall.png
+share/vcmi/Mods/vcmi/config/
+share/vcmi/Mods/vcmi/config/vcmi/
+share/vcmi/Mods/vcmi/config/vcmi/english.json
+share/vcmi/Mods/vcmi/config/vcmi/german.json
+share/vcmi/Mods/vcmi/config/vcmi/polish.json
+share/vcmi/Mods/vcmi/config/vcmi/towerCreature.json
+share/vcmi/Mods/vcmi/config/vcmi/towerFactions.json
+share/vcmi/Mods/vcmi/config/vcmi/ukrainian.json
 share/vcmi/Mods/vcmi/mod.json
 share/vcmi/config/
 share/vcmi/config/ERMU_to_picture.json
@@ -96,11 +107,11 @@ share/vcmi/config/ai/
 share/vcmi/config/ai/object-priorities.txt
 share/vcmi/config/ambientSounds.json
 share/vcmi/config/artifacts.json
+share/vcmi/config/battleEffects.json
 share/vcmi/config/battleStartpos.json
 share/vcmi/config/battlefields.json
 share/vcmi/config/battles_graphics.json
 share/vcmi/config/bonuses.json
-share/vcmi/config/bonuses_texts.json
 share/vcmi/config/buildings5.json
 share/vcmi/config/campaignMedia.json
 share/vcmi/config/campaignSets.json
@@ -153,7 +164,11 @@ share/vcmi/config/objects/creatureBanks.json
 share/vcmi/config/objects/dwellings.json
 share/vcmi/config/objects/generic.json
 share/vcmi/config/objects/moddables.json
-share/vcmi/config/objects/rewardable.json
+share/vcmi/config/objects/rewardableBonusing.json
+share/vcmi/config/objects/rewardableOncePerHero.json
+share/vcmi/config/objects/rewardableOncePerWeek.json
+share/vcmi/config/objects/rewardableOnceVisitable.json
+share/vcmi/config/objects/rewardablePickable.json
 share/vcmi/config/obstacles.json
 share/vcmi/config/randomMap.json
 share/vcmi/config/resolutions.json
@@ -174,16 +189,18 @@ share/vcmi/config/schemas/object.json
 share/vcmi/config/schemas/objectTemplate.json
 share/vcmi/config/schemas/objectType.json
 share/vcmi/config/schemas/obstacle.json
+share/vcmi/config/schemas/river.json
+share/vcmi/config/schemas/road.json
 share/vcmi/config/schemas/script.json
 share/vcmi/config/schemas/settings.json
 share/vcmi/config/schemas/skill.json
 share/vcmi/config/schemas/spell.json
 share/vcmi/config/schemas/template.json
+share/vcmi/config/schemas/terrain.json
 share/vcmi/config/schemas/townBuilding.json
 share/vcmi/config/schemas/townSiege.json
 share/vcmi/config/schemas/townStructure.json
 share/vcmi/config/skills.json
-share/vcmi/config/sp_sounds.json
 share/vcmi/config/spells/
 share/vcmi/config/spells/ability.json
 share/vcmi/config/spells/adventure.json
@@ -193,6 +210,8 @@ share/vcmi/config/spells/timed.json
 share/vcmi/config/startres.json
 share/vcmi/config/terrainViewPatterns.json
 share/vcmi/config/terrains.json
-share/vcmi/config/translate.json
 @tag update-desktop-database
 @tag gtk-update-icon-cache %D/share/icons/hicolor
+share/vcmi/config/widgets/
+share/vcmi/config/widgets/battleWindow.json
+share/vcmi/config/widgets/randomMapTab.json

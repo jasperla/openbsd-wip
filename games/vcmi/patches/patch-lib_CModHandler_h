@@ -1,7 +1,7 @@
 Index: lib/CModHandler.h
 --- lib/CModHandler.h.orig
 +++ lib/CModHandler.h
-@@ -182,12 +182,12 @@ class DLL_LINKAGE CModInfo (public)
+@@ -188,12 +188,12 @@ class DLL_LINKAGE CModInfo (public)
  	
  	struct Version
  	{
@@ -18,7 +18,7 @@ Index: lib/CModHandler.h
  		
  		static Version GameVersion();
  		static Version fromString(std::string from);
-@@ -198,9 +198,9 @@ class DLL_LINKAGE CModInfo (public)
+@@ -204,9 +204,9 @@ class DLL_LINKAGE CModInfo (public)
  		
  		template <typename Handler> void serialize(Handler &h, const int version)
  		{
