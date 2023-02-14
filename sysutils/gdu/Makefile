@@ -1,7 +1,7 @@
-COMMENT =	disk usage analyzer with console interface written in Go
+COMMENT =	disk usage analyzer with console interface
 
 MODGO_MODNAME =	github.com/dundee/gdu/v5
-MODGO_VERSION =	v5.18.1
+MODGO_VERSION =	v5.22.0
 
 DISTNAME =	gdu-${MODGO_VERSION}
 
@@ -26,11 +26,11 @@ MODGO_LDFLAGS +=	-X ${MODGO_MODNAME}/build.Version=${MODGO_VERSION}
 MODGO_LDFLAGS +=	-X $(MODGO_MODNAME)/build.Time=${_BUILD_DATE}
 MODGO_LDFLAGS +=	-X $(MODGO_MODNAME)/build.User=${_BUILD_USER}
 
-.include "modules.inc"
-
 do-install:
 	${INSTALL_PROGRAM} ${MODGO_WORKSPACE}/bin/gdu ${PREFIX}/bin
 	${INSTALL_MAN_DIR} ${PREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/gdu.1 ${PREFIX}/man/man1
+
+.include "modules.inc"
 
 .include <bsd.port.mk>
