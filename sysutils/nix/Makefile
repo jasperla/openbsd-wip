@@ -1,7 +1,7 @@
 COMMENT =		purely functional package manager for Unix
 DISTNAME =		nix-2.3.16
 EXTRACT_SUFX =		.tar.xz
-CATEGORIES =		devel sysutils
+CATEGORIES =		sysutils devel
 
 LIBVER =		0.0
 .for _lib in expr main store util
@@ -9,6 +9,9 @@ SHARED_LIBS +=		nix${_lib}	${LIBVER}	# 2.3.16
 .endfor
 
 HOMEPAGE =		https://nixos.org/nix/manual
+
+MAINAINER =		Aaron Bieber <abieber@openbsd.org> \
+			Klemens Nanni <kn@openbsd.org>
 
 # LGPLv2.1+
 PERMIT_PACKAGE =	Yes
