@@ -3,8 +3,9 @@ DISTNAME =		nix-2.3.16
 EXTRACT_SUFX =		.tar.xz
 CATEGORIES =		devel sysutils
 
+LIBVER =		0.0
 .for _lib in expr main store util
-SHARED_LIBS +=		nix${_lib}	0.0	# 2.3.16
+SHARED_LIBS +=		nix${_lib}	${LIBVER}	# 2.3.16
 .endfor
 
 HOMEPAGE =		https://nixos.org/nix/manual
@@ -50,7 +51,8 @@ CONFIGURE_ENV =		CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
 			EDITLINE_LIBS="-lreadline"
 
 USE_GMAKE =		Yes
-MAKE_FLAGS =		LIBnixexpr_VERSION="${LIBnixexpr_VERSION}" V=1
+MAKE_FLAGS =		V=1 \
+			SO_EXT=so.${LIBVER}
 
 FAKE_FLAGS =		sysconfdir="${PREFIX}/share/examples/nix"
 
