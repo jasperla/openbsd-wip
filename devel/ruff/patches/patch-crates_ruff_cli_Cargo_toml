@@ -1,4 +1,5 @@
 Disable use of custom allocator (jemalloc not supported)
+See issue#2952 https://github.com/charliermarsh/ruff/issues/2952
 Index: crates/ruff_cli/Cargo.toml
 --- crates/ruff_cli/Cargo.toml.orig
 +++ crates/ruff_cli/Cargo.toml
