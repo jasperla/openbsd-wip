@@ -1,17 +1,14 @@
 Link libexpr against libc.
-Recognise OpenBSD.
 
 Index: src/libexpr/local.mk
 --- src/libexpr/local.mk.orig
 +++ src/libexpr/local.mk
-@@ -8,8 +8,8 @@ libexpr_SOURCES := $(wildcard $(d)/*.cc) $(wildcard $(
+@@ -8,7 +8,7 @@ libexpr_SOURCES := $(wildcard $(d)/*.cc) $(wildcard $(
  
  libexpr_LIBS = libutil libstore
  
 -libexpr_LDFLAGS =
--ifneq ($(OS), FreeBSD)
 +libexpr_LDFLAGS = -lc
-+ifneq ($(OS), OpenBSD)
+ ifdef HOST_LINUX
   libexpr_LDFLAGS += -ldl
  endif
- 

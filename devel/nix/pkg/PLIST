@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v$
 @bin bin/nix
 bin/nix-build
 bin/nix-channel

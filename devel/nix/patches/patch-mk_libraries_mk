@@ -4,7 +4,7 @@ Index: mk/libraries.mk
 --- mk/libraries.mk.orig
 +++ mk/libraries.mk
 @@ -6,7 +6,7 @@ else
-   ifeq (CYGWIN,$(findstring CYGWIN,$(OS)))
+   ifdef HOST_CYGWIN
      SO_EXT = dll
    else
 -    SO_EXT = so
