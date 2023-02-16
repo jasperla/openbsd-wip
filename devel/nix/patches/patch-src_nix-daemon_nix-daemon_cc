@@ -1,6 +1,4 @@
-$OpenBSD$
-
-OpenBSD doesn't have ucred.pid
+OpenBSD does not have ucred.pid
 
 Index: src/nix-daemon/nix-daemon.cc
 --- src/nix-daemon/nix-daemon.cc.orig

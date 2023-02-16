@@ -1,5 +1,3 @@
-$OpenBSD$
-
 Version shared libraries correctly
 
 Index: mk/libraries.mk

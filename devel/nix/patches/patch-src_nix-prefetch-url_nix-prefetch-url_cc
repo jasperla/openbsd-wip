@@ -1,5 +1,3 @@
-$OpenBSD$
-
 Use gtar(1) not tar(1) due to dynamic compression support
 
 Index: src/nix-prefetch-url/nix-prefetch-url.cc

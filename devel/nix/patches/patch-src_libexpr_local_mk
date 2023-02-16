@@ -1,5 +1,3 @@
-$OpenBSD$
-
 Link libexpr against libc.
 Recognise OpenBSD.
 
