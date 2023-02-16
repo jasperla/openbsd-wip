@@ -54,19 +54,18 @@ CONFIGURE_ENV =		CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
 			EDITLINE_CFLAGS="-I/usr/include/readline -DREADLINE" \
 			EDITLINE_LIBS="-lreadline"
 
-USE_GMAKE =	Yes
-MAKE_FLAGS =	LIBnixexpr_VERSION="${LIBnixexpr_VERSION}" V=1
+USE_GMAKE =		Yes
+MAKE_FLAGS =		LIBnixexpr_VERSION="${LIBnixexpr_VERSION}" V=1
 
-FAKE_FLAGS =	sysconfdir="${PREFIX}/share/examples/nix"
+FAKE_FLAGS =		sysconfdir="${PREFIX}/share/examples/nix"
 
-TEST_TARGET =	installcheck
+TEST_TARGET =		installcheck
 
 # TMPDIR is picked up to construct TEST_ROOT in ${WRKSRC}/tests/common.sh.in
 # with this harcoded subdirectory
-TMPDIR =	${WRKDIR}
-TEST_ROOT =	${TMPDIR}/nix-test
-
-TEST_ENV =	TMPDIR=${TMPDIR}
+TESTTMP =		${WRKDIR}
+TEST_ROOT =		${TESTTMP}/nix-test
+TEST_ENV =		TMPDIR=${TESTTMP}
 
 pre-test:
 	mkdir -p ${TEST_ROOT}
