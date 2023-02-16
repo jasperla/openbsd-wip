@@ -77,8 +77,5 @@ pre-test:
 	# ...
 	#         Tracing expression 'builtins.tryEval (throw "example")'diff: unknown option -- B
 	ln -sf ${LOCALBASE}/bin/gdiff ${WRKDIR}/bin/diff
-	# XXX fix (only) realpath(1) usage in ${WRKSRC}/tests/common.sh.in
-	echo '/usr/bin/readlink -f "$$@"' >| ${WRKDIR}/bin/realpath
-	chmod +x ${WRKDIR}/bin/realpath
 
 .include <bsd.port.mk>
