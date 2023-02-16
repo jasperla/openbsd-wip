@@ -1,18 +1,13 @@
-# $OpenBSD$
+COMMENT =		reproducible package manager for Unix
+DISTNAME =		nix-2.3.13
+EXTRACT_SUFX =		.tar.xz
+CATEGORIES =		devel sysutils
 
-COMMENT =	reproducible package manager for Unix
-DISTNAME =	nix-2.3.13
-EXTRACT_SUFX =	.tar.xz
-CATEGORIES =	devel
+.for _lib in expr main store util
+SHARED_LIBS +=		nix${_lib}	0.0	# 2.3.13
+.endfor
 
-# These four must always have the same major and minor!
-LIB_VER =	0.0	# 2.3.13
-SHARED_LIBS +=	nixexpr		${LIB_VER}
-SHARED_LIBS +=	nixmain		${LIB_VER}
-SHARED_LIBS +=	nixstore	${LIB_VER}
-SHARED_LIBS +=	nixutil		${LIB_VER}
-
-HOMEPAGE =	https://nixos.org/nix/
+HOMEPAGE =		https://nixos.org/nix/
 
 # LGPLv2.1+
 PERMIT_PACKAGE =	Yes
@@ -22,28 +17,29 @@ PERMIT_PACKAGE =	Yes
 #WANTLIB += brotlidec brotlienc bz2 c crypto curl lzma m readline
 #WANTLIB += sodium sqlite3
 
-MASTER_SITES =	https://nixos.org/releases/nix/${DISTNAME}/
+MASTER_SITES =		https://nixos.org/releases/nix/${DISTNAME}/
 
 # C++17
-COMPILER =	base-clang ports-gcc
+COMPILER =		base-clang ports-gcc
 
-BUILD_DEPENDS =	${RUN_DEPENDS}
+BUILD_DEPENDS =		archivers/gtar \
+			shells/bash
 
-LIB_DEPENDS =	archivers/brotli \
-		archivers/bzip2 \
-		archivers/xz \
-		databases/sqlite3 \
-		devel/boost \
-		devel/boost,-md \
-		net/curl \
-		security/libsodium
+LIB_DEPENDS =		archivers/brotli \
+			archivers/bzip2 \
+			archivers/xz \
+			databases/sqlite3 \
+			devel/boost \
+			devel/boost,-md \
+			net/curl \
+			security/libsodium
 
-RUN_DEPENDS =	archivers/gtar \
-		shells/bash
+RUN_DEPENDS =		archivers/gtar \
+			shells/bash
 
-TEST_DEPENDS =	${PKGPATH} \
-		misc/findutils \
-		textproc/gdiff
+TEST_DEPENDS =		${PKGPATH} \
+			misc/findutils \
+			textproc/gdiff
 
 # Bash specific code using `declare' for associative arrays:
 # ./configure[7906]: syntax error: `(' unexpected
