@@ -1,4 +1,4 @@
-SHA256 (StyLua-0.16.0.tar.gz) = pCMFwXXkTIf008IQ57idSZ2BBTtI9KoFvehBo3Au8Ho=
+SHA256 (StyLua-0.16.1.tar.gz) = oW/kbuA4PG83sC830s2A18GGbe+gFEbwhiWPJtY3JZc=
 SHA256 (cargo/aho-corasick-0.7.18.tar.gz) = HjfP1edletpF90LW6ZyleIWAtcUp3Hj68R7ObccCZW8=
 SHA256 (cargo/anyhow-1.0.53.tar.gz) = lKRbRVwUZmuF/ECgGeirnrdeOhJOBUlPU5cSK8nrBuA=
 SHA256 (cargo/assert_cmd-2.0.4.tar.gz) = k64d3Tnv1naJ3rGXnYC6079/KwnG5hF8jR8kQ7Xi+D4=
@@ -126,7 +126,7 @@ SHA256 (cargo/winapi-i686-pc-windows-gnu-0.4.0.tar.gz) = rDuHxjYgQm3ZuZHlzgMp7/V
 SHA256 (cargo/winapi-util-0.1.5.tar.gz) = cOxs6FuxWBUcrl5ch/lajpfSwMSwASI/M6M0485d4Xg=
 SHA256 (cargo/winapi-x86_64-pc-windows-gnu-0.4.0.tar.gz) = cS4ieEHQV8HuHNL7Ivp+WlRhro5I+iynnsQs/BkxGD8=
 SHA256 (cargo/yaml-rust-0.4.5.tar.gz) = VsGTbEzHocmrIaHrtgLrlCuoaMvUSpnLfNxYkjNeHIU=
-SIZE (StyLua-0.16.0.tar.gz) = 362893
+SIZE (StyLua-0.16.1.tar.gz) = 363415
 SIZE (cargo/aho-corasick-0.7.18.tar.gz) = 112923
 SIZE (cargo/anyhow-1.0.53.tar.gz) = 44233
 SIZE (cargo/assert_cmd-2.0.4.tar.gz) = 22581
