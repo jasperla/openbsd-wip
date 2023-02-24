@@ -1,21 +1,21 @@
 Index: server/CVCMIServer.cpp
 --- server/CVCMIServer.cpp.orig
 +++ server/CVCMIServer.cpp
-@@ -864,7 +864,7 @@ ui8 CVCMIServer::getIdOfFirstUnallocatedPlayer() const
+@@ -964,7 +964,7 @@ ui8 CVCMIServer::getIdOfFirstUnallocatedPlayer() const
  	return 0;
  }
  
--#if defined(__GNUC__) && !defined(__MINGW32__) && !defined(VCMI_ANDROID) && !defined(VCMI_IOS)
-+#if defined(__GNUC__) && !defined(__MINGW32__) && !defined(VCMI_ANDROID) && !defined(VCMI_IOS) && !defined (VCMI_BSD) && !defined(__OpenBSD__)
+-#if defined(__GNUC__) && !defined(__UCLIBC__) && !defined(__MINGW32__) && !defined(VCMI_ANDROID) && !defined(VCMI_IOS)
++#if defined(__GNUC__) && !defined(__UCLIBC__) && !defined(__MINGW32__) && !defined(VCMI_ANDROID) && !defined(VCMI_IOS) && !defined (VCMI_BSD) && !defined(__OpenBSD__)
  void handleLinuxSignal(int sig)
  {
  	const int STACKTRACE_SIZE = 100;
-@@ -956,7 +956,7 @@ int main(int argc, char * argv[])
+@@ -1059,7 +1059,7 @@ int main(int argc, char * argv[])
  #endif
  	// Installs a sig sev segmentation violation handler
  	// to log stacktrace
--#if defined(__GNUC__) && !defined(__MINGW32__) && !defined(VCMI_ANDROID) && !defined(VCMI_IOS)
-+#if defined(__GNUC__) && !defined(__MINGW32__) && !defined(VCMI_ANDROID) && !defined(VCMI_IOS) && !defined(VCMI_BSD) && !defined(__OpenBSD__)
+-#if defined(__GNUC__) && !defined(__UCLIBC__) && !defined(__MINGW32__) && !defined(VCMI_ANDROID) && !defined(VCMI_IOS)
++#if defined(__GNUC__) && !defined(__UCLIBC__) && !defined(__MINGW32__) && !defined(VCMI_ANDROID) && !defined(VCMI_IOS) && !defined (VCMI_BSD) && !defined(__OpenBSD__)
  	signal(SIGSEGV, handleLinuxSignal);
  #endif
  

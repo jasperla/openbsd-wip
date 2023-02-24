@@ -1,0 +1,3 @@
+${P5SITE}/OpenAI/
+${P5SITE}/OpenAI/API.pm
+@man man/man3p/OpenAI::API.3p

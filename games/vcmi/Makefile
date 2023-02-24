@@ -1,13 +1,10 @@
-#GH_ACCOUNT = 		vcmi
-#GH_PROJECT = 		vcmi
-#GH_TAGNAME = 		1.0.0
-DISTNAME = 		vcmi-1.0.0.20221015
+DISTNAME = 		vcmi-1.1.0.20230208
 
 COMMENT =		rewrite of the HoMM3 engine
 
 CATEGORIES =		games
 
-HOMEPAGE =		http://forum.vcmi.eu/portal.php
+HOMEPAGE =		https://vcmi.eu/
 
 MAINTAINER =		Kirill Bychkov <kirby@openbsd.org>
 
@@ -42,6 +39,8 @@ LIB_DEPENDS =		archivers/minizip \
 
 # Add -pthread to "enable" boost threading support.
 CONFIGURE_ARGS +=	-DCMAKE_CXX_FLAGS="${CXXFLAGS} -pthread -DUSE_FILE32API" \
+			-DENABLE_GITVERSION=OFF \
+			-DENABLE_EDITOR=OFF \
 			-DENABLE_LAUNCHER=OFF \
 			-DENABLE_TEST=OFF \
 			-DLIB_DIR=${PREFIX}/lib/ \
@@ -53,6 +52,7 @@ NO_TEST =		Yes
 
 FIX_CRLF_FILES = 	Global.h lib/CStopWatch.h lib/Interprocess.h \
 			lib/CModHandler.h lib/CModHandler.cpp \
+			lib/serializer/Connection.h server/CVCMIServer.h \
 			server/CVCMIServer.cpp
 post-extract:
 	sed -i 's,/bin/bash,${LOCALBASE}/bin/bash,' ${WRKSRC}/vcmibuilder
