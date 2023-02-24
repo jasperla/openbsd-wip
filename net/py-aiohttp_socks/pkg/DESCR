@@ -1,0 +1,3 @@
+"aiohttp_socks" is a small Python library that provides a proxy connector
+for aiohttp. It supports SOCKS4(a), SOCKS5(h), HTTP (tunneling)
+as well as Proxy chains.
