@@ -1,0 +1,16 @@
+lib/python${MODPY_VERSION}/site-packages/aiohttp_socks/
+lib/python${MODPY_VERSION}/site-packages/aiohttp_socks-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/aiohttp_socks-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/aiohttp_socks-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/aiohttp_socks-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/aiohttp_socks-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
+lib/python${MODPY_VERSION}/site-packages/aiohttp_socks-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/aiohttp_socks/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/aiohttp_socks/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/aiohttp_socks/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/aiohttp_socks/${MODPY_PYCACHE}_deprecated.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/aiohttp_socks/${MODPY_PYCACHE}connector.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/aiohttp_socks/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/aiohttp_socks/_deprecated.py
+lib/python${MODPY_VERSION}/site-packages/aiohttp_socks/connector.py
+lib/python${MODPY_VERSION}/site-packages/aiohttp_socks/utils.py
