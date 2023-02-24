@@ -2,7 +2,7 @@
 
 COMMENT =	lightweight Bitcoin wallet
 
-VERSION =	3.3.8
+VERSION =	4.3.4
 DISTNAME =	Electrum-${VERSION}
 PKGNAME =	electrum-${VERSION}
 
@@ -26,11 +26,14 @@ RUN_DEPENDS =		x11/py-qt5${MODPY_FLAVOR} \
 			graphics/py-qrcode${MODPY_FLAVOR} \
 			devel/py-protobuf${MODPY_FLAVOR} \
 			net/py-dnspython${MODPY_FLAVOR} \
-			devel/py-jsonrpclib${MODPY_FLAVOR} \
-			devel/py-certifi${MODPY_FLAVOR}
-# qdarkstyle<2.7
+			devel/py-certifi${MODPY_FLAVOR} \
+			www/py-aiohttp${MODPY_FLAVOR} \
+			security/py-cryptography${MODPY_FLAVOR} \
+			devel/py-bitstring${MODPY_FLAVOR} \
+			net/bitcoin
+
+# missing dependencies
 # aiorpcx>=0.18,<0.19
-# aiohttp>=3.3.0
 # aiohttp_socks
 
 # XXX other deps in requirements-hw.txt that we can consider optional for now
