@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v$
+${P5SITE}/Data/
+${P5SITE}/Data/Currency.pm
+@man man/man3p/Data::Currency.3p

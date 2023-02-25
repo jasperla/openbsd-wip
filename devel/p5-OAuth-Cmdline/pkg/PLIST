@@ -1,0 +1,22 @@
+${P5SITE}/OAuth/
+${P5SITE}/OAuth/Cmdline/
+${P5SITE}/OAuth/Cmdline.pm
+${P5SITE}/OAuth/Cmdline/Automatic.pm
+${P5SITE}/OAuth/Cmdline/CustomFile.pm
+${P5SITE}/OAuth/Cmdline/GoogleDrive.pm
+${P5SITE}/OAuth/Cmdline/MicrosoftOnline.pm
+${P5SITE}/OAuth/Cmdline/Mojo.pm
+${P5SITE}/OAuth/Cmdline/Smartthings.pm
+${P5SITE}/OAuth/Cmdline/Spotify.pm
+${P5SITE}/OAuth/Cmdline/Youtube.pm
+${P5SITE}/OAuth/Cmdline/templates/
+${P5SITE}/OAuth/Cmdline/templates/main.html.ep
+@man man/man3p/OAuth::Cmdline.3p
+@man man/man3p/OAuth::Cmdline::Automatic.3p
+@man man/man3p/OAuth::Cmdline::CustomFile.3p
+@man man/man3p/OAuth::Cmdline::GoogleDrive.3p
+@man man/man3p/OAuth::Cmdline::MicrosoftOnline.3p
+@man man/man3p/OAuth::Cmdline::Mojo.3p
+@man man/man3p/OAuth::Cmdline::Smartthings.3p
+@man man/man3p/OAuth::Cmdline::Spotify.3p
+@man man/man3p/OAuth::Cmdline::Youtube.3p

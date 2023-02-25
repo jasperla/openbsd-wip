@@ -1,0 +1,59 @@
+@comment $OpenBSD: PLIST,v$
+bin/schema2example
+bin/xml2json
+bin/xml2yaml
+${P5SITE}/XML/Compile.pm
+${P5SITE}/XML/Compile.pod
+${P5SITE}/XML/Compile/FAQ.pod
+${P5SITE}/XML/Compile/Iterator.pm
+${P5SITE}/XML/Compile/Iterator.pod
+${P5SITE}/XML/Compile/Schema/
+${P5SITE}/XML/Compile/Schema.pm
+${P5SITE}/XML/Compile/Schema.pod
+${P5SITE}/XML/Compile/Schema/BuiltInFacets.pm
+${P5SITE}/XML/Compile/Schema/BuiltInFacets.pod
+${P5SITE}/XML/Compile/Schema/BuiltInTypes.pm
+${P5SITE}/XML/Compile/Schema/BuiltInTypes.pod
+${P5SITE}/XML/Compile/Schema/Instance.pm
+${P5SITE}/XML/Compile/Schema/Instance.pod
+${P5SITE}/XML/Compile/Schema/NameSpaces.pm
+${P5SITE}/XML/Compile/Schema/NameSpaces.pod
+${P5SITE}/XML/Compile/Schema/Specs.pm
+${P5SITE}/XML/Compile/Schema/Specs.pod
+${P5SITE}/XML/Compile/Translate/
+${P5SITE}/XML/Compile/Translate.pm
+${P5SITE}/XML/Compile/Translate.pod
+${P5SITE}/XML/Compile/Translate/Reader.pm
+${P5SITE}/XML/Compile/Translate/Reader.pod
+${P5SITE}/XML/Compile/Translate/Template.pm
+${P5SITE}/XML/Compile/Translate/Template.pod
+${P5SITE}/XML/Compile/Translate/Writer.pm
+${P5SITE}/XML/Compile/Translate/Writer.pod
+${P5SITE}/XML/Compile/Util.pm
+${P5SITE}/XML/Compile/Util.pod
+${P5SITE}/XML/Compile/xsd/
+${P5SITE}/XML/Compile/xsd/1998-namespace.xsd
+${P5SITE}/XML/Compile/xsd/1999-XMLSchema-part2.xsd
+${P5SITE}/XML/Compile/xsd/1999-XMLSchema.xsd
+${P5SITE}/XML/Compile/xsd/2000-XMLSchema.xsd
+${P5SITE}/XML/Compile/xsd/2001-XMLSchema-instance.xsd
+${P5SITE}/XML/Compile/xsd/2001-XMLSchema.dtd
+${P5SITE}/XML/Compile/xsd/2001-XMLSchema.xsd
+${P5SITE}/XML/Compile/xsd/2001-datatypes.dtd
+@man man/man1/schema2example.1
+@man man/man1/xml2json.1
+@man man/man1/xml2yaml.1
+@man man/man3p/XML::Compile.3p
+@man man/man3p/XML::Compile::FAQ.3p
+@man man/man3p/XML::Compile::Iterator.3p
+@man man/man3p/XML::Compile::Schema.3p
+@man man/man3p/XML::Compile::Schema::BuiltInFacets.3p
+@man man/man3p/XML::Compile::Schema::BuiltInTypes.3p
+@man man/man3p/XML::Compile::Schema::Instance.3p
+@man man/man3p/XML::Compile::Schema::NameSpaces.3p
+@man man/man3p/XML::Compile::Schema::Specs.3p
+@man man/man3p/XML::Compile::Translate.3p
+@man man/man3p/XML::Compile::Translate::Reader.3p
+@man man/man3p/XML::Compile::Translate::Template.3p
+@man man/man3p/XML::Compile::Translate::Writer.3p
+@man man/man3p/XML::Compile::Util.3p

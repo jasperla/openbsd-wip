@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v$
+${P5SITE}/MooX/
+${P5SITE}/MooX/Types/
+${P5SITE}/MooX/Types/MooseLike/
+${P5SITE}/MooX/Types/MooseLike/DateTime.pm
+@man man/man3p/MooX::Types::MooseLike::DateTime.3p

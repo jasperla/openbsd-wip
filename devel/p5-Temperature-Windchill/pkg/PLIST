@@ -1,0 +1,3 @@
+${P5SITE}/Temperature/
+${P5SITE}/Temperature/Windchill.pm
+@man man/man3p/Temperature::Windchill.3p

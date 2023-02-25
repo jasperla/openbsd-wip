@@ -1,0 +1,15 @@
+${P5SITE}/Google/
+${P5SITE}/Google/API/
+${P5SITE}/Google/API/Base.pm
+${P5SITE}/Google/API/Client.pm
+${P5SITE}/Google/API/Method.pm
+${P5SITE}/Google/API/OAuth2/
+${P5SITE}/Google/API/OAuth2/Client.pm
+${P5SITE}/Google/API/OAuth2/SignedJWT.pm
+${P5SITE}/Google/API/Resource.pm
+@man man/man3p/Google::API::Base.3p
+@man man/man3p/Google::API::Client.3p
+@man man/man3p/Google::API::Method.3p
+@man man/man3p/Google::API::OAuth2::Client.3p
+@man man/man3p/Google::API::OAuth2::SignedJWT.3p
+@man man/man3p/Google::API::Resource.3p

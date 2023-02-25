@@ -1,0 +1,5 @@
+eval $(sed 's/^\$//;s/ = /=/' ~todd/git/sw/upsapi/acct)
+export UPS_USERNAME="$user"
+export UPS_PASSWORD="$pass"
+export UPS_KEY="$key"
+export UPS_ACCOUNT="$account"

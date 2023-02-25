@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v$
+${P5SITE}/Finance/
+${P5SITE}/Finance/Currency/
+${P5SITE}/Finance/Currency/Convert/
+${P5SITE}/Finance/Currency/Convert/WebserviceX.pm
+@man man/man3p/Finance::Currency::Convert::WebserviceX.3p

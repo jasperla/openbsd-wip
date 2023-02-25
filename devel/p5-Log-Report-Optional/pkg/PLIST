@@ -1,0 +1,16 @@
+@comment $OpenBSD: PLIST,v$
+${P5SITE}/Log/
+${P5SITE}/Log/Report/
+${P5SITE}/Log/Report/Minimal/
+${P5SITE}/Log/Report/Minimal.pm
+${P5SITE}/Log/Report/Minimal.pod
+${P5SITE}/Log/Report/Minimal/Domain.pm
+${P5SITE}/Log/Report/Minimal/Domain.pod
+${P5SITE}/Log/Report/Optional.pm
+${P5SITE}/Log/Report/Optional.pod
+${P5SITE}/Log/Report/Util.pm
+${P5SITE}/Log/Report/Util.pod
+@man man/man3p/Log::Report::Minimal.3p
+@man man/man3p/Log::Report::Minimal::Domain.3p
+@man man/man3p/Log::Report::Optional.3p
+@man man/man3p/Log::Report::Util.3p

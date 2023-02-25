@@ -1,0 +1,48 @@
+@comment $OpenBSD: PLIST,v$
+bin/ups_tracking
+${P5SITE}/Business/
+${P5SITE}/Business/UPS/
+${P5SITE}/Business/UPS/Tracking/
+${P5SITE}/Business/UPS/Tracking.pm
+${P5SITE}/Business/UPS/Tracking/Commandline.pm
+${P5SITE}/Business/UPS/Tracking/Element/
+${P5SITE}/Business/UPS/Tracking/Element/Activity.pm
+${P5SITE}/Business/UPS/Tracking/Element/Address.pm
+${P5SITE}/Business/UPS/Tracking/Element/Code.pm
+${P5SITE}/Business/UPS/Tracking/Element/Package.pm
+${P5SITE}/Business/UPS/Tracking/Element/ReferenceNumber.pm
+${P5SITE}/Business/UPS/Tracking/Element/Weight.pm
+${P5SITE}/Business/UPS/Tracking/Exception.pm
+${P5SITE}/Business/UPS/Tracking/Meta/
+${P5SITE}/Business/UPS/Tracking/Meta/Attribute/
+${P5SITE}/Business/UPS/Tracking/Meta/Attribute/Trait/
+${P5SITE}/Business/UPS/Tracking/Meta/Attribute/Trait/Printable.pm
+${P5SITE}/Business/UPS/Tracking/Request.pm
+${P5SITE}/Business/UPS/Tracking/Response.pm
+${P5SITE}/Business/UPS/Tracking/Role/
+${P5SITE}/Business/UPS/Tracking/Role/Base.pm
+${P5SITE}/Business/UPS/Tracking/Role/Builder.pm
+${P5SITE}/Business/UPS/Tracking/Role/Print.pm
+${P5SITE}/Business/UPS/Tracking/Shipment/
+${P5SITE}/Business/UPS/Tracking/Shipment.pm
+${P5SITE}/Business/UPS/Tracking/Shipment/Freight.pm
+${P5SITE}/Business/UPS/Tracking/Shipment/SmallPackage.pm
+${P5SITE}/Business/UPS/Tracking/Utils.pm
+@man man/man1/ups_tracking.1
+@man man/man3p/Business::UPS::Tracking.3p
+@man man/man3p/Business::UPS::Tracking::Commandline.3p
+@man man/man3p/Business::UPS::Tracking::Element::Activity.3p
+@man man/man3p/Business::UPS::Tracking::Element::Address.3p
+@man man/man3p/Business::UPS::Tracking::Element::Code.3p
+@man man/man3p/Business::UPS::Tracking::Element::Package.3p
+@man man/man3p/Business::UPS::Tracking::Element::ReferenceNumber.3p
+@man man/man3p/Business::UPS::Tracking::Element::Weight.3p
+@man man/man3p/Business::UPS::Tracking::Request.3p
+@man man/man3p/Business::UPS::Tracking::Response.3p
+@man man/man3p/Business::UPS::Tracking::Role::Base.3p
+@man man/man3p/Business::UPS::Tracking::Role::Builder.3p
+@man man/man3p/Business::UPS::Tracking::Role::Print.3p
+@man man/man3p/Business::UPS::Tracking::Shipment.3p
+@man man/man3p/Business::UPS::Tracking::Shipment::Freight.3p
+@man man/man3p/Business::UPS::Tracking::Shipment::SmallPackage.3p
+@man man/man3p/Business::UPS::Tracking::Utils.3p

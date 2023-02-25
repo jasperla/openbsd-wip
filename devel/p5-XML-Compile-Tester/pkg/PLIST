@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v$
+${P5SITE}/XML/
+${P5SITE}/XML/Compile/
+${P5SITE}/XML/Compile/Tester.pm
+${P5SITE}/XML/Compile/Tester.pod
+@man man/man3p/XML::Compile::Tester.3p

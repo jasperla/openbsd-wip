@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v$
+${P5SITE}/Locale/
+${P5SITE}/Locale/Currency/
+${P5SITE}/Locale/Currency/Format.pm
+@man man/man3p/Locale::Currency::Format.3p

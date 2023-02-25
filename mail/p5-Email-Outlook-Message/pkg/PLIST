@@ -1,0 +1,13 @@
+bin/msgconvert
+${P5SITE}/Email/
+${P5SITE}/Email/Outlook/
+${P5SITE}/Email/Outlook/Message/
+${P5SITE}/Email/Outlook/Message.pm
+${P5SITE}/Email/Outlook/Message/AddressInfo.pm
+${P5SITE}/Email/Outlook/Message/Attachment.pm
+${P5SITE}/Email/Outlook/Message/Base.pm
+@man man/man1/msgconvert.1
+@man man/man3p/Email::Outlook::Message.3p
+@man man/man3p/Email::Outlook::Message::AddressInfo.3p
+@man man/man3p/Email::Outlook::Message::Attachment.3p
+@man man/man3p/Email::Outlook::Message::Base.3p

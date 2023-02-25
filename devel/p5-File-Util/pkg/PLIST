@@ -1,0 +1,26 @@
+@comment $OpenBSD: PLIST,v$
+${P5SITE}/File/
+${P5SITE}/File/Util/
+${P5SITE}/File/Util.pm
+${P5SITE}/File/Util/Cookbook.pod
+${P5SITE}/File/Util/Definitions.pm
+${P5SITE}/File/Util/Exception/
+${P5SITE}/File/Util/Exception.pm
+${P5SITE}/File/Util/Exception/Diagnostic.pm
+${P5SITE}/File/Util/Exception/Standard.pm
+${P5SITE}/File/Util/Interface/
+${P5SITE}/File/Util/Interface/Classic.pm
+${P5SITE}/File/Util/Interface/Modern.pm
+${P5SITE}/File/Util/Manual/
+${P5SITE}/File/Util/Manual.pod
+${P5SITE}/File/Util/Manual/Examples.pod
+@man man/man3p/File::Util.3p
+@man man/man3p/File::Util::Cookbook.3p
+@man man/man3p/File::Util::Definitions.3p
+@man man/man3p/File::Util::Exception.3p
+@man man/man3p/File::Util::Exception::Diagnostic.3p
+@man man/man3p/File::Util::Exception::Standard.3p
+@man man/man3p/File::Util::Interface::Classic.3p
+@man man/man3p/File::Util::Interface::Modern.3p
+@man man/man3p/File::Util::Manual.3p
+@man man/man3p/File::Util::Manual::Examples.3p

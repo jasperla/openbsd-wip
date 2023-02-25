@@ -1,0 +1,78 @@
+@comment $OpenBSD: PLIST,v$
+${P5SITE}/Dancer/
+${P5SITE}/Dancer/Logger/
+${P5SITE}/Dancer/Logger/LogReport.pm
+${P5SITE}/Dancer/Logger/LogReport.pod
+${P5SITE}/Dancer2/
+${P5SITE}/Dancer2/Logger/
+${P5SITE}/Dancer2/Logger/LogReport.pm
+${P5SITE}/Dancer2/Logger/LogReport.pod
+${P5SITE}/Dancer2/Plugin/
+${P5SITE}/Dancer2/Plugin/LogReport/
+${P5SITE}/Dancer2/Plugin/LogReport.pm
+${P5SITE}/Dancer2/Plugin/LogReport.pod
+${P5SITE}/Dancer2/Plugin/LogReport/Message.pm
+${P5SITE}/Dancer2/Plugin/LogReport/Message.pod
+${P5SITE}/Log/
+${P5SITE}/Log/Report/
+${P5SITE}/Log/Report.pm
+${P5SITE}/Log/Report.pod
+${P5SITE}/Log/Report/DBIC/
+${P5SITE}/Log/Report/DBIC/Profiler.pm
+${P5SITE}/Log/Report/DBIC/Profiler.pod
+${P5SITE}/Log/Report/Die.pm
+${P5SITE}/Log/Report/Die.pod
+${P5SITE}/Log/Report/Dispatcher/
+${P5SITE}/Log/Report/Dispatcher.pm
+${P5SITE}/Log/Report/Dispatcher.pod
+${P5SITE}/Log/Report/Dispatcher/Callback.pm
+${P5SITE}/Log/Report/Dispatcher/Callback.pod
+${P5SITE}/Log/Report/Dispatcher/File.pm
+${P5SITE}/Log/Report/Dispatcher/File.pod
+${P5SITE}/Log/Report/Dispatcher/Log4perl.pm
+${P5SITE}/Log/Report/Dispatcher/Log4perl.pod
+${P5SITE}/Log/Report/Dispatcher/LogDispatch.pm
+${P5SITE}/Log/Report/Dispatcher/LogDispatch.pod
+${P5SITE}/Log/Report/Dispatcher/Perl.pm
+${P5SITE}/Log/Report/Dispatcher/Perl.pod
+${P5SITE}/Log/Report/Dispatcher/Syslog.pm
+${P5SITE}/Log/Report/Dispatcher/Syslog.pod
+${P5SITE}/Log/Report/Dispatcher/Try.pm
+${P5SITE}/Log/Report/Dispatcher/Try.pod
+${P5SITE}/Log/Report/Domain.pm
+${P5SITE}/Log/Report/Domain.pod
+${P5SITE}/Log/Report/Exception.pm
+${P5SITE}/Log/Report/Exception.pod
+${P5SITE}/Log/Report/Message.pm
+${P5SITE}/Log/Report/Message.pod
+${P5SITE}/Log/Report/Translator.pm
+${P5SITE}/Log/Report/Translator.pod
+${P5SITE}/Log/Report/messages/
+${P5SITE}/Log/Report/messages/first-domain.utf-8.po
+${P5SITE}/Log/Report/messages/log-report/
+${P5SITE}/Log/Report/messages/log-report.utf-8.po
+${P5SITE}/Log/Report/messages/log-report/nl_NL.po
+${P5SITE}/MojoX/
+${P5SITE}/MojoX/Log/
+${P5SITE}/MojoX/Log/Report.pm
+${P5SITE}/MojoX/Log/Report.pod
+@man man/man3p/Dancer2::Logger::LogReport.3p
+@man man/man3p/Dancer2::Plugin::LogReport.3p
+@man man/man3p/Dancer2::Plugin::LogReport::Message.3p
+@man man/man3p/Dancer::Logger::LogReport.3p
+@man man/man3p/Log::Report.3p
+@man man/man3p/Log::Report::DBIC::Profiler.3p
+@man man/man3p/Log::Report::Die.3p
+@man man/man3p/Log::Report::Dispatcher.3p
+@man man/man3p/Log::Report::Dispatcher::Callback.3p
+@man man/man3p/Log::Report::Dispatcher::File.3p
+@man man/man3p/Log::Report::Dispatcher::Log4perl.3p
+@man man/man3p/Log::Report::Dispatcher::LogDispatch.3p
+@man man/man3p/Log::Report::Dispatcher::Perl.3p
+@man man/man3p/Log::Report::Dispatcher::Syslog.3p
+@man man/man3p/Log::Report::Dispatcher::Try.3p
+@man man/man3p/Log::Report::Domain.3p
+@man man/man3p/Log::Report::Exception.3p
+@man man/man3p/Log::Report::Message.3p
+@man man/man3p/Log::Report::Translator.3p
+@man man/man3p/MojoX::Log::Report.3p
