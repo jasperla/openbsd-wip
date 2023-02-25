@@ -1,6 +1,6 @@
 # : Makefile,v 1.2 2005/12/01 22:37:28 steven Exp $
 
-COMMENT=		A Perl module for accessing the OpenAI API
+COMMENT=		Perl module for accessing the OpenAI API
 
 MODULES=		cpan
 VER=			0.07
