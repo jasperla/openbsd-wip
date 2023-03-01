@@ -1,8 +1,8 @@
-COMMENT =	experimental Rust compiler front-end for IDEs
+COMMENT =	Rust compiler front-end for IDEs
 
 GH_ACCOUNT =	rust-lang
 GH_PROJECT =	rust-analyzer
-GH_TAGNAME =	2023-01-09
+GH_TAGNAME =	2023-02-27
 
 PKGNAME =	rust-analyzer-${GH_TAGNAME:S/-//g}
 
@@ -15,7 +15,6 @@ CATEGORIES =	devel
 # Apache-2.0, MIT
 PERMIT_PACKAGE =	Yes
 
-DISTFILES +=	${GH_DISTFILE}
 MODULES =	devel/cargo
 BUILD_DEPENDS =	textproc/asciidoctor
 
@@ -24,9 +23,12 @@ WANTLIB +=	${MODCARGO_WANTLIB}
 CONFIGURE_STYLE =	cargo
 SEPARATE_BUILD =	Yes
 
+PATCHORIG =	.port.orig
+
 DOCDIR =	${PREFIX}/share/doc/rust-analyzer
 TMP_DOCDIR =	${WRKSRC}/docs_html
 
+# Patch source to add current version
 post-extract:
 	@sed -i "s/0.0.0/${GH_TAGNAME}/" ${WRKSRC}/crates/rust-analyzer/src/version.rs
 

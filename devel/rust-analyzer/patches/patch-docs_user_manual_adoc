@@ -1,7 +1,7 @@
 Index: docs/user/manual.adoc
 --- docs/user/manual.adoc.orig
 +++ docs/user/manual.adoc
-@@ -567,7 +567,783 @@ Logs should show both the JSON that `rust-analyzer` se
+@@ -656,7 +656,806 @@ Logs should show both the JSON that `rust-analyzer` se
  
  This is the list of config options `rust-analyzer` supports:
  
@@ -107,6 +107,14 @@ Index: docs/user/manual.adoc
 +
 +This option does not take effect until rust-analyzer is restarted.
 +--
++[[rust-analyzer.cargo.sysrootSrc]]rust-analyzer.cargo.sysrootSrc (default: `null`)::
+++
++--
++Relative path to the sysroot library sources. If left unset, this will default to
++`{cargo.sysroot}/lib/rustlib/src/rust/library`.
++
++This option does not take effect until rust-analyzer is restarted.
++--
 +[[rust-analyzer.cargo.target]]rust-analyzer.cargo.target (default: `null`)::
 ++
 +--
@@ -117,33 +125,33 @@ Index: docs/user/manual.adoc
 +--
 +Unsets `#[cfg(test)]` for the specified crates.
 +--
-+[[rust-analyzer.checkOnSave.allTargets]]rust-analyzer.checkOnSave.allTargets (default: `true`)::
++[[rust-analyzer.checkOnSave]]rust-analyzer.checkOnSave (default: `true`)::
+++
++--
++Run the check command for diagnostics on save.
++--
++[[rust-analyzer.check.allTargets]]rust-analyzer.check.allTargets (default: `true`)::
 ++
 +--
 +Check all targets and tests (`--all-targets`).
 +--
-+[[rust-analyzer.checkOnSave.command]]rust-analyzer.checkOnSave.command (default: `"check"`)::
++[[rust-analyzer.check.command]]rust-analyzer.check.command (default: `"check"`)::
 ++
 +--
 +Cargo command to use for `cargo check`.
 +--
-+[[rust-analyzer.checkOnSave.enable]]rust-analyzer.checkOnSave.enable (default: `true`)::
-++
-+--
-+Run specified `cargo check` command for diagnostics on save.
-+--
-+[[rust-analyzer.checkOnSave.extraArgs]]rust-analyzer.checkOnSave.extraArgs (default: `[]`)::
++[[rust-analyzer.check.extraArgs]]rust-analyzer.check.extraArgs (default: `[]`)::
 ++
 +--
 +Extra arguments for `cargo check`.
 +--
-+[[rust-analyzer.checkOnSave.extraEnv]]rust-analyzer.checkOnSave.extraEnv (default: `{}`)::
++[[rust-analyzer.check.extraEnv]]rust-analyzer.check.extraEnv (default: `{}`)::
 ++
 +--
 +Extra environment variables that will be set when running `cargo check`.
 +Extends `#rust-analyzer.cargo.extraEnv#`.
 +--
-+[[rust-analyzer.checkOnSave.features]]rust-analyzer.checkOnSave.features (default: `null`)::
++[[rust-analyzer.check.features]]rust-analyzer.check.features (default: `null`)::
 ++
 +--
 +List of features to activate. Defaults to
@@ -151,7 +159,7 @@ Index: docs/user/manual.adoc
 +
 +Set to `"all"` to pass `--all-features` to Cargo.
 +--
-+[[rust-analyzer.checkOnSave.invocationLocation]]rust-analyzer.checkOnSave.invocationLocation (default: `"workspace"`)::
++[[rust-analyzer.check.invocationLocation]]rust-analyzer.check.invocationLocation (default: `"workspace"`)::
 ++
 +--
 +Specifies the working directory for running checks.
@@ -161,7 +169,7 @@ Index: docs/user/manual.adoc
 +This config only has an effect when `#rust-analyzer.cargo.buildScripts.overrideCommand#`
 +is set.
 +--
-+[[rust-analyzer.checkOnSave.invocationStrategy]]rust-analyzer.checkOnSave.invocationStrategy (default: `"per_workspace"`)::
++[[rust-analyzer.check.invocationStrategy]]rust-analyzer.check.invocationStrategy (default: `"per_workspace"`)::
 ++
 +--
 +Specifies the invocation strategy to use when running the checkOnSave command.
@@ -170,18 +178,20 @@ Index: docs/user/manual.adoc
 +This config only has an effect when `#rust-analyzer.cargo.buildScripts.overrideCommand#`
 +is set.
 +--
-+[[rust-analyzer.checkOnSave.noDefaultFeatures]]rust-analyzer.checkOnSave.noDefaultFeatures (default: `null`)::
++[[rust-analyzer.check.noDefaultFeatures]]rust-analyzer.check.noDefaultFeatures (default: `null`)::
 ++
 +--
 +Whether to pass `--no-default-features` to Cargo. Defaults to
 +`#rust-analyzer.cargo.noDefaultFeatures#`.
 +--
-+[[rust-analyzer.checkOnSave.overrideCommand]]rust-analyzer.checkOnSave.overrideCommand (default: `null`)::
++[[rust-analyzer.check.overrideCommand]]rust-analyzer.check.overrideCommand (default: `null`)::
 ++
 +--
 +Override the command rust-analyzer uses instead of `cargo check` for
 +diagnostics on save. The command is required to output json and
-+should therefore include `--message-format=json` or a similar option.
++should therefore include `--message-format=json` or a similar option
++(if your client supports the `colorDiagnosticOutput` experimental
++capability, you can use `--message-format=json-diagnostic-rendered-ansi`).
 +
 +If you're changing this because you're using some tool wrapping
 +Cargo, you might also want to change
@@ -198,7 +208,7 @@ Index: docs/user/manual.adoc
 +```
 +.
 +--
-+[[rust-analyzer.checkOnSave.target]]rust-analyzer.checkOnSave.target (default: `null`)::
++[[rust-analyzer.check.targets]]rust-analyzer.check.targets (default: `null`)::
 ++
 +--
 +Check for specific targets. Defaults to `#rust-analyzer.cargo.target#` if empty.
@@ -224,6 +234,11 @@ Index: docs/user/manual.adoc
 ++
 +--
 +Whether to add parenthesis and argument snippets when completing function.
++--
++[[rust-analyzer.completion.limit]]rust-analyzer.completion.limit (default: `null`)::
+++
++--
++Maximum number of completions to return. If `None`, the limit is infinite.
 +--
 +[[rust-analyzer.completion.postfix.enable]]rust-analyzer.completion.postfix.enable (default: `true`)::
 ++
@@ -477,6 +492,11 @@ Index: docs/user/manual.adoc
 +--
 +Whether to hide inlay hints for type adjustments outside of `unsafe` blocks.
 +--
++[[rust-analyzer.inlayHints.expressionAdjustmentHints.mode]]rust-analyzer.inlayHints.expressionAdjustmentHints.mode (default: `"prefix"`)::
+++
++--
++Whether to show inlay hints as postfix ops (`.*` instead of `*`, etc).
++--
 +[[rust-analyzer.inlayHints.lifetimeElisionHints.enable]]rust-analyzer.inlayHints.lifetimeElisionHints.enable (default: `"never"`)::
 ++
 +--
@@ -486,11 +506,6 @@ Index: docs/user/manual.adoc
 ++
 +--
 +Whether to prefer using parameter names as the name for elided lifetime hints if possible.
-+--
-+[[rust-analyzer.inlayHints.locationLinks]]rust-analyzer.inlayHints.locationLinks (default: `true`)::
-++
-+--
-+Whether to use location links for parts of type mentioned in inlay hints.
 +--
 +[[rust-analyzer.inlayHints.maxLength]]rust-analyzer.inlayHints.maxLength (default: `25`)::
 ++
@@ -627,6 +642,11 @@ Index: docs/user/manual.adoc
 +--
 +Whether to show `can't find Cargo.toml` error message.
 +--
++[[rust-analyzer.numThreads]]rust-analyzer.numThreads (default: `null`)::
+++
++--
++How many worker threads in the main loop. The default `null` means to pick automatically.
++--
 +[[rust-analyzer.procMacro.attributes.enable]]rust-analyzer.procMacro.attributes.enable (default: `true`)::
 ++
 +--
@@ -687,7 +707,10 @@ Index: docs/user/manual.adoc
 ++
 +--
 +Advanced option, fully override the command rust-analyzer uses for
-+formatting.
++formatting. This should be the equivalent of `rustfmt` here, and
++not that of `cargo fmt`. The file contents will be passed on the
++standard input and the formatted result will be read from the
++standard output.
 +--
 +[[rust-analyzer.rustfmt.rangeFormatting.enable]]rust-analyzer.rustfmt.rangeFormatting.enable (default: `false`)::
 ++
