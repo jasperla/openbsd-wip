@@ -1,1 +1,7 @@
-Perl module for accessing the OpenAI API
+OpenAI::API is a Perl module that provides an interface to the OpenAI
+API, which allows you to generate text, translate languages, summarize
+text, and perform other tasks using the language models developed by
+OpenAI.
+
+To use the OpenAI::API module, you will need an API key, which you can
+obtain by signing up for an account on the OpenAI website.
