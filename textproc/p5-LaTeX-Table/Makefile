@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile.template,v 1.60 2010/10/24 20:41:23 ajacoutot Exp $
-
 COMMENT =	extension for LaTeX table generation
 	
 MODULES =	cpan

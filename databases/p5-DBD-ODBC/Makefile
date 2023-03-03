@@ -1,6 +1,3 @@
-# $OpenBSD$
-
-
 COMMENT =		DBI driver for ODBC
 
 MODULES =		cpan

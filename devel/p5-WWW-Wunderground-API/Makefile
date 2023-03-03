@@ -1,5 +1,3 @@
-# : Makefile,v 1.2 2005/12/01 22:37:28 steven Exp $
-
 COMMENT=		"Use Weather Underground's JSON/XML API"
 DISTNAME=		WWW-Wunderground-API-0.08
 PKGNAME=		p5-${DISTNAME}

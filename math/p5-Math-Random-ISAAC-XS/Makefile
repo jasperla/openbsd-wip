@@ -1,5 +1,3 @@
-# $OpenBSD$
-
 COMMENT =		interface to the ISAAC PRNG algorithm
 
 MODULES =		cpan

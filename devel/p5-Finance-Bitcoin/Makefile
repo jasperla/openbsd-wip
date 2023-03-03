@@ -1,5 +1,3 @@
-# : Makefile,v 1.2 2005/12/01 22:37:28 steven Exp $
-
 COMMENT=		"manage a bitcoin instance"
 DISTNAME=		Finance-Bitcoin-0.902
 PKGNAME=		p5-${DISTNAME}

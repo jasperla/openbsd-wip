@@ -1,5 +1,3 @@
-# $OpenBSD$
-
 COMMENT =		HTML::TreeBuilder/XPath libxml compatible interface
 
 MODULES =		cpan

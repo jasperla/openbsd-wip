@@ -1,5 +1,3 @@
-# $OpenBSD$
-
 COMMENT=	Perl interface to the Transmission BitTorrent client RPC
 
 DISTNAME=	Transmission-Client-0.0603

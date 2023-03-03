@@ -1,5 +1,3 @@
-# : Makefile,v 1.2 2005/12/01 22:37:28 steven Exp $
-
 COMMENT=		ALMOST a drop-in replacement for Test::More
 
 MODULES=		cpan

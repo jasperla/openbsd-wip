@@ -1,5 +1,3 @@
-# : Makefile,v 1.2 2005/12/01 22:37:28 steven Exp $
-
 COMMENT=		Perl interface to the Zstd (Zstandard) (de)compressor
 
 MODULES=		cpan

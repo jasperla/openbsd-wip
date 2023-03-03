@@ -1,5 +1,3 @@
-# : Makefile,v 1.2 2005/12/01 22:37:28 steven Exp $
-
 COMMENT=		module for posting messages to Discord chat service
 
 MODULES=		cpan

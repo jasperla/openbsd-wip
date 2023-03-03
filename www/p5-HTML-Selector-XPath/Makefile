@@ -1,5 +1,3 @@
-# $OpenBSD$
-
 COMMENT =		CSS Selector to XPath compiler
 
 MODULES =		cpan

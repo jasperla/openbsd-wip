@@ -1,5 +1,3 @@
-# OpenBSD$
-
 COMMENT =		timing side-channel protected string compare
 
 MODULES =		cpan

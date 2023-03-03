@@ -1,5 +1,3 @@
-# : Makefile,v 1.2 2005/12/01 22:37:28 steven Exp $
-
 COMMENT=		Tools for creating Meta objects to track custom metrics
 
 MODULES=		cpan

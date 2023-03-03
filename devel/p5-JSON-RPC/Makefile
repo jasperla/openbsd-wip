@@ -1,5 +1,3 @@
-# : Makefile,v 1.2 2005/12/01 22:37:28 steven Exp $
-
 COMMENT=		"JSON RPC 2.0 Server Implementation"
 DISTNAME=		JSON-RPC-1.06
 PKGNAME=		p5-${DISTNAME}

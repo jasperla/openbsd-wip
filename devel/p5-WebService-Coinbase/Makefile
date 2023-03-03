@@ -1,5 +1,3 @@
-# : Makefile,v 1.2 2005/12/01 22:37:28 steven Exp $
-
 COMMENT=		"coinbase.com API bindings"
 DISTNAME=		WebService-Coinbase-0.0200
 PKGNAME=		p5-${DISTNAME}

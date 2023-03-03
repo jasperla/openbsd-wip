@@ -1,5 +1,3 @@
-# : Makefile,v 1.2 2005/12/01 22:37:28 steven Exp $
-
 COMMENT=		interface to write lzop comp. data to files or buffers
 
 MODULES=		cpan

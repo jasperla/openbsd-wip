@@ -1,5 +1,3 @@
-# : Makefile,v 1.2 2005/12/01 22:37:28 steven Exp $
-
 COMMENT=		"perl methods for the Nest API"
 DISTNAME=		Device-Nest-0.09
 PKGNAME=		p5-${DISTNAME}

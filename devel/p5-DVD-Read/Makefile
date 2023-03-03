@@ -1,5 +1,3 @@
-# : Makefile,v 1.2 2005/12/01 22:37:28 steven Exp $
-
 COMMENT=		"libdvdread perl binding"
 DISTNAME=		DVD-Read-0.04
 PKGNAME=		p5-${DISTNAME}

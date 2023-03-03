@@ -1,5 +1,3 @@
-# $OpenBSD$
-
 COMMENT =		yet another scraping library like jQuery
 
 MODULES =		cpan

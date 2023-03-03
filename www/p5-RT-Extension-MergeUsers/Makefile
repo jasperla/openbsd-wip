@@ -1,5 +1,3 @@
-# $OpenBSD$
-
 COMMENT= 	merges two RT users into the same effective user
 
 MODULES=	cpan

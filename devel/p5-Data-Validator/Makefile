@@ -1,5 +1,3 @@
-# : Makefile,v 1.2 2005/12/01 22:37:28 steven Exp $
-
 COMMENT=		"Rule based validator on type constraint system"
 DISTNAME=		Data-Validator-1.07
 PKGNAME=		p5-${DISTNAME}

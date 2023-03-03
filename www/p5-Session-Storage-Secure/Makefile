@@ -1,5 +1,3 @@
-# OpenBSD$
-
 COMMENT =		encrypted (and more) session data with integrity
 
 MODULES =		cpan

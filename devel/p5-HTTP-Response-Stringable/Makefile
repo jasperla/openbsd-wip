@@ -1,5 +1,3 @@
-# : Makefile,v 1.2 2005/12/01 22:37:28 steven Exp $
-
 COMMENT=		"Makes HTTP::Response objects stringable"
 DISTNAME=		HTTP-Response-Stringable-0.0002
 PKGNAME=		p5-${DISTNAME}

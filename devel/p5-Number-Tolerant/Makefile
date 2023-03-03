@@ -1,5 +1,3 @@
-# $OpenBSD $
-
 COMMENT=	tolerance ranges for inexact numbers
 
 MODULES=	cpan

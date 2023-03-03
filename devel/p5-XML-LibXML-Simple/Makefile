@@ -1,5 +1,3 @@
-# : Makefile,v 1.2 2005/12/01 22:37:28 steven Exp $
-
 COMMENT=		rewrite of XML::Simple for XML structures
 
 MODULES=		cpan

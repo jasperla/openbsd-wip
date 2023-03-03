@@ -1,5 +1,3 @@
-# $OpenBSD$
-
 COMMENT =		job queue
 
 MODULES =		cpan

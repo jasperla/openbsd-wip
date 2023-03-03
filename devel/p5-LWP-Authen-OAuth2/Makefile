@@ -1,5 +1,3 @@
-# $OpenBSD $
-
 COMMENT=	make requests to OAuth2 APIs
 
 MODULES=	cpan

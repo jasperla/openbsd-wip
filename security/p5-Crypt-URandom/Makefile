@@ -1,5 +1,3 @@
-# OpenBSD$
-
 COMMENT =		provide non blocking randomness
 
 MODULES =		cpan

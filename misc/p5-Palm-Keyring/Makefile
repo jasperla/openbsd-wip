@@ -1,5 +1,3 @@
-# $OpenBSD$
-
 COMMENT=	Perl interface to Palm Keyrings
 
 DISTNAME=	Palm-Keyring-0.96_07

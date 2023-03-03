@@ -1,5 +1,3 @@
-# $OpenBSD $
-
 COMMENT=	OAuth 2.0 implementation
 
 MODULES=	cpan

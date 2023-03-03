@@ -1,5 +1,3 @@
-# $OpenBSD$
-
 COMMENT=				"perldoc that works for modules you don't have installed"
 
 MODULES=	cpan

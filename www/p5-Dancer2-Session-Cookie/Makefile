@@ -1,5 +1,3 @@
-# OpenBSD$
-
 COMMENT =		Dancer 2 session storage in secure cookies
 
 MODULES =		cpan

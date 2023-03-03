@@ -1,5 +1,3 @@
-# : Makefile,v 1.2 2005/12/01 22:37:28 steven Exp $
-
 COMMENT=		"Creates a new file in Excel 2007+ XLSX format"
 DISTNAME=		Excel-Writer-XLSX-0.77
 PKGNAME=		p5-${DISTNAME}

@@ -1,5 +1,3 @@
-# : Makefile,v 1.2 2005/12/01 22:37:28 steven Exp $
-
 COMMENT=		"Lightning-fast URL fetcher"
 DISTNAME=		Furl-3.08
 PKGNAME=		p5-${DISTNAME}

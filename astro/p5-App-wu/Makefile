@@ -1,5 +1,3 @@
-# : Makefile,v 1.2 2005/12/01 22:37:28 steven Exp $
-
 COMMENT=		"Terminal app providing weather via wunderground api"
 DISTNAME=		App-wu-0.05
 CATEGORIES=		astro

@@ -1,5 +1,3 @@
-# : Makefile,v 1.2 2005/12/01 22:37:28 steven Exp $
-
 COMMENT=		"base role for creating web service clients"
 DISTNAME=		WebService-Client-0.0501
 PKGNAME=		p5-${DISTNAME}
