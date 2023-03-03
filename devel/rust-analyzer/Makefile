@@ -1,4 +1,4 @@
-COMMENT =	Rust compiler front-end for IDEs
+COMMENT =	modular Rust compiler front-end for IDEs
 
 GH_ACCOUNT =	rust-lang
 GH_PROJECT =	rust-analyzer
@@ -21,16 +21,14 @@ BUILD_DEPENDS =	textproc/asciidoctor
 WANTLIB +=	${MODCARGO_WANTLIB}
 
 CONFIGURE_STYLE =	cargo
+MAKE_ENV +=	CFG_RELEASE=${GH_TAGNAME}
+
 SEPARATE_BUILD =	Yes
 
 PATCHORIG =	.port.orig
 
 DOCDIR =	${PREFIX}/share/doc/rust-analyzer
 TMP_DOCDIR =	${WRKSRC}/docs_html
-
-# Patch source to add current version
-post-extract:
-	@sed -i "s/0.0.0/${GH_TAGNAME}/" ${WRKSRC}/crates/rust-analyzer/src/version.rs
 
 do-install:
 	${INSTALL_PROGRAM} ${MODCARGO_TARGET_DIR}/release/rust-analyzer ${PREFIX}/bin/
