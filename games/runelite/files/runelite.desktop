@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Terminal=false
+Name=RuneLite
+GenericName=Old School RuneScape client
+Comment=RuneLite is a free, open source Old School RuneScape client.
+Keywords=games;runescape;osrs;
+Exec=runelite
+Icon=runelite.png
+Categories=Game;RolePlaying;

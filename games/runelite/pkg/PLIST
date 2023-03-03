@@ -1,0 +1,8 @@
+bin/runelite
+share/applications/runelite.desktop
+share/icons/hicolor/128x128/apps/runelite.png
+share/java/
+share/java/classes/
+share/java/classes/runelite.jar
+@tag gtk-update-icon-cache %D/share/icons/hicolor
+@tag update-desktop-database
