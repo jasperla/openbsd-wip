@@ -1,0 +1,10 @@
+Index: rpython/tool/udir.py
+--- rpython/tool/udir.py.orig
++++ rpython/tool/udir.py
+@@ -47,5 +47,4 @@ def make_udir(dir=None, basename=None):
+                                    prefix = 'usession' + basename,
+                                    keep = PYPY_KEEP)
+ 
+-udir = make_udir(dir      = os.environ.get('PYPY_USESSION_DIR'),
+-                 basename = os.environ.get('PYPY_USESSION_BASENAME'))
++udir = local("/").mkdir(os.environ.get('PYPY_USESSION_DIR'))
