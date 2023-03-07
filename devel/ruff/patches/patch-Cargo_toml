@@ -1,26 +1,28 @@
 Use local paths for external crates
+
 Index: Cargo.toml
 --- Cargo.toml.orig
 +++ Cargo.toml
-@@ -1,17 +1,18 @@
+@@ -1,5 +1,6 @@
  [workspace]
  members = ["crates/*"]
- default-members = ["crates/ruff", "crates/ruff_cli"]
 +exclude = ["${MODCARGO_VENDOR_DIR}/libcst-0.1.0/native/libcst", "${MODCARGO_VENDOR_DIR}/rustpython-0.2.0/common","${MODCARGO_VENDOR_DIR}/rustpython-0.2.0/compiler/parser"]
  
- [workspace.dependencies]
- anyhow = { version = "1.0.66" }
+ [workspace.package]
+ edition = "2021"
+@@ -10,12 +11,12 @@ anyhow = { version = "1.0.66" }
  clap = { version = "4.0.1", features = ["derive"] }
  itertools = { version = "0.10.5" }
--libcst = { git = "https://github.com/charliermarsh/LibCST", rev = "f2f0b7a487a8725d161fe8b3ed73a6758b21e177" }
+ is-macro = { version = "0.2.2" }
+-libcst = { git = "https://github.com/charliermarsh/LibCST", rev = "80e4c1399f95e5beb532fdd1e209ad2dbb470438" }
 +libcst = { path = "${MODCARGO_VENDOR_DIR}/libcst-0.1.0/native/libcst" }
  once_cell = { version = "1.16.0" }
  regex = { version = "1.6.0" }
  rustc-hash = { version = "1.1.0" }
--rustpython-common = { git = "https://github.com/RustPython/RustPython.git", rev = "61b48f108982d865524f86624a9d5bc2ae3bccef" }
--rustpython-parser = { features = ["lalrpop"], git = "https://github.com/RustPython/RustPython.git", rev = "61b48f108982d865524f86624a9d5bc2ae3bccef" }
+-rustpython-common = { git = "https://github.com/RustPython/RustPython.git", rev = "822f6a9fa6b9142413634858c4c6908f678ce887" }
+-rustpython-parser = { features = ["lalrpop", "serde"], git = "https://github.com/RustPython/RustPython.git", rev = "822f6a9fa6b9142413634858c4c6908f678ce887" }
 +rustpython-common = { path = "${MODCARGO_VENDOR_DIR}/rustpython-0.2.0/common" }
-+rustpython-parser = { features = ["lalrpop"], path = "${MODCARGO_VENDOR_DIR}/rustpython-0.2.0/compiler/parser" }
++rustpython-parser = { features = ["lalrpop", "serde"], path = "${MODCARGO_VENDOR_DIR}/rustpython-0.2.0/compiler/parser" }
  schemars = { version = "0.8.11" }
  serde = { version = "1.0.147", features = ["derive"] }
  serde_json = { version = "1.0.87" }
