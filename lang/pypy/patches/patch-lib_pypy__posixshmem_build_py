@@ -1,0 +1,12 @@
+Index: lib_pypy/_posixshmem_build.py
+--- lib_pypy/_posixshmem_build.py.orig
++++ lib_pypy/_posixshmem_build.py
+@@ -17,7 +17,7 @@ SOURCE = """
+ #include <fcntl.h>           /* For O_* constants */
+ """
+ 
+-if sys.platform == 'darwin':
++if sys.platform == 'darwin' or sys.platform.startswith('openbsd'):
+     libraries = []
+ else:
+     libraries=['rt']

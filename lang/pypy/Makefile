@@ -16,14 +16,19 @@ MAINTAINER =		Edd Barrett <edd@openbsd.org>
 # PyPy is MIT; the Python libs it comes with have the same license as Python
 PERMIT_PACKAGE =	Yes
 
-WANTLIB +=		bz2 c crypto curses expat ffi gdbm iconv intl m
-WANTLIB +=		panel pthread sqlite3 ssl ${MODTCL_LIB}
+# XXX how do you specify crypto and ssl from openssl11?
+WANTLIB +=		bz2 c curses expat ffi gdbm iconv intl lzma m
+WANTLIB +=		panel pthread sqlite3 ${MODTCL_LIB}
 WANTLIB +=		${MODTK_LIB} util z
 
 # XXX check if it's really needed
 USE_NOEXECONLY =	Yes
 
-LIB_DEPENDS +=		databases/sqlite3
+LIB_DEPENDS +=		databases/sqlite3 \
+			archivers/xz
+BUILD_DEPENDS +=	security/openssl/1.1
+RUN_DEPENDS +=		${BUILD_DEPENDS}
+
 
 MASTER_SITES =		https://downloads.python.org/pypy/
 MASTER_SITES0 =		https://theunixzoo.co.uk/distfiles/ \
@@ -71,11 +76,19 @@ do-build:
 	  PYPY_USESSION_DIR=${WRKDIR}/usession \
 	  PYPY_CTYPES_DIR=${WRKDIR}/ctypes \
 	  ${MODPY_BIN} ../../rpython/bin/rpython --source --opt=jit
+	# XXX kill -j4
 	cd ${WRKDIR}/usession/testing_1 && ${SETENV} ${MAKE_ENV} \
-		${MAKE_PROGRAM} LDFLAGS_LINK="-Wl,-z,wxneeded -pthread"
+		${MAKE_PROGRAM} -j4 LDFLAGS_LINK="-Wl,-z,wxneeded -pthread"
 
 # Pre-compile python and CFFI modules.
-# This all has to be done in WRKSRC.
+#
+# It's normal for the build_cffi_imports step to spit out some errors like:
+#   ValueError: unsupported hash type blake2b
+# (confirmed with upstream)
+#
+# This all has to be done in WRKSRC. XXX Actually I think not...
+#
+# XXX edd test that the ssl module doesn't need LD_LIBRARY_PATH. Encode an rpath?
 GOAL_DIR=${WRKSRC}/pypy/goal/
 pre-install:
 	cp ${WRKDIR}/usession/testing_1/pypy${PYLANG_V}-c ${GOAL_DIR}
@@ -84,9 +97,10 @@ pre-install:
 		-m compileall lib_pypy
 	cd ${WRKSRC} && LD_LIBRARY_PATH=${GOAL_DIR} ${GOAL_DIR}/pypy${PYLANG_V}-c \
 		-m compileall -x test lib-python/3/
-	cd ${GOAL_DIR} && LD_LIBRARY_PATH=${GOAL_DIR} \
-		LDFLAGS="-L${LOCALBASE}/lib" \
-		CPPFLAGS="-I${LOCALBASE}/include" \
+	cd ${GOAL_DIR} && LD_LIBRARY_PATH=${GOAL_DIR}:${LOCALBASE}/lib/eopenssl11 \
+		LDFLAGS="-L${LOCALBASE}/lib/eopenssl11 -L${LOCALBASE}/lib" \
+		CPPFLAGS="-I${LOCALBASE}/include/eopenssl11 -I${LOCALBASE}/include" \
+		CFLAGS="-Wno-deprecated-declarations" \
 		PYTHONPATH=../.. \
 		./pypy${PYLANG_V}-c ../../lib_pypy/pypy_tools/build_cffi_imports.py
 
@@ -102,13 +116,11 @@ do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/pypy/include
 	cp -rp ${WRKSRC}/include/* ${PREFIX}/pypy/include
 	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/pypy/include
-	${INSTALL_DATA_DIR} ${PREFIX}/pypy/lib_pypy
-	${INSTALL_DATA_DIR} ${PREFIX}/pypy/lib-python/${PYLANG_V}
-	cp -rp ${WRKSRC}/lib_pypy/* ${PREFIX}/pypy/lib_pypy
-	cp -rp ${WRKSRC}/lib-python/* ${PREFIX}/pypy/lib-python/${PYLANG_V}
+	cp -rp ${WRKSRC}/lib_pypy ${PREFIX}/pypy/lib_pypy
+	cp -rp ${WRKSRC}/lib-python ${PREFIX}/pypy/lib-python
 	find ${PREFIX}/pypy/lib_pypy/ -name '*.[co]' -delete
-	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/pypy/lib_pypy
-	chown -R ${SHAREOWN}:${SHAREGRP}  ${PREFIX}/pypy/lib-python/${PYLANG_V}
+	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/pypy/lib_pypy/
+	chown -R ${SHAREOWN}:${SHAREGRP}  ${PREFIX}/pypy/lib-python/
 	cd ${PREFIX}/bin && ln -s ../pypy/bin/pypy
 	cd ${PREFIX}/lib && ln -s ../pypy/lib/libpypy${PYLANG_V}-c.so
 	# remove patch orig files so they dont appear in the plist
