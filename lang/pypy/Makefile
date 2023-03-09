@@ -17,7 +17,9 @@ MAINTAINER =		Edd Barrett <edd@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 # XXX how do you specify crypto and ssl from openssl11?
+#WANTLIB +=		bz2 c lib/eopenssl11/crypto curses expat ffi gdbm iconv intl lzma m
 WANTLIB +=		bz2 c curses expat ffi gdbm iconv intl lzma m
+#WANTLIB +=		panel pthread sqlite3 lib/eopenssl11/ssl ${MODTCL_LIB}
 WANTLIB +=		panel pthread sqlite3 ${MODTCL_LIB}
 WANTLIB +=		${MODTK_LIB} util z
 
@@ -86,26 +88,8 @@ do-build:
 #   ValueError: unsupported hash type blake2b
 # (confirmed with upstream)
 #
-# This all has to be done in WRKSRC. XXX Actually I think not...
-#
 # XXX edd test that the ssl module doesn't need LD_LIBRARY_PATH. Encode an rpath?
-GOAL_DIR=${WRKSRC}/pypy/goal/
-pre-install:
-	cp ${WRKDIR}/usession/testing_1/pypy${PYLANG_V}-c ${GOAL_DIR}
-	cp ${WRKDIR}/usession/testing_1/libpypy${PYLANG_V}-c.so ${GOAL_DIR}
-	cd ${WRKSRC} && LD_LIBRARY_PATH=${GOAL_DIR} ${GOAL_DIR}/pypy${PYLANG_V}-c \
-		-m compileall lib_pypy
-	cd ${WRKSRC} && LD_LIBRARY_PATH=${GOAL_DIR} ${GOAL_DIR}/pypy${PYLANG_V}-c \
-		-m compileall -x test lib-python/3/
-	cd ${GOAL_DIR} && LD_LIBRARY_PATH=${GOAL_DIR}:${LOCALBASE}/lib/eopenssl11 \
-		LDFLAGS="-L${LOCALBASE}/lib/eopenssl11 -L${LOCALBASE}/lib" \
-		CPPFLAGS="-I${LOCALBASE}/include/eopenssl11 -I${LOCALBASE}/include" \
-		CFLAGS="-Wno-deprecated-declarations" \
-		PYTHONPATH=../.. \
-		./pypy${PYLANG_V}-c ../../lib_pypy/pypy_tools/build_cffi_imports.py
-
 PYPY_INST_LIB_DIR = ${PREFIX}/pypy/lib
-PYPY_LD_LIBRARY_PATH = LD_LIBRARY_PATH=${PYPY_INST_LIB_DIR}
 do-install:
 	mkdir -p ${PREFIX}/pypy/bin
 	mkdir -p ${PYPY_INST_LIB_DIR}
@@ -118,6 +102,17 @@ do-install:
 	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/pypy/include
 	cp -rp ${WRKSRC}/lib_pypy ${PREFIX}/pypy/lib_pypy
 	cp -rp ${WRKSRC}/lib-python ${PREFIX}/pypy/lib-python
+	
+	LD_LIBRARY_PATH=${PREFIX}/pypy/lib ${PREFIX}/pypy/bin/pypy -m compileall ${PREFIX}/pypy/lib_pypy
+	LD_LIBRARY_PATH=${PREFIX}/pypy/lib ${PREFIX}/pypy/bin/pypy -m compileall -x test ${PREFIX}/pypy/lib-python/3/
+	cd ${WRKSRC} && LD_LIBRARY_PATH=lib:${LOCALBASE}/lib/eopenssl11 \
+		LDFLAGS="-L${LOCALBASE}/lib/eopenssl11 -L${LOCALBASE}/lib" \
+		CPPFLAGS="-I${LOCALBASE}/include/eopenssl11 -I${LOCALBASE}/include" \
+		CFLAGS="-Wno-deprecated-declarations" PYTHONPATH=`pwd` \
+		${PREFIX}/pypy/bin/pypy lib_pypy/pypy_tools/build_cffi_imports.py
+	@# The last command junks up the lib/ directory for some reason.
+	rm -rf ${PREFIX}/pypy/lib/pypy${PYLANG_V}/
+
 	find ${PREFIX}/pypy/lib_pypy/ -name '*.[co]' -delete
 	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/pypy/lib_pypy/
 	chown -R ${SHAREOWN}:${SHAREGRP}  ${PREFIX}/pypy/lib-python/

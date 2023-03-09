@@ -2,6 +2,8 @@ bin/pypy
 @so lib/libpypy3.9-c.so
 pypy/
 pypy/bin/
+pypy/bin/pip3
+pypy/bin/pip3.9
 @bin pypy/bin/pypy
 pypy/include/
 pypy/include/README
@@ -3203,13 +3205,17 @@ pypy/lib_pypy/
 pypy/lib_pypy/__decimal.py
 pypy/lib_pypy/__init__.py
 pypy/lib_pypy/__pycache__/
+pypy/lib_pypy/__pycache__/_contextvars.pypy39.pyc
 pypy/lib_pypy/__pycache__/_curses.pypy39.pyc
 pypy/lib_pypy/__pycache__/_ffi.pypy39.pyc
 pypy/lib_pypy/__pycache__/_gdbm.pypy39.pyc
+pypy/lib_pypy/__pycache__/_immutables_map.pypy39.pyc
 pypy/lib_pypy/__pycache__/_lzma.pypy39.pyc
 pypy/lib_pypy/__pycache__/_posixshmem.pypy39.pyc
 pypy/lib_pypy/__pycache__/_pypy_generic_alias.pypy39.pyc
 pypy/lib_pypy/__pycache__/_pypy_util_cffi.pypy39.pyc
+pypy/lib_pypy/__pycache__/_sha1.pypy39.pyc
+pypy/lib_pypy/__pycache__/_sha256.pypy39.pyc
 pypy/lib_pypy/__pycache__/_sha512.pypy39.pyc
 pypy/lib_pypy/__pycache__/_sqlite3.pypy39.pyc
 pypy/lib_pypy/__pycache__/_sysconfigdata.pypy39.pyc
@@ -3437,12 +3443,12 @@ pypy/lib_pypy/_overlapped.py
 pypy/lib_pypy/_posixshmem.py
 pypy/lib_pypy/_posixshmem_build.py
 @so pypy/lib_pypy/_posixshmem_cffi.pypy39-pp73-openbsd7.so
-pypy/lib_pypy/_posixshmem_cffi.xxx
 pypy/lib_pypy/_pwdgrp_build.py
 @so pypy/lib_pypy/_pwdgrp_cffi.pypy39-pp73-openbsd7.so
 pypy/lib_pypy/_pypy_generic_alias.py
 pypy/lib_pypy/_pypy_interact.py
 pypy/lib_pypy/_pypy_irc_topic.py
+@so pypy/lib_pypy/_pypy_openssl.pypy39-pp73-openbsd7.so
 pypy/lib_pypy/_pypy_testcapi.py
 pypy/lib_pypy/_pypy_util_build.py
 pypy/lib_pypy/_pypy_util_cffi.py
