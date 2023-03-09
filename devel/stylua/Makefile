@@ -11,8 +11,6 @@ MAINTAINER =	Laurent Cheylus <foxy@free.fr>
 # MPL-2.0
 PERMIT_PACKAGE =	Yes
 
-DISTFILES +=	${GH_DISTFILE}
-
 WANTLIB +=	${MODCARGO_WANTLIB}
 
 MODULES =	devel/cargo
