@@ -1,3 +1,31 @@
 ${P5SITE}/OpenAI/
+${P5SITE}/OpenAI/API/
 ${P5SITE}/OpenAI/API.pm
+${P5SITE}/OpenAI/API/ConfigurationRole.pm
+${P5SITE}/OpenAI/API/Resource/
+${P5SITE}/OpenAI/API/Resource/Chat.pm
+${P5SITE}/OpenAI/API/Resource/Completion.pm
+${P5SITE}/OpenAI/API/Resource/Edit.pm
+${P5SITE}/OpenAI/API/Resource/Embedding.pm
+${P5SITE}/OpenAI/API/Resource/File/
+${P5SITE}/OpenAI/API/Resource/File/List.pm
+${P5SITE}/OpenAI/API/Resource/File/Retrieve.pm
+${P5SITE}/OpenAI/API/Resource/Image/
+${P5SITE}/OpenAI/API/Resource/Image/Generation.pm
+${P5SITE}/OpenAI/API/Resource/Model/
+${P5SITE}/OpenAI/API/Resource/Model/List.pm
+${P5SITE}/OpenAI/API/Resource/Model/Retrieve.pm
+${P5SITE}/OpenAI/API/Resource/Moderation.pm
+${P5SITE}/OpenAI/API/ResourceDispatcherRole.pm
+${P5SITE}/OpenAI/API/UserAgentRole.pm
 @man man/man3p/OpenAI::API.3p
+@man man/man3p/OpenAI::API::Resource::Chat.3p
+@man man/man3p/OpenAI::API::Resource::Completion.3p
+@man man/man3p/OpenAI::API::Resource::Edit.3p
+@man man/man3p/OpenAI::API::Resource::Embedding.3p
+@man man/man3p/OpenAI::API::Resource::File::List.3p
+@man man/man3p/OpenAI::API::Resource::File::Retrieve.3p
+@man man/man3p/OpenAI::API::Resource::Image::Generation.3p
+@man man/man3p/OpenAI::API::Resource::Model::List.3p
+@man man/man3p/OpenAI::API::Resource::Model::Retrieve.3p
+@man man/man3p/OpenAI::API::Resource::Moderation.3p
