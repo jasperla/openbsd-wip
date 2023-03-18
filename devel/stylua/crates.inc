@@ -27,6 +27,7 @@ MODCARGO_CRATES +=	derive_more	0.99.16	# MIT
 MODCARGO_CRATES +=	difflib	0.4.0	# MIT
 MODCARGO_CRATES +=	doc-comment	0.3.3	# MIT
 MODCARGO_CRATES +=	dtoa	0.4.8	# MIT OR Apache-2.0
+MODCARGO_CRATES +=	ec4rs	1.0.1	# Apache-2.0
 MODCARGO_CRATES +=	either	1.6.1	# MIT/Apache-2.0
 MODCARGO_CRATES +=	encode_unicode	0.3.6	# MIT/Apache-2.0
 MODCARGO_CRATES +=	env_logger	0.9.0	# MIT/Apache-2.0
