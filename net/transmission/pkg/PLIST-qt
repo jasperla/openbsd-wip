@@ -1,0 +1,3 @@
+@bin bin/transmission-qt
+share/applications/transmission-qt.desktop
+@tag update-desktop-database
