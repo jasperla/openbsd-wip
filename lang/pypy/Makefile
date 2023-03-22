@@ -17,21 +17,23 @@ MAINTAINER =		Edd Barrett <edd@openbsd.org>
 # PyPy is MIT; the Python libs it comes with have the same license as Python
 PERMIT_PACKAGE =	Yes
 
-# XXX how do you specify crypto and ssl from openssl11? Fails to package if you
-# do it like in the commented lines below.
-#WANTLIB +=		bz2 c lib/eopenssl11/crypto curses expat ffi gdbm iconv intl lzma m
-WANTLIB +=		bz2 c curses expat ffi gdbm iconv intl lzma m
-#WANTLIB +=		panel pthread sqlite3 lib/eopenssl11/ssl ${MODTCL_LIB}
-WANTLIB +=		panel pthread sqlite3 ${MODTCL_LIB}
+WANTLIB +=		bz2 c lib/eopenssl11/crypto curses expat ffi gdbm iconv intl lzma m
+WANTLIB +=		panel pthread sqlite3 lib/eopenssl11/ssl ${MODTCL_LIB}
 WANTLIB +=		${MODTK_LIB} util z
+
+# XXX minimize these.
+BUILD_DEPENDS +=	textproc/py-sphinx,python3 \
+			databases/gdbm \
+			${MODTK_BUILD_DEPENDS}
+RUN_DEPENDS =		${MODTK_RUN_DEPENDS} \
+			databases/gdbm
+LIB_DEPENDS =		databases/sqlite3 \
+			archivers/xz \
+			databases/sqlite3 \
+			security/openssl/1.1
 
 # Build segfaults without it.
 USE_NOEXECONLY =	Yes
-
-LIB_DEPENDS +=		databases/sqlite3 \
-			archivers/xz
-BUILD_DEPENDS +=	security/openssl/1.1
-RUN_DEPENDS +=		${BUILD_DEPENDS}
 
 MASTER_SITES =		https://downloads.python.org/pypy/
 MASTER_SITES0 =		https://theunixzoo.co.uk/distfiles/ \
@@ -42,7 +44,6 @@ DIST_SUBDIR =		pypy
 DISTFILES =		${DISTNAME}${EXTRACT_SUFX} \
 			pycparser-2.21.tar.gz:0
 
-
 MASTER_SITES0 =		https://files.pythonhosted.org/packages/5e/0b/95d387f5f4433cb0f53ff7ad859bd2c6051051cebbb564f139a999ab46de/
 
 MODULES +=		lang/python x11/tk
@@ -52,12 +53,8 @@ UPDATE_PLIST_ARGS =	-i MODPY_PY_PREFIX \
 			-i MODPY_VERSION \
 			-i MACHINE_ARCH
 
+
 USE_GMAKE =		Yes
-BUILD_DEPENDS =		textproc/py-sphinx,python3 \
-			databases/gdbm \
-			${MODTK_BUILD_DEPENDS}
-RUN_DEPENDS =		${MODTK_RUN_DEPENDS} \
-			databases/gdbm
 
 post-extract:
 	@if [ `ulimit -d` -lt $$((5*1024*1024)) ]; then \
