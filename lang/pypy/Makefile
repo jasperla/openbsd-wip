@@ -22,7 +22,8 @@ WANTLIB +=		panel pthread sqlite3 lib/eopenssl11/ssl ${MODTCL_LIB}
 WANTLIB +=		${MODTK_LIB} util z
 
 # Note that PyPy is notoriously annoying to get working with LibreSSL, so we
-# use OpenSSL for now. This may change in the future when XXX.
+# use OpenSSL for now. This may change in the future when pypy moves to using
+# more recent Python and pyca internals where the #ifdef maze is less daunting.
 LIB_DEPENDS =		archivers/xz \
 			databases/gdbm \
 			databases/sqlite3 \
