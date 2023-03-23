@@ -21,12 +21,12 @@ WANTLIB +=		bz2 c lib/eopenssl11/crypto curses expat ffi gdbm iconv intl lzma m
 WANTLIB +=		panel pthread sqlite3 lib/eopenssl11/ssl ${MODTCL_LIB}
 WANTLIB +=		${MODTK_LIB} util z
 
-BUILD_DEPENDS +=	${MODTK_BUILD_DEPENDS}
-RUN_DEPENDS =		${MODTK_RUN_DEPENDS}
 LIB_DEPENDS =		archivers/xz \
 			databases/gdbm \
 			databases/sqlite3 \
 			security/openssl/1.1
+BUILD_DEPENDS +=	${MODTK_BUILD_DEPENDS}
+RUN_DEPENDS =		${MODTK_RUN_DEPENDS}
 
 # Build segfaults without it.
 USE_NOEXECONLY =	Yes
