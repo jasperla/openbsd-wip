@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v$
 ${P5SITE}/LWP/
 ${P5SITE}/LWP/Authen/
 ${P5SITE}/LWP/Authen/OAuth2/
@@ -12,12 +11,22 @@ ${P5SITE}/LWP/Authen/OAuth2/ServiceProvider/
 ${P5SITE}/LWP/Authen/OAuth2/ServiceProvider.pm
 ${P5SITE}/LWP/Authen/OAuth2/ServiceProvider/Dwolla.pm
 ${P5SITE}/LWP/Authen/OAuth2/ServiceProvider/Google.pm
+${P5SITE}/LWP/Authen/OAuth2/ServiceProvider/Line/
+${P5SITE}/LWP/Authen/OAuth2/ServiceProvider/Line.pm
+${P5SITE}/LWP/Authen/OAuth2/ServiceProvider/Line/AccessToken.pm
 ${P5SITE}/LWP/Authen/OAuth2/ServiceProvider/Strava.pm
+${P5SITE}/LWP/Authen/OAuth2/ServiceProvider/Withings.pm
+${P5SITE}/LWP/Authen/OAuth2/ServiceProvider/Yahoo.pm
 @man man/man3p/LWP::Authen::OAuth2.3p
 @man man/man3p/LWP::Authen::OAuth2::AccessToken.3p
 @man man/man3p/LWP::Authen::OAuth2::AccessToken::Bearer.3p
+@man man/man3p/LWP::Authen::OAuth2::Args.3p
 @man man/man3p/LWP::Authen::OAuth2::Overview.3p
 @man man/man3p/LWP::Authen::OAuth2::ServiceProvider.3p
 @man man/man3p/LWP::Authen::OAuth2::ServiceProvider::Dwolla.3p
 @man man/man3p/LWP::Authen::OAuth2::ServiceProvider::Google.3p
+@man man/man3p/LWP::Authen::OAuth2::ServiceProvider::Line.3p
+@man man/man3p/LWP::Authen::OAuth2::ServiceProvider::Line::AccessToken.3p
 @man man/man3p/LWP::Authen::OAuth2::ServiceProvider::Strava.3p
+@man man/man3p/LWP::Authen::OAuth2::ServiceProvider::Withings.3p
+@man man/man3p/LWP::Authen::OAuth2::ServiceProvider::Yahoo.3p
