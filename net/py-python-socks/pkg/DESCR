@@ -1,0 +1,5 @@
+"python-socks" is a library that provides a core proxy client
+functionality for Python. Supports SOCKS4(a), SOCKS5(h),
+HTTP (tunneling) proxy and provides sync and async
+(asyncio, trio, curio, anyio) APIs.
+
