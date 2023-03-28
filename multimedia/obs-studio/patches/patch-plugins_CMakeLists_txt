@@ -1,10 +1,9 @@
-$OpenBSD$
 Add support for V4L2.
 
 Index: plugins/CMakeLists.txt
 --- plugins/CMakeLists.txt.orig
 +++ plugins/CMakeLists.txt
-@@ -54,6 +54,7 @@ elseif("${CMAKE_SYSTEM_NAME}" MATCHES "FreeBSD")
+@@ -57,6 +57,7 @@ elseif("${CMAKE_SYSTEM_NAME}" MATCHES "FreeBSD")
  	add_subdirectory(sndio)
  elseif("${CMAKE_SYSTEM_NAME}" MATCHES "OpenBSD")
  	add_subdirectory(linux-capture)
