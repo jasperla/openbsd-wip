@@ -1,0 +1,18 @@
+don't go looking for librt
+
+Index: src/downloader/lib/src/lsl/lslunitsync/CMakeLists.txt
+--- src/downloader/lib/src/lsl/lslunitsync/CMakeLists.txt.orig
++++ src/downloader/lib/src/lsl/lslunitsync/CMakeLists.txt
+@@ -26,9 +26,9 @@ if(ADD_WXCONVERT)
+ 	target_compile_definitions(lsl-unitsync PRIVATE -DHAVE_WX)
+ endif()
+ 
+-if(UNIX AND NOT MINGW AND NOT APPLE)
+-	find_library(RT_LIBRARY rt)
+-endif()
++#if(UNIX AND NOT MINGW AND NOT APPLE)
++#	find_library(RT_LIBRARY rt)
++#endif()
+ 
+ find_package(Threads REQUIRED)
+ if(CMAKE_USE_PTHREADS_INIT)

@@ -1,0 +1,16 @@
+Index: src/downloader/lib/src/lsl/lslunitsync/image.cpp
+--- src/downloader/lib/src/lsl/lslunitsync/image.cpp.orig
++++ src/downloader/lib/src/lsl/lslunitsync/image.cpp
+@@ -15,7 +15,12 @@
+ #define cimg_use_png 1 //libpng
+ //#define cimg_use_jpeg 1 //jpeg
+ //#define cimg_use_tiff 1
++
++#ifdef __OpenBSD__
++#include <CImg.h>
++#else
+ #include <cimg/CImg.h>
++#endif
+ #include <lslutils/misc.h>
+ #include <lslutils/logging.h>
+ #include <lslutils/conversion.h>

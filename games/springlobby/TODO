@@ -1,0 +1,7 @@
+- Download isn't working.
+- Need to workaround springlobby attempting to download different versions of Spring RTS with games.
+- Remove remaining optimization flags -O[0-3]
+- LIB_DEPENDS devel/libgit2/libgit2 not needed for games/springlobby ?
+- Keep ONLY_FOR_ARCHS=amd64? Most likely this is the only arch that will work
+- Need for dependency on graphics/png? - see project build instructions
+- need BDEP on graphics/gmic for CImg.h?
