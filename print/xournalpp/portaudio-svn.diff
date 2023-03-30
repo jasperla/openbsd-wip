@@ -1,0 +1,72 @@
+Index: Makefile
+===================================================================
+RCS file: /cvs/ports/audio/portaudio-svn/Makefile,v
+retrieving revision 1.22
+diff -u -p -r1.22 Makefile
+--- Makefile	11 Mar 2022 18:20:26 -0000	1.22
++++ Makefile	30 Mar 2023 19:39:16 -0000
+@@ -2,23 +2,25 @@ COMMENT=		portable cross-platform audio 
+ 
+ DISTNAME =		pa_stable_v190700_20210406
+ PKGNAME =		portaudio-svn-1970
++REVISION =		0
+ CATEGORIES=		audio
+ MASTER_SITES =		http://files.portaudio.com/archives/
+ EXTRACT_SUFX =		.tgz
+ 
+ SHARED_LIBS =		portaudio	1.2
++SHARED_LIBS +=		portaudiocpp	0.0 # 0.12
+ 
+ HOMEPAGE=		http://www.portaudio.com/
+ 
+ # MIT
+ PERMIT_PACKAGE=	Yes
+ 
+-WANTLIB=		m pthread sndio
++WANTLIB=		${COMPILER_LIBCXX} m pthread sndio
+ 
+ USE_GMAKE=		Yes
+ AUTOCONF_VERSION =	2.69
+ CONFIGURE_STYLE=	autoconf no-autoheader
+-CONFIGURE_ARGS=		--without-alsa --without-oss --without-jack
++CONFIGURE_ARGS=		--without-alsa --without-oss --without-jack --enable-cxx
+ 
+ # builds non-automated, interactive tests in ${WRKBUILD}/bin
+ TEST_TARGET=		tests
+Index: pkg/PLIST
+===================================================================
+RCS file: /cvs/ports/audio/portaudio-svn/pkg/PLIST,v
+retrieving revision 1.5
+diff -u -p -r1.5 PLIST
+--- pkg/PLIST	11 Mar 2022 18:20:27 -0000	1.5
++++ pkg/PLIST	30 Mar 2023 19:37:32 -0000
+@@ -1,5 +1,29 @@
+ include/portaudio.h
++include/portaudiocpp/
++include/portaudiocpp/AutoSystem.hxx
++include/portaudiocpp/BlockingStream.hxx
++include/portaudiocpp/CFunCallbackStream.hxx
++include/portaudiocpp/CallbackInterface.hxx
++include/portaudiocpp/CallbackStream.hxx
++include/portaudiocpp/CppFunCallbackStream.hxx
++include/portaudiocpp/Device.hxx
++include/portaudiocpp/DirectionSpecificStreamParameters.hxx
++include/portaudiocpp/Exception.hxx
++include/portaudiocpp/HostApi.hxx
++include/portaudiocpp/InterfaceCallbackStream.hxx
++include/portaudiocpp/MemFunCallbackStream.hxx
++include/portaudiocpp/PortAudioCpp.hxx
++include/portaudiocpp/SampleDataFormat.hxx
++include/portaudiocpp/Stream.hxx
++include/portaudiocpp/StreamParameters.hxx
++include/portaudiocpp/System.hxx
++include/portaudiocpp/SystemDeviceIterator.hxx
++include/portaudiocpp/SystemHostApiIterator.hxx
+ @static-lib lib/libportaudio.a
+ lib/libportaudio.la
+ @lib lib/libportaudio.so.${LIBportaudio_VERSION}
++@static-lib lib/libportaudiocpp.a
++lib/libportaudiocpp.la
++@lib lib/libportaudiocpp.so.${LIBportaudiocpp_VERSION}
+ lib/pkgconfig/portaudio-2.0.pc
++lib/pkgconfig/portaudiocpp.pc
