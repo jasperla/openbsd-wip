@@ -95,7 +95,7 @@ do-install:
 	chown -R ${SHAREOWN}:${SHAREGRP} ${PYPY_PREFIX}/include
 	cp -rp ${WRKSRC}/lib_pypy ${PYPY_PREFIX}/lib_pypy
 	cp -rp ${WRKSRC}/lib-python ${PYPY_PREFIX}/lib-python
-	
+
 	LD_LIBRARY_PATH=${PYPY_PREFIX}/lib ${PYPY_PREFIX}/bin/pypy \
 			-m compileall ${PYPY_PREFIX}/lib_pypy
 	LD_LIBRARY_PATH=${PYPY_PREFIX}/lib ${PYPY_PREFIX}/bin/pypy \
