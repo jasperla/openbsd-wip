@@ -1,0 +1,14 @@
+lutimes -> utimes
+
+Index: tools/pr-downloader/src/FileSystem/File.cpp
+--- tools/pr-downloader/src/FileSystem/File.cpp.orig
++++ tools/pr-downloader/src/FileSystem/File.cpp
+@@ -342,7 +342,7 @@ bool CFile::SetTimestamp(long timestamp)
+ 	struct timeval tv = {0, 0};
+ 	tv.tv_sec = timestamp;
+ 	if (handle == nullptr) {
+-		return lutimes(filename.c_str(), &tv) == 0;
++		return utimes(filename.c_str(), &tv) == 0;
+ 	} else {
+ 		return futimes(fileno(handle), &tv) == 0;
+ 	}

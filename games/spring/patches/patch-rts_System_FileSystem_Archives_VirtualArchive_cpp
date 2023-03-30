@@ -1,0 +1,11 @@
+Index: rts/System/FileSystem/Archives/VirtualArchive.cpp
+--- rts/System/FileSystem/Archives/VirtualArchive.cpp.orig
++++ rts/System/FileSystem/Archives/VirtualArchive.cpp
+@@ -8,6 +8,7 @@
+ 
+ #include "minizip/zip.h"
+ #include <cassert>
++#include <zlib.h>
+ 
+ CVirtualArchiveFactory* virtualArchiveFactory;
+ 

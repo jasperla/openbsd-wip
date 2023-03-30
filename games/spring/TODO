@@ -1,0 +1,19 @@
+- runtime currently breaking when loading game at: https://github.com/spring/spring/blob/develop/rts/Rendering/Models/IModelParser.cpp#L65
+ -> with error: libc++abi: terminating with uncaught exception of type std::out_of_range: basic_string
+- address cmake warning that -O2 -pipe will "very likely not sync in online mode"
+- fix man page generation; looks for docbook (textproc/docbook) in configure stage, textproc/libxslt, asciidoc
+- ONLY_FOR_ARCHS=amd64 really needed?
+- add SHARED_LIBS +/- versioning, e.g. libunitsync.so
+- Java dependencies, incl MODULES=java really needed?
+- does it need Lua dependencies? Uses it at runtime at least. Add MODULES=lang/lua?
+- Is -DAI_TYPES="NATIVE" really needed? (taken from FreeBSD port)
+- remove debug flags (-O0 -g) when not needed anymore
+- rework replacing std::random_shuffle based on FreeBSD example:
+  https://github.com/freebsd/freebsd-ports/blob/main/games/spring/files/patch-shuffle
+- review disabled libunwind parts?
+- decide if check for GLEW_ARB_geometry_shader4 needs to be kept as required? (can't test on integrated GPU this way)
+- glob(3) workaround for tilde expansion can't expand env variables like wordexp can. Consider more complete implementation of that, and restore use of ${XDG_CONFIG_DIR} ?
+- make GetProcessExecutableFile smarter - currently hardcodes /usr/local/bin/spring, but there are other binaries included in the port that need to be accounted for: spring-dedicated and spring-headless. (May need to store argv[0] in Run(), then use it here in rts/System/Platform/Misc.cpp.)
+- does working with assimp from ports work, as planned?
+- review dependency on jsoncpp, doesn't seem to be LDEP
+- look into reason for assimp symbol mismatch, seen during build/make port-lib-depends-check

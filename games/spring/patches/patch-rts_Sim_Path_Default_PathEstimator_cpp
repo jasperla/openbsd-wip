@@ -1,0 +1,16 @@
+zlib.h for Z_BEST_COMPRESSION
+
+Index: rts/Sim/Path/Default/PathEstimator.cpp
+--- rts/Sim/Path/Default/PathEstimator.cpp.orig
++++ rts/Sim/Path/Default/PathEstimator.cpp
+@@ -30,6 +30,10 @@
+ #include "System/StringUtil.h"
+ #include "System/Sync/SHA512.hpp"
+ 
++#ifdef __OpenBSD__
++	#include <zlib.h>
++#endif
++
+ #define ENABLE_NETLOG_CHECKSUM 1
+ 
+ CONFIG(int, PathingThreadCount).defaultValue(0).safemodeValue(1).minimumValue(0);

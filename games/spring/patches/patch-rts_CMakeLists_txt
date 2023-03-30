@@ -1,0 +1,39 @@
+disable libunwind
+link libexecinfo (for backtrace_symbols)
+
+Index: rts/CMakeLists.txt
+--- rts/CMakeLists.txt.orig
++++ rts/CMakeLists.txt
+@@ -77,6 +77,7 @@ find_package_static(ZLIB REQUIRED)
+ list(APPEND engineCommonLibraries ${IL_LIBRARIES} ${JPEG_LIBRARY} ${PNG_LIBRARY} ${TIFF_LIBRARY} ${GIF_LIBRARY})
+ list(APPEND engineCommonLibraries 7zip ${SPRING_MINIZIP_LIBRARY} ${ZLIB_LIBRARY})
+ list(APPEND engineCommonLibraries lua luasocket archives assimp gflags)
++list(APPEND engineCommonLibraries execinfo)
+ if (ENABLE_STREFLOP)
+ 	list(APPEND engineCommonLibraries streflop)
+ endif ()
+@@ -102,15 +103,15 @@ if    (USE_TCMALLOC AND TCMALLOC_LIBRARY)
+ endif ()
+ 
+ 
+-if(UNIX)
+-	find_package_static(Libunwind REQUIRED)
+-	list(APPEND engineCommonLibraries ${LIBUNWIND_LIBRARIES})
+-	if(LIBUNWIND_FOUND)
+-		message(STATUS "Found libunwind libraries at ${LIBUNWIND_LIBRARIES}")
+-	else ()
+-		message(FATAL_ERROR "Couldn't find libunwind")
+-	endif ()
+-endif ()
++#if(UNIX)
++	#find_package_static(Libunwind REQUIRED)
++	#list(APPEND engineCommonLibraries ${LIBUNWIND_LIBRARIES})
++	#if(LIBUNWIND_FOUND)
++		#message(STATUS "Found libunwind libraries at ${LIBUNWIND_LIBRARIES}")
++	#else ()
++		#message(FATAL_ERROR "Couldn't find libunwind")
++	#endif ()
++#endif ()
+ 
+ 
+ 

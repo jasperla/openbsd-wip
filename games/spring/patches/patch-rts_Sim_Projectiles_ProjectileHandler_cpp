@@ -1,0 +1,35 @@
+std::random_shuffle -> std::shuffle
+EXPERIMENTAL: use custom RNG to avoid SFINAE error
+
+Index: rts/Sim/Projectiles/ProjectileHandler.cpp
+--- rts/Sim/Projectiles/ProjectileHandler.cpp.orig
++++ rts/Sim/Projectiles/ProjectileHandler.cpp
+@@ -1,5 +1,6 @@
+ /* This file is part of the Spring engine (GPL v2 or later), see LICENSE.html */
+ 
++#include <random>
+ #include <algorithm>
+ 
+ #include "Projectile.h"
+@@ -106,8 +107,9 @@ void CProjectileHandler::Init()
+ 			freeProjectileIDs[false].push_back(i);
+ 		}
+ 
+-		std::random_shuffle(freeProjectileIDs[ true].begin(), freeProjectileIDs[ true].end(), gsRNG);
+-		std::random_shuffle(freeProjectileIDs[false].begin(), freeProjectileIDs[false].end(), guRNG);
++		std::mt19937 myRng(std::random_device{}());
++		std::shuffle(freeProjectileIDs[ true].begin(), freeProjectileIDs[ true].end(), myRng);
++		std::shuffle(freeProjectileIDs[false].begin(), freeProjectileIDs[false].end(), myRng);
+ 	}
+ 
+ 	for (int modelType = 0; modelType < MODELTYPE_OTHER; ++modelType) {
+@@ -395,7 +397,8 @@ void CProjectileHandler::AddProjectile(CProjectile* p)
+ 
+ 			// generate (newSize - oldSize) new id's starting from oldSize
+ 			std::for_each(freeIDs.begin(), freeIDs.end(), [k = oldSize](int& id) mutable { id = k++; });
+-			std::random_shuffle(freeIDs.begin(), freeIDs.end(), rngFunc);
++			std::mt19937 myRng(std::random_device{}());
++			std::shuffle(freeIDs.begin(), freeIDs.end(), myRng);
+ 		}
+ 
+ 

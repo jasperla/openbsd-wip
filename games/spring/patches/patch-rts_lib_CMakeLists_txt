@@ -1,0 +1,16 @@
+disable bundled assimp, use the one from ports
+
+Index: rts/lib/CMakeLists.txt
+--- rts/lib/CMakeLists.txt.orig
++++ rts/lib/CMakeLists.txt
+@@ -60,8 +60,8 @@ foreach(var ASSIMP_BUILD_STATIC_LIB ASSIMP_NO_EXPORT)
+ 	set("${var}" ON CACHE STRING "forced on by spring build env" FORCE)
+ endforeach()
+ 
+-ADD_SUBDIRECTORY(assimp)
+-target_compile_definitions(assimp PRIVATE -DASSIMP_BUILD_NO_OWN_ZLIB)
++#ADD_SUBDIRECTORY(assimp)
++#target_compile_definitions(assimp PRIVATE -DASSIMP_BUILD_NO_OWN_ZLIB)
+ 
+ # hide assimp compile warnings with g++
+ if (CMAKE_CXX_COMPILER_ID STREQUAL "GNU")

@@ -1,0 +1,38 @@
+remove hardcoded compiler optimizations and -g
+disable git version detection for pr-downloader tool
+
+Index: tools/pr-downloader/CMakeLists.txt
+--- tools/pr-downloader/CMakeLists.txt.orig
++++ tools/pr-downloader/CMakeLists.txt
+@@ -16,9 +16,9 @@ endif ()
+ set(CMAKE_MODULES_DOWNLOADER "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
+ list(APPEND CMAKE_MODULE_PATH "${CMAKE_MODULES_DOWNLOADER}")
+ include(UtilGit)
+-if (GIT_FOUND)
+-	git_util_describe(PR_DOWNLOADER_VERSION "${CMAKE_CURRENT_SOURCE_DIR}/src" "*")
+-endif ()
++#if (GIT_FOUND)
++	#git_util_describe(PR_DOWNLOADER_VERSION "${CMAKE_CURRENT_SOURCE_DIR}/src" "*")
++#endif ()
+ 
+ # Version couldn't be detected, we guess its compiled from tarball
+ if("${PR_DOWNLOADER_VERSION}" STREQUAL "")
+@@ -72,14 +72,14 @@ if   (MINGW)
+ 	set(CMAKE_FIND_ROOT_PATH_MODE_INCLUDE ONLY)
+ 	set(CMAKE_SHARED_LIBRARY_PREFIX "")
+ 	set(CMAKE_SHARED_MODULE_PREFIX "")
+-	set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -O2 -g -DWIN32 -D_WINDOWS")
+-	set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall -O2 -g -DWIN32 -D_WINDOWS")
++	set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -DWIN32 -D_WINDOWS")
++	set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall -DWIN32 -D_WINDOWS")
+ 	set (PRD_BINDIR  "."                  CACHE PATH "Where to install binaries" )
+ 	set (PRD_LIBDIR  "."                  CACHE PATH "Where to install libraries" )
+ 	set (PRD_INCLUDE_DIR  "include/spring/" CACHE PATH "Where to install headers" )
+ else ()
+-	set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -O0 -g -fPIC")
+-	set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall -O0 -g -fPIC")
++	set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -fPIC")
++	set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall -fPIC")
+ 	#set(CMAKE_SKIP_BUILD_RPATH  FALSE)
+ 	#set(CMAKE_BUILD_WITH_INSTALL_RPATH FALSE)
+ 	set (PRD_BINDIR  "bin"                  CACHE PATH "Where to install binaries" )
