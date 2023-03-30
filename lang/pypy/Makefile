@@ -96,6 +96,13 @@ do-install:
 	cp -rp ${WRKSRC}/lib_pypy ${PYPY_PREFIX}/lib_pypy
 	cp -rp ${WRKSRC}/lib-python ${PYPY_PREFIX}/lib-python
 
+	# XXX This next command seg faults on machines new enough to do the
+	# EXECONLY stuff (and arm64).
+	#
+	# You can repro out-of-build with:
+	# $ pypy -c "import cffi; ffi = cffi.FFI(); ffi.dlopen('lib_m')"
+	#
+	# Does something in cffi need -Wl,--no-execute-only?
 	LD_LIBRARY_PATH=${PYPY_PREFIX}/lib ${PYPY_PREFIX}/bin/pypy \
 			-m compileall ${PYPY_PREFIX}/lib_pypy
 	LD_LIBRARY_PATH=${PYPY_PREFIX}/lib ${PYPY_PREFIX}/bin/pypy \
