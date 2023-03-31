@@ -1,7 +1,0 @@
-@comment $OpenBSD$
-@bin bin/XLEngine
-libexec/xlengine/
-libexec/xlengine/BloodXL.so
-libexec/xlengine/DaggerXL.so
-libexec/xlengine/DarkXL.so
-libexec/xlengine/OutlawsXL.so
