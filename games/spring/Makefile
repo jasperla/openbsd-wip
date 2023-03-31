@@ -15,8 +15,8 @@ MAINTAINER =		Thomas Frohwein <thfr@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} GL GLEW GLU IL ILU SDL2 X11 Xcursor
-WANTLIB += assimp c curl execinfo fontconfig freetype m minizip
-WANTLIB += ogg openal vorbis vorbisfile z
+WANTLIB += c curl execinfo fontconfig freetype m minizip ogg openal
+WANTLIB += vorbis vorbisfile z
 
 MASTER_SITES =		https://springrts.com/dl/buildbot/default/master/${V}/source/
 
@@ -40,7 +40,6 @@ LIB_DEPENDS =	archivers/minizip \
 		devel/sdl2 \
 		graphics/DevIL \
 		graphics/glew \
-		multimedia/assimp \
 		net/curl
 
 # NO_CATCH_EXCEPTIONS to avoid the built-in error/stacktrace handler
@@ -49,11 +48,11 @@ CONFIGURE_ARGS =	-DAI_TYPES="NATIVE" \
 			-DCMAKE_DISABLE_FIND_PACKAGE_Git=TRUE \
 			-DCMAKE_EXE_LINKER_FLAGS="${LDFLAGS}" \
 			-DCMAKE_SHARED_LINKER_FLAGS="${LDFLAGS}" \
-			-DJava_JAVA_EXECUTABLE=/usr/local/jdk-1.8.0/bin/java \
-			-DJava_JAVAC_EXECUTABLE=/usr/local/jdk-1.8.0/bin/javac \
-			-DJava_JAR_EXECUTABLE=/usr/local/jdk-1.8.0/bin/jar \
-			-DJava_JAVADOC_EXECUTABLE=/usr/local/jdk-1.8.0/bin/javadoc \
-			-DJava_JAVAH_EXECUTABLE=/usr/local/jdk-1.8.0/bin/javah
+			-DJava_JAVA_EXECUTABLE=${LOCALBASE}/jdk-1.8.0/bin/java \
+			-DJava_JAVAC_EXECUTABLE=${LOCALBASE}/jdk-1.8.0/bin/javac \
+			-DJava_JAR_EXECUTABLE=${LOCALBASE}/jdk-1.8.0/bin/jar \
+			-DJava_JAVADOC_EXECUTABLE=${LOCALBASE}/jdk-1.8.0/bin/javadoc \
+			-DJava_JAVAH_EXECUTABLE=${LOCALBASE}/jdk-1.8.0/bin/javah
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
