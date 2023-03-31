@@ -1,5 +1,0 @@
-$OpenBSD$
-antimicro uses the SDL2 gamecontroller API (rather than the older
-joystick API). Mapping to keys works on OpenBSD with gamecontroller API
-support, but remapping the controller itself does not work yet as of
-early 2018.

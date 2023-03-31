@@ -1,2 +1,0 @@
-uses SDL2's gamecontroller API by default. Only submit the port after SDL2 has been updated to support that
-FIX portcheck report
