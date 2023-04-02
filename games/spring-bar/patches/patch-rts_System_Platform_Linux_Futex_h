@@ -1,0 +1,22 @@
+work around Linux futex implementation
+
+Index: rts/System/Platform/Linux/Futex.h
+--- rts/System/Platform/Linux/Futex.h.orig
++++ rts/System/Platform/Linux/Futex.h
+@@ -8,7 +8,7 @@
+ #include "System/Misc/SpringTime.h"
+ 
+ 
+-
++#ifndef __OpenBSD__
+ class spring_futex
+ {
+ private:
+@@ -32,6 +32,7 @@ class spring_futex (public)
+ protected:
+ 	native_type mtx;
+ };
++#endif
+ 
+ /*FIXME
+ class recursive_futex

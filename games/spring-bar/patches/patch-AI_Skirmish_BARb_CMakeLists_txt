@@ -1,0 +1,14 @@
+work around Linux futex implementation
+
+Index: AI/Skirmish/BARb/CMakeLists.txt
+--- AI/Skirmish/BARb/CMakeLists.txt.orig
++++ AI/Skirmish/BARb/CMakeLists.txt
+@@ -9,7 +9,7 @@ if (WIN32)  # spring::condition_variable_any requireme
+ elseif (APPLE)
+ 	set(additionalSources  ${additionalSources} ${CMAKE_SOURCE_DIR}/rts/System/Platform/Mac/Signal.cpp)
+ else ()
+-	set(additionalSources  ${additionalSources} ${CMAKE_SOURCE_DIR}/rts/System/Platform/Linux/Futex.cpp)
++	#set(additionalSources  ${additionalSources} ${CMAKE_SOURCE_DIR}/rts/System/Platform/Linux/Futex.cpp)
+ endif ()
+ set(additionalLibraries    ${Cpp_AIWRAPPER_TARGET} CUtils)
+ #set(additionalLibraries    ${Cpp_AIWRAPPER_TARGET} CUtils ${SDL2_LIBRARY})

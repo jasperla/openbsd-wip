@@ -1,0 +1,27 @@
+random_shuffle -> shuffle
+
+Index: AI/Skirmish/BARb/src/circuit/setup/SetupManager.cpp
+--- AI/Skirmish/BARb/src/circuit/setup/SetupManager.cpp.orig
++++ AI/Skirmish/BARb/src/circuit/setup/SetupManager.cpp
+@@ -30,6 +30,11 @@
+ #include "Log.h"
+ #include "Lua.h"
+ 
++#ifdef __OpenBSD__
++	#include <random>
++	#include <algorithm>
++#endif
++
+ #include <regex>
+ 
+ namespace circuit {
+@@ -186,7 +191,8 @@ void CSetupManager::PickStartPos(CCircuitAI* circuit, 
+ 					c.distDivIncome = mapCenter.distance(cl.position) / income;
+ 					validClusters.push_back(std::make_pair(kv.first, c));
+ 				}
+-				std::random_shuffle(validClusters.begin(), validClusters.end());
++				std::mt19937 rng(std::random_device{}());
++				std::shuffle(validClusters.begin(), validClusters.end(), rng);
+ 
+ 				auto cmp = [](const std::pair<int, SCluster>& a, const std::pair<int, SCluster>& b) {
+ 					if (a.second.count < b.second.count) {

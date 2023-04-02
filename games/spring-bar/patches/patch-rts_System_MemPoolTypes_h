@@ -1,0 +1,82 @@
+error: static_cast from 'Threading::NativeThreadId' (aka 'pthread *') to
+'uint32_t' (aka 'unsigned int') is not allowed
+EXPERIMENTAL: use malloc and free instead of the hand-rolled allocMem/freeMem
+
+Index: rts/System/MemPoolTypes.h
+--- rts/System/MemPoolTypes.h.orig
++++ rts/System/MemPoolTypes.h
+@@ -22,6 +22,11 @@
+ #include "System/Threading/SpringThreading.h"
+ #include "System/Log/ILog.h"
+ 
++#ifdef __OpenBSD__
++	#include <stdlib.h>
++//	#include <cstdlib>
++#endif
++
+ template<uint32_t NumBuckets, size_t BucketSize> struct PassThroughPool {
+ public:
+ 	PassThroughPool() {
+@@ -64,6 +69,9 @@ template<uint32_t NumBuckets, size_t BucketSize> struc
+ template<size_t S> struct DynMemPool {
+ public:
+ 	void* allocMem(size_t size) {
++#ifdef __OpenBSD__
++		return malloc(size);
++#else
+ 		assert(size <= PAGE_SIZE());
+ 		uint8_t* m = nullptr;
+ 
+@@ -82,6 +90,7 @@ template<size_t S> struct DynMemPool { (public)
+ 
+ 		table.emplace(m, i);
+ 		return m;
++#endif
+ 	}
+ 
+ 
+@@ -92,6 +101,9 @@ template<size_t S> struct DynMemPool { (public)
+ 
+ 
+ 	void freeMem(void* m) {
++#ifdef __OpenBSD__
++		std::free(m);
++#else
+ 		assert(mapped(m));
+ 
+ 		const auto iter = table.find(m);
+@@ -101,6 +113,7 @@ template<size_t S> struct DynMemPool { (public)
+ 
+ 		indcs.push_back(pair.second);
+ 		table.erase(pair.first);
++#endif
+ 	}
+ 
+ 
+@@ -272,6 +285,9 @@ template<size_t N, size_t S> struct StaticMemPool { (p
+ 	StaticMemPool() { clear(); }
+ 
+ 	void* allocMem(size_t size) {
++#ifdef __OpenBSD__
++		return malloc(size);
++#else
+ 		assert(size <= PAGE_SIZE());
+ 		static_assert(NUM_PAGES() != 0, "");
+ 
+@@ -286,6 +302,7 @@ template<size_t N, size_t S> struct StaticMemPool { (p
+ 		}
+ 
+ 		return (pages[curr_page_index = i].data());
++#endif
+ 	}
+ 
+ 
+@@ -401,7 +418,7 @@ inline size_t StablePosAllocator<T>::Allocate(size_t n
+ 	if (positionToSize.empty()) {
+ 		size_t returnPos = data.size();
+ 		data.resize(data.size() + numElems);
+-		myLog("StablePosAllocator<T>::Allocate(%u) = %u [thread_id = %u]", uint32_t(numElems), uint32_t(returnPos), static_cast<uint32_t>(Threading::GetCurrentThreadId()));
++		//myLog("StablePosAllocator<T>::Allocate(%u) = %u [thread_id = %u]", uint32_t(numElems), uint32_t(returnPos), static_cast<uint32_t>(Threading::GetCurrentThreadId()));
+ 		return returnPos;
+ 	}
+ 

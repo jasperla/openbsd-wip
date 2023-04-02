@@ -1,0 +1,27 @@
+random_shuffle -> shuffle
+
+Index: AI/Skirmish/BARb/src/circuit/util/math/EncloseCircle.cpp
+--- AI/Skirmish/BARb/src/circuit/util/math/EncloseCircle.cpp.orig
++++ AI/Skirmish/BARb/src/circuit/util/math/EncloseCircle.cpp
+@@ -11,6 +11,11 @@
+ #include <algorithm>
+ #include <assert.h>
+ 
++#ifdef __OpenBSD__
++	#include <random>
++	#include <algorithm>
++#endif
++
+ namespace circuit {
+ 
+ using namespace springai;
+@@ -47,7 +52,8 @@ void CEncloseCircle::MakeCircle(const std::vector<AIFl
+ 		}
+ 		// Randomize order
+ 		// TODO: Read why shuffle??
+-		std::random_shuffle(shuffled.begin(), shuffled.end());
++		std::mt19937 rng(std::random_device{}());
++		std::shuffle(shuffled.begin(), shuffled.end(), rng);
+ 
+ 		// Progressively add points to circle or recompute circle
+ 		decltype(shuffled)::iterator it = shuffled.begin();

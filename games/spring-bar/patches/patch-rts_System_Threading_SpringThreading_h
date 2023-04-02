@@ -1,0 +1,23 @@
+work around Linux futex implementation
+
+Index: rts/System/Threading/SpringThreading.h
+--- rts/System/Threading/SpringThreading.h.orig
++++ rts/System/Threading/SpringThreading.h
+@@ -14,7 +14,7 @@
+ 
+ #if   defined(_WIN32)
+ 	#include "System/Platform/Win/CriticalSection.h"
+-#elif defined(__APPLE__) || !defined(USE_FUTEX)
++#elif defined(__APPLE__) || defined(__OpenBSD__) || !defined(USE_FUTEX)
+ 	#include "System/Platform/Mac/Signal.h"
+ #elif !defined(__APPLE__) && defined(USE_FUTEX)
+ 	#include "System/Platform/Linux/Futex.h"
+@@ -34,7 +34,7 @@ namespace spring {
+ 	typedef CriticalSection recursive_mutex;
+ 	typedef win_signal signal;
+ 	typedef std::condition_variable_any condition_variable;
+-#elif defined(__APPLE__) || !defined(USE_FUTEX)
++#elif defined(__APPLE__) || defined(__OpenBSD__) || !defined(USE_FUTEX)
+ 	typedef std::mutex mutex;
+ 	typedef std::recursive_mutex recursive_mutex;
+ 	typedef mac_signal signal;
