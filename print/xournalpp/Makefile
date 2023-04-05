@@ -1,7 +1,3 @@
-# XXX Todo list:
-#
-# - patch default audio device.
-
 COMMENT =	handwriting notetaking with PDF annotation support
 
 V =		1.1.3
