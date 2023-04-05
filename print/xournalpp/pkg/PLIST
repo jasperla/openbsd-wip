@@ -1,5 +1,7 @@
 @bin bin/xournalpp
 @bin bin/xournalpp-thumbnailer
+@man man/man1/xournalpp-thumbnailer.1
+@man man/man1/xournalpp.1
 share/locale/af_ZA/
 share/locale/af_ZA/LC_MESSAGES/
 share/locale/af_ZA/LC_MESSAGES/xournalpp.mo
@@ -42,8 +44,6 @@ share/locale/zh/LC_MESSAGES/
 share/locale/zh/LC_MESSAGES/xournalpp.mo
 share/locale/zh_HK/LC_MESSAGES/xournalpp.mo
 share/locale/zh_TW/LC_MESSAGES/xournalpp.mo
-@mandir share/man/
-share/man/man1/
 share/xournalpp/
 share/xournalpp/plugins/
 share/xournalpp/plugins/ColorCycle/

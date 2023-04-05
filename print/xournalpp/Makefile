@@ -1,8 +1,6 @@
 # XXX Todo list:
 #
-# - tries to install compressed man pages.
-# - audio recording broken
-# - patch default latex template path (PREFIX/share/xournalpp/resources/...)
+# - patch default audio device.
 
 COMMENT =	handwriting notetaking with PDF annotation support
 
@@ -43,5 +41,9 @@ LIB_DEPENDS =		${MODLUA_BUILD_DEPENDS} \
 			x11/gtk+3
 
 SEPARATE_BUILD =	Yes
+
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/src/control/settings/LatexSettings.h
+	${SUBST_CMD} ${WRKSRC}/src/util/Stacktrace.cpp
 
 .include <bsd.port.mk>
