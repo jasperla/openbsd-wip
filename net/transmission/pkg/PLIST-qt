@@ -1,3 +1,4 @@
 @bin bin/transmission-qt
+@man man/man1/transmission-qt.1
 share/applications/transmission-qt.desktop
 @tag update-desktop-database

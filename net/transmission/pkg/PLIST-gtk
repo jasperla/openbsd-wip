@@ -1,5 +1,6 @@
 @pkgpath net/transmission,-gui
 @bin bin/transmission-gtk
+@man man/man1/transmission-gtk.1
 share/applications/transmission-gtk.desktop
 share/icons/hicolor/scalable/apps/transmission-devel.svg
 share/icons/hicolor/scalable/apps/transmission.svg
@@ -18,8 +19,6 @@ share/locale/ca@valencia/LC_MESSAGES/transmission-gtk.mo
 share/locale/ceb/
 share/locale/ceb/LC_MESSAGES/
 share/locale/ceb/LC_MESSAGES/transmission-gtk.mo
-share/locale/ckb/
-share/locale/ckb/LC_MESSAGES/
 share/locale/ckb/LC_MESSAGES/transmission-gtk.mo
 share/locale/cs/LC_MESSAGES/transmission-gtk.mo
 share/locale/cy/LC_MESSAGES/transmission-gtk.mo

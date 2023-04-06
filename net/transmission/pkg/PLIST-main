@@ -15,8 +15,51 @@
 @bin bin/transmission-edit
 @bin bin/transmission-remote
 @bin bin/transmission-show
-share/icons/
-share/icons/hicolor/
+@man man/man1/transmission-cli.1
+@man man/man1/transmission-create.1
+@man man/man1/transmission-daemon.1
+@man man/man1/transmission-edit.1
+@man man/man1/transmission-remote.1
+@man man/man1/transmission-show.1
+@comment share/applications/
+share/doc/transmission/
+share/doc/transmission/AUTHORS
+share/doc/transmission/COPYING
+share/doc/transmission/README.md
+share/doc/transmission/news/
+share/doc/transmission/news/news-2.42-and-older.md
+share/doc/transmission/news/news-2.50.md
+share/doc/transmission/news/news-2.51.md
+share/doc/transmission/news/news-2.52.md
+share/doc/transmission/news/news-2.60.md
+share/doc/transmission/news/news-2.61.md
+share/doc/transmission/news/news-2.70.md
+share/doc/transmission/news/news-2.71.md
+share/doc/transmission/news/news-2.72.md
+share/doc/transmission/news/news-2.73.md
+share/doc/transmission/news/news-2.74.md
+share/doc/transmission/news/news-2.75.md
+share/doc/transmission/news/news-2.76.md
+share/doc/transmission/news/news-2.77.md
+share/doc/transmission/news/news-2.80.md
+share/doc/transmission/news/news-2.81.md
+share/doc/transmission/news/news-2.82.md
+share/doc/transmission/news/news-2.83.md
+share/doc/transmission/news/news-2.84.md
+share/doc/transmission/news/news-2.90.md
+share/doc/transmission/news/news-2.91.md
+share/doc/transmission/news/news-2.92.md
+share/doc/transmission/news/news-2.93.md
+share/doc/transmission/news/news-2.94.md
+share/doc/transmission/news/news-3.00.md
+share/doc/transmission/news/news-4.0.0-beta-1.md
+share/doc/transmission/news/news-4.0.0-beta-2.md
+share/doc/transmission/news/news-4.0.0-beta-3.md
+share/doc/transmission/news/news-4.0.0.md
+share/doc/transmission/news/news-4.0.1.md
+share/doc/transmission/news/news-4.0.2.md
+share/doc/transmission/rpc-spec.md
+share/doc/transmission/send-email-when-torrent-done.sh
 share/metainfo/
 share/metainfo/transmission-gtk.metainfo.xml
 share/transmission/
@@ -28,7 +71,6 @@ share/transmission/public_html/images/webclip-icon.png
 share/transmission/public_html/index.html
 share/transmission/public_html/transmission-app.js
 share/transmission/public_html/transmission-app.js.LICENSE.txt
-share/transmission/public_html/transmission-app.js.map
 share/transmission/translations/
 share/transmission/translations/transmission_af.qm
 share/transmission/translations/transmission_ca.qm
