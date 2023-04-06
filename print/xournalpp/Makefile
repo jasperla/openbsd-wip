@@ -37,6 +37,8 @@ LIB_DEPENDS =		${MODLUA_LIB_DEPENDS} \
 			audio/libsndfile \
 			audio/portaudio-svn>=1970p0 \
 			print/poppler \
+			textproc/libxml \
+			x11/gnome/librsvg \
 			x11/gtk+3
 
 SEPARATE_BUILD =	Yes
