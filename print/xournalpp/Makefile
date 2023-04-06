@@ -22,14 +22,17 @@ WANTLIB += gthread-2.0 gtk-3 harfbuzz intl lua5.3 m pango-1.0
 WANTLIB += pangocairo-1.0 poppler-glib portaudio portaudiocpp
 WANTLIB += rsvg-2 sndfile xml2 z zip
 
+COMPILER =		base-clang ports-gcc
+
 MODULES =		devel/cmake \
 			lang/lua
 
 # Lua version hard-coded in CMakelists.
 MODLUA_VERSION =	5.3
 
-BUILD_DEPENDS =		devel/gettext,-tools
-LIB_DEPENDS =		${MODLUA_BUILD_DEPENDS} \
+BUILD_DEPENDS =		devel/gettext,-tools \
+			devel/help2man
+LIB_DEPENDS =		${MODLUA_LIB_DEPENDS} \
 			archivers/libzip \
 			audio/libsndfile \
 			audio/portaudio-svn>=1970p0 \
