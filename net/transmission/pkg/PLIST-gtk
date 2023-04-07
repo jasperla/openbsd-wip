@@ -107,5 +107,7 @@ share/locale/vi/LC_MESSAGES/transmission-gtk.mo
 share/locale/zh_CN/LC_MESSAGES/transmission-gtk.mo
 share/locale/zh_HK/LC_MESSAGES/transmission-gtk.mo
 share/locale/zh_TW/LC_MESSAGES/transmission-gtk.mo
+share/metainfo/
+share/metainfo/transmission-gtk.metainfo.xml
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database

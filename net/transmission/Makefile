@@ -42,7 +42,9 @@ WANTLIB-qt +=	Qt6Widgets
 
 MODULES +=	devel/cmake textproc/intltool
 
-LIB_DEPENDS-common +=	net/curl net/libpsl net/miniupnp/libnatpmp
+LIB_DEPENDS-common +=	net/curl 
+LIB_DEPENDS-common +=	net/libpsl
+LIB_DEPENDS-common +=	net/miniupnp/libnatpmp
 LIB_DEPENDS-common +=	net/miniupnp/miniupnpc>=1.9
 
 LIB_DEPENDS-main =	${LIB_DEPENDS-common}

@@ -60,8 +60,6 @@ share/doc/transmission/news/news-4.0.1.md
 share/doc/transmission/news/news-4.0.2.md
 share/doc/transmission/rpc-spec.md
 share/doc/transmission/send-email-when-torrent-done.sh
-share/metainfo/
-share/metainfo/transmission-gtk.metainfo.xml
 share/transmission/
 share/transmission/public_html/
 share/transmission/public_html/images/
