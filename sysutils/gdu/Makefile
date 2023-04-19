@@ -19,12 +19,10 @@ WANTLIB +=	c pthread
 MODULES =	lang/go
 MODGO_TYPE =	bin
 
-_BUILD_DATE =	$$(date +%Y-%m-%d)
-_BUILD_USER =	$$(id -u -n)
+# For patch to apply
+WRKDIST =	${WRKSRC}
 
-MODGO_LDFLAGS +=	-X ${MODGO_MODNAME}/build.Version=${MODGO_VERSION}
-MODGO_LDFLAGS +=	-X $(MODGO_MODNAME)/build.Time=${_BUILD_DATE}
-MODGO_LDFLAGS +=	-X $(MODGO_MODNAME)/build.User=${_BUILD_USER}
+MODGO_LDFLAGS +=	-X ${MODGO_MODNAME}/build.Version=${MODGO_VERSION:S/v//}
 
 do-install:
 	${INSTALL_PROGRAM} ${MODGO_WORKSPACE}/bin/gdu ${PREFIX}/bin

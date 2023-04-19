@@ -1,0 +1,14 @@
+Index: cmd/gdu/app/app.go
+--- cmd/gdu/app/app.go.orig
++++ cmd/gdu/app/app.go
+@@ -114,9 +114,7 @@ func (a *App) Run() (err error) {
+ 	var ui UI
+ 
+ 	if a.Flags.ShowVersion {
+-		fmt.Fprintln(a.Writer, "Version:\t", build.Version)
+-		fmt.Fprintln(a.Writer, "Built time:\t", build.Time)
+-		fmt.Fprintln(a.Writer, "Built user:\t", build.User)
++		fmt.Fprintln(a.Writer, build.Version)
+ 		return
+ 	}
+ 
