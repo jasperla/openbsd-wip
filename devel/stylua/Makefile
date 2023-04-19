@@ -2,7 +2,7 @@ COMMENT =	opinionated Lua code formatter
 
 GH_ACCOUNT =	JohnnyMorganz
 GH_PROJECT =	StyLua
-GH_TAGNAME =	v0.17.0
+GH_TAGNAME =	v0.17.1
 
 CATEGORIES =	devel
 
