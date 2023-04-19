@@ -2,7 +2,7 @@ MODGO_MODULES =	\
 	github.com/cpuguy83/go-md2man/v2	 v2.0.2 \
 	github.com/creack/pty			 v1.1.9 \
 	github.com/davecgh/go-spew		 v1.1.1 \
-	github.com/fatih/color			 v1.13.0 \
+	github.com/fatih/color			 v1.15.0 \
 	github.com/gdamore/encoding		 v1.0.0 \
 	github.com/gdamore/tcell/v2		 v2.5.3 \
 	github.com/inconshreveable/mousetrap	 v1.0.1 \
@@ -12,7 +12,7 @@ MODGO_MODULES =	\
 	github.com/lucasb-eyer/go-colorful	 v1.2.0 \
 	github.com/maruel/natural		 v1.1.0 \
 	github.com/mattn/go-colorable		 v0.1.13 \
-	github.com/mattn/go-isatty		 v0.0.16 \
+	github.com/mattn/go-isatty		 v0.0.17 \
 	github.com/mattn/go-runewidth		 v0.0.13 \
 	github.com/pbnjay/memory		 v0.0.0-20210728143218-7b4eea64cf58 \
 	github.com/pmezard/go-difflib		 v1.0.0 \
@@ -25,10 +25,11 @@ MODGO_MODULES =	\
 	github.com/spf13/pflag			 v1.0.5 \
 	github.com/stretchr/objx		 v0.4.0 \
 	github.com/stretchr/testify		 v1.8.0 \
-	golang.org/x/sys			 v0.0.0-20220915200043-7b5979e65e41 \
+	golang.org/x/mod			 v0.6.0-dev.0.20220419223038-86c51ed26bb4 \
+	golang.org/x/sys			 v0.6.0 \
 	golang.org/x/term			 v0.0.0-20220722155259-a9ba230a4035 \
-	golang.org/x/text			 v0.3.7 \
-	golang.org/x/tools			 v0.0.0-20180917221912-90fa682c2a6e \
+	golang.org/x/text			 v0.3.8 \
+	golang.org/x/tools			 v0.1.12 \
 	gopkg.in/check.v1			 v1.0.0-20190902080502-41f04d3bba15 \
 	gopkg.in/errgo.v2			 v2.1.0 \
 	gopkg.in/yaml.v2			 v2.4.0 \
@@ -40,25 +41,23 @@ MODGO_MODFILES =	\
 	github.com/inconshreveable/mousetrap	 v1.0.0 \
 	github.com/kr/pretty			 v0.1.0 \
 	github.com/kr/text			 v0.1.0 \
-	github.com/mattn/go-colorable		 v0.1.9 \
-	github.com/mattn/go-isatty		 v0.0.12 \
-	github.com/mattn/go-isatty		 v0.0.14 \
+	github.com/mattn/go-isatty		 v0.0.16 \
 	github.com/rivo/uniseg			 v0.2.0 \
 	github.com/stretchr/objx		 v0.1.0 \
 	github.com/stretchr/testify		 v1.7.0 \
 	github.com/stretchr/testify		 v1.7.1 \
-	golang.org/x/sys			 v0.0.0-20200116001909-b77594299b42 \
-	golang.org/x/sys			 v0.0.0-20200223170610-d5e6a3e2c0ae \
 	golang.org/x/sys			 v0.0.0-20201119102817-f84b799fce68 \
 	golang.org/x/sys			 v0.0.0-20210309074719-68d13333faf2 \
 	golang.org/x/sys			 v0.0.0-20210615035016-665e8c7367d1 \
-	golang.org/x/sys			 v0.0.0-20210630005230-0f9fa26af87c \
 	golang.org/x/sys			 v0.0.0-20220318055525-2edf467146b5 \
 	golang.org/x/sys			 v0.0.0-20220715151400-c0bba94af5f8 \
+	golang.org/x/sys			 v0.0.0-20220722155257-8c9f86f7a55f \
 	golang.org/x/sys			 v0.0.0-20220811171246-fbc7d0a398ab \
 	golang.org/x/term			 v0.0.0-20201210144234-2321bbc49cbf \
 	golang.org/x/term			 v0.0.0-20210220032956-6a3ed077a48d \
 	golang.org/x/text			 v0.3.0 \
+	golang.org/x/text			 v0.3.7 \
+	golang.org/x/tools			 v0.0.0-20180917221912-90fa682c2a6e \
 	gopkg.in/check.v1			 v0.0.0-20161208181325-20d25e280405 \
 	gopkg.in/check.v1			 v1.0.0-20180628173108-788fd7840127 \
 	gopkg.in/yaml.v3			 v3.0.0-20200313102051-9f266ea9e77c
