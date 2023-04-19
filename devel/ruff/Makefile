@@ -5,7 +5,7 @@ COMMENT =	extremely fast Python linter
 
 GH_ACCOUNT =	charliermarsh
 GH_PROJECT =	ruff
-GH_TAGNAME =	v0.0.254
+GH_TAGNAME =	v0.0.261
 
 CATEGORIES =	devel
 
@@ -16,7 +16,7 @@ PERMIT_PACKAGE =	Yes
 
 # Need some Rust extra packages
 LIBCST_COMMIT =		80e4c13
-RUSTPYTHON_COMMIT =	1871a16
+RUSTPYTHON_COMMIT =	c15f670
 UNICODE_NAMES2_COMMIT =	4ce16aa
 
 MASTER_SITES0 =	https://github.com/charliermarsh/LibCST/archive/

@@ -3,7 +3,7 @@ Use local paths for external crate needed bu RustPython
 Index: modcargo-crates/rustpython-0.2.0/Cargo.toml
 --- modcargo-crates/rustpython-0.2.0/Cargo.toml.orig
 +++ modcargo-crates/rustpython-0.2.0/Cargo.toml
-@@ -17,6 +17,7 @@ members = [
+@@ -18,6 +18,7 @@ members = [
      "compiler", "compiler/ast", "compiler/core", "compiler/codegen", "compiler/parser",
      ".", "common", "derive", "jit", "vm", "pylib", "stdlib", "wasm/lib", "derive-impl",
  ]
@@ -11,7 +11,7 @@ Index: modcargo-crates/rustpython-0.2.0/Cargo.toml
  
  [workspace.dependencies]
  ahash = "0.7.6"
-@@ -55,7 +56,7 @@ static_assertions = "1.1"
+@@ -56,7 +57,7 @@ static_assertions = "1.1"
  syn = "1.0.91"
  thiserror = "1.0"
  thread_local = "1.1.4"

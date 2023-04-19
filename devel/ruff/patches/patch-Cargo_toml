@@ -10,19 +10,26 @@ Index: Cargo.toml
  
  [workspace.package]
  edition = "2021"
-@@ -10,12 +11,12 @@ anyhow = { version = "1.0.66" }
- clap = { version = "4.0.1", features = ["derive"] }
- itertools = { version = "0.10.5" }
+@@ -22,7 +23,7 @@ ignore = { version = "0.4.20" }
+ insta = { version = "1.28.0" }
  is-macro = { version = "0.2.2" }
+ itertools = { version = "0.10.5" }
 -libcst = { git = "https://github.com/charliermarsh/LibCST", rev = "80e4c1399f95e5beb532fdd1e209ad2dbb470438" }
 +libcst = { path = "${MODCARGO_VENDOR_DIR}/libcst-0.1.0/native/libcst" }
- once_cell = { version = "1.16.0" }
- regex = { version = "1.6.0" }
+ log = { version = "0.4.17" }
+ nohash-hasher = { version = "0.2.0" }
+ once_cell = { version = "1.17.1" }
+@@ -31,11 +32,11 @@ proc-macro2 = { version = "1.0.51" }
+ quote = { version = "1.0.23" }
+ regex = { version = "1.7.1" }
  rustc-hash = { version = "1.1.0" }
--rustpython-common = { git = "https://github.com/RustPython/RustPython.git", rev = "822f6a9fa6b9142413634858c4c6908f678ce887" }
--rustpython-parser = { features = ["lalrpop", "serde"], git = "https://github.com/RustPython/RustPython.git", rev = "822f6a9fa6b9142413634858c4c6908f678ce887" }
+-rustpython-common = { git = "https://github.com/RustPython/RustPython.git", rev = "c15f670f2c30cfae6b41a1874893590148c74bc4" }
 +rustpython-common = { path = "${MODCARGO_VENDOR_DIR}/rustpython-0.2.0/common" }
-+rustpython-parser = { features = ["lalrpop", "serde"], path = "${MODCARGO_VENDOR_DIR}/rustpython-0.2.0/compiler/parser" }
- schemars = { version = "0.8.11" }
- serde = { version = "1.0.147", features = ["derive"] }
- serde_json = { version = "1.0.87" }
+ rustpython-parser = { features = [
+   "lalrpop",
+   "serde",
+-], git = "https://github.com/RustPython/RustPython.git", rev = "c15f670f2c30cfae6b41a1874893590148c74bc4" }
++], path = "${MODCARGO_VENDOR_DIR}/rustpython-0.2.0/compiler/parser" }
+ schemars = { version = "0.8.12" }
+ serde = { version = "1.0.152", features = ["derive"] }
+ serde_json = { version = "1.0.93", features = ["preserve_order"] }
