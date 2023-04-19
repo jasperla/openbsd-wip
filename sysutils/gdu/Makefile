@@ -17,7 +17,6 @@ PERMIT_PACKAGE =	Yes
 WANTLIB +=	c pthread
 
 MODULES =	lang/go
-MODGO_TYPE =	bin
 
 # For patch to apply
 WRKDIST =	${WRKSRC}
