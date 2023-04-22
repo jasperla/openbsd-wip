@@ -1,0 +1,17 @@
+@lib lib/libguile-mu.so.${LIBguile-mu_VERSION}
+share/guile/site/3.0/mu/
+share/guile/site/3.0/mu/message.scm
+share/guile/site/3.0/mu/mu.scm
+share/guile/site/3.0/mu/plot.scm
+share/guile/site/3.0/mu/script.scm
+share/guile/site/3.0/mu/stats.scm
+share/info/mu-guile.info.gz
+share/mu/
+share/mu/scripts/
+share/mu/scripts/find-dups.scm
+share/mu/scripts/msgs-count.scm
+share/mu/scripts/msgs-per-day.scm
+share/mu/scripts/msgs-per-hour.scm
+share/mu/scripts/msgs-per-month.scm
+share/mu/scripts/msgs-per-year-month.scm
+share/mu/scripts/msgs-per-year.scm

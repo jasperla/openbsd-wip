@@ -1,0 +1,5 @@
+1.8.14 is the last version supporting autotools. Meson build files have been
+added recently. The autotools version is in ports. The openbsd-wip version
+is using meson.
+
+This is the meson version and base for future updates.

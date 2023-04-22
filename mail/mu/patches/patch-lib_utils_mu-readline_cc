@@ -1,0 +1,14 @@
+:: doesn't work on macro expansion
+
+Index: lib/utils/mu-readline.cc
+--- lib/utils/mu-readline.cc.orig
++++ lib/utils/mu-readline.cc
+@@ -74,7 +74,7 @@ Mu::have_readline()
+ void
+ Mu::setup_readline(const std::string& histpath, size_t maxlines)
+ {
+-	is_a_tty  = !!::isatty(::fileno(stdout));
++	is_a_tty  = !!::isatty(fileno(stdout));
+ 	hist_path = histpath;
+ 	max_lines = maxlines;
+ 

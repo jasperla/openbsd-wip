@@ -1,0 +1,30 @@
+- Flipping from autotools to meson changed the PLISTs. This needs fixing:
+
+    $ diff mail/mu/pkg/PLIST openbsd-wip/mail/mu/pkg/PLIST
+    2d1
+    < @info info/mu4e.info
+    36d34
+    < share/emacs/site-lisp/mu4e/mu4e-config.elc
+    80a79,80
+    > share/info/
+    > share/info/mu4e.info.gz
+
+    $ diff mail/mu/pkg/PFRAG.guile openbsd-wip/mail/mu/pkg/PFRAG.guile
+    1,3d0
+    < @info info/mu-guile.info
+    < @static-lib lib/libguile-mu.a
+    < lib/libguile-mu.la
+    6c3,4
+    < share/guile/site/3.0/mu.scm
+    ---
+    > share/guile/site/3.0/mu/message.scm
+    > share/guile/site/3.0/mu/mu.scm
+    9a8
+    > share/info/mu-guile.info.gz
+
+- Once the meson switch is complete, update to 1.10.3
+
+Notes:
+    Build with -Dreadline=disabled, because >= 8.0 is required and the
+    issues highlighted in <87sgmuazg3.fsf@ritchie.wxcvbn.org> are not
+    yet sorted out.
