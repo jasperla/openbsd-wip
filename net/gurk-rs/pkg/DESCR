@@ -1,0 +1,3 @@
+Signal Messenger TUI client written in rust. It's an early development
+version which allows sending and receiving text messages from the
+terminal. The non-configurable key bindings can be viewed with F1.

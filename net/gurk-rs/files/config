@@ -1,0 +1,22 @@
+[source."https://github.com/signalapp/curve25519-dalek"]
+git = "https://github.com/signalapp/curve25519-dalek"
+branch = "lizard2"
+replace-with = "vendored-sources"
+
+[source."https://github.com/signalapp/libsignal"]
+git = "https://github.com/signalapp/libsignal"
+tag = "v0.20.0"
+replace-with = "vendored-sources"
+
+[source."https://github.com/whisperfish/libsignal-service-rs"]
+git = "https://github.com/whisperfish/libsignal-service-rs"
+rev = "8666ba56f47e405aaf8ed243be6e2ad1b5ad68c1"
+replace-with = "vendored-sources"
+
+[source."https://github.com/whisperfish/presage"]
+git = "https://github.com/whisperfish/presage"
+rev = "f84d958"
+replace-with = "vendored-sources"
+
+[source.vendored-sources]
+directory = "vendor"

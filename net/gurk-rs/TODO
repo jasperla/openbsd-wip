@@ -1,0 +1,21 @@
+- Update to 0.4
+- Fix:
+    2023-02-11T15:50:33.433155Z ERROR panic: thread 'main' panicked at
+        'called `Result::unwrap()` on an `Err` value: Error { kind:
+        Uncategorized, message: "no current exe available (short)" }':
+        /usr/ports/pobj/gurk-rs-0.3.0/gurk-rs-0.3.0/modcargo-crates/ \
+        notify-rust-4.5.10/src/notification.rs:23
+    Hint from <Y+/9gaymR84+3jFA@symphytum.spacehopper.org>:
+        Patch the crate notify-rust function current_exe and hard code
+        the binary path.
+
+Notes:
+    Vendored crates in 0.3: https://codevoid.de/h/gurk-rs-0.3.0-vendorfiles.tar.gz
+        curve25519-dalek
+        libsignal-protocol
+        libsignal-service
+        libsignal-service-hyper
+        poksho
+        presage
+        zkgroup
+
