@@ -1,0 +1,4 @@
+Asciidoctor diagram extension, with support for AsciiToSVG, BlockDiag
+(BlockDiag, SeqDiag, ActDiag, NwDiag), Ditaa, Erd, GraphViz, Mermaid,
+Msc, PlantUML, Shaape, SvgBob, Syntrax, UMLet, Vega, Vega-Lite and
+WaveDrom.

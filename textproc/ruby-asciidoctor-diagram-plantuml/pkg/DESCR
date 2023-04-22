@@ -1,0 +1,13 @@
+PlantUML is a component that allows to quickly write:
+
+* Sequence diagram
+* Use case diagram
+* Class diagram
+* Object diagram
+* Activity diagram
+* Component diagram
+* Deployment diagram
+* State diagram
+* Timing diagram
+
+This package adds plantuml support to asciidoctor.

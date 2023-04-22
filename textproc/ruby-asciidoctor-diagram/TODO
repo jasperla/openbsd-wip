@@ -1,0 +1,9 @@
+The port is working fine and enables a number of tools to be used to
+render diagrams. I (sdk@) am using ditaa and plantuml and can confirm
+those working. But here's a table with optional dependencies for more
+diagram types: https://docs.asciidoctor.org/diagram-extension/latest/
+
+We could add a README describing which diagram types can be made to work
+on OpenBSD and which ports/packages need to be installed.
+
+However, this table would need maintenance...
