@@ -1,21 +1,26 @@
-[source."https://github.com/signalapp/curve25519-dalek"]
+[source."git+https://github.com/hoodie/notify-rust?tag=v4.5.10"]
+git = "https://github.com/hoodie/notify-rust"
+tag = "v4.5.10"
+replace-with = "vendored-sources"
+
+[source."git+https://github.com/signalapp/curve25519-dalek?branch=lizard2"]
 git = "https://github.com/signalapp/curve25519-dalek"
 branch = "lizard2"
 replace-with = "vendored-sources"
 
-[source."https://github.com/signalapp/libsignal"]
+[source."git+https://github.com/signalapp/libsignal?tag=v0.20.0"]
 git = "https://github.com/signalapp/libsignal"
 tag = "v0.20.0"
 replace-with = "vendored-sources"
 
-[source."https://github.com/whisperfish/libsignal-service-rs"]
+[source."git+https://github.com/whisperfish/libsignal-service-rs?rev=791c521"]
 git = "https://github.com/whisperfish/libsignal-service-rs"
-rev = "8666ba56f47e405aaf8ed243be6e2ad1b5ad68c1"
+rev = "791c521"
 replace-with = "vendored-sources"
 
-[source."https://github.com/whisperfish/presage"]
+[source."git+https://github.com/whisperfish/presage?rev=743d793"]
 git = "https://github.com/whisperfish/presage"
-rev = "f84d958"
+rev = "743d793"
 replace-with = "vendored-sources"
 
 [source.vendored-sources]

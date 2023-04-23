@@ -2,7 +2,7 @@ COMMENT =	Signal Messenger client for the terminal
 
 GH_ACCOUNT =	boxdot
 GH_PROJECT =	gurk-rs
-GH_TAGNAME =	v0.3.0
+GH_TAGNAME =	v0.4.0
 
 CATEGORIES =	net
 
@@ -24,11 +24,7 @@ BUILD_DEPENDS =	devel/protobuf \
 
 CONFIGURE_STYLE =	cargo
 
-PATCHORIG =	.openbsd.orig
 SUBST_VARS =	LOCALBASE
-
-pre-configure:
-	${SUBST_CMD} ${WRKSRC}/modcargo-crates/notify-rust-4.5.10/src/notification.rs
 
 post-configure:
 	sed -i '/opt-level/s,2,0,' ${WRKDIR}/.cargo/config
@@ -36,6 +32,9 @@ post-configure:
 
 do-install:
 	${INSTALL_PROGRAM} ${MODCARGO_TARGET_DIR}/release/gurk ${PREFIX}/bin/
+
+vendor:
+	sh ${FILESDIR}/create_vendor_tarball.sh ${GH_TAGNAME}
 
 .include "crates.inc"
 
