@@ -1,6 +1,6 @@
 COMMENT =	pretty ls alternative with support for icons and colors
 
-GH_ACCOUNT =	Peltoche
+GH_ACCOUNT =	lsd-rs
 GH_PROJECT =	lsd
 GH_TAGNAME =	0.23.1
 
@@ -10,8 +10,6 @@ MAINTAINER =	Laurent Cheylus <foxy@free.fr>
 
 # Apache-2.0
 PERMIT_PACKAGE =	Yes
-
-DISTFILES +=	${GH_DISTFILE}
 
 COMPILER =	base-clang ports-gcc
 WANTLIB +=	${MODCARGO_WANTLIB} ${COMPILER_LIBCXX} m
