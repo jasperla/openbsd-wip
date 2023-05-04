@@ -24,9 +24,9 @@ BUILD_DEPENDS =		textproc/lowdown
 MAKE_ENV +=	SHELL_COMPLETIONS_DIR="./completions"
 
 post-install:
-	sed -i '1,8d' ${WRKSRC}/doc/lsd.md
+	sed '1,8d' ${WRKSRC}/doc/lsd.md > ${WRKBUILD}/lsd.md
 	lowdown -s -tman -m section=1 -mtitle=lsd -mvolume='' \
-		${WRKSRC}/doc/lsd.md > ${PREFIX}/man/man1/lsd.1
+		${WRKBUILD}/lsd.md > ${PREFIX}/man/man1/lsd.1
 
 	${INSTALL_DATA_DIR} ${PREFIX}/share/fish/completions/
 	${INSTALL_DATA} ${WRKSRC}/completions/lsd.fish \
