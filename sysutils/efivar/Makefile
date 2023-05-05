@@ -28,12 +28,13 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += c
 
 USE_GMAKE =		Yes
-MAKE_FLAGS =		CC=${CC} \
-			MANDIR=${PREFIX}/man \
-			LIBDIR=${PREFIX}/lib
-MAKE_ENV =		LIBefivar_VERSION=${LIBefivar_VERSION} \
+MAKE_FLAGS =		CC=${CC}
+MAKE_ENV =		HOST_MARCH='' \
+			LIBefivar_VERSION=${LIBefivar_VERSION} \
 			LIBefiboot_VERSION=${LIBefiboot_VERSION} \
 			LIBefisec_VERSION=${LIBefisec_VERSION}
-FAKE_FLAGS =		PREFIX=${PREFIX}
+FAKE_FLAGS =		PREFIX=${PREFIX} \
+			MANDIR=${PREFIX}/man \
+			LIBDIR=${PREFIX}/lib
 
 .include <bsd.port.mk>
