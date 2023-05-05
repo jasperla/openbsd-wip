@@ -1,0 +1,24 @@
+Don't hard-code soname into shared libraries
+Packages can't be built with -march=native
+
+Index: src/include/defaults.mk
+--- src/include/defaults.mk.orig
++++ src/include/defaults.mk
+@@ -65,7 +65,7 @@ SOFLAGS_CLANG =
+ SOFLAGS ?=
+ override _SOFLAGS := $(SOFLAGS)
+ override SOFLAGS = $(_SOFLAGS) \
+-		   -shared -Wl,-soname,$@.1 \
++		   -shared \
+ 		   -Wl,--version-script=$(MAP) \
+ 		   $(call family,SOFLAGS)
+ 
+@@ -82,7 +82,7 @@ endif
+ HOST_CPPFLAGS ?= $(CPPFLAGS)
+ override _HOST_CPPFLAGS := $(HOST_CPPFLAGS)
+ override HOST_CPPFLAGS = $(_HOST_CPPFLAGS) \
+-			 -DEFIVAR_BUILD_ENVIRONMENT $(HOST_MARCH)
++			 -DEFIVAR_BUILD_ENVIRONMENT
+ HOST_CFLAGS_GCC ?=
+ HOST_CFLAGS_CLANG ?=
+ HOST_CFLAGS ?= $(CFLAGS) $(call family,HOST_CFLAGS)
