@@ -23,8 +23,7 @@ WRKDIST =	${WRKSRC}
 
 MODGO_LDFLAGS +=	-X ${MODGO_MODNAME}/build.Version=${MODGO_VERSION:S/v//}
 
-do-install:
-	${INSTALL_PROGRAM} ${MODGO_WORKSPACE}/bin/gdu ${PREFIX}/bin
+post-install:
 	${INSTALL_MAN_DIR} ${PREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/gdu.1 ${PREFIX}/man/man1
 
