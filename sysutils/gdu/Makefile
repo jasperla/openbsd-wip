@@ -18,9 +18,6 @@ WANTLIB +=	c pthread
 
 MODULES =	lang/go
 
-# For patch to apply
-WRKDIST =	${WRKSRC}
-
 MODGO_LDFLAGS +=	-X ${MODGO_MODNAME}/build.Version=${MODGO_VERSION:S/v//}
 
 post-install:
