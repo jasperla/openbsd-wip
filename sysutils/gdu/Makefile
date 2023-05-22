@@ -20,9 +20,14 @@ MODULES =	lang/go
 
 MODGO_LDFLAGS +=	-X ${MODGO_MODNAME}/build.Version=${MODGO_VERSION:S/v//}
 
-post-install:
+# To apply patch
+WRKDIST =	${WRKSRC}
+
+# rename gdu => ggdu (conflicts with sysutils/coreutils)
+do-install:
+	${INSTALL_PROGRAM} ${MODGO_WORKSPACE}/bin/gdu ${PREFIX}/bin/ggdu
 	${INSTALL_MAN_DIR} ${PREFIX}/man/man1
-	${INSTALL_MAN} ${WRKSRC}/gdu.1 ${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/gdu.1 ${PREFIX}/man/man1/ggdu.1
 
 .include "modules.inc"
 
