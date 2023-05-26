@@ -1,0 +1,32 @@
+Index: modcargo-crates/rustpython_parser-0.2.0/Cargo.toml
+--- modcargo-crates/rustpython_parser-0.2.0/Cargo.toml.orig
++++ modcargo-crates/rustpython_parser-0.2.0/Cargo.toml
+@@ -1,4 +1,6 @@
+-[workspace.package]
++# [workspace.package]
++[package]
++name = "rustpython_parser"
+ version = "0.2.0"
+ authors = ["RustPython Team"]
+ edition = "2021"
+@@ -14,6 +16,7 @@ members = [
+     "ast", "core", "format", "literal", "parser",
+     "ruff_text_size", "ruff_source_location",
+ ]
++exclude = ["${MODCARGO_VENDOR_DIR}/unicode_names2-0.6.0"]
+ 
+ [workspace.dependencies]
+ rustpython-ast = { path = "ast", default-features = false }
+@@ -37,7 +40,11 @@ rand = "0.8.5"
+ serde = "1.0"
+ static_assertions = "1.1"
+ once_cell = "1.17.1"
+-unicode_names2 = { version = "0.6.0", git = "https://github.com/youknowone/unicode_names2.git", rev = "4ce16aa85cbcdd9cc830410f1a72ef9a235f2fde" }
++unicode_names2 = { version = "0.6.0", path = "${MODCARGO_VENDOR_DIR}/unicode_names2-0.6.0" }
++
++[lib]
++name = "rustpython_parser"
++path = "parser/src/lib.rs"
+ 
+ [profile.dev.package."*"]
+ opt-level = 3

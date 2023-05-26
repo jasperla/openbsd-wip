@@ -6,8 +6,10 @@ Features:
   - Built-in caching, to avoid re-analyzing unchanged files
   - Autofix support, for automatic error correction (e.g., automatically
     remove unused imports)
+  - Over 500 built-in rules
   - Near-parity with the built-in Flake8 rule set
-  - Native re-implementations of popular Flake8 plugins, like
+  - Native re-implementations of dozens Flake8 plugins, like
     flake8-bugbear
   - First-party editor integrations
-  - Monorepo-friendly configuration via hierarchical and cascading settings
+  - Monorepo-friendly configuration via hierarchical and cascading
+    settings

@@ -1,12 +1,10 @@
-Use local paths for external crates
-
 Index: Cargo.toml
 --- Cargo.toml.orig
 +++ Cargo.toml
 @@ -1,5 +1,6 @@
  [workspace]
  members = ["crates/*"]
-+exclude = ["${MODCARGO_VENDOR_DIR}/libcst-0.1.0/native/libcst", "${MODCARGO_VENDOR_DIR}/rustpython-0.2.0/common","${MODCARGO_VENDOR_DIR}/rustpython-0.2.0/compiler/parser"]
++exclude = ["${MODCARGO_VENDOR_DIR}/libcst-0.1.0/native/libcst", "${MODCARGO_VENDOR_DIR}/rustpython_parser-0.2.0/ruff_text_size", "${MODCARGO_VENDOR_DIR}/rustpython_parser-0.2.0/ast", "${MODCARGO_VENDOR_DIR}/rustpython_parser-0.2.0/format", "${MODCARGO_VENDOR_DIR}/rustpython_parser-0.2.0/literal", "${MODCARGO_VENDOR_DIR}/rustpython_parser-0.2.0/parser"]
  
  [workspace.package]
  edition = "2021"
@@ -15,7 +13,7 @@ Index: Cargo.toml
  is-macro = { version = "0.2.2" }
  itertools = { version = "0.10.5" }
 -libcst = { git = "https://github.com/charliermarsh/LibCST", rev = "80e4c1399f95e5beb532fdd1e209ad2dbb470438" }
-+libcst = { path = "${MODCARGO_VENDOR_DIR}/libcst-0.1.0/native/libcst" }
++libcst = { path = "modcargo-crates/libcst-0.1.0/native/libcst" }
  log = { version = "0.4.17" }
  nohash-hasher = { version = "0.2.0" }
  once_cell = { version = "1.17.1" }
@@ -23,13 +21,16 @@ Index: Cargo.toml
  quote = { version = "1.0.23" }
  regex = { version = "1.7.1" }
  rustc-hash = { version = "1.1.0" }
--rustpython-common = { git = "https://github.com/RustPython/RustPython.git", rev = "c15f670f2c30cfae6b41a1874893590148c74bc4" }
-+rustpython-common = { path = "${MODCARGO_VENDOR_DIR}/rustpython-0.2.0/common" }
- rustpython-parser = { features = [
-   "lalrpop",
-   "serde",
--], git = "https://github.com/RustPython/RustPython.git", rev = "c15f670f2c30cfae6b41a1874893590148c74bc4" }
-+], path = "${MODCARGO_VENDOR_DIR}/rustpython-0.2.0/compiler/parser" }
+-ruff_text_size = { git = "https://github.com/astral-sh/RustPython-Parser.git", rev = "335780aeeac1e6fcd85994ba001d7b8ce99fcf65" }
+-rustpython-ast = { git = "https://github.com/astral-sh/RustPython-Parser.git", rev = "335780aeeac1e6fcd85994ba001d7b8ce99fcf65", default-features = false, features = ["all-nodes-with-ranges"]}
+-rustpython-format = { git = "https://github.com/astral-sh/RustPython-Parser.git", rev = "335780aeeac1e6fcd85994ba001d7b8ce99fcf65" }
+-rustpython-literal = { git = "https://github.com/astral-sh/RustPython-Parser.git", rev = "335780aeeac1e6fcd85994ba001d7b8ce99fcf65" }
+-rustpython-parser = { git = "https://github.com/astral-sh/RustPython-Parser.git", rev = "335780aeeac1e6fcd85994ba001d7b8ce99fcf65", default-features = false, features = ["full-lexer", "all-nodes-with-ranges"] }
++ruff_text_size = { path = "${MODCARGO_VENDOR_DIR}/rustpython_parser-0.2.0/ruff_text_size" }
++rustpython-ast = { path = "${MODCARGO_VENDOR_DIR}/rustpython_parser-0.2.0/ast", default-features = false, features = ["all-nodes-with-ranges"]}
++rustpython-format = { path = "${MODCARGO_VENDOR_DIR}/rustpython_parser-0.2.0/format" }
++rustpython-literal = { path = "${MODCARGO_VENDOR_DIR}/rustpython_parser-0.2.0/literal" }
++rustpython-parser = { path = "${MODCARGO_VENDOR_DIR}/rustpython_parser-0.2.0/parser", default-features = false, features = ["full-lexer", "all-nodes-with-ranges"] }
  schemars = { version = "0.8.12" }
  serde = { version = "1.0.152", features = ["derive"] }
  serde_json = { version = "1.0.93", features = ["preserve_order"] }
