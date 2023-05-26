@@ -37,7 +37,7 @@ BUILD_DEPENDS =	security/rust-ring
 CONFIGURE_STYLE =	cargo
 SEPARATE_BUILD =	Yes
 
-SUBST_VARS +=  MODCARGO_VENDOR_DIR
+SUBST_VARS +=	MODCARGO_VENDOR_DIR
 
 # Move sources for Rust extra packages
 post-extract:
