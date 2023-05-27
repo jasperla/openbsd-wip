@@ -1,7 +1,7 @@
 COMMENT =	terminal based markdown reader
 
 MODGO_MODNAME =	github.com/charmbracelet/glow
-MODGO_VERSION =	v1.4.1
+MODGO_VERSION =	v1.5.1
 
 DISTNAME =	glow-${MODGO_VERSION}
 
