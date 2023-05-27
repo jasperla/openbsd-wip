@@ -18,7 +18,7 @@ WANTLIB +=      c pthread
 
 MODULES =	lang/go
 
-MODGO_FLAGS +=	-ldflags "-X 'main.Version=${MODGO_VERSION}'"
+MODGO_LDFLAGS +=	-X main.Version=${MODGO_VERSION:S/v//}
 
 .include "modules.inc"
 
