@@ -55,4 +55,10 @@ pre-configure:
 	sed -e 's/guile-snarf/guile-snarf${GUILE_V}/' -i \
 		${WRKDIST}/configure.ac
 
+post-install:
+	gunzip ${WRKINST}/usr/local/share/info/*.info.gz
+	mv ${WRKINST}/usr/local/share/info/*.info \
+		${WRKINST}/usr/local/info/
+	rm -r ${WRKINST}/usr/local/share/info
+
 .include <bsd.port.mk>

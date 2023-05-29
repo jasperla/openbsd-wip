@@ -1,4 +1,5 @@
 @bin bin/mu
+@info info/mu4e.info
 @man man/man1/mu-add.1
 @man man/man1/mu-cfind.1
 @man man/man1/mu-easy.1
@@ -76,5 +77,3 @@ share/emacs/site-lisp/mu4e/org-mu4e.el
 share/emacs/site-lisp/mu4e/org-mu4e.elc
 @comment mu is compiled without gtk
 @comment man/man1/mug.1
-share/info/
-share/info/mu4e.info.gz
