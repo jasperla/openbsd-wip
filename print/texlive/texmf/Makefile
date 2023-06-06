@@ -14,9 +14,10 @@ DISTNAME =		texlive-${DIST_V}-texmf
 
 MASTER_SITES0 =		http://theunixzoo.co.uk/distfiles/
 DISTFILES =		${DISTNAME}${EXTRACT_SUFX} \
-			texlive-${DIST_V}-extra${EXTRACT_SUFX} \
-			texlive-20220325-tlpdb-full.tar.gz \
-			texmf-var-pregen-${V}${EXTRACT_SUFX}:0
+			texlive-20230311-tlpdb-full.tar.gz \
+			texlive-${DIST_V}-extra${EXTRACT_SUFX}
+# XXX regen
+# texmf-var-pregen-${V}${EXTRACT_SUFX}:0
 
 PKGNAME-main =		texlive_texmf-minimal-${V}
 PKGNAME-full =		texlive_texmf-full-${V}
@@ -41,16 +42,17 @@ MODPY_RUNDEP =		No
 
 .include "adj.mk"
 
-RUN_DEPENDS-main +=	texlive_base->=${V}:print/texlive/base,-main \
-			${FULLPKGNAME-buildset}:print/texlive/texmf,-buildset
-RUN_DEPENDS-full =	${FULLPKGNAME-main}:print/texlive/texmf,-main \
-			${MODPY_RUN_DEPENDS} \
-			${_MODLUA_RUNDEPENDS}
-RUN_DEPENDS-context +=	${FULLPKGNAME-full}:print/texlive/texmf,-full \
-			${MODRUBY_RUN_DEPENDS}
-RUN_DEPENDS-docs +=	texlive_base->=${V}:print/texlive/base,-main \
-			x11/p5-Tk
-RUN_DEPENDS-buildset +=	texlive_mktexlsr->=${V}:print/texlive/base,-mktexlsr
+# XXX put back deps
+#RUN_DEPENDS-main +=	texlive_base->=${V}:print/texlive/base,-main \
+#			${FULLPKGNAME-buildset}:print/texlive/texmf,-buildset
+#RUN_DEPENDS-full =	${FULLPKGNAME-main}:print/texlive/texmf,-main \
+#			${MODPY_RUN_DEPENDS} \
+#			${_MODLUA_RUNDEPENDS}
+#RUN_DEPENDS-context +=	${FULLPKGNAME-full}:print/texlive/texmf,-full \
+#			${MODRUBY_RUN_DEPENDS}
+#RUN_DEPENDS-docs +=	texlive_base->=${V}:print/texlive/base,-main \
+#			x11/p5-Tk
+#RUN_DEPENDS-buildset +=texlive_mktexlsr->=${V}:print/texlive/base,-mktexlsr
 
 MULTI_PACKAGES =	-context -docs -full -main -buildset
 
