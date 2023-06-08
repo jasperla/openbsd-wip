@@ -23,7 +23,8 @@ RUN_DEPENDS =		devel/py-jedi${MODPY_FLAVOR} \
 			devel/py-codestyle${MODPY_FLAVOR} \
 			devel/py-rope${MODPY_FLAVOR} \
 			devel/py-mccabe${MODPY_FLAVOR} \
-			devel/pyflakes devel/py-yapf${MODPY_FLAVOR} \
+			devel/pyflakes${MODPY_FLAVOR} \
+			devel/py-yapf${MODPY_FLAVOR} \
 			devel/py-autopep8${MODPY_FLAVOR}
 
 MODULES =		lang/python
