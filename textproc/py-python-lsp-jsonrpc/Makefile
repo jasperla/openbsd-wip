@@ -13,9 +13,9 @@ MAINTAINER =		Laurent Cheylus <foxy@free.fr>
 # MIT
 PERMIT_PACKAGE =	Yes
 
-BUILD_DEPENDS =		devel/py-setuptools_scm
+BUILD_DEPENDS =		devel/py-setuptools_scm${MODPY_FLAVOR}
 
-RUN_DEPENDS =		devel/py-ujson
+RUN_DEPENDS =		devel/py-ujson${MODPY_FLAVOR}
 
 MODULES =		lang/python
 
