@@ -16,7 +16,7 @@ PERMIT_PACKAGE =	Yes
 COMPILER =		base-clang ports-gcc
 WANTLIB +=		${COMPILER_LIBCXX} m
 
-BUILD_DEPENDS =		devel/py-setuptools_scm
+BUILD_DEPENDS =		devel/py-setuptools_scm${MODPY_FLAVOR}
 
 MODULES =		lang/python
 
