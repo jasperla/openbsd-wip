@@ -13,7 +13,7 @@ MAINTAINER =		Laurent Cheylus <foxy@free.fr>
 # MIT
 PERMIT_PACKAGE =	Yes
 
-RUN_DEPENDS =		devel/py-codestyle
+RUN_DEPENDS =		devel/py-codestyle${MODPY_FLAVOR}
 
 MODULES =		lang/python
 
