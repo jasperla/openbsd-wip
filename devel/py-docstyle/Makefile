@@ -13,7 +13,8 @@ MAINTAINER =		Laurent Cheylus <foxy@free.fr>
 # MIT
 PERMIT_PACKAGE =	Yes
 
-RUN_DEPENDS =		textproc/py-snowballstemmer textproc/py-toml
+RUN_DEPENDS =		textproc/py-snowballstemmer${MODPY_FLAVOR} \
+			textproc/py-toml${MODPY_FLAVOR}
 
 MODULES =		lang/python
 
