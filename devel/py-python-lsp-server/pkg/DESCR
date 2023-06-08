@@ -1,0 +1,6 @@
+A Python 3.7+ implementation of the Language Server Protocol.
+
+Language Server Features: Auto Completion, Autoimport, Code Linting,
+Code actions, Signature Help, Go to definition, Hover, Find References,
+Document Symbols, Document Formatting, Code folding and Multiple
+workspaces.
