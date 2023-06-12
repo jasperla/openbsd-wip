@@ -21,6 +21,9 @@ MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_PYBUILD =		poetry-core
 
+# TODO - Install requirements for tests
+NO_TEST =		Yes
+
 FLAVORS =		python3
 FLAVOR =		python3
 
