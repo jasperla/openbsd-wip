@@ -32,6 +32,9 @@ MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
 
+# TODO - Install rquirements for tests
+NO_TEST =		Yes
+
 FLAVORS =		python3
 FLAVOR =		python3
 
