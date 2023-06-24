@@ -2,7 +2,7 @@ COMMENT =	modular Rust compiler front-end for IDEs
 
 GH_ACCOUNT =	rust-lang
 GH_PROJECT =	rust-analyzer
-GH_TAGNAME =	2023-02-27
+GH_TAGNAME =	2023-06-19
 
 PKGNAME =	rust-analyzer-${GH_TAGNAME:S/-//g}
 
@@ -16,30 +16,38 @@ CATEGORIES =	devel
 PERMIT_PACKAGE =	Yes
 
 MODULES =	devel/cargo
-BUILD_DEPENDS =	textproc/asciidoctor
+MODCARGO_TEST =	Yes
 
-WANTLIB +=	${MODCARGO_WANTLIB}
+RUN_DEPENDS =	lang/rust,,-rustfmt lang/rust,,-src
+BUILD_DEPENDS =	${RUN_DEPENDS} textproc/asciidoctor textproc/ruby-rouge
+
+WANTLIB +=	${MODCARGO_WANTLIB} m
 
 CONFIGURE_STYLE =	cargo
 MAKE_ENV +=	CFG_RELEASE=${GH_TAGNAME}
 
 SEPARATE_BUILD =	Yes
 
-PATCHORIG =	.port.orig
-
 DOCDIR =	${PREFIX}/share/doc/rust-analyzer
-TMP_DOCDIR =	${WRKSRC}/docs_html
+
+# generate manual.html
+post-build:
+	${MODCARGO_CARGO_RUN} test \
+		--manifest-path ${MODCARGO_CARGOTOML} \
+		--offline \
+		--release \
+		--verbose \
+		-p ide-assists \
+		-p ide-diagnostics \
+		-p rust-analyzer \
+		-- sourcegen_
+	asciidoctor ${WRKSRC}/docs/user/manual.adoc
 
 do-install:
 	${INSTALL_PROGRAM} ${MODCARGO_TARGET_DIR}/release/rust-analyzer ${PREFIX}/bin/
 
-	# Convert user manual from AsciiDoc format to HTML
-	@rm -rf ${TMP_DOCDIR}
-	@mkdir -p ${TMP_DOCDIR}
-	asciidoctor -q -D ${TMP_DOCDIR} ${WRKSRC}/docs/user/manual.adoc
-
 	${INSTALL_DATA_DIR} ${DOCDIR}
-	cp ${TMP_DOCDIR}/manual.html ${DOCDIR}
+	${INSTALL_DATA} ${WRKSRC}/docs/user/manual.html ${DOCDIR}
 
 .include "crates.inc"
 
