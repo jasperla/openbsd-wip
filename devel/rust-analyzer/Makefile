@@ -16,7 +16,6 @@ CATEGORIES =	devel
 PERMIT_PACKAGE =	Yes
 
 MODULES =	devel/cargo
-MODCARGO_TEST =	Yes
 
 RUN_DEPENDS =	lang/rust,,-rustfmt lang/rust,,-src
 BUILD_DEPENDS =	${RUN_DEPENDS} textproc/asciidoctor textproc/ruby-rouge
@@ -24,9 +23,10 @@ BUILD_DEPENDS =	${RUN_DEPENDS} textproc/asciidoctor textproc/ruby-rouge
 WANTLIB +=	${MODCARGO_WANTLIB} m
 
 CONFIGURE_STYLE =	cargo
-MAKE_ENV +=	CFG_RELEASE=${GH_TAGNAME}
-
+MODCARGO_TEST =		Yes
 SEPARATE_BUILD =	Yes
+
+MAKE_ENV +=	CFG_RELEASE=${GH_TAGNAME}
 
 DOCDIR =	${PREFIX}/share/doc/rust-analyzer
 
