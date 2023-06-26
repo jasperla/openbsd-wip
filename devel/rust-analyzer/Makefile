@@ -2,7 +2,7 @@ COMMENT =	modular Rust compiler front-end for IDEs
 
 GH_ACCOUNT =	rust-lang
 GH_PROJECT =	rust-analyzer
-GH_TAGNAME =	2023-06-19
+GH_TAGNAME =	2023-06-26
 
 PKGNAME =	rust-analyzer-${GH_TAGNAME:S/-//g}
 
