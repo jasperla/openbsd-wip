@@ -1,7 +1,7 @@
 Index: crates/ruff/Cargo.toml
 --- crates/ruff/Cargo.toml.orig
 +++ crates/ruff/Cargo.toml
-@@ -70,7 +70,7 @@ thiserror = { version = "1.0.38" }
+@@ -75,7 +75,7 @@ thiserror = { version = "1.0.38" }
  toml = { workspace = true }
  typed-arena = { version = "2.0.2" }
  unicode-width = { version = "0.1.10" }
