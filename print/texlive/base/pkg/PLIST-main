@@ -290,7 +290,6 @@ bin/ps2frag
 bin/ps4pdf
 bin/pslatex
 bin/pst2pdf
-bin/ptex
 bin/ptex2pdf
 bin/ptftopl
 bin/purifyeps
@@ -370,7 +369,6 @@ bin/updvitomp
 @bin bin/upmendex
 @bin bin/upmpost
 @bin bin/uppltotf
-bin/uptex
 @bin bin/uptftopl
 bin/urlbst
 @bin bin/vftovp

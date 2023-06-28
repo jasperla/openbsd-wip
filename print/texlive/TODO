@@ -1,1 +1,9 @@
+ - make the packages install together
+ - generate pregen
  - Figure out what do do with context.
+
+deleting texmf-minimal
+install-info: warning: no entries found for `/usr/local/info/latex2e-es.info'; nothing deleted
+
+installing texmf-full
+system(/bin/sh, -c, /usr/local/bin/mtxrun --generate > /dev/null 2>&1) failed:  exit(127)

@@ -15,9 +15,8 @@ DISTNAME =		texlive-${DIST_V}-texmf
 MASTER_SITES0 =		http://theunixzoo.co.uk/distfiles/
 DISTFILES =		${DISTNAME}${EXTRACT_SUFX} \
 			texlive-20230311-tlpdb-full.tar.gz \
+			texmf-var-pregen-${V}${EXTRACT_SUFX}:0 \
 			texlive-${DIST_V}-extra${EXTRACT_SUFX}
-# XXX regen
-# texmf-var-pregen-${V}${EXTRACT_SUFX}:0
 
 PKGNAME-main =		texlive_texmf-minimal-${V}
 PKGNAME-full =		texlive_texmf-full-${V}
@@ -42,17 +41,16 @@ MODPY_RUNDEP =		No
 
 .include "adj.mk"
 
-# XXX put back deps
-#RUN_DEPENDS-main +=	texlive_base->=${V}:print/texlive/base,-main \
-#			${FULLPKGNAME-buildset}:print/texlive/texmf,-buildset
-#RUN_DEPENDS-full =	${FULLPKGNAME-main}:print/texlive/texmf,-main \
-#			${MODPY_RUN_DEPENDS} \
-#			${_MODLUA_RUNDEPENDS}
-#RUN_DEPENDS-context +=	${FULLPKGNAME-full}:print/texlive/texmf,-full \
-#			${MODRUBY_RUN_DEPENDS}
-#RUN_DEPENDS-docs +=	texlive_base->=${V}:print/texlive/base,-main \
-#			x11/p5-Tk
-#RUN_DEPENDS-buildset +=texlive_mktexlsr->=${V}:print/texlive/base,-mktexlsr
+RUN_DEPENDS-main +=	texlive_base->=${V}:print/texlive/base,-main \
+			${FULLPKGNAME-buildset}:print/texlive/texmf,-buildset
+RUN_DEPENDS-full =	${FULLPKGNAME-main}:print/texlive/texmf,-main \
+			${MODPY_RUN_DEPENDS} \
+			${_MODLUA_RUNDEPENDS}
+RUN_DEPENDS-context +=	${FULLPKGNAME-full}:print/texlive/texmf,-full \
+			${MODRUBY_RUN_DEPENDS}
+RUN_DEPENDS-docs +=	texlive_base->=${V}:print/texlive/base,-main \
+			x11/p5-Tk
+RUN_DEPENDS-buildset +=	texlive_mktexlsr->=${V}:print/texlive/base,-mktexlsr
 
 MULTI_PACKAGES =	-context -docs -full -main -buildset
 
@@ -110,9 +108,6 @@ pre-configure:
 	    -e 'close ARGV if eof;' ${WRKSRC}/$$F; \
 	done
 
-	# This file contains a lookup table of interpreter paths
-	${SUBST_CMD} ${WRKSRC}/texmf-dist/scripts/context/stubs/unix/mtxrun
-
 # Note that the engine symlinks will cause warnings about dead symlinks at
 # package time. This is because the symlinks point outside of the texmf
 # packages (to texlive_base). The warnings are harmless and can be disregarded.
@@ -123,10 +118,12 @@ do-install: tl-symlinks-main tl-symlinks-full tl-symlinks-context
 
 	# plug in my pregenerated map and formats
 	#
+	# XXX: mtxrun is gone!
 	# To make these, first check you are all hashed (all commands as root):
 	#   mktexlsr
 	#   mtxrun --generate
 	#
+	# XXX context is gone.
 	# Then create the necessary files with:
 	#   updmap-sys
 	#   fmtutil-sys --all
@@ -134,6 +131,7 @@ do-install: tl-symlinks-main tl-symlinks-full tl-symlinks-context
 	#
 	# Then you can tar them up and host them as the pregen tarball.
 	#
+	# XXX luatex cache is gone
 	# (Don't forget to remove ls-R files, log files and the luatex cache
 	# before making the tarball).
 	mv ${WRKDIR}/texmf-var ${PREFIX}/share

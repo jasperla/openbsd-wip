@@ -41,9 +41,8 @@ RUN_DEPENDS-main =	graphics/libwebp \
 			print/psutils \
 			print/t1utils \
 			devel/desktop-file-utils \
+			texlive_texmf-buildset-${V}:print/texlive/texmf,-buildset \
 			${BASE_PKGPATH},-synctex
-# XXX put back
-#texlive_texmf-buildset-${V}:print/texlive/texmf,-buildset \
 
 LIB_DEPENDS-main =	converters/libiconv \
 			graphics/png \
@@ -147,7 +146,8 @@ pre-install:
 
 EXTRA_ROOT =	${WRKDIR}/texlive-${DIST_V}-extra
 
-# XXX regen this
+# Note that running `make plist` in the texmf subdir re-generates
+# this file and thus changes what gets installed!
 .include "../texmf/symlinks.mk"
 
 post-install: tl-symlinks-buildset
@@ -161,6 +161,10 @@ post-install: tl-symlinks-buildset
 
 	# Users should not use tlmgr (tex live package manager)
 	rm ${PREFIX}/bin/tlmgr
+
+	# The build installs `ptex` and `uptex` which conflict
+	# with symlinks that get installed by other texmf packages.
+	rm ${PREFIX}/bin/{u,}ptex
 
 	# translate some sylinks from ../texmf* to ../share/texmf*
 	for link in `find ${PREFIX}/bin -type l`; do \

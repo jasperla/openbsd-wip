@@ -29,10 +29,12 @@ tl-symlinks-main:
 		ln -s pdftex pdfmex && \
 		ln -s pdftex pdfxmltex && \
 		ln -s eptex platex && \
-		ln -s eptex platex-dev && \
+		ln -s euptex platex-dev && \
+		ln -s eptex ptex && \
 		ln -s pdftex texsis && \
 		ln -s euptex uplatex && \
 		ln -s euptex uplatex-dev && \
+		ln -s euptex uptex && \
 		ln -s pdftex utf8mex && \
 		ln -s xetex xelatex && \
 		ln -s pdftex xmltex
