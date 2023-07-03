@@ -13,24 +13,36 @@ HOMEPAGE =		https://www.ausweisapp.bund.de/ausweisapp2/
 
 MAINTAINER =		Klemens Nanni <kn@openbsd.org>
 
+WANTLIB += ${COMPILER_LIBCXX} Qt5Concurrent Qt5Core Qt5Gui Qt5Network
+WANTLIB += Qt5Qml Qt5QmlModels Qt5QmlWorkerScript Qt5Quick Qt5QuickControls2
+WANTLIB += Qt5Svg Qt5WebSockets Qt5Widgets c http_parser m pcsclite
+
 # C++17
 COMPILER =		base-clang ports-gcc
 
 MODULES =		devel/cmake \
 			x11/qt5
 
+# /usr/ports/pobj/ausweisapp2-1.26.4/AusweisApp2-1.26.4/cmake/tests/openssl.cpp:25:3:
+#     error: RSA-PSK is required.
+BUILD_DEPENDS +=	security/openssl/1.1
+
 LIB_DEPENDS =		devel/http-parser \
-			security/pcsc-lite
+			security/pcsc-lite \
+			x11/qt5/qtquickcontrols2 \
+			x11/qt5/qtdeclarative \
+			x11/qt5/qtsvg \
+			x11/qt5/qtwebsockets
 
 # optional, needs testing
 #LIB_DEPENDS =		sysutils/libudev-openbsd
 
+CONFIGURE_ARGS =	-DBUILD_SHARED_LIBS=ON \
+			-DUSE_SMARTEID=ON
+
 # Qt6 is the default, but we lack Qt6WebSockets
 CONFIGURE_ARGS =	-DQt=Qt5
 
-# wait for LibreSSL to support pre-shared keys...
-#
-# /usr/ports/pobj/ausweisapp2-1.26.4/AusweisApp2-1.26.4/cmake/tests/openssl.cpp:25:3:
-#     error: RSA-PSK is required.
+CONFIGURE_ARGS +=	-DCMAKE_DISABLE_FIND_PACKAGE_Doxygen=ON
 
 .include <bsd.port.mk>

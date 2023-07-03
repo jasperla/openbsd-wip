@@ -1,0 +1,26 @@
+Replace LibreSSL with OpenSSL 1.1 due to RSA-PSK usage
+
+Index: cmake/Libraries.cmake
+--- cmake/Libraries.cmake.orig
++++ cmake/Libraries.cmake
+@@ -102,7 +102,10 @@ if(MINGW AND NOT CMAKE_CROSSCOMPILING)
+ endif()
+ 
+ set(MIN_OPENSSL_VERSION 1.1)
+-find_package(OpenSSL ${MIN_OPENSSL_VERSION} REQUIRED)
++find_package(PkgConfig REQUIRED)
++pkg_check_modules(OpenSSL REQUIRED IMPORTED_TARGET libecrypto11 libessl11)
++add_library(OpenSSL::Crypto STATIC ALIAS PkgConfig::OpenSSL)
++add_library(OpenSSL::SSL    STATIC ALIAS PkgConfig::OpenSSL)
+ 
+ if(tmp_crosscompile_enabled)
+ 	set(CMAKE_CROSSCOMPILING OFF)
+@@ -175,7 +178,7 @@ endif()
+ if(LINUX OR BSD)
+ 	try_run(testResult compileResult "${CMAKE_BINARY_DIR}" "${CMAKE_DIR}/tests/openssl.cpp"
+ 		CMAKE_FLAGS INSTALL_RPATH_USE_LINK_PATH:BOOL=ON
+-		LINK_LIBRARIES ${Qt}::Network OpenSSL::Crypto OpenSSL::SSL
++		LINK_LIBRARIES ${Qt}::Network PkgConfig::OpenSSL
+ 		OUTPUT_VARIABLE runResult)
+ 	if(NOT testResult EQUAL 0)
+ 		message(FATAL_ERROR "Your OpenSSL library looks incompatible: ${testResult}\n${runResult}")
