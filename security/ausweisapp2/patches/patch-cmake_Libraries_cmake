@@ -10,8 +10,8 @@ Index: cmake/Libraries.cmake
 -find_package(OpenSSL ${MIN_OPENSSL_VERSION} REQUIRED)
 +find_package(PkgConfig REQUIRED)
 +pkg_check_modules(OpenSSL REQUIRED IMPORTED_TARGET libecrypto11 libessl11)
-+add_library(OpenSSL::Crypto STATIC ALIAS PkgConfig::OpenSSL)
-+add_library(OpenSSL::SSL    STATIC ALIAS PkgConfig::OpenSSL)
++add_library(OpenSSL::Crypto ALIAS PkgConfig::OpenSSL)
++add_library(OpenSSL::SSL    ALIAS PkgConfig::OpenSSL)
  
  if(tmp_crosscompile_enabled)
  	set(CMAKE_CROSSCOMPILING OFF)

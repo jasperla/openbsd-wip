@@ -1,4 +1,4 @@
-COMMENT =		official authentication app for German ID cards
+COMMENT =		official app for german ID cards and residence permits
 CATEGORIES =		security x11
 
 DISTNAME =		ausweisapp2-1.26.4
@@ -33,12 +33,6 @@ LIB_DEPENDS =		devel/http-parser \
 			x11/qt5/qtdeclarative \
 			x11/qt5/qtsvg \
 			x11/qt5/qtwebsockets
-
-# optional, needs testing
-#LIB_DEPENDS =		sysutils/libudev-openbsd
-
-CONFIGURE_ARGS =	-DBUILD_SHARED_LIBS=ON \
-			-DUSE_SMARTEID=ON
 
 # Qt6 is the default, but we lack Qt6WebSockets
 CONFIGURE_ARGS =	-DQt=Qt5
