@@ -1,0 +1,18 @@
+@bin bin/AusweisApp2
+@man man/man1/AusweisApp2.1
+share/AusweisApp2/
+share/AusweisApp2/AusweisApp2.rcc
+share/applications/
+share/applications/com.governikus.ausweisapp2.desktop
+share/icons/
+share/icons/hicolor/
+share/icons/hicolor/96x96/
+share/icons/hicolor/96x96/apps/
+share/icons/hicolor/96x96/apps/AusweisApp2.png
+share/icons/hicolor/scalable/
+share/icons/hicolor/scalable/apps/
+share/icons/hicolor/scalable/apps/AusweisApp2.svg
+share/metainfo/
+share/metainfo/com.governikus.ausweisapp2.metainfo.xml
+@tag gtk-update-icon-cache %D/share/icons/hicolor
+@tag update-desktop-database
