@@ -16,9 +16,9 @@ MAINTAINER =	Edd Barrett <edd@openbsd.org>
 # GPLv2 + other permissible licenses. XXX check
 PERMIT_PACKAGE =	Yes
 
-# XXX Gah, they bundle Lua.
-MODULES =		devel/cmake # lang/lua
-#MODLUA_BUILDDEP =	No
+# Note: statically embedded lua interpreter for $reasons:
+# https://github.com/contextgarden/luametatex/issues/6#issuecomment-1619143916
+MODULES =		devel/cmake
 
 WANTLIB +=		c m pthread
 
