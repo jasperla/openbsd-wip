@@ -31,6 +31,7 @@ BUILD_DEPENDS =		devel/cereal>=1.3.2 \
 			devel/p5-ExtUtils-CppGuess \
 			devel/p5-ExtUtils-Typemaps-Default \
 			devel/p5-ExtUtils-XSpp \
+			graphics/openexr,-main \
 			graphics/openvdb \
 			math/eigen3>=2.91.0
 
