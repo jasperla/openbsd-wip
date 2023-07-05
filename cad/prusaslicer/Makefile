@@ -1,5 +1,3 @@
-# $OpenBSD: $
-
 COMMENT =		G-code generator for 3D printing
 
 V =			2.6.0
@@ -11,8 +9,6 @@ DISTNAME =		PrusaSlicer-${V}
 CATEGORIES =		cad graphics
 
 HOMEPAGE =		https://prusa3d.com/prusaslicer/
-
-MAINTAINER =		Klemens Nanni <kn@openbsd.org>
 
 # AGPLv3
 PERMIT_PACKAGE =	Yes
@@ -29,8 +25,7 @@ COMPILER =		base-clang ports-gcc
 
 MODULES =		devel/cmake
 
-BUILD_DEPENDS =	\
-			devel/cereal>=1.3.2 \
+BUILD_DEPENDS =		devel/cereal>=1.3.2 \
 			devel/gtest>=1.7.0 \
 			devel/p5-Alien-wxWidgets>=0.69p0 \
 			devel/p5-ExtUtils-CppGuess \
