@@ -1,18 +1,16 @@
 # $OpenBSD: $
 
-COMMENT =		G-code generator for 3D printers (Prusa Edition)
+COMMENT =		G-code generator for 3D printing
 
-# >=1.42.0 wants wxWidgets>=3.1 (development release)
-V =			2.0.0
+V =			2.6.0
 GH_ACCOUNT =		prusa3d
 GH_PROJECT =		PrusaSlicer
-# XXX: extra leading "v" because bsd.port.mk strips one
-GH_TAGNAME =		vversion_${V}
+GH_TAGNAME =		version_${V}
 DISTNAME =		PrusaSlicer-${V}
 
 CATEGORIES =		cad graphics
 
-HOMEPAGE =		https://www.prusa3d.com/prusaslicer/
+HOMEPAGE =		https://prusa3d.com/prusaslicer/
 
 MAINTAINER =		Klemens Nanni <kn@openbsd.org>
 
@@ -22,20 +20,23 @@ PERMIT_PACKAGE =	Yes
 WANTLIB +=	${COMPILER_LIBCXX} GL GLEW GLU boost_atomic-mt boost_chrono-mt
 WANTLIB +=	boost_date_time-mt boost_filesystem-mt boost_locale-mt
 WANTLIB +=	boost_log-mt boost_log_setup-mt boost_regex-mt boost_system-mt
-WANTLIB +=	boost_thread-mt c curl expat m nlopt perl tbb wx_baseu-3.0
-WANTLIB +=	wx_gtk3u_adv-3.0 wx_gtk3u_core-3.0 wx_gtk3u_gl-3.0
-WANTLIB +=	wx_gtk3u_html-3.0
+WANTLIB +=	boost_thread-mt c curl expat m nlopt perl tbb openvdb
+WANTLIB +=	wx_baseu-3.2 wx_gtk3u_adv-3.2 wx_gtk3u_core-3.2 wx_gtk3u_gl-3.2
+WANTLIB +=	wx_gtk3u_html-3.2
 
 # C++
 COMPILER =		base-clang ports-gcc
 
 MODULES =		devel/cmake
 
-BUILD_DEPENDS =		devel/gtest>=1.7.0 \
+BUILD_DEPENDS =	\
+			devel/cereal>=1.3.2 \
+			devel/gtest>=1.7.0 \
 			devel/p5-Alien-wxWidgets>=0.69p0 \
 			devel/p5-ExtUtils-CppGuess \
 			devel/p5-ExtUtils-Typemaps-Default \
 			devel/p5-ExtUtils-XSpp \
+			graphics/openvdb \
 			math/eigen3>=2.91.0
 
 RUN_DEPENDS =		devel/p5-Moo \
