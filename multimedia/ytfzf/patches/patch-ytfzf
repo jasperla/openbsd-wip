@@ -1,0 +1,12 @@
+Index: ytfzf
+--- ytfzf.orig
++++ ytfzf
+@@ -19,7 +19,7 @@ YTFZF_VERSION="2.6.0"
+ : "${YTFZF_EXTENSIONS_DIR:=$YTFZF_CONFIG_DIR/extensions}"
+ : "${YTFZF_CUSTOM_SCRAPERS_DIR:=$YTFZF_CONFIG_DIR/scrapers}"
+ 
+-: "${YTFZF_SYSTEM_ADDON_DIR:=/usr/local/share/ytfzf/addons}"
++: "${YTFZF_SYSTEM_ADDON_DIR:=${TRUEPREFIX}/share/ytfzf/addons}"
+ 
+ : "${YTFZF_TEMP_DIR:="${TMPDIR:-/tmp}"/ytfzf-$(id -u)}"
+ 
