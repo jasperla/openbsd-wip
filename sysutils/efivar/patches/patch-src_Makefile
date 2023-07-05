@@ -1,4 +1,4 @@
-Fix .so versioning
+Fix .so versioning.
 Don't create symlinks for shared libraries.
 
 Index: src/Makefile

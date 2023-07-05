@@ -1,5 +1,4 @@
-Fix .so versioning
-Packages can't be built with -march=native
+Fix .so versioning.
 
 Index: src/include/defaults.mk
 --- src/include/defaults.mk.orig

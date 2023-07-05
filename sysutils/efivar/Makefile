@@ -29,12 +29,14 @@ WANTLIB += c
 
 USE_GMAKE =		Yes
 MAKE_FLAGS =		CC=${CC}
-MAKE_ENV =		HOST_MARCH='' \
-			LIBefivar_VERSION=${LIBefivar_VERSION} \
+MAKE_ENV =		LIBefivar_VERSION=${LIBefivar_VERSION} \
 			LIBefiboot_VERSION=${LIBefiboot_VERSION} \
 			LIBefisec_VERSION=${LIBefisec_VERSION}
 FAKE_FLAGS =		PREFIX=${PREFIX} \
 			MANDIR=${PREFIX}/man \
 			LIBDIR=${PREFIX}/lib
+
+# Packages can't be built with -march=native.
+MAKE_FLAGS +=		HOST_MARCH=''
 
 .include <bsd.port.mk>
