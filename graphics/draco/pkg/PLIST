@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v$
-@bin bin/draco_decoder
-@bin bin/draco_encoder
+bin/draco_decoder
+@bin bin/draco_decoder-1.5.6
+bin/draco_encoder
+@bin bin/draco_encoder-1.5.6
 include/draco/
 include/draco/animation/
 include/draco/animation/keyframe_animation.h
@@ -18,6 +19,7 @@ include/draco/attributes/point_attribute.h
 include/draco/compression/
 include/draco/compression/attributes/
 include/draco/compression/attributes/attributes_decoder.h
+include/draco/compression/attributes/attributes_decoder_interface.h
 include/draco/compression/attributes/attributes_encoder.h
 include/draco/compression/attributes/kd_tree_attributes_decoder.h
 include/draco/compression/attributes/kd_tree_attributes_encoder.h
@@ -97,6 +99,7 @@ include/draco/compression/config/draco_options.h
 include/draco/compression/config/encoder_options.h
 include/draco/compression/config/encoding_features.h
 include/draco/compression/decode.h
+include/draco/compression/draco_compression_options.h
 include/draco/compression/encode.h
 include/draco/compression/encode_base.h
 include/draco/compression/entropy/
@@ -151,6 +154,7 @@ include/draco/compression/point_cloud/point_cloud_sequential_encoder.h
 include/draco/core/
 include/draco/core/bit_utils.h
 include/draco/core/bounding_box.h
+include/draco/core/constants.h
 include/draco/core/cycle_timer.h
 include/draco/core/data_buffer.h
 include/draco/core/decoder_buffer.h
@@ -190,6 +194,8 @@ include/draco/io/ply_reader.h
 include/draco/io/point_cloud_io.h
 include/draco/io/stdio_file_reader.h
 include/draco/io/stdio_file_writer.h
+include/draco/io/stl_decoder.h
+include/draco/io/stl_encoder.h
 include/draco/mesh/
 include/draco/mesh/corner_table.h
 include/draco/mesh/corner_table_iterators.h
@@ -197,6 +203,8 @@ include/draco/mesh/mesh.h
 include/draco/mesh/mesh_are_equivalent.h
 include/draco/mesh/mesh_attribute_corner_table.h
 include/draco/mesh/mesh_cleanup.h
+include/draco/mesh/mesh_features.h
+include/draco/mesh/mesh_indices.h
 include/draco/mesh/mesh_misc_functions.h
 include/draco/mesh/mesh_stripifier.h
 include/draco/mesh/triangle_soup_mesh_builder.h
@@ -206,6 +214,8 @@ include/draco/metadata/geometry_metadata.h
 include/draco/metadata/metadata.h
 include/draco/metadata/metadata_decoder.h
 include/draco/metadata/metadata_encoder.h
+include/draco/metadata/property_table.h
+include/draco/metadata/structural_metadata.h
 include/draco/point_cloud/
 include/draco/point_cloud/point_cloud.h
 include/draco/point_cloud/point_cloud_builder.h
@@ -213,4 +223,8 @@ include/draco/point_cloud/point_cloud_builder.h
 @lib lib/libdraco.so.${LIBdraco_VERSION}
 lib/pkgconfig/draco.pc
 share/cmake/
-share/cmake/draco-config.cmake
+share/cmake/draco/
+share/cmake/draco/draco-config-version.cmake
+share/cmake/draco/draco-config.cmake
+share/cmake/draco/draco-targets${MODCMAKE_BUILD_SUFFIX}
+share/cmake/draco/draco-targets.cmake
