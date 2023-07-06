@@ -1,0 +1,11 @@
+--- adm/qmake/OccToolkit.pri	Thu Jul  6 14:04:27 2023
++++ adm/qmake/OccToolkit.pri.orig	Thu Jul  6 14:04:17 2023
+@@ -59,7 +59,7 @@
+   CSF_TclTkLibs  = -framework Tk
+ } else {
+   CSF_dl = -ldl
+-  CSF_ThreadLibs = -lpthread
++  CSF_ThreadLibs = -lpthread -lrt
+   CSF_OpenGlesLibs = -lEGL -lGLESv2
+   CSF_TclTkLibs  = -ltk8.6
+   HAVE_XLIB {

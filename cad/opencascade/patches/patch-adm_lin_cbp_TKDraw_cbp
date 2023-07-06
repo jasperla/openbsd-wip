@@ -1,0 +1,10 @@
+--- adm/lin/cbp/TKDraw.cbp.orig	Thu Jul  6 13:33:59 2023
++++ adm/lin/cbp/TKDraw.cbp	Thu Jul  6 13:34:03 2023
+@@ -62,7 +62,6 @@
+ 			<Add library="tk8.6" />
+ 			<Add library="X11" />
+ 			<Add library="pthread" />
+-			<Add library="rt" />
+ 			<Add library="TKernel" />
+ 			<Add library="TKG2d" />
+ 			<Add library="TKGeomBase" />

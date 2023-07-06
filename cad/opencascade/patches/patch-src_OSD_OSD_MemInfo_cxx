@@ -1,0 +1,11 @@
+--- src/OSD/OSD_MemInfo.cxx.orig	Thu Jul  6 13:25:09 2023
++++ src/OSD/OSD_MemInfo.cxx	Thu Jul  6 13:25:13 2023
+@@ -28,7 +28,7 @@
+   #include <malloc/malloc.h>
+ #else
+   #include <unistd.h>
+-  #include <malloc.h>
++  #include <stdlib.h>
+ #endif
+ 
+ #include <OSD_MemInfo.hxx>
