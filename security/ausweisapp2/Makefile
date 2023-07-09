@@ -23,8 +23,7 @@ COMPILER =		base-clang ports-gcc
 MODULES =		devel/cmake \
 			x11/qt5
 
-# /usr/ports/pobj/ausweisapp2-1.26.4/AusweisApp2-1.26.4/cmake/tests/openssl.cpp:25:3:
-#     error: RSA-PSK is required.
+# ${WRKSRC}/cmake/tests/openssl.cpp:25:3:	error: RSA-PSK is required.
 BUILD_DEPENDS +=	security/openssl/1.1
 
 LIB_DEPENDS =		devel/http-parser \

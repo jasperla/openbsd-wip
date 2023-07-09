@@ -1,21 +1,24 @@
-Replace LibreSSL with OpenSSL 1.1 due to RSA-PSK usage
+Replace dynamic LibreSSL with static OpenSSL 1.1 due to RSA-PSK usage
 
 Index: cmake/Libraries.cmake
 --- cmake/Libraries.cmake.orig
 +++ cmake/Libraries.cmake
-@@ -102,7 +102,10 @@ if(MINGW AND NOT CMAKE_CROSSCOMPILING)
+@@ -102,7 +102,13 @@ if(MINGW AND NOT CMAKE_CROSSCOMPILING)
  endif()
  
  set(MIN_OPENSSL_VERSION 1.1)
 -find_package(OpenSSL ${MIN_OPENSSL_VERSION} REQUIRED)
 +find_package(PkgConfig REQUIRED)
-+pkg_check_modules(OpenSSL REQUIRED IMPORTED_TARGET libecrypto11 libessl11)
++set(_SAFE_SUFX CMAKE_FIND_LIBRARY_SUFFIXES)
++set(CMAKE_FIND_LIBRARY_SUFFIXES ".a")
++pkg_check_modules(OpenSSL REQUIRED IMPORTED_TARGET eopenssl11)
++set(CMAKE_FIND_LIBRARY_SUFFIXES _SAFE_SUFX)
 +add_library(OpenSSL::Crypto ALIAS PkgConfig::OpenSSL)
 +add_library(OpenSSL::SSL    ALIAS PkgConfig::OpenSSL)
  
  if(tmp_crosscompile_enabled)
  	set(CMAKE_CROSSCOMPILING OFF)
-@@ -175,7 +178,7 @@ endif()
+@@ -175,7 +181,7 @@ endif()
  if(LINUX OR BSD)
  	try_run(testResult compileResult "${CMAKE_BINARY_DIR}" "${CMAKE_DIR}/tests/openssl.cpp"
  		CMAKE_FLAGS INSTALL_RPATH_USE_LINK_PATH:BOOL=ON
