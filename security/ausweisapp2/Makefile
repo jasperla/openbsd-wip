@@ -15,7 +15,7 @@ MAINTAINER =		Klemens Nanni <kn@openbsd.org>
 
 WANTLIB += ${COMPILER_LIBCXX} Qt5Concurrent Qt5Core Qt5Gui Qt5Network
 WANTLIB += Qt5Qml Qt5QmlModels Qt5QmlWorkerScript Qt5Quick Qt5QuickControls2
-WANTLIB += Qt5Svg Qt5WebSockets Qt5Widgets c http_parser m pcsclite
+WANTLIB += Qt5Svg Qt5WebSockets Qt5Widgets c m pcsclite
 
 # C++20
 COMPILER =		base-clang ports-gcc
@@ -33,6 +33,10 @@ LIB_DEPENDS =		devel/http-parser \
 			x11/qt5/qtdeclarative \
 			x11/qt5/qtsvg \
 			x11/qt5/qtwebsockets
+
+# does not find it, uses bundled 2.9.4 instead
+#LIB_DEPENDS +=		devel/http-parser
+#WANTLIB +=		http_parser
 
 # Qt6 is the default, but we lack Qt6WebSockets
 CONFIGURE_ARGS =	-DQt=Qt5 \
