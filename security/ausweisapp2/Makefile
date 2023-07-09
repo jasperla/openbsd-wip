@@ -17,7 +17,7 @@ WANTLIB += ${COMPILER_LIBCXX} Qt5Concurrent Qt5Core Qt5Gui Qt5Network
 WANTLIB += Qt5Qml Qt5QmlModels Qt5QmlWorkerScript Qt5Quick Qt5QuickControls2
 WANTLIB += Qt5Svg Qt5WebSockets Qt5Widgets c http_parser m pcsclite
 
-# C++17
+# C++20
 COMPILER =		base-clang ports-gcc
 
 MODULES =		devel/cmake \
@@ -35,8 +35,10 @@ LIB_DEPENDS =		devel/http-parser \
 			x11/qt5/qtwebsockets
 
 # Qt6 is the default, but we lack Qt6WebSockets
-CONFIGURE_ARGS =	-DQt=Qt5
+CONFIGURE_ARGS =	-DQt=Qt5 \
+			-DCMAKE_DISABLE_FIND_PACKAGE_Doxygen=ON
 
-CONFIGURE_ARGS +=	-DCMAKE_DISABLE_FIND_PACKAGE_Doxygen=ON
+# XXX pcsclite is detected with pkg-config, but its -I and -L are ignored
+CONFIGURE_ARGS +=       -DCMAKE_EXE_LINKER_FLAGS=-L/usr/local/lib
 
 .include <bsd.port.mk>
