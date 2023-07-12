@@ -46,7 +46,9 @@ RUN_DEPENDS-main +=	texlive_base->=${V}:print/texlive/base,-main \
 RUN_DEPENDS-full =	${FULLPKGNAME-main}:print/texlive/texmf,-main \
 			${MODPY_RUN_DEPENDS} \
 			${_MODLUA_RUNDEPENDS}
+# XXX ruby dep still needed?
 RUN_DEPENDS-context +=	${FULLPKGNAME-full}:print/texlive/texmf,-full \
+			print/luametatex \
 			${MODRUBY_RUN_DEPENDS}
 RUN_DEPENDS-docs +=	texlive_base->=${V}:print/texlive/base,-main \
 			x11/p5-Tk
@@ -118,12 +120,10 @@ do-install: tl-symlinks-main tl-symlinks-full tl-symlinks-context
 
 	# plug in my pregenerated map and formats
 	#
-	# XXX: mtxrun is gone!
 	# To make these, first check you are all hashed (all commands as root):
 	#   mktexlsr
 	#   mtxrun --generate
 	#
-	# XXX context is gone.
 	# Then create the necessary files with:
 	#   updmap-sys
 	#   fmtutil-sys --all
@@ -131,8 +131,7 @@ do-install: tl-symlinks-main tl-symlinks-full tl-symlinks-context
 	#
 	# Then you can tar them up and host them as the pregen tarball.
 	#
-	# XXX luatex cache is gone
-	# (Don't forget to remove ls-R files, log files and the luatex cache
+	# (Don't forget to remove ls-R files, log files and the luametatex cache
 	# before making the tarball).
 	mv ${WRKDIR}/texmf-var ${PREFIX}/share
 
@@ -169,6 +168,9 @@ post-install:
 	# selfauto does not work with our legacy texmf paths, patch in paths.
 	${SUBST_CMD} ${PREFIX}/share/texmf-dist/web2c/texmf.cnf
 	${SUBST_CMD} ${PREFIX}/share/texmf-dist/web2c/texmfcnf.lua
+	${SUBST_CMD} ${PREFIX}/share/texmf-dist/scripts/context/lua/mtxrun.lua
+	${SUBST_CMD} ${PREFIX}/share/texmf-dist/tex/context/base/mkiv/data-res.lua
+
 
 # The following targets are for development only and require Python3.
 

@@ -4,6 +4,12 @@
 @conflict texlive_texmf-full-<2022
 @conflict texlive_texmf-buildset-<2022
 @conflict texlive_texmf-minimal-<2022
+bin/
+bin/context
+bin/context.lua
+bin/mtx-context.lua
+bin/mtxrun
+bin/mtxrun.lua
 @man man/man1/context.1
 @man man/man1/luatools.1
 @man man/man1/mtx-babel.1

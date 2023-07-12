@@ -1,9 +1,11 @@
- - make the packages install together
- - generate pregen
  - Figure out what do do with context.
+  - Installed symlinks, do we need the patches too?
+    Yes, it needs the patches.
+ - re-generate pregen with context stuff in
+   and see: https://texdoc.org/serve/tiptrick.pdf/0
+ - cant texmf-context depend on buildset instead of full?
+ - update <=2022 in plists
+ - update package sizes in README
 
 deleting texmf-minimal
 install-info: warning: no entries found for `/usr/local/info/latex2e-es.info'; nothing deleted
-
-installing texmf-full
-system(/bin/sh, -c, /usr/local/bin/mtxrun --generate > /dev/null 2>&1) failed:  exit(127)

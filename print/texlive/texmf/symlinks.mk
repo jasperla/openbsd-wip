@@ -49,5 +49,10 @@ tl-symlinks-full:
 		ln -s xetex xelatex-dev
 
 tl-symlinks-context:
-	true
+	cd ${PREFIX}/bin && \
+		ln -s luametatex context && \
+		ln -s ../share/texmf-dist/scripts/context/lua/context.lua context.lua && \
+		ln -s ../share/texmf-dist/scripts/context/lua/mtx-context.lua mtx-context.lua && \
+		ln -s luametatex mtxrun && \
+		ln -s ../share/texmf-dist/scripts/context/lua/mtxrun.lua mtxrun.lua
 
