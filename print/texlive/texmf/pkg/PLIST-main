@@ -1,9 +1,9 @@
 @conflict teTeX_texmf-*
-@conflict texlive_base-<2022
-@conflict texlive_texmf-docs-<2022
-@conflict texlive_texmf-full-<2022
-@conflict texlive_texmf-buildset-<2022
-@conflict texlive_texmf-context-<2022
+@conflict texlive_base-<2023
+@conflict texlive_texmf-docs-<2023
+@conflict texlive_texmf-full-<2023
+@conflict texlive_texmf-buildset-<2023
+@conflict texlive_texmf-context-<2023
 @pkgpath print/teTeX/texmf
 bin/
 bin/amstex

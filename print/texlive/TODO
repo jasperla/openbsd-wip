@@ -4,8 +4,3 @@
  - re-generate pregen with context stuff in
    and see: https://texdoc.org/serve/tiptrick.pdf/0
  - cant texmf-context depend on buildset instead of full?
- - update <=2022 in plists
- - update package sizes in README
-
-deleting texmf-minimal
-install-info: warning: no entries found for `/usr/local/info/latex2e-es.info'; nothing deleted

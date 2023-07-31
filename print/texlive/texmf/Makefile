@@ -127,7 +127,8 @@ do-install: tl-symlinks-main tl-symlinks-full tl-symlinks-context
 	# Then create the necessary files with:
 	#   updmap-sys
 	#   fmtutil-sys --all
-	#   context --make
+	#   context --make --all
+	#   mtxrun  --script fonts --reload
 	#
 	# Then you can tar them up and host them as the pregen tarball.
 	#
