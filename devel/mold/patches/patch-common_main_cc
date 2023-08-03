@@ -1,0 +1,15 @@
+No way to dynamically get executable path (but we know where mold lives).
+
+Index: common/main.cc
+--- common/main.cc.orig
++++ common/main.cc
+@@ -64,6 +64,9 @@ std::string get_self_path() {
+   path.resize(size);
+   sysctl(mib, 4, path.data(), &size, NULL, 0);
+   return path;
++#elif defined(__OpenBSD__)
++  std::string path("/usr/local/bin/mold");
++  return path;
+ #else
+   return std::filesystem::read_symlink("/proc/self/exe").string();
+ #endif

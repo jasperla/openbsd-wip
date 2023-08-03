@@ -1,0 +1,10 @@
+bin/ld.mold
+@bin bin/mold
+lib/mold/
+@so lib/mold/mold-wrapper.so
+libexec/mold/
+libexec/mold/ld
+@man man/man1/ld.mold.1
+@man man/man1/mold.1
+share/doc/mold/
+share/doc/mold/LICENSE

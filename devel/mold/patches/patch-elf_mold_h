@@ -1,0 +1,42 @@
+Default to -pie.
+Support PT_OPENBSD_WXNEEDED and PT_OPENBSD_NOBTCFI.
+
+Index: elf/mold.h
+--- elf/mold.h.orig
++++ elf/mold.h
+@@ -1721,8 +1721,8 @@ struct Context {
+     bool omagic = false;
+     bool pack_dyn_relocs_relr = false;
+     bool perf = false;
+-    bool pic = false;
+-    bool pie = false;
++    bool pic = true;
++    bool pie = true;
+     bool print_dependencies = false;
+     bool print_gc_sections = false;
+     bool print_icf_sections = false;
+@@ -1756,12 +1756,14 @@ struct Context {
+     bool z_initfirst = false;
+     bool z_interpose = false;
+     bool z_keep_text_section_prefix = false;
++    bool z_nobtcfi = false;
+     bool z_nodefaultlib = false;
+     bool z_now = false;
+     bool z_origin = false;
+     bool z_relro = true;
+     bool z_shstk = false;
+     bool z_text = false;
++    bool z_wxneeded = false;
+     i64 filler = -1;
+     i64 spare_dynamic_tags = 5;
+     i64 thread_count = 0;
+@@ -1867,6 +1869,9 @@ struct Context {
+   OutputEhdr<E> *ehdr = nullptr;
+   OutputShdr<E> *shdr = nullptr;
+   OutputPhdr<E> *phdr = nullptr;
++  OutputPhdr<E> *openbsd_randomize = nullptr;
++  OutputPhdr<E> *openbsd_wxneeded = nullptr;
++  OutputPhdr<E> *openbsd_nobtcfi = nullptr;
+   InterpSection<E> *interp = nullptr;
+   GotSection<E> *got = nullptr;
+   GotPltSection<E> *gotplt = nullptr;

@@ -1,0 +1,4 @@
+Only works with -static (DT_NEEDED isn't being recorded for shared libs).
+Other OpenBSD-specific flags and sections? --no-execute-only?
+Other OpenBSD quality-of-life items?
+Testing on archs not named amd64.
