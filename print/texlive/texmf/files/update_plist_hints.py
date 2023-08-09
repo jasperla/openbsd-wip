@@ -140,6 +140,8 @@ def build_subset_file_lists(tlpdb):
         "inconsolata",
         # books/tex-by-topic
         "svn-multi", "avantgar", "ncntrsbk", "fontname",
+	# print/foiltex, textproc/lgrind
+        "hypdoc",
         ]
     buildset_files, buildset_symlinks = \
         collect_files(runspecs(buildset_pkgs), db)

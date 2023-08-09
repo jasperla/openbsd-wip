@@ -4,3 +4,8 @@
  - re-generate pregen with context stuff in
    and see: https://texdoc.org/serve/tiptrick.pdf/0
  - cant texmf-context depend on buildset instead of full?
+
+ - mktexlsr: move to texlive_mktexlsr
+
+ - Fallout found in bulk
+   E=books/tex-by-topic <- needs updated port.

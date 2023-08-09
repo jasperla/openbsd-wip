@@ -7500,6 +7500,8 @@ share/texmf-dist/tex/latex/hopatch/hopatch.sty
 share/texmf-dist/tex/latex/hycolor/
 share/texmf-dist/tex/latex/hycolor/hycolor.sty
 share/texmf-dist/tex/latex/hycolor/xcolor-patch.sty
+share/texmf-dist/tex/latex/hypdoc/
+share/texmf-dist/tex/latex/hypdoc/hypdoc.sty
 share/texmf-dist/tex/latex/hyperref/
 share/texmf-dist/tex/latex/hyperref/backref.sty
 share/texmf-dist/tex/latex/hyperref/hdvipdfm.def
