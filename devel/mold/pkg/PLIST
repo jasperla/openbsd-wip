@@ -8,3 +8,4 @@ libexec/mold/ld
 @man man/man1/mold.1
 share/doc/mold/
 share/doc/mold/LICENSE
+share/doc/mold/LICENSE.third-party

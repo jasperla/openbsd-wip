@@ -1,5 +1,3 @@
-No way to dynamically get executable path (but we know where mold lives).
-
 Index: common/main.cc
 --- common/main.cc.orig
 +++ common/main.cc

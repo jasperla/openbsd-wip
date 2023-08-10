@@ -1,5 +1,3 @@
-Fix a build failure.
-
 Index: third-party/tbb/include/oneapi/tbb/detail/_config.h
 --- third-party/tbb/include/oneapi/tbb/detail/_config.h.orig
 +++ third-party/tbb/include/oneapi/tbb/detail/_config.h
