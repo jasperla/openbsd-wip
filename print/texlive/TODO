@@ -7,5 +7,9 @@
 
  - mktexlsr: move to texlive_mktexlsr
 
- - Fallout found in bulk
-   E=books/tex-by-topic <- needs updated port.
+ - `make adj` is adding .orig.port files.
+
+Checklist for diff:
+ - texlive
+ - tex-by-topic update
+ - luametatex port
