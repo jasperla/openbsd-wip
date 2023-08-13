@@ -1,4 +1,3 @@
-Need to teach mold how to find OpenBSD shared libraries.
 Other OpenBSD-specific flags and sections? --no-execute-only?
 Other OpenBSD quality-of-life items?
-Testing on archs not named amd64.
+Testing on archs not named amd64 and i386.

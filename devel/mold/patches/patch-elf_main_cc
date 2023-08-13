@@ -1,0 +1,99 @@
+Index: elf/main.cc
+--- elf/main.cc.orig
++++ elf/main.cc
+@@ -3,11 +3,14 @@
+ #include "../common/cmdline.h"
+ #include "../common/output-file.h"
+ 
++#include <cstdio>
++#include <cstdlib>
+ #include <cstring>
+ #include <functional>
+ #include <iomanip>
+ #include <map>
+ #include <regex>
++#include <dirent.h>
+ #include <signal.h>
+ #include <sys/stat.h>
+ #include <sys/types.h>
+@@ -236,6 +239,71 @@ MappedFile<Context<E>> *open_library(Context<E> &ctx, 
+   return nullptr;
+ }
+ 
++static std::string
++openbsd_fixup(std::string before)
++{
++  DIR *dirp;
++  struct dirent *dp;
++  const char *e;
++  char *t, *u, *v;
++  char M[21], m[21];
++  long long Maj = -1, Min = -1, tMaj, tMin;
++  size_t found = before.find_last_of("/");
++
++  if ((dirp = opendir(before.substr(0, found).c_str())) == NULL)
++    return before;
++
++  while ((dp = readdir(dirp)) != NULL) {
++    if (!strncmp(dp->d_name, before.substr(found + 1).c_str(), strlen(before.substr(found + 1).c_str()))) {
++      t = strdup(dp->d_name);
++
++      u = strrchr(t, '.');
++      *u = '\0';
++      tMin = strtonum(u + 1, 0, LLONG_MAX, &e);
++      if (e != NULL) {
++        free(t);
++        t = NULL;
++        return before;
++      }
++
++      v = strrchr(t, '.');
++      tMaj = strtonum(v + 1, 0, LLONG_MAX, &e);
++      if (e != NULL) {
++        free(t);
++        t = NULL;
++        return before;
++      }
++
++      free(t);
++      t = NULL;
++
++      if (Maj == tMaj) {
++        if (Min < tMin)
++          Min = tMin;
++      } else if (Maj < tMaj) {
++        Maj = tMaj;
++        Min = tMin;
++      }
++    }
++  }
++
++  closedir(dirp);
++
++  if (Maj == -1 || Min == -1)
++    return before;
++
++  snprintf(M, 21, "%lld", Maj);
++  snprintf(m, 21, "%lld", Min);
++
++  std::string after = before;
++  after += ".";
++  after += M;
++  after += ".";
++  after += m;
++
++  return after;
++}
++
+ template <typename E>
+ MappedFile<Context<E>> *find_library(Context<E> &ctx, std::string name) {
+   if (name.starts_with(':')) {
+@@ -250,7 +318,7 @@ MappedFile<Context<E>> *find_library(Context<E> &ctx, 
+   for (std::string_view dir : ctx.arg.library_paths) {
+     std::string stem = std::string(dir) + "/lib" + name;
+     if (!ctx.is_static)
+-      if (MappedFile<Context<E>> *mf = open_library(ctx, stem + ".so"))
++      if (MappedFile<Context<E>> *mf = open_library(ctx, openbsd_fixup(stem + ".so")))
+         return mf;
+     if (MappedFile<Context<E>> *mf = open_library(ctx, stem + ".a"))
+       return mf;

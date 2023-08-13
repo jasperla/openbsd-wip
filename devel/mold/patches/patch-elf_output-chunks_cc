@@ -1,7 +1,7 @@
 Index: elf/output-chunks.cc
 --- elf/output-chunks.cc.orig
 +++ elf/output-chunks.cc
-@@ -375,6 +375,14 @@ static std::vector<ElfPhdr<E>> create_phdr(Context<E> 
+@@ -349,6 +349,14 @@ static std::vector<ElfPhdr<E>> create_phdr(Context<E> 
      if (chunk->name == ".openbsd.randomdata")
        define(PT_OPENBSD_RANDOMIZE, PF_R | PF_W, 1, chunk);
  
