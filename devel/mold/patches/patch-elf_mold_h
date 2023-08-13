@@ -33,7 +33,7 @@ Index: elf/mold.h
      bool z_nodefaultlib = false;
      bool z_now = false;
      bool z_origin = false;
-@@ -1827,6 +1828,7 @@ struct Context {
+@@ -1826,6 +1827,7 @@ struct Context {
      bool z_sectionheader = true;
      bool z_shstk = false;
      bool z_text = false;
@@ -41,7 +41,7 @@ Index: elf/mold.h
      i64 filler = -1;
      i64 spare_dynamic_tags = 5;
      i64 thread_count = 0;
-@@ -1932,6 +1934,9 @@ struct Context {
+@@ -1931,6 +1933,9 @@ struct Context {
    OutputEhdr<E> *ehdr = nullptr;
    OutputShdr<E> *shdr = nullptr;
    OutputPhdr<E> *phdr = nullptr;

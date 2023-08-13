@@ -1,10 +1,10 @@
 COMMENT =	modern ELF linker
-DISTNAME =	mold-2.0.0pl20230812
+DISTNAME =	mold-2.1.0pl20230813
 CATEGORIES =	devel
 
 GH_ACCOUNT =	rui314
 GH_PROJECT =	mold
-GH_COMMIT =	00a68c5fcf045be09504ea9ba3e2b7086f1e65c2
+GH_COMMIT =	b018baec8a602cfc5b5d2c9bbe3898d33106fd94
 
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
