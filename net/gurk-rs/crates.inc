@@ -196,7 +196,6 @@ MODCARGO_CRATES +=	nix	0.23.1	# MIT
 MODCARGO_CRATES +=	nix	0.24.3	# MIT
 MODCARGO_CRATES +=	nom	5.1.2	# MIT
 MODCARGO_CRATES +=	nom	7.1.3	# MIT
-MODCARGO_CRATES +=	notify-rust	4.5.10	# MIT/Apache-2.0
 MODCARGO_CRATES +=	nu-ansi-term	0.46.0	# MIT
 MODCARGO_CRATES +=	num-integer	0.1.45	# MIT OR Apache-2.0
 MODCARGO_CRATES +=	num-rational	0.4.1	# MIT OR Apache-2.0

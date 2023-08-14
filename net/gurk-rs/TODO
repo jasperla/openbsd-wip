@@ -6,10 +6,7 @@
         /usr/ports/pobj/gurk-rs-0.3.0/gurk-rs-0.3.0/modcargo-crates/ \
         notify-rust-4.5.10/src/notification.rs:23
 
-    notify-rust is now vendored and current_exe is replaced. However
-    it looks like the vendored version is not being picked up. When I
-    remove the crate from crates.inc, the build fails because it can't
-    find notify-rust.
+    notify-rust is now vendored, but cargo doesn't find it.
 
 Notes:
     Vendored crates:

@@ -24,11 +24,11 @@ tar czvf gurk-rs-$v-vendorfiles.tar.gz \
     vendor/zkgroup \
     vendor/notify-rust
 
-sed -i 's|env::current_exe()|"/usr/local/bin/gurk".to_str()|g' vendor/notify-rust/src/notification.rs
-
 mv gurk-rs-$v-vendorfiles.tar.gz /tmp
 
 # show config
 cat /tmp/gurk-rs-$v.config
+
+echo "scp /tmp/gurk-rs-$v-vendorfiles.tar.gz  sdk@codevoid.de:/home/www/htdocs/http"
 
 rm -rf $d
