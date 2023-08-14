@@ -1,11 +1,7 @@
-- Flipping from autotools to meson changed the PLIST:
-  $ diff mail/mu/pkg/PLIST openbsd-wip/mail/mu/pkg/PLIST
-  36d35
-  < share/emacs/site-lisp/mu4e/mu4e-config.elc
+- Build with -Dreadline=disabled, because >= 8.0 is required and the
+  issues highlighted in <87sgmuazg3.fsf@ritchie.wxcvbn.org> are not
+  yet sorted out.
 
-- Once the meson switch is complete, update to 1.10.3
-
-Notes:
-    Build with -Dreadline=disabled, because >= 8.0 is required and the
-    issues highlighted in <87sgmuazg3.fsf@ritchie.wxcvbn.org> are not
-    yet sorted out.
+- Mu is effected by a gmime bug:
+  WARNING: gmime version 3.2.13 detected, which as a decoding bug
+  WARNING: See: https://github.com/jstedfast/gmime/issues/133

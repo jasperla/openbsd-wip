@@ -1,6 +1,6 @@
 COMMENT=	maildir indexer and searcher with emacs frontend
 
-V=		1.8.14
+V=		1.10.6
 GUILE_V=	3.0
 
 DISTNAME=	mu-$V
@@ -52,8 +52,6 @@ CONFIGURE_ARGS +=	-Dreadline=disabled
 pre-configure:
 	sed -e 's/exec guile/exec guile${GUILE_V}/' -i \
 		${WRKDIST}/guile/*/*.scm
-	sed -e 's/guile-snarf/guile-snarf${GUILE_V}/' -i \
-		${WRKDIST}/configure.ac
 
 post-install:
 	gunzip ${WRKINST}/usr/local/share/info/*.info.gz
