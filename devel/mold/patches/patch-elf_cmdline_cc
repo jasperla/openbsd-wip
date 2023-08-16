@@ -3,7 +3,7 @@ Add -z wxneeded and -z nobtcfi flags.
 Index: elf/cmdline.cc
 --- elf/cmdline.cc.orig
 +++ elf/cmdline.cc
-@@ -876,6 +876,10 @@ std::vector<std::string> parse_nonpositional_args(Cont
+@@ -875,6 +875,10 @@ std::vector<std::string> parse_nonpositional_args(Cont
        ctx.arg.z_text = true;
      } else if (read_z_flag("notext") || read_z_flag("textoff")) {
        ctx.arg.z_text = false;

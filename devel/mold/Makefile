@@ -1,20 +1,25 @@
 COMMENT =	modern ELF linker
-DISTNAME =	mold-2.1.0pl20230813
+DISTNAME =	mold-2.1.0pl20230816
 CATEGORIES =	devel
 
 GH_ACCOUNT =	rui314
 GH_PROJECT =	mold
-GH_COMMIT =	b018baec8a602cfc5b5d2c9bbe3898d33106fd94
+GH_COMMIT =	c105cfd35aeb4b231c2343394007bf66b1c721c7
 
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
-# MIT
+# mold: MIT
+# Third-party:
+#   blake3: CC0 1.0
+#   rust-demangle: MIT
+#   TBB: Apache 2.0
+#   xxhash: BSD
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} c crypto m z zstd
+WANTLIB += ${COMPILER_LIBCXX} c m z zstd
 
 # C++20
-COMPILER =	base-clang
+COMPILER =	base-clang ports-clang
 
 MODULES =	devel/cmake
 
