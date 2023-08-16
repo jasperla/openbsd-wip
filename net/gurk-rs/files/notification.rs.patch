@@ -1,0 +1,12 @@
+--- notify-rust/src/notification.rs.orig	Wed Aug 16 18:42:26 2023
++++ notify-rust/src/notification.rs	Wed Aug 16 18:42:44 2023
+@@ -20,8 +20,7 @@
+ 
+ // Returns the name of the current executable, used as a default for `Notification.appname`.
+ fn exe_name() -> String {
+-    env::current_exe().unwrap()
+-    .file_name().unwrap().to_str().unwrap().to_owned()
++    "gurk".to_string()
+ }
+ 
+ /// Desktop notification.

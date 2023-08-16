@@ -1,7 +1,5 @@
-[source."git+https://github.com/hoodie/notify-rust?tag=v4.5.10"]
-git = "https://github.com/hoodie/notify-rust"
-tag = "v4.5.10"
-replace-with = "vendored-sources"
+[patch.crates-io]
+notify-rust = { path = "vendor/notify-rust" }
 
 [source."git+https://github.com/signalapp/curve25519-dalek?branch=lizard2"]
 git = "https://github.com/signalapp/curve25519-dalek"

@@ -29,6 +29,6 @@ mv gurk-rs-$v-vendorfiles.tar.gz /tmp
 # show config
 cat /tmp/gurk-rs-$v.config
 
-echo "scp /tmp/gurk-rs-$v-vendorfiles.tar.gz  sdk@codevoid.de:/home/www/htdocs/http"
+echo "rsync -P /tmp/gurk-rs-$v-vendorfiles.tar.gz  sdk@codevoid.de:/home/www/htdocs/http/"
 
 rm -rf $d

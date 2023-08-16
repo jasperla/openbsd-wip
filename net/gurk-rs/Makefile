@@ -26,9 +26,9 @@ CONFIGURE_STYLE =	cargo
 
 SUBST_VARS =	LOCALBASE
 
-post-extract:
-	sed -i 's|env::current_exe()|"/usr/local/bin/gurk".to_str()|g' \
-		${WRKDIR}/vendor/notify-rust/src/notification.rs
+post-patch:
+	cd ${WRKDIR}/vendor && ${PATCH} \
+		< ${FILESDIR}/notification.rs.patch
 
 post-configure:
 	sed -i '/opt-level/s,2,0,' ${WRKDIR}/.cargo/config

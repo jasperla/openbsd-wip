@@ -1,12 +1,7 @@
 - Update to 0.4: (done)
-- Fix:
-    2023-02-11T15:50:33.433155Z ERROR panic: thread 'main' panicked at
-        'called `Result::unwrap()` on an `Err` value: Error { kind:
-        Uncategorized, message: "no current exe available (short)" }':
-        /usr/ports/pobj/gurk-rs-0.3.0/gurk-rs-0.3.0/modcargo-crates/ \
-        notify-rust-4.5.10/src/notification.rs:23
 
-    notify-rust is now vendored, but cargo doesn't find it.
+The port looks good now, but it's crashing for
+me after pairing with the QR code.
 
 Notes:
     Vendored crates:
@@ -17,5 +12,4 @@ Notes:
         poksho
         presage
         zkgroup
-        notify-rust
-
+        notify-rust (patched with files/notification.rs.patch)
