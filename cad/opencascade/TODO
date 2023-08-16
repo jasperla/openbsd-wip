@@ -1,0 +1,4 @@
+- test compilation on other platforms
+- fix remaining 'port-lib-depends-check' warnings
+- verify installation paths
+- compare to freebsd port? (way more complex)
