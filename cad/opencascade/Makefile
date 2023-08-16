@@ -1,42 +1,43 @@
-# XXX This REPLACES the previous oce port; be sure to add in quirks.pm when committing!
-COMMENT =	C++ 3d modeling library
+COMMENT =		platform for 3D CAD, CAM, and CAE
 DPB_PROPERTIES =	parallel
 
-DISTNAME =	opencascade-7.7.0
+V =			7.7.0
+DISTNAME =		opencascade-${V}
 
-#SHARED_LIBS =	???	0.0
+.for LIB in TKBO TKBRep TKBin TKBinL TKBinTObj TKBinXCAF TKBool TKCAF TKCDF \
+	TKDCAF TKDraw TKExpress TKFeat TKFillet TKG2d TKG3d TKGeomAlgo \
+	TKGeomBase TKHLR TKIGES TKLCAF TKMath TKMesh TKMeshVS TKOffset TKOpenGl \
+	TKOpenGlTest TKPrim TKQADraw TKRWMesh TKSTEP TKSTEP209 TKSTEPAttr \
+	TKSTEPBase TKSTL TKService TKShHealing TKStd TKStdL TKTObj TKTObjDRAW \
+	TKTopAlgo TKTopTest TKV3d TKVCAF TKVRML TKViewerTest TKXCAF TKXDE \
+	TKXDECascade TKXDEDRAW TKXDEIGES TKXDESTEP TKXMesh TKXSBase TKXSDRAW \
+	TKXml TKXmlL TKXmlTObj TKXmlXCAF TKernel
+SHARED_LIBS +=		${LIB} 0.0
+.endfor
 
-CATEGORIES =	cad
+CATEGORIES =		cad
+HOMEPAGE =		https://www.opencascade.com/
+MAINTAINER = 		Ian Darwin <ian@openbsd.org>
 
-HOMEPAGE =	https://www.opencascade.com/
-
-MAINTAINER = Ian Darwin <ian@openbsd.org>
-
-# Can be as brief as `BSD' or `GPLv2+', but it'd better be easy to check,
-# if someone wants to double-check licensing.
-# For GPL, the applicable versions must be included (e.g. v2+, v2 only, v3+).
-# If both PERMIT_* are Yes, just setting 'PERMIT_PACKAGE=Yes' is enough.
+# LGPLv2.1
 PERMIT_PACKAGE =	Yes
 
-# "make port-lib-depends-check" can help
-#WANTLIB =		???
+WANTLIB += ${COMPILER_LIBCXX} GL X11 c execinfo fontconfig freetype
+WANTLIB += m
 
-# Requires web login to fetch, will host the distfile someplace soon.
-MASTER_SITES =		https://dev/null
+# See https://dev.opencascade.org/content/packaging-again-debian
+# Or maybe ${MASTER_SITE_FREEBSD_LOCAL:=thierry/}?
+MASTER_SITES = 		https://git.dev.opencascade.org/gitweb/
+EXTRACT_SUFX =		.tar.gz
+DISTQUERY = 		?p=occt.git\;a=snapshot\;h=refs/tags/V${V:S/./_/g}\;sf=tgz
+DISTFILES = 		${DISTNAME}${EXTRACT_SUFX}{${DISTQUERY}}
+WRKDIST = 		${WRKDIR}/occt-V${V:S/./_/g}
 
-# Needs to be specified if tarball does not end with .tar.gz
-EXTRACT_SUFX =		.tgz
-
-# Fix dos line-endings in files needing patches
-#FIX_CRLF_FILES =	???
-
-# Standard for C++11 or newer:
 COMPILER =		base-clang ports-gcc
-
 MODULES =		devel/cmake
 
 # Dependencies
-#BUILD_DEPENDS =	???
+BUILD_DEPENDS =		x11/tk/8.6
 #RUN_DEPENDS =		???
 #LIB_DEPENDS =		???
 #TEST_DEPENDS =		???
@@ -68,7 +69,7 @@ MODULES =		devel/cmake
 #	  simple: port has its own configure script
 #	  none: override default CONFIGURE_STYLE coming from a module
 #	        (needed for some ports using lang/python, etc.)
-#CONFIGURE_STYLE =	
+#CONFIGURE_STYLE =
 #CONFIGURE_SCRIPT =	??? (if other than configure)
 #CONFIGURE_ARGS =	???
 #CONFIGURE_ENV =	???

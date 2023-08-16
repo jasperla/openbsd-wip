@@ -1,5 +1,6 @@
---- src/OSD/OSD_Path.cxx.orig	Thu Jul  6 13:26:11 2023
-+++ src/OSD/OSD_Path.cxx	Thu Jul  6 13:26:32 2023
+Index: src/OSD/OSD_Path.cxx
+--- src/OSD/OSD_Path.cxx.orig
++++ src/OSD/OSD_Path.cxx
 @@ -19,7 +19,7 @@
  
  static OSD_SysType whereAmI()
