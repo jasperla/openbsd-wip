@@ -1,5 +1,6 @@
-1.8.14 is the last version supporting autotools. Meson build files have been
-added recently. The autotools version is in ports. The openbsd-wip version
-is using meson.
+1.8.14 is the last version supporting autotools. This is an update to version
+1.10.6, which also changes the build system to meson.
 
-This is the meson version and base for future updates.
+Please read the official news document for all the changes that have been made
+in version 1.10: https://github.com/djcb/mu/blob/release/1.10/NEWS.org
+

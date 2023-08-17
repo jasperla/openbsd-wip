@@ -5,3 +5,7 @@
 - Mu is effected by a gmime bug:
   WARNING: gmime version 3.2.13 detected, which as a decoding bug
   WARNING: See: https://github.com/jstedfast/gmime/issues/133
+
+TODO:
+    fix guile flavor: the lib needs to go into PFRAG, but update-plist
+    keeps moving it over to PLIST

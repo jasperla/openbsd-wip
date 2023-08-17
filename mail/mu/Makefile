@@ -8,7 +8,7 @@ DISTNAME=	mu-$V
 FLAVORS=	guile
 FLAVOR ?=
 
-SHARED_LIBS=	guile-mu	0.0
+SHARED_LIBS=	guile-mu	0.1 # 1.10.6
 
 CATEGORIES=	mail
 HOMEPAGE=	http://www.djcbsoftware.nl/code/mu/
