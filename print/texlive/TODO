@@ -5,10 +5,6 @@
    and see: https://texdoc.org/serve/tiptrick.pdf/0
  - cant texmf-context depend on buildset instead of full?
 
- - mktexlsr: move to texlive_mktexlsr
-
- - `make adj` is adding .orig.port files.
-
 Checklist for diff:
  - texlive
  - tex-by-topic update

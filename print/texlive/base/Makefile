@@ -12,7 +12,10 @@ PKGNAME-main =		${PKGNAME}
 PKGNAME-synctex =	texlive_synctex-${V}
 
 DISTFILES =		${DISTNAME}${EXTRACT_SUFX} \
-			texlive-${DIST_V}-extra${EXTRACT_SUFX}
+			texlive-${DIST_V}-extra${EXTRACT_SUFX} \
+			mktexlsr-${V}.gz:0
+
+MASTER_SITES0 =		https://theunixzoo.co.uk/distfiles/
 
 SHARED_LIBS =		kpathsea	9.0 # 9.2
 SHARED_LIBS +=		ptexenc		6.0 # 5.0
@@ -40,8 +43,8 @@ RUN_DEPENDS-main =	graphics/libwebp \
 			print/ps2eps \
 			print/psutils \
 			print/t1utils \
-			devel/desktop-file-utils \
 			texlive_texmf-buildset-${V}:print/texlive/texmf,-buildset \
+			devel/desktop-file-utils \
 			${BASE_PKGPATH},-synctex
 
 LIB_DEPENDS-main =	converters/libiconv \
@@ -53,6 +56,7 @@ LIB_DEPENDS-main =	converters/libiconv \
 			devel/harfbuzz \
 			devel/pcre2 \
 			print/libpaper \
+			print/poppler \
 			archivers/zziplib \
 			print/ghostscript/gnu \
 			${BASE_PKGPATH},-mktexlsr
@@ -66,7 +70,8 @@ COMPILER =		base-clang ports-gcc
 CONFIGURE_STYLE =	gnu
 
 CPPFLAGS =	-I${X11BASE}/include \
-		-I${LOCALBASE}/include
+		-I${LOCALBASE}/include \
+		-I${LOCALBASE}/include/poppler
 
 LDFLAGS =	-L${LOCALBASE}/lib \
 		-L${X11BASE}/lib
@@ -101,12 +106,8 @@ PKG_ARGS +=		-Dxindy=1
 PKG_ARGS +=		-Dxindy=0
 .endif
 
-# XXX still needed?
-#
-# --with-system-poppler and --with-system-xpdf temporarily removed to
-# build it with the bundled poppler, because xpdftex fails to build
-# without patches and a newer poppler (> 0.58), and it fails at runtime
-# with my current patches to build with the new poppler object API.
+# --with-system-xpdf is omitted because it says it can't find the 'xpdf' library.
+#  We don't package xpdf as a library.
 CONFIGURE_ARGS +=	--mandir=${PREFIX}/man \
 			--with-system-freetype2 \
 			--with-system-gd \
@@ -136,6 +137,7 @@ CONFIGURE_ARGS +=	--mandir=${PREFIX}/man \
 			--with-system-graphite2 \
 			--with-system-libpaper \
 			--with-system-zziplib \
+			--with-system-poppler \
 			--disable-lcdf-typetools
 
 SUBST_VARS +=		TRUEPREFIX LOCALBASE
@@ -181,6 +183,16 @@ post-install: tl-symlinks-buildset
 		${PREFIX}/libdata/perl5/site_perl/TeXLive/
 	${INSTALL} ${EXTRA_ROOT}/tlpkg/TeXLive/TLConfig.pm \
 		${PREFIX}/libdata/perl5/site_perl/TeXLive/
+
+	# the `-mktexlsr` sub-package must stand alone without a texmf tree so
+	# that other ports can use it outside of texlive. Unfortunately
+	# `bin/mktexlsr` is a symlink to a shell script in the texmf tree.
+	# Rather than add the texmf distfile here (which would slow down the
+	# build a lot), I've hosted that one script, which we install now.
+	${INSTALL_DATA_DIR} ${PREFIX}/share/texmf-dist/scripts/texlive
+	${INSTALL_SCRIPT} ${WRKDIR}/mktexlsr-${V} \
+		${PREFIX}/share/texmf-dist/scripts/texlive/mktexlsr
+
 
 .include <bsd.port.mk>
 

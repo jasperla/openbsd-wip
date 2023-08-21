@@ -80,11 +80,8 @@ BASH_ADJ_FILES += \
 	texmf-dist/doc/xelatex/xecyr/rubibtex-ex-x.sh \
 	texmf-dist/doc/xelatex/xecyr/rumakeindex.sh \
 	texmf-dist/dvips/dvipsconfig/addpsctrl \
-	texmf-dist/scripts/bibexport/bibexport.sh.orig.port \
 	texmf-dist/scripts/dtxgen/dtxgen \
 	texmf-dist/scripts/git-latexdiff/git-latexdiff \
-	texmf-dist/scripts/installfont/installfont-tl.orig.port \
-	texmf-dist/scripts/latexfileversion/latexfileversion.orig.port \
 	texmf-dist/scripts/logicpuzzle/createlpsudoku \
 	texmf-dist/scripts/logicpuzzle/lpsmag \
 	texmf-dist/scripts/ltxfileinfo/ltxfileinfo \
@@ -373,7 +370,6 @@ TEXLUA_ADJ_FILES += \
 	texmf-dist/scripts/citation-style-language/citeproc-lua.lua \
 	texmf-dist/scripts/cluttex/cluttex.lua \
 	texmf-dist/scripts/context/lua/mtxrun.lua \
-	texmf-dist/scripts/context/lua/mtxrun.lua.orig.port \
 	texmf-dist/scripts/context/lua/third/rst/mtx-t-rst.lua \
 	texmf-dist/scripts/ctanbib/ctanbib \
 	texmf-dist/scripts/diadia/diadia.lua \

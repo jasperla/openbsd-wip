@@ -46,10 +46,8 @@ RUN_DEPENDS-main +=	texlive_base->=${V}:print/texlive/base,-main \
 RUN_DEPENDS-full =	${FULLPKGNAME-main}:print/texlive/texmf,-main \
 			${MODPY_RUN_DEPENDS} \
 			${_MODLUA_RUNDEPENDS}
-# XXX ruby dep still needed?
 RUN_DEPENDS-context +=	${FULLPKGNAME-full}:print/texlive/texmf,-full \
-			print/luametatex \
-			${MODRUBY_RUN_DEPENDS}
+			print/luametatex
 RUN_DEPENDS-docs +=	texlive_base->=${V}:print/texlive/base,-main \
 			x11/p5-Tk
 RUN_DEPENDS-buildset +=	texlive_mktexlsr->=${V}:print/texlive/base,-mktexlsr
