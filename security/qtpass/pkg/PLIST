@@ -1,6 +1,0 @@
-@comment $OpenBSD$
-@bin bin/qtpass
-lib/qt5/tests/
-lib/qt5/tests/qtpass/
-lib/qt5/tests/qtpass/util/
-@bin lib/qt5/tests/qtpass/util/tst_util
