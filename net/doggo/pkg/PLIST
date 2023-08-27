@@ -1,3 +1,4 @@
+@comment bin/api
 @bin bin/doggo
 share/fish/
 share/fish/completions/

@@ -1,7 +1,7 @@
 COMMENT =	modern command-line DNS client (like dig)
 
 MODGO_MODNAME =	github.com/mr-karan/doggo
-MODGO_VERSION =	v0.5.5
+MODGO_VERSION =	v0.5.6
 
 DISTNAME =	doggo-${MODGO_VERSION}
 
@@ -17,16 +17,13 @@ PERMIT_PACKAGE =	Yes
 WANTLIB +=	c pthread
 
 MODULES =	lang/go
-MODGO_TYPE =	bin
 
-_BUILD_DATE =	$$(date +%Y-%m-%d)
+MODGO_LDFLAGS +=	-X main.buildVersion=${MODGO_VERSION}
 
-MODGO_FLAGS +=	-ldflags "-X 'main.buildVersion=${MODGO_VERSION}' \
-		-X 'main.buildDate=Build date: ${_BUILD_DATE}'"
+# for patch to apply
+WRKDIST =	${WRKSRC}
 
-do-install:
-	${INSTALL_PROGRAM} ${MODGO_WORKSPACE}/bin/doggo ${PREFIX}/bin
-
+post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/fish/completions
 	${INSTALL_DATA} ${WRKSRC}/completions/doggo.fish \
 		${PREFIX}/share/fish/completions/
