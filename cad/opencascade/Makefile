@@ -23,7 +23,7 @@ MAINTAINER = 		Ian Darwin <ian@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} GL X11 c execinfo fontconfig freetype
-WANTLIB += m
+WANTLIB += m tcl86 tk86
 
 # See https://dev.opencascade.org/content/packaging-again-debian
 # Or maybe ${MASTER_SITE_FREEBSD_LOCAL:=thierry/}?
@@ -37,9 +37,9 @@ COMPILER =		base-clang ports-gcc
 MODULES =		devel/cmake
 
 # Dependencies
-BUILD_DEPENDS =		x11/tk/8.6
+#BUILD_DEPENDS =	???
 #RUN_DEPENDS =		???
-#LIB_DEPENDS =		???
+LIB_DEPENDS =		x11/tk/8.6
 #TEST_DEPENDS =		???
 
 #MAKE_FLAGS =		???
