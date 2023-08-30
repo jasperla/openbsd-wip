@@ -1,4 +1,4 @@
-DISTNAME = 		vcmi-1.2.1.20230621
+DISTNAME = 		vcmi-1.3.1.20230830
 
 COMMENT =		rewrite of the HoMM3 engine
 
@@ -44,7 +44,6 @@ CONFIGURE_ARGS +=	-DCMAKE_CXX_FLAGS="${CXXFLAGS} -pthread -DUSE_FILE32API" \
 			-DENABLE_LAUNCHER=OFF \
 			-DENABLE_TEST=OFF \
 			-Wno-dev
-#			-DLIB_DIR=${PREFIX}/lib/
 
 CXXFLAGS +=		"-I${X11BASE}/include"
 

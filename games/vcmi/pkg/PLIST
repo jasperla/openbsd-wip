@@ -11,10 +11,20 @@ lib/vcmi/AI/
 @lib lib/vcmi/libvcmi.so.${LIBvcmi_VERSION}
 share/applications/vcmiclient.desktop
 share/doc/pkg-readmes/${PKGSTEM}
+share/icons/hicolor/1024x1024/
+share/icons/hicolor/1024x1024/apps/
+share/icons/hicolor/1024x1024/apps/vcmiclient.png
+share/icons/hicolor/128x128/apps/vcmiclient.png
+share/icons/hicolor/16x16/apps/vcmiclient.png
+share/icons/hicolor/2048x2048/
+share/icons/hicolor/2048x2048/apps/
+share/icons/hicolor/2048x2048/apps/vcmiclient.png
 share/icons/hicolor/256x256/apps/vcmiclient.png
 share/icons/hicolor/32x32/apps/vcmiclient.png
 share/icons/hicolor/48x48/apps/vcmiclient.png
+share/icons/hicolor/512x512/apps/vcmiclient.png
 share/icons/hicolor/64x64/apps/vcmiclient.png
+share/icons/hicolor/scalable/apps/vcmiclient.svg
 share/vcmi/
 share/vcmi/Mods/
 share/vcmi/Mods/vcmi/
@@ -23,12 +33,25 @@ share/vcmi/Mods/vcmi/Data/QuickRecruitmentWindow/
 share/vcmi/Mods/vcmi/Data/QuickRecruitmentWindow/CreaturePurchaseCard.png
 share/vcmi/Mods/vcmi/Data/StackQueueLarge.png
 share/vcmi/Mods/vcmi/Data/StackQueueSmall.png
+share/vcmi/Mods/vcmi/Data/UnitMaxMovementHighlight.png
+share/vcmi/Mods/vcmi/Data/UnitMovementHighlight.png
 share/vcmi/Mods/vcmi/Data/debug/
 share/vcmi/Mods/vcmi/Data/debug/blocked.png
 share/vcmi/Mods/vcmi/Data/debug/grid.png
 share/vcmi/Mods/vcmi/Data/debug/spellRange.png
 share/vcmi/Mods/vcmi/Data/debug/visitable.png
 share/vcmi/Mods/vcmi/Data/questDialog.png
+share/vcmi/Mods/vcmi/Data/radialMenu/
+share/vcmi/Mods/vcmi/Data/radialMenu/heroMove.png
+share/vcmi/Mods/vcmi/Data/radialMenu/heroSwap.png
+share/vcmi/Mods/vcmi/Data/radialMenu/itemEmpty.png
+share/vcmi/Mods/vcmi/Data/radialMenu/itemInactive.png
+share/vcmi/Mods/vcmi/Data/radialMenu/stackInfo.png
+share/vcmi/Mods/vcmi/Data/radialMenu/stackMerge.png
+share/vcmi/Mods/vcmi/Data/radialMenu/stackSplitDialog.png
+share/vcmi/Mods/vcmi/Data/radialMenu/stackSplitEqual.png
+share/vcmi/Mods/vcmi/Data/radialMenu/stackSplitOne.png
+share/vcmi/Mods/vcmi/Data/radialMenu/statusBar.png
 share/vcmi/Mods/vcmi/Data/s/
 @comment share/vcmi/Mods/vcmi/Data/s/std.verm
 share/vcmi/Mods/vcmi/Data/s/std.verm
@@ -58,8 +81,6 @@ share/vcmi/Mods/vcmi/Data/stackWindow/info-panel-0.png
 share/vcmi/Mods/vcmi/Data/stackWindow/info-panel-1.png
 share/vcmi/Mods/vcmi/Data/stackWindow/info-panel-2.png
 share/vcmi/Mods/vcmi/Data/stackWindow/spell-effects.png
-share/vcmi/Mods/vcmi/Maps/
-share/vcmi/Mods/vcmi/Maps/VCMI_Tests_2011b.h3m
 share/vcmi/Mods/vcmi/Sprites/
 share/vcmi/Mods/vcmi/Sprites/PortraitsLarge.json
 share/vcmi/Mods/vcmi/Sprites/PortraitsSmall.json
@@ -69,6 +90,28 @@ share/vcmi/Mods/vcmi/Sprites/QuickRecruitmentWindow/QuickRecruitmentAllButton.de
 share/vcmi/Mods/vcmi/Sprites/QuickRecruitmentWindow/QuickRecruitmentNoneButton.def
 share/vcmi/Mods/vcmi/Sprites/QuickRecruitmentWindow/costBackground.png
 share/vcmi/Mods/vcmi/Sprites/ScSelC.json
+share/vcmi/Mods/vcmi/Sprites/battle/
+share/vcmi/Mods/vcmi/Sprites/battle/rangeHighlights/
+share/vcmi/Mods/vcmi/Sprites/battle/rangeHighlights/green/
+share/vcmi/Mods/vcmi/Sprites/battle/rangeHighlights/green/empty.png
+share/vcmi/Mods/vcmi/Sprites/battle/rangeHighlights/green/fullHex.png
+share/vcmi/Mods/vcmi/Sprites/battle/rangeHighlights/green/left.png
+share/vcmi/Mods/vcmi/Sprites/battle/rangeHighlights/green/leftHalf.png
+share/vcmi/Mods/vcmi/Sprites/battle/rangeHighlights/green/top.png
+share/vcmi/Mods/vcmi/Sprites/battle/rangeHighlights/green/topLeft.png
+share/vcmi/Mods/vcmi/Sprites/battle/rangeHighlights/green/topLeftCorner.png
+share/vcmi/Mods/vcmi/Sprites/battle/rangeHighlights/green/topLeftHalfCorner.png
+share/vcmi/Mods/vcmi/Sprites/battle/rangeHighlights/rangeHighlightsGreen.json
+share/vcmi/Mods/vcmi/Sprites/battle/rangeHighlights/rangeHighlightsRed.json
+share/vcmi/Mods/vcmi/Sprites/battle/rangeHighlights/red/
+share/vcmi/Mods/vcmi/Sprites/battle/rangeHighlights/red/empty.png
+share/vcmi/Mods/vcmi/Sprites/battle/rangeHighlights/red/fullHex.png
+share/vcmi/Mods/vcmi/Sprites/battle/rangeHighlights/red/left.png
+share/vcmi/Mods/vcmi/Sprites/battle/rangeHighlights/red/leftHalf.png
+share/vcmi/Mods/vcmi/Sprites/battle/rangeHighlights/red/top.png
+share/vcmi/Mods/vcmi/Sprites/battle/rangeHighlights/red/topLeft.png
+share/vcmi/Mods/vcmi/Sprites/battle/rangeHighlights/red/topLeftCorner.png
+share/vcmi/Mods/vcmi/Sprites/battle/rangeHighlights/red/topLeftHalfCorner.png
 share/vcmi/Mods/vcmi/Sprites/buttons/
 share/vcmi/Mods/vcmi/Sprites/buttons/commander.json
 share/vcmi/Mods/vcmi/Sprites/buttons/commanderNormal.png
@@ -132,6 +175,7 @@ share/vcmi/Mods/vcmi/config/
 share/vcmi/Mods/vcmi/config/vcmi/
 share/vcmi/Mods/vcmi/config/vcmi/chinese.json
 share/vcmi/Mods/vcmi/config/vcmi/english.json
+share/vcmi/Mods/vcmi/config/vcmi/french.json
 share/vcmi/Mods/vcmi/config/vcmi/german.json
 share/vcmi/Mods/vcmi/config/vcmi/polish.json
 share/vcmi/Mods/vcmi/config/vcmi/rmg/
@@ -267,7 +311,6 @@ share/vcmi/config/battleStartpos.json
 share/vcmi/config/battlefields.json
 share/vcmi/config/battles_graphics.json
 share/vcmi/config/bonuses.json
-share/vcmi/config/buildings5.json
 share/vcmi/config/campaignMedia.json
 share/vcmi/config/campaignSets.json
 share/vcmi/config/campaign_regions.json
@@ -325,7 +368,6 @@ share/vcmi/config/objects/rewardableOnceVisitable.json
 share/vcmi/config/objects/rewardablePickable.json
 share/vcmi/config/obstacles.json
 share/vcmi/config/randomMap.json
-share/vcmi/config/resolutions.json
 share/vcmi/config/resources.json
 share/vcmi/config/rivers.json
 share/vcmi/config/roads.json
@@ -358,6 +400,7 @@ share/vcmi/config/skills.json
 share/vcmi/config/spells/
 share/vcmi/config/spells/ability.json
 share/vcmi/config/spells/adventure.json
+share/vcmi/config/spells/moats.json
 share/vcmi/config/spells/offensive.json
 share/vcmi/config/spells/other.json
 share/vcmi/config/spells/timed.json
@@ -368,11 +411,13 @@ share/vcmi/config/terrains.json
 @tag update-desktop-database
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 share/vcmi/config/widgets/
-share/vcmi/config/widgets/battleWindow.json
+share/vcmi/config/widgets/adventureMap.json
+share/vcmi/config/widgets/battleWindow2.json
 share/vcmi/config/widgets/randomMapTab.json
 share/vcmi/config/widgets/settings/
 share/vcmi/config/widgets/settings/adventureOptionsTab.json
 share/vcmi/config/widgets/settings/battleOptionsTab.json
 share/vcmi/config/widgets/settings/generalOptionsTab.json
+share/vcmi/config/widgets/settings/library.json
 share/vcmi/config/widgets/settings/otherOptionsTab.json
 share/vcmi/config/widgets/settings/settingsMainContainer.json
