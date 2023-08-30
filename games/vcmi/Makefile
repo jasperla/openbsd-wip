@@ -1,4 +1,4 @@
-DISTNAME = 		vcmi-1.1.0.20230208
+DISTNAME = 		vcmi-1.2.1.20230621
 
 COMMENT =		rewrite of the HoMM3 engine
 
@@ -28,7 +28,7 @@ MODULES =		devel/cmake
 
 RUN_DEPENDS =		devel/desktop-file-utils \
 			shells/bash \
-			x11/gtk+3,-guic
+			x11/gtk+4,-guic
 LIB_DEPENDS =		archivers/minizip \
 			devel/boost \
 			devel/sdl2-image \
@@ -43,8 +43,8 @@ CONFIGURE_ARGS +=	-DCMAKE_CXX_FLAGS="${CXXFLAGS} -pthread -DUSE_FILE32API" \
 			-DENABLE_EDITOR=OFF \
 			-DENABLE_LAUNCHER=OFF \
 			-DENABLE_TEST=OFF \
-			-DLIB_DIR=${PREFIX}/lib/ \
 			-Wno-dev
+#			-DLIB_DIR=${PREFIX}/lib/
 
 CXXFLAGS +=		"-I${X11BASE}/include"
 

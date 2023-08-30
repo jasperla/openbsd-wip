@@ -2,7 +2,7 @@ Index: Global.h
 --- Global.h.orig
 +++ Global.h
 @@ -37,7 +37,7 @@ static_assert(sizeof(bool) == 1, "Bool needs to be 1 b
- #  ifdef __ANDROID__
+ #  if defined(__ANDROID__) || defined(ANDROID)
  #    define VCMI_ANDROID
  #  endif
 -#elif defined(__FreeBSD_kernel__) || defined(__FreeBSD__)
