@@ -1,0 +1,5 @@
+Index: cmake/modules/FindQhull.cmake
+--- cmake/modules/FindQhull.cmake.orig
++++ cmake/modules/FindQhull.cmake
+@@ -0,0 +1 @@
++set(Qhull_DIR deps/Qhull)
