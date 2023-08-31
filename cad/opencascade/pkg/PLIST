@@ -2,10 +2,10 @@ bin/DRAWEXE
 @bin bin/DRAWEXE-7.7.0
 bin/ExpToCasExe
 @bin bin/ExpToCasExe-7.7.0
-bin/custom.sh
 bin/custom_clang_64.sh
-bin/draw.sh
-bin/env.sh
+bin/occt_custom.sh
+bin/occt_draw.sh
+bin/occt_env.sh
 include/opencascade/
 include/opencascade/AIS.hxx
 include/opencascade/AIS_AngleDimension.hxx
