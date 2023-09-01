@@ -1,10 +1,9 @@
 COMMENT =		official app for german ID cards and residence permits
 CATEGORIES =		security x11
 
-DISTNAME =		ausweisapp2-1.26.4
 GH_ACCOUNT =		Governikus
 GH_PROJECT =		AusweisApp2
-GH_TAGNAME =		1.26.4
+GH_TAGNAME =		1.26.7
 
 # EUPLv1.2
 PERMIT_PACKAGE =	Yes
@@ -37,7 +36,7 @@ LIB_DEPENDS =		devel/http-parser \
 #LIB_DEPENDS +=		devel/http-parser
 #WANTLIB +=		http_parser
 
-# Qt6 is the default, but we lack Qt6WebSockets
+# Qt6 is the default, but fails to configure
 CONFIGURE_ARGS =	-DQt=Qt5 \
 			-DCMAKE_DISABLE_FIND_PACKAGE_Doxygen=ON
 
