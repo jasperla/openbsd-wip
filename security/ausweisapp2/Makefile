@@ -13,32 +13,33 @@ HOMEPAGE =		https://www.ausweisapp.bund.de/ausweisapp2/
 
 MAINTAINER =		Klemens Nanni <kn@openbsd.org>
 
-WANTLIB +=
+WANTLIB += ${COMPILER_LIBCXX} Qt5Concurrent Qt5Core Qt5Gui Qt5Network
+WANTLIB += Qt5Qml Qt5QmlModels Qt5QmlWorkerScript Qt5Quick Qt5QuickControls2
+WANTLIB += Qt5Svg Qt5WebSockets Qt5Widgets c m pcsclite
 
 # C++20
 COMPILER =		base-clang ports-gcc
 
 MODULES =		devel/cmake \
-			x11/qt6
+			x11/qt5
 
 # ${WRKSRC}/cmake/tests/openssl.cpp:25:3:	error: RSA-PSK is required.
 BUILD_DEPENDS +=	security/openssl/1.1
 
 LIB_DEPENDS =		devel/http-parser \
 			security/pcsc-lite \
-			x11/qt6/qtdeclarative \
-			x11/qt6/qtscxml \
-			x11/qt6/qtsvg \
-			x11/qt6/qtwebsockets \
-			x11/qt6/qtshadertools
-
-# XXX cmake/Libraries.cmake L178 fails to find Qt6 which fails to find OpenGL...
+			x11/qt5/qtquickcontrols2 \
+			x11/qt5/qtdeclarative \
+			x11/qt5/qtsvg \
+			x11/qt5/qtwebsockets
 
 # does not find it, uses bundled 2.9.4 instead
 #LIB_DEPENDS +=		devel/http-parser
 #WANTLIB +=		http_parser
 
-CONFIGURE_ARGS =	-DCMAKE_DISABLE_FIND_PACKAGE_Doxygen=ON
+# Qt6 is the default, but we lack Qt6WebSockets
+CONFIGURE_ARGS =	-DQt=Qt5 \
+			-DCMAKE_DISABLE_FIND_PACKAGE_Doxygen=ON
 
 # XXX pcsclite is detected with pkg-config, but its -I and -L are ignored
 CONFIGURE_ARGS +=       -DCMAKE_EXE_LINKER_FLAGS=-L/usr/local/lib
