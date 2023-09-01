@@ -1,0 +1,3 @@
+This project is a port of http_parser to TypeScript.  llparse is used to
+generate the output C source file, which could be compiled and linked with
+the embedder's program (like Node.js).
