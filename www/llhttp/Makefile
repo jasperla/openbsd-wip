@@ -1,11 +1,19 @@
-COMMENT =		 port of http_parser to llparse
-CATEGORIES =		www net
-GH_ACCOUNT =		nodejs
-GH_PROJECT =		llhttp
-V =			9.0.1
-GH_TAGNAME =		v${V}
-
+COMMENT =		port of http_parser to llparse
 HOMEPAGE =		https://llhttp.org
+CATEGORIES =		www net
+
+V =			9.0.1
+# "v${V}"         tag is the regular git tarball
+# "release/v${V}" tag contains only fixed CMake and generated C files
+DISTNAME =		llhttp-release-v${V}
+PKGNAME =		llhttp-${V}
+# XXX fetch fails if GH_TAGNAME contains slashes
+MASTER_SITES =		https://github.com/nodejs/llhttp/archive/refs/tags/
+DISTFILES =		llhttp-release-{release/v}${V}${EXTRACT_SUFX}
+
+WANTLIB =		# empty
+
+SHARED_LIBS =		llhttp	0.0	# 0.0
 
 # MIT
 PERMIT_PACKAGE =	Yes
@@ -13,22 +21,5 @@ PERMIT_PACKAGE =	Yes
 MAINTAINER =		Klemens Nanni <kn@openbsd.org>
 
 MODULES =		devel/cmake
-
-BUILD_DEPENDS =		lang/node
-
-USE_GMAKE =		Yes
-
-post-extract:
-	# result of `npm install' with network access
-	${TAR} -C ${WRKSRC} -xzf /tmp/llhttp-9.0.1-node_modules.tgz
-
-pre-configure:
-	# -D_RELEASE_=${V} does not work:
-	#    VERSION "_RELEASE_" format invalid.
-	sed -i '/project(llhttp/s,_RELEASE_,${V},' ${WRKSRC}/CMakeLists.txt
-	# generate C sources
-	# XXX CMakeLists.txt source path expectations differ from
-	# bin/generate.ts and Makefile
-	${MAKE_PROGRAM} -C ${WRKSRC} generate	# C sources
 
 .include <bsd.port.mk>
