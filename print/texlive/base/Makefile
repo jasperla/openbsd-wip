@@ -56,7 +56,6 @@ LIB_DEPENDS-main =	converters/libiconv \
 			devel/harfbuzz \
 			devel/pcre2 \
 			print/libpaper \
-			print/poppler \
 			archivers/zziplib \
 			print/ghostscript/gnu \
 			${BASE_PKGPATH},-mktexlsr
@@ -70,8 +69,7 @@ COMPILER =		base-clang ports-gcc
 CONFIGURE_STYLE =	gnu
 
 CPPFLAGS =	-I${X11BASE}/include \
-		-I${LOCALBASE}/include \
-		-I${LOCALBASE}/include/poppler
+		-I${LOCALBASE}/include
 
 LDFLAGS =	-L${LOCALBASE}/lib \
 		-L${X11BASE}/lib
@@ -137,7 +135,6 @@ CONFIGURE_ARGS +=	--mandir=${PREFIX}/man \
 			--with-system-graphite2 \
 			--with-system-libpaper \
 			--with-system-zziplib \
-			--with-system-poppler \
 			--disable-lcdf-typetools
 
 SUBST_VARS +=		TRUEPREFIX LOCALBASE

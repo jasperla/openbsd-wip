@@ -1,10 +1,3 @@
- - Figure out what do do with context.
-  - Installed symlinks, do we need the patches too?
-    Yes, it needs the patches.
- - re-generate pregen with context stuff in
-   and see: https://texdoc.org/serve/tiptrick.pdf/0
- - cant texmf-context depend on buildset instead of full?
-
 Checklist for diff:
  - texlive
  - tex-by-topic update
