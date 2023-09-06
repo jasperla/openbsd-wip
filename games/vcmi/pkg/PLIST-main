@@ -10,7 +10,6 @@ lib/vcmi/AI/
 @so lib/vcmi/AI/libVCAI.so
 @lib lib/vcmi/libvcmi.so.${LIBvcmi_VERSION}
 share/applications/vcmiclient.desktop
-share/doc/pkg-readmes/${PKGSTEM}
 share/icons/hicolor/1024x1024/
 share/icons/hicolor/1024x1024/apps/
 share/icons/hicolor/1024x1024/apps/vcmiclient.png
@@ -25,6 +24,8 @@ share/icons/hicolor/48x48/apps/vcmiclient.png
 share/icons/hicolor/512x512/apps/vcmiclient.png
 share/icons/hicolor/64x64/apps/vcmiclient.png
 share/icons/hicolor/scalable/apps/vcmiclient.svg
+share/metainfo/
+share/metainfo/eu.vcmi.VCMI.metainfo.xml
 share/vcmi/
 share/vcmi/Mods/
 share/vcmi/Mods/vcmi/

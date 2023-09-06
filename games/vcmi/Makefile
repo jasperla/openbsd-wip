@@ -1,6 +1,7 @@
 DISTNAME = 		vcmi-1.3.1.20230830
 
-COMMENT =		rewrite of the HoMM3 engine
+COMMENT-main =		HoMM3 engine rewrite
+COMMENT-launcher =	launcher for the HoMM3 engine rewrite
 
 CATEGORIES =		games
 
@@ -15,21 +16,33 @@ PERMIT_PACKAGE =	Yes
 
 SHARED_LIBS =		vcmi	0.0 # 0.0
 
-WANTLIB += SDL2 SDL2_image SDL2_mixer SDL2_ttf avcodec avformat
-WANTLIB += avutil boost_atomic-mt boost_chrono-mt boost_date_time-mt
-WANTLIB += boost_filesystem-mt boost_locale-mt boost_program_options-mt
-WANTLIB += boost_thread-mt c m minizip pthread swscale tbb z
-WANTLIB += ${COMPILER_LIBCXX}
+cWANTLIB += ${COMPILER_LIBCXX} SDL2 boost_atomic-mt boost_chrono-mt
+cWANTLIB += boost_date_time-mt boost_filesystem-mt boost_locale-mt
+cWANTLIB += boost_program_options-mt boost_thread-mt c m minizip z
+
+WANTLIB-main += SDL2_image SDL2_mixer SDL2_ttf avcodec avformat
+WANTLIB-main += avutil pthread swscale tbb ${cWANTLIB}
+
+WANTLIB-launcher += Qt5Core Qt5Gui Qt5Network Qt5Widgets #vcmi
+WANTLIB-launcher += ${cWANTLIB}
 
 # C++14
 COMPILER = 		base-clang ports-gcc
 
-MODULES =		devel/cmake
+MODULES =		devel/cmake x11/qt5
+
+MULTI_PACKAGES = 	-main -launcher
+#PSEUDO_FLAVORS = 	no_launcher
+#FLAVOR ?= 		no_launcher
 
 RUN_DEPENDS =		devel/desktop-file-utils \
-			shells/bash \
 			x11/gtk+4,-guic
-LIB_DEPENDS =		archivers/minizip \
+
+RUN_DEPENDS-main = 	shells/bash \
+			${RUN_DEPENDS}
+RUN_DEPENDS-launcher = 	${RUN_DEPENDS}
+
+LIB_DEPENDS-main =	archivers/minizip \
 			devel/boost \
 			devel/sdl2-image \
 			devel/sdl2-mixer \
@@ -37,12 +50,26 @@ LIB_DEPENDS =		archivers/minizip \
 			devel/tbb \
 			graphics/ffmpeg
 
+LIB_DEPENDS-launcher = 	archivers/minizip \
+			devel/boost \
+			devel/sdl2 \
+			${BASE_PKGPATH},-main \
+			${LIB_DEPENDS}
+
+#.include <bsd.port.arch.mk>
+
+#.if !${BUILD_PACKAGES:M-launcher}
+#CONFIGURE_ARGS += 	-DENABLE_LAUNCHER=OFF
+#.else
+#MODULES += 		x11/qt5
+#.endif
+
 # Add -pthread to "enable" boost threading support.
 CONFIGURE_ARGS +=	-DCMAKE_CXX_FLAGS="${CXXFLAGS} -pthread -DUSE_FILE32API" \
 			-DENABLE_GITVERSION=OFF \
 			-DENABLE_EDITOR=OFF \
-			-DENABLE_LAUNCHER=OFF \
 			-DENABLE_TEST=OFF \
+			-DQT_VERSION_MAJOR=5 \
 			-Wno-dev
 
 CXXFLAGS +=		"-I${X11BASE}/include"

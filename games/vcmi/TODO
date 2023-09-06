@@ -1,8 +1,2 @@
-vcmibuilder not working (which is a tool to extract HOMM3 data files)
-
-buggy after compiling with clang:
-
-Gem has assigned an empty path! Ignoring it...
-Player 3 has to answer queries  before attempting any further actions. Top query is A query of type 20CBlockingDialogQuery and qid=11 affecting players (3)!                                                                      System message: Server encountered a problem: Player 3 has to answer queries  before attempting any further actions. Top query is A query of type 20CBlockingDialogQuery and qid=11 affecting players (3)!                        Player 3 has to answer queries  before attempting any further actions. Top query is A query of type 20CBlockingDialogQuery and qid=11 affecting players (3)!
-System message: Server encountered a problem: Player 3 has to answer queries  before attempting any further actions. Top query is A query of type 20CBlockingDialogQuery and qid=11 affecting players (3)!
-
+fix README instructions for installing data
+polish launcher subpackage
