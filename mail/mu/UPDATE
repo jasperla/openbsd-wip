@@ -1,6 +1,0 @@
-1.8.14 is the last version supporting autotools. This is an update to version
-1.10.6, which also changes the build system to meson.
-
-Please read the official news document for all the changes that have been made
-in version 1.10: https://github.com/djcb/mu/blob/release/1.10/NEWS.org
-
