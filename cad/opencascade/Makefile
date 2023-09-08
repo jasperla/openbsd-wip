@@ -28,9 +28,9 @@ WANTLIB += m tcl86 tk86
 
 # See https://dev.opencascade.org/content/packaging-again-debian
 # Or maybe ${MASTER_SITE_FREEBSD_LOCAL:=thierry/}?
-MASTER_SITES = 		https://git.dev.opencascade.org/gitweb/
+SITES = 		https://git.dev.opencascade.org/gitweb/
 EXTRACT_SUFX =		.tar.gz
-DISTQUERY = 		?p=occt.git\;a=snapshot\;h=refs/tags/V${V:S/./_/g}\;sf=tgz
+DISTQUERY = 		?p=occt.git;a=snapshot;h=refs/tags/V${V:S/./_/g};sf=tgz
 DISTFILES = 		${DISTNAME}${EXTRACT_SUFX}{${DISTQUERY}}
 WRKDIST = 		${WRKDIR}/occt-V${V:S/./_/g}
 
