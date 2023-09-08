@@ -40,66 +40,14 @@ MODULES =		devel/cmake \
 
 MODTK_VERSION =		8.6
 
-# Dependencies
-#BUILD_DEPENDS =	???
-#RUN_DEPENDS =		???
 LIB_DEPENDS =		${MODTK_LIB_DEPENDS}
 RUN_DEPENDS =		${MODTK_RUN_DEPENDS} \
 			shells/bash
-#TEST_DEPENDS =		???
 
-#MAKE_FLAGS =		???
-#MAKE_ENV =		???
-#FAKE_FLAGS =		???
-#TEST_FLAGS =		???
-
-#SEPARATE_BUILD =	Yes (build in a directory other than WRKSRC)
-#USE_GMAKE =		Yes
-#USE_GROFF =		Yes
-# Programs that require GNU libtool to build instead of the OpenBSD one
-# should use this option. Add a comment explaining why. Don't use this if
-# a port requires libtool's .m4 files but otherwise can use OpenBSD libtool,
-# in that case use "BUILD_DEPENDS=devel/libtool" instead.
-#USE_LIBTOOL=		gnu
-# Set CONFIGURE_STYLE to value corresponding to some standard configuration
-#	  perl [modbuild]: perl's MakeMaker Makefile.PL (modbuild: perl's
-#	  Module::Build Build.PL)
-#	  gnu [autoconf] [old] [dest]: gnu style configure (old: no
-#	  sysconfdir), (dest: add DESTDIR, does not handle it),
-#	  autoconf: run autoconf to regenerate configure script. implies gnu.
-#	            (see also "do-gen" target below).
-#	XXX: cygnus products do NOT use autoconf for making the main
-#		configure from configure.in
-#	  imake [noman]: port uses imake for configuration.
-#	  (noman: no man page installation)
-#	  simple: port has its own configure script
-#	  none: override default CONFIGURE_STYLE coming from a module
-#	        (needed for some ports using lang/python, etc.)
-#CONFIGURE_STYLE =
-#CONFIGURE_SCRIPT =	??? (if other than configure)
-#CONFIGURE_ARGS =	???
-#CONFIGURE_ENV =	???
-
-# for gnu stuff
-#AUTOCONF_VERSION =	??? (defaults to 2.13)
-#AUTOMAKE_VERSION =	??? (defaults to 1.4)
-# config.guess and others are copied here
-#MODGNU_CONFIG_GUESS_DIRS = ??? (defaults to ${WRKSRC})
-
-# Is the build automagic or is it interactive
-#
-#IS_INTERACTIVE =		Yes
-#TEST_IS_INTERACTIVE =		Yes
+CONFIGURE_ARGS +=	-DINSTALL_DIR_RESOURCE:STRING="share/opencascade/src" \
+			-DCMAKE_DISABLE_FIND_PACKAGE_Doxygen=ON
 
 CXXFLAGS +=             -I${X11BASE}/include
-#CFLAGS =		???
-#LDFLAGS =		???
-#MAKE_FILE =		???
-#PKG_ARCH =		??? (* for arch-independent packages)
-#WRKDIST =		??? if other than ${WRKDIR}/${DISTNAME}
-#WRKSRC =		??? if other than ${WRKDIST}
-#WRKBUILD =		??? if other than ${WRKSRC}
-#WRKCONF =		??? if other than ${WRKBUILD}
 
 # fix bash and make installed script names less generic
 pre-configure:
@@ -114,6 +62,8 @@ pre-configure:
 	sed -i "s,env\.,occt_env\.,g" \
 		${WRKSRC}/CMakeLists.txt
 	sed -i "s,custom\.,occt_custom\.,g" \
+		${WRKSRC}/CMakeLists.txt
+	sed -i "s,custom_,occt_custom_,g" \
 		${WRKSRC}/CMakeLists.txt
 	sed -i "s,draw\.,occt_draw\.,g" \
 		${WRKSRC}/CMakeLists.txt
