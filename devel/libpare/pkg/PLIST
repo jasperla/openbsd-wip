@@ -1,0 +1,3 @@
+include/pare.h
+@static-lib lib/libpare.a
+@man man/man3/pare.3

@@ -1,0 +1,4 @@
+Libpare is a regular expression matching library which searches pointer
+arrays in the format of argv and envp.  It was designed for use in
+Another Programmer's Editor (APE), which uses such an array for loaded
+text files.
