@@ -12,8 +12,6 @@ SHARED_LIBS +=	xtend 2.0
 
 PERMIT_PACKAGE =	Yes
 
-LIBxtend_VERSION =	0.1.9
-
 # OpenBSD PREFIX includes DESTDIR
 post-patch:
 	sed -i -e 's|$${DESTDIR}||g' ${WRKSRC}/Makefile
