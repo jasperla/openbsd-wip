@@ -1,0 +1,4 @@
+Text Windows Tool Kit (twintk) is a text windowing widget set similar to
+curses, but more sophisticated and efficient.  It does not require a refresh()
+call every time a single character on the screen is changed.  It also includes
+many higher-level functions, such as a file browser, and menu routines.
