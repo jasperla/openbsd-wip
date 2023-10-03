@@ -1,0 +1,2 @@
+@bin bin/runas
+@man man/man1/runas.1
