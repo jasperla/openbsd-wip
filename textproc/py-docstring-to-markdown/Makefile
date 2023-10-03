@@ -15,13 +15,13 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 
+FLAVORS =		python3
+FLAVOR =		python3
+
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
 
-# TODO - Install requirements for tests
+# Incompatible tests with flake8>5 and issues with pytest-flake8 package
 NO_TEST =		Yes
-
-FLAVORS =		python3
-FLAVOR =		python3
 
 .include <bsd.port.mk>
