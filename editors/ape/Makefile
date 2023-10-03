@@ -6,7 +6,7 @@ GH_COMMIT =	1cec9f4daff74273d8b3bddc58cff6fee8d1f82d
 
 DISTNAME =	ape-3.5.3.146
 
-CATEGORIES =	devel
+CATEGORIES =	editors
 
 PERMIT_PACKAGE =	Yes
 
