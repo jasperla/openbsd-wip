@@ -23,9 +23,15 @@ FLAVOR =		python3
 
 BUILD_DEPENDS =		devel/py-setuptools_scm${MODPY_FLAVOR}
 
-RUN_DEPENDS =		devel/py-ujson${MODPY_FLAVOR}>=3.0.0
+RUN_DEPENDS =		textproc/py-ujson${MODPY_FLAVOR}>=3.0.0
 
-# TODO - Install requirements for tests
-NO_TEST =		Yes
+# Test test_writer_bad_message fails with ujson
+# See https://github.com/python-lsp/python-lsp-jsonrpc/issues/6
+TEST_DEPENDS =		devel/pylint${MODPY_FLAVOR} \
+			devel/py-codestyle${MODPY_FLAVOR} \
+			devel/pyflakes${MODPY_FLAVOR} \
+			devel/py-test${MODPY_FLAVOR} \
+			devel/py-test-cov${MODPY_FLAVOR} \
+			devel/py-coverage${MODPY_FLAVOR}
 
 .include <bsd.port.mk>
