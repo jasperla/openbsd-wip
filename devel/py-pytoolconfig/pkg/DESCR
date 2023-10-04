@@ -1,0 +1,4 @@
+The goal of this project is to manage configuration for Python tools, such black
+and rope and add support for a pyproject.toml configuration file.
+
+This library only supports Python 3.7 to 3.11.

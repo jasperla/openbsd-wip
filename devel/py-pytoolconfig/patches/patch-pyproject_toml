@@ -1,0 +1,24 @@
+Use pdm.backend instead of pdm.pep517 as build backend
+See https://github.com/bagel897/pytoolconfig/issues/14
+
+Index: pyproject.toml
+--- pyproject.toml.orig
++++ pyproject.toml
+@@ -15,7 +15,7 @@ authors = [
+ version = "1.2.5"
+ 
+ [project.license]
+-file = "LGPL-3.0"
++file = "LICENSE"
+ 
+ [project.urls]
+ Homepage = "https://github.com/bageljrkhanofemus/pytoolconfig"
+@@ -75,6 +75,6 @@ strict = true
+ 
+ [build-system]
+ requires = [
+-    "pdm-pep517>=1.0.5",
++    "pdm-backend>=1.0.5",
+ ]
+-build-backend = "pdm.pep517.api"
++build-backend = "pdm.backend"
