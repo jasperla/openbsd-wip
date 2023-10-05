@@ -25,9 +25,7 @@ lib/python${MODPY_VERSION}/site-packages/urlscan/assets/
 lib/python${MODPY_VERSION}/site-packages/urlscan/assets/tlds-alpha-by-domain.txt
 lib/python${MODPY_VERSION}/site-packages/urlscan/urlchoose.py
 lib/python${MODPY_VERSION}/site-packages/urlscan/urlscan.py
+@man man/man1/urlscan.1
 share/doc/urlscan/
 share/doc/urlscan/LICENSE
 share/doc/urlscan/README.md
-@mandir share/man/
-share/man/man1/
-@man share/man/man1/urlscan.1
