@@ -1,7 +1,7 @@
 Index: crates/sourcegen/src/lib.rs
 --- crates/sourcegen/src/lib.rs.orig
 +++ crates/sourcegen/src/lib.rs
-@@ -130,27 +130,13 @@ impl fmt::Display for Location {
+@@ -132,27 +132,13 @@ impl fmt::Display for Location {
      }
  }
  
