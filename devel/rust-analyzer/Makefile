@@ -16,15 +16,14 @@ CATEGORIES =	devel
 # Apache-2.0, MIT
 PERMIT_PACKAGE =	Yes
 
-MODULES =	devel/cargo
+WANTLIB +=	${MODCARGO_WANTLIB} m
 
 RUN_DEPENDS =	lang/rust,,-rustfmt lang/rust,,-src
 BUILD_DEPENDS =	${RUN_DEPENDS} textproc/asciidoctor textproc/ruby-rouge
 
-WANTLIB +=	${MODCARGO_WANTLIB} m
+MODULES =	devel/cargo
 
 CONFIGURE_STYLE =	cargo
-MODCARGO_TEST =		Yes
 SEPARATE_BUILD =	Yes
 
 MAKE_ENV +=	CFG_RELEASE=${GH_TAGNAME}
