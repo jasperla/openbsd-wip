@@ -1,0 +1,12 @@
+Feature attributes are only allowed on the nightly release channel.
+See rustc --explain E0554
+
+Index: modcargo-crates/unicode_names2-0.6.0/unicode_names2_macros/tests/test.rs
+--- modcargo-crates/unicode_names2-0.6.0/unicode_names2_macros/tests/test.rs.orig
++++ modcargo-crates/unicode_names2-0.6.0/unicode_names2_macros/tests/test.rs
+@@ -1,5 +1,3 @@
+-#![feature(proc_macro_hygiene)]
+-
+ #[macro_use]
+ extern crate unicode_names2_macros;
+ 

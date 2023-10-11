@@ -4,31 +4,16 @@ Index: Cargo.toml
 @@ -1,5 +1,6 @@
  [workspace]
  members = ["crates/*"]
-+exclude = ["${MODCARGO_VENDOR_DIR}/libcst-0.0.1/native/libcst", "${MODCARGO_VENDOR_DIR}/rustpython_parser-0.0.3/ruff_text_size", "${MODCARGO_VENDOR_DIR}/rustpython_parser-0.0.3/ast", "${MODCARGO_VENDOR_DIR}/rustpython_parser-0.0.3/format", "${MODCARGO_VENDOR_DIR}/rustpython_parser-0.0.3/literal", "${MODCARGO_VENDOR_DIR}/rustpython_parser-0.0.3/parser"]
++exclude = ["${MODCARGO_VENDOR_DIR}/libcst-0.1.0/native/libcst"]
  resolver = "2"
  
  [workspace.package]
-@@ -48,17 +49,17 @@ test-case = { version = "3.0.0" }
- toml = { version = "0.7.2" }
+@@ -53,7 +54,7 @@ unicode-width = "0.1.11"
+ uuid = { version = "1.4.1", features = ["v4", "fast-rng", "macro-diagnostics", "js"] }
+ wsl = { version = "0.1.0" }
  
- # v0.0.1
--libcst = { git = "https://github.com/charliermarsh/LibCST", rev = "80e4c1399f95e5beb532fdd1e209ad2dbb470438" }
-+libcst = { path = "modcargo-crates/libcst-0.0.1/native/libcst" }
- # v0.0.3
--ruff_text_size = { git = "https://github.com/astral-sh/RustPython-Parser.git", rev = "f60e204b73b95bdb6ce87ccd0de34081b4a17c11" }
-+ruff_text_size = { path = "${MODCARGO_VENDOR_DIR}/rustpython_parser-0.0.3/ruff_text_size" }
- # v0.0.3
--rustpython-ast = { git = "https://github.com/astral-sh/RustPython-Parser.git", rev = "f60e204b73b95bdb6ce87ccd0de34081b4a17c11" , default-features = false, features = ["all-nodes-with-ranges", "num-bigint"]}
-+rustpython-ast = { path = "${MODCARGO_VENDOR_DIR}/rustpython_parser-0.0.3/ast", default-features = false, features = ["all-nodes-with-ranges", "num-bigint"] }
- # v0.0.3
--rustpython-format = { git = "https://github.com/astral-sh/RustPython-Parser.git", rev = "f60e204b73b95bdb6ce87ccd0de34081b4a17c11", default-features = false, features = ["num-bigint"] }
-+rustpython-format = { path = "${MODCARGO_VENDOR_DIR}/rustpython_parser-0.0.3/format", default-features = false, features = ["num-bigint"] }
- # v0.0.3
--rustpython-literal = { git = "https://github.com/astral-sh/RustPython-Parser.git", rev = "f60e204b73b95bdb6ce87ccd0de34081b4a17c11", default-features = false }
-+rustpython-literal = { path = "${MODCARGO_VENDOR_DIR}/rustpython_parser-0.0.3/literal", default-features = false }
- # v0.0.3
--rustpython-parser = { git = "https://github.com/astral-sh/RustPython-Parser.git", rev = "f60e204b73b95bdb6ce87ccd0de34081b4a17c11" , default-features = false, features = ["full-lexer", "all-nodes-with-ranges", "num-bigint"] }
-+rustpython-parser = { path = "${MODCARGO_VENDOR_DIR}/rustpython_parser-0.0.3/parser", default-features = false, features = ["full-lexer", "all-nodes-with-ranges", "num-bigint"] }
+-libcst = { git = "https://github.com/Instagram/LibCST.git", rev = "03179b55ebe7e916f1722e18e8f0b87c01616d1f", default-features = false }
++libcst = { path="${MODCARGO_VENDOR_DIR}/libcst-0.1.0/native/libcst", default-features = false }
  
  [profile.release]
  lto = "fat"
