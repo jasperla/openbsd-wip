@@ -1,6 +1,6 @@
 COMMENT =		Python implementation of the Language Server Protocol
 
-MODPY_EGG_VERSION =	1.8.1
+MODPY_EGG_VERSION =	1.8.2
 DISTNAME =		python-lsp-server-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 
