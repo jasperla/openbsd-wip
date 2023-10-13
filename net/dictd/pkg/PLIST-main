@@ -1,0 +1,8 @@
+@conflict p5-Net-Dict-*
+@pkgpath net/dictd
+bin/dict
+bin/dictl
+@man man/man1/dict.1
+@man man/man1/dictl.1
+share/examples/dictd/
+share/examples/dictd/example.dictrc
