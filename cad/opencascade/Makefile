@@ -27,9 +27,7 @@ WANTLIB += ${COMPILER_LIBCXX} GL X11 c execinfo fontconfig freetype
 WANTLIB += m tcl86 tk86
 
 # See https://dev.opencascade.org/content/packaging-again-debian
-# Or maybe ${MASTER_SITE_FREEBSD_LOCAL:=thierry/}?
 SITES = 		https://git.dev.opencascade.org/gitweb/
-EXTRACT_SUFX =		.tar.gz
 DISTQUERY = 		?p=occt.git;a=snapshot;h=refs/tags/V${V:S/./_/g};sf=tgz
 DISTFILES = 		${DISTNAME}${EXTRACT_SUFX}{${DISTQUERY}}
 WRKDIST = 		${WRKDIR}/occt-V${V:S/./_/g}
@@ -45,9 +43,36 @@ RUN_DEPENDS =		${MODTK_RUN_DEPENDS} \
 			shells/bash
 
 CONFIGURE_ARGS +=	-DINSTALL_DIR_RESOURCE:STRING="share/opencascade/src" \
+			-DUSE_TK=ON \
+			-DUSE_FREETYPE=ON \
+			-DUSE_TBB=OFF \
+			-DUSE_OPENGL=OFF \
+			-DUSE_GLES2=OFF \
+			-DUSE_OPENVR=OFF \
+			-DUSE_FREEIMAGE=OFF \
+			-DUSE_FFMPEG=OFF \
+			-DUSE_VTK=OFF \
+			-DUSE_RAPIDJSON=OFF \
+			-DUSE_DRACO=OFF \
+			-DBUILD_SAMPLES_QT=OFF \
 			-DCMAKE_DISABLE_FIND_PACKAGE_Doxygen=ON
 
 CXXFLAGS +=             -I${X11BASE}/include
+
+.include <bsd.port.arch.mk>
+.if ${PROPERTIES:Mlp64}
+BITS=64
+.else
+BITS=32
+.endif
+
+.if ${PROPERTIES:Mclang}
+COMP=clang
+.else
+COMP=gcc
+.endif
+
+SUBST_VARS += BITS COMP
 
 # fix bash and make installed script names less generic
 pre-configure:
@@ -69,19 +94,8 @@ pre-configure:
 		${WRKSRC}/CMakeLists.txt
 	sed -i "s,/bin/bash,/usr/bin/env bash," \
 		${WRKSRC}/adm/templates/*.sh*
-	mv ${WRKSRC}/adm/templates/custom.sh.main \
-		${WRKSRC}/adm/templates/occt_custom.sh.main
-	mv ${WRKSRC}/adm/templates/custom.build.sh.in \
-		${WRKSRC}/adm/templates/occt_custom.build.sh.in
-	mv ${WRKSRC}/adm/templates/custom.install.sh.in \
-		${WRKSRC}/adm/templates/occt_custom.install.sh.in
-	mv ${WRKSRC}/adm/templates/draw.sh \
-		${WRKSRC}/adm/templates/occt_draw.sh
-	mv ${WRKSRC}/adm/templates/env.build.sh.in \
-		${WRKSRC}/adm/templates/occt_env.build.sh.in
-	mv ${WRKSRC}/adm/templates/env.install.sh.in \
-		${WRKSRC}/adm/templates/occt_env.install.sh.in
-	mv ${WRKSRC}/adm/templates/env.samples.sh.in \
-		${WRKSRC}/adm/templates/occt_env.samples.sh.in
+	for i in ${WRKSRC}/adm/templates/{custom,draw,env}*.sh*; do \
+		mv $$i ${WRKSRC}/adm/templates/occt_$${i##*/}; \
+	done
 
 .include <bsd.port.mk>
