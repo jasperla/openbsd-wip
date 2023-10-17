@@ -3,7 +3,7 @@ CATEGORIES=	devel
 
 GH_ACCOUNT=	lunarmodules
 GH_PROJECT=	luacheck
-GH_TAGNAME=	v1.1.0
+GH_TAGNAME=	v1.1.1
 
 MAINTAINER=	Laurent Cheylus <foxy@free.fr>
 
