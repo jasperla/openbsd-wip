@@ -1,7 +1,7 @@
 Index: adm/cmake/occt_toolkit.cmake
 --- adm/cmake/occt_toolkit.cmake.orig
 +++ adm/cmake/occt_toolkit.cmake
-@@ -444,6 +444,11 @@ if (APPLE)
+@@ -450,6 +450,11 @@ if (APPLE)
    endif()
  endif()
  

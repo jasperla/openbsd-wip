@@ -1,7 +1,7 @@
 bin/DRAWEXE
-@bin bin/DRAWEXE-7.7.0
+@bin bin/DRAWEXE-7.7.2
 bin/ExpToCasExe
-@bin bin/ExpToCasExe-7.7.0
+@bin bin/ExpToCasExe-7.7.2
 bin/occt_custom.sh
 bin/occt_custom_${COMP}_${BITS}.sh
 bin/occt_draw.sh
@@ -10,12 +10,14 @@ include/opencascade/
 include/opencascade/AIS.hxx
 include/opencascade/AIS_AngleDimension.hxx
 include/opencascade/AIS_Animation.hxx
+include/opencascade/AIS_AnimationAxisRotation.hxx
 include/opencascade/AIS_AnimationCamera.hxx
 include/opencascade/AIS_AnimationObject.hxx
 include/opencascade/AIS_AnimationTimer.hxx
 include/opencascade/AIS_AttributeFilter.hxx
 include/opencascade/AIS_Axis.hxx
 include/opencascade/AIS_BadEdgeFilter.hxx
+include/opencascade/AIS_BaseAnimationObject.hxx
 include/opencascade/AIS_C0RegularityFilter.hxx
 include/opencascade/AIS_CameraFrustum.hxx
 include/opencascade/AIS_Chamf2dDimension.hxx
@@ -692,6 +694,7 @@ include/opencascade/BRepFill_SequenceOfSection.hxx
 include/opencascade/BRepFill_ShapeLaw.hxx
 include/opencascade/BRepFill_ShapeLaw.lxx
 include/opencascade/BRepFill_Sweep.hxx
+include/opencascade/BRepFill_ThruSectionErrorStatus.hxx
 include/opencascade/BRepFill_TransitionStyle.hxx
 include/opencascade/BRepFill_TrimEdgeTool.hxx
 include/opencascade/BRepFill_TrimShellCorner.hxx
@@ -8395,6 +8398,8 @@ lib/cmake/opencascade/OpenCASCADEApplicationFrameworkTargets.cmake
 lib/cmake/opencascade/OpenCASCADECompileDefinitionsAndFlags${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/opencascade/OpenCASCADEConfig.cmake
 lib/cmake/opencascade/OpenCASCADEConfigVersion.cmake
+lib/cmake/opencascade/OpenCASCADEDEToolsTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/opencascade/OpenCASCADEDEToolsTargets.cmake
 lib/cmake/opencascade/OpenCASCADEDataExchangeTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/opencascade/OpenCASCADEDataExchangeTargets.cmake
 lib/cmake/opencascade/OpenCASCADEDrawTargets${MODCMAKE_BUILD_SUFFIX}

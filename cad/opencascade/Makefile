@@ -1,7 +1,7 @@
 COMMENT =		platform for 3D CAD, CAM, and CAE
 DPB_PROPERTIES =	parallel
 
-V =			7.7.0
+V =			7.7.2
 DISTNAME =		opencascade-${V}
 
 .for LIB in TKBO TKBRep TKBin TKBinL TKBinTObj TKBinXCAF TKBool \
