@@ -1,4 +1,4 @@
-ruff is an extremely fast Python linter, written in Rust.
+Ruff is an extremely fast Python linter, written in Rust.
 
 Ruff aims to be orders of magnitude faster than alternative tools while
 integrating more functionality behind a single, common interface.
@@ -20,4 +20,4 @@ Features:
     flake8-bugbear
   - First-party editor integrations
   - Monorepo-friendly configuration via hierarchical and cascading
-    settings
+    configuration
