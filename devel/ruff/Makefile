@@ -7,7 +7,7 @@ GH_ACCOUNT =	astral-sh
 GH_PROJECT =	ruff
 GH_TAGNAME =	v0.1.0
 
-CATEGORIES =	devel
+CATEGORIES =	devel textproc
 
 # https://github.com/astral-sh/ruff
 HOMEPAGE =	https://docs.astral.sh/ruff
