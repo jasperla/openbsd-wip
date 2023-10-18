@@ -10,8 +10,6 @@ PKGNAME =	lua-${DISTNAME}
 
 CATEGORIES =	devel
 
-MAINTAINER =	Laurent Cheylus <foxy@free.fr>
-
 # MIT
 PERMIT_PACKAGE =	Yes
 
