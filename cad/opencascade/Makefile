@@ -18,7 +18,7 @@ SHARED_LIBS +=		${LIB} 0.0
 
 CATEGORIES =		cad
 HOMEPAGE =		https://www.opencascade.com/
-MAINTAINER = 		Ian Darwin <ian@openbsd.org>
+MAINTAINER = 		Johannes Thyssen Tishman <ports@thyssentishman.com>
 
 # LGPLv2.1
 PERMIT_PACKAGE =	Yes
