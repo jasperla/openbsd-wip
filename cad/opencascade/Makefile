@@ -13,7 +13,7 @@ DISTNAME =		opencascade-${V}
         TKTopAlgo TKTopTest TKV3d TKVCAF TKVRML TKViewerTest TKXCAF \
         TKXDE TKXDECascade TKXDEDRAW TKXDEIGES TKXDESTEP TKXMesh \
         TKXSBase TKXSDRAW TKXml TKXmlL TKXmlTObj TKXmlXCAF TKernel
-SHARED_LIBS +=		${LIB} 0.0
+SHARED_LIBS +=		${LIB} 2.0
 .endfor
 
 CATEGORIES =		cad
@@ -23,8 +23,8 @@ MAINTAINER = 		Johannes Thyssen Tishman <ports@thyssentishman.com>
 # LGPLv2.1
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} GL X11 c execinfo fontconfig freetype
-WANTLIB += m tcl86 tk86
+WANTLIB += ${MODTK_WANTLIB} ${COMPILER_LIBCXX} GL X11 c execinfo fontconfig
+WANTLIB += freetype m
 
 # See https://dev.opencascade.org/content/packaging-again-debian
 SITES = 		https://git.dev.opencascade.org/gitweb/
