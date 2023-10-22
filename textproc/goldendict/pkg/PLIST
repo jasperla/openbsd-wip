@@ -1,5 +1,4 @@
 @bin bin/goldendict
-share/applications/
 share/applications/org.goldendict.GoldenDict.desktop
 share/goldendict/
 share/goldendict/help/
