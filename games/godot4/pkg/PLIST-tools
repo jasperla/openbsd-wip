@@ -1,0 +1,4 @@
+@conflict godot-<=3.4.4p0
+@bin bin/godot4-tools
+share/doc/pkg-readmes/${PKGSTEM}
+@tag update-desktop-database

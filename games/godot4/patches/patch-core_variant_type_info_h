@@ -1,0 +1,13 @@
+EXPERIMENTAL: try to fix GetTypeInfo compilation error
+
+Index: core/variant/type_info.h
+--- core/variant/type_info.h.orig
++++ core/variant/type_info.h
+@@ -129,6 +129,7 @@ MAKE_TYPE_INFO_WITH_META(int8_t, Variant::INT, GodotTy
+ MAKE_TYPE_INFO_WITH_META(uint16_t, Variant::INT, GodotTypeInfo::METADATA_INT_IS_UINT16)
+ MAKE_TYPE_INFO_WITH_META(int16_t, Variant::INT, GodotTypeInfo::METADATA_INT_IS_INT16)
+ MAKE_TYPE_INFO_WITH_META(uint32_t, Variant::INT, GodotTypeInfo::METADATA_INT_IS_UINT32)
++MAKE_TYPE_INFO_WITH_META(unsigned long, Variant::INT, GodotTypeInfo::METADATA_INT_IS_UINT32)
+ MAKE_TYPE_INFO_WITH_META(int32_t, Variant::INT, GodotTypeInfo::METADATA_INT_IS_INT32)
+ MAKE_TYPE_INFO_WITH_META(uint64_t, Variant::INT, GodotTypeInfo::METADATA_INT_IS_UINT64)
+ MAKE_TYPE_INFO_WITH_META(int64_t, Variant::INT, GodotTypeInfo::METADATA_INT_IS_INT64)

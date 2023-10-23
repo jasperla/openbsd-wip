@@ -1,0 +1,11 @@
+could not load libXrandr.so.2, Error: File not found
+ -> we have currently libXrandr.so.7.1
+
+when running godot4-tools:
+godot4-tools(36525) in free(): bogus pointer (double free?) 0x6b73616d00000005
+
+both editor (godot4-tools) and export template (godot4) segfault. With test
+case 8-Colors Star Guardians Plus, menu works, but segfault when trying to
+start a new game.
+
+This will ultimately need integration with the godot 3 port in ports.

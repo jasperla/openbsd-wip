@@ -1,0 +1,158 @@
+BROKEN-powerpc =	fails at runtime, the UI is totally blank
+
+COMMENT-main =	2D and 3D game engine
+COMMENT-tools=	2D and 3D game engine (with tools)
+
+V =		4.1.2
+DISTNAME =	godot-${V}-stable
+PKGNAME =	godot4-${V}
+
+CATEGORIES =	games
+
+HOMEPAGE =	https://godotengine.org/
+
+MAINTAINER =	Omar Polo <op@openbsd.org>
+
+# MIT
+PERMIT_PACKAGE =	Yes
+
+MULTI_PACKAGES =	-main -tools
+
+WANTLIB += ${COMPILER_LIBCXX} BulletCollision BulletDynamics BulletSoftBody
+WANTLIB += GL LinearMath X11 X11-xcb Xau Xcursor Xdmcp Xext Xfixes
+WANTLIB += Xi Xinerama Xrandr Xrender Xxf86vm c drm enet execinfo
+WANTLIB += intl m mbedcrypto mbedtls mbedx509 mpcdec ogg opus
+WANTLIB += opusfile pcre2-32 sndio steam_api theora theoradec
+WANTLIB += usbhid vorbis vorbisfile vpx webp xcb xcb-dri2 xcb-glx
+WANTLIB += zstd
+
+WANTLIB-tools = ${WANTLIB}
+
+# C++14
+COMPILER =	base-clang ports-gcc
+
+SITES =	https://downloads.tuxfamily.org/godotengine/${V}/
+EXTRACT_SUFX =	.tar.xz
+
+MODULES =	devel/scons
+
+# Building with module_mono_enabled requires msbuild and to fix the
+# sharedlib_ext in modules/mono/config.py to '.so.1.0'
+MODSCONS_FLAGS =	CC="${CC}" \
+			CXX="${CXX}" \
+			CFLAGS="${CFLAGS}" \
+			CXXFLAGS="${CXXFLAGS} -Wno-deprecated-register" \
+			LINKFLAGS="${LDFLAGS} -lintl -lmpcdec -lusbhid" \
+			builtin_certs=no \
+			builtin_enet=no \
+			builtin_libogg=no \
+			builtin_libpng=no \
+			builtin_libtheora=no \
+			builtin_libvorbis=no \
+			builtin_libwebp=no \
+			builtin_wslay=no \
+			builtin_mbedtls=no \
+			builtin_miniupnpc=no \
+			builtin_pcre2=no \
+			builtin_zstd=no \
+			progress=no \
+			pulseaudio=no \
+			use_sowrap=no \
+			verbose=yes \
+			warnings=extra \
+			werror=no
+
+# not in ports
+MODSCONS_FLAGS +=	builtin_embree=true \
+			builtin_msdfgen=true \
+			builtin_recast=true \
+			builtin_rvo2=true \
+			builtin_squish=true \
+			builtin_xatlas=true
+
+# requires freetype with Brotli support, see
+# https://github.com/godotengine/godot/issues/64090
+MODSCONS_FLAGS +=	builtin_freetype=yes
+
+# having freetype builtin requires also the following to be used builtin
+MODSCONS_FLAGS +=	builtin_libpng=true \
+			builtin_zlib=true \
+			builtin_graphite=true \
+			builtin_harfbuzz=true
+
+# breaks the build if not embedded
+MODSCONS_FLAGS +=	builtin_glslang=no \
+			builtin_icu=true
+
+# The raycast module requires embree which is enabled on all 64bit
+# arches but actually supports only amd64.
+.if ! ${MACHINE_ARCH:Mamd64}
+MODSCONS_FLAGS +=	module_raycast_enabled="false"
+.endif
+
+LIB_DEPENDS =		archivers/zstd \
+			audio/libvorbis \
+			audio/musepack \
+			audio/opusfile \
+			devel/bullet \
+			devel/gettext,-runtime \
+			devel/pcre2 \
+			games/goldberg_emulator \
+			graphics/glslang \
+			graphics/libwebp \
+			multimedia/libtheora \
+			multimedia/libvpx \
+			net/enet \
+			security/polarssl \
+			www/wslay
+
+RUN_DEPENDS-tools =	devel/desktop-file-utils
+
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
+NO_TEST =		Yes
+
+DPB_PROPERTIES =	parallel
+
+.include <bsd.port.arch.mk>
+.if ${MACHINE_ARCH} == "riscv64"
+BINSUFFIX =		rv64
+.elif ${PROPERTIES:Mlp64}
+BINSUFFIX =		x86_64
+.else
+BINSUFFIX =		x86
+.endif
+
+.if ${MACHINE_ARCH:Mhppa}
+LDFLAGS +=     -latomic
+WANTLIB +=     atomic
+.endif
+
+post-extract:
+	cp -R ${FILESDIR}/sndio ${WRKDIST}/drivers
+
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/misc/dist/linux/*.desktop
+
+do-build:
+	@${MODSCONS_BUILD_TARGET} target=template_release
+	@${MODSCONS_BUILD_TARGET} target=editor
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKBUILD}/bin/godot.linuxbsd.template_release.${BINSUFFIX} \
+		${PREFIX}/bin/godot4
+	${INSTALL_PROGRAM} ${WRKBUILD}/bin/godot.linuxbsd.editor.${BINSUFFIX} \
+		${PREFIX}/bin/godot4-tools
+#	${INSTALL_MAN_DIR} ${PREFIX}/man/man6
+#	${INSTALL_MAN} ${WRKSRC}/misc/dist/linux/godot4.6 \
+#		${PREFIX}/man/man6
+#	${INSTALL_DATA_DIR} ${PREFIX}/share/pixmaps
+#	${INSTALL_DATA} ${WRKSRC}/icon.svg \
+#		${PREFIX}/share/pixmaps/godot.svg
+#	${INSTALL_DATA_DIR} ${PREFIX}/share/applications
+#	${INSTALL_DATA} ${WRKSRC}/misc/dist/linux/*.desktop \
+#		${PREFIX}/share/applications
+#	${INSTALL_DATA_DIR} ${PREFIX}/share/metainfo
+#	${INSTALL_DATA} ${WRKSRC}/misc/dist/linux/*.appdata.xml \
+#		${PREFIX}/share/metainfo/
+
+.include <bsd.port.mk>
