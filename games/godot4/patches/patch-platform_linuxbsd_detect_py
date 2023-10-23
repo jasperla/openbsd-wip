@@ -11,17 +11,7 @@ Index: platform/linuxbsd/detect.py
          BoolVariable("dbus", "Use D-Bus to handle screensaver and portal desktop settings", True),
          BoolVariable("speechd", "Use Speech Dispatcher for Text-to-Speech support", True),
          BoolVariable("fontconfig", "Use fontconfig for system fonts support", True),
-@@ -191,6 +192,9 @@ def configure(env: "Environment"):
- 
-     ## Dependencies
- 
-+    # XXX
-+    env.Append(CPPDEFINES=["NEED_LONG_INT"])
-+
-     if env["use_sowrap"]:
-         env.Append(CPPDEFINES=["SOWRAP_ENABLED"])
- 
-@@ -326,6 +330,12 @@ def configure(env: "Environment"):
+@@ -326,6 +327,12 @@ def configure(env: "Environment"):
                  env["pulseaudio"] = False
          else:
              env.Append(CPPDEFINES=["PULSEAUDIO_ENABLED", "_REENTRANT"])
