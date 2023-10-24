@@ -5,7 +5,7 @@ COMMENT =	extremely fast Python linter
 
 GH_ACCOUNT =	astral-sh
 GH_PROJECT =	ruff
-GH_TAGNAME =	v0.1.0
+GH_TAGNAME =	v0.1.1
 
 CATEGORIES =	devel textproc
 

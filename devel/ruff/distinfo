@@ -276,9 +276,9 @@ SHA256 (cargo/tinyvec_macros-0.1.1.tar.gz) = HzzLrDEf6gX4b2GQS0YrVfs9+IN6Nm38YBo
 SHA256 (cargo/toml-0.7.8.tar.gz) = 3XnmnTtifbMA/5VgJ8xsN5jO8m0iUmvv380S/uttIlc=
 SHA256 (cargo/toml_datetime-0.6.3.tar.gz) = fNpz4vE5exJi1t/c74qvrhTR3ndI1mgi07/uttA+Xks=
 SHA256 (cargo/toml_edit-0.19.15.tar.gz) = G1u3cNow5cv941ote5uKLEuO+JVIp6auq1yaV24+dCE=
-SHA256 (cargo/tracing-0.1.37.tar.gz) = jOjDOo1IvUXWJKblI0Rf0h7BPTZTzVH2gav2dBj1Trg=
-SHA256 (cargo/tracing-attributes-0.1.26.tar.gz) = X08x9WFZ6YIG2p79gjQEt5tu8xQ7Snq3bmexdRslpKs=
-SHA256 (cargo/tracing-core-0.1.31.tar.gz) = CVW4E3od9vGi6aN9imZWKR/wKXwal8JODYQl/iMS95o=
+SHA256 (cargo/tracing-0.1.39.tar.gz) = 7i7yr4SFalDB1DCvzi/d7QpOx+2oaNuGQJtFQ98Hl/k=
+SHA256 (cargo/tracing-attributes-0.1.27.tar.gz) = NHBMjW68vJOYJBgK8CBWawGnwB+AZBJk66CZn2wra+c=
+SHA256 (cargo/tracing-core-0.1.32.tar.gz) = wG09phE/EWqu5o5NYBGRYUyQUwZ/mrf27byxYSN9qlQ=
 SHA256 (cargo/tracing-indicatif-0.3.5.tar.gz) = V+Bf5KHJBtlLJ12K64/4ud6spQKutZroq1AKkrgDKsg=
 SHA256 (cargo/tracing-log-0.1.3.tar.gz) = eN2tM9LRCx7X650fUYpWdHE4dul+W7m3NFp5hPu0+SI=
 SHA256 (cargo/tracing-subscriber-0.3.17.tar.gz) = MKZRvDf5FegfCH2G5ioY7sX3lVDH+v+Ib3CQtOp1fHc=
@@ -349,7 +349,7 @@ SHA256 (cargo/wsl-0.1.0.tar.gz) = +Nq3rIZHEL3qZZS+y+pbUFAzPPNP77DcMZVn6zR5UNQ=
 SHA256 (cargo/yaml-rust-0.4.5.tar.gz) = VsGTbEzHocmrIaHrtgLrlCuoaMvUSpnLfNxYkjNeHIU=
 SHA256 (cargo/yansi-0.5.1.tar.gz) = CQQc2Qz4X3+LLfYMZG+FO39TXOaPhSROtnMc+J+kmOw=
 SHA256 (cargo/yansi-term-0.1.2.tar.gz) = /lwwreBeYWViR7LjNKAx39DMRm+t74Zb3N6o1TeVG/E=
-SHA256 (ruff-0.1.0.tar.gz) = tvFGdQWsyZ3Ox9Z/+dvNAMY6OfM44JcFqQqQIFyFU9Q=
+SHA256 (ruff-0.1.1.tar.gz) = dNZPsR9a5bbafzAJP4rTAWL/4vXZMOhZl4YVxtIE2eo=
 SIZE (cargo/Inflector-0.11.4.tar.gz) = 17438
 SIZE (cargo/adler-1.0.2.tar.gz) = 12778
 SIZE (cargo/ahash-0.8.3.tar.gz) = 42416
@@ -628,9 +628,9 @@ SIZE (cargo/tinyvec_macros-0.1.1.tar.gz) = 5865
 SIZE (cargo/toml-0.7.8.tar.gz) = 49671
 SIZE (cargo/toml_datetime-0.6.3.tar.gz) = 10770
 SIZE (cargo/toml_edit-0.19.15.tar.gz) = 95324
-SIZE (cargo/tracing-0.1.37.tar.gz) = 73888
-SIZE (cargo/tracing-attributes-0.1.26.tar.gz) = 32060
-SIZE (cargo/tracing-core-0.1.31.tar.gz) = 61263
+SIZE (cargo/tracing-0.1.39.tar.gz) = 79314
+SIZE (cargo/tracing-attributes-0.1.27.tar.gz) = 32241
+SIZE (cargo/tracing-core-0.1.32.tar.gz) = 61221
 SIZE (cargo/tracing-indicatif-0.3.5.tar.gz) = 25959
 SIZE (cargo/tracing-log-0.1.3.tar.gz) = 20549
 SIZE (cargo/tracing-subscriber-0.3.17.tar.gz) = 191711
@@ -701,4 +701,4 @@ SIZE (cargo/wsl-0.1.0.tar.gz) = 2135
 SIZE (cargo/yaml-rust-0.4.5.tar.gz) = 47783
 SIZE (cargo/yansi-0.5.1.tar.gz) = 16525
 SIZE (cargo/yansi-term-0.1.2.tar.gz) = 14342
-SIZE (ruff-0.1.0.tar.gz) = 3179556
+SIZE (ruff-0.1.1.tar.gz) = 3199879
