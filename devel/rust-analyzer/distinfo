@@ -2,7 +2,6 @@ SHA256 (cargo/addr2line-0.19.0.tar.gz) = p2/WCyNnm30ZvQZgMUEPt+RYzMXpWOtcMliIzku
 SHA256 (cargo/adler-1.0.2.tar.gz) = 8mIBYEyHseAb09mPjV2aj8u4FejO20H/zL60v1k6Nf4=
 SHA256 (cargo/always-assert-0.1.3.tar.gz) = RDbgKSqxu2MbQpc8YSBecER1/oEmr4RcjZI8CZYygSc=
 SHA256 (cargo/anyhow-1.0.71.tar.gz) = nH0GGPDgt+j/EUJ0IrZFZNX7C+GUA1S/4uBSmxip2bg=
-SHA256 (cargo/anymap-1.0.0-beta.2.tar.gz) = jx+PWm89UNieN5fXWTpQ+WuyqqIMoMx74ftnMjLJHXI=
 SHA256 (cargo/arbitrary-1.3.0.tar.gz) = 4tCY/3PByhSHIfN7qtXqakZaE/lXOrqGQfu7roFkpU4=
 SHA256 (cargo/arrayvec-0.7.4.tar.gz) = ltMKBlQfuvvH+C7RDAYWTPvSxAETj2rd2EBGKcSxZxE=
 SHA256 (cargo/atty-0.2.14.tar.gz) = 2bOb4Ydw0RQhzbG5lHpF3T836TCSy/N3YUgooxnV/ug=
@@ -49,8 +48,6 @@ SHA256 (cargo/hashbrown-0.14.0.tar.gz) = LGIBuf+f2QpaO6wuVqgw0MqlCVdvDlA4GO6CwYG
 SHA256 (cargo/heck-0.3.3.tar.gz) = bWIe+yaGPw6ZJMasV36CdeXmt3RV22T/psZckE6eEyw=
 SHA256 (cargo/hermit-abi-0.1.19.tar.gz) = YrRnNDuUukdtyyUA0kLa27OVV9+IkxCsd8XZkQCqrDM=
 SHA256 (cargo/hermit-abi-0.2.6.tar.gz) = 7lEmQP41rL+0u3edtvDYBwTCys+i45tgHvPj9H0a5Mc=
-SHA256 (cargo/hkalbasi-rustc-ap-rustc_abi-0.0.20221221.tar.gz) = rauq2tmqdXb5evAiQc31VU1i+z1RqEywXXe6KO3TAT8=
-SHA256 (cargo/hkalbasi-rustc-ap-rustc_index-0.0.20221221.tar.gz) = 9NPEhHTgmvsPXvvW91jgVBFpkwGhE8R9RU0o7HBZ0A4=
 SHA256 (cargo/home-0.5.5.tar.gz) = VETCfu9pIwcffrzDPjREUIRmp296K5PaAO1uGfMMHds=
 SHA256 (cargo/idna-0.4.0.tar.gz) = fSDWsHv7wQiILYjtjjfTljbcwmDhXjDEXmugiWELkXw=
 SHA256 (cargo/indexmap-1.9.3.tar.gz) = vQcOOTNTeW6AHSCa0znolZbrTI1DDRjt5qHM7Y+vvZk=
@@ -108,9 +105,10 @@ SHA256 (cargo/protobuf-support-3.1.0.tar.gz) = jKFX/hL8fuLjFfL3NeJ99Bs9l83XDqESg
 SHA256 (cargo/pulldown-cmark-0.9.3.tar.gz) = d6Gi8fCn7P+cMau+F3Y3vg6XoK70bPhzjs4JMnmF2Zg=
 SHA256 (cargo/pulldown-cmark-to-cmark-10.0.4.tar.gz) = AZTm4ZZsI8xf2YhxT4WxjVSNdz6BllQTVV2WVpkxgz0=
 SHA256 (cargo/quote-1.0.28.tar.gz) = G5q5x+rf2N8ZAG8c8aSu0TVA7Vy8BHAQ7OWCbhCCVIg=
-SHA256 (cargo/ra-ap-rustc_index-0.10.0.tar.gz) = B7X6YdNNoY4UjcOoH2VEiOoH9Ak42K77F/i2S7eMYSA=
-SHA256 (cargo/ra-ap-rustc_lexer-0.10.0.tar.gz) = 8uL2tIQi5O7VIYJ3q3zJcz5g3Y8xZ/Tzakmgyv5NwZU=
-SHA256 (cargo/ra-ap-rustc_parse_format-0.10.0.tar.gz) = w8c2mtAcx5+eNRPJ9qYyb2uYAQDkhip6xxuZkciBCLs=
+SHA256 (cargo/ra-ap-rustc_abi-0.14.0.tar.gz) = pRt6Ajd7MkbsXAlbhStc8WeL2e1rVysqee+/etcRwpI=
+SHA256 (cargo/ra-ap-rustc_index-0.14.0.tar.gz) = ZDyjYJhwsXeNnNHyqOTMtK8PSPNjfMJXoJSU0Ie9k9w=
+SHA256 (cargo/ra-ap-rustc_lexer-0.14.0.tar.gz) = MP/ST5uk8dJf8nyhRpuNIqO9+xLPZE/Iv8tjEh+l2ms=
+SHA256 (cargo/ra-ap-rustc_parse_format-0.14.0.tar.gz) = IHtawaIdSSZpXgO2Bf+59j1JaOBIjpGXwExRLDcwOqc=
 SHA256 (cargo/rayon-1.7.0.tar.gz) = HS31GW43vMh6vrwAU+IHh9c4R7szE0pphBIH3QpH8Ds=
 SHA256 (cargo/rayon-core-1.11.0.tar.gz) = S4+VvWlm9ch3dmORYKZr2KuYldnUqwHdup/GBmGuvo0=
 SHA256 (cargo/redox_syscall-0.2.16.tar.gz) = +1pYwYVbS2gZ1ZASFVYD8LIq0wytdSYAqt/LaVJlUZo=
@@ -197,12 +195,11 @@ SHA256 (cargo/xflags-macros-0.3.1.tar.gz) = 9Y57PKiXcJOq5rh7ancwIW/ExTplMLq1xDp4
 SHA256 (cargo/xshell-0.2.3.tar.gz) = liwDmzp7Fs9OmkJIOXxlhcB1R0EufWpuA1OJqALc/pA=
 SHA256 (cargo/xshell-macros-0.2.3.tar.gz) = Hbq7HL0VodbRLZ7Ws1zGd31K+HqzuhVeo3IV8gvquAw=
 SHA256 (cargo/zip-0.6.6.tar.gz) = dgOU4kbkwoGJ8Z1IjAWL8W9WQBau+sXTK7HztR1ekmE=
-SHA256 (rust-analyzer-2023-10-09.tar.gz) = EOoRHPDIotWIRVmrPZiSsuvzsPZinLbkDHbWiQuPQdo=
+SHA256 (rust-analyzer-2023-10-23.tar.gz) = GEtW7BDdqf8pWS7Gst8faKloMXMLFX48r3uX4A/Mxlw=
 SIZE (cargo/addr2line-0.19.0.tar.gz) = 33210
 SIZE (cargo/adler-1.0.2.tar.gz) = 12778
 SIZE (cargo/always-assert-0.1.3.tar.gz) = 7063
 SIZE (cargo/anyhow-1.0.71.tar.gz) = 43808
-SIZE (cargo/anymap-1.0.0-beta.2.tar.gz) = 13073
 SIZE (cargo/arbitrary-1.3.0.tar.gz) = 30930
 SIZE (cargo/arrayvec-0.7.4.tar.gz) = 29856
 SIZE (cargo/atty-0.2.14.tar.gz) = 5470
@@ -249,8 +246,6 @@ SIZE (cargo/hashbrown-0.14.0.tar.gz) = 116103
 SIZE (cargo/heck-0.3.3.tar.gz) = 10260
 SIZE (cargo/hermit-abi-0.1.19.tar.gz) = 9979
 SIZE (cargo/hermit-abi-0.2.6.tar.gz) = 13027
-SIZE (cargo/hkalbasi-rustc-ap-rustc_abi-0.0.20221221.tar.gz) = 23750
-SIZE (cargo/hkalbasi-rustc-ap-rustc_index-0.0.20221221.tar.gz) = 26670
 SIZE (cargo/home-0.5.5.tar.gz) = 8557
 SIZE (cargo/idna-0.4.0.tar.gz) = 271429
 SIZE (cargo/indexmap-1.9.3.tar.gz) = 54653
@@ -308,9 +303,10 @@ SIZE (cargo/protobuf-support-3.1.0.tar.gz) = 10762
 SIZE (cargo/pulldown-cmark-0.9.3.tar.gz) = 117339
 SIZE (cargo/pulldown-cmark-to-cmark-10.0.4.tar.gz) = 17917
 SIZE (cargo/quote-1.0.28.tar.gz) = 28382
-SIZE (cargo/ra-ap-rustc_index-0.10.0.tar.gz) = 28857
-SIZE (cargo/ra-ap-rustc_lexer-0.10.0.tar.gz) = 15835
-SIZE (cargo/ra-ap-rustc_parse_format-0.10.0.tar.gz) = 10836
+SIZE (cargo/ra-ap-rustc_abi-0.14.0.tar.gz) = 28255
+SIZE (cargo/ra-ap-rustc_index-0.14.0.tar.gz) = 28870
+SIZE (cargo/ra-ap-rustc_lexer-0.14.0.tar.gz) = 15832
+SIZE (cargo/ra-ap-rustc_parse_format-0.14.0.tar.gz) = 11190
 SIZE (cargo/rayon-1.7.0.tar.gz) = 169488
 SIZE (cargo/rayon-core-1.11.0.tar.gz) = 73118
 SIZE (cargo/redox_syscall-0.2.16.tar.gz) = 24012
@@ -397,4 +393,4 @@ SIZE (cargo/xflags-macros-0.3.1.tar.gz) = 12229
 SIZE (cargo/xshell-0.2.3.tar.gz) = 23880
 SIZE (cargo/xshell-macros-0.2.3.tar.gz) = 2851
 SIZE (cargo/zip-0.6.6.tar.gz) = 65789
-SIZE (rust-analyzer-2023-10-09.tar.gz) = 2661443
+SIZE (rust-analyzer-2023-10-23.tar.gz) = 2690021
