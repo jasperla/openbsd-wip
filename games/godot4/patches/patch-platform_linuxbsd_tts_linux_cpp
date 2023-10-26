@@ -1,8 +1,5 @@
-fix type error
-
-size_t is unsigned long and that later causes issues expanding a
-template after a few levels of indirections.  uint64_t doesn't have this
-problem.
+fix type error, using int for p_msg_id and dropping p_client_id, see
+https://github.com/godotengine/godot/pull/84017
 
 Index: platform/linuxbsd/tts_linux.cpp
 --- platform/linuxbsd/tts_linux.cpp.orig
@@ -12,12 +9,12 @@ Index: platform/linuxbsd/tts_linux.cpp
  	TTS_Linux *tts = TTS_Linux::get_singleton();
  	if (tts) {
 -		callable_mp(tts, &TTS_Linux::_speech_index_mark).call_deferred(p_msg_id, p_client_id, (int)p_type, String::utf8(p_index_mark));
-+		callable_mp(tts, &TTS_Linux::_speech_index_mark).call_deferred((uint64_t)p_msg_id, (uint64_t)p_client_id, (int)p_type, String::utf8(p_index_mark));
++		callable_mp(tts, &TTS_Linux::_speech_index_mark).call_deferred((int)p_msg_id, (int)p_type, String::utf8(p_index_mark));
  	}
  }
  
 -void TTS_Linux::_speech_index_mark(size_t p_msg_id, size_t p_client_id, int p_type, const String &p_index_mark) {
-+void TTS_Linux::_speech_index_mark(uint64_t p_msg_id, uint64_t p_client_id, int p_type, const String &p_index_mark) {
++void TTS_Linux::_speech_index_mark(int p_msg_id, int p_type, const String &p_index_mark) {
  	_THREAD_SAFE_METHOD_
  
  	if (ids.has(p_msg_id)) {
@@ -26,7 +23,7 @@ Index: platform/linuxbsd/tts_linux.cpp
  	TTS_Linux *tts = TTS_Linux::get_singleton();
  	if (tts) {
 -		callable_mp(tts, &TTS_Linux::_speech_event).call_deferred(p_msg_id, p_client_id, (int)p_type);
-+		callable_mp(tts, &TTS_Linux::_speech_event).call_deferred((uint64_t)p_msg_id, (uint64_t)p_client_id, (int)p_type);
++		callable_mp(tts, &TTS_Linux::_speech_event).call_deferred((int)p_msg_id, (int)p_type);
  	}
  }
  
@@ -35,7 +32,16 @@ Index: platform/linuxbsd/tts_linux.cpp
  }
  
 -void TTS_Linux::_speech_event(size_t p_msg_id, size_t p_client_id, int p_type) {
-+void TTS_Linux::_speech_event(uint64_t p_msg_id, uint64_t p_client_id, int p_type) {
++void TTS_Linux::_speech_event(int p_msg_id, int p_type) {
  	_THREAD_SAFE_METHOD_
  
  	if (!paused && ids.has(p_msg_id)) {
+@@ -226,7 +226,7 @@ void TTS_Linux::speak(const String &p_text, const Stri
+ 	if (is_paused()) {
+ 		resume();
+ 	} else {
+-		_speech_event(0, 0, (int)SPD_EVENT_BEGIN);
++		_speech_event(0, (int)SPD_EVENT_BEGIN);
+ 	}
+ }
+ 
