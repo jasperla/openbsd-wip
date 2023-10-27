@@ -1,11 +1,11 @@
 # ring-v0.16.20 does not support those archs
 NOT_FOR_ARCHS =	powerpc64 riscv64 sparc64
 
-COMMENT =	extremely fast Python linter
+COMMENT =	extremely fast Python linter and code formatter
 
 GH_ACCOUNT =	astral-sh
 GH_PROJECT =	ruff
-GH_TAGNAME =	v0.1.1
+GH_TAGNAME =	v0.1.2
 
 CATEGORIES =	devel textproc
 
