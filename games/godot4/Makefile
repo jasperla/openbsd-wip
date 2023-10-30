@@ -18,15 +18,14 @@ PERMIT_PACKAGE =	Yes
 
 MULTI_PACKAGES =	-main -tools
 
-WANTLIB += ${COMPILER_LIBCXX} BulletCollision BulletDynamics BulletSoftBody
-WANTLIB += GL LinearMath X11 X11-xcb Xau Xcursor Xdmcp Xext Xfixes
-WANTLIB += Xi Xinerama Xrandr Xrender Xxf86vm c drm enet execinfo
-WANTLIB += intl m mbedcrypto mbedtls mbedx509 mpcdec ogg opus
-WANTLIB += opusfile pcre2-32 sndio steam_api theora theoradec
-WANTLIB += usbhid vorbis vorbisfile vpx webp xcb xcb-dri2 xcb-glx
-WANTLIB += zstd
+WANTLIB-main += ${COMPILER_LIBCXX} SPIRV X11 Xau Xcursor Xdmcp Xext
+WANTLIB-main += Xfixes Xi Xinerama Xrandr Xrender c dbus-1 enet execinfo
+WANTLIB-main += expat fontconfig freetype glib-2.0 glslang intl m mbedcrypto
+WANTLIB-main += mbedtls mbedx509 miniupnpc mpcdec ogg pcre2-32 pcre2-8
+WANTLIB-main += sharpyuv sndio speechd theora theoradec usbhid vorbis
+WANTLIB-main += vorbisfile webp wslay xcb xkbcommon zstd
 
-WANTLIB-tools = ${WANTLIB}
+WANTLIB-tools = ${WANTLIB-main}
 
 # C++14
 COMPILER =	base-clang ports-gcc
@@ -94,6 +93,7 @@ LIB_DEPENDS =		archivers/zstd \
 			audio/libvorbis \
 			audio/musepack \
 			audio/opusfile \
+			audio/speech-dispatcher \
 			devel/bullet \
 			devel/gettext,-runtime \
 			devel/pcre2 \
@@ -103,7 +103,10 @@ LIB_DEPENDS =		archivers/zstd \
 			multimedia/libtheora \
 			multimedia/libvpx \
 			net/enet \
+			net/miniupnp/miniupnpc \
 			security/polarssl \
+			x11/dbus,-main \
+			x11/xkbcommon \
 			www/wslay
 
 RUN_DEPENDS-tools =	devel/desktop-file-utils
