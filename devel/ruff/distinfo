@@ -349,7 +349,7 @@ SHA256 (cargo/wsl-0.1.0.tar.gz) = +Nq3rIZHEL3qZZS+y+pbUFAzPPNP77DcMZVn6zR5UNQ=
 SHA256 (cargo/yaml-rust-0.4.5.tar.gz) = VsGTbEzHocmrIaHrtgLrlCuoaMvUSpnLfNxYkjNeHIU=
 SHA256 (cargo/yansi-0.5.1.tar.gz) = CQQc2Qz4X3+LLfYMZG+FO39TXOaPhSROtnMc+J+kmOw=
 SHA256 (cargo/yansi-term-0.1.2.tar.gz) = /lwwreBeYWViR7LjNKAx39DMRm+t74Zb3N6o1TeVG/E=
-SHA256 (ruff-0.1.2.tar.gz) = ITXqL2R6F+kGCjyhD23yvp43rofIZP553TwGe6buV7I=
+SHA256 (ruff-0.1.3.tar.gz) = RIk2IClRlUhwKTRQq9NIaO1Aq6Cvd3UnTgtX/GoGFmE=
 SIZE (cargo/Inflector-0.11.4.tar.gz) = 17438
 SIZE (cargo/adler-1.0.2.tar.gz) = 12778
 SIZE (cargo/ahash-0.8.3.tar.gz) = 42416
@@ -701,4 +701,4 @@ SIZE (cargo/wsl-0.1.0.tar.gz) = 2135
 SIZE (cargo/yaml-rust-0.4.5.tar.gz) = 47783
 SIZE (cargo/yansi-0.5.1.tar.gz) = 16525
 SIZE (cargo/yansi-term-0.1.2.tar.gz) = 14342
-SIZE (ruff-0.1.2.tar.gz) = 3231384
+SIZE (ruff-0.1.3.tar.gz) = 3239278
