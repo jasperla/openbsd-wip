@@ -1,0 +1,653 @@
+@bin bin/pdl
+bin/pdl2
+bin/pdldoc
+bin/perldl
+bin/pptemplate
+${P5ARCH}/
+${P5ARCH}/Inline/
+${P5ARCH}/Inline/MakePdlppInstallable.pm
+${P5ARCH}/Inline/Pdlpp.pm
+${P5ARCH}/PDL/
+${P5ARCH}/PDL.pm
+${P5ARCH}/PDL/API.pod
+${P5ARCH}/PDL/AutoLoader.pm
+${P5ARCH}/PDL/Bad.pm
+${P5ARCH}/PDL/BadValues.pod
+${P5ARCH}/PDL/Basic.pm
+${P5ARCH}/PDL/Broadcasting.pod
+${P5ARCH}/PDL/Bugs.pod
+${P5ARCH}/PDL/CallExt.pm
+${P5ARCH}/PDL/Char.pm
+${P5ARCH}/PDL/Complex/
+${P5ARCH}/PDL/Complex.pm
+${P5ARCH}/PDL/Complex/Overloads.pm
+${P5ARCH}/PDL/Compression.pm
+${P5ARCH}/PDL/Config.pm
+${P5ARCH}/PDL/Constants.pm
+${P5ARCH}/PDL/Core/
+${P5ARCH}/PDL/Core.pm
+${P5ARCH}/PDL/Core/Dev.pm
+${P5ARCH}/PDL/Core/pdl.h
+${P5ARCH}/PDL/Core/pdlbroadcast.h
+${P5ARCH}/PDL/Core/pdlcore.h
+${P5ARCH}/PDL/Core/pdlmagic.h
+${P5ARCH}/PDL/Core/pdlperl.h
+${P5ARCH}/PDL/Core/pdlsimple.h
+${P5ARCH}/PDL/Core/ppport.h
+${P5ARCH}/PDL/Core/typemap
+${P5ARCH}/PDL/Course.pod
+${P5ARCH}/PDL/Dataflow.pod
+${P5ARCH}/PDL/Dbg.pm
+${P5ARCH}/PDL/Demos/
+${P5ARCH}/PDL/Demos.pm
+${P5ARCH}/PDL/Demos/BAD_demo.pm
+${P5ARCH}/PDL/Demos/Cartography_demo.pm
+${P5ARCH}/PDL/Demos/General.pm
+${P5ARCH}/PDL/Demos/Transform_demo.pm
+${P5ARCH}/PDL/Demos/TriD1.pm
+${P5ARCH}/PDL/Demos/TriD2.pm
+${P5ARCH}/PDL/Demos/TriDGallery.pm
+${P5ARCH}/PDL/Demos/m51.fits
+${P5ARCH}/PDL/DiskCache.pm
+${P5ARCH}/PDL/Doc/
+${P5ARCH}/PDL/Doc.pm
+${P5ARCH}/PDL/Doc/Config.pm
+${P5ARCH}/PDL/Doc/Perldl.pm
+${P5ARCH}/PDL/Exporter.pm
+${P5ARCH}/PDL/FAQ.pod
+${P5ARCH}/PDL/FFT.pm
+${P5ARCH}/PDL/Filter/
+${P5ARCH}/PDL/Filter/Linear.pm
+${P5ARCH}/PDL/Fit/
+${P5ARCH}/PDL/Fit/Gaussian.pm
+${P5ARCH}/PDL/Fit/Polynomial.pm
+${P5ARCH}/PDL/Func.pm
+${P5ARCH}/PDL/GSL/
+${P5ARCH}/PDL/GSL/CDF.pm
+${P5ARCH}/PDL/GSL/DIFF.pm
+${P5ARCH}/PDL/GSL/INTEG.pm
+${P5ARCH}/PDL/GSL/INTERP.pm
+${P5ARCH}/PDL/GSL/LINALG.pm
+${P5ARCH}/PDL/GSL/MROOT.pm
+${P5ARCH}/PDL/GSL/RNG.pm
+${P5ARCH}/PDL/GSLSF/
+${P5ARCH}/PDL/GSLSF/AIRY.pm
+${P5ARCH}/PDL/GSLSF/BESSEL.pm
+${P5ARCH}/PDL/GSLSF/CLAUSEN.pm
+${P5ARCH}/PDL/GSLSF/COULOMB.pm
+${P5ARCH}/PDL/GSLSF/COUPLING.pm
+${P5ARCH}/PDL/GSLSF/DAWSON.pm
+${P5ARCH}/PDL/GSLSF/DEBYE.pm
+${P5ARCH}/PDL/GSLSF/DILOG.pm
+${P5ARCH}/PDL/GSLSF/ELEMENTARY.pm
+${P5ARCH}/PDL/GSLSF/ELLINT.pm
+${P5ARCH}/PDL/GSLSF/ELLJAC.pm
+${P5ARCH}/PDL/GSLSF/ERF.pm
+${P5ARCH}/PDL/GSLSF/EXP.pm
+${P5ARCH}/PDL/GSLSF/EXPINT.pm
+${P5ARCH}/PDL/GSLSF/FERMI_DIRAC.pm
+${P5ARCH}/PDL/GSLSF/GAMMA.pm
+${P5ARCH}/PDL/GSLSF/GEGENBAUER.pm
+${P5ARCH}/PDL/GSLSF/HYPERG.pm
+${P5ARCH}/PDL/GSLSF/LAGUERRE.pm
+${P5ARCH}/PDL/GSLSF/LEGENDRE.pm
+${P5ARCH}/PDL/GSLSF/LOG.pm
+${P5ARCH}/PDL/GSLSF/POLY.pm
+${P5ARCH}/PDL/GSLSF/POW_INT.pm
+${P5ARCH}/PDL/GSLSF/PSI.pm
+${P5ARCH}/PDL/GSLSF/SYNCHROTRON.pm
+${P5ARCH}/PDL/GSLSF/TRANSPORT.pm
+${P5ARCH}/PDL/GSLSF/TRIG.pm
+${P5ARCH}/PDL/GSLSF/ZETA.pm
+${P5ARCH}/PDL/Graphics/
+${P5ARCH}/PDL/Graphics.pod
+${P5ARCH}/PDL/Graphics/IIS.pm
+${P5ARCH}/PDL/Graphics/LUT/
+${P5ARCH}/PDL/Graphics/LUT.pm
+${P5ARCH}/PDL/Graphics/LUT/ramps/
+${P5ARCH}/PDL/Graphics/LUT/ramps/equa.fits
+${P5ARCH}/PDL/Graphics/LUT/ramps/expo.fits
+${P5ARCH}/PDL/Graphics/LUT/ramps/gamma.fits
+${P5ARCH}/PDL/Graphics/LUT/ramps/jigsaw.fits
+${P5ARCH}/PDL/Graphics/LUT/ramps/lasritt.fits
+${P5ARCH}/PDL/Graphics/LUT/ramps/log.fits
+${P5ARCH}/PDL/Graphics/LUT/ramps/neg.fits
+${P5ARCH}/PDL/Graphics/LUT/ramps/neglog.fits
+${P5ARCH}/PDL/Graphics/LUT/ramps/null.fits
+${P5ARCH}/PDL/Graphics/LUT/ramps/ramp.fits
+${P5ARCH}/PDL/Graphics/LUT/ramps/stairs.fits
+${P5ARCH}/PDL/Graphics/LUT/tables/
+${P5ARCH}/PDL/Graphics/LUT/tables/aips0.fits
+${P5ARCH}/PDL/Graphics/LUT/tables/backgr.fits
+${P5ARCH}/PDL/Graphics/LUT/tables/bgyrw.fits
+${P5ARCH}/PDL/Graphics/LUT/tables/blue.fits
+${P5ARCH}/PDL/Graphics/LUT/tables/blulut.fits
+${P5ARCH}/PDL/Graphics/LUT/tables/color.fits
+${P5ARCH}/PDL/Graphics/LUT/tables/green.fits
+${P5ARCH}/PDL/Graphics/LUT/tables/heat.fits
+${P5ARCH}/PDL/Graphics/LUT/tables/idl11.fits
+${P5ARCH}/PDL/Graphics/LUT/tables/idl12.fits
+${P5ARCH}/PDL/Graphics/LUT/tables/idl14.fits
+${P5ARCH}/PDL/Graphics/LUT/tables/idl15.fits
+${P5ARCH}/PDL/Graphics/LUT/tables/idl2.fits
+${P5ARCH}/PDL/Graphics/LUT/tables/idl4.fits
+${P5ARCH}/PDL/Graphics/LUT/tables/idl5.fits
+${P5ARCH}/PDL/Graphics/LUT/tables/idl6.fits
+${P5ARCH}/PDL/Graphics/LUT/tables/isophot.fits
+${P5ARCH}/PDL/Graphics/LUT/tables/light.fits
+${P5ARCH}/PDL/Graphics/LUT/tables/manycol.fits
+${P5ARCH}/PDL/Graphics/LUT/tables/pastel.fits
+${P5ARCH}/PDL/Graphics/LUT/tables/rainbow.fits
+${P5ARCH}/PDL/Graphics/LUT/tables/rainbow1.fits
+${P5ARCH}/PDL/Graphics/LUT/tables/rainbow2.fits
+${P5ARCH}/PDL/Graphics/LUT/tables/rainbow3.fits
+${P5ARCH}/PDL/Graphics/LUT/tables/rainbow4.fits
+${P5ARCH}/PDL/Graphics/LUT/tables/ramp.fits
+${P5ARCH}/PDL/Graphics/LUT/tables/random.fits
+${P5ARCH}/PDL/Graphics/LUT/tables/random1.fits
+${P5ARCH}/PDL/Graphics/LUT/tables/random2.fits
+${P5ARCH}/PDL/Graphics/LUT/tables/random3.fits
+${P5ARCH}/PDL/Graphics/LUT/tables/random4.fits
+${P5ARCH}/PDL/Graphics/LUT/tables/random5.fits
+${P5ARCH}/PDL/Graphics/LUT/tables/random6.fits
+${P5ARCH}/PDL/Graphics/LUT/tables/real.fits
+${P5ARCH}/PDL/Graphics/LUT/tables/red.fits
+${P5ARCH}/PDL/Graphics/LUT/tables/smooth.fits
+${P5ARCH}/PDL/Graphics/LUT/tables/smooth1.fits
+${P5ARCH}/PDL/Graphics/LUT/tables/smooth2.fits
+${P5ARCH}/PDL/Graphics/LUT/tables/smooth3.fits
+${P5ARCH}/PDL/Graphics/LUT/tables/staircase.fits
+${P5ARCH}/PDL/Graphics/LUT/tables/stairs8.fits
+${P5ARCH}/PDL/Graphics/LUT/tables/stairs9.fits
+${P5ARCH}/PDL/Graphics/LUT/tables/standard.fits
+${P5ARCH}/PDL/Graphics/Limits.pm
+${P5ARCH}/PDL/Graphics/State.pm
+${P5ARCH}/PDL/Graphics2D.pm
+${P5ARCH}/PDL/HtmlDocs/
+${P5ARCH}/PDL/HtmlDocs/PDL/
+${P5ARCH}/PDL/HtmlDocs/PDL/API.html
+${P5ARCH}/PDL/HtmlDocs/PDL/AutoLoader.html
+${P5ARCH}/PDL/HtmlDocs/PDL/Bad.html
+${P5ARCH}/PDL/HtmlDocs/PDL/BadValues.html
+${P5ARCH}/PDL/HtmlDocs/PDL/Basic.html
+${P5ARCH}/PDL/HtmlDocs/PDL/Broadcasting.html
+${P5ARCH}/PDL/HtmlDocs/PDL/Bugs.html
+${P5ARCH}/PDL/HtmlDocs/PDL/CallExt.html
+${P5ARCH}/PDL/HtmlDocs/PDL/Char.html
+${P5ARCH}/PDL/HtmlDocs/PDL/Complex/
+${P5ARCH}/PDL/HtmlDocs/PDL/Complex.html
+${P5ARCH}/PDL/HtmlDocs/PDL/Complex/Overloads.html
+${P5ARCH}/PDL/HtmlDocs/PDL/Compression.html
+${P5ARCH}/PDL/HtmlDocs/PDL/Constants.html
+${P5ARCH}/PDL/HtmlDocs/PDL/Core/
+${P5ARCH}/PDL/HtmlDocs/PDL/Core.html
+${P5ARCH}/PDL/HtmlDocs/PDL/Core/Dev.html
+${P5ARCH}/PDL/HtmlDocs/PDL/Course.html
+${P5ARCH}/PDL/HtmlDocs/PDL/Dataflow.html
+${P5ARCH}/PDL/HtmlDocs/PDL/Dbg.html
+${P5ARCH}/PDL/HtmlDocs/PDL/Demos.html
+${P5ARCH}/PDL/HtmlDocs/PDL/DiskCache.html
+${P5ARCH}/PDL/HtmlDocs/PDL/Doc/
+${P5ARCH}/PDL/HtmlDocs/PDL/Doc.html
+${P5ARCH}/PDL/HtmlDocs/PDL/Doc/Perldl.html
+${P5ARCH}/PDL/HtmlDocs/PDL/Exporter.html
+${P5ARCH}/PDL/HtmlDocs/PDL/FAQ.html
+${P5ARCH}/PDL/HtmlDocs/PDL/FFT.html
+${P5ARCH}/PDL/HtmlDocs/PDL/Filter/
+${P5ARCH}/PDL/HtmlDocs/PDL/Filter/Linear.html
+${P5ARCH}/PDL/HtmlDocs/PDL/Fit/
+${P5ARCH}/PDL/HtmlDocs/PDL/Fit/Gaussian.html
+${P5ARCH}/PDL/HtmlDocs/PDL/Fit/Polynomial.html
+${P5ARCH}/PDL/HtmlDocs/PDL/Func.html
+${P5ARCH}/PDL/HtmlDocs/PDL/GSL/
+${P5ARCH}/PDL/HtmlDocs/PDL/GSL/CDF.html
+${P5ARCH}/PDL/HtmlDocs/PDL/GSL/DIFF.html
+${P5ARCH}/PDL/HtmlDocs/PDL/GSL/INTEG.html
+${P5ARCH}/PDL/HtmlDocs/PDL/GSL/INTERP.html
+${P5ARCH}/PDL/HtmlDocs/PDL/GSL/LINALG.html
+${P5ARCH}/PDL/HtmlDocs/PDL/GSL/MROOT.html
+${P5ARCH}/PDL/HtmlDocs/PDL/GSL/RNG.html
+${P5ARCH}/PDL/HtmlDocs/PDL/GSLSF/
+${P5ARCH}/PDL/HtmlDocs/PDL/GSLSF/AIRY.html
+${P5ARCH}/PDL/HtmlDocs/PDL/GSLSF/BESSEL.html
+${P5ARCH}/PDL/HtmlDocs/PDL/GSLSF/CLAUSEN.html
+${P5ARCH}/PDL/HtmlDocs/PDL/GSLSF/COULOMB.html
+${P5ARCH}/PDL/HtmlDocs/PDL/GSLSF/COUPLING.html
+${P5ARCH}/PDL/HtmlDocs/PDL/GSLSF/DAWSON.html
+${P5ARCH}/PDL/HtmlDocs/PDL/GSLSF/DEBYE.html
+${P5ARCH}/PDL/HtmlDocs/PDL/GSLSF/DILOG.html
+${P5ARCH}/PDL/HtmlDocs/PDL/GSLSF/ELEMENTARY.html
+${P5ARCH}/PDL/HtmlDocs/PDL/GSLSF/ELLINT.html
+${P5ARCH}/PDL/HtmlDocs/PDL/GSLSF/ELLJAC.html
+${P5ARCH}/PDL/HtmlDocs/PDL/GSLSF/ERF.html
+${P5ARCH}/PDL/HtmlDocs/PDL/GSLSF/EXP.html
+${P5ARCH}/PDL/HtmlDocs/PDL/GSLSF/EXPINT.html
+${P5ARCH}/PDL/HtmlDocs/PDL/GSLSF/FERMI_DIRAC.html
+${P5ARCH}/PDL/HtmlDocs/PDL/GSLSF/GAMMA.html
+${P5ARCH}/PDL/HtmlDocs/PDL/GSLSF/GEGENBAUER.html
+${P5ARCH}/PDL/HtmlDocs/PDL/GSLSF/HYPERG.html
+${P5ARCH}/PDL/HtmlDocs/PDL/GSLSF/LAGUERRE.html
+${P5ARCH}/PDL/HtmlDocs/PDL/GSLSF/LEGENDRE.html
+${P5ARCH}/PDL/HtmlDocs/PDL/GSLSF/LOG.html
+${P5ARCH}/PDL/HtmlDocs/PDL/GSLSF/POLY.html
+${P5ARCH}/PDL/HtmlDocs/PDL/GSLSF/POW_INT.html
+${P5ARCH}/PDL/HtmlDocs/PDL/GSLSF/PSI.html
+${P5ARCH}/PDL/HtmlDocs/PDL/GSLSF/SYNCHROTRON.html
+${P5ARCH}/PDL/HtmlDocs/PDL/GSLSF/TRANSPORT.html
+${P5ARCH}/PDL/HtmlDocs/PDL/GSLSF/TRIG.html
+${P5ARCH}/PDL/HtmlDocs/PDL/GSLSF/ZETA.html
+${P5ARCH}/PDL/HtmlDocs/PDL/Graphics/
+${P5ARCH}/PDL/HtmlDocs/PDL/Graphics.html
+${P5ARCH}/PDL/HtmlDocs/PDL/Graphics/IIS.html
+${P5ARCH}/PDL/HtmlDocs/PDL/Graphics/LUT.html
+${P5ARCH}/PDL/HtmlDocs/PDL/Graphics/Limits.html
+${P5ARCH}/PDL/HtmlDocs/PDL/Graphics/State.html
+${P5ARCH}/PDL/HtmlDocs/PDL/Graphics2D.html
+${P5ARCH}/PDL/HtmlDocs/PDL/IO/
+${P5ARCH}/PDL/HtmlDocs/PDL/IO.html
+${P5ARCH}/PDL/HtmlDocs/PDL/IO/Browser.html
+${P5ARCH}/PDL/HtmlDocs/PDL/IO/Dicom.html
+${P5ARCH}/PDL/HtmlDocs/PDL/IO/Dumper.html
+${P5ARCH}/PDL/HtmlDocs/PDL/IO/FITS.html
+${P5ARCH}/PDL/HtmlDocs/PDL/IO/FastRaw.html
+${P5ARCH}/PDL/HtmlDocs/PDL/IO/FlexRaw.html
+${P5ARCH}/PDL/HtmlDocs/PDL/IO/GD.html
+${P5ARCH}/PDL/HtmlDocs/PDL/IO/IDL.html
+${P5ARCH}/PDL/HtmlDocs/PDL/IO/Misc.html
+${P5ARCH}/PDL/HtmlDocs/PDL/IO/Pic.html
+${P5ARCH}/PDL/HtmlDocs/PDL/IO/Pnm.html
+${P5ARCH}/PDL/HtmlDocs/PDL/IO/STL.html
+${P5ARCH}/PDL/HtmlDocs/PDL/IO/Storable.html
+${P5ARCH}/PDL/HtmlDocs/PDL/Image2D.html
+${P5ARCH}/PDL/HtmlDocs/PDL/ImageND.html
+${P5ARCH}/PDL/HtmlDocs/PDL/ImageRGB.html
+${P5ARCH}/PDL/HtmlDocs/PDL/Index.html
+${P5ARCH}/PDL/HtmlDocs/PDL/Indexing.html
+${P5ARCH}/PDL/HtmlDocs/PDL/Install/
+${P5ARCH}/PDL/HtmlDocs/PDL/Install/Files.html
+${P5ARCH}/PDL/HtmlDocs/PDL/Internals.html
+${P5ARCH}/PDL/HtmlDocs/PDL/Lite.html
+${P5ARCH}/PDL/HtmlDocs/PDL/LiteF.html
+${P5ARCH}/PDL/HtmlDocs/PDL/Lvalue.html
+${P5ARCH}/PDL/HtmlDocs/PDL/MATLAB.html
+${P5ARCH}/PDL/HtmlDocs/PDL/Math.html
+${P5ARCH}/PDL/HtmlDocs/PDL/Matrix.html
+${P5ARCH}/PDL/HtmlDocs/PDL/MatrixOps.html
+${P5ARCH}/PDL/HtmlDocs/PDL/Modules.html
+${P5ARCH}/PDL/HtmlDocs/PDL/NiceSlice.html
+${P5ARCH}/PDL/HtmlDocs/PDL/Objects.html
+${P5ARCH}/PDL/HtmlDocs/PDL/Ops.html
+${P5ARCH}/PDL/HtmlDocs/PDL/Opt/
+${P5ARCH}/PDL/HtmlDocs/PDL/Opt/Simplex.html
+${P5ARCH}/PDL/HtmlDocs/PDL/Options.html
+${P5ARCH}/PDL/HtmlDocs/PDL/PDL.html
+${P5ARCH}/PDL/HtmlDocs/PDL/PP-Inline.html
+${P5ARCH}/PDL/HtmlDocs/PDL/PP.html
+${P5ARCH}/PDL/HtmlDocs/PDL/ParallelCPU.html
+${P5ARCH}/PDL/HtmlDocs/PDL/Perldl2/
+${P5ARCH}/PDL/HtmlDocs/PDL/Perldl2/Plugin/
+${P5ARCH}/PDL/HtmlDocs/PDL/Perldl2/Plugin/CleanErrors.html
+${P5ARCH}/PDL/HtmlDocs/PDL/Perldl2/Plugin/NiceSlice.html
+${P5ARCH}/PDL/HtmlDocs/PDL/Perldl2/Plugin/PDLCommands.html
+${P5ARCH}/PDL/HtmlDocs/PDL/Perldl2/Plugin/PrintControl.html
+${P5ARCH}/PDL/HtmlDocs/PDL/Perldl2/Profile/
+${P5ARCH}/PDL/HtmlDocs/PDL/Perldl2/Profile/Perldl2.html
+${P5ARCH}/PDL/HtmlDocs/PDL/Philosophy.html
+${P5ARCH}/PDL/HtmlDocs/PDL/Primitive.html
+${P5ARCH}/PDL/HtmlDocs/PDL/QuickStart.html
+${P5ARCH}/PDL/HtmlDocs/PDL/Reduce.html
+${P5ARCH}/PDL/HtmlDocs/PDL/Scilab.html
+${P5ARCH}/PDL/HtmlDocs/PDL/Slices.html
+${P5ARCH}/PDL/HtmlDocs/PDL/Tips.html
+${P5ARCH}/PDL/HtmlDocs/PDL/Transform/
+${P5ARCH}/PDL/HtmlDocs/PDL/Transform.html
+${P5ARCH}/PDL/HtmlDocs/PDL/Transform/Cartography.html
+${P5ARCH}/PDL/HtmlDocs/PDL/Tutorials.html
+${P5ARCH}/PDL/HtmlDocs/PDL/Types.html
+${P5ARCH}/PDL/HtmlDocs/PDL/Ufunc.html
+${P5ARCH}/PDL/HtmlDocs/PDL/pdl2.html
+${P5ARCH}/PDL/HtmlDocs/PDL/pod2htmd.tmp
+${P5ARCH}/PDL/HtmlDocs/PDL/pptemplate.html
+${P5ARCH}/PDL/IO/
+${P5ARCH}/PDL/IO.pod
+${P5ARCH}/PDL/IO/Browser.pm
+${P5ARCH}/PDL/IO/Dicom.pm
+${P5ARCH}/PDL/IO/Dumper.pm
+${P5ARCH}/PDL/IO/FITS.pm
+${P5ARCH}/PDL/IO/FastRaw.pm
+${P5ARCH}/PDL/IO/FlexRaw.pm
+${P5ARCH}/PDL/IO/GD.pm
+${P5ARCH}/PDL/IO/IDL.pm
+${P5ARCH}/PDL/IO/Misc.pm
+${P5ARCH}/PDL/IO/Pic.pm
+${P5ARCH}/PDL/IO/Pnm.pm
+${P5ARCH}/PDL/IO/STL/
+${P5ARCH}/PDL/IO/STL.pm
+${P5ARCH}/PDL/IO/STL/owl.stl
+${P5ARCH}/PDL/IO/Storable.pm
+${P5ARCH}/PDL/Image2D.pm
+${P5ARCH}/PDL/ImageND.pm
+${P5ARCH}/PDL/ImageRGB.pm
+${P5ARCH}/PDL/Index.pod
+${P5ARCH}/PDL/Indexing.pod
+${P5ARCH}/PDL/Install/
+${P5ARCH}/PDL/Install/Files.pm
+${P5ARCH}/PDL/Internals.pod
+${P5ARCH}/PDL/Lite.pm
+${P5ARCH}/PDL/LiteF.pm
+${P5ARCH}/PDL/Lvalue.pm
+${P5ARCH}/PDL/MATLAB.pod
+${P5ARCH}/PDL/Math.pm
+${P5ARCH}/PDL/Matrix.pm
+${P5ARCH}/PDL/MatrixOps.pm
+${P5ARCH}/PDL/Modules.pod
+${P5ARCH}/PDL/NiceSlice/
+${P5ARCH}/PDL/NiceSlice.pm
+${P5ARCH}/PDL/NiceSlice/FilterSimple.pm
+${P5ARCH}/PDL/NiceSlice/FilterUtilCall.pm
+${P5ARCH}/PDL/NiceSlice/ModuleCompile.pm
+${P5ARCH}/PDL/Objects.pod
+${P5ARCH}/PDL/Ops.pm
+${P5ARCH}/PDL/Opt/
+${P5ARCH}/PDL/Opt/Simplex.pm
+${P5ARCH}/PDL/Options.pm
+${P5ARCH}/PDL/PP/
+${P5ARCH}/PDL/PP-Inline.pod
+${P5ARCH}/PDL/PP.pm
+${P5ARCH}/PDL/PP.pod
+${P5ARCH}/PDL/PP/CType.pm
+${P5ARCH}/PDL/PP/Dims.pm
+${P5ARCH}/PDL/PP/Dump.pm
+${P5ARCH}/PDL/PP/PDLCode.pm
+${P5ARCH}/PDL/PP/PdlParObj.pm
+${P5ARCH}/PDL/PP/Signature.pm
+${P5ARCH}/PDL/ParallelCPU.pod
+${P5ARCH}/PDL/Perldl2/
+${P5ARCH}/PDL/Perldl2/Plugin/
+${P5ARCH}/PDL/Perldl2/Plugin/CleanErrors.pm
+${P5ARCH}/PDL/Perldl2/Plugin/NiceSlice.pm
+${P5ARCH}/PDL/Perldl2/Plugin/PDLCommands.pm
+${P5ARCH}/PDL/Perldl2/Plugin/PrintControl.pm
+${P5ARCH}/PDL/Perldl2/Profile/
+${P5ARCH}/PDL/Perldl2/Profile/Perldl2.pm
+${P5ARCH}/PDL/Perldl2/Script.pm
+${P5ARCH}/PDL/Philosophy.pod
+${P5ARCH}/PDL/Primitive.pm
+${P5ARCH}/PDL/QuickStart.pod
+${P5ARCH}/PDL/Reduce.pm
+${P5ARCH}/PDL/Scilab.pod
+${P5ARCH}/PDL/Slices.pm
+${P5ARCH}/PDL/Tips.pod
+${P5ARCH}/PDL/Transform/
+${P5ARCH}/PDL/Transform.pm
+${P5ARCH}/PDL/Transform/Cartography/
+${P5ARCH}/PDL/Transform/Cartography.pm
+${P5ARCH}/PDL/Transform/Cartography/earth_coast.vec.fits
+${P5ARCH}/PDL/Transform/Cartography/earth_day.jpg
+${P5ARCH}/PDL/Transform/Cartography/earth_height-2048x1024.jpg
+${P5ARCH}/PDL/Transform/Cartography/earth_night.jpg
+${P5ARCH}/PDL/Tutorials.pod
+${P5ARCH}/PDL/Types.pm
+${P5ARCH}/PDL/Ufunc.pm
+${P5ARCH}/PDL/default.perldlrc
+${P5ARCH}/PDL/pdl2.pod
+${P5ARCH}/PDL/pdldoc.db
+${P5ARCH}/PDL/pptemplate.pod
+${P5ARCH}/auto/
+${P5ARCH}/auto/PDL/
+${P5ARCH}/auto/PDL/Bad/
+@so ${P5ARCH}/auto/PDL/Bad/Bad.so
+${P5ARCH}/auto/PDL/CallExt/
+@so ${P5ARCH}/auto/PDL/CallExt/CallExt.so
+${P5ARCH}/auto/PDL/Complex/
+@so ${P5ARCH}/auto/PDL/Complex/Complex.so
+${P5ARCH}/auto/PDL/Compression/
+@so ${P5ARCH}/auto/PDL/Compression/Compression.so
+${P5ARCH}/auto/PDL/Core/
+@so ${P5ARCH}/auto/PDL/Core/Core.so
+${P5ARCH}/auto/PDL/FFT/
+@so ${P5ARCH}/auto/PDL/FFT/FFT.so
+${P5ARCH}/auto/PDL/Fit/
+${P5ARCH}/auto/PDL/Fit/Gaussian/
+@so ${P5ARCH}/auto/PDL/Fit/Gaussian/Gaussian.so
+${P5ARCH}/auto/PDL/GSL/
+${P5ARCH}/auto/PDL/GSL/CDF/
+@so ${P5ARCH}/auto/PDL/GSL/CDF/CDF.so
+${P5ARCH}/auto/PDL/GSL/DIFF/
+@so ${P5ARCH}/auto/PDL/GSL/DIFF/DIFF.so
+${P5ARCH}/auto/PDL/GSL/INTEG/
+@so ${P5ARCH}/auto/PDL/GSL/INTEG/INTEG.so
+${P5ARCH}/auto/PDL/GSL/INTERP/
+@so ${P5ARCH}/auto/PDL/GSL/INTERP/INTERP.so
+${P5ARCH}/auto/PDL/GSL/LINALG/
+@so ${P5ARCH}/auto/PDL/GSL/LINALG/LINALG.so
+${P5ARCH}/auto/PDL/GSL/MROOT/
+@so ${P5ARCH}/auto/PDL/GSL/MROOT/MROOT.so
+${P5ARCH}/auto/PDL/GSL/RNG/
+@so ${P5ARCH}/auto/PDL/GSL/RNG/RNG.so
+${P5ARCH}/auto/PDL/GSLSF/
+${P5ARCH}/auto/PDL/GSLSF/AIRY/
+@so ${P5ARCH}/auto/PDL/GSLSF/AIRY/AIRY.so
+${P5ARCH}/auto/PDL/GSLSF/BESSEL/
+@so ${P5ARCH}/auto/PDL/GSLSF/BESSEL/BESSEL.so
+${P5ARCH}/auto/PDL/GSLSF/CLAUSEN/
+@so ${P5ARCH}/auto/PDL/GSLSF/CLAUSEN/CLAUSEN.so
+${P5ARCH}/auto/PDL/GSLSF/COULOMB/
+@so ${P5ARCH}/auto/PDL/GSLSF/COULOMB/COULOMB.so
+${P5ARCH}/auto/PDL/GSLSF/COUPLING/
+@so ${P5ARCH}/auto/PDL/GSLSF/COUPLING/COUPLING.so
+${P5ARCH}/auto/PDL/GSLSF/DAWSON/
+@so ${P5ARCH}/auto/PDL/GSLSF/DAWSON/DAWSON.so
+${P5ARCH}/auto/PDL/GSLSF/DEBYE/
+@so ${P5ARCH}/auto/PDL/GSLSF/DEBYE/DEBYE.so
+${P5ARCH}/auto/PDL/GSLSF/DILOG/
+@so ${P5ARCH}/auto/PDL/GSLSF/DILOG/DILOG.so
+${P5ARCH}/auto/PDL/GSLSF/ELEMENTARY/
+@so ${P5ARCH}/auto/PDL/GSLSF/ELEMENTARY/ELEMENTARY.so
+${P5ARCH}/auto/PDL/GSLSF/ELLINT/
+@so ${P5ARCH}/auto/PDL/GSLSF/ELLINT/ELLINT.so
+${P5ARCH}/auto/PDL/GSLSF/ELLJAC/
+@so ${P5ARCH}/auto/PDL/GSLSF/ELLJAC/ELLJAC.so
+${P5ARCH}/auto/PDL/GSLSF/ERF/
+@so ${P5ARCH}/auto/PDL/GSLSF/ERF/ERF.so
+${P5ARCH}/auto/PDL/GSLSF/EXP/
+@so ${P5ARCH}/auto/PDL/GSLSF/EXP/EXP.so
+${P5ARCH}/auto/PDL/GSLSF/EXPINT/
+@so ${P5ARCH}/auto/PDL/GSLSF/EXPINT/EXPINT.so
+${P5ARCH}/auto/PDL/GSLSF/FERMI_DIRAC/
+@so ${P5ARCH}/auto/PDL/GSLSF/FERMI_DIRAC/FERMI_DIRAC.so
+${P5ARCH}/auto/PDL/GSLSF/GAMMA/
+@so ${P5ARCH}/auto/PDL/GSLSF/GAMMA/GAMMA.so
+${P5ARCH}/auto/PDL/GSLSF/GEGENBAUER/
+@so ${P5ARCH}/auto/PDL/GSLSF/GEGENBAUER/GEGENBAUER.so
+${P5ARCH}/auto/PDL/GSLSF/HYPERG/
+@so ${P5ARCH}/auto/PDL/GSLSF/HYPERG/HYPERG.so
+${P5ARCH}/auto/PDL/GSLSF/LAGUERRE/
+@so ${P5ARCH}/auto/PDL/GSLSF/LAGUERRE/LAGUERRE.so
+${P5ARCH}/auto/PDL/GSLSF/LEGENDRE/
+@so ${P5ARCH}/auto/PDL/GSLSF/LEGENDRE/LEGENDRE.so
+${P5ARCH}/auto/PDL/GSLSF/LOG/
+@so ${P5ARCH}/auto/PDL/GSLSF/LOG/LOG.so
+${P5ARCH}/auto/PDL/GSLSF/POLY/
+@so ${P5ARCH}/auto/PDL/GSLSF/POLY/POLY.so
+${P5ARCH}/auto/PDL/GSLSF/POW_INT/
+@so ${P5ARCH}/auto/PDL/GSLSF/POW_INT/POW_INT.so
+${P5ARCH}/auto/PDL/GSLSF/PSI/
+@so ${P5ARCH}/auto/PDL/GSLSF/PSI/PSI.so
+${P5ARCH}/auto/PDL/GSLSF/SYNCHROTRON/
+@so ${P5ARCH}/auto/PDL/GSLSF/SYNCHROTRON/SYNCHROTRON.so
+${P5ARCH}/auto/PDL/GSLSF/TRANSPORT/
+@so ${P5ARCH}/auto/PDL/GSLSF/TRANSPORT/TRANSPORT.so
+${P5ARCH}/auto/PDL/GSLSF/TRIG/
+@so ${P5ARCH}/auto/PDL/GSLSF/TRIG/TRIG.so
+${P5ARCH}/auto/PDL/GSLSF/ZETA/
+@so ${P5ARCH}/auto/PDL/GSLSF/ZETA/ZETA.so
+${P5ARCH}/auto/PDL/Graphics/
+${P5ARCH}/auto/PDL/Graphics/IIS/
+@so ${P5ARCH}/auto/PDL/Graphics/IIS/IIS.so
+${P5ARCH}/auto/PDL/IO/
+${P5ARCH}/auto/PDL/IO/Browser/
+@so ${P5ARCH}/auto/PDL/IO/Browser/Browser.so
+${P5ARCH}/auto/PDL/IO/GD/
+@so ${P5ARCH}/auto/PDL/IO/GD/GD.so
+${P5ARCH}/auto/PDL/IO/Misc/
+@so ${P5ARCH}/auto/PDL/IO/Misc/Misc.so
+${P5ARCH}/auto/PDL/IO/Pnm/
+@so ${P5ARCH}/auto/PDL/IO/Pnm/Pnm.so
+${P5ARCH}/auto/PDL/IO/Storable/
+@so ${P5ARCH}/auto/PDL/IO/Storable/Storable.so
+${P5ARCH}/auto/PDL/Image2D/
+@so ${P5ARCH}/auto/PDL/Image2D/Image2D.so
+${P5ARCH}/auto/PDL/ImageND/
+@so ${P5ARCH}/auto/PDL/ImageND/ImageND.so
+${P5ARCH}/auto/PDL/ImageRGB/
+@so ${P5ARCH}/auto/PDL/ImageRGB/ImageRGB.so
+${P5ARCH}/auto/PDL/Math/
+@so ${P5ARCH}/auto/PDL/Math/Math.so
+${P5ARCH}/auto/PDL/MatrixOps/
+@so ${P5ARCH}/auto/PDL/MatrixOps/MatrixOps.so
+${P5ARCH}/auto/PDL/Ops/
+@so ${P5ARCH}/auto/PDL/Ops/Ops.so
+${P5ARCH}/auto/PDL/Primitive/
+@so ${P5ARCH}/auto/PDL/Primitive/Primitive.so
+${P5ARCH}/auto/PDL/Slices/
+@so ${P5ARCH}/auto/PDL/Slices/Slices.so
+${P5ARCH}/auto/PDL/Transform/
+@so ${P5ARCH}/auto/PDL/Transform/Transform.so
+${P5ARCH}/auto/PDL/Ufunc/
+@so ${P5ARCH}/auto/PDL/Ufunc/Ufunc.so
+@man man/man1/PDL::API.1
+@man man/man1/PDL::BadValues.1
+@man man/man1/PDL::Broadcasting.1
+@man man/man1/PDL::Course.1
+@man man/man1/PDL::Dataflow.1
+@man man/man1/PDL::FAQ.1
+@man man/man1/PDL::Graphics.1
+@man man/man1/PDL::Indexing.1
+@man man/man1/PDL::Internals.1
+@man man/man1/PDL::MATLAB.1
+@man man/man1/PDL::Modules.1
+@man man/man1/PDL::Objects.1
+@man man/man1/PDL::PP-Inline.1
+@man man/man1/PDL::PP.1
+@man man/man1/PDL::ParallelCPU.1
+@man man/man1/PDL::Philosophy.1
+@man man/man1/PDL::QuickStart.1
+@man man/man1/PDL::Scilab.1
+@man man/man1/PDL::Tips.1
+@man man/man1/PDL::Tutorials.1
+@man man/man1/pdl.1
+@man man/man1/pdl2.1
+@man man/man1/pdldoc.1
+@man man/man1/perldl.1
+@man man/man1/pptemplate.1
+@man man/man3p/Bugs.3p
+@man man/man3p/PDL.3p
+@man man/man3p/PDL::AutoLoader.3p
+@man man/man3p/PDL::Bad.3p
+@man man/man3p/PDL::Basic.3p
+@man man/man3p/PDL::CallExt.3p
+@man man/man3p/PDL::Char.3p
+@man man/man3p/PDL::Complex.3p
+@man man/man3p/PDL::Compression.3p
+@man man/man3p/PDL::Config.3p
+@man man/man3p/PDL::Constants.3p
+@man man/man3p/PDL::Core.3p
+@man man/man3p/PDL::Dbg.3p
+@man man/man3p/PDL::Demos.3p
+@man man/man3p/PDL::Dev.3p
+@man man/man3p/PDL::DiskCache.3p
+@man man/man3p/PDL::Doc.3p
+@man man/man3p/PDL::Doc::Config.3p
+@man man/man3p/PDL::Doc::Perldl.3p
+@man man/man3p/PDL::Dumper.3p
+@man man/man3p/PDL::Exporter.3p
+@man man/man3p/PDL::FFT.3p
+@man man/man3p/PDL::Fit::Gaussian.3p
+@man man/man3p/PDL::Func.3p
+@man man/man3p/PDL::GSL::CDF.3p
+@man man/man3p/PDL::GSL::DIFF.3p
+@man man/man3p/PDL::GSL::INTEG.3p
+@man man/man3p/PDL::GSL::INTERP.3p
+@man man/man3p/PDL::GSL::LINALG.3p
+@man man/man3p/PDL::GSL::MROOT.3p
+@man man/man3p/PDL::GSL::RNG.3p
+@man man/man3p/PDL::GSLSF::AIRY.3p
+@man man/man3p/PDL::GSLSF::BESSEL.3p
+@man man/man3p/PDL::GSLSF::CLAUSEN.3p
+@man man/man3p/PDL::GSLSF::COULOMB.3p
+@man man/man3p/PDL::GSLSF::COUPLING.3p
+@man man/man3p/PDL::GSLSF::DAWSON.3p
+@man man/man3p/PDL::GSLSF::DEBYE.3p
+@man man/man3p/PDL::GSLSF::DILOG.3p
+@man man/man3p/PDL::GSLSF::ELEMENTARY.3p
+@man man/man3p/PDL::GSLSF::ELLINT.3p
+@man man/man3p/PDL::GSLSF::ELLJAC.3p
+@man man/man3p/PDL::GSLSF::ERF.3p
+@man man/man3p/PDL::GSLSF::EXP.3p
+@man man/man3p/PDL::GSLSF::EXPINT.3p
+@man man/man3p/PDL::GSLSF::FERMI_DIRAC.3p
+@man man/man3p/PDL::GSLSF::GAMMA.3p
+@man man/man3p/PDL::GSLSF::GEGENBAUER.3p
+@man man/man3p/PDL::GSLSF::HYPERG.3p
+@man man/man3p/PDL::GSLSF::LAGUERRE.3p
+@man man/man3p/PDL::GSLSF::LEGENDRE.3p
+@man man/man3p/PDL::GSLSF::LOG.3p
+@man man/man3p/PDL::GSLSF::POLY.3p
+@man man/man3p/PDL::GSLSF::POW_INT.3p
+@man man/man3p/PDL::GSLSF::PSI.3p
+@man man/man3p/PDL::GSLSF::SYNCHROTRON.3p
+@man man/man3p/PDL::GSLSF::TRANSPORT.3p
+@man man/man3p/PDL::GSLSF::TRIG.3p
+@man man/man3p/PDL::GSLSF::ZETA.3p
+@man man/man3p/PDL::Graphics2D.3p
+@man man/man3p/PDL::Graphics::IIS.3p
+@man man/man3p/PDL::Graphics::LUT.3p
+@man man/man3p/PDL::Graphics::Limits.3p
+@man man/man3p/PDL::IFiles.3p
+@man man/man3p/PDL::IO.3p
+@man man/man3p/PDL::IO::Browser.3p
+@man man/man3p/PDL::IO::Dicom.3p
+@man man/man3p/PDL::IO::FITS.3p
+@man man/man3p/PDL::IO::FastRaw.3p
+@man man/man3p/PDL::IO::FlexRaw.3p
+@man man/man3p/PDL::IO::GD.3p
+@man man/man3p/PDL::IO::IDL.3p
+@man man/man3p/PDL::IO::Misc.3p
+@man man/man3p/PDL::IO::Pnm.3p
+@man man/man3p/PDL::IO::STL.3p
+@man man/man3p/PDL::IO::Storable.3p
+@man man/man3p/PDL::Image2D.3p
+@man man/man3p/PDL::ImageND.3p
+@man man/man3p/PDL::ImageRGB.3p
+@man man/man3p/PDL::Linear.3p
+@man man/man3p/PDL::Lite.3p
+@man man/man3p/PDL::LiteF.3p
+@man man/man3p/PDL::Lvalue.3p
+@man man/man3p/PDL::Math.3p
+@man man/man3p/PDL::Matrix.3p
+@man man/man3p/PDL::MatrixOps.3p
+@man man/man3p/PDL::NiceSlice.3p
+@man man/man3p/PDL::Ops.3p
+@man man/man3p/PDL::Opt::Simplex.3p
+@man man/man3p/PDL::Options.3p
+@man man/man3p/PDL::Overloads.3p
+@man man/man3p/PDL::PP::Dump.3p
+@man man/man3p/PDL::PP::Signature.3p
+@man man/man3p/PDL::Perldl2::CleanErrors.3p
+@man man/man3p/PDL::Perldl2::NiceSlice.3p
+@man man/man3p/PDL::Perldl2::PDLCommands.3p
+@man man/man3p/PDL::Perldl2::Perldl2.3p
+@man man/man3p/PDL::Perldl2::PrintControl.3p
+@man man/man3p/PDL::Polynomial.3p
+@man man/man3p/PDL::Primitive.3p
+@man man/man3p/PDL::Reduce.3p
+@man man/man3p/PDL::Slices.3p
+@man man/man3p/PDL::State.3p
+@man man/man3p/PDL::Transform.3p
+@man man/man3p/PDL::Transform::Cartography.3p
+@man man/man3p/PDL::Types.3p
+@man man/man3p/PDL::Ufunc.3p
+@man man/man3p/PDL::pdl2.3p
+@man man/man3p/PDL::pptemplate.3p
+@man man/man3p/Pdlpp.3p

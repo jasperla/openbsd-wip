@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v$
+${P5SITE}/Locale/
+${P5SITE}/Locale/SubCountry/
+${P5SITE}/Locale/SubCountry.pm
+${P5SITE}/Locale/SubCountry/Codes.pm
+@man man/man3p/Locale::SubCountry.3p
+@man man/man3p/Locale::SubCountry::Codes.3p

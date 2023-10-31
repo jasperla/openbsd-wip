@@ -1,0 +1,35 @@
+${P5SITE}/OAuth/
+${P5SITE}/OAuth/Lite/
+${P5SITE}/OAuth/Lite.pm
+${P5SITE}/OAuth/Lite/Agent.pm
+${P5SITE}/OAuth/Lite/AuthMethod.pm
+${P5SITE}/OAuth/Lite/Consumer.pm
+${P5SITE}/OAuth/Lite/Problems.pm
+${P5SITE}/OAuth/Lite/Response.pm
+${P5SITE}/OAuth/Lite/Server/
+${P5SITE}/OAuth/Lite/Server/Test/
+${P5SITE}/OAuth/Lite/Server/Test/Echo.pm
+${P5SITE}/OAuth/Lite/Server/mod_perl2.pm
+${P5SITE}/OAuth/Lite/ServerUtil.pm
+${P5SITE}/OAuth/Lite/SignatureMethod/
+${P5SITE}/OAuth/Lite/SignatureMethod.pm
+${P5SITE}/OAuth/Lite/SignatureMethod/HMAC_SHA1.pm
+${P5SITE}/OAuth/Lite/SignatureMethod/PLAINTEXT.pm
+${P5SITE}/OAuth/Lite/SignatureMethod/RSA_SHA1.pm
+${P5SITE}/OAuth/Lite/Token.pm
+${P5SITE}/OAuth/Lite/Util.pm
+@man man/man3p/OAuth::Lite.3p
+@man man/man3p/OAuth::Lite::Agent.3p
+@man man/man3p/OAuth::Lite::AuthMethod.3p
+@man man/man3p/OAuth::Lite::Consumer.3p
+@man man/man3p/OAuth::Lite::Problems.3p
+@man man/man3p/OAuth::Lite::Response.3p
+@man man/man3p/OAuth::Lite::Server::Test::Echo.3p
+@man man/man3p/OAuth::Lite::Server::mod_perl2.3p
+@man man/man3p/OAuth::Lite::ServerUtil.3p
+@man man/man3p/OAuth::Lite::SignatureMethod.3p
+@man man/man3p/OAuth::Lite::SignatureMethod::HMAC_SHA1.3p
+@man man/man3p/OAuth::Lite::SignatureMethod::PLAINTEXT.3p
+@man man/man3p/OAuth::Lite::SignatureMethod::RSA_SHA1.3p
+@man man/man3p/OAuth::Lite::Token.3p
+@man man/man3p/OAuth::Lite::Util.3p

@@ -1,0 +1,15 @@
+${P5ARCH}/
+${P5ARCH}/PDL/
+${P5ARCH}/PDL/VectorValued/
+${P5ARCH}/PDL/VectorValued.pm
+${P5ARCH}/PDL/VectorValued/Dev.pm
+${P5ARCH}/PDL/VectorValued/Utils.pm
+${P5ARCH}/PDL/VectorValued/Version.pm
+${P5ARCH}/auto/
+${P5ARCH}/auto/PDL/
+${P5ARCH}/auto/PDL/VectorValued/
+${P5ARCH}/auto/PDL/VectorValued/Utils/
+@so ${P5ARCH}/auto/PDL/VectorValued/Utils/Utils.so
+@man man/man3p/PDL::VectorValued.3p
+@man man/man3p/PDL::VectorValued::Dev.3p
+@man man/man3p/PDL::VectorValued::Utils.3p

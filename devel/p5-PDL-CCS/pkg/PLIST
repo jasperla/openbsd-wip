@@ -1,0 +1,41 @@
+${P5ARCH}/PDL/CCS/
+${P5ARCH}/PDL/CCS.pm
+${P5ARCH}/PDL/CCS/Compat.pm
+${P5ARCH}/PDL/CCS/Config.pm
+${P5ARCH}/PDL/CCS/Functions.pm
+${P5ARCH}/PDL/CCS/IO/
+${P5ARCH}/PDL/CCS/IO/Common.pm
+${P5ARCH}/PDL/CCS/IO/FITS.pm
+${P5ARCH}/PDL/CCS/IO/FastRaw.pm
+${P5ARCH}/PDL/CCS/IO/LDAC.pm
+${P5ARCH}/PDL/CCS/IO/MatrixMarket.pm
+${P5ARCH}/PDL/CCS/IO/PETSc.pm
+${P5ARCH}/PDL/CCS/MatrixOps.pm
+${P5ARCH}/PDL/CCS/Nd.pm
+${P5ARCH}/PDL/CCS/Ops.pm
+${P5ARCH}/PDL/CCS/Ufunc.pm
+${P5ARCH}/PDL/CCS/Utils.pm
+${P5ARCH}/PDL/CCS/Version.pm
+${P5ARCH}/auto/PDL/CCS/
+${P5ARCH}/auto/PDL/CCS/MatrixOps/
+@so ${P5ARCH}/auto/PDL/CCS/MatrixOps/MatrixOps.so
+${P5ARCH}/auto/PDL/CCS/Ops/
+@so ${P5ARCH}/auto/PDL/CCS/Ops/Ops.so
+${P5ARCH}/auto/PDL/CCS/Ufunc/
+@so ${P5ARCH}/auto/PDL/CCS/Ufunc/Ufunc.so
+${P5ARCH}/auto/PDL/CCS/Utils/
+@so ${P5ARCH}/auto/PDL/CCS/Utils/Utils.so
+@man man/man3p/PDL::CCS.3p
+@man man/man3p/PDL::CCS::Compat.3p
+@man man/man3p/PDL::CCS::Functions.3p
+@man man/man3p/PDL::CCS::IO::Common.3p
+@man man/man3p/PDL::CCS::IO::FITS.3p
+@man man/man3p/PDL::CCS::IO::FastRaw.3p
+@man man/man3p/PDL::CCS::IO::LDAC.3p
+@man man/man3p/PDL::CCS::IO::MatrixMarket.3p
+@man man/man3p/PDL::CCS::IO::PETSc.3p
+@man man/man3p/PDL::CCS::MatrixOps.3p
+@man man/man3p/PDL::CCS::Nd.3p
+@man man/man3p/PDL::CCS::Ops.3p
+@man man/man3p/PDL::CCS::Ufunc.3p
+@man man/man3p/PDL::CCS::Utils.3p

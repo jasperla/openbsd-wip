@@ -1,0 +1,12 @@
+${P5SITE}/OpenGL/
+${P5SITE}/OpenGL/Image/
+${P5SITE}/OpenGL/Image.pm
+${P5SITE}/OpenGL/Image.pod
+${P5SITE}/OpenGL/Image/Common.pm
+${P5SITE}/OpenGL/Image/Magick.pm
+${P5SITE}/OpenGL/Image/Targa.pm
+${P5SITE}/OpenGL/hex_tile.pl
+@man man/man3p/OpenGL::Image.3p
+@man man/man3p/OpenGL::Image::Common.3p
+@man man/man3p/OpenGL::Image::Magick.3p
+@man man/man3p/OpenGL::Image::Targa.3p

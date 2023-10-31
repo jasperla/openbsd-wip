@@ -1,0 +1,151 @@
+${P5SITE}/AI/
+${P5SITE}/AI/MXNet/
+${P5SITE}/AI/MXNet.pm
+${P5SITE}/AI/MXNet/AutoGrad.pm
+${P5SITE}/AI/MXNet/AutoLoad.pm
+${P5SITE}/AI/MXNet/Base.pm
+${P5SITE}/AI/MXNet/CachedOp.pm
+${P5SITE}/AI/MXNet/Callback.pm
+${P5SITE}/AI/MXNet/Context.pm
+${P5SITE}/AI/MXNet/Contrib/
+${P5SITE}/AI/MXNet/Contrib.pm
+${P5SITE}/AI/MXNet/Contrib/NDArray.pm
+${P5SITE}/AI/MXNet/Contrib/Symbol.pm
+${P5SITE}/AI/MXNet/CudaModule.pm
+${P5SITE}/AI/MXNet/Engine.pm
+${P5SITE}/AI/MXNet/Executor/
+${P5SITE}/AI/MXNet/Executor.pm
+${P5SITE}/AI/MXNet/Executor/Group.pm
+${P5SITE}/AI/MXNet/Function/
+${P5SITE}/AI/MXNet/Function/Parameters.pm
+${P5SITE}/AI/MXNet/Gluon/
+${P5SITE}/AI/MXNet/Gluon.pm
+${P5SITE}/AI/MXNet/Gluon/Block.pm
+${P5SITE}/AI/MXNet/Gluon/Data/
+${P5SITE}/AI/MXNet/Gluon/Data.pm
+${P5SITE}/AI/MXNet/Gluon/Data/Loader.pm
+${P5SITE}/AI/MXNet/Gluon/Data/Sampler.pm
+${P5SITE}/AI/MXNet/Gluon/Data/Set.pm
+${P5SITE}/AI/MXNet/Gluon/Data/Vision.pm
+${P5SITE}/AI/MXNet/Gluon/Loss.pm
+${P5SITE}/AI/MXNet/Gluon/Mouse.pm
+${P5SITE}/AI/MXNet/Gluon/NN/
+${P5SITE}/AI/MXNet/Gluon/NN.pm
+${P5SITE}/AI/MXNet/Gluon/NN/Activation.pm
+${P5SITE}/AI/MXNet/Gluon/NN/BasicLayers.pm
+${P5SITE}/AI/MXNet/Gluon/NN/ConvLayers.pm
+${P5SITE}/AI/MXNet/Gluon/Parameter.pm
+${P5SITE}/AI/MXNet/Gluon/RNN/
+${P5SITE}/AI/MXNet/Gluon/RNN.pm
+${P5SITE}/AI/MXNet/Gluon/RNN/Cell.pm
+${P5SITE}/AI/MXNet/Gluon/RNN/Layer.pm
+${P5SITE}/AI/MXNet/Gluon/Trainer.pm
+${P5SITE}/AI/MXNet/Gluon/Utils.pm
+${P5SITE}/AI/MXNet/IO.pm
+${P5SITE}/AI/MXNet/Image/
+${P5SITE}/AI/MXNet/Image.pm
+${P5SITE}/AI/MXNet/Image/NDArray.pm
+${P5SITE}/AI/MXNet/Image/Symbol.pm
+${P5SITE}/AI/MXNet/Initializer.pm
+${P5SITE}/AI/MXNet/KVStore.pm
+${P5SITE}/AI/MXNet/KVStoreServer.pm
+${P5SITE}/AI/MXNet/LRScheduler.pm
+${P5SITE}/AI/MXNet/LinAlg/
+${P5SITE}/AI/MXNet/LinAlg.pm
+${P5SITE}/AI/MXNet/LinAlg/NDArray.pm
+${P5SITE}/AI/MXNet/LinAlg/Symbol.pm
+${P5SITE}/AI/MXNet/Logging.pm
+${P5SITE}/AI/MXNet/Metric.pm
+${P5SITE}/AI/MXNet/Module/
+${P5SITE}/AI/MXNet/Module.pm
+${P5SITE}/AI/MXNet/Module/Base.pm
+${P5SITE}/AI/MXNet/Module/Bucketing.pm
+${P5SITE}/AI/MXNet/Monitor.pm
+${P5SITE}/AI/MXNet/NDArray/
+${P5SITE}/AI/MXNet/NDArray.pm
+${P5SITE}/AI/MXNet/NDArray/Base.pm
+${P5SITE}/AI/MXNet/NDArray/Doc.pm
+${P5SITE}/AI/MXNet/NDArray/Slice.pm
+${P5SITE}/AI/MXNet/NDArray/Sparse.pm
+${P5SITE}/AI/MXNet/NS.pm
+${P5SITE}/AI/MXNet/Optimizer.pm
+${P5SITE}/AI/MXNet/Profiler.pm
+${P5SITE}/AI/MXNet/RNN/
+${P5SITE}/AI/MXNet/RNN.pm
+${P5SITE}/AI/MXNet/RNN/Cell.pm
+${P5SITE}/AI/MXNet/RNN/IO.pm
+${P5SITE}/AI/MXNet/Random.pm
+${P5SITE}/AI/MXNet/RecordIO.pm
+${P5SITE}/AI/MXNet/RunTime.pm
+${P5SITE}/AI/MXNet/Symbol/
+${P5SITE}/AI/MXNet/Symbol.pm
+${P5SITE}/AI/MXNet/Symbol/AttrScope.pm
+${P5SITE}/AI/MXNet/Symbol/Base.pm
+${P5SITE}/AI/MXNet/Symbol/Doc.pm
+${P5SITE}/AI/MXNet/Symbol/NameManager.pm
+${P5SITE}/AI/MXNet/Symbol/Random.pm
+${P5SITE}/AI/MXNet/Symbol/Sparse.pm
+${P5SITE}/AI/MXNet/TestUtils.pm
+${P5SITE}/AI/MXNet/Types.pm
+${P5SITE}/AI/MXNet/Util/
+${P5SITE}/AI/MXNet/Util/Printable.pm
+${P5SITE}/AI/MXNet/Visualization.pm
+@man man/man3p/AI::MXNet.3p
+@man man/man3p/AI::MXNet::AutoGrad.3p
+@man man/man3p/AI::MXNet::Base.3p
+@man man/man3p/AI::MXNet::CachedOp.3p
+@man man/man3p/AI::MXNet::Callback.3p
+@man man/man3p/AI::MXNet::Context.3p
+@man man/man3p/AI::MXNet::Contrib.3p
+@man man/man3p/AI::MXNet::Contrib::NDArray.3p
+@man man/man3p/AI::MXNet::Contrib::Symbol.3p
+@man man/man3p/AI::MXNet::CudaModule.3p
+@man man/man3p/AI::MXNet::Engine.3p
+@man man/man3p/AI::MXNet::Executor.3p
+@man man/man3p/AI::MXNet::Executor::Group.3p
+@man man/man3p/AI::MXNet::Gluon.3p
+@man man/man3p/AI::MXNet::Gluon::Block.3p
+@man man/man3p/AI::MXNet::Gluon::Data::Loader.3p
+@man man/man3p/AI::MXNet::Gluon::Data::Sampler.3p
+@man man/man3p/AI::MXNet::Gluon::Data::Set.3p
+@man man/man3p/AI::MXNet::Gluon::Data::Vision.3p
+@man man/man3p/AI::MXNet::Gluon::Loss.3p
+@man man/man3p/AI::MXNet::Gluon::NN::Activation.3p
+@man man/man3p/AI::MXNet::Gluon::NN::BasicLayers.3p
+@man man/man3p/AI::MXNet::Gluon::NN::ConvLayers.3p
+@man man/man3p/AI::MXNet::Gluon::Parameter.3p
+@man man/man3p/AI::MXNet::Gluon::RNN::Cell.3p
+@man man/man3p/AI::MXNet::Gluon::RNN::Layer.3p
+@man man/man3p/AI::MXNet::Gluon::Trainer.3p
+@man man/man3p/AI::MXNet::Gluon::Utils.3p
+@man man/man3p/AI::MXNet::IO.3p
+@man man/man3p/AI::MXNet::Image.3p
+@man man/man3p/AI::MXNet::Initializer.3p
+@man man/man3p/AI::MXNet::KVStore.3p
+@man man/man3p/AI::MXNet::KVStoreServer.3p
+@man man/man3p/AI::MXNet::LRScheduler.3p
+@man man/man3p/AI::MXNet::LinAlg.3p
+@man man/man3p/AI::MXNet::Metric.3p
+@man man/man3p/AI::MXNet::Module.3p
+@man man/man3p/AI::MXNet::Module::Base.3p
+@man man/man3p/AI::MXNet::Module::Bucketing.3p
+@man man/man3p/AI::MXNet::Monitor.3p
+@man man/man3p/AI::MXNet::NDArray.3p
+@man man/man3p/AI::MXNet::NDArray::Base.3p
+@man man/man3p/AI::MXNet::NDArray::Doc.3p
+@man man/man3p/AI::MXNet::NDArray::Slice.3p
+@man man/man3p/AI::MXNet::NDArray::Sparse.3p
+@man man/man3p/AI::MXNet::Optimizer.3p
+@man man/man3p/AI::MXNet::Profiler.3p
+@man man/man3p/AI::MXNet::RNN.3p
+@man man/man3p/AI::MXNet::RNN::Cell.3p
+@man man/man3p/AI::MXNet::RNN::IO.3p
+@man man/man3p/AI::MXNet::Random.3p
+@man man/man3p/AI::MXNet::RecordIO.3p
+@man man/man3p/AI::MXNet::RunTime.3p
+@man man/man3p/AI::MXNet::Symbol.3p
+@man man/man3p/AI::MXNet::Symbol::AttrScope.3p
+@man man/man3p/AI::MXNet::Symbol::Base.3p
+@man man/man3p/AI::MXNet::Symbol::NameManager.3p
+@man man/man3p/AI::MXNet::TestUtils.3p
+@man man/man3p/AI::MXNet::Visualization.3p

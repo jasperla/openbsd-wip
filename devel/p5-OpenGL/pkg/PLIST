@@ -1,0 +1,14 @@
+${P5ARCH}/
+${P5ARCH}/OpenGL/
+${P5ARCH}/OpenGL.pm
+${P5ARCH}/OpenGL.pod
+${P5ARCH}/OpenGL/Array.pod
+${P5ARCH}/OpenGL/Config.pm
+${P5ARCH}/OpenGL/Tessellation.pod
+${P5ARCH}/auto/
+${P5ARCH}/auto/OpenGL/
+@so ${P5ARCH}/auto/OpenGL/OpenGL.so
+${P5ARCH}/auto/OpenGL/autosplit.ix
+@man man/man3p/Array.3p
+@man man/man3p/OpenGL.3p
+@man man/man3p/Tessellation.3p
