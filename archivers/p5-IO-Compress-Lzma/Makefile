@@ -13,8 +13,8 @@ MAINTAINER=		Todd T. Fries <todd@fries.net>
 PERMIT_PACKAGE=	Yes
 PERMIT_DISTFILES=   Yes
 
-RUN_DEPENDS+= ${BUILD_DEPENDS}
-BUILD_DEPENDS+= archivers/p5-IO-Compress
+#RUN_DEPENDS+= ${BUILD_DEPENDS}
+#BUILD_DEPENDS+= archivers/p5-IO-Compress
 
 CONFIGURE_STYLE= perl
 
