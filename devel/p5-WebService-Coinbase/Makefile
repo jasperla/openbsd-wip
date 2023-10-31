@@ -13,7 +13,7 @@ BUILD_DEPENDS+= security/p5-CryptX \
 		devel/p5-Function-Parameters \
 		devel/p5-WebService-Client
 
-MASTER_SITES=    ${MASTER_SITE_PERL_CPAN:=../../authors/id/I/IR/IRONCAMEL/}
+SITES=		${SITE_PERL_CPAN:=../../authors/id/I/IR/IRONCAMEL/}
 
 CONFIGURE_STYLE= perl
 

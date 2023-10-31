@@ -12,7 +12,7 @@ RUN_DEPENDS+= ${BUILD_DEPENDS}
 BUILD_DEPENDS+= www/p5-libwww \
 		converters/p5-JSON
 
-MASTER_SITES=    ${MASTER_SITE_PERL_CPAN:=../../authors/id/K/KE/KEDAR/}
+SITES=		${SITE_PERL_CPAN:=../../authors/id/K/KE/KEDAR/}
 
 CONFIGURE_STYLE= perl
 

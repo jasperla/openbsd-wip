@@ -12,7 +12,7 @@ RUN_DEPENDS+= ${BUILD_DEPENDS}
 BUILD_DEPENDS+= devel/p5-Moo \
 		devel/p5-JSON-RPC
 
-MASTER_SITES=    ${MASTER_SITE_PERL_CPAN:=../../authors/id/T/TO/TOBYINK/}
+SITES=		${SITE_PERL_CPAN:=../../authors/id/T/TO/TOBYINK/}
 
 CONFIGURE_STYLE= perl
 

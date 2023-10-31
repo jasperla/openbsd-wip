@@ -20,7 +20,7 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-MASTER_SITES =		http://pgfoundry.org/frs/download.php/1387/
+SITES =		http://pgfoundry.org/frs/download.php/1387/
 
 USE_GMAKE =		Yes
 CONFIGURE_STYLE =	gnu

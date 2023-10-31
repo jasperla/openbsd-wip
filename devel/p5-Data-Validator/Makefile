@@ -11,7 +11,7 @@ PERMIT_PACKAGE=		Yes
 RUN_DEPENDS+= ${BUILD_DEPENDS}
 BUILD_DEPENDS+= devel/p5-Test-Requires
 
-MASTER_SITES=    ${MASTER_SITE_PERL_CPAN:=../../authors/id/G/GF/GFUJI/}
+SITES=    ${SITE_PERL_CPAN:=../../authors/id/G/GF/GFUJI/}
 
 CONFIGURE_STYLE= modbuild
 

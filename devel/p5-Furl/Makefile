@@ -16,7 +16,7 @@ BUILD_DEPENDS+= www/p5-HTTP-Parser-XS \
 		converters/p5-Net-IDN-Encode \
 		www/p5-HTTP-Proxy
 
-MASTER_SITES=    ${MASTER_SITE_PERL_CPAN:=../../authors/id/T/TO/TOKUHIROM/}
+SITES=		${SITE_PERL_CPAN:=../../authors/id/T/TO/TOKUHIROM/}
 
 CONFIGURE_STYLE= modbuild
 

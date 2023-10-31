@@ -23,12 +23,12 @@ PERMIT_DISTFILES_FTP =	Yes
 
 #WANTLIB =		???
 
-MASTER_SITES =		http://pgfoundry.org/frs/download.php/1868/
+SITES =			http://pgfoundry.org/frs/download.php/1868/
 #EXTRACT_SUFX =		.tar.gz
 
 #DIST_SUBDIR =		???
 
-# PATCHFILES are also retrieved from MASTER_SITES*
+# PATCHFILES are also retrieved from SITES*
 #PATCHFILES =		???
 #PATCH_DIST_STRIP =	-p0
 

@@ -12,7 +12,7 @@ RUN_DEPENDS+= ${BUILD_DEPENDS}
 BUILD_DEPENDS+= devel/p5-Test-Pod \
 		net/p5-Router-Simple
 
-MASTER_SITES=    ${MASTER_SITE_PERL_CPAN:=../../authors/id/D/DM/DMAKI/}
+SITES=		${SITE_PERL_CPAN:=../../authors/id/D/DM/DMAKI/}
 
 CONFIGURE_STYLE= modbuild
 
