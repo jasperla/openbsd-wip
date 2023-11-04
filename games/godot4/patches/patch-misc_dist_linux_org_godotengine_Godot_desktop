@@ -6,7 +6,7 @@ Index: misc/dist/linux/org.godotengine.Godot.desktop
  Comment[fr]=Moteur de jeu 2D et 3D multiplateforme avec un éditeur riche en fonctionnalités
  Comment[zh_CN]=多平台 2D 和 3D 游戏引擎，带有功能丰富的编辑器
 -Exec=godot %f
-+Exec=${TRUEPREFIX}/bin/godot-tools %f
++Exec=${TRUEPREFIX}/bin/godot-editor %f
  Icon=godot
  Terminal=false
  PrefersNonDefaultGPU=true
