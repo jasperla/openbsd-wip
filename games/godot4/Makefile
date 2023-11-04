@@ -3,9 +3,9 @@ BROKEN-powerpc =	fails at runtime, the UI is totally blank
 COMMENT-main =	2D and 3D game engine
 COMMENT-tools=	2D and 3D game engine (with tools)
 
-V =		4.1.2
+V =		4.1.3
 DISTNAME =	godot-${V}-stable
-PKGNAME =	godot4-${V}
+PKGNAME =	godot-${V}
 
 CATEGORIES =	games
 
@@ -30,7 +30,7 @@ WANTLIB-tools = ${WANTLIB-main}
 # C++14
 COMPILER =	base-clang ports-gcc
 
-SITES =	https://downloads.tuxfamily.org/godotengine/${V}/
+SITES =		https://downloads.tuxfamily.org/godotengine/${V}/
 EXTRACT_SUFX =	.tar.xz
 
 MODULES =	devel/scons
@@ -92,16 +92,12 @@ MODSCONS_FLAGS +=	module_raycast_enabled="false"
 LIB_DEPENDS =		archivers/zstd \
 			audio/libvorbis \
 			audio/musepack \
-			audio/opusfile \
 			audio/speech-dispatcher \
-			devel/bullet \
 			devel/gettext,-runtime \
 			devel/pcre2 \
-			games/goldberg_emulator \
 			graphics/glslang \
 			graphics/libwebp \
 			multimedia/libtheora \
-			multimedia/libvpx \
 			net/enet \
 			net/miniupnp/miniupnpc \
 			security/polarssl \
@@ -142,20 +138,20 @@ do-build:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/bin/godot.linuxbsd.template_release.${BINSUFFIX} \
-		${PREFIX}/bin/godot4
+		${PREFIX}/bin/godot
 	${INSTALL_PROGRAM} ${WRKBUILD}/bin/godot.linuxbsd.editor.${BINSUFFIX} \
-		${PREFIX}/bin/godot4-tools
-#	${INSTALL_MAN_DIR} ${PREFIX}/man/man6
-#	${INSTALL_MAN} ${WRKSRC}/misc/dist/linux/godot4.6 \
-#		${PREFIX}/man/man6
-#	${INSTALL_DATA_DIR} ${PREFIX}/share/pixmaps
-#	${INSTALL_DATA} ${WRKSRC}/icon.svg \
-#		${PREFIX}/share/pixmaps/godot.svg
-#	${INSTALL_DATA_DIR} ${PREFIX}/share/applications
-#	${INSTALL_DATA} ${WRKSRC}/misc/dist/linux/*.desktop \
-#		${PREFIX}/share/applications
-#	${INSTALL_DATA_DIR} ${PREFIX}/share/metainfo
-#	${INSTALL_DATA} ${WRKSRC}/misc/dist/linux/*.appdata.xml \
-#		${PREFIX}/share/metainfo/
+		${PREFIX}/bin/godot-tools
+	${INSTALL_MAN_DIR} ${PREFIX}/man/man6
+	${INSTALL_MAN} ${WRKSRC}/misc/dist/linux/godot.6 \
+		${PREFIX}/man/man6
+	${INSTALL_DATA_DIR} ${PREFIX}/share/pixmaps
+	${INSTALL_DATA} ${WRKSRC}/icon.svg \
+		${PREFIX}/share/pixmaps/godot.svg
+	${INSTALL_DATA_DIR} ${PREFIX}/share/applications
+	${INSTALL_DATA} ${WRKSRC}/misc/dist/linux/*.desktop \
+		${PREFIX}/share/applications
+	${INSTALL_DATA_DIR} ${PREFIX}/share/metainfo
+	${INSTALL_DATA} ${WRKSRC}/misc/dist/linux/*.appdata.xml \
+		${PREFIX}/share/metainfo/
 
 .include <bsd.port.mk>
