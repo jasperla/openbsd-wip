@@ -1,7 +1,7 @@
 BROKEN-powerpc =	fails at runtime, the UI is totally blank
 
 COMMENT-main =	2D and 3D game engine
-COMMENT-tools=	2D and 3D game engine (with tools)
+COMMENT-editor=	2D and 3D game engine (with the editor)
 
 V =		4.1.3
 DISTNAME =	godot-${V}-stable
@@ -16,7 +16,7 @@ MAINTAINER =	Omar Polo <op@openbsd.org>
 # MIT
 PERMIT_PACKAGE =	Yes
 
-MULTI_PACKAGES =	-main -tools
+MULTI_PACKAGES =	-main -editor
 
 WANTLIB-main += ${COMPILER_LIBCXX} SPIRV X11 Xau Xcursor Xdmcp Xext
 WANTLIB-main += Xfixes Xi Xinerama Xrandr Xrender c dbus-1 enet execinfo
@@ -25,7 +25,7 @@ WANTLIB-main += mbedtls mbedx509 miniupnpc mpcdec ogg pcre2-32 pcre2-8
 WANTLIB-main += sharpyuv sndio speechd theora theoradec usbhid vorbis
 WANTLIB-main += vorbisfile webp wslay xcb xkbcommon zstd
 
-WANTLIB-tools = ${WANTLIB-main}
+WANTLIB-editor = ${WANTLIB-main}
 
 # C++14
 COMPILER =	base-clang ports-gcc
@@ -105,7 +105,7 @@ LIB_DEPENDS =		archivers/zstd \
 			x11/xkbcommon \
 			www/wslay
 
-RUN_DEPENDS-tools =	devel/desktop-file-utils
+RUN_DEPENDS-editor =	devel/desktop-file-utils
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 NO_TEST =		Yes
@@ -140,7 +140,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/bin/godot.linuxbsd.template_release.${BINSUFFIX} \
 		${PREFIX}/bin/godot
 	${INSTALL_PROGRAM} ${WRKBUILD}/bin/godot.linuxbsd.editor.${BINSUFFIX} \
-		${PREFIX}/bin/godot-tools
+		${PREFIX}/bin/godot-editor
 	${INSTALL_MAN_DIR} ${PREFIX}/man/man6
 	${INSTALL_MAN} ${WRKSRC}/misc/dist/linux/godot.6 \
 		${PREFIX}/man/man6

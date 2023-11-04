@@ -1,7 +1,7 @@
 @conflict godot-<=3.4.4p0
-@bin bin/godot-tools
+@pkgpath games/godot,-tools
+@bin bin/godot-editor
 share/applications/org.godotengine.Godot.desktop
-share/doc/pkg-readmes/${PKGSTEM}
 share/metainfo/
 share/metainfo/org.godotengine.Godot.appdata.xml
 share/pixmaps/
