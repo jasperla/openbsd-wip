@@ -1,0 +1,9 @@
+tailspin is a log file highlighter written in Rust.
+
+Features:
+- View (or tail) any log file of any format
+- No setup or config required
+- Highlights numbers, dates, IP-addresses, UUIDs, URLs and more
+- All highlight groups are customizable
+- Easy to integrate with other commands
+- Uses less under the hood for scrollback, search and filtering
