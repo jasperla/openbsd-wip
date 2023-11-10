@@ -21,8 +21,15 @@ SEPARATE_BUILD =	Yes
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/man/tspin.1 ${PREFIX}/man/man1/tspin.1
 
-# TODO
-# install completion for zsh, fish and bash
+	${INSTALL_DATA_DIR} ${PREFIX}/share/fish/completions/
+	${INSTALL_DATA} ${WRKSRC}/completions/tspin.fish \
+		${PREFIX}/share/fish/completions/
+	${INSTALL_DATA_DIR} ${PREFIX}/share/zsh/site-functions/
+	${INSTALL_DATA} ${WRKSRC}/completions/tspin.zsh \
+		${PREFIX}/share/zsh/site-functions/_tspin
+	${INSTALL_DATA_DIR} ${PREFIX}/share/bash-completion/completions/
+	${INSTALL_DATA} ${WRKSRC}/completions/tspin.bash \
+		${PREFIX}/share/bash-completion/completions/tspin
 
 .include "crates.inc"
 
