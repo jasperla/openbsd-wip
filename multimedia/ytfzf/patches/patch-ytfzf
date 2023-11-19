@@ -1,7 +1,7 @@
 Index: ytfzf
 --- ytfzf.orig
 +++ ytfzf
-@@ -19,7 +19,7 @@ YTFZF_VERSION="2.6.0"
+@@ -19,7 +19,7 @@ YTFZF_VERSION="2.6.1"
  : "${YTFZF_EXTENSIONS_DIR:=$YTFZF_CONFIG_DIR/extensions}"
  : "${YTFZF_CUSTOM_SCRAPERS_DIR:=$YTFZF_CONFIG_DIR/scrapers}"
  

@@ -1,8 +1,6 @@
 COMMENT =	find and watch Youtube videos from the terminal
 
-GH_ACCOUNT =	pystardust
-GH_PROJECT =	ytfzf
-GH_TAGNAME =	v2.6.0
+DIST_TUPLE =	github pystardust ytfzf v2.6.1 .
 
 CATEGORIES =	multimedia
 
@@ -11,8 +9,11 @@ MAINTAINER =	Laurent Cheylus <foxy@free.fr>
 # GPL-3.0
 PERMIT_PACKAGE =	Yes
 
-RUN_DEPENDS =	textproc/jq net/curl sysutils/fzf \
-		multimedia/mpv www/yt-dlp
+RUN_DEPENDS =	multimedia/mpv \
+		net/curl \
+		sysutils/fzf \
+		textproc/jq \
+		www/yt-dlp
 
 NO_BUILD =	Yes
 NO_TEST =	Yes
