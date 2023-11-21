@@ -1,0 +1,40 @@
++-------------------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-------------------------------------------------------------------------------
+
+Fonts
+=====
+
+${PKGSTEM} needs a Nerd Font installed and enabled in your terminal.
+See `fonts/nerd-fonts` packages to install one.
+
+Shell Integration
+=================
+
+shells/zsh
+----------
+
+To enable ${PKGSTEM}, add this to the end of your ~/.zshrc:
+
+```
+eval "$(starship init zsh)"
+```
+
+shells/bash
+-----------
+
+To enable ${PKGSTEM}, add this to the end of your ~/.bashrc:
+
+```
+eval "$(starship init bash)"
+```
+
+shells/fish
+-----------
+
+To enable ${PKGSTEM}, add this to the end of your ~/.config/fish/config.fish:
+
+```
+starship init fish | source
+```
+

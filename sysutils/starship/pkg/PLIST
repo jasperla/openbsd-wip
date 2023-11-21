@@ -1,0 +1,2 @@
+@bin bin/starship
+share/doc/pkg-readmes/${PKGSTEM}
