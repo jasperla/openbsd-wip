@@ -1,6 +1,6 @@
 COMMENT =		Python implementation of the Language Server Protocol
 
-MODPY_EGG_VERSION =	1.8.2
+MODPY_EGG_VERSION =	1.9.0
 DISTNAME =		python-lsp-server-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 
@@ -21,7 +21,7 @@ FLAVOR =		python3
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools_scm
 
-RUN_DEPENDS =		textproc/py-docstring-to-markdown${MODPY_FLAVOR} \
+RUN_DEPENDS =		devel/py-docstring-to-markdown${MODPY_FLAVOR} \
 			devel/py-jedi${MODPY_FLAVOR}>=0.17.2 \
 			devel/py-pluggy${MODPY_FLAVOR}>=1.0.0 \
 			net/py-python-lsp-jsonrpc${MODPY_FLAVOR}>=1.1.0 \
