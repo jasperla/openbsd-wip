@@ -1,12 +1,12 @@
 COMMENT =	open source OldSchool RuneScape client
 
-V =		2.6.2
+V =		2.6.10
 PKGNAME =	runelite-${V}
 
-MASTER_SITES =	https://github.com/runelite/launcher/releases/download/$V/
-MASTER_SITES0 =	https://raw.githubusercontent.com/runelite/launcher/$V/appimage/
-DISTFILES =	runelite-$V{RuneLite}.jar \
-		runelite-$V{runelite}.png:0
+SITES =	https://github.com/runelite/launcher/releases/download/$V/
+SITES.icon =	https://raw.githubusercontent.com/runelite/launcher/$V/appimage/
+DISTFILES =	runelite-$V{RuneLite}.jar
+DISTFILES.icon =	runelite-$V{runelite}.png
 
 CATEGORIES =	games
 
@@ -23,7 +23,7 @@ PERMIT_PACKAGE =	Yes
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		java/javaPathHelper \
-		x11/gtk+3,-guic
+		x11/gtk+4,-guic
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/icons/hicolor/128x128/apps/ \
