@@ -1,3 +1,2 @@
-@pkgpath games/godot
-@bin bin/godot
-@man man/man6/godot.6
+@bin bin/godot4
+@man man/man6/godot4.6

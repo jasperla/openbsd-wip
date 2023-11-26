@@ -1,9 +1,7 @@
-@conflict godot-<=3.4.4p0
-@pkgpath games/godot,-tools
-@bin bin/godot-editor
-share/applications/org.godotengine.Godot.desktop
+@bin bin/godot4-editor
+share/applications/org.godotengine.Godot4.desktop
 share/metainfo/
-share/metainfo/org.godotengine.Godot.appdata.xml
+share/metainfo/org.godotengine.Godot4.appdata.xml
 share/pixmaps/
-share/pixmaps/godot.svg
+share/pixmaps/godot4.svg
 @tag update-desktop-database

@@ -5,7 +5,7 @@ COMMENT-editor=	2D and 3D game engine (with the editor)
 
 V =		4.1.3
 DISTNAME =	godot-${V}-stable
-PKGNAME =	godot-${V}
+PKGNAME =	godot4-${V}
 
 CATEGORIES =	games
 
@@ -138,20 +138,20 @@ do-build:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/bin/godot.linuxbsd.template_release.${BINSUFFIX} \
-		${PREFIX}/bin/godot
+		${PREFIX}/bin/godot4
 	${INSTALL_PROGRAM} ${WRKBUILD}/bin/godot.linuxbsd.editor.${BINSUFFIX} \
-		${PREFIX}/bin/godot-editor
+		${PREFIX}/bin/godot4-editor
 	${INSTALL_MAN_DIR} ${PREFIX}/man/man6
 	${INSTALL_MAN} ${WRKSRC}/misc/dist/linux/godot.6 \
-		${PREFIX}/man/man6
+		${PREFIX}/man/man6/godot4.6
 	${INSTALL_DATA_DIR} ${PREFIX}/share/pixmaps
 	${INSTALL_DATA} ${WRKSRC}/icon.svg \
-		${PREFIX}/share/pixmaps/godot.svg
+		${PREFIX}/share/pixmaps/godot4.svg
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKSRC}/misc/dist/linux/*.desktop \
-		${PREFIX}/share/applications
+		${PREFIX}/share/applications/org.godotengine.Godot4.desktop
 	${INSTALL_DATA_DIR} ${PREFIX}/share/metainfo
 	${INSTALL_DATA} ${WRKSRC}/misc/dist/linux/*.appdata.xml \
-		${PREFIX}/share/metainfo/
+		${PREFIX}/share/metainfo/org.godotengine.Godot4.appdata.xml
 
 .include <bsd.port.mk>
