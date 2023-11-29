@@ -1,3 +1,0 @@
-This is the backend for PDM (Python Dependency Manager) projects that is
-fully-compatible with PEP 517 spec, but you can also use it alone. It
-reads the metadata of PEP 621 format and coverts it to Core metadata.
