@@ -1,0 +1,4 @@
+@man man/man8/efibootdump.8
+@man man/man8/efibootmgr.8
+@bin sbin/efibootdump
+@bin sbin/efibootmgr
