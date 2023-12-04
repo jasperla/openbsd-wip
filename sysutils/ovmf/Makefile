@@ -1,6 +1,4 @@
-# ld: error: cannot place lto.tmp:(.rodata.mMmio64Configuration) into .text: --execute-only does not support intermingling data and code
-# ld: error: cannot place lto.tmp:(.rodata.mOptionRomConfiguration) into .text: --execute-only does not support intermingling data and code
-# ld: error: cannot place lto.tmp:(.rodata.mEndDesc) into .text: --execute-only does not support intermingling data and code
+# ld: error: relocation R_X86_64_64 cannot be used against local symbol; recompile with -fPIC
 
 # I don't have arm64
 ONLY_FOR_ARCHS =	amd64

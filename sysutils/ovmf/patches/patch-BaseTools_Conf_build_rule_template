@@ -1,0 +1,15 @@
+Disable OpenBSD-specific --execute-only default to fix
+    ld: error: cannot place lto.tmp:(.rodata.mEndDesc) into .text: --execute-only does not support intermingling data and code
+
+Index: BaseTools/Conf/build_rule.template
+--- BaseTools/Conf/build_rule.template.orig
++++ BaseTools/Conf/build_rule.template
+@@ -294,7 +294,7 @@
+         "$(DLINK)" /OUT:${dst} $(DLINK_FLAGS) $(DLINK_SPATH) @$(STATIC_LIBRARY_FILES_LIST) $(DLINK2_FLAGS)
+ 
+     <Command.GCC>
+-        "$(DLINK)" -o ${dst} $(DLINK_FLAGS) -Wl,--start-group,@$(STATIC_LIBRARY_FILES_LIST),--end-group $(CC_FLAGS) $(DLINK2_FLAGS)
++        "$(DLINK)" -o ${dst} $(DLINK_FLAGS) -Wl,--start-group,@$(STATIC_LIBRARY_FILES_LIST),--end-group $(CC_FLAGS) $(DLINK2_FLAGS) -Wl,--no-execute-only
+         "$(OBJCOPY)" $(OBJCOPY_FLAGS) ${dst}
+ 
+     <Command.XCODE>
