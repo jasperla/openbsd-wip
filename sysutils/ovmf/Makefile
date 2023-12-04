@@ -66,9 +66,12 @@ pre-patch:
 	# .py scripts execute 'make'
 	ln -sf /usr/local/bin/${MAKE_PROGRAM} ${WRKDIR}/bin/make
 
-do-build:
+do-configure:
+	# build tools in configure to isolate from WIP do-build
 	${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} ${MAKE_FLAGS} \
 	    -f ${MAKE_FILE} -C ${WRKSRC}/BaseTools/ ${ALL_TARGET}
+
+do-build:
 	cd ${WRKSRC}/OvmfPkg/ && \
 		${SETENV} ${MAKE_ENV} ./build.sh ${BUILD_FLAGS}
 
