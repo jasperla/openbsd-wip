@@ -12,9 +12,14 @@ DIST_TUPLE =		github	tianocore	edk2	edk2-stable${V}	.
 PKGNAME =		ovmf-${V}
 CATEGORIES =		sysutils
 
-DIST_TUPLE +=		github	MIPI-Alliance	public-mipi-sys-t	v1.1+edk2	. # post-extract
 # XXX later OpenSSL dropped openssl/e_os.h
-DIST_TUPLE +=		github	openssl	openssl	openssl-3.0.12	CryptoPkg/Library/OpensslLib/openssl
+DIST_TUPLE +=		github	openssl	openssl	openssl-3.0.12 \
+			CryptoPkg/Library/OpensslLib/openssl
+
+DIST_TUPLE +=		github	MIPI-Alliance	public-mipi-sys-t	v1.1+edk2 \
+			.
+# XXX '+' in tag name vs. '-' in directory name
+MIPISYST_DIR =		MdePkg/Library/MipiSysTLib/mipisyst
 
 HOMEPAGE =		https://www.tianocore.org/ovmf/
 
@@ -46,9 +51,8 @@ BUILD_FLAGS =		--verbose \
 			--tagname=GCC5
 
 post-extract:
-	# XXX '+' vs. '-' in tag vs. directory name
-	rmdir ${WRKSRC}/MdePkg/Library/MipiSysTLib/mipisyst/ && \
-		mv ${WRKDIR}/public-* ${WRKSRC}/MdePkg/Library/MipiSysTLib/mipisyst
+	cd ${WRKDIST} && rmdir ./${MIPISYST_DIR} && \
+		mv ${WRKDIR}/public-mipi-sys-t-* ./${MIPISYST_DIR}
 
 pre-patch:
 	# fix hardcoded compiler names, drop -Werror
