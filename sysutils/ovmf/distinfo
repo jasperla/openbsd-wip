@@ -1,0 +1,6 @@
+SHA256 (MIPI-Alliance-public-mipi-sys-t-v1.1+edk2.tar.gz) = Rz3NRu0ysJgJGiNT8O0T5py+dzgRxVUebnZsFqybpGQ=
+SHA256 (openssl-openssl-openssl-3.0.12.tar.gz) = mnpzVfPUtz9DtXMM6ANx+dH5eET/yMSwHHI7oGJdaq0=
+SHA256 (tianocore-edk2-edk2-stable202308.tar.gz) = PxzeEWatlPhvwjde4sP38cFsZGuVGN4/+Sjv0ocC/+E=
+SIZE (MIPI-Alliance-public-mipi-sys-t-v1.1+edk2.tar.gz) = 378282
+SIZE (openssl-openssl-openssl-3.0.12.tar.gz) = 15352880
+SIZE (tianocore-edk2-edk2-stable202308.tar.gz) = 16801285

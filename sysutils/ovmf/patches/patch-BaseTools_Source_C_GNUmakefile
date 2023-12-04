@@ -1,0 +1,13 @@
+Avoid unused brotli compression
+
+Index: BaseTools/Source/C/GNUmakefile
+--- BaseTools/Source/C/GNUmakefile.orig
++++ BaseTools/Source/C/GNUmakefile
+@@ -51,7 +51,6 @@ all: makerootdir subdirs
+ LIBRARIES = Common
+ VFRAUTOGEN = VfrCompile/VfrLexer.h
+ APPLICATIONS = \
+-  BrotliCompress \
+   VfrCompile \
+   EfiRom \
+   GenFfs \

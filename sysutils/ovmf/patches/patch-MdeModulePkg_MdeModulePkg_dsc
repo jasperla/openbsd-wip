@@ -1,0 +1,13 @@
+Avoid unused brotli compression
+
+Index: MdeModulePkg/MdeModulePkg.dsc
+--- MdeModulePkg/MdeModulePkg.dsc.orig
++++ MdeModulePkg/MdeModulePkg.dsc
+@@ -458,7 +458,6 @@
+   MdeModulePkg/Universal/EbcDxe/EbcDebuggerConfig.inf
+ 
+ [Components.IA32, Components.X64, Components.ARM, Components.AARCH64]
+-  MdeModulePkg/Library/BrotliCustomDecompressLib/BrotliCustomDecompressLib.inf
+   MdeModulePkg/Library/LzmaCustomDecompressLib/LzmaCustomDecompressLib.inf
+   MdeModulePkg/Library/VarCheckUefiLib/VarCheckUefiLib.inf
+   MdeModulePkg/Core/Dxe/DxeMain.inf {

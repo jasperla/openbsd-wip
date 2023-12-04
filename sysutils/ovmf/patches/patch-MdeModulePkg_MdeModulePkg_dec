@@ -1,0 +1,15 @@
+Avoid unused brotli compression
+
+Index: MdeModulePkg/MdeModulePkg.dec
+--- MdeModulePkg/MdeModulePkg.dec.orig
++++ MdeModulePkg/MdeModulePkg.dec
+@@ -26,9 +26,6 @@
+   Include
+   Test/Mock/Include
+ 
+-[Includes.Common.Private]
+-  Library/BrotliCustomDecompressLib/brotli/c/include
+-
+ [LibraryClasses]
+   ##  @libraryclass  Defines a set of methods to reset whole system.
+   ResetSystemLib|Include/Library/ResetSystemLib.h

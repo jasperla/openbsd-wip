@@ -1,0 +1,14 @@
+# XXX disable slowish tests during WIP phase, remove patch later
+
+Index: BaseTools/GNUmakefile
+--- BaseTools/GNUmakefile.orig
++++ BaseTools/GNUmakefile
+@@ -10,7 +10,7 @@ all: subdirs
+ LANGUAGES = C Python
+ 
+ SOURCE_SUBDIRS := $(patsubst %,Source/%,$(sort $(LANGUAGES)))
+-SUBDIRS := $(SOURCE_SUBDIRS) Tests
++SUBDIRS := $(SOURCE_SUBDIRS)
+ CLEAN_SUBDIRS := $(patsubst %,%-clean,$(sort $(SUBDIRS)))
+ 
+ .PHONY: subdirs $(SUBDIRS)
