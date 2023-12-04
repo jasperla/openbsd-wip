@@ -51,10 +51,11 @@ post-extract:
 		mv ${WRKDIR}/public-* ${WRKSRC}/MdePkg/Library/MipiSysTLib/mipisyst
 
 pre-patch:
-	# fix hardcoded compiler names
+	# fix hardcoded compiler names, drop -Werror
 	sed -i \
 	    -e 's/gcc-ar/${AR}/' \
 	    -e 's/gcc/${CC}/' \
+	    -e 's/-Werror //' \
 	    ${WRKSRC}/BaseTools/Conf/tools_def.template
 	# Drop unsupported compiler flags to unbreak build
 	sed -i -E \
