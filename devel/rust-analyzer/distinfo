@@ -148,7 +148,7 @@ SHA256 (cargo/tracing-core-0.1.32.tar.gz) = wG09phE/EWqu5o5NYBGRYUyQUwZ/mrf27byx
 SHA256 (cargo/tracing-log-0.2.0.tar.gz) = 7oVfH0AL0OXALRUK5d44QAOaP1SwJRVkBONMI8A/R8M=
 SHA256 (cargo/tracing-subscriber-0.3.18.tar.gz) = rQ8EjJfb2fqpt99WNiuOvKpSrbBrSYwFDS9OMvkKeos=
 SHA256 (cargo/tracing-tree-0.3.0.tar.gz) = ZROezSw/ZITDuZvAHHev4h6VRzYwdHx6ylJeeLBmZnU=
-SHA256 (cargo/triomphe-0.1.8.tar.gz) = 8e6b2SOcM51xTWV/rIQMbSpPnEX0+ex7CXURNFi+eNs=
+SHA256 (cargo/triomphe-0.1.10.tar.gz) = 0MWnGCesMmBytkBVUgk+KtKszSWjL9eNTtyC2Yx/JAk=
 SHA256 (cargo/typed-arena-2.0.2.tar.gz) = avauIBZ6ns5Ly0GvW4D4ofHfmB9jkRic4A/SV68EEmo=
 SHA256 (cargo/ungrammar-1.16.1.tar.gz) = o+XfNH8L8+wdZwqtbKXGoYWc2eph0hExJXlGVMzO1o8=
 SHA256 (cargo/unicase-2.6.0.tar.gz) = UPN75hd5RgKqu+7gvk8lncF3j6vgXi1n7o95Mm1ctPY=
@@ -189,7 +189,7 @@ SHA256 (cargo/xflags-macros-0.3.1.tar.gz) = 9Y57PKiXcJOq5rh7ancwIW/ExTplMLq1xDp4
 SHA256 (cargo/xshell-0.2.5.tar.gz) = ziEH/gPlWDU7THGtdibVjtgu+vVsVBNCKGCIk8dwI60=
 SHA256 (cargo/xshell-macros-0.2.5.tar.gz) = fixBF1m1AfuVAarCsbLSh6bpPlvc8TwlMGsj4bcW3Q4=
 SHA256 (cargo/zip-0.6.6.tar.gz) = dgOU4kbkwoGJ8Z1IjAWL8W9WQBau+sXTK7HztR1ekmE=
-SHA256 (rust-analyzer-2023-11-27.tar.gz) = fNIZooMNIuFeQ7d2Q1KrYilg/nRQ68hOj24lDTJPJo4=
+SHA256 (rust-analyzer-2023-12-04.tar.gz) = +QK7+q+/Q8rT336NfTkPgevYMfz0tDWSBwEc/HBx5zU=
 SIZE (cargo/addr2line-0.19.0.tar.gz) = 33210
 SIZE (cargo/adler-1.0.2.tar.gz) = 12778
 SIZE (cargo/always-assert-0.1.3.tar.gz) = 7063
@@ -340,7 +340,7 @@ SIZE (cargo/tracing-core-0.1.32.tar.gz) = 61221
 SIZE (cargo/tracing-log-0.2.0.tar.gz) = 17561
 SIZE (cargo/tracing-subscriber-0.3.18.tar.gz) = 196312
 SIZE (cargo/tracing-tree-0.3.0.tar.gz) = 28123
-SIZE (cargo/triomphe-0.1.8.tar.gz) = 25448
+SIZE (cargo/triomphe-0.1.10.tar.gz) = 28183
 SIZE (cargo/typed-arena-2.0.2.tar.gz) = 11848
 SIZE (cargo/ungrammar-1.16.1.tar.gz) = 8383
 SIZE (cargo/unicase-2.6.0.tar.gz) = 23478
@@ -381,4 +381,4 @@ SIZE (cargo/xflags-macros-0.3.1.tar.gz) = 12229
 SIZE (cargo/xshell-0.2.5.tar.gz) = 24242
 SIZE (cargo/xshell-macros-0.2.5.tar.gz) = 2845
 SIZE (cargo/zip-0.6.6.tar.gz) = 65789
-SIZE (rust-analyzer-2023-11-27.tar.gz) = 2703563
+SIZE (rust-analyzer-2023-12-04.tar.gz) = 2706481
