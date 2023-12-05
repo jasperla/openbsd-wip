@@ -1,0 +1,21 @@
+Add -fPIC to fix (XXX does not help)
+    ld: error: relocation R_X86_64_64 cannot be used against local symbol; recompile with -fPIC
+
+Index: BaseTools/Source/C/Makefiles/header.makefile
+--- BaseTools/Source/C/Makefiles/header.makefile.orig
++++ BaseTools/Source/C/Makefiles/header.makefile
+@@ -99,12 +99,12 @@ ifneq ($(CLANG),)
+ CFLAGS = -MD -fshort-wchar -fno-strict-aliasing -fwrapv \
+ -fno-delete-null-pointer-checks -Wall -Werror \
+ -Wno-deprecated-declarations -Wno-self-assign \
+--Wno-unused-result -nostdlib -g
++-Wno-unused-result -nostdlib -g -fPIC
+ else
+ CFLAGS = -MD -fshort-wchar -fno-strict-aliasing -fwrapv \
+ -fno-delete-null-pointer-checks -Wall -Werror \
+ -Wno-deprecated-declarations -Wno-stringop-truncation -Wno-restrict \
+--Wno-unused-result -nostdlib -g
++-Wno-unused-result -nostdlib -g -fPIC
+ endif
+ endif
+ ifneq ($(CLANG),)

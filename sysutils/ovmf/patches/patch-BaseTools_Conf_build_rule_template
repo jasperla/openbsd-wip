@@ -1,15 +1,27 @@
+Add -fPIC to fix (XXX does not help)
+    ld: error: relocation R_X86_64_64 cannot be used against local symbol; recompile with -fPIC
+
 Disable OpenBSD-specific --execute-only default to fix
     ld: error: cannot place lto.tmp:(.rodata.mEndDesc) into .text: --execute-only does not support intermingling data and code
 
 Index: BaseTools/Conf/build_rule.template
 --- BaseTools/Conf/build_rule.template.orig
 +++ BaseTools/Conf/build_rule.template
+@@ -129,7 +129,7 @@
+         "$(CC)" /Fo${dst} $(DEPS_FLAGS) $(CC_FLAGS) $(INC) ${src}
+ 
+     <Command.GCC>
+-        "$(CC)" $(DEPS_FLAGS) $(CC_FLAGS) -c -o ${dst} $(INC) ${src}
++        "$(CC)" $(DEPS_FLAGS) $(CC_FLAGS) -fPIC -c -o ${dst} $(INC) ${src}
+ 
+     <Command.XCODE>
+         "$(CC)" $(DEPS_FLAGS) $(CC_FLAGS) -o ${dst} $(INC) ${src}
 @@ -294,7 +294,7 @@
          "$(DLINK)" /OUT:${dst} $(DLINK_FLAGS) $(DLINK_SPATH) @$(STATIC_LIBRARY_FILES_LIST) $(DLINK2_FLAGS)
  
      <Command.GCC>
 -        "$(DLINK)" -o ${dst} $(DLINK_FLAGS) -Wl,--start-group,@$(STATIC_LIBRARY_FILES_LIST),--end-group $(CC_FLAGS) $(DLINK2_FLAGS)
-+        "$(DLINK)" -o ${dst} $(DLINK_FLAGS) -Wl,--start-group,@$(STATIC_LIBRARY_FILES_LIST),--end-group $(CC_FLAGS) $(DLINK2_FLAGS) -Wl,--no-execute-only
++        "$(DLINK)" -o ${dst} $(DLINK_FLAGS) -Wl,--start-group,@$(STATIC_LIBRARY_FILES_LIST),--end-group $(CC_FLAGS) -fPIC $(DLINK2_FLAGS) -Wl,--no-execute-only
          "$(OBJCOPY)" $(OBJCOPY_FLAGS) ${dst}
  
      <Command.XCODE>
