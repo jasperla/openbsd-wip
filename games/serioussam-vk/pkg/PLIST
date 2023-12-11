@@ -1,4 +1,4 @@
-@conflict serioussam-vk-*
+@conflict serioussam-*
 @bin bin/serioussam
 @bin bin/serioussam-ded
 @bin bin/serioussam-mkfont
@@ -17,8 +17,8 @@ lib/serioussamse/
 @so lib/serioussamse/libGameMP.so
 @so lib/serioussamse/libShaders.so
 @so lib/serioussamse/libamp11lib.so
-@man man/man1/serioussam.1
-@man man/man1/serioussamclassic.1
+@man man/man1/serioussam-vk.1
+@man man/man1/serioussamclassic-vk.1
 share/applications/serioussam.desktop
 share/applications/serioussamse.desktop
 share/doc/pkg-readmes/${PKGSTEM}
