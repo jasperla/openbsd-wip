@@ -12,6 +12,7 @@ Features:
     Black)
   - pyproject.toml support
   - Python 3.12 compatibility
+  - Drop-in parity with Flake8, isort, and Black
   - Built-in caching, to avoid re-analyzing unchanged files
   - Fix support, for automatic error correction (e.g., automatically remove
     unused imports)
