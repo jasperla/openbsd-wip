@@ -61,7 +61,7 @@ SHA256 (cargo/lazy_static-1.4.0.tar.gz) = 4qutI/vEKzcA8vJ5hE3IMq2ysusGmy35GPRVxO
 SHA256 (cargo/libc-0.2.150.tar.gz) = idkqR0P5phAC+uGDdO0R55c/UwyzoyVfs1SBgRiyIDw=
 SHA256 (cargo/libloading-0.8.0.tar.gz) = 1YAxj5V3ZQUgGyjPmOsfpeS+O2iWM7pqPmzYgP8i2Ms=
 SHA256 (cargo/libmimalloc-sys-0.1.33.tar.gz) = 9KwOkSyO8bc16SNpaVYY3FsYGfWnvz8WcwGjuhzqUV4=
-SHA256 (cargo/line-index-0.1.0-pre.1.tar.gz) = LK2WdpcQwXReEdT5QKj/NgAK3ku62kKFsAHLiqL3Rc4=
+SHA256 (cargo/line-index-0.1.1.tar.gz) = Z9YXlTdq4mg5KMIY/afX19sTb9OMBrdVKQRmfw1VWAo=
 SHA256 (cargo/lock_api-0.4.10.tar.gz) = wcyXF6ILG7Ii8zPmqS/TL32KGN3FoxkaEa9F3L9NzRY=
 SHA256 (cargo/log-0.4.19.tar.gz) = sGpM3kwPJxpEZ4Lj7/jeeJVIzlfbyOypKSwn9KQgBLQ=
 SHA256 (cargo/lsp-server-0.7.4.tar.gz) = tS3M3zMC7vq4yKEnMEfwo8PcpLUnyEWNAMCUhMg3GSg=
@@ -187,7 +187,7 @@ SHA256 (cargo/xflags-macros-0.3.1.tar.gz) = 9Y57PKiXcJOq5rh7ancwIW/ExTplMLq1xDp4
 SHA256 (cargo/xshell-0.2.5.tar.gz) = ziEH/gPlWDU7THGtdibVjtgu+vVsVBNCKGCIk8dwI60=
 SHA256 (cargo/xshell-macros-0.2.5.tar.gz) = fixBF1m1AfuVAarCsbLSh6bpPlvc8TwlMGsj4bcW3Q4=
 SHA256 (cargo/zip-0.6.6.tar.gz) = dgOU4kbkwoGJ8Z1IjAWL8W9WQBau+sXTK7HztR1ekmE=
-SHA256 (rust-analyzer-2023-12-11.tar.gz) = HHGFwE2hLIOBmM0wTgnNDy2a+F+XPBviqBAMkEJUfCg=
+SHA256 (rust-analyzer-2023-12-18.tar.gz) = jjxlr0vJ8VjjDHxh/aLSFNLgRvnpR+hAGZvH37fU4mo=
 SIZE (cargo/addr2line-0.19.0.tar.gz) = 33210
 SIZE (cargo/adler-1.0.2.tar.gz) = 12778
 SIZE (cargo/always-assert-0.1.3.tar.gz) = 7063
@@ -251,7 +251,7 @@ SIZE (cargo/lazy_static-1.4.0.tar.gz) = 10443
 SIZE (cargo/libc-0.2.150.tar.gz) = 719359
 SIZE (cargo/libloading-0.8.0.tar.gz) = 27845
 SIZE (cargo/libmimalloc-sys-0.1.33.tar.gz) = 1166827
-SIZE (cargo/line-index-0.1.0-pre.1.tar.gz) = 3487
+SIZE (cargo/line-index-0.1.1.tar.gz) = 5495
 SIZE (cargo/lock_api-0.4.10.tar.gz) = 26713
 SIZE (cargo/log-0.4.19.tar.gz) = 38073
 SIZE (cargo/lsp-server-0.7.4.tar.gz) = 10489
@@ -377,4 +377,4 @@ SIZE (cargo/xflags-macros-0.3.1.tar.gz) = 12229
 SIZE (cargo/xshell-0.2.5.tar.gz) = 24242
 SIZE (cargo/xshell-macros-0.2.5.tar.gz) = 2845
 SIZE (cargo/zip-0.6.6.tar.gz) = 65789
-SIZE (rust-analyzer-2023-12-11.tar.gz) = 2726747
+SIZE (rust-analyzer-2023-12-18.tar.gz) = 2731185
