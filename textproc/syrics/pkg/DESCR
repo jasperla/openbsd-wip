@@ -1,4 +1,0 @@
-A command line tool to fetch lyrics from spotify and save it to lrc file.
-It can fetch both synced and unsynced lyrics from spotify.
-
-You can find API version at https://github.com/akashrchandran/spotify-lyrics-api
