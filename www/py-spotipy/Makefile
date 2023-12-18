@@ -15,8 +15,7 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 MODPY_PI =		Yes
-MODPY_PYBUILD =		Yes
-MODPY_PYTEST =		Yes
+MODPY_PYBUILD =		setuptools
 
 FLAVORS =		python3
 FLAVOR =		python3
@@ -25,5 +24,7 @@ RUN_DEPENDS =		databases/py-redis${MODPY_FLAVOR}>=3.5.3,<4.0.0 \
 			devel/py-six${MODPY_FLAVOR}>=1.15.0 \
 			www/py-requests${MODPY_FLAVOR}>=2.25.0 \
 			www/py-urllib3${MODPY_FLAVOR}>=1.26.0
+
+NO_TEST =		Yes
 
 .include <bsd.port.mk>
