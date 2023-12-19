@@ -1,0 +1,10 @@
+cargo-nextest is a next-generation test runner for Rust projects.
+
+Features:
+- Clean and beautiful user interface.
+- Up to 3x as fast as cargo test.
+- Identify slow and leaky tests.
+- Filter tests using an embedded language.
+- Configure per-test overrides.
+- Designed for CI. Nextest addresses real-world pain points in
+  continuous integration scenarios.

@@ -1,0 +1,19 @@
+Add waitid function in libc crate
+
+Index: modcargo-crates/libc-0.2.151/src/unix/bsd/netbsdlike/openbsd/mod.rs
+--- modcargo-crates/libc-0.2.151/src/unix/bsd/netbsdlike/openbsd/mod.rs.orig
++++ modcargo-crates/libc-0.2.151/src/unix/bsd/netbsdlike/openbsd/mod.rs
+@@ -2079,6 +2079,13 @@ extern "C" {
+     pub fn mimmutable(addr: *mut ::c_void, len: ::size_t) -> ::c_int;
+ 
+     pub fn reboot(mode: ::c_int) -> ::c_int;
++    
++    pub fn waitid(
++        idtype: idtype_t,
++        id: ::id_t,
++        infop: *mut ::siginfo_t,
++        options: ::c_int,
++    ) -> ::c_int;
+ }
+ 
+ #[link(name = "execinfo")]
