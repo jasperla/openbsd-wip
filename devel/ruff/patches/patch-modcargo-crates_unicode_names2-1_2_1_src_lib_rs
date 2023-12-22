@@ -6,9 +6,9 @@ Fix tests for crate unicode_names2
 - Suppress use of unstable library feature 'test': `bench` is a part of custom
   test frameworks which are unstable. See rustc --explain E0658
 
-Index: modcargo-crates/unicode_names2-1.2.0/src/lib.rs
---- modcargo-crates/unicode_names2-1.2.0/src/lib.rs.orig
-+++ modcargo-crates/unicode_names2-1.2.0/src/lib.rs
+Index: modcargo-crates/unicode_names2-1.2.1/src/lib.rs
+--- modcargo-crates/unicode_names2-1.2.1/src/lib.rs.orig
++++ modcargo-crates/unicode_names2-1.2.1/src/lib.rs
 @@ -30,8 +30,6 @@
  //!   string) is required, unless you use a raw string.
  //!
