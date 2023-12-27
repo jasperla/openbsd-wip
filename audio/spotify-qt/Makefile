@@ -18,7 +18,7 @@ LIB_DEPENDS =		devel/glib2 \
 			x11/gnome/libsecret \
 			x11/qt6/qtsvg
 
-RUN_DEPENDS =		audio/librespot
+RUN_DEPENDS =		audio/spotifyd
 
 # devel/kf5/kcrash is qt5-only
 CONFIGURE_ARGS =	-DUSE_QT6=ON \
