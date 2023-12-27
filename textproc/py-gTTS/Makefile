@@ -2,7 +2,7 @@ COMMENT =		Google Translate text-to-speech API library and CLI tool
 MODPY_EGG_VERSION =	2.5.0
 DISTNAME =		gTTS-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-CATEGORIES =		lang textproc audio
+CATEGORIES =		textproc audio
 
 MAINTAINER =		Klemens Nanni <kn@openbsd.org>
 

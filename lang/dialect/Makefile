@@ -26,8 +26,8 @@ RUN_DEPENDS =		devel/glib2 \
 			devel/gobject-introspection \
 			devel/libsoup3 \
 			devel/py-gobject3${MODPY_FLAVOR} \
-			lang/py-gTTS${MODPY_FLAVOR} \
 			multimedia/gstreamer1/core \
+			textproc/py-gTTS${MODPY_FLAVOR} \
 			www/py-beautifulsoup4${MODPY_FLAVOR} \
 			x11/dbus-python${MODPY_FLAVOR} \
 			x11/gnome/libadwaita \
