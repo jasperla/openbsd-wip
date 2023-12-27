@@ -9,7 +9,8 @@ MAINTAINER =		Klemens Nanni <kn@openbsd.org>
 # GPLv3.0
 PERMIT_PACKAGE =	Yes
 
-MODULES =		devel/meson \
+MODULES =		devel/dconf \
+			devel/meson \
 			lang/python
 
 BUILD_DEPENDS =		devel/gettext,-tools \
@@ -24,6 +25,7 @@ BUILD_DEPENDS =		devel/gettext,-tools \
 
 RUN_DEPENDS =		devel/glib2 \
 			devel/gobject-introspection \
+			devel/desktop-file-utils \
 			devel/libsoup3 \
 			devel/py-gobject3${MODPY_FLAVOR} \
 			multimedia/gstreamer1/core \
@@ -31,7 +33,8 @@ RUN_DEPENDS =		devel/glib2 \
 			www/py-beautifulsoup4${MODPY_FLAVOR} \
 			x11/dbus-python${MODPY_FLAVOR} \
 			x11/gnome/libadwaita \
-			x11/gtk+4
+			x11/gtk+4 \
+			x11/gtk+4,-guic
 
 PORTHOME =		${WRKDIR}
 
@@ -42,5 +45,8 @@ pre-test:
 	# avoid fetching files
 	sed -i 's,${PNG_URL},file://${WRKSRC}/,' \
 		${WRKBUILD}/data/app.drey.Dialect.metainfo.xml
+
+post-install:
+	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py ${PREFIX}/share/dialect/dialect/
 
 .include <bsd.port.mk>
