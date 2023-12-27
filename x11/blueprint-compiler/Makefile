@@ -2,7 +2,7 @@ COMMENT =		markup language for GTK user interfaces
 V =			0.10.0
 DIST_TUPLE =		gnome	jwestman	blueprint-compiler	v${V}	.
 WRKDIST =		${WRKDIR}/blueprint-compiler-v${V}
-CATEGORIES =		lang x11 graphics
+CATEGORIES =		x11 lang
 
 MAINTAINER =		Klemens Nanni <kn@openbsd.org>
 

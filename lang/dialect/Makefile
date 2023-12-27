@@ -17,8 +17,8 @@ BUILD_DEPENDS =		devel/gettext,-tools \
 			devel/gobject-introspection \
 			devel/libsoup3 \
 			devel/py-gobject3${MODPY_FLAVOR} \
-			lang/blueprint-compiler \
 			multimedia/gstreamer1/core \
+			x11/blueprint-compiler \
 			x11/gnome/libadwaita \
 			x11/gtk+4
 
