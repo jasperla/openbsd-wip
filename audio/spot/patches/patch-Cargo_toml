@@ -1,0 +1,14 @@
+Do not use ALSA
+
+Index: Cargo.toml
+--- Cargo.toml.orig
++++ Cargo.toml
+@@ -23,7 +23,7 @@ features = ["v2_60"]
+ 
+ [dependencies.librespot]
+ version = "0.4.2"
+-features = ["alsa-backend", "pulseaudio-backend"]
++features = ["pulseaudio-backend"]
+ 
+ [dependencies.protobuf]
+ version = "2.25.2"

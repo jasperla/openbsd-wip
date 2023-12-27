@@ -1,0 +1,42 @@
+     Running `/usr/ports/pobj/spot-0.4.0/build-amd64/target/release/build/curl-sys-723ae7bff32d31b3/build-script-build`
+error: failed to run custom build command for `curl-sys v0.4.59+curl-7.86.0`
+note: To improve backtraces for build dependencies, set the CARGO_PROFILE_RELEASE_BUILD_OVERRIDE_DEBUG=true environment variable to enable debug information generation.
+
+Caused by:
+  process didn't exit successfully: `/usr/ports/pobj/spot-0.4.0/build-amd64/target/release/build/curl-sys-723ae7bff32d31b3/build-script-build` (exit status: 101)
+  --- stdout
+  cargo:rerun-if-changed=curl
+  cargo:root=/usr/ports/pobj/spot-0.4.0/build-amd64/target/release/build/curl-sys-e6c673e27011e310/out
+  cargo:include=/usr/ports/pobj/spot-0.4.0/build-amd64/target/release/build/curl-sys-e6c673e27011e310/out/include
+  cargo:static=1
+  cargo:rustc-cfg=libcurl_vendored
+
+  --- stderr
+  fatal: not a git repository (or any parent up to mount point /usr/ports)
+  Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+  thread 'main' panicked at /usr/ports/pobj/spot-0.4.0/spot-0.4.0/modcargo-crates/curl-sys-0.4.59+curl-7.86.0/build.rs:94:10:
+  called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: "No such file or directory" }
+  stack backtrace:
+     0:      0x4b31753a7cd - <std::sys_common::backtrace::_print::DisplayBacktrace as core::fmt::Display>::fmt::h2130bf9a94244ec2
+     1:      0x4b31755ae9b - core::fmt::write::hf3c6f8949df7dea3
+     2:      0x4b31754a184 - std::io::Write::write_fmt::h66ccad8ed19ba9bc
+     3:      0x4b31753a5b3 - std::sys_common::backtrace::print::hdd1a86a58626cf87
+     4:      0x4b317525a9a - std::panicking::default_hook::{{closure}}::h96fabc124cb62bdc
+     5:      0x4b317525697 - std::panicking::default_hook::hb730f385e09e023e
+     6:      0x4b317526d38 - std::panicking::rust_panic_with_hook::h3140555fe88ffa1a
+     7:      0x4b31753ac17 - std::panicking::begin_panic_handler::{{closure}}::h67522f2b3b68fec5
+     8:      0x4b31753a9fd - std::sys_common::backtrace::__rust_end_short_backtrace::h04eeff3e7a9359f4
+     9:      0x4b31752693a - rust_begin_unwind
+    10:      0x4b31756054a - core::panicking::panic_fmt::h84543e3926ff3c98
+    11:      0x4b31755f8fa - core::result::unwrap_failed::ha26f1e668ca5a6af
+    12:      0x4b317489924 - core::result::Result<T,E>::unwrap::hb7619e217e1e02db
+    13:      0x4b31748ec06 - build_script_build::main::hf5cbaafb78b63caa
+    14:      0x4b317488c0a - core::ops::function::FnOnce::call_once::h494f08db3b477d32
+    15:      0x4b317488279 - std::sys_common::backtrace::__rust_begin_short_backtrace::h55b0ef326dc8776c
+    16:      0x4b317488680 - std::rt::lang_start::{{closure}}::h4da5ffe04e5cbb7f
+    17:      0x4b317525c1e - std::panicking::try::hb45f1d38bf7a4f3d
+    18:      0x4b317549963 - std::rt::lang_start_internal::hc31d13f37743cddd
+    19:      0x4b31748865d - std::rt::lang_start::hec338d567f0bec5a
+    20:      0x4b31749057c - main
+    21:      0x4b317487a51 - <unknown>
+warning: build failed, waiting for other jobs to finish...
