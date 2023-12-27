@@ -2,7 +2,7 @@ COMMENT =		translation app for GNOME
 V =			2.2.0
 DIST_TUPLE =		github	dialect-app	dialect	${V}	. \
 			github	dialect-app	po	${V}	po
-CATEGORIES =		lang x11 textproc
+CATEGORIES =		textproc x11
 
 MAINTAINER =		Klemens Nanni <kn@openbsd.org>
 
