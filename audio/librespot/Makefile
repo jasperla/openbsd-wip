@@ -1,6 +1,6 @@
 COMMENT =		client library for Spotify
 DIST_TUPLE =		github	librespot-org	librespot	v0.4.2	.
-CATEGORIES =		audio
+CATEGORIES =		audio net
 
 MAINTAINER =		Klemens Nanni <kn@openbsd.org>
 
