@@ -18,7 +18,9 @@ LIB_DEPENDS =		devel/glib2 \
 			x11/gnome/libsecret \
 			x11/qt6/qtsvg
 
-RUN_DEPENDS =		audio/spotifyd
+RUN_DEPENDS =		audio/spotifyd \
+			devel/desktop-file-utils \
+			x11/gtk+4,-guic
 
 # devel/kf5/kcrash is qt5-only
 CONFIGURE_ARGS =	-DUSE_QT6=ON \
