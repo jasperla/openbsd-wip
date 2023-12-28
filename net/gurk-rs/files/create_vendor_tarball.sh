@@ -1,6 +1,6 @@
 #!/bin/sh
 
-v=${1#v*}
+v=$(echo "$1" | awk '{ print $4 }' | tr -d "v")
 d=$(mktemp -d)
 cd $tmp
 echo "Vendoring gurk-rs $1 in $tmp ... please wait."
@@ -16,14 +16,21 @@ cargo vendor | tee /tmp/gurk-rs-$v.config
 # pack
 tar czvf gurk-rs-$v-vendorfiles.tar.gz \
     vendor/curve25519-dalek \
+    vendor/curve25519-dalek-derive \
     vendor/libsignal-protocol \
     vendor/libsignal-service \
     vendor/libsignal-service-hyper \
+    vendor/notify-rust \
     vendor/poksho \
     vendor/presage \
+    vendor/presage-store-sled \
+    vendor/presage-store-cipher \
+    vendor/qr2term \
+    vendor/signal-crypto \
     vendor/zkgroup \
-    vendor/notify-rust
+    vendor/zkcredential
 
+rm -f /tmp/gurk-rs-$v-vendorfiles.tar.gz
 mv gurk-rs-$v-vendorfiles.tar.gz /tmp
 
 # show config

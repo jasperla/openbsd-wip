@@ -1,25 +1,28 @@
-[patch.crates-io]
-notify-rust = { path = "vendor/notify-rust" }
+[source."git+https://github.com/boxdot/qr2term-rs?rev=ed8ae7f"]
+git = "https://github.com/boxdot/qr2term-rs"
+rev = "ed8ae7f"
+replace-with = "vendored-sources"
 
-[source."git+https://github.com/signalapp/curve25519-dalek?branch=lizard2"]
+[source."git+https://github.com/signalapp/curve25519-dalek?tag=signal-curve25519-4.0.0"]
 git = "https://github.com/signalapp/curve25519-dalek"
-branch = "lizard2"
+tag = "signal-curve25519-4.0.0"
 replace-with = "vendored-sources"
 
-[source."git+https://github.com/signalapp/libsignal?tag=v0.20.0"]
+[source."git+https://github.com/signalapp/libsignal?tag=v0.32.0"]
 git = "https://github.com/signalapp/libsignal"
-tag = "v0.20.0"
+tag = "v0.32.0"
 replace-with = "vendored-sources"
 
-[source."git+https://github.com/whisperfish/libsignal-service-rs?rev=791c521"]
+[source."git+https://github.com/whisperfish/libsignal-service-rs?rev=0a7987e"]
 git = "https://github.com/whisperfish/libsignal-service-rs"
-rev = "791c521"
+rev = "0a7987e"
 replace-with = "vendored-sources"
 
-[source."git+https://github.com/whisperfish/presage?rev=743d793"]
+[source."git+https://github.com/whisperfish/presage?rev=6d7003f"]
 git = "https://github.com/whisperfish/presage"
-rev = "743d793"
+rev = "6d7003f"
 replace-with = "vendored-sources"
 
 [source.vendored-sources]
 directory = "vendor"
+
