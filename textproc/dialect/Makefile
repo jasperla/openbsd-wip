@@ -3,11 +3,16 @@ V =			2.2.0
 DIST_TUPLE =		github	dialect-app	dialect	${V}	. \
 			github	dialect-app	po	${V}	po
 CATEGORIES =		textproc x11
+REVISION =		1
 
 MAINTAINER =		Klemens Nanni <kn@openbsd.org>
 
+HOMEPAGE =		https://dialectapp.org/
+
 # GPLv3.0
 PERMIT_PACKAGE =	Yes
+
+# uses pledge() and unveil()
 
 MODULES =		devel/dconf \
 			devel/meson \
@@ -28,6 +33,7 @@ RUN_DEPENDS =		devel/glib2 \
 			devel/desktop-file-utils \
 			devel/libsoup3 \
 			devel/py-gobject3${MODPY_FLAVOR} \
+			devel/py-openbsd${MODPY_FLAVOR} \
 			multimedia/gstreamer1/core \
 			textproc/py-gTTS${MODPY_FLAVOR} \
 			www/py-beautifulsoup4${MODPY_FLAVOR} \
