@@ -21,16 +21,19 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB +=	${MODCARGO_WANTLIB} m zstd
 
+LIB_DEPENDS +=		archivers/zstd
+
 MODULES =	devel/cargo
+
+SEPARATE_BUILD =	Yes
+
+CONFIGURE_STYLE =	cargo
 
 MODCARGO_RUSTFLAGS +=	-L${LOCALBASE}/lib
 
-CONFIGURE_STYLE =	cargo
-SEPARATE_BUILD =	Yes
-
-LIB_DEPENDS +=		archivers/zstd
-
-BUILD_DEPENDS +=	security/rust-ring
+# Disable feature for self-update
+MODCARGO_NO_DEFAULT_FEATURES =	Yes
+MODCARGO_FEATURES =		default-no-update
 
 post-extract:
 	mv ${WRKDIR}/nextest-cargo-nextest-${VERSION}/ ${WRKSRC}
