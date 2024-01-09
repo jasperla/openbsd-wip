@@ -1,3 +1,5 @@
+SHA256 (4a0de0ba4b706dd45b8c247a09e0ad0ec30f962e.patch) = VnhC46Hpt9iS9V6NEnMG5LWVHscP1cOkaHgzqCY2Vdk=
+SHA256 (770b6cc0b8138ba3224cbee9b1e6d9cdc550f2f1.patch) = 42wtr2CuZpCTpeM278YGLY9oI+a7x4hZPDnMFV4QSiw=
 SHA256 (cargo-nextest-0.9.66.tar.gz) = JSX6ZsaUWCH8W5V7XMQZIsaHlzG8qHEfV3+HlO8LOJ0=
 SHA256 (cargo/addr2line-0.21.0.tar.gz) = ijCy4jueF6n5BkHHqxVJzZtE8pbTzL8wnShjz+OYoMs=
 SHA256 (cargo/adler-1.0.2.tar.gz) = 8mIBYEyHseAb09mPjV2aj8u4FejO20H/zL60v1k6Nf4=
@@ -147,7 +149,7 @@ SHA256 (cargo/itoa-1.0.10.tar.gz) = saRtGhcdhlql+D+SaVdlyqBHqbTLriy/N9vWE6eT/Uw=
 SHA256 (cargo/jobserver-0.1.27.tar.gz) = jDf2OVPExjQg7V/T1tOYxxlIm5+HK5+mgyYvjt02PH0=
 SHA256 (cargo/js-sys-0.3.66.tar.gz) = zunGTaWerjtQCVwY0+dPi3PAuG0nkoJP8Bu85ouiKco=
 SHA256 (cargo/lazy_static-1.4.0.tar.gz) = 4qutI/vEKzcA8vJ5hE3IMq2ysusGmy35GPRVxOGMxkY=
-SHA256 (cargo/libc-0.2.151.tar.gz) = MC16sxMFiAiNJ3eDseLS4QyenkoW3ZBQ5uyT+z5wSPQ=
+SHA256 (cargo/libc-0.2.152.tar.gz) = E+O/ZZDLxkn00aPu/J1dbrdG9SAP+wTl4UJwC4+qVuc=
 SHA256 (cargo/libm-0.2.8.tar.gz) = TsKoYhNNKn0y15g93N0cSSNTCDPJ8uoaRPxfpHOYkFg=
 SHA256 (cargo/linked-hash-map-0.5.6.tar.gz) = BxfO8byLY2xuHBu978CeYyLaipMhlm6JKO+A0g9/dw8=
 SHA256 (cargo/linux-raw-sys-0.4.12.tar.gz) = xM0ag68VmqZ5lHeL6QcPCuG9cylCJ5yrsU+G+YaiFFY=
@@ -322,6 +324,7 @@ SHA256 (cargo/untrusted-0.9.0.tar.gz) = jsttoouKNR13O2jVglrDkBfmgHUPmA86GoXNjdKK
 SHA256 (cargo/url-2.5.0.tar.gz) = MeYwLju3U9Rug1FsrlWuGW/AwwlAfPEas1zFGkwqRjM=
 SHA256 (cargo/urlencoding-2.1.3.tar.gz) = 2vjbo7frhwyvHd7te8nSoEnzz9+ufLUhsIfMM65MSdo=
 SHA256 (cargo/utf8parse-0.2.1.tar.gz) = cRuWIK8ZHgzcdGio0U5wnD3NsRWzb4OOYBWDr4AKNwo=
+SHA256 (cargo/uuid-1.2.1.tar.gz) = /rQeePkzY7st+LDoaiyjDu14BuoW6gx5DXV8+T95voM=
 SHA256 (cargo/uuid-1.6.1.tar.gz) = Xjlfzxano9gSfsmXggB68UGUa0eVAB+HbVT7DVWXhWA=
 SHA256 (cargo/valuable-0.1.0.tar.gz) = gwt+XU2QA0AylA5Kzg2amgV+ekXNlObAB4MuOe24L20=
 SHA256 (cargo/vcpkg-0.2.15.tar.gz) = rM1Opi97t6gv4jBm+wlX1I72d/buuCFfNy9S5IuzJCY=
@@ -387,6 +390,8 @@ SHA256 (cargo/zipsign-api-0.1.1.tar.gz) = K6WqGCfWsaNaKbNBPsac5feW5NiX4+Wzj0Yb70
 SHA256 (cargo/zstd-0.13.0.tar.gz) = v/szCVltUnz8un38btYFLx053718hnqi6GXkpEnBARA=
 SHA256 (cargo/zstd-safe-7.0.0.tar.gz) = Q3R8dCLikkwRFE1SKYeLmBgO+LBsykq1rzevyKjY6j4=
 SHA256 (cargo/zstd-sys-2.0.9+zstd.1.5.5.tar.gz) = nhbvqKh0oEgaV0CE00zCb9s7mWJ0gPeFiI3rY4ZQZlY=
+SIZE (4a0de0ba4b706dd45b8c247a09e0ad0ec30f962e.patch) = 1117
+SIZE (770b6cc0b8138ba3224cbee9b1e6d9cdc550f2f1.patch) = 1410
 SIZE (cargo-nextest-0.9.66.tar.gz) = 7854213
 SIZE (cargo/addr2line-0.21.0.tar.gz) = 40807
 SIZE (cargo/adler-1.0.2.tar.gz) = 12778
@@ -536,7 +541,7 @@ SIZE (cargo/itoa-1.0.10.tar.gz) = 10534
 SIZE (cargo/jobserver-0.1.27.tar.gz) = 24774
 SIZE (cargo/js-sys-0.3.66.tar.gz) = 80765
 SIZE (cargo/lazy_static-1.4.0.tar.gz) = 10443
-SIZE (cargo/libc-0.2.151.tar.gz) = 736640
+SIZE (cargo/libc-0.2.152.tar.gz) = 740278
 SIZE (cargo/libm-0.2.8.tar.gz) = 113450
 SIZE (cargo/linked-hash-map-0.5.6.tar.gz) = 15049
 SIZE (cargo/linux-raw-sys-0.4.12.tar.gz) = 1465800
@@ -711,6 +716,7 @@ SIZE (cargo/untrusted-0.9.0.tar.gz) = 14447
 SIZE (cargo/url-2.5.0.tar.gz) = 78605
 SIZE (cargo/urlencoding-2.1.3.tar.gz) = 6538
 SIZE (cargo/utf8parse-0.2.1.tar.gz) = 13435
+SIZE (cargo/uuid-1.2.1.tar.gz) = 53789
 SIZE (cargo/uuid-1.6.1.tar.gz) = 55554
 SIZE (cargo/valuable-0.1.0.tar.gz) = 27718
 SIZE (cargo/vcpkg-0.2.15.tar.gz) = 228735
