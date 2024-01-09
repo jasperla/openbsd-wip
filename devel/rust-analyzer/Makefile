@@ -2,7 +2,7 @@ COMMENT =	implementation of Language Server Protocol for Rust
 
 GH_ACCOUNT =	rust-lang
 GH_PROJECT =	rust-analyzer
-GH_TAGNAME =	2024-01-01
+GH_TAGNAME =	2024-01-08
 
 PKGNAME =	rust-analyzer-${GH_TAGNAME:S/-//g}
 
