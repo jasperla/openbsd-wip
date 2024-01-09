@@ -1,4 +1,0 @@
-Python bindings for some OpenBSD-specific APIs.
-Currently the following are supported:
-- pledge
-- unveil
