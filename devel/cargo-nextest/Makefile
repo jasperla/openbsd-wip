@@ -28,6 +28,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB +=	${MODCARGO_WANTLIB} m zstd
 
+BUILD_DEPENDS +=	archivers/zstd
 LIB_DEPENDS +=		archivers/zstd
 
 MODULES =	devel/cargo
