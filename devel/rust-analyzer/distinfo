@@ -108,8 +108,8 @@ SHA256 (cargo/rayon-core-1.12.0.tar.gz) = XOP7atg/hhqsSF524Zhc0QnZo3E4AhUr5Ww7Hw
 SHA256 (cargo/redox_syscall-0.3.5.tar.gz) = VnZk8mJwlHOTCkv55Rvy6/M0jy50jMxQ3qIGRoWPjyk=
 SHA256 (cargo/redox_syscall-0.4.1.tar.gz) = RyLXaO/0a3WYndE05cNT8NYpblqqMTLndsvbVr53Mao=
 SHA256 (cargo/rowan-0.15.15.tar.gz) = MqWPqKfM/yrsTznMRb9fmFzscSWrJxz2gcJ5/QAZK0k=
-SHA256 (cargo/rust-analyzer-salsa-0.17.0-pre.4.tar.gz) = FsQrhzfDIFeLRBqC2vfN+NiXRo3mTop3T6VLU6ULbMA=
-SHA256 (cargo/rust-analyzer-salsa-macros-0.17.0-pre.4.tar.gz) = 23KwiD81kq3ivhWhBYPHXgsmnsJuEZCAD9ouLOWuZjQ=
+SHA256 (cargo/rust-analyzer-salsa-0.17.0-pre.5.tar.gz) = yp04epgB9PubNmeJrRv8CESMr8Sc8UjZB8/NiKtmXX8=
+SHA256 (cargo/rust-analyzer-salsa-macros-0.17.0-pre.5.tar.gz) = ogNfOF1/rjHpsIb0Cycu4decSERy8xyaEDSKQG6EHq8=
 SHA256 (cargo/rustc-demangle-0.1.23.tar.gz) = 1ia7na534oIZk3rwRcJXwov9P2kzPFElU1B/X5eYy3Y=
 SHA256 (cargo/rustc-hash-1.1.0.tar.gz) = CNQ/eqawjUnzgs3mp5ggR8NCbblJsUJLxLfsmuEsbOI=
 SHA256 (cargo/ryu-1.0.13.tar.gz) = +RM5wEZ95iNgZJ+NPhhcqN5CJP8oH2YADeXrKnenkEE=
@@ -126,6 +126,7 @@ SHA256 (cargo/sharded-slab-0.1.4.tar.gz) = kA+6gG9wxjCwo4LQ2CXheg8Z/NBZoq3h/yN7z
 SHA256 (cargo/smallvec-1.10.0.tar.gz) = pQe+/nlUBEVjQd+rEM72bq1MBB9iuLEbu5K//l0JU+A=
 SHA256 (cargo/smol_str-0.2.0.tar.gz) = dCEua76aQ1Iymy9oujEwwVo/Jv6I/yLb3GzdWPqF6Zw=
 SHA256 (cargo/snap-1.1.0.tar.gz) = Xp8Ktu9+tzU9kRnBcKQ20b8kjupXWsQtGdEvTjQTCDE=
+SHA256 (cargo/stable_deref_trait-1.2.0.tar.gz) = qPEScpUS+ORC2B+VqKfd8rfGuKGm9QmpWGQUKzDKstM=
 SHA256 (cargo/static_assertions-1.1.0.tar.gz) = ouuTSbZESzJocuFA6xz158UiFU1p56D/sPuBwGs3VD8=
 SHA256 (cargo/syn-2.0.39.tar.gz) = I+eLkPL89F0+hCAyzjLj8tFUW6ZjYnHcvyT6MG2Hvno=
 SHA256 (cargo/synstructure-0.13.0.tar.gz) = KFuoDnM/rICqQnD7zfg3cqebgKo1yXB1Mgq/7kqRWwY=
@@ -146,7 +147,7 @@ SHA256 (cargo/tracing-core-0.1.32.tar.gz) = wG09phE/EWqu5o5NYBGRYUyQUwZ/mrf27byx
 SHA256 (cargo/tracing-log-0.2.0.tar.gz) = 7oVfH0AL0OXALRUK5d44QAOaP1SwJRVkBONMI8A/R8M=
 SHA256 (cargo/tracing-subscriber-0.3.18.tar.gz) = rQ8EjJfb2fqpt99WNiuOvKpSrbBrSYwFDS9OMvkKeos=
 SHA256 (cargo/tracing-tree-0.3.0.tar.gz) = ZROezSw/ZITDuZvAHHev4h6VRzYwdHx6ylJeeLBmZnU=
-SHA256 (cargo/triomphe-0.1.10.tar.gz) = 0MWnGCesMmBytkBVUgk+KtKszSWjL9eNTtyC2Yx/JAk=
+SHA256 (cargo/triomphe-0.1.11.tar.gz) = hZ62UM/udDSZRgLDposl13rZ5oyKbNSRYW74ZmE4LrM=
 SHA256 (cargo/typed-arena-2.0.2.tar.gz) = avauIBZ6ns5Ly0GvW4D4ofHfmB9jkRic4A/SV68EEmo=
 SHA256 (cargo/ungrammar-1.16.1.tar.gz) = o+XfNH8L8+wdZwqtbKXGoYWc2eph0hExJXlGVMzO1o8=
 SHA256 (cargo/unicase-2.6.0.tar.gz) = UPN75hd5RgKqu+7gvk8lncF3j6vgXi1n7o95Mm1ctPY=
@@ -187,7 +188,7 @@ SHA256 (cargo/xflags-macros-0.3.1.tar.gz) = 9Y57PKiXcJOq5rh7ancwIW/ExTplMLq1xDp4
 SHA256 (cargo/xshell-0.2.5.tar.gz) = ziEH/gPlWDU7THGtdibVjtgu+vVsVBNCKGCIk8dwI60=
 SHA256 (cargo/xshell-macros-0.2.5.tar.gz) = fixBF1m1AfuVAarCsbLSh6bpPlvc8TwlMGsj4bcW3Q4=
 SHA256 (cargo/zip-0.6.6.tar.gz) = dgOU4kbkwoGJ8Z1IjAWL8W9WQBau+sXTK7HztR1ekmE=
-SHA256 (rust-analyzer-2024-01-08.tar.gz) = /fEylUgQPba0N/28ubzgwBBB2lRSgqRxH5Up5T2tzW4=
+SHA256 (rust-analyzer-2024-01-15.tar.gz) = 0b9oZNfXEch5dE2o0UL9wIPaciEYQS1+OzzebGYmlbg=
 SIZE (cargo/addr2line-0.19.0.tar.gz) = 33210
 SIZE (cargo/adler-1.0.2.tar.gz) = 12778
 SIZE (cargo/always-assert-0.1.3.tar.gz) = 7063
@@ -298,8 +299,8 @@ SIZE (cargo/rayon-core-1.12.0.tar.gz) = 70081
 SIZE (cargo/redox_syscall-0.3.5.tar.gz) = 23404
 SIZE (cargo/redox_syscall-0.4.1.tar.gz) = 24858
 SIZE (cargo/rowan-0.15.15.tar.gz) = 39971
-SIZE (cargo/rust-analyzer-salsa-0.17.0-pre.4.tar.gz) = 475618
-SIZE (cargo/rust-analyzer-salsa-macros-0.17.0-pre.4.tar.gz) = 10826
+SIZE (cargo/rust-analyzer-salsa-0.17.0-pre.5.tar.gz) = 476021
+SIZE (cargo/rust-analyzer-salsa-macros-0.17.0-pre.5.tar.gz) = 10889
 SIZE (cargo/rustc-demangle-0.1.23.tar.gz) = 28970
 SIZE (cargo/rustc-hash-1.1.0.tar.gz) = 9331
 SIZE (cargo/ryu-1.0.13.tar.gz) = 46823
@@ -316,6 +317,7 @@ SIZE (cargo/sharded-slab-0.1.4.tar.gz) = 52479
 SIZE (cargo/smallvec-1.10.0.tar.gz) = 31564
 SIZE (cargo/smol_str-0.2.0.tar.gz) = 13467
 SIZE (cargo/snap-1.1.0.tar.gz) = 33163
+SIZE (cargo/stable_deref_trait-1.2.0.tar.gz) = 8054
 SIZE (cargo/static_assertions-1.1.0.tar.gz) = 18480
 SIZE (cargo/syn-2.0.39.tar.gz) = 244129
 SIZE (cargo/synstructure-0.13.0.tar.gz) = 19121
@@ -336,7 +338,7 @@ SIZE (cargo/tracing-core-0.1.32.tar.gz) = 61221
 SIZE (cargo/tracing-log-0.2.0.tar.gz) = 17561
 SIZE (cargo/tracing-subscriber-0.3.18.tar.gz) = 196312
 SIZE (cargo/tracing-tree-0.3.0.tar.gz) = 28123
-SIZE (cargo/triomphe-0.1.10.tar.gz) = 28183
+SIZE (cargo/triomphe-0.1.11.tar.gz) = 28299
 SIZE (cargo/typed-arena-2.0.2.tar.gz) = 11848
 SIZE (cargo/ungrammar-1.16.1.tar.gz) = 8383
 SIZE (cargo/unicase-2.6.0.tar.gz) = 23478
@@ -377,4 +379,4 @@ SIZE (cargo/xflags-macros-0.3.1.tar.gz) = 12229
 SIZE (cargo/xshell-0.2.5.tar.gz) = 24242
 SIZE (cargo/xshell-macros-0.2.5.tar.gz) = 2845
 SIZE (cargo/zip-0.6.6.tar.gz) = 65789
-SIZE (rust-analyzer-2024-01-08.tar.gz) = 2756520
+SIZE (rust-analyzer-2024-01-15.tar.gz) = 2759746
