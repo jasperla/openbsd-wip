@@ -1,6 +1,6 @@
 COMMENT =	open source version of the classic Serious Sam game
 
-V=		1.10.6c
+V=		1.10.6d
 
 DIST_TUPLE =	github tx00100xt SeriousSamClassic ${V} .
 PKGNAME =	serioussam-${V}
