@@ -1,0 +1,22 @@
+Index: rts/Rendering/Env/Decals/GroundDecalHandler.cpp
+--- rts/Rendering/Env/Decals/GroundDecalHandler.cpp.orig
++++ rts/Rendering/Env/Decals/GroundDecalHandler.cpp
+@@ -62,12 +62,12 @@ CGroundDecalHandler::CGroundDecalHandler(): CEventClie
+ 	eventHandler.AddClient(this);
+ 	CExplosionCreator::AddExplosionListener(this);
+ 
+-	sogdMemPool.clear();
+-	sogdMemPool.reserve(128);
+-	freeScarIDs.clear();
+-	freeScarIDs.reserve(MAX_SCAR_COUNT);
+-	usedScarIDs.clear();
+-	usedScarIDs.reserve(128);
++	//sogdMemPool.clear();
++	//sogdMemPool.reserve(128);
++	//freeScarIDs.clear();
++	//freeScarIDs.reserve(MAX_SCAR_COUNT);
++	//usedScarIDs.clear();
++	//usedScarIDs.reserve(128);
+ 	scarTexBuf.clear();
+ 	scarTexBuf.resize(512 * 512 * 4, 0); // 1MB
+ 

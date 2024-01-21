@@ -1,0 +1,26 @@
+DEBUG: check if code is compiled with these definitions
+DEBUG: enable LUA_USE_APICHECK
+
+Index: rts/lib/lua/include/luaconf.h
+--- rts/lib/lua/include/luaconf.h.orig
++++ rts/lib/lua/include/luaconf.h
+@@ -33,11 +33,9 @@
+ #define LUA_WIN
+ #endif
+ 
+-#if defined(LUA_USE_LINUX)
+ #define LUA_USE_POSIX
+ #define LUA_USE_DLOPEN		/* needs an extra library: -ldl */
+ #define LUA_USE_READLINE	/* needs some extra libraries */
+-#endif
+ 
+ #if defined(LUA_USE_MACOSX)
+ #define LUA_USE_POSIX
+@@ -381,6 +379,7 @@
+ ** a bit, but may be quite useful when debugging C code that interfaces
+ ** with Lua. A useful redefinition is to use assert.h.
+ */
++#define LUA_USE_APICHECK 1
+ #if defined(LUA_USE_APICHECK)
+ #include <assert.h>
+ #define luai_apicheck(L,o)	{ (void)L; assert(o); }
