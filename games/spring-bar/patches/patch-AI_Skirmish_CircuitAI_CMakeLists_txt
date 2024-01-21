@@ -3,7 +3,7 @@ work around Linux futex implementation
 Index: AI/Skirmish/CircuitAI/CMakeLists.txt
 --- AI/Skirmish/CircuitAI/CMakeLists.txt.orig
 +++ AI/Skirmish/CircuitAI/CMakeLists.txt
-@@ -9,7 +9,7 @@ if (WIN32)  # spring::condition_variable_any requireme
+@@ -11,7 +11,7 @@ if (WIN32)  # spring::condition_variable_any requireme
  elseif (APPLE)
  	set(additionalSources  ${additionalSources} ${CMAKE_SOURCE_DIR}/rts/System/Platform/Mac/Signal.cpp)
  else ()

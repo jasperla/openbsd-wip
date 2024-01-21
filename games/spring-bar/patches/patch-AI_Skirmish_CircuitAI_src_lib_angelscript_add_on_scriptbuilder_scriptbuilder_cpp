@@ -10,7 +10,7 @@ Index: AI/Skirmish/CircuitAI/src/lib/angelscript/add_on/scriptbuilder/scriptbuil
  #include <unistd.h> // For getcwd()
  #endif
  
-@@ -1155,7 +1155,7 @@ string GetCurrentDir()
+@@ -1205,7 +1205,7 @@ string GetCurrentDir()
  	#else
  	return _getcwd(buffer, (int)1024);
  	#endif // _MSC_VER

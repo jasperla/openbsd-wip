@@ -3,7 +3,7 @@ avoid collision with ctype.h macro _L
 Index: rts/Lua/LuaUtils.cpp
 --- rts/Lua/LuaUtils.cpp.orig
 +++ rts/Lua/LuaUtils.cpp
-@@ -1380,9 +1380,9 @@ int LuaUtils::PushDebugTraceback(lua_State* L)
+@@ -1391,9 +1391,9 @@ int LuaUtils::PushDebugTraceback(lua_State* L)
  
  
  

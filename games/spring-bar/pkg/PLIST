@@ -59,14 +59,15 @@ include/tracy/TracyVulkan.hpp
 lib/cmake/cpuid/
 lib/cmake/cpuid/cpuidConfig.cmake
 lib/cmake/cpuid/cpuidConfigVersion.cmake
-lib/cmake/cpuid/cpuidTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/cpuid/cpuidTargets-relwithdebinfo.cmake
 lib/cmake/cpuid/cpuidTargets.cmake
 @static-lib lib/libTracyClient.a
 @static-lib lib/libcpuid.a
 @so lib/libunitsync.so
+lib/pkgconfig/gflags.pc
 lib/pkgconfig/libcpuid.pc
 share/Tracy/
-share/Tracy/TracyConfig${MODCMAKE_BUILD_SUFFIX}
+share/Tracy/TracyConfig-relwithdebinfo.cmake
 share/Tracy/TracyConfig.cmake
 share/applications/spring.desktop
 share/games/
@@ -110,6 +111,9 @@ share/games/spring/AI/Skirmish/BARb/stable/script/dev/manager/builder.as
 share/games/spring/AI/Skirmish/BARb/stable/script/dev/manager/economy.as
 share/games/spring/AI/Skirmish/BARb/stable/script/dev/manager/factory.as
 share/games/spring/AI/Skirmish/BARb/stable/script/dev/manager/military.as
+share/games/spring/AI/Skirmish/BARb/stable/script/dev/misc/
+share/games/spring/AI/Skirmish/BARb/stable/script/dev/misc/commander.as
+share/games/spring/AI/Skirmish/BARb/stable/script/task.as
 share/games/spring/AI/Skirmish/BARb/stable/script/unit.as
 share/games/spring/AI/Skirmish/CircuitAI/
 share/games/spring/AI/Skirmish/CircuitAI/stable/
@@ -135,14 +139,7 @@ share/games/spring/AI/Skirmish/CircuitAI/stable/config/previous/response.json
 share/games/spring/AI/Skirmish/CircuitAI/stable/config/response.json
 @so share/games/spring/AI/Skirmish/CircuitAI/stable/libSkirmishAI.so
 share/games/spring/AI/Skirmish/CircuitAI/stable/script/
-share/games/spring/AI/Skirmish/CircuitAI/stable/script/commander.as
 share/games/spring/AI/Skirmish/CircuitAI/stable/script/init.as
-share/games/spring/AI/Skirmish/CircuitAI/stable/script/main.as
-share/games/spring/AI/Skirmish/CircuitAI/stable/script/manager/
-share/games/spring/AI/Skirmish/CircuitAI/stable/script/manager/builder.as
-share/games/spring/AI/Skirmish/CircuitAI/stable/script/manager/economy.as
-share/games/spring/AI/Skirmish/CircuitAI/stable/script/manager/factory.as
-share/games/spring/AI/Skirmish/CircuitAI/stable/script/manager/military.as
 share/games/spring/AI/Skirmish/CircuitAI/stable/script/role.as
 share/games/spring/AI/Skirmish/CircuitAI/stable/script/side.as
 share/games/spring/AI/Skirmish/CppTestAI/

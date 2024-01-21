@@ -4,7 +4,7 @@ link libexecinfo (for backtrace_symbols)
 Index: rts/CMakeLists.txt
 --- rts/CMakeLists.txt.orig
 +++ rts/CMakeLists.txt
-@@ -76,15 +76,16 @@ if    (UNIX AND NOT MINGW)
+@@ -77,9 +77,9 @@ if    (UNIX AND NOT MINGW)
  	list(APPEND engineCommonLibraries ${CMAKE_DL_LIBS})
  
  	# Needed for backtrace* on some systems
@@ -16,14 +16,15 @@ Index: rts/CMakeLists.txt
  endif (UNIX AND NOT MINGW)
  
  find_package_static(ZLIB REQUIRED)
- list(APPEND engineCommonLibraries ${IL_LIBRARIES} ${JPEG_LIBRARY} ${PNG_LIBRARY} ${TIFF_LIBRARY} ${GIF_LIBRARY})
+@@ -87,6 +87,7 @@ list(APPEND engineCommonLibraries ${IL_LIBRARIES} ${JP
  list(APPEND engineCommonLibraries 7zip prd::jsoncpp ${SPRING_MINIZIP_LIBRARY} ${ZLIB_LIBRARY} Tracy::TracyClient)
- list(APPEND engineCommonLibraries lua luasocket archives assimp gflags)
+ list(APPEND engineCommonLibraries lua luasocket archives assimp
+ 	gflags_nothreads_static)
 +list(APPEND engineCommonLibraries execinfo)
  if (ENABLE_STREFLOP)
  	list(APPEND engineCommonLibraries streflop)
  endif ()
-@@ -95,7 +96,7 @@ if (WIN32)
+@@ -97,7 +98,7 @@ if (WIN32)
  	list(APPEND engineCommonLibraries ${WIN32_LIBRARIES})
  endif (WIN32)
  
@@ -32,7 +33,7 @@ Index: rts/CMakeLists.txt
  	#tcmalloc on freebsd is broken, default disable it (#4754)
  	set(USE_TCMALLOC_DEFAULT FALSE)
  else()
-@@ -110,7 +111,7 @@ if    (USE_TCMALLOC AND TCMALLOC_LIBRARY)
+@@ -112,7 +113,7 @@ if    (USE_TCMALLOC AND TCMALLOC_LIBRARY)
  endif (USE_TCMALLOC AND TCMALLOC_LIBRARY)
  
  

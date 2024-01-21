@@ -1,17 +1,12 @@
-we don't have alloca.h
-TODO: double-check if including <sys/malloc.h> is truly needed
-
 Index: rts/lib/xsimd/memory/xsimd_aligned_allocator.hpp
 --- rts/lib/xsimd/memory/xsimd_aligned_allocator.hpp.orig
 +++ rts/lib/xsimd/memory/xsimd_aligned_allocator.hpp
-@@ -19,7 +19,9 @@
+@@ -19,7 +19,7 @@
  #include "../config/xsimd_align.hpp"
  
  #if defined(XSIMD_ALLOCA)
 -#if defined(__GNUC__)
-+#if defined(__OpenBSD__)
-+#include <sys/malloc.h>
-+#elif defined(__GNUC__)
++#if defined(__GNUC__) && !defined(__OpenBSD__)
  #include <alloca.h>
  #elif defined(_MSC_VER)
  #include <malloc.h>

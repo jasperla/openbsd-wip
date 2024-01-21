@@ -3,7 +3,7 @@ add OpenBSD to XInitThreads() code path to make calls to X11 threadsafe
 Index: rts/System/SpringApp.cpp
 --- rts/System/SpringApp.cpp.orig
 +++ rts/System/SpringApp.cpp
-@@ -296,7 +296,7 @@ bool SpringApp::Init()
+@@ -301,7 +301,7 @@ bool SpringApp::Init()
  
  bool SpringApp::InitPlatformLibs()
  {

@@ -1,7 +1,7 @@
 Index: rts/builds/dedicated/CMakeLists.txt
 --- rts/builds/dedicated/CMakeLists.txt.orig
 +++ rts/builds/dedicated/CMakeLists.txt
-@@ -43,9 +43,9 @@ if    (UNIX AND NOT MINGW)
+@@ -44,9 +44,9 @@ if    (UNIX AND NOT MINGW)
  	list(APPEND engineDedicatedLibraries ${CMAKE_DL_LIBS})
  
  	# Needed for backtrace* on some systems

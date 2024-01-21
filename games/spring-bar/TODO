@@ -1,23 +1,37 @@
 Spring BAR:
 -----------
+- need to fix the error on launch when ~/.config/spring doesn't exist
 - Naming: spring-bar or recoil? (see different names used upstream)
-- check about replacing std::shuffle with spring::random_shuffle from rts/System/Cpp11Compat.hpp ?
-- currently segfaulting with different port code places and the intel iris driver in the stacktrace
 - make hardcoded version in patches smarter
-- xsimd_alligned_allocator.hpp: is header sys/malloc.h truly needed?
+- add note to test with -safemode, too, which yields different results
+- see about enabling tests in ${WRKSRC}/test
+- double free upon exiting Zero-K (2024-01-20):
+[t=00:16:41.910447][f=0026339] End gadgetHandler:Shutdown
+spring(70628) in free(): bogus pointer (double free?) 0x2e9000002e8
+Abort trap (core dumped)
 
-Old:
-----
+BYAR-Chobby (the BAR Lobby application for Spring - maybe add to README?):
+--------------------------------------------------------------------------
+- steps to set this up:
+  - Download BYAR-Chobby into ~/.spring/games/BYAR-Chobby.sdd/
+  - Download Chobby into ~/.spring/games/Chobby.sdd/
+  - change modinfo.lua in BYAR-Chobby to use Chobby $VERSION instead of rapid://chobby:test
+  - cp BYAR-Chobby.sdd/dist_cfg/files/chobby_config.json Chobby.sdd/
+  - start with: $ spring --menu 'BYAR Chobby $VERSION'
+- figure out "Cannot reach server" server3.beyondallreason.info:8200
+  - this here is reached: https://github.com/beyond-all-reason/BYAR-Chobby/blob/c9f0f8e98054dc1afccfa9ba7014a1b17bba3275/LuaMenu/widgets/chobby/components/login_window.lua#L982
+  - looks like spring-launcher is needed to run for this to work; see https://github.com/Spring-Chobby/Chobby/blob/master/LuaMenu/widgets/sl_loopback.lua#L156
+    - also: https://github.com/Spring-Chobby/Chobby/blob/70fed18bbe0a35a0f7a1fb3d07c35f61baa68453/libs/spring-launcher/README.md
+
+Other:
+------
 - address cmake warning that -O2 -pipe will "very likely not sync in online mode"
 - fix man page generation; looks for docbook (textproc/docbook) in configure stage, textproc/libxslt, asciidoc
-- ONLY_FOR_ARCHS=amd64 really needed?
-- add SHARED_LIBS +/- versioning, e.g. libunitsync.so
-- Java dependencies, incl MODULES=java really needed?
-- does it need Lua dependencies? Uses it at runtime at least. Add MODULES=lang/lua?
+- ONLY_FOR_ARCHS=amd64 really needed? - has high performance requirements
+- add SHARED_LIBS +/- versioning, e.g. libunitsync.so ?
+- Java dependencies, incl MODULES=java needed?
 - Is -DAI_TYPES="NATIVE" really needed? (taken from FreeBSD port, also seems to be in the beyond-all-reason build options)
   -> https://github.com/beyond-all-reason/spring/releases/download/spring_bar_%7BBAR105%7D105.1.1-1544-g058c8ea/buildoptions_linux-64.txt
 - remove debug flags (-O0 -g) when not needed anymore
-- rework replacing std::random_shuffle based on FreeBSD example? Or use Cpp11Compat (see above)
-  https://github.com/freebsd/freebsd-ports/blob/main/games/spring/files/patch-shuffle
 - glob(3) workaround for tilde expansion can't expand env variables like wordexp can. Consider more complete implementation of that, and restore use of ${XDG_CONFIG_DIR} ?
 - make GetProcessExecutableFile smarter - currently hardcodes /usr/local/bin/spring, but there are other binaries included in the port that need to be accounted for: spring-dedicated and spring-headless. (May need to store argv[0] in Run(), then use it here in rts/System/Platform/Misc.cpp.)
