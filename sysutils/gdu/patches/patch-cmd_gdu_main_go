@@ -6,7 +6,7 @@ Index: cmd/gdu/main.go
  
  var rootCmd = &cobra.Command{
 -	Use:   "gdu [directory_to_scan]",
-+	Use:   "ggdu [directory_to_scan]",
++	Use:   "godu [directory_to_scan]",
  	Short: "Pretty fast disk usage analyzer written in Go",
  	Long: `Pretty fast disk usage analyzer written in Go.
  

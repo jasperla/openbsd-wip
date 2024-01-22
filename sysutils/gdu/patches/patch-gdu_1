@@ -6,7 +6,7 @@ Index: gdu.1
  .SH SYNOPSIS
  .PP
 -\f[B]gdu [flags] [directory_to_scan]\f[R]
-+\f[B]ggdu [flags] [directory_to_scan]\f[R]
++\f[B]godu [flags] [directory_to_scan]\f[R]
  .SH DESCRIPTION
  .PP
  Pretty fast disk usage analyzer written in Go.
