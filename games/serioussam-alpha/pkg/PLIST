@@ -1,0 +1,6 @@
+lib/serioussam/Mods/
+lib/serioussam/Mods/SSA/
+@so lib/serioussam/Mods/SSA/libEntities.so
+@so lib/serioussam/Mods/SSA/libGame.so
+@man man/man1/serioussam-alpha.1
+share/doc/pkg-readmes/${PKGSTEM}

@@ -1,0 +1,18 @@
++----------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++----------------------------------------------------------------------
+
+To add Serious Sam Alpha Remake, you will need the "serioussam" port
+installed and a copy of the game on Steam, GOG or on CD. For details about
+the "serioussam" port, enter the command: man serioussam
+
+Download the mod content using the command: wget
+https://archive.org/download/serioussam-alpharemake-mod-data/SeriousSamAlphaRemake_v1.5.7z
+
+Unpack the add-on archive into the directory:
+
+~/.local/share/Serious-Engine/serioussam/
+
+For more information see: 
+https://github.com/tx00100xt/SeriousSamAlphaRemake
+https://github.com/tx00100xt/SeriousSamAlphaRemake/wiki
