@@ -70,6 +70,7 @@ share/Tracy/
 share/Tracy/TracyConfig-relwithdebinfo.cmake
 share/Tracy/TracyConfig.cmake
 share/applications/spring.desktop
+share/doc/pkg-readmes/${PKGSTEM}
 share/games/
 share/games/spring/
 share/games/spring/AI/

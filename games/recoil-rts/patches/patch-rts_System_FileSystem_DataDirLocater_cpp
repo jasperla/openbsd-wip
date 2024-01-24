@@ -1,45 +1,35 @@
-bypass use of wordexp.h, using glob
+bypass the wordexp use
+use std::getenv to look up correct user directories
 bypass use of XDG_CONFIG_DIR env var which currently isn't working
 
 Index: rts/System/FileSystem/DataDirLocater.cpp
 --- rts/System/FileSystem/DataDirLocater.cpp.orig
 +++ rts/System/FileSystem/DataDirLocater.cpp
-@@ -16,6 +16,11 @@
+@@ -16,7 +16,7 @@
  	#ifndef SHGFP_TYPE_CURRENT
  		#define SHGFP_TYPE_CURRENT 0
  	#endif
-+#endif
-+
-+#ifdef __OpenBSD__
-+	#include <glob.h>
-+	#include <iostream>
- #else
+-#else
++#elif !defined(__OpenBSD__)
  	#include <wordexp.h>
  #endif
-@@ -135,6 +140,16 @@ std::string DataDirLocater::SubstEnvVars(const std::st
+ 
+@@ -135,6 +135,8 @@ std::string DataDirLocater::SubstEnvVars(const std::st
  	char out_c[maxSize];
  	ExpandEnvironmentStrings(in.c_str(), out_c, maxSize); // expands %HOME% etc.
  	out = out_c;
 +#elif defined(__OpenBSD__)
-+	constexpr size_t maxSize = 32 * 1024;
-+	char out_c[maxSize];
-+	glob_t p;
-+	if (glob(in.c_str(), GLOB_TILDE, NULL, &p) == false) {
-+    		out = p.gl_pathv[0];
-+	} else {
-+    		out = in;
-+	}
-+	globfree(&p);
++	out = in;
  #else
  	std::string previous = in;
  
-@@ -310,6 +325,9 @@ void DataDirLocater::AddHomeDirs()
+@@ -310,6 +312,9 @@ void DataDirLocater::AddHomeDirs()
  	AddDirs(dd_myDocs);         // "C:/.../My Documents/Spring/"
  	AddDirs(dd_appData);        // "C:/.../All Users/Applications/Spring/"
  
 +#elif defined(__OpenBSD__)
-+	AddDirs("~/.config/spring");
-+	AddDirs("~/.spring");
++	AddDirs(std::string(std::getenv("HOME")) + "/.config/spring");
++	AddDirs(std::string(std::getenv("HOME")) + "/.spring");
  #else
  	// Linux, FreeBSD, Solaris, Apple non-bundle
  	AddDirs("${XDG_CONFIG_HOME-\"~/.config\"}/spring");

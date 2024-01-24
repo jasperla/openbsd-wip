@@ -1,14 +1,15 @@
+alignment aware memory pools:
+https://github.com/beyond-all-reason/spring/pull/1165
+
 Index: rts/Sim/Projectiles/ExplosionGenerator.cpp
 --- rts/Sim/Projectiles/ExplosionGenerator.cpp.orig
 +++ rts/Sim/Projectiles/ExplosionGenerator.cpp
-@@ -153,8 +153,8 @@ std::string ClassAliasList::FindAlias(const std::strin
+@@ -39,7 +39,7 @@
+ #include "System/SafeUtil.h"
+ #include "System/StringHash.h"
  
- void CExplosionGeneratorHandler::Init()
- {
--	egMemPool.clear();
--	egMemPool.reserve(512);
-+	//egMemPool.clear();
-+	//egMemPool.reserve(512);
+-static DynMemPool<sizeof(CCustomExplosionGenerator)> egMemPool;
++static DynMemPoolT<CCustomExplosionGenerator, CStdExplosionGenerator, IExplosionGenerator> egMemPool;
  
- 	explosionGenerators.reserve(512);
- 	explosionGenerators.push_back(egMemPool.alloc<CStdExplosionGenerator>()); // id=0 (shared standard EG)
+ alignas(LuaParser) static std::byte exploParserMem[sizeof(LuaParser)];
+ alignas(LuaParser) static std::byte aliasParserMem[sizeof(LuaParser)];

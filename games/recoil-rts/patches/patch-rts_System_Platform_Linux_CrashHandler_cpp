@@ -1,6 +1,6 @@
 stub thread_unwind
 comment out use of backtrace_symbols
-don't run backtrace functions; std::abort() instead
+don't run backtrace functions; return instead
 
 Index: rts/System/Platform/Linux/CrashHandler.cpp
 --- rts/System/Platform/Linux/CrashHandler.cpp.orig
@@ -24,7 +24,7 @@ Index: rts/System/Platform/Linux/CrashHandler.cpp
  		assert(iparray != nullptr);
  
  		unw_cursor_t cursor;
-@@ -772,11 +775,15 @@ namespace CrashHandler
+@@ -772,11 +775,16 @@ namespace CrashHandler
  		}
  
  		return (int(stacktrace.size()));
@@ -35,12 +35,13 @@ Index: rts/System/Platform/Linux/CrashHandler.cpp
  	static void Stacktrace(pthread_t* hThread = nullptr, const char* threadName = nullptr, const int logLevel = LOG_LEVEL_ERROR)
  	{
 +#ifdef __OpenBSD__
-+		std::abort();
++		//std::abort();
++		return;
 +#else
  #if !(DEDICATED || UNIT_TEST)
  		Watchdog::ClearTimer();
  #endif
-@@ -798,7 +805,7 @@ namespace CrashHandler
+@@ -798,7 +806,7 @@ namespace CrashHandler
  				LOG_L(L_ERROR, "thread_unwind returned more lines than we allotted space for!");
  
  			// get untranslated stacktrace symbols; give them meaningful names
@@ -49,7 +50,7 @@ Index: rts/System/Platform/Linux/CrashHandler.cpp
  		}
  
  		if (stacktrace.empty()) {
-@@ -808,6 +815,7 @@ namespace CrashHandler
+@@ -808,6 +816,7 @@ namespace CrashHandler
  
  		TranslateStackTrace(stacktrace, logLevel);
  		LogStacktrace(logLevel, stacktrace);
@@ -57,17 +58,18 @@ Index: rts/System/Platform/Linux/CrashHandler.cpp
  	}
  
  
-@@ -817,6 +825,9 @@ namespace CrashHandler
+@@ -817,6 +826,10 @@ namespace CrashHandler
  	 */
  	void Stacktrace(Threading::NativeThreadHandle thread, const std::string& threadName, const int logLevel)
  	{
 +#ifdef __OpenBSD__
-+		std::abort();
++		//std::abort();
++		return;
 +#else
  		//TODO Our custom thread_backtrace() only works on the mainthread.
  		//     Use gdb's libthread_db to get the stacktraces of all threads.
  		if (!Threading::IsMainThread(thread) && Threading::GetCurrentThread() != thread) {
-@@ -828,6 +839,7 @@ namespace CrashHandler
+@@ -828,6 +841,7 @@ namespace CrashHandler
  		PrepareStacktrace();
  		Stacktrace(&thread, threadName.c_str(), logLevel);
  		CleanupStacktrace();
@@ -75,7 +77,7 @@ Index: rts/System/Platform/Linux/CrashHandler.cpp
  	}
  
  
-@@ -839,6 +851,9 @@ namespace CrashHandler
+@@ -839,6 +853,9 @@ namespace CrashHandler
       */
      void SuspendedStacktrace(Threading::ThreadControls* ctls, const char* threadName)
      {
@@ -85,7 +87,7 @@ Index: rts/System/Platform/Linux/CrashHandler.cpp
  #if !(DEDICATED || UNIT_TEST)
  		Watchdog::ClearTimer();
  #endif
-@@ -865,7 +880,7 @@ namespace CrashHandler
+@@ -865,7 +882,7 @@ namespace CrashHandler
  				LOG_L(L_ERROR, "thread_unwind returned more lines than we allotted space for!");
  
  			// get untranslated stacktrace symbols; give them meaningful names
@@ -94,7 +96,7 @@ Index: rts/System/Platform/Linux/CrashHandler.cpp
  		}
  
  		if (stacktrace.empty()) {
-@@ -881,6 +896,7 @@ namespace CrashHandler
+@@ -881,6 +898,7 @@ namespace CrashHandler
  		LOG_L(L_DEBUG, "[%s][4]", __func__);
  
  		LogStacktrace(LOG_LEVEL_WARNING, stacktrace);
@@ -102,17 +104,18 @@ Index: rts/System/Platform/Linux/CrashHandler.cpp
      }
  
  
-@@ -892,6 +908,9 @@ namespace CrashHandler
+@@ -892,6 +910,10 @@ namespace CrashHandler
  	 */
      void HaltedStacktrace(siginfo_t* siginfo, ucontext_t* ucontext, const char* signame)
      {
 +#ifdef __OpenBSD__
-+		std::abort();
++		//std::abort();
++		return;
 +#else
  		LOG_L(L_ERROR, "Halted Stacktrace for Spring %s (%s) using libunwind:", (SpringVersion::GetFull()).c_str(), signame);
  
  		assert(siginfo != nullptr);
-@@ -912,7 +931,7 @@ namespace CrashHandler
+@@ -912,7 +934,7 @@ namespace CrashHandler
  				LOG_L(L_ERROR, "thread_unwind returned more lines than we allotted space for!");
  
  			// get untranslated stacktrace symbols; give them meaningful names
@@ -121,7 +124,7 @@ Index: rts/System/Platform/Linux/CrashHandler.cpp
          }
  
  		LOG_L(L_DEBUG, "[%s][3]", __func__);
-@@ -928,6 +947,7 @@ namespace CrashHandler
+@@ -928,6 +950,7 @@ namespace CrashHandler
  
  		// Print out the translated StackTrace. Ignore the frames that occur inside the signal handler (before its line in the trace) -- they are likely some kind of padding or just garbage.
  		LogStacktrace(LOG_LEVEL_ERROR, stacktrace);
@@ -129,12 +132,13 @@ Index: rts/System/Platform/Linux/CrashHandler.cpp
      }
  
  
-@@ -1022,9 +1042,13 @@ namespace CrashHandler
+@@ -1022,9 +1045,14 @@ namespace CrashHandler
  	}
  
  	void OutputStacktrace() {
 +#ifdef __OpenBSD__
-+		std::abort();
++		//std::abort();
++		return;
 +#else
  		PrepareStacktrace();
  		Stacktrace(nullptr);

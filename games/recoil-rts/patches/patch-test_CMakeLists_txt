@@ -1,3 +1,6 @@
+alignment aware memory pools:
+https://github.com/beyond-all-reason/spring/pull/1165
+
 disable librt detection
 
 Index: test/CMakeLists.txt
@@ -20,4 +23,22 @@ Index: test/CMakeLists.txt
 +endif (UNIX AND (NOT APPLE) AND (NOT MINGW) AND (NOT CMAKE_SYSTEM_NAME MATCHES "OpenBSD"))
  
  include_directories(${CMAKE_BINARY_DIR}/src-generated/engine)
+ 
+@@ -52,6 +52,7 @@ set(test_Log_sources
+ 
+ set(test_common_libraries
+ 	cpuid
++	Tracy::TracyClient
+ )
+ 
+ add_custom_target(tests)
+@@ -483,6 +484,9 @@ endif()
+ 			"${CMAKE_CURRENT_SOURCE_DIR}/other/testMemPoolTypes.cpp"
+ 			${test_Log_sources}
+ 		)
++	set(test_libs
++		""
++	)
+ 	add_spring_test(${test_name} "${test_src}" "${test_libs}" "${test_flags}")
+ 	target_include_directories(test_${test_name} PRIVATE ${ENGINE_SOURCE_DIR}/lib/)
  

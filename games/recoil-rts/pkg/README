@@ -1,0 +1,76 @@
++-------------------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-------------------------------------------------------------------------------
+
+Datasize
+========
+
+${PKGSTEM} needs datasize of at least 4-6G to launch, see login.conf(5) and
+ksh(1).
+
+Installing Engines
+==================
+
+Different engines are built with ${PKGSTEM}. ${PKGSTEM} itself only provides
+the building blocks, so in order to run anything, you need to add an engine.
+The best known and best supported engines for ${PKGSTEM} are Zero-K and
+Beyond All Reason. For example, install Zero-K this way:
+
+	$ pr-downloader zk:stable
+
+And Beyond All Reason:
+
+	$ pr-downloader byar:stable
+
+It will then show up as an engine that can be selected in the ${PKGSTEM} GUI.
+
+Setting up Lobbies
+==================
+
+Running ${PKGSTEM} without a lobby set up will allow testing of maps, engines,
+and settings. To add a lobby, you can do either of the following:
+
+	1. use `--menu <menu>' argument to spring, or
+	2. add `DefaultLuaMenu = <menu> <version>' to
+	   ~/.config/spring/springsettings.cfg.
+
+Example Lobbies
+---------------
+
+Examples of lobbies that can be downloaded via pr-downloader include: Chobby,
+zkmenu, BYAR-Chobby. To install Chobby, run the following:
+
+	$ pr-downloader chobby:stable	# latest stable version
+		or
+	$ pr-downloader chobby:test	# latest test version
+
+Then launch it for example with:
+
+	$ spring --menu 'rapid://chobby:stable'
+
+BYAR-Chobby (the BAR Lobby application for Spring):
+---------------------------------------------------
+- steps to set this up:
+  - Download BYAR-Chobby into ~/.spring/games/BYAR-Chobby.sdd/
+  - Download Chobby into ~/.spring/games/Chobby.sdd/
+  - change modinfo.lua in BYAR-Chobby to use Chobby $VERSION instead of
+    rapid://chobby:test
+  - cp BYAR-Chobby.sdd/dist_cfg/files/chobby_config.json Chobby.sdd/
+  - start with: $ spring --menu 'BYAR Chobby $VERSION'
+
+Installing Maps
+===============
+
+Maps can be installed in one of three ways: via the lobby interface, with
+pr-downloader, or by manually downloading the map and placing it in
+~/.spring/maps/. Repositories for maps (subject to change) can for example be
+found at:
+
+	https://zero-k.info/Maps
+	https://www.beyondallreason.info/maps
+	https://springrts.com/wiki/Maps
+
+Troubleshooting
+===============
+
+If ${PKGSTEM} fails to launch, you can try the flag `-safemode'.

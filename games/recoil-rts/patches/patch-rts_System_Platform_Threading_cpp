@@ -1,16 +1,7 @@
 Index: rts/System/Platform/Threading.cpp
 --- rts/System/Platform/Threading.cpp.orig
 +++ rts/System/Platform/Threading.cpp
-@@ -5,6 +5,8 @@
- #include "System/Log/ILog.h"
- #include "System/Platform/CpuID.h"
- 
-+#include <iostream>
-+
- #ifndef DEDICATED
- 	#include "System/Sync/FPUCheck.h"
- #endif
-@@ -12,7 +14,7 @@
+@@ -12,7 +12,7 @@
  #include <functional>
  #include <memory>
  #include <cinttypes>
@@ -19,7 +10,7 @@ Index: rts/System/Platform/Threading.cpp
  #elif defined(_WIN32)
  	#include <windows.h>
  #else
-@@ -37,7 +39,7 @@ namespace Threading {
+@@ -37,7 +37,7 @@ namespace Threading {
  	static NativeThreadId nativeThreadIDs[THREAD_IDX_LAST] = {};
  	static Error threadError;
  
@@ -28,7 +19,7 @@ Index: rts/System/Platform/Threading.cpp
  #elif defined(_WIN32)
  	static DWORD_PTR cpusSystem = 0;
  #else
-@@ -47,7 +49,7 @@ namespace Threading {
+@@ -47,7 +47,7 @@ namespace Threading {
  
  	void DetectCores()
  	{
@@ -37,7 +28,7 @@ Index: rts/System/Platform/Threading.cpp
  		// no-op
  
  	#elif defined(_WIN32)
-@@ -75,7 +77,7 @@ namespace Threading {
+@@ -75,7 +75,7 @@ namespace Threading {
  
  
  
@@ -46,7 +37,7 @@ Index: rts/System/Platform/Threading.cpp
  	#elif defined(_WIN32)
  	#else
  	static std::uint32_t CalcCoreAffinityMask(const cpu_set_t* cpuSet) {
-@@ -110,7 +112,7 @@ namespace Threading {
+@@ -110,7 +110,7 @@ namespace Threading {
  
  	std::uint32_t GetAffinity()
  	{
@@ -55,7 +46,7 @@ Index: rts/System/Platform/Threading.cpp
  		// no-op
  		return 0;
  
-@@ -134,7 +136,7 @@ namespace Threading {
+@@ -134,7 +134,7 @@ namespace Threading {
  		if (coreMask == 0)
  			return (~0);
  
@@ -64,7 +55,7 @@ Index: rts/System/Platform/Threading.cpp
  		// no-op
  		return 0;
  
-@@ -190,7 +192,7 @@ namespace Threading {
+@@ -190,7 +190,7 @@ namespace Threading {
  
  	std::uint32_t GetAvailableCoresMask()
  	{
@@ -73,7 +64,7 @@ Index: rts/System/Platform/Threading.cpp
  		// no-op
  		return (~0);
  	#elif defined(_WIN32)
-@@ -219,7 +221,7 @@ namespace Threading {
+@@ -219,7 +219,7 @@ namespace Threading {
  
  	void SetThreadScheduler()
  	{

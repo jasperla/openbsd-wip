@@ -1,22 +1,15 @@
+alignment aware memory pools:
+https://github.com/beyond-all-reason/spring/pull/1165
+
 Index: rts/Rendering/Env/Decals/GroundDecalHandler.cpp
 --- rts/Rendering/Env/Decals/GroundDecalHandler.cpp.orig
 +++ rts/Rendering/Env/Decals/GroundDecalHandler.cpp
-@@ -62,12 +62,12 @@ CGroundDecalHandler::CGroundDecalHandler(): CEventClie
- 	eventHandler.AddClient(this);
- 	CExplosionCreator::AddExplosionListener(this);
+@@ -41,7 +41,7 @@
+ #define MAX_SCAR_COUNT 4096
  
--	sogdMemPool.clear();
--	sogdMemPool.reserve(128);
--	freeScarIDs.clear();
--	freeScarIDs.reserve(MAX_SCAR_COUNT);
--	usedScarIDs.clear();
--	usedScarIDs.reserve(128);
-+	//sogdMemPool.clear();
-+	//sogdMemPool.reserve(128);
-+	//freeScarIDs.clear();
-+	//freeScarIDs.reserve(MAX_SCAR_COUNT);
-+	//usedScarIDs.clear();
-+	//usedScarIDs.reserve(128);
- 	scarTexBuf.clear();
- 	scarTexBuf.resize(512 * 512 * 4, 0); // 1MB
  
+-static FixedDynMemPool<sizeof(SolidObjectGroundDecal), 64, 1024> sogdMemPool;
++static FixedDynMemPoolT<64, 1024, SolidObjectGroundDecal> sogdMemPool;
+ 
+ static std::array<CGroundDecalHandler::Scar, MAX_SCAR_COUNT> scars;
+ static std::vector<uint8_t> scarTexBuf;
