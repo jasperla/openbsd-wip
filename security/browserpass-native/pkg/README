@@ -1,0 +1,32 @@
++-------------------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-------------------------------------------------------------------------------
+
+Step 1: Install the browser extension from one of the following sources:
+
+Chrome Web Store:
+https://chrome.google.com/webstore/detail/browserpass-ce/naepdomgkenhinolocfifgehidddafch
+
+Firefox AddOns:
+https://addons.mozilla.org/en-US/firefox/addon/browserpass-ce
+
+Or manually from github:
+https://github.com/browserpass/browserpass-extension/releases
+
+Step 2: Register the native messaging host to allow the extension to talk to
+        the browserapp companion app:
+
+For chromium based browsers, adjust the DIR variabable and run:
+
+DIR=chromium # ungoogled-chromium chromium iridium
+mkdir -p ${SYSCONFDIR}/$DIR/native-messaging-hosts/
+ln -sf ${TRUEPREFIX}/share/browserpass/hosts/chromium/${APP_ID}.json \
+    ${SYSCONFDIR}/$DIR/native-messaging-hosts/${APP_ID}.json
+
+Step 3: Allow unveil to access the browserpass application and its
+        directory:
+
+Add the following entries to /etc/$DIR/unveil.main:
+
+${TRUEPREFIX}/share/browserpass/browserpass rx
+${TRUEPREFIX}/share/browserpass r

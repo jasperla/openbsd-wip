@@ -1,0 +1,14 @@
+share/browserpass/
+share/browserpass/LICENSE
+share/browserpass/README.md
+@bin share/browserpass/browserpass
+share/browserpass/hosts/
+share/browserpass/hosts/chromium/
+share/browserpass/hosts/chromium/${APP_ID}.json
+share/browserpass/hosts/firefox/
+share/browserpass/hosts/firefox/${APP_ID}.json
+share/browserpass/policies/
+share/browserpass/policies/chromium/
+share/browserpass/policies/chromium/${APP_ID}.json
+share/browserpass/policies/firefox/
+share/doc/pkg-readmes/${PKGSTEM}

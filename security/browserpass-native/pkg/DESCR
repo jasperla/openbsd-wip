@@ -1,0 +1,3 @@
+This is a host application for browserpass browser extension providing
+it access to your password store. The communication is handled through
+Native Messaging API.
