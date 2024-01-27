@@ -4,9 +4,7 @@ GH_ACCOUNT =	aristocratos
 GH_PROJECT =	btop
 GH_TAGNAME =    v1.3.0
 
-CATEGORIES=	sysutils
-
-HOMEPAGE=	https://github.com/aristocratos/btop
+CATEGORIES =	sysutils
 
 MAINTAINER =	Laurent Cheylus <foxy@free.fr>
 
