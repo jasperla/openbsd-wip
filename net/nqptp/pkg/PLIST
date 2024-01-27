@@ -1,0 +1,2 @@
+@rcscript ${RCDIR}/nqptp
+@bin bin/nqptp
