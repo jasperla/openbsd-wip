@@ -3,7 +3,7 @@ Support PT_OPENBSD_RANDOMIZE and PT_OPENBSD_WXNEEDED.
 Index: elf/passes.cc
 --- elf/passes.cc.orig
 +++ elf/passes.cc
-@@ -59,6 +59,8 @@ void create_synthetic_sections(Context<E> &ctx) {
+@@ -111,6 +111,8 @@ void create_synthetic_sections(Context<E> &ctx) {
  
      if (ctx.arg.z_sectionheader)
        ctx.shdr = push(new OutputShdr<E>);
@@ -12,7 +12,7 @@ Index: elf/passes.cc
    }
  
    ctx.got = push(new GotSection<E>);
-@@ -112,6 +114,12 @@ void create_synthetic_sections(Context<E> &ctx) {
+@@ -170,6 +172,12 @@ void create_synthetic_sections(Context<E> &ctx) {
    ctx.verneed = push(new VerneedSection<E>);
    ctx.note_package = push(new NotePackageSection<E>);
    ctx.note_property = push(new NotePropertySection<E>);

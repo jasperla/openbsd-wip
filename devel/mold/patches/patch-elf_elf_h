@@ -1,7 +1,7 @@
 Index: elf/elf.h
 --- elf/elf.h.orig
 +++ elf/elf.h
-@@ -190,6 +190,9 @@ enum : u32 {
+@@ -187,6 +187,9 @@ enum : u32 {
    PT_GNU_STACK = 0x6474e551,
    PT_GNU_RELRO = 0x6474e552,
    PT_OPENBSD_RANDOMIZE = 0x65a3dbe6,
@@ -10,4 +10,4 @@ Index: elf/elf.h
 +  PT_OPENBSD_NOBTCFI = 0x65a3dbe8,
    PT_ARM_EXIDX = 0x70000001,
    PT_RISCV_ATTRIBUTES = 0x70000003,
-   PT_MIPS_ABIFLAGS = 0x70000003,
+ };

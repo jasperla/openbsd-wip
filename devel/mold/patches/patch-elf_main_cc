@@ -16,7 +16,7 @@ Index: elf/main.cc
  #include <signal.h>
  #include <sys/stat.h>
  #include <sys/types.h>
-@@ -236,6 +239,71 @@ MappedFile<Context<E>> *open_library(Context<E> &ctx, 
+@@ -233,6 +236,71 @@ MappedFile<Context<E>> *open_library(Context<E> &ctx, 
    return nullptr;
  }
  
@@ -88,7 +88,7 @@ Index: elf/main.cc
  template <typename E>
  MappedFile<Context<E>> *find_library(Context<E> &ctx, std::string name) {
    if (name.starts_with(':')) {
-@@ -250,7 +318,7 @@ MappedFile<Context<E>> *find_library(Context<E> &ctx, 
+@@ -247,7 +315,7 @@ MappedFile<Context<E>> *find_library(Context<E> &ctx, 
    for (std::string_view dir : ctx.arg.library_paths) {
      std::string stem = std::string(dir) + "/lib" + name;
      if (!ctx.is_static)

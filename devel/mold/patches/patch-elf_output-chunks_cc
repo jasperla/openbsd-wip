@@ -1,17 +1,17 @@
 Index: elf/output-chunks.cc
 --- elf/output-chunks.cc.orig
 +++ elf/output-chunks.cc
-@@ -311,6 +311,14 @@ static std::vector<ElfPhdr<E>> create_phdr(Context<E> 
+@@ -304,6 +304,14 @@ static std::vector<ElfPhdr<E>> create_phdr(Context<E> 
      if (chunk->name == ".openbsd.randomdata")
-       define(PT_OPENBSD_RANDOMIZE, PF_R | PF_W, 1, chunk);
+       define(PT_OPENBSD_RANDOMIZE, PF_R | PF_W, chunk);
  
 +  // Create a PT_OPENBSD_WXNEEDED
 +  if (ctx.arg.z_wxneeded)
-+    define(PT_OPENBSD_WXNEEDED, PF_X, 1, ctx.openbsd_wxneeded);
++    define(PT_OPENBSD_WXNEEDED, PF_X, ctx.openbsd_wxneeded);
 +
 +  // Create a PT_OPENBSD_NOBTCFI
 +  if (ctx.arg.z_nobtcfi)
-+    define(PT_OPENBSD_NOBTCFI, PF_X, 1, ctx.openbsd_nobtcfi);
++    define(PT_OPENBSD_NOBTCFI, PF_X, ctx.openbsd_nobtcfi);
 +
    // Set p_paddr if --physical-image-base was given. --physical-image-base
    // is typically used in embedded programming to specify the base address
