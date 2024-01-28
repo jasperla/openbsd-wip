@@ -25,4 +25,13 @@ LIB_DEPENDS =		x11/qt5/qtdeclarative
 
 MODQMAKE_ARGS =		target.path=${PREFIX}/bin
 
+post-install:
+	${INSTALL_MAN} ${WRKSRC}/res/man/${PKGSTEM}.6 ${PREFIX}/man/man6/
+	${INSTALL_DATA_DIR} ${PREFIX}/share/applications/
+	${INSTALL_DATA} ${WRKSRC}/res/${PKGSTEM}.desktop \
+	    ${PREFIX}/share/applications/
+	${INSTALL_DATA_DIR} ${PREFIX}/share/icons/hicolor/scalable/apps/
+	${INSTALL_DATA} ${WRKSRC}/res/icons/scalable/apps/${PKGSTEM}.svg \
+	    ${PREFIX}/share/icons/hicolor/scalable/apps/
+
 .include <bsd.port.mk>
