@@ -4,7 +4,7 @@ and debugging
 Index: rts/Game/UnsyncedGameCommands.cpp
 --- rts/Game/UnsyncedGameCommands.cpp.orig
 +++ rts/Game/UnsyncedGameCommands.cpp
-@@ -3965,7 +3965,7 @@ void UnsyncedGameCommands::AddDefaultActionExecutors()
+@@ -3963,7 +3963,7 @@ void UnsyncedGameCommands::AddDefaultActionExecutors()
  	AddActionExecutor(AllocActionExecutor<IncreaseGUIOpacityActionExecutor>());
  	AddActionExecutor(AllocActionExecutor<DecreaseGUIOpacityActionExecutor>());
  	AddActionExecutor(AllocActionExecutor<ScreenShotActionExecutor>());

@@ -1,9 +1,17 @@
-use pthread_equal instead of just comparing integers
-
 Index: rts/System/Platform/Threading.h
 --- rts/System/Platform/Threading.h.orig
 +++ rts/System/Platform/Threading.h
-@@ -203,7 +203,7 @@ namespace Threading {
+@@ -12,6 +12,9 @@
+ #ifdef __APPLE__
+ #include <libkern/OSAtomic.h> // OSAtomicIncrement64
+ #endif
++#ifdef __OpenBSD__
++#include <pthread_np.h>
++#endif
+ 
+ #include "System/Platform/Win/win32.h"
+ #include "System/Threading/SpringThreading.h"
+@@ -203,7 +206,7 @@ namespace Threading {
  namespace Threading {
  	bool NativeThreadIdsEqual(const NativeThreadId thID1, const NativeThreadId thID2)
  	{

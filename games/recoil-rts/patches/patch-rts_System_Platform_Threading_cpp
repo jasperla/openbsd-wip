@@ -1,3 +1,7 @@
+enable thread naming using pthread_set_name_np
+use SCHED_RR scheduling for threads, as we don't have SCHED_BATCH (alternative
+would be SCHED_FIFO)
+
 Index: rts/System/Platform/Threading.cpp
 --- rts/System/Platform/Threading.cpp.orig
 +++ rts/System/Platform/Threading.cpp
@@ -64,12 +68,21 @@ Index: rts/System/Platform/Threading.cpp
  		// no-op
  		return (~0);
  	#elif defined(_WIN32)
-@@ -219,7 +219,7 @@ namespace Threading {
+@@ -238,7 +238,7 @@ namespace Threading {
+ 			int policy;
+ 			struct sched_param param;
+ 			pthread_getschedparam(Threading::GetCurrentThread(), &policy, &param);
+-			pthread_setschedparam(Threading::GetCurrentThread(), SCHED_BATCH, &param);
++			pthread_setschedparam(Threading::GetCurrentThread(), SCHED_RR, &param);
+ 		}
+ 	#endif
+ 	}
+@@ -362,6 +362,8 @@ namespace Threading {
+ 	#if defined(__USE_GNU) && !defined(_WIN32)
+ 		//alternative: pthread_setname_np(pthread_self(), newname.c_str());
+ 		prctl(PR_SET_NAME, newname.c_str(), 0, 0, 0);
++	#elif defined(__OpenBSD__)
++		pthread_set_name_np(pthread_self(), newname.c_str());
+ 	#elif _MSC_VER
+ 		const DWORD MS_VC_EXCEPTION = 0x406D1388;
  
- 	void SetThreadScheduler()
- 	{
--	#if defined(__APPLE__) || defined(__FreeBSD__)
-+	#if defined(__APPLE__) || defined(__FreeBSD__) || defined(__OpenBSD__)
- 		// no-op
- 
- 	#elif defined(_WIN32)

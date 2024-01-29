@@ -1,17 +1,18 @@
 COMMENT =		real-time strategy game engine for Beyond All Reason
 
-# XXX: double-check USE_WXNEEDED and USE_NOBTCFI if needed
-USE_WXNEEDED =		Yes
-USE_NOBTCFI =		Yes
+# XXX: double-check USE_WXNEEDED is needed - WXNEEDED for CrashHandler somehow?
+#      There also somehow appear to be more crashes withOUT USE_WXNEEDED, but
+#      not 100% sure...
+#USE_WXNEEDED =		Yes
 
 # Keeping version in sync with releases of Beyond All Reason:
 # Test server builds use the version in
 # https://github.com/beyond-all-reason/BYAR-Chobby/blob/master/dist_cfg/config.json
 MJ =			105
 MN =			1.1
-BLD =			2281
+BLD =			2240
 V =			${MJ}.${MN}pl${BLD}
-HASH =			gf08cc57
+HASH =			gd01542d
 
 # prefix 0. because upstream has indicated they will switch to versioning
 # YY.MM; once that has happened, remove 0. and switch to the new versioning
@@ -91,8 +92,8 @@ CONFIGURE_ARGS =	-DAI_TYPES="NATIVE" \
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 # XXX: remove these debug flags
-#CFLAGS =	-O0 -pipe -g -fstack-protector -DMALLOC_STATS
-#CXXFLAGS =	-O0 -pipe -g -fstack-protector -DMALLOC_STATS
+#CFLAGS =	-O0 -pipe -g -Wall
+#CXXFLAGS =	-O0 -pipe -g -Wall
 
 CFLAGS +=		-I${LOCALBASE}/include \
 			-I${X11BASE}/include
