@@ -1,18 +1,13 @@
 COMMENT =		real-time strategy game engine for Beyond All Reason
 
-# XXX: double-check USE_WXNEEDED is needed - WXNEEDED for CrashHandler somehow?
-#      There also somehow appear to be more crashes withOUT USE_WXNEEDED, but
-#      not 100% sure...
-#USE_WXNEEDED =		Yes
-
 # Keeping version in sync with releases of Beyond All Reason:
 # Test server builds use the version in
 # https://github.com/beyond-all-reason/BYAR-Chobby/blob/master/dist_cfg/config.json
 MJ =			105
 MN =			1.1
-BLD =			2240
+BLD =			2293
 V =			${MJ}.${MN}pl${BLD}
-HASH =			gd01542d
+HASH =			g1dde17b
 
 # prefix 0. because upstream has indicated they will switch to versioning
 # YY.MM; once that has happened, remove 0. and switch to the new versioning
@@ -29,13 +24,14 @@ DIST_TUPLE +=		github gflags gflags f8a0efe03aa69b3336d8e228b37d4ccb17324b88 \
 DIST_TUPLE +=		github wolfpld tracy 5a1f5371b792c12aea324213e1dc738b2923ae21 \
 			rts/lib/tracy # BSD-3
 DIST_TUPLE +=		github rlcevg CircuitAI \
-			bd84716d585960b12a1631c652dfe3f008e7a5bb AI/Skirmish/BARb \
+			bc9b7e00b5d4f920a2de1c1a4728227a9821fb57 AI/Skirmish/BARb \
 			# GPL-2.0
 DIST_TUPLE +=		github rlcevg CircuitAI \
-			06811d389e78eef1041ce49b72144c7a0457987e AI/Skirmish/CircuitAI \
+			afeae5bf1f607744aa984a8ef2094d560d95b564 AI/Skirmish/CircuitAI \
 			# GPL-2.0
 DIST_TUPLE +=		github spring SpringMapConvNG \
-			0ddd86eaa8871dc0833c69f931f55cd856c5009d tools/mapcompile # GPL-2.0
+			0ddd86eaa8871dc0833c69f931f55cd856c5009d tools/mapcompile \
+			# GPL-2.0
 DIST_TUPLE +=		github beyond-all-reason pr-downloader \
 			4e30e3e776c47b81e790fffcb2b62f81437e0c24 tools/pr-downloader \
 			# GPL-2.0
