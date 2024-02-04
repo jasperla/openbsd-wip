@@ -9,7 +9,8 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB =	# empty
 
-MODULES =		devel/cargo
+MODULES =		devel/cargo \
+			devel/meson
 
 CONFIGURE_STYLE =	cargo
 SEPARATE_BUILD =	Yes
