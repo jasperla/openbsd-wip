@@ -1,4 +1,4 @@
-Do not use ALSA
+Use PortAudio not ALSA
 Disable isahc default feature to avoid using curl/static-curl
 
 Index: Cargo.toml
@@ -9,7 +9,7 @@ Index: Cargo.toml
  [dependencies.librespot]
  version = "0.4.2"
 -features = ["alsa-backend", "pulseaudio-backend"]
-+features = ["pulseaudio-backend"]
++features = ["portaudio-backend"]
  
  [dependencies.protobuf]
  version = "2.25.2"
