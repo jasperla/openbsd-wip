@@ -1,42 +1,62 @@
-     Running `/usr/ports/pobj/spot-0.4.0/build-amd64/target/release/build/curl-sys-723ae7bff32d31b3/build-script-build`
-error: failed to run custom build command for `curl-sys v0.4.59+curl-7.86.0`
-note: To improve backtraces for build dependencies, set the CARGO_PROFILE_RELEASE_BUILD_OVERRIDE_DEBUG=true environment variable to enable debug information generation.
+build-meson
+
+error[E0583]: file not found for module `config`
+  --> src/main.rs:18:1
+   |
+18 | mod config;
+   | ^^^^^^^^^^^
+   |
+   = help: to create the module `config`, create file "src/config.rs" or "src/config/mod.rs"
+   = note: if there is a `mod config` elsewhere in the crate already, import it with `use crate::...` instead
+
+error[E0432]: unresolved import `config::VERSION`
+  --> src/main.rs:22:9
+   |
+22 | pub use config::VERSION;
+   |         ^^^^^^^^^^^^^^^ no `VERSION` in `config`
+
+error[E0425]: cannot find value `LOCALEDIR` in module `config`
+  --> src/main.rs:31:54
+   |
+31 |         .and_then(|_| bindtextdomain("spot", config::LOCALEDIR))
+   |                                                      ^^^^^^^^^ not found in `config`
+
+error[E0425]: cannot find value `APPID` in module `config`
+  --> src/main.rs:37:54
+   |
+37 |     let gtk_app = gtk::Application::new(Some(config::APPID), ApplicationFlags::HANDLES_OPEN);
+   |                                                      ^^^^^ not found in `config`
+
+error[E0425]: cannot find value `PKGDATADIR` in module `config`
+  --> src/main.rs:96:43
+   |
+96 |     let res = gio::Resource::load(config::PKGDATADIR.to_owned() + "/spot.gresource")
+   |                                           ^^^^^^^^^^ not found in `config`
+
+warning: unused import: `SpotifyResult`
+ --> src/api/mod.rs:7:64
+  |
+7 | pub use cached_client::{CachedSpotifyClient, SpotifyApiClient, SpotifyResult};
+  |                                                                ^^^^^^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` on by default
+
+warning: unused import: `song_actions::*`
+ --> src/app/components/playlist/mod.rs:8:9
+  |
+8 | pub use song_actions::*;
+  |         ^^^^^^^^^^^^^^^
+
+warning: unused import: `pagination::*`
+  --> src/app/state/mod.rs:17:9
+   |
+17 | pub use pagination::*;
+   |         ^^^^^^^^^^^^^
+
+Some errors have detailed explanations: E0425, E0432, E0583.
+For more information about an error, try `rustc --explain E0425`.
+warning: `spot` (bin "spot") generated 3 warnings
+error: could not compile `spot` (bin "spot") due to 5 previous errors; 3 warnings emitted
 
 Caused by:
-  process didn't exit successfully: `/usr/ports/pobj/spot-0.4.0/build-amd64/target/release/build/curl-sys-723ae7bff32d31b3/build-script-build` (exit status: 101)
-  --- stdout
-  cargo:rerun-if-changed=curl
-  cargo:root=/usr/ports/pobj/spot-0.4.0/build-amd64/target/release/build/curl-sys-e6c673e27011e310/out
-  cargo:include=/usr/ports/pobj/spot-0.4.0/build-amd64/target/release/build/curl-sys-e6c673e27011e310/out/include
-  cargo:static=1
-  cargo:rustc-cfg=libcurl_vendored
-
-  --- stderr
-  fatal: not a git repository (or any parent up to mount point /usr/ports)
-  Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
-  thread 'main' panicked at /usr/ports/pobj/spot-0.4.0/spot-0.4.0/modcargo-crates/curl-sys-0.4.59+curl-7.86.0/build.rs:94:10:
-  called `Result::unwrap()` on an `Err` value: Os { code: 2, kind: NotFound, message: "No such file or directory" }
-  stack backtrace:
-     0:      0x4b31753a7cd - <std::sys_common::backtrace::_print::DisplayBacktrace as core::fmt::Display>::fmt::h2130bf9a94244ec2
-     1:      0x4b31755ae9b - core::fmt::write::hf3c6f8949df7dea3
-     2:      0x4b31754a184 - std::io::Write::write_fmt::h66ccad8ed19ba9bc
-     3:      0x4b31753a5b3 - std::sys_common::backtrace::print::hdd1a86a58626cf87
-     4:      0x4b317525a9a - std::panicking::default_hook::{{closure}}::h96fabc124cb62bdc
-     5:      0x4b317525697 - std::panicking::default_hook::hb730f385e09e023e
-     6:      0x4b317526d38 - std::panicking::rust_panic_with_hook::h3140555fe88ffa1a
-     7:      0x4b31753ac17 - std::panicking::begin_panic_handler::{{closure}}::h67522f2b3b68fec5
-     8:      0x4b31753a9fd - std::sys_common::backtrace::__rust_end_short_backtrace::h04eeff3e7a9359f4
-     9:      0x4b31752693a - rust_begin_unwind
-    10:      0x4b31756054a - core::panicking::panic_fmt::h84543e3926ff3c98
-    11:      0x4b31755f8fa - core::result::unwrap_failed::ha26f1e668ca5a6af
-    12:      0x4b317489924 - core::result::Result<T,E>::unwrap::hb7619e217e1e02db
-    13:      0x4b31748ec06 - build_script_build::main::hf5cbaafb78b63caa
-    14:      0x4b317488c0a - core::ops::function::FnOnce::call_once::h494f08db3b477d32
-    15:      0x4b317488279 - std::sys_common::backtrace::__rust_begin_short_backtrace::h55b0ef326dc8776c
-    16:      0x4b317488680 - std::rt::lang_start::{{closure}}::h4da5ffe04e5cbb7f
-    17:      0x4b317525c1e - std::panicking::try::hb45f1d38bf7a4f3d
-    18:      0x4b317549963 - std::rt::lang_start_internal::hc31d13f37743cddd
-    19:      0x4b31748865d - std::rt::lang_start::hec338d567f0bec5a
-    20:      0x4b31749057c - main
-    21:      0x4b317487a51 - <unknown>
-warning: build failed, waiting for other jobs to finish...
+  process didn't exit successfully: `/usr/local/bin/rustc --crate-name spot --edition=2018 src/main.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts,future-incompat --diagnostic-width=100 --crate-type bin --emit=dep-info,link -C opt-level=2 -C embed-bitcode=no -C codegen-units=4 -C metadata=5f95d099ece797fb -C extra-filename=-5f95d099ece797fb --out-dir /usr/ports/pobj/spot-0.4.0/build-amd64/target/release/deps -L dependency=/usr/ports/pobj/spot-0.4.0/build-amd64/target/release/deps --extern async_std=/usr/ports/pobj/spot-0.4.0/build-amd64/target/release/deps/libasync_std-5994d6b50b4b6c0f.rlib --extern env_logger=/usr/ports/pobj/spot-0.4.0/build-amd64/target/release/deps/libenv_logger-5982d53cb45b588b.rlib --extern form_urlencoded=/usr/ports/pobj/spot-0.4.0/build-amd64/target/release/deps/libform_urlencoded-dcb4f00f021da6e6.rlib --extern futures=/usr/ports/pobj/spot-0.4.0/build-amd64/target/release/deps/libfutures-d0ea580ee3c545ab.rlib --extern gdk_pixbuf=/usr/ports/pobj/spot-0.4.0/build-amd64/target/release/deps/libgdk_pixbuf-c6533bbb0f48c64f.rlib --extern gdk=/usr/ports/pobj/spot-0.4.0/build-amd64/target/release/deps/libgdk4-bc3ef1e8e0b93a40.rlib --extern gettextrs=/usr/ports/pobj/spot-0.4.0/build-amd64/target/release/deps/libgettextrs-1f85ad41a5063a73.rlib --extern gio=/usr/ports/pobj/spot-0.4.0/build-amd64/target/release/deps/libgio-6f8b55f851edf132.rlib --extern glib=/usr/ports/pobj/spot-0.4.0/build-amd64/target/release/deps/libglib-48cd8c1ba32cc3ac.rlib --extern gtk=/usr/ports/pobj/spot-0.4.0/build-amd64/target/release/deps/libgtk4-263fba92f7e743a0.rlib --extern isahc=/usr/ports/pobj/spot-0.4.0/build-amd64/target/release/deps/libisahc-9b11676d777858af.rlib --extern lazy_static=/usr/ports/pobj/spot-0.4.0/build-amd64/target/release/deps/liblazy_static-531c9380e9b46db7.rlib --extern libadwaita=/usr/ports/pobj/spot-0.4.0/build-amd64/target/release/deps/liblibadwaita-b1fdcff435adc97f.rlib --extern librespot=/usr/ports/pobj/spot-0.4.0/build-amd64/target/release/deps/liblibrespot-300795e4d44a3680.rlib --extern log=/usr/ports/pobj/spot-0.4.0/build-amd64/target/release/deps/liblog-8c30e471ac2c6437.rlib --extern percent_encoding=/usr/ports/pobj/spot-0.4.0/build-amd64/target/release/deps/libpercent_encoding-21413da4f850669a.rlib --extern protobuf=/usr/ports/pobj/spot-0.4.0/build-amd64/target/release/deps/libprotobuf-348ff61429d531da.rlib --extern rand=/usr/ports/pobj/spot-0.4.0/build-amd64/target/release/deps/librand-072689191ce9d09c.rlib --extern ref_filter_map=/usr/ports/pobj/spot-0.4.0/build-amd64/target/release/deps/libref_filter_map-91ffa7b9196945fa.rlib --extern regex=/usr/ports/pobj/spot-0.4.0/build-amd64/target/release/deps/libregex-04249431c8386103.rlib --extern secret_service=/usr/ports/pobj/spot-0.4.0/build-amd64/target/release/deps/libsecret_service-bcb817d1d57051a7.rlib --extern serde=/usr/ports/pobj/spot-0.4.0/build-amd64/target/release/deps/libserde-7aa9cc42944f740e.rlib --extern serde_json=/usr/ports/pobj/spot-0.4.0/build-amd64/target/release/deps/libserde_json-7729e9640c4b516a.rlib --extern thiserror=/usr/ports/pobj/spot-0.4.0/build-amd64/target/release/deps/libthiserror-8f33de954996d888.rlib --extern tokio=/usr/ports/pobj/spot-0.4.0/build-amd64/target/release/deps/libtokio-9fc1cb942b44530e.rlib --extern zbus=/usr/ports/pobj/spot-0.4.0/build-amd64/target/release/deps/libzbus-6c4687fd5ad77040.rlib --extern zvariant=/usr/ports/pobj/spot-0.4.0/build-amd64/target/release/deps/libzvariant-f6aa73bd1fe1d8de.rlib -L native=/usr/local/lib -L native=/usr/local/lib -L native=/usr/local/lib -L native=/usr/local/lib -L native=/usr/local/lib -L native=/usr/local/lib -L native=/usr/X11R6/lib -L native=/usr/local/lib -L native=/usr/X11R6/lib -L native=/usr/local/lib -L native=/usr/X11R6/lib -L native=/usr/local/lib -L native=/usr/X11R6/lib -L native=/usr/local/lib -L native=/usr/local/lib -L native=/usr/local/lib -L native=/usr/X11R6/lib -L native=/usr/local/lib -L native=/usr/X11R6/lib -L native=/usr/local/lib -L native=/usr/ports/pobj/spot-0.4.0/build-amd64/target/release/build/libnghttp2-sys-924accd05258eda3/out/i/lib -L native=/usr/local/lib -L native=/usr/X11R6/lib -L native=/usr/local/lib -L native=/usr/local/lib` (exit status: 1)

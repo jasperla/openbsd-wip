@@ -16,7 +16,9 @@ SEPARATE_BUILD =	Yes
 
 # XXX not tweable via features, patch-Cargo_toml drops ALSA,
 # forcing PulseAudio needs more surgery
-LIB_DEPENDS =		audio/pulseaudio
+LIB_DEPENDS =		audio/pulseaudio \
+			x11/gnome/libadwaita \
+			x11/gtk+4
 
 .include "crates.inc"
 .include <bsd.port.mk>

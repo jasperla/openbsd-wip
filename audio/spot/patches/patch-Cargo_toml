@@ -1,4 +1,5 @@
 Do not use ALSA
+Disable isahc default feature to avoid using curl/static-curl
 
 Index: Cargo.toml
 --- Cargo.toml.orig
@@ -12,3 +13,13 @@ Index: Cargo.toml
  
  [dependencies.protobuf]
  version = "2.25.2"
+@@ -45,7 +45,8 @@ version = "^1.0.93"
+ 
+ [dependencies.isahc]
+ version = "^1.7.2"
+-features = ["json"]
++default_features = false
++features = ["json", "http2", "text-decoding"]
+ 
+ [dependencies.rand]
+ version = "^0.8.5"
