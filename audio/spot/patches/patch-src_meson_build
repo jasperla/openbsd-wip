@@ -1,0 +1,24 @@
+Use PortAudio not ALSA
+Leave Rust sources to devel/cargo module
+
+Index: src/meson.build
+--- src/meson.build.orig
++++ src/meson.build
+@@ -4,8 +4,7 @@ dependency('libadwaita-1')
+ dependency('gtk4')
+ dependency('glib-2.0')
+ dependency('openssl')
+-dependency('alsa')
+-dependency('libpulse')
++dependency('portaudio-2.0')
+ 
+ conf = configuration_data()
+ 
+@@ -66,6 +65,7 @@ run_command(
+   check: true
+ )
+ 
++subdir_done()
+ # find . -name "*.rs" -printf "'%p',\n"
+ sources = files(
+ './api/cached_client.rs',

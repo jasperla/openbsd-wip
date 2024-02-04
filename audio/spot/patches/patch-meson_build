@@ -1,0 +1,13 @@
+Leave Rust sources to devel/cargo module
+
+Index: meson.build
+--- meson.build.orig
++++ meson.build
+@@ -10,6 +10,7 @@ subdir('data')
+ subdir('po')
+ subdir('src')
+ 
++subdir_done()
+ meson.add_install_script('build-aux/meson/postinstall.py')
+ 
+ flatpak_cargo_generator = find_program(meson.source_root() / 'build-aux/flatpak-cargo-generator.py')
