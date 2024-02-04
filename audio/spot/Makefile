@@ -8,8 +8,9 @@ MAINTAINER =		Klemens Nanni <kn@openbsd.org>
 # MIT
 PERMIT_PACKAGE =	Yes
 
-WANTLIB =		${MODCARGO_WANTLIB} adwaita-1 curl gdk_pixbuf-2.0
-WANTLIB +=		gio-2.0 glib-2.0 gobject-2.0 gtk-4 intl m portaudio
+WANTLIB =		${MODCARGO_WANTLIB} adwaita-1 curl gdk_pixbuf-2.0 gio-2.0
+WANTLIB +=		glib-2.0 gobject-2.0 gtk-4 intl m pulse pulse-simple
+
 
 MODULES =		devel/cargo \
 			devel/meson
@@ -19,7 +20,7 @@ SEPARATE_BUILD =	Yes
 
 BUILD_DEPENDS =		devel/gettext,-tools
 
-LIB_DEPENDS =		audio/portaudio-svn \
+LIB_DEPENDS =		audio/pulseaudio \
 			devel/glib2 \
 			x11/gnome/libadwaita \
 			x11/gtk+4

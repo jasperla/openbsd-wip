@@ -162,6 +162,10 @@ SHA256 (cargo/libloading-0.7.4.tar.gz) = tnOA/TsvvnUnpgbhhynSHG85UWM9BQBXTE3CLS1
 SHA256 (cargo/libm-0.2.6.tar.gz) = NIEIqz+6QuyC/26VZPxMoCR73M3Gjdivl2S7x5w8j/s=
 SHA256 (cargo/libmdns-0.7.4.tar.gz) = amDYM5rR3faKgTNfyvtsbPINUDYTih5O+GuM6H8HbJI=
 SHA256 (cargo/libnghttp2-sys-0.1.7+1.45.0.tar.gz) = V+0oq6GVs41f8CuRcMv/Yn4zaiCSXkO0lFOQQBxdyT8=
+SHA256 (cargo/libpulse-binding-2.27.1.tar.gz) = F0WyC/wZSsEu+CjxRPDsLUp/6ZMoH6NWegvUlpruaJA=
+SHA256 (cargo/libpulse-simple-binding-2.27.1.tar.gz) = XO2UGZ5uRBM0MTdOQEPzTh8Gl+v7e31sJEplv67fDjE=
+SHA256 (cargo/libpulse-simple-sys-1.20.1.tar.gz) = hOQj2cYZyQjOm0kWCA5lq1hspVuMSTk3nxXm5y+0OEI=
+SHA256 (cargo/libpulse-sys-1.20.1.tar.gz) = IZHmiAgY0d9M9y6sjpHc56WlK6DaSypc2vq8Irk36ts=
 SHA256 (cargo/librespot-0.4.2.tar.gz) = 6kyZUu9Ilo+BhKSof4V2mCQm6+YjNC1aKPfZxJeOSkQ=
 SHA256 (cargo/librespot-audio-0.4.2.tar.gz) = wXajE1Xh6o4LnEztGd9JR7/kdwZhwlwUK2+6I2WUDZ0=
 SHA256 (cargo/librespot-connect-0.4.2.tar.gz) = T/r7akQ+lEXMs9XVkVc7Wx2jyJqbiEbGO6LDcQIQ0+w=
@@ -235,8 +239,6 @@ SHA256 (cargo/pin-project-lite-0.2.9.tar.gz) = 4KeuOsLxFzCF05hTHHBXVslKTFaEN4Xfh
 SHA256 (cargo/pin-utils-0.1.0.tar.gz) = i4cNjBUbby+5PoShMUYTjwXQLtEcfnxU+IJqqvfJ8YQ=
 SHA256 (cargo/pkg-config-0.3.26.tar.gz) = asmln3NHPxuNhSQh5Z5kgJ8CWZSDfvdDYVxtDFswUWA=
 SHA256 (cargo/polling-2.5.2.tar.gz) = IhItXsT5/hs5FkGbdr4egLy5P2GNBx0u34QbE3sqK9Y=
-SHA256 (cargo/portaudio-rs-0.3.2.tar.gz) = zba17/lszJv0TTTDeasDrpREJtg9FpQ0W9+BWdVh1WI=
-SHA256 (cargo/portaudio-sys-0.1.1.tar.gz) = UZSk+pU7T/2FHDIO9vBITNcnjLcWnqnWxDPkmyP3t/U=
 SHA256 (cargo/ppv-lite86-0.2.17.tar.gz) = W0CvgFsxIf6rijwp8E2K0mL6jgVhiD52U+AkrkR55t4=
 SHA256 (cargo/priority-queue-1.3.1.tar.gz) = XKnGvnDZidIaE264bC2D5LMoRH+sSojaziFDwXnIYmc=
 SHA256 (cargo/proc-macro-crate-1.3.0.tar.gz) = ZmGDieTsHHr+Z9Uam/NP+SNkgPjVHnSJt9WrAwPBPzQ=
@@ -262,6 +264,7 @@ SHA256 (cargo/rpassword-6.0.1.tar.gz) = K/CZoYiGElRbaD0mYaGUAIn2wuWo44l5shWdqHa/
 SHA256 (cargo/rustc-demangle-0.1.21.tar.gz) = fvA+CisVDHqQ0B+vYlTJxIpB6V+yqMKsHG8NK5rvw0I=
 SHA256 (cargo/rustc-hash-1.1.0.tar.gz) = CNQ/eqawjUnzgs3mp5ggR8NCbblJsUJLxLfsmuEsbOI=
 SHA256 (cargo/rustc_version-0.3.3.tar.gz) = 8N/iCHxRxGAAhzDei1fmoyB4L7+zEuH01SDmxvrhVe4=
+SHA256 (cargo/rustc_version-0.4.0.tar.gz) = v6D1hSJtLmgJfU+V0ROxW4OoLoGaslcX7AWQ2VhO82Y=
 SHA256 (cargo/ryu-1.0.12.tar.gz) = e0uXQ+1ofUtLzt+f9eqnOYSVrhTmHLoKKVcE7bx97N4=
 SHA256 (cargo/same-file-1.0.6.tar.gz) = k/wdw6qpv+2V4C5urau0uvfjB4sL0bTXtrC2g3iQBQI=
 SHA256 (cargo/schannel-0.1.21.tar.gz) = cTz7BscFnzWI+4BEwPrR0J48AdIl4luSINv9zxbbsbM=
@@ -269,6 +272,7 @@ SHA256 (cargo/scopeguard-1.1.0.tar.gz) = 0pqwxtP8Dukv5m4tmfcA6rF6jVfRwdO3SDgPsgu
 SHA256 (cargo/scratch-1.0.3.tar.gz) = 3cyxW8zhcwI7P+3ZQ2+IKgc5uN+0Xk9rYAK+5ZKfYbI=
 SHA256 (cargo/secret-service-3.0.1.tar.gz) = XaGlrU0owDU2+C932fNmA/XjfYhprJjwp1DVtWhtjZU=
 SHA256 (cargo/semver-0.11.0.tar.gz) = 8wGvECNvbfQWD3w/BO7G28cKzoLSMyarrV7e6IgBxrY=
+SHA256 (cargo/semver-1.0.16.tar.gz) = WLyVZzePx2kNayrdrk5grC7uoHvsssZLnyGLU4Zcuio=
 SHA256 (cargo/semver-parser-0.10.2.tar.gz) = ALC+9bf54N8WU205Yc+26EMxwGW0Bmr7OXaNDjGUEfc=
 SHA256 (cargo/serde-1.0.152.tar.gz) = u30fDTAh00eoPlVvxGg96i6gnYe8zfiP9cElRdidXvs=
 SHA256 (cargo/serde_derive-1.0.152.tar.gz) = r0h9EY7s0JQC1wpdclUYYOeI34e0ZK8w5epqOMdcVB4=
@@ -526,6 +530,10 @@ SIZE (cargo/libloading-0.7.4.tar.gz) = 27580
 SIZE (cargo/libm-0.2.6.tar.gz) = 113690
 SIZE (cargo/libmdns-0.7.4.tar.gz) = 24298
 SIZE (cargo/libnghttp2-sys-0.1.7+1.45.0.tar.gz) = 4527090
+SIZE (cargo/libpulse-binding-2.27.1.tar.gz) = 130928
+SIZE (cargo/libpulse-simple-binding-2.27.1.tar.gz) = 12270
+SIZE (cargo/libpulse-simple-sys-1.20.1.tar.gz) = 10435
+SIZE (cargo/libpulse-sys-1.20.1.tar.gz) = 35988
 SIZE (cargo/librespot-0.4.2.tar.gz) = 52112
 SIZE (cargo/librespot-audio-0.4.2.tar.gz) = 10621
 SIZE (cargo/librespot-connect-0.4.2.tar.gz) = 11194
@@ -599,8 +607,6 @@ SIZE (cargo/pin-project-lite-0.2.9.tar.gz) = 27713
 SIZE (cargo/pin-utils-0.1.0.tar.gz) = 7580
 SIZE (cargo/pkg-config-0.3.26.tar.gz) = 18662
 SIZE (cargo/polling-2.5.2.tar.gz) = 22248
-SIZE (cargo/portaudio-rs-0.3.2.tar.gz) = 13267
-SIZE (cargo/portaudio-sys-0.1.1.tar.gz) = 2327
 SIZE (cargo/ppv-lite86-0.2.17.tar.gz) = 22242
 SIZE (cargo/priority-queue-1.3.1.tar.gz) = 33880
 SIZE (cargo/proc-macro-crate-1.3.0.tar.gz) = 9672
@@ -626,6 +632,7 @@ SIZE (cargo/rpassword-6.0.1.tar.gz) = 11505
 SIZE (cargo/rustc-demangle-0.1.21.tar.gz) = 27920
 SIZE (cargo/rustc-hash-1.1.0.tar.gz) = 9331
 SIZE (cargo/rustc_version-0.3.3.tar.gz) = 12119
+SIZE (cargo/rustc_version-0.4.0.tar.gz) = 12175
 SIZE (cargo/ryu-1.0.12.tar.gz) = 47070
 SIZE (cargo/same-file-1.0.6.tar.gz) = 10183
 SIZE (cargo/schannel-0.1.21.tar.gz) = 41719
@@ -633,6 +640,7 @@ SIZE (cargo/scopeguard-1.1.0.tar.gz) = 11470
 SIZE (cargo/scratch-1.0.3.tar.gz) = 8198
 SIZE (cargo/secret-service-3.0.1.tar.gz) = 36343
 SIZE (cargo/semver-0.11.0.tar.gz) = 20826
+SIZE (cargo/semver-1.0.16.tar.gz) = 29850
 SIZE (cargo/semver-parser-0.10.2.tar.gz) = 23176
 SIZE (cargo/serde-1.0.152.tar.gz) = 77091
 SIZE (cargo/serde_derive-1.0.152.tar.gz) = 55586
