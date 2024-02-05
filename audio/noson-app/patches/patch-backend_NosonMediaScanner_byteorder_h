@@ -1,0 +1,21 @@
+XXX undefine swap16(3) to pick ports versions
+
+Index: backend/NosonMediaScanner/byteorder.h
+--- backend/NosonMediaScanner/byteorder.h.orig
++++ backend/NosonMediaScanner/byteorder.h
+@@ -53,6 +53,7 @@ static inline void write8(void * data, int8_t val)
+   toUnaligned(data, val);
+ }
+ 
++#undef swap16
+ static inline int16_t swap16(int16_t val)
+ {
+   return (int16_t)(0 |
+@@ -60,6 +61,7 @@ static inline int16_t swap16(int16_t val)
+           (((uint32_t)val & 0xff00) >> 8));
+ }
+ 
++#undef swap32
+ static inline int32_t swap32(int32_t val)
+ {
+   return (int32_t)(0 |
