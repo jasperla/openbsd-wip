@@ -11,7 +11,7 @@ HOMEPAGE =		https://pijul.org/
 
 CATEGORIES =		devel
 
-# Apache 2.0
+# GPL2+
 PERMIT_PACKAGE =	Yes
 
 WANTLIB +=		${MODCARGO_WANTLIB} crypto git2 m ssh2 sodium ssl zstd
@@ -27,7 +27,6 @@ LIB_DEPENDS =		archivers/zstd \
 			devel/libgit2/libgit2 \
 			security/libssh2 \
 			security/libsodium
-
 
 .include "crates.inc"
 
