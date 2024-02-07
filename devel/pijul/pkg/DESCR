@@ -1,0 +1,10 @@
+Distributed version control system based on a theory of patches while
+still being fast and scalable. It features
+
+* commutation - changes can be applied in any order without changing
+  the result or version identifier
+* merge correctness - the order between lines is always preserved
+* first class conflicts - conflicts happen between two changes and are
+  resolved by one change. Due to commutation, once solved, they never
+  come back.
+* partial clones.
