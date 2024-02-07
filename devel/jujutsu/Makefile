@@ -21,7 +21,6 @@ LIB_DEPENDS =		archivers/zstd \
 			devel/libgit2/libgit2 \
 			security/libssh2
 
-
 MODCARGO_INSTALL_TARGET_PATHS = cli
 
 .include "crates.inc"
