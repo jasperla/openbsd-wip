@@ -1,0 +1,4 @@
+This project is intended to create a easy client interface to
+drive SONOS player. Its development started from November 2015
+and today the API supports basic features to browse music index
+and control playback in any zones.

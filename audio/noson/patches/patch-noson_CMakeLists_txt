@@ -1,0 +1,15 @@
+Fix .cmake and .pc includedir as audio/noson-app includes <noson/*.h>
+https://github.com/janbar/noson/pull/19
+
+Index: noson/CMakeLists.txt
+--- noson/CMakeLists.txt.orig
++++ noson/CMakeLists.txt
+@@ -398,7 +398,7 @@ if (NOT SKIP_INSTALL_ALL)
+     endif ()
+     set (prefix      "${CMAKE_INSTALL_PREFIX}")
+     set (exec_prefix "${CMAKE_INSTALL_PREFIX}")
+-    set (includedir  "${CMAKE_INSTALL_INCLUDEDIR}/noson")
++    set (includedir  "${CMAKE_INSTALL_INCLUDEDIR}")
+     set (libdir      "${CMAKE_INSTALL_FULL_LIBDIR}")
+     configure_file (noson.pc.in noson.pc @ONLY)
+     configure_file (nosonConfig.cmake.in nosonConfig.cmake @ONLY)
