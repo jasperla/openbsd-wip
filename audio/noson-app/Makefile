@@ -19,6 +19,9 @@ LIB_DEPENDS =		audio/noson \
 			x11/qt5/qtquickcontrols2 \
 			x11/qt5/qtsvg
 
+RUN_DEPENDS =		devel/desktop-file-utils \
+			x11/gtk+4,-guic
+
 CONFIGURE_ARGS =	-DBUILD_LIBNOSON=OFF
 
 .include <bsd.port.mk>
