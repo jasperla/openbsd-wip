@@ -1,4 +1,4 @@
-COMMENT =		easy client interface to drive SONOS player
+COMMENT =		C++ library for accessing SONOS devices
 DIST_TUPLE =		github	janbar	noson	2.12.5	.
 CATEGORIES =		audio net
 
