@@ -1,8 +1,8 @@
-COMMENT =		next neneration GoldenDict
+COMMENT =		next generation GoldenDict
 CATEGORIES =		textproc education x11
 
 DIST_TUPLE =		github	xiaoyifang	goldendict-ng	\
-				v23.09.29-MoonCake.7f0f8778	.
+				v24.01.22-LoongYear.3dddb3be	.
 PKGNAME =		${DISTNAME:C/-[[:alnum:].]*$//}
 
 # GPLv3+
@@ -44,26 +44,23 @@ LIB_DEPENDS =		archivers/bzip2 \
 
 RUN_DEPENDS =		devel/desktop-file-utils
 
-CONFIGURE_ARGS =	-DCMAKE_DISABLE_FIND_PACKAGE_Git=ON
+CONFIGURE_ARGS =	-DCMAKE_DISABLE_FIND_PACKAGE_Git=ON \
+			-DUSE_ALTERNATIVE_NAME=ON \
+			-DUSE_SYSTEM_FMT=ON
 
 # ${WRKSRC}/CMakeLists.txt requires and links it unconditionally
 LIB_DEPENDS +=		x11/qt6/qtspeech
 #CONFIGURE_ARGS +=	-DWITH_TTS=OFF
 
 # ${WRKSRC}/CMakeLists.txt =OFF does not require it, but
-# WRKSRC}/src/ftshelpers.cc uses it unconditionally
+# ${WRKSRC}/src/ftshelpers.cc uses it unconditionally
+# pulled in via libzim, anyway
 LIB_DEPENDS +=		databases/xapian-core
 #CONFIGURE_ARGS +=	-DWITH_XAPIAN=OFF
-
-# use "-ng" suffix
-CONFIGURE_ARGS +=	-DUSE_ALTERNATIVE_NAME=ON
-
-# pick devel/fmt over bundle
-CONFIGURE_ARGS +=	-DUSE_SYSTEM_FMT=ON
 
 # unported;    Could not find EB_LIBRARY using the following names: eb
 CONFIGURE_ARGS +=	-DWITH_EPWING_SUPPORT=OFF
 
-MODCMAKE_LDFLAGS +=	-L${X11BASE}/lib
+MODCMAKE_LDFLAGS =	-L${X11BASE}/lib
 
 .include <bsd.port.mk>
