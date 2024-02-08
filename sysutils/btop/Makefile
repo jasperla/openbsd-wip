@@ -26,6 +26,8 @@ do-install:
 
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/btop
 	${INSTALL_DATA} ${WRKSRC}/README.md ${PREFIX}/share/doc/btop/README.md
-	cp -pr ${WRKSRC}/themes ${PREFIX}/share/btop
+
+	${INSTALL_DATA_DIR} ${PREFIX}/share/btop
+	cp -pR ${WRKSRC}/themes ${PREFIX}/share/btop
 
 .include <bsd.port.mk>

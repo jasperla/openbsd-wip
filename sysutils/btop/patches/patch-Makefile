@@ -2,6 +2,7 @@
 - Disable ANSI colour sequence during compilation/link
 - Remove unnecessary -fstack-clash-protection flag
 - Use only -lkvm for LDFLAG
+- Remove -O2 for OPTFLAGS
 
 Index: Makefile
 --- Makefile.orig
@@ -36,6 +37,15 @@ Index: Makefile
  #? LTO command line
  ifeq ($(CLANG_WORKS),true)
  	LTO := thin
+@@ -173,7 +167,7 @@ override GOODFLAGS := $(foreach flag,$(TESTFLAGS),$(st
+ #? Flags, Libraries and Includes
+ override REQFLAGS   := -std=c++20
+ WARNFLAGS			:= -Wall -Wextra -pedantic
+-OPTFLAGS			:= -O2 -ftree-vectorize -flto=$(LTO)
++OPTFLAGS			:= -ftree-vectorize -flto=$(LTO)
+ LDCXXFLAGS			:= -pthread -D_FORTIFY_SOURCE=2 -D_GLIBCXX_ASSERTIONS -D_FILE_OFFSET_BITS=64 $(GOODFLAGS) $(ADDFLAGS)
+ override CXXFLAGS	+= $(REQFLAGS) $(LDCXXFLAGS) $(OPTFLAGS) $(WARNFLAGS)
+ override LDFLAGS	+= $(LDCXXFLAGS) $(OPTFLAGS) $(WARNFLAGS)
 @@ -240,7 +234,7 @@ endif
 
 
