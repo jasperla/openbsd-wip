@@ -11,9 +11,9 @@ PERMIT_PACKAGE =	Yes
 MAINTAINER =		Klemens Nanni <kn@openbsd.org>
 
 WANTLIB += ${COMPILER_LIBCXX} GL Qt6Concurrent Qt6Core Qt6Core5Compat
-WANTLIB += Qt6Gui Qt6Multimedia Qt6Network Qt6OpenGL Qt6PrintSupport
-WANTLIB += Qt6Qml Qt6QmlModels Qt6Quick Qt6Svg Qt6TextToSpeech
-WANTLIB += Qt6WebChannel Qt6WebEngineCore Qt6WebEngineWidgets
+WANTLIB += Qt6Gui Qt6Multimedia Qt6Network Qt6OpenGL Qt6Positioning
+WANTLIB += Qt6PrintSupport Qt6Qml Qt6QmlModels Qt6Quick Qt6Svg
+WANTLIB += Qt6TextToSpeech Qt6WebChannel Qt6WebEngineCore Qt6WebEngineWidgets
 WANTLIB += Qt6Widgets Qt6Xml X11 Xtst avcodec avformat avutil
 WANTLIB += bz2 c fmt hunspell-1.7 iconv icudata icui18n icuuc
 WANTLIB += lzma lzo2 m opencc swresample vorbis vorbisfile xapian
