@@ -1,5 +1,5 @@
 COMMENT =		C++ library for accessing SONOS devices
-DIST_TUPLE =		github	janbar	noson	2.12.5	.
+DIST_TUPLE =		github	janbar	noson	2.12.6	.
 CATEGORIES =		audio net
 
 SHARED_LIBS =		noson	0.0	# 0.0
