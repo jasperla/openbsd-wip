@@ -23,6 +23,9 @@ MODULES =		devel/qmake \
 
 LIB_DEPENDS =		x11/qt5/qtdeclarative
 
+RUN_DEPENDS =		devel/desktop-file-utils \
+			x11/gtk+4,-guic
+
 MODQMAKE_ARGS =		target.path=${PREFIX}/bin
 
 post-install:
