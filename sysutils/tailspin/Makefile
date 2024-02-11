@@ -2,7 +2,7 @@ COMMENT =	log file highlighter
 
 GH_ACCOUNT =	bensadeh
 GH_PROJECT =	tailspin
-GH_TAGNAME =	2.0.0
+GH_TAGNAME =	3.0.0
 
 CATEGORIES =	sysutils
 
@@ -24,9 +24,11 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/fish/completions/
 	${INSTALL_DATA} ${WRKSRC}/completions/tspin.fish \
 		${PREFIX}/share/fish/completions/
+
 	${INSTALL_DATA_DIR} ${PREFIX}/share/zsh/site-functions/
 	${INSTALL_DATA} ${WRKSRC}/completions/tspin.zsh \
 		${PREFIX}/share/zsh/site-functions/_tspin
+
 	${INSTALL_DATA_DIR} ${PREFIX}/share/bash-completion/completions/
 	${INSTALL_DATA} ${WRKSRC}/completions/tspin.bash \
 		${PREFIX}/share/bash-completion/completions/tspin
