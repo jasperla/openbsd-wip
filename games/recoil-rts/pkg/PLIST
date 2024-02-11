@@ -66,6 +66,9 @@ lib/cmake/cpuid/cpuidTargets.cmake
 @so lib/libunitsync.so
 lib/pkgconfig/gflags.pc
 lib/pkgconfig/libcpuid.pc
+@man man/man6/spring-dedicated.6
+@man man/man6/spring-headless.6
+@man man/man6/spring.6
 share/Tracy/
 share/Tracy/TracyConfig-relwithdebinfo.cmake
 share/Tracy/TracyConfig.cmake

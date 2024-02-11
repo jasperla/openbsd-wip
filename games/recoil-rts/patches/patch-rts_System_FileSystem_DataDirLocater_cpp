@@ -1,6 +1,5 @@
 bypass the wordexp use
 use std::getenv to look up correct user directories
-bypass use of XDG_CONFIG_DIR env var which currently isn't working
 
 Index: rts/System/FileSystem/DataDirLocater.cpp
 --- rts/System/FileSystem/DataDirLocater.cpp.orig
@@ -19,16 +18,24 @@ Index: rts/System/FileSystem/DataDirLocater.cpp
  	ExpandEnvironmentStrings(in.c_str(), out_c, maxSize); // expands %HOME% etc.
  	out = out_c;
 +#elif defined(__OpenBSD__)
-+	out = in;
++	out = in;	// no expansion as we don't have wordexp
  #else
  	std::string previous = in;
  
-@@ -310,6 +312,9 @@ void DataDirLocater::AddHomeDirs()
+@@ -310,6 +312,17 @@ void DataDirLocater::AddHomeDirs()
  	AddDirs(dd_myDocs);         // "C:/.../My Documents/Spring/"
  	AddDirs(dd_appData);        // "C:/.../All Users/Applications/Spring/"
  
 +#elif defined(__OpenBSD__)
-+	AddDirs(std::string(std::getenv("HOME")) + "/.config/spring");
++	const char* xdgConfHome = std::getenv("XDG_CONFIG_HOME");
++
++	if (xdgConfHome != nullptr && *xdgConfHome != 0) {
++    		std::string s(xdgConfHome);
++		AddDirs(s + "/.config/spring");
++	} else {
++		AddDirs(std::string(std::getenv("HOME")) + "/.config/spring");
++	}
++
 +	AddDirs(std::string(std::getenv("HOME")) + "/.spring");
  #else
  	// Linux, FreeBSD, Solaris, Apple non-bundle

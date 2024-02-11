@@ -28,17 +28,14 @@ Setting up Lobbies
 ==================
 
 Running ${PKGSTEM} without a lobby set up will allow testing of maps, engines,
-and settings. To add a lobby, you can do either of the following:
+and settings. To add a lobby, you need to download it and then launch it with:
 
 	1. use `--menu <menu>' argument to spring, or
-	2. add `DefaultLuaMenu = <menu> <version>' to
-	   ~/.config/spring/springsettings.cfg.
 
-Example Lobbies
----------------
+Installing Lobbies
+------------------
 
-Examples of lobbies that can be downloaded via pr-downloader include: Chobby,
-zkmenu, BYAR-Chobby. To install Chobby, run the following:
+To install Chobby lobby, run the following:
 
 	$ pr-downloader chobby:stable	# latest stable version
 		or
@@ -46,17 +43,10 @@ zkmenu, BYAR-Chobby. To install Chobby, run the following:
 
 Then launch it for example with:
 
-	$ spring --menu 'rapid://chobby:stable'
+	$ spring --menu 'rapid://chobby:test'
 
-BYAR-Chobby (the BAR Lobby application for Spring):
----------------------------------------------------
-- steps to set this up:
-  - Download BYAR-Chobby into ~/.spring/games/BYAR-Chobby.sdd/
-  - Download Chobby into ~/.spring/games/Chobby.sdd/
-  - change modinfo.lua in BYAR-Chobby to use Chobby $VERSION instead of
-    rapid://chobby:test
-  - cp BYAR-Chobby.sdd/dist_cfg/files/chobby_config.json Chobby.sdd/
-  - start with: $ spring --menu 'BYAR Chobby $VERSION'
+Or set it as the default by adding `DefaultLuaMenu = <menu> <version>' to
+~/.config/spring/springsettings.cfg.
 
 Installing Maps
 ===============

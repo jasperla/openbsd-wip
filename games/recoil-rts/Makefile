@@ -1,16 +1,20 @@
 COMMENT =		real-time strategy game engine for Beyond All Reason
 
-# Keeping version in sync with releases of Beyond All Reason:
-# Test server builds use the version in
+# To keep version in sync with Beyond All Reason: use version information at:
 # https://github.com/beyond-all-reason/BYAR-Chobby/blob/master/dist_cfg/config.json
+# under setups->package->id: "manual-linux", see downloads->resources or
+# launch->engine
 MJ =			105
+# don't reduce ${MN} to just single digit to avoid update-plist going berserk
 MN =			1.1
-BLD =			2293
+BLD =			2303
+HASH =			g5f26a29
 V =			${MJ}.${MN}pl${BLD}
-HASH =			g1dde17b
+# ${IN_ENGINE_V} is what recoil uses/displays internally
+IN_ENGINE_V =		${MJ}.${MN:C/\..*//}
 
-# prefix 0. because upstream has indicated they will switch to versioning
-# YY.MM; once that has happened, remove 0. and switch to the new versioning
+# Prefix '0.' to avoid future EPOCH. Upstream has indicated future versioning
+# with YY.MM; once that has happened, remove '0.'
 PKGNAME =		recoil-rts-0.${V}
 DIST_STRING =		spring_bar_%7BBAR${MJ}%7D${MAJ}.${MN}-${BLD}-${HASH}
 
@@ -24,7 +28,7 @@ DIST_TUPLE +=		github gflags gflags f8a0efe03aa69b3336d8e228b37d4ccb17324b88 \
 DIST_TUPLE +=		github wolfpld tracy 5a1f5371b792c12aea324213e1dc738b2923ae21 \
 			rts/lib/tracy # BSD-3
 DIST_TUPLE +=		github rlcevg CircuitAI \
-			bc9b7e00b5d4f920a2de1c1a4728227a9821fb57 AI/Skirmish/BARb \
+			f9cb36ef9b75342e3e82be733c8166ad96f4ecd2 AI/Skirmish/BARb \
 			# GPL-2.0
 DIST_TUPLE +=		github rlcevg CircuitAI \
 			afeae5bf1f607744aa984a8ef2094d560d95b564 AI/Skirmish/CircuitAI \
@@ -55,13 +59,11 @@ FIX_CRLF_FILES =	tools/pr-downloader/src/lib/readerwriterqueue/benchmarks/system
 COMPILER =		base-clang ports-gcc
 MODULES =		devel/cmake
 
-# Dependencies per upstream documentation (https://github.com/spring/spring)
-# sdl2, devil, openal, GLEW, zlib, freetype, ogg, vorbis, vorbisfile, curl,
-# OPTIONAL: python 2.5+, jdk 1.5+, boost 1.47+
-# Lua 5.1 and Luasocket are bundled, with customizations
 BUILD_DEPENDS =		archivers/p7zip \
 			converters/libiconv \
-			devel/boost
+			devel/boost \
+			shells/bash \
+			textproc/asciidoc
 RUN_DEPENDS =		devel/desktop-file-utils \
 			misc/shared-mime-info
 LIB_DEPENDS =		archivers/minizip \
@@ -73,7 +75,9 @@ LIB_DEPENDS =		archivers/minizip \
 			graphics/glew \
 			net/curl
 
+# per upstream, build type RELWITHDEBINFO is preferred because of crashhandler
 CONFIGURE_ARGS =	-DAI_TYPES="NATIVE" \
+			-DASCIIDOC_BIN="${LOCALBASE}/bin/asciidoc" \
 			-DCMAKE_BUILD_TYPE=RELWITHDEBINFO \
 			-DCMAKE_C_FLAGS="${CFLAGS}" \
 			-DCMAKE_CXX_FLAGS="${CXXFLAGS}" \
@@ -81,15 +85,11 @@ CONFIGURE_ARGS =	-DAI_TYPES="NATIVE" \
 			-DCMAKE_EXE_LINKER_FLAGS="${LDFLAGS} -lX11" \
 			-DCMAKE_SHARED_LINKER_FLAGS="${LDFLAGS}" \
 			-DCMAKE_SYSTEM_NAME=OpenBSD \
+			-DMANDIR=${PREFIX}/man \
+			-DDEBUG_GLSTATE=TRUE \
 			-DLUA_USE_BSD=1 \
 			-DPRD_BINDIR="${PREFIX}/bin" \
 			-DTRACY_ENABLE=OFF
-
-DEBUG_PACKAGES =	${BUILD_PACKAGES}
-
-# XXX: remove these debug flags
-#CFLAGS =	-O0 -pipe -g -Wall
-#CXXFLAGS =	-O0 -pipe -g -Wall
 
 CFLAGS +=		-I${LOCALBASE}/include \
 			-I${X11BASE}/include
@@ -99,5 +99,10 @@ LDFLAGS +=		-L${LOCALBASE}/lib \
 			-L${X11BASE}/lib
 
 WRKDIST =		${WRKDIR}/spring-${DIST_STRING:S/%7B/-/g:S/%7D/-/g}
+
+SUBST_VARS +=		IN_ENGINE_V
+
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/rts/build/cmake/ConfigureVersion.cmake
 
 .include <bsd.port.mk>

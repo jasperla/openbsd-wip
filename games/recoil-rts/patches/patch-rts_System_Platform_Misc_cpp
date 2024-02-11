@@ -1,6 +1,5 @@
-no-op for function to return the executable
 missing ifaddrs.h header
-we don't have sockaddr_ll
+use argv[0] for executable
 
 Index: rts/System/Platform/Misc.cpp
 --- rts/System/Platform/Misc.cpp.orig
@@ -13,21 +12,50 @@ Index: rts/System/Platform/Misc.cpp
 +	#include <ifaddrs.h>
 +	#include <sys/types.h>
 +	#include <sys/sysctl.h>
-+	#include <iostream>
++	#include <unistd.h>
 +
  #else
  
  #endif
-@@ -219,6 +225,8 @@ namespace Platform
+@@ -219,7 +225,37 @@ namespace Platform
  		if (sysctl(mib, sizeof(mib) / sizeof(mib[0]), buf, &cb, nullptr, 0) == 0)
  			procExeFilePath = buf;
  
 +		#elif defined(__OpenBSD__)
-+		return "/usr/local/bin/spring";
++		char *pathenv = std::getenv("PATH");
++		char filepath[PATH_MAX] = "";
++		std::string ret;
  
++		// CAVEAT: doesn't account for a relative paths e.g. './dir/spring'
++		if (argv0[0] == '/') {
++    			// absolute path
++    			strlcpy(filepath, argv0, sizeof(filepath));
++		} else {
++    			// check PATH env var for file
++			for (char *path; (path = strsep(&pathenv, ":")) != NULL;) {
++    				if (*path != '\0') {
++					strlcpy(filepath, path, sizeof(filepath));
++					strlcat(filepath, "/", sizeof(filepath));
++					strlcat(filepath, argv0, sizeof(filepath));
++					if (access(filepath, X_OK) == 0) {
++    						break;
++					}
++    				}
++			}
++		}
++
++		if (strncmp(filepath, "", sizeof("")) == 0) {
++			printf("failed to identify executable path\n");
++			exit(1);
++		}
++
++		ret.assign(filepath);
++		return ret;
++
  		#else
  		#error implement this
-@@ -247,7 +255,7 @@ namespace Platform
+ 		#endif
+@@ -247,7 +283,7 @@ namespace Platform
  		// this will only be used if moduleFilePath stays empty
  		const char* error = nullptr;
  
@@ -36,7 +64,7 @@ Index: rts/System/Platform/Misc.cpp
  		#ifdef __APPLE__
  		#define SHARED_LIBRARY_EXTENSION "dylib"
  		#else
-@@ -381,6 +389,8 @@ namespace Platform
+@@ -381,6 +417,8 @@ namespace Platform
  		return "Linux";
  		#elif defined(__FreeBSD__)
  		return "FreeBSD";
@@ -45,7 +73,7 @@ Index: rts/System/Platform/Misc.cpp
  		#elif defined(__APPLE__)
  		return "MacOS";
  		#else
-@@ -745,7 +755,7 @@ namespace Platform
+@@ -745,7 +783,7 @@ namespace Platform
  		return (GetMacType(macAddr, 0), macAddr);
  	}
  
@@ -54,3 +82,15 @@ Index: rts/System/Platform/Misc.cpp
  
  	std::array<uint8_t, 6> GetRawMacAddr() {
  		// TODO: http://lists.freebsd.org/pipermail/freebsd-hackers/2004-June/007415.html
+@@ -792,4 +830,11 @@ namespace Platform
+ 		snprintf(hexAddr.data(), hexAddr.size(), "%02x:%02x:%02x:%02x:%02x:%02x", rawAddr[0], rawAddr[1], rawAddr[2], rawAddr[3], rawAddr[4], rawAddr[5]);
+ 		return hexAddr;
+ 	}
++
++#ifdef __OpenBSD__
++	void SetArgv0(const char *s) {
++    		argv0 = s;
++	}
++#endif
++
+ } // namespace Platform

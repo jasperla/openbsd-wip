@@ -1,4 +1,4 @@
-EXPERIMENTAL: implement EnumerateCores()
+implement EnumerateCores()
 
 Index: rts/System/Platform/CpuID.cpp
 --- rts/System/Platform/CpuID.cpp.orig
