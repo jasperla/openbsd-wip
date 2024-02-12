@@ -1,4 +1,5 @@
-XXX undefine swap16(3) to pick ports versions
+swap* routines conflict with OpenBSD swap(3) macros
+https://github.com/janbar/noson/issues/20
 
 Index: noson/src/private/byteorder.h
 --- noson/src/private/byteorder.h.orig
