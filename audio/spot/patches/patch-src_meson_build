@@ -1,10 +1,10 @@
-Avoid ALSA
+Disable ALSA backend
 Leave Rust sources to devel/cargo module
 
 Index: src/meson.build
 --- src/meson.build.orig
 +++ src/meson.build
-@@ -4,7 +4,6 @@ dependency('libadwaita-1')
+@@ -9,7 +9,6 @@ dependency('libadwaita-1')
  dependency('gtk4')
  dependency('glib-2.0')
  dependency('openssl')
@@ -12,11 +12,11 @@ Index: src/meson.build
  dependency('libpulse')
  
  conf = configuration_data()
-@@ -66,6 +65,7 @@ run_command(
+@@ -85,6 +84,7 @@ run_command(
    check: true
  )
  
 +subdir_done()
- # find . -name "*.rs" -printf "'%p',\n"
- sources = files(
- './api/cached_client.rs',
+ cargo = find_program('cargo', required: true)
+ 
+ if get_option('buildtype') == 'release'

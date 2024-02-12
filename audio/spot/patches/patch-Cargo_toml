@@ -1,19 +1,19 @@
-Avoid ALSA
+Disable ALSA and gstreamer/PipeWire backends
 Disable isahc default feature to avoid using curl/static-curl
 
 Index: Cargo.toml
 --- Cargo.toml.orig
 +++ Cargo.toml
-@@ -23,7 +23,7 @@ features = ["v2_60"]
+@@ -27,7 +27,7 @@ features = ["v2_60"]
  
  [dependencies.librespot]
  version = "0.4.2"
--features = ["alsa-backend", "pulseaudio-backend"]
+-features = ["alsa-backend", "pulseaudio-backend", "gstreamer-backend"]
 +features = ["pulseaudio-backend"]
  
- [dependencies.protobuf]
- version = "2.25.2"
-@@ -45,7 +45,8 @@ version = "^1.0.93"
+ [dependencies.tokio]
+ version = "1"
+@@ -46,7 +46,8 @@ version = "^1.0.96"
  
  [dependencies.isahc]
  version = "^1.7.2"

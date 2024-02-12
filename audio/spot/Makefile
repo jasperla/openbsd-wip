@@ -1,6 +1,10 @@
 COMMENT =		native Spotify client for the GNOME desktop
 V =			0.4.0
-DIST_TUPLE =		github	xou816	spot	${V}	.
+# 05.02.2024 HEAD
+C =			aa1c57842c3f4e424eb62c69365438f904b2dc63
+DIST_TUPLE =		github	xou816	spot	${C}	.
+WRKDIST =		${WRKDIR}/spot-${C}
+DISTNAME =		spot-${V}pl1
 CATEGORIES =		audio x11
 
 MAINTAINER =		Klemens Nanni <kn@openbsd.org>
@@ -11,14 +15,14 @@ PERMIT_PACKAGE =	Yes
 WANTLIB =		${MODCARGO_WANTLIB} adwaita-1 curl gdk_pixbuf-2.0 gio-2.0
 WANTLIB +=		glib-2.0 gobject-2.0 gtk-4 intl m pulse pulse-simple
 
-
 MODULES =		devel/cargo \
 			devel/meson
 
 CONFIGURE_STYLE =	cargo
 SEPARATE_BUILD =	Yes
 
-BUILD_DEPENDS =		devel/gettext,-tools
+BUILD_DEPENDS =		devel/gettext,-tools \
+			x11/blueprint-compiler
 
 LIB_DEPENDS =		audio/pulseaudio \
 			devel/glib2 \

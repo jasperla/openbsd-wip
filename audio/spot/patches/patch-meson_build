@@ -8,6 +8,6 @@ Index: meson.build
  subdir('src')
  
 +subdir_done()
- meson.add_install_script('build-aux/meson/postinstall.py')
+ flatpak_cargo_generator = find_program(meson.project_source_root() / 'build-aux/flatpak-cargo-generator.py')
  
- flatpak_cargo_generator = find_program(meson.source_root() / 'build-aux/flatpak-cargo-generator.py')
+ cargo_sources = custom_target(
