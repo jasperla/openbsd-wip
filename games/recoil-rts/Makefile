@@ -7,8 +7,8 @@ COMMENT =		real-time strategy game engine for Beyond All Reason
 MJ =			105
 # don't reduce ${MN} to just single digit to avoid update-plist going berserk
 MN =			1.1
-BLD =			2303
-HASH =			g5f26a29
+BLD =			2314
+HASH =			g9e0bf7d
 V =			${MJ}.${MN}pl${BLD}
 # ${IN_ENGINE_V} is what recoil uses/displays internally
 IN_ENGINE_V =		${MJ}.${MN:C/\..*//}
@@ -28,7 +28,7 @@ DIST_TUPLE +=		github gflags gflags f8a0efe03aa69b3336d8e228b37d4ccb17324b88 \
 DIST_TUPLE +=		github wolfpld tracy 5a1f5371b792c12aea324213e1dc738b2923ae21 \
 			rts/lib/tracy # BSD-3
 DIST_TUPLE +=		github rlcevg CircuitAI \
-			f9cb36ef9b75342e3e82be733c8166ad96f4ecd2 AI/Skirmish/BARb \
+			0561a37458f3eb45157c9709febbfe5843e6570e AI/Skirmish/BARb \
 			# GPL-2.0
 DIST_TUPLE +=		github rlcevg CircuitAI \
 			afeae5bf1f607744aa984a8ef2094d560d95b564 AI/Skirmish/CircuitAI \
@@ -37,7 +37,7 @@ DIST_TUPLE +=		github spring SpringMapConvNG \
 			0ddd86eaa8871dc0833c69f931f55cd856c5009d tools/mapcompile \
 			# GPL-2.0
 DIST_TUPLE +=		github beyond-all-reason pr-downloader \
-			4e30e3e776c47b81e790fffcb2b62f81437e0c24 tools/pr-downloader \
+			bdac30330eccb5ec73da299922491f3f4ee8debe tools/pr-downloader \
 			# GPL-2.0
 DIST_TUPLE +=		github cameron314 readerwriterqueue \
 			8e7627d18c2108aca178888d88514179899a044f \
@@ -77,7 +77,6 @@ LIB_DEPENDS =		archivers/minizip \
 
 # per upstream, build type RELWITHDEBINFO is preferred because of crashhandler
 CONFIGURE_ARGS =	-DAI_TYPES="NATIVE" \
-			-DASCIIDOC_BIN="${LOCALBASE}/bin/asciidoc" \
 			-DCMAKE_BUILD_TYPE=RELWITHDEBINFO \
 			-DCMAKE_C_FLAGS="${CFLAGS}" \
 			-DCMAKE_CXX_FLAGS="${CXXFLAGS}" \
@@ -85,8 +84,6 @@ CONFIGURE_ARGS =	-DAI_TYPES="NATIVE" \
 			-DCMAKE_EXE_LINKER_FLAGS="${LDFLAGS} -lX11" \
 			-DCMAKE_SHARED_LINKER_FLAGS="${LDFLAGS}" \
 			-DCMAKE_SYSTEM_NAME=OpenBSD \
-			-DMANDIR=${PREFIX}/man \
-			-DDEBUG_GLSTATE=TRUE \
 			-DLUA_USE_BSD=1 \
 			-DPRD_BINDIR="${PREFIX}/bin" \
 			-DTRACY_ENABLE=OFF
@@ -101,6 +98,11 @@ LDFLAGS +=		-L${LOCALBASE}/lib \
 WRKDIST =		${WRKDIR}/spring-${DIST_STRING:S/%7B/-/g:S/%7D/-/g}
 
 SUBST_VARS +=		IN_ENGINE_V
+
+# remove man page build files as part of upstreams phasing out of the
+# unmaintained man pages
+post-extract:
+	rm ${WRKSRC}/doc/manpages/{make_manpages.sh,spring.6.txt}
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/rts/build/cmake/ConfigureVersion.cmake

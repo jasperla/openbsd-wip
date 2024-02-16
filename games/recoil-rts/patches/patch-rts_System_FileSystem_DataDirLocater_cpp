@@ -31,7 +31,7 @@ Index: rts/System/FileSystem/DataDirLocater.cpp
 +
 +	if (xdgConfHome != nullptr && *xdgConfHome != 0) {
 +    		std::string s(xdgConfHome);
-+		AddDirs(s + "/.config/spring");
++		AddDirs(s + "/spring");
 +	} else {
 +		AddDirs(std::string(std::getenv("HOME")) + "/.config/spring");
 +	}

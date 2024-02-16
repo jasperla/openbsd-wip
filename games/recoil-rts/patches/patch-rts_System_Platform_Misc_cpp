@@ -1,5 +1,5 @@
 missing ifaddrs.h header
-use argv[0] for executable
+use argv[0] for executable path
 
 Index: rts/System/Platform/Misc.cpp
 --- rts/System/Platform/Misc.cpp.orig
@@ -17,45 +17,32 @@ Index: rts/System/Platform/Misc.cpp
  #else
  
  #endif
-@@ -219,7 +225,37 @@ namespace Platform
+@@ -219,7 +225,24 @@ namespace Platform
  		if (sysctl(mib, sizeof(mib) / sizeof(mib[0]), buf, &cb, nullptr, 0) == 0)
  			procExeFilePath = buf;
  
 +		#elif defined(__OpenBSD__)
-+		char *pathenv = std::getenv("PATH");
-+		char filepath[PATH_MAX] = "";
-+		std::string ret;
++		size_t ret;
  
-+		// CAVEAT: doesn't account for a relative paths e.g. './dir/spring'
 +		if (argv0[0] == '/') {
 +    			// absolute path
-+    			strlcpy(filepath, argv0, sizeof(filepath));
++    			procExeFilePath = argv0;
 +		} else {
-+    			// check PATH env var for file
-+			for (char *path; (path = strsep(&pathenv, ":")) != NULL;) {
-+    				if (*path != '\0') {
-+					strlcpy(filepath, path, sizeof(filepath));
-+					strlcat(filepath, "/", sizeof(filepath));
-+					strlcat(filepath, argv0, sizeof(filepath));
-+					if (access(filepath, X_OK) == 0) {
-+    						break;
-+					}
-+    				}
-+			}
++    			// The binary is assumed to be in /usr/local/bin
++    			char buf[PATH_MAX] = "";
++    			ret = strlcpy(buf, "/usr/local/bin/", sizeof(buf));
++    			if (ret >= sizeof(buf))
++				LOG_L(L_WARNING, "[%s] executable directory truncated: %s", __func__, buf);
++    			strlcat(buf, argv0, sizeof(buf));
++    			if (ret >= sizeof(buf))
++				LOG_L(L_WARNING, "[%s] executable path truncated: %s", __func__, buf);
++    			procExeFilePath = buf;
 +		}
-+
-+		if (strncmp(filepath, "", sizeof("")) == 0) {
-+			printf("failed to identify executable path\n");
-+			exit(1);
-+		}
-+
-+		ret.assign(filepath);
-+		return ret;
 +
  		#else
  		#error implement this
  		#endif
-@@ -247,7 +283,7 @@ namespace Platform
+@@ -247,7 +270,7 @@ namespace Platform
  		// this will only be used if moduleFilePath stays empty
  		const char* error = nullptr;
  
@@ -64,7 +51,7 @@ Index: rts/System/Platform/Misc.cpp
  		#ifdef __APPLE__
  		#define SHARED_LIBRARY_EXTENSION "dylib"
  		#else
-@@ -381,6 +417,8 @@ namespace Platform
+@@ -381,6 +404,8 @@ namespace Platform
  		return "Linux";
  		#elif defined(__FreeBSD__)
  		return "FreeBSD";
@@ -73,7 +60,7 @@ Index: rts/System/Platform/Misc.cpp
  		#elif defined(__APPLE__)
  		return "MacOS";
  		#else
-@@ -745,7 +783,7 @@ namespace Platform
+@@ -745,7 +770,7 @@ namespace Platform
  		return (GetMacType(macAddr, 0), macAddr);
  	}
  
@@ -82,7 +69,7 @@ Index: rts/System/Platform/Misc.cpp
  
  	std::array<uint8_t, 6> GetRawMacAddr() {
  		// TODO: http://lists.freebsd.org/pipermail/freebsd-hackers/2004-June/007415.html
-@@ -792,4 +830,11 @@ namespace Platform
+@@ -792,4 +817,11 @@ namespace Platform
  		snprintf(hexAddr.data(), hexAddr.size(), "%02x:%02x:%02x:%02x:%02x:%02x", rawAddr[0], rawAddr[1], rawAddr[2], rawAddr[3], rawAddr[4], rawAddr[5]);
  		return hexAddr;
  	}
