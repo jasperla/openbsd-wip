@@ -1,2 +1,11 @@
 @bin bin/starship
+share/bash-completion/
+share/bash-completion/completions/
+share/bash-completion/completions/starship
 share/doc/pkg-readmes/${PKGSTEM}
+share/fish/
+share/fish/completions/
+share/fish/completions/starship.fish
+share/zsh/
+share/zsh/site-functions/
+share/zsh/site-functions/_starship

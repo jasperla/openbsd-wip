@@ -28,10 +28,27 @@ SEPARATE_BUILD =	Yes
 # For tests
 PORTHOME =	${WRKDIR}
 
+# Generate shell completions
+post-build:
+	${MODCARGO_TARGET_DIR}/release/starship completions bash > \
+		${WRKDIR}/starship.bash
+	${MODCARGO_TARGET_DIR}/release/starship completions fish > \
+		${WRKDIR}/starship.fish
+	${MODCARGO_TARGET_DIR}/release/starship completions zsh > \
+		${WRKDIR}/starship.zsh
+
 do-install:
 	${INSTALL_PROGRAM} ${MODCARGO_TARGET_DIR}/release/starship ${PREFIX}/bin
 
-# TODO generate and add completions for Bash, Fish and ZSH
+	${INSTALL_DATA_DIR} ${PREFIX}/share/bash-completion/completions/
+	${INSTALL_DATA} ${WRKDIR}/starship.bash \
+		${PREFIX}/share/bash-completion/completions/starship
+	${INSTALL_DATA_DIR} ${PREFIX}/share/fish/completions/
+	${INSTALL_DATA} ${WRKDIR}/starship.fish \
+		${PREFIX}/share/fish/completions/
+	${INSTALL_DATA_DIR} ${PREFIX}/share/zsh/site-functions/
+	${INSTALL_DATA} ${WRKDIR}/starship.zsh \
+		${PREFIX}/share/zsh/site-functions/_starship
 
 .include "crates.inc"
 
