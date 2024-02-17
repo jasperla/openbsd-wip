@@ -1,4 +1,2 @@
-This project is intended to create a easy client interface to
-drive SONOS player. Its development started from November 2015
-and today the API supports basic features to browse music index
-and control playback in any zones.
+noson is a client interface library to drive SONOS players.
+The API supports browsing the music index and controlling playback in any zone.
