@@ -68,16 +68,16 @@ MODGO_MODULES =	\
 	github.com/xordataexchange/crypt	 v0.0.3-0.20170626215501-b2862e3d0a77 \
 	github.com/yuin/goldmark		 v1.4.13 \
 	go.opencensus.io			 v0.22.5 \
-	golang.org/x/crypto			 v0.0.0-20210921155107-089bfa567519 \
+	golang.org/x/crypto			 v0.14.0 \
 	golang.org/x/exp			 v0.0.0-20240205201215-2c58cdc269a3 \
 	golang.org/x/lint			 v0.0.0-20190313153728-d0100b6bd8b3 \
 	golang.org/x/mod			 v0.14.0 \
-	golang.org/x/net			 v0.0.0-20220722155237-a158d28d115b \
+	golang.org/x/net			 v0.17.0 \
 	golang.org/x/oauth2			 v0.0.0-20180821212333-d2e6202438be \
 	golang.org/x/sync			 v0.0.0-20220722155255-886fb9371eb4 \
-	golang.org/x/sys			 v0.8.0 \
-	golang.org/x/term			 v0.8.0 \
-	golang.org/x/text			 v0.9.0 \
+	golang.org/x/sys			 v0.13.0 \
+	golang.org/x/term			 v0.13.0 \
+	golang.org/x/text			 v0.13.0 \
 	golang.org/x/tools			 v0.17.0 \
 	golang.org/x/xerrors			 v0.0.0-20200804184101-5ec99f83aff1 \
 	google.golang.org/appengine		 v1.4.0 \
@@ -114,6 +114,7 @@ MODGO_MODFILES =	\
 	golang.org/x/crypto			 v0.0.0-20190308221718-c2843e01d9a2 \
 	golang.org/x/crypto			 v0.0.0-20191011191535-87dc89f01550 \
 	golang.org/x/crypto			 v0.0.0-20200622213623-75b288015ac9 \
+	golang.org/x/crypto			 v0.0.0-20210921155107-089bfa567519 \
 	golang.org/x/exp			 v0.0.0-20190121172915-509febef88a4 \
 	golang.org/x/lint			 v0.0.0-20181026193005-c67002cb31c3 \
 	golang.org/x/lint			 v0.0.0-20190227174305-5b3e6a55c961 \
@@ -130,6 +131,7 @@ MODGO_MODFILES =	\
 	golang.org/x/net			 v0.0.0-20200226121028-0de0cce0169b \
 	golang.org/x/net			 v0.0.0-20201021035429-f5854403a974 \
 	golang.org/x/net			 v0.0.0-20210226172049-e18ecbb05110 \
+	golang.org/x/net			 v0.0.0-20220722155237-a158d28d115b \
 	golang.org/x/sync			 v0.0.0-20180314180146-1d60e4601c6f \
 	golang.org/x/sync			 v0.0.0-20181108010431-42b317875d0f \
 	golang.org/x/sync			 v0.0.0-20190227155943-e225da77a7e6 \
