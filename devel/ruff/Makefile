@@ -5,7 +5,7 @@ COMMENT =	extremely fast Python linter and code formatter
 
 GH_ACCOUNT =	astral-sh
 GH_PROJECT =	ruff
-GH_TAGNAME =	v0.2.1
+GH_TAGNAME =	v0.2.2
 
 CATEGORIES =	devel textproc
 
@@ -51,15 +51,6 @@ do-install:
 
 # Skip tests with errors (generate_json_schema, idx)
 MODCARGO_TEST_ARGS +=	-- --skip generate_json_schema --skip idx
-
-# Fix test for ruff/show_settings
-pre-test:
-	sed -i "/^file_resolver/s#\[BASEPATH\]#${WRKSRC}#" \
-		${WRKSRC}/crates/ruff/tests/snapshots/$\
-		show_settings__display_default_settings.snap
-	sed -i "/^linter/s#\[BASEPATH\]#${WRKSRC}#" \
-		${WRKSRC}/crates/ruff/tests/snapshots/$\
-		show_settings__display_default_settings.snap
 
 .include "crates.inc"
 
