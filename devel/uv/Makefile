@@ -17,6 +17,8 @@ DIST_TUPLE +=	github charliermarsh rs-async-zip ${ASYNC_HASH} \
 
 CATEGORIES =	devel
 
+HOMEPAGE =	https://github.com/astral-sh/uv
+
 MAINTAINER =	Laurent Cheylus <foxy@free.fr>
 
 # Apache 2.0, MIT
