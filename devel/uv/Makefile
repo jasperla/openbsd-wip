@@ -1,0 +1,53 @@
+# ring-v0.17 does not support sparc64
+NOT_FOR_ARCHS =	sparc64
+
+COMMENT =	extremely fast Python package installer and resolver
+
+GH_ACCOUNT =	astral-sh
+GH_PROJECT =	uv
+GH_TAGNAME =	0.1.4
+
+# Rust crates downloaded via git
+PUBGRUB_HASH =	9b6d89cb8a0c7902815c8b2ae99106ba322ffb14
+ASYNC_HASH =	d76801da0943de985254fc6255c0e476b57c5836
+
+DIST_TUPLE +=	github zanieb pubgrub ${PUBGRUB_HASH} ${MODCARGO_VENDOR_DIR}
+DIST_TUPLE +=	github charliermarsh rs-async-zip ${ASYNC_HASH} \
+		${MODCARGO_VENDOR_DIR}
+
+CATEGORIES =	devel
+
+MAINTAINER =	Laurent Cheylus <foxy@free.fr>
+
+# Apache 2.0, MIT
+PERMIT_PACKAGE =	Yes
+
+BUILD_DEPENDS +=	devel/cargo-generate-vendor
+
+LIB_DEPENDS +=	security/libssh2 devel/libgit2/libgit2
+
+WANTLIB +=	${MODCARGO_WANTLIB} m crypto ssl git2 ssh2
+
+MODULES =	devel/cargo
+
+CONFIGURE_STYLE =	cargo
+
+SEPARATE_BUILD =	Yes
+
+SUBST_VARS +=	MODCARGO_VENDOR_DIR
+
+post-patch:
+	${SUBST_CMD} ${WRKSRC}/Cargo.toml
+
+	${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/zanieb-pubgrub-$\
+		${PUBGRUB_HASH}.tar.gz ${MODCARGO_VENDOR_DIR}/pubgrub-${PUBGRUB_HASH}
+	${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/charliermarsh-$\
+		rs-async-zip-${ASYNC_HASH}.tar.gz \
+		${MODCARGO_VENDOR_DIR}/rs-async-zip-${ASYNC_HASH}
+
+do-install:
+	${INSTALL_PROGRAM} ${MODCARGO_TARGET_DIR}/release/uv ${PREFIX}/bin/
+
+.include "crates.inc"
+
+.include <bsd.port.mk>
