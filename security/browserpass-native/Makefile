@@ -1,12 +1,12 @@
 COMMENT =	companion app for the chromium browserpass extension
 
 MODGO_MODNAME =	github.com/browserpass/browserpass-native
-MODGO_VERSION =	v0.0.0-20231004071550-ed246ee62824
+MODGO_VERSION =	v0.0.0-20240129215400-5580c69a7200
 
 APP_ID =	com.github.browserpass.native
 
 DISTNAME =	browserpass-native-${MODGO_VERSION}
-PKGNAME =	browserpass-native-20231004071550
+PKGNAME =	browserpass-native-20240129215400
 
 CATEGORIES =	security
 

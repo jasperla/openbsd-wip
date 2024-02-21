@@ -1,4 +1,4 @@
-SHA256 (browserpass-native-v0.0.0-20231004071550-ed246ee62824.zip) = XIehrPpfv9bA7OL/CH0H7zw6r7Qvti9Ibs+3RRZBYYw=
+SHA256 (browserpass-native-v0.0.0-20240129215400-5580c69a7200.zip) = TXeaEvcXOIVuLEXzNVDYJBSkmGle/Ll6BlyFeOYhbD8=
 SHA256 (go_modules/github.com/davecgh/go-spew/@v/v1.1.0.mod) = vLKTkyUSN7eaF7bBm/KRNPQ+j0OMMZiYj81GGhzfBcw=
 SHA256 (go_modules/github.com/davecgh/go-spew/@v/v1.1.1.mod) = vLKTkyUSN7eaF7bBm/KRNPQ+j0OMMZiYj81GGhzfBcw=
 SHA256 (go_modules/github.com/davecgh/go-spew/@v/v1.1.1.zip) = a0SoQ5UfNxtwEMdU7MPKvv6BXVztHFuUCfstaX6KiQ0=
@@ -21,7 +21,7 @@ SHA256 (go_modules/gopkg.in/check.v1/@v/v0.0.0-20161208181325-20d25e280405.mod) 
 SHA256 (go_modules/gopkg.in/check.v1/@v/v0.0.0-20161208181325-20d25e280405.zip) = ThgX+WTKNOVFuBr9oDJaXonPWN4uQT2CB8Cv3dD9wVw=
 SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.0-20200313102051-9f266ea9e77c.mod) = IVeYYKIDBvz0OxvSNNH7oxlJnHdhG3HAX5vzupDauTk=
 SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.0-20200313102051-9f266ea9e77c.zip) = rPGcy0/KmDsjSjnvAy+vmrcOdZaAZzuz3/B353/uIP4=
-SIZE (browserpass-native-v0.0.0-20231004071550-ed246ee62824.zip) = 36660
+SIZE (browserpass-native-v0.0.0-20240129215400-5580c69a7200.zip) = 36977
 SIZE (go_modules/github.com/davecgh/go-spew/@v/v1.1.0.mod) = 34
 SIZE (go_modules/github.com/davecgh/go-spew/@v/v1.1.1.mod) = 34
 SIZE (go_modules/github.com/davecgh/go-spew/@v/v1.1.1.zip) = 60320

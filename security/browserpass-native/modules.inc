@@ -9,6 +9,8 @@ MODGO_MODULES =	\
 	golang.org/x/sys		 v0.12.0 \
 	gopkg.in/check.v1		 v0.0.0-20161208181325-20d25e280405 \
 	gopkg.in/yaml.v3		 v3.0.0-20200313102051-9f266ea9e77c
+
 MODGO_MODFILES =	\
 	github.com/davecgh/go-spew	 v1.1.0 \
 	golang.org/x/sys		 v0.0.0-20220715151400-c0bba94af5f8
+
