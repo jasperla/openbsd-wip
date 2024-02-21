@@ -10,7 +10,7 @@ Index: Cargo.toml
  base64 = { version = "0.21.7" }
  cachedir = { version = "0.3.1" }
  camino = { version = "1.1.6", features = ["serde1"] }
-@@ -65,7 +65,7 @@ owo-colors = { version = "4.0.0" }
+@@ -66,7 +66,7 @@ owo-colors = { version = "4.0.0" }
  petgraph = { version = "0.6.4" }
  platform-info = { version = "2.0.2" }
  plist = { version = "1.6.0" }

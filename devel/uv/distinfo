@@ -79,6 +79,10 @@ SHA256 (cargo/clap-4.5.0.tar.gz) = gMIQJavUJmmpLvyZbvE8+yxcYnhYQh6ljVw7MxpsE08=
 SHA256 (cargo/clap-4.5.1.tar.gz) = yRjVQe8pE1d6D5Vm6c4nyzW23wcgdXaeCybLWlVFINo=
 SHA256 (cargo/clap_builder-4.5.0.tar.gz) = RYvx80F2nfz4SYRvZd/9+RRtqla80qR8tOHemRVWfJk=
 SHA256 (cargo/clap_builder-4.5.1.tar.gz) = nz5zkdrWivsMLt4b9hn1eaPcnC7GfwibqjlxI6Lz0es=
+SHA256 (cargo/clap_complete-4.5.1.tar.gz) = iF5NfVr0C/uZrm+UM+KS/qyY1FLcs+w9Jd/nVSt32ow=
+SHA256 (cargo/clap_complete_command-0.5.1.tar.gz) = GDSVNx6njUyf9ji/xkl9Rv7SOW5PnFCuvBJ4pKmRmj0=
+SHA256 (cargo/clap_complete_fig-4.5.0.tar.gz) = VLPmX5H6vdI8rD1X051dk4tNqr0HDDNcAG3MuGamERA=
+SHA256 (cargo/clap_complete_nushell-0.1.11.tar.gz) = XQK8ixoY7kfE0u7D+1rANNxo6+phJbFQnpzN/83c5m4=
 SHA256 (cargo/clap_derive-4.5.0.tar.gz) = MHvAU41fD4O4JI2zCHqpL+UE5GkSlNDJbA6rwz9Hukc=
 SHA256 (cargo/clap_lex-0.7.0.tar.gz) = mMyPve0MYHt7qd1gzZjfWa+X6E0k5JyFVzMc/CbTAc4=
 SHA256 (cargo/cmake-0.1.50.tar.gz) = oxx4lWO4Ffd/QlDK7hI2VzQ2n5QkObfe/XHhikgZcTA=
@@ -547,7 +551,7 @@ SHA256 (cargo/zstd-safe-5.0.2+zstd.1.5.2.tar.gz) = HSpVheBPnupLKj0eylCMTe6Vkqie9
 SHA256 (cargo/zstd-safe-7.0.0.tar.gz) = Q3R8dCLikkwRFE1SKYeLmBgO+LBsykq1rzevyKjY6j4=
 SHA256 (cargo/zstd-sys-2.0.9+zstd.1.5.5.tar.gz) = nhbvqKh0oEgaV0CE00zCb9s7mWJ0gPeFiI3rY4ZQZlY=
 SHA256 (charliermarsh-rs-async-zip-d76801da0943de985254fc6255c0e476b57c5836.tar.gz) = VCMONcWEmVePaqjzvCju+zKg6t/S17JTp62ehZXgUzY=
-SHA256 (uv-0.1.5.tar.gz) = EIP+1uZc6SEFZ+7dDAaHNtE8X2i4Ymlt1O9AF/VCIwY=
+SHA256 (uv-0.1.6.tar.gz) = QyookKDI0yc6PV01xDcPVhwQz1EwYZUohrABE6ODD9Y=
 SHA256 (zanieb-pubgrub-9b6d89cb8a0c7902815c8b2ae99106ba322ffb14.tar.gz) = SrvMyKyD+i7Zo3Fk26U+8GEbuGYD+PNq192bL44G49k=
 SIZE (cargo/actix-codec-0.5.2.tar.gz) = 14085
 SIZE (cargo/actix-http-3.6.0.tar.gz) = 152432
@@ -630,6 +634,10 @@ SIZE (cargo/clap-4.5.0.tar.gz) = 55379
 SIZE (cargo/clap-4.5.1.tar.gz) = 55389
 SIZE (cargo/clap_builder-4.5.0.tar.gz) = 163521
 SIZE (cargo/clap_builder-4.5.1.tar.gz) = 163569
+SIZE (cargo/clap_complete-4.5.1.tar.gz) = 37823
+SIZE (cargo/clap_complete_command-0.5.1.tar.gz) = 8273
+SIZE (cargo/clap_complete_fig-4.5.0.tar.gz) = 10932
+SIZE (cargo/clap_complete_nushell-0.1.11.tar.gz) = 32198
 SIZE (cargo/clap_derive-4.5.0.tar.gz) = 29042
 SIZE (cargo/clap_lex-0.7.0.tar.gz) = 11915
 SIZE (cargo/cmake-0.1.50.tar.gz) = 16748
@@ -1098,5 +1106,5 @@ SIZE (cargo/zstd-safe-5.0.2+zstd.1.5.2.tar.gz) = 17273
 SIZE (cargo/zstd-safe-7.0.0.tar.gz) = 20463
 SIZE (cargo/zstd-sys-2.0.9+zstd.1.5.5.tar.gz) = 728791
 SIZE (charliermarsh-rs-async-zip-d76801da0943de985254fc6255c0e476b57c5836.tar.gz) = 95906
-SIZE (uv-0.1.5.tar.gz) = 1809688
+SIZE (uv-0.1.6.tar.gz) = 1815631
 SIZE (zanieb-pubgrub-9b6d89cb8a0c7902815c8b2ae99106ba322ffb14.tar.gz) = 74519
