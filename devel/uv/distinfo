@@ -271,7 +271,6 @@ SHA256 (cargo/partial_ref_derive-0.3.3.tar.gz) = MA4dLLW4mLWlNC6ZTg0MNn2/5py/cXz
 SHA256 (cargo/password-hash-0.4.2.tar.gz) = dnY3TKruijJcnnoq5VfyFsVWOhcdaZew74plrzUUdwA=
 SHA256 (cargo/paste-1.0.14.tar.gz) = 3jFFrwgCTeqfqZFPOBoXuPxgNN+wDzqEAT9/9D8p7Uw=
 SHA256 (cargo/pbkdf2-0.11.0.tar.gz) = g6BpLsROTPHvKMoxfxT48H2i2V7D+gH4bkRntyXmCRc=
-SHA256 (cargo/pep440_rs-0.3.12.tar.gz) = iH9mzGJxfqcsqsTx605vOSIk2j//8/QOwTq0J4AnRtY=
 SHA256 (cargo/percent-encoding-2.3.1.tar.gz) = 4xSPUEYgil1WvPwDBT48pjNOUdqN+xm2zcizBvrjKD4=
 SHA256 (cargo/petgraph-0.6.4.tar.gz) = 4dOv0mKOador44Xrby/VfIrHl3zu/23BZv8WV7Djhqk=
 SHA256 (cargo/pico-args-0.5.0.tar.gz) = W+Fnp6827iL+MRUFG8UfbmxwVMk0jijetPSb1vcFoxU=
@@ -305,7 +304,7 @@ SHA256 (cargo/pyo3-ffi-0.20.2.tar.gz) = 27fewX4XdmtGvKTxpCFahQBrTC7N4SIHbFYt0Fja
 SHA256 (cargo/pyo3-log-0.9.0.tar.gz) = TBCAjuclBAO+2yS8MMMkk+k4df73uj5CkiJv6STzmL0=
 SHA256 (cargo/pyo3-macros-0.20.2.tar.gz) = Bfc4tOQNULVxGVfxQoeM+g8o4FSqDr38P9E3qEP3TtM=
 SHA256 (cargo/pyo3-macros-backend-0.20.2.tar.gz) = D8kQ1IUYR4J9r51s3UqCP72qtbiBgyXF6XqG2nnoiB8=
-SHA256 (cargo/pyproject-toml-0.8.1.tar.gz) = RtSl5pGH8jop+KoOpXSR0QS6VBvFX3ZVLCp0liqiDgQ=
+SHA256 (cargo/pyproject-toml-0.10.0.tar.gz) = O4D4ibbUE8P4ljosfbA/ld1uHYXhB0E3yyAT6i+qiJg=
 SHA256 (cargo/quick-error-1.2.3.tar.gz) = odAZQdgvoqtQvh555nFCid183njrpMB0vFpDdPZQ3+A=
 SHA256 (cargo/quick-xml-0.31.0.tar.gz) = EASjRLMKVOLuWNZqcbMtLbL+sKMfmi0wK/BTbxXeKjM=
 SHA256 (cargo/quote-1.0.35.tar.gz) = KR7Jq179k0qvUDpkZsXVJRU10QjudHRyw5d8xazIaO8=
@@ -413,7 +412,6 @@ SHA256 (cargo/system-configuration-0.5.1.tar.gz) = ujo63FwnXXGa+MtCcuocSm1mind/N
 SHA256 (cargo/system-configuration-sys-0.5.0.tar.gz) = p1+xiOtia5JGg+O5XjpI5jVR/PtRlJ3i8Gqdkdvuk8k=
 SHA256 (cargo/tagu-0.1.6.tar.gz) = 7dtrBtIPup7SH8o9aW7htuhwvKC8+fopcfauJDbeV2o=
 SHA256 (cargo/tap-1.0.1.tar.gz) = VZN+F5kYWxKGPUR/Qll+1p2ZKGhrjYih3xc3agl9g2k=
-SHA256 (cargo/tar-0.4.40.tar.gz) = sWr86h8iiRxJoAx1HHtjsiMyhAZPEaIA/GJBN8UeLds=
 SHA256 (cargo/target-lexicon-0.12.13.tar.gz) = aXWL2i548JjkzLOTAhoJY7s0QurAXxNcMPYbc3C7r64=
 SHA256 (cargo/task-local-extensions-0.1.4.tar.gz) = ujI4ZuXQM4GOMkD+6599ssQpZnTk2eFrl7e/j0kENOg=
 SHA256 (cargo/tempfile-3.10.0.tar.gz) = o2XozRjkR2Lvldh/KE9LXNBBB/7C/zBSvWo+YGlmnmc=
@@ -551,8 +549,8 @@ SHA256 (cargo/zstd-safe-5.0.2+zstd.1.5.2.tar.gz) = HSpVheBPnupLKj0eylCMTe6Vkqie9
 SHA256 (cargo/zstd-safe-7.0.0.tar.gz) = Q3R8dCLikkwRFE1SKYeLmBgO+LBsykq1rzevyKjY6j4=
 SHA256 (cargo/zstd-sys-2.0.9+zstd.1.5.5.tar.gz) = nhbvqKh0oEgaV0CE00zCb9s7mWJ0gPeFiI3rY4ZQZlY=
 SHA256 (charliermarsh-rs-async-zip-d76801da0943de985254fc6255c0e476b57c5836.tar.gz) = VCMONcWEmVePaqjzvCju+zKg6t/S17JTp62ehZXgUzY=
-SHA256 (uv-0.1.6.tar.gz) = QyookKDI0yc6PV01xDcPVhwQz1EwYZUohrABE6ODD9Y=
-SHA256 (zanieb-pubgrub-9b6d89cb8a0c7902815c8b2ae99106ba322ffb14.tar.gz) = SrvMyKyD+i7Zo3Fk26U+8GEbuGYD+PNq192bL44G49k=
+SHA256 (uv-0.1.7.tar.gz) = cx57V3P8oIxOfoQhhdbBzlT+QpQSe90AkbJespGM5JU=
+SHA256 (zanieb-pubgrub-aab132a3d4d444dd8dd41d8c4e605abd69dacfe1.tar.gz) = k+xETOEgfoc/EA5gI5EByRJBOUqwZpvLizKdYoximOo=
 SIZE (cargo/actix-codec-0.5.2.tar.gz) = 14085
 SIZE (cargo/actix-http-3.6.0.tar.gz) = 152432
 SIZE (cargo/actix-macros-0.2.4.tar.gz) = 8380
@@ -826,7 +824,6 @@ SIZE (cargo/partial_ref_derive-0.3.3.tar.gz) = 8048
 SIZE (cargo/password-hash-0.4.2.tar.gz) = 26099
 SIZE (cargo/paste-1.0.14.tar.gz) = 18157
 SIZE (cargo/pbkdf2-0.11.0.tar.gz) = 13229
-SIZE (cargo/pep440_rs-0.3.12.tar.gz) = 23943
 SIZE (cargo/percent-encoding-2.3.1.tar.gz) = 10235
 SIZE (cargo/petgraph-0.6.4.tar.gz) = 185895
 SIZE (cargo/pico-args-0.5.0.tar.gz) = 11545
@@ -860,7 +857,7 @@ SIZE (cargo/pyo3-ffi-0.20.2.tar.gz) = 64601
 SIZE (cargo/pyo3-log-0.9.0.tar.gz) = 14370
 SIZE (cargo/pyo3-macros-0.20.2.tar.gz) = 7925
 SIZE (cargo/pyo3-macros-backend-0.20.2.tar.gz) = 49710
-SIZE (cargo/pyproject-toml-0.8.1.tar.gz) = 6047
+SIZE (cargo/pyproject-toml-0.10.0.tar.gz) = 6072
 SIZE (cargo/quick-error-1.2.3.tar.gz) = 15066
 SIZE (cargo/quick-xml-0.31.0.tar.gz) = 172236
 SIZE (cargo/quote-1.0.35.tar.gz) = 28136
@@ -968,7 +965,6 @@ SIZE (cargo/system-configuration-0.5.1.tar.gz) = 12618
 SIZE (cargo/system-configuration-sys-0.5.0.tar.gz) = 6730
 SIZE (cargo/tagu-0.1.6.tar.gz) = 12714
 SIZE (cargo/tap-1.0.1.tar.gz) = 11316
-SIZE (cargo/tar-0.4.40.tar.gz) = 51844
 SIZE (cargo/target-lexicon-0.12.13.tar.gz) = 25424
 SIZE (cargo/task-local-extensions-0.1.4.tar.gz) = 10723
 SIZE (cargo/tempfile-3.10.0.tar.gz) = 33376
@@ -1106,5 +1102,5 @@ SIZE (cargo/zstd-safe-5.0.2+zstd.1.5.2.tar.gz) = 17273
 SIZE (cargo/zstd-safe-7.0.0.tar.gz) = 20463
 SIZE (cargo/zstd-sys-2.0.9+zstd.1.5.5.tar.gz) = 728791
 SIZE (charliermarsh-rs-async-zip-d76801da0943de985254fc6255c0e476b57c5836.tar.gz) = 95906
-SIZE (uv-0.1.6.tar.gz) = 1815631
-SIZE (zanieb-pubgrub-9b6d89cb8a0c7902815c8b2ae99106ba322ffb14.tar.gz) = 74519
+SIZE (uv-0.1.7.tar.gz) = 1825152
+SIZE (zanieb-pubgrub-aab132a3d4d444dd8dd41d8c4e605abd69dacfe1.tar.gz) = 73856
