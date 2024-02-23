@@ -1,3 +1,0 @@
-@comment $OpenBSD: PLIST,v$
-@bin bin/melonDS
-share/doc/pkg-readmes/${PKGSTEM}
