@@ -47,8 +47,25 @@ post-patch:
 		rs-async-zip-${ASYNC_HASH}.tar.gz \
 		${MODCARGO_VENDOR_DIR}/rs-async-zip-${ASYNC_HASH}
 
+# Generate shell completions
+post-build:
+	${MODCARGO_TARGET_DIR}/release/uv -n --generate-shell-completion bash \
+		> ${WRKDIR}/uv.bash
+	${MODCARGO_TARGET_DIR}/release/uv -n --generate-shell-completion fish \
+		> ${WRKDIR}/uv.fish
+	${MODCARGO_TARGET_DIR}/release/uv -n --generate-shell-completion zsh \
+		> ${WRKDIR}/uv.zsh
+
 do-install:
 	${INSTALL_PROGRAM} ${MODCARGO_TARGET_DIR}/release/uv ${PREFIX}/bin/
+
+	${INSTALL_DATA_DIR} ${PREFIX}/share/bash-completion/completions/
+	${INSTALL_DATA} ${WRKDIR}/uv.bash \
+		${PREFIX}/share/bash-completion/completions/uv
+	${INSTALL_DATA_DIR} ${PREFIX}/share/fish/completions/
+	${INSTALL_DATA} ${WRKDIR}/uv.fish ${PREFIX}/share/fish/completions/
+	${INSTALL_DATA_DIR} ${PREFIX}/share/zsh/site-functions/
+	${INSTALL_DATA} ${WRKDIR}/uv.zsh ${PREFIX}/share/zsh/site-functions/_uv
 
 .include "crates.inc"
 
