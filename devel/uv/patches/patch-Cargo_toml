@@ -4,7 +4,7 @@ Index: Cargo.toml
 @@ -22,7 +22,7 @@ anyhow = { version = "1.0.79" }
  async-compression = { version = "0.4.6" }
  async-trait = { version = "0.1.77" }
- async_http_range_reader = { version = "0.6.1" }
+ async_http_range_reader = { version = "0.7.0" }
 -async_zip = { git = "https://github.com/charliermarsh/rs-async-zip", rev = "d76801da0943de985254fc6255c0e476b57c5836", features = ["deflate"] }
 +async_zip = { path = "${MODCARGO_VENDOR_DIR}/rs-async-zip-d76801da0943de985254fc6255c0e476b57c5836", features = ["deflate"] }
  base64 = { version = "0.21.7" }
@@ -18,4 +18,4 @@ Index: Cargo.toml
 +pubgrub = { path = "${MODCARGO_VENDOR_DIR}/pubgrub-aab132a3d4d444dd8dd41d8c4e605abd69dacfe1" }
  pyo3 = { version = "0.20.2" }
  pyo3-log = { version = "0.9.0"}
- pyproject-toml = { version = "0.8.1" }
+ pyproject-toml = { version = "0.10.0" }

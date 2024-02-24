@@ -35,7 +35,7 @@ SHA256 (cargo/assert_cmd-2.0.13.tar.gz) = AK0/OpQu7mAzWrQ0I1jBYe4paCng0W/0L8HWyw
 SHA256 (cargo/assert_fs-1.1.1.tar.gz) = LNdi4RDI7WKbEbbN5ZRYzBxx3njrvMMAmfyOBAOiouw=
 SHA256 (cargo/async-compression-0.4.6.tar.gz) = oRb0apaSJCAKCpfynP1MUOdTTktIJr0j6iw8UzA5yCw=
 SHA256 (cargo/async-trait-0.1.77.tar.gz) = yYDuNehwvRpNLIKU1MBNBJnme8oeS1zvzGk8L6AMrqk=
-SHA256 (cargo/async_http_range_reader-0.6.1.tar.gz) = UUOqrk7ANaXXz9pmbquJb+VCiiqKsJymUaLc46jwaRI=
+SHA256 (cargo/async_http_range_reader-0.7.0.tar.gz) = z47qswxo2k3CxR86/EMnqwb+Dz8CjKQj98o5jH7Yxec=
 SHA256 (cargo/atty-0.2.14.tar.gz) = 2bOb4Ydw0RQhzbG5lHpF3T836TCSy/N3YUgooxnV/ug=
 SHA256 (cargo/autocfg-1.1.0.tar.gz) = 1GiAK6sXy8DMV16bBT9B5yqja/prf1XjUp/6QxYbl/o=
 SHA256 (cargo/backtrace-0.3.69.tar.gz) = IIm34/NbndLQ7ZIerU9tMYwnaA1KW9Fns+4SDtsQWDc=
@@ -549,7 +549,7 @@ SHA256 (cargo/zstd-safe-5.0.2+zstd.1.5.2.tar.gz) = HSpVheBPnupLKj0eylCMTe6Vkqie9
 SHA256 (cargo/zstd-safe-7.0.0.tar.gz) = Q3R8dCLikkwRFE1SKYeLmBgO+LBsykq1rzevyKjY6j4=
 SHA256 (cargo/zstd-sys-2.0.9+zstd.1.5.5.tar.gz) = nhbvqKh0oEgaV0CE00zCb9s7mWJ0gPeFiI3rY4ZQZlY=
 SHA256 (charliermarsh-rs-async-zip-d76801da0943de985254fc6255c0e476b57c5836.tar.gz) = VCMONcWEmVePaqjzvCju+zKg6t/S17JTp62ehZXgUzY=
-SHA256 (uv-0.1.9.tar.gz) = SlJCnU+m6iEECxXupqw6cszknZp7OLCQgQo4CDP3Wt0=
+SHA256 (uv-0.1.10.tar.gz) = LDHLSw2Mnjj0VruBPkCss2nMzxaQQ+lkK5h5vRRPBbY=
 SHA256 (zanieb-pubgrub-aab132a3d4d444dd8dd41d8c4e605abd69dacfe1.tar.gz) = k+xETOEgfoc/EA5gI5EByRJBOUqwZpvLizKdYoximOo=
 SIZE (cargo/actix-codec-0.5.2.tar.gz) = 14085
 SIZE (cargo/actix-http-3.6.0.tar.gz) = 152432
@@ -588,7 +588,7 @@ SIZE (cargo/assert_cmd-2.0.13.tar.gz) = 23917
 SIZE (cargo/assert_fs-1.1.1.tar.gz) = 18090
 SIZE (cargo/async-compression-0.4.6.tar.gz) = 99437
 SIZE (cargo/async-trait-0.1.77.tar.gz) = 29986
-SIZE (cargo/async_http_range_reader-0.6.1.tar.gz) = 13574
+SIZE (cargo/async_http_range_reader-0.7.0.tar.gz) = 13811
 SIZE (cargo/atty-0.2.14.tar.gz) = 5470
 SIZE (cargo/autocfg-1.1.0.tar.gz) = 13272
 SIZE (cargo/backtrace-0.3.69.tar.gz) = 77299
@@ -1102,5 +1102,5 @@ SIZE (cargo/zstd-safe-5.0.2+zstd.1.5.2.tar.gz) = 17273
 SIZE (cargo/zstd-safe-7.0.0.tar.gz) = 20463
 SIZE (cargo/zstd-sys-2.0.9+zstd.1.5.5.tar.gz) = 728791
 SIZE (charliermarsh-rs-async-zip-d76801da0943de985254fc6255c0e476b57c5836.tar.gz) = 95906
-SIZE (uv-0.1.9.tar.gz) = 1850366
+SIZE (uv-0.1.10.tar.gz) = 1850973
 SIZE (zanieb-pubgrub-aab132a3d4d444dd8dd41d8c4e605abd69dacfe1.tar.gz) = 73856
