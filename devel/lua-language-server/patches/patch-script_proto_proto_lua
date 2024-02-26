@@ -1,0 +1,15 @@
+Index: script/proto/proto.lua
+Fix stdio listen mode
+See commit https://github.com/LuaLS/lua-language-server/commit/b6e452ccac0cbf150c8ffc4a9738e7e9202fc07c
+
+--- script/proto/proto.lua.orig
++++ script/proto/proto.lua
+@@ -234,8 +234,6 @@ end
+ function m.listen(mode, socketPort)
+     m.mode = mode
+     if mode == 'stdio' then
+-        subprocess.filemode(io.stdin,  'b')
+-        subprocess.filemode(io.stdout, 'b')
+         io.stdin:setvbuf  'no'
+         io.stdout:setvbuf 'no'
+         pub.task('loadProtoByStdio')

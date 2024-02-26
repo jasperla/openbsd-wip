@@ -1,0 +1,7 @@
+#!/bin/sh
+
+STATE_PATH=${XDG_STATE_HOME:-$HOME/.local/state}/lua-language-server
+
+exec /usr/local/lib/lua-language-server/bin/lua-language-server \
+  -E /usr/local/lib/lua-language-server/main.lua \
+  --logpath="$STATE_PATH/log" --metapath="$STATE_PATH/meta" "$@"

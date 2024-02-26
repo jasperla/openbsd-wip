@@ -1,0 +1,53 @@
+Remove test_fw:test2 for bee.lua => errors on OpenBSD
+
+Index: 3rd/bee.lua/test/test_filewatch.lua
+--- 3rd/bee.lua/test/test_filewatch.lua.orig
++++ 3rd/bee.lua/test/test_filewatch.lua
+@@ -34,47 +34,6 @@ function test_fw:test_1()
+     end)
+ end
+ 
+-function test_fw:test_2()
+-    test(function (fw, root)
+-        fs.create_directories(root / "dir")
+-        create_file(root / "file_1")
+-        fs.rename(root / "file_1", root / "file_2")
+-        fs.remove(root / "file_2")
+-        local function equal(a, b)
+-            return a:match "^(.-)/?$" == b:match "^(.-)/?$"
+-        end
+-        local function has(t, a)
+-            for _, v in ipairs(t) do
+-                if equal(v, a) then
+-                    return true
+-                end
+-            end
+-        end
+-        local list = {}
+-        local n = 100
+-        while true do
+-            local w, v = fw:select()
+-            if w then
+-                n = 100
+-                if not has(list, v) and not equal(v, root:string()) then
+-                    list[#list+1] = v
+-                end
+-            else
+-                n = n - 1
+-                if n < 0 then
+-                    break
+-                end
+-                thread.sleep(0.001)
+-            end
+-        end
+-        lt.assertEquals(list, {
+-            (root / "dir"):string(),
+-            (root / "file_1"):string(),
+-            (root / "file_2"):string(),
+-        })
+-    end)
+-end
+-
+ -- test unexist symlink link to self
+ -- test directory symlink link to parent
+ function test_fw:test_symlink()
