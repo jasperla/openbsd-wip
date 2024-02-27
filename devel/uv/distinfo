@@ -26,7 +26,6 @@ SHA256 (cargo/anstyle-1.0.6.tar.gz) = iQEmnGMH6Nk5k1eChqwO338ZUHn//1697qaln/t+Nr
 SHA256 (cargo/anstyle-parse-0.2.3.tar.gz) = x1rGXaOeX+WrdZMHSZ3a2IDXJO7S9s5bXoom9POHkow=
 SHA256 (cargo/anstyle-query-1.0.2.tar.gz) = 4okjMSREzdco5HOLP5ycrHOVAJCbs9PJS0NVGxZRdkg=
 SHA256 (cargo/anstyle-wincon-3.0.2.tar.gz) = HNVLgeyNYYDiRlTQs3GtIvw90IO2/4ujJbcuAMh2YKc=
-SHA256 (cargo/anyhow-1.0.79.tar.gz) = CA6YkKCCZisJwa1F9Wf67rR/IrX7I4lfvh5lHnGOJco=
 SHA256 (cargo/anyhow-1.0.80.tar.gz) = WtMs5S5BYXMPcJjAd80u1iKbWATM+Z5TZr4atyqYtOE=
 SHA256 (cargo/arc-swap-1.6.0.tar.gz) = vdyt3fXpAV0xAXmlm7KMTUuZIK0PEejhTbrfZUiQyaY=
 SHA256 (cargo/arrayref-0.3.7.tar.gz) = a0kw0st3zmL4nuXVKJtKwElVmxxFU5Jx9e1P3H2zRUU=
@@ -193,7 +192,7 @@ SHA256 (cargo/indexmap-2.2.3.tar.gz) = IzzzkGPwWOosquQJG/Sj73CmU6+8Am9cSkE10RTjw
 SHA256 (cargo/indicatif-0.17.8.tar.gz) = djpaj0UIfWvOpCIue3LCkaBU7fgOTvbv0qSXmHjHvqM=
 SHA256 (cargo/indoc-2.0.4.tar.gz) = Hhhs+66AhOUT2v9CQLR5fjQvmIzs2k+2yTkVD5YxX9g=
 SHA256 (cargo/inout-0.1.3.tar.gz) = oMEFU9ZkpNC8/59CFdCqxnpjnMaO9mCECv4wm4B7yfU=
-SHA256 (cargo/insta-1.34.0.tar.gz) = XWRgC+NLL8/CZ3QKJD+ndERBu0lHphmsTlu2UH81+/w=
+SHA256 (cargo/insta-1.35.1.tar.gz) = fJhcG++ZzxPFj63kcEg9gaK/6Ebr3mDtKMwt3ewt+eI=
 SHA256 (cargo/instant-0.1.12.tar.gz) = elu+gkxQfF2llWNV6Gp0bYLg4UZPZdhizF5x2nDpSyw=
 SHA256 (cargo/ipnet-2.9.0.tar.gz) = j1GPM13OZyWnYTgiRGMdhs8MyyhjQTWQsxM4/rRn+cM=
 SHA256 (cargo/is-terminal-0.4.12.tar.gz) = 8j/17yuA1gjWHv7oNJNNhizZJGGvwFYN7fST5MAzc4s=
@@ -298,12 +297,12 @@ SHA256 (cargo/proc-macro2-1.0.78.tar.gz) = 4kIq1kXYnJn48+a4ip/eyn+r6sg2sQAjccQ2f
 SHA256 (cargo/proptest-0.10.1.tar.gz) = EubIDBE5ETwo7kZw3FDMQpFSKLUfVqnkB/DsYPlmZG8=
 SHA256 (cargo/ptr_meta-0.1.4.tar.gz) = BzjM9+oGtgjBBWSzHevU9bxeGX/Iv+CI9orlzoHnpPE=
 SHA256 (cargo/ptr_meta_derive-0.1.4.tar.gz) = FrhF2/ypiPoz2wacDiMFdNFaMIjxR6h7ZMdYnrZiyaw=
-SHA256 (cargo/pyo3-0.20.2.tar.gz) = moncelhQ0OmDvh7CpGOhcdIJkEh8PPzWi1Nj8e49b+A=
-SHA256 (cargo/pyo3-build-config-0.20.2.tar.gz) = B0JvDY/lpgHyYpPzAK/Rp7HtXniypwWHDF8wiTxRY74=
-SHA256 (cargo/pyo3-ffi-0.20.2.tar.gz) = 27fewX4XdmtGvKTxpCFahQBrTC7N4SIHbFYt0FjabPE=
+SHA256 (cargo/pyo3-0.20.3.tar.gz) = U727ltSRV+ZdRcwoevXzL/rdX0dhQ4tSewVfsNS7gjM=
+SHA256 (cargo/pyo3-build-config-0.20.3.tar.gz) = 3qpXRd4/UjHOEFF6H13ZfVPlov13qmtYQikghYMdSNc=
+SHA256 (cargo/pyo3-ffi-0.20.3.tar.gz) = YrQlMdA+CNTvH26Fou1CLrZ4uM1it2LlOJHAX68NSvo=
 SHA256 (cargo/pyo3-log-0.9.0.tar.gz) = TBCAjuclBAO+2yS8MMMkk+k4df73uj5CkiJv6STzmL0=
-SHA256 (cargo/pyo3-macros-0.20.2.tar.gz) = Bfc4tOQNULVxGVfxQoeM+g8o4FSqDr38P9E3qEP3TtM=
-SHA256 (cargo/pyo3-macros-backend-0.20.2.tar.gz) = D8kQ1IUYR4J9r51s3UqCP72qtbiBgyXF6XqG2nnoiB8=
+SHA256 (cargo/pyo3-macros-0.20.3.tar.gz) = cwXHIPoBuAVeyV5ISm7KeoPIQSZ/DdUoDwyLhVHSwVg=
+SHA256 (cargo/pyo3-macros-backend-0.20.3.tar.gz) = fH6baLucMUnFsMreXQf5U9bRJetDN3I8TM22ZfH5YYU=
 SHA256 (cargo/pyproject-toml-0.10.0.tar.gz) = O4D4ibbUE8P4ljosfbA/ld1uHYXhB0E3yyAT6i+qiJg=
 SHA256 (cargo/quick-error-1.2.3.tar.gz) = odAZQdgvoqtQvh555nFCid183njrpMB0vFpDdPZQ3+A=
 SHA256 (cargo/quick-xml-0.31.0.tar.gz) = EASjRLMKVOLuWNZqcbMtLbL+sKMfmi0wK/BTbxXeKjM=
@@ -422,7 +421,7 @@ SHA256 (cargo/test-case-3.3.1.tar.gz) = 6yVQ3ROvzShoUxkq+GAZINlZsUxAH87OOAcdU78H
 SHA256 (cargo/test-case-core-3.3.1.tar.gz) = rct/2EHNUY4nm+PVo+sGNkCUh5mKSv8i896HuB6IOE8=
 SHA256 (cargo/test-case-macros-3.3.1.tar.gz) = XInnKgHtTFeWaa3VkBS5pSTWCcDIjGpYXON0hYefb/s=
 SHA256 (cargo/testing_logger-0.1.1.tar.gz) = bZK3J8tF0zrpVvf0a5ZrJfG8cSCSru+dulrHmPyJ9yA=
-SHA256 (cargo/textwrap-0.16.0.tar.gz) = IioiKlv+G7pKd7RexIinQbPLiHLl5JlFH9fQEpycfD0=
+SHA256 (cargo/textwrap-0.16.1.tar.gz) = I9Q00/iWeglID7BBMuvgo+CIwXPm0O54l6u99Oqw+Lk=
 SHA256 (cargo/thiserror-1.0.57.tar.gz) = HkW8vo7Sl3XyKAlcryzWevekzPdW6/8jowa/PotHsks=
 SHA256 (cargo/thiserror-impl-1.0.57.tar.gz) = qVPLJlvvN12uPeZmPaTTgE7uloLqgNjiVCUptzxTHIE=
 SHA256 (cargo/thread_local-1.1.7.tar.gz) = P91vBkzP8tZWetyzhzymMHAPALWtPwYMJbXc/ZpM4VI=
@@ -549,7 +548,7 @@ SHA256 (cargo/zstd-safe-5.0.2+zstd.1.5.2.tar.gz) = HSpVheBPnupLKj0eylCMTe6Vkqie9
 SHA256 (cargo/zstd-safe-7.0.0.tar.gz) = Q3R8dCLikkwRFE1SKYeLmBgO+LBsykq1rzevyKjY6j4=
 SHA256 (cargo/zstd-sys-2.0.9+zstd.1.5.5.tar.gz) = nhbvqKh0oEgaV0CE00zCb9s7mWJ0gPeFiI3rY4ZQZlY=
 SHA256 (charliermarsh-rs-async-zip-d76801da0943de985254fc6255c0e476b57c5836.tar.gz) = VCMONcWEmVePaqjzvCju+zKg6t/S17JTp62ehZXgUzY=
-SHA256 (uv-0.1.10.tar.gz) = LDHLSw2Mnjj0VruBPkCss2nMzxaQQ+lkK5h5vRRPBbY=
+SHA256 (uv-0.1.11.tar.gz) = IiN/f3T/K7IVoBndYbhuOCndgzQRBNx3mjJj0hBesOo=
 SHA256 (zanieb-pubgrub-aab132a3d4d444dd8dd41d8c4e605abd69dacfe1.tar.gz) = k+xETOEgfoc/EA5gI5EByRJBOUqwZpvLizKdYoximOo=
 SIZE (cargo/actix-codec-0.5.2.tar.gz) = 14085
 SIZE (cargo/actix-http-3.6.0.tar.gz) = 152432
@@ -579,7 +578,6 @@ SIZE (cargo/anstyle-1.0.6.tar.gz) = 14604
 SIZE (cargo/anstyle-parse-0.2.3.tar.gz) = 24699
 SIZE (cargo/anstyle-query-1.0.2.tar.gz) = 8739
 SIZE (cargo/anstyle-wincon-3.0.2.tar.gz) = 11272
-SIZE (cargo/anyhow-1.0.79.tar.gz) = 44931
 SIZE (cargo/anyhow-1.0.80.tar.gz) = 45138
 SIZE (cargo/arc-swap-1.6.0.tar.gz) = 67342
 SIZE (cargo/arrayref-0.3.7.tar.gz) = 9620
@@ -746,7 +744,7 @@ SIZE (cargo/indexmap-2.2.3.tar.gz) = 79019
 SIZE (cargo/indicatif-0.17.8.tar.gz) = 64869
 SIZE (cargo/indoc-2.0.4.tar.gz) = 14311
 SIZE (cargo/inout-0.1.3.tar.gz) = 10743
-SIZE (cargo/insta-1.34.0.tar.gz) = 550760
+SIZE (cargo/insta-1.35.1.tar.gz) = 551516
 SIZE (cargo/instant-0.1.12.tar.gz) = 6128
 SIZE (cargo/ipnet-2.9.0.tar.gz) = 27627
 SIZE (cargo/is-terminal-0.4.12.tar.gz) = 7470
@@ -851,12 +849,12 @@ SIZE (cargo/proc-macro2-1.0.78.tar.gz) = 47158
 SIZE (cargo/proptest-0.10.1.tar.gz) = 189747
 SIZE (cargo/ptr_meta-0.1.4.tar.gz) = 5754
 SIZE (cargo/ptr_meta_derive-0.1.4.tar.gz) = 2302
-SIZE (cargo/pyo3-0.20.2.tar.gz) = 434326
-SIZE (cargo/pyo3-build-config-0.20.2.tar.gz) = 30029
-SIZE (cargo/pyo3-ffi-0.20.2.tar.gz) = 64601
+SIZE (cargo/pyo3-0.20.3.tar.gz) = 434673
+SIZE (cargo/pyo3-build-config-0.20.3.tar.gz) = 30060
+SIZE (cargo/pyo3-ffi-0.20.3.tar.gz) = 65024
 SIZE (cargo/pyo3-log-0.9.0.tar.gz) = 14370
-SIZE (cargo/pyo3-macros-0.20.2.tar.gz) = 7925
-SIZE (cargo/pyo3-macros-backend-0.20.2.tar.gz) = 49710
+SIZE (cargo/pyo3-macros-0.20.3.tar.gz) = 7920
+SIZE (cargo/pyo3-macros-backend-0.20.3.tar.gz) = 49797
 SIZE (cargo/pyproject-toml-0.10.0.tar.gz) = 6072
 SIZE (cargo/quick-error-1.2.3.tar.gz) = 15066
 SIZE (cargo/quick-xml-0.31.0.tar.gz) = 172236
@@ -975,7 +973,7 @@ SIZE (cargo/test-case-3.3.1.tar.gz) = 8797
 SIZE (cargo/test-case-core-3.3.1.tar.gz) = 14327
 SIZE (cargo/test-case-macros-3.3.1.tar.gz) = 4961
 SIZE (cargo/testing_logger-0.1.1.tar.gz) = 3630
-SIZE (cargo/textwrap-0.16.0.tar.gz) = 53722
+SIZE (cargo/textwrap-0.16.1.tar.gz) = 56012
 SIZE (cargo/thiserror-1.0.57.tar.gz) = 20993
 SIZE (cargo/thiserror-impl-1.0.57.tar.gz) = 15639
 SIZE (cargo/thread_local-1.1.7.tar.gz) = 13585
@@ -1102,5 +1100,5 @@ SIZE (cargo/zstd-safe-5.0.2+zstd.1.5.2.tar.gz) = 17273
 SIZE (cargo/zstd-safe-7.0.0.tar.gz) = 20463
 SIZE (cargo/zstd-sys-2.0.9+zstd.1.5.5.tar.gz) = 728791
 SIZE (charliermarsh-rs-async-zip-d76801da0943de985254fc6255c0e476b57c5836.tar.gz) = 95906
-SIZE (uv-0.1.10.tar.gz) = 1850973
+SIZE (uv-0.1.11.tar.gz) = 1861771
 SIZE (zanieb-pubgrub-aab132a3d4d444dd8dd41d8c4e605abd69dacfe1.tar.gz) = 73856
