@@ -1,0 +1,3 @@
+${P5SITE}/AnyEvent/
+${P5SITE}/AnyEvent/AIO.pm
+@man man/man3p/AnyEvent::AIO.3p
