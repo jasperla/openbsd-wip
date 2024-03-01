@@ -1,0 +1,2 @@
+This module allows you to reload your application classes on the fly, so
+that the code/test cycle becomes a lot easier.
