@@ -1,7 +1,9 @@
 COMMENT =		Not Quite PTP
-# https://github.com/mikebrady/nqptp/pull/31 "Support OpenBSD" on 27.01.2024 HEAD
-#DIST_TUPLE =		github	mikebrady	nqptp	1.2.4	.
-DIST_TUPLE =		github	klemensn	nqptp	1.2.5pl1	.
+
+# 25.02.2024 for merged patches
+C =			5cd5e6e52a9a4dd30181a48d08e675f9b851b314
+DIST_TUPLE =		github	mikebrady	nqptp	${C}	.
+PKGNAME =		nqptp-1.2.5pre1
 CATEGORIES =		net
 
 MAINTAINER =		Klemens Nanni <kn@openbsd.org>
