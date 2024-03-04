@@ -1,0 +1,8 @@
+${P5ARCH}/
+${P5ARCH}/Hash/
+${P5ARCH}/Hash/SafeKeys.pm
+${P5ARCH}/auto/
+${P5ARCH}/auto/Hash/
+${P5ARCH}/auto/Hash/SafeKeys/
+@so ${P5ARCH}/auto/Hash/SafeKeys/SafeKeys.so
+@man man/man3p/Hash::SafeKeys.3p

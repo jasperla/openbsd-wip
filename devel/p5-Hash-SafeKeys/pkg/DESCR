@@ -1,0 +1,3 @@
+Hash::SafeKeys provides alternate functions to access the keys, values, or
+entire contents of a hash in a way that does not reset the iterator, making them
+safe to use in some contexts.
