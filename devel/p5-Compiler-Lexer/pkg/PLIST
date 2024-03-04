@@ -1,0 +1,13 @@
+${P5ARCH}/
+${P5ARCH}/Compiler/
+${P5ARCH}/Compiler/Lexer/
+${P5ARCH}/Compiler/Lexer.pm
+${P5ARCH}/Compiler/Lexer/Constants.pm
+${P5ARCH}/Compiler/Lexer/Token.pm
+${P5ARCH}/auto/
+${P5ARCH}/auto/Compiler/
+${P5ARCH}/auto/Compiler/Lexer/
+${P5ARCH}/auto/Compiler/Lexer/Lexer.bs
+@so ${P5ARCH}/auto/Compiler/Lexer/Lexer.so
+@man man/man3p/Compiler::Lexer.3p
+@man man/man3p/Compiler::Lexer::Token.3p
