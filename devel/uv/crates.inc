@@ -63,7 +63,6 @@ MODCARGO_CRATES +=	bytestring	1.3.1	# MIT OR Apache-2.0
 MODCARGO_CRATES +=	bzip2	0.4.4	# MIT/Apache-2.0
 MODCARGO_CRATES +=	bzip2-sys	0.1.11+1.0.8	# MIT/Apache-2.0
 MODCARGO_CRATES +=	cachedir	0.3.1	# MIT
-MODCARGO_CRATES +=	camino	1.1.6	# MIT OR Apache-2.0
 MODCARGO_CRATES +=	cargo-util	0.2.9	# MIT OR Apache-2.0
 MODCARGO_CRATES +=	cast	0.3.0	# MIT OR Apache-2.0
 MODCARGO_CRATES +=	cc	1.0.83	# MIT OR Apache-2.0

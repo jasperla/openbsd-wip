@@ -63,7 +63,6 @@ SHA256 (cargo/bytestring-1.3.1.tar.gz) = dNgCA+prKd+IASKU9icz3iHP6rR/F7Qa86OLwwo
 SHA256 (cargo/bzip2-0.4.4.tar.gz) = vbEWpu8/bDaYgohzrQLDAUs8hcrbiElglWKOPvHjR/g=
 SHA256 (cargo/bzip2-sys-0.1.11+1.0.8.tar.gz) = c2qVXz+nh1EC1XyCuMrDfsRSJKB/0y1Y+fehhrbNTNw=
 SHA256 (cargo/cachedir-0.3.1.tar.gz) = RwPzk3B324+jW+48h4k0PBrsJYXwFG8J1ljUzMDo2HM=
-SHA256 (cargo/camino-1.1.6.tar.gz) = xZ6StaOI9Um4Y6e+piYSwJ8kyDk1YHCaVFWKmr37O5w=
 SHA256 (cargo/cargo-util-0.2.9.tar.gz) = dIYsPG5TocH48BePnTirQeSXRs06fK/CObPQJI/U40I=
 SHA256 (cargo/cast-0.3.0.tar.gz) = N7KmcqLLEpouQcELEiS7No+fN6Kxa2ElmBOL79ezfrU=
 SHA256 (cargo/cc-1.0.83.tar.gz) = 8RdPsLbsI4Y/i5cQJ4BKQmFONH6vsKlb8LEs2uIfxNA=
@@ -552,7 +551,7 @@ SHA256 (cargo/zstd-safe-5.0.2+zstd.1.5.2.tar.gz) = HSpVheBPnupLKj0eylCMTe6Vkqie9
 SHA256 (cargo/zstd-safe-7.0.0.tar.gz) = Q3R8dCLikkwRFE1SKYeLmBgO+LBsykq1rzevyKjY6j4=
 SHA256 (cargo/zstd-sys-2.0.9+zstd.1.5.5.tar.gz) = nhbvqKh0oEgaV0CE00zCb9s7mWJ0gPeFiI3rY4ZQZlY=
 SHA256 (charliermarsh-rs-async-zip-d76801da0943de985254fc6255c0e476b57c5836.tar.gz) = VCMONcWEmVePaqjzvCju+zKg6t/S17JTp62ehZXgUzY=
-SHA256 (uv-0.1.13.tar.gz) = u9mrttc1QA48FC6GO8fWmtU5xCKgE2AfVQ3Y/SMSrk8=
+SHA256 (uv-0.1.14.tar.gz) = HO9yk6OEQxJpXwFqUky4jDg5nqZRDmTK/G49lhHTKIQ=
 SHA256 (zanieb-pubgrub-aab132a3d4d444dd8dd41d8c4e605abd69dacfe1.tar.gz) = k+xETOEgfoc/EA5gI5EByRJBOUqwZpvLizKdYoximOo=
 SIZE (cargo/actix-codec-0.5.2.tar.gz) = 14085
 SIZE (cargo/actix-http-3.6.0.tar.gz) = 152432
@@ -619,7 +618,6 @@ SIZE (cargo/bytestring-1.3.1.tar.gz) = 9142
 SIZE (cargo/bzip2-0.4.4.tar.gz) = 34197
 SIZE (cargo/bzip2-sys-0.1.11+1.0.8.tar.gz) = 633444
 SIZE (cargo/cachedir-0.3.1.tar.gz) = 8668
-SIZE (cargo/camino-1.1.6.tar.gz) = 30519
 SIZE (cargo/cargo-util-0.2.9.tar.gz) = 25648
 SIZE (cargo/cast-0.3.0.tar.gz) = 11452
 SIZE (cargo/cc-1.0.83.tar.gz) = 68343
@@ -1108,5 +1106,5 @@ SIZE (cargo/zstd-safe-5.0.2+zstd.1.5.2.tar.gz) = 17273
 SIZE (cargo/zstd-safe-7.0.0.tar.gz) = 20463
 SIZE (cargo/zstd-sys-2.0.9+zstd.1.5.5.tar.gz) = 728791
 SIZE (charliermarsh-rs-async-zip-d76801da0943de985254fc6255c0e476b57c5836.tar.gz) = 95906
-SIZE (uv-0.1.13.tar.gz) = 1860446
+SIZE (uv-0.1.14.tar.gz) = 793871
 SIZE (zanieb-pubgrub-aab132a3d4d444dd8dd41d8c4e605abd69dacfe1.tar.gz) = 73856
