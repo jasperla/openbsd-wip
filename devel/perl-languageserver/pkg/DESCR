@@ -1,0 +1,27 @@
+Perl::LanguageServer is a Language Server and Debug Protocol Adapter for Perl.
+
+Language Server:
+- syntax checking
+- symbols in file
+- symbols in workspace/directory
+- goto Definition
+- find References
+- call Signatures
+- supports multiple workspace folders
+- document and selection formatting via perltidy
+- run on remote system via ssh
+
+Debugger:
+- run, pause, step, next, return
+- support for coro threads
+- breakpoints
+- conditional breakpoints
+- breakpoints can be set while program runs and for modules not yet loaded
+- variable view, can switch to every stack frame or coro thread
+- set variable
+- watch variable
+- tooltips with variable values
+- evaluate perl code in debuggee, in context of every stack frame of coro thread
+- automatically reload changed Perl modules while debugging
+- debug multiple perl programs at once
+- run on remote system via ssh

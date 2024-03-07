@@ -1,0 +1,21 @@
+${P5SITE}/Perl/
+@comment ${P5SITE}/Perl/Changes.pod
+${P5SITE}/Perl/LanguageServer/
+${P5SITE}/Perl/LanguageServer.pm
+${P5SITE}/Perl/LanguageServer/DebuggerBridge.pm
+${P5SITE}/Perl/LanguageServer/DebuggerInterface.pm
+${P5SITE}/Perl/LanguageServer/DebuggerProcess.pm
+${P5SITE}/Perl/LanguageServer/DevTool.pm
+${P5SITE}/Perl/LanguageServer/IO.pm
+${P5SITE}/Perl/LanguageServer/Methods/
+${P5SITE}/Perl/LanguageServer/Methods.pm
+${P5SITE}/Perl/LanguageServer/Methods/DebugAdapter.pm
+${P5SITE}/Perl/LanguageServer/Methods/DebugAdapterInterface.pm
+${P5SITE}/Perl/LanguageServer/Methods/textDocument.pm
+${P5SITE}/Perl/LanguageServer/Methods/workspace.pm
+${P5SITE}/Perl/LanguageServer/Parser.pm
+${P5SITE}/Perl/LanguageServer/Req.pm
+${P5SITE}/Perl/LanguageServer/SyntaxChecker.pm
+${P5SITE}/Perl/LanguageServer/Workspace.pm
+@comment @man man/man3p/Perl::Changes.3p
+@man man/man3p/Perl::LanguageServer.3p
