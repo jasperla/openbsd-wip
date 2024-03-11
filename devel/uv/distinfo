@@ -128,6 +128,7 @@ SHA256 (cargo/dunce-1.0.4.tar.gz) = Vs6MbadVHsbEYsuvO/vHUTHrv6HJRK6qnatRyhxfDDs=
 SHA256 (cargo/either-1.10.0.tar.gz) = ERV6wJT/vd6ZqmeyNBfr3YAYQoUrUA45WkWpwKrAPko=
 SHA256 (cargo/encode_unicode-0.3.6.tar.gz) = o1fSjtQaUPnHZdv+VsvASmTlPl/Fi6efvDTBDvPfgx8=
 SHA256 (cargo/encoding_rs-0.8.33.tar.gz) = cmizhilqAl5HTVFAZ4911t6Uk65VpdcJ7rndCBSZReE=
+SHA256 (cargo/encoding_rs_io-0.1.7.tar.gz) = HMPFZR+2KriqMQOZja3lfv3QKFRL0wBRa6oxhAwlKoM=
 SHA256 (cargo/env_logger-0.10.2.tar.gz) = TNQFqrFxy4XWc15cjZ2wOMF9PKAHpNLCXzN5NcPZBYA=
 SHA256 (cargo/env_logger-0.9.3.tar.gz) = oS5mV8TJfrqxFaQtzudyJff0gs3YQc9wiMZXpC6eAOc=
 SHA256 (cargo/equivalent-1.0.1.tar.gz) = VEOAfW3/aTc9Qzq571N4rY31DKYpjK8V3m5S4kqvVNU=
@@ -347,7 +348,6 @@ SHA256 (cargo/regex-syntax-0.8.2.tar.gz) = wIx05iBHuy3k/0h7JR5KkuJPSHRWSEUWNc7H1
 SHA256 (cargo/rend-0.4.2.tar.gz) = cf44JPVilxaxWJvgXazXSfaqCEyH4A4BZxSozfzMmXw=
 SHA256 (cargo/reqwest-0.11.24.tar.gz) = xpIAlOuFr95eShOL4/Lei73ygADwAp5yxFAlpWsEIlE=
 SHA256 (cargo/reqwest-middleware-0.2.4.tar.gz) = iKPoaqYFPlkDDnzi0qOyWN0I/C0zfVL3P2y0gPWFhpA=
-SHA256 (cargo/reqwest-netrc-0.1.1.tar.gz) = 7KDFjNSyl4+Wl96pQwLncjmfVZzRdTVutjHLbaqgtts=
 SHA256 (cargo/reqwest-retry-0.3.0.tar.gz) = mvILZcLul0bMV1rLa9KKBf/A0V4lyZKo9EYthoaqy08=
 SHA256 (cargo/resvg-0.29.0.tar.gz) = doiCGcCIHiKwzqsG/dz+gxY82BZCvWDHhCOH+clopy4=
 SHA256 (cargo/retry-policies-0.2.1.tar.gz) = F90Av/HXN8QNvNR9Q3UoG/TBeTP57vChhfx7rMoj7L0=
@@ -584,7 +584,7 @@ SHA256 (cargo/zstd-safe-5.0.2+zstd.1.5.2.tar.gz) = HSpVheBPnupLKj0eylCMTe6Vkqie9
 SHA256 (cargo/zstd-safe-7.0.0.tar.gz) = Q3R8dCLikkwRFE1SKYeLmBgO+LBsykq1rzevyKjY6j4=
 SHA256 (cargo/zstd-sys-2.0.9+zstd.1.5.5.tar.gz) = nhbvqKh0oEgaV0CE00zCb9s7mWJ0gPeFiI3rY4ZQZlY=
 SHA256 (charliermarsh-rs-async-zip-d76801da0943de985254fc6255c0e476b57c5836.tar.gz) = VCMONcWEmVePaqjzvCju+zKg6t/S17JTp62ehZXgUzY=
-SHA256 (uv-0.1.16.tar.gz) = kPAdkWyEKp/yKeLdxkGCEBVLfnzPE/HsFF88gQC0RfY=
+SHA256 (uv-0.1.17.tar.gz) = 8LS22sQZMkfzFzhO9lmWYqTozmVW3Rb1CeeWcXHXqIM=
 SHA256 (zanieb-pubgrub-332f02b0e436ca8449c7ef5e15b992dd5f35908b.tar.gz) = x0l4M7dQjJatJ1ghf1t6Z7BUsXQvsgsB3gRVd3wYDAs=
 SIZE (cargo/actix-codec-0.5.2.tar.gz) = 14085
 SIZE (cargo/actix-http-3.6.0.tar.gz) = 152432
@@ -716,6 +716,7 @@ SIZE (cargo/dunce-1.0.4.tar.gz) = 8034
 SIZE (cargo/either-1.10.0.tar.gz) = 18334
 SIZE (cargo/encode_unicode-0.3.6.tar.gz) = 45741
 SIZE (cargo/encoding_rs-0.8.33.tar.gz) = 1370071
+SIZE (cargo/encoding_rs_io-0.1.7.tar.gz) = 16969
 SIZE (cargo/env_logger-0.10.2.tar.gz) = 36402
 SIZE (cargo/env_logger-0.9.3.tar.gz) = 33291
 SIZE (cargo/equivalent-1.0.1.tar.gz) = 6615
@@ -935,7 +936,6 @@ SIZE (cargo/regex-syntax-0.8.2.tar.gz) = 347228
 SIZE (cargo/rend-0.4.2.tar.gz) = 9324
 SIZE (cargo/reqwest-0.11.24.tar.gz) = 160972
 SIZE (cargo/reqwest-middleware-0.2.4.tar.gz) = 7519
-SIZE (cargo/reqwest-netrc-0.1.1.tar.gz) = 2683
 SIZE (cargo/reqwest-retry-0.3.0.tar.gz) = 11208
 SIZE (cargo/resvg-0.29.0.tar.gz) = 94880
 SIZE (cargo/retry-policies-0.2.1.tar.gz) = 12103
@@ -1172,5 +1172,5 @@ SIZE (cargo/zstd-safe-5.0.2+zstd.1.5.2.tar.gz) = 17273
 SIZE (cargo/zstd-safe-7.0.0.tar.gz) = 20463
 SIZE (cargo/zstd-sys-2.0.9+zstd.1.5.5.tar.gz) = 728791
 SIZE (charliermarsh-rs-async-zip-d76801da0943de985254fc6255c0e476b57c5836.tar.gz) = 95906
-SIZE (uv-0.1.16.tar.gz) = 823680
+SIZE (uv-0.1.17.tar.gz) = 833867
 SIZE (zanieb-pubgrub-332f02b0e436ca8449c7ef5e15b992dd5f35908b.tar.gz) = 74517
