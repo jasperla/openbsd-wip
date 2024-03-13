@@ -5,10 +5,10 @@ COMMENT =	extremely fast Python package installer and resolver
 
 GH_ACCOUNT =	astral-sh
 GH_PROJECT =	uv
-GH_TAGNAME =	0.1.17
+GH_TAGNAME =	0.1.18
 
 # Rust crates downloaded via git
-PUBGRUB_HASH =	332f02b0e436ca8449c7ef5e15b992dd5f35908b
+PUBGRUB_HASH =	b5ead05c954b81690aec40255a1c36ec248e90af
 ASYNC_HASH =	d76801da0943de985254fc6255c0e476b57c5836
 
 DIST_TUPLE +=	github zanieb pubgrub ${PUBGRUB_HASH} ${MODCARGO_VENDOR_DIR}
