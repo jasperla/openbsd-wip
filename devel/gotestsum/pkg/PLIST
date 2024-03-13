@@ -1,0 +1,2 @@
+@bin bin/gotestsum
+@comment @bin bin/signalhandlerdriver
