@@ -5,7 +5,7 @@ COMMENT =	extremely fast Python package installer and resolver
 
 GH_ACCOUNT =	astral-sh
 GH_PROJECT =	uv
-GH_TAGNAME =	0.1.20
+GH_TAGNAME =	0.1.21
 
 # Rust crates downloaded via git
 PUBGRUB_HASH =	addbaf184891d66a2dfd93d241a66d13bfe5de86
@@ -41,8 +41,9 @@ SUBST_VARS +=	MODCARGO_VENDOR_DIR
 post-patch:
 	${SUBST_CMD} ${WRKSRC}/Cargo.toml
 
-	${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/zanieb-pubgrub-$\
-		${PUBGRUB_HASH}.tar.gz ${MODCARGO_VENDOR_DIR}/pubgrub-${PUBGRUB_HASH}
+	${LOCALBASE}/bin/cargo-generate-vendor \
+		${FULLDISTDIR}/astral-sh-pubgrub-${PUBGRUB_HASH}.tar.gz \
+		${MODCARGO_VENDOR_DIR}/pubgrub-${PUBGRUB_HASH}
 	${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/charliermarsh-$\
 		rs-async-zip-${ASYNC_HASH}.tar.gz \
 		${MODCARGO_VENDOR_DIR}/rs-async-zip-${ASYNC_HASH}
