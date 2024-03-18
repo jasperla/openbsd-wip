@@ -1,0 +1,14 @@
+Fix operating system detection on *BSD
+See https://github.com/astral-sh/uv/issues/2487
+
+Index: crates/uv-interpreter/python/get_interpreter_info.py
+--- crates/uv-interpreter/python/get_interpreter_info.py.orig
++++ crates/uv-interpreter/python/get_interpreter_info.py
+@@ -480,7 +480,6 @@ def get_operating_system_and_architecture():
+         "illumos",
+         "haiku",
+     ]:
+-        version = platform.mac_ver()[0].split(".")
+         operating_system = {
+             "name": operating_system,
+             "release": version,
