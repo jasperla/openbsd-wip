@@ -238,6 +238,7 @@ SHA256 (cargo/libredox-0.0.1.tar.gz) = hcgzyh5mB4hR26KQRodOOPCLLIg3AKopoD3dOyOBT
 SHA256 (cargo/libssh2-sys-0.3.0.tar.gz) = LcigMLeH4hGacx8ZUdanc+IoDGYPjsSw9eFQWjhuce4=
 SHA256 (cargo/libz-ng-sys-1.1.15.tar.gz) = xkCe/GGxJoeWPmAt+Oz3Do3az5W8ZXa88W46xjKAg8U=
 SHA256 (cargo/libz-sys-1.1.15.tar.gz) = A3cx9dOqqHpWdeiVtj3f8ah2JLwp93AE6oKYCWVOSPY=
+SHA256 (cargo/line-wrap-0.1.1.tar.gz) = 8wNENQoqUdpUwdU76T+t6KI35UXbzEvb5jVBPyEXyrk=
 SHA256 (cargo/linked-hash-map-0.5.6.tar.gz) = BxfO8byLY2xuHBu978CeYyLaipMhlm6JKO+A0g9/dw8=
 SHA256 (cargo/linux-raw-sys-0.4.13.tar.gz) = Ac2hQd9nBt5TG2xGw6M+zKdVU4IZvUhCYvoJQQwTU5w=
 SHA256 (cargo/local-channel-0.1.5.tar.gz) = tsvIXmm430uLuLiexjTnGJCZzqiSeidrc4TOVIjlPsg=
@@ -278,6 +279,7 @@ SHA256 (cargo/openssl-src-300.2.3+3.2.1.tar.gz) = XP+StvcVVbYbuTFffGTaPKQ9h1MWIh
 SHA256 (cargo/openssl-sys-0.9.101.tar.gz) = 3aKw80TnjvwvrPfRldCY3w3XIVGyarmNqAevwmwZjf8=
 SHA256 (cargo/option-ext-0.2.0.tar.gz) = BHRPSerpmreODVwLYDqyGPUV6oz+WkVtdimtiDo7bn0=
 SHA256 (cargo/ordered-float-2.10.1.tar.gz) = aPGdZ+WieVyU5z4Lscwaft6y4o79OeLhybekDBEIsRw=
+SHA256 (cargo/os_info-3.7.0.tar.gz) = AG5C1biINm8YgO2iA3H+3edk7SIT3ISW9JYi+gyZzV4=
 SHA256 (cargo/overload-0.1.1.tar.gz) = sVgTFjwdgxv0oTw2EMBcDQOzn+sH9+CfojTaybFarzk=
 SHA256 (cargo/owo-colors-3.5.0.tar.gz) = wbBPtJlXmG/c5NbuemUCfVXUttImXlhIu7UHtYzP228=
 SHA256 (cargo/owo-colors-4.0.0.tar.gz) = yv9UcG35nSp4paTjRV/0VEjYHvG7Y8Is0UBSyg6ZOj8=
@@ -304,6 +306,7 @@ SHA256 (cargo/pin-project-lite-0.2.13.tar.gz) = ivtFDwBr9jhcoV70XXHSKIRSvDaDzi4s
 SHA256 (cargo/pin-utils-0.1.0.tar.gz) = i4cNjBUbby+5PoShMUYTjwXQLtEcfnxU+IJqqvfJ8YQ=
 SHA256 (cargo/pkg-config-0.3.30.tar.gz) = 0jGyMJJ7XkrSA9tXu8vuKAL2vOYgseSpAkoH2U4pB+w=
 SHA256 (cargo/platform-info-2.0.2.tar.gz) = 1iWcSGDlO/ZlAW8bL0aohZyt+nF1gdydWXrkBp3mMA8=
+SHA256 (cargo/plist-1.6.0.tar.gz) = 5WmcyKY9GqKx7o4Sua1wrHkNZXiM02EB+jf4fqRsTO8=
 SHA256 (cargo/plotters-0.3.5.tar.gz) = 0sIkugDXyt1NXGYN6vIJjl6A4HhGU3xR+c+kvlDB/UU=
 SHA256 (cargo/plotters-backend-0.3.5.tar.gz) = nnZii006dYE4mjXVtuITlgetfHWxeu0yXyEKqR9Klgk=
 SHA256 (cargo/plotters-svg-0.3.5.tar.gz) = OPbTmJPMoHATcePCcpTwl5chS4bx+5Ubia3o7ATiq6s=
@@ -329,6 +332,7 @@ SHA256 (cargo/pyo3-macros-0.20.3.tar.gz) = cwXHIPoBuAVeyV5ISm7KeoPIQSZ/DdUoDwyLh
 SHA256 (cargo/pyo3-macros-backend-0.20.3.tar.gz) = fH6baLucMUnFsMreXQf5U9bRJetDN3I8TM22ZfH5YYU=
 SHA256 (cargo/pyproject-toml-0.10.0.tar.gz) = O4D4ibbUE8P4ljosfbA/ld1uHYXhB0E3yyAT6i+qiJg=
 SHA256 (cargo/quick-error-1.2.3.tar.gz) = odAZQdgvoqtQvh555nFCid183njrpMB0vFpDdPZQ3+A=
+SHA256 (cargo/quick-xml-0.31.0.tar.gz) = EASjRLMKVOLuWNZqcbMtLbL+sKMfmi0wK/BTbxXeKjM=
 SHA256 (cargo/quote-1.0.35.tar.gz) = KR7Jq179k0qvUDpkZsXVJRU10QjudHRyw5d8xazIaO8=
 SHA256 (cargo/quoted_printable-0.5.0.tar.gz) = eewoLoh7Q0towY/lwSHTjnKlzzURm1nlTsW5kuqcjrA=
 SHA256 (cargo/radium-0.7.0.tar.gz) = 3DP/LUlz1RjYI9YaojkBSDHlIcddpY499IQNP0d0nQk=
@@ -382,6 +386,7 @@ SHA256 (cargo/rustls-webpki-0.101.7.tar.gz) = i2J10e56HNeAtkrKdyZZmh28iTseZBRFKe
 SHA256 (cargo/rusty-fork-0.3.0.tar.gz) = yz3MbkVMMou4JEktsQerfAro/P/krSEBNu8BRFjBvE8=
 SHA256 (cargo/rustybuzz-0.7.0.tar.gz) = FivfQuJhvuJxs5V2kQGGNEiAhO9Xfd3rZCCpaEyrKmo=
 SHA256 (cargo/ryu-1.0.17.tar.gz) = 6GaXyRYBmoWIyZtfrDzq107AtLgZcHpoL9TSP6DOG6E=
+SHA256 (cargo/safemem-0.3.3.tar.gz) = 73A7fLWTNeri65POtmTA636mv1ZwedhD4JQgIZZo4HI=
 SHA256 (cargo/same-file-1.0.6.tar.gz) = k/wdw6qpv+2V4C5urau0uvfjB4sL0bTXtrC2g3iQBQI=
 SHA256 (cargo/sanitize-filename-0.5.0.tar.gz) = LtcvuveOby1BdEkjkWlmxPvj18dOMDeo7kgvERVXJgM=
 SHA256 (cargo/schannel-0.1.23.tar.gz) = +8kVRWQ7zzoLu2VpJlYVIiYYvfM85P+70TxLvUwJNTQ=
@@ -432,6 +437,7 @@ SHA256 (cargo/syn-2.0.49.tar.gz) = kVrqnlhvgIJu5Z+EU8EQH50cSzlkzSRgGF7o4pmtpJY=
 SHA256 (cargo/syn-2.0.52.tar.gz) = tpnRWzbR8Cw+fGn4/+9T3jeu+uB12EiNS6GneI1XSgc=
 SHA256 (cargo/sync_wrapper-0.1.2.tar.gz) = IEfG3tnHIXZCR+Ys07A8Cf/FKbK6WxDsSCrlB6SnAWA=
 SHA256 (cargo/synstructure-0.12.6.tar.gz) = 82vapgqDrKOSG1JZ1UAMv16Q/FGTE3apvUoOt5qnIQ8=
+SHA256 (cargo/sys-info-0.9.1.tar.gz) = CzoNCrqL+WoOHd/cNS/FOz3385MYxxhUkQw8SwJK5Sw=
 SHA256 (cargo/system-configuration-0.5.1.tar.gz) = ujo63FwnXXGa+MtCcuocSm1mind/N+EV9tEd28HI4Oc=
 SHA256 (cargo/system-configuration-sys-0.5.0.tar.gz) = p1+xiOtia5JGg+O5XjpI5jVR/PtRlJ3i8Gqdkdvuk8k=
 SHA256 (cargo/tagu-0.1.6.tar.gz) = 7dtrBtIPup7SH8o9aW7htuhwvKC8+fopcfauJDbeV2o=
@@ -595,7 +601,7 @@ SHA256 (cargo/zstd-safe-5.0.2+zstd.1.5.2.tar.gz) = HSpVheBPnupLKj0eylCMTe6Vkqie9
 SHA256 (cargo/zstd-safe-7.0.0.tar.gz) = Q3R8dCLikkwRFE1SKYeLmBgO+LBsykq1rzevyKjY6j4=
 SHA256 (cargo/zstd-sys-2.0.9+zstd.1.5.5.tar.gz) = nhbvqKh0oEgaV0CE00zCb9s7mWJ0gPeFiI3rY4ZQZlY=
 SHA256 (charliermarsh-rs-async-zip-d76801da0943de985254fc6255c0e476b57c5836.tar.gz) = VCMONcWEmVePaqjzvCju+zKg6t/S17JTp62ehZXgUzY=
-SHA256 (uv-0.1.21.tar.gz) = Zrn1H+F29Gzr1xta0wEYmUYDQBYxpnSj/ZENEU+y+lE=
+SHA256 (uv-0.1.22.tar.gz) = iy+TjmuTfnWqFeIihyDYIE0jW5wJyta6l9Ffj0LUwF4=
 SIZE (astral-sh-pubgrub-addbaf184891d66a2dfd93d241a66d13bfe5de86.tar.gz) = 76921
 SIZE (cargo/actix-codec-0.5.2.tar.gz) = 14085
 SIZE (cargo/actix-http-3.6.0.tar.gz) = 152432
@@ -836,6 +842,7 @@ SIZE (cargo/libredox-0.0.1.tar.gz) = 4212
 SIZE (cargo/libssh2-sys-0.3.0.tar.gz) = 514550
 SIZE (cargo/libz-ng-sys-1.1.15.tar.gz) = 2386853
 SIZE (cargo/libz-sys-1.1.15.tar.gz) = 3958887
+SIZE (cargo/line-wrap-0.1.1.tar.gz) = 10010
 SIZE (cargo/linked-hash-map-0.5.6.tar.gz) = 15049
 SIZE (cargo/linux-raw-sys-0.4.13.tar.gz) = 1493855
 SIZE (cargo/local-channel-0.1.5.tar.gz) = 7881
@@ -876,6 +883,7 @@ SIZE (cargo/openssl-src-300.2.3+3.2.1.tar.gz) = 9584245
 SIZE (cargo/openssl-sys-0.9.101.tar.gz) = 68568
 SIZE (cargo/option-ext-0.2.0.tar.gz) = 7345
 SIZE (cargo/ordered-float-2.10.1.tar.gz) = 16029
+SIZE (cargo/os_info-3.7.0.tar.gz) = 24133
 SIZE (cargo/overload-0.1.1.tar.gz) = 24439
 SIZE (cargo/owo-colors-3.5.0.tar.gz) = 30310
 SIZE (cargo/owo-colors-4.0.0.tar.gz) = 30984
@@ -902,6 +910,7 @@ SIZE (cargo/pin-project-lite-0.2.13.tar.gz) = 29141
 SIZE (cargo/pin-utils-0.1.0.tar.gz) = 7580
 SIZE (cargo/pkg-config-0.3.30.tar.gz) = 20613
 SIZE (cargo/platform-info-2.0.2.tar.gz) = 28443
+SIZE (cargo/plist-1.6.0.tar.gz) = 47932
 SIZE (cargo/plotters-0.3.5.tar.gz) = 143975
 SIZE (cargo/plotters-backend-0.3.5.tar.gz) = 13440
 SIZE (cargo/plotters-svg-0.3.5.tar.gz) = 6948
@@ -927,6 +936,7 @@ SIZE (cargo/pyo3-macros-0.20.3.tar.gz) = 7920
 SIZE (cargo/pyo3-macros-backend-0.20.3.tar.gz) = 49797
 SIZE (cargo/pyproject-toml-0.10.0.tar.gz) = 6072
 SIZE (cargo/quick-error-1.2.3.tar.gz) = 15066
+SIZE (cargo/quick-xml-0.31.0.tar.gz) = 172236
 SIZE (cargo/quote-1.0.35.tar.gz) = 28136
 SIZE (cargo/quoted_printable-0.5.0.tar.gz) = 7604
 SIZE (cargo/radium-0.7.0.tar.gz) = 10906
@@ -980,6 +990,7 @@ SIZE (cargo/rustls-webpki-0.101.7.tar.gz) = 168808
 SIZE (cargo/rusty-fork-0.3.0.tar.gz) = 19881
 SIZE (cargo/rustybuzz-0.7.0.tar.gz) = 219739
 SIZE (cargo/ryu-1.0.17.tar.gz) = 47537
+SIZE (cargo/safemem-0.3.3.tar.gz) = 7778
 SIZE (cargo/same-file-1.0.6.tar.gz) = 10183
 SIZE (cargo/sanitize-filename-0.5.0.tar.gz) = 4043
 SIZE (cargo/schannel-0.1.23.tar.gz) = 41667
@@ -1030,6 +1041,7 @@ SIZE (cargo/syn-2.0.49.tar.gz) = 250652
 SIZE (cargo/syn-2.0.52.tar.gz) = 254728
 SIZE (cargo/sync_wrapper-0.1.2.tar.gz) = 6933
 SIZE (cargo/synstructure-0.12.6.tar.gz) = 18429
+SIZE (cargo/sys-info-0.9.1.tar.gz) = 20589
 SIZE (cargo/system-configuration-0.5.1.tar.gz) = 12618
 SIZE (cargo/system-configuration-sys-0.5.0.tar.gz) = 6730
 SIZE (cargo/tagu-0.1.6.tar.gz) = 12714
@@ -1193,4 +1205,4 @@ SIZE (cargo/zstd-safe-5.0.2+zstd.1.5.2.tar.gz) = 17273
 SIZE (cargo/zstd-safe-7.0.0.tar.gz) = 20463
 SIZE (cargo/zstd-sys-2.0.9+zstd.1.5.5.tar.gz) = 728791
 SIZE (charliermarsh-rs-async-zip-d76801da0943de985254fc6255c0e476b57c5836.tar.gz) = 95906
-SIZE (uv-0.1.21.tar.gz) = 854720
+SIZE (uv-0.1.22.tar.gz) = 873654
