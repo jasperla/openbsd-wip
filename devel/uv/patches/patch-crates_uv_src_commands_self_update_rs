@@ -1,0 +1,21 @@
+Index: crates/uv/src/commands/self_update.rs
+--- crates/uv/src/commands/self_update.rs.orig
++++ crates/uv/src/commands/self_update.rs
+@@ -26,7 +26,7 @@ pub(crate) async fn self_update(printer: Printer) -> R
+                     "{}{} Self-update is only available for `uv` binaries installed via the standalone installation scripts.",
+                     "\n",
+                     "\n",
+-                    "If you installed `uv` with `pip`, `brew`, or another package manager, update `uv` with `pip install --upgrade`, `brew upgrade`, or similar."
++                    "Use 'pkg_add -u uv' to update uv."
+                 ),
+                 "warning".yellow().bold(),
+                 ":".bold()
+@@ -50,7 +50,7 @@ pub(crate) async fn self_update(printer: Printer) -> R
+                     "{}{} Self-update is only available for `uv` binaries installed via the standalone installation scripts.",
+                     "\n",
+                     "\n",
+-                    "If you installed `uv` with `pip`, `brew`, or another package manager, update `uv` with `pip install --upgrade`, `brew upgrade`, or similar."
++                    "Use 'pkg_add -u uv' to update uv."
+                 ),
+                 "warning".yellow().bold(),
+                 ":".bold()
