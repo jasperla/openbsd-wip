@@ -2,7 +2,7 @@ COMMENT =	minimal, blazing-fast, and customizable prompt for any shell
 
 GH_ACCOUNT =	starship
 GH_PROJECT =	starship
-GH_TAGNAME =	v1.17.1
+GH_TAGNAME =	v1.18.0
 
 CATEGORIES =	sysutils
 
@@ -23,6 +23,7 @@ MODCARGO_NO_DEFAULT_FEATURES =	Yes
 MODCARGO_FEATURES =		notify gix-max-perf
 
 CONFIGURE_STYLE =	cargo
+
 SEPARATE_BUILD =	Yes
 
 # For tests
