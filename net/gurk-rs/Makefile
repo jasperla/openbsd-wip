@@ -1,6 +1,6 @@
 COMMENT =	Signal Messenger client for the terminal
 
-DIST_TUPLE =	github boxdot gurk-rs v0.4.2 .
+DIST_TUPLE =	github boxdot gurk-rs v0.4.3 .
 
 CATEGORIES =	net
 

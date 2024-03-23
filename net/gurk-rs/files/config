@@ -3,24 +3,24 @@ git = "https://github.com/boxdot/qr2term-rs"
 rev = "ed8ae7f"
 replace-with = "vendored-sources"
 
-[source."git+https://github.com/signalapp/curve25519-dalek?tag=signal-curve25519-4.0.0"]
+[source."git+https://github.com/signalapp/curve25519-dalek?tag=signal-curve25519-4.1.1"]
 git = "https://github.com/signalapp/curve25519-dalek"
-tag = "signal-curve25519-4.0.0"
+tag = "signal-curve25519-4.1.1"
 replace-with = "vendored-sources"
 
-[source."git+https://github.com/signalapp/libsignal?tag=v0.32.0"]
+[source."git+https://github.com/signalapp/libsignal?tag=v0.40.1"]
 git = "https://github.com/signalapp/libsignal"
-tag = "v0.32.0"
+tag = "v0.40.1"
 replace-with = "vendored-sources"
 
-[source."git+https://github.com/whisperfish/libsignal-service-rs?rev=0a7987e"]
+[source."git+https://github.com/whisperfish/libsignal-service-rs?rev=689a4c2"]
 git = "https://github.com/whisperfish/libsignal-service-rs"
-rev = "0a7987e"
+rev = "689a4c2"
 replace-with = "vendored-sources"
 
-[source."git+https://github.com/whisperfish/presage?rev=6d7003f"]
+[source."git+https://github.com/whisperfish/presage?rev=97e2357"]
 git = "https://github.com/whisperfish/presage"
-rev = "6d7003f"
+rev = "97e2357"
 replace-with = "vendored-sources"
 
 [source.vendored-sources]
