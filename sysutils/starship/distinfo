@@ -110,7 +110,7 @@ SHA256 (cargo/futures-util-0.3.30.tar.gz) = PWQB3rg0B6s9o566fjOYenPD3wyCtLtYE+6H
 SHA256 (cargo/generic-array-0.14.7.tar.gz) = hWScpR/XInLXghra8nStkcKIJ3cT2cGIINhJmn/2npo=
 SHA256 (cargo/gethostname-0.4.3.tar.gz) = AXbgRZwuSh/iMvmEvKaJDmgQdqu5k09s6nwybz/EeBg=
 SHA256 (cargo/getrandom-0.2.11.tar.gz) = /pAGvtdpFwwR+EXPAMfB6Qkq6z8mjgB8PnYKxoAIBw8=
-SHA256 (cargo/gix-0.61.0.tar.gz) = 5ODlmkS/AN4FjumNbs88ntj4hCwdpkIliuQSDUHe2Pc=
+SHA256 (cargo/gix-0.61.1.tar.gz) = 0D5uMGoshbzY4d6T39BhUxBozNResFYz2Ax+k/flX7k=
 SHA256 (cargo/gix-actor-0.31.1.tar.gz) = RcOjveRVrS7ouooZV0UkHOC3cKiib6rln89AnQGyjEY=
 SHA256 (cargo/gix-bitmap-0.2.11.tar.gz) = o3HbZsvU4T8O2dxMD+pxLXJ2gF/MyHf3fpY3TTF+h64=
 SHA256 (cargo/gix-chunk-0.4.8.tar.gz) = Rch1EWmWG6dkC1E8OySvYaqWLJZ6rwQRZzSXXNWvDFI=
@@ -155,7 +155,7 @@ SHA256 (cargo/iana-time-zone-0.1.58.tar.gz) = gya4a2z/IwuX0NMSpsQKYHJt8zMuch9yob
 SHA256 (cargo/iana-time-zone-haiku-0.1.2.tar.gz) = 8xgnogb1avMuWQulbV0tCF9VhQgZJZN0PxayMGSVJp8=
 SHA256 (cargo/idna-0.5.0.tar.gz) = Y02bFGGvOWythD9H/bpVl6T55t3Uv7b/XYUCjCXLEvY=
 SHA256 (cargo/indexmap-1.9.3.tar.gz) = vQcOOTNTeW6AHSCa0znolZbrTI1DDRjt5qHM7Y+vvZk=
-SHA256 (cargo/indexmap-2.2.5.tar.gz) = ewuSnVEUZyM0KcRaRKwdyqIboPW6EeSHnm7SjdtPnfQ=
+SHA256 (cargo/indexmap-2.2.6.tar.gz) = Fo+3Fd2kchXjYJEsCWZJ0j1Yvzkqxi9zkZ6DF0XkDyY=
 SHA256 (cargo/instant-0.1.12.tar.gz) = elu+gkxQfF2llWNV6Gp0bYLg4UZPZdhizF5x2nDpSyw=
 SHA256 (cargo/io-lifetimes-1.0.11.tar.gz) = 6ue5ruloA21U3OBs6679kZ5EcudTKW2szW00Tj4t8MI=
 SHA256 (cargo/is-docker-0.2.0.tar.gz) = kouuJ/QryZtg2axzNOOiHRCtjxg1pOEuw+wEZHZe0bM=
@@ -207,7 +207,7 @@ SHA256 (cargo/open-5.1.2.tar.gz) = RJ8P+FXYXdvx7dW2RtZSSerT9eQiqqhrfS0LBJsQPjI=
 SHA256 (cargo/ordered-float-2.10.1.tar.gz) = aPGdZ+WieVyU5z4Lscwaft6y4o79OeLhybekDBEIsRw=
 SHA256 (cargo/ordered-multimap-0.7.1.tar.gz) = pNaowi/HFPDCNz5gkb9vXps3sbwLEYSHS34KTjA9MY8=
 SHA256 (cargo/ordered-stream-0.2.0.tar.gz) = mqKwHh2RaHn3OlPQHR1s7mituzHW2Rd6jPzgk8ztHVA=
-SHA256 (cargo/os_info-3.8.1.tar.gz) = bLtG1dAWldeh+4vl8NGWi9KyuLodGz5wYs4qBZPlevE=
+SHA256 (cargo/os_info-3.8.2.tar.gz) = rpnH+m3TjHyv4ewIXoBPj1VaL4ZZsNvgPx+ZY6m1EJI=
 SHA256 (cargo/parking-2.2.0.tar.gz) = u4E7ivhoVBNsaSKvBZjXGSVeyyF5UV5udzDUaPBcnK4=
 SHA256 (cargo/parking_lot-0.12.1.tar.gz) = N0KywQO58GvJ//Cjf/SRKTWFG+5tNvPAK8x1W8/sIo8=
 SHA256 (cargo/parking_lot_core-0.9.9.tar.gz) = TEKpImVG1orN2cCigNF84Zv+J6Rr9oeE5AZhFXiNAI4=
@@ -248,7 +248,7 @@ SHA256 (cargo/rayon-1.9.0.tar.gz) = 5JY+0byG5PPuIXAivYVbKXzvB/uerF36H3iLIgtJs70=
 SHA256 (cargo/rayon-core-1.12.1.tar.gz) = FGWHOj39qornyxS0ODZXyqsLPooKqa6OBLBEhUyN/OI=
 SHA256 (cargo/redox_syscall-0.4.1.tar.gz) = RyLXaO/0a3WYndE05cNT8NYpblqqMTLndsvbVr53Mao=
 SHA256 (cargo/redox_users-0.4.4.tar.gz) = oYR5IAd5YB5JitpOjB4fUOPuGd6wJZwlglqYtWA7LLQ=
-SHA256 (cargo/regex-1.10.3.tar.gz) = ti2+AfCwb52Nx9SeBaB4XxU7ALLCJ4VigvZx4DGMmxU=
+SHA256 (cargo/regex-1.10.4.tar.gz) = wRfb396cgwiXW2oY1x8/OFyJRh97P7BUKI7PKiBYukw=
 SHA256 (cargo/regex-automata-0.4.4.tar.gz) = O3+hE0QF4uyTU/1Baxf42s1GxHPX0/0c8gJwahTreSo=
 SHA256 (cargo/regex-syntax-0.8.2.tar.gz) = wIx05iBHuy3k/0h7JR5KkuJPSHRWSEUWNc7H1ZEWLZ8=
 SHA256 (cargo/rust-ini-0.21.0.tar.gz) = DWJe1X2PSa9s+lFMQuGnH63P9g6wscUX/4L+QaoCW0E=
@@ -341,7 +341,7 @@ SHA256 (cargo/wasm-bindgen-backend-0.2.89.tar.gz) = G1b2JeZPOhCE3tERxNX0d9+fjJLf
 SHA256 (cargo/wasm-bindgen-macro-0.2.89.tar.gz) = AWLb83IjzSr86Y89B4VQbcuNJmIjmD5LW1JYWebhgrI=
 SHA256 (cargo/wasm-bindgen-macro-support-0.2.89.tar.gz) = 8OuC/LeTCuYhmn7P1Vshf18Ik0hLehMCLrsrK/ILUoM=
 SHA256 (cargo/wasm-bindgen-shared-0.2.89.tar.gz) = ermzYwk2UFbNY52jE0v4f6jz2GAIq/meYSOEpu7NRZ8=
-SHA256 (cargo/which-6.0.0.tar.gz) = f6XgwQv3f0SqxXPkmNGoLV+9XpH2/AqZ575LOOheEBw=
+SHA256 (cargo/which-6.0.1.tar.gz) = ghHk9YorKAWt+++8B7q4KVj8keODYzmxq3rjJGXc4Nc=
 SHA256 (cargo/winapi-0.3.9.tar.gz) = XIOaZ0/NepiVLlkyQupACr6TmSdGdh44ZBQF0osA9Bk=
 SHA256 (cargo/winapi-i686-pc-windows-gnu-0.4.0.tar.gz) = rDuHxjYgQm3ZuZHlzgMp7/VFvMu7NPO+Cf9vtqtRt7Y=
 SHA256 (cargo/winapi-util-0.1.6.tar.gz) = 8p5vkZi6DSa0yfB9vm+e1jPh89W4tBQJAIQ0nkalJZY=
@@ -372,6 +372,7 @@ SHA256 (cargo/windows_x86_64_msvc-0.52.3.tar.gz) = B3CDPWCpcGOOmJs/qf0rsaqtz4iWP
 SHA256 (cargo/winnow-0.5.40.tar.gz) = 9ZOpU5hzeu7VPkiceF3xPzYY5B281nGMat2/E5WqaHY=
 SHA256 (cargo/winnow-0.6.5.tar.gz) = 3/pADmftWk3SN5g4KeZkdfCkomk4xLBMIbrt5iYiFbg=
 SHA256 (cargo/winres-0.1.12.tar.gz) = to2yYe9Z6eUoBvaIAgYx6YdZK9g2Ge3M2pxH1CzeT2w=
+SHA256 (cargo/winsafe-0.0.19.tar.gz) = 0TXRerdwJSrZXpqHLTZc8wkOO+hko0q0b0hVWZPvyQQ=
 SHA256 (cargo/xdg-home-1.0.0.tar.gz) = J2kgPNE6DGAV1RW+cpxSbQQenPLAzEeNV/ruhfQMbc0=
 SHA256 (cargo/yaml-rust-0.4.5.tar.gz) = VsGTbEzHocmrIaHrtgLrlCuoaMvUSpnLfNxYkjNeHIU=
 SHA256 (cargo/zbus-3.14.1.tar.gz) = Md45Ci2HLkzQTt1xtCXimFP3htyZMX7XLXPW/PXruUg=
@@ -382,7 +383,7 @@ SHA256 (cargo/zerocopy-derive-0.7.32.tar.gz) = nOGxjM2Oc6kyEYb5fkb58Et3iFEXdWexl
 SHA256 (cargo/zvariant-3.15.0.tar.gz) = RLKRvuDZYMUxcHgK8UjcpfomCmPN0k8ZYvqC4D5TM4w=
 SHA256 (cargo/zvariant_derive-3.15.0.tar.gz) = k016ffwxDW7gbIf/6I707KfT43uyUd7OLvk9qPF9js0=
 SHA256 (cargo/zvariant_utils-1.0.1.tar.gz) = cjTw2BFYnbSS0WiT4/Ieji/SgubQGwzd7jEDIgYswgA=
-SHA256 (starship-1.18.0.tar.gz) = 44fq0X7ezLYDsV3CvZthxlQeeV4PSp2QFQFXQyKMI2g=
+SHA256 (starship-1.18.1.tar.gz) = KrYa49LiViZhkfZwp2o1/QYxCtond++g8rbSYCBx0Ts=
 SIZE (cargo/adler-1.0.2.tar.gz) = 12778
 SIZE (cargo/ahash-0.8.11.tar.gz) = 43607
 SIZE (cargo/aho-corasick-1.1.2.tar.gz) = 183136
@@ -495,7 +496,7 @@ SIZE (cargo/futures-util-0.3.30.tar.gz) = 159977
 SIZE (cargo/generic-array-0.14.7.tar.gz) = 15950
 SIZE (cargo/gethostname-0.4.3.tar.gz) = 9336
 SIZE (cargo/getrandom-0.2.11.tar.gz) = 35391
-SIZE (cargo/gix-0.61.0.tar.gz) = 270542
+SIZE (cargo/gix-0.61.1.tar.gz) = 269762
 SIZE (cargo/gix-actor-0.31.1.tar.gz) = 8952
 SIZE (cargo/gix-bitmap-0.2.11.tar.gz) = 6920
 SIZE (cargo/gix-chunk-0.4.8.tar.gz) = 9358
@@ -540,7 +541,7 @@ SIZE (cargo/iana-time-zone-0.1.58.tar.gz) = 27020
 SIZE (cargo/iana-time-zone-haiku-0.1.2.tar.gz) = 7185
 SIZE (cargo/idna-0.5.0.tar.gz) = 271940
 SIZE (cargo/indexmap-1.9.3.tar.gz) = 54653
-SIZE (cargo/indexmap-2.2.5.tar.gz) = 81498
+SIZE (cargo/indexmap-2.2.6.tar.gz) = 82420
 SIZE (cargo/instant-0.1.12.tar.gz) = 6128
 SIZE (cargo/io-lifetimes-1.0.11.tar.gz) = 37346
 SIZE (cargo/is-docker-0.2.0.tar.gz) = 2664
@@ -592,7 +593,7 @@ SIZE (cargo/open-5.1.2.tar.gz) = 23336
 SIZE (cargo/ordered-float-2.10.1.tar.gz) = 16029
 SIZE (cargo/ordered-multimap-0.7.1.tar.gz) = 23144
 SIZE (cargo/ordered-stream-0.2.0.tar.gz) = 19077
-SIZE (cargo/os_info-3.8.1.tar.gz) = 26402
+SIZE (cargo/os_info-3.8.2.tar.gz) = 26400
 SIZE (cargo/parking-2.2.0.tar.gz) = 9730
 SIZE (cargo/parking_lot-0.12.1.tar.gz) = 40967
 SIZE (cargo/parking_lot_core-0.9.9.tar.gz) = 32445
@@ -633,7 +634,7 @@ SIZE (cargo/rayon-1.9.0.tar.gz) = 177770
 SIZE (cargo/rayon-core-1.12.1.tar.gz) = 70701
 SIZE (cargo/redox_syscall-0.4.1.tar.gz) = 24858
 SIZE (cargo/redox_users-0.4.4.tar.gz) = 15438
-SIZE (cargo/regex-1.10.3.tar.gz) = 253101
+SIZE (cargo/regex-1.10.4.tar.gz) = 253191
 SIZE (cargo/regex-automata-0.4.4.tar.gz) = 617294
 SIZE (cargo/regex-syntax-0.8.2.tar.gz) = 347228
 SIZE (cargo/rust-ini-0.21.0.tar.gz) = 18998
@@ -726,7 +727,7 @@ SIZE (cargo/wasm-bindgen-backend-0.2.89.tar.gz) = 28205
 SIZE (cargo/wasm-bindgen-macro-0.2.89.tar.gz) = 13906
 SIZE (cargo/wasm-bindgen-macro-support-0.2.89.tar.gz) = 20008
 SIZE (cargo/wasm-bindgen-shared-0.2.89.tar.gz) = 7265
-SIZE (cargo/which-6.0.0.tar.gz) = 16751
+SIZE (cargo/which-6.0.1.tar.gz) = 16542
 SIZE (cargo/winapi-0.3.9.tar.gz) = 1200382
 SIZE (cargo/winapi-i686-pc-windows-gnu-0.4.0.tar.gz) = 2918815
 SIZE (cargo/winapi-util-0.1.6.tar.gz) = 12234
@@ -757,6 +758,7 @@ SIZE (cargo/windows_x86_64_msvc-0.52.3.tar.gz) = 828013
 SIZE (cargo/winnow-0.5.40.tar.gz) = 159316
 SIZE (cargo/winnow-0.6.5.tar.gz) = 159316
 SIZE (cargo/winres-0.1.12.tar.gz) = 19772
+SIZE (cargo/winsafe-0.0.19.tar.gz) = 492820
 SIZE (cargo/xdg-home-1.0.0.tar.gz) = 3310
 SIZE (cargo/yaml-rust-0.4.5.tar.gz) = 47783
 SIZE (cargo/zbus-3.14.1.tar.gz) = 148931
@@ -767,4 +769,4 @@ SIZE (cargo/zerocopy-derive-0.7.32.tar.gz) = 37623
 SIZE (cargo/zvariant-3.15.0.tar.gz) = 72221
 SIZE (cargo/zvariant_derive-3.15.0.tar.gz) = 10943
 SIZE (cargo/zvariant_utils-1.0.1.tar.gz) = 6223
-SIZE (starship-1.18.0.tar.gz) = 8252145
+SIZE (starship-1.18.1.tar.gz) = 8255625
