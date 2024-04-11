@@ -46,7 +46,7 @@ do-install:
 # Nextest's own tests do not work with cargo test.
 # We must use nextest to run its own test suite.
 #
-# Summary [  43.644s] 229 tests run: 216 passed, 13 failed, 0 skipped
+# Summary [ 241.614s] 229 tests run: 229 passed (1 slow), 0 skipped
 do-test:
 	NEXTEST_HIDE_PROGRESS_BAR=1 ${MODCARGO_CARGO_RUN} run \
 		--package cargo-nextest -- nextest run --profile ci

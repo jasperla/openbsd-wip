@@ -314,6 +314,7 @@ SHA256 (cargo/untrusted-0.9.0.tar.gz) = jsttoouKNR13O2jVglrDkBfmgHUPmA86GoXNjdKK
 SHA256 (cargo/url-2.5.0.tar.gz) = MeYwLju3U9Rug1FsrlWuGW/AwwlAfPEas1zFGkwqRjM=
 SHA256 (cargo/urlencoding-2.1.3.tar.gz) = 2vjbo7frhwyvHd7te8nSoEnzz9+ufLUhsIfMM65MSdo=
 SHA256 (cargo/utf8parse-0.2.1.tar.gz) = cRuWIK8ZHgzcdGio0U5wnD3NsRWzb4OOYBWDr4AKNwo=
+SHA256 (cargo/uuid-1.2.1.tar.gz) = /rQeePkzY7st+LDoaiyjDu14BuoW6gx5DXV8+T95voM=
 SHA256 (cargo/uuid-1.7.0.tar.gz) = 8AzJcCyhLTyBRVJZYh5nbQ9yUc7GaiHpj+Lpo325Oyo=
 SHA256 (cargo/valuable-0.1.0.tar.gz) = gwt+XU2QA0AylA5Kzg2amgV+ekXNlObAB4MuOe24L20=
 SHA256 (cargo/vcpkg-0.2.15.tar.gz) = rM1Opi97t6gv4jBm+wlX1I72d/buuCFfNy9S5IuzJCY=
@@ -696,6 +697,7 @@ SIZE (cargo/untrusted-0.9.0.tar.gz) = 14447
 SIZE (cargo/url-2.5.0.tar.gz) = 78605
 SIZE (cargo/urlencoding-2.1.3.tar.gz) = 6538
 SIZE (cargo/utf8parse-0.2.1.tar.gz) = 13435
+SIZE (cargo/uuid-1.2.1.tar.gz) = 53789
 SIZE (cargo/uuid-1.7.0.tar.gz) = 42627
 SIZE (cargo/valuable-0.1.0.tar.gz) = 27718
 SIZE (cargo/vcpkg-0.2.15.tar.gz) = 228735
