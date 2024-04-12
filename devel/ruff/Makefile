@@ -5,7 +5,7 @@ COMMENT =	extremely fast Python linter and code formatter
 
 GH_ACCOUNT =	astral-sh
 GH_PROJECT =	ruff
-GH_TAGNAME =	v0.3.5
+GH_TAGNAME =	v0.3.7
 
 CATEGORIES =	devel textproc
 
