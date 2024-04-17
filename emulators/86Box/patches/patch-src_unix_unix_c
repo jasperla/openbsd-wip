@@ -1,0 +1,14 @@
+OpenBSD does not implement pthread_setname_np().
+
+Index: src/unix/unix.c
+--- src/unix/unix.c.orig
++++ src/unix/unix.c
+@@ -1393,7 +1393,7 @@ plat_set_thread_name(void *thread, const char *name)
+ #ifdef __APPLE__
+     pthread_setname_np(truncated);
+ #else
+-    pthread_setname_np(thread ? *((pthread_t *) thread) : pthread_self(), truncated);
++    pthread_set_name_np(thread ? *((pthread_t *) thread) : pthread_self(), truncated);
+ #endif
+ }
+ 

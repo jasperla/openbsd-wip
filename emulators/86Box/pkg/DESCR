@@ -1,0 +1,20 @@
+86Box is a low level x86 emulator that runs older operating systems and
+software designed for IBM PC systems and compatibles from 1981 through
+fairly recent system designs based on the PCI bus.
+
+Features:
+
+- Easy to use interface inspired by mainstream hypervisor software
+- Low level emulation of 8086-based processors up to the Pentium with
+  focus on accuracy
+- Great range of customizability of virtual machines
+- Many available systems, such as the very first IBM PC 5150 from 1981,
+  or the more obscure IBM PS/2 line of systems based on the Micro Channel
+  Architecture
+- Lots of supported peripherals including video adapters, sound cards,
+  network adapters, hard disk controllers, and SCSI adapters
+- MIDI output to Windows built-in MIDI support, FluidSynth, or emulated
+  Roland synthesizers
+- Supports running MS-DOS, older Windows versions, OS/2, many Linux
+  distributions, or vintage systems such as BeOS or NEXTSTEP, and
+  applications for these systems
