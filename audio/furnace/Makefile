@@ -13,7 +13,7 @@ MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 # GPLv2+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB +=	${COMPILER_LIBCXX} GL SDL2 c execinfo fftw3 fmt freetype
+WANTLIB +=	${COMPILER_LIBCXX} SDL2 c execinfo fftw3 fmt freetype
 WANTLIB +=	m portaudio sndfile z
 
 COMPILER =	base-clang ports-gcc
@@ -40,7 +40,8 @@ CONFIGURE_ARGS =	-DUSE_RTMIDI=OFF \
 			-DSYSTEM_LIBSNDFILE=ON \
 			-DSYSTEM_PORTAUDIO=ON \
 			-DSYSTEM_SDL2=ON \
-			-DSYSTEM_ZLIB=ON
+			-DSYSTEM_ZLIB=ON \
+			-DWITH_RENDER_OPENGL=OFF
 
 NO_TEST =	Yes
 
