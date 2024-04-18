@@ -5,7 +5,7 @@ COMMENT =	extremely fast Python package installer and resolver
 
 GH_ACCOUNT =	astral-sh
 GH_PROJECT =	uv
-GH_TAGNAME =	0.1.32
+GH_TAGNAME =	0.1.33
 
 # Rust crates downloaded via git
 PUBGRUB_HASH =	c26e485213e39582c6f2e4d45c0328422670e7a7
@@ -26,9 +26,10 @@ PERMIT_PACKAGE =	Yes
 
 BUILD_DEPENDS +=	devel/cargo-generate-vendor
 
-LIB_DEPENDS +=	security/libssh2 devel/libgit2/libgit2 archivers/zstd
+LIB_DEPENDS +=	security/libssh2 devel/libgit2/libgit2 \
+		archivers/bzip2 archivers/zstd
 
-WANTLIB +=	${MODCARGO_WANTLIB} m crypto ssl git2 ssh2 zstd
+WANTLIB +=	${MODCARGO_WANTLIB} m crypto ssl git2 ssh2 bz2 zstd
 
 MODULES =	devel/cargo
 
