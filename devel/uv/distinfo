@@ -132,6 +132,7 @@ SHA256 (cargo/deflate64-0.1.8.tar.gz) = g6zmyGN2vgts3PP7QYgugdlLMVh1c9HPqdAc0Gu6
 SHA256 (cargo/deranged-0.3.11.tar.gz) = tCtvoEpEC0lciwTQ5xtwfFhfg8ucsoz4zQ2XbDFeMbQ=
 SHA256 (cargo/derivative-2.2.0.tar.gz) = /MPdXp6cCyldbh5NgR+28VfV/9eEuNIC/GLqyANadws=
 SHA256 (cargo/derive_more-0.99.17.tar.gz) = T7gQ0wp8GVP5EzTeckRzH8PzwQ1/4WMzijW59kCWAyE=
+SHA256 (cargo/diff-0.1.13.tar.gz) = ViVJhndeMjP/qcTX0/qvbTaiwJ0wsgaH6fiLyLr8Fsg=
 SHA256 (cargo/difflib-0.4.0.tar.gz) = YYTjNUMWJDdRXC4rSHFHlON4ReyYUXEZFO7J0wj26+g=
 SHA256 (cargo/digest-0.10.7.tar.gz) = ntmigfe8m3V25hRoumFaZqXIz9/0JCCnCqgnAaOx4pI=
 SHA256 (cargo/directories-5.0.1.tar.gz) = mkkXO4TgNDgihPJ/GvTcu9Ix/6NYwP4xZUGnM383ajU=
@@ -326,6 +327,7 @@ SHA256 (cargo/ppv-lite86-0.2.17.tar.gz) = W0CvgFsxIf6rijwp8E2K0mL6jgVhiD52U+Akrk
 SHA256 (cargo/predicates-3.1.0.tar.gz) = aLh7/UYFkmzf78HDtfj+Vg4/7KnVVSz2jEZtPYI2x+g=
 SHA256 (cargo/predicates-core-1.0.6.tar.gz) = t5QDJgdhLnq+tNtprbTjNZD6bPEUnpX9fLAOY0uS8XQ=
 SHA256 (cargo/predicates-tree-1.0.9.tar.gz) = NoujFfuMUFKraS5ooO7+xuxXsjo2lZwUSW8LDfLAzs8=
+SHA256 (cargo/pretty_assertions-1.4.0.tar.gz) = r3zuGmyKW5IIs8sQYfEMDLaJCHs9jOhfudLdeim2umY=
 SHA256 (cargo/priority-queue-2.0.2.tar.gz) = UJNU2Kdp6NC1Z9aCG4RJXGAhMWJ2GnMtaM6HyWS9NH8=
 SHA256 (cargo/proc-macro2-1.0.79.tar.gz) = 6DX/Ipj1chYI6xqYDsruGu8sEyv5XswCahG3vzwBwC4=
 SHA256 (cargo/proptest-1.4.0.tar.gz) = MbR2Exw8hstoAy/cXLbVoQRePkLZa2n6WZ/XdwHh9b8=
@@ -581,6 +583,7 @@ SHA256 (cargo/wyz-0.5.1.tar.gz) = BfNg/AskKWMpx4/ahSoemugt6c97J9rkt/YvEY93ue0=
 SHA256 (cargo/xattr-1.3.1.tar.gz) = jahPGiWTmyf2gg2SrtEI+D/5IP3xGnsZNmwnxM2oHU8=
 SHA256 (cargo/xmlparser-0.13.6.tar.gz) = Zv7gt3ew9awcabsG02Emj6r6Yc1Ggq4GShccFsQz6eQ=
 SHA256 (cargo/xz2-0.1.7.tar.gz) = OIxE3AnXbxU2YC6tbTJetTL1wSLxd4K9V/tHuu63Z+I=
+SHA256 (cargo/yansi-0.5.1.tar.gz) = CQQc2Qz4X3+LLfYMZG+FO39TXOaPhSROtnMc+J+kmOw=
 SHA256 (cargo/zerocopy-0.7.32.tar.gz) = dNTTlh5T+kyaJahjf8K/ryWVs9OuNIdVaKXPZHh3Fr4=
 SHA256 (cargo/zerocopy-derive-0.7.32.tar.gz) = nOGxjM2Oc6kyEYb5fkb58Et3iFEXdWexl1EJ0moI0qY=
 SHA256 (cargo/zeroize-1.7.0.tar.gz) = UltOwULGtootEPAfe79nVVmco/gepTuEMbfdNI9f2y0=
@@ -591,7 +594,7 @@ SHA256 (cargo/zstd-safe-5.0.2+zstd.1.5.2.tar.gz) = HSpVheBPnupLKj0eylCMTe6Vkqie9
 SHA256 (cargo/zstd-safe-7.1.0.tar.gz) = HNmbRca8A6AYyLioYCVnjIflVSYGTjj53zAZidzn7Ao=
 SHA256 (cargo/zstd-sys-2.0.10+zstd.1.5.6.tar.gz) = wlOkkUr1uvyPqMhu5ACCfoPPbsARlewfHthEG/ANZao=
 SHA256 (charliermarsh-rs-async-zip-1dcb40cfe1bf5325a6fd4bfcf9894db40241f585.tar.gz) = twEs4L7Mz1gpsOIlFKwDjrpYNdhGjtDkGgJDd8s8440=
-SHA256 (uv-0.1.33.tar.gz) = ktEr8oOVTAJMdnI2mYW/W6pfCNHdrA0qppJnmrpFsF4=
+SHA256 (uv-0.1.34.tar.gz) = VCtxJzmHdM8Ak4s7xhKqdtNg95t2ALeg2sGtl0RJXS0=
 SIZE (astral-sh-pubgrub-c26e485213e39582c6f2e4d45c0328422670e7a7.tar.gz) = 86123
 SIZE (cargo/actix-codec-0.5.2.tar.gz) = 14085
 SIZE (cargo/actix-http-3.6.0.tar.gz) = 152432
@@ -726,6 +729,7 @@ SIZE (cargo/deflate64-0.1.8.tar.gz) = 15000
 SIZE (cargo/deranged-0.3.11.tar.gz) = 18043
 SIZE (cargo/derivative-2.2.0.tar.gz) = 48076
 SIZE (cargo/derive_more-0.99.17.tar.gz) = 55771
+SIZE (cargo/diff-0.1.13.tar.gz) = 46216
 SIZE (cargo/difflib-0.4.0.tar.gz) = 7638
 SIZE (cargo/digest-0.10.7.tar.gz) = 19557
 SIZE (cargo/directories-5.0.1.tar.gz) = 15833
@@ -920,6 +924,7 @@ SIZE (cargo/ppv-lite86-0.2.17.tar.gz) = 22242
 SIZE (cargo/predicates-3.1.0.tar.gz) = 23090
 SIZE (cargo/predicates-core-1.0.6.tar.gz) = 8084
 SIZE (cargo/predicates-tree-1.0.9.tar.gz) = 7960
+SIZE (cargo/pretty_assertions-1.4.0.tar.gz) = 78846
 SIZE (cargo/priority-queue-2.0.2.tar.gz) = 34385
 SIZE (cargo/proc-macro2-1.0.79.tar.gz) = 47200
 SIZE (cargo/proptest-1.4.0.tar.gz) = 198527
@@ -1175,6 +1180,7 @@ SIZE (cargo/wyz-0.5.1.tar.gz) = 18790
 SIZE (cargo/xattr-1.3.1.tar.gz) = 12580
 SIZE (cargo/xmlparser-0.13.6.tar.gz) = 26718
 SIZE (cargo/xz2-0.1.7.tar.gz) = 23892
+SIZE (cargo/yansi-0.5.1.tar.gz) = 16525
 SIZE (cargo/zerocopy-0.7.32.tar.gz) = 151096
 SIZE (cargo/zerocopy-derive-0.7.32.tar.gz) = 37623
 SIZE (cargo/zeroize-1.7.0.tar.gz) = 19039
@@ -1185,4 +1191,4 @@ SIZE (cargo/zstd-safe-5.0.2+zstd.1.5.2.tar.gz) = 17273
 SIZE (cargo/zstd-safe-7.1.0.tar.gz) = 20792
 SIZE (cargo/zstd-sys-2.0.10+zstd.1.5.6.tar.gz) = 749088
 SIZE (charliermarsh-rs-async-zip-1dcb40cfe1bf5325a6fd4bfcf9894db40241f585.tar.gz) = 96766
-SIZE (uv-0.1.33.tar.gz) = 987063
+SIZE (uv-0.1.34.tar.gz) = 1003743
