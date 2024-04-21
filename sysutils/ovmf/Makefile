@@ -1,10 +1,5 @@
 # ld: error: relocation R_X86_64_64 cannot be used against local symbol; recompile with -fPIC
 
-# I don't have arm64
-ONLY_FOR_ARCHS =	amd64
-# should run on any arch in qemu-system-x86_x64
-PKG_ARCHS =		*
-
 COMMENT =		Open Virtual Machine Firmware
 # 202311 neds OpenSSL *and* EmbedTLS
 V =			202308
