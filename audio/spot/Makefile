@@ -1,10 +1,6 @@
 COMMENT =		native Spotify client for the GNOME desktop
-V =			0.4.0
-# 05.02.2024 HEAD
-C =			aa1c57842c3f4e424eb62c69365438f904b2dc63
-DIST_TUPLE =		github	xou816	spot	${C}	.
-WRKDIST =		${WRKDIR}/spot-${C}
-DISTNAME =		spot-${V}pl1
+V =			0.4.1
+DIST_TUPLE =		github	xou816	spot	0.4.1	.
 CATEGORIES =		audio x11
 
 MAINTAINER =		Klemens Nanni <kn@openbsd.org>
@@ -26,7 +22,7 @@ BUILD_DEPENDS =		devel/gettext,-tools \
 
 LIB_DEPENDS =		audio/pulseaudio \
 			devel/glib2 \
-			x11/gnome/libadwaita \
+			x11/gnome/libadwaita>=1.5.0 \
 			x11/gtk+4
 
 RUN_DEPENDS =		x11/gtk+4,-guic \

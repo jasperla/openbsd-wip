@@ -395,7 +395,7 @@ SHA256 (cargo/zerocopy-derive-0.6.5.tar.gz) = hV4PavnNcrh9imxYbzy1g/XNzGLCyAhp2M
 SHA256 (cargo/zvariant-3.15.0.tar.gz) = RLKRvuDZYMUxcHgK8UjcpfomCmPN0k8ZYvqC4D5TM4w=
 SHA256 (cargo/zvariant_derive-3.15.0.tar.gz) = k016ffwxDW7gbIf/6I707KfT43uyUd7OLvk9qPF9js0=
 SHA256 (cargo/zvariant_utils-1.0.1.tar.gz) = cjTw2BFYnbSS0WiT4/Ieji/SgubQGwzd7jEDIgYswgA=
-SHA256 (xou816-spot-aa1c57842c3f4e424eb62c69365438f904b2dc63.tar.gz) = FBWgCrfWOSVF0bQVu2GjRTJXeSNjMg56KI2IEWVuxSg=
+SHA256 (xou816-spot-0.4.1.tar.gz) = TXT66RRljGB5Is/TP6fOgo8JUiPPvytl/2hH7EaZUgU=
 SIZE (cargo/addr2line-0.21.0.tar.gz) = 40807
 SIZE (cargo/adler-1.0.2.tar.gz) = 12778
 SIZE (cargo/aes-0.6.0.tar.gz) = 86774
@@ -793,4 +793,4 @@ SIZE (cargo/zerocopy-derive-0.6.5.tar.gz) = 522438
 SIZE (cargo/zvariant-3.15.0.tar.gz) = 72221
 SIZE (cargo/zvariant_derive-3.15.0.tar.gz) = 10943
 SIZE (cargo/zvariant_utils-1.0.1.tar.gz) = 6223
-SIZE (xou816-spot-aa1c57842c3f4e424eb62c69365438f904b2dc63.tar.gz) = 848706
+SIZE (xou816-spot-0.4.1.tar.gz) = 849425
