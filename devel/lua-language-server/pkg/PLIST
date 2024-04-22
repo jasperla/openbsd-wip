@@ -85,6 +85,7 @@ lib/lua-language-server/script/cli/doc.lua
 lib/lua-language-server/script/cli/doc2md.lua
 lib/lua-language-server/script/cli/init.lua
 lib/lua-language-server/script/cli/version.lua
+lib/lua-language-server/script/cli/visualize.lua
 lib/lua-language-server/script/client.lua
 lib/lua-language-server/script/config/
 lib/lua-language-server/script/config/config.lua
@@ -253,6 +254,7 @@ lib/lua-language-server/script/parser/relabel.lua
 lib/lua-language-server/script/parser/tokens.lua
 lib/lua-language-server/script/plugin.lua
 lib/lua-language-server/script/plugins/
+lib/lua-language-server/script/plugins/astHelper.lua
 lib/lua-language-server/script/plugins/ffi/
 lib/lua-language-server/script/plugins/ffi/c-parser/
 lib/lua-language-server/script/plugins/ffi/c-parser/c99.lua
@@ -266,6 +268,7 @@ lib/lua-language-server/script/plugins/ffi/cdefRerence.lua
 lib/lua-language-server/script/plugins/ffi/init.lua
 lib/lua-language-server/script/plugins/ffi/searchCode.lua
 lib/lua-language-server/script/plugins/init.lua
+lib/lua-language-server/script/plugins/nodeHelper.lua
 lib/lua-language-server/script/progress.lua
 lib/lua-language-server/script/proto/
 lib/lua-language-server/script/proto/converter.lua

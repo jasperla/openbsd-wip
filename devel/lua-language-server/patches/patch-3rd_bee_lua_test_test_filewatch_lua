@@ -37,7 +37,7 @@ Index: 3rd/bee.lua/test/test_filewatch.lua
 -                if n < 0 then
 -                    break
 -                end
--                thread.sleep(0.001)
+-                thread.sleep(1)
 -            end
 -        end
 -        lt.assertEquals(list, {

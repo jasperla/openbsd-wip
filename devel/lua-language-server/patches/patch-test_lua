@@ -18,7 +18,7 @@ Index: test.lua
  
      test 'tclient'
      test 'full'
--    test 'plugins.ffi.test'
+-    test 'plugins.test'
+ 	test 'cli.test'
  end
  
- loadAllLibs()
