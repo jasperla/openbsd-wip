@@ -1,7 +1,7 @@
 Index: Cargo.toml
 --- Cargo.toml.orig
 +++ Cargo.toml
-@@ -57,7 +57,7 @@ async-channel = { version = "2.2.0" }
+@@ -58,7 +58,7 @@ async-channel = { version = "2.2.0" }
  async-compression = { version = "0.4.6" }
  async-trait = { version = "0.1.78" }
  async_http_range_reader = { version = "0.7.1" }
@@ -10,12 +10,12 @@ Index: Cargo.toml
  axoupdater = { version = "0.5.0", default-features = false }
  backoff = { version = "0.4.0" }
  base64 = { version = "0.22.0" }
-@@ -103,7 +103,7 @@ path-absolutize = { version = "3.1.1" }
+@@ -105,7 +105,7 @@ path-absolutize = { version = "3.1.1" }
  pathdiff = { version = "0.2.1" }
  petgraph = { version = "0.6.4" }
  platform-info = { version = "2.0.2" }
 -pubgrub = { git = "https://github.com/astral-sh/pubgrub", rev = "c26e485213e39582c6f2e4d45c0328422670e7a7" }
 +pubgrub = { path = "${MODCARGO_VENDOR_DIR}/pubgrub-c26e485213e39582c6f2e4d45c0328422670e7a7" }
- pyo3 = { version = "0.20.3" }
- pyo3-log = { version = "0.9.0" }
+ pyo3 = { version = "0.21.0" }
+ pyo3-log = { version = "0.10.0" }
  rand = { version = "0.8.5" }
