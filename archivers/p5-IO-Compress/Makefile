@@ -14,8 +14,11 @@ PERMIT_PACKAGE=	Yes
 PERMIT_DISTFILES=   Yes
 
 RUN_DEPENDS+= ${BUILD_DEPENDS}
+
+# problem child
+#		archivers/p5-Compress-Raw-Zlib 
+
 BUILD_DEPENDS+= archivers/p5-Compress-Raw-Bzip2 \
-		archivers/p5-Compress-Raw-Zlib \
 		archivers/p5-Compress-Raw-Lzma
 
 CONFIGURE_STYLE= perl
