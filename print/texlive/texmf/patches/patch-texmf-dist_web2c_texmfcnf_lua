@@ -1,0 +1,51 @@
+Index: texmf-dist/web2c/texmfcnf.lua
+--- texmf-dist/web2c/texmfcnf.lua.orig
++++ texmf-dist/web2c/texmfcnf.lua
+@@ -22,6 +22,9 @@ return {
+         -- time to prune and update this file, also because LMTX has a few more features.
+ 
+         variables = {
++            -- Note that in OpenBSD, where we use the old teTeX path convention, and
++            -- therefore selfauto does not work.
++            TEXMFROOT = "${TRUEPREFIX}/share",
+ 
+             -- The following variable is predefined (but can be overloaded) and in most cases you can
+             -- leave this one untouched. The built-in definition permits relocation of the tree.
+@@ -52,7 +55,7 @@ return {
+ 
+             TEXMFVAR        = "home:" .. hiddentexlivepath .. "/texmf-var",
+             TEXMFCONFIG     = "home:" .. hiddentexlivepath .. "/texmf-config",
+-            TEXMFSYSVAR     = "selfautoparent:texmf-var",
++            TEXMFSYSVAR     = "$TEXMFROOT/texmf-var",
+             TEXMFCACHE      = "$TEXMFSYSVAR;$TEXMFVAR",
+ 
+             -- I don't like this texmf under home and texmf-home would make more sense. One never knows
+@@ -62,7 +65,7 @@ return {
+             -- By using prefixes we don't get expanded paths in the cache __path__ entry. This makes the
+             -- tex root relocatable.
+ 
+-            TEXMFOS         = "selfautodir:",
++            TEXMFOS         = "${TRUEPREFIX}",
+ 
+             -- standalone:
+ 
+@@ -73,14 +76,14 @@ return {
+ 
+             -- texlive:
+ 
+-            TEXMFDIST       = "selfautoparent:texmf-dist",
+-            TEXMFSYSCONFIG  = "selfautoparent:texmf-config",
++            TEXMFDIST       = "$TEXMFROOT/texmf-dist",
++            TEXMFSYSCONFIG  = "$TEXMFROOT/texmf-config",
+ 
+             -- The texmf-local path is only used for (maybe) some additional configuration file.
+ 
+-            TEXMFLOCAL      = "selfautoparent:texmf-local",
+-            TEXMFFONTS      = "selfautoparent:texmf-fonts",
+-            TEXMFPROJECT    = "selfautoparent:texmf-project",
++            TEXMFLOCAL      = "$TEXMFROOT/texmf-local",
++            TEXMFFONTS      = "$TEXMFROOT/texmf-fonts",
++            TEXMFPROJECT    = "$TEXMFROOT/texmf-project",
+ 
+             TEXMFHOME       = "home:texmf",
+          -- TEXMFHOME       = os.name == "macosx" and "home:Library/texmf" or "home:texmf",
