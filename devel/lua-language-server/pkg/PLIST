@@ -81,6 +81,7 @@ lib/lua-language-server/script/brave/log.lua
 lib/lua-language-server/script/brave/work.lua
 lib/lua-language-server/script/cli/
 lib/lua-language-server/script/cli/check.lua
+lib/lua-language-server/script/cli/check_worker.lua
 lib/lua-language-server/script/cli/doc.lua
 lib/lua-language-server/script/cli/doc2md.lua
 lib/lua-language-server/script/cli/init.lua
@@ -89,6 +90,7 @@ lib/lua-language-server/script/cli/visualize.lua
 lib/lua-language-server/script/client.lua
 lib/lua-language-server/script/config/
 lib/lua-language-server/script/config/config.lua
+lib/lua-language-server/script/config/env.lua
 lib/lua-language-server/script/config/init.lua
 lib/lua-language-server/script/config/loader.lua
 lib/lua-language-server/script/config/template.lua
@@ -192,6 +194,7 @@ lib/lua-language-server/script/core/hover/label.lua
 lib/lua-language-server/script/core/hover/name.lua
 lib/lua-language-server/script/core/hover/return.lua
 lib/lua-language-server/script/core/hover/table.lua
+lib/lua-language-server/script/core/implementation.lua
 lib/lua-language-server/script/core/jump-source.lua
 lib/lua-language-server/script/core/look-backward.lua
 lib/lua-language-server/script/core/matchkey.lua
@@ -243,6 +246,7 @@ lib/lua-language-server/script/meta/bee/
 lib/lua-language-server/script/meta/bee/filesystem.lua
 lib/lua-language-server/script/meta/bee/filewatch.lua
 lib/lua-language-server/script/meta/bee/socket.lua
+lib/lua-language-server/script/meta/bee/sys.lua
 lib/lua-language-server/script/meta/bee/thread.lua
 lib/lua-language-server/script/parser/
 lib/lua-language-server/script/parser/compile.lua
