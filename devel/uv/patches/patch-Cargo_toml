@@ -1,21 +1,21 @@
 Index: Cargo.toml
 --- Cargo.toml.orig
 +++ Cargo.toml
-@@ -58,7 +58,7 @@ async-channel = { version = "2.2.0" }
+@@ -54,7 +54,7 @@ async-channel = { version = "2.2.0" }
  async-compression = { version = "0.4.6" }
  async-trait = { version = "0.1.78" }
- async_http_range_reader = { version = "0.7.1" }
+ async_http_range_reader = { version = "0.8.0" }
 -async_zip = { git = "https://github.com/charliermarsh/rs-async-zip", rev = "1dcb40cfe1bf5325a6fd4bfcf9894db40241f585", features = ["deflate"] }
 +async_zip = { path = "${MODCARGO_VENDOR_DIR}/rs-async-zip-1dcb40cfe1bf5325a6fd4bfcf9894db40241f585", features = ["deflate"] }
- axoupdater = { version = "0.5.0", default-features = false }
+ axoupdater = { version = "0.6.0", default-features = false }
  backoff = { version = "0.4.0" }
  base64 = { version = "0.22.0" }
-@@ -105,7 +105,7 @@ path-absolutize = { version = "3.1.1" }
+@@ -101,7 +101,7 @@ path-absolutize = { version = "3.1.1" }
  pathdiff = { version = "0.2.1" }
  petgraph = { version = "0.6.4" }
  platform-info = { version = "2.0.2" }
--pubgrub = { git = "https://github.com/astral-sh/pubgrub", rev = "c26e485213e39582c6f2e4d45c0328422670e7a7" }
-+pubgrub = { path = "${MODCARGO_VENDOR_DIR}/pubgrub-c26e485213e39582c6f2e4d45c0328422670e7a7" }
+-pubgrub = { git = "https://github.com/astral-sh/pubgrub", rev = "0e684a874c9fb8f74738cd8875524c80e3d4820b" }
++pubgrub = { path = "${MODCARGO_VENDOR_DIR}/pubgrub-0e684a874c9fb8f74738cd8875524c80e3d4820b" }
  pyo3 = { version = "0.21.0" }
  pyo3-log = { version = "0.10.0" }
  rand = { version = "0.8.5" }
