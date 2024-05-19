@@ -32,7 +32,8 @@ SUBST_VARS =	LOCALBASE
 # 		< ${FILESDIR}/notification.rs.patch
 
 post-configure:
-	sed -i '/opt-level/s,2,0,' ${WRKDIR}/.cargo/config
+	mv ${WRKDIR}/.cargo/config ${WRKDIR}/.cargo/config.orig
+	sed '/opt-level/s,2,0,' < ${WRKDIR}/.cargo/config.orig > ${WRKDIR}/.cargo/config
 	cat ${FILESDIR}/config >> ${WRKDIR}/.cargo/config
 
 do-install:
