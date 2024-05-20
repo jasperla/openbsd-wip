@@ -20,6 +20,9 @@ MODULES =	lang/go
 
 MODGO_LDFLAGS +=	-X main.Version=${MODGO_VERSION:S/v//}
 
+# Tests fail in glow_test.go => try to get datas from github.com
+NO_TEST =	Yes
+
 .include "modules.inc"
 
 .include <bsd.port.mk>
