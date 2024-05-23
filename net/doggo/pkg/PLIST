@@ -1,5 +1,8 @@
 @comment bin/api
 @bin bin/doggo
+share/bash-completion/
+share/bash-completion/completions/
+share/bash-completion/completions/doggo
 share/fish/
 share/fish/completions/
 share/fish/completions/doggo.fish
