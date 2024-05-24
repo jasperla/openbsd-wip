@@ -3,7 +3,7 @@ NOT_FOR_ARCHS =	sparc64
 
 COMMENT =	next-generation test runner for Rust
 
-VERSION =	0.9.70
+VERSION =	0.9.72
 
 DISTNAME =	cargo-nextest-${VERSION}
 
@@ -46,7 +46,7 @@ do-install:
 # Nextest's own tests do not work with cargo test.
 # We must use nextest to run its own test suite.
 #
-# Summary [ 156.105s] 242 tests run: 242 passed, 0 skipped
+# Summary [ 179.475s] 262 tests run: 262 passed, 0 skipped
 do-test:
 	NEXTEST_HIDE_PROGRESS_BAR=1 ${MODCARGO_CARGO_RUN} run \
 		--package cargo-nextest -- nextest run --profile ci
