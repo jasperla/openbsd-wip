@@ -5,7 +5,12 @@ COMMENT =	extremely fast Python linter and code formatter
 
 GH_ACCOUNT =	astral-sh
 GH_PROJECT =	ruff
-GH_TAGNAME =	v0.4.4
+GH_TAGNAME =	v0.4.5
+
+# Rust lsp-types crate
+LSPTYPES_HASH =	3512a9f33eadc5402cfab1b8f7340824c8ca1439
+
+DIST_TUPLE +=	github astral-sh lsp-types ${LSPTYPES_HASH} ${MODCARGO_VENDOR_DIR}
 
 CATEGORIES =	devel textproc
 
@@ -24,6 +29,15 @@ MODULES =	devel/cargo
 CONFIGURE_STYLE =	cargo
 
 SEPARATE_BUILD =	Yes
+
+SUBST_VARS +=	MODCARGO_VENDOR_DIR LSPTYPES_HASH
+
+post-patch:
+	${SUBST_CMD} ${WRKSRC}/Cargo.toml
+
+	${LOCALBASE}/bin/cargo-generate-vendor \
+		${FULLDISTDIR}/astral-sh-lsp-types-${LSPTYPES_HASH}.tar.gz \
+		${MODCARGO_VENDOR_DIR}/lsp-types-${LSPTYPES_HASH}
 
 # Generate shell completions
 pre-install:
