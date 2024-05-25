@@ -301,6 +301,7 @@ SHA256 (cargo/password-hash-0.4.2.tar.gz) = dnY3TKruijJcnnoq5VfyFsVWOhcdaZew74pl
 SHA256 (cargo/paste-1.0.15.tar.gz) = V8DXt0tWO0nTja4AoMN9TW3ptDI4KyiS8FdN3K5z/Qo=
 SHA256 (cargo/path-absolutize-3.1.1.tar.gz) = 5K84H+efoZW0kJSF2Z9zqAeSMx3wYlGI5weFTwszg/U=
 SHA256 (cargo/path-dedot-3.1.1.tar.gz) = B7oK1+BHcSQUIT/2dTPm3Ud68KTh0U+1I0PlPTDqk5c=
+SHA256 (cargo/path-slash-0.2.1.tar.gz) = HpEJnUJosOEZc/A26IXWUvsLIf7c9pc4xif5TbakT0I=
 SHA256 (cargo/pathdiff-0.2.1.tar.gz) = iDURalwXkISoMO+zrcEXqwB1ErU1vBohyZHTsyprRN0=
 SHA256 (cargo/pbkdf2-0.11.0.tar.gz) = g6BpLsROTPHvKMoxfxT48H2i2V7D+gH4bkRntyXmCRc=
 SHA256 (cargo/percent-encoding-2.3.1.tar.gz) = 4xSPUEYgil1WvPwDBT48pjNOUdqN+xm2zcizBvrjKD4=
@@ -445,6 +446,7 @@ SHA256 (cargo/tagu-0.1.6.tar.gz) = 7dtrBtIPup7SH8o9aW7htuhwvKC8+fopcfauJDbeV2o=
 SHA256 (cargo/tap-1.0.1.tar.gz) = VZN+F5kYWxKGPUR/Qll+1p2ZKGhrjYih3xc3agl9g2k=
 SHA256 (cargo/target-lexicon-0.12.14.tar.gz) = 4fxAOJGiG8+3w3g0umalR6j0AhRuunJltabYgFnJ/y8=
 SHA256 (cargo/temp-dir-0.1.13.tar.gz) = HyJ5aOwA8OUyL5uBc8egy8/2GBoKWyjpiSSRwoYncjE=
+SHA256 (cargo/temp-env-0.3.6.tar.gz) = ljdIVQaPR0AsMSHG7tiNKcsd6POrJwkOJz5CC9q88FA=
 SHA256 (cargo/tempfile-3.10.1.tar.gz) = hbd/r7Jj3Z0Fy+rBGVJkJWdts3hBE6qSlciEmMv4v/E=
 SHA256 (cargo/terminal_size-0.3.0.tar.gz) = Ib6/K3yeClFfbg+MUdwPjkaWOR5vH/MDeVWfg2X7Dfc=
 SHA256 (cargo/termtree-0.4.1.tar.gz) = M2n1rFLV62q0jGtP/cjvvK1ricdldJBkuimPLGihanY=
@@ -487,7 +489,6 @@ SHA256 (cargo/tracing-0.1.40.tar.gz) = w1I6tacZFsz0IO699VIfzvAhQSNLvAuKSfL9xFRDZ
 SHA256 (cargo/tracing-attributes-0.1.27.tar.gz) = NHBMjW68vJOYJBgK8CBWawGnwB+AZBJk66CZn2wra+c=
 SHA256 (cargo/tracing-core-0.1.32.tar.gz) = wG09phE/EWqu5o5NYBGRYUyQUwZ/mrf27byxYSN9qlQ=
 SHA256 (cargo/tracing-durations-export-0.2.0.tar.gz) = NbkQslpsjg/vz/+RK61sT0hJ035ZRcOGHRXlUNgZ2lM=
-SHA256 (cargo/tracing-indicatif-0.3.6.tar.gz) = BpWAQk7+Edl8P+9Bl/qYwAT6JmcsxxrYdw0iTiOxlR0=
 SHA256 (cargo/tracing-log-0.2.0.tar.gz) = 7oVfH0AL0OXALRUK5d44QAOaP1SwJRVkBONMI8A/R8M=
 SHA256 (cargo/tracing-serde-0.1.3.tar.gz) = vGshMXcQWFaVcYGTTkkg3ldzD8ab9Cw37lu2ZNQG2eE=
 SHA256 (cargo/tracing-subscriber-0.3.18.tar.gz) = rQ8EjJfb2fqpt99WNiuOvKpSrbBrSYwFDS9OMvkKeos=
@@ -528,9 +529,6 @@ SHA256 (cargo/varisat-internal-proof-0.2.2.tar.gz) = YWO7e8kBivB3t21k+XaAPRQcNqJ
 SHA256 (cargo/vcpkg-0.2.15.tar.gz) = rM1Opi97t6gv4jBm+wlX1I72d/buuCFfNy9S5IuzJCY=
 SHA256 (cargo/vec_mut_scan-0.3.0.tar.gz) = aO1hCo1eY9nA4xMA6P21UQTF8h5CJ0Op3HSEj6gxf9I=
 SHA256 (cargo/version_check-0.9.4.tar.gz) = SYdLUWe2XXGTuKuhVn9cfZPQAcr8NGAM7gA+2nh+SD8=
-SHA256 (cargo/vt100-0.15.2.tar.gz) = hM2GO/Dbfjkro70EmUvjRzSRsx5mNAZyr10RlDxidN4=
-SHA256 (cargo/vte-0.11.1.tar.gz) = 9QIrX7+UBwhsGA6VV76Wh0LYOeaDRq93krhZJIlzIZc=
-SHA256 (cargo/vte_generate_state_changes-0.1.1.tar.gz) = 0leBcIHH3/zbqyS55i0t72Li/30AscIAYlUebMzBRf8=
 SHA256 (cargo/wait-timeout-0.2.0.tar.gz) = nyAPWxLrdfjB7WWr1LLbim4bE4og3gCdrO4mWiSY8/Y=
 SHA256 (cargo/walkdir-2.5.0.tar.gz) = KXkJRkBPkdnF0G+YdO/d6h3AbF7+lFQafWhjEI46Xks=
 SHA256 (cargo/want-0.3.1.tar.gz) = v6d2Cu0Z4QbeLHwLWBtQny8l09rK9zfLgqxhvG12Cw4=
@@ -600,7 +598,8 @@ SHA256 (cargo/zstd-safe-5.0.2+zstd.1.5.2.tar.gz) = HSpVheBPnupLKj0eylCMTe6Vkqie9
 SHA256 (cargo/zstd-safe-7.1.0.tar.gz) = HNmbRca8A6AYyLioYCVnjIflVSYGTjj53zAZidzn7Ao=
 SHA256 (cargo/zstd-sys-2.0.10+zstd.1.5.6.tar.gz) = wlOkkUr1uvyPqMhu5ACCfoPPbsARlewfHthEG/ANZao=
 SHA256 (charliermarsh-rs-async-zip-1dcb40cfe1bf5325a6fd4bfcf9894db40241f585.tar.gz) = twEs4L7Mz1gpsOIlFKwDjrpYNdhGjtDkGgJDd8s8440=
-SHA256 (uv-0.1.45.tar.gz) = BQGpIvlEFWs14haaHYovelot4d/HGmS5fPJg4PyLEh0=
+SHA256 (uv-0.2.3.tar.gz) = HpUwR65aMS+E7wqNyUHUEss8o4KgwSdctHshRq8Clrg=
+SHA256 (uv-698f6f1.patch) = +Qk0Vh5BI+llc6L6h+MDZb69ym5RSNf9qa4xVWOcBis=
 SIZE (astral-sh-pubgrub-0e684a874c9fb8f74738cd8875524c80e3d4820b.tar.gz) = 86899
 SIZE (cargo/actix-codec-0.5.2.tar.gz) = 14085
 SIZE (cargo/actix-http-3.6.0.tar.gz) = 152432
@@ -904,6 +903,7 @@ SIZE (cargo/password-hash-0.4.2.tar.gz) = 26099
 SIZE (cargo/paste-1.0.15.tar.gz) = 18374
 SIZE (cargo/path-absolutize-3.1.1.tar.gz) = 6605
 SIZE (cargo/path-dedot-3.1.1.tar.gz) = 6596
+SIZE (cargo/path-slash-0.2.1.tar.gz) = 8821
 SIZE (cargo/pathdiff-0.2.1.tar.gz) = 7142
 SIZE (cargo/pbkdf2-0.11.0.tar.gz) = 13229
 SIZE (cargo/percent-encoding-2.3.1.tar.gz) = 10235
@@ -1048,6 +1048,7 @@ SIZE (cargo/tagu-0.1.6.tar.gz) = 12714
 SIZE (cargo/tap-1.0.1.tar.gz) = 11316
 SIZE (cargo/target-lexicon-0.12.14.tar.gz) = 25508
 SIZE (cargo/temp-dir-0.1.13.tar.gz) = 5829
+SIZE (cargo/temp-env-0.3.6.tar.gz) = 10746
 SIZE (cargo/tempfile-3.10.1.tar.gz) = 33653
 SIZE (cargo/terminal_size-0.3.0.tar.gz) = 10096
 SIZE (cargo/termtree-0.4.1.tar.gz) = 4557
@@ -1090,7 +1091,6 @@ SIZE (cargo/tracing-0.1.40.tar.gz) = 79459
 SIZE (cargo/tracing-attributes-0.1.27.tar.gz) = 32241
 SIZE (cargo/tracing-core-0.1.32.tar.gz) = 61221
 SIZE (cargo/tracing-durations-export-0.2.0.tar.gz) = 25235
-SIZE (cargo/tracing-indicatif-0.3.6.tar.gz) = 26505
 SIZE (cargo/tracing-log-0.2.0.tar.gz) = 17561
 SIZE (cargo/tracing-serde-0.1.3.tar.gz) = 7329
 SIZE (cargo/tracing-subscriber-0.3.18.tar.gz) = 196312
@@ -1131,9 +1131,6 @@ SIZE (cargo/varisat-internal-proof-0.2.2.tar.gz) = 10909
 SIZE (cargo/vcpkg-0.2.15.tar.gz) = 228735
 SIZE (cargo/vec_mut_scan-0.3.0.tar.gz) = 8028
 SIZE (cargo/version_check-0.9.4.tar.gz) = 14895
-SIZE (cargo/vt100-0.15.2.tar.gz) = 30404
-SIZE (cargo/vte-0.11.1.tar.gz) = 40455
-SIZE (cargo/vte_generate_state_changes-0.1.1.tar.gz) = 2422
 SIZE (cargo/wait-timeout-0.2.0.tar.gz) = 12441
 SIZE (cargo/walkdir-2.5.0.tar.gz) = 23951
 SIZE (cargo/want-0.3.1.tar.gz) = 6398
@@ -1203,4 +1200,5 @@ SIZE (cargo/zstd-safe-5.0.2+zstd.1.5.2.tar.gz) = 17273
 SIZE (cargo/zstd-safe-7.1.0.tar.gz) = 20792
 SIZE (cargo/zstd-sys-2.0.10+zstd.1.5.6.tar.gz) = 749088
 SIZE (charliermarsh-rs-async-zip-1dcb40cfe1bf5325a6fd4bfcf9894db40241f585.tar.gz) = 96766
-SIZE (uv-0.1.45.tar.gz) = 1105106
+SIZE (uv-0.2.3.tar.gz) = 1123964
+SIZE (uv-698f6f1.patch) = 2648
