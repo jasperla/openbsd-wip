@@ -1,11 +1,11 @@
-Index: common/main.cc
---- common/main.cc.orig
-+++ common/main.cc
-@@ -65,6 +65,9 @@ std::string get_self_path() {
+Index: common/filepath.cc
+--- common/filepath.cc.orig
++++ common/filepath.cc
+@@ -56,6 +56,9 @@ std::string get_self_path() {
    path.resize(size);
    sysctl(mib, 4, path.data(), &size, NULL, 0);
    return path;
-+#elif defined(__OpenBSD__)
++#elif __OpenBSD__
 +  std::string path("/usr/local/bin/mold");
 +  return path;
  #else

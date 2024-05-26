@@ -5,7 +5,7 @@ Support PT_OPENBSD_WXNEEDED and PT_OPENBSD_NOBTCFI.
 Index: elf/mold.h
 --- elf/mold.h.orig
 +++ elf/mold.h
-@@ -1647,7 +1647,7 @@ struct Context {
+@@ -1690,7 +1690,7 @@ struct Context {
      bool eh_frame_hdr = true;
      bool emit_relocs = false;
      bool enable_new_dtags = true;
@@ -14,7 +14,7 @@ Index: elf/mold.h
      bool export_dynamic = false;
      bool fatal_warnings = false;
      bool fork = true;
-@@ -1666,8 +1666,8 @@ struct Context {
+@@ -1709,8 +1709,8 @@ struct Context {
      bool omagic = false;
      bool pack_dyn_relocs_relr = false;
      bool perf = false;
@@ -25,7 +25,7 @@ Index: elf/mold.h
      bool print_dependencies = false;
      bool print_gc_sections = false;
      bool print_icf_sections = false;
-@@ -1701,6 +1701,7 @@ struct Context {
+@@ -1744,6 +1744,7 @@ struct Context {
      bool z_initfirst = false;
      bool z_interpose = false;
      bool z_keep_text_section_prefix = false;
@@ -33,15 +33,15 @@ Index: elf/mold.h
      bool z_nodefaultlib = false;
      bool z_now = false;
      bool z_origin = false;
-@@ -1709,6 +1710,7 @@ struct Context {
-     bool z_sectionheader = true;
+@@ -1753,6 +1754,7 @@ struct Context {
      bool z_shstk = false;
+     bool z_start_stop_visibility_protected = false;
      bool z_text = false;
 +    bool z_wxneeded = false;
      i64 filler = -1;
      i64 spare_dynamic_tags = 5;
      i64 spare_program_headers = 0;
-@@ -1813,6 +1815,9 @@ struct Context {
+@@ -1853,6 +1855,9 @@ struct Context {
    OutputEhdr<E> *ehdr = nullptr;
    OutputShdr<E> *shdr = nullptr;
    OutputPhdr<E> *phdr = nullptr;

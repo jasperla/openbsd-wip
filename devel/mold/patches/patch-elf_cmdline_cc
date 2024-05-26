@@ -1,9 +1,19 @@
+Add --no-execute-only flag.
 Add -z wxneeded and -z nobtcfi flags.
 
 Index: elf/cmdline.cc
 --- elf/cmdline.cc.orig
 +++ elf/cmdline.cc
-@@ -872,6 +872,10 @@ std::vector<std::string> parse_nonpositional_args(Cont
+@@ -881,6 +881,8 @@ std::vector<std::string> parse_nonpositional_args(Cont
+       ctx.arg.enable_new_dtags = false;
+     } else if (read_flag("execute-only")) {
+       ctx.arg.execute_only = true;
++    } else if (read_flag("no-execute-only")) {
++      ctx.arg.execute_only = false;
+     } else if (read_arg("compress-debug-sections")) {
+       if (arg == "zlib" || arg == "zlib-gabi")
+         ctx.arg.compress_debug_sections = COMPRESS_ZLIB;
+@@ -986,6 +988,10 @@ std::vector<std::string> parse_nonpositional_args(Cont
        ctx.arg.z_text = true;
      } else if (read_z_flag("notext") || read_z_flag("textoff")) {
        ctx.arg.z_text = false;

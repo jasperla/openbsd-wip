@@ -3,6 +3,15 @@ No more syscall(2)
 Index: third-party/tbb/src/tbb/semaphore.h
 --- third-party/tbb/src/tbb/semaphore.h.orig
 +++ third-party/tbb/src/tbb/semaphore.h
+@@ -41,7 +41,7 @@
+ 
+ /* Futex definitions */
+ #include <unistd.h>
+-#if defined(__linux__) || __TBB_has_include(<sys/syscall.h>)
++#if defined(__linux__)
+ #include <sys/syscall.h>
+ #endif
+ 
 @@ -98,7 +98,7 @@ namespace r1 {
  #if __TBB_USE_FUTEX
  
