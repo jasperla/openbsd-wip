@@ -308,7 +308,6 @@ MODCARGO_CRATES +=	untrusted	0.9.0	# ISC
 MODCARGO_CRATES +=	url	2.5.0	# MIT OR Apache-2.0
 MODCARGO_CRATES +=	urlencoding	2.1.3	# MIT
 MODCARGO_CRATES +=	utf8parse	0.2.1	# Apache-2.0 OR MIT
-MODCARGO_CRATES +=	uuid	1.2.1	# Apache-2.0 OR MIT
 MODCARGO_CRATES +=	uuid	1.8.0	# Apache-2.0 OR MIT
 MODCARGO_CRATES +=	valuable	0.1.0	# MIT
 MODCARGO_CRATES +=	vcpkg	0.2.15	# MIT/Apache-2.0

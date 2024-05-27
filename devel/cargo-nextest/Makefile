@@ -36,6 +36,9 @@ MODCARGO_RUSTFLAGS +=		-L${LOCALBASE}/lib
 MODCARGO_NO_DEFAULT_FEATURES =	Yes
 MODCARGO_FEATURES =		default-no-update
 
+# Crate uuid v1.2.1 needed for tests
+MODCARGO_CRATES +=		uuid	1.2.1	# Apache-2.0 OR MIT
+
 post-extract:
 	mv ${WRKDIR}/nextest-cargo-nextest-${VERSION}/ ${WRKSRC}
 	rm -rf ${WRKDIR}/nextest-cargo-nextest-${VERSION}
