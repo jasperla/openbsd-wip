@@ -5,7 +5,7 @@ COMMENT =	extremely fast Python package installer and resolver
 
 GH_ACCOUNT =	astral-sh
 GH_PROJECT =	uv
-GH_TAGNAME =	0.2.3
+GH_TAGNAME =	0.2.4
 
 # Rust crates downloaded via git
 PUBGRUB_HASH =	0e684a874c9fb8f74738cd8875524c80e3d4820b
@@ -14,12 +14,6 @@ ASYNC_HASH =	1dcb40cfe1bf5325a6fd4bfcf9894db40241f585
 DIST_TUPLE +=	github astral-sh pubgrub ${PUBGRUB_HASH} ${MODCARGO_VENDOR_DIR}
 DIST_TUPLE +=	github charliermarsh rs-async-zip ${ASYNC_HASH} \
 		${MODCARGO_VENDOR_DIR}
-
-# Patch to ignore libc detection
-# See https://github.com/astral-sh/uv/issues/3824
-SITES.p =		https://github.com/astral-sh/uv/commit/
-PATCHFILES.p =		uv-698f6f1{698f6f161d57c6035a09d7afd5465eb66bcfef95}.patch
-PATCH_DIST_STRIP =	-p1
 
 CATEGORIES =	devel
 
