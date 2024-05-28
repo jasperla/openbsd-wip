@@ -14,9 +14,11 @@ DISTNAME =		texlive-${DIST_V}-texmf
 
 SITES.pregen =		http://theunixzoo.co.uk/distfiles/
 DISTFILES =		${DISTNAME}${EXTRACT_SUFX} \
-			texlive-${DIST_V}-extra${EXTRACT_SUFX} \
-			texlive-20230311-tlpdb-full.tar.gz
-DISTFILES.pregen = 	texmf-var-pregen-${V}${EXTRACT_SUFX}
+			texlive-${DIST_V}-extra${EXTRACT_SUFX}
+# XXX not needed I think
+#			texlive-${DIST_V}-tlpdb-full.tar.gz
+# XXX put back later
+#DISTFILES.pregen = 	texmf-var-pregen-${V}${EXTRACT_SUFX}
 
 PKGNAME-main =		texlive_texmf-minimal-${V}
 PKGNAME-full =		texlive_texmf-full-${V}
@@ -134,7 +136,8 @@ do-install: tl-symlinks-main tl-symlinks-full tl-symlinks-context
 	#
 	# (Don't forget to remove ls-R files, log files and the luametatex cache
 	# before making the tarball).
-	mv ${WRKDIR}/texmf-var ${PREFIX}/share
+	#mv ${WRKDIR}/texmf-var ${PREFIX}/share
+	# XXX put back
 
 	# Put manuals in the right place.
 	#
