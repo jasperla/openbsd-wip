@@ -1,5 +1,5 @@
 MODGO_MODULES =	\
-	github.com/fatih/color		 v1.16.0 \
+	github.com/fatih/color		 v1.17.0 \
 	github.com/google/go-cmp	 v0.6.0 \
 	github.com/mattn/go-colorable	 v0.1.13 \
 	github.com/mattn/go-isatty	 v0.0.20 \
@@ -16,6 +16,6 @@ MODGO_MODFILES =	\
 	github.com/mattn/go-isatty	 v0.0.16 \
 	github.com/rivo/uniseg		 v0.2.0 \
 	golang.org/x/sys		 v0.0.0-20220811171246-fbc7d0a398ab \
-	golang.org/x/sys		 v0.14.0 \
+	golang.org/x/sys		 v0.18.0 \
 	golang.org/x/sys		 v0.6.0
 
