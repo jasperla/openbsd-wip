@@ -1,0 +1,8 @@
+mgitstatus is a tool that loop over multiple Git repositories reporting,
+for each one, the uncommitted, untracked and unpushed changes. The
+output is nicely formatted using colors to quickly detect which
+repositories need action.
+
+When working over several project, mgitstatus is quite helpful to track
+unfinished work, not in sync with your remotes. Optionally, it can also
+check if the repository needs a pull by fetching remote branches.
