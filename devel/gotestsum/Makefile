@@ -1,7 +1,7 @@
 COMMENT =	go test runner with output optimized for humans
 
 MODGO_MODNAME =	gotest.tools/gotestsum
-MODGO_VERSION =	v1.11.0
+MODGO_VERSION =	v1.12.0
 
 DISTNAME =      gotestsum-${MODGO_VERSION}
 
@@ -20,7 +20,15 @@ MODULES =	lang/go
 
 MODGO_LDFLAGS +=	-X ${MODGO_MODNAME}/cmd.version=${MODGO_VERSION}
 
-NO_TEST =	Yes
+# NO_TEST =	Yes
+
+# TODO
+# Run tests with gotestsum fails => need to download Go modules on GH
+# do-test:
+# cd ${WRKSRC} && ${MODGO_WORKSPACE}/bin/gotestsum -f testname -- ./... -count=1
+
+do-test:
+	cd ${WRKSRC} && ${MODGO_TEST_CMD} ./...
 
 .include "modules.inc"
 
