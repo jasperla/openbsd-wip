@@ -337,7 +337,7 @@ SHA256 (cargo/yansi-term-0.1.2.tar.gz) = /lwwreBeYWViR7LjNKAx39DMRm+t74Zb3N6o1Te
 SHA256 (cargo/zerocopy-0.7.32.tar.gz) = dNTTlh5T+kyaJahjf8K/ryWVs9OuNIdVaKXPZHh3Fr4=
 SHA256 (cargo/zerocopy-derive-0.7.32.tar.gz) = nOGxjM2Oc6kyEYb5fkb58Et3iFEXdWexl1EJ0moI0qY=
 SHA256 (cargo/zeroize-1.7.0.tar.gz) = UltOwULGtootEPAfe79nVVmco/gepTuEMbfdNI9f2y0=
-SHA256 (ruff-0.4.6.tar.gz) = HDLpdTXoxMJ0byoLtLaQaZiVcp6Yw8niAg3VNGsZsig=
+SHA256 (ruff-0.4.7.tar.gz) = rEqo7wct4y42gc5+ahJiBKjKMLCl1RKwyE+00RYiPEE=
 SIZE (astral-sh-lsp-types-3512a9f33eadc5402cfab1b8f7340824c8ca1439.tar.gz) = 71124
 SIZE (cargo/Inflector-0.11.4.tar.gz) = 17438
 SIZE (cargo/adler-1.0.2.tar.gz) = 12778
@@ -677,4 +677,4 @@ SIZE (cargo/yansi-term-0.1.2.tar.gz) = 14342
 SIZE (cargo/zerocopy-0.7.32.tar.gz) = 151096
 SIZE (cargo/zerocopy-derive-0.7.32.tar.gz) = 37623
 SIZE (cargo/zeroize-1.7.0.tar.gz) = 19039
-SIZE (ruff-0.4.6.tar.gz) = 4803229
+SIZE (ruff-0.4.7.tar.gz) = 4816147
