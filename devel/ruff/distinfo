@@ -95,7 +95,6 @@ SHA256 (cargo/globset-0.4.14.tar.gz) = V9o7m1uFvWbzEJP4xAi5CnRDFnJUJGZJfcvf3AIDS
 SHA256 (cargo/half-2.4.1.tar.gz) = bdCMUyrjZ634HDEqRYC8Z/HQ/ovJxGBSAoP0wP8neIg=
 SHA256 (cargo/hashbrown-0.12.3.tar.gz) = ip7nDEOq9BfJFDlmRaD6hSYkgBsk67eueP6CcoiayIg=
 SHA256 (cargo/hashbrown-0.14.5.tar.gz) = 5SdEI+F7fJ/CC25+IIUy+bGYJdgt/WFXCLcO3YPfQfE=
-SHA256 (cargo/heck-0.4.1.tar.gz) = lVBcOLRXKy2RDOywKBVg9UtEChkzbLvLJ79s5q3G9ag=
 SHA256 (cargo/heck-0.5.0.tar.gz) = IwTgCYP4f/s4tVtES147YKiEtdMMD8p9gv4zRJu+Veo=
 SHA256 (cargo/hermit-abi-0.3.9.tar.gz) = 0jHfuJz//bww5/xBV57WBmrQOr2p5WfMr65gK5fsUCQ=
 SHA256 (cargo/home-0.5.9.tar.gz) = 49E1S/a3I1y0oFdsJhn9TtGBg/aJsSsAag7nMp7v+aU=
@@ -112,7 +111,7 @@ SHA256 (cargo/indicatif-0.17.8.tar.gz) = djpaj0UIfWvOpCIue3LCkaBU7fgOTvbv0qSXmHj
 SHA256 (cargo/indoc-2.0.5.tar.gz) = skj1Ik0dYGAF4CyX9apOiO6yMEiLzAO8nKTXmROZ8rU=
 SHA256 (cargo/inotify-0.9.6.tar.gz) = +AadPsFU64VpVcHA+//vv188QKEE7JEtR5cxTBgBq/8=
 SHA256 (cargo/inotify-sys-0.1.5.tar.gz) = 4FwCteib/zuUbO3sonirxij+gR5gTwJ8RaiqPPeT0Os=
-SHA256 (cargo/insta-1.38.0.tar.gz) = Pqtz9Y5ZymUmA3II8OmIURWewWM88Xts0uHyw/1dU8w=
+SHA256 (cargo/insta-1.39.0.tar.gz) = gQrmBC1I4snpIVBDVjpYqAuHe8hjIop0zxDEnUYgpvU=
 SHA256 (cargo/insta-cmd-0.6.0.tar.gz) = /+7vqSeSXM7UnMsBvz5XydTNEy3yHlduuUFbrqstPeY=
 SHA256 (cargo/instant-0.1.12.tar.gz) = elu+gkxQfF2llWNV6Gp0bYLg4UZPZdhizF5x2nDpSyw=
 SHA256 (cargo/is-docker-0.2.0.tar.gz) = kouuJ/QryZtg2axzNOOiHRCtjxg1pOEuw+wEZHZe0bM=
@@ -120,7 +119,7 @@ SHA256 (cargo/is-macro-0.3.5.tar.gz) = WahavcE3F5BrrMtaHkNVVs4N8hXyQokvch3/Yr8lK
 SHA256 (cargo/is-terminal-0.4.12.tar.gz) = 8j/17yuA1gjWHv7oNJNNhizZJGGvwFYN7fST5MAzc4s=
 SHA256 (cargo/is-wsl-0.4.0.tar.gz) = FzYJSY3xkBNqp96hqR2wUXRtM54YR27tXKQFIfAteqU=
 SHA256 (cargo/itertools-0.10.5.tar.gz) = sP0iYOgpvd9MtuqAIoneL4bWp6aQGS++kbP0bg8shHM=
-SHA256 (cargo/itertools-0.12.1.tar.gz) = uikQItu9OYpFWs8SbB40GVQHmFW8YN/dpkE2O9aSJWk=
+SHA256 (cargo/itertools-0.13.0.tar.gz) = QT7n38Uu4aSUnO6328ijPy1sCIGU2fki+4MY+vHwEYY=
 SHA256 (cargo/itoa-1.0.11.tar.gz) = SfHxSHMzVFRQDVlhHxz0pLD3hvmsEfQxKnjkzyVmaVs=
 SHA256 (cargo/jod-thread-0.1.2.tar.gz) = iyM2Dpm4cX8gqqRZj1plQe++MGMAOfvHcGz5VKh5R64=
 SHA256 (cargo/js-sys-0.3.69.tar.gz) = KcFVY9wnJpc99ic1fODJ3d2+oZSDaQnWVd9qddLPKW0=
@@ -128,8 +127,8 @@ SHA256 (cargo/kqueue-1.0.8.tar.gz) = dEfxyht7VjWIogX+k96o32D9mBQjp2i8HA3tNe0UfQw
 SHA256 (cargo/kqueue-sys-1.0.4.tar.gz) = 7ZYl/9qHKbheRc8ECQA1rDaJJ7jOvDSJjnwSD1Lkg4s=
 SHA256 (cargo/lazy_static-1.4.0.tar.gz) = 4qutI/vEKzcA8vJ5hE3IMq2ysusGmy35GPRVxOGMxkY=
 SHA256 (cargo/libc-0.2.155.tar.gz) = l7OIikrs936BEUXK327vWQH0eCxTiGGRsvaT8kdhhHw=
-SHA256 (cargo/libcst-1.3.1.tar.gz) = bx4l0bEZq1wvFabggbuUqNVHxcKtBl9f0Nu2g/Mc7ZE=
-SHA256 (cargo/libcst_derive-1.3.1.tar.gz) = SlAR8tWQk94UpKkOAbnYXe6SduWKJfAQfc7hZ91gG+A=
+SHA256 (cargo/libcst-1.4.0.tar.gz) = ECk6BKSOiwyyzIJak7gwkOUnv/08iXoCVa17yWB56SA=
+SHA256 (cargo/libcst_derive-1.4.0.tar.gz) = oq5AAXrAnNLGpTUEyzyHHH8rQUZurFvGa6Y/OQc7Rns=
 SHA256 (cargo/libmimalloc-sys-0.1.38.tar.gz) = DnuyPXM9/MivZSp4t78jLw6WdxDQRHMhheVh5HwDNrY=
 SHA256 (cargo/libredox-0.1.3.tar.gz) = wP83vVkMolBj41r3RcNDy3oCcZBvt7N+SBPo958AJo0=
 SHA256 (cargo/linked-hash-map-0.5.6.tar.gz) = BxfO8byLY2xuHBu978CeYyLaipMhlm6JKO+A0g9/dw8=
@@ -151,7 +150,7 @@ SHA256 (cargo/nix-0.28.0.tar.gz) = qyFWxPzi+N9sSZzBx2PkOUt0glJb8qlwHJ150hX1GeQ=
 SHA256 (cargo/nom-7.1.3.tar.gz) = 0nOYPFplenCj6PKgEymCLzuMgXK3OCZBGlV1HkBKCko=
 SHA256 (cargo/notify-6.1.1.tar.gz) = YgW9i7HkVK0uJ0IgFfteTyvMfgj6jycFhnDSCDJKTS0=
 SHA256 (cargo/nu-ansi-term-0.46.0.tar.gz) = d6gWVyboI2Bk27RUWSQmADBLQqXqJO4pSOGOAjv3uoQ=
-SHA256 (cargo/nu-ansi-term-0.49.0.tar.gz) = wHPTwZMNB1F3Ss9J5mZTrOy0FsOlTG7AlamxHK3bWmg=
+SHA256 (cargo/nu-ansi-term-0.50.0.tar.gz) = 3SgA4VIL3JZnghaKYnql0a2S4zuYS/fHYV0xKAyD/xQ=
 SHA256 (cargo/num-traits-0.2.18.tar.gz) = 2g3w5RhdtE9ptE8meG/kAbbCk9GQd0S+qn+mKy5aUXo=
 SHA256 (cargo/number_prefix-0.4.0.tar.gz) = gwskag5fIK+HFBslwXPNG2Cb13eaRhfW7FgquvkIcPM=
 SHA256 (cargo/once_cell-1.19.0.tar.gz) = P9sSskdrWV+TWMUWGqRnwkOIWcqhNt7IbCb90u/he5I=
@@ -182,7 +181,7 @@ SHA256 (cargo/pmutil-0.6.1.tar.gz) = UqQLxwwsWAQNLYsWe6ml/1n8nat61Edxz949z956CcY
 SHA256 (cargo/portable-atomic-1.6.0.tar.gz) = cXDvmYi8FpuhbdNqf6BB5cTL62o1t21MA9re03Hq58A=
 SHA256 (cargo/ppv-lite86-0.2.17.tar.gz) = W0CvgFsxIf6rijwp8E2K0mL6jgVhiD52U+AkrkR55t4=
 SHA256 (cargo/pretty_assertions-1.4.0.tar.gz) = r3zuGmyKW5IIs8sQYfEMDLaJCHs9jOhfudLdeim2umY=
-SHA256 (cargo/proc-macro2-1.0.84.tar.gz) = 7JbGqSYhMQtRNm8eKNBe8RSJUW6TvgMAYOX8EgJKSdY=
+SHA256 (cargo/proc-macro2-1.0.85.tar.gz) = IiRM4VqpZgU6iW0azLOm5oRpuXx/M/KEuZ8NV2h5/CM=
 SHA256 (cargo/pyproject-toml-0.9.0.tar.gz) = lcPddF+ZqjxVS3uwCFn30YwvHWr9dJzMhtYLYecCq9k=
 SHA256 (cargo/quick-junit-0.4.0.tar.gz) = z8GmpUBqEUkT3y34UHmYx1UxG1W3hYS+1fboj2QXxNQ=
 SHA256 (cargo/quick-xml-0.31.0.tar.gz) = EASjRLMKVOLuWNZqcbMtLbL+sKMfmi0wK/BTbxXeKjM=
@@ -222,7 +221,7 @@ SHA256 (cargo/serde_derive-1.0.203.tar.gz) = UAy8Dr629GYn9Q8/WBHM9r8AZDvjALTD6rw
 SHA256 (cargo/serde_derive_internals-0.29.0.tar.gz) = Mw8BzmWjpf5ZpgyC88mgJLVzuKbodb0jP+X5NOcdVOM=
 SHA256 (cargo/serde_json-1.0.117.tar.gz) = RVGC6mFCsU+T9LxTIKKzHB8ma2akpchYsBMwKl2Mv8M=
 SHA256 (cargo/serde_repr-0.1.19.tar.gz) = bGRFG6JPx6ai1g/HXdnIPJCQOxkCjU7/NeiPwehlZOk=
-SHA256 (cargo/serde_spanned-0.6.5.tar.gz) = 6zYi9BnRKWkEcABz6mzCOtaQrb1m8T6mg99zKYc28ME=
+SHA256 (cargo/serde_spanned-0.6.6.tar.gz) = eeZ04B+ZmvN8SfcKbt4WeopgslA+VsVZlTKmW6pZaaA=
 SHA256 (cargo/serde_test-1.0.176.tar.gz) = Wi9JrOFJhhLRT34LgkVRlYTbgplUHf4xoGN0qCjWIKs=
 SHA256 (cargo/serde_with-3.8.1.tar.gz) = CtSD0qsBSdWl682ZcqOFJxHgFT2GO/Wl0DkdKIg8SiA=
 SHA256 (cargo/serde_with_macros-3.8.1.tar.gz) = ZVabcC9BRD6LyLuxxXeb0EULvnI7VhmJgOgOxFeAvOI=
@@ -231,7 +230,6 @@ SHA256 (cargo/shellexpand-3.1.0.tar.gz) = 2gP6O5TMGePr/IjEIpxJ2PCM29EiiHCkXw/9+E
 SHA256 (cargo/similar-2.5.0.tar.gz) = +kLJExPx0F2psm8mf5Mc8XjUq6RVtMRiLdc1XrgMZkA=
 SHA256 (cargo/siphasher-0.3.11.tar.gz) = OLWIJ/RGTYfTd9F16Qv1jrAP2HFv8KYvgDVrXmFVXQ0=
 SHA256 (cargo/smallvec-1.13.2.tar.gz) = PF4ammRtNsNZnNFzpBKC2vR8RFg602e45oNyVZUuXGc=
-SHA256 (cargo/smawk-0.3.2.tar.gz) = t8OIwbXpN1bQx0CWXEHogi+GZiHUGsvfYzamoWj4hAw=
 SHA256 (cargo/smol_str-0.2.2.tar.gz) = 3VOPtpEKwQmYUCVc+UqU32VR+91gJFQ4fQrbLRym3q0=
 SHA256 (cargo/spin-0.9.8.tar.gz) = aYDo11ESQfis9K6927H/k4317r6YaRQYxEaNC3Kpamc=
 SHA256 (cargo/static_assertions-1.1.0.tar.gz) = ouuTSbZESzJocuFA6xz158UiFU1p56D/sPuBwGs3VD8=
@@ -239,7 +237,7 @@ SHA256 (cargo/strip-ansi-escapes-0.2.0.tar.gz) = Vf+O+UOzhMQU9UrvqWHdK9hTrddOx15
 SHA256 (cargo/strsim-0.10.0.tar.gz) = c0c8Dlnm1YEsXf4qBkpkRJSfCJ4g7smi5VBllklORiM=
 SHA256 (cargo/strsim-0.11.1.tar.gz) = fai1c2hF2fL8uDfqXZ4mKFZLOwQ6cJSKPwt3iDjF+08=
 SHA256 (cargo/strum-0.26.2.tar.gz) = XYzsNQGlGUxDKyt5dttrfRDslcJTIItF+D9xNqqYXik=
-SHA256 (cargo/strum_macros-0.26.2.tar.gz) = xs9Z2vKCwKSUuhT9IWEKAyX5+Q7J0SMd6ia8sdaWyUY=
+SHA256 (cargo/strum_macros-0.26.3.tar.gz) = 95k6jjqeiKADUUhrqulSLJGxI6CI92Rp5b1cwXGY6oc=
 SHA256 (cargo/subtle-2.5.0.tar.gz) = gc3WTTErrttY4hM2sxvAQ7d+AcyZAzznbvU5946WXrw=
 SHA256 (cargo/syn-2.0.66.tar.gz) = xC8/QaLeALAcCqrTg8WkUkHvyLLR7aVmGBL9pfPNz/U=
 SHA256 (cargo/tempfile-3.10.1.tar.gz) = hbd/r7Jj3Z0Fy+rBGVJkJWdts3hBE6qSlciEmMv4v/E=
@@ -248,7 +246,6 @@ SHA256 (cargo/terminfo-0.8.0.tar.gz) = ZmzTpmgXddIrIAQJqtOwicW5n7EezdiiBNnWL4FIS
 SHA256 (cargo/test-case-3.3.1.tar.gz) = 6yVQ3ROvzShoUxkq+GAZINlZsUxAH87OOAcdU78HaKg=
 SHA256 (cargo/test-case-core-3.3.1.tar.gz) = rct/2EHNUY4nm+PVo+sGNkCUh5mKSv8i896HuB6IOE8=
 SHA256 (cargo/test-case-macros-3.3.1.tar.gz) = XInnKgHtTFeWaa3VkBS5pSTWCcDIjGpYXON0hYefb/s=
-SHA256 (cargo/textwrap-0.16.1.tar.gz) = I9Q00/iWeglID7BBMuvgo+CIwXPm0O54l6u99Oqw+Lk=
 SHA256 (cargo/thiserror-1.0.61.tar.gz) = xUbIDWvkvGoAwPAXMMCN+C6qenph8R1lZSZQYRLMFwk=
 SHA256 (cargo/thiserror-impl-1.0.61.tar.gz) = RsM4QlAAKm1a9NEU8oRdN7V1IQM/MNXD9GxNcOEZdTM=
 SHA256 (cargo/thread_local-1.1.8.tar.gz) = i575utATraOAiFTOrHtGgSpkZbo2iFmjfiEAKD0tcZw=
@@ -257,16 +254,16 @@ SHA256 (cargo/tikv-jemallocator-0.5.4.tar.gz) = ll/gwmvlxWyU44ulRySQdIA+/VKt+2be
 SHA256 (cargo/tinytemplate-1.2.1.tar.gz) = vk1rXxn/dmToyY0D4hOctRDbmwpgtV+Ohwm2idk5trw=
 SHA256 (cargo/tinyvec-1.6.0.tar.gz) = h8xc6zh1uyDCiQAFpOImpGUSZKXHXtskIbUoYaCgy1A=
 SHA256 (cargo/tinyvec_macros-0.1.1.tar.gz) = HzzLrDEf6gX4b2GQS0YrVfs9+IN6Nm38YBoBYdBTLyA=
-SHA256 (cargo/toml-0.8.12.tar.gz) = 6d0VReggi0pa8aqbvQtM9+nqCPq8XQpcZ/yq+hdDOqM=
-SHA256 (cargo/toml_datetime-0.6.5.tar.gz) = NVD06WhWIKwYpQ7UNOs67DDbi6k7AodGe8pYJuoluvE=
-SHA256 (cargo/toml_edit-0.22.12.tar.gz) = 0zKNT2inBbKkSY2h1YBYXTmmUQ+YMYos7DAYp+xh3e8=
+SHA256 (cargo/toml-0.8.13.tar.gz) = pOQ/jMRWyXBMhRrinGfhfvZdLDABfBepdluJw4Lci7o=
+SHA256 (cargo/toml_datetime-0.6.6.tar.gz) = S639VpJK5pvMkDkzWy4BdjnOP5sAHDk8Gy0e+EbOLL8=
+SHA256 (cargo/toml_edit-0.22.13.tar.gz) = wSd4WFDowgg21Jcyrmq/pHYW5gv52fV8Q8JQNhqduWw=
 SHA256 (cargo/tracing-0.1.40.tar.gz) = w1I6tacZFsz0IO699VIfzvAhQSNLvAuKSfL9xFRDZO8=
 SHA256 (cargo/tracing-attributes-0.1.27.tar.gz) = NHBMjW68vJOYJBgK8CBWawGnwB+AZBJk66CZn2wra+c=
 SHA256 (cargo/tracing-core-0.1.32.tar.gz) = wG09phE/EWqu5o5NYBGRYUyQUwZ/mrf27byxYSN9qlQ=
 SHA256 (cargo/tracing-indicatif-0.3.6.tar.gz) = BpWAQk7+Edl8P+9Bl/qYwAT6JmcsxxrYdw0iTiOxlR0=
 SHA256 (cargo/tracing-log-0.2.0.tar.gz) = 7oVfH0AL0OXALRUK5d44QAOaP1SwJRVkBONMI8A/R8M=
 SHA256 (cargo/tracing-subscriber-0.3.18.tar.gz) = rQ8EjJfb2fqpt99WNiuOvKpSrbBrSYwFDS9OMvkKeos=
-SHA256 (cargo/tracing-tree-0.3.0.tar.gz) = ZROezSw/ZITDuZvAHHev4h6VRzYwdHx6ylJeeLBmZnU=
+SHA256 (cargo/tracing-tree-0.3.1.tar.gz) = tWxi0sgAM8s2+uRIcwovLvmUEP4+y//JFmgaMvaAfb4=
 SHA256 (cargo/typed-arena-2.0.2.tar.gz) = avauIBZ6ns5Ly0GvW4D4ofHfmB9jkRic4A/SV68EEmo=
 SHA256 (cargo/unic-char-property-0.9.0.tar.gz) = qMV6QH2bb6ArR5XrgcW2ZSBgoVp5A+qYHz1yPmwL4iE=
 SHA256 (cargo/unic-char-range-0.9.0.tar.gz) = A5gCLV9wBBT2uJnhC4NIIxq/kXP6kxRMvBpDuXk8H7w=
@@ -275,7 +272,6 @@ SHA256 (cargo/unic-ucd-category-0.9.0.tar.gz) = G41FkfX8/hvURTuq+APEDhseaf+EVcR2
 SHA256 (cargo/unic-ucd-version-0.9.0.tar.gz) = lr0vIjf+RQ/NCh0vX06RcREk94V7oulkJHd26+63sMQ=
 SHA256 (cargo/unicode-bidi-0.3.15.tar.gz) = CPlRAKdmv0+PKPkNd+ClRhu9shkELnZ5vr55AE/tjXU=
 SHA256 (cargo/unicode-ident-1.0.12.tar.gz) = M1S5rD+uH/Z1XLbbU2g622YWNPZ1V5Qt6k+s6+wP7ks=
-SHA256 (cargo/unicode-linebreak-0.1.5.tar.gz) = OwnIPDwp03UGo+JgwIwDdDprtmqc1DLGk0q1AaGQVx8=
 SHA256 (cargo/unicode-normalization-0.1.23.tar.gz) = pW0WhtsjCNkBMG+SomOFfvWeo5Z4pUWOfLF/AUFRAfU=
 SHA256 (cargo/unicode-width-0.1.11.tar.gz) = 5Rcz8RycT3KqDBYACCRoWeNAsAgHVpoNoOehB5snuoU=
 SHA256 (cargo/unicode_names2-1.2.2.tar.gz) = rd7r8pTfeSKhFk9yn7J+u7zqmcwys78Ir6tidX9wdnc=
@@ -337,7 +333,7 @@ SHA256 (cargo/yansi-term-0.1.2.tar.gz) = /lwwreBeYWViR7LjNKAx39DMRm+t74Zb3N6o1Te
 SHA256 (cargo/zerocopy-0.7.32.tar.gz) = dNTTlh5T+kyaJahjf8K/ryWVs9OuNIdVaKXPZHh3Fr4=
 SHA256 (cargo/zerocopy-derive-0.7.32.tar.gz) = nOGxjM2Oc6kyEYb5fkb58Et3iFEXdWexl1EJ0moI0qY=
 SHA256 (cargo/zeroize-1.7.0.tar.gz) = UltOwULGtootEPAfe79nVVmco/gepTuEMbfdNI9f2y0=
-SHA256 (ruff-0.4.7.tar.gz) = rEqo7wct4y42gc5+ahJiBKjKMLCl1RKwyE+00RYiPEE=
+SHA256 (ruff-0.4.8.tar.gz) = mD1huWArgA6RGOnlLuyk+PLDaX59KB4jBhmzn6IeTJs=
 SIZE (astral-sh-lsp-types-3512a9f33eadc5402cfab1b8f7340824c8ca1439.tar.gz) = 71124
 SIZE (cargo/Inflector-0.11.4.tar.gz) = 17438
 SIZE (cargo/adler-1.0.2.tar.gz) = 12778
@@ -435,7 +431,6 @@ SIZE (cargo/globset-0.4.14.tar.gz) = 25090
 SIZE (cargo/half-2.4.1.tar.gz) = 50892
 SIZE (cargo/hashbrown-0.12.3.tar.gz) = 102968
 SIZE (cargo/hashbrown-0.14.5.tar.gz) = 141498
-SIZE (cargo/heck-0.4.1.tar.gz) = 11567
 SIZE (cargo/heck-0.5.0.tar.gz) = 11517
 SIZE (cargo/hermit-abi-0.3.9.tar.gz) = 16165
 SIZE (cargo/home-0.5.9.tar.gz) = 8760
@@ -452,7 +447,7 @@ SIZE (cargo/indicatif-0.17.8.tar.gz) = 64869
 SIZE (cargo/indoc-2.0.5.tar.gz) = 14396
 SIZE (cargo/inotify-0.9.6.tar.gz) = 22971
 SIZE (cargo/inotify-sys-0.1.5.tar.gz) = 6965
-SIZE (cargo/insta-1.38.0.tar.gz) = 86379
+SIZE (cargo/insta-1.39.0.tar.gz) = 87049
 SIZE (cargo/insta-cmd-0.6.0.tar.gz) = 12385
 SIZE (cargo/instant-0.1.12.tar.gz) = 6128
 SIZE (cargo/is-docker-0.2.0.tar.gz) = 2664
@@ -460,7 +455,7 @@ SIZE (cargo/is-macro-0.3.5.tar.gz) = 8936
 SIZE (cargo/is-terminal-0.4.12.tar.gz) = 7470
 SIZE (cargo/is-wsl-0.4.0.tar.gz) = 3264
 SIZE (cargo/itertools-0.10.5.tar.gz) = 115354
-SIZE (cargo/itertools-0.12.1.tar.gz) = 137761
+SIZE (cargo/itertools-0.13.0.tar.gz) = 146261
 SIZE (cargo/itoa-1.0.11.tar.gz) = 10563
 SIZE (cargo/jod-thread-0.1.2.tar.gz) = 6322
 SIZE (cargo/js-sys-0.3.69.tar.gz) = 81083
@@ -468,8 +463,8 @@ SIZE (cargo/kqueue-1.0.8.tar.gz) = 12642
 SIZE (cargo/kqueue-sys-1.0.4.tar.gz) = 7160
 SIZE (cargo/lazy_static-1.4.0.tar.gz) = 10443
 SIZE (cargo/libc-0.2.155.tar.gz) = 743539
-SIZE (cargo/libcst-1.3.1.tar.gz) = 110246
-SIZE (cargo/libcst_derive-1.3.1.tar.gz) = 9189
+SIZE (cargo/libcst-1.4.0.tar.gz) = 110834
+SIZE (cargo/libcst_derive-1.4.0.tar.gz) = 9303
 SIZE (cargo/libmimalloc-sys-0.1.38.tar.gz) = 196009
 SIZE (cargo/libredox-0.1.3.tar.gz) = 6068
 SIZE (cargo/linked-hash-map-0.5.6.tar.gz) = 15049
@@ -491,7 +486,7 @@ SIZE (cargo/nix-0.28.0.tar.gz) = 311086
 SIZE (cargo/nom-7.1.3.tar.gz) = 117570
 SIZE (cargo/notify-6.1.1.tar.gz) = 40117
 SIZE (cargo/nu-ansi-term-0.46.0.tar.gz) = 24311
-SIZE (cargo/nu-ansi-term-0.49.0.tar.gz) = 28211
+SIZE (cargo/nu-ansi-term-0.50.0.tar.gz) = 28482
 SIZE (cargo/num-traits-0.2.18.tar.gz) = 51930
 SIZE (cargo/number_prefix-0.4.0.tar.gz) = 6922
 SIZE (cargo/once_cell-1.19.0.tar.gz) = 33046
@@ -522,7 +517,7 @@ SIZE (cargo/pmutil-0.6.1.tar.gz) = 10997
 SIZE (cargo/portable-atomic-1.6.0.tar.gz) = 140689
 SIZE (cargo/ppv-lite86-0.2.17.tar.gz) = 22242
 SIZE (cargo/pretty_assertions-1.4.0.tar.gz) = 78846
-SIZE (cargo/proc-macro2-1.0.84.tar.gz) = 48922
+SIZE (cargo/proc-macro2-1.0.85.tar.gz) = 48988
 SIZE (cargo/pyproject-toml-0.9.0.tar.gz) = 6041
 SIZE (cargo/quick-junit-0.4.0.tar.gz) = 20136
 SIZE (cargo/quick-xml-0.31.0.tar.gz) = 172236
@@ -562,7 +557,7 @@ SIZE (cargo/serde_derive-1.0.203.tar.gz) = 55867
 SIZE (cargo/serde_derive_internals-0.29.0.tar.gz) = 26065
 SIZE (cargo/serde_json-1.0.117.tar.gz) = 146921
 SIZE (cargo/serde_repr-0.1.19.tar.gz) = 9997
-SIZE (cargo/serde_spanned-0.6.5.tar.gz) = 8349
+SIZE (cargo/serde_spanned-0.6.6.tar.gz) = 9120
 SIZE (cargo/serde_test-1.0.176.tar.gz) = 18390
 SIZE (cargo/serde_with-3.8.1.tar.gz) = 142294
 SIZE (cargo/serde_with_macros-3.8.1.tar.gz) = 30796
@@ -571,7 +566,6 @@ SIZE (cargo/shellexpand-3.1.0.tar.gz) = 25591
 SIZE (cargo/similar-2.5.0.tar.gz) = 51648
 SIZE (cargo/siphasher-0.3.11.tar.gz) = 10442
 SIZE (cargo/smallvec-1.13.2.tar.gz) = 35216
-SIZE (cargo/smawk-0.3.2.tar.gz) = 13831
 SIZE (cargo/smol_str-0.2.2.tar.gz) = 15840
 SIZE (cargo/spin-0.9.8.tar.gz) = 38958
 SIZE (cargo/static_assertions-1.1.0.tar.gz) = 18480
@@ -579,7 +573,7 @@ SIZE (cargo/strip-ansi-escapes-0.2.0.tar.gz) = 8625
 SIZE (cargo/strsim-0.10.0.tar.gz) = 11355
 SIZE (cargo/strsim-0.11.1.tar.gz) = 14266
 SIZE (cargo/strum-0.26.2.tar.gz) = 7189
-SIZE (cargo/strum_macros-0.26.2.tar.gz) = 27056
+SIZE (cargo/strum_macros-0.26.3.tar.gz) = 27442
 SIZE (cargo/subtle-2.5.0.tar.gz) = 13909
 SIZE (cargo/syn-2.0.66.tar.gz) = 264855
 SIZE (cargo/tempfile-3.10.1.tar.gz) = 33653
@@ -588,7 +582,6 @@ SIZE (cargo/terminfo-0.8.0.tar.gz) = 46407
 SIZE (cargo/test-case-3.3.1.tar.gz) = 8797
 SIZE (cargo/test-case-core-3.3.1.tar.gz) = 14327
 SIZE (cargo/test-case-macros-3.3.1.tar.gz) = 4961
-SIZE (cargo/textwrap-0.16.1.tar.gz) = 56012
 SIZE (cargo/thiserror-1.0.61.tar.gz) = 21264
 SIZE (cargo/thiserror-impl-1.0.61.tar.gz) = 15786
 SIZE (cargo/thread_local-1.1.8.tar.gz) = 13962
@@ -597,16 +590,16 @@ SIZE (cargo/tikv-jemallocator-0.5.4.tar.gz) = 13101
 SIZE (cargo/tinytemplate-1.2.1.tar.gz) = 26490
 SIZE (cargo/tinyvec-1.6.0.tar.gz) = 45991
 SIZE (cargo/tinyvec_macros-0.1.1.tar.gz) = 5865
-SIZE (cargo/toml-0.8.12.tar.gz) = 51145
-SIZE (cargo/toml_datetime-0.6.5.tar.gz) = 10910
-SIZE (cargo/toml_edit-0.22.12.tar.gz) = 104416
+SIZE (cargo/toml-0.8.13.tar.gz) = 50517
+SIZE (cargo/toml_datetime-0.6.6.tar.gz) = 11698
+SIZE (cargo/toml_edit-0.22.13.tar.gz) = 103518
 SIZE (cargo/tracing-0.1.40.tar.gz) = 79459
 SIZE (cargo/tracing-attributes-0.1.27.tar.gz) = 32241
 SIZE (cargo/tracing-core-0.1.32.tar.gz) = 61221
 SIZE (cargo/tracing-indicatif-0.3.6.tar.gz) = 26505
 SIZE (cargo/tracing-log-0.2.0.tar.gz) = 17561
 SIZE (cargo/tracing-subscriber-0.3.18.tar.gz) = 196312
-SIZE (cargo/tracing-tree-0.3.0.tar.gz) = 28123
+SIZE (cargo/tracing-tree-0.3.1.tar.gz) = 29349
 SIZE (cargo/typed-arena-2.0.2.tar.gz) = 11848
 SIZE (cargo/unic-char-property-0.9.0.tar.gz) = 6809
 SIZE (cargo/unic-char-range-0.9.0.tar.gz) = 7020
@@ -615,7 +608,6 @@ SIZE (cargo/unic-ucd-category-0.9.0.tar.gz) = 25480
 SIZE (cargo/unic-ucd-version-0.9.0.tar.gz) = 2246
 SIZE (cargo/unicode-bidi-0.3.15.tar.gz) = 56811
 SIZE (cargo/unicode-ident-1.0.12.tar.gz) = 42168
-SIZE (cargo/unicode-linebreak-0.1.5.tar.gz) = 15324
 SIZE (cargo/unicode-normalization-0.1.23.tar.gz) = 122649
 SIZE (cargo/unicode-width-0.1.11.tar.gz) = 19187
 SIZE (cargo/unicode_names2-1.2.2.tar.gz) = 300609
@@ -677,4 +669,4 @@ SIZE (cargo/yansi-term-0.1.2.tar.gz) = 14342
 SIZE (cargo/zerocopy-0.7.32.tar.gz) = 151096
 SIZE (cargo/zerocopy-derive-0.7.32.tar.gz) = 37623
 SIZE (cargo/zeroize-1.7.0.tar.gz) = 19039
-SIZE (ruff-0.4.7.tar.gz) = 4816147
+SIZE (ruff-0.4.8.tar.gz) = 4838096
