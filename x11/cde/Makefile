@@ -1,6 +1,6 @@
 COMMENT =		Common Deskop Environment
 
-V =			2.5.1
+V =			2.5.2
 DISTNAME =		cde-$V
 
 SHARED_LIBS +=  DtHelp                    0.0 # 2.1
@@ -28,7 +28,7 @@ WANTLIB += ${COMPILER_LIBCXX} ICE Mrm SM Uil X11 Xau Xdmcp Xext
 WANTLIB += Xft Xinerama Xm Xmu Xpm Xrender Xss Xt c expat fontconfig
 WANTLIB += freetype iconv jpeg m png tcl86 util xcb z
 
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=cdesktopenv/}
+SITES =			${SITE_SOURCEFORGE:=cdesktopenv/}
 
 MODULES =		lang/tcl
 MODTCL_VERSION =	8.6
