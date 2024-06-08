@@ -9,6 +9,7 @@ DISTNAME =	cargo-nextest-${VERSION}
 
 CATEGORIES =	devel
 
+# https://github.com/nextest-rs/nextest/
 HOMEPAGE =	https://nexte.st/
 
 MAINTAINER =	Laurent Cheylus <foxy@free.fr>
@@ -26,8 +27,6 @@ LIB_DEPENDS +=		${BUILD_DEPENDS}
 
 MODULES =	devel/cargo
 
-SEPARATE_BUILD =	Yes
-
 CONFIGURE_STYLE =	cargo
 
 MODCARGO_RUSTFLAGS +=		-L${LOCALBASE}/lib
@@ -38,6 +37,8 @@ MODCARGO_FEATURES =		default-no-update
 
 # Crate uuid v1.2.1 needed for tests
 MODCARGO_CRATES +=		uuid	1.2.1	# Apache-2.0 OR MIT
+
+SEPARATE_BUILD =	Yes
 
 post-extract:
 	mv ${WRKDIR}/nextest-cargo-nextest-${VERSION}/ ${WRKSRC}
