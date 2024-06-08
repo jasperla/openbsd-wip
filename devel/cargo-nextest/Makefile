@@ -29,14 +29,14 @@ MODULES =	devel/cargo
 
 CONFIGURE_STYLE =	cargo
 
-MODCARGO_RUSTFLAGS +=		-L${LOCALBASE}/lib
+MODCARGO_RUSTFLAGS +=	-L${LOCALBASE}/lib
 
 # Disable feature for self-update
 MODCARGO_NO_DEFAULT_FEATURES =	Yes
 MODCARGO_FEATURES =		default-no-update
 
 # Crate uuid v1.2.1 needed for tests
-MODCARGO_CRATES +=		uuid	1.2.1	# Apache-2.0 OR MIT
+MODCARGO_CRATES +=	uuid	1.2.1	# Apache-2.0 OR MIT
 
 SEPARATE_BUILD =	Yes
 
