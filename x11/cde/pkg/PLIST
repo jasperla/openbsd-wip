@@ -3675,3 +3675,4 @@ share/doc/pkg-readmes/${PKGSTEM}
 share/examples/cde/
 share/examples/cde/fonts.alias
 @sample ${SYSCONFDIR}/cde/fontaliases/fonts.alias
+@sample ${LOCALSTATEDIR}/spool/calendar/
