@@ -1,0 +1,2 @@
+libtree is a tool that turns ldd into a tree and can explain how shared
+libraries are found or why they cannot be located.
