@@ -15,8 +15,7 @@ WANTLIB =		c
 
 USE_GMAKE =		Yes
 
-# TODO: build in tests/ directory
-NO_TEST =		Yes
+TEST_TARGET =		check
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/libtree ${PREFIX}/bin
