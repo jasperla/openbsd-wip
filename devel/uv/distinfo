@@ -92,12 +92,14 @@ SHA256 (cargo/ciborium-io-0.2.2.tar.gz) = Ba/qHgoGyb4z1Tm4dvHONpL0r+ostB90DndDIl
 SHA256 (cargo/ciborium-ll-0.2.2.tar.gz) = V2Y7ZT2UijOL+z7rqbsv1fz67Lnhmeh+HtpNnoskD9k=
 SHA256 (cargo/cipher-0.4.4.tar.gz) = dz87mvZER9LOmFAzDEc1FQFKojXmp4OwLbgf855KPa0=
 SHA256 (cargo/clap-4.5.4.tar.gz) = kLwGameSN4KqhRXbrqFpRsW8xa3b1mi7gK9ojlPlSKA=
+SHA256 (cargo/clap-4.5.6.tar.gz) = qWiaKbWTFg3lvEqsq3tdVPtSIx3nASJibBeOajaJlMc=
 SHA256 (cargo/clap_builder-4.5.2.tar.gz) = rhKeLnZq4OwDSE5gmVQRnxI8wf5lAzfhVdA7Ai8k97Q=
+SHA256 (cargo/clap_builder-4.5.6.tar.gz) = LlOHN4yE9vqiaJDr+fCpKYn4hz1NOARnvNDY2GIEJN8=
 SHA256 (cargo/clap_complete-4.5.2.tar.gz) = 3XlQQyW/OLEBZbAuibQ0cwD4VfJzxMswxKMgnmWDJ14=
 SHA256 (cargo/clap_complete_command-0.5.1.tar.gz) = GDSVNx6njUyf9ji/xkl9Rv7SOW5PnFCuvBJ4pKmRmj0=
 SHA256 (cargo/clap_complete_fig-4.5.0.tar.gz) = VLPmX5H6vdI8rD1X051dk4tNqr0HDDNcAG3MuGamERA=
 SHA256 (cargo/clap_complete_nushell-0.1.11.tar.gz) = XQK8ixoY7kfE0u7D+1rANNxo6+phJbFQnpzN/83c5m4=
-SHA256 (cargo/clap_derive-4.5.4.tar.gz) = UoExQ4A3/VWJT2LW6fBouPRaxX/6d1F4GWRdEK7QT2Q=
+SHA256 (cargo/clap_derive-4.5.5.tar.gz) = x4ApDM9PsmYpuqehCB5oztET8dPsMC+llI8cOB6/BsY=
 SHA256 (cargo/clap_lex-0.7.0.tar.gz) = mMyPve0MYHt7qd1gzZjfWa+X6E0k5JyFVzMc/CbTAc4=
 SHA256 (cargo/cmake-0.1.50.tar.gz) = oxx4lWO4Ffd/QlDK7hI2VzQ2n5QkObfe/XHhikgZcTA=
 SHA256 (cargo/codspeed-2.6.0.tar.gz) = OhBKyUjgGIuSHrP8vdVdz2LlQt9MerfmYGI/YogwIIk=
@@ -362,6 +364,7 @@ SHA256 (cargo/redox_syscall-0.5.1.tar.gz) = RpBSiU3LVTQh5IPkIJ7lgaRRANMbQBjeA+Wn
 SHA256 (cargo/redox_users-0.4.5.tar.gz) = vSg9llHu2ksqg6Q8HJGyZsQP127NOaUKjGMK5p3HKJE=
 SHA256 (cargo/reflink-copy-0.1.17.tar.gz) = fDE4wwxZ7ZuFcvgr7ZfqWR7NfkUBJWYEbMOecmec/yI=
 SHA256 (cargo/regex-1.10.4.tar.gz) = wRfb396cgwiXW2oY1x8/OFyJRh97P7BUKI7PKiBYukw=
+SHA256 (cargo/regex-1.10.5.tar.gz) = uRITQ52tGSMmoNfG7jlVkQQl9EHXA44NaTOwrsXEUX8=
 SHA256 (cargo/regex-automata-0.1.10.tar.gz) = bCMNc/uNjBucCzE1xRQqis7joFWPuNtc8ctl+NeGITI=
 SHA256 (cargo/regex-automata-0.4.6.tar.gz) = hrg7i5hH+b+V72ivsLjmzbgPSYRC9ReaKfrUSPzB6uo=
 SHA256 (cargo/regex-syntax-0.6.29.tar.gz) = 8WLG3XsAiYHk1AIQrKILS9D5tgypJxBhsH94U3ci8uE=
@@ -512,7 +515,7 @@ SHA256 (cargo/unicode-linebreak-0.1.5.tar.gz) = OwnIPDwp03UGo+JgwIwDdDprtmqc1DLG
 SHA256 (cargo/unicode-normalization-0.1.23.tar.gz) = pW0WhtsjCNkBMG+SomOFfvWeo5Z4pUWOfLF/AUFRAfU=
 SHA256 (cargo/unicode-script-0.5.6.tar.gz) = rY1x9XJuXyhak16f6O39U/BJHrbppXdAl/2r7nzYyc0=
 SHA256 (cargo/unicode-vo-0.1.0.tar.gz) = sdOG/1O0Fbf+J7ULtEZ54sxGYCcmlLe28zJthICCOpQ=
-SHA256 (cargo/unicode-width-0.1.12.tar.gz) = aPXl8xWOz9S4/2/ghtt8hGei39rJf+Qg8rfEqpevZtY=
+SHA256 (cargo/unicode-width-0.1.13.tar.gz) = AzbVOPeryG0oKkGJYU36qQgQ38LG9kJ+r4jhYxHdIl0=
 SHA256 (cargo/unicode-xid-0.2.4.tar.gz) = +WLfdMjAWmZ7Xui88WKZMTTBBOlkQLZjyNqhdtx3LYw=
 SHA256 (cargo/unindent-0.2.3.tar.gz) = x959c+F1RIfLWDZO6QakmZN6Dfq9hry5gPqZ7IyPos4=
 SHA256 (cargo/unscanny-0.1.0.tar.gz) = 6d8q8GenlT6cODEyDzXBzAYAww1E2fehKwHbHNiNa0c=
@@ -602,7 +605,7 @@ SHA256 (cargo/zstd-safe-5.0.2+zstd.1.5.2.tar.gz) = HSpVheBPnupLKj0eylCMTe6Vkqie9
 SHA256 (cargo/zstd-safe-7.1.0.tar.gz) = HNmbRca8A6AYyLioYCVnjIflVSYGTjj53zAZidzn7Ao=
 SHA256 (cargo/zstd-sys-2.0.10+zstd.1.5.6.tar.gz) = wlOkkUr1uvyPqMhu5ACCfoPPbsARlewfHthEG/ANZao=
 SHA256 (charliermarsh-rs-async-zip-1dcb40cfe1bf5325a6fd4bfcf9894db40241f585.tar.gz) = twEs4L7Mz1gpsOIlFKwDjrpYNdhGjtDkGgJDd8s8440=
-SHA256 (uv-0.2.9.tar.gz) = QAaqxzJQUijnWGeALXW8nqdPu9n4uMK6M+cvED11OQo=
+SHA256 (uv-0.2.10.tar.gz) = m+TctV6UCEt6D6Sge6/DPRD2ecEEYyqA+eermzGueE8=
 SIZE (astral-sh-pubgrub-a68cbd1a26e43986a31563e1d127e83bafca3a0c.tar.gz) = 86909
 SIZE (cargo/actix-codec-0.5.2.tar.gz) = 14085
 SIZE (cargo/actix-http-3.6.0.tar.gz) = 152432
@@ -697,12 +700,14 @@ SIZE (cargo/ciborium-io-0.2.2.tar.gz) = 6697
 SIZE (cargo/ciborium-ll-0.2.2.tar.gz) = 14695
 SIZE (cargo/cipher-0.4.4.tar.gz) = 19073
 SIZE (cargo/clap-4.5.4.tar.gz) = 55401
+SIZE (cargo/clap-4.5.6.tar.gz) = 56342
 SIZE (cargo/clap_builder-4.5.2.tar.gz) = 163566
+SIZE (cargo/clap_builder-4.5.6.tar.gz) = 163952
 SIZE (cargo/clap_complete-4.5.2.tar.gz) = 37850
 SIZE (cargo/clap_complete_command-0.5.1.tar.gz) = 8273
 SIZE (cargo/clap_complete_fig-4.5.0.tar.gz) = 10932
 SIZE (cargo/clap_complete_nushell-0.1.11.tar.gz) = 32198
-SIZE (cargo/clap_derive-4.5.4.tar.gz) = 29159
+SIZE (cargo/clap_derive-4.5.5.tar.gz) = 30017
 SIZE (cargo/clap_lex-0.7.0.tar.gz) = 11915
 SIZE (cargo/cmake-0.1.50.tar.gz) = 16748
 SIZE (cargo/codspeed-2.6.0.tar.gz) = 4661
@@ -967,6 +972,7 @@ SIZE (cargo/redox_syscall-0.5.1.tar.gz) = 22536
 SIZE (cargo/redox_users-0.4.5.tar.gz) = 15514
 SIZE (cargo/reflink-copy-0.1.17.tar.gz) = 16005
 SIZE (cargo/regex-1.10.4.tar.gz) = 253191
+SIZE (cargo/regex-1.10.5.tar.gz) = 253805
 SIZE (cargo/regex-automata-0.1.10.tar.gz) = 114533
 SIZE (cargo/regex-automata-0.4.6.tar.gz) = 617565
 SIZE (cargo/regex-syntax-0.6.29.tar.gz) = 299752
@@ -1117,7 +1123,7 @@ SIZE (cargo/unicode-linebreak-0.1.5.tar.gz) = 15324
 SIZE (cargo/unicode-normalization-0.1.23.tar.gz) = 122649
 SIZE (cargo/unicode-script-0.5.6.tar.gz) = 43993
 SIZE (cargo/unicode-vo-0.1.0.tar.gz) = 8084
-SIZE (cargo/unicode-width-0.1.12.tar.gz) = 24062
+SIZE (cargo/unicode-width-0.1.13.tar.gz) = 457228
 SIZE (cargo/unicode-xid-0.2.4.tar.gz) = 15352
 SIZE (cargo/unindent-0.2.3.tar.gz) = 7306
 SIZE (cargo/unscanny-0.1.0.tar.gz) = 10338
@@ -1207,4 +1213,4 @@ SIZE (cargo/zstd-safe-5.0.2+zstd.1.5.2.tar.gz) = 17273
 SIZE (cargo/zstd-safe-7.1.0.tar.gz) = 20792
 SIZE (cargo/zstd-sys-2.0.10+zstd.1.5.6.tar.gz) = 749088
 SIZE (charliermarsh-rs-async-zip-1dcb40cfe1bf5325a6fd4bfcf9894db40241f585.tar.gz) = 96766
-SIZE (uv-0.2.9.tar.gz) = 1147989
+SIZE (uv-0.2.10.tar.gz) = 1178721
