@@ -1,0 +1,3 @@
+Repology is a command line interface to Repology.org. It is primarily
+designed for OpenBSD ports, FreeBSD ports, and NetBSD pkgsrc developers,
+users, and port maintainers.
