@@ -5,12 +5,14 @@ COMMENT =	extremely fast Python linter and code formatter
 
 GH_ACCOUNT =	astral-sh
 GH_PROJECT =	ruff
-GH_TAGNAME =	v0.4.8
+GH_TAGNAME =	v0.4.9
 
-# Rust lsp-types crate
+# Rust crates downloaded via git
 LSPTYPES_HASH =	3512a9f33eadc5402cfab1b8f7340824c8ca1439
+SALSA_HASH =	05b4e3ebdcdc47730cdd359e7e97fb2470527279
 
 DIST_TUPLE +=	github astral-sh lsp-types ${LSPTYPES_HASH} ${MODCARGO_VENDOR_DIR}
+DIST_TUPLE +=	github salsa-rs salsa ${SALSA_HASH} ${MODCARGO_VENDOR_DIR}
 
 CATEGORIES =	devel textproc
 
@@ -24,13 +26,18 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB +=	${MODCARGO_WANTLIB} m
 
+BUILD_DEPENDS+=	archivers/zstd
+LIB_DEPENDS +=	${BUILD_DEPENDS}
+
 MODULES =	devel/cargo
 
 CONFIGURE_STYLE =	cargo
 
+MODCARGO_RUSTFLAGS +=	-L${LOCALBASE}/lib
+
 SEPARATE_BUILD =	Yes
 
-SUBST_VARS +=	MODCARGO_VENDOR_DIR LSPTYPES_HASH
+SUBST_VARS +=	MODCARGO_VENDOR_DIR LSPTYPES_HASH SALSA_HASH
 
 post-patch:
 	${SUBST_CMD} ${WRKSRC}/Cargo.toml
@@ -38,6 +45,9 @@ post-patch:
 	${LOCALBASE}/bin/cargo-generate-vendor \
 		${FULLDISTDIR}/astral-sh-lsp-types-${LSPTYPES_HASH}.tar.gz \
 		${MODCARGO_VENDOR_DIR}/lsp-types-${LSPTYPES_HASH}
+	${LOCALBASE}/bin/cargo-generate-vendor \
+		${FULLDISTDIR}/salsa-rs-salsa-${SALSA_HASH}.tar.gz \
+		${MODCARGO_VENDOR_DIR}/salsa-${SALSA_HASH}
 
 # Generate shell completions
 pre-install:

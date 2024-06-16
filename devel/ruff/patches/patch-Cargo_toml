@@ -3,12 +3,21 @@ Use local sources for lsp-types crate
 Index: Cargo.toml
 --- Cargo.toml.orig
 +++ Cargo.toml
-@@ -79,7 +79,7 @@ libc = { version = "0.2.153" }
+@@ -81,7 +81,7 @@ libc = { version = "0.2.153" }
  libcst = { version = "1.1.0", default-features = false }
  log = { version = "0.4.17" }
  lsp-server = { version = "0.7.6" }
--lsp-types = { git = "https://github.com/astral-sh/lsp-types.git", rev = "3512a9f", features = ["proposed"] }
-+lsp-types = { path = "${MODCARGO_VENDOR_DIR}/lsp-types-${LSPTYPES_HASH}", features = ["proposed"] }
+-lsp-types = { git = "https://github.com/astral-sh/lsp-types.git", rev = "3512a9f", features = [
++lsp-types = { path = "${MODCARGO_VENDOR_DIR}/lsp-types-${LSPTYPES_HASH}", features = [
+   "proposed",
+ ] }
  matchit = { version = "0.8.1" }
- memchr = { version = "2.7.1" }
- mimalloc = { version = "0.1.39" }
+@@ -104,7 +104,7 @@ rand = { version = "0.8.5" }
+ rayon = { version = "1.10.0" }
+ regex = { version = "1.10.2" }
+ rustc-hash = { version = "1.1.0" }
+-salsa = { git = "https://github.com/salsa-rs/salsa.git", package = "salsa-2022", rev = "05b4e3ebdcdc47730cdd359e7e97fb2470527279" }
++salsa = { path = "${MODCARGO_VENDOR_DIR}/salsa-${SALSA_HASH}/components/salsa-2022", package = "salsa-2022" }
+ schemars = { version = "0.8.16" }
+ seahash = { version = "4.1.0" }
+ serde = { version = "1.0.197", features = ["derive"] }
