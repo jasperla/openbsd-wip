@@ -3,7 +3,7 @@ Use local paths for crate async_zip and pubgrub
 Index: Cargo.toml
 --- Cargo.toml.orig
 +++ Cargo.toml
-@@ -55,7 +55,7 @@ async-channel = { version = "2.2.0" }
+@@ -56,7 +56,7 @@ async-channel = { version = "2.2.0" }
  async-compression = { version = "0.4.6" }
  async-trait = { version = "0.1.78" }
  async_http_range_reader = { version = "0.8.0" }
@@ -12,7 +12,7 @@ Index: Cargo.toml
  axoupdater = { version = "0.6.0", default-features = false }
  backoff = { version = "0.4.0" }
  base64 = { version = "0.22.0" }
-@@ -100,7 +100,7 @@ path-slash = { version = "0.2.1" }
+@@ -101,7 +101,7 @@ path-slash = { version = "0.2.1" }
  pathdiff = { version = "0.2.1" }
  petgraph = { version = "0.6.4" }
  platform-info = { version = "2.0.2" }
@@ -20,4 +20,4 @@ Index: Cargo.toml
 +pubgrub = { path = "${MODCARGO_VENDOR_DIR}/pubgrub-${PUBGRUB_HASH}" }
  pyo3 = { version = "0.21.0" }
  pyo3-log = { version = "0.10.0" }
- rayon = { version = "1.8.0" }
+ quote = { version = "1.0.36" }
