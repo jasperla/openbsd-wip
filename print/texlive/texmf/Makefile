@@ -15,8 +15,6 @@ DISTNAME =		texlive-${DIST_V}-texmf
 SITES.pregen =		http://theunixzoo.co.uk/distfiles/
 DISTFILES =		${DISTNAME}${EXTRACT_SUFX} \
 			texlive-${DIST_V}-extra${EXTRACT_SUFX}
-# XXX not needed I think
-#			texlive-${DIST_V}-tlpdb-full.tar.gz
 # XXX put back later
 #DISTFILES.pregen = 	texmf-var-pregen-${V}${EXTRACT_SUFX}
 
@@ -166,7 +164,9 @@ do-install: tl-symlinks-main tl-symlinks-full tl-symlinks-context
 
 	# texdoc needs a copy of the TLPDB in a specific path.
 	${INSTALL_DATA_DIR} ${PREFIX}/share/tlpkg/
-	${INSTALL_DATA} ${WRKDIR}/texlive.tlpdb ${PREFIX}/share/tlpkg/
+	${INSTALL_DATA} \
+		${WRKDIR}/texlive-${DIST_V}-extra/tlpkg/texlive.tlpdb \
+		${PREFIX}/share/tlpkg/
 
 post-install:
 	# selfauto does not work with our legacy texmf paths, patch in paths.
@@ -186,7 +186,7 @@ plist: fake
 	env WRKINST=${WRKINST} TRUEPREFIX=${TRUEPREFIX} \
 		python${MODPY_DEFAULT_VERSION_3} \
 		${FILESDIR}/update_plist_hints.py \
-		${WRKDIR}/texlive.tlpdb | \
+		${WRKDIR}/texlive-${DIST_V}-extra/tlpkg/texlive.tlpdb | \
 		python${MODPY_DEFAULT_VERSION_3} ${FILESDIR}/write_plists.py
 
 # Regenerate adj.mk.
