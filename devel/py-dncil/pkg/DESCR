@@ -1,0 +1,5 @@
+dncil is a Common Intermediate Language (CIL) disassembly library
+written in Python that supports parsing the header, instructions, and
+exception handlers of .NET managed methods. Parsed data is exposed
+through an object-oriented API to help you quickly develop CIL analysis
+tools using dncil.
