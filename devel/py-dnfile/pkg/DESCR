@@ -1,0 +1,5 @@
+Python library to parse .NET executable files.
+
+Features:
+- Parse as much as we can, even if the file is partially malformed.
+- Easy to use. Developed with IDE autocompletion in mind.
