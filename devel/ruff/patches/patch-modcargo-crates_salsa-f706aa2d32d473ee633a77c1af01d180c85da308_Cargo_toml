@@ -1,0 +1,10 @@
+Index: modcargo-crates/salsa-f706aa2d32d473ee633a77c1af01d180c85da308/Cargo.toml
+--- modcargo-crates/salsa-f706aa2d32d473ee633a77c1af01d180c85da308/Cargo.toml.orig
++++ modcargo-crates/salsa-f706aa2d32d473ee633a77c1af01d180c85da308/Cargo.toml
+@@ -31,6 +31,3 @@ parking_lot = "0.12.1"
+ rustversion = "1.0"
+ test-log = "0.2.11"
+ trybuild = "1.0"
+-
+-[workspace]
+-members = ["components/salsa-macros"]
