@@ -1,14 +1,9 @@
 COMMENT =	modern command-line DNS client (like dig)
 
 MODGO_MODNAME =	github.com/mr-karan/doggo
-MODGO_VERSION =	v0.5.7
+MODGO_VERSION =	v1.0.2
 
 DISTNAME =	doggo-${MODGO_VERSION}
-
-# Patch tp add bash completion support
-SITES.p =		https://github.com/mr-karan/doggo/commit/
-PATCHFILES.p =		doggo-4821589{4821589c65dafe88285dd6eb5dee0dd54717b553}.patch
-PATCH_DIST_STRIP =	-p1
 
 CATEGORIES =	net
 
@@ -25,8 +20,21 @@ MODULES =	lang/go
 
 MODGO_LDFLAGS +=	-X main.buildVersion=${MODGO_VERSION}
 
-# for patch to apply
-WRKDIST =	${WRKSRC}
+SEPARATE_BUILD =	Yes
+
+# Remove buildDate from version
+do-patch:
+	sed -i 's/fmt\.Printf("%s - %s\\n", buildVersion, buildDate)/ \
+		fmt.Printf("%s\\n", buildVersion)/' ${WRKSRC}/cmd/doggo/cli.go
+	sed -i 's/ - {{ .Date | color "red" "" }}//' ${WRKSRC}/cmd/doggo/help.go
+	sed -i '/buildDate/d' ${WRKSRC}/cmd/doggo/help.go
+
+# Generate shell completions
+post-build:
+	mkdir -p ${WRKSRC}/completions
+	${WRKDIR}/go/bin/doggo completions bash > ${WRKSRC}/completions/doggo.bash
+	${WRKDIR}/go/bin/doggo completions fish > ${WRKSRC}/completions/doggo.fish
+	${WRKDIR}/go/bin/doggo completions zsh > ${WRKSRC}/completions/doggo.zsh
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/bash-completion/completions/
