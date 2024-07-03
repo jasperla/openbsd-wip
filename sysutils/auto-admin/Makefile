@@ -2,9 +2,9 @@ COMMENT =	Portable tools for automating systems management
 
 GH_ACCOUNT =	outpaddling
 GH_PROJECT =	auto-admin
-GH_COMMIT =	eabf79d47573686421f887697f23507488779a57
+GH_COMMIT =	37d709bf37ad8c0fa2449087d30113479b502583
 
-DISTNAME =	auto-admin-0.7.18.38
+DISTNAME =	auto-admin-0.7.18.39
 
 CATEGORIES =	sysutils
 
