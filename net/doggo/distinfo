@@ -1,4 +1,4 @@
-SHA256 (doggo-v1.0.2.zip) = MaWekE3thlnwlk2hv+h7tjPNr7Vjx9bQ7j+Hh/JopOA=
+SHA256 (doggo-v1.0.3.zip) = cnMIvQ94Y244t84BLXTL2BN+7/1VLF6S25WOK6xlUcU=
 SHA256 (go_modules/github.com/!adguard!team/golibs/@v/v0.20.3.mod) = AT9lL7Qq7lUZLh77b6btRHyW/GrtusyQZZT2+XmhwuA=
 SHA256 (go_modules/github.com/!adguard!team/golibs/@v/v0.24.1.mod) = EZc5P2HIOa8Dj7hI13hGDNPEfGHetVIXKIGQHeI8YHg=
 SHA256 (go_modules/github.com/!adguard!team/golibs/@v/v0.24.1.zip) = PkM7fWHoCxYaoU7MJFiA7Jazyda2rDgdpBi2OpQZVTw=
@@ -22,7 +22,6 @@ SHA256 (go_modules/github.com/fatih/color/@v/v1.17.0.mod) = EVCWwLAxTBSaQR67bfCX
 SHA256 (go_modules/github.com/fatih/color/@v/v1.17.0.zip) = iltulKtJ3m+GnT79TgQv/UbCoSfyUTn267YUbkyescQ=
 SHA256 (go_modules/github.com/francoispqt/gojay/@v/v1.2.13.mod) = W5cVtJPCKBhRna+W0oKj6kd6lQ/41Q6mr5NJ8s/trK8=
 SHA256 (go_modules/github.com/francoispqt/gojay/@v/v1.2.13.zip) = 9B4+TzCGQARI284cBsWfWEimxZg+VGZomWXjosq8unw=
-SHA256 (go_modules/github.com/fsnotify/fsnotify/@v/v1.6.0.mod) = g79R/WDCioETn4QYnHuj6diP280g+v1YOSy3ZQGmGmQ=
 SHA256 (go_modules/github.com/fsnotify/fsnotify/@v/v1.7.0.mod) = MI452vopWeMzeMZTboGNxuosA9ssIQoY3LmwG3KmD18=
 SHA256 (go_modules/github.com/fsnotify/fsnotify/@v/v1.7.0.zip) = +Y8IqVIk8sene2KqSEDO/klw8P8A4KAn1+RXw991K7I=
 SHA256 (go_modules/github.com/go-chi/chi/v5/@v/v5.1.0.mod) = kz392CeacKXa002hgYEpE8Ow+c6R94WIIjKeHZLSSSg=
@@ -53,8 +52,8 @@ SHA256 (go_modules/github.com/knadh/koanf/parsers/toml/@v/v0.1.0.mod) = H8w+NRH/
 SHA256 (go_modules/github.com/knadh/koanf/parsers/toml/@v/v0.1.0.zip) = nTmenHJMV7mXnU+/Nc5v0X+AITTG1dXZSeNkT1eyF4E=
 SHA256 (go_modules/github.com/knadh/koanf/providers/env/@v/v0.1.0.mod) = k+fTD8t5CD2xaHUlxCyQqqnkE0qvacraRot4UJII5fE=
 SHA256 (go_modules/github.com/knadh/koanf/providers/env/@v/v0.1.0.zip) = R34+9mjYinbdfJeF+2Uz6i7ydiG85yoz7HfWVYKbLW8=
-SHA256 (go_modules/github.com/knadh/koanf/providers/file/@v/v0.1.0.mod) = EoG5kW8A1c3WjhW/Co4qolA0JPc/3kODv65eGgCt0j4=
-SHA256 (go_modules/github.com/knadh/koanf/providers/file/@v/v0.1.0.zip) = a096tK5hgUuixEcWyg2OFx4x/UYT5M/xNHdDAWnyUG8=
+SHA256 (go_modules/github.com/knadh/koanf/providers/file/@v/v1.0.0.mod) = 9vmDv8+/HT+XwtogsPxKNW+avPjx9SmTNbHTvD+f5+E=
+SHA256 (go_modules/github.com/knadh/koanf/providers/file/@v/v1.0.0.zip) = w28dka5wUigCxKtssUrZy1F6San/0GGNdN+9OW4BBbQ=
 SHA256 (go_modules/github.com/knadh/koanf/providers/posflag/@v/v0.1.0.mod) = eg3c/255tb0+Phs+qAH5DscqLRpNZbbmHVJqjU2PBrA=
 SHA256 (go_modules/github.com/knadh/koanf/providers/posflag/@v/v0.1.0.zip) = 8720CGdQ70yhoPODlzO8kVhoa+dW7que5FgzBUzTT/E=
 SHA256 (go_modules/github.com/knadh/koanf/v2/@v/v2.1.1.mod) = EQ7nu7hNpvzPFekYqYGCfImTPBbVqBhrmaJd0+h5Tog=
@@ -132,7 +131,6 @@ SHA256 (go_modules/golang.org/x/net/@v/v0.26.0.zip) = PqkMFHQiacfB1SF7wePPWKcVUu
 SHA256 (go_modules/golang.org/x/sync/@v/v0.7.0.mod) = cA5dsA3SaqGaF9zl/FUkNtYPaMVgbIW4IfJMPWByoVE=
 SHA256 (go_modules/golang.org/x/sync/@v/v0.7.0.zip) = ILAQhSQOZhv/x/WTg/IbkPES1ml4QiDG5ZyAEkMhbSI=
 SHA256 (go_modules/golang.org/x/sys/@v/v0.0.0-20220811171246-fbc7d0a398ab.mod) = 8DMzMJb+GY8xUd7tk/LeunTlC7/nc5E0BFvDt85KUCQ=
-SHA256 (go_modules/golang.org/x/sys/@v/v0.0.0-20220908164124-27713097b956.mod) = 8DMzMJb+GY8xUd7tk/LeunTlC7/nc5E0BFvDt85KUCQ=
 SHA256 (go_modules/golang.org/x/sys/@v/v0.1.0.mod) = 8DMzMJb+GY8xUd7tk/LeunTlC7/nc5E0BFvDt85KUCQ=
 SHA256 (go_modules/golang.org/x/sys/@v/v0.18.0.mod) = 0iezJfYh9OvijTm6dz6pm4cPOTt8CcNFksNlsW3VYN4=
 SHA256 (go_modules/golang.org/x/sys/@v/v0.20.0.mod) = 0iezJfYh9OvijTm6dz6pm4cPOTt8CcNFksNlsW3VYN4=
@@ -159,7 +157,7 @@ SHA256 (go_modules/google.golang.org/protobuf/@v/v1.33.0.mod) = 0QBqpYC5zHyvLh+h
 SHA256 (go_modules/google.golang.org/protobuf/@v/v1.33.0.zip) = LMHJjhKQMAm9S/DV6TikIcoviK6HsPxQAEssdZix/SQ=
 SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.mod) = IVeYYKIDBvz0OxvSNNH7oxlJnHdhG3HAX5vzupDauTk=
 SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.zip) = qrj7xOYwDqCOav4crqGKIckMefSJ9SxT4vIEMfGpoBU=
-SIZE (doggo-v1.0.2.zip) = 846733
+SIZE (doggo-v1.0.3.zip) = 2468382
 SIZE (go_modules/github.com/!adguard!team/golibs/@v/v0.20.3.mod) = 388
 SIZE (go_modules/github.com/!adguard!team/golibs/@v/v0.24.1.mod) = 388
 SIZE (go_modules/github.com/!adguard!team/golibs/@v/v0.24.1.zip) = 150504
@@ -183,7 +181,6 @@ SIZE (go_modules/github.com/fatih/color/@v/v1.17.0.mod) = 161
 SIZE (go_modules/github.com/fatih/color/@v/v1.17.0.zip) = 14693
 SIZE (go_modules/github.com/francoispqt/gojay/@v/v1.2.13.mod) = 962
 SIZE (go_modules/github.com/francoispqt/gojay/@v/v1.2.13.zip) = 231306
-SIZE (go_modules/github.com/fsnotify/fsnotify/@v/v1.6.0.mod) = 306
 SIZE (go_modules/github.com/fsnotify/fsnotify/@v/v1.7.0.mod) = 278
 SIZE (go_modules/github.com/fsnotify/fsnotify/@v/v1.7.0.zip) = 90661
 SIZE (go_modules/github.com/go-chi/chi/v5/@v/v5.1.0.mod) = 41
@@ -214,8 +211,8 @@ SIZE (go_modules/github.com/knadh/koanf/parsers/toml/@v/v0.1.0.mod) = 285
 SIZE (go_modules/github.com/knadh/koanf/parsers/toml/@v/v0.1.0.zip) = 3751
 SIZE (go_modules/github.com/knadh/koanf/providers/env/@v/v0.1.0.mod) = 393
 SIZE (go_modules/github.com/knadh/koanf/providers/env/@v/v0.1.0.zip) = 5169
-SIZE (go_modules/github.com/knadh/koanf/providers/file/@v/v0.1.0.mod) = 172
-SIZE (go_modules/github.com/knadh/koanf/providers/file/@v/v0.1.0.zip) = 3083
+SIZE (go_modules/github.com/knadh/koanf/providers/file/@v/v1.0.0.mod) = 145
+SIZE (go_modules/github.com/knadh/koanf/providers/file/@v/v1.0.0.zip) = 3033
 SIZE (go_modules/github.com/knadh/koanf/providers/posflag/@v/v0.1.0.mod) = 258
 SIZE (go_modules/github.com/knadh/koanf/providers/posflag/@v/v0.1.0.zip) = 4285
 SIZE (go_modules/github.com/knadh/koanf/v2/@v/v2.1.1.mod) = 326
@@ -293,7 +290,6 @@ SIZE (go_modules/golang.org/x/net/@v/v0.26.0.zip) = 1836588
 SIZE (go_modules/golang.org/x/sync/@v/v0.7.0.mod) = 34
 SIZE (go_modules/golang.org/x/sync/@v/v0.7.0.zip) = 26990
 SIZE (go_modules/golang.org/x/sys/@v/v0.0.0-20220811171246-fbc7d0a398ab.mod) = 33
-SIZE (go_modules/golang.org/x/sys/@v/v0.0.0-20220908164124-27713097b956.mod) = 33
 SIZE (go_modules/golang.org/x/sys/@v/v0.1.0.mod) = 33
 SIZE (go_modules/golang.org/x/sys/@v/v0.18.0.mod) = 33
 SIZE (go_modules/golang.org/x/sys/@v/v0.20.0.mod) = 33

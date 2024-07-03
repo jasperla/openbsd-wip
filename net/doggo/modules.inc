@@ -23,7 +23,7 @@ MODGO_MODULES =	\
 	github.com/knadh/koanf/maps			 v0.1.1 \
 	github.com/knadh/koanf/parsers/toml		 v0.1.0 \
 	github.com/knadh/koanf/providers/env		 v0.1.0 \
-	github.com/knadh/koanf/providers/file		 v0.1.0 \
+	github.com/knadh/koanf/providers/file		 v1.0.0 \
 	github.com/knadh/koanf/providers/posflag	 v0.1.0 \
 	github.com/knadh/koanf/v2			 v2.1.1 \
 	github.com/mattn/go-colorable			 v0.1.13 \
@@ -64,7 +64,6 @@ MODGO_MODULES =	\
 
 MODGO_MODFILES =	\
 	github.com/!adguard!team/golibs		 v0.20.3 \
-	github.com/fsnotify/fsnotify		 v1.6.0 \
 	github.com/go-logr/logr			 v1.2.4 \
 	github.com/go-viper/mapstructure/v2	 v2.0.0-alpha.1 \
 	github.com/google/pprof			 v0.0.0-20210407192527-94a9f03dee38 \
@@ -88,7 +87,6 @@ MODGO_MODFILES =	\
 	golang.org/x/net			 v0.22.0 \
 	golang.org/x/net			 v0.25.0 \
 	golang.org/x/sys			 v0.0.0-20220811171246-fbc7d0a398ab \
-	golang.org/x/sys			 v0.0.0-20220908164124-27713097b956 \
 	golang.org/x/sys			 v0.1.0 \
 	golang.org/x/sys			 v0.18.0 \
 	golang.org/x/sys			 v0.20.0 \
