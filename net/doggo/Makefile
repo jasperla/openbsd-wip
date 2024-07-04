@@ -26,7 +26,7 @@ NO_TEST =		Yes
 
 # Remove buildDate from version
 do-patch:
-	sed -i 's/fmt\.Printf("%s - %s\\n", buildVersion, buildDate)/ \
+	sed -i 's/fmt\.Printf("%s - %s\\n", buildVersion, buildDate)/$\
 		fmt.Printf("%s\\n", buildVersion)/' ${WRKSRC}/cmd/doggo/cli.go
 	sed -i 's/ - {{ .Date | color "red" "" }}//' ${WRKSRC}/cmd/doggo/help.go
 	sed -i '/buildDate/d' ${WRKSRC}/cmd/doggo/help.go
