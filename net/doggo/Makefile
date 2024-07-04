@@ -1,7 +1,7 @@
 COMMENT =	modern command-line DNS client (like dig)
 
 MODGO_MODNAME =	github.com/mr-karan/doggo
-MODGO_VERSION =	v1.0.3
+MODGO_VERSION =	v1.0.4
 
 DISTNAME =	doggo-${MODGO_VERSION}
 

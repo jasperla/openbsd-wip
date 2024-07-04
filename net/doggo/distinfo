@@ -1,4 +1,4 @@
-SHA256 (doggo-v1.0.3.zip) = cnMIvQ94Y244t84BLXTL2BN+7/1VLF6S25WOK6xlUcU=
+SHA256 (doggo-v1.0.4.zip) = h8k/pSfGXKmlQ0PkqJnvqAIBHHhytfZdajOIv4YQ+f8=
 SHA256 (go_modules/github.com/!adguard!team/golibs/@v/v0.20.3.mod) = AT9lL7Qq7lUZLh77b6btRHyW/GrtusyQZZT2+XmhwuA=
 SHA256 (go_modules/github.com/!adguard!team/golibs/@v/v0.24.1.mod) = EZc5P2HIOa8Dj7hI13hGDNPEfGHetVIXKIGQHeI8YHg=
 SHA256 (go_modules/github.com/!adguard!team/golibs/@v/v0.24.1.zip) = PkM7fWHoCxYaoU7MJFiA7Jazyda2rDgdpBi2OpQZVTw=
@@ -157,7 +157,7 @@ SHA256 (go_modules/google.golang.org/protobuf/@v/v1.33.0.mod) = 0QBqpYC5zHyvLh+h
 SHA256 (go_modules/google.golang.org/protobuf/@v/v1.33.0.zip) = LMHJjhKQMAm9S/DV6TikIcoviK6HsPxQAEssdZix/SQ=
 SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.mod) = IVeYYKIDBvz0OxvSNNH7oxlJnHdhG3HAX5vzupDauTk=
 SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.zip) = qrj7xOYwDqCOav4crqGKIckMefSJ9SxT4vIEMfGpoBU=
-SIZE (doggo-v1.0.3.zip) = 2468382
+SIZE (doggo-v1.0.4.zip) = 2468455
 SIZE (go_modules/github.com/!adguard!team/golibs/@v/v0.20.3.mod) = 388
 SIZE (go_modules/github.com/!adguard!team/golibs/@v/v0.24.1.mod) = 388
 SIZE (go_modules/github.com/!adguard!team/golibs/@v/v0.24.1.zip) = 150504
