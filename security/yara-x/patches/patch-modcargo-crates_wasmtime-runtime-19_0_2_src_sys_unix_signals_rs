@@ -1,0 +1,19 @@
+Added OpenBSD support to wasmtime's signals.rs
+See https://github.com/bytecodealliance/wasmtime/commit/bcc98fd767b026c439f1280a2695cead82f41f7f
+
+Index: modcargo-crates/wasmtime-runtime-19.0.2/src/sys/unix/signals.rs
+--- modcargo-crates/wasmtime-runtime-19.0.2/src/sys/unix/signals.rs.orig
++++ modcargo-crates/wasmtime-runtime-19.0.2/src/sys/unix/signals.rs
+@@ -256,6 +256,12 @@ unsafe fn get_pc_and_fp(cx: *mut libc::c_void, _signum
+                 cx.mc_gpregs.gp_elr as *const u8,
+                 cx.mc_gpregs.gp_x[29] as usize,
+             )
++        } else if #[cfg(all(target_os = "openbsd", target_arch = "x86_64"))] {
++            let cx = &*(cx as *const libc::ucontext_t);
++            (
++                cx.sc_rip as *const u8,
++                cx.sc_rbp as usize,
++            )
+         }
+         else {
+             compile_error!("unsupported platform");

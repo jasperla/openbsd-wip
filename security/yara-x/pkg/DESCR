@@ -1,0 +1,9 @@
+YARA-X is a re-incarnation of YARA, a pattern matching tool designed with
+malware researchers in mind. This new incarnation intends to be faster, safer
+and more user-friendly than its predecessor. The ultimate goal of YARA-X is to
+serve as the future replacement for YARA.
+
+With YARA-X you can create descriptions of malware families (or whatever you
+want to describe) based on textual or binary patterns. Each description (a.k.a.
+rule) consists of a set of patterns and a boolean expression which determine its
+logic.
