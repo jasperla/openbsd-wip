@@ -3,7 +3,7 @@ Use local sources for lsp-types crate
 Index: Cargo.toml
 --- Cargo.toml.orig
 +++ Cargo.toml
-@@ -83,7 +83,7 @@ libc = { version = "0.2.153" }
+@@ -86,7 +86,7 @@ libc = { version = "0.2.153" }
  libcst = { version = "1.1.0", default-features = false }
  log = { version = "0.4.17" }
  lsp-server = { version = "0.7.6" }
@@ -12,11 +12,11 @@ Index: Cargo.toml
    "proposed",
  ] }
  matchit = { version = "0.8.1" }
-@@ -106,7 +106,7 @@ rand = { version = "0.8.5" }
+@@ -108,7 +108,7 @@ rand = { version = "0.8.5" }
  rayon = { version = "1.10.0" }
  regex = { version = "1.10.2" }
  rustc-hash = { version = "2.0.0" }
--salsa = { git = "https://github.com/salsa-rs/salsa.git", rev = "f706aa2d32d473ee633a77c1af01d180c85da308" }
+-salsa = { git = "https://github.com/salsa-rs/salsa.git", rev = "a1bf3a613f451af7fc0a59411c56abc47fe8e8e1" }
 +salsa = { path = "${MODCARGO_VENDOR_DIR}/salsa-${SALSA_HASH}" }
  schemars = { version = "0.8.16" }
  seahash = { version = "4.1.0" }

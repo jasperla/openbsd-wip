@@ -1,0 +1,12 @@
+Don't run doctest during tests
+
+Index: crates/ruff_db/Cargo.toml
+--- crates/ruff_db/Cargo.toml.orig
++++ crates/ruff_db/Cargo.toml
+@@ -28,3 +28,6 @@ zip = { workspace = true }
+ [dev-dependencies]
+ insta = { workspace = true }
+ once_cell = { workspace = true }
++
++[lib]
++doctest = false
