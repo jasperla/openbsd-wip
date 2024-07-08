@@ -1,9 +1,9 @@
-Use local paths for crate async_zip and pubgrub
+Use local paths for crate async_zip, pubgrub and request-middleware
 
 Index: Cargo.toml
 --- Cargo.toml.orig
 +++ Cargo.toml
-@@ -57,7 +57,7 @@ async-channel = { version = "2.2.0" }
+@@ -59,7 +59,7 @@ async-channel = { version = "2.2.0" }
  async-compression = { version = "0.4.6" }
  async-trait = { version = "0.1.78" }
  async_http_range_reader = { version = "0.8.0" }
@@ -12,7 +12,7 @@ Index: Cargo.toml
  axoupdater = { version = "0.6.0", default-features = false }
  backoff = { version = "0.4.0" }
  base64 = { version = "0.22.0" }
-@@ -102,7 +102,7 @@ path-slash = { version = "0.2.1" }
+@@ -105,7 +105,7 @@ path-slash = { version = "0.2.1" }
  pathdiff = { version = "0.2.1" }
  petgraph = { version = "0.6.4" }
  platform-info = { version = "2.0.2" }
@@ -21,3 +21,22 @@ Index: Cargo.toml
  pyo3 = { version = "0.21.0" }
  pyo3-log = { version = "0.10.0" }
  quote = { version = "1.0.36" }
+@@ -113,8 +113,8 @@ rayon = { version = "1.8.0" }
+ reflink-copy = { version = "0.1.15" }
+ regex = { version = "1.10.2" }
+ reqwest = { version = "0.12.3", default-features = false, features = ["json", "gzip", "brotli", "stream", "rustls-tls", "rustls-tls-native-roots"] }
+-reqwest-middleware = { git = "https://github.com/astral-sh/reqwest-middleware", rev = "21ceec9a5fd2e8d6f71c3ea2999078fecbd13cbe" }
+-reqwest-retry = { git = "https://github.com/astral-sh/reqwest-middleware", rev = "21ceec9a5fd2e8d6f71c3ea2999078fecbd13cbe" }
++reqwest-middleware = { version = "0.3.2" }
++reqwest-retry = { version = "0.6.0" }
+ rkyv = { version = "0.7.43", features = ["strict", "validation"] }
+ rmp-serde = { version = "1.1.2" }
+ rust-netrc = { version = "0.1.1" }
+@@ -159,7 +159,6 @@ ignored = ["flate2"]
+ # For pyproject-toml
+ pep440_rs = { path = "crates/pep440-rs" }
+ pep508_rs = { path = "crates/pep508-rs" }
+-reqwest-middleware = { git = "https://github.com/astral-sh/reqwest-middleware", rev = "21ceec9a5fd2e8d6f71c3ea2999078fecbd13cbe" }
+ 
+ [workspace.lints.rust]
+ unsafe_code = "warn"
