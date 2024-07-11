@@ -92,9 +92,9 @@ SHA256 (cargo/ciborium-io-0.2.2.tar.gz) = Ba/qHgoGyb4z1Tm4dvHONpL0r+ostB90DndDIl
 SHA256 (cargo/ciborium-ll-0.2.2.tar.gz) = V2Y7ZT2UijOL+z7rqbsv1fz67Lnhmeh+HtpNnoskD9k=
 SHA256 (cargo/cipher-0.4.4.tar.gz) = dz87mvZER9LOmFAzDEc1FQFKojXmp4OwLbgf855KPa0=
 SHA256 (cargo/clap-4.5.7.tar.gz) = Xbg9ztNGOK1HTznyUNf+qVmL3SOerO0b30XVl9oPQz8=
-SHA256 (cargo/clap-4.5.8.tar.gz) = hLPtsYM29N9YW8mqMd2ZwDbfpdxemik5pyKhiPOolw0=
+SHA256 (cargo/clap-4.5.9.tar.gz) = ZKzBhG1Uwf6TanjcGJw04o0/Wvw0hAPyjs9TZgubhGI=
 SHA256 (cargo/clap_builder-4.5.7.tar.gz) = 9+IEVySF6z+/KPhxYSGRUh3xWbw+Fan1Bkxm26OowF8=
-SHA256 (cargo/clap_builder-4.5.8.tar.gz) = wcCd1a2mxseAddb9DaP5DYCAZR4tbMjrLxqqQDTO1wg=
+SHA256 (cargo/clap_builder-4.5.9.tar.gz) = b7g5PWe6Lnv68oojRY5OK1Q8xzqZWVUR6yB/24rt6UI=
 SHA256 (cargo/clap_complete-4.5.2.tar.gz) = 3XlQQyW/OLEBZbAuibQ0cwD4VfJzxMswxKMgnmWDJ14=
 SHA256 (cargo/clap_complete_command-0.5.1.tar.gz) = GDSVNx6njUyf9ji/xkl9Rv7SOW5PnFCuvBJ4pKmRmj0=
 SHA256 (cargo/clap_complete_fig-4.5.0.tar.gz) = VLPmX5H6vdI8rD1X051dk4tNqr0HDDNcAG3MuGamERA=
@@ -213,7 +213,7 @@ SHA256 (cargo/http-content-range-0.1.2.tar.gz) = nw0ajvIYqGQWEHeUs0zERpWNkgNVbDE
 SHA256 (cargo/httparse-1.8.0.tar.gz) = 2JfzlLrWpwXV9BBHYuEWp1Y55HDYCQHu0FqGCpXLGQQ=
 SHA256 (cargo/httpdate-1.0.3.tar.gz) = 3ztGQCqdWttMhqDPRj9C4ZmU4+6JEQGxhB8wpUXLSak=
 SHA256 (cargo/humantime-2.1.0.tar.gz) = mjpb+xlZMe6zNrKntNdh2uyEG5f5R9NDlGAXN6e7peQ=
-SHA256 (cargo/hyper-1.4.0.tar.gz) = xP5V+3p3LVml/x37/0/gJY0ZuJ/sSyM+ddNdXSMWutw=
+SHA256 (cargo/hyper-1.4.1.tar.gz) = UN/SLg520PZi1Cml+A/K84VQCSl+q2oKn4VDg0dEugU=
 SHA256 (cargo/hyper-rustls-0.27.2.tar.gz) = XuS+LJSJIaGlMgtinEGTkW7Xh6f38pP9P39abJ3nQVU=
 SHA256 (cargo/hyper-util-0.1.6.tar.gz) = OrkvT0nuT7T5l8eEt6Lg+nAFAhHgtqKH+JjDyXhcqVY=
 SHA256 (cargo/iana-time-zone-0.1.60.tar.gz) = 5/+7WhtUHqJWH4xBwIcobMCR4h5Vak8JqPbL8XtpsUE=
@@ -633,7 +633,7 @@ SHA256 (cargo/zstd-safe-5.0.2+zstd.1.5.2.tar.gz) = HSpVheBPnupLKj0eylCMTe6Vkqie9
 SHA256 (cargo/zstd-safe-7.1.0.tar.gz) = HNmbRca8A6AYyLioYCVnjIflVSYGTjj53zAZidzn7Ao=
 SHA256 (cargo/zstd-sys-2.0.10+zstd.1.5.6.tar.gz) = wlOkkUr1uvyPqMhu5ACCfoPPbsARlewfHthEG/ANZao=
 SHA256 (charliermarsh-rs-async-zip-1dcb40cfe1bf5325a6fd4bfcf9894db40241f585.tar.gz) = twEs4L7Mz1gpsOIlFKwDjrpYNdhGjtDkGgJDd8s8440=
-SHA256 (uv-0.2.23.tar.gz) = ZhgHWElnc9NcEMefE+cxVbaJinr+dQQzO3qfEMTxnGo=
+SHA256 (uv-0.2.24.tar.gz) = HWyipnjqcb19xm8lOq0z87wlbPf0YpIBJuDQ5A8XxoE=
 SIZE (astral-sh-pubgrub-b4435e2f3af10dab2336a0345b35dcd622699d06.tar.gz) = 86966
 SIZE (cargo/actix-codec-0.5.2.tar.gz) = 14085
 SIZE (cargo/actix-http-3.6.0.tar.gz) = 152432
@@ -728,9 +728,9 @@ SIZE (cargo/ciborium-io-0.2.2.tar.gz) = 6697
 SIZE (cargo/ciborium-ll-0.2.2.tar.gz) = 14695
 SIZE (cargo/cipher-0.4.4.tar.gz) = 19073
 SIZE (cargo/clap-4.5.7.tar.gz) = 56343
-SIZE (cargo/clap-4.5.8.tar.gz) = 56338
+SIZE (cargo/clap-4.5.9.tar.gz) = 56348
 SIZE (cargo/clap_builder-4.5.7.tar.gz) = 163957
-SIZE (cargo/clap_builder-4.5.8.tar.gz) = 163870
+SIZE (cargo/clap_builder-4.5.9.tar.gz) = 164088
 SIZE (cargo/clap_complete-4.5.2.tar.gz) = 37850
 SIZE (cargo/clap_complete_command-0.5.1.tar.gz) = 8273
 SIZE (cargo/clap_complete_fig-4.5.0.tar.gz) = 10932
@@ -849,7 +849,7 @@ SIZE (cargo/http-content-range-0.1.2.tar.gz) = 5132
 SIZE (cargo/httparse-1.8.0.tar.gz) = 29954
 SIZE (cargo/httpdate-1.0.3.tar.gz) = 10639
 SIZE (cargo/humantime-2.1.0.tar.gz) = 16749
-SIZE (cargo/hyper-1.4.0.tar.gz) = 151788
+SIZE (cargo/hyper-1.4.1.tar.gz) = 151849
 SIZE (cargo/hyper-rustls-0.27.2.tar.gz) = 34421
 SIZE (cargo/hyper-util-0.1.6.tar.gz) = 69910
 SIZE (cargo/iana-time-zone-0.1.60.tar.gz) = 27074
@@ -1269,4 +1269,4 @@ SIZE (cargo/zstd-safe-5.0.2+zstd.1.5.2.tar.gz) = 17273
 SIZE (cargo/zstd-safe-7.1.0.tar.gz) = 20792
 SIZE (cargo/zstd-sys-2.0.10+zstd.1.5.6.tar.gz) = 749088
 SIZE (charliermarsh-rs-async-zip-1dcb40cfe1bf5325a6fd4bfcf9894db40241f585.tar.gz) = 96766
-SIZE (uv-0.2.23.tar.gz) = 1314282
+SIZE (uv-0.2.24.tar.gz) = 1334669
