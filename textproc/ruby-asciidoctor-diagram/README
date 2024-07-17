@@ -1,5 +1,0 @@
-
-Known to work on OpenBSD
-
-ditaa: needs java, expects java executable in PATH
-tikz: needs texlive_texmf-minimal and pdflatex
