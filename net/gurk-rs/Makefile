@@ -32,8 +32,8 @@ SUBST_VARS =	LOCALBASE
 # 		< ${FILESDIR}/notification.rs.patch
 
 post-configure:
-	sed -i '/opt-level/s,2,0,' ${WRKDIR}/.cargo/config
-	cat ${FILESDIR}/config >> ${WRKDIR}/.cargo/config
+	sed -i '/opt-level/s,2,0,' ${WRKDIR}/.cargo/config.toml
+	cat ${FILESDIR}/config >> ${WRKDIR}/.cargo/config.toml
 
 do-install:
 	${INSTALL_PROGRAM} ${MODCARGO_TARGET_DIR}/release/gurk ${PREFIX}/bin/
