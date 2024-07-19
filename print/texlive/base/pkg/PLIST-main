@@ -121,7 +121,8 @@ bin/eolang
 bin/epspdf
 bin/epspdftk
 bin/epstopdf
-bin/eptex
+@comment texmfs already make a symlink called 'eptex'
+@comment bin/eptex
 bin/etex
 @bin bin/euptex
 bin/exceltex
