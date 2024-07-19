@@ -33,6 +33,8 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/completions/tspin.bash \
 		${PREFIX}/share/bash-completion/completions/tspin
 
+# TODO: fix tests
+
 .include "crates.inc"
 
 .include <bsd.port.mk>
