@@ -5,7 +5,7 @@ COMMENT =	extremely fast Python package installer and resolver
 
 GH_ACCOUNT =	astral-sh
 GH_PROJECT =	uv
-GH_TAGNAME =	0.2.28
+GH_TAGNAME =	0.2.29
 
 # Rust crates downloaded via git
 PUBGRUB_HASH =	3f0ba760951ab0deeac874b98bb18fc90103fcf7
