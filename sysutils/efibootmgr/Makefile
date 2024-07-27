@@ -1,4 +1,4 @@
-# requires /dev/efi
+# requires efi(4)
 ONLY_FOR_ARCHS =	amd64 arm64
 
 COMMENT =		EFI Boot Manager utility
