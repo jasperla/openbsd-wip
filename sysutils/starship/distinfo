@@ -386,7 +386,7 @@ SHA256 (cargo/zerocopy-derive-0.7.35.tar.gz) = +k+AgDRNRnH7ToMaE60eaAknSDh9/E9V4
 SHA256 (cargo/zvariant-4.2.0.tar.gz) = IIQpCrmhxHHDj8UklFg3c0+/EkSH4QXa7Cu1f9SMgf4=
 SHA256 (cargo/zvariant_derive-4.2.0.tar.gz) = c+K6VGvaaDqQZSusSiebwUatrROG8lN5z3MgDSACxEk=
 SHA256 (cargo/zvariant_utils-2.1.0.tar.gz) = xRvP98w9u1BVOWvPd0dIw9q0JrS4ZZBGljUjzuSAg0A=
-SHA256 (starship-1.20.0.tar.gz) = 6nOlRj0wxdXf1HOxGify8llCY1Eh3D/IkpfusidVzo8=
+SHA256 (starship-1.20.1.tar.gz) = hR2Evmn5Fx8QiQ47WLjF7GBX3Yc9yDv+C9+WX5hEtdw=
 SIZE (cargo/adler-1.0.2.tar.gz) = 12778
 SIZE (cargo/ahash-0.8.11.tar.gz) = 43607
 SIZE (cargo/aho-corasick-1.1.3.tar.gz) = 183311
@@ -775,4 +775,4 @@ SIZE (cargo/zerocopy-derive-0.7.35.tar.gz) = 37829
 SIZE (cargo/zvariant-4.2.0.tar.gz) = 82180
 SIZE (cargo/zvariant_derive-4.2.0.tar.gz) = 11057
 SIZE (cargo/zvariant_utils-2.1.0.tar.gz) = 7043
-SIZE (starship-1.20.0.tar.gz) = 9412202
+SIZE (starship-1.20.1.tar.gz) = 9414001
