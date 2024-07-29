@@ -642,7 +642,7 @@ SHA256 (cargo/zstd-safe-7.2.0.tar.gz) = +lVulx57Vo3HdcE2/J3ox3mxwvw6Y976r63/29MY
 SHA256 (cargo/zstd-sys-2.0.10+zstd.1.5.6.tar.gz) = wlOkkUr1uvyPqMhu5ACCfoPPbsARlewfHthEG/ANZao=
 SHA256 (cargo/zstd-sys-2.0.12+zstd.1.5.6.tar.gz) = Ck5AwyDDy0Wdmp/23pjP+I9HUe6SddFA4r6UordOTBM=
 SHA256 (charliermarsh-rs-async-zip-1dcb40cfe1bf5325a6fd4bfcf9894db40241f585.tar.gz) = twEs4L7Mz1gpsOIlFKwDjrpYNdhGjtDkGgJDd8s8440=
-SHA256 (uv-0.2.29.tar.gz) = tGm44I7HNqKpHRLJ9JIJ7Xpz3ve5N/yVpR4fxmpebRo=
+SHA256 (uv-0.2.30.tar.gz) = +fdlr+sIu+g2e49tg5H7SdLBIR39OwGx/q6SpiGDXuU=
 SIZE (astral-sh-pubgrub-3f0ba760951ab0deeac874b98bb18fc90103fcf7.tar.gz) = 87050
 SIZE (cargo/actix-codec-0.5.2.tar.gz) = 14085
 SIZE (cargo/actix-http-3.6.0.tar.gz) = 152432
@@ -1287,4 +1287,4 @@ SIZE (cargo/zstd-safe-7.2.0.tar.gz) = 21118
 SIZE (cargo/zstd-sys-2.0.10+zstd.1.5.6.tar.gz) = 749088
 SIZE (cargo/zstd-sys-2.0.12+zstd.1.5.6.tar.gz) = 749063
 SIZE (charliermarsh-rs-async-zip-1dcb40cfe1bf5325a6fd4bfcf9894db40241f585.tar.gz) = 96766
-SIZE (uv-0.2.29.tar.gz) = 1468793
+SIZE (uv-0.2.30.tar.gz) = 1475670
