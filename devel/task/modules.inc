@@ -1,0 +1,59 @@
+MODGO_MODULES =	\
+	github.com/!ladicle/tabwriter		 v1.0.0 \
+	github.com/!masterminds/semver/v3	 v3.2.1 \
+	github.com/alecthomas/assert/v2		 v2.7.0 \
+	github.com/alecthomas/chroma/v2		 v2.14.0 \
+	github.com/alecthomas/repr		 v0.4.0 \
+	github.com/creack/pty			 v1.1.21 \
+	github.com/davecgh/go-spew		 v1.1.1 \
+	github.com/dlclark/regexp2		 v1.11.0 \
+	github.com/dominikbraun/graph		 v0.23.0 \
+	github.com/fatih/color			 v1.17.0 \
+	github.com/frankban/quicktest		 v1.14.6 \
+	github.com/go-task/slim-sprig/v3	 v3.0.0 \
+	github.com/go-task/template		 v0.0.0-20240602015157-960e6f576656 \
+	github.com/google/go-cmp		 v0.6.0 \
+	github.com/google/renameio/v2		 v2.0.0 \
+	github.com/hexops/gotextdiff		 v1.0.3 \
+	github.com/joho/godotenv		 v1.5.1 \
+	github.com/klauspost/cpuid/v2		 v2.0.9 \
+	github.com/kr/pretty			 v0.3.1 \
+	github.com/kr/text			 v0.2.0 \
+	github.com/mattn/go-colorable		 v0.1.13 \
+	github.com/mattn/go-isatty		 v0.0.20 \
+	github.com/mattn/go-zglob		 v0.0.4 \
+	github.com/mitchellh/hashstructure/v2	 v2.0.2 \
+	github.com/otiai10/copy			 v1.14.0 \
+	github.com/otiai10/mint			 v1.5.1 \
+	github.com/pkg/diff			 v0.0.0-20210226163009-20ebb0f2a09e \
+	github.com/pmezard/go-difflib		 v1.0.0 \
+	github.com/radovskyb/watcher		 v1.0.7 \
+	github.com/rogpeppe/go-internal		 v1.12.0 \
+	github.com/sajari/fuzzy			 v1.0.0 \
+	github.com/spf13/pflag			 v1.0.5 \
+	github.com/stretchr/objx		 v0.5.2 \
+	github.com/stretchr/testify		 v1.9.0 \
+	github.com/zeebo/assert			 v1.3.0 \
+	github.com/zeebo/xxh3			 v1.0.2 \
+	golang.org/x/sync			 v0.7.0 \
+	golang.org/x/sys			 v0.21.0 \
+	golang.org/x/term			 v0.21.0 \
+	golang.org/x/tools			 v0.17.0 \
+	gopkg.in/check.v1			 v1.0.0-20180628173108-788fd7840127 \
+	gopkg.in/yaml.v3			 v3.0.1 \
+	mvdan.cc/editorconfig			 v0.2.1-0.20231228180347-1925077f8eb2 \
+	mvdan.cc/sh/v3				 v3.8.0
+
+MODGO_MODFILES =	\
+	github.com/mattn/go-isatty	 v0.0.16 \
+	github.com/stretchr/testify	 v1.8.4 \
+	golang.org/x/sync		 v0.3.0 \
+	golang.org/x/sync		 v0.6.0 \
+	golang.org/x/sys		 v0.0.0-20220715151400-c0bba94af5f8 \
+	golang.org/x/sys		 v0.0.0-20220811171246-fbc7d0a398ab \
+	golang.org/x/sys		 v0.17.0 \
+	golang.org/x/sys		 v0.18.0 \
+	golang.org/x/sys		 v0.6.0 \
+	golang.org/x/term		 v0.17.0 \
+	gopkg.in/check.v1		 v0.0.0-20161208181325-20d25e280405
+

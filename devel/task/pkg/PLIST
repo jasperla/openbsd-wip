@@ -1,0 +1,3 @@
+@comment @bin bin/release
+@comment @bin bin/sleepit
+@bin bin/task

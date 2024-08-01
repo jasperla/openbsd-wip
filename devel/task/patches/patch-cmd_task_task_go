@@ -1,0 +1,12 @@
+Index: cmd/task/task.go
+--- cmd/task/task.go.orig
++++ cmd/task/task.go
+@@ -59,7 +59,7 @@ func run() error {
+ 	entrypoint := flags.Entrypoint
+ 
+ 	if flags.Version {
+-		fmt.Printf("Task version: %s\n", ver.GetVersionWithSum())
++		fmt.Printf("Task version: %s\n", ver.GetVersion())
+ 		return nil
+ 	}
+ 
