@@ -29,6 +29,17 @@ WRKDIST =	${WRKSRC}
 pre-configure:
 	sed -i 's/%%VERSION%%/${V}/' ${WRKSRC}/internal/version/version.go
 
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/bash-completion/completions/
+	${INSTALL_DATA} ${WRKSRC}/completion/bash/task.bash \
+		${PREFIX}/share/bash-completion/completions/task
+	${INSTALL_DATA_DIR} ${PREFIX}/share/fish/completions/
+	${INSTALL_DATA} ${WRKSRC}/completion/fish/task.fish \
+		${PREFIX}/share/fish/completions/
+	${INSTALL_DATA_DIR} ${PREFIX}/share/zsh/site-functions/
+	${INSTALL_DATA} ${WRKSRC}/completion/zsh/_task \
+		${PREFIX}/share/zsh/site-functions/
+
 .include "modules.inc"
 
 .include <bsd.port.mk>
