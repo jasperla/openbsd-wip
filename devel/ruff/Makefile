@@ -5,11 +5,11 @@ COMMENT =	extremely fast Python linter and code formatter
 
 GH_ACCOUNT =	astral-sh
 GH_PROJECT =	ruff
-GH_TAGNAME =	0.5.5
+GH_TAGNAME =	0.5.6
 
 # Rust crates downloaded via git
 LSPTYPES_HASH =	3512a9f33eadc5402cfab1b8f7340824c8ca1439
-SALSA_HASH =	a1bf3a613f451af7fc0a59411c56abc47fe8e8e1
+SALSA_HASH =	0cae5c52a3240172ef0be5c9d19e63448c53397c
 
 DIST_TUPLE +=	github astral-sh lsp-types ${LSPTYPES_HASH} ${MODCARGO_VENDOR_DIR}
 DIST_TUPLE +=	github salsa-rs salsa ${SALSA_HASH} ${MODCARGO_VENDOR_DIR}
@@ -27,7 +27,7 @@ PERMIT_PACKAGE =	Yes
 WANTLIB +=	${MODCARGO_WANTLIB} m
 
 BUILD_DEPENDS+=	archivers/zstd
-LIB_DEPENDS +=	${BUILD_DEPENDS}
+
 TEST_DEPENDS+=	${BUILD_DEPENDS}
 
 MODULES =	devel/cargo
