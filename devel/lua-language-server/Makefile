@@ -2,20 +2,20 @@ COMMENT =	language server that offers Lua language support
 
 GH_ACCOUNT =	LuaLS
 GH_PROJECT =	lua-language-server
-GH_TAGNAME =    3.9.0
+GH_TAGNAME =    3.10.0
 
 # Sources for submodules
 DIST_TUPLE +=	github CppCXY EmmyLuaCodeStyle \
-		660a26085ff2c1275392a291063404d54fdd32b9 \
+		abdea2d412437e2f12a38e8179cd18af61c4429a \
 		${WRKSRC}/3rd/EmmyLuaCodeStyle
 DIST_TUPLE +=	github actboy168 bee.lua \
-		b4fda4e0865d4369c845015ab2ad45573d6ba245 \
+		8c01c7d79612d47f47f17d80304e66ae14d7b953 \
 		${WRKSRC}/3rd/bee.lua
 DIST_TUPLE += 	github actboy168 json.lua \
 		21c9584d30fa36c542c98b6b1410393318583712 \
 		${WRKSRC}/3rd/json.lua
 DIST_TUPLE += 	github love2d-community love-api \
-		728ba001f3398fd11b0a3909b919a7caf3e329a4 \
+		853639288547618dece86c3a8e52348fe304eba2 \
 		${WRKSRC}/3rd/love-api
 DIST_TUPLE += 	github bjornbytes lovr-docs \
 		e89c753e1c2849b7533481fcf058095f8e050b9f \
@@ -24,7 +24,7 @@ DIST_TUPLE +=	github sqmedeiros lpeglabel \
 		912b0b9e8641074408ffc2259e069b188e0c717b \
 		${WRKSRC}/3rd/lpeglabel
 DIST_TUPLE +=	github actboy168 luamake \
-		62d729a6eb72dbb89547538ff9ab1876a5daf0f9 \
+		c086f35cfad0236f74ba380d51f211c52a2c8abc \
 		${WRKSRC}/3rd/luamake
 
 CATEGORIES =	devel
