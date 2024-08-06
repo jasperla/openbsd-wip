@@ -1,3 +1,5 @@
+Neuter git(1) usage, replace timestamp for with static "OpenBSD" string
+
 Index: singleheader/amalgamate.py
 --- singleheader/amalgamate.py.orig
 +++ singleheader/amalgamate.py
