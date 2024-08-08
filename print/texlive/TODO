@@ -3,20 +3,4 @@ texmf
 
 Check pdfjam works (libpaper stuff). Depend on it?
 
-at pkg time:
-/usr/ports/pobj/texlive-20240312-texmf/fake-amd64/usr/local/man/man1/mtxrunjit.1: No one-line description, using filename "mtxrunjit"
-/usr/ports/pobj/texlive-20240312-texmf/fake-amd64/usr/local/man/man1/luatools.1: No one-line description, using filename "luatools"
-/usr/ports/pobj/texlive-20240312-texmf/fake-amd64/usr/local/man/man1/contextjit.1: No one-line description, using filename "contextjit"
 
-/usr/ports/pobj/texlive-20240312-texmf/fake-amd64/usr/local/man/man1/texlogfilter.1: No one-line description, using filename "texlogfilter"
-/usr/ports/pobj/texlive-20240312-texmf/fake-amd64/usr/local/man/man1/convertgls2bib.1: No one-line description, using filename "convertgls2bib"
-/usr/ports/pobj/texlive-20240312-texmf/fake-amd64/usr/local/man/man1/clxelatex.1: No one-line description, using filename "clxelatex"
-/usr/ports/pobj/texlive-20240312-texmf/fake-amd64/usr/local/man/man1/cllualatex.1: No one-line description, using filename "cllualatex"
-/usr/ports/pobj/texlive-20240312-texmf/fake-amd64/usr/local/man/man1/bib2gls.1: No one-line description, using filename "bib2gls"
-
-/usr/ports/pobj/texlive-20240312-texmf/fake-amd64/usr/local/man/man1/twill-refsort.1: No one-line description, using filename "twill-refsort"
-/usr/ports/pobj/texlive-20240312-texmf/fake-amd64/usr/local/man/man1/memoize-extract.py.1: No one-line description, using filename "memoize-extract.py"
-/usr/ports/pobj/texlive-20240312-texmf/fake-amd64/usr/local/man/man1/memoize-extract.pl.1: No one-line description, using filename "memoize-extract.pl"
-/usr/ports/pobj/texlive-20240312-texmf/fake-amd64/usr/local/man/man1/memoize-clean.py.1: No one-line description, using filename "memoize-clean.py"
-/usr/ports/pobj/texlive-20240312-texmf/fake-amd64/usr/local/man/man1/memoize-clean.pl.1: No one-line description, using filename "memoize-clean.pl"
-/usr/ports/pobj/texlive-20240312-texmf/fake-amd64/usr/local/man/man1/ctwill-proofsort.1: No one-line description, using filename "ctwill-proofsort"

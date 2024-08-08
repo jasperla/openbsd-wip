@@ -1,0 +1,12 @@
+Index: texmf-dist/doc/man/man1/bib2gls.1
+--- texmf-dist/doc/man/man1/bib2gls.1.orig
++++ texmf-dist/doc/man/man1/bib2gls.1
+@@ -60,6 +60,8 @@
+ .\" way too many mistakes in technical documents.
+ .if n .ad l
+ .nh
++.SH NAME
++bib2gls \(en glossary processor
+ .SH SYNOPSIS
+ .IX Header "SYNOPSIS"
+ \&\fBbib2gls\fR [\fIoption\fR]+ \fIauxfile\fR
