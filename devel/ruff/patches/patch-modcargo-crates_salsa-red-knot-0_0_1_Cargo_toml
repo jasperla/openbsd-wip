@@ -1,0 +1,10 @@
+Index: modcargo-crates/salsa-red-knot-0.0.1/Cargo.toml
+--- modcargo-crates/salsa-red-knot-0.0.1/Cargo.toml.orig
++++ modcargo-crates/salsa-red-knot-0.0.1/Cargo.toml
+@@ -38,6 +38,3 @@ trybuild = "1.0"
+ [[bench]]
+ name = "incremental"
+ harness = false
+-
+-[workspace]
+-members = ["components/salsa-macro-rules", "components/salsa-macros"]
