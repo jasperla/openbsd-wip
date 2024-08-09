@@ -1,19 +1,15 @@
 # ring-v0.17 does not support sparc64
 NOT_FOR_ARCHS =	sparc64
 
-# TODO: build with Rust 1.80.0 when released
-# NEW requirements with uv version 0.2.31
-# uv-cli@0.0.1 requires rustc 1.80
-
 COMMENT =	extremely fast Python package installer and resolver
 
 GH_ACCOUNT =	astral-sh
 GH_PROJECT =	uv
-GH_TAGNAME =	0.2.31
+GH_TAGNAME =	0.2.30
 
 # Rust crates downloaded via git
 PUBGRUB_HASH =	3f0ba760951ab0deeac874b98bb18fc90103fcf7
-ASYNC_HASH =	011b24604fa7bc223daaad7712c0694bac8f0a87
+ASYNC_HASH =	1dcb40cfe1bf5325a6fd4bfcf9894db40241f585
 
 DIST_TUPLE +=	github astral-sh pubgrub ${PUBGRUB_HASH} ${MODCARGO_VENDOR_DIR}
 DIST_TUPLE +=	github charliermarsh rs-async-zip ${ASYNC_HASH} \
