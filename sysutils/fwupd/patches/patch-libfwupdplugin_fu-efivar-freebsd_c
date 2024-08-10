@@ -1,0 +1,14 @@
+- Pass efi_set_variable(3) a required mode value
+
+Index: libfwupdplugin/fu-efivar-freebsd.c
+--- libfwupdplugin/fu-efivar-freebsd.c.orig
++++ libfwupdplugin/fu-efivar-freebsd.c
+@@ -173,7 +173,7 @@ fu_efivar_set_data_impl(const gchar *guid,
+ 	efi_guid_t guidt;
+ 	efi_str_to_guid(guid, &guidt);
+ 
+-	if (efi_set_variable(guidt, name, (guint8 *)data, sz, attr) != 0) {
++	if (efi_set_variable(guidt, name, (guint8 *)data, sz, attr, 0644) != 0) {
+ 		g_set_error(error,
+ 			    G_IO_ERROR,
+ 			    G_IO_ERROR_FAILED,
