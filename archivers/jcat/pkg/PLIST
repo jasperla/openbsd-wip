@@ -1,0 +1,26 @@
+@bin bin/jcat-tool
+include/libjcat-1/
+include/libjcat-1/jcat.h
+include/libjcat-1/libjcat/
+include/libjcat-1/libjcat/jcat-blob.h
+include/libjcat-1/libjcat/jcat-bt-checkpoint.h
+include/libjcat-1/libjcat/jcat-bt-verifier.h
+include/libjcat-1/libjcat/jcat-common.h
+include/libjcat-1/libjcat/jcat-compile.h
+include/libjcat-1/libjcat/jcat-context.h
+include/libjcat-1/libjcat/jcat-engine.h
+include/libjcat-1/libjcat/jcat-file.h
+include/libjcat-1/libjcat/jcat-item.h
+include/libjcat-1/libjcat/jcat-result.h
+include/libjcat-1/libjcat/jcat-version.h
+lib/girepository-1.0/
+lib/girepository-1.0/Jcat-1.0.typelib
+@lib lib/libjcat.so.${LIBjcat_VERSION}
+lib/pkgconfig/jcat.pc
+@man man/man1/jcat-tool.1
+share/gir-1.0/
+share/gir-1.0/Jcat-1.0.gir
+share/vala/
+share/vala/vapi/
+share/vala/vapi/jcat.deps
+share/vala/vapi/jcat.vapi
