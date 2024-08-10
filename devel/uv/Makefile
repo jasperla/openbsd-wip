@@ -5,11 +5,11 @@ COMMENT =	extremely fast Python package installer and resolver
 
 GH_ACCOUNT =	astral-sh
 GH_PROJECT =	uv
-GH_TAGNAME =	0.2.30
+GH_TAGNAME =	0.2.31
 
 # Rust crates downloaded via git
 PUBGRUB_HASH =	3f0ba760951ab0deeac874b98bb18fc90103fcf7
-ASYNC_HASH =	1dcb40cfe1bf5325a6fd4bfcf9894db40241f585
+ASYNC_HASH =	011b24604fa7bc223daaad7712c0694bac8f0a87
 
 DIST_TUPLE +=	github astral-sh pubgrub ${PUBGRUB_HASH} ${MODCARGO_VENDOR_DIR}
 DIST_TUPLE +=	github charliermarsh rs-async-zip ${ASYNC_HASH} \
@@ -26,9 +26,9 @@ PERMIT_PACKAGE =	Yes
 
 BUILD_DEPENDS +=	devel/cargo-generate-vendor
 
-LIB_DEPENDS +=	archivers/bzip2 archivers/zstd
+LIB_DEPENDS +=	archivers/bzip2 archivers/zstd archivers/xz
 
-WANTLIB +=	${MODCARGO_WANTLIB} m bz2 zstd
+WANTLIB +=	${MODCARGO_WANTLIB} m bz2 lzma zstd
 
 MODULES =	devel/cargo
 
