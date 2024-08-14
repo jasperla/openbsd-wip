@@ -1,0 +1,24 @@
+remove -Werror
+remove -ldl
+
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -23,7 +23,7 @@ if(MSVC)
+ endif()
+ 
+ if(NOT MSVC)
+-  target_compile_options(${PROJECT_NAME} PRIVATE -Wall -Wconversion -Wno-strict-aliasing -Werror)
++  target_compile_options(${PROJECT_NAME} PRIVATE -Wall -Wconversion -Wno-strict-aliasing)
+ 
+   if(CMAKE_CXX_COMPILER_VERSION VERSION_GREATER_EQUAL "7.1" AND NOT APPLE AND NOT ${CMAKE_CXX_COMPILER_ID} MATCHES "Clang")
+     target_compile_options(${PROJECT_NAME} PRIVATE -Wno-format-truncation)
+@@ -89,7 +89,7 @@ endif()
+ if(WIN32)
+   target_link_libraries(${PROJECT_NAME} shlwapi DbgHelp)
+ elseif(UNIX)
+-  target_link_libraries(${PROJECT_NAME} -lpthread -ldl)
++  target_link_libraries(${PROJECT_NAME} -lpthread)
+ endif()
+ 
+ # phoenix

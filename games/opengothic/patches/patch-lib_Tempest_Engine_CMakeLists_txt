@@ -1,0 +1,17 @@
+skip vendored openal
+
+Index: lib/Tempest/Engine/CMakeLists.txt
+--- lib/Tempest/Engine/CMakeLists.txt.orig
++++ lib/Tempest/Engine/CMakeLists.txt
+@@ -89,7 +89,10 @@ add_definitions(-DSTB_TRUETYPE_IMPLEMENTATION)
+ add_definitions(-DSTB_IMAGE_WRITE_IMPLEMENTATION)
+ 
+ ### OpenAl
+-if(TEMPEST_BUILD_AUDIO)
++if(${CMAKE_SYSTEM_NAME} MATCHES "OpenBSD")
++  add_definitions(-DTEMPEST_BUILD_AUDIO)
++  add_definitions(-DAL_ALEXT_PROTOTYPES)
++elseif(TEMPEST_BUILD_AUDIO)
+   add_definitions(-DTEMPEST_BUILD_AUDIO)
+   if(${CMAKE_SYSTEM_NAME} MATCHES "FreeBSD")
+       set(ALSOFT_BACKEND_WAVE     ON  CACHE INTERNAL "")

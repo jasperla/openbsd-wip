@@ -1,0 +1,4 @@
+prevent unneeded files from being picked up by update-plist,
+  especially conflicting glm and bullet files
+fix post-install for libsquish (hard-coded version suffix)
+figure out the changing crashes on launch (SIGSEV, SIGFPE)

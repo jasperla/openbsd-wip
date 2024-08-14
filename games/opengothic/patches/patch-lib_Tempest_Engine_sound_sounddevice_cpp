@@ -1,0 +1,31 @@
+EXPERIMENTAL: disable loglevel hack, as there is a segfault
+
+Index: lib/Tempest/Engine/sound/sounddevice.cpp
+--- lib/Tempest/Engine/sound/sounddevice.cpp.orig
++++ lib/Tempest/Engine/sound/sounddevice.cpp
+@@ -18,13 +18,15 @@
+ 
+ using namespace Tempest;
+ 
++/*
+ enum class LogLevel {
+   Disable,
+   Error,
+   Warning,
+   Trace
+   };
+-extern LogLevel gLogLevel; // HACK: openal spams too much
++*/
++//extern LogLevel gLogLevel; // HACK: openal spams too much
+ 
+ struct SoundDevice::Data {
+   std::shared_ptr<Device> dev;
+@@ -33,7 +35,7 @@ struct SoundDevice::Data {
+ 
+ struct SoundDevice::Device {
+   Device() {
+-    gLogLevel = LogLevel::Error;
++    //gLogLevel = LogLevel::Error;
+     dev = alcOpenDevice(nullptr);
+     if(dev==nullptr)
+       throw std::system_error(Tempest::SoundErrc::NoDevice);
