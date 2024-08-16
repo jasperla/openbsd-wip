@@ -10,9 +10,16 @@ lib/cmake/benchmark/benchmarkTargets.cmake
 @lib lib/libbenchmark.so.${LIBbenchmark_VERSION}
 @lib lib/libbenchmark_main.so.${LIBbenchmark_main_VERSION}
 lib/pkgconfig/benchmark.pc
+lib/pkgconfig/benchmark_main.pc
 share/doc/benchmark/
 share/doc/benchmark/AssemblyTests.md
 share/doc/benchmark/_config.yml
+share/doc/benchmark/assets/
+share/doc/benchmark/assets/images/
+share/doc/benchmark/assets/images/icon.png
+share/doc/benchmark/assets/images/icon.xcf
+share/doc/benchmark/assets/images/icon_black.png
+share/doc/benchmark/assets/images/icon_black.xcf
 share/doc/benchmark/dependencies.md
 share/doc/benchmark/index.md
 share/doc/benchmark/perf_counters.md
