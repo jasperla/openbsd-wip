@@ -2,7 +2,7 @@ COMMENT =	log file highlighter
 
 GH_ACCOUNT =	bensadeh
 GH_PROJECT =	tailspin
-GH_TAGNAME =	3.0.1
+GH_TAGNAME =	3.0.2
 
 CATEGORIES =	sysutils
 
