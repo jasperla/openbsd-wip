@@ -3,7 +3,7 @@ Use local paths for crate async_zip, pubgrub and request-middleware
 Index: Cargo.toml
 --- Cargo.toml.orig
 +++ Cargo.toml
-@@ -62,7 +62,7 @@ async-channel = { version = "2.2.0" }
+@@ -63,7 +63,7 @@ async-channel = { version = "2.2.0" }
  async-compression = { version = "0.4.6" }
  async-trait = { version = "0.1.78" }
  async_http_range_reader = { version = "0.8.0" }
@@ -12,16 +12,16 @@ Index: Cargo.toml
  axoupdater = { version = "0.7.0", default-features = false }
  backoff = { version = "0.4.0" }
  base64 = { version = "0.22.0" }
-@@ -109,7 +109,7 @@ pathdiff = { version = "0.2.1" }
+@@ -111,7 +111,7 @@ pathdiff = { version = "0.2.1" }
  petgraph = { version = "0.6.4" }
  platform-info = { version = "2.0.2" }
  proc-macro2 = { version = "1.0.86" }
--pubgrub = { git = "https://github.com/astral-sh/pubgrub", rev = "3f0ba760951ab0deeac874b98bb18fc90103fcf7" }
+-pubgrub = { git = "https://github.com/astral-sh/pubgrub", rev = "2fac39371a47e7cb821e510aaa4de25405413d29" }
 +pubgrub = { path = "${MODCARGO_VENDOR_DIR}/pubgrub-${PUBGRUB_HASH}" }
  pyo3 = { version = "0.21.0" }
  pyo3-log = { version = "0.10.0" }
  quote = { version = "1.0.36" }
-@@ -117,8 +117,8 @@ rayon = { version = "1.8.0" }
+@@ -119,8 +119,8 @@ rayon = { version = "1.8.0" }
  reflink-copy = { version = "0.1.15" }
  regex = { version = "1.10.2" }
  reqwest = { version = "0.12.3", default-features = false, features = ["json", "gzip", "brotli", "stream", "rustls-tls", "rustls-tls-native-roots"] }
@@ -32,7 +32,7 @@ Index: Cargo.toml
  rkyv = { version = "0.7.43", features = ["strict", "validation"] }
  rmp-serde = { version = "1.1.2" }
  rust-netrc = { version = "0.1.1" }
-@@ -166,7 +166,6 @@ ignored = ["flate2"]
+@@ -170,7 +170,6 @@ ignored = ["flate2", "xz2"]
  # For pyproject-toml
  pep440_rs = { path = "crates/pep440-rs" }
  pep508_rs = { path = "crates/pep508-rs" }
