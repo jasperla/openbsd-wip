@@ -5,7 +5,7 @@ COMMENT =	extremely fast Python linter and code formatter
 
 GH_ACCOUNT =	astral-sh
 GH_PROJECT =	ruff
-GH_TAGNAME =	0.5.7
+GH_TAGNAME =	0.6.1
 
 # Rust crates downloaded via git
 LSPTYPES_HASH =	3512a9f33eadc5402cfab1b8f7340824c8ca1439
@@ -29,7 +29,6 @@ PERMIT_PACKAGE =	Yes
 WANTLIB +=	${MODCARGO_WANTLIB} m
 
 BUILD_DEPENDS+=	archivers/zstd
-
 TEST_DEPENDS+=	${BUILD_DEPENDS}
 
 MODULES =	devel/cargo
@@ -78,6 +77,9 @@ do-install:
 
 # Skip tests with errors (generate_json_schema, idx)
 MODCARGO_TEST_ARGS +=	-- --skip generate_json_schema --skip idx
+
+# TODO: fix tests
+# test unix::symlinked_module_search_path ... FAILED
 
 .include "crates.inc"
 
