@@ -12,31 +12,31 @@ Index: Cargo.toml
  axoupdater = { version = "0.7.0", default-features = false }
  backoff = { version = "0.4.0" }
  base64 = { version = "0.22.0" }
-@@ -111,7 +111,7 @@ pathdiff = { version = "0.2.1" }
+@@ -112,7 +112,7 @@ pathdiff = { version = "0.2.1" }
  petgraph = { version = "0.6.4" }
  platform-info = { version = "2.0.2" }
  proc-macro2 = { version = "1.0.86" }
--pubgrub = { git = "https://github.com/astral-sh/pubgrub", rev = "2fac39371a47e7cb821e510aaa4de25405413d29" }
+-pubgrub = { git = "https://github.com/astral-sh/pubgrub", rev = "aaef464c1b0d8eea4ff9ffaee4f3458c236d10da" }
 +pubgrub = { path = "${MODCARGO_VENDOR_DIR}/pubgrub-${PUBGRUB_HASH}" }
  pyo3 = { version = "0.21.0" }
  pyo3-log = { version = "0.10.0" }
  quote = { version = "1.0.36" }
-@@ -119,8 +119,8 @@ rayon = { version = "1.8.0" }
+@@ -120,8 +120,8 @@ rayon = { version = "1.8.0" }
  reflink-copy = { version = "0.1.15" }
  regex = { version = "1.10.2" }
  reqwest = { version = "0.12.3", default-features = false, features = ["json", "gzip", "brotli", "stream", "rustls-tls", "rustls-tls-native-roots"] }
--reqwest-middleware = { git = "https://github.com/astral-sh/reqwest-middleware", rev = "21ceec9a5fd2e8d6f71c3ea2999078fecbd13cbe" }
--reqwest-retry = { git = "https://github.com/astral-sh/reqwest-middleware", rev = "21ceec9a5fd2e8d6f71c3ea2999078fecbd13cbe" }
+-reqwest-middleware = { git = "https://github.com/astral-sh/reqwest-middleware", rev = "5e3eaf254b5bd481c75d2710eed055f95b756913" }
+-reqwest-retry = { git = "https://github.com/astral-sh/reqwest-middleware", rev = "5e3eaf254b5bd481c75d2710eed055f95b756913" }
 +reqwest-middleware = { version = "0.3.2" }
 +reqwest-retry = { version = "0.6.0" }
  rkyv = { version = "0.7.43", features = ["strict", "validation"] }
  rmp-serde = { version = "1.1.2" }
  rust-netrc = { version = "0.1.1" }
-@@ -170,7 +170,6 @@ ignored = ["flate2", "xz2"]
+@@ -171,7 +171,6 @@ ignored = ["flate2", "xz2"]
  # For pyproject-toml
  pep440_rs = { path = "crates/pep440-rs" }
  pep508_rs = { path = "crates/pep508-rs" }
--reqwest-middleware = { git = "https://github.com/astral-sh/reqwest-middleware", rev = "21ceec9a5fd2e8d6f71c3ea2999078fecbd13cbe" }
+-reqwest-middleware = { git = "https://github.com/astral-sh/reqwest-middleware", rev = "5e3eaf254b5bd481c75d2710eed055f95b756913" }
  
  [workspace.lints.rust]
  unsafe_code = "warn"
