@@ -5,7 +5,7 @@ COMMENT =	extremely fast Python package installer and resolver
 
 GH_ACCOUNT =	astral-sh
 GH_PROJECT =	uv
-GH_TAGNAME =	0.3.0
+GH_TAGNAME =	0.3.1
 
 # Rust crates downloaded via git
 PUBGRUB_HASH =	aaef464c1b0d8eea4ff9ffaee4f3458c236d10da
@@ -17,7 +17,8 @@ DIST_TUPLE +=	github charliermarsh rs-async-zip ${ASYNC_HASH} \
 
 CATEGORIES =	devel
 
-HOMEPAGE =	https://github.com/astral-sh/uv
+# https://github.com/astral-sh/uv
+HOMEPAGE =	https://docs.astral.sh/uv/
 
 MAINTAINER =	Laurent Cheylus <foxy@free.fr>
 
