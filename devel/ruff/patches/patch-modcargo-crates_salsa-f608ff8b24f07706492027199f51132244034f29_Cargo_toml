@@ -1,0 +1,10 @@
+Index: modcargo-crates/salsa-f608ff8b24f07706492027199f51132244034f29/Cargo.toml
+--- modcargo-crates/salsa-f608ff8b24f07706492027199f51132244034f29/Cargo.toml.orig
++++ modcargo-crates/salsa-f608ff8b24f07706492027199f51132244034f29/Cargo.toml
+@@ -42,6 +42,3 @@ harness = false
+ [[bench]]
+ name = "incremental"
+ harness = false
+-
+-[workspace]
+-members = ["components/salsa-macro-rules", "components/salsa-macros"]
