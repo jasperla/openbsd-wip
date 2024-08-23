@@ -1,20 +1,20 @@
 COMMENT =		official app for german ID cards and residence permits
 CATEGORIES =		security x11
 
-GH_ACCOUNT =		Governikus
-GH_PROJECT =		AusweisApp2
-GH_TAGNAME =		1.26.7
+V =			1.26.7
+DISTNAME =		AusweisApp2-${V}
 
 # EUPLv1.2
 PERMIT_PACKAGE =	Yes
 
 HOMEPAGE =		https://www.ausweisapp.bund.de/ausweisapp2/
+SITES =			https://github.com/Governikus/AusweisApp/releases/download/${V}/
 
 MAINTAINER =		Klemens Nanni <kn@openbsd.org>
 
 WANTLIB += ${COMPILER_LIBCXX} Qt5Concurrent Qt5Core Qt5Gui Qt5Network
 WANTLIB += Qt5Qml Qt5QmlModels Qt5QmlWorkerScript Qt5Quick Qt5QuickControls2
-WANTLIB += Qt5Svg Qt5WebSockets Qt5Widgets c m pcsclite
+WANTLIB += Qt5Svg Qt5WebSockets Qt5Widgets c m pcsclite udev
 
 # C++20
 COMPILER =		base-clang ports-gcc
@@ -25,8 +25,8 @@ MODULES =		devel/cmake \
 # ${WRKSRC}/cmake/tests/openssl.cpp:25:3:	error: RSA-PSK is required.
 BUILD_DEPENDS +=	security/openssl/1.1
 
-LIB_DEPENDS =		devel/http-parser \
-			security/pcsc-lite \
+LIB_DEPENDS =		security/pcsc-lite \
+			sysutils/libudev-openbsd \
 			x11/qt5/qtquickcontrols2 \
 			x11/qt5/qtdeclarative \
 			x11/qt5/qtsvg \
