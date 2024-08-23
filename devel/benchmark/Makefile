@@ -7,6 +7,8 @@ SHARED_LIBS +=		benchmark_main	0.0
 
 CATEGORIES =		devel
 
+MAINTAINER =		Klemens Nanni <kn@openbsd.org>
+
 # Apache 2.0
 PERMIT_PACKAGE =	Yes
 
