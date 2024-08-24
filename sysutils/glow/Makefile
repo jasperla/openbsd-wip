@@ -1,7 +1,7 @@
 COMMENT =	terminal based markdown reader
 
-MODGO_MODNAME =	github.com/charmbracelet/glow
-MODGO_VERSION =	v1.5.1
+MODGO_MODNAME =	github.com/charmbracelet/glow/v2
+MODGO_VERSION =	v2.0.0
 
 DISTNAME =	glow-${MODGO_VERSION}
 
@@ -18,16 +18,19 @@ WANTLIB +=      c pthread
 
 MODULES =	lang/go
 
-MODGO_LDFLAGS +=	-X main.Version=${MODGO_VERSION:S/v//}
+MODGO_LDFLAGS +=	-X main.Version=${MODGO_VERSION}
 
 # Tests fail in glow_test.go => try to get datas from github.com
 NO_TEST =	Yes
 
 # Generate shells completion
 post-build:
-	${MODGO_WORKSPACE}/bin/glow completion bash > ${WRKSRC}/completion.bash
-	${MODGO_WORKSPACE}/bin/glow completion fish > ${WRKSRC}/completion.fish
-	${MODGO_WORKSPACE}/bin/glow completion zsh > ${WRKSRC}/completion.zsh
+	HOME=${WRKSRC} ${MODGO_WORKSPACE}/bin/glow completion bash \
+	     > ${WRKSRC}/completion.bash
+	HOME=${WRKSRC} ${MODGO_WORKSPACE}/bin/glow completion fish \
+	     > ${WRKSRC}/completion.fish
+	HOME=${WRKSRC} ${MODGO_WORKSPACE}/bin/glow completion zsh \
+	     > ${WRKSRC}/completion.zsh
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/bash-completion/completions/
