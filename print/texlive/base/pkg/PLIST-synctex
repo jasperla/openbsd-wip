@@ -1,4 +1,4 @@
-@conflict texlive_base-<2023
+@conflict texlive_base-<2024
 @bin bin/synctex
 include/synctex/
 include/synctex/synctex_parser.h

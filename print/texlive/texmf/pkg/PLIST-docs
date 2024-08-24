@@ -1,9 +1,9 @@
 @conflict teTeX_texmf-doc-*
-@conflict texlive_base-<2023
-@conflict texlive_texmf-minimal-<2023
-@conflict texlive_texmf-full-<2023
-@conflict texlive_texmf-buildset-<2023
-@conflict texlive_texmf-context-<2023
+@conflict texlive_base-<2024
+@conflict texlive_texmf-minimal-<2024
+@conflict texlive_texmf-full-<2024
+@conflict texlive_texmf-buildset-<2024
+@conflict texlive_texmf-context-<2024
 @pkgpath print/texlive/texmf-docs
 @pkgpath print/teTeX_texmf,-doc
 share/texmf-dist/
