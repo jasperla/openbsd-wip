@@ -1,0 +1,3 @@
+The simdjson library uses commonly available SIMD instructions and
+microparallel algorithms to parse JSON 4x faster than RapidJSON and
+25x faster than JSON for Modern C++.
