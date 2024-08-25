@@ -1,6 +1,4 @@
 texmf
 =====
 
-Check pdfjam works (libpaper stuff). Depend on it?
-
-
+dvisvgm.

@@ -42,10 +42,9 @@ RUN_DEPENDS-main =	graphics/libwebp \
 			print/ps2eps \
 			print/psutils \
 			print/t1utils \
+			texlive_texmf-buildset-${V}:print/texlive/texmf,-buildset \
 			devel/desktop-file-utils \
 			${BASE_PKGPATH},-synctex
-#texlive_texmf-buildset-${V}:print/texlive/texmf,-buildset \
-# XXX put back.
 
 LIB_DEPENDS-main =	converters/libiconv \
 			graphics/png \
