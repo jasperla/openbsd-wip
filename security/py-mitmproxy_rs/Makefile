@@ -35,12 +35,6 @@ WRKSRC =		${WRKDIST}/mitmproxy-rs
 
 NO_TEST =		Yes
 
-do-build:
-	${MODCARGO_CARGO_RUN} build \
-		--manifest-path ${MODCARGO_CARGOTOML} \
-		--release \
-		${MODCARGO_BUILD_ARGS}
-
 do-install:
 	${INSTALL_DATA_DIR} ${WRKINST}${MODPY_LIBDIR}
 	${MODPY_BIN} -m installer -d ${WRKINST} ${WRKSRC}/target/wheels/*.whl
