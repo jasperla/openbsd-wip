@@ -24,8 +24,8 @@ RUN_DEPENDS =		archivers/py-brotli${MODPY_FLAVOR} \
 			databases/py-ldap3${MODPY_FLAVOR} \
 			devel/py-certifi${MODPY_FLAVOR} \
 			devel/py-kaitaistruct${MODPY_FLAVOR} \
-			devel/py-protobuf${MODPY_FLAVOR} \
 			devel/py-parsing${MODPY_FLAVOR} \
+			devel/py-protobuf${MODPY_FLAVOR} \
 			devel/py-sortedcontainers${MODPY_FLAVOR} \
 			devel/py-typing-extensions${MODPY_FLAVOR} \
 			devel/py-urwid${MODPY_FLAVOR} \
