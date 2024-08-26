@@ -5,7 +5,7 @@ COMMENT =	idiomatic, lean, fast & safe pure Rust implementation of Git
 
 GH_ACCOUNT =	Byron
 GH_PROJECT =	gitoxide
-GH_TAGNAME =	v0.36.0
+GH_TAGNAME =	v0.37.0
 
 CATEGORIES =	devel
 
@@ -30,6 +30,8 @@ SEPARATE_BUILD =	Yes
 # Set version during build
 post-patch:
 	sed -i 's,%VERSION%,${GH_TAGNAME:S/v//},' ${WRKSRC}/build.rs
+
+# TODO: generate and install shell completions for Bash/ZSH/Fish
 
 do-install:
 	${INSTALL_PROGRAM} ${MODCARGO_TARGET_DIR}/release/gix ${PREFIX}/bin/
