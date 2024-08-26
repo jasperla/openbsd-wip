@@ -1,4 +1,4 @@
-SHA256 (cargo-nextest-0.9.74.tar.gz) = k+83nqyC2En6fkYSjFedAGoN2zl9DK+U0yTskLG0+QY=
+SHA256 (cargo-nextest-0.9.75.tar.gz) = qCKQROi6WdUZw6pf41LDtP6ENf/Af7rSUSRgR7satk8=
 SHA256 (cargo/addr2line-0.21.0.tar.gz) = ijCy4jueF6n5BkHHqxVJzZtE8pbTzL8wnShjz+OYoMs=
 SHA256 (cargo/adler-1.0.2.tar.gz) = 8mIBYEyHseAb09mPjV2aj8u4FejO20H/zL60v1k6Nf4=
 SHA256 (cargo/ahash-0.8.11.tar.gz) = 6J2oQagEGKmzkeuuoX9cES/6qpb2IdLChbUXTadrkBE=
@@ -68,7 +68,7 @@ SHA256 (cargo/der-0.7.9.tar.gz) = 9Vv457ZYmGNzecG3TrFVEQfIKU7SbYVc65/RoJz8m8A=
 SHA256 (cargo/dialoguer-0.11.0.tar.gz) = ZYvOgF13D0B7xiEC/KfCxkzu8vvLK4vRnSdlzgk5gN4=
 SHA256 (cargo/diff-0.1.13.tar.gz) = ViVJhndeMjP/qcTX0/qvbTaiwJ0wsgaH6fiLyLr8Fsg=
 SHA256 (cargo/digest-0.10.7.tar.gz) = ntmigfe8m3V25hRoumFaZqXIz9/0JCCnCqgnAaOx4pI=
-SHA256 (cargo/display-error-chain-0.2.0.tar.gz) = 93r551V4was09fBFRaiwW+DDb716m7PPLSqXHkNf27k=
+SHA256 (cargo/display-error-chain-0.2.1.tar.gz) = fTBeWjkE7hQWZDmnD+7wSFPBI0Im27J+3hJ7iNxaSp0=
 SHA256 (cargo/duct-0.13.7.tar.gz) = 5KtXGNEiS2MlLNDG909kgPn/6xF0OKLg9c9tmkeYkpw=
 SHA256 (cargo/dunce-1.0.5.tar.gz) = knc1BNWMCT9t4kWa9K8z+qUYwTRR648rVpjtPTbnyBM=
 SHA256 (cargo/ed25519-2.2.3.tar.gz) = EVUxurwSlpaljGSk/vCov56WmGKfuX6eQHZ9I1z7zVM=
@@ -150,7 +150,7 @@ SHA256 (cargo/itoa-1.0.11.tar.gz) = SfHxSHMzVFRQDVlhHxz0pLD3hvmsEfQxKnjkzyVmaVs=
 SHA256 (cargo/jobserver-0.1.32.tar.gz) = SNHby762p/7H4FmECqU4vWKqzPlyxzRsTZ0gWTEoU9A=
 SHA256 (cargo/js-sys-0.3.69.tar.gz) = KcFVY9wnJpc99ic1fODJ3d2+oZSDaQnWVd9qddLPKW0=
 SHA256 (cargo/lazy_static-1.4.0.tar.gz) = 4qutI/vEKzcA8vJ5hE3IMq2ysusGmy35GPRVxOGMxkY=
-SHA256 (cargo/libc-0.2.157.tar.gz) = N0r1+U5U+pfPdelFzOimsgHoihoH5oi0ff0qWcZtvYY=
+SHA256 (cargo/libc-0.2.158.tar.gz) = 2K3EuxgDoyQHDmSpiumPOJNNkZV6mc+zpD3LwBvFZDk=
 SHA256 (cargo/libm-0.2.8.tar.gz) = TsKoYhNNKn0y15g93N0cSSNTCDPJ8uoaRPxfpHOYkFg=
 SHA256 (cargo/linked-hash-map-0.5.6.tar.gz) = BxfO8byLY2xuHBu978CeYyLaipMhlm6JKO+A0g9/dw8=
 SHA256 (cargo/linux-raw-sys-0.4.14.tar.gz) = eLOuJbx8jDjOwVjR8nV+556bN0D7x8zw5Z5LCNeT+ok=
@@ -380,7 +380,7 @@ SHA256 (cargo/zipsign-api-0.1.1.tar.gz) = K6WqGCfWsaNaKbNBPsac5feW5NiX4+Wzj0Yb70
 SHA256 (cargo/zstd-0.13.2.tar.gz) = /PK3eKZkWB4x44lFSnBy2rFkdgbUT3/uoizVq7nJ8/k=
 SHA256 (cargo/zstd-safe-7.1.0.tar.gz) = HNmbRca8A6AYyLioYCVnjIflVSYGTjj53zAZidzn7Ao=
 SHA256 (cargo/zstd-sys-2.0.10+zstd.1.5.6.tar.gz) = wlOkkUr1uvyPqMhu5ACCfoPPbsARlewfHthEG/ANZao=
-SIZE (cargo-nextest-0.9.74.tar.gz) = 7106603
+SIZE (cargo-nextest-0.9.75.tar.gz) = 7115172
 SIZE (cargo/addr2line-0.21.0.tar.gz) = 40807
 SIZE (cargo/adler-1.0.2.tar.gz) = 12778
 SIZE (cargo/ahash-0.8.11.tar.gz) = 43607
@@ -450,7 +450,7 @@ SIZE (cargo/der-0.7.9.tar.gz) = 85173
 SIZE (cargo/dialoguer-0.11.0.tar.gz) = 31286
 SIZE (cargo/diff-0.1.13.tar.gz) = 46216
 SIZE (cargo/digest-0.10.7.tar.gz) = 19557
-SIZE (cargo/display-error-chain-0.2.0.tar.gz) = 8038
+SIZE (cargo/display-error-chain-0.2.1.tar.gz) = 8072
 SIZE (cargo/duct-0.13.7.tar.gz) = 30055
 SIZE (cargo/dunce-1.0.5.tar.gz) = 8244
 SIZE (cargo/ed25519-2.2.3.tar.gz) = 17802
@@ -532,7 +532,7 @@ SIZE (cargo/itoa-1.0.11.tar.gz) = 10563
 SIZE (cargo/jobserver-0.1.32.tar.gz) = 27549
 SIZE (cargo/js-sys-0.3.69.tar.gz) = 81083
 SIZE (cargo/lazy_static-1.4.0.tar.gz) = 10443
-SIZE (cargo/libc-0.2.157.tar.gz) = 751276
+SIZE (cargo/libc-0.2.158.tar.gz) = 751340
 SIZE (cargo/libm-0.2.8.tar.gz) = 113450
 SIZE (cargo/linked-hash-map-0.5.6.tar.gz) = 15049
 SIZE (cargo/linux-raw-sys-0.4.14.tar.gz) = 1826665
