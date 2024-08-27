@@ -1,2 +1,11 @@
 @bin bin/ein
 @bin bin/gix
+share/bash-completion/
+share/bash-completion/completions/
+share/bash-completion/completions/ein
+share/bash-completion/completions/gix
+share/fish/completions/
+share/fish/completions/ein.fish
+share/fish/completions/gix.fish
+share/zsh/site-functions/_ein
+share/zsh/site-functions/_gix
