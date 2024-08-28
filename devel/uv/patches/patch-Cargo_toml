@@ -12,7 +12,7 @@ Index: Cargo.toml
  axoupdater = { version = "0.7.0", default-features = false }
  backoff = { version = "0.4.0" }
  base64 = { version = "0.22.0" }
-@@ -111,7 +111,7 @@ pathdiff = { version = "0.2.1" }
+@@ -112,7 +112,7 @@ pathdiff = { version = "0.2.1" }
  petgraph = { version = "0.6.4" }
  platform-info = { version = "2.0.2" }
  proc-macro2 = { version = "1.0.86" }
@@ -21,7 +21,7 @@ Index: Cargo.toml
  pyo3 = { version = "0.21.0" }
  pyo3-log = { version = "0.10.0" }
  quote = { version = "1.0.36" }
-@@ -119,8 +119,8 @@ rayon = { version = "1.8.0" }
+@@ -120,8 +120,8 @@ rayon = { version = "1.8.0" }
  reflink-copy = { version = "0.1.15" }
  regex = { version = "1.10.2" }
  reqwest = { version = "0.12.3", default-features = false, features = ["json", "gzip", "brotli", "stream", "rustls-tls", "rustls-tls-native-roots"] }
@@ -32,7 +32,7 @@ Index: Cargo.toml
  rkyv = { version = "0.7.43", features = ["strict", "validation"] }
  rmp-serde = { version = "1.1.2" }
  rust-netrc = { version = "0.1.1" }
-@@ -139,7 +139,7 @@ target-lexicon = { version = "0.12.14" }
+@@ -140,7 +140,7 @@ target-lexicon = { version = "0.12.14" }
  tempfile = { version = "3.9.0" }
  textwrap = { version = "0.16.1" }
  thiserror = { version = "1.0.56" }
@@ -41,7 +41,7 @@ Index: Cargo.toml
  tokio = { version = "1.35.1", features = ["fs", "io-util", "macros", "process", "signal", "sync"] }
  tokio-stream = { version = "0.1.14" }
  tokio-tar = { version = "0.3.1" }
-@@ -170,7 +170,6 @@ ignored = ["flate2", "xz2"]
+@@ -171,7 +171,6 @@ ignored = ["flate2", "xz2"]
  # For pyproject-toml
  pep440_rs = { path = "crates/pep440-rs" }
  pep508_rs = { path = "crates/pep508-rs" }

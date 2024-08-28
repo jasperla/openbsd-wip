@@ -187,6 +187,7 @@ SHA256 (cargo/gimli-0.29.0.tar.gz) = QOzUB3ta6f0unhabECxsMw0GBRaOsOi/eZUrJW2+//0
 SHA256 (cargo/glob-0.3.1.tar.gz) = 0vq8+9yH9HWDN8pTX7QabXAbZWk844KH2FbRZ0VR7Js=
 SHA256 (cargo/globset-0.4.14.tar.gz) = V9o7m1uFvWbzEJP4xAi5CnRDFnJUJGZJfcvf3AIDS+E=
 SHA256 (cargo/globwalk-0.9.1.tar.gz) = C/dg6/aYeNn9jxEMiXA9kM41CVMk0fHty1lcY5Re51c=
+SHA256 (cargo/goblin-0.8.2.tar.gz) = GzY6MMFl9mZAL+ajAk077H68iY+WpKI70cmfjb8/T0c=
 SHA256 (cargo/h2-0.3.26.tar.gz) = gf5SeoieFTLaXFJWhtltTC50zdNFut+N/vn2s53V9eg=
 SHA256 (cargo/h2-0.4.5.tar.gz) = +oLiihB6jMQF8IOWEL3JsV8eJex9aWqlzxc+28sUhqs=
 SHA256 (cargo/half-1.8.3.tar.gz) = G0Pt4X8hhk6Bvi+mVBEL8eeTd0I42G74VVw35lGcBAM=
@@ -327,6 +328,7 @@ SHA256 (cargo/pin-project-lite-0.2.14.tar.gz) = vaZvyWZ8GMsnWKKshNEWckUFS8+F1dGq
 SHA256 (cargo/pin-utils-0.1.0.tar.gz) = i4cNjBUbby+5PoShMUYTjwXQLtEcfnxU+IJqqvfJ8YQ=
 SHA256 (cargo/pipeline-0.5.0.tar.gz) = 0VtmB/pjKZbrihfJBBy2Bxy3WsBXq9Rd7OV4cj6ox8A=
 SHA256 (cargo/pkg-config-0.3.30.tar.gz) = 0jGyMJJ7XkrSA9tXu8vuKAL2vOYgseSpAkoH2U4pB+w=
+SHA256 (cargo/plain-0.2.3.tar.gz) = tFlrbQcLJxF+mHEZtNrGBPPFjPsLGRES4kdxsvrqwaY=
 SHA256 (cargo/platform-info-2.0.3.tar.gz) = 1f8xa5xGQv7alzwY8N7NbIsJGdRyJWb25DN8zg3Yghc=
 SHA256 (cargo/plotters-0.3.6.tar.gz) = oVtuzLhIQAIZWj5E/mWkzo6TpiV5egY3NVNv1ZywHPM=
 SHA256 (cargo/plotters-backend-0.3.6.tar.gz) = QUzsYsZjSukA6hxWEo3+h89j58rs4IUux2q6MHzrrbc=
@@ -417,6 +419,8 @@ SHA256 (cargo/schannel-0.1.23.tar.gz) = +8kVRWQ7zzoLu2VpJlYVIiYYvfM85P+70TxLvUwJ
 SHA256 (cargo/schemars-0.8.21.tar.gz) = CcAkRoo3i342dlzTZwK3qQzDy6EWVPZoXI8jNAjonpI=
 SHA256 (cargo/schemars_derive-0.8.21.tar.gz) = se7liFeK/3P4VquWHNL3nja8Rdfe0zp1Yq26RmeuzA4=
 SHA256 (cargo/scopeguard-1.2.0.tar.gz) = lBQ/N3JRCfksJi7Sz15ZvOdJjAG8wVAte5r+Q5pOn0k=
+SHA256 (cargo/scroll-0.12.0.tar.gz) = arhZiqQISYZ5ki7/f6mFwl1YqQdxvWvnlENMUnfqsaY=
+SHA256 (cargo/scroll_derive-0.12.0.tar.gz) = f4HC/eAlr35psdFCBTHIqIEcqJiRnbF3FBqFMTscuTI=
 SHA256 (cargo/seahash-4.1.0.tar.gz) = HBB7b0eAhUyLEm4ijqiGn017cSYPli/vtXuZa4lZums=
 SHA256 (cargo/security-framework-2.11.1.tar.gz) = iXsiRfC1Ech4k685sDPlypzOaIJMTX52MLWh0zlljQI=
 SHA256 (cargo/security-framework-sys-2.11.1.tar.gz) = ddop/pubCP6dayK1tLy8ddjbOqMeY5qla7YunUa/zq8=
@@ -632,7 +636,7 @@ SHA256 (cargo/zstd-sys-2.0.12+zstd.1.5.6.tar.gz) = Ck5AwyDDy0Wdmp/23pjP+I9HUe6Sd
 SHA256 (cargo/zstd-sys-2.0.13+zstd.1.5.6.tar.gz) = OP8PIc/uj5fZTO9BNZ4MiaphEwKKsCkaqMoAOJlalao=
 SHA256 (charliermarsh-rs-async-zip-011b24604fa7bc223daaad7712c0694bac8f0a87.tar.gz) = aElLaNB98qNthefl4885zNTKpJh2+HTgFxYQqsLmJzA=
 SHA256 (charliermarsh-tl-6e25b2ee2513d75385101a8ff9f591ef51f314ec.tar.gz) = 6Di8p8sgXjc82AHOGUdqgIU0pgkPwmGqLqdN/ZzqaLA=
-SHA256 (uv-0.3.4.tar.gz) = 7VihXeLl//mK0tnFg2iNDwfqH/Djo1KDwxwZDMMY7e0=
+SHA256 (uv-0.3.5.tar.gz) = pchjN0lnJ658htI5YwZxchL/tm5s84LK2efWfvT1tqE=
 SIZE (astral-sh-pubgrub-388685a8711092971930986644cfed152d1a1f6c.tar.gz) = 87945
 SIZE (cargo/actix-codec-0.5.2.tar.gz) = 14085
 SIZE (cargo/actix-http-3.8.0.tar.gz) = 161524
@@ -822,6 +826,7 @@ SIZE (cargo/gimli-0.29.0.tar.gz) = 275756
 SIZE (cargo/glob-0.3.1.tar.gz) = 18880
 SIZE (cargo/globset-0.4.14.tar.gz) = 25090
 SIZE (cargo/globwalk-0.9.1.tar.gz) = 12572
+SIZE (cargo/goblin-0.8.2.tar.gz) = 187412
 SIZE (cargo/h2-0.3.26.tar.gz) = 168315
 SIZE (cargo/h2-0.4.5.tar.gz) = 174166
 SIZE (cargo/half-1.8.3.tar.gz) = 41624
@@ -962,6 +967,7 @@ SIZE (cargo/pin-project-lite-0.2.14.tar.gz) = 28817
 SIZE (cargo/pin-utils-0.1.0.tar.gz) = 7580
 SIZE (cargo/pipeline-0.5.0.tar.gz) = 3315
 SIZE (cargo/pkg-config-0.3.30.tar.gz) = 20613
+SIZE (cargo/plain-0.2.3.tar.gz) = 10664
 SIZE (cargo/platform-info-2.0.3.tar.gz) = 28454
 SIZE (cargo/plotters-0.3.6.tar.gz) = 147577
 SIZE (cargo/plotters-backend-0.3.6.tar.gz) = 13669
@@ -1052,6 +1058,8 @@ SIZE (cargo/schannel-0.1.23.tar.gz) = 41667
 SIZE (cargo/schemars-0.8.21.tar.gz) = 58475
 SIZE (cargo/schemars_derive-0.8.21.tar.gz) = 18703
 SIZE (cargo/scopeguard-1.2.0.tar.gz) = 11619
+SIZE (cargo/scroll-0.12.0.tar.gz) = 24145
+SIZE (cargo/scroll_derive-0.12.0.tar.gz) = 4693
 SIZE (cargo/seahash-4.1.0.tar.gz) = 31976
 SIZE (cargo/security-framework-2.11.1.tar.gz) = 80188
 SIZE (cargo/security-framework-sys-2.11.1.tar.gz) = 18755
@@ -1267,4 +1275,4 @@ SIZE (cargo/zstd-sys-2.0.12+zstd.1.5.6.tar.gz) = 749063
 SIZE (cargo/zstd-sys-2.0.13+zstd.1.5.6.tar.gz) = 749090
 SIZE (charliermarsh-rs-async-zip-011b24604fa7bc223daaad7712c0694bac8f0a87.tar.gz) = 51706
 SIZE (charliermarsh-tl-6e25b2ee2513d75385101a8ff9f591ef51f314ec.tar.gz) = 37106
-SIZE (uv-0.3.4.tar.gz) = 2458698
+SIZE (uv-0.3.5.tar.gz) = 2471050
