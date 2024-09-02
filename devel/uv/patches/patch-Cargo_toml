@@ -41,7 +41,7 @@ Index: Cargo.toml
  tokio = { version = "1.35.1", features = ["fs", "io-util", "macros", "process", "signal", "sync"] }
  tokio-stream = { version = "0.1.14" }
  tokio-tar = { version = "0.3.1" }
-@@ -171,7 +171,6 @@ ignored = ["flate2", "xz2"]
+@@ -173,7 +173,6 @@ ignored = ["flate2", "xz2"]
  # For pyproject-toml
  pep440_rs = { path = "crates/pep440-rs" }
  pep508_rs = { path = "crates/pep508-rs" }
