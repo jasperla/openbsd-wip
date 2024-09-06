@@ -222,8 +222,8 @@ SHA256 (cargo/ppv-lite86-0.2.17.tar.gz) = W0CvgFsxIf6rijwp8E2K0mL6jgVhiD52U+Akrk
 SHA256 (cargo/pretty_assertions-1.4.0.tar.gz) = r3zuGmyKW5IIs8sQYfEMDLaJCHs9jOhfudLdeim2umY=
 SHA256 (cargo/proc-macro2-1.0.86.tar.gz) = XnGejfZl3w0cj7/SOAFXRHNhUdREXsCDa45iiq4QO3c=
 SHA256 (cargo/pyproject-toml-0.9.0.tar.gz) = lcPddF+ZqjxVS3uwCFn30YwvHWr9dJzMhtYLYecCq9k=
-SHA256 (cargo/quick-junit-0.4.0.tar.gz) = z8GmpUBqEUkT3y34UHmYx1UxG1W3hYS+1fboj2QXxNQ=
-SHA256 (cargo/quick-xml-0.31.0.tar.gz) = EASjRLMKVOLuWNZqcbMtLbL+sKMfmi0wK/BTbxXeKjM=
+SHA256 (cargo/quick-junit-0.5.0.tar.gz) = Yv/S+aFiz64TG+1tnR7WCtztM740CpT5aVKJfXywwkA=
+SHA256 (cargo/quick-xml-0.36.1.tar.gz) = lqBeLo7936UahMpHzsMD+shshUG2htN8rF78DglEF7w=
 SHA256 (cargo/quote-1.0.36.tar.gz) = D6dqrzkQHEV4Nq7AziMW29w6tyPN2hxr1OatQgisrKc=
 SHA256 (cargo/quote-1.0.37.tar.gz) = tbnTS4mR0Z2YCBtG6s3Y61jG8rIBE598X2Q8wVWmM68=
 SHA256 (cargo/rand-0.8.5.tar.gz) = NK+NGg4lkkvFt8Q8B5yUIznY8Ki1fDkEm+9YG0YydAQ=
@@ -397,7 +397,7 @@ SHA256 (cargo/zip-0.6.6.tar.gz) = dgOU4kbkwoGJ8Z1IjAWL8W9WQBau+sXTK7HztR1ekmE=
 SHA256 (cargo/zstd-0.11.2+zstd.1.5.2.tar.gz) = IMyWAybs5k8BDS0hB1N/JtxYmmVzoxa9Wx26aF+l/eQ=
 SHA256 (cargo/zstd-safe-5.0.2+zstd.1.5.2.tar.gz) = HSpVheBPnupLKj0eylCMTe6Vkqie9vRQwRcZ2gcm9Ns=
 SHA256 (cargo/zstd-sys-2.0.11+zstd.1.5.6.tar.gz) = dWUsVcC28+bxLreG/hvJYDlr8Foes78fNpHDYQrC5tQ=
-SHA256 (ruff-0.6.3.tar.gz) = 4ZuQyF+NDNE5VCnu50i9+LyV4hZQGP4S8DMTB+TRaJs=
+SHA256 (ruff-0.6.4.tar.gz) = Ts1EAQIRAdsQ9vpRM6urWyC+sU4L4T6j/C/eV0WW9b8=
 SHA256 (salsa-rs-salsa-f608ff8b24f07706492027199f51132244034f29.tar.gz) = urUkyRlr4GdvccQMuxx/GXVZgX9WVVGmaOM/8NoAu5Y=
 SIZE (astral-sh-lsp-types-3512a9f33eadc5402cfab1b8f7340824c8ca1439.tar.gz) = 71124
 SIZE (cargo/Inflector-0.11.4.tar.gz) = 17438
@@ -623,8 +623,8 @@ SIZE (cargo/ppv-lite86-0.2.17.tar.gz) = 22242
 SIZE (cargo/pretty_assertions-1.4.0.tar.gz) = 78846
 SIZE (cargo/proc-macro2-1.0.86.tar.gz) = 48958
 SIZE (cargo/pyproject-toml-0.9.0.tar.gz) = 6041
-SIZE (cargo/quick-junit-0.4.0.tar.gz) = 20136
-SIZE (cargo/quick-xml-0.31.0.tar.gz) = 172236
+SIZE (cargo/quick-junit-0.5.0.tar.gz) = 20994
+SIZE (cargo/quick-xml-0.36.1.tar.gz) = 185352
 SIZE (cargo/quote-1.0.36.tar.gz) = 28507
 SIZE (cargo/quote-1.0.37.tar.gz) = 28558
 SIZE (cargo/rand-0.8.5.tar.gz) = 87113
@@ -798,5 +798,5 @@ SIZE (cargo/zip-0.6.6.tar.gz) = 65789
 SIZE (cargo/zstd-0.11.2+zstd.1.5.2.tar.gz) = 28987
 SIZE (cargo/zstd-safe-5.0.2+zstd.1.5.2.tar.gz) = 17273
 SIZE (cargo/zstd-sys-2.0.11+zstd.1.5.6.tar.gz) = 749078
-SIZE (ruff-0.6.3.tar.gz) = 5048435
+SIZE (ruff-0.6.4.tar.gz) = 5069433
 SIZE (salsa-rs-salsa-f608ff8b24f07706492027199f51132244034f29.tar.gz) = 594913
