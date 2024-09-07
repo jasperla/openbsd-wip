@@ -136,7 +136,6 @@ SHA256 (cargo/deadpool-0.10.0.tar.gz) = +4QQCXjBx7N/Ce084+X4Q68CwqLEMbrlsZIw2tLB
 SHA256 (cargo/deadpool-runtime-0.1.4.tar.gz) = CSlmtB7cUWB5vfMex4ouBYjR0MCPeLkdgwchWShkKys=
 SHA256 (cargo/deflate64-0.1.9.tar.gz) = 2mkrjRCA6jBF76qxRDTUBGjD2GV+Qqvd//yoe0KPTBs=
 SHA256 (cargo/deranged-0.3.11.tar.gz) = tCtvoEpEC0lciwTQ5xtwfFhfg8ucsoz4zQ2XbDFeMbQ=
-SHA256 (cargo/derivative-2.2.0.tar.gz) = /MPdXp6cCyldbh5NgR+28VfV/9eEuNIC/GLqyANadws=
 SHA256 (cargo/derive_more-0.99.18.tar.gz) = XzOHgTfk2v1/qRStTiWeGKTo5TK5YXotAVAmK/U6v84=
 SHA256 (cargo/diff-0.1.13.tar.gz) = ViVJhndeMjP/qcTX0/qvbTaiwJ0wsgaH6fiLyLr8Fsg=
 SHA256 (cargo/difflib-0.4.0.tar.gz) = YYTjNUMWJDdRXC4rSHFHlON4ReyYUXEZFO7J0wj26+g=
@@ -640,7 +639,7 @@ SHA256 (cargo/zstd-sys-2.0.12+zstd.1.5.6.tar.gz) = Ck5AwyDDy0Wdmp/23pjP+I9HUe6Sd
 SHA256 (cargo/zstd-sys-2.0.13+zstd.1.5.6.tar.gz) = OP8PIc/uj5fZTO9BNZ4MiaphEwKKsCkaqMoAOJlalao=
 SHA256 (charliermarsh-rs-async-zip-011b24604fa7bc223daaad7712c0694bac8f0a87.tar.gz) = aElLaNB98qNthefl4885zNTKpJh2+HTgFxYQqsLmJzA=
 SHA256 (charliermarsh-tl-6e25b2ee2513d75385101a8ff9f591ef51f314ec.tar.gz) = 6Di8p8sgXjc82AHOGUdqgIU0pgkPwmGqLqdN/ZzqaLA=
-SHA256 (uv-0.4.6.tar.gz) = 2JpD4yhRvV33xseNd3GKaLdbYdzOvudu+3F66cM0n2M=
+SHA256 (uv-0.4.7.tar.gz) = mjHN3FM4rp6znmNgwdLzYQYx3rsJNtyq30DVdnirMCo=
 SIZE (astral-sh-pubgrub-388685a8711092971930986644cfed152d1a1f6c.tar.gz) = 87945
 SIZE (cargo/actix-codec-0.5.2.tar.gz) = 14085
 SIZE (cargo/actix-http-3.8.0.tar.gz) = 161524
@@ -779,7 +778,6 @@ SIZE (cargo/deadpool-0.10.0.tar.gz) = 31997
 SIZE (cargo/deadpool-runtime-0.1.4.tar.gz) = 7664
 SIZE (cargo/deflate64-0.1.9.tar.gz) = 15104
 SIZE (cargo/deranged-0.3.11.tar.gz) = 18043
-SIZE (cargo/derivative-2.2.0.tar.gz) = 48076
 SIZE (cargo/derive_more-0.99.18.tar.gz) = 55013
 SIZE (cargo/diff-0.1.13.tar.gz) = 46216
 SIZE (cargo/difflib-0.4.0.tar.gz) = 7638
@@ -1283,4 +1281,4 @@ SIZE (cargo/zstd-sys-2.0.12+zstd.1.5.6.tar.gz) = 749063
 SIZE (cargo/zstd-sys-2.0.13+zstd.1.5.6.tar.gz) = 749090
 SIZE (charliermarsh-rs-async-zip-011b24604fa7bc223daaad7712c0694bac8f0a87.tar.gz) = 51706
 SIZE (charliermarsh-tl-6e25b2ee2513d75385101a8ff9f591ef51f314ec.tar.gz) = 37106
-SIZE (uv-0.4.6.tar.gz) = 2553065
+SIZE (uv-0.4.7.tar.gz) = 2558161

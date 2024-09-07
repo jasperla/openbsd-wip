@@ -135,7 +135,6 @@ MODCARGO_CRATES +=	deadpool	0.10.0	# MIT OR Apache-2.0
 MODCARGO_CRATES +=	deadpool-runtime	0.1.4	# MIT OR Apache-2.0
 MODCARGO_CRATES +=	deflate64	0.1.9	# MIT
 MODCARGO_CRATES +=	deranged	0.3.11	# MIT OR Apache-2.0
-MODCARGO_CRATES +=	derivative	2.2.0	# MIT/Apache-2.0
 MODCARGO_CRATES +=	derive_more	0.99.18	# MIT
 MODCARGO_CRATES +=	diff	0.1.13	# MIT OR Apache-2.0
 MODCARGO_CRATES +=	difflib	0.4.0	# MIT
