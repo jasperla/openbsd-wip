@@ -1,0 +1,4 @@
+@bin bin/ol
+@bin bin/ovm
+@man man/man1/ol.1
+@man man/man1/ovm.1
