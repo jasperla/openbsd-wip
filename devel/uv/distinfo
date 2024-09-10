@@ -358,7 +358,7 @@ SHA256 (cargo/pyo3-macros-0.21.2.tar.gz) = d7NAafwGguEbMdvRAyHL+UgIOUxW/Zlnls5FI
 SHA256 (cargo/pyo3-macros-backend-0.21.2.tar.gz) = CCYHIfMtteGlvq5ppVVT9WuZvQ4cPm4KXohRqdD1qFw=
 SHA256 (cargo/quick-error-1.2.3.tar.gz) = odAZQdgvoqtQvh555nFCid183njrpMB0vFpDdPZQ3+A=
 SHA256 (cargo/quinn-0.11.3.tar.gz) = si2Oc2kDS5pxMrwgCMrBLyATyBMrReBVTm4g4mF/IVY=
-SHA256 (cargo/quinn-proto-0.11.6.tar.gz) = upL7Oex60GyiWCwMqDTf6tyvBt38jmNcgKp+HAUxX90=
+SHA256 (cargo/quinn-proto-0.11.7.tar.gz) = 6gqbOkKSn62KfD3n+GzggUz6iTMoFXZyaA6fsRRVScU=
 SHA256 (cargo/quinn-udp-0.5.4.tar.gz) = i//sNgW3PG8XVFNQhKhSKfqKMPhgFObIGu7Eq7aLAoU=
 SHA256 (cargo/quote-1.0.36.tar.gz) = D6dqrzkQHEV4Nq7AziMW29w6tyPN2hxr1OatQgisrKc=
 SHA256 (cargo/quote-1.0.37.tar.gz) = tbnTS4mR0Z2YCBtG6s3Y61jG8rIBE598X2Q8wVWmM68=
@@ -639,7 +639,7 @@ SHA256 (cargo/zstd-sys-2.0.12+zstd.1.5.6.tar.gz) = Ck5AwyDDy0Wdmp/23pjP+I9HUe6Sd
 SHA256 (cargo/zstd-sys-2.0.13+zstd.1.5.6.tar.gz) = OP8PIc/uj5fZTO9BNZ4MiaphEwKKsCkaqMoAOJlalao=
 SHA256 (charliermarsh-rs-async-zip-011b24604fa7bc223daaad7712c0694bac8f0a87.tar.gz) = aElLaNB98qNthefl4885zNTKpJh2+HTgFxYQqsLmJzA=
 SHA256 (charliermarsh-tl-6e25b2ee2513d75385101a8ff9f591ef51f314ec.tar.gz) = 6Di8p8sgXjc82AHOGUdqgIU0pgkPwmGqLqdN/ZzqaLA=
-SHA256 (uv-0.4.7.tar.gz) = mjHN3FM4rp6znmNgwdLzYQYx3rsJNtyq30DVdnirMCo=
+SHA256 (uv-0.4.8.tar.gz) = Max82Emu8acZwPT6g3SHuE2ofxcwm4ImWOfaz8ih2wg=
 SIZE (astral-sh-pubgrub-388685a8711092971930986644cfed152d1a1f6c.tar.gz) = 87945
 SIZE (cargo/actix-codec-0.5.2.tar.gz) = 14085
 SIZE (cargo/actix-http-3.8.0.tar.gz) = 161524
@@ -1000,7 +1000,7 @@ SIZE (cargo/pyo3-macros-0.21.2.tar.gz) = 7920
 SIZE (cargo/pyo3-macros-backend-0.21.2.tar.gz) = 58088
 SIZE (cargo/quick-error-1.2.3.tar.gz) = 15066
 SIZE (cargo/quinn-0.11.3.tar.gz) = 75215
-SIZE (cargo/quinn-proto-0.11.6.tar.gz) = 203803
+SIZE (cargo/quinn-proto-0.11.7.tar.gz) = 204211
 SIZE (cargo/quinn-udp-0.5.4.tar.gz) = 23025
 SIZE (cargo/quote-1.0.36.tar.gz) = 28507
 SIZE (cargo/quote-1.0.37.tar.gz) = 28558
@@ -1281,4 +1281,4 @@ SIZE (cargo/zstd-sys-2.0.12+zstd.1.5.6.tar.gz) = 749063
 SIZE (cargo/zstd-sys-2.0.13+zstd.1.5.6.tar.gz) = 749090
 SIZE (charliermarsh-rs-async-zip-011b24604fa7bc223daaad7712c0694bac8f0a87.tar.gz) = 51706
 SIZE (charliermarsh-tl-6e25b2ee2513d75385101a8ff9f591ef51f314ec.tar.gz) = 37106
-SIZE (uv-0.4.7.tar.gz) = 2558161
+SIZE (uv-0.4.8.tar.gz) = 2569754
