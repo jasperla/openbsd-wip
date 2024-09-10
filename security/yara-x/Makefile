@@ -5,7 +5,7 @@ COMMENT =	pattern matching swiss knife for malware researchers
 
 GH_ACCOUNT =	VirusTotal
 GH_PROJECT =	yara-x
-GH_TAGNAME =	v0.7.0
+GH_TAGNAME =	v0.8.0
 
 CATEGORIES =	security
 
@@ -17,7 +17,7 @@ MAINTAINER =	Laurent Cheylus <foxy@free.fr>
 # BSD-3
 PERMIT_PACKAGE=	Yes
 
-WANTLIB +=	${MODCARGO_WANTLIB} m zstd
+WANTLIB +=	${MODCARGO_WANTLIB} m
 
 MODULES =	devel/cargo
 
