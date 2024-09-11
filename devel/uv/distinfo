@@ -97,8 +97,8 @@ SHA256 (cargo/clap_complete_nushell-4.5.3.tar.gz) = X+MhEOAGvM9yD4ya8/7hun2ykMck
 SHA256 (cargo/clap_derive-4.5.13.tar.gz) = UB01nV89yvbs3u5IgzrnPsbkJyOh5SQZx5q/lQfuwKA=
 SHA256 (cargo/clap_lex-0.7.2.tar.gz) = FGJznLJ2EQFVdcDBHfXfdgEUEHHwdRjVb8wb5QTL7Jc=
 SHA256 (cargo/cmake-0.1.51.tar.gz) = +x5Dqn/RUrH5aHh/fbzeswbRhn/zc8aZVSEYdsBT+Ro=
-SHA256 (cargo/codspeed-2.6.0.tar.gz) = OhBKyUjgGIuSHrP8vdVdz2LlQt9MerfmYGI/YogwIIk=
-SHA256 (cargo/codspeed-criterion-compat-2.6.0.tar.gz) = ciw2vcYtlDbQJyVs4mJ6+BrHpZbfx9E9hJ0NISRI1/4=
+SHA256 (cargo/codspeed-2.7.1.tar.gz) = sMbzJKAycD8oaw+72zkJcfkUtB80EOFhXFlzDksk68I=
+SHA256 (cargo/codspeed-criterion-compat-2.7.1.tar.gz) = CuUvbyVF/80qwTCPNAQ+tquB5MdBr0GbNIsjJVdPSO4=
 SHA256 (cargo/color_quant-1.1.0.tar.gz) = PXuJT1QRc3t4Z/SCeVWSTXwlT8n02RpqrWsJeASxAYs=
 SHA256 (cargo/colorchoice-1.0.2.tar.gz) = 0/0RnXS4MGNM6ioPWLvQ1UVAUYoUOXVXlR55NAq8KMA=
 SHA256 (cargo/colored-2.1.0.tar.gz) = y/IVDM4hm2ZKinDfeh+TODZyS1A/ikE6+TZbTcxNkLg=
@@ -248,6 +248,7 @@ SHA256 (cargo/jpeg-decoder-0.3.1.tar.gz) = 9dSn2jWO/1it3Sh3pFhlFY8NeMkR1DpXhM63u
 SHA256 (cargo/js-sys-0.3.69.tar.gz) = KcFVY9wnJpc99ic1fODJ3d2+oZSDaQnWVd9qddLPKW0=
 SHA256 (cargo/js-sys-0.3.70.tar.gz) = GGiAhQa5Kdewz6j3WVE0eqcbshFEt3kbrjXZvM/P43o=
 SHA256 (cargo/junction-1.1.0.tar.gz) = HJxBWpt7HobNVzjznTTJ54x2Xaf7F1bb19MbOw0uevo=
+SHA256 (cargo/krata-tokio-tar-0.4.2.tar.gz) = 6L1f7puWrLX8NrQBiW1gHm/czlKw5lHOJKOyH7Uk558=
 SHA256 (cargo/kurbo-0.8.3.tar.gz) = elN3bScc+4c7F8YYrwKYRFyIr8UoN/PpSPo/r9Ex9Ek=
 SHA256 (cargo/kurbo-0.9.5.tar.gz) = vYWld2zZUAwuIFnIx2w7AVKFZrf8uvgJi1WjP8KYhJs=
 SHA256 (cargo/language-tags-0.3.2.tar.gz) = 1DRZZLsUJIR5exYfRzpQOkNN53FJ3Yx0J3iMbhM3k4g=
@@ -504,7 +505,6 @@ SHA256 (cargo/tokio-1.40.0.tar.gz) = 4rBwIxZl0nrZ7JuN9jmJP0ZydmbGdn20Axf76SCl2Zg
 SHA256 (cargo/tokio-macros-2.4.0.tar.gz) = aT1ZYxLoiWG8Z9fx+Xr4pwIn2fkMMbulgG7sAEl411I=
 SHA256 (cargo/tokio-rustls-0.26.0.tar.gz) = DHvEDQ5al2lbuW4nmVzToIU4VBsKhG9lu6ejWfNnANQ=
 SHA256 (cargo/tokio-stream-0.1.15.tar.gz) = JnrIngvsbmkeWBORFgaTXXfEdv9JAk+Yq86j57FeN68=
-SHA256 (cargo/tokio-tar-0.3.1.tar.gz) = nVcUwBDKPlwnEUwc3rnRRkGs5Jh0qlYm1xSeR67aznU=
 SHA256 (cargo/tokio-util-0.7.11.tar.gz) = nPa0ezdxxJrHWtCaYWL1OtS4CIt2rGDo7BRVsxoYn+E=
 SHA256 (cargo/toml-0.8.19.tar.gz) = oe0fmOP9wo1tkQ5nN65qsak78ZhZNaEZPmj5Puto0k4=
 SHA256 (cargo/toml_datetime-0.6.8.tar.gz) = Ddc1jsuPwvjQFL+G9vY4znK6JSosOiVy8qeV8dI++0E=
@@ -639,7 +639,7 @@ SHA256 (cargo/zstd-sys-2.0.12+zstd.1.5.6.tar.gz) = Ck5AwyDDy0Wdmp/23pjP+I9HUe6Sd
 SHA256 (cargo/zstd-sys-2.0.13+zstd.1.5.6.tar.gz) = OP8PIc/uj5fZTO9BNZ4MiaphEwKKsCkaqMoAOJlalao=
 SHA256 (charliermarsh-rs-async-zip-011b24604fa7bc223daaad7712c0694bac8f0a87.tar.gz) = aElLaNB98qNthefl4885zNTKpJh2+HTgFxYQqsLmJzA=
 SHA256 (charliermarsh-tl-6e25b2ee2513d75385101a8ff9f591ef51f314ec.tar.gz) = 6Di8p8sgXjc82AHOGUdqgIU0pgkPwmGqLqdN/ZzqaLA=
-SHA256 (uv-0.4.8.tar.gz) = Max82Emu8acZwPT6g3SHuE2ofxcwm4ImWOfaz8ih2wg=
+SHA256 (uv-0.4.9.tar.gz) = wOKy60yMZ0+V/pZJb6cKXjmElYo7rxViNxC70lMhn0k=
 SIZE (astral-sh-pubgrub-388685a8711092971930986644cfed152d1a1f6c.tar.gz) = 87945
 SIZE (cargo/actix-codec-0.5.2.tar.gz) = 14085
 SIZE (cargo/actix-http-3.8.0.tar.gz) = 161524
@@ -739,8 +739,8 @@ SIZE (cargo/clap_complete_nushell-4.5.3.tar.gz) = 33793
 SIZE (cargo/clap_derive-4.5.13.tar.gz) = 30132
 SIZE (cargo/clap_lex-0.7.2.tar.gz) = 12805
 SIZE (cargo/cmake-0.1.51.tar.gz) = 17566
-SIZE (cargo/codspeed-2.6.0.tar.gz) = 4661
-SIZE (cargo/codspeed-criterion-compat-2.6.0.tar.gz) = 10183
+SIZE (cargo/codspeed-2.7.1.tar.gz) = 4730
+SIZE (cargo/codspeed-criterion-compat-2.7.1.tar.gz) = 10328
 SIZE (cargo/color_quant-1.1.0.tar.gz) = 6649
 SIZE (cargo/colorchoice-1.0.2.tar.gz) = 7924
 SIZE (cargo/colored-2.1.0.tar.gz) = 23348
@@ -890,6 +890,7 @@ SIZE (cargo/jpeg-decoder-0.3.1.tar.gz) = 744364
 SIZE (cargo/js-sys-0.3.69.tar.gz) = 81083
 SIZE (cargo/js-sys-0.3.70.tar.gz) = 53863
 SIZE (cargo/junction-1.1.0.tar.gz) = 12564
+SIZE (cargo/krata-tokio-tar-0.4.2.tar.gz) = 49678
 SIZE (cargo/kurbo-0.8.3.tar.gz) = 81131
 SIZE (cargo/kurbo-0.9.5.tar.gz) = 108513
 SIZE (cargo/language-tags-0.3.2.tar.gz) = 53420
@@ -1146,7 +1147,6 @@ SIZE (cargo/tokio-1.40.0.tar.gz) = 789848
 SIZE (cargo/tokio-macros-2.4.0.tar.gz) = 12501
 SIZE (cargo/tokio-rustls-0.26.0.tar.gz) = 34253
 SIZE (cargo/tokio-stream-0.1.15.tar.gz) = 36284
-SIZE (cargo/tokio-tar-0.3.1.tar.gz) = 49485
 SIZE (cargo/tokio-util-0.7.11.tar.gz) = 113421
 SIZE (cargo/toml-0.8.19.tar.gz) = 50974
 SIZE (cargo/toml_datetime-0.6.8.tar.gz) = 12028
@@ -1281,4 +1281,4 @@ SIZE (cargo/zstd-sys-2.0.12+zstd.1.5.6.tar.gz) = 749063
 SIZE (cargo/zstd-sys-2.0.13+zstd.1.5.6.tar.gz) = 749090
 SIZE (charliermarsh-rs-async-zip-011b24604fa7bc223daaad7712c0694bac8f0a87.tar.gz) = 51706
 SIZE (charliermarsh-tl-6e25b2ee2513d75385101a8ff9f591ef51f314ec.tar.gz) = 37106
-SIZE (uv-0.4.8.tar.gz) = 2569754
+SIZE (uv-0.4.9.tar.gz) = 2580667
