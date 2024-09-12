@@ -1,0 +1,14 @@
+Testing net/transmission beyond 4.0.6:
+
+1) git clone -b obsd --recurse-submodules git@github.com:jggimi/transmission.git transmission-4.0.x
+
+   jggimi/transmission is a fork of transmission/transmission. In branch obsd,
+   it's submodule third-party/fmt has been reverted to release 10.2.1.  The
+   upstream submodule is at fmt 11, which causes double-free errors.
+
+2) create tarball, xz compress it, move to distfiles. 
+3) pkg_delete transmission
+4) make makesum, patch, update-patches, update-plist, port-lib-depends-check, repackage, install-all
+5) test
+
+-gtk and -qt appear to be working with fmt 10.2.1.
