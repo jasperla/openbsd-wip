@@ -7,6 +7,10 @@ Testing net/transmission beyond 4.0.6:
    upstream submodule is at fmt 11, which causes double-free errors.
 
 2) create tarball, xz compress it, move to distfiles. 
+
+   There's an ./archive.sh in the top directory which will create a git archive of the
+   source and all source submodules, compress it, and move it into /usr/ports/distfiles.
+
 3) pkg_delete transmission
 4) make makesum, patch, update-patches, update-plist, port-lib-depends-check, repackage, install-all
 5) test
