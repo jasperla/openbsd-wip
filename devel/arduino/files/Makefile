@@ -34,24 +34,32 @@
 
 PORT = /dev/cuaU0
 
-# Arduino Uno/Nano
-ARDUINO_ARCH=avr
-UPLOAD_RATE = 57600
+# Arduino UNO
+ARDUINO_ARCH = avr
+UPLOAD_RATE = 115200
 AVRDUDE_PROGRAMMER = arduino
 MCU = atmega328p
 F_CPU = 16000000
 VARIANT = standard
 
-## Arduino Duemilanove
-#ARDUINO_ARCH=avr
+# Arduino Duemilanove/Nano/Pro Mini
+#ARDUINO_ARCH = avr
 #UPLOAD_RATE = 57600
 #AVRDUDE_PROGRAMMER = arduino
 #MCU = atmega328p
 #F_CPU = 16000000
 #VARIANT = standard
 
-## Arduino Mega
-#ARDUINO_ARCH=avr
+## Arduino Mega 2560
+#ARDUINO_ARCH = avr
+#UPLOAD_RATE = 115200
+#AVRDUDE_PROGRAMMER = stk500v2
+#MCU = atmega2560
+#F_CPU = 16000000
+#VARIANT = mega
+
+## Arduino Mega 1280
+#ARDUINO_ARCH = avr
 #UPLOAD_RATE = 57600
 #AVRDUDE_PROGRAMMER = arduino
 #MCU = atmega1280
@@ -59,7 +67,7 @@ VARIANT = standard
 #VARIANT = mega
 
 ## older Arduino
-#ARDUINO_ARCH=avr
+#ARDUINO_ARCH = avr
 #UPLOAD_RATE = 19200
 #AVRDUDE_PROGRAMMER = stk500
 #MCU = atmega328p
@@ -156,6 +164,9 @@ AVRDUDE_WRITE_FLASH = -U flash:w:applet/$(TARGET).hex
 AVRDUDE_CONF = /etc/avrdude.conf
 AVRDUDE_FLAGS = -V -F -C $(AVRDUDE_CONF) -p $(MCU) -P $(AVRDUDE_PORT) \
 -c $(AVRDUDE_PROGRAMMER) -b $(UPLOAD_RATE)
+.ifdef $(VARIANT) == mega
+AVRDUDE_FLAGS += -D
+.endif
 
 # Program settings
 CC = $(AVR_TOOLS_PATH)/avr-gcc
