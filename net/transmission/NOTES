@@ -15,4 +15,5 @@ Testing net/transmission beyond 4.0.6:
 4) make clean=all, makesum, patch, update-patches, update-plist, port-lib-depends-check, repackage, install-all
 5) test
 
--gtk and -qt appear to be working with fmt 10.2.1.
+-gtk and -qt appear to be working with fmt 10.2.1.  When testing a build with libtransmission-test,
+413 tests pass, 9 tests were disabled, none failed.
