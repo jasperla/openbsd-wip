@@ -12,8 +12,8 @@ Testing net/transmission beyond 4.0.6:
    source and all source submodules, compress it, and move it into /usr/ports/distfiles.
 
 3) pkg_delete transmission
-4) make clean=all, makesum, patch, update-patches, update-plist, port-lib-depends-check, repackage, install-all
+4) make clean=all, makesum, patch, update-patches, update-plist, port-lib-depends-check, package, install-all
 5) test
 
--gtk and -qt appear to be working with fmt 10.2.1.  When testing a build with libtransmission-test,
-413 tests pass, 9 tests were disabled, none failed.
+-gtk and -qt appear to be working with fmt 10.2.1.  When testing a build with -DENABLE_TESTS=ON and
+libtransmission-test, 413 tests pass, 9 tests were disabled, none failed.
