@@ -3,7 +3,7 @@ COMMENT-gtk=	BitTorrent client with GTK+ interface
 COMMENT-qt=	BitTorrent client with Qt interface
 
 # testing between 4.0.6 and the next release:
-# see NOTES file for gittish steps due to fmt issues.
+# see UPDATE file for gittish steps due to fmt issues.
 #
 VER=		4.0.x
 DISTNAME=	transmission-${VER}
