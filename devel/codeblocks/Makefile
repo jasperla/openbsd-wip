@@ -1,7 +1,7 @@
 BROKEN-alpha=	sqvm.cpp:394:1: internal compiler error: Segmentation fault
 COMMENT=	Code::Blocks C/C++ IDE
 
-R=		13546
+R=		13570
 V=		20.03
 
 DISTNAME=	codeblocks-${V}pl${R}
