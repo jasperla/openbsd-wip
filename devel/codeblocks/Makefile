@@ -1,7 +1,7 @@
 BROKEN-alpha=	sqvm.cpp:394:1: internal compiler error: Segmentation fault
 COMMENT=	Code::Blocks C/C++ IDE
 
-R=		13570
+R=		13571
 V=		20.03
 
 DISTNAME=	codeblocks-${V}pl${R}
@@ -12,6 +12,7 @@ SITES=		https://jggimi.net/codeblocks/
 #SITES=		${SITE_SOURCEFORGE:=codeblocks/Sources/${V}/}
 
 DEBUG_PACKAGES=${BUILD_PACKAGES}
+INSTALL_DEBUG_PACKAGES=Yes
 
 SHARED_LIBS +=  codeblocks           0.1      # 0.1
 SHARED_LIBS +=  wxchartctrl          0.1      # 0.1
