@@ -4,3 +4,9 @@
 2024/09/19 20:02:49 SIOCSIFADDR_IN6 fallback failed: exec: "ifconfig": executable file not found in $PATH.
 
 - see if some of the network pledges can be dropped after (later) setup
+
+- not rdomain(4) aware, it fails to listen on all my interfaces outside 0, but keeps trying
+2024/09/19 20:09:58 Not multicasting on lo1 due to error: listen tcp [fe80::1%lo1]:0: bind: can't assign requested address
+...
+2024/09/19 20:10:00 Not multicasting on lo1 due to error: listen tcp [fe80::1%lo1]:0: bind: can't assign requested address
+
