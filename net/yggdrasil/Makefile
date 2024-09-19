@@ -8,7 +8,7 @@ MODGO_MODNAME =		github.com/${GH_ACCOUNT}/${GH_PROJECT}
 MODGO_VERSION =		${GH_TAGNAME}
 PKGNAME =		${DISTNAME:S/-go//}
 
-# make update-patches work
+# make update-patches work;  does the go module's default need fixing?
 WRKDIST =		${WRKDIR}/${MODGO_MODNAME}@${MODGO_VERSION}
 
 HOMEPAGE =		https://yggdrasil-network.github.io/
@@ -29,7 +29,8 @@ MODGO_LDFLAGS =		-X ${_BUILD}Name=OpenBSD \
 
 .include "modules.inc"
 
-# for pledge
+# for pledge;  why are these not picked up by modgo-gen-modules
+# after patching go.{mod,sum}?
 _PROTECT =		suah.dev/protect	v1.2.4
 MODGO_MODULES +=	${_PROTECT}
 MODGO_MODFILES +=	${_PROTECT}

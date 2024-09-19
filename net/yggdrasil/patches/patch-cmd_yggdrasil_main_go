@@ -1,3 +1,5 @@
+Use unveil(2) and pledge(2)
+
 Index: cmd/yggdrasil/main.go
 --- cmd/yggdrasil/main.go.orig
 +++ cmd/yggdrasil/main.go
