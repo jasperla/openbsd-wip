@@ -1,0 +1,6 @@
+- some ioctls fail and trigger ifconfig(8) fallback which also fail, thanks to unveil(8)
+2024/09/19 20:02:49 Error in SIOCSIFADDR_IN6: inappropriate ioctl for device
+2024/09/19 20:02:49 Using ifconfig as fallback: ifconfig tun0 inet6 200:154b:9d91:fe70:c93:fb7:8092:9cf9/7
+2024/09/19 20:02:49 SIOCSIFADDR_IN6 fallback failed: exec: "ifconfig": executable file not found in $PATH.
+
+- see if some of the network pledges can be dropped after (later) setup

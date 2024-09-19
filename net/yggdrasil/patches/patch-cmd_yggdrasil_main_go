@@ -10,7 +10,7 @@ Index: cmd/yggdrasil/main.go
  	"github.com/gologme/log"
  	gsyslog "github.com/hashicorp/go-syslog"
  	"github.com/hjson/hjson-go/v4"
-@@ -137,6 +139,26 @@ func main() {
+@@ -137,6 +139,29 @@ func main() {
  		return
  	}
  
@@ -33,11 +33,14 @@ Index: cmd/yggdrasil/main.go
 +		panic(err)
 +	}
 +
++	if err := protect.UnveilBlock(); err != nil {
++		panic(err)
++	}
 +
  	privateKey := ed25519.PrivateKey(cfg.PrivateKey)
  	publicKey := privateKey.Public().(ed25519.PublicKey)
  
-@@ -279,6 +301,10 @@ func main() {
+@@ -279,6 +304,10 @@ func main() {
  		// Wait for all parts to shutdown properly
  		<-done
  	})
