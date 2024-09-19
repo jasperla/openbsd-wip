@@ -10,7 +10,7 @@ Index: cmd/yggdrasil/main.go
  	"github.com/gologme/log"
  	gsyslog "github.com/hashicorp/go-syslog"
  	"github.com/hjson/hjson-go/v4"
-@@ -137,6 +139,29 @@ func main() {
+@@ -137,6 +139,37 @@ func main() {
  		return
  	}
  
@@ -27,12 +27,20 @@ Index: cmd/yggdrasil/main.go
 +		panic(err)
 +	}
 +
++	// TODO remove after fixing root cause
++	// fallback due to ioctl failure
++	if err := protect.Unveil("/dev/null", "r"); err != nil {
++		panic(err)
++	}
++	if err := protect.Unveil("/sbin/ifconfig", "rx"); err != nil {
++		panic(err)
++	}
++
 +	// Nothing else needs filesystem.
 +	// TODO Ignoring "noise" like /etc/localtime for now...
 +	if err := protect.Unveil("/", ""); err != nil {
 +		panic(err)
 +	}
-+
 +	if err := protect.UnveilBlock(); err != nil {
 +		panic(err)
 +	}
@@ -40,12 +48,12 @@ Index: cmd/yggdrasil/main.go
  	privateKey := ed25519.PrivateKey(cfg.PrivateKey)
  	publicKey := privateKey.Public().(ed25519.PublicKey)
  
-@@ -279,6 +304,10 @@ func main() {
+@@ -279,6 +312,10 @@ func main() {
  		// Wait for all parts to shutdown properly
  		<-done
  	})
 +
-+	if err := protect.Pledge("stdio rpath cpath inet mcast fattr unix dns route wroute"); err != nil {
++	if err := protect.Pledge("stdio rpath cpath inet mcast fattr unix dns route wroute proc exec"); err != nil {
 +		panic(err)
 +	}
  
