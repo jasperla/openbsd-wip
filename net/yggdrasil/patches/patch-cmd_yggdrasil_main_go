@@ -10,21 +10,41 @@ Index: cmd/yggdrasil/main.go
  	"github.com/gologme/log"
  	gsyslog "github.com/hashicorp/go-syslog"
  	"github.com/hjson/hjson-go/v4"
-@@ -39,6 +41,8 @@ type node struct {
- 
- // The main function is responsible for configuring and starting Yggdrasil.
- func main() {
-+	_ = protect.Pledge("stdio rpath wpath cpath inet dns route")
-+
- 	genconf := flag.Bool("genconf", false, "print a new config to stdout")
- 	useconf := flag.Bool("useconf", false, "read HJSON/JSON config from stdin")
- 	useconffile := flag.String("useconffile", "", "read HJSON/JSON config from specified file path")
-@@ -236,6 +240,8 @@ func main() {
- 			n.admin.SetupAdminHandlers()
- 		}
+@@ -137,6 +139,26 @@ func main() {
+ 		return
  	}
-+
-+	_ = protect.Pledge("stdio inet dns route")
  
- 	// Set up the multicast module.
- 	{
++	// If given, config file and log file have been opened at this point.
++
++	// If a file, the control socket will be removed on shutdown.
++	// TODO unclear how to access user-specified files here, assume default...
++	if err := protect.Unveil(strings.TrimPrefix(cfg.AdminListen, "unix://"), "rc"); err != nil {
++		panic(err)
++	}
++
++	// tun(4)
++	if err := protect.Unveil("/dev/" + cfg.IfName, "rw"); err != nil {
++		panic(err)
++	}
++
++	// Nothing else needs filesystem.
++	// TODO Ignoring "noise" like /etc/localtime for now...
++	if err := protect.Unveil("/", ""); err != nil {
++		panic(err)
++	}
++
++
+ 	privateKey := ed25519.PrivateKey(cfg.PrivateKey)
+ 	publicKey := privateKey.Public().(ed25519.PublicKey)
+ 
+@@ -279,6 +301,10 @@ func main() {
+ 		// Wait for all parts to shutdown properly
+ 		<-done
+ 	})
++
++	if err := protect.Pledge("stdio cpath inet mcast dns route wroute"); err != nil {
++		panic(err)
++	}
+ 
+ 	// Block until we are told to shut down.
+ 	<-ctx.Done()

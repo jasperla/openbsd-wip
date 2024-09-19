@@ -17,7 +17,7 @@ PERMIT_PACKAGE =	Yes
 
 MAINTAINER =		Klemens Nanni <kn@openbsd.org>
 
-# uses pledge()
+# uses pledge() and unveil()
 WANTLIB =		c pthread
 
 MODULES =		lang/go
