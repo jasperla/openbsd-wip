@@ -1,0 +1,30 @@
+Index: cmd/yggdrasil/main.go
+--- cmd/yggdrasil/main.go.orig
++++ cmd/yggdrasil/main.go
+@@ -14,6 +14,8 @@ import (
+ 	"strings"
+ 	"syscall"
+ 
++	"suah.dev/protect"
++
+ 	"github.com/gologme/log"
+ 	gsyslog "github.com/hashicorp/go-syslog"
+ 	"github.com/hjson/hjson-go/v4"
+@@ -39,6 +41,8 @@ type node struct {
+ 
+ // The main function is responsible for configuring and starting Yggdrasil.
+ func main() {
++	_ = protect.Pledge("stdio rpath wpath cpath inet dns route")
++
+ 	genconf := flag.Bool("genconf", false, "print a new config to stdout")
+ 	useconf := flag.Bool("useconf", false, "read HJSON/JSON config from stdin")
+ 	useconffile := flag.String("useconffile", "", "read HJSON/JSON config from specified file path")
+@@ -236,6 +240,8 @@ func main() {
+ 			n.admin.SetupAdminHandlers()
+ 		}
+ 	}
++
++	_ = protect.Pledge("stdio inet dns route")
+ 
+ 	// Set up the multicast module.
+ 	{

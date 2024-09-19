@@ -7,6 +7,9 @@ GH_TAGNAME =		v0.5.8
 MODGO_MODNAME =		github.com/${GH_ACCOUNT}/${GH_PROJECT}
 MODGO_VERSION =		${GH_TAGNAME}
 
+# make update-patches work
+WRKDIST =		${WRKDIR}/${MODGO_MODNAME}@${MODGO_VERSION}
+
 HOMEPAGE =		https://yggdrasil-network.github.io/
 
 # LGPLv3
@@ -14,6 +17,7 @@ PERMIT_PACKAGE =	Yes
 
 MAINTAINER =		Klemens Nanni <kn@openbsd.org>
 
+# uses pledge()
 WANTLIB =		c pthread
 
 MODULES =		lang/go
