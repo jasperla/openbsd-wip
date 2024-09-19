@@ -16,9 +16,9 @@ Index: cmd/yggdrasil/main.go
  
 +	// If given, config file and log file have been opened at this point.
 +
-+	// If a file, the control socket will be removed on shutdown.
++	// If a file, the control socket gets chmod'ed/removed on startup/shutdown.
 +	// TODO unclear how to access user-specified files here, assume default...
-+	if err := protect.Unveil(strings.TrimPrefix(cfg.AdminListen, "unix://"), "rc"); err != nil {
++	if err := protect.Unveil(strings.TrimPrefix(cfg.AdminListen, "unix://"), "rwc"); err != nil {
 +		panic(err)
 +	}
 +
@@ -45,7 +45,7 @@ Index: cmd/yggdrasil/main.go
  		<-done
  	})
 +
-+	if err := protect.Pledge("stdio cpath inet mcast dns route wroute"); err != nil {
++	if err := protect.Pledge("stdio rpath cpath inet mcast fattr unix dns route wroute"); err != nil {
 +		panic(err)
 +	}
  

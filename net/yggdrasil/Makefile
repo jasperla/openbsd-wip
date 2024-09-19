@@ -6,6 +6,7 @@ GH_PROJECT =		yggdrasil-go
 GH_TAGNAME =		v0.5.8
 MODGO_MODNAME =		github.com/${GH_ACCOUNT}/${GH_PROJECT}
 MODGO_VERSION =		${GH_TAGNAME}
+PKGNAME =		${DISTNAME:S/-go//}
 
 # make update-patches work
 WRKDIST =		${WRKDIR}/${MODGO_MODNAME}@${MODGO_VERSION}

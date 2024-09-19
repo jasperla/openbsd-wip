@@ -1,12 +1,13 @@
+- goroutines doing file i/o are racing against the one doing unveil, so these can't go yet:
+  - "rpath fattr" for chmod'ing the admin socket
+  - "unix" for listening on the admin socket
+
 - some ioctls fail and trigger ifconfig(8) fallback which also fail, thanks to unveil(8)
 2024/09/19 20:02:49 Error in SIOCSIFADDR_IN6: inappropriate ioctl for device
 2024/09/19 20:02:49 Using ifconfig as fallback: ifconfig tun0 inet6 200:154b:9d91:fe70:c93:fb7:8092:9cf9/7
 2024/09/19 20:02:49 SIOCSIFADDR_IN6 fallback failed: exec: "ifconfig": executable file not found in $PATH.
 
-- see if some of the network pledges can be dropped after (later) setup
-
 - not rdomain(4) aware, it fails to listen on all my interfaces outside 0, but keeps trying
 2024/09/19 20:09:58 Not multicasting on lo1 due to error: listen tcp [fe80::1%lo1]:0: bind: can't assign requested address
 ...
 2024/09/19 20:10:00 Not multicasting on lo1 due to error: listen tcp [fe80::1%lo1]:0: bind: can't assign requested address
-
