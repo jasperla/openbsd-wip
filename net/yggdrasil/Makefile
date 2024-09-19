@@ -27,4 +27,10 @@ MODGO_LDFLAGS =		-X ${_BUILD}Name=OpenBSD \
 			-X ${_BUILD}Version=${MODGO_VERSION}
 
 .include "modules.inc"
+
+# for pledge
+_PROTECT =		suah.dev/protect	v1.2.4
+MODGO_MODULES +=	${_PROTECT}
+MODGO_MODFILES +=	${_PROTECT}
+
 .include <bsd.port.mk>
