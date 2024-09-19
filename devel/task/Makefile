@@ -1,6 +1,6 @@
 COMMENT =	task runner and simpler Make alternative
 
-V =		3.39.0
+V =		3.39.1
 
 MODGO_MODNAME =	github.com/go-task/task/v3
 MODGO_VERSION =	v${V}
@@ -35,6 +35,8 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/zsh/site-functions/
 	${INSTALL_DATA} ${WRKSRC}/completion/zsh/_task \
 		${PREFIX}/share/zsh/site-functions/
+
+# TODO Run and check tests
 
 .include "modules.inc"
 
