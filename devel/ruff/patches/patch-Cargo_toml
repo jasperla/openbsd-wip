@@ -3,7 +3,7 @@ Use local sources for crates lsp-types and salsa
 Index: Cargo.toml
 --- Cargo.toml.orig
 +++ Cargo.toml
-@@ -85,7 +85,7 @@ libc = { version = "0.2.153" }
+@@ -88,7 +88,7 @@ libc = { version = "0.2.153" }
  libcst = { version = "1.1.0", default-features = false }
  log = { version = "0.4.17" }
  lsp-server = { version = "0.7.6" }
@@ -12,7 +12,7 @@ Index: Cargo.toml
    "proposed",
  ] }
  matchit = { version = "0.8.1" }
-@@ -108,7 +108,7 @@ rand = { version = "0.8.5" }
+@@ -111,7 +111,7 @@ rand = { version = "0.8.5" }
  rayon = { version = "1.10.0" }
  regex = { version = "1.10.2" }
  rustc-hash = { version = "2.0.0" }
