@@ -97,7 +97,7 @@ SHA256 (go_modules/mvdan.cc/editorconfig/@v/v0.3.0.mod) = 6hl29DmEYwNahO3PuerQWQ
 SHA256 (go_modules/mvdan.cc/editorconfig/@v/v0.3.0.zip) = qlDEPnibAl8EvqlQ8QQxSUbS+qUDVEK/X3QV65eGD+E=
 SHA256 (go_modules/mvdan.cc/sh/v3/@v/v3.9.0.mod) = MJGTQQVrT1YRfpdSi3KJHwJMlOzMvyd3z+s6hbkab9A=
 SHA256 (go_modules/mvdan.cc/sh/v3/@v/v3.9.0.zip) = xQJPV3jo0CkGY5oL2YsiFLZ5CM+yoSmLf1vhCIC59GE=
-SHA256 (task-3.39.1.zip) = rt7fDis5TtasL0vCstemoLK8HGmAOZX46dUjhDXM/5U=
+SHA256 (task-3.39.2.zip) = bb9ggXK8g3TiIIAyUDDtfPslAS7PlU4hmNTnyloUxzg=
 SIZE (go_modules/github.com/!ladicle/tabwriter/@v/v1.0.0.mod) = 45
 SIZE (go_modules/github.com/!ladicle/tabwriter/@v/v1.0.0.zip) = 13644
 SIZE (go_modules/github.com/!masterminds/semver/v3/@v/v3.3.0.mod) = 49
@@ -197,4 +197,4 @@ SIZE (go_modules/mvdan.cc/editorconfig/@v/v0.3.0.mod) = 38
 SIZE (go_modules/mvdan.cc/editorconfig/@v/v0.3.0.zip) = 13853
 SIZE (go_modules/mvdan.cc/sh/v3/@v/v3.9.0.mod) = 505
 SIZE (go_modules/mvdan.cc/sh/v3/@v/v3.9.0.zip) = 254334
-SIZE (task-3.39.1.zip) = 620710
+SIZE (task-3.39.2.zip) = 620837
