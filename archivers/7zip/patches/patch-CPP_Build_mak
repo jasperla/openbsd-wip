@@ -1,11 +1,11 @@
 Index: CPP/Build.mak
 --- CPP/Build.mak.orig
 +++ CPP/Build.mak
-@@ -56,7 +56,6 @@ CFLAGS = $(CFLAGS) -nologo -c -Fo$O/ -W4 -WX -EHsc -Gy
+@@ -74,7 +74,6 @@ CFLAGS = $(CFLAGS) -nologo -c -Fo$O/ $(CFLAGS_WARN_LEV
  !IF "$(CC)" == "clang-cl"
  
  CFLAGS = $(CFLAGS) \
 -  -Werror \
-   -Wextra \
    -Wall \
+   -Wextra \
    -Weverything \

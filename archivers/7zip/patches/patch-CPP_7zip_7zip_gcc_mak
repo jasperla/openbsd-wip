@@ -1,23 +1,23 @@
 Index: CPP/7zip/7zip_gcc.mak
 --- CPP/7zip/7zip_gcc.mak.orig
 +++ CPP/7zip/7zip_gcc.mak
-@@ -18,7 +18,7 @@ PROGPATH_STATIC = $(O)/$(PROG)s
+@@ -24,7 +24,7 @@ PROGPATH_STATIC = $(O)/$(PROG)s
  
  
  ifneq ($(CC), xlc)
--CFLAGS_WARN_WALL = -Wall -Werror -Wextra
+-CFLAGS_WARN_WALL = -Werror -Wall -Wextra
 +CFLAGS_WARN_WALL = -Wall -Wextra
  endif
  
  # for object file
-@@ -130,8 +130,8 @@ DEL_OBJ_EXE = -$(RM) $(PROGPATH) $(PROGPATH_STATIC) $(
+@@ -160,9 +160,8 @@ DEL_OBJ_EXE = -$(RM) $(PROGPATH) $(PROGPATH_STATIC) $(
  # CXXFLAGS_EXTRA = -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE
  
  # LOCAL_LIBS=-lpthread
 -# LOCAL_LIBS_DLL=$(LOCAL_LIBS) -ldl
++# LOCAL_LIBS_DLL=$(LOCAL_LIBS)
+ LIB2 = -lpthread
 -LIB2 = -lpthread -ldl
-+# LOCAL_LIBS_DLL=$(LOCAL_LIBS) 
-+LIB2 = -lpthread 
  
  
  endif

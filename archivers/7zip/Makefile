@@ -1,7 +1,7 @@
 COMMENT =	file archiver with a high compression ratio
 
-Vmajor =	22
-Vminor =	01
+Vmajor =	24
+Vminor =	08
 
 Vdot =		${Vmajor}.${Vminor}
 Vnodot =	${Vmajor}${Vminor}
@@ -18,16 +18,13 @@ MAINTAINER = Josh Grosse <josh@jggimi.net>
 # LGPL, except select unRAR modules licensed separately as Freeware
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=sevenzip/}
+SITES =		${SITE_SOURCEFORGE:=sevenzip/}
 EXTRACT_SUFX =		.tar.xz
 
 FIX_CRLF_FILES = 	CPP/7zip/7zip_gcc.mak \
 			CPP/7zip/Bundles/Alone2/makefile.gcc \
-			CPP/7zip/Common/FileStreams.cpp \
-			CPP/7zip/UI/Common/UpdateCallback.cpp \
 			CPP/Build.mak \
 			CPP/Windows/SystemInfo.cpp \
-			CPP/Windows/System.cpp \
 			C/7zip_gcc_c.mak
 
 USE_GMAKE =		Yes
