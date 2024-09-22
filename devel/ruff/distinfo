@@ -417,7 +417,7 @@ SHA256 (cargo/zip-0.6.6.tar.gz) = dgOU4kbkwoGJ8Z1IjAWL8W9WQBau+sXTK7HztR1ekmE=
 SHA256 (cargo/zstd-0.11.2+zstd.1.5.2.tar.gz) = IMyWAybs5k8BDS0hB1N/JtxYmmVzoxa9Wx26aF+l/eQ=
 SHA256 (cargo/zstd-safe-5.0.2+zstd.1.5.2.tar.gz) = HSpVheBPnupLKj0eylCMTe6Vkqie9vRQwRcZ2gcm9Ns=
 SHA256 (cargo/zstd-sys-2.0.11+zstd.1.5.6.tar.gz) = dWUsVcC28+bxLreG/hvJYDlr8Foes78fNpHDYQrC5tQ=
-SHA256 (ruff-0.6.6.tar.gz) = PLI2Of6PZHSP0/8NSn7YEo7SphTe9RGXjug8eYygwM4=
+SHA256 (ruff-0.6.7.tar.gz) = lTnn+SjEL7d+xrUvRSfzg30mPSUPllmg2OHTePOLv8g=
 SHA256 (salsa-rs-salsa-f608ff8b24f07706492027199f51132244034f29.tar.gz) = urUkyRlr4GdvccQMuxx/GXVZgX9WVVGmaOM/8NoAu5Y=
 SIZE (astral-sh-lsp-types-3512a9f33eadc5402cfab1b8f7340824c8ca1439.tar.gz) = 71124
 SIZE (cargo/Inflector-0.11.4.tar.gz) = 17438
@@ -838,5 +838,5 @@ SIZE (cargo/zip-0.6.6.tar.gz) = 65789
 SIZE (cargo/zstd-0.11.2+zstd.1.5.2.tar.gz) = 28987
 SIZE (cargo/zstd-safe-5.0.2+zstd.1.5.2.tar.gz) = 17273
 SIZE (cargo/zstd-sys-2.0.11+zstd.1.5.6.tar.gz) = 749078
-SIZE (ruff-0.6.6.tar.gz) = 5121732
+SIZE (ruff-0.6.7.tar.gz) = 5127713
 SIZE (salsa-rs-salsa-f608ff8b24f07706492027199f51132244034f29.tar.gz) = 594913

@@ -3,7 +3,7 @@ Don't run doctest during tests
 Index: crates/ruff_db/Cargo.toml
 --- crates/ruff_db/Cargo.toml.orig
 +++ crates/ruff_db/Cargo.toml
-@@ -45,6 +45,9 @@ zip = { workspace = true, features = ["deflate"] }
+@@ -42,6 +42,9 @@ web-time = { version = "1.1.0" }
  insta = { workspace = true }
  tempfile = { workspace = true }
  
@@ -11,5 +11,5 @@ Index: crates/ruff_db/Cargo.toml
 +doctest = false
 +
  [features]
+ default = ["os"]
  cache = ["ruff_cache"]
- os = ["ignore"]
