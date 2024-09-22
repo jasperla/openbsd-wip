@@ -75,8 +75,7 @@ RUN_DEPENDS-gtk +=	${PKGNAME-main}:${BUILD_PKGPATH} \
 RUN_DEPENDS-qt +=	${PKGNAME-main}:${BUILD_PKGPATH} \
 			devel/desktop-file-utils
 
-CONFIGURE_ARGS +=	-DENABLE_CLI=ON \
-			-DENABLE_TESTS=OFF
+CONFIGURE_ARGS +=	-DENABLE_CLI=ON
 
 # XXX sees ports libevent2 but picks base libevent expecting a single .so.*
 # use the bundle until upstream cmake code gets fixed
