@@ -1,7 +1,7 @@
 COMMENT =	static checker for GitHub Actions workflow files
 
 MODGO_MODNAME =	github.com/rhysd/actionlint
-MODGO_VERSION =	v1.7.1
+MODGO_VERSION =	v1.7.2
 
 DISTNAME =	actionlint-${MODGO_VERSION}
 
@@ -19,6 +19,10 @@ SEPARATE_BUILD =	Yes
 MODULES =	lang/go
 
 MODGO_LDFLAGS +=	-X ${MODGO_MODNAME}.version=${MODGO_VERSION:S/v//}
+
+# NOK: some tests fail
+do-test:
+	cd ${WRKSRC} && ${MODGO_TEST_CMD} ./...
 
 .include "modules.inc"
 
