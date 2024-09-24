@@ -1,0 +1,11 @@
+This is an updated version of the Binwalk firmware analysis tool. It has been
+re-written in Rust, and is currently considered unstable/experimental.
+
+While the usage and output is similar to that of previous Binwalk releases, this
+version has several notable improvements:
+
+- JSON output summary
+- Multi-threaded analysis
+- Efficient pattern matching
+- Smarter file carving and extraction
+- Much improved signature validation and reporting
