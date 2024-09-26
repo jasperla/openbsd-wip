@@ -21,7 +21,8 @@ WANTLIB =		c pthread
 MODULES =		lang/go
 
 _BUILD =		${MODGO_MODNAME}/src/version.build
-MODGO_LDFLAGS =		-X ${_BUILD}Name=OpenBSD \
+# buildName appears in -version output and as syslogd(8) tag
+MODGO_LDFLAGS =		-X ${_BUILD}Name=${PKGSTEM} \
 			-X ${_BUILD}Version=${MODGO_VERSION}
 
 .include "modules.inc"
