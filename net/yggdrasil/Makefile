@@ -1,3 +1,6 @@
+# hardcoded ioctl in src/tun/tun_bsd.go, fix Go proper or use cgo
+ONLY_FOR_ARCHS =	amd64
+
 COMMENT =		experimental end-to-end encrypted IPv6 overlay network
 CATEGORIES =		net
 
