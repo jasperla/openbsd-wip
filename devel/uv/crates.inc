@@ -49,7 +49,6 @@ MODCARGO_CRATES +=	axoupdater	0.7.2	# MIT OR Apache-2.0
 MODCARGO_CRATES +=	backoff	0.4.0	# MIT/Apache-2.0
 MODCARGO_CRATES +=	backtrace	0.3.73	# MIT OR Apache-2.0
 MODCARGO_CRATES +=	backtrace	0.3.74	# MIT OR Apache-2.0
-MODCARGO_CRATES +=	backtrace-ext	0.2.1	# MIT OR Apache-2.0
 MODCARGO_CRATES +=	base64	0.21.7	# MIT OR Apache-2.0
 MODCARGO_CRATES +=	base64	0.22.1	# MIT OR Apache-2.0
 MODCARGO_CRATES +=	base64ct	1.6.0	# Apache-2.0 OR MIT
