@@ -11,6 +11,15 @@ MODGO_MODNAME =		github.com/${GH_ACCOUNT}/${GH_PROJECT}
 MODGO_VERSION =		${GH_TAGNAME}
 PKGNAME =		${DISTNAME:S/-go//}
 
+SITES.fix =		https://${MODGO_MODNAME}/
+# merged "Fix link panic when shutting down (closes #1168)"
+PATCHFILES.fix =	${PKGSTEM}-{commit/}e138fa679c8bf32e02f07cc0c3bba5a2dd5e9e9c.patch
+# merged "tun: bsd: remove redundant ioctl to set MTU"
+PATCHFILES.fix +=	${PKGSTEM}-{pull/}1172.patch
+# pending "Fix ioctl(2) code for OpenBSD"
+PATCHFILES.fix +=	${PKGSTEM}-{pull/}1175.patch
+PATCH_DIST_STRIP =	-p1
+
 HOMEPAGE =		https://yggdrasil-network.github.io/
 
 # LGPLv3
