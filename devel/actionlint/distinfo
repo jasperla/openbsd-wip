@@ -1,4 +1,4 @@
-SHA256 (actionlint-v1.7.2.zip) = 6aIsmN7kihivgPKUtAkeZKl0di6+uhSwKMFaFuA4lno=
+SHA256 (actionlint-v1.7.3.zip) = YQWp1xXJXsmnaro46dh9DHxG3fs3TN3j4YD08BPp+YE=
 SHA256 (go_modules/github.com/fatih/color/@v/v1.17.0.mod) = EVCWwLAxTBSaQR67bfCX187wr8cx2gHTTexr2pLfgQ4=
 SHA256 (go_modules/github.com/fatih/color/@v/v1.17.0.zip) = iltulKtJ3m+GnT79TgQv/UbCoSfyUTn267YUbkyescQ=
 SHA256 (go_modules/github.com/google/go-cmp/@v/v0.6.0.mod) = 58dmnUod1Ym6PgJLon9D8pPbYR/gdc4g17iENw1j/r0=
@@ -28,7 +28,7 @@ SHA256 (go_modules/gopkg.in/check.v1/@v/v0.0.0-20161208181325-20d25e280405.mod) 
 SHA256 (go_modules/gopkg.in/check.v1/@v/v0.0.0-20161208181325-20d25e280405.zip) = ThgX+WTKNOVFuBr9oDJaXonPWN4uQT2CB8Cv3dD9wVw=
 SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.mod) = IVeYYKIDBvz0OxvSNNH7oxlJnHdhG3HAX5vzupDauTk=
 SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.zip) = qrj7xOYwDqCOav4crqGKIckMefSJ9SxT4vIEMfGpoBU=
-SIZE (actionlint-v1.7.2.zip) = 1766308
+SIZE (actionlint-v1.7.3.zip) = 1767118
 SIZE (go_modules/github.com/fatih/color/@v/v1.17.0.mod) = 161
 SIZE (go_modules/github.com/fatih/color/@v/v1.17.0.zip) = 14693
 SIZE (go_modules/github.com/google/go-cmp/@v/v0.6.0.mod) = 41
