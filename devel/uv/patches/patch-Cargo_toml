@@ -3,7 +3,7 @@ Use local paths for crate async_zip, pubgrub, tl and request-middleware
 Index: Cargo.toml
 --- Cargo.toml.orig
 +++ Cargo.toml
-@@ -70,7 +70,7 @@ async-channel = { version = "2.3.1" }
+@@ -71,7 +71,7 @@ async-channel = { version = "2.3.1" }
  async-compression = { version = "0.4.12" }
  async-trait = { version = "0.1.82" }
  async_http_range_reader = { version = "0.8.0" }
@@ -12,16 +12,14 @@ Index: Cargo.toml
  axoupdater = { version = "0.7.2", default-features = false }
  backoff = { version = "0.4.0" }
  base64 = { version = "0.22.1" }
-@@ -121,7 +121,7 @@ pathdiff = { version = "0.2.1" }
+@@ -122,14 +122,14 @@ pathdiff = { version = "0.2.1" }
  petgraph = { version = "0.6.5" }
  platform-info = { version = "2.0.3" }
  proc-macro2 = { version = "1.0.86" }
 -pubgrub = { git = "https://github.com/astral-sh/pubgrub", rev = "388685a8711092971930986644cfed152d1a1f6c" }
 +pubgrub = { path = "${MODCARGO_VENDOR_DIR}/pubgrub-${PUBGRUB_HASH}" }
- pyo3 = { version = "0.21.2" }
- pyo3-log = { version = "0.10.0" }
  quote = { version = "1.0.37" }
-@@ -129,8 +129,8 @@ rayon = { version = "1.10.0" }
+ rayon = { version = "1.10.0" }
  reflink-copy = { version = "0.1.19" }
  regex = { version = "1.10.6" }
  reqwest = { version = "0.12.7", default-features = false, features = ["json", "gzip", "stream", "rustls-tls", "rustls-tls-native-roots", "socks", "multipart"] }
