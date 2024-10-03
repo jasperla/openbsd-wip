@@ -1,4 +1,11 @@
 texmf
 =====
 
+pkg_delete time:
+File /usr/local/share/texmf-var/luametatex-cache/context/148f906ad1dab182285ae0357953b2c0/fonts/data/names.tma does not exist
+File /usr/local/share/texmf-var/luametatex-cache/context/148f906ad1dab182285ae0357953b2c0/fonts/data/names.tmd does not exist
+File /usr/local/share/texmf-var/luametatex-cache/context/148f906ad1dab182285ae0357953b2c0/formats/luametatex/cont-en.fmt does not exist
+File /usr/local/share/texmf-var/luametatex-cache/context/148f906ad1dab182285ae0357953b2c0/formats/luametatex/cont-en.lui does not exist
+File /usr/local/share/texmf-var/luametatex-cache/context/148f906ad1dab182285ae0357953b2c0/formats/luametatex/cont-en.luv does not exist
+
 dvisvgm.

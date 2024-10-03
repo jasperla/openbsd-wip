@@ -45,8 +45,8 @@ RUN_DEPENDS-main +=	texlive_base->=${V}:print/texlive/base,-main \
 RUN_DEPENDS-full =	${FULLPKGNAME-main}:print/texlive/texmf,-main \
 			${MODPY_RUN_DEPENDS} \
 			${_MODLUA_RUNDEPENDS}
-# XXX: when unbreaking context, see if it can be further towards the top dep
-# chain. Can it depend on only the buildset?
+# XXX: Can we make context be further towards the top dep chain? Can it depend
+# on only the buildset?
 RUN_DEPENDS-context +=	${FULLPKGNAME-full}:print/texlive/texmf,-full \
 			print/luametatex
 RUN_DEPENDS-docs +=	texlive_base->=${V}:print/texlive/base,-main \
