@@ -12,24 +12,26 @@ MODGO_MODULES =	\
 	github.com/aymanbagabas/go-udiff		 v0.2.0 \
 	github.com/aymerick/douceur			 v0.2.0 \
 	github.com/charmbracelet/bubbles		 v0.18.0 \
-	github.com/charmbracelet/bubbletea		 v0.25.0 \
+	github.com/charmbracelet/bubbletea		 v1.1.0 \
 	github.com/charmbracelet/glamour		 v0.8.0 \
 	github.com/charmbracelet/harmonica		 v0.2.0 \
-	github.com/charmbracelet/lipgloss		 v0.12.1 \
+	github.com/charmbracelet/lipgloss		 v0.13.0 \
 	github.com/charmbracelet/log			 v0.3.1 \
-	github.com/charmbracelet/x/ansi			 v0.1.4 \
-	github.com/charmbracelet/x/exp/golden		 v0.0.0-20240715153702-9ba8adf781c4 \
+	github.com/charmbracelet/x/ansi			 v0.2.3 \
+	github.com/charmbracelet/x/exp/golden		 v0.0.0-20240806155701-69247e0abc2a \
 	github.com/charmbracelet/x/exp/term		 v0.0.0-20240425164147-ba2a9512b05f \
+	github.com/charmbracelet/x/term			 v0.2.0 \
 	github.com/cli/browser				 v1.3.0 \
 	github.com/cli/go-gh/v2				 v2.9.0 \
 	github.com/cli/safeexec				 v1.0.1 \
 	github.com/cli/shurcoo!l-graphql		 v0.0.4 \
-	github.com/containerd/console			 v1.0.4 \
+	github.com/containerd/console			 v1.0.4-0.20230313162750-1ae8d489ac81 \
 	github.com/cpuguy83/go-md2man/v2		 v2.0.3 \
 	github.com/creack/pty				 v1.1.9 \
 	github.com/davecgh/go-spew			 v1.1.1 \
 	github.com/dlclark/regexp2			 v1.11.0 \
 	github.com/dustin/go-humanize			 v1.0.1 \
+	github.com/erikgeiser/coninput			 v0.0.0-20211004153227-1c3628e74d0f \
 	github.com/gabriel-vasile/mimetype		 v1.4.3 \
 	github.com/gen2brain/beeep			 v0.0.0-20240112042604-c7bb2cd88fea \
 	github.com/go-logfmt/logfmt			 v0.6.0 \
@@ -58,7 +60,7 @@ MODGO_MODULES =	\
 	github.com/mattn/go-colorable			 v0.1.13 \
 	github.com/mattn/go-isatty			 v0.0.20 \
 	github.com/mattn/go-localereader		 v0.0.1 \
-	github.com/mattn/go-runewidth			 v0.0.15 \
+	github.com/mattn/go-runewidth			 v0.0.16 \
 	github.com/mcuadros/go-version			 v0.0.0-20190308113854-92cdf37c5b75 \
 	github.com/mgutz/ansi				 v0.0.0-20200706080929-d51e80ef957d \
 	github.com/microcosm-cc/bluemonday		 v1.0.27 \
@@ -87,10 +89,10 @@ MODGO_MODULES =	\
 	golang.org/x/mod				 v0.17.0 \
 	golang.org/x/net				 v0.27.0 \
 	golang.org/x/oauth2				 v0.15.0 \
-	golang.org/x/sync				 v0.7.0 \
-	golang.org/x/sys				 v0.22.0 \
+	golang.org/x/sync				 v0.8.0 \
+	golang.org/x/sys				 v0.25.0 \
 	golang.org/x/term				 v0.22.0 \
-	golang.org/x/text				 v0.16.0 \
+	golang.org/x/text				 v0.18.0 \
 	golang.org/x/tools				 v0.21.1-0.20240508182429-e35e4ccd0d2d \
 	google.golang.org/appengine			 v1.6.7 \
 	google.golang.org/protobuf			 v1.31.0 \
@@ -101,11 +103,14 @@ MODGO_MODULES =	\
 
 MODGO_MODFILES =	\
 	github.com/alecthomas/chroma/v2		 v2.8.0 \
+	github.com/charmbracelet/bubbletea	 v0.25.0 \
 	github.com/charmbracelet/glamour	 v0.7.0 \
 	github.com/charmbracelet/lipgloss	 v0.10.1-0.20240413172830-d0be07ea6b9c \
+	github.com/charmbracelet/lipgloss	 v0.12.1 \
 	github.com/charmbracelet/lipgloss	 v0.9.1 \
+	github.com/charmbracelet/x/ansi		 v0.1.4 \
+	github.com/charmbracelet/x/exp/golden	 v0.0.0-20240715153702-9ba8adf781c4 \
 	github.com/cli/safeexec			 v1.0.0 \
-	github.com/containerd/console		 v1.0.4-0.20230313162750-1ae8d489ac81 \
 	github.com/davecgh/go-spew		 v1.1.0 \
 	github.com/dlclark/regexp2		 v1.4.0 \
 	github.com/google/go-cmp		 v0.5.8 \
@@ -115,6 +120,7 @@ MODGO_MODFILES =	\
 	github.com/mattn/go-isatty		 v0.0.19 \
 	github.com/mattn/go-runewidth		 v0.0.12 \
 	github.com/mattn/go-runewidth		 v0.0.14 \
+	github.com/mattn/go-runewidth		 v0.0.15 \
 	github.com/microcosm-cc/bluemonday	 v1.0.26 \
 	github.com/muesli/ansi			 v0.0.0-20211018074035-2e021307bc4b \
 	github.com/muesli/termenv		 v0.15.2 \
@@ -141,20 +147,22 @@ MODGO_MODFILES =	\
 	golang.org/x/net			 v0.26.0 \
 	golang.org/x/sync			 v0.1.0 \
 	golang.org/x/sync			 v0.4.0 \
+	golang.org/x/sys			 v0.0.0-20210809222454-d867a43fc93e \
 	golang.org/x/sys			 v0.0.0-20210831042530-f4d43177bf5e \
 	golang.org/x/sys			 v0.0.0-20220204135822-1c1b9b1eba6a \
-	golang.org/x/sys			 v0.1.0 \
 	golang.org/x/sys			 v0.10.0 \
 	golang.org/x/sys			 v0.12.0 \
 	golang.org/x/sys			 v0.13.0 \
 	golang.org/x/sys			 v0.17.0 \
 	golang.org/x/sys			 v0.19.0 \
+	golang.org/x/sys			 v0.22.0 \
+	golang.org/x/sys			 v0.24.0 \
 	golang.org/x/sys			 v0.6.0 \
-	golang.org/x/sys			 v0.7.0 \
 	golang.org/x/term			 v0.13.0 \
 	golang.org/x/term			 v0.6.0 \
 	golang.org/x/text			 v0.13.0 \
 	golang.org/x/text			 v0.14.0 \
+	golang.org/x/text			 v0.16.0 \
 	golang.org/x/text			 v0.3.8 \
 	golang.org/x/tools			 v0.14.0 \
 	golang.org/x/tools			 v0.18.0 \
