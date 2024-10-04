@@ -5,7 +5,7 @@ COMMENT =	pattern matching swiss knife for malware researchers
 
 GH_ACCOUNT =	VirusTotal
 GH_PROJECT =	yara-x
-GH_TAGNAME =	v0.8.0
+GH_TAGNAME =	v0.9.0
 
 CATEGORIES =	security
 
@@ -23,7 +23,7 @@ MODULES =	devel/cargo
 
 CONFIGURE_STYLE =	cargo
 
-LIB_DEPENDS +=		archivers/zstd
+BUILD_DEPENDS +=	archivers/zstd
 
 MODCARGO_RUSTFLAGS +=	-L${LOCALBASE}/lib
 
