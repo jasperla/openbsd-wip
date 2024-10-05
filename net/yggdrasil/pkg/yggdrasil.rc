@@ -8,4 +8,17 @@ daemon_flags="-logto syslog -useconffile ${SYSCONFDIR}/yggdrasil.conf"
 rc_bg=YES
 rc_reload=NO
 
+# TODO  Drop JSON format and silence standard output once rc_pre() is obsolete.
+rc_configtest() {
+	${daemon} ${daemon_flags} -normaliseconf -json
+}
+
+# TODO  tun(4) is created via /dev/tunN, by default only /dev/tun[0123] exist.
+# Switch creation to netintro(4) SIOCIFCREATE, like ifconfig(8) does.
+rc_pre() {
+	local _dev=$(rc_configtest | jq -r .IfName)
+
+	[[ -c /dev/${_dev} ]] || (cd /dev/ && sh MAKEDEV ${_dev})
+}
+
 rc_cmd $1
