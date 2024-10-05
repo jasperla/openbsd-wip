@@ -18,8 +18,8 @@ Index: cmd/yggdrasil/main.go
  
 +	// If given, config file and log file have been opened at this point.
 +
-+	// If a file, the control socket gets chmod'ed/removed on startup/shutdown.
-+	// TODO unclear how to access user-specified files here, assume default...
++	// The control socket gets chmod'ed/removed on startup/shutdown.
++	// This is a compile-time option, users cannot configure it.
 +	if err := protect.Unveil(strings.TrimPrefix(cfg.AdminListen, "unix://"), "rwc"); err != nil {
 +		panic(err)
 +	}
