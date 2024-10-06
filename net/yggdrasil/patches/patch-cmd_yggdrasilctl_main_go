@@ -1,0 +1,38 @@
+use pledge(2)
+
+Index: cmd/yggdrasilctl/main.go
+--- cmd/yggdrasilctl/main.go.orig
++++ cmd/yggdrasilctl/main.go
+@@ -13,6 +13,8 @@ import (
+ 	"strings"
+ 	"time"
+ 
++	"suah.dev/protect"
++
+ 	"github.com/olekukonko/tablewriter"
+ 	"github.com/yggdrasil-network/yggdrasil-go/src/admin"
+ 	"github.com/yggdrasil-network/yggdrasil-go/src/core"
+@@ -22,6 +24,11 @@ import (
+ )
+ 
+ func main() {
++	// read config, speak over DNS/TCP or UNIX socket
++	if err := protect.Pledge("stdio rpath inet unix dns"); err != nil {
++		panic(err)
++	}
++
+ 	// makes sure we can use defer and still return an error code to the OS
+ 	os.Exit(run())
+ }
+@@ -75,6 +82,11 @@ func run() int {
+ 		conn, err = net.Dial("tcp", cmdLineEnv.endpoint)
+ 	}
+ 	if err != nil {
++		panic(err)
++	}
++
++	// config and socket are done
++	if err := protect.Pledge("stdio"); err != nil {
+ 		panic(err)
+ 	}
+ 
