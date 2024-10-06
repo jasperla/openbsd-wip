@@ -12,43 +12,85 @@ Index: cmd/yggdrasil/main.go
  	"github.com/gologme/log"
  	gsyslog "github.com/hashicorp/go-syslog"
  	"github.com/hjson/hjson-go/v4"
-@@ -137,6 +139,28 @@ func main() {
+@@ -39,6 +41,20 @@ type node struct {
+ 
+ // The main function is responsible for configuring and starting Yggdrasil.
+ func main() {
++	// Set of all (potentially) required pledge(2) promises:
++	//	"stdio wpath cpath inet mcast fattr unix dns route wroute"
++	//
++	// Not all operations are coverable with pledge(2), so immediately
++	// limit file system access with unveil(2), effectively preventing
++	// "proc exec" promises right from the start:
++	// 
++	// - read arbitrary config file
++	// - create/write arbitrary log file
++	// - read/write/chmod/remove compile-time admin socket, if at all
++	if err := protect.Unveil("/", "rwc"); err != nil {
++		panic(fmt.Sprintf("unveil /: %v", err))
++	}
++
+ 	genconf := flag.Bool("genconf", false, "print a new config to stdout")
+ 	useconf := flag.Bool("useconf", false, "read HJSON/JSON config from stdin")
+ 	useconffile := flag.String("useconffile", "", "read HJSON/JSON config from specified file path")
+@@ -137,6 +153,33 @@ func main() {
  		return
  	}
  
-+	// If given, config file and log file have been opened at this point.
++	// Lock down final file system acccess.  At this point, if at all:
++	// - arbitrary config file was read
++	// - arbitrary log file is created/open (no more "wpath")
 +
-+	// The control socket gets chmod'ed/removed on startup/shutdown.
-+	// This is a compile-time option, users cannot configure it.
-+	if err := protect.Unveil(strings.TrimPrefix(cfg.AdminListen, "unix://"), "rwc"); err != nil {
-+		panic(err)
++	usesUnixSocket := strings.HasPrefix(cfg.AdminListen, "unix://")
++	if usesUnixSocket {
++		// chmod(2)/unlink(2) on startup if the file already exists.
++		if err := protect.Unveil(strings.TrimPrefix(cfg.AdminListen, "unix://"), "rwc"); err != nil {
++			panic(err)
++		}
 +	}
 +
-+	// tun(4)
-+	if err := protect.Unveil("/dev/" + cfg.IfName, "rw"); err != nil {
-+		panic(err)
++	if strings.HasPrefix(cfg.IfName, "tun") {
++		// /dev/tunN device must exist already.
++		if err := protect.Unveil("/dev/" + cfg.IfName, "rw"); err != nil {
++			panic(err)
++		}
 +	}
 +
-+	// Nothing else needs filesystem.
-+	// TODO Ignoring "noise" like /etc/localtime for now...
-+	if err := protect.Unveil("/", ""); err != nil {
-+		panic(err)
-+	}
-+	if err := protect.UnveilBlock(); err != nil {
++	// Nothing else is needed.
++	if err := protect.UnveilSet(map[string]string{
++	    "/etc/hosts":       "r",
++	    "/etc/resolv.conf": "r",
++	}, true); err != nil {
 +		panic(err)
 +	}
 +
  	privateKey := ed25519.PrivateKey(cfg.PrivateKey)
  	publicKey := privateKey.Public().(ed25519.PublicKey)
  
-@@ -279,6 +303,10 @@ func main() {
- 		// Wait for all parts to shutdown properly
- 		<-done
- 	})
+@@ -271,7 +314,25 @@ func main() {
+ 			n.tun.SetupAdminHandlers(n.admin)
+ 		}
+ 	}
+-	
 +
-+	if err := protect.Pledge("stdio rpath cpath inet mcast fattr unix dns route wroute"); err != nil {
++	// Promise final modes of operation.  At this point, if at all:
++	// - raw socket is created/open
++	// - admin socket is created/open
++	promises := []string{"stdio", "inet", "mcast", "dns", "route", "wroute"}
++	// TODO  goroutines race against each other, i.e. open(2) /dev/tunN can
++	// happen after pledge(2).
++	promises = append(promises, "rpath")
++
++	if usesUnixSocket {
++		promises = append(promises, "cpath", "fattr", "unix")
++	}
++	if len(cfg.MulticastInterfaces) > 0 {
++		promises = append(promises, "mcast")
++	}
++	if err := protect.Pledge(strings.Join(promises, " ")); err != nil {
 +		panic(err)
 +	}
- 
- 	// Block until we are told to shut down.
- 	<-ctx.Done()
++
+ 	//Windows service shutdown
+ 	minwinsvc.SetOnExit(func() {
+ 		logger.Infof("Shutting down service ...")
