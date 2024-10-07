@@ -1,4 +1,4 @@
-SHA256 (cargo-nextest-0.9.80.tar.gz) = traQfvTvOnyvpMPwrEaNJ/54L5RyiohzxrLidDBMTek=
+SHA256 (cargo-nextest-0.9.81.tar.gz) = SJSwAS8so0e04gW1L11b3Pwc32BUDJa9BCUdafEOY1M=
 SHA256 (cargo/addr2line-0.21.0.tar.gz) = ijCy4jueF6n5BkHHqxVJzZtE8pbTzL8wnShjz+OYoMs=
 SHA256 (cargo/adler-1.0.2.tar.gz) = 8mIBYEyHseAb09mPjV2aj8u4FejO20H/zL60v1k6Nf4=
 SHA256 (cargo/adler2-2.0.0.tar.gz) = USdh4LsleN1zgMa6qg9M4D6E+V6WAjHR3si/TX1uJic=
@@ -170,7 +170,7 @@ SHA256 (cargo/nom-7.1.3.tar.gz) = 0nOYPFplenCj6PKgEymCLzuMgXK3OCZBGlV1HkBKCko=
 SHA256 (cargo/num-traits-0.2.19.tar.gz) = Bx38BiaQ6QtzTAsic85yrQ/6lfDHRZa8JQ3P2WAmKEE=
 SHA256 (cargo/number_prefix-0.4.0.tar.gz) = gwskag5fIK+HFBslwXPNG2Cb13eaRhfW7FgquvkIcPM=
 SHA256 (cargo/object-0.32.2.tar.gz) = pqYiAItuMhr8BJcJdvYu4pf9uqb5UxjKND4+67lkhEE=
-SHA256 (cargo/once_cell-1.20.1.tar.gz) = gogcS+IZq1+q8q1eXl7N/4xmvXQCyjFgl1yTsklhr9E=
+SHA256 (cargo/once_cell-1.20.2.tar.gz) = EmH+fjPHOzVOq0OxJzpXyPln0DkegDU+UfdkrALPZ3U=
 SHA256 (cargo/openssl-0.10.66.tar.gz) = lSn0eGtwo+jGHhEXmvF6thiK2NDe14xVKUQe051L2cE=
 SHA256 (cargo/openssl-macros-0.1.1.tar.gz) = qUhma2N6D0ZehWTHPonU3eANctTUc8yXLzkPw9zufZw=
 SHA256 (cargo/openssl-probe-0.1.5.tar.gz) = /wEaMCw5alGXaSQx/BlIAZFUr8F4uvfY43NnRCpGAc8=
@@ -381,7 +381,7 @@ SHA256 (cargo/zipsign-api-0.1.2.tar.gz) = ZBOlRq2p280Lmj4LCIBYEnnjUEe86Xl+Ujs0CO
 SHA256 (cargo/zstd-0.13.2.tar.gz) = /PK3eKZkWB4x44lFSnBy2rFkdgbUT3/uoizVq7nJ8/k=
 SHA256 (cargo/zstd-safe-7.2.1.tar.gz) = VKOrTbaM6jZqzFyJfHtNTRuJlKnNbm+EH4lkVmpBkFk=
 SHA256 (cargo/zstd-sys-2.0.13+zstd.1.5.6.tar.gz) = OP8PIc/uj5fZTO9BNZ4MiaphEwKKsCkaqMoAOJlalao=
-SIZE (cargo-nextest-0.9.80.tar.gz) = 7178992
+SIZE (cargo-nextest-0.9.81.tar.gz) = 7179646
 SIZE (cargo/addr2line-0.21.0.tar.gz) = 40807
 SIZE (cargo/adler-1.0.2.tar.gz) = 12778
 SIZE (cargo/adler2-2.0.0.tar.gz) = 13529
@@ -553,7 +553,7 @@ SIZE (cargo/nom-7.1.3.tar.gz) = 117570
 SIZE (cargo/num-traits-0.2.19.tar.gz) = 51631
 SIZE (cargo/number_prefix-0.4.0.tar.gz) = 6922
 SIZE (cargo/object-0.32.2.tar.gz) = 286994
-SIZE (cargo/once_cell-1.20.1.tar.gz) = 33345
+SIZE (cargo/once_cell-1.20.2.tar.gz) = 33394
 SIZE (cargo/openssl-0.10.66.tar.gz) = 273705
 SIZE (cargo/openssl-macros-0.1.1.tar.gz) = 5601
 SIZE (cargo/openssl-probe-0.1.5.tar.gz) = 7227
