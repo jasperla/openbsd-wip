@@ -48,7 +48,7 @@ RUN_DEPENDS-full =	${FULLPKGNAME-main}:print/texlive/texmf,-main \
 # XXX: Can we make context be further towards the top dep chain? Can it depend
 # on only the buildset?
 RUN_DEPENDS-context +=	${FULLPKGNAME-full}:print/texlive/texmf,-full \
-			print/luametatex
+			print/luametatex>=2.11.01
 RUN_DEPENDS-docs +=	texlive_base->=${V}:print/texlive/base,-main \
 			x11/p5-Tk
 RUN_DEPENDS-buildset +=	texlive_mktexlsr->=${V}:print/texlive/base,-mktexlsr
