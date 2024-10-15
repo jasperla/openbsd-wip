@@ -3,18 +3,15 @@ Testing net/transmission beyond 4.0.6:
 1) git clone -b obsd --recurse-submodules git@github.com:jggimi/transmission.git transmission-4.0.x
 
    jggimi/transmission is a fork of transmission/transmission. In branch obsd,
-   it's submodule third-party/fmt has been reverted to release 10.2.1.  The
-   upstream submodule is at fmt 11, which causes double-free errors.
+   it's submodule third-party/fmt has been reverted to release 10.2.1.  This
+   matches bdep devel/fmt. 
 
 2) create tarball, xz compress it, move to distfiles. 
 
-   There's an ./archive.sh in the top directory which will create a git archive of the
-   source and all source submodules, compress it, and move it into /usr/ports/distfiles.
+   `sh archive.sh`  will create a git archive tarball with all source submodules,
+   compress it, and move it into /usr/ports/distfiles.
 
 3) pkg_delete transmission
-4) make clean=all, makesum, patch, update-patches, update-plist, port-lib-depends-check, package, install-all
-5) test
-
----
-
-Regression testing added.  419 tests pass, 0 fail. (9 tests disabled).
+4) make clean=all, makesum, (patch, update-patches), update-plist, port-lib-depends-check, install-all
+5) make test, there should be zero failures
+6) test the application suite
