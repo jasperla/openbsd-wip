@@ -38,7 +38,7 @@ SHA256 (cargo/assert_fs-1.1.2.tar.gz) = fv2x/bR2AoJ6NChXZm/rNycSy8ZLQUFyvWsWegKS
 SHA256 (cargo/async-channel-1.9.0.tar.gz) = gZU8UpM2AQ7dbY41j4htlYEmd5XGGxlHW3ExS/+kbTU=
 SHA256 (cargo/async-channel-2.3.1.tar.gz) = ibR4ALC+d1ktoK/UJcwDRoBShEr/M7hOM8xpb2Tne2o=
 SHA256 (cargo/async-compression-0.4.12.tar.gz) = /sE09k4rxXQRIm38TlLeyFnd/H5xH8Xge2ElhPAA5Ko=
-SHA256 (cargo/async-compression-0.4.14.tar.gz) = mYKC+PSczWEWsO2KTeD70xUWl5IOfHUzQW1uJedkNKc=
+SHA256 (cargo/async-compression-0.4.15.tar.gz) = 4mqYRMZZoqKT0jnHkQt1L4SH/hIsbIvRZZv4WmUHwwI=
 SHA256 (cargo/async-trait-0.1.83.tar.gz) = chyufeXDT7sqzSfiHm0s97iG3ODCc4jUbE5sR+pDGN0=
 SHA256 (cargo/async_http_range_reader-0.8.0.tar.gz) = 8aDgVxxdck0X++C2CNMakelJOHIsFBh306KYIhawhMI=
 SHA256 (cargo/atomic-waker-1.1.2.tar.gz) = FQW9XT0RaHLnJxptThbYHQyFcIdsjeaAk6CawmnYqsA=
@@ -716,7 +716,7 @@ SHA256 (cargo/zstd-sys-2.0.13+zstd.1.5.6.tar.gz) = OP8PIc/uj5fZTO9BNZ4MiaphEwKKs
 SHA256 (charliermarsh-rs-async-zip-011b24604fa7bc223daaad7712c0694bac8f0a87.tar.gz) = aElLaNB98qNthefl4885zNTKpJh2+HTgFxYQqsLmJzA=
 SHA256 (charliermarsh-tl-6e25b2ee2513d75385101a8ff9f591ef51f314ec.tar.gz) = 6Di8p8sgXjc82AHOGUdqgIU0pgkPwmGqLqdN/ZzqaLA=
 SHA256 (gribouille-netrc-544f3890b621f0dc30fcefb4f804269c160ce2e9.tar.gz) = OahmD+aPwflY56i159RlC4g1C4CHdClbCZCUoncM5Mg=
-SHA256 (uv-0.4.21.tar.gz) = qNYO3oxLmOwbNB8GpoC6/37RPg2LW2yL2oJzCvgmGtE=
+SHA256 (uv-0.4.22.tar.gz) = yYN36GGe1rozwUe4jnhe/WcJYSTKydNc5++P2aFLqh4=
 SIZE (astral-sh-pubgrub-388685a8711092971930986644cfed152d1a1f6c.tar.gz) = 87945
 SIZE (cargo/actix-codec-0.5.2.tar.gz) = 14085
 SIZE (cargo/actix-http-3.8.0.tar.gz) = 161524
@@ -757,7 +757,7 @@ SIZE (cargo/assert_fs-1.1.2.tar.gz) = 19328
 SIZE (cargo/async-channel-1.9.0.tar.gz) = 13664
 SIZE (cargo/async-channel-2.3.1.tar.gz) = 14576
 SIZE (cargo/async-compression-0.4.12.tar.gz) = 109647
-SIZE (cargo/async-compression-0.4.14.tar.gz) = 110332
+SIZE (cargo/async-compression-0.4.15.tar.gz) = 111489
 SIZE (cargo/async-trait-0.1.83.tar.gz) = 29054
 SIZE (cargo/async_http_range_reader-0.8.0.tar.gz) = 14013
 SIZE (cargo/atomic-waker-1.1.2.tar.gz) = 12422
@@ -1435,4 +1435,4 @@ SIZE (cargo/zstd-sys-2.0.13+zstd.1.5.6.tar.gz) = 749090
 SIZE (charliermarsh-rs-async-zip-011b24604fa7bc223daaad7712c0694bac8f0a87.tar.gz) = 51706
 SIZE (charliermarsh-tl-6e25b2ee2513d75385101a8ff9f591ef51f314ec.tar.gz) = 37106
 SIZE (gribouille-netrc-544f3890b621f0dc30fcefb4f804269c160ce2e9.tar.gz) = 7885
-SIZE (uv-0.4.21.tar.gz) = 2707247
+SIZE (uv-0.4.22.tar.gz) = 2721833
