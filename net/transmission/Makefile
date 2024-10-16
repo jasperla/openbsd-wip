@@ -2,10 +2,10 @@ COMMENT-main=	BitTorrent command line and daemon client
 COMMENT-gtk=	BitTorrent client with GTK+ interface
 COMMENT-qt=	BitTorrent client with Qt interface
 
-# testing between 4.0.6 and the next release:
-# see UPDATE file for gittish steps due to fmt issues.
-#
-VER=		4.0.x
+# testing between 4.0.6 and the next release, 
+# see UPDATE regarding the devel/fmt shared lib:
+
+VER=		4.1.0.dev
 DISTNAME=	transmission-${VER}
 PKGNAME-main=	transmission-${VER}
 PKGNAME-gtk=	transmission-gtk-${VER}
@@ -20,6 +20,7 @@ INSTALL_DEBUG_PACKAGES=Yes
 # GPLv2+
 PERMIT_PACKAGE=	Yes
 
+# not in use until the next release
 SITES=	https://github.com/transmission/transmission/releases/download/${VER}/
 EXTRACT_SUFX=	.tar.xz
 
