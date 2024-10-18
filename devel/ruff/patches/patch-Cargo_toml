@@ -3,20 +3,20 @@ Use local sources for crates lsp-types and salsa
 Index: Cargo.toml
 --- Cargo.toml.orig
 +++ Cargo.toml
-@@ -89,7 +89,7 @@ libc = { version = "0.2.153" }
+@@ -93,7 +93,7 @@ libc = { version = "0.2.153" }
  libcst = { version = "1.1.0", default-features = false }
  log = { version = "0.4.17" }
  lsp-server = { version = "0.7.6" }
 -lsp-types = { git = "https://github.com/astral-sh/lsp-types.git", rev = "3512a9f", features = [
 +lsp-types = { path = "${MODCARGO_VENDOR_DIR}/lsp-types-${LSPTYPES_HASH}", features = [
-   "proposed",
+     "proposed",
  ] }
  matchit = { version = "0.8.1" }
-@@ -112,7 +112,7 @@ rand = { version = "0.8.5" }
- rayon = { version = "1.10.0" }
+@@ -117,7 +117,7 @@ rayon = { version = "1.10.0" }
  regex = { version = "1.10.2" }
+ rstest = { version = "0.22.0", default-features = false }
  rustc-hash = { version = "2.0.0" }
--salsa = { git = "https://github.com/salsa-rs/salsa.git", rev = "4a7c955255e707e64e43f3ce5eabb771ae067768" }
+-salsa = { git = "https://github.com/salsa-rs/salsa.git", rev = "b14be5c0392f4c55eca60b92e457a35549372382" }
 +salsa = { path = "${MODCARGO_VENDOR_DIR}/salsa-${SALSA_HASH}" }
  schemars = { version = "0.8.16" }
  seahash = { version = "4.1.0" }
