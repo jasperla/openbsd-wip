@@ -1,16 +1,20 @@
 BROKEN-alpha=	sqvm.cpp:394:1: internal compiler error: Segmentation fault
 COMMENT=	Code::Blocks C/C++ IDE
 
-R=		13584
-V=		20.03
+# for upstream releases:
 
-DISTNAME=	codeblocks-${V}pl${R}
-EXTRACT_SUFX=	.tar.xz
-
-# source tarball for this OpenBSD-specific patch level:
-SITES=		https://jggimi.net/codeblocks/
+#V=		20.03
+#DISTNAME=	codeblocks-${V}
+#EXTRACT_SUFX=	.tar.xz
 #SITES=		${SITE_SOURCEFORGE:=codeblocks/Sources/${V}/}
 
+# for integration testing via openbsd-wip:
+
+SVN=		13584
+
+GH_ACCOUNT=	jggimi
+GH_PROJECT=	codeblocks
+GH_TAGNAME=	svn.${SVN}
 DEBUG_PACKAGES=${BUILD_PACKAGES}
 INSTALL_DEBUG_PACKAGES=Yes
 

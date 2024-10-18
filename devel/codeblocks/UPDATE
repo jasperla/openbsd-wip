@@ -1,5 +1,7 @@
 The upstream project has not had a release in more than 4 years,
 instead they offer nightly builds for popular OSes.  I plan to
-keep this updated with recent changes in the project, available
-publicly but not sent to ports@ until needed, such as after a
-problem has been resolved upstream.
+keep continuous integraion going via openbsd-wip, but not sent
+to ports@ until needed for a reported issue, or until the project
+issues a release.
+
+Source tarballs are created by a git-svn mirror hosted at github.
