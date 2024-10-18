@@ -12,11 +12,11 @@ Index: Cargo.toml
  axoupdater = { version = "0.7.2", default-features = false }
  backoff = { version = "0.4.0" }
  base64 = { version = "0.22.1" }
-@@ -124,17 +124,17 @@ pathdiff = { version = "0.2.1" }
+@@ -125,17 +125,17 @@ pathdiff = { version = "0.2.1" }
  petgraph = { version = "0.6.5" }
  platform-info = { version = "2.0.3" }
  proc-macro2 = { version = "1.0.86" }
--pubgrub = { git = "https://github.com/astral-sh/pubgrub", rev = "388685a8711092971930986644cfed152d1a1f6c" }
+-pubgrub = { git = "https://github.com/astral-sh/pubgrub", rev = "19c77268c0ad5f69d7e12126e0cfacfbba466481" }
 +pubgrub = { path = "${MODCARGO_VENDOR_DIR}/pubgrub-${PUBGRUB_HASH}" }
  quote = { version = "1.0.37" }
  rayon = { version = "1.10.0" }
@@ -34,7 +34,7 @@ Index: Cargo.toml
  rustc-hash = { version = "2.0.0" }
  rustix = { version = "0.38.37", default-features = false, features = ["fs", "std"] }
  same-file = { version = "1.0.6" }
-@@ -152,7 +152,7 @@ target-lexicon = { version = "0.12.16" }
+@@ -153,7 +153,7 @@ target-lexicon = { version = "0.12.16" }
  tempfile = { version = "3.12.0" }
  textwrap = { version = "0.16.1" }
  thiserror = { version = "1.0.63" }
@@ -43,7 +43,7 @@ Index: Cargo.toml
  tokio = { version = "1.40.0", features = ["fs", "io-util", "macros", "process", "signal", "sync"] }
  tokio-stream = { version = "0.1.16" }
  tokio-util = { version = "0.7.12", features = ["compat"] }
-@@ -179,9 +179,6 @@ zip = { version = "0.6.6", default-features = false, f
+@@ -180,9 +180,6 @@ zip = { version = "0.6.6", default-features = false, f
  
  [workspace.metadata.cargo-shear]
  ignored = ["flate2", "xz2"]
