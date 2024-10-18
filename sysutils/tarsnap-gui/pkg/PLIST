@@ -1,0 +1,6 @@
+@bin bin/tarsnap-gui
+share/applications/tarsnap-gui.desktop
+share/doc/pkg-readmes/${PKGSTEM}
+share/pixmaps/
+@tag update-desktop-database
+share/pixmaps/tarsnap-gui.png
