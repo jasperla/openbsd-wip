@@ -15,8 +15,10 @@ SVN=		13584
 GH_ACCOUNT=	jggimi
 GH_PROJECT=	codeblocks
 GH_TAGNAME=	svn.${SVN}
-DEBUG_PACKAGES=${BUILD_PACKAGES}
+PKGNAME=	codeblocks.svn-${SVN}
 INSTALL_DEBUG_PACKAGES=Yes
+
+DEBUG_PACKAGES=${BUILD_PACKAGES}
 
 SHARED_LIBS +=  codeblocks           0.1      # 0.1
 SHARED_LIBS +=  wxchartctrl          0.1      # 0.1
