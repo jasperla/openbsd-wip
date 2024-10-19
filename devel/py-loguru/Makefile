@@ -23,8 +23,8 @@ MODPY_PYBUILD =		flit_core
 # test_await_complete_inheritance fails,
 # https://github.com/Delgan/loguru/issues/1196
 TEST_DEPENDS =		devel/py-colorama${MODPY_FLAVOR} \
-			devel/py-test-cov${MODPY_FLAVOR} \
 			devel/py-freezegun${MODPY_FLAVOR} \
-			devel/py-mypy${MODPY_FLAVOR}
+			devel/py-mypy${MODPY_FLAVOR} \
+			devel/py-test-cov${MODPY_FLAVOR}
 
 .include <bsd.port.mk>

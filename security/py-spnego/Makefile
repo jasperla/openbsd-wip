@@ -1,8 +1,8 @@
-COMMENT =		python SPNEGO authentication library
+COMMENT =		SPNEGO authentication library
 
 MODPY_EGG_VERSION =	0.11.1
 DISTNAME =		pyspnego-${MODPY_EGG_VERSION}
-PKGNAME =		py-spnego-${MODPY_EGG_VERSION}
+PKGNAME =		${DISTNAME:S/py/py-/}
 
 CATEGORIES =		security
 
@@ -27,6 +27,8 @@ TEST_DEPENDS =		devel/py-isort${MODPY_FLAVOR} \
 			devel/py-mypy${MODPY_FLAVOR} \
 			devel/py-test-mock${MODPY_FLAVOR} \
 			textproc/py-black${MODPY_FLAVOR} \
-			textproc/py-ruamel.yaml${MODPY_FLAVOR} \
+			textproc/py-ruamel.yaml${MODPY_FLAVOR}
+
+TEST_IS_INTERACTIVE =	test_auth.py takes ages to complete
 
 .include <bsd.port.mk>

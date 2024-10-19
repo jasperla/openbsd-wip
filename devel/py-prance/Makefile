@@ -1,4 +1,4 @@
-COMMENT =		resolving Swagger/OpenAPI 2.0 and 3.0.0 Parser
+COMMENT =		resolving Swagger/OpenAPI 2.0 and 3.0 parser
 
 MODPY_EGG_VERSION =	23.6.21.0
 
@@ -20,15 +20,13 @@ FLAVOR =		python3
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools_scm
 
-# Dependencies
 RUN_DEPENDS =		devel/py-six${MODPY_FLAVOR} \
 			sysutils/py-packaging${MODPY_FLAVOR} \
 			textproc/py-chardet${MODPY_FLAVOR} \
 			textproc/py-ruamel.yaml${MODPY_FLAVOR} \
 			www/py-requests${MODPY_FLAVOR} \
 
-# tests need network access, and pypi artifact has missed
-# tests/OpenAPI-Specification, so some test fails
-NO_TEST =		Yes
+# partial failure due to tests/OpenAPI-Specification missing from pypi artifact
+TEST_IS_INTERACTIVE =	need network access
 
 .include <bsd.port.mk>

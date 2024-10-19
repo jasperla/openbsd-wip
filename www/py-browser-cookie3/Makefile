@@ -22,9 +22,8 @@ MODPY_PYBUILD =		setuptools
 
 RUN_DEPENDS =		archivers/py-lz4${MODPY_FLAVOR} \
 			devel/py-jeepney${MODPY_FLAVOR} \
-			security/py-cryptodome${MODPY_FLAVOR} \
+			security/py-cryptodome${MODPY_FLAVOR}
 
-# Tests use selenium and webdriver_manager
-NO_TEST =		Yes
+TEST_IS_INTERACTIVE =	uses selenium and webdriver_manager
 
 .include <bsd.port.mk>

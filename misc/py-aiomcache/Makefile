@@ -22,6 +22,4 @@ MODPY_PYBUILD =		setuptools
 
 RUN_DEPENDS =		misc/py-memcached${MODPY_FLAVOR}
 
-NO_TEST =		Yes
-
 .include <bsd.port.mk>

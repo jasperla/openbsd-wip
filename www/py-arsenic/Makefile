@@ -24,7 +24,4 @@ RUN_DEPENDS =		devel/py-attrs${MODPY_FLAVOR} \
 			devel/py-structlog${MODPY_FLAVOR} \
 			www/py-aiohttp${MODPY_FLAVOR}
 
-# pypi artifact hasn't got any tests
-NO_TEST =		Yes
-
 .include <bsd.port.mk>

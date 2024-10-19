@@ -23,8 +23,8 @@ MODPY_PYBUILD =		hatch-vcs
 BUILD_DEPENDS =		devel/py-hatch-fancy-pypi-readme${MODPY_FLAVOR}
 
 TEST_DEPENDS =		devel/py-freezegun${MODPY_FLAVOR} \
-			devel/py-test-asyncio${MODPY_FLAVOR} \
 			devel/py-pretend${MODPY_FLAVOR} \
-			devel/py-simplejson${MODPY_FLAVOR}
+			devel/py-simplejson${MODPY_FLAVOR} \
+			devel/py-test-asyncio${MODPY_FLAVOR}
 
 .include <bsd.port.mk>

@@ -2,7 +2,7 @@ COMMENT =		NTLM authentication support for HTTPX
 
 MODPY_EGG_VERSION =	1.4.0
 DISTNAME =		httpx_ntlm-${MODPY_EGG_VERSION}
-PKGNAME =		py-httpx-ntlm-${MODPY_EGG_VERSION}
+PKGNAME =		py-${DISTNAME:S/_/-/}
 
 CATEGORIES =		www
 

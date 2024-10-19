@@ -20,7 +20,4 @@ FLAVOR =		python3
 MODPY_PI =		Yes
 MODPY_PYBUILD =		flit_core
 
-# tests not shipped as part of pypi's artifacts
-NO_TEST =		Yes
-
 .include <bsd.port.mk>
