@@ -33,7 +33,7 @@ Index: cmd/yggdrasil/main.go
  	genconf := flag.Bool("genconf", false, "print a new config to stdout")
  	useconf := flag.Bool("useconf", false, "read HJSON/JSON config from stdin")
  	useconffile := flag.String("useconffile", "", "read HJSON/JSON config from specified file path")
-@@ -137,6 +153,33 @@ func main() {
+@@ -138,6 +154,33 @@ func main() {
  		return
  	}
  
@@ -67,11 +67,11 @@ Index: cmd/yggdrasil/main.go
  	privateKey := ed25519.PrivateKey(cfg.PrivateKey)
  	publicKey := privateKey.Public().(ed25519.PublicKey)
  
-@@ -271,7 +314,25 @@ func main() {
+@@ -271,6 +314,24 @@ func main() {
+ 		if n.admin != nil && n.tun != nil {
  			n.tun.SetupAdminHandlers(n.admin)
  		}
- 	}
--	
++	}
 +
 +	// Promise final modes of operation.  At this point, if at all:
 +	// - raw socket is created/open
@@ -89,8 +89,6 @@ Index: cmd/yggdrasil/main.go
 +	}
 +	if err := protect.Pledge(strings.Join(promises, " ")); err != nil {
 +		panic(err)
-+	}
-+
+ 	}
+ 
  	//Windows service shutdown
- 	minwinsvc.SetOnExit(func() {
- 		logger.Infof("Shutting down service ...")

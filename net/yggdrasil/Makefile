@@ -3,17 +3,13 @@ CATEGORIES =		net
 
 GH_ACCOUNT =		yggdrasil-network
 GH_PROJECT =		yggdrasil-go
-GH_TAGNAME =		v0.5.8
+GH_TAGNAME =		v0.5.9
 MODGO_MODNAME =		github.com/${GH_ACCOUNT}/${GH_PROJECT}
 MODGO_VERSION =		${GH_TAGNAME}
 PKGNAME =		${DISTNAME:S/-go//}
 
 SITES.gh =		https://${MODGO_MODNAME}/
-# merged "Fix link panic when shutting down (closes #1168)"
-# merged "tun: bsd: remove redundant ioctl to set MTU (#1172)"
-# merged "Fix ioctl(2) code for OpenBSD (#1175)"
-# merged "Replace repeated subscripts with single TrimPrefix (#1176)"
-FIXES =			e138fa6 98a6fdb ccda107
+FIXES =			# empty
 PATCHFILES.gh =		${FIXES:=${PKGSTEM}-{commit/}%.patch}
 PATCH_DIST_STRIP =	-p1
 

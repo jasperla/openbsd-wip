@@ -1,5 +1,5 @@
 MODGO_MODULES =	\
-	github.com/!arceliar/ironwood		 v0.0.0-20240529054413-b8e59574e2b2 \
+	github.com/!arceliar/ironwood		 v0.0.0-20241016082300-f6fb9da97a17 \
 	github.com/!arceliar/phony		 v0.0.0-20220903101357-530938a4b13d \
 	github.com/!vivid!cortex/ewma		 v1.2.0 \
 	github.com/beorn7/perks			 v1.0.1 \
@@ -10,6 +10,7 @@ MODGO_MODULES =	\
 	github.com/chzyer/logex			 v1.1.10 \
 	github.com/chzyer/readline		 v0.0.0-20180603132655-2972be24d48e \
 	github.com/chzyer/test			 v0.0.0-20180213035817-a1ea475d72b1 \
+	github.com/coder/websocket		 v1.8.12 \
 	github.com/davecgh/go-spew		 v1.1.1 \
 	github.com/fatih/color			 v1.15.0 \
 	github.com/francoispqt/gojay		 v1.2.13 \
@@ -38,27 +39,25 @@ MODGO_MODULES =	\
 	github.com/prometheus/common		 v0.48.0 \
 	github.com/prometheus/procfs		 v0.12.0 \
 	github.com/quic-go/qpack		 v0.4.0 \
-	github.com/quic-go/quic-go		 v0.45.1 \
+	github.com/quic-go/quic-go		 v0.46.0 \
 	github.com/rivo/uniseg			 v0.2.0 \
 	github.com/stretchr/objx		 v0.1.0 \
 	github.com/stretchr/testify		 v1.6.1 \
 	github.com/twmb/murmur3			 v1.1.6 \
-	github.com/vishvananda/netlink		 v1.1.0 \
-	github.com/vishvananda/netns		 v0.0.0-20210104183010-2eb08e3e575f \
+	github.com/vishvananda/netlink		 v1.3.0 \
+	github.com/vishvananda/netns		 v0.0.4 \
+	github.com/wlynxg/anet			 v0.0.5 \
 	github.com/yuin/goldmark		 v1.4.13 \
 	go.uber.org/mock			 v0.4.0 \
-	golang.org/x/crypto			 v0.25.0 \
+	golang.org/x/crypto			 v0.28.0 \
 	golang.org/x/exp			 v0.0.0-20240719175910-8a7402abbf56 \
-	golang.org/x/exp/shiny			 v0.0.0-20230817173708-d852ddb80c63 \
-	golang.org/x/image			 v0.18.0 \
-	golang.org/x/mobile			 v0.0.0-20240716161057-1ad2df20a8b6 \
 	golang.org/x/mod			 v0.19.0 \
-	golang.org/x/net			 v0.27.0 \
-	golang.org/x/sync			 v0.7.0 \
-	golang.org/x/sys			 v0.22.0 \
+	golang.org/x/net			 v0.30.0 \
+	golang.org/x/sync			 v0.8.0 \
+	golang.org/x/sys			 v0.26.0 \
 	golang.org/x/telemetry			 v0.0.0-20240521205824-bda55230c457 \
-	golang.org/x/term			 v0.22.0 \
-	golang.org/x/text			 v0.16.0 \
+	golang.org/x/term			 v0.25.0 \
+	golang.org/x/text			 v0.19.0 \
 	golang.org/x/time			 v0.5.0 \
 	golang.org/x/tools			 v0.23.0 \
 	golang.org/x/xerrors			 v0.0.0-20200804184101-5ec99f83aff1 \
@@ -68,8 +67,7 @@ MODGO_MODULES =	\
 	google.golang.org/protobuf		 v1.33.0 \
 	gopkg.in/check.v1			 v0.0.0-20161208181325-20d25e280405 \
 	gopkg.in/yaml.v3			 v3.0.1 \
-	gvisor.dev/gvisor			 v0.0.0-20230927004350-cbd86285d259 \
-	nhooyr.io/websocket			 v1.8.11
+	gvisor.dev/gvisor			 v0.0.0-20230927004350-cbd86285d259
 
 MODGO_MODFILES =	\
 	github.com/bits-and-blooms/bitset	 v1.10.0 \
@@ -78,7 +76,6 @@ MODGO_MODFILES =	\
 	github.com/mattn/go-isatty		 v0.0.16 \
 	github.com/mattn/go-isatty		 v0.0.17 \
 	github.com/mattn/go-runewidth		 v0.0.9 \
-	github.com/vishvananda/netns		 v0.0.0-20191106174202-0a2b9b5464df \
 	golang.org/x/crypto			 v0.0.0-20190308221718-c2843e01d9a2 \
 	golang.org/x/crypto			 v0.0.0-20210921155107-089bfa567519 \
 	golang.org/x/crypto			 v0.0.0-20211215153901-e495a2d5b3d3 \
@@ -99,14 +96,14 @@ MODGO_MODFILES =	\
 	golang.org/x/net			 v0.15.0 \
 	golang.org/x/net			 v0.21.0 \
 	golang.org/x/net			 v0.25.0 \
+	golang.org/x/net			 v0.27.0 \
 	golang.org/x/net			 v0.6.0 \
 	golang.org/x/sync			 v0.0.0-20190423024810-112230192c58 \
 	golang.org/x/sync			 v0.0.0-20220722155255-886fb9371eb4 \
 	golang.org/x/sync			 v0.1.0 \
+	golang.org/x/sync			 v0.7.0 \
 	golang.org/x/sys			 v0.0.0-20190215142949-d0b11bdaac8a \
-	golang.org/x/sys			 v0.0.0-20190606203320-7fc4e5ec1444 \
 	golang.org/x/sys			 v0.0.0-20191204072324-ce4227a45e2e \
-	golang.org/x/sys			 v0.0.0-20200217220822-9197077df867 \
 	golang.org/x/sys			 v0.0.0-20201119102817-f84b799fce68 \
 	golang.org/x/sys			 v0.0.0-20210615035016-665e8c7367d1 \
 	golang.org/x/sys			 v0.0.0-20211103235746-7861aae1554b \
@@ -116,9 +113,12 @@ MODGO_MODFILES =	\
 	golang.org/x/sys			 v0.0.0-20220811171246-fbc7d0a398ab \
 	golang.org/x/sys			 v0.0.0-20221013171732-95e765b1cc43 \
 	golang.org/x/sys			 v0.1.0 \
+	golang.org/x/sys			 v0.10.0 \
 	golang.org/x/sys			 v0.12.0 \
 	golang.org/x/sys			 v0.17.0 \
+	golang.org/x/sys			 v0.2.0 \
 	golang.org/x/sys			 v0.20.0 \
+	golang.org/x/sys			 v0.22.0 \
 	golang.org/x/sys			 v0.5.0 \
 	golang.org/x/sys			 v0.6.0 \
 	golang.org/x/sys			 v0.8.0 \
