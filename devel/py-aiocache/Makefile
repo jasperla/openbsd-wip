@@ -1,0 +1,35 @@
+COMMENT =		asyncio cache manager for redis, memcached and memory
+
+MODPY_EGG_VERSION =	0.12.2
+
+DISTNAME =		aiocache-${MODPY_EGG_VERSION}
+PKGNAME =		py-${DISTNAME}
+
+CATEGORIES =		devel
+
+HOMEPAGE =		http://aiocache.readthedocs.io/
+
+# BSD
+PERMIT_PACKAGE =	Yes
+
+MODULES =		lang/python
+
+FLAVORS =		python3
+FLAVOR =		python3
+
+MODPY_PI =		Yes
+MODPY_PYBUILD =		setuptools
+
+# Missed marshmallow serializer due to missed dependency
+RUN_DEPENDS =		databases/py-redis${MODPY_FLAVOR} \
+			misc/py-aiomcache${MODPY_FLAVOR} \
+			net/py-msgpack${MODPY_FLAVOR} \
+			www/py-aiohttp${MODPY_FLAVOR}
+
+TEST_DEPENDS =		devel/py-test-asyncio${MODPY_FLAVOR} \
+			devel/py-test-cov${MODPY_FLAVOR} \
+			devel/py-test-mock${MODPY_FLAVOR}
+
+#NO_TEST =		Yes
+
+.include <bsd.port.mk>

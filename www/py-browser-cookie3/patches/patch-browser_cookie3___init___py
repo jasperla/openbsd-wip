@@ -1,0 +1,16 @@
+Index: browser_cookie3/__init__.py
+--- browser_cookie3/__init__.py.orig
++++ browser_cookie3/__init__.py
+@@ -28,9 +28,9 @@ if sys.platform.startswith('linux') or 'bsd' in sys.pl
+ 
+ # external dependencies
+ import lz4.block
+-from Cryptodome.Cipher import AES
+-from Cryptodome.Protocol.KDF import PBKDF2
+-from Cryptodome.Util.Padding import unpad
++from Crypto.Cipher import AES
++from Crypto.Protocol.KDF import PBKDF2
++from Crypto.Util.Padding import unpad
+ 
+ __doc__ = 'Load browser cookies into a cookiejar'
+ 

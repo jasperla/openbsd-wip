@@ -1,0 +1,10 @@
+Index: browser_cookie3.egg-info/requires.txt
+--- browser_cookie3.egg-info/requires.txt.orig
++++ browser_cookie3.egg-info/requires.txt
+@@ -1,5 +1,5 @@
+ lz4
+-pycryptodomex
++pycryptodome
+ 
+ [:python_version < "3.7" and ("bsd" in sys_platform or sys_platform == "linux")]
+ dbus-python
