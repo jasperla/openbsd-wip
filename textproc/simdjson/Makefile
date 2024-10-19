@@ -11,7 +11,7 @@ CATEGORIES =		textproc
 
 SHARED_LIBS =		simdjson	0.0
 
-# MIT
+# Apache 2.0
 PERMIT_PACKAGE =	Yes
 
 HOMEPAGE =		https://simdjson.org/
