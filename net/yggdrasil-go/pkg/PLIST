@@ -1,9 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.2 2018/09/04 12:46:23 espie Exp $
-@newgroup _yggdrasil:841
-@newuser _yggdrasil:841:_yggdrasil:daemon:Yggdrasil user:${VARBASE}/yggdrasil:/sbin/nologin
-@rcscript ${RCDIR}/yggdrasil
-@bin bin/yggdrasil
-@bin bin/yggdrasilctl
-@owner _yggdrasil
-@group _yggdrasil
-@sample ${VARBASE}/yggdrasil/
