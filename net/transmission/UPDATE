@@ -1,13 +1,16 @@
 Testing net/transmission beyond 4.0.6:
 
-Upstream has two github branches: `main` and `4.0.x`.  These instructions are for
-integration testing of `main`, the 4.1 development branch.
+1) git clone -b obsd --recurse-submodules git@github.com:jggimi/transmission.git transmission-4.1.0.dev
+ 
+   or
 
-1) git clone -b obsd --recurse-submodules git@github.com:jggimi/transmission.git transmission-4.0.x
+   git clone -b 4.0.x.obsd --recurse-submodules git@github.com:jggimi/transmission.git transmission-4.0.x
 
-   jggimi/transmission is a fork of transmission/transmission. In branch obsd,
-   it's submodule third-party/fmt has been reverted to release 10.2.1, to match
-   with the shared library in bdep devel/fmt. 
+   Upstream has two primary github branches: `main` and `4.0.x`.  The jggimi/transmission fork
+   has two branches for integration testing, `obsd` and `4.0.x.obsd`.  Changes: 
+
+      * The submodule third-party/fmt is using tag 10.2.1, aligned with devel/fmt.
+      * Added archive.sh script to simplify distfile creation.
 
 2) create tarball, xz compress it, move to distfiles. 
 

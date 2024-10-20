@@ -17,6 +17,9 @@ MAINTAINER=	Josh Grosse <josh@jggimi.net>
 DEBUG_PACKAGES=${BUILD_PACKAGES}
 INSTALL_DEBUG_PACKAGES=Yes
 
+# only used for openbsd-wip, Release build is the default. 
+MODCMAKE_DEBUG=	Yes
+
 # GPLv2+
 PERMIT_PACKAGE=	Yes
 
