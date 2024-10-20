@@ -260,7 +260,7 @@ SHA256 (cargo/semver-parser-0.10.2.tar.gz) = ALC+9bf54N8WU205Yc+26EMxwGW0Bmr7OXa
 SHA256 (cargo/serde-1.0.210.tar.gz) = yONZJHIHLm4i4KVNWQTZ/r+FCPZfuFUkmaGrx9EHjDo=
 SHA256 (cargo/serde_derive-1.0.210.tar.gz) = JDkC7aAPrXUIYvwUTOolyspeINYVrwqBvulMpzjx3x8=
 SHA256 (cargo/serde_derive_internals-0.29.1.tar.gz) = GNJqIKlpueP98vwtnyHtpsQOLehMlAi7XTsF1Jmq5xE=
-SHA256 (cargo/serde_json-1.0.128.tar.gz) = b/VFZweh3jTn438qb9PT+AjDGCWcvQGrY3d5UFS0g9g=
+SHA256 (cargo/serde_json-1.0.129.tar.gz) = bbz5t4oSXuZnrhk4iDfdEilLhY0QH905PLnVUB7wnrI=
 SHA256 (cargo/serde_repr-0.1.19.tar.gz) = bGRFG6JPx6ai1g/HXdnIPJCQOxkCjU7/NeiPwehlZOk=
 SHA256 (cargo/serde_spanned-0.6.8.tar.gz) = h2B8sTmO1Z1Icy5XWkwop6jr8kVLlk/j8iTyr8B5CeE=
 SHA256 (cargo/sha1-0.10.6.tar.gz) = 47+Cmi1Rq0pd3xNS2EcMFAytyDAbKuF4nbAj8Bzt1ro=
@@ -387,7 +387,7 @@ SHA256 (cargo/zerocopy-derive-0.7.35.tar.gz) = +k+AgDRNRnH7ToMaE60eaAknSDh9/E9V4
 SHA256 (cargo/zvariant-4.2.0.tar.gz) = IIQpCrmhxHHDj8UklFg3c0+/EkSH4QXa7Cu1f9SMgf4=
 SHA256 (cargo/zvariant_derive-4.2.0.tar.gz) = c+K6VGvaaDqQZSusSiebwUatrROG8lN5z3MgDSACxEk=
 SHA256 (cargo/zvariant_utils-2.1.0.tar.gz) = xRvP98w9u1BVOWvPd0dIw9q0JrS4ZZBGljUjzuSAg0A=
-SHA256 (starship-1.21.0.tar.gz) = LwaFRfJwczrdBskFkvP7NkIrj2UIU/cHlW0kwGBBt1E=
+SHA256 (starship-1.21.1.tar.gz) = 9UPfoyKUQcoqVbimJc5LrVdWqJY3iwGfTQ8OAM803Mg=
 SIZE (cargo/adler2-2.0.0.tar.gz) = 13529
 SIZE (cargo/ahash-0.8.11.tar.gz) = 43607
 SIZE (cargo/aho-corasick-1.1.3.tar.gz) = 183311
@@ -650,7 +650,7 @@ SIZE (cargo/semver-parser-0.10.2.tar.gz) = 23176
 SIZE (cargo/serde-1.0.210.tar.gz) = 78338
 SIZE (cargo/serde_derive-1.0.210.tar.gz) = 56020
 SIZE (cargo/serde_derive_internals-0.29.1.tar.gz) = 26189
-SIZE (cargo/serde_json-1.0.128.tar.gz) = 149520
+SIZE (cargo/serde_json-1.0.129.tar.gz) = 150181
 SIZE (cargo/serde_repr-0.1.19.tar.gz) = 9997
 SIZE (cargo/serde_spanned-0.6.8.tar.gz) = 9330
 SIZE (cargo/sha1-0.10.6.tar.gz) = 13517
@@ -777,4 +777,4 @@ SIZE (cargo/zerocopy-derive-0.7.35.tar.gz) = 37829
 SIZE (cargo/zvariant-4.2.0.tar.gz) = 82180
 SIZE (cargo/zvariant_derive-4.2.0.tar.gz) = 11057
 SIZE (cargo/zvariant_utils-2.1.0.tar.gz) = 7043
-SIZE (starship-1.21.0.tar.gz) = 9425169
+SIZE (starship-1.21.1.tar.gz) = 9435990
