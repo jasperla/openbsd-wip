@@ -2,7 +2,7 @@ COMMENT =		version control system with git compatibility backend
 
 GH_ACCOUNT =		martinvonz
 GH_PROJECT =		jj
-GH_TAGNAME =		v0.13.0
+GH_TAGNAME =		v0.22.0
 
 CATEGORIES =		devel
 
@@ -21,6 +21,7 @@ LIB_DEPENDS =		archivers/zstd \
 			devel/libgit2/libgit2 \
 			security/libssh2
 
+MAKE_ENV=LIBGIT2_NO_VENDOR=1
 MODCARGO_INSTALL_TARGET_PATHS = cli
 
 .include "crates.inc"
