@@ -16,15 +16,15 @@ Index: Cargo.toml
  petgraph = { version = "0.6.5" }
  platform-info = { version = "2.0.3" }
  proc-macro2 = { version = "1.0.86" }
--pubgrub = { git = "https://github.com/astral-sh/pubgrub", rev = "19c77268c0ad5f69d7e12126e0cfacfbba466481" }
+-pubgrub = { git = "https://github.com/astral-sh/pubgrub", rev = "7243f4faf8e54837aa8a401a18406e7173de4ad5" }
 +pubgrub = { path = "${MODCARGO_VENDOR_DIR}/pubgrub-${PUBGRUB_HASH}" }
  quote = { version = "1.0.37" }
  rayon = { version = "1.10.0" }
  reflink-copy = { version = "0.1.19" }
  regex = { version = "1.10.6" }
  reqwest = { version = "0.12.7", default-features = false, features = ["json", "gzip", "stream", "rustls-tls", "rustls-tls-native-roots", "socks", "multipart", "http2"] }
--reqwest-middleware = { git = "https://github.com/astral-sh/reqwest-middleware", rev = "5e3eaf254b5bd481c75d2710eed055f95b756913", features = ["multipart"] }
--reqwest-retry = { git = "https://github.com/astral-sh/reqwest-middleware", rev = "5e3eaf254b5bd481c75d2710eed055f95b756913" }
+-reqwest-middleware = { git = "https://github.com/TrueLayer/reqwest-middleware", rev = "d95ec5a99fcc9a4339e1850d40378bbfe55ab121", features = ["multipart"] }
+-reqwest-retry = { git = "https://github.com/TrueLayer/reqwest-middleware", rev = "d95ec5a99fcc9a4339e1850d40378bbfe55ab121" }
 +reqwest-middleware = { version = "0.3.2", features = ["multipart"] }
 +reqwest-retry = { version = "0.6.0" }
  rkyv = { version = "0.8.8", features = ["bytecheck"] }
@@ -49,7 +49,7 @@ Index: Cargo.toml
  ignored = ["flate2", "xz2"]
 -
 -[patch.crates-io]
--reqwest-middleware = { git = "https://github.com/astral-sh/reqwest-middleware", rev = "5e3eaf254b5bd481c75d2710eed055f95b756913" }
+-reqwest-middleware = { git = "https://github.com/TrueLayer/reqwest-middleware", rev = "d95ec5a99fcc9a4339e1850d40378bbfe55ab121" }
  
  [workspace.lints.rust]
  unsafe_code = "warn"

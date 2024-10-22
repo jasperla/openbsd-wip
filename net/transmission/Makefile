@@ -2,7 +2,7 @@ COMMENT-main=	BitTorrent command line and daemon client
 COMMENT-gtk=	BitTorrent client with GTK+ interface
 COMMENT-qt=	BitTorrent client with Qt interface
 
-# testing between 4.0.6 and the next release, 
+# testing between 4.0.6 and the next release,
 # see UPDATE regarding the devel/fmt shared lib:
 
 VER=		4.1.0.dev
@@ -17,7 +17,7 @@ MAINTAINER=	Josh Grosse <josh@jggimi.net>
 DEBUG_PACKAGES=${BUILD_PACKAGES}
 INSTALL_DEBUG_PACKAGES=Yes
 
-# only used for openbsd-wip, Release build is the default. 
+# only used for openbsd-wip, Release build is the default.
 MODCMAKE_DEBUG=	Yes
 
 # GPLv2+
@@ -31,7 +31,6 @@ MULTI_PACKAGES=	-main -gtk -qt
 
 # gnu++17
 COMPILER =	base-clang ports-gcc
-
 
 PSEUDO_FLAVORS=	no_gtk no_qt
 FLAVOR?=

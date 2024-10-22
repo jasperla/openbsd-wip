@@ -17,7 +17,7 @@ Testing net/transmission beyond 4.0.6:
    `sh ./archive.sh`  will create a git archive tarball with all source submodules,
    compress it, and move it into /usr/ports/distfiles.
 
-3) make uninstall transmission
+3) make uninstall
 4) make clean=all, makesum, (patch, update-patches), update-plist, port-lib-depends-check, install-all
 5) make test, there should be zero failures
 6) test the installed application suite
