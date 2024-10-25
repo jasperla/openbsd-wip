@@ -133,9 +133,14 @@ CONFIGURE_ARGS +=	--mandir=${PREFIX}/man \
 			--with-system-libpaper \
 			--with-system-zziplib \
 			--disable-lcdf-typetools \
-			--disable-dvisvgm
-# XXX: build a port of dvisvgm? Building it with unbundled libs broken in
-# tl2024.
+# Since 2024, dvisvgm inside TL is unable to link against system libs (it
+# always bundles its deps). For now we disable it -- it doesn't appear to be a
+# very widely used program anyway.
+#
+# If we want it back, we can make a separate port of dvisvgm and depend on it.
+#
+# https://tug.org/pipermail/tldistro/2024q2/000477.html
+CONFIGURE_ARGS +=	--disable-dvisvgm
 
 SUBST_VARS +=		TRUEPREFIX LOCALBASE
 
