@@ -17,11 +17,10 @@ DISTFILES.mk =		mktexlsr-${V}.gz
 
 SITES.mk =		https://theunixzoo.co.uk/distfiles/
 
-# XXX check if bumps needed.
 SHARED_LIBS =		kpathsea	9.0 # 9.2
-SHARED_LIBS +=		ptexenc		6.0 # 5.0
-SHARED_LIBS +=		synctex		3.0 # 2.0
-SHARED_LIBS +=		texlua53        0.1 # 8.5
+SHARED_LIBS +=		ptexenc		6.1 # 5.6
+SHARED_LIBS +=		synctex		3.1 # 2.0
+SHARED_LIBS +=		texlua53        0.1 # 8.6
 
 WANTLIB-main += ${COMPILER_LIBCXX} ICE SM X11 Xau Xaw Xdmcp Xext Xi
 WANTLIB-main += Xmu Xpm Xrender Xt c cairo expat fontconfig freetype
