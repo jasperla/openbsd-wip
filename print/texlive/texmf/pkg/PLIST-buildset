@@ -7722,6 +7722,9 @@ share/texmf-dist/tex/latex/eso-pic/eso-pic.sty
 share/texmf-dist/tex/latex/eso-pic/showframe.sty
 share/texmf-dist/tex/latex/etex-pkg/
 share/texmf-dist/tex/latex/etex-pkg/etex.sty
+share/texmf-dist/tex/latex/etoolbox/
+share/texmf-dist/tex/latex/etoolbox/etoolbox.def
+share/texmf-dist/tex/latex/etoolbox/etoolbox.sty
 share/texmf-dist/tex/latex/fancybox/
 share/texmf-dist/tex/latex/fancybox/fancybox.sty
 share/texmf-dist/tex/latex/fancyhdr/
