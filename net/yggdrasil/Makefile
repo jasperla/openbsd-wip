@@ -28,7 +28,7 @@ MODULES =		lang/go
 _BUILD =		${MODGO_MODNAME}/src/version.build
 # buildName appears in -version output and as syslogd(8) tag
 MODGO_LDFLAGS =		-X ${_BUILD}Name=${PKGSTEM} \
-			-X ${_BUILD}Version="${MODGO_VERSION}+patches"
+			-X ${_BUILD}Version="${MODGO_VERSION:v%=}+patches"
 
 .include "modules.inc"
 
