@@ -1,7 +1,10 @@
 The upstream project has not had a release in more than 4 years,
-instead they offer nightly builds for popular OSes.  I plan to
-keep continuous integraion going via openbsd-wip, but not sent
-to ports@ until needed for a reported issue, or until the project
-issues a release.
+instead they offer "nightly" builds after sporadic commits to the
+trunk, for popular OSes.
+
+This mirror is for manual integration testing via jasperla/openbsd-wip,
+until the next release by the project or a hotfix is needed.
+
+---
 
 Source tarballs are created by a git-svn mirror hosted at github.

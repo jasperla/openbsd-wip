@@ -5,18 +5,16 @@ COMMENT =	extremely fast Python package installer and resolver
 
 GH_ACCOUNT =	astral-sh
 GH_PROJECT =	uv
-GH_TAGNAME =	0.4.25
+GH_TAGNAME =	0.4.27
 
 # Rust crates downloaded via git
 ASYNC_HASH =	011b24604fa7bc223daaad7712c0694bac8f0a87
 PUBGRUB_HASH =	7243f4faf8e54837aa8a401a18406e7173de4ad5
-NETRC_HASH =	544f3890b621f0dc30fcefb4f804269c160ce2e9
 TL_HASH =	6e25b2ee2513d75385101a8ff9f591ef51f314ec
 
 DIST_TUPLE +=	github charliermarsh rs-async-zip ${ASYNC_HASH} \
 		${MODCARGO_VENDOR_DIR}
 DIST_TUPLE +=	github astral-sh pubgrub ${PUBGRUB_HASH} ${MODCARGO_VENDOR_DIR}
-DIST_TUPLE +=	github gribouille netrc ${NETRC_HASH} ${MODCARGO_VENDOR_DIR}
 DIST_TUPLE +=	github charliermarsh tl ${TL_HASH} ${MODCARGO_VENDOR_DIR}
 
 CATEGORIES =	devel
@@ -45,7 +43,7 @@ MODCARGO_CRATES_KEEP =	lzma-sys
 
 SEPARATE_BUILD =	Yes
 
-SUBST_VARS +=	MODCARGO_VENDOR_DIR PUBGRUB_HASH ASYNC_HASH TL_HASH NETRC_HASH
+SUBST_VARS +=	MODCARGO_VENDOR_DIR PUBGRUB_HASH ASYNC_HASH TL_HASH
 
 post-patch:
 	${SUBST_CMD} ${WRKSRC}/Cargo.toml
@@ -58,8 +56,6 @@ post-patch:
 		${MODCARGO_VENDOR_DIR}/rs-async-zip-${ASYNC_HASH}
 	${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/charliermarsh-$\
 		tl-${TL_HASH}.tar.gz ${MODCARGO_VENDOR_DIR}/tl-${TL_HASH}
-	${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/gribouille-$\
-		netrc-${NETRC_HASH}.tar.gz ${MODCARGO_VENDOR_DIR}/netrc-${NETRC_HASH}
 
 # Generate shell completions
 post-build:
