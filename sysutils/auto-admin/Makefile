@@ -1,13 +1,16 @@
-COMMENT =	Portable tools for automating systems management
+COMMENT =		Portable tools for automating systems management
 
-GH_ACCOUNT =	outpaddling
-GH_PROJECT =	auto-admin
-GH_COMMIT =	37d709bf37ad8c0fa2449087d30113479b502583
+V =			0.8.0
+COMMIT =		912f1e9a7443f2f399247c1d502bf66940a4cc2d
+PKGNAME =		auto-admin-${V}
 
-DISTNAME =	auto-admin-0.7.18.39
+DIST_TUPLE =		github outpaddling auto-admin ${COMMIT} .
 
-CATEGORIES =	sysutils
+CATEGORIES =		sysutils
 
+HOMEPAGE =		https://acadix.biz/auto-admin.php
+
+# 2BSD
 PERMIT_PACKAGE =	Yes
 
 NO_BUILD =		Yes
