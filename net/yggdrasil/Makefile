@@ -25,10 +25,12 @@ WANTLIB =		c pthread
 
 MODULES =		lang/go
 
+RUN_DEPENDS =		textproc/jq
+
 _BUILD =		${MODGO_MODNAME}/src/version.build
 # buildName appears in -version output and as syslogd(8) tag
 MODGO_LDFLAGS =		-X ${_BUILD}Name=${PKGSTEM} \
-			-X ${_BUILD}Version=${MODGO_VERSION}
+			-X ${_BUILD}Version="${MODGO_VERSION:v%=}+patches"
 
 .include "modules.inc"
 
