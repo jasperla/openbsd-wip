@@ -1,7 +1,7 @@
 COMMENT =		Portable tools for automating systems management
 
-V =			0.8.0
-COMMIT =		912f1e9a7443f2f399247c1d502bf66940a4cc2d
+V =			0.8.0.54
+COMMIT =		f0a47163157d745d4b038f1efcb4fa47a82e80b4
 PKGNAME =		auto-admin-${V}
 
 DIST_TUPLE =		github outpaddling auto-admin ${COMMIT} .
