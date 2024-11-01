@@ -1,10 +1,8 @@
 COMMENT =	firmware analysis tool, re-written in Rust
 
-VERSION =	v3.1.0
-
-DISTNAME =	binwalk-${VERSION:S/v//}
-
-DIST_TUPLE +=	github  ReFirmLabs binwalk ${VERSION} .
+GH_ACCOUNT =	ReFirmLabs
+GH_PROJECT =	binwalk
+GH_TAGNAME =	v3.1.0
 
 CATEGORIES =	sysutils
 
