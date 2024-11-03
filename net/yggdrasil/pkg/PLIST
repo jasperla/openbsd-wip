@@ -1,4 +1,0 @@
-@rcscript ${RCDIR}/yggdrasil
-@bin bin/genkeys
-@bin bin/yggdrasil
-@bin bin/yggdrasilctl
