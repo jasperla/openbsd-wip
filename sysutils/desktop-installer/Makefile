@@ -13,12 +13,18 @@ HOMEPAGE =		http://acadix.biz/desktop-installer.php
 # 2BSD
 PERMIT_PACKAGE =	Yes
 
-RUN_DEPENDS =		sysutils/auto-admin
+RUN_DEPENDS =		archvers/xz \
+			devel/git devel/gmake \
+			graphics/feh \
+			sysutils/consolekit \
+			sysutils/auto-admin \
+			x11/dbus x11/tk
 
 NO_BUILD =		Yes
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/OpenBSD/desktop-installer ${PREFIX}/sbin
+	${INSTALL_SCRIPT} ${WRKSRC}/OpenBSD/XenoDM/xenodmshutdown ${PREFIX}/sbin
 	${INSTALL_MAN} ${WRKSRC}/OpenBSD/desktop-installer.man \
 		${PREFIX}/man/man1/desktop-installer.1
 	mkdir -p ${PREFIX}/share/desktop-installer
