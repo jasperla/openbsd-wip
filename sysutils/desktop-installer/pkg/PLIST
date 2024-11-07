@@ -1,5 +1,6 @@
 @man man/man1/desktop-installer.1
 sbin/desktop-installer
+sbin/xenodmshutdown
 share/desktop-installer/
 share/desktop-installer/CDE/
 share/desktop-installer/CDE/cde.desktop

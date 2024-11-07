@@ -13,7 +13,7 @@ HOMEPAGE =		http://acadix.biz/desktop-installer.php
 # 2BSD
 PERMIT_PACKAGE =	Yes
 
-RUN_DEPENDS =		archvers/xz \
+RUN_DEPENDS =		archivers/xz \
 			devel/git devel/gmake \
 			graphics/feh \
 			sysutils/consolekit \
