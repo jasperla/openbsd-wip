@@ -18,7 +18,7 @@ RUN_DEPENDS =		archivers/xz \
 			graphics/feh \
 			sysutils/consolekit \
 			sysutils/auto-admin \
-			x11/dbus x11/tk
+			x11/dbus x11/tk/8.6 
 
 NO_BUILD =		Yes
 
