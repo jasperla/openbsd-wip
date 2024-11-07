@@ -1,7 +1,7 @@
 COMMENT =		Quickly configure a OpenBSD desktop system
 
 V =			1.0.0
-COMMIT =		c87754dedef9ee9467f13aee7a2d4af9a91ab8fb
+COMMIT =		45e61ce5adb67b681cd692562cab3f1750087c89
 PKGNAME =		desktop-installer-${V}
 
 DIST_TUPLE =		github izder456 desktop-installer ${COMMIT} .
@@ -16,6 +16,7 @@ PERMIT_PACKAGE =	Yes
 RUN_DEPENDS =		archivers/xz \
 			devel/git devel/gmake \
 			graphics/feh \
+			net/avahi \
 			sysutils/consolekit \
 			sysutils/auto-admin \
 			x11/dbus x11/tk/8.6 
