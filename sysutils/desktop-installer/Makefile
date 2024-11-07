@@ -1,10 +1,10 @@
 COMMENT =		Quickly configure a OpenBSD desktop system
 
 V =			1.0.0
-COMMIT =		60a20c6ae1825569ed6839eed4c558fe7e3521a3
+COMMIT =		4f4dffe12f91943a98e94189d5c4faafc2d19036
 PKGNAME =		desktop-installer-${V}
 
-DIST_TUPLE =		github outpaddling desktop-installer ${COMMIT} .
+DIST_TUPLE =		github izder456 desktop-installer ${COMMIT} .
 
 CATEGORIES =		sysutils
 
