@@ -1,7 +1,7 @@
 COMMENT =		Quickly configure a OpenBSD desktop system
 
 V =			1.0.0
-COMMIT =		452b8bedb6d263b629d4416dd56326acfdb801d2
+COMMIT =		c87754dedef9ee9467f13aee7a2d4af9a91ab8fb
 PKGNAME =		desktop-installer-${V}
 
 DIST_TUPLE =		github izder456 desktop-installer ${COMMIT} .
@@ -25,6 +25,9 @@ NO_BUILD =		Yes
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/OpenBSD/desktop-installer ${PREFIX}/sbin
 	${INSTALL_SCRIPT} ${WRKSRC}/OpenBSD/XenoDM/xenodmshutdown ${PREFIX}/sbin
+	mkdir -p ${PREFIX}/share/pixmaps
+	${INSTALL_DATA} ${WRKSRC}/OpenBSD/XenoDM/openbsd-background.jpg \
+		${PREFIX}/share/pixmaps/openbsd-background.jpg
 	${INSTALL_MAN} ${WRKSRC}/OpenBSD/desktop-installer.man \
 		${PREFIX}/man/man1/desktop-installer.1
 	mkdir -p ${PREFIX}/share/desktop-installer

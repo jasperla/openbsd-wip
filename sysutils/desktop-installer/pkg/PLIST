@@ -46,3 +46,5 @@ share/desktop-installer/battery-shutdown.cron
 share/desktop-installer/desktop-installer
 share/desktop-installer/desktop-installer.man
 share/desktop-installer/getting-started.md
+share/pixmaps/
+share/pixmaps/openbsd-background.jpg
