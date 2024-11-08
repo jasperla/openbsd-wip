@@ -3,7 +3,7 @@ COMMENT-gtk=	BitTorrent client with GTK+ interface
 COMMENT-qt=	BitTorrent client with Qt interface
 
 # testing between 4.0.6 and the next release,
-# see UPDATE regarding the devel/fmt shared lib:
+# see UPDATE regarding the devel/fmt shared lib.
 
 VER=		4.1.0.dev
 DISTNAME=	transmission-${VER}
@@ -15,7 +15,6 @@ HOMEPAGE=	https://transmissionbt.com/
 MAINTAINER=	Josh Grosse <josh@jggimi.net>
 
 DEBUG_PACKAGES=${BUILD_PACKAGES}
-INSTALL_DEBUG_PACKAGES=Yes
 
 DPB_PROPERTIES= parallel
 
@@ -30,6 +29,11 @@ MULTI_PACKAGES=	-main -gtk -qt
 
 # gnu++17
 COMPILER =	base-clang ports-gcc
+
+.if DEBUG
+CONFIGURE_ARGS +=	-DCMAKE_BUILD_TYPE=RelWithDebInfo
+INSTALL_DEBUG_PACKAGES=	Yes
+.endif
 
 PSEUDO_FLAVORS=	no_gtk no_qt
 FLAVOR?=
