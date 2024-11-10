@@ -1,10 +1,11 @@
 COMMENT =	Terminal Windows Tool Kit
 
+V =		0.9.4.33
 GH_ACCOUNT =	outpaddling
 GH_PROJECT =	twintk
-GH_COMMIT =	da7813f93c7ba9c750490860d077f1ccad0e19dd
+GH_COMMIT =	881fedc388f2e7ac250d426a6b1c05548139efe4
 
-DISTNAME =	twintk-0.9.4.31
+DISTNAME =	twintk-$V
 
 CATEGORIES =	devel
 

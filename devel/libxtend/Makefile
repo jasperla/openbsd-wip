@@ -1,10 +1,11 @@
 COMMENT =	Miscellaneous functions to extend libc
 
+V =		0.2.0.17
 GH_ACCOUNT =	outpaddling
 GH_PROJECT =	libxtend
-GH_COMMIT =	af688633f10ef5c5ec4995d086db76ef9801303e
+GH_COMMIT =	7e8e7d3afd197c1cd2a6b957fc81f9ae3c6c54e1
 
-DISTNAME =	libxtend-0.1.9.35
+DISTNAME =	libxtend-$V
 
 CATEGORIES =	devel
 

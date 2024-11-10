@@ -424,7 +424,7 @@ lib/pkgconfig/ptexenc.pc
 @unexec-delete rm -f %D/share/texmf-dist/ls-R
 @unexec-delete rm -f %D/share/texmf-var/ls-R
 @unexec-delete rm -f %D/share/texmf-var/luametatex-cache/context/148f906ad1dab182285ae0357953b2c0/trees/*
-@unexec-delete rmdir %D/share/texmf-var/luametatex-cache/context/148f906ad1dab182285ae0357953b2c0/trees
+@unexec-delete rm -df %D/share/texmf-var/luametatex-cache/context/148f906ad1dab182285ae0357953b2c0/trees
 @unexec-delete rm -f %D/share/texmf/ls-R
 @unexec-delete rm -f %D/share/texmf-local/ls-R
 lib/pkgconfig/texlua53.pc

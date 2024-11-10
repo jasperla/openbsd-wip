@@ -1,11 +1,11 @@
-This is an updated version of the Binwalk firmware analysis tool. It has been
-re-written in Rust, and is currently considered unstable/experimental.
+This is an updated version of the Binwalk firmware analysis tool, re-written in
+Rust for speed and accuracy.
 
-While the usage and output is similar to that of previous Binwalk releases, this
-version has several notable improvements:
+Binwalk can identify, and optionally extract, files and data that have been
+embedded inside of other files.
 
-- JSON output summary
-- Multi-threaded analysis
-- Efficient pattern matching
-- Smarter file carving and extraction
-- Much improved signature validation and reporting
+While its primary focus is firmware analysis, it supports a wide variety of file
+and data types. Through entropy analysis, it can even help to identify unknown
+compression or encryption. Binwalk can be customized and integrated into your
+own Rust projects.
+
