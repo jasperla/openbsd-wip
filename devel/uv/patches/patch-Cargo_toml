@@ -32,7 +32,7 @@ Index: Cargo.toml
  rkyv = { version = "0.8.8", features = ["bytecheck"] }
  rmp-serde = { version = "1.3.0" }
  rust-netrc = { version = "0.1.2" }
-@@ -157,7 +157,7 @@ target-lexicon = { version = "0.12.16" }
+@@ -158,7 +158,7 @@ target-lexicon = { version = "0.12.16" }
  tempfile = { version = "3.12.0" }
  textwrap = { version = "0.16.1" }
  thiserror = { version = "1.0.63" }
@@ -41,7 +41,7 @@ Index: Cargo.toml
  tokio = { version = "1.40.0", features = ["fs", "io-util", "macros", "process", "signal", "sync"] }
  tokio-stream = { version = "0.1.16" }
  tokio-util = { version = "0.7.12", features = ["compat"] }
-@@ -184,9 +184,6 @@ zip = { version = "0.6.6", default-features = false, f
+@@ -185,9 +185,6 @@ zip = { version = "0.6.6", default-features = false, f
  
  [workspace.metadata.cargo-shear]
  ignored = ["flate2", "xz2"]
