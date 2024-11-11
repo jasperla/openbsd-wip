@@ -15,7 +15,9 @@ HOMEPAGE =		http://acadix.biz/desktop-installer.php
 PERMIT_PACKAGE =	Yes
 
 # I would let desktop-installer add these with pkg_add rather than
-# build them from source as deps of a WIP port.  Up to you, though.
+# build them from source as deps of a WIP port.  Also, 
+# pkg_delete -a desktop-installer will lead to these packages being
+# removed as well, which will break the installation.
 # For other platforms, I only install things as deps if they are
 # required for the desktop-installer script to function.
 # RUN_DEPENDS =		archivers/xz \
