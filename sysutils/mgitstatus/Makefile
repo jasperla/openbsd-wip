@@ -1,6 +1,6 @@
 COMMENT =	tool to get status over multiple Git repositories
 
-VERSION =	2.2
+VERSION =	2.3
 
 SITES =         https://github.com/fboender/multi-git-status/
 DISTFILES =	mgitstatus-{archive/refs/tags/}${VERSION}.tar.gz
