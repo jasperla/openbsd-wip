@@ -1,6 +1,7 @@
 COMMENT =		Quickly configure a OpenBSD desktop system
 
-V =			1.0.0
+# Suffix version with commit # from git describe --tags
+V =			1.0.0.28
 COMMIT =		3107aaa91e94157e74ecbbfd9e1adfe839c49a6d
 PKGNAME =		desktop-installer-${V}
 
@@ -13,13 +14,17 @@ HOMEPAGE =		http://acadix.biz/desktop-installer.php
 # 2BSD
 PERMIT_PACKAGE =	Yes
 
-RUN_DEPENDS =		archivers/xz \
-			devel/git devel/gmake \
-			graphics/feh \
-			net/avahi \
-			sysutils/consolekit \
-			sysutils/auto-admin \
-			x11/dbus x11/tk/8.6 
+# I would let desktop-installer add these with pkg_add rather than
+# build them from source as deps of a WIP port.  Up to you, though.
+# For other platforms, I only install things as deps if they are
+# required for the desktop-installer script to function.
+# RUN_DEPENDS =		archivers/xz \
+# 			devel/git devel/gmake \
+# 			graphics/feh \
+# 			net/avahi \
+# 			sysutils/consolekit \
+# 			x11/dbus x11/tk/8.6 
+RUN_DEPENDS=		sysutils/auto-admin
 
 NO_BUILD =		Yes
 
