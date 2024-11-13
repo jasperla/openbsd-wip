@@ -1,0 +1,14 @@
+Use local path for tree-sitter-xml crate
+
+Index: Cargo.toml
+--- Cargo.toml.orig
++++ Cargo.toml
+@@ -24,7 +24,7 @@ tree-sitter-html = "0.23"
+ tree-sitter-javascript = "0.23"
+ tree-sitter-cpp = "0.23"
+ tree-sitter-c-sharp = "0.23"
+-tree-sitter-xml = { git = "https://github.com/tree-sitter-grammars/tree-sitter-xml.git", rev = "cd1316e476ec40da6ce1fb5749c9d7e6b4f1090c" }
++tree-sitter-xml = { path = "${MODCARGO_VENDOR_DIR}/tree-sitter-xml-${TS_XML_HASH}" }
+ tree-sitter-go = "0.23.2"
+ tree-sitter-dart = "0.0.4"
+ regex = "1.10.4"

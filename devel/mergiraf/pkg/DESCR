@@ -1,0 +1,16 @@
+A syntax-aware git merge driver for a growing collection of programming
+languages and file formats.
+
+Currently supports the following programming languages:
+- Java (*.java)
+- Rust (*.rs)
+- Go (*.go)
+- Javascript (*.js, *.jsx)
+- C/C++ (*.c, *.h, *.cpp, *.hpp)
+- C# (*.cs)
+
+and the following declarative file formats:
+- JSON (*.json)
+- HTML (*.html, *.htm)
+- XML (*.xml, *.xhtml)
+- YAML (*.yml, *.yaml)
