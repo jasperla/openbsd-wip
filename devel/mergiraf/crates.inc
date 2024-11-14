@@ -133,6 +133,7 @@ MODCARGO_CRATES +=	tree-sitter-javascript	0.23.0	# MIT
 MODCARGO_CRATES +=	tree-sitter-json	0.23.0	# MIT
 MODCARGO_CRATES +=	tree-sitter-language	0.1.2	# MIT
 MODCARGO_CRATES +=	tree-sitter-rust	0.23.0	# MIT
+MODCARGO_CRATES +=	tree-sitter-xml	0.7.0	# MIT
 MODCARGO_CRATES +=	tree-sitter-yaml	0.6.1	# MIT
 MODCARGO_CRATES +=	typed-arena	2.0.2	# MIT
 MODCARGO_CRATES +=	typenum	1.17.0	# MIT OR Apache-2.0
