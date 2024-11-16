@@ -25,11 +25,6 @@ LIB_DEPENDS=		devel/cppunit \
 CONFIGURE_STYLE=	autoreconf
 AUTOCONF_VERSION=	2.72
 AUTOMAKE_VERSION=	1.16
-##CONFIGURE_ENV +=	LDFLAGS=-pthread
-##CONFIGURE_ARGS=		--disable-debug
-
-pre-patch:
-	cp ${FILESDIR}/bootstrap ${WRKSRC}
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
