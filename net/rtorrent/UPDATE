@@ -1,1 +1,1 @@
-builds, needs testing
+builds and installs, but blocked by https://github.com/rakshasa/rtorrent/issues/820
