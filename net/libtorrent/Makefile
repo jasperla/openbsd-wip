@@ -21,16 +21,13 @@ BUILD_DEPENDS=		devel/libtool
 LIB_DEPENDS=		devel/cppunit
 
 CONFIGURE_STYLE=	autoreconf
-AUTORECONF=		./bootstrap
 AUTOCONF_VERSION=	2.72
 AUTOMAKE_VERSION=	1.16
 CONFIGURE_ARGS=		--disable-mincore
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
-##CXXFLAGS +=		-std=c++11
-
-pre-patch:
-	cp ${FILESDIR}/bootstrap ${WRKSRC}
+#pre-patch:
+#	cp ${FILESDIR}/bootstrap ${WRKSRC}
 
 .include <bsd.port.mk>
