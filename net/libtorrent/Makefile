@@ -27,7 +27,10 @@ CONFIGURE_ARGS=		--disable-mincore
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
+<<<<<<< HEAD
 #pre-patch:
 #	cp ${FILESDIR}/bootstrap ${WRKSRC}
 
+=======
+>>>>>>> 37c1ef5aa (cleanup: remove unneeded manual bootstrap)
 .include <bsd.port.mk>
