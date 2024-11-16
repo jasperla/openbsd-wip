@@ -16,6 +16,8 @@ WANTLIB += torrent>=23 cppunit execinfo
 
 COMPILER =		base-clang ports-gcc base-gcc
 
+BUILD_DEPENDS=		devel/autoconf-archive
+
 LIB_DEPENDS=		devel/cppunit \
 			net/libtorrent>=0.14.0 \
 			net/curl
