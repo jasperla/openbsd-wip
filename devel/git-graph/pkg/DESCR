@@ -1,0 +1,8 @@
+A command line tool to visualize Git history graphs in a comprehensible
+way, following different branching models.
+
+Features:
+- View structured graphs directly in the terminal
+- Pre-defined and custom branching models and coloring
+- Different styles, including ASCII-only (i.e. no "special characters")
+- Custom commit formatting, like with git log --format="..."
