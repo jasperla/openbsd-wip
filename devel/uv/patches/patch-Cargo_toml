@@ -4,7 +4,7 @@ Index: Cargo.toml
 --- Cargo.toml.orig
 +++ Cargo.toml
 @@ -75,7 +75,7 @@ async-channel = { version = "2.3.1" }
- async-compression = { version = "0.4.12" }
+ async-compression = { version = "0.4.12", features = ["bzip2", "gzip", "xz", "zstd"] }
  async-trait = { version = "0.1.82" }
  async_http_range_reader = { version = "0.9.1" }
 -async_zip = { git = "https://github.com/charliermarsh/rs-async-zip", rev = "c909fda63fcafe4af496a07bfda28a5aae97e58d", features = ["deflate", "tokio"] }
@@ -29,10 +29,10 @@ Index: Cargo.toml
 +tl = { path = "${MODCARGO_VENDOR_DIR}/tl-${TL_HASH}" }
  tokio = { version = "1.40.0", features = ["fs", "io-util", "macros", "process", "rt", "signal", "sync"] }
  tokio-stream = { version = "0.1.16" }
- tokio-util = { version = "0.7.12", features = ["compat"] }
+ tokio-util = { version = "0.7.12", features = ["compat", "io"] }
 @@ -175,7 +175,7 @@ unicode-width = { version = "0.1.13" }
  unscanny = { version = "0.1.0" }
- url = { version = "2.5.2" }
+ url = { version = "2.5.2", features = ["serde"] }
  urlencoding = { version = "2.1.3" }
 -version-ranges = { git = "https://github.com/astral-sh/pubgrub", rev = "57afc831bf2551f164617a10383cf288bf5d190d" }
 +version-ranges = { path = "${MODCARGO_VENDOR_DIR}/pubgrub-${PUBGRUB_HASH}/version-ranges" }
