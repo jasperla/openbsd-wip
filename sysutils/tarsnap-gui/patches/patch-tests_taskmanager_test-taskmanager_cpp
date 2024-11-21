@@ -1,0 +1,12 @@
+Index: tests/taskmanager/test-taskmanager.cpp
+--- tests/taskmanager/test-taskmanager.cpp.orig
++++ tests/taskmanager/test-taskmanager.cpp
+@@ -600,6 +600,8 @@ void TestTaskManager::backup_interrupt_fake()
+ {
+     TARSNAP_CLI_OR_SKIP;
+ 
++    QSKIP("XXX Requires root on OpenBSD");
++
+     TaskManager *manager = new TaskManager();
+     const char  *logfilename;
+     QSignalSpy   sig_message(manager, SIGNAL(message(QString)));

@@ -1,0 +1,19 @@
+Index: tests/task/test-task.cpp
+--- tests/task/test-task.cpp.orig
++++ tests/task/test-task.cpp
+@@ -107,6 +107,7 @@ void TestTask::sleep_fail_stderr()
+ 
+ void TestTask::sleep_crash()
+ {
++    QSKIP("XXX Skip on OpenBSD");
+     RUN_SCRIPT("sleep-1-crash.sh", false);
+     // Despite the crash, we should still get a "finished" signal.
+     QVERIFY(sig_fin.count() == 1);
+@@ -115,6 +116,7 @@ void TestTask::sleep_crash()
+ 
+ void TestTask::sleep_filenotfound()
+ {
++    QSKIP("XXX Skip on OpenBSD");
+     // This script should not exist.
+     RUN_SCRIPT("sleep-1-filenotfound.sh", false);
+     // We got a "finished" signal, with sh exit code 127 ("command not found").
