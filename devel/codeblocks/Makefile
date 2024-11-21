@@ -10,7 +10,7 @@ COMMENT=	Code::Blocks C/C++ IDE
 
 # for integration testing via openbsd-wip:
 
-SVN=		13586
+SVN=		13592
 
 GH_ACCOUNT=	jggimi
 GH_PROJECT=	codeblocks
