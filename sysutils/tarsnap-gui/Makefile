@@ -2,7 +2,7 @@ COMMENT =		frontend to the popular Tarsnap backup service
 
 GH_ACCOUNT =		Tarsnap
 GH_PROJECT =		tarsnap-gui
-GH_COMMIT = 		14a4fd2ed3732ca19c4bb6275f2e09c462825043
+GH_COMMIT = 		7264f3ed345f7da99adb0b378d68eac8cc3b3423
 DISTNAME = 		tarsnap-gui-1.1.0
 SEPARATE_BUILD =	No
 
@@ -16,6 +16,8 @@ PERMIT_PACKAGE =	Yes
 MODULES =		devel/qmake x11/qt5
 RUN_DEPENDS =		sysutils/tarsnap \
 			devel/desktop-file-utils
+WANTLIB += ${COMPILER_LIBCXX} GL Qt5Core Qt5Gui Qt5Network Qt5Sql
+WANTLIB += Qt5Widgets c m
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/tarsnap-gui ${PREFIX}/bin/tarsnap-gui
