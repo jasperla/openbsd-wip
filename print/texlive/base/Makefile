@@ -57,10 +57,15 @@ LIB_DEPENDS-main =	converters/libiconv \
 			archivers/zziplib \
 			${BASE_PKGPATH},-mktexlsr
 
+LIB_DEPENDS-mktexlsr =
+
+LIB_DEPENDS-synctex =
+
 MODULES =		textproc/intltool perl
 
-# c++-11 required for some subprojects
+# c++-17 required for some subprojects
 COMPILER =		base-clang ports-gcc
+CXXFLAGS_ports-gcc =	-std=gnu++17
 
 # Never set SEPARATE_BUILD
 CONFIGURE_STYLE =	gnu
@@ -197,7 +202,3 @@ post-install: tl-symlinks-buildset
 
 
 .include <bsd.port.mk>
-
-.if ${CHOSEN_COMPILER} == "ports-gcc"
-CXXFLAGS +=	-std=gnu++11
-.endif
