@@ -4,7 +4,6 @@
 @conflict texlive_texmf-full-<2024
 @conflict texlive_texmf-buildset-<2024
 @conflict texlive_texmf-minimal-<2024
-bin/
 bin/context
 bin/context.lua
 bin/mtx-context.lua

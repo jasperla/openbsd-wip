@@ -14,7 +14,7 @@ YEAR = 2024
 THIS_DIR = os.path.abspath(os.path.dirname(__file__))
 PLIST_DIR = os.path.abspath(os.path.join(THIS_DIR, "..", "pkg"))
 PLISTS = "-buildset", "-main", "-context", "-full", "-docs"
-EXISTING_DIRS = ["share", "info", "man"] + \
+EXISTING_DIRS = ["bin", "share", "info", "man"] + \
     ["man/man%d" % i for i in range(1, 9)] + ["man3f", "man3p"]
 
 MAN_RE = re.compile(r'^man/man[0-9]/.*\.[0-9]')

@@ -5,7 +5,6 @@
 @conflict texlive_texmf-buildset-<2024
 @conflict texlive_texmf-context-<2024
 @pkgpath print/teTeX/texmf
-bin/
 bin/amstex
 bin/cslatex
 bin/csplain
