@@ -1,9 +1,3 @@
-@conflict teTeX_texmf-*
-@conflict texlive_base-<2024
-@conflict texlive_texmf-docs-<2024
-@conflict texlive_texmf-full-<2024
-@conflict texlive_texmf-buildset-<2024
-@conflict texlive_texmf-minimal-<2024
 bin/context
 bin/context.lua
 bin/mtx-context.lua

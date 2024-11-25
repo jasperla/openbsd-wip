@@ -1,10 +1,5 @@
-@conflict teTeX_texmf-*
-@conflict texlive_base-<2024
-@conflict texlive_texmf-docs-<2024
 @conflict texlive_texmf-full-<2024
 @conflict texlive_texmf-buildset-<2024
-@conflict texlive_texmf-context-<2024
-@pkgpath print/teTeX/texmf
 bin/amstex
 bin/cslatex
 bin/csplain

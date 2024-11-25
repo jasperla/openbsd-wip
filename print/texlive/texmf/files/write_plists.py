@@ -23,54 +23,17 @@ INFO_RE = re.compile(r'^info/.*\.info')
 
 TOP_MATTER = {
     "-buildset": [
-        "@conflict teTeX_texmf-*",
-        "@conflict texlive_base-<%s" % YEAR,
-        "@conflict texlive_texmf-docs-<%s" % YEAR,
-        "@conflict texlive_texmf-minimal-<%s" % YEAR,
-        "@conflict texlive_texmf-full-<%s" % YEAR,
-        "@conflict texlive_texmf-context-<%s" % YEAR,
-        "@pkgpath print/texlive/texmf-minimal",
-        "@pkgpath print/teTeX/texmf",
+        "@conflict texlive_texmf-minimal-<2024",
         # Scaffold a dir for ports wishing to install extra tex macros.
         "share/texmf-local/",
     ],
     "-main": [
-        "@conflict teTeX_texmf-*",
-        "@conflict texlive_base-<%s" % YEAR,
-        "@conflict texlive_texmf-docs-<%s" % YEAR,
-        "@conflict texlive_texmf-full-<%s" % YEAR,
-        "@conflict texlive_texmf-buildset-<%s" % YEAR,
-        "@conflict texlive_texmf-context-<%s" % YEAR,
-        "@pkgpath print/teTeX/texmf",
+        "@conflict texlive_texmf-full-<2024",
+        "@conflict texlive_texmf-buildset-<2024",
     ],
-    "-context": [
-        "@conflict teTeX_texmf-*",
-        "@conflict texlive_base-<%s" % YEAR,
-        "@conflict texlive_texmf-docs-<%s" % YEAR,
-        "@conflict texlive_texmf-full-<%s" % YEAR,
-        "@conflict texlive_texmf-buildset-<%s" % YEAR,
-        "@conflict texlive_texmf-minimal-<%s" % YEAR,
-    ],
-    "-full": [
-        "@conflict teTeX_texmf-*",
-        "@conflict texlive_base-<%s" % YEAR,
-        "@conflict texlive_texmf-docs-<%s" % YEAR,
-        "@conflict texlive_texmf-minimal-<%s" % YEAR,
-        "@conflict texlive_texmf-buildset-<%s" % YEAR,
-        "@conflict texlive_texmf-context-<%s" % YEAR,
-        "@pkgpath print/texlive/texmf-full",
-        "@pkgpath print/teTeX/texmf",
-    ],
-    "-docs": [
-        "@conflict teTeX_texmf-doc-*",
-        "@conflict texlive_base-<%s" % YEAR,
-        "@conflict texlive_texmf-minimal-<%s" % YEAR,
-        "@conflict texlive_texmf-full-<%s" % YEAR,
-        "@conflict texlive_texmf-buildset-<%s" % YEAR,
-        "@conflict texlive_texmf-context-<%s" % YEAR,
-        "@pkgpath print/texlive/texmf-docs",
-        "@pkgpath print/teTeX_texmf,-doc",
-    ],
+    "-context": [],
+    "-full": [],
+    "-docs": [],
 }
 
 BOTTOM_MATTER = {

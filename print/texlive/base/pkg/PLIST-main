@@ -1,11 +1,3 @@
-@conflict teTeX_base-*
-@conflict pdfjam-*
-@conflict ht-<2
-@conflict texlive_texmf-buildset-<2024
-@pkgpath print/teTeX/base
-@pkgpath print/pdfjam
-@pkgpath print/teTeX/base,-fmt
-@pkgpath print/texlive/base
 %%xindy%%
 bin/a2ping
 bin/a5toa4
