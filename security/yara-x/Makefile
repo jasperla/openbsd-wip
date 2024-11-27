@@ -5,7 +5,7 @@ COMMENT =	pattern matching swiss knife for malware researchers
 
 GH_ACCOUNT =	VirusTotal
 GH_PROJECT =	yara-x
-GH_TAGNAME =	v0.10.0
+GH_TAGNAME =	v0.11.0
 
 CATEGORIES =	security
 
@@ -33,10 +33,6 @@ MODCARGO_RUSTFLAGS +=	-Clink-arg=-fuse-ld=lld \
 			-Clink-arg=-Wl,-z,nostart-stop-gc
 
 SEPARATE_BUILD =	Yes
-
-# fix files permissions for str_stack crate
-pre-patch:
-	find ${MODCARGO_VENDOR_DIR}/str_stack-0.1.0 -type f -exec chmod 644 {} +
 
 # TODO generate and install shell completions for Bash/Fish/ZSH
 
