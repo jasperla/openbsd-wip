@@ -16,7 +16,7 @@ Index: Cargo.toml
  platform-info = { version = "2.0.3" }
  proc-macro2 = { version = "1.0.86" }
  procfs = { version = "0.17.0", default-features = false, features = ["flate2"] }
--pubgrub = { git = "https://github.com/astral-sh/pubgrub", rev = "57afc831bf2551f164617a10383cf288bf5d190d" }
+-pubgrub = { git = "https://github.com/astral-sh/pubgrub", rev = "9cd9049a64c7352de2ff3b525b9ae36421b0cc18" }
 +pubgrub = { path = "${MODCARGO_VENDOR_DIR}/pubgrub-${PUBGRUB_HASH}" }
  quote = { version = "1.0.37" }
  rayon = { version = "1.10.0" }
@@ -34,7 +34,7 @@ Index: Cargo.toml
  unscanny = { version = "0.1.0" }
  url = { version = "2.5.2", features = ["serde"] }
  urlencoding = { version = "2.1.3" }
--version-ranges = { git = "https://github.com/astral-sh/pubgrub", rev = "57afc831bf2551f164617a10383cf288bf5d190d" }
+-version-ranges = { git = "https://github.com/astral-sh/pubgrub", rev = "9cd9049a64c7352de2ff3b525b9ae36421b0cc18" }
 +version-ranges = { path = "${MODCARGO_VENDOR_DIR}/pubgrub-${PUBGRUB_HASH}/version-ranges" }
  walkdir = { version = "2.5.0" }
  which = { version = "7.0.0", features = ["regex"] }
