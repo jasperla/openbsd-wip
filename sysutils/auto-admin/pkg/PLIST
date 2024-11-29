@@ -44,6 +44,7 @@ bin/auto-using-pkgsrc
 bin/auto-wacom-map-display
 @man man/man8/auto-add-swap.8
 @man man/man8/auto-admin.8
+@man man/man8/auto-change-login-class.8
 @man man/man8/auto-image2dev.8
 @man man/man8/auto-pkgsrc-non-removable.8
 @man man/man8/auto-update-system.8
@@ -62,6 +63,7 @@ sbin/auto-automount-setup
 sbin/auto-binary-pkgsrc-setup
 sbin/auto-change-group-gid
 sbin/auto-change-group-ownership
+sbin/auto-change-login-class
 sbin/auto-change-nfsd-count
 sbin/auto-change-ownership
 sbin/auto-change-primary-group
@@ -69,7 +71,6 @@ sbin/auto-change-uid
 sbin/auto-clean-disk
 sbin/auto-clean-ports
 sbin/auto-clean-tmp
-sbin/auto-cuda-install
 sbin/auto-cups-setup
 sbin/auto-denyhosts-remove-ip
 sbin/auto-denyhosts-setup
