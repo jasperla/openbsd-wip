@@ -1,0 +1,16 @@
+Index: launcher/minecraft/MinecraftInstance.cpp
+--- launcher/minecraft/MinecraftInstance.cpp.orig
++++ launcher/minecraft/MinecraftInstance.cpp
+@@ -305,7 +305,12 @@ QString MinecraftInstance::binRoot() const
+ 
+ QString MinecraftInstance::getNativePath() const
+ {
++#ifdef Q_OS_OPENBSD
++    Version instance_ver{ getPackProfile()->getComponentVersion("net.minecraft") };
++    QDir natives_dir = QDir("${LOCALBASE}/share/lwjgl/");
++#else
+     QDir natives_dir(FS::PathCombine(instanceRoot(), "natives/"));
++#endif
+     return natives_dir.absolutePath();
+ }
+ 

@@ -1,0 +1,9 @@
+I took some patches from the FreeBSD ports tree, although it needed to be modified.
+
+This bypassed the "Unknown Platform" runtime error.
+
+liblwjgl.so isn't provided by any package on OpenBSD to my knowledge, but liblwjgl64.so *is*
+
+With these patches, this software seems to be hardcoded to look for liblwjgl.so (no 64)
+
+Could not get a game to launch.
