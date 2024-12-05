@@ -3,7 +3,7 @@ COMMENT=	Code::Blocks C/C++ IDE
 
 # for upstream releases:
 
-#V=		20.03
+V=		20.03
 #DISTNAME=	codeblocks-${V}
 #EXTRACT_SUFX=	.tar.xz
 #SITES=		${SITE_SOURCEFORGE:=codeblocks/Sources/${V}/}
@@ -91,8 +91,9 @@ CONFIGURE_ARGS += --with-boost-libdir=${LOCALBASE}/lib
 
 post-patch:
 	echo : > ${WRKSRC}/update_revision.sh
-	echo 'm4_define([SVN_REV], ${R})' > ${WRKSRC}/revision.m4
-	echo 'm4_define([SVN_REVISION], ${V}svn${R})' >> ${WRKSRC}/revision.m4
+	touch ${WRKSRC}/revision.m4
+	echo 'm4_define([SVN_REV], ${SVN})' >> ${WRKSRC}/revision.m4
+	echo 'm4_define([SVN_REVISION], ${V}svn${SVN})' >> ${WRKSRC}/revision.m4
 	echo 'm4_define([SVN_DATE], )' >> ${WRKSRC}/revision.m4
 
 pre-configure:
