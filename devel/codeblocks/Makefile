@@ -94,7 +94,7 @@ post-patch:
 	touch ${WRKSRC}/revision.m4
 	echo 'm4_define([SVN_REV], ${SVN})' >> ${WRKSRC}/revision.m4
 	echo 'm4_define([SVN_REVISION], ${V}svn${SVN})' >> ${WRKSRC}/revision.m4
-	echo 'm4_define([SVN_DATE], )' >> ${WRKSRC}/revision.m4
+	echo 'm4_define([SVN_DATE],' `date +%Y-%m-%d\ %H:%M:%S`')' >> ${WRKSRC}/revision.m4
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/src/plugins/compilergcc/compilergcc.cpp
