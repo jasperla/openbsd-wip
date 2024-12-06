@@ -1,7 +1,7 @@
 MODGO_MODULES =	\
 	dario.cat/mergo				 v1.0.0 \
 	github.com/!ladicle/tabwriter		 v1.0.0 \
-	github.com/!masterminds/semver/v3	 v3.3.0 \
+	github.com/!masterminds/semver/v3	 v3.3.1 \
 	github.com/!microsoft/go-winio		 v0.6.1 \
 	github.com/!proton!mail/go-crypto	 v1.0.0 \
 	github.com/alecthomas/assert/v2		 v2.7.0 \
@@ -10,6 +10,7 @@ MODGO_MODULES =	\
 	github.com/anmitsu/go-shlex		 v0.0.0-20200514113438-38f4b401e2be \
 	github.com/armon/go-socks5		 v0.0.0-20160902184237-e75332964ef5 \
 	github.com/bwesterb/go-ristretto	 v1.2.3 \
+	github.com/chainguard-dev/git-urls	 v1.0.2 \
 	github.com/cloudflare/circl		 v1.3.7 \
 	github.com/creack/pty			 v1.1.23 \
 	github.com/cyphar/filepath-securejoin	 v0.2.5 \
@@ -58,8 +59,7 @@ MODGO_MODULES =	\
 	github.com/skeema/knownhosts		 v1.2.2 \
 	github.com/spf13/pflag			 v1.0.5 \
 	github.com/stretchr/objx		 v0.5.2 \
-	github.com/stretchr/testify		 v1.9.0 \
-	github.com/whilp/git-urls		 v1.0.0 \
+	github.com/stretchr/testify		 v1.10.0 \
 	github.com/xanzy/ssh-agent		 v0.3.3 \
 	github.com/yuin/goldmark		 v1.4.13 \
 	github.com/zeebo/assert			 v1.3.0 \
@@ -68,10 +68,10 @@ MODGO_MODULES =	\
 	golang.org/x/exp			 v0.0.0-20240719175910-8a7402abbf56 \
 	golang.org/x/mod			 v0.18.0 \
 	golang.org/x/net			 v0.27.0 \
-	golang.org/x/sync			 v0.8.0 \
-	golang.org/x/sys			 v0.26.0 \
+	golang.org/x/sync			 v0.9.0 \
+	golang.org/x/sys			 v0.27.0 \
 	golang.org/x/telemetry			 v0.0.0-20240521205824-bda55230c457 \
-	golang.org/x/term			 v0.25.0 \
+	golang.org/x/term			 v0.26.0 \
 	golang.org/x/text			 v0.16.0 \
 	golang.org/x/tools			 v0.22.0 \
 	golang.org/x/xerrors			 v0.0.0-20190717185122-a985d3407aa7 \
@@ -98,6 +98,7 @@ MODGO_MODFILES =	\
 	github.com/stretchr/testify		 v1.2.2 \
 	github.com/stretchr/testify		 v1.4.0 \
 	github.com/stretchr/testify		 v1.8.4 \
+	github.com/stretchr/testify		 v1.9.0 \
 	golang.org/x/crypto			 v0.0.0-20190308221718-c2843e01d9a2 \
 	golang.org/x/crypto			 v0.0.0-20210921155107-089bfa567519 \
 	golang.org/x/crypto			 v0.0.0-20220622213112-05595931fe9d \
@@ -125,6 +126,7 @@ MODGO_MODFILES =	\
 	golang.org/x/sync			 v0.1.0 \
 	golang.org/x/sync			 v0.3.0 \
 	golang.org/x/sync			 v0.7.0 \
+	golang.org/x/sync			 v0.8.0 \
 	golang.org/x/sys			 v0.0.0-20190215142949-d0b11bdaac8a \
 	golang.org/x/sys			 v0.0.0-20191026070338-33540a1f6037 \
 	golang.org/x/sys			 v0.0.0-20201119102817-f84b799fce68 \
@@ -145,6 +147,7 @@ MODGO_MODFILES =	\
 	golang.org/x/sys			 v0.22.0 \
 	golang.org/x/sys			 v0.24.0 \
 	golang.org/x/sys			 v0.25.0 \
+	golang.org/x/sys			 v0.26.0 \
 	golang.org/x/sys			 v0.3.0 \
 	golang.org/x/sys			 v0.5.0 \
 	golang.org/x/sys			 v0.6.0 \
@@ -152,6 +155,7 @@ MODGO_MODFILES =	\
 	golang.org/x/term			 v0.0.0-20210927222741-03fcf44c2211 \
 	golang.org/x/term			 v0.2.0 \
 	golang.org/x/term			 v0.22.0 \
+	golang.org/x/term			 v0.25.0 \
 	golang.org/x/term			 v0.5.0 \
 	golang.org/x/term			 v0.6.0 \
 	golang.org/x/text			 v0.14.0 \

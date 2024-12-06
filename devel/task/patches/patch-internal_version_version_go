@@ -3,7 +3,7 @@ Display version without commit hash
 Index: internal/version/version.go
 --- internal/version/version.go.orig
 +++ internal/version/version.go
-@@ -27,5 +27,9 @@ func GetVersion() string {
+@@ -29,5 +29,9 @@ func GetVersion() string {
  }
  
  func GetVersionWithSum() string {
