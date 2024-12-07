@@ -9,7 +9,7 @@ Index: Cargo.toml
  async_http_range_reader = { version = "0.9.1" }
 -async_zip = { git = "https://github.com/charliermarsh/rs-async-zip", rev = "c909fda63fcafe4af496a07bfda28a5aae97e58d", features = ["deflate", "tokio"] }
 +async_zip = { path = "${MODCARGO_VENDOR_DIR}/rs-async-zip-${ASYNC_HASH}", features = ["deflate", "tokio"] }
- axoupdater = { version = "0.8.0", default-features = false }
+ axoupdater = { version = "0.8.2", default-features = false }
  backoff = { version = "0.4.0" }
  base64 = { version = "0.22.1" }
 @@ -130,7 +130,7 @@ petgraph = { version = "0.6.5" }
