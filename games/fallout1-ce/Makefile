@@ -8,6 +8,7 @@ CATEGORIES =	x11 games
 MAINTAINER =	izzy Meyer <izder456@disroot.org>
 
 # Sustainable Use License, fpattern: MIT
+PERMIT_DISTFILES =	No
 PERMIT_PACKAGE =	Yes
 
 COMPILER =		base-clang ports-gcc base-gcc
