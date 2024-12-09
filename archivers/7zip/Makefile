@@ -1,7 +1,7 @@
 COMMENT =	file archiver with a high compression ratio
 
 Vmajor =	24
-Vminor =	08
+Vminor =	09
 
 Vdot =		${Vmajor}.${Vminor}
 Vnodot =	${Vmajor}${Vminor}
