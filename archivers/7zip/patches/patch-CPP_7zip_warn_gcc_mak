@@ -1,0 +1,11 @@
+Index: CPP/7zip/warn_gcc.mak
+--- CPP/7zip/warn_gcc.mak.orig
++++ CPP/7zip/warn_gcc.mak
+@@ -34,7 +34,6 @@ CFLAGS_WARN_GCC_8 = $(CFLAGS_WARN_GCC_7)\
+   -Wmissing-attributes
+ 
+ CFLAGS_WARN_GCC_9 = $(CFLAGS_WARN_GCC_8)\
+-  -Waddress-of-packed-member \
+ 
+ # In C: -Wsign-conversion enabled also by -Wconversion
+ #  -Wno-sign-conversion \
