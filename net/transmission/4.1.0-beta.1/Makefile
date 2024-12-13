@@ -2,7 +2,7 @@ COMMENT-main=	BitTorrent command line and daemon client
 COMMENT-gtk=	BitTorrent client with GTK+ interface
 COMMENT-qt=	BitTorrent client with Qt interface
 
-VER=		4.1.0-beta.1
+VER=		4.1.0.beta.1
 DISTNAME=	transmission-${VER}
 PKGNAME-main=	transmission-${VER}
 PKGNAME-gtk=	transmission-gtk-${VER}
@@ -19,7 +19,7 @@ DPB_PROPERTIES= parallel
 PERMIT_PACKAGE=	Yes
 
 # XXX maintainer fork of transmission/transmission to revert third-party/fmt to 10.2.1:
-SITES=	https://github.com/jggimi/transmission/releases/download/obsd.${VER}/
+SITES=		https://github.com/jggimi/transmission/releases/download/obsd.${VER}/
 EXTRACT_SUFX=	.tar.xz
 
 MULTI_PACKAGES=	-main -gtk -qt
