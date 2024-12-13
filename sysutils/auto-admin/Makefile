@@ -1,8 +1,8 @@
 COMMENT =		Portable tools for automating systems management
 
 # Suffix version with commit # from git describe --tags
-V =			0.8.0.73
-COMMIT =		d766e2348dc5b3c9abcef8e43f5e2d92bb87bfac
+V =			0.8.0.74
+COMMIT =		dbb52be98d0692f1321f8c77e7f51d0483ca78eb
 PKGNAME =		auto-admin-${V}
 
 DIST_TUPLE =		github outpaddling auto-admin ${COMMIT} .
