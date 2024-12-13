@@ -1,0 +1,7 @@
+This is net/transmisison 4.1.0-beta-1, with third-party/fmt at 10.2.1.
+
+This beta will conflict with earlier versions of transmission.  Uninstall
+before building or installing to avoid conflicts.
+
+Changelog at:
+https://github.com/jggimi/transmission/blob/main/news/news-4.1.0-beta.1.md
