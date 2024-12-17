@@ -13,8 +13,19 @@ WANTLIB += c kvm m pthread
 MODULES =		devel/cmake \
 			lang/python
 
-USE_LIBTOOL =		gnu
-
+# dlopen()'s on runtime if built against
+BUILD_DEPENDS =		audio/pulseaudio \
+			databases/sqlite3 \
+			devel/glib2 \
+			devel/dconf \
+			devel/pkgconf \
+			graphics/vulkan-loader \
+			graphics/vulkan-headers \
+			graphics/chafa \
+			graphics/ImageMagick \
+			wayland/wayland \
+			x11/dbus \
+			x11/xfce4/xfconf
 RUN_DEPENDS =		misc/hwdata
 
 COMPILER =		base-clang
