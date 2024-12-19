@@ -3,7 +3,7 @@ Disable doctest, otherwise tests fail
 Index: lib/Cargo.toml
 --- lib/Cargo.toml.orig
 +++ lib/Cargo.toml
-@@ -262,3 +262,6 @@ pretty_assertions = { workspace = true }
+@@ -279,3 +279,6 @@ pretty_assertions = { workspace = true }
  rayon = { workspace = true }
  yara-x-proto-yaml = { workspace = true }
  zip = { workspace = true }
