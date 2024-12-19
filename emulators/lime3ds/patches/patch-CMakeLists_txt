@@ -1,0 +1,21 @@
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -204,7 +204,7 @@ message(STATUS "Target architecture: ${ARCHITECTURE}")
+ # boost asio's concept usage doesn't play nicely with some compilers yet.
+ add_definitions(-DBOOST_ASIO_DISABLE_CONCEPTS)
+ # boost can have issues compiling with C++17 and up on newer versions of Clang.
+-add_definitions(-DBOOST_NO_CXX98_FUNCTION_BASE)
++#add_definitions(-DBOOST_NO_CXX98_FUNCTION_BASE)
+ set(CMAKE_CXX_STANDARD 20)
+ set(CMAKE_CXX_STANDARD_REQUIRED ON)
+ 
+@@ -222,6 +222,8 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_BINARY_DI
+ # Prefer the -pthread flag on Linux.
+ set(THREADS_PREFER_PTHREAD_FLAG ON)
+ find_package(Threads REQUIRED)
++find_package(fmt REQUIRED)
++find_package(Catch2 REQUIRED)
+ 
+ if (ENABLE_QT)
+     if (NOT USE_SYSTEM_QT)

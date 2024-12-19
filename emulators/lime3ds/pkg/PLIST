@@ -1,0 +1,11 @@
+@bin bin/citra
+@bin bin/citra-qt
+@bin bin/citra-room
+@man man/man6/citra-qt.6
+@man man/man6/citra.6
+share/applications/citra-qt.desktop
+share/icons/hicolor/scalable/apps/citra.svg
+share/mime/packages/citra.xml
+@tag gtk-update-icon-cache %D/share/icons/hicolor
+@tag update-mime-database
+@tag update-desktop-database
