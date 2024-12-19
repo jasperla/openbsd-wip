@@ -1,0 +1,6 @@
+#!/bin/sh
+
+mkdir -p $HOME/.local/share/abaddon
+cp -R ${TRUEPREFIX}/share/abaddon/* $HOME/.local/share/abaddon/
+cd $HOME/.local/share/abaddon
+${TRUEPREFIX}/share/abaddon/abaddon_run

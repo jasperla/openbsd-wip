@@ -1,0 +1,12 @@
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.16)
+ 
+ project(abaddon)
+ 
+-set(ABADDON_RESOURCE_DIR "/usr/share/abaddon" CACHE PATH "Fallback directory for resources on Linux")
++set(ABADDON_RESOURCE_DIR "/usr/local/share/abaddon" CACHE PATH "Fallback directory for resources on Linux")
+ 
+ set(CMAKE_CXX_STANDARD 17)
+ set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake/")
