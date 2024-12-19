@@ -1,0 +1,5 @@
+shuf is a utility that outputs a random permutation of its
+input lines.
+
+This port is a reimplementation of the shuf(1) utility
+from GNU coreutils.

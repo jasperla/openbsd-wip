@@ -1,0 +1,2 @@
+@bin bin/shuf
+@man man/man1/shuf.1
