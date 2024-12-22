@@ -1,7 +1,7 @@
 COMMENT =	beautiful CLI dashboard for GitHub
 
 MODGO_MODNAME =	github.com/dlvhdr/gh-dash/v4
-MODGO_VERSION =	v4.7.3
+MODGO_VERSION =	v4.8.1
 
 DISTNAME =	gh-dash-${MODGO_VERSION:S/v//}
 
