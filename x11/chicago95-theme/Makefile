@@ -11,7 +11,8 @@ PERMIT_PACKAGE =	Yes
 
 MAINTAINER =		Klemens Nanni <kn@openbsd.org>
 
-RUN_DEPENDS =		devel/desktop-file-utils \
+RUN_DEPENDS =		audio/sox \
+			devel/desktop-file-utils \
 			misc/shared-mime-info \
 			x11/gtk+4,-guic
 
@@ -22,9 +23,11 @@ NO_TEST =		Yes
 
 PKG_ARCH =		*
 
+EXAMPLES_DIR =		${PREFIX}/share/examples/${PKGSTEM}
+
 # ${WRKSRC}/Makefile uses DESTDIR for all else, PLIST does @sample into /etc/
 MAKE_FLAGS =		prefix=${PREFIX} \
-			SYSCONFDIR=${DESTDIR}${PREFIX}/share/examples/${PKGSTEM}
+			SYSCONFDIR=${DESTDIR}${EXAMPLES_DIR}
 
 # base install(1) lacks -t
 BUILD_DEPENDS =		sysutils/coreutils
@@ -32,5 +35,9 @@ FAKE_FLAGS =		installbin=/usr/local/bin/ginstall
 
 # +30k files, pkg_locate(1) takes too long
 UPDATE_PLIST_ARGS =	-F
+
+post-install:
+	sed -i /^Exec=/s,/usr,${TRUEPREFIX}, \
+	    ${EXAMPLES_DIR}/xdg/autostart/*.desktop
 
 .include <bsd.port.mk>
