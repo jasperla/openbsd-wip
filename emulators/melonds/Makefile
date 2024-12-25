@@ -17,13 +17,15 @@ PERMIT_PACKAGE =	Yes
 COMPILER =	base-clang ports-gcc
 
 WANTLIB += ${COMPILER_LIBCXX}
-WANTLIB += SDL2 SM X11 GL EGL ICE GL Xext archive c zstd m
-WANTLIB += Qt6Core Qt6Gui Qt6Multimedia Qt6Network Qt6Widgets
-WANTLIB += Qt6OpenGL Qt6OpenGLWidgets
+WANTLIB += EGL GL ICE Qt6Core Qt6Gui Qt6Multimedia Qt6Network
+WANTLIB += Qt6OpenGL Qt6OpenGLWidgets Qt6Widgets SDL2 SM X11 Xext
+WANTLIB += archive c enet glib-2.0 intl m slirp zstd
 
 MODULES =	devel/cmake
 LIB_DEPENDS =	archivers/libarchive \
 		devel/sdl2 \
+		net/enet \
+		net/libslirp \
 		x11/qt6/qtmultimedia
 BUILD_DEPENDS =	devel/kf6/extra-cmake-modules
 RUN_DEPENDS =	x11/gtk+4,-guic \
@@ -36,6 +38,7 @@ CONFIGURE_ARGS +=	-DMELONDS_EMBED_BUILD_INFO=ON \
 			-DMELONDS_GIT_BRANCH="master" \
 			-DBUILD_STATIC=OFF \
 			-DNEED_LIBRT=OFF \
+			-DUSE_SYSTEM_LIBSLIRP=ON \
 			-DENABLE_GDBSTUB=OFF \
 			-DENABLE_JIT=OFF \
 			-DENABLE_LTO_RELEASE=ON \
