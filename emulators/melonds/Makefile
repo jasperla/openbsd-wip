@@ -31,8 +31,8 @@ RUN_DEPENDS =	x11/gtk+4,-guic \
 
 
 CONFIGURE_ARGS +=	-DMELONDS_EMBED_BUILD_INFO=ON \
-			-DMELONDS_BUILD_PROVIDER="OpenBSD ports tree" \
-			-DMELONDS_GIT_HASH="e3fa6f4" \
+			-DMELONDS_BUILD_PROVIDER="izzy Meyer <izder456@disroot.org>" \
+			-DMELONDS_GIT_HASH="e3fa6f4224e0d706df3ee262ae41cfb0deadc593" \
 			-DMELONDS_GIT_BRANCH="master" \
 			-DBUILD_STATIC=OFF \
 			-DNEED_LIBRT=OFF \
