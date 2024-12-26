@@ -8,7 +8,7 @@ Index: libtree.c
      s->default_paths_offset = s->string_table.n;
      // TODO: how to retrieve this list properly at runtime?
 -    string_table_store(&s->string_table, "/lib:/lib64:/usr/lib:/usr/lib64");
-+    string_table_store(&s->string_table, "/usr/lib:/usr/local/lib");
++    string_table_store(&s->string_table, "/usr/lib:/usr/local/lib:/usr/X11R6/lib");
  }
  
  static void libtree_state_init(struct libtree_state_t *s) {

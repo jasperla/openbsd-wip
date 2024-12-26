@@ -3,6 +3,7 @@ COMMENT =	ldd as a tree
 GH_ACCOUNT =	haampie
 GH_PROJECT =	libtree
 GH_TAGNAME =	v3.1.1
+REVISION =	0
 
 CATEGORIES =	sysutils
 
