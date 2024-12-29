@@ -2,7 +2,7 @@
 
 COMMENT=	C library for doing number theory
 
-DISTNAME=	flint-2.7.1
+DISTNAME=	flint-3.1.2
 
 SHARED_LIBS=	flint	0.0 # 15.0.1
 
@@ -15,7 +15,7 @@ MAINTAINER=	Dimitri Karamazov <deserter666@danwin1210.me>
 # GPL
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} cblas gmp m mpfr ntl
+WANTLIB += ${COMPILER_LIBCXX} lapack gmp m mpfr ntl
 
 COMPILER=	base-clang ports-gcc
 
@@ -25,7 +25,7 @@ MODULES=	devel/cmake
 
 LIB_DEPENDS=	devel/mpfr \
 		math/ntl \
-		math/cblas
+    math/lapack
 
 CONFIGURE_ARGS=	-DWITH_NTL=ON
 
