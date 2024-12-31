@@ -1,9 +1,10 @@
 COMMENT =	system information tool written in c
 CATEGORIES =	sysutils misc
+MAINTAINER =	Carter Li <zhangsongcui@live.cn>
 
 GH_ACCOUNT =	fastfetch-cli
 GH_PROJECT =	fastfetch
-GH_TAGNAME =	2.31.0
+GH_TAGNAME =	2.33.0
 
 # MIT
 PERMIT_PACKAGE =	Yes
@@ -26,6 +27,7 @@ BUILD_DEPENDS =		audio/pulseaudio \
 			wayland/wayland \
 			x11/dbus \
 			x11/xfce4/xfconf
+
 RUN_DEPENDS =		misc/hwdata
 
 COMPILER =		base-clang
