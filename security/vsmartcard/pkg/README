@@ -1,0 +1,3 @@
+pcscd(8) listens on UNIX socket by default, while vicc(1) requires TCP:
+
+socat -v TCP-LISTEN:35963,reuseport UNIX-CONNECT:/var/run/pcscd/pcscd.comm
