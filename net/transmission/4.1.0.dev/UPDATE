@@ -1,4 +1,4 @@
-Testing net/transmission beyond 4.0.6:
+Testing net/transmission beyond release 4.0.6 or beyond 4.1.0.beta.1:
 
 1) git clone -b obsd --recurse-submodules git@github.com:jggimi/transmission.git transmission-4.1.0.dev
  
