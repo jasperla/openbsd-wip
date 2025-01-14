@@ -23,7 +23,7 @@ CONFIGURE_ARGS =	-Dfpattern_SOURCE_DIR=${WRKSRC}/third_party/fpattern
 
 # -O2+ causes instability and segfaults
 CFLAGS =		-O1 -pipe
-CXXFLAGS =		${CFLAGS}
+CXXFLAGS =		-01 -pipe
 
 post-extract:
 	rm -fr ${WRKDIST}/third_party/fpattern
