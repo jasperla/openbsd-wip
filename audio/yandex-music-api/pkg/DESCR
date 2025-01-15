@@ -1,0 +1,9 @@
+This library provides a Python interface for the undocumented and self-made
+Yandex Music API.
+
+It supports both synchronous and asynchronous (asyncio) code.
+
+In addition to that, this library has a number of high-level object wrapper
+classes to make client and script development simple and straightforward.
+All documentation was written from scratch based on logical analysis during
+reverse engineering of the API.
