@@ -1,0 +1,21 @@
+detect OpenBSD
+
+Index: src/taglib.nim
+--- src/taglib.nim.orig
++++ src/taglib.nim
+@@ -1,13 +1,14 @@
+ import times, os, filetype, strformat, json
+ import impl, utils
+ 
+-when not defined(linux):
++when not defined(linux) and not defined(openbsd):
+   proc findExistant(s: varargs[string]): string =
+     result = s[0]
+     for x in s:
+       if dirExists x: return x
+   const taglibPath = findExistant("C:/taglib", "D:/taglib", "C:/Libraries/taglib", "D:/Libraries/taglib")
+ 
++const taglibPath {.strdefine.} = "/usr/local"
+ const taglibInclude {.strdefine.} =
+   when defined(flatpak): "/app/include/taglib"
+   elif defined(linux): "/usr/include/taglib"

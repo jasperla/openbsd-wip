@@ -1,0 +1,23 @@
+- point to Qt5
+- detect OpenBSD
+
+Index: src/gui/qt.nim
+--- src/gui/qt.nim.orig
++++ src/gui/qt.nim
+@@ -18,6 +18,7 @@ when defined(windows):
+       if dirExists x: return x
+   const qtPath {.strdefine.} = findExistant("C:/Qt/5.15.2/mingw81_64", "D:/Qt/5.15.2/mingw81_64")
+ 
++const qtPath {.strdefine.} = "/usr/local/lib/qt5"
+ const qtInclude {.strdefine.} =
+   when defined(flatpak): "/usr/include"
+   elif defined(linux): "/usr/include/qt"
+@@ -43,7 +44,7 @@ macro qmo(module: static[string]) =
+     {.passl: `l`.}
+ 
+ {.passc: &"-I{qtInclude} -fPIC".}
+-when defined(linux): {.passl: &"-lpthread".}
++when defined(linux) or defined(openbsd): {.passl: &"-lpthread".}
+ qmo"Core"
+ qmo"Gui"
+ qmo"Widgets"

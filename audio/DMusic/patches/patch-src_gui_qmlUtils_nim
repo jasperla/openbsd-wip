@@ -1,0 +1,14 @@
+detect OpenBSD
+
+Index: src/gui/qmlUtils.nim
+--- src/gui/qmlUtils.nim.orig
++++ src/gui/qmlUtils.nim
+@@ -69,7 +69,7 @@ qobject FileDialogs:
+   proc showInExplorer(path: string) =
+     let file = if path.startsWith("file:"): path[5..^1] else: path
+     
+-    when defined(linux):
++    when defined(linux) or defined(openbsd):
+       # try to open dolphin
+       if execShellCmd("dolphin --select " & file.quoted) == 0: return
+ 

@@ -1,0 +1,19 @@
+detect OpenBSD
+
+Index: src/gui/configuration.nim
+--- src/gui/configuration.nim.orig
++++ src/gui/configuration.nim
+@@ -20,11 +20,11 @@ type
+ requireLocalesToBeTranslated ("ru", "")
+ 
+ let configDir* =
+-  when defined(linux): getHomeDir() / ".config/DMusic"
++  when defined(linux) or defined(openbsd): getHomeDir() / ".config/DMusic"
+   else: "."
+ 
+ let dataDir* =
+-  when defined(linux): getHomeDir() / ".local/share/DMusic"
++  when defined(linux) or defined(openbsd): getHomeDir() / ".local/share/DMusic"
+   else: "."
+ 
+ proc readConfig*: ConfigObj =

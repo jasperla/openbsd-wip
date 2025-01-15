@@ -1,0 +1,14 @@
+detect OpenBSD
+
+Index: src/gui/remoteAudio.nim
+--- src/gui/remoteAudio.nim.orig
++++ src/gui/remoteAudio.nim
+@@ -4,7 +4,7 @@ import discord_rpc
+ import ../utils, ../api
+ import audio, configuration
+ 
+-when defined(linux):
++when defined(linux) or defined(openbsd):
+   import math
+   import ../utils
+   import qt, audio, configuration
