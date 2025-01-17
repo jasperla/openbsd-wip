@@ -1,7 +1,7 @@
 COMMENT =	disk usage analyzer with console interface
 
 MODGO_MODNAME =	github.com/dundee/gdu/v5
-MODGO_VERSION =	v5.29.0
+MODGO_VERSION =	v5.30.1
 
 DISTNAME =	gdu-${MODGO_VERSION}
 
@@ -28,6 +28,9 @@ do-install:
 	${INSTALL_PROGRAM} ${MODGO_WORKSPACE}/bin/gdu ${PREFIX}/bin/godu
 	${INSTALL_MAN_DIR} ${PREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/gdu.1 ${PREFIX}/man/man1/godu.1
+
+do-test:
+	cd ${WRKSRC} && ${MODGO_TEST_CMD} ./...
 
 .include "modules.inc"
 
