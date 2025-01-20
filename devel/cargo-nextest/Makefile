@@ -3,7 +3,7 @@ NOT_FOR_ARCHS =	sparc64
 
 COMMENT =	next-generation test runner for Rust
 
-VERSION =	0.9.87
+VERSION =	0.9.88
 
 DISTNAME =	cargo-nextest-${VERSION}
 
@@ -50,7 +50,7 @@ do-install:
 # Nextest's own tests do not work with cargo test.
 # We must use nextest to run its own test suite.
 #
-# Summary [ 111.903s] 288 tests run: 279 passed, 9 failed, 1 skipped
+# Summary [  86.980s] 297 tests run: 288 passed, 9 failed, 1 skipped
 #    FAIL [  12.667s] integration-tests::integration test_list_binaries_only
 #    FAIL [  13.527s] integration-tests::integration test_list_default
 #    FAIL [  13.117s] integration-tests::integration test_list_full
