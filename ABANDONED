@@ -1,4 +1,5 @@
 # To help future archaeologists with a starting point if they wish to revive a port named below
+archivers/7zip
 archivers/p5-Compress-LZF
 archivers/p5-Compress-Raw-Bzip2
 archivers/p5-Compress-Raw-Lzma
