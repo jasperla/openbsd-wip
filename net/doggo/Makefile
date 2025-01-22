@@ -2,6 +2,7 @@ COMMENT =	modern command-line DNS client (like dig)
 
 MODGO_MODNAME =	github.com/mr-karan/doggo
 MODGO_VERSION =	v1.0.5
+REVISION =	0
 
 DISTNAME =	doggo-${MODGO_VERSION}
 
@@ -43,9 +44,9 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/completions/doggo.bash \
 		${PREFIX}/share/bash-completion/completions/doggo
 
-	${INSTALL_DATA_DIR} ${PREFIX}/share/fish/completions
+	${INSTALL_DATA_DIR} ${PREFIX}/share/fish/vendor_completions.d/
 	${INSTALL_DATA} ${WRKSRC}/completions/doggo.fish \
-		${PREFIX}/share/fish/completions/
+		${PREFIX}/share/fish/vendor_completions.d/
 
 	${INSTALL_DATA_DIR} ${PREFIX}/share/zsh/site-functions
 	${INSTALL_DATA} ${WRKSRC}/completions/doggo.zsh \
