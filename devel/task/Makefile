@@ -5,6 +5,8 @@ V =		3.41.0
 MODGO_MODNAME =	github.com/go-task/task/v3
 MODGO_VERSION =	v${V}
 
+REVISION =	0
+
 DISTNAME =	task-${V}
 
 CATEGORIES =	devel
@@ -25,13 +27,14 @@ MODGO_LDFLAGS +=	-X ${MODGO_MODNAME}/internal/version.version=${V}
 # for patch to apply
 WRKDIST =	${WRKSRC}
 
+# TODO: conflicts with productivity/taskwarrior
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/bash-completion/completions/
 	${INSTALL_DATA} ${WRKSRC}/completion/bash/task.bash \
 		${PREFIX}/share/bash-completion/completions/task
-	${INSTALL_DATA_DIR} ${PREFIX}/share/fish/completions/
+	${INSTALL_DATA_DIR} ${PREFIX}/share/fish/vendor_completions.d/
 	${INSTALL_DATA} ${WRKSRC}/completion/fish/task.fish \
-		${PREFIX}/share/fish/completions/
+		${PREFIX}/share/fish/vendor_completions.d/
 	${INSTALL_DATA_DIR} ${PREFIX}/share/zsh/site-functions/
 	${INSTALL_DATA} ${WRKSRC}/completion/zsh/_task \
 		${PREFIX}/share/zsh/site-functions/
