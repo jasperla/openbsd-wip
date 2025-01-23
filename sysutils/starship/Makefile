@@ -4,6 +4,8 @@ GH_ACCOUNT =	starship
 GH_PROJECT =	starship
 GH_TAGNAME =	v1.22.1
 
+REVISION =	0
+
 CATEGORIES =	sysutils
 
 MAINTAINER =	Laurent Cheylus <foxy@free.fr>
@@ -44,9 +46,9 @@ do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/bash-completion/completions/
 	${INSTALL_DATA} ${WRKDIR}/starship.bash \
 		${PREFIX}/share/bash-completion/completions/starship
-	${INSTALL_DATA_DIR} ${PREFIX}/share/fish/completions/
+	${INSTALL_DATA_DIR} ${PREFIX}/share/fish/vendor_completions.d/
 	${INSTALL_DATA} ${WRKDIR}/starship.fish \
-		${PREFIX}/share/fish/completions/
+		${PREFIX}/share/fish/vendor_completions.d/
 	${INSTALL_DATA_DIR} ${PREFIX}/share/zsh/site-functions/
 	${INSTALL_DATA} ${WRKDIR}/starship.zsh \
 		${PREFIX}/share/zsh/site-functions/_starship
