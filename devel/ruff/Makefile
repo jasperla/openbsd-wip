@@ -7,6 +7,8 @@ GH_ACCOUNT =	astral-sh
 GH_PROJECT =	ruff
 GH_TAGNAME =	0.9.2
 
+REVISION =	0
+
 # Rust crates downloaded via git
 LSPTYPES_HASH =	3512a9f33eadc5402cfab1b8f7340824c8ca1439
 SALSA_HASH =	88a1d7774d78f048fbd77d40abca9ebd729fd1f0
@@ -68,9 +70,9 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/ruff.bash \
 		${PREFIX}/share/bash-completion/completions/ruff
 
-	${INSTALL_DATA_DIR} ${PREFIX}/share/fish/completions/
+	${INSTALL_DATA_DIR} ${PREFIX}/share/fish/vendor_completions.d/
 	${INSTALL_DATA} ${WRKSRC}/ruff.fish \
-		${PREFIX}/share/fish/completions/
+		${PREFIX}/share/fish/vendor_completions.d/
 
 	${INSTALL_DATA_DIR} ${PREFIX}/share/zsh/site-functions
 	${INSTALL_DATA} ${WRKSRC}/ruff.zsh \
