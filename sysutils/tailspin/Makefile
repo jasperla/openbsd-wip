@@ -4,6 +4,8 @@ GH_ACCOUNT =	bensadeh
 GH_PROJECT =	tailspin
 GH_TAGNAME =	4.0.0
 
+REVISION =	0
+
 CATEGORIES =	sysutils
 
 MAINTAINER =	Laurent Cheylus <foxy@free.fr>
@@ -21,9 +23,9 @@ SEPARATE_BUILD =	Yes
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/man/tspin.1 ${PREFIX}/man/man1/tspin.1
 
-	${INSTALL_DATA_DIR} ${PREFIX}/share/fish/completions/
+	${INSTALL_DATA_DIR} ${PREFIX}/share/fish/vendor_completions.d/
 	${INSTALL_DATA} ${WRKSRC}/completions/tspin.fish \
-		${PREFIX}/share/fish/completions/
+		${PREFIX}/share/fish/vendor_completions.d/
 
 	${INSTALL_DATA_DIR} ${PREFIX}/share/zsh/site-functions/
 	${INSTALL_DATA} ${WRKSRC}/completions/tspin.zsh \
