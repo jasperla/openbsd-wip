@@ -7,6 +7,8 @@ GH_ACCOUNT =	astral-sh
 GH_PROJECT =	uv
 GH_TAGNAME =	0.5.22
 
+REVISION =	0
+
 # Rust crates downloaded via git
 ASYNC_HASH =	c909fda63fcafe4af496a07bfda28a5aae97e58d
 PUBGRUB_HASH =	648aa343486e5529953153781fc86025c73c4a61
@@ -72,8 +74,8 @@ do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/bash-completion/completions/
 	${INSTALL_DATA} ${WRKDIR}/uv.bash \
 		${PREFIX}/share/bash-completion/completions/uv
-	${INSTALL_DATA_DIR} ${PREFIX}/share/fish/completions/
-	${INSTALL_DATA} ${WRKDIR}/uv.fish ${PREFIX}/share/fish/completions/
+	${INSTALL_DATA_DIR} ${PREFIX}/share/fish/vendor_completions.d/
+	${INSTALL_DATA} ${WRKDIR}/uv.fish ${PREFIX}/share/fish/vendor_completions.d/
 	${INSTALL_DATA_DIR} ${PREFIX}/share/zsh/site-functions/
 	${INSTALL_DATA} ${WRKDIR}/uv.zsh ${PREFIX}/share/zsh/site-functions/_uv
 
