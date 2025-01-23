@@ -7,6 +7,8 @@ GH_ACCOUNT =	Byron
 GH_PROJECT =	gitoxide
 GH_TAGNAME =	v0.37.0
 
+REVISION =	0
+
 CATEGORIES =	devel
 
 MAINTAINER =	Laurent Cheylus <foxy@free.fr>
@@ -47,11 +49,11 @@ do-install:
 		${PREFIX}/share/bash-completion/completions/gix
 	${INSTALL_DATA} ${WRKBUILD}/target/release/ein.bash \
 		${PREFIX}/share/bash-completion/completions/ein
-	${INSTALL_DATA_DIR} ${PREFIX}/share/fish/completions/
+	${INSTALL_DATA_DIR} ${PREFIX}/share/fish/vendor_completions.d/
 	${INSTALL_DATA} ${WRKBUILD}/target/release/gix.fish \
-		${PREFIX}/share/fish/completions/
+		${PREFIX}/share/fish/vendor_completions.d/
 	${INSTALL_DATA} ${WRKBUILD}/target/release/ein.fish \
-		${PREFIX}/share/fish/completions/
+		${PREFIX}/share/fish/vendor_completions.d/
 	${INSTALL_DATA_DIR} ${PREFIX}/share/zsh/site-functions/
 	${INSTALL_DATA} ${WRKBUILD}/target/release/gix.zsh \
 		${PREFIX}/share/zsh/site-functions/_gix
