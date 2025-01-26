@@ -1,7 +1,7 @@
 COMMENT =		free and open-source launcher for Minecraft
 
 
-V =			9.1
+V =			9.2
 PKGNAME =		prismlauncher-${V}
 
 DIST_TUPLE+=		github PrismLauncher PrismLauncher ${V} .
@@ -30,7 +30,7 @@ WANTLIB+=		Qt6Gui Qt6Network Qt6Widgets Qt6Xml bz2 c cmark m z
 MODULES =		devel/cmake \
 			x11/qt6 \
 			java
-MODJAVA_VER =		17
+MODJAVA_VER =		21
 
 BUILD_DEPENDS =		devel/kf6/extra-cmake-modules
 RUN_DEPENDS =		audio/openal \

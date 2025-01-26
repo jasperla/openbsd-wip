@@ -5,7 +5,6 @@ share/PrismLauncher/NewLaunch.jar
 share/PrismLauncher/NewLaunchLegacy.jar
 share/PrismLauncher/qtlogging.ini
 share/applications/org.prismlauncher.PrismLauncher.desktop
-share/doc/pkg-readmes/${PKGSTEM}
 share/icons/hicolor/scalable/apps/org.prismlauncher.PrismLauncher.svg
 share/metainfo/
 share/metainfo/org.prismlauncher.PrismLauncher.metainfo.xml
