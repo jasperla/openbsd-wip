@@ -68,6 +68,7 @@ post-build:
 
 do-install:
 	${INSTALL_PROGRAM} ${MODCARGO_TARGET_DIR}/release/uv ${PREFIX}/bin/
+	${INSTALL_PROGRAM} ${MODCARGO_TARGET_DIR}/release/uvx ${PREFIX}/bin/
 
 	${INSTALL_DATA_DIR} ${PREFIX}/share/bash-completion/completions/
 	${INSTALL_DATA} ${WRKDIR}/uv.bash \
