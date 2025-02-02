@@ -1,11 +1,6 @@
 COMMENT =		fast JSON parser library in C++ using SIMD
 
-DIST_TUPLE =		github	simdjson	simdjson	v3.10.1	.
-
-# ${WRKSRC}/dependencies/{import.cmake,CMakeLists.txt}
-DATA_COMMIT =		a5b13babe65c1bba7186b41b43d4cbdc20a5c470
-DIST_TUPLE +=		github	simdjson	simdjson-data	${DATA_COMMIT} \
-				dependencies/.cache/simdjson-data/
+DIST_TUPLE =		github	simdjson	simdjson	v3.12.0	.
 
 CATEGORIES =		textproc
 
@@ -33,15 +28,8 @@ BUILD_DEPENDS =		shells/bash
 TEST_DEPENDS =		shells/bash
 
 CONFIGURE_ARGS =	-DBUILD_SHARED_LIBS=ON \
-			-DCMAKE_DISABLE_FIND_PACKAGE_Git=ON \
-			-DSIMDJSON_ALLOW_DOWNLOADS=OFF \
-			-DSIMDJSON_DEVELOPER_MODE=ON
+			-DCMAKE_DISABLE_FIND_PACKAGE_Git=ON
 
-# everything but tests
-ALL_TARGET =		simdjson
-
-pre-test:
-	# build whatever is left (ca. 161 C++ test files)
-	${MODCMAKE_BUILD_TARGET}
+# Tests require CPM and more to be fetched.
 
 .include <bsd.port.mk>
