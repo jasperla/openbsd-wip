@@ -1,6 +1,6 @@
 COMMENT =	 	microbenchmark support library
 
-DIST_TUPLE =		github	google	benchmark	v1.9.0	.
+DIST_TUPLE =		github	google	benchmark	v1.9.1	.
 
 SHARED_LIBS =		benchmark	0.0
 SHARED_LIBS +=		benchmark_main	0.0
@@ -14,13 +14,12 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB =		${COMPILER_LIBCXX} m
 
-# C++14
+# C++17
 COMPILER =		base-clang ports-gcc
 
 MODULES =		devel/cmake
 
 BUILD_DEPENDS =		devel/gtest
-TEST_DEPENDS =		devel/gtest
 
 CONFIGURE_ARGS =	-DBENCHMARK_ENABLE_WERROR=OFF \
 			-DBENCHMARK_USE_BUNDLED_GTEST=OFF \
@@ -30,7 +29,7 @@ CONFIGURE_ARGS =	-DBENCHMARK_ENABLE_WERROR=OFF \
 # everything except tests
 ALL_TARGET =		benchmark_main
 
-# build whatever is left (84 C++ test files)
+# build whatever is left (86 C++ test files)
 pre-test:
 	@${MODCMAKE_BUILD_TARGET}
 
