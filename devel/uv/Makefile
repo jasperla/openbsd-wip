@@ -5,13 +5,13 @@ COMMENT =	extremely fast Python package installer and resolver
 
 GH_ACCOUNT =	astral-sh
 GH_PROJECT =	uv
-GH_TAGNAME =	0.5.27
+GH_TAGNAME =	0.5.28
 
 # Rust crates downloaded via git
 ASYNC_HASH =	c909fda63fcafe4af496a07bfda28a5aae97e58d
 PUBGRUB_HASH =	b70cf707aa43f21b32f3a61b8a0889b15032d5c4
 TL_HASH =	6e25b2ee2513d75385101a8ff9f591ef51f314ec
-TOKIO_TAR_HASH=	ba2b140f27d081c463335f0d68b5f8df8e6c845e
+TOKIO_TAR_HASH=	efeaea927c7a40ee66121de2e1bebfd5d7a4a602
 
 DIST_TUPLE +=	github charliermarsh rs-async-zip ${ASYNC_HASH} \
 		${MODCARGO_VENDOR_DIR}

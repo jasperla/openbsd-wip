@@ -7,7 +7,7 @@ Index: Cargo.toml
  anstream = { version = "0.6.15" }
  anyhow = { version = "1.0.89" }
  arcstr = { version = "1.2.0" }
--astral-tokio-tar = { git = "https://github.com/astral-sh/tokio-tar", rev = "ba2b140f27d081c463335f0d68b5f8df8e6c845e" }
+-astral-tokio-tar = { git = "https://github.com/astral-sh/tokio-tar", rev = "efeaea927c7a40ee66121de2e1bebfd5d7a4a602" }
 +astral-tokio-tar = { path = "${MODCARGO_VENDOR_DIR}/tokio-tar-${TOKIO_TAR_HASH}" }
  async-channel = { version = "2.3.1" }
  async-compression = { version = "0.4.12", features = ["bzip2", "gzip", "xz", "zstd"] }
