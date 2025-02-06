@@ -1,5 +1,4 @@
 SHA256 (astral-sh-pubgrub-b70cf707aa43f21b32f3a61b8a0889b15032d5c4.tar.gz) = ZLU9yLMCQNZjbKsyF1D3huf1BZTwQDoflrbo4jUBTQo=
-SHA256 (astral-sh-tokio-tar-efeaea927c7a40ee66121de2e1bebfd5d7a4a602.tar.gz) = zps5iXqWtwRy+KlbKzihJ4xttnyDfVv6VcpBLpT0Plk=
 SHA256 (cargo/actix-codec-0.5.2.tar.gz) = X3sKIZiMG/h3z0dZ713arATByf6AjJFC7LeLqX2Xooo=
 SHA256 (cargo/actix-http-3.9.0.tar.gz) = 1I+W/DADcXrrmFbKPQKox95QJmetdu6s2DC0jS6R+sQ=
 SHA256 (cargo/actix-macros-0.2.4.tar.gz) = 4B7TFAsvjUIsaK+h7S6F2ZbqYZyYisg00lXbMhOGVcs=
@@ -38,6 +37,7 @@ SHA256 (cargo/arrayvec-0.7.6.tar.gz) = fALRI98BfvzfvXOe+Bc1s2xbqD7DxZyAqdfsxxj5L
 SHA256 (cargo/assert-json-diff-2.0.2.tar.gz) = R+TyuBgy5yg011GNhIegOWoozECBhqLohUwPmAEfrxI=
 SHA256 (cargo/assert_cmd-2.0.16.tar.gz) = 3Bg1t/J4eN6FJdxxQQtaMc3MXyMK7Vul35aOCcIBsj0=
 SHA256 (cargo/assert_fs-1.1.2.tar.gz) = fv2x/bR2AoJ6NChXZm/rNycSy8ZLQUFyvWsWegKSdnQ=
+SHA256 (cargo/astral-tokio-tar-0.5.0.tar.gz) = mAcHIQSxsx21Cneq59/bV2oZP/hUNsXe2X9gGmCPF6o=
 SHA256 (cargo/async-channel-2.3.1.tar.gz) = ibR4ALC+d1ktoK/UJcwDRoBShEr/M7hOM8xpb2Tne2o=
 SHA256 (cargo/async-compression-0.4.17.tar.gz) = DLjx1ICw6jeDqwFZNtKlXIfiGWdvDAt97GFJQEPyGFc=
 SHA256 (cargo/async-compression-0.4.18.tar.gz) = 34laUV9wZGQU9LRcC3kIJ4O4BVKzc6aCgwEpKN9W9SI=
@@ -73,13 +73,11 @@ SHA256 (cargo/bytecheck_derive-0.8.0.tar.gz) = UjNjy+HfSbaCFe/fUAsQOsOw+0g2rtbRV
 SHA256 (cargo/bytemuck-1.21.0.tar.gz) = 72V9+rgCIk5nH1gY6aSTX5sZV+0Y5YKSaQzDnnpAkqM=
 SHA256 (cargo/byteorder-1.5.0.tar.gz) = H9DyWEFG9vLvSAhQUIhqzzU77/cwXr0a5pUA4nxn9ks=
 SHA256 (cargo/byteorder-lite-0.1.0.tar.gz) = jx/pSP8H9L0GwwmE5p9bSJnFFqPvdPNN+Sot8qtTVJU=
-SHA256 (cargo/bytes-1.10.0.tar.gz) = 9h2shIGcZYi1WEVLGUAm6x8JwpO5A2rpsVnnTnOrbPk=
 SHA256 (cargo/bytes-1.8.0.tar.gz) = msAVDKoq5lylvYPyXH3hg96njU02ZGnxSENeKs+60No=
 SHA256 (cargo/bytes-1.9.0.tar.gz) = MlkY1v4y8jsZh4/ks0eUrkH8Gd2+U7EFcaSHTUT/05s=
 SHA256 (cargo/bytestring-1.3.1.tar.gz) = dNgCA+prKd+IASKU9icz3iHP6rR/F7Qa86OLwwoD7nI=
 SHA256 (cargo/bzip2-0.4.4.tar.gz) = vbEWpu8/bDaYgohzrQLDAUs8hcrbiElglWKOPvHjR/g=
 SHA256 (cargo/bzip2-sys-0.1.11+1.0.8.tar.gz) = c2qVXz+nh1EC1XyCuMrDfsRSJKB/0y1Y+fehhrbNTNw=
-SHA256 (cargo/cachedir-0.3.1.tar.gz) = RwPzk3B324+jW+48h4k0PBrsJYXwFG8J1ljUzMDo2HM=
 SHA256 (cargo/camino-1.1.9.tar.gz) = i5bsSWa1gT4sBQfB+GEVyMWrqtw5gIecNCQEKgL9GtM=
 SHA256 (cargo/cargo-util-0.2.17.tar.gz) = fMzRX5ailpbhPh1foQ3R2+0uFy9YtuYSSppPppU2P90=
 SHA256 (cargo/cast-0.3.0.tar.gz) = N7KmcqLLEpouQcELEiS7No+fN6Kxa2ElmBOL79ezfrU=
@@ -422,7 +420,6 @@ SHA256 (cargo/rayon-1.10.0.tar.gz) = tBimAVRRDKGgAqdSypcUmE4h5CQegE0yVVJR+vi3j/o
 SHA256 (cargo/rayon-core-1.12.1.tar.gz) = FGWHOj39qornyxS0ODZXyqsLPooKqa6OBLBEhUyN/OI=
 SHA256 (cargo/rctree-0.5.0.tar.gz) = O0LifveMNdOZhAPB0m8+/Z4TXT5RIbCkhFzFzCdUf08=
 SHA256 (cargo/redox_syscall-0.2.16.tar.gz) = +1pYwYVbS2gZ1ZASFVYD8LIq0wytdSYAqt/LaVJlUZo=
-SHA256 (cargo/redox_syscall-0.3.5.tar.gz) = VnZk8mJwlHOTCkv55Rvy6/M0jy50jMxQ3qIGRoWPjyk=
 SHA256 (cargo/redox_syscall-0.5.7.tar.gz) = m23+zyx0vOJGbKv5P2Zk1pmKaesh459CB5MAZbJ7dx8=
 SHA256 (cargo/redox_syscall-0.5.8.tar.gz) = A6his4n5PmiHT79YC53gjdAvrLmniOutr0o/0zz1iDQ=
 SHA256 (cargo/redox_users-0.4.6.tar.gz) = ugCf8yTR/BuQC9H9sxVk/r5YqMzIpv27k7VD0zsTykM=
@@ -751,9 +748,8 @@ SHA256 (cargo/zstd-safe-7.2.1.tar.gz) = VKOrTbaM6jZqzFyJfHtNTRuJlKnNbm+EH4lkVmpB
 SHA256 (cargo/zstd-sys-2.0.13+zstd.1.5.6.tar.gz) = OP8PIc/uj5fZTO9BNZ4MiaphEwKKsCkaqMoAOJlalao=
 SHA256 (charliermarsh-rs-async-zip-c909fda63fcafe4af496a07bfda28a5aae97e58d.tar.gz) = j8ceIZpQWvZNnGFveUDSTBs43B9UwD0yyzS6hJMPPh0=
 SHA256 (charliermarsh-tl-6e25b2ee2513d75385101a8ff9f591ef51f314ec.tar.gz) = 6Di8p8sgXjc82AHOGUdqgIU0pgkPwmGqLqdN/ZzqaLA=
-SHA256 (uv-0.5.28.tar.gz) = 23v5mdD//86esqufM2bQE6zfT2KHtNrrVifUgRR9PGg=
+SHA256 (uv-0.5.29.tar.gz) = 9WKljUxeQFZkk2zEyrgVv+qKe0vEcCwKFzWyPqbPhkM=
 SIZE (astral-sh-pubgrub-b70cf707aa43f21b32f3a61b8a0889b15032d5c4.tar.gz) = 98983
-SIZE (astral-sh-tokio-tar-efeaea927c7a40ee66121de2e1bebfd5d7a4a602.tar.gz) = 51205
 SIZE (cargo/actix-codec-0.5.2.tar.gz) = 14085
 SIZE (cargo/actix-http-3.9.0.tar.gz) = 162122
 SIZE (cargo/actix-macros-0.2.4.tar.gz) = 8380
@@ -792,6 +788,7 @@ SIZE (cargo/arrayvec-0.7.6.tar.gz) = 31237
 SIZE (cargo/assert-json-diff-2.0.2.tar.gz) = 10874
 SIZE (cargo/assert_cmd-2.0.16.tar.gz) = 26554
 SIZE (cargo/assert_fs-1.1.2.tar.gz) = 19328
+SIZE (cargo/astral-tokio-tar-0.5.0.tar.gz) = 54898
 SIZE (cargo/async-channel-2.3.1.tar.gz) = 14576
 SIZE (cargo/async-compression-0.4.17.tar.gz) = 111860
 SIZE (cargo/async-compression-0.4.18.tar.gz) = 111919
@@ -827,13 +824,11 @@ SIZE (cargo/bytecheck_derive-0.8.0.tar.gz) = 8385
 SIZE (cargo/bytemuck-1.21.0.tar.gz) = 51553
 SIZE (cargo/byteorder-1.5.0.tar.gz) = 23288
 SIZE (cargo/byteorder-lite-0.1.0.tar.gz) = 15909
-SIZE (cargo/bytes-1.10.0.tar.gz) = 76656
 SIZE (cargo/bytes-1.8.0.tar.gz) = 64824
 SIZE (cargo/bytes-1.9.0.tar.gz) = 67320
 SIZE (cargo/bytestring-1.3.1.tar.gz) = 9142
 SIZE (cargo/bzip2-0.4.4.tar.gz) = 34197
 SIZE (cargo/bzip2-sys-0.1.11+1.0.8.tar.gz) = 633444
-SIZE (cargo/cachedir-0.3.1.tar.gz) = 8668
 SIZE (cargo/camino-1.1.9.tar.gz) = 37552
 SIZE (cargo/cargo-util-0.2.17.tar.gz) = 27288
 SIZE (cargo/cast-0.3.0.tar.gz) = 11452
@@ -1176,7 +1171,6 @@ SIZE (cargo/rayon-1.10.0.tar.gz) = 180155
 SIZE (cargo/rayon-core-1.12.1.tar.gz) = 70701
 SIZE (cargo/rctree-0.5.0.tar.gz) = 8298
 SIZE (cargo/redox_syscall-0.2.16.tar.gz) = 24012
-SIZE (cargo/redox_syscall-0.3.5.tar.gz) = 23404
 SIZE (cargo/redox_syscall-0.5.7.tar.gz) = 26249
 SIZE (cargo/redox_syscall-0.5.8.tar.gz) = 26319
 SIZE (cargo/redox_users-0.4.6.tar.gz) = 15585
@@ -1505,4 +1499,4 @@ SIZE (cargo/zstd-safe-7.2.1.tar.gz) = 21122
 SIZE (cargo/zstd-sys-2.0.13+zstd.1.5.6.tar.gz) = 749090
 SIZE (charliermarsh-rs-async-zip-c909fda63fcafe4af496a07bfda28a5aae97e58d.tar.gz) = 51763
 SIZE (charliermarsh-tl-6e25b2ee2513d75385101a8ff9f591ef51f314ec.tar.gz) = 37106
-SIZE (uv-0.5.28.tar.gz) = 3362980
+SIZE (uv-0.5.29.tar.gz) = 3375616
