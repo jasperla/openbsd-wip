@@ -1,0 +1,12 @@
+Index: src/slic3r/GUI/MarkdownTip.cpp
+--- src/slic3r/GUI/MarkdownTip.cpp.orig
++++ src/slic3r/GUI/MarkdownTip.cpp
+@@ -245,7 +245,7 @@ void MarkdownTip::OnTitleChanged(wxWebViewEvent& event
+         _pendingScript.clear();
+         return;
+     }
+-#ifdef __linux__
++#if defined(__linux__) || defined(__OpenBSD__)
+     wxString str = "0";
+ #else
+     wxString str = event.GetString();

@@ -1,0 +1,12 @@
+Index: src/slic3r/GUI/PresetComboBoxes.hpp
+--- src/slic3r/GUI/PresetComboBoxes.hpp.orig
++++ src/slic3r/GUI/PresetComboBoxes.hpp
+@@ -131,7 +131,7 @@ class PresetComboBox : public ::ComboBox // BBS (prote
+     // BBS: ams
+     int  update_ams_color();
+ 
+-#ifdef __linux__
++#if defined(__linux__) || defined(__OpenBSD__)
+     static const char* separator_head() { return "------- "; }
+     static const char* separator_tail() { return " -------"; }
+ #else // __linux__ 

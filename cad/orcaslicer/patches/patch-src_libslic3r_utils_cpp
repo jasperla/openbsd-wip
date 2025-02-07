@@ -1,0 +1,30 @@
+Index: src/libslic3r/utils.cpp
+--- src/libslic3r/utils.cpp.orig
++++ src/libslic3r/utils.cpp
+@@ -79,7 +79,7 @@
+     #include <tbb/task_scheduler_init.h>
+ #endif
+ 
+-#if defined(__linux__) || defined(__GNUC__ )
++#if defined(__linux__) || defined(__GNUC__ ) || defined(__OpenBSD__)
+ #include <strings.h>
+ #endif /* __linux__ */
+ 
+@@ -623,7 +623,7 @@ std::error_code rename_file(const std::string &from, c
+ #endif
+ }
+ 
+-#ifdef __linux__
++#if defined(__linux__)
+ // Copied from boost::filesystem.
+ // Called by copy_file_linux() in case linux sendfile() API is not supported.
+ int copy_file_linux_read_write(int infile, int outfile, uintmax_t file_size)
+@@ -834,7 +834,7 @@ CopyFileResult copy_file_inner(const std::string& from
+ 	if (ec)
+ 		BOOST_LOG_TRIVIAL(debug) << "boost::filesystem::permisions before copy error message (this could be irrelevant message based on file system): " << ec.message();
+ 	ec.clear();
+-#ifdef __linux__
++#if defined(__linux__)
+ 	// We want to allow copying files on Linux to succeed even if changing the file attributes fails.
+ 	// That may happen when copying on some exotic file system, for example Linux on Chrome.
+ 	copy_file_linux(source, target, ec);

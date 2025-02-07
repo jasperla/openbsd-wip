@@ -1,0 +1,12 @@
+Index: src/slic3r/GUI/EditGCodeDialog.hpp
+--- src/slic3r/GUI/EditGCodeDialog.hpp.orig
++++ src/slic3r/GUI/EditGCodeDialog.hpp
+@@ -119,7 +119,7 @@ class ParamsNode
+ 
+ public:
+ 
+-#ifdef __linux__
++#if defined(__linux__) || defined(__OpenBSD__)
+     wxIcon      icon;
+ #else
+     wxBitmap    icon;

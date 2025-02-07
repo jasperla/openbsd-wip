@@ -1,0 +1,30 @@
+Index: src/slic3r/Utils/Serial.cpp
+--- src/slic3r/Utils/Serial.cpp.orig
++++ src/slic3r/Utils/Serial.cpp
+@@ -49,7 +49,7 @@
+ 	#include <sys/select.h>
+ #endif
+ 
+-#if defined(__APPLE__) || defined(__OpenBSD__)
++#if defined(__APPLE__)
+ 	#include <termios.h>
+ #elif defined __linux__
+ 	#include <fcntl.h>
+@@ -82,7 +82,7 @@ void parse_hardware_id(const std::string &hardware_id,
+ }
+ #endif
+ 
+-#ifdef __linux__
++#if defined(__linux__) || defined(__OpenBSD__)
+ optional<std::string> sysfs_tty_prop(const std::string &tty_dev, const std::string &name)
+ {
+ 	const auto prop_path = (boost::format("/sys/class/tty/%1%/device/../%2%") % tty_dev % name).str();
+@@ -229,7 +229,7 @@ std::vector<SerialPortInfo> scan_serial_ports_extended
+                 const auto path = dir_entry.path().string();
+                 SerialPortInfo spi;
+                 spi.port = path;
+-#ifdef __linux__
++#if defined(__linux__)
+ 				auto friendly_name = sysfs_tty_prop(name, "product");
+ 				if (friendly_name) {
+ 					spi.is_printer = looks_like_printer(*friendly_name);

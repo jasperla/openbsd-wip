@@ -1,0 +1,12 @@
+Index: src/slic3r/GUI/Plater.cpp
+--- src/slic3r/GUI/Plater.cpp.orig
++++ src/slic3r/GUI/Plater.cpp
+@@ -7484,7 +7484,7 @@ void Plater::priv::show_right_click_menu(Vec2d mouse_p
+     int x, y;
+     get_position(current_panel, wxGetApp().mainframe, x, y);
+     wxPoint position(static_cast<int>(mouse_position.x() + x), static_cast<int>(mouse_position.y() + y));
+-#ifdef __linux__
++#if defined(__linux__) || defined(__OpenBSD__)
+     // For some reason on Linux the menu isn't displayed if position is
+     // specified (even though the position is sane).
+     position = wxDefaultPosition;

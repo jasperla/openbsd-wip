@@ -1,0 +1,12 @@
+Index: src/libslic3r/GCodeSender.cpp
+--- src/libslic3r/GCodeSender.cpp.orig
++++ src/libslic3r/GCodeSender.cpp
+@@ -15,7 +15,7 @@
+ #include <sys/ioctl.h>
+ #include <IOKit/serial/ioss.h>
+ #endif
+-#ifdef __linux__
++#if defined(__linux__)
+ #include <sys/ioctl.h>
+ #include <fcntl.h>
+ #include "/usr/include/asm-generic/ioctls.h"

@@ -1,0 +1,12 @@
+Index: src/slic3r/Utils/Process.cpp
+--- src/slic3r/Utils/Process.cpp.orig
++++ src/slic3r/Utils/Process.cpp
+@@ -86,7 +86,7 @@ static void start_new_slicer_or_gcodeviewer(const NewS
+ 	{
+ 		std::vector<const char*> args;
+ 		args.reserve(3);
+-#ifdef __linux__
++#if defined(__linux__) || defined(__OpenBSD__)
+ 		static const char* gcodeviewer_param = "--gcodeviewer";
+ 		{
+ 			// If executed by an AppImage, start the AppImage, not the main process.
