@@ -1,0 +1,11 @@
+Index: src/libslic3r/LocalesUtils.cpp
+--- src/libslic3r/LocalesUtils.cpp.orig
++++ src/libslic3r/LocalesUtils.cpp
+@@ -4,6 +4,7 @@
+     #include <charconv>
+ #endif
+ #include <stdexcept>
++#include <sstream>
+ 
+ #include <fast_float/fast_float.h>
+ 

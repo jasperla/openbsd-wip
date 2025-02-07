@@ -1,0 +1,12 @@
+Index: src/slic3r/GUI/Mouse3DController.cpp
+--- src/slic3r/GUI/Mouse3DController.cpp.orig
++++ src/slic3r/GUI/Mouse3DController.cpp
+@@ -57,6 +57,8 @@ static const std::vector<int> _3DCONNEXION_DEVICES =
+ namespace Slic3r {
+ namespace GUI {
+ 
++#define hid_init hidapi_hid_init
++
+ #if ENABLE_3DCONNEXION_DEVICES_DEBUG_OUTPUT
+ template<typename T>
+ void update_maximum(std::atomic<T>& maximum_value, T const& value) noexcept

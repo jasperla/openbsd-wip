@@ -1,0 +1,30 @@
+Index: src/CMakeLists.txt
+--- src/CMakeLists.txt.orig
++++ src/CMakeLists.txt
+@@ -27,8 +27,6 @@ add_subdirectory(libslic3r)
+ if (SLIC3R_GUI)
+     add_subdirectory(imgui)
+     add_subdirectory(imguizmo)
+-    add_subdirectory(hidapi)
+-    include_directories(hidapi/include)
+ 
+     if(WIN32)
+         message(STATUS "WXWIN environment set to: $ENV{WXWIN}")
+@@ -41,7 +39,7 @@ if (SLIC3R_GUI)
+         endif()
+     endif()
+ 
+-    if (CMAKE_SYSTEM_NAME STREQUAL "Linux")
++    if (CMAKE_SYSTEM_NAME STREQUAL "Linux" OR CMAKE_SYSTEM_NAME STREQUAL "OpenBSD")
+         set (wxWidgets_CONFIG_OPTIONS "--toolkit=gtk${SLIC3R_GTK}")
+         if (SLIC3R_WX_STABLE)
+             find_package(wxWidgets 3.0 REQUIRED COMPONENTS base core adv html gl aui net media webview)
+@@ -162,7 +160,7 @@ target_link_libraries(OrcaSlicer libslic3r_gui)
+     elseif (APPLE)
+         target_link_libraries(OrcaSlicer "-framework OpenGL")
+     else ()
+-        target_link_libraries(OrcaSlicer -ldl)
++        #target_link_libraries(OrcaSlicer -ldl)
+     endif ()
+     #if (WIN32)
+     #    find_library(PSAPI_LIB NAMES Psapi)

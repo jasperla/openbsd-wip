@@ -1,0 +1,18 @@
+Index: src/slic3r/GUI/MediaPlayCtrl.h
+--- src/slic3r/GUI/MediaPlayCtrl.h.orig
++++ src/slic3r/GUI/MediaPlayCtrl.h
+@@ -67,10 +67,10 @@ class MediaPlayCtrl : public wxPanel (private)
+     static bool get_stream_url(std::string *url = nullptr);
+ 
+ private:
+-    static constexpr wxMediaState MEDIASTATE_IDLE = (wxMediaState) 3;
+-    static constexpr wxMediaState MEDIASTATE_INITIALIZING = (wxMediaState) 4;
+-    static constexpr wxMediaState MEDIASTATE_LOADING = (wxMediaState) 5;
+-    static constexpr wxMediaState MEDIASTATE_BUFFERING = (wxMediaState) 6;
++    static constexpr wxMediaState MEDIASTATE_IDLE = wxMEDIASTATE_STOPPED;
++    static constexpr wxMediaState MEDIASTATE_INITIALIZING = wxMEDIASTATE_PLAYING;
++    static constexpr wxMediaState MEDIASTATE_LOADING = wxMEDIASTATE_PLAYING;
++    static constexpr wxMediaState MEDIASTATE_BUFFERING = wxMEDIASTATE_PAUSED;
+ 
+     wxMediaCtrl2 * m_media_ctrl;
+     wxMediaState m_last_state = MEDIASTATE_IDLE;
