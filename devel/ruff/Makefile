@@ -5,7 +5,7 @@ COMMENT =	extremely fast Python linter and code formatter
 
 GH_ACCOUNT =	astral-sh
 GH_PROJECT =	ruff
-GH_TAGNAME =	0.9.4
+GH_TAGNAME =	0.9.5
 
 # Rust crates downloaded via git
 LSPTYPES_HASH =	3512a9f33eadc5402cfab1b8f7340824c8ca1439
@@ -61,6 +61,7 @@ pre-install:
 	${MODCARGO_TARGET_DIR}/release/ruff generate-shell-completion zsh \
 		> ${WRKSRC}/ruff.zsh
 
+# TODO: install red_knot type checker
 do-install:
 	${INSTALL_PROGRAM} ${MODCARGO_TARGET_DIR}/release/ruff ${PREFIX}/bin/
 
