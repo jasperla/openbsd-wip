@@ -1,0 +1,11 @@
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -424,6 +424,7 @@ endif()
+ 
+ if(NOT SLIC3R_STATIC)
+     target_compile_definitions(boost_headeronly INTERFACE BOOST_LOG_DYN_LINK)
++    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -DBOOST_LOG_DYN_LINK")
+ endif()
+ 
+ function(slic3r_remap_configs targets from_Cfg to_Cfg)

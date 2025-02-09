@@ -1,0 +1,11 @@
+Index: src/libslic3r/PrintObject.cpp
+--- src/libslic3r/PrintObject.cpp.orig
++++ src/libslic3r/PrintObject.cpp
+@@ -25,6 +25,7 @@
+ #include <oneapi/tbb/blocked_range.h>
+ #include <oneapi/tbb/concurrent_vector.h>
+ #include <oneapi/tbb/parallel_for.h>
++#include <oneapi/tbb/spin_mutex.h>
+ #include <string_view>
+ #include <utility>
+ 
