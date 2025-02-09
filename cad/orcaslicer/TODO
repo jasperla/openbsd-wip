@@ -1,0 +1,32 @@
+$ lldb /usr/local/bin/orca-slicer  
+(lldb) target create "/usr/local/bin/orca-slicer"
+Current executable set to '/usr/local/bin/orca-slicer' (x86_64).
+(lldb) run
+Process 11971 launched: '/usr/local/bin/orca-slicer' (x86_64)
+[2025-02-09 10:06:25.496370] [0x000005cf455193d8] [trace]   Initializing StaticPrintConfigs
+add font of HarmonyOS_Sans_SC_Bold returns 1
+add font of HarmonyOS_Sans_SC_Regular returns 1
+add font of NanumGothic-Regular returns 1
+add font of NanumGothic-Bold returns 1
+/usr/ports/pobj/OrcaSlicer-2.2.0/OrcaSlicer-2.2.0/src/slic3r/GUI/Widgets/StateColor.cpp(205): assert "iter != gLightColors.end()" failed in lightModeColorFor().
+/usr/ports/pobj/OrcaSlicer-2.2.0/OrcaSlicer-2.2.0/src/slic3r/GUI/Widgets/StateColor.cpp(205): assert "iter != gLightColors.end()" failed in lightModeColorFor().
+/usr/ports/pobj/OrcaSlicer-2.2.0/OrcaSlicer-2.2.0/src/slic3r/GUI/Widgets/StateColor.cpp(205): assert "iter != gLightColors.end()" failed in lightModeColorFor().
+/usr/ports/pobj/OrcaSlicer-2.2.0/OrcaSlicer-2.2.0/src/slic3r/GUI/Widgets/StateColor.cpp(205): assert "iter != gLightColors.end()" failed in lightModeColorFor().
+Process 11971 stopped
+* thread #1, stop reason = signal SIGSEGV
+    frame #0: 0x000005cd0da63c7b orca-slicer`Slic3r::GUI::SplashScreen::SetText(wxString const&) + 107
+orca-slicer`Slic3r::GUI::SplashScreen::SetText:
+->  0x5cd0da63c7b <+107>: callq  *0x310(%rax)
+    0x5cd0da63c81 <+113>: movzbl (%r15), %eax
+    0x5cd0da63c85 <+117>: testb  $0x1, %al
+    0x5cd0da63c87 <+119>: je     0x5cd0da63c97             ; <+135>
+(lldb) bt
+* thread #1, stop reason = signal SIGSEGV
+  * frame #0: 0x000005cd0da63c7b orca-slicer`Slic3r::GUI::SplashScreen::SetText(wxString const&) + 107
+    frame #1: 0x000005cd0da2ddef orca-slicer`Slic3r::GUI::GUI_App::on_init_inner() + 8111
+    frame #2: 0x000005cd0da2bddc orca-slicer`Slic3r::GUI::GUI_App::OnInit() + 28
+    frame #3: 0x000005cf387156c0 libwx_baseu-3.2.so.0.1`wxEntry(int&, wchar_t**) + 80
+    frame #4: 0x000005cd0da15bcb orca-slicer`Slic3r::GUI::GUI_Run(Slic3r::GUI::GUI_InitParams&) + 475
+    frame #5: 0x000005cd0cb70e7c orca-slicer`Slic3r::CLI::run(int, char**) + 14428
+    frame #6: 0x000005cd0cbe5101 orca-slicer`main + 273
+    frame #7: 0x000005cd0cb69aeb orca-slicer`__start + 299
