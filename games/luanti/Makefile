@@ -3,7 +3,7 @@ COMMENT =		infinite-world block sandbox game
 V =			5.10.0
 PKGNAME =		luanti-${V}
 
-DIST_TUPLE +=		github minetest minetest ${V} .
+DIST_TUPLE +=		github luanti-org luanti ${V} .
 
 CATEGORIES =		games x11
 
@@ -11,7 +11,7 @@ HOMEPAGE =		https://www.luanti.org/
 
 MAINTAINER =		izzy Meyer <izder456@disroot.org>
 
-# source LGPLv2.1/ datas CC BY-SA 3.0
+# LGPLv2.1 (source), CC BY-SA 3.0 (data files), APLv2 (fonts)
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} GL GLU X11 Xi c curl curses form freetype
@@ -56,9 +56,15 @@ TEST_DEPENDS =		${FULLPKGNAME}:${BUILD_PKGPATH}
 TEST_ENV +=		HOME=${WRKBUILD}/test \
 			LC_CTYPE="en_US.UTF-8"
 
+post-install:
+	mv ${PREFIX}/share/applications/net.minetest.minetest.desktop \
+		${PREFIX}/share/applications/net.luanti.luanti.desktop
+	mv ${PREFIX}/share/metainfo/net.minetest.minetest.metainfo.xml \
+		${PREFIX}/share/metainfo/net.luanti.luanti.metainfo.xml
+
 do-test:
 	mkdir -p ${WRKBUILD}/test
 	cd ${WRKBUILD} && exec ${SETENV} ${MAKE_ENV} ${TEST_ENV} \
-		${LOCALBASE}/bin/minetest --run-unittests
+		${LOCALBASE}/bin/luanti --run-unittests
 
 .include <bsd.port.mk>

@@ -1,10 +1,10 @@
 @bin bin/luanti
 @bin bin/luantiserver
-bin/minetest
-bin/minetestserver
+@comment bin/minetest
+@comment bin/minetestserver
 @man man/man6/luanti.6
 @man man/man6/luantiserver.6
-share/applications/net.minetest.minetest.desktop
+share/applications/net.luanti.luanti.desktop
 share/doc/luanti/
 share/doc/luanti/README.md
 share/doc/luanti/client_lua_api.md
@@ -1097,6 +1097,6 @@ share/luanti/textures/base/pack/unknown_object.png
 share/luanti/textures/base/pack/wieldhand.png
 share/luanti/textures/base/pack/zoom.png
 share/metainfo/
-share/metainfo/net.minetest.minetest.metainfo.xml
+share/metainfo/net.luanti.luanti.metainfo.xml
 @tag update-desktop-database
 @tag gtk-update-icon-cache %D/share/icons/hicolor
