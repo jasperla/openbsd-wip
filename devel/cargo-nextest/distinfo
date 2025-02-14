@@ -1,4 +1,4 @@
-SHA256 (cargo-nextest-0.9.90.tar.gz) = rVme6O7uU8E4GLCAdVbLeEoTHrCi+J5Y6kjSUKbfWoE=
+SHA256 (cargo-nextest-0.9.91.tar.gz) = Zzt6fdP3+eP9RLxGbtT922vxSYq4O6Tg6HWyOTuNZo0=
 SHA256 (cargo/addr2line-0.21.0.tar.gz) = ijCy4jueF6n5BkHHqxVJzZtE8pbTzL8wnShjz+OYoMs=
 SHA256 (cargo/adler-1.0.2.tar.gz) = 8mIBYEyHseAb09mPjV2aj8u4FejO20H/zL60v1k6Nf4=
 SHA256 (cargo/adler2-2.0.0.tar.gz) = USdh4LsleN1zgMa6qg9M4D6E+V6WAjHR3si/TX1uJic=
@@ -398,7 +398,7 @@ SHA256 (cargo/zipsign-api-0.1.2.tar.gz) = ZBOlRq2p280Lmj4LCIBYEnnjUEe86Xl+Ujs0CO
 SHA256 (cargo/zstd-0.13.2.tar.gz) = /PK3eKZkWB4x44lFSnBy2rFkdgbUT3/uoizVq7nJ8/k=
 SHA256 (cargo/zstd-safe-7.2.1.tar.gz) = VKOrTbaM6jZqzFyJfHtNTRuJlKnNbm+EH4lkVmpBkFk=
 SHA256 (cargo/zstd-sys-2.0.13+zstd.1.5.6.tar.gz) = OP8PIc/uj5fZTO9BNZ4MiaphEwKKsCkaqMoAOJlalao=
-SIZE (cargo-nextest-0.9.90.tar.gz) = 7367518
+SIZE (cargo-nextest-0.9.91.tar.gz) = 7369822
 SIZE (cargo/addr2line-0.21.0.tar.gz) = 40807
 SIZE (cargo/adler-1.0.2.tar.gz) = 12778
 SIZE (cargo/adler2-2.0.0.tar.gz) = 13529

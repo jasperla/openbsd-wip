@@ -3,7 +3,7 @@ NOT_FOR_ARCHS =	sparc64
 
 COMMENT =	next-generation test runner for Rust
 
-VERSION =	0.9.90
+VERSION =	0.9.91
 
 DISTNAME =	cargo-nextest-${VERSION}
 
@@ -50,16 +50,17 @@ do-install:
 # Nextest's own tests do not work with cargo test.
 # We must use nextest to run its own test suite.
 #
-# Summary [ 133.210s] 312 tests run: 303 passed, 9 failed, 1 skipped
-#    FAIL [  17.567s] integration-tests::integration test_list_binaries_only
-#    FAIL [  16.181s] integration-tests::integration test_list_default
-#    FAIL [  16.233s] integration-tests::integration test_list_full
-#    FAIL [  10.994s] integration-tests::integration test_list_with_default_filter
-#    FAIL [   7.571s] integration-tests::integration test_run
-#    FAIL [  10.549s] integration-tests::integration test_run_with_default_filter
-#    FAIL [  11.204s] integration-tests::integration test_show_config_test_groups
-#    FAIL [   3.811s] integration-tests::integration test_target_dir
-#    FAIL [   0.308s] integration-tests::integration test_version_info
+# Summary [ 190.780s] 316 tests run: 306 passed, 10 failed, 1 skipped
+# TRY 4 FAIL [   7.631s] integration-tests::integration test_list_binaries_only
+# TRY 4 FAIL [   6.443s] integration-tests::integration test_list_default
+# TRY 4 FAIL [   8.990s] integration-tests::integration test_list_full
+# TRY 4 FAIL [   9.036s] integration-tests::integration test_list_with_default_filter
+# TRY 4 FAIL [  12.857s] integration-tests::integration test_run
+# TRY 4 FAIL [  13.038s] integration-tests::integration test_run_with_default_filter
+# TRY 4 FAIL [  24.334s] integration-tests::integration test_run_with_priorities
+# TRY 4 FAIL [   6.967s] integration-tests::integration test_show_config_test_groups
+# TRY 4 FAIL [   3.059s] integration-tests::integration test_target_dir
+# TRY 4 FAIL [   0.143s] integration-tests::integration test_version_info
 do-test:
 	NEXTEST_HIDE_PROGRESS_BAR=1 ${MODCARGO_CARGO_RUN} run \
 		--package cargo-nextest -- nextest run --profile ci
