@@ -1,9 +1,0 @@
-Index: src/slic3r/GUI/DesktopIntegrationDialog.cpp
---- src/slic3r/GUI/DesktopIntegrationDialog.cpp.orig
-+++ src/slic3r/GUI/DesktopIntegrationDialog.cpp
-@@ -1,4 +1,4 @@
--#ifdef __linux__
-+#if defined(__linux__)
- #include "DesktopIntegrationDialog.hpp"
- #include "GUI_App.hpp"
- #include "GUI.hpp"

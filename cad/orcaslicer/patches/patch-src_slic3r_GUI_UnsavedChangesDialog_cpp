@@ -1,15 +1,6 @@
 Index: src/slic3r/GUI/UnsavedChangesDialog.cpp
 --- src/slic3r/GUI/UnsavedChangesDialog.cpp.orig
 +++ src/slic3r/GUI/UnsavedChangesDialog.cpp
-@@ -27,7 +27,7 @@
- 
- using boost::optional;
- 
--#ifdef __linux__
-+#if defined(__linux__)
- #define wxLinux true
- #else
- #define wxLinux false
 @@ -109,7 +109,7 @@ ModelNode::ModelNode(ModelNode* parent, const wxString
      UpdateIcons();
  }

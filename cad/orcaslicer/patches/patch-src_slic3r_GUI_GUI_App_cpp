@@ -28,40 +28,13 @@ Index: src/slic3r/GUI/GUI_App.cpp
      m_color_label_default           = is_dark_mode ? wxColour(250, 250, 250) : m_color_label_sys; // wxSystemSettings::GetColour(wxSYS_COLOUR_WINDOWTEXT);
      m_color_highlight_label_default = is_dark_mode ? wxColour(230, 230, 230): wxSystemSettings::GetColour(/*wxSYS_COLOUR_HIGHLIGHTTEXT*/wxSYS_COLOUR_WINDOWTEXT);
      m_color_highlight_default       = is_dark_mode ? wxColour("#36363B") : wxColour("#F1F1F1"); // ORCA row highlighting
-@@ -4172,6 +4174,9 @@ void GUI_App::check_new_version(bool show_tips, int by
+@@ -4171,6 +4173,9 @@ void GUI_App::check_new_version(bool show_tips, int by
+ #endif
  #ifdef __LINUX__
      platform = "linux";
- #endif
++#endif
 +#ifdef __OpenBSD))
 +    platform = "OpenBSD"
-+#endif
+ #endif
      std::string query_params = (boost::format("?name=slicer&version=%1%&guide_version=%2%")
          % VersionInfo::convert_full_version(SLIC3R_VERSION)
-         % VersionInfo::convert_full_version("0.0.0.1")
-@@ -4872,7 +4877,7 @@ bool GUI_App::switch_language()
-     }
- }
- 
--#ifdef __linux__
-+#if defined(__linux__) || defined(__OpenBSD__)
- static const wxLanguageInfo* linux_get_existing_locale_language(const wxLanguageInfo* language,
-                                                                 const wxLanguageInfo* system_language)
- {
-@@ -5077,7 +5082,7 @@ bool GUI_App::load_language(wxString language, bool in
-                                                         m_language_info_best->CanonicalName.ToUTF8().data();
-                         app_config->set("language", m_language_info_best->CanonicalName.ToUTF8().data());
-                     }
--#ifdef __linux__
-+#if defined(__linux__) || defined(__OpenBSD__)
-                     wxString lc_all;
-                     if (wxGetEnv("LC_ALL", &lc_all) && !lc_all.IsEmpty()) {
-                         // Best language returned by wxWidgets on Linux apparently does not respect LC_ALL.
-@@ -5132,7 +5137,7 @@ bool GUI_App::load_language(wxString language, bool in
- 		BOOST_LOG_TRIVIAL(info) << "Using Czech dictionaries for Slovak language";
-     }
- 
--#ifdef __linux__
-+#if defined(__linux__) || defined(__OpenBSD__)
-     // If we can't find this locale , try to use different one for the language
-     // instead of just reporting that it is impossible to switch.
-     if (! wxLocale::IsAvailable(language_info->Language) && m_language_info_system) {
