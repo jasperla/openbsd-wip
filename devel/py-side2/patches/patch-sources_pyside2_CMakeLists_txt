@@ -1,0 +1,11 @@
+Index: sources/pyside2/CMakeLists.txt
+--- sources/pyside2/CMakeLists.txt.orig
++++ sources/pyside2/CMakeLists.txt
+@@ -239,6 +239,7 @@ set(GENERATOR_EXTRA_FLAGS --generator-set=shiboken
+                           --enable-parent-ctor-heuristic
+                           --enable-pyside-extensions
+                           --enable-return-value-heuristic
++                          -I/usr/X11R6/include
+                           --use-isnull-as-nb_nonzero)
+ use_protected_as_public_hack()
+ 

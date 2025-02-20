@@ -1,0 +1,12 @@
+Index: sources/cmake_helpers/helpers.cmake
+--- sources/cmake_helpers/helpers.cmake.orig
++++ sources/cmake_helpers/helpers.cmake
+@@ -168,7 +168,7 @@ macro(COLLECT_MODULE_IF_FOUND shortname)
+     # If the module was found, and also the module path is the same as the
+     # Qt5Core base path, we will generate the list with the modules to be installed
+     set(looked_in_message ". Looked in: ${${_name_dir}}")
+-    if("${${_name_found}}" AND (("${found_basepath}" GREATER "0") OR ("${found_basepath}" EQUAL "0")))
++    if("${${_name_found}}")
+         message(STATUS "${module_state} module ${name} found (${ARGN})${looked_in_message}")
+         # record the shortnames for the tests
+         list(APPEND all_module_shortnames ${shortname})

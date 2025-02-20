@@ -1,0 +1,11 @@
+PySide2 is the official Python module from the Qt for Python project,
+which provides access to the complete Qt 5.12+ framework.
+
+The Qt for Python project is developed in the open, with all
+facilities you'd expect from any modern OSS project such as all
+code in a git repository and an open design process. We welcome any
+contribution conforming to the Qt Contribution Agreement.
+
+
+The Qt for Python project aims to provide a complete port of the
+PySide module to Qt.

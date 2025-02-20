@@ -1,0 +1,27 @@
+Index: sources/pyside2/PySide2/Qt3DCore/typesystem_3dcore.xml
+--- sources/pyside2/PySide2/Qt3DCore/typesystem_3dcore.xml.orig
++++ sources/pyside2/PySide2/Qt3DCore/typesystem_3dcore.xml
+@@ -58,6 +58,11 @@
+         <object-type name="QAspectJob"/>
+         <object-type name="QBackendNode">
+             <enum-type name="Mode"/>
++            <modify-function signature="sendCommand(const QString&amp;,const QVariant&amp;,unsigned long long)">
++              <modify-argument index="3">
++                <replace-default-expression with="0"/>
++              </modify-argument>
++            </modify-function>
+         </object-type>
+         <!-- TODO: Solve issues related to windows and a unresolved
+             external symbol
+@@ -82,6 +87,11 @@
+         </object-type>
+         <object-type name="QNode">
+             <enum-type name="PropertyTrackingMode"/>
++            <modify-function signature="sendCommand(const QString&amp;,const QVariant&amp;,unsigned long long)">
++              <modify-argument index="3">
++                <replace-default-expression with="0"/>
++              </modify-argument>
++            </modify-function>
+         </object-type>
+         <object-type name="QNodeCommand" since="5.10"/>
+         <object-type name="QNodeCreatedChangeBase"/>

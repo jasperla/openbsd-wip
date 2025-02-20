@@ -1,0 +1,14 @@
+Index: sources/pyside2/libpyside/pysideproperty.cpp
+--- sources/pyside2/libpyside/pysideproperty.cpp.orig
++++ sources/pyside2/libpyside/pysideproperty.cpp
+@@ -445,8 +445,8 @@ namespace {
+ 
+ static PyObject *getFromType(PyTypeObject *type, PyObject *name)
+ {
+-    PyObject *attr = nullptr;
+-    attr = PyDict_GetItem(type->tp_dict, name);
++    AutoDecRef tpDict(PepType_GetDict(type));
++    auto *attr = PyDict_GetItem(tpDict.object(), name);
+     if (!attr) {
+         PyObject *bases = type->tp_bases;
+         int size = PyTuple_GET_SIZE(bases);

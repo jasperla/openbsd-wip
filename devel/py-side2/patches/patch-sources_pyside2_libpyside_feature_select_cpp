@@ -1,0 +1,37 @@
+Index: sources/pyside2/libpyside/feature_select.cpp
+--- sources/pyside2/libpyside/feature_select.cpp.orig
++++ sources/pyside2/libpyside/feature_select.cpp
+@@ -358,7 +358,8 @@ static bool SelectFeatureSetSubtype(PyTypeObject *type
+      * This is the selector for one sublass. We need to call this for
+      * every subclass until no more subclasses or reaching the wanted id.
+      */
+-    if (Py_TYPE(type->tp_dict) == Py_TYPE(PyType_Type.tp_dict)) {
++    static const auto *pyTypeType_tp_dict = PepType_GetDict(&PyType_Type);
++    if (Py_TYPE(type->tp_dict) == Py_TYPE(pyTypeType_tp_dict)) {
+         // On first touch, we initialize the dynamic naming.
+         // The dict type will be replaced after the first call.
+         if (!replaceClassDict(type)) {
+@@ -385,7 +386,8 @@ static inline PyObject *SelectFeatureSet(PyTypeObject 
+      * Generated functions call this directly.
+      * Shiboken will assign it via a public hook of `basewrapper.cpp`.
+      */
+-    if (Py_TYPE(type->tp_dict) == Py_TYPE(PyType_Type.tp_dict)) {
++    static const auto *pyTypeType_tp_dict = PepType_GetDict(&PyType_Type);
++    if (Py_TYPE(type->tp_dict) == Py_TYPE(pyTypeType_tp_dict)) {
+         // We initialize the dynamic features by using our own dict type.
+         if (!replaceClassDict(type))
+             return nullptr;
+@@ -716,11 +718,11 @@ static bool patch_property_impl()
+     // Turn `__doc__` into a computed attribute without changing writability.
+     auto gsp = property_getset;
+     auto type = &PyProperty_Type;
+-    auto dict = type->tp_dict;
++    AutoDecRef dict(PepType_GetDict(type));
+     AutoDecRef descr(PyDescr_NewGetSet(type, gsp));
+     if (descr.isNull())
+         return false;
+-    if (PyDict_SetItemString(dict, gsp->name, descr) < 0)
++    if (PyDict_SetItemString(dict.object(), gsp->name, descr) < 0)
+         return false;
+     // Replace property_descr_get/set by slightly changed versions
+     return true;

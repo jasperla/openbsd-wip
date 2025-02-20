@@ -1,0 +1,38 @@
+Index: sources/shiboken2/generator/generator.cpp
+--- sources/shiboken2/generator/generator.cpp.orig
++++ sources/shiboken2/generator/generator.cpp
+@@ -899,21 +899,23 @@ QString Generator::translateType(const AbstractMetaTyp
+                 if (index >= (s.size() - (constLen + 1))) // (VarType const)  or (VarType const[*|&])
+                     s = s.remove(index, constLen);
+             }
+-        } else if (options & Generator::ExcludeConst || options & Generator::ExcludeReference) {
++        } else {
+             AbstractMetaType *copyType = cType->copy();
++            if (options & Generator::ExcludeConst || options & Generator::ExcludeReference) {
++                if (options & Generator::ExcludeConst)
++                    copyType->setConstant(false);
+ 
+-            if (options & Generator::ExcludeConst)
+-                copyType->setConstant(false);
+-
+-            if (options & Generator::ExcludeReference)
+-                copyType->setReferenceType(NoReference);
+-
++                if (options & Generator::ExcludeReference)
++                    copyType->setReferenceType(NoReference);
++            }
+             s = copyType->cppSignature();
+-            if (!copyType->typeEntry()->isVoid() && !copyType->typeEntry()->isCppPrimitive())
+-                s.prepend(QLatin1String("::"));
++            const auto te = copyType->typeEntry();
++            if (!te->isVoid() && !te->isCppPrimitive()) { // Add scope resolution
++                const auto pos = s.indexOf(te->qualifiedCppName()); // Skip const/volatile
++                Q_ASSERT(pos >= 0);
++                s.insert(pos, QLatin1String("::"));
++            }
+             delete copyType;
+-        } else {
+-            s = cType->cppSignature();
+         }
+     }
+ 

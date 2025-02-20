@@ -1,0 +1,23 @@
+Index: sources/shiboken2/libshiboken/signature/signature_helper.cpp
+--- sources/shiboken2/libshiboken/signature/signature_helper.cpp.orig
++++ sources/shiboken2/libshiboken/signature/signature_helper.cpp
+@@ -105,7 +105,8 @@ int add_more_getsets(PyTypeObject *type, PyGetSetDef *
+      */
+     assert(PyType_Check(type));
+     PyType_Ready(type);
+-    PyObject *dict = type->tp_dict;
++    AutoDecRef tpDict(PepType_GetDict(type));
++    auto *dict = tpDict.object();
+     for (; gsp->name != nullptr; gsp++) {
+         PyObject *have_descr = PyDict_GetItemString(dict, gsp->name);
+         if (have_descr != nullptr) {
+@@ -346,7 +347,8 @@ static int _build_func_to_type(PyObject *obtype)
+      * We also check for hidden methods, see below.
+      */
+     auto *type = reinterpret_cast<PyTypeObject *>(obtype);
+-    PyObject *dict = type->tp_dict;
++    AutoDecRef tpDict(PepType_GetDict(type));
++    auto *dict = tpDict.object();
+     PyMethodDef *meth = type->tp_methods;
+ 
+     if (meth == nullptr)

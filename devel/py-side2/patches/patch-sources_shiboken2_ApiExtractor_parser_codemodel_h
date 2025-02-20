@@ -1,0 +1,39 @@
+Index: sources/shiboken2/ApiExtractor/parser/codemodel.h
+--- sources/shiboken2/ApiExtractor/parser/codemodel.h.orig
++++ sources/shiboken2/ApiExtractor/parser/codemodel.h
+@@ -499,6 +499,10 @@ class _ArgumentModelItem: public _CodeModelItem (publi
+     QString defaultValueExpression() const { return m_defaultValueExpression; }
+     void setDefaultValueExpression(const QString &expr) { m_defaultValueExpression = expr; }
+ 
++    // Argument type has scope resolution "::ArgumentType"
++    bool scopeResolution() const;
++    void setScopeResolution(bool v);
++
+ #ifndef QT_NO_DEBUG_STREAM
+     void formatDebug(QDebug &d) const override;
+ #endif
+@@ -507,6 +511,7 @@ class _ArgumentModelItem: public _CodeModelItem (publi
+     TypeInfo m_type;
+     QString m_defaultValueExpression;
+     bool m_defaultValue = false;
++    bool m_scopeResolution = false;
+ };
+ 
+ class _MemberModelItem: public _CodeModelItem
+@@ -623,6 +628,8 @@ class _FunctionModelItem: public _MemberModelItem (pub
+     bool isVariadics() const;
+     void setVariadics(bool isVariadics);
+ 
++    bool scopeResolution() const; // Return type has scope resolution "::ReturnType"
++    void setScopeResolution(bool v);
+ 
+     bool isSimilar(const FunctionModelItem &other) const;
+ 
+@@ -652,6 +659,7 @@ class _FunctionModelItem: public _MemberModelItem (pub
+             uint m_isExplicit: 1;
+             uint m_isVariadics: 1;
+             uint m_isInvokable : 1; // Qt
++            uint m_scopeResolution: 1;
+         };
+         uint m_flags;
+     };

@@ -1,0 +1,13 @@
+Index: build_scripts/config.py
+--- build_scripts/config.py.orig
++++ build_scripts/config.py
+@@ -94,7 +94,8 @@ class Config(object):
+             'Programming Language :: Python :: 3.8',
+             'Programming Language :: Python :: 3.9',
+             'Programming Language :: Python :: 3.10',
+-            'Programming Language :: Python :: 3.11'
++            'Programming Language :: Python :: 3.11',
++            'Programming Language :: Python :: 3.12',
+         ]
+ 
+         self.setup_script_dir = None

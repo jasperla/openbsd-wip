@@ -1,0 +1,18 @@
+Index: sources/pyside2/PySide2/support/generate_pyi.py
+--- sources/pyside2/PySide2/support/generate_pyi.py.orig
++++ sources/pyside2/PySide2/support/generate_pyi.py
+@@ -116,8 +116,12 @@ class Formatter(Writer):
+         """
+         def _typevar__repr__(self):
+             return "typing." + self.__name__
+-        typing.TypeVar.__repr__ = _typevar__repr__
+-
++        # This is no longer necessary for modern typing versions.
++        # Ignore therefore if the repr is read-only and cannot be changed.
++        try:
++            typing.TypeVar.__repr__ = _typevar__repr__
++        except TypeError:
++            pass
+         # Adding a pattern to substitute "Union[T, NoneType]" by "Optional[T]"
+         # I tried hard to replace typing.Optional by a simple override, but
+         # this became _way_ too much.

@@ -1,0 +1,13 @@
+Index: sources/pyside2/tests/QtWidgets/bug_662.py
+--- sources/pyside2/tests/QtWidgets/bug_662.py.orig
++++ sources/pyside2/tests/QtWidgets/bug_662.py
+@@ -40,7 +40,8 @@ from PySide2.QtWidgets import QTextEdit, QApplication
+ import sys
+ 
+ class testQTextBlock(unittest.TestCase):
+-    def tesIterator(self):
++
++    def testIterator(self):
+         edit = QTextEdit()
+         cursor = edit.textCursor()
+         fmt = QTextCharFormat()

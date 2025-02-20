@@ -1,0 +1,14 @@
+Index: sources/pyside2/libpyside/pysidesignal.cpp
+--- sources/pyside2/libpyside/pysidesignal.cpp.orig
++++ sources/pyside2/libpyside/pysidesignal.cpp
+@@ -670,8 +670,8 @@ void updateSourceObject(PyObject *source)
+     Py_ssize_t pos = 0;
+     PyObject *value;
+     PyObject *key;
+-
+-    while (PyDict_Next(objType->tp_dict, &pos, &key, &value)) {
++    Shiboken::AutoDecRef tpDict(PepType_GetDict(objType));
++    while (PyDict_Next(tpDict, &pos, &key, &value)) {
+         if (PyObject_TypeCheck(value, PySideSignalTypeF())) {
+             Shiboken::AutoDecRef signalInstance(reinterpret_cast<PyObject *>(PyObject_New(PySideSignalInstance, PySideSignalInstanceTypeF())));
+             instanceInitialize(signalInstance.cast<PySideSignalInstance *>(), key, reinterpret_cast<PySideSignal *>(value), source, 0);

@@ -1,0 +1,16 @@
+Index: sources/shiboken2/shibokenmodule/files.dir/shibokensupport/signature/errorhandler.py
+--- sources/shiboken2/shibokenmodule/files.dir/shibokensupport/signature/errorhandler.py.orig
++++ sources/shiboken2/shibokenmodule/files.dir/shibokensupport/signature/errorhandler.py
+@@ -113,6 +113,12 @@ def seterror_argument(args, func_name, info):
+             msg = "{func_name}(): {info}".format(**locals())
+             err = AttributeError
+         return err, msg
++    if isinstance(info, Exception):
++        # PYSIDE-2230: Python 3.12 seems to always do normalization.
++        err = type(info)
++        info = info.args[0]
++        msg = f"{func_name}(): {info}"
++        return err, msg
+     if info and type(info) is dict:
+         keyword = tuple(info)[0]
+         msg = "{func_name}(): unsupported keyword '{keyword}'".format(**locals())

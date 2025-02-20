@@ -1,0 +1,10 @@
+Index: sources/pyside2-tools/pylupdate/CMakeLists.txt
+--- sources/pyside2-tools/pylupdate/CMakeLists.txt.orig
++++ sources/pyside2-tools/pylupdate/CMakeLists.txt
+@@ -40,5 +40,5 @@ install(TARGETS pyside2-lupdate RUNTIME DESTINATION bi
+ # Man pages
+ if (NOT WIN32)
+     file(GLOB manpages "${CMAKE_CURRENT_SOURCE_DIR}/*.1")
+-    install(FILES ${manpages} DESTINATION share/man/man1)
++    install(FILES ${manpages} DESTINATION man/man1)
+ endif()

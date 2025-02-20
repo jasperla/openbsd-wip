@@ -1,0 +1,12 @@
+Index: sources/shiboken2/libshiboken/helper.h
+--- sources/shiboken2/libshiboken/helper.h.orig
++++ sources/shiboken2/libshiboken/helper.h
+@@ -92,7 +92,7 @@ class AutoArrayPointer
+         T *data;
+ };
+ 
+-using ThreadId = unsigned long long;
++using ThreadId = pthread_t;
+ LIBSHIBOKEN_API ThreadId currentThreadId();
+ LIBSHIBOKEN_API ThreadId mainThreadId();
+ 

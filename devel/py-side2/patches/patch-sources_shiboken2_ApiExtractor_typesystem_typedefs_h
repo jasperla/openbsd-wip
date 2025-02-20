@@ -1,0 +1,11 @@
+Index: sources/shiboken2/ApiExtractor/typesystem_typedefs.h
+--- sources/shiboken2/ApiExtractor/typesystem_typedefs.h.orig
++++ sources/shiboken2/ApiExtractor/typesystem_typedefs.h
+@@ -48,6 +48,7 @@ using CodeSnipList = QVector<CodeSnip>;
+ using DocModificationList = QVector<DocModification>;
+ using FieldModificationList = QVector<FieldModification>;
+ using FunctionModificationList = QVector<FunctionModification>;
++using TypeEntryCPtr = const TypeEntry *;
+ using TypeEntries = QVector<const TypeEntry *>;
+ 
+ #endif // TYPESYSTEM_TYPEDEFS_H

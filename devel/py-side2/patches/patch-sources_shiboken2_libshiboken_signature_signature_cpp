@@ -1,0 +1,12 @@
+Index: sources/shiboken2/libshiboken/signature/signature.cpp
+--- sources/shiboken2/libshiboken/signature/signature.cpp.orig
++++ sources/shiboken2/libshiboken/signature/signature.cpp
+@@ -482,7 +482,7 @@ static PyObject *adjustFuncName(const char *func_name)
+ 
+     // Find the feature flags
+     auto type = reinterpret_cast<PyTypeObject *>(obtype.object());
+-    auto dict = type->tp_dict;
++    AutoDecRef dict(PepType_GetDict(type));
+     int id = SbkObjectType_GetReserved(type);
+     id = id < 0 ? 0 : id;   // if undefined, set to zero
+     auto lower = id & 0x01;
