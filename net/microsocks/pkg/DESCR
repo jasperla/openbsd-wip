@@ -1,0 +1,4 @@
+microsocks is a tiny SOCKS5 server with very moderate resource usage
+
+microsocks is configured using command-line options. Use rcctl(8)
+to modify execution flags if needed.

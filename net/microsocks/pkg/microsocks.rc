@@ -1,0 +1,11 @@
+#!/bin/ksh
+
+daemon="${TRUEPREFIX}/sbin/microsocks"
+daemon_flags="-q -i 127.0.0.1"
+
+. /etc/rc.d/rc.subr
+
+rc_reload=NO
+rc_bg=YES
+
+rc_cmd $1
