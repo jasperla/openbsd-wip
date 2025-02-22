@@ -1,260 +1,76 @@
-# Replace ??? with appropriate values
-# Remove extraneous comments before commit
-# Use /usr/ports/infrastructure/bin/portcheck
-
-# Reasons why the port/package shouldn't be built
-#
-#ONLY_FOR_ARCHS =	???
-#NOT_FOR_ARCHS =	???
-#COMES_WITH =		???
-#BROKEN =		reason
-
-#
-# Very short description of the package (<=60 chars, usually starts lower-case)
-#		|----------------------------------------------------------|
-COMMENT =		general purpose 3D CAD modeller
-# COMMENT-foo =	???	for multi packages
-
-#
-# Version of port if using lang/python module
-#
-#MODPY_EGG_VERSION =	???
-
-# MODGO_MODNAME should be set to the 'module' specified in the 'go.mod' file.
-#MODGO_MODNAME =	github.com/test/app
-#
-# Version of port if using lang/go and MODGO_MODULES
-#
-#MODGO_VERSION =	0.1.1
-
-# What port/package will be created
-#
-# DISTNAME should not include suffix (like .tar.gz .tgz .tar.bz2 etc.)
-V = 			0.21.0
-DISTNAME =		freecad-${V}
-# PKGNAME defaults to DISTNAME unless changed
-#PKGNAME =	???
-#PKGNAME-foo =	???	for multi packages
-
-#
-# github:
-# /releases/ -> preferred. ignore GH_*, just use MASTER_SITES and DISTNAME.
-# /archive/ ->  GH_ACCOUNT and GH_PROJECT, plus either GH_TAGNAME or GH_COMMIT.
-#
-# set DISTNAME if using GH_COMMIT, or if using GH_TAGNAME and the tag is not in
-# the format "v1.00" or "1.00".
-#
-#GH_ACCOUNT =	username
-#GH_PROJECT =	project
-#GH_TAGNAME =	1.0
-#GH_COMMIT =	abab123456789abacafeabab123123b1e4ble4bl
-
-# for any port that creates shared libraries.
-# both libtool and cmake automatically set filenames based on this variable.
-# for libtool- or cmake-based ports, have a look at WRKBUILD/shared_libs.log
-#SHARED_LIBS =	???	0.0
-
-# the category used in the directory name, /usr/ports/<category>/portname,
-# must be included and listed first.
-CATEGORIES =		cad
-
-# https preferred for HOMEPAGE
-HOMEPAGE =		https://www.freecad.org/
-
-# person who is responsible for the port. Use a complete email address with
-# a real name, e.g., "MAINTAINER = John Doe <doe57@machine.somewhere.org>".
-# If you maintain several ports, use the same line each time.
-# If you no longer use the port, or are unwilling/unable to handle issues
-# in a timely manner, *leave the field blank*.
-# Default value is ports@openbsd.org, no need to fill in
-#MAINTAINER =		???
-
-# Licensing:  This determines what we can distribute through ftp.
-# When you determine the license type, make sure to look at ALL distfiles.
-# Every distfile can have a different license.  The PERMIT_* values are
-# determined by the most restrictive license.  If you have two licenses
-# that are in conflict, set PERMIT_* based on the most restrictive one.
-# Make SURE you get these values right.
-
-# Put a comment there to state what's going on.
-# Can be as brief as `BSD' or `GPLv2+', but it'd better be easy to check,
-# if someone wants to double-check licensing.
-# For GPL, the applicable versions must be included (e.g. v2+, v2 only, v3+).
-# If both PERMIT_* are Yes, just setting 'PERMIT_PACKAGE=Yes' is enough.
-# LGPL2+
-PERMIT_PACKAGE =	Yes
-#PERMIT_DISTFILES =	Yes | Reason if No
-
-# If pledge is used, annotate with `uses pledge()' in a comment
-
-# "make port-lib-depends-check" can help
-#WANTLIB =		???
+COMMENT =	general purpose 3D CAD modeller
+V = 		1.0.0
+GH_ACCOUNT =	FreeCAD
+GH_PROJECT =	FreeCAD
+GH_TAGNAME =	$V
 
 DISTFILES = 		freecad-{}${V}${EXTRACT_SUFX}
 
-# where the source files and patches can be fetched
-#
-MASTER_SITES =		https://github.com/FreeCAD/FreeCAD/archive/refs/tags/
-#MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=subdir/}
-#MASTER_SITES =		${MASTER_SITE_foo:=subdir/}
+CATEGORIES =		cad
 
-# if more master sites are needed...
-#MASTER_SITES0 =
-# ...
-#DISTFILES =		???
-#EXTRACT_ONLY =		???
+HOMEPAGE =		https://www.freecad.org/
 
-# Needs to be specified if tarball does not end with .tar.gz
-#EXTRACT_SUFX =		.tar.bz2
+# GPL2
+PERMIT_PACKAGE =	Yes
 
-# Fix dos line-endings in files needing patches
-#FIX_CRLF_FILES =	???
+WANTLIB += ${COMPILER_LIBCXX} Coin GL GLU OndselSolver Qt5Concurrent
+WANTLIB += Qt5Core Qt5Gui Qt5Network Qt5OpenGL Qt5PrintSupport
+WANTLIB += Qt5Svg Qt5Widgets Qt5Xml TKBO TKBRep TKBin TKBinL TKBool
+WANTLIB += TKCAF TKCDF TKDE TKDEGLTF TKDEIGES TKDESTEP TKDESTL
+WANTLIB += TKFeat TKFillet TKG2d TKG3d TKGeomAlgo TKGeomBase TKHLR
+WANTLIB += TKLCAF TKMath TKMesh TKMeshVS TKOffset TKPrim TKRWMesh
+WANTLIB += TKService TKShHealing TKTopAlgo TKV3d TKVCAF TKXCAF
+WANTLIB += TKXSBase TKernel X11 boost_atomic-mt boost_chrono-mt
+WANTLIB += boost_date_time-mt boost_filesystem-mt boost_program_options-mt
+WANTLIB += boost_python312-mt boost_regex-mt boost_system-mt boost_thread-mt
+WANTLIB += c execinfo fontconfig freetype m pyside2.cpython-312
+WANTLIB += python3.12 shiboken2.cpython-312 yaml-cpp z
+WANTLIB += fmt xerces-c
 
-# Optional subdirectory of DISTDIR where distfiles and patches will be placed
-#DIST_SUBDIR =		???
-
-# PATCHFILES are also retrieved from MASTER_SITES*
-#PATCHFILES =		???
-#PATCH_DIST_STRIP =	-p0
-
-# Standard for C++ ports:
-#COMPILER =		base-clang ports-gcc base-gcc
-# Standard for C++11 or newer:
-#COMPILER =		base-clang ports-gcc
-# Ports that require a non-default compiler that do *not* use C++ should set this:
-#COMPILER_LANGS =	c
-
-# Any modules we may be using
 MODULES =		devel/cmake \
+			lang/python \
 			x11/qt5
 
-#
-# MODPY_ settings for when using lang/python module
-#
-# Get source from pypi.org
-#MODPY_PI =		Yes
-#MODPY_SETUPTOOLS =	Yes
-# If port is python2 only
-#MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
-# If port is a Python module (py-*) that is or might be used by other Python
-# ports, set FLAVOR=python3 and FLAVORS=python3
+RUN_DEPENDS   =		devel/desktop-file-utils \
+			devel/microsoft-gsl \
+			devel/swig \
+			graphics/py-matplotlib \
+			graphics/py-pivy \
+			graphics/vtk \
+			misc/shared-mime-info \
+			x11/gtk+4,-guic
 
-#
-# MODGO_ settings for when using lang/go module
-#
-# Get source from proxy.golang.org
-#MODGO_MODULES =	modulename version
-# These are needed for dependency resolution. We don't actually need the
-# corresponding code.
-#MODGO_MODFILES =	modulename version
-
-# Dependencies
-BUILD_DEPENDS =		devel/fmt \
-			devel/boost \
+BUILD_DEPENDS =		${RUN_DEPENDS} \
+			devel/fmt \
 			devel/doxygen \
 			math/eigen3 \
+			textproc/xerces-c
+
+LIB_DEPENDS =		${MODPY_LIB_DEPENDS} \
+			cad/opencascade \
+			devel/boost \
+			devel/fmt \
+			devel/ondselsolver \
+			devel/py-side2 \
+			devel/py-side2,-shiboken \
+			devel/yaml-cpp \
+			graphics/coin \
 			textproc/xerces-c \
-			cad/opencascade
+			x11/qt5/qtsvg
 
-#RUN_DEPENDS =		???
-#LIB_DEPENDS =		???
-#TEST_DEPENDS =		???
+# We don't have salome smesh, libmed, or libmedc
+# https://github.com/SalomePlatform
+CONFIGURE_ARGS +=	-DBUILD_FEM=OFF
 
-#MAKE_FLAGS =		???
-#MAKE_ENV =		???
-#FAKE_FLAGS =		???
-#TEST_FLAGS =		???
+CONFIGURE_ARGS +=	-DCMAKE_MODULE_PATH=${LOCALBASE}/lib/cmake/opencascade \
+			-DOCE_DIR=${LOCALBASE}/include/opencascade \
+			-DFREECAD_USE_EXTERNAL_ONDSELSOLVER=ON
 
-# build/configuration variables
-#
-#SEPARATE_BUILD =	Yes (build in a directory other than WRKSRC)
-#USE_GMAKE =		Yes
-#USE_GROFF =		Yes
-# Programs that require GNU libtool to build instead of the OpenBSD one
-# should use this option. Add a comment explaining why. Don't use this if
-# a port requires libtool's .m4 files but otherwise can use OpenBSD libtool,
-# in that case use "BUILD_DEPENDS=devel/libtool" instead.
-#USE_LIBTOOL=		gnu
-# Set CONFIGURE_STYLE to value corresponding to some standard configuration
-#	  perl [modbuild]: perl's MakeMaker Makefile.PL (modbuild: perl's
-#	  Module::Build Build.PL)
-#	  gnu [autoconf] [old] [dest]: gnu style configure (old: no
-#	  sysconfdir), (dest: add DESTDIR, does not handle it),
-#	  autoconf: run autoconf to regenerate configure script. implies gnu.
-#	            (see also "do-gen" target below).
-#	XXX: cygnus products do NOT use autoconf for making the main
-#		configure from configure.in
-#	  imake [noman]: port uses imake for configuration.
-#	  (noman: no man page installation)
-#	  simple: port has its own configure script
-#	  none: override default CONFIGURE_STYLE coming from a module
-#	        (needed for some ports using lang/python, etc.)
-#CONFIGURE_STYLE =	
-#CONFIGURE_SCRIPT =	??? (if other than configure)
-#CONFIGURE_ARGS =	???
-#CONFIGURE_ENV =	???
+MAKE_ENV +=	C_INCLUDE_PATH=/usr/X11R6/include
 
-# if debug packages are a good idea, extra configure args may be necessary
-# and DEBUG_PACKAGES will commonly be set to ${BUILD_PACKAGES}
-# DEBUG_CONFIGURE_ARGS =	???
-# DEBUG_PACKAGES = ${BUILD_PACKAGES}
-
-# for gnu stuff
-#AUTOCONF_VERSION =	??? (defaults to 2.13)
-#AUTOMAKE_VERSION =	??? (defaults to 1.4)
-# config.guess and others are copied here
-#MODGNU_CONFIG_GUESS_DIRS = ??? (defaults to ${WRKSRC})
-
-# Is the build automagic or is it interactive
-#
-#IS_INTERACTIVE =		Yes
-#TEST_IS_INTERACTIVE =		Yes
-
-# Assume you have one multiple choice flavor: 1 2 3 and switches a b.
-# You would write
-#
-#FLAVORS =	1 2 3 a b
-#FLAVOR ?=
-# grab multiple choice value
-#CHOICE = ${FLAVOR:Na:Nb}
-# check that CHOICE is 1 OR 2 OR 3, or error out
-#.if ${CHOICE} == "1"
-# code for 1
-#.elif ${CHOICE} == "2"
-# code for 2
-#.elif ${CHOICE} == "3"
-# code for 3
-#.else
-#ERRORS += "Fatal: Conflicting flavor: ${FLAVOR}"
-#.endif
-# check for switches
-#.if ${FLAVOR:Ma}
-# code for a
-#.endif
-#.if ${FLAVOR:Mb}
-# code for b
-#.endif
-
-# Things that we don't want to do for this port/package
-# Generally, DON'T set anything to No if it's not needed.
-# The time gained is not worth it.
-#
-#NO_BUILD =		Yes
-#NO_TEST =		Yes
-
-# Overrides for default values
-#
-#CFLAGS =		???
-#LDFLAGS =		???
-#MAKE_FILE =		???
-#PKG_ARCH =		??? (* for arch-independent packages)
 WRKDIST =		${WRKDIR}/FreeCAD-${V}
-#WRKSRC =		??? if other than ${WRKDIST}
-#WRKBUILD =		??? if other than ${WRKSRC}
-#WRKCONF =		??? if other than ${WRKBUILD}
 
-#ALL_TARGET =		???
-#INSTALL_TARGET =	???
-#TEST_TARGET =		???
+post-install:
+	${MODPY_COMPILEALL} ${WRKINST}${MODPY_SITEPKG}
 
 .include <bsd.port.mk>

@@ -1,0 +1,17 @@
+Index: tests/src/Mod/Measure/CMakeLists.txt
+--- tests/src/Mod/Measure/CMakeLists.txt.orig
++++ tests/src/Mod/Measure/CMakeLists.txt
+@@ -8,7 +8,13 @@ target_include_directories(Measure_tests_run PUBLIC
+     ${XercesC_INCLUDE_DIRS}
+ )
+ 
++target_link_directories(Measure_tests_run PUBLIC
++    "/usr/X11R6/lib"
++    "/usr/local/lib"
++)
++
+ target_link_libraries(Measure_tests_run
++    gtest
+     gtest_main
+     ${Google_Tests_LIBS}
+     Measure

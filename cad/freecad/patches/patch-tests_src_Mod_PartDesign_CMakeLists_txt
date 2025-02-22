@@ -1,0 +1,17 @@
+Index: tests/src/Mod/PartDesign/CMakeLists.txt
+--- tests/src/Mod/PartDesign/CMakeLists.txt.orig
++++ tests/src/Mod/PartDesign/CMakeLists.txt
+@@ -6,7 +6,13 @@ target_include_directories(PartDesign_tests_run PUBLIC
+         ${XercesC_INCLUDE_DIRS}
+ )
+ 
++target_link_directories(PartDesign_tests_run PUBLIC
++        "/usr/X11R6/lib"
++        "/usr/local/lib"
++)
++
+ target_link_libraries(PartDesign_tests_run
++        gtest
+         gtest_main
+         ${Google_Tests_LIBS}
+         PartDesign

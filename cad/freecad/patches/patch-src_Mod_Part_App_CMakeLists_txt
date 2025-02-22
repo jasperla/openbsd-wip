@@ -1,0 +1,12 @@
+Index: src/Mod/Part/App/CMakeLists.txt
+--- src/Mod/Part/App/CMakeLists.txt.orig
++++ src/Mod/Part/App/CMakeLists.txt
+@@ -597,7 +597,7 @@ if(EIGEN3_NO_DEPRECATED_COPY)
+ endif()
+ 
+ add_library(Part SHARED ${Part_SRCS} ${FCBRepAlgoAPI_SRCS})
+-target_link_libraries(Part ${Part_LIBS})
++target_link_libraries(Part ${Part_LIBS} -L/usr/X11R6/lib)
+ if (FREECAD_WARN_ERROR)
+     target_compile_warn_error(Part)
+ endif()

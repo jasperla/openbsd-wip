@@ -1,0 +1,16 @@
+Index: tests/CMakeLists.txt
+--- tests/CMakeLists.txt.orig
++++ tests/CMakeLists.txt
+@@ -133,7 +133,12 @@ target_include_directories(Tests_run PUBLIC
+     ${Python3_INCLUDE_DIRS}
+     ${XercesC_INCLUDE_DIRS}
+ )
++target_link_directories(Tests_run PUBLIC
++    "/usr/X11R6/lib"
++    "/usr/local/lib"
++)
+ target_link_libraries(Tests_run
++    gtest
+     gtest_main
+     gmock_main
+     ${Google_Tests_LIBS}

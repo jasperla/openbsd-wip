@@ -1,1 +1,9 @@
 See https://forum.freecad.org/viewtopic.php?t=80792
+
+I don't know if there is a better way to add those "standard" library
+locations for cmake.
+
+Requires WIPs of:
+* devel/ondselsolver
+* devel/py-side2
+* graphics/vtk
