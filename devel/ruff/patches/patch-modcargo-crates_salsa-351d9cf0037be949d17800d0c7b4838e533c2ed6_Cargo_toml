@@ -1,0 +1,10 @@
+Index: modcargo-crates/salsa-351d9cf0037be949d17800d0c7b4838e533c2ed6/Cargo.toml
+--- modcargo-crates/salsa-351d9cf0037be949d17800d0c7b4838e533c2ed6/Cargo.toml.orig
++++ modcargo-crates/salsa-351d9cf0037be949d17800d0c7b4838e533c2ed6/Cargo.toml
+@@ -54,6 +54,3 @@ harness = false
+ [[bench]]
+ name = "accumulator"
+ harness = false
+-
+-[workspace]
+-members = ["components/salsa-macro-rules", "components/salsa-macros"]
