@@ -1,6 +1,6 @@
 COMMENT =		infinite-world block sandbox game
 
-V =			5.10.0
+V =			5.11.0
 PKGNAME =		luanti-${V}
 
 DIST_TUPLE +=		github luanti-org luanti ${V} .

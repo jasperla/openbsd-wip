@@ -40,7 +40,6 @@ share/locale/ga/LC_MESSAGES/luanti.mo
 share/locale/gd/LC_MESSAGES/luanti.mo
 share/locale/gl/LC_MESSAGES/luanti.mo
 share/locale/hu/LC_MESSAGES/luanti.mo
-share/locale/ia/LC_MESSAGES/luanti.mo
 share/locale/id/LC_MESSAGES/luanti.mo
 share/locale/it/LC_MESSAGES/luanti.mo
 share/locale/ja/LC_MESSAGES/luanti.mo
@@ -86,6 +85,7 @@ share/locale/sv/LC_MESSAGES/luanti.mo
 share/locale/sw/
 share/locale/sw/LC_MESSAGES/
 share/locale/sw/LC_MESSAGES/luanti.mo
+share/locale/ta/LC_MESSAGES/luanti.mo
 share/locale/tok/
 share/locale/tok/LC_MESSAGES/
 share/locale/tok/LC_MESSAGES/luanti.mo
@@ -93,9 +93,6 @@ share/locale/tr/LC_MESSAGES/luanti.mo
 share/locale/tt/LC_MESSAGES/luanti.mo
 share/locale/uk/LC_MESSAGES/luanti.mo
 share/locale/vi/LC_MESSAGES/luanti.mo
-share/locale/yue/
-share/locale/yue/LC_MESSAGES/
-share/locale/yue/LC_MESSAGES/luanti.mo
 share/locale/zh_CN/LC_MESSAGES/luanti.mo
 share/locale/zh_TW/LC_MESSAGES/luanti.mo
 share/luanti/
@@ -120,6 +117,14 @@ share/luanti/builtin/common/misc_helpers.lua
 share/luanti/builtin/common/mod_storage.lua
 share/luanti/builtin/common/register.lua
 share/luanti/builtin/common/serialize.lua
+share/luanti/builtin/common/settings/
+share/luanti/builtin/common/settings/components.lua
+share/luanti/builtin/common/settings/dlg_change_mapgen_flags.lua
+share/luanti/builtin/common/settings/dlg_settings.lua
+share/luanti/builtin/common/settings/generate_from_settingtypes.lua
+share/luanti/builtin/common/settings/init.lua
+share/luanti/builtin/common/settings/settingtypes.lua
+share/luanti/builtin/common/settings/shadows_component.lua
 share/luanti/builtin/common/strict.lua
 share/luanti/builtin/common/tests/
 share/luanti/builtin/common/tests/after_spec.lua
@@ -234,6 +239,7 @@ share/luanti/builtin/mainmenu/content/tests/
 share/luanti/builtin/mainmenu/content/tests/pkgmgr_spec.lua
 share/luanti/builtin/mainmenu/content/update_detector.lua
 share/luanti/builtin/mainmenu/credits.json
+share/luanti/builtin/mainmenu/dlg_clients_list.lua
 share/luanti/builtin/mainmenu/dlg_config_world.lua
 share/luanti/builtin/mainmenu/dlg_create_world.lua
 share/luanti/builtin/mainmenu/dlg_delete_content.lua
@@ -241,19 +247,11 @@ share/luanti/builtin/mainmenu/dlg_delete_world.lua
 share/luanti/builtin/mainmenu/dlg_register.lua
 share/luanti/builtin/mainmenu/dlg_reinstall_mtg.lua
 share/luanti/builtin/mainmenu/dlg_rename_modpack.lua
+share/luanti/builtin/mainmenu/dlg_server_list_mods.lua
 share/luanti/builtin/mainmenu/dlg_version_info.lua
 share/luanti/builtin/mainmenu/game_theme.lua
 share/luanti/builtin/mainmenu/init.lua
 share/luanti/builtin/mainmenu/serverlistmgr.lua
-share/luanti/builtin/mainmenu/settings/
-share/luanti/builtin/mainmenu/settings/components.lua
-share/luanti/builtin/mainmenu/settings/dlg_change_mapgen_flags.lua
-share/luanti/builtin/mainmenu/settings/dlg_settings.lua
-share/luanti/builtin/mainmenu/settings/generate_from_settingtypes.lua
-share/luanti/builtin/mainmenu/settings/init.lua
-share/luanti/builtin/mainmenu/settings/settingtypes.lua
-share/luanti/builtin/mainmenu/settings/shader_warning_component.lua
-share/luanti/builtin/mainmenu/settings/shadows_component.lua
 share/luanti/builtin/mainmenu/tab_about.lua
 share/luanti/builtin/mainmenu/tab_content.lua
 share/luanti/builtin/mainmenu/tab_local.lua
@@ -261,6 +259,9 @@ share/luanti/builtin/mainmenu/tab_online.lua
 share/luanti/builtin/mainmenu/tests/
 share/luanti/builtin/mainmenu/tests/favorites_wellformed.txt
 share/luanti/builtin/mainmenu/tests/serverlistmgr_spec.lua
+share/luanti/builtin/pause_menu/
+share/luanti/builtin/pause_menu/init.lua
+share/luanti/builtin/pause_menu/register.lua
 share/luanti/builtin/profiler/
 share/luanti/builtin/profiler/init.lua
 share/luanti/builtin/profiler/instrumentation.lua
@@ -297,9 +298,6 @@ share/luanti/client/shaders/blur_v/opengl_vertex.glsl
 share/luanti/client/shaders/cloud_shader/
 share/luanti/client/shaders/cloud_shader/opengl_fragment.glsl
 share/luanti/client/shaders/cloud_shader/opengl_vertex.glsl
-share/luanti/client/shaders/default_shader/
-share/luanti/client/shaders/default_shader/opengl_fragment.glsl
-share/luanti/client/shaders/default_shader/opengl_vertex.glsl
 share/luanti/client/shaders/extract_bloom/
 share/luanti/client/shaders/extract_bloom/opengl_fragment.glsl
 share/luanti/client/shaders/extract_bloom/opengl_vertex.glsl
@@ -512,6 +510,7 @@ share/luanti/games/devtest/mods/gltf/models/gltf_blender_cube_scaled.gltf
 share/luanti/games/devtest/mods/gltf/models/gltf_frog.gltf
 share/luanti/games/devtest/mods/gltf/models/gltf_minimal_triangle.gltf
 share/luanti/games/devtest/mods/gltf/models/gltf_simple_skin.gltf
+share/luanti/games/devtest/mods/gltf/models/gltf_simple_skin_step.gltf
 share/luanti/games/devtest/mods/gltf/models/gltf_simple_sparse_accessor.gltf
 share/luanti/games/devtest/mods/gltf/models/gltf_snow_man.gltf
 share/luanti/games/devtest/mods/gltf/models/gltf_spider.gltf
@@ -588,6 +587,8 @@ share/luanti/games/devtest/mods/testentities/init.lua
 share/luanti/games/devtest/mods/testentities/mod.conf
 share/luanti/games/devtest/mods/testentities/models/
 share/luanti/games/devtest/mods/testentities/models/LICENSE.txt
+share/luanti/games/devtest/mods/testentities/models/testentities_lava_flan.png
+share/luanti/games/devtest/mods/testentities/models/testentities_lava_flan.x
 share/luanti/games/devtest/mods/testentities/models/testentities_sam.b3d
 share/luanti/games/devtest/mods/testentities/models/testentities_sam.png
 share/luanti/games/devtest/mods/testentities/observers.lua
@@ -663,6 +664,8 @@ share/luanti/games/devtest/mods/testitems/textures/testitems_overlay_base.png
 share/luanti/games/devtest/mods/testitems/textures/testitems_overlay_overlay.png
 share/luanti/games/devtest/mods/testitems/textures/testitems_overridden.png
 share/luanti/games/devtest/mods/testitems/textures/testitems_telescope_stick.png
+share/luanti/games/devtest/mods/testitems/textures/testitems_tree_spawner.png
+share/luanti/games/devtest/mods/testitems/textures/testitems_tree_spawner_vmanip.png
 share/luanti/games/devtest/mods/testnodes/
 share/luanti/games/devtest/mods/testnodes/README.md
 share/luanti/games/devtest/mods/testnodes/commands.lua
@@ -940,6 +943,7 @@ share/luanti/games/devtest/mods/testtools/textures/testtools_object_attacher.png
 share/luanti/games/devtest/mods/testtools/textures/testtools_object_editor.png
 share/luanti/games/devtest/mods/testtools/textures/testtools_object_mover.png
 share/luanti/games/devtest/mods/testtools/textures/testtools_param2tool.png
+share/luanti/games/devtest/mods/testtools/textures/testtools_particle_clip.png
 share/luanti/games/devtest/mods/testtools/textures/testtools_particle_sheet.png
 share/luanti/games/devtest/mods/testtools/textures/testtools_particle_spawner.png
 share/luanti/games/devtest/mods/testtools/textures/testtools_particle_vertical.png
@@ -976,7 +980,6 @@ share/luanti/games/devtest/mods/unittests/content_ids.lua
 share/luanti/games/devtest/mods/unittests/crafting.lua
 share/luanti/games/devtest/mods/unittests/crafting_prepare.lua
 share/luanti/games/devtest/mods/unittests/entity.lua
-share/luanti/games/devtest/mods/unittests/get_version.lua
 share/luanti/games/devtest/mods/unittests/init.lua
 share/luanti/games/devtest/mods/unittests/inside_async_env.lua
 share/luanti/games/devtest/mods/unittests/inside_mapgen_env.lua
@@ -1001,6 +1004,7 @@ share/luanti/games/devtest/mods/unittests/textures/unittests_steel_ingot.png
 share/luanti/games/devtest/mods/unittests/textures/unittests_stick.png
 share/luanti/games/devtest/mods/unittests/textures/unittests_torch.png
 share/luanti/games/devtest/mods/unittests/textures/unittests_unrepairable_tool.png
+share/luanti/games/devtest/mods/unittests/version.lua
 share/luanti/games/devtest/mods/util_commands/
 share/luanti/games/devtest/mods/util_commands/init.lua
 share/luanti/games/devtest/mods/util_commands/mod.conf
@@ -1085,6 +1089,12 @@ share/luanti/textures/base/pack/server_ping_2.png
 share/luanti/textures/base/pack/server_ping_3.png
 share/luanti/textures/base/pack/server_ping_4.png
 share/luanti/textures/base/pack/server_public.png
+share/luanti/textures/base/pack/server_url.png
+share/luanti/textures/base/pack/server_url_unavailable.png
+share/luanti/textures/base/pack/server_view_clients.png
+share/luanti/textures/base/pack/server_view_clients_unavailable.png
+share/luanti/textures/base/pack/server_view_mods.png
+share/luanti/textures/base/pack/server_view_mods_unavailable.png
 share/luanti/textures/base/pack/settings_btn.png
 share/luanti/textures/base/pack/settings_info.png
 share/luanti/textures/base/pack/settings_reset.png
