@@ -3,7 +3,7 @@ NOT_FOR_ARCHS =	sparc64
 
 COMMENT =	next-generation test runner for Rust
 
-VERSION =	0.9.91
+VERSION =	0.9.92
 
 DISTNAME =	cargo-nextest-${VERSION}
 
@@ -50,17 +50,17 @@ do-install:
 # Nextest's own tests do not work with cargo test.
 # We must use nextest to run its own test suite.
 #
-# Summary [ 190.780s] 316 tests run: 306 passed, 10 failed, 1 skipped
-# TRY 4 FAIL [   7.631s] integration-tests::integration test_list_binaries_only
-# TRY 4 FAIL [   6.443s] integration-tests::integration test_list_default
-# TRY 4 FAIL [   8.990s] integration-tests::integration test_list_full
-# TRY 4 FAIL [   9.036s] integration-tests::integration test_list_with_default_filter
-# TRY 4 FAIL [  12.857s] integration-tests::integration test_run
-# TRY 4 FAIL [  13.038s] integration-tests::integration test_run_with_default_filter
-# TRY 4 FAIL [  24.334s] integration-tests::integration test_run_with_priorities
-# TRY 4 FAIL [   6.967s] integration-tests::integration test_show_config_test_groups
-# TRY 4 FAIL [   3.059s] integration-tests::integration test_target_dir
-# TRY 4 FAIL [   0.143s] integration-tests::integration test_version_info
+# Summary [ 231.213s] 317 tests run: 307 passed, 10 failed, 1 skipped
+# TRY 4 FAIL [   8.996s] integration-tests::integration test_list_binaries_only
+# TRY 4 FAIL [   7.152s] integration-tests::integration test_list_default
+# TRY 4 FAIL [   5.482s] integration-tests::integration test_list_full
+# TRY 4 FAIL [   6.846s] integration-tests::integration test_list_with_default_filter
+# TRY 4 FAIL [  10.030s] integration-tests::integration test_run
+# TRY 4 FAIL [  16.140s] integration-tests::integration test_run_with_default_filter
+# TRY 4 FAIL [   8.116s] integration-tests::integration test_run_with_priorities
+# TRY 4 FAIL [   4.689s] integration-tests::integration test_show_config_test_groups
+# TRY 4 FAIL [   2.153s] integration-tests::integration test_target_dir
+# TRY 4 FAIL [   0.201s] integration-tests::integration test_version_info
 do-test:
 	NEXTEST_HIDE_PROGRESS_BAR=1 ${MODCARGO_CARGO_RUN} run \
 		--package cargo-nextest -- nextest run --profile ci
