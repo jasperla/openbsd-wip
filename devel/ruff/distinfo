@@ -23,6 +23,7 @@ SHA256 (cargo/base64-0.13.1.tar.gz) = nhtYYnPFcCk2/nt9aJZkTYvnHmMUz+CdMWfJX3Elie
 SHA256 (cargo/bincode-1.3.3.tar.gz) = sfRelBfYcifHpW0i5HHGIGRiy6UUx1kMCa/0z20d3K0=
 SHA256 (cargo/bitflags-1.3.2.tar.gz) = vvONRRY8Lx3eCUp9/TPM9ZXJKQXI+PT9wY0G+xA3cYo=
 SHA256 (cargo/bitflags-2.8.0.tar.gz) = j2j1PIOrlX9ywyZC84aO7APrl00fuC5FMShFZIJhPTY=
+SHA256 (cargo/bitflags-2.9.0.tar.gz) = XIIUEVt7+ECZ8TCTJOYxQdTF18wmhi+XoKhX2+/hZb0=
 SHA256 (cargo/block-buffer-0.10.4.tar.gz) = MHjHYpti0/BDlRf6OUmWrKzFy8kcWiDYxljner1QOnE=
 SHA256 (cargo/boxcar-0.2.10.tar.gz) = IlRQ7pMo4egoMZtIqJcmz/wbCtJv2SEa1DXen6N2rK4=
 SHA256 (cargo/bstr-1.11.3.tar.gz) = UxqRVaSB4u5pnU+Y9DwMpP+O4b/VXDHp6Y+ynSsXb+A=
@@ -37,13 +38,11 @@ SHA256 (cargo/cc-1.2.15.tar.gz) = xzbiWe6ld/RD1chsME+fSuApXEPzugXCHx1mtfBgAa8=
 SHA256 (cargo/cfg-if-1.0.0.tar.gz) = uvHeQzl2FYi8Bhnjy8ASDuWC67dLU7Tvv3kRe9LaQP0=
 SHA256 (cargo/cfg_aliases-0.2.1.tar.gz) = YTr+R/zV+sfM8duTurywgsWZTZlvILixWfKtFljrVyQ=
 SHA256 (cargo/chic-1.2.2.tar.gz) = pbXbYZ81VoOcsiI66G/z+aCdosUBO+Qrya8IyVib9ww=
-SHA256 (cargo/chrono-0.4.39.tar.gz) = fjbMnUFogdLiT5qWO+X7HNkJZkGayEQnQWHRBIiz6CU=
+SHA256 (cargo/chrono-0.4.40.tar.gz) = GnlkYR1x3xEssXMPLuZzJPz00PxmBqy76b/gbfEkY3w=
 SHA256 (cargo/ciborium-0.2.2.tar.gz) = Quaf/W8JF/XAKSVqJNAWHbF86jmX0YXbDTWSYwh3Dw4=
 SHA256 (cargo/ciborium-io-0.2.2.tar.gz) = Ba/qHgoGyb4z1Tm4dvHONpL0r+ostB90DndDIl7Rx1c=
 SHA256 (cargo/ciborium-ll-0.2.2.tar.gz) = V2Y7ZT2UijOL+z7rqbsv1fz67Lnhmeh+HtpNnoskD9k=
-SHA256 (cargo/clap-4.5.30.tar.gz) = krexjXH61TE6HjIPqYl5lCKM4nS2D6pNaU/g6onNnm0=
 SHA256 (cargo/clap-4.5.31.tar.gz) = Anuw2YQprjNKhphTHacHe9+QZBlUOjWlXCyxtmQ312c=
-SHA256 (cargo/clap_builder-4.5.30.tar.gz) = o12yBxd4pzRHkaT7T5Uwi1Zz0hne4640i4ZkJXTsyQw=
 SHA256 (cargo/clap_builder-4.5.31.tar.gz) = VYngy6By4PPSN5HvrA/YYntJyCnBlqSS6IFo5qZp2GM=
 SHA256 (cargo/clap_complete-4.5.44.tar.gz) = N1+dglWt7u3VEFNXT9jUuodepfpVjoZhewfwnxaAyLY=
 SHA256 (cargo/clap_complete_command-0.6.1.tar.gz) = 2o4ZjAUjFWhtNjceijxXeLeFL8dcwxPk4R7remRKG2I=
@@ -51,9 +50,7 @@ SHA256 (cargo/clap_complete_nushell-4.5.5.tar.gz) = xqixWTRX38L+U5ACt5VxDQItxipl
 SHA256 (cargo/clap_derive-4.5.28.tar.gz) = v0ztlcb0pnWvPaczBLmsTtmRZAw2N05LRnlcSeF88e0=
 SHA256 (cargo/clap_lex-0.7.4.tar.gz) = 9GrRRHmiUQPyg8DxAAWWHPCG2NxCIFu0TEasVjR13KY=
 SHA256 (cargo/clearscreen-4.0.1.tar.gz) = jEHcQ1p7mORggiS79lKCMJ9UA3Gd+RE2IbMPi2904vQ=
-SHA256 (cargo/codspeed-2.8.0.tar.gz) = JdL1plcNtIf1JY4L3tY1L6IDTCrrRrtcw/8GCg/Pui8=
 SHA256 (cargo/codspeed-2.8.1.tar.gz) = 3ktn/4mF85k/BhZ9cc9K7BeLChWA+RqYcXDFnWACEQM=
-SHA256 (cargo/codspeed-criterion-compat-2.8.0.tar.gz) = 9TpVVY3t7HQrFKrjxf7DiTYbi1yijBqt8J3ZH69xAHQ=
 SHA256 (cargo/codspeed-criterion-compat-2.8.1.tar.gz) = aEA9do7R3vGKh+IwZnZ4ExREg5Ps8NMFfEUnyr9SSj0=
 SHA256 (cargo/colorchoice-1.0.3.tar.gz) = W2PKqaqTl+LZSAqbE2c4VseNisEjKIUmw314OfKoaZA=
 SHA256 (cargo/colored-2.2.0.tar.gz) = EXcloQnTh8k3oVM84BtFDL3muIq87qhHPE16hYU82jw=
@@ -124,7 +121,7 @@ SHA256 (cargo/getopts-0.2.21.tar.gz) = FNu/1ccdcCQez55vE3N/e1zoI4IQYxiNfkbEHTce6
 SHA256 (cargo/getrandom-0.2.15.tar.gz) = xFZ8jbEK6RCJyZr4TGjDjaPsLwh8P4KWC82/Nla29Nc=
 SHA256 (cargo/getrandom-0.3.1.tar.gz) = Q6ScOSiBzm1cO4y3D5hxe3wHqrvf8GaHuQMNv74nJfg=
 SHA256 (cargo/glob-0.3.2.tar.gz) = qNGt1VFxSXtHBaZIxrWDrK+wHVgFClFyd4XwssjgorI=
-SHA256 (cargo/globset-0.4.15.tar.gz) = FfHOaGZG5/Hhm/fVUz/kQ6Rdv7mQ4AYpEQeXV4tC+xk=
+SHA256 (cargo/globset-0.4.16.tar.gz) = VKECjfxfXfXailanPmwVPJqXCOxXIyRwcDWSo/GOSfU=
 SHA256 (cargo/globwalk-0.9.1.tar.gz) = C/dg6/aYeNn9jxEMiXA9kM41CVMk0fHty1lcY5Re51c=
 SHA256 (cargo/half-2.4.1.tar.gz) = bdCMUyrjZ634HDEqRYC8Z/HQ/ovJxGBSAoP0wP8neIg=
 SHA256 (cargo/hashbrown-0.14.5.tar.gz) = 5SdEI+F7fJ/CC25+IIUy+bGYJdgt/WFXCLcO3YPfQfE=
@@ -161,7 +158,7 @@ SHA256 (cargo/indoc-2.0.5.tar.gz) = skj1Ik0dYGAF4CyX9apOiO6yMEiLzAO8nKTXmROZ8rU=
 SHA256 (cargo/inotify-0.11.0.tar.gz) = 833M/yeRq2BPm6vvC6FPvgvjC9No3FQeKwjQfIqpCPM=
 SHA256 (cargo/inotify-0.9.6.tar.gz) = +AadPsFU64VpVcHA+//vv188QKEE7JEtR5cxTBgBq/8=
 SHA256 (cargo/inotify-sys-0.1.5.tar.gz) = 4FwCteib/zuUbO3sonirxij+gR5gTwJ8RaiqPPeT0Os=
-SHA256 (cargo/insta-1.42.1.tar.gz) = ccGxJeMNk4lrNl4VbDPa3/+rRe6EAK/LukdS9Z3gioY=
+SHA256 (cargo/insta-1.42.2.tar.gz) = UCWau6pn0R0ryvx7odCU7XoMcOPOiT8NCZf3NVjLMIQ=
 SHA256 (cargo/insta-cmd-0.6.0.tar.gz) = /+7vqSeSXM7UnMsBvz5XydTNEy3yHlduuUFbrqstPeY=
 SHA256 (cargo/is-docker-0.2.0.tar.gz) = kouuJ/QryZtg2axzNOOiHRCtjxg1pOEuw+wEZHZe0bM=
 SHA256 (cargo/is-macro-0.3.7.tar.gz) = HVej5EfiTCJkdzjkYH8d8eDsb3LhYYLEzRmfZHzfsOQ=
@@ -286,8 +283,8 @@ SHA256 (cargo/rustix-0.38.44.tar.gz) = /bW8GuK6pZGADfFsnKeGGb9lwEiLQblszsXREiDYw
 SHA256 (cargo/rustversion-1.0.19.tar.gz) = 98Rbl4QoPxsuf7YbQgR8L9Z47wlg1Pbx66ExWUzDadQ=
 SHA256 (cargo/ryu-1.0.19.tar.gz) = bqGi0KZEdpzJn6okw60ms3m3hv58Nv08VGJUgBZQ5t0=
 SHA256 (cargo/same-file-1.0.6.tar.gz) = k/wdw6qpv+2V4C5urau0uvfjB4sL0bTXtrC2g3iQBQI=
-SHA256 (cargo/schemars-0.8.21.tar.gz) = CcAkRoo3i342dlzTZwK3qQzDy6EWVPZoXI8jNAjonpI=
-SHA256 (cargo/schemars_derive-0.8.21.tar.gz) = se7liFeK/3P4VquWHNL3nja8Rdfe0zp1Yq26RmeuzA4=
+SHA256 (cargo/schemars-0.8.22.tar.gz) = P78q4bi8jgLfk5WYBk0iQCIgzVu8yhx299ajEJdNVhU=
+SHA256 (cargo/schemars_derive-0.8.22.tar.gz) = MuJleErWGIhKuuoGAKmt8VOTNo2EDgIi0QGgcvP3U00=
 SHA256 (cargo/scoped-tls-1.0.1.tar.gz) = 4c9kN+sZqPSmzA99ylRJc7C3iEOtv+s2g9GpSgAkopQ=
 SHA256 (cargo/scopeguard-1.2.0.tar.gz) = lBQ/N3JRCfksJi7Sz15ZvOdJjAG8wVAte5r+Q5pOn0k=
 SHA256 (cargo/seahash-4.1.0.tar.gz) = HBB7b0eAhUyLEm4ijqiGn017cSYPli/vtXuZa4lZums=
@@ -412,6 +409,7 @@ SHA256 (cargo/windows-core-0.52.0.tar.gz) = M6tkDI1+Nb+LoZuIS6g4zrT7qTpOjGWpBZ0I
 SHA256 (cargo/windows-core-0.58.0.tar.gz) = a6bUTsjCWRwTQlfOZHt+prIDNb9jeaJ9rF8WQfz1n5k=
 SHA256 (cargo/windows-implement-0.58.0.tar.gz) = K71bRsk45QbsvOKGtmKKAhcdVhU7pzO2x0H8Yn7JV5s=
 SHA256 (cargo/windows-interface-0.58.0.tar.gz) = BTxMRi3JHTsVBMb+WnJt0V4ha6cY6EoORqiPvl3tNRU=
+SHA256 (cargo/windows-link-0.1.0.tar.gz) = bcz9czzisXU7A7bTxl7fAgJi6jXiDM3z4ogEPm3WIOM=
 SHA256 (cargo/windows-result-0.2.0.tar.gz) = HRBD2CFPeRgXurJ1cqqor2NzLhG/hKohpFp41sMXrg4=
 SHA256 (cargo/windows-strings-0.1.0.tar.gz) = TNmxJcSGAl3w6ry1heYhc8bJ7dzsXRF9O26MMOLuTRA=
 SHA256 (cargo/windows-sys-0.48.0.tar.gz) = Z30kGL7GXjM47bB26Aa8HsFWk8XQEEaD8u/oV/YQVqk=
@@ -455,7 +453,7 @@ SHA256 (cargo/zip-0.6.6.tar.gz) = dgOU4kbkwoGJ8Z1IjAWL8W9WQBau+sXTK7HztR1ekmE=
 SHA256 (cargo/zstd-0.11.2+zstd.1.5.2.tar.gz) = IMyWAybs5k8BDS0hB1N/JtxYmmVzoxa9Wx26aF+l/eQ=
 SHA256 (cargo/zstd-safe-5.0.2+zstd.1.5.2.tar.gz) = HSpVheBPnupLKj0eylCMTe6Vkqie9vRQwRcZ2gcm9Ns=
 SHA256 (cargo/zstd-sys-2.0.13+zstd.1.5.6.tar.gz) = OP8PIc/uj5fZTO9BNZ4MiaphEwKKsCkaqMoAOJlalao=
-SHA256 (ruff-0.9.9.tar.gz) = cAVhq8ae77tfpqYcrae00+FRAAS8B4Os6b/qMWploeY=
+SHA256 (ruff-0.9.10.tar.gz) = JGXkCF1UKT46BHQwnazxzEHj73Bj/X0j2IZnQUGwjtI=
 SHA256 (salsa-rs-salsa-99be5d9917c3dd88e19735a82ef6bf39ba84bd7e.tar.gz) = xW3szvlFKloWunRK51bGF6ssMgoGq97pPMuMB1XpsTE=
 SIZE (astral-sh-lsp-types-3512a9f33eadc5402cfab1b8f7340824c8ca1439.tar.gz) = 71124
 SIZE (cargo/adler2-2.0.0.tar.gz) = 13529
@@ -482,6 +480,7 @@ SIZE (cargo/base64-0.13.1.tar.gz) = 61002
 SIZE (cargo/bincode-1.3.3.tar.gz) = 28958
 SIZE (cargo/bitflags-1.3.2.tar.gz) = 23021
 SIZE (cargo/bitflags-2.8.0.tar.gz) = 47482
+SIZE (cargo/bitflags-2.9.0.tar.gz) = 47654
 SIZE (cargo/block-buffer-0.10.4.tar.gz) = 10538
 SIZE (cargo/boxcar-0.2.10.tar.gz) = 19657
 SIZE (cargo/bstr-1.11.3.tar.gz) = 351536
@@ -496,13 +495,11 @@ SIZE (cargo/cc-1.2.15.tar.gz) = 103196
 SIZE (cargo/cfg-if-1.0.0.tar.gz) = 7934
 SIZE (cargo/cfg_aliases-0.2.1.tar.gz) = 6355
 SIZE (cargo/chic-1.2.2.tar.gz) = 10269
-SIZE (cargo/chrono-0.4.39.tar.gz) = 222248
+SIZE (cargo/chrono-0.4.40.tar.gz) = 229824
 SIZE (cargo/ciborium-0.2.2.tar.gz) = 35611
 SIZE (cargo/ciborium-io-0.2.2.tar.gz) = 6697
 SIZE (cargo/ciborium-ll-0.2.2.tar.gz) = 14695
-SIZE (cargo/clap-4.5.30.tar.gz) = 56081
 SIZE (cargo/clap-4.5.31.tar.gz) = 56084
-SIZE (cargo/clap_builder-4.5.30.tar.gz) = 168274
 SIZE (cargo/clap_builder-4.5.31.tar.gz) = 168303
 SIZE (cargo/clap_complete-4.5.44.tar.gz) = 47993
 SIZE (cargo/clap_complete_command-0.6.1.tar.gz) = 7959
@@ -510,9 +507,7 @@ SIZE (cargo/clap_complete_nushell-4.5.5.tar.gz) = 33986
 SIZE (cargo/clap_derive-4.5.28.tar.gz) = 33428
 SIZE (cargo/clap_lex-0.7.4.tar.gz) = 12858
 SIZE (cargo/clearscreen-4.0.1.tar.gz) = 153878
-SIZE (cargo/codspeed-2.8.0.tar.gz) = 8465
 SIZE (cargo/codspeed-2.8.1.tar.gz) = 8468
-SIZE (cargo/codspeed-criterion-compat-2.8.0.tar.gz) = 20884
 SIZE (cargo/codspeed-criterion-compat-2.8.1.tar.gz) = 20880
 SIZE (cargo/colorchoice-1.0.3.tar.gz) = 7923
 SIZE (cargo/colored-2.2.0.tar.gz) = 35062
@@ -583,7 +578,7 @@ SIZE (cargo/getopts-0.2.21.tar.gz) = 18457
 SIZE (cargo/getrandom-0.2.15.tar.gz) = 37163
 SIZE (cargo/getrandom-0.3.1.tar.gz) = 42449
 SIZE (cargo/glob-0.3.2.tar.gz) = 22359
-SIZE (cargo/globset-0.4.15.tar.gz) = 25177
+SIZE (cargo/globset-0.4.16.tar.gz) = 26533
 SIZE (cargo/globwalk-0.9.1.tar.gz) = 12572
 SIZE (cargo/half-2.4.1.tar.gz) = 50892
 SIZE (cargo/hashbrown-0.14.5.tar.gz) = 141498
@@ -620,7 +615,7 @@ SIZE (cargo/indoc-2.0.5.tar.gz) = 14396
 SIZE (cargo/inotify-0.11.0.tar.gz) = 26241
 SIZE (cargo/inotify-0.9.6.tar.gz) = 22971
 SIZE (cargo/inotify-sys-0.1.5.tar.gz) = 6965
-SIZE (cargo/insta-1.42.1.tar.gz) = 99945
+SIZE (cargo/insta-1.42.2.tar.gz) = 100430
 SIZE (cargo/insta-cmd-0.6.0.tar.gz) = 12385
 SIZE (cargo/is-docker-0.2.0.tar.gz) = 2664
 SIZE (cargo/is-macro-0.3.7.tar.gz) = 9060
@@ -745,8 +740,8 @@ SIZE (cargo/rustix-0.38.44.tar.gz) = 379347
 SIZE (cargo/rustversion-1.0.19.tar.gz) = 20616
 SIZE (cargo/ryu-1.0.19.tar.gz) = 48770
 SIZE (cargo/same-file-1.0.6.tar.gz) = 10183
-SIZE (cargo/schemars-0.8.21.tar.gz) = 58475
-SIZE (cargo/schemars_derive-0.8.21.tar.gz) = 18703
+SIZE (cargo/schemars-0.8.22.tar.gz) = 59214
+SIZE (cargo/schemars_derive-0.8.22.tar.gz) = 19542
 SIZE (cargo/scoped-tls-1.0.1.tar.gz) = 8202
 SIZE (cargo/scopeguard-1.2.0.tar.gz) = 11619
 SIZE (cargo/seahash-4.1.0.tar.gz) = 31976
@@ -871,6 +866,7 @@ SIZE (cargo/windows-core-0.52.0.tar.gz) = 42154
 SIZE (cargo/windows-core-0.58.0.tar.gz) = 41022
 SIZE (cargo/windows-implement-0.58.0.tar.gz) = 10491
 SIZE (cargo/windows-interface-0.58.0.tar.gz) = 11246
+SIZE (cargo/windows-link-0.1.0.tar.gz) = 6153
 SIZE (cargo/windows-result-0.2.0.tar.gz) = 12756
 SIZE (cargo/windows-strings-0.1.0.tar.gz) = 13832
 SIZE (cargo/windows-sys-0.48.0.tar.gz) = 2628884
@@ -914,5 +910,5 @@ SIZE (cargo/zip-0.6.6.tar.gz) = 65789
 SIZE (cargo/zstd-0.11.2+zstd.1.5.2.tar.gz) = 28987
 SIZE (cargo/zstd-safe-5.0.2+zstd.1.5.2.tar.gz) = 17273
 SIZE (cargo/zstd-sys-2.0.13+zstd.1.5.6.tar.gz) = 749090
-SIZE (ruff-0.9.9.tar.gz) = 6068332
+SIZE (ruff-0.9.10.tar.gz) = 5987888
 SIZE (salsa-rs-salsa-99be5d9917c3dd88e19735a82ef6bf39ba84bd7e.tar.gz) = 626582
