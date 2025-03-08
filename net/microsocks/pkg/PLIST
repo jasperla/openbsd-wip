@@ -1,0 +1,3 @@
+@rcscript ${RCDIR}/microsocks
+@man man/man1/microsocks.1
+@bin sbin/microsocks
