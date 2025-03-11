@@ -3,7 +3,34 @@ Display version without commit hash
 Index: internal/version/version.go
 --- internal/version/version.go.orig
 +++ internal/version/version.go
-@@ -29,5 +29,9 @@ func GetVersion() string {
+@@ -2,7 +2,6 @@ package version
+ 
+ import (
+ 	"fmt"
+-	"runtime/debug"
+ )
+ 
+ var (
+@@ -10,24 +9,14 @@ var (
+ 	sum     = ""
+ )
+ 
+-func init() {
+-	info, ok := debug.ReadBuildInfo()
+-	if !ok || info.Main.Version == "(devel)" || info.Main.Version == "" {
+-		version = "unknown"
+-	} else {
+-		if version == "" {
+-			version = info.Main.Version
+-		}
+-		if sum == "" {
+-			sum = info.Main.Sum
+-		}
+-	}
+-}
+-
+ func GetVersion() string {
+ 	return version
  }
  
  func GetVersionWithSum() string {
