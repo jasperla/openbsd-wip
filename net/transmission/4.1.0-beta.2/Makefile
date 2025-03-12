@@ -21,9 +21,9 @@ DPB_PROPERTIES= parallel
 # GPLv2+
 PERMIT_PACKAGE=	Yes
 
-# not in use until the next release
-SITES=	https://github.com/transmission/transmission/releases/download/${VER}/
-EXTRACT_SUFX=	.tar.xz
+# XXX maintainer fork of transmission/transmission to revert third-party/fmt to 10.2.1:
+SITES=          https://github.com/jggimi/transmission/releases/download/obsd.${VER}/
+EXTRACT_SUFX=   .tar.xz
 
 MULTI_PACKAGES=	-main -gtk -qt
 
