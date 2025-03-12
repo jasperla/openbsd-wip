@@ -5,7 +5,7 @@ COMMENT-qt=	BitTorrent client with Qt interface
 # testing between 4.0.6 and the next release,
 # see UPDATE regarding the devel/fmt shared lib.
 
-VER=		4.1.0.dev
+VER=		4.1.0-beta.2
 DISTNAME=	transmission-${VER}
 PKGNAME-main=	transmission-${VER}
 PKGNAME-gtk=	transmission-gtk-${VER}
