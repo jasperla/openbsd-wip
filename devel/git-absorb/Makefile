@@ -2,7 +2,7 @@ COMMENT =	git command for automating fixup/autosquash commits
 
 GH_ACCOUNT =	tummychow
 GH_PROJECT =	git-absorb
-GH_TAGNAME =	0.6.17
+GH_TAGNAME =	0.7.0
 
 CATEGORIES =	devel
 
@@ -18,7 +18,11 @@ MODULES =	devel/cargo
 CONFIGURE_STYLE =	cargo
 SEPARATE_BUILD =	Yes
 
+BUILD_DEPENDS =	textproc/asciidoc
 LIB_DEPENDS =	devel/libgit2/libgit2
+
+post-build:
+	cd ${WRKSRC}/Documentation && a2x -L -d manpage -f manpage git-absorb.adoc
 
 do-install:
 	${INSTALL_PROGRAM} ${MODCARGO_TARGET_DIR}/release/git-absorb ${PREFIX}/bin/
