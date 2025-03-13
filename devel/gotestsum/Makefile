@@ -1,7 +1,7 @@
 COMMENT =	go test runner with output optimized for humans
 
 MODGO_MODNAME =	gotest.tools/gotestsum
-MODGO_VERSION =	v1.12.0
+MODGO_VERSION =	v1.12.1
 
 DISTNAME =      gotestsum-${MODGO_VERSION}
 
@@ -19,8 +19,6 @@ WANTLIB +=	c pthread
 MODULES =	lang/go
 
 MODGO_LDFLAGS +=	-X ${MODGO_MODNAME}/cmd.version=${MODGO_VERSION}
-
-# NO_TEST =	Yes
 
 # TODO
 # Run tests with gotestsum fails => need to download Go modules on GH
