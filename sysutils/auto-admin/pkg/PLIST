@@ -3,6 +3,7 @@ bin/auto-ask
 bin/auto-backup-file
 bin/auto-check-ports-branch
 bin/auto-clean-pkgsrc
+bin/auto-dreckly-setup
 bin/auto-fastest-mirror
 bin/auto-fetch-install-media
 bin/auto-get-ip
@@ -20,6 +21,7 @@ bin/auto-os-release
 bin/auto-os-variant
 bin/auto-ostype
 bin/auto-package-installed
+bin/auto-physmem
 bin/auto-pkg-branch
 bin/auto-pkg-latest
 bin/auto-pkgsrc-branch
@@ -39,15 +41,10 @@ bin/auto-replace-file
 bin/auto-software-manager
 bin/auto-ssh-authorize
 bin/auto-ssh-reverse-authorize
+bin/auto-update-manager
 bin/auto-update-pkgsrc
 bin/auto-using-pkgsrc
 bin/auto-wacom-map-display
-@man man/man8/auto-add-swap.8
-@man man/man8/auto-admin.8
-@man man/man8/auto-change-login-class.8
-@man man/man8/auto-image2dev.8
-@man man/man8/auto-pkgsrc-non-removable.8
-@man man/man8/auto-update-system.8
 sbin/auto-add-fdesc-mount
 sbin/auto-add-group
 sbin/auto-add-hosts-entry
@@ -177,3 +174,13 @@ share/auto-admin/
 share/auto-admin/ipfw-rules.sh
 share/auto-admin/local_early
 share/auto-admin/rc.local_early
+@mandir share/man/
+share/man/man8/
+@man share/man/man8/auto-add-swap.8
+@man share/man/man8/auto-admin.8
+@man share/man/man8/auto-change-login-class.8
+@man share/man/man8/auto-image2dev.8
+@man share/man/man8/auto-physmem.8
+@man share/man/man8/auto-pkgsrc-non-removable.8
+@man share/man/man8/auto-update-system.8
+@man share/man/man8/auto-user-admin.8

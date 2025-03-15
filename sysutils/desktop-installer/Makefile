@@ -1,7 +1,7 @@
 COMMENT =		Quickly configure a OpenBSD desktop system
 
-V =			1.0.0.28
-COMMIT =		20cc93bdf139975d2419871bf1de213c46b98881
+V =			1.1.0.6
+COMMIT =		a1e2af98b9c863451d040e5d63d6450aaf1417e3
 PKGNAME =		desktop-installer-${V}
 
 DIST_TUPLE =		github outpaddling desktop-installer ${COMMIT} .

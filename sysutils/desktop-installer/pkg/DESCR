@@ -1,4 +1,4 @@
 Desktop-installer is a post-install script to assist in setting up
 a OpenBSD desktop system using any desktop environment or window
-manager available in binary packages.y It automatically installs essential
+manager available in binary packages. It automatically installs essential
 software and configures subsystems such as dbus, etc. for typical use.
