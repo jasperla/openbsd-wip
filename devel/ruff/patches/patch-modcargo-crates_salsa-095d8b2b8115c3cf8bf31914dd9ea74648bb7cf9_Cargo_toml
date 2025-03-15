@@ -1,0 +1,37 @@
+Remove workspace for salsa crate (conflict with root workspace)
+
+Index: modcargo-crates/salsa-095d8b2b8115c3cf8bf31914dd9ea74648bb7cf9/Cargo.toml
+--- modcargo-crates/salsa-095d8b2b8115c3cf8bf31914dd9ea74648bb7cf9/Cargo.toml.orig
++++ modcargo-crates/salsa-095d8b2b8115c3cf8bf31914dd9ea74648bb7cf9/Cargo.toml
+@@ -1,12 +1,12 @@
+ [package]
+ name = "salsa"
+ version = "0.19.0"
+-authors.workspace = true
+-edition.workspace = true
+-license.workspace = true
+-repository.workspace = true
+-rust-version.workspace = true
++authors = ["Salsa developers"]
++edition = "2021"
++license = "Apache-2.0 OR MIT"
++repository = "https://github.com/salsa-rs/salsa"
+ description = "A generic framework for on-demand, incrementalized computation (experimental)"
++rust-version = "1.80"
+ 
+ [dependencies]
+ salsa-macro-rules = { version = "0.19.0", path = "components/salsa-macro-rules" }
+@@ -76,13 +76,3 @@ harness = false
+ [[bench]]
+ name = "dataflow"
+ harness = false
+-
+-[workspace]
+-members = ["components/salsa-macro-rules", "components/salsa-macros"]
+-
+-[workspace.package]
+-authors = ["Salsa developers"]
+-edition = "2021"
+-license = "Apache-2.0 OR MIT"
+-repository = "https://github.com/salsa-rs/salsa"
+-rust-version = "1.80"
