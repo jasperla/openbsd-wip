@@ -1,5 +1,6 @@
 COMMENT =		Quickly configure a OpenBSD desktop system
 
+# Suffix version with commit # from git describe --tags
 V =			1.1.0.6
 COMMIT =		a1e2af98b9c863451d040e5d63d6450aaf1417e3
 PKGNAME =		desktop-installer-${V}
