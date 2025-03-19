@@ -445,13 +445,13 @@ SHA256 (cargo/regex-syntax-0.6.29.tar.gz) = 8WLG3XsAiYHk1AIQrKILS9D5tgypJxBhsH94
 SHA256 (cargo/regex-syntax-0.8.4.tar.gz) = emagOufIAfrNd6KTcLT67CAXaJFawUpyG6NvILycIJs=
 SHA256 (cargo/regex-syntax-0.8.5.tar.gz) = KxXEMYa+Z6T9Y77lDQMDr//O84FJLr4sXYfzJOG4gVw=
 SHA256 (cargo/rend-0.5.2.tar.gz) = o16Ka/KM0SEFOmaqLmouPq/61KYAEhefDoZKpf/v8hU=
-SHA256 (cargo/reqwest-0.12.14.tar.gz) = mJ4yflECY5gOIx3lSKM+Y9NJYtKa5htGc4mhoJYnolQ=
+SHA256 (cargo/reqwest-0.12.15.tar.gz) = 0ZxGpv3Ui8TauUthA/zMVdNMZ8wK0EZTqtTqKgfNe7s=
 SHA256 (cargo/reqwest-middleware-0.4.1.tar.gz) = ZOiXVRO9mnpDqtAQMOebNJjgXbFOnZRd9kg+jPm4xMQ=
 SHA256 (cargo/reqwest-retry-0.7.0.tar.gz) = Kcc+QZWmv7yxdLeQ2bNAerkGRpdsVd5YplFdol2FEXg=
 SHA256 (cargo/resvg-0.29.0.tar.gz) = doiCGcCIHiKwzqsG/dz+gxY82BZCvWDHhCOH+clopy4=
 SHA256 (cargo/retry-policies-0.4.0.tar.gz) = WHVHHmyrKHG8FQ7LjHJ9tRE8kzjMM1TcXuNCW2qkChw=
 SHA256 (cargo/rgb-0.8.50.tar.gz) = Vzl9FmRnAEg7Z9LdZRHXkxj50Ff9vSGkBmrqyLQdMQo=
-SHA256 (cargo/ring-0.17.8.tar.gz) = wX+ky2WONYNCPpFbnzrMAczq7hhg4z1Z665mrcOi3A0=
+SHA256 (cargo/ring-0.17.14.tar.gz) = pGiebCKU2B6I3GJhx2i2O8T824Ur5tE1JJixFPYTg7c=
 SHA256 (cargo/rkyv-0.8.10.tar.gz) = HhRzccdVU+Hi/NtIOUSoVAuEOMMUJieVU7moGCqbe2U=
 SHA256 (cargo/rkyv_derive-0.8.10.tar.gz) = JGtArBia9sZ10SS4AujvbVJGxT4XNnzpUB+PZqgau3o=
 SHA256 (cargo/rmp-0.8.14.tar.gz) = Io7XwW+jl4LDs0aOl0rsJ5XpCJFTzQjuLprvs2EzNMQ=
@@ -531,7 +531,6 @@ SHA256 (cargo/smawk-0.3.2.tar.gz) = t8OIwbXpN1bQx0CWXEHogi+GZiHUGsvfYzamoWj4hAw=
 SHA256 (cargo/socket2-0.5.7.tar.gz) = zjBesLQpZpaDW3Hfc+uRLg8f/SVWpQH87ebgxQNJGRw=
 SHA256 (cargo/socket2-0.5.8.tar.gz) = yXAmnZm2TmDsO9atJycAkqU5TE4wkxSxiuP+V1aV++g=
 SHA256 (cargo/spdx-0.10.8.tar.gz) = WLaTVtpn4vwfVCxx6n5lSjYaeck45EJDkuz0+gZdIZM=
-SHA256 (cargo/spin-0.9.8.tar.gz) = aYDo11ESQfis9K6927H/k4317r6YaRQYxEaNC3Kpamc=
 SHA256 (cargo/stable_deref_trait-1.2.0.tar.gz) = qPEScpUS+ORC2B+VqKfd8rfGuKGm9QmpWGQUKzDKstM=
 SHA256 (cargo/strict-num-0.1.1.tar.gz) = Zje6t3ItN5yLQbqEkijWgMwS0KRboforSPKjBXegZzE=
 SHA256 (cargo/strsim-0.11.1.tar.gz) = fai1c2hF2fL8uDfqXZ4mKFZLOwQ6cJSKPwt3iDjF+08=
@@ -777,7 +776,7 @@ SHA256 (cargo/zstd-safe-7.2.1.tar.gz) = VKOrTbaM6jZqzFyJfHtNTRuJlKnNbm+EH4lkVmpB
 SHA256 (cargo/zstd-sys-2.0.13+zstd.1.5.6.tar.gz) = OP8PIc/uj5fZTO9BNZ4MiaphEwKKsCkaqMoAOJlalao=
 SHA256 (charliermarsh-rs-async-zip-c909fda63fcafe4af496a07bfda28a5aae97e58d.tar.gz) = j8ceIZpQWvZNnGFveUDSTBs43B9UwD0yyzS6hJMPPh0=
 SHA256 (charliermarsh-tl-6e25b2ee2513d75385101a8ff9f591ef51f314ec.tar.gz) = 6Di8p8sgXjc82AHOGUdqgIU0pgkPwmGqLqdN/ZzqaLA=
-SHA256 (uv-0.6.7.tar.gz) = mFiGZ+DK4b5OT3l70Rg8NdEhuOhFGv96x3Jmv9HWnGA=
+SHA256 (uv-0.6.8.tar.gz) = aFu/UVI0nJI2rNPPzgR8pNDB58sO0c4qOGcLm5P/OAk=
 SIZE (astral-sh-pubgrub-b70cf707aa43f21b32f3a61b8a0889b15032d5c4.tar.gz) = 98983
 SIZE (cargo/actix-codec-0.5.2.tar.gz) = 14085
 SIZE (cargo/actix-http-3.9.0.tar.gz) = 162122
@@ -1225,13 +1224,13 @@ SIZE (cargo/regex-syntax-0.6.29.tar.gz) = 299752
 SIZE (cargo/regex-syntax-0.8.4.tar.gz) = 347577
 SIZE (cargo/regex-syntax-0.8.5.tar.gz) = 357541
 SIZE (cargo/rend-0.5.2.tar.gz) = 14775
-SIZE (cargo/reqwest-0.12.14.tar.gz) = 198578
+SIZE (cargo/reqwest-0.12.15.tar.gz) = 199320
 SIZE (cargo/reqwest-middleware-0.4.1.tar.gz) = 25928
 SIZE (cargo/reqwest-retry-0.7.0.tar.gz) = 16006
 SIZE (cargo/resvg-0.29.0.tar.gz) = 94880
 SIZE (cargo/retry-policies-0.4.0.tar.gz) = 12127
 SIZE (cargo/rgb-0.8.50.tar.gz) = 21980
-SIZE (cargo/ring-0.17.8.tar.gz) = 4188554
+SIZE (cargo/ring-0.17.14.tar.gz) = 1502610
 SIZE (cargo/rkyv-0.8.10.tar.gz) = 163013
 SIZE (cargo/rkyv_derive-0.8.10.tar.gz) = 22743
 SIZE (cargo/rmp-0.8.14.tar.gz) = 29687
@@ -1311,7 +1310,6 @@ SIZE (cargo/smawk-0.3.2.tar.gz) = 13831
 SIZE (cargo/socket2-0.5.7.tar.gz) = 55758
 SIZE (cargo/socket2-0.5.8.tar.gz) = 56309
 SIZE (cargo/spdx-0.10.8.tar.gz) = 1036873
-SIZE (cargo/spin-0.9.8.tar.gz) = 38958
 SIZE (cargo/stable_deref_trait-1.2.0.tar.gz) = 8054
 SIZE (cargo/strict-num-0.1.1.tar.gz) = 5104
 SIZE (cargo/strsim-0.11.1.tar.gz) = 14266
@@ -1557,4 +1555,4 @@ SIZE (cargo/zstd-safe-7.2.1.tar.gz) = 21122
 SIZE (cargo/zstd-sys-2.0.13+zstd.1.5.6.tar.gz) = 749090
 SIZE (charliermarsh-rs-async-zip-c909fda63fcafe4af496a07bfda28a5aae97e58d.tar.gz) = 51763
 SIZE (charliermarsh-tl-6e25b2ee2513d75385101a8ff9f591ef51f314ec.tar.gz) = 37106
-SIZE (uv-0.6.7.tar.gz) = 3791242
+SIZE (uv-0.6.8.tar.gz) = 3793571
