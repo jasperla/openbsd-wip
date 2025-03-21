@@ -1,8 +1,8 @@
 Remove workspace for salsa crate (conflict with root workspace)
 
-Index: modcargo-crates/salsa-095d8b2b8115c3cf8bf31914dd9ea74648bb7cf9/Cargo.toml
---- modcargo-crates/salsa-095d8b2b8115c3cf8bf31914dd9ea74648bb7cf9/Cargo.toml.orig
-+++ modcargo-crates/salsa-095d8b2b8115c3cf8bf31914dd9ea74648bb7cf9/Cargo.toml
+Index: modcargo-crates/salsa-d758691ba17ee1a60c5356ea90888d529e1782ad/Cargo.toml
+--- modcargo-crates/salsa-d758691ba17ee1a60c5356ea90888d529e1782ad/Cargo.toml.orig
++++ modcargo-crates/salsa-d758691ba17ee1a60c5356ea90888d529e1782ad/Cargo.toml
 @@ -1,12 +1,12 @@
  [package]
  name = "salsa"
@@ -21,7 +21,7 @@ Index: modcargo-crates/salsa-095d8b2b8115c3cf8bf31914dd9ea74648bb7cf9/Cargo.toml
  
  [dependencies]
  salsa-macro-rules = { version = "0.19.0", path = "components/salsa-macro-rules" }
-@@ -76,13 +76,3 @@ harness = false
+@@ -79,13 +79,3 @@ harness = false
  [[bench]]
  name = "dataflow"
  harness = false
