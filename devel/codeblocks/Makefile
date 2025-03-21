@@ -10,7 +10,7 @@ V=		20.03
 
 # for integration testing via openbsd-wip:
 
-SVN=		13636
+SVN=		13637
 
 GH_ACCOUNT=	jggimi
 GH_PROJECT=	codeblocks
