@@ -1,0 +1,26 @@
+bin/ggunzip
+bin/ggzexe
+@bin bin/ggzip
+bin/guncompress
+bin/gzcat
+bin/gzcmp
+bin/gzdiff
+bin/gzegrep
+bin/gzfgrep
+bin/gzforce
+bin/gzgrep
+bin/gzless
+bin/gzmore
+bin/gznew
+@info info/gzip.info
+@man man/man1/ggunzip.1
+@man man/man1/ggzexe.1
+@man man/man1/ggzip.1
+@man man/man1/gzcat.1
+@man man/man1/gzcmp.1
+@man man/man1/gzdiff.1
+@man man/man1/gzforce.1
+@man man/man1/gzgrep.1
+@man man/man1/gzless.1
+@man man/man1/gzmore.1
+@man man/man1/gznew.1
