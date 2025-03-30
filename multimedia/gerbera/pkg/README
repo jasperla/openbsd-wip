@@ -1,0 +1,10 @@
+$OpenBSD: README $
+
++-----------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-----------------------------------------------------------------------
+
+Gerbera is based on MediaTomb which is dead upstream, so this is a community
+attempt to kick it back into life.
+
+Full documentation is avaible under ${TRUEPREFIX}/share/doc/gerbera/index.html.
