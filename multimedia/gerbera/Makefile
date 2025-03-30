@@ -9,17 +9,14 @@ PERMIT_PACKAGE =	Yes
 
 MAINTAINER =		Klemens Nanni <kn@openbsd.org>
 
-WANTLIB =		${COMPILER_LIBCXX} c ebml exif fmt iconv ixml m magic
-WANTLIB += 		matroska pugixml spdlog sqlite3 tag upnp z
+WANTLIB =		${COMPILER_LIBCXX} c ebml exif fmt iconv m magic \
+			matroska npupnp pugixml spdlog sqlite3 tag z
 
 # -std=c++17
 COMPILER =		base-clang ports-gcc
 
 MODULES =		devel/cmake
 
-DEBUG_PACKAGES =	${BUILD_PACKAGES}
-
-# requries pending libupnp update
 LIB_DEPENDS =		audio/taglib>=1.12 \
 			converters/libiconv \
 			databases/sqlite3>=3.7.0 \
@@ -28,8 +25,9 @@ LIB_DEPENDS =		audio/taglib>=1.12 \
 			devel/spdlog>=1.8.1 \
 			graphics/libexif \
 			multimedia/libmatroska \
-			net/libupnp>=1.14.6 \
 			textproc/pugixml
+
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 CONFIGURE_ARGS =	-DWITH_CURL=OFF \
 			-DWITH_EXIV2=OFF \
@@ -40,6 +38,11 @@ CONFIGURE_ARGS =	-DWITH_CURL=OFF \
 # configure does not find it
 #LIB_DEPENDS +=		devel/libinotify
 CONFIGURE_ARGS +=	-DWITH_INOTIFY=OFF
+
+# needs net/libupnp>=1.14.6, but we have 1.8.7;
+# an update needs requires updating its only consumer net/libupnpp as well
+LIB_DEPENDS +=		net/libnpupnp>=4.2.1
+CONFIGURE_ARGS +=	-DWITH_NPUPNP=ON
 
 post-install:
 	mv ${PREFIX}/{share/,}man/man1/gerbera.1
