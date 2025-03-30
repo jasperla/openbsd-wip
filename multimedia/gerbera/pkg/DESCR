@@ -1,17 +1,18 @@
-${PKGSTEM} is a UPnP media server which allows you to stream your digital media
-through your home network and consume it on a variety of UPnP compatible
-devices.
+Gerbera is a UPnP media server which allows you to stream your digital media
+through your home network and consume it on a variety of UPnP compatible devices.
 
-Features include:
-
+## Features
 * Browse and playback your media via your network on all kinds of devices.
-* Metadata extraction from MP3, OGG, AAC, M4A, FLAC, JPG (and many more!) files.
+* Web UI with a tree view of the database and the file system,
+  allowing to add/remove/edit/browse your media
+* Metadata extraction from MP3, OGG, AAC, M4A, FLAC, wavpack,
+  JPG (and many more!) files.
 * Media thumbnail support
-* Web UI with a tree view of the database and the file system, allowing to
-  add/remove/edit/browse your media
 * Highly flexible media format transcoding via plugins / scripts
 * Automatic directory rescans (timed, inotify)
 * User defined server layout based on extracted metadata
-* On the fly video thumbnail generation with libffmpegthumbnailer
-* Support for external URLs (create links to internet content and serve them via
-  UPnP to your renderer)
+* Supports last.fm scrobbing
+* On the fly video thumbnail generation
+* Support for external URLs (create links to internet content
+  and serve them via UPnP to your renderer)
+

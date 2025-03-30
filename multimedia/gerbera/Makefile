@@ -1,67 +1,48 @@
-# $OpenBSD: Makefile $
-
-COMMENT =		UPnP Media Server
-
-GH_ACCOUNT =		gerbera
-GH_PROJECT =		gerbera
-GH_TAGNAME =		v1.3.1
-
+COMMENT =		UPnP media server
 CATEGORIES =		multimedia net
 
-# GPLv2+
+DIST_TUPLE =		github	gerbera	gerbera	v2.5.0	.
+HOMEPAGE =		https://gerbera.io
+
+# GPLv2
 PERMIT_PACKAGE =	Yes
 
-WANTLIB +=		${COMPILER_LIBCXX} avformat avutil c curl duktape exif
-WANTLIB +=		exiv2 expat ffmpegthumbnailer iconv ixml m magic sqlite3
-WANTLIB +=		tag upnp z
+MAINTAINER =		Klemens Nanni <kn@openbsd.org>
 
-# C++1z, upstream is actively working towards C++17
-COMPILER =		base-clang ports-gcc base-gcc
+WANTLIB =		${COMPILER_LIBCXX} c ebml exif fmt iconv ixml m magic
+WANTLIB += 		matroska pugixml spdlog sqlite3 tag upnp z
 
-MODULES =		devel/cmake \
-			lang/python
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
-MODPY_RUNDEP =		No
+# -std=c++17
+COMPILER =		base-clang ports-gcc
 
-BUILD_DEPENDS =		textproc/py-sphinx${MODPY_FLAVOR}
+MODULES =		devel/cmake
 
-LIB_DEPENDS =		audio/taglib>=1.11.1 \
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
+
+# requries pending libupnp update
+LIB_DEPENDS =		audio/taglib>=1.12 \
 			converters/libiconv \
-			databases/sqlite3 \
+			databases/sqlite3>=3.7.0 \
+			devel/fmt>=7.1.3 \
 			devel/libmagic \
-			graphics/exiv2 \
-			graphics/ffmpeg \
-			graphics/ffmpegthumbnailer \
+			devel/spdlog>=1.8.1 \
 			graphics/libexif \
-			lang/duktape>=2.1.0 \
-			net/curl \
-			net/libupnp>=1.8.3 \
-			devel/libinotify
+			multimedia/libmatroska \
+			net/libupnp>=1.14.6 \
+			textproc/pugixml
 
-CONFIGURE_ARGS =	-DINOTIFY_INCLUDE_DIR=${LOCALBASE}/include/inotify \
-			-DINOTIFY_LIBRARY=${LOCALBASE}/lib/inotify \
-			-DWITH_AVCODEC=1 \
-			-DWITH_EXIV2=1 \
-			-DWITH_FFMPEGTHUMBNAILER=1 \
-			-DWITH_LASTFM=0 \
-			-DWITH_SYSTEMD=0 \
+CONFIGURE_ARGS =	-DWITH_CURL=OFF \
+			-DWITH_EXIV2=OFF \
+			-DWITH_JS=OFF \
+			-DWITH_SYSTEMD=OFF \
+			-DWITH_DEBUG=OFF
 
-# XXX: INOTIFY_LIBRARY must point to the shared object directly
-#   WARNING: Target "gerbera" requests linking to directory
-#   "/usr/local/lib/inotify".  Targets may link only to libraries.  CMake is
-#   dropping the item.
-CONFIGURE_ARGS +=	-DWITH_INOTIFY=0
-
-# XXX: auto_ptr is deprecated with C++11 and removed with C++17
-#   /usr/local/include/exiv2/value.hpp:66:22: error: no template named
-#   'auto_ptr' in namespace 'std'
-CXXFLAGS +=		-Dauto_ptr=unique_ptr
-
-NO_TEST =		Yes
+# configure does not find it
+#LIB_DEPENDS +=		devel/libinotify
+CONFIGURE_ARGS +=	-DWITH_INOTIFY=OFF
 
 post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/gerbera/
-	sphinx-build${MODPY_BIN_SUFFIX} -N ${WRKSRC}/doc/ \
-	    ${PREFIX}/share/doc/gerbera/
+	mv ${PREFIX}/{share/,}man/man1/gerbera.1
+	rm -r ${PREFIX}/share/man/
 
 .include <bsd.port.mk>
