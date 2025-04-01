@@ -5,7 +5,7 @@ COMMENT =	pattern matching swiss knife for malware researchers
 
 GH_ACCOUNT =	VirusTotal
 GH_PROJECT =	yara-x
-GH_TAGNAME =	v0.13.0
+GH_TAGNAME =	v0.14.0
 
 CATEGORIES =	security
 
