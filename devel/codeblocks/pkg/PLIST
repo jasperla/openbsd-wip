@@ -326,6 +326,7 @@ lib/codeblocks/plugins/
 @so lib/codeblocks/plugins/libCccc.so
 @so lib/codeblocks/plugins/libCppCheck.so
 @so lib/codeblocks/plugins/libCscope.so
+@so lib/codeblocks/plugins/libDisplayEvents.so
 @so lib/codeblocks/plugins/libDoxyBlocks.so
 @so lib/codeblocks/plugins/libEditorConfig.so
 @so lib/codeblocks/plugins/libEditorTweaks.so
@@ -434,6 +435,7 @@ share/codeblocks/BrowseTracker.zip
 share/codeblocks/Cccc.zip
 share/codeblocks/CppCheck.zip
 share/codeblocks/Cscope.zip
+share/codeblocks/DisplayEvents.zip
 share/codeblocks/DoxyBlocks.zip
 share/codeblocks/EditorConfig.zip
 share/codeblocks/EditorTweaks.zip
