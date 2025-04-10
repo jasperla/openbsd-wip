@@ -588,7 +588,7 @@ SHA256 (cargo/tinytemplate-1.2.1.tar.gz) = vk1rXxn/dmToyY0D4hOctRDbmwpgtV+Ohwm2i
 SHA256 (cargo/tinyvec-1.8.1.tar.gz) = Ai24kE36NC7+chmFFn6fzRbCmyJttDl+11KnYc/Ogeg=
 SHA256 (cargo/tinyvec_macros-0.1.1.tar.gz) = HzzLrDEf6gX4b2GQS0YrVfs9+IN6Nm38YBoBYdBTLyA=
 SHA256 (cargo/tokio-1.41.1.tar.gz) = Is+1vuempSk5ypIk1qyJe7ZpE0B42qhzVWCJf2neTTM=
-SHA256 (cargo/tokio-1.43.0.tar.gz) = PWH6T/o95BK/6jNcbs/2gd4rYJujx37z4A5SGBOp7Z4=
+SHA256 (cargo/tokio-1.44.0.tar.gz) = mXXqD0i1qjlyvy2IjCOBgkWEN8wqGTdLgbJc3xAj+zo=
 SHA256 (cargo/tokio-macros-2.4.0.tar.gz) = aT1ZYxLoiWG8Z9fx+Xr4pwIn2fkMMbulgG7sAEl411I=
 SHA256 (cargo/tokio-macros-2.5.0.tar.gz) = bgbUPxNFo7zTn2pW27fcqyukfmjorBNIVefivbr4yrg=
 SHA256 (cargo/tokio-rustls-0.26.1.tar.gz) = X20Jdeqs4M8Pyt7k5Kql2hW1wHkUbyz/tnwRO+Eivzc=
@@ -779,7 +779,7 @@ SHA256 (cargo/zstd-safe-7.2.1.tar.gz) = VKOrTbaM6jZqzFyJfHtNTRuJlKnNbm+EH4lkVmpB
 SHA256 (cargo/zstd-sys-2.0.13+zstd.1.5.6.tar.gz) = OP8PIc/uj5fZTO9BNZ4MiaphEwKKsCkaqMoAOJlalao=
 SHA256 (charliermarsh-rs-async-zip-c909fda63fcafe4af496a07bfda28a5aae97e58d.tar.gz) = j8ceIZpQWvZNnGFveUDSTBs43B9UwD0yyzS6hJMPPh0=
 SHA256 (charliermarsh-tl-6e25b2ee2513d75385101a8ff9f591ef51f314ec.tar.gz) = 6Di8p8sgXjc82AHOGUdqgIU0pgkPwmGqLqdN/ZzqaLA=
-SHA256 (uv-0.6.13.tar.gz) = qnpFNK2fFaZAPVyR2DHXZMrt1o0cicg3MoGUnTpRLkg=
+SHA256 (uv-0.6.14.tar.gz) = iqZ12E5C01MftUlL1RnEGM20GThddo81CnOl56Qov3A=
 SIZE (astral-sh-pubgrub-b70cf707aa43f21b32f3a61b8a0889b15032d5c4.tar.gz) = 98983
 SIZE (cargo/actix-codec-0.5.2.tar.gz) = 14085
 SIZE (cargo/actix-http-3.9.0.tar.gz) = 162122
@@ -1370,7 +1370,7 @@ SIZE (cargo/tinytemplate-1.2.1.tar.gz) = 26490
 SIZE (cargo/tinyvec-1.8.1.tar.gz) = 47269
 SIZE (cargo/tinyvec_macros-0.1.1.tar.gz) = 5865
 SIZE (cargo/tokio-1.41.1.tar.gz) = 805675
-SIZE (cargo/tokio-1.43.0.tar.gz) = 817422
+SIZE (cargo/tokio-1.44.0.tar.gz) = 829777
 SIZE (cargo/tokio-macros-2.4.0.tar.gz) = 12501
 SIZE (cargo/tokio-macros-2.5.0.tar.gz) = 12617
 SIZE (cargo/tokio-rustls-0.26.1.tar.gz) = 31214
@@ -1561,4 +1561,4 @@ SIZE (cargo/zstd-safe-7.2.1.tar.gz) = 21122
 SIZE (cargo/zstd-sys-2.0.13+zstd.1.5.6.tar.gz) = 749090
 SIZE (charliermarsh-rs-async-zip-c909fda63fcafe4af496a07bfda28a5aae97e58d.tar.gz) = 51763
 SIZE (charliermarsh-tl-6e25b2ee2513d75385101a8ff9f591ef51f314ec.tar.gz) = 37106
-SIZE (uv-0.6.13.tar.gz) = 3830359
+SIZE (uv-0.6.14.tar.gz) = 3847653
