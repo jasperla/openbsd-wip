@@ -1,8 +1,8 @@
 Remove workspace for salsa crate (conflict with root workspace)
 
-Index: modcargo-crates/salsa-296a8c78da1b54c76ff5795eb4c1e3fe2467e9fc/Cargo.toml
---- modcargo-crates/salsa-296a8c78da1b54c76ff5795eb4c1e3fe2467e9fc/Cargo.toml.orig
-+++ modcargo-crates/salsa-296a8c78da1b54c76ff5795eb4c1e3fe2467e9fc/Cargo.toml
+Index: modcargo-crates/salsa-87bf6b6c2d5f6479741271da73bd9d30c2580c26/Cargo.toml
+--- modcargo-crates/salsa-87bf6b6c2d5f6479741271da73bd9d30c2580c26/Cargo.toml.orig
++++ modcargo-crates/salsa-87bf6b6c2d5f6479741271da73bd9d30c2580c26/Cargo.toml
 @@ -1,12 +1,12 @@
  [package]
  name = "salsa"
