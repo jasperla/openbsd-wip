@@ -20,8 +20,8 @@ WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre2-8 pixman-1 png pthread
 WANTLIB += tiff wayland-client wayland-cursor wayland-egl xcb
 WANTLIB += xcb-dri2 xcb-glx xcb-render xcb-shm xkbcommon z zstd
 
-BUILD_DEPENDS =		lang/vala,-main
-RUN_DEPENDS =		x11/gtk+3,-main devel/glib2
+BUILD_DEPENDS =		lang/vala
+RUN_DEPENDS =		x11/dbus x11/gtk+3 devel/glib2
 LIB_DEPENDS =		x11/libdbusmenu
 
 MAKE_ENV =		PREFIX=$(TRUEPREFIX)

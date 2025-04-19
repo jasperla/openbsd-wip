@@ -1,4 +1,5 @@
 @bin bin/snixembed
+share/doc/pkg-readmes/${PKGSTEM}
 @mandir share/man/
 share/man/man1/
 @man share/man/man1/snixembed.1
