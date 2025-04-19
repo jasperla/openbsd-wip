@@ -1,6 +1,6 @@
 COMMENT =	tool and decoders for working with binary and text formats
 
-V =		0.14.0
+V =		0.15.0
 
 MODGO_MODNAME =	github.com/wader/fq
 MODGO_VERSION =	v${V}

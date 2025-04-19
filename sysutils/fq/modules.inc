@@ -1,5 +1,5 @@
 MODGO_MODULES =	\
-	github.com/!burnt!sushi/toml		 v1.4.0 \
+	github.com/!burnt!sushi/toml		 v1.5.0 \
 	github.com/creasty/defaults		 v1.8.0 \
 	github.com/ergochat/readline		 v0.1.3 \
 	github.com/golang/snappy		 v0.0.4 \
@@ -19,13 +19,13 @@ MODGO_MODULES =	\
 	github.com/vishvananda/netlink		 v1.1.0 \
 	github.com/vishvananda/netns		 v0.0.0-20211101163701-50045581ed74 \
 	github.com/wader/gojq			 v0.12.1-0.20250208151254-0aa7b87b2c2b \
-	golang.org/x/crypto			 v0.32.0 \
+	golang.org/x/crypto			 v0.37.0 \
 	golang.org/x/mod			 v0.17.0 \
-	golang.org/x/net			 v0.34.0 \
-	golang.org/x/sync			 v0.11.0 \
-	golang.org/x/sys			 v0.30.0 \
-	golang.org/x/term			 v0.29.0 \
-	golang.org/x/text			 v0.22.0 \
+	golang.org/x/net			 v0.39.0 \
+	golang.org/x/sync			 v0.13.0 \
+	golang.org/x/sys			 v0.32.0 \
+	golang.org/x/term			 v0.31.0 \
+	golang.org/x/text			 v0.24.0 \
 	golang.org/x/tools			 v0.21.1-0.20240508182429-e35e4ccd0d2d \
 	gopkg.in/check.v1			 v1.0.0-20200227125254-8fa46927fb4f \
 	gopkg.in/yaml.v3			 v3.0.1
@@ -36,9 +36,6 @@ MODGO_MODFILES =	\
 	golang.org/x/sys	 v0.15.0 \
 	golang.org/x/sys	 v0.20.0 \
 	golang.org/x/sys	 v0.24.0 \
-	golang.org/x/sys	 v0.29.0 \
-	golang.org/x/term	 v0.28.0 \
-	golang.org/x/text	 v0.21.0 \
 	golang.org/x/text	 v0.9.0 \
 	gopkg.in/check.v1	 v0.0.0-20161208181325-20d25e280405
 
