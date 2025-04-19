@@ -1,0 +1,4 @@
+@bin bin/snixembed
+@mandir share/man/
+share/man/man1/
+@man share/man/man1/snixembed.1
