@@ -1,6 +1,7 @@
 @comment @bin bin/release
 @comment @bin bin/sleepit
 @bin bin/task
+@comment @bin bin/tmp
 share/bash-completion/
 share/bash-completion/completions/
 share/bash-completion/completions/task
