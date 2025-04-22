@@ -155,7 +155,7 @@ SHA256 (cargo/windows_x86_64_msvc-0.48.5.tar.gz) = 7ZT85hVxpABoUrc4mgY6uYPALrG7N
 SHA256 (cargo/windows_x86_64_msvc-0.52.6.tar.gz) = WJ9tqExkYgR0fRJwoqVmHqZu0cztJjHVRv37FVlZ+ew=
 SHA256 (cargo/winnow-0.7.6.tar.gz) = Y9P82bukSwOCHn1pnu7pWfMSbcxKqOSuGOxhfCpc6hA=
 SHA256 (cargo/wit-bindgen-rt-0.39.0.tar.gz) = b0IyDmH+LP00NU7LWX+G9BNISnmLpEqMoRZcWNQtpsE=
-SHA256 (tailspin-5.4.1.tar.gz) = j1fIeq8C9LUocGa7GdoNvHkaiM+gosLeFq8tSSabLxw=
+SHA256 (tailspin-5.4.2.tar.gz) = IiYinmyFhZoJS75OZypGeXbXVj+3ugRU51E1wqZTfuc=
 SIZE (cargo/addr2line-0.24.2.tar.gz) = 39015
 SIZE (cargo/adler2-2.0.0.tar.gz) = 13529
 SIZE (cargo/aho-corasick-1.1.3.tar.gz) = 183311
@@ -313,4 +313,4 @@ SIZE (cargo/windows_x86_64_msvc-0.48.5.tar.gz) = 798412
 SIZE (cargo/windows_x86_64_msvc-0.52.6.tar.gz) = 832564
 SIZE (cargo/winnow-0.7.6.tar.gz) = 174072
 SIZE (cargo/wit-bindgen-rt-0.39.0.tar.gz) = 12241
-SIZE (tailspin-5.4.1.tar.gz) = 3620273
+SIZE (tailspin-5.4.2.tar.gz) = 3620801
