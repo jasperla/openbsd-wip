@@ -2,7 +2,7 @@ COMMENT =	opinionated Lua code formatter
 
 GH_ACCOUNT =	JohnnyMorganz
 GH_PROJECT =	StyLua
-GH_TAGNAME =	v2.0.2
+GH_TAGNAME =	v2.1.0
 
 PKGNAME =	${DISTNAME:L}
 

@@ -1,4 +1,4 @@
-SHA256 (StyLua-2.0.2.tar.gz) = DYilXU0zp9czS974zK8ftlJLId1m1gvo78DPkvbTGtM=
+SHA256 (StyLua-2.1.0.tar.gz) = 7sqN6CX3zVUKhGuysMQJ8RLo8W/gB4Y5lsxJykuWQfk=
 SHA256 (cargo/aho-corasick-1.1.2.tar.gz) = spady5WLNmVUcfxh9+QW+nYDO91L/tBnjY/uHi0HofA=
 SHA256 (cargo/anes-0.1.6.tar.gz) = S0bLs2Krh1KSHJfgQfXjZu5il71CijEnW5/PHjgPcpk=
 SHA256 (cargo/anstyle-1.0.4.tar.gz) = cHkHW0H1M7jGHSpNBzxGduH4skn/lKOTsFldswTg3Yc=
@@ -25,7 +25,7 @@ SHA256 (cargo/clap_lex-0.2.4.tar.gz) = KFDy9agsv0N91a9NSYSPvfwnwVfD0BA0V3b5UnZSY
 SHA256 (cargo/console-0.15.8.tar.gz) = Dh+D/Adr1t0nUX6s3yX+9sTf5fHXRIuvqvOibxO15Os=
 SHA256 (cargo/criterion-0.4.0.tar.gz) = 58duCcGq4rxSs9LynhPGVyVTswxKobikn9cN5kEmVMs=
 SHA256 (cargo/criterion-plot-0.5.0.tar.gz) = a1CCY0J4alGoni2joo8cMrBuOHIBvC0ZeR9iLGc3BrE=
-SHA256 (cargo/crossbeam-channel-0.5.11.tar.gz) = F23BdbePVsDzIZEdnI6yt3p4pIYLnBnbg4Nf6hpGZJs=
+SHA256 (cargo/crossbeam-channel-0.5.15.tar.gz) = grj4+GizaWf5YGeQ0ZA1cN6c6vhwp7+fu9MBbWNqLLI=
 SHA256 (cargo/crossbeam-deque-0.8.5.tar.gz) = YT+MwB/pzxo+s9f0iP0vqDiEA+lwOeL3NpKTLikadw0=
 SHA256 (cargo/crossbeam-epoch-0.9.18.tar.gz) = W4KsSjwsqcNGCWTwIOFALt1XU0EddzeqOcNxStG1Qg4=
 SHA256 (cargo/crossbeam-utils-0.8.19.tar.gz) = JI47rMfca6o7IeQF7gRcMEcQGkkUXn6eylg6tMLKU0U=
@@ -41,7 +41,7 @@ SHA256 (cargo/env_logger-0.10.2.tar.gz) = TNQFqrFxy4XWc15cjZ2wOMF9PKAHpNLCXzN5Nc
 SHA256 (cargo/equivalent-1.0.1.tar.gz) = VEOAfW3/aTc9Qzq571N4rY31DKYpjK8V3m5S4kqvVNU=
 SHA256 (cargo/errno-0.3.8.tar.gz) = oljkbNwGPrhRnAC5/IRfxHvPykEw4vCOiGZc7ahHQkU=
 SHA256 (cargo/fastrand-2.0.1.tar.gz) = JcvONz7EZT8aAaMeil5ewMYi3Cf/nE5mBu7+9cu+1KU=
-SHA256 (cargo/full_moon-1.1.2.tar.gz) = TH2vwsut2RT3AZoIOVo6KcXXNctnYnUcVmnkjF/yx3U=
+SHA256 (cargo/full_moon-2.0.0.tar.gz) = flVE4KnrFBVsa9wSv9O9w1vvGpJ+c3brF2JuXYuuw6M=
 SHA256 (cargo/full_moon_derive-0.11.0.tar.gz) = mbS9Es5Wkn0dxUeNIVKOqMS5PKhf+PgEO2pTUaKjxvc=
 SHA256 (cargo/globset-0.4.14.tar.gz) = V9o7m1uFvWbzEJP4xAi5CnRDFnJUJGZJfcvf3AIDS+E=
 SHA256 (cargo/globwalk-0.9.1.tar.gz) = C/dg6/aYeNn9jxEMiXA9kM41CVMk0fHty1lcY5Re51c=
@@ -139,7 +139,7 @@ SHA256 (cargo/windows_x86_64_gnullvm-0.52.0.tar.gz) = GmV+Hp0/UUdFpXKmhG08eqfb4W
 SHA256 (cargo/windows_x86_64_msvc-0.52.0.tar.gz) = 3/lkHRzUvo0aBw2vnjdzxfZ+eLTZ1CJjAgwFdwZ2XAQ=
 SHA256 (cargo/winnow-0.5.35.tar.gz) = GTHXipxzhh2gE09FO7H3kM5JsuMOuoQQtLebrHK0ai0=
 SHA256 (cargo/yaml-rust-0.4.5.tar.gz) = VsGTbEzHocmrIaHrtgLrlCuoaMvUSpnLfNxYkjNeHIU=
-SIZE (StyLua-2.0.2.tar.gz) = 424426
+SIZE (StyLua-2.1.0.tar.gz) = 430050
 SIZE (cargo/aho-corasick-1.1.2.tar.gz) = 183136
 SIZE (cargo/anes-0.1.6.tar.gz) = 23857
 SIZE (cargo/anstyle-1.0.4.tar.gz) = 13998
@@ -166,7 +166,7 @@ SIZE (cargo/clap_lex-0.2.4.tar.gz) = 9652
 SIZE (cargo/console-0.15.8.tar.gz) = 36364
 SIZE (cargo/criterion-0.4.0.tar.gz) = 108978
 SIZE (cargo/criterion-plot-0.5.0.tar.gz) = 22706
-SIZE (cargo/crossbeam-channel-0.5.11.tar.gz) = 90434
+SIZE (cargo/crossbeam-channel-0.5.15.tar.gz) = 92716
 SIZE (cargo/crossbeam-deque-0.8.5.tar.gz) = 21726
 SIZE (cargo/crossbeam-epoch-0.9.18.tar.gz) = 46875
 SIZE (cargo/crossbeam-utils-0.8.19.tar.gz) = 42328
@@ -182,7 +182,7 @@ SIZE (cargo/env_logger-0.10.2.tar.gz) = 36402
 SIZE (cargo/equivalent-1.0.1.tar.gz) = 6615
 SIZE (cargo/errno-0.3.8.tar.gz) = 10645
 SIZE (cargo/fastrand-2.0.1.tar.gz) = 14664
-SIZE (cargo/full_moon-1.1.2.tar.gz) = 372352
+SIZE (cargo/full_moon-2.0.0.tar.gz) = 408002
 SIZE (cargo/full_moon_derive-0.11.0.tar.gz) = 5356
 SIZE (cargo/globset-0.4.14.tar.gz) = 25090
 SIZE (cargo/globwalk-0.9.1.tar.gz) = 12572
