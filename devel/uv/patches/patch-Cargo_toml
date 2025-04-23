@@ -30,7 +30,7 @@ Index: Cargo.toml
  tokio = { version = "1.40.0", features = ["fs", "io-util", "macros", "process", "rt", "signal", "sync"] }
  tokio-stream = { version = "0.1.16" }
  tokio-util = { version = "0.7.12", features = ["compat", "io"] }
-@@ -177,7 +177,7 @@ tracing-tree = { version = "0.4.0" }
+@@ -178,7 +178,7 @@ tracing-tree = { version = "0.4.0" }
  unicode-width = { version = "0.2.0" }
  unscanny = { version = "0.1.0" }
  url = { version = "2.5.2", features = ["serde"] }
