@@ -4,7 +4,7 @@ COMMENT =	video editor
 
 GH_ACCOUNT =	mltframework
 GH_PROJECT =	shotcut
-GH_TAGNAME =	v25.03.29
+GH_TAGNAME =	v25.04.25
 
 CATEGORIES =	multimedia
 
