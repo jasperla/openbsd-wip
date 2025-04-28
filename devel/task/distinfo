@@ -214,7 +214,7 @@ SHA256 (go_modules/mvdan.cc/editorconfig/@v/v0.3.0.mod) = 6hl29DmEYwNahO3PuerQWQ
 SHA256 (go_modules/mvdan.cc/editorconfig/@v/v0.3.0.zip) = qlDEPnibAl8EvqlQ8QQxSUbS+qUDVEK/X3QV65eGD+E=
 SHA256 (go_modules/mvdan.cc/sh/v3/@v/v3.11.0.mod) = dwlt/Feq14sEckyAg6vutSGjl1tWvdPb+oYM6+ed6IE=
 SHA256 (go_modules/mvdan.cc/sh/v3/@v/v3.11.0.zip) = /7hlfbdcLRcHYY+f+VJLvbos1dMbJd9/COPhJdL5aes=
-SHA256 (task-3.43.2.zip) = NWlgB84CyXB1O3FUdork+YesaThS32X+RCcqbMCLESU=
+SHA256 (task-3.43.3.zip) = q8PjXbOJYdfNQN1kq+LqfJvKlTuYypso1QlCkToVUho=
 SIZE (go_modules/dario.cat/mergo/@v/v1.0.0.mod) = 65
 SIZE (go_modules/dario.cat/mergo/@v/v1.0.0.zip) = 49320
 SIZE (go_modules/github.com/!ladicle/tabwriter/@v/v1.0.0.mod) = 45
@@ -431,4 +431,4 @@ SIZE (go_modules/mvdan.cc/editorconfig/@v/v0.3.0.mod) = 38
 SIZE (go_modules/mvdan.cc/editorconfig/@v/v0.3.0.zip) = 13853
 SIZE (go_modules/mvdan.cc/sh/v3/@v/v3.11.0.mod) = 440
 SIZE (go_modules/mvdan.cc/sh/v3/@v/v3.11.0.zip) = 263395
-SIZE (task-3.43.2.zip) = 776710
+SIZE (task-3.43.3.zip) = 777999
