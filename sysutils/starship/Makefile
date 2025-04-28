@@ -2,9 +2,7 @@ COMMENT =	minimal, blazing-fast, and customizable prompt for any shell
 
 GH_ACCOUNT =	starship
 GH_PROJECT =	starship
-GH_TAGNAME =	v1.22.1
-
-REVISION =	0
+GH_TAGNAME =	v1.23.0
 
 CATEGORIES =	sysutils
 
@@ -22,7 +20,7 @@ MODULES =	devel/cargo
 # Disable build for battery feature
 # starship-battery crate not supported on OpenBSD
 MODCARGO_NO_DEFAULT_FEATURES =	Yes
-MODCARGO_FEATURES =		notify gix-max-perf
+MODCARGO_FEATURES =		notify
 
 CONFIGURE_STYLE =	cargo
 
