@@ -3,7 +3,7 @@ NOT_FOR_ARCHS =	sparc64
 
 COMMENT =	next-generation test runner for Rust
 
-VERSION =	0.9.94
+VERSION =	0.9.95
 
 DISTNAME =	cargo-nextest-${VERSION}
 
@@ -50,17 +50,17 @@ do-install:
 # Nextest's own tests do not work with cargo test.
 # We must use nextest to run its own test suite.
 #
-#      Summary [ 193.896s] 317 tests run: 307 passed, 10 failed, 1 skipped
-# TRY 4 FAIL [   5.806s] integration-tests::integration test_list_binaries_only
-# TRY 4 FAIL [   5.775s] integration-tests::integration test_list_default
-# TRY 4 FAIL [   5.451s] integration-tests::integration test_list_full
-# TRY 4 FAIL [   6.693s] integration-tests::integration test_list_with_default_filter
-# TRY 4 FAIL [  10.894s] integration-tests::integration test_run
-# TRY 4 FAIL [   7.922s] integration-tests::integration test_run_with_default_filter
-# TRY 4 FAIL [   5.934s] integration-tests::integration test_run_with_priorities
-# TRY 4 FAIL [   3.736s] integration-tests::integration test_show_config_test_groups
-# TRY 4 FAIL [   2.509s] integration-tests::integration test_target_dir
-# TRY 4 FAIL [   0.236s] integration-tests::integration test_version_info
+# Summary [ 205.375s] 324 tests run: 314 passed, 10 failed, 1 skipped
+# FAIL [  13.812s] integration-tests::integration test_list_binaries_only
+# FAIL [  12.786s] integration-tests::integration test_list_default
+# FAIL [  13.573s] integration-tests::integration test_list_full
+# FAIL [   7.861s] integration-tests::integration test_list_with_default_filter
+# FAIL [   5.782s] integration-tests::integration test_run
+# FAIL [  17.649s] integration-tests::integration test_run_with_default_filter
+# FAIL [   7.537s] integration-tests::integration test_run_with_priorities
+# FAIL [   5.265s] integration-tests::integration test_show_config_test_groups
+# FAIL [   3.398s] integration-tests::integration test_target_dir
+# FAIL [   0.244s] integration-tests::integration test_version_info
 do-test:
 	NEXTEST_HIDE_PROGRESS_BAR=1 ${MODCARGO_CARGO_RUN} run \
 		--package cargo-nextest -- nextest run --profile ci
