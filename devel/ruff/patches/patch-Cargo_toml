@@ -16,7 +16,7 @@ Index: Cargo.toml
  regex = { version = "1.10.2" }
  rustc-hash = { version = "2.0.0" }
  # When updating salsa, make sure to also update the revision in `fuzz/Cargo.toml`
--salsa = { git = "https://github.com/salsa-rs/salsa.git", rev = "87bf6b6c2d5f6479741271da73bd9d30c2580c26" }
+-salsa = { git = "https://github.com/salsa-rs/salsa.git", rev = "42f15835c0005c4b37aaf5bc1a15e3e1b3df14b7" }
 +salsa = { path = "${MODCARGO_VENDOR_DIR}/salsa-${SALSA_HASH}" }
  schemars = { version = "0.8.16" }
  seahash = { version = "4.1.0" }
