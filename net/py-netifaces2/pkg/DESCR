@@ -1,0 +1,6 @@
+drop-in replacement for netifaces package, project abandoned by it's
+maintainer.
+
+netifaces2 is a portable Python module providing a high-level means of
+retrieving information about the local machine's network interfaces,
+including their addresses.
