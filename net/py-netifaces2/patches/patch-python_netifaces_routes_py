@@ -1,0 +1,49 @@
+Implements gateways() function for OpenBSD
+
+Index: python/netifaces/routes.py
+--- python/netifaces/routes.py.orig
++++ python/netifaces/routes.py
+@@ -56,6 +56,43 @@ def routes_parse_ip_tool(ip_tool_path: str, old_api: b
+     return dict(table)
+ 
+ 
++def routes_parse_netstat_tool(netstat_tool_path: str, old_api: bool = False) -> GatewaysTable:
++    ipv4_query = subprocess.run([netstat_tool_path, "-r", "-n", "-f", "inet"], capture_output=True)
++    ipv6_query = subprocess.run([netstat_tool_path, "-r", "-n", "-f" ,"inet6"], capture_output=True)
++
++    if ipv4_query.returncode != 0 or ipv6_query.returncode != 0:
++        raise RuntimeError("Cannot use the netstat tool; although it is present on the system")
++
++    ipv4_lines = ipv4_query.stdout.decode("UTF-8").splitlines()
++    ipv6_lines = ipv6_query.stdout.decode("UTF-8").splitlines()
++
++    table: GatewaysTable = defaultdict(lambda *_: [])
++
++    for if_type, lines in [
++        (InterfaceType.AF_INET, ipv4_lines),
++        (InterfaceType.AF_INET6, ipv6_lines),
++    ]:
++        # Don't parse headers for routing tables
++        for line in lines[4:]:
++            cols = line.split()
++
++            default = cols[0] == "default"
++
++            # Check RTF_GATEWAY in flags for gateway
++            flags = cols[2]
++            if 'G' not in flags:
++                continue
++
++            gateway_ip = cols[1]
++            iface = cols[7]
++
++            table[if_type.value if old_api else if_type].append(
++                (gateway_ip, iface, True) if default else (gateway_ip, iface)
++            )
++
++    return dict(table)
++
++
+ def routes_parse_file(content: str, old_api: bool = False) -> GatewaysTable:
+     lined = content.splitlines()
+ 

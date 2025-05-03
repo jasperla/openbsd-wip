@@ -1,0 +1,46 @@
+Implements gateways() function for OpenBSD
+
+Index: python/netifaces/__init__.py
+--- python/netifaces/__init__.py.orig
++++ python/netifaces/__init__.py
+@@ -209,6 +209,20 @@ def _ip_tool_path() -> Optional[str]:
+     return ip
+ 
+ 
++def _netstat_bsd_tool_path() -> Optional[str]:
++    if not _platform.startswith('openbsd'):
++        return None
++
++    which_netstat_result = subprocess.run(["which", "netstat"], capture_output=True)
++
++    if which_netstat_result.returncode == 0:
++        netstat = which_netstat_result.stdout.decode("UTF-8").strip()
++    else:
++        netstat = None
++
++    return netstat
++
++
+ def gateways(old_api: bool = False) -> GatewaysTable:
+     """
+     Get the routing table indexed by interface type
+@@ -217,6 +231,7 @@ def gateways(old_api: bool = False) -> GatewaysTable:
+     """
+ 
+     ip_tool_path = _ip_tool_path()
++    netstat_bsd_tool_path = _netstat_bsd_tool_path()
+ 
+     if ip_tool_path:
+         from .routes import routes_parse_ip_tool
+@@ -228,6 +243,11 @@ def gateways(old_api: bool = False) -> GatewaysTable:
+ 
+         logging.debug("Using route file")
+         return routes_parse_file(_NIX_ROUTE_FILE.read_text(), old_api=old_api)
++    elif netstat_bsd_tool_path:
++        from .routes import routes_parse_netstat_tool
++
++        logging.debug("Using netstat tool")
++        return routes_parse_netstat_tool(netstat_bsd_tool_path, old_api=old_api)
+     else:
+         raise NotImplementedError("No implementation for `gateways()` yet")
+ 
