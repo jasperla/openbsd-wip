@@ -40,7 +40,7 @@ FLAVOR?=
 
 .include <bsd.port.arch.mk>
 
-WANTLIB-common =	${COMPILER_LIBCXX} c crypto curl deflate
+WANTLIB-common =	${COMPILER_LIBCXX} c crypto curl deflate intl
 WANTLIB-common +=	m miniupnpc natpmp psl ssl
 
 WANTLIB-main =	${WANTLIB-common}
