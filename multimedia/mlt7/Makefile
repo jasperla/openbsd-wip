@@ -1,11 +1,7 @@
 COMMENT-main =	multimedia transformations framework
 COMMENT-gpl2 =	GPLv2-licensed modules for mlt
 #
-# forked HEAD, which is beyond 7.30.0, and applied a
-# tag for 7.30.1, so that this fork can be used with multimedia/shotcut
-# as there are API changes beyond 7.30 it is dependent upon.
-#
-V =		7.30.1
+V =		7.32.0
 DISTNAME =	mlt-${V}
 PKGNAME-main =	mlt7-${V}
 PKGNAME-gpl2 =	mlt7-gpl2-${V}
@@ -14,8 +10,7 @@ CATEGORIES =	multimedia devel
 
 HOMEPAGE =	https://www.mltframework.org/
 
-#SITES =		https://github.com/mltframework/mlt/releases/download/v${V}/
-DIST_TUPLE =	github jggimi mlt v7.30.1 .
+SITES =		https://github.com/mltframework/mlt/releases/download/v${V}/
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
