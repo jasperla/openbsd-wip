@@ -556,6 +556,9 @@ share/shotcut/qml/filters/stabilize/
 share/shotcut/qml/filters/stabilize/icon.webp
 share/shotcut/qml/filters/stabilize/meta.qml
 share/shotcut/qml/filters/stabilize/ui.qml
+share/shotcut/qml/filters/strobe/
+share/shotcut/qml/filters/strobe/meta.qml
+share/shotcut/qml/filters/strobe/ui.qml
 share/shotcut/qml/filters/subtitle/
 share/shotcut/qml/filters/subtitle/icon.webp
 share/shotcut/qml/filters/subtitle/meta.qml
