@@ -1,0 +1,53 @@
+MODGO_MODULES =	\
+	github.com/boyter/gocodewalker		 v1.4.0 \
+	github.com/boyter/simplecache		 v0.0.0-20250113230110-8a4c9201822a \
+	github.com/coreos/go-systemd/v22	 v22.5.0 \
+	github.com/cpuguy83/go-md2man/v2	 v2.0.4 \
+	github.com/danwakefield/fnmatch		 v0.0.0-20160403171240-cbb64ac3d964 \
+	github.com/davecgh/go-spew		 v1.1.1 \
+	github.com/godbus/dbus/v5		 v5.0.4 \
+	github.com/google/gofuzz		 v1.0.0 \
+	github.com/inconshreveable/mousetrap	 v1.1.0 \
+	github.com/json-iterator/go		 v1.1.12 \
+	github.com/mattn/go-colorable		 v0.1.13 \
+	github.com/mattn/go-isatty		 v0.0.19 \
+	github.com/mattn/go-runewidth		 v0.0.16 \
+	github.com/modern-go/concurrent		 v0.0.0-20180306012644-bacd9c7ef1dd \
+	github.com/modern-go/reflect2		 v1.0.2 \
+	github.com/pkg/errors			 v0.9.1 \
+	github.com/pmezard/go-difflib		 v1.0.0 \
+	github.com/rivo/uniseg			 v0.4.7 \
+	github.com/rs/xid			 v1.5.0 \
+	github.com/rs/zerolog			 v1.30.0 \
+	github.com/russross/blackfriday/v2	 v2.1.0 \
+	github.com/spf13/cobra			 v1.8.1 \
+	github.com/spf13/pflag			 v1.0.6 \
+	github.com/stretchr/objx		 v0.1.0 \
+	github.com/stretchr/testify		 v1.10.0 \
+	golang.org/x/crypto			 v0.33.0 \
+	golang.org/x/mod			 v0.17.0 \
+	golang.org/x/net			 v0.21.0 \
+	golang.org/x/sync			 v0.11.0 \
+	golang.org/x/sys			 v0.30.0 \
+	golang.org/x/term			 v0.29.0 \
+	golang.org/x/text			 v0.22.0 \
+	golang.org/x/tools			 v0.21.1-0.20240508182429-e35e4ccd0d2d \
+	gopkg.in/check.v1			 v0.0.0-20161208181325-20d25e280405 \
+	gopkg.in/yaml.v2			 v2.4.0 \
+	gopkg.in/yaml.v3			 v3.0.1
+
+MODGO_MODFILES =	\
+	github.com/davecgh/go-spew	 v1.1.0 \
+	github.com/mattn/go-colorable	 v0.1.12 \
+	github.com/mattn/go-isatty	 v0.0.14 \
+	github.com/mattn/go-isatty	 v0.0.16 \
+	github.com/modern-go/concurrent	 v0.0.0-20180228061459-e0a39a4cb421 \
+	github.com/rivo/uniseg		 v0.2.0 \
+	github.com/spf13/pflag		 v1.0.5 \
+	github.com/stretchr/testify	 v1.3.0 \
+	golang.org/x/sync		 v0.7.0 \
+	golang.org/x/sys		 v0.0.0-20210630005230-0f9fa26af87c \
+	golang.org/x/sys		 v0.0.0-20210927094055-39ccf1dd6fa6 \
+	golang.org/x/sys		 v0.0.0-20220811171246-fbc7d0a398ab \
+	golang.org/x/sys		 v0.6.0
+

@@ -1,0 +1,2 @@
+@comment @bin bin/badges
+@bin bin/scc
