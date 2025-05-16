@@ -1,0 +1,14 @@
+Remove workspace for version-ranges crate
+
+Index: modcargo-crates/pubgrub-73d6ecf5a4e4eb1c754b8c3255c4d31bdc266fdb/Cargo.toml
+--- modcargo-crates/pubgrub-73d6ecf5a4e4eb1c754b8c3255c4d31bdc266fdb/Cargo.toml.orig
++++ modcargo-crates/pubgrub-73d6ecf5a4e4eb1c754b8c3255c4d31bdc266fdb/Cargo.toml
+@@ -1,8 +1,5 @@
+ # SPDX-License-Identifier: MPL-2.0
+ 
+-[workspace]
+-members = ["version-ranges"]
+-
+ [package]
+ name = "pubgrub"
+ version = "0.3.0"
