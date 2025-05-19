@@ -9,6 +9,14 @@ lib/lua-language-server/locale/en-us/
 lib/lua-language-server/locale/en-us/meta.lua
 lib/lua-language-server/locale/en-us/script.lua
 lib/lua-language-server/locale/en-us/setting.lua
+lib/lua-language-server/locale/es-419/
+lib/lua-language-server/locale/es-419/meta.lua
+lib/lua-language-server/locale/es-419/script.lua
+lib/lua-language-server/locale/es-419/setting.lua
+lib/lua-language-server/locale/ja-jp/
+lib/lua-language-server/locale/ja-jp/meta.lua
+lib/lua-language-server/locale/ja-jp/script.lua
+lib/lua-language-server/locale/ja-jp/setting.lua
 lib/lua-language-server/locale/pt-br/
 lib/lua-language-server/locale/pt-br/meta.lua
 lib/lua-language-server/locale/pt-br/script.lua
@@ -82,8 +90,10 @@ lib/lua-language-server/script/brave/work.lua
 lib/lua-language-server/script/cli/
 lib/lua-language-server/script/cli/check.lua
 lib/lua-language-server/script/cli/check_worker.lua
-lib/lua-language-server/script/cli/doc.lua
-lib/lua-language-server/script/cli/doc2md.lua
+lib/lua-language-server/script/cli/doc/
+lib/lua-language-server/script/cli/doc/export.lua
+lib/lua-language-server/script/cli/doc/init.lua
+lib/lua-language-server/script/cli/help.lua
 lib/lua-language-server/script/cli/init.lua
 lib/lua-language-server/script/cli/version.lua
 lib/lua-language-server/script/cli/visualize.lua
@@ -175,6 +185,7 @@ lib/lua-language-server/script/core/diagnostics/undefined-global.lua
 lib/lua-language-server/script/core/diagnostics/unknown-cast-variable.lua
 lib/lua-language-server/script/core/diagnostics/unknown-diag-code.lua
 lib/lua-language-server/script/core/diagnostics/unknown-operator.lua
+lib/lua-language-server/script/core/diagnostics/unnecessary-assert.lua
 lib/lua-language-server/script/core/diagnostics/unreachable-code.lua
 lib/lua-language-server/script/core/diagnostics/unused-function.lua
 lib/lua-language-server/script/core/diagnostics/unused-label.lua
@@ -182,6 +193,7 @@ lib/lua-language-server/script/core/diagnostics/unused-local.lua
 lib/lua-language-server/script/core/diagnostics/unused-vararg.lua
 lib/lua-language-server/script/core/document-symbol.lua
 lib/lua-language-server/script/core/find-source.lua
+lib/lua-language-server/script/core/fix-indent.lua
 lib/lua-language-server/script/core/folding.lua
 lib/lua-language-server/script/core/formatting.lua
 lib/lua-language-server/script/core/highlight.lua
@@ -246,7 +258,6 @@ lib/lua-language-server/script/meta/bee/
 lib/lua-language-server/script/meta/bee/filesystem.lua
 lib/lua-language-server/script/meta/bee/filewatch.lua
 lib/lua-language-server/script/meta/bee/socket.lua
-lib/lua-language-server/script/meta/bee/sys.lua
 lib/lua-language-server/script/meta/bee/thread.lua
 lib/lua-language-server/script/parser/
 lib/lua-language-server/script/parser/compile.lua
@@ -289,6 +300,7 @@ lib/lua-language-server/script/provider/diagnostic.lua
 lib/lua-language-server/script/provider/formatting.lua
 lib/lua-language-server/script/provider/init.lua
 lib/lua-language-server/script/provider/inlay-hint.lua
+lib/lua-language-server/script/provider/language-configuration.lua
 lib/lua-language-server/script/provider/markdown.lua
 lib/lua-language-server/script/provider/name-style.lua
 lib/lua-language-server/script/provider/provider.lua
