@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=idTech4A++ (Harmattan Edition) Doom3
+Comment=idTech4A++ (Harmattan Edition) Doom3
+Exec=idtech4a-doom3
+Terminal=false
+Type=Application
+Categories=Game;
+Icon=idtech4a-doom3

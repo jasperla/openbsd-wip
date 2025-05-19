@@ -1,0 +1,30 @@
+@bin bin/idtech4a-doom3
+@bin bin/idtech4a-quake4
+@bin bin/idtech4a-prey
+@bin lib/libcdoom.so
+@bin lib/libd3le.so
+@bin lib/libd3xp.so
+@bin lib/libfraggingfree.so
+@bin lib/libgame.so
+@bin lib/libhardcorps.so
+@bin lib/libhardqore.so
+@bin lib/libhexeneoc.so
+@bin lib/liblibrecoop.so
+@bin lib/liblibrecoopxp.so
+@bin lib/liboverthinked.so
+@bin lib/libperfected.so
+@bin lib/libperfected_roe.so
+@bin lib/libpreygame.so
+@bin lib/libq4game.so
+@bin lib/librivensin.so
+@bin lib/libsabot.so
+@bin lib/libtfphobos.so
+share/applications/idtech4a-doom3.desktop
+share/applications/idtech4a-quake4.desktop
+share/applications/idtech4a-prey.desktop
+share/doc/pkg-readmes/${PKGSTEM}
+share/icons/hicolor/128x128/apps/idtech4a-doom3.png
+share/icons/hicolor/128x128/apps/idtech4a-quake4.png
+share/icons/hicolor/128x128/apps/idtech4a-prey.png
+@tag update-desktop-database
+@tag gtk-update-icon-cache %D/share/icons/hicolor
