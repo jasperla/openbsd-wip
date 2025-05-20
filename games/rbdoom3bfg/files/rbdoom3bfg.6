@@ -1,0 +1,73 @@
+.TH rbdoom3bfg 6 "October 20, 2014" "" ""
+
+.SH NAME
+rbdoom3bfg \- Robert Beckeban's Doom 3 BFG Edition
+
+.SH SYNOPSIS
+.B rbdoom3bfg
+.RI [ options ]
+.br
+
+.SH DESCRIPTION
+.B rbdoom3bfg 
+is a port of the id-soft released GPL'ed version of the Doom 3 BFG-Edition engine.
+It targets Linux support, 64-bit support and source code cleanup.
+.PP
+The goal of RBDoom3BFG is to bring Doom 3 BFG with the help of SDL to all suitable platforms. Bugs
+present in the original DOOM 3 will be fixed (when identified) without altering
+the original game-play.
+.PP
+
+.SH OPTIONS
+
+The game can be tweaked using some console commands which usually also can be passed using
+the commandline. 
+
+Below, for any values named 
+.I
+boolean
+a "0" means disable and "1" enable.
+
+Note that some values might be stored in the user's profile and are persistent over restarts.
+
+.TP
+\fB+set fs_game \fImodDirectoryName\fP
+Defines the mod directory to be used. Best used with \fB+set fs_resourceLoadPriority\fP.
+
+.TP
+\fB+set fs_resourceLoadPriority \fIvalue\fP
+When 
+.I value
+is 
+.B 0
+set priority the mod's content over the game's one. 
+
+.TP
+\fB+set com_allowconsole \fIboolean\fR
+Allow (default) or disallow console access.
+
+.TP
+\fB+set com_showFPS \fIvalue\fR
+show frames rendered per second. 
+Use this value:
+ \fB 0 \fP to turn off (default),
+ \fB 1 \fP default bfg values,
+ \fB 2 \fP only show FPS (classic view)
+
+.TP
+\fB+set com_speeds  \fIboolean\fR
+Show engine timings. Default is off.q
+
+.TP
+\fB+set com_forceGenericSIMD  \fIboolean\fR
+Force the use of generic platform independent SIMD code. Default is off.
+
+
+.SH NOTES
+
+To actually play Doom3 BFG Edition, you need a copy of the (non-free) game data. Please see
+/usr/share/doc/rbdoom3bfg/README.txt.gz for details.
+
+.SH AUTHORS
+
+This manpage was written by Tobias Frost <tobi@debian.org> and is licensed under the GPL-2 or at your option any later version. 
