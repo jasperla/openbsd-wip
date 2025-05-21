@@ -1,5 +1,0 @@
-Bear is a tool that generates a compilation database for clang tooling.
-
-The JSON compilation database is used in the clang project
-to provide information on how a single compilation unit is processed.
-With this, it is easy to re-run the compilation with alternate programs.
