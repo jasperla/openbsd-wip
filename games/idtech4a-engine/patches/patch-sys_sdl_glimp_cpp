@@ -1,0 +1,11 @@
+Index: sys/sdl/glimp.cpp
+--- sys/sdl/glimp.cpp.orig
++++ sys/sdl/glimp.cpp
+@@ -420,6 +420,7 @@ bool GLimp_Init(glimpParms_t parms) {
+             // creating the window succeeded, so adjust r_multiSamples to the value that was actually used
+             parms.multiSamples = multisamples;
+             r_multiSamples.SetInteger(multisamples);
++            common->Printf("SDL create window: %dx%d (r_mode = %d)\n",parms.width, parms.width, r_mode.GetInteger());
+         }
+ 
+         /* Check if we're really in the requested display mode. There is

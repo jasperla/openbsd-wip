@@ -1,0 +1,48 @@
+Index: idlib/Lib.cpp
+--- idlib/Lib.cpp.orig
++++ idlib/Lib.cpp
+@@ -33,7 +33,7 @@ If you have questions concerning this license or the a
+ #include <signal.h>
+ #include <sys/types.h>
+ #include <unistd.h>
+-#elif defined(__unix__)
++#elif defined(__OpenBSD__)
+ #include <signal.h>
+ #include <sys/types.h>
+ #endif
+@@ -159,7 +159,7 @@ dword PackColor(const idVec4 &color)
+ 	dz = ColorFloatToByte(color.z);
+ 	dw = ColorFloatToByte(color.w);
+ 
+-#if defined(_WIN32) || defined(__linux__) || (defined(MACOS_X) && defined(__i386__))
++#if defined(_WIN32) || defined(__OpenBSD__) || (defined(MACOS_X) && defined(__i386__))
+ 	return (dx << 0) | (dy << 8) | (dz << 16) | (dw << 24);
+ #elif (defined(MACOS_X) && defined(__ppc__))
+ 	return (dx << 24) | (dy << 16) | (dz << 8) | (dw << 0);
+@@ -175,7 +175,7 @@ UnpackColor
+ */
+ void UnpackColor(const dword color, idVec4 &unpackedColor)
+ {
+-#if defined(_WIN32) || defined(__linux__) || (defined(MACOS_X) && defined(__i386__))
++#if defined(_WIN32) || defined(__OpenBSD__) || (defined(MACOS_X) && defined(__i386__))
+ 	unpackedColor.Set(((color >> 0) & 255) *(1.0f / 255.0f),
+ 	                  ((color >> 8) & 255) *(1.0f / 255.0f),
+ 	                  ((color >> 16) & 255) *(1.0f / 255.0f),
+@@ -203,7 +203,7 @@ dword PackColor(const idVec3 &color)
+ 	dy = ColorFloatToByte(color.y);
+ 	dz = ColorFloatToByte(color.z);
+ 
+-#if defined(_WIN32) || defined(__linux__) || (defined(MACOS_X) && defined(__i386__))
++#if defined(_WIN32) || defined(__OpenBSD__) || (defined(MACOS_X) && defined(__i386__))
+ 	return (dx << 0) | (dy << 8) | (dz << 16);
+ #elif (defined(MACOS_X) && defined(__ppc__))
+ 	return (dy << 16) | (dz << 8) | (dx << 0);
+@@ -219,7 +219,7 @@ UnpackColor
+ */
+ void UnpackColor(const dword color, idVec3 &unpackedColor)
+ {
+-#if defined(_WIN32) || defined(__linux__) || (defined(MACOS_X) && defined(__i386__))
++#if defined(_WIN32) || defined(__OpenBSD__) || (defined(MACOS_X) && defined(__i386__))
+ 	unpackedColor.Set(((color >> 0) & 255) *(1.0f / 255.0f),
+ 	                  ((color >> 8) & 255) *(1.0f / 255.0f),
+ 	                  ((color >> 16) & 255) *(1.0f / 255.0f));

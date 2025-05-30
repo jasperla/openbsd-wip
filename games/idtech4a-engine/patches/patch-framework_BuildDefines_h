@@ -1,0 +1,28 @@
+Index: framework/BuildDefines.h
+--- framework/BuildDefines.h.orig
++++ framework/BuildDefines.h
+@@ -116,18 +116,17 @@ If you have questions concerning this license or the a
+ #endif
+ 
+ #ifndef ID_OPENAL
+-#	if ( defined(_WIN32) || defined(MACOS_X) ) && !defined( ID_DEDICATED )
+-#ifdef _OPENAL
++#	if !defined( ID_DEDICATED )
+ #		define ID_OPENAL 1
+-#else
+-#		define ID_OPENAL 0
+-#endif
+-#	elif defined( _OPENAL )
+-#		define ID_OPENAL 1
+ #	else
+ #		define ID_OPENAL 0
+ #	endif
+ #endif
++
++#ifndef ID_OPENAL_EAX
++#	define ID_OPENAL_EAX 0
++#endif
++
+ 
+ #ifndef ID_ALLOW_D3XP
+ #	if defined( MACOS_X )
