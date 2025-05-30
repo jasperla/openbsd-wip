@@ -1,0 +1,607 @@
+Index: sound/snd_shader.cpp
+--- sound/snd_shader.cpp.orig
++++ sound/snd_shader.cpp
+@@ -4,7 +4,7 @@
+ Doom 3 GPL Source Code
+ Copyright (C) 1999-2011 id Software LLC, a ZeniMax Media company.
+ 
+-This file is part of the Doom 3 GPL Source Code (?Doom 3 Source Code?).
++This file is part of the Doom 3 GPL Source Code ("Doom 3 Source Code").
+ 
+ Doom 3 Source Code is free software: you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+@@ -37,8 +37,7 @@ If you have questions concerning this license or the a
+ idSoundShader::Init
+ ===============
+ */
+-void idSoundShader::Init(void)
+-{
++void idSoundShader::Init( void ) {
+ 	desc = "<no description>";
+ 	errorDuringParse = false;
+ 	onDemand = false;
+@@ -63,8 +62,7 @@ void idSoundShader::Init(void)
+ idSoundShader::idSoundShader
+ ===============
+ */
+-idSoundShader::idSoundShader(void)
+-{
++idSoundShader::idSoundShader( void ) {
+ 	Init();
+ }
+ 
+@@ -73,8 +71,7 @@ idSoundShader::idSoundShader(void)
+ idSoundShader::~idSoundShader
+ ===============
+ */
+-idSoundShader::~idSoundShader(void)
+-{
++idSoundShader::~idSoundShader( void ) {
+ }
+ 
+ /*
+@@ -82,9 +79,8 @@ idSoundShader::~idSoundShader(void)
+ idSoundShader::Size
+ =================
+ */
+-size_t idSoundShader::Size(void) const
+-{
+-	return sizeof(idSoundShader);
++size_t idSoundShader::Size( void ) const {
++	return sizeof( idSoundShader );
+ }
+ 
+ /*
+@@ -92,8 +88,7 @@ size_t idSoundShader::Size(void) const
+ idSoundShader::idSoundShader::FreeData
+ ===============
+ */
+-void idSoundShader::FreeData()
+-{
++void idSoundShader::FreeData() {
+ 	numEntries = 0;
+ 	numLeadins = 0;
+ }
+@@ -103,22 +98,21 @@ void idSoundShader::FreeData()
+ idSoundShader::SetDefaultText
+ ===================
+ */
+-bool idSoundShader::SetDefaultText(void)
+-{
++bool idSoundShader::SetDefaultText( void ) {
+ 	idStr wavname;
+ 
+ 	wavname = GetName();
+-	wavname.DefaultFileExtension(".wav");		// if the name has .ogg in it, that will stay
++	wavname.DefaultFileExtension( ".wav" );		// if the name has .ogg in it, that will stay
+ 
+ 	// if there exists a wav file with the same name
+-	if (1) {   //fileSystem->ReadFile( wavname, NULL ) != -1 ) {
++	if ( 1 ) { //fileSystem->ReadFile( wavname, NULL ) != -1 ) {
+ 		char generated[2048];
+-		idStr::snPrintf(generated, sizeof(generated),
+-		                "sound %s // IMPLICITLY GENERATED\n"
+-		                "{\n"
+-		                "%s\n"
+-		                "}\n", GetName(), wavname.c_str());
+-		SetText(generated);
++		idStr::snPrintf( generated, sizeof( generated ),
++						"sound %s // IMPLICITLY GENERATED\n"
++						"{\n"
++						"%s\n"
++						"}\n", GetName(), wavname.c_str() );
++		SetText( generated );
+ 		return true;
+ 	} else {
+ 		return false;
+@@ -130,8 +124,7 @@ bool idSoundShader::SetDefaultText(void)
+ DefaultDefinition
+ ===================
+ */
+-const char *idSoundShader::DefaultDefinition() const
+-{
++const char *idSoundShader::DefaultDefinition() const {
+ 	return
+ 	        "{\n"
+ #ifdef _RAVEN //k: default is sound/_default.ogg
+@@ -157,18 +150,17 @@ bool idSoundShader::Parse(const char *text, const int 
+ {
+ 	idLexer	src;
+ 
+-	src.LoadMemory(text, textLength, GetFileName(), GetLineNum());
+-	src.SetFlags(DECL_LEXER_FLAGS);
+-	src.SkipUntilString("{");
++	src.LoadMemory( text, textLength, GetFileName(), GetLineNum() );
++	src.SetFlags( DECL_LEXER_FLAGS );
++	src.SkipUntilString( "{" );
+ 
+ 	// deeper functions can set this, which will cause MakeDefault() to be called at the end
+ 	errorDuringParse = false;
+ 
+-	if (!ParseShader(src) || errorDuringParse) {
++	if ( !ParseShader( src ) || errorDuringParse ) {
+ 		MakeDefault();
+ 		return false;
+ 	}
+-
+ 	return true;
+ }
+ 
+@@ -177,8 +169,7 @@ bool idSoundShader::Parse(const char *text, const int 
+ idSoundShader::ParseShader
+ ===============
+ */
+-bool idSoundShader::ParseShader(idLexer &src)
+-{
++bool idSoundShader::ParseShader( idLexer &src ) {
+ 	int			i;
+ 	idToken		token;
+ 
+@@ -195,39 +186,37 @@ bool idSoundShader::ParseShader(idLexer &src)
+ 	speakerMask = 0;
+ 	altSound = NULL;
+ 
+-	for (i = 0; i < SOUND_MAX_LIST_WAVS; i++) {
++	for( i = 0; i < SOUND_MAX_LIST_WAVS; i++ ) {
+ 		leadins[i] = NULL;
+ 		entries[i] = NULL;
+ 	}
+-
+ 	numEntries = 0;
+ 	numLeadins = 0;
+ 
+ 	int	maxSamples = idSoundSystemLocal::s_maxSoundsPerShader.GetInteger();
+-
+-	if (com_makingBuild.GetBool() || maxSamples <= 0 || maxSamples > SOUND_MAX_LIST_WAVS) {
++	if ( com_makingBuild.GetBool() || maxSamples <= 0 || maxSamples > SOUND_MAX_LIST_WAVS ) {
+ 		maxSamples = SOUND_MAX_LIST_WAVS;
+ 	}
+ 
+-	while (1) {
+-		if (!src.ExpectAnyToken(&token)) {
++	while ( 1 ) {
++		if ( !src.ExpectAnyToken( &token ) ) {
+ 			return false;
+ 		}
+ 		// end of definition
+-		else if (token == "}") {
++		else if ( token == "}" ) {
+ 			break;
+ 		}
+ 		// minimum number of sounds
+-		else if (!token.Icmp("minSamples")) {
+-			maxSamples = idMath::ClampInt(src.ParseInt(), SOUND_MAX_LIST_WAVS, maxSamples);
++		else if ( !token.Icmp( "minSamples" ) ) {
++			maxSamples = idMath::ClampInt( src.ParseInt(), SOUND_MAX_LIST_WAVS, maxSamples );
+ 		}
+ 		// description
+-		else if (!token.Icmp("description")) {
+-			src.ReadTokenOnLine(&token);
++		else if ( !token.Icmp( "description" ) ) {
++			src.ReadTokenOnLine( &token );
+ 			desc = token.c_str();
+ 		}
+ 		// mindistance
+-		else if (!token.Icmp("mindistance")) {
++		else if ( !token.Icmp( "mindistance" ) ) {
+ 			parms.minDistance = src.ParseFloat();
+ #ifdef _RAVEN // scale
+ 			// jmarshall: scale to doom 3 distance
+@@ -235,7 +224,7 @@ bool idSoundShader::ParseShader(idLexer &src)
+ #endif
+ 		}
+ 		// maxdistance
+-		else if (!token.Icmp("maxdistance")) {
++		else if ( !token.Icmp( "maxdistance" ) ) {
+ 			parms.maxDistance = src.ParseFloat();
+ #ifdef _RAVEN // scale
+ 			// jmarshall: scale to doom 3 distance
+@@ -282,58 +271,55 @@ bool idSoundShader::ParseShader(idLexer &src)
+ 		}
+ #endif
+ 		// shakes screen
+-		else if (!token.Icmp("shakes")) {
+-			src.ExpectAnyToken(&token);
+-
+-			if (token.type == TT_NUMBER) {
++		else if ( !token.Icmp( "shakes" ) ) {
++			src.ExpectAnyToken( &token );
++			if ( token.type == TT_NUMBER ) {
+ 				parms.shakes = token.GetFloatValue();
+ 			} else {
+-				src.UnreadToken(&token);
++				src.UnreadToken( &token );
+ 				parms.shakes = 1.0f;
+ 			}
+ 		}
+ 		// reverb
+-		else if (!token.Icmp("reverb")) {
+-			int reg0 = src.ParseFloat();
+-
+-			if (!src.ExpectTokenString(",")) {
++		else if ( !token.Icmp( "reverb" ) ) {
++			src.ParseFloat();
++			if ( !src.ExpectTokenString( "," ) ) {
+ 				src.FreeSource();
+ 				return false;
+ 			}
+-
+-			int reg1 = src.ParseFloat();
++			src.ParseFloat();
+ 			// no longer supported
+ 		}
+ 		// volume
+-		else if (!token.Icmp("volume")) {
++		else if ( !token.Icmp( "volume" ) ) {
+ 			parms.volume = src.ParseFloat();
+ 		}
+ 		// leadinVolume is used to allow light breaking leadin sounds to be much louder than the broken loop
+-		else if (!token.Icmp("leadinVolume")) {
++		else if ( !token.Icmp( "leadinVolume" ) ) {
+ 			leadinVolume = src.ParseFloat();
+ 		}
+ 		// speaker mask
+-		else if (!token.Icmp("mask_center")) {
++		else if ( !token.Icmp( "mask_center" ) ) {
+ 			speakerMask |= 1<<SPEAKER_CENTER;
+ 		}
+ 		// speaker mask
+-		else if (!token.Icmp("mask_left")) {
++		else if ( !token.Icmp( "mask_left" ) ) {
+ 			speakerMask |= 1<<SPEAKER_LEFT;
+ 		}
+ 		// speaker mask
+-		else if (!token.Icmp("mask_right")) {
++		else if ( !token.Icmp( "mask_right" ) ) {
+ 			speakerMask |= 1<<SPEAKER_RIGHT;
+ 		}
+ 		// speaker mask
+-		else if (!token.Icmp("mask_backright")) {
++		else if ( !token.Icmp( "mask_backright" ) ) {
+ 			speakerMask |= 1<<SPEAKER_BACKRIGHT;
+ 		}
+ 		// speaker mask
+-		else if (!token.Icmp("mask_backleft")) {
++		else if ( !token.Icmp( "mask_backleft" ) ) {
+ 			speakerMask |= 1<<SPEAKER_BACKLEFT;
+ 		}
+ 		// speaker mask
+-		else if (!token.Icmp("mask_lfe")) {
++		else if ( !token.Icmp( "mask_lfe" ) ) {
+ 			speakerMask |= 1<<SPEAKER_LFE;
+ 		}
+ 		// soundClass
+@@ -361,63 +347,62 @@ bool idSoundShader::ParseShader(idLexer &src)
+ 			}
+ 		}
+ 		// altSound
+-		else if (!token.Icmp("altSound")) {
+-			if (!src.ExpectAnyToken(&token)) {
++		else if ( !token.Icmp( "altSound" ) ) {
++			if ( !src.ExpectAnyToken( &token ) ) {
+ 				return false;
+ 			}
+-
+-			altSound = declManager->FindSound(token.c_str());
++			altSound = declManager->FindSound( token.c_str() );
+ 		}
+ 		// ordered
+-		else if (!token.Icmp("ordered")) {
++		else if ( !token.Icmp( "ordered" ) ) {
+ 			// no longer supported
+ 		}
+ 		// no_dups
+-		else if (!token.Icmp("no_dups")) {
++		else if ( !token.Icmp( "no_dups" ) ) {
+ 			parms.soundShaderFlags |= SSF_NO_DUPS;
+ 		}
+ 		// no_flicker
+-		else if (!token.Icmp("no_flicker")) {
++		else if ( !token.Icmp( "no_flicker" ) ) {
+ 			parms.soundShaderFlags |= SSF_NO_FLICKER;
+ 		}
+ 		// plain
+-		else if (!token.Icmp("plain")) {
++		else if ( !token.Icmp( "plain" ) ) {
+ 			// no longer supported
+ 		}
+ 		// looping
+-		else if (!token.Icmp("looping")) {
++		else if ( !token.Icmp( "looping" ) ) {
+ 			parms.soundShaderFlags |= SSF_LOOPING;
+ 		}
+ 		// no occlusion
+-		else if (!token.Icmp("no_occlusion")) {
++		else if ( !token.Icmp( "no_occlusion" ) ) {
+ 			parms.soundShaderFlags |= SSF_NO_OCCLUSION;
+ 		}
+ 		// private
+-		else if (!token.Icmp("private")) {
++		else if ( !token.Icmp( "private" ) ) {
+ 			parms.soundShaderFlags |= SSF_PRIVATE_SOUND;
+ 		}
+ 		// antiPrivate
+-		else if (!token.Icmp("antiPrivate")) {
++		else if ( !token.Icmp( "antiPrivate" ) ) {
+ 			parms.soundShaderFlags |= SSF_ANTI_PRIVATE_SOUND;
+ 		}
+ 		// once
+-		else if (!token.Icmp("playonce")) {
++		else if ( !token.Icmp( "playonce" ) ) {
+ 			parms.soundShaderFlags |= SSF_PLAY_ONCE;
+ 		}
+ 		// global
+-		else if (!token.Icmp("global")) {
++		else if ( !token.Icmp( "global" ) ) {
+ 			parms.soundShaderFlags |= SSF_GLOBAL;
+ 		}
+ 		// unclamped
+-		else if (!token.Icmp("unclamped")) {
++		else if ( !token.Icmp( "unclamped" ) ) {
+ 			parms.soundShaderFlags |= SSF_UNCLAMPED;
+ 		}
+ 		// omnidirectional
+-		else if (!token.Icmp("omnidirectional")) {
++		else if ( !token.Icmp( "omnidirectional" ) ) {
+ 			parms.soundShaderFlags |= SSF_OMNIDIRECTIONAL;
+ 		}
+ 		// onDemand can't be a parms, because we must track all references and overrides would confuse it
+-		else if (!token.Icmp("onDemand")) {
++		else if ( !token.Icmp( "onDemand" ) ) {
+ 			// no longer loading sounds on demand
+ 			//onDemand = true;
+ 		}
+@@ -450,15 +435,14 @@ bool idSoundShader::ParseShader(idLexer &src)
+ #endif
+ 
+ 		// the wave files
+-		else if (!token.Icmp("leadin")) {
++		else if ( !token.Icmp( "leadin" ) ) {
+ 			// add to the leadin list
+-			if (!src.ReadToken(&token)) {
+-				src.Warning("Expected sound after leadin");
++			if ( !src.ReadToken( &token ) ) {
++				src.Warning( "Expected sound after leadin" );
+ 				return false;
+ 			}
+-
+-			if (soundSystemLocal.soundCache && numLeadins < maxSamples) {
+-				leadins[ numLeadins ] = soundSystemLocal.soundCache->FindSound(token.c_str(), onDemand);
++			if ( soundSystemLocal.soundCache && numLeadins < maxSamples ) {
++				leadins[ numLeadins ] = soundSystemLocal.soundCache->FindSound( token.c_str(), onDemand );
+ 				numLeadins++;
+ 			}
+ #ifdef _RAVEN //k: quake4 snd get sound file
+@@ -522,7 +506,7 @@ bool idSoundShader::ParseShader(idLexer &src)
+ 			}
+ 		} else if (token.Find(".wav", false) != -1 || token.Find(".ogg", false) != -1) {
+ 			// add to the wav list
+-			if (soundSystemLocal.soundCache && numEntries < maxSamples) {
++			if ( soundSystemLocal.soundCache && numEntries < maxSamples ) {
+ 				token.BackSlashesToSlashes();
+ 
+ 				idStr work = token;
+@@ -552,32 +536,29 @@ bool idSoundShader::ParseShader(idLexer &src)
+ 				if (lang.Icmp("english") != 0 && token.Find("sound/vo/", false) >= 0) {
+ 					idStr work = token;
+ 					work.ToLower();
+-					work.StripLeading("sound/vo/");
+-					work = va("sound/vo/%s/%s", lang.c_str(), work.c_str());
+-
+-					if (fileSystem->ReadFile(work, NULL, NULL) > 0) {
++					work.StripLeading( "sound/vo/" );
++					work = va( "sound/vo/%s/%s", lang.c_str(), work.c_str() );
++					if ( fileSystem->ReadFile( work, NULL, NULL ) > 0 ) {
+ 						token = work;
+ 					} else {
+ 						// also try to find it with the .ogg extension
+-						work.SetFileExtension(".ogg");
+-
+-						if (fileSystem->ReadFile(work, NULL, NULL) > 0) {
++						work.SetFileExtension( ".ogg" );
++						if ( fileSystem->ReadFile( work, NULL, NULL ) > 0 ) {
+ 							token = work;
+ 						}
+ 					}
+ 				}
+-
+-				entries[ numEntries ] = soundSystemLocal.soundCache->FindSound(token.c_str(), onDemand);
++				entries[ numEntries ] = soundSystemLocal.soundCache->FindSound( token.c_str(), onDemand );
+ 				numEntries++;
+ 			}
+ #endif
+ 		} else {
+-			src.Warning("unknown token '%s'", token.c_str());
++			src.Warning( "unknown token '%s'", token.c_str() );
+ 			return false;
+ 		}
+ 	}
+ 
+-	if (parms.shakes > 0.0f) {
++	if ( parms.shakes > 0.0f ) {
+ 		CheckShakesAndOgg();
+ 	}
+ 
+@@ -589,27 +570,24 @@ bool idSoundShader::ParseShader(idLexer &src)
+ idSoundShader::CheckShakesAndOgg
+ ===============
+ */
+-bool idSoundShader::CheckShakesAndOgg(void) const
+-{
++bool idSoundShader::CheckShakesAndOgg( void ) const {
+ 	int i;
+ 	bool ret = false;
+ 
+-	for (i = 0; i < numLeadins; i++) {
+-		if (leadins[ i ]->objectInfo.wFormatTag == WAVE_FORMAT_TAG_OGG) {
+-			common->Warning("sound shader '%s' has shakes and uses OGG file '%s'",
+-			                GetName(), leadins[ i ]->name.c_str());
++	for ( i = 0; i < numLeadins; i++ ) {
++		if ( leadins[ i ]->objectInfo.wFormatTag == WAVE_FORMAT_TAG_OGG ) {
++			common->Warning( "sound shader '%s' has shakes and uses OGG file '%s'",
++								GetName(), leadins[ i ]->name.c_str() );
+ 			ret = true;
+ 		}
+ 	}
+-
+-	for (i = 0; i < numEntries; i++) {
+-		if (entries[ i ]->objectInfo.wFormatTag == WAVE_FORMAT_TAG_OGG) {
+-			common->Warning("sound shader '%s' has shakes and uses OGG file '%s'",
+-			                GetName(), entries[ i ]->name.c_str());
++	for ( i = 0; i < numEntries; i++ ) {
++		if ( entries[ i ]->objectInfo.wFormatTag == WAVE_FORMAT_TAG_OGG ) {
++			common->Warning( "sound shader '%s' has shakes and uses OGG file '%s'",
++								GetName(), entries[ i ]->name.c_str() );
+ 			ret = true;
+ 		}
+ 	}
+-
+ 	return ret;
+ }
+ 
+@@ -618,31 +596,25 @@ bool idSoundShader::CheckShakesAndOgg(void) const
+ idSoundShader::List
+ ===============
+ */
+-void idSoundShader::List() const
+-{
++void idSoundShader::List() const {
+ 	idStrList	shaders;
+ 
+-	common->Printf("%4i: %s\n", Index(), GetName());
+-
+-	if (idStr::Icmp(GetDescription(), "<no description>") != 0) {
+-		common->Printf("      description: %s\n", GetDescription());
++	common->Printf( "%4i: %s\n", Index(), GetName() );
++	if ( idStr::Icmp( GetDescription(), "<no description>" ) != 0 ) {
++		common->Printf( "      description: %s\n", GetDescription() );
+ 	}
+-
+-	for (int k = 0; k < numLeadins ; k++) {
++	for( int k = 0; k < numLeadins ; k++ ) {
+ 		const idSoundSample *objectp = leadins[k];
+-
+-		if (objectp) {
+-			common->Printf("      %5dms %4dKb %s (LEADIN)\n", soundSystemLocal.SamplesToMilliseconds(objectp->LengthIn44kHzSamples()), (objectp->objectMemSize/1024)
+-			               ,objectp->name.c_str());
++		if ( objectp ) {
++			common->Printf( "      %5dms %4dKb %s (LEADIN)\n", soundSystemLocal.SamplesToMilliseconds(objectp->LengthIn44kHzSamples()), (objectp->objectMemSize/1024)
++				,objectp->name.c_str() );
+ 		}
+ 	}
+-
+-	for (int k = 0; k < numEntries; k++) {
++	for( int k = 0; k < numEntries; k++ ) {
+ 		const idSoundSample *objectp = entries[k];
+-
+-		if (objectp) {
+-			common->Printf("      %5dms %4dKb %s\n", soundSystemLocal.SamplesToMilliseconds(objectp->LengthIn44kHzSamples()), (objectp->objectMemSize/1024)
+-			               ,objectp->name.c_str());
++		if ( objectp ) {
++			common->Printf( "      %5dms %4dKb %s\n", soundSystemLocal.SamplesToMilliseconds(objectp->LengthIn44kHzSamples()), (objectp->objectMemSize/1024)
++				,objectp->name.c_str() );
+ 		}
+ 	}
+ }
+@@ -652,8 +624,7 @@ void idSoundShader::List() const
+ idSoundShader::GetAltSound
+ ===============
+ */
+-const idSoundShader *idSoundShader::GetAltSound(void) const
+-{
++const idSoundShader *idSoundShader::GetAltSound( void ) const {
+ 	return altSound;
+ }
+ 
+@@ -662,8 +633,7 @@ const idSoundShader *idSoundShader::GetAltSound(void) 
+ idSoundShader::GetMinDistance
+ ===============
+ */
+-float idSoundShader::GetMinDistance() const
+-{
++float idSoundShader::GetMinDistance() const {
+ 	return parms.minDistance;
+ }
+ 
+@@ -672,8 +642,7 @@ float idSoundShader::GetMinDistance() const
+ idSoundShader::GetMaxDistance
+ ===============
+ */
+-float idSoundShader::GetMaxDistance() const
+-{
++float idSoundShader::GetMaxDistance() const {
+ 	return parms.maxDistance;
+ }
+ 
+@@ -682,8 +651,7 @@ float idSoundShader::GetMaxDistance() const
+ idSoundShader::GetDescription
+ ===============
+ */
+-const char *idSoundShader::GetDescription() const
+-{
++const char *idSoundShader::GetDescription() const {
+ 	return desc;
+ }
+ 
+@@ -692,14 +660,12 @@ const char *idSoundShader::GetDescription() const
+ idSoundShader::HasDefaultSound
+ ===============
+ */
+-bool idSoundShader::HasDefaultSound() const
+-{
+-	for (int i = 0; i < numEntries; i++) {
+-		if (entries[i] && entries[i]->defaultSound) {
++bool idSoundShader::HasDefaultSound() const {
++	for ( int i = 0; i < numEntries; i++ ) {
++		if ( entries[i] && entries[i]->defaultSound ) {
+ 			return true;
+ 		}
+ 	}
+-
+ 	return false;
+ }
+ 
+@@ -708,8 +674,7 @@ bool idSoundShader::HasDefaultSound() const
+ idSoundShader::GetParms
+ ===============
+ */
+-const soundShaderParms_t *idSoundShader::GetParms() const
+-{
++const soundShaderParms_t *idSoundShader::GetParms() const {
+ 	return &parms;
+ }
+ 
+@@ -718,8 +683,7 @@ const soundShaderParms_t *idSoundShader::GetParms() co
+ idSoundShader::GetNumSounds
+ ===============
+ */
+-int idSoundShader::GetNumSounds() const
+-{
++int idSoundShader::GetNumSounds() const {
+ 	return numLeadins + numEntries;
+ }
+ 
+@@ -728,19 +692,15 @@ int idSoundShader::GetNumSounds() const
+ idSoundShader::GetSound
+ ===============
+ */
+-const char *idSoundShader::GetSound(int index) const
+-{
+-	if (index >= 0) {
+-		if (index < numLeadins) {
++const char *idSoundShader::GetSound( int index ) const {
++	if ( index >= 0 ) {
++		if ( index < numLeadins ) {
+ 			return leadins[index]->name.c_str();
+ 		}
+-
+ 		index -= numLeadins;
+-
+-		if (index < numEntries) {
++		if ( index < numEntries ) {
+ 			return entries[index]->name.c_str();
+ 		}
+ 	}
+-
+ 	return "";
+ }
