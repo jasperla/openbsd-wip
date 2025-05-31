@@ -13,15 +13,16 @@ MODGO_MODULES =	\
 	github.com/aymanbagabas/go-osc52/v2		 v2.0.1 \
 	github.com/aymanbagabas/go-udiff		 v0.2.0 \
 	github.com/aymerick/douceur			 v0.2.0 \
+	github.com/bits-and-blooms/bitset		 v1.22.0 \
 	github.com/charmbracelet/bubbles		 v0.21.0 \
-	github.com/charmbracelet/bubbletea		 v1.3.4 \
-	github.com/charmbracelet/colorprofile		 v0.2.3-0.20250311203215-f60798e515dc \
+	github.com/charmbracelet/bubbletea		 v1.3.5 \
+	github.com/charmbracelet/colorprofile		 v0.3.1 \
 	github.com/charmbracelet/glamour		 v0.8.0 \
 	github.com/charmbracelet/harmonica		 v0.2.0 \
 	github.com/charmbracelet/lipgloss		 v1.1.0 \
 	github.com/charmbracelet/log			 v0.3.1 \
-	github.com/charmbracelet/x/ansi			 v0.8.0 \
-	github.com/charmbracelet/x/cellbuf		 v0.0.13-0.20250311204145-2c3ea96c31dd \
+	github.com/charmbracelet/x/ansi			 v0.9.2 \
+	github.com/charmbracelet/x/cellbuf		 v0.0.13 \
 	github.com/charmbracelet/x/exp/golden		 v0.0.0-20241011142426-46044092ad91 \
 	github.com/charmbracelet/x/exp/term		 v0.0.0-20240425164147-ba2a9512b05f \
 	github.com/charmbracelet/x/term			 v0.2.1 \
@@ -61,6 +62,7 @@ MODGO_MODULES =	\
 	github.com/kr/text				 v0.2.0 \
 	github.com/kylelemons/godebug			 v1.1.0 \
 	github.com/leodido/go-urn			 v1.4.0 \
+	github.com/lrstanley/bubblezone			 v1.0.0 \
 	github.com/lucasb-eyer/go-colorful		 v1.2.0 \
 	github.com/mattn/go-colorable			 v0.1.13 \
 	github.com/mattn/go-isatty			 v0.0.20 \
@@ -100,10 +102,10 @@ MODGO_MODULES =	\
 	golang.org/x/mod				 v0.17.0 \
 	golang.org/x/net				 v0.27.0 \
 	golang.org/x/oauth2				 v0.15.0 \
-	golang.org/x/sync				 v0.11.0 \
-	golang.org/x/sys				 v0.30.0 \
+	golang.org/x/sync				 v0.14.0 \
+	golang.org/x/sys				 v0.33.0 \
 	golang.org/x/term				 v0.28.0 \
-	golang.org/x/text				 v0.21.0 \
+	golang.org/x/text				 v0.25.0 \
 	golang.org/x/tools				 v0.21.1-0.20240508182429-e35e4ccd0d2d \
 	google.golang.org/appengine			 v1.6.7 \
 	google.golang.org/protobuf			 v1.31.0 \
@@ -114,12 +116,15 @@ MODGO_MODULES =	\
 
 MODGO_MODFILES =	\
 	github.com/alecthomas/chroma/v2		 v2.8.0 \
+	github.com/charmbracelet/bubbletea	 v1.3.4 \
+	github.com/charmbracelet/colorprofile	 v0.2.3-0.20250311203215-f60798e515dc \
 	github.com/charmbracelet/glamour	 v0.7.0 \
 	github.com/charmbracelet/lipgloss	 v0.10.1-0.20240413172830-d0be07ea6b9c \
 	github.com/charmbracelet/lipgloss	 v0.12.1 \
 	github.com/charmbracelet/lipgloss	 v0.9.1 \
-	github.com/charmbracelet/lipgloss	 v1.0.0 \
 	github.com/charmbracelet/x/ansi		 v0.1.4 \
+	github.com/charmbracelet/x/ansi		 v0.8.0 \
+	github.com/charmbracelet/x/cellbuf	 v0.0.13-0.20250311204145-2c3ea96c31dd \
 	github.com/charmbracelet/x/exp/golden	 v0.0.0-20240715153702-9ba8adf781c4 \
 	github.com/charmbracelet/x/exp/golden	 v0.0.0-20240806155701-69247e0abc2a \
 	github.com/cli/safeexec			 v1.0.0 \
@@ -157,7 +162,8 @@ MODGO_MODFILES =	\
 	golang.org/x/net			 v0.19.0 \
 	golang.org/x/net			 v0.21.0 \
 	golang.org/x/net			 v0.26.0 \
-	golang.org/x/sync			 v0.10.0 \
+	golang.org/x/sync			 v0.11.0 \
+	golang.org/x/sync			 v0.13.0 \
 	golang.org/x/sync			 v0.4.0 \
 	golang.org/x/sys			 v0.0.0-20210809222454-d867a43fc93e \
 	golang.org/x/sys			 v0.0.0-20210831042530-f4d43177bf5e \
@@ -168,12 +174,16 @@ MODGO_MODFILES =	\
 	golang.org/x/sys			 v0.22.0 \
 	golang.org/x/sys			 v0.26.0 \
 	golang.org/x/sys			 v0.29.0 \
+	golang.org/x/sys			 v0.30.0 \
+	golang.org/x/sys			 v0.32.0 \
 	golang.org/x/sys			 v0.6.0 \
 	golang.org/x/term			 v0.13.0 \
 	golang.org/x/term			 v0.22.0 \
 	golang.org/x/text			 v0.13.0 \
 	golang.org/x/text			 v0.14.0 \
 	golang.org/x/text			 v0.16.0 \
+	golang.org/x/text			 v0.21.0 \
+	golang.org/x/text			 v0.24.0 \
 	golang.org/x/text			 v0.3.8 \
 	golang.org/x/tools			 v0.14.0 \
 	golang.org/x/tools			 v0.18.0 \
