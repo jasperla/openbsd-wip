@@ -3,7 +3,7 @@ NOT_FOR_ARCHS =	sparc64
 
 COMMENT =	next-generation test runner for Rust
 
-VERSION =	0.9.96
+VERSION =	0.9.97
 
 DISTNAME =	cargo-nextest-${VERSION}
 
