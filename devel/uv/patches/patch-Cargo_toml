@@ -38,4 +38,4 @@ Index: Cargo.toml
 +version-ranges = { path = "${MODCARGO_VENDOR_DIR}/pubgrub-${PUBGRUB_HASH}/version-ranges" }
  walkdir = { version = "2.5.0" }
  which = { version = "7.0.0", features = ["regex"] }
- windows-registry = { version = "0.5.0" }
+ windows = { version = "0.59.0", features = ["Win32_Storage_FileSystem"] }
