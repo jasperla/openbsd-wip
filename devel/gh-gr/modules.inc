@@ -29,7 +29,7 @@ MODGO_MODULES =	\
 	github.com/charmbracelet/x/term			 v0.2.1 \
 	github.com/chengxilo/virtualterm		 v1.0.4 \
 	github.com/cli/browser				 v1.3.0 \
-	github.com/cli/go-gh/v2				 v2.12.0 \
+	github.com/cli/go-gh/v2				 v2.12.1 \
 	github.com/cli/safeexec				 v1.0.1 \
 	github.com/cli/shurcoo!l-graphql		 v0.0.4 \
 	github.com/cloudflare/circl			 v1.6.1 \

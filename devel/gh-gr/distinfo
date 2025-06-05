@@ -1,4 +1,4 @@
-SHA256 (gh-gr-2.7.13.zip) = UKrxoAni4/I+PAzptf6Vc5uP4gLKOe9eNT1SjrQ+Vnw=
+SHA256 (gh-gr-2.7.14.zip) = nCNa7DOACsQ8tegaHMC8g6cMpMCGTu3CZU81MKSyg0A=
 SHA256 (go_modules/cloud.google.com/go/compute/metadata/@v/v0.3.0.mod) = ZmAMRI0rXFR3BnNIkO0YGJyCgLII2Gua8qsIENW2HSE=
 SHA256 (go_modules/cloud.google.com/go/compute/metadata/@v/v0.3.0.zip) = wKt5wwhwwaqZEvsP3LBD4ARHgoJZiOQPWUAdInl2tnc=
 SHA256 (go_modules/code.gitea.io/sdk/gitea/@v/v0.21.0.mod) = 6djsX6ZYflbhdiz3oxGAwzQ2/BBiBaQyMk2n2MmqanA=
@@ -67,8 +67,8 @@ SHA256 (go_modules/github.com/chengxilo/virtualterm/@v/v1.0.4.mod) = 0i9qBWGiPXT
 SHA256 (go_modules/github.com/chengxilo/virtualterm/@v/v1.0.4.zip) = LtYp690s07JpzW5ww5iUU1hlW4wkBmTigBbJRVc18H4=
 SHA256 (go_modules/github.com/cli/browser/@v/v1.3.0.mod) = JCtqftFtAZRErdebinUKBmGs//0x8eIaqCbh9FgxCQU=
 SHA256 (go_modules/github.com/cli/browser/@v/v1.3.0.zip) = XXQ3Kfy21UZ/IGMo5HawvcEkQmp34tjhMyCtkpr9ASc=
-SHA256 (go_modules/github.com/cli/go-gh/v2/@v/v2.12.0.mod) = tLn1P1HYvnMLHPLUNjPVkqghKuhuD+7uvq7AEo+opi0=
-SHA256 (go_modules/github.com/cli/go-gh/v2/@v/v2.12.0.zip) = 1kVZ0c7Xq7MdQJ8PuVu42jdEelDg/JgWbP/Dnbbnj6s=
+SHA256 (go_modules/github.com/cli/go-gh/v2/@v/v2.12.1.mod) = tLn1P1HYvnMLHPLUNjPVkqghKuhuD+7uvq7AEo+opi0=
+SHA256 (go_modules/github.com/cli/go-gh/v2/@v/v2.12.1.zip) = Gs/Fnj5BbujqdVY5fPV+6HCfJsJPd47y1XyLcNi3Maw=
 SHA256 (go_modules/github.com/cli/safeexec/@v/v1.0.0.mod) = 8MehvVCdJn0F+UmNi5kN4OP9V5lUrigB0oBr0zCsGDM=
 SHA256 (go_modules/github.com/cli/safeexec/@v/v1.0.1.mod) = 8MehvVCdJn0F+UmNi5kN4OP9V5lUrigB0oBr0zCsGDM=
 SHA256 (go_modules/github.com/cli/safeexec/@v/v1.0.1.zip) = yGfSo61hIAzITiYENy6b1YFcsoOy/ysYPlf+KdAOAbo=
@@ -399,7 +399,7 @@ SHA256 (go_modules/google.golang.org/appengine/@v/v1.6.7.mod) = R2/HdtKQbDK21vMG
 SHA256 (go_modules/google.golang.org/appengine/@v/v1.6.7.zip) = efgN+sGGgXiPFBTiGkp3NO/0zfmSBwvpFjED642fks0=
 SHA256 (go_modules/google.golang.org/protobuf/@v/v1.29.1.mod) = P3xyYKmH3OL9+0jOKvi082SHNQfSGrzM66sKJ0N2Hic=
 SHA256 (go_modules/google.golang.org/protobuf/@v/v1.33.0.mod) = 0QBqpYC5zHyvLh+hwgBeOauHM8Qc5oUcH7wX+YBY5Vw=
-SHA256 (go_modules/google.golang.org/protobuf/@v/v1.33.0.zip) = avQHCCuwWvKeFYK3K6iUkL8Ob5B6QgcFlzwZZuHaFac=
+SHA256 (go_modules/google.golang.org/protobuf/@v/v1.33.0.zip) = LMHJjhKQMAm9S/DV6TikIcoviK6HsPxQAEssdZix/SQ=
 SHA256 (go_modules/gopkg.in/check.v1/@v/v0.0.0-20161208181325-20d25e280405.mod) = XDBuDWM81moRtA4uX7vG2kIRDbfXLqPBUkzrRe5Awz8=
 SHA256 (go_modules/gopkg.in/check.v1/@v/v1.0.0-20180628173108-788fd7840127.mod) = XDBuDWM81moRtA4uX7vG2kIRDbfXLqPBUkzrRe5Awz8=
 SHA256 (go_modules/gopkg.in/check.v1/@v/v1.0.0-20190902080502-41f04d3bba15.mod) = XDBuDWM81moRtA4uX7vG2kIRDbfXLqPBUkzrRe5Awz8=
@@ -419,7 +419,7 @@ SHA256 (go_modules/gopkg.in/yaml.v2/@v/v2.4.0.zip) = 7eSeJ8TMps3S7HGa7Y6k02NxDM6
 SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.0-20200313102051-9f266ea9e77c.mod) = IVeYYKIDBvz0OxvSNNH7oxlJnHdhG3HAX5vzupDauTk=
 SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.mod) = IVeYYKIDBvz0OxvSNNH7oxlJnHdhG3HAX5vzupDauTk=
 SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.zip) = qrj7xOYwDqCOav4crqGKIckMefSJ9SxT4vIEMfGpoBU=
-SIZE (gh-gr-2.7.13.zip) = 303639
+SIZE (gh-gr-2.7.14.zip) = 303643
 SIZE (go_modules/cloud.google.com/go/compute/metadata/@v/v0.3.0.mod) = 53
 SIZE (go_modules/cloud.google.com/go/compute/metadata/@v/v0.3.0.zip) = 19692
 SIZE (go_modules/code.gitea.io/sdk/gitea/@v/v0.21.0.mod) = 449
@@ -488,8 +488,8 @@ SIZE (go_modules/github.com/chengxilo/virtualterm/@v/v1.0.4.mod) = 420
 SIZE (go_modules/github.com/chengxilo/virtualterm/@v/v1.0.4.zip) = 7538
 SIZE (go_modules/github.com/cli/browser/@v/v1.3.0.mod) = 73
 SIZE (go_modules/github.com/cli/browser/@v/v1.3.0.zip) = 6971
-SIZE (go_modules/github.com/cli/go-gh/v2/@v/v2.12.0.mod) = 2808
-SIZE (go_modules/github.com/cli/go-gh/v2/@v/v2.12.0.zip) = 109042
+SIZE (go_modules/github.com/cli/go-gh/v2/@v/v2.12.1.mod) = 2808
+SIZE (go_modules/github.com/cli/go-gh/v2/@v/v2.12.1.zip) = 110753
 SIZE (go_modules/github.com/cli/safeexec/@v/v1.0.0.mod) = 40
 SIZE (go_modules/github.com/cli/safeexec/@v/v1.0.1.mod) = 40
 SIZE (go_modules/github.com/cli/safeexec/@v/v1.0.1.zip) = 7663
