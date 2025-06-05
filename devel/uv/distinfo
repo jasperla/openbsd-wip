@@ -251,7 +251,7 @@ SHA256 (cargo/httpdate-1.0.3.tar.gz) = 3ztGQCqdWttMhqDPRj9C4ZmU4+6JEQGxhB8wpUXLS
 SHA256 (cargo/humantime-2.1.0.tar.gz) = mjpb+xlZMe6zNrKntNdh2uyEG5f5R9NDlGAXN6e7peQ=
 SHA256 (cargo/hyper-1.6.0.tar.gz) = zCtXFljjjgwBsf3KO7vpPADT1xaT/ydwBD+MKbx9b4A=
 SHA256 (cargo/hyper-rustls-0.27.5.tar.gz) = LRkVg/PaEwUlbyJGO5uwRxrK1IpOU0pSGLmWPpwfWbI=
-SHA256 (cargo/hyper-util-0.1.13.tar.gz) = scKTtrPSHsp4JQ3H2+vWuSEOxVMOA4y/4GYbXEerBug=
+SHA256 (cargo/hyper-util-0.1.12.tar.gz) = z58elQ4NnR08RxhEFnI88pwNH5O9jMzzfkvra0TzFxA=
 SHA256 (cargo/iana-time-zone-0.1.61.tar.gz) = I14IHzkloGcDwtARfqi5HwQnVv1uem5dkB6MoamWsiA=
 SHA256 (cargo/iana-time-zone-haiku-0.1.2.tar.gz) = 8xgnogb1avMuWQulbV0tCF9VhQgZJZN0PxayMGSVJp8=
 SHA256 (cargo/icu_collections-1.5.0.tar.gz) = 2y+kUiBuvuGMS1widNvx3hcAjodLTcTwrqnQHKeeRSY=
@@ -279,7 +279,6 @@ SHA256 (cargo/inout-0.1.3.tar.gz) = oMEFU9ZkpNC8/59CFdCqxnpjnMaO9mCECv4wm4B7yfU=
 SHA256 (cargo/insta-1.43.1.tar.gz) = FUk06nDFgFS1Vt1DC5mpjCp/9TCayYkVl+M5tcKPQ3E=
 SHA256 (cargo/instant-0.1.13.tar.gz) = 4CQoGdFTy6S0sFpajyp+m7+XtgVbKgArOVyWtf88AiI=
 SHA256 (cargo/ipnet-2.11.0.tar.gz) = Rp+wuc76V+PvMSde58rLePL9ykTkdlSRiEorEZ1OsTA=
-SHA256 (cargo/iri-string-0.7.8.tar.gz) = 28Xr6cOhp6USf5IKQY91hennWOkR0EZu0ATzk7DjgLI=
 SHA256 (cargo/is-terminal-0.4.15.tar.gz) = 4Zsj1T81zp9Wrrx9G7TmrB6cDbeshcjRdgwEN57c7Tc=
 SHA256 (cargo/is-terminal-0.4.16.tar.gz) = 4E1/MYYI011LYd3XXL2u6GsCPr4r1aZu4JFfC/kwlak=
 SHA256 (cargo/is_ci-1.2.0.tar.gz) = dlXJg5WA7oKd+suh0SeMK3iD5Qonf/dUEplInWvf3EU=
@@ -458,7 +457,7 @@ SHA256 (cargo/regex-syntax-0.6.29.tar.gz) = 8WLG3XsAiYHk1AIQrKILS9D5tgypJxBhsH94
 SHA256 (cargo/regex-syntax-0.8.4.tar.gz) = emagOufIAfrNd6KTcLT67CAXaJFawUpyG6NvILycIJs=
 SHA256 (cargo/regex-syntax-0.8.5.tar.gz) = KxXEMYa+Z6T9Y77lDQMDr//O84FJLr4sXYfzJOG4gVw=
 SHA256 (cargo/rend-0.5.2.tar.gz) = o16Ka/KM0SEFOmaqLmouPq/61KYAEhefDoZKpf/v8hU=
-SHA256 (cargo/reqwest-0.12.18.tar.gz) = 6Y/2sNu+TVo3MY9DPU/IK6vSFjHxlNNwQJzrLkCy8LU=
+SHA256 (cargo/reqwest-0.12.15.tar.gz) = 0ZxGpv3Ui8TauUthA/zMVdNMZ8wK0EZTqtTqKgfNe7s=
 SHA256 (cargo/reqwest-middleware-0.4.2.tar.gz) = V/F9KKbmrP4XM/4kvNMHdNE7/6S4oiU1tMjJhCMIjU4=
 SHA256 (cargo/reqwest-retry-0.7.0.tar.gz) = Kcc+QZWmv7yxdLeQ2bNAerkGRpdsVd5YplFdol2FEXg=
 SHA256 (cargo/resvg-0.29.0.tar.gz) = doiCGcCIHiKwzqsG/dz+gxY82BZCvWDHhCOH+clopy4=
@@ -483,6 +482,7 @@ SHA256 (cargo/rustix-0.38.44.tar.gz) = /bW8GuK6pZGADfFsnKeGGb9lwEiLQblszsXREiDYw
 SHA256 (cargo/rustix-1.0.7.tar.gz) = xx6D1q/n/2SJDsa3HWppu4phCreM42SzNSh2u0yAEmY=
 SHA256 (cargo/rustls-0.23.22.tar.gz) = n7kmOrTraV5CMh2wluO4+9cVpZsVTVyI2C2yF1toG6c=
 SHA256 (cargo/rustls-native-certs-0.8.1.tar.gz) = f8/y3VK1io2YpwJDZjoNI0xOK3kjVjeEnRWRM5SiR9M=
+SHA256 (cargo/rustls-pemfile-2.2.0.tar.gz) = 3OMU5f7j85lT1Gu2O7ikbUDC+Pt8xaO2yrK96XIdblA=
 SHA256 (cargo/rustls-pki-types-1.11.0.tar.gz) = kXziZGJKS02xw2Tcw1v8qd7QFNCpWM1HrT6WDpiOpRw=
 SHA256 (cargo/rustls-webpki-0.102.8.tar.gz) = ZMobyHSb1M83tc44bMFGWAd3tOhXLHuXuvIsg/REvuk=
 SHA256 (cargo/rustversion-1.0.19.tar.gz) = 98Rbl4QoPxsuf7YbQgR8L9Z47wlg1Pbx66ExWUzDadQ=
@@ -605,7 +605,6 @@ SHA256 (cargo/toml_datetime-0.6.9.tar.gz) = PaXbWpY+JLxovosXtvqCgUuyLuhmDxkrsYJ3
 SHA256 (cargo/toml_edit-0.22.26.tar.gz) = MQBohz2yxbPnZZ0sw10hhV26+lDRzjNjl8Zm48sIE34=
 SHA256 (cargo/toml_write-0.1.1.tar.gz) = v7lC3+HY4pp+5/y95b0rmiX7iapwyuouujvug2/0EHY=
 SHA256 (cargo/tower-0.5.2.tar.gz) = 0DmtkVnJi3Ds/VQLJXO5f39Sw+jZ+K1XokuRalNpdfk=
-SHA256 (cargo/tower-http-0.6.4.tar.gz) = D9sMITyiep9Xq2ndspD9gNlwkiNVuDrjgLOV05hrii4=
 SHA256 (cargo/tower-layer-0.3.3.tar.gz) = EhwqbNpGmAuw/NFkf/r2zT/HmgE94oh4KDb235xIeA4=
 SHA256 (cargo/tower-service-0.3.3.tar.gz) = jfm24T8tMskbm9cZwA0ZWIN7x97EdNlJUnmMyOae7sM=
 SHA256 (cargo/tracing-0.1.40.tar.gz) = w1I6tacZFsz0IO699VIfzvAhQSNLvAuKSfL9xFRDZO8=
@@ -673,6 +672,7 @@ SHA256 (cargo/want-0.3.1.tar.gz) = v6d2Cu0Z4QbeLHwLWBtQny8l09rK9zfLgqxhvG12Cw4=
 SHA256 (cargo/wasi-0.11.0+wasi-snapshot-preview1.tar.gz) = nI2H5ytko7TbKNEc4pI3wkYYj09RBX1lp+q2O3mH5CM=
 SHA256 (cargo/wasi-0.13.3+wasi-0.2.2.tar.gz) = JoFtLhpKNqKUC5bFKWzkA5F2M9/480QOmyNu1va6ytI=
 SHA256 (cargo/wasi-0.14.2+wasi-0.2.4.tar.gz) = loP5pamY2HPA0h/L48CDAJZwFJqPqyKGRLi9NrLEjLM=
+SHA256 (cargo/wasite-0.1.0.tar.gz) = uNrYO08l508YT2TEOxULke/nZHOVtCKJ845QVm2ChVs=
 SHA256 (cargo/wasm-bindgen-0.2.100.tar.gz) = HtyJKddJn8To8L4iYqJBVWz8VKC+oiN5DnFEbyqrHvU=
 SHA256 (cargo/wasm-bindgen-0.2.93.tar.gz) = qC7fwWpsRp9fRNx7VxgUBF1gQEtVoO6En5vPouY92bU=
 SHA256 (cargo/wasm-bindgen-0.2.95.tar.gz) = Eo0eNjr2JjK461chnI/Xh3FEr1dVj7LvA2jQCHvd6y4=
@@ -695,9 +695,9 @@ SHA256 (cargo/web-sys-0.3.70.tar.gz) = Jv3qr9m9Ep9l58AxWTwk1iGGMB4McsiXj6Fni+fVM
 SHA256 (cargo/web-sys-0.3.77.tar.gz) = M7bdLvkYbx8gcuQJ6ZzSKpdTMaazWRsSx2Tg5Vxg1dI=
 SHA256 (cargo/web-time-1.1.0.tar.gz) = WmWA8wix+tkgdhgIemXATnoQvHfgLI6E6bAN1LEvoLs=
 SHA256 (cargo/webpki-roots-0.26.8.tar.gz) = IhCykffqU2F/uvzEk58QkUIU7BWqzlumIpOmaPMixck=
-SHA256 (cargo/webpki-roots-1.0.0.tar.gz) = KFNzjRzE8to6IlwY7Gw3IauzGWEJbp2/WrNfqIsZz9s=
 SHA256 (cargo/weezl-0.1.8.tar.gz) = U6hbhqdxschwWBlhcHad0mT2bAeCrPGubMUb/WSzkII=
 SHA256 (cargo/which-7.0.3.tar.gz) = JNZDzj/T5bVIVGAqCA80+xCrdeC4E+4y0AyitE+nR2I=
+SHA256 (cargo/whoami-1.6.0.tar.gz) = aZTRMRirSSw8gMH4GShxgVklTFPEcr+c42+NrkrdAqc=
 SHA256 (cargo/widestring-1.1.0.tar.gz) = chnTa26siT+oHoTr4GSF59y7YWF3RpsULfFPH03rExE=
 SHA256 (cargo/winapi-0.3.9.tar.gz) = XIOaZ0/NepiVLlkyQupACr6TmSdGdh44ZBQF0osA9Bk=
 SHA256 (cargo/winapi-i686-pc-windows-gnu-0.4.0.tar.gz) = rDuHxjYgQm3ZuZHlzgMp7/VFvMu7NPO+Cf9vtqtRt7Y=
@@ -719,6 +719,7 @@ SHA256 (cargo/windows-interface-0.57.0.tar.gz) = Kb7ks46jzeZgEbqkTbpnfEMqeFk+ICO
 SHA256 (cargo/windows-interface-0.59.1.tar.gz) = vZIRtp+NzfqBe/0UvxyXyRiK+jb0dQEw/N8/QA7Kn6g=
 SHA256 (cargo/windows-link-0.1.1.tar.gz) = doQJNbdm4bCgXABmg1+57IAHHUwJoW9r1ffmVePBTDg=
 SHA256 (cargo/windows-numerics-0.2.0.tar.gz) = kVCvaAZsTFwH3cDOMEIVVHceUoveQnYUxhA4vCySwrE=
+SHA256 (cargo/windows-registry-0.4.0.tar.gz) = QoatkN20UHHv0aZt+kPrAt0N+64VRa1sw8Uc801+i6M=
 SHA256 (cargo/windows-registry-0.5.2.tar.gz) = s7qwk73TA6EkC7mbirqOqKae4Z00yeLvlZTnCKSHiCA=
 SHA256 (cargo/windows-result-0.1.2.tar.gz) = XjgzAujshRUgQlRoVkPeEIEa8O2X6jchDcJvsAMmR/g=
 SHA256 (cargo/windows-result-0.3.4.tar.gz) = VvQr0zLMbI6sWvET/Awf1qj9KqCKARk1hoblFg0FhsY=
@@ -789,7 +790,7 @@ SHA256 (cargo/zstd-safe-7.2.1.tar.gz) = VKOrTbaM6jZqzFyJfHtNTRuJlKnNbm+EH4lkVmpB
 SHA256 (cargo/zstd-sys-2.0.13+zstd.1.5.6.tar.gz) = OP8PIc/uj5fZTO9BNZ4MiaphEwKKsCkaqMoAOJlalao=
 SHA256 (charliermarsh-rs-async-zip-c909fda63fcafe4af496a07bfda28a5aae97e58d.tar.gz) = j8ceIZpQWvZNnGFveUDSTBs43B9UwD0yyzS6hJMPPh0=
 SHA256 (charliermarsh-tl-6e25b2ee2513d75385101a8ff9f591ef51f314ec.tar.gz) = 6Di8p8sgXjc82AHOGUdqgIU0pgkPwmGqLqdN/ZzqaLA=
-SHA256 (uv-0.7.10.tar.gz) = PXsR2mXVoh/lXDiztbRZLJMxCQpBC+5zGnzhzhvJcTA=
+SHA256 (uv-0.7.11.tar.gz) = bAwj+ZrfURZKg/i0FVoff6FuAcbLLeqqaOYOUx6AdsA=
 SIZE (astral-sh-pubgrub-06ec5a5f59ffaeb6cf5079c6cb184467da06c9db.tar.gz) = 99881
 SIZE (cargo/actix-codec-0.5.2.tar.gz) = 14085
 SIZE (cargo/actix-http-3.9.0.tar.gz) = 162122
@@ -1043,7 +1044,7 @@ SIZE (cargo/httpdate-1.0.3.tar.gz) = 10639
 SIZE (cargo/humantime-2.1.0.tar.gz) = 16749
 SIZE (cargo/hyper-1.6.0.tar.gz) = 153923
 SIZE (cargo/hyper-rustls-0.27.5.tar.gz) = 34660
-SIZE (cargo/hyper-util-0.1.13.tar.gz) = 101913
+SIZE (cargo/hyper-util-0.1.12.tar.gz) = 94918
 SIZE (cargo/iana-time-zone-0.1.61.tar.gz) = 27685
 SIZE (cargo/iana-time-zone-haiku-0.1.2.tar.gz) = 7185
 SIZE (cargo/icu_collections-1.5.0.tar.gz) = 82762
@@ -1071,7 +1072,6 @@ SIZE (cargo/inout-0.1.3.tar.gz) = 10743
 SIZE (cargo/insta-1.43.1.tar.gz) = 101047
 SIZE (cargo/instant-0.1.13.tar.gz) = 6305
 SIZE (cargo/ipnet-2.11.0.tar.gz) = 29718
-SIZE (cargo/iri-string-0.7.8.tar.gz) = 141493
 SIZE (cargo/is-terminal-0.4.15.tar.gz) = 7770
 SIZE (cargo/is-terminal-0.4.16.tar.gz) = 7811
 SIZE (cargo/is_ci-1.2.0.tar.gz) = 4521
@@ -1250,7 +1250,7 @@ SIZE (cargo/regex-syntax-0.6.29.tar.gz) = 299752
 SIZE (cargo/regex-syntax-0.8.4.tar.gz) = 347577
 SIZE (cargo/regex-syntax-0.8.5.tar.gz) = 357541
 SIZE (cargo/rend-0.5.2.tar.gz) = 14775
-SIZE (cargo/reqwest-0.12.18.tar.gz) = 198105
+SIZE (cargo/reqwest-0.12.15.tar.gz) = 199320
 SIZE (cargo/reqwest-middleware-0.4.2.tar.gz) = 28290
 SIZE (cargo/reqwest-retry-0.7.0.tar.gz) = 16006
 SIZE (cargo/resvg-0.29.0.tar.gz) = 94880
@@ -1275,6 +1275,7 @@ SIZE (cargo/rustix-0.38.44.tar.gz) = 379347
 SIZE (cargo/rustix-1.0.7.tar.gz) = 414500
 SIZE (cargo/rustls-0.23.22.tar.gz) = 341983
 SIZE (cargo/rustls-native-certs-0.8.1.tar.gz) = 31129
+SIZE (cargo/rustls-pemfile-2.2.0.tar.gz) = 25849
 SIZE (cargo/rustls-pki-types-1.11.0.tar.gz) = 63933
 SIZE (cargo/rustls-webpki-0.102.8.tar.gz) = 204327
 SIZE (cargo/rustversion-1.0.19.tar.gz) = 20616
@@ -1397,7 +1398,6 @@ SIZE (cargo/toml_datetime-0.6.9.tar.gz) = 12622
 SIZE (cargo/toml_edit-0.22.26.tar.gz) = 121714
 SIZE (cargo/toml_write-0.1.1.tar.gz) = 17467
 SIZE (cargo/tower-0.5.2.tar.gz) = 109417
-SIZE (cargo/tower-http-0.6.4.tar.gz) = 132254
 SIZE (cargo/tower-layer-0.3.3.tar.gz) = 6180
 SIZE (cargo/tower-service-0.3.3.tar.gz) = 6950
 SIZE (cargo/tracing-0.1.40.tar.gz) = 79459
@@ -1465,6 +1465,7 @@ SIZE (cargo/want-0.3.1.tar.gz) = 6398
 SIZE (cargo/wasi-0.11.0+wasi-snapshot-preview1.tar.gz) = 28131
 SIZE (cargo/wasi-0.13.3+wasi-0.2.2.tar.gz) = 136754
 SIZE (cargo/wasi-0.14.2+wasi-0.2.4.tar.gz) = 140921
+SIZE (cargo/wasite-0.1.0.tar.gz) = 2346
 SIZE (cargo/wasm-bindgen-0.2.100.tar.gz) = 48288
 SIZE (cargo/wasm-bindgen-0.2.93.tar.gz) = 43769
 SIZE (cargo/wasm-bindgen-0.2.95.tar.gz) = 43894
@@ -1487,9 +1488,9 @@ SIZE (cargo/web-sys-0.3.70.tar.gz) = 615438
 SIZE (cargo/web-sys-0.3.77.tar.gz) = 638246
 SIZE (cargo/web-time-1.1.0.tar.gz) = 18026
 SIZE (cargo/webpki-roots-0.26.8.tar.gz) = 257981
-SIZE (cargo/webpki-roots-1.0.0.tar.gz) = 248893
 SIZE (cargo/weezl-0.1.8.tar.gz) = 42175
 SIZE (cargo/which-7.0.3.tar.gz) = 18872
+SIZE (cargo/whoami-1.6.0.tar.gz) = 24691
 SIZE (cargo/widestring-1.1.0.tar.gz) = 85046
 SIZE (cargo/winapi-0.3.9.tar.gz) = 1200382
 SIZE (cargo/winapi-i686-pc-windows-gnu-0.4.0.tar.gz) = 2918815
@@ -1511,6 +1512,7 @@ SIZE (cargo/windows-interface-0.57.0.tar.gz) = 10931
 SIZE (cargo/windows-interface-0.59.1.tar.gz) = 11735
 SIZE (cargo/windows-link-0.1.1.tar.gz) = 6154
 SIZE (cargo/windows-numerics-0.2.0.tar.gz) = 9686
+SIZE (cargo/windows-registry-0.4.0.tar.gz) = 12572
 SIZE (cargo/windows-registry-0.5.2.tar.gz) = 13332
 SIZE (cargo/windows-result-0.1.2.tar.gz) = 10601
 SIZE (cargo/windows-result-0.3.4.tar.gz) = 13418
@@ -1581,4 +1583,4 @@ SIZE (cargo/zstd-safe-7.2.1.tar.gz) = 21122
 SIZE (cargo/zstd-sys-2.0.13+zstd.1.5.6.tar.gz) = 749090
 SIZE (charliermarsh-rs-async-zip-c909fda63fcafe4af496a07bfda28a5aae97e58d.tar.gz) = 51763
 SIZE (charliermarsh-tl-6e25b2ee2513d75385101a8ff9f591ef51f314ec.tar.gz) = 37106
-SIZE (uv-0.7.10.tar.gz) = 4020442
+SIZE (uv-0.7.11.tar.gz) = 4035420
