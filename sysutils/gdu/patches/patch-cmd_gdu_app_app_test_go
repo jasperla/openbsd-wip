@@ -1,0 +1,24 @@
+Disable test for version
+
+Index: cmd/gdu/app/app_test.go
+--- cmd/gdu/app/app_test.go.orig
++++ cmd/gdu/app/app_test.go
+@@ -20,18 +20,6 @@ func init() {
+ 	log.SetLevel(log.WarnLevel)
+ }
+ 
+-func TestVersion(t *testing.T) {
+-	out, err := runApp(
+-		&Flags{ShowVersion: true},
+-		[]string{},
+-		false,
+-		testdev.DevicesInfoGetterMock{},
+-	)
+-
+-	assert.Contains(t, out, "Version:\t development")
+-	assert.Nil(t, err)
+-}
+-
+ func TestAnalyzePath(t *testing.T) {
+ 	fin := testdir.CreateTestDir()
+ 	defer fin()

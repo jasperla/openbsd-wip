@@ -1,8 +1,8 @@
 Index: cmd/gdu/main.go
 --- cmd/gdu/main.go.orig
 +++ cmd/gdu/main.go
-@@ -23,7 +23,7 @@ var af *app.Flags
- var configErr error
+@@ -25,7 +25,7 @@ var (
+ )
  
  var rootCmd = &cobra.Command{
 -	Use:   "gdu [directory_to_scan]",
