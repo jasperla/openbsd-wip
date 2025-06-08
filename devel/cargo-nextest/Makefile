@@ -3,7 +3,7 @@ NOT_FOR_ARCHS =	sparc64
 
 COMMENT =	next-generation test runner for Rust
 
-VERSION =	0.9.97
+VERSION =	0.9.98
 
 DISTNAME =	cargo-nextest-${VERSION}
 
@@ -22,8 +22,9 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB +=	${MODCARGO_WANTLIB} m zstd
 
-BUILD_DEPENDS +=	archivers/zstd
-LIB_DEPENDS +=		${BUILD_DEPENDS}
+BUILD_DEPENDS+=	devel/cargo-generate-vendor \
+		archivers/zstd
+LIB_DEPENDS +=	archivers/zstd
 
 MODULES =	devel/cargo
 
@@ -50,7 +51,7 @@ do-install:
 # Nextest's own tests do not work with cargo test.
 # We must use nextest to run its own test suite.
 #
-# Summary [ 205.375s] 324 tests run: 314 passed, 10 failed, 1 skipped
+# Summary [ 450.333s] 337 tests run: 327 passed, 10 failed, 1 skipped
 # FAIL [  13.812s] integration-tests::integration test_list_binaries_only
 # FAIL [  12.786s] integration-tests::integration test_list_default
 # FAIL [  13.573s] integration-tests::integration test_list_full
