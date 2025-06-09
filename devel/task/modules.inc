@@ -5,7 +5,7 @@ MODGO_MODULES =	\
 	github.com/!microsoft/go-winio		 v0.6.2 \
 	github.com/!proton!mail/go-crypto	 v1.1.6 \
 	github.com/alecthomas/assert/v2		 v2.11.0 \
-	github.com/alecthomas/chroma/v2		 v2.16.0 \
+	github.com/alecthomas/chroma/v2		 v2.18.0 \
 	github.com/alecthomas/repr		 v0.4.0 \
 	github.com/anmitsu/go-shlex		 v0.0.0-20200514113438-38f4b401e2be \
 	github.com/armon/go-socks5		 v0.0.0-20160902184237-e75332964ef5 \
@@ -34,6 +34,7 @@ MODGO_MODULES =	\
 	github.com/golang/protobuf		 v1.5.4 \
 	github.com/google/go-cmp		 v0.7.0 \
 	github.com/google/renameio/v2		 v2.0.0 \
+	github.com/google/uuid			 v1.6.0 \
 	github.com/hexops/gotextdiff		 v1.0.3 \
 	github.com/jbenet/go-context		 v0.0.0-20150711004518-d14ea06fba99 \
 	github.com/joho/godotenv		 v1.5.1 \
@@ -68,9 +69,9 @@ MODGO_MODULES =	\
 	golang.org/x/exp			 v0.0.0-20240719175910-8a7402abbf56 \
 	golang.org/x/mod			 v0.12.0 \
 	golang.org/x/net			 v0.39.0 \
-	golang.org/x/sync			 v0.13.0 \
-	golang.org/x/sys			 v0.32.0 \
-	golang.org/x/term			 v0.31.0 \
+	golang.org/x/sync			 v0.14.0 \
+	golang.org/x/sys			 v0.33.0 \
+	golang.org/x/term			 v0.32.0 \
 	golang.org/x/text			 v0.24.0 \
 	golang.org/x/tools			 v0.27.0 \
 	google.golang.org/protobuf		 v1.33.0 \
@@ -124,10 +125,12 @@ MODGO_MODFILES =	\
 	golang.org/x/sys			 v0.25.0 \
 	golang.org/x/sys			 v0.29.0 \
 	golang.org/x/sys			 v0.30.0 \
+	golang.org/x/sys			 v0.32.0 \
 	golang.org/x/sys			 v0.5.0 \
 	golang.org/x/sys			 v0.6.0 \
 	golang.org/x/term			 v0.0.0-20201126162022-7de9c90e9dd1 \
 	golang.org/x/term			 v0.29.0 \
+	golang.org/x/term			 v0.31.0 \
 	golang.org/x/text			 v0.21.0 \
 	golang.org/x/text			 v0.3.6 \
 	golang.org/x/tools			 v0.0.0-20180917221912-90fa682c2a6e \
