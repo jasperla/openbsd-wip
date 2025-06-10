@@ -94,7 +94,7 @@ SHA256 (cargo/scopeguard-1.2.0.tar.gz) = lBQ/N3JRCfksJi7Sz15ZvOdJjAG8wVAte5r+Q5p
 SHA256 (cargo/serde-1.0.219.tar.gz) = Xw4sbtZgYBm04p5p26upWxGFRBDlNH1SUAJFbbu3hrY=
 SHA256 (cargo/serde_derive-1.0.219.tar.gz) = WwJ2z38sczZfcVfIEjwhzZpQ+72ER1evKMofWSX8KgA=
 SHA256 (cargo/serde_json-1.0.140.tar.gz) = IAaLbpbcbJvSPgHfiCfmx+Hy/d1DwhgQOCgDwTa5k3M=
-SHA256 (cargo/serde_spanned-0.6.8.tar.gz) = h2B8sTmO1Z1Icy5XWkwop6jr8kVLlk/j8iTyr8B5CeE=
+SHA256 (cargo/serde_spanned-0.6.9.tar.gz) = v0Hgz69yJtyhXoGXFywpWngoV/y5f60YCKFmhw3udaM=
 SHA256 (cargo/shell-words-1.1.0.tar.gz) = JBiKZ2tq5ow7LLOgG+F/v3JAzgCXmbtW1bFAkFHnj94=
 SHA256 (cargo/shellexpand-3.1.1.tar.gz) = ix/fZd1jMYMUlN1hazA1HDjpbkWSGid0XPmEkEWLkLs=
 SHA256 (cargo/signal-hook-registry-1.4.5.tar.gz) = kgO4BV9joqAOL1k7sFEDZ/5wfX/x5chy3i9TezOeVBA=
@@ -113,10 +113,10 @@ SHA256 (cargo/thiserror-2.0.12.tar.gz) = VnuKLa5YYxT3vip1LsdHQzKVnGRg4CveMNcCpm1
 SHA256 (cargo/thiserror-impl-2.0.12.tar.gz) = f3z0K0UH2OoyISBllnLPG527k/jy1Oz9blE1D/Wxeh0=
 SHA256 (cargo/tokio-1.45.1.tar.gz) = de9Roz7x2pJc6j5OsSKDPLN3xhQ5ykAbdw9UkCuAZ3k=
 SHA256 (cargo/tokio-macros-2.5.0.tar.gz) = bgbUPxNFo7zTn2pW27fcqyukfmjorBNIVefivbr4yrg=
-SHA256 (cargo/toml-0.8.22.tar.gz) = Ba4ynR8IxNF6Wb7X/1tadp0GLmSmLTSjJhshnmLNWq4=
-SHA256 (cargo/toml_datetime-0.6.9.tar.gz) = PaXbWpY+JLxovosXtvqCgUuyLuhmDxkrsYJ3HUmPCaM=
-SHA256 (cargo/toml_edit-0.22.26.tar.gz) = MQBohz2yxbPnZZ0sw10hhV26+lDRzjNjl8Zm48sIE34=
-SHA256 (cargo/toml_write-0.1.1.tar.gz) = v7lC3+HY4pp+5/y95b0rmiX7iapwyuouujvug2/0EHY=
+SHA256 (cargo/toml-0.8.23.tar.gz) = 3BvrmWudg1KannXBehaGdn0UjXBmMUPHhU2LSgnO02I=
+SHA256 (cargo/toml_datetime-0.6.11.tar.gz) = Is3a+I9PvBPFGuu/X47OtcfFqdoqxAoTUZ61sKDo8Rw=
+SHA256 (cargo/toml_edit-0.22.27.tar.gz) = Qf6MZgrkJXiHz2Y5SGLSHbykpt3SbwSjVgQQQGovgZo=
+SHA256 (cargo/toml_write-0.1.2.tar.gz) = XZn4yadyeISv5SLpvV7b/JGjMSs2p3tfuJJuTDGkGAE=
 SHA256 (cargo/unicode-ident-1.0.18.tar.gz) = Wl85QEpdpQcSpMHuzyXpDdYrYTUCt+kl/U5NGbXJZRI=
 SHA256 (cargo/unicode-linebreak-0.1.5.tar.gz) = OwnIPDwp03UGo+JgwIwDdDprtmqc1DLGk0q1AaGQVx8=
 SHA256 (cargo/unicode-width-0.1.14.tar.gz) = fdbjDpC6pvckEXIGZdQdibmj0DncRbj66h3dB/YX9q8=
@@ -164,7 +164,7 @@ SHA256 (cargo/windows_x86_64_msvc-0.52.6.tar.gz) = WJ9tqExkYgR0fRJwoqVmHqZu0cztJ
 SHA256 (cargo/winnow-0.7.10.tar.gz) = wGkoyHSNgbBcm+lqrZLhtv8BgzMy8oHoz8o75LNfyew=
 SHA256 (cargo/winsplit-0.1.0.tar.gz) = OrcDNS2mpy81w5pTNSY5NyVkBXW7IR9hmHonSDI62VY=
 SHA256 (cargo/wit-bindgen-rt-0.39.0.tar.gz) = b0IyDmH+LP00NU7LWX+G9BNISnmLpEqMoRZcWNQtpsE=
-SHA256 (tailspin-5.4.4.tar.gz) = XHgpJFwbAswZ4MWiMiKrlV3Qs26MEeE120JX45OnwjY=
+SHA256 (tailspin-5.4.5.tar.gz) = jexTM8jz6ctvKbSCNIJjSzwQ4xeq4S0IRNc8z7EwehM=
 SIZE (cargo/addr2line-0.24.2.tar.gz) = 39015
 SIZE (cargo/adler2-2.0.0.tar.gz) = 13529
 SIZE (cargo/aho-corasick-1.1.3.tar.gz) = 183311
@@ -261,7 +261,7 @@ SIZE (cargo/scopeguard-1.2.0.tar.gz) = 11619
 SIZE (cargo/serde-1.0.219.tar.gz) = 78983
 SIZE (cargo/serde_derive-1.0.219.tar.gz) = 57798
 SIZE (cargo/serde_json-1.0.140.tar.gz) = 154852
-SIZE (cargo/serde_spanned-0.6.8.tar.gz) = 9330
+SIZE (cargo/serde_spanned-0.6.9.tar.gz) = 10210
 SIZE (cargo/shell-words-1.1.0.tar.gz) = 9871
 SIZE (cargo/shellexpand-3.1.1.tar.gz) = 25904
 SIZE (cargo/signal-hook-registry-1.4.5.tar.gz) = 19004
@@ -280,10 +280,10 @@ SIZE (cargo/thiserror-2.0.12.tar.gz) = 28693
 SIZE (cargo/thiserror-impl-2.0.12.tar.gz) = 21141
 SIZE (cargo/tokio-1.45.1.tar.gz) = 811787
 SIZE (cargo/tokio-macros-2.5.0.tar.gz) = 12617
-SIZE (cargo/toml-0.8.22.tar.gz) = 76224
-SIZE (cargo/toml_datetime-0.6.9.tar.gz) = 12622
-SIZE (cargo/toml_edit-0.22.26.tar.gz) = 121714
-SIZE (cargo/toml_write-0.1.1.tar.gz) = 17467
+SIZE (cargo/toml-0.8.23.tar.gz) = 36050
+SIZE (cargo/toml_datetime-0.6.11.tar.gz) = 16125
+SIZE (cargo/toml_edit-0.22.27.tar.gz) = 78602
+SIZE (cargo/toml_write-0.1.2.tar.gz) = 15660
 SIZE (cargo/unicode-ident-1.0.18.tar.gz) = 47743
 SIZE (cargo/unicode-linebreak-0.1.5.tar.gz) = 15324
 SIZE (cargo/unicode-width-0.1.14.tar.gz) = 271615
@@ -331,4 +331,4 @@ SIZE (cargo/windows_x86_64_msvc-0.52.6.tar.gz) = 832564
 SIZE (cargo/winnow-0.7.10.tar.gz) = 176073
 SIZE (cargo/winsplit-0.1.0.tar.gz) = 7046
 SIZE (cargo/wit-bindgen-rt-0.39.0.tar.gz) = 12241
-SIZE (tailspin-5.4.4.tar.gz) = 3622650
+SIZE (tailspin-5.4.5.tar.gz) = 3622758
