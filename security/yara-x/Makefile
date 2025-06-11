@@ -34,10 +34,22 @@ MODCARGO_RUSTFLAGS +=	-Clink-arg=-fuse-ld=lld \
 
 SEPARATE_BUILD =	Yes
 
-# TODO generate and install shell completions for Bash/Fish/ZSH
+# Generate shell completions for Bash/Fish/ZSH
+post-build:
+	${MODCARGO_TARGET_DIR}/release/yr completion bash > ${WRKDIST}/yr.bash
+	${MODCARGO_TARGET_DIR}/release/yr completion fish > ${WRKDIST}/yr.fish
+	${MODCARGO_TARGET_DIR}/release/yr completion zsh > ${WRKDIST}/yr.zsh
 
 do-install:
 	${INSTALL_PROGRAM} ${MODCARGO_TARGET_DIR}/release/yr ${PREFIX}/bin/
+
+	${INSTALL_DATA_DIR} ${PREFIX}/share/bash-completion/completions/
+	${INSTALL_DATA} ${WRKDIST}/yr.bash \
+		${PREFIX}/share/bash-completion/completions/yr
+	${INSTALL_DATA_DIR} ${PREFIX}/share/fish/vendor_completions.d/
+	${INSTALL_DATA} ${WRKDIST}/yr.fish ${PREFIX}/share/fish/vendor_completions.d/
+	${INSTALL_DATA_DIR} ${PREFIX}/share/zsh/site-functions/
+	${INSTALL_DATA} ${WRKDIST}/yr.zsh ${PREFIX}/share/zsh/site-functions/_yr
 
 .include "crates.inc"
 
