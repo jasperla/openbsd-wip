@@ -2,8 +2,7 @@ COMMENT-main=	BitTorrent command line and daemon client
 COMMENT-gtk=	BitTorrent client with GTK+ interface
 COMMENT-qt=	BitTorrent client with Qt interface
 
-# testing between 4.0.6 and the next release,
-# see UPDATE regarding the devel/fmt shared lib.
+# testing between 4.0.6 and the next release
 
 VER=		4.1.0.dev
 DISTNAME=	transmission-${VER}
@@ -56,7 +55,8 @@ WANTLIB-qt +=	Qt6Widgets
 MODULES +=		devel/cmake \
 			textproc/intltool
 
-BUILD_DEPENDS +=	devel/fmt
+# see discussion with tearfur upstream
+#BUILD_DEPENDS +=	devel/fmt
 
 LIB_DEPENDS-common +=	archivers/libdeflate \
 			net/curl \
