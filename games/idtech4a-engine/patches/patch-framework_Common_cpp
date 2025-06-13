@@ -1,0 +1,49 @@
+Index: framework/Common.cpp
+--- framework/Common.cpp.orig
++++ framework/Common.cpp
+@@ -2884,10 +2884,13 @@ void idCommonLocal::Async(void)
+ 
+ #ifdef _RAVEN // quake4 game dll
+ #define _HARM_BASE_GAME_DLL "q4game"
++idStr fsgame_dllname = "libq4game.so";
+ #elif defined(_HUMANHEAD) // prey game dll
+ #define _HARM_BASE_GAME_DLL "preygame"
++idStr fsgame_dllname = "libpreygame.so";
+ #else
+ #define _HARM_BASE_GAME_DLL "game"
++idStr fsgame_dllname = "libgame.so";
+ #endif
+ 
+ #ifdef _WIN32
+@@ -2959,6 +2962,22 @@ void idCommonLocal::LoadGameDLL(void)
+ 	else
+ 		common->Printf("[Harmattan]: cvar `harm_fs_gameLibPath` is unset.\n");
+ 
++	if(!gameDLL)
++	{
++	fsgame = "/usr/local/lib/" + fsgame_dllname;
++		common->Printf("[Harmattan]: Load game `%s` from cvar `harm_fs_gameLibPath`......\n", fsgame.c_str());
++		gameDLL = sys->DLL_Load(fsgame);
++		common->Printf("[Harmattan]: Load dynamic library `%s` %s!\n", fsgame.c_str(), LOAD_RESULT(gameDLL));
++	}
++
++	if(!gameDLL)
++	{
++	fsgame = "/usr/local/lib/idtech4a-engine/" + fsgame_dllname;
++		common->Printf("[Harmattan]: Load game `%s` from cvar `harm_fs_gameLibPath`......\n", fsgame.c_str());
++		gameDLL = sys->DLL_Load(fsgame);
++		common->Printf("[Harmattan]: Load dynamic library `%s` %s!\n", fsgame.c_str(), LOAD_RESULT(gameDLL));
++	}
++
+ 	// Second check `fs_game` cvar.
+ 	if(!gameDLL)
+ 	{
+@@ -3538,7 +3557,7 @@ void idCommonLocal::ShutdownGame(bool reloading)
+ 		sw->StopAllSounds();
+ 	}
+ 
+-	soundSystem->ClearBuffer();
++	// soundSystem->ClearBuffer();
+ 
+ 	// shutdown the script debugger
+ 	// DebuggerServerShutdown();
