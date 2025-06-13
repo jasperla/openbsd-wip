@@ -23,6 +23,7 @@ SHA256 (cargo/android-tzdata-0.1.1.tar.gz) = 6ZmUGyNPMTGwC8E8ItBujF/3JtG2MYrH6yd
 SHA256 (cargo/android_system_properties-0.1.5.tar.gz) = gZ5yGdvUEEOsJ5sZgw8u/IlxVkkNf9bqkWcgEX7mYxE=
 SHA256 (cargo/anes-0.1.6.tar.gz) = S0bLs2Krh1KSHJfgQfXjZu5il71CijEnW5/PHjgPcpk=
 SHA256 (cargo/anstream-0.6.18.tar.gz) = isxTaZgRlgBiKOKICfdhh1wDJyEKiR6UH0xoOzqZUps=
+SHA256 (cargo/anstream-0.6.19.tar.gz) = MBrxky5GGFaGcl4PrS+PKqfaad1wv27MRNa3A4RKOTM=
 SHA256 (cargo/anstyle-1.0.10.tar.gz) = Vcw7afFnoe8uFhQ5qpiu2U5gKOX5pZvppv+0eu8WUfk=
 SHA256 (cargo/anstyle-parse-0.2.6.tar.gz) = Oy0WUHZigXpqIKnqkt9mUu5PlPkUWJN31p87IbxXmKk=
 SHA256 (cargo/anstyle-query-1.1.2.tar.gz) = eZR6839Bd8/q0REAE9Z4kFw3UBkU+6Dv6oNMP+mo1gw=
@@ -188,7 +189,7 @@ SHA256 (cargo/fdeflate-0.3.7.tar.gz) = HmhTtSZJ1KxcC9AjIM3cW6lWvbQHxLdaLGt1v1FQD
 SHA256 (cargo/filetime-0.2.25.tar.gz) = NcBSLpgeaMv6jD+XhEGl80swuW4UazPNM1kXa1D+hYY=
 SHA256 (cargo/fixedbitset-0.5.7.tar.gz) = HWdOgTkdHhq2gaKNmd8HknxtSqWwJ9faFroy0dIezZk=
 SHA256 (cargo/flate2-1.0.35.tar.gz) = yTa/2vtQfrv1C4B0xU+jHFvpoefl9GfdZZaXBBQH0Hw=
-SHA256 (cargo/flate2-1.1.1.tar.gz) = fO2S526WbKL9hMj3qgGkrqZbDrZkjXL3yPPidkpn/s4=
+SHA256 (cargo/flate2-1.1.2.tar.gz) = Sj19uVlv7NFRxfY4wO5dW9SHtuDqIy5dyW1SUPb5Sx0=
 SHA256 (cargo/float-cmp-0.10.0.tar.gz) = sJzzFVMy6USZAUDZZ/9ezrcN93izT3fYB120bkcE5tg=
 SHA256 (cargo/float-cmp-0.9.0.tar.gz) = mN5LvVR6VjtxbY36mq0csZv6sA9PoJpqTtIdvPRM6cQ=
 SHA256 (cargo/fnv-1.0.7.tar.gz) = P57skY0/JAad7LmvFVTK18iA4tokqa/YisoABTGrgsE=
@@ -197,7 +198,7 @@ SHA256 (cargo/fontconfig-parser-0.5.7.tar.gz) = wfz81Eym6QySH+6fpmXVMLIe8TJ6TBps
 SHA256 (cargo/fontdb-0.12.0.tar.gz) = /yC+95Qqcq8HEENGFUpwpwsInFcuRUtBvvbrbLEOnAY=
 SHA256 (cargo/form_urlencoded-1.2.1.tar.gz) = 4TYkwmJ1ZO/M9JNChL3ZjLqhTnmwtaFBIY5QezqCNFY=
 SHA256 (cargo/fs-err-2.11.0.tar.gz) = iKQfEF/h1bazSyBV49xZu3m0a0iyBAuebHtLXeCXqkE=
-SHA256 (cargo/fs-err-3.1.0.tar.gz) = H4m9pMKiEgQFmpd+07/nRmd9/RN7g8M55wKwrJHUgqo=
+SHA256 (cargo/fs-err-3.1.1.tar.gz) = iNe+k3iAE/JlIBJW1Y8Ek2qAea1dyJh0OqIFJfUDtoM=
 SHA256 (cargo/fs2-0.4.3.tar.gz) = lWT8dY4VAltGqmZDsbd9BH0aVqGupuAQAqwMcCaHYhM=
 SHA256 (cargo/futures-0.3.31.tar.gz) = ZbwHsai8fIXF8uEQxHbHOJtFVLpyr1fYRF6mOldrCHY=
 SHA256 (cargo/futures-channel-0.3.31.tar.gz) = Lf8Vv3iMZxwZNONm0H4wwYFKjvUU4a9ySmAuii++GxA=
@@ -230,6 +231,7 @@ SHA256 (cargo/half-2.6.0.tar.gz) = RZGW7SlUlaaPfX/h2E9sS3/w4h/jAXsvKDxvrDrYA8k=
 SHA256 (cargo/hashbrown-0.14.5.tar.gz) = 5SdEI+F7fJ/CC25+IIUy+bGYJdgt/WFXCLcO3YPfQfE=
 SHA256 (cargo/hashbrown-0.15.1.tar.gz) = Opv8GvaLFybqR9PVEJ3hJigd74ZrM5cOEPurEbXa+rM=
 SHA256 (cargo/hashbrown-0.15.3.tar.gz) = hLJsVE0AIinmQJaZcKLnQCGq324vljcrnFjv+X3gjrM=
+SHA256 (cargo/hashbrown-0.15.4.tar.gz) = WXGshWEdpwZ9v8q+88cOu1YGAYrNnio5A6DaUHUh4NU=
 SHA256 (cargo/heck-0.5.0.tar.gz) = IwTgCYP4f/s4tVtES147YKiEtdMMD8p9gv4zRJu+Veo=
 SHA256 (cargo/hermit-abi-0.1.19.tar.gz) = YrRnNDuUukdtyyUA0kLa27OVV9+IkxCsd8XZkQCqrDM=
 SHA256 (cargo/hermit-abi-0.3.9.tar.gz) = 0jHfuJz//bww5/xBV57WBmrQOr2p5WfMr65gK5fsUCQ=
@@ -311,7 +313,7 @@ SHA256 (cargo/libc-0.2.171.tar.gz) = wZk3IW6dOqmVbZu438CwyL62BY/E96TcTYUO34aiN9Y
 SHA256 (cargo/libc-0.2.172.tar.gz) = 11CvBC9+9PckMG3gKdGINsJsF2WlSmo/CUy9I6cmf/o=
 SHA256 (cargo/libmimalloc-sys-0.1.39.tar.gz) = I6poEdO9TeuKhN3mRflDR20TskjYGO3PjOCy838Da0Q=
 SHA256 (cargo/libredox-0.1.3.tar.gz) = wP83vVkMolBj41r3RcNDy3oCcZBvt7N+SBPo958AJo0=
-SHA256 (cargo/libz-rs-sys-0.5.0.tar.gz) = ZInKm9dg/pZC12ROgnsMmt0H34mFewQW7hXBzBo7jFo=
+SHA256 (cargo/libz-rs-sys-0.5.1.tar.gz) = Fyp4hTeiIhZhtID+6NxflsWA6zT6iHZNMgXcNWx+QiE=
 SHA256 (cargo/linux-raw-sys-0.4.14.tar.gz) = eLOuJbx8jDjOwVjR8nV+556bN0D7x8zw5Z5LCNeT+ok=
 SHA256 (cargo/linux-raw-sys-0.4.15.tar.gz) = 0mxS29MtzPLRDKx3Jfjq5SlohftXA7Jh99Cgc57IB6s=
 SHA256 (cargo/linux-raw-sys-0.9.2.tar.gz) = bbnGg9rwh9xXe3UG6WlbPVVqnzhJkD+igYYoOv1oCek=
@@ -386,7 +388,7 @@ SHA256 (cargo/pest-2.7.15.tar.gz) = i3yv5g1s+OYuG5supRagicAIlFu1onVBZ4nn2wvBmdw=
 SHA256 (cargo/pest_derive-2.7.15.tar.gz) = gWUYQhz8aIeg1iv0Qbb/tFNvzJJjlaaeGoWFLUNj9X4=
 SHA256 (cargo/pest_generator-2.7.15.tar.gz) = fROW/TqHD8eDh2jRcbRhbVyR9swl43e2c9cUVn2ZN3s=
 SHA256 (cargo/pest_meta-2.7.15.tar.gz) = 4eWAieol1xe/0x+1NOTzr8wsxWnHDePiOXeJkeo7feo=
-SHA256 (cargo/petgraph-0.8.1.tar.gz) = epjGcgZVYgpSHcxyLQrWbNiv1dhuNKie9pHFC3sk3gY=
+SHA256 (cargo/petgraph-0.8.2.tar.gz) = VKzzpoUiC1M+Q34mTk2TLPvcTMfsDNIy7XPAjQO4p8o=
 SHA256 (cargo/pico-args-0.5.0.tar.gz) = W+Fnp6827iL+MRUFG8UfbmxwVMk0jijetPSb1vcFoxU=
 SHA256 (cargo/pin-project-1.1.7.tar.gz) = vlf2TpRuUAyO4272MxhF1AqTBVVn7Ffo+uE+/TN1m5U=
 SHA256 (cargo/pin-project-1.1.8.tar.gz) = Hi7FOteF9NNdrArep/fcbxuyd62EpoDHr+/q4F0fWRY=
@@ -783,14 +785,14 @@ SHA256 (cargo/zerovec-0.10.4.tar.gz) = qiuJPXnfI7+xLVRhAY1AjqGd+v52wsfvbU66YU+P8
 SHA256 (cargo/zerovec-derive-0.10.3.tar.gz) = bq+m37F1hOo+K9bnbgzBWtevErCavdHKVZYb7ZsQY8Y=
 SHA256 (cargo/zip-2.2.0.tar.gz) = 3F5CiOpAV64jr8aaRHJDSoeiSVyvzmYy/RxOyfXPNJQ=
 SHA256 (cargo/zip-2.3.0.tar.gz) = hOmncqVLVCNrm3RKqvjXvgG01umXJVI8uCyzLRyBsdc=
-SHA256 (cargo/zlib-rs-0.5.0.tar.gz) = houSjXlJ4Jry9ght/B4Bk2BkzHqBklO85lDU4qLWO6g=
+SHA256 (cargo/zlib-rs-0.5.1.tar.gz) = YmvZ+pc0dR/FDWBgdSFwmE1wU/WjkGH1JM2mgCPU24o=
 SHA256 (cargo/zopfli-0.8.1.tar.gz) = 5QGfORusXPJS6Tu8xT0Dn/1ix7+3wVBBTWE2mv5X6UY=
 SHA256 (cargo/zstd-0.13.2.tar.gz) = /PK3eKZkWB4x44lFSnBy2rFkdgbUT3/uoizVq7nJ8/k=
 SHA256 (cargo/zstd-safe-7.2.1.tar.gz) = VKOrTbaM6jZqzFyJfHtNTRuJlKnNbm+EH4lkVmpBkFk=
 SHA256 (cargo/zstd-sys-2.0.13+zstd.1.5.6.tar.gz) = OP8PIc/uj5fZTO9BNZ4MiaphEwKKsCkaqMoAOJlalao=
 SHA256 (charliermarsh-rs-async-zip-c909fda63fcafe4af496a07bfda28a5aae97e58d.tar.gz) = j8ceIZpQWvZNnGFveUDSTBs43B9UwD0yyzS6hJMPPh0=
 SHA256 (charliermarsh-tl-6e25b2ee2513d75385101a8ff9f591ef51f314ec.tar.gz) = 6Di8p8sgXjc82AHOGUdqgIU0pgkPwmGqLqdN/ZzqaLA=
-SHA256 (uv-0.7.12.tar.gz) = syfU6lfM7P1e3Io87767YqgIniKiZLRA1E1BaLG537w=
+SHA256 (uv-0.7.13.tar.gz) = C62PifLuCnQajCEJXhfp+gkPsRJHSOS8EkB0F7W/rdI=
 SIZE (astral-sh-pubgrub-06ec5a5f59ffaeb6cf5079c6cb184467da06c9db.tar.gz) = 99881
 SIZE (cargo/actix-codec-0.5.2.tar.gz) = 14085
 SIZE (cargo/actix-http-3.9.0.tar.gz) = 162122
@@ -816,6 +818,7 @@ SIZE (cargo/android-tzdata-0.1.1.tar.gz) = 7674
 SIZE (cargo/android_system_properties-0.1.5.tar.gz) = 5243
 SIZE (cargo/anes-0.1.6.tar.gz) = 23857
 SIZE (cargo/anstream-0.6.18.tar.gz) = 29681
+SIZE (cargo/anstream-0.6.19.tar.gz) = 28767
 SIZE (cargo/anstyle-1.0.10.tar.gz) = 15725
 SIZE (cargo/anstyle-parse-0.2.6.tar.gz) = 22343
 SIZE (cargo/anstyle-query-1.1.2.tar.gz) = 9969
@@ -981,7 +984,7 @@ SIZE (cargo/fdeflate-0.3.7.tar.gz) = 27188
 SIZE (cargo/filetime-0.2.25.tar.gz) = 14940
 SIZE (cargo/fixedbitset-0.5.7.tar.gz) = 26537
 SIZE (cargo/flate2-1.0.35.tar.gz) = 109188
-SIZE (cargo/flate2-1.1.1.tar.gz) = 77224
+SIZE (cargo/flate2-1.1.2.tar.gz) = 76495
 SIZE (cargo/float-cmp-0.10.0.tar.gz) = 10702
 SIZE (cargo/float-cmp-0.9.0.tar.gz) = 10102
 SIZE (cargo/fnv-1.0.7.tar.gz) = 11266
@@ -990,7 +993,7 @@ SIZE (cargo/fontconfig-parser-0.5.7.tar.gz) = 39564
 SIZE (cargo/fontdb-0.12.0.tar.gz) = 16740
 SIZE (cargo/form_urlencoded-1.2.1.tar.gz) = 8969
 SIZE (cargo/fs-err-2.11.0.tar.gz) = 20449
-SIZE (cargo/fs-err-3.1.0.tar.gz) = 23055
+SIZE (cargo/fs-err-3.1.1.tar.gz) = 23107
 SIZE (cargo/fs2-0.4.3.tar.gz) = 13138
 SIZE (cargo/futures-0.3.31.tar.gz) = 54953
 SIZE (cargo/futures-channel-0.3.31.tar.gz) = 31971
@@ -1023,6 +1026,7 @@ SIZE (cargo/half-2.6.0.tar.gz) = 59507
 SIZE (cargo/hashbrown-0.14.5.tar.gz) = 141498
 SIZE (cargo/hashbrown-0.15.1.tar.gz) = 135873
 SIZE (cargo/hashbrown-0.15.3.tar.gz) = 140413
+SIZE (cargo/hashbrown-0.15.4.tar.gz) = 140447
 SIZE (cargo/heck-0.5.0.tar.gz) = 11517
 SIZE (cargo/hermit-abi-0.1.19.tar.gz) = 9979
 SIZE (cargo/hermit-abi-0.3.9.tar.gz) = 16165
@@ -1104,7 +1108,7 @@ SIZE (cargo/libc-0.2.171.tar.gz) = 785246
 SIZE (cargo/libc-0.2.172.tar.gz) = 791646
 SIZE (cargo/libmimalloc-sys-0.1.39.tar.gz) = 198523
 SIZE (cargo/libredox-0.1.3.tar.gz) = 6068
-SIZE (cargo/libz-rs-sys-0.5.0.tar.gz) = 17014
+SIZE (cargo/libz-rs-sys-0.5.1.tar.gz) = 17623
 SIZE (cargo/linux-raw-sys-0.4.14.tar.gz) = 1826665
 SIZE (cargo/linux-raw-sys-0.4.15.tar.gz) = 2150898
 SIZE (cargo/linux-raw-sys-0.9.2.tar.gz) = 2297426
@@ -1179,7 +1183,7 @@ SIZE (cargo/pest-2.7.15.tar.gz) = 127895
 SIZE (cargo/pest_derive-2.7.15.tar.gz) = 40745
 SIZE (cargo/pest_generator-2.7.15.tar.gz) = 18417
 SIZE (cargo/pest_meta-2.7.15.tar.gz) = 42121
-SIZE (cargo/petgraph-0.8.1.tar.gz) = 763960
+SIZE (cargo/petgraph-0.8.2.tar.gz) = 780998
 SIZE (cargo/pico-args-0.5.0.tar.gz) = 11545
 SIZE (cargo/pin-project-1.1.7.tar.gz) = 55438
 SIZE (cargo/pin-project-1.1.8.tar.gz) = 56118
@@ -1576,11 +1580,11 @@ SIZE (cargo/zerovec-0.10.4.tar.gz) = 126398
 SIZE (cargo/zerovec-derive-0.10.3.tar.gz) = 19438
 SIZE (cargo/zip-2.2.0.tar.gz) = 108080
 SIZE (cargo/zip-2.3.0.tar.gz) = 107864
-SIZE (cargo/zlib-rs-0.5.0.tar.gz) = 191547
+SIZE (cargo/zlib-rs-0.5.1.tar.gz) = 193055
 SIZE (cargo/zopfli-0.8.1.tar.gz) = 50972
 SIZE (cargo/zstd-0.13.2.tar.gz) = 30251
 SIZE (cargo/zstd-safe-7.2.1.tar.gz) = 21122
 SIZE (cargo/zstd-sys-2.0.13+zstd.1.5.6.tar.gz) = 749090
 SIZE (charliermarsh-rs-async-zip-c909fda63fcafe4af496a07bfda28a5aae97e58d.tar.gz) = 51763
 SIZE (charliermarsh-tl-6e25b2ee2513d75385101a8ff9f591ef51f314ec.tar.gz) = 37106
-SIZE (uv-0.7.12.tar.gz) = 4041301
+SIZE (uv-0.7.13.tar.gz) = 4052607
