@@ -495,7 +495,7 @@ SHA256 (cargo/zopfli-0.8.2.tar.gz) = 7fxe5AX1BM1JhOzG8U0C1Vz9pg+ktolDTvQQKq4VDNc
 SHA256 (cargo/zstd-0.13.3.tar.gz) = 6R7jEaVpwycXFlFWbgeXIgDnb8/iJCpPpEYUmjiBwIo=
 SHA256 (cargo/zstd-safe-7.2.4.tar.gz) = j0nE1fCrtgKpP7hzavKk9N2VEuNvf1cNZuZf+GftO50=
 SHA256 (cargo/zstd-sys-2.0.15+zstd.1.5.7.tar.gz) = 64EYPd2X0MdM7fHVDYXI0Iwbi2juhjve6ecG7tuhojc=
-SHA256 (yara-x-1.0.1.tar.gz) = aJjtx+QmgRke+E35+RDjwXYcxEbA6dwCajQPbx6Ij10=
+SHA256 (yara-x-1.1.0.tar.gz) = kLvpcKhf8scHsnBqicsWXNW4xwZFHPpLJeCqp3JQpto=
 SIZE (cargo/addr2line-0.24.2.tar.gz) = 39015
 SIZE (cargo/adler2-2.0.0.tar.gz) = 13529
 SIZE (cargo/aes-0.8.4.tar.gz) = 124812
@@ -993,4 +993,4 @@ SIZE (cargo/zopfli-0.8.2.tar.gz) = 51842
 SIZE (cargo/zstd-0.13.3.tar.gz) = 30514
 SIZE (cargo/zstd-safe-7.2.4.tar.gz) = 29350
 SIZE (cargo/zstd-sys-2.0.15+zstd.1.5.7.tar.gz) = 774847
-SIZE (yara-x-1.0.1.tar.gz) = 44491037
+SIZE (yara-x-1.1.0.tar.gz) = 44499555
