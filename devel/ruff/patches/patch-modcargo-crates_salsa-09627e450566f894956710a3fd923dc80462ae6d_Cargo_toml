@@ -1,8 +1,8 @@
-Remove workspace for salsa crate (conflict with root workspace)
+Fix workspace for salsa crate
 
-Index: modcargo-crates/salsa-0f6d406f6c309964279baef71588746b8c67b4a3/Cargo.toml
---- modcargo-crates/salsa-0f6d406f6c309964279baef71588746b8c67b4a3/Cargo.toml.orig
-+++ modcargo-crates/salsa-0f6d406f6c309964279baef71588746b8c67b4a3/Cargo.toml
+Index: modcargo-crates/salsa-09627e450566f894956710a3fd923dc80462ae6d/Cargo.toml
+--- modcargo-crates/salsa-09627e450566f894956710a3fd923dc80462ae6d/Cargo.toml.orig
++++ modcargo-crates/salsa-09627e450566f894956710a3fd923dc80462ae6d/Cargo.toml
 @@ -1,12 +1,12 @@
  [package]
  name = "salsa"
@@ -21,7 +21,7 @@ Index: modcargo-crates/salsa-0f6d406f6c309964279baef71588746b8c67b4a3/Cargo.toml
  
  [dependencies]
  salsa-macro-rules = { version = "0.22.0", path = "components/salsa-macro-rules" }
-@@ -85,13 +85,3 @@ harness = false
+@@ -82,13 +82,3 @@ harness = false
  [[bench]]
  name = "dataflow"
  harness = false
@@ -34,4 +34,4 @@ Index: modcargo-crates/salsa-0f6d406f6c309964279baef71588746b8c67b4a3/Cargo.toml
 -edition = "2021"
 -license = "Apache-2.0 OR MIT"
 -repository = "https://github.com/salsa-rs/salsa"
--rust-version = "1.80"
+-rust-version = "1.85"
