@@ -1,0 +1,56 @@
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -366,9 +366,12 @@ find_package(ZLIB REQUIRED)
+ include_directories(${ZLIB_INCLUDE_DIRS})
+ endif()
+ 
++find_package(OpenAL REQUIRED)
++include_directories(${OPENAL_INCLUDE_DIR})
++
+ # OpenAL using internal OpenAL-soft
+ #[[find_package(OpenAL REQUIRED)
+-include_directories(${OPENAL_INCLUDE_DIR})]]
++#include_directories(${OPENAL_INCLUDE_DIR})]]
+ 
+ 
+ if(WIN32)
+@@ -615,7 +618,9 @@ elseif(ANDROID)
+ 		set(sys_libs ${sys_libs} z)
+ 	endif()
+ else() #TODO linux
+-	set(sys_libs ${sys_libs} dl pthread)
++	set(sys_libs ${sys_libs} pthread) # TODO OpenBSD fix link
++	set(OPENAL_SOUND_LIBRARY "OpenAL::OpenAL")
++	set(sys_libs ${sys_libs} ${OPENAL_SOUND_LIBRARY})
+ 	if(USE_X11)
+ 		set(LINUX_SDL FALSE)
+ 		message(STATUS "use X11 + EGL")
+@@ -1615,8 +1620,8 @@ else()
+ 		)
+ 		set(src_sys_base
+ 			${src_sys_base}
+-			sys/linux/sound.cpp
+-			sys/linux/sound_alsa.cpp
++			#sys/linux/sound.cpp
++			#sys/linux/sound_alsa.cpp
+ 			sys/linux/sdlmain.cpp
+ 		)
+ 		set(src_sys_core
+@@ -1628,7 +1633,7 @@ else()
+ 			sys/linux/main.cpp
+ 			sys/linux/input.cpp
+ 			sys/linux/sound.cpp
+-			sys/linux/sound_alsa.cpp
++			##sys/linux/sound_alsa.cpp
+ 		)
+ 		set(src_sys_core
+ 			sys/linux/gles2.cpp
+@@ -1813,6 +1818,7 @@ if(CORE)
+ 		idlib
+ 		${sys_libs}
+ 		${local_libs}
++		${OPENAL_LIBRARY}
+ 	)
+ 
+ 	if(NOT APPLE AND NOT WIN32 AND NOT ANDROID)

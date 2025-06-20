@@ -1,0 +1,203 @@
+Index: sys/linux/sdlmain.cpp
+--- sys/linux/sdlmain.cpp.orig
++++ sys/linux/sdlmain.cpp
+@@ -32,6 +32,10 @@ If you have questions concerning this license or the a
+ #include <sys/types.h>
+ #include <fcntl.h>
+ 
++#include <pthread.h>
++#include <sys/time.h>
++#include <sys/sysctl.h>
++
+ #include <SDL_main.h>
+ 
+ #include "../platform.h"
+@@ -91,6 +95,15 @@ static char path_argv[PATH_MAX];
+ static char path_exe[PATH_MAX];
+ static char save_path[PATH_MAX];
+ 
++/**
++ * @brief Internal structure, used in cpu_tsc_mark, cpu_tsc_unmark and
++ *        cpu_clock_by_mark
++ */
++struct cpu_mark_t {
++	uint64_t tsc;		/*!< Time-stamp from RDTSC */
++	uint64_t sys_clock;	/*!< In microsecond resolution */
++};
++
+ // in main.cpp
+ /*
+ ===============
+@@ -197,6 +210,138 @@ double MeasureClockTicks( void ) {
+ Sys_ClockTicksPerSecond
+ ===============
+ */
++
++//
++// Start libcpuid functions
++//
++// sys_precise_clock
++void sys_precise_clock(uint64_t *result)
++{
++    struct timeval tv;
++    gettimeofday(&tv, NULL);
++    *result = (uint64_t) tv.tv_sec * (uint64_t) 1000000 +
++              (uint64_t) tv.tv_usec;
++}
++
++// cpu_rdtsc
++void cpu_rdtsc(uint64_t* result)
++{
++    uint32_t low_part, hi_part;
++    __asm __volatile (
++	"	rdtsc\n"
++	"	mov	%%eax,	%0\n"
++	"	mov	%%edx,	%1\n"
++	:"=m"(low_part), "=m"(hi_part)::"memory", "eax", "edx"
++    );
++
++    *result = (uint64_t)low_part + (((uint64_t) hi_part) << 32);
++}
++
++// cpu_tsc_mark
++void cpu_tsc_mark(struct cpu_mark_t* mark)
++{
++    cpu_rdtsc(&mark->tsc);
++    sys_precise_clock(&mark->sys_clock);
++}
++
++// cpu_clock_by_mark
++int cpu_clock_by_mark(struct cpu_mark_t* mark)
++{
++    uint64_t result;
++
++    /* Check if some subtraction resulted in a negative number: */
++    if ((mark->tsc >> 63) != 0 || (mark->sys_clock >> 63) != 0) return -1;
++
++    /* Divide-by-zero check: */
++    if (mark->sys_clock == 0) return -1;
++
++    /* Check if the result fits in 32bits */
++    result = mark->tsc / mark->sys_clock;
++    if (result > (uint64_t) 0x7fffffff) return -1;
++    return (int) result;
++}
++
++
++/* out = a - b */
++static void mark_t_subtract(struct cpu_mark_t* a, struct cpu_mark_t* b, struct cpu_mark_t *out)
++{
++    out->tsc = a->tsc - b->tsc;
++    out->sys_clock = a->sys_clock - b->sys_clock;
++}
++
++/* Emulate doing useful CPU intensive work */
++static int busy_loop(int amount)
++{
++    int i, j, k, s = 0;
++    static volatile int data[42] = {32, 12, -1, 5, 23, 0 };
++    for (i = 0; i < amount; i++)
++	for (j = 0; j < 65536; j++)
++	    for (k = 0; k < 42; k++)
++		s += data[k];
++    return s;
++}
++
++// cpu_clock_measure
++int cpu_clock_measure(int millis, int quad_check)
++{
++    struct cpu_mark_t begin[4], end[4], temp, temp2;
++    int results[4], cycles, n, k, i, j, bi, bj, mdiff, diff, _zero = 0;
++    uint64_t tl;
++
++    if (millis < 1) return -1;
++    tl = millis * (uint64_t) 1000;
++    if (quad_check)
++	tl /= 4;
++    n = quad_check ? 4 : 1;
++    cycles = 1;
++    for (k = 0; k < n; k++) {
++	cpu_tsc_mark(&begin[k]);
++	end[k] = begin[k];
++	do {
++	    /* Run busy loop, and fool the compiler that we USE the garbishy
++	       value it calculates */
++	    _zero |= (1 & busy_loop(cycles));
++	    cpu_tsc_mark(&temp);
++	    mark_t_subtract(&temp, &end[k], &temp2);
++	    /* If busy loop is too short, increase it */
++	    if (temp2.sys_clock < tl / 8)
++		cycles *= 2;
++	    end[k] = temp;
++	} while (end[k].sys_clock - begin[k].sys_clock < tl);
++	mark_t_subtract(&end[k], &begin[k], &temp);
++	results[k] = cpu_clock_by_mark(&temp);
++    }
++    if (n == 1) return results[0];
++    mdiff = 0x7fffffff;
++    bi = bj = -1;
++    for (i = 0; i < 4; i++) {
++	for (j = i + 1; j < 4; j++) {
++	    diff = results[i] - results[j];
++	    if (diff < 0) diff = -diff;
++	    if (diff < mdiff) {
++		mdiff = diff;
++		bi = i;
++		bj = j;
++	    }
++	}
++    }
++    ASSERT(1 == 1);
++    if (results[bi] == -1) return -1;
++    return (results[bi] + results[bj] + _zero) / 2;
++}
++//
++// END libcpuid functions
++//
++
++double llCPUSpeedHZ() {
++  int mhz;
++  // Here we use the RDTSC-based routine
++  mhz = cpu_clock_measure(400,1);
++  int64_t  tm_llCPUSpeedHZ = mhz * 1000000LL;
++  //CPrintF(TRANSV("  Clock: %.0fMHz\n"), _pTimer->tm_llCPUSpeedHZ/1E6);
++  return (double)tm_llCPUSpeedHZ;
++}
++
+ double Sys_ClockTicksPerSecond(void) {
+ 	static bool		init = false;
+ 	static double	ret;
+@@ -207,7 +352,8 @@ double Sys_ClockTicksPerSecond(void) {
+ 	if ( init ) {
+ 		return ret;
+ 	}
+-
++	
++	/*
+ 	fd = open( "/proc/cpuinfo", O_RDONLY );
+ 	if ( fd == -1 ) {
+ 		common->Printf( "couldn't read /proc/cpuinfo\n" );
+@@ -219,6 +365,7 @@ double Sys_ClockTicksPerSecond(void) {
+ 	len = read( fd, buf, 4096 );
+ 	close( fd );
+ 	pos = 0;
++	
+ 	while ( pos < len ) {
+ 		if ( !idStr::Cmpn( buf + pos, "cpu MHz", 7 ) ) {
+ 			pos = strchr( buf + pos, ':' ) - buf + 2;
+@@ -240,10 +387,12 @@ double Sys_ClockTicksPerSecond(void) {
+ 		}
+ 		pos = strchr( buf + pos, '\n' ) - buf + 1;
+ 	}
+-	common->Printf( "failed parsing /proc/cpuinfo\n" );
+-	ret = MeasureClockTicks();
++	*/
++	//common->Printf( "failed parsing /proc/cpuinfo\n" );
++	//ret = MeasureClockTicks();
++	ret = llCPUSpeedHZ();
+ 	init = true;
+-	common->Printf( "measured CPU frequency: %g MHz\n", ret / 1000000.0 );
++	common->Printf( "SDL Main: measured CPU frequency: %g MHz\n", ret / 1000000.0 );
+ 	return ret;		
+ }
+ 

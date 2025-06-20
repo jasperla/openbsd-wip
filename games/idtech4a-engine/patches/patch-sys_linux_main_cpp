@@ -1,0 +1,529 @@
+:Index: sys/linux/main.cpp
+Index: sys/linux/main.cpp
+--- sys/linux/main.cpp.orig
++++ sys/linux/main.cpp
+@@ -2,9 +2,9 @@
+ ===========================================================================
+ 
+ Doom 3 GPL Source Code
+-Copyright (C) 1999-2011 id Software LLC, a ZeniMax Media company. 
++Copyright (C) 1999-2011 id Software LLC, a ZeniMax Media company.
+ 
+-This file is part of the Doom 3 GPL Source Code (?Doom 3 Source Code?).  
++This file is part of the Doom 3 GPL Source Code ("Doom 3 Source Code").
+ 
+ Doom 3 Source Code is free software: you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+@@ -37,6 +37,9 @@ If you have questions concerning this license or the a
+ #include <sys/types.h>
+ #include <fcntl.h>
+ 
++#include <sys/time.h>
++#include <sys/sysctl.h>
++
+ #ifdef ID_MCHECK
+ #include <mcheck.h>
+ #endif
+@@ -44,6 +47,15 @@ If you have questions concerning this license or the a
+ static idStr	basepath;
+ static idStr	savepath;
+ 
++/**
++ * @brief Internal structure, used in cpu_tsc_mark, cpu_tsc_unmark and
++ *        cpu_clock_by_mark
++ */
++struct cpu_mark_t {
++	uint64_t tsc;		/*!< Time-stamp from RDTSC */
++	uint64_t sys_clock;	/*!< In microsecond resolution */
++};
++
+ /*
+ ===========
+ Sys_InitScanTable
+@@ -58,7 +70,7 @@ void Sys_InitScanTable( void ) {
+ Sys_AsyncThread
+ =================
+ */
+-void Sys_AsyncThread( void ) {
++THREAD_RETURN_TYPE Sys_AsyncThread( void * ) {
+ 	int now;
+ 	int next;
+ 	int	want_sleep;
+@@ -69,17 +81,17 @@ void Sys_AsyncThread( void ) {
+ 	ticked = now >> 4;
+ 	while (1) {
+ 		// sleep
+-		now = Sys_Milliseconds();		
++		now = Sys_Milliseconds();
+ 		next = ( now & 0xFFFFFFF0 ) + 0x10;
+ 		want_sleep = ( next-now-1 ) * 1000;
+ 		if ( want_sleep > 0 ) {
+ 			usleep( want_sleep ); // sleep 1ms less than true target
+ 		}
+-		
++
+ 		// compensate if we slept too long
+ 		now = Sys_Milliseconds();
+ 		to_ticked = now >> 4;
+-		
++
+ 		// show ticking statistics - every 100 ticks, print a summary
+ 		#if 0
+ 			#define STAT_BUF 100
+@@ -100,7 +112,7 @@ void Sys_AsyncThread( void ) {
+ 				counter = 0;
+ 			}
+ 		#endif
+-		
++
+ 		while ( ticked < to_ticked ) {
+ 			common->Async();
+ 			ticked++;
+@@ -109,6 +121,8 @@ void Sys_AsyncThread( void ) {
+ 		// thread exit
+ 		pthread_testcancel();
+ 	}
++
++	return (THREAD_RETURN_TYPE) 0;
+ }
+ 
+ /*
+@@ -139,7 +153,7 @@ const char *Sys_EXEPath( void ) {
+ 	len = readlink( linkpath.c_str(), buf, sizeof( buf ) );
+ 	if ( len == -1 ) {
+ 		Sys_Printf("couldn't stat exe path link %s\n", linkpath.c_str());
+-		buf[ len ] = '\0';
++		buf[ 0 ] = '\0';
+ 	}
+ 	return buf;
+ }
+@@ -178,12 +192,7 @@ const char *Sys_DefaultBasePath(void) {
+ 		}
+ 	}
+ 	common->Printf( "WARNING: using hardcoded default base path\n" );
+-#ifndef LINUX_DEFAULT_PATH
+-	#warning undefined data path
+-	return BASE_GAMEDIR;
+-#else
+ 	return LINUX_DEFAULT_PATH;
+-#endif
+ }
+ 
+ /*
+@@ -211,9 +220,101 @@ void Sys_Shutdown( void ) {
+ Sys_GetProcessorId
+ ===============
+ */
++static char cpustring[13] = "generic\0";
++
++#if defined(__x86_64__) || defined(__i386__)
++#if __x86_64__
++#	define REG_b "rbx"
++#	define REG_S "rsi"
++#elif __i386__
++#	define REG_b "ebx"
++#	define REG_S "esi"
++#endif
++
++#define cpuid(index,eax,ebx,ecx,edx)		\
++	__asm__ volatile						\
++	(	"mov %%" REG_b ", %%" REG_S "\n\t"	\
++		"cpuid\n\t"							\
++		"xchg %%" REG_b ", %%" REG_S		\
++		:	"=a" (eax), "=S" (ebx),			\
++			"=c" (ecx), "=d" (edx)			\
++		: "0" (index));
++
+ int Sys_GetProcessorId( void ) {
++	int eax, ebx, ecx, edx;
++	int max_std_level, max_ext_level, std_caps=0, ext_caps=0;
++	union { int i[3]; char c[12]; } vendor;
++
++	int i = CPUID_GENERIC;
++
++	cpuid(0, max_std_level, ebx, ecx, edx);
++	vendor.i[0] = ebx;
++	vendor.i[1] = edx;
++	vendor.i[2] = ecx;
++
++	strncpy(cpustring, vendor.c, 12);
++	cpustring[12] = 0;
++
++	Sys_Printf("Detected '%s' CPU with", cpustring);
++
++	if (max_std_level >= 1) {
++		cpuid(1, eax, ebx, ecx, std_caps);
++
++#ifdef __MMX__
++		if (std_caps & (1<<23)) {
++			Sys_Printf(" MMX");
++			i |= CPUID_MMX;
++		}
++#endif
++#ifdef __SSE__
++		if (std_caps & (1<<25)) {
++			Sys_Printf(" SSE");
++			i |= CPUID_SSE;
++		}
++#endif
++#ifdef __SSE2__
++		if (std_caps & (1<<26)) {
++			Sys_Printf(" SSE2");
++			i |= CPUID_SSE2;
++		}
++#endif
++#ifdef __SSE3__
++		if (ecx & 1) {
++			Sys_Printf(" SSE3");
++			i |= CPUID_SSE3;
++		}
++#endif
++	}
++
++	cpuid(0x80000000, max_ext_level, ebx, ecx, edx);
++
++	if (max_ext_level >= 0x80000001) {
++		cpuid(0x80000001, eax, ebx, ecx, ext_caps);
++
++#ifdef __3dNOW__
++		if (ext_caps & (1U<<31)) {
++			Sys_Printf(" 3DNOW");
++			i |= CPUID_3DNOW;
++		}
++#endif
++#ifdef __MMX__
++		if (ext_caps & (1<<23)) {
++			if (!(i & CPUID_MMX))
++				Sys_Printf(" MMX");
++			i |= CPUID_MMX;
++		}
++#endif
++	}
++
++	Sys_Printf("\n");
++
++	return i;
++}
++#else
++int Sys_GetProcessorId( void ) {
+ 	return CPUID_GENERIC;
+ }
++#endif
+ 
+ /*
+ ===============
+@@ -221,7 +322,7 @@ Sys_GetProcessorString
+ ===============
+ */
+ const char *Sys_GetProcessorString( void ) {
+-	return "generic";
++	return cpustring;
+ }
+ 
+ /*
+@@ -262,8 +363,7 @@ double Sys_GetClockTicks( void ) {
+ 						  : "=r" (lo), "=r" (hi) );
+ 	return (double) lo + (double) 0xFFFFFFFF * hi;
+ #else
+-#warning unsupported CPU
+-	return 0;
++	return 0.0;
+ #endif
+ }
+ 
+@@ -277,7 +377,7 @@ double MeasureClockTicks( void ) {
+ 
+ 	t0 = Sys_GetClockTicks( );
+ 	Sys_Sleep( 1000 );
+-	t1 = Sys_GetClockTicks( );	
++	t1 = Sys_GetClockTicks( );
+ 	return t1 - t0;
+ }
+ 
+@@ -286,6 +386,137 @@ double MeasureClockTicks( void ) {
+ Sys_ClockTicksPerSecond
+ ===============
+ */
++//
++// Start libcpuid functions
++//
++// sys_precise_clock
++void sys_precise_clock(uint64_t *result)
++{
++    struct timeval tv;
++    gettimeofday(&tv, NULL);
++    *result = (uint64_t) tv.tv_sec * (uint64_t) 1000000 +
++              (uint64_t) tv.tv_usec;
++}
++
++// cpu_rdtsc
++void cpu_rdtsc(uint64_t* result)
++{
++    uint32_t low_part, hi_part;
++    __asm __volatile (
++	"	rdtsc\n"
++	"	mov	%%eax,	%0\n"
++	"	mov	%%edx,	%1\n"
++	:"=m"(low_part), "=m"(hi_part)::"memory", "eax", "edx"
++    );
++
++    *result = (uint64_t)low_part + (((uint64_t) hi_part) << 32);
++}
++
++// cpu_tsc_mark
++void cpu_tsc_mark(struct cpu_mark_t* mark)
++{
++    cpu_rdtsc(&mark->tsc);
++    sys_precise_clock(&mark->sys_clock);
++}
++
++// cpu_clock_by_mark
++int cpu_clock_by_mark(struct cpu_mark_t* mark)
++{
++    uint64_t result;
++
++    /* Check if some subtraction resulted in a negative number: */
++    if ((mark->tsc >> 63) != 0 || (mark->sys_clock >> 63) != 0) return -1;
++
++    /* Divide-by-zero check: */
++    if (mark->sys_clock == 0) return -1;
++
++    /* Check if the result fits in 32bits */
++    result = mark->tsc / mark->sys_clock;
++    if (result > (uint64_t) 0x7fffffff) return -1;
++    return (int) result;
++}
++
++
++/* out = a - b */
++static void mark_t_subtract(struct cpu_mark_t* a, struct cpu_mark_t* b, struct cpu_mark_t *out)
++{
++    out->tsc = a->tsc - b->tsc;
++    out->sys_clock = a->sys_clock - b->sys_clock;
++}
++
++/* Emulate doing useful CPU intensive work */
++static int busy_loop(int amount)
++{
++    int i, j, k, s = 0;
++    static volatile int data[42] = {32, 12, -1, 5, 23, 0 };
++    for (i = 0; i < amount; i++)
++	for (j = 0; j < 65536; j++)
++	    for (k = 0; k < 42; k++)
++		s += data[k];
++    return s;
++}
++
++// cpu_clock_measure
++int cpu_clock_measure(int millis, int quad_check)
++{
++    struct cpu_mark_t begin[4], end[4], temp, temp2;
++    int results[4], cycles, n, k, i, j, bi, bj, mdiff, diff, _zero = 0;
++    uint64_t tl;
++
++    if (millis < 1) return -1;
++    tl = millis * (uint64_t) 1000;
++    if (quad_check)
++	tl /= 4;
++    n = quad_check ? 4 : 1;
++    cycles = 1;
++    for (k = 0; k < n; k++) {
++	cpu_tsc_mark(&begin[k]);
++	end[k] = begin[k];
++	do {
++	    /* Run busy loop, and fool the compiler that we USE the garbishy
++	       value it calculates */
++	    _zero |= (1 & busy_loop(cycles));
++	    cpu_tsc_mark(&temp);
++	    mark_t_subtract(&temp, &end[k], &temp2);
++	    /* If busy loop is too short, increase it */
++	    if (temp2.sys_clock < tl / 8)
++		cycles *= 2;
++	    end[k] = temp;
++	} while (end[k].sys_clock - begin[k].sys_clock < tl);
++	mark_t_subtract(&end[k], &begin[k], &temp);
++	results[k] = cpu_clock_by_mark(&temp);
++    }
++    if (n == 1) return results[0];
++    mdiff = 0x7fffffff;
++    bi = bj = -1;
++    for (i = 0; i < 4; i++) {
++	for (j = i + 1; j < 4; j++) {
++	    diff = results[i] - results[j];
++	    if (diff < 0) diff = -diff;
++	    if (diff < mdiff) {
++		mdiff = diff;
++		bi = i;
++		bj = j;
++	    }
++	}
++    }
++    ASSERT(1 == 1);
++    if (results[bi] == -1) return -1;
++    return (results[bi] + results[bj] + _zero) / 2;
++}
++//
++// END libcpuid functions
++//
++
++double llCPUSpeedHZ() {
++  int mhz;
++  // Here we use the RDTSC-based routine
++  mhz = cpu_clock_measure(400,1);
++  __int64  tm_llCPUSpeedHZ = mhz * 1000000LL;
++  //CPrintF(TRANSV("  Clock: %.0fMHz\n"), _pTimer->tm_llCPUSpeedHZ/1E6);
++  return (double)tm_llCPUSpeedHZ;
++}
++
+ double Sys_ClockTicksPerSecond(void) {
+ 	static bool		init = false;
+ 	static double	ret;
+@@ -297,17 +528,19 @@ double Sys_ClockTicksPerSecond(void) {
+ 		return ret;
+ 	}
+ 
++	/*
+ 	fd = open( "/proc/cpuinfo", O_RDONLY );
+ 	if ( fd == -1 ) {
+ 		common->Printf( "couldn't read /proc/cpuinfo\n" );
+ 		ret = MeasureClockTicks();
+ 		init = true;
+ 		common->Printf( "measured CPU frequency: %g MHz\n", ret / 1000000.0 );
+-		return ret;		
++		return ret;
+ 	}
+ 	len = read( fd, buf, 4096 );
+ 	close( fd );
+ 	pos = 0;
++	
+ 	while ( pos < len ) {
+ 		if ( !idStr::Cmpn( buf + pos, "cpu MHz", 7 ) ) {
+ 			pos = strchr( buf + pos, ':' ) - buf + 2;
+@@ -320,7 +553,7 @@ double Sys_ClockTicksPerSecond(void) {
+ 				ret = MeasureClockTicks();
+ 				init = true;
+ 				common->Printf( "measured CPU frequency: %g MHz\n", ret / 1000000.0 );
+-				return ret;		
++				return ret;
+ 			}
+ 			common->Printf( "/proc/cpuinfo CPU frequency: %g MHz\n", ret );
+ 			ret *= 1000000;
+@@ -329,11 +562,13 @@ double Sys_ClockTicksPerSecond(void) {
+ 		}
+ 		pos = strchr( buf + pos, '\n' ) - buf + 1;
+ 	}
+-	common->Printf( "failed parsing /proc/cpuinfo\n" );
+-	ret = MeasureClockTicks();
++	*/
++	//common->Printf( "failed parsing /proc/cpuinfo\n" );
++	//ret = MeasureClockTicks();
++	ret = llCPUSpeedHZ()
+ 	init = true;
+-	common->Printf( "measured CPU frequency: %g MHz\n", ret / 1000000.0 );
+-	return ret;		
++	common->Printf( "Main: measured CPU frequency: %g MHz\n", ret / 1000000.0 );
++	return ret;
+ }
+ 
+ /*
+@@ -350,7 +585,7 @@ int Sys_GetSystemRam( void ) {
+ 	if ( count == -1 ) {
+ 		common->Printf( "GetSystemRam: sysconf _SC_PHYS_PAGES failed\n" );
+ 		return 512;
+-	}	
++	}
+ 	page_size = sysconf( _SC_PAGE_SIZE );
+ 	if ( page_size == -1 ) {
+ 		common->Printf( "GetSystemRam: sysconf _SC_PAGE_SIZE failed\n" );
+@@ -371,7 +606,7 @@ the no-fork lets you keep the terminal when you're abo
+ if the command contains spaces, system() is used. Otherwise the more straightforward execl ( system() blows though )
+ ==================
+ */
+-void Sys_DoStartProcess( const char *exeName, bool dofork ) {	
++void Sys_DoStartProcess( const char *exeName, bool dofork ) {
+ 	bool use_system = false;
+ 	if ( strchr( exeName, ' ' ) ) {
+ 		use_system = true;
+@@ -389,12 +624,13 @@ void Sys_DoStartProcess( const char *exeName, bool dof
+ 	if ( dofork ) {
+ 		switch ( fork() ) {
+ 		case -1:
+-			// main thread
++			printf( "fork failed: %s\n", strerror( errno ) );
+ 			break;
+ 		case 0:
+ 			if ( use_system ) {
+ 				printf( "system %s\n", exeName );
+-				system( exeName );
++				if (system( exeName ) == -1)
++					printf( "system failed: %s\n", strerror( errno ) );
+ 				_exit( 0 );
+ 			} else {
+ 				printf( "execl %s\n", exeName );
+@@ -403,12 +639,16 @@ void Sys_DoStartProcess( const char *exeName, bool dof
+ 				_exit( -1 );
+ 			}
+ 			break;
++		default:
++			break;
+ 		}
+ 	} else {
+ 		if ( use_system ) {
+ 			printf( "system %s\n", exeName );
+-			system( exeName );
+-			sleep( 1 );	// on some systems I've seen that starting the new process and exiting this one should not be too close
++			if (system( exeName ) == -1)
++				printf( "system failed: %s\n", strerror( errno ) );
++			else
++				sleep( 1 );	// on some systems I've seen that starting the new process and exiting this one should not be too close
+ 		} else {
+ 			printf( "execl %s\n", exeName );
+ 			execl( exeName, exeName, NULL );
+@@ -437,7 +677,7 @@ void idSysLocal::OpenURL( const char *url, bool quit )
+ 	}
+ 
+ 	common->Printf( "Open URL: %s\n", url );
+-	// opening an URL on *nix can mean a lot of things .. 
++	// opening an URL on *nix can mean a lot of things ..
+ 	// just spawn a script instead of deciding for the user :-)
+ 
+ 	// look in the savepath first, then in the basepath
+@@ -543,8 +783,6 @@ void abrt_func( mcheck_status status ) {
+ 
+ #endif
+ 
+-#include <pthread.h>
+-static intptr_t main_thread = 0;
+ /*
+ ===============
+ main
+@@ -556,11 +794,9 @@ int main(int argc, const char **argv) {
+ 	mcheck( abrt_func );
+ 	Sys_Printf( "memory consistency checking enabled\n" );
+ #endif
+-	
++
+ 	Posix_EarlyInit( );
+ 
+-	main_thread = pthread_self();
+-
+ 	if ( argc > 1 ) {
+ 		common->Init( argc-1, &argv[1], NULL );
+ 	} else {
+@@ -572,14 +808,4 @@ int main(int argc, const char **argv) {
+ 	while (1) {
+ 		common->Frame();
+ 	}
+-}
+-
+-intptr_t Sys_GetMainThread(void)
+-{
+-	return main_thread;
+-}
+-
+-const char * Sys_DLLDefaultPath(void)
+-{
+-	return "./";
+-}
+\ No newline at end of file
++}

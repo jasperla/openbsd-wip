@@ -1,0 +1,30 @@
+Index: sys/sys_public.h
+--- sys/sys_public.h.orig
++++ sys/sys_public.h
+@@ -111,7 +111,7 @@ bool Sys_IsMainThread();
+ #endif
+ 
+ // Linux
+-#ifdef __linux__
++#ifdef __OpenBSD__
+ 
+ #ifdef __ANDROID__ //karin: Android arch defines
+ 
+@@ -216,7 +216,7 @@ typedef enum {
+ 	CPUID_CMOV							= 0x02000,	// Conditional Move (CMOV) and fast floating point comparison (FCOMI) instructions
+ 	CPUID_FTZ							= 0x04000,	// Flush-To-Zero mode (denormal results are flushed to zero)
+ 	CPUID_DAZ							= 0x08000	// Denormals-Are-Zero mode (denormal source operands are set to zero)
+-} cpuid_t;
++} doom3_cpuid_t;
+ 
+ typedef enum {
+ 	FPU_EXCEPTION_INVALID_OPERATION		= 1,
+@@ -429,7 +429,7 @@ void			Sys_ShowConsole(int visLevel, bool quitOnClose)
+ 
+ 
+ void			Sys_Mkdir(const char *path);
+-ID_TIME_T			Sys_FileTimeStamp(FILE *fp);
++long			Sys_FileTimeStamp(FILE *fp);
+ // NOTE: do we need to guarantee the same output on all platforms?
+ const char 	*Sys_TimeStampToStr(ID_TIME_T timeStamp);
+ const char 	*Sys_DefaultCDPath(void);

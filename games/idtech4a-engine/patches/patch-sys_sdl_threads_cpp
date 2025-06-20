@@ -1,0 +1,20 @@
+Index: sys/sdl/threads.cpp
+--- sys/sdl/threads.cpp.orig
++++ sys/sdl/threads.cpp
+@@ -30,6 +30,7 @@ If you have questions concerning this license or the a
+ #include <SDL_mutex.h>
+ #include <SDL_thread.h>
+ #include <SDL_timer.h>
++#include <unistd.h>
+ 
+ #include "sys/platform.h"
+ #include "framework/Common.h"
+@@ -274,7 +275,7 @@ Sys_DestroyThread
+ void Sys_DestroyThread(xthreadInfo& info) {
+ 	assert(info.threadHandle);
+ 
+-	SDL_WaitThread((SDL_Thread *)info.threadHandle, NULL);
++	sleep(1);
+ 
+ 	info.name = NULL;
+ 	info.threadHandle = NULL;
