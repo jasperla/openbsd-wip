@@ -1,7 +1,7 @@
 COMMENT =	go test runner with output optimized for humans
 
 MODGO_MODNAME =	gotest.tools/gotestsum
-MODGO_VERSION =	v1.12.2
+MODGO_VERSION =	v1.12.3
 
 DISTNAME =      gotestsum-${MODGO_VERSION}
 
