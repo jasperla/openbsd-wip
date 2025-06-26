@@ -5,20 +5,17 @@ COMMENT =	extremely fast Python package installer and resolver
 
 GH_ACCOUNT =	astral-sh
 GH_PROJECT =	uv
-GH_TAGNAME =	0.7.14
+GH_TAGNAME =	0.7.15
 
 # Rust crates downloaded via git
 ASYNC_HASH =	c909fda63fcafe4af496a07bfda28a5aae97e58d
 PUBGRUB_HASH =	06ec5a5f59ffaeb6cf5079c6cb184467da06c9db
 TL_HASH =	6e25b2ee2513d75385101a8ff9f591ef51f314ec
-WIREMOCK_HASH =	b79b69f62521df9f83a54e866432397562eae789
 
 DIST_TUPLE +=	github charliermarsh rs-async-zip ${ASYNC_HASH} \
 		${MODCARGO_VENDOR_DIR}
 DIST_TUPLE +=	github astral-sh pubgrub ${PUBGRUB_HASH} ${MODCARGO_VENDOR_DIR}
 DIST_TUPLE +=	github charliermarsh tl ${TL_HASH} ${MODCARGO_VENDOR_DIR}
-DIST_TUPLE +=	github astral-sh wiremock-rs ${WIREMOCK_HASH} \
-		${MODCARGO_VENDOR_DIR}
 
 CATEGORIES =	devel
 
@@ -50,7 +47,7 @@ MODCARGO_CRATES +=	reqwest-retry	0.7.0
 
 SEPARATE_BUILD =	Yes
 
-SUBST_VARS +=	MODCARGO_VENDOR_DIR PUBGRUB_HASH ASYNC_HASH TL_HASH WIREMOCK_HASH
+SUBST_VARS +=	MODCARGO_VENDOR_DIR PUBGRUB_HASH ASYNC_HASH TL_HASH
 
 post-patch:
 	${SUBST_CMD} ${WRKSRC}/Cargo.toml
@@ -63,9 +60,9 @@ post-patch:
 		${MODCARGO_VENDOR_DIR}/rs-async-zip-${ASYNC_HASH}
 	${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/charliermarsh-$\
 		tl-${TL_HASH}.tar.gz ${MODCARGO_VENDOR_DIR}/tl-${TL_HASH}
-	${LOCALBASE}/bin/cargo-generate-vendor \
-		${FULLDISTDIR}/astral-sh-wiremock-rs-${WIREMOCK_HASH}.tar.gz \
-		${MODCARGO_VENDOR_DIR}/wiremock-rs-${WIREMOCK_HASH}
+	# ${LOCALBASE}/bin/cargo-generate-vendor \
+	# 	${FULLDISTDIR}/astral-sh-wiremock-rs-${WIREMOCK_HASH}.tar.gz \
+	# 	${MODCARGO_VENDOR_DIR}/wiremock-rs-${WIREMOCK_HASH}
 
 # Generate shell completions
 post-build:

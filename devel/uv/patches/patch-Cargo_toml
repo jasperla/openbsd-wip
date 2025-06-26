@@ -1,5 +1,4 @@
-- Use local paths for crate async_zip, pubgrub, version-ranges, tl and
-wiremock-rs.
+- Use local paths for crate async_zip, pubgrub, version-ranges, tl.
 - Revert commit cd71ad1 for crates reqwest-middleware and reqwest-retry.
 
 Index: Cargo.toml
@@ -52,15 +51,6 @@ Index: Cargo.toml
  walkdir = { version = "2.5.0" }
  which = { version = "8.0.0", features = ["regex"] }
  windows = { version = "0.59.0", features = ["Win32_Storage_FileSystem"] }
-@@ -189,7 +189,7 @@ windows-core = { version = "0.59.0" }
- windows-registry = { version = "0.5.0" }
- windows-result = { version = "0.3.0" }
- windows-sys = { version = "0.59.0", features = ["Win32_Foundation", "Win32_Security", "Win32_Storage_FileSystem", "Win32_System_Ioctl", "Win32_System_IO", "Win32_System_Registry"] }
--wiremock = { git = "https://github.com/astral-sh/wiremock-rs", rev = "b79b69f62521df9f83a54e866432397562eae789" }
-+wiremock = { path = "${MODCARGO_VENDOR_DIR}/wiremock-rs-${WIREMOCK_HASH}" }
- xz2 = { version = "0.1.7" }
- zip = { version = "2.2.3", default-features = false, features = ["deflate", "zstd", "bzip2", "lzma", "xz"] }
- 
 @@ -296,7 +296,3 @@ codegen-units = 1
  # The profile that 'cargo dist' will build with.
  [profile.dist]
