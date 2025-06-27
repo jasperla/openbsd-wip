@@ -3,7 +3,7 @@ Don't run tests by default during build
 Index: make.lua
 --- make.lua.orig
 +++ make.lua
-@@ -117,5 +117,5 @@ lm:build 'unit-test' {
+@@ -118,5 +118,5 @@ lm:build 'unit-test' {
  }
  
  lm:default {

@@ -2,11 +2,11 @@ COMMENT =	language server that offers Lua language support
 
 GH_ACCOUNT =	LuaLS
 GH_PROJECT =	lua-language-server
-GH_TAGNAME =    3.14.0
+GH_TAGNAME =    3.15.0
 
 # Sources for submodules
 DIST_TUPLE +=	github CppCXY EmmyLuaCodeStyle \
-		e728970f81e887aa4078edaf93af895311bf667e \
+		8500f3af178f097331d938378648078d023f4c7c \
 		${WRKSRC}/3rd/EmmyLuaCodeStyle
 DIST_TUPLE +=	github actboy168 bee.lua \
 		8c01c7d79612d47f47f17d80304e66ae14d7b953 \
@@ -35,19 +35,19 @@ HOMEPAGE = 	https://luals.github.io/
 MAINTAINER =    Laurent Cheylus <foxy@free.fr>
 
 # MIT
-PERMIT_PACKAGE =	Yes
+PERMIT_PACKAGE=	Yes
 
 COMPILER =	base-clang ports-gcc
 
 WANTLIB +=	${COMPILER_LIBCXX} c m
 
-BUILD_DEPENDS =		devel/ninja
+BUILD_DEPENDS =	devel/ninja
 
 # Copy bee.lua sources for luamake
 pre-patch:
 	cp -r ${WRKSRC}/3rd/bee.lua/* ${WRKSRC}/3rd/luamake/bee.lua/
 
-post-patch:
+pre-configure:
 	sed -i 's/%%LUA_VERSION%%/${GH_TAGNAME}/' ${WRKSRC}/script/version.lua
 
 do-build:
