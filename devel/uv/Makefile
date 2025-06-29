@@ -5,7 +5,7 @@ COMMENT =	extremely fast Python package installer and resolver
 
 GH_ACCOUNT =	astral-sh
 GH_PROJECT =	uv
-GH_TAGNAME =	0.7.15
+GH_TAGNAME =	0.7.16
 
 # Rust crates downloaded via git
 ASYNC_HASH =	c909fda63fcafe4af496a07bfda28a5aae97e58d
@@ -50,8 +50,6 @@ SEPARATE_BUILD =	Yes
 SUBST_VARS +=	MODCARGO_VENDOR_DIR PUBGRUB_HASH ASYNC_HASH TL_HASH
 
 post-patch:
-	${SUBST_CMD} ${WRKSRC}/Cargo.toml
-
 	${LOCALBASE}/bin/cargo-generate-vendor \
 		${FULLDISTDIR}/astral-sh-pubgrub-${PUBGRUB_HASH}.tar.gz \
 		${MODCARGO_VENDOR_DIR}/pubgrub-${PUBGRUB_HASH}
@@ -60,9 +58,9 @@ post-patch:
 		${MODCARGO_VENDOR_DIR}/rs-async-zip-${ASYNC_HASH}
 	${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/charliermarsh-$\
 		tl-${TL_HASH}.tar.gz ${MODCARGO_VENDOR_DIR}/tl-${TL_HASH}
-	# ${LOCALBASE}/bin/cargo-generate-vendor \
-	# 	${FULLDISTDIR}/astral-sh-wiremock-rs-${WIREMOCK_HASH}.tar.gz \
-	# 	${MODCARGO_VENDOR_DIR}/wiremock-rs-${WIREMOCK_HASH}
+
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/Cargo.toml
 
 # Generate shell completions
 post-build:
