@@ -14,9 +14,9 @@ MAINTAINER =		izzy Meyer <izder456@disroot.org>
 # LGPLv2.1 (source), CC BY-SA 3.0 (data files), APLv2 (fonts)
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} GL GLU X11 Xi c curl curses form freetype
-WANTLIB += gmp iconv intl jpeg jsoncpp luajit-5.1 m ogg openal png pq
-WANTLIB += spatialindex sqlite3 vorbis vorbisfile z zstd
+WANTLIB += ${COMPILER_LIBCXX} GL GLU SDL2 c curl curses form freetype
+WANTLIB += gmp iconv intl jpeg jsoncpp luajit-5.1 m ogg openal
+WANTLIB += png pq spatialindex sqlite3 vorbis vorbisfile z zstd
 
 COMPILER =		base-clang ports-gcc base-gcc
 
@@ -45,6 +45,7 @@ LIB_DEPENDS =		audio/openal \
 			devel/gettext,-runtime \
 			devel/jsoncpp \
 			devel/gmp \
+			devel/sdl2 \
 			databases/sqlite3 \
 			databases/postgresql \
 			geo/spatialindex \
