@@ -1,6 +1,6 @@
 COMMENT =		infinite-world block sandbox game
 
-V =			5.11.0
+V =			5.12.0
 PKGNAME =		luanti-${V}
 
 DIST_TUPLE +=		github luanti-org luanti ${V} .
@@ -55,12 +55,6 @@ LIB_DEPENDS =		audio/openal \
 TEST_DEPENDS =		${FULLPKGNAME}:${BUILD_PKGPATH}
 TEST_ENV +=		HOME=${WRKBUILD}/test \
 			LC_CTYPE="en_US.UTF-8"
-
-post-install:
-	mv ${PREFIX}/share/applications/net.minetest.minetest.desktop \
-		${PREFIX}/share/applications/net.luanti.luanti.desktop
-	mv ${PREFIX}/share/metainfo/net.minetest.minetest.metainfo.xml \
-		${PREFIX}/share/metainfo/net.luanti.luanti.metainfo.xml
 
 do-test:
 	mkdir -p ${WRKBUILD}/test
