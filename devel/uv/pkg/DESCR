@@ -1,17 +1,16 @@
-An extremely fast Python package installer and resolver, written in
-Rust. Designed as a drop-in replacement for pip and pip-tools.
+An extremely fast Python package and project manager, written in Rust.
+Designed as a drop-in replacement for pip and pip-tools.
 
 Features:
-- Drop-in replacement for common pip, pip-tools, and virtualenv
-  commands.
-- 10-100x faster than pip and pip-tools (pip-compile and pip-sync).
+- Single tool to replace pip, pip-tools, pipx, poetry, pyenv, twine,
+  virtualenv, and more.
+- 10-100x faster than pip.
+- Provides comprehensive project management, with a universal lockfile.
+- Runs scripts, with support for inline dependency metadata.
+- Installs and manages Python versions.
+- Runs and installs tools published as Python packages.
+- Includes a pip-compatible interface for a performance boost with a
+  familiar CLI.
+- Supports Cargo-style workspaces for scalable projects.
 - Disk-space efficient, with a global cache for dependency
   deduplication.
-- Tested at-scale against the top 10,000 PyPI packages.
-- Advanced features such as dependency version overrides and alternative
-  resolution strategies.
-- Best-in-class error messages with a conflict-tracking resolver.
-- Support for a wide range of advanced pip features, including editable
-  installs, Git dependencies, direct URL dependencies, local
-  dependencies, constraints, source distributions, HTML and JSON
-  indexes, and more.

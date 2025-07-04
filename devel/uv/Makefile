@@ -1,7 +1,7 @@
 # ring-v0.17 does not support sparc64
 NOT_FOR_ARCHS =	sparc64
 
-COMMENT =	extremely fast Python package installer and resolver
+COMMENT =	extremely fast Python package and project manager
 
 GH_ACCOUNT =	astral-sh
 GH_PROJECT =	uv
