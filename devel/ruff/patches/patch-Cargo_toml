@@ -3,21 +3,23 @@ Use local sources for crates lsp-types and salsa
 Index: Cargo.toml
 --- Cargo.toml.orig
 +++ Cargo.toml
-@@ -112,7 +112,7 @@ libc = { version = "0.2.153" }
+@@ -112,9 +112,7 @@ libc = { version = "0.2.153" }
  libcst = { version = "1.1.0", default-features = false }
  log = { version = "0.4.17" }
  lsp-server = { version = "0.7.6" }
 -lsp-types = { git = "https://github.com/astral-sh/lsp-types.git", rev = "3512a9f", features = [
-+lsp-types = { path = "${MODCARGO_VENDOR_DIR}/lsp-types-${LSPTYPES_HASH}", features = [
-     "proposed",
- ] }
+-    "proposed",
+-] }
++lsp-types = { path = "../lsp-types", features = [ "proposed" ] }
  matchit = { version = "0.8.1" }
-@@ -137,7 +137,7 @@ regex-automata = { version = "0.4.9" }
+ memchr = { version = "2.7.1" }
+ mimalloc = { version = "0.1.39" }
+@@ -137,7 +135,7 @@ regex-automata = { version = "0.4.9" }
  rustc-hash = { version = "2.0.0" }
  rustc-stable-hash = { version = "0.1.2" }
  # When updating salsa, make sure to also update the revision in `fuzz/Cargo.toml`
 -salsa = { git = "https://github.com/salsa-rs/salsa", rev = "fc00eba89e5dcaa5edba51c41aa5f309b5cb126b" }
-+salsa = { path = "${MODCARGO_VENDOR_DIR}/salsa-${SALSA_HASH}" }
++salsa = { path = "../salsa" }
  schemars = { version = "0.8.16" }
  seahash = { version = "4.1.0" }
  serde = { version = "1.0.197", features = ["derive"] }
