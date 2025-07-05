@@ -1,0 +1,66 @@
+Index: sound/efxlib.h
+--- sound/efxlib.h.orig
++++ sound/efxlib.h
+@@ -0,0 +1,62 @@
++/*
++*/
++
++#ifndef __EFXLIBH
++#define __EFXLIBH
++
++#if ID_OPENAL_EAX
++#include <eax4.h>
++#endif
++
++
++
++
++///////////////////////////////////////////////////////////
++// Class definitions.
++class idSoundEffect
++{
++public:
++	idSoundEffect() {
++	};
++	~idSoundEffect() {
++		if ( data && datasize ) {
++			Mem_Free( data );
++			data = NULL;
++		}
++	}
++
++	idStr name;
++	int datasize;
++	void *data;
++};
++
++class idEFXFile
++{
++private:
++
++protected:
++    // Protected data members.
++
++public:
++    // Public data members.
++
++private:
++
++public:
++	idEFXFile();
++	~idEFXFile();
++
++	bool FindEffect( idStr &name, idSoundEffect **effect, int *index );
++	bool ReadEffect( idLexer &lexer, idSoundEffect *effect );
++	bool LoadFile( const char *filename, bool OSPath = false );
++	void UnloadFile( void );
++	void Clear( void );
++
++	idList<idSoundEffect *>effects;
++};
++///////////////////////////////////////////////////////////
++
++
++
++
++#endif // __EFXLIBH
