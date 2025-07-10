@@ -5,7 +5,7 @@ COMMENT =	pattern matching swiss knife for malware researchers
 
 GH_ACCOUNT =	VirusTotal
 GH_PROJECT =	yara-x
-GH_TAGNAME =	v1.3.0
+GH_TAGNAME =	v1.4.0
 
 CATEGORIES =	security
 
@@ -43,12 +43,12 @@ post-build:
 do-install:
 	${INSTALL_PROGRAM} ${MODCARGO_TARGET_DIR}/release/yr ${PREFIX}/bin/
 
-	${INSTALL_DATA_DIR} ${PREFIX}/share/bash-completion/completions/
+	${INSTALL_DATA_DIR} ${PREFIX}/share/bash-completion/completions/ \
+		${PREFIX}/share/fish/vendor_completions.d/ \
+		${PREFIX}/share/zsh/site-functions/
 	${INSTALL_DATA} ${WRKDIST}/yr.bash \
 		${PREFIX}/share/bash-completion/completions/yr
-	${INSTALL_DATA_DIR} ${PREFIX}/share/fish/vendor_completions.d/
 	${INSTALL_DATA} ${WRKDIST}/yr.fish ${PREFIX}/share/fish/vendor_completions.d/
-	${INSTALL_DATA_DIR} ${PREFIX}/share/zsh/site-functions/
 	${INSTALL_DATA} ${WRKDIST}/yr.zsh ${PREFIX}/share/zsh/site-functions/_yr
 
 .include "crates.inc"
