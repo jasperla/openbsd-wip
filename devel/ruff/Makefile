@@ -5,7 +5,7 @@ COMMENT =	Python linter and code formatter
 
 GH_ACCOUNT =	astral-sh
 GH_PROJECT =	ruff
-GH_TAGNAME =	0.12.3
+GH_TAGNAME =	0.12.4
 
 # Rust crates downloaded via git
 LSPTYPES =	3512a9f33eadc5402cfab1b8f7340824c8ca1439
@@ -22,7 +22,7 @@ HOMEPAGE =	https://docs.astral.sh/ruff
 MAINTAINER =	Laurent Cheylus <foxy@free.fr>
 
 # MIT
-PERMIT_PACKAGE =	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB +=	${MODCARGO_WANTLIB} m zstd
 
@@ -35,10 +35,9 @@ CONFIGURE_STYLE =	cargo
 
 MODCARGO_RUSTFLAGS +=	-L${LOCALBASE}/lib
 
-SEPARATE_BUILD =	Yes
+SEPARATE_BUILD=	Yes
 
 # Generate shell completions
-# post-build:
 pre-install:
 	${MODCARGO_TARGET_DIR}/release/ruff generate-shell-completion bash \
 		> ${WRKSRC}/ruff.bash
