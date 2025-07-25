@@ -4,7 +4,7 @@ MAINTAINER =	Carter Li <zhangsongcui@live.cn>
 
 GH_ACCOUNT =	fastfetch-cli
 GH_PROJECT =	fastfetch
-GH_TAGNAME =	2.33.0
+GH_TAGNAME =	2.48.1
 
 # MIT
 PERMIT_PACKAGE =	Yes
@@ -19,7 +19,6 @@ BUILD_DEPENDS =		audio/pulseaudio \
 			databases/sqlite3 \
 			devel/glib2 \
 			devel/dconf \
-			devel/pkgconf \
 			graphics/vulkan-loader \
 			graphics/vulkan-headers \
 			graphics/chafa \
