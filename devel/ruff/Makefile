@@ -22,7 +22,7 @@ HOMEPAGE =	https://docs.astral.sh/ruff
 MAINTAINER =	Laurent Cheylus <foxy@free.fr>
 
 # MIT
-PERMIT_PACKAGE=	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB +=	${MODCARGO_WANTLIB} m zstd
 
@@ -35,9 +35,10 @@ CONFIGURE_STYLE =	cargo
 
 MODCARGO_RUSTFLAGS +=	-L${LOCALBASE}/lib
 
-SEPARATE_BUILD=	Yes
+SEPARATE_BUILD =	Yes
 
 # Generate shell completions
+# post-build:
 pre-install:
 	${MODCARGO_TARGET_DIR}/release/ruff generate-shell-completion bash \
 		> ${WRKSRC}/ruff.bash
