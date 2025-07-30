@@ -5,8 +5,6 @@ DIST_TUPLE +=	github Loadmaster fpattern v1.9 third_party/fpattern
 
 CATEGORIES =	x11 games
 
-MAINTAINER =	izzy Meyer <izder456@disroot.org>
-
 # Sustainable Use License, fpattern: MIT
 PERMIT_DISTFILES =	No
 PERMIT_PACKAGE =	Yes
