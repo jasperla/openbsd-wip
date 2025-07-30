@@ -18,13 +18,18 @@ MAINTAINER =	bilaliscarioth <bilal@iscarioth.org>
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += X11 Xau Xdmcp Xext Xxf86vm c drm m pthread xcb xcb-randr
-WANTLIB += z
+WANTLIB += z epoll-shim wayland-client iconv ffi gio-2.0 glib-2.0
+WANTLIB += gmodule-2.0 gobject-2.0 intl pcre2-8
 
 SITES = https://gitlab.com/chinstrap/gammastep/-/archive/${COMMIT}/
 
-BUILD_DEPENDS +=	devel/gettext,-tools
+LIB_DEPENDS = 	\
+		devel/epoll-shim \
+		wayland/wayland \
+		devel/glib2 \
+		devel/pcre2  \
 
-LIB_DEPENDS += wayland/wayland-client
+BUILD_DEPENDS=	devel/gettext,-tools
 
 USE_GMAKE ?=		yes
 

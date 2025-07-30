@@ -1,0 +1,15 @@
+gammastep adjusts the color temperature of your screen according 
+to your surroundings. This may help your eyes hurt less or reduce
+the risk for delayed sleep phase syndrome if you are working in 
+front of the screen at night.
+
+The color temperature is set according to the position of the sun. 
+A different color temperature is set during night and daytime. 
+During twilight and early morning, the color temperature transitions 
+smoothly from night to daytime temperature to allow your eyes to 
+slowly adapt over a period of about an hour. At night the color 
+temperature should be set to match the lamps in your room. This 
+is typically a low temperature at around 3000K-4000K (default is 4500K). 
+During the day, the color temperature should match the light from outside, 
+typically around 5500K-6500K (default is 6500K). The light has a 
+higher temperature on an overcast day.
