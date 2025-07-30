@@ -16,8 +16,6 @@ CATEGORIES =		games
 
 HOMEPAGE =		https://prismlauncher.org
 
-MAINTAINER =		izzy Meyer <izder456@disroot.org>
-
 # GPLv3+ libraries/launcher
 # LGPLv3+ libraries/libnbtplusplus, LGPLv2 libraries/rainbow
 # BSD libraries/cmark, MIT libraries/lionshead

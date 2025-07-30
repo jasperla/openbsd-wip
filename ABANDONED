@@ -55,9 +55,12 @@ emulators/arcem
 emulators/uae
 games/jsettlers
 games/falltergeist
+games/fallout1-ce
+games/fallout2-ce
 games/freeablo
 games/lordsawar
 games/openbor
+games/prismlauncher
 geo/gpsdrive
 graphics/create-resources
 graphics/fuzzyozr
