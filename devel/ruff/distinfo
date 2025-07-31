@@ -73,8 +73,9 @@ SHA256 (cargo/core-foundation-sys-0.8.7.tar.gz) = dzZIuU0OXWIPZPKAd3RFdA5h/nAQJQ
 SHA256 (cargo/countme-3.0.1.tar.gz) = dwS1/dF7GK4xxMHaWi4DBaK/F7UkkwCp7p7XtyEUxjY=
 SHA256 (cargo/cpufeatures-0.2.17.tar.gz) = We1YOO67JqK7Llj21bUxaYmunQi6sQ4ObRA+ZW0bAoA=
 SHA256 (cargo/crc32fast-1.4.2.tar.gz) = qXdp2U3auUPkUQ0TgVAWmidYte8+sZGp7miN4+I+97M=
-SHA256 (cargo/criterion-0.6.0.tar.gz) = O/evZrCYk4G9C+VRvXzJGRKmVaWMaRhCDJUnsf2LRnk=
+SHA256 (cargo/criterion-0.7.0.tar.gz) = 4cBHpisMw+FF+oRBWjGR9ijpgLGUwnVaoSMApObL2Sg=
 SHA256 (cargo/criterion-plot-0.5.0.tar.gz) = a1CCY0J4alGoni2joo8cMrBuOHIBvC0ZeR9iLGc3BrE=
+SHA256 (cargo/criterion-plot-0.6.0.tar.gz) = mxvMDcffrlmdhK0LGlX4DN6K83JdqDE7Uo2pXveD4zg=
 SHA256 (cargo/crossbeam-0.8.4.tar.gz) = ETfNfn/A+108WoZ4vjjsVugZEl2NeQdBH+JMy5Q/rKg=
 SHA256 (cargo/crossbeam-channel-0.5.15.tar.gz) = grj4+GizaWf5YGeQ0ZA1cN6c6vhwp7+fu9MBbWNqLLI=
 SHA256 (cargo/crossbeam-deque-0.8.6.tar.gz) = ndERt7f31VtywKauNhZg7lhTya9z9ww8LvaFi5UOLlE=
@@ -121,8 +122,8 @@ SHA256 (cargo/fs-err-2.11.0.tar.gz) = iKQfEF/h1bazSyBV49xZu3m0a0iyBAuebHtLXeCXqk
 SHA256 (cargo/fsevent-sys-4.1.0.tar.gz) = du56AtpNIxZQx86jE0m4ib4vRd2z7zAy0uyBhfYxP9I=
 SHA256 (cargo/funty-2.0.0.tar.gz) = 5tWjKBWuPzMwLZX9yyzheGL4xlNj3P0pNgSAuhAB/Jw=
 SHA256 (cargo/generic-array-0.14.7.tar.gz) = hWScpR/XInLXghra8nStkcKIJ3cT2cGIINhJmn/2npo=
-SHA256 (cargo/get-size-derive2-0.5.2.tar.gz) = Ao88+tfD47HY0E7wocA1dvLWKACAP+EwGkzSYoSfLeo=
-SHA256 (cargo/get-size2-0.5.2.tar.gz) = OgnCBDgZo973v7tJJ+fflqqw2kz9iCRISyLQyU6ERY4=
+SHA256 (cargo/get-size-derive2-0.6.1.tar.gz) = yhcfn47S9BasBE3i3ErN4+NWZioUrJkDRWOWU73H/Cg=
+SHA256 (cargo/get-size2-0.6.1.tar.gz) = llvFwcX+BcW705i7mz8PFNdQJh690a+VnyyKYD/tta0=
 SHA256 (cargo/getopts-0.2.21.tar.gz) = FNu/1ccdcCQez55vE3N/e1zoI4IQYxiNfkbEHTce69U=
 SHA256 (cargo/getrandom-0.2.16.tar.gz) = M1/58TXkOEyBUNbyfG2u1DNXf4a0dQQYM4wBoaJShZI=
 SHA256 (cargo/getrandom-0.3.3.tar.gz) = JhReVj5U8srcR3VT8exe5lCwCGLwpYvNEsvcXw6i0vQ=
@@ -461,7 +462,7 @@ SHA256 (cargo/zip-0.6.6.tar.gz) = dgOU4kbkwoGJ8Z1IjAWL8W9WQBau+sXTK7HztR1ekmE=
 SHA256 (cargo/zstd-0.11.2+zstd.1.5.2.tar.gz) = IMyWAybs5k8BDS0hB1N/JtxYmmVzoxa9Wx26aF+l/eQ=
 SHA256 (cargo/zstd-safe-5.0.2+zstd.1.5.2.tar.gz) = HSpVheBPnupLKj0eylCMTe6Vkqie9vRQwRcZ2gcm9Ns=
 SHA256 (cargo/zstd-sys-2.0.15+zstd.1.5.7.tar.gz) = 64EYPd2X0MdM7fHVDYXI0Iwbi2juhjve6ecG7tuhojc=
-SHA256 (ruff-0.12.5.tar.gz) = ij0TzJMac6g9Gk4mrlANd5APqEfDBiooX03R9LYYDdo=
+SHA256 (ruff-0.12.7.tar.gz) = t1lzesrU/1wm8hRZW5AzFoksNGBuRkhalEfQIHObLuY=
 SHA256 (salsa-rs-salsa-dba66f1a37acca014c2402f231ed5b361bd7d8fe.tar.gz) = 1kBiYEjAT7+9+m+sjUJpv9nUF2x4cOhoj6ZGreMPrCw=
 SIZE (astral-sh-lsp-types-3512a9f33eadc5402cfab1b8f7340824c8ca1439.tar.gz) = 71124
 SIZE (cargo/adler2-2.0.0.tar.gz) = 13529
@@ -538,8 +539,9 @@ SIZE (cargo/core-foundation-sys-0.8.7.tar.gz) = 37712
 SIZE (cargo/countme-3.0.1.tar.gz) = 10784
 SIZE (cargo/cpufeatures-0.2.17.tar.gz) = 13466
 SIZE (cargo/crc32fast-1.4.2.tar.gz) = 38491
-SIZE (cargo/criterion-0.6.0.tar.gz) = 119470
+SIZE (cargo/criterion-0.7.0.tar.gz) = 119908
 SIZE (cargo/criterion-plot-0.5.0.tar.gz) = 22706
+SIZE (cargo/criterion-plot-0.6.0.tar.gz) = 24495
 SIZE (cargo/crossbeam-0.8.4.tar.gz) = 10500
 SIZE (cargo/crossbeam-channel-0.5.15.tar.gz) = 92716
 SIZE (cargo/crossbeam-deque-0.8.6.tar.gz) = 22471
@@ -586,8 +588,8 @@ SIZE (cargo/fs-err-2.11.0.tar.gz) = 20449
 SIZE (cargo/fsevent-sys-4.1.0.tar.gz) = 4620
 SIZE (cargo/funty-2.0.0.tar.gz) = 13160
 SIZE (cargo/generic-array-0.14.7.tar.gz) = 15950
-SIZE (cargo/get-size-derive2-0.5.2.tar.gz) = 8771
-SIZE (cargo/get-size2-0.5.2.tar.gz) = 17517
+SIZE (cargo/get-size-derive2-0.6.1.tar.gz) = 8834
+SIZE (cargo/get-size2-0.6.1.tar.gz) = 18107
 SIZE (cargo/getopts-0.2.21.tar.gz) = 18457
 SIZE (cargo/getrandom-0.2.16.tar.gz) = 40163
 SIZE (cargo/getrandom-0.3.3.tar.gz) = 49493
@@ -926,5 +928,5 @@ SIZE (cargo/zip-0.6.6.tar.gz) = 65789
 SIZE (cargo/zstd-0.11.2+zstd.1.5.2.tar.gz) = 28987
 SIZE (cargo/zstd-safe-5.0.2+zstd.1.5.2.tar.gz) = 17273
 SIZE (cargo/zstd-sys-2.0.15+zstd.1.5.7.tar.gz) = 774847
-SIZE (ruff-0.12.5.tar.gz) = 7709816
+SIZE (ruff-0.12.7.tar.gz) = 7760229
 SIZE (salsa-rs-salsa-dba66f1a37acca014c2402f231ed5b361bd7d8fe.tar.gz) = 685209
