@@ -3,7 +3,7 @@ Use fallback to avoid using PROT_WRITE | PROT_EXEC mappings.
 Index: src/codegen/codegen_x86.c
 --- src/codegen/codegen_x86.c.orig
 +++ src/codegen/codegen_x86.c
-@@ -1195,7 +1195,7 @@ codegen_init(void)
+@@ -1196,7 +1196,7 @@ codegen_init(void)
  {
  #    ifdef _WIN32
      codeblock = VirtualAlloc(NULL, (BLOCK_SIZE + 1) * sizeof(codeblock_t), MEM_COMMIT, PAGE_EXECUTE_READWRITE);
