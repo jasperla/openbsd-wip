@@ -1,11 +1,6 @@
 @option is-branch
 @conflict gcc-<16
 @pkgpath lang/gcc/4.9,-main
-@bin bin/${CONFIG}-egcc
-@bin bin/${CONFIG}-egcc-ar
-@bin bin/${CONFIG}-egcc-nm
-@bin bin/${CONFIG}-egcc-ranlib
-@bin bin/${CONFIG}-gcc-${V}
 @bin bin/ecpp
 @bin bin/egcc
 @bin bin/egcc-ar
@@ -15,6 +10,11 @@
 @bin bin/egcov-dump
 @bin bin/egcov-tool
 @bin bin/elto-dump
+@bin bin/${CONFIG}-egcc
+@bin bin/${CONFIG}-egcc-ar
+@bin bin/${CONFIG}-egcc-nm
+@bin bin/${CONFIG}-egcc-ranlib
+@bin bin/${CONFIG}-gcc-${V}
 @info info/cpp.info
 @info info/cppinternals.info
 @info info/gcc.info
@@ -27,10 +27,6 @@ lib/gcc/${CONFIG}/${V}/
 lib/gcc/${CONFIG}/${V}/include/
 lib/gcc/${CONFIG}/${V}/include-fixed/
 lib/gcc/${CONFIG}/${V}/include-fixed/README
-lib/gcc/${CONFIG}/${V}/include/arm_neon_sve_bridge.h
-lib/gcc/${CONFIG}/${V}/include/arm_private_fp8.h
-lib/gcc/${CONFIG}/${V}/include/arm_private_neon_types.h
-lib/gcc/${CONFIG}/${V}/include/arm_sme.h
 lib/gcc/${CONFIG}/${V}/include/gcov.h
 lib/gcc/${CONFIG}/${V}/include/limits.h
 lib/gcc/${CONFIG}/${V}/include/stdalign.h
@@ -39,6 +35,9 @@ lib/gcc/${CONFIG}/${V}/include/stdfix.h
 lib/gcc/${CONFIG}/${V}/include/stdnoreturn.h
 %%ITM%%
 lib/gcc/${CONFIG}/${V}/include/syslimits.h
+%%QUADMATH%%
+%%alpha%%
+%%amd64%%
 lib/gcc/${CONFIG}/${V}/install-tools/
 lib/gcc/${CONFIG}/${V}/install-tools/fixinc_list
 lib/gcc/${CONFIG}/${V}/install-tools/gsyslimits.h
@@ -160,12 +159,6 @@ lib/gcc/${CONFIG}/${V}/plugin/include/config.h
 %%powerpc64%%
 %%sparc64%%
 %%X86%%
-%%QUADMATH%%
-lib/gcc/${CONFIG}/${V}/plugin/include/config/aarch64/aarch64-isa-modes.def
-lib/gcc/${CONFIG}/${V}/plugin/include/config/aarch64/aarch64-option-extensions.def
-lib/gcc/${CONFIG}/${V}/plugin/include/config/arm/aarch-common.h
-%%alpha%%
-%%amd64%%
 lib/gcc/${CONFIG}/${V}/plugin/include/configargs.h
 lib/gcc/${CONFIG}/${V}/plugin/include/context.h
 lib/gcc/${CONFIG}/${V}/plugin/include/convert.h
