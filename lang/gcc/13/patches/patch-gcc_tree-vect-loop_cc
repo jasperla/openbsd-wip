@@ -1,0 +1,12 @@
+Index: gcc/tree-vect-loop.cc
+--- gcc/tree-vect-loop.cc.orig
++++ gcc/tree-vect-loop.cc
+@@ -56,6 +56,8 @@ along with GCC; see the file COPYING3.  If not see
+ #include "tree-eh.h"
+ #include "case-cfn-macros.h"
+ 
++#define vec_step vec_step_
++
+ /* Loop Vectorization Pass.
+ 
+    This pass tries to vectorize loops.
