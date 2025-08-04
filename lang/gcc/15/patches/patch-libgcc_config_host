@@ -1,21 +1,23 @@
 Index: libgcc/config.host
 --- libgcc/config.host.orig
 +++ libgcc/config.host
-@@ -429,6 +429,13 @@ aarch64*-*-netbsd*)
+@@ -429,6 +429,15 @@ aarch64*-*-netbsd*)
  	md_unwind_def_header=aarch64/aarch64-unwind-def.h
  	md_unwind_header=aarch64/aarch64-unwind.h
  	;;
 +aarch64-*-openbsd*)
 +	extra_parts="$extra_parts crtfastmath.o"
 +	tmake_file="${tmake_file} ${cpu_type}/t-aarch64"
-+	tmake_file="${tmake_file} ${cpu_type}/t-lse"
++	tmake_file="${tmake_file} ${cpu_type}/t-lse t-slibgcc-libgcc"
 +	tmake_file="${tmake_file} ${cpu_type}/t-softfp t-softfp t-crtfm"
++	tmake_file="${tmake_file} t-dfprules"
++	md_unwind_def_header=aarch64/aarch64-unwind-def.h
 +	md_unwind_header=aarch64/aarch64-unwind.h
 +	;;
  aarch64*-*-fuchsia*)
  	tmake_file="${tmake_file} ${cpu_type}/t-aarch64"
  	tmake_file="${tmake_file} ${cpu_type}/t-lse t-slibgcc-libgcc"
-@@ -552,8 +559,13 @@ arm*-*-netbsdelf*)
+@@ -552,8 +561,13 @@ arm*-*-netbsdelf*)
  	    ;;
  	esac
  	;;
@@ -31,7 +33,7 @@ Index: libgcc/config.host
  	tmake_file="${tmake_file} arm/t-elf arm/t-bpabi arm/t-linux-eabi t-slibgcc-libgcc"
  	tm_file="$tm_file arm/bpabi-lib.h"
  	unwind_header=config/arm/unwind-arm.h
-@@ -1063,6 +1075,12 @@ microblaze*-*-rtems*)
+@@ -1063,6 +1077,12 @@ microblaze*-*-rtems*)
  	;;
  mips*-*-netbsd*)			# NetBSD/mips, either endian.
  	;;
@@ -44,7 +46,7 @@ Index: libgcc/config.host
  mips*-*-linux*)				# Linux MIPS, either endian.
  	extra_parts="$extra_parts crtfastmath.o"
  	tmake_file="${tmake_file} t-crtfm"
-@@ -1242,6 +1260,9 @@ powerpc*-*-freebsd*)
+@@ -1242,6 +1262,9 @@ powerpc*-*-freebsd*)
  powerpc-*-netbsd*)
  	tmake_file="$tmake_file rs6000/t-netbsd rs6000/t-crtstuff"
  	;;
@@ -54,7 +56,7 @@ Index: libgcc/config.host
  powerpc-*-eabisimaltivec*)
  	tmake_file="${tmake_file} rs6000/t-ppccomm rs6000/t-crtstuff t-crtstuff-pic t-fdpbit"
  	extra_parts="$extra_parts crtbegin.o crtend.o crtbeginS.o crtendS.o crtbeginT.o ecrti.o ecrtn.o ncrti.o ncrtn.o"
-@@ -1357,6 +1378,9 @@ riscv*-*-linux*)
+@@ -1357,6 +1380,9 @@ riscv*-*-linux*)
  riscv*-*-freebsd*)
  	tmake_file="${tmake_file} riscv/t-crtstuff riscv/t-softfp${host_address} t-softfp riscv/t-elf riscv/t-elf${host_address} t-slibgcc-libgcc"
  	extra_parts="$extra_parts crtbegin.o crtend.o crti.o crtn.o crtendS.o crtbeginT.o"
