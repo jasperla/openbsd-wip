@@ -1,6 +1,11 @@
 @option is-branch
 @conflict gcc-<16
 @pkgpath lang/gcc/4.9,-main
+@bin bin/${CONFIG}-egcc
+@bin bin/${CONFIG}-egcc-ar
+@bin bin/${CONFIG}-egcc-nm
+@bin bin/${CONFIG}-egcc-ranlib
+@bin bin/${CONFIG}-gcc-${V}
 @bin bin/ecpp
 @bin bin/egcc
 @bin bin/egcc-ar
@@ -10,188 +15,30 @@
 @bin bin/egcov-dump
 @bin bin/egcov-tool
 @bin bin/elto-dump
-@bin bin/${CONFIG}-egcc
-@bin bin/${CONFIG}-egcc-ar
-@bin bin/${CONFIG}-egcc-nm
-@bin bin/${CONFIG}-egcc-ranlib
-@bin bin/${CONFIG}-gcc-${V}
 @info info/cpp.info
 @info info/cppinternals.info
 @info info/gcc.info
 @info info/gccinstall.info
 @info info/gccint.info
+@info info/libquadmath.info
 lib/gcc/
 lib/gcc/${CONFIG}/
 lib/gcc/${CONFIG}/${V}/
-lib/gcc/${CONFIG}/${V}/adainclude/a-cfidll.ads
-lib/gcc/${CONFIG}/${V}/adainclude/a-cfinse.ads
-lib/gcc/${CONFIG}/${V}/adainclude/a-costso.adb
-lib/gcc/${CONFIG}/${V}/adainclude/a-costso.ads
-lib/gcc/${CONFIG}/${V}/adainclude/a-nbnbig.adb
-lib/gcc/${CONFIG}/${V}/adainclude/a-nbnbig.ads
-lib/gcc/${CONFIG}/${V}/adainclude/a-stbubo.adb
-lib/gcc/${CONFIG}/${V}/adainclude/a-stbubo.ads
-lib/gcc/${CONFIG}/${V}/adainclude/a-stbufi.adb
-lib/gcc/${CONFIG}/${V}/adainclude/a-stbufi.ads
-lib/gcc/${CONFIG}/${V}/adainclude/a-stbufo.adb
-lib/gcc/${CONFIG}/${V}/adainclude/a-stbufo.ads
-lib/gcc/${CONFIG}/${V}/adainclude/a-stbuun.adb
-lib/gcc/${CONFIG}/${V}/adainclude/a-stbuun.ads
-lib/gcc/${CONFIG}/${V}/adainclude/a-stbuut.adb
-lib/gcc/${CONFIG}/${V}/adainclude/a-stbuut.ads
-lib/gcc/${CONFIG}/${V}/adainclude/a-sttebu.adb
-lib/gcc/${CONFIG}/${V}/adainclude/a-sttebu.ads
-lib/gcc/${CONFIG}/${V}/adainclude/g-binsea.adb
-lib/gcc/${CONFIG}/${V}/adainclude/g-binsea.ads
-lib/gcc/${CONFIG}/${V}/adainclude/g-cpp.ads
-lib/gcc/${CONFIG}/${V}/adainclude/g-cppstd.adb
-lib/gcc/${CONFIG}/${V}/adainclude/g-cppstd.ads
-lib/gcc/${CONFIG}/${V}/adainclude/g-csclex.ads
-lib/gcc/${CONFIG}/${V}/adainclude/g-cstyin.adb
-lib/gcc/${CONFIG}/${V}/adainclude/g-cstyin.ads
-lib/gcc/${CONFIG}/${V}/adainclude/g-gfmafu.ads
-lib/gcc/${CONFIG}/${V}/adainclude/s-dorepr.adb
-lib/gcc/${CONFIG}/${V}/adainclude/s-dourea.adb
-lib/gcc/${CONFIG}/${V}/adainclude/s-dourea.ads
-lib/gcc/${CONFIG}/${V}/adainclude/s-exnflt.ads
-lib/gcc/${CONFIG}/${V}/adainclude/s-exnlfl.ads
-lib/gcc/${CONFIG}/${V}/adainclude/s-exponr.adb
-lib/gcc/${CONFIG}/${V}/adainclude/s-exponr.ads
-lib/gcc/${CONFIG}/${V}/adainclude/s-finpri.adb
-lib/gcc/${CONFIG}/${V}/adainclude/s-finpri.ads
-lib/gcc/${CONFIG}/${V}/adainclude/s-imad32.ads
-lib/gcc/${CONFIG}/${V}/adainclude/s-imad64.ads
-lib/gcc/${CONFIG}/${V}/adainclude/s-imagea.adb
-lib/gcc/${CONFIG}/${V}/adainclude/s-imagea.ads
-lib/gcc/${CONFIG}/${V}/adainclude/s-imagen.adb
-lib/gcc/${CONFIG}/${V}/adainclude/s-imagen.ads
-lib/gcc/${CONFIG}/${V}/adainclude/s-imager.adb
-lib/gcc/${CONFIG}/${V}/adainclude/s-imager.ads
-lib/gcc/${CONFIG}/${V}/adainclude/s-imen16.ads
-lib/gcc/${CONFIG}/${V}/adainclude/s-imen32.ads
-lib/gcc/${CONFIG}/${V}/adainclude/s-imenu8.ads
-lib/gcc/${CONFIG}/${V}/adainclude/s-imgflt.ads
-lib/gcc/${CONFIG}/${V}/adainclude/s-imglfl.ads
-lib/gcc/${CONFIG}/${V}/adainclude/s-imgllf.ads
-lib/gcc/${CONFIG}/${V}/adainclude/s-oslock.ads
-lib/gcc/${CONFIG}/${V}/adainclude/s-pehage.adb
-lib/gcc/${CONFIG}/${V}/adainclude/s-pehage.ads
-lib/gcc/${CONFIG}/${V}/adainclude/s-retsta.ads
-lib/gcc/${CONFIG}/${V}/adainclude/s-spark.ads
-lib/gcc/${CONFIG}/${V}/adainclude/s-spcuop.adb
-lib/gcc/${CONFIG}/${V}/adainclude/s-spcuop.ads
-lib/gcc/${CONFIG}/${V}/adainclude/s-vaen16.ads
-lib/gcc/${CONFIG}/${V}/adainclude/s-vaen32.ads
-lib/gcc/${CONFIG}/${V}/adainclude/s-vaenu8.ads
-lib/gcc/${CONFIG}/${V}/adainclude/s-vaispe.adb
-lib/gcc/${CONFIG}/${V}/adainclude/s-vaispe.ads
-lib/gcc/${CONFIG}/${V}/adainclude/s-valspe.adb
-lib/gcc/${CONFIG}/${V}/adainclude/s-valspe.ads
-lib/gcc/${CONFIG}/${V}/adainclude/s-valuen.adb
-lib/gcc/${CONFIG}/${V}/adainclude/s-valuen.ads
-lib/gcc/${CONFIG}/${V}/adainclude/s-vauspe.adb
-lib/gcc/${CONFIG}/${V}/adainclude/s-vauspe.ads
-lib/gcc/${CONFIG}/${V}/adainclude/s-vs_int.ads
-lib/gcc/${CONFIG}/${V}/adainclude/s-vs_lli.ads
-lib/gcc/${CONFIG}/${V}/adainclude/s-vs_llu.ads
-lib/gcc/${CONFIG}/${V}/adainclude/s-vs_uns.ads
-lib/gcc/${CONFIG}/${V}/adainclude/s-vsllli.ads
-lib/gcc/${CONFIG}/${V}/adainclude/s-vslllu.ads
-lib/gcc/${CONFIG}/${V}/adalib/a-cohama.ali
-lib/gcc/${CONFIG}/${V}/adalib/a-cohase.ali
-lib/gcc/${CONFIG}/${V}/adalib/a-costso.ali
-lib/gcc/${CONFIG}/${V}/adalib/a-nbnbig.ali
-lib/gcc/${CONFIG}/${V}/adalib/a-stbubo.ali
-lib/gcc/${CONFIG}/${V}/adalib/a-stbufi.ali
-lib/gcc/${CONFIG}/${V}/adalib/a-stbufo.ali
-lib/gcc/${CONFIG}/${V}/adalib/a-stbuun.ali
-lib/gcc/${CONFIG}/${V}/adalib/a-stbuut.ali
-lib/gcc/${CONFIG}/${V}/adalib/a-sttebu.ali
-lib/gcc/${CONFIG}/${V}/adalib/g-binsea.ali
-lib/gcc/${CONFIG}/${V}/adalib/g-cpp.ali
-lib/gcc/${CONFIG}/${V}/adalib/g-cppstd.ali
-lib/gcc/${CONFIG}/${V}/adalib/g-cstyin.ali
-lib/gcc/${CONFIG}/${V}/adalib/g-gfmafu.ali
-@so lib/gcc/${CONFIG}/${V}/adalib/libgnarl-15.so
-@so lib/gcc/${CONFIG}/${V}/adalib/libgnat-15.so
-lib/gcc/${CONFIG}/${V}/adalib/s-dourea.ali
-lib/gcc/${CONFIG}/${V}/adalib/s-exnflt.ali
-lib/gcc/${CONFIG}/${V}/adalib/s-exnlfl.ali
-lib/gcc/${CONFIG}/${V}/adalib/s-exponr.ali
-lib/gcc/${CONFIG}/${V}/adalib/s-finpri.ali
-lib/gcc/${CONFIG}/${V}/adalib/s-imad32.ali
-lib/gcc/${CONFIG}/${V}/adalib/s-imad64.ali
-lib/gcc/${CONFIG}/${V}/adalib/s-imagea.ali
-lib/gcc/${CONFIG}/${V}/adalib/s-imagen.ali
-lib/gcc/${CONFIG}/${V}/adalib/s-imager.ali
-lib/gcc/${CONFIG}/${V}/adalib/s-imen16.ali
-lib/gcc/${CONFIG}/${V}/adalib/s-imen32.ali
-lib/gcc/${CONFIG}/${V}/adalib/s-imenu8.ali
-lib/gcc/${CONFIG}/${V}/adalib/s-imgflt.ali
-lib/gcc/${CONFIG}/${V}/adalib/s-imglfl.ali
-lib/gcc/${CONFIG}/${V}/adalib/s-imgllf.ali
-lib/gcc/${CONFIG}/${V}/adalib/s-oslock.ali
-lib/gcc/${CONFIG}/${V}/adalib/s-pehage.ali
-lib/gcc/${CONFIG}/${V}/adalib/s-retsta.ali
-lib/gcc/${CONFIG}/${V}/adalib/s-spark.ali
-lib/gcc/${CONFIG}/${V}/adalib/s-spcuop.ali
-lib/gcc/${CONFIG}/${V}/adalib/s-vaen16.ali
-lib/gcc/${CONFIG}/${V}/adalib/s-vaen32.ali
-lib/gcc/${CONFIG}/${V}/adalib/s-vaenu8.ali
-lib/gcc/${CONFIG}/${V}/adalib/s-vaispe.ali
-lib/gcc/${CONFIG}/${V}/adalib/s-valspe.ali
-lib/gcc/${CONFIG}/${V}/adalib/s-valuen.ali
-lib/gcc/${CONFIG}/${V}/adalib/s-vauspe.ali
-lib/gcc/${CONFIG}/${V}/adalib/s-vs_int.ali
-lib/gcc/${CONFIG}/${V}/adalib/s-vs_lli.ali
-lib/gcc/${CONFIG}/${V}/adalib/s-vs_llu.ali
-lib/gcc/${CONFIG}/${V}/adalib/s-vs_uns.ali
-lib/gcc/${CONFIG}/${V}/adalib/s-vsllli.ali
-lib/gcc/${CONFIG}/${V}/adalib/s-vslllu.ali
 lib/gcc/${CONFIG}/${V}/include/
 lib/gcc/${CONFIG}/${V}/include-fixed/
 lib/gcc/${CONFIG}/${V}/include-fixed/README
-lib/gcc/${CONFIG}/${V}/include/amxavx512intrin.h
-lib/gcc/${CONFIG}/${V}/include/amxcomplexintrin.h
-lib/gcc/${CONFIG}/${V}/include/amxfp16intrin.h
-lib/gcc/${CONFIG}/${V}/include/amxfp8intrin.h
-lib/gcc/${CONFIG}/${V}/include/amxmovrsintrin.h
-lib/gcc/${CONFIG}/${V}/include/amxtf32intrin.h
-lib/gcc/${CONFIG}/${V}/include/amxtransposeintrin.h
-lib/gcc/${CONFIG}/${V}/include/avx10_2-512bf16intrin.h
-lib/gcc/${CONFIG}/${V}/include/avx10_2-512convertintrin.h
-lib/gcc/${CONFIG}/${V}/include/avx10_2-512mediaintrin.h
-lib/gcc/${CONFIG}/${V}/include/avx10_2-512minmaxintrin.h
-lib/gcc/${CONFIG}/${V}/include/avx10_2-512satcvtintrin.h
-lib/gcc/${CONFIG}/${V}/include/avx10_2bf16intrin.h
-lib/gcc/${CONFIG}/${V}/include/avx10_2convertintrin.h
-lib/gcc/${CONFIG}/${V}/include/avx10_2copyintrin.h
-lib/gcc/${CONFIG}/${V}/include/avx10_2mediaintrin.h
-lib/gcc/${CONFIG}/${V}/include/avx10_2minmaxintrin.h
-lib/gcc/${CONFIG}/${V}/include/avx10_2satcvtintrin.h
-lib/gcc/${CONFIG}/${V}/include/avx512bitalgvlintrin.h
-lib/gcc/${CONFIG}/${V}/include/avx512fp16intrin.h
-lib/gcc/${CONFIG}/${V}/include/avx512fp16vlintrin.h
-lib/gcc/${CONFIG}/${V}/include/avxifmaintrin.h
-lib/gcc/${CONFIG}/${V}/include/avxneconvertintrin.h
-lib/gcc/${CONFIG}/${V}/include/avxvnniint16intrin.h
-lib/gcc/${CONFIG}/${V}/include/avxvnniint8intrin.h
-lib/gcc/${CONFIG}/${V}/include/cmpccxaddintrin.h
+lib/gcc/${CONFIG}/${V}/include/arm_neon_sve_bridge.h
+lib/gcc/${CONFIG}/${V}/include/arm_private_fp8.h
+lib/gcc/${CONFIG}/${V}/include/arm_private_neon_types.h
+lib/gcc/${CONFIG}/${V}/include/arm_sme.h
 lib/gcc/${CONFIG}/${V}/include/gcov.h
 lib/gcc/${CONFIG}/${V}/include/limits.h
-lib/gcc/${CONFIG}/${V}/include/movrsintrin.h
-lib/gcc/${CONFIG}/${V}/include/prfchiintrin.h
-lib/gcc/${CONFIG}/${V}/include/raointintrin.h
-lib/gcc/${CONFIG}/${V}/include/sha512intrin.h
-lib/gcc/${CONFIG}/${V}/include/sm3intrin.h
-lib/gcc/${CONFIG}/${V}/include/sm4intrin.h
 lib/gcc/${CONFIG}/${V}/include/stdalign.h
 lib/gcc/${CONFIG}/${V}/include/stdatomic.h
 lib/gcc/${CONFIG}/${V}/include/stdfix.h
 lib/gcc/${CONFIG}/${V}/include/stdnoreturn.h
 %%ITM%%
 lib/gcc/${CONFIG}/${V}/include/syslimits.h
-lib/gcc/${CONFIG}/${V}/include/usermsrintrin.h
 lib/gcc/${CONFIG}/${V}/install-tools/
 lib/gcc/${CONFIG}/${V}/install-tools/fixinc_list
 lib/gcc/${CONFIG}/${V}/install-tools/gsyslimits.h
@@ -313,8 +160,12 @@ lib/gcc/${CONFIG}/${V}/plugin/include/config.h
 %%powerpc64%%
 %%sparc64%%
 %%X86%%
-lib/gcc/${CONFIG}/${V}/plugin/include/config/i386/i386-isa.def
 %%QUADMATH%%
+lib/gcc/${CONFIG}/${V}/plugin/include/config/aarch64/aarch64-isa-modes.def
+lib/gcc/${CONFIG}/${V}/plugin/include/config/aarch64/aarch64-option-extensions.def
+lib/gcc/${CONFIG}/${V}/plugin/include/config/arm/aarch-common.h
+%%alpha%%
+%%amd64%%
 lib/gcc/${CONFIG}/${V}/plugin/include/configargs.h
 lib/gcc/${CONFIG}/${V}/plugin/include/context.h
 lib/gcc/${CONFIG}/${V}/plugin/include/convert.h
@@ -769,8 +620,6 @@ lib/gcc/${CONFIG}/${V}/plugin/libcp1plugin.la
 @lib lib/gcc/${CONFIG}/${V}/plugin/libcp1plugin.so.${LIBcp1plugin_VERSION}
 @static-lib lib/libatomic.a
 %%aarch64%%
-%%alpha%%
-%%amd64%%
 lib/libstdc++.modules.json
 @static-lib lib/libstdc++exp.a
 lib/libstdc++exp.la
