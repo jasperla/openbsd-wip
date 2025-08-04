@@ -61,8 +61,7 @@ SUPDISTFILES.boot =	${ADASTRAP-amd64} ${ADASTRAP-arm} ${ADASTRAP-hppa} \
 		${ADASTRAP-sparc64}
 EXTRACT_ONLY =	${DISTFILES}
 
-BUILD_DEPENDS +=	devel/bison \
-			print/texinfo
+BUILD_DEPENDS +=	devel/bison
 
 .if ${MACHINE_ARCH} == "aarch64" || ${MACHINE_ARCH} == "amd64" || \
     ${MACHINE_ARCH} == "arm" || ${MACHINE_ARCH} == "i386" || \
@@ -116,7 +115,6 @@ EXTRA_ENV += ac_cv_prog_M4=/usr/bin/m4
 EXTRA_ENV += ac_cv_header_magic_h=no
 EXTRA_ENV += lt_cv_path_SED=/usr/bin/sed
 EXTRA_ENV += STRIP=/usr/bin/strip
-EXTRA_ENV += MAKEINFO=${PREFIX}/bin/gmakeinfo
 MAKE_FLAGS +=	 ac_cv_path_mkdir=/bin/mkdir
 
 CONFIGURE_ENV += ${EXTRA_ENV}
