@@ -1,0 +1,15 @@
+@bin bin/lfortran
+include/lfortran/
+include/lfortran/impure/
+include/lfortran/impure/lfortran_intrinsics.h
+lib/lfortran_intrinsic_custom.mod
+lib/lfortran_intrinsic_ieee_arithmetic.mod
+lib/lfortran_intrinsic_iso_c_binding.mod
+lib/lfortran_intrinsic_iso_fortran_env.mod
+@lib lib/liblfortran_runtime.so.${LIBlfortran_runtime_VERSION}
+@static-lib lib/liblfortran_runtime_static.a
+lib/omp_lib.mod
+@man man/man1/lfortran.1
+share/lfortran/
+share/lfortran/dat_convert.py
+share/lfortran/dwarf_convert.py

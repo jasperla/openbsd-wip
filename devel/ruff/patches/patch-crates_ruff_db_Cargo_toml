@@ -3,7 +3,7 @@ Don't run doctest during tests
 Index: crates/ruff_db/Cargo.toml
 --- crates/ruff_db/Cargo.toml.orig
 +++ crates/ruff_db/Cargo.toml
-@@ -54,6 +54,9 @@ etcetera = { workspace = true, optional = true }
+@@ -55,6 +55,9 @@ etcetera = { workspace = true, optional = true }
  insta = { workspace = true }
  tempfile = { workspace = true }
  
