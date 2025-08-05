@@ -81,8 +81,7 @@ TEST_DEPENDS += devel/dejagnu \
 		${BUILD_PKGPATH},-libs>=15,<16
 
 SITES =		${SITE_GCC:=releases/gcc-$(FULL_VERSION)/}
-SITES.boot =	https://kirill.korins.ky/pub/distfiles/ \
-		https://distfiles.stumpf.co/ \
+SITES.boot =	https://distfiles.stumpf.co/ \
 		https://spacehopper.org/mirrors/ \
 		https://distfiles.bsdfrog.org/
 
