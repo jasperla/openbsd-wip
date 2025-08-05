@@ -1,10 +1,10 @@
 # When updating/switching to a new version, remember to adapt devel/llvm!
 #
 
-BROKEN-mips64 = In function 'test_fn': cc1: internal compiler error: Segmentation fault
+# BROKEN-mips64 = In function 'test_fn': cc1: internal compiler error: Segmentation fault
 # BROKEN-sparc64 = ICE during selftests
 
-# tested: aarch64 amd64 arm hppa i386 powerpc
+# tested: aarch64 amd64
 ONLY_FOR_ARCHS = aarch64 alpha amd64 arm hppa i386 mips64 mips64el \
 	powerpc powerpc64 riscv64 sparc64
 
@@ -43,9 +43,7 @@ SHARED_LIBS =	estdc++		21.0 \
 		quadmath	5.0 \
 		cc1		3.0 \
 		cc1plugin	3.0 \
-		cp1plugin	2.0 \
-		gphobos		1.0 \
-		gdruntime	1.0
+		cp1plugin	2.0
 
 PSEUDO_FLAVORS = no_ada full
 FLAVOR ?=
@@ -83,7 +81,8 @@ TEST_DEPENDS += devel/dejagnu \
 		${BUILD_PKGPATH},-libs>=15,<16
 
 SITES =		${SITE_GCC:=releases/gcc-$(FULL_VERSION)/}
-SITES.boot =	https://distfiles.stumpf.co/ \
+SITES.boot =	https://kirill.korins.ky/pub/distfiles/ \
+		https://distfiles.stumpf.co/ \
 		https://spacehopper.org/mirrors/ \
 		https://distfiles.bsdfrog.org/
 
@@ -283,6 +282,7 @@ GXX_PACKAGE = ${PACKAGE_REPOSITORY}/${MACHINE_ARCH}/all/${FULLPKGNAME-c++}.tgz
 .PHONY: adastrap
 
 adastrap: ${ADA_PACKAGE} ${GCC_PACKAGE} ${GXX_PACKAGE}
+	${_PBUILD} rm -rf ${WRKDIR}/prepare
 	${_PBUILD} mkdir -p ${WRKDIR}/prepare/bootstrap/system-libs
 	cd ${WRKDIR}/prepare/bootstrap && ${_PBUILD} tar xzf ${ADA_PACKAGE}
 	cd ${WRKDIR}/prepare/bootstrap && ${_PBUILD} tar xzf ${GCC_PACKAGE}
@@ -295,4 +295,5 @@ adastrap: ${ADA_PACKAGE} ${GCC_PACKAGE} ${GXX_PACKAGE}
 		${_PBUILD} cp $$f ${WRKDIR}/prepare/bootstrap/system-libs/; \
 	done
 	cd ${WRKDIR}/prepare && tar cf - bootstrap | \
-		xz -T0 | ${_PFETCH} tee ${FULLDISTDIR}/${ADASTRAP-${MACHINE_ARCH}} > /dev/null
+		${_PBUILD} xz -T0 | \
+		${_PFETCH} tee ${FULLDISTDIR}/adastrap-${MACHINE_ARCH}-${PKGNAME}.tar.xz > /dev/null
