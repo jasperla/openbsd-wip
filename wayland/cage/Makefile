@@ -7,7 +7,7 @@ PKGNAME =	cage-${VERSION}
 CATEGORIES =	wayland
 
 HOMEPAGE =	https://www.hjdskes.nl/projects/cage/
-MAINTAINER =	bilaliscarioth <bilal@iscarioth.org>
+MAINTAINER =	rw <rwsalie@iscarioth.org>
 
 GH_ACCOUNT =	cage-kiosk
 GH_PROJECT =	cage
