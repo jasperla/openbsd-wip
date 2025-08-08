@@ -2,7 +2,6 @@ lib/gcc/${CONFIG}/${V}/plugin/include/common/
 lib/gcc/${CONFIG}/${V}/plugin/include/common/config/
 lib/gcc/${CONFIG}/${V}/plugin/include/common/config/i386/
 lib/gcc/${CONFIG}/${V}/plugin/include/common/config/i386/i386-cpuinfo.h
-lib/gcc/${CONFIG}/${V}/plugin/include/config/dbxelf.h
 lib/gcc/${CONFIG}/${V}/plugin/include/config/elfos.h
 lib/gcc/${CONFIG}/${V}/plugin/include/config/i386/
 lib/gcc/${CONFIG}/${V}/plugin/include/config/i386/att.h
