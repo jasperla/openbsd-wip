@@ -1,7 +1,7 @@
 Index: libgfortran/Makefile.in
 --- libgfortran/Makefile.in.orig
 +++ libgfortran/Makefile.in
-@@ -987,7 +987,8 @@ LTLDFLAGS = $(shell $(SHELL) $(top_srcdir)/../libtool-
+@@ -990,7 +990,8 @@ LTLDFLAGS = $(shell $(SHELL) $(top_srcdir)/../libtool-
  toolexeclib_LTLIBRARIES = libgfortran.la
  toolexeclib_DATA = libgfortran.spec
  libgfortran_la_LINK = $(LINK) $(libgfortran_la_LDFLAGS)

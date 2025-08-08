@@ -27,7 +27,7 @@ Index: gcc/config/alpha/alpha.cc
  
    alpha_override_options_after_change ();
  
-@@ -8066,8 +8073,6 @@ alpha_initial_elimination_offset (unsigned int from,
+@@ -8063,8 +8070,6 @@ alpha_initial_elimination_offset (unsigned int from,
    switch (from)
      {
      case FRAME_POINTER_REGNUM:
@@ -36,7 +36,7 @@ Index: gcc/config/alpha/alpha.cc
      case ARG_POINTER_REGNUM:
        ret += (ALPHA_ROUND (get_frame_size ()
  			   + crtl->args.pretend_args_size)
-@@ -8450,6 +8455,9 @@ alpha_expand_prologue (void)
+@@ -8447,6 +8452,9 @@ alpha_expand_prologue (void)
    HOST_WIDE_INT reg_offset;
    rtx sa_reg;
  
@@ -46,7 +46,7 @@ Index: gcc/config/alpha/alpha.cc
    if (flag_stack_usage_info)
      current_function_static_stack_size = frame_size;
  
-@@ -8486,6 +8494,8 @@ alpha_expand_prologue (void)
+@@ -8483,6 +8491,8 @@ alpha_expand_prologue (void)
    if (flag_stack_check || flag_stack_clash_protection)
      probed_size += get_stack_check_protect ();
  
@@ -55,7 +55,7 @@ Index: gcc/config/alpha/alpha.cc
    if (probed_size <= 32768)
      {
        if (probed_size > 4096)
-@@ -8566,6 +8576,34 @@ alpha_expand_prologue (void)
+@@ -8563,6 +8573,34 @@ alpha_expand_prologue (void)
  				 plus_constant (Pmode, stack_pointer_rtx,
  						-frame_size)));
      }
@@ -90,7 +90,7 @@ Index: gcc/config/alpha/alpha.cc
  
    /* Cope with very large offsets to the register save area.  */
    sa_bias = 0;
-@@ -9367,11 +9405,15 @@ summarize_insn (rtx x, struct shadow_summary *sum, int
+@@ -9364,11 +9402,15 @@ summarize_insn (rtx x, struct shadow_summary *sum, int
     result of an instruction that might generate an UNPREDICTABLE
     result.
  
@@ -108,7 +108,7 @@ Index: gcc/config/alpha/alpha.cc
  
  static void
  alpha_handle_trap_shadows (void)
-@@ -9443,7 +9485,7 @@ alpha_handle_trap_shadows (void)
+@@ -9440,7 +9482,7 @@ alpha_handle_trap_shadows (void)
  		      if ((sum.defd.i & shadow.defd.i)
  			  || (sum.defd.fp & shadow.defd.fp))
  			{
@@ -117,7 +117,7 @@ Index: gcc/config/alpha/alpha.cc
  			  goto close_shadow;
  			}
  
-@@ -9466,6 +9508,13 @@ alpha_handle_trap_shadows (void)
+@@ -9463,6 +9505,13 @@ alpha_handle_trap_shadows (void)
  
  			  goto close_shadow;
  			}
@@ -131,7 +131,7 @@ Index: gcc/config/alpha/alpha.cc
  		      break;
  
  		    case BARRIER:
-@@ -9476,6 +9525,7 @@ alpha_handle_trap_shadows (void)
+@@ -9473,6 +9522,7 @@ alpha_handle_trap_shadows (void)
  		    case JUMP_INSN:
  		    case CALL_INSN:
  		    case CODE_LABEL:

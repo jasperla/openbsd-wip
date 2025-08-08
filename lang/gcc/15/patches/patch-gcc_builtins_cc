@@ -29,7 +29,7 @@ Index: gcc/builtins.cc
  
  /* Callback routine for store_by_pieces.  Read GET_MODE_BITSIZE (MODE)
     bytes from constant string DATA + OFFSET and return it as target
-@@ -8221,9 +8225,11 @@ expand_builtin (tree exp, rtx target, rtx subtarget, m
+@@ -8227,9 +8231,11 @@ expand_builtin (tree exp, rtx target, rtx subtarget, m
        break;
  
      case BUILT_IN_STRCPY:
@@ -41,7 +41,7 @@ Index: gcc/builtins.cc
        break;
  
      case BUILT_IN_STRNCPY:
-@@ -8233,9 +8239,11 @@ expand_builtin (tree exp, rtx target, rtx subtarget, m
+@@ -8239,9 +8245,11 @@ expand_builtin (tree exp, rtx target, rtx subtarget, m
        break;
  
      case BUILT_IN_STPCPY:
