@@ -5,7 +5,7 @@ COMMENT =	pattern matching swiss knife for malware researchers
 
 GH_ACCOUNT =	VirusTotal
 GH_PROJECT =	yara-x
-GH_TAGNAME =	v1.4.0
+GH_TAGNAME =	v1.5.0
 
 CATEGORIES =	security
 
@@ -17,13 +17,15 @@ MAINTAINER =	Laurent Cheylus <foxy@free.fr>
 # BSD-3
 PERMIT_PACKAGE=	Yes
 
-WANTLIB +=	${MODCARGO_WANTLIB} m
+WANTLIB +=	${MODCARGO_WANTLIB} m lzma zstd
 
 MODULES =	devel/cargo
 
 CONFIGURE_STYLE =	cargo
 
-BUILD_DEPENDS +=	archivers/zstd
+BUILD_DEPENDS +=	archivers/xz \
+			archivers/zstd
+LIB_DEPENDS = ${BUILD_DEPENDS}
 
 MODCARGO_RUSTFLAGS +=	-L${LOCALBASE}/lib
 
@@ -35,7 +37,7 @@ MODCARGO_RUSTFLAGS +=	-Clink-arg=-fuse-ld=lld \
 SEPARATE_BUILD =	Yes
 
 # Generate shell completions for Bash/Fish/ZSH
-post-build:
+pre-install:
 	${MODCARGO_TARGET_DIR}/release/yr completion bash > ${WRKDIST}/yr.bash
 	${MODCARGO_TARGET_DIR}/release/yr completion fish > ${WRKDIST}/yr.fish
 	${MODCARGO_TARGET_DIR}/release/yr completion zsh > ${WRKDIST}/yr.zsh
