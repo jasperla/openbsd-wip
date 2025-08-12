@@ -5,11 +5,11 @@ COMMENT =	Python linter and code formatter
 
 GH_ACCOUNT =	astral-sh
 GH_PROJECT =	ruff
-GH_TAGNAME =	0.12.7
+GH_TAGNAME =	0.12.8
 
 # Rust crates downloaded via git
 LSPTYPES =	3512a9f33eadc5402cfab1b8f7340824c8ca1439
-SALSA =		dba66f1a37acca014c2402f231ed5b361bd7d8fe
+SALSA =		b121ee46c4483ba74c19e933a3522bd548eb7343
 
 DIST_TUPLE +=	github astral-sh lsp-types ${LSPTYPES} ../lsp-types
 DIST_TUPLE +=	github salsa-rs salsa ${SALSA} ../salsa
