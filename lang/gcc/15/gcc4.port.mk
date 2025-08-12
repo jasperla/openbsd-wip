@@ -24,13 +24,13 @@ COMPILER_VERSION ?= gcc2
 
 _MODGCC4_LINKS =
 MODGCC4STDCPP = estdc++
-MODGCC4_CPPLIBDEP = lang/gcc/11,-libs>=15,<16
-MODGCC4_CPPDEP =    lang/gcc/11,-c++>=15,<16
+MODGCC4_CPPLIBDEP = lang/gcc/15,-libs>=15,<16
+MODGCC4_CPPDEP =    lang/gcc/15,-c++>=15,<16
 MODGCC4_CPPWANTLIB = estdc++>=21 pthread
 MODGCC4_ATOMICWANTLIB = atomic
 
-MODGCC4_FORTRANDEP = lang/gcc/11,-f95>=15,<16
-MODGCC4_FORTRANLIBDEP = lang/gcc/11,-libs>=15,<16
+MODGCC4_FORTRANDEP = lang/gcc/15,-f95>=15,<16
+MODGCC4_FORTRANLIBDEP = lang/gcc/15,-libs>=15,<16
 MODGCC4_FORTRANWANTLIB = gfortran>=10
 # XXX sync with Makefile
 .if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "i386"
@@ -40,7 +40,7 @@ MODGCC4_FORTRANWANTLIB += quadmath
 .if ${_MODGCC4_ARCH_USES:L} == "yes"
 
 .  if ${MODGCC4_LANGS:L:Mc}
-BUILD_DEPENDS += lang/gcc/11>=15,<16
+BUILD_DEPENDS += lang/gcc/15>=15,<16
 # XXX ports-clang already defines this
 .    if !${COMPILER_LINKS:Mgcc}
 COMPILER_LINKS += gcc ${LOCALBASE}/bin/egcc cc ${LOCALBASE}/bin/egcc
