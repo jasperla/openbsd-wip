@@ -4,7 +4,10 @@ COMMENT =	video editor
 
 GH_ACCOUNT =	mltframework
 GH_PROJECT =	shotcut
-GH_TAGNAME =	v25.08.16
+#GH_TAGNAME =	v25.08.16
+
+GH_COMMIT =	9d163d366d41afc71f2e652e85901bfe4589b113
+DISTNAME =	shotcut-25.08.16a
 
 CATEGORIES =	multimedia
 
