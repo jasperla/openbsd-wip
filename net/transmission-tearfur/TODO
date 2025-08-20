@@ -1,0 +1,29 @@
+This is for CI testing of transmission developer tearfur's fork of transmission.
+Changes are expected to eventually merge, or his project will publish.
+
+1) git clone -b obsd --recurse-submodules \
+       git@github.com:jggimi/tearfur-transmission.git 
+       transmission-4.1.0.dev
+
+   This fork is manually synced, the branch adds an ./archive.sh script
+   to simplify distfile creation.
+
+2) create tarball, xz compress it, move to distfiles. 
+
+   `sh archive.sh`  will create a git archive tarball with all source submodules,
+   compress it, and move it into /usr/ports/distfiles.
+
+3) make uninstall
+
+4) make clean=all, makesum, (patch, update-patches), update-plist, port-lib-depends-check, install-all
+5) make test, there should be zero failures
+6) test the installed application suite
+
+
+optional) if you want the shadow symbol packages installed, make with DEBUG=-g,
+          the Makefile contains:
+          
+		.if DEBUG
+		CONFIGURE_ARGS +=	-DCMAKE_BUILD_TYPE=RelWithDebInfo
+		INSTALL_DEBUG_PACKAGES=	Yes
+		.endif
