@@ -5,7 +5,7 @@ COMMENT =	multiprotocol credentials bruteforcer, password enumerator
 
 GH_ACCOUNT =	evilsocket
 GH_PROJECT =	legba
-GH_TAGNAME =	v0.11.0
+GH_TAGNAME =	1.1.0
 
 CATEGORIES =	security
 
@@ -14,13 +14,25 @@ MAINTAINER =	Laurent Cheylus <foxy@free.fr>
 # GPLv3
 PERMIT_PACKAGE =	Yes
 
-WANTLIB +=	${MODCARGO_WANTLIB} m zstd smbclient
+WANTLIB +=	${MODCARGO_WANTLIB} m zstd
 
-LIB_DEPENDS+=	net/samba,-main
+BUILD_DEPENDS += devel/llvm/19,-main \
+		 archivers/zstd
+
+LIB_DEPENDS+=	net/samba,-main \
+		devel/llvm/19,-main \
+		archivers/zstd
 
 MODULES =	devel/cargo
 
 CONFIGURE_STYLE =	cargo
+
+# For libzstd
+MODCARGO_RUSTFLAGS +=   -L${LOCALBASE}/lib
+
+# libclang needed for bindgen used from aws-lc-sys
+MAKE_ENV =	LIBCLANG_PATH=${LOCALBASE}/llvm19/lib
+MODCLANG_COMPILER_LINKS = no
 
 # Needed to build OpenSSL lib. with openssl-sys crate (feature "vendored")
 MODCARGO_CRATES +=	openssl-src	300.5.1+3.5.1	# MIT/Apache-2.0
