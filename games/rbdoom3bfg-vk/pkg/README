@@ -1,0 +1,16 @@
++----------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++----------------------------------------------------------------------
+
+Playing RBDOOM-3-BFG requires the Steam or GOG copy of the game.
+
+Copy all content of the original game to the appropriate
+directories:
+
+~/.local/share/rbdoom3bfg/
+
+These direcotories will contain user data, such as game settings, 
+log, and saves.
+
+For more information, see:
+https://github.com/RobertBeckebans/RBDOOM-3-BFG
