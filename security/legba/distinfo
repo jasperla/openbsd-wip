@@ -789,7 +789,7 @@ SHA256 (cargo/zerovec-derive-0.11.1.tar.gz) = W5YjfvoMh4xkvYnENvZhvk5GsvPv8eu5dv
 SHA256 (cargo/zstd-0.13.3.tar.gz) = 6R7jEaVpwycXFlFWbgeXIgDnb8/iJCpPpEYUmjiBwIo=
 SHA256 (cargo/zstd-safe-7.2.4.tar.gz) = j0nE1fCrtgKpP7hzavKk9N2VEuNvf1cNZuZf+GftO50=
 SHA256 (cargo/zstd-sys-2.0.15+zstd.1.5.7.tar.gz) = 64EYPd2X0MdM7fHVDYXI0Iwbi2juhjve6ecG7tuhojc=
-SHA256 (legba-1.1.0.tar.gz) = pFXP2nvPoBbmcRDhodu6cBs3m6OJaS0r+drM4Dbfm/4=
+SHA256 (legba-1.1.1.tar.gz) = pcclSxmRDisYFqnkrzcgt3LjXRsEkctC+QVkygFpnW8=
 SIZE (cargo/actix-codec-0.5.2.tar.gz) = 14085
 SIZE (cargo/actix-cors-0.7.1.tar.gz) = 32546
 SIZE (cargo/actix-http-3.11.0.tar.gz) = 164165
@@ -1581,4 +1581,4 @@ SIZE (cargo/zerovec-derive-0.11.1.tar.gz) = 21294
 SIZE (cargo/zstd-0.13.3.tar.gz) = 30514
 SIZE (cargo/zstd-safe-7.2.4.tar.gz) = 29350
 SIZE (cargo/zstd-sys-2.0.15+zstd.1.5.7.tar.gz) = 774847
-SIZE (legba-1.1.0.tar.gz) = 187323
+SIZE (legba-1.1.1.tar.gz) = 191489

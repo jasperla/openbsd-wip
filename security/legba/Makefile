@@ -5,7 +5,7 @@ COMMENT =	multiprotocol credentials bruteforcer, password enumerator
 
 GH_ACCOUNT =	evilsocket
 GH_PROJECT =	legba
-GH_TAGNAME =	1.1.0
+GH_TAGNAME =	1.1.1
 
 CATEGORIES =	security
 
