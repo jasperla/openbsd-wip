@@ -1,0 +1,12 @@
+Index: sys/sys_local.cpp
+--- sys/sys_local.cpp.orig
++++ sys/sys_local.cpp
+@@ -148,7 +148,7 @@ void idSysLocal::DLL_GetFileName(const char *baseName,
+ {
+ #ifdef _WIN32
+ 	idStr::snPrintf(dllName, maxLength, "%s" CPUSTRING ".dll", baseName);
+-#elif defined( __linux__ )
++#elif defined( __OpenBSD__ )
+ 	idStr::snPrintf(dllName, maxLength, "%s" CPUSTRING ".so", baseName);
+ #elif defined( MACOS_X )
+ 	idStr::snPrintf(dllName, maxLength, "%s" ".dylib", baseName);

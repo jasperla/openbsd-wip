@@ -1,0 +1,12 @@
+Index: sys/linux/sound.cpp
+--- sys/linux/sound.cpp.orig
++++ sys/linux/sound.cpp
+@@ -29,7 +29,7 @@ If you have questions concerning this license or the a
+ #include <unistd.h>
+ #include <fcntl.h>
+ #include <errno.h>
+-#include <malloc.h>
++#include <sys/malloc.h>
+ #include <sys/ioctl.h>
+ #include <sys/mman.h>
+ // OSS sound interface

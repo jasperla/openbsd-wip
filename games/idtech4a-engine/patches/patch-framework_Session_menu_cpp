@@ -1,0 +1,25 @@
+Index: framework/Session_menu.cpp
+--- framework/Session_menu.cpp.orig
++++ framework/Session_menu.cpp
+@@ -1003,10 +1003,7 @@ void idSessionLocal::HandleMainMenuCommands(const char
+ 					int eax = soundSystem->IsEAXAvailable();
+ 
+ 					switch (eax) {
+-						case 2:
+-							// OpenAL subsystem load failed
+-							MessageBox(MSG_OK, common->GetLanguageDict()->GetString("#str_07238"), common->GetLanguageDict()->GetString("#str_07231"), true);
+-							break;
++
+ 						case 1:
+ 							// when you restart
+ 							MessageBox(MSG_OK, common->GetLanguageDict()->GetString("#str_04137"), common->GetLanguageDict()->GetString("#str_07231"), true);
+@@ -1023,8 +1020,7 @@ void idSessionLocal::HandleMainMenuCommands(const char
+ 							break;
+ 					}
+ 				} else {
+-					// also turn off OpenAL so we fully go back to legacy mixer
+-					cvarSystem->SetCVarBool("s_useOpenAL", false);
++
+ 					// when you restart
+ 					MessageBox(MSG_OK, common->GetLanguageDict()->GetString("#str_04137"), common->GetLanguageDict()->GetString("#str_07231"), true);
+ 				}
