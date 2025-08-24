@@ -1,0 +1,3 @@
+Pc is an arbitrary precision integer calculator with a special emphasis
+on supporting two's complement bit operations and working with different
+number bases.
