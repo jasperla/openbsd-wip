@@ -3,22 +3,27 @@ Set version
 Index: build.rs
 --- build.rs.orig
 +++ build.rs
-@@ -1,17 +1,5 @@
+@@ -1,22 +1,4 @@
 -use std::process::Command;
 -
  fn main() {
 -    let version = Command::new(if cfg!(windows) { "git.exe" } else { "git" })
--        .args(["describe", "--match=v*\\.*\\.*"])
+-        .args(["describe", r"--match=v*\.*\.*"])
 -        .output()
 -        .ok()
--        .and_then(|out| parse_describe(&out.stdout))
+-        .and_then(|out| {
+-            if !out.status.success() {
+-                return None;
+-            }
+-            try_parse_describe(&out.stdout)
+-        })
 -        .unwrap_or_else(|| env!("CARGO_PKG_VERSION").into());
 +    let version = "%VERSION%";
- 
      println!("cargo:rustc-env=GIX_VERSION={version}");
 -}
 -
--fn parse_describe(input: &[u8]) -> Option<String> {
+-fn try_parse_describe(input: &[u8]) -> Option<String> {
 -    let input = std::str::from_utf8(input).ok()?;
--    input.trim().to_owned().into()
+-    let trimmed = input.trim();
+-    (!trimmed.is_empty()).then(|| trimmed.to_owned())
  }
