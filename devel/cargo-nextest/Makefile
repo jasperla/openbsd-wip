@@ -3,7 +3,7 @@ NOT_FOR_ARCHS =	sparc64
 
 COMMENT =	next-generation test runner for Rust
 
-VERSION =	0.9.102
+VERSION =	0.9.103
 
 DISTNAME =	cargo-nextest-${VERSION}
 
@@ -51,17 +51,18 @@ do-install:
 # Nextest's own tests do not work with cargo test.
 # We must use nextest to run its own test suite.
 #
-# Summary [ 341.059s] 340 tests run: 330 passed, 10 failed, 1 skipped
-# FAIL [  31.084s] integration-tests::integration test_list_binaries_only
-# FAIL [  30.759s] integration-tests::integration test_list_default
-# FAIL [  30.507s] integration-tests::integration test_list_full
-# FAIL [  19.396s] integration-tests::integration test_list_with_default_filter
-# FAIL [  19.611s] integration-tests::integration test_run
-# FAIL [  28.176s] integration-tests::integration test_run_with_default_filter
-# FAIL [  25.135s] integration-tests::integration test_run_with_priorities
-# FAIL [   7.752s] integration-tests::integration test_show_config_test_groups
-# FAIL [   3.320s] integration-tests::integration test_target_dir
-# FAIL [   0.222s] integration-tests::integration test_version_info
+# Summary [ 417.452s] 340 tests run: 330 passed (1 slow), 10 failed, 1 skipped
+# SLOW [  94.340s] integration-tests::integration test_run_no_tests
+# FAIL [  29.863s] integration-tests::integration test_list_binaries_only
+# FAIL [  27.884s] integration-tests::integration test_list_default
+# FAIL [  27.600s] integration-tests::integration test_list_full
+# FAIL [  16.115s] integration-tests::integration test_list_with_default_filter
+# FAIL [  15.511s] integration-tests::integration test_run
+# FAIL [  36.696s] integration-tests::integration test_run_with_default_filter
+# FAIL [  30.734s] integration-tests::integration test_run_with_priorities
+# FAIL [  17.412s] integration-tests::integration test_show_config_test_groups
+# FAIL [   6.843s] integration-tests::integration test_target_dir
+# FAIL [   0.368s] integration-tests::integration test_version_info
 do-test:
 	NEXTEST_HIDE_PROGRESS_BAR=1 ${MODCARGO_CARGO_RUN} run \
 		--package cargo-nextest -- nextest run --profile ci
