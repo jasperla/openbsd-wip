@@ -1,4 +1,4 @@
-Eliminate dependency on mysql++, only needed for pokerth-server
+# Eliminate dependency on mysql++, only needed for pokerth-server
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
