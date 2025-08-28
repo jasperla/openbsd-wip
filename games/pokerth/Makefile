@@ -1,4 +1,4 @@
-COMMENT =	texas holdem poker, local or internet
+COMMENT =	texas holdem poker client, local or internet games
 
 DISTNAME =	pokerth-1.1.3
 
@@ -10,7 +10,7 @@ CATEGORIES =	games
 
 HOMEPAGE =	https://pokerth.net
 
-MAINTAINER =	Josh Grosse <josh@jggimi.net>	
+MAINTAINER =	Josh Grosse <josh@jggimi.net>
 
 # GPLv3
 PERMIT_PACKAGE =	Yes
