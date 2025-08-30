@@ -1,1 +1,1 @@
-does not build -- boost::asio errors
+builds but does not package -- prefix error in update-plist(1)
