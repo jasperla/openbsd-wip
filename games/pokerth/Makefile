@@ -18,11 +18,16 @@ PERMIT_PACKAGE =	Yes
 MODULES =	devel/cmake \
 		x11/qt6
 
-# just build the client, no server or chatcleaner
+UPDATE_PLIST_OPTS =	-v
+
 ALL_TARGET =	pokerth_client
 
 FIX_CRLF_FILES = \
 	src/third_party/websocketpp/websocketpp/sha1/sha1.hpp
+
+CONFIGURE_ARGS +=	-DCMAKE_INSTALL_PREFIX=${LOCALBASE}
+
+RUN_DEPENDS +=	devel/desktop-file-utils
 
 pre-configure:
 	cd ${WRKSRC} && \

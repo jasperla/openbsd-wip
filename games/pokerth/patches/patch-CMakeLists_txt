@@ -2,7 +2,39 @@
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -498,7 +498,6 @@ target_include_directories(pokerth_official_server PUB
+@@ -321,11 +321,10 @@ target_link_libraries(pokerth_client PUBLIC pokerth_li
+ target_link_libraries(pokerth_client PUBLIC pokerth_db)
+ target_link_libraries(pokerth_client PUBLIC pokerth_protocol)
+ 
+-install(TARGETS pokerth_client DESTINATION /usr/bin OPTIONAL COMPONENT pokerth_client)
+-install(DIRECTORY data DESTINATION /usr/share/pokerth COMPONENT pokerth_client)
+-install(FILES pokerth.desktop DESTINATION /usr/share/applications COMPONENT pokerth_client)
+-install(FILES pokerth.desktop DESTINATION $ENV{HOME}/.local/share/applications COMPONENT pokerth_client)
+-install(FILES pokerth.png DESTINATION /usr/share/pixmaps COMPONENT pokerth_client)
++install(TARGETS pokerth_client DESTINATION bin OPTIONAL COMPONENT pokerth_client)
++install(DIRECTORY data DESTINATION share/pokerth COMPONENT pokerth_client)
++install(FILES pokerth.desktop DESTINATION share/applications COMPONENT pokerth_client)
++install(FILES pokerth.png DESTINATION share/pixmaps COMPONENT pokerth_client)
+ 
+ 
+ # POKERTH.qml-client ... unfinisihed
+@@ -401,15 +400,6 @@ target_link_libraries(pokerth_qml-client PUBLIC pokert
+ target_link_libraries(pokerth_qml-client PUBLIC LibCurl)
+ target_link_libraries(pokerth_qml-client PRIVATE Qt6::Core Qt6::Gui Qt6::Quick Qt6::Qml Qt6::Sql Qt6::Xml Qt6::Svg Qt6::QuickControls2 Qt6::Widgets)
+ 
+-target_compile_definitions(pokerth_qml-client PUBLIC QML_CLIENT)
+-
+-install(TARGETS pokerth_qml-client DESTINATION /usr/bin OPTIONAL COMPONENT pokerth_qml-client)
+-install(DIRECTORY data DESTINATION /usr/share/pokerth COMPONENT pokerth_qml-client)
+-install(FILES pokerth_qml.desktop DESTINATION $ENV{HOME}/.local/share/applications COMPONENT pokerth_qml-client)
+-install(FILES pokerth_qml.desktop DESTINATION /usr/share/applications COMPONENT pokerth_qml-client)
+-install(FILES pokerth.png DESTINATION /usr/share/pixmaps COMPONENT pokerth_qml-client)
+-
+-
+ # POKERTH.dedicated_server
+ 
+ set(POKERTH_SERVER_SRC src/pokerth_server.cpp
+@@ -498,7 +488,6 @@ target_include_directories(pokerth_official_server PUB
  
  target_link_libraries(pokerth_official_server PUBLIC LibCurl)
  target_link_libraries(pokerth_official_server PUBLIC -lircclient)

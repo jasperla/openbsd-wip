@@ -1,1 +1,3 @@
-builds but does not package -- prefix error in update-plist(1)
+builds and runs.  Testing started.  Not pleased with
+8000+ lines of patches; might fork just to simplify
+the port.
