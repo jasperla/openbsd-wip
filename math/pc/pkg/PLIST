@@ -1,0 +1,3 @@
+@pkgpath math/pc
+@bin bin/pc
+@man man/man1/pc.1
