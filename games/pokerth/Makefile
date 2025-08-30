@@ -1,14 +1,9 @@
 COMMENT =	texas holdem poker client, local or internet games
 
-DISTNAME =	pokerth-1.1.3
-
-GH_ACCOUNT =	pokerth
-GH_PROJECT = 	pokerth
-GH_COMMIT =	581581fc6237034e5c48699cf09c4143baa2be8f
+DIST_TUPLE =	github pokerth pokerth 581581fc6237034e5c48699cf09c4143baa2be8f .
+PKGNAME =	pokerth-2025.08.30
 
 CATEGORIES =	games
-
-HOMEPAGE =	https://pokerth.net
 
 MAINTAINER =	Josh Grosse <josh@jggimi.net>
 
@@ -17,8 +12,6 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =	devel/cmake \
 		x11/qt6
-
-UPDATE_PLIST_OPTS =	-v
 
 ALL_TARGET =	pokerth_client
 
