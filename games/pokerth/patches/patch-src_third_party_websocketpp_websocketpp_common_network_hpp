@@ -1,0 +1,12 @@
+Index: src/third_party/websocketpp/websocketpp/common/network.hpp
+--- src/third_party/websocketpp/websocketpp/common/network.hpp.orig
++++ src/third_party/websocketpp/websocketpp/common/network.hpp
+@@ -36,6 +36,8 @@
+     #include <netinet/in.h>
+ #endif
+ 
++#include <websocketpp/common/stdint.hpp>
++
+ namespace websocketpp {
+ namespace lib {
+ namespace net {

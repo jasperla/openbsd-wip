@@ -1,0 +1,49 @@
+Index: src/third_party/websocketpp/websocketpp/http/impl/response.hpp
+--- src/third_party/websocketpp/websocketpp/http/impl/response.hpp.orig
++++ src/third_party/websocketpp/websocketpp/http/impl/response.hpp
+@@ -46,12 +46,6 @@ inline size_t response::consume(char const * buf, size
+         return this->process_body(buf,len);
+     }
+ 
+-    if (m_read + len > max_header_size) {
+-        // exceeded max header size
+-        throw exception("Maximum header size exceeded.",
+-                        status_code::request_header_fields_too_large);
+-    }
+-
+     // copy new header bytes into buffer
+     m_buf->append(buf,len);
+ 
+@@ -69,13 +63,22 @@ inline size_t response::consume(char const * buf, size
+             header_delimiter + sizeof(header_delimiter) - 1
+         );
+ 
++        m_header_bytes += (end-begin+sizeof(header_delimiter));
++        
++        if (m_header_bytes > max_header_size) {
++            // exceeded max header size
++            throw exception("Maximum header size exceeded.",
++                status_code::request_header_fields_too_large);
++        }
++
+         if (end == m_buf->end()) {
+             // we are out of bytes. Discard the processed bytes and copy the
+             // remaining unprecessed bytes to the beginning of the buffer
+             std::copy(begin,end,m_buf->begin());
+             m_buf->resize(static_cast<std::string::size_type>(end-begin));
+ 
+-            m_read +=len;
++            m_read += len;
++            m_header_bytes -= m_buf->size();
+ 
+             return len;
+         }
+@@ -91,7 +94,7 @@ inline size_t response::consume(char const * buf, size
+             // TODO: grab content-length
+             std::string length = get_header("Content-Length");
+ 
+-            if (length == "") {
++            if (length.empty()) {
+                 // no content length found, read indefinitely
+                 m_read = 0;
+             } else {

@@ -1,0 +1,16 @@
+Index: src/third_party/websocketpp/websocketpp/common/regex.hpp
+--- src/third_party/websocketpp/websocketpp/common/regex.hpp.orig
++++ src/third_party/websocketpp/websocketpp/common/regex.hpp
+@@ -28,8 +28,10 @@
+ #ifndef WEBSOCKETPP_COMMON_REGEX_HPP
+ #define WEBSOCKETPP_COMMON_REGEX_HPP
+ 
+-#ifndef _WEBSOCKETPP_CPP11_REGEX_
+-    #define _WEBSOCKETPP_CPP11_REGEX_
++#if defined _WEBSOCKETPP_CPP11_STL_ && !defined _WEBSOCKETPP_NO_CPP11_REGEX_
++    #ifndef _WEBSOCKETPP_CPP11_REGEX_
++        #define _WEBSOCKETPP_CPP11_REGEX_
++    #endif
+ #endif
+ 
+ #ifdef _WEBSOCKETPP_CPP11_REGEX_

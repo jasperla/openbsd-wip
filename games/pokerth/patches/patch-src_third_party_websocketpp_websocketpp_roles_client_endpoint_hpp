@@ -1,0 +1,37 @@
+Index: src/third_party/websocketpp/websocketpp/roles/client_endpoint.hpp
+--- src/third_party/websocketpp/websocketpp/roles/client_endpoint.hpp.orig
++++ src/third_party/websocketpp/websocketpp/roles/client_endpoint.hpp
+@@ -29,6 +29,7 @@
+ #define WEBSOCKETPP_CLIENT_ENDPOINT_HPP
+ 
+ #include <websocketpp/endpoint.hpp>
++#include <websocketpp/uri.hpp>
+ 
+ #include <websocketpp/logger/levels.hpp>
+ 
+@@ -66,9 +67,11 @@ class client : public endpoint<connection<config>,conf
+     /// Type of the endpoint component of this server
+     typedef endpoint<connection_type,config> endpoint_type;
+ 
++    friend class connection<config>;
++
+     explicit client() : endpoint_type(false)
+     {
+-        endpoint_type::m_alog.write(log::alevel::devel, "client constructor");
++        endpoint_type::m_alog->write(log::alevel::devel, "client constructor");
+     }
+ 
+     /// Get a new connection
+@@ -154,10 +157,10 @@ class client : public endpoint<connection<config>,conf
+         if (ec) {
+             con->terminate(ec);
+ 
+-            endpoint_type::m_elog.write(log::elevel::rerror,
++            endpoint_type::m_elog->write(log::elevel::rerror,
+                     "handle_connect error: "+ec.message());
+         } else {
+-            endpoint_type::m_alog.write(log::alevel::connect,
++            endpoint_type::m_alog->write(log::alevel::connect,
+                 "Successful connection");
+ 
+             con->start();
