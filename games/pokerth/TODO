@@ -1,3 +1,9 @@
 builds and runs.  Testing started.  Not pleased with
 8000+ lines of patches; might fork just to simplify
 the port.
+
+Testing generally works, there are some warnings produced, such as:
+
+"Could not create pixmap from /usr/local/share/pokerth/data/gfx/gui/table/danuxi1/NULL"
+
+There is no "NULL" file in that directory. 
