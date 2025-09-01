@@ -1,8 +1,3 @@
-builds and runs.  Testing started.  Not pleased with
-8000+ lines of patches; might fork just to simplify
-the port.
-
-Tested, working, same error messages produced as with the
-7.4 package, such as: 
-
-"Could not create pixmap from /usr/local/share/pokerth/data/gfx/gui/table/danuxi1/NULL"
+Tested with websocketpp 0.5.0 as a set of 53 patches.
+Refactored as a fork of pokerth to simiplify the port,
+and undergoing testing.
