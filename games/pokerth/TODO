@@ -1,3 +1,6 @@
 Tested with websocketpp 0.5.0 as a set of 53 patches.
 Refactored as a fork of pokerth to simiplify the port,
 and undergoing testing.
+
+protobuf.32 shows as not reachable, even though devel/protobuf
+is in LIB_DEPENDS
