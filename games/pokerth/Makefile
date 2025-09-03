@@ -14,9 +14,6 @@ MODULES =	devel/cmake x11/qt6
 
 ALL_TARGET =	pokerth_client
 
-CONFIGURE_ARGS +=	-DCMAKE_INSTALL_PREFIX=${LOCALBASE}
-
-
 LIB_DEPENDS +=	devel/boost,-main
 LIB_DEPENDS +=	devel/protobuf
 LIB_DEPENDS +=	devel/sdl

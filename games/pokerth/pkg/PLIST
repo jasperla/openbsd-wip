@@ -1,5 +1,6 @@
 @bin bin/pokerth_client
 share/applications/pokerth.desktop
+share/applications/pokerth_qml.desktop
 share/pixmaps/
 share/pixmaps/pokerth.png
 share/pokerth/

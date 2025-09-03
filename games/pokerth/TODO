@@ -1,6 +1,9 @@
-Tested with websocketpp 0.5.0 as a set of 53 patches.
-Refactored as a fork of pokerth to simiplify the port,
-and undergoing testing.
+Continued testing and tweaks.  
 
-protobuf.32 shows as not reachable, even though devel/protobuf
-is in LIB_DEPENDS
+* this is a fork of pokerth, in order to backlevel websocketpp for boost.
+
+* patches for CMakeList.txt: remove mysqlpp libraries, required by the 
+  unused server, and remove full path names for install directories.
+
+* patch for games_def.h: call this "1.1.2-obsd" -- upstream still hasn't
+  changed the version from 1.1.2 for their -stable branch.
