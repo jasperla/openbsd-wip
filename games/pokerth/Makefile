@@ -17,7 +17,10 @@ ALL_TARGET =	pokerth_client
 CONFIGURE_ARGS +=	-DCMAKE_INSTALL_PREFIX=${LOCALBASE}
 
 
-LIB_DEPENDS +=	devel/boost,-main devel/protobuf devel/sdl devel/sdl-mixer
+LIB_DEPENDS +=	devel/boost,-main
+LIB_DEPENDS +=	devel/protobuf
+LIB_DEPENDS +=	devel/sdl
+LIB_DEPENDS +=	devel/sdl-mixer
 LIB_DEPENDS +=	security/libgsasl
 
 RUN_DEPENDS +=	devel/desktop-file-utils
