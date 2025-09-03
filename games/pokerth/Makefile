@@ -16,17 +16,18 @@ ALL_TARGET =	pokerth_client
 
 CONFIGURE_ARGS +=	-DCMAKE_INSTALL_PREFIX=${LOCALBASE}
 
-LIB_DEPENDS +=	devel/sdl devel/sdl-mixer devel/boost,-main
-LIB_DEPENDS +=	security/libgsasl devel/protobuf
+
+LIB_DEPENDS +=	devel/boost,-main devel/protobuf devel/sdl devel/sdl-mixer
+LIB_DEPENDS +=	security/libgsasl
 
 RUN_DEPENDS +=	devel/desktop-file-utils
 
-WANTLIB += ${COMPILER_LIBCXX} GL Qt6Core Qt6Gui Qt6Network Qt6Sql
-WANTLIB += Qt6Widgets Qt6Xml c crypto curl m sqlite3 ssl
-WANTLIB += SDL SDL_mixer boost_atomic-mt boost_filesystem-mt boost_iostreams-mt
-WANTLIB += boost_program_options-mt boost_random-mt boost_regex-mt
-WANTLIB += boost_system-mt boost_thread-mt
-WANTLIB += gsasl boost_system-mt boost_thread-mt
+WANTLIB +=	${COMPILER_LIBCXX} GL Qt6Core Qt6Gui Qt6Network
+WANTLIB +=	Qt6Sql Qt6Widgets Qt6Xml SDL SDL_mixer boost_atomic-mt
+WANTLIB +=	boost_filesystem-mt boost_iostreams-mt boost_program_options-mt
+WANTLIB +=	boost_random-mt boost_regex-mt boost_system-mt boost_system-mt
+WANTLIB +=	boost_thread-mt boost_thread-mt c crypto curl gsasl m protobuf
+WANTLIB +=	sqlite3 ssl
 
 pre-configure:
 	cd ${WRKSRC} && \
