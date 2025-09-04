@@ -1,7 +1,7 @@
 COMMENT =	texas holdem poker client, local or internet games
 
-DIST_TUPLE =	github jggimi pokerth-openbsd d8d49f34ac9f5aafbbc9b97c9efbf96f57c32780 .
-PKGNAME =	pokerth-2025.09.01
+DIST_TUPLE =	github jggimi pokerth-openbsd 2025.09.04 .
+PKGNAME =	pokerth-2025.09.04
 
 CATEGORIES =	games
 

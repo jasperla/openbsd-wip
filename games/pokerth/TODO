@@ -1,10 +1,9 @@
 Continued testing and tweaks.  
 
-* this is a fork of pokerth, in order to backlevel websocketpp for boost.
+This is a fork of pokerth, in order to backlevel websocketpp for boost.
 
-* patches for CMakeList.txt: remove unused mysqlpp libraries reference,
-  and use relative path names for install directories.
-  (path name change submitted upstream as a PR)
+Patch for CMakeList.txt: remove unused mysqlpp libraries reference,
+only used with pokerth_server
 
-* patch for games_def.h: call this "1.1.2-obsd" -- upstream still hasn't
-  changed the version from 1.1.2 for their -stable branch.
+Patch for games_def.h: call this fork version "1.1.2-obsd" -- upstream
+still hasn't changed the version from 1.1.2 for their -stable branch.
