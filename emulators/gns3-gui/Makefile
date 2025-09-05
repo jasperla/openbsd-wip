@@ -24,8 +24,4 @@ RUN_DEPENDS=	x11/py-qt5 \
 
 NO_TEST=	Yes
 
-#post-install:
-#	chmod go-w,a-x ${DESTDIR}${PREFIX}/${PYSITELIB}/gns3/ui/*.ui
-#	chmod go-w,a-x ${DESTDIR}${PREFIX}/${PYSITELIB}/gns3/modules/*/ui/*.ui
-
 .include <bsd.port.mk>
