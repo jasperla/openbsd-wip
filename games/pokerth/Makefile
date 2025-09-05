@@ -11,6 +11,7 @@ MAINTAINER =	Josh Grosse <josh@jggimi.net>
 PERMIT_PACKAGE =	Yes
 
 MODULES =	devel/cmake x11/qt6
+SUBST_VARS +=	MODQT_QTDIR
 
 ALL_TARGET =	pokerth_client
 
@@ -32,6 +33,7 @@ WANTLIB +=	sqlite3 ssl
 pre-configure:
 	cd ${WRKSRC} && \
 	protoc --cpp_out=src/third_party/protobuf chatcleaner.proto && \
-	protoc --cpp_out=src/third_party/protobuf pokerth.proto
+	protoc --cpp_out=src/third_party/protobuf pokerth.proto && \
+	${SUBST_CMD} pokerth.desktop
 
 .include <bsd.port.mk>
