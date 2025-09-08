@@ -1,4 +1,4 @@
-SHA256 (gh-dash-4.16.1.zip) = bCxy8OalX2cLf/M7/Opa3ZXkfhiANaeqv0lRP9nqOcc=
+SHA256 (gh-dash-4.16.2.zip) = 6nxckDKaKMgbvVsEB9u7FfmiqgrRV5bs/ST0EFe70AM=
 SHA256 (go_modules/cloud.google.com/go/compute/@v/v1.20.1.mod) = SI2TVknKeuBzDnUj1v2BwiWJhPotYoT9IlqTVMmt43I=
 SHA256 (go_modules/cloud.google.com/go/compute/@v/v1.20.1.zip) = s2OUUpzJxqCU+DEtVG8FeKWQ3mqqHVpUR5j+twjIobA=
 SHA256 (go_modules/cloud.google.com/go/compute/metadata/@v/v0.2.3.mod) = ABGpCmT7GqppqtQm/orJyeWjfkthmnvQTUCQlTZatIg=
@@ -315,7 +315,7 @@ SHA256 (go_modules/gopkg.in/yaml.v2/@v/v2.4.0.zip) = 7eSeJ8TMps3S7HGa7Y6k02NxDM6
 SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.0-20200313102051-9f266ea9e77c.mod) = IVeYYKIDBvz0OxvSNNH7oxlJnHdhG3HAX5vzupDauTk=
 SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.mod) = IVeYYKIDBvz0OxvSNNH7oxlJnHdhG3HAX5vzupDauTk=
 SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.zip) = qrj7xOYwDqCOav4crqGKIckMefSJ9SxT4vIEMfGpoBU=
-SIZE (gh-dash-4.16.1.zip) = 135692
+SIZE (gh-dash-4.16.2.zip) = 136153
 SIZE (go_modules/cloud.google.com/go/compute/@v/v1.20.1.mod) = 1093
 SIZE (go_modules/cloud.google.com/go/compute/@v/v1.20.1.zip) = 1707819
 SIZE (go_modules/cloud.google.com/go/compute/metadata/@v/v0.2.3.mod) = 98
