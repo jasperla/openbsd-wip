@@ -5,7 +5,7 @@ COMMENT =	pattern matching swiss knife for malware researchers
 
 GH_ACCOUNT =	VirusTotal
 GH_PROJECT =	yara-x
-GH_TAGNAME =	v1.5.0
+GH_TAGNAME =	v1.6.0
 
 CATEGORIES =	security
 
@@ -17,15 +17,14 @@ MAINTAINER =	Laurent Cheylus <foxy@free.fr>
 # BSD-3
 PERMIT_PACKAGE=	Yes
 
-WANTLIB +=	${MODCARGO_WANTLIB} m lzma zstd
+WANTLIB +=	${MODCARGO_WANTLIB} m zstd
 
 MODULES =	devel/cargo
 
 CONFIGURE_STYLE =	cargo
 
-BUILD_DEPENDS +=	archivers/xz \
-			archivers/zstd
-LIB_DEPENDS = ${BUILD_DEPENDS}
+BUILD_DEPENDS+=	archivers/zstd
+LIB_DEPENDS = 	${BUILD_DEPENDS}
 
 MODCARGO_RUSTFLAGS +=	-L${LOCALBASE}/lib
 
