@@ -1,0 +1,26 @@
+Set version
+
+Index: cmd/main.go
+--- cmd/main.go.orig
++++ cmd/main.go
+@@ -8,7 +8,6 @@ import (
+ 	"os"
+ 	"os/exec"
+ 	"os/signal"
+-	"runtime/debug"
+ 	"strings"
+ 	"sync/atomic"
+ 	"syscall"
+@@ -33,11 +32,7 @@ func Run(name string, args []string) error {
+ 
+ 	switch {
+ 	case opts.version:
+-		info, ok := debug.ReadBuildInfo()
+-		if !ok {
+-			return fmt.Errorf("failed to read version info")
+-		}
+-		fmt.Fprintf(os.Stdout, "gotestsum version %s\n", info.Main.Version)
++		fmt.Fprintf(os.Stdout, "gotestsum version GOTESTSUM_VERSION\n")
+ 		return nil
+ 	case opts.watch:
+ 		return runWatcher(opts)
