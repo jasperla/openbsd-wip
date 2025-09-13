@@ -1,0 +1,3 @@
+dbus-fast is a Python library for DBus that aims to be a performant fully
+featured high level library primarily geared towards integration of
+applications into Linux desktop and mobile environments.
