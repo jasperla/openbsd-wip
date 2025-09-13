@@ -5,7 +5,7 @@ COMMENT =	multiprotocol credentials bruteforcer, password enumerator
 
 GH_ACCOUNT =	evilsocket
 GH_PROJECT =	legba
-GH_TAGNAME =	1.1.1
+GH_TAGNAME =	1.2.0
 
 CATEGORIES =	security
 
@@ -17,11 +17,10 @@ PERMIT_PACKAGE =	Yes
 WANTLIB +=	${MODCARGO_WANTLIB} m zstd
 
 BUILD_DEPENDS += devel/llvm/19,-main \
+		 net/samba,-main \
 		 archivers/zstd
 
-LIB_DEPENDS+=	net/samba,-main \
-		devel/llvm/19,-main \
-		archivers/zstd
+LIB_DEPENDS+=	archivers/zstd
 
 MODULES =	devel/cargo
 
