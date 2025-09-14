@@ -15,6 +15,12 @@ SUBST_VARS +=	MODQT_QTDIR
 
 ALL_TARGET =	pokerth_client
 
+.if DEBUG
+CONFIGURE_ARGS +=		-DCMAKE_BUILD_TYPE=RelWithDebInfo
+DEBUG_PACKAGES =		${BUILD_PACKAGES}
+INSTALL_DEBUG_PACKAGES =	Yes
+.endif
+
 LIB_DEPENDS +=	devel/boost,-main
 LIB_DEPENDS +=	devel/protobuf
 LIB_DEPENDS +=	devel/sdl
