@@ -1,9 +1,2 @@
-Continued testing and tweaks.  
-
-This is a fork of pokerth, in order to backlevel websocketpp for boost.
-
-Patches for CMakeList.txt:
-  remove mysqlpp library reference, only used with pokerth_server
-  remove qml_client, unfinished and unused
-
-Patch for games_def.h: call this fork version "1.1.2-obsd"
+Submitted 2025.09.04.  Revised per discussion with
+bentley@, who ok'ed 2025.09.17

@@ -8,7 +8,7 @@ CATEGORIES =	games
 
 MAINTAINER =	Josh Grosse <josh@jggimi.net>
 
-# GPLv3
+# AGPLv3+
 PERMIT_PACKAGE =	Yes
 
 MODULES =	devel/cmake x11/qt6
@@ -16,11 +16,8 @@ SUBST_VARS +=	MODQT_QTDIR V
 
 ALL_TARGET =	pokerth_client
 
-.if DEBUG
 CONFIGURE_ARGS +=		-DCMAKE_BUILD_TYPE=RelWithDebInfo
 DEBUG_PACKAGES =		${BUILD_PACKAGES}
-INSTALL_DEBUG_PACKAGES =	Yes
-.endif
 
 BUILD_DEPENDS +=	x11/qt6/qtwebsockets
 
