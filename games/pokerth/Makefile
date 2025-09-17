@@ -1,7 +1,8 @@
 COMMENT =	texas holdem poker client, local or internet games
 
 DIST_TUPLE =	github jggimi pokerth-openbsd 2025.09.04 .
-PKGNAME =	pokerth-2025.09.04
+V =		1.1.2pl20250904
+PKGNAME =	pokerth-${V}
 
 CATEGORIES =	games
 
@@ -11,7 +12,7 @@ MAINTAINER =	Josh Grosse <josh@jggimi.net>
 PERMIT_PACKAGE =	Yes
 
 MODULES =	devel/cmake x11/qt6
-SUBST_VARS +=	MODQT_QTDIR
+SUBST_VARS +=	MODQT_QTDIR V
 
 ALL_TARGET =	pokerth_client
 
@@ -20,6 +21,8 @@ CONFIGURE_ARGS +=		-DCMAKE_BUILD_TYPE=RelWithDebInfo
 DEBUG_PACKAGES =		${BUILD_PACKAGES}
 INSTALL_DEBUG_PACKAGES =	Yes
 .endif
+
+BUILD_DEPENDS +=	x11/qt6/qtwebsockets
 
 LIB_DEPENDS +=	devel/boost,-main
 LIB_DEPENDS +=	devel/protobuf
@@ -40,6 +43,6 @@ pre-configure:
 	cd ${WRKSRC} && \
 	protoc --cpp_out=src/third_party/protobuf chatcleaner.proto && \
 	protoc --cpp_out=src/third_party/protobuf pokerth.proto && \
-	${SUBST_CMD} pokerth.desktop
+	${SUBST_CMD} pokerth.desktop src/game_defs.h
 
 .include <bsd.port.mk>

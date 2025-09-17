@@ -6,7 +6,7 @@ Index: src/game_defs.h
  
  #define POKERTH_BETA_REVISION	0
 -#define POKERTH_BETA_RELEASE_STRING	 "1.1.2"
-+#define POKERTH_BETA_RELEASE_STRING	 "1.1.2-obsd"
++#define POKERTH_BETA_RELEASE_STRING	 "${V}"
  
  #define SQLITE_LOG_VERSION		1
  
