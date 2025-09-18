@@ -149,7 +149,7 @@ MODGO_MODULES =	\
 	gopkg.in/yaml.v3			 v3.0.1 \
 	howett.net/plist			 v1.0.0 \
 	mvdan.cc/editorconfig			 v0.3.0 \
-	mvdan.cc/sh/moreinterp			 v0.0.0-20250807215248-5a1a658912aa \
+	mvdan.cc/sh/moreinterp			 v0.0.0-20250915182820-b717ad599e17 \
 	mvdan.cc/sh/v3				 v3.12.0 \
 	pack.ag/tftp				 v1.0.1-0.20181129014014-07909dfbde3c
 
