@@ -13,12 +13,3 @@ Testing net/transmission beyond 4.1.0.beta.2:
 4) make clean=all, makesum, (patch, update-patches), update-plist, port-lib-depends-check, install-all
 5) make test, there should be zero failures
 6) test the installed application suite
-
-
-optional) if you want the shadow symbol packages installed, make with DEBUG=-g,
-          the Makefile contains:
-          
-		.if DEBUG
-		CONFIGURE_ARGS +=	-DCMAKE_BUILD_TYPE=RelWithDebInfo
-		INSTALL_DEBUG_PACKAGES=	Yes
-		.endif
