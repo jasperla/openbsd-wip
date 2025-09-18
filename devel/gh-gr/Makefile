@@ -1,7 +1,7 @@
 COMMENT =	GitHub repository management tool
 
 MODGO_MODNAME =	github.com/sarumaj/gh-gr/v2
-MODGO_VERSION =	v2.7.14
+MODGO_VERSION =	v2.8.0
 
 DISTNAME =	gh-gr-${MODGO_VERSION:S/v//}
 
@@ -27,6 +27,8 @@ MODGO_LDFLAGS+=	-X 'main.BuildDate=${BUILD_DATE}'
 
 # Don't use vendor for build
 MODGO_FLAGS = -mod=mod
+
+# TODO Generate and install shell completions
 
 # Some test fail for TestRESTClient: try to use network
 do-test:
