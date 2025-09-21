@@ -1,0 +1,9 @@
+idTech4A++ (Harmattan Edition) The engine provides the 
+ability to run Doom3/Quake4/Prey games based on the Android SDK
+version of the games under the GPL-3 license. See:
+
+https://github.com/glKarin/idtech4amm_doom3_sdk
+https://github.com/glKarin/idtech4amm_quake4_sdk
+https://github.com/glKarin/idtech4amm_prey_sdk
+
+Note: to play the original game you will need a copy of the game data.

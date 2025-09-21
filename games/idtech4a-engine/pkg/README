@@ -1,0 +1,17 @@
++----------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++----------------------------------------------------------------------
+
+Playing idTech4A++ (Harmattan Edition) Engime games requires the Steam 
+or GOG copy of the games. Copy all content of the original games to the 
+appropriate directories:
+
+~/.local/share/idtech4amm/doom3
+~/.local/share/idtech4amm/quake4
+~/.local/share/idtech4amm/prey
+
+These direcotories will contain user data, such as game settings, 
+log, and saves.
+
+For more information, see:
+https://github.com/glKarin/com.n0n3m4.diii4a

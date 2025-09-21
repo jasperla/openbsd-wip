@@ -1,0 +1,22 @@
+@bin bin/idtech4a-doom3
+@bin bin/idtech4a-quake4
+@bin bin/idtech4a-prey
+@bin lib/libcdoom.so
+@bin lib/libd3le.so
+@bin lib/libd3xp.so
+@bin lib/libfraggingfree.so
+@bin lib/libgame.so
+@bin lib/libhardcorps.so
+@bin lib/libhardqore.so
+@bin lib/libhexeneoc.so
+@bin lib/liblibrecoop.so
+@bin lib/liblibrecoopxp.so
+@bin lib/liboverthinked.so
+@bin lib/libperfected.so
+@bin lib/libperfected_roe.so
+@bin lib/libpreygame.so
+@bin lib/libq4game.so
+@bin lib/librivensin.so
+@bin lib/libsabot.so
+@bin lib/libtfphobos.so
+share/doc/pkg-readmes/${PKGSTEM}

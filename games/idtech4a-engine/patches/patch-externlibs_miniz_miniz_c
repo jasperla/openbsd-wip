@@ -1,0 +1,12 @@
+Index: externlibs/miniz/miniz.c
+--- externlibs/miniz/miniz.c.orig
++++ externlibs/miniz/miniz.c
+@@ -3171,7 +3171,7 @@ static int mz_stat64(const char *path, struct __stat64
+ #define MZ_FREOPEN(p, m, s) freopen64(p, m, s)
+ #define MZ_DELETE_FILE remove
+ 
+-#elif defined(__APPLE__) || defined(__FreeBSD__)
++#elif defined(__APPLE__) || defined(__FreeBSD__) || defined(__OpenBSD__)
+ #ifndef MINIZ_NO_TIME
+ #include <utime.h>
+ #endif

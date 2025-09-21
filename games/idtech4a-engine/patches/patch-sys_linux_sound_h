@@ -1,0 +1,11 @@
+Index: sys/linux/sound.h
+--- sys/linux/sound.h.orig
++++ sys/linux/sound.h
+@@ -81,6 +81,7 @@ class idAudioHardwareOSS : public idAudioHardware { (p
+ 	void		ExtractOSSVersion( int version, idStr &str ) const;
+ };
+ 
++#define NO_ALSA 1
+ #ifndef NO_ALSA
+ 
+ // libasound2-dev

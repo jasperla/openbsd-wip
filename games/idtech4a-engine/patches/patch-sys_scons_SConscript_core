@@ -1,0 +1,186 @@
+Index: sys/scons/SConscript.core
+--- sys/scons/SConscript.core.orig
++++ sys/scons/SConscript.core
+@@ -9,133 +9,6 @@ import scons_utils
+ Import( 'GLOBALS' )
+ Import( GLOBALS )
+ 
+-#//k curl
+-curl_string = \
+-    'base64.c \
+-    connect.c \
+-    cookie.c \
+-    dict.c \
+-    easy.c \
+-    escape.c \
+-    file.c \
+-    formdata.c \
+-    ftp.c \
+-    getdate.c \
+-    getenv.c \
+-    getinfo.c \
+-    hash.c \
+-    hostip.c \
+-    http.c \
+-    http_chunks.c \
+-    if2ip.c \
+-    krb4.c \
+-    ldap.c \
+-    llist.c \
+-    memdebug.c \
+-    mprintf.c \
+-    multi.c \
+-    netrc.c \
+-    progress.c \
+-    security.c \
+-    sendf.c \
+-    share.c \
+-    speedcheck.c \
+-    ssluse.c \
+-    strequal.c \
+-    strtok.c \
+-    telnet.c \
+-    timeval.c \
+-    transfer.c \
+-    url.c \
+-    version.c \
+-    http_digest.c \
+-    http_ntlm.c \
+-    inet_pton.c \
+-    md5.c \
+-	content_encoding.c'
+-curl_list = scons_utils.BuildList( '../../../../../externlibs/curl/lib/', curl_string )
+-
+-jpeg_string = \
+-		'jaricom.c \
+-		jcapimin.c \
+-		jcapistd.c \
+-		jcarith.c \
+-		jccoefct.c \
+-		jccolor.c \
+-		jcdctmgr.c \
+-		jchuff.c \
+-		jcinit.c \
+-		jcmainct.c \
+-		jcmarker.c \
+-		jcmaster.c \
+-		jcomapi.c \
+-		jcparam.c \
+-		jcprepct.c \
+-		jcsample.c \
+-		jctrans.c \
+-		jdapimin.c \
+-		jdapistd.c \
+-		jdarith.c \
+-		jdatadst.c \
+-		jdatasrc.c \
+-		jdcoefct.c \
+-		jdcolor.c \
+-		jddctmgr.c \
+-		jdhuff.c \
+-		jdinput.c \
+-		jdmainct.c \
+-		jdmarker.c \
+-		jdmaster.c \
+-		jdmerge.c \
+-		jdpostct.c \
+-		jdsample.c \
+-		jdtrans.c \
+-		jerror.c \
+-		jfdctflt.c \
+-		jfdctfst.c \
+-		jfdctint.c \
+-		jidctflt.c \
+-		jidctfst.c \
+-		jidctint.c \
+-		jmemmgr.c \
+-		jmemname.c \
+-		jquant1.c \
+-		jquant2.c \
+-		jutils.c'
+-
+-jpeg_list = scons_utils.BuildList( '../../../../../externlibs/jpeg-8d/', jpeg_string )
+-
+-libogg_string = ' \
+-				libogg/src/bitwise.c \
+-				libogg/src/framing.c \
+-				   libvorbis/lib/analysis.c \
+-				   libvorbis/lib/floor1.c \
+-				   libvorbis/lib/psy.c \
+-				   libvorbis/lib/tone.c \
+-				   libvorbis/lib/barkmel.c \
+-				   libvorbis/lib/info.c \
+-				   libvorbis/lib/vorbisenc.c \
+-				   libvorbis/lib/bitrate.c \
+-				   libvorbis/lib/lookup.c \
+-				   libvorbis/lib/registry.c \
+-				   libvorbis/lib/vorbisfile.c \
+-				   libvorbis/lib/block.c \
+-				   libvorbis/lib/lpc.c \
+-				   libvorbis/lib/res0.c \
+-				   libvorbis/lib/window.c \
+-				   libvorbis/lib/codebook.c \
+-				   libvorbis/lib/lsp.c \
+-				   libvorbis/lib/sharedbook.c \
+-				   libvorbis/lib/envelope.c \
+-				   libvorbis/lib/mapping0.c \
+-				   libvorbis/lib/smallft.c \
+-				   libvorbis/lib/floor0.c \
+-				   libvorbis/lib/mdct.c \
+-				   libvorbis/lib/synthesis.c'
+-
+-libogg_list = scons_utils.BuildList( '../../../../../externlibs/', libogg_string )
+-
+-
+ renderer_string = ' \
+ 	esTransform.c \
+ 	draw_glsl.cpp \
+@@ -375,8 +248,11 @@ if ( local_dedicated == 0 ):
+ 	else:
+ 		sys_string += ' linux/glimp.cpp'
+ else:
+-	sys_string += ' linux/dedicated.cpp'
+ 
++	sys_string += ' linux/dedicated.cpp \
++			stub/stub_gl.cpp \
++			stub/openal_stub.cpp'
++
+ sys_list = scons_utils.BuildList( 'sys', sys_string )
+ 
+ tools_string = ' \
+@@ -505,8 +381,8 @@ else:
+ 	local_env.Append( LIBS = [ 'pthread', 'dl', 'vorbisfile', 'jpeg' ] )
+ 
+ if ( local_dedicated == 0 ):
+-	if g_os == 'Linux':
+-		local_env.Append( LIBS = [ 'X11' ] )
++	#if g_os == 'Linux':
++		local_env.Append( LIBS = [ 'X11' ] ) #  [ 'X11', 'Xext', 'Xxf86vm' ] ) # 'Xxf86dga',
+ 		local_env.Append( LIBPATH = [ '/usr/X11R6/lib' ] )
+ 		local_env.Append( LIBS = [ 'openal' ] )
+ 	if ( local_opengl == 0 ):
+@@ -514,12 +390,12 @@ if ( local_dedicated == 0 ):
+ # local_env.Append( LIBPATH = [ '/opt/ndk/android_4_0_gcc_32/arm-linux-androideabi/lib/armv7-a', '/opt/ndk/android_4_0_gcc_32/sysroot/use/lib' ] )
+ #	local_env.Append( LIBPATH = [ '/data/data/com.termux/files/home/ndk/android_gcc32/arm-linux-androideabi/lib/armv7-a', '/data/data/com.termux/files/home/ndk/android_gcc32/sysroot/usr/lib' ] ) # //k armv7-a
+ # local_env.Append( LIBPATH = [ '/data/data/com.termux/files/home/ndk/android-ndk-aide/toolchains/aarch64-linux-android-4.9/prebuilt/linux-arm64/lib/gcc/aarch64-linux-android/4.9.x', '/data/data/com.termux/files/home/ndk/android-ndk-aide/platforms/android-21/arch-arm64/usr/lib', '/data/data/com.termux/files/home/ndk/android-ndk-aide/sources/cxx-stl/gnu-libstdc++/4.9/libs/arm64-v8a' ] ) # //k arm64-v8a
+-	else:
+-		local_env.Append( LIBS = [ 'GL' ] )
++	#else:
++	#	local_env.Append( LIBS = [ 'GL' ] )
+ 
+ source_list = core_list
+ source_list += idlib_objects
+-source_list += sound_lib
++#source_list += sound_lib
+ 
+ if g_os == 'Android':
+ 	source_list += jpeg_lib
+@@ -529,7 +405,7 @@ if g_os == 'Android':
+ 		source_list += curl_lib
+ #source_list += libvorbis_lib
+ else:
+-	source_list += [ '../../openal/stubs.cpp' ]
++	#source_list += [ '../../openal/stubs.cpp' ]
+ 
+ if g_os == 'Android':
+ 	local_env['STATIC_AND_SHARED_OBJECTS_ARE_THE_SAME'] = 1
