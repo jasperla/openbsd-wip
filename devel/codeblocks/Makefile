@@ -11,11 +11,10 @@ COMMENT=	Code::Blocks C/C++ IDE
 #EXTRACT_SUFX=	.tar.xz
 
 DIST_TUPLE =    github jggimi codeblocks 9cb09a739e916760b8a9c7d78d7770ee8378f41e .
-V =             25.03pl20250925
 SVN_REV = 	13739
 SUBST_VARS +=	SVN_REV
+V =             25.03pl${SVN_REV}
 PKGNAME =       codeblocks-${V}
-
 
 
 #SITES=		${SITE_SOURCEFORGE:=codeblocks/Sources/${V}/}
