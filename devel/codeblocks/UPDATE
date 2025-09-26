@@ -1,0 +1,13 @@
+This is for CI testing, post-25.03.  The distfile is
+a github mirror of the svn project.
+
+----
+
+There is an unresolved missing/extra error with WANTLIB pixman-1:
+
+Missing: pixman-1.40 (/usr/local/lib/libwxsmithlib.so.0.1) (system lib)
+Extra:  pixman-1.46
+WANTLIB += pixman-1
+
+The WANTLIB is already present, and the build creates pixman-1.40 files,
+there are no 1.46 files.

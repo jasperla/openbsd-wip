@@ -1,0 +1,11 @@
+--- src/src/appglobals.cpp.orig	Sun Dec  8 16:00:22 2013
++++ src/src/appglobals.cpp	Thu Sep 11 10:31:01 2014
+@@ -49,6 +49,8 @@ namespace appglobals
+     const wxString AppPlatform           = _T("Darwin");
+ #elif defined(__FreeBSD__)
+     const wxString AppPlatform           = _T("FreeBSD");
++#elif defined(__OpenBSD__)
++    const wxString AppPlatform           = _T("OpenBSD");
+ #elif defined(__UNIX__)
+     const wxString AppPlatform           = _T("Linux");
+ #else
