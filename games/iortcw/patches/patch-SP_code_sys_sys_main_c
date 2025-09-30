@@ -1,0 +1,12 @@
+Index: SP/code/sys/sys_main.c
+--- SP/code/sys/sys_main.c.orig
++++ SP/code/sys/sys_main.c
+@@ -526,7 +526,7 @@ void *Sys_LoadDll(const char *name, qboolean useSystem
+ 		char libPath[MAX_OSPATH];
+ 		int len;
+ 
+-		topDir = Sys_BinaryPath();
++		topDir = "/usr/local/share/iortcw/"; // Sys_BinaryPath();
+ 
+ 		if(!*topDir)
+ 			topDir = ".";

@@ -1,0 +1,37 @@
+Index: SP/code/qcommon/files.c
+--- SP/code/qcommon/files.c.orig
++++ SP/code/qcommon/files.c
+@@ -1681,8 +1681,32 @@ int FS_FindVM(void **startSearch, char *found, int fou
+ 	if(!fs_searchpaths)
+ 		Com_Error(ERR_FATAL, "Filesystem call made without initialization");
+ 
+-	if(enableDll)
++	if(enableDll) {
+ 		Q_strncpyz(dllName, Sys_GetDLLName(name), sizeof(dllName));
++		Com_Printf("FindVM: [%s]\n", dllName);
++
++        if (!strncmp((const char *)dllName, (const char *)"ui.sp.", (size_t) 6 )) {
++			Com_sprintf(found, (int)44, "/usr/local/share/iortcw/main/%s", dllName);
++			foundlen = 44;
++			Com_Printf("FindVM: library found [%s]\n", found);
++			*startSearch = "/usr/local/share/iortcw/main/";
++			return VMI_NATIVE;
++
++	} else if(!strncmp((const char *)dllName, (const char *)"cgame.sp.", (size_t) 9 )) {
++			Com_sprintf(found, (int)47, "/usr/local/share/iortcw/main/%s", dllName);
++			foundlen = 47;
++			*startSearch = "/usr/local/share/iortcw/main/";
++			Com_Printf("FindVM: library found [%s]\n", found);
++			return VMI_NATIVE;
++
++        } else if(!strncmp((const char *)dllName, (const char *)"qagame.sp.", (size_t) 10 )) {
++			Com_sprintf(found, (int)48, "/usr/local/share/iortcw/main/%s", dllName);
++			foundlen = 48;
++			*startSearch = "/usr/local/share/iortcw/main/";
++			Com_Printf("FindVM: library found [%s]\n", found);
++			return VMI_NATIVE;
++		}
++	}
+ 
+ 	Com_sprintf(qvmName, sizeof(qvmName), "vm/%s.sp.qvm", name);
+ 
