@@ -1,4 +1,4 @@
-SHA256 (gh-gr-2.8.0.zip) = gflckENd/ylqzaM3aHb7yP4uryuzxc8lcAayUsCn9oE=
+SHA256 (gh-gr-2.8.1.zip) = il2sA16OJ6cilpYDxMd0f7PE25kYWE9ZS3rbV3oqk7I=
 SHA256 (go_modules/cloud.google.com/go/compute/metadata/@v/v0.3.0.mod) = ZmAMRI0rXFR3BnNIkO0YGJyCgLII2Gua8qsIENW2HSE=
 SHA256 (go_modules/cloud.google.com/go/compute/metadata/@v/v0.3.0.zip) = wKt5wwhwwaqZEvsP3LBD4ARHgoJZiOQPWUAdInl2tnc=
 SHA256 (go_modules/code.gitea.io/sdk/gitea/@v/v0.22.0.mod) = 3izR9LOOq8YtUuDYSRtk1PjLjqWcf/N4gCoDYUnF9Tc=
@@ -430,7 +430,7 @@ SHA256 (go_modules/gopkg.in/yaml.v2/@v/v2.4.0.zip) = 7eSeJ8TMps3S7HGa7Y6k02NxDM6
 SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.0-20200313102051-9f266ea9e77c.mod) = IVeYYKIDBvz0OxvSNNH7oxlJnHdhG3HAX5vzupDauTk=
 SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.mod) = IVeYYKIDBvz0OxvSNNH7oxlJnHdhG3HAX5vzupDauTk=
 SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.zip) = qrj7xOYwDqCOav4crqGKIckMefSJ9SxT4vIEMfGpoBU=
-SIZE (gh-gr-2.8.0.zip) = 302319
+SIZE (gh-gr-2.8.1.zip) = 302307
 SIZE (go_modules/cloud.google.com/go/compute/metadata/@v/v0.3.0.mod) = 53
 SIZE (go_modules/cloud.google.com/go/compute/metadata/@v/v0.3.0.zip) = 19692
 SIZE (go_modules/code.gitea.io/sdk/gitea/@v/v0.22.0.mod) = 471
