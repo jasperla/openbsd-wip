@@ -8,8 +8,8 @@ GH_ACCOUNT =	mltframework
 GH_PROJECT =	shotcut
 #GH_TAGNAME =	v${V}
 
-GH_COMMIT =	83f6a0f038e990210b48da927d9a9b4be1aed91e
-DISTNAME =	shotcut-${V}pl20251001
+GH_COMMIT =	28112c8d9fe471ba19e680dadec19b9df355ed64
+DISTNAME =	shotcut-${V}pl20251002
 
 CATEGORIES =	multimedia
 
@@ -23,8 +23,8 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += ${COMPILER_LIBCXX} GL Qt6Charts Qt6Core Qt6Gui Qt6Multimedia
 WANTLIB += Qt6Network Qt6OpenGL Qt6OpenGLWidgets Qt6Qml Qt6QmlMeta
 WANTLIB += Qt6QmlModels Qt6QmlWorkerScript Qt6Quick Qt6QuickControls2
-WANTLIB += Qt6QuickWidgets Qt6Sql Qt6Widgets Qt6Xml c fftw3 m
-WANTLIB += mlt++-7 mlt-7
+WANTLIB += Qt6QuickWidgets Qt6Sql Qt6WebSockets Qt6Widgets Qt6Xml
+WANTLIB += c fftw3 m mlt++-7 mlt-7
 
 MODULES =		devel/cmake \
 			x11/qt6
