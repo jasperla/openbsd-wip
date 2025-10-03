@@ -1,6 +1,6 @@
 COMMENT =	modern interactive LLVM-based Fortran compiler
 
-V =		0.56.0
+V =		0.57.0
 DISTNAME =	lfortran-${V}
 
 SHARED_LIBS +=	lfortran_runtime	0.0 # 0.0
