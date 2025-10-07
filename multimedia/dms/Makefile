@@ -4,6 +4,9 @@ MODGO_MODNAME =		github.com/anacrolix/dms
 MODGO_VERSION =		v1.7.2
 DISTNAME =		dms-${MODGO_VERSION}
 
+# make patch and update-patches work
+WRKDIST =		${WRKSRC}
+
 CATEGORIES =		multimedia net
 
 # BSD 3-clause

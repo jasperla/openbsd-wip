@@ -1,0 +1,21 @@
+https://pkg.go.dev/net#Dial manages to turn [::]:1338 into 0.0.0.0:1338,
+making it impossible to listen on "wildcard" IPv6 sockets.  Force the
+right network (in Go terms) if the -http argument contains an angle bracket
+indicating a literal IPv6 address.
+
+Index: main.go
+--- main.go.orig
++++ main.go
+@@ -222,7 +222,11 @@ func mainErr() error {
+ 			return
+ 		}(config.IfName),
+ 		HTTPConn: func() net.Listener {
+-			conn, err := net.Listen("tcp", config.Http)
++			network := "tcp"
++			if strings.HasPrefix(config.Http, "[") {
++				network = "tcp6"
++			}
++			conn, err := net.Listen(network, config.Http)
+ 			if err != nil {
+ 				log.Fatal(err)
+ 			}
