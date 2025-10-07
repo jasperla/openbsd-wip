@@ -1,1 +1,2 @@
+@rcscript ${RCDIR}/dms
 @bin bin/dms
