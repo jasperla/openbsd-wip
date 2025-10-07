@@ -1,0 +1,44 @@
+Switch SSDP from harcoded IPv4 to hardcoded IPv6 link-local
+
+Index: ssdp/ssdp.go
+--- ssdp/ssdp.go.orig
++++ ssdp/ssdp.go
+@@ -14,11 +14,11 @@ import (
+ 	"time"
+ 
+ 	"github.com/anacrolix/log"
+-	"golang.org/x/net/ipv4"
++	"golang.org/x/net/ipv6"
+ )
+ 
+ const (
+-	AddrString = "239.255.255.250:1900"
++	AddrString = "[ff02::c]:1900"
+ 	rootDevice = "upnp:rootdevice"
+ 	aliveNTS   = "ssdp:alive"
+ 	byebyeNTS  = "ssdp:byebye"
+@@ -29,7 +29,7 @@ var NetAddr *net.UDPAddr
+ 
+ func init() {
+ 	var err error
+-	NetAddr, err = net.ResolveUDPAddr("udp4", AddrString)
++	NetAddr, err = net.ResolveUDPAddr("udp6", AddrString)
+ 	if err != nil {
+ 		log.Printf("Could not resolve %s: %s", AddrString, err)
+ 	}
+@@ -93,12 +93,12 @@ type Server struct {
+ }
+ 
+ func makeConn(ifi net.Interface) (ret *net.UDPConn, err error) {
+-	ret, err = net.ListenMulticastUDP("udp", &ifi, NetAddr)
++	ret, err = net.ListenMulticastUDP("udp6", &ifi, NetAddr)
+ 	if err != nil {
+ 		return
+ 	}
+-	p := ipv4.NewPacketConn(ret)
+-	if err := p.SetMulticastTTL(2); err != nil {
++	p := ipv6.NewPacketConn(ret)
++	if err := p.SetMulticastHopLimit(2); err != nil {
+ 		log.Print(err)
+ 	}
+ 	// if err := p.SetMulticastLoopback(true); err != nil {
