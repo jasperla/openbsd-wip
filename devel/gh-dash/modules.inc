@@ -14,20 +14,21 @@ MODGO_MODULES =	\
 	github.com/atotto/clipboard			 v0.1.4 \
 	github.com/aymanbagabas/git-module		 v1.8.4-0.20231101154130-8d27204ac6d2 \
 	github.com/aymanbagabas/go-osc52/v2		 v2.0.1 \
-	github.com/aymanbagabas/go-udiff		 v0.2.0 \
+	github.com/aymanbagabas/go-udiff		 v0.3.1 \
 	github.com/aymerick/douceur			 v0.2.0 \
 	github.com/bits-and-blooms/bitset		 v1.22.0 \
 	github.com/charmbracelet/bubbles		 v0.21.0 \
 	github.com/charmbracelet/bubbletea		 v1.3.5 \
-	github.com/charmbracelet/colorprofile		 v0.3.1 \
+	github.com/charmbracelet/colorprofile		 v0.3.2 \
 	github.com/charmbracelet/glamour		 v0.10.0 \
 	github.com/charmbracelet/harmonica		 v0.2.0 \
 	github.com/charmbracelet/lipgloss		 v1.1.1-0.20250404203927-76690c660834 \
 	github.com/charmbracelet/log			 v0.4.2 \
-	github.com/charmbracelet/x/ansi			 v0.9.3 \
+	github.com/charmbracelet/x/ansi			 v0.10.1 \
 	github.com/charmbracelet/x/cellbuf		 v0.0.13 \
-	github.com/charmbracelet/x/exp/golden		 v0.0.0-20241011142426-46044092ad91 \
+	github.com/charmbracelet/x/exp/golden		 v0.0.0-20241212170349-ad4b7ae0f25f \
 	github.com/charmbracelet/x/exp/slice		 v0.0.0-20250701194145-256c01de0aa5 \
+	github.com/charmbracelet/x/exp/teatest		 v0.0.0-20250916153604-9a2e892ed98e \
 	github.com/charmbracelet/x/term			 v0.2.1 \
 	github.com/cli/browser				 v1.3.0 \
 	github.com/cli/go-gh/v2				 v2.12.1 \
@@ -108,14 +109,14 @@ MODGO_MODULES =	\
 	github.com/yuin/goldmark-emoji			 v1.0.6 \
 	golang.org/x/crypto				 v0.39.0 \
 	golang.org/x/exp				 v0.0.0-20250620022241-b7579e27df2b \
-	golang.org/x/mod				 v0.25.0 \
+	golang.org/x/mod				 v0.26.0 \
 	golang.org/x/net				 v0.41.0 \
 	golang.org/x/oauth2				 v0.15.0 \
-	golang.org/x/sync				 v0.15.0 \
-	golang.org/x/sys				 v0.33.0 \
+	golang.org/x/sync				 v0.16.0 \
+	golang.org/x/sys				 v0.35.0 \
 	golang.org/x/term				 v0.32.0 \
-	golang.org/x/text				 v0.26.0 \
-	golang.org/x/tools				 v0.34.0 \
+	golang.org/x/text				 v0.28.0 \
+	golang.org/x/tools				 v0.35.0 \
 	google.golang.org/appengine			 v1.6.7 \
 	google.golang.org/protobuf			 v1.31.0 \
 	gopkg.in/check.v1				 v1.0.0-20180628173108-788fd7840127 \
@@ -127,14 +128,17 @@ MODGO_MODFILES =	\
 	dario.cat/mergo				 v1.0.1 \
 	github.com/!masterminds/semver/v3	 v3.3.0 \
 	github.com/alecthomas/chroma/v2		 v2.14.0 \
+	github.com/aymanbagabas/go-udiff	 v0.2.0 \
 	github.com/charmbracelet/bubbletea	 v1.3.4 \
 	github.com/charmbracelet/colorprofile	 v0.2.3-0.20250311203215-f60798e515dc \
+	github.com/charmbracelet/colorprofile	 v0.3.1 \
 	github.com/charmbracelet/glamour	 v0.9.2-0.20250319212134-549f544650e3 \
 	github.com/charmbracelet/lipgloss	 v1.1.0 \
 	github.com/charmbracelet/lipgloss	 v1.1.1-0.20250319133953-166f707985bc \
 	github.com/charmbracelet/x/ansi		 v0.8.0 \
 	github.com/charmbracelet/x/cellbuf	 v0.0.13-0.20250311204145-2c3ea96c31dd \
 	github.com/charmbracelet/x/exp/golden	 v0.0.0-20240806155701-69247e0abc2a \
+	github.com/charmbracelet/x/exp/golden	 v0.0.0-20241011142426-46044092ad91 \
 	github.com/charmbracelet/x/exp/slice	 v0.0.0-20250327172914-2fdc97757edf \
 	github.com/cli/safeexec			 v1.0.0 \
 	github.com/davecgh/go-spew		 v1.1.0 \
@@ -163,6 +167,7 @@ MODGO_MODFILES =	\
 	golang.org/x/crypto			 v0.35.0 \
 	golang.org/x/exp			 v0.0.0-20220909182711-5c715a9e8561 \
 	golang.org/x/exp			 v0.0.0-20231006140011-7918f672742d \
+	golang.org/x/mod			 v0.25.0 \
 	golang.org/x/net			 v0.19.0 \
 	golang.org/x/net			 v0.21.0 \
 	golang.org/x/net			 v0.26.0 \
@@ -172,6 +177,7 @@ MODGO_MODFILES =	\
 	golang.org/x/net			 v0.39.0 \
 	golang.org/x/sync			 v0.11.0 \
 	golang.org/x/sync			 v0.13.0 \
+	golang.org/x/sync			 v0.15.0 \
 	golang.org/x/sync			 v0.4.0 \
 	golang.org/x/sys			 v0.0.0-20210809222454-d867a43fc93e \
 	golang.org/x/sys			 v0.0.0-20210831042530-f4d43177bf5e \
@@ -183,15 +189,17 @@ MODGO_MODFILES =	\
 	golang.org/x/sys			 v0.30.0 \
 	golang.org/x/sys			 v0.31.0 \
 	golang.org/x/sys			 v0.32.0 \
+	golang.org/x/sys			 v0.33.0 \
 	golang.org/x/sys			 v0.6.0 \
 	golang.org/x/term			 v0.30.0 \
 	golang.org/x/term			 v0.31.0 \
 	golang.org/x/text			 v0.22.0 \
 	golang.org/x/text			 v0.23.0 \
 	golang.org/x/text			 v0.24.0 \
+	golang.org/x/text			 v0.26.0 \
 	golang.org/x/text			 v0.3.8 \
 	golang.org/x/tools			 v0.14.0 \
-	golang.org/x/tools			 v0.33.0 \
+	golang.org/x/tools			 v0.34.0 \
 	gopkg.in/check.v1			 v0.0.0-20161208181325-20d25e280405 \
 	gopkg.in/yaml.v3			 v3.0.0-20200313102051-9f266ea9e77c
 
