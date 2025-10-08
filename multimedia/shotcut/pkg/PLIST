@@ -600,6 +600,11 @@ share/shotcut/qml/filters/trails/
 share/shotcut/qml/filters/trails/icon.webp
 share/shotcut/qml/filters/trails/meta.qml
 share/shotcut/qml/filters/trails/ui.qml
+share/shotcut/qml/filters/typewriter/
+share/shotcut/qml/filters/typewriter/icon.webp
+share/shotcut/qml/filters/typewriter/meta.qml
+share/shotcut/qml/filters/typewriter/ui.qml
+share/shotcut/qml/filters/typewriter/vui.qml
 share/shotcut/qml/filters/unpremultiply/
 share/shotcut/qml/filters/unpremultiply/icon.webp
 share/shotcut/qml/filters/unpremultiply/meta.qml

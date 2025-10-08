@@ -8,8 +8,8 @@ GH_ACCOUNT =	mltframework
 GH_PROJECT =	shotcut
 #GH_TAGNAME =	v${V}
 
-GH_COMMIT =	684ebc54be92825613eb24941fc8f38eb4958ff8
-DISTNAME =	shotcut-${V}pl20251006
+GH_COMMIT =	57d5047c5d9ca8abcc1c98bfee3eb726309cc6bf
+DISTNAME =	shotcut-${V}pl20251008
 
 CATEGORIES =	multimedia
 
