@@ -1,4 +1,7 @@
-Switch SSDP from harcoded IPv4 to hardcoded IPv6 link-local
+Switch SSDP from harcoded IPv4 to hardcoded IPv6 site-local
+
+link-local ff02::c has the problem that some clients end up trying to fetch
+from the server's fe80::/8 address without scope identifier.
 
 Index: ssdp/ssdp.go
 --- ssdp/ssdp.go.orig
@@ -13,7 +16,7 @@ Index: ssdp/ssdp.go
  
  const (
 -	AddrString = "239.255.255.250:1900"
-+	AddrString = "[ff02::c]:1900"
++	AddrString = "[ff05::c]:1900"
  	rootDevice = "upnp:rootdevice"
  	aliveNTS   = "ssdp:alive"
  	byebyeNTS  = "ssdp:byebye"
