@@ -10,8 +10,8 @@ COMMENT=	Code::Blocks C/C++ IDE
 #
 #EXTRACT_SUFX=	.tar.xz
 
-DIST_TUPLE =    github jggimi codeblocks d9b2d2b32718015224e95cfbc726dc4e8201e8ea .
-SVN_REV = 	13742
+DIST_TUPLE =    github jggimi codeblocks 0e8e24a7fdb45ecf3b3df56006b03afeb73c02f0 .
+SVN_REV = 	13745
 SUBST_VARS +=	SVN_REV
 V =             25.03pl${SVN_REV}
 PKGNAME =       codeblocks-${V}
