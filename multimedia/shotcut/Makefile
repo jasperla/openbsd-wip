@@ -2,14 +2,14 @@ USE_WXNEEDED =	Yes
 
 COMMENT =	video editor
 
-V =		25.08.16
+V =		25.10.9
 
 GH_ACCOUNT =	mltframework
 GH_PROJECT =	shotcut
 #GH_TAGNAME =	v${V}
 
 GH_COMMIT =	28045a5bff785c4a52504ede8b1f902df2b29225
-DISTNAME =	shotcut-${V}pl20251008.1
+DISTNAME =	shotcut-${V}
 
 CATEGORIES =	multimedia
 
