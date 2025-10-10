@@ -4,12 +4,8 @@ COMMENT =	video editor
 
 V =		25.10.9
 
-GH_ACCOUNT =	mltframework
-GH_PROJECT =	shotcut
-#GH_TAGNAME =	v${V}
-
-GH_COMMIT =	28045a5bff785c4a52504ede8b1f902df2b29225
-DISTNAME =	shotcut-${V}
+DIST_TUPLE =	github mltframework shotcut c1b1ab527fc7bba89e00438904b0aec3c47403ff .
+PKGNAME =	shotcut-${V}pl20251009
 
 CATEGORIES =	multimedia
 
