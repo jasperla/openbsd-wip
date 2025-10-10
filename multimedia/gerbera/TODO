@@ -1,7 +1,0 @@
-- fix inotify detection and enable it
-- allocate user
-- provide .rc script
-- describe unprivileged home/content directory in README
-- describe how to allow/pass clients in pf
-- newer net/libupnp breaks net/libupnpp, which switched to libnupnp anyway
-  - port libnupnp and try with that
