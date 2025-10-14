@@ -4,8 +4,8 @@ COMMENT =	video editor
 
 V =		25.10.9
 
-DIST_TUPLE =	github mltframework shotcut e58422cdece38f0dcd9a20a9f4a605a8792584fd .
-PKGNAME =	shotcut-${V}pl20251012
+DIST_TUPLE =	github mltframework shotcut dcb002b5d70042e5404001234cf06e6d18986097 .
+PKGNAME =	shotcut-${V}pl20251014
 
 CATEGORIES =	multimedia
 
