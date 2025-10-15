@@ -8,8 +8,6 @@ CATEGORIES =	emulators
 
 HOMEPAGE =	https://86box.net/
 
-MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
-
 # GPLv2+
 PERMIT_PACKAGE =	Yes
 
