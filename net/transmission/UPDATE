@@ -1,15 +1,17 @@
 Testing net/transmission beyond 4.1.0.beta.2:
 
-1) git clone -b obsd --recurse-submodules git@github.com:jggimi/transmission.git transmission-4.1.0.dev
+1) $ git clone -b obsd --recurse-submodules git@github.com:jggimi/transmission.git
 
-      * This fork is synced, the branch adds an ./archive.sh script to simplify distfile creation.
+      * This fork is synced, the obsd branch adds an ./archive.sh script to simplify distfile creation.
 
-2) create tarball, xz compress it, move to distfiles. 
+2) $ cd transmission; sh archive.sh 
 
-   `sh archive.sh`  will create a git archive tarball with all source submodules,
-   compress it, and move it into /usr/ports/distfiles.
+     * This script will create a tarball, including all submodules, in /usr/ports/distfiles.
 
-3) make uninstall
-4) make clean=all, makesum, (patch, update-patches), update-plist, port-lib-depends-check, install-all
-5) make test, there should be zero failures
-6) test the installed application suite
+3) # pkg_delete transmission
+4) $ make clean=all
+5) $ make makesum
+6) if there are patches, $ make patch, $ make update-patches
+7) $ make update-plist
+8) $ make port-lib-depends-check
+9) $ make install-all

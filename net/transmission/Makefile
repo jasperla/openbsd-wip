@@ -2,13 +2,14 @@ COMMENT-main=	BitTorrent command line and daemon client
 COMMENT-gtk=	BitTorrent client with GTK+ interface
 COMMENT-qt=	BitTorrent client with Qt interface
 
-# testing between 4.0.6 and the next release
+# for integration testing beyond 4.1.0-beta.2
 
-VER=		4.1.0.dev
+VER=		4.1.0-beta.2
+PL=		20251016
 DISTNAME=	transmission-${VER}
-PKGNAME-main=	transmission-${VER}
-PKGNAME-gtk=	transmission-gtk-${VER}
-PKGNAME-qt=	transmission-qt-${VER}
+PKGNAME-main=	transmission-${VER}${PL}
+PKGNAME-gtk=	transmission-gtk-${VER}${PL}
+PKGNAME-qt=	transmission-qt-${VER}${PL}
 CATEGORIES=	net
 HOMEPAGE=	https://transmissionbt.com/
 MAINTAINER=	Josh Grosse <josh@jggimi.net>
@@ -21,7 +22,15 @@ DPB_PROPERTIES= parallel
 PERMIT_PACKAGE=	Yes
 
 # not in use until the next release
-SITES=	https://github.com/transmission/transmission/releases/download/${VER}/
+#SITES=	https://github.com/transmission/transmission/releases/download/${VER}/
+
+FETCH_MANUALLY=		" "
+FETCH_MANUALLY+=	"This integration testing port requires you to obtain the distfile"
+FETCH_MANUALLY+=	"manually, per the build instructions in the UPDATE file."
+FETCH_MANUALLY+=	" "
+FETCH_MANUALLY+=	"This is due to the upstream project sourcing third party git submodules."
+FETCH_MANUALLY+=	" "
+
 EXTRACT_SUFX=	.tar.xz
 
 MULTI_PACKAGES=	-main -gtk -qt
