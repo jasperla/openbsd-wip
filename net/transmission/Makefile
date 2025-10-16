@@ -4,12 +4,10 @@ COMMENT-qt=	BitTorrent client with Qt interface
 
 # for integration testing beyond 4.1.0-beta.2
 
-VER=		4.1.0-beta.2
+VER=		4.1.0.beta2
 PL=		pl20251016
 DISTNAME=	transmission-${VER}
-PKGNAME-main=	transmission-${VER}${PL}
-PKGNAME-gtk=	transmission-gtk-${VER}${PL}
-PKGNAME-qt=	transmission-qt-${VER}${PL}
+PKGNAME=	transmission-${VER}${PL}
 CATEGORIES=	net
 HOMEPAGE=	https://transmissionbt.com/
 MAINTAINER=	Josh Grosse <josh@jggimi.net>
