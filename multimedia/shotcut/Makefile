@@ -4,8 +4,8 @@ COMMENT =	video editor
 
 V =		25.10.9
 
-DIST_TUPLE =	github mltframework shotcut 86ac58305b38ba422dabcc65e1a21b6ff2e23964 .
-PKGNAME =	shotcut-${V}pl20251015
+DIST_TUPLE =	github mltframework shotcut 5a4149fb9e0f2d3c130dc9a22af720b441deda91 .
+PKGNAME =	shotcut-${V}pl20251016
 
 CATEGORIES =	multimedia
 
@@ -16,11 +16,11 @@ MAINTAINER =	Josh Grosse <josh@jggimi.net>
 # GPLv3+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} GL Qt6Charts Qt6Core Qt6Gui Qt6Multimedia
-WANTLIB += Qt6Network Qt6OpenGL Qt6OpenGLWidgets Qt6Qml Qt6QmlMeta
-WANTLIB += Qt6QmlModels Qt6QmlWorkerScript Qt6Quick Qt6QuickControls2
-WANTLIB += Qt6QuickWidgets Qt6Sql Qt6WebSockets Qt6Widgets Qt6Xml
-WANTLIB += c fftw3 m mlt++-7 mlt-7
+WANTLIB += ${COMPILER_LIBCXX} GL Qt6Charts Qt6Core Qt6DBus Qt6Gui
+WANTLIB += Qt6Multimedia Qt6Network Qt6OpenGL Qt6OpenGLWidgets
+WANTLIB += Qt6Qml Qt6QmlMeta Qt6QmlModels Qt6QmlWorkerScript Qt6Quick
+WANTLIB += Qt6QuickControls2 Qt6QuickWidgets Qt6Sql Qt6WebSockets
+WANTLIB += Qt6Widgets Qt6Xml X11 c fftw3 m mlt++-7 mlt-7
 
 MODULES =		devel/cmake \
 			x11/qt6
