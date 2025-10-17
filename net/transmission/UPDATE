@@ -2,16 +2,30 @@ Testing net/transmission beyond 4.1.0.beta.2:
 
 1) $ git clone -b obsd --recurse-submodules git@github.com:jggimi/transmission.git
 
-      * This fork is synced, the obsd branch adds an ./archive.sh script to simplify distfile creation.
+      * This fork is synced with the upstream project. The obsd branch
+        adds an ./archive.sh script to simplify distfile creation.
+
+      * The port's ${PKGNAME} includes a patch level in yyyymmdd format.
+
+      * The -daemon, -qt, and -gtk applications report a version string
+        that includes the HEAD commit hash from the main branch via
+        ${GIT_REVISION} in post-patch.
 
 2) $ cd transmission; sh archive.sh 
 
-     * This script will create a tarball, including all submodules, in /usr/ports/distfiles.
+     * This script prepares a tarball of the forked project, with submodules,
+       in /usr/ports/distfiles.
 
 3) # pkg_delete transmission
+
 4) $ make clean=all
+
 5) $ make makesum
-6) if there are patches, $ make patch, $ make update-patches
+
+6) if there are patches: `$ make patch && make update-patches`
+
 7) $ make update-plist
+
 8) $ make port-lib-depends-check
+
 9) $ make install-all
