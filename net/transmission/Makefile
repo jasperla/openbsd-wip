@@ -6,6 +6,7 @@ COMMENT-qt=	BitTorrent client with Qt interface
 
 VER=		4.1.0.beta2
 PL=		pl20251016
+GIT_REVISION=	3f7e1e4
 DISTNAME=	transmission-${VER}
 PKGNAME=	transmission-${VER}${PL}
 CATEGORIES=	net
@@ -107,5 +108,8 @@ CONFIGURE_ARGS +=	-DENABLE_QT=ON \
 .else
 CONFIGURE_ARGS +=	-DENABLE_QT=OFF
 .endif
+
+post-patch:
+	echo ${GIT_REVISION} > ${WRKSRC}/REVISION
 
 .include <bsd.port.mk>
