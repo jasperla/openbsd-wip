@@ -10,8 +10,8 @@ COMMENT=	Code::Blocks C/C++ IDE
 #
 #EXTRACT_SUFX=	.tar.xz
 
-DIST_TUPLE =    github jggimi codeblocks 473ae15e6ade2195a22854d4f6be12d672ac0a46 .
-SVN_REV = 	13750
+DIST_TUPLE =    github jggimi codeblocks 088a5e4b82bde5f8d0c2fd0a2a44452a76dae3ef .
+SVN_REV = 	13752
 SUBST_VARS +=	SVN_REV
 V =             25.03pl${SVN_REV}
 PKGNAME =       codeblocks-${V}
@@ -45,7 +45,7 @@ PERMIT_PACKAGE=	Yes
 WANTLIB += ${COMPILER_LIBCXX} ICE Lerc SDL2 SM X11 Xau Xcomposite
 WANTLIB += Xcursor Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr
 WANTLIB += Xrender Xss Xtst Xxf86vm aspell atk-1.0 atk-bridge-2.0
-WANTLIB += atspi boost_system bz2 c cairo cairo-gobject crypto
+WANTLIB += atspi bz2 c cairo cairo-gobject crypto
 WANTLIB += curl curses dbus-1 enchant-2 epoll-shim epoxy execinfo
 WANTLIB += expat ffi fontconfig freetype fribidi gcrypt gdk-3
 WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
@@ -63,7 +63,6 @@ WANTLIB += xcb xcb-render xcb-shm xkbcommon z zstd
 BUILD_DEPENDS=	archivers/zip
 
 LIB_DEPENDS=	archivers/bzip2 \
-		devel/boost \
 		textproc/hunspell \
 		x11/wxWidgets
 
