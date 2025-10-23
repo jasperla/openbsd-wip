@@ -2,8 +2,8 @@ BROKEN-i386 =	protobuf/abseil problems
 
 COMMENT =	texas holdem poker client, local or internet games
 
-DIST_TUPLE =	github jggimi pokerth-openbsd 13f4b49cbd8166849aaeaca42a63ddb81ad19292 .
-V =		1.1.2pl20251022
+DIST_TUPLE =	github jggimi pokerth-openbsd eaacbd976ccc0727bc4c32eee9ada56c8013d5e2 .
+V =		1.1.2pl20251023
 PKGNAME =	pokerth-${V}
 
 CATEGORIES =	games
