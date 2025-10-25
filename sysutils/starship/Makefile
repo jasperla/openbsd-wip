@@ -2,7 +2,7 @@ COMMENT =	minimal, blazing-fast, and customizable prompt for any shell
 
 GH_ACCOUNT =	starship
 GH_PROJECT =	starship
-GH_TAGNAME =	v1.23.0
+GH_TAGNAME =	v1.24.0
 
 CATEGORIES =	sysutils
 
