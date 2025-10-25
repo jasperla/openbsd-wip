@@ -1,7 +1,7 @@
 Index: src/dbofficial/CMakeLists.txt
 --- src/dbofficial/CMakeLists.txt.orig
 +++ src/dbofficial/CMakeLists.txt
-@@ -48,7 +48,6 @@ target_include_directories(pokerth_official_server PUB
+@@ -68,7 +68,6 @@ target_include_directories(pokerth_official_server PUB
      ../core)
  
  target_link_libraries(pokerth_official_server PUBLIC LibCurl)

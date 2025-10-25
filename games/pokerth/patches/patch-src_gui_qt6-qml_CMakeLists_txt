@@ -1,7 +1,7 @@
 Index: src/gui/qt6-qml/CMakeLists.txt
 --- src/gui/qt6-qml/CMakeLists.txt.orig
 +++ src/gui/qt6-qml/CMakeLists.txt
-@@ -76,6 +76,4 @@ target_compile_definitions(pokerth_qml-client PUBLIC Q
+@@ -81,6 +81,4 @@ target_compile_definitions(pokerth_qml-client PUBLIC Q
  
  install(TARGETS pokerth_qml-client DESTINATION bin OPTIONAL)
  install(DIRECTORY ../../../data DESTINATION share/pokerth)
