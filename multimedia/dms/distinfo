@@ -1,3 +1,4 @@
+SHA256 (105c744ed2138c85167c2d8b66cb3830694fba24.patch) = 5lZ5D0mBBcpNqFhWJPgcaQycHw69aNrRQueTOgXi9Sk=
 SHA256 (b967129a84834ce4fb19317f6f56d7e66478f1d7.patch) = t0ReDfhKYBJr+jDSxZYzrrf2N2UwQJ81z1F3zsGrfhY=
 SHA256 (dms-v1.7.2.zip) = vC7MT4lesy4ZTTswu4hSZdwbzrNPUIc2hATCzFZt+8Q=
 SHA256 (go_modules/github.com/anacrolix/envpprof/@v/v1.0.0.mod) = DvyYIC+xlI19QnUjisxre2TxKn8faLyJcs6e3ME1ky0=
@@ -57,6 +58,7 @@ SHA256 (go_modules/gopkg.in/check.v1/@v/v1.0.0-20190902080502-41f04d3bba15.mod) 
 SHA256 (go_modules/gopkg.in/check.v1/@v/v1.0.0-20190902080502-41f04d3bba15.zip) = AEU3yxnb5FlU7BYF8zFwX2aFzMJn7d1CicHrJ1E6uBc=
 SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.mod) = IVeYYKIDBvz0OxvSNNH7oxlJnHdhG3HAX5vzupDauTk=
 SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.zip) = qrj7xOYwDqCOav4crqGKIckMefSJ9SxT4vIEMfGpoBU=
+SIZE (105c744ed2138c85167c2d8b66cb3830694fba24.patch) = 5670
 SIZE (b967129a84834ce4fb19317f6f56d7e66478f1d7.patch) = 2811
 SIZE (dms-v1.7.2.zip) = 85393
 SIZE (go_modules/github.com/anacrolix/envpprof/@v/v1.0.0.mod) = 37
