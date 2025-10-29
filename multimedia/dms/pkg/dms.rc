@@ -1,6 +1,7 @@
 #!/bin/ksh
 
 daemon="${TRUEPREFIX}/bin/dms"
+daemon_user="_dms"
 
 . /etc/rc.d/rc.subr
 
