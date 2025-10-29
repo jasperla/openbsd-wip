@@ -5,10 +5,14 @@ MODGO_MODNAME =		github.com/anacrolix/dms
 MODGO_VERSION =		v1.7.2
 DISTNAME =		dms-${MODGO_VERSION}
 
+HOMEPAGE =		https://github.com/anacrolix/dms
+
 MAINTAINER =		Klemens Nanni <kn@openbsd.org>
 
 # BSD 3-clause
 PERMIT_PACKAGE =	Yes
+
+WANTLIB =		c pthread
 
 # XXX I cannot get GH_COMMIT to work with go-module(5).
 SITES.ipv6 =		https://${MODGO_MODNAME}/commit/
@@ -24,7 +28,8 @@ WRKDIST =		${WRKSRC}
 
 MODULES =		lang/go
 
-# XXX '-forceTranscodeTo vp8' wants unported avconv
+# '-forceTranscodeTo vp8' currently wants unported avconv, but that is subject
+# to change upstream already, so just leave it.
 RUN_DEPENDS =		graphics/ffmpeg \
 			graphics/ffmpegthumbnailer
 
