@@ -1,11 +1,8 @@
-# ring-v0.17 does not support sparc64
-NOT_FOR_ARCHS =	sparc64
-
 COMMENT =	pattern matching swiss knife for malware researchers
 
 GH_ACCOUNT =	VirusTotal
 GH_PROJECT =	yara-x
-GH_TAGNAME =	v1.8.1
+GH_TAGNAME =	v1.9.0
 
 CATEGORIES =	security
 
