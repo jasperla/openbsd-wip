@@ -1,6 +1,6 @@
 COMMENT =	code counter with complexity calculations and COCOMO
 
-V =		3.5.0
+V =		3.6.0
 
 MODGO_MODNAME =	github.com/boyter/scc/v3
 MODGO_VERSION =	v${V}
