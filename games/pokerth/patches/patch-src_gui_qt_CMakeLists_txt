@@ -1,7 +1,7 @@
 Index: src/gui/qt/CMakeLists.txt
 --- src/gui/qt/CMakeLists.txt.orig
 +++ src/gui/qt/CMakeLists.txt
-@@ -130,6 +130,5 @@ target_link_libraries(pokerth_client PUBLIC SingleAppl
+@@ -125,6 +125,5 @@ target_link_libraries(pokerth_client PUBLIC SingleAppl
  install(TARGETS pokerth_client DESTINATION bin OPTIONAL COMPONENT pokerth_client)
  install(DIRECTORY ../../../data DESTINATION share/pokerth COMPONENT pokerth_client)
  install(FILES ../../../pokerth.desktop DESTINATION share/applications COMPONENT pokerth_client)
