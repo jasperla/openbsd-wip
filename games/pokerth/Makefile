@@ -2,8 +2,8 @@ BROKEN-i386 =	protobuf/abseil problems
 
 COMMENT =	texas holdem poker client, local or internet games
 
-DIST_TUPLE =	github jggimi pokerth-openbsd 3b37ae69bb330f5cae88494b83f1c152ed8be75a .
-V =		1.1.2pl20251105
+DIST_TUPLE =	github jggimi pokerth-openbsd 33dc9537287e561a8fc7f0302c79228622f75b92 .
+V =		1.1.2pl20251105.1
 PKGNAME =	pokerth-${V}
 
 CATEGORIES =	games
@@ -27,16 +27,14 @@ LIB_DEPENDS +=	devel/boost,-main
 LIB_DEPENDS +=	devel/protobuf
 LIB_DEPENDS +=	devel/sdl
 LIB_DEPENDS +=	devel/sdl-mixer
-LIB_DEPENDS +=	security/libgsasl
 
 RUN_DEPENDS +=	devel/desktop-file-utils
 
-WANTLIB +=	${COMPILER_LIBCXX} GL Qt6Core Qt6Gui Qt6Network
-WANTLIB +=	Qt6Sql Qt6Widgets Qt6Xml SDL SDL_mixer boost_atomic-mt
-WANTLIB +=	boost_filesystem-mt boost_iostreams-mt boost_program_options-mt
-WANTLIB +=	boost_random-mt boost_regex-mt boost_system-mt boost_system-mt
-WANTLIB +=	boost_thread-mt boost_thread-mt c crypto curl gsasl m protobuf
-WANTLIB +=	sqlite3 ssl
+WANTLIB += ${COMPILER_LIBCXX} GL Qt6Core Qt6Gui Qt6Network Qt6Sql
+WANTLIB += Qt6Widgets Qt6Xml SDL SDL_mixer boost_atomic-mt boost_filesystem-mt
+WANTLIB += boost_iostreams-mt boost_program_options-mt boost_random-mt
+WANTLIB += boost_regex-mt boost_system-mt boost_thread-mt c crypto
+WANTLIB += curl m protobuf sqlite3 ssl
 
 pre-configure:
 	cd ${WRKSRC} && \
