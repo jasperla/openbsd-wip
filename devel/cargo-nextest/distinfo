@@ -1,4 +1,4 @@
-SHA256 (cargo-nextest-0.9.110.tar.gz) = EtJyBZq4vb+powzurMJJsvcHg8iairxguyEihM/SG8c=
+SHA256 (cargo-nextest-0.9.111.tar.gz) = fQi/AI4l8thD77it2aqL2NSEOSglEfy9U1PpHqyufpg=
 SHA256 (cargo/addr2line-0.24.2.tar.gz) = 374nflajdgAIdwkNqDdmC0QnqtUw4wKNROC//k+JocE=
 SHA256 (cargo/adler2-2.0.1.tar.gz) = MgEZV5/K2cIYhPXEhh0WF00OBiUGJSZvUP5omDQKvvo=
 SHA256 (cargo/ahash-0.8.12.tar.gz) = WhXxec1gxFhLioxZaSeq3EYuJ/LKcMBOAHGWSnO6enU=
@@ -51,7 +51,7 @@ SHA256 (cargo/color-spantrace-0.3.0.tar.gz) = uLiOqd8TNUtVvHI068zjbm74lqyi5CoV3p
 SHA256 (cargo/colorchoice-1.0.3.tar.gz) = W2PKqaqTl+LZSAqbE2c4VseNisEjKIUmw314OfKoaZA=
 SHA256 (cargo/config-0.15.18.tar.gz) = GA5Uk0QIA3T5sy7UG/O2tXiF/2ook2ez28EO6orMGRg=
 SHA256 (cargo/console-0.15.11.tar.gz) = BUzLWxD58sv1HrNVyh0FwtJ5zhgEaI0Nt0tHM6Wur9g=
-SHA256 (cargo/console-0.16.0.tar.gz) = LgnO1+u8y2O0xlQT2CHy4AzlTFykUU3cazyJL9vLxp0=
+SHA256 (cargo/console-0.16.1.tar.gz) = tDB0Om6xTpdk1CYNTA2BIwh9UE7rnEjysqXoEN02nfQ=
 SHA256 (cargo/console-api-0.9.0.tar.gz) = 6FmXSbZmfi8MkQwdDf9pARY/9pilLVo5cg9htb5LINM=
 SHA256 (cargo/console-subscriber-0.5.0.tar.gz) = +0kVt9jdlgRXobbDgBFMKUT3KOfGUpSrJHrmtvHzdZI=
 SHA256 (cargo/const-oid-0.9.6.tar.gz) = wkWTdyha2HQFTXl/PM6/mEl4qjkSn26v3lzcgxW2Evg=
@@ -371,7 +371,7 @@ SHA256 (cargo/unicode-linebreak-0.1.5.tar.gz) = OwnIPDwp03UGo+JgwIwDdDprtmqc1DLG
 SHA256 (cargo/unicode-normalization-0.1.25.tar.gz) = X9T2h4ycso2HSwCdqejRg7WryAEXxAu9GHof3jNr5ug=
 SHA256 (cargo/unicode-segmentation-1.12.0.tar.gz) = 9szyUSEhFLVEM+yUn9anhBJ1+a2iDd3S8p6c7qRQFJM=
 SHA256 (cargo/unicode-width-0.1.14.tar.gz) = fdbjDpC6pvckEXIGZdQdibmj0DncRbj66h3dB/YX9q8=
-SHA256 (cargo/unicode-width-0.2.0.tar.gz) = H8gZVoQsV9rBFCKpfDuBlaH/cn8G6FyE7S6KonfJoP0=
+SHA256 (cargo/unicode-width-0.2.2.tar.gz) = tKwEjXHt5+521YVRet1F2lMGYO9DkOSbCYczxuiX8lQ=
 SHA256 (cargo/unit-prefix-0.5.1.tar.gz) = MjQCz/LdZY85yhfHibUCAhs/GHB8kc3yLjg44bQCOBc=
 SHA256 (cargo/untrusted-0.9.0.tar.gz) = jsttoouKNR13O2jVglrDkBfmgHUPmA86GoXNjdKKR8E=
 SHA256 (cargo/url-2.5.7.tar.gz) = CLwTaimj0XWOB6nMome+MIruv1z9WhDz9nqyCXaD71s=
@@ -455,7 +455,7 @@ SHA256 (cargo/zipsign-api-0.1.5.tar.gz) = 26YGP/gs29mnZa3RbTaavoHlIPg2BU6ZfC2yF8
 SHA256 (cargo/zstd-0.13.3.tar.gz) = 6R7jEaVpwycXFlFWbgeXIgDnb8/iJCpPpEYUmjiBwIo=
 SHA256 (cargo/zstd-safe-7.2.4.tar.gz) = j0nE1fCrtgKpP7hzavKk9N2VEuNvf1cNZuZf+GftO50=
 SHA256 (cargo/zstd-sys-2.0.15+zstd.1.5.7.tar.gz) = 64EYPd2X0MdM7fHVDYXI0Iwbi2juhjve6ecG7tuhojc=
-SIZE (cargo-nextest-0.9.110.tar.gz) = 7447666
+SIZE (cargo-nextest-0.9.111.tar.gz) = 7456412
 SIZE (cargo/addr2line-0.24.2.tar.gz) = 39015
 SIZE (cargo/adler2-2.0.1.tar.gz) = 13366
 SIZE (cargo/ahash-0.8.12.tar.gz) = 43413
@@ -508,7 +508,7 @@ SIZE (cargo/color-spantrace-0.3.0.tar.gz) = 12884
 SIZE (cargo/colorchoice-1.0.3.tar.gz) = 7923
 SIZE (cargo/config-0.15.18.tar.gz) = 59347
 SIZE (cargo/console-0.15.11.tar.gz) = 37822
-SIZE (cargo/console-0.16.0.tar.gz) = 39107
+SIZE (cargo/console-0.16.1.tar.gz) = 39129
 SIZE (cargo/console-api-0.9.0.tar.gz) = 41126
 SIZE (cargo/console-subscriber-0.5.0.tar.gz) = 127350
 SIZE (cargo/const-oid-0.9.6.tar.gz) = 45382
@@ -828,7 +828,7 @@ SIZE (cargo/unicode-linebreak-0.1.5.tar.gz) = 15324
 SIZE (cargo/unicode-normalization-0.1.25.tar.gz) = 128462
 SIZE (cargo/unicode-segmentation-1.12.0.tar.gz) = 106323
 SIZE (cargo/unicode-width-0.1.14.tar.gz) = 271615
-SIZE (cargo/unicode-width-0.2.0.tar.gz) = 271509
+SIZE (cargo/unicode-width-0.2.2.tar.gz) = 282768
 SIZE (cargo/unit-prefix-0.5.1.tar.gz) = 7627
 SIZE (cargo/untrusted-0.9.0.tar.gz) = 14447
 SIZE (cargo/url-2.5.7.tar.gz) = 87907
