@@ -27,6 +27,7 @@ LIB_DEPENDS +=	devel/boost,-main
 LIB_DEPENDS +=	devel/protobuf
 LIB_DEPENDS +=	devel/sdl
 LIB_DEPENDS +=	devel/sdl-mixer
+LIB_DEPENDS +=	security/libgsasl
 
 RUN_DEPENDS +=	devel/desktop-file-utils
 
@@ -34,7 +35,7 @@ WANTLIB += ${COMPILER_LIBCXX} GL Qt6Core Qt6Gui Qt6Network Qt6Sql
 WANTLIB += Qt6Widgets Qt6Xml SDL SDL_mixer boost_atomic-mt boost_filesystem-mt
 WANTLIB += boost_iostreams-mt boost_program_options-mt boost_random-mt
 WANTLIB += boost_regex-mt boost_system-mt boost_thread-mt c crypto
-WANTLIB += curl m protobuf sqlite3 ssl
+WANTLIB += curl gsasl m protobuf sqlite3 ssl
 
 pre-configure:
 	cd ${WRKSRC} && \
