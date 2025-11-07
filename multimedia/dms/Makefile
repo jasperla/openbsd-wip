@@ -18,9 +18,9 @@ WANTLIB =		c pthread
 SITES.ipv6 =		https://${MODGO_MODNAME}/commit/
 # first commit after release: "feat: add IPv6 support for SSDP"
 PATCHFILES.ipv6 =	105c744ed2138c85167c2d8b66cb3830694fba24.patch
-# pending 'Always resolve -http arguments containing "[" as IPv6 (only)'
+# pending "Ensure :: in -http argument ends up as IPv6 socket"
 # https://github.com/anacrolix/dms/pull/171
-PATCHFILES.ipv6 +=	b967129a84834ce4fb19317f6f56d7e66478f1d7.patch
+PATCHFILES.ipv6 +=	a16a4b302c6525a13acbb4c22571a19c2a62a905.patch
 PATCH_DIST_STRIP =	-p1
 
 # make patch and update-patches work
