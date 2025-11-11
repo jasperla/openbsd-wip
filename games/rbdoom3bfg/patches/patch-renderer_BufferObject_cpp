@@ -1,0 +1,12 @@
+Index: renderer/BufferObject.cpp
+--- renderer/BufferObject.cpp.orig
++++ renderer/BufferObject.cpp
+@@ -135,7 +135,7 @@ idBufferObject::idBufferObject()
+ #endif
+ 
+ #else
+-	apiObject = NULL;
++	apiObject = (long)NULL;
+ 	buffer = NULL;
+ #endif
+ }
