@@ -5,8 +5,8 @@ COMMENT-qt=	BitTorrent client with Qt interface
 # for integration testing beyond 4.1.0-beta.3
 
 VER=		4.1.0beta3
-PL=		pl20251108
-GIT_REVISION=	ace36c922d864baaa1723560ee16e200b4fc33e3
+PL=		pl20251110
+GIT_REVISION=	78238ec3dece828c064307a807cd63ec1e317dc6
 PKGNAME=        transmission-${VER}${PL}
 CATEGORIES=	net
 HOMEPAGE=	https://transmissionbt.com/
@@ -33,7 +33,7 @@ DIST_TUPLE+=	github transmission dht \
 DIST_TUPLE+=	github transmission fast_float \
 		d7417618f93d2c47e9bbde561510f9fc8bafe003 third-party/fast_float
 DIST_TUPLE+=	github transmission fmt \
-		40626af88bd7df9a5fb80be7b25ac85b122d6c21 third-party/fmt
+		407c905e45ad75fc29bf0f9bb7c5c2fd3475976f third-party/fmt
 DIST_TUPLE+=	github google googletest \
 		52eb8108c5bdec04579160ae17225d66034bd723 third-party/googletest
 DIST_TUPLE+=	github transmission libb64 \
@@ -51,7 +51,7 @@ DIST_TUPLE+=	github publicsuffix list \
 DIST_TUPLE+=	github transmission libutp \
 		490874c44a2ecf914404b0a20e043c9755fff47b third-party/libutp
 DIST_TUPLE+=	github transmission miniupnp \
-		b55145ec095652289a59c33603f3abafee898273 third-party/miniupnp
+		9ff3c71bfb6c7f7bf525d6bda447387de7257aff third-party/miniupnp
 DIST_TUPLE+=	github transmission rapidjson \
 		24b5e7a8b27f42fa16b96fc70aade9106cf7102f third-party/rapidjson
 DIST_TUPLE+=	github google googletest ba96d0b1161f540656efdaed035b3c062b60e006 \
