@@ -29,7 +29,7 @@ MODGO_MODULES =	\
 	github.com/charmbracelet/x/term			 v0.2.1 \
 	github.com/chengxilo/virtualterm		 v1.0.4 \
 	github.com/cli/browser				 v1.3.0 \
-	github.com/cli/go-gh/v2				 v2.12.2 \
+	github.com/cli/go-gh/v2				 v2.13.0 \
 	github.com/cli/safeexec				 v1.0.1 \
 	github.com/cli/shurcoo!l-graphql		 v0.0.4 \
 	github.com/cloudflare/circl			 v1.6.1 \
@@ -48,7 +48,7 @@ MODGO_MODULES =	\
 	github.com/go-git/gcfg				 v1.5.1-0.20230307220236-3a3c6141e376 \
 	github.com/go-git/go-billy/v5			 v5.6.2 \
 	github.com/go-git/go-git-fixtures/v4		 v4.3.2-0.20231010084843-55a94097c399 \
-	github.com/go-git/go-git/v5			 v5.16.2 \
+	github.com/go-git/go-git/v5			 v5.16.3 \
 	github.com/goccy/go-json			 v0.10.5 \
 	github.com/goccy/go-yaml			 v1.18.0 \
 	github.com/golang/groupcache			 v0.0.0-20241129210726-2c02b8208cf8 \
