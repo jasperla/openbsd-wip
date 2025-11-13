@@ -1,8 +1,5 @@
-@bin bin/pokerth_chatcleaner
 @bin bin/pokerth_client
 @bin bin/pokerth_dedicated_server
-@bin bin/pokerth_official_server
-@bin bin/pokerth_qml-client
 share/applications/pokerth.desktop
 share/pixmaps/
 share/pixmaps/pokerth.png
