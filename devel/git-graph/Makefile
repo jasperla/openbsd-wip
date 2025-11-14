@@ -1,11 +1,11 @@
 COMMENT =	tool to show clear git graphs
 
-VERSION =	0.6.0
+VERSION =	v0.7.0
 
 SITES =		https://github.com/mlange-42/git-graph/
 DISTFILES =	git-graph-{archive/refs/tags/}${VERSION}.tar.gz
 
-DISTNAME =	git-graph-${VERSION}
+DISTNAME =	git-graph-${VERSION:S/v//}
 
 CATEGORIES =	devel
 
