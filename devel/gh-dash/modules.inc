@@ -44,10 +44,10 @@ MODGO_MODULES =	\
 	github.com/creack/pty				 v1.1.9 \
 	github.com/davecgh/go-spew			 v1.1.1 \
 	github.com/dlclark/regexp2			 v1.11.5 \
+	github.com/dlvhdr/x/gh-checks			 v0.0.0-20251114174027-320f1169b8e8 \
 	github.com/dustin/go-humanize			 v1.0.1 \
 	github.com/erikgeiser/coninput			 v0.0.0-20211004153227-1c3628e74d0f \
 	github.com/esiqveland/notify			 v0.13.3 \
-	github.com/fatih/structs			 v1.1.0 \
 	github.com/fsnotify/fsnotify			 v1.9.0 \
 	github.com/gabriel-vasile/mimetype		 v1.4.9 \
 	github.com/gen2brain/beeep			 v0.11.1 \
@@ -77,7 +77,6 @@ MODGO_MODULES =	\
 	github.com/knadh/koanf/maps			 v0.1.2 \
 	github.com/knadh/koanf/parsers/yaml		 v1.1.0 \
 	github.com/knadh/koanf/providers/file		 v1.2.0 \
-	github.com/knadh/koanf/providers/structs	 v1.0.0 \
 	github.com/knadh/koanf/v2			 v2.3.0 \
 	github.com/kr/pretty				 v0.3.1 \
 	github.com/kr/text				 v0.2.0 \
