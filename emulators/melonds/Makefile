@@ -20,13 +20,14 @@ COMPILER =	base-clang ports-gcc
 
 WANTLIB += ${COMPILER_LIBCXX} EGL GL ICE Qt6Core Qt6Gui Qt6Multimedia
 WANTLIB += Qt6Network Qt6OpenGL Qt6OpenGLWidgets Qt6Widgets SDL2
-WANTLIB += SM X11 Xext archive c enet glib-2.0 intl m slirp zstd
+WANTLIB += SM X11 Xext archive c enet glib-2.0 intl m slirp zstd faad
 
 # dlopen'd
 WANTLIB += wayland-egl
 
 MODULES =	devel/cmake
 LIB_DEPENDS =	archivers/libarchive \
+		audio/faad \
 		devel/sdl2 \
 		net/enet \
 		net/libslirp \
