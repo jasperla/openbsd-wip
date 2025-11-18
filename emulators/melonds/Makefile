@@ -1,7 +1,9 @@
+USE_WXNEEDED =	Yes
+
 COMMENT =	Nintendo DS emulator
 
 PKGNAME =	melonds-$V
-V =		1.0rc
+V =		1.1
 
 DIST_TUPLE +=	github melonDS-emu melonDS $V .
 
@@ -16,31 +18,28 @@ PERMIT_PACKAGE =	Yes
 
 COMPILER =	base-clang ports-gcc
 
-WANTLIB += ${COMPILER_LIBCXX}
-WANTLIB += EGL GL ICE Qt6Core Qt6Gui Qt6Multimedia Qt6Network
-WANTLIB += Qt6OpenGL Qt6OpenGLWidgets Qt6Widgets SDL2 SM X11 Xext
-WANTLIB += archive c enet glib-2.0 intl m slirp zstd
+WANTLIB += ${COMPILER_LIBCXX} EGL GL ICE Qt6Core Qt6Gui Qt6Multimedia
+WANTLIB += Qt6Network Qt6OpenGL Qt6OpenGLWidgets Qt6Widgets SDL2
+WANTLIB += SM X11 Xext archive c enet glib-2.0 intl m slirp zstd
+
+# dlopen'd
+WANTLIB += wayland-egl
 
 MODULES =	devel/cmake
 LIB_DEPENDS =	archivers/libarchive \
 		devel/sdl2 \
 		net/enet \
 		net/libslirp \
+		wayland/wayland \
 		x11/qt6/qtmultimedia
 BUILD_DEPENDS =	devel/kf6/extra-cmake-modules
 RUN_DEPENDS =	x11/gtk+4,-guic \
 		devel/desktop-file-utils
 
-
-CONFIGURE_ARGS +=	-DMELONDS_EMBED_BUILD_INFO=ON \
-			-DMELONDS_BUILD_PROVIDER="izzy Meyer <izder456@disroot.org>" \
-			-DMELONDS_GIT_HASH="e3fa6f4224e0d706df3ee262ae41cfb0deadc593" \
-			-DMELONDS_GIT_BRANCH="master" \
-			-DBUILD_STATIC=OFF \
-			-DNEED_LIBRT=OFF \
+CONFIGURE_ARGS +=	-DQt6_DIR="${LOCALBASE}/lib/qt6/cmake/Qt6" \
 			-DUSE_SYSTEM_LIBSLIRP=ON \
-			-DENABLE_GDBSTUB=OFF \
-			-DENABLE_JIT=OFF \
+			-DBUILD_STATIC=OFF \
+			-DENABLE_JIT=ON \
 			-DENABLE_LTO_RELEASE=ON \
 			-DENABLE_LTO=ON
 
