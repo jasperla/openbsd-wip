@@ -1,0 +1,14 @@
+Fix version
+See issue https://github.com/bee-san/RustScan/issues/800
+
+Index: Cargo.toml
+--- Cargo.toml.orig
++++ Cargo.toml
+@@ -1,6 +1,6 @@
+ [package]
+ name = "rustscan"
+-version = "2.3.0"
++version = "2.4.1"
+ authors = ["Autumn <autumn@skerritt.blog>"]
+ edition = "2018"
+ description = "Faster Nmap Scanning with Rust"
