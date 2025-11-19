@@ -1,0 +1,14 @@
+Always silence [DEPS] lines regardless of V=1
+
+Index: src/Makefile.housekeeping
+--- src/Makefile.housekeeping.orig
++++ src/Makefile.housekeeping
+@@ -899,7 +899,7 @@ endef
+ define deps_template_parts
+ 	@$(ECHO) "  [DEPS] $(1)"
+ 	@$(MKDIR) -p $(BIN)/deps/$(dir $(1))
+-	$(Q)$(CPP) $(CFLAGS) $(CFLAGS_$(2)) $(CFLAGS_$(3)) -DOBJECT=$(3) \
++	@$(CPP) $(CFLAGS) $(CFLAGS_$(2)) $(CFLAGS_$(3)) -DOBJECT=$(3) \
+ 		-Wno-error -M $(1) -MG -MP | \
+ 		sed 's/\.o[[:blank:]]*:/_DEPS +=/' > $(BIN)/deps/$(1).d
+ endef
