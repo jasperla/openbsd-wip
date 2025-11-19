@@ -17,6 +17,11 @@ WRKSRC =		${WRKDIST}/src
 VERSION =		${V}+ (g${HEAD:C/^(.{4}).+/\1/})
 PKGNAME =		ipxe-${ARCH}-${V}pl1229
 
+# MI elf(5) header we don't have, needed for relocations in EFI
+DISTFILES.elf =		elf_common.h
+SITES.elf =		https://github.com/freebsd/freebsd-src/raw/refs/heads/releng/15.0/sys/sys/
+EXTRACT_CASES =		*.h) ;;
+
 # May be installed anywhere and served over the network.
 PKG_ARCH =		*
 
@@ -73,14 +78,26 @@ MAKE_FLAGS +=		ARCH=${_ARCH}
 
 # https://ipxe.org/appnote/buildtargets
 ALL_TARGET =		# empty
+
 .for ext in pxe usb
-ALL_TARGET +=		bin-${_ARCH}-pcbios/undionly.${ext}
+# XXX with efi added below, this suddenly fails:
+#  arch/x86_64/Makefile:58: arch/x86_64/Makefile.: No such file or directory
+#  gmake: *** No rule to make target 'arch/x86_64/Makefile.'.  Stop.
+#ALL_TARGET +=		bin-${_ARCH}-pcbios/undionly.${ext}
 .endfor
 
-# XXX R_386_NONE, R_ARM_NONE and a bunch of other undefined relocation macros
-#     FreeBSD has them all in MI <sys/sys/elf_common.h>
-#ALL_TARGET +=		bin-${_ARCH}-efi/ipxe.efi
+# XXX
+#  ld: error: undefined hidden symbol: __guard_local
+#  ld: error: undefined symbol: __stack_smash_handler
+#  ld: error: unable to place section .text at file offset [0x1000, 0xA8BD4]; check your linker script for overflows
+ALL_TARGET +=		bin-${_ARCH}-efi/ipxe.efi
 
 NO_TEST =		Yes
+
+post-extract:
+	# Provide R_* relocation macros for util/elf2efi.c without redefining
+	# things our <elf.h> already provides.
+	grep '^#define[[:space:]]R_' ${FULLDISTDIR}/${DISTFILES.elf} \
+	    >| ${WRKSRC}/util/${DISTFILES.elf}
 
 .include <bsd.port.mk>

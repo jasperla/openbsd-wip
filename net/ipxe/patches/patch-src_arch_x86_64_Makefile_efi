@@ -1,0 +1,12 @@
+Index: src/arch/x86_64/Makefile.efi
+--- src/arch/x86_64/Makefile.efi.orig
++++ src/arch/x86_64/Makefile.efi
+@@ -2,7 +2,7 @@
+ 
+ # Use %rip-relative addressing wherever possible.
+ #
+-CFLAGS		+= -fpie
++#CFLAGS		+= -fpie
+ 
+ # EFI probably doesn't guarantee us a red zone, so let's not rely on it.
+ #

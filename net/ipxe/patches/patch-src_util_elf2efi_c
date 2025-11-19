@@ -1,0 +1,13 @@
+pull in missing relocation macros, see post-extract
+
+Index: src/util/elf2efi.c
+--- src/util/elf2efi.c.orig
++++ src/util/elf2efi.c
+@@ -32,6 +32,7 @@
+ #include <sys/mman.h>
+ #include <fcntl.h>
+ #include <elf.h>
++#include "elf_common.h"
+ #include <libgen.h>
+ 
+ #define EFI_HOSTONLY
