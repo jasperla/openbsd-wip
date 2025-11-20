@@ -41,6 +41,7 @@ MAKE_FLAGS +=		CC=${CC} \
 
 # (too old?) ld.bfd(1) segfaults, ld(1) must adapt, see as per clang-local(1)
 #
+# Makefile.efi enables PIE itself and takes precedence, but BIOS fails:
 # ld: error: relocation R_X86_64_32S cannot be used against local symbol; recompile with -fPIC
 EXTRA_LDFLAGS +=	-nopie
 # ld: error: cannot place ...: --execute-only does not support intermingling data and code
