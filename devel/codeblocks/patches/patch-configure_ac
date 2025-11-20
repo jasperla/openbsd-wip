@@ -3,7 +3,7 @@ undefined reference to `free'
 Index: configure.ac
 --- configure.ac.orig
 +++ configure.ac
-@@ -44,8 +44,6 @@ AC_PROG_AWK
+@@ -43,8 +43,6 @@ AC_PROG_AWK
  
  AX_CXX_COMPILE_STDCXX(11, noext)
  
