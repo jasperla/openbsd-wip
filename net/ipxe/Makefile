@@ -39,9 +39,13 @@ MAKE_FLAGS +=		CC=${CC} \
 			V=1 \
 			VERSION=${VERSION:Q}
 
+# Avoid package changes on rebuilds.
+BUILD_ID_CMD =		cksum -s OpenBSD -q | cut -d' ' -f1
+MAKE_FLAGS +=		BUILD_ID_CMD=${BUILD_ID_CMD:Q} \
+			SOURCE_DATE_EPOCH=0
+
 # Passing standard variables breaks ipxe Makefiles.
-MAKE_FLAGS +=		HOST_CFLAGS=${HOST_CFLAGS:Q} \
-			EXTRA_LDFLAGS=${EXTRA_LDFLAGS:Q}
+MAKE_FLAGS +=		HOST_CFLAGS=${HOST_CFLAGS:Q}
 
 # arch/x86/prefix/romprefix.S:911: Error: unknown pseudo-op: `.reloc'
 GNU_UTILS =		as
