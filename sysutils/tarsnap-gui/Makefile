@@ -3,7 +3,7 @@ COMMENT =		frontend to the popular Tarsnap backup service
 GH_ACCOUNT =		Tarsnap
 GH_PROJECT =		tarsnap-gui
 GH_COMMIT = 		7264f3ed345f7da99adb0b378d68eac8cc3b3423
-DISTNAME = 		tarsnap-gui-1.1.0
+DISTNAME = 		tarsnap-gui-1.0.2pl20241120
 SEPARATE_BUILD =	No
 
 CATEGORIES =		sysutils
