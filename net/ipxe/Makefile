@@ -76,6 +76,12 @@ HOST_CFLAGS +=		-I/usr/local/include
 _ARCH =			${ARCH:amd64=x86_64}
 MAKE_FLAGS +=		ARCH=${_ARCH}
 
+# Disable stack protector guard in Makefile.efi to fix
+# ld: error: undefined hidden symbol: __guard_local
+# ld: error: undefined symbol: __stack_smash_handler
+MAKE_FLAGS +=		SPG_TEST=false
+
+
 # https://ipxe.org/appnote/buildtargets
 ALL_TARGET =		# empty
 
@@ -87,9 +93,11 @@ ALL_TARGET =		# empty
 .endfor
 
 # XXX
-#  ld: error: undefined hidden symbol: __guard_local
-#  ld: error: undefined symbol: __stack_smash_handler
 #  ld: error: unable to place section .text at file offset [0x1000, 0xA8BD4]; check your linker script for overflows
+# [repeats for other sections]
+#  ld: error: section .text file range overlaps with .shstrtab
+#  >>> .text range is [0x1000, 0xA1877]
+#  >>> .shstrtab range is [0x2E310, 0x2E372]
 ALL_TARGET +=		bin-${_ARCH}-efi/ipxe.efi
 
 NO_TEST =		Yes
