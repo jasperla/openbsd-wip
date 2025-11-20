@@ -30,7 +30,7 @@ PERMIT_PACKAGE =	Yes
 
 MAINTAINER =		Klemens Nanni <kn@openbsd.org>
 
-# Makefile.housekeeping assumes (requires?) GCC
+# Makefile.housekeeping requires GNU compiler and linker
 COMPILER =		ports-gcc
 COMPILER_LANGS =	c
 MODGCC4_VERSION =	15
@@ -38,14 +38,6 @@ MODGCC4_VERSION =	15
 MAKE_FLAGS +=		CC=${CC} \
 			V=1 \
 			VERSION=${VERSION:Q}
-
-# (too old?) ld.bfd(1) segfaults, ld(1) must adapt, see as per clang-local(1)
-#
-# Makefile.efi enables PIE itself and takes precedence, but BIOS fails:
-# ld: error: relocation R_X86_64_32S cannot be used against local symbol; recompile with -fPIC
-EXTRA_LDFLAGS +=	-nopie
-# ld: error: cannot place ...: --execute-only does not support intermingling data and code
-EXTRA_LDFLAGS +=	--no-execute-only
 
 # Passing standard variables breaks ipxe Makefiles.
 MAKE_FLAGS +=		HOST_CFLAGS=${HOST_CFLAGS:Q} \
@@ -55,6 +47,10 @@ MAKE_FLAGS +=		HOST_CFLAGS=${HOST_CFLAGS:Q} \
 GNU_UTILS =		as
 # objcopy: unrecognized option `--enable-deterministic-archives'
 GNU_UTILS +=		objcopy
+# base ld.bfd(1) 2.17 segfaults, ld.lld(1) fails one way or the other:
+# ld: error: section .text file range overlaps with .shstrtab
+# ld: error: output file too large: 18446744073709485768 bytes
+GNU_UTILS +=		ld
 .for util in ${GNU_UTILS}
 MAKE_FLAGS +=		${util:U}=/usr/local/bin/g${util}
 .endfor
@@ -62,7 +58,7 @@ MAKE_FLAGS +=		${util:U}=/usr/local/bin/g${util}
 USE_GMAKE =		Yes
 
 BUILD_DEPENDS =		archivers/xz \
-			devel/binutils \
+			devel/binutils>=2.45p1 \
 			devel/gas \
 			sysutils/mtools
 
@@ -77,9 +73,9 @@ HOST_CFLAGS +=		-I/usr/local/include
 _ARCH =			${ARCH:amd64=x86_64}
 MAKE_FLAGS +=		ARCH=${_ARCH}
 
-# Disable stack protector guard in Makefile.efi to fix
-# ld: error: undefined hidden symbol: __guard_local
-# ld: error: undefined symbol: __stack_smash_handler
+# Disable stack protector guard in Makefile.efi:
+# ... undefined reference to `__guard_local'
+# ... undefined reference to `__stack_smash_handler'
 MAKE_FLAGS +=		SPG_TEST=false
 
 
@@ -93,12 +89,6 @@ ALL_TARGET =		# empty
 #ALL_TARGET +=		bin-${_ARCH}-pcbios/undionly.${ext}
 .endfor
 
-# XXX
-#  ld: error: unable to place section .text at file offset [0x1000, 0xA8BD4]; check your linker script for overflows
-# [repeats for other sections]
-#  ld: error: section .text file range overlaps with .shstrtab
-#  >>> .text range is [0x1000, 0xA1877]
-#  >>> .shstrtab range is [0x2E310, 0x2E372]
 ALL_TARGET +=		bin-${_ARCH}-efi/ipxe.efi
 
 NO_TEST =		Yes
