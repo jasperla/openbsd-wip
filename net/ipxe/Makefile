@@ -59,8 +59,6 @@ GNU_UTILS +=		ld
 MAKE_FLAGS +=		${util:U}=/usr/local/bin/g${util}
 .endfor
 
-USE_GMAKE =		Yes
-
 BUILD_DEPENDS =		archivers/xz \
 			devel/binutils>=2.45p1 \
 			devel/gas \
@@ -82,25 +80,34 @@ MAKE_FLAGS +=		ARCH=${_ARCH}
 # ... undefined reference to `__stack_smash_handler'
 MAKE_FLAGS +=		SPG_TEST=false
 
-
-# https://ipxe.org/appnote/buildtargets
-ALL_TARGET =		# empty
-
-.for ext in pxe usb
-# XXX with efi added below, this suddenly fails:
-#  arch/x86_64/Makefile:58: arch/x86_64/Makefile.: No such file or directory
-#  gmake: *** No rule to make target 'arch/x86_64/Makefile.'.  Stop.
-#ALL_TARGET +=		bin-${_ARCH}-pcbios/undionly.${ext}
-.endfor
-
-ALL_TARGET +=		bin-${_ARCH}-efi/ipxe.efi
+USE_GMAKE =		Yes
 
 NO_TEST =		Yes
+
+# https://ipxe.org/appnote/buildtargets
+# TODO Construct a loop in do-build to account for all in one go.
+BIOS ?=			No
+.if ${BIOS:L:Myes}
+# Apparently, platforms must not mix (both *bios* and *efi* in ALL_TARGET):
+#  arch/x86_64/Makefile:58: arch/x86_64/Makefile.: No such file or directory
+#  gmake: *** No rule to make target 'arch/x86_64/Makefile.'.  Stop.
+EXTS =			pxe usb
+ALL_TARGET =		${EXTS:=bin-${_ARCH}-pcbios/undionly.%}
+.else
+ALL_TARGET =		bin-${_ARCH}-efi/ipxe.efi
 
 post-extract:
 	# Provide R_* relocation macros for util/elf2efi.c without redefining
 	# things our <elf.h> already provides.
 	grep '^#define[[:space:]]R_' ${FULLDISTDIR}/${DISTFILES.elf} \
 	    >| ${WRKSRC}/util/${DISTFILES.elf}
+.endif
+
+do-install:
+#.for target in ${ALL_TARGET}
+#	# '.for ... ${ALL_TARGET}' does not expand _ARCH inside
+#	@echo ls -l ${WRKBUILD}/${target}
+#.endfor
+	@echo ${ALL_TARGET} | xargs -n1 -I% ls -l ${WRKBUILD}/%
 
 .include <bsd.port.mk>
