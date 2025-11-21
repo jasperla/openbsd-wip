@@ -17,10 +17,12 @@ WRKSRC =		${WRKDIST}/src
 VERSION =		${V}+ (g${HEAD:C/^(.{4}).+/\1/})
 PKGNAME =		ipxe-${ARCH}-${V}pl1229
 
-# MI elf(5) header we don't have, needed for relocations in EFI
+# MI elf(5) headers missing from our <elf.h>;  required by EFI builds.
 DISTFILES.elf =		elf_common.h
 SITES.elf =		https://github.com/freebsd/freebsd-src/raw/refs/heads/releng/15.0/sys/sys/
-EXTRACT_CASES =		*.h) ;;
+# Only provide relocation macros, see util/elf2efi.c patch.
+EXTRACT_CASES =		${DISTFILES.elf})    grep -x '\#define[[:space:]]R_.*' \
+			    ${DISTDIR}/$$archive >| ${WRKSRC}/util/$$archive;;
 
 # May be installed anywhere and served over the network.
 PKG_ARCH =		*
@@ -95,12 +97,6 @@ EXTS =			pxe usb
 ALL_TARGET =		${EXTS:=bin-${_ARCH}-pcbios/undionly.%}
 .else
 ALL_TARGET =		bin-${_ARCH}-efi/ipxe.efi
-
-post-extract:
-	# Provide R_* relocation macros for util/elf2efi.c without redefining
-	# things our <elf.h> already provides.
-	grep '^#define[[:space:]]R_' ${FULLDISTDIR}/${DISTFILES.elf} \
-	    >| ${WRKSRC}/util/${DISTFILES.elf}
 .endif
 
 do-install:
