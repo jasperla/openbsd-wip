@@ -66,6 +66,7 @@ BUILD_DEPENDS =		archivers/xz \
 			sysutils/mtools
 
 # either of these (mkisofs or xorrisofs) and unported syslinux for ISO images
+# as well as EFI USB images.
 #BUILD_DEPENDS +=	sysutils/cdrtools \
 #			sysutils/libisoburn,-xorriso
 
@@ -89,13 +90,25 @@ MAKE_FLAGS +=		ARCH=${_ARCH}
 # platforms, so we have to loop ourselves.
 #
 # See https://ipxe.org/appnote/buildtargets for all supported variations.
-PLATFORMS =		efi
-TARGETS-efi =		bin-${_ARCH}-efi/ipxe.efi
+PLATFORMS ?=		# no architecture-independent default
 
-.if ${MACHINE_ARCH} == "amd64"
+.if ${MACHINE_ARCH:Mamd64} || \
+    ${MACHINE_ARCH:Marm64}
+PLATFORMS +=		efi
+.  for driver in ipxe snp snponly
+.    for extension in efi
+TARGETS-efi +=		bin-${_ARCH}-efi/${driver}.${extension}
+.    endfor
+.  endfor
+.endif
+
+.if ${MACHINE_ARCH:Mamd64}
 PLATFORMS +=		bios
-EXTS-bios =		pxe usb
-TARGETS-bios =		${EXTS-bios:=bin-${_ARCH}-pcbios/undionly.%}
+.  for driver in undionly
+.    for extension in kpxe lkrn pxe usb
+TARGETS-bios +=		bin-${_ARCH}-pcbios/${driver}.${extension}
+.    endfor
+.  endfor
 .endif
 
 _DEF_ENV =		${SETENV} ${MAKE_ENV}
