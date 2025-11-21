@@ -1,6 +1,6 @@
 # 'ls arch/' Makefile includes, enable only after runtime testing.
 # arm     arm32   arm64   i386    loong64 riscv   riscv32 riscv64 x86     x86_64
-ONLY_FOR_ARCHS =	amd64
+ONLY_FOR_ARCHS =	amd64 arm64
 
 CATEGORIES =		net firmware
 COMMENT =		PXE network boot firmware
@@ -103,10 +103,10 @@ TARGETS-efi +=		bin-${_ARCH}-efi/${driver}.${extension}
 .endif
 
 .if ${MACHINE_ARCH:Mamd64}
-PLATFORMS +=		bios
+PLATFORMS +=		pcbios
 .  for driver in undionly
 .    for extension in kpxe lkrn pxe usb
-TARGETS-bios +=		bin-${_ARCH}-pcbios/${driver}.${extension}
+TARGETS-pcbios +=	bin-${_ARCH}-pcbios/${driver}.${extension}
 .    endfor
 .  endfor
 .endif
@@ -121,6 +121,7 @@ do-build:
 
 DATA_DIR =		${PREFIX}/share/ipxe/${MACHINE_ARCH}
 
+PKG_ARGS +=		${PLATFORMS:=-D%=1}
 SUBST_VARS =		PLATFORMS
 
 do-install:

@@ -1,9 +1,4 @@
 share/ipxe/
 share/ipxe/${MACHINE_ARCH}/
-share/ipxe/${MACHINE_ARCH}/ipxe.efi
-share/ipxe/${MACHINE_ARCH}/snp.efi
-share/ipxe/${MACHINE_ARCH}/snponly.efi
-share/ipxe/${MACHINE_ARCH}/undionly.kpxe
-share/ipxe/${MACHINE_ARCH}/undionly.lkrn
-share/ipxe/${MACHINE_ARCH}/undionly.pxe
-share/ipxe/${MACHINE_ARCH}/undionly.usb
+%%efi%%
+%%pcbios%%

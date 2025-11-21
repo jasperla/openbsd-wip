@@ -1,0 +1,3 @@
+share/ipxe/${MACHINE_ARCH}/ipxe.efi
+share/ipxe/${MACHINE_ARCH}/snp.efi
+share/ipxe/${MACHINE_ARCH}/snponly.efi
