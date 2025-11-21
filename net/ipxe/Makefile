@@ -116,7 +116,9 @@ _DEF_MAKE =		${MAKE_PROGRAM} ${MAKE_FLAGS} -f ${MAKE_FILE}
 
 do-build:
 .for platform in ${PLATFORMS}
-	@cd ${WRKBUILD} && ${_DEF_ENV} ${_DEF_MAKE} ${TARGETS-${platform}}
+	@${ECHO_MSG} \## platform: ${platform}
+	@${ECHO_MSG} \### targets: ${TARGETS-${platform}:T}
+	@exec ${_DEF_ENV} ${_DEF_MAKE} -C ${WRKBUILD} ${TARGETS-${platform}}
 .endfor
 
 DATA_DIR =		${PREFIX}/share/ipxe/${MACHINE_ARCH}
