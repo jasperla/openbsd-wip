@@ -74,7 +74,7 @@ BUILD_DEPENDS =		archivers/xz \
 HOST_CFLAGS +=		-I/usr/local/include
 
 # Default is i386, see ONLY_FOR_ARCHS comment.
-_ARCH =			${ARCH:amd64=x86_64}
+_ARCH =			${MACHINE_ARCH:amd64=x86_64}
 MAKE_FLAGS +=		ARCH=${_ARCH}
 
 # Disable stack protector guard in Makefile.efi:
@@ -100,10 +100,8 @@ ALL_TARGET =		bin-${_ARCH}-efi/ipxe.efi
 .endif
 
 do-install:
-#.for target in ${ALL_TARGET}
-#	# '.for ... ${ALL_TARGET}' does not expand _ARCH inside
-#	@echo ls -l ${WRKBUILD}/${target}
-#.endfor
-	@echo ${ALL_TARGET} | xargs -n1 -I% ls -l ${WRKBUILD}/%
+.for target in ${ALL_TARGET}
+	@ls -l ${WRKBUILD}/${target}
+.endfor
 
 .include <bsd.port.mk>
