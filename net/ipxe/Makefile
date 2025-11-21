@@ -73,10 +73,6 @@ BUILD_DEPENDS =		archivers/xz \
 # lzma.h
 HOST_CFLAGS +=		-I/usr/local/include
 
-# Default is i386, see ONLY_FOR_ARCHS comment.
-_ARCH =			${MACHINE_ARCH:amd64=x86_64}
-MAKE_FLAGS +=		ARCH=${_ARCH}
-
 # Disable stack protector guard in Makefile.efi:
 # ... undefined reference to `__guard_local'
 # ... undefined reference to `__stack_smash_handler'
@@ -86,22 +82,29 @@ USE_GMAKE =		Yes
 
 NO_TEST =		Yes
 
-# https://ipxe.org/appnote/buildtargets
-# TODO Construct a loop in do-build to account for all in one go.
-BIOS ?=			No
-.if ${BIOS:L:Myes}
-# Apparently, platforms must not mix (both *bios* and *efi* in ALL_TARGET):
-#  arch/x86_64/Makefile:58: arch/x86_64/Makefile.: No such file or directory
-#  gmake: *** No rule to make target 'arch/x86_64/Makefile.'.  Stop.
-EXTS =			pxe usb
-ALL_TARGET =		${EXTS:=bin-${_ARCH}-pcbios/undionly.%}
-.else
-ALL_TARGET =		bin-${_ARCH}-efi/ipxe.efi
+# Default is i386, see ONLY_FOR_ARCHS comment.
+_ARCH =			${MACHINE_ARCH:amd64=x86_64}
+MAKE_FLAGS +=		ARCH=${_ARCH}
+
+# The build system accepts multiple targets, but breaks if they are for multiple
+# platforms, so we have to loop ourselves.
+#
+# See https://ipxe.org/appnote/buildtargets for all supported variations.
+PLATFORMS =		efi
+TARGETS-efi =		bin-${_ARCH}-efi/ipxe.efi
+
+.if ${MACHINE_ARCH} == "amd64"
+PLATFORMS +=		bios
+EXTS-bios =		pxe usb
+TARGETS-bios =		${EXTS-bios:=bin-${_ARCH}-pcbios/undionly.%}
 .endif
 
-do-install:
-.for target in ${ALL_TARGET}
-	@ls -l ${WRKBUILD}/${target}
+_DEF_ENV =		${SETENV} ${MAKE_ENV}
+_DEF_MAKE =		${MAKE_PROGRAM} ${MAKE_FLAGS} -f ${MAKE_FILE}
+
+do-build:
+.for platform in ${PLATFORMS}
+	@cd ${WRKBUILD} && ${_DEF_ENV} ${_DEF_MAKE} ${TARGETS-${platform}}
 .endfor
 
 .include <bsd.port.mk>
