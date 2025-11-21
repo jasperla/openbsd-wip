@@ -9,9 +9,9 @@ MODGO_MODULES =	\
 	github.com/rivo/uniseg			 v0.4.7 \
 	github.com/robfig/cron/v3		 v3.0.1 \
 	github.com/yuin/goldmark		 v1.7.13 \
-	go.yaml.in/yaml/v4			 v4.0.0-rc.2 \
-	golang.org/x/sync			 v0.17.0 \
-	golang.org/x/sys			 v0.36.0
+	go.yaml.in/yaml/v4			 v4.0.0-rc.3 \
+	golang.org/x/sync			 v0.18.0 \
+	golang.org/x/sys			 v0.38.0
 
 MODGO_MODFILES =	\
 	github.com/mattn/go-colorable	 v0.1.13 \
