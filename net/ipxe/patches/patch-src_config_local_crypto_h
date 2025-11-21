@@ -1,0 +1,8 @@
+raise minimum TLS version to 1.2 (current maximum)
+
+Index: src/config/local/crypto.h
+--- src/config/local/crypto.h.orig
++++ src/config/local/crypto.h
+@@ -0,0 +1,2 @@
++#undef  TLS_VERSION_MIN
++#define TLS_VERSION_MIN TLS_VERSION_TLS_1_2

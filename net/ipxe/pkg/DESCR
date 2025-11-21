@@ -1,1 +1,5 @@
 iPXE builds for these platforms: ${PLATFORMS}
+
+Changes to the default configuration:
+- raise minimum TLS version to 1.2 (current maximum)
+- enable HTTPS downloads
