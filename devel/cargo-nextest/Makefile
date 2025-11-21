@@ -3,7 +3,7 @@ NOT_FOR_ARCHS =	sparc64
 
 COMMENT =	next-generation test runner for Rust
 
-VERSION =	0.9.112
+VERSION =	0.9.114
 
 DISTNAME =	cargo-nextest-${VERSION}
 
@@ -51,18 +51,19 @@ do-install:
 # Nextest's own tests do not work with cargo test.
 # We must use nextest to run its own test suite.
 #
-# Summary [ 234.851s] 367 tests run: 356 passed, 11 failed, 2 skipped
-# FAIL [  15.676s] ( 10/367) integration-tests::integration test_list_binaries_only
-# FAIL [   8.961s] ( 11/367) integration-tests::integration test_list_default
-# FAIL [  17.675s] ( 12/367) integration-tests::integration debugger::test_debugger_integration
-# FAIL [   8.805s] ( 13/367) integration-tests::integration test_list_full
-# FAIL [   9.081s] ( 18/367) integration-tests::integration test_list_with_default_filter
-# FAIL [   6.315s] ( 19/367) integration-tests::integration test_run
-# FAIL [  18.353s] ( 26/367) integration-tests::integration test_run_with_default_filter
-# FAIL [  13.791s] ( 28/367) integration-tests::integration test_run_with_priorities
-# FAIL [   8.404s] ( 31/367) integration-tests::integration test_show_config_test_groups
-# FAIL [   3.184s] ( 32/367) integration-tests::integration test_target_dir
-# FAIL [   0.211s] ( 33/367) integration-tests::integration test_version_info
+# Summary [ 221.240s] 368 tests run: 356 passed, 12 failed, 2 skipped
+# FAIL [  17.643s] ( 10/368) integration-tests::integration interceptor::test_debugger_integration
+# FAIL [  17.786s] ( 11/368) integration-tests::integration interceptor::test_tracer_integration
+# FAIL [  12.608s] ( 12/368) integration-tests::integration test_list_binaries_only
+# FAIL [   8.381s] ( 14/368) integration-tests::integration test_list_default
+# FAIL [   9.086s] ( 16/368) integration-tests::integration test_list_full
+# FAIL [   4.421s] ( 18/368) integration-tests::integration test_run
+# FAIL [   8.601s] ( 19/368) integration-tests::integration test_list_with_default_filter
+# FAIL [   7.882s] ( 27/368) integration-tests::integration test_run_with_default_filter
+# FAIL [   7.534s] ( 28/368) integration-tests::integration test_run_with_priorities
+# FAIL [  10.688s] ( 32/368) integration-tests::integration test_show_config_test_groups
+# FAIL [   0.233s] ( 33/368) integration-tests::integration test_version_info
+# FAIL [   2.604s] ( 44/368) integration-tests::integration test_target_dir
 do-test:
 	NEXTEST_HIDE_PROGRESS_BAR=1 ${MODCARGO_CARGO_RUN} run \
 		--package cargo-nextest -- nextest run --profile ci
