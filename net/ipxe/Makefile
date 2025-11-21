@@ -1,4 +1,4 @@
-# $ arch/ has these Makefile includes, add more when tested
+# 'ls arch/' Makefile includes, enable only after runtime testing.
 # arm     arm32   arm64   i386    loong64 riscv   riscv32 riscv64 x86     x86_64
 ONLY_FOR_ARCHS =	amd64
 
@@ -6,16 +6,18 @@ CATEGORIES =		net firmware
 COMMENT =		PXE network boot firmware
 HOMEPAGE =		https://ipxe.org
 
-# FAQ says "always use the latest code", official binaries use latest HEAD
+# FAQ says "always use the latest code", official binaries use latest HEAD.
 V =			1.21.1
 HEAD =			33834746537d18e899559470970706d37ae2722b
 DIST_TUPLE =		github	ipxe	ipxe	${HEAD}	.
-# patch-level is number of commits since last tag, see git-describe(1)
 WRKSRC =		${WRKDIST}/src
 # what 'gmake version' would print for a git checkout,
 # patch-level == # commits since tag (from git-describe(1) command in target)
 VERSION =		${V}+ (g${HEAD:C/^(.{4}).+/\1/})
-PKGNAME =		ipxe-${ARCH}-${V}pl1229
+
+# Provide native binaries on all architectures to allow serving them anywhere.
+PKGNAME =		ipxe-${MACHINE_ARCH}-${V}pl1229
+PKG_ARCH =		*
 
 # MI elf(5) headers missing from our <elf.h>;  required by EFI builds.
 DISTFILES.elf =		elf_common.h
@@ -23,9 +25,6 @@ SITES.elf =		https://github.com/freebsd/freebsd-src/raw/refs/heads/releng/15.0/s
 # Only provide relocation macros, see util/elf2efi.c patch.
 EXTRACT_CASES =		${DISTFILES.elf})    grep -x '\#define[[:space:]]R_.*' \
 			    ${DISTDIR}/$$archive >| ${WRKSRC}/util/$$archive;;
-
-# May be installed anywhere and served over the network.
-PKG_ARCH =		*
 
 # GPLv2+, UBDL
 PERMIT_PACKAGE =	Yes
@@ -105,6 +104,16 @@ _DEF_MAKE =		${MAKE_PROGRAM} ${MAKE_FLAGS} -f ${MAKE_FILE}
 do-build:
 .for platform in ${PLATFORMS}
 	@cd ${WRKBUILD} && ${_DEF_ENV} ${_DEF_MAKE} ${TARGETS-${platform}}
+.endfor
+
+DATA_DIR =		${PREFIX}/share/ipxe/${MACHINE_ARCH}
+
+SUBST_VARS =		PLATFORMS
+
+do-install:
+.for platform in ${PLATFORMS}
+	${INSTALL_DATA_DIR} ${DATA_DIR}
+	cd ${WRKBUILD} && ${INSTALL_DATA} ${TARGETS-${platform}} ${DATA_DIR}/
 .endfor
 
 .include <bsd.port.mk>

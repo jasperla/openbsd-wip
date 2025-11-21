@@ -1,0 +1,5 @@
+share/ipxe/
+share/ipxe/${MACHINE_ARCH}/
+share/ipxe/${MACHINE_ARCH}/ipxe.efi
+share/ipxe/${MACHINE_ARCH}/undionly.pxe
+share/ipxe/${MACHINE_ARCH}/undionly.usb
