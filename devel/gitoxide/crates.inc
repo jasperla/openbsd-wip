@@ -148,7 +148,6 @@ MODCARGO_CRATES +=	hashlink	0.10.0	# MIT OR Apache-2.0
 MODCARGO_CRATES +=	heapless	0.8.0	# MIT OR Apache-2.0
 MODCARGO_CRATES +=	heck	0.5.0	# MIT OR Apache-2.0
 MODCARGO_CRATES +=	hermit-abi	0.5.2	# MIT OR Apache-2.0
-MODCARGO_CRATES +=	home	0.5.11	# MIT OR Apache-2.0
 MODCARGO_CRATES +=	http	1.3.1	# MIT OR Apache-2.0
 MODCARGO_CRATES +=	http-body	1.0.1	# MIT
 MODCARGO_CRATES +=	http-body-util	0.1.3	# MIT

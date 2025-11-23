@@ -148,7 +148,6 @@ SHA256 (cargo/hashlink-0.10.0.tar.gz) = c4LPYmNBny2N84xV19qD2lwYrvh/x6f8H7HjRO3+
 SHA256 (cargo/heapless-0.8.0.tar.gz) = C/uethhgHImUWnDiVImNqTsTvgOICR1CEXRismW7P60=
 SHA256 (cargo/heck-0.5.0.tar.gz) = IwTgCYP4f/s4tVtES147YKiEtdMMD8p9gv4zRJu+Veo=
 SHA256 (cargo/hermit-abi-0.5.2.tar.gz) = /A/vRW5LqpbalQRVzQLAgcqVOxQSmOQds/x+NrHahJw=
-SHA256 (cargo/home-0.5.11.tar.gz) = WJUzRTJEsJlchYcAMiGZsr7LE7Yn3yhR9konddAkq88=
 SHA256 (cargo/http-1.3.1.tar.gz) = 9KhdMa6pie6tKaOq+eERWhgN+CgkMRVuUz3kdmCJJWU=
 SHA256 (cargo/http-body-1.0.1.tar.gz) = Hv7c4fuOaRPyPgyS3o5izVt3Kmfns5Rt+TCmJWbJMYQ=
 SHA256 (cargo/http-body-util-0.1.3.tar.gz) = sCHZPia+z13H4bdbG+0f2TEks3TOtz9D1NTq/siWpko=
@@ -487,7 +486,7 @@ SHA256 (cargo/zerovec-0.11.4.tar.gz) = 56or1VCG8atSZpPsvkRCBdpX4l9EiYedqAY1pG2Q5
 SHA256 (cargo/zerovec-derive-0.11.1.tar.gz) = W5YjfvoMh4xkvYnENvZhvk5GsvPv8eu5dvfvIyHS9Y8=
 SHA256 (cargo/zip-5.1.1.tar.gz) = L4UpBRUayNTQb9ymZSCmYcCXMKdMbU4rDye0NrOC5TI=
 SHA256 (cargo/zlib-rs-0.5.2.tar.gz) = LwaukvQvXlxCRD/QlPJF62Vqv1bdfM6biyYyNlZeAPI=
-SHA256 (gitoxide-0.46.0.tar.gz) = aKYMrpDgiCyz4eaZvBx+ZJArYyzDAgn2BETIyostgg4=
+SHA256 (gitoxide-0.47.0.tar.gz) = /qmYU0v7HguRqmlgRERoRAuv5EL5+l4Ze76OcibSMPU=
 SIZE (cargo/addr2line-0.25.1.tar.gz) = 43134
 SIZE (cargo/adler2-2.0.1.tar.gz) = 13366
 SIZE (cargo/aho-corasick-1.1.3.tar.gz) = 183311
@@ -638,7 +637,6 @@ SIZE (cargo/hashlink-0.10.0.tar.gz) = 29402
 SIZE (cargo/heapless-0.8.0.tar.gz) = 77802
 SIZE (cargo/heck-0.5.0.tar.gz) = 11517
 SIZE (cargo/hermit-abi-0.5.2.tar.gz) = 17435
-SIZE (cargo/home-0.5.11.tar.gz) = 9926
 SIZE (cargo/http-1.3.1.tar.gz) = 106063
 SIZE (cargo/http-body-1.0.1.tar.gz) = 6125
 SIZE (cargo/http-body-util-0.1.3.tar.gz) = 16975
@@ -977,4 +975,4 @@ SIZE (cargo/zerovec-0.11.4.tar.gz) = 125080
 SIZE (cargo/zerovec-derive-0.11.1.tar.gz) = 21294
 SIZE (cargo/zip-5.1.1.tar.gz) = 127991
 SIZE (cargo/zlib-rs-0.5.2.tar.gz) = 194342
-SIZE (gitoxide-0.46.0.tar.gz) = 10558541
+SIZE (gitoxide-0.47.0.tar.gz) = 10588839
