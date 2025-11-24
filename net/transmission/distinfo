@@ -19,7 +19,7 @@ SHA256 (transmission-miniupnp-9ff3c71bfb6c7f7bf525d6bda447387de7257aff.tar.gz) =
 SHA256 (transmission-rapidjson-24b5e7a8b27f42fa16b96fc70aade9106cf7102f.tar.gz) = LSYBqC0tO34UOjyNQ+9hZnE5EDS8RokamBa3nPLT56g=
 SHA256 (transmission-rpavlik-cmake-modules-d66fc5dec3eaea3a4f9778ceeeb65cbec490b5b9.tar.gz) = +j73tfZ8jBR1AFL5NrQL7p4Zrwd3vLUE7kAtAupzxYg=
 SHA256 (transmission-small-46bb00342b052b76a7b95ef639fcc601e80e2988.tar.gz) = 848h9yAclQz3czb0CtXXNRHEHyTIcoYb3S9bunk3l3A=
-SHA256 (transmission-transmission-40e1bd660dddaba03bf071e5ce4d141e800e7ec4.tar.gz) = enCkA/Ny2exHaXqNSKJ4D4AEJ4LjWBy/XgWsNgHt3Us=
+SHA256 (transmission-transmission-3628a1084eeb91742a803329719dfcdc1c690246.tar.gz) = kRkiEJtWf4HLijkpR3f1TjmR1/JlKU9WOLzYW93TER4=
 SHA256 (transmission-utfcpp-6be08bbea14ffa0a5c594257fb6285a054395cd7.tar.gz) = MOheHmQwM12RHGqIKi5HX70XdIz4cPlLPucMs1B0+0g=
 SHA256 (transmission-wide-integer-c725651dd2d97932822daf92337cf634eb56d9fa.tar.gz) = BdCncI7uUxPdZ742qgLo5jGrVWezJUGzK/t/f8OvHX0=
 SIZE (google-benchmark-0da57b85cf23e48d0e515f58c65a25425dbde012.tar.gz) = 259753
@@ -43,6 +43,6 @@ SIZE (transmission-miniupnp-9ff3c71bfb6c7f7bf525d6bda447387de7257aff.tar.gz) = 5
 SIZE (transmission-rapidjson-24b5e7a8b27f42fa16b96fc70aade9106cf7102f.tar.gz) = 1116703
 SIZE (transmission-rpavlik-cmake-modules-d66fc5dec3eaea3a4f9778ceeeb65cbec490b5b9.tar.gz) = 252465
 SIZE (transmission-small-46bb00342b052b76a7b95ef639fcc601e80e2988.tar.gz) = 190979
-SIZE (transmission-transmission-40e1bd660dddaba03bf071e5ce4d141e800e7ec4.tar.gz) = 9036978
+SIZE (transmission-transmission-3628a1084eeb91742a803329719dfcdc1c690246.tar.gz) = 9038892
 SIZE (transmission-utfcpp-6be08bbea14ffa0a5c594257fb6285a054395cd7.tar.gz) = 34168
 SIZE (transmission-wide-integer-c725651dd2d97932822daf92337cf634eb56d9fa.tar.gz) = 192322
