@@ -1,8 +1,11 @@
+# wasmtime crate supported only on amd64
+ONLY_FOR_ARCHS=	amd64
+
 COMMENT =	pattern matching swiss knife for malware researchers
 
 GH_ACCOUNT =	VirusTotal
 GH_PROJECT =	yara-x
-GH_TAGNAME =	v1.9.0
+GH_TAGNAME =	v1.10.0
 
 CATEGORIES =	security
 
