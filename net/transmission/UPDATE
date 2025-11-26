@@ -3,4 +3,4 @@ For testing net/transmission beyond 4.1.0.beta.3:
 submodules are now included in DIST_TUPLE, so no
 separate archive needs to be built manually.
 
-Recommended; # pkg_delete transmission, # make test, # make install-all
+Recommended; # pkg_delete transmission, $ make test, $ make install-all
