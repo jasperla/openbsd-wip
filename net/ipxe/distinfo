@@ -1,4 +1,6 @@
 SHA256 (elf_common.h) = hwMVOqfmEda8Tdv5kQ0X+JFyjVb+UE3Kz86sX9JXQ7Y=
 SHA256 (ipxe-ipxe-33834746537d18e899559470970706d37ae2722b.tar.gz) = ZMA2xBYsPLb9uVvyL7nFsZfnEFjqSWxRoTBJWgKAIPg=
+SHA256 (syslinux-6.03.tar.xz) = JtOYbSvqEJ1dwOT4xIIqRZJ2zwIRJejJ8jw8yl2MhQ4=
 SIZE (elf_common.h) = 68040
 SIZE (ipxe-ipxe-33834746537d18e899559470970706d37ae2722b.tar.gz) = 4413314
+SIZE (syslinux-6.03.tar.xz) = 6855224

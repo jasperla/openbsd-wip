@@ -26,6 +26,15 @@ SITES.elf =		https://github.com/freebsd/freebsd-src/raw/refs/heads/releng/15.0/s
 EXTRACT_CASES =		${DISTFILES.elf})    grep -x '\#define[[:space:]]R_.*' \
 			    ${DISTDIR}/$$archive >| ${WRKSRC}/util/$$archive;;
 
+DISTFILES.isolinux =	syslinux-6.03.tar.xz
+SITES.isolinux =	https://www.kernel.org/pub/linux/utils/boot/syslinux/
+EXTRACT_CASES +=	${DISTFILES.isolinux})    xz -T${MAKE_JOBS} -d \
+			    <${DISTDIR}/$$archive | ${TAR} -xf - \
+			    -s ',.*/bios/core/,,' \*/isolinux.bin;;
+
+# util/genfsimg relies on mktemp(1)
+MAKE_ENV +=		TMPDIR=${WRKDIR}
+
 # GPLv2+, UBDL
 PERMIT_PACKAGE =	Yes
 
@@ -60,15 +69,16 @@ GNU_UTILS +=		ld
 MAKE_FLAGS +=		${util:U}=/usr/local/bin/g${util}
 .endfor
 
+# sysutils/cdrtools instead of xorriso is unsuitable:
+# util/genfsimg: mkisofs: cannot handle ...
 BUILD_DEPENDS =		archivers/xz \
 			devel/binutils>=2.45p1 \
 			devel/gas \
-			sysutils/mtools
+			sysutils/libisoburn,-xorriso \
+			sysutils/mtools \
+			sysutils/truncate
 
-# either of these (mkisofs or xorrisofs) and unported syslinux for ISO images
-# as well as EFI USB images.
-#BUILD_DEPENDS +=	sysutils/cdrtools \
-#			sysutils/libisoburn,-xorriso
+# Building EFI USB images requires syslinux (bootloader and some script).
 
 # lzma.h
 HOST_CFLAGS +=		-I/usr/local/include
@@ -96,7 +106,7 @@ PLATFORMS ?=		# no architecture-independent default
     ${MACHINE_ARCH:Marm64}
 PLATFORMS +=		efi
 .  for driver in ipxe snp snponly
-.    for extension in efi
+.    for extension in efi iso
 TARGETS-efi +=		bin-${_ARCH}-efi/${driver}.${extension}
 .    endfor
 .  endfor
@@ -105,7 +115,7 @@ TARGETS-efi +=		bin-${_ARCH}-efi/${driver}.${extension}
 .if ${MACHINE_ARCH:Mamd64}
 PLATFORMS +=		pcbios
 .  for driver in undionly
-.    for extension in kpxe lkrn pxe usb
+.    for extension in iso kpxe lkrn pxe usb
 TARGETS-pcbios +=	bin-${_ARCH}-pcbios/${driver}.${extension}
 .    endfor
 .  endfor

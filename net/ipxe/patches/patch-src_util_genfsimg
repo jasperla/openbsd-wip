@@ -1,0 +1,13 @@
+Look for isolinux.bin in TMPDIR aka. WRKDIR, that way SUBST_CMD is not needed
+
+Index: src/util/genfsimg
+--- src/util/genfsimg.orig
++++ src/util/genfsimg
+@@ -101,6 +101,7 @@ copy_syslinux_file() {
+     DESTDIR="${2}"
+ 
+     for SRCDIR in \
++	${TMPDIR} \
+ 	/usr/lib/syslinux \
+ 	/usr/lib/syslinux/bios \
+ 	/usr/lib/syslinux/modules/bios \
