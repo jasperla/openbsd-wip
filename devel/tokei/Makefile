@@ -2,7 +2,7 @@ COMMENT =	display statistics about your code
 
 GH_ACCOUNT =	XAMPPRocky
 GH_PROJECT =	tokei
-GH_TAGNAME =	v12.1.2
+GH_TAGNAME =	v13.0.0
 
 CATEGORIES =	devel textproc
 
