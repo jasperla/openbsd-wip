@@ -1,7 +1,7 @@
 COMMENT=		Perl Data Language
 
 MODULES=		cpan
-VER=			2.081
+VER=			2.100
 DISTNAME=		PDL-${VER}
 PKGNAME=		p5-${DISTNAME}
 CATEGORIES=		devel perl5
