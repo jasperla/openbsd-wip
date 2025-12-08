@@ -44,7 +44,7 @@ MODGO_MODULES =	\
 	github.com/creack/pty				 v1.1.9 \
 	github.com/davecgh/go-spew			 v1.1.1 \
 	github.com/dlclark/regexp2			 v1.11.5 \
-	github.com/dlvhdr/x/gh-checks			 v0.0.0-20251114174027-320f1169b8e8 \
+	github.com/dlvhdr/x/gh-checks			 v0.3.0 \
 	github.com/dustin/go-humanize			 v1.0.1 \
 	github.com/erikgeiser/coninput			 v0.0.0-20211004153227-1c3628e74d0f \
 	github.com/esiqveland/notify			 v0.13.3 \
@@ -89,6 +89,7 @@ MODGO_MODULES =	\
 	github.com/mattn/go-isatty			 v0.0.20 \
 	github.com/mattn/go-localereader		 v0.0.1 \
 	github.com/mattn/go-runewidth			 v0.0.16 \
+	github.com/maypok86/otter/v2			 v2.2.1 \
 	github.com/mcuadros/go-version			 v0.0.0-20190830083331-035f6764e8d2 \
 	github.com/mgutz/ansi				 v0.0.0-20200706080929-d51e80ef957d \
 	github.com/microcosm-cc/bluemonday		 v1.0.27 \
@@ -131,7 +132,7 @@ MODGO_MODULES =	\
 	golang.org/x/net				 v0.41.0 \
 	golang.org/x/oauth2				 v0.15.0 \
 	golang.org/x/sync				 v0.17.0 \
-	golang.org/x/sys				 v0.37.0 \
+	golang.org/x/sys				 v0.38.0 \
 	golang.org/x/term				 v0.32.0 \
 	golang.org/x/text				 v0.28.0 \
 	golang.org/x/tools				 v0.35.0 \
