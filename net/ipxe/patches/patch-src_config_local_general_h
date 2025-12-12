@@ -1,7 +1,0 @@
-enable HTTPS downloads
-
-Index: src/config/local/general.h
---- src/config/local/general.h.orig
-+++ src/config/local/general.h
-@@ -0,0 +1 @@
-+#define	DOWNLOAD_PROTO_HTTPS	/* Secure Hypertext Transfer Protocol */

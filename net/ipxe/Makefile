@@ -33,7 +33,7 @@ EXTRACT_CASES +=	${DISTFILES.linux})	xz -T${MAKE_JOBS} -d \
 			    <${DISTDIR}/$$archive | ${TAR} -xf - -s ',.*/,,' \
 			    \*/{ldlinux.c32,isolinux.bin} ;;
 
-# util/genfsimg relies on mktemp(1)
+# util/genfsimg relies on mktemp(1).
 MAKE_ENV +=		TMPDIR=${WRKDIR}
 
 # GPLv2+, UBDL
@@ -41,7 +41,7 @@ PERMIT_PACKAGE =	Yes
 
 MAINTAINER =		Klemens Nanni <kn@openbsd.org>
 
-# Makefile.housekeeping requires GNU compiler and linker
+# Makefile.housekeeping requires GNU compiler and linker.
 COMPILER =		ports-gcc
 COMPILER_LANGS =	c
 
@@ -127,6 +127,11 @@ TARGETS-pcbios +=	bin-${_ARCH}-pcbios/${driver}.${extension}
 
 _DEF_ENV =		${SETENV} ${MAKE_ENV}
 _DEF_MAKE =		${MAKE_PROGRAM} ${MAKE_FLAGS} -f ${MAKE_FILE}
+
+# Most config/*.h include config/local/*.h, use that to provide port defaults.
+# See https://ipxe.org/appnote/named_config and config/named.h for more.
+do-configure:
+	cp ${FILESDIR}/*.h ${WRKSRC}/config/local/
 
 do-build:
 .for platform in ${PLATFORMS}

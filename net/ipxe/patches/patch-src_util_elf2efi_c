@@ -1,4 +1,4 @@
-pull in missing relocation macros, see post-extract
+pull in missing relocation macros, see DISTFILES.elf
 
 Index: src/util/elf2efi.c
 --- src/util/elf2efi.c.orig

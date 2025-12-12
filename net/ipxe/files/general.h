@@ -1,0 +1,1 @@
+#define	DOWNLOAD_PROTO_HTTPS
