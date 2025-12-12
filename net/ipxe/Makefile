@@ -8,15 +8,15 @@ HOMEPAGE =		https://ipxe.org
 
 # FAQ says "always use the latest code", official binaries use latest HEAD.
 V =			1.21.1
-HEAD =			33834746537d18e899559470970706d37ae2722b
+HEAD =			fb1188936ca29af61709afd8b866ea55d4a05a67
 DIST_TUPLE =		github	ipxe	ipxe	${HEAD}	.
 WRKSRC =		${WRKDIST}/src
 # what 'gmake version' would print for a git checkout,
 # patch-level == # commits since tag (from git-describe(1) command in target)
-VERSION =		${V}+ (g${HEAD:C/^(.{4}).+/\1/})
+VERSION =		${V}+ (g${HEAD:C/^(.{5}).+/\1/})
 
 # Provide native binaries on all architectures to allow serving them anywhere.
-PKGNAME =		ipxe-${MACHINE_ARCH}-${V}pl1229
+PKGNAME =		ipxe-${MACHINE_ARCH}-${V}pl1152
 PKG_ARCH =		*
 
 # MI elf(5) headers missing from our <elf.h>;  required by EFI builds.
@@ -43,7 +43,6 @@ MAINTAINER =		Klemens Nanni <kn@openbsd.org>
 # Makefile.housekeeping requires GNU compiler and linker
 COMPILER =		ports-gcc
 COMPILER_LANGS =	c
-MODGCC4_VERSION =	15
 
 MAKE_FLAGS +=		CC=${CC} \
 			V=1 \
