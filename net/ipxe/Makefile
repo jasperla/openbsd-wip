@@ -99,13 +99,15 @@ MAKE_FLAGS +=		ARCH=${_ARCH}
 # platforms, so we have to loop ourselves.
 #
 # See https://ipxe.org/appnote/buildtargets for all supported variations.
-PLATFORMS ?=		# no architecture-independent default
+PLATFORMS ?=		# empty, no architecture-independent default
 
 .if ${MACHINE_ARCH:Mamd64} || \
     ${MACHINE_ARCH:Marm64}
 PLATFORMS +=		efi
-.  for driver in ipxe snp snponly
-.    for extension in efi iso
+DRIVERS-efi =		ipxe snp snponly
+EXTENSIONS-efi =	efi iso
+.  for driver in ${DRIVERS-efi}
+.    for extension in ${EXTENSIONS-efi}
 TARGETS-efi +=		bin-${_ARCH}-efi/${driver}.${extension}
 .    endfor
 .  endfor
@@ -113,8 +115,10 @@ TARGETS-efi +=		bin-${_ARCH}-efi/${driver}.${extension}
 
 .if ${MACHINE_ARCH:Mamd64}
 PLATFORMS +=		pcbios
-.  for driver in undionly
-.    for extension in iso kpxe lkrn pxe usb
+DRIVERS-pcbios =	ipxe undionly
+EXTENSIONS-pcbios =	iso kpxe lkrn pxe usb
+.  for driver in ${DRIVERS-pcbios}
+.    for extension in ${EXTENSIONS-pcbios}
 TARGETS-pcbios +=	bin-${_ARCH}-pcbios/${driver}.${extension}
 .    endfor
 .  endfor
@@ -136,9 +140,11 @@ PKG_ARGS +=		${PLATFORMS:=-D%=1}
 SUBST_VARS =		PLATFORMS
 
 do-install:
-.for platform in ${PLATFORMS}
 	${INSTALL_DATA_DIR} ${DATA_DIR}
-	cd ${WRKBUILD} && ${INSTALL_DATA} ${TARGETS-${platform}} ${DATA_DIR}/
+.for platform in ${PLATFORMS}
+	${INSTALL_DATA_DIR} ${DATA_DIR}/${platform}
+	cd ${WRKBUILD} && ${INSTALL_DATA} ${TARGETS-${platform}} \
+	    ${DATA_DIR}/${platform}/
 .endfor
 
 .include <bsd.port.mk>

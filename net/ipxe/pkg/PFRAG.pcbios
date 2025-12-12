@@ -1,5 +1,11 @@
-share/ipxe/${MACHINE_ARCH}/undionly.iso
-share/ipxe/${MACHINE_ARCH}/undionly.kpxe
-share/ipxe/${MACHINE_ARCH}/undionly.lkrn
-share/ipxe/${MACHINE_ARCH}/undionly.pxe
-share/ipxe/${MACHINE_ARCH}/undionly.usb
+share/ipxe/${MACHINE_ARCH}/pcbios/
+share/ipxe/${MACHINE_ARCH}/pcbios/ipxe.iso
+share/ipxe/${MACHINE_ARCH}/pcbios/ipxe.kpxe
+share/ipxe/${MACHINE_ARCH}/pcbios/ipxe.lkrn
+share/ipxe/${MACHINE_ARCH}/pcbios/ipxe.pxe
+share/ipxe/${MACHINE_ARCH}/pcbios/ipxe.usb
+share/ipxe/${MACHINE_ARCH}/pcbios/undionly.iso
+share/ipxe/${MACHINE_ARCH}/pcbios/undionly.kpxe
+share/ipxe/${MACHINE_ARCH}/pcbios/undionly.lkrn
+share/ipxe/${MACHINE_ARCH}/pcbios/undionly.pxe
+share/ipxe/${MACHINE_ARCH}/pcbios/undionly.usb
