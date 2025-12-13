@@ -24,13 +24,14 @@ DISTFILES.elf =		elf_common.h
 SITES.elf =		https://github.com/freebsd/freebsd-src/raw/refs/heads/releng/15.0/sys/sys/
 # Only provide relocation macros, see util/elf2efi.c patch.
 EXTRACT_CASES =		${DISTFILES.elf})    grep -x '\#define[[:space:]]R_.*' \
-			    ${DISTDIR}/$$archive >| ${WRKSRC}/util/$$archive;;
+			    ${DISTDIR}/$$archive >| ${WRKSRC}/util/$$archive ;;
 
-DISTFILES.isolinux =	syslinux-6.03.tar.xz
-SITES.isolinux =	https://www.kernel.org/pub/linux/utils/boot/syslinux/
-EXTRACT_CASES +=	${DISTFILES.isolinux})    xz -T${MAKE_JOBS} -d \
-			    <${DISTDIR}/$$archive | ${TAR} -xf - \
-			    -s ',.*/bios/core/,,' \*/isolinux.bin;;
+# amd64 BIOS bootloader
+DISTFILES.linux =	syslinux-6.03.tar.xz
+SITES.linux =		https://www.kernel.org/pub/linux/utils/boot/syslinux/
+EXTRACT_CASES +=	${DISTFILES.linux})	xz -T${MAKE_JOBS} -d \
+			    <${DISTDIR}/$$archive | ${TAR} -xf - -s ',.*/,,' \
+			    \*/{ldlinux.c32,isolinux.bin} ;;
 
 # util/genfsimg relies on mktemp(1)
 MAKE_ENV +=		TMPDIR=${WRKDIR}
