@@ -2,10 +2,10 @@ COMMENT-main=	BitTorrent command line and daemon client
 COMMENT-gtk=	BitTorrent client with GTK+ interface
 COMMENT-qt=	BitTorrent client with Qt interface
 
-# for integration testing beyond 4.1.0-beta.3
+# for integration testing beyond 4.1.0-beta.4
 
-VER=		4.1.0beta4
-GIT_REVISION=	4.1.0-beta.4
+VER=		4.1.0pl20251215
+GIT_REVISION=	fcd1e2ff8a1535f69f6d3f9e365c6a952e7d1206
 PKGNAME=        transmission-${VER}
 CATEGORIES=	net
 HOMEPAGE=	https://transmissionbt.com/
@@ -78,7 +78,7 @@ FLAVOR?=
 
 .include <bsd.port.arch.mk>
 
-WANTLIB-common =	${COMPILER_LIBCXX} c crypto curl deflate intl
+WANTLIB-common =	${COMPILER_LIBCXX} c crc32c crypto curl deflate intl
 WANTLIB-common +=	m miniupnpc natpmp psl ssl
 
 WANTLIB-main =	${WANTLIB-common}
@@ -98,6 +98,7 @@ MODULES +=		devel/cmake \
 #BUILD_DEPENDS +=	devel/fmt
 
 LIB_DEPENDS-common +=	archivers/libdeflate \
+			devel/crc32c \
 			net/curl \
 			net/libpsl \
 			net/miniupnp/libnatpmp \
