@@ -848,7 +848,7 @@ SHA256 (go_modules/mvdan.cc/sh/v3/@v/v3.12.0.mod) = vWxLfwfFATGVRRNdK1PwdDtDVi3c
 SHA256 (go_modules/mvdan.cc/sh/v3/@v/v3.12.0.zip) = 5cGUmtpjZYm6HQYhJ0vW0ue0b53vQYHMT7Dpe3qHee8=
 SHA256 (go_modules/pack.ag/tftp/@v/v1.0.1-0.20181129014014-07909dfbde3c.mod) = VLlRy6/uldG7KTMZ+Tv09LQC1u1/6WsX67Gt9e3n6N8=
 SHA256 (go_modules/pack.ag/tftp/@v/v1.0.1-0.20181129014014-07909dfbde3c.zip) = EKKXbL6XnK6qqLJeM2X4BPxgi5er2IJEjs3r83uGeE0=
-SHA256 (task-3.46.1.zip) = k4M5yxHZcNkLrb7MP2Qkvn5lwaqioDtioojqO/qduW8=
+SHA256 (task-3.46.2.zip) = vSY0yUtaAbOMIKgrrYib6Qt/VGP4x1sOZ4crC+2Q4ic=
 SIZE (go_modules/cloud.google.com/go/@v/v0.107.0.mod) = 1091
 SIZE (go_modules/cloud.google.com/go/@v/v0.110.0.mod) = 1007
 SIZE (go_modules/cloud.google.com/go/@v/v0.110.0.zip) = 553617
@@ -1699,4 +1699,4 @@ SIZE (go_modules/mvdan.cc/sh/v3/@v/v3.12.0.mod) = 442
 SIZE (go_modules/mvdan.cc/sh/v3/@v/v3.12.0.zip) = 270942
 SIZE (go_modules/pack.ag/tftp/@v/v1.0.1-0.20181129014014-07909dfbde3c.mod) = 20
 SIZE (go_modules/pack.ag/tftp/@v/v1.0.1-0.20181129014014-07909dfbde3c.zip) = 1110764
-SIZE (task-3.46.1.zip) = 728070
+SIZE (task-3.46.2.zip) = 728992
