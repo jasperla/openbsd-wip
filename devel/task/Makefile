@@ -1,6 +1,6 @@
 COMMENT =	task runner and simpler Make alternative
 
-V =		3.46.2
+V =		3.46.3
 
 MODGO_MODNAME =	github.com/go-task/task/v3
 MODGO_VERSION =	v${V}
