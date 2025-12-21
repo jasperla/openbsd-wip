@@ -86,14 +86,6 @@ EXTENSIONS-efi +=	iso
 COMMENT_ISO =		"@comment "
 .endif
 
-.for platform in ${BUILD_PLATFORMS}
-.  for driver in ipxe ${DRIVERS-${platform}}
-.    for extension in ${EXTENSIONS-${platform}}
-TARGETS-${platform} +=	bin-${IPXE_ARCH}-${platform}/${driver}.${extension}
-.    endfor
-.  endfor
-.endfor
-
 USE_GMAKE =		Yes
 MAKE_FLAGS +=		CROSS=${CROSS} \
 			HOST_CC=${CC} \
@@ -109,41 +101,37 @@ MAKE_FLAGS +=		BUILD_ID_CMD=${BUILD_ID_CMD:Q} \
 BUILD_DEPENDS +=	archivers/xz \
 			sysutils/mtools \
 			sysutils/truncate
-
 # lzma.h
 HOST_CFLAGS +=		-I/usr/local/include
 
 # util/genfsimg relies on mktemp(1).
 MAKE_ENV =		TMPDIR=${WRKDIR}
 
-NO_TEST =		Yes
-
-DATA_DIR =		${PREFIX}/share/ipxe/${IPXE_ARCH}
 PKG_ARGS =		${AVAIL_PLATFORMS:=-D%=0} \
 			${BUILD_PLATFORMS:=-D%=1}
 SUBST_VARS =		BUILD_PLATFORMS \
 			COMMENT_ISO \
 			IPXE_ARCH
 
+ALL_TARGET =		# empty
+.for platform in ${BUILD_PLATFORMS}
+.  for driver in ipxe ${DRIVERS-${platform}}
+.    for extension in ${EXTENSIONS-${platform}}
+ALL_TARGET +=		bin-${IPXE_ARCH}-${platform}/${driver}.${extension}
+.    endfor
+.  endfor
+.endfor
+FAKE_TARGET =		${ALL_TARGET}
+
+NO_TEST =		Yes
+
 # Most config/*.h include config/local/*.h, use that to provide port defaults.
 # See https://ipxe.org/appnote/named_config and config/named.h for more.
 do-configure:
 	cp ${FILESDIR}/*.h ${WRKSRC}/config/local/
 
-do-build:
-.for platform in ${BUILD_PLATFORMS}
-	@${ECHO_MSG} \## platform: ${platform}
-	@${ECHO_MSG} \### targets: ${TARGETS-${platform}:T}
-	@${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} -C ${WRKBUILD} -f ${MAKE_FILE} \
-	    ${MAKE_FLAGS} ${TARGETS-${platform}}
-.endfor
-
 do-install:
-	${INSTALL_DATA_DIR} ${DATA_DIR}
-.for platform in ${BUILD_PLATFORMS}
-	${INSTALL_DATA_DIR} ${DATA_DIR}/${platform}
-	cd ${WRKBUILD} && ${INSTALL_DATA} ${TARGETS-${platform}} \
-	    ${DATA_DIR}/${platform}/
-.endfor
+	cd ${WRKBUILD} && pax -rw -s,.*-,ipxe/${IPXE_ARCH}/,p \
+	    ${FAKE_TARGET} ${PREFIX}/share/
 
 .include <bsd.port.mk>
