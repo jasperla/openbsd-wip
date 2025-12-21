@@ -54,23 +54,21 @@ BUILD_DEPENDS = 	devel/binutils>=2.45.1p1 \
 			devel/gas
 IPXE_ARCH =		${MACHINE_ARCH:amd64=x86_64}
 CROSS =			g
-MAKE_FLAGS =		CC=egcc
-MAKE_FLAGS +=		SPG_TEST=false
+MAKE_FLAGS =		CC=egcc \
+			SPG_TEST=false
 .else
-.  if ${FLAVOR:Maarch64}
 BUILD_DEPENDS = 	devel/arm-none-eabi/binutils,${FLAVOR} \
 			devel/arm-none-eabi/gcc,${FLAVOR}
 IPXE_ARCH =		${FLAVOR:aarch64=arm64}
-CROSS =			${FLAVOR}-none-elf-
-.  endif
+CROSS =			${FLAVOR}-none-${FLAVOR:aarch64=elf}-
 .endif
 
 # See https://ipxe.org/appnote/buildtargets for all supported variations.
 AVAIL_PLATFORMS =	efi pcbios
 BUILD_PLATFORMS ?=	# empty, no architecture-independent default
 
-.if ${IPXE_ARCH:Mx86_64} || \
-    ${IPXE_ARCH:Marm64}
+.if ${IPXE_ARCH:Marm*} || \
+    ${IPXE_ARCH:Mx86_64}
 BUILD_PLATFORMS +=	efi
 DRIVERS-efi =		snp snponly
 EXTENSIONS-efi =	efi
