@@ -1,7 +1,7 @@
-share/ipxe/${MACHINE_ARCH}/efi/
-share/ipxe/${MACHINE_ARCH}/efi/ipxe.efi
-share/ipxe/${MACHINE_ARCH}/efi/ipxe.iso
-share/ipxe/${MACHINE_ARCH}/efi/snp.efi
-share/ipxe/${MACHINE_ARCH}/efi/snp.iso
-share/ipxe/${MACHINE_ARCH}/efi/snponly.efi
-share/ipxe/${MACHINE_ARCH}/efi/snponly.iso
+share/ipxe/${IPXE_ARCH}/efi/
+share/ipxe/${IPXE_ARCH}/efi/ipxe.efi
+share/ipxe/${IPXE_ARCH}/efi/ipxe.iso
+share/ipxe/${IPXE_ARCH}/efi/snp.efi
+share/ipxe/${IPXE_ARCH}/efi/snp.iso
+share/ipxe/${IPXE_ARCH}/efi/snponly.efi
+share/ipxe/${IPXE_ARCH}/efi/snponly.iso

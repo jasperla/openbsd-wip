@@ -1,4 +1,4 @@
-iPXE builds for these platforms: ${PLATFORMS}
+iPXE builds for these platforms: ${BUILD_PLATFORMS}
 
 Changes to the default configuration:
 - enable HTTPS, see https://www.ipxe.org/crypto

@@ -1,4 +1,4 @@
 share/ipxe/
-share/ipxe/${MACHINE_ARCH}/
+share/ipxe/${IPXE_ARCH}/
 %%efi%%
 %%pcbios%%
