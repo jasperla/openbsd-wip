@@ -1,7 +1,7 @@
 share/ipxe/${IPXE_ARCH}/efi/
 share/ipxe/${IPXE_ARCH}/efi/ipxe.efi
-share/ipxe/${IPXE_ARCH}/efi/ipxe.iso
+${COMMENT_ISO}share/ipxe/${IPXE_ARCH}/efi/ipxe.iso
 share/ipxe/${IPXE_ARCH}/efi/snp.efi
-share/ipxe/${IPXE_ARCH}/efi/snp.iso
+${COMMENT_ISO}share/ipxe/${IPXE_ARCH}/efi/snp.iso
 share/ipxe/${IPXE_ARCH}/efi/snponly.efi
-share/ipxe/${IPXE_ARCH}/efi/snponly.iso
+${COMMENT_ISO}share/ipxe/${IPXE_ARCH}/efi/snponly.iso
