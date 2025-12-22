@@ -44,7 +44,7 @@ PERMIT_PACKAGE =	Yes
 MAINTAINER =		Klemens Nanni <kn@openbsd.org>
 
 # Cross-compilation architectures.
-FLAVORS =		aarch64
+FLAVORS =		aarch64 # arm # builds, but not tested (or needed).
 FLAVOR ?=		# native build
 
 .if empty(FLAVOR)
@@ -59,8 +59,8 @@ MAKE_FLAGS =		CC=egcc \
 .else
 BUILD_DEPENDS = 	devel/arm-none-eabi/binutils,${FLAVOR} \
 			devel/arm-none-eabi/gcc,${FLAVOR}
-IPXE_ARCH =		${FLAVOR:aarch64=arm64}
-CROSS =			${FLAVOR}-none-${FLAVOR:aarch64=elf}-
+IPXE_ARCH =		${FLAVOR:aarch64=arm64:arm=arm32}
+CROSS =			${FLAVOR}-none-${FLAVOR:aarch64=elf:arm=eabi}-
 .endif
 
 # See https://ipxe.org/appnote/buildtargets for all supported variations.
@@ -120,7 +120,6 @@ ALL_TARGET +=		bin-${IPXE_ARCH}-${platform}/${driver}.${extension}
 .  endfor
 .endfor
 FAKE_TARGET =		${ALL_TARGET}
-
 NO_TEST =		Yes
 
 # Most config/*.h include config/local/*.h, use that to provide port defaults.
