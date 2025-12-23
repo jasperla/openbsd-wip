@@ -1,2 +1,0 @@
-update to mlt7 has a new dependency on movit library,
-which is not yet building.
