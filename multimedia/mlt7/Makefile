@@ -28,8 +28,8 @@ WANTLIB-main += freetype gdk_pixbuf-2.0 glib-2.0 gobject-2.0 harfbuzz
 WANTLIB-main += intl m movit pango-1.0 pangoft2-1.0 sox_ng swresample
 WANTLIB-main += swscale vorbis vorbisfile xml2
 
-WANTLIB-gpl2 += ${COMPILER_LIBCXX} GL Qt5Core Qt5Gui Qt5Widgets Qt5Xml
-WANTLIB-gpl2 += Qt6Core Qt6Core5Compat Qt6Gui Qt6Svg Qt6SvgWidgets
+WANTLIB-gpl2 += ${COMPILER_LIBCXX} GL Qt5Core Qt5Gui Qt5Svg Qt5Widgets
+WANTLIB-gpl2 += Qt5Xml Qt6Core Qt6Core5Compat Qt6Gui Qt6Svg Qt6SvgWidgets
 WANTLIB-gpl2 += Qt6Widgets Qt6Xml exif fftw3 m mlt++-7 mlt-7 pulse
 WANTLIB-gpl2 += pulse-simple samplerate vidstab
 
@@ -40,6 +40,7 @@ MODULES =		devel/cmake \
 			x11/qt6
 
 BUILD_DEPENDS =		audio/ladspa \
+			math/eigen3 \
 			multimedia/frei0r-plugins \
 			textproc/libxml
 
