@@ -129,8 +129,8 @@ MODGO_MODULES =	\
 	github.com/!proton!mail/go-crypto							 v0.0.0-20221026131551-cf6655e29de4 \
 	github.com/!stack!exchange/wmi								 v1.2.1 \
 	github.com/alecthomas/assert/v2								 v2.11.0 \
-	github.com/alecthomas/chroma/v2								 v2.20.0 \
-	github.com/alecthomas/repr								 v0.5.1 \
+	github.com/alecthomas/chroma/v2								 v2.21.1 \
+	github.com/alecthomas/repr								 v0.5.2 \
 	github.com/anmitsu/go-shlex								 v0.0.0-20200514113438-38f4b401e2be \
 	github.com/atotto/clipboard								 v0.1.4 \
 	github.com/aws/aws-sdk-go-v2								 v1.36.3 \

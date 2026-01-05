@@ -266,10 +266,10 @@ SHA256 (go_modules/github.com/!stack!exchange/wmi/@v/v1.2.1.mod) = oxL5pIqf1+0HD
 SHA256 (go_modules/github.com/!stack!exchange/wmi/@v/v1.2.1.zip) = vfS1AKmvtPLaTJlmPIa59uhg9g6x1MXJ08Gq7xp4l+Q=
 SHA256 (go_modules/github.com/alecthomas/assert/v2/@v/v2.11.0.mod) = r/3U6HeASwwie/rF21Cvke9QHnttS++tU/kJeNhjXhw=
 SHA256 (go_modules/github.com/alecthomas/assert/v2/@v/v2.11.0.zip) = h93LapxCIouhs7YcWBvy/zWPAUB4vSdLj/W0f3pHWes=
-SHA256 (go_modules/github.com/alecthomas/chroma/v2/@v/v2.20.0.mod) = PiXppY5OItfjDpCG+a1SoXosZAosPysX8ZPXykHXVcI=
-SHA256 (go_modules/github.com/alecthomas/chroma/v2/@v/v2.20.0.zip) = /1SaFwb40jpxIAU6TqwAE9d9Lf7b/3yUtdz70AGAZf8=
-SHA256 (go_modules/github.com/alecthomas/repr/@v/v0.5.1.mod) = K/LL5QDij0uoEQeYW/DzESIcWImu+5JtUjBgaIlEMrQ=
-SHA256 (go_modules/github.com/alecthomas/repr/@v/v0.5.1.zip) = p5JUOp3M21DssHI/9tAzpE54mT+EYbpLcd4OdGFdHAk=
+SHA256 (go_modules/github.com/alecthomas/chroma/v2/@v/v2.21.1.mod) = 6AgZEv2n4XIIrfvrVcxLjNF5q1ZQtQryuKZVnu/KpVc=
+SHA256 (go_modules/github.com/alecthomas/chroma/v2/@v/v2.21.1.zip) = v5uyo3ydreG0SzXHqqYLXRLB/HcJKpO5xkAeKBoljx8=
+SHA256 (go_modules/github.com/alecthomas/repr/@v/v0.5.2.mod) = K/LL5QDij0uoEQeYW/DzESIcWImu+5JtUjBgaIlEMrQ=
+SHA256 (go_modules/github.com/alecthomas/repr/@v/v0.5.2.zip) = IyDlxH3w+h/lJYPIV03AlHOB6muyk9Z95XI0bkfQzqM=
 SHA256 (go_modules/github.com/anmitsu/go-shlex/@v/v0.0.0-20200514113438-38f4b401e2be.mod) = YFvwqg2YIjVA9dr3+pcJHq+79ImJx9F2Uq+ZLKdkr7Y=
 SHA256 (go_modules/github.com/anmitsu/go-shlex/@v/v0.0.0-20200514113438-38f4b401e2be.zip) = Klz3yaJwn2Sf1QjLrLK+luT7pNU0oooSLuTXV0r0C14=
 SHA256 (go_modules/github.com/atotto/clipboard/@v/v0.1.4.mod) = hxgiy8ffN5L3ihAIhrf0mfc1VZOOM2uRhoIRlojqitA=
@@ -848,7 +848,7 @@ SHA256 (go_modules/mvdan.cc/sh/v3/@v/v3.12.0.mod) = vWxLfwfFATGVRRNdK1PwdDtDVi3c
 SHA256 (go_modules/mvdan.cc/sh/v3/@v/v3.12.0.zip) = 5cGUmtpjZYm6HQYhJ0vW0ue0b53vQYHMT7Dpe3qHee8=
 SHA256 (go_modules/pack.ag/tftp/@v/v1.0.1-0.20181129014014-07909dfbde3c.mod) = VLlRy6/uldG7KTMZ+Tv09LQC1u1/6WsX67Gt9e3n6N8=
 SHA256 (go_modules/pack.ag/tftp/@v/v1.0.1-0.20181129014014-07909dfbde3c.zip) = EKKXbL6XnK6qqLJeM2X4BPxgi5er2IJEjs3r83uGeE0=
-SHA256 (task-3.46.3.zip) = l5u7JG0R/Elg7Wkjmpi3dbRkkf1G6TvJp7GgMkd3wm0=
+SHA256 (task-3.46.4.zip) = jDeaK11A1jm7Oyn/DjsjRbVFSIUHt3AS7kletWTAGi8=
 SIZE (go_modules/cloud.google.com/go/@v/v0.107.0.mod) = 1091
 SIZE (go_modules/cloud.google.com/go/@v/v0.110.0.mod) = 1007
 SIZE (go_modules/cloud.google.com/go/@v/v0.110.0.zip) = 553617
@@ -1117,10 +1117,10 @@ SIZE (go_modules/github.com/!stack!exchange/wmi/@v/v1.2.1.mod) = 86
 SIZE (go_modules/github.com/!stack!exchange/wmi/@v/v1.2.1.zip) = 16105
 SIZE (go_modules/github.com/alecthomas/assert/v2/@v/v2.11.0.mod) = 133
 SIZE (go_modules/github.com/alecthomas/assert/v2/@v/v2.11.0.zip) = 12302
-SIZE (go_modules/github.com/alecthomas/chroma/v2/@v/v2.20.0.mod) = 230
-SIZE (go_modules/github.com/alecthomas/chroma/v2/@v/v2.20.0.zip) = 1555914
-SIZE (go_modules/github.com/alecthomas/repr/@v/v0.5.1.mod) = 43
-SIZE (go_modules/github.com/alecthomas/repr/@v/v0.5.1.zip) = 11325
+SIZE (go_modules/github.com/alecthomas/chroma/v2/@v/v2.21.1.mod) = 230
+SIZE (go_modules/github.com/alecthomas/chroma/v2/@v/v2.21.1.zip) = 1641356
+SIZE (go_modules/github.com/alecthomas/repr/@v/v0.5.2.mod) = 43
+SIZE (go_modules/github.com/alecthomas/repr/@v/v0.5.2.zip) = 11328
 SIZE (go_modules/github.com/anmitsu/go-shlex/@v/v0.0.0-20200514113438-38f4b401e2be.mod) = 44
 SIZE (go_modules/github.com/anmitsu/go-shlex/@v/v0.0.0-20200514113438-38f4b401e2be.zip) = 5367
 SIZE (go_modules/github.com/atotto/clipboard/@v/v0.1.4.mod) = 35
@@ -1699,4 +1699,4 @@ SIZE (go_modules/mvdan.cc/sh/v3/@v/v3.12.0.mod) = 442
 SIZE (go_modules/mvdan.cc/sh/v3/@v/v3.12.0.zip) = 270942
 SIZE (go_modules/pack.ag/tftp/@v/v1.0.1-0.20181129014014-07909dfbde3c.mod) = 20
 SIZE (go_modules/pack.ag/tftp/@v/v1.0.1-0.20181129014014-07909dfbde3c.zip) = 1110764
-SIZE (task-3.46.3.zip) = 729037
+SIZE (task-3.46.4.zip) = 729346
