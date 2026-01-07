@@ -1,7 +1,7 @@
 COMMENT =	static checker for GitHub Actions workflow files
 
 MODGO_MODNAME =	github.com/rhysd/actionlint
-MODGO_VERSION =	v1.7.9
+MODGO_VERSION =	v1.7.10
 
 DISTNAME =	actionlint-${MODGO_VERSION}
 
