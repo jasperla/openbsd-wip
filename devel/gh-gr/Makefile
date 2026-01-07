@@ -1,7 +1,7 @@
 COMMENT =	GitHub repository management tool
 
 MODGO_MODNAME =	github.com/sarumaj/gh-gr/v2
-MODGO_VERSION =	v2.8.2
+MODGO_VERSION =	v2.8.3
 
 DISTNAME =	gh-gr-${MODGO_VERSION:S/v.//}
 
