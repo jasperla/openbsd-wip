@@ -1,11 +1,8 @@
-# ring-v0.17 does not support sparc64
-NOT_FOR_ARCHS =	sparc64
-
 COMMENT =	tool to develop, test, and use Tree-sitter grammars
 
 GH_ACCOUNT =	tree-sitter
 GH_PROJECT =	tree-sitter
-GH_TAGNAME =	v0.25.10
+GH_TAGNAME =	v0.26.3
 
 PKGNAME =	tree-sitter-cli-${GH_TAGNAME:S/v//}
 
@@ -20,11 +17,14 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB +=	${MODCARGO_WANTLIB} m
 
-MODULES =	devel/cargo
+MODULES =	devel/cargo lang/clang
 
 CONFIGURE_STYLE =	cargo
 
 SEPARATE_BUILD=	Yes
+
+# for rquickjs-sys build
+MODCARGO_ENV =	LIBCLANG_PATH=${LOCALBASE}/llvm${MODCLANG_VERSION}/lib
 
 do-install:
 	${INSTALL_PROGRAM} ${MODCARGO_TARGET_DIR}/release/tree-sitter ${PREFIX}/bin/
