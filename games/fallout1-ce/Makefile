@@ -2,10 +2,9 @@ COMMENT =	fallout for modern operating systems
 
 DIST_TUPLE +=	github alexbatalov fallout1-ce v1.1.0 .
 
-CATEGORIES =	x11 games
+CATEGORIES =	games x11
 
 # Sustainable Use License
-PERMIT_DISTFILES =	No
 PERMIT_PACKAGE =	Yes
 
 COMPILER =		base-clang ports-gcc base-gcc
