@@ -1,0 +1,4 @@
+include/fpattern/
+include/fpattern/debug.h
+include/fpattern/fpattern.c
+include/fpattern/fpattern.h

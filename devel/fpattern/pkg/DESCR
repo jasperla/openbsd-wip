@@ -1,0 +1,10 @@
+Filename pattern matching library functions for DOS, Windows, and
+Unix.
+
+Filename patterns are composed of regular (printable) characters
+which may comprise a filename, as well as special pattern matching
+characters. A filename patterns is a special kind of regular
+expression, except that it is not as general and is designed to
+match only file and directory names instead of arbitrary text
+strings. The syntax is borrowed from Unix, and is a superset of the
+MS-DOS and Windows syntax.
