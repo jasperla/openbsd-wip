@@ -2,8 +2,11 @@ BROKEN-i386 =	protobuf/abseil problems
 
 COMMENT =	texas holdem poker client, local or internet games
 
-DIST_TUPLE =	github jggimi pokerth-openbsd 4f9e7002098c22690c999cc2a661eb370a5708ba .
-V =		1.1.2pl20251114
+DIST_TUPLE =	github jggimi pokerth-openbsd d12242db6855306f14b03a6dc61c5109c06c7d9d .
+
+# already set to version 2, continuing to use 1.1.2pl{date} until tagged by project
+V =		1.1.2pl20260108
+
 PKGNAME =	pokerth-${V}
 
 CATEGORIES =	games
@@ -27,9 +30,7 @@ BUILD_DEPENDS +=	x11/qt6/qtwebsockets
 
 LIB_DEPENDS +=	devel/boost,-main
 LIB_DEPENDS +=	devel/protobuf
-LIB_DEPENDS +=	x11/qt6/qtdeclarative
 LIB_DEPENDS +=	x11/qt6/qtmultimedia
-LIB_DEPENDS +=	x11/qt6/qtsvg
 
 RUN_DEPENDS +=	devel/desktop-file-utils
 
@@ -39,10 +40,7 @@ WANTLIB += boost_filesystem-mt boost_iostreams-mt boost_program_options-mt
 WANTLIB += boost_random-mt boost_regex-mt boost_system-mt boost_thread-mt
 WANTLIB += c crypto curl iconv m protobuf ssl
 
-pre-configure:
-	cd ${WRKSRC} && \
-	protoc --cpp_out=src/third_party/protobuf chatcleaner.proto && \
-	protoc --cpp_out=src/third_party/protobuf pokerth.proto && \
-	${SUBST_CMD} pokerth.desktop src/game_defs.h
+pre-build:
+	${SUBST_CMD} ${WRKSRC}/pokerth.desktop ${WRKSRC}/src/game_defs.h
 
 .include <bsd.port.mk>

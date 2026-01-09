@@ -1,9 +1,18 @@
-integration testing post 2025.09.04
+This WIP port is for integration testing post 2025.09.04
 
-dedicated_server has been added as a CI test-only target,
-it requires being run from the top of the source tree:
+This is currently building as a version 1.1.2 patch level,
+though upstream has its internal version set to 2.0.  I
+will move from 1.1.2 package naming once upstream tags 2.0
+as ready for beta testing. This avoids package update issues.
+
+This test client will NOT connect to the public Internet server as a 
+human player, as authentication has changed.  It can connect
+successfully as a guest.
+
+The dedicated_server can be run as a CI test-only target,
+it requires being executed from the top of the source tree:
 see docs/server_setup_howto.txt.
 
 The last commit capable of connecting to the official 1.1.2
-server for internet games is currently maintained as a separate branch:
-last-client-for-112-server.
+server for internet games (as a human player) is currently
+maintained as a separate branch: last-client-for-112-server.
