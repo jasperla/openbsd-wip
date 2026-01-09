@@ -1,7 +1,6 @@
 COMMENT =	fallout 2 for modern operating systems
 
 DIST_TUPLE +=	github alexbatalov fallout2-ce v1.3.0 .
-DIST_TUPLE +=	github Loadmaster fpattern v1.9 third_party/fpattern
 
 CATEGORIES =	x11 games
 
@@ -17,7 +16,7 @@ MODULES =		devel/cmake
 
 LIB_DEPENDS =		devel/sdl2
 
-CONFIGURE_ARGS =       -Dfpattern_SOURCE_DIR=${WRKSRC}/third_party/fpattern
+CONFIGURE_ARGS =       -Dfpattern_SOURCE_DIR=${PREFIX}/include/fpattern
 
 post-extract:
 	rm -fr ${WRKDIST}/third_party/fpattern
