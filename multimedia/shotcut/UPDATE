@@ -1,1 +1,4 @@
 CI for multimedia/shotcut
+
+Currently waiting on another update to multimedia/mlt7; does
+not currently build.
