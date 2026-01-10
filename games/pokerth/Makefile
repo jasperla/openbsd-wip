@@ -4,10 +4,7 @@ COMMENT =	texas holdem poker client, local or internet games
 
 DIST_TUPLE =	github jggimi pokerth-openbsd d12242db6855306f14b03a6dc61c5109c06c7d9d .
 
-# already set to version 2, continuing to use 1.1.2pl{date} until tagged by project
-V =		1.1.2pl20260108
-
-PKGNAME =	pokerth-${V}
+PKGNAME =	pokerth-2.0beta
 
 CATEGORIES =	games
 
@@ -41,6 +38,6 @@ WANTLIB += boost_random-mt boost_regex-mt boost_system-mt boost_thread-mt
 WANTLIB += c crypto curl iconv m protobuf ssl
 
 pre-build:
-	${SUBST_CMD} ${WRKSRC}/pokerth.desktop ${WRKSRC}/src/game_defs.h
+	${SUBST_CMD} ${WRKSRC}/pokerth.desktop
 
 .include <bsd.port.mk>
