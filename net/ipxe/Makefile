@@ -48,18 +48,22 @@ FLAVORS =		aarch64 # arm # builds, but not tested (or needed).
 FLAVOR ?=		# native build
 
 .if empty(FLAVOR)
+# FWIW, on amd64 'make IPXE_ARCH=i386' also built at one point.
+IPXE_ARCH =		${MACHINE_ARCH:amd64=x86_64}
 COMPILER =		ports-gcc
 COMPILER_LANGS =	c
-BUILD_DEPENDS = 	devel/binutils>=2.45.1p1 \
+# XXX WIP ld.bfd with elf-{arm64,i386,x86_64} target support added to binutils
+BUILD_DEPENDS = 	devel/binutils>=2.45.1p4 \
 			devel/gas
-IPXE_ARCH =		${MACHINE_ARCH:amd64=x86_64}
 CROSS =			g
-MAKE_FLAGS =		CC=egcc \
+MAKE_FLAGS =		CC=${CC} \
 			SPG_TEST=false
+USE_LLD =		No
+MAKE_FLAGS +=		LD=${LD}
 .else
+IPXE_ARCH =		${FLAVOR:aarch64=arm64:arm=arm32}
 BUILD_DEPENDS = 	devel/arm-none-eabi/binutils,${FLAVOR} \
 			devel/arm-none-eabi/gcc,${FLAVOR}
-IPXE_ARCH =		${FLAVOR:aarch64=arm64:arm=arm32}
 CROSS =			${FLAVOR}-none-${FLAVOR:aarch64=elf:arm=eabi}-
 .endif
 
@@ -74,7 +78,8 @@ DRIVERS-efi =		snp snponly
 EXTENSIONS-efi =	efi
 .endif
 
-.if ${IPXE_ARCH:Mx86_64}
+.if ${IPXE_ARCH:Mi386} || \
+    ${IPXE_ARCH:Mx86_64}
 BUILD_DEPENDS +=	sysutils/libisoburn,-xorriso
 BUILD_PLATFORMS +=	pcbios
 DRIVERS-pcbios =	undionly
