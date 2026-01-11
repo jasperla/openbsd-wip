@@ -12,7 +12,7 @@ Index: src/plugins/compilergcc/compilergcc.cpp
      static const wxString strSLASH(_T("/"));
      static const wxString strSPACE(_T(" "));
      static const wxString strQUOTE(platform::windows ? _T("\"") : _T("'"));
-@@ -1889,8 +1889,7 @@ int CompilerGCC::RunSingleFile(const wxString& filenam
+@@ -1891,8 +1891,7 @@ int CompilerGCC::RunSingleFile(const wxString& filenam
  
      wxString baseDir = ConfigManager::GetExecutableFolder();
      wxString crunnStr = strQUOTE + baseDir + strSLASH + strCONSOLE_RUNNER + strQUOTE;
@@ -22,7 +22,7 @@ Index: src/plugins/compilergcc/compilergcc.cpp
  
      if (!command.Replace(_T("$SCRIPT"), exe_filename))
          command << strQUOTE << exe_filename << strQUOTE; // if they didn't specify $SCRIPT, append:
-@@ -2043,7 +2042,7 @@ int CompilerGCC::Run(ProjectBuildTarget* target)
+@@ -2045,7 +2044,7 @@ int CompilerGCC::Run(ProjectBuildTarget* target)
                      : EscapeSpaces(m_CdRun);
      wxString crunnStr = platform::windows
                        ? strQUOTE + baseDir + strSLASH + strCONSOLE_RUNNER + strQUOTE
@@ -31,7 +31,7 @@ Index: src/plugins/compilergcc/compilergcc.cpp
      wxString hostapStr = platform::windows
                         ? strQUOTE + target->GetHostApplication() + strQUOTE
                         : EscapeSpaces(target->GetHostApplication());
-@@ -2081,8 +2080,6 @@ int CompilerGCC::Run(ProjectBuildTarget* target)
+@@ -2083,8 +2082,6 @@ int CompilerGCC::Run(ProjectBuildTarget* target)
  
          if (target->GetUseConsoleRunner())
          {
@@ -40,7 +40,7 @@ Index: src/plugins/compilergcc/compilergcc.cpp
                  command << crunnStr << strSPACE;
  
                  if (!platform::windows)
-@@ -2094,7 +2091,6 @@ int CompilerGCC::Run(ProjectBuildTarget* target)
+@@ -2096,7 +2093,6 @@ int CompilerGCC::Run(ProjectBuildTarget* target)
                      QuoteStringIfNeeded(strLinkerPath);
                      command << strLinkerPath << strSPACE;
                  }
