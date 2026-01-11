@@ -11,14 +11,14 @@ HOMEPAGE =		https://ipxe.org
 
 # Official binaries use latest HEAD, last tagged in 2020.
 V =			1.21.1
-HEAD =			fb1188936ca29af61709afd8b866ea55d4a05a67
+HEAD =			9c01c5a5dacb54167132d9a27259b23acdf091d6
 DIST_TUPLE =		github	ipxe	ipxe	${HEAD}	.
 WRKSRC =		${WRKDIST}/src
 # What 'gmake version' would print for a git checkout.
-VERSION =		${V}+ (g${HEAD:C/^(.{5}).+/\1/})
+VERSION =		${V}+ (g${HEAD:C/^(.{4}).+/\1/})
 
 # Our patch-level is the number of post-tag commits from output mentioned above.
-PKGNAME =		ipxe-${IPXE_ARCH}-${V}pl1152
+PKGNAME =		ipxe-${IPXE_ARCH}-${V}pl1175
 FULLPKGNAME =		${PKGNAME}
 PKG_ARCH =		*
 
