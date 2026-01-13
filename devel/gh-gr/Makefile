@@ -31,8 +31,7 @@ MODGO_FLAGS = -mod=mod
 # TODO Generate and install shell completions
 
 # Some test fail for TestRESTClient: try to use network
-do-test:
-	cd ${WRKSRC} && ${MODGO_TEST_CMD} ./...
+TEST_TARGET = ./...
 
 .include "modules.inc"
 
