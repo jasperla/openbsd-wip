@@ -23,14 +23,13 @@ MODGO_LDFLAGS +=	-X ${MODGO_MODNAME}/build.Version=${MODGO_VERSION:S/v//}
 # To apply patch
 WRKDIST =	${WRKSRC}
 
+TEST_TARGET =	./...
+
 # rename gdu => godu (conflicts with sysutils/coreutils)
 do-install:
 	${INSTALL_PROGRAM} ${MODGO_WORKSPACE}/bin/gdu ${PREFIX}/bin/godu
 	${INSTALL_MAN_DIR} ${PREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/gdu.1 ${PREFIX}/man/man1/godu.1
-
-do-test:
-	cd ${WRKSRC} && ${MODGO_TEST_CMD} ./...
 
 .include "modules.inc"
 
