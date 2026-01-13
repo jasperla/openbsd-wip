@@ -29,8 +29,7 @@ pre-configure:
 # do-test:
 # cd ${WRKSRC} && ${MODGO_WORKSPACE}/bin/gotestsum -f testname -- ./... -count=1
 
-do-test:
-	cd ${WRKSRC} && ${MODGO_TEST_CMD} ./...
+TEST_TARGET =	./...
 
 .include "modules.inc"
 
