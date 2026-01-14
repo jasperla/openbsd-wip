@@ -1,4 +1,4 @@
-mlt 7.36 is not (yet) ported.  Builds with 7.34.
+mlt 7.36 is not (yet) ported, and is not (yet) needed.
 
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
