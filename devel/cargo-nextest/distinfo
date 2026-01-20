@@ -1,4 +1,4 @@
-SHA256 (cargo-nextest-0.9.121.tar.gz) = HekW8gptfqvItQJ9dyPosyMi8iGFeEEi1J6Iy7CJKzg=
+SHA256 (cargo-nextest-0.9.122.tar.gz) = CMR+cuHi4fkezGScK41GrVMI9Y6mdK/tFjvnwhDDquk=
 SHA256 (cargo/addr2line-0.24.2.tar.gz) = 374nflajdgAIdwkNqDdmC0QnqtUw4wKNROC//k+JocE=
 SHA256 (cargo/adler2-2.0.1.tar.gz) = MgEZV5/K2cIYhPXEhh0WF00OBiUGJSZvUP5omDQKvvo=
 SHA256 (cargo/ahash-0.8.12.tar.gz) = WhXxec1gxFhLioxZaSeq3EYuJ/LKcMBOAHGWSnO6enU=
@@ -423,7 +423,6 @@ SHA256 (cargo/usdt-macro-0.6.0.tar.gz) = yb9ZT4a2dvfi/T1SPVD50M/+z/bBlyn/Xb6+hsT
 SHA256 (cargo/utf8_iter-1.0.4.tar.gz) = tsFAYg5/+7IsLe5Zyv5ghKWbX/wnqIWaXw1JS11Str4=
 SHA256 (cargo/utf8parse-0.2.2.tar.gz) = BqveNhFlet9m04PwCwk9f67Mf6VwccziV4ZgyfEBCCE=
 SHA256 (cargo/uuid-1.18.1.tar.gz) = L4e4qhC5FaBlh9DexRbCgv8pW0ddlKv0JdYrV3EAcKI=
-SHA256 (cargo/uuid-1.2.1.tar.gz) = /rQeePkzY7st+LDoaiyjDu14BuoW6gx5DXV8+T95voM=
 SHA256 (cargo/valuable-0.1.1.tar.gz) = unPqnPFqJd8MjKoWxRrLk31XEqhCnbeKPuKdXcrNOmU=
 SHA256 (cargo/vcpkg-0.2.15.tar.gz) = rM1Opi97t6gv4jBm+wlX1I72d/buuCFfNy9S5IuzJCY=
 SHA256 (cargo/vec_map-0.8.2.tar.gz) = 8b3fEYe+aS55xf/quJETLfsPI27TakPH7TnxFl7iAZE=
@@ -504,7 +503,7 @@ SHA256 (cargo/zmij-1.0.0.tar.gz) = 5tYIXWKFLjVUBonR+XrWY+OXH8Gc9ezqs2TWLGRuoWc=
 SHA256 (cargo/zstd-0.13.3.tar.gz) = 6R7jEaVpwycXFlFWbgeXIgDnb8/iJCpPpEYUmjiBwIo=
 SHA256 (cargo/zstd-safe-7.2.4.tar.gz) = j0nE1fCrtgKpP7hzavKk9N2VEuNvf1cNZuZf+GftO50=
 SHA256 (cargo/zstd-sys-2.0.15+zstd.1.5.7.tar.gz) = 64EYPd2X0MdM7fHVDYXI0Iwbi2juhjve6ecG7tuhojc=
-SIZE (cargo-nextest-0.9.121.tar.gz) = 7585068
+SIZE (cargo-nextest-0.9.122.tar.gz) = 7589536
 SIZE (cargo/addr2line-0.24.2.tar.gz) = 39015
 SIZE (cargo/adler2-2.0.1.tar.gz) = 13366
 SIZE (cargo/ahash-0.8.12.tar.gz) = 43413
@@ -929,7 +928,6 @@ SIZE (cargo/usdt-macro-0.6.0.tar.gz) = 9634
 SIZE (cargo/utf8_iter-1.0.4.tar.gz) = 10437
 SIZE (cargo/utf8parse-0.2.2.tar.gz) = 13499
 SIZE (cargo/uuid-1.18.1.tar.gz) = 60468
-SIZE (cargo/uuid-1.2.1.tar.gz) = 53789
 SIZE (cargo/valuable-0.1.1.tar.gz) = 28679
 SIZE (cargo/vcpkg-0.2.15.tar.gz) = 228735
 SIZE (cargo/vec_map-0.8.2.tar.gz) = 14466

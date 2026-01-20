@@ -1,0 +1,15 @@
+Modify uuid crate version used for tests
+NOK with 1.19.0 version
+
+Index: fixtures/nextest-tests/Cargo.toml
+--- fixtures/nextest-tests/Cargo.toml.orig
++++ fixtures/nextest-tests/Cargo.toml
+@@ -41,7 +41,7 @@ members = [
+ ]
+ 
+ [dependencies]
+-uuid = "1.19.0"
++uuid = "1.18.1"
+ 
+ [dev-dependencies]
+ dylib-test = { path = "dylib-test" }
