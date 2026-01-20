@@ -59,13 +59,13 @@ DIST_TUPLE+=	github google googletest ba96d0b1161f540656efdaed035b3c062b60e006 \
 DIST_TUPLE+=	github transmission rpavlik-cmake-modules \
 		d66fc5dec3eaea3a4f9778ceeeb65cbec490b5b9 third-party/rpavlik-cmake-modules
 DIST_TUPLE+=	github transmission small \
-		46bb00342b052b76a7b95ef639fcc601e80e2988 third-party/small
+		0437070c376f08b2fc2bcb1fbcea106fb7fc6b38 third-party/small
 DIST_TUPLE+=	github transmission utfcpp \
 		6be08bbea14ffa0a5c594257fb6285a054395cd7 third-party/utfcpp
 DIST_TUPLE+=	github nemtrif ftest \
 		c4ad4af0946b73ce1a40cbc72205d15d196c7e06 third-party/utfcpp/extern/ftest
 DIST_TUPLE+=	github transmission wide-integer \
-		c725651dd2d97932822daf92337cf634eb56d9fa third-party/wide-integer
+		a0c823ee4c1c97501df5786f3439f2a53623e7ad third-party/wide-integer
 
 MULTI_PACKAGES=	-main -gtk -qt
 
