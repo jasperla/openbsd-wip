@@ -2,7 +2,7 @@ BROKEN-i386 =	protobuf/abseil problems
 
 COMMENT =	texas holdem poker client, local or internet games
 
-DIST_TUPLE =	github jggimi pokerth-openbsd 6c68b53dabe4f78e8d7d94763fcf023ff84f0d59 .
+DIST_TUPLE =	github jggimi pokerth-openbsd dadd0f526459f2fa7ff0640637663d084902773e .
 
 PKGNAME =	pokerth-2.0beta
 
@@ -32,10 +32,8 @@ LIB_DEPENDS +=	x11/qt6/qtmultimedia
 RUN_DEPENDS +=	devel/desktop-file-utils
 
 WANTLIB += ${COMPILER_LIBCXX} GL Qt6Core Qt6Gui Qt6Multimedia
-WANTLIB += Qt6Network Qt6Sql Qt6Widgets Qt6Xml boost_atomic-mt
-WANTLIB += boost_filesystem-mt boost_iostreams-mt boost_program_options-mt
-WANTLIB += boost_random-mt boost_regex-mt boost_system-mt boost_thread-mt
-WANTLIB += c crypto iconv m protobuf ssl
+WANTLIB += Qt6Network Qt6Sql Qt6Widgets Qt6Xml c crypto iconv
+WANTLIB += m ssl
 
 pre-build:
 	${SUBST_CMD} ${WRKSRC}/pokerth.desktop

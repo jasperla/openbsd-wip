@@ -291,6 +291,7 @@ share/pokerth/data/gfx/gui/misc/startwindowbg10_mobile.png
 share/pokerth/data/gfx/gui/misc/welcomepokerth10_desktop.png
 share/pokerth/data/gfx/gui/misc/welcomepokerth10_mobile.png
 share/pokerth/data/gfx/gui/misc/windowicon.png
+share/pokerth/data/gfx/gui/misc/windowicon_transparent.png
 share/pokerth/data/gfx/gui/table/
 share/pokerth/data/gfx/gui/table/danuxi1/
 share/pokerth/data/gfx/gui/table/danuxi1/bigblindPuck.png
