@@ -50,20 +50,12 @@ FLAVOR ?=		# native build
 .if empty(FLAVOR)
 # FWIW, on amd64 'make IPXE_ARCH=i386' also built at one point.
 IPXE_ARCH =		${MACHINE_ARCH:amd64=x86_64}
-COMPILER =		ports-gcc
-COMPILER_LANGS =	c
-# XXX WIP ld.bfd with elf-{arm64,i386,x86_64} target support added to binutils
-BUILD_DEPENDS = 	devel/binutils>=2.45.1p4 \
-			devel/gas
-CROSS =			g
-MAKE_FLAGS =		CC=${CC} \
-			SPG_TEST=false
-USE_LLD =		No
-MAKE_FLAGS +=		LD=${LD}
+BUILD_DEPENDS = 	devel/x86_64-elf/gcc
+CROSS =			x86_64-none-elf-
+MAKE_FLAGS =		SPG_TEST=false
 .else
 IPXE_ARCH =		${FLAVOR:aarch64=arm64:arm=arm32}
-BUILD_DEPENDS = 	devel/arm-none-eabi/binutils,${FLAVOR} \
-			devel/arm-none-eabi/gcc,${FLAVOR}
+BUILD_DEPENDS = 	devel/arm-none-eabi/gcc,${FLAVOR}
 CROSS =			${FLAVOR}-none-${FLAVOR:aarch64=elf:arm=eabi}-
 .endif
 
@@ -105,7 +97,8 @@ BUILD_DEPENDS +=	archivers/xz \
 			sysutils/mtools \
 			sysutils/truncate
 # lzma.h
-HOST_CFLAGS +=		-I/usr/local/include
+HOST_CFLAGS +=		-I${LOCALBASE}/include \
+			-L${LOCALBASE}/lib
 
 # util/genfsimg relies on mktemp(1).
 MAKE_ENV =		TMPDIR=${WRKDIR}
