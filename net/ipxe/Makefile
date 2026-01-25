@@ -1,8 +1,4 @@
-# 'ls arch/' Makefile includes:
-# arm     arm32   arm64   i386    loong64 riscv   riscv32 riscv64 x86     x86_64
-#
-# arm64 could at least build natively and run with devel/binutils LD_ARCHS fixed.
-# Others are untested and require unported tooling both native- and cross-builds.
+# arm gets cross-built, others need testing and users.
 ONLY_FOR_ARCHS =	amd64
 
 CATEGORIES =		net firmware
