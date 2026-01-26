@@ -1,4 +1,4 @@
-SHA256 (cargo-nextest-0.9.123.tar.gz) = KBIose2XfAiKWp9bVEjKxs2cI8izVgL2ca1QuviHXBA=
+SHA256 (cargo-nextest-0.9.124.tar.gz) = uLsj7zPbNp/t2hkk+JrvtHMJndhyiZ5YVtGcUDwG4Qk=
 SHA256 (cargo/addr2line-0.24.2.tar.gz) = 374nflajdgAIdwkNqDdmC0QnqtUw4wKNROC//k+JocE=
 SHA256 (cargo/adler2-2.0.1.tar.gz) = MgEZV5/K2cIYhPXEhh0WF00OBiUGJSZvUP5omDQKvvo=
 SHA256 (cargo/ahash-0.8.12.tar.gz) = WhXxec1gxFhLioxZaSeq3EYuJ/LKcMBOAHGWSnO6enU=
@@ -195,6 +195,7 @@ SHA256 (cargo/linux-raw-sys-0.4.15.tar.gz) = 0mxS29MtzPLRDKx3Jfjq5SlohftXA7Jh99C
 SHA256 (cargo/linux-raw-sys-0.9.4.tar.gz) = zZRYZPB/6fU3Giete1KhcrS0mZmfHZdXTJ+mg3OTfhI=
 SHA256 (cargo/litrs-0.4.1.tar.gz) = tM4wGSS3iH6dY3FE/a3pP53/+bYJgdSsFh2wlyDTmqU=
 SHA256 (cargo/lock_api-0.4.13.tar.gz) = lpNlB/FTYFvd/NoGjdgEeWyEMk7SUQgJ5bKmJMgdp2U=
+SHA256 (cargo/locked-tripwire-0.1.0.tar.gz) = KgUjag0/Kt8oyXriQPOwN+eaRPd9pzfA5CSVKejFxAw=
 SHA256 (cargo/log-0.4.29.tar.gz) = XlAy4kAZBFx2LTwPKPW2uLvzhWOmWQg4m/eXh1iSCJc=
 SHA256 (cargo/lru-0.16.3.tar.gz) = odxH9ZLAbzP4466pWRd27HyfnkEkd4/4o8O4cVn35ZM=
 SHA256 (cargo/lru-slab-0.1.2.tar.gz) = ESs5zsCymLbBmZ/uPjFCf3T2duTLmHntGhIbQ2YaQVQ=
@@ -399,6 +400,7 @@ SHA256 (cargo/tracing-error-0.2.1.tar.gz) = ixWBAg16JzRC9bRQdKalfVdXrQpH2sDp8L1X
 SHA256 (cargo/tracing-log-0.2.0.tar.gz) = 7oVfH0AL0OXALRUK5d44QAOaP1SwJRVkBONMI8A/R8M=
 SHA256 (cargo/tracing-subscriber-0.3.22.tar.gz) = LzAUOCfdqw0lb9hDt6ZtFk6fJxz6Dd5JFCxcoMopHx4=
 SHA256 (cargo/try-lock-0.2.5.tar.gz) = 5CGrrdQaQiUnVQTqTWVmkjQYt/BVBvvJwP6GunOWEUs=
+SHA256 (cargo/typed-path-0.12.1.tar.gz) = 5D/6VHJs3J6ng5ICP/6f6c+ax3nhxvyw0j+YYuOHnSA=
 SHA256 (cargo/typeid-1.0.3.tar.gz) = vH1iMlhgIyDVxV0bwieTtX2v8Ox+/CcOp9Vc4dX1Rxw=
 SHA256 (cargo/typenum-1.18.0.tar.gz) = Hcz/484Hr5OGv9KegMCrGoIFovw05LzUA2TfkCz6jz8=
 SHA256 (cargo/ucd-trie-0.1.7.tar.gz) = KJbZXAKoDG1qXW6VPUefXd8t/baiREQQEONzrA+4iXE=
@@ -496,13 +498,13 @@ SHA256 (cargo/yansi-1.0.1.tar.gz) = z+U6Zlf9KA6qiQo7xZFSiS/6PjAQExnRaLeB7WUpsEk=
 SHA256 (cargo/zerocopy-0.8.27.tar.gz) = CJSHil+j7f1to/iMSAX0yFWOK5liJ6PYZPR/4R44KCw=
 SHA256 (cargo/zerocopy-derive-0.8.27.tar.gz) = iNK42caK0rnkNA14MnFqTSGiKhFUd3rVbqVcUanPODE=
 SHA256 (cargo/zeroize-1.8.1.tar.gz) = ztNniih5swMG0yP0VCYmaXpGSpfAoHya6/frymXNTd4=
-SHA256 (cargo/zip-7.1.0.tar.gz) = kBPxIi24ptaA8Tp8zcYKeBGZzQnC+k7/WOcouxgXV/w=
+SHA256 (cargo/zip-7.2.0.tar.gz) = xC4z78IqBlDDEcLvGRFc4jJYOrvoCFC8i2ZQnr7wLeA=
 SHA256 (cargo/zipsign-api-0.1.5.tar.gz) = 26YGP/gs29mnZa3RbTaavoHlIPg2BU6ZfC2yF87KQMA=
 SHA256 (cargo/zmij-1.0.0.tar.gz) = 5tYIXWKFLjVUBonR+XrWY+OXH8Gc9ezqs2TWLGRuoWc=
 SHA256 (cargo/zstd-0.13.3.tar.gz) = 6R7jEaVpwycXFlFWbgeXIgDnb8/iJCpPpEYUmjiBwIo=
 SHA256 (cargo/zstd-safe-7.2.4.tar.gz) = j0nE1fCrtgKpP7hzavKk9N2VEuNvf1cNZuZf+GftO50=
 SHA256 (cargo/zstd-sys-2.0.15+zstd.1.5.7.tar.gz) = 64EYPd2X0MdM7fHVDYXI0Iwbi2juhjve6ecG7tuhojc=
-SIZE (cargo-nextest-0.9.123.tar.gz) = 7740273
+SIZE (cargo-nextest-0.9.124.tar.gz) = 7735332
 SIZE (cargo/addr2line-0.24.2.tar.gz) = 39015
 SIZE (cargo/adler2-2.0.1.tar.gz) = 13366
 SIZE (cargo/ahash-0.8.12.tar.gz) = 43413
@@ -699,6 +701,7 @@ SIZE (cargo/linux-raw-sys-0.4.15.tar.gz) = 2150898
 SIZE (cargo/linux-raw-sys-0.9.4.tar.gz) = 2311088
 SIZE (cargo/litrs-0.4.1.tar.gz) = 42603
 SIZE (cargo/lock_api-0.4.13.tar.gz) = 28565
+SIZE (cargo/locked-tripwire-0.1.0.tar.gz) = 6126
 SIZE (cargo/log-0.4.29.tar.gz) = 51515
 SIZE (cargo/lru-0.16.3.tar.gz) = 16743
 SIZE (cargo/lru-slab-0.1.2.tar.gz) = 9090
@@ -903,6 +906,7 @@ SIZE (cargo/tracing-error-0.2.1.tar.gz) = 14135
 SIZE (cargo/tracing-log-0.2.0.tar.gz) = 17561
 SIZE (cargo/tracing-subscriber-0.3.22.tar.gz) = 212851
 SIZE (cargo/try-lock-0.2.5.tar.gz) = 4314
+SIZE (cargo/typed-path-0.12.1.tar.gz) = 109007
 SIZE (cargo/typeid-1.0.3.tar.gz) = 9006
 SIZE (cargo/typenum-1.18.0.tar.gz) = 74871
 SIZE (cargo/ucd-trie-0.1.7.tar.gz) = 46795
@@ -1000,7 +1004,7 @@ SIZE (cargo/yansi-1.0.1.tar.gz) = 75497
 SIZE (cargo/zerocopy-0.8.27.tar.gz) = 252663
 SIZE (cargo/zerocopy-derive-0.8.27.tar.gz) = 89827
 SIZE (cargo/zeroize-1.8.1.tar.gz) = 20029
-SIZE (cargo/zip-7.1.0.tar.gz) = 130696
+SIZE (cargo/zip-7.2.0.tar.gz) = 137719
 SIZE (cargo/zipsign-api-0.1.5.tar.gz) = 17451
 SIZE (cargo/zmij-1.0.0.tar.gz) = 33841
 SIZE (cargo/zstd-0.13.3.tar.gz) = 30514
