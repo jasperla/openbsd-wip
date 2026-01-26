@@ -2,7 +2,8 @@ BROKEN-i386 =	protobuf/abseil problems
 
 COMMENT =	texas holdem poker client, local or internet games
 
-DIST_TUPLE =	github jggimi pokerth-openbsd 6d1c85152bf0e81a5984f276abec86fa4ca17296 .
+# from upstream branch: feature/bot-test-infrastructure
+DIST_TUPLE =	github jggimi pokerth-openbsd d5321b1b2430506110ea1606b9a6179c7fd385cc .
 
 PKGNAME =	pokerth-2.0beta
 
@@ -18,7 +19,7 @@ SUBST_VARS +=	MODQT_QTDIR V
 
 ALL_TARGET =	pokerth_client pokerth_dedicated_server
 
-CONFIGURE_ARGS +=		-DCMAKE_BUILD_TYPE=RelWithDebInfo
+CONFIGURE_ARGS +=   -DCMAKE_BUILD_TYPE=RelWithDebInfo
 MODCMAKE_LDFLAGS += -L${LOCALBASE}/lib -liconv
 
 DEBUG_PACKAGES =		${BUILD_PACKAGES}
