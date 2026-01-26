@@ -1001,7 +1001,7 @@ SHA256 (go_modules/mvdan.cc/sh/v3/@v/v3.12.1-0.20260124232039-e74afc18e65b.mod) 
 SHA256 (go_modules/mvdan.cc/sh/v3/@v/v3.12.1-0.20260124232039-e74afc18e65b.zip) = aejO00b8Bxpz93EEPLGs5zJigD7S6PguyRnSjAxUAII=
 SHA256 (go_modules/pack.ag/tftp/@v/v1.0.1-0.20181129014014-07909dfbde3c.mod) = VLlRy6/uldG7KTMZ+Tv09LQC1u1/6WsX67Gt9e3n6N8=
 SHA256 (go_modules/pack.ag/tftp/@v/v1.0.1-0.20181129014014-07909dfbde3c.zip) = EKKXbL6XnK6qqLJeM2X4BPxgi5er2IJEjs3r83uGeE0=
-SHA256 (task-3.47.0.zip) = mPoDr+S+yQorSjQKHRfARs3L2OpA9Y+lj01BCAGpygs=
+SHA256 (task-3.48.0.zip) = YnR1ZFD/ebzi1gMTGFkHIRW+jz8ouUltSnNiTKczbOI=
 SIZE (go_modules/cel.dev/expr/@v/v0.15.0.mod) = 156
 SIZE (go_modules/cel.dev/expr/@v/v0.19.0.mod) = 231
 SIZE (go_modules/cel.dev/expr/@v/v0.24.0.mod) = 231
@@ -2005,4 +2005,4 @@ SIZE (go_modules/mvdan.cc/sh/v3/@v/v3.12.1-0.20260124232039-e74afc18e65b.mod) = 
 SIZE (go_modules/mvdan.cc/sh/v3/@v/v3.12.1-0.20260124232039-e74afc18e65b.zip) = 288151
 SIZE (go_modules/pack.ag/tftp/@v/v1.0.1-0.20181129014014-07909dfbde3c.mod) = 20
 SIZE (go_modules/pack.ag/tftp/@v/v1.0.1-0.20181129014014-07909dfbde3c.zip) = 1110764
-SIZE (task-3.47.0.zip) = 749309
+SIZE (task-3.48.0.zip) = 697301
