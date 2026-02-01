@@ -753,6 +753,7 @@ share/shotcut/translations/shotcut_sv.qm
 share/shotcut/translations/shotcut_th.qm
 share/shotcut/translations/shotcut_tr.qm
 share/shotcut/translations/shotcut_uk.qm
+share/shotcut/translations/shotcut_zh-Hans.qm
 share/shotcut/translations/shotcut_zh_CN.qm
 share/shotcut/translations/shotcut_zh_TW.qm
 @tag update-desktop-database
