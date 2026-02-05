@@ -36,10 +36,6 @@ MODCARGO_RUSTFLAGS +=	-L${LOCALBASE}/lib
 MODCARGO_NO_DEFAULT_FEATURES =	Yes
 MODCARGO_FEATURES =		default-no-update
 
-# Crate uuid v1.19.0 needed for tests
-# MODCARGO_CRATES +=	uuid	1.19.0	# Apache-2.0 OR MIT
-# MODCARGO_CRATES_UPDATE = uuid
-
 SEPARATE_BUILD =	Yes
 
 post-extract:
