@@ -2,7 +2,7 @@ COMMENT =	tool to develop, test, and use Tree-sitter grammars
 
 GH_ACCOUNT =	tree-sitter
 GH_PROJECT =	tree-sitter
-GH_TAGNAME =	v0.26.3
+GH_TAGNAME =	v0.26.5
 
 PKGNAME =	tree-sitter-cli-${GH_TAGNAME:S/v//}
 

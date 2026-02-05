@@ -296,7 +296,7 @@ SHA256 (cargo/zeroize-1.8.2.tar.gz) = uXFU5n4yyFRlgm6LzBxZQpqq8QfB5KnlPI2MzV7/iN
 SHA256 (cargo/zerotrie-0.2.3.tar.gz) = KlnBelVi1QfktUlg6FaevuM77okMcKo/57l+han9eFE=
 SHA256 (cargo/zerovec-0.11.5.tar.gz) = bChxkpSClHf1Jb4BhtE++po8YC9+wgLKnjU9MQ+5oAI=
 SHA256 (cargo/zerovec-derive-0.11.2.tar.gz) = 6tzjlTnKXLOYVZAQJnHyVn5ln8qWZlga00EdWSB5UfM=
-SHA256 (tree-sitter-0.26.3.tar.gz) = f0p88KLNIXREBj/ipNgAvJ0h7WCbrcKsIMCEHWcWZVA=
+SHA256 (tree-sitter-0.26.5.tar.gz) = jgEkk7IQPgRx06uoBItzvBoxOBMpdOL9i/uJpj5i9Hg=
 SIZE (cargo/addr2line-0.24.2.tar.gz) = 39015
 SIZE (cargo/aho-corasick-1.1.4.tar.gz) = 184015
 SIZE (cargo/allocator-api2-0.2.21.tar.gz) = 63622
@@ -595,4 +595,4 @@ SIZE (cargo/zeroize-1.8.2.tar.gz) = 20907
 SIZE (cargo/zerotrie-0.2.3.tar.gz) = 69547
 SIZE (cargo/zerovec-0.11.5.tar.gz) = 119620
 SIZE (cargo/zerovec-derive-0.11.2.tar.gz) = 21421
-SIZE (tree-sitter-0.26.3.tar.gz) = 900789
+SIZE (tree-sitter-0.26.5.tar.gz) = 905701
