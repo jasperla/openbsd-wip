@@ -4,8 +4,8 @@ COMMENT-qt=	BitTorrent client with Qt interface
 
 # for integration testing beyond 4.1.0-beta.5
 
-VER=		4.1.0pl20260130
-GIT_REVISION=	c4283e0c8f0f6f5fd5e44f5117624a1a2cc5cfaa
+VER=		4.1.0pl20260205
+GIT_REVISION=	39803eb0f092ec0e19e71a878e93733a7e453323
 PKGNAME=        transmission-${VER}
 CATEGORIES=	net
 HOMEPAGE=	https://transmissionbt.com/
@@ -40,7 +40,7 @@ DIST_TUPLE+=	github transmission libb64 \
 DIST_TUPLE+=	github transmission libdeflate \
 		275aa5141db6eda3587214e0f1d3a134768f557d third-party/libdeflate
 DIST_TUPLE+=	github transmission libevent \
-		5bbf2aafe441c8f1f76e141e2ebd48e7ddb2d525 third-party/libevent
+		e6a287d452b424cfd19c65afffc03c0c374392f5 third-party/libevent
 DIST_TUPLE+=	github transmission libnatpmp \
 		134fc89e2781e154e40042641f4d8bcbe42579f1 third-party/libnatpmp
 DIST_TUPLE+=	github transmission libpsl \
@@ -57,6 +57,8 @@ DIST_TUPLE+=	github google googletest ba96d0b1161f540656efdaed035b3c062b60e006 \
 		third-party/rapidjson/thirdparty/gtest
 DIST_TUPLE+=	github transmission rpavlik-cmake-modules \
 		d66fc5dec3eaea3a4f9778ceeeb65cbec490b5b9 third-party/rpavlik-cmake-modules
+DIST_TUPLE+=	github transmission sigslot \
+		b588b791b9cf7eb17ff0a74d8aebd4a61166c2e1 third-party/sigslot
 DIST_TUPLE+=	github transmission small \
 		0437070c376f08b2fc2bcb1fbcea106fb7fc6b38 third-party/small
 DIST_TUPLE+=	github transmission utfcpp \
@@ -78,18 +80,19 @@ FLAVOR?=
 
 .include <bsd.port.arch.mk>
 
-WANTLIB-common =	${COMPILER_LIBCXX} c crc32c crypto curl deflate intl
-WANTLIB-common +=	m miniupnpc natpmp psl ssl
+WANTLIB-main += ${COMPILER_LIBCXX} c crc32c crypto curl deflate event_core
+WANTLIB-main += event_extra intl m miniupnpc natpmp psl ssl
 
-WANTLIB-main =	${WANTLIB-common}
+WANTLIB-gtk += ${COMPILER_LIBCXX} atk-1.0 atkmm-1.6 c cairo cairo-gobject
+WANTLIB-gtk += cairomm-1.0 crc32c crypto curl deflate event_core event_extra
+WANTLIB-gtk += gdk-3 gdk_pixbuf-2.0 gdkmm-3.0 gio-2.0 giomm-2.4 glib-2.0
+WANTLIB-gtk += glibmm-2.4 gobject-2.0 gtk-3 gtkmm-3.0 harfbuzz intl
+WANTLIB-gtk += m miniupnpc natpmp pango-1.0 pangocairo-1.0 pangomm-1.4
+WANTLIB-gtk += psl sigc-2.0 ssl
 
-WANTLIB-gtk +=	${WANTLIB-common} atk-1.0 atkmm-1.6 cairo cairo-gobject
-WANTLIB-gtk +=	cairomm-1.0 gdk-3 gdk_pixbuf-2.0 gdkmm-3.0 gio-2.0
-WANTLIB-gtk +=	giomm-2.4 glib-2.0 glibmm-2.4 gobject-2.0 gtk-3 gtkmm-3.0
-WANTLIB-gtk +=	harfbuzz intl pango-1.0 pangocairo-1.0 pangomm-1.4 sigc-2.0
-
-WANTLIB-qt +=	${WANTLIB-common} GL Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6Svg
-WANTLIB-qt +=	Qt6Widgets
+WANTLIB-qt += ${COMPILER_LIBCXX} GL Qt6Core Qt6DBus Qt6Gui Qt6Network
+WANTLIB-qt += Qt6Svg Qt6Widgets c crc32c crypto curl deflate event_core
+WANTLIB-qt += event_extra intl m miniupnpc natpmp psl ssl
 
 MODULES +=		devel/cmake \
 			textproc/intltool
@@ -99,6 +102,7 @@ MODULES +=		devel/cmake \
 
 LIB_DEPENDS-common +=	archivers/libdeflate \
 			devel/crc32c \
+			devel/libevent2 \
 			net/curl \
 			net/libpsl \
 			net/miniupnp/libnatpmp \
@@ -123,10 +127,6 @@ RUN_DEPENDS-qt +=	${PKGNAME-main}:${BUILD_PKGPATH} \
 
 CONFIGURE_ARGS +=	-DENABLE_CLI=ON
 CONFIGURE_ARGS +=	-DRUN_CLANG_TIDY=OFF
-
-# XXX sees ports libevent2 but picks base libevent expecting a single .so.*
-# use the bundle until upstream cmake code gets fixed
-CONFIGURE_ARGS +=	-DUSE_SYSTEM_EVENT2=OFF
 
 .if ${BUILD_PACKAGES:M-gtk}
 CONFIGURE_ARGS +=	-DENABLE_GTK=ON \
