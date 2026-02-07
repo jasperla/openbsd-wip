@@ -10,8 +10,8 @@ COMMENT=	Code::Blocks C/C++ IDE
 #
 #EXTRACT_SUFX=	.tar.xz
 
-DIST_TUPLE =    github jggimi codeblocks d1d4a04f640720778d75390ff43240795fce0044 .
-SVN_REV = 	13776
+DIST_TUPLE =    github jggimi codeblocks 2fe63cebd8b8c2ff429f27e9475702092ade58a2 .
+SVN_REV = 	13781
 SUBST_VARS +=	SVN_REV
 V =             25.03pl${SVN_REV}
 PKGNAME =       codeblocks-${V}
@@ -28,7 +28,6 @@ SHARED_LIBS +=  wxcustombutton       0.1      # 0.1
 SHARED_LIBS +=  wximagepanel         0.1      # 0.1
 SHARED_LIBS +=  wxspeedbutton        0.1      # 0.1
 SHARED_LIBS +=  wxkwic               0.1      # 0.1
-SHARED_LIBS +=  wxtreelist           0.1      # 0.1
 SHARED_LIBS +=  wxled                0.1      # 0.1
 SHARED_LIBS +=  wxsmithlib           0.1      # 0.1
 SHARED_LIBS +=  wxmathplot           0.1      # 0.1
@@ -60,7 +59,8 @@ WANTLIB += wx_gtk3u_core-3.2 wx_gtk3u_html-3.2 wx_gtk3u_propgrid-3.2
 WANTLIB += wx_gtk3u_qa-3.2 wx_gtk3u_richtext-3.2 wx_gtk3u_xrc-3.2
 WANTLIB += xcb xcb-render xcb-shm xkbcommon z zstd
 
-BUILD_DEPENDS=	archivers/zip
+BUILD_DEPENDS=  archivers/zip \
+                devel/boost
 
 LIB_DEPENDS=	archivers/bzip2 \
 		textproc/hunspell \
@@ -87,7 +87,6 @@ CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--with-contrib-plugins=all,-FileManager
 CONFIGURE_ARGS += --enable-debug
-CONFIGURE_ARGS += --with-boost-libdir=${LOCALBASE}/lib
 
 post-patch:
 	cd ${WRKSRC} && \
