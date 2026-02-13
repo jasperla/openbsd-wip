@@ -4,8 +4,8 @@ COMMENT-qt=	BitTorrent client with Qt interface
 
 # for integration testing beyond 4.1.0-beta.5
 
-VER=		4.1.0pl20260205
-GIT_REVISION=	39803eb0f092ec0e19e71a878e93733a7e453323
+VER=		4.1.0pl20260213
+GIT_REVISION=	c7ea8d688e7ce27b9830c2222585f6833cef2750
 PKGNAME=        transmission-${VER}
 CATEGORIES=	net
 HOMEPAGE=	https://transmissionbt.com/
