@@ -2,7 +2,7 @@ COMMENT =	git command for automating fixup/autosquash commits
 
 GH_ACCOUNT =	tummychow
 GH_PROJECT =	git-absorb
-GH_TAGNAME =	0.8.0
+GH_TAGNAME =	0.9.0
 
 CATEGORIES =	devel
 

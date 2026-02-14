@@ -98,7 +98,7 @@ SHA256 (cargo/windows_x86_64_gnullvm-0.48.5.tar.gz) = C3tSdnhooj1bq3aOOQ3F9cVYJb
 SHA256 (cargo/windows_x86_64_gnullvm-0.52.4.tar.gz) = d8p58kUbSfqeKvOfB0f+mZ/NpPXiQbKJhiTcqXofIXc=
 SHA256 (cargo/windows_x86_64_msvc-0.48.5.tar.gz) = 7ZT85hVxpABoUrc4mgY6uYPALrG7N7R/gnLOktBtlTg=
 SHA256 (cargo/windows_x86_64_msvc-0.52.4.tar.gz) = MrdS5SotoN3728xvzq3+7eTJOe0W0T5kiDOmHfthHtg=
-SHA256 (git-absorb-0.8.0.tar.gz) = ntb++AH7/rcRB0TKw4rlszh9iDJ0muIAd7kTnQMiEfE=
+SHA256 (git-absorb-0.9.0.tar.gz) = oPdOYwbX+9dG0rSmhWYh1Gp/guPoi2u4tvwEgM+BH1M=
 SIZE (cargo/anstream-0.6.13.tar.gz) = 30928
 SIZE (cargo/anstyle-1.0.6.tar.gz) = 14604
 SIZE (cargo/anstyle-parse-0.2.3.tar.gz) = 24699
@@ -199,4 +199,4 @@ SIZE (cargo/windows_x86_64_gnullvm-0.48.5.tar.gz) = 418486
 SIZE (cargo/windows_x86_64_gnullvm-0.52.4.tar.gz) = 433358
 SIZE (cargo/windows_x86_64_msvc-0.48.5.tar.gz) = 798412
 SIZE (cargo/windows_x86_64_msvc-0.52.4.tar.gz) = 828019
-SIZE (git-absorb-0.8.0.tar.gz) = 36112
+SIZE (git-absorb-0.9.0.tar.gz) = 38209
