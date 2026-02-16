@@ -1,19 +1,5 @@
-This WIP port is for integration testing post 2025.09.04
+v2.0 was tagged 15/2/2026; waiting on qt6 update packages
+prior to building.
 
-This test client will NOT connect to the public Internet server as a 
-human player, as authentication has changed.  It can connect
-successfully as a guest.
-
-There is a private test server available for coordinated ranking 
-games.  I have connected to it, though the next ranking game test is
-not yet scheduled.
-
----
-
-The included dedicated_server can be run as a CI test-only target,
-it requires being executed from the top of the source tree:
-see docs/server_setup_howto.txt.
-
-The last commit capable of connecting to the official 1.1.2
-server for internet games (as a human player) is currently
-maintained as a separate branch: last-client-for-112-server.
+At the moment the pokerth.net public servers are in transition
+supporting both 1.1.2 and 2.0 clients.
