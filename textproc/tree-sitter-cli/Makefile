@@ -26,10 +26,30 @@ SEPARATE_BUILD=	Yes
 # for rquickjs-sys build
 MODCARGO_ENV =	LIBCLANG_PATH=${LOCALBASE}/llvm${MODCLANG_VERSION}/lib
 
+PORTHOME =	${WRKSRC}
+
+# Generate shell completions for bash/fish/zsh
+post-build:
+	${MODCARGO_TARGET_DIR}/release/tree-sitter complete -s bash \
+		> ${WRKBUILD}/tree-sitter.bash
+	${MODCARGO_TARGET_DIR}/release/tree-sitter complete -s fish \
+		> ${WRKBUILD}/tree-sitter.fish
+	${MODCARGO_TARGET_DIR}/release/tree-sitter complete -s zsh \
+		> ${WRKBUILD}/tree-sitter.zsh
+
 do-install:
 	${INSTALL_PROGRAM} ${MODCARGO_TARGET_DIR}/release/tree-sitter ${PREFIX}/bin/
 
-# TODO Generate and install shell completions (bash/fish/zsh)
+	${INSTALL_DATA_DIR} \
+		${PREFIX}/share/bash-completion/completions \
+		${PREFIX}/share/fish/vendor_completions.d \
+		${PREFIX}/share/zsh/site-functions
+	${INSTALL_DATA} ${WRKBUILD}/tree-sitter.bash \
+		${PREFIX}/share/bash-completion/completions/tree-sitter
+	${INSTALL_DATA} ${WRKBUILD}/tree-sitter.fish \
+		${PREFIX}/share/fish/vendor_completions.d/tree-sitter.fish
+	${INSTALL_DATA} ${WRKBUILD}/tree-sitter.zsh \
+		${PREFIX}/share/zsh/site-functions/_tree-sitter
 
 # TODO Fix tests
 
