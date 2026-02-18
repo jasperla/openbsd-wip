@@ -26,7 +26,9 @@ SEPARATE_BUILD=	Yes
 # for rquickjs-sys build
 MODCARGO_ENV =	LIBCLANG_PATH=${LOCALBASE}/llvm${MODCLANG_VERSION}/lib
 
-PORTHOME =	${WRKSRC}
+# Don't run tests, need to download files from GitHub
+# See docs/src/6-contributing.md in GH repository
+NO_TEST =	Yes
 
 # Generate shell completions for bash/fish/zsh
 post-build:
@@ -50,8 +52,6 @@ do-install:
 		${PREFIX}/share/fish/vendor_completions.d/tree-sitter.fish
 	${INSTALL_DATA} ${WRKBUILD}/tree-sitter.zsh \
 		${PREFIX}/share/zsh/site-functions/_tree-sitter
-
-# TODO Fix tests
 
 .include "crates.inc"
 
