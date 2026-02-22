@@ -1,0 +1,12 @@
+Index: idlib/math/Simd.h
+--- idlib/math/Simd.h.orig
++++ idlib/math/Simd.h
+@@ -92,7 +92,7 @@ class idSIMDProcessor (public)
+ 		cpuid = CPUID_NONE;
+ 	}
+ 
+-	cpuid_t							cpuid;
++	doom3_cpuid_t							cpuid;
+ 
+ 	virtual ~idSIMDProcessor() {}                   // SRS - Added virtual destructor
+ 
