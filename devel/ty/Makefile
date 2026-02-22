@@ -2,11 +2,11 @@ COMMENT =	fast Python type checker and language server
 
 GH_ACCOUNT =	astral-sh
 GH_PROJECT =	ty
-GH_TAGNAME =	0.0.17
+GH_TAGNAME =	0.0.18
 
-# Download fuff sources (sub-module in Git repository)
-RUFF_COMMIT =	10c082f616d8296df0cd3489a98db8c5d40628d1
-DIST_TUPLE +=	github astral-sh ruff ${RUFF_COMMIT} ruff
+# Download ruff sources (sub-module in Git repository)
+RUFF =		ba95d94b6aa5d1b5a93575a0e09264fffd0eea6d
+DIST_TUPLE +=	github astral-sh ruff ${RUFF} ruff
 
 # Rust crates downloaded via git
 LSPTYPES =	3512a9f33eadc5402cfab1b8f7340824c8ca1439
@@ -33,17 +33,23 @@ RUN_DEPENDS +=	devel/ruff
 
 MODPY_PYBUILD =	maturin
 
-# MODCARGO_CARGOTOML =	${WRKSRC}/ruff/Cargo.toml
-MODCARGO_CARGOTOML =	${WRKSRC}/ruff/crates/ty/Cargo.toml
+# Used to generate crates.inc
+MODCARGO_CARGOTOML =	${WRKSRC}/ruff/Cargo.toml
 
 # Don't use libzstd => prevents errors during build/link
 MODCARGO_CRATES_KEEP +=	zstd-sys
 
 # Error with install
-SEPARATE_BUILD =	No
+SEPARATE_BUILD=	No
 
 # Python lsprotocol module needed for running tests
 NO_TEST =	Yes
+
+# MODCARGO_CARGOTOML cannot be used for build
+do-build:
+	${MODCARGO_CARGO_RUN} build \
+		--manifest-path ${WRKSRC}/ruff/crates/ty/Cargo.toml \
+		--release ${MODCARGO_BUILD_ARGS}
 
 # To generate Rust crates.inc:
 # make extract && make modcargo-gen-crates && make modcargo-gen-crates-licenses
