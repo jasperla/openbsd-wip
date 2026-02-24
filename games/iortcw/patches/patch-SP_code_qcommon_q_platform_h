@@ -1,0 +1,12 @@
+Index: SP/code/qcommon/q_platform.h
+--- SP/code/qcommon/q_platform.h.orig
++++ SP/code/qcommon/q_platform.h
+@@ -154,7 +154,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston,
+ #elif defined __x86_64__
+ #undef idx64
+ #define idx64 1
+-#define ARCH_STRING "x86_64"
++#define ARCH_STRING "amd64"
+ #define Q3_LITTLE_ENDIAN
+ #elif defined __aarch64__
+ #define ARCH_STRING "arm64"
