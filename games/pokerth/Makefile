@@ -2,7 +2,7 @@ BROKEN-i386 =	protobuf/abseil problems
 
 COMMENT =	texas holdem poker client, local or internet games
 
-V = 		2.0.3
+V = 		2.0.4
 DIST_TUPLE =	github pokerth pokerth v${V} .
 PKGNAME =	pokerth-${V}
 
@@ -18,10 +18,10 @@ SUBST_VARS +=	MODQT_QTDIR V
 
 ALL_TARGET =	pokerth_client
 
-CONFIGURE_ARGS +=   -DCMAKE_BUILD_TYPE=RelWithDebInfo
-MODCMAKE_LDFLAGS += -L${LOCALBASE}/lib -liconv
+CONFIGURE_ARGS +=	-DCMAKE_BUILD_TYPE=RelWithDebInfo
+MODCMAKE_LDFLAGS +=	-L${LOCALBASE}/lib -liconv
 
-DEBUG_PACKAGES =		${BUILD_PACKAGES}
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 BUILD_DEPENDS +=	x11/qt6/qtwebsockets
 

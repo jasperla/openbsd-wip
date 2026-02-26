@@ -1,5 +1,3 @@
-v2.0 was tagged 15/2/2026; waiting on qt6 update packages
-prior to building.
+Sent to ports@ 26 Feb.
 
-At the moment the pokerth.net public servers are in transition
-supporting both 1.1.2 and 2.0 clients.
+More bugfix patches are expected.
