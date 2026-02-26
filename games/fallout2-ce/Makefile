@@ -18,7 +18,9 @@ MODULES =		devel/cmake
 
 LIB_DEPENDS =		devel/sdl2
 
-CONFIGURE_ARGS =       -Dfpattern_SOURCE_DIR=${WRKSRC}/third_party/fpattern
+CONFIGURE_ARGS =	-Dfpattern_SOURCE_DIR=${WRKSRC}/third_party/fpattern
+
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 post-extract:
 	rm -fr ${WRKDIST}/third_party/fpattern
