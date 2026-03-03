@@ -2,14 +2,14 @@ COMMENT =	fast Python type checker and language server
 
 GH_ACCOUNT =	astral-sh
 GH_PROJECT =	ty
-GH_TAGNAME =	0.0.19
+GH_TAGNAME =	0.0.20
 
 # Download ruff sources (sub-module in Git repository)
-RUFF =		0e19fc9a61477e71abc4eb76f05a129b6b9ab873
+RUFF =		313336b61bba043a636084e6047eccaea9a4e773
 DIST_TUPLE +=	github astral-sh ruff ${RUFF} ruff
 
 # Rust crates downloaded via git
-LSPTYPES =	3512a9f33eadc5402cfab1b8f7340824c8ca1439
+LSPTYPES =	e15db0593f0ecbbd80599c3f5880e4bf5da1ca0c
 SALSA =		53421c2fff87426fa0bb51cab06632b87646de13
 
 DIST_TUPLE +=	github astral-sh lsp-types ${LSPTYPES} ../lsp-types
