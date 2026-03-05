@@ -2,10 +2,10 @@ COMMENT-main=	BitTorrent command line and daemon client
 COMMENT-gtk=	BitTorrent client with GTK+ interface
 COMMENT-qt=	BitTorrent client with Qt interface
 
-# for integration testing beyond 4.1.0-beta.5
+# for integration testing beyond 4.1.1
 
-VER=		4.1.0pl20260213
-GIT_REVISION=	c7ea8d688e7ce27b9830c2222585f6833cef2750
+VER=		4.1.1pl20260304
+GIT_REVISION=	cee65c760663e334a46850f5154017eb30179315
 PKGNAME=        transmission-${VER}
 CATEGORIES=	net
 HOMEPAGE=	https://transmissionbt.com/
@@ -80,18 +80,18 @@ FLAVOR?=
 
 .include <bsd.port.arch.mk>
 
-WANTLIB-main += ${COMPILER_LIBCXX} c crc32c crypto curl deflate event_core
+WANTLIB-main += ${COMPILER_LIBCXX} c crypto curl deflate event_core
 WANTLIB-main += event_extra intl m miniupnpc natpmp psl ssl
 
 WANTLIB-gtk += ${COMPILER_LIBCXX} atk-1.0 atkmm-1.6 c cairo cairo-gobject
-WANTLIB-gtk += cairomm-1.0 crc32c crypto curl deflate event_core event_extra
+WANTLIB-gtk += cairomm-1.0 crypto curl deflate event_core event_extra
 WANTLIB-gtk += gdk-3 gdk_pixbuf-2.0 gdkmm-3.0 gio-2.0 giomm-2.4 glib-2.0
 WANTLIB-gtk += glibmm-2.4 gobject-2.0 gtk-3 gtkmm-3.0 harfbuzz intl
 WANTLIB-gtk += m miniupnpc natpmp pango-1.0 pangocairo-1.0 pangomm-1.4
 WANTLIB-gtk += psl sigc-2.0 ssl
 
 WANTLIB-qt += ${COMPILER_LIBCXX} GL Qt6Core Qt6DBus Qt6Gui Qt6Network
-WANTLIB-qt += Qt6Svg Qt6Widgets c crc32c crypto curl deflate event_core
+WANTLIB-qt += Qt6Svg Qt6Widgets c crypto curl deflate event_core
 WANTLIB-qt += event_extra intl m miniupnpc natpmp psl ssl
 
 MODULES +=		devel/cmake \
@@ -101,7 +101,6 @@ MODULES +=		devel/cmake \
 #BUILD_DEPENDS +=	devel/fmt
 
 LIB_DEPENDS-common +=	archivers/libdeflate \
-			devel/crc32c \
 			devel/libevent2 \
 			net/curl \
 			net/libpsl \

@@ -70,7 +70,6 @@ share/doc/transmission/news/news-4.1.0-beta.5.md
 share/doc/transmission/news/news-5.0.0-draft.md
 share/doc/transmission/rpc-spec.md
 share/doc/transmission/send-email-when-torrent-done.sh
-@comment XXX update-plist(1) really wants this here, but -main is CLI only
 @comment share/icons/
 @comment share/icons/hicolor/
 @comment share/icons/hicolor/scalable/
@@ -89,9 +88,3 @@ share/transmission/public_html/transmission-app.css.LEGAL.txt
 share/transmission/public_html/transmission-app.css.map
 share/transmission/public_html/transmission-app.js
 share/transmission/public_html/transmission-app.js.LEGAL.txt
-@comment XXX update-plist(1) really wants this here, but -main is CLI only
-@comment @tag gtk-update-icon-cache %D/share/icons/hicolor
-share/transmission/translations/transmission_he.qm
-share/transmission/translations/transmission_is.qm
-share/transmission/translations/transmission_it.qm
-share/transmission/translations/transmission_zh_TW.qm
