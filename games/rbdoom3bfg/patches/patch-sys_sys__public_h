@@ -1,0 +1,30 @@
+Index: sys/sys_public.h
+--- sys/sys_public.h.orig
++++ sys/sys_public.h
+@@ -40,7 +40,7 @@ If you have questions concerning this license or the a
+ ===============================================================================
+ */
+ 
+-enum cpuid_t
++enum doom3_cpuid_t
+ {
+ 	CPUID_NONE							= 0x00000,
+ 	CPUID_UNSUPPORTED					= 0x00001,	// unsupported (386/486)
+@@ -517,7 +517,7 @@ double			Sys_GetClockTicks();
+ double			Sys_ClockTicksPerSecond();
+ 
+ // returns a selection of the CPUID_* flags
+-cpuid_t			Sys_GetProcessorId();
++doom3_cpuid_t			Sys_GetProcessorId();
+ const char* 	Sys_GetProcessorString();
+ 
+ // returns true if the FPU stack is empty
+@@ -808,7 +808,7 @@ class idSys (public)
+ 
+ 	virtual double			GetClockTicks() = 0;
+ 	virtual double			ClockTicksPerSecond() = 0;
+-	virtual cpuid_t			GetProcessorId() = 0;
++	virtual doom3_cpuid_t			GetProcessorId() = 0;
+ 	virtual const char* 	GetProcessorString() = 0;
+ 	virtual const char* 	FPU_GetState() = 0;
+ 	virtual bool			FPU_StackIsEmpty() = 0;
