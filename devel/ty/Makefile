@@ -2,10 +2,10 @@ COMMENT =	fast Python type checker and language server
 
 GH_ACCOUNT =	astral-sh
 GH_PROJECT =	ty
-GH_TAGNAME =	0.0.20
+GH_TAGNAME =	0.0.21
 
 # Download ruff sources (sub-module in Git repository)
-RUFF =		313336b61bba043a636084e6047eccaea9a4e773
+RUFF =		94c0a20e3c5b1d9f221b6af800c1e9f649c77388
 DIST_TUPLE +=	github astral-sh ruff ${RUFF} ruff
 
 # Rust crates downloaded via git
@@ -23,7 +23,7 @@ HOMEPAGE = 	https://docs.astral.sh/ty/
 MAINTAINER =	Laurent Cheylus <foxy@free.fr>
 
 # MIT
-PERMIT_PACKAGE =	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES =	lang/python
 
@@ -51,8 +51,6 @@ do-build:
 		--manifest-path ${WRKSRC}/ruff/crates/ty/Cargo.toml \
 		--release ${MODCARGO_BUILD_ARGS}
 
-# To generate Rust crates.inc:
-# make extract && make modcargo-gen-crates && make modcargo-gen-crates-licenses
 .include "crates.inc"
 
 .include <bsd.port.mk>
