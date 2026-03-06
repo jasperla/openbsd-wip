@@ -1,7 +1,7 @@
 MODGO_MODULES =	\
 	github.com/agnivade/levenshtein		 v1.2.2-0.20250519083737-420867539855 \
 	github.com/arbovm/levenshtein		 v0.0.0-20160628152529-48b4e1c0c4d0 \
-	github.com/boyter/gocodewalker		 v1.5.1 \
+	github.com/boyter/gocodewalker		 v1.5.2-0.20260227212453-19676720409f \
 	github.com/boyter/simplecache		 v0.0.0-20250113230110-8a4c9201822a \
 	github.com/clipperhouse/uax29/v2	 v2.2.0 \
 	github.com/coreos/go-systemd/v22	 v22.5.0 \
@@ -27,16 +27,16 @@ MODGO_MODULES =	\
 	github.com/spf13/pflag			 v1.0.10 \
 	github.com/stretchr/objx		 v0.1.0 \
 	github.com/stretchr/testify		 v1.10.0 \
-	golang.org/x/crypto			 v0.43.0 \
-	golang.org/x/mod			 v0.28.0 \
-	golang.org/x/net			 v0.45.0 \
-	golang.org/x/sync			 v0.17.0 \
-	golang.org/x/sys			 v0.37.0 \
-	golang.org/x/term			 v0.36.0 \
-	golang.org/x/text			 v0.30.0 \
-	golang.org/x/tools			 v0.37.0 \
+	go.yaml.in/yaml/v2			 v2.4.3 \
+	golang.org/x/crypto			 v0.45.0 \
+	golang.org/x/mod			 v0.29.0 \
+	golang.org/x/net			 v0.47.0 \
+	golang.org/x/sync			 v0.18.0 \
+	golang.org/x/sys			 v0.38.0 \
+	golang.org/x/term			 v0.37.0 \
+	golang.org/x/text			 v0.31.0 \
+	golang.org/x/tools			 v0.38.0 \
 	gopkg.in/check.v1			 v0.0.0-20161208181325-20d25e280405 \
-	gopkg.in/yaml.v2			 v2.4.0 \
 	gopkg.in/yaml.v3			 v3.0.1
 
 MODGO_MODFILES =	\
