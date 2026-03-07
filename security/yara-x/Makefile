@@ -44,6 +44,7 @@ pre-install:
 
 do-install:
 	${INSTALL_PROGRAM} ${MODCARGO_TARGET_DIR}/release/yr ${PREFIX}/bin/
+	${INSTALL_PROGRAM} ${MODCARGO_TARGET_DIR}/release/yr-ls ${PREFIX}/bin/
 
 	${INSTALL_DATA_DIR} ${PREFIX}/share/bash-completion/completions/ \
 		${PREFIX}/share/fish/vendor_completions.d/ \

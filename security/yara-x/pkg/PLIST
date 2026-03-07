@@ -1,4 +1,5 @@
 @bin bin/yr
+@bin bin/yr-ls
 share/bash-completion/
 share/bash-completion/completions/
 share/bash-completion/completions/yr
