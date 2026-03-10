@@ -77,7 +77,7 @@ MODGO_MODULES =	\
 	modernc.org/memory				 v1.11.0 \
 	modernc.org/opt					 v0.1.4 \
 	modernc.org/sortutil				 v1.2.1 \
-	modernc.org/sqlite				 v1.45.0 \
+	modernc.org/sqlite				 v1.46.1 \
 	modernc.org/strutil				 v1.2.1 \
 	modernc.org/token				 v1.1.0
 
