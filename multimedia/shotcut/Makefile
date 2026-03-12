@@ -2,10 +2,10 @@ USE_WXNEEDED =	Yes
 
 COMMENT =	video editor
 
-V =		26.1.30
+V =             26.2.26
 
-DIST_TUPLE =	github mltframework shotcut v26.1.30 .
-PKGNAME =	shotcut-${V}
+DIST_TUPLE =	github mltframework shotcut 6742c08f7874d362fe82a8693323d7a61e98c1ea .
+PKGNAME =	shotcut-${V}pl20260312
 
 CATEGORIES =	multimedia
 
