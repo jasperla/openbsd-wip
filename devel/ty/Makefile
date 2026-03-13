@@ -2,10 +2,10 @@ COMMENT =	fast Python type checker and language server
 
 GH_ACCOUNT =	astral-sh
 GH_PROJECT =	ty
-GH_TAGNAME =	0.0.21
+GH_TAGNAME =	0.0.22
 
 # Download ruff sources (sub-module in Git repository)
-RUFF =		94c0a20e3c5b1d9f221b6af800c1e9f649c77388
+RUFF =		04229cffb44dfe8c64a0879eb3cea472a08d1565
 DIST_TUPLE +=	github astral-sh ruff ${RUFF} ruff
 
 # Rust crates downloaded via git
