@@ -5,16 +5,11 @@ CATEGORIES =		net firmware
 COMMENT =		PXE network boot firmware
 HOMEPAGE =		https://ipxe.org
 
-# Official binaries use latest HEAD, last tagged in 2020.
-V =			1.21.1
-HEAD =			9c01c5a5dacb54167132d9a27259b23acdf091d6
-DIST_TUPLE =		github	ipxe	ipxe	${HEAD}	.
+V =			2.0.0
+DIST_TUPLE =		github	ipxe	ipxe	v${V}	.
 WRKSRC =		${WRKDIST}/src
-# What 'gmake version' would print for a git checkout.
-VERSION =		${V}+ (g${HEAD:C/^(.{4}).+/\1/})
 
-# Our patch-level is the number of post-tag commits from output mentioned above.
-PKGNAME =		ipxe-${IPXE_ARCH}-${V}pl1175
+PKGNAME =		ipxe-${IPXE_ARCH}-${V}
 FULLPKGNAME =		${PKGNAME}
 PKG_ARCH =		*
 
@@ -81,8 +76,7 @@ USE_GMAKE =		Yes
 MAKE_FLAGS +=		CROSS=${CROSS} \
 			HOST_CC=${CC} \
 			HOST_CFLAGS=${HOST_CFLAGS:Q} \
-			V=1 \
-			VERSION=${VERSION:Q}
+			V=1
 
 # Avoid image changes on rebuilds.
 BUILD_ID_CMD =		cksum -s OpenBSD -q | cut -d' ' -f1

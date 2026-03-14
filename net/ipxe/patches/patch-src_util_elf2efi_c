@@ -3,7 +3,7 @@ pull in missing relocation macros, see DISTFILES.elf
 Index: src/util/elf2efi.c
 --- src/util/elf2efi.c.orig
 +++ src/util/elf2efi.c
-@@ -32,6 +32,7 @@
+@@ -33,6 +33,7 @@
  #include <sys/mman.h>
  #include <fcntl.h>
  #include <elf.h>
