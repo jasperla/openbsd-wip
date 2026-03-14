@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=Qtile
+Comment=Qtile Session
+Exec=qtile start
+TryExec=qtile
+Type=Application
+DesktopNames=Qtile
