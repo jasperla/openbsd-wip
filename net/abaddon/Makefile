@@ -17,6 +17,8 @@ CATEGORIES =	net x11
 
 HOMEPAGE =	https://github.com/uowuo/abaddon
 
+MAINTAINER =	izzy Meyer <izder456@disroot.org>
+
 # GPLv3+, IXWebSocket 3BSD, miniaudio MIT QR-Code-generator MIT
 PERMIT_PACKAGE =	Yes
 
