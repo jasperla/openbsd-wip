@@ -2,8 +2,12 @@
 share/abaddon/
 share/abaddon/css/
 share/abaddon/css/main.css
+share/abaddon/desktop/
+share/abaddon/desktop/icon.svg
+share/abaddon/desktop/io.github.uowuo.abaddon.desktop
+share/abaddon/desktop/io.github.uowuo.abaddon.metainfo.xml
 share/abaddon/fonts/
-share/abaddon/fonts/TwitterColorEmoji.ttf
+share/abaddon/fonts/Twemoji-15.0.3.ttf
 share/abaddon/fonts/conf.d/
 share/abaddon/fonts/conf.d/10-autohint.conf
 share/abaddon/fonts/conf.d/10-hinting-full.conf
@@ -54,7 +58,7 @@ share/abaddon/res/e1e96d89e192de1997f73730db26e94f.png
 share/abaddon/res/earlysupporter.png
 share/abaddon/res/earlyverifiedbotdeveloper.png
 share/abaddon/res/ebay.png
-share/abaddon/res/emojis.bin
+share/abaddon/res/emojis.db
 share/abaddon/res/facebook.png
 share/abaddon/res/github.png
 share/abaddon/res/guildsubscriber.png
