@@ -1,28 +1,34 @@
-[source."git+https://github.com/boxdot/qr2term-rs?rev=ed8ae7f"]
-git = "https://github.com/boxdot/qr2term-rs"
-rev = "ed8ae7f"
-replace-with = "vendored-sources"
-
-[source."git+https://github.com/signalapp/curve25519-dalek?tag=signal-curve25519-4.1.1"]
-git = "https://github.com/signalapp/curve25519-dalek"
-tag = "signal-curve25519-4.1.1"
-replace-with = "vendored-sources"
-
-[source."git+https://github.com/signalapp/libsignal?tag=v0.40.1"]
-git = "https://github.com/signalapp/libsignal"
-tag = "v0.40.1"
-replace-with = "vendored-sources"
-
-[source."git+https://github.com/whisperfish/libsignal-service-rs?rev=689a4c2"]
-git = "https://github.com/whisperfish/libsignal-service-rs"
-rev = "689a4c2"
-replace-with = "vendored-sources"
-
-[source."git+https://github.com/whisperfish/presage?rev=97e2357"]
+[source."git+https://github.com/whisperfish/presage?rev=c3d4dd56444e264bbd9b416968e121c1fdc6972e"]
 git = "https://github.com/whisperfish/presage"
-rev = "97e2357"
-replace-with = "vendored-sources"
+rev = "c3d4dd56444e264bbd9b416968e121c1fdc6972e"
+replace-with = "modcargo"
 
-[source.vendored-sources]
-directory = "vendor"
+[source."git+https://github.com/signalapp/libsignal?tag=v0.87.4"]
+git = "https://github.com/signalapp/libsignal"
+tag = "v0.87.4"
+replace-with = "modcargo"
 
+[source."git+https://github.com/whisperfish/libsignal-service-rs?rev=72669e18498c73c27ba8430db37aee626e549027"]
+git = "https://github.com/whisperfish/libsignal-service-rs"
+rev = "72669e18498c73c27ba8430db37aee626e549027"
+replace-with = "modcargo"
+
+[source."git+https://github.com/boxdot/rusqlite?rev=d4523ff6cdb6472db55789ae92d518989ee8bfd6"]
+git = "https://github.com/boxdot/rusqlite"
+rev = "d4523ff6cdb6472db55789ae92d518989ee8bfd6"
+replace-with = "modcargo"
+
+[source."git+https://github.com/gferon/sqlx?rev=53c3a26c1b484175f3beb21853a1061b488bf7af"]
+git = "https://github.com/gferon/sqlx"
+rev = "53c3a26c1b484175f3beb21853a1061b488bf7af"
+replace-with = "modcargo"
+
+[source."git+https://github.com/signalapp/curve25519-dalek?tag=signal-curve25519-4.1.3"]
+git = "https://github.com/signalapp/curve25519-dalek"
+tag = "signal-curve25519-4.1.3"
+replace-with = "modcargo"
+
+[source."git+https://github.com/signalapp/SparsePostQuantumRatchet.git?tag=v1.4.0"]
+git = "https://github.com/signalapp/SparsePostQuantumRatchet.git"
+tag = "v1.4.0"
+replace-with = "modcargo"

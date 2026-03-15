@@ -1,6 +1,6 @@
 COMMENT =	Signal Messenger client for the terminal
 
-DIST_TUPLE =	github boxdot gurk-rs v0.4.3 .
+DIST_TUPLE =	github boxdot gurk-rs v0.9.0 .
 
 CATEGORIES =	net
 
@@ -9,30 +9,32 @@ MAINTAINER =	Stefan Hagen <sh+ports@codevoid.de>
 # AGPL 3.0
 PERMIT_PACKAGE =	Yes
 
-# vendor files (see ${FILESDIR}/config)
+# vendor files for git-sourced dependencies (see ${FILESDIR}/config)
 SITES.cv =	https://codevoid.de/h/
 DISTFILES.cv +=	${DISTNAME}-vendorfiles${EXTRACT_SUFX}
 
 MODULES =	devel/cargo
 
-MODCARGO_CRATES_KEEP =	libsqlite3-sys
-
 WANTLIB =	m ${MODCARGO_WANTLIB}
 
 BUILD_DEPENDS =	${MODCARGO_BUILD_DEPENDS} \
-		devel/protobuf \
-		security/rust-ring
+		devel/protobuf
 
 CONFIGURE_STYLE =	cargo
 
-SUBST_VARS =	LOCALBASE
-
-# post-patch:
-# 	cd ${WRKDIR}/vendor && ${PATCH} \
-# 		< ${FILESDIR}/notification.rs.patch
+post-extract:
+	# Move git-sourced vendor crates into the cargo vendor directory
+	mkdir -p ${MODCARGO_VENDOR_DIR}
+	for d in curve25519-dalek curve25519-dalek-derive \
+	    libsignal-account-keys libsignal-core libsignal-protocol \
+	    libsignal-service libsqlite3-sys poksho presage \
+	    presage-store-sqlite signal-crypto spqr sqlcipher-crypto-provider \
+	    sqlx sqlx-core sqlx-macros sqlx-macros-core sqlx-mysql \
+	    sqlx-postgres sqlx-sqlite usernames zkcredential zkgroup; do \
+		mv ${WRKDIR}/vendor/$$d ${MODCARGO_VENDOR_DIR}/; \
+	done
 
 post-configure:
-	sed -i '/opt-level/s,2,0,' ${WRKDIR}/.cargo/config.toml
 	cat ${FILESDIR}/config >> ${WRKDIR}/.cargo/config.toml
 
 do-install:

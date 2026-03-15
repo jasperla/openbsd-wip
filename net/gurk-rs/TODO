@@ -1,3 +1,6 @@
-State: working
+State: updated to 0.9.0, builds and packages successfully, but:
 
-TODO: patch notification crate. Patch included in the files directory, but not applied yet.
+Error: failed to provision device: Service error: Unexpected response: HTTP 409
+(https://github.com/boxdot/gurk-rs/issues/512)
+
+TODO: how can we deal with all those git referenced dependencies?
