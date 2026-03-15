@@ -73,8 +73,6 @@ MULTI_PACKAGES=	-main -gtk -qt
 # gnu++17
 COMPILER =	base-clang ports-gcc
 
-CONFIGURE_ARGS +=	-DCMAKE_BUILD_TYPE=RelWithDebInfo
-
 PSEUDO_FLAVORS=	no_gtk no_qt
 FLAVOR?=
 
