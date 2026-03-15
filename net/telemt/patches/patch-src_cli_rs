@@ -1,0 +1,54 @@
+Disable systemd related code.
+
+Index: src/cli.rs
+--- src/cli.rs.orig
++++ src/cli.rs
+@@ -1,8 +1,7 @@
+ //! CLI commands: --init (fire-and-forget setup)
+ 
+ use std::fs;
+-use std::path::{Path, PathBuf};
+-use std::process::Command;
++use std::path::PathBuf;
+ use rand::Rng;
+ 
+ /// Options for the init command
+@@ -113,6 +112,7 @@ pub fn run_init(opts: InitOptions) -> Result<(), Box<d
+     fs::write(&config_path, &config_content)?;
+     eprintln!("[+] Config written to {}", config_path.display());
+     
++/*
+     // 4. Write systemd unit
+     let exe_path = std::env::current_exe()
+         .unwrap_or_else(|_| PathBuf::from("/usr/local/bin/telemt"));
+@@ -166,6 +166,7 @@ pub fn run_init(opts: InitOptions) -> Result<(), Box<d
+         eprintln!("[+] Service not started (--no-start)");
+         eprintln!("[+] Start manually: systemctl start telemt.service");
+     }
++*/
+     
+     eprintln!();
+     
+@@ -257,6 +258,7 @@ weight = 10
+     )
+ }
+ 
++/*
+ fn generate_systemd_unit(exe_path: &Path, config_path: &Path) -> String {
+     format!(
+ r#"[Unit]
+@@ -299,6 +301,7 @@ fn run_cmd(cmd: &str, args: &[&str]) {
+         }
+     }
+ }
++*/
+ 
+ fn print_links(username: &str, secret: &str, port: u16, domain: &str) {
+     let domain_hex = hex::encode(domain);
+@@ -310,6 +313,5 @@ fn print_links(username: &str, secret: &str, port: u16
+     println!();
+     println!("Replace YOUR_SERVER_IP with your server's public IP.");
+     println!("The proxy will auto-detect and display the correct link on startup.");
+-    println!("Check: journalctl -u telemt.service | head -30");
+     println!("===================");
+ }
