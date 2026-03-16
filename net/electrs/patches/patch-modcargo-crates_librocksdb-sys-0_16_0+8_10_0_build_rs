@@ -1,0 +1,14 @@
+Index: modcargo-crates/electrs-librocksdb-sys-0.9.0-e3+7.8.3/build.rs
+--- modcargo-crates/electrs-librocksdb-sys-0.9.0-e3+7.8.3/build.rs.orig
++++ modcargo-crates/electrs-librocksdb-sys-0.9.0-e3+7.8.3/build.rs
+@@ -162,6 +162,10 @@ fn build_rocksdb() {
+         config.define("OS_FREEBSD", None);
+         config.define("ROCKSDB_PLATFORM_POSIX", None);
+         config.define("ROCKSDB_LIB_IO_POSIX", None);
++    } else if target.contains("openbsd") {
++        config.define("OS_OPENBSD", None);
++        config.define("ROCKSDB_PLATFORM_POSIX", None);
++        config.define("ROCKSDB_LIB_IO_POSIX", None);
+     } else if target.contains("windows") {
+         link("rpcrt4", false);
+         link("shlwapi", false);
