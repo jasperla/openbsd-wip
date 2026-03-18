@@ -23,10 +23,30 @@ MODGO_LDFLAGS +=	-X ${MODGO_MODNAME}/version.Version=${MODGO_VERSION:S/v//}
 
 TEST_TARGET =	./...
 
+# Generate shell completions
+post-build:
+	${MODGO_WORKSPACE}/bin/betterleaks completion bash \
+		> ${WRKBUILD}/betterleaks.bash
+	${MODGO_WORKSPACE}/bin/betterleaks completion fish \
+		> ${WRKBUILD}/betterleaks.fish
+	${MODGO_WORKSPACE}/bin/betterleaks completion zsh \
+		> ${WRKBUILD}/betterleaks.zsh
+
 post-install:
 	 ${INSTALL_DATA_DIR} ${PREFIX}/share/examples/betterleaks
 	 ${INSTALL_DATA} ${WRKSRC}/config/betterleaks.toml \
 		 ${PREFIX}/share/examples/betterleaks/
+
+	${INSTALL_DATA_DIR} \
+		${PREFIX}/share/bash-completion/completions \
+		${PREFIX}/share/fish/vendor_completions.d \
+		${PREFIX}/share/zsh/site-functions
+	${INSTALL_DATA} ${WRKBUILD}/betterleaks.bash \
+		${PREFIX}/share/bash-completion/completions/betterleaks
+	${INSTALL_DATA} ${WRKBUILD}/betterleaks.fish \
+		${PREFIX}/share/fish/vendor_completions.d/betterleaks.fish
+	${INSTALL_DATA} ${WRKBUILD}/betterleaks.zsh \
+		${PREFIX}/share/zsh/site-functions/_betterleaks
 
 .include "modules.inc"
 
