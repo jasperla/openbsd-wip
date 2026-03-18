@@ -1,0 +1,4 @@
+@bin bin/betterleaks
+@comment bin/config
+share/examples/betterleaks/
+share/examples/betterleaks/betterleaks.toml
