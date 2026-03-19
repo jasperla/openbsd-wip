@@ -43,13 +43,25 @@ Index: fixtures/nextest-tests/Cargo.lock
  [[package]]
  name = "quote"
 -version = "1.0.43"
-+version = "1.0.44"
++version = "1.0.45"
  source = "registry+https://github.com/rust-lang/crates.io-index"
 -checksum = "dc74d9a594b72ae6656596548f56f667211f8a97b3d4c3d467150794690dc40a"
-+checksum = "21b2ebcf727b7760c461f091f9f0f539b77b8e87f2fd88131e7f1b433b3cece4"
++checksum = "41f2619966050689382d2b44f664f4bc593e129785a36d6ee376ddf37259b924"
  dependencies = [
   "proc-macro2",
  ]
+@@ -84,9 +84,9 @@ checksum = "b39cdef0fa800fc44525c84ccb54a029961a8215f9
+ 
+ [[package]]
+ name = "syn"
+-version = "2.0.114"
++version = "2.0.117"
+ source = "registry+https://github.com/rust-lang/crates.io-index"
+-checksum = "d4d107df263a3013ef9b1879b0df87d706ff80f65a86ea879bd9c31f9b307c2a"
++checksum = "e665b8803e7b1d2a727f4023456bbbbe74da67099c585258af0ad9c5013b9b99"
+ dependencies = [
+  "proc-macro2",
+  "quote",
 @@ -95,15 +95,15 @@ dependencies = [
  
  [[package]]
