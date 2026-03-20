@@ -4,7 +4,7 @@
 
 Configuration
 =============
-Generate ${SYSCONFDIR}/telemt/config.tml with `telemt --init` (see `--help`)
+Generate ${SYSCONFDIR}/telemt/config.toml with `telemt --init` (see `--help`)
 or adapt commented files from ${EXAMPLES_DIR}/.
 
 The following is recommended:
