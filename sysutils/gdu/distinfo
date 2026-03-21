@@ -1,4 +1,4 @@
-SHA256 (gdu-v5.34.1.zip) = pSvJNR7n9gu/gnZqcri5cGn1LQzEzn8pWHObEhbKWQ0=
+SHA256 (gdu-v5.34.2.zip) = n5wKW/tua4eKmt8ngw9S4AF7yJqAgaaQ48flV/t5WYk=
 SHA256 (go_modules/github.com/cespare/xxhash/v2/@v/v2.3.0.mod) = oJD46q9ZzCrfFjKZ6+/nl+Hco/at0sjoimo7kLpTiwI=
 SHA256 (go_modules/github.com/cespare/xxhash/v2/@v/v2.3.0.zip) = FFomzcfEnbVmAXuAfEmJ7n993rVpQj6cuZ+ZX6w2IdM=
 SHA256 (go_modules/github.com/cpuguy83/go-md2man/v2/@v/v2.0.6.mod) = u4Gp4tFNmlhvBZGFO9qtIw2M3w2Nb/px3driSa1XPMk=
@@ -223,7 +223,7 @@ SHA256 (go_modules/modernc.org/strutil/@v/v1.2.1.mod) = hXcXRceFHU6hakG/ae6hVRzs
 SHA256 (go_modules/modernc.org/strutil/@v/v1.2.1.zip) = W4+mHKQUHF/YIYP61Lx6Ra+CN7b7HfymXOeWCgPEg8Q=
 SHA256 (go_modules/modernc.org/token/@v/v1.1.0.mod) = evOzXO1S6tSw7Q4iEB2VvABh0g4T3Q2aoHFhZKj12xw=
 SHA256 (go_modules/modernc.org/token/@v/v1.1.0.zip) = Pvqknp+xBWnangnnhfojDNXA9Q/PYF87VDnfzWFXfFg=
-SIZE (gdu-v5.34.1.zip) = 381984
+SIZE (gdu-v5.34.2.zip) = 382077
 SIZE (go_modules/github.com/cespare/xxhash/v2/@v/v2.3.0.mod) = 45
 SIZE (go_modules/github.com/cespare/xxhash/v2/@v/v2.3.0.zip) = 17573
 SIZE (go_modules/github.com/cpuguy83/go-md2man/v2/@v/v2.0.6.mod) = 100
