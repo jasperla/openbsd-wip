@@ -45,7 +45,8 @@ SEPARATE_BUILD=	No
 # Python lsprotocol module needed for running tests
 NO_TEST =	Yes
 
-# MODCARGO_CARGOTOML cannot be used for build
+# Overriding MODCARGO_CARGOTOML doesn't work properly here as it would
+# result in incomplete output from modcargo-gen-crates.
 do-build:
 	${MODCARGO_CARGO_RUN} build \
 		--manifest-path ${WRKSRC}/ruff/crates/ty/Cargo.toml \
