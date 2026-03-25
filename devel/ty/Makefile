@@ -39,8 +39,7 @@ MODCARGO_CARGOTOML =	${WRKSRC}/ruff/Cargo.toml
 # Don't use libzstd => prevents errors during build/link
 MODCARGO_CRATES_KEEP +=	zstd-sys
 
-# Error with install
-SEPARATE_BUILD=	No
+SEPARATE_BUILD=	Yes
 
 # Python lsprotocol module needed for running tests
 NO_TEST =	Yes
@@ -52,7 +51,7 @@ do-build:
 		--manifest-path ${WRKSRC}/ruff/crates/ty/Cargo.toml \
 		--release ${MODCARGO_BUILD_ARGS}
 
-# install only ty binary
+# Install only ty binary
 # ruff Python module already installed via ruff package
 do-install:
 	${INSTALL_PROGRAM} ${MODCARGO_TARGET_DIR}/release/ty ${PREFIX}/bin/
