@@ -2,15 +2,15 @@ COMMENT =	fast Python type checker and language server
 
 GH_ACCOUNT =	astral-sh
 GH_PROJECT =	ty
-GH_TAGNAME =	0.0.24
+GH_TAGNAME =	0.0.25
 
 # Download ruff sources (sub-module in Git repository)
-RUFF =		beb543b5c666be9fd3f13c88df818f202b63e9d0
+RUFF =		6c8101a5b3ca4a6833f93e93cf8a33ea83f88616
 DIST_TUPLE +=	github astral-sh ruff ${RUFF} ruff
 
 # Rust crates downloaded via git
 LSPTYPES =	e15db0593f0ecbbd80599c3f5880e4bf5da1ca0c
-SALSA =		53421c2fff87426fa0bb51cab06632b87646de13
+SALSA =		2f687a17ceea8ec7aaa605561ccbde938ccef086
 
 DIST_TUPLE +=	github astral-sh lsp-types ${LSPTYPES} ../lsp-types
 DIST_TUPLE +=	github salsa-rs salsa ${SALSA} ../salsa
@@ -51,6 +51,11 @@ do-build:
 	${MODCARGO_CARGO_RUN} build \
 		--manifest-path ${WRKSRC}/ruff/crates/ty/Cargo.toml \
 		--release ${MODCARGO_BUILD_ARGS}
+
+# install only ty binary
+# ruff Python module already installed via ruff package
+do-install:
+	${INSTALL_PROGRAM} ${MODCARGO_TARGET_DIR}/release/ty ${PREFIX}/bin/
 
 .include "crates.inc"
 
