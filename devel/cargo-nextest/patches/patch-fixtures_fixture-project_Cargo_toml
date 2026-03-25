@@ -1,9 +1,9 @@
 Modify uuid crate version used for tests
 NOK with 1.19.0 version
 
-Index: fixtures/nextest-tests/Cargo.toml
---- fixtures/nextest-tests/Cargo.toml.orig
-+++ fixtures/nextest-tests/Cargo.toml
+Index: fixtures/fixture-project/Cargo.toml
+--- fixtures/fixture-project/Cargo.toml.orig
++++ fixtures/fixture-project/Cargo.toml
 @@ -41,7 +41,7 @@ members = [
  ]
  

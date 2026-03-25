@@ -3,7 +3,7 @@ NOT_FOR_ARCHS =	sparc64
 
 COMMENT =	next-generation test runner for Rust
 
-VERSION =	0.9.131
+VERSION =	0.9.132
 
 DISTNAME =	cargo-nextest-${VERSION}
 
@@ -48,17 +48,17 @@ do-install:
 # Nextest's own tests do not work with cargo test.
 # We must use nextest to run its own test suite.
 #
-# Summary [ 318.636s] 777 tests run: 767 passed, 10 failed, 2 skipped
-# FAIL [   7.173s] (  9/777) integration-tests::integration cargo_message_format::test_cargo_message_format_errors
-# FAIL [  21.129s] ( 15/777) integration-tests::integration interceptor::test_bench_debugger_integration
-# FAIL [  21.317s] ( 17/777) integration-tests::integration interceptor::test_bench_tracer_integration
-# FAIL [  12.001s] ( 33/777) integration-tests::integration record_replay::test_rerun_all_pass
-# FAIL [  10.249s] ( 35/777) integration-tests::integration record_replay::test_rerun_errors
-# FAIL [   5.157s] ( 36/777) integration-tests::integration record_replay::test_rerun_requires_experimental_feature
-# FAIL [  10.571s] ( 39/777) integration-tests::integration record_replay::test_rerun_tests_outstanding
-# FAIL [  25.637s] ( 44/777) integration-tests::integration record_replay::test_rerun_run_id_selectors
-# FAIL [  16.922s] ( 85/777) integration-tests::integration test_setup_script_defined_env
-# FAIL [  16.203s] ( 90/777) integration-tests::integration test_target_dir
+# Summary [ 306.002s] 777 tests run: 767 passed, 10 failed, 2 skipped
+# FAIL [   6.779s] (  9/777) integration-tests::integration cargo_message_format::test_cargo_message_format_errors
+# FAIL [  21.878s] ( 16/777) integration-tests::integration interceptor::test_bench_tracer_integration
+# FAIL [  23.150s] ( 17/777) integration-tests::integration interceptor::test_bench_debugger_integration
+# FAIL [  11.192s] ( 33/777) integration-tests::integration record_replay::test_rerun_all_pass
+# FAIL [   9.983s] ( 34/777) integration-tests::integration record_replay::test_rerun_errors
+# FAIL [   5.159s] ( 37/777) integration-tests::integration record_replay::test_rerun_requires_experimental_feature
+# FAIL [  10.860s] ( 39/777) integration-tests::integration record_replay::test_rerun_tests_outstanding
+# FAIL [  26.193s] ( 44/777) integration-tests::integration record_replay::test_rerun_run_id_selectors
+# FAIL [  14.894s] ( 85/777) integration-tests::integration test_setup_script_defined_env
+# FAIL [  16.069s] ( 90/777) integration-tests::integration test_target_dir
 do-test:
 	NEXTEST_HIDE_PROGRESS_BAR=1 ${MODCARGO_CARGO_RUN} run \
 		--package cargo-nextest -- nextest run --profile ci

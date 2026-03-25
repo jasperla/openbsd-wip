@@ -1,8 +1,8 @@
 Update dependencies for uuid crate version 1.18.1
 
-Index: fixtures/nextest-tests/Cargo.lock
---- fixtures/nextest-tests/Cargo.lock.orig
-+++ fixtures/nextest-tests/Cargo.lock
+Index: fixtures/fixture-project/Cargo.lock
+--- fixtures/fixture-project/Cargo.lock.orig
++++ fixtures/fixture-project/Cargo.lock
 @@ -4,9 +4,9 @@ version = 3
  
  [[package]]
@@ -15,7 +15,7 @@ Index: fixtures/nextest-tests/Cargo.lock
  
  [[package]]
  name = "cdylib-example"
-@@ -28,9 +28,9 @@ version = "0.1.0"
+@@ -36,9 +36,9 @@ dependencies = [
  
  [[package]]
  name = "js-sys"
