@@ -1,0 +1,24 @@
+Remove global allocator as jemalloc is not supported.
+
+Index: crates/zizmor/src/main.rs
+--- crates/zizmor/src/main.rs.orig
++++ crates/zizmor/src/main.rs
+@@ -50,18 +50,6 @@ mod registry;
+ mod state;
+ mod utils;
+ 
+-#[cfg(all(
+-    not(target_family = "windows"),
+-    any(
+-        target_arch = "x86_64",
+-        target_arch = "aarch64",
+-        // NOTE(ww): Not a build we currently support.
+-        // target_arch = "powerpc64"
+-    )
+-))]
+-#[global_allocator]
+-static GLOBAL: tikv_jemallocator::Jemalloc = tikv_jemallocator::Jemalloc;
+-
+ // TODO: Dedupe this with the top-level `sponsors.json` used by the
+ // README + docs site.
+ const THANKS: &[(&str, &str)] = &[

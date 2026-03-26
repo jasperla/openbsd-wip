@@ -1,0 +1,13 @@
+Remove crate tikv-jemalloc unsupported on OpenBSD
+
+Index: Cargo.toml
+--- Cargo.toml.orig
++++ Cargo.toml
+@@ -80,7 +80,6 @@ tree-sitter-bash = "0.25.1"
+ # See: https://github.com/zizmorcore/zizmor/pull/1427
+ tree-sitter-powershell = "=0.26.3"
+ tree-sitter-yaml = "0.7.2"
+-tikv-jemallocator = "0.6"
+ 
+ [workspace.lints.clippy]
+ dbg_macro = "warn"
