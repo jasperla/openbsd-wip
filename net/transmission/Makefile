@@ -4,8 +4,8 @@ COMMENT-qt=	BitTorrent client with Qt interface
 
 # for integration testing beyond 4.1.1
 
-VER=		4.1.1pl20260323
-GIT_REVISION=	566d3d96ef1f19047dfad16e17d49e576e043ac3
+VER=		4.1.1pl20260326
+GIT_REVISION=	51c3dc45b8df625991de004a5e84be9e48320318
 PKGNAME=        transmission-${VER}
 CATEGORIES=	net
 HOMEPAGE=	https://transmissionbt.com/
@@ -25,8 +25,8 @@ DIST_TUPLE+=	github google benchmark 0da57b85cf23e48d0e515f58c65a25425dbde012 \
 		third-party/crc32c/third_party/benchmark
 DIST_TUPLE+=	github google glog \
 		53d58e4531c7c90f71ddab503d915e027432447a third-party/crc32c/third_party/glog
-DIST_TUPLE+=	github google googletest 52204f78f94d7512df1f0f3bea1d47437a2c3a58 \
-		third-party/crc32c/third_party/googletest
+DIST_TUPLE+=	github google googletest \
+		52204f78f94d7512df1f0f3bea1d47437a2c3a58 third-party/crc32c/third_party/googletest
 DIST_TUPLE+=	github transmission dht \
 		38c9f261d9b58b76b9eaf85f84ec1b35151a1eac third-party/dht
 DIST_TUPLE+=	github transmission fast_float \
@@ -53,8 +53,8 @@ DIST_TUPLE+=	github transmission miniupnp \
 		9ff3c71bfb6c7f7bf525d6bda447387de7257aff third-party/miniupnp
 DIST_TUPLE+=	github transmission rapidjson \
 		24b5e7a8b27f42fa16b96fc70aade9106cf7102f third-party/rapidjson
-DIST_TUPLE+=	github google googletest ba96d0b1161f540656efdaed035b3c062b60e006 \
-		third-party/rapidjson/thirdparty/gtest
+DIST_TUPLE+=	github google googletest \
+		ba96d0b1161f540656efdaed035b3c062b60e006 third-party/rapidjson/thirdparty/gtest
 DIST_TUPLE+=	github transmission rpavlik-cmake-modules \
 		d66fc5dec3eaea3a4f9778ceeeb65cbec490b5b9 third-party/rpavlik-cmake-modules
 DIST_TUPLE+=	github transmission sigslot \
