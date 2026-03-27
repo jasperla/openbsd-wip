@@ -25,8 +25,21 @@ SEPARATE_BUILD =	Yes
 do-install:
 	${INSTALL_PROGRAM} ${MODCARGO_TARGET_DIR}/release/zizmor ${PREFIX}/bin/
 
-# TODO Generate and install shell completions for bash/fish/zsh
-# zizmor --completions = <shell>
+# Generate shell completions
+post-install:
+.for i in bash fish zsh
+	${MODCARGO_TARGET_DIR}/release/zizmor --completions $i > ${WRKSRC}/zizmor.$i
+.endfor
+	${INSTALL_DATA_DIR} \
+		${PREFIX}/share/bash-completion/completions \
+		${PREFIX}/share/fish/vendor_completions.d \
+		${PREFIX}/share/zsh/site-functions
+	${INSTALL_DATA} ${WRKSRC}/zizmor.bash \
+		${PREFIX}/share/bash-completion/completions/zizmor
+		${INSTALL_DATA} ${WRKSRC}/zizmor.fish \
+		${PREFIX}/share/fish/vendor_completions.d/
+	${INSTALL_DATA} ${WRKSRC}/zizmor.zsh \
+		${PREFIX}/share/zsh/site-functions/_zizmor
 
 .include "crates.inc"
 
