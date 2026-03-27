@@ -1,24 +1,18 @@
-Remove global allocator as jemalloc is not supported.
+From a8edec78f85ded8808e96e028b491060ea539f92 Mon Sep 17 00:00:00 2001
+From: Laurent Cheylus <foxy@free.fr>
+Date: Thu, 26 Mar 2026 17:20:52 +0100
+Subject: [PATCH] fix: disable use of jemalloc as global allocator on OpenBSD
+
+Signed-off-by: Laurent Cheylus <foxy@free.fr>
 
 Index: crates/zizmor/src/main.rs
 --- crates/zizmor/src/main.rs.orig
 +++ crates/zizmor/src/main.rs
-@@ -50,18 +50,6 @@ mod registry;
- mod state;
- mod utils;
+@@ -52,6 +52,7 @@ mod utils;
  
--#[cfg(all(
--    not(target_family = "windows"),
--    any(
--        target_arch = "x86_64",
--        target_arch = "aarch64",
--        // NOTE(ww): Not a build we currently support.
--        // target_arch = "powerpc64"
--    )
--))]
--#[global_allocator]
--static GLOBAL: tikv_jemallocator::Jemalloc = tikv_jemallocator::Jemalloc;
--
- // TODO: Dedupe this with the top-level `sponsors.json` used by the
- // README + docs site.
- const THANKS: &[(&str, &str)] = &[
+ #[cfg(all(
+     not(target_family = "windows"),
++    not(target_os = "openbsd"),
+     any(
+         target_arch = "x86_64",
+         target_arch = "aarch64",

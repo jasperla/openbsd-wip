@@ -306,6 +306,8 @@ SHA256 (cargo/thiserror-2.0.18.tar.gz) = Qoi1vLx5IMB6EUmjXPlZCiqoCOC8Hq+q3guAlHh
 SHA256 (cargo/thiserror-impl-1.0.69.tar.gz) = T+5sTvyQBZ4Q+B5tQsYKGPdliMPXTLg6CyQqK2x1BME=
 SHA256 (cargo/thiserror-impl-2.0.18.tar.gz) = 68Tuf2dnDptk0F+kJT51PgFsbJX/NbibeUHWuFbewdU=
 SHA256 (cargo/thread_local-1.1.9.tar.gz) = 9gJGpJRPJPbgGKoXze/7eBi3Y1aWXQOwfWqYhuiWIYU=
+SHA256 (cargo/tikv-jemalloc-sys-0.6.1+5.3.0-1-ge13ca993e8ccb9ba9847cc330696e02839f328f7.tar.gz) = zYqlsquGos76QG2IkTnBYsuyMAkvfR18vBcWQF2FKjs=
+SHA256 (cargo/tikv-jemallocator-0.6.1.tar.gz) = A1m0Mn+VTgVn5p+xkc8UNmF3SIE4GclLjNSkMUItBTo=
 SHA256 (cargo/time-0.3.47.tar.gz) = dDvUjCg6/AOI+biCe5dpBfshetnmR/rjo3mpKDxN7yw=
 SHA256 (cargo/time-core-0.1.8.tar.gz) = dpThz+eR+NMQJpUqvwnGnKb2+k4aEinhiYjwagShLco=
 SHA256 (cargo/time-macros-0.2.27.tar.gz) = LnDkxaDgqKSCOtZd/hppMOT011bc2d15OQIrXoxQEhU=
@@ -754,6 +756,8 @@ SIZE (cargo/thiserror-2.0.18.tar.gz) = 28875
 SIZE (cargo/thiserror-impl-1.0.69.tar.gz) = 18365
 SIZE (cargo/thiserror-impl-2.0.18.tar.gz) = 21413
 SIZE (cargo/thread_local-1.1.9.tar.gz) = 19315
+SIZE (cargo/tikv-jemalloc-sys-0.6.1+5.3.0-1-ge13ca993e8ccb9ba9847cc330696e02839f328f7.tar.gz) = 900826
+SIZE (cargo/tikv-jemallocator-0.6.1.tar.gz) = 14074
 SIZE (cargo/time-0.3.47.tar.gz) = 225161
 SIZE (cargo/time-core-0.1.8.tar.gz) = 9634
 SIZE (cargo/time-macros-0.2.27.tar.gz) = 25144
