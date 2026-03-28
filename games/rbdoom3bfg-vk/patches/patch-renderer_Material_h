@@ -1,0 +1,12 @@
+Index: renderer/Material.h
+--- renderer/Material.h.orig
++++ renderer/Material.h
+@@ -233,7 +233,7 @@ typedef enum
+ 	STENCIL_OP_DECRWRAP
+ } stencilOperation_t;
+ 
+-typedef struct
++typedef struct _stencilStage
+ {
+ 	// The value to be compared against (if Comp is anything else than always) and/or the value to be written to the buffer
+ 	// (if either Pass, Fail or ZFail is set to replace).
