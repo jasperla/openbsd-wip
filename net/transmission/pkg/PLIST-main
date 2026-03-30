@@ -22,6 +22,7 @@
 @man man/man1/transmission-remote.1
 @man man/man1/transmission-show.1
 @comment share/applications/
+share/doc/pkg-readmes/${PKGSTEM}
 share/doc/transmission/
 share/doc/transmission/AUTHORS
 share/doc/transmission/COPYING
