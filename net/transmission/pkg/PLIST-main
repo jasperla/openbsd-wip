@@ -71,6 +71,8 @@ share/doc/transmission/news/news-4.1.0-beta.5.md
 share/doc/transmission/news/news-5.0.0-draft.md
 share/doc/transmission/rpc-spec.md
 share/doc/transmission/send-email-when-torrent-done.sh
+share/examples/login.conf.d/transmission_daemon
+@sample /etc/login.conf.d/transmission_daemon
 @comment share/icons/
 @comment share/icons/hicolor/
 @comment share/icons/hicolor/scalable/
