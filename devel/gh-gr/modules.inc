@@ -39,7 +39,7 @@ MODGO_MODULES =	\
 	github.com/cli/go-gh/v2						 v2.13.0 \
 	github.com/cli/safeexec						 v1.0.1 \
 	github.com/cli/shurcoo!l-graphql				 v0.0.4 \
-	github.com/cloudflare/circl					 v1.6.1 \
+	github.com/cloudflare/circl					 v1.6.3 \
 	github.com/cpuguy83/go-md2man/v2				 v2.0.6 \
 	github.com/creack/pty						 v1.1.23 \
 	github.com/creativeprojects/go-selfupdate			 v1.5.2 \
@@ -50,15 +50,15 @@ MODGO_MODULES =	\
 	github.com/dlclark/regexp2					 v1.11.5 \
 	github.com/elazarl/goproxy					 v1.7.2 \
 	github.com/emirpasic/gods					 v1.18.1 \
-	github.com/fatih/color						 v1.18.0 \
+	github.com/fatih/color						 v1.19.0 \
 	github.com/gliderlabs/ssh					 v0.3.8 \
 	github.com/go-fed/httpsig					 v1.1.0 \
 	github.com/go-git/gcfg						 v1.5.1-0.20230307220236-3a3c6141e376 \
-	github.com/go-git/go-billy/v5					 v5.6.2 \
+	github.com/go-git/go-billy/v5					 v5.8.0 \
 	github.com/go-git/go-git-fixtures/v4				 v4.3.2-0.20231010084843-55a94097c399 \
-	github.com/go-git/go-git/v5					 v5.16.4 \
-	github.com/goccy/go-json					 v0.10.5 \
-	github.com/goccy/go-yaml					 v1.19.1 \
+	github.com/go-git/go-git/v5					 v5.17.2 \
+	github.com/goccy/go-json					 v0.10.6 \
+	github.com/goccy/go-yaml					 v1.19.2 \
 	github.com/godbus/dbus/v5					 v5.2.0 \
 	github.com/golang/groupcache					 v0.0.0-20241129210726-2c02b8208cf8 \
 	github.com/golang/protobuf					 v1.5.4 \
@@ -101,7 +101,7 @@ MODGO_MODULES =	\
 	github.com/mitchellh/reflectwalk				 v1.0.2 \
 	github.com/muesli/reflow					 v0.3.0 \
 	github.com/muesli/termenv					 v0.16.0 \
-	github.com/neilotoole/jsoncolor					 v0.7.1 \
+	github.com/neilotoole/jsoncolor					 v0.7.2 \
 	github.com/nwidger/jsoncolor					 v0.3.2 \
 	github.com/onsi/gomega						 v1.34.1 \
 	github.com/pjbgf/sha1cd						 v0.5.0 \
@@ -111,12 +111,12 @@ MODGO_MODULES =	\
 	github.com/rogpeppe/go-internal					 v1.14.1 \
 	github.com/russross/blackfriday/v2				 v2.1.0 \
 	github.com/sarumaj/go-super					 v1.0.2 \
-	github.com/schollz/progressbar/v3				 v3.18.0 \
+	github.com/schollz/progressbar/v3				 v3.19.0 \
 	github.com/segmentio/asm					 v1.1.3 \
 	github.com/segmentio/encoding					 v0.3.6 \
 	github.com/sergi/go-diff					 v1.4.0 \
 	github.com/shopspring/decimal					 v1.4.0 \
-	github.com/sirupsen/logrus					 v1.9.3 \
+	github.com/sirupsen/logrus					 v1.9.4 \
 	github.com/skeema/knownhosts					 v1.3.1 \
 	github.com/spf13/cast						 v1.7.0 \
 	github.com/spf13/cobra						 v1.10.2 \
@@ -142,7 +142,7 @@ MODGO_MODULES =	\
 	golang.org/x/net						 v0.47.0 \
 	golang.org/x/oauth2						 v0.34.0 \
 	golang.org/x/sync						 v0.19.0 \
-	golang.org/x/sys						 v0.39.0 \
+	golang.org/x/sys						 v0.42.0 \
 	golang.org/x/telemetry						 v0.0.0-20251111182119-bc8e575c7b54 \
 	golang.org/x/term						 v0.38.0 \
 	golang.org/x/text						 v0.32.0 \
@@ -176,7 +176,6 @@ MODGO_MODFILES =	\
 	github.com/davecgh/go-spew		 v1.1.0 \
 	github.com/dlclark/regexp2		 v1.11.0 \
 	github.com/fatih/color			 v1.16.0 \
-	github.com/fatih/color			 v1.9.0 \
 	github.com/golang/protobuf		 v1.3.2 \
 	github.com/golang/protobuf		 v1.5.3 \
 	github.com/google/go-cmp		 v0.5.2 \
@@ -191,9 +190,6 @@ MODGO_MODFILES =	\
 	github.com/lucasb-eyer/go-colorful	 v1.2.0 \
 	github.com/mattn/go-colorable		 v0.1.13 \
 	github.com/mattn/go-colorable		 v0.1.2 \
-	github.com/mattn/go-colorable		 v0.1.4 \
-	github.com/mattn/go-isatty		 v0.0.11 \
-	github.com/mattn/go-isatty		 v0.0.16 \
 	github.com/mattn/go-isatty		 v0.0.8 \
 	github.com/mattn/go-runewidth		 v0.0.12 \
 	github.com/mgutz/ansi			 v0.0.0-20170206155736-9520e82c474b \
@@ -203,17 +199,15 @@ MODGO_MODFILES =	\
 	github.com/rogpeppe/go-internal		 v1.12.0 \
 	github.com/sergi/go-diff		 v1.3.2-0.20230802210424-5b0b94c5c0d3 \
 	github.com/sirupsen/logrus		 v1.7.0 \
+	github.com/sirupsen/logrus		 v1.9.3 \
 	github.com/spf13/pflag			 v1.0.9 \
 	github.com/stretchr/objx		 v0.1.0 \
-	github.com/stretchr/objx		 v0.4.0 \
-	github.com/stretchr/objx		 v0.5.0 \
 	github.com/stretchr/testify		 v1.10.0 \
 	github.com/stretchr/testify		 v1.2.2 \
 	github.com/stretchr/testify		 v1.4.0 \
 	github.com/stretchr/testify		 v1.6.1 \
 	github.com/stretchr/testify		 v1.7.0 \
 	github.com/stretchr/testify		 v1.7.1 \
-	github.com/stretchr/testify		 v1.8.0 \
 	github.com/stretchr/testify		 v1.8.1 \
 	github.com/stretchr/testify		 v1.8.4 \
 	github.com/stretchr/testify		 v1.9.0 \
@@ -224,13 +218,14 @@ MODGO_MODFILES =	\
 	golang.org/x/crypto			 v0.0.0-20210513164829-c07d793c2f9a \
 	golang.org/x/crypto			 v0.0.0-20210921155107-089bfa567519 \
 	golang.org/x/crypto			 v0.0.0-20220622213112-05595931fe9d \
-	golang.org/x/crypto			 v0.11.1-0.20230711161743-2e82bdd1719d \
+	golang.org/x/crypto			 v0.30.0 \
 	golang.org/x/crypto			 v0.32.0 \
 	golang.org/x/crypto			 v0.33.0 \
 	golang.org/x/crypto			 v0.36.0 \
 	golang.org/x/crypto			 v0.37.0 \
 	golang.org/x/crypto			 v0.39.0 \
 	golang.org/x/crypto			 v0.44.0 \
+	golang.org/x/crypto			 v0.45.0 \
 	golang.org/x/exp			 v0.0.0-20220909182711-5c715a9e8561 \
 	golang.org/x/exp			 v0.0.0-20240719175910-8a7402abbf56 \
 	golang.org/x/mod			 v0.12.0 \
@@ -241,9 +236,8 @@ MODGO_MODFILES =	\
 	golang.org/x/net			 v0.0.0-20210226172049-e18ecbb05110 \
 	golang.org/x/net			 v0.0.0-20211112202133-69e39bad7dc2 \
 	golang.org/x/net			 v0.0.0-20220722155237-a158d28d115b \
-	golang.org/x/net			 v0.34.0 \
 	golang.org/x/net			 v0.38.0 \
-	golang.org/x/net			 v0.39.0 \
+	golang.org/x/net			 v0.45.0 \
 	golang.org/x/net			 v0.8.0 \
 	golang.org/x/oauth2			 v0.0.0-20180821212333-d2e6202438be \
 	golang.org/x/oauth2			 v0.33.0 \
@@ -260,25 +254,25 @@ MODGO_MODFILES =	\
 	golang.org/x/sys			 v0.0.0-20210423082822-04245dca01da \
 	golang.org/x/sys			 v0.0.0-20210615035016-665e8c7367d1 \
 	golang.org/x/sys			 v0.0.0-20210831042530-f4d43177bf5e \
-	golang.org/x/sys			 v0.0.0-20211110154304-99a53858aa08 \
 	golang.org/x/sys			 v0.0.0-20220520151302-bc2c85ada10a \
 	golang.org/x/sys			 v0.0.0-20220715151400-c0bba94af5f8 \
 	golang.org/x/sys			 v0.0.0-20220722155257-8c9f86f7a55f \
-	golang.org/x/sys			 v0.0.0-20220811171246-fbc7d0a398ab \
 	golang.org/x/sys			 v0.10.0 \
 	golang.org/x/sys			 v0.13.0 \
 	golang.org/x/sys			 v0.14.0 \
 	golang.org/x/sys			 v0.18.0 \
 	golang.org/x/sys			 v0.20.0 \
-	golang.org/x/sys			 v0.25.0 \
 	golang.org/x/sys			 v0.26.0 \
+	golang.org/x/sys			 v0.28.0 \
 	golang.org/x/sys			 v0.29.0 \
 	golang.org/x/sys			 v0.30.0 \
 	golang.org/x/sys			 v0.31.0 \
 	golang.org/x/sys			 v0.32.0 \
 	golang.org/x/sys			 v0.33.0 \
 	golang.org/x/sys			 v0.35.0 \
+	golang.org/x/sys			 v0.36.0 \
 	golang.org/x/sys			 v0.38.0 \
+	golang.org/x/sys			 v0.39.0 \
 	golang.org/x/sys			 v0.6.0 \
 	golang.org/x/term			 v0.0.0-20201126162022-7de9c90e9dd1 \
 	golang.org/x/term			 v0.0.0-20210927222741-03fcf44c2211 \
@@ -286,9 +280,8 @@ MODGO_MODFILES =	\
 	golang.org/x/term			 v0.28.0 \
 	golang.org/x/term			 v0.30.0 \
 	golang.org/x/term			 v0.37.0 \
-	golang.org/x/text			 v0.21.0 \
 	golang.org/x/text			 v0.23.0 \
-	golang.org/x/text			 v0.24.0 \
+	golang.org/x/text			 v0.29.0 \
 	golang.org/x/text			 v0.3.0 \
 	golang.org/x/text			 v0.3.3 \
 	golang.org/x/text			 v0.3.6 \
