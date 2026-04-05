@@ -72,8 +72,12 @@ EXTENSIONS-efi +=	iso
 COMMENT_ISO =		"@comment "
 .endif
 
+# https://ipxe.org/download#debug_builds
+DEBUG ?=		# empty
+
 USE_GMAKE =		Yes
 MAKE_FLAGS +=		CROSS=${CROSS} \
+			DEBUG=${DEBUG} \
 			HOST_CC=${CC} \
 			HOST_CFLAGS=${HOST_CFLAGS:Q} \
 			V=1
