@@ -2,7 +2,7 @@ COMMENT =	log file highlighter
 
 GH_ACCOUNT =	bensadeh
 GH_PROJECT =	tailspin
-GH_TAGNAME =	5.5.0
+GH_TAGNAME =	6.0.0
 
 CATEGORIES =	sysutils
 
@@ -11,7 +11,7 @@ MAINTAINER =	Laurent Cheylus <foxy@free.fr>
 # MIT
 PERMIT_PACKAGE =	Yes
 
-WANTLIB +=	${MODCARGO_WANTLIB} m
+WANTLIB +=	${MODCARGO_WANTLIB}
 
 MODULES =	devel/cargo
 
