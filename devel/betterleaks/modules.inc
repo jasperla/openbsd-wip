@@ -20,18 +20,11 @@ MODGO_MODULES =	\
 	github.com/andybalholm/brotli								 v1.2.0 \
 	github.com/antlr4-go/antlr/v4								 v4.13.1 \
 	github.com/armon/go-metrics								 v0.4.1 \
-	github.com/aymanbagabas/go-osc52/v2							 v2.0.1 \
-	github.com/aymanbagabas/go-udiff							 v0.2.0 \
+	github.com/betterleaks/go-re2								 v0.0.0-20260402140350-c1778d2a0a52 \
 	github.com/bodgit/plumbing								 v1.3.0 \
 	github.com/bodgit/sevenzip								 v1.6.1 \
 	github.com/bodgit/windows								 v1.0.1 \
 	github.com/cespare/xxhash/v2								 v2.3.0 \
-	github.com/charmbracelet/colorprofile							 v0.2.3-0.20250311203215-f60798e515dc \
-	github.com/charmbracelet/lipgloss							 v1.1.0 \
-	github.com/charmbracelet/x/ansi								 v0.8.0 \
-	github.com/charmbracelet/x/cellbuf							 v0.0.13-0.20250311204145-2c3ea96c31dd \
-	github.com/charmbracelet/x/exp/golden							 v0.0.0-20240806155701-69247e0abc2a \
-	github.com/charmbracelet/x/term								 v0.2.1 \
 	github.com/cncf/xds/go									 v0.0.0-20251022180443-0feb69152e9f \
 	github.com/coreos/go-semver								 v0.3.0 \
 	github.com/coreos/go-systemd/v22							 v22.5.0 \
@@ -84,12 +77,10 @@ MODGO_MODULES =	\
 	github.com/klauspost/pgzip								 v1.2.6 \
 	github.com/kr/pretty									 v0.3.1 \
 	github.com/kr/text									 v0.2.0 \
-	github.com/lucasb-eyer/go-colorful							 v1.2.0 \
 	github.com/lucasjones/reggen								 v0.0.0-20200904144131-37ba4fa293bb \
 	github.com/magiconair/properties							 v1.8.9 \
 	github.com/mattn/go-colorable								 v0.1.14 \
 	github.com/mattn/go-isatty								 v0.0.20 \
-	github.com/mattn/go-runewidth								 v0.0.16 \
 	github.com/mholt/archives								 v0.1.5 \
 	github.com/mikelolasagasti/xz								 v1.0.1 \
 	github.com/minio/minlz									 v1.0.1 \
@@ -99,7 +90,6 @@ MODGO_MODULES =	\
 	github.com/mitchellh/reflectwalk							 v1.0.2 \
 	github.com/modern-go/concurrent								 v0.0.0-20180306012644-bacd9c7ef1dd \
 	github.com/modern-go/reflect2								 v1.0.2 \
-	github.com/muesli/termenv								 v0.16.0 \
 	github.com/nats-io/nats.go								 v1.34.0 \
 	github.com/nats-io/nkeys								 v0.4.7 \
 	github.com/nats-io/nuid									 v1.0.1 \
@@ -108,10 +98,8 @@ MODGO_MODULES =	\
 	github.com/pierrec/lz4/v4								 v4.1.25 \
 	github.com/pkg/errors									 v0.9.1 \
 	github.com/pkoukk/tiktoken-go								 v0.1.8 \
-	github.com/pkoukk/tiktoken-go-loader							 v0.0.2 \
 	github.com/planetscale/vtprotobuf							 v0.6.1-0.20240319094008-0393e58bdf10 \
 	github.com/pmezard/go-difflib								 v1.0.1-0.20181226105442-5d4384ee4fb2 \
-	github.com/rivo/uniseg									 v0.4.7 \
 	github.com/rogpeppe/go-internal								 v1.14.1 \
 	github.com/rs/xid									 v1.5.0 \
 	github.com/rs/zerolog									 v1.33.0 \
@@ -131,11 +119,10 @@ MODGO_MODULES =	\
 	github.com/stretchr/objx								 v0.5.3 \
 	github.com/stretchr/testify								 v1.11.1 \
 	github.com/subosito/gotenv								 v1.6.0 \
-	github.com/tetratelabs/wazero								 v1.9.0 \
+	github.com/tetratelabs/wazero								 v1.11.0 \
 	github.com/ulikunitz/xz									 v0.5.15 \
 	github.com/wasilibs/go-re2								 v1.10.0 \
-	github.com/wasilibs/wazero-helpers							 v0.0.0-20240620070341-3dff1577cd52 \
-	github.com/xo/terminfo									 v0.0.0-20220910002029-abceb7e1c41e \
+	github.com/wasilibs/wazero-helpers							 v0.0.0-20250123031827-cd30c44769bb \
 	github.com/xyproto/randomstring								 v1.0.5 \
 	go.etcd.io/etcd/api/v3									 v3.5.12 \
 	go.etcd.io/etcd/client/pkg/v3								 v3.5.12 \
@@ -162,7 +149,7 @@ MODGO_MODULES =	\
 	golang.org/x/net									 v0.48.0 \
 	golang.org/x/oauth2									 v0.34.0 \
 	golang.org/x/sync									 v0.19.0 \
-	golang.org/x/sys									 v0.40.0 \
+	golang.org/x/sys									 v0.42.0 \
 	golang.org/x/term									 v0.38.0 \
 	golang.org/x/text									 v0.34.0 \
 	golang.org/x/time									 v0.14.0 \
@@ -212,7 +199,6 @@ MODGO_MODFILES =	\
 	github.com/pelletier/go-toml/v2							 v2.2.2 \
 	github.com/pierrec/lz4/v4							 v4.1.22 \
 	github.com/pmezard/go-difflib							 v1.0.0 \
-	github.com/rivo/uniseg								 v0.2.0 \
 	github.com/rogpeppe/go-internal							 v1.9.0 \
 	github.com/sagikazarmark/locafero						 v0.4.0 \
 	github.com/spf13/afero								 v1.11.0 \
@@ -232,10 +218,12 @@ MODGO_MODFILES =	\
 	github.com/stretchr/testify							 v1.8.1 \
 	github.com/stretchr/testify							 v1.8.2 \
 	github.com/stretchr/testify							 v1.9.0 \
+	github.com/tetratelabs/wazero							 v1.10.1 \
 	github.com/tetratelabs/wazero							 v1.7.2 \
 	github.com/ulikunitz/xz								 v0.5.12 \
 	github.com/ulikunitz/xz								 v0.5.13 \
 	github.com/ulikunitz/xz								 v0.5.8 \
+	github.com/wasilibs/wazero-helpers						 v0.0.0-20240620070341-3dff1577cd52 \
 	go.opentelemetry.io/contrib/instrumentation/google.golang.org/grpc/otelgrpc	 v0.49.0 \
 	go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp			 v0.49.0 \
 	go.opentelemetry.io/otel							 v1.24.0 \
@@ -246,7 +234,6 @@ MODGO_MODFILES =	\
 	go4.org										 v0.0.0-20200411211856-f5505b9728dd \
 	go4.org										 v0.0.0-20230225012048-214862532bf5 \
 	golang.org/x/crypto								 v0.21.0 \
-	golang.org/x/exp								 v0.0.0-20220909182711-5c715a9e8561 \
 	golang.org/x/exp								 v0.0.0-20230905200255-921286631fa9 \
 	golang.org/x/exp								 v0.0.0-20240506185415-9bf2ced13842 \
 	golang.org/x/exp								 v0.0.0-20240823005443-9b4947da3948 \
@@ -267,9 +254,10 @@ MODGO_MODFILES =	\
 	golang.org/x/sys								 v0.21.0 \
 	golang.org/x/sys								 v0.26.0 \
 	golang.org/x/sys								 v0.29.0 \
-	golang.org/x/sys								 v0.30.0 \
 	golang.org/x/sys								 v0.31.0 \
+	golang.org/x/sys								 v0.38.0 \
 	golang.org/x/sys								 v0.39.0 \
+	golang.org/x/sys								 v0.40.0 \
 	golang.org/x/sys								 v0.6.0 \
 	golang.org/x/text								 v0.12.0 \
 	golang.org/x/text								 v0.14.0 \
