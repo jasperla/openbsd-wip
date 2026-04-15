@@ -19,14 +19,6 @@ DPB_PROPERTIES= parallel
 PERMIT_PACKAGE=	Yes
 
 DIST_TUPLE=	github transmission transmission ${GIT_REVISION} .
-DIST_TUPLE+=	github google crc32c\
-		2bbb3be42e20a0e6c0f7b39dc07dc863d9ffbc07 third-party/crc32c
-DIST_TUPLE+=	github google benchmark 0da57b85cf23e48d0e515f58c65a25425dbde012 \
-		third-party/crc32c/third_party/benchmark
-DIST_TUPLE+=	github google glog \
-		53d58e4531c7c90f71ddab503d915e027432447a third-party/crc32c/third_party/glog
-DIST_TUPLE+=	github google googletest \
-		52204f78f94d7512df1f0f3bea1d47437a2c3a58 third-party/crc32c/third_party/googletest
 DIST_TUPLE+=	github transmission dht \
 		38c9f261d9b58b76b9eaf85f84ec1b35151a1eac third-party/dht
 DIST_TUPLE+=	github transmission fast_float \
