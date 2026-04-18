@@ -1,5 +1,5 @@
 SHA256 (astral-sh-lsp-types-e15db0593f0ecbbd80599c3f5880e4bf5da1ca0c.tar.gz) = oVtO34dPCRL+riuRAf+i0kSSPZEFJBTG2YZrcNynf0w=
-SHA256 (astral-sh-ruff-dc4df9c7019b9c68af25778d68edbd68f0bc74d9.tar.gz) = ZGEoD6B/4UYDXlklk0TpQJdKDd63MuckoN9+ToAghYI=
+SHA256 (astral-sh-ruff-ee9088eebf068f4b3a14f5ee34607f72d3513186.tar.gz) = uApKkZ8nTdJfWeGU3KEzkNoRy10d3IQv60Js8wR5QoY=
 SHA256 (cargo/adler2-2.0.1.tar.gz) = MgEZV5/K2cIYhPXEhh0WF00OBiUGJSZvUP5omDQKvvo=
 SHA256 (cargo/aho-corasick-1.1.4.tar.gz) = 3dMaEwQnwnUY3yZpQ6UwjtktSyJsxjn1qPEAKBYXQwE=
 SHA256 (cargo/alloca-0.4.0.tar.gz) = 5afQXqaup+nmTSW5FWui/uP91lnjTkEGPNL8fNAg1/Q=
@@ -283,7 +283,7 @@ SHA256 (cargo/quote-use-macros-0.8.4.tar.gz) = guv7f6r63AanqxQab2e8+yTLi+sVjG/pM
 SHA256 (cargo/r-efi-5.3.0.tar.gz) = ac2zTBWM6yiN8R4YtL053plPZlfYOEe9/9vX80Z1Sw8=
 SHA256 (cargo/r-efi-6.0.0.tar.gz) = +NzJx9UqgRaX0hUccB4NCJVvkrDiQTbPTPJ7V6ag2b8=
 SHA256 (cargo/radium-0.7.0.tar.gz) = 3DP/LUlz1RjYI9YaojkBSDHlIcddpY499IQNP0d0nQk=
-SHA256 (cargo/rand-0.10.0.tar.gz) = vCZusxPfbFwJwcex++JRCWHlvNOt2TDB4x9+2doP7/g=
+SHA256 (cargo/rand-0.10.1.tar.gz) = 0ujovMeWGvH9rEASeMaoMWFJQfYWTuO/TOYbftsWIgc=
 SHA256 (cargo/rand-0.8.5.tar.gz) = NK+NGg4lkkvFt8Q8B5yUIznY8Ki1fDkEm+9YG0YydAQ=
 SHA256 (cargo/rand_chacha-0.3.1.tar.gz) = 5sEKY6D6MiUr5J0h53CdTUuvjSMcLbzh6qgUG5sSfYg=
 SHA256 (cargo/rand_core-0.10.0.tar.gz) = DI0P1neQXty+7b8u22SU1nbw6Y1U1c+b2gsGHLj7iro=
@@ -485,9 +485,9 @@ SHA256 (cargo/zstd-0.11.2+zstd.1.5.2.tar.gz) = IMyWAybs5k8BDS0hB1N/JtxYmmVzoxa9W
 SHA256 (cargo/zstd-safe-5.0.2+zstd.1.5.2.tar.gz) = HSpVheBPnupLKj0eylCMTe6Vkqie9vRQwRcZ2gcm9Ns=
 SHA256 (cargo/zstd-sys-2.0.16+zstd.1.5.7.tar.gz) = keGevCrcj4PkMDnnl3bj/ajKkZEy1oof7WpfrKJoN0g=
 SHA256 (salsa-rs-salsa-2f687a17ceea8ec7aaa605561ccbde938ccef086.tar.gz) = WxXpYsJ69wbdCUp6iqEINUFb3CTG9M1+Q6CZg94gHmI=
-SHA256 (ty-0.0.30.tar.gz) = DR/lEb0FLvkPXuCtMeRIQx9LTjdexdgt2ENDpQ5pl68=
+SHA256 (ty-0.0.31.tar.gz) = RqWvcNZZArCDVdvuz4LkNPDy3gVU1ABQkwfjWG6z4vU=
 SIZE (astral-sh-lsp-types-e15db0593f0ecbbd80599c3f5880e4bf5da1ca0c.tar.gz) = 71166
-SIZE (astral-sh-ruff-dc4df9c7019b9c68af25778d68edbd68f0bc74d9.tar.gz) = 11471302
+SIZE (astral-sh-ruff-ee9088eebf068f4b3a14f5ee34607f72d3513186.tar.gz) = 11480583
 SIZE (cargo/adler2-2.0.1.tar.gz) = 13366
 SIZE (cargo/aho-corasick-1.1.4.tar.gz) = 184015
 SIZE (cargo/alloca-0.4.0.tar.gz) = 4257
@@ -771,7 +771,7 @@ SIZE (cargo/quote-use-macros-0.8.4.tar.gz) = 5660
 SIZE (cargo/r-efi-5.3.0.tar.gz) = 64532
 SIZE (cargo/r-efi-6.0.0.tar.gz) = 65303
 SIZE (cargo/radium-0.7.0.tar.gz) = 10906
-SIZE (cargo/rand-0.10.0.tar.gz) = 105828
+SIZE (cargo/rand-0.10.1.tar.gz) = 105801
 SIZE (cargo/rand-0.8.5.tar.gz) = 87113
 SIZE (cargo/rand_chacha-0.3.1.tar.gz) = 15251
 SIZE (cargo/rand_core-0.10.0.tar.gz) = 22778
@@ -973,4 +973,4 @@ SIZE (cargo/zstd-0.11.2+zstd.1.5.2.tar.gz) = 28987
 SIZE (cargo/zstd-safe-5.0.2+zstd.1.5.2.tar.gz) = 17273
 SIZE (cargo/zstd-sys-2.0.16+zstd.1.5.7.tar.gz) = 775620
 SIZE (salsa-rs-salsa-2f687a17ceea8ec7aaa605561ccbde938ccef086.tar.gz) = 743865
-SIZE (ty-0.0.30.tar.gz) = 2606981
+SIZE (ty-0.0.31.tar.gz) = 2608489
