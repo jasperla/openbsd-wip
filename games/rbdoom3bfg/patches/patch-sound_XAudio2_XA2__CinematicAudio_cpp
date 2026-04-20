@@ -1,0 +1,12 @@
+Index: sound/XAudio2/XA2_CinematicAudio.cpp
+--- sound/XAudio2/XA2_CinematicAudio.cpp.orig
++++ sound/XAudio2/XA2_CinematicAudio.cpp
+@@ -107,7 +107,7 @@ void CinematicAudio_XAudio2::InitAudio( void* audioCon
+ 			return;
+ 		}
+ 	}
+-	voiceFormatcine.nChannels = dec_ctx2->channels; //fixed
++	voiceFormatcine.nChannels = dec_ctx2->ch_layout.nb_channels; //fixed
+ 	voiceFormatcine.nSamplesPerSec = dec_ctx2->sample_rate; //fixed
+ #elif defined(USE_BINKDEC)
+ 	AudioInfo* binkInfo = ( AudioInfo* )audioContext;
