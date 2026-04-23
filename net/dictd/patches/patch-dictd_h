@@ -1,0 +1,12 @@
+endex: dictd.h
+--- dictd.h.orig
++++ dictd.h
+@@ -23,7 +23,7 @@
+ #define _DICTD_H_
+ 
+ #include "dictP.h"
+-#include "maa.h"
++#include <maa.h>
+ #include "codes.h"
+ #include "defs.h"
+ 
