@@ -1,11 +1,17 @@
 # ring-v0.17 does not support sparc64
 NOT_FOR_ARCHS =	sparc64
 
+# aws-lc-sys has constants in .text
+# https://github.com/awslabs/s2n-bignum/pull/242
+.if ${MACHINE_ARCH} == "amd64"
+USE_NOEXECONLY =	Yes
+.endif
+
 COMMENT =	idiomatic, lean, fast & safe pure Rust implementation of Git
 
 GH_ACCOUNT =	Byron
 GH_PROJECT =	gitoxide
-GH_TAGNAME =	v0.52.0
+GH_TAGNAME =	v0.52.1
 
 CATEGORIES =	devel
 
@@ -28,7 +34,7 @@ CONFIGURE_STYLE =	cargo
 SEPARATE_BUILD =	Yes
 
 # Set version during build
-post-patch:
+ppre-configure:
 	sed -i 's,%VERSION%,${GH_TAGNAME:S/v//},' ${WRKSRC}/build.rs
 
 # generate shell completions for Bash/ZSH/Fish
