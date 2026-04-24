@@ -34,7 +34,7 @@ CONFIGURE_STYLE =	cargo
 SEPARATE_BUILD =	Yes
 
 # Set version during build
-ppre-configure:
+pre-configure:
 	sed -i 's,%VERSION%,${GH_TAGNAME:S/v//},' ${WRKSRC}/build.rs
 
 # generate shell completions for Bash/ZSH/Fish
