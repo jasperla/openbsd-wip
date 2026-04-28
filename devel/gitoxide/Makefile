@@ -11,7 +11,7 @@ COMMENT =	idiomatic, lean, fast & safe pure Rust implementation of Git
 
 GH_ACCOUNT =	Byron
 GH_PROJECT =	gitoxide
-GH_TAGNAME =	v0.52.1
+GH_TAGNAME =	v0.53.0
 
 CATEGORIES =	devel
 
