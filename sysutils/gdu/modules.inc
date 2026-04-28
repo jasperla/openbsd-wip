@@ -8,7 +8,7 @@ MODGO_MODULES =	\
 	github.com/dustin/go-humanize		 v1.0.1 \
 	github.com/fatih/color			 v1.19.0 \
 	github.com/gdamore/encoding		 v1.0.1 \
-	github.com/gdamore/tcell/v2		 v2.13.8 \
+	github.com/gdamore/tcell/v2		 v2.13.9 \
 	github.com/go-logr/logr			 v1.4.3 \
 	github.com/go-logr/stdr			 v1.2.2 \
 	github.com/golang/protobuf		 v1.5.0 \
@@ -25,7 +25,7 @@ MODGO_MODULES =	\
 	github.com/lucasb-eyer/go-colorful	 v1.3.0 \
 	github.com/maruel/natural		 v1.3.0 \
 	github.com/mattn/go-colorable		 v0.1.14 \
-	github.com/mattn/go-isatty		 v0.0.20 \
+	github.com/mattn/go-isatty		 v0.0.21 \
 	github.com/mattn/go-runewidth		 v0.0.16 \
 	github.com/mattn/go-sixel		 v0.0.5 \
 	github.com/ncruces/go-strftime		 v1.0.0 \
@@ -52,30 +52,29 @@ MODGO_MODULES =	\
 	go.opentelemetry.io/otel/trace		 v1.38.0 \
 	go.yaml.in/yaml/v3			 v3.0.4 \
 	golang.org/x/crypto			 v0.44.0 \
-	golang.org/x/exp			 v0.0.0-20251023183803-a4bb9ffd2546 \
-	golang.org/x/mod			 v0.33.0 \
+	golang.org/x/mod			 v0.34.0 \
 	golang.org/x/net			 v0.47.0 \
-	golang.org/x/sync			 v0.19.0 \
-	golang.org/x/sys			 v0.42.0 \
+	golang.org/x/sync			 v0.20.0 \
+	golang.org/x/sys			 v0.43.0 \
 	golang.org/x/term			 v0.37.0 \
-	golang.org/x/text			 v0.34.0 \
-	golang.org/x/tools			 v0.42.0 \
+	golang.org/x/text			 v0.36.0 \
+	golang.org/x/tools			 v0.43.0 \
 	golang.org/x/xerrors			 v0.0.0-20190717185122-a985d3407aa7 \
 	google.golang.org/protobuf		 v1.36.10 \
 	gopkg.in/check.v1			 v1.0.0-20201130134442-10cb98267c6c \
 	gopkg.in/yaml.v3			 v3.0.1 \
-	modernc.org/cc/v4			 v4.27.1 \
-	modernc.org/ccgo/v4			 v4.32.0 \
+	modernc.org/cc/v4			 v4.27.3 \
+	modernc.org/ccgo/v4			 v4.32.4 \
 	modernc.org/fileutil			 v1.4.0 \
 	modernc.org/gc/v2			 v2.6.5 \
 	modernc.org/gc/v3			 v3.1.2 \
 	modernc.org/goabi0			 v0.2.0 \
-	modernc.org/libc			 v1.70.0 \
+	modernc.org/libc			 v1.72.0 \
 	modernc.org/mathutil			 v1.7.1 \
 	modernc.org/memory			 v1.11.0 \
 	modernc.org/opt				 v0.1.4 \
 	modernc.org/sortutil			 v1.2.1 \
-	modernc.org/sqlite			 v1.48.0 \
+	modernc.org/sqlite			 v1.49.1 \
 	modernc.org/strutil			 v1.2.1 \
 	modernc.org/token			 v1.1.0
 
@@ -86,6 +85,7 @@ MODGO_MODFILES =	\
 	github.com/google/flatbuffers		 v25.2.10+incompatible \
 	github.com/klauspost/compress		 v1.18.0 \
 	github.com/lucasb-eyer/go-colorful	 v1.2.0 \
+	github.com/mattn/go-isatty		 v0.0.20 \
 	github.com/spf13/cobra			 v1.9.1 \
 	github.com/spf13/pflag			 v1.0.6 \
 	github.com/spf13/pflag			 v1.0.9 \
@@ -96,7 +96,7 @@ MODGO_MODFILES =	\
 	go.opentelemetry.io/otel/trace		 v1.37.0 \
 	golang.org/x/crypto			 v0.0.0-20190308221718-c2843e01d9a2 \
 	golang.org/x/crypto			 v0.0.0-20210921155107-089bfa567519 \
-	golang.org/x/mod			 v0.32.0 \
+	golang.org/x/mod			 v0.33.0 \
 	golang.org/x/mod			 v0.6.0-dev.0.20220419223038-86c51ed26bb4 \
 	golang.org/x/mod			 v0.8.0 \
 	golang.org/x/net			 v0.0.0-20190620200207-3b0461eec859 \
@@ -113,13 +113,14 @@ MODGO_MODFILES =	\
 	golang.org/x/sys			 v0.0.0-20220520151302-bc2c85ada10a \
 	golang.org/x/sys			 v0.0.0-20220722155257-8c9f86f7a55f \
 	golang.org/x/sys			 v0.13.0 \
+	golang.org/x/sys			 v0.28.0 \
 	golang.org/x/sys			 v0.29.0 \
 	golang.org/x/sys			 v0.31.0 \
 	golang.org/x/sys			 v0.35.0 \
 	golang.org/x/sys			 v0.38.0 \
 	golang.org/x/sys			 v0.41.0 \
+	golang.org/x/sys			 v0.42.0 \
 	golang.org/x/sys			 v0.5.0 \
-	golang.org/x/sys			 v0.6.0 \
 	golang.org/x/term			 v0.0.0-20201126162022-7de9c90e9dd1 \
 	golang.org/x/term			 v0.0.0-20210927222741-03fcf44c2211 \
 	golang.org/x/term			 v0.28.0 \
@@ -134,7 +135,7 @@ MODGO_MODFILES =	\
 	golang.org/x/tools			 v0.0.0-20180917221912-90fa682c2a6e \
 	golang.org/x/tools			 v0.0.0-20191119224855-298f0cb1881e \
 	golang.org/x/tools			 v0.1.12 \
-	golang.org/x/tools			 v0.41.0 \
+	golang.org/x/tools			 v0.42.0 \
 	golang.org/x/tools			 v0.6.0 \
 	google.golang.org/protobuf		 v1.36.7 \
 	gopkg.in/check.v1			 v0.0.0-20161208181325-20d25e280405
