@@ -44,6 +44,7 @@ share/desktop-installer/XenoDM/openbsd-background.jpg
 share/desktop-installer/XenoDM/xenodmshutdown
 share/desktop-installer/battery-shutdown.cron
 share/desktop-installer/desktop-installer
+share/desktop-installer/desktop-installer-wip-installer.sh
 share/desktop-installer/desktop-installer.man
 share/desktop-installer/getting-started.md
 share/pixmaps/

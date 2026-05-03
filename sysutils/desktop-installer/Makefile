@@ -2,7 +2,7 @@ COMMENT =		Quickly configure a OpenBSD desktop system
 
 # Suffix version with commit # from git describe --tags
 V =			1.1.1
-COMMIT =		03b821b1a690c3b66ee467f6c5a6b0068d07a1c2
+COMMIT =		1fcbd8beeacc507e98746ef7f2a8ba5be421387c
 PKGNAME =		desktop-installer-${V}
 
 DIST_TUPLE =		github outpaddling desktop-installer ${COMMIT} .
