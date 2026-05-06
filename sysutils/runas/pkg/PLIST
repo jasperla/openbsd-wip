@@ -1,2 +1,4 @@
+@bin bin/asroot
 @bin bin/runas
+@man man/man1/asroot.1
 @man man/man1/runas.1
