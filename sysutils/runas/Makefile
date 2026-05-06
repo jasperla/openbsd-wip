@@ -2,9 +2,9 @@ COMMENT =	Wrapper around su for running a command as another user
 
 GH_ACCOUNT =	outpaddling
 GH_PROJECT =	runas
-GH_COMMIT =	a43e634f486ac9985aca2f37c513d2dc2ce275c3
+GH_COMMIT =	e7238a62361356e8857d37fecc748d031c0ade79
 
-DISTNAME =	runas-0.1.0.12
+DISTNAME =	runas-0.2.0.1
 
 CATEGORIES =	sysutils
 
