@@ -3,7 +3,7 @@ Disable doctest, otherwise tests fail
 Index: lib/Cargo.toml
 --- lib/Cargo.toml.orig
 +++ lib/Cargo.toml
-@@ -349,4 +349,7 @@ ihex = { workspace = true }
+@@ -365,4 +365,7 @@ ihex = { workspace = true }
  pretty_assertions = { workspace = true }
  rayon = { workspace = true }
  yara-x-proto-yaml = { workspace = true }
