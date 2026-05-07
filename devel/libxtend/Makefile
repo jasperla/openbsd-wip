@@ -1,6 +1,6 @@
 COMMENT =	Miscellaneous functions to extend libc
 
-V =		0.2.0.17
+V =		0.2.1.28
 GH_ACCOUNT =	outpaddling
 GH_PROJECT =	libxtend
 GH_COMMIT =	7e8e7d3afd197c1cd2a6b957fc81f9ae3c6c54e1
