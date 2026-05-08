@@ -45,6 +45,12 @@ share/APE/Languages/C/Macros/macros
 share/APE/Languages/C/Macros/menu.txt
 share/APE/Languages/C/language_opts
 share/APE/Languages/C/syntax_highlighting
+share/APE/Languages/C99/
+share/APE/Languages/C99/Macros/
+share/APE/Languages/C99/Macros/macros
+share/APE/Languages/C99/Macros/menu.txt
+share/APE/Languages/C99/language_opts
+share/APE/Languages/C99/syntax_highlighting
 share/APE/Languages/CSS/
 share/APE/Languages/CSS/Macros/
 share/APE/Languages/CSS/Macros/macros
@@ -105,6 +111,9 @@ share/APE/Languages/GO/syntax_highlighting
 share/APE/Languages/GRADES/
 share/APE/Languages/GRADES/language_opts
 share/APE/Languages/GRADES/syntax_highlighting
+share/APE/Languages/Gnuplot/
+share/APE/Languages/Gnuplot/language_opts
+share/APE/Languages/Gnuplot/syntax_highlighting
 share/APE/Languages/HTML/
 share/APE/Languages/HTML/Macros/
 share/APE/Languages/HTML/Macros/macros
