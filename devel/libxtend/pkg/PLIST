@@ -10,6 +10,11 @@ include/xtend/fast-file-mutators.h
 include/xtend/fast-file-private.h
 include/xtend/fast-file-rvs.h
 include/xtend/fast-file.h
+include/xtend/ff-dsv-accessors.h
+include/xtend/ff-dsv-mutators.h
+include/xtend/ff-dsv-private.h
+include/xtend/ff-dsv-rvs.h
+include/xtend/ff-dsv.h
 include/xtend/file.h
 include/xtend/math.h
 include/xtend/mem.h
@@ -28,6 +33,7 @@ share/man/man3/
 @man share/man/man3/_xt_ff_raw_close.3
 @man share/man/man3/_xt_ff_raw_open.3
 @man share/man/man3/libxtend.3
+@man share/man/man3/xf_ff_gets_malloc.3
 @man share/man/man3/xt_csv_read_field.3
 @man share/man/man3/xt_csv_read_field_malloc.3
 @man share/man/man3/xt_csv_skip_field.3
@@ -67,6 +73,31 @@ share/man/man3/
 @man share/man/man3/xt_fd_purge.3
 @man share/man/man3/xt_ff_close.3
 @man share/man/man3/xt_ff_dopen.3
+@man share/man/man3/xt_ff_dsv_line_copy.3
+@man share/man/man3/xt_ff_dsv_line_free.3
+@man share/man/man3/xt_ff_dsv_line_get_delims.3
+@man share/man/man3/xt_ff_dsv_line_get_delims_ae.3
+@man share/man/man3/xt_ff_dsv_line_get_fields.3
+@man share/man/man3/xt_ff_dsv_line_get_fields_ae.3
+@man share/man/man3/xt_ff_dsv_line_get_num_fields.3
+@man share/man/man3/xt_ff_dsv_line_get_num_fields_array_size.3
+@man share/man/man3/xt_ff_dsv_line_init.3
+@man share/man/man3/xt_ff_dsv_line_new.3
+@man share/man/man3/xt_ff_dsv_line_read.3
+@man share/man/man3/xt_ff_dsv_line_set_delims.3
+@man share/man/man3/xt_ff_dsv_line_set_delims_ae.3
+@man share/man/man3/xt_ff_dsv_line_set_delims_cpy.3
+@man share/man/man3/xt_ff_dsv_line_set_fields.3
+@man share/man/man3/xt_ff_dsv_line_set_fields_ae.3
+@man share/man/man3/xt_ff_dsv_line_set_fields_cpy.3
+@man share/man/man3/xt_ff_dsv_line_set_num_fields.3
+@man share/man/man3/xt_ff_dsv_line_set_num_fields_array_size.3
+@man share/man/man3/xt_ff_dsv_line_write.3
+@man share/man/man3/xt_ff_dsv_read_field.3
+@man share/man/man3/xt_ff_dsv_read_field_malloc.3
+@man share/man/man3/xt_ff_dsv_skip_field.3
+@man share/man/man3/xt_ff_dsv_skip_rest_of_line.3
+@man share/man/man3/xt_ff_flush.3
 @man share/man/man3/xt_ff_get_buff.3
 @man share/man/man3/xt_ff_get_buff_ae.3
 @man share/man/man3/xt_ff_get_buff_index.3
@@ -80,13 +111,14 @@ share/man/man3/
 @man share/man/man3/xt_ff_get_start_ptr_ae.3
 @man share/man/man3/xt_ff_getc.3
 @man share/man/man3/xt_ff_gets.3
+@man share/man/man3/xt_ff_gets_malloc.3
+@man share/man/man3/xt_ff_mkstemp.3
 @man share/man/man3/xt_ff_open.3
 @man share/man/man3/xt_ff_popen.3
 @man share/man/man3/xt_ff_printf.3
 @man share/man/man3/xt_ff_putc.3
 @man share/man/man3/xt_ff_puts.3
 @man share/man/man3/xt_ff_read.3
-@man share/man/man3/xt_ff_read_line_malloc.3
 @man share/man/man3/xt_ff_rewind.3
 @man share/man/man3/xt_ff_seeko.3
 @man share/man/man3/xt_ff_set_buff.3
@@ -106,7 +138,9 @@ share/man/man3/
 @man share/man/man3/xt_ff_stdout.3
 @man share/man/man3/xt_ff_tmpfile.3
 @man share/man/man3/xt_ff_ungetc.3
+@man share/man/man3/xt_ff_write.3
 @man share/man/man3/xt_fgetline.3
+@man share/man/man3/xt_file2str.3
 @man share/man/man3/xt_file_mod_cmp.3
 @man share/man/man3/xt_float_cmp.3
 @man share/man/man3/xt_fopen.3
@@ -127,6 +161,7 @@ share/man/man3/
 @man share/man/man3/xt_parse_cmd.3
 @man share/man/man3/xt_read_line_malloc.3
 @man share/man/man3/xt_realloc.3
+@man share/man/man3/xt_redirect.3
 @man share/man/man3/xt_resolve_hostname.3
 @man share/man/man3/xt_rmkdir.3
 @man share/man/man3/xt_romantoi.3
@@ -134,7 +169,8 @@ share/man/man3/
 @man share/man/man3/xt_shuffle.3
 @man share/man/man3/xt_spawnlp.3
 @man share/man/man3/xt_spawnvp.3
-@man share/man/man3/xt_str2u64.3
+@man share/man/man3/xt_str2file.3
+@man share/man/man3/xt_str2u64_hash.3
 @man share/man/man3/xt_str_argv_cat.3
 @man share/man/man3/xt_strblank.3
 @man share/man/man3/xt_strisint.3
@@ -156,6 +192,7 @@ share/man/man3/
 @man share/man/man3/xt_strviscpy.3
 @man share/man/man3/xt_tic.3
 @man share/man/man3/xt_toc.3
+@man share/man/man3/xt_touch.3
 @man share/man/man3/xt_tsv_read_field.3
 @man share/man/man3/xt_tsv_read_field_malloc.3
 @man share/man/man3/xt_tsv_skip_field.3
