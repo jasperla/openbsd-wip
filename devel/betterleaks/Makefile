@@ -1,7 +1,7 @@
 COMMENT =	tool to detect secrets
 
 MODGO_MODNAME =	github.com/betterleaks/betterleaks
-MODGO_VERSION =	v1.1.2
+MODGO_VERSION =	v1.2.0
 
 DISTNAME =	betterleaks-${MODGO_VERSION}
 
@@ -24,7 +24,7 @@ MODGO_LDFLAGS +=	-X ${MODGO_MODNAME}/version.Version=${MODGO_VERSION:S/v//}
 TEST_TARGET =	./...
 
 # Generate shell completions
-post-build:
+pre-install:
 	${MODGO_WORKSPACE}/bin/betterleaks completion bash \
 		> ${WRKBUILD}/betterleaks.bash
 	${MODGO_WORKSPACE}/bin/betterleaks completion fish \

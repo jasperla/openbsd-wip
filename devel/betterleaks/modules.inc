@@ -52,6 +52,8 @@ MODGO_MODULES =	\
 	github.com/google/cel-go								 v0.27.0 \
 	github.com/google/go-cmdtest								 v0.4.0 \
 	github.com/google/go-cmp								 v0.7.0 \
+	github.com/google/go-github/v72								 v72.0.0 \
+	github.com/google/go-querystring							 v1.1.0 \
 	github.com/google/renameio								 v0.1.0 \
 	github.com/google/s2a-go								 v0.1.9 \
 	github.com/google/uuid									 v1.6.0 \
@@ -108,6 +110,8 @@ MODGO_MODULES =	\
 	github.com/sagikazarmark/crypt								 v0.19.0 \
 	github.com/sagikazarmark/locafero							 v0.7.0 \
 	github.com/sagikazarmark/slog-shim							 v0.1.0 \
+	github.com/shurcoo!l/githubv4								 v0.0.0-20260209031235-2402fdf4a9ed \
+	github.com/shurcoo!l/graphql								 v0.0.0-20240915155400-7ee5256398cf \
 	github.com/sorairolake/lzip-go								 v0.3.8 \
 	github.com/sourcegraph/conc								 v0.3.0 \
 	github.com/spf13/afero									 v1.15.0 \
@@ -178,6 +182,7 @@ MODGO_MODFILES =	\
 	github.com/fsnotify/fsnotify							 v1.7.0 \
 	github.com/go-logr/logr								 v1.4.1 \
 	github.com/golang/protobuf							 v1.5.0 \
+	github.com/google/go-cmp							 v0.5.2 \
 	github.com/google/go-cmp							 v0.5.5 \
 	github.com/google/go-cmp							 v0.5.9 \
 	github.com/google/go-cmp							 v0.6.0 \
