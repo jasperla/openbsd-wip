@@ -1,0 +1,4 @@
+openvox-lint is a linter for OpenVox and Puppet manifests. It checks your code
+against the Puppet style guide and catches common errors including deprecated
+patterns, legacy facts, strict mode violations, and Puppet 8+ language issues.
+Fully compatible with OpenVox 8.x and Puppet 8.x.
