@@ -1,5 +1,5 @@
 SHA256 (astral-sh-lsp-types-e15db0593f0ecbbd80599c3f5880e4bf5da1ca0c.tar.gz) = oVtO34dPCRL+riuRAf+i0kSSPZEFJBTG2YZrcNynf0w=
-SHA256 (astral-sh-ruff-e990dfd069fceef96f797b46161ef78862608449.tar.gz) = 2LovXhF8P10Op64aHkGx80IgOjRT2USab8O/FDZ/wpo=
+SHA256 (astral-sh-ruff-ac6361d83e4d51ab123043b00d5285a842077b81.tar.gz) = CRVwnFK41/7iwsGg4qJN0luhGB8SciZEHxspDEdIYAo=
 SHA256 (cargo/adler2-2.0.1.tar.gz) = MgEZV5/K2cIYhPXEhh0WF00OBiUGJSZvUP5omDQKvvo=
 SHA256 (cargo/aho-corasick-1.1.4.tar.gz) = 3dMaEwQnwnUY3yZpQ6UwjtktSyJsxjn1qPEAKBYXQwE=
 SHA256 (cargo/alloca-0.4.0.tar.gz) = 5afQXqaup+nmTSW5FWui/uP91lnjTkEGPNL8fNAg1/Q=
@@ -180,8 +180,8 @@ SHA256 (cargo/itertools-0.10.5.tar.gz) = sP0iYOgpvd9MtuqAIoneL4bWp6aQGS++kbP0bg8
 SHA256 (cargo/itertools-0.13.0.tar.gz) = QT7n38Uu4aSUnO6328ijPy1sCIGU2fki+4MY+vHwEYY=
 SHA256 (cargo/itertools-0.14.0.tar.gz) = KxkseCA3+t2c+nVUgxBIiqvb89Lac4hbMb0KvQM1EoU=
 SHA256 (cargo/itoa-1.0.15.tar.gz) = Sl8TuFjI0xTuPo9jkBH3zO/nH5f5blAVH7mR8meSjiw=
-SHA256 (cargo/jiff-0.2.23.tar.gz) = GjVG3Ja21CxfJJAq+eJTjoLjmtNQsMdm6z+/LY89g1k=
-SHA256 (cargo/jiff-static-0.2.23.tar.gz) = KoyLNEEkIi79cUtzu0H4tRILJ6fMHHVZOm/3aNnQWqQ=
+SHA256 (cargo/jiff-0.2.24.tar.gz) = 8AtdvWINYd/ctgB8nB9gVOvXUxnxY9iGqQVc7BFVBz0=
+SHA256 (cargo/jiff-static-0.2.24.tar.gz) = 4ADeAw/4Ai6h2j9Gb7sPOoCfXlHtMfbdkxw1GBrY5tc=
 SHA256 (cargo/jiff-tzdb-0.1.4.tar.gz) = wSg3BesKIUBNK/1u7yp1k9JAvEKgvbOdsK1vouwCZSQ=
 SHA256 (cargo/jiff-tzdb-platform-0.1.3.tar.gz) = h1paaawrqxqJFxHPXsy+wc4DQeqAVWDc2Qt6LpJRMug=
 SHA256 (cargo/jobserver-0.1.34.tar.gz) = mvs95Dldaz5np4C23mS1HJeOzxHLmkYsZr59TKkDnTM=
@@ -191,7 +191,7 @@ SHA256 (cargo/kqueue-1.1.1.tar.gz) = 6sMBBtfc6I2vSj/LSHnqk5R21QdKm33dD7l/pL7VWWo
 SHA256 (cargo/kqueue-sys-1.0.4.tar.gz) = 7ZYl/9qHKbheRc8ECQA1rDaJJ7jOvDSJjnwSD1Lkg4s=
 SHA256 (cargo/lazy_static-1.5.0.tar.gz) = u9K8tMlj8t2uBqLvx+nzWRMSRzxQxmheHymAaDFuZv4=
 SHA256 (cargo/leb128fmt-0.1.0.tar.gz) = Ce3Z6LVOSeWH5PYpWn0pw+qU1GnLQKuMpwsogkioHbI=
-SHA256 (cargo/libc-0.2.185.tar.gz) = Uv8sD+m8bLaxSgWSwv9Pqc64PuqduXmwSHzQVJRqK48=
+SHA256 (cargo/libc-0.2.186.tar.gz) = aKuRAX/hbGIkhoQOTIPJo3r+/5eL0jm1KT1h7OWH3mY=
 SHA256 (cargo/libcst-1.8.6.tar.gz) = aupxQ+Sg7Vm4eh7nHhmFAIifiwBTERNr4V6EyXpvzY0=
 SHA256 (cargo/libcst_derive-1.8.6.tar.gz) = CQMXPqMWw0pE0ElxYeBNkhCvRPX16Jvy9V2aJUyaDo0=
 SHA256 (cargo/libmimalloc-sys-0.1.47.tar.gz) = LR6s+jHDPsJehzwTa6VmnwD5hm0GiL6nvk0/fkMGffY=
@@ -210,7 +210,7 @@ SHA256 (cargo/matchers-0.2.0.tar.gz) = 0VJaKijH9PoPyYu5GudV0eLRUFB54FU541vIdrXWW
 SHA256 (cargo/matchit-0.9.2.tar.gz) = iGO1hwAcG5qKTjYAjOvGs2EssSJv4t6UhY4GCSaHtgg=
 SHA256 (cargo/memchr-2.8.0.tar.gz) = +MpY9EfwbtF9X8QEPOGxDdIF4GD7POW5ebjtjln/P3k=
 SHA256 (cargo/memoffset-0.9.1.tar.gz) = SIAWv65FewNtmWCS9stEhndhHOREnpcM6vQmlSA/IYo=
-SHA256 (cargo/mimalloc-0.1.49.tar.gz) = rKPAGnEfOVtCV7gWdMDpDo3R8eYsS320X2hMx6T8sYo=
+SHA256 (cargo/mimalloc-0.1.50.tar.gz) = s2J8QnLfeGuSYMq6pGrsHVnJPt5yPUw+9kbFA4FrBkA=
 SHA256 (cargo/minicov-0.3.7.tar.gz) = 8n/p8cw8IuFof5RGwgg8TF/H8Lzxx6hr297RSYWJW0s=
 SHA256 (cargo/minimal-lexical-0.2.1.tar.gz) = aDVMXGvTbXP/P+zrBe+lm2rLdiZhf0livjIqgl5h95o=
 SHA256 (cargo/miniz_oxide-0.8.9.tar.gz) = H6dqLIb3BL2yItZpZfs9Yyac44UYuDywV1/KhV67YxY=
@@ -487,9 +487,9 @@ SHA256 (cargo/zmij-1.0.10.tar.gz) = MODY3/uuPYQPZL2jjig5H672c6e1pgF4QPKhBsgUWGg=
 SHA256 (cargo/zstd-0.11.2+zstd.1.5.2.tar.gz) = IMyWAybs5k8BDS0hB1N/JtxYmmVzoxa9Wx26aF+l/eQ=
 SHA256 (cargo/zstd-safe-5.0.2+zstd.1.5.2.tar.gz) = HSpVheBPnupLKj0eylCMTe6Vkqie9vRQwRcZ2gcm9Ns=
 SHA256 (cargo/zstd-sys-2.0.16+zstd.1.5.7.tar.gz) = keGevCrcj4PkMDnnl3bj/ajKkZEy1oof7WpfrKJoN0g=
-SHA256 (ty-0.0.34.tar.gz) = aC8/CGrvYGZsepo0f7d1ZGF0YZfrRRUFb4ceY8b7lcI=
+SHA256 (ty-0.0.35.tar.gz) = TWbYOJavqbfDQ5il+/Xw0GxkP7o6RghIWb+RFhDX218=
 SIZE (astral-sh-lsp-types-e15db0593f0ecbbd80599c3f5880e4bf5da1ca0c.tar.gz) = 71166
-SIZE (astral-sh-ruff-e990dfd069fceef96f797b46161ef78862608449.tar.gz) = 11566006
+SIZE (astral-sh-ruff-ac6361d83e4d51ab123043b00d5285a842077b81.tar.gz) = 11582635
 SIZE (cargo/adler2-2.0.1.tar.gz) = 13366
 SIZE (cargo/aho-corasick-1.1.4.tar.gz) = 184015
 SIZE (cargo/alloca-0.4.0.tar.gz) = 4257
@@ -670,8 +670,8 @@ SIZE (cargo/itertools-0.10.5.tar.gz) = 115354
 SIZE (cargo/itertools-0.13.0.tar.gz) = 146261
 SIZE (cargo/itertools-0.14.0.tar.gz) = 152715
 SIZE (cargo/itoa-1.0.15.tar.gz) = 11231
-SIZE (cargo/jiff-0.2.23.tar.gz) = 759789
-SIZE (cargo/jiff-static-0.2.23.tar.gz) = 83745
+SIZE (cargo/jiff-0.2.24.tar.gz) = 760237
+SIZE (cargo/jiff-static-0.2.24.tar.gz) = 83747
 SIZE (cargo/jiff-tzdb-0.1.4.tar.gz) = 62435
 SIZE (cargo/jiff-tzdb-platform-0.1.3.tar.gz) = 3179
 SIZE (cargo/jobserver-0.1.34.tar.gz) = 29013
@@ -681,7 +681,7 @@ SIZE (cargo/kqueue-1.1.1.tar.gz) = 21504
 SIZE (cargo/kqueue-sys-1.0.4.tar.gz) = 7160
 SIZE (cargo/lazy_static-1.5.0.tar.gz) = 14025
 SIZE (cargo/leb128fmt-0.1.0.tar.gz) = 14138
-SIZE (cargo/libc-0.2.185.tar.gz) = 821775
+SIZE (cargo/libc-0.2.186.tar.gz) = 821883
 SIZE (cargo/libcst-1.8.6.tar.gz) = 111277
 SIZE (cargo/libcst_derive-1.8.6.tar.gz) = 11337
 SIZE (cargo/libmimalloc-sys-0.1.47.tar.gz) = 495449
@@ -700,7 +700,7 @@ SIZE (cargo/matchers-0.2.0.tar.gz) = 7075
 SIZE (cargo/matchit-0.9.2.tar.gz) = 44020
 SIZE (cargo/memchr-2.8.0.tar.gz) = 97780
 SIZE (cargo/memoffset-0.9.1.tar.gz) = 9032
-SIZE (cargo/mimalloc-0.1.49.tar.gz) = 4764
+SIZE (cargo/mimalloc-0.1.50.tar.gz) = 4764
 SIZE (cargo/minicov-0.3.7.tar.gz) = 43788
 SIZE (cargo/minimal-lexical-0.2.1.tar.gz) = 94841
 SIZE (cargo/miniz_oxide-0.8.9.tar.gz) = 67132
@@ -977,4 +977,4 @@ SIZE (cargo/zmij-1.0.10.tar.gz) = 22288
 SIZE (cargo/zstd-0.11.2+zstd.1.5.2.tar.gz) = 28987
 SIZE (cargo/zstd-safe-5.0.2+zstd.1.5.2.tar.gz) = 17273
 SIZE (cargo/zstd-sys-2.0.16+zstd.1.5.7.tar.gz) = 775620
-SIZE (ty-0.0.34.tar.gz) = 2610741
+SIZE (ty-0.0.35.tar.gz) = 2610097
