@@ -1,6 +1,6 @@
 COMMENT =		SVG-based theme engine for Qt5 and KDE 
 
-V =			1.1.2
+V =			1.1.7
 PKGNAME =		kvantum-qt5-$V
 
 DIST_TUPLE +=		github tsujan Kvantum V${V} .
