@@ -9,7 +9,7 @@ NOT_FOR_ARCHS =	sparc64
 
 COMMENT =	next-generation test runner for Rust
 
-VERSION =	0.9.133
+VERSION =	0.9.136
 
 DISTNAME =	cargo-nextest-${VERSION}
 
@@ -54,17 +54,20 @@ do-install:
 # Nextest's own tests do not work with cargo test.
 # We must use nextest to run its own test suite.
 #
-# Summary [ 338.669s] 805 tests run: 795 passed, 10 failed, 2 skipped
-# FAIL [   7.408s] (  9/805) integration-tests::integration cargo_message_format::test_cargo_message_format_errors
-# FAIL [  23.209s] ( 15/805) integration-tests::integration interceptor::test_bench_debugger_integration
-# FAIL [  23.624s] ( 17/805) integration-tests::integration interceptor::test_bench_tracer_integration
-# FAIL [  12.992s] ( 33/805) integration-tests::integration record_replay::test_rerun_all_pass
-# FAIL [  10.850s] ( 34/805) integration-tests::integration record_replay::test_rerun_errors
-# FAIL [   4.708s] ( 36/805) integration-tests::integration record_replay::test_rerun_requires_experimental_feature
-# FAIL [  10.834s] ( 39/805) integration-tests::integration record_replay::test_rerun_tests_outstanding
-# FAIL [  27.969s] ( 43/805) integration-tests::integration record_replay::test_rerun_run_id_selectors
-# FAIL [  14.844s] ( 86/805) integration-tests::integration test_setup_script_defined_env
-# FAIL [  14.762s] ( 91/805) integration-tests::integration test_target_dir
+# Summary [ 454.673s] 814 tests run: 803 passed (2 slow), 11 failed, 2 skipped
+# SLOW [  63.320s] ( 75/814) integration-tests::integration test_list_with_default_filter
+# SLOW [  84.287s] ( 88/814) integration-tests::integration test_run
+# FAIL [   9.022s] (  9/814) integration-tests::integration cargo_message_format::test_cargo_message_format_errors
+# FAIL [  24.267s] ( 15/814) integration-tests::integration interceptor::test_bench_debugger_integration
+# FAIL [  25.567s] ( 17/814) integration-tests::integration interceptor::test_bench_tracer_integration
+# FAIL [  14.210s] ( 33/814) integration-tests::integration record_replay::test_replayability_store_version_too_new
+# FAIL [  16.024s] ( 34/814) integration-tests::integration record_replay::test_rerun_all_pass
+# FAIL [  15.587s] ( 36/814) integration-tests::integration record_replay::test_rerun_errors
+# FAIL [   7.707s] ( 39/814) integration-tests::integration record_replay::test_rerun_requires_experimental_feature
+# FAIL [  13.074s] ( 40/814) integration-tests::integration record_replay::test_rerun_tests_outstanding
+# FAIL [  32.931s] ( 47/814) integration-tests::integration record_replay::test_rerun_run_id_selectors
+# FAIL [  17.000s] ( 87/814) integration-tests::integration test_setup_script_defined_env
+# FAIL [  17.656s] ( 93/814) integration-tests::integration test_target_di
 do-test:
 	NEXTEST_HIDE_PROGRESS_BAR=1 ${MODCARGO_CARGO_RUN} run \
 		--package cargo-nextest -- nextest run --profile ci
