@@ -1,7 +1,7 @@
 COMMENT =	tool to detect secrets
 
 MODGO_MODNAME =	github.com/betterleaks/betterleaks
-MODGO_VERSION =	v1.2.0
+MODGO_VERSION =	v1.3.0
 
 DISTNAME =	betterleaks-${MODGO_VERSION}
 

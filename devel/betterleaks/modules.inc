@@ -17,12 +17,12 @@ MODGO_MODULES =	\
 	github.com/!google!cloud!platform/opentelemetry-operations-go/internal/resourcemapping	 v0.53.0 \
 	github.com/!masterminds/semver/v3							 v3.4.0 \
 	github.com/!s!t!a!r!r!y-!s/zip								 v0.2.3 \
-	github.com/andybalholm/brotli								 v1.2.0 \
+	github.com/andybalholm/brotli								 v1.2.1 \
 	github.com/antlr4-go/antlr/v4								 v4.13.1 \
 	github.com/armon/go-metrics								 v0.4.1 \
 	github.com/betterleaks/go-re2								 v0.0.0-20260402140350-c1778d2a0a52 \
 	github.com/bodgit/plumbing								 v1.3.0 \
-	github.com/bodgit/sevenzip								 v1.6.1 \
+	github.com/bodgit/sevenzip								 v1.6.2 \
 	github.com/bodgit/windows								 v1.0.1 \
 	github.com/cespare/xxhash/v2								 v2.3.0 \
 	github.com/cncf/xds/go									 v0.0.0-20251022180443-0feb69152e9f \
@@ -74,7 +74,7 @@ MODGO_MODULES =	\
 	github.com/hashicorp/serf								 v0.10.1 \
 	github.com/inconshreveable/mousetrap							 v1.1.0 \
 	github.com/json-iterator/go								 v1.1.12 \
-	github.com/klauspost/compress								 v1.18.4 \
+	github.com/klauspost/compress								 v1.18.6 \
 	github.com/klauspost/cpuid								 v1.2.0 \
 	github.com/klauspost/pgzip								 v1.2.6 \
 	github.com/kr/pretty									 v0.3.1 \
@@ -83,9 +83,9 @@ MODGO_MODULES =	\
 	github.com/magiconair/properties							 v1.8.9 \
 	github.com/mattn/go-colorable								 v0.1.14 \
 	github.com/mattn/go-isatty								 v0.0.20 \
-	github.com/mholt/archives								 v0.1.5 \
+	github.com/mholt/archives								 v0.1.6-0.20260429171216-ef71b7a32fae \
 	github.com/mikelolasagasti/xz								 v1.0.1 \
-	github.com/minio/minlz									 v1.0.1 \
+	github.com/minio/minlz									 v1.1.1 \
 	github.com/mitchellh/copystructure							 v1.2.0 \
 	github.com/mitchellh/go-homedir								 v1.1.0 \
 	github.com/mitchellh/mapstructure							 v1.5.0 \
@@ -97,7 +97,7 @@ MODGO_MODULES =	\
 	github.com/nats-io/nuid									 v1.0.1 \
 	github.com/nwaples/rardecode/v2								 v2.2.2 \
 	github.com/pelletier/go-toml/v2								 v2.2.4 \
-	github.com/pierrec/lz4/v4								 v4.1.25 \
+	github.com/pierrec/lz4/v4								 v4.1.26 \
 	github.com/pkg/errors									 v0.9.1 \
 	github.com/pkoukk/tiktoken-go								 v0.1.8 \
 	github.com/planetscale/vtprotobuf							 v0.6.1-0.20240319094008-0393e58bdf10 \
@@ -149,15 +149,15 @@ MODGO_MODULES =	\
 	go4.org											 v0.0.0-20260112195520-a5071408f32f \
 	golang.org/x/crypto									 v0.46.0 \
 	golang.org/x/exp									 v0.0.0-20250218142911-aa4b98e5adaa \
-	golang.org/x/mod									 v0.32.0 \
+	golang.org/x/mod									 v0.35.0 \
 	golang.org/x/net									 v0.48.0 \
 	golang.org/x/oauth2									 v0.34.0 \
-	golang.org/x/sync									 v0.19.0 \
+	golang.org/x/sync									 v0.20.0 \
 	golang.org/x/sys									 v0.42.0 \
 	golang.org/x/term									 v0.38.0 \
-	golang.org/x/text									 v0.34.0 \
+	golang.org/x/text									 v0.37.0 \
 	golang.org/x/time									 v0.14.0 \
-	golang.org/x/tools									 v0.41.0 \
+	golang.org/x/tools									 v0.44.0 \
 	golang.org/x/xerrors									 v0.0.0-20191204190536-9bdfabe68543 \
 	google.golang.org/api									 v0.259.0 \
 	google.golang.org/appengine								 v1.6.8 \
@@ -174,7 +174,8 @@ MODGO_MODFILES =	\
 	cel.dev/expr									 v0.24.0 \
 	cloud.google.com/go								 v0.112.1 \
 	cloud.google.com/go/compute/metadata						 v0.2.3 \
-	github.com/andybalholm/brotli							 v1.1.1 \
+	github.com/andybalholm/brotli							 v1.2.0 \
+	github.com/bodgit/sevenzip							 v1.6.1 \
 	github.com/coreos/go-systemd/v22						 v22.3.2 \
 	github.com/davecgh/go-spew							 v1.1.0 \
 	github.com/davecgh/go-spew							 v1.1.1 \
@@ -193,6 +194,7 @@ MODGO_MODFILES =	\
 	github.com/klauspost/compress							 v1.17.11 \
 	github.com/klauspost/compress							 v1.17.2 \
 	github.com/klauspost/compress							 v1.18.0 \
+	github.com/klauspost/compress							 v1.18.5 \
 	github.com/klauspost/compress							 v1.4.1 \
 	github.com/kr/pretty								 v0.3.0 \
 	github.com/magiconair/properties						 v1.8.7 \
@@ -200,6 +202,7 @@ MODGO_MODFILES =	\
 	github.com/mattn/go-isatty							 v0.0.16 \
 	github.com/mattn/go-isatty							 v0.0.17 \
 	github.com/mattn/go-isatty							 v0.0.19 \
+	github.com/minio/minlz								 v1.0.1 \
 	github.com/nwaples/rardecode/v2							 v2.2.0 \
 	github.com/pelletier/go-toml/v2							 v2.2.2 \
 	github.com/pierrec/lz4/v4							 v4.1.22 \
@@ -225,7 +228,6 @@ MODGO_MODFILES =	\
 	github.com/stretchr/testify							 v1.9.0 \
 	github.com/tetratelabs/wazero							 v1.10.1 \
 	github.com/tetratelabs/wazero							 v1.7.2 \
-	github.com/ulikunitz/xz								 v0.5.12 \
 	github.com/ulikunitz/xz								 v0.5.13 \
 	github.com/ulikunitz/xz								 v0.5.8 \
 	github.com/wasilibs/wazero-helpers						 v0.0.0-20240620070341-3dff1577cd52 \
@@ -236,7 +238,6 @@ MODGO_MODFILES =	\
 	go.opentelemetry.io/otel/trace							 v1.24.0 \
 	go.uber.org/atomic								 v1.7.0 \
 	go.uber.org/multierr								 v1.9.0 \
-	go4.org										 v0.0.0-20200411211856-f5505b9728dd \
 	go4.org										 v0.0.0-20230225012048-214862532bf5 \
 	golang.org/x/crypto								 v0.21.0 \
 	golang.org/x/exp								 v0.0.0-20230905200255-921286631fa9 \
@@ -249,8 +250,8 @@ MODGO_MODFILES =	\
 	golang.org/x/net								 v0.47.0 \
 	golang.org/x/oauth2								 v0.18.0 \
 	golang.org/x/sync								 v0.0.0-20210220032951-036812b2e83c \
-	golang.org/x/sync								 v0.10.0 \
 	golang.org/x/sync								 v0.11.0 \
+	golang.org/x/sync								 v0.19.0 \
 	golang.org/x/sync								 v0.6.0 \
 	golang.org/x/sys								 v0.0.0-20220811171246-fbc7d0a398ab \
 	golang.org/x/sys								 v0.12.0 \
@@ -272,6 +273,7 @@ MODGO_MODFILES =	\
 	golang.org/x/text								 v0.28.0 \
 	golang.org/x/text								 v0.29.0 \
 	golang.org/x/text								 v0.32.0 \
+	golang.org/x/text								 v0.36.0 \
 	golang.org/x/time								 v0.5.0 \
 	golang.org/x/tools								 v0.26.0 \
 	golang.org/x/tools								 v0.30.0 \
