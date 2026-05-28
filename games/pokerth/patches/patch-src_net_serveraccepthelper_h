@@ -1,18 +1,12 @@
-TCP_KEEPALIVE not supported
-
+# Temporary patch - does not build from source after PR#508
 Index: src/net/serveraccepthelper.h
 --- src/net/serveraccepthelper.h.orig
 +++ src/net/serveraccepthelper.h
-@@ -247,6 +247,7 @@ class ServerAcceptHelper : public ServerAcceptInterfac
-                     int keepidle  = 30;   // seconds until first keepalive probe
-                     int keepintvl = 10;   // seconds between subsequent probes
-                     int keepcnt   = 6;    // number of failed probes before disconnect
-+#if !defined(__OpenBSD__)
- #if defined(__APPLE__)
-                     setsockopt(fd, IPPROTO_TCP, TCP_KEEPALIVE, &keepidle,  sizeof(keepidle));
+@@ -251,9 +251,9 @@ class ServerAcceptHelper : public ServerAcceptInterfac
  #else
-@@ -254,6 +255,7 @@ class ServerAcceptHelper : public ServerAcceptInterfac
+                     setsockopt(fd, IPPROTO_TCP, TCP_KEEPIDLE,  &keepidle,  sizeof(keepidle));
  #endif
+-#endif
                      setsockopt(fd, IPPROTO_TCP, TCP_KEEPINTVL, &keepintvl, sizeof(keepintvl));
                      setsockopt(fd, IPPROTO_TCP, TCP_KEEPCNT,   &keepcnt,   sizeof(keepcnt));
 +#endif
