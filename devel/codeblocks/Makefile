@@ -10,8 +10,8 @@ COMMENT=	Code::Blocks C/C++ IDE
 #
 #EXTRACT_SUFX=	.tar.xz
 
-DIST_TUPLE =    github jggimi codeblocks 4defbc85113cac3096507c8076be1e71cd64da7c .
-SVN_REV = 	13844
+DIST_TUPLE =    github jggimi codeblocks 5bb7cd0bf0b98a293494e1fc8b15d1fdfd844d92 .
+SVN_REV = 	13855
 SUBST_VARS +=	SVN_REV
 V =             25.03pl${SVN_REV}
 PKGNAME =       codeblocks-${V}
@@ -41,23 +41,24 @@ HOMEPAGE=	https://www.codeblocks.org/
 # GPLv3
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} ICE Lerc SDL2 SM X11 Xau Xcomposite
+WANTLIB += ${COMPILER_LIBCXX} ICE Lerc SDL2 SM X11 XRes Xau Xcomposite
 WANTLIB += Xcursor Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr
 WANTLIB += Xrender Xss Xtst Xxf86vm aspell atk-1.0 atk-bridge-2.0
-WANTLIB += atspi bz2 c cairo cairo-gobject crypto
-WANTLIB += curl curses dbus-1 enchant-2 epoll-shim epoxy execinfo
-WANTLIB += expat ffi fontconfig freetype fribidi gcrypt gdk-3
-WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
-WANTLIB += gpg-error graphite2 gspell-1 gthread-2.0 gtk-3 harfbuzz
-WANTLIB += hunspell-1.7 iconv icudata icuuc intl jpeg lzma m mspack
-WANTLIB += nghttp2 nghttp3 ngtcp2 ngtcp2_crypto_libressl notify
-WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre2-32 pcre2-8
-WANTLIB += pixman-1 png samplerate secret-1 sndio ssl tiff usbhid
-WANTLIB += util wayland-client wayland-cursor wayland-egl wx_baseu-3.2
+WANTLIB += atspi bz2 c cairo cairo-gobject crypto curl curses
+WANTLIB += dbus-1 enchant-2 epoll-shim epoxy execinfo expat ffi
+WANTLIB += fontconfig freetype fribidi gcrypt gdk-3 gdk_pixbuf-2.0
+WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gpg-error
+WANTLIB += graphite2 gspell-1 gthread-2.0 gtk-3 harfbuzz hunspell-1.7
+WANTLIB += iconv icudata icuuc intl jpeg lzma m mspack nghttp2
+WANTLIB += nghttp3 ngtcp2 ngtcp2_crypto_libressl notify pango-1.0
+WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre2-32 pcre2-8
+WANTLIB += png samplerate secret-1 sndio ssl tiff usbhid util
+WANTLIB += wayland-client wayland-cursor wayland-egl wx_baseu-3.2
 WANTLIB += wx_baseu_net-3.2 wx_baseu_xml-3.2 wx_gtk3u_aui-3.2
 WANTLIB += wx_gtk3u_core-3.2 wx_gtk3u_html-3.2 wx_gtk3u_propgrid-3.2
 WANTLIB += wx_gtk3u_qa-3.2 wx_gtk3u_richtext-3.2 wx_gtk3u_xrc-3.2
 WANTLIB += xcb xcb-render xcb-shm xkbcommon z zstd
+
 
 BUILD_DEPENDS=  archivers/zip \
                 devel/boost

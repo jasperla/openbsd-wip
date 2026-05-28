@@ -842,6 +842,8 @@ share/codeblocks/images/wxsmith/wxBitmapButton16.png
 share/codeblocks/images/wxsmith/wxBitmapButton32.png
 share/codeblocks/images/wxsmith/wxBitmapComboBox16.png
 share/codeblocks/images/wxsmith/wxBitmapComboBox32.png
+share/codeblocks/images/wxsmith/wxBitmapToggleButton16.png
+share/codeblocks/images/wxsmith/wxBitmapToggleButton32.png
 share/codeblocks/images/wxsmith/wxBoxSizer16.png
 share/codeblocks/images/wxsmith/wxBoxSizer32.png
 share/codeblocks/images/wxsmith/wxButton16.png
