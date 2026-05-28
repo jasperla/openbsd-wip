@@ -82,9 +82,9 @@ share/examples/login.conf.d/transmission_daemon
 share/transmission/
 share/transmission/public_html/
 share/transmission/public_html/images/
+share/transmission/public_html/images/apple-touch-icon.png
 share/transmission/public_html/images/favicon.ico
-share/transmission/public_html/images/favicon.png
-share/transmission/public_html/images/webclip-icon.png
+share/transmission/public_html/images/favicon.svg
 share/transmission/public_html/index.html
 share/transmission/public_html/transmission-app.css
 share/transmission/public_html/transmission-app.css.LEGAL.txt
