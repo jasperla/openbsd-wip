@@ -19,6 +19,7 @@ share/shotcut/qml/export-chapters/
 share/shotcut/qml/export-chapters/export-chapters.js
 share/shotcut/qml/export-chapters/main.js
 share/shotcut/qml/export-chapters/mlt2chapters.js
+share/shotcut/qml/export-chapters/package-lock.json
 share/shotcut/qml/export-chapters/package.json
 share/shotcut/qml/export-chapters/rebuild.sh
 share/shotcut/qml/export-chapters/test-node.js
@@ -26,6 +27,7 @@ share/shotcut/qml/export-edl/
 share/shotcut/qml/export-edl/export-edl.js
 share/shotcut/qml/export-edl/main.js
 share/shotcut/qml/export-edl/mlt2edl.js
+share/shotcut/qml/export-edl/package-lock.json
 share/shotcut/qml/export-edl/package.json
 share/shotcut/qml/export-edl/rebuild.sh
 share/shotcut/qml/export-edl/test-node.js
@@ -134,6 +136,12 @@ share/shotcut/qml/filters/audio_pitch/ui.qml
 share/shotcut/qml/filters/audio_reverb/
 share/shotcut/qml/filters/audio_reverb/meta.qml
 share/shotcut/qml/filters/audio_reverb/ui.qml
+share/shotcut/qml/filters/audio_rnnoise/
+share/shotcut/qml/filters/audio_rnnoise/meta.qml
+share/shotcut/qml/filters/audio_rnnoise/ui.qml
+share/shotcut/qml/filters/audio_rnnoise_link/
+share/shotcut/qml/filters/audio_rnnoise_link/meta.qml
+share/shotcut/qml/filters/audio_rnnoise_link/ui.qml
 share/shotcut/qml/filters/audio_seam/
 share/shotcut/qml/filters/audio_seam/meta.qml
 share/shotcut/qml/filters/audio_seam/ui.qml
@@ -636,6 +644,9 @@ share/shotcut/qml/filters/vignette/meta_movit.qml
 share/shotcut/qml/filters/vignette/meta_oldfilm.qml
 share/shotcut/qml/filters/vignette/ui_movit.qml
 share/shotcut/qml/filters/vignette/ui_oldfilm.qml
+share/shotcut/qml/filters/vst2.1934451059/
+share/shotcut/qml/filters/vst2.1934451059/meta.qml
+share/shotcut/qml/filters/vst2.1934451059/ui.qml
 share/shotcut/qml/filters/wave/
 share/shotcut/qml/filters/wave/icon.webp
 share/shotcut/qml/filters/wave/meta.qml
@@ -688,6 +699,7 @@ share/shotcut/qml/scopes/
 share/shotcut/qml/scopes/audioloudness/
 share/shotcut/qml/scopes/audioloudness/audioloudnessscope.qml
 share/shotcut/qml/views/
+share/shotcut/qml/views/HdrPreview.qml
 share/shotcut/qml/views/filter/
 share/shotcut/qml/views/filter/AttachedFilters.qml
 share/shotcut/qml/views/filter/CopyFiltersDialog.qml
@@ -695,6 +707,8 @@ share/shotcut/qml/views/filter/FilterMenu.js
 share/shotcut/qml/views/filter/FilterMenu.qml
 share/shotcut/qml/views/filter/FilterMenuDelegate.qml
 share/shotcut/qml/views/filter/filterview.qml
+share/shotcut/qml/views/hdr_gain.frag
+share/shotcut/qml/views/hdr_gain.frag.qsb
 share/shotcut/qml/views/keyframes/
 share/shotcut/qml/views/keyframes/Keyframe.qml
 share/shotcut/qml/views/keyframes/KeyframeClip.qml
