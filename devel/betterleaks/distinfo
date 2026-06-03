@@ -1,4 +1,4 @@
-SHA256 (betterleaks-v1.3.1.zip) = qWnFEdWeWGaovXFInjhFQWnZKIaQCjvig4RyIA7b7as=
+SHA256 (betterleaks-v1.4.0.zip) = Yqnor8WgHwxvUIVHFVQ/owRT8Xan4kdPmAjJZcPBkr4=
 SHA256 (go_modules/cel.dev/expr/@v/v0.24.0.mod) = wMexfwVuWHervPsGdEz1I4y5oLChoI4ThM8mhaIhFNE=
 SHA256 (go_modules/cel.dev/expr/@v/v0.25.1.mod) = Z0UnUNV+zK4mM7F05mRotyYy7edErdtN4sCybd04qOE=
 SHA256 (go_modules/cel.dev/expr/@v/v0.25.1.zip) = EmUr6iRhqikATSMFLToIy1kRqwplJGnvXabvs3wS7oc=
@@ -458,7 +458,7 @@ SHA256 (go_modules/gopkg.in/ini.v1/@v/v1.67.0.zip) = vYRd/HYqh6VuWjKgd3Dcg+hpdtt
 SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.0-20200313102051-9f266ea9e77c.mod) = IVeYYKIDBvz0OxvSNNH7oxlJnHdhG3HAX5vzupDauTk=
 SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.mod) = IVeYYKIDBvz0OxvSNNH7oxlJnHdhG3HAX5vzupDauTk=
 SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.zip) = qrj7xOYwDqCOav4crqGKIckMefSJ9SxT4vIEMfGpoBU=
-SIZE (betterleaks-v1.3.1.zip) = 1589309
+SIZE (betterleaks-v1.4.0.zip) = 1565584
 SIZE (go_modules/cel.dev/expr/@v/v0.24.0.mod) = 231
 SIZE (go_modules/cel.dev/expr/@v/v0.25.1.mod) = 96
 SIZE (go_modules/cel.dev/expr/@v/v0.25.1.zip) = 239588
