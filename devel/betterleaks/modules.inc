@@ -20,7 +20,7 @@ MODGO_MODULES =	\
 	github.com/andybalholm/brotli								 v1.2.1 \
 	github.com/antlr4-go/antlr/v4								 v4.13.1 \
 	github.com/armon/go-metrics								 v0.4.1 \
-	github.com/betterleaks/go-re2								 v0.0.0-20260402140350-c1778d2a0a52 \
+	github.com/betterleaks/go-re2								 v1.11.0-betterleaks.3 \
 	github.com/bodgit/plumbing								 v1.3.0 \
 	github.com/bodgit/sevenzip								 v1.6.2 \
 	github.com/bodgit/windows								 v1.0.1 \
@@ -123,9 +123,8 @@ MODGO_MODULES =	\
 	github.com/stretchr/objx								 v0.5.3 \
 	github.com/stretchr/testify								 v1.11.1 \
 	github.com/subosito/gotenv								 v1.6.0 \
-	github.com/tetratelabs/wazero								 v1.11.0 \
+	github.com/tetratelabs/wazero								 v1.12.0 \
 	github.com/ulikunitz/xz									 v0.5.15 \
-	github.com/wasilibs/go-re2								 v1.10.0 \
 	github.com/wasilibs/wazero-helpers							 v0.0.0-20250123031827-cd30c44769bb \
 	github.com/xyproto/randomstring								 v1.0.5 \
 	go.etcd.io/etcd/api/v3									 v3.5.12 \
@@ -153,7 +152,7 @@ MODGO_MODULES =	\
 	golang.org/x/net									 v0.48.0 \
 	golang.org/x/oauth2									 v0.34.0 \
 	golang.org/x/sync									 v0.20.0 \
-	golang.org/x/sys									 v0.42.0 \
+	golang.org/x/sys									 v0.45.0 \
 	golang.org/x/term									 v0.38.0 \
 	golang.org/x/text									 v0.37.0 \
 	golang.org/x/time									 v0.14.0 \
@@ -226,11 +225,9 @@ MODGO_MODFILES =	\
 	github.com/stretchr/testify							 v1.8.1 \
 	github.com/stretchr/testify							 v1.8.2 \
 	github.com/stretchr/testify							 v1.9.0 \
-	github.com/tetratelabs/wazero							 v1.10.1 \
 	github.com/tetratelabs/wazero							 v1.7.2 \
 	github.com/ulikunitz/xz								 v0.5.13 \
 	github.com/ulikunitz/xz								 v0.5.8 \
-	github.com/wasilibs/wazero-helpers						 v0.0.0-20240620070341-3dff1577cd52 \
 	go.opentelemetry.io/contrib/instrumentation/google.golang.org/grpc/otelgrpc	 v0.49.0 \
 	go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp			 v0.49.0 \
 	go.opentelemetry.io/otel							 v1.24.0 \
@@ -261,9 +258,9 @@ MODGO_MODFILES =	\
 	golang.org/x/sys								 v0.26.0 \
 	golang.org/x/sys								 v0.29.0 \
 	golang.org/x/sys								 v0.31.0 \
-	golang.org/x/sys								 v0.38.0 \
 	golang.org/x/sys								 v0.39.0 \
 	golang.org/x/sys								 v0.40.0 \
+	golang.org/x/sys								 v0.44.0 \
 	golang.org/x/sys								 v0.6.0 \
 	golang.org/x/text								 v0.12.0 \
 	golang.org/x/text								 v0.14.0 \
