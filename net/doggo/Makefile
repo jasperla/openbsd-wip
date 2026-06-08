@@ -1,7 +1,7 @@
 COMMENT =	modern command-line DNS client (like dig)
 
 MODGO_MODNAME =	github.com/mr-karan/doggo
-MODGO_VERSION =	v1.1.6
+MODGO_VERSION =	v1.1.7
 
 DISTNAME =	doggo-${MODGO_VERSION}
 
@@ -22,7 +22,7 @@ MODGO_LDFLAGS +=	-X main.buildVersion=${MODGO_VERSION}
 
 SEPARATE_BUILD =	Yes
 
-NO_TEST =		Yes
+TEST_TARGET =	./...
 
 # Remove buildDate from version
 do-patch:

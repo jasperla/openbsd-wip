@@ -1,4 +1,4 @@
-SHA256 (doggo-v1.1.6.zip) = XqG81kk26hzA7KeKIyeAoViRPzIhwZZJn/FDKknw7OY=
+SHA256 (doggo-v1.1.7.zip) = hkOERgbsADo3TmnngqKq7GfAQC5vdiCxkkzpBL0UFuQ=
 SHA256 (go_modules/cloud.google.com/go/@v/v0.123.0.mod) = 0Nt+r1ZB8nJOxHuYgM8ZIN4OHdVgFN2/eUhF2WDFPbo=
 SHA256 (go_modules/cloud.google.com/go/@v/v0.123.0.zip) = 6clQnPdb65UWeV7rET0Bog4qcUlqZu1za27SpRaHjVI=
 SHA256 (go_modules/cloud.google.com/go/auth/@v/v0.18.1.mod) = ui0dmoD8paBBncTqx9l5Lnu6eTOoqCw4KLDNoNXvl+k=
@@ -344,7 +344,7 @@ SHA256 (go_modules/mvdan.cc/unparam/@v/v0.0.0-20251027182757-5beb8c8f8f15.mod) =
 SHA256 (go_modules/mvdan.cc/unparam/@v/v0.0.0-20251027182757-5beb8c8f8f15.zip) = J1c8j4BqJcZHtv+i0Tq6Vz9T677oIdjuSHoydEMHySc=
 SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.6.0.mod) = Tjw8HUmmZSRA/3D7R15Urka+LKtjzEZyGzwC/ZzKmF4=
 SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.6.0.zip) = z4hkikcVgYF7AKQu6NJP1z6w41A5mM9G2OY3h+EeUFI=
-SIZE (doggo-v1.1.6.zip) = 2501531
+SIZE (doggo-v1.1.7.zip) = 2510132
 SIZE (go_modules/cloud.google.com/go/@v/v0.123.0.mod) = 2733
 SIZE (go_modules/cloud.google.com/go/@v/v0.123.0.zip) = 293498
 SIZE (go_modules/cloud.google.com/go/auth/@v/v0.18.1.mod) = 1289
