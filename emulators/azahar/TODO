@@ -1,0 +1,3 @@
+I started my work basing this port on citra
+
+Continue migrating it to azahar. Needs the rest of the DIST_TUPLE git submodules.
