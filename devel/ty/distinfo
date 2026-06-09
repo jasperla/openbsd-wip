@@ -1,5 +1,4 @@
-SHA256 (astral-sh-lsp-types-e15db0593f0ecbbd80599c3f5880e4bf5da1ca0c.tar.gz) = oVtO34dPCRL+riuRAf+i0kSSPZEFJBTG2YZrcNynf0w=
-SHA256 (astral-sh-ruff-a70f81f779856ab4fbcd019c0add42537c6d72a3.tar.gz) = 6oFtURg8ZnLbmHskoogeCCiGpNA5jdqgFuZnQawGkFw=
+SHA256 (astral-sh-ruff-12738a49133926ba263baa172ddc43bfb97346b1.tar.gz) = WnB9+lg0hxsV2C82CUDsBf5CqRoZm1kUWzSJlXLJaF8=
 SHA256 (cargo/adler2-2.0.1.tar.gz) = MgEZV5/K2cIYhPXEhh0WF00OBiUGJSZvUP5omDQKvvo=
 SHA256 (cargo/aho-corasick-1.1.4.tar.gz) = 3dMaEwQnwnUY3yZpQ6UwjtktSyJsxjn1qPEAKBYXQwE=
 SHA256 (cargo/alloca-0.4.0.tar.gz) = 5afQXqaup+nmTSW5FWui/uP91lnjTkEGPNL8fNAg1/Q=
@@ -129,6 +128,7 @@ SHA256 (cargo/form_urlencoded-1.2.2.tar.gz) = y0yyRQOFFvX4UneHXNqk99LJoPoEaN4G7R
 SHA256 (cargo/fs-err-3.3.0.tar.gz) = c/3gUtv8kgADz9LI4sbm1Mx8EJFTjDokImzsBmWrCMA=
 SHA256 (cargo/fsevent-sys-4.1.0.tar.gz) = du56AtpNIxZQx86jE0m4ib4vRd2z7zAy0uyBhfYxP9I=
 SHA256 (cargo/funty-2.0.0.tar.gz) = 5tWjKBWuPzMwLZX9yyzheGL4xlNj3P0pNgSAuhAB/Jw=
+SHA256 (cargo/gen-lsp-types-0.8.0.tar.gz) = CvVq13BJ25o8zw7FYFVh1xxnRoi0Z8QpF131TqWIYVE=
 SHA256 (cargo/generic-array-0.14.7.tar.gz) = hWScpR/XInLXghra8nStkcKIJ3cT2cGIINhJmn/2npo=
 SHA256 (cargo/get-size-derive2-0.9.0.tar.gz) = yfirG5ihKElh1yLOmU2aDzAYqxkXYY1BE4JKcrn3G8k=
 SHA256 (cargo/get-size2-0.9.0.tar.gz) = sM0Hd6EFc2LKs1p3ng152s7LjXPixzPqr+t+qRewjwM=
@@ -321,7 +321,6 @@ SHA256 (cargo/serde_core-1.0.228.tar.gz) = QdOFx9TKWOWfxzKvJcOYO2eshSwaJQAK/hF13
 SHA256 (cargo/serde_derive-1.0.228.tar.gz) = 1UDyINMYcXPaIg+IWrZmCDZ7ZXTpJQEak1Pkut2pHXk=
 SHA256 (cargo/serde_derive_internals-0.29.1.tar.gz) = GNJqIKlpueP98vwtnyHtpsQOLehMlAi7XTsF1Jmq5xE=
 SHA256 (cargo/serde_json-1.0.150.tar.gz) = 6AFORLRzbtBTit7s3tD84qJy8i3JV4p+trLZmTx0z7k=
-SHA256 (cargo/serde_repr-0.1.20.tar.gz) = F17j6ArpmCc3ylQ+lhMwh8vZpIXuzDvE3pwaN7R+pZw=
 SHA256 (cargo/serde_spanned-1.1.1.tar.gz) = ZmK1h5UR4G6JmaiiNdhIET6ULJEk8hFRGxZGbuKZXyY=
 SHA256 (cargo/serde_test-1.0.177.tar.gz) = f5Ae5XPKtrMGBFPS1fC65ObWKMI8CpYv+bXx18jU8e0=
 SHA256 (cargo/serde_with-3.20.0.tar.gz) = 5ywcLLeyI/r7YAphlTeoccKBhYPWGUAbeF58C3RszeI=
@@ -488,9 +487,8 @@ SHA256 (cargo/zmij-1.0.10.tar.gz) = MODY3/uuPYQPZL2jjig5H672c6e1pgF4QPKhBsgUWGg=
 SHA256 (cargo/zstd-0.11.2+zstd.1.5.2.tar.gz) = IMyWAybs5k8BDS0hB1N/JtxYmmVzoxa9Wx26aF+l/eQ=
 SHA256 (cargo/zstd-safe-5.0.2+zstd.1.5.2.tar.gz) = HSpVheBPnupLKj0eylCMTe6Vkqie9vRQwRcZ2gcm9Ns=
 SHA256 (cargo/zstd-sys-2.0.16+zstd.1.5.7.tar.gz) = keGevCrcj4PkMDnnl3bj/ajKkZEy1oof7WpfrKJoN0g=
-SHA256 (ty-0.0.44.tar.gz) = wPVNyYsJUoMjcMhUiPz5AbH2RdyJ4nImGXWfP7l0Evw=
-SIZE (astral-sh-lsp-types-e15db0593f0ecbbd80599c3f5880e4bf5da1ca0c.tar.gz) = 71166
-SIZE (astral-sh-ruff-a70f81f779856ab4fbcd019c0add42537c6d72a3.tar.gz) = 11806248
+SHA256 (ty-0.0.45.tar.gz) = J2vDpy110lgA8RJ9+XYYfx53c6nGCEdPrTVv1sPV8MY=
+SIZE (astral-sh-ruff-12738a49133926ba263baa172ddc43bfb97346b1.tar.gz) = 11844789
 SIZE (cargo/adler2-2.0.1.tar.gz) = 13366
 SIZE (cargo/aho-corasick-1.1.4.tar.gz) = 184015
 SIZE (cargo/alloca-0.4.0.tar.gz) = 4257
@@ -620,6 +618,7 @@ SIZE (cargo/form_urlencoded-1.2.2.tar.gz) = 9347
 SIZE (cargo/fs-err-3.3.0.tar.gz) = 27110
 SIZE (cargo/fsevent-sys-4.1.0.tar.gz) = 4620
 SIZE (cargo/funty-2.0.0.tar.gz) = 13160
+SIZE (cargo/gen-lsp-types-0.8.0.tar.gz) = 97668
 SIZE (cargo/generic-array-0.14.7.tar.gz) = 15950
 SIZE (cargo/get-size-derive2-0.9.0.tar.gz) = 8767
 SIZE (cargo/get-size2-0.9.0.tar.gz) = 24328
@@ -812,7 +811,6 @@ SIZE (cargo/serde_core-1.0.228.tar.gz) = 63111
 SIZE (cargo/serde_derive-1.0.228.tar.gz) = 59605
 SIZE (cargo/serde_derive_internals-0.29.1.tar.gz) = 26189
 SIZE (cargo/serde_json-1.0.150.tar.gz) = 155574
-SIZE (cargo/serde_repr-0.1.20.tar.gz) = 12627
 SIZE (cargo/serde_spanned-1.1.1.tar.gz) = 11025
 SIZE (cargo/serde_test-1.0.177.tar.gz) = 18671
 SIZE (cargo/serde_with-3.20.0.tar.gz) = 202905
@@ -979,4 +977,4 @@ SIZE (cargo/zmij-1.0.10.tar.gz) = 22288
 SIZE (cargo/zstd-0.11.2+zstd.1.5.2.tar.gz) = 28987
 SIZE (cargo/zstd-safe-5.0.2+zstd.1.5.2.tar.gz) = 17273
 SIZE (cargo/zstd-sys-2.0.16+zstd.1.5.7.tar.gz) = 775620
-SIZE (ty-0.0.44.tar.gz) = 2617174
+SIZE (ty-0.0.45.tar.gz) = 2618148
