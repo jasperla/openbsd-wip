@@ -2,10 +2,10 @@ COMMENT-main=	BitTorrent command line and daemon client
 COMMENT-gtk=	BitTorrent client with GTK+ interface
 COMMENT-qt=	BitTorrent client with Qt interface
 
-# for integration testing beyond 4.1.1
+# for integration testing beyond 4.1.2
 
-VER=		4.1.1pl20260529
-GIT_REVISION=	67827ef5fbede7fb46f684e421dd23851ad24471
+VER=		4.1.2pl20260609
+GIT_REVISION=	c434ef05c9c5dc7242dc6ae7b8d81182ff992386
 PKGNAME=        transmission-${VER}
 CATEGORIES=	net
 HOMEPAGE=	https://transmissionbt.com/
