@@ -2,10 +2,10 @@ COMMENT =	fast Python type checker and language server
 
 GH_ACCOUNT =	astral-sh
 GH_PROJECT =	ty
-GH_TAGNAME =	0.0.48
+GH_TAGNAME =	0.0.49
 
 # Download ruff sources (sub-module in Git repository)
-RUFF =		2a404f1589d3690cfeb0ae94cdb0f3afca0ddef8
+RUFF =		094025e32eee9a29c5f32d07569e0ebe5e639de1
 DIST_TUPLE +=	github astral-sh ruff ${RUFF} ruff
 
 CATEGORIES =	devel
@@ -45,7 +45,7 @@ do-build:
 		--release ${MODCARGO_BUILD_ARGS}
 
 # Install only ty binary
-# ruff Python module already installed via ruff package
+# ruff Python module already installed via devel/ruff
 do-install:
 	${INSTALL_PROGRAM} ${MODCARGO_TARGET_DIR}/release/ty ${PREFIX}/bin/
 
