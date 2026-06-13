@@ -8,6 +8,7 @@ CATEGORIES =	devel sysutils
 
 HOMEPAGE =	https://gitlab.gnome.org/GNOME/msitools
 
+# LGPLv2, Public Domain, GPLv2, GPLv3, MS-RL
 PERMIT_PACKAGE =	Yes
 
 COMPILER_LANGS =	c
