@@ -1,0 +1,30 @@
+COMMENT =	set of programs to build and inspect windows installer files
+
+V =		0.106
+DIST_TUPLE +=	gnome GNOME msitools v${V} .
+WRKDIST =	${WRKDIR}/msitools-v${V}
+
+CATEGORIES =	devel sysutils
+
+HOMEPAGE =	https://gitlab.gnome.org/GNOME/msitools
+
+PERMIT_PACKAGE =	Yes
+
+COMPILER_LANGS =	c
+
+MODULES =		devel/meson
+
+BUILD_DEPENDS = lang/vala,-main \
+		devel/gettext,-tools
+LIB_DEPENDS =	archivers/gcab \
+		devel/glib2 \
+		devel/libgsf \
+		textproc/libxml
+TEST_DEPENDS =	devel/bats
+
+SHARED_LIBS +=  msi-1.0                   0.0 # 0.0
+
+WANTLIB += c gcab-1.0 gio-2.0 glib-2.0 gobject-2.0 gsf-1 intl
+WANTLIB += xml2
+
+.include <bsd.port.mk>
