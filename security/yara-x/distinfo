@@ -88,7 +88,7 @@ SHA256 (cargo/crossterm_winapi-0.9.1.tar.gz) = rN18YqNmXH9oMKUWNdmsmyPtOFeX9wqDu
 SHA256 (cargo/crunchy-0.2.4.tar.gz) = Rg++6cLC8zkz1yBjCmoLrDO6cFPbU0T6yFjUuJUtd9U=
 SHA256 (cargo/crypto-bigint-0.5.5.tar.gz) = DckvtXykTfbbgFkRGrOvmaY9XQ+DddmXLjGaN5xrq3Y=
 SHA256 (cargo/crypto-common-0.1.6.tar.gz) = G/sSUC8/xGzKG7Uawo351hjYE83D0vJbn+d1o0rya7M=
-SHA256 (cargo/daachorse-3.0.0.tar.gz) = nYf3W74y7hBgkgHgnoGFN9+Bw6y0Nr4rePR8yF0TlHU=
+SHA256 (cargo/daachorse-3.0.2.tar.gz) = mSUfI4t0zSGahv5uqTKDCOuyI/y7W461qkALhHpB3e0=
 SHA256 (cargo/darling-0.23.0.tar.gz) = Ja4T2i8gLVa9f5HCX7oAnncXoeShzJinbYRLZa6RLp0=
 SHA256 (cargo/darling_core-0.23.0.tar.gz) = mGWlD3wzX1NWS7aU72YIJeuGEOClPT4RvxsNPfMeA7A=
 SHA256 (cargo/darling_macro-0.23.0.tar.gz) = rDmE7HvWz6eY5itKZCQmpb4OaPlAHPwqAeP6nqL8240=
@@ -262,11 +262,12 @@ SHA256 (cargo/psl-2.1.210.tar.gz) = J/vU2bLrC24MvWVLznAkP0YMvI3JLfZ0fj+5Ec4c1Kg=
 SHA256 (cargo/psl-types-2.0.11.tar.gz) = M8spT+hqdMvPUNREWzfadiApVJ6+6jQUIcfHA3D4bKw=
 SHA256 (cargo/pulley-interpreter-43.0.2.tar.gz) = fsEv4ZqViDFaSf5XBFAqnALWoZgwMxSwx8hhI7BtKeU=
 SHA256 (cargo/pulley-macros-43.0.2.tar.gz) = NvfV7zHr8bRs1+ci/++TTmcNfkYvSaoBzeB7m3bcpYA=
-SHA256 (cargo/pyo3-0.28.3.tar.gz) = kf2OOKO1DtEWf7mBzW/WAUfgkXhMQnuPcYOn7jLDHBI=
+SHA256 (cargo/pyo3-0.29.0.tar.gz) = zSdGULIdS/wmoKR1h5YsHttCX2kocyQ1XNBAw+pmBxw=
 SHA256 (cargo/pyo3-build-config-0.28.3.tar.gz) = 42jn3f3rmMm8p/g4O+Fkj9hKtGa/K8AV6UAI2201YR4=
-SHA256 (cargo/pyo3-ffi-0.28.3.tar.gz) = fynhCvgLH3zK9/aerOgAoD7NE+iDrPrMHl0JiGBfZR4=
-SHA256 (cargo/pyo3-macros-0.28.3.tar.gz) = 325SDv9HxFmX0vx92CFLJd0TEJGLuyZCFW72amfymBM=
-SHA256 (cargo/pyo3-macros-backend-0.28.3.tar.gz) = xM3CGNg1c4+BwjOPgiB4r0W0r9+LLjPLtZFvEIuBOss=
+SHA256 (cargo/pyo3-build-config-0.29.0.tar.gz) = xeKn0vDQEzQvKVwEitGSN63VFUpVscWiVMDsk9QQkHg=
+SHA256 (cargo/pyo3-ffi-0.29.0.tar.gz) = yoXEZ9obvI2Gbupd7/nPKepfd4UFShfaNuZb2pwFhFs=
+SHA256 (cargo/pyo3-macros-0.29.0.tar.gz) = msU3Yv0GXaoxlN0JM3o4vXk6GIEA/RqTBMSrMS2QF3E=
+SHA256 (cargo/pyo3-macros-backend-0.29.0.tar.gz) = TKOhVXOZeDFy3FvznPyoNRV3MlMsula3HSKSFh5Ts2I=
 SHA256 (cargo/quanta-0.12.6.tar.gz) = 86tanXVvDZe9yJAZvS5OoJjPnN5Q7nVk3ea4HMyPBsc=
 SHA256 (cargo/quote-1.0.45.tar.gz) = QfJhmWYFBok4LStE9mT0vFk+EpeFo21u43bd83JZuSQ=
 SHA256 (cargo/r-efi-5.3.0.tar.gz) = ac2zTBWM6yiN8R4YtL053plPZlfYOEe9/9vX80Z1Sw8=
@@ -463,7 +464,7 @@ SHA256 (cargo/zip-8.2.0.tar.gz) = toDyoM1Hm0z/bhIzxIP96tQYEG6uQZ3GAgCumFD20AQ=
 SHA256 (cargo/zlib-rs-0.5.2.tar.gz) = LwaukvQvXlxCRD/QlPJF62Vqv1bdfM6biyYyNlZeAPI=
 SHA256 (cargo/zmij-1.0.20.tar.gz) = TemN+l1bf+9O6DTQBz1WDJyntsRqcdBYxI23lg+M+vc=
 SHA256 (cargo/zopfli-0.8.3.tar.gz) = 8FzYeX1jhlQl/4m1xKSIBPNboM6NElgAAnrWAX0rUkk=
-SHA256 (yara-x-1.17.0.tar.gz) = 28xlCbu4FiMaFQkBcAWmkMxyb2NE9odsl5Wsk5b10rI=
+SHA256 (yara-x-1.18.0.tar.gz) = ybQuhOJFLyzVAdGLD36jWlmO254jxtx7EWXMq58EyEs=
 SIZE (cargo/addr2line-0.26.1.tar.gz) = 43193
 SIZE (cargo/adler2-2.0.1.tar.gz) = 13366
 SIZE (cargo/aho-corasick-1.1.4.tar.gz) = 184015
@@ -554,7 +555,7 @@ SIZE (cargo/crossterm_winapi-0.9.1.tar.gz) = 16027
 SIZE (cargo/crunchy-0.2.4.tar.gz) = 3887
 SIZE (cargo/crypto-bigint-0.5.5.tar.gz) = 83384
 SIZE (cargo/crypto-common-0.1.6.tar.gz) = 8760
-SIZE (cargo/daachorse-3.0.0.tar.gz) = 93004
+SIZE (cargo/daachorse-3.0.2.tar.gz) = 93637
 SIZE (cargo/darling-0.23.0.tar.gz) = 43298
 SIZE (cargo/darling_core-0.23.0.tar.gz) = 74564
 SIZE (cargo/darling_macro-0.23.0.tar.gz) = 2480
@@ -728,11 +729,12 @@ SIZE (cargo/psl-2.1.210.tar.gz) = 203452
 SIZE (cargo/psl-types-2.0.11.tar.gz) = 7959
 SIZE (cargo/pulley-interpreter-43.0.2.tar.gz) = 65990
 SIZE (cargo/pulley-macros-43.0.2.tar.gz) = 2346
-SIZE (cargo/pyo3-0.28.3.tar.gz) = 1204476
+SIZE (cargo/pyo3-0.29.0.tar.gz) = 1241253
 SIZE (cargo/pyo3-build-config-0.28.3.tar.gz) = 35961
-SIZE (cargo/pyo3-ffi-0.28.3.tar.gz) = 80881
-SIZE (cargo/pyo3-macros-0.28.3.tar.gz) = 8963
-SIZE (cargo/pyo3-macros-backend-0.28.3.tar.gz) = 88063
+SIZE (cargo/pyo3-build-config-0.29.0.tar.gz) = 39616
+SIZE (cargo/pyo3-ffi-0.29.0.tar.gz) = 88184
+SIZE (cargo/pyo3-macros-0.29.0.tar.gz) = 8915
+SIZE (cargo/pyo3-macros-backend-0.29.0.tar.gz) = 91943
 SIZE (cargo/quanta-0.12.6.tar.gz) = 35284
 SIZE (cargo/quote-1.0.45.tar.gz) = 31564
 SIZE (cargo/r-efi-5.3.0.tar.gz) = 64532
@@ -929,4 +931,4 @@ SIZE (cargo/zip-8.2.0.tar.gz) = 146074
 SIZE (cargo/zlib-rs-0.5.2.tar.gz) = 194342
 SIZE (cargo/zmij-1.0.20.tar.gz) = 26975
 SIZE (cargo/zopfli-0.8.3.tar.gz) = 51589
-SIZE (yara-x-1.17.0.tar.gz) = 56975166
+SIZE (yara-x-1.18.0.tar.gz) = 56983807

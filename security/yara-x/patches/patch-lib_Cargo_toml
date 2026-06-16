@@ -3,13 +3,19 @@ Disable doctest, otherwise tests fail
 Index: lib/Cargo.toml
 --- lib/Cargo.toml.orig
 +++ lib/Cargo.toml
-@@ -365,4 +365,7 @@ ihex = { workspace = true }
- pretty_assertions = { workspace = true }
- rayon = { workspace = true }
- yara-x-proto-yaml = { workspace = true }
--zip = { workspace = true }
-\ No newline at end of file
-+zip = { workspace = true }
-+
+@@ -353,10 +353,13 @@ rayon = { workspace = true }
+ yara-x-proto = { workspace = true }
+ zip = { workspace = true }
+ 
 +[lib]
 +doctest = false
++
+ [[bench]]
+ name = "dex"
+ harness = false
+ 
+ [[bench]]
+ name = "pe"
+-harness = false
+\ No newline at end of file
++harness = false
