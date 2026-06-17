@@ -1,0 +1,3 @@
+This package registers the browserpass-native host application with
+Firefox, enabling the browserpass browser extension to access your
+password store.

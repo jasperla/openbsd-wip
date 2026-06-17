@@ -1,0 +1,13 @@
+share/browserpass/hosts/
+share/browserpass/hosts/chromium/
+share/browserpass/hosts/chromium/${APP_ID}.json
+@sample ${SYSCONFDIR}/chromium/native-messaging-hosts/
+@sample ${SYSCONFDIR}/iridium/native-messaging-hosts/
+@sample ${SYSCONFDIR}/ungoogled-chromium/native-messaging-hosts/
+@sample ${SYSCONFDIR}/chromium/native-messaging-hosts/${APP_ID}.json
+@sample ${SYSCONFDIR}/iridium/native-messaging-hosts/${APP_ID}.json
+@sample ${SYSCONFDIR}/ungoogled-chromium/native-messaging-hosts/${APP_ID}.json
+share/browserpass/policies/
+share/browserpass/policies/chromium/
+share/browserpass/policies/chromium/${APP_ID}.json
+share/doc/pkg-readmes/${PKGSTEM}

@@ -1,0 +1,5 @@
+share/browserpass/
+share/browserpass/LICENSE
+share/browserpass/README.md
+@bin share/browserpass/browserpass
+share/doc/pkg-readmes/${PKGSTEM}

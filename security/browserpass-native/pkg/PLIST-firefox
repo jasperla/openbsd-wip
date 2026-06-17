@@ -1,0 +1,4 @@
+lib/mozilla/
+lib/mozilla/native-messaging-hosts/
+lib/mozilla/native-messaging-hosts/${APP_ID}.json
+share/doc/pkg-readmes/${PKGSTEM}

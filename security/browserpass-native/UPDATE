@@ -1,0 +1,21 @@
+# Status: works for me
+
+I'm using it in firefox. Chrome tested. Chromium derivates have not been tested - feedback welcome.
+
+# Update:
+- updated to the latest version
+- split into ready to use firefox and chromium + derivates subpackages
+- main package for the executable + instructions
+
+*Important:* I changed the pkgname version to start with 0.0 just in case upstream changes to semver -> won't update automatically if you have the old version installed
+
+V and MODGO_VERSION are kind of redundant.
+
+Because this is stupidly complicated:
+V = ${MODGO_VERSION:C/^v//:C/-[^-]*$//:C/-/./}
+
+And this breaks copy paste on update:
+V = 0.0.0-20250425203345
+MODGO_VERSION = v${V}-8419b15841c9
+
+

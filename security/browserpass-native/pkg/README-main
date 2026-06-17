@@ -1,0 +1,17 @@
++-------------------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-------------------------------------------------------------------------------
+
+For chromium, iridium, or ungoogled-chromium, install browserpass-native-chromium.
+For firefox or firefox-esr, install browserpass-native-firefox.
+
+For other Chromium-based browsers, register the native messaging host manually:
+
+# mkdir -p ${SYSCONFDIR}/BROWSER/native-messaging-hosts/
+# ln -sf ${TRUEPREFIX}/share/browserpass/hosts/chromium/${APP_ID}.json \
+    ${SYSCONFDIR}/BROWSER/native-messaging-hosts/${APP_ID}.json
+
+Add the following entries to ${SYSCONFDIR}/BROWSER/unveil.main:
+
+${TRUEPREFIX}/share/browserpass/browserpass rx
+${TRUEPREFIX}/share/browserpass r

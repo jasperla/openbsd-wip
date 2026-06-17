@@ -1,0 +1,15 @@
++-------------------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-------------------------------------------------------------------------------
+
+Install the browser extension from:
+https://chrome.google.com/webstore/detail/browserpass-ce/naepdomgkenhinolocfifgehidddafch
+
+Or manually from github:
+https://github.com/browserpass/browserpass-extension/releases
+
+Add the following entries to ${SYSCONFDIR}/BROWSER/unveil.main, where BROWSER
+is one of chromium, iridium, or ungoogled-chromium:
+
+${TRUEPREFIX}/share/browserpass/browserpass rx
+${TRUEPREFIX}/share/browserpass r

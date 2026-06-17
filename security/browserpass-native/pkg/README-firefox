@@ -1,0 +1,12 @@
++-------------------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-------------------------------------------------------------------------------
+
+Install the browser extension from:
+https://addons.mozilla.org/firefox/addon/browserpass-ce/
+
+Add the following entries to ${SYSCONFDIR}/firefox/unveil.main (or
+${SYSCONFDIR}/firefox-esr/unveil.main if using firefox-esr):
+
+${TRUEPREFIX}/share/browserpass/browserpass rx
+${TRUEPREFIX}/share/browserpass r
