@@ -680,6 +680,7 @@ share/shotcut/qml/modules/Shotcut/Controls/KeyframesButton.qml
 share/shotcut/qml/modules/Shotcut/Controls/Marker.qml
 share/shotcut/qml/modules/Shotcut/Controls/MarkerBar.qml
 share/shotcut/qml/modules/Shotcut/Controls/MotionTrackerDialog.qml
+share/shotcut/qml/modules/Shotcut/Controls/Number2D.qml
 share/shotcut/qml/modules/Shotcut/Controls/Preset.qml
 share/shotcut/qml/modules/Shotcut/Controls/RectangleControl.qml
 share/shotcut/qml/modules/Shotcut/Controls/SaveDefaultButton.qml
