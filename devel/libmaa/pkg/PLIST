@@ -1,0 +1,3 @@
+@static-lib lib/libmaa.a
+@lib lib/libmaa.so.${LIBmaa_VERSION}
+@static-lib lib/libmaa_p.a
