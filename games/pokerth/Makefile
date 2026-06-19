@@ -2,12 +2,12 @@ BROKEN-i386 =	protobuf/abseil problems
 
 COMMENT =	texas holdem poker client, local or internet games
 
-V =		2.0.7
+V =		2.0.8
 #DIST_TUPLE =	github pokerth pokerth v${V} .
-# beyond 2.0.7
-DIST_TUPLE =	github pokerth pokerth 413632a2f0b085fae1d8e7e9f59f138a0147333f .
+# beyond 2.0.8 -- qt6-qml CI
+DIST_TUPLE =	github pokerth pokerth 5c4207af793b101a7eaf31a06bf3a39bf3eb68d9 .
 
-PKGNAME =	pokerth-${V}pl20260612
+PKGNAME =	pokerth-${V}pl20260619
 
 CATEGORIES =	games
 
@@ -27,7 +27,7 @@ MODULES =	devel/cmake \
 		x11/qt6
 SUBST_VARS +=	MODQT_QTDIR V
 
-ALL_TARGET =	pokerth_client
+ALL_TARGET =	pokerth_client pokerth_qml-client
 
 MODCMAKE_LDFLAGS +=	-L${LOCALBASE}/lib -liconv
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
