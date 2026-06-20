@@ -1,4 +1,4 @@
-SHA256 (astral-sh-ruff-e588048abe091ad801c0d318aa425b7870970bce.tar.gz) = ikxpaDFHRSLJMmn7samnQYqvGe8hkoqgMtvtU4xIskU=
+SHA256 (astral-sh-ruff-3d7c13b04bd723706273705f80b8212b789554a9.tar.gz) = YWc2jtuRTQg5IauEAJSQLSx79ekgTcBrbf70VaEeCzE=
 SHA256 (cargo/adler2-2.0.1.tar.gz) = MgEZV5/K2cIYhPXEhh0WF00OBiUGJSZvUP5omDQKvvo=
 SHA256 (cargo/aho-corasick-1.1.4.tar.gz) = 3dMaEwQnwnUY3yZpQ6UwjtktSyJsxjn1qPEAKBYXQwE=
 SHA256 (cargo/alloca-0.4.0.tar.gz) = 5afQXqaup+nmTSW5FWui/uP91lnjTkEGPNL8fNAg1/Q=
@@ -17,7 +17,6 @@ SHA256 (cargo/anstyle-svg-0.1.11.tar.gz) = JrnsjJduraGw+XR6PXzE6uO+8QYT5EN0bnSH8
 SHA256 (cargo/anstyle-wincon-3.0.10.tar.gz) = PgYzQUUioy/6rIrGzI90jgkMVxdmH93uoEIZ4jRPXyo=
 SHA256 (cargo/anyhow-1.0.102.tar.gz) = fyAt+GSEyGjbrX6qVX73hdXGYpXkG0YO+SLsoHI7hCw=
 SHA256 (cargo/approx-0.5.1.tar.gz) = yrES8KhtVo6g5ifMHWvnSh6c1VIUaE21VhmV9trYl8Y=
-SHA256 (cargo/arbitrary-1.4.2.tar.gz) = w9A2o8SrBpx7QQos6Ha9dICNLQiIqCZnZp+OeDqJi/E=
 SHA256 (cargo/arc-swap-1.9.1.tar.gz) = ajof1vdTBraAh7gx8CXHElJLyxmq1U5VexEpz6Cisgc=
 SHA256 (cargo/argfile-1.0.0.tar.gz) = mUiacz3qDSkwv6WcJDFGqFE857CZG50AZkdofMYfU+c=
 SHA256 (cargo/arrayvec-0.7.6.tar.gz) = fALRI98BfvzfvXOe+Bc1s2xbqD7DxZyAqdfsxxj5LlA=
@@ -98,7 +97,6 @@ SHA256 (cargo/darling_macro-0.23.0.tar.gz) = rDmE7HvWz6eY5itKZCQmpb4OaPlAHPwqAeP
 SHA256 (cargo/dashmap-6.2.1.tar.gz) = 5jYdXAYiYceKF2rduC1MghrkK+1gid4OEmA80l3iBZw=
 SHA256 (cargo/datatest-stable-0.3.3.tar.gz) = qGfXMi62nPOmilQmOHoltFyzucXuQQI+5s6pLir63YI=
 SHA256 (cargo/derive-where-1.6.0.tar.gz) = 75Qd7XfRXKGbQDdIaaxgAK8cnypMDz1McJJih+Y2So8=
-SHA256 (cargo/derive_arbitrary-1.4.2.tar.gz) = HlZ72C3P+XnksDRgwwezzcnpb949c77RSW0rx12d1io=
 SHA256 (cargo/diff-0.1.13.tar.gz) = ViVJhndeMjP/qcTX0/qvbTaiwJ0wsgaH6fiLyLr8Fsg=
 SHA256 (cargo/difflib-0.4.0.tar.gz) = YYTjNUMWJDdRXC4rSHFHlON4ReyYUXEZFO7J0wj26+g=
 SHA256 (cargo/digest-0.10.7.tar.gz) = ntmigfe8m3V25hRoumFaZqXIz9/0JCCnCqgnAaOx4pI=
@@ -391,6 +389,7 @@ SHA256 (cargo/tracing-log-0.2.0.tar.gz) = 7oVfH0AL0OXALRUK5d44QAOaP1SwJRVkBONMI8
 SHA256 (cargo/tracing-subscriber-0.3.23.tar.gz) = y39XjllF+yQlOJZcLQsEQY047CXHnRYM0nm/BzHI0xk=
 SHA256 (cargo/tryfn-1.0.0.tar.gz) = 9osAUY3Wxp7iKJkAsUDlXa0GjLklZ4YDv6jVOfYe9sE=
 SHA256 (cargo/typed-arena-2.0.2.tar.gz) = avauIBZ6ns5Ly0GvW4D4ofHfmB9jkRic4A/SV68EEmo=
+SHA256 (cargo/typed-path-0.12.3.tar.gz) = jij4m4DIe4+wzwSrRI1d0N0K3i+IkbroeN5mp1ooYA4=
 SHA256 (cargo/typeid-1.0.3.tar.gz) = vH1iMlhgIyDVxV0bwieTtX2v8Ox+/CcOp9Vc4dX1Rxw=
 SHA256 (cargo/typenum-1.18.0.tar.gz) = Hcz/484Hr5OGv9KegMCrGoIFovw05LzUA2TfkCz6jz8=
 SHA256 (cargo/ucd-trie-0.1.7.tar.gz) = KJbZXAKoDG1qXW6VPUefXd8t/baiREQQEONzrA+4iXE=
@@ -491,14 +490,14 @@ SHA256 (cargo/zerofrom-derive-0.1.6.tar.gz) = 1x5dbgarCQxnteRJk+wWty3LqrxSbbiDo2
 SHA256 (cargo/zerotrie-0.2.4.tar.gz) = D5FS0x2weS+oP3D7L4MUjv+1wfW4x2hsNFnjYdm8IL8=
 SHA256 (cargo/zerovec-0.11.6.tar.gz) = kPkRy8NZq2rxc3fSQiJfTXURmuyH6nEaiAmHsYzXsjk=
 SHA256 (cargo/zerovec-derive-0.11.3.tar.gz) = Yl3EJcqw3KbcPDMZUG5lk9ywip84fqOyhNvVKpLEBVU=
-SHA256 (cargo/zip-5.1.1.tar.gz) = L4UpBRUayNTQb9ymZSCmYcCXMKdMbU4rDye0NrOC5TI=
+SHA256 (cargo/zip-8.6.0.tar.gz) = LQSmtTgVAqpgh8lMZpSZ6xYC65xegZjlNN5XH3FUgJs=
 SHA256 (cargo/zlib-rs-0.5.5.tar.gz) = QJkO3VGq4sK2kHr3T/tjUCnVeIIoIixLuBHpNRwMqtM=
 SHA256 (cargo/zmij-1.0.10.tar.gz) = MODY3/uuPYQPZL2jjig5H672c6e1pgF4QPKhBsgUWGg=
 SHA256 (cargo/zstd-0.13.3.tar.gz) = 6R7jEaVpwycXFlFWbgeXIgDnb8/iJCpPpEYUmjiBwIo=
 SHA256 (cargo/zstd-safe-7.2.4.tar.gz) = j0nE1fCrtgKpP7hzavKk9N2VEuNvf1cNZuZf+GftO50=
 SHA256 (cargo/zstd-sys-2.0.16+zstd.1.5.7.tar.gz) = keGevCrcj4PkMDnnl3bj/ajKkZEy1oof7WpfrKJoN0g=
-SHA256 (ty-0.0.50.tar.gz) = K6DYbblZOTzRyZSXHhUFzn0e9kAErpoMb6XYzAiy6rc=
-SIZE (astral-sh-ruff-e588048abe091ad801c0d318aa425b7870970bce.tar.gz) = 12084648
+SHA256 (ty-0.0.51.tar.gz) = fO1YDCYahiPS0Em2CXf8UCOdxjIsIv5vai01N/XOM9g=
+SIZE (astral-sh-ruff-3d7c13b04bd723706273705f80b8212b789554a9.tar.gz) = 12104112
 SIZE (cargo/adler2-2.0.1.tar.gz) = 13366
 SIZE (cargo/aho-corasick-1.1.4.tar.gz) = 184015
 SIZE (cargo/alloca-0.4.0.tar.gz) = 4257
@@ -517,7 +516,6 @@ SIZE (cargo/anstyle-svg-0.1.11.tar.gz) = 18988
 SIZE (cargo/anstyle-wincon-3.0.10.tar.gz) = 12558
 SIZE (cargo/anyhow-1.0.102.tar.gz) = 48658
 SIZE (cargo/approx-0.5.1.tar.gz) = 15100
-SIZE (cargo/arbitrary-1.4.2.tar.gz) = 38307
 SIZE (cargo/arc-swap-1.9.1.tar.gz) = 81367
 SIZE (cargo/argfile-1.0.0.tar.gz) = 11157
 SIZE (cargo/arrayvec-0.7.6.tar.gz) = 31237
@@ -598,7 +596,6 @@ SIZE (cargo/darling_macro-0.23.0.tar.gz) = 2480
 SIZE (cargo/dashmap-6.2.1.tar.gz) = 26885
 SIZE (cargo/datatest-stable-0.3.3.tar.gz) = 34481
 SIZE (cargo/derive-where-1.6.0.tar.gz) = 52327
-SIZE (cargo/derive_arbitrary-1.4.2.tar.gz) = 12290
 SIZE (cargo/diff-0.1.13.tar.gz) = 46216
 SIZE (cargo/difflib-0.4.0.tar.gz) = 7638
 SIZE (cargo/digest-0.10.7.tar.gz) = 19557
@@ -891,6 +888,7 @@ SIZE (cargo/tracing-log-0.2.0.tar.gz) = 17561
 SIZE (cargo/tracing-subscriber-0.3.23.tar.gz) = 213773
 SIZE (cargo/tryfn-1.0.0.tar.gz) = 13891
 SIZE (cargo/typed-arena-2.0.2.tar.gz) = 11848
+SIZE (cargo/typed-path-0.12.3.tar.gz) = 112964
 SIZE (cargo/typeid-1.0.3.tar.gz) = 9006
 SIZE (cargo/typenum-1.18.0.tar.gz) = 74871
 SIZE (cargo/ucd-trie-0.1.7.tar.gz) = 46795
@@ -991,10 +989,10 @@ SIZE (cargo/zerofrom-derive-0.1.6.tar.gz) = 8305
 SIZE (cargo/zerotrie-0.2.4.tar.gz) = 83690
 SIZE (cargo/zerovec-0.11.6.tar.gz) = 128583
 SIZE (cargo/zerovec-derive-0.11.3.tar.gz) = 22115
-SIZE (cargo/zip-5.1.1.tar.gz) = 127991
+SIZE (cargo/zip-8.6.0.tar.gz) = 149622
 SIZE (cargo/zlib-rs-0.5.5.tar.gz) = 207080
 SIZE (cargo/zmij-1.0.10.tar.gz) = 22288
 SIZE (cargo/zstd-0.13.3.tar.gz) = 30514
 SIZE (cargo/zstd-safe-7.2.4.tar.gz) = 29350
 SIZE (cargo/zstd-sys-2.0.16+zstd.1.5.7.tar.gz) = 775620
-SIZE (ty-0.0.50.tar.gz) = 2622342
+SIZE (ty-0.0.51.tar.gz) = 2626589
