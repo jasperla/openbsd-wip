@@ -1,0 +1,21 @@
+Index: sys/sdl/sdl_cpu.cpp
+--- sys/sdl/sdl_cpu.cpp.orig
++++ sys/sdl/sdl_cpu.cpp
+@@ -182,7 +182,7 @@ void Sys_CPUCount( int& numLogicalCPUCores, int& numPh
+ Sys_GetCPUId
+ ================
+ */
+-cpuid_t Sys_GetCPUId()
++doom3_cpuid_t Sys_GetCPUId()
+ {
+ 	int flags;
+ 
+@@ -241,7 +241,7 @@ cpuid_t Sys_GetCPUId()
+ 	}
+ 	*/
+ 
+-	return ( cpuid_t )flags;
++	return ( doom3_cpuid_t )flags;
+ }
+ 
+ 
