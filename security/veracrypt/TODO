@@ -1,0 +1,4 @@
+- Test on architectures beyond amd64 (sparc64 is marked BROKEN upstream)
+- Consider whether exfat-fuse should be a soft dependency
+- Upstream the OpenBSD patches (GetHostDevices, mount.exfat direct call)
+- Send diff to ports@ and CC maintainer (main@tietoturvamies.fi)
