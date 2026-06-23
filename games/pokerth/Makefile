@@ -5,9 +5,9 @@ COMMENT =	texas holdem poker client, local or internet games
 V =		2.0.8
 #DIST_TUPLE =	github pokerth pokerth v${V} .
 # beyond 2.0.8 -- qt6-qml CI
-DIST_TUPLE =	github pokerth pokerth 5c4207af793b101a7eaf31a06bf3a39bf3eb68d9 .
+DIST_TUPLE =	github pokerth pokerth 60d7d41c9ac2b9f9b2c10f1713ebbea8b5eb904f .
 
-PKGNAME =	pokerth-${V}pl20260619
+PKGNAME =	pokerth-${V}pl20260623
 
 CATEGORIES =	games
 
