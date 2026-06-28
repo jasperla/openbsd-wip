@@ -1,0 +1,6 @@
+bin/sgmlspl
+libdata/perl5/site_perl/SGMLS/
+libdata/perl5/site_perl/SGMLS.pm
+libdata/perl5/site_perl/SGMLS/Output.pm
+libdata/perl5/site_perl/SGMLS/Refs.pm
+libdata/perl5/site_perl/skel.pl
