@@ -864,6 +864,8 @@ share/codeblocks/images/wxsmith/wxColourPickerCtrl16.png
 share/codeblocks/images/wxsmith/wxColourPickerCtrl32.png
 share/codeblocks/images/wxsmith/wxComboBox16.png
 share/codeblocks/images/wxsmith/wxComboBox32.png
+share/codeblocks/images/wxsmith/wxCommandLinkButton16.png
+share/codeblocks/images/wxsmith/wxCommandLinkButton32.png
 share/codeblocks/images/wxsmith/wxContextHelpButton16.png
 share/codeblocks/images/wxsmith/wxContextHelpButton32.png
 share/codeblocks/images/wxsmith/wxDataViewCtrl16.png
