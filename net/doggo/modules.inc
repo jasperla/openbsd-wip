@@ -118,9 +118,9 @@ MODGO_MODULES =	\
 	golang.org/x/exp						 v0.0.0-20260508232706-74f9aab9d74a \
 	golang.org/x/exp/typeparams					 v0.0.0-20260112195511-716be5621a96 \
 	golang.org/x/mod						 v0.36.0 \
-	golang.org/x/net						 v0.54.0 \
+	golang.org/x/net						 v0.55.0 \
 	golang.org/x/sync						 v0.20.0 \
-	golang.org/x/sys						 v0.44.0 \
+	golang.org/x/sys						 v0.45.0 \
 	golang.org/x/telemetry						 v0.0.0-20260508192327-42602be52be6 \
 	golang.org/x/term						 v0.43.0 \
 	golang.org/x/text						 v0.37.0 \
@@ -182,6 +182,7 @@ MODGO_MODFILES =	\
 	golang.org/x/net			 v0.43.0 \
 	golang.org/x/net			 v0.48.0 \
 	golang.org/x/net			 v0.53.0 \
+	golang.org/x/net			 v0.54.0 \
 	golang.org/x/sync			 v0.13.0 \
 	golang.org/x/sync			 v0.16.0 \
 	golang.org/x/sync			 v0.19.0 \
@@ -194,6 +195,7 @@ MODGO_MODFILES =	\
 	golang.org/x/sys			 v0.39.0 \
 	golang.org/x/sys			 v0.42.0 \
 	golang.org/x/sys			 v0.43.0 \
+	golang.org/x/sys			 v0.44.0 \
 	golang.org/x/telemetry			 v0.0.0-20260409153401-be6f6cb8b1fa \
 	golang.org/x/term			 v0.28.0 \
 	golang.org/x/term			 v0.42.0 \
