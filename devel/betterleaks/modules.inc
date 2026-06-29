@@ -1,5 +1,5 @@
 MODGO_MODULES =	\
-	cel.dev/expr										 v0.25.1 \
+	cel.dev/expr										 v0.24.0 \
 	cloud.google.com/go									 v0.121.6 \
 	cloud.google.com/go/auth								 v0.18.0 \
 	cloud.google.com/go/auth/oauth2adapt							 v0.2.8 \
@@ -8,14 +8,12 @@ MODGO_MODULES =	\
 	cloud.google.com/go/monitoring								 v1.24.3 \
 	cloud.google.com/go/storage								 v1.56.0 \
 	dario.cat/mergo										 v1.0.2 \
-	github.com/!bobu!sumisu/aho-corasick							 v1.0.3 \
 	github.com/!google!cloud!platform/opentelemetry-operations-go/detectors/gcp		 v1.30.0 \
 	github.com/!google!cloud!platform/opentelemetry-operations-go/exporter/metric		 v0.53.0 \
 	github.com/!google!cloud!platform/opentelemetry-operations-go/internal/resourcemapping	 v0.53.0 \
 	github.com/!masterminds/semver/v3							 v3.4.0 \
 	github.com/!s!t!a!r!r!y-!s/zip								 v0.2.3 \
 	github.com/andybalholm/brotli								 v1.2.1 \
-	github.com/antlr4-go/antlr/v4								 v4.13.1 \
 	github.com/betterleaks/go-re2								 v1.11.0-betterleaks.3 \
 	github.com/bodgit/plumbing								 v1.3.0 \
 	github.com/bodgit/sevenzip								 v1.6.2 \
@@ -30,6 +28,7 @@ MODGO_MODULES =	\
 	github.com/dsnet/golib									 v0.0.0-20171103203638-1ea166775780 \
 	github.com/envoyproxy/go-control-plane/envoy						 v1.35.0 \
 	github.com/envoyproxy/protoc-gen-validate						 v1.2.1 \
+	github.com/expr-lang/expr								 v1.17.8 \
 	github.com/fatih/semgroup								 v1.2.0 \
 	github.com/felixge/httpsnoop								 v1.0.4 \
 	github.com/frankban/quicktest								 v1.14.6 \
@@ -39,8 +38,6 @@ MODGO_MODULES =	\
 	github.com/go-logr/stdr									 v1.2.2 \
 	github.com/go-sprout/sprout								 v1.0.3 \
 	github.com/godbus/dbus/v5								 v5.0.4 \
-	github.com/golang/protobuf								 v1.5.0 \
-	github.com/google/cel-go								 v0.27.0 \
 	github.com/google/go-cmdtest								 v0.4.0 \
 	github.com/google/go-cmp								 v0.7.0 \
 	github.com/google/go-github/v72								 v72.0.0 \
@@ -75,6 +72,7 @@ MODGO_MODULES =	\
 	github.com/planetscale/vtprotobuf							 v0.6.1-0.20240319094008-0393e58bdf10 \
 	github.com/pmezard/go-difflib								 v1.0.1-0.20181226105442-5d4384ee4fb2 \
 	github.com/rogpeppe/go-internal								 v1.14.1 \
+	github.com/rrethy/ahocorasick								 v1.0.0 \
 	github.com/rs/xid									 v1.5.0 \
 	github.com/rs/zerolog									 v1.33.0 \
 	github.com/russross/blackfriday/v2							 v2.1.0 \
@@ -126,75 +124,63 @@ MODGO_MODULES =	\
 	gopkg.in/yaml.v3									 v3.0.1
 
 MODGO_MODFILES =	\
-	cel.dev/expr					 v0.24.0 \
-	github.com/andybalholm/brotli			 v1.2.0 \
-	github.com/bodgit/sevenzip			 v1.6.1 \
-	github.com/davecgh/go-spew			 v1.1.0 \
-	github.com/davecgh/go-spew			 v1.1.1 \
-	github.com/dlclark/regexp2			 v1.10.0 \
-	github.com/google/go-cmp			 v0.5.2 \
-	github.com/google/go-cmp			 v0.5.5 \
-	github.com/google/go-cmp			 v0.5.9 \
-	github.com/google/go-cmp			 v0.6.0 \
-	github.com/google/uuid				 v1.3.0 \
-	github.com/klauspost/compress			 v1.17.11 \
-	github.com/klauspost/compress			 v1.18.0 \
-	github.com/klauspost/compress			 v1.18.5 \
-	github.com/klauspost/compress			 v1.4.1 \
-	github.com/mattn/go-colorable			 v0.1.13 \
-	github.com/mattn/go-isatty			 v0.0.16 \
-	github.com/mattn/go-isatty			 v0.0.19 \
-	github.com/minio/minlz				 v1.0.1 \
-	github.com/nwaples/rardecode/v2			 v2.2.0 \
-	github.com/pierrec/lz4/v4			 v4.1.22 \
-	github.com/pmezard/go-difflib			 v1.0.0 \
-	github.com/rogpeppe/go-internal			 v1.9.0 \
-	github.com/spf13/pflag				 v1.0.9 \
-	github.com/stretchr/objx			 v0.1.0 \
-	github.com/stretchr/objx			 v0.4.0 \
-	github.com/stretchr/objx			 v0.5.0 \
-	github.com/stretchr/objx			 v0.5.2 \
-	github.com/stretchr/testify			 v1.7.1 \
-	github.com/stretchr/testify			 v1.8.0 \
-	github.com/stretchr/testify			 v1.8.1 \
-	github.com/stretchr/testify			 v1.8.2 \
-	github.com/stretchr/testify			 v1.9.0 \
-	github.com/tetratelabs/wazero			 v1.7.2 \
-	github.com/ulikunitz/xz				 v0.5.13 \
-	github.com/ulikunitz/xz				 v0.5.8 \
-	go4.org						 v0.0.0-20230225012048-214862532bf5 \
-	golang.org/x/exp				 v0.0.0-20240506185415-9bf2ced13842 \
-	golang.org/x/exp				 v0.0.0-20240823005443-9b4947da3948 \
-	golang.org/x/mod				 v0.21.0 \
-	golang.org/x/mod				 v0.23.0 \
-	golang.org/x/net				 v0.38.0 \
-	golang.org/x/net				 v0.47.0 \
-	golang.org/x/sync				 v0.0.0-20210220032951-036812b2e83c \
-	golang.org/x/sync				 v0.11.0 \
-	golang.org/x/sync				 v0.19.0 \
-	golang.org/x/sys				 v0.0.0-20220811171246-fbc7d0a398ab \
-	golang.org/x/sys				 v0.12.0 \
-	golang.org/x/sys				 v0.21.0 \
-	golang.org/x/sys				 v0.26.0 \
-	golang.org/x/sys				 v0.29.0 \
-	golang.org/x/sys				 v0.31.0 \
-	golang.org/x/sys				 v0.39.0 \
-	golang.org/x/sys				 v0.40.0 \
-	golang.org/x/sys				 v0.44.0 \
-	golang.org/x/sys				 v0.6.0 \
-	golang.org/x/text				 v0.22.0 \
-	golang.org/x/text				 v0.23.0 \
-	golang.org/x/text				 v0.28.0 \
-	golang.org/x/text				 v0.29.0 \
-	golang.org/x/text				 v0.32.0 \
-	golang.org/x/text				 v0.36.0 \
-	golang.org/x/tools				 v0.26.0 \
-	golang.org/x/tools				 v0.30.0 \
-	google.golang.org/genproto/googleapis/api	 v0.0.0-20240826202546-f6391c0de4c7 \
-	google.golang.org/genproto/googleapis/rpc	 v0.0.0-20240826202546-f6391c0de4c7 \
-	google.golang.org/genproto/googleapis/rpc	 v0.0.0-20251124214823-79d6a2a48846 \
-	google.golang.org/grpc				 v1.71.0 \
-	google.golang.org/protobuf			 v1.36.10 \
-	gopkg.in/check.v1				 v0.0.0-20161208181325-20d25e280405 \
-	gopkg.in/yaml.v3				 v3.0.0-20200313102051-9f266ea9e77c
+	github.com/andybalholm/brotli	 v1.2.0 \
+	github.com/bodgit/sevenzip	 v1.6.1 \
+	github.com/davecgh/go-spew	 v1.1.0 \
+	github.com/davecgh/go-spew	 v1.1.1 \
+	github.com/dlclark/regexp2	 v1.10.0 \
+	github.com/google/go-cmp	 v0.5.2 \
+	github.com/google/go-cmp	 v0.5.5 \
+	github.com/google/go-cmp	 v0.5.9 \
+	github.com/google/go-cmp	 v0.6.0 \
+	github.com/google/uuid		 v1.3.0 \
+	github.com/klauspost/compress	 v1.17.11 \
+	github.com/klauspost/compress	 v1.18.0 \
+	github.com/klauspost/compress	 v1.18.5 \
+	github.com/klauspost/compress	 v1.4.1 \
+	github.com/mattn/go-colorable	 v0.1.13 \
+	github.com/mattn/go-isatty	 v0.0.16 \
+	github.com/mattn/go-isatty	 v0.0.19 \
+	github.com/minio/minlz		 v1.0.1 \
+	github.com/nwaples/rardecode/v2	 v2.2.0 \
+	github.com/pierrec/lz4/v4	 v4.1.22 \
+	github.com/pmezard/go-difflib	 v1.0.0 \
+	github.com/rogpeppe/go-internal	 v1.9.0 \
+	github.com/spf13/pflag		 v1.0.9 \
+	github.com/stretchr/objx	 v0.1.0 \
+	github.com/stretchr/objx	 v0.4.0 \
+	github.com/stretchr/objx	 v0.5.0 \
+	github.com/stretchr/objx	 v0.5.2 \
+	github.com/stretchr/testify	 v1.7.1 \
+	github.com/stretchr/testify	 v1.8.0 \
+	github.com/stretchr/testify	 v1.8.1 \
+	github.com/stretchr/testify	 v1.8.2 \
+	github.com/stretchr/testify	 v1.9.0 \
+	github.com/tetratelabs/wazero	 v1.7.2 \
+	github.com/ulikunitz/xz		 v0.5.13 \
+	github.com/ulikunitz/xz		 v0.5.8 \
+	go4.org				 v0.0.0-20230225012048-214862532bf5 \
+	golang.org/x/mod		 v0.21.0 \
+	golang.org/x/mod		 v0.23.0 \
+	golang.org/x/net		 v0.47.0 \
+	golang.org/x/sync		 v0.0.0-20210220032951-036812b2e83c \
+	golang.org/x/sync		 v0.11.0 \
+	golang.org/x/sync		 v0.19.0 \
+	golang.org/x/sys		 v0.0.0-20220811171246-fbc7d0a398ab \
+	golang.org/x/sys		 v0.12.0 \
+	golang.org/x/sys		 v0.21.0 \
+	golang.org/x/sys		 v0.26.0 \
+	golang.org/x/sys		 v0.29.0 \
+	golang.org/x/sys		 v0.39.0 \
+	golang.org/x/sys		 v0.40.0 \
+	golang.org/x/sys		 v0.44.0 \
+	golang.org/x/sys		 v0.6.0 \
+	golang.org/x/text		 v0.28.0 \
+	golang.org/x/text		 v0.29.0 \
+	golang.org/x/text		 v0.32.0 \
+	golang.org/x/text		 v0.36.0 \
+	golang.org/x/tools		 v0.26.0 \
+	golang.org/x/tools		 v0.30.0 \
+	gopkg.in/check.v1		 v0.0.0-20161208181325-20d25e280405 \
+	gopkg.in/yaml.v3		 v3.0.0-20200313102051-9f266ea9e77c
 
