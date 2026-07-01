@@ -102,17 +102,17 @@ MODGO_MODULES =	\
 	go.opentelemetry.io/otel/trace								 v1.38.0 \
 	go.yaml.in/yaml/v3									 v3.0.4 \
 	go4.org											 v0.0.0-20260112195520-a5071408f32f \
-	golang.org/x/crypto									 v0.46.0 \
+	golang.org/x/crypto									 v0.53.0 \
 	golang.org/x/exp									 v0.0.0-20250218142911-aa4b98e5adaa \
-	golang.org/x/mod									 v0.35.0 \
-	golang.org/x/net									 v0.48.0 \
+	golang.org/x/mod									 v0.36.0 \
+	golang.org/x/net									 v0.55.0 \
 	golang.org/x/oauth2									 v0.34.0 \
-	golang.org/x/sync									 v0.20.0 \
-	golang.org/x/sys									 v0.45.0 \
-	golang.org/x/term									 v0.38.0 \
-	golang.org/x/text									 v0.37.0 \
+	golang.org/x/sync									 v0.21.0 \
+	golang.org/x/sys									 v0.46.0 \
+	golang.org/x/term									 v0.44.0 \
+	golang.org/x/text									 v0.38.0 \
 	golang.org/x/time									 v0.14.0 \
-	golang.org/x/tools									 v0.44.0 \
+	golang.org/x/tools									 v0.45.0 \
 	golang.org/x/xerrors									 v0.0.0-20191204190536-9bdfabe68543 \
 	google.golang.org/api									 v0.259.0 \
 	google.golang.org/genproto								 v0.0.0-20251202230838-ff82c1b0f217 \
@@ -160,20 +160,22 @@ MODGO_MODFILES =	\
 	github.com/ulikunitz/xz		 v0.5.13 \
 	github.com/ulikunitz/xz		 v0.5.8 \
 	go4.org				 v0.0.0-20230225012048-214862532bf5 \
+	golang.org/x/crypto		 v0.46.0 \
 	golang.org/x/mod		 v0.21.0 \
 	golang.org/x/mod		 v0.23.0 \
-	golang.org/x/net		 v0.47.0 \
+	golang.org/x/net		 v0.48.0 \
 	golang.org/x/sync		 v0.0.0-20210220032951-036812b2e83c \
 	golang.org/x/sync		 v0.11.0 \
 	golang.org/x/sync		 v0.19.0 \
+	golang.org/x/sync		 v0.20.0 \
 	golang.org/x/sys		 v0.0.0-20220811171246-fbc7d0a398ab \
 	golang.org/x/sys		 v0.12.0 \
 	golang.org/x/sys		 v0.21.0 \
 	golang.org/x/sys		 v0.26.0 \
 	golang.org/x/sys		 v0.29.0 \
-	golang.org/x/sys		 v0.39.0 \
 	golang.org/x/sys		 v0.40.0 \
 	golang.org/x/sys		 v0.44.0 \
+	golang.org/x/sys		 v0.45.0 \
 	golang.org/x/sys		 v0.6.0 \
 	golang.org/x/text		 v0.28.0 \
 	golang.org/x/text		 v0.29.0 \
