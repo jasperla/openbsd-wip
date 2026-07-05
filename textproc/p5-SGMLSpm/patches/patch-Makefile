@@ -1,0 +1,16 @@
+Index: Makefile
+--- Makefile.orig
++++ Makefile
+@@ -16,10 +16,10 @@ DIST = SGMLSpm-1.03ii.tar.gz
+ PERL = /usr/bin/perl
+ 
+ # Where do you want the sgmlspl executable script to be installed?
+-BINDIR = /usr/local/bin
++BINDIR ?= ${PREFIX}/bin
+ 
+ # Where do you put local perl5 libaries?
+-PERL5DIR = /usr/local/lib/perl5
++PERL5DIR ?= ${PREFIX}/libdata/perl5/site_perl
+ MODULEDIR = ${PERL5DIR}/SGMLS
+ 
+ # Where do you want to put sgmlspl specifications?
