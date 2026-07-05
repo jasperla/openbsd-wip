@@ -90,7 +90,6 @@ MODGO_MODULES =	\
 	github.com/mattn/go-colorable			 v0.1.13 \
 	github.com/mattn/go-isatty			 v0.0.20 \
 	github.com/mattn/go-runewidth			 v0.0.21 \
-	github.com/maypok86/otter/v2			 v2.3.0 \
 	github.com/mcuadros/go-version			 v0.0.0-20190830083331-035f6764e8d2 \
 	github.com/mgutz/ansi				 v0.0.0-20200706080929-d51e80ef957d \
 	github.com/microcosm-cc/bluemonday		 v1.0.27 \

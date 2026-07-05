@@ -1,4 +1,4 @@
-SHA256 (gh-dash-4.24.1.zip) = DVOhZ8gp4yPJE7QaH711Ej1O2bHvwCLYRfmZXEb/sws=
+SHA256 (gh-dash-4.25.0.zip) = kKFd4S/s994SCjs/K2aqE7UEKixmmn8zs9+t5xWYtXY=
 SHA256 (go_modules/charm.land/bubbles/v2/@v/v2.0.0.mod) = fer7gLMyfm9LIuG/S9s8aSv5mTDHMsS/6ApaZsYNaCk=
 SHA256 (go_modules/charm.land/bubbles/v2/@v/v2.0.0.zip) = ajqB6kWbiaxebzKU4Y3b+VwEDgjAcZ/KbEOUAlJ61HM=
 SHA256 (go_modules/charm.land/bubbletea/v2/@v/v2.0.0.mod) = VIJQr7oHkxyBdbB3y4ywaLy2scmaZ3o3J5q3p6rJWIE=
@@ -223,8 +223,6 @@ SHA256 (go_modules/github.com/mattn/go-runewidth/@v/v0.0.19.mod) = 8Y88c/WdE4/VZ
 SHA256 (go_modules/github.com/mattn/go-runewidth/@v/v0.0.20.mod) = 8Y88c/WdE4/VZfngGbQYcTY4FYnohQdwT0YY5C1a9Y4=
 SHA256 (go_modules/github.com/mattn/go-runewidth/@v/v0.0.21.mod) = 8Y88c/WdE4/VZfngGbQYcTY4FYnohQdwT0YY5C1a9Y4=
 SHA256 (go_modules/github.com/mattn/go-runewidth/@v/v0.0.21.zip) = 8cb4EGxJ/zB32PIYb8I9yyIlBPXwXVLysIpUF+rZ0mM=
-SHA256 (go_modules/github.com/maypok86/otter/v2/@v/v2.3.0.mod) = e5/gZXxIgYfrTQHEnfhTVjQSdPAStND4XsqizjJTW7w=
-SHA256 (go_modules/github.com/maypok86/otter/v2/@v/v2.3.0.zip) = GQiMZz7bbThDRqpe5b1YdQHk01vX3S327cEfY7hPUS4=
 SHA256 (go_modules/github.com/mcuadros/go-version/@v/v0.0.0-20190308113854-92cdf37c5b75.mod) = JTlfq6GRVv8zjqG3mk3ac8anI2F1ukEU5xKhTF6pDuw=
 SHA256 (go_modules/github.com/mcuadros/go-version/@v/v0.0.0-20190830083331-035f6764e8d2.mod) = JTlfq6GRVv8zjqG3mk3ac8anI2F1ukEU5xKhTF6pDuw=
 SHA256 (go_modules/github.com/mcuadros/go-version/@v/v0.0.0-20190830083331-035f6764e8d2.zip) = /yNkvahgWtlAUcV2/6YB4amu2ryKH9pYjrBMM3GoReo=
@@ -394,7 +392,7 @@ SHA256 (go_modules/gopkg.in/h2non/gock.v1/@v/v1.1.2.zip) = oGf7/77c+jWbAKmKXv2SQ
 SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.0-20200313102051-9f266ea9e77c.mod) = IVeYYKIDBvz0OxvSNNH7oxlJnHdhG3HAX5vzupDauTk=
 SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.mod) = IVeYYKIDBvz0OxvSNNH7oxlJnHdhG3HAX5vzupDauTk=
 SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.zip) = qrj7xOYwDqCOav4crqGKIckMefSJ9SxT4vIEMfGpoBU=
-SIZE (gh-dash-4.24.1.zip) = 26460624
+SIZE (gh-dash-4.25.0.zip) = 26452926
 SIZE (go_modules/charm.land/bubbles/v2/@v/v2.0.0.mod) = 1275
 SIZE (go_modules/charm.land/bubbles/v2/@v/v2.0.0.zip) = 134893
 SIZE (go_modules/charm.land/bubbletea/v2/@v/v2.0.0.mod) = 1079
@@ -619,8 +617,6 @@ SIZE (go_modules/github.com/mattn/go-runewidth/@v/v0.0.19.mod) = 95
 SIZE (go_modules/github.com/mattn/go-runewidth/@v/v0.0.20.mod) = 95
 SIZE (go_modules/github.com/mattn/go-runewidth/@v/v0.0.21.mod) = 95
 SIZE (go_modules/github.com/mattn/go-runewidth/@v/v0.0.21.zip) = 25407
-SIZE (go_modules/github.com/maypok86/otter/v2/@v/v2.3.0.mod) = 239
-SIZE (go_modules/github.com/maypok86/otter/v2/@v/v2.3.0.zip) = 170613
 SIZE (go_modules/github.com/mcuadros/go-version/@v/v0.0.0-20190308113854-92cdf37c5b75.mod) = 38
 SIZE (go_modules/github.com/mcuadros/go-version/@v/v0.0.0-20190830083331-035f6764e8d2.mod) = 38
 SIZE (go_modules/github.com/mcuadros/go-version/@v/v0.0.0-20190830083331-035f6764e8d2.zip) = 18486
