@@ -10,8 +10,8 @@ COMMENT=	Code::Blocks C/C++ IDE
 #
 #EXTRACT_SUFX=	.tar.xz
 
-DIST_TUPLE =    github jggimi codeblocks 7f1ee0a75a2000a0fbe0119db46f0c550abc3bd1 .
-SVN_REV = 	13870
+DIST_TUPLE =    github jggimi codeblocks b851c476c817bd9e6d31dedb707630d0b8b6ec10 .
+SVN_REV = 	13883
 SUBST_VARS +=	SVN_REV
 V =             25.03pl${SVN_REV}
 PKGNAME =       codeblocks-${V}
@@ -43,7 +43,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} ICE Lerc SDL2 SM X11 XRes Xau Xcomposite
 WANTLIB += Xcursor Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr
-WANTLIB += Xrender Xss Xtst Xxf86vm aspell atk-1.0 atk-bridge-2.0
+WANTLIB += Xrender Xss Xtst Xxf86vm atk-1.0 atk-bridge-2.0
 WANTLIB += atspi bz2 c cairo cairo-gobject crypto curl curses
 WANTLIB += dbus-1 enchant-2 epoll-shim epoxy execinfo expat ffi
 WANTLIB += fontconfig freetype fribidi gcrypt gdk-3 gdk_pixbuf-2.0
