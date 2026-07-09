@@ -1,4 +1,4 @@
-SHA256 (gh-dash-4.25.0.zip) = kKFd4S/s994SCjs/K2aqE7UEKixmmn8zs9+t5xWYtXY=
+SHA256 (gh-dash-4.25.1.zip) = sFIaMoZw4CFdKeKOENsVFqvDbEn6IO8upL/x8s1vAQk=
 SHA256 (go_modules/charm.land/bubbles/v2/@v/v2.0.0.mod) = fer7gLMyfm9LIuG/S9s8aSv5mTDHMsS/6ApaZsYNaCk=
 SHA256 (go_modules/charm.land/bubbles/v2/@v/v2.0.0.zip) = ajqB6kWbiaxebzKU4Y3b+VwEDgjAcZ/KbEOUAlJ61HM=
 SHA256 (go_modules/charm.land/bubbletea/v2/@v/v2.0.0.mod) = VIJQr7oHkxyBdbB3y4ywaLy2scmaZ3o3J5q3p6rJWIE=
@@ -392,7 +392,7 @@ SHA256 (go_modules/gopkg.in/h2non/gock.v1/@v/v1.1.2.zip) = oGf7/77c+jWbAKmKXv2SQ
 SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.0-20200313102051-9f266ea9e77c.mod) = IVeYYKIDBvz0OxvSNNH7oxlJnHdhG3HAX5vzupDauTk=
 SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.mod) = IVeYYKIDBvz0OxvSNNH7oxlJnHdhG3HAX5vzupDauTk=
 SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.zip) = qrj7xOYwDqCOav4crqGKIckMefSJ9SxT4vIEMfGpoBU=
-SIZE (gh-dash-4.25.0.zip) = 26452926
+SIZE (gh-dash-4.25.1.zip) = 26452870
 SIZE (go_modules/charm.land/bubbles/v2/@v/v2.0.0.mod) = 1275
 SIZE (go_modules/charm.land/bubbles/v2/@v/v2.0.0.zip) = 134893
 SIZE (go_modules/charm.land/bubbletea/v2/@v/v2.0.0.mod) = 1079
