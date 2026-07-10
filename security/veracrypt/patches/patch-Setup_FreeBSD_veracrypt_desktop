@@ -1,0 +1,12 @@
+Index: Setup/FreeBSD/veracrypt.desktop
+--- Setup/FreeBSD/veracrypt.desktop.orig
++++ Setup/FreeBSD/veracrypt.desktop
+@@ -5,7 +5,7 @@
+ GenericName=VeraCrypt volume manager
+ Comment=Create and mount VeraCrypt encrypted volumes
+ Icon=veracrypt
+-Exec=/usr/bin/veracrypt %f
++Exec=${TRUEPREFIX}/bin/veracrypt %f
+ Categories=Security;Utility;Filesystem
+ Keywords=encryption,filesystem
+ Terminal=false
