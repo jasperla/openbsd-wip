@@ -9,7 +9,6 @@ GH_TAGNAME=	v0.8.3
 # BSD
 PERMIT_PACKAGE=	Yes
 
-WANTLIB=	c pthread pcap
 NO_TEST=	Yes
 
 do-build:
