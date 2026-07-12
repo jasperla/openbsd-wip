@@ -1,0 +1,4 @@
+Debian packaging tool
+
+This package is not intented to be used as a replacement of pkg_*
+but rather is used for functionality provided for operating on .deb files.

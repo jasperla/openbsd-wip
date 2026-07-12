@@ -1,0 +1,539 @@
+@sample ${SYSCONFDIR}/alternatives/
+@sample ${SYSCONFDIR}/dpkg/
+@sample ${SYSCONFDIR}/dpkg/dpkg.cfg.d/
+@sample ${SYSCONFDIR}/dpkg/dselect.cfg.d/
+@bin bin/dpkg
+bin/dpkg-architecture
+bin/dpkg-buildapi
+bin/dpkg-buildflags
+bin/dpkg-buildpackage
+bin/dpkg-buildtree
+bin/dpkg-checkbuilddeps
+@bin bin/dpkg-deb
+bin/dpkg-distaddfile
+@bin bin/dpkg-divert
+bin/dpkg-genbuildinfo
+bin/dpkg-genchanges
+bin/dpkg-gencontrol
+bin/dpkg-gensymbols
+bin/dpkg-maintscript-helper
+bin/dpkg-mergechangelogs
+bin/dpkg-name
+bin/dpkg-parsechangelog
+@bin bin/dpkg-query
+@bin bin/dpkg-realpath
+bin/dpkg-scanpackages
+bin/dpkg-scansources
+bin/dpkg-shlibdeps
+bin/dpkg-source
+@bin bin/dpkg-split
+@bin bin/dpkg-statoverride
+@bin bin/dpkg-trigger
+bin/dpkg-vendor
+@bin bin/dselect
+@bin bin/update-alternatives
+include/dpkg/
+include/dpkg/ar.h
+include/dpkg/arch.h
+include/dpkg/atomic-file.h
+include/dpkg/buffer.h
+include/dpkg/c-ctype.h
+include/dpkg/color.h
+include/dpkg/command.h
+include/dpkg/compress.h
+include/dpkg/db-ctrl.h
+include/dpkg/db-fsys.h
+include/dpkg/deb-version.h
+include/dpkg/debug.h
+include/dpkg/dir.h
+include/dpkg/dpkg-db.h
+include/dpkg/dpkg.h
+include/dpkg/ehandle.h
+include/dpkg/error.h
+include/dpkg/execname.h
+include/dpkg/fdio.h
+include/dpkg/file.h
+include/dpkg/fsys.h
+include/dpkg/glob.h
+include/dpkg/macros.h
+include/dpkg/meminfo.h
+include/dpkg/namevalue.h
+include/dpkg/options.h
+include/dpkg/pager.h
+include/dpkg/parsedump.h
+include/dpkg/path.h
+include/dpkg/pkg-array.h
+include/dpkg/pkg-files.h
+include/dpkg/pkg-format.h
+include/dpkg/pkg-list.h
+include/dpkg/pkg-queue.h
+include/dpkg/pkg-show.h
+include/dpkg/pkg-spec.h
+include/dpkg/pkg.h
+include/dpkg/progname.h
+include/dpkg/program.h
+include/dpkg/progress.h
+include/dpkg/report.h
+include/dpkg/string.h
+include/dpkg/strvec.h
+include/dpkg/subproc.h
+include/dpkg/sysuser.h
+include/dpkg/tarfn.h
+include/dpkg/treewalk.h
+include/dpkg/trigdeferred.h
+include/dpkg/triglib.h
+include/dpkg/varbuf.h
+include/dpkg/version.h
+@static-lib lib/libdpkg.a
+lib/libdpkg.la
+@lib lib/libdpkg.so.${LIBdpkg_VERSION}
+lib/pkgconfig/libdpkg.pc
+libdata/perl5/site_perl/Dpkg/
+libdata/perl5/site_perl/Dpkg.pm
+libdata/perl5/site_perl/Dpkg/Arch.pm
+libdata/perl5/site_perl/Dpkg/Archive/
+libdata/perl5/site_perl/Dpkg/Archive/Ar.pm
+libdata/perl5/site_perl/Dpkg/Build/
+libdata/perl5/site_perl/Dpkg/Build/Info.pm
+libdata/perl5/site_perl/Dpkg/BuildAPI.pm
+libdata/perl5/site_perl/Dpkg/BuildDriver/
+libdata/perl5/site_perl/Dpkg/BuildDriver.pm
+libdata/perl5/site_perl/Dpkg/BuildDriver/DebianRules.pm
+libdata/perl5/site_perl/Dpkg/BuildEnv.pm
+libdata/perl5/site_perl/Dpkg/BuildFlags.pm
+libdata/perl5/site_perl/Dpkg/BuildInfo.pm
+libdata/perl5/site_perl/Dpkg/BuildOptions.pm
+libdata/perl5/site_perl/Dpkg/BuildProfiles.pm
+libdata/perl5/site_perl/Dpkg/BuildTree.pm
+libdata/perl5/site_perl/Dpkg/BuildTypes.pm
+libdata/perl5/site_perl/Dpkg/Changelog/
+libdata/perl5/site_perl/Dpkg/Changelog.pm
+libdata/perl5/site_perl/Dpkg/Changelog/Debian.pm
+libdata/perl5/site_perl/Dpkg/Changelog/Entry/
+libdata/perl5/site_perl/Dpkg/Changelog/Entry.pm
+libdata/perl5/site_perl/Dpkg/Changelog/Entry/Debian.pm
+libdata/perl5/site_perl/Dpkg/Changelog/Parse.pm
+libdata/perl5/site_perl/Dpkg/Checksums.pm
+libdata/perl5/site_perl/Dpkg/Compression/
+libdata/perl5/site_perl/Dpkg/Compression.pm
+libdata/perl5/site_perl/Dpkg/Compression/FileHandle.pm
+libdata/perl5/site_perl/Dpkg/Compression/Process.pm
+libdata/perl5/site_perl/Dpkg/Conf.pm
+libdata/perl5/site_perl/Dpkg/Control/
+libdata/perl5/site_perl/Dpkg/Control.pm
+libdata/perl5/site_perl/Dpkg/Control/Changelog.pm
+libdata/perl5/site_perl/Dpkg/Control/Fields.pm
+libdata/perl5/site_perl/Dpkg/Control/FieldsCore.pm
+libdata/perl5/site_perl/Dpkg/Control/Hash.pm
+libdata/perl5/site_perl/Dpkg/Control/HashCore/
+libdata/perl5/site_perl/Dpkg/Control/HashCore.pm
+libdata/perl5/site_perl/Dpkg/Control/HashCore/Tie.pm
+libdata/perl5/site_perl/Dpkg/Control/Info.pm
+libdata/perl5/site_perl/Dpkg/Control/Tests/
+libdata/perl5/site_perl/Dpkg/Control/Tests.pm
+libdata/perl5/site_perl/Dpkg/Control/Tests/Entry.pm
+libdata/perl5/site_perl/Dpkg/Control/Types.pm
+libdata/perl5/site_perl/Dpkg/Deps/
+libdata/perl5/site_perl/Dpkg/Deps.pm
+libdata/perl5/site_perl/Dpkg/Deps/AND.pm
+libdata/perl5/site_perl/Dpkg/Deps/KnownFacts.pm
+libdata/perl5/site_perl/Dpkg/Deps/Multiple.pm
+libdata/perl5/site_perl/Dpkg/Deps/OR.pm
+libdata/perl5/site_perl/Dpkg/Deps/Simple.pm
+libdata/perl5/site_perl/Dpkg/Deps/Union.pm
+libdata/perl5/site_perl/Dpkg/Dist/
+libdata/perl5/site_perl/Dpkg/Dist/Files.pm
+libdata/perl5/site_perl/Dpkg/ErrorHandling.pm
+libdata/perl5/site_perl/Dpkg/Exit.pm
+libdata/perl5/site_perl/Dpkg/File.pm
+libdata/perl5/site_perl/Dpkg/Getopt.pm
+libdata/perl5/site_perl/Dpkg/Gettext.pm
+libdata/perl5/site_perl/Dpkg/IPC.pm
+libdata/perl5/site_perl/Dpkg/Index.pm
+libdata/perl5/site_perl/Dpkg/Interface/
+libdata/perl5/site_perl/Dpkg/Interface/Storable.pm
+libdata/perl5/site_perl/Dpkg/Lock.pm
+libdata/perl5/site_perl/Dpkg/OpenPGP/
+libdata/perl5/site_perl/Dpkg/OpenPGP.pm
+libdata/perl5/site_perl/Dpkg/OpenPGP/Backend/
+libdata/perl5/site_perl/Dpkg/OpenPGP/Backend.pm
+libdata/perl5/site_perl/Dpkg/OpenPGP/Backend/GnuPG.pm
+libdata/perl5/site_perl/Dpkg/OpenPGP/Backend/SOP.pm
+libdata/perl5/site_perl/Dpkg/OpenPGP/Backend/Sequoia.pm
+libdata/perl5/site_perl/Dpkg/OpenPGP/ErrorCodes.pm
+libdata/perl5/site_perl/Dpkg/OpenPGP/KeyHandle.pm
+libdata/perl5/site_perl/Dpkg/Package.pm
+libdata/perl5/site_perl/Dpkg/Path.pm
+libdata/perl5/site_perl/Dpkg/Shlibs/
+libdata/perl5/site_perl/Dpkg/Shlibs.pm
+libdata/perl5/site_perl/Dpkg/Shlibs/Cppfilt.pm
+libdata/perl5/site_perl/Dpkg/Shlibs/Objdump/
+libdata/perl5/site_perl/Dpkg/Shlibs/Objdump.pm
+libdata/perl5/site_perl/Dpkg/Shlibs/Objdump/Object.pm
+libdata/perl5/site_perl/Dpkg/Shlibs/Symbol.pm
+libdata/perl5/site_perl/Dpkg/Shlibs/SymbolFile.pm
+libdata/perl5/site_perl/Dpkg/Source/
+libdata/perl5/site_perl/Dpkg/Source/Archive.pm
+libdata/perl5/site_perl/Dpkg/Source/BinaryFiles.pm
+libdata/perl5/site_perl/Dpkg/Source/Format.pm
+libdata/perl5/site_perl/Dpkg/Source/Functions.pm
+libdata/perl5/site_perl/Dpkg/Source/Package/
+libdata/perl5/site_perl/Dpkg/Source/Package.pm
+libdata/perl5/site_perl/Dpkg/Source/Package/V1.pm
+libdata/perl5/site_perl/Dpkg/Source/Package/V2.pm
+libdata/perl5/site_perl/Dpkg/Source/Package/V3/
+libdata/perl5/site_perl/Dpkg/Source/Package/V3/Bzr.pm
+libdata/perl5/site_perl/Dpkg/Source/Package/V3/Custom.pm
+libdata/perl5/site_perl/Dpkg/Source/Package/V3/Git.pm
+libdata/perl5/site_perl/Dpkg/Source/Package/V3/Native.pm
+libdata/perl5/site_perl/Dpkg/Source/Package/V3/Quilt.pm
+libdata/perl5/site_perl/Dpkg/Source/Patch.pm
+libdata/perl5/site_perl/Dpkg/Source/Quilt.pm
+libdata/perl5/site_perl/Dpkg/Substvars.pm
+libdata/perl5/site_perl/Dpkg/Vendor/
+libdata/perl5/site_perl/Dpkg/Vendor.pm
+libdata/perl5/site_perl/Dpkg/Vendor/Debian.pm
+libdata/perl5/site_perl/Dpkg/Vendor/Default.pm
+libdata/perl5/site_perl/Dpkg/Vendor/Devuan.pm
+libdata/perl5/site_perl/Dpkg/Vendor/PureOS.pm
+libdata/perl5/site_perl/Dpkg/Vendor/Ubuntu.pm
+libdata/perl5/site_perl/Dpkg/Version.pm
+libdata/perl5/site_perl/Dselect/
+libdata/perl5/site_perl/Dselect/Method/
+libdata/perl5/site_perl/Dselect/Method.pm
+libdata/perl5/site_perl/Dselect/Method/Ftp.pm
+libexec/dpkg/
+libexec/dpkg/dpkg-db-backup
+libexec/dpkg/dpkg-db-keeper
+libexec/dpkg/methods/
+libexec/dpkg/methods/file/
+libexec/dpkg/methods/file/desc.file
+libexec/dpkg/methods/file/install
+libexec/dpkg/methods/file/names
+libexec/dpkg/methods/file/setup
+libexec/dpkg/methods/file/update
+libexec/dpkg/methods/ftp/
+libexec/dpkg/methods/ftp/desc.ftp
+libexec/dpkg/methods/ftp/install
+libexec/dpkg/methods/ftp/names
+libexec/dpkg/methods/ftp/setup
+libexec/dpkg/methods/ftp/update
+libexec/dpkg/methods/media/
+libexec/dpkg/methods/media/desc.media
+libexec/dpkg/methods/media/install
+libexec/dpkg/methods/media/names
+libexec/dpkg/methods/media/setup
+libexec/dpkg/methods/media/update
+@man man/man1/dpkg-architecture.1
+@man man/man1/dpkg-buildapi.1
+@man man/man1/dpkg-buildflags.1
+@man man/man1/dpkg-buildpackage.1
+@man man/man1/dpkg-buildtree.1
+@man man/man1/dpkg-checkbuilddeps.1
+@man man/man1/dpkg-deb.1
+@man man/man1/dpkg-distaddfile.1
+@man man/man1/dpkg-divert.1
+@man man/man1/dpkg-genbuildinfo.1
+@man man/man1/dpkg-genchanges.1
+@man man/man1/dpkg-gencontrol.1
+@man man/man1/dpkg-gensymbols.1
+@man man/man1/dpkg-maintscript-helper.1
+@man man/man1/dpkg-mergechangelogs.1
+@man man/man1/dpkg-name.1
+@man man/man1/dpkg-parsechangelog.1
+@man man/man1/dpkg-query.1
+@man man/man1/dpkg-realpath.1
+@man man/man1/dpkg-scanpackages.1
+@man man/man1/dpkg-scansources.1
+@man man/man1/dpkg-shlibdeps.1
+@man man/man1/dpkg-source.1
+@man man/man1/dpkg-split.1
+@man man/man1/dpkg-statoverride.1
+@man man/man1/dpkg-trigger.1
+@man man/man1/dpkg-vendor.1
+@man man/man1/dpkg.1
+@man man/man1/dselect.1
+@man man/man1/update-alternatives.1
+man/man3/Dpkg.3perl
+man/man3/Dpkg::Arch.3perl
+man/man3/Dpkg::Archive::Ar.3perl
+man/man3/Dpkg::Build::Info.3perl
+man/man3/Dpkg::BuildAPI.3perl
+man/man3/Dpkg::BuildDriver.3perl
+man/man3/Dpkg::BuildDriver::DebianRules.3perl
+man/man3/Dpkg::BuildEnv.3perl
+man/man3/Dpkg::BuildFlags.3perl
+man/man3/Dpkg::BuildInfo.3perl
+man/man3/Dpkg::BuildOptions.3perl
+man/man3/Dpkg::BuildProfiles.3perl
+man/man3/Dpkg::BuildTree.3perl
+man/man3/Dpkg::BuildTypes.3perl
+man/man3/Dpkg::Changelog.3perl
+man/man3/Dpkg::Changelog::Debian.3perl
+man/man3/Dpkg::Changelog::Entry.3perl
+man/man3/Dpkg::Changelog::Entry::Debian.3perl
+man/man3/Dpkg::Changelog::Parse.3perl
+man/man3/Dpkg::Checksums.3perl
+man/man3/Dpkg::Compression.3perl
+man/man3/Dpkg::Compression::FileHandle.3perl
+man/man3/Dpkg::Compression::Process.3perl
+man/man3/Dpkg::Conf.3perl
+man/man3/Dpkg::Control.3perl
+man/man3/Dpkg::Control::Changelog.3perl
+man/man3/Dpkg::Control::Fields.3perl
+man/man3/Dpkg::Control::FieldsCore.3perl
+man/man3/Dpkg::Control::Hash.3perl
+man/man3/Dpkg::Control::HashCore.3perl
+man/man3/Dpkg::Control::HashCore::Tie.3perl
+man/man3/Dpkg::Control::Info.3perl
+man/man3/Dpkg::Control::Tests.3perl
+man/man3/Dpkg::Control::Tests::Entry.3perl
+man/man3/Dpkg::Control::Types.3perl
+man/man3/Dpkg::Deps.3perl
+man/man3/Dpkg::Deps::AND.3perl
+man/man3/Dpkg::Deps::KnownFacts.3perl
+man/man3/Dpkg::Deps::Multiple.3perl
+man/man3/Dpkg::Deps::OR.3perl
+man/man3/Dpkg::Deps::Simple.3perl
+man/man3/Dpkg::Deps::Union.3perl
+man/man3/Dpkg::Dist::Files.3perl
+man/man3/Dpkg::ErrorHandling.3perl
+man/man3/Dpkg::Exit.3perl
+man/man3/Dpkg::File.3perl
+man/man3/Dpkg::Getopt.3perl
+man/man3/Dpkg::Gettext.3perl
+man/man3/Dpkg::IPC.3perl
+man/man3/Dpkg::Index.3perl
+man/man3/Dpkg::Interface::Storable.3perl
+man/man3/Dpkg::Lock.3perl
+man/man3/Dpkg::OpenPGP.3perl
+man/man3/Dpkg::OpenPGP::Backend.3perl
+man/man3/Dpkg::OpenPGP::Backend::GnuPG.3perl
+man/man3/Dpkg::OpenPGP::Backend::SOP.3perl
+man/man3/Dpkg::OpenPGP::Backend::Sequoia.3perl
+man/man3/Dpkg::OpenPGP::ErrorCodes.3perl
+man/man3/Dpkg::OpenPGP::KeyHandle.3perl
+man/man3/Dpkg::Package.3perl
+man/man3/Dpkg::Path.3perl
+man/man3/Dpkg::Shlibs.3perl
+man/man3/Dpkg::Shlibs::Cppfilt.3perl
+man/man3/Dpkg::Shlibs::Objdump.3perl
+man/man3/Dpkg::Shlibs::Objdump::Object.3perl
+man/man3/Dpkg::Shlibs::Symbol.3perl
+man/man3/Dpkg::Shlibs::SymbolFile.3perl
+man/man3/Dpkg::Source::Archive.3perl
+man/man3/Dpkg::Source::BinaryFiles.3perl
+man/man3/Dpkg::Source::Format.3perl
+man/man3/Dpkg::Source::Functions.3perl
+man/man3/Dpkg::Source::Package.3perl
+man/man3/Dpkg::Source::Package::V1.3perl
+man/man3/Dpkg::Source::Package::V2.3perl
+man/man3/Dpkg::Source::Package::V3::Bzr.3perl
+man/man3/Dpkg::Source::Package::V3::Custom.3perl
+man/man3/Dpkg::Source::Package::V3::Git.3perl
+man/man3/Dpkg::Source::Package::V3::Native.3perl
+man/man3/Dpkg::Source::Package::V3::Quilt.3perl
+man/man3/Dpkg::Source::Patch.3perl
+man/man3/Dpkg::Source::Quilt.3perl
+man/man3/Dpkg::Substvars.3perl
+man/man3/Dpkg::Vendor.3perl
+man/man3/Dpkg::Vendor::Debian.3perl
+man/man3/Dpkg::Vendor::Default.3perl
+man/man3/Dpkg::Vendor::Devuan.3perl
+man/man3/Dpkg::Vendor::PureOS.3perl
+man/man3/Dpkg::Vendor::Ubuntu.3perl
+man/man3/Dpkg::Version.3perl
+@man man/man5/deb-buildinfo.5
+@man man/man5/deb-changelog.5
+@man man/man5/deb-changes.5
+@man man/man5/deb-conffiles.5
+@man man/man5/deb-control.5
+@man man/man5/deb-extra-override.5
+@man man/man5/deb-md5sums.5
+@man man/man5/deb-old.5
+@man man/man5/deb-origin.5
+@man man/man5/deb-override.5
+@man man/man5/deb-postinst.5
+@man man/man5/deb-postrm.5
+@man man/man5/deb-preinst.5
+@man man/man5/deb-prerm.5
+@man man/man5/deb-shlibs.5
+@man man/man5/deb-split.5
+@man man/man5/deb-src-control.5
+@man man/man5/deb-src-files.5
+@man man/man5/deb-src-rules.5
+@man man/man5/deb-src-symbols.5
+@man man/man5/deb-substvars.5
+@man man/man5/deb-symbols.5
+@man man/man5/deb-triggers.5
+@man man/man5/deb.5
+@man man/man5/deb822.5
+@man man/man5/dpkg.cfg.5
+@man man/man5/dsc.5
+@man man/man5/dselect.cfg.5
+@man man/man7/deb-version.7
+@man man/man7/dpkg-build-api.7
+@man man/man7/libdpkg.7
+@man man/man8/start-stop-daemon.8
+@bin sbin/start-stop-daemon
+share/aclocal/
+share/aclocal/dpkg-arch.m4
+share/aclocal/dpkg-build.m4
+share/aclocal/dpkg-compiler.m4
+share/aclocal/dpkg-coverage.m4
+share/aclocal/dpkg-funcs.m4
+share/aclocal/dpkg-headers.m4
+share/aclocal/dpkg-libs.m4
+share/aclocal/dpkg-linker.m4
+share/aclocal/dpkg-progs.m4
+share/aclocal/dpkg-types.m4
+share/aclocal/dpkg-unicode.m4
+share/bash-completion/
+share/bash-completion/completions/
+share/doc/dpkg/
+share/doc/dpkg/README.api
+share/doc/dpkg/README.feature-removal-schedule
+share/doc/dpkg/spec/
+share/doc/dpkg/spec/build-driver.txt
+share/doc/dpkg/spec/frontend-api.txt
+share/doc/dpkg/spec/protected-field.txt
+share/doc/dpkg/spec/rootless-builds.txt
+share/doc/dpkg/spec/triggers.txt
+share/dpkg/
+share/dpkg/abitable
+share/dpkg/architecture.mk
+share/dpkg/buildapi.mk
+share/dpkg/buildflags.mk
+share/dpkg/buildopts.mk
+share/dpkg/buildtools.mk
+share/dpkg/cputable
+share/dpkg/default.mk
+share/dpkg/no-pie-compile.specs
+share/dpkg/no-pie-link.specs
+share/dpkg/ostable
+share/dpkg/pie-compile.specs
+share/dpkg/pie-link.specs
+share/dpkg/pkg-info.mk
+share/dpkg/sh/
+share/dpkg/sh/dpkg-error.sh
+share/dpkg/tupletable
+share/dpkg/vendor.mk
+share/locale/ast/LC_MESSAGES/dpkg.mo
+share/locale/bs/
+share/locale/bs/LC_MESSAGES/
+share/locale/bs/LC_MESSAGES/dpkg.mo
+share/locale/bs/LC_MESSAGES/dselect.mo
+share/locale/ca/LC_MESSAGES/dpkg-dev.mo
+share/locale/ca/LC_MESSAGES/dpkg.mo
+share/locale/ca/LC_MESSAGES/dselect.mo
+share/locale/cs/LC_MESSAGES/dpkg.mo
+share/locale/cs/LC_MESSAGES/dselect.mo
+share/locale/da/LC_MESSAGES/dpkg.mo
+share/locale/da/LC_MESSAGES/dselect.mo
+share/locale/de/LC_MESSAGES/dpkg-dev.mo
+share/locale/de/LC_MESSAGES/dpkg.mo
+share/locale/de/LC_MESSAGES/dselect.mo
+share/locale/dz/
+share/locale/dz/LC_MESSAGES/
+share/locale/dz/LC_MESSAGES/dpkg.mo
+share/locale/el/LC_MESSAGES/dpkg.mo
+share/locale/el/LC_MESSAGES/dselect.mo
+share/locale/eo/LC_MESSAGES/dpkg.mo
+share/locale/es/LC_MESSAGES/dpkg-dev.mo
+share/locale/es/LC_MESSAGES/dpkg.mo
+share/locale/es/LC_MESSAGES/dselect.mo
+share/locale/et/LC_MESSAGES/dpkg.mo
+share/locale/et/LC_MESSAGES/dselect.mo
+share/locale/eu/LC_MESSAGES/dpkg.mo
+share/locale/eu/LC_MESSAGES/dselect.mo
+share/locale/fr/LC_MESSAGES/dpkg-dev.mo
+share/locale/fr/LC_MESSAGES/dpkg.mo
+share/locale/fr/LC_MESSAGES/dselect.mo
+share/locale/gl/LC_MESSAGES/dpkg.mo
+share/locale/gl/LC_MESSAGES/dselect.mo
+share/locale/hu/LC_MESSAGES/dpkg.mo
+share/locale/hu/LC_MESSAGES/dselect.mo
+share/locale/id/LC_MESSAGES/dpkg.mo
+share/locale/id/LC_MESSAGES/dselect.mo
+share/locale/it/LC_MESSAGES/dpkg.mo
+share/locale/it/LC_MESSAGES/dselect.mo
+share/locale/ja/LC_MESSAGES/dpkg.mo
+share/locale/ja/LC_MESSAGES/dselect.mo
+share/locale/km/
+share/locale/km/LC_MESSAGES/
+share/locale/km/LC_MESSAGES/dpkg.mo
+share/locale/ko/LC_MESSAGES/dpkg.mo
+share/locale/ko/LC_MESSAGES/dselect.mo
+share/locale/ku/
+share/locale/ku/LC_MESSAGES/
+share/locale/ku/LC_MESSAGES/dpkg.mo
+share/locale/lt/
+share/locale/lt/LC_MESSAGES/
+share/locale/lt/LC_MESSAGES/dpkg.mo
+share/locale/mr/
+share/locale/mr/LC_MESSAGES/
+share/locale/mr/LC_MESSAGES/dpkg.mo
+share/locale/nb/LC_MESSAGES/dpkg.mo
+share/locale/nb/LC_MESSAGES/dselect.mo
+share/locale/ne/
+share/locale/ne/LC_MESSAGES/
+share/locale/ne/LC_MESSAGES/dpkg.mo
+share/locale/nl/LC_MESSAGES/dpkg-dev.mo
+share/locale/nl/LC_MESSAGES/dpkg.mo
+share/locale/nl/LC_MESSAGES/dselect.mo
+share/locale/nn/LC_MESSAGES/dpkg.mo
+share/locale/nn/LC_MESSAGES/dselect.mo
+share/locale/oc/
+share/locale/oc/LC_MESSAGES/
+share/locale/oc/LC_MESSAGES/dpkg.mo
+share/locale/pa/LC_MESSAGES/dpkg.mo
+share/locale/pl/LC_MESSAGES/dpkg-dev.mo
+share/locale/pl/LC_MESSAGES/dpkg.mo
+share/locale/pl/LC_MESSAGES/dselect.mo
+share/locale/pt/LC_MESSAGES/dpkg-dev.mo
+share/locale/pt/LC_MESSAGES/dpkg.mo
+share/locale/pt/LC_MESSAGES/dselect.mo
+share/locale/pt_BR/LC_MESSAGES/dpkg.mo
+share/locale/pt_BR/LC_MESSAGES/dselect.mo
+share/locale/ro/LC_MESSAGES/dpkg.mo
+share/locale/ro/LC_MESSAGES/dselect.mo
+share/locale/ru/LC_MESSAGES/dpkg-dev.mo
+share/locale/ru/LC_MESSAGES/dpkg.mo
+share/locale/ru/LC_MESSAGES/dselect.mo
+share/locale/sk/LC_MESSAGES/dpkg.mo
+share/locale/sk/LC_MESSAGES/dselect.mo
+share/locale/sv/LC_MESSAGES/dpkg-dev.mo
+share/locale/sv/LC_MESSAGES/dpkg.mo
+share/locale/sv/LC_MESSAGES/dselect.mo
+share/locale/th/
+share/locale/th/LC_MESSAGES/
+share/locale/th/LC_MESSAGES/dpkg.mo
+share/locale/tl/
+share/locale/tl/LC_MESSAGES/
+share/locale/tl/LC_MESSAGES/dpkg.mo
+share/locale/tl/LC_MESSAGES/dselect.mo
+share/locale/tr/LC_MESSAGES/dpkg.mo
+share/locale/vi/LC_MESSAGES/dpkg.mo
+share/locale/vi/LC_MESSAGES/dselect.mo
+share/locale/zh_CN/LC_MESSAGES/dpkg.mo
+share/locale/zh_CN/LC_MESSAGES/dselect.mo
+share/locale/zh_TW/LC_MESSAGES/dpkg.mo
+share/locale/zh_TW/LC_MESSAGES/dselect.mo
+share/polkit-1/
+share/polkit-1/actions/
+share/polkit-1/actions/org.dpkg.pkexec.update-alternatives.policy
+share/zsh/
+share/zsh/vendor-completions/
+share/zsh/vendor-completions/_dpkg-parsechangelog
+@sample ${SYSCONFDIR}/alternatives/README
+@sample ${LOCALSTATEDIR}/lib/
+@sample ${LOCALSTATEDIR}/lib/dpkg/
+@sample ${LOCALSTATEDIR}/lib/dpkg/alternatives/
+@sample ${LOCALSTATEDIR}/lib/dpkg/info/
+@sample ${LOCALSTATEDIR}/lib/dpkg/methods/
+@sample ${LOCALSTATEDIR}/lib/dpkg/methods/file/
+@sample ${LOCALSTATEDIR}/lib/dpkg/methods/ftp/
+@sample ${LOCALSTATEDIR}/lib/dpkg/methods/media/
+@sample ${LOCALSTATEDIR}/lib/dpkg/methods/mnt/
+@sample ${LOCALSTATEDIR}/lib/dpkg/parts/
+@sample ${LOCALSTATEDIR}/lib/dpkg/updates/
