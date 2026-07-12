@@ -1,0 +1,66 @@
+Index: src/utils.c
+--- src/utils.c.orig
++++ src/utils.c
+@@ -160,29 +160,32 @@ void esc_prn(const char *fmt, ...)
+ 	char tmp[4096];
+ 
+ 	va_start(ap, fmt);
+-	vsprintf(tmp, fmt, ap);
++	vsnprintf(tmp, sizeof(tmp), fmt, ap);
+ 	esc_fprn(stdout, "%s", tmp);
+ 	va_end(ap);
+ }
++
+ void esc_fprn(FILE *f, const char *fmt, ...)
+ {
+ 	char *buf;
++	int bufsize = 4096;
+ 	char *tmp;
+ 	char *p;
+ 	char *lf, *rt;
+ 	va_list ap;
+ 
+-	buf = malloc(4096);
++	buf = malloc(bufsize);
+ 	if (!buf)
+ 		return;
+-	tmp = malloc(4096);
++	
++	tmp = malloc(bufsize);
+ 	if (!tmp) {
+ 		free(buf);
+ 		return;
+ 	}
+ 	
+ 	va_start(ap, fmt);
+-	vsprintf(tmp, fmt, ap);
++	vsnprintf(tmp, bufsize, fmt, ap);
+ 	va_end(ap);
+ 	
+ 	p = tmp;
+@@ -194,21 +197,21 @@ void esc_fprn(FILE *f, const char *fmt, ...)
+ 		lf++;
+ 		switch (*lf) {
+ 			case 'H':
+-				strcat(buf, "\033[1m");
++				strlcat(buf, "\033[1m", bufsize);
+ 				break;
+ 			case 'U':
+-				strcat(buf, "\033[4m");
++				strlcat(buf, "\033[4m", bufsize);
+ 			default:
+ 				break;
+ 		}
+ 		lf++;
+ 		strncat(buf, lf, rt - lf);
+-		strcat(buf, "\033[0m");
++		strlcat(buf, "\033[0m", bufsize);
+ 		p = rt + 1;
+ 	}
+ 
+ 	if (p)
+-		strcat(buf, p);
++		strlcat(buf, p, bufsize);
+ 
+ 	fprintf(f, "%s", buf);
+ 	free(tmp);

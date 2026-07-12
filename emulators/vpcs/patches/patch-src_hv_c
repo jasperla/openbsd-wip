@@ -1,0 +1,26 @@
+Index: src/hv.c
+--- src/hv.c.orig
++++ src/hv.c
+@@ -333,11 +333,11 @@ loop(void)
+ 				
+ 				if (*p == CTRLD) {
+ 					p = buf;
+-					strcpy((char *)buf, "disconnect\n");
++					strlcpy((char *)buf, "disconnect\n", sizeof(buf));
+ 					i = strlen((char *)buf);
+ 					i = write(ptyfdm, p, i);
+ 					usleep(100);
+-					strcpy((char *)buf, "\n");
++					strlcpy((char *)buf, "\n", sizeof(buf));
+ 					i = strlen((char *)buf);					
+ 				}
+ 				
+@@ -764,7 +764,7 @@ getpath(const char *name)
+ 	char rpath[PATH_MAX];
+ 	
+ 	if (strchr(name, '/') != NULL) {
+-		strcpy(rpath, name);
++		strlcpy(rpath, name, sizeof(rpath));
+ 		if (is_there(rpath)) {
+ 			found = 1;
+ 			goto ret;

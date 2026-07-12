@@ -1,0 +1,5 @@
+@bin bin/vpcs
+@man man/man1/vpcs.1
+share/doc/vpcs/
+share/doc/vpcs/readme.txt
+share/doc/vpcs/readme_cn.txt

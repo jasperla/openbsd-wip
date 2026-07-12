@@ -1,0 +1,3 @@
+Virtual PC Simulator provides a command line interface to
+nine simulated virtual PCs.  You can ping/trace route from/to them
+or other hosts/routers in the network.

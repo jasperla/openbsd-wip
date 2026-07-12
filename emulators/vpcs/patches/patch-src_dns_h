@@ -1,0 +1,12 @@
+Index: src/dns.h
+--- src/dns.h.orig
++++ src/dns.h
+@@ -52,7 +52,7 @@ typedef struct {
+ 
+ #define MAX_DNS_NAME 64
+ 
+-int hostresolv(pcs *pc, char *name, char *ipstr);
++int hostresolv(pcs *pc, char *name, size_t namesize, char *ipstr);
+ int dmp_dns_rname(char *s, char *se, char *name);
+ 
+ #endif

@@ -1,0 +1,73 @@
+Index: src/readline.c
+--- src/readline.c.orig
++++ src/readline.c
+@@ -108,7 +108,7 @@ int loadhistory(const char *filename, struct rls *rls)
+ 			    rls->maxbuflen * (rls->maxhistnum - 1));
+ 			i--;
+ 		}
+-		strcpy(rls->history[i++], rls->kbuffer);
++		strlcpy(rls->history[i++], rls->kbuffer, rls->maxbuflen);
+ 	}
+ 	rls->hist_total = i;
+ 	fclose(fp);
+@@ -229,8 +229,8 @@ printf("\n%2.2x - %2.2x - %2.2x - %2.2x - %2.2x - %2.2
+ 					histmode = 1;
+ 					ihist = rls->hist_total;
+ 					rls->kbuffer[rls->pos] = '\0';
+-					strcpy(rls->history[rls->maxhistnum], 
+-					    rls->kbuffer);
++					strlcpy(rls->history[rls->maxhistnum], 
++					       rls->kbuffer, rls->maxbuflen);
+ 				}
+ 				if (ihist == 0)
+ 					continue;
+@@ -248,7 +248,7 @@ printf("\n%2.2x - %2.2x - %2.2x - %2.2x - %2.2x - %2.2
+ 					vprint(rls->fdout, "\b \b", 3);
+ 				
+ 				memset(rls->kbuffer, 0, rls->maxbuflen);
+-				strcpy(rls->kbuffer, rls->history[ihist]);
++				strlcpy(rls->kbuffer, rls->history[ihist], rls->maxbuflen);
+ 
+ 				rls->pos = strlen(rls->kbuffer);
+ 				vprint(rls->fdout, rls->kbuffer, rls->pos);
+@@ -283,7 +283,7 @@ printf("\n%2.2x - %2.2x - %2.2x - %2.2x - %2.2x - %2.2
+ 					vprint(rls->fdout, "\b \b", 3);
+ 				
+ 				memset(rls->kbuffer, 0, rls->maxbuflen);
+-				strcpy(rls->kbuffer, rls->history[ihist]);
++				strlcpy(rls->kbuffer, rls->history[ihist], rls->maxbuflen);
+ 
+ 				rls->pos = strlen(rls->kbuffer);
+ 				vprint(rls->fdout, rls->kbuffer, rls->pos);
+@@ -337,7 +337,7 @@ printf("\n%2.2x - %2.2x - %2.2x - %2.2x - %2.2x - %2.2
+ 				    rls->maxbuflen * (rls->maxhistnum - 1));
+ 				rls->hist_total--;
+ 			}
+-			strcpy(rls->history[rls->hist_total++], rls->kbuffer);
++			strlcpy(rls->history[rls->hist_total++], rls->kbuffer, rls->maxbuflen);
+ 			break;
+ 		} 
+ 		
+@@ -375,7 +375,7 @@ printf("\n%2.2x - %2.2x - %2.2x - %2.2x - %2.2x - %2.2
+ 				i = strlen(*tab);
+ 				vprint(rls->fdout, *tab, i);
+ 				if (p - rls->kbuffer + i < rls->maxbuflen) {
+-					strcpy(p, *tab);
++					strlcpy(p, *tab, COMPLETION_MATCH_SIZE);
+ 					rls->pos = strlen(rls->kbuffer);
+ 				}
+ 				
+@@ -556,11 +556,11 @@ char **my_complete(const char *string, const char *par
+ 	char **matches;
+ 	int i, j;
+ 	
+-	matches = malloc(20 * sizeof(char *));
++	matches = malloc(COMPLETION_MATCH_SIZE * sizeof(char *));
+ 	if (matches == NULL)
+ 		return NULL;
+ 
+-	memset(matches, 0, 20 * sizeof(char*));
++	memset(matches, 0, COMPLETION_MATCH_SIZE * sizeof(char *));
+ 	i = j = 0;
+ 	if (part != NULL) {
+ 		while (cmd[i] != NULL) {

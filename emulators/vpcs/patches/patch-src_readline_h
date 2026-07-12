@@ -1,0 +1,11 @@
+Index: src/readline.h
+--- src/readline.h.orig
++++ src/readline.h
+@@ -67,5 +67,7 @@ void reset_terminal(int fd, struct termios *stored_set
+ 
+ void kbhit(int fd);
+ 
++#define COMPLETION_MATCH_SIZE	20
++
+ #endif
+ /* end of file */
