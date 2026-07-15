@@ -22,14 +22,13 @@ MODULES =		devel/cargo
 
 CONFIGURE_STYLE =	cargo
 
-# Override the module's forced offline mode (it hardcodes CARGO_NET_OFFLINE=true)
-MODCARGO_ENV := ${MODCARGO_ENV:C/CARGO_NET_OFFLINE=true/CARGO_NET_OFFLINE=false/g}
-
+# Force offline mode off for git dependencies (the module hardcodes it)
 do-build:
-	@${MODCARGO_CARGO_RUN} build \
-	    --manifest-path ${MODCARGO_CARGOTOML} \
-	    --release \
-	    ${MODCARGO_BUILD_ARGS}
+	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} CARGO_NET_OFFLINE=false \
+	    ${MODCARGO_CARGO_BIN} build \
+	        --manifest-path ${MODCARGO_CARGOTOML} \
+	        --release \
+	        ${MODCARGO_BUILD_ARGS}
 
 # Only build the four tools we want
 MODCARGO_BUILD_ARGS +=	--locked \
