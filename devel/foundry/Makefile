@@ -11,7 +11,7 @@ DISTNAME =	${GH_PROJECT}-${GH_TAGNAME:S/-//g}
 CATEGORIES =	devel
 
 HOMEPAGE =	https://getfoundry.sh/
-MAINTAINER =	Todd Fries <todd@fries.net>
+MAINTAINER =	Todd T. Fries <todd@fries.net>
 
 # MIT OR Apache-2.0
 PERMIT_PACKAGE =	Yes
@@ -22,8 +22,16 @@ MODULES =		devel/cargo
 
 CONFIGURE_STYLE =	cargo
 
-# Only build the four binaries we care about
-# (do NOT include --release here — the cargo module already does it)
+# Override the module's forced offline mode (it hardcodes CARGO_NET_OFFLINE=true)
+MODCARGO_ENV := ${MODCARGO_ENV:C/CARGO_NET_OFFLINE=true/CARGO_NET_OFFLINE=false/g}
+
+do-build:
+	@${MODCARGO_CARGO_RUN} build \
+	    --manifest-path ${MODCARGO_CARGOTOML} \
+	    --release \
+	    ${MODCARGO_BUILD_ARGS}
+
+# Only build the four tools we want
 MODCARGO_BUILD_ARGS +=	--locked \
 	        --bin cast \
 	        --bin forge \
