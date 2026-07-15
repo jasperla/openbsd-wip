@@ -1,0 +1,5 @@
+@comment $OpenBSD$
+bin/cast
+bin/forge
+bin/anvil
+bin/chisel

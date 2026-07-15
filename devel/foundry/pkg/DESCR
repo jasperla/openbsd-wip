@@ -1,0 +1,12 @@
+Foundry is a blazing fast, portable and modular toolkit for Ethereum
+application development written in Rust.
+
+It consists of four main tools:
+
+- Forge: Ethereum testing framework (similar to Hardhat/Truffle)
+- Cast: Swiss army knife for interacting with EVM chains, sending
+  transactions, calling contracts, etc.
+- Anvil: Local Ethereum development node (like Ganache)
+- Chisel: Fast Solidity REPL
+
+Useful for smart contract development, testing, and on-chain interactions
