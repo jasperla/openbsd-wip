@@ -9,7 +9,6 @@ share/metainfo/org.shotcut.Shotcut.metainfo.xml
 share/mime/packages/org.shotcut.Shotcut.xml
 share/shotcut/
 share/shotcut/elements/
-share/shotcut/elements/Creative Commons BY 4.0 license.txt
 share/shotcut/elements/Lottie Simple License.txt
 share/shotcut/elements/emojis/
 share/shotcut/elements/emojis/.gitkeep
