@@ -10,7 +10,7 @@ Index: Cargo.toml
  num_cpus = "1"
  oauth2 = "5"
  obfstr = "0.4"
-@@ -400,3 +400,13 @@
+@@ -400,3 +400,15 @@
  # into `format!("{}", param)`, which clippy flags as useless_format.
  # Suppressed until the upstream crate fixes its codegen (fixed in 0.7.16+).
  useless_format = "allow"
@@ -18,9 +18,12 @@ Index: Cargo.toml
 +
 +# ---------------------------------------------------------------------------
 +# OpenBSD local dependency patches (relative to this repo).
-+# These are temporary until the same fixes land in mid/nono/pprof upstream.
++# mid/nono/pprof: temporary until the same fixes land upstream.
++# kqueue: skip stale kevents instead of unwrap-panic in notify's
++# "notify-rs kqueue loop" (EMFILE / watch-teardown races on BSD).
 +# ---------------------------------------------------------------------------
 +[patch.crates-io]
 +nono = { path = "vendor/nono" }
 +mid = { path = "vendor/mid" }
 +pprof = { path = "vendor/pprof" }
++kqueue = { path = "vendor/kqueue" }

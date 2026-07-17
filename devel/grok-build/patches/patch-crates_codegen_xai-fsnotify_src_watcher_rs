@@ -1,0 +1,65 @@
+Index: crates/codegen/xai-fsnotify/src/watcher.rs
+--- crates/codegen/xai-fsnotify/src/watcher.rs.orig
++++ crates/codegen/xai-fsnotify/src/watcher.rs
+@@ -14,12 +14,14 @@
+ //!   there is kernel-side (FSEvents / ReadDirectoryChangesW) — one handle per
+ //!   watch regardless of tree size — so skipping only *top-level* ignored dirs
+ //!   is enough.
+-//! - **Per-dir** (Linux): inotify has no kernel recursion; notify emulates it
+-//!   by walking the tree and adding **one watch descriptor per directory**,
+-//!   including gitignored trees (`node_modules/`, `target/`, `.venv/`) nested
+-//!   below the top level. That exhausts `fs.inotify.max_user_watches` for
+-//!   every process on the box. Instead we walk with the `ignore` crate
+-//!   (gitignore-aware at every depth), add a *non-recursive* watch per
++//! - **Per-dir** (Linux / OpenBSD): inotify and kqueue have no kernel
++//!   recursion; notify emulates it by walking the tree and adding **one watch
++//!   descriptor (or open fd) per directory**, including gitignored trees
++//!   (`node_modules/`, `target/`, `.venv/`) nested below the top level. On
++//!   Linux that exhausts `fs.inotify.max_user_watches` for every process on
++//!   the box; on OpenBSD recursive fan-out exhausts process open-files
++//!   (EMFILE) and races kqueue teardown. Instead we walk with the `ignore`
++//!   crate (gitignore-aware at every depth), add a *non-recursive* watch per
+ //!   surviving dir — shallow-first, bounded by [`max_watch_budget`] — and
+ //!   maintain the set incrementally: new dirs are watched parent-before-listing
+ //!   with synthetic `Created` backfill for files that raced the watch, deleted
+@@ -140,13 +142,20 @@
+ 
+ /// Resolve the strategy: `GROK_FSNOTIFY_PER_DIR=1|true` forces per-dir,
+ /// `=0|false` forces fan-out, otherwise per-dir on Linux (inotify) and
+-/// fan-out elsewhere. Resolved once in [`start_with_timeout`] like the
+-/// Sapling switch, so selection and maintenance can't disagree.
++/// OpenBSD (kqueue), fan-out elsewhere. Resolved once in
++/// [`start_with_timeout`] like the Sapling switch, so selection and
++/// maintenance can't disagree.
++///
++/// OpenBSD defaults to per-dir because kqueue has no kernel-side recursive
++/// watch: notify emulates recursion by opening one fd per directory. Fan-out
++/// over large trees blows process open-files limits (EMFILE) and races with
++/// watch teardown (stale kevents). Per-dir + gitignore-aware selection keeps
++/// the watch set bounded (see [`max_watch_budget`]).
+ pub(crate) fn watch_strategy() -> WatchStrategy {
+     match std::env::var("GROK_FSNOTIFY_PER_DIR").ok().as_deref() {
+         Some("1") | Some("true") => WatchStrategy::PerDir,
+         Some("0") | Some("false") => WatchStrategy::Fanout,
+-        _ if cfg!(target_os = "linux") => WatchStrategy::PerDir,
++        _ if cfg!(any(target_os = "linux", target_os = "openbsd")) => WatchStrategy::PerDir,
+         _ => WatchStrategy::Fanout,
+     }
+ }
+@@ -154,9 +163,13 @@
+ /// Per-dir mode's total watch budget (`GROK_FSNOTIFY_MAX_WATCHES` overrides).
+ ///
+ /// Watches are added shallow-first, so hitting the budget sheds the *deepest*
+-/// directories; a warning is logged once. The default stays within a typical
+-/// `fs.inotify.max_user_watches` (65,536 on many distros) while leaving room
+-/// for other processes — the entire point of this mode is not to starve them.
++/// directories; a warning is logged once. On Linux the default stays within a
++/// typical `fs.inotify.max_user_watches` (65,536 on many distros) while leaving
++/// room for other processes. OpenBSD process open-files soft limits are much
++/// lower, so we use a smaller default there.
++#[cfg(target_os = "openbsd")]
++const DEFAULT_MAX_WATCHES: usize = 2_048;
++#[cfg(not(target_os = "openbsd"))]
+ const DEFAULT_MAX_WATCHES: usize = 49_152;
+ 
+ pub(crate) fn max_watch_budget() -> usize {

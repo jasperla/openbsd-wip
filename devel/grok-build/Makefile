@@ -18,6 +18,8 @@ COMMENT =		SpaceXAI terminal AI coding agent (grok)
 DIST_TUPLE =		github xai-org grok-build b189869b7755d2b482969acf6c92da3ecfeffd36 .
 # Stable package name (avoid upstream "alpha" noise).
 PKGNAME =		grok-build-0.1.220
+# pl1: kqueue stale-kevent panic fix + OpenBSD fsnotify per-dir defaults.
+REVISION =		1
 
 CATEGORIES =		devel
 
@@ -93,7 +95,7 @@ MAKE_ENV +=		PROTOC=${LOCALBASE}/bin/protoc \
 CONFIGURE_STYLE =	cargo
 SEPARATE_BUILD =	Yes
 
-# OpenBSD-specific sources and dependency patches (mid/nono/pprof + sandbox).
+# OpenBSD-specific sources and dependency patches (mid/nono/pprof/kqueue + sandbox).
 # Copied after extract so patches/ still apply against upstream trees.
 # files/Cargo.lock is the lock from the OpenBSD-patched working tree.
 post-extract:
@@ -103,6 +105,7 @@ post-extract:
 	cp -R ${FILESDIR}/vendor/nono ${WRKSRC}/vendor/
 	cp -R ${FILESDIR}/vendor/nucleo ${WRKSRC}/vendor/
 	cp -R ${FILESDIR}/vendor/pprof ${WRKSRC}/vendor/
+	cp -R ${FILESDIR}/vendor/kqueue ${WRKSRC}/vendor/
 	cp ${FILESDIR}/openbsd.rs \
 		${WRKSRC}/crates/codegen/xai-grok-sandbox/src/openbsd.rs
 	cp ${FILESDIR}/openbsd_sandbox_smoke.rs \

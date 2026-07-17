@@ -1,0 +1,72 @@
+OpenBSD port: devel/grok-build — ready for doas make install
+
+## Package built
+
+```
+/usr/ports/packages/amd64/all/grok-build-0.1.220pl0.tgz  (~61M)
+/usr/ports/packages/amd64/ftp/grok-build-0.1.220pl0.tgz  (link)
+```
+
+```sh
+pkg_info -f -D unsigned /usr/ports/packages/amd64/all/grok-build-0.1.220pl0.tgz
+```
+
+## Install (needs root — your step)
+
+```sh
+doas pkg_add -D unsigned /usr/ports/packages/amd64/all/grok-build-0.1.220pl0.tgz
+# or from the port directory after package exists:
+# doas make install
+grok --version
+```
+
+## How it was packaged (passwordless _pfetch / _pbuild)
+
+```sh
+# distfiles already seeded
+doas -u _pfetch make fetch
+
+# work tree was rsync'd to /usr/obj/ports from prior user build
+doas -u _pbuild make package PKG_CREATE_NO_CHECKS=warn
+```
+
+PKG_CREATE_NO_CHECKS=warn: installed sqlite3 is .37.39 while this ports
+tree still declares SHARED_LIBS sqlite3 37.38 (package from snapshots is
+sqlite3-3.53.2; ports Makefile still 3.53.1 / 37.38). Warning only; package
+uses installed sonames.
+
+## Notes
+
+- DESCR must be pure ASCII (UTF-8 em-dash broke pkg_create)
+- RUN_DEPENDS textproc/ripgrep
+- Binary: bin/grok, ~164M stripped
+- Low-memory build defaults in Makefile (not usual for ports; this crate is huge):
+  - MAKE_JOBS=1 -> CARGO_BUILD_JOBS=1 (override: make MAKE_JOBS=2)
+  - CARGO_PROFILE_RELEASE_CODEGEN_UNITS=1, LTO=thin, DEBUG=0, STRIP=symbols
+  - CARGO_INCREMENTAL=0, MODCARGO_RUSTFLAGS=-Ccodegen-units=1
+  - DPB_PROPERTIES += lonesome
+  - mold/lld linker tweaks skipped (no mold in ports; base ld is fine)
+
+## Runtime: kqueue / fsnotify (2026-07-17)
+
+Symptom under load (script(1) / fixing-grok.log):
+
+```
+thread 'notify-rs kqueue loop' panicked at .../kqueue-1.1.1/src/lib.rs:661:86:
+called `Option::unwrap()` on a `None` value
+```
+
+Cause: notify's BSD backend uses kqueue 1.1.1. When a kevent arrives for an
+fd already removed from the watch list (teardown / EMFILE races),
+`find_file_ident(...).unwrap()` panics the watcher thread.
+
+Mitigations in this port / openbsd branch:
+
+1. `files/vendor/kqueue` + `[patch.crates-io] kqueue` — skip stale kevents
+   instead of unwrap (see vendor/kqueue/OPENBSD-PATCH.md).
+2. `xai-fsnotify`: default PerDir strategy on OpenBSD (like Linux), with a
+   lower default watch budget (2048) to stay under process open-files limits.
+   Override: GROK_FSNOTIFY_PER_DIR, GROK_FSNOTIFY_MAX_WATCHES.
+
+Rebuild the package after these changes; the installed binary still has the
+old DWARF paths until reinstalled.

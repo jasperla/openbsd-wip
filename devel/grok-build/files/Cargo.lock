@@ -5630,8 +5630,6 @@ dependencies = [
 [[package]]
 name = "kqueue"
 version = "1.1.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "eac30106d7dce88daf4a3fcb4879ea939476d5074a9b7ddd0fb97fa4bed5596a"
 dependencies = [
  "kqueue-sys",
  "libc",
@@ -6099,6 +6097,8 @@ dependencies = [
 [[package]]
 name = "mid"
 version = "4.0.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "625672364b1e9c02508daefc259ccdf07a7ecc55145769ef7938d3a815423261"
 dependencies = [
  "hex",
  "hmac-sha256",
@@ -6384,6 +6384,8 @@ checksum = "9737e026353e5cd0736f98eddae28665118eb6f6600902a7f50db585621fecb6"
 [[package]]
 name = "nono"
 version = "0.53.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "ae7eb523cc2036e9ad6527411c3da5dc2172dc454cc3447a03b910420a39bfee"
 dependencies = [
  "der",
  "getrandom 0.4.1",
@@ -6469,6 +6471,7 @@ dependencies = [
 [[package]]
 name = "nucleo"
 version = "0.5.0"
+source = "git+https://github.com/helix-editor/nucleo.git?rev=5b74652#5b74652e482f7c07d827f18c6d21e7540c242c69"
 dependencies = [
  "nucleo-matcher",
  "parking_lot",
@@ -6478,6 +6481,7 @@ dependencies = [
 [[package]]
 name = "nucleo-matcher"
 version = "0.3.1"
+source = "git+https://github.com/helix-editor/nucleo.git?rev=5b74652#5b74652e482f7c07d827f18c6d21e7540c242c69"
 dependencies = [
  "memchr",
  "unicode-segmentation",
@@ -7677,6 +7681,8 @@ checksum = "439ee305def115ba05938db6eb1644ff94165c5ab5e9420d1c1bcedbba909391"
 [[package]]
 name = "pprof"
 version = "0.15.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "38a01da47675efa7673b032bf8efd8214f1917d89685e07e395ab125ea42b187"
 dependencies = [
  "aligned-vec",
  "backtrace",
