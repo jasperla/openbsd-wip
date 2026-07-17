@@ -8,4 +8,5 @@ implementations handle full UNIX semantics while s3backer only deals
 with block GET/PUT/DELETE against the object store.
 
 Features include local block caching, encryption/authentication of
-block data, compression, and read-ahead.
+block data, compression, read-ahead, and removal of 'empty' (all zero)
+blocks from S3.
