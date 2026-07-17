@@ -1,0 +1,34 @@
+name: MID linux
+
+on:
+  # push:
+  #   branches: [ "main" ]
+  # pull_request:
+  #   branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Build
+        run: cargo build --verbose
+      - name: Run tests
+        run: cargo test -- --nocapture
+      - name: Get /etc/machine-id
+        run: cat /etc/machine-id
+      - name: Get /var/lib/dbus/machine-id
+        run: cat /var/lib/dbus/machine-id
+      - name: hostnamectl status Machine ID
+        run: hostnamectl status | awk '/Machine ID:/ {print $3}'
+      - name: Trio get machine-id with new line
+        run: hostnamectl status | awk '/Machine ID:/ {print $3}'; cat /var/lib/dbus/machine-id || true; cat /etc/machine-id || true;
+      - name: Trio get machine-id with "|"
+        run: |
+          { hostnamectl status | awk '/Machine ID:/ {printf $3"|"}'; cat /var/lib/dbus/machine-id 2>/dev/null; cat /etc/machine-id 2>/dev/null; } | paste -sd '|' | tr '|' '\n' | sort | uniq | tr '\n' '|'
+      - name: Get sudo lshw
+        run: sudo lshw
+      - name: Get sudo dmidecode
+        run: sudo dmidecode -t system
