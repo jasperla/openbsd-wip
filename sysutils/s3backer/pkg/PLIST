@@ -1,0 +1,9 @@
+@bin bin/s3backer
+@man man/man1/s3backer.1
+share/doc/packages/
+share/doc/packages/s3backer/
+share/doc/packages/s3backer/CHANGES
+share/doc/packages/s3backer/COPYING
+share/doc/packages/s3backer/INSTALL
+share/doc/packages/s3backer/README
+share/doc/packages/s3backer/TODO

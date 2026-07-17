@@ -1,0 +1,11 @@
+s3backer is a FUSE filesystem that presents a single fixed-size file
+backed by Amazon S3 (or a compatible object store).  The file is split
+into blocks, each stored as an S3 object.
+
+Typical use is to put a normal filesystem on that file via a vnode
+disk (vnconfig) or similar loopback arrangement, so existing filesystem
+implementations handle full UNIX semantics while s3backer only deals
+with block GET/PUT/DELETE against the object store.
+
+Features include local block caching, encryption/authentication of
+block data, compression, and read-ahead.

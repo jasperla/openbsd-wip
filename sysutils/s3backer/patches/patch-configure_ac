@@ -1,0 +1,12 @@
+Index: configure.ac
+--- configure.ac.orig
++++ configure.ac
+@@ -145,7 +145,7 @@
+ 
+ # Set some O/S specific stuff
+ case `uname -s` in
+-    Darwin|FreeBSD)
++    Darwin|FreeBSD|OpenBSD)
+         AC_CHECK_LIB(pthread, pthread_create,,
+             [AC_MSG_ERROR([required library libpthread missing])])
+         ;;

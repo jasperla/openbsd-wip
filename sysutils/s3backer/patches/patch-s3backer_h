@@ -1,0 +1,12 @@
+Index: s3backer.h
+--- s3backer.h.orig
++++ s3backer.h
+@@ -93,7 +93,7 @@
+ #include <zlib.h>
+ #include <fuse.h>
+ 
+-#if defined __APPLE__ || defined __FreeBSD__
++#if defined __APPLE__ || defined __FreeBSD__ || defined __OpenBSD__
+ extern char **environ;
+ #endif
+ 

@@ -1,0 +1,87 @@
+Index: s3b_config.c
+--- s3b_config.c.orig
++++ s3b_config.c
+@@ -216,6 +216,12 @@
+  * Note: each entry here is listed twice, so both version "--foo=X" and "-o foo=X" work.
+  * See http://code.google.com/p/s3backer/issues/detail?id=7
+  */
++#if defined(__OpenBSD__)
++/* OpenBSD libfuse struct fuse_opt uses off/val instead of offset/value */
++#define offset off
++#define value val
++#endif
++
+ static const struct fuse_opt option_list[] = {
+     {
+         .templ=     "--accessFile=%s",
+@@ -496,10 +502,6 @@
+         .offset=    offsetof(struct s3b_config, http_io.password),
+     },
+     {
+-        .templ=     "--passwordFile=%s",
+-        .offset=    offsetof(struct s3b_config, password_file),
+-    },
+-    {
+         .templ=     "--test",
+         .offset=    offsetof(struct s3b_config, test),
+         .value=     1
+@@ -530,22 +532,31 @@
+     },
+ };
+ static const int num_options = sizeof(option_list) / sizeof(*option_list);
++#if defined(__OpenBSD__)
++#undef offset
++#undef value
++#endif
+ 
++
+ // Default flags we send to FUSE
+ static const char *const s3backer_fuse_defaults[] = {
+     "-okernel_cache",
+     "-oallow_other",
+     "-ouse_ino",
++#ifndef __OpenBSD__
+     "-omax_readahead=0",
++#endif
+     "-osubtype=s3backer",
+     "-oentry_timeout=31536000",
+     "-onegative_timeout=31536000",
+     "-oattr_timeout=0",             // because statistics file length changes
+     "-odefault_permissions",
+-#ifndef __FreeBSD__
++#if !defined(__FreeBSD__) && !defined(__OpenBSD__)
+     "-onodev",
+ #endif
++#ifndef __OpenBSD__
+     "-onosuid",
++#endif
+ #ifdef __APPLE__
+     "-odaemon_timeout=" FUSE_MAX_DAEMON_TIMEOUT_STRING,
+ #endif
+@@ -1092,6 +1103,26 @@
+         if (strcmp(arg, "--help") == 0 || strcmp(arg, "-h") == 0 || strcmp(arg, "-?") == 0) {
+             usage();
+             exit(0);
++        }
++
++        // Password flags (handled here to avoid OpenBSD fuse_opt prefix match of password vs passwordFile)
++        if (strncmp(arg, "--passwordFile=", 15) == 0) {
++            if (config.password_file != NULL) {
++                warnx("duplicate flag \"--passwordFile\"");
++                exit(1);
++            }
++            if ((config.password_file = strdup(arg + 15)) == NULL)
++                err(1, "strdup");
++            return 0;
++        }
++        if (strncmp(arg, "--password=", 11) == 0) {
++            if (config.http_io.password != NULL) {
++                warnx("duplicate flag \"--password\"");
++                exit(1);
++            }
++            if ((config.http_io.password = strdup(arg + 11)) == NULL)
++                err(1, "strdup");
++            return 0;
+         }
+ 
+         // Unknown; pass it through to fuse_main()
