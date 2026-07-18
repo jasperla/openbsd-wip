@@ -19,11 +19,10 @@ Index: Cargo.toml
 +# ---------------------------------------------------------------------------
 +# OpenBSD local dependency patches (relative to this repo).
 +# mid/nono/pprof: temporary until the same fixes land upstream.
-+# kqueue: skip stale kevents instead of unwrap-panic in notify's
-+# "notify-rs kqueue loop" (EMFILE / watch-teardown races on BSD).
++# kqueue is NOT path-patched: its sources are replaced in-tree under
++# modcargo-crates/kqueue-1.1.1 (see post-patch) so --locked stays valid.
 +# ---------------------------------------------------------------------------
 +[patch.crates-io]
 +nono = { path = "vendor/nono" }
 +mid = { path = "vendor/mid" }
 +pprof = { path = "vendor/pprof" }
-+kqueue = { path = "vendor/kqueue" }

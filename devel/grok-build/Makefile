@@ -95,7 +95,7 @@ MAKE_ENV +=		PROTOC=${LOCALBASE}/bin/protoc \
 CONFIGURE_STYLE =	cargo
 SEPARATE_BUILD =	Yes
 
-# OpenBSD-specific sources and dependency patches (mid/nono/pprof/kqueue + sandbox).
+# OpenBSD-specific sources and dependency patches (mid/nono/pprof + sandbox).
 # Copied after extract so patches/ still apply against upstream trees.
 # files/Cargo.lock is the lock from the OpenBSD-patched working tree.
 post-extract:
@@ -105,12 +105,25 @@ post-extract:
 	cp -R ${FILESDIR}/vendor/nono ${WRKSRC}/vendor/
 	cp -R ${FILESDIR}/vendor/nucleo ${WRKSRC}/vendor/
 	cp -R ${FILESDIR}/vendor/pprof ${WRKSRC}/vendor/
-	cp -R ${FILESDIR}/vendor/kqueue ${WRKSRC}/vendor/
 	cp ${FILESDIR}/openbsd.rs \
 		${WRKSRC}/crates/codegen/xai-grok-sandbox/src/openbsd.rs
 	cp ${FILESDIR}/openbsd_sandbox_smoke.rs \
 		${WRKSRC}/crates/codegen/xai-grok-sandbox/examples/openbsd_sandbox_smoke.rs
 	cp ${FILESDIR}/Cargo.lock ${WRKSRC}/Cargo.lock
+
+# After MODCARGO has moved crates into modcargo-crates/ (post-extract finalize)
+# and before cargo-generate-vendor (MODCARGO post-patch), install the hardened
+# kqueue sources in place. Do NOT use [patch.crates-io] path= for kqueue: that
+# forces cargo to rewrite Cargo.lock and breaks MODCARGO_BUILD_ARGS+=--locked.
+post-patch:
+	@if [ ! -f ${WRKSRC}/modcargo-crates/kqueue-1.1.1/src/lib.rs ]; then \
+		echo "modcargo-crates/kqueue-1.1.1 missing; extract/modcargo order broke" >&2; \
+		exit 1; \
+	fi
+	cp ${FILESDIR}/vendor/kqueue/src/lib.rs \
+		${WRKSRC}/modcargo-crates/kqueue-1.1.1/src/lib.rs
+	cp ${FILESDIR}/vendor/kqueue/OPENBSD-PATCH.md \
+		${WRKSRC}/modcargo-crates/kqueue-1.1.1/OPENBSD-PATCH.md
 
 do-install:
 	${INSTALL_PROGRAM} ${MODCARGO_TARGET_DIR}/release/xai-grok-pager \
