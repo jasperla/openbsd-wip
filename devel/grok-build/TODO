@@ -1,72 +1,42 @@
-OpenBSD port: devel/grok-build — ready for doas make install
+# devel/grok-build — status
 
-## Package built
+## Status
 
-```
-/usr/ports/packages/amd64/all/grok-build-0.1.220pl0.tgz  (~61M)
-/usr/ports/packages/amd64/ftp/grok-build-0.1.220pl0.tgz  (link)
-```
+- Builds and packages on amd64: `grok-build-0.1.220p1`
+  (`/usr/ports/packages/amd64/all/grok-build-0.1.220p1.tgz`)
+- Binary: `bin/grok` + hardlink `bin/agent` (~141M stripped)
+- Features: `sandbox-enforce` only (no jemalloc); system libgit2/protoc;
+  unveil/pledge sandbox via local sources
+- kqueue: hardened `lib.rs` installed in `post-patch` under
+  `modcargo-crates/kqueue-1.1.1` (not a path patch)
+- fsnotify: OpenBSD defaults PerDir + lower watch budget (local patch)
+- Suitable for personal / openbsd-wip use; **not** ready for official ports
+
+Install:
 
 ```sh
-pkg_info -f -D unsigned /usr/ports/packages/amd64/all/grok-build-0.1.220pl0.tgz
-```
-
-## Install (needs root — your step)
-
-```sh
-doas pkg_add -D unsigned /usr/ports/packages/amd64/all/grok-build-0.1.220pl0.tgz
-# or from the port directory after package exists:
-# doas make install
+doas pkg_add -D unsigned /usr/ports/packages/amd64/all/grok-build-0.1.220p1.tgz
 grok --version
 ```
 
-## How it was packaged (passwordless _pfetch / _pbuild)
+## Blockers for official ports/
 
-```sh
-# distfiles already seeded
-doas -u _pfetch make fetch
+1. **Local divergence** — multi-MB `files/vendor/{mid,nono,nucleo,pprof,kqueue}`,
+   custom `files/Cargo.lock`, and several tree patches. Prefer upstream fixes
+   and drop vendored forks.
+2. **Pinned GH commit / alpha** — `DIST_TUPLE` to a single commit; binary is
+   `0.1.220-alpha.4`. Prefer a tagged release and matching versioning.
+3. **Cargo mass** — ~1200 crates, multi-GB/hour-class build, forced
+   `MAKE_JOBS=1` + single CGU for RAM. Hard on bulk/mirrors/review.
+4. **Ports tree hygiene** — package builds may need `PKG_CREATE_NO_CHECKS=warn`
+   when SHARED_LIBS (e.g. sqlite3) lag snapshots. Must match the tree it ships in.
+5. **Missing polish** — no man page; tests not run in `do-test`; DESCR/product
+   notes only. Optional but expected for a clean submission.
+6. **Scope** — large network-facing AI agent with API-key runtime; policy and
+   security review beyond a normal devel tool.
 
-# work tree was rsync'd to /usr/obj/ports from prior user build
-doas -u _pbuild make package PKG_CREATE_NO_CHECKS=warn
-```
+## Non-blockers (documented choices)
 
-PKG_CREATE_NO_CHECKS=warn: installed sqlite3 is .37.39 while this ports
-tree still declares SHARED_LIBS sqlite3 37.38 (package from snapshots is
-sqlite3-3.53.2; ports Makefile still 3.53.1 / 37.38). Warning only; package
-uses installed sonames.
-
-## Notes
-
-- DESCR must be pure ASCII (UTF-8 em-dash broke pkg_create)
-- RUN_DEPENDS textproc/ripgrep
-- Binary: bin/grok, ~164M stripped
-- Low-memory build defaults in Makefile (not usual for ports; this crate is huge):
-  - MAKE_JOBS=1 -> CARGO_BUILD_JOBS=1 (override: make MAKE_JOBS=2)
-  - CARGO_PROFILE_RELEASE_CODEGEN_UNITS=1, LTO=thin, DEBUG=0, STRIP=symbols
-  - CARGO_INCREMENTAL=0, MODCARGO_RUSTFLAGS=-Ccodegen-units=1
-  - DPB_PROPERTIES += lonesome
-  - mold/lld linker tweaks skipped (no mold in ports; base ld is fine)
-
-## Runtime: kqueue / fsnotify (2026-07-17)
-
-Symptom under load (script(1) / fixing-grok.log):
-
-```
-thread 'notify-rs kqueue loop' panicked at .../kqueue-1.1.1/src/lib.rs:661:86:
-called `Option::unwrap()` on a `None` value
-```
-
-Cause: notify's BSD backend uses kqueue 1.1.1. When a kevent arrives for an
-fd already removed from the watch list (teardown / EMFILE races),
-`find_file_ident(...).unwrap()` panics the watcher thread.
-
-Mitigations in this port / openbsd branch:
-
-1. `files/vendor/kqueue` + `[patch.crates-io] kqueue` — skip stale kevents
-   instead of unwrap (see vendor/kqueue/OPENBSD-PATCH.md).
-2. `xai-fsnotify`: default PerDir strategy on OpenBSD (like Linux), with a
-   lower default watch budget (2048) to stay under process open-files limits.
-   Override: GROK_FSNOTIFY_PER_DIR, GROK_FSNOTIFY_MAX_WATCHES.
-
-Rebuild the package after these changes; the installed binary still has the
-old DWARF paths until reinstalled.
+- `NOT_FOR_ARCHS=sparc64`, `USE_NOEXECONLY` on amd64 (upstream deps)
+- `RUN_DEPENDS=textproc/ripgrep` (no embedded `rg` on OpenBSD)
+- `DPB_PROPERTIES+=lonesome` (heavy rustc peaks)
