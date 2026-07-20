@@ -1,0 +1,21 @@
+Index: src/dns.c
+--- src/dns.c.orig
++++ src/dns.c
+@@ -46,7 +46,7 @@ static void appenddomain(pcs *pc, char *dname, int sdn
+ static struct packet *dns4(pcs *pc, int sw, char *data, int dlen);
+ static struct packet *dns6(pcs *pc, int sw, char *data, int dlen);
+ 
+-int hostresolv(pcs *pc, char *name, char *ipstr)
++int hostresolv(pcs *pc, char *name, size_t namesize, char *ipstr)
+ {
+ 	
+ 	struct packet *m;
+@@ -110,7 +110,7 @@ int hostresolv(pcs *pc, char *name, char *ipstr)
+ 					break;
+ 				}
+ 				if (ok) {
+-					strcpy(name, dname);
++					strlcpy(name, dname, namesize);
+ 					ip2str(ip, ipstr);
+ 					return 1;
+ 				}

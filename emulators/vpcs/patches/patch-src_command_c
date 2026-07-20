@@ -1,0 +1,25 @@
+use strlcpy instead of strcpy
+
+Index: src/command.c
+--- src/command.c.orig
++++ src/command.c
+@@ -381,7 +381,7 @@ int run_ping(int argc, char **argv)
+ 
+ 		if (pc->mscb.dip == -1 || pc->mscb.dip == 0) {
+ 			strcpy(dname, argv[1]);
+-			if (hostresolv(pc, dname, ipstr) == 0) {
++			if (hostresolv(pc, dname, sizeof(dname), ipstr) == 0) {
+ 				printf("Cannot resolve %s\n", argv[1]);
+ 				return 0;
+ 			}
+@@ -1139,8 +1139,8 @@ int run_tracert(int argc, char **argv)
+ 	pc->mscb.dip = inet_addr(argv[1]);
+ 
+ 	if (pc->mscb.dip == -1 || pc->mscb.dip == 0) {
+-		strcpy(dname, argv[1]);
+-		if (hostresolv(pc, dname, ipstr) == 0) {
++		strlcpy(dname, argv[1], sizeof(dname));
++		if (hostresolv(pc, dname, sizeof(dname), ipstr) == 0) {
+ 			printf("Cannot resolve %s\n", argv[1]);
+ 			return 0;
+ 		}
