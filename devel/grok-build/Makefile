@@ -14,15 +14,13 @@ COMMENT =		SpaceXAI terminal AI coding agent (grok)
 # Upstream publishes periodic monorepo dumps (not a one-shot dump).
 # DIST_TUPLE (not bare GH_* without DISTNAME): empty DISTNAME made GH_DISTFILE
 # expand to "-….tar.gz".
-DIST_TUPLE =		github xai-org grok-build b189869b7755d2b482969acf6c92da3ecfeffd36 .
+DIST_TUPLE =		github xai-org grok-build a5727c5960452e7527a154b25cb5bf00cda0545e .
 # Nucleo is a git dep upstream; fetch the pinned rev as a normal distfile and
 # path-patch Cargo.toml (offline cargo cannot fetch git).
 SITES.nucleo =		https://github.com/helix-editor/nucleo/archive/
 DISTFILES.nucleo =	nucleo-5b74652{5b74652}.tar.gz
-# Stable package name (avoid upstream "alpha" noise).
-PKGNAME =		grok-build-0.1.220
-# pl2: drop multi-MB files/vendor; patch crates via modcargo + nucleo distfile
-REVISION =		2
+# Binary crate version at this dump: 0.2.110 (xai-grok-pager-bin).
+PKGNAME =		grok-build-0.2.110
 
 CATEGORIES =		devel
 

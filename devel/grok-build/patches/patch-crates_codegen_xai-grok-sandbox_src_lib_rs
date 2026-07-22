@@ -13,22 +13,25 @@ Index: crates/codegen/xai-grok-sandbox/src/lib.rs
  //! crate still provides lightweight helpers (`log_violation`,
  //! `should_restrict_child_network`, `child_net`) that compile on all
  //! targets including musl.
-@@ -29,11 +30,13 @@
- pub mod child_net;
+@@ -30,6 +31,8 @@
  mod deny;
  mod logging;
+ mod network_policy;
 +#[cfg(all(feature = "enforce", target_os = "openbsd"))]
 +mod openbsd;
  mod paths;
  mod profiles;
  mod types;
- pub use logging::SandboxLogger;
+@@ -38,7 +41,7 @@
+     ChildNetworkPolicy, NETWORK_POLICY_SNAPSHOT_VERSION, NetworkPolicySnapshot,
+     NetworkPolicySnapshotError, WebsiteAction, WebsiteOrigin, WebsiteOriginError, WebsitePolicy,
+ };
 -#[cfg(all(feature = "enforce", unix))]
 +#[cfg(all(feature = "enforce", unix, not(target_os = "openbsd")))]
  use nono::Sandbox;
  pub use profiles::{
      ProfileName, SandboxConfig, SandboxProfile, load_sandbox_config, sandbox_profile_conflicts,
-@@ -134,62 +137,109 @@
+@@ -144,6 +147,9 @@
      }
      /// Apply the sandbox to the current process. **Irreversible.**
      /// Degrades gracefully if the platform doesn't support it.
@@ -38,13 +41,14 @@ Index: crates/codegen/xai-grok-sandbox/src/lib.rs
      #[cfg(all(feature = "enforce", unix))]
      pub fn apply(&mut self, workspace: &Path) -> anyhow::Result<()> {
          if self.profile == ProfileName::Off {
-             tracing::info!("Sandbox disabled (profile: off)");
-             return Ok(());
-         }
+@@ -153,49 +159,87 @@
+         let config = profiles::load_sandbox_config(workspace);
+         let mut resolved = self.profile.resolve_profile(workspace, &config)?;
+         self.net_restricted = resolved.restrict_network;
 -        let support = Sandbox::support_info();
 -        if !support.is_supported {
 -            tracing::warn!(
--                details = % support.details,
+-                details = %support.details,
 -                "Sandbox not supported on this platform, continuing without sandbox"
 -            );
 -            self.logger.log(SandboxEvent::apply_failed(
@@ -54,28 +58,29 @@ Index: crates/codegen/xai-grok-sandbox/src/lib.rs
 -            ));
 -            return Ok(());
 -        }
-+
-         let config = profiles::load_sandbox_config(workspace);
--        let caps = self
--            .profile
--            .to_capability_set_with_config(workspace, &config)?;
-         let mut resolved = self.profile.resolve_profile(workspace, &config)?;
+-        let caps = ProfileName::capability_set_from_profile(workspace, &resolved)?;
          resolved.deny = deny::effective_deny_paths(workspace, &resolved.deny);
-         self.net_restricted = self.profile.restricts_network_resolved(&config);
 -        match Sandbox::apply(&caps) {
 -            Ok(_) => {
 -                self.applied = true;
--                if self.net_restricted {
--                    RESTRICT_CHILD_NETWORK.store(true, Ordering::Relaxed);
+-                self.logger.log(SandboxEvent::profile_applied(
+-                    &self.profile.to_string(),
+-                    workspace,
+-                    &resolved,
+-                ));
+-                tracing::info!(
+-                    profile = %self.profile,
+-                    workspace = %workspace.display(),
+-                    restrict_network_configured = self.net_restricted,
+-                    "Sandbox applied (kernel-enforced, irreversible)"
+-                );
+-                Ok(())
 +
 +        #[cfg(target_os = "openbsd")]
 +        {
 +            match openbsd::apply_profile(&resolved) {
 +                Ok(()) => {
 +                    self.applied = true;
-+                    if self.net_restricted {
-+                        RESTRICT_CHILD_NETWORK.store(true, Ordering::Relaxed);
-+                    }
 +                    self.logger.log(SandboxEvent::profile_applied(
 +                        &self.profile.to_string(),
 +                        workspace,
@@ -84,22 +89,11 @@ Index: crates/codegen/xai-grok-sandbox/src/lib.rs
 +                    tracing::info!(
 +                        profile = %self.profile,
 +                        workspace = %workspace.display(),
-+                        restrict_network = self.net_restricted,
-+                        "Sandbox applied (OpenBSD unveil+pledge, irreversible)"
++                        restrict_network_configured = self.net_restricted,
++                        "Sandbox applied via unveil+pledge (irreversible)"
 +                    );
 +                    Ok(())
-                 }
--                self.logger.log(SandboxEvent::profile_applied(
--                    &self.profile.to_string(),
--                    workspace,
--                    &resolved,
--                ));
--                tracing::info!(
--                    profile = % self.profile, workspace = % workspace.display(),
--                    restrict_network = self.net_restricted,
--                    "Sandbox applied (kernel-enforced, irreversible)"
--                );
--                Ok(())
++                }
 +                Err(e) => {
 +                    tracing::warn!(
 +                        profile = %self.profile,
@@ -122,7 +116,8 @@ Index: crates/codegen/xai-grok-sandbox/src/lib.rs
 +            let support = Sandbox::support_info();
 +            if !support.is_supported {
                  tracing::warn!(
--                    profile = % self.profile, error = % e,
+-                    profile = %self.profile,
+-                    error = %e,
 -                    "Sandbox could not be applied, continuing without sandbox"
 +                    details = %support.details,
 +                    "Sandbox not supported on this platform, continuing without sandbox"
@@ -135,16 +130,11 @@ Index: crates/codegen/xai-grok-sandbox/src/lib.rs
                  ));
 -                Ok(())
 +                return Ok(());
-             }
-+            let caps = self
-+                .profile
-+                .to_capability_set_with_config(workspace, &config)?;
++            }
++            let caps = ProfileName::capability_set_from_profile(workspace, &resolved)?;
 +            match Sandbox::apply(&caps) {
 +                Ok(_) => {
 +                    self.applied = true;
-+                    if self.net_restricted {
-+                        RESTRICT_CHILD_NETWORK.store(true, Ordering::Relaxed);
-+                    }
 +                    self.logger.log(SandboxEvent::profile_applied(
 +                        &self.profile.to_string(),
 +                        workspace,
@@ -153,7 +143,7 @@ Index: crates/codegen/xai-grok-sandbox/src/lib.rs
 +                    tracing::info!(
 +                        profile = %self.profile,
 +                        workspace = %workspace.display(),
-+                        restrict_network = self.net_restricted,
++                        restrict_network_configured = self.net_restricted,
 +                        "Sandbox applied (kernel-enforced, irreversible)"
 +                    );
 +                    Ok(())
@@ -171,26 +161,6 @@ Index: crates/codegen/xai-grok-sandbox/src/lib.rs
 +                    ));
 +                    Ok(())
 +                }
-+            }
+             }
          }
-     }
-     /// Stub when `enforce` feature is disabled — sandbox is not applied.
-@@ -211,7 +261,17 @@
-         });
-     }
-     /// Check whether the current platform supports sandboxing.
--    #[cfg(all(feature = "enforce", unix))]
-+    #[cfg(all(feature = "enforce", target_os = "openbsd"))]
-+    pub fn support_info() -> nono::SupportInfo {
-+        nono::SupportInfo {
-+            is_supported: openbsd::is_supported(),
-+            platform: "openbsd",
-+            details: openbsd::support_details(),
-+        }
-+    }
-+
-+    /// Check whether the current platform supports sandboxing.
-+    #[cfg(all(feature = "enforce", unix, not(target_os = "openbsd")))]
-     pub fn support_info() -> nono::SupportInfo {
-         Sandbox::support_info()
      }

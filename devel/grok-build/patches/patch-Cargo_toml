@@ -1,7 +1,7 @@
 Index: Cargo.toml
 --- Cargo.toml.orig
 +++ Cargo.toml
-@@ -174,7 +174,7 @@
+@@ -179,7 +179,7 @@
  nix = { version = "0.30", features = ["poll", "process", "signal", "sched", "term", "mount", "fs", "ioctl", "mman", "reboot", "user"] }
  notify = "8"
  notify-debouncer-mini = "0.6"
