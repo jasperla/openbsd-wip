@@ -1184,3 +1184,6 @@ MODCARGO_CRATES +=	zune-jpeg	0.5.15
 MODCARGO_CRATES +=	zvariant	5.10.0
 MODCARGO_CRATES +=	zvariant_derive	5.10.0
 MODCARGO_CRATES +=	zvariant_utils	3.3.0
+MODCARGO_CRATES +=	mid	4.0.0
+MODCARGO_CRATES +=	nono	0.53.0
+MODCARGO_CRATES +=	pprof	0.15.0

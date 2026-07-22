@@ -543,6 +543,7 @@ SHA256 (cargo/memmap2-0.9.10.tar.gz) = cUCYAo/gEZkuHDliZTyWstV4xLS86QNuFf8iAxmx4
 SHA256 (cargo/memmem-0.1.1.tar.gz) = pkqSSJ4nRM4GDDSRYr4cXzPGlpI0EE29md21/rCLjBU=
 SHA256 (cargo/memo-map-0.3.3.tar.gz) = ONERUAdWCHTjc2E3RMb7o3TBdogyenHBR20aWVTMhXs=
 SHA256 (cargo/memoffset-0.9.1.tar.gz) = SIAWv65FewNtmWCS9stEhndhHOREnpcM6vQmlSA/IYo=
+SHA256 (cargo/mid-4.0.0.tar.gz) = YlZyNksenAJQja78JZzN8Hp+zFUUV2nveTjTqBVCMmE=
 SHA256 (cargo/mimalloc-0.1.48.tar.gz) = 4e5mpLZMdPTvKIvLuRkq2cP+qtdRkxKayFCa9UOJT9g=
 SHA256 (cargo/mime-0.3.17.tar.gz) = aHe7UUCB7ip/9e+d4ygfFKTdS86sTAk4gHSmtd+KE5o=
 SHA256 (cargo/mime_guess-2.0.5.tar.gz) = 98RPjmcsAP5TCPojX4IctBmEFOHHeTXBq2lI0/14VQ4=
@@ -569,6 +570,7 @@ SHA256 (cargo/nohash-hasher-0.2.0.tar.gz) = K/UCI1edx83Ps7/Kz3Bp/2gkP4w2P2L/qZzw
 SHA256 (cargo/nom-7.1.3.tar.gz) = 0nOYPFplenCj6PKgEymCLzuMgXK3OCZBGlV1HkBKCko=
 SHA256 (cargo/nom-8.0.0.tar.gz) = 35dhd1hxve+DvuUw5gBQ9+VLEQU1DWiE6w+09GwvlAU=
 SHA256 (cargo/nonempty-0.12.0.tar.gz) = lzfgJjU+XNBzb5jt2uKGZRGOtvZgCQKn9Q21hWIf7LY=
+SHA256 (cargo/nono-0.53.0.tar.gz) = rn61I8wgNumtZSdBHD2l3CFy3EVMw0R6A7kQQgo5v+4=
 SHA256 (cargo/notify-8.2.0.tar.gz) = TT0HknFR/4V1twh/JFRW5Un+pi7fDsTlZaXuUMhAK8M=
 SHA256 (cargo/notify-debouncer-full-0.5.0.tar.gz) = 0tiLGnU4BUNRyCWDON98kxpZBRP7N0XowV65/0GZuNE=
 SHA256 (cargo/notify-debouncer-mini-0.6.0.tar.gz) = ponrQmIYTZoXJ/kIfNA4g+pxZoKrA+0k7+xX13FtzLg=
@@ -685,6 +687,7 @@ SHA256 (cargo/portable-atomic-util-0.2.4.tar.gz) = 2KLw2NBA14SKcJyveJEt68w/M+5LP
 SHA256 (cargo/portable-pty-0.9.0.tar.gz) = tKWWorPSdS2U9R+sLUqWc3uHBd3dMRoyua9HIR8IZx4=
 SHA256 (cargo/potential_utf-0.1.3.tar.gz) = hN8Zrb5bWgeC7cq0WJmQaUerA5zPRXNxNzXufeHmsIo=
 SHA256 (cargo/powerfmt-0.2.0.tar.gz) = Q57jBd7xFboFk4226xZE/5QWXFq16UINHBvO27qQk5E=
+SHA256 (cargo/pprof-0.15.0.tar.gz) = OKAdpHZ176dnOwMr+O/YIU8ZF9iWheB+OVqxJepCsYc=
 SHA256 (cargo/ppv-lite86-0.2.21.tar.gz) = herjxO0vUNz+cmQ9pL78MN6ttFiptZDXIM3i8rHpfak=
 SHA256 (cargo/precomputed-hash-0.1.1.tar.gz) = klOD76NGcwR4+0g42+kTfSpHZ1rXicVG0VCm4d1Ksxw=
 SHA256 (cargo/pretty_assertions-1.4.1.tar.gz) = OuEw4vJx+8KsOkD7HQcYCDnNu+RDx6J+HjwTxcrAEW0=
@@ -1184,6 +1187,7 @@ SHA256 (cargo/zune-jpeg-0.5.15.tar.gz) = J7ydW4FbwQPxQqoFT1YdkYfRkWkux8LR4rRzf42
 SHA256 (cargo/zvariant-5.10.0.tar.gz) = VwgpmyGQO740jpRynyLEnFXQRyCgBKo1Dx+cEi/SVAs=
 SHA256 (cargo/zvariant_derive-5.10.0.tar.gz) = W1mwEuvpxGZW+cwI2NqLTHJlEK7xJVnaPl8b9yeAdSw=
 SHA256 (cargo/zvariant_utils-3.3.0.tar.gz) = 91wjpk749A8TppiZkeZDVU2b7x1oKigRYM8MG8OJxek=
+SHA256 (nucleo-5b74652.tar.gz) = zArM7eOSASh/G0m1zv4kzqwrMbPtgrqwjC+8zs1G6M0=
 SHA256 (xai-org-grok-build-b189869b7755d2b482969acf6c92da3ecfeffd36.tar.gz) = wZbuFpSZs5g4mr+wdRmhU6yfcxFkJDkmiDU7NzWxikM=
 SIZE (cargo/addr2line-0.25.1.tar.gz) = 43134
 SIZE (cargo/adler2-2.0.1.tar.gz) = 13366
@@ -1730,6 +1734,7 @@ SIZE (cargo/memmap2-0.9.10.tar.gz) = 34846
 SIZE (cargo/memmem-0.1.1.tar.gz) = 10665
 SIZE (cargo/memo-map-0.3.3.tar.gz) = 10003
 SIZE (cargo/memoffset-0.9.1.tar.gz) = 9032
+SIZE (cargo/mid-4.0.0.tar.gz) = 17431
 SIZE (cargo/mimalloc-0.1.48.tar.gz) = 4742
 SIZE (cargo/mime-0.3.17.tar.gz) = 15712
 SIZE (cargo/mime_guess-2.0.5.tar.gz) = 27166
@@ -1756,6 +1761,7 @@ SIZE (cargo/nohash-hasher-0.2.0.tar.gz) = 8051
 SIZE (cargo/nom-7.1.3.tar.gz) = 117570
 SIZE (cargo/nom-8.0.0.tar.gz) = 135590
 SIZE (cargo/nonempty-0.12.0.tar.gz) = 13105
+SIZE (cargo/nono-0.53.0.tar.gz) = 225269
 SIZE (cargo/notify-8.2.0.tar.gz) = 39067
 SIZE (cargo/notify-debouncer-full-0.5.0.tar.gz) = 18990
 SIZE (cargo/notify-debouncer-mini-0.6.0.tar.gz) = 9951
@@ -1872,6 +1878,7 @@ SIZE (cargo/portable-atomic-util-0.2.4.tar.gz) = 47043
 SIZE (cargo/portable-pty-0.9.0.tar.gz) = 29466
 SIZE (cargo/potential_utf-0.1.3.tar.gz) = 9698
 SIZE (cargo/powerfmt-0.2.0.tar.gz) = 15165
+SIZE (cargo/pprof-0.15.0.tar.gz) = 49336
 SIZE (cargo/ppv-lite86-0.2.21.tar.gz) = 22522
 SIZE (cargo/precomputed-hash-0.1.1.tar.gz) = 1640
 SIZE (cargo/pretty_assertions-1.4.1.tar.gz) = 78952
@@ -2371,4 +2378,5 @@ SIZE (cargo/zune-jpeg-0.5.15.tar.gz) = 88879
 SIZE (cargo/zvariant-5.10.0.tar.gz) = 93150
 SIZE (cargo/zvariant_derive-5.10.0.tar.gz) = 16592
 SIZE (cargo/zvariant_utils-3.3.0.tar.gz) = 15417
+SIZE (nucleo-5b74652.tar.gz) = 86764
 SIZE (xai-org-grok-build-b189869b7755d2b482969acf6c92da3ecfeffd36.tar.gz) = 12113394

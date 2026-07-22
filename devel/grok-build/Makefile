@@ -11,15 +11,18 @@ USE_NOEXECONLY =	Yes
 
 COMMENT =		SpaceXAI terminal AI coding agent (grok)
 
-# Upstream OSS tree; OpenBSD support is local patches until merged upstream.
-# Binary crate version: 0.1.220-alpha.4 at this commit.
+# Upstream publishes periodic monorepo dumps (not a one-shot dump).
 # DIST_TUPLE (not bare GH_* without DISTNAME): empty DISTNAME made GH_DISTFILE
-# expand to "-b189869b{...}.tar.gz".
+# expand to "-….tar.gz".
 DIST_TUPLE =		github xai-org grok-build b189869b7755d2b482969acf6c92da3ecfeffd36 .
+# Nucleo is a git dep upstream; fetch the pinned rev as a normal distfile and
+# path-patch Cargo.toml (offline cargo cannot fetch git).
+SITES.nucleo =		https://github.com/helix-editor/nucleo/archive/
+DISTFILES.nucleo =	nucleo-5b74652{5b74652}.tar.gz
 # Stable package name (avoid upstream "alpha" noise).
 PKGNAME =		grok-build-0.1.220
-# pl1: kqueue stale-kevent panic fix + OpenBSD fsnotify per-dir defaults.
-REVISION =		1
+# pl2: drop multi-MB files/vendor; patch crates via modcargo + nucleo distfile
+REVISION =		2
 
 CATEGORIES =		devel
 
@@ -41,7 +44,7 @@ MODCARGO_NO_DEFAULT_FEATURES =	Yes
 MODCARGO_FEATURES =		sandbox-enforce
 
 # Build only the composition-root binary crate.
-# Cargo.lock from FILESDIR matches OpenBSD path patches; --locked is safe after that.
+# Cargo.lock from FILESDIR matches OpenBSD patches; --locked is safe after that.
 MODCARGO_BUILD_ARGS +=	--locked -p xai-grok-pager-bin
 MODCARGO_TEST_ARGS +=	--locked -p xai-grok-pager-bin
 
@@ -61,32 +64,34 @@ LIB_DEPENDS +=		archivers/zstd \
 # Runtime: build.rs does not embed rg on OpenBSD; tools fall back to PATH.
 RUN_DEPENDS +=		textproc/ripgrep
 
-# --- Low-memory Rust/cargo build (this is a large workspace; rustc+LLVM peak hard) ---
-# Not the usual ports default, but without these the build OOMs or thrashes swap
-# (rustc/opt cgu.N can sit at multi-GB virt / hundreds of MB RSS each).
-# Trade-off: slower wall time for lower peak RAM. Raise MAKE_JOBS if you have RAM:
-#   make MAKE_JOBS=2   or   make MAKE_JOBS=4
-# cargo.port.mk maps MAKE_JOBS -> CARGO_BUILD_JOBS.
+# ---------------------------------------------------------------------------
+# Resource limits for cargo/rustc (single knob for dpb / fat builders)
+# ---------------------------------------------------------------------------
+# Default Yes: serialize cargo jobs and tighten release codegen so the port
+# finishes on modest RAM instead of OOM/thrashing. This is *not* a typical
+# ports default; large bulk builders should turn it off:
+#
+#   make GROK_LOW_MEM=No
+#   # or in /etc/mk.conf / dpb properties for this package only:
+#   #   GROK_LOW_MEM=No
+#
+# When Yes:
+#   - MAKE_JOBS=1  -> cargo.port.mk sets CARGO_BUILD_JOBS=${MAKE_JOBS}
+#   - DPB lonesome -> avoid packing other bulk jobs beside this one
+#   - release profile: 1 CGU, thin LTO, no debuginfo, strip, no incremental
+# When No: leave MAKE_JOBS alone (ports/dpb parallelism) and skip profile caps.
+GROK_LOW_MEM ?=		Yes
+.if ${GROK_LOW_MEM:L} == "yes"
 MAKE_JOBS =		1
-# Prefer not scheduling other bulk packages alongside this build.
 DPB_PROPERTIES +=	lonesome
-
-# Profile knobs via env (no Cargo.toml patch). Equivalent to:
-#   [profile.release]
-#   codegen-units = 1
-#   lto = "thin"   # avoid fat LTO (common OOM during release link)
-#   debug = 0
-#   strip = true
-# One-shot port builds do not benefit from incremental caches.
 MAKE_ENV +=		CARGO_INCREMENTAL=0 \
 			CARGO_PROFILE_RELEASE_CODEGEN_UNITS=1 \
 			CARGO_PROFILE_RELEASE_LTO=thin \
 			CARGO_PROFILE_RELEASE_DEBUG=0 \
 			CARGO_PROFILE_RELEASE_STRIP=symbols
-# Belt-and-suspenders: also force single CGU on the rustc command line.
 MODCARGO_RUSTFLAGS +=	-Ccodegen-units=1
+.endif
 
-# Large workspace: keep WRKOBJDIR on a big disk; pass system protoc.
 # LIBGIT2_NO_VENDOR: libgit2-sys 0.18 ignores LIBGIT2_SYS_USE_PKG_CONFIG alone
 # when probe fails; force system libgit2 (see cargo.port.mk libgit2-sys hook).
 MAKE_ENV +=		PROTOC=${LOCALBASE}/bin/protoc \
@@ -95,40 +100,32 @@ MAKE_ENV +=		PROTOC=${LOCALBASE}/bin/protoc \
 CONFIGURE_STYLE =	cargo
 SEPARATE_BUILD =	Yes
 
-# OpenBSD-specific sources and dependency patches (mid/nono/pprof + sandbox).
-# Copied after extract so patches/ still apply against upstream trees.
-# files/Cargo.lock is the lock from the OpenBSD-patched working tree.
+# post-extract runs before MODCARGO moves crates into modcargo-crates/.
+# - path-dep nucleo from DISTFILES.nucleo (strip nested [workspace])
+# - OpenBSD sandbox sources (first-party; not yet upstream)
+# - Cargo.lock with registry mid/nono/pprof (+ path nucleo)
 post-extract:
 	${INSTALL_DATA_DIR} ${WRKSRC}/vendor
 	${INSTALL_DATA_DIR} ${WRKSRC}/crates/codegen/xai-grok-sandbox/examples
-	cp -R ${FILESDIR}/vendor/mid ${WRKSRC}/vendor/
-	cp -R ${FILESDIR}/vendor/nono ${WRKSRC}/vendor/
-	cp -R ${FILESDIR}/vendor/nucleo ${WRKSRC}/vendor/
-	cp -R ${FILESDIR}/vendor/pprof ${WRKSRC}/vendor/
+	# github archive dir is nucleo-<fullsha>
+	@nucleo=`echo ${WRKDIR}/nucleo-5b74652*`; \
+	  if [ ! -d "$$nucleo" ]; then \
+		echo "nucleo distfile not extracted under ${WRKDIR}" >&2; \
+		exit 1; \
+	  fi; \
+	  mv "$$nucleo" ${WRKSRC}/vendor/nucleo
+	# Nested workspace confuses cargo when used as a path dep of the root.
+	sed -i '/^\[workspace\]/,/^$$/d' ${WRKSRC}/vendor/nucleo/Cargo.toml
 	cp ${FILESDIR}/openbsd.rs \
 		${WRKSRC}/crates/codegen/xai-grok-sandbox/src/openbsd.rs
 	cp ${FILESDIR}/openbsd_sandbox_smoke.rs \
 		${WRKSRC}/crates/codegen/xai-grok-sandbox/examples/openbsd_sandbox_smoke.rs
 	cp ${FILESDIR}/Cargo.lock ${WRKSRC}/Cargo.lock
 
-# After MODCARGO has moved crates into modcargo-crates/ (post-extract finalize)
-# and before cargo-generate-vendor (MODCARGO post-patch), install the hardened
-# kqueue sources in place. Do NOT use [patch.crates-io] path= for kqueue: that
-# forces cargo to rewrite Cargo.lock and breaks MODCARGO_BUILD_ARGS+=--locked.
-post-patch:
-	@if [ ! -f ${WRKSRC}/modcargo-crates/kqueue-1.1.1/src/lib.rs ]; then \
-		echo "modcargo-crates/kqueue-1.1.1 missing; extract/modcargo order broke" >&2; \
-		exit 1; \
-	fi
-	cp ${FILESDIR}/vendor/kqueue/src/lib.rs \
-		${WRKSRC}/modcargo-crates/kqueue-1.1.1/src/lib.rs
-	cp ${FILESDIR}/vendor/kqueue/OPENBSD-PATCH.md \
-		${WRKSRC}/modcargo-crates/kqueue-1.1.1/OPENBSD-PATCH.md
-
 do-install:
 	${INSTALL_PROGRAM} ${MODCARGO_TARGET_DIR}/release/xai-grok-pager \
 		${PREFIX}/bin/grok
-	# Same composition-root binary under both names (upstream ships grok; agent is the common CLI alias).
+	# Same composition-root binary under both names.
 	cd ${PREFIX}/bin && ln grok agent
 
 .include "crates.inc"

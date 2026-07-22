@@ -1,0 +1,80 @@
+Index: modcargo-crates/kqueue-1.1.1/src/lib.rs
+--- modcargo-crates/kqueue-1.1.1/src/lib.rs.orig
++++ modcargo-crates/kqueue-1.1.1/src/lib.rs
+@@ -597,17 +597,24 @@
+     };
+ 
+     match ret {
+-        -1 => Some(Event::from_error(kev, watcher)),
++        // Stale kevents (fd closed / removed from `watched` while still
++        // pending) yield None from the constructors — skip rather than panic.
++        -1 => Event::from_error(kev, watcher),
+         0 => None, // timeout expired
+-        _ => Some(Event::new(kev, watcher)),
++        _ => Event::new(kev, watcher),
+     }
+ }
+ 
+ // OS specific
+ // TODO: Events can have more than one filter flag
+ impl Event {
++    /// Build an event from a successful kevent.
++    ///
++    /// Returns `None` when the kevent refers to an fd that is no longer in the
++    /// watcher's list (common race under watch teardown / EMFILE pressure on
++    /// BSD). Callers must treat that as "no event", not a fatal error.
+     #[doc(hidden)]
+-    pub fn new(ev: kevent, watcher: &Watcher) -> Event {
++    pub fn new(ev: kevent, watcher: &Watcher) -> Option<Event> {
+         let data = match ev.filter {
+             EventFilter::EVFILT_READ => EventData::ReadReady(ev.data as usize),
+             EventFilter::EVFILT_WRITE => EventData::WriteReady(ev.data as usize),
+@@ -656,34 +663,38 @@
+         };
+ 
+         let ident = match ev.filter {
+-            EventFilter::EVFILT_READ => find_file_ident(watcher, ev.ident as RawFd).unwrap(),
+-            EventFilter::EVFILT_WRITE => find_file_ident(watcher, ev.ident as RawFd).unwrap(),
+-            EventFilter::EVFILT_VNODE => find_file_ident(watcher, ev.ident as RawFd).unwrap(),
++            EventFilter::EVFILT_READ
++            | EventFilter::EVFILT_WRITE
++            | EventFilter::EVFILT_VNODE => find_file_ident(watcher, ev.ident as RawFd)?,
+             EventFilter::EVFILT_SIGNAL => Ident::Signal(ev.ident as i32),
+             EventFilter::EVFILT_TIMER => Ident::Timer(ev.ident as i32),
+             EventFilter::EVFILT_PROC => Ident::Pid(ev.ident as pid_t),
+             _ => panic!("not supported"),
+         };
+ 
+-        Event { ident, data }
++        Some(Event { ident, data })
+     }
+ 
++    /// Build an error event from a failed kevent.
++    ///
++    /// Same stale-fd policy as [`Event::new`]: returns `None` when the ident
++    /// is no longer watched.
+     #[doc(hidden)]
+-    pub fn from_error(ev: kevent, watcher: &Watcher) -> Event {
++    pub fn from_error(ev: kevent, watcher: &Watcher) -> Option<Event> {
+         let ident = match ev.filter {
+-            EventFilter::EVFILT_READ => find_file_ident(watcher, ev.ident as RawFd).unwrap(),
+-            EventFilter::EVFILT_WRITE => find_file_ident(watcher, ev.ident as RawFd).unwrap(),
+-            EventFilter::EVFILT_VNODE => find_file_ident(watcher, ev.ident as RawFd).unwrap(),
++            EventFilter::EVFILT_READ
++            | EventFilter::EVFILT_WRITE
++            | EventFilter::EVFILT_VNODE => find_file_ident(watcher, ev.ident as RawFd)?,
+             EventFilter::EVFILT_SIGNAL => Ident::Signal(ev.ident as i32),
+             EventFilter::EVFILT_TIMER => Ident::Timer(ev.ident as i32),
+             EventFilter::EVFILT_PROC => Ident::Pid(ev.ident as pid_t),
+             _ => panic!("not supported"),
+         };
+ 
+-        Event {
++        Some(Event {
+             data: EventData::Error(io::Error::last_os_error()),
+             ident,
+-        }
++        })
+     }
+ 
+     #[doc(hidden)]

@@ -6099,6 +6099,8 @@ dependencies = [
 [[package]]
 name = "mid"
 version = "4.0.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "625672364b1e9c02508daefc259ccdf07a7ecc55145769ef7938d3a815423261"
 dependencies = [
  "hex",
  "hmac-sha256",
@@ -6384,6 +6386,8 @@ checksum = "9737e026353e5cd0736f98eddae28665118eb6f6600902a7f50db585621fecb6"
 [[package]]
 name = "nono"
 version = "0.53.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "ae7eb523cc2036e9ad6527411c3da5dc2172dc454cc3447a03b910420a39bfee"
 dependencies = [
  "der",
  "getrandom 0.4.1",
@@ -7677,6 +7681,8 @@ checksum = "439ee305def115ba05938db6eb1644ff94165c5ab5e9420d1c1bcedbba909391"
 [[package]]
 name = "pprof"
 version = "0.15.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "38a01da47675efa7673b032bf8efd8214f1917d89685e07e395ab125ea42b187"
 dependencies = [
  "aligned-vec",
  "backtrace",
