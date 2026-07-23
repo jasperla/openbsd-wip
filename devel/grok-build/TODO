@@ -1,42 +1,27 @@
-# devel/grok-build — status
+OpenBSD port: devel/grok-build 0.2.110
 
-## Status
+## Upstream
 
-- Builds and packages on amd64: `grok-build-0.1.220p1`
-  (`/usr/ports/packages/amd64/all/grok-build-0.1.220p1.tgz`)
-- Binary: `bin/grok` + hardlink `bin/agent` (~141M stripped)
-- Features: `sandbox-enforce` only (no jemalloc); system libgit2/protoc;
-  unveil/pledge sandbox via local sources
-- kqueue: hardened `lib.rs` installed in `post-patch` under
-  `modcargo-crates/kqueue-1.1.1` (not a path patch)
-- fsnotify: OpenBSD defaults PerDir + lower watch budget (local patch)
-- Suitable for personal / openbsd-wip use; **not** ready for official ports
+Active monorepo dumps (not one-shot). Current pin:
 
-Install:
+  a5727c5960452e7527a154b25cb5bf00cda0545e  (2026-07-22)
+  xai-grok-pager-bin 0.2.110
 
-```sh
-doas pkg_add -D unsigned /usr/ports/packages/amd64/all/grok-build-0.1.220p1.tgz
-grok --version
-```
+External PRs rejected (CONTRIBUTING.md).
 
-## Blockers for official ports/
+## Verified
 
-1. **Local divergence** — multi-MB `files/vendor/{mid,nono,nucleo,pprof,kqueue}`,
-   custom `files/Cargo.lock`, and several tree patches. Prefer upstream fixes
-   and drop vendored forks.
-2. **Pinned GH commit / alpha** — `DIST_TUPLE` to a single commit; binary is
-   `0.1.220-alpha.4`. Prefer a tagged release and matching versioning.
-3. **Cargo mass** — ~1200 crates, multi-GB/hour-class build, forced
-   `MAKE_JOBS=1` + single CGU for RAM. Hard on bulk/mirrors/review.
-4. **Ports tree hygiene** — package builds may need `PKG_CREATE_NO_CHECKS=warn`
-   when SHARED_LIBS (e.g. sqlite3) lag snapshots. Must match the tree it ships in.
-5. **Missing polish** — no man page; tests not run in `do-test`; DESCR/product
-   notes only. Optional but expected for a clean submission.
-6. **Scope** — large network-facing AI agent with API-key runtime; policy and
-   security review beyond a normal devel tool.
+  make extract patch configure   OK on 0.2.110
+  full package build             NOT YET
 
-## Non-blockers (documented choices)
+## Low memory / fat builders
 
-- `NOT_FOR_ARCHS=sparc64`, `USE_NOEXECONLY` on amd64 (upstream deps)
-- `RUN_DEPENDS=textproc/ripgrep` (no embedded `rg` on OpenBSD)
-- `DPB_PROPERTIES+=lonesome` (heavy rustc peaks)
+  GROK_LOW_MEM?=Yes   (default; serial cargo + tight release profile)
+  make GROK_LOW_MEM=No   # bulk builders with RAM
+
+## Package rebuild
+
+  doas -u _pbuild make -C /usr/ports/openbsd-wip/devel/grok-build package \
+    PKG_CREATE_NO_CHECKS=warn
+  # fat box:
+  doas -u _pbuild make GROK_LOW_MEM=No package PKG_CREATE_NO_CHECKS=warn
