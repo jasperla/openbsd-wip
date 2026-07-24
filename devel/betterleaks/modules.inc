@@ -19,6 +19,7 @@ MODGO_MODULES =	\
 	github.com/bodgit/sevenzip								 v1.6.2 \
 	github.com/bodgit/windows								 v1.0.1 \
 	github.com/cespare/xxhash/v2								 v2.3.0 \
+	github.com/charlievieth/fastwalk							 v1.0.14 \
 	github.com/cncf/xds/go									 v0.0.0-20251022180443-0feb69152e9f \
 	github.com/coreos/go-systemd/v22							 v22.5.0 \
 	github.com/cpuguy83/go-md2man/v2							 v2.0.6 \
