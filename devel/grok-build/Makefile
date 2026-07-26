@@ -14,14 +14,14 @@ COMMENT =		SpaceXAI terminal AI coding agent (grok)
 # Upstream publishes periodic monorepo dumps (not a one-shot dump).
 # DIST_TUPLE (not bare GH_* without DISTNAME): empty DISTNAME made GH_DISTFILE
 # expand to "-….tar.gz".
-DIST_TUPLE =		github xai-org grok-build 47348d13ec4508dcfe440e34c6d511bb02998fb2 .
+DIST_TUPLE =		github xai-org grok-build b41c75a578f98bddbd326ab02cd53618451d97ee .
 # Git deps upstream: fetch pinned revs as normal distfiles and path-patch
 # Cargo.toml (offline cargo / CARGO_NET_OFFLINE cannot fetch git).
 SITES.nucleo =		https://github.com/helix-editor/nucleo/archive/
 DISTFILES.nucleo =	nucleo-5b74652{5b74652}.tar.gz
 SITES.asyncopenai =	https://github.com/our-forks/async-openai/archive/
 DISTFILES.asyncopenai =	async-openai-95b52eb{95b52ebdedf42143083cf3d6f0e0be7c84e9c808}.tar.gz
-# Binary crate version at this dump: 0.2.112 (xai-grok-pager-bin).
+# Binary crate version at this dump: 0.2.112 (xai-grok-pager-bin; dump b41c75a).
 PKGNAME =		grok-build-0.2.112
 
 CATEGORIES =		devel
