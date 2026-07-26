@@ -14,13 +14,15 @@ COMMENT =		SpaceXAI terminal AI coding agent (grok)
 # Upstream publishes periodic monorepo dumps (not a one-shot dump).
 # DIST_TUPLE (not bare GH_* without DISTNAME): empty DISTNAME made GH_DISTFILE
 # expand to "-….tar.gz".
-DIST_TUPLE =		github xai-org grok-build a5727c5960452e7527a154b25cb5bf00cda0545e .
-# Nucleo is a git dep upstream; fetch the pinned rev as a normal distfile and
-# path-patch Cargo.toml (offline cargo cannot fetch git).
+DIST_TUPLE =		github xai-org grok-build 47348d13ec4508dcfe440e34c6d511bb02998fb2 .
+# Git deps upstream: fetch pinned revs as normal distfiles and path-patch
+# Cargo.toml (offline cargo / CARGO_NET_OFFLINE cannot fetch git).
 SITES.nucleo =		https://github.com/helix-editor/nucleo/archive/
 DISTFILES.nucleo =	nucleo-5b74652{5b74652}.tar.gz
-# Binary crate version at this dump: 0.2.110 (xai-grok-pager-bin).
-PKGNAME =		grok-build-0.2.110
+SITES.asyncopenai =	https://github.com/our-forks/async-openai/archive/
+DISTFILES.asyncopenai =	async-openai-95b52eb{95b52ebdedf42143083cf3d6f0e0be7c84e9c808}.tar.gz
+# Binary crate version at this dump: 0.2.112 (xai-grok-pager-bin).
+PKGNAME =		grok-build-0.2.112
 
 CATEGORIES =		devel
 
@@ -42,7 +44,7 @@ MODCARGO_NO_DEFAULT_FEATURES =	Yes
 MODCARGO_FEATURES =		sandbox-enforce
 
 # Build only the composition-root binary crate.
-# Cargo.lock from FILESDIR matches OpenBSD patches; --locked is safe after that.
+# --locked: lock matches path patches (see patch-Cargo_lock + patch-Cargo_toml).
 MODCARGO_BUILD_ARGS +=	--locked -p xai-grok-pager-bin
 MODCARGO_TEST_ARGS +=	--locked -p xai-grok-pager-bin
 
@@ -99,13 +101,13 @@ CONFIGURE_STYLE =	cargo
 SEPARATE_BUILD =	Yes
 
 # post-extract runs before MODCARGO moves crates into modcargo-crates/.
-# - path-dep nucleo from DISTFILES.nucleo (strip nested [workspace])
+# - path-deps for git crates (nucleo, async-openai); lock drop of git
+#   source= lines is patch-Cargo_lock (with patch-Cargo_toml)
 # - OpenBSD sandbox sources (first-party; not yet upstream)
-# - Cargo.lock with registry mid/nono/pprof (+ path nucleo)
 post-extract:
 	${INSTALL_DATA_DIR} ${WRKSRC}/vendor
 	${INSTALL_DATA_DIR} ${WRKSRC}/crates/codegen/xai-grok-sandbox/examples
-	# github archive dir is nucleo-<fullsha>
+	# github archive dirs are <name>-<fullsha>
 	@nucleo=`echo ${WRKDIR}/nucleo-5b74652*`; \
 	  if [ ! -d "$$nucleo" ]; then \
 		echo "nucleo distfile not extracted under ${WRKDIR}" >&2; \
@@ -114,11 +116,20 @@ post-extract:
 	  mv "$$nucleo" ${WRKSRC}/vendor/nucleo
 	# Nested workspace confuses cargo when used as a path dep of the root.
 	sed -i '/^\[workspace\]/,/^$$/d' ${WRKSRC}/vendor/nucleo/Cargo.toml
+	@ao=`echo ${WRKDIR}/async-openai-95b52eb*`; \
+	  if [ ! -d "$$ao" ]; then \
+		echo "async-openai distfile not extracted under ${WRKDIR}" >&2; \
+		exit 1; \
+	  fi; \
+	  mv "$$ao" ${WRKSRC}/vendor/async-openai
+	# Path dep is the crate dir; drop workspace-relative rust-version.
+	sed -i 's/rust-version = { workspace = true }/rust-version = "1.75"/' \
+		${WRKSRC}/vendor/async-openai/async-openai/Cargo.toml \
+		${WRKSRC}/vendor/async-openai/async-openai-macros/Cargo.toml
 	cp ${FILESDIR}/openbsd.rs \
 		${WRKSRC}/crates/codegen/xai-grok-sandbox/src/openbsd.rs
 	cp ${FILESDIR}/openbsd_sandbox_smoke.rs \
 		${WRKSRC}/crates/codegen/xai-grok-sandbox/examples/openbsd_sandbox_smoke.rs
-	cp ${FILESDIR}/Cargo.lock ${WRKSRC}/Cargo.lock
 
 do-install:
 	${INSTALL_PROGRAM} ${MODCARGO_TARGET_DIR}/release/xai-grok-pager \

@@ -13,8 +13,8 @@ Index: crates/codegen/xai-grok-sandbox/src/lib.rs
  //! crate still provides lightweight helpers (`log_violation`,
  //! `should_restrict_child_network`, `child_net`) that compile on all
  //! targets including musl.
-@@ -30,6 +31,8 @@
- mod deny;
+@@ -31,6 +32,8 @@
+ mod hook_write_deny;
  mod logging;
  mod network_policy;
 +#[cfg(all(feature = "enforce", target_os = "openbsd"))]
@@ -22,16 +22,16 @@ Index: crates/codegen/xai-grok-sandbox/src/lib.rs
  mod paths;
  mod profiles;
  mod types;
-@@ -38,7 +41,7 @@
-     ChildNetworkPolicy, NETWORK_POLICY_SNAPSHOT_VERSION, NetworkPolicySnapshot,
-     NetworkPolicySnapshotError, WebsiteAction, WebsiteOrigin, WebsiteOriginError, WebsitePolicy,
- };
+@@ -59,7 +62,7 @@
+         _ => true,
+     }
+ }
 -#[cfg(all(feature = "enforce", unix))]
 +#[cfg(all(feature = "enforce", unix, not(target_os = "openbsd")))]
  use nono::Sandbox;
- pub use profiles::{
-     ProfileName, SandboxConfig, SandboxProfile, load_sandbox_config, sandbox_profile_conflicts,
-@@ -144,6 +147,9 @@
+ use std::path::{Path, PathBuf};
+ use std::sync::OnceLock;
+@@ -159,6 +162,9 @@
      }
      /// Apply the sandbox to the current process. **Irreversible.**
      /// Degrades gracefully if the platform doesn't support it.
@@ -41,7 +41,7 @@ Index: crates/codegen/xai-grok-sandbox/src/lib.rs
      #[cfg(all(feature = "enforce", unix))]
      pub fn apply(&mut self, workspace: &Path) -> anyhow::Result<()> {
          if self.profile == ProfileName::Off {
-@@ -153,49 +159,87 @@
+@@ -174,50 +180,88 @@
          let config = profiles::load_sandbox_config(workspace);
          let mut resolved = self.profile.resolve_profile(workspace, &config)?;
          self.net_restricted = resolved.restrict_network;
@@ -130,7 +130,7 @@ Index: crates/codegen/xai-grok-sandbox/src/lib.rs
                  ));
 -                Ok(())
 +                return Ok(());
-+            }
+             }
 +            let caps = ProfileName::capability_set_from_profile(workspace, &resolved)?;
 +            match Sandbox::apply(&caps) {
 +                Ok(_) => {
@@ -161,6 +161,27 @@ Index: crates/codegen/xai-grok-sandbox/src/lib.rs
 +                    ));
 +                    Ok(())
 +                }
-             }
++            }
          }
      }
+     /// Stub when `enforce` feature is disabled — sandbox is not applied.
+@@ -243,9 +287,18 @@
+         });
+     }
+     /// Check whether the current platform supports sandboxing.
+-    #[cfg(all(feature = "enforce", unix))]
++    #[cfg(all(feature = "enforce", unix, not(target_os = "openbsd")))]
+     pub fn support_info() -> nono::SupportInfo {
+         Sandbox::support_info()
++    }
++    /// OpenBSD: unveil+pledge always available in kernel.
++    #[cfg(all(feature = "enforce", target_os = "openbsd"))]
++    pub fn support_info() -> nono::SupportInfo {
++        nono::SupportInfo {
++            is_supported: true,
++            platform: "openbsd",
++            details: "unveil(2)+pledge(2)".to_string(),
++        }
+     }
+     /// Whether the sandbox was successfully applied.
+     pub fn is_applied(&self) -> bool {
