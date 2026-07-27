@@ -1,0 +1,77 @@
+Index: modcargo-crates/notify-8.2.0/src/kqueue.rs
+--- modcargo-crates/notify-8.2.0/src/kqueue.rs.orig
++++ modcargo-crates/notify-8.2.0/src/kqueue.rs
+@@ -145,7 +145,11 @@
+     }
+ 
+     fn handle_kqueue(&mut self) {
+-        let mut add_watches = Vec::new();
++        // (path, is_recursive) — preserve the original recursive mode when
++        // re-arming. Always passing true here used to promote NonRecursive
++        // watches (e.g. on ~/.grok) into full-tree WalkDir opens on every
++        // NOTE_LINK / create under BSD kqueue (EMFILE on OpenBSD).
++        let mut add_watches: Vec<(PathBuf, bool)> = Vec::new();
+         let mut remove_watches = Vec::new();
+ 
+         while let Some(event) = self.kqueue.poll(None) {
+@@ -175,6 +179,8 @@
+                         kqueue::Vnode::Write if path.is_dir() => {
+                             // find which file is new in the directory by comparing it with our
+                             // list of known watches
++                            let parent_recursive =
++                                self.watches.get(&path).copied().unwrap_or(false);
+                             std::fs::read_dir(&path)
+                                 .map(|dir| {
+                                     dir.filter_map(std::result::Result::ok)
+@@ -183,8 +189,13 @@
+                                 })
+                                 .map(|file| {
+                                     if let Some(file) = file {
+-                                        // watch this new file
+-                                        add_watches.push(file.clone());
++                                        // Only expand the watch set when the parent was
++                                        // recursive. NonRecursive parents already see
++                                        // creates via the directory Write event; arming
++                                        // every new child walks/opens paths (EMFILE).
++                                        if parent_recursive {
++                                            add_watches.push((file.clone(), true));
++                                        }
+ 
+                                         Event::new(EventKind::Create(if file.is_dir() {
+                                             CreateKind::Folder
+@@ -248,11 +259,13 @@
+                             // all ready be remove from the directory, and we could get out
+                             // of sync.
+                             // So for now, until we find a better solution, let remove and
+-                            // readd the whole directory.
+-                            // This is a expensive operation, as we recursive through all
+-                            // subdirectories.
++                            // readd the directory — but keep the original recursive flag.
++                            // Re-adding NonRecursive roots as Recursive WalkDir'd every
++                            // path under trees like ~/.grok (OpenBSD EMFILE).
++                            let was_recursive =
++                                self.watches.get(&path).copied().unwrap_or(false);
+                             remove_watches.push(path.clone());
+-                            add_watches.push(path.clone());
++                            add_watches.push((path.clone(), was_recursive));
+                             Ok(Event::new(EventKind::Modify(ModifyKind::Any)).add_path(path))
+                         }
+ 
+@@ -284,11 +297,14 @@
+         }
+ 
+         for path in remove_watches {
+-            self.remove_watch(path, true).ok();
++            // Prefer the path's recorded mode so NonRecursive roots are not
++            // WalkDir'd just to drop one kevent.
++            let remove_recursive = self.watches.get(&path).copied().unwrap_or(false);
++            self.remove_watch(path, remove_recursive).ok();
+         }
+ 
+-        for path in add_watches {
+-            self.add_watch(path, true).ok();
++        for (path, is_recursive) in add_watches {
++            self.add_watch(path, is_recursive).ok();
+         }
+     }
+ 

@@ -1,27 +1,24 @@
-OpenBSD port: devel/grok-build 0.2.110
+OpenBSD port: devel/grok-build 0.2.112
 
 ## Upstream
 
-Active monorepo dumps (not one-shot). Current pin:
-
-  a5727c5960452e7527a154b25cb5bf00cda0545e  (2026-07-22)
-  xai-grok-pager-bin 0.2.110
-
-External PRs rejected (CONTRIBUTING.md).
+Active monorepo dumps (not one-shot). External PRs rejected (CONTRIBUTING.md).
 
 ## Verified
 
-  make extract patch configure   OK on 0.2.110
-  full package build             NOT YET
+  make extract patch configure package   OK on 0.2.112 (obfarm0, 2026-07-27)
+  notify kqueue NonRecursive re-arm EMFILE patch applied/tested in package build
 
 ## Low memory / fat builders
 
   GROK_LOW_MEM?=Yes   (default; serial cargo + tight release profile)
   make GROK_LOW_MEM=No   # bulk builders with RAM
 
-## Package rebuild
+## Package rebuild / install
 
   doas -u _pbuild make -C /usr/ports/openbsd-wip/devel/grok-build package \
     PKG_CREATE_NO_CHECKS=warn
   # fat box:
   doas -u _pbuild make GROK_LOW_MEM=No package PKG_CREATE_NO_CHECKS=warn
+  # install built package:
+  doas pkg_add -D unsigned /obfarm0.a/ports/packages/amd64/all/grok-build-0.2.112.tgz
