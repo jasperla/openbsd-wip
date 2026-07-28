@@ -1,4 +1,4 @@
-SHA256 (astral-sh-ruff-47d7184a6187d07422ef9f6b3b19b5ea47555ae2.tar.gz) = sy2wGQDgTFxLALK68kmxkbVc3+FH7Fx5dcexcGMHo3A=
+SHA256 (astral-sh-ruff-e057c213e54cfdd8320d959bc9fe4a25e3304d7b.tar.gz) = 78FTgoECMmjBKAhEo9aXQN+YmCSW5oQuuQM2vZ+fL6o=
 SHA256 (cargo/adler2-2.0.1.tar.gz) = MgEZV5/K2cIYhPXEhh0WF00OBiUGJSZvUP5omDQKvvo=
 SHA256 (cargo/aho-corasick-1.1.4.tar.gz) = 3dMaEwQnwnUY3yZpQ6UwjtktSyJsxjn1qPEAKBYXQwE=
 SHA256 (cargo/alloca-0.4.0.tar.gz) = 5afQXqaup+nmTSW5FWui/uP91lnjTkEGPNL8fNAg1/Q=
@@ -503,8 +503,8 @@ SHA256 (cargo/zmij-1.0.10.tar.gz) = MODY3/uuPYQPZL2jjig5H672c6e1pgF4QPKhBsgUWGg=
 SHA256 (cargo/zstd-0.13.3.tar.gz) = 6R7jEaVpwycXFlFWbgeXIgDnb8/iJCpPpEYUmjiBwIo=
 SHA256 (cargo/zstd-safe-7.2.4.tar.gz) = j0nE1fCrtgKpP7hzavKk9N2VEuNvf1cNZuZf+GftO50=
 SHA256 (cargo/zstd-sys-2.0.16+zstd.1.5.7.tar.gz) = keGevCrcj4PkMDnnl3bj/ajKkZEy1oof7WpfrKJoN0g=
-SHA256 (ty-0.0.63.tar.gz) = 60kyjCrv2RgRajxy9N7bejVqDIO+eIQOWveWsR0reKU=
-SIZE (astral-sh-ruff-47d7184a6187d07422ef9f6b3b19b5ea47555ae2.tar.gz) = 12520609
+SHA256 (ty-0.0.64.tar.gz) = yYhpsDOLVFroDGSwWCJXQQbo9OrdBz/mgpY5F3vGp4k=
+SIZE (astral-sh-ruff-e057c213e54cfdd8320d959bc9fe4a25e3304d7b.tar.gz) = 12597953
 SIZE (cargo/adler2-2.0.1.tar.gz) = 13366
 SIZE (cargo/aho-corasick-1.1.4.tar.gz) = 184015
 SIZE (cargo/alloca-0.4.0.tar.gz) = 4257
@@ -1009,4 +1009,4 @@ SIZE (cargo/zmij-1.0.10.tar.gz) = 22288
 SIZE (cargo/zstd-0.13.3.tar.gz) = 30514
 SIZE (cargo/zstd-safe-7.2.4.tar.gz) = 29350
 SIZE (cargo/zstd-sys-2.0.16+zstd.1.5.7.tar.gz) = 775620
-SIZE (ty-0.0.63.tar.gz) = 2641039
+SIZE (ty-0.0.64.tar.gz) = 2642303
