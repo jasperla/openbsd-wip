@@ -362,6 +362,7 @@ lib/codeblocks/plugins/
 @so lib/codeblocks/plugins/libcompiler.so
 @so lib/codeblocks/plugins/libcopystrings.so
 @so lib/codeblocks/plugins/libdebugger.so
+@so lib/codeblocks/plugins/libdebugger_gdbmi.so
 @so lib/codeblocks/plugins/libdefaultmimehandler.so
 @so lib/codeblocks/plugins/libdragscroll.so
 @so lib/codeblocks/plugins/libenvvars.so
@@ -686,6 +687,7 @@ share/codeblocks/compilers/options_tricore-gcc.xml
 share/codeblocks/compilers/options_zpu-gcc.xml
 share/codeblocks/copystrings.zip
 share/codeblocks/debugger.zip
+share/codeblocks/debugger_gdbmi.zip
 share/codeblocks/defaultmimehandler.zip
 share/codeblocks/docs/
 share/codeblocks/docs/index.ini
