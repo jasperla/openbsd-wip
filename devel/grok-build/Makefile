@@ -9,20 +9,52 @@ NOT_FOR_ARCHS =		sparc64
 USE_NOEXECONLY =	Yes
 .endif
 
+# ---------------------------------------------------------------------------
+# FLAVORS
+# ---------------------------------------------------------------------------
+# default (no flavor): stock monorepo dump — unadulterated product package.
+# memeic: experimental "never forget" / typed-memory tree (MemEIC-inspired).
+#   env FLAVOR=memeic make package
+# Default PKGNAME/dist/crates.inc path unchanged when FLAVOR is empty.
+# memeic uses a separate dump (toddfries fork until upstreamed) and an
+# explicit FULLPKGNAME so packages never collide with the stock package.
+FLAVORS =		memeic
+FLAVOR ?=
+
 COMMENT =		SpaceXAI terminal AI coding agent (grok)
 
 # Upstream publishes periodic monorepo dumps (not a one-shot dump).
 # DIST_TUPLE (not bare GH_* without DISTNAME): empty DISTNAME made GH_DISTFILE
 # expand to "-….tar.gz".
-DIST_TUPLE =		github xai-org grok-build 02d9359435d0e9c20a20945679389cdce441e431 .
+#
+# Stock pin (default flavor): xai-org dump.
+# memeic pin: openbsd/memeic-typed-memory @ 122bcd3 (typed Mem-E / core pins).
+# Both monorepo dumps live in distinfo; the inactive one is SUPDISTFILES so
+# checksum does not flag it as "extra" for the other flavor.
+_GROK_DUMP_STOCK =	xai-org-grok-build-500129c714ad1b10e6095481f4a8387a2ec52649.tar.gz
+_GROK_DUMP_MEMEIC =	toddfries-grok-build-122bcd30da4dfb73eb152d21c55123514e17a0f9.tar.gz
+
+.if ${FLAVOR:L:Mmemeic}
+DIST_TUPLE =		github toddfries grok-build 122bcd30da4dfb73eb152d21c55123514e17a0f9 .
+# Binary lineage at memeic pin (parent dump ~0.2.111).
+# PKGNAME without "memeic" so FLAVOR_EXT does not become -memeic-memeic.
+PKGNAME =		grok-build-0.2.111
+FULLPKGNAME =		grok-build-memeic-0.2.111
+COMMENT =		SpaceXAI grok with experimental MemEIC-style typed memory
+SUPDISTFILES +=		${_GROK_DUMP_STOCK}
+.else
+DIST_TUPLE =		github xai-org grok-build 500129c714ad1b10e6095481f4a8387a2ec52649 .
+# Binary crate version at this dump: 0.2.114 (xai-grok-pager-bin; dump 500129c).
+PKGNAME =		grok-build-0.2.114
+SUPDISTFILES +=		${_GROK_DUMP_MEMEIC}
+.endif
+
 # Git deps upstream: fetch pinned revs as normal distfiles and path-patch
 # Cargo.toml (offline cargo / CARGO_NET_OFFLINE cannot fetch git).
 SITES.nucleo =		https://github.com/helix-editor/nucleo/archive/
 DISTFILES.nucleo =	nucleo-5b74652{5b74652}.tar.gz
 SITES.asyncopenai =	https://github.com/our-forks/async-openai/archive/
 DISTFILES.asyncopenai =	async-openai-95b52eb{95b52ebdedf42143083cf3d6f0e0be7c84e9c808}.tar.gz
-# Binary crate version at this dump: 0.2.112 (xai-grok-pager-bin; dump 02d9359).
-PKGNAME =		grok-build-0.2.112
 
 CATEGORIES =		devel
 
@@ -99,6 +131,30 @@ MAKE_ENV +=		PROTOC=${LOCALBASE}/bin/protoc \
 
 CONFIGURE_STYLE =	cargo
 SEPARATE_BUILD =	Yes
+
+# memeic dump already ships the BSD home-dir exclude in workspace_classifier;
+# stock dump still needs that port patch. Glob PATCH_LIST=patch-* is expanded
+# too late for :N filtering, so memeic lists patches explicitly (omit
+# workspace_classifier). Keep notify in the list if present on the tree.
+.if ${FLAVOR:L:Mmemeic}
+PATCH_LIST =	patch-Cargo_lock \
+		patch-Cargo_lock-memeic-memory \
+		patch-Cargo_toml \
+		patch-crates_codegen_xai-fsnotify_src_watcher_rs \
+		patch-crates_codegen_xai-grok-pager_Cargo_toml \
+		patch-crates_codegen_xai-grok-sandbox_Cargo_toml \
+		patch-crates_codegen_xai-grok-sandbox_src_lib_rs \
+		patch-crates_codegen_xai-grok-shell_build_rs \
+		patch-crates_codegen_xai-grok-tools_build_rs \
+		patch-crates_codegen_xai-grok-voice_src_audio_mod_rs \
+		patch-modcargo-crates_kqueue-1_1_1_src_lib_rs \
+		patch-modcargo-crates_mid-4_0_0_src_lib_rs \
+		patch-modcargo-crates_mid-4_0_0_src_other_rs \
+		patch-modcargo-crates_nono-0_53_0_src_capability_rs \
+		patch-modcargo-crates_notify-8_2_0_src_kqueue_rs \
+		patch-modcargo-crates_pprof-0_15_0_src_addr_validate_rs \
+		patch-modcargo-crates_pprof-0_15_0_src_profiler_rs
+.endif
 
 # post-extract runs before MODCARGO moves crates into modcargo-crates/.
 # - path-deps for git crates (nucleo, async-openai); lock drop of git

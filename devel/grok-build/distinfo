@@ -478,6 +478,7 @@ SHA256 (cargo/iri-string-0.7.9.tar.gz) = T4Z7nR2Ja2e+sYUY7aNv23ejLqWQ3oZPEyWylKb
 SHA256 (cargo/is_ci-1.2.0.tar.gz) = dlXJg5WA7oKd+suh0SeMK3iD5Qonf/dUEplInWvf3EU=
 SHA256 (cargo/is_terminal_polyfill-1.70.2.tar.gz) = pssTi7eaFGwb1GAAViPhQu8BgePQIZy0k+AvfQijVpU=
 SHA256 (cargo/itertools-0.10.5.tar.gz) = sP0iYOgpvd9MtuqAIoneL4bWp6aQGS++kbP0bg8shHM=
+SHA256 (cargo/itertools-0.12.1.tar.gz) = uikQItu9OYpFWs8SbB40GVQHmFW8YN/dpkE2O9aSJWk=
 SHA256 (cargo/itertools-0.13.0.tar.gz) = QT7n38Uu4aSUnO6328ijPy1sCIGU2fki+4MY+vHwEYY=
 SHA256 (cargo/itertools-0.14.0.tar.gz) = KxkseCA3+t2c+nVUgxBIiqvb89Lac4hbMb0KvQM1EoU=
 SHA256 (cargo/itoa-1.0.17.tar.gz) = kuzGYYGB3vBFc5LM0O5RGY4GXgFtHVJ6esG23HwfCdI=
@@ -703,6 +704,7 @@ SHA256 (cargo/procfs-0.17.0.tar.gz) = zFty2BRSddhE1LX21OHu8AyM2InttgNcIWddG7H0XJ
 SHA256 (cargo/procfs-core-0.17.0.tar.gz) = I53wLYNJsG/Ac5ijoWl7BkGCI7HHclCF6AHnwPxqEuw=
 SHA256 (cargo/prodash-31.0.0.tar.gz) = liIA4tfVUUUSl9n9zoUTg3QBmtoZjjDqnt44A04nYEw=
 SHA256 (cargo/prometheus-0.14.0.tar.gz) = PKUybY0LlQqazYfmo/lHRTlPYuTa4bHuIrK8DDlK9Do=
+SHA256 (cargo/prometheus-parse-0.2.5.tar.gz) = gRAxvqZeWkAfsuHzfYAsymYB4gSsRjgJoxiTUtE7eKU=
 SHA256 (cargo/proptest-1.10.0.tar.gz) = N1Zss/2s7xTAc3+VRt98/q2/vJ/vEJkQOL9QFdDIBTI=
 SHA256 (cargo/prost-0.14.3.tar.gz) = 0upwUkovgtUYvOQTF9D650FRUFZRr0X68f+9b9M/BWg=
 SHA256 (cargo/prost-build-0.14.1.tar.gz) = rGwzIPmrrFl9y8Zod07wBnAmckdKrVPG1Za2Lkh7QLE=
@@ -1197,7 +1199,8 @@ SHA256 (cargo/zvariant-5.10.0.tar.gz) = VwgpmyGQO740jpRynyLEnFXQRyCgBKo1Dx+cEi/S
 SHA256 (cargo/zvariant_derive-5.10.0.tar.gz) = W1mwEuvpxGZW+cwI2NqLTHJlEK7xJVnaPl8b9yeAdSw=
 SHA256 (cargo/zvariant_utils-3.3.0.tar.gz) = 91wjpk749A8TppiZkeZDVU2b7x1oKigRYM8MG8OJxek=
 SHA256 (nucleo-5b74652.tar.gz) = zArM7eOSASh/G0m1zv4kzqwrMbPtgrqwjC+8zs1G6M0=
-SHA256 (xai-org-grok-build-02d9359435d0e9c20a20945679389cdce441e431.tar.gz) = FCQ5BjYKaFdGffSrjwtaEucZ0NskMRm22pVEJ81JhDs=
+SHA256 (toddfries-grok-build-122bcd30da4dfb73eb152d21c55123514e17a0f9.tar.gz) = e5CMKqzaaPrGym9PymK0/eVSOkmPiPvMMHN19Ve43aQ=
+SHA256 (xai-org-grok-build-500129c714ad1b10e6095481f4a8387a2ec52649.tar.gz) = lmupu3X/g8A5KHncyD08IjgSO+PxqxLwXQ50ofZG97U=
 SIZE (async-openai-95b52eb.tar.gz) = 28205999
 SIZE (cargo/addr2line-0.25.1.tar.gz) = 43134
 SIZE (cargo/adler2-2.0.1.tar.gz) = 13366
@@ -1678,6 +1681,7 @@ SIZE (cargo/iri-string-0.7.9.tar.gz) = 142144
 SIZE (cargo/is_ci-1.2.0.tar.gz) = 4521
 SIZE (cargo/is_terminal_polyfill-1.70.2.tar.gz) = 7548
 SIZE (cargo/itertools-0.10.5.tar.gz) = 115354
+SIZE (cargo/itertools-0.12.1.tar.gz) = 137761
 SIZE (cargo/itertools-0.13.0.tar.gz) = 146261
 SIZE (cargo/itertools-0.14.0.tar.gz) = 152715
 SIZE (cargo/itoa-1.0.17.tar.gz) = 15905
@@ -1903,6 +1907,7 @@ SIZE (cargo/procfs-0.17.0.tar.gz) = 73252
 SIZE (cargo/procfs-core-0.17.0.tar.gz) = 87533
 SIZE (cargo/prodash-31.0.0.tar.gz) = 95697
 SIZE (cargo/prometheus-0.14.0.tar.gz) = 90035
+SIZE (cargo/prometheus-parse-0.2.5.tar.gz) = 9879
 SIZE (cargo/proptest-1.10.0.tar.gz) = 207437
 SIZE (cargo/prost-0.14.3.tar.gz) = 33174
 SIZE (cargo/prost-build-0.14.1.tar.gz) = 47670
@@ -2397,4 +2402,5 @@ SIZE (cargo/zvariant-5.10.0.tar.gz) = 93150
 SIZE (cargo/zvariant_derive-5.10.0.tar.gz) = 16592
 SIZE (cargo/zvariant_utils-3.3.0.tar.gz) = 15417
 SIZE (nucleo-5b74652.tar.gz) = 86764
-SIZE (xai-org-grok-build-02d9359435d0e9c20a20945679389cdce441e431.tar.gz) = 13009249
+SIZE (toddfries-grok-build-122bcd30da4dfb73eb152d21c55123514e17a0f9.tar.gz) = 12919075
+SIZE (xai-org-grok-build-500129c714ad1b10e6095481f4a8387a2ec52649.tar.gz) = 13108211

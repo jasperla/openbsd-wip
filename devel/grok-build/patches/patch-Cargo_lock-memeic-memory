@@ -1,0 +1,11 @@
+Index: Cargo.lock
+--- Cargo.lock.orig
++++ Cargo.lock
+@@ -13462,6 +13462,7 @@
+  "xai-grok-announcements",
+  "xai-grok-config",
+  "xai-grok-markdown",
++ "xai-grok-memory",
+  "xai-grok-mermaid",
+  "xai-grok-pager-pty-harness",
+  "xai-grok-pager-render",

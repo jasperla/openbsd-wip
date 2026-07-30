@@ -1,0 +1,16 @@
+Grok Build (grok) is SpaceXAI's terminal-based AI coding agent, built from the
+experimental openbsd/memeic-typed-memory tree.
+
+This flavor is *not* the stock product package. It enables MemEIC-inspired
+"never forget" foundations:
+
+  * typed memory kinds (decision / fact / preference / procedure / episode)
+  * compositional retrieval and sectioned injection
+  * soft core pins (always-on preferences/decisions across compaction)
+  * typed /remember notes and supersede helpers
+
+Use the default (non-flavor) package for production/release builds. Use this
+flavor only for memory experiments and evaluation.
+
+Authenticate with "grok login" or set XAI_API_KEY. Per-user state lives under
+~/.grok/.

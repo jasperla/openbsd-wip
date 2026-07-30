@@ -1,24 +1,41 @@
-OpenBSD port: devel/grok-build 0.2.112
+OpenBSD port: devel/grok-build
 
 ## Upstream
 
-Active monorepo dumps (not one-shot). External PRs rejected (CONTRIBUTING.md).
+Active monorepo dumps (not one-shot).
 
-## Verified
+  default (no FLAVOR):
+    xai-org/grok-build 02d9359435d0e9c20a20945679389cdce441e431
+    PKGNAME grok-build-0.2.112
 
-  make extract patch configure package   OK on 0.2.112 (obfarm0, 2026-07-27)
-  notify kqueue NonRecursive re-arm EMFILE patch applied/tested in package build
+  FLAVOR=memeic (experimental typed memory / never-forget):
+    toddfries/grok-build 122bcd30da4dfb73eb152d21c55123514e17a0f9
+    FULLPKGNAME grok-build-memeic-0.2.111
+    branch: openbsd/memeic-typed-memory
+
+External PRs rejected (CONTRIBUTING.md).
+
+## Flavors
+
+  make package                         # stock / release path (default)
+  env FLAVOR=memeic make package       # MemEIC-style memory experiment package
+
+  Packages do not collide (different FULLPKGNAME). Prefer default for
+  production; memeic only for memory evaluation.
+
+  Note: memeic dump may need a crates.inc refresh if Cargo.lock diverges
+  from the stock pin (run makesum / regenerate crates.inc when building it).
 
 ## Low memory / fat builders
 
   GROK_LOW_MEM?=Yes   (default; serial cargo + tight release profile)
   make GROK_LOW_MEM=No   # bulk builders with RAM
 
-## Package rebuild / install
+## Package rebuild
 
   doas -u _pbuild make -C /usr/ports/openbsd-wip/devel/grok-build package \
     PKG_CREATE_NO_CHECKS=warn
   # fat box:
   doas -u _pbuild make GROK_LOW_MEM=No package PKG_CREATE_NO_CHECKS=warn
-  # install built package:
-  doas pkg_add -D unsigned /obfarm0.a/ports/packages/amd64/all/grok-build-0.2.112.tgz
+  # memeic experiment (when ready — do not block release bumps):
+  # doas -u _pbuild make FLAVOR=memeic GROK_LOW_MEM=No package
