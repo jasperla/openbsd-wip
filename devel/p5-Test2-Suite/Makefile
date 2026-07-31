@@ -14,8 +14,7 @@ PERMIT_PACKAGE=	Yes
 PERMIT_DISTFILES=   Yes
 
 RUN_DEPENDS+= ${BUILD_DEPENDS}
-BUILD_DEPENDS+= devel/p5-Term-Table \
-		devel/p5-Sub-Info
+BUILD_DEPENDS+= devel/p5-Sub-Info
 
 CONFIGURE_STYLE= perl
 
