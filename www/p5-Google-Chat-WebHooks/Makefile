@@ -14,8 +14,7 @@ PERMIT_PACKAGE=	Yes
 PERMIT_DISTFILES=   Yes
 
 RUN_DEPENDS+= ${BUILD_DEPENDS}
-BUILD_DEPENDS+= devel/p5-Test2-Suite \
-		devel/p5-Class-Tiny
+BUILD_DEPENDS+= devel/p5-Class-Tiny
 
 CONFIGURE_STYLE= perl
 
