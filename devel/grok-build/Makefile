@@ -27,19 +27,30 @@ COMMENT =		SpaceXAI terminal AI coding agent (grok)
 # DIST_TUPLE (not bare GH_* without DISTNAME): empty DISTNAME made GH_DISTFILE
 # expand to "-….tar.gz".
 #
-# Stock pin (default flavor): xai-org dump.
-# memeic pin: openbsd/memeic-typed-memory @ 122bcd3 (typed Mem-E / core pins).
+# Dump pins — always name BOTH the dump commit AND its xai-org base.
+#
+# Stock (default flavor): pure xai-org monorepo dump.
+#   xai-org commit: 500129c714ad1b10e6095481f4a8387a2ec52649
+#   product PKGNAME: grok-build-0.2.114
+#
+# memeic flavor: toddfries openbsd/memeic-typed-memory dump ON THE SAME xai-org base.
+#   toddfries dump: 10d9d819e7477ec5b0b018c7d35938276e798654
+#   xai-org base:   500129c714ad1b10e6095481f4a8387a2ec52649  (Synced from monorepo)
+#   (memeic = stock base + typed memory / connector commits; product 0.2.114)
+#   FULLPKGNAME: grok-build-memeic-0.2.114
+#
+# Keep memeic's xai-org base identical to stock whenever possible.
 # Both monorepo dumps live in distinfo; the inactive one is SUPDISTFILES so
 # checksum does not flag it as "extra" for the other flavor.
 _GROK_DUMP_STOCK =	xai-org-grok-build-500129c714ad1b10e6095481f4a8387a2ec52649.tar.gz
-_GROK_DUMP_MEMEIC =	toddfries-grok-build-122bcd30da4dfb73eb152d21c55123514e17a0f9.tar.gz
+_GROK_DUMP_MEMEIC =	toddfries-grok-build-10d9d819e7477ec5b0b018c7d35938276e798654.tar.gz
 
 .if ${FLAVOR:L:Mmemeic}
-DIST_TUPLE =		github toddfries grok-build 122bcd30da4dfb73eb152d21c55123514e17a0f9 .
-# Binary lineage at memeic pin (parent dump ~0.2.111).
+DIST_TUPLE =		github toddfries grok-build 10d9d819e7477ec5b0b018c7d35938276e798654 .
+# xai-org base for this dump: 500129c (same as stock; see header block above).
 # PKGNAME without "memeic" so FLAVOR_EXT does not become -memeic-memeic.
-PKGNAME =		grok-build-0.2.111
-FULLPKGNAME =		grok-build-memeic-0.2.111
+PKGNAME =		grok-build-0.2.114
+FULLPKGNAME =		grok-build-memeic-0.2.114
 COMMENT =		SpaceXAI grok with experimental MemEIC-style typed memory
 SUPDISTFILES +=		${_GROK_DUMP_STOCK}
 .else
@@ -132,16 +143,14 @@ MAKE_ENV +=		PROTOC=${LOCALBASE}/bin/protoc \
 CONFIGURE_STYLE =	cargo
 SEPARATE_BUILD =	Yes
 
-# memeic dump already ships the BSD home-dir exclude in workspace_classifier;
-# stock dump still needs that port patch. Glob PATCH_LIST=patch-* is expanded
-# too late for :N filtering, so memeic lists patches explicitly (omit
-# workspace_classifier). Keep notify in the list if present on the tree.
+# memeic dump already ships: BSD home-dir exclude (workspace_classifier) and
+# pager xai-grok-memory dep (Cargo.toml + lock). Glob PATCH_LIST=patch-* is
+# expanded too late for :N filtering, so memeic lists patches explicitly.
+# Omit: workspace_classifier, pager Cargo.toml, Cargo_lock-memeic-memory.
 .if ${FLAVOR:L:Mmemeic}
 PATCH_LIST =	patch-Cargo_lock \
-		patch-Cargo_lock-memeic-memory \
 		patch-Cargo_toml \
 		patch-crates_codegen_xai-fsnotify_src_watcher_rs \
-		patch-crates_codegen_xai-grok-pager_Cargo_toml \
 		patch-crates_codegen_xai-grok-sandbox_Cargo_toml \
 		patch-crates_codegen_xai-grok-sandbox_src_lib_rs \
 		patch-crates_codegen_xai-grok-shell_build_rs \
