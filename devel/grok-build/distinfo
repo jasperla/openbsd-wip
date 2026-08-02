@@ -1216,7 +1216,7 @@ SHA256 (cargo/zvariant-5.10.0.tar.gz) = VwgpmyGQO740jpRynyLEnFXQRyCgBKo1Dx+cEi/S
 SHA256 (cargo/zvariant_derive-5.10.0.tar.gz) = W1mwEuvpxGZW+cwI2NqLTHJlEK7xJVnaPl8b9yeAdSw=
 SHA256 (cargo/zvariant_utils-3.3.0.tar.gz) = 91wjpk749A8TppiZkeZDVU2b7x1oKigRYM8MG8OJxek=
 SHA256 (nucleo-5b74652.tar.gz) = zArM7eOSASh/G0m1zv4kzqwrMbPtgrqwjC+8zs1G6M0=
-SHA256 (toddfries-grok-build-10d9d819e7477ec5b0b018c7d35938276e798654.tar.gz) = hnxuVctkViKWtq0XDbfqUDN6hjyDBSYVvnOhE0dnHso=
+SHA256 (toddfries-grok-build-2a9d631647d7889b1a04c47b19305f50ea99d531.tar.gz) = Bxs0GD2nLU/Lc1eUx7PJ5ssZZA9u6IjV5imY1hXDpRQ=
 SHA256 (xai-org-grok-build-a4221165824e5b1f5c4c10b7459f65e78dd6448d.tar.gz) = ujOTlUuWe+dYoKY+RKmWmEO2L2ZY4H7o4X0xR3ztIVk=
 SIZE (async-openai-95b52eb.tar.gz) = 28205999
 SIZE (cargo/addr2line-0.25.1.tar.gz) = 43134
@@ -2436,5 +2436,5 @@ SIZE (cargo/zvariant-5.10.0.tar.gz) = 93150
 SIZE (cargo/zvariant_derive-5.10.0.tar.gz) = 16592
 SIZE (cargo/zvariant_utils-3.3.0.tar.gz) = 15417
 SIZE (nucleo-5b74652.tar.gz) = 86764
-SIZE (toddfries-grok-build-10d9d819e7477ec5b0b018c7d35938276e798654.tar.gz) = 13132373
+SIZE (toddfries-grok-build-2a9d631647d7889b1a04c47b19305f50ea99d531.tar.gz) = 13285947
 SIZE (xai-org-grok-build-a4221165824e5b1f5c4c10b7459f65e78dd6448d.tar.gz) = 13382013
