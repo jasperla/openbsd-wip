@@ -1,7 +1,6 @@
 Index: crates/codegen/xai-fsnotify/src/watcher.rs
 --- crates/codegen/xai-fsnotify/src/watcher.rs.orig
 +++ crates/codegen/xai-fsnotify/src/watcher.rs
-@@ -14,12 +14,14 @@
  //!   there is kernel-side (FSEvents / ReadDirectoryChangesW) — one handle per
  //!   watch regardless of tree size — so skipping only *top-level* ignored dirs
  //!   is enough.
@@ -22,7 +21,7 @@ Index: crates/codegen/xai-fsnotify/src/watcher.rs
  //!   surviving dir — shallow-first, bounded by [`max_watch_budget`] — and
  //!   maintain the set incrementally: new dirs are watched parent-before-listing
  //!   with synthetic `Created` backfill for files that raced the watch, deleted
-@@ -140,13 +142,20 @@
+@@ -141,13 +143,20 @@
  
  /// Resolve the strategy: `GROK_FSNOTIFY_PER_DIR=1|true` forces per-dir,
  /// `=0|false` forces fan-out, otherwise per-dir on Linux (inotify) and
@@ -46,7 +45,7 @@ Index: crates/codegen/xai-fsnotify/src/watcher.rs
          _ => WatchStrategy::Fanout,
      }
  }
-@@ -154,9 +163,13 @@
+@@ -155,9 +164,13 @@
  /// Per-dir mode's total watch budget (`GROK_FSNOTIFY_MAX_WATCHES` overrides).
  ///
  /// Watches are added shallow-first, so hitting the budget sheds the *deepest*
