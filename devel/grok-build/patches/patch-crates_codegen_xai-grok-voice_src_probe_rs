@@ -1,0 +1,14 @@
+Index: crates/codegen/xai-grok-voice/src/probe.rs
+--- crates/codegen/xai-grok-voice/src/probe.rs.orig
++++ crates/codegen/xai-grok-voice/src/probe.rs
+@@ -163,6 +163,10 @@ pub fn mic_fix_help() -> &'static str {
+         "allow microphone access in Settings → Privacy & security → \
+          Microphone, and check the input device and level in Settings → \
+          System → Sound."
++    } else if cfg!(target_os = "openbsd") {
++        "check that sndiod is running and the default recording device works \
++         (try `aucat -c 1 -e s16le -r 16000 -h raw -o /tmp/mic.raw`). Set \
++         AUDIODEVICE if you need a non-default sndio device."
+     } else {
+         "check the default input device and its volume in your sound settings \
+          (e.g. `pavucontrol`, or `wpctl status` on PipeWire)."

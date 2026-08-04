@@ -31,13 +31,13 @@ COMMENT =		SpaceXAI terminal AI coding agent (grok)
 #
 # Stock (default flavor): pure xai-org monorepo dump.
 #   xai-org commit: e5478eff1e4050558e12e1328b85e6616632efb6
-#   product PKGNAME: grok-build-0.2.119
+#   product PKGNAME: grok-build-0.2.119p1 (REVISION=1; aucat voice)
 #
 # memeic flavor: toddfries openbsd/memeic-typed-memory dump ON THE SAME xai-org base.
 #   toddfries dump: c351c1b71a13e02c4c52da2f3a5458be0f8976c2
 #   xai-org base:   e5478eff1e4050558e12e1328b85e6616632efb6  (matches stock)
 #   (memeic = stock base + typed memory / connector commits; product 0.2.119)
-#   FULLPKGNAME: grok-build-memeic-0.2.119
+#   FULLPKGNAME: grok-build-memeic-0.2.119p1 (REVISION=1; aucat voice)
 #
 # Keep memeic's xai-org base identical to stock whenever possible.
 # Both monorepo dumps live in distinfo; the inactive one is SUPDISTFILES so
@@ -50,7 +50,7 @@ DIST_TUPLE =		github toddfries grok-build c351c1b71a13e02c4c52da2f3a5458be0f8976
 # xai-org base for this dump: e5478ef (matches stock pin).
 # PKGNAME without "memeic" so FLAVOR_EXT does not become -memeic-memeic.
 PKGNAME =		grok-build-0.2.119
-FULLPKGNAME =		grok-build-memeic-0.2.119
+FULLPKGNAME =		grok-build-memeic-0.2.119p1
 COMMENT =		SpaceXAI grok with experimental MemEIC-style typed memory
 SUPDISTFILES +=		${_GROK_DUMP_STOCK}
 .else
@@ -59,6 +59,9 @@ DIST_TUPLE =		github xai-org grok-build e5478eff1e4050558e12e1328b85e6616632efb6
 PKGNAME =		grok-build-0.2.119
 SUPDISTFILES +=		${_GROK_DUMP_MEMEIC}
 .endif
+
+# OpenBSD-only packaging bumps (same upstream dump; local patches).
+REVISION =		1
 
 # Git deps upstream: fetch pinned revs as normal distfiles and path-patch
 # Cargo.toml (offline cargo / CARGO_NET_OFFLINE cannot fetch git).
@@ -151,11 +154,15 @@ SEPARATE_BUILD =	Yes
 PATCH_LIST =	patch-Cargo_lock \
 		patch-Cargo_toml \
 		patch-crates_codegen_xai-fsnotify_src_watcher_rs \
+		patch-crates_codegen_xai-grok-voice_Cargo_toml \
+		patch-crates_codegen_xai-grok-voice_src_audio_capture_openbsd_rs \
+		patch-crates_codegen_xai-grok-voice_src_audio_mod_rs \
+		patch-crates_codegen_xai-grok-voice_src_lib_rs \
+		patch-crates_codegen_xai-grok-voice_src_probe_rs \
 		patch-crates_codegen_xai-grok-sandbox_Cargo_toml \
 		patch-crates_codegen_xai-grok-sandbox_src_lib_rs \
 		patch-crates_codegen_xai-grok-shell_build_rs \
 		patch-crates_codegen_xai-grok-tools_build_rs \
-		patch-crates_codegen_xai-grok-voice_src_audio_mod_rs \
 		patch-modcargo-crates_kqueue-1_1_1_src_lib_rs \
 		patch-modcargo-crates_mid-4_0_0_src_lib_rs \
 		patch-modcargo-crates_mid-4_0_0_src_other_rs \

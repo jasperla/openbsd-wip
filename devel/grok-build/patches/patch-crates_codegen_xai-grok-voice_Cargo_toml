@@ -1,0 +1,34 @@
+Index: crates/codegen/xai-grok-voice/Cargo.toml
+--- crates/codegen/xai-grok-voice/Cargo.toml.orig
++++ crates/codegen/xai-grok-voice/Cargo.toml
+@@ -29,10 +29,10 @@ xai-tty-utils = { workspace = true }
+ [features]
+ # `audio` = "microphone capture is compiled in". It's enabled on every OS for
+ # production builds: macOS/Windows link `cpal`; Linux shells out to a system
+-# recorder (see `src/audio/capture_linux.rs`) and links no audio library, so
+-# `cpal` -> `alsa-sys` never reaches the fully-static musl release binary.
+-# `cpal` is target-gated to non-Linux below, so enabling `audio` on Linux pulls
+-# no extra dependency — it only compiles the subprocess backend.
++# recorder (see `src/audio/capture_linux.rs`) and OpenBSD shells out to
++# `aucat` (sndio; see `src/audio/capture_openbsd.rs`). Neither Linux nor
++# OpenBSD links an audio library into the binary. `cpal` is target-gated below
++# so enabling `audio` on those OSes only compiles the subprocess backend.
+ default = ["audio"]
+ # Alternate default feature set that opts out of audio. CI builds the voice
+ # crate WITHOUT `audio` so the pager binary has no mic capture in the test
+@@ -41,10 +41,11 @@ default = ["audio"]
+ default-bazel = []
+ audio = ["dep:cpal"]
+ 
+-# cpal is only used by the non-Linux capture backend. Gating it to non-Linux
+-# keeps `alsa-sys` (a NEEDED `libasound.so.2`) out of the static musl build; on
+-# Linux the `audio` feature compiles the subprocess recorder backend instead.
+-[target.'cfg(not(target_os = "linux"))'.dependencies.cpal]
++# cpal is only used by the non-Linux / non-OpenBSD capture backends. Gating it
++# keeps `alsa-sys` (a NEEDED `libasound.so.2`) out of the static musl build and
++# avoids cpal's Null host on OpenBSD (no sndio backend). On Linux/OpenBSD the
++# `audio` feature compiles the subprocess recorder backend instead.
++[target.'cfg(not(any(target_os = "linux", target_os = "openbsd")))'.dependencies.cpal]
+ version = "0.15"
+ optional = true
+ 

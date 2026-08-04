@@ -1,13 +1,66 @@
 Index: crates/codegen/xai-grok-voice/src/audio/mod.rs
 --- crates/codegen/xai-grok-voice/src/audio/mod.rs.orig
 +++ crates/codegen/xai-grok-voice/src/audio/mod.rs
-@@ -33,7 +33,8 @@
+@@ -1,11 +1,14 @@
+ //! Microphone capture (optional `audio` feature).
+ //!
+-//! Three backends share one interface (`spawn_pcm_capture`,
++//! Four backends share one interface (`spawn_pcm_capture`,
+ //! `capture_pcm_for_duration`, `input_device_info`, `CaptureHandle`):
+ //!
+ //! - **Linux**: a subprocess recorder (`pw-record`/`parec`/`arecord`) — the
+ //!   static-musl release binary cannot link `cpal` → `alsa-sys`; see
+ //!   [`capture_linux`].
++//! - **OpenBSD**: a subprocess recorder (`aucat`) via sndio — cpal has no
++//!   OpenBSD host (Null → "no default input audio device"); see
++//!   [`capture_openbsd`].
+ //! - **macOS**: a subprocess too — the self-exec `__mic-capture` helper —
+ //!   because in-process CoreAudio memory is never returned after the stream
+ //!   drops; see [`capture_subprocess`].
+@@ -17,27 +20,28 @@
+ //! `CaptureHandle` is deliberately one name per platform, resolved by the
+ //! re-exports below:
+ //! - Linux → `pipe::ChildCaptureHandle` (recorder subprocess);
++//! - OpenBSD → `pipe::ChildCaptureHandle` (`aucat` subprocess);
+ //! - macOS → `capture_subprocess::CaptureHandle`, an enum over the helper
+ //!   subprocess and the in-process fallback;
+ //! - Windows → `capture::CaptureHandle` (in-process cpal stream).
+ 
+ // cpal-based capture: the Windows backend, the macOS fallback, and the macOS
+-// `__mic-capture` child implementation.
+-#[cfg(not(target_os = "linux"))]
++// `__mic-capture` child implementation. Not used on Linux/OpenBSD (subprocess).
++#[cfg(not(any(target_os = "linux", target_os = "openbsd")))]
+ mod capture;
+ // Wire protocol shared by the `__mic-capture` child (writer, in `capture`)
+ // and the macOS parent (parser, in `capture_subprocess`).
+-#[cfg(not(target_os = "linux"))]
++#[cfg(not(any(target_os = "linux", target_os = "openbsd")))]
+ mod protocol;
+-#[cfg(not(target_os = "linux"))]
++#[cfg(not(any(target_os = "linux", target_os = "openbsd")))]
  pub use capture::capture_pcm_for_duration;
- #[cfg(not(target_os = "linux"))]
+-#[cfg(not(target_os = "linux"))]
++#[cfg(not(any(target_os = "linux", target_os = "openbsd")))]
  pub(crate) use capture::run_capture_child_cli;
--#[cfg(target_os = "windows")]
-+// Windows WASAPI + OpenBSD (cpal host if available; same in-process API).
-+#[cfg(any(target_os = "windows", target_os = "openbsd"))]
+ #[cfg(target_os = "windows")]
  pub use capture::{CaptureHandle, input_device_info, spawn_pcm_capture};
  
- // Shared PCM-over-pipe plumbing for the two subprocess backends.
+-// Shared PCM-over-pipe plumbing for the two subprocess backends.
+-#[cfg(any(target_os = "linux", target_os = "macos"))]
++// Shared PCM-over-pipe plumbing for the subprocess backends.
++#[cfg(any(target_os = "linux", target_os = "macos", target_os = "openbsd"))]
+ mod pipe;
+ 
+ #[cfg(target_os = "macos")]
+@@ -51,3 +55,10 @@ mod capture_linux;
+ pub use capture_linux::{
+     CaptureHandle, capture_pcm_for_duration, input_device_info, spawn_pcm_capture,
+ };
++
++#[cfg(target_os = "openbsd")]
++mod capture_openbsd;
++#[cfg(target_os = "openbsd")]
++pub use capture_openbsd::{
++    CaptureHandle, capture_pcm_for_duration, input_device_info, spawn_pcm_capture,
++};
