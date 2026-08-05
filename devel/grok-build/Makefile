@@ -37,7 +37,7 @@ COMMENT =		SpaceXAI terminal AI coding agent (grok)
 #   toddfries dump: c351c1b71a13e02c4c52da2f3a5458be0f8976c2
 #   xai-org base:   e5478eff1e4050558e12e1328b85e6616632efb6  (matches stock)
 #   (memeic = stock base + typed memory / connector commits; product 0.2.119)
-#   FULLPKGNAME: grok-build-memeic-0.2.119p1 (REVISION=1; aucat voice)
+#   FULLPKGNAME: grok-build-memeic-0.2.119p1 (PKGNAME base + REVISION=1; no pN in FULLPKGNAME)
 #
 # Keep memeic's xai-org base identical to stock whenever possible.
 # Both monorepo dumps live in distinfo; the inactive one is SUPDISTFILES so
@@ -50,7 +50,7 @@ DIST_TUPLE =		github toddfries grok-build c351c1b71a13e02c4c52da2f3a5458be0f8976
 # xai-org base for this dump: e5478ef (matches stock pin).
 # PKGNAME without "memeic" so FLAVOR_EXT does not become -memeic-memeic.
 PKGNAME =		grok-build-0.2.119
-FULLPKGNAME =		grok-build-memeic-0.2.119p1
+FULLPKGNAME =		grok-build-memeic-0.2.119
 COMMENT =		SpaceXAI grok with experimental MemEIC-style typed memory
 SUPDISTFILES +=		${_GROK_DUMP_STOCK}
 .else
