@@ -1,0 +1,12 @@
+Index: sys/sys_local.cpp
+--- sys/sys_local.cpp.orig
++++ sys/sys_local.cpp
+@@ -67,7 +67,7 @@ double idSysLocal::ClockTicksPerSecond()
+ 	return Sys_ClockTicksPerSecond();
+ }
+ 
+-cpuid_t idSysLocal::GetProcessorId()
++doom3_cpuid_t idSysLocal::GetProcessorId()
+ {
+ 	return Sys_GetProcessorId();
+ }

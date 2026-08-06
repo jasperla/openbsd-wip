@@ -1,0 +1,21 @@
+Index: renderer/Vulkan/RenderProgs_VK.cpp
+--- renderer/Vulkan/RenderProgs_VK.cpp.orig
++++ renderer/Vulkan/RenderProgs_VK.cpp
+@@ -395,14 +395,9 @@ static int CompileGLSLtoSPIRV( const char* filename, c
+ }
+ #else
+ 
+-//#include <glslang/Public/ShaderLang.h>
+-//#include <glslang/Include/ResourceLimits.h>
+-//#include <SPIRV/GlslangToSpv.h>
+-//#include <glslang/StandAlone/DirStackFileIncluder.h>
+-
+-#include "../../extern/glslang/glslang/Public/ShaderLang.h"
+-#include "../../extern/glslang/glslang/Include/ResourceLimits.h"
+-#include "../../extern/glslang/SPIRV/GlslangToSpv.h"
++#include <glslang/Public/ShaderLang.h>
++#include <glslang/Include/ResourceLimits.h>
++#include <glslang/SPIRV/GlslangToSpv.h>
+ 
+ static bool glslangInitialized = false;
+ 
