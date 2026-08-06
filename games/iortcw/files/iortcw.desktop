@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Return to Castle Wolfenstein source port 
+Comment=iortcw port based on ioquake3
+Exec=iortcw
+Terminal=false
+Type=Application
+Categories=Game;
+Icon=wolf512

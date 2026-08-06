@@ -1,0 +1,11 @@
+@bin bin/iortcw
+share/doc/pkg-readmes/${PKGSTEM}
+share/applications/iortcw.desktop
+share/icons/hicolor/512x512/apps/wolf512.png
+share/iortcw/
+share/iortcw/main/
+share/iortcw/main/cgame.sp.${QUAKE_ARCH}.so
+share/iortcw/main/qagame.sp.${QUAKE_ARCH}.so
+share/iortcw/main/ui.sp.${QUAKE_ARCH}.so
+share/iortcw/renderer_sp_opengl1_${QUAKE_ARCH}.so
+share/iortcw/renderer_sp_rend2_${QUAKE_ARCH}.so
