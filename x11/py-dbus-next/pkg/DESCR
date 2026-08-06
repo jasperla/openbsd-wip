@@ -1,0 +1,4 @@
+dbus-next is a Python library for DBus that aims to be a fully featured high
+level library primarily geared towards integration of applications into Linux
+desktop or mobile environments. It supports asyncio for asynchronous operations
+and is pure Python.
