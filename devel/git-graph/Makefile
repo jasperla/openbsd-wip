@@ -1,6 +1,6 @@
 COMMENT =	tool to show clear git graphs
 
-VERSION =	v0.7.0
+VERSION =	v0.8.0
 
 SITES =		https://github.com/mlange-42/git-graph/
 DISTFILES =	git-graph-{archive/refs/tags/}${VERSION}.tar.gz
