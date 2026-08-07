@@ -166,6 +166,7 @@ MODGO_MODFILES =	\
 	golang.org/x/mod			 v0.31.0 \
 	golang.org/x/mod			 v0.35.0 \
 	golang.org/x/mod			 v0.36.0 \
+	golang.org/x/net			 v0.28.0 \
 	golang.org/x/net			 v0.38.0 \
 	golang.org/x/net			 v0.48.0 \
 	golang.org/x/net			 v0.53.0 \
