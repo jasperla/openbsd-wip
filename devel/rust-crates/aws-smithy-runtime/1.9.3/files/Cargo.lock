@@ -191,7 +191,7 @@ dependencies = [
  "mio 1.2.1",
  "parking_lot 0.12.5",
  "pin-project-lite 0.2.16",
- "signal-hook-registry 1.4.6",
+ "signal-hook-registry 1.4.8",
  "socket2 0.6.4",
  "tokio-macros 2.7.0",
  "windows-sys 0.61.2",
@@ -412,10 +412,11 @@ dependencies = [
 
 [[package]]
 name = "signal-hook-registry"
-version = "1.4.6"
+version = "1.4.8"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "b2a4719bff48cee6b39d12c020eeb490953ad2443b7055bd0b21fca26bd8c28b"
+checksum = "c4db69cba1110affc0e9f7bcd48bbf87b3f4fc7c61fc9155afd4c469eb3d6c1b"
 dependencies = [
+ "errno 0.3.14",
  "libc 0.2.186",
 ]
 
@@ -482,7 +483,7 @@ dependencies = [
  "futures-core 0.3.32",
  "futures-sink 0.3.32",
  "http 1.4.0",
- "indexmap 2.12.0",
+ "indexmap 2.14.0",
  "slab 0.4.11",
  "tokio 1.52.3",
  "tokio-util 0.7.17",
@@ -547,7 +548,7 @@ dependencies = [
  "libc 0.2.186",
  "percent-encoding 2.3.2",
  "pin-project-lite 0.2.16",
- "socket2 0.6.4",
+ "socket2 0.5.10",
  "tokio 1.52.3",
  "tower-service 0.3.3",
  "tracing 0.1.44",
@@ -610,7 +611,7 @@ dependencies = [
  "futures-core 0.3.32",
  "futures-util 0.3.32",
  "hdrhistogram 7.5.4",
- "indexmap 2.12.0",
+ "indexmap 2.14.0",
  "pin-project-lite 0.2.16",
  "slab 0.4.11",
  "sync_wrapper 1.0.2",
@@ -801,6 +802,16 @@ dependencies = [
 ]
 
 [[package]]
+name = "errno"
+version = "0.3.14"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "39cab71617ae0d63f51a36d69f866391735b51691dbda63cf6f96d042b63efeb"
+dependencies = [
+ "libc 0.2.186",
+ "windows-sys 0.59.0",
+]
+
+[[package]]
 name = "proc-macro2"
 version = "1.0.106"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -858,12 +869,12 @@ checksum = "1505bd5d3d116872e7271a6d4e16d81d0c8570876c8de68093a09ac269d8aac0"
 
 [[package]]
 name = "indexmap"
-version = "2.12.0"
+version = "2.14.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "6717a8d2a5a929a1a2eb43a12812498ed141a0bcfb7e8f7844fbdbe4303bba9f"
+checksum = "d466e9454f08e4a911e14806c24e16fba1b4c121d1ea474396f396069cf949d9"
 dependencies = [
  "equivalent 1.0.2",
- "hashbrown 0.16.1",
+ "hashbrown 0.17.0",
  "serde 1.0.228",
  "serde_core 1.0.228",
 ]
@@ -924,6 +935,16 @@ name = "ipnet"
 version = "2.11.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "469fb0b9cefa57e3ef31275ee7cacb78f2fdca44e4765491884a2b119d4eb130"
+
+[[package]]
+name = "socket2"
+version = "0.5.10"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "e22376abed350d73dd1cd119b57ffccad95b4e585a7cda43e286245ce23c0678"
+dependencies = [
+ "libc 0.2.186",
+ "windows-sys 0.52.0",
+]
 
 [[package]]
 name = "aws-lc-rs"
@@ -1053,14 +1074,9 @@ checksum = "877a4ace8713b0bcf2a4e7eec82529c029f1d0619886d18145fea96c3ffe5c0f"
 
 [[package]]
 name = "hashbrown"
-version = "0.16.1"
+version = "0.17.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "841d1cc9bed7f9236f321df977030373f4a4163ae1a7dbfe1a51a2c1a51d9100"
-dependencies = [
- "allocator-api2 0.2.21",
- "equivalent 1.0.2",
- "foldhash 0.2.0",
-]
+checksum = "4f467dd6dccf739c208452f8014c75c18bb8301b050ad1cfb27153803edb0f51"
 
 [[package]]
 name = "try-lock"
@@ -1122,18 +1138,6 @@ name = "byteorder"
 version = "1.5.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "1fd0f2584146f6f2ef48085050886acf353beff7305ebd1ae69500e27c67f64b"
-
-[[package]]
-name = "allocator-api2"
-version = "0.2.21"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "683d7910e743518b0e34f1186f92494becacb047c7b6bf616c96772180fef923"
-
-[[package]]
-name = "foldhash"
-version = "0.2.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "77ce24cb58228fbb8aa041425bb1050850ac19177686ea6e0f41a70416f56fdb"
 
 [[package]]
 name = "cmake"

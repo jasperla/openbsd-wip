@@ -112,7 +112,7 @@ dependencies = [
  "mio 1.2.1",
  "parking_lot 0.12.5",
  "pin-project-lite 0.2.16",
- "signal-hook-registry 1.4.6",
+ "signal-hook-registry 1.4.8",
  "socket2 0.6.4",
  "tokio-macros 2.7.0",
  "windows-sys 0.61.2",
@@ -319,10 +319,11 @@ dependencies = [
 
 [[package]]
 name = "signal-hook-registry"
-version = "1.4.6"
+version = "1.4.8"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "b2a4719bff48cee6b39d12c020eeb490953ad2443b7055bd0b21fca26bd8c28b"
+checksum = "c4db69cba1110affc0e9f7bcd48bbf87b3f4fc7c61fc9155afd4c469eb3d6c1b"
 dependencies = [
+ "errno 0.3.14",
  "libc 0.2.186",
 ]
 
@@ -545,6 +546,16 @@ dependencies = [
  "redox_syscall 0.5.18",
  "smallvec 1.15.1",
  "windows-link 0.2.1",
+]
+
+[[package]]
+name = "errno"
+version = "0.3.14"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "39cab71617ae0d63f51a36d69f866391735b51691dbda63cf6f96d042b63efeb"
+dependencies = [
+ "libc 0.2.186",
+ "windows-sys 0.59.0",
 ]
 
 [[package]]

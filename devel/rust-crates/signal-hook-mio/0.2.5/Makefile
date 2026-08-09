@@ -46,8 +46,9 @@ BUILD_DEPENDS +=	rust-crate-libc_0_2_186-0:devel/rust-crates/libc/0.2.186
 BUILD_DEPENDS +=	rust-crate-mio_1_2_1-0:devel/rust-crates/mio/1.2.1
 BUILD_DEPENDS +=	rust-crate-signal_hook_0_3_18-0:devel/rust-crates/signal-hook/0.3.18
 BUILD_DEPENDS +=	rust-crate-log_0_4_32-0:devel/rust-crates/log/0.4.32
-BUILD_DEPENDS +=	rust-crate-signal_hook_registry_1_4_6-0:devel/rust-crates/signal-hook-registry/1.4.6
+BUILD_DEPENDS +=	rust-crate-signal_hook_registry_1_4_8-0:devel/rust-crates/signal-hook-registry/1.4.8
 BUILD_DEPENDS +=	rust-crate-value_bag_1_12_0-0:devel/rust-crates/value-bag/1.12.0
+BUILD_DEPENDS +=	rust-crate-errno_0_3_14-0:devel/rust-crates/errno/0.3.14
 
 # Direct registry deps: seed their rlibs/fingerprints before building this crate.
 _RUST_CRATE_ARCH =	${MACHINE_ARCH}
@@ -106,16 +107,16 @@ post-extract:
 	else \
 		echo "missing dep log-0.4.32" >&2; exit 1; \
 	fi
-	@if [ -d ${_RUST_CRATE_SHARE}/signal-hook-registry-1.4.6 ]; then \
-		ln -sfn ${_RUST_CRATE_SHARE}/signal-hook-registry-1.4.6 ${WRKDIR}/vendor/signal-hook-registry-1.4.6; \
-	elif [ -f ${_RUST_CRATE_SHARE}/signal-hook-registry-1.4.6.tar.gz ]; then \
-		tar xzf ${_RUST_CRATE_SHARE}/signal-hook-registry-1.4.6.tar.gz -C ${WRKDIR}/vendor; \
-		if [ ! -d ${WRKDIR}/vendor/signal-hook-registry-1.4.6 ] && [ -d ${WRKDIR}/vendor/signal-hook-registry-1.4.6 ]; then \
-			mv ${WRKDIR}/vendor/signal-hook-registry-1.4.6 ${WRKDIR}/vendor/signal-hook-registry-1.4.6; \
+	@if [ -d ${_RUST_CRATE_SHARE}/signal-hook-registry-1.4.8 ]; then \
+		ln -sfn ${_RUST_CRATE_SHARE}/signal-hook-registry-1.4.8 ${WRKDIR}/vendor/signal-hook-registry-1.4.8; \
+	elif [ -f ${_RUST_CRATE_SHARE}/signal-hook-registry-1.4.8.tar.gz ]; then \
+		tar xzf ${_RUST_CRATE_SHARE}/signal-hook-registry-1.4.8.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/signal-hook-registry-1.4.8 ] && [ -d ${WRKDIR}/vendor/signal-hook-registry-1.4.8 ]; then \
+			mv ${WRKDIR}/vendor/signal-hook-registry-1.4.8 ${WRKDIR}/vendor/signal-hook-registry-1.4.8; \
 		fi; \
-		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/signal-hook-registry-1.4.6.tar.gz ${WRKDIR}/vendor/signal-hook-registry-1.4.6 2>/dev/null || true; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/signal-hook-registry-1.4.8.tar.gz ${WRKDIR}/vendor/signal-hook-registry-1.4.8 2>/dev/null || true; \
 	else \
-		echo "missing dep signal-hook-registry-1.4.6" >&2; exit 1; \
+		echo "missing dep signal-hook-registry-1.4.8" >&2; exit 1; \
 	fi
 	@if [ -d ${_RUST_CRATE_SHARE}/value-bag-1.12.0 ]; then \
 		ln -sfn ${_RUST_CRATE_SHARE}/value-bag-1.12.0 ${WRKDIR}/vendor/value-bag-1.12.0; \
@@ -127,6 +128,17 @@ post-extract:
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/value-bag-1.12.0.tar.gz ${WRKDIR}/vendor/value-bag-1.12.0 2>/dev/null || true; \
 	else \
 		echo "missing dep value-bag-1.12.0" >&2; exit 1; \
+	fi
+	@if [ -d ${_RUST_CRATE_SHARE}/errno-0.3.14 ]; then \
+		ln -sfn ${_RUST_CRATE_SHARE}/errno-0.3.14 ${WRKDIR}/vendor/errno-0.3.14; \
+	elif [ -f ${_RUST_CRATE_SHARE}/errno-0.3.14.tar.gz ]; then \
+		tar xzf ${_RUST_CRATE_SHARE}/errno-0.3.14.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/errno-0.3.14 ] && [ -d ${WRKDIR}/vendor/errno-0.3.14 ]; then \
+			mv ${WRKDIR}/vendor/errno-0.3.14 ${WRKDIR}/vendor/errno-0.3.14; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/errno-0.3.14.tar.gz ${WRKDIR}/vendor/errno-0.3.14 2>/dev/null || true; \
+	else \
+		echo "missing dep errno-0.3.14" >&2; exit 1; \
 	fi
 	# Strip optional/dev deps from EVERY vendored Cargo.toml, drop feature
 	# activations that no longer exist on deps, and refresh
@@ -184,18 +196,24 @@ pre-build:
 	@cp -f ${_RUST_CRATE_LIBDIR}/log-0.4.32/lib*.rlib ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@cp -f ${_RUST_CRATE_LIBDIR}/log-0.4.32/lib*.so ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@cp -f ${_RUST_CRATE_LIBDIR}/log-0.4.32/lib*.rmeta ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
-	@if [ -d ${_RUST_CRATE_LIBDIR}/signal-hook-registry-1.4.6/deps ]; then \
-		cp -Rp ${_RUST_CRATE_LIBDIR}/signal-hook-registry-1.4.6/deps/. ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true; \
+	@if [ -d ${_RUST_CRATE_LIBDIR}/signal-hook-registry-1.4.8/deps ]; then \
+		cp -Rp ${_RUST_CRATE_LIBDIR}/signal-hook-registry-1.4.8/deps/. ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true; \
 	fi
-	@cp -f ${_RUST_CRATE_LIBDIR}/signal-hook-registry-1.4.6/lib*.rlib ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
-	@cp -f ${_RUST_CRATE_LIBDIR}/signal-hook-registry-1.4.6/lib*.so ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
-	@cp -f ${_RUST_CRATE_LIBDIR}/signal-hook-registry-1.4.6/lib*.rmeta ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
+	@cp -f ${_RUST_CRATE_LIBDIR}/signal-hook-registry-1.4.8/lib*.rlib ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
+	@cp -f ${_RUST_CRATE_LIBDIR}/signal-hook-registry-1.4.8/lib*.so ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
+	@cp -f ${_RUST_CRATE_LIBDIR}/signal-hook-registry-1.4.8/lib*.rmeta ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@if [ -d ${_RUST_CRATE_LIBDIR}/value-bag-1.12.0/deps ]; then \
 		cp -Rp ${_RUST_CRATE_LIBDIR}/value-bag-1.12.0/deps/. ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true; \
 	fi
 	@cp -f ${_RUST_CRATE_LIBDIR}/value-bag-1.12.0/lib*.rlib ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@cp -f ${_RUST_CRATE_LIBDIR}/value-bag-1.12.0/lib*.so ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@cp -f ${_RUST_CRATE_LIBDIR}/value-bag-1.12.0/lib*.rmeta ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
+	@if [ -d ${_RUST_CRATE_LIBDIR}/errno-0.3.14/deps ]; then \
+		cp -Rp ${_RUST_CRATE_LIBDIR}/errno-0.3.14/deps/. ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true; \
+	fi
+	@cp -f ${_RUST_CRATE_LIBDIR}/errno-0.3.14/lib*.rlib ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
+	@cp -f ${_RUST_CRATE_LIBDIR}/errno-0.3.14/lib*.so ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
+	@cp -f ${_RUST_CRATE_LIBDIR}/errno-0.3.14/lib*.rmeta ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	# Package files are often mode 444; cargo must be able to write .d / replace units.
 	@chmod -R u+w ${MODCARGO_TARGET_DIR} 2>/dev/null || true
 

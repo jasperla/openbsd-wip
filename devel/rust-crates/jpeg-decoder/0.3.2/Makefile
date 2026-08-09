@@ -42,7 +42,7 @@ MAKE_ENV +=		RUSTFLAGS=--cap-lints=allow
 MAKE_ENV +=		CARGO_ENCODED_RUSTFLAGS=--cap-lints=allow
 
 
-BUILD_DEPENDS +=	rust-crate-rayon_1_11_0-0:devel/rust-crates/rayon/1.11.0
+BUILD_DEPENDS +=	rust-crate-rayon_1_12_0-0:devel/rust-crates/rayon/1.12.0
 BUILD_DEPENDS +=	rust-crate-either_1_15_0-0:devel/rust-crates/either/1.15.0
 BUILD_DEPENDS +=	rust-crate-rayon_core_1_13_0-0:devel/rust-crates/rayon-core/1.13.0
 BUILD_DEPENDS +=	rust-crate-crossbeam_deque_0_8_6-0:devel/rust-crates/crossbeam-deque/0.8.6
@@ -62,16 +62,16 @@ post-extract:
 	@${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/jpeg-decoder-0.3.2.tar.gz \
 		${WRKDIR}/vendor/jpeg-decoder-0.3.2
 	# Dep sources from installed rust-crate-* packages (or fail if missing)
-	@if [ -d ${_RUST_CRATE_SHARE}/rayon-1.11.0 ]; then \
-		ln -sfn ${_RUST_CRATE_SHARE}/rayon-1.11.0 ${WRKDIR}/vendor/rayon-1.11.0; \
-	elif [ -f ${_RUST_CRATE_SHARE}/rayon-1.11.0.tar.gz ]; then \
-		tar xzf ${_RUST_CRATE_SHARE}/rayon-1.11.0.tar.gz -C ${WRKDIR}/vendor; \
-		if [ ! -d ${WRKDIR}/vendor/rayon-1.11.0 ] && [ -d ${WRKDIR}/vendor/rayon-1.11.0 ]; then \
-			mv ${WRKDIR}/vendor/rayon-1.11.0 ${WRKDIR}/vendor/rayon-1.11.0; \
+	@if [ -d ${_RUST_CRATE_SHARE}/rayon-1.12.0 ]; then \
+		ln -sfn ${_RUST_CRATE_SHARE}/rayon-1.12.0 ${WRKDIR}/vendor/rayon-1.12.0; \
+	elif [ -f ${_RUST_CRATE_SHARE}/rayon-1.12.0.tar.gz ]; then \
+		tar xzf ${_RUST_CRATE_SHARE}/rayon-1.12.0.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/rayon-1.12.0 ] && [ -d ${WRKDIR}/vendor/rayon-1.12.0 ]; then \
+			mv ${WRKDIR}/vendor/rayon-1.12.0 ${WRKDIR}/vendor/rayon-1.12.0; \
 		fi; \
-		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/rayon-1.11.0.tar.gz ${WRKDIR}/vendor/rayon-1.11.0 2>/dev/null || true; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/rayon-1.12.0.tar.gz ${WRKDIR}/vendor/rayon-1.12.0 2>/dev/null || true; \
 	else \
-		echo "missing dep rayon-1.11.0" >&2; exit 1; \
+		echo "missing dep rayon-1.12.0" >&2; exit 1; \
 	fi
 	@if [ -d ${_RUST_CRATE_SHARE}/either-1.15.0 ]; then \
 		ln -sfn ${_RUST_CRATE_SHARE}/either-1.15.0 ${WRKDIR}/vendor/either-1.15.0; \
@@ -160,12 +160,12 @@ pre-build:
 	@mkdir -p ${MODCARGO_TARGET_DIR}/release/deps
 	@mkdir -p ${MODCARGO_TARGET_DIR}/release/.fingerprint
 	# Seed dep cargo artifacts so cargo often skips recompiling them.
-	@if [ -d ${_RUST_CRATE_LIBDIR}/rayon-1.11.0/deps ]; then \
-		cp -Rp ${_RUST_CRATE_LIBDIR}/rayon-1.11.0/deps/. ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true; \
+	@if [ -d ${_RUST_CRATE_LIBDIR}/rayon-1.12.0/deps ]; then \
+		cp -Rp ${_RUST_CRATE_LIBDIR}/rayon-1.12.0/deps/. ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true; \
 	fi
-	@cp -f ${_RUST_CRATE_LIBDIR}/rayon-1.11.0/lib*.rlib ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
-	@cp -f ${_RUST_CRATE_LIBDIR}/rayon-1.11.0/lib*.so ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
-	@cp -f ${_RUST_CRATE_LIBDIR}/rayon-1.11.0/lib*.rmeta ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
+	@cp -f ${_RUST_CRATE_LIBDIR}/rayon-1.12.0/lib*.rlib ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
+	@cp -f ${_RUST_CRATE_LIBDIR}/rayon-1.12.0/lib*.so ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
+	@cp -f ${_RUST_CRATE_LIBDIR}/rayon-1.12.0/lib*.rmeta ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@if [ -d ${_RUST_CRATE_LIBDIR}/either-1.15.0/deps ]; then \
 		cp -Rp ${_RUST_CRATE_LIBDIR}/either-1.15.0/deps/. ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true; \
 	fi

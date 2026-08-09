@@ -94,7 +94,7 @@ BUILD_DEPENDS +=	rust-crate-rand_core_0_9_3-0:devel/rust-crates/rand_core/0.9.3
 BUILD_DEPENDS +=	rust-crate-bytes_1_11_1-0:devel/rust-crates/bytes/1.11.1
 BUILD_DEPENDS +=	rust-crate-libc_0_2_186-0:devel/rust-crates/libc/0.2.186
 BUILD_DEPENDS +=	rust-crate-mio_1_2_1-0:devel/rust-crates/mio/1.2.1
-BUILD_DEPENDS +=	rust-crate-signal_hook_registry_1_4_6-0:devel/rust-crates/signal-hook-registry/1.4.6
+BUILD_DEPENDS +=	rust-crate-signal_hook_registry_1_4_8-0:devel/rust-crates/signal-hook-registry/1.4.8
 BUILD_DEPENDS +=	rust-crate-socket2_0_6_4-0:devel/rust-crates/socket2/0.6.4
 BUILD_DEPENDS +=	rust-crate-tokio_macros_2_7_0-0:devel/rust-crates/tokio-macros/2.7.0
 BUILD_DEPENDS +=	rust-crate-unicode_ident_1_0_24-0:devel/rust-crates/unicode-ident/1.0.24
@@ -107,6 +107,7 @@ BUILD_DEPENDS +=	rust-crate-once_cell_1_21_3-0:devel/rust-crates/once_cell/1.21.
 BUILD_DEPENDS +=	rust-crate-valuable_0_1_1-0:devel/rust-crates/valuable/0.1.1
 BUILD_DEPENDS +=	rust-crate-ppv_lite86_0_2_21-0:devel/rust-crates/ppv-lite86/0.2.21
 BUILD_DEPENDS +=	rust-crate-getrandom_0_3_4-0:devel/rust-crates/getrandom/0.3.4
+BUILD_DEPENDS +=	rust-crate-errno_0_3_14-0:devel/rust-crates/errno/0.3.14
 BUILD_DEPENDS +=	rust-crate-zerocopy_0_8_48-0:devel/rust-crates/zerocopy/0.8.48
 BUILD_DEPENDS +=	rust-crate-zerocopy_derive_0_8_48-0:devel/rust-crates/zerocopy-derive/0.8.48
 
@@ -695,16 +696,16 @@ post-extract:
 	else \
 		echo "missing dep mio-1.2.1" >&2; exit 1; \
 	fi
-	@if [ -d ${_RUST_CRATE_SHARE}/signal-hook-registry-1.4.6 ]; then \
-		ln -sfn ${_RUST_CRATE_SHARE}/signal-hook-registry-1.4.6 ${WRKDIR}/vendor/signal-hook-registry-1.4.6; \
-	elif [ -f ${_RUST_CRATE_SHARE}/signal-hook-registry-1.4.6.tar.gz ]; then \
-		tar xzf ${_RUST_CRATE_SHARE}/signal-hook-registry-1.4.6.tar.gz -C ${WRKDIR}/vendor; \
-		if [ ! -d ${WRKDIR}/vendor/signal-hook-registry-1.4.6 ] && [ -d ${WRKDIR}/vendor/signal-hook-registry-1.4.6 ]; then \
-			mv ${WRKDIR}/vendor/signal-hook-registry-1.4.6 ${WRKDIR}/vendor/signal-hook-registry-1.4.6; \
+	@if [ -d ${_RUST_CRATE_SHARE}/signal-hook-registry-1.4.8 ]; then \
+		ln -sfn ${_RUST_CRATE_SHARE}/signal-hook-registry-1.4.8 ${WRKDIR}/vendor/signal-hook-registry-1.4.8; \
+	elif [ -f ${_RUST_CRATE_SHARE}/signal-hook-registry-1.4.8.tar.gz ]; then \
+		tar xzf ${_RUST_CRATE_SHARE}/signal-hook-registry-1.4.8.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/signal-hook-registry-1.4.8 ] && [ -d ${WRKDIR}/vendor/signal-hook-registry-1.4.8 ]; then \
+			mv ${WRKDIR}/vendor/signal-hook-registry-1.4.8 ${WRKDIR}/vendor/signal-hook-registry-1.4.8; \
 		fi; \
-		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/signal-hook-registry-1.4.6.tar.gz ${WRKDIR}/vendor/signal-hook-registry-1.4.6 2>/dev/null || true; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/signal-hook-registry-1.4.8.tar.gz ${WRKDIR}/vendor/signal-hook-registry-1.4.8 2>/dev/null || true; \
 	else \
-		echo "missing dep signal-hook-registry-1.4.6" >&2; exit 1; \
+		echo "missing dep signal-hook-registry-1.4.8" >&2; exit 1; \
 	fi
 	@if [ -d ${_RUST_CRATE_SHARE}/socket2-0.6.4 ]; then \
 		ln -sfn ${_RUST_CRATE_SHARE}/socket2-0.6.4 ${WRKDIR}/vendor/socket2-0.6.4; \
@@ -837,6 +838,17 @@ post-extract:
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/getrandom-0.3.4.tar.gz ${WRKDIR}/vendor/getrandom-0.3.4 2>/dev/null || true; \
 	else \
 		echo "missing dep getrandom-0.3.4" >&2; exit 1; \
+	fi
+	@if [ -d ${_RUST_CRATE_SHARE}/errno-0.3.14 ]; then \
+		ln -sfn ${_RUST_CRATE_SHARE}/errno-0.3.14 ${WRKDIR}/vendor/errno-0.3.14; \
+	elif [ -f ${_RUST_CRATE_SHARE}/errno-0.3.14.tar.gz ]; then \
+		tar xzf ${_RUST_CRATE_SHARE}/errno-0.3.14.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/errno-0.3.14 ] && [ -d ${WRKDIR}/vendor/errno-0.3.14 ]; then \
+			mv ${WRKDIR}/vendor/errno-0.3.14 ${WRKDIR}/vendor/errno-0.3.14; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/errno-0.3.14.tar.gz ${WRKDIR}/vendor/errno-0.3.14 2>/dev/null || true; \
+	else \
+		echo "missing dep errno-0.3.14" >&2; exit 1; \
 	fi
 	@if [ -d ${_RUST_CRATE_SHARE}/zerocopy-0.8.48 ]; then \
 		ln -sfn ${_RUST_CRATE_SHARE}/zerocopy-0.8.48 ${WRKDIR}/vendor/zerocopy-0.8.48; \
@@ -1204,12 +1216,12 @@ pre-build:
 	@cp -f ${_RUST_CRATE_LIBDIR}/mio-1.2.1/lib*.rlib ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@cp -f ${_RUST_CRATE_LIBDIR}/mio-1.2.1/lib*.so ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@cp -f ${_RUST_CRATE_LIBDIR}/mio-1.2.1/lib*.rmeta ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
-	@if [ -d ${_RUST_CRATE_LIBDIR}/signal-hook-registry-1.4.6/deps ]; then \
-		cp -Rp ${_RUST_CRATE_LIBDIR}/signal-hook-registry-1.4.6/deps/. ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true; \
+	@if [ -d ${_RUST_CRATE_LIBDIR}/signal-hook-registry-1.4.8/deps ]; then \
+		cp -Rp ${_RUST_CRATE_LIBDIR}/signal-hook-registry-1.4.8/deps/. ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true; \
 	fi
-	@cp -f ${_RUST_CRATE_LIBDIR}/signal-hook-registry-1.4.6/lib*.rlib ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
-	@cp -f ${_RUST_CRATE_LIBDIR}/signal-hook-registry-1.4.6/lib*.so ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
-	@cp -f ${_RUST_CRATE_LIBDIR}/signal-hook-registry-1.4.6/lib*.rmeta ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
+	@cp -f ${_RUST_CRATE_LIBDIR}/signal-hook-registry-1.4.8/lib*.rlib ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
+	@cp -f ${_RUST_CRATE_LIBDIR}/signal-hook-registry-1.4.8/lib*.so ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
+	@cp -f ${_RUST_CRATE_LIBDIR}/signal-hook-registry-1.4.8/lib*.rmeta ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@if [ -d ${_RUST_CRATE_LIBDIR}/socket2-0.6.4/deps ]; then \
 		cp -Rp ${_RUST_CRATE_LIBDIR}/socket2-0.6.4/deps/. ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true; \
 	fi
@@ -1282,6 +1294,12 @@ pre-build:
 	@cp -f ${_RUST_CRATE_LIBDIR}/getrandom-0.3.4/lib*.rlib ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@cp -f ${_RUST_CRATE_LIBDIR}/getrandom-0.3.4/lib*.so ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@cp -f ${_RUST_CRATE_LIBDIR}/getrandom-0.3.4/lib*.rmeta ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
+	@if [ -d ${_RUST_CRATE_LIBDIR}/errno-0.3.14/deps ]; then \
+		cp -Rp ${_RUST_CRATE_LIBDIR}/errno-0.3.14/deps/. ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true; \
+	fi
+	@cp -f ${_RUST_CRATE_LIBDIR}/errno-0.3.14/lib*.rlib ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
+	@cp -f ${_RUST_CRATE_LIBDIR}/errno-0.3.14/lib*.so ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
+	@cp -f ${_RUST_CRATE_LIBDIR}/errno-0.3.14/lib*.rmeta ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@if [ -d ${_RUST_CRATE_LIBDIR}/zerocopy-0.8.48/deps ]; then \
 		cp -Rp ${_RUST_CRATE_LIBDIR}/zerocopy-0.8.48/deps/. ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true; \
 	fi

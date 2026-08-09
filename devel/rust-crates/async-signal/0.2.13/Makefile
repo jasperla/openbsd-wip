@@ -49,7 +49,7 @@ BUILD_DEPENDS +=	rust-crate-cfg_if_1_0_4-0:devel/rust-crates/cfg-if/1.0.4
 BUILD_DEPENDS +=	rust-crate-futures_core_0_3_32-0:devel/rust-crates/futures-core/0.3.32
 BUILD_DEPENDS +=	rust-crate-futures_io_0_3_32-0:devel/rust-crates/futures-io/0.3.32
 BUILD_DEPENDS +=	rust-crate-rustix_1_1_4-0:devel/rust-crates/rustix/1.1.4
-BUILD_DEPENDS +=	rust-crate-signal_hook_registry_1_4_6-0:devel/rust-crates/signal-hook-registry/1.4.6
+BUILD_DEPENDS +=	rust-crate-signal_hook_registry_1_4_8-0:devel/rust-crates/signal-hook-registry/1.4.8
 BUILD_DEPENDS +=	rust-crate-slab_0_4_11-0:devel/rust-crates/slab/0.4.11
 BUILD_DEPENDS +=	rust-crate-autocfg_1_5_0-0:devel/rust-crates/autocfg/1.5.0
 BUILD_DEPENDS +=	rust-crate-concurrent_queue_2_5_0-0:devel/rust-crates/concurrent-queue/2.5.0
@@ -163,16 +163,16 @@ post-extract:
 	else \
 		echo "missing dep rustix-1.1.4" >&2; exit 1; \
 	fi
-	@if [ -d ${_RUST_CRATE_SHARE}/signal-hook-registry-1.4.6 ]; then \
-		ln -sfn ${_RUST_CRATE_SHARE}/signal-hook-registry-1.4.6 ${WRKDIR}/vendor/signal-hook-registry-1.4.6; \
-	elif [ -f ${_RUST_CRATE_SHARE}/signal-hook-registry-1.4.6.tar.gz ]; then \
-		tar xzf ${_RUST_CRATE_SHARE}/signal-hook-registry-1.4.6.tar.gz -C ${WRKDIR}/vendor; \
-		if [ ! -d ${WRKDIR}/vendor/signal-hook-registry-1.4.6 ] && [ -d ${WRKDIR}/vendor/signal-hook-registry-1.4.6 ]; then \
-			mv ${WRKDIR}/vendor/signal-hook-registry-1.4.6 ${WRKDIR}/vendor/signal-hook-registry-1.4.6; \
+	@if [ -d ${_RUST_CRATE_SHARE}/signal-hook-registry-1.4.8 ]; then \
+		ln -sfn ${_RUST_CRATE_SHARE}/signal-hook-registry-1.4.8 ${WRKDIR}/vendor/signal-hook-registry-1.4.8; \
+	elif [ -f ${_RUST_CRATE_SHARE}/signal-hook-registry-1.4.8.tar.gz ]; then \
+		tar xzf ${_RUST_CRATE_SHARE}/signal-hook-registry-1.4.8.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/signal-hook-registry-1.4.8 ] && [ -d ${WRKDIR}/vendor/signal-hook-registry-1.4.8 ]; then \
+			mv ${WRKDIR}/vendor/signal-hook-registry-1.4.8 ${WRKDIR}/vendor/signal-hook-registry-1.4.8; \
 		fi; \
-		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/signal-hook-registry-1.4.6.tar.gz ${WRKDIR}/vendor/signal-hook-registry-1.4.6 2>/dev/null || true; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/signal-hook-registry-1.4.8.tar.gz ${WRKDIR}/vendor/signal-hook-registry-1.4.8 2>/dev/null || true; \
 	else \
-		echo "missing dep signal-hook-registry-1.4.6" >&2; exit 1; \
+		echo "missing dep signal-hook-registry-1.4.8" >&2; exit 1; \
 	fi
 	@if [ -d ${_RUST_CRATE_SHARE}/slab-0.4.11 ]; then \
 		ln -sfn ${_RUST_CRATE_SHARE}/slab-0.4.11 ${WRKDIR}/vendor/slab-0.4.11; \
@@ -490,12 +490,12 @@ pre-build:
 	@cp -f ${_RUST_CRATE_LIBDIR}/rustix-1.1.4/lib*.rlib ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@cp -f ${_RUST_CRATE_LIBDIR}/rustix-1.1.4/lib*.so ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@cp -f ${_RUST_CRATE_LIBDIR}/rustix-1.1.4/lib*.rmeta ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
-	@if [ -d ${_RUST_CRATE_LIBDIR}/signal-hook-registry-1.4.6/deps ]; then \
-		cp -Rp ${_RUST_CRATE_LIBDIR}/signal-hook-registry-1.4.6/deps/. ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true; \
+	@if [ -d ${_RUST_CRATE_LIBDIR}/signal-hook-registry-1.4.8/deps ]; then \
+		cp -Rp ${_RUST_CRATE_LIBDIR}/signal-hook-registry-1.4.8/deps/. ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true; \
 	fi
-	@cp -f ${_RUST_CRATE_LIBDIR}/signal-hook-registry-1.4.6/lib*.rlib ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
-	@cp -f ${_RUST_CRATE_LIBDIR}/signal-hook-registry-1.4.6/lib*.so ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
-	@cp -f ${_RUST_CRATE_LIBDIR}/signal-hook-registry-1.4.6/lib*.rmeta ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
+	@cp -f ${_RUST_CRATE_LIBDIR}/signal-hook-registry-1.4.8/lib*.rlib ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
+	@cp -f ${_RUST_CRATE_LIBDIR}/signal-hook-registry-1.4.8/lib*.so ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
+	@cp -f ${_RUST_CRATE_LIBDIR}/signal-hook-registry-1.4.8/lib*.rmeta ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@if [ -d ${_RUST_CRATE_LIBDIR}/slab-0.4.11/deps ]; then \
 		cp -Rp ${_RUST_CRATE_LIBDIR}/slab-0.4.11/deps/. ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true; \
 	fi

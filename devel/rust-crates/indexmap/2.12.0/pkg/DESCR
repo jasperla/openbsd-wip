@@ -1,3 +1,0 @@
-Prebuilt Rust crate indexmap 2.12.0 for offline grok-build.
-PKGNAME=rust-crate-indexmap_2_12_0-0
-Installs share/modcargo-crates/indexmap-2.12.0/ and lib/rust-crates/<arch>/indexmap-2.12.0/ (rlib + cargo fingerprints).

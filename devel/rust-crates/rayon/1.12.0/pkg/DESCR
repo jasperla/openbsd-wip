@@ -1,0 +1,3 @@
+Prebuilt Rust crate rayon 1.12.0 for offline grok-build.
+PKGNAME=rust-crate-rayon_1_12_0-0
+Installs share/modcargo-crates/rayon-1.12.0/ and lib/rust-crates/<arch>/rayon-1.12.0/ (rlib + cargo fingerprints).

@@ -1,3 +1,0 @@
-share/modcargo-crates/signal-hook-registry-1.4.6.tar.gz
-lib/rust-crates/${MACHINE_ARCH}/signal-hook-registry-1.4.6/crate-meta.txt
-lib/rust-crates/${MACHINE_ARCH}/signal-hook-registry-1.4.6/libsignal_hook_registry.rlib
