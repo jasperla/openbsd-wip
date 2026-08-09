@@ -1,0 +1,3 @@
+Prebuilt Rust crate hdrhistogram 7.5.4 for offline grok-build.
+PKGNAME=rust-crate-hdrhistogram_7_5_4-0
+Installs share/modcargo-crates/hdrhistogram-7.5.4/ and lib/rust-crates/<arch>/hdrhistogram-7.5.4/ (rlib + cargo fingerprints).

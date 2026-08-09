@@ -1,0 +1,3 @@
+share/modcargo-crates/unicode-normalization-0.1.25.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/unicode-normalization-0.1.25/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/unicode-normalization-0.1.25/libunicode_normalization.rlib

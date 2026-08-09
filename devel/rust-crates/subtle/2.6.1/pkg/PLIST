@@ -1,0 +1,3 @@
+share/modcargo-crates/subtle-2.6.1.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/subtle-2.6.1/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/subtle-2.6.1/libsubtle.rlib

@@ -1,0 +1,3 @@
+share/modcargo-crates/thin-vec-0.2.18.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/thin-vec-0.2.18/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/thin-vec-0.2.18/libthin_vec.rlib

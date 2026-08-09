@@ -1,0 +1,3 @@
+share/modcargo-crates/bytemuck-1.24.0.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/bytemuck-1.24.0/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/bytemuck-1.24.0/libbytemuck.rlib

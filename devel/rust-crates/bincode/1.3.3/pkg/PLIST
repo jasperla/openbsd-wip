@@ -1,0 +1,3 @@
+share/modcargo-crates/bincode-1.3.3.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/bincode-1.3.3/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/bincode-1.3.3/libbincode.rlib

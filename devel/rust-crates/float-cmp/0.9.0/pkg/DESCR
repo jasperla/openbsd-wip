@@ -1,0 +1,3 @@
+Prebuilt Rust crate float-cmp 0.9.0 for offline grok-build.
+PKGNAME=rust-crate-float_cmp_0_9_0-0
+Installs share/modcargo-crates/float-cmp-0.9.0/ and lib/rust-crates/<arch>/float-cmp-0.9.0/ (rlib + cargo fingerprints).

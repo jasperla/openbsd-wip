@@ -1,0 +1,3 @@
+Prebuilt Rust crate jsonschema 0.30.0 for offline grok-build.
+PKGNAME=rust-crate-jsonschema_0_30_0-0
+Installs share/modcargo-crates/jsonschema-0.30.0/ and lib/rust-crates/<arch>/jsonschema-0.30.0/ (rlib + cargo fingerprints).

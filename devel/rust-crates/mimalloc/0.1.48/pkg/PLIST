@@ -1,0 +1,3 @@
+share/modcargo-crates/mimalloc-0.1.48.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/mimalloc-0.1.48/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/mimalloc-0.1.48/libmimalloc.rlib

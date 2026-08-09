@@ -1,0 +1,3 @@
+Prebuilt Rust crate gix-dir 0.25.0 for offline grok-build.
+PKGNAME=rust-crate-gix_dir_0_25_0-0
+Installs share/modcargo-crates/gix-dir-0.25.0/ and lib/rust-crates/<arch>/gix-dir-0.25.0/ (rlib + cargo fingerprints).

@@ -1,0 +1,2 @@
+@bin bin/agent-test
+@bin bin/grok-test

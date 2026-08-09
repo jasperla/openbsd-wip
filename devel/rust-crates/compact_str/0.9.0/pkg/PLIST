@@ -1,0 +1,3 @@
+share/modcargo-crates/compact_str-0.9.0.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/compact_str-0.9.0/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/compact_str-0.9.0/libcompact_str.rlib

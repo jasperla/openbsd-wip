@@ -1,0 +1,3 @@
+Prebuilt Rust crate rustc-demangle 0.1.26 for offline grok-build.
+PKGNAME=rust-crate-rustc_demangle_0_1_26-0
+Installs share/modcargo-crates/rustc-demangle-0.1.26/ and lib/rust-crates/<arch>/rustc-demangle-0.1.26/ (rlib + cargo fingerprints).

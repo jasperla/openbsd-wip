@@ -1,0 +1,3 @@
+share/modcargo-crates/gix-imara-diff-0.2.3.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/gix-imara-diff-0.2.3/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/gix-imara-diff-0.2.3/libgix_imara_diff.rlib

@@ -1,0 +1,3 @@
+share/modcargo-crates/two-face-0.4.5.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/two-face-0.4.5/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/two-face-0.4.5/libtwo_face.rlib

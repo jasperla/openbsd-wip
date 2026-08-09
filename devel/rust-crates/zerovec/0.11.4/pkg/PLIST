@@ -1,0 +1,3 @@
+share/modcargo-crates/zerovec-0.11.4.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/zerovec-0.11.4/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/zerovec-0.11.4/libzerovec.rlib

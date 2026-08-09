@@ -1,0 +1,3 @@
+share/modcargo-crates/unicode-properties-0.1.4.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/unicode-properties-0.1.4/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/unicode-properties-0.1.4/libunicode_properties.rlib

@@ -1,0 +1,3 @@
+Prebuilt Rust crate fastrace-macro 0.7.18 for offline grok-build.
+PKGNAME=rust-crate-fastrace_macro_0_7_18-0
+Installs share/modcargo-crates/fastrace-macro-0.7.18/ and lib/rust-crates/<arch>/fastrace-macro-0.7.18/ (rlib + cargo fingerprints).

@@ -1,0 +1,3 @@
+Prebuilt Rust crate dtor 0.0.6 for offline grok-build.
+PKGNAME=rust-crate-dtor_0_0_6-0
+Installs share/modcargo-crates/dtor-0.0.6/ and lib/rust-crates/<arch>/dtor-0.0.6/ (rlib + cargo fingerprints).

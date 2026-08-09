@@ -1,0 +1,3 @@
+Prebuilt Rust crate pulldown-cmark-escape 0.11.0 for offline grok-build.
+PKGNAME=rust-crate-pulldown_cmark_escape_0_11_0-0
+Installs share/modcargo-crates/pulldown-cmark-escape-0.11.0/ and lib/rust-crates/<arch>/pulldown-cmark-escape-0.11.0/ (rlib + cargo fingerprints).

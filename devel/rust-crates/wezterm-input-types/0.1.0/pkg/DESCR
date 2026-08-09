@@ -1,0 +1,3 @@
+Prebuilt Rust crate wezterm-input-types 0.1.0 for offline grok-build.
+PKGNAME=rust-crate-wezterm_input_types_0_1_0-0
+Installs share/modcargo-crates/wezterm-input-types-0.1.0/ and lib/rust-crates/<arch>/wezterm-input-types-0.1.0/ (rlib + cargo fingerprints).

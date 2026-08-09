@@ -1,0 +1,3 @@
+share/modcargo-crates/rayon-core-1.13.0.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/rayon-core-1.13.0/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/rayon-core-1.13.0/librayon_core.rlib

@@ -1,0 +1,3 @@
+share/modcargo-crates/process-wrap-9.0.0.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/process-wrap-9.0.0/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/process-wrap-9.0.0/libprocess_wrap.rlib

@@ -1,0 +1,3 @@
+share/modcargo-crates/quick-xml-0.39.4.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/quick-xml-0.39.4/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/quick-xml-0.39.4/libquick_xml.rlib

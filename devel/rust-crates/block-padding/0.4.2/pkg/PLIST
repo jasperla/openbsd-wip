@@ -1,0 +1,3 @@
+share/modcargo-crates/block-padding-0.4.2.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/block-padding-0.4.2/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/block-padding-0.4.2/libblock_padding.rlib

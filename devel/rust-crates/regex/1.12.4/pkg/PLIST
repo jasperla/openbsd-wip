@@ -1,0 +1,3 @@
+share/modcargo-crates/regex-1.12.4.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/regex-1.12.4/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/regex-1.12.4/libregex.rlib

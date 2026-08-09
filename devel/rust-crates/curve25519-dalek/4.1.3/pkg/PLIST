@@ -1,0 +1,3 @@
+share/modcargo-crates/curve25519-dalek-4.1.3.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/curve25519-dalek-4.1.3/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/curve25519-dalek-4.1.3/libcurve25519_dalek.rlib

@@ -1,0 +1,3 @@
+Prebuilt Rust crate gix-worktree 0.52.0 for offline grok-build.
+PKGNAME=rust-crate-gix_worktree_0_52_0-0
+Installs share/modcargo-crates/gix-worktree-0.52.0/ and lib/rust-crates/<arch>/gix-worktree-0.52.0/ (rlib + cargo fingerprints).

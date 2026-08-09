@@ -1,0 +1,3 @@
+Prebuilt Rust crate crunchy 0.2.4 for offline grok-build.
+PKGNAME=rust-crate-crunchy_0_2_4-0
+Installs share/modcargo-crates/crunchy-0.2.4/ and lib/rust-crates/<arch>/crunchy-0.2.4/ (rlib + cargo fingerprints).

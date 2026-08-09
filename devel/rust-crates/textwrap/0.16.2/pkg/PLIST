@@ -1,0 +1,3 @@
+share/modcargo-crates/textwrap-0.16.2.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/textwrap-0.16.2/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/textwrap-0.16.2/libtextwrap.rlib

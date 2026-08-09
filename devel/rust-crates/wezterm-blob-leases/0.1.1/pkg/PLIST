@@ -1,0 +1,3 @@
+share/modcargo-crates/wezterm-blob-leases-0.1.1.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/wezterm-blob-leases-0.1.1/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/wezterm-blob-leases-0.1.1/libwezterm_blob_leases.rlib

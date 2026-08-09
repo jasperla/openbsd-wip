@@ -1,0 +1,3 @@
+share/modcargo-crates/ttf-parser-0.25.1.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/ttf-parser-0.25.1/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/ttf-parser-0.25.1/libttf_parser.rlib

@@ -1,0 +1,3 @@
+share/modcargo-crates/sigstore-crypto-0.6.6.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/sigstore-crypto-0.6.6/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/sigstore-crypto-0.6.6/libsigstore_crypto.rlib

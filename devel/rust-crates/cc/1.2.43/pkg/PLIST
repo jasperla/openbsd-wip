@@ -1,0 +1,3 @@
+share/modcargo-crates/cc-1.2.43.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/cc-1.2.43/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/cc-1.2.43/libcc.rlib

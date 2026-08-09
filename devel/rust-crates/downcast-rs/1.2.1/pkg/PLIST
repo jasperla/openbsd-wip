@@ -1,0 +1,3 @@
+share/modcargo-crates/downcast-rs-1.2.1.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/downcast-rs-1.2.1/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/downcast-rs-1.2.1/libdowncast_rs.rlib

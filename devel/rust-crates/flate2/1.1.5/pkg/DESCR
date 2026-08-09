@@ -1,0 +1,3 @@
+Prebuilt Rust crate flate2 1.1.5 for offline grok-build.
+PKGNAME=rust-crate-flate2_1_1_5-0
+Installs share/modcargo-crates/flate2-1.1.5/ and lib/rust-crates/<arch>/flate2-1.1.5/ (rlib + cargo fingerprints).

@@ -1,0 +1,3 @@
+share/modcargo-crates/wayland-scanner-0.31.10.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/wayland-scanner-0.31.10/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/wayland-scanner-0.31.10/libwayland_scanner.so

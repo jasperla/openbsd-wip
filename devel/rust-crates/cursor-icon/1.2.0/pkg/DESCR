@@ -1,0 +1,3 @@
+Prebuilt Rust crate cursor-icon 1.2.0 for offline grok-build.
+PKGNAME=rust-crate-cursor_icon_1_2_0-0
+Installs share/modcargo-crates/cursor-icon-1.2.0/ and lib/rust-crates/<arch>/cursor-icon-1.2.0/ (rlib + cargo fingerprints).

@@ -1,0 +1,3 @@
+share/modcargo-crates/gif-0.14.1.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/gif-0.14.1/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/gif-0.14.1/libgif.rlib

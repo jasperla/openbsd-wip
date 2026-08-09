@@ -1,0 +1,3 @@
+share/modcargo-crates/termios-0.3.3.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/termios-0.3.3/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/termios-0.3.3/libtermios.rlib

@@ -1,0 +1,3 @@
+share/modcargo-crates/ratatui-0.29.0.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/ratatui-0.29.0/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/ratatui-0.29.0/libratatui.rlib

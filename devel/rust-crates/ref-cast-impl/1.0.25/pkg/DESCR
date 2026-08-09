@@ -1,0 +1,3 @@
+Prebuilt Rust crate ref-cast-impl 1.0.25 for offline grok-build.
+PKGNAME=rust-crate-ref_cast_impl_1_0_25-0
+Installs share/modcargo-crates/ref-cast-impl-1.0.25/ and lib/rust-crates/<arch>/ref-cast-impl-1.0.25/ (rlib + cargo fingerprints).

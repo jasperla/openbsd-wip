@@ -1,0 +1,3 @@
+Prebuilt Rust crate is_terminal_polyfill 1.70.2 for offline grok-build.
+PKGNAME=rust-crate-is_terminal_polyfill_1_70_2-0
+Installs share/modcargo-crates/is_terminal_polyfill-1.70.2/ and lib/rust-crates/<arch>/is_terminal_polyfill-1.70.2/ (rlib + cargo fingerprints).

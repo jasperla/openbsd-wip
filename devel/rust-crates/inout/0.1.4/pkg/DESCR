@@ -1,0 +1,3 @@
+Prebuilt Rust crate inout 0.1.4 for offline grok-build.
+PKGNAME=rust-crate-inout_0_1_4-0
+Installs share/modcargo-crates/inout-0.1.4/ and lib/rust-crates/<arch>/inout-0.1.4/ (rlib + cargo fingerprints).

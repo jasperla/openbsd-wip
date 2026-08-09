@@ -1,0 +1,3 @@
+share/modcargo-crates/serde_spanned-0.6.9.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/serde_spanned-0.6.9/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/serde_spanned-0.6.9/libserde_spanned.rlib

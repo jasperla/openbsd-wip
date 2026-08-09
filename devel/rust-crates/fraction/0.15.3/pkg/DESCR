@@ -1,0 +1,3 @@
+Prebuilt Rust crate fraction 0.15.3 for offline grok-build.
+PKGNAME=rust-crate-fraction_0_15_3-0
+Installs share/modcargo-crates/fraction-0.15.3/ and lib/rust-crates/<arch>/fraction-0.15.3/ (rlib + cargo fingerprints).

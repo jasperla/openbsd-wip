@@ -1,0 +1,3 @@
+Prebuilt Rust crate async-channel 2.5.0 for offline grok-build.
+PKGNAME=rust-crate-async_channel_2_5_0-0
+Installs share/modcargo-crates/async-channel-2.5.0/ and lib/rust-crates/<arch>/async-channel-2.5.0/ (rlib + cargo fingerprints).

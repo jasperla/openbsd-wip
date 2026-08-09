@@ -1,0 +1,3 @@
+share/modcargo-crates/deadpool-0.12.3.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/deadpool-0.12.3/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/deadpool-0.12.3/libdeadpool.rlib

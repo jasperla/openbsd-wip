@@ -1,0 +1,21 @@
+# rust-crate rlib ports
+
+Tree layout (like lang/python/3.x — version in path for multi-version):
+
+  devel/rust-crates/<name>/<version>/Makefile
+
+PKGNAME is still rust-crate-<name_underscored>-<version> (ports package identity).
+Install payload paths keep crates.io name-version (vendor dirs, lib seeds):
+
+  share/modcargo-crates/<name>-<ver>/
+  lib/rust-crates/<arch>/<name>-<ver>/
+
+Consumer (grok-build-test):
+  1. BUILD_DEPENDS via files/crates.inc (PKGPATH name/version)
+  2. post-extract: seed-modcargo.sh (sources)
+  3. pre-build: seed-target.sh ${MODCARGO_TARGET_DIR}
+  4. optional: RUSTC_WRAPPER=files/rustc-prebuilt.sh
+  5. cargo build --release --offline
+
+Daily tip with few lock changes → dpb rebuilds few rust-crate-* + consumer.
+Rustc upgrade → full rebuild of rlib packages.

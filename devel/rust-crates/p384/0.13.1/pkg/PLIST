@@ -1,0 +1,3 @@
+share/modcargo-crates/p384-0.13.1.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/p384-0.13.1/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/p384-0.13.1/libp384.rlib

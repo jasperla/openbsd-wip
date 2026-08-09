@@ -1,0 +1,3 @@
+Prebuilt Rust crate sigstore-rekor 0.6.6 for offline grok-build.
+PKGNAME=rust-crate-sigstore_rekor_0_6_6-0
+Installs share/modcargo-crates/sigstore-rekor-0.6.6/ and lib/rust-crates/<arch>/sigstore-rekor-0.6.6/ (rlib + cargo fingerprints).

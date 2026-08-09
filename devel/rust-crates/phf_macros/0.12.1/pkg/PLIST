@@ -1,0 +1,3 @@
+share/modcargo-crates/phf_macros-0.12.1.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/phf_macros-0.12.1/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/phf_macros-0.12.1/libphf_macros.so

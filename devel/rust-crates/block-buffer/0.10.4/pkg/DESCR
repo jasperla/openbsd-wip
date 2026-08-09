@@ -1,0 +1,3 @@
+Prebuilt Rust crate block-buffer 0.10.4 for offline grok-build.
+PKGNAME=rust-crate-block_buffer_0_10_4-0
+Installs share/modcargo-crates/block-buffer-0.10.4/ and lib/rust-crates/<arch>/block-buffer-0.10.4/ (rlib + cargo fingerprints).

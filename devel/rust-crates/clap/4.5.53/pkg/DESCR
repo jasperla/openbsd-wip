@@ -1,0 +1,3 @@
+Prebuilt Rust crate clap 4.5.53 for offline grok-build.
+PKGNAME=rust-crate-clap_4_5_53-0
+Installs share/modcargo-crates/clap-4.5.53/ and lib/rust-crates/<arch>/clap-4.5.53/ (rlib + cargo fingerprints).

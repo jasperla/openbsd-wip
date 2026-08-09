@@ -1,0 +1,3 @@
+share/modcargo-crates/termcolor-1.4.1.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/termcolor-1.4.1/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/termcolor-1.4.1/libtermcolor.rlib

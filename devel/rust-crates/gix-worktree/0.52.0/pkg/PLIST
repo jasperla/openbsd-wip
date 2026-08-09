@@ -1,0 +1,3 @@
+share/modcargo-crates/gix-worktree-0.52.0.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/gix-worktree-0.52.0/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/gix-worktree-0.52.0/libgix_worktree.rlib

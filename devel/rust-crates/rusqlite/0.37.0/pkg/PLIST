@@ -1,0 +1,3 @@
+share/modcargo-crates/rusqlite-0.37.0.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/rusqlite-0.37.0/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/rusqlite-0.37.0/librusqlite.rlib

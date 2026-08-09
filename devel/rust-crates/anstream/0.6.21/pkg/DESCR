@@ -1,0 +1,3 @@
+Prebuilt Rust crate anstream 0.6.21 for offline grok-build.
+PKGNAME=rust-crate-anstream_0_6_21-0
+Installs share/modcargo-crates/anstream-0.6.21/ and lib/rust-crates/<arch>/anstream-0.6.21/ (rlib + cargo fingerprints).

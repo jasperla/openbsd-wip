@@ -1,0 +1,3 @@
+Prebuilt Rust crate zerotrie 0.2.2 for offline grok-build.
+PKGNAME=rust-crate-zerotrie_0_2_2-0
+Installs share/modcargo-crates/zerotrie-0.2.2/ and lib/rust-crates/<arch>/zerotrie-0.2.2/ (rlib + cargo fingerprints).

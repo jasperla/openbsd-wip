@@ -1,0 +1,3 @@
+share/modcargo-crates/potential_utf-0.1.3.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/potential_utf-0.1.3/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/potential_utf-0.1.3/libpotential_utf.rlib

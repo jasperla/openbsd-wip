@@ -1,0 +1,3 @@
+share/modcargo-crates/error-code-3.3.2.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/error-code-3.3.2/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/error-code-3.3.2/liberror_code.rlib

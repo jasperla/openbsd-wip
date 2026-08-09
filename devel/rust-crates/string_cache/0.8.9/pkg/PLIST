@@ -1,0 +1,3 @@
+share/modcargo-crates/string_cache-0.8.9.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/string_cache-0.8.9/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/string_cache-0.8.9/libstring_cache.rlib

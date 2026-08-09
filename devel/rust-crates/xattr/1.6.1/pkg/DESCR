@@ -1,0 +1,3 @@
+Prebuilt Rust crate xattr 1.6.1 for offline grok-build.
+PKGNAME=rust-crate-xattr_1_6_1-0
+Installs share/modcargo-crates/xattr-1.6.1/ and lib/rust-crates/<arch>/xattr-1.6.1/ (rlib + cargo fingerprints).

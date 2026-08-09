@@ -1,0 +1,3 @@
+share/modcargo-crates/secrecy-0.10.3.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/secrecy-0.10.3/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/secrecy-0.10.3/libsecrecy.rlib

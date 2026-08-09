@@ -1,0 +1,3 @@
+share/modcargo-crates/hybrid-array-0.4.10.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/hybrid-array-0.4.10/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/hybrid-array-0.4.10/libhybrid_array.rlib

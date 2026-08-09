@@ -1,0 +1,3 @@
+share/modcargo-crates/zerocopy-0.8.48.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/zerocopy-0.8.48/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/zerocopy-0.8.48/libzerocopy.rlib

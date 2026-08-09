@@ -1,0 +1,3 @@
+share/modcargo-crates/string_cache_codegen-0.5.4.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/string_cache_codegen-0.5.4/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/string_cache_codegen-0.5.4/libstring_cache_codegen.rlib

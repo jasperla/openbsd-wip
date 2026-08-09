@@ -1,0 +1,3 @@
+Prebuilt Rust crate bumpalo 3.19.0 for offline grok-build.
+PKGNAME=rust-crate-bumpalo_3_19_0-0
+Installs share/modcargo-crates/bumpalo-3.19.0/ and lib/rust-crates/<arch>/bumpalo-3.19.0/ (rlib + cargo fingerprints).

@@ -1,0 +1,3 @@
+share/modcargo-crates/id-arena-2.3.0.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/id-arena-2.3.0/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/id-arena-2.3.0/libid_arena.rlib

@@ -1,0 +1,3 @@
+share/modcargo-crates/crossbeam-epoch-0.9.18.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/crossbeam-epoch-0.9.18/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/crossbeam-epoch-0.9.18/libcrossbeam_epoch.rlib

@@ -1,0 +1,3 @@
+share/modcargo-crates/cmake-0.1.54.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/cmake-0.1.54/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/cmake-0.1.54/libcmake.rlib

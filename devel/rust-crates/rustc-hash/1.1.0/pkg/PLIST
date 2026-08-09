@@ -1,0 +1,3 @@
+share/modcargo-crates/rustc-hash-1.1.0.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/rustc-hash-1.1.0/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/rustc-hash-1.1.0/librustc_hash.rlib

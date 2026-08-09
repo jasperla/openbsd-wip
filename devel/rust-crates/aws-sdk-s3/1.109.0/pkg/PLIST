@@ -1,0 +1,3 @@
+share/modcargo-crates/aws-sdk-s3-1.109.0.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/aws-sdk-s3-1.109.0/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/aws-sdk-s3-1.109.0/libaws_sdk_s3.rlib

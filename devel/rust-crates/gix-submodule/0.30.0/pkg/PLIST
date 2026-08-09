@@ -1,0 +1,3 @@
+share/modcargo-crates/gix-submodule-0.30.0.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/gix-submodule-0.30.0/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/gix-submodule-0.30.0/libgix_submodule.rlib

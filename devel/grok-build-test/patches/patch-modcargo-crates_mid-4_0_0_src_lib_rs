@@ -1,0 +1,20 @@
+Index: modcargo-crates/mid-4.0.0/src/lib.rs
+--- modcargo-crates/mid-4.0.0/src/lib.rs.orig
++++ modcargo-crates/mid-4.0.0/src/lib.rs
+@@ -7,6 +7,7 @@
+ mod errors;
+ mod linux;
+ mod macos;
++mod other;
+ mod utils;
+ mod windows;
+ 
+@@ -21,6 +22,8 @@
+ use macos::{get_additional_data, get_mid_result};
+ #[cfg(target_os = "windows")]
+ use windows::get_mid_result;
++#[cfg(not(any(target_os = "linux", target_os = "macos", target_os = "windows")))]
++use other::get_mid_result;
+ 
+ #[derive(Debug, PartialEq, Eq, Clone)]
+ #[cfg_attr(feature = "serde", derive(Serialize, Deserialize))]

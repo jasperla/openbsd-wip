@@ -1,0 +1,3 @@
+share/modcargo-crates/os_info-3.14.0.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/os_info-3.14.0/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/os_info-3.14.0/libos_info.rlib

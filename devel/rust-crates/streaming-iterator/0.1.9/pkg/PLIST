@@ -1,0 +1,3 @@
+share/modcargo-crates/streaming-iterator-0.1.9.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/streaming-iterator-0.1.9/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/streaming-iterator-0.1.9/libstreaming_iterator.rlib

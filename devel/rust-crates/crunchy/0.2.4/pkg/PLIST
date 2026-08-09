@@ -1,0 +1,3 @@
+share/modcargo-crates/crunchy-0.2.4.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/crunchy-0.2.4/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/crunchy-0.2.4/libcrunchy.rlib

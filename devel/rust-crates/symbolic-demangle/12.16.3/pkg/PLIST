@@ -1,0 +1,3 @@
+share/modcargo-crates/symbolic-demangle-12.16.3.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/symbolic-demangle-12.16.3/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/symbolic-demangle-12.16.3/libsymbolic_demangle.rlib

@@ -1,0 +1,3 @@
+Prebuilt Rust crate clru 0.6.2 for offline grok-build.
+PKGNAME=rust-crate-clru_0_6_2-0
+Installs share/modcargo-crates/clru-0.6.2/ and lib/rust-crates/<arch>/clru-0.6.2/ (rlib + cargo fingerprints).

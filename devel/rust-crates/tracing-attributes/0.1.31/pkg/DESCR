@@ -1,0 +1,3 @@
+Prebuilt Rust crate tracing-attributes 0.1.31 for offline grok-build.
+PKGNAME=rust-crate-tracing_attributes_0_1_31-0
+Installs share/modcargo-crates/tracing-attributes-0.1.31/ and lib/rust-crates/<arch>/tracing-attributes-0.1.31/ (rlib + cargo fingerprints).

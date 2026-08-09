@@ -1,0 +1,3 @@
+Prebuilt Rust crate toml_edit 0.22.27 for offline grok-build.
+PKGNAME=rust-crate-toml_edit_0_22_27-0
+Installs share/modcargo-crates/toml_edit-0.22.27/ and lib/rust-crates/<arch>/toml_edit-0.22.27/ (rlib + cargo fingerprints).

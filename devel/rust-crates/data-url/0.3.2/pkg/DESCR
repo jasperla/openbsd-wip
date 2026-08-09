@@ -1,0 +1,3 @@
+Prebuilt Rust crate data-url 0.3.2 for offline grok-build.
+PKGNAME=rust-crate-data_url_0_3_2-0
+Installs share/modcargo-crates/data-url-0.3.2/ and lib/rust-crates/<arch>/data-url-0.3.2/ (rlib + cargo fingerprints).

@@ -1,0 +1,3 @@
+share/modcargo-crates/xml5ever-0.38.0.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/xml5ever-0.38.0/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/xml5ever-0.38.0/libxml5ever.rlib

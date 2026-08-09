@@ -1,0 +1,3 @@
+Prebuilt Rust crate gix-config 0.56.0 for offline grok-build.
+PKGNAME=rust-crate-gix_config_0_56_0-0
+Installs share/modcargo-crates/gix-config-0.56.0/ and lib/rust-crates/<arch>/gix-config-0.56.0/ (rlib + cargo fingerprints).

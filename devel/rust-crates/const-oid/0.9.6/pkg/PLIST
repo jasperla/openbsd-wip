@@ -1,0 +1,3 @@
+share/modcargo-crates/const-oid-0.9.6.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/const-oid-0.9.6/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/const-oid-0.9.6/libconst_oid.rlib

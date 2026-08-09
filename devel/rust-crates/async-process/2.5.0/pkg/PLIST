@@ -1,0 +1,3 @@
+share/modcargo-crates/async-process-2.5.0.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/async-process-2.5.0/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/async-process-2.5.0/libasync_process.rlib

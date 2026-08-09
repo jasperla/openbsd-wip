@@ -1,0 +1,3 @@
+Prebuilt Rust crate nono 0.53.0 for offline grok-build.
+PKGNAME=rust-crate-nono_0_53_0-0
+Installs share/modcargo-crates/nono-0.53.0/ and lib/rust-crates/<arch>/nono-0.53.0/ (rlib + cargo fingerprints).

@@ -1,0 +1,3 @@
+share/modcargo-crates/fs2-0.4.3.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/fs2-0.4.3/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/fs2-0.4.3/libfs2.rlib

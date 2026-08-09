@@ -1,0 +1,3 @@
+share/modcargo-crates/fallible-iterator-0.3.0.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/fallible-iterator-0.3.0/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/fallible-iterator-0.3.0/libfallible_iterator.rlib

@@ -1,0 +1,3 @@
+share/modcargo-crates/unarray-0.1.4.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/unarray-0.1.4/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/unarray-0.1.4/libunarray.rlib

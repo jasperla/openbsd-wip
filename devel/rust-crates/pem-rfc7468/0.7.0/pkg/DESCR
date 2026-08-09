@@ -1,0 +1,3 @@
+Prebuilt Rust crate pem-rfc7468 0.7.0 for offline grok-build.
+PKGNAME=rust-crate-pem_rfc7468_0_7_0-0
+Installs share/modcargo-crates/pem-rfc7468-0.7.0/ and lib/rust-crates/<arch>/pem-rfc7468-0.7.0/ (rlib + cargo fingerprints).

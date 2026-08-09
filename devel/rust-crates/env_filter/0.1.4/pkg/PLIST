@@ -1,0 +1,3 @@
+share/modcargo-crates/env_filter-0.1.4.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/env_filter-0.1.4/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/env_filter-0.1.4/libenv_filter.rlib

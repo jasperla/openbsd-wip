@@ -1,0 +1,3 @@
+Prebuilt Rust crate multer 3.1.0 for offline grok-build.
+PKGNAME=rust-crate-multer_3_1_0-0
+Installs share/modcargo-crates/multer-3.1.0/ and lib/rust-crates/<arch>/multer-3.1.0/ (rlib + cargo fingerprints).

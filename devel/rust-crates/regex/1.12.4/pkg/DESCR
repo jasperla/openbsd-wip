@@ -1,0 +1,3 @@
+Prebuilt Rust crate regex 1.12.4 for offline grok-build.
+PKGNAME=rust-crate-regex_1_12_4-0
+Installs share/modcargo-crates/regex-1.12.4/ and lib/rust-crates/<arch>/regex-1.12.4/ (rlib + cargo fingerprints).

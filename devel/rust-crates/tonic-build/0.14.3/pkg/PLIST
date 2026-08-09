@@ -1,0 +1,3 @@
+share/modcargo-crates/tonic-build-0.14.3.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/tonic-build-0.14.3/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/tonic-build-0.14.3/libtonic_build.rlib

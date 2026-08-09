@@ -1,0 +1,3 @@
+Prebuilt Rust crate jpeg-decoder 0.3.2 for offline grok-build.
+PKGNAME=rust-crate-jpeg_decoder_0_3_2-0
+Installs share/modcargo-crates/jpeg-decoder-0.3.2/ and lib/rust-crates/<arch>/jpeg-decoder-0.3.2/ (rlib + cargo fingerprints).

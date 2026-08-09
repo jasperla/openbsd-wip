@@ -1,0 +1,3 @@
+share/modcargo-crates/cipher-0.4.4.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/cipher-0.4.4/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/cipher-0.4.4/libcipher.rlib

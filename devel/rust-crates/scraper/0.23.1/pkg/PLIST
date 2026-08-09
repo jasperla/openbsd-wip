@@ -1,0 +1,3 @@
+share/modcargo-crates/scraper-0.23.1.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/scraper-0.23.1/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/scraper-0.23.1/libscraper.rlib

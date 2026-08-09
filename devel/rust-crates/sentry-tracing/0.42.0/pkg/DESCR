@@ -1,0 +1,3 @@
+Prebuilt Rust crate sentry-tracing 0.42.0 for offline grok-build.
+PKGNAME=rust-crate-sentry_tracing_0_42_0-0
+Installs share/modcargo-crates/sentry-tracing-0.42.0/ and lib/rust-crates/<arch>/sentry-tracing-0.42.0/ (rlib + cargo fingerprints).

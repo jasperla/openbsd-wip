@@ -1,0 +1,3 @@
+share/modcargo-crates/tokio-retry-0.3.0.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/tokio-retry-0.3.0/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/tokio-retry-0.3.0/libtokio_retry.rlib

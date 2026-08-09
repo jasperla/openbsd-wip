@@ -1,0 +1,3 @@
+share/modcargo-crates/lsp-types-0.95.1.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/lsp-types-0.95.1/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/lsp-types-0.95.1/liblsp_types.rlib

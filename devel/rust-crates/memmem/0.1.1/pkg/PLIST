@@ -1,0 +1,3 @@
+share/modcargo-crates/memmem-0.1.1.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/memmem-0.1.1/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/memmem-0.1.1/libmemmem.rlib

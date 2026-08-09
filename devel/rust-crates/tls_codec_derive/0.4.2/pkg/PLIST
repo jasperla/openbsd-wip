@@ -1,0 +1,3 @@
+share/modcargo-crates/tls_codec_derive-0.4.2.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/tls_codec_derive-0.4.2/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/tls_codec_derive-0.4.2/libtls_codec_derive.so

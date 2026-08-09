@@ -1,0 +1,3 @@
+Prebuilt Rust crate xmlparser 0.13.6 for offline grok-build.
+PKGNAME=rust-crate-xmlparser_0_13_6-0
+Installs share/modcargo-crates/xmlparser-0.13.6/ and lib/rust-crates/<arch>/xmlparser-0.13.6/ (rlib + cargo fingerprints).

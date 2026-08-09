@@ -1,0 +1,3 @@
+share/modcargo-crates/num_enum-0.7.5.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/num_enum-0.7.5/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/num_enum-0.7.5/libnum_enum.rlib

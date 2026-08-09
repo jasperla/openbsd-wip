@@ -1,0 +1,3 @@
+share/modcargo-crates/serde_json_canonicalizer-0.3.2.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/serde_json_canonicalizer-0.3.2/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/serde_json_canonicalizer-0.3.2/libserde_json_canonicalizer.rlib

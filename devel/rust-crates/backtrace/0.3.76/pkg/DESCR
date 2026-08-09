@@ -1,0 +1,3 @@
+Prebuilt Rust crate backtrace 0.3.76 for offline grok-build.
+PKGNAME=rust-crate-backtrace_0_3_76-0
+Installs share/modcargo-crates/backtrace-0.3.76/ and lib/rust-crates/<arch>/backtrace-0.3.76/ (rlib + cargo fingerprints).

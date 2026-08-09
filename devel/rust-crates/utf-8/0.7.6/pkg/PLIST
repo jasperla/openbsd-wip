@@ -1,0 +1,3 @@
+share/modcargo-crates/utf-8-0.7.6.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/utf-8-0.7.6/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/utf-8-0.7.6/libutf8.rlib

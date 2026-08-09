@@ -1,0 +1,3 @@
+Prebuilt Rust crate xz2 0.1.7 for offline grok-build.
+PKGNAME=rust-crate-xz2_0_1_7-0
+Installs share/modcargo-crates/xz2-0.1.7/ and lib/rust-crates/<arch>/xz2-0.1.7/ (rlib + cargo fingerprints).

@@ -1,0 +1,3 @@
+share/modcargo-crates/num-integer-0.1.46.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/num-integer-0.1.46/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/num-integer-0.1.46/libnum_integer.rlib

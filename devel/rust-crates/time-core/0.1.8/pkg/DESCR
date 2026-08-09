@@ -1,0 +1,3 @@
+Prebuilt Rust crate time-core 0.1.8 for offline grok-build.
+PKGNAME=rust-crate-time_core_0_1_8-0
+Installs share/modcargo-crates/time-core-0.1.8/ and lib/rust-crates/<arch>/time-core-0.1.8/ (rlib + cargo fingerprints).

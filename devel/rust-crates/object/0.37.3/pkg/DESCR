@@ -1,0 +1,3 @@
+Prebuilt Rust crate object 0.37.3 for offline grok-build.
+PKGNAME=rust-crate-object_0_37_3-0
+Installs share/modcargo-crates/object-0.37.3/ and lib/rust-crates/<arch>/object-0.37.3/ (rlib + cargo fingerprints).

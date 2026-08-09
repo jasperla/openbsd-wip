@@ -1,0 +1,3 @@
+Prebuilt Rust crate prodash 31.0.0 for offline grok-build.
+PKGNAME=rust-crate-prodash_31_0_0-0
+Installs share/modcargo-crates/prodash-31.0.0/ and lib/rust-crates/<arch>/prodash-31.0.0/ (rlib + cargo fingerprints).

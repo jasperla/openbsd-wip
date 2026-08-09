@@ -1,0 +1,3 @@
+share/modcargo-crates/ring-0.17.14.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/ring-0.17.14/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/ring-0.17.14/libring.rlib

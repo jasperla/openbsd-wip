@@ -1,0 +1,3 @@
+Prebuilt Rust crate usvg 0.47.0 for offline grok-build.
+PKGNAME=rust-crate-usvg_0_47_0-0
+Installs share/modcargo-crates/usvg-0.47.0/ and lib/rust-crates/<arch>/usvg-0.47.0/ (rlib + cargo fingerprints).

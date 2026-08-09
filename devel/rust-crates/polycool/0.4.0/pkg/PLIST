@@ -1,0 +1,3 @@
+share/modcargo-crates/polycool-0.4.0.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/polycool-0.4.0/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/polycool-0.4.0/libpolycool.rlib

@@ -1,0 +1,3 @@
+Prebuilt Rust crate pkg-config 0.3.32 for offline grok-build.
+PKGNAME=rust-crate-pkg_config_0_3_32-0
+Installs share/modcargo-crates/pkg-config-0.3.32/ and lib/rust-crates/<arch>/pkg-config-0.3.32/ (rlib + cargo fingerprints).

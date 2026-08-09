@@ -1,0 +1,3 @@
+share/modcargo-crates/futf-0.1.5.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/futf-0.1.5/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/futf-0.1.5/libfutf.rlib

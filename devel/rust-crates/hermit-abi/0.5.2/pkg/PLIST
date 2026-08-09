@@ -1,0 +1,3 @@
+share/modcargo-crates/hermit-abi-0.5.2.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/hermit-abi-0.5.2/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/hermit-abi-0.5.2/libhermit_abi.rlib

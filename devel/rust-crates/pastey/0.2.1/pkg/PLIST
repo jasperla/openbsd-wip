@@ -1,0 +1,3 @@
+share/modcargo-crates/pastey-0.2.1.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/pastey-0.2.1/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/pastey-0.2.1/libpastey.so

@@ -1,0 +1,3 @@
+Prebuilt Rust crate mime 0.3.17 for offline grok-build.
+PKGNAME=rust-crate-mime_0_3_17-0
+Installs share/modcargo-crates/mime-0.3.17/ and lib/rust-crates/<arch>/mime-0.3.17/ (rlib + cargo fingerprints).

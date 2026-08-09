@@ -1,0 +1,3 @@
+share/modcargo-crates/der-0.7.10.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/der-0.7.10/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/der-0.7.10/libder.rlib

@@ -1,0 +1,3 @@
+share/modcargo-crates/token-source-1.0.0.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/token-source-1.0.0/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/token-source-1.0.0/libtoken_source.rlib

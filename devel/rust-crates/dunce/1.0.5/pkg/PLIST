@@ -1,0 +1,3 @@
+share/modcargo-crates/dunce-1.0.5.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/dunce-1.0.5/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/dunce-1.0.5/libdunce.rlib

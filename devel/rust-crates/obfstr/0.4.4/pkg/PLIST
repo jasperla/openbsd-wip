@@ -1,0 +1,3 @@
+share/modcargo-crates/obfstr-0.4.4.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/obfstr-0.4.4/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/obfstr-0.4.4/libobfstr.rlib

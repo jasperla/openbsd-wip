@@ -1,0 +1,3 @@
+share/modcargo-crates/hdrhistogram-7.5.4.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/hdrhistogram-7.5.4/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/hdrhistogram-7.5.4/libhdrhistogram.rlib

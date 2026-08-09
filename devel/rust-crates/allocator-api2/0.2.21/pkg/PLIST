@@ -1,0 +1,3 @@
+share/modcargo-crates/allocator-api2-0.2.21.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/allocator-api2-0.2.21/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/allocator-api2-0.2.21/liballocator_api2.rlib

@@ -1,0 +1,3 @@
+share/modcargo-crates/hayro-ccitt-0.3.0.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/hayro-ccitt-0.3.0/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/hayro-ccitt-0.3.0/libhayro_ccitt.rlib

@@ -1,0 +1,3 @@
+share/modcargo-crates/html-escape-0.2.13.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/html-escape-0.2.13/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/html-escape-0.2.13/libhtml_escape.rlib

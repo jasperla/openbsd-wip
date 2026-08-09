@@ -1,0 +1,3 @@
+share/modcargo-crates/once_cell-1.21.3.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/once_cell-1.21.3/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/once_cell-1.21.3/libonce_cell.rlib

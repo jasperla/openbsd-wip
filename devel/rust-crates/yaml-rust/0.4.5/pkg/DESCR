@@ -1,0 +1,3 @@
+Prebuilt Rust crate yaml-rust 0.4.5 for offline grok-build.
+PKGNAME=rust-crate-yaml_rust_0_4_5-0
+Installs share/modcargo-crates/yaml-rust-0.4.5/ and lib/rust-crates/<arch>/yaml-rust-0.4.5/ (rlib + cargo fingerprints).

@@ -1,0 +1,3 @@
+share/modcargo-crates/fallible-streaming-iterator-0.1.9.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/fallible-streaming-iterator-0.1.9/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/fallible-streaming-iterator-0.1.9/libfallible_streaming_iterator.rlib

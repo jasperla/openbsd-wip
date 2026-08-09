@@ -1,0 +1,3 @@
+share/modcargo-crates/getopts-0.2.24.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/getopts-0.2.24/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/getopts-0.2.24/libgetopts.rlib

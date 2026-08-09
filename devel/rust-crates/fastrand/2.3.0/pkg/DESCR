@@ -1,0 +1,3 @@
+Prebuilt Rust crate fastrand 2.3.0 for offline grok-build.
+PKGNAME=rust-crate-fastrand_2_3_0-0
+Installs share/modcargo-crates/fastrand-2.3.0/ and lib/rust-crates/<arch>/fastrand-2.3.0/ (rlib + cargo fingerprints).

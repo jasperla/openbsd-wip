@@ -1,0 +1,3 @@
+Prebuilt Rust crate hermit-abi 0.5.2 for offline grok-build.
+PKGNAME=rust-crate-hermit_abi_0_5_2-0
+Installs share/modcargo-crates/hermit-abi-0.5.2/ and lib/rust-crates/<arch>/hermit-abi-0.5.2/ (rlib + cargo fingerprints).

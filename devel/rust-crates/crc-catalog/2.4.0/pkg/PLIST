@@ -1,0 +1,3 @@
+share/modcargo-crates/crc-catalog-2.4.0.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/crc-catalog-2.4.0/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/crc-catalog-2.4.0/libcrc_catalog.rlib

@@ -1,0 +1,3 @@
+Prebuilt Rust crate x11rb-protocol 0.13.2 for offline grok-build.
+PKGNAME=rust-crate-x11rb_protocol_0_13_2-0
+Installs share/modcargo-crates/x11rb-protocol-0.13.2/ and lib/rust-crates/<arch>/x11rb-protocol-0.13.2/ (rlib + cargo fingerprints).

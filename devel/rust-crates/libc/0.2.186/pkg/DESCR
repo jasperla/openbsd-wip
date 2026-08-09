@@ -1,0 +1,3 @@
+Prebuilt Rust crate libc 0.2.186 for offline grok-build.
+PKGNAME=rust-crate-libc_0_2_186-0
+Installs share/modcargo-crates/libc-0.2.186/ and lib/rust-crates/<arch>/libc-0.2.186/ (rlib + cargo fingerprints).

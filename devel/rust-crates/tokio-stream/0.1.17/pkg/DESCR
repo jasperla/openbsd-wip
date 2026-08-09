@@ -1,0 +1,3 @@
+Prebuilt Rust crate tokio-stream 0.1.17 for offline grok-build.
+PKGNAME=rust-crate-tokio_stream_0_1_17-0
+Installs share/modcargo-crates/tokio-stream-0.1.17/ and lib/rust-crates/<arch>/tokio-stream-0.1.17/ (rlib + cargo fingerprints).

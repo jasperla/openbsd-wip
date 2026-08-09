@@ -1,0 +1,3 @@
+Prebuilt Rust crate version_check 0.9.5 for offline grok-build.
+PKGNAME=rust-crate-version_check_0_9_5-0
+Installs share/modcargo-crates/version_check-0.9.5/ and lib/rust-crates/<arch>/version_check-0.9.5/ (rlib + cargo fingerprints).

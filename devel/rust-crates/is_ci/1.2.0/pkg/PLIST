@@ -1,0 +1,3 @@
+share/modcargo-crates/is_ci-1.2.0.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/is_ci-1.2.0/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/is_ci-1.2.0/libis_ci.rlib

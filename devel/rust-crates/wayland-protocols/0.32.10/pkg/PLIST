@@ -1,0 +1,3 @@
+share/modcargo-crates/wayland-protocols-0.32.10.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/wayland-protocols-0.32.10/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/wayland-protocols-0.32.10/libwayland_protocols.rlib

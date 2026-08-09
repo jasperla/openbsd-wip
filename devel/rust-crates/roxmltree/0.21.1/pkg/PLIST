@@ -1,0 +1,3 @@
+share/modcargo-crates/roxmltree-0.21.1.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/roxmltree-0.21.1/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/roxmltree-0.21.1/libroxmltree.rlib

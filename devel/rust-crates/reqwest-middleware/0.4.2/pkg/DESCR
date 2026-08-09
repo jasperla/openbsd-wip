@@ -1,0 +1,3 @@
+Prebuilt Rust crate reqwest-middleware 0.4.2 for offline grok-build.
+PKGNAME=rust-crate-reqwest_middleware_0_4_2-0
+Installs share/modcargo-crates/reqwest-middleware-0.4.2/ and lib/rust-crates/<arch>/reqwest-middleware-0.4.2/ (rlib + cargo fingerprints).

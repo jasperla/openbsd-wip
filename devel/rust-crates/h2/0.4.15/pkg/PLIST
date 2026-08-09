@@ -1,0 +1,3 @@
+share/modcargo-crates/h2-0.4.15.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/h2-0.4.15/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/h2-0.4.15/libh2.rlib

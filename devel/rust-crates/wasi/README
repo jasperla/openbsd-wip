@@ -1,0 +1,3 @@
+# crates.io wasi
+# Versions (build from rust-crates/ top Makefile):
+#   wasi/0.11.1_wasi-snapshot-preview1

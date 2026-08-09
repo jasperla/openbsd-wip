@@ -1,0 +1,3 @@
+Prebuilt Rust crate aws-smithy-http 0.62.6 for offline grok-build.
+PKGNAME=rust-crate-aws_smithy_http_0_62_6-0
+Installs share/modcargo-crates/aws-smithy-http-0.62.6/ and lib/rust-crates/<arch>/aws-smithy-http-0.62.6/ (rlib + cargo fingerprints).

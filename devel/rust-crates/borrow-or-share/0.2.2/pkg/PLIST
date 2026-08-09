@@ -1,0 +1,3 @@
+share/modcargo-crates/borrow-or-share-0.2.2.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/borrow-or-share-0.2.2/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/borrow-or-share-0.2.2/libborrow_or_share.rlib

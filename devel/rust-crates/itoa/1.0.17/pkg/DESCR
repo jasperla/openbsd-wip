@@ -1,0 +1,3 @@
+Prebuilt Rust crate itoa 1.0.17 for offline grok-build.
+PKGNAME=rust-crate-itoa_1_0_17-0
+Installs share/modcargo-crates/itoa-1.0.17/ and lib/rust-crates/<arch>/itoa-1.0.17/ (rlib + cargo fingerprints).

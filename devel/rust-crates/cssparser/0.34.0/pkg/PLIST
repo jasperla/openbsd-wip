@@ -1,0 +1,3 @@
+share/modcargo-crates/cssparser-0.34.0.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/cssparser-0.34.0/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/cssparser-0.34.0/libcssparser.rlib

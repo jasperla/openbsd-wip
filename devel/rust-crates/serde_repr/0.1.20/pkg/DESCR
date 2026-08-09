@@ -1,0 +1,3 @@
+Prebuilt Rust crate serde_repr 0.1.20 for offline grok-build.
+PKGNAME=rust-crate-serde_repr_0_1_20-0
+Installs share/modcargo-crates/serde_repr-0.1.20/ and lib/rust-crates/<arch>/serde_repr-0.1.20/ (rlib + cargo fingerprints).

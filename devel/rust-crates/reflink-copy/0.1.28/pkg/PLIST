@@ -1,0 +1,3 @@
+share/modcargo-crates/reflink-copy-0.1.28.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/reflink-copy-0.1.28/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/reflink-copy-0.1.28/libreflink_copy.rlib

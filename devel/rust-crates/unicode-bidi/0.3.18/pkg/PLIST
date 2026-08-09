@@ -1,0 +1,3 @@
+share/modcargo-crates/unicode-bidi-0.3.18.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/unicode-bidi-0.3.18/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/unicode-bidi-0.3.18/libunicode_bidi.rlib

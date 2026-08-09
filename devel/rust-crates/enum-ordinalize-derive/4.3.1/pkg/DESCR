@@ -1,0 +1,3 @@
+Prebuilt Rust crate enum-ordinalize-derive 4.3.1 for offline grok-build.
+PKGNAME=rust-crate-enum_ordinalize_derive_4_3_1-0
+Installs share/modcargo-crates/enum-ordinalize-derive-4.3.1/ and lib/rust-crates/<arch>/enum-ordinalize-derive-4.3.1/ (rlib + cargo fingerprints).

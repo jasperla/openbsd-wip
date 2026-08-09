@@ -1,0 +1,3 @@
+share/modcargo-crates/leb128fmt-0.1.0.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/leb128fmt-0.1.0/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/leb128fmt-0.1.0/libleb128fmt.rlib

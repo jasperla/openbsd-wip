@@ -1,0 +1,187 @@
+Index: crates/codegen/xai-grok-sandbox/src/lib.rs
+--- crates/codegen/xai-grok-sandbox/src/lib.rs.orig
++++ crates/codegen/xai-grok-sandbox/src/lib.rs
+@@ -11,8 +11,9 @@
+ //! and child processes. Network is left open at the process level (agent
+ //! needs LLM API); child network is blocked per-subprocess via seccomp.
+ //!
+-//! The `enforce` feature (on by default) pulls in `nono` for
+-//! kernel-enforced sandboxing (Landlock/Seatbelt). When disabled, the
++//! The `enforce` feature (on by default) enables kernel/OS sandboxing:
++//! Landlock (Linux) and Seatbelt (macOS) via `nono`, and unveil+pledge
++//! on OpenBSD via the in-crate `openbsd` backend. When disabled, the
+ //! crate still provides lightweight helpers (`log_violation`,
+ //! `should_restrict_child_network`, `child_net`) that compile on all
+ //! targets including musl.
+@@ -31,6 +32,8 @@
+ mod hook_write_deny;
+ mod logging;
+ mod network_policy;
++#[cfg(all(feature = "enforce", target_os = "openbsd"))]
++mod openbsd;
+ mod paths;
+ mod profiles;
+ mod types;
+@@ -59,7 +62,7 @@
+         _ => true,
+     }
+ }
+-#[cfg(all(feature = "enforce", unix))]
++#[cfg(all(feature = "enforce", unix, not(target_os = "openbsd")))]
+ use nono::Sandbox;
+ use std::path::{Path, PathBuf};
+ use std::sync::OnceLock;
+@@ -159,6 +162,9 @@
+     }
+     /// Apply the sandbox to the current process. **Irreversible.**
+     /// Degrades gracefully if the platform doesn't support it.
++    ///
++    /// * Linux/macOS: nono (Landlock / Seatbelt)
++    /// * OpenBSD: native unveil(2) + pledge(2) (`openbsd` module)
+     #[cfg(all(feature = "enforce", unix))]
+     pub fn apply(&mut self, workspace: &Path) -> anyhow::Result<()> {
+         if self.profile == ProfileName::Off {
+@@ -174,50 +180,88 @@
+         let config = profiles::load_sandbox_config(workspace);
+         let mut resolved = self.profile.resolve_profile(workspace, &config)?;
+         self.net_restricted = resolved.restrict_network;
+-        let support = Sandbox::support_info();
+-        if !support.is_supported {
+-            tracing::warn!(
+-                details = %support.details,
+-                "Sandbox not supported on this platform, continuing without sandbox"
+-            );
+-            self.logger.log(SandboxEvent::apply_failed(
+-                &self.profile.to_string(),
+-                workspace,
+-                &support.details,
+-            ));
+-            return Ok(());
+-        }
+-        let caps = ProfileName::capability_set_from_profile(workspace, &resolved)?;
+         resolved.deny = deny::effective_deny_paths(workspace, &resolved.deny);
+-        match Sandbox::apply(&caps) {
+-            Ok(_) => {
+-                self.applied = true;
+-                self.logger.log(SandboxEvent::profile_applied(
+-                    &self.profile.to_string(),
+-                    workspace,
+-                    &resolved,
+-                ));
+-                tracing::info!(
+-                    profile = %self.profile,
+-                    workspace = %workspace.display(),
+-                    restrict_network_configured = self.net_restricted,
+-                    "Sandbox applied (kernel-enforced, irreversible)"
+-                );
+-                Ok(())
++
++        #[cfg(target_os = "openbsd")]
++        {
++            match openbsd::apply_profile(&resolved) {
++                Ok(()) => {
++                    self.applied = true;
++                    self.logger.log(SandboxEvent::profile_applied(
++                        &self.profile.to_string(),
++                        workspace,
++                        &resolved,
++                    ));
++                    tracing::info!(
++                        profile = %self.profile,
++                        workspace = %workspace.display(),
++                        restrict_network_configured = self.net_restricted,
++                        "Sandbox applied via unveil+pledge (irreversible)"
++                    );
++                    Ok(())
++                }
++                Err(e) => {
++                    tracing::warn!(
++                        profile = %self.profile,
++                        error = %e,
++                        "OpenBSD sandbox could not be applied, continuing without sandbox"
++                    );
++                    self.logger.log(SandboxEvent::apply_failed(
++                        &self.profile.to_string(),
++                        workspace,
++                        &e,
++                    ));
++                    Ok(())
++                }
+             }
+-            Err(e) => {
++        }
++
++        #[cfg(not(target_os = "openbsd"))]
++        {
++            let support = Sandbox::support_info();
++            if !support.is_supported {
+                 tracing::warn!(
+-                    profile = %self.profile,
+-                    error = %e,
+-                    "Sandbox could not be applied, continuing without sandbox"
++                    details = %support.details,
++                    "Sandbox not supported on this platform, continuing without sandbox"
+                 );
+                 self.logger.log(SandboxEvent::apply_failed(
+                     &self.profile.to_string(),
+                     workspace,
+-                    &e,
++                    &support.details,
+                 ));
+-                Ok(())
++                return Ok(());
+             }
++            let caps = ProfileName::capability_set_from_profile(workspace, &resolved)?;
++            match Sandbox::apply(&caps) {
++                Ok(_) => {
++                    self.applied = true;
++                    self.logger.log(SandboxEvent::profile_applied(
++                        &self.profile.to_string(),
++                        workspace,
++                        &resolved,
++                    ));
++                    tracing::info!(
++                        profile = %self.profile,
++                        workspace = %workspace.display(),
++                        restrict_network_configured = self.net_restricted,
++                        "Sandbox applied (kernel-enforced, irreversible)"
++                    );
++                    Ok(())
++                }
++                Err(e) => {
++                    tracing::warn!(
++                        profile = %self.profile,
++                        error = %e,
++                        "Sandbox could not be applied, continuing without sandbox"
++                    );
++                    self.logger.log(SandboxEvent::apply_failed(
++                        &self.profile.to_string(),
++                        workspace,
++                        &e,
++                    ));
++                    Ok(())
++                }
++            }
+         }
+     }
+     /// Stub when `enforce` feature is disabled — sandbox is not applied.
+@@ -243,9 +287,18 @@
+         });
+     }
+     /// Check whether the current platform supports sandboxing.
+-    #[cfg(all(feature = "enforce", unix))]
++    #[cfg(all(feature = "enforce", unix, not(target_os = "openbsd")))]
+     pub fn support_info() -> nono::SupportInfo {
+         Sandbox::support_info()
++    }
++    /// OpenBSD: unveil+pledge always available in kernel.
++    #[cfg(all(feature = "enforce", target_os = "openbsd"))]
++    pub fn support_info() -> nono::SupportInfo {
++        nono::SupportInfo {
++            is_supported: true,
++            platform: "openbsd",
++            details: "unveil(2)+pledge(2)".to_string(),
++        }
+     }
+     /// Whether the sandbox was successfully applied.
+     pub fn is_applied(&self) -> bool {

@@ -1,0 +1,3 @@
+share/modcargo-crates/hashbrown-0.16.1.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/hashbrown-0.16.1/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/hashbrown-0.16.1/libhashbrown.rlib

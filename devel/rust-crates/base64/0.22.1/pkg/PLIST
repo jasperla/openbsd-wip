@@ -1,0 +1,3 @@
+share/modcargo-crates/base64-0.22.1.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/base64-0.22.1/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/base64-0.22.1/libbase64.rlib

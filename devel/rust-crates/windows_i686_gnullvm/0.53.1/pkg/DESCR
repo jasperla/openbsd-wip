@@ -1,0 +1,3 @@
+Prebuilt Rust crate windows_i686_gnullvm 0.53.1 for offline grok-build.
+PKGNAME=rust-crate-windows_i686_gnullvm_0_53_1-0
+Installs share/modcargo-crates/windows_i686_gnullvm-0.53.1/ and lib/rust-crates/<arch>/windows_i686_gnullvm-0.53.1/ (rlib + cargo fingerprints).

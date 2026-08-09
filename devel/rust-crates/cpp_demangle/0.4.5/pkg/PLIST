@@ -1,0 +1,3 @@
+share/modcargo-crates/cpp_demangle-0.4.5.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/cpp_demangle-0.4.5/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/cpp_demangle-0.4.5/libcpp_demangle.rlib

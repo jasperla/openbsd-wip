@@ -1,0 +1,3 @@
+Prebuilt Rust crate pdf_oxide 0.3.46 for offline grok-build.
+PKGNAME=rust-crate-pdf_oxide_0_3_46-0
+Installs share/modcargo-crates/pdf_oxide-0.3.46/ and lib/rust-crates/<arch>/pdf_oxide-0.3.46/ (rlib + cargo fingerprints).

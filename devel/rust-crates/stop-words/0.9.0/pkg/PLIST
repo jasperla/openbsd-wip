@@ -1,0 +1,3 @@
+share/modcargo-crates/stop-words-0.9.0.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/stop-words-0.9.0/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/stop-words-0.9.0/libstop_words.rlib

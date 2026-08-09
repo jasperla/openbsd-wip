@@ -1,0 +1,3 @@
+share/modcargo-crates/sentry-tracing-0.42.0.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/sentry-tracing-0.42.0/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/sentry-tracing-0.42.0/libsentry_tracing.rlib

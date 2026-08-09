@@ -1,0 +1,3 @@
+Prebuilt Rust crate md-5 0.10.6 for offline grok-build.
+PKGNAME=rust-crate-md_5_0_10_6-0
+Installs share/modcargo-crates/md-5-0.10.6/ and lib/rust-crates/<arch>/md-5-0.10.6/ (rlib + cargo fingerprints).

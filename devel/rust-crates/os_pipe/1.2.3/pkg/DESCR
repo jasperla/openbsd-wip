@@ -1,0 +1,3 @@
+Prebuilt Rust crate os_pipe 1.2.3 for offline grok-build.
+PKGNAME=rust-crate-os_pipe_1_2_3-0
+Installs share/modcargo-crates/os_pipe-1.2.3/ and lib/rust-crates/<arch>/os_pipe-1.2.3/ (rlib + cargo fingerprints).

@@ -1,0 +1,3 @@
+share/modcargo-crates/gix-dir-0.25.0.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/gix-dir-0.25.0/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/gix-dir-0.25.0/libgix_dir.rlib

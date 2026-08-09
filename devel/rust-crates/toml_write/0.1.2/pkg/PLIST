@@ -1,0 +1,3 @@
+share/modcargo-crates/toml_write-0.1.2.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/toml_write-0.1.2/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/toml_write-0.1.2/libtoml_write.rlib

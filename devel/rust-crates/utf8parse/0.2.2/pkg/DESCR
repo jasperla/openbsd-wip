@@ -1,0 +1,3 @@
+Prebuilt Rust crate utf8parse 0.2.2 for offline grok-build.
+PKGNAME=rust-crate-utf8parse_0_2_2-0
+Installs share/modcargo-crates/utf8parse-0.2.2/ and lib/rust-crates/<arch>/utf8parse-0.2.2/ (rlib + cargo fingerprints).

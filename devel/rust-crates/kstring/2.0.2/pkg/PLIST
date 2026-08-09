@@ -1,0 +1,3 @@
+share/modcargo-crates/kstring-2.0.2.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/kstring-2.0.2/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/kstring-2.0.2/libkstring.rlib

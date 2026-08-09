@@ -1,0 +1,3 @@
+share/modcargo-crates/async-net-2.0.0.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/async-net-2.0.0/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/async-net-2.0.0/libasync_net.rlib

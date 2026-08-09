@@ -1,0 +1,3 @@
+Prebuilt Rust crate pbjson-build 0.9.0 for offline grok-build.
+PKGNAME=rust-crate-pbjson_build_0_9_0-0
+Installs share/modcargo-crates/pbjson-build-0.9.0/ and lib/rust-crates/<arch>/pbjson-build-0.9.0/ (rlib + cargo fingerprints).

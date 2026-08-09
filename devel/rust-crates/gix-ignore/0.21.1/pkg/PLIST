@@ -1,0 +1,3 @@
+share/modcargo-crates/gix-ignore-0.21.1.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/gix-ignore-0.21.1/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/gix-ignore-0.21.1/libgix_ignore.rlib

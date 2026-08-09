@@ -1,0 +1,3 @@
+share/modcargo-crates/axum-core-0.5.5.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/axum-core-0.5.5/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/axum-core-0.5.5/libaxum_core.rlib

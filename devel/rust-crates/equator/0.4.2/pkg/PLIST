@@ -1,0 +1,3 @@
+share/modcargo-crates/equator-0.4.2.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/equator-0.4.2/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/equator-0.4.2/libequator.rlib

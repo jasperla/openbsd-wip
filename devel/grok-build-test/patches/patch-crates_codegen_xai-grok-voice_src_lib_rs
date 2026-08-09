@@ -1,0 +1,68 @@
+Index: crates/codegen/xai-grok-voice/src/lib.rs
+--- crates/codegen/xai-grok-voice/src/lib.rs.orig
++++ crates/codegen/xai-grok-voice/src/lib.rs
+@@ -3,9 +3,9 @@
+ //!
+ //! Voice is dictation only: mic → streaming STT → transcript into the prompt box.
+ //!
+-//! On macOS and Linux the microphone is opened in a short-lived subprocess so
+-//! the long-lived TUI never pays the platform audio stack's permanent memory
+-//! cost (see [`audio`] and [`maybe_run_capture_subprocess`]).
++//! On macOS, Linux, and OpenBSD the microphone is opened in a short-lived
++//! subprocess so the long-lived TUI never pays the platform audio stack's
++//! permanent memory cost (see [`audio`] and [`maybe_run_capture_subprocess`]).
+ 
+ #[cfg(feature = "audio")]
+ pub mod audio;
+@@ -36,13 +36,14 @@ pub use probe::{
+ 
+ /// Whether this build can capture microphone audio (the `audio` feature).
+ /// Production CLI builds enable it on every OS: macOS/Windows link `cpal`
+-/// (coreaudio/wasapi), while Linux shells out to a system recorder
+-/// (`pw-record`/`parec`/`arecord`) so the static-musl binary links no audio
+-/// library. Bazel builds drop `audio` (no capture in the test sandbox).
++/// (coreaudio/wasapi); Linux shells out to a system recorder
++/// (`pw-record`/`parec`/`arecord`); OpenBSD shells out to `aucat` (sndio).
++/// Linux/OpenBSD link no audio library into the binary. Bazel builds drop
++/// `audio` (no capture in the test sandbox).
+ ///
+-/// On Linux a `true` value means capture is *compiled in*; whether a recorder
+-/// is actually installed is reported when a session starts. Consumers gate voice
+-/// on this so a no-audio build never advertises a mic it can't open.
++/// On Linux/OpenBSD a `true` value means capture is *compiled in*; whether a
++/// recorder is actually available is reported when a session starts. Consumers
++/// gate voice on this so a no-audio build never advertises a mic it can't open.
+ pub const AUDIO_SUPPORTED: bool = cfg!(feature = "audio");
+ 
+ /// Hidden subcommand consumers re-exec themselves with to capture microphone
+@@ -62,7 +63,10 @@ pub fn maybe_run_capture_subprocess() -> Option<i32> {
+     if !is_capture_subcommand(&argv) {
+         return None;
+     }
+-    #[cfg(all(feature = "audio", not(target_os = "linux")))]
++    #[cfg(all(
++        feature = "audio",
++        not(any(target_os = "linux", target_os = "openbsd"))
++    ))]
+     {
+         // Skip argv[0] (binary) and argv[1] (subcommand); the rest are flags.
+         let args: Vec<String> = argv
+@@ -72,11 +76,14 @@ pub fn maybe_run_capture_subprocess() -> Option<i32> {
+             .collect();
+         Some(audio::run_capture_child_cli(args))
+     }
+-    #[cfg(not(all(feature = "audio", not(target_os = "linux"))))]
++    #[cfg(not(all(
++        feature = "audio",
++        not(any(target_os = "linux", target_os = "openbsd"))
++    )))]
+     {
+-        // Never spawned by this build's own parent backend (Linux uses system
+-        // recorders; no-audio builds have no capture). Reachable only by hand.
+-        // `write!` not `println!`: never panic on a closed pipe.
++        // Never spawned by this build's own parent backend (Linux/OpenBSD use
++        // system recorders; no-audio builds have no capture). Reachable only
++        // by hand. `write!` not `println!`: never panic on a closed pipe.
+         use std::io::Write;
+         let _ = writeln!(
+             std::io::stdout(),

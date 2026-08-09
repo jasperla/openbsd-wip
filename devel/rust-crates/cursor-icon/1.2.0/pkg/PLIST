@@ -1,0 +1,3 @@
+share/modcargo-crates/cursor-icon-1.2.0.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/cursor-icon-1.2.0/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/cursor-icon-1.2.0/libcursor_icon.rlib

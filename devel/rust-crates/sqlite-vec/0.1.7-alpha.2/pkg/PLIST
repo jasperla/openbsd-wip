@@ -1,0 +1,3 @@
+share/modcargo-crates/sqlite-vec-0.1.7-alpha.2.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/sqlite-vec-0.1.7-alpha.2/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/sqlite-vec-0.1.7-alpha.2/libsqlite_vec.rlib

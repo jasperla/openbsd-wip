@@ -1,0 +1,3 @@
+share/modcargo-crates/url-2.5.8.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/url-2.5.8/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/url-2.5.8/liburl.rlib

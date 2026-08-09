@@ -1,0 +1,3 @@
+share/modcargo-crates/async-stream-impl-0.3.6.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/async-stream-impl-0.3.6/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/async-stream-impl-0.3.6/libasync_stream_impl.so

@@ -1,0 +1,3 @@
+share/modcargo-crates/insta-1.43.2.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/insta-1.43.2/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/insta-1.43.2/libinsta.rlib

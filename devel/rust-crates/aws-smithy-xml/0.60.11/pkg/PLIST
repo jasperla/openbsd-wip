@@ -1,0 +1,3 @@
+share/modcargo-crates/aws-smithy-xml-0.60.11.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/aws-smithy-xml-0.60.11/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/aws-smithy-xml-0.60.11/libaws_smithy_xml.rlib

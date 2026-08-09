@@ -1,0 +1,3 @@
+share/modcargo-crates/darling-0.20.11.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/darling-0.20.11/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/darling-0.20.11/libdarling.rlib

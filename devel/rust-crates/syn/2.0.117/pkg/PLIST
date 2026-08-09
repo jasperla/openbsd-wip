@@ -1,0 +1,3 @@
+share/modcargo-crates/syn-2.0.117.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/syn-2.0.117/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/syn-2.0.117/libsyn.rlib

@@ -1,0 +1,3 @@
+share/modcargo-crates/waitpid-any-0.3.0.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/waitpid-any-0.3.0/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/waitpid-any-0.3.0/libwaitpid_any.rlib

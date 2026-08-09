@@ -1,0 +1,3 @@
+share/modcargo-crates/cached_proc_macro_types-0.1.1.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/cached_proc_macro_types-0.1.1/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/cached_proc_macro_types-0.1.1/libcached_proc_macro_types.rlib

@@ -1,0 +1,3 @@
+share/modcargo-crates/home-0.5.12.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/home-0.5.12/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/home-0.5.12/libhome.rlib

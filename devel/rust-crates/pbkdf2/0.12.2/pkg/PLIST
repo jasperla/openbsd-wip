@@ -1,0 +1,3 @@
+share/modcargo-crates/pbkdf2-0.12.2.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/pbkdf2-0.12.2/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/pbkdf2-0.12.2/libpbkdf2.rlib

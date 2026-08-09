@@ -1,0 +1,3 @@
+share/modcargo-crates/libz-sys-1.1.22.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/libz-sys-1.1.22/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/libz-sys-1.1.22/liblibz_sys.rlib

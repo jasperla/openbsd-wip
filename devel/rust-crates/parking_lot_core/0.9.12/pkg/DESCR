@@ -1,0 +1,3 @@
+Prebuilt Rust crate parking_lot_core 0.9.12 for offline grok-build.
+PKGNAME=rust-crate-parking_lot_core_0_9_12-0
+Installs share/modcargo-crates/parking_lot_core-0.9.12/ and lib/rust-crates/<arch>/parking_lot_core-0.9.12/ (rlib + cargo fingerprints).

@@ -1,0 +1,3 @@
+share/modcargo-crates/symbolic-common-12.16.3.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/symbolic-common-12.16.3/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/symbolic-common-12.16.3/libsymbolic_common.rlib

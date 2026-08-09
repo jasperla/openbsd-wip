@@ -1,0 +1,3 @@
+Prebuilt Rust crate sentry-backtrace 0.42.0 for offline grok-build.
+PKGNAME=rust-crate-sentry_backtrace_0_42_0-0
+Installs share/modcargo-crates/sentry-backtrace-0.42.0/ and lib/rust-crates/<arch>/sentry-backtrace-0.42.0/ (rlib + cargo fingerprints).

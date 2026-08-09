@@ -1,0 +1,3 @@
+Prebuilt Rust crate gix-pathspec 0.18.1 for offline grok-build.
+PKGNAME=rust-crate-gix_pathspec_0_18_1-0
+Installs share/modcargo-crates/gix-pathspec-0.18.1/ and lib/rust-crates/<arch>/gix-pathspec-0.18.1/ (rlib + cargo fingerprints).

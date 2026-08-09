@@ -1,0 +1,11 @@
+Index: crates/codegen/xai-grok-sandbox/Cargo.toml
+--- crates/codegen/xai-grok-sandbox/Cargo.toml.orig
++++ crates/codegen/xai-grok-sandbox/Cargo.toml
+@@ -62,3 +62,7 @@
+ [[example]]
+ name = "sandbox_smoke_test"
+ required-features = ["enforce"]
++
++[[example]]
++name = "openbsd_sandbox_smoke"
++required-features = ["enforce"]

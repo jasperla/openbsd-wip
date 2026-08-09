@@ -1,0 +1,3 @@
+share/modcargo-crates/serde_derive_internals-0.29.1.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/serde_derive_internals-0.29.1/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/serde_derive_internals-0.29.1/libserde_derive_internals.rlib

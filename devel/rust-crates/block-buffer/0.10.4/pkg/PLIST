@@ -1,0 +1,3 @@
+share/modcargo-crates/block-buffer-0.10.4.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/block-buffer-0.10.4/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/block-buffer-0.10.4/libblock_buffer.rlib

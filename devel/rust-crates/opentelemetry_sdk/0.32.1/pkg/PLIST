@@ -1,0 +1,3 @@
+share/modcargo-crates/opentelemetry_sdk-0.32.1.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/opentelemetry_sdk-0.32.1/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/opentelemetry_sdk-0.32.1/libopentelemetry_sdk.rlib

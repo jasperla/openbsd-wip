@@ -1,0 +1,3 @@
+Prebuilt Rust crate jsonwebtoken 10.3.0 for offline grok-build.
+PKGNAME=rust-crate-jsonwebtoken_10_3_0-0
+Installs share/modcargo-crates/jsonwebtoken-10.3.0/ and lib/rust-crates/<arch>/jsonwebtoken-10.3.0/ (rlib + cargo fingerprints).

@@ -1,0 +1,3 @@
+Prebuilt Rust crate libz-sys 1.1.22 for offline grok-build.
+PKGNAME=rust-crate-libz_sys_1_1_22-0
+Installs share/modcargo-crates/libz-sys-1.1.22/ and lib/rust-crates/<arch>/libz-sys-1.1.22/ (rlib + cargo fingerprints).

@@ -1,0 +1,3 @@
+share/modcargo-crates/dtor-0.0.6.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/dtor-0.0.6/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/dtor-0.0.6/libdtor.rlib

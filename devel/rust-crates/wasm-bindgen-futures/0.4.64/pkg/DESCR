@@ -1,0 +1,3 @@
+Prebuilt Rust crate wasm-bindgen-futures 0.4.64 for offline grok-build.
+PKGNAME=rust-crate-wasm_bindgen_futures_0_4_64-0
+Installs share/modcargo-crates/wasm-bindgen-futures-0.4.64/ and lib/rust-crates/<arch>/wasm-bindgen-futures-0.4.64/ (rlib + cargo fingerprints).

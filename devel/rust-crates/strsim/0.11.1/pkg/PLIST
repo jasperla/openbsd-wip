@@ -1,0 +1,3 @@
+share/modcargo-crates/strsim-0.11.1.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/strsim-0.11.1/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/strsim-0.11.1/libstrsim.rlib

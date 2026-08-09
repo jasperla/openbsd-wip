@@ -1,0 +1,3 @@
+share/modcargo-crates/async-recursion-1.1.1.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/async-recursion-1.1.1/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/async-recursion-1.1.1/libasync_recursion.so

@@ -1,0 +1,3 @@
+share/modcargo-crates/stable_deref_trait-1.2.1.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/stable_deref_trait-1.2.1/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/stable_deref_trait-1.2.1/libstable_deref_trait.rlib

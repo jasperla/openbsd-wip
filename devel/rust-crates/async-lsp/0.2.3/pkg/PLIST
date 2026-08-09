@@ -1,0 +1,3 @@
+share/modcargo-crates/async-lsp-0.2.3.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/async-lsp-0.2.3/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/async-lsp-0.2.3/libasync_lsp.rlib

@@ -1,0 +1,3 @@
+Prebuilt Rust crate nix 0.26.4 for offline grok-build.
+PKGNAME=rust-crate-nix_0_26_4-0
+Installs share/modcargo-crates/nix-0.26.4/ and lib/rust-crates/<arch>/nix-0.26.4/ (rlib + cargo fingerprints).

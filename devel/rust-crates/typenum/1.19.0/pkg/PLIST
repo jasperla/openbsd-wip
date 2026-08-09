@@ -1,0 +1,3 @@
+share/modcargo-crates/typenum-1.19.0.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/typenum-1.19.0/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/typenum-1.19.0/libtypenum.rlib

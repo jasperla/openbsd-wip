@@ -1,0 +1,3 @@
+share/modcargo-crates/anstream-0.6.21.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/anstream-0.6.21/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/anstream-0.6.21/libanstream.rlib

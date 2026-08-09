@@ -1,0 +1,3 @@
+share/modcargo-crates/pdf_oxide-0.3.46.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/pdf_oxide-0.3.46/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/pdf_oxide-0.3.46/libpdf_oxide.rlib

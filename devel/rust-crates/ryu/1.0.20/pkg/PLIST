@@ -1,0 +1,3 @@
+share/modcargo-crates/ryu-1.0.20.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/ryu-1.0.20/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/ryu-1.0.20/libryu.rlib

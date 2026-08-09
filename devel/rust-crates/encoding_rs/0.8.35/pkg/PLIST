@@ -1,0 +1,3 @@
+share/modcargo-crates/encoding_rs-0.8.35.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/encoding_rs-0.8.35/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/encoding_rs-0.8.35/libencoding_rs.rlib

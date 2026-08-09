@@ -1,0 +1,3 @@
+share/modcargo-crates/vcpkg-0.2.15.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/vcpkg-0.2.15/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/vcpkg-0.2.15/libvcpkg.rlib

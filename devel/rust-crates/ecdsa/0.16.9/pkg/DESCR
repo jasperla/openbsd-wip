@@ -1,0 +1,3 @@
+Prebuilt Rust crate ecdsa 0.16.9 for offline grok-build.
+PKGNAME=rust-crate-ecdsa_0_16_9-0
+Installs share/modcargo-crates/ecdsa-0.16.9/ and lib/rust-crates/<arch>/ecdsa-0.16.9/ (rlib + cargo fingerprints).

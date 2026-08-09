@@ -1,0 +1,3 @@
+share/modcargo-crates/rtrb-0.3.2.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/rtrb-0.3.2/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/rtrb-0.3.2/librtrb.rlib

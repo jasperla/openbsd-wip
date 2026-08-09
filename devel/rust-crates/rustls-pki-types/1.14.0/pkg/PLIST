@@ -1,0 +1,3 @@
+share/modcargo-crates/rustls-pki-types-1.14.0.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/rustls-pki-types-1.14.0/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/rustls-pki-types-1.14.0/librustls_pki_types.rlib

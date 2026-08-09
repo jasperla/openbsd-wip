@@ -1,0 +1,3 @@
+Prebuilt Rust crate zopfli 0.8.3 for offline grok-build.
+PKGNAME=rust-crate-zopfli_0_8_3-0
+Installs share/modcargo-crates/zopfli-0.8.3/ and lib/rust-crates/<arch>/zopfli-0.8.3/ (rlib + cargo fingerprints).

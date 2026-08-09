@@ -1,0 +1,3 @@
+Prebuilt Rust crate typify 0.6.2 for offline grok-build.
+PKGNAME=rust-crate-typify_0_6_2-0
+Installs share/modcargo-crates/typify-0.6.2/ and lib/rust-crates/<arch>/typify-0.6.2/ (rlib + cargo fingerprints).

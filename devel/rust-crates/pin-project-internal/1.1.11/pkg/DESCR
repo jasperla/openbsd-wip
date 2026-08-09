@@ -1,0 +1,3 @@
+Prebuilt Rust crate pin-project-internal 1.1.11 for offline grok-build.
+PKGNAME=rust-crate-pin_project_internal_1_1_11-0
+Installs share/modcargo-crates/pin-project-internal-1.1.11/ and lib/rust-crates/<arch>/pin-project-internal-1.1.11/ (rlib + cargo fingerprints).

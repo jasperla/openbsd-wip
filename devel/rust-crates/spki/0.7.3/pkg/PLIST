@@ -1,0 +1,3 @@
+share/modcargo-crates/spki-0.7.3.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/spki-0.7.3/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/spki-0.7.3/libspki.rlib

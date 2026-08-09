@@ -1,0 +1,3 @@
+Prebuilt Rust crate alacritty_terminal 0.26.0 for offline grok-build.
+PKGNAME=rust-crate-alacritty_terminal_0_26_0-0
+Installs share/modcargo-crates/alacritty_terminal-0.26.0/ and lib/rust-crates/<arch>/alacritty_terminal-0.26.0/ (rlib + cargo fingerprints).

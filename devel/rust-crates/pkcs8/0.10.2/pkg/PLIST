@@ -1,0 +1,3 @@
+share/modcargo-crates/pkcs8-0.10.2.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/pkcs8-0.10.2/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/pkcs8-0.10.2/libpkcs8.rlib

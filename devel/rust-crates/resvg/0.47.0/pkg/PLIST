@@ -1,0 +1,3 @@
+share/modcargo-crates/resvg-0.47.0.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/resvg-0.47.0/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/resvg-0.47.0/libresvg.rlib

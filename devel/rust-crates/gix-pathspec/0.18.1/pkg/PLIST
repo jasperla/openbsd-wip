@@ -1,0 +1,3 @@
+share/modcargo-crates/gix-pathspec-0.18.1.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/gix-pathspec-0.18.1/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/gix-pathspec-0.18.1/libgix_pathspec.rlib

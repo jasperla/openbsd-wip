@@ -1,0 +1,3 @@
+share/modcargo-crates/nonempty-0.12.0.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/nonempty-0.12.0/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/nonempty-0.12.0/libnonempty.rlib

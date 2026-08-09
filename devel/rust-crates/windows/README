@@ -1,0 +1,5 @@
+# crates.io windows
+# Versions (build from rust-crates/ top Makefile):
+#   windows/0.54.0
+#   windows/0.61.3
+#   windows/0.62.2

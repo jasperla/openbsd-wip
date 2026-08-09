@@ -1,0 +1,3 @@
+share/modcargo-crates/bytes-utils-0.1.4.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/bytes-utils-0.1.4/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/bytes-utils-0.1.4/libbytes_utils.rlib

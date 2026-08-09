@@ -1,0 +1,3 @@
+share/modcargo-crates/aws-runtime-1.5.12.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/aws-runtime-1.5.12/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/aws-runtime-1.5.12/libaws_runtime.rlib

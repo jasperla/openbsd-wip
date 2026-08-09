@@ -1,0 +1,3 @@
+share/modcargo-crates/tonic-types-0.14.5.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/tonic-types-0.14.5/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/tonic-types-0.14.5/libtonic_types.rlib

@@ -1,0 +1,3 @@
+share/modcargo-crates/arrayvec-0.7.6.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/arrayvec-0.7.6/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/arrayvec-0.7.6/libarrayvec.rlib

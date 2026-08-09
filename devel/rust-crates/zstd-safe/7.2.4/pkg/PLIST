@@ -1,0 +1,3 @@
+share/modcargo-crates/zstd-safe-7.2.4.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/zstd-safe-7.2.4/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/zstd-safe-7.2.4/libzstd_safe.rlib

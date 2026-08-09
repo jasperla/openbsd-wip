@@ -1,0 +1,3 @@
+Prebuilt Rust crate futures-lite 2.6.1 for offline grok-build.
+PKGNAME=rust-crate-futures_lite_2_6_1-0
+Installs share/modcargo-crates/futures-lite-2.6.1/ and lib/rust-crates/<arch>/futures-lite-2.6.1/ (rlib + cargo fingerprints).

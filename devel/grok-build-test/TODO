@@ -1,0 +1,22 @@
+TEST PORT: separate devel/rust-crates/* packages; in-house deps list.
+
+  files/crates.inc     — BUILD_DEPENDS pins (regenerate with script below)
+  devel/rust-crates/*  — actual crate ports (one PKGNAME per crate version)
+
+Update crates + include after Cargo.lock / dump tip change:
+
+  /path/to/grok-build/scripts/gen-rust-crate-ports.py \
+    --dump $DISTDIR/xai-org-grok-build-<sha>.tar.gz \
+    --out /usr/ports/openbsd-wip \
+    --distfiles $DISTDIR
+
+  # or from a git checkout lock:
+  …/gen-rust-crate-ports.py --lock /path/to/Cargo.lock --out /usr/ports/openbsd-wip
+
+That refreshes:
+  devel/rust-crates/*                      (ports; prunes stale)
+  devel/grok-build-test/files/crates.inc   (BUILD_DEPENDS include)
+  devel/grok-build-test/files/seed-modcargo.sh
+
+Build with rundpb as _pbuild (not todd make package into root pobj):
+  RUNDPB_FARM=1 rundpb -v devel/grok-build-test

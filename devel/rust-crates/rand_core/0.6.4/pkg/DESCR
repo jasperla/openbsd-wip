@@ -1,0 +1,3 @@
+Prebuilt Rust crate rand_core 0.6.4 for offline grok-build.
+PKGNAME=rust-crate-rand_core_0_6_4-0
+Installs share/modcargo-crates/rand_core-0.6.4/ and lib/rust-crates/<arch>/rand_core-0.6.4/ (rlib + cargo fingerprints).

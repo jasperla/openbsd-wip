@@ -1,0 +1,3 @@
+Prebuilt Rust crate filedescriptor 0.8.3 for offline grok-build.
+PKGNAME=rust-crate-filedescriptor_0_8_3-0
+Installs share/modcargo-crates/filedescriptor-0.8.3/ and lib/rust-crates/<arch>/filedescriptor-0.8.3/ (rlib + cargo fingerprints).

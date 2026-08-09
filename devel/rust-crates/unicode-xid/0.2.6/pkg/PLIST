@@ -1,0 +1,3 @@
+share/modcargo-crates/unicode-xid-0.2.6.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/unicode-xid-0.2.6/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/unicode-xid-0.2.6/libunicode_xid.rlib

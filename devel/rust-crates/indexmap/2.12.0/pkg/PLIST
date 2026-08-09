@@ -1,0 +1,3 @@
+share/modcargo-crates/indexmap-2.12.0.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/indexmap-2.12.0/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/indexmap-2.12.0/libindexmap.rlib

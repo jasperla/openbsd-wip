@@ -1,0 +1,3 @@
+share/modcargo-crates/num-traits-0.2.19.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/num-traits-0.2.19/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/num-traits-0.2.19/libnum_traits.rlib

@@ -1,0 +1,3 @@
+share/modcargo-crates/serde_tokenstream-0.2.3.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/serde_tokenstream-0.2.3/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/serde_tokenstream-0.2.3/libserde_tokenstream.rlib

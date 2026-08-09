@@ -1,0 +1,37 @@
+Index: modcargo-crates/pprof-0.15.0/src/profiler.rs
+--- modcargo-crates/pprof-0.15.0/src/profiler.rs.orig
++++ modcargo-crates/pprof-0.15.0/src/profiler.rs
+@@ -248,6 +248,11 @@
+                 let errno = *libc::__error();
+                 Self(errno)
+             }
++            #[cfg(target_os = "openbsd")]
++            {
++                let errno = *libc::__errno();
++                Self(errno)
++            }
+         }
+     }
+ }
+@@ -267,6 +272,10 @@
+             {
+                 *libc::__error() = self.0;
+             }
++            #[cfg(target_os = "openbsd")]
++            {
++                *libc::__errno() = self.0;
++            }
+         }
+     }
+ }
+@@ -306,6 +315,10 @@
+ 
+                 #[cfg(all(target_arch = "x86_64", target_os = "freebsd"))]
+                 let addr = unsafe { (*ucontext).uc_mcontext.mc_rip as usize };
++
++                // OpenBSD: ucontext_t aliases sigcontext; PC is sc_rip.
++                #[cfg(all(target_arch = "x86_64", target_os = "openbsd"))]
++                let addr = unsafe { (*ucontext).sc_rip as usize };
+ 
+                 #[cfg(all(target_arch = "x86_64", target_os = "macos"))]
+                 let addr = unsafe {

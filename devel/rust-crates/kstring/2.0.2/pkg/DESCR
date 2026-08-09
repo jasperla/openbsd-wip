@@ -1,0 +1,3 @@
+Prebuilt Rust crate kstring 2.0.2 for offline grok-build.
+PKGNAME=rust-crate-kstring_2_0_2-0
+Installs share/modcargo-crates/kstring-2.0.2/ and lib/rust-crates/<arch>/kstring-2.0.2/ (rlib + cargo fingerprints).

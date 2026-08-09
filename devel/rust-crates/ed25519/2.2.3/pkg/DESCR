@@ -1,0 +1,3 @@
+Prebuilt Rust crate ed25519 2.2.3 for offline grok-build.
+PKGNAME=rust-crate-ed25519_2_2_3-0
+Installs share/modcargo-crates/ed25519-2.2.3/ and lib/rust-crates/<arch>/ed25519-2.2.3/ (rlib + cargo fingerprints).

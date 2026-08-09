@@ -1,0 +1,3 @@
+share/modcargo-crates/clap_lex-0.7.6.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/clap_lex-0.7.6/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/clap_lex-0.7.6/libclap_lex.rlib

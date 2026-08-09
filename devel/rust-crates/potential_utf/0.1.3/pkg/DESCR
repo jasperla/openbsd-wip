@@ -1,0 +1,3 @@
+Prebuilt Rust crate potential_utf 0.1.3 for offline grok-build.
+PKGNAME=rust-crate-potential_utf_0_1_3-0
+Installs share/modcargo-crates/potential_utf-0.1.3/ and lib/rust-crates/<arch>/potential_utf-0.1.3/ (rlib + cargo fingerprints).

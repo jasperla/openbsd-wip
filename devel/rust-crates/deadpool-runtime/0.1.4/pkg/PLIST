@@ -1,0 +1,3 @@
+share/modcargo-crates/deadpool-runtime-0.1.4.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/deadpool-runtime-0.1.4/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/deadpool-runtime-0.1.4/libdeadpool_runtime.rlib

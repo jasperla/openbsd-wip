@@ -1,0 +1,3 @@
+Prebuilt Rust crate wit-bindgen-rust 0.51.0 for offline grok-build.
+PKGNAME=rust-crate-wit_bindgen_rust_0_51_0-0
+Installs share/modcargo-crates/wit-bindgen-rust-0.51.0/ and lib/rust-crates/<arch>/wit-bindgen-rust-0.51.0/ (rlib + cargo fingerprints).

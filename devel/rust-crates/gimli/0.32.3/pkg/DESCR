@@ -1,0 +1,3 @@
+Prebuilt Rust crate gimli 0.32.3 for offline grok-build.
+PKGNAME=rust-crate-gimli_0_32_3-0
+Installs share/modcargo-crates/gimli-0.32.3/ and lib/rust-crates/<arch>/gimli-0.32.3/ (rlib + cargo fingerprints).

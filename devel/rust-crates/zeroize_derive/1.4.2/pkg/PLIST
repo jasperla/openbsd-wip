@@ -1,0 +1,3 @@
+share/modcargo-crates/zeroize_derive-1.4.2.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/zeroize_derive-1.4.2/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/zeroize_derive-1.4.2/libzeroize_derive.so

@@ -1,0 +1,3 @@
+Prebuilt Rust crate find-msvc-tools 0.1.4 for offline grok-build.
+PKGNAME=rust-crate-find_msvc_tools_0_1_4-0
+Installs share/modcargo-crates/find-msvc-tools-0.1.4/ and lib/rust-crates/<arch>/find-msvc-tools-0.1.4/ (rlib + cargo fingerprints).

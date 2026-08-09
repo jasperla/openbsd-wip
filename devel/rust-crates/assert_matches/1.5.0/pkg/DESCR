@@ -1,0 +1,3 @@
+Prebuilt Rust crate assert_matches 1.5.0 for offline grok-build.
+PKGNAME=rust-crate-assert_matches_1_5_0-0
+Installs share/modcargo-crates/assert_matches-1.5.0/ and lib/rust-crates/<arch>/assert_matches-1.5.0/ (rlib + cargo fingerprints).

@@ -1,0 +1,3 @@
+share/modcargo-crates/enum-ordinalize-4.3.0.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/enum-ordinalize-4.3.0/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/enum-ordinalize-4.3.0/libenum_ordinalize.rlib

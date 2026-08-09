@@ -1,0 +1,3 @@
+share/modcargo-crates/aws-smithy-observability-0.1.4.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/aws-smithy-observability-0.1.4/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/aws-smithy-observability-0.1.4/libaws_smithy_observability.rlib

@@ -1,0 +1,3 @@
+share/modcargo-crates/unit-prefix-0.5.1.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/unit-prefix-0.5.1/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/unit-prefix-0.5.1/libunit_prefix.rlib

@@ -1,0 +1,3 @@
+share/modcargo-crates/inout-0.2.2.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/inout-0.2.2/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/inout-0.2.2/libinout.rlib

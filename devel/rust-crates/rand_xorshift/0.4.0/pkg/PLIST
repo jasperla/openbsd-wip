@@ -1,0 +1,3 @@
+share/modcargo-crates/rand_xorshift-0.4.0.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/rand_xorshift-0.4.0/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/rand_xorshift-0.4.0/librand_xorshift.rlib

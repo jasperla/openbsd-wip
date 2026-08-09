@@ -1,0 +1,3 @@
+share/modcargo-crates/sec1-0.7.3.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/sec1-0.7.3/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/sec1-0.7.3/libsec1.rlib

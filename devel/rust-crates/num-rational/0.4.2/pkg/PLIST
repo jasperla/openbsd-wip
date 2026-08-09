@@ -1,0 +1,3 @@
+share/modcargo-crates/num-rational-0.4.2.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/num-rational-0.4.2/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/num-rational-0.4.2/libnum_rational.rlib

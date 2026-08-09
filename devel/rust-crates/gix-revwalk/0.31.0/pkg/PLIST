@@ -1,0 +1,3 @@
+share/modcargo-crates/gix-revwalk-0.31.0.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/gix-revwalk-0.31.0/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/gix-revwalk-0.31.0/libgix_revwalk.rlib

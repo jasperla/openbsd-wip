@@ -1,0 +1,3 @@
+share/modcargo-crates/wit-parser-0.244.0.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/wit-parser-0.244.0/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/wit-parser-0.244.0/libwit_parser.rlib

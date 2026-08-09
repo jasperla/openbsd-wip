@@ -1,0 +1,3 @@
+Prebuilt Rust crate zlib-rs 0.6.6 for offline grok-build.
+PKGNAME=rust-crate-zlib_rs_0_6_6-0
+Installs share/modcargo-crates/zlib-rs-0.6.6/ and lib/rust-crates/<arch>/zlib-rs-0.6.6/ (rlib + cargo fingerprints).

@@ -1,0 +1,3 @@
+share/modcargo-crates/diff-0.1.13.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/diff-0.1.13/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/diff-0.1.13/libdiff.rlib

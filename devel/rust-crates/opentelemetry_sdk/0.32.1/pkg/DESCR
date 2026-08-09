@@ -1,0 +1,3 @@
+Prebuilt Rust crate opentelemetry_sdk 0.32.1 for offline grok-build.
+PKGNAME=rust-crate-opentelemetry_sdk_0_32_1-0
+Installs share/modcargo-crates/opentelemetry_sdk-0.32.1/ and lib/rust-crates/<arch>/opentelemetry_sdk-0.32.1/ (rlib + cargo fingerprints).

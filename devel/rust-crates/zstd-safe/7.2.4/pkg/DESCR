@@ -1,0 +1,3 @@
+Prebuilt Rust crate zstd-safe 7.2.4 for offline grok-build.
+PKGNAME=rust-crate-zstd_safe_7_2_4-0
+Installs share/modcargo-crates/zstd-safe-7.2.4/ and lib/rust-crates/<arch>/zstd-safe-7.2.4/ (rlib + cargo fingerprints).

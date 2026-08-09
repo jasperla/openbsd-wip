@@ -1,0 +1,3 @@
+Prebuilt Rust crate enumflags2_derive 0.7.12 for offline grok-build.
+PKGNAME=rust-crate-enumflags2_derive_0_7_12-0
+Installs share/modcargo-crates/enumflags2_derive-0.7.12/ and lib/rust-crates/<arch>/enumflags2_derive-0.7.12/ (rlib + cargo fingerprints).

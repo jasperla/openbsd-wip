@@ -1,0 +1,3 @@
+Prebuilt Rust crate gix-merge 0.16.0 for offline grok-build.
+PKGNAME=rust-crate-gix_merge_0_16_0-0
+Installs share/modcargo-crates/gix-merge-0.16.0/ and lib/rust-crates/<arch>/gix-merge-0.16.0/ (rlib + cargo fingerprints).

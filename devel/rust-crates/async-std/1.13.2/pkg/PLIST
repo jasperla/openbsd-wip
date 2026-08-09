@@ -1,0 +1,3 @@
+share/modcargo-crates/async-std-1.13.2.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/async-std-1.13.2/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/async-std-1.13.2/libasync_std.rlib

@@ -1,0 +1,3 @@
+Prebuilt Rust crate libmimalloc-sys 0.1.44 for offline grok-build.
+PKGNAME=rust-crate-libmimalloc_sys_0_1_44-0
+Installs share/modcargo-crates/libmimalloc-sys-0.1.44/ and lib/rust-crates/<arch>/libmimalloc-sys-0.1.44/ (rlib + cargo fingerprints).

@@ -1,0 +1,3 @@
+share/modcargo-crates/new_debug_unreachable-1.0.6.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/new_debug_unreachable-1.0.6/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/new_debug_unreachable-1.0.6/libdebug_unreachable.rlib

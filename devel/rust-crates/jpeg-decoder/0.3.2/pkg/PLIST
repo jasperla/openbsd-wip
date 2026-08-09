@@ -1,0 +1,3 @@
+share/modcargo-crates/jpeg-decoder-0.3.2.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/jpeg-decoder-0.3.2/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/jpeg-decoder-0.3.2/libjpeg_decoder.rlib

@@ -1,0 +1,3 @@
+share/modcargo-crates/md-5-0.11.0.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/md-5-0.11.0/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/md-5-0.11.0/libmd5.rlib

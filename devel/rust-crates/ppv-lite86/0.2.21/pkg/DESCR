@@ -1,0 +1,3 @@
+Prebuilt Rust crate ppv-lite86 0.2.21 for offline grok-build.
+PKGNAME=rust-crate-ppv_lite86_0_2_21-0
+Installs share/modcargo-crates/ppv-lite86-0.2.21/ and lib/rust-crates/<arch>/ppv-lite86-0.2.21/ (rlib + cargo fingerprints).

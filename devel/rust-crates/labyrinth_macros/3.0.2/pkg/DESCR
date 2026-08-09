@@ -1,0 +1,3 @@
+Prebuilt Rust crate labyrinth_macros 3.0.2 for offline grok-build.
+PKGNAME=rust-crate-labyrinth_macros_3_0_2-0
+Installs share/modcargo-crates/labyrinth_macros-3.0.2/ and lib/rust-crates/<arch>/labyrinth_macros-3.0.2/ (rlib + cargo fingerprints).

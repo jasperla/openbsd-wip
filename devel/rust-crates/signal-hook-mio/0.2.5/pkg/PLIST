@@ -1,0 +1,3 @@
+share/modcargo-crates/signal-hook-mio-0.2.5.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/signal-hook-mio-0.2.5/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/signal-hook-mio-0.2.5/libsignal_hook_mio.rlib

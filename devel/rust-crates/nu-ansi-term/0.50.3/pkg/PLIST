@@ -1,0 +1,3 @@
+share/modcargo-crates/nu-ansi-term-0.50.3.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/nu-ansi-term-0.50.3/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/nu-ansi-term-0.50.3/libnu_ansi_term.rlib

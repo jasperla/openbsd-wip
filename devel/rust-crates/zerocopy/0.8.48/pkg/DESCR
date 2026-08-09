@@ -1,0 +1,3 @@
+Prebuilt Rust crate zerocopy 0.8.48 for offline grok-build.
+PKGNAME=rust-crate-zerocopy_0_8_48-0
+Installs share/modcargo-crates/zerocopy-0.8.48/ and lib/rust-crates/<arch>/zerocopy-0.8.48/ (rlib + cargo fingerprints).

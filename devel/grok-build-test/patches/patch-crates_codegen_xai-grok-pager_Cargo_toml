@@ -1,0 +1,11 @@
+Index: crates/codegen/xai-grok-pager/Cargo.toml
+--- crates/codegen/xai-grok-pager/Cargo.toml.orig
++++ crates/codegen/xai-grok-pager/Cargo.toml
+@@ -97,6 +97,7 @@
+ # (cpal is target-gated to non-Linux inside xai-grok-voice).
+ xai-grok-voice = { path = "../xai-grok-voice", default-features = false, features = ["audio"] }
+ xai-grok-shell = { workspace = true }
++xai-grok-memory = { workspace = true }
+ xai-grok-workspace = { workspace = true }
+ xai-token-estimation = { workspace = true }
+ xai-grok-telemetry = { workspace = true }

@@ -1,0 +1,3 @@
+Prebuilt Rust crate derive_arbitrary 1.4.2 for offline grok-build.
+PKGNAME=rust-crate-derive_arbitrary_1_4_2-0
+Installs share/modcargo-crates/derive_arbitrary-1.4.2/ and lib/rust-crates/<arch>/derive_arbitrary-1.4.2/ (rlib + cargo fingerprints).

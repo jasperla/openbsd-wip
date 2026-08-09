@@ -1,0 +1,3 @@
+share/modcargo-crates/icu_normalizer-2.0.0.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/icu_normalizer-2.0.0/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/icu_normalizer-2.0.0/libicu_normalizer.rlib

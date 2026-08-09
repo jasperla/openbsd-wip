@@ -1,0 +1,3 @@
+share/modcargo-crates/unsafe-libyaml-0.2.11.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/unsafe-libyaml-0.2.11/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/unsafe-libyaml-0.2.11/libunsafe_libyaml.rlib

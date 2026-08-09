@@ -1,0 +1,3 @@
+share/modcargo-crates/memoffset-0.9.1.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/memoffset-0.9.1/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/memoffset-0.9.1/libmemoffset.rlib

@@ -1,0 +1,3 @@
+Prebuilt Rust crate dirs 6.0.0 for offline grok-build.
+PKGNAME=rust-crate-dirs_6_0_0-0
+Installs share/modcargo-crates/dirs-6.0.0/ and lib/rust-crates/<arch>/dirs-6.0.0/ (rlib + cargo fingerprints).

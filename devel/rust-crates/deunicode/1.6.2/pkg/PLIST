@@ -1,0 +1,3 @@
+share/modcargo-crates/deunicode-1.6.2.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/deunicode-1.6.2/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/deunicode-1.6.2/libdeunicode.rlib

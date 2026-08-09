@@ -1,0 +1,3 @@
+Prebuilt Rust crate sdd 3.0.10 for offline grok-build.
+PKGNAME=rust-crate-sdd_3_0_10-0
+Installs share/modcargo-crates/sdd-3.0.10/ and lib/rust-crates/<arch>/sdd-3.0.10/ (rlib + cargo fingerprints).

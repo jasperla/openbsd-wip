@@ -1,0 +1,3 @@
+share/modcargo-crates/fraction-0.15.3.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/fraction-0.15.3/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/fraction-0.15.3/libfraction.rlib

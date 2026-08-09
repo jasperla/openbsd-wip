@@ -1,0 +1,3 @@
+share/modcargo-crates/findshlibs-0.10.2.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/findshlibs-0.10.2/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/findshlibs-0.10.2/libfindshlibs.rlib

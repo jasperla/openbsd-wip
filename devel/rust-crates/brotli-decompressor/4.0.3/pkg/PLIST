@@ -1,0 +1,3 @@
+share/modcargo-crates/brotli-decompressor-4.0.3.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/brotli-decompressor-4.0.3/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/brotli-decompressor-4.0.3/libbrotli_decompressor.rlib

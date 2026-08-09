@@ -1,0 +1,3 @@
+share/modcargo-crates/backtrace-0.3.76.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/backtrace-0.3.76/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/backtrace-0.3.76/libbacktrace.rlib

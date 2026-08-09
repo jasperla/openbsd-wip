@@ -1,0 +1,3 @@
+share/modcargo-crates/pbjson-build-0.9.0.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/pbjson-build-0.9.0/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/pbjson-build-0.9.0/libpbjson_build.rlib

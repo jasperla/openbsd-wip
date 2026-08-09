@@ -1,0 +1,3 @@
+share/modcargo-crates/tracing-0.1.44.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/tracing-0.1.44/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/tracing-0.1.44/libtracing.rlib

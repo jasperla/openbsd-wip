@@ -1,0 +1,3 @@
+share/modcargo-crates/criterion-0.6.0.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/criterion-0.6.0/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/criterion-0.6.0/libcriterion.rlib

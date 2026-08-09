@@ -1,0 +1,3 @@
+share/modcargo-crates/quinn-udp-0.5.14.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/quinn-udp-0.5.14/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/quinn-udp-0.5.14/libquinn_udp.rlib

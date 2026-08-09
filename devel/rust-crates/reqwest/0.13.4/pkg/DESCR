@@ -1,0 +1,3 @@
+Prebuilt Rust crate reqwest 0.13.4 for offline grok-build.
+PKGNAME=rust-crate-reqwest_0_13_4-0
+Installs share/modcargo-crates/reqwest-0.13.4/ and lib/rust-crates/<arch>/reqwest-0.13.4/ (rlib + cargo fingerprints).

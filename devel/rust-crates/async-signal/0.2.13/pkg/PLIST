@@ -1,0 +1,3 @@
+share/modcargo-crates/async-signal-0.2.13.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/async-signal-0.2.13/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/async-signal-0.2.13/libasync_signal.rlib

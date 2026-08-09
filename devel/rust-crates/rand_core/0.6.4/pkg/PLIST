@@ -1,0 +1,3 @@
+share/modcargo-crates/rand_core-0.6.4.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/rand_core-0.6.4/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/rand_core-0.6.4/librand_core.rlib

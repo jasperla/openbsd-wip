@@ -1,0 +1,3 @@
+share/modcargo-crates/shell-words-1.1.0.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/shell-words-1.1.0/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/shell-words-1.1.0/libshell_words.rlib

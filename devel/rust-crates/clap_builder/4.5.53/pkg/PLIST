@@ -1,0 +1,3 @@
+share/modcargo-crates/clap_builder-4.5.53.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/clap_builder-4.5.53/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/clap_builder-4.5.53/libclap_builder.rlib

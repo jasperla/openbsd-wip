@@ -1,0 +1,3 @@
+share/modcargo-crates/uuid-simd-0.8.0.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/uuid-simd-0.8.0/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/uuid-simd-0.8.0/libuuid_simd.rlib

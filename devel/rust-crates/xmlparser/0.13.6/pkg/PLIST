@@ -1,0 +1,3 @@
+share/modcargo-crates/xmlparser-0.13.6.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/xmlparser-0.13.6/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/xmlparser-0.13.6/libxmlparser.rlib

@@ -1,0 +1,3 @@
+Prebuilt Rust crate clap_derive 4.5.49 for offline grok-build.
+PKGNAME=rust-crate-clap_derive_4_5_49-0
+Installs share/modcargo-crates/clap_derive-4.5.49/ and lib/rust-crates/<arch>/clap_derive-4.5.49/ (rlib + cargo fingerprints).

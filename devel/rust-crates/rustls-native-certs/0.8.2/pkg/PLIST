@@ -1,0 +1,3 @@
+share/modcargo-crates/rustls-native-certs-0.8.2.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/rustls-native-certs-0.8.2/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/rustls-native-certs-0.8.2/librustls_native_certs.rlib

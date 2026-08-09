@@ -1,0 +1,3 @@
+Prebuilt Rust crate libm 0.2.15 for offline grok-build.
+PKGNAME=rust-crate-libm_0_2_15-0
+Installs share/modcargo-crates/libm-0.2.15/ and lib/rust-crates/<arch>/libm-0.2.15/ (rlib + cargo fingerprints).

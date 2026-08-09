@@ -1,0 +1,3 @@
+share/modcargo-crates/quinn-0.11.9.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/quinn-0.11.9/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/quinn-0.11.9/libquinn.rlib

@@ -1,0 +1,3 @@
+Prebuilt Rust crate bytes-utils 0.1.4 for offline grok-build.
+PKGNAME=rust-crate-bytes_utils_0_1_4-0
+Installs share/modcargo-crates/bytes-utils-0.1.4/ and lib/rust-crates/<arch>/bytes-utils-0.1.4/ (rlib + cargo fingerprints).

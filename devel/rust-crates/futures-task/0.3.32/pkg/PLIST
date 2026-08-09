@@ -1,0 +1,3 @@
+share/modcargo-crates/futures-task-0.3.32.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/futures-task-0.3.32/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/futures-task-0.3.32/libfutures_task.rlib

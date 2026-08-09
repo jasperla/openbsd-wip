@@ -1,0 +1,3 @@
+share/modcargo-crates/sigstore-verify-0.6.3.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/sigstore-verify-0.6.3/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/sigstore-verify-0.6.3/libsigstore_verify.rlib

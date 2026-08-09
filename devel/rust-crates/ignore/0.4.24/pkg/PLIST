@@ -1,0 +1,3 @@
+share/modcargo-crates/ignore-0.4.24.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/ignore-0.4.24/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/ignore-0.4.24/libignore.rlib

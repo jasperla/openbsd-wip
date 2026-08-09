@@ -1,0 +1,3 @@
+share/modcargo-crates/phf-0.13.1.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/phf-0.13.1/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/phf-0.13.1/libphf.rlib

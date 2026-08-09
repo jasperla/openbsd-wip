@@ -1,0 +1,3 @@
+share/modcargo-crates/gcloud-metadata-1.0.2.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/gcloud-metadata-1.0.2/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/gcloud-metadata-1.0.2/libgcloud_metadata.rlib

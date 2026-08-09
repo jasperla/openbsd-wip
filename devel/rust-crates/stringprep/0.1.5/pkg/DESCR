@@ -1,0 +1,3 @@
+Prebuilt Rust crate stringprep 0.1.5 for offline grok-build.
+PKGNAME=rust-crate-stringprep_0_1_5-0
+Installs share/modcargo-crates/stringprep-0.1.5/ and lib/rust-crates/<arch>/stringprep-0.1.5/ (rlib + cargo fingerprints).

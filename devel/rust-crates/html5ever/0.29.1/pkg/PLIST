@@ -1,0 +1,3 @@
+share/modcargo-crates/html5ever-0.29.1.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/html5ever-0.29.1/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/html5ever-0.29.1/libhtml5ever.rlib

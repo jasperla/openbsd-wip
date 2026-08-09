@@ -1,0 +1,3 @@
+share/modcargo-crates/itoa-1.0.17.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/itoa-1.0.17/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/itoa-1.0.17/libitoa.rlib

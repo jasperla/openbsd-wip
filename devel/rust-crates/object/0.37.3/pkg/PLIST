@@ -1,0 +1,3 @@
+share/modcargo-crates/object-0.37.3.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/object-0.37.3/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/object-0.37.3/libobject.rlib

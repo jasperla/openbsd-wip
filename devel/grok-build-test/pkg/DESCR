@@ -1,0 +1,5 @@
+TEST PORT. grok-build with all crates.io dependencies supplied by
+devel/rust-crates/* packages (gen-rust-crate-ports.py) instead of
+MODCARGO_CRATES distfiles.
+
+Installs grok-test / agent-test. Not for production (use devel/grok-build).

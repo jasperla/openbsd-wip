@@ -1,0 +1,3 @@
+share/modcargo-crates/derive_arbitrary-1.4.2.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/derive_arbitrary-1.4.2/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/derive_arbitrary-1.4.2/libderive_arbitrary.so

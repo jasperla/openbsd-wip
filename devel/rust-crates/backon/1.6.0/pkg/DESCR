@@ -1,0 +1,3 @@
+Prebuilt Rust crate backon 1.6.0 for offline grok-build.
+PKGNAME=rust-crate-backon_1_6_0-0
+Installs share/modcargo-crates/backon-1.6.0/ and lib/rust-crates/<arch>/backon-1.6.0/ (rlib + cargo fingerprints).

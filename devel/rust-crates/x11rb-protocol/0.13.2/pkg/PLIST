@@ -1,0 +1,3 @@
+share/modcargo-crates/x11rb-protocol-0.13.2.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/x11rb-protocol-0.13.2/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/x11rb-protocol-0.13.2/libx11rb_protocol.rlib

@@ -1,0 +1,3 @@
+share/modcargo-crates/rustybuzz-0.20.1.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/rustybuzz-0.20.1/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/rustybuzz-0.20.1/librustybuzz.rlib

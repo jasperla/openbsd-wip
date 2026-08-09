@@ -1,0 +1,3 @@
+Prebuilt Rust crate rsa 0.9.10 for offline grok-build.
+PKGNAME=rust-crate-rsa_0_9_10-0
+Installs share/modcargo-crates/rsa-0.9.10/ and lib/rust-crates/<arch>/rsa-0.9.10/ (rlib + cargo fingerprints).

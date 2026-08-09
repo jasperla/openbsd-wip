@@ -1,0 +1,3 @@
+Prebuilt Rust crate winnow 0.7.14 for offline grok-build.
+PKGNAME=rust-crate-winnow_0_7_14-0
+Installs share/modcargo-crates/winnow-0.7.14/ and lib/rust-crates/<arch>/winnow-0.7.14/ (rlib + cargo fingerprints).

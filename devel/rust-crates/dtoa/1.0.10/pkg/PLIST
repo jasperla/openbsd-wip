@@ -1,0 +1,3 @@
+share/modcargo-crates/dtoa-1.0.10.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/dtoa-1.0.10/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/dtoa-1.0.10/libdtoa.rlib

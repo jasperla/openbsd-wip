@@ -1,0 +1,3 @@
+Prebuilt Rust crate wasm-encoder 0.244.0 for offline grok-build.
+PKGNAME=rust-crate-wasm_encoder_0_244_0-0
+Installs share/modcargo-crates/wasm-encoder-0.244.0/ and lib/rust-crates/<arch>/wasm-encoder-0.244.0/ (rlib + cargo fingerprints).

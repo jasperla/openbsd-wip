@@ -1,0 +1,3 @@
+share/modcargo-crates/pin-project-internal-1.1.11.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/pin-project-internal-1.1.11/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/pin-project-internal-1.1.11/libpin_project_internal.so

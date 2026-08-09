@@ -1,0 +1,3 @@
+share/modcargo-crates/crypto-common-0.1.6.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/crypto-common-0.1.6/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/crypto-common-0.1.6/libcrypto_common.rlib

@@ -1,0 +1,3 @@
+Prebuilt Rust crate hayro-ccitt 0.3.0 for offline grok-build.
+PKGNAME=rust-crate-hayro_ccitt_0_3_0-0
+Installs share/modcargo-crates/hayro-ccitt-0.3.0/ and lib/rust-crates/<arch>/hayro-ccitt-0.3.0/ (rlib + cargo fingerprints).

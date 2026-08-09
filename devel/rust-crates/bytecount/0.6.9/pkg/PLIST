@@ -1,0 +1,3 @@
+share/modcargo-crates/bytecount-0.6.9.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/bytecount-0.6.9/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/bytecount-0.6.9/libbytecount.rlib

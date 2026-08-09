@@ -1,0 +1,3 @@
+share/modcargo-crates/async-fs-2.2.0.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/async-fs-2.2.0/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/async-fs-2.2.0/libasync_fs.rlib

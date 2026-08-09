@@ -1,0 +1,3 @@
+share/modcargo-crates/parking_lot-0.12.5.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/parking_lot-0.12.5/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/parking_lot-0.12.5/libparking_lot.rlib

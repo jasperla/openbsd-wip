@@ -1,0 +1,3 @@
+share/modcargo-crates/is_terminal_polyfill-1.70.2.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/is_terminal_polyfill-1.70.2/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/is_terminal_polyfill-1.70.2/libis_terminal_polyfill.rlib

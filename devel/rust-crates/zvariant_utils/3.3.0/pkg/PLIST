@@ -1,0 +1,3 @@
+share/modcargo-crates/zvariant_utils-3.3.0.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/zvariant_utils-3.3.0/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/zvariant_utils-3.3.0/libzvariant_utils.rlib

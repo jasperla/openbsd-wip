@@ -1,0 +1,3 @@
+share/modcargo-crates/paste-1.0.15.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/paste-1.0.15/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/paste-1.0.15/libpaste.so

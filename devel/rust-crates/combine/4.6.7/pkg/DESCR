@@ -1,0 +1,3 @@
+Prebuilt Rust crate combine 4.6.7 for offline grok-build.
+PKGNAME=rust-crate-combine_4_6_7-0
+Installs share/modcargo-crates/combine-4.6.7/ and lib/rust-crates/<arch>/combine-4.6.7/ (rlib + cargo fingerprints).

@@ -1,0 +1,3 @@
+share/modcargo-crates/webpki-root-certs-1.0.3.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/webpki-root-certs-1.0.3/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/webpki-root-certs-1.0.3/libwebpki_root_certs.rlib

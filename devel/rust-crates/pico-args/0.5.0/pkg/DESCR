@@ -1,0 +1,3 @@
+Prebuilt Rust crate pico-args 0.5.0 for offline grok-build.
+PKGNAME=rust-crate-pico_args_0_5_0-0
+Installs share/modcargo-crates/pico-args-0.5.0/ and lib/rust-crates/<arch>/pico-args-0.5.0/ (rlib + cargo fingerprints).

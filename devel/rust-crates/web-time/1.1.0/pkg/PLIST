@@ -1,0 +1,3 @@
+share/modcargo-crates/web-time-1.1.0.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/web-time-1.1.0/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/web-time-1.1.0/libweb_time.rlib

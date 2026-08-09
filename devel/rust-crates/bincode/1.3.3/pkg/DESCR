@@ -1,0 +1,3 @@
+Prebuilt Rust crate bincode 1.3.3 for offline grok-build.
+PKGNAME=rust-crate-bincode_1_3_3-0
+Installs share/modcargo-crates/bincode-1.3.3/ and lib/rust-crates/<arch>/bincode-1.3.3/ (rlib + cargo fingerprints).

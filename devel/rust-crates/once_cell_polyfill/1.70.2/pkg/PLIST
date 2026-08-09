@@ -1,0 +1,3 @@
+share/modcargo-crates/once_cell_polyfill-1.70.2.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/once_cell_polyfill-1.70.2/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/once_cell_polyfill-1.70.2/libonce_cell_polyfill.rlib

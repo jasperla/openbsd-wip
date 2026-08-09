@@ -1,0 +1,3 @@
+Prebuilt Rust crate ryu 1.0.20 for offline grok-build.
+PKGNAME=rust-crate-ryu_1_0_20-0
+Installs share/modcargo-crates/ryu-1.0.20/ and lib/rust-crates/<arch>/ryu-1.0.20/ (rlib + cargo fingerprints).

@@ -1,0 +1,3 @@
+share/modcargo-crates/grid-1.0.1.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/grid-1.0.1/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/grid-1.0.1/libgrid.rlib

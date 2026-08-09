@@ -1,0 +1,3 @@
+share/modcargo-crates/gix-traverse-0.57.0.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/gix-traverse-0.57.0/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/gix-traverse-0.57.0/libgix_traverse.rlib

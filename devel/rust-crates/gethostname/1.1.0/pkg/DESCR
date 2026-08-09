@@ -1,0 +1,3 @@
+Prebuilt Rust crate gethostname 1.1.0 for offline grok-build.
+PKGNAME=rust-crate-gethostname_1_1_0-0
+Installs share/modcargo-crates/gethostname-1.1.0/ and lib/rust-crates/<arch>/gethostname-1.1.0/ (rlib + cargo fingerprints).

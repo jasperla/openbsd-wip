@@ -1,0 +1,3 @@
+Prebuilt Rust crate prometheus-parse 0.2.5 for offline grok-build.
+PKGNAME=rust-crate-prometheus_parse_0_2_5-0
+Installs share/modcargo-crates/prometheus-parse-0.2.5/ and lib/rust-crates/<arch>/prometheus-parse-0.2.5/ (rlib + cargo fingerprints).

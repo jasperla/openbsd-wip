@@ -1,0 +1,3 @@
+share/modcargo-crates/prettyplease-0.2.37.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/prettyplease-0.2.37/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/prettyplease-0.2.37/libprettyplease.rlib

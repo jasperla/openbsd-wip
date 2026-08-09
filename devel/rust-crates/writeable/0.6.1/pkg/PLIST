@@ -1,0 +1,3 @@
+share/modcargo-crates/writeable-0.6.1.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/writeable-0.6.1/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/writeable-0.6.1/libwriteable.rlib

@@ -1,0 +1,3 @@
+share/modcargo-crates/hkdf-0.12.4.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/hkdf-0.12.4/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/hkdf-0.12.4/libhkdf.rlib

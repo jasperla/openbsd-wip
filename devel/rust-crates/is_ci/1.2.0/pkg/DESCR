@@ -1,0 +1,3 @@
+Prebuilt Rust crate is_ci 1.2.0 for offline grok-build.
+PKGNAME=rust-crate-is_ci_1_2_0-0
+Installs share/modcargo-crates/is_ci-1.2.0/ and lib/rust-crates/<arch>/is_ci-1.2.0/ (rlib + cargo fingerprints).

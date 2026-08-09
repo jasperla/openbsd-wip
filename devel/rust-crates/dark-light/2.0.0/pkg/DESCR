@@ -1,0 +1,3 @@
+Prebuilt Rust crate dark-light 2.0.0 for offline grok-build.
+PKGNAME=rust-crate-dark_light_2_0_0-0
+Installs share/modcargo-crates/dark-light-2.0.0/ and lib/rust-crates/<arch>/dark-light-2.0.0/ (rlib + cargo fingerprints).

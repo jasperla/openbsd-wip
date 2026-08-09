@@ -1,0 +1,3 @@
+share/modcargo-crates/async-compression-0.4.19.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/async-compression-0.4.19/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/async-compression-0.4.19/libasync_compression.rlib

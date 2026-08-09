@@ -1,0 +1,3 @@
+Prebuilt Rust crate jni 0.21.1 for offline grok-build.
+PKGNAME=rust-crate-jni_0_21_1-0
+Installs share/modcargo-crates/jni-0.21.1/ and lib/rust-crates/<arch>/jni-0.21.1/ (rlib + cargo fingerprints).

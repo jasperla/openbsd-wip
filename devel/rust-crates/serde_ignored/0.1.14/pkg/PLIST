@@ -1,0 +1,3 @@
+share/modcargo-crates/serde_ignored-0.1.14.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/serde_ignored-0.1.14/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/serde_ignored-0.1.14/libserde_ignored.rlib

@@ -1,0 +1,3 @@
+Prebuilt Rust crate rfc6979 0.4.0 for offline grok-build.
+PKGNAME=rust-crate-rfc6979_0_4_0-0
+Installs share/modcargo-crates/rfc6979-0.4.0/ and lib/rust-crates/<arch>/rfc6979-0.4.0/ (rlib + cargo fingerprints).

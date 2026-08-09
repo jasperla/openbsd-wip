@@ -1,0 +1,3 @@
+share/modcargo-crates/fastrace-opentelemetry-0.18.1.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/fastrace-opentelemetry-0.18.1/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/fastrace-opentelemetry-0.18.1/libfastrace_opentelemetry.rlib

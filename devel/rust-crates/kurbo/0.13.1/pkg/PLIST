@@ -1,0 +1,3 @@
+share/modcargo-crates/kurbo-0.13.1.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/kurbo-0.13.1/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/kurbo-0.13.1/libkurbo.rlib

@@ -1,0 +1,3 @@
+share/modcargo-crates/zbus_macros-5.14.0.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/zbus_macros-5.14.0/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/zbus_macros-5.14.0/libzbus_macros.so

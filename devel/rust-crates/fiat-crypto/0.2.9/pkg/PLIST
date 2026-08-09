@@ -1,0 +1,3 @@
+share/modcargo-crates/fiat-crypto-0.2.9.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/fiat-crypto-0.2.9/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/fiat-crypto-0.2.9/libfiat_crypto.rlib

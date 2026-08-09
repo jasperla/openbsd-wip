@@ -1,0 +1,3 @@
+Prebuilt Rust crate windows-future 0.3.2 for offline grok-build.
+PKGNAME=rust-crate-windows_future_0_3_2-0
+Installs share/modcargo-crates/windows-future-0.3.2/ and lib/rust-crates/<arch>/windows-future-0.3.2/ (rlib + cargo fingerprints).

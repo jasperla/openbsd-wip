@@ -1,0 +1,3 @@
+share/modcargo-crates/spin-0.9.8.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/spin-0.9.8/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/spin-0.9.8/libspin.rlib

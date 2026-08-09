@@ -1,0 +1,3 @@
+Prebuilt Rust crate fxhash 0.2.1 for offline grok-build.
+PKGNAME=rust-crate-fxhash_0_2_1-0
+Installs share/modcargo-crates/fxhash-0.2.1/ and lib/rust-crates/<arch>/fxhash-0.2.1/ (rlib + cargo fingerprints).

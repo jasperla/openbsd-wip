@@ -1,0 +1,3 @@
+share/modcargo-crates/plist-1.8.0.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/plist-1.8.0/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/plist-1.8.0/libplist.rlib

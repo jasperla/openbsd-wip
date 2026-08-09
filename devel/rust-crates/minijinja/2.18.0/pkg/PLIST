@@ -1,0 +1,3 @@
+share/modcargo-crates/minijinja-2.18.0.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/minijinja-2.18.0/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/minijinja-2.18.0/libminijinja.rlib

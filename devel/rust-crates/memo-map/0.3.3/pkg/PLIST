@@ -1,0 +1,3 @@
+share/modcargo-crates/memo-map-0.3.3.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/memo-map-0.3.3/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/memo-map-0.3.3/libmemo_map.rlib

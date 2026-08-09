@@ -1,0 +1,3 @@
+share/modcargo-crates/num-cmp-0.1.0.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/num-cmp-0.1.0/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/num-cmp-0.1.0/libnum_cmp.rlib

@@ -1,0 +1,3 @@
+Prebuilt Rust crate cms 0.2.3 for offline grok-build.
+PKGNAME=rust-crate-cms_0_2_3-0
+Installs share/modcargo-crates/cms-0.2.3/ and lib/rust-crates/<arch>/cms-0.2.3/ (rlib + cargo fingerprints).

@@ -1,0 +1,3 @@
+Prebuilt Rust crate wasip3 0.4.0+wasi-0.3.0-rc-2026-01-06 for offline grok-build.
+PKGNAME=rust-crate-wasip3_0_4_0_wasi_0_3_0_rc_2026_01_06-0
+Installs share/modcargo-crates/wasip3-0.4.0+wasi-0.3.0-rc-2026-01-06/ and lib/rust-crates/<arch>/wasip3-0.4.0+wasi-0.3.0-rc-2026-01-06/ (rlib + cargo fingerprints).

@@ -1,0 +1,3 @@
+share/modcargo-crates/rapidhash-4.2.0.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/rapidhash-4.2.0/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/rapidhash-4.2.0/librapidhash.rlib

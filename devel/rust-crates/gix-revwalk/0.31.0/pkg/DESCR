@@ -1,0 +1,3 @@
+Prebuilt Rust crate gix-revwalk 0.31.0 for offline grok-build.
+PKGNAME=rust-crate-gix_revwalk_0_31_0-0
+Installs share/modcargo-crates/gix-revwalk-0.31.0/ and lib/rust-crates/<arch>/gix-revwalk-0.31.0/ (rlib + cargo fingerprints).

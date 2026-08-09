@@ -1,0 +1,3 @@
+share/modcargo-crates/aws-smithy-query-0.60.8.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/aws-smithy-query-0.60.8/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/aws-smithy-query-0.60.8/libaws_smithy_query.rlib

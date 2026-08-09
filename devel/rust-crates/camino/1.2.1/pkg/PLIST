@@ -1,0 +1,3 @@
+share/modcargo-crates/camino-1.2.1.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/camino-1.2.1/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/camino-1.2.1/libcamino.rlib

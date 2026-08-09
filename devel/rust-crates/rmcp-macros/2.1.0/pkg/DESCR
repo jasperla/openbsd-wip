@@ -1,0 +1,3 @@
+Prebuilt Rust crate rmcp-macros 2.1.0 for offline grok-build.
+PKGNAME=rust-crate-rmcp_macros_2_1_0-0
+Installs share/modcargo-crates/rmcp-macros-2.1.0/ and lib/rust-crates/<arch>/rmcp-macros-2.1.0/ (rlib + cargo fingerprints).

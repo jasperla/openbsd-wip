@@ -1,0 +1,3 @@
+share/modcargo-crates/servo_arc-0.4.3.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/servo_arc-0.4.3/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/servo_arc-0.4.3/libservo_arc.rlib

@@ -1,0 +1,3 @@
+share/modcargo-crates/tracing-subscriber-0.3.23.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/tracing-subscriber-0.3.23/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/tracing-subscriber-0.3.23/libtracing_subscriber.rlib

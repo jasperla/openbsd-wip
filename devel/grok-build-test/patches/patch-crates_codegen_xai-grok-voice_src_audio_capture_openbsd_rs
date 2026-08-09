@@ -1,0 +1,212 @@
+Index: crates/codegen/xai-grok-voice/src/audio/capture_openbsd.rs
+--- /dev/null
++++ crates/codegen/xai-grok-voice/src/audio/capture_openbsd.rs
+@@ -0,0 +1,208 @@
++//! Microphone capture on OpenBSD via `aucat(1)` (sndio).
++//!
++//! cpal has no OpenBSD / sndio host (it falls back to a Null host that always
++//! reports no devices). Linking libsndio in-process is possible but heavier
++//! than we need: base-system `aucat` already talks to sndio and can stream
++//! raw PCM to stdout — the same subprocess pattern Linux uses for
++//! `pw-record` / `parec` / `arecord`.
++//!
++//! Format: signed 16-bit little-endian mono at the STT sample rate (headerless
++//! raw), which is exactly what the pipeline forwards.
++
++use std::io::Read;
++use std::process::{Child, Command, Stdio};
++use std::sync::atomic::AtomicBool;
++use std::sync::{Arc, Mutex};
++use std::thread;
++use std::time::{Duration, Instant};
++
++use tokio::sync::mpsc as async_mpsc;
++
++use super::pipe::{self, READ_CHUNK};
++use crate::error::VoiceError;
++
++/// How long to wait after spawning before deciding the recorder started cleanly.
++const START_GRACE: Duration = Duration::from_millis(300);
++
++const AUCAT: &str = "aucat";
++
++/// Args: raw S16LE mono PCM at `rate` Hz on stdout (`-o -`).
++///
++/// Per-file options (`-c`, `-e`, `-h`, `-r`) must precede `-o` (see aucat(1)).
++fn aucat_args(rate: u32) -> Vec<String> {
++    vec![
++        "-c".into(),
++        "1".into(),
++        "-e".into(),
++        "s16le".into(),
++        "-r".into(),
++        rate.to_string(),
++        "-h".into(),
++        "raw".into(),
++        "-o".into(),
++        "-".into(),
++    ]
++}
++
++fn binary_on_path(name: &str) -> bool {
++    use std::os::unix::fs::PermissionsExt;
++    let Some(path) = std::env::var_os("PATH") else {
++        return false;
++    };
++    std::env::split_paths(&path).any(|dir| {
++        dir.join(name)
++            .metadata()
++            .map(|m| m.is_file() && m.permissions().mode() & 0o111 != 0)
++            .unwrap_or(false)
++    })
++}
++
++fn require_aucat() -> Result<(), VoiceError> {
++    if binary_on_path(AUCAT) {
++        Ok(())
++    } else {
++        Err(VoiceError::Config(
++            "aucat not found on PATH (OpenBSD base system audio tool for sndio)".into(),
++        ))
++    }
++}
++
++/// Spawn `aucat` recording the default sndio input; confirm it did not exit
++/// immediately (no device / sndiod down).
++fn spawn_recorder(sample_rate: u32) -> Result<Child, VoiceError> {
++    require_aucat()?;
++
++    let mut cmd = Command::new(AUCAT);
++    cmd.args(aucat_args(sample_rate))
++        .stdin(Stdio::null())
++        .stdout(Stdio::piped())
++        .stderr(Stdio::piped());
++    // setsid detach via the sanctioned helper (workspace subprocess rule).
++    xai_tty_utils::detach_std_command(&mut cmd);
++    #[allow(clippy::disallowed_methods)] // recorder owned by the capture handle, killed on stop
++    let mut child = cmd
++        .spawn()
++        .map_err(|e| VoiceError::Config(format!("failed to start {AUCAT}: {e}")))?;
++
++    thread::sleep(START_GRACE);
++    match child.try_wait() {
++        Ok(Some(status)) => {
++            let mut stderr = String::new();
++            if let Some(mut err) = child.stderr.take() {
++                let _ = err.read_to_string(&mut stderr);
++            }
++            let stderr = stderr.trim();
++            Err(VoiceError::Config(format!(
++                "{AUCAT} exited immediately ({status}){}",
++                if stderr.is_empty() {
++                    String::new()
++                } else {
++                    format!(": {stderr}")
++                },
++            )))
++        }
++        Ok(None) => Ok(child),
++        Err(e) => Err(VoiceError::Config(format!("failed to poll {AUCAT}: {e}"))),
++    }
++}
++
++/// Stop handle for the recorder subprocess (owns the child + reader thread).
++pub use super::pipe::ChildCaptureHandle as CaptureHandle;
++
++/// Spawn subprocess capture; PCM16 LE chunks are forwarded to `pcm_tx`.
++pub fn spawn_pcm_capture(
++    sample_rate: u32,
++    pcm_tx: async_mpsc::Sender<Vec<u8>>,
++) -> Result<CaptureHandle, VoiceError> {
++    let mut child = spawn_recorder(sample_rate)?;
++    let Some(stdout) = child.stdout.take() else {
++        let _ = child.kill();
++        let _ = child.wait();
++        return Err(VoiceError::Config(format!("{AUCAT} produced no stdout")));
++    };
++
++    pipe::drain_stderr(&mut child, AUCAT);
++
++    let stop = Arc::new(AtomicBool::new(false));
++    let stop_reader = Arc::clone(&stop);
++    let reader = thread::spawn(move || pipe::forward_pcm(stdout, pcm_tx, stop_reader, AUCAT));
++
++    tracing::info!(
++        recorder = AUCAT,
++        sample_rate,
++        "voice capture stream (aucat/sndio subprocess)"
++    );
++
++    Ok(CaptureHandle::new(child, stop, reader))
++}
++
++/// Recorder that would be spawned, without recording ([`crate::probe::input_device_info`]).
++pub fn input_device_info() -> Result<crate::probe::InputDeviceInfo, VoiceError> {
++    require_aucat()?;
++    Ok(crate::probe::InputDeviceInfo {
++        name: AUCAT.to_string(),
++        detail: "aucat → sndio default input (see AUDIODEVICE / sndiod)".to_string(),
++    })
++}
++
++/// Record mono PCM16 LE for a fixed duration (probe / diagnostics).
++pub fn capture_pcm_for_duration(
++    sample_rate: u32,
++    seconds: u32,
++) -> Result<(Vec<u8>, u32), VoiceError> {
++    let mut child = spawn_recorder(sample_rate)?;
++    let Some(mut stdout) = child.stdout.take() else {
++        let _ = child.kill();
++        let _ = child.wait();
++        return Err(VoiceError::Config(format!("{AUCAT} produced no stdout")));
++    };
++    pipe::drain_stderr(&mut child, AUCAT);
++
++    let duration = Duration::from_secs(seconds.max(1) as u64);
++    let deadline = Instant::now() + duration;
++
++    let child = Arc::new(Mutex::new(child));
++    let watchdog_child = Arc::clone(&child);
++    thread::spawn(move || {
++        thread::sleep(duration);
++        let mut child = watchdog_child.lock().expect("watchdog lock poisoned");
++        let _ = child.kill();
++    });
++
++    let mut pcm = Vec::new();
++    let mut chunks = 0u32;
++    let mut buf = vec![0u8; READ_CHUNK];
++    while Instant::now() < deadline + Duration::from_secs(1) {
++        match stdout.read(&mut buf) {
++            Ok(0) => break,
++            Ok(n) => {
++                chunks += 1;
++                pcm.extend_from_slice(&buf[..n]);
++            }
++            Err(_) => break,
++        }
++    }
++
++    {
++        let mut child = child.lock().expect("child lock poisoned");
++        let _ = child.kill();
++        let _ = child.wait();
++    }
++    Ok((pcm, chunks))
++}
++
++#[cfg(test)]
++mod tests {
++    use super::*;
++
++    #[test]
++    fn aucat_args_are_raw_s16le_mono_stdout() {
++        let args = aucat_args(16_000);
++        assert_eq!(
++            args,
++            vec![
++                "-c", "1", "-e", "s16le", "-r", "16000", "-h", "raw", "-o", "-"
++            ]
++        );
++    }
++}

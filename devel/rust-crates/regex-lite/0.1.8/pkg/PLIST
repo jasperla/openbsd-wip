@@ -1,0 +1,3 @@
+share/modcargo-crates/regex-lite-0.1.8.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/regex-lite-0.1.8/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/regex-lite-0.1.8/libregex_lite.rlib

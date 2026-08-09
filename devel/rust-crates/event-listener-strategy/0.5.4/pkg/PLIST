@@ -1,0 +1,3 @@
+share/modcargo-crates/event-listener-strategy-0.5.4.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/event-listener-strategy-0.5.4/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/event-listener-strategy-0.5.4/libevent_listener_strategy.rlib

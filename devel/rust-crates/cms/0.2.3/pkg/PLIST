@@ -1,0 +1,3 @@
+share/modcargo-crates/cms-0.2.3.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/cms-0.2.3/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/cms-0.2.3/libcms.rlib

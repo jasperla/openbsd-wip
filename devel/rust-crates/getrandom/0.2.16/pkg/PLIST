@@ -1,0 +1,3 @@
+share/modcargo-crates/getrandom-0.2.16.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/getrandom-0.2.16/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/getrandom-0.2.16/libgetrandom.rlib

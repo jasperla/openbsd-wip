@@ -1,0 +1,3 @@
+share/modcargo-crates/libm-0.2.15.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/libm-0.2.15/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/libm-0.2.15/liblibm.rlib

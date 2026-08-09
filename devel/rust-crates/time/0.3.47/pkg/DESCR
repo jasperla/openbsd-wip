@@ -1,0 +1,3 @@
+Prebuilt Rust crate time 0.3.47 for offline grok-build.
+PKGNAME=rust-crate-time_0_3_47-0
+Installs share/modcargo-crates/time-0.3.47/ and lib/rust-crates/<arch>/time-0.3.47/ (rlib + cargo fingerprints).

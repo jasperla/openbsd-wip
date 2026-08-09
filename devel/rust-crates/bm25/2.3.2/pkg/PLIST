@@ -1,0 +1,3 @@
+share/modcargo-crates/bm25-2.3.2.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/bm25-2.3.2/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/bm25-2.3.2/libbm25.rlib

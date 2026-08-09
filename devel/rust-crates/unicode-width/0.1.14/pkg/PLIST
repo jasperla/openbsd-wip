@@ -1,0 +1,3 @@
+share/modcargo-crates/unicode-width-0.1.14.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/unicode-width-0.1.14/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/unicode-width-0.1.14/libunicode_width.rlib

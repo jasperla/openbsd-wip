@@ -1,0 +1,3 @@
+share/modcargo-crates/quote-1.0.45.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/quote-1.0.45/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/quote-1.0.45/libquote.rlib

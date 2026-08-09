@@ -1,0 +1,3 @@
+share/modcargo-crates/async-trait-0.1.89.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/async-trait-0.1.89/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/async-trait-0.1.89/libasync_trait.so

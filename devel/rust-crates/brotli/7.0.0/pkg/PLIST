@@ -1,0 +1,3 @@
+share/modcargo-crates/brotli-7.0.0.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/brotli-7.0.0/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/brotli-7.0.0/libbrotli.rlib

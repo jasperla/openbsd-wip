@@ -1,0 +1,3 @@
+share/modcargo-crates/x509-cert-0.2.5.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/x509-cert-0.2.5/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/x509-cert-0.2.5/libx509_cert.rlib

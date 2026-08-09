@@ -1,0 +1,3 @@
+share/modcargo-crates/reqwest-0.12.24.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/reqwest-0.12.24/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/reqwest-0.12.24/libreqwest.rlib

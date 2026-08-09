@@ -1,0 +1,3 @@
+share/modcargo-crates/wezterm-dynamic-0.2.1.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/wezterm-dynamic-0.2.1/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/wezterm-dynamic-0.2.1/libwezterm_dynamic.rlib

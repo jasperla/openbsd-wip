@@ -1,0 +1,3 @@
+share/modcargo-crates/wezterm-bidi-0.2.3.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/wezterm-bidi-0.2.3/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/wezterm-bidi-0.2.3/libwezterm_bidi.rlib

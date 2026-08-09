@@ -1,0 +1,3 @@
+share/modcargo-crates/assert_matches-1.5.0.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/assert_matches-1.5.0/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/assert_matches-1.5.0/libassert_matches.rlib

@@ -1,0 +1,3 @@
+share/modcargo-crates/unicode-ident-1.0.24.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/unicode-ident-1.0.24/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/unicode-ident-1.0.24/libunicode_ident.rlib

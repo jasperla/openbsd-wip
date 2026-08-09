@@ -1,0 +1,3 @@
+share/modcargo-crates/ref-cast-impl-1.0.25.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/ref-cast-impl-1.0.25/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/ref-cast-impl-1.0.25/libref_cast_impl.so

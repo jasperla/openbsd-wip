@@ -1,0 +1,3 @@
+share/modcargo-crates/portable-atomic-util-0.2.4.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/portable-atomic-util-0.2.4/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/portable-atomic-util-0.2.4/libportable_atomic_util.rlib

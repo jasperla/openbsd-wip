@@ -1,0 +1,3 @@
+Prebuilt Rust crate dhat 0.3.3 for offline grok-build.
+PKGNAME=rust-crate-dhat_0_3_3-0
+Installs share/modcargo-crates/dhat-0.3.3/ and lib/rust-crates/<arch>/dhat-0.3.3/ (rlib + cargo fingerprints).

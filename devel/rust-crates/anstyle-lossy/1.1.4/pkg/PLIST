@@ -1,0 +1,3 @@
+share/modcargo-crates/anstyle-lossy-1.1.4.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/anstyle-lossy-1.1.4/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/anstyle-lossy-1.1.4/libanstyle_lossy.rlib

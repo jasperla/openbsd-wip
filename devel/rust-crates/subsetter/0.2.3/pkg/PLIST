@@ -1,0 +1,3 @@
+share/modcargo-crates/subsetter-0.2.3.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/subsetter-0.2.3/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/subsetter-0.2.3/libsubsetter.rlib

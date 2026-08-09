@@ -1,0 +1,3 @@
+share/modcargo-crates/lazy_static-1.5.0.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/lazy_static-1.5.0/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/lazy_static-1.5.0/liblazy_static.rlib

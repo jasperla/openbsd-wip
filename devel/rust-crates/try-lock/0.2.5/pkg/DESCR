@@ -1,0 +1,3 @@
+Prebuilt Rust crate try-lock 0.2.5 for offline grok-build.
+PKGNAME=rust-crate-try_lock_0_2_5-0
+Installs share/modcargo-crates/try-lock-0.2.5/ and lib/rust-crates/<arch>/try-lock-0.2.5/ (rlib + cargo fingerprints).

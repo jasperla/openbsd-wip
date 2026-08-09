@@ -1,0 +1,3 @@
+Prebuilt Rust crate sentry-panic 0.42.0 for offline grok-build.
+PKGNAME=rust-crate-sentry_panic_0_42_0-0
+Installs share/modcargo-crates/sentry-panic-0.42.0/ and lib/rust-crates/<arch>/sentry-panic-0.42.0/ (rlib + cargo fingerprints).

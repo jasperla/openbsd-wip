@@ -1,0 +1,3 @@
+Prebuilt Rust crate ashpd 0.10.3 for offline grok-build.
+PKGNAME=rust-crate-ashpd_0_10_3-0
+Installs share/modcargo-crates/ashpd-0.10.3/ and lib/rust-crates/<arch>/ashpd-0.10.3/ (rlib + cargo fingerprints).

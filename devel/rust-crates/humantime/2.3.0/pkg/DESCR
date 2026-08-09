@@ -1,0 +1,3 @@
+Prebuilt Rust crate humantime 2.3.0 for offline grok-build.
+PKGNAME=rust-crate-humantime_2_3_0-0
+Installs share/modcargo-crates/humantime-2.3.0/ and lib/rust-crates/<arch>/humantime-2.3.0/ (rlib + cargo fingerprints).

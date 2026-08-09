@@ -1,0 +1,3 @@
+Prebuilt Rust crate symbolic-common 12.16.3 for offline grok-build.
+PKGNAME=rust-crate-symbolic_common_12_16_3-0
+Installs share/modcargo-crates/symbolic-common-12.16.3/ and lib/rust-crates/<arch>/symbolic-common-12.16.3/ (rlib + cargo fingerprints).

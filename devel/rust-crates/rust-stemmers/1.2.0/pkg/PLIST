@@ -1,0 +1,3 @@
+share/modcargo-crates/rust-stemmers-1.2.0.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/rust-stemmers-1.2.0/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/rust-stemmers-1.2.0/librust_stemmers.rlib

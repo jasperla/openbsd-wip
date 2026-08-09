@@ -1,0 +1,3 @@
+share/modcargo-crates/iana-time-zone-0.1.64.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/iana-time-zone-0.1.64/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/iana-time-zone-0.1.64/libiana_time_zone.rlib

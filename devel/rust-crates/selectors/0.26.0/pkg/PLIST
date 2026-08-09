@@ -1,0 +1,3 @@
+share/modcargo-crates/selectors-0.26.0.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/selectors-0.26.0/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/selectors-0.26.0/libselectors.rlib

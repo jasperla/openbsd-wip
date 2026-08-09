@@ -1,0 +1,3 @@
+Prebuilt Rust crate gix-packetline 0.21.5 for offline grok-build.
+PKGNAME=rust-crate-gix_packetline_0_21_5-0
+Installs share/modcargo-crates/gix-packetline-0.21.5/ and lib/rust-crates/<arch>/gix-packetline-0.21.5/ (rlib + cargo fingerprints).

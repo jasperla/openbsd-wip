@@ -1,0 +1,3 @@
+share/modcargo-crates/hyper-1.8.1.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/hyper-1.8.1/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/hyper-1.8.1/libhyper.rlib

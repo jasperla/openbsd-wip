@@ -1,0 +1,3 @@
+share/modcargo-crates/mockito-1.7.0.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/mockito-1.7.0/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/mockito-1.7.0/libmockito.rlib

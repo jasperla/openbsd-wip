@@ -1,0 +1,3 @@
+Prebuilt Rust crate serial_test 3.2.0 for offline grok-build.
+PKGNAME=rust-crate-serial_test_3_2_0-0
+Installs share/modcargo-crates/serial_test-3.2.0/ and lib/rust-crates/<arch>/serial_test-3.2.0/ (rlib + cargo fingerprints).

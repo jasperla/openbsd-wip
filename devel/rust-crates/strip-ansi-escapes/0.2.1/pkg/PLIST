@@ -1,0 +1,3 @@
+share/modcargo-crates/strip-ansi-escapes-0.2.1.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/strip-ansi-escapes-0.2.1/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/strip-ansi-escapes-0.2.1/libstrip_ansi_escapes.rlib

@@ -1,0 +1,3 @@
+share/modcargo-crates/lipsum-0.9.1.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/lipsum-0.9.1/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/lipsum-0.9.1/liblipsum.rlib

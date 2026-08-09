@@ -1,0 +1,3 @@
+share/modcargo-crates/gix-refspec-0.41.0.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/gix-refspec-0.41.0/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/gix-refspec-0.41.0/libgix_refspec.rlib

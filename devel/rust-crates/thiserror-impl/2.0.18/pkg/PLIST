@@ -1,0 +1,3 @@
+share/modcargo-crates/thiserror-impl-2.0.18.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/thiserror-impl-2.0.18/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/thiserror-impl-2.0.18/libthiserror_impl.so

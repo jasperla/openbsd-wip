@@ -1,0 +1,3 @@
+share/modcargo-crates/aws-config-1.8.8.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/aws-config-1.8.8/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/aws-config-1.8.8/libaws_config.rlib

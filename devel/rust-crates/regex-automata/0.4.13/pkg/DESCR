@@ -1,0 +1,3 @@
+Prebuilt Rust crate regex-automata 0.4.13 for offline grok-build.
+PKGNAME=rust-crate-regex_automata_0_4_13-0
+Installs share/modcargo-crates/regex-automata-0.4.13/ and lib/rust-crates/<arch>/regex-automata-0.4.13/ (rlib + cargo fingerprints).

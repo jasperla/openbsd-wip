@@ -1,0 +1,3 @@
+share/modcargo-crates/gcloud-auth-1.3.0.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/gcloud-auth-1.3.0/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/gcloud-auth-1.3.0/libgcloud_auth.rlib

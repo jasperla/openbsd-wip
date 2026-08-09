@@ -1,0 +1,3 @@
+share/modcargo-crates/pin-utils-0.1.0.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/pin-utils-0.1.0/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/pin-utils-0.1.0/libpin_utils.rlib

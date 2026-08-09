@@ -1,0 +1,3 @@
+Prebuilt Rust crate home 0.5.12 for offline grok-build.
+PKGNAME=rust-crate-home_0_5_12-0
+Installs share/modcargo-crates/home-0.5.12/ and lib/rust-crates/<arch>/home-0.5.12/ (rlib + cargo fingerprints).

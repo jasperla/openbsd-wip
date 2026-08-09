@@ -1,0 +1,3 @@
+Prebuilt Rust crate aws-smithy-runtime-api 1.11.3 for offline grok-build.
+PKGNAME=rust-crate-aws_smithy_runtime_api_1_11_3-0
+Installs share/modcargo-crates/aws-smithy-runtime-api-1.11.3/ and lib/rust-crates/<arch>/aws-smithy-runtime-api-1.11.3/ (rlib + cargo fingerprints).

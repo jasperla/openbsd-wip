@@ -1,0 +1,3 @@
+Prebuilt Rust crate tonic-build 0.14.3 for offline grok-build.
+PKGNAME=rust-crate-tonic_build_0_14_3-0
+Installs share/modcargo-crates/tonic-build-0.14.3/ and lib/rust-crates/<arch>/tonic-build-0.14.3/ (rlib + cargo fingerprints).

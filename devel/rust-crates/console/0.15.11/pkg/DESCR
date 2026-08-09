@@ -1,0 +1,3 @@
+Prebuilt Rust crate console 0.15.11 for offline grok-build.
+PKGNAME=rust-crate-console_0_15_11-0
+Installs share/modcargo-crates/console-0.15.11/ and lib/rust-crates/<arch>/console-0.15.11/ (rlib + cargo fingerprints).

@@ -1,0 +1,3 @@
+Prebuilt Rust crate errno 0.3.14 for offline grok-build.
+PKGNAME=rust-crate-errno_0_3_14-0
+Installs share/modcargo-crates/errno-0.3.14/ and lib/rust-crates/<arch>/errno-0.3.14/ (rlib + cargo fingerprints).

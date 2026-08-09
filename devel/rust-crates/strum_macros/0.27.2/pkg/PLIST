@@ -1,0 +1,3 @@
+share/modcargo-crates/strum_macros-0.27.2.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/strum_macros-0.27.2/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/strum_macros-0.27.2/libstrum_macros.so

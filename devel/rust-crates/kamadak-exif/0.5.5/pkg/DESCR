@@ -1,0 +1,3 @@
+Prebuilt Rust crate kamadak-exif 0.5.5 for offline grok-build.
+PKGNAME=rust-crate-kamadak_exif_0_5_5-0
+Installs share/modcargo-crates/kamadak-exif-0.5.5/ and lib/rust-crates/<arch>/kamadak-exif-0.5.5/ (rlib + cargo fingerprints).

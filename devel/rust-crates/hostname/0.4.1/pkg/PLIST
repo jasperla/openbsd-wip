@@ -1,0 +1,3 @@
+share/modcargo-crates/hostname-0.4.1.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/hostname-0.4.1/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/hostname-0.4.1/libhostname.rlib

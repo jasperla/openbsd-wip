@@ -1,0 +1,3 @@
+Prebuilt Rust crate pollster 0.4.0 for offline grok-build.
+PKGNAME=rust-crate-pollster_0_4_0-0
+Installs share/modcargo-crates/pollster-0.4.0/ and lib/rust-crates/<arch>/pollster-0.4.0/ (rlib + cargo fingerprints).

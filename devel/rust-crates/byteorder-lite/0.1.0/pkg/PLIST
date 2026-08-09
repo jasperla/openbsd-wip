@@ -1,0 +1,3 @@
+share/modcargo-crates/byteorder-lite-0.1.0.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/byteorder-lite-0.1.0/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/byteorder-lite-0.1.0/libbyteorder_lite.rlib

@@ -1,0 +1,3 @@
+share/modcargo-crates/aws-sdk-ssooidc-1.89.0.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/aws-sdk-ssooidc-1.89.0/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/aws-sdk-ssooidc-1.89.0/libaws_sdk_ssooidc.rlib

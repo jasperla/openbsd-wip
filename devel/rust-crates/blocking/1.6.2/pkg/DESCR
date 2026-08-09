@@ -1,0 +1,3 @@
+Prebuilt Rust crate blocking 1.6.2 for offline grok-build.
+PKGNAME=rust-crate-blocking_1_6_2-0
+Installs share/modcargo-crates/blocking-1.6.2/ and lib/rust-crates/<arch>/blocking-1.6.2/ (rlib + cargo fingerprints).

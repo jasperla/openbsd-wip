@@ -1,0 +1,3 @@
+Prebuilt Rust crate ctor-proc-macro 0.0.6 for offline grok-build.
+PKGNAME=rust-crate-ctor_proc_macro_0_0_6-0
+Installs share/modcargo-crates/ctor-proc-macro-0.0.6/ and lib/rust-crates/<arch>/ctor-proc-macro-0.0.6/ (rlib + cargo fingerprints).

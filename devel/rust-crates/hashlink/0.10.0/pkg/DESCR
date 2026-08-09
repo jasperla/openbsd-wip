@@ -1,0 +1,3 @@
+Prebuilt Rust crate hashlink 0.10.0 for offline grok-build.
+PKGNAME=rust-crate-hashlink_0_10_0-0
+Installs share/modcargo-crates/hashlink-0.10.0/ and lib/rust-crates/<arch>/hashlink-0.10.0/ (rlib + cargo fingerprints).

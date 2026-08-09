@@ -1,0 +1,3 @@
+share/modcargo-crates/rfc6979-0.4.0.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/rfc6979-0.4.0/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/rfc6979-0.4.0/librfc6979.rlib

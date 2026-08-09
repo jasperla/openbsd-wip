@@ -1,0 +1,3 @@
+Prebuilt Rust crate rand_chacha 0.3.1 for offline grok-build.
+PKGNAME=rust-crate-rand_chacha_0_3_1-0
+Installs share/modcargo-crates/rand_chacha-0.3.1/ and lib/rust-crates/<arch>/rand_chacha-0.3.1/ (rlib + cargo fingerprints).

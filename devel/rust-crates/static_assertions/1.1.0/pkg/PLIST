@@ -1,0 +1,3 @@
+share/modcargo-crates/static_assertions-1.1.0.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/static_assertions-1.1.0/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/static_assertions-1.1.0/libstatic_assertions.rlib

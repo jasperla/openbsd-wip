@@ -1,0 +1,3 @@
+Prebuilt Rust crate utf8-width 0.1.7 for offline grok-build.
+PKGNAME=rust-crate-utf8_width_0_1_7-0
+Installs share/modcargo-crates/utf8-width-0.1.7/ and lib/rust-crates/<arch>/utf8-width-0.1.7/ (rlib + cargo fingerprints).

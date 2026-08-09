@@ -1,0 +1,3 @@
+share/modcargo-crates/oorandom-11.1.5.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/oorandom-11.1.5/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/oorandom-11.1.5/liboorandom.rlib

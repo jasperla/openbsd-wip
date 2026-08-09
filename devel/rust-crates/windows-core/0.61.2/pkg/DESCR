@@ -1,0 +1,3 @@
+Prebuilt Rust crate windows-core 0.61.2 for offline grok-build.
+PKGNAME=rust-crate-windows_core_0_61_2-0
+Installs share/modcargo-crates/windows-core-0.61.2/ and lib/rust-crates/<arch>/windows-core-0.61.2/ (rlib + cargo fingerprints).

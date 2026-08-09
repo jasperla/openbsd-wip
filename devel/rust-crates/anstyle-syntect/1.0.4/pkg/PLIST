@@ -1,0 +1,3 @@
+share/modcargo-crates/anstyle-syntect-1.0.4.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/anstyle-syntect-1.0.4/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/anstyle-syntect-1.0.4/libanstyle_syntect.rlib

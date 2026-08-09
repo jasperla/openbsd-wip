@@ -1,0 +1,3 @@
+Prebuilt Rust crate tikv-jemallocator 0.6.1 for offline grok-build.
+PKGNAME=rust-crate-tikv_jemallocator_0_6_1-0
+Installs share/modcargo-crates/tikv-jemallocator-0.6.1/ and lib/rust-crates/<arch>/tikv-jemallocator-0.6.1/ (rlib + cargo fingerprints).

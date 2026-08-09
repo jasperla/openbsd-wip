@@ -1,0 +1,3 @@
+share/modcargo-crates/gix-merge-0.16.0.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/gix-merge-0.16.0/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/gix-merge-0.16.0/libgix_merge.rlib

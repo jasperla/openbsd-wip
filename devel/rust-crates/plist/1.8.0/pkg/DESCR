@@ -1,0 +1,3 @@
+Prebuilt Rust crate plist 1.8.0 for offline grok-build.
+PKGNAME=rust-crate-plist_1_8_0-0
+Installs share/modcargo-crates/plist-1.8.0/ and lib/rust-crates/<arch>/plist-1.8.0/ (rlib + cargo fingerprints).

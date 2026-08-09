@@ -1,0 +1,3 @@
+Prebuilt Rust crate time-macros 0.2.27 for offline grok-build.
+PKGNAME=rust-crate-time_macros_0_2_27-0
+Installs share/modcargo-crates/time-macros-0.2.27/ and lib/rust-crates/<arch>/time-macros-0.2.27/ (rlib + cargo fingerprints).

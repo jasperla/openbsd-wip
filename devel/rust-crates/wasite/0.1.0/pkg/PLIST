@@ -1,0 +1,3 @@
+share/modcargo-crates/wasite-0.1.0.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/wasite-0.1.0/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/wasite-0.1.0/libwasite.rlib

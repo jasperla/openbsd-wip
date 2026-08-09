@@ -1,0 +1,3 @@
+share/modcargo-crates/bzip2-0.5.2.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/bzip2-0.5.2/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/bzip2-0.5.2/libbzip2.rlib

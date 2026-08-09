@@ -1,0 +1,3 @@
+Prebuilt Rust crate markup5ever_rcdom 0.38.0+unofficial for offline grok-build.
+PKGNAME=rust-crate-markup5ever_rcdom_0_38_0_unofficial-0
+Installs share/modcargo-crates/markup5ever_rcdom-0.38.0+unofficial/ and lib/rust-crates/<arch>/markup5ever_rcdom-0.38.0+unofficial/ (rlib + cargo fingerprints).

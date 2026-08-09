@@ -1,0 +1,3 @@
+Prebuilt Rust crate ctor 0.4.3 for offline grok-build.
+PKGNAME=rust-crate-ctor_0_4_3-0
+Installs share/modcargo-crates/ctor-0.4.3/ and lib/rust-crates/<arch>/ctor-0.4.3/ (rlib + cargo fingerprints).

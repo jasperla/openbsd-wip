@@ -1,0 +1,3 @@
+Prebuilt Rust crate once_cell 1.21.3 for offline grok-build.
+PKGNAME=rust-crate-once_cell_1_21_3-0
+Installs share/modcargo-crates/once_cell-1.21.3/ and lib/rust-crates/<arch>/once_cell-1.21.3/ (rlib + cargo fingerprints).

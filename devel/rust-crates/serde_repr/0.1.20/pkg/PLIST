@@ -1,0 +1,3 @@
+share/modcargo-crates/serde_repr-0.1.20.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/serde_repr-0.1.20/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/serde_repr-0.1.20/libserde_repr.so

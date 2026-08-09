@@ -1,0 +1,3 @@
+share/modcargo-crates/bytes-1.11.1.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/bytes-1.11.1/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/bytes-1.11.1/libbytes.rlib

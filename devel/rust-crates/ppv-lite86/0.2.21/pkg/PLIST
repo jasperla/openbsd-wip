@@ -1,0 +1,3 @@
+share/modcargo-crates/ppv-lite86-0.2.21.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/ppv-lite86-0.2.21/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/ppv-lite86-0.2.21/libppv_lite86.rlib

@@ -1,0 +1,3 @@
+Prebuilt Rust crate sharded-slab 0.1.7 for offline grok-build.
+PKGNAME=rust-crate-sharded_slab_0_1_7-0
+Installs share/modcargo-crates/sharded-slab-0.1.7/ and lib/rust-crates/<arch>/sharded-slab-0.1.7/ (rlib + cargo fingerprints).

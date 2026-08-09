@@ -1,0 +1,14 @@
+Index: modcargo-crates/nono-0.53.0/src/capability.rs
+--- modcargo-crates/nono-0.53.0/src/capability.rs.orig
++++ modcargo-crates/nono-0.53.0/src/capability.rs
+@@ -1377,7 +1377,9 @@
+             // Platform-specific dedup key (see comment above).
+             #[cfg(target_os = "macos")]
+             let key = (cap.original.clone(), cap.is_file);
+-            #[cfg(target_os = "linux")]
++            // OpenBSD and other non-macOS platforms: key like Linux on resolved path.
++            // Sandbox apply is a no-op/unsupported elsewhere; this only needs to compile.
++            #[cfg(not(target_os = "macos"))]
+             let key = (cap.resolved.clone(), cap.is_file);
+ 
+             if let Some(&existing_idx) = seen.get(&key) {

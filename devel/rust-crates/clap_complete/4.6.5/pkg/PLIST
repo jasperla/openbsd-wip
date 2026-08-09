@@ -1,0 +1,3 @@
+share/modcargo-crates/clap_complete-4.6.5.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/clap_complete-4.6.5/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/clap_complete-4.6.5/libclap_complete.rlib

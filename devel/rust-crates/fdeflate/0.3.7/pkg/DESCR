@@ -1,0 +1,3 @@
+Prebuilt Rust crate fdeflate 0.3.7 for offline grok-build.
+PKGNAME=rust-crate-fdeflate_0_3_7-0
+Installs share/modcargo-crates/fdeflate-0.3.7/ and lib/rust-crates/<arch>/fdeflate-0.3.7/ (rlib + cargo fingerprints).

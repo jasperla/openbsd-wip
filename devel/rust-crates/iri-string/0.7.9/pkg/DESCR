@@ -1,0 +1,3 @@
+Prebuilt Rust crate iri-string 0.7.9 for offline grok-build.
+PKGNAME=rust-crate-iri_string_0_7_9-0
+Installs share/modcargo-crates/iri-string-0.7.9/ and lib/rust-crates/<arch>/iri-string-0.7.9/ (rlib + cargo fingerprints).

@@ -1,0 +1,3 @@
+share/modcargo-crates/time-macros-0.2.27.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/time-macros-0.2.27/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/time-macros-0.2.27/libtime_macros.so

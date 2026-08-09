@@ -1,0 +1,3 @@
+share/modcargo-crates/console-0.15.11.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/console-0.15.11/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/console-0.15.11/libconsole.rlib

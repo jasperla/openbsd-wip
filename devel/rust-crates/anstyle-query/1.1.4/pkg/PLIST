@@ -1,0 +1,3 @@
+share/modcargo-crates/anstyle-query-1.1.4.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/anstyle-query-1.1.4/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/anstyle-query-1.1.4/libanstyle_query.rlib

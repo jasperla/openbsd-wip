@@ -1,0 +1,3 @@
+share/modcargo-crates/same-file-1.0.6.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/same-file-1.0.6/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/same-file-1.0.6/libsame_file.rlib

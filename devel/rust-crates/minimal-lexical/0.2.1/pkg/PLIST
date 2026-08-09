@@ -1,0 +1,3 @@
+share/modcargo-crates/minimal-lexical-0.2.1.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/minimal-lexical-0.2.1/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/minimal-lexical-0.2.1/libminimal_lexical.rlib

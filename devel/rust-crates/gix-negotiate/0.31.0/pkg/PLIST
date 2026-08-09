@@ -1,0 +1,3 @@
+share/modcargo-crates/gix-negotiate-0.31.0.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/gix-negotiate-0.31.0/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/gix-negotiate-0.31.0/libgix_negotiate.rlib

@@ -1,0 +1,3 @@
+Prebuilt Rust crate wezterm-color-types 0.3.0 for offline grok-build.
+PKGNAME=rust-crate-wezterm_color_types_0_3_0-0
+Installs share/modcargo-crates/wezterm-color-types-0.3.0/ and lib/rust-crates/<arch>/wezterm-color-types-0.3.0/ (rlib + cargo fingerprints).

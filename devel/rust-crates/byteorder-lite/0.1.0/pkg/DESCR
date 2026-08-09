@@ -1,0 +1,3 @@
+Prebuilt Rust crate byteorder-lite 0.1.0 for offline grok-build.
+PKGNAME=rust-crate-byteorder_lite_0_1_0-0
+Installs share/modcargo-crates/byteorder-lite-0.1.0/ and lib/rust-crates/<arch>/byteorder-lite-0.1.0/ (rlib + cargo fingerprints).

@@ -1,0 +1,3 @@
+share/modcargo-crates/crossbeam-utils-0.8.21.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/crossbeam-utils-0.8.21/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/crossbeam-utils-0.8.21/libcrossbeam_utils.rlib

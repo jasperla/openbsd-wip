@@ -1,0 +1,3 @@
+share/modcargo-crates/group-0.13.0.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/group-0.13.0/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/group-0.13.0/libgroup.rlib

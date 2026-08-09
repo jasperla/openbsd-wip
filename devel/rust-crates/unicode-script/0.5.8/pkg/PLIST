@@ -1,0 +1,3 @@
+share/modcargo-crates/unicode-script-0.5.8.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/unicode-script-0.5.8/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/unicode-script-0.5.8/libunicode_script.rlib

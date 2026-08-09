@@ -1,0 +1,3 @@
+share/modcargo-crates/tempfile-3.27.0.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/tempfile-3.27.0/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/tempfile-3.27.0/libtempfile.rlib

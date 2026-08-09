@@ -1,0 +1,3 @@
+Prebuilt Rust crate num-derive 0.4.2 for offline grok-build.
+PKGNAME=rust-crate-num_derive_0_4_2-0
+Installs share/modcargo-crates/num-derive-0.4.2/ and lib/rust-crates/<arch>/num-derive-0.4.2/ (rlib + cargo fingerprints).

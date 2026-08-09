@@ -1,0 +1,3 @@
+share/modcargo-crates/ucd-trie-0.1.7.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/ucd-trie-0.1.7/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/ucd-trie-0.1.7/libucd_trie.rlib

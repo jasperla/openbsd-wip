@@ -1,0 +1,3 @@
+share/modcargo-crates/aws-smithy-checksums-0.63.13.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/aws-smithy-checksums-0.63.13/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/aws-smithy-checksums-0.63.13/libaws_smithy_checksums.rlib

@@ -1,0 +1,3 @@
+Prebuilt Rust crate aws-sdk-sso 1.86.0 for offline grok-build.
+PKGNAME=rust-crate-aws_sdk_sso_1_86_0-0
+Installs share/modcargo-crates/aws-sdk-sso-1.86.0/ and lib/rust-crates/<arch>/aws-sdk-sso-1.86.0/ (rlib + cargo fingerprints).

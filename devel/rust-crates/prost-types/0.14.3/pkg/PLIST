@@ -1,0 +1,3 @@
+share/modcargo-crates/prost-types-0.14.3.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/prost-types-0.14.3/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/prost-types-0.14.3/libprost_types.rlib

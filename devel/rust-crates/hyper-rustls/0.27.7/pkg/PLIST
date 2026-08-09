@@ -1,0 +1,3 @@
+share/modcargo-crates/hyper-rustls-0.27.7.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/hyper-rustls-0.27.7/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/hyper-rustls-0.27.7/libhyper_rustls.rlib

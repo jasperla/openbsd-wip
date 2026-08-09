@@ -1,0 +1,3 @@
+share/modcargo-crates/fast_image_resize-6.0.0.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/fast_image_resize-6.0.0/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/fast_image_resize-6.0.0/libfast_image_resize.rlib

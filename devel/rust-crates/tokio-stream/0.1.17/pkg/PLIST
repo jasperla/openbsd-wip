@@ -1,0 +1,3 @@
+share/modcargo-crates/tokio-stream-0.1.17.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/tokio-stream-0.1.17/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/tokio-stream-0.1.17/libtokio_stream.rlib

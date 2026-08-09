@@ -1,0 +1,3 @@
+share/modcargo-crates/serde_yaml-0.9.34_deprecated.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/serde_yaml-0.9.34_deprecated/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/serde_yaml-0.9.34_deprecated/libserde_yaml.rlib

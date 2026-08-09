@@ -1,0 +1,3 @@
+Prebuilt Rust crate gix-trace 0.1.20 for offline grok-build.
+PKGNAME=rust-crate-gix_trace_0_1_20-0
+Installs share/modcargo-crates/gix-trace-0.1.20/ and lib/rust-crates/<arch>/gix-trace-0.1.20/ (rlib + cargo fingerprints).

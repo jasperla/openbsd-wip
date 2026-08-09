@@ -1,0 +1,3 @@
+share/modcargo-crates/ecdsa-0.16.9.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/ecdsa-0.16.9/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/ecdsa-0.16.9/libecdsa.rlib

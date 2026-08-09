@@ -1,0 +1,3 @@
+share/modcargo-crates/markup5ever-0.14.1.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/markup5ever-0.14.1/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/markup5ever-0.14.1/libmarkup5ever.rlib

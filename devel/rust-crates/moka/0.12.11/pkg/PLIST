@@ -1,0 +1,3 @@
+share/modcargo-crates/moka-0.12.11.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/moka-0.12.11/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/moka-0.12.11/libmoka.rlib

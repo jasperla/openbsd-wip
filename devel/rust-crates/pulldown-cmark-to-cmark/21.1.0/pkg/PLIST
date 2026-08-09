@@ -1,0 +1,3 @@
+share/modcargo-crates/pulldown-cmark-to-cmark-21.1.0.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/pulldown-cmark-to-cmark-21.1.0/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/pulldown-cmark-to-cmark-21.1.0/libpulldown_cmark_to_cmark.rlib

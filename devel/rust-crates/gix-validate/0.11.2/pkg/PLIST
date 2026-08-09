@@ -1,0 +1,3 @@
+share/modcargo-crates/gix-validate-0.11.2.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/gix-validate-0.11.2/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/gix-validate-0.11.2/libgix_validate.rlib

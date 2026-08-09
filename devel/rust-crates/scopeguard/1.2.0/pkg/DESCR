@@ -1,0 +1,3 @@
+Prebuilt Rust crate scopeguard 1.2.0 for offline grok-build.
+PKGNAME=rust-crate-scopeguard_1_2_0-0
+Installs share/modcargo-crates/scopeguard-1.2.0/ and lib/rust-crates/<arch>/scopeguard-1.2.0/ (rlib + cargo fingerprints).

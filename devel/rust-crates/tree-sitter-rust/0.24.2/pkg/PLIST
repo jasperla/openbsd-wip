@@ -1,0 +1,3 @@
+share/modcargo-crates/tree-sitter-rust-0.24.2.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/tree-sitter-rust-0.24.2/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/tree-sitter-rust-0.24.2/libtree_sitter_rust.rlib

@@ -1,0 +1,3 @@
+Prebuilt Rust crate mid 4.0.0 for offline grok-build.
+PKGNAME=rust-crate-mid_4_0_0-0
+Installs share/modcargo-crates/mid-4.0.0/ and lib/rust-crates/<arch>/mid-4.0.0/ (rlib + cargo fingerprints).

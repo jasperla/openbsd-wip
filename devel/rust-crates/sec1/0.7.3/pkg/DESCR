@@ -1,0 +1,3 @@
+Prebuilt Rust crate sec1 0.7.3 for offline grok-build.
+PKGNAME=rust-crate-sec1_0_7_3-0
+Installs share/modcargo-crates/sec1-0.7.3/ and lib/rust-crates/<arch>/sec1-0.7.3/ (rlib + cargo fingerprints).

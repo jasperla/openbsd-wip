@@ -1,0 +1,3 @@
+share/modcargo-crates/encode_unicode-1.0.0.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/encode_unicode-1.0.0/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/encode_unicode-1.0.0/libencode_unicode.rlib

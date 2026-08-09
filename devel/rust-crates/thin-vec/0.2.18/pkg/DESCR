@@ -1,0 +1,3 @@
+Prebuilt Rust crate thin-vec 0.2.18 for offline grok-build.
+PKGNAME=rust-crate-thin_vec_0_2_18-0
+Installs share/modcargo-crates/thin-vec-0.2.18/ and lib/rust-crates/<arch>/thin-vec-0.2.18/ (rlib + cargo fingerprints).

@@ -1,0 +1,3 @@
+share/modcargo-crates/signal-hook-0.3.18.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/signal-hook-0.3.18/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/signal-hook-0.3.18/libsignal_hook.rlib

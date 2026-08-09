@@ -1,0 +1,3 @@
+Prebuilt Rust crate moka 0.12.11 for offline grok-build.
+PKGNAME=rust-crate-moka_0_12_11-0
+Installs share/modcargo-crates/moka-0.12.11/ and lib/rust-crates/<arch>/moka-0.12.11/ (rlib + cargo fingerprints).

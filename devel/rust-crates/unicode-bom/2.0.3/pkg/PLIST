@@ -1,0 +1,3 @@
+share/modcargo-crates/unicode-bom-2.0.3.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/unicode-bom-2.0.3/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/unicode-bom-2.0.3/libunicode_bom.rlib

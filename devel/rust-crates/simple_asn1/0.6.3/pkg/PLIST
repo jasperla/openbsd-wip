@@ -1,0 +1,3 @@
+share/modcargo-crates/simple_asn1-0.6.3.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/simple_asn1-0.6.3/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/simple_asn1-0.6.3/libsimple_asn1.rlib

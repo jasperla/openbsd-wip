@@ -1,0 +1,3 @@
+Prebuilt Rust crate gix-ignore 0.21.1 for offline grok-build.
+PKGNAME=rust-crate-gix_ignore_0_21_1-0
+Installs share/modcargo-crates/gix-ignore-0.21.1/ and lib/rust-crates/<arch>/gix-ignore-0.21.1/ (rlib + cargo fingerprints).

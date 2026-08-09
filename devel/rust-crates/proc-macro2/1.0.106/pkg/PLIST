@@ -1,0 +1,3 @@
+share/modcargo-crates/proc-macro2-1.0.106.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/proc-macro2-1.0.106/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/proc-macro2-1.0.106/libproc_macro2.rlib

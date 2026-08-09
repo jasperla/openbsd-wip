@@ -1,0 +1,3 @@
+share/modcargo-crates/semver-1.0.28.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/semver-1.0.28/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/semver-1.0.28/libsemver.rlib

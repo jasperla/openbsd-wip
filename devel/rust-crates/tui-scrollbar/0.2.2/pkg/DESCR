@@ -1,0 +1,3 @@
+Prebuilt Rust crate tui-scrollbar 0.2.2 for offline grok-build.
+PKGNAME=rust-crate-tui_scrollbar_0_2_2-0
+Installs share/modcargo-crates/tui-scrollbar-0.2.2/ and lib/rust-crates/<arch>/tui-scrollbar-0.2.2/ (rlib + cargo fingerprints).

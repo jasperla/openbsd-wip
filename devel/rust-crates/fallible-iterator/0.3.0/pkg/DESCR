@@ -1,0 +1,3 @@
+Prebuilt Rust crate fallible-iterator 0.3.0 for offline grok-build.
+PKGNAME=rust-crate-fallible_iterator_0_3_0-0
+Installs share/modcargo-crates/fallible-iterator-0.3.0/ and lib/rust-crates/<arch>/fallible-iterator-0.3.0/ (rlib + cargo fingerprints).

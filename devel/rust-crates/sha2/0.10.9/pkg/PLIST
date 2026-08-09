@@ -1,0 +1,3 @@
+share/modcargo-crates/sha2-0.10.9.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/sha2-0.10.9/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/sha2-0.10.9/libsha2.rlib

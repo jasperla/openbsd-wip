@@ -1,0 +1,3 @@
+Prebuilt Rust crate gif 0.14.1 for offline grok-build.
+PKGNAME=rust-crate-gif_0_14_1-0
+Installs share/modcargo-crates/gif-0.14.1/ and lib/rust-crates/<arch>/gif-0.14.1/ (rlib + cargo fingerprints).

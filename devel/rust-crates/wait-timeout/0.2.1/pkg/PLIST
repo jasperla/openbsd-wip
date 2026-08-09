@@ -1,0 +1,3 @@
+share/modcargo-crates/wait-timeout-0.2.1.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/wait-timeout-0.2.1/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/wait-timeout-0.2.1/libwait_timeout.rlib

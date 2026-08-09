@@ -1,0 +1,3 @@
+Prebuilt Rust crate http 0.2.12 for offline grok-build.
+PKGNAME=rust-crate-http_0_2_12-0
+Installs share/modcargo-crates/http-0.2.12/ and lib/rust-crates/<arch>/http-0.2.12/ (rlib + cargo fingerprints).

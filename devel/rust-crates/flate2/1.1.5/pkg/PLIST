@@ -1,0 +1,3 @@
+share/modcargo-crates/flate2-1.1.5.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/flate2-1.1.5/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/flate2-1.1.5/libflate2.rlib

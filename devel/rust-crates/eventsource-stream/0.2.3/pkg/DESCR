@@ -1,0 +1,3 @@
+Prebuilt Rust crate eventsource-stream 0.2.3 for offline grok-build.
+PKGNAME=rust-crate-eventsource_stream_0_2_3-0
+Installs share/modcargo-crates/eventsource-stream-0.2.3/ and lib/rust-crates/<arch>/eventsource-stream-0.2.3/ (rlib + cargo fingerprints).

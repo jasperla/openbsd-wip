@@ -1,0 +1,3 @@
+Prebuilt Rust crate criterion 0.6.0 for offline grok-build.
+PKGNAME=rust-crate-criterion_0_6_0-0
+Installs share/modcargo-crates/criterion-0.6.0/ and lib/rust-crates/<arch>/criterion-0.6.0/ (rlib + cargo fingerprints).

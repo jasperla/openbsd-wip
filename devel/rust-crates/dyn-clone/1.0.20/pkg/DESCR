@@ -1,0 +1,3 @@
+Prebuilt Rust crate dyn-clone 1.0.20 for offline grok-build.
+PKGNAME=rust-crate-dyn_clone_1_0_20-0
+Installs share/modcargo-crates/dyn-clone-1.0.20/ and lib/rust-crates/<arch>/dyn-clone-1.0.20/ (rlib + cargo fingerprints).

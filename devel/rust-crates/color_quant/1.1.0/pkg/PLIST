@@ -1,0 +1,3 @@
+share/modcargo-crates/color_quant-1.1.0.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/color_quant-1.1.0/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/color_quant-1.1.0/libcolor_quant.rlib

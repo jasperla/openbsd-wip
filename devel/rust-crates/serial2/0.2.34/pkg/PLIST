@@ -1,0 +1,3 @@
+share/modcargo-crates/serial2-0.2.34.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/serial2-0.2.34/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/serial2-0.2.34/libserial2.rlib

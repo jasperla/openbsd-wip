@@ -1,0 +1,3 @@
+share/modcargo-crates/bit-vec-0.6.3.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/bit-vec-0.6.3/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/bit-vec-0.6.3/libbit_vec.rlib

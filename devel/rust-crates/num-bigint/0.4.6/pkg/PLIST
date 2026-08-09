@@ -1,0 +1,3 @@
+share/modcargo-crates/num-bigint-0.4.6.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/num-bigint-0.4.6/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/num-bigint-0.4.6/libnum_bigint.rlib

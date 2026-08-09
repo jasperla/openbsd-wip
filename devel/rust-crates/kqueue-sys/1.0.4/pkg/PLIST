@@ -1,0 +1,3 @@
+share/modcargo-crates/kqueue-sys-1.0.4.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/kqueue-sys-1.0.4/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/kqueue-sys-1.0.4/libkqueue_sys.rlib

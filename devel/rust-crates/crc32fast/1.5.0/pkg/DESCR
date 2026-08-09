@@ -1,0 +1,3 @@
+Prebuilt Rust crate crc32fast 1.5.0 for offline grok-build.
+PKGNAME=rust-crate-crc32fast_1_5_0-0
+Installs share/modcargo-crates/crc32fast-1.5.0/ and lib/rust-crates/<arch>/crc32fast-1.5.0/ (rlib + cargo fingerprints).

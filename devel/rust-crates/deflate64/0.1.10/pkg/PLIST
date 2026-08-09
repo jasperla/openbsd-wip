@@ -1,0 +1,3 @@
+share/modcargo-crates/deflate64-0.1.10.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/deflate64-0.1.10/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/deflate64-0.1.10/libdeflate64.rlib
