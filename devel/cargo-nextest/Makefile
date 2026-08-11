@@ -1,11 +1,12 @@
+# ring-v0.17 does not support this arch
+NOT_FOR_ARCHS =		sparc64
+
 # aws-lc-sys has constants in .text
 # https://github.com/awslabs/s2n-bignum/pull/242
-.if ${MACHINE_ARCH} == "amd64"
+# aws-lc-rs has old Keccak perlasm
+.if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "aarch64"
 USE_NOEXECONLY =	Yes
 .endif
-
-# ring-v0.17 does not support this arch
-NOT_FOR_ARCHS =	sparc64
 
 COMMENT =	next-generation test runner for Rust
 
