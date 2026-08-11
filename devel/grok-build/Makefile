@@ -123,14 +123,16 @@ RUN_DEPENDS +=		textproc/ripgrep
 # When Yes:
 #   - MAKE_JOBS=1  -> cargo.port.mk sets CARGO_BUILD_JOBS=${MAKE_JOBS}
 #   - DPB lonesome -> avoid packing other bulk jobs beside this one
-#   - release profile: 1 CGU, thin LTO, no debuginfo, strip, no incremental
+#   - release profile: CGU=256, thin LTO, no debuginfo, strip, no incremental
+#     NOTE: CODEGEN_UNITS=1 is *high* peak RAM (one giant unit). Low-mem wants
+#     *more* units (e.g. 256) to split work. Cargo default is 16.
 # When No: leave MAKE_JOBS alone (ports/dpb parallelism) and skip profile caps.
 GROK_LOW_MEM ?=		Yes
 .if ${GROK_LOW_MEM:L} == "yes"
 MAKE_JOBS =		1
 DPB_PROPERTIES +=	lonesome
 MAKE_ENV +=		CARGO_INCREMENTAL=0 \
-			CARGO_PROFILE_RELEASE_CODEGEN_UNITS=1 \
+			CARGO_PROFILE_RELEASE_CODEGEN_UNITS=256 \
 			CARGO_PROFILE_RELEASE_LTO=thin \
 			CARGO_PROFILE_RELEASE_DEBUG=0 \
 			CARGO_PROFILE_RELEASE_STRIP=symbols
