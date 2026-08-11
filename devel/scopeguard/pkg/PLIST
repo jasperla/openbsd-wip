@@ -1,0 +1,7 @@
+lib/rust-crates/${MACHINE_ARCH}/scopeguard-1.2.0-default/libscopeguard.rlib
+share/rust-crates/scopeguard-1.2.0/CRATE_KEY
+share/rust-crates/scopeguard-1.2.0/Cargo.toml
+share/rust-crates/scopeguard-1.2.0/LICENSE-APACHE
+share/rust-crates/scopeguard-1.2.0/LICENSE-MIT
+share/rust-crates/scopeguard-1.2.0/README.md
+share/rust-crates/scopeguard-1.2.0/src/lib.rs

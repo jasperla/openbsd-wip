@@ -1,0 +1,4 @@
+POC leaf crate for devel/grok-build-test.
+
+Key: rust-scopeguard-1.2.0 (features: default/use_std).
+Installs path-dep sources + prebuilt rlib under lib/rust-crates/<arch>/...

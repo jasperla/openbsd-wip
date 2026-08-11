@@ -1,0 +1,23 @@
+scopeguard is a small pure-Rust RAII helper (defer-style scope guards).
+
+This port is a proof-of-concept for peeling one crates.io dependency out of
+devel/grok-build and shipping it as a normal OpenBSD package so a consumer
+port can pkg_add / BUILD_DEPENDS it instead of listing it in MODCARGO_CRATES.
+
+Package key (careful identity)
+------------------------------
+  PKGNAME:     rust-scopeguard-1.2.0
+  feature tag: default  (crate default features = use_std)
+  full unit:   rust-scopeguard-1.2.0-default  (see share/.../CRATE_KEY)
+
+If upstream bumps to 1.3.0, this port's PKGNAME changes and any consumer that
+pinned rust-scopeguard-1.2.0 must update BUILD_DEPENDS and rebuild. Unrelated
+crates stay installed. That is the ports equivalent of "dependency hash as
+version."
+
+Install layout
+--------------
+  share/rust-crates/scopeguard-1.2.0/     sources for path-dep / offline cargo
+  lib/rust-crates/<arch>/scopeguard-1.2.0-default/libscopeguard.rlib
+
+See also: devel/grok-build-test (consumer demo).
