@@ -427,6 +427,7 @@ SHA256 (cargo/hayro-ccitt-0.3.0.tar.gz) = n00OlN3Uh0nwa75OU4n7l5mgxFvK8ASVBCB27w
 SHA256 (cargo/hayro-jbig2-0.3.0.tar.gz) = aTdLNmjdRa6z0xRc2mjyx7TyI6qiUR5n0Hbxx9dBOI0=
 SHA256 (cargo/hdrhistogram-7.5.4.tar.gz) = dlyRmPFz3VnOJv+fle8Kr9Cg/gH7nXKEG8UGakwGUR0=
 SHA256 (cargo/heapless-0.8.0.tar.gz) = C/uethhgHImUWnDiVImNqTsTvgOICR1CEXRismW7P60=
+SHA256 (cargo/heck-0.4.1.tar.gz) = lVBcOLRXKy2RDOywKBVg9UtEChkzbLvLJ79s5q3G9ag=
 SHA256 (cargo/heck-0.5.0.tar.gz) = IwTgCYP4f/s4tVtES147YKiEtdMMD8p9gv4zRJu+Veo=
 SHA256 (cargo/hermit-abi-0.5.2.tar.gz) = /A/vRW5LqpbalQRVzQLAgcqVOxQSmOQds/x+NrHahJw=
 SHA256 (cargo/hex-0.4.3.tar.gz) = fyQlSqmlS1yFjq7i9bzNtGqvDkhqWV7V/Y+GulUjKnA=
@@ -470,7 +471,7 @@ SHA256 (cargo/ignore-0.4.24.tar.gz) = gXdub5RkQyr8wo0D5S6xAck7bwVm9SrvJCdmPnAPBA
 SHA256 (cargo/image-0.25.10.tar.gz) = hauAOUMzwC/mier5AKtQD70MIhPaQUaH6/mVpl1aYQQ=
 SHA256 (cargo/image-webp-0.2.4.tar.gz) = Ul6f8+Gkvi++of3w6YaGptmLTY+Tfhv3QCJFrxkJ6MM=
 SHA256 (cargo/imagesize-0.14.0.tar.gz) = CeVOV7TEi0D3rsdWNTkrErNCH6Jv6LQzLmMTjtJ4RZw=
-SHA256 (cargo/indexmap-2.12.0.tar.gz) = Zxeo0qWpKaGi60OhKBJJjtFBoLz7fo94RPvb5DA7up8=
+SHA256 (cargo/indexmap-2.14.0.tar.gz) = 1GbpRU8I5KkR4UgGwk4W+6G0wSHR6kdDlvOWBpz5Sdk=
 SHA256 (cargo/indicatif-0.18.3.tar.gz) = k3XhEuS0Y+wbHGwBGVNUXGWjAWT7q1tYHfMrOr8Ny4g=
 SHA256 (cargo/indoc-2.0.7.tar.gz) = ec9ck/kyKM+O+zujYlNfsRGZrFSKCc4RfJsa3DAw1wY=
 SHA256 (cargo/infer-0.15.0.tar.gz) = yzNiLakIgHoG+VE8GbPBrVD6s+QTfYKngQfVAgdaoZk=
@@ -724,6 +725,7 @@ SHA256 (cargo/proptest-1.10.0.tar.gz) = N1Zss/2s7xTAc3+VRt98/q2/vJ/vEJkQOL9QFdDI
 SHA256 (cargo/prost-0.14.3.tar.gz) = 0upwUkovgtUYvOQTF9D650FRUFZRr0X68f+9b9M/BWg=
 SHA256 (cargo/prost-build-0.14.1.tar.gz) = rGwzIPmrrFl9y8Zod07wBnAmckdKrVPG1Za2Lkh7QLE=
 SHA256 (cargo/prost-derive-0.14.3.tar.gz) = J8YCOWITL0sw60wXLJHOktkz2jNMWcI83e6CNY3a+ws=
+SHA256 (cargo/prost-reflect-0.16.4.tar.gz) = WQqhRf7o96JrWmBVNl58XomlwcqumGneduwO5zGBovk=
 SHA256 (cargo/prost-types-0.14.3.tar.gz) = iZHEy9uLxbEfCwdP/ihsMOUj3pD+5bqBMvE5nyPLPdc=
 SHA256 (cargo/protobuf-3.7.2.tar.gz) = 1lodTdrn2LXeaBU7SPaqO7qMsAKyQ9vbxVpa+8mPmfQ=
 SHA256 (cargo/protobuf-support-3.7.2.tar.gz) = PjbC8x4KR/koD7NH715GH/zSxS3VINjiFrUvk7Cw19Y=
@@ -752,7 +754,7 @@ SHA256 (cargo/rand_xorshift-0.4.0.tar.gz) = UTlikZ78Mw+CntslNYRNG5ErD74soWXWE+To
 SHA256 (cargo/rapidhash-4.2.0.tar.gz) = KYhzDuAUVBFX9Izk3MYDlA4AkV7cPH+ajXgJIla7JJM=
 SHA256 (cargo/ratatui-0.29.0.tar.gz) = 6r2UwvN4AcIFg/xJ3VzWsLpoxxZ4fC3W7RhXHh5jEXs=
 SHA256 (cargo/ratatui-core-0.1.0.tar.gz) = XvjeoJqSyq9zv/ettwt2Fi5ZN1JAWKflv/N4acu+wpM=
-SHA256 (cargo/rayon-1.11.0.tar.gz) = No8B0AW/j9mxIG+2+mU+bEqBzrFGZAa4F5LYfFZ3pY8=
+SHA256 (cargo/rayon-1.12.0.tar.gz) = +zmxZngfktSCU070tLGyVo9CYTtT5bbBYOJM+/owkm0=
 SHA256 (cargo/rayon-core-1.13.0.tar.gz) = IuGLDwBi0w1CMLLoX/d/3+Qyb+sFS5eDo0YNhDXIq5E=
 SHA256 (cargo/rcgen-0.13.2.tar.gz) = deZp5SAiWbUxTR6lOXMWrUAIGUN4V7kIYXZfJMTPgKI=
 SHA256 (cargo/read-fonts-0.35.0.tar.gz) = ZxfPI7SIrfZLnXETKVQro03hR98mI3AiGUDfq8LJE1g=
@@ -861,7 +863,7 @@ SHA256 (cargo/shlex-1.3.0.tar.gz) = D9ov8NCEAZuk18bzccldj9dc41JMPLj7ZTowI/YyPmQ=
 SHA256 (cargo/signal-hook-0.3.18.tar.gz) = 2IGhbPRCaqWEl50wvYLLM0KQJ+QhIrFpdT1u8Qhe1uI=
 SHA256 (cargo/signal-hook-0.4.4.tar.gz) = sqDCjKWQjb281S5v2qADWKuIY3+Ksz4fGI3VEOtEtT0=
 SHA256 (cargo/signal-hook-mio-0.2.5.tar.gz) = t1oZp6dAslvHlEve5hcjaPmIdjt0Tj1N/nU/a07OQMw=
-SHA256 (cargo/signal-hook-registry-1.4.6.tar.gz) = sqRxm/9IzuaznRLAIO60kJU60kQ7cFW9CyH8omvYwos=
+SHA256 (cargo/signal-hook-registry-1.4.8.tar.gz) = xNtpy6ERCv/A6fe81Iu/h7P0/Hxh/JFVr9TEaes9bBs=
 SHA256 (cargo/signature-2.2.0.tar.gz) = d1STmVUt5FqJilgMG0HURb9zDfhnzETmwCM7vEuDKd4=
 SHA256 (cargo/sigstore-bundle-0.6.6.tar.gz) = Dn3FPIqUGFjQFHliLbt2UKqi7gyh+1j7bN3b/DBkq7s=
 SHA256 (cargo/sigstore-crypto-0.6.6.tar.gz) = 2pDD2a9jiJil/cNHR5sY+VC7Dd4R7PIkT5TNKBNdpTs=
@@ -884,6 +886,7 @@ SHA256 (cargo/small_ctor-0.1.2.tar.gz) = iEFKXKH4XYLMNEcel18PdPaqVMQPBi76QsAIDn9
 SHA256 (cargo/smallvec-1.15.1.tar.gz) = Z7G3o7X+TxN2iHGEBF/PRcaekq9zS3qt3AX7d3tvvQM=
 SHA256 (cargo/smartstring-1.0.1.tar.gz) = P7csYz77qi3WZphlBQFsMsMEQ5XOr4gVGDmdL0En7ik=
 SHA256 (cargo/smawk-0.3.2.tar.gz) = t8OIwbXpN1bQx0CWXEHogi+GZiHUGsvfYzamoWj4hAw=
+SHA256 (cargo/socket2-0.5.10.tar.gz) = 4iN2q+01DXPdHNEZtX/8ytlbTlhafNpD4oYkXOI8Bng=
 SHA256 (cargo/socket2-0.6.4.tar.gz) = UtHP7UEgtNknv3wPhtIIekp9YCfJBtn51SWoBXO5vlE=
 SHA256 (cargo/spin-0.10.0.tar.gz) = 1f5My5jZwpLVb+yJpeB9p/xM8NwR4Va0F5MTJ3XT5ZE=
 SHA256 (cargo/spin-0.9.8.tar.gz) = aYDo11ESQfis9K6927H/k4317r6YaRQYxEaNC3Kpamc=
@@ -1649,6 +1652,7 @@ SIZE (cargo/hayro-ccitt-0.3.0.tar.gz) = 14462
 SIZE (cargo/hayro-jbig2-0.3.0.tar.gz) = 71026
 SIZE (cargo/hdrhistogram-7.5.4.tar.gz) = 319746
 SIZE (cargo/heapless-0.8.0.tar.gz) = 77802
+SIZE (cargo/heck-0.4.1.tar.gz) = 11567
 SIZE (cargo/heck-0.5.0.tar.gz) = 11517
 SIZE (cargo/hermit-abi-0.5.2.tar.gz) = 17435
 SIZE (cargo/hex-0.4.3.tar.gz) = 13299
@@ -1692,7 +1696,7 @@ SIZE (cargo/ignore-0.4.24.tar.gz) = 59121
 SIZE (cargo/image-0.25.10.tar.gz) = 303647
 SIZE (cargo/image-webp-0.2.4.tar.gz) = 68478
 SIZE (cargo/imagesize-0.14.0.tar.gz) = 22706
-SIZE (cargo/indexmap-2.12.0.tar.gz) = 100446
+SIZE (cargo/indexmap-2.14.0.tar.gz) = 104085
 SIZE (cargo/indicatif-0.18.3.tar.gz) = 66504
 SIZE (cargo/indoc-2.0.7.tar.gz) = 17184
 SIZE (cargo/infer-0.15.0.tar.gz) = 18734
@@ -1946,6 +1950,7 @@ SIZE (cargo/proptest-1.10.0.tar.gz) = 207437
 SIZE (cargo/prost-0.14.3.tar.gz) = 33174
 SIZE (cargo/prost-build-0.14.1.tar.gz) = 47670
 SIZE (cargo/prost-derive-0.14.3.tar.gz) = 21365
+SIZE (cargo/prost-reflect-0.16.4.tar.gz) = 116350
 SIZE (cargo/prost-types-0.14.3.tar.gz) = 49368
 SIZE (cargo/protobuf-3.7.2.tar.gz) = 211978
 SIZE (cargo/protobuf-support-3.7.2.tar.gz) = 11725
@@ -1974,7 +1979,7 @@ SIZE (cargo/rand_xorshift-0.4.0.tar.gz) = 10262
 SIZE (cargo/rapidhash-4.2.0.tar.gz) = 48712
 SIZE (cargo/ratatui-0.29.0.tar.gz) = 543514
 SIZE (cargo/ratatui-core-0.1.0.tar.gz) = 159099
-SIZE (cargo/rayon-1.11.0.tar.gz) = 182470
+SIZE (cargo/rayon-1.12.0.tar.gz) = 183391
 SIZE (cargo/rayon-core-1.13.0.tar.gz) = 73151
 SIZE (cargo/rcgen-0.13.2.tar.gz) = 77836
 SIZE (cargo/read-fonts-0.35.0.tar.gz) = 416793
@@ -2083,7 +2088,7 @@ SIZE (cargo/shlex-1.3.0.tar.gz) = 18713
 SIZE (cargo/signal-hook-0.3.18.tar.gz) = 50862
 SIZE (cargo/signal-hook-0.4.4.tar.gz) = 46945
 SIZE (cargo/signal-hook-mio-0.2.5.tar.gz) = 14373
-SIZE (cargo/signal-hook-registry-1.4.6.tar.gz) = 19277
+SIZE (cargo/signal-hook-registry-1.4.8.tar.gz) = 21668
 SIZE (cargo/signature-2.2.0.tar.gz) = 15531
 SIZE (cargo/sigstore-bundle-0.6.6.tar.gz) = 48910
 SIZE (cargo/sigstore-crypto-0.6.6.tar.gz) = 16821
@@ -2106,6 +2111,7 @@ SIZE (cargo/small_ctor-0.1.2.tar.gz) = 8607
 SIZE (cargo/smallvec-1.15.1.tar.gz) = 38116
 SIZE (cargo/smartstring-1.0.1.tar.gz) = 29555
 SIZE (cargo/smawk-0.3.2.tar.gz) = 13831
+SIZE (cargo/socket2-0.5.10.tar.gz) = 58169
 SIZE (cargo/socket2-0.6.4.tar.gz) = 59888
 SIZE (cargo/spin-0.10.0.tar.gz) = 39654
 SIZE (cargo/spin-0.9.8.tar.gz) = 38958
