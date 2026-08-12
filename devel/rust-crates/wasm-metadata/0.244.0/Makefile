@@ -61,6 +61,7 @@ BUILD_DEPENDS +=	rust-crate-libc_0_2_186-0:devel/rust-crates/libc/0.2.186
 BUILD_DEPENDS +=	rust-crate-miniz_oxide_0_8_9-0:devel/rust-crates/miniz_oxide/0.8.9
 BUILD_DEPENDS +=	rust-crate-object_0_37_3-0:devel/rust-crates/object/0.37.3
 BUILD_DEPENDS +=	rust-crate-rustc_demangle_0_1_26-0:devel/rust-crates/rustc-demangle/0.1.26
+BUILD_DEPENDS +=	rust-crate-foldhash_0_2_0-0:devel/rust-crates/foldhash/0.2.0
 BUILD_DEPENDS +=	rust-crate-serde_derive_1_0_228-0:devel/rust-crates/serde_derive/1.0.228
 BUILD_DEPENDS +=	rust-crate-allocator_api2_0_2_21-0:devel/rust-crates/allocator-api2/0.2.21
 BUILD_DEPENDS +=	rust-crate-foldhash_0_1_5-0:devel/rust-crates/foldhash/0.1.5
@@ -294,6 +295,17 @@ post-extract:
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/rustc-demangle-0.1.26.tar.gz ${WRKDIR}/vendor/rustc-demangle-0.1.26 2>/dev/null || true; \
 	else \
 		echo "missing dep rustc-demangle-0.1.26" >&2; exit 1; \
+	fi
+	@if [ -d ${_RUST_CRATE_SHARE}/foldhash-0.2.0 ]; then \
+		ln -sfn ${_RUST_CRATE_SHARE}/foldhash-0.2.0 ${WRKDIR}/vendor/foldhash-0.2.0; \
+	elif [ -f ${_RUST_CRATE_SHARE}/foldhash-0.2.0.tar.gz ]; then \
+		tar xzf ${_RUST_CRATE_SHARE}/foldhash-0.2.0.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/foldhash-0.2.0 ] && [ -d ${WRKDIR}/vendor/foldhash-0.2.0 ]; then \
+			mv ${WRKDIR}/vendor/foldhash-0.2.0 ${WRKDIR}/vendor/foldhash-0.2.0; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/foldhash-0.2.0.tar.gz ${WRKDIR}/vendor/foldhash-0.2.0 2>/dev/null || true; \
+	else \
+		echo "missing dep foldhash-0.2.0" >&2; exit 1; \
 	fi
 	@if [ -d ${_RUST_CRATE_SHARE}/serde_derive-1.0.228 ]; then \
 		ln -sfn ${_RUST_CRATE_SHARE}/serde_derive-1.0.228 ${WRKDIR}/vendor/serde_derive-1.0.228; \
@@ -562,6 +574,12 @@ pre-build:
 	@cp -f ${_RUST_CRATE_LIBDIR}/rustc-demangle-0.1.26/lib*.rlib ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@cp -f ${_RUST_CRATE_LIBDIR}/rustc-demangle-0.1.26/lib*.so ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@cp -f ${_RUST_CRATE_LIBDIR}/rustc-demangle-0.1.26/lib*.rmeta ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
+	@if [ -d ${_RUST_CRATE_LIBDIR}/foldhash-0.2.0/deps ]; then \
+		cp -Rp ${_RUST_CRATE_LIBDIR}/foldhash-0.2.0/deps/. ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true; \
+	fi
+	@cp -f ${_RUST_CRATE_LIBDIR}/foldhash-0.2.0/lib*.rlib ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
+	@cp -f ${_RUST_CRATE_LIBDIR}/foldhash-0.2.0/lib*.so ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
+	@cp -f ${_RUST_CRATE_LIBDIR}/foldhash-0.2.0/lib*.rmeta ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@if [ -d ${_RUST_CRATE_LIBDIR}/serde_derive-1.0.228/deps ]; then \
 		cp -Rp ${_RUST_CRATE_LIBDIR}/serde_derive-1.0.228/deps/. ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true; \
 	fi

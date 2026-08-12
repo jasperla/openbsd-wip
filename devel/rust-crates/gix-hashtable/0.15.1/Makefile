@@ -49,6 +49,7 @@ BUILD_DEPENDS +=	rust-crate-faster_hex_0_10_0-0:devel/rust-crates/faster-hex/0.1
 BUILD_DEPENDS +=	rust-crate-gix_features_0_48_1-0:devel/rust-crates/gix-features/0.48.1
 BUILD_DEPENDS +=	rust-crate-sha1_checked_0_10_0-0:devel/rust-crates/sha1-checked/0.10.0
 BUILD_DEPENDS +=	rust-crate-thiserror_2_0_18-0:devel/rust-crates/thiserror/2.0.18
+BUILD_DEPENDS +=	rust-crate-foldhash_0_2_0-0:devel/rust-crates/foldhash/0.2.0
 BUILD_DEPENDS +=	rust-crate-lock_api_0_4_14-0:devel/rust-crates/lock_api/0.4.14
 BUILD_DEPENDS +=	rust-crate-parking_lot_core_0_9_12-0:devel/rust-crates/parking_lot_core/0.9.12
 BUILD_DEPENDS +=	rust-crate-heapless_0_8_0-0:devel/rust-crates/heapless/0.8.0
@@ -192,6 +193,17 @@ post-extract:
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/thiserror-2.0.18.tar.gz ${WRKDIR}/vendor/thiserror-2.0.18 2>/dev/null || true; \
 	else \
 		echo "missing dep thiserror-2.0.18" >&2; exit 1; \
+	fi
+	@if [ -d ${_RUST_CRATE_SHARE}/foldhash-0.2.0 ]; then \
+		ln -sfn ${_RUST_CRATE_SHARE}/foldhash-0.2.0 ${WRKDIR}/vendor/foldhash-0.2.0; \
+	elif [ -f ${_RUST_CRATE_SHARE}/foldhash-0.2.0.tar.gz ]; then \
+		tar xzf ${_RUST_CRATE_SHARE}/foldhash-0.2.0.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/foldhash-0.2.0 ] && [ -d ${WRKDIR}/vendor/foldhash-0.2.0 ]; then \
+			mv ${WRKDIR}/vendor/foldhash-0.2.0 ${WRKDIR}/vendor/foldhash-0.2.0; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/foldhash-0.2.0.tar.gz ${WRKDIR}/vendor/foldhash-0.2.0 2>/dev/null || true; \
+	else \
+		echo "missing dep foldhash-0.2.0" >&2; exit 1; \
 	fi
 	@if [ -d ${_RUST_CRATE_SHARE}/lock_api-0.4.14 ]; then \
 		ln -sfn ${_RUST_CRATE_SHARE}/lock_api-0.4.14 ${WRKDIR}/vendor/lock_api-0.4.14; \
@@ -850,6 +862,12 @@ pre-build:
 	@cp -f ${_RUST_CRATE_LIBDIR}/thiserror-2.0.18/lib*.rlib ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@cp -f ${_RUST_CRATE_LIBDIR}/thiserror-2.0.18/lib*.so ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@cp -f ${_RUST_CRATE_LIBDIR}/thiserror-2.0.18/lib*.rmeta ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
+	@if [ -d ${_RUST_CRATE_LIBDIR}/foldhash-0.2.0/deps ]; then \
+		cp -Rp ${_RUST_CRATE_LIBDIR}/foldhash-0.2.0/deps/. ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true; \
+	fi
+	@cp -f ${_RUST_CRATE_LIBDIR}/foldhash-0.2.0/lib*.rlib ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
+	@cp -f ${_RUST_CRATE_LIBDIR}/foldhash-0.2.0/lib*.so ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
+	@cp -f ${_RUST_CRATE_LIBDIR}/foldhash-0.2.0/lib*.rmeta ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@if [ -d ${_RUST_CRATE_LIBDIR}/lock_api-0.4.14/deps ]; then \
 		cp -Rp ${_RUST_CRATE_LIBDIR}/lock_api-0.4.14/deps/. ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true; \
 	fi

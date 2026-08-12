@@ -61,6 +61,7 @@ BUILD_DEPENDS +=	rust-crate-strsim_0_11_1-0:devel/rust-crates/strsim/0.11.1
 BUILD_DEPENDS +=	rust-crate-equivalent_1_0_2-0:devel/rust-crates/equivalent/1.0.2
 BUILD_DEPENDS +=	rust-crate-hashbrown_0_17_0-0:devel/rust-crates/hashbrown/0.17.0
 BUILD_DEPENDS +=	rust-crate-serde_derive_1_0_228-0:devel/rust-crates/serde_derive/1.0.228
+BUILD_DEPENDS +=	rust-crate-foldhash_0_2_0-0:devel/rust-crates/foldhash/0.2.0
 
 # Direct registry deps: seed their rlibs/fingerprints before building this crate.
 _RUST_CRATE_ARCH =	${MACHINE_ARCH}
@@ -284,6 +285,17 @@ post-extract:
 	else \
 		echo "missing dep serde_derive-1.0.228" >&2; exit 1; \
 	fi
+	@if [ -d ${_RUST_CRATE_SHARE}/foldhash-0.2.0 ]; then \
+		ln -sfn ${_RUST_CRATE_SHARE}/foldhash-0.2.0 ${WRKDIR}/vendor/foldhash-0.2.0; \
+	elif [ -f ${_RUST_CRATE_SHARE}/foldhash-0.2.0.tar.gz ]; then \
+		tar xzf ${_RUST_CRATE_SHARE}/foldhash-0.2.0.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/foldhash-0.2.0 ] && [ -d ${WRKDIR}/vendor/foldhash-0.2.0 ]; then \
+			mv ${WRKDIR}/vendor/foldhash-0.2.0 ${WRKDIR}/vendor/foldhash-0.2.0; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/foldhash-0.2.0.tar.gz ${WRKDIR}/vendor/foldhash-0.2.0 2>/dev/null || true; \
+	else \
+		echo "missing dep foldhash-0.2.0" >&2; exit 1; \
+	fi
 	# Strip optional/dev deps from EVERY vendored Cargo.toml, drop feature
 	# activations that no longer exist on deps, and refresh
 	# .cargo-checksum.json (editing Cargo.toml invalidates the hash).
@@ -430,6 +442,12 @@ pre-build:
 	@cp -f ${_RUST_CRATE_LIBDIR}/serde_derive-1.0.228/lib*.rlib ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@cp -f ${_RUST_CRATE_LIBDIR}/serde_derive-1.0.228/lib*.so ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@cp -f ${_RUST_CRATE_LIBDIR}/serde_derive-1.0.228/lib*.rmeta ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
+	@if [ -d ${_RUST_CRATE_LIBDIR}/foldhash-0.2.0/deps ]; then \
+		cp -Rp ${_RUST_CRATE_LIBDIR}/foldhash-0.2.0/deps/. ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true; \
+	fi
+	@cp -f ${_RUST_CRATE_LIBDIR}/foldhash-0.2.0/lib*.rlib ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
+	@cp -f ${_RUST_CRATE_LIBDIR}/foldhash-0.2.0/lib*.so ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
+	@cp -f ${_RUST_CRATE_LIBDIR}/foldhash-0.2.0/lib*.rmeta ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	# Package files are often mode 444; cargo must be able to write .d / replace units.
 	@chmod -R u+w ${MODCARGO_TARGET_DIR} 2>/dev/null || true
 

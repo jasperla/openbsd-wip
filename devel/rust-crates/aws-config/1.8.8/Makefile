@@ -171,7 +171,6 @@ BUILD_DEPENDS +=	rust-crate-tower_service_0_3_3-0:devel/rust-crates/tower-servic
 BUILD_DEPENDS +=	rust-crate-webpki_roots_1_0_3-0:devel/rust-crates/webpki-roots/1.0.3
 BUILD_DEPENDS +=	rust-crate-base64_0_22_1-0:devel/rust-crates/base64/0.22.1
 BUILD_DEPENDS +=	rust-crate-ipnet_2_11_0-0:devel/rust-crates/ipnet/2.11.0
-BUILD_DEPENDS +=	rust-crate-socket2_0_5_10-0:devel/rust-crates/socket2/0.5.10
 BUILD_DEPENDS +=	rust-crate-aws_lc_rs_1_16_2-0:devel/rust-crates/aws-lc-rs/1.16.2
 BUILD_DEPENDS +=	rust-crate-rustls_webpki_0_103_13-0:devel/rust-crates/rustls-webpki/0.103.13
 BUILD_DEPENDS +=	rust-crate-subtle_2_6_1-0:devel/rust-crates/subtle/2.6.1
@@ -209,6 +208,7 @@ BUILD_DEPENDS +=	rust-crate-potential_utf_0_1_3-0:devel/rust-crates/potential_ut
 BUILD_DEPENDS +=	rust-crate-zerotrie_0_2_2-0:devel/rust-crates/zerotrie/0.2.2
 BUILD_DEPENDS +=	rust-crate-generic_array_0_14_7-0:devel/rust-crates/generic-array/0.14.7
 BUILD_DEPENDS +=	rust-crate-typenum_1_19_0-0:devel/rust-crates/typenum/1.19.0
+BUILD_DEPENDS +=	rust-crate-foldhash_0_2_0-0:devel/rust-crates/foldhash/0.2.0
 BUILD_DEPENDS +=	rust-crate-cmake_0_1_54-0:devel/rust-crates/cmake/0.1.54
 BUILD_DEPENDS +=	rust-crate-dunce_1_0_5-0:devel/rust-crates/dunce/1.0.5
 BUILD_DEPENDS +=	rust-crate-fs_extra_1_3_0-0:devel/rust-crates/fs_extra/1.3.0
@@ -1656,17 +1656,6 @@ post-extract:
 	else \
 		echo "missing dep ipnet-2.11.0" >&2; exit 1; \
 	fi
-	@if [ -d ${_RUST_CRATE_SHARE}/socket2-0.5.10 ]; then \
-		ln -sfn ${_RUST_CRATE_SHARE}/socket2-0.5.10 ${WRKDIR}/vendor/socket2-0.5.10; \
-	elif [ -f ${_RUST_CRATE_SHARE}/socket2-0.5.10.tar.gz ]; then \
-		tar xzf ${_RUST_CRATE_SHARE}/socket2-0.5.10.tar.gz -C ${WRKDIR}/vendor; \
-		if [ ! -d ${WRKDIR}/vendor/socket2-0.5.10 ] && [ -d ${WRKDIR}/vendor/socket2-0.5.10 ]; then \
-			mv ${WRKDIR}/vendor/socket2-0.5.10 ${WRKDIR}/vendor/socket2-0.5.10; \
-		fi; \
-		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/socket2-0.5.10.tar.gz ${WRKDIR}/vendor/socket2-0.5.10 2>/dev/null || true; \
-	else \
-		echo "missing dep socket2-0.5.10" >&2; exit 1; \
-	fi
 	@if [ -d ${_RUST_CRATE_SHARE}/aws-lc-rs-1.16.2 ]; then \
 		ln -sfn ${_RUST_CRATE_SHARE}/aws-lc-rs-1.16.2 ${WRKDIR}/vendor/aws-lc-rs-1.16.2; \
 	elif [ -f ${_RUST_CRATE_SHARE}/aws-lc-rs-1.16.2.tar.gz ]; then \
@@ -2073,6 +2062,17 @@ post-extract:
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/typenum-1.19.0.tar.gz ${WRKDIR}/vendor/typenum-1.19.0 2>/dev/null || true; \
 	else \
 		echo "missing dep typenum-1.19.0" >&2; exit 1; \
+	fi
+	@if [ -d ${_RUST_CRATE_SHARE}/foldhash-0.2.0 ]; then \
+		ln -sfn ${_RUST_CRATE_SHARE}/foldhash-0.2.0 ${WRKDIR}/vendor/foldhash-0.2.0; \
+	elif [ -f ${_RUST_CRATE_SHARE}/foldhash-0.2.0.tar.gz ]; then \
+		tar xzf ${_RUST_CRATE_SHARE}/foldhash-0.2.0.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/foldhash-0.2.0 ] && [ -d ${WRKDIR}/vendor/foldhash-0.2.0 ]; then \
+			mv ${WRKDIR}/vendor/foldhash-0.2.0 ${WRKDIR}/vendor/foldhash-0.2.0; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/foldhash-0.2.0.tar.gz ${WRKDIR}/vendor/foldhash-0.2.0 2>/dev/null || true; \
+	else \
+		echo "missing dep foldhash-0.2.0" >&2; exit 1; \
 	fi
 	@if [ -d ${_RUST_CRATE_SHARE}/cmake-0.1.54 ]; then \
 		ln -sfn ${_RUST_CRATE_SHARE}/cmake-0.1.54 ${WRKDIR}/vendor/cmake-0.1.54; \
@@ -3034,12 +3034,6 @@ pre-build:
 	@cp -f ${_RUST_CRATE_LIBDIR}/ipnet-2.11.0/lib*.rlib ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@cp -f ${_RUST_CRATE_LIBDIR}/ipnet-2.11.0/lib*.so ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@cp -f ${_RUST_CRATE_LIBDIR}/ipnet-2.11.0/lib*.rmeta ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
-	@if [ -d ${_RUST_CRATE_LIBDIR}/socket2-0.5.10/deps ]; then \
-		cp -Rp ${_RUST_CRATE_LIBDIR}/socket2-0.5.10/deps/. ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true; \
-	fi
-	@cp -f ${_RUST_CRATE_LIBDIR}/socket2-0.5.10/lib*.rlib ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
-	@cp -f ${_RUST_CRATE_LIBDIR}/socket2-0.5.10/lib*.so ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
-	@cp -f ${_RUST_CRATE_LIBDIR}/socket2-0.5.10/lib*.rmeta ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@if [ -d ${_RUST_CRATE_LIBDIR}/aws-lc-rs-1.16.2/deps ]; then \
 		cp -Rp ${_RUST_CRATE_LIBDIR}/aws-lc-rs-1.16.2/deps/. ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true; \
 	fi
@@ -3262,6 +3256,12 @@ pre-build:
 	@cp -f ${_RUST_CRATE_LIBDIR}/typenum-1.19.0/lib*.rlib ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@cp -f ${_RUST_CRATE_LIBDIR}/typenum-1.19.0/lib*.so ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@cp -f ${_RUST_CRATE_LIBDIR}/typenum-1.19.0/lib*.rmeta ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
+	@if [ -d ${_RUST_CRATE_LIBDIR}/foldhash-0.2.0/deps ]; then \
+		cp -Rp ${_RUST_CRATE_LIBDIR}/foldhash-0.2.0/deps/. ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true; \
+	fi
+	@cp -f ${_RUST_CRATE_LIBDIR}/foldhash-0.2.0/lib*.rlib ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
+	@cp -f ${_RUST_CRATE_LIBDIR}/foldhash-0.2.0/lib*.so ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
+	@cp -f ${_RUST_CRATE_LIBDIR}/foldhash-0.2.0/lib*.rmeta ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@if [ -d ${_RUST_CRATE_LIBDIR}/cmake-0.1.54/deps ]; then \
 		cp -Rp ${_RUST_CRATE_LIBDIR}/cmake-0.1.54/deps/. ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true; \
 	fi

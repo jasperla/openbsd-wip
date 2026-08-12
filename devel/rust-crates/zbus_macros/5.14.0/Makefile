@@ -72,6 +72,7 @@ BUILD_DEPENDS +=	rust-crate-hashbrown_0_17_0-0:devel/rust-crates/hashbrown/0.17.
 BUILD_DEPENDS +=	rust-crate-idna_adapter_1_2_1-0:devel/rust-crates/idna_adapter/1.2.1
 BUILD_DEPENDS +=	rust-crate-smallvec_1_15_1-0:devel/rust-crates/smallvec/1.15.1
 BUILD_DEPENDS +=	rust-crate-utf8_iter_1_0_4-0:devel/rust-crates/utf8_iter/1.0.4
+BUILD_DEPENDS +=	rust-crate-foldhash_0_2_0-0:devel/rust-crates/foldhash/0.2.0
 BUILD_DEPENDS +=	rust-crate-icu_normalizer_2_0_0-0:devel/rust-crates/icu_normalizer/2.0.0
 BUILD_DEPENDS +=	rust-crate-icu_properties_2_0_1-0:devel/rust-crates/icu_properties/2.0.1
 BUILD_DEPENDS +=	rust-crate-displaydoc_0_2_5-0:devel/rust-crates/displaydoc/0.2.5
@@ -436,6 +437,17 @@ post-extract:
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/utf8_iter-1.0.4.tar.gz ${WRKDIR}/vendor/utf8_iter-1.0.4 2>/dev/null || true; \
 	else \
 		echo "missing dep utf8_iter-1.0.4" >&2; exit 1; \
+	fi
+	@if [ -d ${_RUST_CRATE_SHARE}/foldhash-0.2.0 ]; then \
+		ln -sfn ${_RUST_CRATE_SHARE}/foldhash-0.2.0 ${WRKDIR}/vendor/foldhash-0.2.0; \
+	elif [ -f ${_RUST_CRATE_SHARE}/foldhash-0.2.0.tar.gz ]; then \
+		tar xzf ${_RUST_CRATE_SHARE}/foldhash-0.2.0.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/foldhash-0.2.0 ] && [ -d ${WRKDIR}/vendor/foldhash-0.2.0 ]; then \
+			mv ${WRKDIR}/vendor/foldhash-0.2.0 ${WRKDIR}/vendor/foldhash-0.2.0; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/foldhash-0.2.0.tar.gz ${WRKDIR}/vendor/foldhash-0.2.0 2>/dev/null || true; \
+	else \
+		echo "missing dep foldhash-0.2.0" >&2; exit 1; \
 	fi
 	@if [ -d ${_RUST_CRATE_SHARE}/icu_normalizer-2.0.0 ]; then \
 		ln -sfn ${_RUST_CRATE_SHARE}/icu_normalizer-2.0.0 ${WRKDIR}/vendor/icu_normalizer-2.0.0; \
@@ -880,6 +892,12 @@ pre-build:
 	@cp -f ${_RUST_CRATE_LIBDIR}/utf8_iter-1.0.4/lib*.rlib ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@cp -f ${_RUST_CRATE_LIBDIR}/utf8_iter-1.0.4/lib*.so ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@cp -f ${_RUST_CRATE_LIBDIR}/utf8_iter-1.0.4/lib*.rmeta ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
+	@if [ -d ${_RUST_CRATE_LIBDIR}/foldhash-0.2.0/deps ]; then \
+		cp -Rp ${_RUST_CRATE_LIBDIR}/foldhash-0.2.0/deps/. ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true; \
+	fi
+	@cp -f ${_RUST_CRATE_LIBDIR}/foldhash-0.2.0/lib*.rlib ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
+	@cp -f ${_RUST_CRATE_LIBDIR}/foldhash-0.2.0/lib*.so ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
+	@cp -f ${_RUST_CRATE_LIBDIR}/foldhash-0.2.0/lib*.rmeta ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@if [ -d ${_RUST_CRATE_LIBDIR}/icu_normalizer-2.0.0/deps ]; then \
 		cp -Rp ${_RUST_CRATE_LIBDIR}/icu_normalizer-2.0.0/deps/. ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true; \
 	fi

@@ -89,6 +89,7 @@ BUILD_DEPENDS +=	rust-crate-semver_1_0_28-0:devel/rust-crates/semver/1.0.28
 BUILD_DEPENDS +=	rust-crate-log_0_4_32-0:devel/rust-crates/log/0.4.32
 BUILD_DEPENDS +=	rust-crate-autocfg_1_5_0-0:devel/rust-crates/autocfg/1.5.0
 BUILD_DEPENDS +=	rust-crate-libm_0_2_15-0:devel/rust-crates/libm/0.2.15
+BUILD_DEPENDS +=	rust-crate-foldhash_0_2_0-0:devel/rust-crates/foldhash/0.2.0
 BUILD_DEPENDS +=	rust-crate-value_bag_1_12_0-0:devel/rust-crates/value-bag/1.12.0
 
 # Direct registry deps: seed their rlibs/fingerprints before building this crate.
@@ -621,6 +622,17 @@ post-extract:
 	else \
 		echo "missing dep libm-0.2.15" >&2; exit 1; \
 	fi
+	@if [ -d ${_RUST_CRATE_SHARE}/foldhash-0.2.0 ]; then \
+		ln -sfn ${_RUST_CRATE_SHARE}/foldhash-0.2.0 ${WRKDIR}/vendor/foldhash-0.2.0; \
+	elif [ -f ${_RUST_CRATE_SHARE}/foldhash-0.2.0.tar.gz ]; then \
+		tar xzf ${_RUST_CRATE_SHARE}/foldhash-0.2.0.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/foldhash-0.2.0 ] && [ -d ${WRKDIR}/vendor/foldhash-0.2.0 ]; then \
+			mv ${WRKDIR}/vendor/foldhash-0.2.0 ${WRKDIR}/vendor/foldhash-0.2.0; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/foldhash-0.2.0.tar.gz ${WRKDIR}/vendor/foldhash-0.2.0 2>/dev/null || true; \
+	else \
+		echo "missing dep foldhash-0.2.0" >&2; exit 1; \
+	fi
 	@if [ -d ${_RUST_CRATE_SHARE}/value-bag-1.12.0 ]; then \
 		ln -sfn ${_RUST_CRATE_SHARE}/value-bag-1.12.0 ${WRKDIR}/vendor/value-bag-1.12.0; \
 	elif [ -f ${_RUST_CRATE_SHARE}/value-bag-1.12.0.tar.gz ]; then \
@@ -946,6 +958,12 @@ pre-build:
 	@cp -f ${_RUST_CRATE_LIBDIR}/libm-0.2.15/lib*.rlib ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@cp -f ${_RUST_CRATE_LIBDIR}/libm-0.2.15/lib*.so ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@cp -f ${_RUST_CRATE_LIBDIR}/libm-0.2.15/lib*.rmeta ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
+	@if [ -d ${_RUST_CRATE_LIBDIR}/foldhash-0.2.0/deps ]; then \
+		cp -Rp ${_RUST_CRATE_LIBDIR}/foldhash-0.2.0/deps/. ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true; \
+	fi
+	@cp -f ${_RUST_CRATE_LIBDIR}/foldhash-0.2.0/lib*.rlib ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
+	@cp -f ${_RUST_CRATE_LIBDIR}/foldhash-0.2.0/lib*.so ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
+	@cp -f ${_RUST_CRATE_LIBDIR}/foldhash-0.2.0/lib*.rmeta ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@if [ -d ${_RUST_CRATE_LIBDIR}/value-bag-1.12.0/deps ]; then \
 		cp -Rp ${_RUST_CRATE_LIBDIR}/value-bag-1.12.0/deps/. ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true; \
 	fi

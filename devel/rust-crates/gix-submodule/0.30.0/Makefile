@@ -136,6 +136,7 @@ BUILD_DEPENDS +=	rust-crate-jiff_tzdb_platform_0_1_3-0:devel/rust-crates/jiff-tz
 BUILD_DEPENDS +=	rust-crate-log_0_4_32-0:devel/rust-crates/log/0.4.32
 BUILD_DEPENDS +=	rust-crate-portable_atomic_util_0_2_4-0:devel/rust-crates/portable-atomic-util/0.2.4
 BUILD_DEPENDS +=	rust-crate-tinyvec_macros_0_1_1-0:devel/rust-crates/tinyvec_macros/0.1.1
+BUILD_DEPENDS +=	rust-crate-foldhash_0_2_0-0:devel/rust-crates/foldhash/0.2.0
 BUILD_DEPENDS +=	rust-crate-r_efi_5_3_0-0:devel/rust-crates/r-efi/5.3.0
 BUILD_DEPENDS +=	rust-crate-rand_core_0_10_0-0:devel/rust-crates/rand_core/0.10.0
 BUILD_DEPENDS +=	rust-crate-errno_0_3_14-0:devel/rust-crates/errno/0.3.14
@@ -1196,6 +1197,17 @@ post-extract:
 	else \
 		echo "missing dep tinyvec_macros-0.1.1" >&2; exit 1; \
 	fi
+	@if [ -d ${_RUST_CRATE_SHARE}/foldhash-0.2.0 ]; then \
+		ln -sfn ${_RUST_CRATE_SHARE}/foldhash-0.2.0 ${WRKDIR}/vendor/foldhash-0.2.0; \
+	elif [ -f ${_RUST_CRATE_SHARE}/foldhash-0.2.0.tar.gz ]; then \
+		tar xzf ${_RUST_CRATE_SHARE}/foldhash-0.2.0.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/foldhash-0.2.0 ] && [ -d ${WRKDIR}/vendor/foldhash-0.2.0 ]; then \
+			mv ${WRKDIR}/vendor/foldhash-0.2.0 ${WRKDIR}/vendor/foldhash-0.2.0; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/foldhash-0.2.0.tar.gz ${WRKDIR}/vendor/foldhash-0.2.0 2>/dev/null || true; \
+	else \
+		echo "missing dep foldhash-0.2.0" >&2; exit 1; \
+	fi
 	@if [ -d ${_RUST_CRATE_SHARE}/r-efi-5.3.0 ]; then \
 		ln -sfn ${_RUST_CRATE_SHARE}/r-efi-5.3.0 ${WRKDIR}/vendor/r-efi-5.3.0; \
 	elif [ -f ${_RUST_CRATE_SHARE}/r-efi-5.3.0.tar.gz ]; then \
@@ -1924,6 +1936,12 @@ pre-build:
 	@cp -f ${_RUST_CRATE_LIBDIR}/tinyvec_macros-0.1.1/lib*.rlib ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@cp -f ${_RUST_CRATE_LIBDIR}/tinyvec_macros-0.1.1/lib*.so ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@cp -f ${_RUST_CRATE_LIBDIR}/tinyvec_macros-0.1.1/lib*.rmeta ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
+	@if [ -d ${_RUST_CRATE_LIBDIR}/foldhash-0.2.0/deps ]; then \
+		cp -Rp ${_RUST_CRATE_LIBDIR}/foldhash-0.2.0/deps/. ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true; \
+	fi
+	@cp -f ${_RUST_CRATE_LIBDIR}/foldhash-0.2.0/lib*.rlib ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
+	@cp -f ${_RUST_CRATE_LIBDIR}/foldhash-0.2.0/lib*.so ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
+	@cp -f ${_RUST_CRATE_LIBDIR}/foldhash-0.2.0/lib*.rmeta ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@if [ -d ${_RUST_CRATE_LIBDIR}/r-efi-5.3.0/deps ]; then \
 		cp -Rp ${_RUST_CRATE_LIBDIR}/r-efi-5.3.0/deps/. ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true; \
 	fi

@@ -115,6 +115,7 @@ BUILD_DEPENDS +=	rust-crate-jiff_static_0_2_28-0:devel/rust-crates/jiff-static/0
 BUILD_DEPENDS +=	rust-crate-jiff_tzdb_platform_0_1_3-0:devel/rust-crates/jiff-tzdb-platform/0.1.3
 BUILD_DEPENDS +=	rust-crate-log_0_4_32-0:devel/rust-crates/log/0.4.32
 BUILD_DEPENDS +=	rust-crate-portable_atomic_util_0_2_4-0:devel/rust-crates/portable-atomic-util/0.2.4
+BUILD_DEPENDS +=	rust-crate-foldhash_0_2_0-0:devel/rust-crates/foldhash/0.2.0
 BUILD_DEPENDS +=	rust-crate-tinyvec_macros_0_1_1-0:devel/rust-crates/tinyvec_macros/0.1.1
 BUILD_DEPENDS +=	rust-crate-unicode_ident_1_0_24-0:devel/rust-crates/unicode-ident/1.0.24
 BUILD_DEPENDS +=	rust-crate-byteorder_1_5_0-0:devel/rust-crates/byteorder/1.5.0
@@ -943,6 +944,17 @@ post-extract:
 	else \
 		echo "missing dep portable-atomic-util-0.2.4" >&2; exit 1; \
 	fi
+	@if [ -d ${_RUST_CRATE_SHARE}/foldhash-0.2.0 ]; then \
+		ln -sfn ${_RUST_CRATE_SHARE}/foldhash-0.2.0 ${WRKDIR}/vendor/foldhash-0.2.0; \
+	elif [ -f ${_RUST_CRATE_SHARE}/foldhash-0.2.0.tar.gz ]; then \
+		tar xzf ${_RUST_CRATE_SHARE}/foldhash-0.2.0.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/foldhash-0.2.0 ] && [ -d ${WRKDIR}/vendor/foldhash-0.2.0 ]; then \
+			mv ${WRKDIR}/vendor/foldhash-0.2.0 ${WRKDIR}/vendor/foldhash-0.2.0; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/foldhash-0.2.0.tar.gz ${WRKDIR}/vendor/foldhash-0.2.0 2>/dev/null || true; \
+	else \
+		echo "missing dep foldhash-0.2.0" >&2; exit 1; \
+	fi
 	@if [ -d ${_RUST_CRATE_SHARE}/tinyvec_macros-0.1.1 ]; then \
 		ln -sfn ${_RUST_CRATE_SHARE}/tinyvec_macros-0.1.1 ${WRKDIR}/vendor/tinyvec_macros-0.1.1; \
 	elif [ -f ${_RUST_CRATE_SHARE}/tinyvec_macros-0.1.1.tar.gz ]; then \
@@ -1534,6 +1546,12 @@ pre-build:
 	@cp -f ${_RUST_CRATE_LIBDIR}/portable-atomic-util-0.2.4/lib*.rlib ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@cp -f ${_RUST_CRATE_LIBDIR}/portable-atomic-util-0.2.4/lib*.so ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@cp -f ${_RUST_CRATE_LIBDIR}/portable-atomic-util-0.2.4/lib*.rmeta ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
+	@if [ -d ${_RUST_CRATE_LIBDIR}/foldhash-0.2.0/deps ]; then \
+		cp -Rp ${_RUST_CRATE_LIBDIR}/foldhash-0.2.0/deps/. ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true; \
+	fi
+	@cp -f ${_RUST_CRATE_LIBDIR}/foldhash-0.2.0/lib*.rlib ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
+	@cp -f ${_RUST_CRATE_LIBDIR}/foldhash-0.2.0/lib*.so ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
+	@cp -f ${_RUST_CRATE_LIBDIR}/foldhash-0.2.0/lib*.rmeta ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@if [ -d ${_RUST_CRATE_LIBDIR}/tinyvec_macros-0.1.1/deps ]; then \
 		cp -Rp ${_RUST_CRATE_LIBDIR}/tinyvec_macros-0.1.1/deps/. ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true; \
 	fi

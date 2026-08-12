@@ -198,6 +198,7 @@ BUILD_DEPENDS +=	rust-crate-zerocopy_0_8_48-0:devel/rust-crates/zerocopy/0.8.48
 BUILD_DEPENDS +=	rust-crate-crossbeam_deque_0_8_6-0:devel/rust-crates/crossbeam-deque/0.8.6
 BUILD_DEPENDS +=	rust-crate-crossbeam_utils_0_8_21-0:devel/rust-crates/crossbeam-utils/0.8.21
 BUILD_DEPENDS +=	rust-crate-fastrand_2_3_0-0:devel/rust-crates/fastrand/2.3.0
+BUILD_DEPENDS +=	rust-crate-foldhash_0_2_0-0:devel/rust-crates/foldhash/0.2.0
 BUILD_DEPENDS +=	rust-crate-float_cmp_0_9_0-0:devel/rust-crates/float-cmp/0.9.0
 BUILD_DEPENDS +=	rust-crate-typenum_1_19_0-0:devel/rust-crates/typenum/1.19.0
 BUILD_DEPENDS +=	rust-crate-zerocopy_derive_0_8_48-0:devel/rust-crates/zerocopy-derive/0.8.48
@@ -1932,6 +1933,17 @@ post-extract:
 	else \
 		echo "missing dep fastrand-2.3.0" >&2; exit 1; \
 	fi
+	@if [ -d ${_RUST_CRATE_SHARE}/foldhash-0.2.0 ]; then \
+		ln -sfn ${_RUST_CRATE_SHARE}/foldhash-0.2.0 ${WRKDIR}/vendor/foldhash-0.2.0; \
+	elif [ -f ${_RUST_CRATE_SHARE}/foldhash-0.2.0.tar.gz ]; then \
+		tar xzf ${_RUST_CRATE_SHARE}/foldhash-0.2.0.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/foldhash-0.2.0 ] && [ -d ${WRKDIR}/vendor/foldhash-0.2.0 ]; then \
+			mv ${WRKDIR}/vendor/foldhash-0.2.0 ${WRKDIR}/vendor/foldhash-0.2.0; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/foldhash-0.2.0.tar.gz ${WRKDIR}/vendor/foldhash-0.2.0 2>/dev/null || true; \
+	else \
+		echo "missing dep foldhash-0.2.0" >&2; exit 1; \
+	fi
 	@if [ -d ${_RUST_CRATE_SHARE}/float-cmp-0.9.0 ]; then \
 		ln -sfn ${_RUST_CRATE_SHARE}/float-cmp-0.9.0 ${WRKDIR}/vendor/float-cmp-0.9.0; \
 	elif [ -f ${_RUST_CRATE_SHARE}/float-cmp-0.9.0.tar.gz ]; then \
@@ -2944,6 +2956,12 @@ pre-build:
 	@cp -f ${_RUST_CRATE_LIBDIR}/fastrand-2.3.0/lib*.rlib ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@cp -f ${_RUST_CRATE_LIBDIR}/fastrand-2.3.0/lib*.so ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@cp -f ${_RUST_CRATE_LIBDIR}/fastrand-2.3.0/lib*.rmeta ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
+	@if [ -d ${_RUST_CRATE_LIBDIR}/foldhash-0.2.0/deps ]; then \
+		cp -Rp ${_RUST_CRATE_LIBDIR}/foldhash-0.2.0/deps/. ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true; \
+	fi
+	@cp -f ${_RUST_CRATE_LIBDIR}/foldhash-0.2.0/lib*.rlib ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
+	@cp -f ${_RUST_CRATE_LIBDIR}/foldhash-0.2.0/lib*.so ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
+	@cp -f ${_RUST_CRATE_LIBDIR}/foldhash-0.2.0/lib*.rmeta ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@if [ -d ${_RUST_CRATE_LIBDIR}/float-cmp-0.9.0/deps ]; then \
 		cp -Rp ${_RUST_CRATE_LIBDIR}/float-cmp-0.9.0/deps/. ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true; \
 	fi

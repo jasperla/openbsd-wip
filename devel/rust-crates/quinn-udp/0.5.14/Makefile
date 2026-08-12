@@ -45,7 +45,7 @@ MAKE_ENV +=		CARGO_ENCODED_RUSTFLAGS=--cap-lints=allow
 BUILD_DEPENDS +=	rust-crate-cfg_aliases_0_2_1-0:devel/rust-crates/cfg_aliases/0.2.1
 BUILD_DEPENDS +=	rust-crate-libc_0_2_186-0:devel/rust-crates/libc/0.2.186
 BUILD_DEPENDS +=	rust-crate-once_cell_1_21_3-0:devel/rust-crates/once_cell/1.21.3
-BUILD_DEPENDS +=	rust-crate-socket2_0_5_10-0:devel/rust-crates/socket2/0.5.10
+BUILD_DEPENDS +=	rust-crate-socket2_0_6_4-0:devel/rust-crates/socket2/0.6.4
 BUILD_DEPENDS +=	rust-crate-tracing_0_1_44-0:devel/rust-crates/tracing/0.1.44
 BUILD_DEPENDS +=	rust-crate-portable_atomic_1_11_1-0:devel/rust-crates/portable-atomic/1.11.1
 BUILD_DEPENDS +=	rust-crate-log_0_4_32-0:devel/rust-crates/log/0.4.32
@@ -105,16 +105,16 @@ post-extract:
 	else \
 		echo "missing dep once_cell-1.21.3" >&2; exit 1; \
 	fi
-	@if [ -d ${_RUST_CRATE_SHARE}/socket2-0.5.10 ]; then \
-		ln -sfn ${_RUST_CRATE_SHARE}/socket2-0.5.10 ${WRKDIR}/vendor/socket2-0.5.10; \
-	elif [ -f ${_RUST_CRATE_SHARE}/socket2-0.5.10.tar.gz ]; then \
-		tar xzf ${_RUST_CRATE_SHARE}/socket2-0.5.10.tar.gz -C ${WRKDIR}/vendor; \
-		if [ ! -d ${WRKDIR}/vendor/socket2-0.5.10 ] && [ -d ${WRKDIR}/vendor/socket2-0.5.10 ]; then \
-			mv ${WRKDIR}/vendor/socket2-0.5.10 ${WRKDIR}/vendor/socket2-0.5.10; \
+	@if [ -d ${_RUST_CRATE_SHARE}/socket2-0.6.4 ]; then \
+		ln -sfn ${_RUST_CRATE_SHARE}/socket2-0.6.4 ${WRKDIR}/vendor/socket2-0.6.4; \
+	elif [ -f ${_RUST_CRATE_SHARE}/socket2-0.6.4.tar.gz ]; then \
+		tar xzf ${_RUST_CRATE_SHARE}/socket2-0.6.4.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/socket2-0.6.4 ] && [ -d ${WRKDIR}/vendor/socket2-0.6.4 ]; then \
+			mv ${WRKDIR}/vendor/socket2-0.6.4 ${WRKDIR}/vendor/socket2-0.6.4; \
 		fi; \
-		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/socket2-0.5.10.tar.gz ${WRKDIR}/vendor/socket2-0.5.10 2>/dev/null || true; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/socket2-0.6.4.tar.gz ${WRKDIR}/vendor/socket2-0.6.4 2>/dev/null || true; \
 	else \
-		echo "missing dep socket2-0.5.10" >&2; exit 1; \
+		echo "missing dep socket2-0.6.4" >&2; exit 1; \
 	fi
 	@if [ -d ${_RUST_CRATE_SHARE}/tracing-0.1.44 ]; then \
 		ln -sfn ${_RUST_CRATE_SHARE}/tracing-0.1.44 ${WRKDIR}/vendor/tracing-0.1.44; \
@@ -298,12 +298,12 @@ pre-build:
 	@cp -f ${_RUST_CRATE_LIBDIR}/once_cell-1.21.3/lib*.rlib ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@cp -f ${_RUST_CRATE_LIBDIR}/once_cell-1.21.3/lib*.so ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@cp -f ${_RUST_CRATE_LIBDIR}/once_cell-1.21.3/lib*.rmeta ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
-	@if [ -d ${_RUST_CRATE_LIBDIR}/socket2-0.5.10/deps ]; then \
-		cp -Rp ${_RUST_CRATE_LIBDIR}/socket2-0.5.10/deps/. ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true; \
+	@if [ -d ${_RUST_CRATE_LIBDIR}/socket2-0.6.4/deps ]; then \
+		cp -Rp ${_RUST_CRATE_LIBDIR}/socket2-0.6.4/deps/. ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true; \
 	fi
-	@cp -f ${_RUST_CRATE_LIBDIR}/socket2-0.5.10/lib*.rlib ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
-	@cp -f ${_RUST_CRATE_LIBDIR}/socket2-0.5.10/lib*.so ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
-	@cp -f ${_RUST_CRATE_LIBDIR}/socket2-0.5.10/lib*.rmeta ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
+	@cp -f ${_RUST_CRATE_LIBDIR}/socket2-0.6.4/lib*.rlib ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
+	@cp -f ${_RUST_CRATE_LIBDIR}/socket2-0.6.4/lib*.so ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
+	@cp -f ${_RUST_CRATE_LIBDIR}/socket2-0.6.4/lib*.rmeta ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@if [ -d ${_RUST_CRATE_LIBDIR}/tracing-0.1.44/deps ]; then \
 		cp -Rp ${_RUST_CRATE_LIBDIR}/tracing-0.1.44/deps/. ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true; \
 	fi

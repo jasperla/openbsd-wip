@@ -51,8 +51,8 @@ BUILD_DEPENDS +=	rust-crate-syn_2_0_117-0:devel/rust-crates/syn/2.0.117
 BUILD_DEPENDS +=	rust-crate-tempfile_3_27_0-0:devel/rust-crates/tempfile/3.27.0
 BUILD_DEPENDS +=	rust-crate-tonic_build_0_14_3-0:devel/rust-crates/tonic-build/0.14.3
 BUILD_DEPENDS +=	rust-crate-unicode_ident_1_0_24-0:devel/rust-crates/unicode-ident/1.0.24
-BUILD_DEPENDS +=	rust-crate-heck_0_4_1-0:devel/rust-crates/heck/0.4.1
-BUILD_DEPENDS +=	rust-crate-itertools_0_10_5-0:devel/rust-crates/itertools/0.10.5
+BUILD_DEPENDS +=	rust-crate-heck_0_5_0-0:devel/rust-crates/heck/0.5.0
+BUILD_DEPENDS +=	rust-crate-itertools_0_14_0-0:devel/rust-crates/itertools/0.14.0
 BUILD_DEPENDS +=	rust-crate-log_0_4_32-0:devel/rust-crates/log/0.4.32
 BUILD_DEPENDS +=	rust-crate-multimap_0_10_1-0:devel/rust-crates/multimap/0.10.1
 BUILD_DEPENDS +=	rust-crate-once_cell_1_21_3-0:devel/rust-crates/once_cell/1.21.3
@@ -91,6 +91,7 @@ BUILD_DEPENDS +=	rust-crate-serde_1_0_228-0:devel/rust-crates/serde/1.0.228
 BUILD_DEPENDS +=	rust-crate-serde_core_1_0_228-0:devel/rust-crates/serde_core/1.0.228
 BUILD_DEPENDS +=	rust-crate-anyhow_1_0_100-0:devel/rust-crates/anyhow/1.0.100
 BUILD_DEPENDS +=	rust-crate-unicode_width_0_2_0-0:devel/rust-crates/unicode-width/0.2.0
+BUILD_DEPENDS +=	rust-crate-foldhash_0_2_0-0:devel/rust-crates/foldhash/0.2.0
 BUILD_DEPENDS +=	rust-crate-serde_derive_1_0_228-0:devel/rust-crates/serde_derive/1.0.228
 BUILD_DEPENDS +=	rust-crate-backtrace_0_3_76-0:devel/rust-crates/backtrace/0.3.76
 BUILD_DEPENDS +=	rust-crate-addr2line_0_25_1-0:devel/rust-crates/addr2line/0.25.1
@@ -213,27 +214,27 @@ post-extract:
 	else \
 		echo "missing dep unicode-ident-1.0.24" >&2; exit 1; \
 	fi
-	@if [ -d ${_RUST_CRATE_SHARE}/heck-0.4.1 ]; then \
-		ln -sfn ${_RUST_CRATE_SHARE}/heck-0.4.1 ${WRKDIR}/vendor/heck-0.4.1; \
-	elif [ -f ${_RUST_CRATE_SHARE}/heck-0.4.1.tar.gz ]; then \
-		tar xzf ${_RUST_CRATE_SHARE}/heck-0.4.1.tar.gz -C ${WRKDIR}/vendor; \
-		if [ ! -d ${WRKDIR}/vendor/heck-0.4.1 ] && [ -d ${WRKDIR}/vendor/heck-0.4.1 ]; then \
-			mv ${WRKDIR}/vendor/heck-0.4.1 ${WRKDIR}/vendor/heck-0.4.1; \
+	@if [ -d ${_RUST_CRATE_SHARE}/heck-0.5.0 ]; then \
+		ln -sfn ${_RUST_CRATE_SHARE}/heck-0.5.0 ${WRKDIR}/vendor/heck-0.5.0; \
+	elif [ -f ${_RUST_CRATE_SHARE}/heck-0.5.0.tar.gz ]; then \
+		tar xzf ${_RUST_CRATE_SHARE}/heck-0.5.0.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/heck-0.5.0 ] && [ -d ${WRKDIR}/vendor/heck-0.5.0 ]; then \
+			mv ${WRKDIR}/vendor/heck-0.5.0 ${WRKDIR}/vendor/heck-0.5.0; \
 		fi; \
-		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/heck-0.4.1.tar.gz ${WRKDIR}/vendor/heck-0.4.1 2>/dev/null || true; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/heck-0.5.0.tar.gz ${WRKDIR}/vendor/heck-0.5.0 2>/dev/null || true; \
 	else \
-		echo "missing dep heck-0.4.1" >&2; exit 1; \
+		echo "missing dep heck-0.5.0" >&2; exit 1; \
 	fi
-	@if [ -d ${_RUST_CRATE_SHARE}/itertools-0.10.5 ]; then \
-		ln -sfn ${_RUST_CRATE_SHARE}/itertools-0.10.5 ${WRKDIR}/vendor/itertools-0.10.5; \
-	elif [ -f ${_RUST_CRATE_SHARE}/itertools-0.10.5.tar.gz ]; then \
-		tar xzf ${_RUST_CRATE_SHARE}/itertools-0.10.5.tar.gz -C ${WRKDIR}/vendor; \
-		if [ ! -d ${WRKDIR}/vendor/itertools-0.10.5 ] && [ -d ${WRKDIR}/vendor/itertools-0.10.5 ]; then \
-			mv ${WRKDIR}/vendor/itertools-0.10.5 ${WRKDIR}/vendor/itertools-0.10.5; \
+	@if [ -d ${_RUST_CRATE_SHARE}/itertools-0.14.0 ]; then \
+		ln -sfn ${_RUST_CRATE_SHARE}/itertools-0.14.0 ${WRKDIR}/vendor/itertools-0.14.0; \
+	elif [ -f ${_RUST_CRATE_SHARE}/itertools-0.14.0.tar.gz ]; then \
+		tar xzf ${_RUST_CRATE_SHARE}/itertools-0.14.0.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/itertools-0.14.0 ] && [ -d ${WRKDIR}/vendor/itertools-0.14.0 ]; then \
+			mv ${WRKDIR}/vendor/itertools-0.14.0 ${WRKDIR}/vendor/itertools-0.14.0; \
 		fi; \
-		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/itertools-0.10.5.tar.gz ${WRKDIR}/vendor/itertools-0.10.5 2>/dev/null || true; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/itertools-0.14.0.tar.gz ${WRKDIR}/vendor/itertools-0.14.0 2>/dev/null || true; \
 	else \
-		echo "missing dep itertools-0.10.5" >&2; exit 1; \
+		echo "missing dep itertools-0.14.0" >&2; exit 1; \
 	fi
 	@if [ -d ${_RUST_CRATE_SHARE}/log-0.4.32 ]; then \
 		ln -sfn ${_RUST_CRATE_SHARE}/log-0.4.32 ${WRKDIR}/vendor/log-0.4.32; \
@@ -653,6 +654,17 @@ post-extract:
 	else \
 		echo "missing dep unicode-width-0.2.0" >&2; exit 1; \
 	fi
+	@if [ -d ${_RUST_CRATE_SHARE}/foldhash-0.2.0 ]; then \
+		ln -sfn ${_RUST_CRATE_SHARE}/foldhash-0.2.0 ${WRKDIR}/vendor/foldhash-0.2.0; \
+	elif [ -f ${_RUST_CRATE_SHARE}/foldhash-0.2.0.tar.gz ]; then \
+		tar xzf ${_RUST_CRATE_SHARE}/foldhash-0.2.0.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/foldhash-0.2.0 ] && [ -d ${WRKDIR}/vendor/foldhash-0.2.0 ]; then \
+			mv ${WRKDIR}/vendor/foldhash-0.2.0 ${WRKDIR}/vendor/foldhash-0.2.0; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/foldhash-0.2.0.tar.gz ${WRKDIR}/vendor/foldhash-0.2.0 2>/dev/null || true; \
+	else \
+		echo "missing dep foldhash-0.2.0" >&2; exit 1; \
+	fi
 	@if [ -d ${_RUST_CRATE_SHARE}/serde_derive-1.0.228 ]; then \
 		ln -sfn ${_RUST_CRATE_SHARE}/serde_derive-1.0.228 ${WRKDIR}/vendor/serde_derive-1.0.228; \
 	elif [ -f ${_RUST_CRATE_SHARE}/serde_derive-1.0.228.tar.gz ]; then \
@@ -838,18 +850,18 @@ pre-build:
 	@cp -f ${_RUST_CRATE_LIBDIR}/unicode-ident-1.0.24/lib*.rlib ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@cp -f ${_RUST_CRATE_LIBDIR}/unicode-ident-1.0.24/lib*.so ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@cp -f ${_RUST_CRATE_LIBDIR}/unicode-ident-1.0.24/lib*.rmeta ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
-	@if [ -d ${_RUST_CRATE_LIBDIR}/heck-0.4.1/deps ]; then \
-		cp -Rp ${_RUST_CRATE_LIBDIR}/heck-0.4.1/deps/. ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true; \
+	@if [ -d ${_RUST_CRATE_LIBDIR}/heck-0.5.0/deps ]; then \
+		cp -Rp ${_RUST_CRATE_LIBDIR}/heck-0.5.0/deps/. ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true; \
 	fi
-	@cp -f ${_RUST_CRATE_LIBDIR}/heck-0.4.1/lib*.rlib ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
-	@cp -f ${_RUST_CRATE_LIBDIR}/heck-0.4.1/lib*.so ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
-	@cp -f ${_RUST_CRATE_LIBDIR}/heck-0.4.1/lib*.rmeta ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
-	@if [ -d ${_RUST_CRATE_LIBDIR}/itertools-0.10.5/deps ]; then \
-		cp -Rp ${_RUST_CRATE_LIBDIR}/itertools-0.10.5/deps/. ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true; \
+	@cp -f ${_RUST_CRATE_LIBDIR}/heck-0.5.0/lib*.rlib ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
+	@cp -f ${_RUST_CRATE_LIBDIR}/heck-0.5.0/lib*.so ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
+	@cp -f ${_RUST_CRATE_LIBDIR}/heck-0.5.0/lib*.rmeta ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
+	@if [ -d ${_RUST_CRATE_LIBDIR}/itertools-0.14.0/deps ]; then \
+		cp -Rp ${_RUST_CRATE_LIBDIR}/itertools-0.14.0/deps/. ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true; \
 	fi
-	@cp -f ${_RUST_CRATE_LIBDIR}/itertools-0.10.5/lib*.rlib ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
-	@cp -f ${_RUST_CRATE_LIBDIR}/itertools-0.10.5/lib*.so ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
-	@cp -f ${_RUST_CRATE_LIBDIR}/itertools-0.10.5/lib*.rmeta ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
+	@cp -f ${_RUST_CRATE_LIBDIR}/itertools-0.14.0/lib*.rlib ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
+	@cp -f ${_RUST_CRATE_LIBDIR}/itertools-0.14.0/lib*.so ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
+	@cp -f ${_RUST_CRATE_LIBDIR}/itertools-0.14.0/lib*.rmeta ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@if [ -d ${_RUST_CRATE_LIBDIR}/log-0.4.32/deps ]; then \
 		cp -Rp ${_RUST_CRATE_LIBDIR}/log-0.4.32/deps/. ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true; \
 	fi
@@ -1078,6 +1090,12 @@ pre-build:
 	@cp -f ${_RUST_CRATE_LIBDIR}/unicode-width-0.2.0/lib*.rlib ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@cp -f ${_RUST_CRATE_LIBDIR}/unicode-width-0.2.0/lib*.so ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@cp -f ${_RUST_CRATE_LIBDIR}/unicode-width-0.2.0/lib*.rmeta ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
+	@if [ -d ${_RUST_CRATE_LIBDIR}/foldhash-0.2.0/deps ]; then \
+		cp -Rp ${_RUST_CRATE_LIBDIR}/foldhash-0.2.0/deps/. ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true; \
+	fi
+	@cp -f ${_RUST_CRATE_LIBDIR}/foldhash-0.2.0/lib*.rlib ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
+	@cp -f ${_RUST_CRATE_LIBDIR}/foldhash-0.2.0/lib*.so ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
+	@cp -f ${_RUST_CRATE_LIBDIR}/foldhash-0.2.0/lib*.rmeta ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@if [ -d ${_RUST_CRATE_LIBDIR}/serde_derive-1.0.228/deps ]; then \
 		cp -Rp ${_RUST_CRATE_LIBDIR}/serde_derive-1.0.228/deps/. ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true; \
 	fi

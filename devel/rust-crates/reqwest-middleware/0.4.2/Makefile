@@ -114,7 +114,7 @@ BUILD_DEPENDS +=	rust-crate-pin_utils_0_1_0-0:devel/rust-crates/pin-utils/0.1.0
 BUILD_DEPENDS +=	rust-crate-smallvec_1_15_1-0:devel/rust-crates/smallvec/1.15.1
 BUILD_DEPENDS +=	rust-crate-want_0_3_1-0:devel/rust-crates/want/0.3.1
 BUILD_DEPENDS +=	rust-crate-ipnet_2_11_0-0:devel/rust-crates/ipnet/2.11.0
-BUILD_DEPENDS +=	rust-crate-socket2_0_5_10-0:devel/rust-crates/socket2/0.5.10
+BUILD_DEPENDS +=	rust-crate-socket2_0_6_4-0:devel/rust-crates/socket2/0.6.4
 BUILD_DEPENDS +=	rust-crate-value_bag_1_12_0-0:devel/rust-crates/value-bag/1.12.0
 BUILD_DEPENDS +=	rust-crate-mime_0_3_17-0:devel/rust-crates/mime/0.3.17
 BUILD_DEPENDS +=	rust-crate-unicase_2_8_1-0:devel/rust-crates/unicase/2.8.1
@@ -137,7 +137,6 @@ BUILD_DEPENDS +=	rust-crate-ryu_1_0_20-0:devel/rust-crates/ryu/1.0.20
 BUILD_DEPENDS +=	rust-crate-mio_1_2_1-0:devel/rust-crates/mio/1.2.1
 BUILD_DEPENDS +=	rust-crate-parking_lot_0_12_5-0:devel/rust-crates/parking_lot/0.12.5
 BUILD_DEPENDS +=	rust-crate-signal_hook_registry_1_4_8-0:devel/rust-crates/signal-hook-registry/1.4.8
-BUILD_DEPENDS +=	rust-crate-socket2_0_6_4-0:devel/rust-crates/socket2/0.6.4
 BUILD_DEPENDS +=	rust-crate-tokio_macros_2_7_0-0:devel/rust-crates/tokio-macros/2.7.0
 BUILD_DEPENDS +=	rust-crate-hdrhistogram_7_5_4-0:devel/rust-crates/hdrhistogram/7.5.4
 BUILD_DEPENDS +=	rust-crate-tower_layer_0_3_3-0:devel/rust-crates/tower-layer/0.3.3
@@ -179,6 +178,7 @@ BUILD_DEPENDS +=	rust-crate-idna_adapter_1_2_1-0:devel/rust-crates/idna_adapter/
 BUILD_DEPENDS +=	rust-crate-utf8_iter_1_0_4-0:devel/rust-crates/utf8_iter/1.0.4
 BUILD_DEPENDS +=	rust-crate-zlib_rs_0_5_5-0:devel/rust-crates/zlib-rs/0.5.5
 BUILD_DEPENDS +=	rust-crate-pkg_config_0_3_32-0:devel/rust-crates/pkg-config/0.3.32
+BUILD_DEPENDS +=	rust-crate-foldhash_0_2_0-0:devel/rust-crates/foldhash/0.2.0
 BUILD_DEPENDS +=	rust-crate-valuable_0_1_1-0:devel/rust-crates/valuable/0.1.1
 BUILD_DEPENDS +=	rust-crate-r_efi_5_3_0-0:devel/rust-crates/r-efi/5.3.0
 BUILD_DEPENDS +=	rust-crate-rand_chacha_0_9_0-0:devel/rust-crates/rand_chacha/0.9.0
@@ -1023,16 +1023,16 @@ post-extract:
 	else \
 		echo "missing dep ipnet-2.11.0" >&2; exit 1; \
 	fi
-	@if [ -d ${_RUST_CRATE_SHARE}/socket2-0.5.10 ]; then \
-		ln -sfn ${_RUST_CRATE_SHARE}/socket2-0.5.10 ${WRKDIR}/vendor/socket2-0.5.10; \
-	elif [ -f ${_RUST_CRATE_SHARE}/socket2-0.5.10.tar.gz ]; then \
-		tar xzf ${_RUST_CRATE_SHARE}/socket2-0.5.10.tar.gz -C ${WRKDIR}/vendor; \
-		if [ ! -d ${WRKDIR}/vendor/socket2-0.5.10 ] && [ -d ${WRKDIR}/vendor/socket2-0.5.10 ]; then \
-			mv ${WRKDIR}/vendor/socket2-0.5.10 ${WRKDIR}/vendor/socket2-0.5.10; \
+	@if [ -d ${_RUST_CRATE_SHARE}/socket2-0.6.4 ]; then \
+		ln -sfn ${_RUST_CRATE_SHARE}/socket2-0.6.4 ${WRKDIR}/vendor/socket2-0.6.4; \
+	elif [ -f ${_RUST_CRATE_SHARE}/socket2-0.6.4.tar.gz ]; then \
+		tar xzf ${_RUST_CRATE_SHARE}/socket2-0.6.4.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/socket2-0.6.4 ] && [ -d ${WRKDIR}/vendor/socket2-0.6.4 ]; then \
+			mv ${WRKDIR}/vendor/socket2-0.6.4 ${WRKDIR}/vendor/socket2-0.6.4; \
 		fi; \
-		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/socket2-0.5.10.tar.gz ${WRKDIR}/vendor/socket2-0.5.10 2>/dev/null || true; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/socket2-0.6.4.tar.gz ${WRKDIR}/vendor/socket2-0.6.4 2>/dev/null || true; \
 	else \
-		echo "missing dep socket2-0.5.10" >&2; exit 1; \
+		echo "missing dep socket2-0.6.4" >&2; exit 1; \
 	fi
 	@if [ -d ${_RUST_CRATE_SHARE}/value-bag-1.12.0 ]; then \
 		ln -sfn ${_RUST_CRATE_SHARE}/value-bag-1.12.0 ${WRKDIR}/vendor/value-bag-1.12.0; \
@@ -1275,17 +1275,6 @@ post-extract:
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/signal-hook-registry-1.4.8.tar.gz ${WRKDIR}/vendor/signal-hook-registry-1.4.8 2>/dev/null || true; \
 	else \
 		echo "missing dep signal-hook-registry-1.4.8" >&2; exit 1; \
-	fi
-	@if [ -d ${_RUST_CRATE_SHARE}/socket2-0.6.4 ]; then \
-		ln -sfn ${_RUST_CRATE_SHARE}/socket2-0.6.4 ${WRKDIR}/vendor/socket2-0.6.4; \
-	elif [ -f ${_RUST_CRATE_SHARE}/socket2-0.6.4.tar.gz ]; then \
-		tar xzf ${_RUST_CRATE_SHARE}/socket2-0.6.4.tar.gz -C ${WRKDIR}/vendor; \
-		if [ ! -d ${WRKDIR}/vendor/socket2-0.6.4 ] && [ -d ${WRKDIR}/vendor/socket2-0.6.4 ]; then \
-			mv ${WRKDIR}/vendor/socket2-0.6.4 ${WRKDIR}/vendor/socket2-0.6.4; \
-		fi; \
-		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/socket2-0.6.4.tar.gz ${WRKDIR}/vendor/socket2-0.6.4 2>/dev/null || true; \
-	else \
-		echo "missing dep socket2-0.6.4" >&2; exit 1; \
 	fi
 	@if [ -d ${_RUST_CRATE_SHARE}/tokio-macros-2.7.0 ]; then \
 		ln -sfn ${_RUST_CRATE_SHARE}/tokio-macros-2.7.0 ${WRKDIR}/vendor/tokio-macros-2.7.0; \
@@ -1737,6 +1726,17 @@ post-extract:
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/pkg-config-0.3.32.tar.gz ${WRKDIR}/vendor/pkg-config-0.3.32 2>/dev/null || true; \
 	else \
 		echo "missing dep pkg-config-0.3.32" >&2; exit 1; \
+	fi
+	@if [ -d ${_RUST_CRATE_SHARE}/foldhash-0.2.0 ]; then \
+		ln -sfn ${_RUST_CRATE_SHARE}/foldhash-0.2.0 ${WRKDIR}/vendor/foldhash-0.2.0; \
+	elif [ -f ${_RUST_CRATE_SHARE}/foldhash-0.2.0.tar.gz ]; then \
+		tar xzf ${_RUST_CRATE_SHARE}/foldhash-0.2.0.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/foldhash-0.2.0 ] && [ -d ${WRKDIR}/vendor/foldhash-0.2.0 ]; then \
+			mv ${WRKDIR}/vendor/foldhash-0.2.0 ${WRKDIR}/vendor/foldhash-0.2.0; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/foldhash-0.2.0.tar.gz ${WRKDIR}/vendor/foldhash-0.2.0 2>/dev/null || true; \
+	else \
+		echo "missing dep foldhash-0.2.0" >&2; exit 1; \
 	fi
 	@if [ -d ${_RUST_CRATE_SHARE}/valuable-0.1.1 ]; then \
 		ln -sfn ${_RUST_CRATE_SHARE}/valuable-0.1.1 ${WRKDIR}/vendor/valuable-0.1.1; \
@@ -2620,12 +2620,12 @@ pre-build:
 	@cp -f ${_RUST_CRATE_LIBDIR}/ipnet-2.11.0/lib*.rlib ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@cp -f ${_RUST_CRATE_LIBDIR}/ipnet-2.11.0/lib*.so ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@cp -f ${_RUST_CRATE_LIBDIR}/ipnet-2.11.0/lib*.rmeta ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
-	@if [ -d ${_RUST_CRATE_LIBDIR}/socket2-0.5.10/deps ]; then \
-		cp -Rp ${_RUST_CRATE_LIBDIR}/socket2-0.5.10/deps/. ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true; \
+	@if [ -d ${_RUST_CRATE_LIBDIR}/socket2-0.6.4/deps ]; then \
+		cp -Rp ${_RUST_CRATE_LIBDIR}/socket2-0.6.4/deps/. ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true; \
 	fi
-	@cp -f ${_RUST_CRATE_LIBDIR}/socket2-0.5.10/lib*.rlib ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
-	@cp -f ${_RUST_CRATE_LIBDIR}/socket2-0.5.10/lib*.so ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
-	@cp -f ${_RUST_CRATE_LIBDIR}/socket2-0.5.10/lib*.rmeta ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
+	@cp -f ${_RUST_CRATE_LIBDIR}/socket2-0.6.4/lib*.rlib ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
+	@cp -f ${_RUST_CRATE_LIBDIR}/socket2-0.6.4/lib*.so ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
+	@cp -f ${_RUST_CRATE_LIBDIR}/socket2-0.6.4/lib*.rmeta ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@if [ -d ${_RUST_CRATE_LIBDIR}/value-bag-1.12.0/deps ]; then \
 		cp -Rp ${_RUST_CRATE_LIBDIR}/value-bag-1.12.0/deps/. ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true; \
 	fi
@@ -2758,12 +2758,6 @@ pre-build:
 	@cp -f ${_RUST_CRATE_LIBDIR}/signal-hook-registry-1.4.8/lib*.rlib ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@cp -f ${_RUST_CRATE_LIBDIR}/signal-hook-registry-1.4.8/lib*.so ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@cp -f ${_RUST_CRATE_LIBDIR}/signal-hook-registry-1.4.8/lib*.rmeta ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
-	@if [ -d ${_RUST_CRATE_LIBDIR}/socket2-0.6.4/deps ]; then \
-		cp -Rp ${_RUST_CRATE_LIBDIR}/socket2-0.6.4/deps/. ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true; \
-	fi
-	@cp -f ${_RUST_CRATE_LIBDIR}/socket2-0.6.4/lib*.rlib ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
-	@cp -f ${_RUST_CRATE_LIBDIR}/socket2-0.6.4/lib*.so ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
-	@cp -f ${_RUST_CRATE_LIBDIR}/socket2-0.6.4/lib*.rmeta ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@if [ -d ${_RUST_CRATE_LIBDIR}/tokio-macros-2.7.0/deps ]; then \
 		cp -Rp ${_RUST_CRATE_LIBDIR}/tokio-macros-2.7.0/deps/. ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true; \
 	fi
@@ -3010,6 +3004,12 @@ pre-build:
 	@cp -f ${_RUST_CRATE_LIBDIR}/pkg-config-0.3.32/lib*.rlib ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@cp -f ${_RUST_CRATE_LIBDIR}/pkg-config-0.3.32/lib*.so ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@cp -f ${_RUST_CRATE_LIBDIR}/pkg-config-0.3.32/lib*.rmeta ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
+	@if [ -d ${_RUST_CRATE_LIBDIR}/foldhash-0.2.0/deps ]; then \
+		cp -Rp ${_RUST_CRATE_LIBDIR}/foldhash-0.2.0/deps/. ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true; \
+	fi
+	@cp -f ${_RUST_CRATE_LIBDIR}/foldhash-0.2.0/lib*.rlib ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
+	@cp -f ${_RUST_CRATE_LIBDIR}/foldhash-0.2.0/lib*.so ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
+	@cp -f ${_RUST_CRATE_LIBDIR}/foldhash-0.2.0/lib*.rmeta ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@if [ -d ${_RUST_CRATE_LIBDIR}/valuable-0.1.1/deps ]; then \
 		cp -Rp ${_RUST_CRATE_LIBDIR}/valuable-0.1.1/deps/. ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true; \
 	fi

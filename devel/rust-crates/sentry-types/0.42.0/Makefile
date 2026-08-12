@@ -88,6 +88,7 @@ BUILD_DEPENDS +=	rust-crate-r_efi_5_3_0-0:devel/rust-crates/r-efi/5.3.0
 BUILD_DEPENDS +=	rust-crate-rand_core_0_10_0-0:devel/rust-crates/rand_core/0.10.0
 BUILD_DEPENDS +=	rust-crate-zerocopy_0_8_48-0:devel/rust-crates/zerocopy/0.8.48
 BUILD_DEPENDS +=	rust-crate-unicode_ident_1_0_24-0:devel/rust-crates/unicode-ident/1.0.24
+BUILD_DEPENDS +=	rust-crate-foldhash_0_2_0-0:devel/rust-crates/foldhash/0.2.0
 BUILD_DEPENDS +=	rust-crate-icu_normalizer_2_0_0-0:devel/rust-crates/icu_normalizer/2.0.0
 BUILD_DEPENDS +=	rust-crate-icu_properties_2_0_1-0:devel/rust-crates/icu_properties/2.0.1
 BUILD_DEPENDS +=	rust-crate-bytemuck_derive_1_10_2-0:devel/rust-crates/bytemuck_derive/1.10.2
@@ -630,6 +631,17 @@ post-extract:
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/unicode-ident-1.0.24.tar.gz ${WRKDIR}/vendor/unicode-ident-1.0.24 2>/dev/null || true; \
 	else \
 		echo "missing dep unicode-ident-1.0.24" >&2; exit 1; \
+	fi
+	@if [ -d ${_RUST_CRATE_SHARE}/foldhash-0.2.0 ]; then \
+		ln -sfn ${_RUST_CRATE_SHARE}/foldhash-0.2.0 ${WRKDIR}/vendor/foldhash-0.2.0; \
+	elif [ -f ${_RUST_CRATE_SHARE}/foldhash-0.2.0.tar.gz ]; then \
+		tar xzf ${_RUST_CRATE_SHARE}/foldhash-0.2.0.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/foldhash-0.2.0 ] && [ -d ${WRKDIR}/vendor/foldhash-0.2.0 ]; then \
+			mv ${WRKDIR}/vendor/foldhash-0.2.0 ${WRKDIR}/vendor/foldhash-0.2.0; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/foldhash-0.2.0.tar.gz ${WRKDIR}/vendor/foldhash-0.2.0 2>/dev/null || true; \
+	else \
+		echo "missing dep foldhash-0.2.0" >&2; exit 1; \
 	fi
 	@if [ -d ${_RUST_CRATE_SHARE}/icu_normalizer-2.0.0 ]; then \
 		ln -sfn ${_RUST_CRATE_SHARE}/icu_normalizer-2.0.0 ${WRKDIR}/vendor/icu_normalizer-2.0.0; \
@@ -1192,6 +1204,12 @@ pre-build:
 	@cp -f ${_RUST_CRATE_LIBDIR}/unicode-ident-1.0.24/lib*.rlib ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@cp -f ${_RUST_CRATE_LIBDIR}/unicode-ident-1.0.24/lib*.so ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@cp -f ${_RUST_CRATE_LIBDIR}/unicode-ident-1.0.24/lib*.rmeta ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
+	@if [ -d ${_RUST_CRATE_LIBDIR}/foldhash-0.2.0/deps ]; then \
+		cp -Rp ${_RUST_CRATE_LIBDIR}/foldhash-0.2.0/deps/. ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true; \
+	fi
+	@cp -f ${_RUST_CRATE_LIBDIR}/foldhash-0.2.0/lib*.rlib ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
+	@cp -f ${_RUST_CRATE_LIBDIR}/foldhash-0.2.0/lib*.so ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
+	@cp -f ${_RUST_CRATE_LIBDIR}/foldhash-0.2.0/lib*.rmeta ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@if [ -d ${_RUST_CRATE_LIBDIR}/icu_normalizer-2.0.0/deps ]; then \
 		cp -Rp ${_RUST_CRATE_LIBDIR}/icu_normalizer-2.0.0/deps/. ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true; \
 	fi
