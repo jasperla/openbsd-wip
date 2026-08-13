@@ -30,38 +30,37 @@ COMMENT =		SpaceXAI terminal AI coding agent (grok)
 # Dump pins — always name BOTH the dump commit AND its xai-org base.
 #
 # Stock (default flavor): pure xai-org monorepo dump.
-#   xai-org commit: be713136d2a69080743a3f6b3c72077057e5948f
-#   product PKGNAME: grok-build-1.0.1 (tip be71313)
+#   xai-org commit: eb267feff13129e568df38fb6fdf0ceb65f735d6
+#   product PKGNAME: grok-build-1.0.3 (tip eb267fe)
 #
 # memeic flavor: toddfries openbsd/memeic-typed-memory dump ON THE SAME xai-org base.
-#   toddfries dump: 1b567260634dae3aa72abc3c34e68a573b16f6a8
-#   xai-org base:   be713136d2a69080743a3f6b3c72077057e5948f  (matches stock)
-#   (memeic = stock base + typed memory / connector commits; product 1.0.1)
-#   FULLPKGNAME: grok-build-memeic-1.0.1
+#   toddfries dump: 5fad16367a84e95781656fe77c389e6c6029b2d7
+#   xai-org base:   eb267feff13129e568df38fb6fdf0ceb65f735d6  (matches stock)
+#   (memeic = stock base + typed memory / connector commits; product 1.0.3)
+#   FULLPKGNAME: grok-build-memeic-1.0.3
 #
 # Keep memeic's xai-org base identical to stock whenever possible.
 # Both monorepo dumps live in distinfo; the inactive one is SUPDISTFILES so
 # checksum does not flag it as "extra" for the other flavor.
-_GROK_DUMP_STOCK =xai-org-grok-build-be713136d2a69080743a3f6b3c72077057e5948f.tar.gz
-_GROK_DUMP_MEMEIC =toddfries-grok-build-1b567260634dae3aa72abc3c34e68a573b16f6a8.tar.gz
+_GROK_DUMP_STOCK =xai-org-grok-build-eb267feff13129e568df38fb6fdf0ceb65f735d6.tar.gz
+_GROK_DUMP_MEMEIC =toddfries-grok-build-5fad16367a84e95781656fe77c389e6c6029b2d7.tar.gz
 
 .if ${FLAVOR:L:Mmemeic}
-DIST_TUPLE =		github toddfries grok-build 1b567260634dae3aa72abc3c34e68a573b16f6a8 .
-# xai-org base for this dump: 75e73f3 (matches stock pin).
+DIST_TUPLE =		github toddfries grok-build 5fad16367a84e95781656fe77c389e6c6029b2d7 .
+# xai-org base for this dump: eb267fe (matches stock pin).
 # PKGNAME without "memeic" so FLAVOR_EXT does not become -memeic-memeic.
-PKGNAME =		grok-build-1.0.1
-FULLPKGNAME =		grok-build-memeic-1.0.1
+PKGNAME =		grok-build-1.0.3
+FULLPKGNAME =		grok-build-memeic-1.0.3
 COMMENT =		SpaceXAI grok with experimental MemEIC-style typed memory
 SUPDISTFILES +=		${_GROK_DUMP_STOCK}
 .else
-DIST_TUPLE =		github xai-org grok-build be713136d2a69080743a3f6b3c72077057e5948f .
-# Binary crate version at this dump: 1.0.1 (xai-grok-pager-bin; dump be71313).
-PKGNAME =		grok-build-1.0.1
+DIST_TUPLE =		github xai-org grok-build eb267feff13129e568df38fb6fdf0ceb65f735d6 .
+# Binary crate version at this dump: 1.0.3 (xai-grok-pager-bin; dump eb267fe).
+PKGNAME =		grok-build-1.0.3
 SUPDISTFILES +=		${_GROK_DUMP_MEMEIC}
 .endif
 
-# Sandbox unveil(2) semantics fix (x != path lookup).
-REVISION =		1
+# First packaging of this upstream version (no REVISION).
 
 # Git deps upstream: fetch pinned revs as normal distfiles and path-patch
 # Cargo.toml (offline cargo / CARGO_NET_OFFLINE cannot fetch git).
