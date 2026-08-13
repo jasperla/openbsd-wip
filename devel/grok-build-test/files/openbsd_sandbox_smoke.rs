@@ -1,4 +1,5 @@
 //! OpenBSD smoke: strict profile applies unveil+pledge; workspace RW; ~/.ssh denied.
+use std::path::Path;
 use xai_grok_sandbox::{ProfileName, SandboxManager};
 
 fn main() {
@@ -32,6 +33,19 @@ fn main() {
             std::process::exit(2);
         }
         Err(e) => println!("~/.ssh denied as expected: {e}"),
+    }
+
+    // unveil "x" is execve(2) only. After the ancestor-"x" fix, a random
+    // executable outside EXEC_DIRS / workspace must not be executable.
+    let exotic = Path::new("/usr/games/fortune");
+    if exotic.is_file() {
+        match std::process::Command::new(exotic).output() {
+            Ok(_) => {
+                eprintln!("FAIL: execve {} succeeded (unveil x too broad)", exotic.display());
+                std::process::exit(3);
+            }
+            Err(e) => println!("exec {} denied as expected: {e}", exotic.display()),
+        }
     }
 
     println!("openbsd_sandbox_smoke: PASS");

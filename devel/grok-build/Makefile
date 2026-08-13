@@ -60,7 +60,8 @@ PKGNAME =		grok-build-1.0.1
 SUPDISTFILES +=		${_GROK_DUMP_MEMEIC}
 .endif
 
-# First packaging of this upstream version (no REVISION).
+# Sandbox unveil(2) semantics fix (x != path lookup).
+REVISION =		1
 
 # Git deps upstream: fetch pinned revs as normal distfiles and path-patch
 # Cargo.toml (offline cargo / CARGO_NET_OFFLINE cannot fetch git).
