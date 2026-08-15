@@ -69,7 +69,7 @@ BUILD_DEPENDS +=	rust-crate-futures_executor_0_3_32-0:devel/rust-crates/futures-
 BUILD_DEPENDS +=	rust-crate-futures_util_0_3_32-0:devel/rust-crates/futures-util/0.3.32
 BUILD_DEPENDS +=	rust-crate-percent_encoding_2_3_2-0:devel/rust-crates/percent-encoding/2.3.2
 BUILD_DEPENDS +=	rust-crate-portable_atomic_1_11_1-0:devel/rust-crates/portable-atomic/1.11.1
-BUILD_DEPENDS +=	rust-crate-rand_0_9_2-0:devel/rust-crates/rand/0.9.2
+BUILD_DEPENDS +=	rust-crate-rand_0_9_5-0:devel/rust-crates/rand/0.9.5
 BUILD_DEPENDS +=	rust-crate-tokio_stream_0_1_17-0:devel/rust-crates/tokio-stream/0.1.17
 BUILD_DEPENDS +=	rust-crate-prost_derive_0_14_3-0:devel/rust-crates/prost-derive/0.14.3
 BUILD_DEPENDS +=	rust-crate-encoding_rs_0_8_35-0:devel/rust-crates/encoding_rs/0.8.35
@@ -127,7 +127,7 @@ BUILD_DEPENDS +=	rust-crate-memchr_2_8_2-0:devel/rust-crates/memchr/2.8.2
 BUILD_DEPENDS +=	rust-crate-slab_0_4_11-0:devel/rust-crates/slab/0.4.11
 BUILD_DEPENDS +=	rust-crate-rand_chacha_0_9_0-0:devel/rust-crates/rand_chacha/0.9.0
 BUILD_DEPENDS +=	rust-crate-rand_core_0_9_3-0:devel/rust-crates/rand_core/0.9.3
-BUILD_DEPENDS +=	rust-crate-anyhow_1_0_100-0:devel/rust-crates/anyhow/1.0.100
+BUILD_DEPENDS +=	rust-crate-anyhow_1_0_104-0:devel/rust-crates/anyhow/1.0.104
 BUILD_DEPENDS +=	rust-crate-itertools_0_14_0-0:devel/rust-crates/itertools/0.14.0
 BUILD_DEPENDS +=	rust-crate-atomic_waker_1_1_2-0:devel/rust-crates/atomic-waker/1.1.2
 BUILD_DEPENDS +=	rust-crate-httparse_1_10_1-0:devel/rust-crates/httparse/1.10.1
@@ -184,7 +184,6 @@ BUILD_DEPENDS +=	rust-crate-regex_syntax_0_8_11-0:devel/rust-crates/regex-syntax
 BUILD_DEPENDS +=	rust-crate-unarray_0_1_4-0:devel/rust-crates/unarray/0.1.4
 BUILD_DEPENDS +=	rust-crate-ppv_lite86_0_2_21-0:devel/rust-crates/ppv-lite86/0.2.21
 BUILD_DEPENDS +=	rust-crate-getrandom_0_3_4-0:devel/rust-crates/getrandom/0.3.4
-BUILD_DEPENDS +=	rust-crate-backtrace_0_3_76-0:devel/rust-crates/backtrace/0.3.76
 BUILD_DEPENDS +=	rust-crate-either_1_15_0-0:devel/rust-crates/either/1.15.0
 BUILD_DEPENDS +=	rust-crate-try_lock_0_2_5-0:devel/rust-crates/try-lock/0.2.5
 BUILD_DEPENDS +=	rust-crate-lru_slab_0_1_2-0:devel/rust-crates/lru-slab/0.1.2
@@ -213,9 +212,6 @@ BUILD_DEPENDS +=	rust-crate-autocfg_1_5_0-0:devel/rust-crates/autocfg/1.5.0
 BUILD_DEPENDS +=	rust-crate-libm_0_2_15-0:devel/rust-crates/libm/0.2.15
 BUILD_DEPENDS +=	rust-crate-zerocopy_0_8_48-0:devel/rust-crates/zerocopy/0.8.48
 BUILD_DEPENDS +=	rust-crate-r_efi_5_3_0-0:devel/rust-crates/r-efi/5.3.0
-BUILD_DEPENDS +=	rust-crate-addr2line_0_25_1-0:devel/rust-crates/addr2line/0.25.1
-BUILD_DEPENDS +=	rust-crate-object_0_37_3-0:devel/rust-crates/object/0.37.3
-BUILD_DEPENDS +=	rust-crate-rustc_demangle_0_1_26-0:devel/rust-crates/rustc-demangle/0.1.26
 BUILD_DEPENDS +=	rust-crate-tinyvec_macros_0_1_1-0:devel/rust-crates/tinyvec_macros/0.1.1
 BUILD_DEPENDS +=	rust-crate-cmake_0_1_54-0:devel/rust-crates/cmake/0.1.54
 BUILD_DEPENDS +=	rust-crate-dunce_1_0_5-0:devel/rust-crates/dunce/1.0.5
@@ -233,7 +229,6 @@ BUILD_DEPENDS +=	rust-crate-data_encoding_2_9_0-0:devel/rust-crates/data-encodin
 BUILD_DEPENDS +=	rust-crate-utf_8_0_7_6-0:devel/rust-crates/utf-8/0.7.6
 BUILD_DEPENDS +=	rust-crate-pkg_config_0_3_32-0:devel/rust-crates/pkg-config/0.3.32
 BUILD_DEPENDS +=	rust-crate-zerocopy_derive_0_8_48-0:devel/rust-crates/zerocopy-derive/0.8.48
-BUILD_DEPENDS +=	rust-crate-gimli_0_32_3-0:devel/rust-crates/gimli/0.32.3
 BUILD_DEPENDS +=	rust-crate-displaydoc_0_2_5-0:devel/rust-crates/displaydoc/0.2.5
 BUILD_DEPENDS +=	rust-crate-icu_collections_2_0_0-0:devel/rust-crates/icu_collections/2.0.0
 BUILD_DEPENDS +=	rust-crate-icu_normalizer_data_2_0_0-0:devel/rust-crates/icu_normalizer_data/2.0.0
@@ -566,16 +561,16 @@ post-extract:
 	else \
 		echo "missing dep portable-atomic-1.11.1" >&2; exit 1; \
 	fi
-	@if [ -d ${_RUST_CRATE_SHARE}/rand-0.9.2 ]; then \
-		ln -sfn ${_RUST_CRATE_SHARE}/rand-0.9.2 ${WRKDIR}/vendor/rand-0.9.2; \
-	elif [ -f ${_RUST_CRATE_SHARE}/rand-0.9.2.tar.gz ]; then \
-		tar xzf ${_RUST_CRATE_SHARE}/rand-0.9.2.tar.gz -C ${WRKDIR}/vendor; \
-		if [ ! -d ${WRKDIR}/vendor/rand-0.9.2 ] && [ -d ${WRKDIR}/vendor/rand-0.9.2 ]; then \
-			mv ${WRKDIR}/vendor/rand-0.9.2 ${WRKDIR}/vendor/rand-0.9.2; \
+	@if [ -d ${_RUST_CRATE_SHARE}/rand-0.9.5 ]; then \
+		ln -sfn ${_RUST_CRATE_SHARE}/rand-0.9.5 ${WRKDIR}/vendor/rand-0.9.5; \
+	elif [ -f ${_RUST_CRATE_SHARE}/rand-0.9.5.tar.gz ]; then \
+		tar xzf ${_RUST_CRATE_SHARE}/rand-0.9.5.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/rand-0.9.5 ] && [ -d ${WRKDIR}/vendor/rand-0.9.5 ]; then \
+			mv ${WRKDIR}/vendor/rand-0.9.5 ${WRKDIR}/vendor/rand-0.9.5; \
 		fi; \
-		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/rand-0.9.2.tar.gz ${WRKDIR}/vendor/rand-0.9.2 2>/dev/null || true; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/rand-0.9.5.tar.gz ${WRKDIR}/vendor/rand-0.9.5 2>/dev/null || true; \
 	else \
-		echo "missing dep rand-0.9.2" >&2; exit 1; \
+		echo "missing dep rand-0.9.5" >&2; exit 1; \
 	fi
 	@if [ -d ${_RUST_CRATE_SHARE}/tokio-stream-0.1.17 ]; then \
 		ln -sfn ${_RUST_CRATE_SHARE}/tokio-stream-0.1.17 ${WRKDIR}/vendor/tokio-stream-0.1.17; \
@@ -1204,16 +1199,16 @@ post-extract:
 	else \
 		echo "missing dep rand_core-0.9.3" >&2; exit 1; \
 	fi
-	@if [ -d ${_RUST_CRATE_SHARE}/anyhow-1.0.100 ]; then \
-		ln -sfn ${_RUST_CRATE_SHARE}/anyhow-1.0.100 ${WRKDIR}/vendor/anyhow-1.0.100; \
-	elif [ -f ${_RUST_CRATE_SHARE}/anyhow-1.0.100.tar.gz ]; then \
-		tar xzf ${_RUST_CRATE_SHARE}/anyhow-1.0.100.tar.gz -C ${WRKDIR}/vendor; \
-		if [ ! -d ${WRKDIR}/vendor/anyhow-1.0.100 ] && [ -d ${WRKDIR}/vendor/anyhow-1.0.100 ]; then \
-			mv ${WRKDIR}/vendor/anyhow-1.0.100 ${WRKDIR}/vendor/anyhow-1.0.100; \
+	@if [ -d ${_RUST_CRATE_SHARE}/anyhow-1.0.104 ]; then \
+		ln -sfn ${_RUST_CRATE_SHARE}/anyhow-1.0.104 ${WRKDIR}/vendor/anyhow-1.0.104; \
+	elif [ -f ${_RUST_CRATE_SHARE}/anyhow-1.0.104.tar.gz ]; then \
+		tar xzf ${_RUST_CRATE_SHARE}/anyhow-1.0.104.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/anyhow-1.0.104 ] && [ -d ${WRKDIR}/vendor/anyhow-1.0.104 ]; then \
+			mv ${WRKDIR}/vendor/anyhow-1.0.104 ${WRKDIR}/vendor/anyhow-1.0.104; \
 		fi; \
-		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/anyhow-1.0.100.tar.gz ${WRKDIR}/vendor/anyhow-1.0.100 2>/dev/null || true; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/anyhow-1.0.104.tar.gz ${WRKDIR}/vendor/anyhow-1.0.104 2>/dev/null || true; \
 	else \
-		echo "missing dep anyhow-1.0.100" >&2; exit 1; \
+		echo "missing dep anyhow-1.0.104" >&2; exit 1; \
 	fi
 	@if [ -d ${_RUST_CRATE_SHARE}/itertools-0.14.0 ]; then \
 		ln -sfn ${_RUST_CRATE_SHARE}/itertools-0.14.0 ${WRKDIR}/vendor/itertools-0.14.0; \
@@ -1831,17 +1826,6 @@ post-extract:
 	else \
 		echo "missing dep getrandom-0.3.4" >&2; exit 1; \
 	fi
-	@if [ -d ${_RUST_CRATE_SHARE}/backtrace-0.3.76 ]; then \
-		ln -sfn ${_RUST_CRATE_SHARE}/backtrace-0.3.76 ${WRKDIR}/vendor/backtrace-0.3.76; \
-	elif [ -f ${_RUST_CRATE_SHARE}/backtrace-0.3.76.tar.gz ]; then \
-		tar xzf ${_RUST_CRATE_SHARE}/backtrace-0.3.76.tar.gz -C ${WRKDIR}/vendor; \
-		if [ ! -d ${WRKDIR}/vendor/backtrace-0.3.76 ] && [ -d ${WRKDIR}/vendor/backtrace-0.3.76 ]; then \
-			mv ${WRKDIR}/vendor/backtrace-0.3.76 ${WRKDIR}/vendor/backtrace-0.3.76; \
-		fi; \
-		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/backtrace-0.3.76.tar.gz ${WRKDIR}/vendor/backtrace-0.3.76 2>/dev/null || true; \
-	else \
-		echo "missing dep backtrace-0.3.76" >&2; exit 1; \
-	fi
 	@if [ -d ${_RUST_CRATE_SHARE}/either-1.15.0 ]; then \
 		ln -sfn ${_RUST_CRATE_SHARE}/either-1.15.0 ${WRKDIR}/vendor/either-1.15.0; \
 	elif [ -f ${_RUST_CRATE_SHARE}/either-1.15.0.tar.gz ]; then \
@@ -2150,39 +2134,6 @@ post-extract:
 	else \
 		echo "missing dep r-efi-5.3.0" >&2; exit 1; \
 	fi
-	@if [ -d ${_RUST_CRATE_SHARE}/addr2line-0.25.1 ]; then \
-		ln -sfn ${_RUST_CRATE_SHARE}/addr2line-0.25.1 ${WRKDIR}/vendor/addr2line-0.25.1; \
-	elif [ -f ${_RUST_CRATE_SHARE}/addr2line-0.25.1.tar.gz ]; then \
-		tar xzf ${_RUST_CRATE_SHARE}/addr2line-0.25.1.tar.gz -C ${WRKDIR}/vendor; \
-		if [ ! -d ${WRKDIR}/vendor/addr2line-0.25.1 ] && [ -d ${WRKDIR}/vendor/addr2line-0.25.1 ]; then \
-			mv ${WRKDIR}/vendor/addr2line-0.25.1 ${WRKDIR}/vendor/addr2line-0.25.1; \
-		fi; \
-		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/addr2line-0.25.1.tar.gz ${WRKDIR}/vendor/addr2line-0.25.1 2>/dev/null || true; \
-	else \
-		echo "missing dep addr2line-0.25.1" >&2; exit 1; \
-	fi
-	@if [ -d ${_RUST_CRATE_SHARE}/object-0.37.3 ]; then \
-		ln -sfn ${_RUST_CRATE_SHARE}/object-0.37.3 ${WRKDIR}/vendor/object-0.37.3; \
-	elif [ -f ${_RUST_CRATE_SHARE}/object-0.37.3.tar.gz ]; then \
-		tar xzf ${_RUST_CRATE_SHARE}/object-0.37.3.tar.gz -C ${WRKDIR}/vendor; \
-		if [ ! -d ${WRKDIR}/vendor/object-0.37.3 ] && [ -d ${WRKDIR}/vendor/object-0.37.3 ]; then \
-			mv ${WRKDIR}/vendor/object-0.37.3 ${WRKDIR}/vendor/object-0.37.3; \
-		fi; \
-		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/object-0.37.3.tar.gz ${WRKDIR}/vendor/object-0.37.3 2>/dev/null || true; \
-	else \
-		echo "missing dep object-0.37.3" >&2; exit 1; \
-	fi
-	@if [ -d ${_RUST_CRATE_SHARE}/rustc-demangle-0.1.26 ]; then \
-		ln -sfn ${_RUST_CRATE_SHARE}/rustc-demangle-0.1.26 ${WRKDIR}/vendor/rustc-demangle-0.1.26; \
-	elif [ -f ${_RUST_CRATE_SHARE}/rustc-demangle-0.1.26.tar.gz ]; then \
-		tar xzf ${_RUST_CRATE_SHARE}/rustc-demangle-0.1.26.tar.gz -C ${WRKDIR}/vendor; \
-		if [ ! -d ${WRKDIR}/vendor/rustc-demangle-0.1.26 ] && [ -d ${WRKDIR}/vendor/rustc-demangle-0.1.26 ]; then \
-			mv ${WRKDIR}/vendor/rustc-demangle-0.1.26 ${WRKDIR}/vendor/rustc-demangle-0.1.26; \
-		fi; \
-		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/rustc-demangle-0.1.26.tar.gz ${WRKDIR}/vendor/rustc-demangle-0.1.26 2>/dev/null || true; \
-	else \
-		echo "missing dep rustc-demangle-0.1.26" >&2; exit 1; \
-	fi
 	@if [ -d ${_RUST_CRATE_SHARE}/tinyvec_macros-0.1.1 ]; then \
 		ln -sfn ${_RUST_CRATE_SHARE}/tinyvec_macros-0.1.1 ${WRKDIR}/vendor/tinyvec_macros-0.1.1; \
 	elif [ -f ${_RUST_CRATE_SHARE}/tinyvec_macros-0.1.1.tar.gz ]; then \
@@ -2369,17 +2320,6 @@ post-extract:
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/zerocopy-derive-0.8.48.tar.gz ${WRKDIR}/vendor/zerocopy-derive-0.8.48 2>/dev/null || true; \
 	else \
 		echo "missing dep zerocopy-derive-0.8.48" >&2; exit 1; \
-	fi
-	@if [ -d ${_RUST_CRATE_SHARE}/gimli-0.32.3 ]; then \
-		ln -sfn ${_RUST_CRATE_SHARE}/gimli-0.32.3 ${WRKDIR}/vendor/gimli-0.32.3; \
-	elif [ -f ${_RUST_CRATE_SHARE}/gimli-0.32.3.tar.gz ]; then \
-		tar xzf ${_RUST_CRATE_SHARE}/gimli-0.32.3.tar.gz -C ${WRKDIR}/vendor; \
-		if [ ! -d ${WRKDIR}/vendor/gimli-0.32.3 ] && [ -d ${WRKDIR}/vendor/gimli-0.32.3 ]; then \
-			mv ${WRKDIR}/vendor/gimli-0.32.3 ${WRKDIR}/vendor/gimli-0.32.3; \
-		fi; \
-		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/gimli-0.32.3.tar.gz ${WRKDIR}/vendor/gimli-0.32.3 2>/dev/null || true; \
-	else \
-		echo "missing dep gimli-0.32.3" >&2; exit 1; \
 	fi
 	@if [ -d ${_RUST_CRATE_SHARE}/displaydoc-0.2.5 ]; then \
 		ln -sfn ${_RUST_CRATE_SHARE}/displaydoc-0.2.5 ${WRKDIR}/vendor/displaydoc-0.2.5; \
@@ -2806,12 +2746,12 @@ pre-build:
 	@cp -f ${_RUST_CRATE_LIBDIR}/portable-atomic-1.11.1/lib*.rlib ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@cp -f ${_RUST_CRATE_LIBDIR}/portable-atomic-1.11.1/lib*.so ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@cp -f ${_RUST_CRATE_LIBDIR}/portable-atomic-1.11.1/lib*.rmeta ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
-	@if [ -d ${_RUST_CRATE_LIBDIR}/rand-0.9.2/deps ]; then \
-		cp -Rp ${_RUST_CRATE_LIBDIR}/rand-0.9.2/deps/. ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true; \
+	@if [ -d ${_RUST_CRATE_LIBDIR}/rand-0.9.5/deps ]; then \
+		cp -Rp ${_RUST_CRATE_LIBDIR}/rand-0.9.5/deps/. ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true; \
 	fi
-	@cp -f ${_RUST_CRATE_LIBDIR}/rand-0.9.2/lib*.rlib ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
-	@cp -f ${_RUST_CRATE_LIBDIR}/rand-0.9.2/lib*.so ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
-	@cp -f ${_RUST_CRATE_LIBDIR}/rand-0.9.2/lib*.rmeta ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
+	@cp -f ${_RUST_CRATE_LIBDIR}/rand-0.9.5/lib*.rlib ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
+	@cp -f ${_RUST_CRATE_LIBDIR}/rand-0.9.5/lib*.so ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
+	@cp -f ${_RUST_CRATE_LIBDIR}/rand-0.9.5/lib*.rmeta ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@if [ -d ${_RUST_CRATE_LIBDIR}/tokio-stream-0.1.17/deps ]; then \
 		cp -Rp ${_RUST_CRATE_LIBDIR}/tokio-stream-0.1.17/deps/. ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true; \
 	fi
@@ -3154,12 +3094,12 @@ pre-build:
 	@cp -f ${_RUST_CRATE_LIBDIR}/rand_core-0.9.3/lib*.rlib ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@cp -f ${_RUST_CRATE_LIBDIR}/rand_core-0.9.3/lib*.so ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@cp -f ${_RUST_CRATE_LIBDIR}/rand_core-0.9.3/lib*.rmeta ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
-	@if [ -d ${_RUST_CRATE_LIBDIR}/anyhow-1.0.100/deps ]; then \
-		cp -Rp ${_RUST_CRATE_LIBDIR}/anyhow-1.0.100/deps/. ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true; \
+	@if [ -d ${_RUST_CRATE_LIBDIR}/anyhow-1.0.104/deps ]; then \
+		cp -Rp ${_RUST_CRATE_LIBDIR}/anyhow-1.0.104/deps/. ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true; \
 	fi
-	@cp -f ${_RUST_CRATE_LIBDIR}/anyhow-1.0.100/lib*.rlib ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
-	@cp -f ${_RUST_CRATE_LIBDIR}/anyhow-1.0.100/lib*.so ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
-	@cp -f ${_RUST_CRATE_LIBDIR}/anyhow-1.0.100/lib*.rmeta ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
+	@cp -f ${_RUST_CRATE_LIBDIR}/anyhow-1.0.104/lib*.rlib ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
+	@cp -f ${_RUST_CRATE_LIBDIR}/anyhow-1.0.104/lib*.so ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
+	@cp -f ${_RUST_CRATE_LIBDIR}/anyhow-1.0.104/lib*.rmeta ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@if [ -d ${_RUST_CRATE_LIBDIR}/itertools-0.14.0/deps ]; then \
 		cp -Rp ${_RUST_CRATE_LIBDIR}/itertools-0.14.0/deps/. ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true; \
 	fi
@@ -3496,12 +3436,6 @@ pre-build:
 	@cp -f ${_RUST_CRATE_LIBDIR}/getrandom-0.3.4/lib*.rlib ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@cp -f ${_RUST_CRATE_LIBDIR}/getrandom-0.3.4/lib*.so ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@cp -f ${_RUST_CRATE_LIBDIR}/getrandom-0.3.4/lib*.rmeta ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
-	@if [ -d ${_RUST_CRATE_LIBDIR}/backtrace-0.3.76/deps ]; then \
-		cp -Rp ${_RUST_CRATE_LIBDIR}/backtrace-0.3.76/deps/. ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true; \
-	fi
-	@cp -f ${_RUST_CRATE_LIBDIR}/backtrace-0.3.76/lib*.rlib ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
-	@cp -f ${_RUST_CRATE_LIBDIR}/backtrace-0.3.76/lib*.so ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
-	@cp -f ${_RUST_CRATE_LIBDIR}/backtrace-0.3.76/lib*.rmeta ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@if [ -d ${_RUST_CRATE_LIBDIR}/either-1.15.0/deps ]; then \
 		cp -Rp ${_RUST_CRATE_LIBDIR}/either-1.15.0/deps/. ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true; \
 	fi
@@ -3670,24 +3604,6 @@ pre-build:
 	@cp -f ${_RUST_CRATE_LIBDIR}/r-efi-5.3.0/lib*.rlib ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@cp -f ${_RUST_CRATE_LIBDIR}/r-efi-5.3.0/lib*.so ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@cp -f ${_RUST_CRATE_LIBDIR}/r-efi-5.3.0/lib*.rmeta ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
-	@if [ -d ${_RUST_CRATE_LIBDIR}/addr2line-0.25.1/deps ]; then \
-		cp -Rp ${_RUST_CRATE_LIBDIR}/addr2line-0.25.1/deps/. ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true; \
-	fi
-	@cp -f ${_RUST_CRATE_LIBDIR}/addr2line-0.25.1/lib*.rlib ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
-	@cp -f ${_RUST_CRATE_LIBDIR}/addr2line-0.25.1/lib*.so ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
-	@cp -f ${_RUST_CRATE_LIBDIR}/addr2line-0.25.1/lib*.rmeta ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
-	@if [ -d ${_RUST_CRATE_LIBDIR}/object-0.37.3/deps ]; then \
-		cp -Rp ${_RUST_CRATE_LIBDIR}/object-0.37.3/deps/. ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true; \
-	fi
-	@cp -f ${_RUST_CRATE_LIBDIR}/object-0.37.3/lib*.rlib ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
-	@cp -f ${_RUST_CRATE_LIBDIR}/object-0.37.3/lib*.so ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
-	@cp -f ${_RUST_CRATE_LIBDIR}/object-0.37.3/lib*.rmeta ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
-	@if [ -d ${_RUST_CRATE_LIBDIR}/rustc-demangle-0.1.26/deps ]; then \
-		cp -Rp ${_RUST_CRATE_LIBDIR}/rustc-demangle-0.1.26/deps/. ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true; \
-	fi
-	@cp -f ${_RUST_CRATE_LIBDIR}/rustc-demangle-0.1.26/lib*.rlib ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
-	@cp -f ${_RUST_CRATE_LIBDIR}/rustc-demangle-0.1.26/lib*.so ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
-	@cp -f ${_RUST_CRATE_LIBDIR}/rustc-demangle-0.1.26/lib*.rmeta ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@if [ -d ${_RUST_CRATE_LIBDIR}/tinyvec_macros-0.1.1/deps ]; then \
 		cp -Rp ${_RUST_CRATE_LIBDIR}/tinyvec_macros-0.1.1/deps/. ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true; \
 	fi
@@ -3790,12 +3706,6 @@ pre-build:
 	@cp -f ${_RUST_CRATE_LIBDIR}/zerocopy-derive-0.8.48/lib*.rlib ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@cp -f ${_RUST_CRATE_LIBDIR}/zerocopy-derive-0.8.48/lib*.so ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@cp -f ${_RUST_CRATE_LIBDIR}/zerocopy-derive-0.8.48/lib*.rmeta ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
-	@if [ -d ${_RUST_CRATE_LIBDIR}/gimli-0.32.3/deps ]; then \
-		cp -Rp ${_RUST_CRATE_LIBDIR}/gimli-0.32.3/deps/. ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true; \
-	fi
-	@cp -f ${_RUST_CRATE_LIBDIR}/gimli-0.32.3/lib*.rlib ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
-	@cp -f ${_RUST_CRATE_LIBDIR}/gimli-0.32.3/lib*.so ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
-	@cp -f ${_RUST_CRATE_LIBDIR}/gimli-0.32.3/lib*.rmeta ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@if [ -d ${_RUST_CRATE_LIBDIR}/displaydoc-0.2.5/deps ]; then \
 		cp -Rp ${_RUST_CRATE_LIBDIR}/displaydoc-0.2.5/deps/. ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true; \
 	fi

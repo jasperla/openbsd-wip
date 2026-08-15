@@ -1,3 +1,0 @@
-Prebuilt Rust crate memmap2 0.9.10 for offline grok-build.
-PKGNAME=rust-crate-memmap2_0_9_10-0
-Installs share/modcargo-crates/memmap2-0.9.10/ and lib/rust-crates/<arch>/memmap2-0.9.10/ (rlib + cargo fingerprints).

@@ -2,4 +2,4 @@
 # Versions (build from rust-crates/ top Makefile):
 #   rand/0.10.0
 #   rand/0.8.5
-#   rand/0.9.2
+#   rand/0.9.5

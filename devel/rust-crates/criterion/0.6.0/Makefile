@@ -44,7 +44,7 @@ MAKE_ENV +=		CARGO_ENCODED_RUSTFLAGS=--cap-lints=allow
 
 BUILD_DEPENDS +=	rust-crate-anes_0_1_6-0:devel/rust-crates/anes/0.1.6
 BUILD_DEPENDS +=	rust-crate-cast_0_3_0-0:devel/rust-crates/cast/0.3.0
-BUILD_DEPENDS +=	rust-crate-ciborium_0_2_2-0:devel/rust-crates/ciborium/0.2.2
+BUILD_DEPENDS +=	rust-crate-ciborium_0_2_1-0:devel/rust-crates/ciborium/0.2.1
 BUILD_DEPENDS +=	rust-crate-clap_4_5_53-0:devel/rust-crates/clap/4.5.53
 BUILD_DEPENDS +=	rust-crate-criterion_plot_0_5_0-0:devel/rust-crates/criterion-plot/0.5.0
 BUILD_DEPENDS +=	rust-crate-itertools_0_13_0-0:devel/rust-crates/itertools/0.13.0
@@ -141,16 +141,16 @@ post-extract:
 	else \
 		echo "missing dep cast-0.3.0" >&2; exit 1; \
 	fi
-	@if [ -d ${_RUST_CRATE_SHARE}/ciborium-0.2.2 ]; then \
-		ln -sfn ${_RUST_CRATE_SHARE}/ciborium-0.2.2 ${WRKDIR}/vendor/ciborium-0.2.2; \
-	elif [ -f ${_RUST_CRATE_SHARE}/ciborium-0.2.2.tar.gz ]; then \
-		tar xzf ${_RUST_CRATE_SHARE}/ciborium-0.2.2.tar.gz -C ${WRKDIR}/vendor; \
-		if [ ! -d ${WRKDIR}/vendor/ciborium-0.2.2 ] && [ -d ${WRKDIR}/vendor/ciborium-0.2.2 ]; then \
-			mv ${WRKDIR}/vendor/ciborium-0.2.2 ${WRKDIR}/vendor/ciborium-0.2.2; \
+	@if [ -d ${_RUST_CRATE_SHARE}/ciborium-0.2.1 ]; then \
+		ln -sfn ${_RUST_CRATE_SHARE}/ciborium-0.2.1 ${WRKDIR}/vendor/ciborium-0.2.1; \
+	elif [ -f ${_RUST_CRATE_SHARE}/ciborium-0.2.1.tar.gz ]; then \
+		tar xzf ${_RUST_CRATE_SHARE}/ciborium-0.2.1.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/ciborium-0.2.1 ] && [ -d ${WRKDIR}/vendor/ciborium-0.2.1 ]; then \
+			mv ${WRKDIR}/vendor/ciborium-0.2.1 ${WRKDIR}/vendor/ciborium-0.2.1; \
 		fi; \
-		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/ciborium-0.2.2.tar.gz ${WRKDIR}/vendor/ciborium-0.2.2 2>/dev/null || true; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/ciborium-0.2.1.tar.gz ${WRKDIR}/vendor/ciborium-0.2.1 2>/dev/null || true; \
 	else \
-		echo "missing dep ciborium-0.2.2" >&2; exit 1; \
+		echo "missing dep ciborium-0.2.1" >&2; exit 1; \
 	fi
 	@if [ -d ${_RUST_CRATE_SHARE}/clap-4.5.53 ]; then \
 		ln -sfn ${_RUST_CRATE_SHARE}/clap-4.5.53 ${WRKDIR}/vendor/clap-4.5.53; \
@@ -856,12 +856,12 @@ pre-build:
 	@cp -f ${_RUST_CRATE_LIBDIR}/cast-0.3.0/lib*.rlib ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@cp -f ${_RUST_CRATE_LIBDIR}/cast-0.3.0/lib*.so ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@cp -f ${_RUST_CRATE_LIBDIR}/cast-0.3.0/lib*.rmeta ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
-	@if [ -d ${_RUST_CRATE_LIBDIR}/ciborium-0.2.2/deps ]; then \
-		cp -Rp ${_RUST_CRATE_LIBDIR}/ciborium-0.2.2/deps/. ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true; \
+	@if [ -d ${_RUST_CRATE_LIBDIR}/ciborium-0.2.1/deps ]; then \
+		cp -Rp ${_RUST_CRATE_LIBDIR}/ciborium-0.2.1/deps/. ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true; \
 	fi
-	@cp -f ${_RUST_CRATE_LIBDIR}/ciborium-0.2.2/lib*.rlib ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
-	@cp -f ${_RUST_CRATE_LIBDIR}/ciborium-0.2.2/lib*.so ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
-	@cp -f ${_RUST_CRATE_LIBDIR}/ciborium-0.2.2/lib*.rmeta ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
+	@cp -f ${_RUST_CRATE_LIBDIR}/ciborium-0.2.1/lib*.rlib ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
+	@cp -f ${_RUST_CRATE_LIBDIR}/ciborium-0.2.1/lib*.so ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
+	@cp -f ${_RUST_CRATE_LIBDIR}/ciborium-0.2.1/lib*.rmeta ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@if [ -d ${_RUST_CRATE_LIBDIR}/clap-4.5.53/deps ]; then \
 		cp -Rp ${_RUST_CRATE_LIBDIR}/clap-4.5.53/deps/. ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true; \
 	fi

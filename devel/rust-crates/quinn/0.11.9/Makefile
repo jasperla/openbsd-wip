@@ -58,7 +58,7 @@ BUILD_DEPENDS +=	rust-crate-serde_1_0_228-0:devel/rust-crates/serde/1.0.228
 BUILD_DEPENDS +=	rust-crate-aws_lc_rs_1_16_2-0:devel/rust-crates/aws-lc-rs/1.16.2
 BUILD_DEPENDS +=	rust-crate-getrandom_0_3_4-0:devel/rust-crates/getrandom/0.3.4
 BUILD_DEPENDS +=	rust-crate-lru_slab_0_1_2-0:devel/rust-crates/lru-slab/0.1.2
-BUILD_DEPENDS +=	rust-crate-rand_0_9_2-0:devel/rust-crates/rand/0.9.2
+BUILD_DEPENDS +=	rust-crate-rand_0_9_5-0:devel/rust-crates/rand/0.9.5
 BUILD_DEPENDS +=	rust-crate-ring_0_17_14-0:devel/rust-crates/ring/0.17.14
 BUILD_DEPENDS +=	rust-crate-rustls_pki_types_1_14_0-0:devel/rust-crates/rustls-pki-types/1.14.0
 BUILD_DEPENDS +=	rust-crate-slab_0_4_11-0:devel/rust-crates/slab/0.4.11
@@ -300,16 +300,16 @@ post-extract:
 	else \
 		echo "missing dep lru-slab-0.1.2" >&2; exit 1; \
 	fi
-	@if [ -d ${_RUST_CRATE_SHARE}/rand-0.9.2 ]; then \
-		ln -sfn ${_RUST_CRATE_SHARE}/rand-0.9.2 ${WRKDIR}/vendor/rand-0.9.2; \
-	elif [ -f ${_RUST_CRATE_SHARE}/rand-0.9.2.tar.gz ]; then \
-		tar xzf ${_RUST_CRATE_SHARE}/rand-0.9.2.tar.gz -C ${WRKDIR}/vendor; \
-		if [ ! -d ${WRKDIR}/vendor/rand-0.9.2 ] && [ -d ${WRKDIR}/vendor/rand-0.9.2 ]; then \
-			mv ${WRKDIR}/vendor/rand-0.9.2 ${WRKDIR}/vendor/rand-0.9.2; \
+	@if [ -d ${_RUST_CRATE_SHARE}/rand-0.9.5 ]; then \
+		ln -sfn ${_RUST_CRATE_SHARE}/rand-0.9.5 ${WRKDIR}/vendor/rand-0.9.5; \
+	elif [ -f ${_RUST_CRATE_SHARE}/rand-0.9.5.tar.gz ]; then \
+		tar xzf ${_RUST_CRATE_SHARE}/rand-0.9.5.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/rand-0.9.5 ] && [ -d ${WRKDIR}/vendor/rand-0.9.5 ]; then \
+			mv ${WRKDIR}/vendor/rand-0.9.5 ${WRKDIR}/vendor/rand-0.9.5; \
 		fi; \
-		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/rand-0.9.2.tar.gz ${WRKDIR}/vendor/rand-0.9.2 2>/dev/null || true; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/rand-0.9.5.tar.gz ${WRKDIR}/vendor/rand-0.9.5 2>/dev/null || true; \
 	else \
-		echo "missing dep rand-0.9.2" >&2; exit 1; \
+		echo "missing dep rand-0.9.5" >&2; exit 1; \
 	fi
 	@if [ -d ${_RUST_CRATE_SHARE}/ring-0.17.14 ]; then \
 		ln -sfn ${_RUST_CRATE_SHARE}/ring-0.17.14 ${WRKDIR}/vendor/ring-0.17.14; \
@@ -1000,12 +1000,12 @@ pre-build:
 	@cp -f ${_RUST_CRATE_LIBDIR}/lru-slab-0.1.2/lib*.rlib ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@cp -f ${_RUST_CRATE_LIBDIR}/lru-slab-0.1.2/lib*.so ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@cp -f ${_RUST_CRATE_LIBDIR}/lru-slab-0.1.2/lib*.rmeta ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
-	@if [ -d ${_RUST_CRATE_LIBDIR}/rand-0.9.2/deps ]; then \
-		cp -Rp ${_RUST_CRATE_LIBDIR}/rand-0.9.2/deps/. ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true; \
+	@if [ -d ${_RUST_CRATE_LIBDIR}/rand-0.9.5/deps ]; then \
+		cp -Rp ${_RUST_CRATE_LIBDIR}/rand-0.9.5/deps/. ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true; \
 	fi
-	@cp -f ${_RUST_CRATE_LIBDIR}/rand-0.9.2/lib*.rlib ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
-	@cp -f ${_RUST_CRATE_LIBDIR}/rand-0.9.2/lib*.so ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
-	@cp -f ${_RUST_CRATE_LIBDIR}/rand-0.9.2/lib*.rmeta ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
+	@cp -f ${_RUST_CRATE_LIBDIR}/rand-0.9.5/lib*.rlib ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
+	@cp -f ${_RUST_CRATE_LIBDIR}/rand-0.9.5/lib*.so ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
+	@cp -f ${_RUST_CRATE_LIBDIR}/rand-0.9.5/lib*.rmeta ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@if [ -d ${_RUST_CRATE_LIBDIR}/ring-0.17.14/deps ]; then \
 		cp -Rp ${_RUST_CRATE_LIBDIR}/ring-0.17.14/deps/. ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true; \
 	fi

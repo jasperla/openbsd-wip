@@ -42,7 +42,7 @@ MAKE_ENV +=		RUSTFLAGS=--cap-lints=allow
 MAKE_ENV +=		CARGO_ENCODED_RUSTFLAGS=--cap-lints=allow
 
 
-BUILD_DEPENDS +=	rust-crate-bytemuck_1_24_0-0:devel/rust-crates/bytemuck/1.24.0
+BUILD_DEPENDS +=	rust-crate-bytemuck_1_25_2-0:devel/rust-crates/bytemuck/1.25.2
 BUILD_DEPENDS +=	rust-crate-bytemuck_derive_1_10_2-0:devel/rust-crates/bytemuck_derive/1.10.2
 BUILD_DEPENDS +=	rust-crate-proc_macro2_1_0_106-0:devel/rust-crates/proc-macro2/1.0.106
 BUILD_DEPENDS +=	rust-crate-quote_1_0_45-0:devel/rust-crates/quote/1.0.45
@@ -62,16 +62,16 @@ post-extract:
 	@${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/atomic-0.6.1.tar.gz \
 		${WRKDIR}/vendor/atomic-0.6.1
 	# Dep sources from installed rust-crate-* packages (or fail if missing)
-	@if [ -d ${_RUST_CRATE_SHARE}/bytemuck-1.24.0 ]; then \
-		ln -sfn ${_RUST_CRATE_SHARE}/bytemuck-1.24.0 ${WRKDIR}/vendor/bytemuck-1.24.0; \
-	elif [ -f ${_RUST_CRATE_SHARE}/bytemuck-1.24.0.tar.gz ]; then \
-		tar xzf ${_RUST_CRATE_SHARE}/bytemuck-1.24.0.tar.gz -C ${WRKDIR}/vendor; \
-		if [ ! -d ${WRKDIR}/vendor/bytemuck-1.24.0 ] && [ -d ${WRKDIR}/vendor/bytemuck-1.24.0 ]; then \
-			mv ${WRKDIR}/vendor/bytemuck-1.24.0 ${WRKDIR}/vendor/bytemuck-1.24.0; \
+	@if [ -d ${_RUST_CRATE_SHARE}/bytemuck-1.25.2 ]; then \
+		ln -sfn ${_RUST_CRATE_SHARE}/bytemuck-1.25.2 ${WRKDIR}/vendor/bytemuck-1.25.2; \
+	elif [ -f ${_RUST_CRATE_SHARE}/bytemuck-1.25.2.tar.gz ]; then \
+		tar xzf ${_RUST_CRATE_SHARE}/bytemuck-1.25.2.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/bytemuck-1.25.2 ] && [ -d ${WRKDIR}/vendor/bytemuck-1.25.2 ]; then \
+			mv ${WRKDIR}/vendor/bytemuck-1.25.2 ${WRKDIR}/vendor/bytemuck-1.25.2; \
 		fi; \
-		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/bytemuck-1.24.0.tar.gz ${WRKDIR}/vendor/bytemuck-1.24.0 2>/dev/null || true; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/bytemuck-1.25.2.tar.gz ${WRKDIR}/vendor/bytemuck-1.25.2 2>/dev/null || true; \
 	else \
-		echo "missing dep bytemuck-1.24.0" >&2; exit 1; \
+		echo "missing dep bytemuck-1.25.2" >&2; exit 1; \
 	fi
 	@if [ -d ${_RUST_CRATE_SHARE}/bytemuck_derive-1.10.2 ]; then \
 		ln -sfn ${_RUST_CRATE_SHARE}/bytemuck_derive-1.10.2 ${WRKDIR}/vendor/bytemuck_derive-1.10.2; \
@@ -160,12 +160,12 @@ pre-build:
 	@mkdir -p ${MODCARGO_TARGET_DIR}/release/deps
 	@mkdir -p ${MODCARGO_TARGET_DIR}/release/.fingerprint
 	# Seed dep cargo artifacts so cargo often skips recompiling them.
-	@if [ -d ${_RUST_CRATE_LIBDIR}/bytemuck-1.24.0/deps ]; then \
-		cp -Rp ${_RUST_CRATE_LIBDIR}/bytemuck-1.24.0/deps/. ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true; \
+	@if [ -d ${_RUST_CRATE_LIBDIR}/bytemuck-1.25.2/deps ]; then \
+		cp -Rp ${_RUST_CRATE_LIBDIR}/bytemuck-1.25.2/deps/. ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true; \
 	fi
-	@cp -f ${_RUST_CRATE_LIBDIR}/bytemuck-1.24.0/lib*.rlib ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
-	@cp -f ${_RUST_CRATE_LIBDIR}/bytemuck-1.24.0/lib*.so ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
-	@cp -f ${_RUST_CRATE_LIBDIR}/bytemuck-1.24.0/lib*.rmeta ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
+	@cp -f ${_RUST_CRATE_LIBDIR}/bytemuck-1.25.2/lib*.rlib ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
+	@cp -f ${_RUST_CRATE_LIBDIR}/bytemuck-1.25.2/lib*.so ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
+	@cp -f ${_RUST_CRATE_LIBDIR}/bytemuck-1.25.2/lib*.rmeta ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@if [ -d ${_RUST_CRATE_LIBDIR}/bytemuck_derive-1.10.2/deps ]; then \
 		cp -Rp ${_RUST_CRATE_LIBDIR}/bytemuck_derive-1.10.2/deps/. ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true; \
 	fi

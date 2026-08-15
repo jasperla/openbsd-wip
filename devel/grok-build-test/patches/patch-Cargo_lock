@@ -4,7 +4,7 @@
 Index: Cargo.lock
 --- Cargo.lock.orig
 +++ Cargo.lock
-@@ -515,7 +515,6 @@
+@@ -523,7 +523,6 @@
  [[package]]
  name = "async-openai"
  version = "0.33.1"
@@ -12,7 +12,7 @@ Index: Cargo.lock
  dependencies = [
   "async-openai-macros",
   "backoff",
-@@ -543,7 +542,6 @@
+@@ -551,7 +551,6 @@
  [[package]]
  name = "async-openai-macros"
  version = "0.1.1"
@@ -20,7 +20,7 @@ Index: Cargo.lock
  dependencies = [
   "proc-macro2",
   "quote",
-@@ -6514,7 +6512,6 @@
+@@ -6674,7 +6674,6 @@
  [[package]]
  name = "nucleo"
  version = "0.5.0"
@@ -28,7 +28,7 @@ Index: Cargo.lock
  dependencies = [
   "nucleo-matcher",
   "parking_lot",
-@@ -6524,7 +6521,6 @@
+@@ -6684,7 +6684,6 @@
  [[package]]
  name = "nucleo-matcher"
  version = "0.3.1"

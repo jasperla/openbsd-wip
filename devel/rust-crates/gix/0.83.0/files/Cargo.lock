@@ -143,7 +143,7 @@ dependencies = [
  "gix-chunk 0.7.2",
  "gix-error 0.2.4",
  "gix-hash 0.25.1",
- "memmap2 0.9.10",
+ "memmap2 0.9.11",
  "nonempty 0.12.0",
 ]
 
@@ -371,7 +371,7 @@ dependencies = [
  "hashbrown 0.16.1",
  "itoa 1.0.17",
  "libc 0.2.186",
- "memmap2 0.9.10",
+ "memmap2 0.9.11",
  "rustix 1.1.4",
  "smallvec 1.15.1",
  "thiserror 2.0.18",
@@ -462,7 +462,7 @@ dependencies = [
  "gix-pack 0.70.0",
  "gix-path 0.12.1",
  "gix-quote 0.7.2",
- "memmap2 0.9.10",
+ "memmap2 0.9.11",
  "parking_lot 0.12.5",
  "tempfile 3.27.0",
  "thiserror 2.0.18",
@@ -482,7 +482,7 @@ dependencies = [
  "gix-hashtable 0.15.1",
  "gix-object 0.60.0",
  "gix-path 0.12.1",
- "memmap2 0.9.10",
+ "memmap2 0.9.11",
  "smallvec 1.15.1",
  "thiserror 2.0.18",
 ]
@@ -549,7 +549,7 @@ dependencies = [
  "gix-tempfile 23.0.1",
  "gix-utils 0.3.3",
  "gix-validate 0.11.2",
- "memmap2 0.9.10",
+ "memmap2 0.9.11",
  "thiserror 2.0.18",
 ]
 
@@ -866,9 +866,9 @@ dependencies = [
 
 [[package]]
 name = "memmap2"
-version = "0.9.10"
+version = "0.9.11"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "714098028fe011992e1c3962653c96b2d578c4b4bce9036e15ff220319b1e0e3"
+checksum = "d1219ed1b7f229ee7104d281dd01d6802fe28bb6e95d292942c4daacdeb798c0"
 dependencies = [
  "libc 0.2.186",
 ]

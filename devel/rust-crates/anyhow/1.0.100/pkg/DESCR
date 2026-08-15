@@ -1,3 +1,0 @@
-Prebuilt Rust crate anyhow 1.0.100 for offline grok-build.
-PKGNAME=rust-crate-anyhow_1_0_100-0
-Installs share/modcargo-crates/anyhow-1.0.100/ and lib/rust-crates/<arch>/anyhow-1.0.100/ (rlib + cargo fingerprints).

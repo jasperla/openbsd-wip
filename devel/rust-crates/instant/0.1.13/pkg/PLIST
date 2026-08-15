@@ -1,3 +1,0 @@
-share/modcargo-crates/instant-0.1.13.tar.gz
-lib/rust-crates/${MACHINE_ARCH}/instant-0.1.13/crate-meta.txt
-lib/rust-crates/${MACHINE_ARCH}/instant-0.1.13/libinstant.rlib

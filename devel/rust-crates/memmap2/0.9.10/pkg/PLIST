@@ -1,3 +1,0 @@
-share/modcargo-crates/memmap2-0.9.10.tar.gz
-lib/rust-crates/${MACHINE_ARCH}/memmap2-0.9.10/crate-meta.txt
-lib/rust-crates/${MACHINE_ARCH}/memmap2-0.9.10/libmemmap2.rlib

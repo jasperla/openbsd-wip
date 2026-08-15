@@ -46,7 +46,7 @@ BUILD_DEPENDS +=	rust-crate-atomic_0_6_1-0:devel/rust-crates/atomic/0.6.1
 BUILD_DEPENDS +=	rust-crate-getrandom_0_4_1-0:devel/rust-crates/getrandom/0.4.1
 BUILD_DEPENDS +=	rust-crate-serde_core_1_0_228-0:devel/rust-crates/serde_core/1.0.228
 BUILD_DEPENDS +=	rust-crate-sha1_smol_1_0_1-0:devel/rust-crates/sha1_smol/1.0.1
-BUILD_DEPENDS +=	rust-crate-bytemuck_1_24_0-0:devel/rust-crates/bytemuck/1.24.0
+BUILD_DEPENDS +=	rust-crate-bytemuck_1_25_2-0:devel/rust-crates/bytemuck/1.25.2
 BUILD_DEPENDS +=	rust-crate-cfg_if_1_0_4-0:devel/rust-crates/cfg-if/1.0.4
 BUILD_DEPENDS +=	rust-crate-libc_0_2_186-0:devel/rust-crates/libc/0.2.186
 BUILD_DEPENDS +=	rust-crate-r_efi_5_3_0-0:devel/rust-crates/r-efi/5.3.0
@@ -115,16 +115,16 @@ post-extract:
 	else \
 		echo "missing dep sha1_smol-1.0.1" >&2; exit 1; \
 	fi
-	@if [ -d ${_RUST_CRATE_SHARE}/bytemuck-1.24.0 ]; then \
-		ln -sfn ${_RUST_CRATE_SHARE}/bytemuck-1.24.0 ${WRKDIR}/vendor/bytemuck-1.24.0; \
-	elif [ -f ${_RUST_CRATE_SHARE}/bytemuck-1.24.0.tar.gz ]; then \
-		tar xzf ${_RUST_CRATE_SHARE}/bytemuck-1.24.0.tar.gz -C ${WRKDIR}/vendor; \
-		if [ ! -d ${WRKDIR}/vendor/bytemuck-1.24.0 ] && [ -d ${WRKDIR}/vendor/bytemuck-1.24.0 ]; then \
-			mv ${WRKDIR}/vendor/bytemuck-1.24.0 ${WRKDIR}/vendor/bytemuck-1.24.0; \
+	@if [ -d ${_RUST_CRATE_SHARE}/bytemuck-1.25.2 ]; then \
+		ln -sfn ${_RUST_CRATE_SHARE}/bytemuck-1.25.2 ${WRKDIR}/vendor/bytemuck-1.25.2; \
+	elif [ -f ${_RUST_CRATE_SHARE}/bytemuck-1.25.2.tar.gz ]; then \
+		tar xzf ${_RUST_CRATE_SHARE}/bytemuck-1.25.2.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/bytemuck-1.25.2 ] && [ -d ${WRKDIR}/vendor/bytemuck-1.25.2 ]; then \
+			mv ${WRKDIR}/vendor/bytemuck-1.25.2 ${WRKDIR}/vendor/bytemuck-1.25.2; \
 		fi; \
-		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/bytemuck-1.24.0.tar.gz ${WRKDIR}/vendor/bytemuck-1.24.0 2>/dev/null || true; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/bytemuck-1.25.2.tar.gz ${WRKDIR}/vendor/bytemuck-1.25.2 2>/dev/null || true; \
 	else \
-		echo "missing dep bytemuck-1.24.0" >&2; exit 1; \
+		echo "missing dep bytemuck-1.25.2" >&2; exit 1; \
 	fi
 	@if [ -d ${_RUST_CRATE_SHARE}/cfg-if-1.0.4 ]; then \
 		ln -sfn ${_RUST_CRATE_SHARE}/cfg-if-1.0.4 ${WRKDIR}/vendor/cfg-if-1.0.4; \
@@ -292,12 +292,12 @@ pre-build:
 	@cp -f ${_RUST_CRATE_LIBDIR}/sha1_smol-1.0.1/lib*.rlib ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@cp -f ${_RUST_CRATE_LIBDIR}/sha1_smol-1.0.1/lib*.so ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@cp -f ${_RUST_CRATE_LIBDIR}/sha1_smol-1.0.1/lib*.rmeta ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
-	@if [ -d ${_RUST_CRATE_LIBDIR}/bytemuck-1.24.0/deps ]; then \
-		cp -Rp ${_RUST_CRATE_LIBDIR}/bytemuck-1.24.0/deps/. ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true; \
+	@if [ -d ${_RUST_CRATE_LIBDIR}/bytemuck-1.25.2/deps ]; then \
+		cp -Rp ${_RUST_CRATE_LIBDIR}/bytemuck-1.25.2/deps/. ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true; \
 	fi
-	@cp -f ${_RUST_CRATE_LIBDIR}/bytemuck-1.24.0/lib*.rlib ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
-	@cp -f ${_RUST_CRATE_LIBDIR}/bytemuck-1.24.0/lib*.so ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
-	@cp -f ${_RUST_CRATE_LIBDIR}/bytemuck-1.24.0/lib*.rmeta ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
+	@cp -f ${_RUST_CRATE_LIBDIR}/bytemuck-1.25.2/lib*.rlib ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
+	@cp -f ${_RUST_CRATE_LIBDIR}/bytemuck-1.25.2/lib*.so ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
+	@cp -f ${_RUST_CRATE_LIBDIR}/bytemuck-1.25.2/lib*.rmeta ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@if [ -d ${_RUST_CRATE_LIBDIR}/cfg-if-1.0.4/deps ]; then \
 		cp -Rp ${_RUST_CRATE_LIBDIR}/cfg-if-1.0.4/deps/. ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true; \
 	fi

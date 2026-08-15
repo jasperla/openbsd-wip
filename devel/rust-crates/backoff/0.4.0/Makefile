@@ -44,7 +44,7 @@ MAKE_ENV +=		CARGO_ENCODED_RUSTFLAGS=--cap-lints=allow
 
 BUILD_DEPENDS +=	rust-crate-futures_core_0_3_32-0:devel/rust-crates/futures-core/0.3.32
 BUILD_DEPENDS +=	rust-crate-getrandom_0_2_16-0:devel/rust-crates/getrandom/0.2.16
-BUILD_DEPENDS +=	rust-crate-instant_0_1_13-0:devel/rust-crates/instant/0.1.13
+BUILD_DEPENDS +=	rust-crate-instant_0_1_12-0:devel/rust-crates/instant/0.1.12
 BUILD_DEPENDS +=	rust-crate-pin_project_lite_0_2_16-0:devel/rust-crates/pin-project-lite/0.2.16
 BUILD_DEPENDS +=	rust-crate-rand_0_8_5-0:devel/rust-crates/rand/0.8.5
 BUILD_DEPENDS +=	rust-crate-tokio_1_52_3-0:devel/rust-crates/tokio/1.52.3
@@ -111,16 +111,16 @@ post-extract:
 	else \
 		echo "missing dep getrandom-0.2.16" >&2; exit 1; \
 	fi
-	@if [ -d ${_RUST_CRATE_SHARE}/instant-0.1.13 ]; then \
-		ln -sfn ${_RUST_CRATE_SHARE}/instant-0.1.13 ${WRKDIR}/vendor/instant-0.1.13; \
-	elif [ -f ${_RUST_CRATE_SHARE}/instant-0.1.13.tar.gz ]; then \
-		tar xzf ${_RUST_CRATE_SHARE}/instant-0.1.13.tar.gz -C ${WRKDIR}/vendor; \
-		if [ ! -d ${WRKDIR}/vendor/instant-0.1.13 ] && [ -d ${WRKDIR}/vendor/instant-0.1.13 ]; then \
-			mv ${WRKDIR}/vendor/instant-0.1.13 ${WRKDIR}/vendor/instant-0.1.13; \
+	@if [ -d ${_RUST_CRATE_SHARE}/instant-0.1.12 ]; then \
+		ln -sfn ${_RUST_CRATE_SHARE}/instant-0.1.12 ${WRKDIR}/vendor/instant-0.1.12; \
+	elif [ -f ${_RUST_CRATE_SHARE}/instant-0.1.12.tar.gz ]; then \
+		tar xzf ${_RUST_CRATE_SHARE}/instant-0.1.12.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/instant-0.1.12 ] && [ -d ${WRKDIR}/vendor/instant-0.1.12 ]; then \
+			mv ${WRKDIR}/vendor/instant-0.1.12 ${WRKDIR}/vendor/instant-0.1.12; \
 		fi; \
-		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/instant-0.1.13.tar.gz ${WRKDIR}/vendor/instant-0.1.13 2>/dev/null || true; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/instant-0.1.12.tar.gz ${WRKDIR}/vendor/instant-0.1.12 2>/dev/null || true; \
 	else \
-		echo "missing dep instant-0.1.13" >&2; exit 1; \
+		echo "missing dep instant-0.1.12" >&2; exit 1; \
 	fi
 	@if [ -d ${_RUST_CRATE_SHARE}/pin-project-lite-0.2.16 ]; then \
 		ln -sfn ${_RUST_CRATE_SHARE}/pin-project-lite-0.2.16 ${WRKDIR}/vendor/pin-project-lite-0.2.16; \
@@ -496,12 +496,12 @@ pre-build:
 	@cp -f ${_RUST_CRATE_LIBDIR}/getrandom-0.2.16/lib*.rlib ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@cp -f ${_RUST_CRATE_LIBDIR}/getrandom-0.2.16/lib*.so ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@cp -f ${_RUST_CRATE_LIBDIR}/getrandom-0.2.16/lib*.rmeta ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
-	@if [ -d ${_RUST_CRATE_LIBDIR}/instant-0.1.13/deps ]; then \
-		cp -Rp ${_RUST_CRATE_LIBDIR}/instant-0.1.13/deps/. ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true; \
+	@if [ -d ${_RUST_CRATE_LIBDIR}/instant-0.1.12/deps ]; then \
+		cp -Rp ${_RUST_CRATE_LIBDIR}/instant-0.1.12/deps/. ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true; \
 	fi
-	@cp -f ${_RUST_CRATE_LIBDIR}/instant-0.1.13/lib*.rlib ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
-	@cp -f ${_RUST_CRATE_LIBDIR}/instant-0.1.13/lib*.so ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
-	@cp -f ${_RUST_CRATE_LIBDIR}/instant-0.1.13/lib*.rmeta ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
+	@cp -f ${_RUST_CRATE_LIBDIR}/instant-0.1.12/lib*.rlib ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
+	@cp -f ${_RUST_CRATE_LIBDIR}/instant-0.1.12/lib*.so ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
+	@cp -f ${_RUST_CRATE_LIBDIR}/instant-0.1.12/lib*.rmeta ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@if [ -d ${_RUST_CRATE_LIBDIR}/pin-project-lite-0.2.16/deps ]; then \
 		cp -Rp ${_RUST_CRATE_LIBDIR}/pin-project-lite-0.2.16/deps/. ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true; \
 	fi

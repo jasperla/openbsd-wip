@@ -1,3 +1,0 @@
-Prebuilt Rust crate ciborium 0.2.2 for offline grok-build.
-PKGNAME=rust-crate-ciborium_0_2_2-0
-Installs share/modcargo-crates/ciborium-0.2.2/ and lib/rust-crates/<arch>/ciborium-0.2.2/ (rlib + cargo fingerprints).

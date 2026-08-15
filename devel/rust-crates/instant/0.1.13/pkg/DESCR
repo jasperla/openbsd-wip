@@ -1,3 +1,0 @@
-Prebuilt Rust crate instant 0.1.13 for offline grok-build.
-PKGNAME=rust-crate-instant_0_1_13-0
-Installs share/modcargo-crates/instant-0.1.13/ and lib/rust-crates/<arch>/instant-0.1.13/ (rlib + cargo fingerprints).

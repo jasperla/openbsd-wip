@@ -52,7 +52,7 @@ BUILD_DEPENDS +=	rust-crate-cbc_0_2_0-0:devel/rust-crates/cbc/0.2.0
 BUILD_DEPENDS +=	rust-crate-chrono_0_4_44-0:devel/rust-crates/chrono/0.4.44
 BUILD_DEPENDS +=	rust-crate-encoding_rs_0_8_35-0:devel/rust-crates/encoding_rs/0.8.35
 BUILD_DEPENDS +=	rust-crate-env_logger_0_11_8-0:devel/rust-crates/env_logger/0.11.8
-BUILD_DEPENDS +=	rust-crate-fast_image_resize_6_0_0-0:devel/rust-crates/fast_image_resize/6.0.0
+BUILD_DEPENDS +=	rust-crate-fast_image_resize_6_1_0-0:devel/rust-crates/fast_image_resize/6.1.0
 BUILD_DEPENDS +=	rust-crate-fax_0_2_6-0:devel/rust-crates/fax/0.2.6
 BUILD_DEPENDS +=	rust-crate-flate2_1_1_5-0:devel/rust-crates/flate2/1.1.5
 BUILD_DEPENDS +=	rust-crate-fontdb_0_23_0-0:devel/rust-crates/fontdb/0.23.0
@@ -103,12 +103,12 @@ BUILD_DEPENDS +=	rust-crate-crc32fast_1_5_0-0:devel/rust-crates/crc32fast/1.5.0
 BUILD_DEPENDS +=	rust-crate-libz_rs_sys_0_5_2-0:devel/rust-crates/libz-rs-sys/0.5.2
 BUILD_DEPENDS +=	rust-crate-miniz_oxide_0_8_9-0:devel/rust-crates/miniz_oxide/0.8.9
 BUILD_DEPENDS +=	rust-crate-fontconfig_parser_0_5_8-0:devel/rust-crates/fontconfig-parser/0.5.8
-BUILD_DEPENDS +=	rust-crate-memmap2_0_9_10-0:devel/rust-crates/memmap2/0.9.10
+BUILD_DEPENDS +=	rust-crate-memmap2_0_9_11-0:devel/rust-crates/memmap2/0.9.11
 BUILD_DEPENDS +=	rust-crate-slotmap_1_0_7-0:devel/rust-crates/slotmap/1.0.7
 BUILD_DEPENDS +=	rust-crate-tinyvec_1_10_0-0:devel/rust-crates/tinyvec/1.10.0
 BUILD_DEPENDS +=	rust-crate-r_efi_5_3_0-0:devel/rust-crates/r-efi/5.3.0
 BUILD_DEPENDS +=	rust-crate-rand_core_0_10_0-0:devel/rust-crates/rand_core/0.10.0
-BUILD_DEPENDS +=	rust-crate-bytemuck_1_24_0-0:devel/rust-crates/bytemuck/1.24.0
+BUILD_DEPENDS +=	rust-crate-bytemuck_1_25_2-0:devel/rust-crates/bytemuck/1.25.2
 BUILD_DEPENDS +=	rust-crate-byteorder_lite_0_1_0-0:devel/rust-crates/byteorder-lite/0.1.0
 BUILD_DEPENDS +=	rust-crate-color_quant_1_1_0-0:devel/rust-crates/color_quant/1.1.0
 BUILD_DEPENDS +=	rust-crate-gif_0_14_1-0:devel/rust-crates/gif/0.14.1
@@ -327,16 +327,16 @@ post-extract:
 	else \
 		echo "missing dep env_logger-0.11.8" >&2; exit 1; \
 	fi
-	@if [ -d ${_RUST_CRATE_SHARE}/fast_image_resize-6.0.0 ]; then \
-		ln -sfn ${_RUST_CRATE_SHARE}/fast_image_resize-6.0.0 ${WRKDIR}/vendor/fast_image_resize-6.0.0; \
-	elif [ -f ${_RUST_CRATE_SHARE}/fast_image_resize-6.0.0.tar.gz ]; then \
-		tar xzf ${_RUST_CRATE_SHARE}/fast_image_resize-6.0.0.tar.gz -C ${WRKDIR}/vendor; \
-		if [ ! -d ${WRKDIR}/vendor/fast_image_resize-6.0.0 ] && [ -d ${WRKDIR}/vendor/fast_image_resize-6.0.0 ]; then \
-			mv ${WRKDIR}/vendor/fast_image_resize-6.0.0 ${WRKDIR}/vendor/fast_image_resize-6.0.0; \
+	@if [ -d ${_RUST_CRATE_SHARE}/fast_image_resize-6.1.0 ]; then \
+		ln -sfn ${_RUST_CRATE_SHARE}/fast_image_resize-6.1.0 ${WRKDIR}/vendor/fast_image_resize-6.1.0; \
+	elif [ -f ${_RUST_CRATE_SHARE}/fast_image_resize-6.1.0.tar.gz ]; then \
+		tar xzf ${_RUST_CRATE_SHARE}/fast_image_resize-6.1.0.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/fast_image_resize-6.1.0 ] && [ -d ${WRKDIR}/vendor/fast_image_resize-6.1.0 ]; then \
+			mv ${WRKDIR}/vendor/fast_image_resize-6.1.0 ${WRKDIR}/vendor/fast_image_resize-6.1.0; \
 		fi; \
-		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/fast_image_resize-6.0.0.tar.gz ${WRKDIR}/vendor/fast_image_resize-6.0.0 2>/dev/null || true; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/fast_image_resize-6.1.0.tar.gz ${WRKDIR}/vendor/fast_image_resize-6.1.0 2>/dev/null || true; \
 	else \
-		echo "missing dep fast_image_resize-6.0.0" >&2; exit 1; \
+		echo "missing dep fast_image_resize-6.1.0" >&2; exit 1; \
 	fi
 	@if [ -d ${_RUST_CRATE_SHARE}/fax-0.2.6 ]; then \
 		ln -sfn ${_RUST_CRATE_SHARE}/fax-0.2.6 ${WRKDIR}/vendor/fax-0.2.6; \
@@ -888,16 +888,16 @@ post-extract:
 	else \
 		echo "missing dep fontconfig-parser-0.5.8" >&2; exit 1; \
 	fi
-	@if [ -d ${_RUST_CRATE_SHARE}/memmap2-0.9.10 ]; then \
-		ln -sfn ${_RUST_CRATE_SHARE}/memmap2-0.9.10 ${WRKDIR}/vendor/memmap2-0.9.10; \
-	elif [ -f ${_RUST_CRATE_SHARE}/memmap2-0.9.10.tar.gz ]; then \
-		tar xzf ${_RUST_CRATE_SHARE}/memmap2-0.9.10.tar.gz -C ${WRKDIR}/vendor; \
-		if [ ! -d ${WRKDIR}/vendor/memmap2-0.9.10 ] && [ -d ${WRKDIR}/vendor/memmap2-0.9.10 ]; then \
-			mv ${WRKDIR}/vendor/memmap2-0.9.10 ${WRKDIR}/vendor/memmap2-0.9.10; \
+	@if [ -d ${_RUST_CRATE_SHARE}/memmap2-0.9.11 ]; then \
+		ln -sfn ${_RUST_CRATE_SHARE}/memmap2-0.9.11 ${WRKDIR}/vendor/memmap2-0.9.11; \
+	elif [ -f ${_RUST_CRATE_SHARE}/memmap2-0.9.11.tar.gz ]; then \
+		tar xzf ${_RUST_CRATE_SHARE}/memmap2-0.9.11.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/memmap2-0.9.11 ] && [ -d ${WRKDIR}/vendor/memmap2-0.9.11 ]; then \
+			mv ${WRKDIR}/vendor/memmap2-0.9.11 ${WRKDIR}/vendor/memmap2-0.9.11; \
 		fi; \
-		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/memmap2-0.9.10.tar.gz ${WRKDIR}/vendor/memmap2-0.9.10 2>/dev/null || true; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/memmap2-0.9.11.tar.gz ${WRKDIR}/vendor/memmap2-0.9.11 2>/dev/null || true; \
 	else \
-		echo "missing dep memmap2-0.9.10" >&2; exit 1; \
+		echo "missing dep memmap2-0.9.11" >&2; exit 1; \
 	fi
 	@if [ -d ${_RUST_CRATE_SHARE}/slotmap-1.0.7 ]; then \
 		ln -sfn ${_RUST_CRATE_SHARE}/slotmap-1.0.7 ${WRKDIR}/vendor/slotmap-1.0.7; \
@@ -943,16 +943,16 @@ post-extract:
 	else \
 		echo "missing dep rand_core-0.10.0" >&2; exit 1; \
 	fi
-	@if [ -d ${_RUST_CRATE_SHARE}/bytemuck-1.24.0 ]; then \
-		ln -sfn ${_RUST_CRATE_SHARE}/bytemuck-1.24.0 ${WRKDIR}/vendor/bytemuck-1.24.0; \
-	elif [ -f ${_RUST_CRATE_SHARE}/bytemuck-1.24.0.tar.gz ]; then \
-		tar xzf ${_RUST_CRATE_SHARE}/bytemuck-1.24.0.tar.gz -C ${WRKDIR}/vendor; \
-		if [ ! -d ${WRKDIR}/vendor/bytemuck-1.24.0 ] && [ -d ${WRKDIR}/vendor/bytemuck-1.24.0 ]; then \
-			mv ${WRKDIR}/vendor/bytemuck-1.24.0 ${WRKDIR}/vendor/bytemuck-1.24.0; \
+	@if [ -d ${_RUST_CRATE_SHARE}/bytemuck-1.25.2 ]; then \
+		ln -sfn ${_RUST_CRATE_SHARE}/bytemuck-1.25.2 ${WRKDIR}/vendor/bytemuck-1.25.2; \
+	elif [ -f ${_RUST_CRATE_SHARE}/bytemuck-1.25.2.tar.gz ]; then \
+		tar xzf ${_RUST_CRATE_SHARE}/bytemuck-1.25.2.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/bytemuck-1.25.2 ] && [ -d ${WRKDIR}/vendor/bytemuck-1.25.2 ]; then \
+			mv ${WRKDIR}/vendor/bytemuck-1.25.2 ${WRKDIR}/vendor/bytemuck-1.25.2; \
 		fi; \
-		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/bytemuck-1.24.0.tar.gz ${WRKDIR}/vendor/bytemuck-1.24.0 2>/dev/null || true; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/bytemuck-1.25.2.tar.gz ${WRKDIR}/vendor/bytemuck-1.25.2 2>/dev/null || true; \
 	else \
-		echo "missing dep bytemuck-1.24.0" >&2; exit 1; \
+		echo "missing dep bytemuck-1.25.2" >&2; exit 1; \
 	fi
 	@if [ -d ${_RUST_CRATE_SHARE}/byteorder-lite-0.1.0 ]; then \
 		ln -sfn ${_RUST_CRATE_SHARE}/byteorder-lite-0.1.0 ${WRKDIR}/vendor/byteorder-lite-0.1.0; \
@@ -2080,12 +2080,12 @@ pre-build:
 	@cp -f ${_RUST_CRATE_LIBDIR}/env_logger-0.11.8/lib*.rlib ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@cp -f ${_RUST_CRATE_LIBDIR}/env_logger-0.11.8/lib*.so ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@cp -f ${_RUST_CRATE_LIBDIR}/env_logger-0.11.8/lib*.rmeta ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
-	@if [ -d ${_RUST_CRATE_LIBDIR}/fast_image_resize-6.0.0/deps ]; then \
-		cp -Rp ${_RUST_CRATE_LIBDIR}/fast_image_resize-6.0.0/deps/. ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true; \
+	@if [ -d ${_RUST_CRATE_LIBDIR}/fast_image_resize-6.1.0/deps ]; then \
+		cp -Rp ${_RUST_CRATE_LIBDIR}/fast_image_resize-6.1.0/deps/. ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true; \
 	fi
-	@cp -f ${_RUST_CRATE_LIBDIR}/fast_image_resize-6.0.0/lib*.rlib ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
-	@cp -f ${_RUST_CRATE_LIBDIR}/fast_image_resize-6.0.0/lib*.so ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
-	@cp -f ${_RUST_CRATE_LIBDIR}/fast_image_resize-6.0.0/lib*.rmeta ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
+	@cp -f ${_RUST_CRATE_LIBDIR}/fast_image_resize-6.1.0/lib*.rlib ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
+	@cp -f ${_RUST_CRATE_LIBDIR}/fast_image_resize-6.1.0/lib*.so ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
+	@cp -f ${_RUST_CRATE_LIBDIR}/fast_image_resize-6.1.0/lib*.rmeta ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@if [ -d ${_RUST_CRATE_LIBDIR}/fax-0.2.6/deps ]; then \
 		cp -Rp ${_RUST_CRATE_LIBDIR}/fax-0.2.6/deps/. ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true; \
 	fi
@@ -2386,12 +2386,12 @@ pre-build:
 	@cp -f ${_RUST_CRATE_LIBDIR}/fontconfig-parser-0.5.8/lib*.rlib ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@cp -f ${_RUST_CRATE_LIBDIR}/fontconfig-parser-0.5.8/lib*.so ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@cp -f ${_RUST_CRATE_LIBDIR}/fontconfig-parser-0.5.8/lib*.rmeta ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
-	@if [ -d ${_RUST_CRATE_LIBDIR}/memmap2-0.9.10/deps ]; then \
-		cp -Rp ${_RUST_CRATE_LIBDIR}/memmap2-0.9.10/deps/. ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true; \
+	@if [ -d ${_RUST_CRATE_LIBDIR}/memmap2-0.9.11/deps ]; then \
+		cp -Rp ${_RUST_CRATE_LIBDIR}/memmap2-0.9.11/deps/. ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true; \
 	fi
-	@cp -f ${_RUST_CRATE_LIBDIR}/memmap2-0.9.10/lib*.rlib ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
-	@cp -f ${_RUST_CRATE_LIBDIR}/memmap2-0.9.10/lib*.so ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
-	@cp -f ${_RUST_CRATE_LIBDIR}/memmap2-0.9.10/lib*.rmeta ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
+	@cp -f ${_RUST_CRATE_LIBDIR}/memmap2-0.9.11/lib*.rlib ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
+	@cp -f ${_RUST_CRATE_LIBDIR}/memmap2-0.9.11/lib*.so ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
+	@cp -f ${_RUST_CRATE_LIBDIR}/memmap2-0.9.11/lib*.rmeta ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@if [ -d ${_RUST_CRATE_LIBDIR}/slotmap-1.0.7/deps ]; then \
 		cp -Rp ${_RUST_CRATE_LIBDIR}/slotmap-1.0.7/deps/. ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true; \
 	fi
@@ -2416,12 +2416,12 @@ pre-build:
 	@cp -f ${_RUST_CRATE_LIBDIR}/rand_core-0.10.0/lib*.rlib ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@cp -f ${_RUST_CRATE_LIBDIR}/rand_core-0.10.0/lib*.so ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@cp -f ${_RUST_CRATE_LIBDIR}/rand_core-0.10.0/lib*.rmeta ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
-	@if [ -d ${_RUST_CRATE_LIBDIR}/bytemuck-1.24.0/deps ]; then \
-		cp -Rp ${_RUST_CRATE_LIBDIR}/bytemuck-1.24.0/deps/. ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true; \
+	@if [ -d ${_RUST_CRATE_LIBDIR}/bytemuck-1.25.2/deps ]; then \
+		cp -Rp ${_RUST_CRATE_LIBDIR}/bytemuck-1.25.2/deps/. ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true; \
 	fi
-	@cp -f ${_RUST_CRATE_LIBDIR}/bytemuck-1.24.0/lib*.rlib ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
-	@cp -f ${_RUST_CRATE_LIBDIR}/bytemuck-1.24.0/lib*.so ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
-	@cp -f ${_RUST_CRATE_LIBDIR}/bytemuck-1.24.0/lib*.rmeta ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
+	@cp -f ${_RUST_CRATE_LIBDIR}/bytemuck-1.25.2/lib*.rlib ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
+	@cp -f ${_RUST_CRATE_LIBDIR}/bytemuck-1.25.2/lib*.so ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
+	@cp -f ${_RUST_CRATE_LIBDIR}/bytemuck-1.25.2/lib*.rmeta ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@if [ -d ${_RUST_CRATE_LIBDIR}/byteorder-lite-0.1.0/deps ]; then \
 		cp -Rp ${_RUST_CRATE_LIBDIR}/byteorder-lite-0.1.0/deps/. ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true; \
 	fi

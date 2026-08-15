@@ -103,7 +103,7 @@ BUILD_DEPENDS +=	rust-crate-jiff_0_2_28-0:devel/rust-crates/jiff/0.2.28
 BUILD_DEPENDS +=	rust-crate-hashbrown_0_17_0-0:devel/rust-crates/hashbrown/0.17.0
 BUILD_DEPENDS +=	rust-crate-serde_core_1_0_228-0:devel/rust-crates/serde_core/1.0.228
 BUILD_DEPENDS +=	rust-crate-gix_chunk_0_7_2-0:devel/rust-crates/gix-chunk/0.7.2
-BUILD_DEPENDS +=	rust-crate-memmap2_0_9_10-0:devel/rust-crates/memmap2/0.9.10
+BUILD_DEPENDS +=	rust-crate-memmap2_0_9_11-0:devel/rust-crates/memmap2/0.9.11
 BUILD_DEPENDS +=	rust-crate-nonempty_0_12_0-0:devel/rust-crates/nonempty/0.12.0
 BUILD_DEPENDS +=	rust-crate-scopeguard_1_2_0-0:devel/rust-crates/scopeguard/1.2.0
 BUILD_DEPENDS +=	rust-crate-aho_corasick_1_1_3-0:devel/rust-crates/aho-corasick/1.1.3
@@ -820,16 +820,16 @@ post-extract:
 	else \
 		echo "missing dep gix-chunk-0.7.2" >&2; exit 1; \
 	fi
-	@if [ -d ${_RUST_CRATE_SHARE}/memmap2-0.9.10 ]; then \
-		ln -sfn ${_RUST_CRATE_SHARE}/memmap2-0.9.10 ${WRKDIR}/vendor/memmap2-0.9.10; \
-	elif [ -f ${_RUST_CRATE_SHARE}/memmap2-0.9.10.tar.gz ]; then \
-		tar xzf ${_RUST_CRATE_SHARE}/memmap2-0.9.10.tar.gz -C ${WRKDIR}/vendor; \
-		if [ ! -d ${WRKDIR}/vendor/memmap2-0.9.10 ] && [ -d ${WRKDIR}/vendor/memmap2-0.9.10 ]; then \
-			mv ${WRKDIR}/vendor/memmap2-0.9.10 ${WRKDIR}/vendor/memmap2-0.9.10; \
+	@if [ -d ${_RUST_CRATE_SHARE}/memmap2-0.9.11 ]; then \
+		ln -sfn ${_RUST_CRATE_SHARE}/memmap2-0.9.11 ${WRKDIR}/vendor/memmap2-0.9.11; \
+	elif [ -f ${_RUST_CRATE_SHARE}/memmap2-0.9.11.tar.gz ]; then \
+		tar xzf ${_RUST_CRATE_SHARE}/memmap2-0.9.11.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/memmap2-0.9.11 ] && [ -d ${WRKDIR}/vendor/memmap2-0.9.11 ]; then \
+			mv ${WRKDIR}/vendor/memmap2-0.9.11 ${WRKDIR}/vendor/memmap2-0.9.11; \
 		fi; \
-		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/memmap2-0.9.10.tar.gz ${WRKDIR}/vendor/memmap2-0.9.10 2>/dev/null || true; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/memmap2-0.9.11.tar.gz ${WRKDIR}/vendor/memmap2-0.9.11 2>/dev/null || true; \
 	else \
-		echo "missing dep memmap2-0.9.10" >&2; exit 1; \
+		echo "missing dep memmap2-0.9.11" >&2; exit 1; \
 	fi
 	@if [ -d ${_RUST_CRATE_SHARE}/nonempty-0.12.0 ]; then \
 		ln -sfn ${_RUST_CRATE_SHARE}/nonempty-0.12.0 ${WRKDIR}/vendor/nonempty-0.12.0; \
@@ -1570,12 +1570,12 @@ pre-build:
 	@cp -f ${_RUST_CRATE_LIBDIR}/gix-chunk-0.7.2/lib*.rlib ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@cp -f ${_RUST_CRATE_LIBDIR}/gix-chunk-0.7.2/lib*.so ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@cp -f ${_RUST_CRATE_LIBDIR}/gix-chunk-0.7.2/lib*.rmeta ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
-	@if [ -d ${_RUST_CRATE_LIBDIR}/memmap2-0.9.10/deps ]; then \
-		cp -Rp ${_RUST_CRATE_LIBDIR}/memmap2-0.9.10/deps/. ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true; \
+	@if [ -d ${_RUST_CRATE_LIBDIR}/memmap2-0.9.11/deps ]; then \
+		cp -Rp ${_RUST_CRATE_LIBDIR}/memmap2-0.9.11/deps/. ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true; \
 	fi
-	@cp -f ${_RUST_CRATE_LIBDIR}/memmap2-0.9.10/lib*.rlib ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
-	@cp -f ${_RUST_CRATE_LIBDIR}/memmap2-0.9.10/lib*.so ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
-	@cp -f ${_RUST_CRATE_LIBDIR}/memmap2-0.9.10/lib*.rmeta ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
+	@cp -f ${_RUST_CRATE_LIBDIR}/memmap2-0.9.11/lib*.rlib ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
+	@cp -f ${_RUST_CRATE_LIBDIR}/memmap2-0.9.11/lib*.so ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
+	@cp -f ${_RUST_CRATE_LIBDIR}/memmap2-0.9.11/lib*.rmeta ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@if [ -d ${_RUST_CRATE_LIBDIR}/nonempty-0.12.0/deps ]; then \
 		cp -Rp ${_RUST_CRATE_LIBDIR}/nonempty-0.12.0/deps/. ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true; \
 	fi

@@ -10,7 +10,7 @@ checksum = "3bf7af66b0989381bd0be551bd7cc91912a655a58c6918420c9527b1fd8b4679"
 dependencies = [
  "anes 0.1.6",
  "cast 0.3.0",
- "ciborium 0.2.2",
+ "ciborium 0.2.1",
  "clap 4.5.53",
  "criterion-plot 0.5.0",
  "itertools 0.13.0",
@@ -39,9 +39,9 @@ checksum = "37b2a672a2cb129a2e41c10b1224bb368f9f37a2b16b612598138befd7b37eb5"
 
 [[package]]
 name = "ciborium"
-version = "0.2.2"
+version = "0.2.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "42e69ffd6f0917f5c029256a24d0161db17cea3997d185db0d35926308770f0e"
+checksum = "effd91f6c78e5a4ace8a5d3c0b6bfaec9e2baaef55f3efc00e45fb2e477ee926"
 dependencies = [
  "ciborium-io 0.2.2",
  "ciborium-ll 0.2.2",

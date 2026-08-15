@@ -1,0 +1,3 @@
+share/modcargo-crates/anyhow-1.0.104.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/anyhow-1.0.104/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/anyhow-1.0.104/libanyhow.rlib

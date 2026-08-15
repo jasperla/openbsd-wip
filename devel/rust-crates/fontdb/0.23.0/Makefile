@@ -44,7 +44,7 @@ MAKE_ENV +=		CARGO_ENCODED_RUSTFLAGS=--cap-lints=allow
 
 BUILD_DEPENDS +=	rust-crate-fontconfig_parser_0_5_8-0:devel/rust-crates/fontconfig-parser/0.5.8
 BUILD_DEPENDS +=	rust-crate-log_0_4_32-0:devel/rust-crates/log/0.4.32
-BUILD_DEPENDS +=	rust-crate-memmap2_0_9_10-0:devel/rust-crates/memmap2/0.9.10
+BUILD_DEPENDS +=	rust-crate-memmap2_0_9_11-0:devel/rust-crates/memmap2/0.9.11
 BUILD_DEPENDS +=	rust-crate-slotmap_1_0_7-0:devel/rust-crates/slotmap/1.0.7
 BUILD_DEPENDS +=	rust-crate-tinyvec_1_10_0-0:devel/rust-crates/tinyvec/1.10.0
 BUILD_DEPENDS +=	rust-crate-ttf_parser_0_25_1-0:devel/rust-crates/ttf-parser/0.25.1
@@ -91,16 +91,16 @@ post-extract:
 	else \
 		echo "missing dep log-0.4.32" >&2; exit 1; \
 	fi
-	@if [ -d ${_RUST_CRATE_SHARE}/memmap2-0.9.10 ]; then \
-		ln -sfn ${_RUST_CRATE_SHARE}/memmap2-0.9.10 ${WRKDIR}/vendor/memmap2-0.9.10; \
-	elif [ -f ${_RUST_CRATE_SHARE}/memmap2-0.9.10.tar.gz ]; then \
-		tar xzf ${_RUST_CRATE_SHARE}/memmap2-0.9.10.tar.gz -C ${WRKDIR}/vendor; \
-		if [ ! -d ${WRKDIR}/vendor/memmap2-0.9.10 ] && [ -d ${WRKDIR}/vendor/memmap2-0.9.10 ]; then \
-			mv ${WRKDIR}/vendor/memmap2-0.9.10 ${WRKDIR}/vendor/memmap2-0.9.10; \
+	@if [ -d ${_RUST_CRATE_SHARE}/memmap2-0.9.11 ]; then \
+		ln -sfn ${_RUST_CRATE_SHARE}/memmap2-0.9.11 ${WRKDIR}/vendor/memmap2-0.9.11; \
+	elif [ -f ${_RUST_CRATE_SHARE}/memmap2-0.9.11.tar.gz ]; then \
+		tar xzf ${_RUST_CRATE_SHARE}/memmap2-0.9.11.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/memmap2-0.9.11 ] && [ -d ${WRKDIR}/vendor/memmap2-0.9.11 ]; then \
+			mv ${WRKDIR}/vendor/memmap2-0.9.11 ${WRKDIR}/vendor/memmap2-0.9.11; \
 		fi; \
-		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/memmap2-0.9.10.tar.gz ${WRKDIR}/vendor/memmap2-0.9.10 2>/dev/null || true; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/memmap2-0.9.11.tar.gz ${WRKDIR}/vendor/memmap2-0.9.11 2>/dev/null || true; \
 	else \
-		echo "missing dep memmap2-0.9.10" >&2; exit 1; \
+		echo "missing dep memmap2-0.9.11" >&2; exit 1; \
 	fi
 	@if [ -d ${_RUST_CRATE_SHARE}/slotmap-1.0.7 ]; then \
 		ln -sfn ${_RUST_CRATE_SHARE}/slotmap-1.0.7 ${WRKDIR}/vendor/slotmap-1.0.7; \
@@ -256,12 +256,12 @@ pre-build:
 	@cp -f ${_RUST_CRATE_LIBDIR}/log-0.4.32/lib*.rlib ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@cp -f ${_RUST_CRATE_LIBDIR}/log-0.4.32/lib*.so ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@cp -f ${_RUST_CRATE_LIBDIR}/log-0.4.32/lib*.rmeta ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
-	@if [ -d ${_RUST_CRATE_LIBDIR}/memmap2-0.9.10/deps ]; then \
-		cp -Rp ${_RUST_CRATE_LIBDIR}/memmap2-0.9.10/deps/. ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true; \
+	@if [ -d ${_RUST_CRATE_LIBDIR}/memmap2-0.9.11/deps ]; then \
+		cp -Rp ${_RUST_CRATE_LIBDIR}/memmap2-0.9.11/deps/. ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true; \
 	fi
-	@cp -f ${_RUST_CRATE_LIBDIR}/memmap2-0.9.10/lib*.rlib ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
-	@cp -f ${_RUST_CRATE_LIBDIR}/memmap2-0.9.10/lib*.so ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
-	@cp -f ${_RUST_CRATE_LIBDIR}/memmap2-0.9.10/lib*.rmeta ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
+	@cp -f ${_RUST_CRATE_LIBDIR}/memmap2-0.9.11/lib*.rlib ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
+	@cp -f ${_RUST_CRATE_LIBDIR}/memmap2-0.9.11/lib*.so ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
+	@cp -f ${_RUST_CRATE_LIBDIR}/memmap2-0.9.11/lib*.rmeta ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@if [ -d ${_RUST_CRATE_LIBDIR}/slotmap-1.0.7/deps ]; then \
 		cp -Rp ${_RUST_CRATE_LIBDIR}/slotmap-1.0.7/deps/. ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true; \
 	fi

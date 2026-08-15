@@ -1,3 +1,0 @@
-Prebuilt Rust crate fast_image_resize 6.0.0 for offline grok-build.
-PKGNAME=rust-crate-fast_image_resize_6_0_0-0
-Installs share/modcargo-crates/fast_image_resize-6.0.0/ and lib/rust-crates/<arch>/fast_image_resize-6.0.0/ (rlib + cargo fingerprints).

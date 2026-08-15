@@ -1,0 +1,44 @@
+Index: crates/codegen/xai-fsnotify/src/handle.rs
+--- crates/codegen/xai-fsnotify/src/handle.rs.orig
++++ crates/codegen/xai-fsnotify/src/handle.rs
+@@ -10,7 +10,9 @@
+ //! per-dir skips them at any depth. Fan-out decides once per top-level child
+ //! and then hands the subtree to the OS, so a checkout below one it kept, or
+ //! any checkout at all once the root itself is watched recursively, stays
+-//! covered. Linux, where a watch costs a descriptor, uses per-dir.
++//! covered. Linux (inotify) and OpenBSD (kqueue) use per-dir: kqueue has
++//! no kernel recursion, so fan-out opens one fd per directory and blows
++//! process open-files (EMFILE) plus stale kevents on teardown.
+ 
+ use std::sync::atomic::{AtomicUsize, Ordering};
+ use std::sync::{Arc, Mutex};
+@@ -50,17 +52,27 @@ pub(crate) enum WatchStrategy {
+     PerDir,
+ }
+ 
+-/// Per-dir on Linux and fan-out elsewhere, overridden by `GROK_FSNOTIFY_PER_DIR`.
++/// Per-dir on Linux/OpenBSD and fan-out elsewhere, overridden by `GROK_FSNOTIFY_PER_DIR`.
++///
++/// OpenBSD defaults to per-dir because kqueue has no kernel-side recursive
++/// watch: notify emulates recursion by opening one fd per directory. Fan-out
++/// over large trees blows process open-files limits (EMFILE) and races with
++/// watch teardown (stale kevents). Per-dir + gitignore-aware selection keeps
++/// the watch set bounded (see [`max_watch_budget`]).
+ pub(crate) fn watch_strategy() -> WatchStrategy {
+     match std::env::var("GROK_FSNOTIFY_PER_DIR").ok().as_deref() {
+         Some("1") | Some("true") => WatchStrategy::PerDir,
+         Some("0") | Some("false") => WatchStrategy::Fanout,
+-        _ if cfg!(target_os = "linux") => WatchStrategy::PerDir,
++        _ if cfg!(any(target_os = "linux", target_os = "openbsd")) => WatchStrategy::PerDir,
+         _ => WatchStrategy::Fanout,
+     }
+ }
+ 
+ /// Per-dir mode's total watch budget (`GROK_FSNOTIFY_MAX_WATCHES` overrides).
++/// OpenBSD process open-files soft limits are much lower than Linux inotify.
++#[cfg(target_os = "openbsd")]
++const DEFAULT_MAX_WATCHES: usize = 2_048;
++#[cfg(not(target_os = "openbsd"))]
+ const DEFAULT_MAX_WATCHES: usize = 49_152;
+ 
+ pub(crate) fn max_watch_budget() -> usize {

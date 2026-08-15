@@ -1,3 +1,0 @@
-Prebuilt Rust crate rand 0.9.2 for offline grok-build.
-PKGNAME=rust-crate-rand_0_9_2-0
-Installs share/modcargo-crates/rand-0.9.2/ and lib/rust-crates/<arch>/rand-0.9.2/ (rlib + cargo fingerprints).

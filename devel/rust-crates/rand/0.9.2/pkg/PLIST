@@ -1,3 +1,0 @@
-share/modcargo-crates/rand-0.9.2.tar.gz
-lib/rust-crates/${MACHINE_ARCH}/rand-0.9.2/crate-meta.txt
-lib/rust-crates/${MACHINE_ARCH}/rand-0.9.2/librand.rlib
