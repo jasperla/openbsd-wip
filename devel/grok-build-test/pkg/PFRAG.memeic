@@ -1,0 +1,2 @@
+@conflict grok-build-test-*
+@pkgpath devel/grok-build-test

@@ -1,2 +1,9 @@
+@comment replace grok-build{,-memeic} and grok-build-test{,-memeic}
+%%memeic%%
+!%%memeic%%
+@conflict grok-build-*
+@conflict grok-build-memeic-*
+@pkgpath devel/grok-build
+@pkgpath devel/grok-build,memeic
 @bin bin/agent-test
 @bin bin/grok-test

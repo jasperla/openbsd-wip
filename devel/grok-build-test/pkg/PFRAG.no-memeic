@@ -1,0 +1,2 @@
+@conflict grok-build-test-memeic-*
+@pkgpath devel/grok-build-test,memeic
