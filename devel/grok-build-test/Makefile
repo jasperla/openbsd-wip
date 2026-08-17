@@ -173,10 +173,12 @@ SEPARATE_BUILD =	Yes
 # Glob PATCH_LIST=patch-* is expanded too late for :N filtering.
 # Explicit lists so flavors do not cross-contaminate:
 #   default  = offline cargo + voice-aucat + minimal-build (not memeic)
-#   memeic   = offline cargo + modcargo only (memeic dump; no other branches)
+#   memeic   = offline cargo + modcargo + OpenBSD build.rs (rg bundle skip)
 .if ${FLAVOR:L:Mmemeic}
 PATCH_LIST =	patch-Cargo_lock \
 		patch-Cargo_toml \
+		patch-crates_codegen_xai-grok-shell_build_rs \
+		patch-crates_codegen_xai-grok-tools_build_rs \
 		patch-modcargo-crates_kqueue-1_1_1_src_lib_rs \
 		patch-modcargo-crates_mid-4_0_0_src_lib_rs \
 		patch-modcargo-crates_mid-4_0_0_src_other_rs \
