@@ -18,8 +18,8 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
-SITES =			https://static.crates.io/crates/tree-sitter-rust/
-DISTFILES =		tree-sitter-rust-0.24.2.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		tree-sitter-rust-0.24.2.tar.gz{tree-sitter-rust/0.24.2/download}
 WRKDIST =		${WRKDIR}/tree-sitter-rust-0.24.2
 
 MODULES =		devel/cargo

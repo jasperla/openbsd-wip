@@ -15,8 +15,8 @@ MAINTAINER =	Todd T. Fries <todd@fries.net>
 PERMIT_PACKAGE =	Yes
 
 DIST_SUBDIR =		cargo
-SITES =			https://static.crates.io/crates/cpal/
-DISTFILES =		cpal-0.15.3.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		cpal-0.15.3.tar.gz{cpal/0.15.3/download}
 WRKDIST =		${WRKDIR}/cpal-0.15.3
 
 NO_BUILD =		Yes

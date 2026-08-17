@@ -18,8 +18,8 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
-SITES =			https://static.crates.io/crates/oorandom/
-DISTFILES =		oorandom-11.1.5.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		oorandom-11.1.5.tar.gz{oorandom/11.1.5/download}
 WRKDIST =		${WRKDIR}/oorandom-11.1.5
 
 MODULES =		devel/cargo

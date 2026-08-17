@@ -18,8 +18,8 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
-SITES =			https://static.crates.io/crates/dtoa-short/
-DISTFILES =		dtoa-short-0.3.5.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		dtoa-short-0.3.5.tar.gz{dtoa-short/0.3.5/download}
 WRKDIST =		${WRKDIR}/dtoa-short-0.3.5
 
 MODULES =		devel/cargo

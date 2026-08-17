@@ -15,8 +15,8 @@ MAINTAINER =	Todd T. Fries <todd@fries.net>
 PERMIT_PACKAGE =	Yes
 
 DIST_SUBDIR =		cargo
-SITES =			https://static.crates.io/crates/winapi-i686-pc-windows-gnu/
-DISTFILES =		winapi-i686-pc-windows-gnu-0.4.0.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		winapi-i686-pc-windows-gnu-0.4.0.tar.gz{winapi-i686-pc-windows-gnu/0.4.0/download}
 WRKDIST =		${WRKDIR}/winapi-i686-pc-windows-gnu-0.4.0
 
 NO_BUILD =		Yes

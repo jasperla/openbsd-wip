@@ -18,8 +18,8 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
-SITES =			https://static.crates.io/crates/num-bigint-dig/
-DISTFILES =		num-bigint-dig-0.8.6.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		num-bigint-dig-0.8.6.tar.gz{num-bigint-dig/0.8.6/download}
 WRKDIST =		${WRKDIR}/num-bigint-dig-0.8.6
 
 MODULES =		devel/cargo

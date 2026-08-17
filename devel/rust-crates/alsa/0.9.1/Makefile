@@ -15,8 +15,8 @@ MAINTAINER =	Todd T. Fries <todd@fries.net>
 PERMIT_PACKAGE =	Yes
 
 DIST_SUBDIR =		cargo
-SITES =			https://static.crates.io/crates/alsa/
-DISTFILES =		alsa-0.9.1.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		alsa-0.9.1.tar.gz{alsa/0.9.1/download}
 WRKDIST =		${WRKDIR}/alsa-0.9.1
 
 NO_BUILD =		Yes

@@ -18,8 +18,8 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
-SITES =			https://static.crates.io/crates/scopeguard/
-DISTFILES =		scopeguard-1.2.0.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		scopeguard-1.2.0.tar.gz{scopeguard/1.2.0/download}
 WRKDIST =		${WRKDIR}/scopeguard-1.2.0
 
 MODULES =		devel/cargo

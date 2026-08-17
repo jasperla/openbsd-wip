@@ -18,8 +18,8 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
-SITES =			https://static.crates.io/crates/gix-worktree/
-DISTFILES =		gix-worktree-0.52.0.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		gix-worktree-0.52.0.tar.gz{gix-worktree/0.52.0/download}
 WRKDIST =		${WRKDIR}/gix-worktree-0.52.0
 
 MODULES =		devel/cargo

@@ -18,8 +18,8 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
-SITES =			https://static.crates.io/crates/aligned-vec/
-DISTFILES =		aligned-vec-0.6.4.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		aligned-vec-0.6.4.tar.gz{aligned-vec/0.6.4/download}
 WRKDIST =		${WRKDIR}/aligned-vec-0.6.4
 
 MODULES =		devel/cargo

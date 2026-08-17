@@ -18,8 +18,8 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
-SITES =			https://static.crates.io/crates/libz-sys/
-DISTFILES =		libz-sys-1.1.22.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		libz-sys-1.1.22.tar.gz{libz-sys/1.1.22/download}
 WRKDIST =		${WRKDIR}/libz-sys-1.1.22
 
 MODULES =		devel/cargo

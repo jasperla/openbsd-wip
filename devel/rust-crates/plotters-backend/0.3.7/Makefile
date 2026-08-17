@@ -18,8 +18,8 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
-SITES =			https://static.crates.io/crates/plotters-backend/
-DISTFILES =		plotters-backend-0.3.7.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		plotters-backend-0.3.7.tar.gz{plotters-backend/0.3.7/download}
 WRKDIST =		${WRKDIR}/plotters-backend-0.3.7
 
 MODULES =		devel/cargo

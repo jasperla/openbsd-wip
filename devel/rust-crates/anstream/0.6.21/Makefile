@@ -18,8 +18,8 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
-SITES =			https://static.crates.io/crates/anstream/
-DISTFILES =		anstream-0.6.21.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		anstream-0.6.21.tar.gz{anstream/0.6.21/download}
 WRKDIST =		${WRKDIR}/anstream-0.6.21
 
 MODULES =		devel/cargo

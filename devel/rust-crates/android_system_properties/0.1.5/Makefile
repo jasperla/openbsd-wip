@@ -15,8 +15,8 @@ MAINTAINER =	Todd T. Fries <todd@fries.net>
 PERMIT_PACKAGE =	Yes
 
 DIST_SUBDIR =		cargo
-SITES =			https://static.crates.io/crates/android_system_properties/
-DISTFILES =		android_system_properties-0.1.5.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		android_system_properties-0.1.5.tar.gz{android_system_properties/0.1.5/download}
 WRKDIST =		${WRKDIR}/android_system_properties-0.1.5
 
 NO_BUILD =		Yes

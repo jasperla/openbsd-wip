@@ -18,8 +18,8 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
-SITES =			https://static.crates.io/crates/ryu/
-DISTFILES =		ryu-1.0.20.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		ryu-1.0.20.tar.gz{ryu/1.0.20/download}
 WRKDIST =		${WRKDIR}/ryu-1.0.20
 
 MODULES =		devel/cargo

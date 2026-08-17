@@ -18,8 +18,8 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
-SITES =			https://static.crates.io/crates/crypto-bigint/
-DISTFILES =		crypto-bigint-0.5.5.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		crypto-bigint-0.5.5.tar.gz{crypto-bigint/0.5.5/download}
 WRKDIST =		${WRKDIR}/crypto-bigint-0.5.5
 
 MODULES =		devel/cargo

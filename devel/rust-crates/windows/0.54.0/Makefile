@@ -15,8 +15,8 @@ MAINTAINER =	Todd T. Fries <todd@fries.net>
 PERMIT_PACKAGE =	Yes
 
 DIST_SUBDIR =		cargo
-SITES =			https://static.crates.io/crates/windows/
-DISTFILES =		windows-0.54.0.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		windows-0.54.0.tar.gz{windows/0.54.0/download}
 WRKDIST =		${WRKDIR}/windows-0.54.0
 
 NO_BUILD =		Yes

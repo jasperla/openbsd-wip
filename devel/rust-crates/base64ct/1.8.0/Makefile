@@ -18,8 +18,8 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
-SITES =			https://static.crates.io/crates/base64ct/
-DISTFILES =		base64ct-1.8.0.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		base64ct-1.8.0.tar.gz{base64ct/1.8.0/download}
 WRKDIST =		${WRKDIR}/base64ct-1.8.0
 
 MODULES =		devel/cargo

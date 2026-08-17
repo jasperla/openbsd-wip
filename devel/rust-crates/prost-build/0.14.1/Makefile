@@ -18,8 +18,8 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
-SITES =			https://static.crates.io/crates/prost-build/
-DISTFILES =		prost-build-0.14.1.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		prost-build-0.14.1.tar.gz{prost-build/0.14.1/download}
 WRKDIST =		${WRKDIR}/prost-build-0.14.1
 
 MODULES =		devel/cargo

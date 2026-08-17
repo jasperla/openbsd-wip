@@ -15,8 +15,8 @@ MAINTAINER =	Todd T. Fries <todd@fries.net>
 PERMIT_PACKAGE =	Yes
 
 DIST_SUBDIR =		cargo
-SITES =			https://static.crates.io/crates/dark-light/
-DISTFILES =		dark-light-2.0.0.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		dark-light-2.0.0.tar.gz{dark-light/2.0.0/download}
 WRKDIST =		${WRKDIR}/dark-light-2.0.0
 
 NO_BUILD =		Yes

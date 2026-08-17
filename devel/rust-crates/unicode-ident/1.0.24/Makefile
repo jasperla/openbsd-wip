@@ -18,8 +18,8 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
-SITES =			https://static.crates.io/crates/unicode-ident/
-DISTFILES =		unicode-ident-1.0.24.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		unicode-ident-1.0.24.tar.gz{unicode-ident/1.0.24/download}
 WRKDIST =		${WRKDIR}/unicode-ident-1.0.24
 
 MODULES =		devel/cargo

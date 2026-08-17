@@ -18,8 +18,8 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
-SITES =			https://static.crates.io/crates/itertools/
-DISTFILES =		itertools-0.13.0.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		itertools-0.13.0.tar.gz{itertools/0.13.0/download}
 WRKDIST =		${WRKDIR}/itertools-0.13.0
 
 MODULES =		devel/cargo

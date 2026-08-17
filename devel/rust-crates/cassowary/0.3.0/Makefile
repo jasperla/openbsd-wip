@@ -18,8 +18,8 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
-SITES =			https://static.crates.io/crates/cassowary/
-DISTFILES =		cassowary-0.3.0.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		cassowary-0.3.0.tar.gz{cassowary/0.3.0/download}
 WRKDIST =		${WRKDIR}/cassowary-0.3.0
 
 MODULES =		devel/cargo

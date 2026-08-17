@@ -18,8 +18,8 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
-SITES =			https://static.crates.io/crates/gix-object/
-DISTFILES =		gix-object-0.60.0.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		gix-object-0.60.0.tar.gz{gix-object/0.60.0/download}
 WRKDIST =		${WRKDIR}/gix-object-0.60.0
 
 MODULES =		devel/cargo

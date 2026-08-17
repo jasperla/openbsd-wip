@@ -18,8 +18,8 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
-SITES =			https://static.crates.io/crates/phf_macros/
-DISTFILES =		phf_macros-0.12.1.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		phf_macros-0.12.1.tar.gz{phf_macros/0.12.1/download}
 WRKDIST =		${WRKDIR}/phf_macros-0.12.1
 
 MODULES =		devel/cargo

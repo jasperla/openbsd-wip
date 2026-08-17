@@ -15,8 +15,8 @@ MAINTAINER =	Todd T. Fries <todd@fries.net>
 PERMIT_PACKAGE =	Yes
 
 DIST_SUBDIR =		cargo
-SITES =			https://static.crates.io/crates/objc2-core-image/
-DISTFILES =		objc2-core-image-0.3.2.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		objc2-core-image-0.3.2.tar.gz{objc2-core-image/0.3.2/download}
 WRKDIST =		${WRKDIR}/objc2-core-image-0.3.2
 
 NO_BUILD =		Yes

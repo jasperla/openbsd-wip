@@ -18,8 +18,8 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
-SITES =			https://static.crates.io/crates/anstyle-query/
-DISTFILES =		anstyle-query-1.1.4.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		anstyle-query-1.1.4.tar.gz{anstyle-query/1.1.4/download}
 WRKDIST =		${WRKDIR}/anstyle-query-1.1.4
 
 MODULES =		devel/cargo

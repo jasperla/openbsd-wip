@@ -15,8 +15,8 @@ MAINTAINER =	Todd T. Fries <todd@fries.net>
 PERMIT_PACKAGE =	Yes
 
 DIST_SUBDIR =		cargo
-SITES =			https://static.crates.io/crates/redox_syscall/
-DISTFILES =		redox_syscall-0.5.18.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		redox_syscall-0.5.18.tar.gz{redox_syscall/0.5.18/download}
 WRKDIST =		${WRKDIR}/redox_syscall-0.5.18
 
 NO_BUILD =		Yes

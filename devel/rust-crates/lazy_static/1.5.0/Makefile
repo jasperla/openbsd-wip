@@ -18,8 +18,8 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
-SITES =			https://static.crates.io/crates/lazy_static/
-DISTFILES =		lazy_static-1.5.0.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		lazy_static-1.5.0.tar.gz{lazy_static/1.5.0/download}
 WRKDIST =		${WRKDIR}/lazy_static-1.5.0
 
 MODULES =		devel/cargo

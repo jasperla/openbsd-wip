@@ -18,8 +18,8 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
-SITES =			https://static.crates.io/crates/ed25519-dalek/
-DISTFILES =		ed25519-dalek-2.2.0.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		ed25519-dalek-2.2.0.tar.gz{ed25519-dalek/2.2.0/download}
 WRKDIST =		${WRKDIR}/ed25519-dalek-2.2.0
 
 MODULES =		devel/cargo

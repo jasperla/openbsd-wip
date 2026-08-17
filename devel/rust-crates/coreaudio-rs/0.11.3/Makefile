@@ -15,8 +15,8 @@ MAINTAINER =	Todd T. Fries <todd@fries.net>
 PERMIT_PACKAGE =	Yes
 
 DIST_SUBDIR =		cargo
-SITES =			https://static.crates.io/crates/coreaudio-rs/
-DISTFILES =		coreaudio-rs-0.11.3.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		coreaudio-rs-0.11.3.tar.gz{coreaudio-rs/0.11.3/download}
 WRKDIST =		${WRKDIR}/coreaudio-rs-0.11.3
 
 NO_BUILD =		Yes

@@ -15,8 +15,8 @@ MAINTAINER =	Todd T. Fries <todd@fries.net>
 PERMIT_PACKAGE =	Yes
 
 DIST_SUBDIR =		cargo
-SITES =			https://static.crates.io/crates/alacritty_terminal/
-DISTFILES =		alacritty_terminal-0.26.0.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		alacritty_terminal-0.26.0.tar.gz{alacritty_terminal/0.26.0/download}
 WRKDIST =		${WRKDIR}/alacritty_terminal-0.26.0
 
 NO_BUILD =		Yes

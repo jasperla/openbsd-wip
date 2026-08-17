@@ -18,8 +18,8 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
-SITES =			https://static.crates.io/crates/tracing-attributes/
-DISTFILES =		tracing-attributes-0.1.31.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		tracing-attributes-0.1.31.tar.gz{tracing-attributes/0.1.31/download}
 WRKDIST =		${WRKDIR}/tracing-attributes-0.1.31
 
 MODULES =		devel/cargo

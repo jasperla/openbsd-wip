@@ -18,8 +18,8 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
-SITES =			https://static.crates.io/crates/bumpalo/
-DISTFILES =		bumpalo-3.19.0.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		bumpalo-3.19.0.tar.gz{bumpalo/3.19.0/download}
 WRKDIST =		${WRKDIR}/bumpalo-3.19.0
 
 MODULES =		devel/cargo

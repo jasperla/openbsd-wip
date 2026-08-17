@@ -18,8 +18,8 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
-SITES =			https://static.crates.io/crates/pretty_assertions/
-DISTFILES =		pretty_assertions-1.4.1.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		pretty_assertions-1.4.1.tar.gz{pretty_assertions/1.4.1/download}
 WRKDIST =		${WRKDIR}/pretty_assertions-1.4.1
 
 MODULES =		devel/cargo

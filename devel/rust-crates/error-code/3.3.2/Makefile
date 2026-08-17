@@ -18,8 +18,8 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
-SITES =			https://static.crates.io/crates/error-code/
-DISTFILES =		error-code-3.3.2.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		error-code-3.3.2.tar.gz{error-code/3.3.2/download}
 WRKDIST =		${WRKDIR}/error-code-3.3.2
 
 MODULES =		devel/cargo

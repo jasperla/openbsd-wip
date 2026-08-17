@@ -15,8 +15,8 @@ MAINTAINER =	Todd T. Fries <todd@fries.net>
 PERMIT_PACKAGE =	Yes
 
 DIST_SUBDIR =		cargo
-SITES =			https://static.crates.io/crates/block2/
-DISTFILES =		block2-0.6.2.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		block2-0.6.2.tar.gz{block2/0.6.2/download}
 WRKDIST =		${WRKDIR}/block2-0.6.2
 
 NO_BUILD =		Yes

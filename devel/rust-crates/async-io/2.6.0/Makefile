@@ -18,8 +18,8 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
-SITES =			https://static.crates.io/crates/async-io/
-DISTFILES =		async-io-2.6.0.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		async-io-2.6.0.tar.gz{async-io/2.6.0/download}
 WRKDIST =		${WRKDIR}/async-io-2.6.0
 
 MODULES =		devel/cargo

@@ -18,8 +18,8 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
-SITES =			https://static.crates.io/crates/fuzzy-matcher/
-DISTFILES =		fuzzy-matcher-0.3.7.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		fuzzy-matcher-0.3.7.tar.gz{fuzzy-matcher/0.3.7/download}
 WRKDIST =		${WRKDIR}/fuzzy-matcher-0.3.7
 
 MODULES =		devel/cargo

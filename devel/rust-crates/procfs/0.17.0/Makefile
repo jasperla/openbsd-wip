@@ -15,8 +15,8 @@ MAINTAINER =	Todd T. Fries <todd@fries.net>
 PERMIT_PACKAGE =	Yes
 
 DIST_SUBDIR =		cargo
-SITES =			https://static.crates.io/crates/procfs/
-DISTFILES =		procfs-0.17.0.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		procfs-0.17.0.tar.gz{procfs/0.17.0/download}
 WRKDIST =		${WRKDIR}/procfs-0.17.0
 
 NO_BUILD =		Yes

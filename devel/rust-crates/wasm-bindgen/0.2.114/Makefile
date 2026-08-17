@@ -15,8 +15,8 @@ MAINTAINER =	Todd T. Fries <todd@fries.net>
 PERMIT_PACKAGE =	Yes
 
 DIST_SUBDIR =		cargo
-SITES =			https://static.crates.io/crates/wasm-bindgen/
-DISTFILES =		wasm-bindgen-0.2.114.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		wasm-bindgen-0.2.114.tar.gz{wasm-bindgen/0.2.114/download}
 WRKDIST =		${WRKDIR}/wasm-bindgen-0.2.114
 
 NO_BUILD =		Yes

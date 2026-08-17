@@ -18,8 +18,8 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
-SITES =			https://static.crates.io/crates/tokio-tungstenite/
-DISTFILES =		tokio-tungstenite-0.28.0.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		tokio-tungstenite-0.28.0.tar.gz{tokio-tungstenite/0.28.0/download}
 WRKDIST =		${WRKDIR}/tokio-tungstenite-0.28.0
 
 MODULES =		devel/cargo

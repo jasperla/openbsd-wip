@@ -18,8 +18,8 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
-SITES =			https://static.crates.io/crates/ff/
-DISTFILES =		ff-0.13.1.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		ff-0.13.1.tar.gz{ff/0.13.1/download}
 WRKDIST =		${WRKDIR}/ff-0.13.1
 
 MODULES =		devel/cargo

@@ -15,8 +15,8 @@ MAINTAINER =	Todd T. Fries <todd@fries.net>
 PERMIT_PACKAGE =	Yes
 
 DIST_SUBDIR =		cargo
-SITES =			https://static.crates.io/crates/winapi-util/
-DISTFILES =		winapi-util-0.1.11.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		winapi-util-0.1.11.tar.gz{winapi-util/0.1.11/download}
 WRKDIST =		${WRKDIR}/winapi-util-0.1.11
 
 NO_BUILD =		Yes

@@ -18,8 +18,8 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
-SITES =			https://static.crates.io/crates/colorchoice/
-DISTFILES =		colorchoice-1.0.4.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		colorchoice-1.0.4.tar.gz{colorchoice/1.0.4/download}
 WRKDIST =		${WRKDIR}/colorchoice-1.0.4
 
 MODULES =		devel/cargo

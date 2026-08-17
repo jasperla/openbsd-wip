@@ -18,8 +18,8 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
-SITES =			https://static.crates.io/crates/pxfm/
-DISTFILES =		pxfm-0.1.25.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		pxfm-0.1.25.tar.gz{pxfm/0.1.25/download}
 WRKDIST =		${WRKDIR}/pxfm-0.1.25
 
 MODULES =		devel/cargo

@@ -18,8 +18,8 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
-SITES =			https://static.crates.io/crates/wayland-protocols-wlr/
-DISTFILES =		wayland-protocols-wlr-0.3.10.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		wayland-protocols-wlr-0.3.10.tar.gz{wayland-protocols-wlr/0.3.10/download}
 WRKDIST =		${WRKDIR}/wayland-protocols-wlr-0.3.10
 
 MODULES =		devel/cargo

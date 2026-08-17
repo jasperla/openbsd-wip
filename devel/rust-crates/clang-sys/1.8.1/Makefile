@@ -15,8 +15,8 @@ MAINTAINER =	Todd T. Fries <todd@fries.net>
 PERMIT_PACKAGE =	Yes
 
 DIST_SUBDIR =		cargo
-SITES =			https://static.crates.io/crates/clang-sys/
-DISTFILES =		clang-sys-1.8.1.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		clang-sys-1.8.1.tar.gz{clang-sys/1.8.1/download}
 WRKDIST =		${WRKDIR}/clang-sys-1.8.1
 
 NO_BUILD =		Yes

@@ -18,8 +18,8 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
-SITES =			https://static.crates.io/crates/curve25519-dalek/
-DISTFILES =		curve25519-dalek-4.1.3.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		curve25519-dalek-4.1.3.tar.gz{curve25519-dalek/4.1.3/download}
 WRKDIST =		${WRKDIR}/curve25519-dalek-4.1.3
 
 MODULES =		devel/cargo

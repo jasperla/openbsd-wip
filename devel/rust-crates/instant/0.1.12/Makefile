@@ -18,8 +18,8 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
-SITES =			https://static.crates.io/crates/instant/
-DISTFILES =		instant-0.1.12.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		instant-0.1.12.tar.gz{instant/0.1.12/download}
 WRKDIST =		${WRKDIR}/instant-0.1.12
 
 MODULES =		devel/cargo

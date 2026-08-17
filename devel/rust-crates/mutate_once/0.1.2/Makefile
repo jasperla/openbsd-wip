@@ -18,8 +18,8 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
-SITES =			https://static.crates.io/crates/mutate_once/
-DISTFILES =		mutate_once-0.1.2.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		mutate_once-0.1.2.tar.gz{mutate_once/0.1.2/download}
 WRKDIST =		${WRKDIR}/mutate_once-0.1.2
 
 MODULES =		devel/cargo

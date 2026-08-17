@@ -18,8 +18,8 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
-SITES =			https://static.crates.io/crates/aws-smithy-xml/
-DISTFILES =		aws-smithy-xml-0.60.11.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		aws-smithy-xml-0.60.11.tar.gz{aws-smithy-xml/0.60.11/download}
 WRKDIST =		${WRKDIR}/aws-smithy-xml-0.60.11
 
 MODULES =		devel/cargo

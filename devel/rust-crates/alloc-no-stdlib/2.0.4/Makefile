@@ -18,8 +18,8 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
-SITES =			https://static.crates.io/crates/alloc-no-stdlib/
-DISTFILES =		alloc-no-stdlib-2.0.4.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		alloc-no-stdlib-2.0.4.tar.gz{alloc-no-stdlib/2.0.4/download}
 WRKDIST =		${WRKDIR}/alloc-no-stdlib-2.0.4
 
 MODULES =		devel/cargo

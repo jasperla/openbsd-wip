@@ -18,8 +18,8 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
-SITES =			https://static.crates.io/crates/regex-syntax/
-DISTFILES =		regex-syntax-0.8.11.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		regex-syntax-0.8.11.tar.gz{regex-syntax/0.8.11/download}
 WRKDIST =		${WRKDIR}/regex-syntax-0.8.11
 
 MODULES =		devel/cargo

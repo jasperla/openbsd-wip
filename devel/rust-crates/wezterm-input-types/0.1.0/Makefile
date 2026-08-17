@@ -18,8 +18,8 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
-SITES =			https://static.crates.io/crates/wezterm-input-types/
-DISTFILES =		wezterm-input-types-0.1.0.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		wezterm-input-types-0.1.0.tar.gz{wezterm-input-types/0.1.0/download}
 WRKDIST =		${WRKDIR}/wezterm-input-types-0.1.0
 
 MODULES =		devel/cargo

@@ -18,8 +18,8 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
-SITES =			https://static.crates.io/crates/stop-words/
-DISTFILES =		stop-words-0.9.0.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		stop-words-0.9.0.tar.gz{stop-words/0.9.0/download}
 WRKDIST =		${WRKDIR}/stop-words-0.9.0
 
 MODULES =		devel/cargo

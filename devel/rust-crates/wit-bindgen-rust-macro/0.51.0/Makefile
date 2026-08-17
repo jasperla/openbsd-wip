@@ -15,8 +15,8 @@ MAINTAINER =	Todd T. Fries <todd@fries.net>
 PERMIT_PACKAGE =	Yes
 
 DIST_SUBDIR =		cargo
-SITES =			https://static.crates.io/crates/wit-bindgen-rust-macro/
-DISTFILES =		wit-bindgen-rust-macro-0.51.0.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		wit-bindgen-rust-macro-0.51.0.tar.gz{wit-bindgen-rust-macro/0.51.0/download}
 WRKDIST =		${WRKDIR}/wit-bindgen-rust-macro-0.51.0
 
 NO_BUILD =		Yes

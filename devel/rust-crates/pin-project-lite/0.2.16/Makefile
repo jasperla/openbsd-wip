@@ -18,8 +18,8 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
-SITES =			https://static.crates.io/crates/pin-project-lite/
-DISTFILES =		pin-project-lite-0.2.16.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		pin-project-lite-0.2.16.tar.gz{pin-project-lite/0.2.16/download}
 WRKDIST =		${WRKDIR}/pin-project-lite-0.2.16
 
 MODULES =		devel/cargo

@@ -18,8 +18,8 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
-SITES =			https://static.crates.io/crates/aws-credential-types/
-DISTFILES =		aws-credential-types-1.2.8.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		aws-credential-types-1.2.8.tar.gz{aws-credential-types/1.2.8/download}
 WRKDIST =		${WRKDIR}/aws-credential-types-1.2.8
 
 MODULES =		devel/cargo

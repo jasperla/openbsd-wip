@@ -18,8 +18,8 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
-SITES =			https://static.crates.io/crates/aws-smithy-checksums/
-DISTFILES =		aws-smithy-checksums-0.63.13.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		aws-smithy-checksums-0.63.13.tar.gz{aws-smithy-checksums/0.63.13/download}
 WRKDIST =		${WRKDIR}/aws-smithy-checksums-0.63.13
 
 MODULES =		devel/cargo

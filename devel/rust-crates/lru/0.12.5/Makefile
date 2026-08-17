@@ -18,8 +18,8 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
-SITES =			https://static.crates.io/crates/lru/
-DISTFILES =		lru-0.12.5.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		lru-0.12.5.tar.gz{lru/0.12.5/download}
 WRKDIST =		${WRKDIR}/lru-0.12.5
 
 MODULES =		devel/cargo

@@ -18,8 +18,8 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
-SITES =			https://static.crates.io/crates/quinn-proto/
-DISTFILES =		quinn-proto-0.11.15.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		quinn-proto-0.11.15.tar.gz{quinn-proto/0.11.15/download}
 WRKDIST =		${WRKDIR}/quinn-proto-0.11.15
 
 MODULES =		devel/cargo

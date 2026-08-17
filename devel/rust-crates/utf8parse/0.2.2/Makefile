@@ -18,8 +18,8 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
-SITES =			https://static.crates.io/crates/utf8parse/
-DISTFILES =		utf8parse-0.2.2.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		utf8parse-0.2.2.tar.gz{utf8parse/0.2.2/download}
 WRKDIST =		${WRKDIR}/utf8parse-0.2.2
 
 MODULES =		devel/cargo

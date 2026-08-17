@@ -18,8 +18,8 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
-SITES =			https://static.crates.io/crates/simdutf8/
-DISTFILES =		simdutf8-0.1.5.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		simdutf8-0.1.5.tar.gz{simdutf8/0.1.5/download}
 WRKDIST =		${WRKDIR}/simdutf8-0.1.5
 
 MODULES =		devel/cargo

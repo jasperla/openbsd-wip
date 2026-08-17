@@ -18,8 +18,8 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
-SITES =			https://static.crates.io/crates/tracing-appender/
-DISTFILES =		tracing-appender-0.2.4.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		tracing-appender-0.2.4.tar.gz{tracing-appender/0.2.4/download}
 WRKDIST =		${WRKDIR}/tracing-appender-0.2.4
 
 MODULES =		devel/cargo

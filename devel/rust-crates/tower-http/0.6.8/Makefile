@@ -18,8 +18,8 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
-SITES =			https://static.crates.io/crates/tower-http/
-DISTFILES =		tower-http-0.6.8.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		tower-http-0.6.8.tar.gz{tower-http/0.6.8/download}
 WRKDIST =		${WRKDIR}/tower-http-0.6.8
 
 MODULES =		devel/cargo

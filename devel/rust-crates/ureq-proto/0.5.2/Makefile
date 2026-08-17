@@ -18,8 +18,8 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
-SITES =			https://static.crates.io/crates/ureq-proto/
-DISTFILES =		ureq-proto-0.5.2.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		ureq-proto-0.5.2.tar.gz{ureq-proto/0.5.2/download}
 WRKDIST =		${WRKDIR}/ureq-proto-0.5.2
 
 MODULES =		devel/cargo

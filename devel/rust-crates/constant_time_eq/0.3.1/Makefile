@@ -18,8 +18,8 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
-SITES =			https://static.crates.io/crates/constant_time_eq/
-DISTFILES =		constant_time_eq-0.3.1.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		constant_time_eq-0.3.1.tar.gz{constant_time_eq/0.3.1/download}
 WRKDIST =		${WRKDIR}/constant_time_eq-0.3.1
 
 MODULES =		devel/cargo

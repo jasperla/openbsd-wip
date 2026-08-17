@@ -18,8 +18,8 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
-SITES =			https://static.crates.io/crates/fax_derive/
-DISTFILES =		fax_derive-0.2.0.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		fax_derive-0.2.0.tar.gz{fax_derive/0.2.0/download}
 WRKDIST =		${WRKDIR}/fax_derive-0.2.0
 
 MODULES =		devel/cargo

@@ -18,8 +18,8 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
-SITES =			https://static.crates.io/crates/portable-atomic/
-DISTFILES =		portable-atomic-1.11.1.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		portable-atomic-1.11.1.tar.gz{portable-atomic/1.11.1/download}
 WRKDIST =		${WRKDIR}/portable-atomic-1.11.1
 
 MODULES =		devel/cargo

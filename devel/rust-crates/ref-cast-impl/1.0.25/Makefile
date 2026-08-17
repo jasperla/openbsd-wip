@@ -18,8 +18,8 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
-SITES =			https://static.crates.io/crates/ref-cast-impl/
-DISTFILES =		ref-cast-impl-1.0.25.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		ref-cast-impl-1.0.25.tar.gz{ref-cast-impl/1.0.25/download}
 WRKDIST =		${WRKDIR}/ref-cast-impl-1.0.25
 
 MODULES =		devel/cargo

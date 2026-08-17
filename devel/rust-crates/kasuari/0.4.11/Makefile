@@ -18,8 +18,8 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
-SITES =			https://static.crates.io/crates/kasuari/
-DISTFILES =		kasuari-0.4.11.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		kasuari-0.4.11.tar.gz{kasuari/0.4.11/download}
 WRKDIST =		${WRKDIR}/kasuari-0.4.11
 
 MODULES =		devel/cargo

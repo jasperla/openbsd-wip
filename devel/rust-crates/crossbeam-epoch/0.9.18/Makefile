@@ -18,8 +18,8 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
-SITES =			https://static.crates.io/crates/crossbeam-epoch/
-DISTFILES =		crossbeam-epoch-0.9.18.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		crossbeam-epoch-0.9.18.tar.gz{crossbeam-epoch/0.9.18/download}
 WRKDIST =		${WRKDIR}/crossbeam-epoch-0.9.18
 
 MODULES =		devel/cargo

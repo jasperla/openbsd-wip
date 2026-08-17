@@ -15,8 +15,8 @@ MAINTAINER =	Todd T. Fries <todd@fries.net>
 PERMIT_PACKAGE =	Yes
 
 DIST_SUBDIR =		cargo
-SITES =			https://static.crates.io/crates/wasip3/
-DISTFILES =		wasip3-0.4.0+wasi-0.3.0-rc-2026-01-06.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		wasip3-0.4.0+wasi-0.3.0-rc-2026-01-06.tar.gz{wasip3/0.4.0+wasi-0.3.0-rc-2026-01-06/download}
 WRKDIST =		${WRKDIR}/wasip3-0.4.0+wasi-0.3.0-rc-2026-01-06
 
 NO_BUILD =		Yes

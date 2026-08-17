@@ -18,8 +18,8 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
-SITES =			https://static.crates.io/crates/prost-reflect/
-DISTFILES =		prost-reflect-0.16.4.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		prost-reflect-0.16.4.tar.gz{prost-reflect/0.16.4/download}
 WRKDIST =		${WRKDIR}/prost-reflect-0.16.4
 
 MODULES =		devel/cargo

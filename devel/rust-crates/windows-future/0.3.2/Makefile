@@ -15,8 +15,8 @@ MAINTAINER =	Todd T. Fries <todd@fries.net>
 PERMIT_PACKAGE =	Yes
 
 DIST_SUBDIR =		cargo
-SITES =			https://static.crates.io/crates/windows-future/
-DISTFILES =		windows-future-0.3.2.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		windows-future-0.3.2.tar.gz{windows-future/0.3.2/download}
 WRKDIST =		${WRKDIR}/windows-future-0.3.2
 
 NO_BUILD =		Yes

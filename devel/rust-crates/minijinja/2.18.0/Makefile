@@ -18,8 +18,8 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
-SITES =			https://static.crates.io/crates/minijinja/
-DISTFILES =		minijinja-2.18.0.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		minijinja-2.18.0.tar.gz{minijinja/2.18.0/download}
 WRKDIST =		${WRKDIR}/minijinja-2.18.0
 
 MODULES =		devel/cargo

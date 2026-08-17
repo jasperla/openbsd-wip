@@ -15,8 +15,8 @@ MAINTAINER =	Todd T. Fries <todd@fries.net>
 PERMIT_PACKAGE =	Yes
 
 DIST_SUBDIR =		cargo
-SITES =			https://static.crates.io/crates/security-framework-sys/
-DISTFILES =		security-framework-sys-2.15.0.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		security-framework-sys-2.15.0.tar.gz{security-framework-sys/2.15.0/download}
 WRKDIST =		${WRKDIR}/security-framework-sys-2.15.0
 
 NO_BUILD =		Yes

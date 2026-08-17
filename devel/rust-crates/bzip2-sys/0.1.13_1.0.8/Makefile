@@ -18,8 +18,8 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
-SITES =			https://static.crates.io/crates/bzip2-sys/
-DISTFILES =		bzip2-sys-0.1.13+1.0.8.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		bzip2-sys-0.1.13+1.0.8.tar.gz{bzip2-sys/0.1.13+1.0.8/download}
 WRKDIST =		${WRKDIR}/bzip2-sys-0.1.13+1.0.8
 
 MODULES =		devel/cargo

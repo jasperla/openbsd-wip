@@ -18,8 +18,8 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
-SITES =			https://static.crates.io/crates/crossbeam-queue/
-DISTFILES =		crossbeam-queue-0.3.12.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		crossbeam-queue-0.3.12.tar.gz{crossbeam-queue/0.3.12/download}
 WRKDIST =		${WRKDIR}/crossbeam-queue-0.3.12
 
 MODULES =		devel/cargo

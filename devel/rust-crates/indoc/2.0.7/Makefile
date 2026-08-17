@@ -18,8 +18,8 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
-SITES =			https://static.crates.io/crates/indoc/
-DISTFILES =		indoc-2.0.7.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		indoc-2.0.7.tar.gz{indoc/2.0.7/download}
 WRKDIST =		${WRKDIR}/indoc-2.0.7
 
 MODULES =		devel/cargo

@@ -18,8 +18,8 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
-SITES =			https://static.crates.io/crates/tracing-subscriber/
-DISTFILES =		tracing-subscriber-0.3.23.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		tracing-subscriber-0.3.23.tar.gz{tracing-subscriber/0.3.23/download}
 WRKDIST =		${WRKDIR}/tracing-subscriber-0.3.23
 
 MODULES =		devel/cargo

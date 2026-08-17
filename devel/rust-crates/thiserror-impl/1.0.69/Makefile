@@ -18,8 +18,8 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
-SITES =			https://static.crates.io/crates/thiserror-impl/
-DISTFILES =		thiserror-impl-1.0.69.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		thiserror-impl-1.0.69.tar.gz{thiserror-impl/1.0.69/download}
 WRKDIST =		${WRKDIR}/thiserror-impl-1.0.69
 
 MODULES =		devel/cargo

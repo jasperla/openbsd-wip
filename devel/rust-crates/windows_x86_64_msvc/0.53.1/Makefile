@@ -15,8 +15,8 @@ MAINTAINER =	Todd T. Fries <todd@fries.net>
 PERMIT_PACKAGE =	Yes
 
 DIST_SUBDIR =		cargo
-SITES =			https://static.crates.io/crates/windows_x86_64_msvc/
-DISTFILES =		windows_x86_64_msvc-0.53.1.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		windows_x86_64_msvc-0.53.1.tar.gz{windows_x86_64_msvc/0.53.1/download}
 WRKDIST =		${WRKDIR}/windows_x86_64_msvc-0.53.1
 
 NO_BUILD =		Yes

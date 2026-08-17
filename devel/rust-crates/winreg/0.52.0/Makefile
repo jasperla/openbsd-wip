@@ -15,8 +15,8 @@ MAINTAINER =	Todd T. Fries <todd@fries.net>
 PERMIT_PACKAGE =	Yes
 
 DIST_SUBDIR =		cargo
-SITES =			https://static.crates.io/crates/winreg/
-DISTFILES =		winreg-0.52.0.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		winreg-0.52.0.tar.gz{winreg/0.52.0/download}
 WRKDIST =		${WRKDIR}/winreg-0.52.0
 
 NO_BUILD =		Yes

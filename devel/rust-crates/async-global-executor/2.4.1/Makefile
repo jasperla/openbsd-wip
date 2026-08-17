@@ -18,8 +18,8 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
-SITES =			https://static.crates.io/crates/async-global-executor/
-DISTFILES =		async-global-executor-2.4.1.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		async-global-executor-2.4.1.tar.gz{async-global-executor/2.4.1/download}
 WRKDIST =		${WRKDIR}/async-global-executor-2.4.1
 
 MODULES =		devel/cargo

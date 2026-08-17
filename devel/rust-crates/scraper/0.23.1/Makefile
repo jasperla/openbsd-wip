@@ -18,8 +18,8 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
-SITES =			https://static.crates.io/crates/scraper/
-DISTFILES =		scraper-0.23.1.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		scraper-0.23.1.tar.gz{scraper/0.23.1/download}
 WRKDIST =		${WRKDIR}/scraper-0.23.1
 
 MODULES =		devel/cargo

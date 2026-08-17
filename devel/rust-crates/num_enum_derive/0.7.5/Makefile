@@ -18,8 +18,8 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
-SITES =			https://static.crates.io/crates/num_enum_derive/
-DISTFILES =		num_enum_derive-0.7.5.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		num_enum_derive-0.7.5.tar.gz{num_enum_derive/0.7.5/download}
 WRKDIST =		${WRKDIR}/num_enum_derive-0.7.5
 
 MODULES =		devel/cargo

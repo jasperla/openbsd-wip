@@ -18,8 +18,8 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
-SITES =			https://static.crates.io/crates/tokio-util/
-DISTFILES =		tokio-util-0.7.17.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		tokio-util-0.7.17.tar.gz{tokio-util/0.7.17/download}
 WRKDIST =		${WRKDIR}/tokio-util-0.7.17
 
 MODULES =		devel/cargo

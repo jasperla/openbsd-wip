@@ -15,8 +15,8 @@ MAINTAINER =	Todd T. Fries <todd@fries.net>
 PERMIT_PACKAGE =	Yes
 
 DIST_SUBDIR =		cargo
-SITES =			https://static.crates.io/crates/bindgen/
-DISTFILES =		bindgen-0.72.1.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		bindgen-0.72.1.tar.gz{bindgen/0.72.1/download}
 WRKDIST =		${WRKDIR}/bindgen-0.72.1
 
 NO_BUILD =		Yes

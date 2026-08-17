@@ -18,8 +18,8 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
-SITES =			https://static.crates.io/crates/symbolic-common/
-DISTFILES =		symbolic-common-12.16.3.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		symbolic-common-12.16.3.tar.gz{symbolic-common/12.16.3/download}
 WRKDIST =		${WRKDIR}/symbolic-common-12.16.3
 
 MODULES =		devel/cargo

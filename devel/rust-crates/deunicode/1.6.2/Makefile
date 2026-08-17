@@ -18,8 +18,8 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
-SITES =			https://static.crates.io/crates/deunicode/
-DISTFILES =		deunicode-1.6.2.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		deunicode-1.6.2.tar.gz{deunicode/1.6.2/download}
 WRKDIST =		${WRKDIR}/deunicode-1.6.2
 
 MODULES =		devel/cargo

@@ -18,8 +18,8 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
-SITES =			https://static.crates.io/crates/terminput/
-DISTFILES =		terminput-0.3.1.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		terminput-0.3.1.tar.gz{terminput/0.3.1/download}
 WRKDIST =		${WRKDIR}/terminput-0.3.1
 
 MODULES =		devel/cargo

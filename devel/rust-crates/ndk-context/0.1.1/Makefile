@@ -15,8 +15,8 @@ MAINTAINER =	Todd T. Fries <todd@fries.net>
 PERMIT_PACKAGE =	Yes
 
 DIST_SUBDIR =		cargo
-SITES =			https://static.crates.io/crates/ndk-context/
-DISTFILES =		ndk-context-0.1.1.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		ndk-context-0.1.1.tar.gz{ndk-context/0.1.1/download}
 WRKDIST =		${WRKDIR}/ndk-context-0.1.1
 
 NO_BUILD =		Yes

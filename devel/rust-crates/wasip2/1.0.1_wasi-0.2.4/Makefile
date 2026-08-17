@@ -15,8 +15,8 @@ MAINTAINER =	Todd T. Fries <todd@fries.net>
 PERMIT_PACKAGE =	Yes
 
 DIST_SUBDIR =		cargo
-SITES =			https://static.crates.io/crates/wasip2/
-DISTFILES =		wasip2-1.0.1+wasi-0.2.4.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		wasip2-1.0.1+wasi-0.2.4.tar.gz{wasip2/1.0.1+wasi-0.2.4/download}
 WRKDIST =		${WRKDIR}/wasip2-1.0.1+wasi-0.2.4
 
 NO_BUILD =		Yes

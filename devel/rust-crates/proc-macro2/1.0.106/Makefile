@@ -18,8 +18,8 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
-SITES =			https://static.crates.io/crates/proc-macro2/
-DISTFILES =		proc-macro2-1.0.106.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		proc-macro2-1.0.106.tar.gz{proc-macro2/1.0.106/download}
 WRKDIST =		${WRKDIR}/proc-macro2-1.0.106
 
 MODULES =		devel/cargo

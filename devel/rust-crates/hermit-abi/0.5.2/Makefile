@@ -18,8 +18,8 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
-SITES =			https://static.crates.io/crates/hermit-abi/
-DISTFILES =		hermit-abi-0.5.2.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		hermit-abi-0.5.2.tar.gz{hermit-abi/0.5.2/download}
 WRKDIST =		${WRKDIR}/hermit-abi-0.5.2
 
 MODULES =		devel/cargo

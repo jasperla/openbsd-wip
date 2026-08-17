@@ -18,8 +18,8 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
-SITES =			https://static.crates.io/crates/precomputed-hash/
-DISTFILES =		precomputed-hash-0.1.1.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		precomputed-hash-0.1.1.tar.gz{precomputed-hash/0.1.1/download}
 WRKDIST =		${WRKDIR}/precomputed-hash-0.1.1
 
 MODULES =		devel/cargo

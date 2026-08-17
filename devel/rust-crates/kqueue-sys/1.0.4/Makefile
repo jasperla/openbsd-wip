@@ -18,8 +18,8 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
-SITES =			https://static.crates.io/crates/kqueue-sys/
-DISTFILES =		kqueue-sys-1.0.4.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		kqueue-sys-1.0.4.tar.gz{kqueue-sys/1.0.4/download}
 WRKDIST =		${WRKDIR}/kqueue-sys-1.0.4
 
 MODULES =		devel/cargo

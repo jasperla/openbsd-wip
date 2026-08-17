@@ -18,8 +18,8 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
-SITES =			https://static.crates.io/crates/markup5ever_rcdom/
-DISTFILES =		markup5ever_rcdom-0.38.0+unofficial.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		markup5ever_rcdom-0.38.0+unofficial.tar.gz{markup5ever_rcdom/0.38.0+unofficial/download}
 WRKDIST =		${WRKDIR}/markup5ever_rcdom-0.38.0+unofficial
 
 MODULES =		devel/cargo

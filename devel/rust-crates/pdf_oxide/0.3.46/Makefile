@@ -18,8 +18,8 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
-SITES =			https://static.crates.io/crates/pdf_oxide/
-DISTFILES =		pdf_oxide-0.3.46.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		pdf_oxide-0.3.46.tar.gz{pdf_oxide/0.3.46/download}
 WRKDIST =		${WRKDIR}/pdf_oxide-0.3.46
 
 MODULES =		devel/cargo

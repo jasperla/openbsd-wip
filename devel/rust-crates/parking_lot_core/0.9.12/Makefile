@@ -18,8 +18,8 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
-SITES =			https://static.crates.io/crates/parking_lot_core/
-DISTFILES =		parking_lot_core-0.9.12.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		parking_lot_core-0.9.12.tar.gz{parking_lot_core/0.9.12/download}
 WRKDIST =		${WRKDIR}/parking_lot_core-0.9.12
 
 MODULES =		devel/cargo

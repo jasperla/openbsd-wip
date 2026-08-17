@@ -15,8 +15,8 @@ MAINTAINER =	Todd T. Fries <todd@fries.net>
 PERMIT_PACKAGE =	Yes
 
 DIST_SUBDIR =		cargo
-SITES =			https://static.crates.io/crates/windows_i686_gnullvm/
-DISTFILES =		windows_i686_gnullvm-0.52.6.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		windows_i686_gnullvm-0.52.6.tar.gz{windows_i686_gnullvm/0.52.6/download}
 WRKDIST =		${WRKDIR}/windows_i686_gnullvm-0.52.6
 
 NO_BUILD =		Yes

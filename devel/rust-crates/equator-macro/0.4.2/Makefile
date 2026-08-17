@@ -18,8 +18,8 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
-SITES =			https://static.crates.io/crates/equator-macro/
-DISTFILES =		equator-macro-0.4.2.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		equator-macro-0.4.2.tar.gz{equator-macro/0.4.2/download}
 WRKDIST =		${WRKDIR}/equator-macro-0.4.2
 
 MODULES =		devel/cargo

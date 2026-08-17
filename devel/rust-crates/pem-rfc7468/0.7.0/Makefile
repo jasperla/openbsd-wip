@@ -18,8 +18,8 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
-SITES =			https://static.crates.io/crates/pem-rfc7468/
-DISTFILES =		pem-rfc7468-0.7.0.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		pem-rfc7468-0.7.0.tar.gz{pem-rfc7468/0.7.0/download}
 WRKDIST =		${WRKDIR}/pem-rfc7468-0.7.0
 
 MODULES =		devel/cargo

@@ -15,8 +15,8 @@ MAINTAINER =	Todd T. Fries <todd@fries.net>
 PERMIT_PACKAGE =	Yes
 
 DIST_SUBDIR =		cargo
-SITES =			https://static.crates.io/crates/windows-result/
-DISTFILES =		windows-result-0.4.1.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		windows-result-0.4.1.tar.gz{windows-result/0.4.1/download}
 WRKDIST =		${WRKDIR}/windows-result-0.4.1
 
 NO_BUILD =		Yes

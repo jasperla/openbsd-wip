@@ -15,8 +15,8 @@ MAINTAINER =	Todd T. Fries <todd@fries.net>
 PERMIT_PACKAGE =	Yes
 
 DIST_SUBDIR =		cargo
-SITES =			https://static.crates.io/crates/windows-numerics/
-DISTFILES =		windows-numerics-0.2.0.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		windows-numerics-0.2.0.tar.gz{windows-numerics/0.2.0/download}
 WRKDIST =		${WRKDIR}/windows-numerics-0.2.0
 
 NO_BUILD =		Yes

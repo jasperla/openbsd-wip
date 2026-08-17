@@ -18,8 +18,8 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
-SITES =			https://static.crates.io/crates/lock_api/
-DISTFILES =		lock_api-0.4.14.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		lock_api-0.4.14.tar.gz{lock_api/0.4.14/download}
 WRKDIST =		${WRKDIR}/lock_api-0.4.14
 
 MODULES =		devel/cargo

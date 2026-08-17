@@ -18,8 +18,8 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
-SITES =			https://static.crates.io/crates/ttf-parser/
-DISTFILES =		ttf-parser-0.25.1.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		ttf-parser-0.25.1.tar.gz{ttf-parser/0.25.1/download}
 WRKDIST =		${WRKDIR}/ttf-parser-0.25.1
 
 MODULES =		devel/cargo

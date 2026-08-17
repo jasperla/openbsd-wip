@@ -18,8 +18,8 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
-SITES =			https://static.crates.io/crates/darling_core/
-DISTFILES =		darling_core-0.20.11.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		darling_core-0.20.11.tar.gz{darling_core/0.20.11/download}
 WRKDIST =		${WRKDIR}/darling_core-0.20.11
 
 MODULES =		devel/cargo

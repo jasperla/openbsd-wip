@@ -18,8 +18,8 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
-SITES =			https://static.crates.io/crates/kv-log-macro/
-DISTFILES =		kv-log-macro-1.0.7.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		kv-log-macro-1.0.7.tar.gz{kv-log-macro/1.0.7/download}
 WRKDIST =		${WRKDIR}/kv-log-macro-1.0.7
 
 MODULES =		devel/cargo

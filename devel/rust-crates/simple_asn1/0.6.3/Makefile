@@ -18,8 +18,8 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
-SITES =			https://static.crates.io/crates/simple_asn1/
-DISTFILES =		simple_asn1-0.6.3.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		simple_asn1-0.6.3.tar.gz{simple_asn1/0.6.3/download}
 WRKDIST =		${WRKDIR}/simple_asn1-0.6.3
 
 MODULES =		devel/cargo

@@ -18,8 +18,8 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
-SITES =			https://static.crates.io/crates/nu-ansi-term/
-DISTFILES =		nu-ansi-term-0.50.3.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		nu-ansi-term-0.50.3.tar.gz{nu-ansi-term/0.50.3/download}
 WRKDIST =		${WRKDIR}/nu-ansi-term-0.50.3
 
 MODULES =		devel/cargo

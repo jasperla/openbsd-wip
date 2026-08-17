@@ -18,8 +18,8 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
-SITES =			https://static.crates.io/crates/yoke-derive/
-DISTFILES =		yoke-derive-0.8.0.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		yoke-derive-0.8.0.tar.gz{yoke-derive/0.8.0/download}
 WRKDIST =		${WRKDIR}/yoke-derive-0.8.0
 
 MODULES =		devel/cargo

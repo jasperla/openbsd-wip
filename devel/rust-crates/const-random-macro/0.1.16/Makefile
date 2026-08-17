@@ -18,8 +18,8 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
-SITES =			https://static.crates.io/crates/const-random-macro/
-DISTFILES =		const-random-macro-0.1.16.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		const-random-macro-0.1.16.tar.gz{const-random-macro/0.1.16/download}
 WRKDIST =		${WRKDIR}/const-random-macro-0.1.16
 
 MODULES =		devel/cargo

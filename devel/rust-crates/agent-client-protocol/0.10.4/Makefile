@@ -18,8 +18,8 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
-SITES =			https://static.crates.io/crates/agent-client-protocol/
-DISTFILES =		agent-client-protocol-0.10.4.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		agent-client-protocol-0.10.4.tar.gz{agent-client-protocol/0.10.4/download}
 WRKDIST =		${WRKDIR}/agent-client-protocol-0.10.4
 
 MODULES =		devel/cargo

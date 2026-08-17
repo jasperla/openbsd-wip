@@ -15,8 +15,8 @@ MAINTAINER =	Todd T. Fries <todd@fries.net>
 PERMIT_PACKAGE =	Yes
 
 DIST_SUBDIR =		cargo
-SITES =			https://static.crates.io/crates/windows-targets/
-DISTFILES =		windows-targets-0.42.2.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		windows-targets-0.42.2.tar.gz{windows-targets/0.42.2/download}
 WRKDIST =		${WRKDIR}/windows-targets-0.42.2
 
 NO_BUILD =		Yes

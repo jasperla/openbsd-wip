@@ -15,8 +15,8 @@ MAINTAINER =	Todd T. Fries <todd@fries.net>
 PERMIT_PACKAGE =	Yes
 
 DIST_SUBDIR =		cargo
-SITES =			https://static.crates.io/crates/mid/
-DISTFILES =		mid-4.0.0.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		mid-4.0.0.tar.gz{mid/4.0.0/download}
 WRKDIST =		${WRKDIR}/mid-4.0.0
 
 NO_BUILD =		Yes

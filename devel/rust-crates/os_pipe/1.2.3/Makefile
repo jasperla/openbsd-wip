@@ -18,8 +18,8 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
-SITES =			https://static.crates.io/crates/os_pipe/
-DISTFILES =		os_pipe-1.2.3.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		os_pipe-1.2.3.tar.gz{os_pipe/1.2.3/download}
 WRKDIST =		${WRKDIR}/os_pipe-1.2.3
 
 MODULES =		devel/cargo

@@ -15,8 +15,8 @@ MAINTAINER =	Todd T. Fries <todd@fries.net>
 PERMIT_PACKAGE =	Yes
 
 DIST_SUBDIR =		cargo
-SITES =			https://static.crates.io/crates/coreaudio-sys/
-DISTFILES =		coreaudio-sys-0.2.18.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		coreaudio-sys-0.2.18.tar.gz{coreaudio-sys/0.2.18/download}
 WRKDIST =		${WRKDIR}/coreaudio-sys-0.2.18
 
 NO_BUILD =		Yes

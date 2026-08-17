@@ -15,8 +15,8 @@ MAINTAINER =	Todd T. Fries <todd@fries.net>
 PERMIT_PACKAGE =	Yes
 
 DIST_SUBDIR =		cargo
-SITES =			https://static.crates.io/crates/pprof/
-DISTFILES =		pprof-0.15.0.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		pprof-0.15.0.tar.gz{pprof/0.15.0/download}
 WRKDIST =		${WRKDIR}/pprof-0.15.0
 
 NO_BUILD =		Yes

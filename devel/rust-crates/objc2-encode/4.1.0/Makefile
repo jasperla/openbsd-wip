@@ -15,8 +15,8 @@ MAINTAINER =	Todd T. Fries <todd@fries.net>
 PERMIT_PACKAGE =	Yes
 
 DIST_SUBDIR =		cargo
-SITES =			https://static.crates.io/crates/objc2-encode/
-DISTFILES =		objc2-encode-4.1.0.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		objc2-encode-4.1.0.tar.gz{objc2-encode/4.1.0/download}
 WRKDIST =		${WRKDIR}/objc2-encode-4.1.0
 
 NO_BUILD =		Yes

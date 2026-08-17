@@ -18,8 +18,8 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
-SITES =			https://static.crates.io/crates/enum-ordinalize/
-DISTFILES =		enum-ordinalize-4.3.0.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		enum-ordinalize-4.3.0.tar.gz{enum-ordinalize/4.3.0/download}
 WRKDIST =		${WRKDIR}/enum-ordinalize-4.3.0
 
 MODULES =		devel/cargo

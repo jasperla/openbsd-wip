@@ -18,8 +18,8 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
-SITES =			https://static.crates.io/crates/aws-config/
-DISTFILES =		aws-config-1.8.8.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		aws-config-1.8.8.tar.gz{aws-config/1.8.8/download}
 WRKDIST =		${WRKDIR}/aws-config-1.8.8
 
 MODULES =		devel/cargo

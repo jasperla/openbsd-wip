@@ -18,8 +18,8 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
-SITES =			https://static.crates.io/crates/rustls-webpki/
-DISTFILES =		rustls-webpki-0.103.13.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		rustls-webpki-0.103.13.tar.gz{rustls-webpki/0.103.13/download}
 WRKDIST =		${WRKDIR}/rustls-webpki-0.103.13
 
 MODULES =		devel/cargo

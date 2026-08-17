@@ -15,8 +15,8 @@ MAINTAINER =	Todd T. Fries <todd@fries.net>
 PERMIT_PACKAGE =	Yes
 
 DIST_SUBDIR =		cargo
-SITES =			https://static.crates.io/crates/schannel/
-DISTFILES =		schannel-0.1.28.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		schannel-0.1.28.tar.gz{schannel/0.1.28/download}
 WRKDIST =		${WRKDIR}/schannel-0.1.28
 
 NO_BUILD =		Yes

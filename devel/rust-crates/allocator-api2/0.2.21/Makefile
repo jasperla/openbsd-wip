@@ -18,8 +18,8 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
-SITES =			https://static.crates.io/crates/allocator-api2/
-DISTFILES =		allocator-api2-0.2.21.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		allocator-api2-0.2.21.tar.gz{allocator-api2/0.2.21/download}
 WRKDIST =		${WRKDIR}/allocator-api2-0.2.21
 
 MODULES =		devel/cargo

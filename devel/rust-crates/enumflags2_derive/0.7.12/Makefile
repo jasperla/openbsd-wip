@@ -18,8 +18,8 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
-SITES =			https://static.crates.io/crates/enumflags2_derive/
-DISTFILES =		enumflags2_derive-0.7.12.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		enumflags2_derive-0.7.12.tar.gz{enumflags2_derive/0.7.12/download}
 WRKDIST =		${WRKDIR}/enumflags2_derive-0.7.12
 
 MODULES =		devel/cargo

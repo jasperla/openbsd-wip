@@ -15,8 +15,8 @@ MAINTAINER =	Todd T. Fries <todd@fries.net>
 PERMIT_PACKAGE =	Yes
 
 DIST_SUBDIR =		cargo
-SITES =			https://static.crates.io/crates/js-sys/
-DISTFILES =		js-sys-0.3.91.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		js-sys-0.3.91.tar.gz{js-sys/0.3.91/download}
 WRKDIST =		${WRKDIR}/js-sys-0.3.91
 
 NO_BUILD =		Yes

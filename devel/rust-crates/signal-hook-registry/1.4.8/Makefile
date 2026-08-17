@@ -18,8 +18,8 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
-SITES =			https://static.crates.io/crates/signal-hook-registry/
-DISTFILES =		signal-hook-registry-1.4.8.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		signal-hook-registry-1.4.8.tar.gz{signal-hook-registry/1.4.8/download}
 WRKDIST =		${WRKDIR}/signal-hook-registry-1.4.8
 
 MODULES =		devel/cargo

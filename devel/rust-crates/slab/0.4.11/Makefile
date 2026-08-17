@@ -18,8 +18,8 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
-SITES =			https://static.crates.io/crates/slab/
-DISTFILES =		slab-0.4.11.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		slab-0.4.11.tar.gz{slab/0.4.11/download}
 WRKDIST =		${WRKDIR}/slab-0.4.11
 
 MODULES =		devel/cargo

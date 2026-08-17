@@ -18,8 +18,8 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
-SITES =			https://static.crates.io/crates/cpp_demangle/
-DISTFILES =		cpp_demangle-0.4.5.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		cpp_demangle-0.4.5.tar.gz{cpp_demangle/0.4.5/download}
 WRKDIST =		${WRKDIR}/cpp_demangle-0.4.5
 
 MODULES =		devel/cargo

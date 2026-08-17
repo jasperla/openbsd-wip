@@ -18,8 +18,8 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
-SITES =			https://static.crates.io/crates/rand_xorshift/
-DISTFILES =		rand_xorshift-0.4.0.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		rand_xorshift-0.4.0.tar.gz{rand_xorshift/0.4.0/download}
 WRKDIST =		${WRKDIR}/rand_xorshift-0.4.0
 
 MODULES =		devel/cargo

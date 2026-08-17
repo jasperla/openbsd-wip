@@ -18,8 +18,8 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
-SITES =			https://static.crates.io/crates/winsafe/
-DISTFILES =		winsafe-0.0.19.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		winsafe-0.0.19.tar.gz{winsafe/0.0.19/download}
 WRKDIST =		${WRKDIR}/winsafe-0.0.19
 
 MODULES =		devel/cargo

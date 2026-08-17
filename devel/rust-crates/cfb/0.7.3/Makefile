@@ -18,8 +18,8 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
-SITES =			https://static.crates.io/crates/cfb/
-DISTFILES =		cfb-0.7.3.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		cfb-0.7.3.tar.gz{cfb/0.7.3/download}
 WRKDIST =		${WRKDIR}/cfb-0.7.3
 
 MODULES =		devel/cargo

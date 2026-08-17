@@ -18,8 +18,8 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
-SITES =			https://static.crates.io/crates/gix-blame/
-DISTFILES =		gix-blame-0.13.0.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		gix-blame-0.13.0.tar.gz{gix-blame/0.13.0/download}
 WRKDIST =		${WRKDIR}/gix-blame-0.13.0
 
 MODULES =		devel/cargo

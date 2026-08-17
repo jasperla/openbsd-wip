@@ -18,8 +18,8 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
-SITES =			https://static.crates.io/crates/aws-lc-sys/
-DISTFILES =		aws-lc-sys-0.39.1.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		aws-lc-sys-0.39.1.tar.gz{aws-lc-sys/0.39.1/download}
 WRKDIST =		${WRKDIR}/aws-lc-sys-0.39.1
 
 MODULES =		devel/cargo

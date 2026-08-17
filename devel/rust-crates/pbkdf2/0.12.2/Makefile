@@ -18,8 +18,8 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
-SITES =			https://static.crates.io/crates/pbkdf2/
-DISTFILES =		pbkdf2-0.12.2.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		pbkdf2-0.12.2.tar.gz{pbkdf2/0.12.2/download}
 WRKDIST =		${WRKDIR}/pbkdf2-0.12.2
 
 MODULES =		devel/cargo

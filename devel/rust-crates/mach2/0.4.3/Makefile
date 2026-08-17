@@ -15,8 +15,8 @@ MAINTAINER =	Todd T. Fries <todd@fries.net>
 PERMIT_PACKAGE =	Yes
 
 DIST_SUBDIR =		cargo
-SITES =			https://static.crates.io/crates/mach2/
-DISTFILES =		mach2-0.4.3.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		mach2-0.4.3.tar.gz{mach2/0.4.3/download}
 WRKDIST =		${WRKDIR}/mach2-0.4.3
 
 NO_BUILD =		Yes

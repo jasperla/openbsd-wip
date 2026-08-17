@@ -18,8 +18,8 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
-SITES =			https://static.crates.io/crates/jiff-tzdb/
-DISTFILES =		jiff-tzdb-0.1.4.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		jiff-tzdb-0.1.4.tar.gz{jiff-tzdb/0.1.4/download}
 WRKDIST =		${WRKDIR}/jiff-tzdb-0.1.4
 
 MODULES =		devel/cargo

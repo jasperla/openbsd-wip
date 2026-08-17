@@ -18,8 +18,8 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
-SITES =			https://static.crates.io/crates/oauth2/
-DISTFILES =		oauth2-5.0.0.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		oauth2-5.0.0.tar.gz{oauth2/5.0.0/download}
 WRKDIST =		${WRKDIR}/oauth2-5.0.0
 
 MODULES =		devel/cargo

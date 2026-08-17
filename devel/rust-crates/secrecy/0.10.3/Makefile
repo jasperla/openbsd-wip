@@ -18,8 +18,8 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
-SITES =			https://static.crates.io/crates/secrecy/
-DISTFILES =		secrecy-0.10.3.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		secrecy-0.10.3.tar.gz{secrecy/0.10.3/download}
 WRKDIST =		${WRKDIR}/secrecy-0.10.3
 
 MODULES =		devel/cargo

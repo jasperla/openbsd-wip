@@ -18,8 +18,8 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
-SITES =			https://static.crates.io/crates/aws-smithy-http-client/
-DISTFILES =		aws-smithy-http-client-1.1.9.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		aws-smithy-http-client-1.1.9.tar.gz{aws-smithy-http-client/1.1.9/download}
 WRKDIST =		${WRKDIR}/aws-smithy-http-client-1.1.9
 
 MODULES =		devel/cargo

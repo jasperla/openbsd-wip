@@ -18,8 +18,8 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
-SITES =			https://static.crates.io/crates/iri-string/
-DISTFILES =		iri-string-0.7.9.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		iri-string-0.7.9.tar.gz{iri-string/0.7.9/download}
 WRKDIST =		${WRKDIR}/iri-string-0.7.9
 
 MODULES =		devel/cargo

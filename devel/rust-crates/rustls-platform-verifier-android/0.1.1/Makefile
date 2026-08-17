@@ -15,8 +15,8 @@ MAINTAINER =	Todd T. Fries <todd@fries.net>
 PERMIT_PACKAGE =	Yes
 
 DIST_SUBDIR =		cargo
-SITES =			https://static.crates.io/crates/rustls-platform-verifier-android/
-DISTFILES =		rustls-platform-verifier-android-0.1.1.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		rustls-platform-verifier-android-0.1.1.tar.gz{rustls-platform-verifier-android/0.1.1/download}
 WRKDIST =		${WRKDIR}/rustls-platform-verifier-android-0.1.1
 
 NO_BUILD =		Yes

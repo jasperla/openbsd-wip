@@ -18,8 +18,8 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
-SITES =			https://static.crates.io/crates/tinystr/
-DISTFILES =		tinystr-0.8.1.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		tinystr-0.8.1.tar.gz{tinystr/0.8.1/download}
 WRKDIST =		${WRKDIR}/tinystr-0.8.1
 
 MODULES =		devel/cargo

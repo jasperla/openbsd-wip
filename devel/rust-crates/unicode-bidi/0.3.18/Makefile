@@ -18,8 +18,8 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
-SITES =			https://static.crates.io/crates/unicode-bidi/
-DISTFILES =		unicode-bidi-0.3.18.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		unicode-bidi-0.3.18.tar.gz{unicode-bidi/0.3.18/download}
 WRKDIST =		${WRKDIR}/unicode-bidi-0.3.18
 
 MODULES =		devel/cargo

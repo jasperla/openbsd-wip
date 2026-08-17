@@ -18,8 +18,8 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
-SITES =			https://static.crates.io/crates/tower-layer/
-DISTFILES =		tower-layer-0.3.3.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		tower-layer-0.3.3.tar.gz{tower-layer/0.3.3/download}
 WRKDIST =		${WRKDIR}/tower-layer-0.3.3
 
 MODULES =		devel/cargo

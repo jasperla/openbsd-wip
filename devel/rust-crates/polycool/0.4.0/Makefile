@@ -18,8 +18,8 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
-SITES =			https://static.crates.io/crates/polycool/
-DISTFILES =		polycool-0.4.0.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		polycool-0.4.0.tar.gz{polycool/0.4.0/download}
 WRKDIST =		${WRKDIR}/polycool-0.4.0
 
 MODULES =		devel/cargo

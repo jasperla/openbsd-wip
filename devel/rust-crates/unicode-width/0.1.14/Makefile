@@ -18,8 +18,8 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
-SITES =			https://static.crates.io/crates/unicode-width/
-DISTFILES =		unicode-width-0.1.14.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		unicode-width-0.1.14.tar.gz{unicode-width/0.1.14/download}
 WRKDIST =		${WRKDIR}/unicode-width-0.1.14
 
 MODULES =		devel/cargo

@@ -18,8 +18,8 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
-SITES =			https://static.crates.io/crates/byteorder-lite/
-DISTFILES =		byteorder-lite-0.1.0.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		byteorder-lite-0.1.0.tar.gz{byteorder-lite/0.1.0/download}
 WRKDIST =		${WRKDIR}/byteorder-lite-0.1.0
 
 MODULES =		devel/cargo

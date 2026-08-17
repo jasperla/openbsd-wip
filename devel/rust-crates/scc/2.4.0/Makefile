@@ -18,8 +18,8 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
-SITES =			https://static.crates.io/crates/scc/
-DISTFILES =		scc-2.4.0.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		scc-2.4.0.tar.gz{scc/2.4.0/download}
 WRKDIST =		${WRKDIR}/scc-2.4.0
 
 MODULES =		devel/cargo

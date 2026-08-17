@@ -18,8 +18,8 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
-SITES =			https://static.crates.io/crates/anstyle-lossy/
-DISTFILES =		anstyle-lossy-1.1.4.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		anstyle-lossy-1.1.4.tar.gz{anstyle-lossy/1.1.4/download}
 WRKDIST =		${WRKDIR}/anstyle-lossy-1.1.4
 
 MODULES =		devel/cargo

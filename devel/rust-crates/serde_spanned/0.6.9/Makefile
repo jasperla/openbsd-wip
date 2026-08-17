@@ -18,8 +18,8 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
-SITES =			https://static.crates.io/crates/serde_spanned/
-DISTFILES =		serde_spanned-0.6.9.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		serde_spanned-0.6.9.tar.gz{serde_spanned/0.6.9/download}
 WRKDIST =		${WRKDIR}/serde_spanned-0.6.9
 
 MODULES =		devel/cargo

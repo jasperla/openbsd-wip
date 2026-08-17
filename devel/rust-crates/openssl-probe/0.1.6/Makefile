@@ -18,8 +18,8 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
-SITES =			https://static.crates.io/crates/openssl-probe/
-DISTFILES =		openssl-probe-0.1.6.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		openssl-probe-0.1.6.tar.gz{openssl-probe/0.1.6/download}
 WRKDIST =		${WRKDIR}/openssl-probe-0.1.6
 
 MODULES =		devel/cargo

@@ -18,8 +18,8 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
-SITES =			https://static.crates.io/crates/litemap/
-DISTFILES =		litemap-0.8.0.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		litemap-0.8.0.tar.gz{litemap/0.8.0/download}
 WRKDIST =		${WRKDIR}/litemap-0.8.0
 
 MODULES =		devel/cargo

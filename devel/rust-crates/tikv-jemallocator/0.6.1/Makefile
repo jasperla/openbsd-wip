@@ -15,8 +15,8 @@ MAINTAINER =	Todd T. Fries <todd@fries.net>
 PERMIT_PACKAGE =	Yes
 
 DIST_SUBDIR =		cargo
-SITES =			https://static.crates.io/crates/tikv-jemallocator/
-DISTFILES =		tikv-jemallocator-0.6.1.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		tikv-jemallocator-0.6.1.tar.gz{tikv-jemallocator/0.6.1/download}
 WRKDIST =		${WRKDIR}/tikv-jemallocator-0.6.1
 
 NO_BUILD =		Yes

@@ -18,8 +18,8 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
-SITES =			https://static.crates.io/crates/wezterm-bidi/
-DISTFILES =		wezterm-bidi-0.2.3.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		wezterm-bidi-0.2.3.tar.gz{wezterm-bidi/0.2.3/download}
 WRKDIST =		${WRKDIR}/wezterm-bidi-0.2.3
 
 MODULES =		devel/cargo

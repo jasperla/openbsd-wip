@@ -18,8 +18,8 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
-SITES =			https://static.crates.io/crates/deflate64/
-DISTFILES =		deflate64-0.1.10.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		deflate64-0.1.10.tar.gz{deflate64/0.1.10/download}
 WRKDIST =		${WRKDIR}/deflate64-0.1.10
 
 MODULES =		devel/cargo

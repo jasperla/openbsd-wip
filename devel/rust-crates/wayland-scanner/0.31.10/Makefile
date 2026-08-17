@@ -18,8 +18,8 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
-SITES =			https://static.crates.io/crates/wayland-scanner/
-DISTFILES =		wayland-scanner-0.31.10.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		wayland-scanner-0.31.10.tar.gz{wayland-scanner/0.31.10/download}
 WRKDIST =		${WRKDIR}/wayland-scanner-0.31.10
 
 MODULES =		devel/cargo

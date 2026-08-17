@@ -15,8 +15,8 @@ MAINTAINER =	Todd T. Fries <todd@fries.net>
 PERMIT_PACKAGE =	Yes
 
 DIST_SUBDIR =		cargo
-SITES =			https://static.crates.io/crates/webbrowser/
-DISTFILES =		webbrowser-1.0.6.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		webbrowser-1.0.6.tar.gz{webbrowser/1.0.6/download}
 WRKDIST =		${WRKDIR}/webbrowser-1.0.6
 
 NO_BUILD =		Yes

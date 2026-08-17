@@ -18,8 +18,8 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
-SITES =			https://static.crates.io/crates/unicode-bidi-mirroring/
-DISTFILES =		unicode-bidi-mirroring-0.4.0.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		unicode-bidi-mirroring-0.4.0.tar.gz{unicode-bidi-mirroring/0.4.0/download}
 WRKDIST =		${WRKDIR}/unicode-bidi-mirroring-0.4.0
 
 MODULES =		devel/cargo

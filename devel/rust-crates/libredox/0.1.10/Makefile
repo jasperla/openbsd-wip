@@ -15,8 +15,8 @@ MAINTAINER =	Todd T. Fries <todd@fries.net>
 PERMIT_PACKAGE =	Yes
 
 DIST_SUBDIR =		cargo
-SITES =			https://static.crates.io/crates/libredox/
-DISTFILES =		libredox-0.1.10.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		libredox-0.1.10.tar.gz{libredox/0.1.10/download}
 WRKDIST =		${WRKDIR}/libredox-0.1.10
 
 NO_BUILD =		Yes

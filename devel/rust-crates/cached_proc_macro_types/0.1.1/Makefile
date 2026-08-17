@@ -18,8 +18,8 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
-SITES =			https://static.crates.io/crates/cached_proc_macro_types/
-DISTFILES =		cached_proc_macro_types-0.1.1.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		cached_proc_macro_types-0.1.1.tar.gz{cached_proc_macro_types/0.1.1/download}
 WRKDIST =		${WRKDIR}/cached_proc_macro_types-0.1.1
 
 MODULES =		devel/cargo

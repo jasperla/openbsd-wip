@@ -15,8 +15,8 @@ MAINTAINER =	Todd T. Fries <todd@fries.net>
 PERMIT_PACKAGE =	Yes
 
 DIST_SUBDIR =		cargo
-SITES =			https://static.crates.io/crates/jni/
-DISTFILES =		jni-0.21.1.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		jni-0.21.1.tar.gz{jni/0.21.1/download}
 WRKDIST =		${WRKDIR}/jni-0.21.1
 
 NO_BUILD =		Yes

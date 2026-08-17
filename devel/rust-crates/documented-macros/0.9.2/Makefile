@@ -18,8 +18,8 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
-SITES =			https://static.crates.io/crates/documented-macros/
-DISTFILES =		documented-macros-0.9.2.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		documented-macros-0.9.2.tar.gz{documented-macros/0.9.2/download}
 WRKDIST =		${WRKDIR}/documented-macros-0.9.2
 
 MODULES =		devel/cargo

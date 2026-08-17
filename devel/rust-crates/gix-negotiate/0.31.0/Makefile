@@ -18,8 +18,8 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
-SITES =			https://static.crates.io/crates/gix-negotiate/
-DISTFILES =		gix-negotiate-0.31.0.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		gix-negotiate-0.31.0.tar.gz{gix-negotiate/0.31.0/download}
 WRKDIST =		${WRKDIR}/gix-negotiate-0.31.0
 
 MODULES =		devel/cargo

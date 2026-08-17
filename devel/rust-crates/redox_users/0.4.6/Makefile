@@ -15,8 +15,8 @@ MAINTAINER =	Todd T. Fries <todd@fries.net>
 PERMIT_PACKAGE =	Yes
 
 DIST_SUBDIR =		cargo
-SITES =			https://static.crates.io/crates/redox_users/
-DISTFILES =		redox_users-0.4.6.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		redox_users-0.4.6.tar.gz{redox_users/0.4.6/download}
 WRKDIST =		${WRKDIR}/redox_users-0.4.6
 
 NO_BUILD =		Yes

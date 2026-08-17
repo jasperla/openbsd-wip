@@ -18,8 +18,8 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
-SITES =			https://static.crates.io/crates/hdrhistogram/
-DISTFILES =		hdrhistogram-7.5.4.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		hdrhistogram-7.5.4.tar.gz{hdrhistogram/7.5.4/download}
 WRKDIST =		${WRKDIR}/hdrhistogram-7.5.4
 
 MODULES =		devel/cargo

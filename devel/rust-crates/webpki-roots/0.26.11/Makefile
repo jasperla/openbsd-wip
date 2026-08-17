@@ -18,8 +18,8 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
-SITES =			https://static.crates.io/crates/webpki-roots/
-DISTFILES =		webpki-roots-0.26.11.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		webpki-roots-0.26.11.tar.gz{webpki-roots/0.26.11/download}
 WRKDIST =		${WRKDIR}/webpki-roots-0.26.11
 
 MODULES =		devel/cargo

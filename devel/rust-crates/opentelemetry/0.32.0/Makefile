@@ -18,8 +18,8 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
-SITES =			https://static.crates.io/crates/opentelemetry/
-DISTFILES =		opentelemetry-0.32.0.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		opentelemetry-0.32.0.tar.gz{opentelemetry/0.32.0/download}
 WRKDIST =		${WRKDIR}/opentelemetry-0.32.0
 
 MODULES =		devel/cargo

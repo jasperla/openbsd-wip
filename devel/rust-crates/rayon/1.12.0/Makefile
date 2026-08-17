@@ -18,8 +18,8 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
-SITES =			https://static.crates.io/crates/rayon/
-DISTFILES =		rayon-1.12.0.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		rayon-1.12.0.tar.gz{rayon/1.12.0/download}
 WRKDIST =		${WRKDIR}/rayon-1.12.0
 
 MODULES =		devel/cargo

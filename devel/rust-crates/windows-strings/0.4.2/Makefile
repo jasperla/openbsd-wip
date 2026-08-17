@@ -15,8 +15,8 @@ MAINTAINER =	Todd T. Fries <todd@fries.net>
 PERMIT_PACKAGE =	Yes
 
 DIST_SUBDIR =		cargo
-SITES =			https://static.crates.io/crates/windows-strings/
-DISTFILES =		windows-strings-0.4.2.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		windows-strings-0.4.2.tar.gz{windows-strings/0.4.2/download}
 WRKDIST =		${WRKDIR}/windows-strings-0.4.2
 
 NO_BUILD =		Yes

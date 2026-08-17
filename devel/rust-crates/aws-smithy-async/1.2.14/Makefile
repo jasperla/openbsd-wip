@@ -18,8 +18,8 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
-SITES =			https://static.crates.io/crates/aws-smithy-async/
-DISTFILES =		aws-smithy-async-1.2.14.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		aws-smithy-async-1.2.14.tar.gz{aws-smithy-async/1.2.14/download}
 WRKDIST =		${WRKDIR}/aws-smithy-async-1.2.14
 
 MODULES =		devel/cargo

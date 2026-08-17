@@ -18,8 +18,8 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
-SITES =			https://static.crates.io/crates/html5ever/
-DISTFILES =		html5ever-0.29.1.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		html5ever-0.29.1.tar.gz{html5ever/0.29.1/download}
 WRKDIST =		${WRKDIR}/html5ever-0.29.1
 
 MODULES =		devel/cargo

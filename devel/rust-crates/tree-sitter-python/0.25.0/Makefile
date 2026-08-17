@@ -18,8 +18,8 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
-SITES =			https://static.crates.io/crates/tree-sitter-python/
-DISTFILES =		tree-sitter-python-0.25.0.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		tree-sitter-python-0.25.0.tar.gz{tree-sitter-python/0.25.0/download}
 WRKDIST =		${WRKDIR}/tree-sitter-python-0.25.0
 
 MODULES =		devel/cargo

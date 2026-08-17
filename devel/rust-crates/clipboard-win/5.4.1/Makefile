@@ -15,8 +15,8 @@ MAINTAINER =	Todd T. Fries <todd@fries.net>
 PERMIT_PACKAGE =	Yes
 
 DIST_SUBDIR =		cargo
-SITES =			https://static.crates.io/crates/clipboard-win/
-DISTFILES =		clipboard-win-5.4.1.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		clipboard-win-5.4.1.tar.gz{clipboard-win/5.4.1/download}
 WRKDIST =		${WRKDIR}/clipboard-win-5.4.1
 
 NO_BUILD =		Yes

@@ -15,8 +15,8 @@ MAINTAINER =	Todd T. Fries <todd@fries.net>
 PERMIT_PACKAGE =	Yes
 
 DIST_SUBDIR =		cargo
-SITES =			https://static.crates.io/crates/ndk/
-DISTFILES =		ndk-0.8.0.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		ndk-0.8.0.tar.gz{ndk/0.8.0/download}
 WRKDIST =		${WRKDIR}/ndk-0.8.0
 
 NO_BUILD =		Yes

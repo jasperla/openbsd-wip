@@ -18,8 +18,8 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
-SITES =			https://static.crates.io/crates/ansi-to-tui/
-DISTFILES =		ansi-to-tui-7.0.0.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		ansi-to-tui-7.0.0.tar.gz{ansi-to-tui/7.0.0/download}
 WRKDIST =		${WRKDIR}/ansi-to-tui-7.0.0
 
 MODULES =		devel/cargo

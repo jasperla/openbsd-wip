@@ -18,8 +18,8 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
-SITES =			https://static.crates.io/crates/cmake/
-DISTFILES =		cmake-0.1.54.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		cmake-0.1.54.tar.gz{cmake/0.1.54/download}
 WRKDIST =		${WRKDIR}/cmake-0.1.54
 
 MODULES =		devel/cargo

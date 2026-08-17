@@ -15,8 +15,8 @@ MAINTAINER =	Todd T. Fries <todd@fries.net>
 PERMIT_PACKAGE =	Yes
 
 DIST_SUBDIR =		cargo
-SITES =			https://static.crates.io/crates/ndk-sys/
-DISTFILES =		ndk-sys-0.5.0+25.2.9519653.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		ndk-sys-0.5.0+25.2.9519653.tar.gz{ndk-sys/0.5.0+25.2.9519653/download}
 WRKDIST =		${WRKDIR}/ndk-sys-0.5.0+25.2.9519653
 
 NO_BUILD =		Yes

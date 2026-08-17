@@ -15,8 +15,8 @@ MAINTAINER =	Todd T. Fries <todd@fries.net>
 PERMIT_PACKAGE =	Yes
 
 DIST_SUBDIR =		cargo
-SITES =			https://static.crates.io/crates/hayro-jbig2/
-DISTFILES =		hayro-jbig2-0.3.0.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		hayro-jbig2-0.3.0.tar.gz{hayro-jbig2/0.3.0/download}
 WRKDIST =		${WRKDIR}/hayro-jbig2-0.3.0
 
 NO_BUILD =		Yes

@@ -15,8 +15,8 @@ MAINTAINER =	Todd T. Fries <todd@fries.net>
 PERMIT_PACKAGE =	Yes
 
 DIST_SUBDIR =		cargo
-SITES =			https://static.crates.io/crates/wasi/
-DISTFILES =		wasi-0.11.1+wasi-snapshot-preview1.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		wasi-0.11.1+wasi-snapshot-preview1.tar.gz{wasi/0.11.1+wasi-snapshot-preview1/download}
 WRKDIST =		${WRKDIR}/wasi-0.11.1+wasi-snapshot-preview1
 
 NO_BUILD =		Yes

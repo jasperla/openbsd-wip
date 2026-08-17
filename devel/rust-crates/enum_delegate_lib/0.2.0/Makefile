@@ -18,8 +18,8 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
-SITES =			https://static.crates.io/crates/enum_delegate_lib/
-DISTFILES =		enum_delegate_lib-0.2.0.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		enum_delegate_lib-0.2.0.tar.gz{enum_delegate_lib/0.2.0/download}
 WRKDIST =		${WRKDIR}/enum_delegate_lib-0.2.0
 
 MODULES =		devel/cargo

@@ -15,8 +15,8 @@ MAINTAINER =	Todd T. Fries <todd@fries.net>
 PERMIT_PACKAGE =	Yes
 
 DIST_SUBDIR =		cargo
-SITES =			https://static.crates.io/crates/oboe-sys/
-DISTFILES =		oboe-sys-0.6.1.tar.gz
+SITES =			https://crates.io/api/v1/crates/
+DISTFILES =		oboe-sys-0.6.1.tar.gz{oboe-sys/0.6.1/download}
 WRKDIST =		${WRKDIR}/oboe-sys-0.6.1
 
 NO_BUILD =		Yes
