@@ -20,8 +20,8 @@ USE_NOEXECONLY =	Yes
 #   toddfries branches voice-aucat and minimal-build (port patches +
 #   FILESDIR). Those branches stay separate in git; they are not merged
 #   into a dump for this flavor.
-# memeic: toddfries openbsd/memeic-typed-memory dump only (no voice-aucat
-#   or minimal-build overlays).
+# memeic: same default overlays + toddfries openbsd/memeic-typed-memory
+#   dump (memory bits). Omit only hunks already in that dump.
 #   env FLAVOR=memeic make package
 # Default PKGNAME/dist/crates.inc path unchanged when FLAVOR is empty.
 # memeic uses a separate dump and an explicit FULLPKGNAME. pkg/PLIST
@@ -43,12 +43,11 @@ COMMENT =		SpaceXAI grok (test: rust-crate-* seeds)
 #   plus port patches from branches voice-aucat + minimal-build
 #   product PKGNAME: grok-build-test-1.0.4 (tip d6a22a1)
 #
-# memeic flavor dump: toddfries openbsd/memeic-typed-memory ONLY.
+# memeic flavor: default overlays + toddfries openbsd/memeic-typed-memory.
 #   toddfries dump: 8bfc82e54129dfbcae0ba5a907d0104cdc7604ab
 #   xai-org base:   d6a22a1aed70b58d30a0f82a1a2a76ce1301631e
 #   (typed memory / connector commits; product 1.0.4)
 #   FULLPKGNAME: grok-build-test-memeic-1.0.4
-#   Do not overlay voice-aucat or minimal-build on this flavor.
 #
 # Keep memeic's xai-org base identical to stock whenever possible.
 # Both monorepo dumps live in distinfo; the inactive one is SUPDISTFILES so
@@ -171,14 +170,21 @@ CONFIGURE_STYLE =	cargo
 SEPARATE_BUILD =	Yes
 
 # Glob PATCH_LIST=patch-* is expanded too late for :N filtering.
-# Explicit lists so flavors do not cross-contaminate:
-#   default  = offline cargo + voice-aucat + minimal-build (not memeic)
-#   memeic   = offline cargo + modcargo + OpenBSD build.rs (rg bundle skip)
+# memeic = default list + memeic extras, minus hunks already in the
+# memeic dump (workspace_classifier BSD-home is already in 8bfc82e5).
 .if ${FLAVOR:L:Mmemeic}
 PATCH_LIST =	patch-Cargo_lock \
 		patch-Cargo_toml \
+		patch-crates_codegen_xai-fsnotify_src_handle_rs \
+		patch-crates_codegen_xai-grok-sandbox_Cargo_toml \
+		patch-crates_codegen_xai-grok-sandbox_src_lib_rs \
 		patch-crates_codegen_xai-grok-shell_build_rs \
 		patch-crates_codegen_xai-grok-tools_build_rs \
+		patch-crates_codegen_xai-grok-voice_Cargo_toml \
+		patch-crates_codegen_xai-grok-voice_src_audio_capture_openbsd_rs \
+		patch-crates_codegen_xai-grok-voice_src_audio_mod_rs \
+		patch-crates_codegen_xai-grok-voice_src_lib_rs \
+		patch-crates_codegen_xai-grok-voice_src_probe_rs \
 		patch-modcargo-crates_kqueue-1_1_1_src_lib_rs \
 		patch-modcargo-crates_mid-4_0_0_src_lib_rs \
 		patch-modcargo-crates_mid-4_0_0_src_other_rs \
@@ -235,13 +241,11 @@ post-extract:
 	sed -i 's/rust-version = { workspace = true }/rust-version = "1.75"/' \
 		${WRKSRC}/vendor/async-openai/async-openai/Cargo.toml \
 		${WRKSRC}/vendor/async-openai/async-openai-macros/Cargo.toml
-.if !${FLAVOR:L:Mmemeic}
-	# minimal-build sandbox backend — default flavor only
+	# minimal-build sandbox backend — both flavors
 	cp ${FILESDIR}/openbsd.rs \
 		${WRKSRC}/crates/codegen/xai-grok-sandbox/src/openbsd.rs
 	cp ${FILESDIR}/openbsd_sandbox_smoke.rs \
 		${WRKSRC}/crates/codegen/xai-grok-sandbox/examples/openbsd_sandbox_smoke.rs
-.endif
 	# Seed registry crates BEFORE patch (modcargo-crates/* patches need trees).
 	# Prefer DISTDIR/cargo; optional installed rust-crate-* packages.
 	@echo "[grok-build-test] seeding modcargo-crates (pkgs + DISTDIR/cargo)"
