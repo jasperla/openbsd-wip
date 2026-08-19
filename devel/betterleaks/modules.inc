@@ -105,15 +105,15 @@ MODGO_MODULES =	\
 	go4.org											 v0.0.0-20260112195520-a5071408f32f \
 	golang.org/x/crypto									 v0.53.0 \
 	golang.org/x/exp									 v0.0.0-20250218142911-aa4b98e5adaa \
-	golang.org/x/mod									 v0.36.0 \
+	golang.org/x/mod									 v0.37.0 \
 	golang.org/x/net									 v0.55.0 \
 	golang.org/x/oauth2									 v0.34.0 \
 	golang.org/x/sync									 v0.21.0 \
 	golang.org/x/sys									 v0.46.0 \
 	golang.org/x/term									 v0.44.0 \
-	golang.org/x/text									 v0.38.0 \
+	golang.org/x/text									 v0.39.0 \
 	golang.org/x/time									 v0.14.0 \
-	golang.org/x/tools									 v0.45.0 \
+	golang.org/x/tools									 v0.47.0 \
 	golang.org/x/xerrors									 v0.0.0-20191204190536-9bdfabe68543 \
 	google.golang.org/api									 v0.259.0 \
 	google.golang.org/genproto								 v0.0.0-20251202230838-ff82c1b0f217 \
@@ -182,6 +182,7 @@ MODGO_MODFILES =	\
 	golang.org/x/text		 v0.29.0 \
 	golang.org/x/text		 v0.32.0 \
 	golang.org/x/text		 v0.36.0 \
+	golang.org/x/text		 v0.38.0 \
 	golang.org/x/tools		 v0.26.0 \
 	golang.org/x/tools		 v0.30.0 \
 	gopkg.in/check.v1		 v0.0.0-20161208181325-20d25e280405 \
