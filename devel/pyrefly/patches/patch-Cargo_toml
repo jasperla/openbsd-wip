@@ -1,0 +1,12 @@
+Use local paths for crates
+
+Index: Cargo.toml
+--- Cargo.toml.orig
++++ Cargo.toml
+@@ -1,5 +1,5 @@
+ [patch.crates-io]
+-backtrace = { git = "https://github.com/rust-lang/backtrace-rs", rev = "df979dcf80027eb047d7bb9e0874710c15009f31" }
++backtrace = { path = "../backtrace-rs" }
+ 
+ [profile.release]
+ debug = 1

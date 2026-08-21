@@ -1,0 +1,3 @@
+Pyrefly is a type checker and language server for Python, which provides
+lightning-fast type checking along with IDE features such as code
+navigation, semantic highlighting, and code completion.
