@@ -26,24 +26,28 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB =	${MODCARGO_WANTLIB} m zstd
 
-BUILD_DEPENDS +=	archivers/zstd
-LIB_DEPENDS +=		${BUILD_DEPENDS}
+BUILD_DEPENDS+=	archivers/zstd
+LIB_DEPENDS +=	${BUILD_DEPENDS}
 
-MODULES =		devel/cargo
-CONFIGURE_STYLE =	cargo
+MODULES =	lang/python
+MODPY_PYBUILD =	maturin
 
 # For libzstd
 MODCARGO_RUSTFLAGS +=	-L${LOCALBASE}/lib
 
-SEPARATE_BUILD =	Yes
-
-do-install:
-	${INSTALL_PROGRAM} ${MODCARGO_TARGET_DIR}/release/pyrefly ${PREFIX}/bin/
+# Overriding MODCARGO_CARGOTOML doesn't work properly here as it would
+# result in incomplete output from modcargo-gen-crates.
+do-build:
+	${MODCARGO_CARGO_RUN} build \
+		--manifest-path ${WRKSRC}/pyrefly/Cargo.toml \
+		--release ${MODCARGO_BUILD_ARGS}
 
 # Tests failures for v1.2.0
 # test result: FAILED. 7438 passed; 2 failed; 3 ignored; 0 measured; 0 filtered out; finished in 821.57s
 # test::lsp::lsp_interaction::diagnostic::test_missing_source_for_stubs_diagnostic
 # test::lsp::lsp_interaction::diagnostic::test_missing_source_with_config_diagnostic_has_errors
+do-test:
+	@${MODCARGO_TEST_TARGET:S/maturin/cargo/}
 
 .include "crates.inc"
 
