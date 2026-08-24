@@ -1,0 +1,11 @@
+
+${PKGSTEM} combines the feature-set of prior forks 'scantailor-featured' and
+'scantailor-enhanced' and adds bugfixes and improvements including:
+
+- French, German, Polish and Korean translations
+- Black fill of defects in addition to 'background' and white
+- 1200dpi output option
+
+Supported input formats: jpg, png, tiff (not pnm)
+
+

@@ -1,0 +1,16 @@
+@bin bin/scantailor-advanced
+share/applications/scantailor-advanced.desktop
+share/icons/hicolor/scalable/apps/scantailor-advanced.svg
+share/mime/packages/scantailor-project.xml
+share/scantailor-advanced/
+share/scantailor-advanced/translations/
+share/scantailor-advanced/translations/scantailor-advanced_de.qm
+share/scantailor-advanced/translations/scantailor-advanced_es.qm
+share/scantailor-advanced/translations/scantailor-advanced_fr.qm
+share/scantailor-advanced/translations/scantailor-advanced_ko.qm
+share/scantailor-advanced/translations/scantailor-advanced_pl.qm
+share/scantailor-advanced/translations/scantailor-advanced_pt.qm
+share/scantailor-advanced/translations/scantailor-advanced_ru.qm
+@tag update-mime-database
+@tag update-desktop-database
+@tag gtk-update-icon-cache %D/share/icons/hicolor
