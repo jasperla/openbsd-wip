@@ -113,6 +113,7 @@ SHA256 (cargo/digest-0.11.3.tar.gz) = 8d1tu1hBk3lAeBhm+hKBof9707+CcJFECHn5mUmD1c
 SHA256 (cargo/displaydoc-0.2.6.tar.gz) = GscKpVAX4QgAf7r1qg9UsCHJj5L/ivWdQu2p2pbj3U8=
 SHA256 (cargo/dissimilar-1.0.11.tar.gz) = rtoWq0BZxf0qg/K5yenJgTJ7GKqOOzE/fmVjeZ1PCT4=
 SHA256 (cargo/document-features-0.2.12.tar.gz) = 1LiohoVFXtKaIVQqM6vZy2UQtrEpq62r3O8PTFW8j2E=
+SHA256 (cargo/dua-core-2.41.1.tar.gz) = 9etvz976+2Nq+jhYU19Vc3bp+1dd70zO+fG/DPqGRtY=
 SHA256 (cargo/dunce-1.0.5.tar.gz) = knc1BNWMCT9t4kWa9K8z+qUYwTRR648rVpjtPTbnyBM=
 SHA256 (cargo/either-1.16.0.tar.gz) = kWIv9ecWIBgQHy/qQNbr9KeLvlpJc2ogIGSe35aTZ54=
 SHA256 (cargo/encode_unicode-1.0.0.tar.gz) = NKpzZG/7AGuPUUfz3Bgr1LyxkCJ86GH8SkhEv448ssA=
@@ -156,7 +157,7 @@ SHA256 (cargo/getrandom-0.3.4.tar.gz) = iZ3vXDfE/XsmZGSMKBIOzsE45NOVtFnlyjT5zOLd
 SHA256 (cargo/getrandom-0.4.3.tar.gz) = MA6IPXVrLk7JTgJ5HzmwS1IidhOIUs/EHZ+36QQQYJk=
 SHA256 (cargo/glob-0.3.3.tar.gz) = DMIycPbhgI4wqSi9yE3qC5tBNqi8gjOFdPI7r0e70oA=
 SHA256 (cargo/gloo-timers-0.3.0.tar.gz) = u7FDz5YJmAIDPg1PSWOxn9Lgtyi88HbNnPf2Y08JKZQ=
-SHA256 (cargo/h2-0.4.15.tar.gz) = bLCTyE6L2bGI1MSoy2V5/AFpaNFMmYghY80/9AKk8VU=
+SHA256 (cargo/h2-0.4.16.tar.gz) = qfN6lYtBs7Ge4nB8BkOcDp5UfoRyI+t5HssMuCHGXic=
 SHA256 (cargo/half-2.7.1.tar.gz) = bqLYS5aVgrSxhkqS3F0nzSt3tiKo15MGg08b5bog2Es=
 SHA256 (cargo/hash32-0.3.1.tar.gz) = R9YLEpAroo4nMM036VuMkiOvKAjfnpAtTfSViNFHBgY=
 SHA256 (cargo/hashbrown-0.14.5.tar.gz) = 5SdEI+F7fJ/CC25+IIUy+bGYJdgt/WFXCLcO3YPfQfE=
@@ -216,7 +217,6 @@ SHA256 (cargo/jni-sys-0.4.1.tar.gz) = xjd6iMs5EL7psPqI1PQuHS2o55kVWY9l+wx+4UyHiv
 SHA256 (cargo/jni-sys-macros-0.4.1.tar.gz) = OMC5QvRY/lDNrAhtL5RlEjBeVjHnIHKPKmGqvNR6YmQ=
 SHA256 (cargo/jobserver-0.1.34.tar.gz) = mvs95Dldaz5np4C23mS1HJeOzxHLmkYsZr59TKkDnTM=
 SHA256 (cargo/js-sys-0.3.103.tar.gz) = U7RL/Ns/jVg3pG2uHKlmCoNxdu7nSiiyKbxiaBZYkQI=
-SHA256 (cargo/jwalk-0.8.1.tar.gz) = JzWEdWY1bNIXmio4Jkg5MI9wefqW5r1aQtdARg4APFY=
 SHA256 (cargo/kasuari-0.4.12.tar.gz) = veUFfWFDzJToYdkPWRuTA9ZxbGuWAjCRUL0GiFPBCJk=
 SHA256 (cargo/kv-log-macro-1.0.7.tar.gz) = DeizAyl2Na1XyfUFn9nO56R/jo2qCd8PzQfdOfsil38=
 SHA256 (cargo/layout-rs-0.1.3.tar.gz) = W4s4vGdmXjYut3DGtq6ItI0EDZSgoQxJBMN7x50mO5U=
@@ -515,7 +515,7 @@ SHA256 (cargo/zerovec-0.11.6.tar.gz) = kPkRy8NZq2rxc3fSQiJfTXURmuyH6nEaiAmHsYzXs
 SHA256 (cargo/zerovec-derive-0.11.3.tar.gz) = Yl3EJcqw3KbcPDMZUG5lk9ywip84fqOyhNvVKpLEBVU=
 SHA256 (cargo/zlib-rs-0.6.4.tar.gz) = l3NH24yqCAQD9ra3wc2pR5qOhpMW9+E6WbGQdqQPlOM=
 SHA256 (cargo/zmij-1.0.21.tar.gz) = uISO5n7Miu268+QSIhev+JJjkjG+/GobWNKf/0wsq6o=
-SHA256 (gitoxide-0.56.0.tar.gz) = lzMdZUJ5uK9dBwxtORxO3DQfp4T1x+YSAnjyO5JTfIQ=
+SHA256 (gitoxide-0.57.0.tar.gz) = qB2Y6Z+Rlk9EZ1qEUv/gHbvMBhmXRhrYJCHAy2G+rDI=
 SIZE (cargo/adler2-2.0.1.tar.gz) = 13366
 SIZE (cargo/aho-corasick-1.1.4.tar.gz) = 184015
 SIZE (cargo/alloca-0.4.0.tar.gz) = 4257
@@ -631,6 +631,7 @@ SIZE (cargo/digest-0.11.3.tar.gz) = 28955
 SIZE (cargo/displaydoc-0.2.6.tar.gz) = 21191
 SIZE (cargo/dissimilar-1.0.11.tar.gz) = 31622
 SIZE (cargo/document-features-0.2.12.tar.gz) = 14739
+SIZE (cargo/dua-core-2.41.1.tar.gz) = 21682
 SIZE (cargo/dunce-1.0.5.tar.gz) = 8244
 SIZE (cargo/either-1.16.0.tar.gz) = 21248
 SIZE (cargo/encode_unicode-1.0.0.tar.gz) = 56986
@@ -674,7 +675,7 @@ SIZE (cargo/getrandom-0.3.4.tar.gz) = 50932
 SIZE (cargo/getrandom-0.4.3.tar.gz) = 52437
 SIZE (cargo/glob-0.3.3.tar.gz) = 22861
 SIZE (cargo/gloo-timers-0.3.0.tar.gz) = 5530
-SIZE (cargo/h2-0.4.15.tar.gz) = 180875
+SIZE (cargo/h2-0.4.16.tar.gz) = 173331
 SIZE (cargo/half-2.7.1.tar.gz) = 61040
 SIZE (cargo/hash32-0.3.1.tar.gz) = 10273
 SIZE (cargo/hashbrown-0.14.5.tar.gz) = 141498
@@ -734,7 +735,6 @@ SIZE (cargo/jni-sys-0.4.1.tar.gz) = 13249
 SIZE (cargo/jni-sys-macros-0.4.1.tar.gz) = 3301
 SIZE (cargo/jobserver-0.1.34.tar.gz) = 29013
 SIZE (cargo/js-sys-0.3.103.tar.gz) = 108366
-SIZE (cargo/jwalk-0.8.1.tar.gz) = 39882
 SIZE (cargo/kasuari-0.4.12.tar.gz) = 32684
 SIZE (cargo/kv-log-macro-1.0.7.tar.gz) = 16842
 SIZE (cargo/layout-rs-0.1.3.tar.gz) = 44605
@@ -1033,4 +1033,4 @@ SIZE (cargo/zerovec-0.11.6.tar.gz) = 128583
 SIZE (cargo/zerovec-derive-0.11.3.tar.gz) = 22115
 SIZE (cargo/zlib-rs-0.6.4.tar.gz) = 213728
 SIZE (cargo/zmij-1.0.21.tar.gz) = 26665
-SIZE (gitoxide-0.56.0.tar.gz) = 15950202
+SIZE (gitoxide-0.57.0.tar.gz) = 17409409
