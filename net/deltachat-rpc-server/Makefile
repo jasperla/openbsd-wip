@@ -6,13 +6,15 @@ COMMENT =		Deltachat JSON-RPC Server
 USE_NOEXECONLY =        Yes
 .endif
 
-PKGNAME =		deltachat-rpc-server-2.53.0
+PKGNAME =		deltachat-rpc-server-2.59.0
 
 GH_ACCOUNT =		chatmail
 GH_PROJECT =		core
-GH_TAGNAME =		v2.53.0
+GH_TAGNAME =		v2.59.0
 
 CATEGORIES =		net
+MAINTAINER =		Chris Billington <emulti@disroot.org>
+HOMEPAGE =		https://chatmail.at/
 
 # MPL-2.0
 PERMIT_PACKAGE =	Yes
@@ -44,6 +46,7 @@ do-install:
 
 # Tests require network access
 MODCARGO_TEST =	No
+
 # test output debugging if tests run
 #MODCARGO_TEST_ARGS = -- --no-capture --test-threads 1
 
