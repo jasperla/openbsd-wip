@@ -18,6 +18,7 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
+# crates.io serves displaydoc/0.2.5/download (403 on …/name-ver.tar.gz).
 SITES =			https://crates.io/api/v1/crates/
 DISTFILES =		displaydoc-0.2.5.tar.gz{displaydoc/0.2.5/download}
 WRKDIST =		${WRKDIR}/displaydoc-0.2.5

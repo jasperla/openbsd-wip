@@ -18,6 +18,7 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
+# crates.io serves sha1_smol/1.0.1/download (403 on …/name-ver.tar.gz).
 SITES =			https://crates.io/api/v1/crates/
 DISTFILES =		sha1_smol-1.0.1.tar.gz{sha1_smol/1.0.1/download}
 WRKDIST =		${WRKDIR}/sha1_smol-1.0.1

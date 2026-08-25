@@ -18,6 +18,7 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
+# crates.io serves serde/1.0.228/download (403 on …/name-ver.tar.gz).
 SITES =			https://crates.io/api/v1/crates/
 DISTFILES =		serde-1.0.228.tar.gz{serde/1.0.228/download}
 WRKDIST =		${WRKDIR}/serde-1.0.228

@@ -18,6 +18,7 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
+# crates.io serves libmimalloc-sys/0.1.44/download (403 on …/name-ver.tar.gz).
 SITES =			https://crates.io/api/v1/crates/
 DISTFILES =		libmimalloc-sys-0.1.44.tar.gz{libmimalloc-sys/0.1.44/download}
 WRKDIST =		${WRKDIR}/libmimalloc-sys-0.1.44

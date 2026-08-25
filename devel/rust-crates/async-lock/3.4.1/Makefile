@@ -18,6 +18,7 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
+# crates.io serves async-lock/3.4.1/download (403 on …/name-ver.tar.gz).
 SITES =			https://crates.io/api/v1/crates/
 DISTFILES =		async-lock-3.4.1.tar.gz{async-lock/3.4.1/download}
 WRKDIST =		${WRKDIR}/async-lock-3.4.1

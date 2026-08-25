@@ -18,6 +18,7 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
+# crates.io serves fastrand/2.3.0/download (403 on …/name-ver.tar.gz).
 SITES =			https://crates.io/api/v1/crates/
 DISTFILES =		fastrand-2.3.0.tar.gz{fastrand/2.3.0/download}
 WRKDIST =		${WRKDIR}/fastrand-2.3.0

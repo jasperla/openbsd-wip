@@ -18,6 +18,7 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
+# crates.io serves zerovec/0.11.4/download (403 on …/name-ver.tar.gz).
 SITES =			https://crates.io/api/v1/crates/
 DISTFILES =		zerovec-0.11.4.tar.gz{zerovec/0.11.4/download}
 WRKDIST =		${WRKDIR}/zerovec-0.11.4

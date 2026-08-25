@@ -18,6 +18,7 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
+# crates.io serves crossbeam-channel/0.5.15/download (403 on …/name-ver.tar.gz).
 SITES =			https://crates.io/api/v1/crates/
 DISTFILES =		crossbeam-channel-0.5.15.tar.gz{crossbeam-channel/0.5.15/download}
 WRKDIST =		${WRKDIR}/crossbeam-channel-0.5.15

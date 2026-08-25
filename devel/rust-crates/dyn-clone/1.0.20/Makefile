@@ -18,6 +18,7 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
+# crates.io serves dyn-clone/1.0.20/download (403 on …/name-ver.tar.gz).
 SITES =			https://crates.io/api/v1/crates/
 DISTFILES =		dyn-clone-1.0.20.tar.gz{dyn-clone/1.0.20/download}
 WRKDIST =		${WRKDIR}/dyn-clone-1.0.20

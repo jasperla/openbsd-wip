@@ -18,6 +18,7 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
+# crates.io serves elliptic-curve/0.13.8/download (403 on …/name-ver.tar.gz).
 SITES =			https://crates.io/api/v1/crates/
 DISTFILES =		elliptic-curve-0.13.8.tar.gz{elliptic-curve/0.13.8/download}
 WRKDIST =		${WRKDIR}/elliptic-curve-0.13.8

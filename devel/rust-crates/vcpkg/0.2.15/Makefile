@@ -18,6 +18,7 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
+# crates.io serves vcpkg/0.2.15/download (403 on …/name-ver.tar.gz).
 SITES =			https://crates.io/api/v1/crates/
 DISTFILES =		vcpkg-0.2.15.tar.gz{vcpkg/0.2.15/download}
 WRKDIST =		${WRKDIR}/vcpkg-0.2.15

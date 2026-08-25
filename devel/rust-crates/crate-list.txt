@@ -297,6 +297,7 @@ indoc-2.0.7
 rapidhash-4.2.0
 ryu-1.0.20
 ryu-js-1.0.2
+scoped-tls-1.0.1
 scopeguard-1.2.0
 lock_api-0.4.14
 kanal-0.1.1
@@ -868,6 +869,7 @@ bzip2-0.5.2
 cmake-0.1.54
 aws-lc-sys-0.39.1
 findshlibs-0.10.2
+generator-0.8.9
 iana-time-zone-haiku-0.1.2
 iana-time-zone-0.1.64
 chrono-0.4.44
@@ -1112,6 +1114,7 @@ anstyle-syntect-1.0.4
 tinytemplate-1.2.1
 criterion-0.6.0
 tracing-subscriber-0.3.23
+loom-0.7.2
 tracing-appender-0.2.4
 tracing-chrome-0.7.2
 tracing-opentelemetry-0.33.0

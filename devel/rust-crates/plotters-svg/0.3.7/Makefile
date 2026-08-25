@@ -18,6 +18,7 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
+# crates.io serves plotters-svg/0.3.7/download (403 on …/name-ver.tar.gz).
 SITES =			https://crates.io/api/v1/crates/
 DISTFILES =		plotters-svg-0.3.7.tar.gz{plotters-svg/0.3.7/download}
 WRKDIST =		${WRKDIR}/plotters-svg-0.3.7

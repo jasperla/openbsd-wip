@@ -1,4 +1,5 @@
 SHA256 (async-openai-95b52eb.tar.gz) = 0vbHeT1ms+7CeFtd9Q26C7mLJQDtm+MhhY+UD2hZOrg=
+SHA256 (nucleo-5b74652.tar.gz) = zArM7eOSASh/G0m1zv4kzqwrMbPtgrqwjC+8zs1G6M0=
 SHA256 (cargo/addr2line-0.25.1.tar.gz) = G10wcyCzGB1teVTmY718d0qDi4Ig/gWTyG2fsJ9Ji0s=
 SHA256 (cargo/adler2-2.0.1.tar.gz) = MgEZV5/K2cIYhPXEhh0WF00OBiUGJSZvUP5omDQKvvo=
 SHA256 (cargo/aes-0.8.4.tar.gz) = sWn3ptR0IjagoAxUG4RZkdCsQ+VGgxrxJJdTq0w6o6A=
@@ -349,6 +350,7 @@ SHA256 (cargo/fxhash-0.2.1.tar.gz) = wxttdRrix/ETIEAtNOQTSd0QFvjV1F5IxDEryGJa9Qw
 SHA256 (cargo/gcloud-auth-1.3.0.tar.gz) = tDkk498CyzuEbKZqfuWOjBPrJVbQMIxx9hVAg/aYA2U=
 SHA256 (cargo/gcloud-metadata-1.0.2.tar.gz) = vTFSYSMWvmJ75S/pynIzHrSEJQWbOmpwDnrd4iPgYdU=
 SHA256 (cargo/gcloud-storage-1.3.0.tar.gz) = 4X+WYqaWZALekdrw7bWsyq4FyH8ahUeeV7ldKvcoS58=
+SHA256 (cargo/generator-0.8.9.tar.gz) = s7hUsOWE6tGjPxiy/K18974Ys4dceIFrdTY5qlAVE64=
 SHA256 (cargo/generic-array-0.14.7.tar.gz) = hWScpR/XInLXghra8nStkcKIJ3cT2cGIINhJmn/2npo=
 SHA256 (cargo/gethostname-1.1.0.tar.gz) = G9SSMBkqN5eppNar6bPu1vf6TIqKSUeXfG+AAl+Sy9g=
 SHA256 (cargo/getopts-0.2.24.tar.gz) = z+T7rFA7jR+I5mdgEYhfNLcXT0blmVa7pTS6g6ve1N8=
@@ -537,6 +539,7 @@ SHA256 (cargo/litemap-0.8.0.tar.gz) = JB6u9f0SyIcFoB/BBmxIxLNuDdQ3fc3H7DlCzqemmV
 SHA256 (cargo/litrs-1.0.0.tar.gz) = EdPX8kPVxai5u11t0rFgLAywudsWIbr8ftZuNf+f4JI=
 SHA256 (cargo/lock_api-0.4.14.tar.gz) = IkOZ50uHtfNVdRHZjf+LFAibPa2vyra7k+q2fTqs6WU=
 SHA256 (cargo/log-0.4.32.tar.gz) = lT8HxDg4+Ob5dYyraL9b7YVGXnWH6+C4I/G82Bl4rTo=
+SHA256 (cargo/loom-0.7.2.tar.gz) = QZ4NyARsuUfap365WuF0rPvdt2c7QVH1bR7tjpP7+so=
 SHA256 (cargo/lru-0.12.5.tar.gz) = I0z09KBNwfV+JLlswM1gDPKvRg1BYaxezdCvjh87Kjg=
 SHA256 (cargo/lru-0.16.3.tar.gz) = odxH9ZLAbzP4466pWRd27HyfnkEkd4/4o8O4cVn35ZM=
 SHA256 (cargo/lru-slab-0.1.2.tar.gz) = ESs5zsCymLbBmZ/uPjFCf3T2duTLmHntGhIbQ2YaQVQ=
@@ -815,6 +818,7 @@ SHA256 (cargo/schemars-0.8.22.tar.gz) = P78q4bi8jgLfk5WYBk0iQCIgzVu8yhx299ajEJdN
 SHA256 (cargo/schemars-1.0.4.tar.gz) = gtIMRJG8Fk+i9sXURWWUelKtgLlQXY42+NVMJ8c5/NA=
 SHA256 (cargo/schemars_derive-0.8.22.tar.gz) = MuJleErWGIhKuuoGAKmt8VOTNo2EDgIi0QGgcvP3U00=
 SHA256 (cargo/schemars_derive-1.0.4.tar.gz) = M9AgOW0dE43BnxFl33VFR53NWNk4ENxdZGoW5Vq++oA=
+SHA256 (cargo/scoped-tls-1.0.1.tar.gz) = 4c9kN+sZqPSmzA99ylRJc7C3iEOtv+s2g9GpSgAkopQ=
 SHA256 (cargo/scopeguard-1.2.0.tar.gz) = lBQ/N3JRCfksJi7Sz15ZvOdJjAG8wVAte5r+Q5pOn0k=
 SHA256 (cargo/scraper-0.23.1.tar.gz) = Un5l2diIVnWI20wS2hCHWY0Pb4s0bMLFq8kfBfwt/+I=
 SHA256 (cargo/sdd-3.0.10.tar.gz) = SQ3Py/7ya+aADRGHD/Lfh3T6bobQR+PoyKdrJWVeQco=
@@ -1220,10 +1224,10 @@ SHA256 (cargo/zune-jpeg-0.5.15.tar.gz) = J7ydW4FbwQPxQqoFT1YdkYfRkWkux8LR4rRzf42
 SHA256 (cargo/zvariant-5.10.0.tar.gz) = VwgpmyGQO740jpRynyLEnFXQRyCgBKo1Dx+cEi/SVAs=
 SHA256 (cargo/zvariant_derive-5.10.0.tar.gz) = W1mwEuvpxGZW+cwI2NqLTHJlEK7xJVnaPl8b9yeAdSw=
 SHA256 (cargo/zvariant_utils-3.3.0.tar.gz) = 91wjpk749A8TppiZkeZDVU2b7x1oKigRYM8MG8OJxek=
-SHA256 (nucleo-5b74652.tar.gz) = zArM7eOSASh/G0m1zv4kzqwrMbPtgrqwjC+8zs1G6M0=
-SHA256 (toddfries-grok-build-8bfc82e54129dfbcae0ba5a907d0104cdc7604ab.tar.gz) = 73iy4ULFriEIU93tNrv0Ffxrs1ft9TuBkw5rwWQWwBo=
-SHA256 (xai-org-grok-build-d6a22a1aed70b58d30a0f82a1a2a76ce1301631e.tar.gz) = YTdsexTlYvug+fZxBpFlGiBZHC3miG+m8quMHErIErI=
+SHA256 (toddfries-grok-build-7bf0928882d5ca7147da4d3b399673737df0e0ed.tar.gz) = xjkaFfT5o2bTEoDNx59mAohKC7SB1jDiIYWUXpThbdI=
+SHA256 (xai-org-grok-build-c2ad97f87aea4303b6000a2c22128bc91ee76c9b.tar.gz) = 4Zxll3HuBaFGMCqr1EOoH5ipAkl86Ix1GUTOnHKCIng=
 SIZE (async-openai-95b52eb.tar.gz) = 28205999
+SIZE (nucleo-5b74652.tar.gz) = 86764
 SIZE (cargo/addr2line-0.25.1.tar.gz) = 43134
 SIZE (cargo/adler2-2.0.1.tar.gz) = 13366
 SIZE (cargo/aes-0.8.4.tar.gz) = 124812
@@ -1574,6 +1578,7 @@ SIZE (cargo/fxhash-0.2.1.tar.gz) = 4102
 SIZE (cargo/gcloud-auth-1.3.0.tar.gz) = 40157
 SIZE (cargo/gcloud-metadata-1.0.2.tar.gz) = 10095
 SIZE (cargo/gcloud-storage-1.3.0.tar.gz) = 71778
+SIZE (cargo/generator-0.8.9.tar.gz) = 41533
 SIZE (cargo/generic-array-0.14.7.tar.gz) = 15950
 SIZE (cargo/gethostname-1.1.0.tar.gz) = 9865
 SIZE (cargo/getopts-0.2.24.tar.gz) = 21467
@@ -1762,6 +1767,7 @@ SIZE (cargo/litemap-0.8.0.tar.gz) = 34344
 SIZE (cargo/litrs-1.0.0.tar.gz) = 46610
 SIZE (cargo/lock_api-0.4.14.tar.gz) = 29249
 SIZE (cargo/log-0.4.32.tar.gz) = 52697
+SIZE (cargo/loom-0.7.2.tar.gz) = 73989
 SIZE (cargo/lru-0.12.5.tar.gz) = 16047
 SIZE (cargo/lru-0.16.3.tar.gz) = 16743
 SIZE (cargo/lru-slab-0.1.2.tar.gz) = 9090
@@ -2040,6 +2046,7 @@ SIZE (cargo/schemars-0.8.22.tar.gz) = 59214
 SIZE (cargo/schemars-1.0.4.tar.gz) = 88282
 SIZE (cargo/schemars_derive-0.8.22.tar.gz) = 19542
 SIZE (cargo/schemars_derive-1.0.4.tar.gz) = 31126
+SIZE (cargo/scoped-tls-1.0.1.tar.gz) = 8202
 SIZE (cargo/scopeguard-1.2.0.tar.gz) = 11619
 SIZE (cargo/scraper-0.23.1.tar.gz) = 24157
 SIZE (cargo/sdd-3.0.10.tar.gz) = 32748
@@ -2445,6 +2452,5 @@ SIZE (cargo/zune-jpeg-0.5.15.tar.gz) = 88879
 SIZE (cargo/zvariant-5.10.0.tar.gz) = 93150
 SIZE (cargo/zvariant_derive-5.10.0.tar.gz) = 16592
 SIZE (cargo/zvariant_utils-3.3.0.tar.gz) = 15417
-SIZE (nucleo-5b74652.tar.gz) = 86764
-SIZE (toddfries-grok-build-8bfc82e54129dfbcae0ba5a907d0104cdc7604ab.tar.gz) = 14312416
-SIZE (xai-org-grok-build-d6a22a1aed70b58d30a0f82a1a2a76ce1301631e.tar.gz) = 14286769
+SIZE (toddfries-grok-build-7bf0928882d5ca7147da4d3b399673737df0e0ed.tar.gz) = 14888503
+SIZE (xai-org-grok-build-c2ad97f87aea4303b6000a2c22128bc91ee76c9b.tar.gz) = 14864031

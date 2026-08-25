@@ -18,6 +18,7 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
+# crates.io serves encoding_rs/0.8.35/download (403 on …/name-ver.tar.gz).
 SITES =			https://crates.io/api/v1/crates/
 DISTFILES =		encoding_rs-0.8.35.tar.gz{encoding_rs/0.8.35/download}
 WRKDIST =		${WRKDIR}/encoding_rs-0.8.35

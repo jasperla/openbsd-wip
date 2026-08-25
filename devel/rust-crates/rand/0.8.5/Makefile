@@ -18,6 +18,7 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
+# crates.io serves rand/0.8.5/download (403 on …/name-ver.tar.gz).
 SITES =			https://crates.io/api/v1/crates/
 DISTFILES =		rand-0.8.5.tar.gz{rand/0.8.5/download}
 WRKDIST =		${WRKDIR}/rand-0.8.5
@@ -320,7 +321,7 @@ do-build:
 		${LOCALBASE}/bin/cargo build --release --offline \
 			--manifest-path Cargo.toml \
 			--config ${WRKDIR}/.cargo/config.toml \
-			--features getrandom
+			
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/modcargo-crates

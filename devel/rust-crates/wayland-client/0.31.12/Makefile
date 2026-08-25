@@ -18,6 +18,7 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
+# crates.io serves wayland-client/0.31.12/download (403 on …/name-ver.tar.gz).
 SITES =			https://crates.io/api/v1/crates/
 DISTFILES =		wayland-client-0.31.12.tar.gz{wayland-client/0.31.12/download}
 WRKDIST =		${WRKDIR}/wayland-client-0.31.12

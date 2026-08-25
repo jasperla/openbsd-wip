@@ -18,6 +18,7 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
+# crates.io serves wiremock/0.6.5/download (403 on …/name-ver.tar.gz).
 SITES =			https://crates.io/api/v1/crates/
 DISTFILES =		wiremock-0.6.5.tar.gz{wiremock/0.6.5/download}
 WRKDIST =		${WRKDIR}/wiremock-0.6.5

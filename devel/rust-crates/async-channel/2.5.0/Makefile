@@ -18,6 +18,7 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
+# crates.io serves async-channel/2.5.0/download (403 on …/name-ver.tar.gz).
 SITES =			https://crates.io/api/v1/crates/
 DISTFILES =		async-channel-2.5.0.tar.gz{async-channel/2.5.0/download}
 WRKDIST =		${WRKDIR}/async-channel-2.5.0

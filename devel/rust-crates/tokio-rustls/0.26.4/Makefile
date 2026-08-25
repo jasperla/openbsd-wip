@@ -18,6 +18,7 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
+# crates.io serves tokio-rustls/0.26.4/download (403 on …/name-ver.tar.gz).
 SITES =			https://crates.io/api/v1/crates/
 DISTFILES =		tokio-rustls-0.26.4.tar.gz{tokio-rustls/0.26.4/download}
 WRKDIST =		${WRKDIR}/tokio-rustls-0.26.4

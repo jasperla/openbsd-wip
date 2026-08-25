@@ -18,6 +18,7 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
+# crates.io serves maybe-async/0.2.10/download (403 on …/name-ver.tar.gz).
 SITES =			https://crates.io/api/v1/crates/
 DISTFILES =		maybe-async-0.2.10.tar.gz{maybe-async/0.2.10/download}
 WRKDIST =		${WRKDIR}/maybe-async-0.2.10

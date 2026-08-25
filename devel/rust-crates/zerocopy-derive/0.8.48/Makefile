@@ -18,6 +18,7 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
+# crates.io serves zerocopy-derive/0.8.48/download (403 on …/name-ver.tar.gz).
 SITES =			https://crates.io/api/v1/crates/
 DISTFILES =		zerocopy-derive-0.8.48.tar.gz{zerocopy-derive/0.8.48/download}
 WRKDIST =		${WRKDIR}/zerocopy-derive-0.8.48

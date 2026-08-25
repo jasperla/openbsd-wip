@@ -54,6 +54,27 @@ while read -r base; do
 	[ "$i" -ge "$NPROC" ] && { wait || true; i=0; }
 done <"$TMP/list"
 wait || true
+# smartstring 1.0.1: autocfg Allocator probe is true on rustc 1.97 but
+# alloc::alloc::Allocator stays nightly (E0658). Neuter cfg emission.
+smartstring_cksum_fix() {
+	_crate="$DEST/smartstring-1.0.1"
+	[ -f "$_crate/build.rs" ] || return 0
+	sed -i.bak -e 's/autocfg::emit("has_allocator")/autocfg::emit("has_allocator_disabled")/' \
+		"$_crate/build.rs"
+	rm -f "$_crate/build.rs.bak"
+	python3 - "$_crate" <<'PY'
+import json, hashlib, sys
+crate = sys.argv[1]
+ck = crate + "/.cargo-checksum.json"
+try:
+    data = json.load(open(ck))
+except OSError:
+    sys.exit(0)
+data["files"]["build.rs"] = hashlib.sha256(open(crate + "/build.rs", "rb").read()).hexdigest()
+json.dump(data, open(ck, "w"))
+PY
+}
+smartstring_cksum_fix
 ok=$(wc -l <"$TMP/ok" | tr -d ' ')
 fail=$(wc -l <"$TMP/fail" | tr -d ' ')
 echo "seed-modcargo: ready $ok ok, ${fail:-0} fail"

@@ -18,6 +18,7 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
+# crates.io serves sigstore-trust-root/0.6.3/download (403 on …/name-ver.tar.gz).
 SITES =			https://crates.io/api/v1/crates/
 DISTFILES =		sigstore-trust-root-0.6.3.tar.gz{sigstore-trust-root/0.6.3/download}
 WRKDIST =		${WRKDIR}/sigstore-trust-root-0.6.3

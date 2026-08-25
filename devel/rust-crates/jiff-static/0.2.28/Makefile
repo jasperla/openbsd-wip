@@ -18,6 +18,7 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
+# crates.io serves jiff-static/0.2.28/download (403 on …/name-ver.tar.gz).
 SITES =			https://crates.io/api/v1/crates/
 DISTFILES =		jiff-static-0.2.28.tar.gz{jiff-static/0.2.28/download}
 WRKDIST =		${WRKDIR}/jiff-static-0.2.28

@@ -18,6 +18,7 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
+# crates.io serves futures-lite/2.6.1/download (403 on …/name-ver.tar.gz).
 SITES =			https://crates.io/api/v1/crates/
 DISTFILES =		futures-lite-2.6.1.tar.gz{futures-lite/2.6.1/download}
 WRKDIST =		${WRKDIR}/futures-lite-2.6.1

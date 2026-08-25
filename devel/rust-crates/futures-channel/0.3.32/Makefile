@@ -18,6 +18,7 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
+# crates.io serves futures-channel/0.3.32/download (403 on …/name-ver.tar.gz).
 SITES =			https://crates.io/api/v1/crates/
 DISTFILES =		futures-channel-0.3.32.tar.gz{futures-channel/0.3.32/download}
 WRKDIST =		${WRKDIR}/futures-channel-0.3.32

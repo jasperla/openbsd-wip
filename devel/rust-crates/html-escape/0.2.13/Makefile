@@ -18,6 +18,7 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
+# crates.io serves html-escape/0.2.13/download (403 on …/name-ver.tar.gz).
 SITES =			https://crates.io/api/v1/crates/
 DISTFILES =		html-escape-0.2.13.tar.gz{html-escape/0.2.13/download}
 WRKDIST =		${WRKDIR}/html-escape-0.2.13

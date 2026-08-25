@@ -1,0 +1,3 @@
+share/modcargo-crates/scoped-tls-1.0.1.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/scoped-tls-1.0.1/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/scoped-tls-1.0.1/libscoped_tls.rlib

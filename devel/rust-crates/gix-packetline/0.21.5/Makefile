@@ -18,6 +18,7 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
+# crates.io serves gix-packetline/0.21.5/download (403 on …/name-ver.tar.gz).
 SITES =			https://crates.io/api/v1/crates/
 DISTFILES =		gix-packetline-0.21.5.tar.gz{gix-packetline/0.21.5/download}
 WRKDIST =		${WRKDIR}/gix-packetline-0.21.5

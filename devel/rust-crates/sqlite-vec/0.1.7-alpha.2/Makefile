@@ -18,6 +18,7 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
+# crates.io serves sqlite-vec/0.1.7-alpha.2/download (403 on …/name-ver.tar.gz).
 SITES =			https://crates.io/api/v1/crates/
 DISTFILES =		sqlite-vec-0.1.7-alpha.2.tar.gz{sqlite-vec/0.1.7-alpha.2/download}
 WRKDIST =		${WRKDIR}/sqlite-vec-0.1.7-alpha.2

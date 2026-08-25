@@ -18,6 +18,7 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
+# crates.io serves num_cpus/1.17.0/download (403 on …/name-ver.tar.gz).
 SITES =			https://crates.io/api/v1/crates/
 DISTFILES =		num_cpus-1.17.0.tar.gz{num_cpus/1.17.0/download}
 WRKDIST =		${WRKDIR}/num_cpus-1.17.0

@@ -18,6 +18,7 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
+# crates.io serves zune-jpeg/0.5.15/download (403 on …/name-ver.tar.gz).
 SITES =			https://crates.io/api/v1/crates/
 DISTFILES =		zune-jpeg-0.5.15.tar.gz{zune-jpeg/0.5.15/download}
 WRKDIST =		${WRKDIR}/zune-jpeg-0.5.15

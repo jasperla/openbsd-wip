@@ -18,6 +18,7 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
+# crates.io serves iana-time-zone/0.1.64/download (403 on …/name-ver.tar.gz).
 SITES =			https://crates.io/api/v1/crates/
 DISTFILES =		iana-time-zone-0.1.64.tar.gz{iana-time-zone/0.1.64/download}
 WRKDIST =		${WRKDIR}/iana-time-zone-0.1.64

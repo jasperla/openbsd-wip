@@ -18,6 +18,7 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
+# crates.io serves zstd-sys/2.0.16+zstd.1.5.7/download (403 on …/name-ver.tar.gz).
 SITES =			https://crates.io/api/v1/crates/
 DISTFILES =		zstd-sys-2.0.16+zstd.1.5.7.tar.gz{zstd-sys/2.0.16+zstd.1.5.7/download}
 WRKDIST =		${WRKDIR}/zstd-sys-2.0.16+zstd.1.5.7

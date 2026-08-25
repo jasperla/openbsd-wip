@@ -18,6 +18,7 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
+# crates.io serves fiat-crypto/0.2.9/download (403 on …/name-ver.tar.gz).
 SITES =			https://crates.io/api/v1/crates/
 DISTFILES =		fiat-crypto-0.2.9.tar.gz{fiat-crypto/0.2.9/download}
 WRKDIST =		${WRKDIR}/fiat-crypto-0.2.9

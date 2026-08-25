@@ -18,6 +18,7 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
+# crates.io serves crossbeam-deque/0.8.6/download (403 on …/name-ver.tar.gz).
 SITES =			https://crates.io/api/v1/crates/
 DISTFILES =		crossbeam-deque-0.8.6.tar.gz{crossbeam-deque/0.8.6/download}
 WRKDIST =		${WRKDIR}/crossbeam-deque-0.8.6

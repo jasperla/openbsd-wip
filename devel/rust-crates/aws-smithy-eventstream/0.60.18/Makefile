@@ -18,6 +18,7 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
+# crates.io serves aws-smithy-eventstream/0.60.18/download (403 on …/name-ver.tar.gz).
 SITES =			https://crates.io/api/v1/crates/
 DISTFILES =		aws-smithy-eventstream-0.60.18.tar.gz{aws-smithy-eventstream/0.60.18/download}
 WRKDIST =		${WRKDIR}/aws-smithy-eventstream-0.60.18

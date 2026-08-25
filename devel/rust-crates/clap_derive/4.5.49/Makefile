@@ -18,6 +18,7 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
+# crates.io serves clap_derive/4.5.49/download (403 on …/name-ver.tar.gz).
 SITES =			https://crates.io/api/v1/crates/
 DISTFILES =		clap_derive-4.5.49.tar.gz{clap_derive/4.5.49/download}
 WRKDIST =		${WRKDIR}/clap_derive-4.5.49

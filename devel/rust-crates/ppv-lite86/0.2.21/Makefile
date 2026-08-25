@@ -18,6 +18,7 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
+# crates.io serves ppv-lite86/0.2.21/download (403 on …/name-ver.tar.gz).
 SITES =			https://crates.io/api/v1/crates/
 DISTFILES =		ppv-lite86-0.2.21.tar.gz{ppv-lite86/0.2.21/download}
 WRKDIST =		${WRKDIR}/ppv-lite86-0.2.21

@@ -18,6 +18,7 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
+# crates.io serves ecdsa/0.16.9/download (403 on …/name-ver.tar.gz).
 SITES =			https://crates.io/api/v1/crates/
 DISTFILES =		ecdsa-0.16.9.tar.gz{ecdsa/0.16.9/download}
 WRKDIST =		${WRKDIR}/ecdsa-0.16.9

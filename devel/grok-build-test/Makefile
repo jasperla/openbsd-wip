@@ -39,34 +39,34 @@ COMMENT =		SpaceXAI grok (test: rust-crate-* seeds)
 # Dump pins — always name BOTH the dump commit AND its xai-org base.
 #
 # Default flavor dump: pure xai-org monorepo (OpenBSD bits via patches).
-#   xai-org commit: d6a22a1aed70b58d30a0f82a1a2a76ce1301631e
+#   xai-org commit: c2ad97f87aea4303b6000a2c22128bc91ee76c9b
 #   plus port patches from branches voice-aucat + minimal-build
-#   product PKGNAME: grok-build-test-1.0.4 (tip d6a22a1)
+#   product PKGNAME: grok-build-test-1.0.8 (tip c2ad97f)
 #
 # memeic flavor: default overlays + toddfries openbsd/memeic-typed-memory.
-#   toddfries dump: 8bfc82e54129dfbcae0ba5a907d0104cdc7604ab
-#   xai-org base:   d6a22a1aed70b58d30a0f82a1a2a76ce1301631e
-#   (typed memory / connector commits; product 1.0.4)
-#   FULLPKGNAME: grok-build-test-memeic-1.0.4
+#   toddfries dump: 7bf0928882d5ca7147da4d3b399673737df0e0ed
+#   xai-org base:   c2ad97f87aea4303b6000a2c22128bc91ee76c9b
+#   (typed memory / connector commits; product 1.0.8)
+#   FULLPKGNAME: grok-build-test-memeic-1.0.8
 #
 # Keep memeic's xai-org base identical to stock whenever possible.
 # Both monorepo dumps live in distinfo; the inactive one is SUPDISTFILES so
 # checksum does not flag it as "extra" for the other flavor.
-_GROK_DUMP_STOCK =xai-org-grok-build-19d42e35c07a9c9244f03f6df0c4c353f970d4f9.tar.gz
-_GROK_DUMP_MEMEIC =toddfries-grok-build-19d42e35c07a9c9244f03f6df0c4c353f970d4f9.tar.gz
+_GROK_DUMP_STOCK =	xai-org-grok-build-c2ad97f87aea4303b6000a2c22128bc91ee76c9b.tar.gz
+_GROK_DUMP_MEMEIC =	toddfries-grok-build-7bf0928882d5ca7147da4d3b399673737df0e0ed.tar.gz
 
 .if ${FLAVOR:L:Mmemeic}
-DIST_TUPLE =		github toddfries grok-build 19d42e35c07a9c9244f03f6df0c4c353f970d4f9 .
-# xai-org base for this dump: 19d42e3 (matches stock pin).
+DIST_TUPLE =		github toddfries grok-build 7bf0928882d5ca7147da4d3b399673737df0e0ed .
+# xai-org base for this dump: c2ad97f (matches stock pin).
 # PKGNAME without "memeic" so FLAVOR_EXT does not become -memeic-memeic.
-PKGNAME =		grok-build-test-1.0.4
-FULLPKGNAME =		grok-build-test-memeic-1.0.4
+PKGNAME =		grok-build-test-1.0.8
+FULLPKGNAME =		grok-build-test-memeic-1.0.8
 COMMENT =		SpaceXAI grok test memeic (rust-crate-* seeds)
 SUPDISTFILES +=		${_GROK_DUMP_STOCK}
 .else
-DIST_TUPLE =		github xai-org grok-build 19d42e35c07a9c9244f03f6df0c4c353f970d4f9 .
-# Binary crate version at this dump: 1.0.4 (xai-grok-pager-bin; dump d6a22a1).
-PKGNAME =		grok-build-test-1.0.4
+DIST_TUPLE =		github xai-org grok-build c2ad97f87aea4303b6000a2c22128bc91ee76c9b .
+# Binary crate version at this dump: 1.0.8 (xai-grok-pager-bin; dump c2ad97f).
+PKGNAME =		grok-build-test-1.0.8
 SUPDISTFILES +=		${_GROK_DUMP_MEMEIC}
 .endif
 
@@ -98,7 +98,6 @@ MODULES =		devel/cargo
 # sccache daemon is todd-owned; _pbuild cannot write pobj via it (EACCES on .d).
 # Prefer MAKE_ENV (always applied by bsd.port.mk); avoid .export (not in OpenBSD make).
 MAKE_ENV +=	RUSTC_WRAPPER=${.CURDIR}/files/rustc-prebuilt.sh
-MAKE_ENV +=	SCCACHE_DISABLE=1
 MAKE_ENV +=	SCCACHE_RUSTC_WRAPPER=
 
 # jemalloc (tikv-jemalloc-sys) does not build cleanly on OpenBSD.
@@ -152,7 +151,6 @@ GROK_LOW_MEM ?=		Yes
 .if ${GROK_LOW_MEM:L} == "yes"
 MAKE_JOBS =		1
 DPB_PROPERTIES +=	lonesome
-MAKE_ENV +=SCCACHE_DISABLE=1
 MAKE_ENV +=		CARGO_INCREMENTAL=0 \
 			CARGO_PROFILE_RELEASE_CODEGEN_UNITS=256 \
 			CARGO_PROFILE_RELEASE_LTO=thin \
@@ -289,4 +287,3 @@ do-install:
 # still hits EACCES if the server compiles as todd into pobj.
 MAKE_ENV +=RUSTC_WRAPPER=${FILESDIR}/rustc-prebuilt.sh
 MAKE_ENV +=SCCACHE_RUSTC_WRAPPER=
-MAKE_ENV +=SCCACHE_DISABLE=1

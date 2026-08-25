@@ -18,6 +18,7 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
+# crates.io serves deadpool-runtime/0.1.4/download (403 on …/name-ver.tar.gz).
 SITES =			https://crates.io/api/v1/crates/
 DISTFILES =		deadpool-runtime-0.1.4.tar.gz{deadpool-runtime/0.1.4/download}
 WRKDIST =		${WRKDIR}/deadpool-runtime-0.1.4

@@ -18,6 +18,7 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
+# crates.io serves hashbrown/0.17.0/download (403 on …/name-ver.tar.gz).
 SITES =			https://crates.io/api/v1/crates/
 DISTFILES =		hashbrown-0.17.0.tar.gz{hashbrown/0.17.0/download}
 WRKDIST =		${WRKDIR}/hashbrown-0.17.0

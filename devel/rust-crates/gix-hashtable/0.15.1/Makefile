@@ -18,6 +18,7 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
+# crates.io serves gix-hashtable/0.15.1/download (403 on …/name-ver.tar.gz).
 SITES =			https://crates.io/api/v1/crates/
 DISTFILES =		gix-hashtable-0.15.1.tar.gz{gix-hashtable/0.15.1/download}
 WRKDIST =		${WRKDIR}/gix-hashtable-0.15.1

@@ -18,6 +18,7 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
+# crates.io serves unicode-segmentation/1.12.0/download (403 on …/name-ver.tar.gz).
 SITES =			https://crates.io/api/v1/crates/
 DISTFILES =		unicode-segmentation-1.12.0.tar.gz{unicode-segmentation/1.12.0/download}
 WRKDIST =		${WRKDIR}/unicode-segmentation-1.12.0

@@ -1019,7 +1019,7 @@ FORCE_DEFAULT_FEATURES: dict[str, list[str]] = {
     "gix-hash": ["sha1"],
     "gix-hashtable": ["sha1"],
     # OsRng / thread_rng gated on getrandom; keep even when feature list emptied
-    "rand": ["getrandom"],
+    "rand": ["os_rng"],
     # monorepo uses future; default=[] requires at least sync|future
     "moka": ["future"],
     # Hub::client for sentry-panic

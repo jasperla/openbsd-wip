@@ -18,6 +18,7 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
+# crates.io serves unicode-properties/0.1.4/download (403 on …/name-ver.tar.gz).
 SITES =			https://crates.io/api/v1/crates/
 DISTFILES =		unicode-properties-0.1.4.tar.gz{unicode-properties/0.1.4/download}
 WRKDIST =		${WRKDIR}/unicode-properties-0.1.4

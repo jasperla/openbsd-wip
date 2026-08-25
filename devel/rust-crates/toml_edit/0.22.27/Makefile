@@ -18,6 +18,7 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =		cargo
 # Required when DIST_SUBDIR is set (cargo.port.mk).
 MODCARGO_DIST_SUBDIR =	cargo
+# crates.io serves toml_edit/0.22.27/download (403 on …/name-ver.tar.gz).
 SITES =			https://crates.io/api/v1/crates/
 DISTFILES =		toml_edit-0.22.27.tar.gz{toml_edit/0.22.27/download}
 WRKDIST =		${WRKDIR}/toml_edit-0.22.27

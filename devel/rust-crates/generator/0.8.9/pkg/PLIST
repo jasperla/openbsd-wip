@@ -1,0 +1,3 @@
+share/modcargo-crates/generator-0.8.9.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/generator-0.8.9/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/generator-0.8.9/libgenerator.rlib
