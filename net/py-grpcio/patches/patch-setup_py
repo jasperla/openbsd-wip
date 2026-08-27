@@ -1,0 +1,18 @@
+find versioned abseil libraries
+
+Index: setup.py
+--- setup.py.orig
++++ setup.py
+@@ -402,8 +402,10 @@ if BUILD_WITH_SYSTEM_RE2:
+     EXTENSION_LIBRARIES += ("re2",)
+ if BUILD_WITH_SYSTEM_ABSL:
+     EXTENSION_LIBRARIES += tuple(
+-        lib.stem[3:]
+-        for lib in sorted(pathlib.Path("/usr").glob("lib*/libabsl_*.so"))
++        sorted(set(
++        lib.stem[3:].split(".", maxsplit=1)[0]
++        for lib in sorted(pathlib.Path("/usr/local/lib").glob("libabsl_*.so.*"))
++        ))
+     )
+ 
+ DEFINE_MACROS = (("_WIN32_WINNT", 0x600),)
