@@ -1,0 +1,5 @@
+xdiskusage is a user-friendly program to show you what is using up
+all your disk space. It is based on the design of xdu written by
+Phillip C. Dykstra <dykstra at ieee dot org>. Changes have been
+made so it runs "du" for you, and can display the free space left
+on the disk, and produce a PostScript version of the display.

@@ -1,0 +1,15 @@
+Index: Makefile
+--- Makefile.orig
++++ Makefile
+@@ -49,9 +49,9 @@ include makedepend
+ 
+ install: $(PROGRAM)
+ 	-@mkdir -p $(bindir)
+-	$(INSTALL) -s $(PROGRAM) $(bindir)/$(PROGRAM)
++	$(INSTALL) $(PROGRAM) $(DESTDIR)$(bindir)/$(PROGRAM)
+ 	-@mkdir -p $(mandir)/man$(MANPAGE)
+-	$(INSTALL) $(PROGRAM).$(MANPAGE) $(mandir)/man$(MANPAGE)/$(PROGRAM).$(MANPAGE)
++	$(INSTALL) $(PROGRAM).$(MANPAGE) $(DESTDIR)$(mandir)/man$(MANPAGE)/$(PROGRAM).$(MANPAGE)
+ 
+ uninstall:
+ 	-@ rm -f $(bindir)/$(PROGRAM)

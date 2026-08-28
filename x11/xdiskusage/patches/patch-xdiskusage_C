@@ -1,0 +1,12 @@
+Index: xdiskusage.C
+--- xdiskusage.C.orig
++++ xdiskusage.C
+@@ -32,7 +32,7 @@ const char* copyright = 
+ #elif defined(__bsdi__)
+ # define DF_COMMAND "df"
+ # define DU_COMMAND "du -x"
+-#elif defined(__FreeBSD__) || defined(__APPLE__)
++#elif defined(__FreeBSD__) || defined(__APPLE__) || defined(__OpenBSD__)
+ # define DF_COMMAND "df -P -k -t noprocfs,devfs,fdescfs"
+ # define DU_COMMAND "du -kx"
+ #elif defined(SVR4) || defined(__sun)
