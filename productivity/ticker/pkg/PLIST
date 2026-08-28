@@ -1,0 +1,5 @@
+@bin bin/ticker
+share/doc/pkg-readmes/${PKGSTEM}
+@sample share/examples/ticker/ticker.yaml.sample
+share/examples/ticker/
+share/examples/ticker/ticker.yaml.sample

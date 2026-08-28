@@ -1,0 +1,13 @@
++-------------------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-------------------------------------------------------------------------------
+
+Configuration file ==================
+
+Sample configuration file at ${PREFIX}/share/examples/ticker/ticker.yaml.sample
+
+The default configuration file location is $HOME/.ticker.yaml
+
+Alternative locations can be passed with the '--config <file>' command-line
+argument.
+
