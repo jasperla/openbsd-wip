@@ -1,0 +1,39 @@
+Index: Makefile
+--- Makefile.orig
++++ Makefile
+@@ -1,29 +1,26 @@
+ bindir = /usr/local/bin
+-man1dir = /usr/local/share/man/man1
++man1dir = /usr/local/man/man1
+ 
+ PKG_CONFIG ?= pkg-config
+ CFLAGS = -Wall -g -O3
+ CFLAGS_ALL = `$(PKG_CONFIG) --cflags --libs glib-2.0 x11 xscrnsaver dbus-1` -std=c11 $(CFLAGS)
+ 
+ .PHONY: all
+-all: xssproxy xssproxy.1.gz
++all: xssproxy
+ 
+ xssproxy: xssproxy.c
+ 	$(CC) -o xssproxy xssproxy.c $(CFLAGS_ALL) $(CPPFLAGS) $(LDFLAGS)
+ 
+-xssproxy.1.gz: man/xssproxy.1
+-	gzip -c man/xssproxy.1 > xssproxy.1.gz
+-
+-install: xssproxy xssproxy.1.gz
++install: xssproxy
+ 	install -D xssproxy $(DESTDIR)$(bindir)/xssproxy
+-	install -D -m644 xssproxy.1.gz $(DESTDIR)$(man1dir)/xssproxy.1.gz
++	install -D -m644 man/xssproxy.1 $(DESTDIR)$(man1dir)/xssproxy.1
+ 
+ .PHONY: uninstall
+ uninstall:
+ 	$(RM) $(DESTDIR)$(bindir)/xssproxy
+-	$(RM) $(DESTDIR)$(man1dir)/xssproxy.1.gz
++	$(RM) $(DESTDIR)$(man1dir)/xssproxy.1
+ 
+ .PHONY: clean
+ clean:
+ 	$(RM) xssproxy
+-	$(RM) xssproxy.1.gz
++	$(RM) xssproxy.1

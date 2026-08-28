@@ -1,0 +1,9 @@
+
+xssproxy implements the *org.freedesktop.ScreenSaver* D-Bus interface
+described in the Idle Inhibition Service Draft by the freedesktop.org
+developers.
+
+The inhibition of the screensaver is then controlled using the
+`XScreenSaverSuspend` function from the X11 Screen Saver extension
+library.
+
