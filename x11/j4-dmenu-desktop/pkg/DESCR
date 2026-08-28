@@ -1,0 +1,3 @@
+
+j4-dmenu-desktop scans .desktop files in $XDG_DATA_HOME and $XDG_DATA_DIRS,
+providing a menu for launching applications.

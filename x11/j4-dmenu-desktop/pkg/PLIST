@@ -1,0 +1,12 @@
+@bin bin/j4-dmenu-desktop
+@man man/man1/j4-dmenu-desktop.1
+share/bash-completion/
+share/bash-completion/completions/
+share/bash-completion/completions/j4-dmenu-desktop
+share/doc/pkg-readmes/${PKGSTEM}
+share/fish/
+share/fish/vendor_completions.d/
+share/fish/vendor_completions.d/j4-dmenu-desktop.fish
+share/zsh/
+share/zsh/site-functions/
+share/zsh/site-functions/_j4-dmenu-desktop

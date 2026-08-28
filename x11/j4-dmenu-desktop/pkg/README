@@ -1,0 +1,21 @@
++-------------------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-------------------------------------------------------------------------------
+
+To use with x11/dwm and dmenu, add a definition to config.def.h or config.h:
+
+...
+static const char *runcmd[] = { "j4-dmenu-desktop", "--no-generic", "-d", "dmenu -i -fn Sans-7", NULL };
+...
+
+and a corresponding key binding (adjusted to your preference):
+
+static const Key keys[] = {
+...
+        { MODKEY,                       XK_d,      spawn,          {.v = runcmd } },
+...
+};
+
+Only installed packages shipping a .desktop file will be shown by dmenu when using
+this keybinding.
+
