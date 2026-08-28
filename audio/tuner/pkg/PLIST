@@ -1,0 +1,46 @@
+@bin bin/io.github.tuner_labs.tuner
+share/applications/io.github.tuner_labs.tuner.desktop
+share/glib-2.0/schemas/io.github.tuner_labs.tuner.gschema.xml
+share/icons/hicolor/scalable/apps/io.github.tuner_labs.tuner-scalable.svg
+share/icons/hicolor/symbolic/apps/io.github.tuner_labs.tuner-symbolic.svg
+share/locale/ar/LC_MESSAGES/io.github.tuner_labs.tuner.mo
+share/locale/bg/LC_MESSAGES/io.github.tuner_labs.tuner.mo
+share/locale/cs/LC_MESSAGES/io.github.tuner_labs.tuner.mo
+share/locale/da/LC_MESSAGES/io.github.tuner_labs.tuner.mo
+share/locale/de/LC_MESSAGES/io.github.tuner_labs.tuner.mo
+share/locale/es/LC_MESSAGES/io.github.tuner_labs.tuner.mo
+share/locale/es_419/
+share/locale/es_419/LC_MESSAGES/
+share/locale/es_419/LC_MESSAGES/io.github.tuner_labs.tuner.mo
+share/locale/et/LC_MESSAGES/io.github.tuner_labs.tuner.mo
+share/locale/fa/LC_MESSAGES/io.github.tuner_labs.tuner.mo
+share/locale/fr/LC_MESSAGES/io.github.tuner_labs.tuner.mo
+share/locale/hu/LC_MESSAGES/io.github.tuner_labs.tuner.mo
+share/locale/id/LC_MESSAGES/io.github.tuner_labs.tuner.mo
+share/locale/is/LC_MESSAGES/io.github.tuner_labs.tuner.mo
+share/locale/it/LC_MESSAGES/io.github.tuner_labs.tuner.mo
+share/locale/ja/LC_MESSAGES/io.github.tuner_labs.tuner.mo
+share/locale/ko/LC_MESSAGES/io.github.tuner_labs.tuner.mo
+share/locale/lt/LC_MESSAGES/io.github.tuner_labs.tuner.mo
+share/locale/lv/LC_MESSAGES/io.github.tuner_labs.tuner.mo
+share/locale/ms/LC_MESSAGES/io.github.tuner_labs.tuner.mo
+share/locale/nb_NO/LC_MESSAGES/io.github.tuner_labs.tuner.mo
+share/locale/nl/LC_MESSAGES/io.github.tuner_labs.tuner.mo
+share/locale/pt_BR/LC_MESSAGES/io.github.tuner_labs.tuner.mo
+share/locale/ro/LC_MESSAGES/io.github.tuner_labs.tuner.mo
+share/locale/ru/LC_MESSAGES/io.github.tuner_labs.tuner.mo
+share/locale/sk/LC_MESSAGES/io.github.tuner_labs.tuner.mo
+share/locale/sl/LC_MESSAGES/io.github.tuner_labs.tuner.mo
+share/locale/sr/LC_MESSAGES/io.github.tuner_labs.tuner.mo
+share/locale/ta/LC_MESSAGES/io.github.tuner_labs.tuner.mo
+share/locale/th/LC_MESSAGES/io.github.tuner_labs.tuner.mo
+share/locale/tr/LC_MESSAGES/io.github.tuner_labs.tuner.mo
+share/locale/uk/LC_MESSAGES/io.github.tuner_labs.tuner.mo
+share/locale/vi/LC_MESSAGES/io.github.tuner_labs.tuner.mo
+share/locale/zh_Hant/
+share/locale/zh_Hant/LC_MESSAGES/
+share/locale/zh_Hant/LC_MESSAGES/io.github.tuner_labs.tuner.mo
+share/metainfo/
+share/metainfo/io.github.tuner_labs.tuner.metainfo.xml
+@tag gtk-update-icon-cache %D/share/icons/hicolor
+@tag glib-compile-schemas

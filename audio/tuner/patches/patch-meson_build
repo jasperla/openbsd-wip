@@ -1,0 +1,23 @@
+Index: meson.build
+--- meson.build.orig
++++ meson.build
+@@ -104,6 +104,9 @@ asresources = gnome.compile_resources (
+ ##
+ ## Listing dependencies
+ ##
++cc = meson.get_compiler('c')
++execinfo_dep = cc.find_library('execinfo')
++
+ dependencies = [
+     dependency ('glib-2.0'),
+     dependency ('gtk+-3.0'),
+@@ -112,7 +115,8 @@ dependencies = [
+     dependency ('gstreamer-1.0'),
+     dependency ('gstreamer-player-1.0'),
+     dependency ('libsoup-3.0'),
+-    dependency ('json-glib-1.0')
++    dependency ('json-glib-1.0'),
++    execinfo_dep
+ ]
+ 
+ subdir ('src')

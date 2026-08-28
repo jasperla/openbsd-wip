@@ -1,0 +1,37 @@
+related to https://github.com/tuner-labs/tuner/issues/215 - as-is the build
+script is actually trying to write under /usr/local. for ports we only want
+the schemas to be installed, they are comliled later via PLIST @tag.
+
+Index: data/meson.build
+--- data/meson.build.orig
++++ data/meson.build
+@@ -65,29 +65,7 @@ fs_mod = import('fs')
+ # Export schema XML to the build tree.
+ exported_schema = fs_mod.copyfile(settings_schemas[0], settings_schemas[0])
+ 
+-# Compile schemas in the build tree so local debug runs work without install.
+-custom_target(
+-    'export-and-compile-local-schemas',
+-    output: 'gschemas.compiled',
+-    command: [
+-        glib_compile_schemas,
+-        '--strict',
+-        '--targetdir',
+-        meson.current_build_dir(),
+-        meson.current_build_dir()
+-    ],
+-    depends: exported_schema,
+-    build_by_default: true
+-)
+-
+ install_data(settings_schemas, install_dir: schemas_dir)
+-
+-meson.add_install_script (
+-    glib_compile_schemas,
+-    schemas_dir,
+-    install_tag: 'schemas'
+-)
+-
+ 
+ message('Installed schema\n')
+ 
