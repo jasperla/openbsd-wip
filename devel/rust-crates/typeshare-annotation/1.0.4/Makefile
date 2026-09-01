@@ -220,6 +220,6 @@ do-install:
 	@echo "VERSION=1.0.4" >> ${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/typeshare-annotation-1.0.4/crate-meta.txt
 	@echo "RUST_LIB=typeshare_annotation" >> ${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/typeshare-annotation-1.0.4/crate-meta.txt
 	@echo "PKGNAME=rust-crate-typeshare_annotation_1_0_4-0" >> ${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/typeshare-annotation-1.0.4/crate-meta.txt
-	@echo "PROC_MACRO=0" >> ${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/typeshare-annotation-1.0.4/crate-meta.txt
+	@echo "PROC_MACRO=1" >> ${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/typeshare-annotation-1.0.4/crate-meta.txt
 
 .include <bsd.port.mk>

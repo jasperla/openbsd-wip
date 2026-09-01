@@ -134,16 +134,16 @@ do-install:
 	# Prefer rlib; proc-macros emit .so only. [lib] name may differ from package.
 	@art=""; \
 	for cand in \
-		${MODCARGO_TARGET_DIR}/release/deps/libkamadak_exif-*.rlib \
-		${MODCARGO_TARGET_DIR}/release/libkamadak_exif.rlib \
-		${MODCARGO_TARGET_DIR}/release/deps/libkamadak_exif-*.so \
-		${MODCARGO_TARGET_DIR}/release/libkamadak_exif.so \
-		${MODCARGO_TARGET_DIR}/release/deps/libkamadak_exif-*.rmeta \
-		${MODCARGO_TARGET_DIR}/release/libkamadak_exif.rmeta; do \
+		${MODCARGO_TARGET_DIR}/release/deps/libexif-*.rlib \
+		${MODCARGO_TARGET_DIR}/release/libexif.rlib \
+		${MODCARGO_TARGET_DIR}/release/deps/libexif-*.so \
+		${MODCARGO_TARGET_DIR}/release/libexif.so \
+		${MODCARGO_TARGET_DIR}/release/deps/libexif-*.rmeta \
+		${MODCARGO_TARGET_DIR}/release/libexif.rmeta; do \
 		if [ -f "$$cand" ]; then art=$$cand; break; fi; \
 	done; \
 	if [ -z "$$art" ]; then \
-		echo "ERROR: no rlib/so/rmeta for kamadak-exif (libkamadak_exif.*)" >&2; \
+		echo "ERROR: no rlib/so/rmeta for kamadak-exif (libexif.*)" >&2; \
 		ls -la ${MODCARGO_TARGET_DIR}/release/ ${MODCARGO_TARGET_DIR}/release/deps/ 2>&1 | head -40 >&2; \
 		exit 1; \
 	fi; \
@@ -154,17 +154,17 @@ do-install:
 	*)      ext=rlib ;; \
 	esac; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/kamadak-exif-0.5.5/libkamadak_exif.$$ext; \
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/kamadak-exif-0.5.5/libexif.$$ext; \
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/kamadak-exif-0.5.5/deps/
-	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libkamadak_exif-*.rmeta 2>/dev/null | head -1`; \
+	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libexif-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \
-			${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/kamadak-exif-0.5.5/libkamadak_exif.rmeta; \
+			${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/kamadak-exif-0.5.5/libexif.rmeta; \
 	fi
 	@echo "NAME=kamadak-exif" > ${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/kamadak-exif-0.5.5/crate-meta.txt
 	@echo "VERSION=0.5.5" >> ${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/kamadak-exif-0.5.5/crate-meta.txt
-	@echo "RUST_LIB=kamadak_exif" >> ${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/kamadak-exif-0.5.5/crate-meta.txt
+	@echo "RUST_LIB=exif" >> ${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/kamadak-exif-0.5.5/crate-meta.txt
 	@echo "PKGNAME=rust-crate-kamadak_exif_0_5_5-0" >> ${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/kamadak-exif-0.5.5/crate-meta.txt
 	@echo "PROC_MACRO=0" >> ${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/kamadak-exif-0.5.5/crate-meta.txt
 
