@@ -2,7 +2,7 @@ COMMENT =		native Delta Chat client
 
 GH_ACCOUNT =		trufae
 GH_PROJECT =		parla
-GH_TAGNAME =		0.8.2
+GH_TAGNAME =		0.8.4
 
 CATEGORIES =		net
 MAINTAINER =		Chris Billington <emulti@disroot.org>
