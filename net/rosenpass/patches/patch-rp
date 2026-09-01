@@ -1,0 +1,54 @@
+Make rosenpass work with OpenBSD's ifconfig.
+
+Index: rp
+--- rp.orig
++++ rp
+@@ -67,7 +67,7 @@ frag_init() {
+   explain=0
+   frag_transaction=()
+   frag "
+-    #! /bin/bash
++    #!/usr/bin/env bash
+     set -e"
+ }
+ 
+@@ -198,19 +198,25 @@ exchange() {
+     fatal "Needs at least one peer specified"
+   fi
+ 
+-  frag "
++  wg=$(ifconfig | grep -B 20 $(enquote "${dev}") | grep '^[:space:]' | \
++    cut -d: -f1 | tail -1)
++  if [ -z "${wg}" ]; then
++    wg="wg$(($(ifconfig wg 2>/dev/null | grep ^wg | wc -l)))"
++    frag "
+     # Create the Wireguard interface
+-    ip link add dev $(enquote "${dev}") type wireguard || true"
++    ifconfig ${wg} create descr $(enquote "${dev}") || true"
++    dev=${wg}
++  fi
+ 
+   cleanup "
+-    ip link del dev $(enquote "${dev}") || true"
++    ifconfig ${wg} destroy || true"
+ 
+   frag "
+-    ip link set dev $(enquote "${dev}") up"
++    ifconfig ${wg} up"
+ 
+   frag "
+     # Deploy the classic wireguard private key
+-    wg set $(enquote "${dev}") private-key $(enquote "${skdir}/wgsk")"
++    wg set ${wg} private-key $(enquote "${skdir}/wgsk")"
+ 
+ 
+   if test -n "${lport}"; then
+@@ -314,8 +320,6 @@ main() {
+   project_name="rosenpass"
+   verbose=0
+   scriptdir="$(dirname "${script}")"
+-  gitdir="$(git -C "${scriptdir}" rev-parse --show-toplevel 2>/dev/null)" || true
+-  nixdir="$(readlink -f result/bin/rp | grep -Pio '^/nix/store/[^/]+(?=/bin/[^/]+)')" || true
+   binary="$(find_rosenpass_binary)"
+ 
+   # Parse command
