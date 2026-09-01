@@ -1,3 +1,0 @@
-share/modcargo-crates/tokio-tungstenite-0.27.0.tar.gz
-lib/rust-crates/${MACHINE_ARCH}/tokio-tungstenite-0.27.0/crate-meta.txt
-lib/rust-crates/${MACHINE_ARCH}/tokio-tungstenite-0.27.0/libtokio_tungstenite.rlib

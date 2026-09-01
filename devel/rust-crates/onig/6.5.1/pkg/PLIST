@@ -1,3 +1,0 @@
-share/modcargo-crates/onig-6.5.1.tar.gz
-lib/rust-crates/${MACHINE_ARCH}/onig-6.5.1/crate-meta.txt
-lib/rust-crates/${MACHINE_ARCH}/onig-6.5.1/libonig.rlib

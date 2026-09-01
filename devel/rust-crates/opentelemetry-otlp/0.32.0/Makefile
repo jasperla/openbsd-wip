@@ -205,6 +205,7 @@ BUILD_DEPENDS +=	rust-crate-spin_0_9_8-0:devel/rust-crates/spin/0.9.8
 BUILD_DEPENDS +=	rust-crate-version_check_0_9_5-0:devel/rust-crates/version_check/0.9.5
 BUILD_DEPENDS +=	rust-crate-digest_0_10_7-0:devel/rust-crates/digest/0.10.7
 BUILD_DEPENDS +=	rust-crate-tungstenite_0_28_0-0:devel/rust-crates/tungstenite/0.28.0
+BUILD_DEPENDS +=	rust-crate-webpki_roots_0_26_11-0:devel/rust-crates/webpki-roots/0.26.11
 BUILD_DEPENDS +=	rust-crate-zlib_rs_0_5_5-0:devel/rust-crates/zlib-rs/0.5.5
 BUILD_DEPENDS +=	rust-crate-adler2_2_0_1-0:devel/rust-crates/adler2/2.0.1
 BUILD_DEPENDS +=	rust-crate-simd_adler32_0_3_7-0:devel/rust-crates/simd-adler32/0.3.7
@@ -2047,6 +2048,17 @@ post-extract:
 	else \
 		echo "missing dep tungstenite-0.28.0" >&2; exit 1; \
 	fi
+	@if [ -d ${_RUST_CRATE_SHARE}/webpki-roots-0.26.11 ]; then \
+		ln -sfn ${_RUST_CRATE_SHARE}/webpki-roots-0.26.11 ${WRKDIR}/vendor/webpki-roots-0.26.11; \
+	elif [ -f ${_RUST_CRATE_SHARE}/webpki-roots-0.26.11.tar.gz ]; then \
+		tar xzf ${_RUST_CRATE_SHARE}/webpki-roots-0.26.11.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/webpki-roots-0.26.11 ] && [ -d ${WRKDIR}/vendor/webpki-roots-0.26.11 ]; then \
+			mv ${WRKDIR}/vendor/webpki-roots-0.26.11 ${WRKDIR}/vendor/webpki-roots-0.26.11; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/webpki-roots-0.26.11.tar.gz ${WRKDIR}/vendor/webpki-roots-0.26.11 2>/dev/null || true; \
+	else \
+		echo "missing dep webpki-roots-0.26.11" >&2; exit 1; \
+	fi
 	@if [ -d ${_RUST_CRATE_SHARE}/zlib-rs-0.5.5 ]; then \
 		ln -sfn ${_RUST_CRATE_SHARE}/zlib-rs-0.5.5 ${WRKDIR}/vendor/zlib-rs-0.5.5; \
 	elif [ -f ${_RUST_CRATE_SHARE}/zlib-rs-0.5.5.tar.gz ]; then \
@@ -3557,6 +3569,12 @@ pre-build:
 	@cp -f ${_RUST_CRATE_LIBDIR}/tungstenite-0.28.0/lib*.rlib ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@cp -f ${_RUST_CRATE_LIBDIR}/tungstenite-0.28.0/lib*.so ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@cp -f ${_RUST_CRATE_LIBDIR}/tungstenite-0.28.0/lib*.rmeta ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
+	@if [ -d ${_RUST_CRATE_LIBDIR}/webpki-roots-0.26.11/deps ]; then \
+		cp -Rp ${_RUST_CRATE_LIBDIR}/webpki-roots-0.26.11/deps/. ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true; \
+	fi
+	@cp -f ${_RUST_CRATE_LIBDIR}/webpki-roots-0.26.11/lib*.rlib ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
+	@cp -f ${_RUST_CRATE_LIBDIR}/webpki-roots-0.26.11/lib*.so ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
+	@cp -f ${_RUST_CRATE_LIBDIR}/webpki-roots-0.26.11/lib*.rmeta ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@if [ -d ${_RUST_CRATE_LIBDIR}/zlib-rs-0.5.5/deps ]; then \
 		cp -Rp ${_RUST_CRATE_LIBDIR}/zlib-rs-0.5.5/deps/. ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true; \
 	fi

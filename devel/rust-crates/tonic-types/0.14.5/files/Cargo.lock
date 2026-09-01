@@ -623,8 +623,13 @@ checksum = "d25a406cddcc431a75d3d9afc6a7c0f7428d4891dd973e4d54c56b46127bf857"
 dependencies = [
  "futures-util 0.3.32",
  "log 0.4.32",
+ "rustls 0.23.37",
+ "rustls-native-certs 0.8.2",
+ "rustls-pki-types 1.14.0",
  "tokio 1.52.3",
+ "tokio-rustls 0.26.4",
  "tungstenite 0.28.0",
+ "webpki-roots 0.26.11",
 ]
 
 [[package]]
@@ -1023,9 +1028,20 @@ dependencies = [
  "httparse 1.10.1",
  "log 0.4.32",
  "rand 0.9.5",
+ "rustls 0.23.37",
+ "rustls-pki-types 1.14.0",
  "sha1 0.10.6",
  "thiserror 2.0.18",
  "utf-8 0.7.6",
+]
+
+[[package]]
+name = "webpki-roots"
+version = "0.26.11"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "521bc38abb08001b01866da9f51eb7c5d647a19260e00054a8c7fd5f9e57f7a9"
+dependencies = [
+ "webpki-roots 1.0.3",
 ]
 
 [[package]]
@@ -1263,6 +1279,15 @@ name = "utf-8"
 version = "0.7.6"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "09cc8ee72d2a9becf2f2febe0205bbed8fc6615b7cb429ad062dc7b7ddd036a9"
+
+[[package]]
+name = "webpki-roots"
+version = "1.0.3"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "32b130c0d2d49f8b6889abc456e795e82525204f27c42cf767cf0d7734e089b8"
+dependencies = [
+ "rustls-pki-types 1.14.0",
+]
 
 [[package]]
 name = "foldhash"

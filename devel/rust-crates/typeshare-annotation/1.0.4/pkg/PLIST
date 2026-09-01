@@ -1,0 +1,3 @@
+share/modcargo-crates/typeshare-annotation-1.0.4.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/typeshare-annotation-1.0.4/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/typeshare-annotation-1.0.4/libtypeshare_annotation.rlib

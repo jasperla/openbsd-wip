@@ -1,3 +1,0 @@
-Prebuilt Rust crate onig 6.5.1 for offline grok-build.
-PKGNAME=rust-crate-onig_6_5_1-0
-Installs share/modcargo-crates/onig-6.5.1/ and lib/rust-crates/<arch>/onig-6.5.1/ (rlib + cargo fingerprints).

@@ -1,3 +1,0 @@
-share/modcargo-crates/enum_delegate_lib-0.2.0.tar.gz
-lib/rust-crates/${MACHINE_ARCH}/enum_delegate_lib-0.2.0/crate-meta.txt
-lib/rust-crates/${MACHINE_ARCH}/enum_delegate_lib-0.2.0/libenum_delegate_lib.rlib

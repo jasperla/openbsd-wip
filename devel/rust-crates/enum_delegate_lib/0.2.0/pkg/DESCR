@@ -1,3 +1,0 @@
-Prebuilt Rust crate enum_delegate_lib 0.2.0 for offline grok-build.
-PKGNAME=rust-crate-enum_delegate_lib_0_2_0-0
-Installs share/modcargo-crates/enum_delegate_lib-0.2.0/ and lib/rust-crates/<arch>/enum_delegate_lib-0.2.0/ (rlib + cargo fingerprints).
