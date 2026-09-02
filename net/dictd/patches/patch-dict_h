@@ -1,0 +1,12 @@
+Index: dict.h
+--- dict.h.orig
++++ dict.h
+@@ -22,7 +22,7 @@
+ #define _DICT_H_
+ 
+ #include "dictP.h"
+-#include "maa.h"
++#include <maa.h>
+ #include "zlib.h"
+ #include "net.h"
+ #include "codes.h"
