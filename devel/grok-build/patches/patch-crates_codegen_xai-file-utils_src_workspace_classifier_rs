@@ -1,7 +1,7 @@
 Index: crates/codegen/xai-file-utils/src/workspace_classifier.rs
 --- crates/codegen/xai-file-utils/src/workspace_classifier.rs.orig
 +++ crates/codegen/xai-file-utils/src/workspace_classifier.rs
-@@ -118,8 +118,10 @@
+@@ -118,7 +118,9 @@ fn is_platform_home_excluded(cwd: &Path, home: &Path) -> bool {
      false
  }
  

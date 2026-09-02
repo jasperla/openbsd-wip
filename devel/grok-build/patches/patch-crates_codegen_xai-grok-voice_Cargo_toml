@@ -1,7 +1,7 @@
 Index: crates/codegen/xai-grok-voice/Cargo.toml
 --- crates/codegen/xai-grok-voice/Cargo.toml.orig
 +++ crates/codegen/xai-grok-voice/Cargo.toml
-@@ -29,10 +29,10 @@ xai-tty-utils = { workspace = true }
+@@ -31,10 +31,10 @@ xai-tty-utils = { workspace = true }
  [features]
  # `audio` = "microphone capture is compiled in". It's enabled on every OS for
  # production builds: macOS/Windows link `cpal`; Linux shells out to a system
@@ -16,7 +16,7 @@ Index: crates/codegen/xai-grok-voice/Cargo.toml
  default = ["audio"]
  # Alternate default feature set that opts out of audio. CI builds the voice
  # crate WITHOUT `audio` so the pager binary has no mic capture in the test
-@@ -41,10 +41,11 @@ default = ["audio"]
+@@ -43,10 +43,11 @@ default = ["audio"]
  default-bazel = []
  audio = ["dep:cpal"]
  

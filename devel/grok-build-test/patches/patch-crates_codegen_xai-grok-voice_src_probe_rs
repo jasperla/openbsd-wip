@@ -1,7 +1,7 @@
 Index: crates/codegen/xai-grok-voice/src/probe.rs
 --- crates/codegen/xai-grok-voice/src/probe.rs.orig
 +++ crates/codegen/xai-grok-voice/src/probe.rs
-@@ -163,6 +163,10 @@ pub fn mic_fix_help() -> &'static str {
+@@ -162,6 +162,10 @@ pub fn mic_fix_help() -> &'static str {
          "allow microphone access in Settings → Privacy & security → \
           Microphone, and check the input device and level in Settings → \
           System → Sound."
