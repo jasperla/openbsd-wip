@@ -43,7 +43,7 @@ MODGO_MODULES =	\
 	github.com/grpc-ecosystem/grpc-gateway/v2			 v2.28.0 \
 	github.com/jessevdk/go-flags					 v1.6.1 \
 	github.com/jordanlewis/gcassert					 v0.0.0-20250430164644-389ef753e22e \
-	github.com/jsdelivr/globalping-go				 v0.1.0 \
+	github.com/jsdelivr/globalping-go				 v0.3.0 \
 	github.com/jstemmer/go-junit-report/v2				 v2.1.0 \
 	github.com/kisielk/errcheck					 v1.9.0 \
 	github.com/knadh/koanf/maps					 v0.1.2 \

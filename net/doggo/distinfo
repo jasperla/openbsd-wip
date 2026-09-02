@@ -1,4 +1,4 @@
-SHA256 (doggo-v1.3.0.zip) = qNlEdZEDORMpnAy1ucdyQy1qleP8S+NL0gddAd28rZg=
+SHA256 (doggo-v1.4.0.zip) = 2QeEuoa6pDJ4xl0hVdVw7j2XunslUWX0hlMtk8VpaPg=
 SHA256 (go_modules/cloud.google.com/go/@v/v0.123.0.mod) = 0Nt+r1ZB8nJOxHuYgM8ZIN4OHdVgFN2/eUhF2WDFPbo=
 SHA256 (go_modules/cloud.google.com/go/@v/v0.123.0.zip) = 6clQnPdb65UWeV7rET0Bog4qcUlqZu1za27SpRaHjVI=
 SHA256 (go_modules/cloud.google.com/go/auth/@v/v0.18.1.mod) = ui0dmoD8paBBncTqx9l5Lnu6eTOoqCw4KLDNoNXvl+k=
@@ -97,8 +97,8 @@ SHA256 (go_modules/github.com/jessevdk/go-flags/@v/v1.6.1.mod) = XXfNPd0IYZ25q3v
 SHA256 (go_modules/github.com/jessevdk/go-flags/@v/v1.6.1.zip) = I97Ou1pRFK8aaH++1k1qZ08el25wsrTNwn9S0LAgy0s=
 SHA256 (go_modules/github.com/jordanlewis/gcassert/@v/v0.0.0-20250430164644-389ef753e22e.mod) = pK1rZB6Jyi8OlwY77QzXyyA3lRur9BKAq9Dl72LiK8Q=
 SHA256 (go_modules/github.com/jordanlewis/gcassert/@v/v0.0.0-20250430164644-389ef753e22e.zip) = jmOd+3u5GF2/MyVSp1HJh8JvNxiofOM3HNWCsMAQJhE=
-SHA256 (go_modules/github.com/jsdelivr/globalping-go/@v/v0.1.0.mod) = K9tcPOgk6BZuVLPRwYg3w/TAEKrkrjy4HuZAJ//y5E0=
-SHA256 (go_modules/github.com/jsdelivr/globalping-go/@v/v0.1.0.zip) = WcTQ7ONRCFNsJOTsM7FY4qM4fQ97cRHeG50dgafwh9k=
+SHA256 (go_modules/github.com/jsdelivr/globalping-go/@v/v0.3.0.mod) = mFko7UFvSA3z/R4TXfQt9HQdw/9Tfh7ZGmGUH+HDJlI=
+SHA256 (go_modules/github.com/jsdelivr/globalping-go/@v/v0.3.0.zip) = 8YxowxV47RblE0cCr0IFgE0Gc+168OpDumSLRBtLr+Q=
 SHA256 (go_modules/github.com/jstemmer/go-junit-report/v2/@v/v2.1.0.mod) = Pb8h2hPzUpN2HaXrIqY4F8Uxj1BEzgtcpcPoDA9lLfU=
 SHA256 (go_modules/github.com/jstemmer/go-junit-report/v2/@v/v2.1.0.zip) = wf8Il+9LOuJWcZa1CLZW97vifEmnjRpz3b8zOqJDupA=
 SHA256 (go_modules/github.com/kisielk/errcheck/@v/v1.9.0.mod) = m8GgUYZPOdZGs9gBBMiFf2s3JXin9nA1G36NY3xRfv4=
@@ -325,7 +325,7 @@ SHA256 (go_modules/mvdan.cc/unparam/@v/v0.0.0-20251027182757-5beb8c8f8f15.mod) =
 SHA256 (go_modules/mvdan.cc/unparam/@v/v0.0.0-20251027182757-5beb8c8f8f15.zip) = J1c8j4BqJcZHtv+i0Tq6Vz9T677oIdjuSHoydEMHySc=
 SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.6.0.mod) = Tjw8HUmmZSRA/3D7R15Urka+LKtjzEZyGzwC/ZzKmF4=
 SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.6.0.zip) = z4hkikcVgYF7AKQu6NJP1z6w41A5mM9G2OY3h+EeUFI=
-SIZE (doggo-v1.3.0.zip) = 2595809
+SIZE (doggo-v1.4.0.zip) = 2644931
 SIZE (go_modules/cloud.google.com/go/@v/v0.123.0.mod) = 2733
 SIZE (go_modules/cloud.google.com/go/@v/v0.123.0.zip) = 293498
 SIZE (go_modules/cloud.google.com/go/auth/@v/v0.18.1.mod) = 1289
@@ -424,8 +424,8 @@ SIZE (go_modules/github.com/jessevdk/go-flags/@v/v1.6.1.mod) = 79
 SIZE (go_modules/github.com/jessevdk/go-flags/@v/v1.6.1.zip) = 78585
 SIZE (go_modules/github.com/jordanlewis/gcassert/@v/v0.0.0-20250430164644-389ef753e22e.mod) = 125
 SIZE (go_modules/github.com/jordanlewis/gcassert/@v/v0.0.0-20250430164644-389ef753e22e.zip) = 16229
-SIZE (go_modules/github.com/jsdelivr/globalping-go/@v/v0.1.0.mod) = 447
-SIZE (go_modules/github.com/jsdelivr/globalping-go/@v/v0.1.0.zip) = 19307
+SIZE (go_modules/github.com/jsdelivr/globalping-go/@v/v0.3.0.mod) = 467
+SIZE (go_modules/github.com/jsdelivr/globalping-go/@v/v0.3.0.zip) = 38864
 SIZE (go_modules/github.com/jstemmer/go-junit-report/v2/@v/v2.1.0.mod) = 96
 SIZE (go_modules/github.com/jstemmer/go-junit-report/v2/@v/v2.1.0.zip) = 88133
 SIZE (go_modules/github.com/kisielk/errcheck/@v/v1.9.0.mod) = 172
