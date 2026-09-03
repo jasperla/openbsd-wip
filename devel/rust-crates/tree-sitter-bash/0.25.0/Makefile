@@ -287,6 +287,15 @@ do-install:
 		if [ -f "$$cand" ]; then art=$$cand; break; fi; \
 	done; \
 	if [ -z "$$art" ]; then \
+		for cand in \
+			${MODCARGO_TARGET_DIR}/release/lib*.rlib \
+			${MODCARGO_TARGET_DIR}/release/lib*.so; do \
+			if [ -f "$$cand" ]; then \
+				echo "ERROR: tree-sitter-bash built $$cand but port rust_lib=tree_sitter_bash (Cargo.toml [lib] name?)" >&2; \
+				echo "ERROR: regen with gen-rust-crate-ports.py (do not hand-edit PLIST)" >&2; \
+				exit 1; \
+			fi; \
+		done; \
 		echo "ERROR: no rlib/so/rmeta for tree-sitter-bash (libtree_sitter_bash.*)" >&2; \
 		ls -la ${MODCARGO_TARGET_DIR}/release/ ${MODCARGO_TARGET_DIR}/release/deps/ 2>&1 | head -40 >&2; \
 		exit 1; \
@@ -297,6 +306,14 @@ do-install:
 	*.rmeta) ext=rmeta ;; \
 	*)      ext=rlib ;; \
 	esac; \
+	want_ext=rlib; \
+	if [ "0" = "1" ]; then want_ext=so; fi; \
+	if [ "$$ext" != "$$want_ext" ]; then \
+		echo "ERROR: tree-sitter-bash produced .$$ext but PROC_MACRO=0 expects .$$want_ext" >&2; \
+		echo "ERROR: regen with gen-rust-crate-ports.py (do not hand-edit PLIST)" >&2; \
+		ls -la ${MODCARGO_TARGET_DIR}/release/ ${MODCARGO_TARGET_DIR}/release/deps/ 2>&1 | head -40 >&2; \
+		exit 1; \
+	fi; \
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/tree-sitter-bash-0.25.0/libtree_sitter_bash.$$ext; \
 	${INSTALL_DATA} $$art \

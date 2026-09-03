@@ -49,10 +49,10 @@ COMMENT =		SpaceXAI terminal AI coding agent (grok)
 # Both monorepo dumps live in distinfo; the inactive one is SUPDISTFILES so
 # checksum does not flag it as "extra" for the other flavor.
 _GROK_DUMP_STOCK =	xai-org-grok-build-bb7f39d5858cbf5e00de639367f59debbdcb0138.tar.gz
-_GROK_DUMP_MEMEIC =	toddfries-grok-build-276920d266a7ea8c7a09305a14d3824c22d417ee.tar.gz
+_GROK_DUMP_MEMEIC =	toddfries-grok-build-125a7e2b4d60267589613655b1f7a0cb6e74b67d.tar.gz
 
 .if ${FLAVOR:L:Mmemeic}
-DIST_TUPLE =		github toddfries grok-build 276920d266a7ea8c7a09305a14d3824c22d417ee .
+DIST_TUPLE =		github toddfries grok-build 125a7e2b4d60267589613655b1f7a0cb6e74b67d .
 # xai-org base for this dump: c2ad97f (matches stock pin).
 # PKGNAME without "memeic" so FLAVOR_EXT does not become -memeic-memeic.
 PKGNAME =		grok-build-1.0.13

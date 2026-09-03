@@ -128,6 +128,15 @@ do-install:
 		if [ -f "$$cand" ]; then art=$$cand; break; fi; \
 	done; \
 	if [ -z "$$art" ]; then \
+		for cand in \
+			${MODCARGO_TARGET_DIR}/release/lib*.rlib \
+			${MODCARGO_TARGET_DIR}/release/lib*.so; do \
+			if [ -f "$$cand" ]; then \
+				echo "ERROR: linked-hash-map built $$cand but port rust_lib=linked_hash_map (Cargo.toml [lib] name?)" >&2; \
+				echo "ERROR: regen with gen-rust-crate-ports.py (do not hand-edit PLIST)" >&2; \
+				exit 1; \
+			fi; \
+		done; \
 		echo "ERROR: no rlib/so/rmeta for linked-hash-map (liblinked_hash_map.*)" >&2; \
 		ls -la ${MODCARGO_TARGET_DIR}/release/ ${MODCARGO_TARGET_DIR}/release/deps/ 2>&1 | head -40 >&2; \
 		exit 1; \
@@ -138,6 +147,14 @@ do-install:
 	*.rmeta) ext=rmeta ;; \
 	*)      ext=rlib ;; \
 	esac; \
+	want_ext=rlib; \
+	if [ "0" = "1" ]; then want_ext=so; fi; \
+	if [ "$$ext" != "$$want_ext" ]; then \
+		echo "ERROR: linked-hash-map produced .$$ext but PROC_MACRO=0 expects .$$want_ext" >&2; \
+		echo "ERROR: regen with gen-rust-crate-ports.py (do not hand-edit PLIST)" >&2; \
+		ls -la ${MODCARGO_TARGET_DIR}/release/ ${MODCARGO_TARGET_DIR}/release/deps/ 2>&1 | head -40 >&2; \
+		exit 1; \
+	fi; \
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/linked-hash-map-0.5.6/liblinked_hash_map.$$ext; \
 	${INSTALL_DATA} $$art \

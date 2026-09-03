@@ -737,6 +737,15 @@ do-install:
 		if [ -f "$$cand" ]; then art=$$cand; break; fi; \
 	done; \
 	if [ -z "$$art" ]; then \
+		for cand in \
+			${MODCARGO_TARGET_DIR}/release/lib*.rlib \
+			${MODCARGO_TARGET_DIR}/release/lib*.so; do \
+			if [ -f "$$cand" ]; then \
+				echo "ERROR: tui-scrollbar built $$cand but port rust_lib=tui_scrollbar (Cargo.toml [lib] name?)" >&2; \
+				echo "ERROR: regen with gen-rust-crate-ports.py (do not hand-edit PLIST)" >&2; \
+				exit 1; \
+			fi; \
+		done; \
 		echo "ERROR: no rlib/so/rmeta for tui-scrollbar (libtui_scrollbar.*)" >&2; \
 		ls -la ${MODCARGO_TARGET_DIR}/release/ ${MODCARGO_TARGET_DIR}/release/deps/ 2>&1 | head -40 >&2; \
 		exit 1; \
@@ -747,6 +756,14 @@ do-install:
 	*.rmeta) ext=rmeta ;; \
 	*)      ext=rlib ;; \
 	esac; \
+	want_ext=rlib; \
+	if [ "0" = "1" ]; then want_ext=so; fi; \
+	if [ "$$ext" != "$$want_ext" ]; then \
+		echo "ERROR: tui-scrollbar produced .$$ext but PROC_MACRO=0 expects .$$want_ext" >&2; \
+		echo "ERROR: regen with gen-rust-crate-ports.py (do not hand-edit PLIST)" >&2; \
+		ls -la ${MODCARGO_TARGET_DIR}/release/ ${MODCARGO_TARGET_DIR}/release/deps/ 2>&1 | head -40 >&2; \
+		exit 1; \
+	fi; \
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/tui-scrollbar-0.2.2/libtui_scrollbar.$$ext; \
 	${INSTALL_DATA} $$art \
