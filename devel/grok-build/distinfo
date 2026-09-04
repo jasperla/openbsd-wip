@@ -1015,6 +1015,8 @@ SHA256 (cargo/tungstenite-0.27.0.tar.gz) = 6twp1mjJH8xWSUETLheyinzrLz6/C52uPgP9e
 SHA256 (cargo/tungstenite-0.28.0.tar.gz) = hijcyE5aCes9hCPWy2gpZd6pEzIE6Ps+/udMKgwllEI=
 SHA256 (cargo/two-face-0.4.5.tar.gz) = OeUbbmDlRc/a5aRjn/QjgY9SNyIRqNmj6JK0sHYfdrI=
 SHA256 (cargo/typenum-1.19.0.tar.gz) = Vi1IEGa94GWCdqNUZ8SvAL3G7nJjBWmKVbhuYdetgrs=
+SHA256 (cargo/typeshare-1.0.4.tar.gz) = Gb4PQREgCR524T5aAYbY4rzD5+JEr9twFSGX8ahIbOs=
+SHA256 (cargo/typeshare-annotation-1.0.4.tar.gz) = phXWwnZIUqLoik8W6c4epJu3drWHKVYwnhcNY6BCo08=
 SHA256 (cargo/typify-0.6.2.tar.gz) = vAuJ9HMJ/q6yPEUJwVyaBCNPfezO9vlsO/6VMZgZowQ=
 SHA256 (cargo/typify-impl-0.6.2.tar.gz) = +nsCb1QLFIuBBDxyCInbuUKwhlmqikP2JKxPBNv8GGE=
 SHA256 (cargo/typify-macro-0.6.2.tar.gz) = Oe2WxX8Grgg5QWuYaSGpjxiyINpju7JDqFcKAMhJIYM=
@@ -2243,6 +2245,8 @@ SIZE (cargo/tungstenite-0.27.0.tar.gz) = 67162
 SIZE (cargo/tungstenite-0.28.0.tar.gz) = 67629
 SIZE (cargo/two-face-0.4.5.tar.gz) = 3455324
 SIZE (cargo/typenum-1.19.0.tar.gz) = 76414
+SIZE (cargo/typeshare-1.0.4.tar.gz) = 3805
+SIZE (cargo/typeshare-annotation-1.0.4.tar.gz) = 1869
 SIZE (cargo/typify-0.6.2.tar.gz) = 55663
 SIZE (cargo/typify-impl-0.6.2.tar.gz) = 454932
 SIZE (cargo/typify-macro-0.6.2.tar.gz) = 11708
