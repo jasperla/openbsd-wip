@@ -1,3 +1,0 @@
-@rcscript ${RCDIR}/${SVC}
-@bin bin/${SVC}
-share/doc/pkg-readmes/${PKGSTEM}
