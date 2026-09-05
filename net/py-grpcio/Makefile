@@ -16,20 +16,20 @@ PERMIT_PACKAGE =	Yes
 COMPILER =		base-clang ports-gcc
 
 WANTLIB += ${COMPILER_LIBCXX} absl_atomic_hook_test_helper absl_base
-WANTLIB += absl_borrowed_fixup_buffer absl_city absl_civil_time
+WANTLIB += absl_base_cpu_detect absl_city absl_civil_time absl_clock_interface
 WANTLIB += absl_cord absl_cord_internal absl_cordz_functions absl_cordz_handle
 WANTLIB += absl_cordz_info absl_cordz_sample_token absl_crc32c
-WANTLIB += absl_crc_cord_state absl_crc_cpu_detect absl_crc_internal
-WANTLIB += absl_debugging_internal absl_decode_rust_punycode absl_demangle_internal
-WANTLIB += absl_demangle_rust absl_die_if_null absl_examine_stack
-WANTLIB += absl_exception_safety_testing absl_exponential_biased
-WANTLIB += absl_failure_signal_handler absl_flags_commandlineflag
-WANTLIB += absl_flags_commandlineflag_internal absl_flags_config
-WANTLIB += absl_flags_internal absl_flags_marshalling absl_flags_parse
-WANTLIB += absl_flags_private_handle_accessor absl_flags_program_name
-WANTLIB += absl_flags_reflection absl_flags_usage absl_flags_usage_internal
-WANTLIB += absl_generic_printer_internal absl_graphcycles_internal
-WANTLIB += absl_hash absl_hash_generator_testing absl_hashtable_profiler
+WANTLIB += absl_crc_cord_state absl_crc_internal absl_debugging_internal
+WANTLIB += absl_decode_rust_punycode absl_demangle_internal absl_demangle_rust
+WANTLIB += absl_die_if_null absl_examine_stack absl_exception_safety_testing
+WANTLIB += absl_exponential_biased absl_failure_signal_handler
+WANTLIB += absl_flags_commandlineflag absl_flags_commandlineflag_internal
+WANTLIB += absl_flags_config absl_flags_internal absl_flags_marshalling
+WANTLIB += absl_flags_parse absl_flags_private_handle_accessor
+WANTLIB += absl_flags_program_name absl_flags_reflection absl_flags_usage
+WANTLIB += absl_flags_usage_internal absl_generic_printer_internal
+WANTLIB += absl_graphcycles_internal absl_hardening absl_hash
+WANTLIB += absl_hash_generator_testing absl_hashtable_profiler
 WANTLIB += absl_hashtablez_sampler absl_int128 absl_kernel_timeout_internal
 WANTLIB += absl_leak_check absl_log_entry absl_log_flags absl_log_globals
 WANTLIB += absl_log_initialize absl_log_internal_check_op absl_log_internal_conditions
@@ -47,13 +47,15 @@ WANTLIB += absl_random_internal_randen absl_random_internal_randen_hwaes
 WANTLIB += absl_random_internal_randen_hwaes_impl absl_random_internal_randen_slow
 WANTLIB += absl_random_internal_seed_material absl_random_seed_gen_exception
 WANTLIB += absl_random_seed_sequences absl_raw_hash_set absl_raw_logging_internal
-WANTLIB += absl_scoped_mock_log absl_scoped_set_env absl_spinlock_test_common
-WANTLIB += absl_spinlock_wait absl_stack_consumption absl_stacktrace
-WANTLIB += absl_status absl_status_matchers absl_statusor absl_str_format_internal
-WANTLIB += absl_strerror absl_strings absl_strings_internal absl_symbolize
-WANTLIB += absl_synchronization absl_test_instance_tracker absl_throw_delegate
-WANTLIB += absl_time absl_time_internal_test_util absl_time_zone
-WANTLIB += absl_tracing_internal absl_utf8_for_code_point absl_vlog_config_internal
+WANTLIB += absl_scoped_mock_log absl_scoped_set_env absl_simulated_clock
+WANTLIB += absl_source_location absl_spinlock_test_common absl_spinlock_wait
+WANTLIB += absl_stack_consumption absl_stacktrace absl_status
+WANTLIB += absl_status_builder absl_status_matchers absl_statusor
+WANTLIB += absl_str_format_internal absl_strerror absl_strings
+WANTLIB += absl_strings_internal absl_symbolize absl_synchronization
+WANTLIB += absl_test_instance_tracker absl_throw_delegate absl_time
+WANTLIB += absl_time_internal_test_util absl_time_zone absl_tracing_internal
+WANTLIB += absl_utf8_for_code_point absl_vlog_config_internal
 WANTLIB += cares crypto m re2 ssl z
 
 MODULES =		lang/python
@@ -70,15 +72,10 @@ LIB_DEPENDS =		devel/abseil-cpp \
 			net/libcares \
 			textproc/re2
 
-# find system libraries, avoid warning spam
-CFLAGS +=		-I/usr/local/include \
-			-Wno-ignored-attributes \
+# avoid warning spam, honour debug
+CFLAGS +=		-Wno-ignored-attributes \
 			-Wno-deprecated-declarations
-# cut back on '-l absl_*'
-LDFLAGS +=		-Wl,--as-needed
-# honour DEBUG
-MAKE_ENV =		GRPC_PYTHON_CFLAGS=${CFLAGS:Q} \
-			GRPC_PYTHON_LDFLAGS=${LDFLAGS:Q}
+MAKE_ENV =		GRPC_PYTHON_CFLAGS=${CFLAGS:Q}
 
 .for _dep in ABSL CARES OPENSSL RE2 ZLIB
 MAKE_ENV +=		GRPC_PYTHON_BUILD_SYSTEM_${_dep}=True
