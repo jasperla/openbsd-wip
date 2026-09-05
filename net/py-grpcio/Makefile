@@ -72,6 +72,8 @@ LIB_DEPENDS =		devel/abseil-cpp \
 			net/libcares \
 			textproc/re2
 
+RUN_DEPENDS =		devel/py-typing-extensions
+
 # avoid warning spam, honour debug
 CFLAGS +=		-Wno-ignored-attributes \
 			-Wno-deprecated-declarations
