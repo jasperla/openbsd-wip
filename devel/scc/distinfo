@@ -57,7 +57,7 @@ SHA256 (go_modules/github.com/go-git/gcfg/@v/v1.5.1-0.20230307220236-3a3c6141e37
 SHA256 (go_modules/github.com/go-git/go-billy/v5/@v/v5.9.0.mod) = Tn5ZO0kBKncTnZzc4Iwn5gkO62YUHs5kMBoXFFdEUV8=
 SHA256 (go_modules/github.com/go-git/go-billy/v5/@v/v5.9.0.zip) = NvljjS9gwu+WCIG1kIyxeyFdqP/4p8JntLEgCjVh/GA=
 SHA256 (go_modules/github.com/go-git/go-git-fixtures/v4/@v/v4.3.2-0.20231010084843-55a94097c399.mod) = C9xCgRy2U3CjDmfM2uzn1dth3TWm3IJzwPUVQy+XQkc=
-SHA256 (go_modules/github.com/go-git/go-git-fixtures/v4/@v/v4.3.2-0.20231010084843-55a94097c399.zip) = ySs3CteNuiqlNGe4oeMM1Q4Xl+rY6Pij33v6xyfQZHk=
+SHA256 (go_modules/github.com/go-git/go-git-fixtures/v4/@v/v4.3.2-0.20231010084843-55a94097c399.zip) = UJGBEWUTNQAc1YN7pxKDZHuquRGEKiDSMzgRSHUhAMI=
 SHA256 (go_modules/github.com/go-git/go-git/v5/@v/v5.19.2.mod) = u3Nc0HWdWrHhbggcyMzNp21Cv5nwxEZcD0AXgbagBWI=
 SHA256 (go_modules/github.com/go-git/go-git/v5/@v/v5.19.2.zip) = iRKzDdjzhJHqdKuBjKzFCwCD+vtMXIlrKCTjYJDasTM=
 SHA256 (go_modules/github.com/golang/groupcache/@v/v0.0.0-20241129210726-2c02b8208cf8.mod) = TgGay+WKevQ9Ixa2+CV5djYHLLSMMepv96rn11rVGok=
