@@ -7,7 +7,7 @@ MODGO_MODULES =	\
 	github.com/anmitsu/go-shlex			 v0.0.0-20200514113438-38f4b401e2be \
 	github.com/arbovm/levenshtein			 v0.0.0-20160628152529-48b4e1c0c4d0 \
 	github.com/armon/go-socks5			 v0.0.0-20160902184237-e75332964ef5 \
-	github.com/boyter/gocodewalker			 v1.5.2-0.20260627224246-75bd04cd8742 \
+	github.com/boyter/gocodewalker			 v1.5.2-0.20260905064325-27ad42ef7a81 \
 	github.com/boyter/simplecache			 v0.0.0-20260310220729-445661819a53 \
 	github.com/bwesterb/go-ristretto		 v1.2.3 \
 	github.com/clipperhouse/uax29/v2		 v2.7.0 \

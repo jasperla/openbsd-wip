@@ -17,8 +17,8 @@ SHA256 (go_modules/github.com/arbovm/levenshtein/@v/v0.0.0-20160628152529-48b4e1
 SHA256 (go_modules/github.com/arbovm/levenshtein/@v/v0.0.0-20160628152529-48b4e1c0c4d0.zip) = ZUHoI8qqUSNImaOKoKgBgJaHQfx9jzGyVhop2SMuNhI=
 SHA256 (go_modules/github.com/armon/go-socks5/@v/v0.0.0-20160902184237-e75332964ef5.mod) = eH9fmKshF09xFkyrjuplEl5gqnL111F+EuCOe47szNI=
 SHA256 (go_modules/github.com/armon/go-socks5/@v/v0.0.0-20160902184237-e75332964ef5.zip) = 9HPm3OgmoFUmOYM89yz6qLxxQdqntTdiLX946s/Z37M=
-SHA256 (go_modules/github.com/boyter/gocodewalker/@v/v1.5.2-0.20260627224246-75bd04cd8742.mod) = j3Pm2R+menN5ExeyUqOZC1ZyURnoGeyK0jkEnxd4Gbw=
-SHA256 (go_modules/github.com/boyter/gocodewalker/@v/v1.5.2-0.20260627224246-75bd04cd8742.zip) = vNOoMYG8HpKat3vivSz4mLJx6oeQC7l1j970Y1EOlto=
+SHA256 (go_modules/github.com/boyter/gocodewalker/@v/v1.5.2-0.20260905064325-27ad42ef7a81.mod) = j3Pm2R+menN5ExeyUqOZC1ZyURnoGeyK0jkEnxd4Gbw=
+SHA256 (go_modules/github.com/boyter/gocodewalker/@v/v1.5.2-0.20260905064325-27ad42ef7a81.zip) = K+yaK6r83H6nVpb6l90H+mrF7YtG4uHP+WdyFToYCkc=
 SHA256 (go_modules/github.com/boyter/simplecache/@v/v0.0.0-20260310220729-445661819a53.mod) = K5JDz1zBamOMgDWSwxdzyrtKH+HM46DSRAdEPWDRmR8=
 SHA256 (go_modules/github.com/boyter/simplecache/@v/v0.0.0-20260310220729-445661819a53.zip) = VtR5hK433duh2ga7q063aY11r8RVAcVnHUFDOS4yLUs=
 SHA256 (go_modules/github.com/bwesterb/go-ristretto/@v/v1.2.3.mod) = NorKF1e+h0XM47kN60Aee+V0CWPKU1nEqVTMA1AtjwM=
@@ -221,7 +221,7 @@ SHA256 (go_modules/gopkg.in/yaml.v2/@v/v2.4.0.mod) = w7EbqaB3X/m8bxHbtYoeSMweaLr
 SHA256 (go_modules/gopkg.in/yaml.v2/@v/v2.4.0.zip) = 7eSeJ8TMps3S7HGa7Y6k02NxDM6z1BHnp4b73sDTkf0=
 SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.mod) = IVeYYKIDBvz0OxvSNNH7oxlJnHdhG3HAX5vzupDauTk=
 SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.zip) = qrj7xOYwDqCOav4crqGKIckMefSJ9SxT4vIEMfGpoBU=
-SHA256 (scc-4.0.0.zip) = XwcoJiVinelkS6dlvJx35IWIP+0pdFAz8hK6W9tVgBc=
+SHA256 (scc-4.1.0.zip) = Mg1PPzkv6oMvpZaf81AHmjDOB6Y8cnlHmNRf55KXeXI=
 SIZE (go_modules/cyphar.com/go-pathrs/@v/v0.2.1.mod) = 123
 SIZE (go_modules/cyphar.com/go-pathrs/@v/v0.2.1.zip) = 22077
 SIZE (go_modules/dario.cat/mergo/@v/v1.0.0.mod) = 65
@@ -241,8 +241,8 @@ SIZE (go_modules/github.com/arbovm/levenshtein/@v/v0.0.0-20160628152529-48b4e1c0
 SIZE (go_modules/github.com/arbovm/levenshtein/@v/v0.0.0-20160628152529-48b4e1c0c4d0.zip) = 3284
 SIZE (go_modules/github.com/armon/go-socks5/@v/v0.0.0-20160902184237-e75332964ef5.mod) = 34
 SIZE (go_modules/github.com/armon/go-socks5/@v/v0.0.0-20160902184237-e75332964ef5.zip) = 14665
-SIZE (go_modules/github.com/boyter/gocodewalker/@v/v1.5.2-0.20260627224246-75bd04cd8742.mod) = 173
-SIZE (go_modules/github.com/boyter/gocodewalker/@v/v1.5.2-0.20260627224246-75bd04cd8742.zip) = 83647
+SIZE (go_modules/github.com/boyter/gocodewalker/@v/v1.5.2-0.20260905064325-27ad42ef7a81.mod) = 173
+SIZE (go_modules/github.com/boyter/gocodewalker/@v/v1.5.2-0.20260905064325-27ad42ef7a81.zip) = 109395
 SIZE (go_modules/github.com/boyter/simplecache/@v/v0.0.0-20260310220729-445661819a53.mod) = 240
 SIZE (go_modules/github.com/boyter/simplecache/@v/v0.0.0-20260310220729-445661819a53.zip) = 8529
 SIZE (go_modules/github.com/bwesterb/go-ristretto/@v/v1.2.3.mod) = 49
@@ -445,4 +445,4 @@ SIZE (go_modules/gopkg.in/yaml.v2/@v/v2.4.0.mod) = 95
 SIZE (go_modules/gopkg.in/yaml.v2/@v/v2.4.0.zip) = 81183
 SIZE (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.mod) = 95
 SIZE (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.zip) = 104623
-SIZE (scc-4.0.0.zip) = 1135202
+SIZE (scc-4.1.0.zip) = 1193066
