@@ -93,6 +93,10 @@ PERMIT_PACKAGE =	Yes
 WANTLIB +=		${MODCARGO_WANTLIB} m crypto ssl util z
 WANTLIB +=		git2 llhttp onig pcre2-8 sqlite3 ssh2 zstd
 
+# cargo.port.mk does not map LDFLAGS → rustc. Keep lockstep with product
+# (1.0.13 stock: -lzstd on xai-grok-tools build.rs).
+MODCARGO_RUSTFLAGS +=	-C link-arg=-L${LOCALBASE}/lib
+
 MODULES =		devel/cargo
 
 # sccache daemon is todd-owned; _pbuild cannot write pobj via it (EACCES on .d).

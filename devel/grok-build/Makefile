@@ -87,6 +87,12 @@ PERMIT_PACKAGE =	Yes
 WANTLIB +=		${MODCARGO_WANTLIB} m crypto ssl util z
 WANTLIB +=		git2 llhttp onig pcre2-8 sqlite3 ssh2 zstd
 
+# cargo.port.mk does not map LDFLAGS → rustc (XXX link-arg). Without this,
+# product MODCARGO linking of xai-grok-tools build.rs dies:
+#   ld.lld: error: unable to find library -lzstd
+# (1.0.13; test flavor seeds rust-crate rlibs and does not hit it.)
+MODCARGO_RUSTFLAGS +=	-C link-arg=-L${LOCALBASE}/lib
+
 MODULES =		devel/cargo
 
 # jemalloc (tikv-jemalloc-sys) does not build cleanly on OpenBSD.
