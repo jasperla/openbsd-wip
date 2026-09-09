@@ -1,5 +1,5 @@
 COMMENT =		Dynamic DNS client for Yandex Cloud
-DIST_TUPLE =		codeberg	kn	yc-dyndns	0.1	.
+DIST_TUPLE =		codeberg	kn	yc-dyndns	0.3	.
 CATEGORIES =		net
 
 MAINTAINER =		Klemens Nanni <kn@opensd.org>
@@ -9,14 +9,14 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 
-# uses pledge()
+# uses pledge() and unveil()
 RUN_DEPENDS =		devel/py-openbsd \
 			net/py-yandexcloud \
 			sysutils/py-psutil
 
 NO_BUILD =		Yes
 
-WRKDIST =		${WRKDIR}/yc-dyndns
+WRKDIST =		${WRKDIR}/${PKGSTEM}
 
 PROG =			yc-dyndns
 MODPY_ADJ_FILES =	${PROG}
