@@ -2,8 +2,8 @@ BROKEN-i386 =	protobuf/abseil problems
 
 COMMENT =	texas holdem poker client, local or internet games
 
-V =		2.1.8
-DIST_TUPLE =	github pokerth pokerth v${V} .
+V =		2.1.8pl20260908
+DIST_TUPLE =	github pokerth pokerth 85c06b64141bfb051319b2211aa6db4c8ddc4029 .
 
 PKGNAME =	pokerth-${V}
 
