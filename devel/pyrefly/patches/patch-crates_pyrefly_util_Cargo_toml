@@ -3,7 +3,7 @@ Use local paths for crates
 Index: crates/pyrefly_util/Cargo.toml
 --- crates/pyrefly_util/Cargo.toml.orig
 +++ crates/pyrefly_util/Cargo.toml
-@@ -24,7 +24,7 @@ ignore = "0.4.29"
+@@ -24,7 +24,7 @@ ignore = "0.4.33"
  index_vec = "0.1.4"
  itertools = "0.15.0"
  lock_free_hashtable = "0.1.4"
