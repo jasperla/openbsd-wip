@@ -1,22 +1,20 @@
-Index: elf/main.cc
---- elf/main.cc.orig
-+++ elf/main.cc
-@@ -2,11 +2,14 @@
- #include "../common/archive-file.h"
- #include "../common/output-file.h"
+Index: src/main.cc
+--- src/main.cc.orig
++++ src/main.cc
+@@ -1,9 +1,12 @@
+ #include "mold.h"
+ #include "config.h"
  
 +#include <cstdio>
 +#include <cstdlib>
  #include <cstring>
+ #include <filesystem>
  #include <functional>
- #include <iomanip>
- #include <map>
- #include <regex>
 +#include <dirent.h>
- #include <signal.h>
  #include <sys/stat.h>
  #include <sys/types.h>
-@@ -235,6 +238,71 @@ detect_machine_type(Context<E> &ctx, std::vector<std::
+ #include <tbb/parallel_for_each.h>
+@@ -173,6 +176,71 @@ detect_machine_type(Context<E> &ctx, std::span<ReaderJ
    Fatal(ctx) << "-m option is missing";
  }
  
@@ -86,14 +84,14 @@ Index: elf/main.cc
 +}
 +
  template <typename E>
- MappedFile *open_library(Context<E> &ctx, std::string path) {
+ MappedFile *open_library(Context<E> &ctx, ReaderContext &rctx, std::string path) {
    MappedFile *mf = open_file(ctx, path);
-@@ -264,7 +332,7 @@ MappedFile *find_library(Context<E> &ctx, std::string 
+@@ -202,7 +270,7 @@ MappedFile *find_library(Context<E> &ctx, ReaderContex
    for (std::string_view dir : ctx.arg.library_paths) {
      std::string stem = std::string(dir) + "/lib" + name;
-     if (!ctx.is_static)
--      if (MappedFile *mf = open_library(ctx, stem + ".so"))
-+      if (MappedFile *mf = open_library(ctx, openbsd_fixup(stem + ".so")))
+     if (!rctx.static_)
+-      if (MappedFile *mf = open_library(ctx, rctx, stem + ".so"))
++      if (MappedFile *mf = open_library(ctx, rctx, openbsd_fixup(stem + ".so")))
          return mf;
-     if (MappedFile *mf = open_library(ctx, stem + ".a"))
+     if (MappedFile *mf = open_library(ctx, rctx, stem + ".a"))
        return mf;

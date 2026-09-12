@@ -1,9 +1,9 @@
-Support PT_OPENBSD_RANDOMIZE and PT_OPENBSD_WXNEEDED.
+Support PT_OPENBSD_RANDOMIZE, PT_OPENBSD_WXNEEDED and PT_OPENBSD_NOBTCFI.
 
-Index: elf/passes.cc
---- elf/passes.cc.orig
-+++ elf/passes.cc
-@@ -110,6 +110,8 @@ void create_synthetic_sections(Context<E> &ctx) {
+Index: src/passes.cc
+--- src/passes.cc.orig
++++ src/passes.cc
+@@ -132,6 +132,8 @@ void create_synthetic_sections(Context<E> &ctx) {
  
      if (ctx.arg.z_sectionheader)
        ctx.shdr = push(new OutputShdr<E>);
@@ -12,16 +12,16 @@ Index: elf/passes.cc
    }
  
    ctx.got = push(new GotSection<E>);
-@@ -169,6 +171,12 @@ void create_synthetic_sections(Context<E> &ctx) {
-   ctx.verneed = push(new VerneedSection<E>);
-   ctx.note_package = push(new NotePackageSection<E>);
-   ctx.note_property = push(new NotePropertySection<E>);
-+
+@@ -196,6 +198,12 @@ void create_synthetic_sections(Context<E> &ctx) {
+   if constexpr (is_x86<E>)
+     ctx.extra.note_property = push(new NotePropertySection<E>);
+ 
 +  if (ctx.arg.z_wxneeded)
 +    ctx.openbsd_wxneeded = push(new OutputPhdr<E>(PT_OPENBSD_WXNEEDED));
 +
 +  if (ctx.arg.z_nobtcfi)
 +    ctx.openbsd_nobtcfi = push(new OutputPhdr<E>(PT_OPENBSD_NOBTCFI));
- 
++ 
    if constexpr (is_riscv<E>)
      ctx.extra.riscv_attributes = push(new RiscvAttributesSection<E>);
+ 

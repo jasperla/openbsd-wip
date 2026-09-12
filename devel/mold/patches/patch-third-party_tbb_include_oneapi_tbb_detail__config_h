@@ -1,7 +1,7 @@
 Index: third-party/tbb/include/oneapi/tbb/detail/_config.h
 --- third-party/tbb/include/oneapi/tbb/detail/_config.h.orig
 +++ third-party/tbb/include/oneapi/tbb/detail/_config.h
-@@ -274,7 +274,7 @@
+@@ -283,7 +283,7 @@
      #define __TBB_CPP20_COMPARISONS_PRESENT 0
  #endif
  

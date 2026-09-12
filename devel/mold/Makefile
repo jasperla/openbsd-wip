@@ -3,7 +3,7 @@ CATEGORIES =	devel
 
 GH_ACCOUNT =	rui314
 GH_PROJECT =	mold
-GH_TAGNAME =	v2.31.0
+GH_TAGNAME =	v2.42.1
 
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
@@ -15,14 +15,15 @@ MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 #   xxhash: BSD
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} c m z zstd
+WANTLIB += ${COMPILER_LIBCXX} c m z zstd blake3
 
 # C++20
 COMPILER =	base-clang ports-clang
 
 MODULES =	devel/cmake
 
-LIB_DEPENDS =	archivers/zstd
+LIB_DEPENDS =	archivers/zstd \
+		security/blake3
 
 CONFIGURE_ARGS =	-DCMAKE_C_FLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 			-DCMAKE_CXX_FLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
@@ -31,5 +32,8 @@ CONFIGURE_ARGS =	-DCMAKE_C_FLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 .if ${MACHINE_ARCH:Mi386}
 CFLAGS +=	-DBLAKE3_NO_AVX512 -DBLAKE3_NO_AVX2 -DBLAKE3_NO_SSE41 -DBLAKE3_NO_SSE2
 .endif
+
+post-patch:
+	${SUBST_CMD} ${WRKSRC}/lib/filepath.cc
 
 .include <bsd.port.mk>

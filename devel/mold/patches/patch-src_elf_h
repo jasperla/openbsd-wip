@@ -1,9 +1,9 @@
-Index: elf/elf.h
---- elf/elf.h.orig
-+++ elf/elf.h
-@@ -192,6 +192,9 @@ enum : u32 {
-   PT_GNU_STACK = 0x6474e551,
-   PT_GNU_RELRO = 0x6474e552,
+Index: src/elf.h
+--- src/elf.h.orig
++++ src/elf.h
+@@ -194,6 +194,9 @@ enum : u32 {
+   PT_GNU_PROPERTY = 0x6474e553,
+   PT_GNU_SFRAME = 0x6474e554,
    PT_OPENBSD_RANDOMIZE = 0x65a3dbe6,
 +  PT_OPENBSD_WXNEEDED = 0x65a3dbe7,
 +  PT_OPENBSD_BOOTDATA = 0x65a41be6,

@@ -1,0 +1,13 @@
+Index: lib/filepath.cc
+--- lib/filepath.cc.orig
++++ lib/filepath.cc
+@@ -34,6 +34,9 @@ std::string get_self_path() {
+   path.resize(size);
+   sysctl(mib, 4, path.data(), &size, NULL, 0);
+   return path;
++elif __OpenBSD__
++  std::string path("${LOCALBASE}/bin/mold");
++  return path;
+ #else
+   return std::filesystem::read_symlink("/proc/self/exe").string();
+ #endif
