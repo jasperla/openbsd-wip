@@ -51,7 +51,7 @@ BUILD_DEPENDS +=	rust-crate-fancy_regex_0_16_2-0:devel/rust-crates/fancy-regex/0
 BUILD_DEPENDS +=	rust-crate-flate2_1_1_5-0:devel/rust-crates/flate2/1.1.5
 BUILD_DEPENDS +=	rust-crate-fnv_1_0_7-0:devel/rust-crates/fnv/1.0.7
 BUILD_DEPENDS +=	rust-crate-once_cell_1_21_3-0:devel/rust-crates/once_cell/1.21.3
-BUILD_DEPENDS +=	rust-crate-plist_1_8_0-0:devel/rust-crates/plist/1.8.0
+BUILD_DEPENDS +=	rust-crate-plist_1_10_0-0:devel/rust-crates/plist/1.10.0
 BUILD_DEPENDS +=	rust-crate-regex_syntax_0_8_11-0:devel/rust-crates/regex-syntax/0.8.11
 BUILD_DEPENDS +=	rust-crate-serde_1_0_228-0:devel/rust-crates/serde/1.0.228
 BUILD_DEPENDS +=	rust-crate-serde_derive_1_0_228-0:devel/rust-crates/serde_derive/1.0.228
@@ -68,7 +68,7 @@ BUILD_DEPENDS +=	rust-crate-miniz_oxide_0_8_9-0:devel/rust-crates/miniz_oxide/0.
 BUILD_DEPENDS +=	rust-crate-portable_atomic_1_11_1-0:devel/rust-crates/portable-atomic/1.11.1
 BUILD_DEPENDS +=	rust-crate-base64_0_22_1-0:devel/rust-crates/base64/0.22.1
 BUILD_DEPENDS +=	rust-crate-indexmap_2_14_0-0:devel/rust-crates/indexmap/2.14.0
-BUILD_DEPENDS +=	rust-crate-quick_xml_0_38_3-0:devel/rust-crates/quick-xml/0.38.3
+BUILD_DEPENDS +=	rust-crate-quick_xml_0_41_0-0:devel/rust-crates/quick-xml/0.41.0
 BUILD_DEPENDS +=	rust-crate-time_0_3_47-0:devel/rust-crates/time/0.3.47
 BUILD_DEPENDS +=	rust-crate-serde_core_1_0_228-0:devel/rust-crates/serde_core/1.0.228
 BUILD_DEPENDS +=	rust-crate-proc_macro2_1_0_106-0:devel/rust-crates/proc-macro2/1.0.106
@@ -94,7 +94,6 @@ BUILD_DEPENDS +=	rust-crate-powerfmt_0_2_0-0:devel/rust-crates/powerfmt/0.2.0
 BUILD_DEPENDS +=	rust-crate-time_core_0_1_8-0:devel/rust-crates/time-core/0.1.8
 BUILD_DEPENDS +=	rust-crate-time_macros_0_2_27-0:devel/rust-crates/time-macros/0.2.27
 BUILD_DEPENDS +=	rust-crate-unicode_ident_1_0_24-0:devel/rust-crates/unicode-ident/1.0.24
-BUILD_DEPENDS +=	rust-crate-foldhash_0_2_0-0:devel/rust-crates/foldhash/0.2.0
 
 # Direct registry deps: seed their rlibs/fingerprints before building this crate.
 _RUST_CRATE_ARCH =	${MACHINE_ARCH}
@@ -197,16 +196,16 @@ post-extract:
 	else \
 		echo "missing dep once_cell-1.21.3" >&2; exit 1; \
 	fi
-	@if [ -d ${_RUST_CRATE_SHARE}/plist-1.8.0 ]; then \
-		ln -sfn ${_RUST_CRATE_SHARE}/plist-1.8.0 ${WRKDIR}/vendor/plist-1.8.0; \
-	elif [ -f ${_RUST_CRATE_SHARE}/plist-1.8.0.tar.gz ]; then \
-		tar xzf ${_RUST_CRATE_SHARE}/plist-1.8.0.tar.gz -C ${WRKDIR}/vendor; \
-		if [ ! -d ${WRKDIR}/vendor/plist-1.8.0 ] && [ -d ${WRKDIR}/vendor/plist-1.8.0 ]; then \
-			mv ${WRKDIR}/vendor/plist-1.8.0 ${WRKDIR}/vendor/plist-1.8.0; \
+	@if [ -d ${_RUST_CRATE_SHARE}/plist-1.10.0 ]; then \
+		ln -sfn ${_RUST_CRATE_SHARE}/plist-1.10.0 ${WRKDIR}/vendor/plist-1.10.0; \
+	elif [ -f ${_RUST_CRATE_SHARE}/plist-1.10.0.tar.gz ]; then \
+		tar xzf ${_RUST_CRATE_SHARE}/plist-1.10.0.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/plist-1.10.0 ] && [ -d ${WRKDIR}/vendor/plist-1.10.0 ]; then \
+			mv ${WRKDIR}/vendor/plist-1.10.0 ${WRKDIR}/vendor/plist-1.10.0; \
 		fi; \
-		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/plist-1.8.0.tar.gz ${WRKDIR}/vendor/plist-1.8.0 2>/dev/null || true; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/plist-1.10.0.tar.gz ${WRKDIR}/vendor/plist-1.10.0 2>/dev/null || true; \
 	else \
-		echo "missing dep plist-1.8.0" >&2; exit 1; \
+		echo "missing dep plist-1.10.0" >&2; exit 1; \
 	fi
 	@if [ -d ${_RUST_CRATE_SHARE}/regex-syntax-0.8.11 ]; then \
 		ln -sfn ${_RUST_CRATE_SHARE}/regex-syntax-0.8.11 ${WRKDIR}/vendor/regex-syntax-0.8.11; \
@@ -384,16 +383,16 @@ post-extract:
 	else \
 		echo "missing dep indexmap-2.14.0" >&2; exit 1; \
 	fi
-	@if [ -d ${_RUST_CRATE_SHARE}/quick-xml-0.38.3 ]; then \
-		ln -sfn ${_RUST_CRATE_SHARE}/quick-xml-0.38.3 ${WRKDIR}/vendor/quick-xml-0.38.3; \
-	elif [ -f ${_RUST_CRATE_SHARE}/quick-xml-0.38.3.tar.gz ]; then \
-		tar xzf ${_RUST_CRATE_SHARE}/quick-xml-0.38.3.tar.gz -C ${WRKDIR}/vendor; \
-		if [ ! -d ${WRKDIR}/vendor/quick-xml-0.38.3 ] && [ -d ${WRKDIR}/vendor/quick-xml-0.38.3 ]; then \
-			mv ${WRKDIR}/vendor/quick-xml-0.38.3 ${WRKDIR}/vendor/quick-xml-0.38.3; \
+	@if [ -d ${_RUST_CRATE_SHARE}/quick-xml-0.41.0 ]; then \
+		ln -sfn ${_RUST_CRATE_SHARE}/quick-xml-0.41.0 ${WRKDIR}/vendor/quick-xml-0.41.0; \
+	elif [ -f ${_RUST_CRATE_SHARE}/quick-xml-0.41.0.tar.gz ]; then \
+		tar xzf ${_RUST_CRATE_SHARE}/quick-xml-0.41.0.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/quick-xml-0.41.0 ] && [ -d ${WRKDIR}/vendor/quick-xml-0.41.0 ]; then \
+			mv ${WRKDIR}/vendor/quick-xml-0.41.0 ${WRKDIR}/vendor/quick-xml-0.41.0; \
 		fi; \
-		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/quick-xml-0.38.3.tar.gz ${WRKDIR}/vendor/quick-xml-0.38.3 2>/dev/null || true; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/quick-xml-0.41.0.tar.gz ${WRKDIR}/vendor/quick-xml-0.41.0 2>/dev/null || true; \
 	else \
-		echo "missing dep quick-xml-0.38.3" >&2; exit 1; \
+		echo "missing dep quick-xml-0.41.0" >&2; exit 1; \
 	fi
 	@if [ -d ${_RUST_CRATE_SHARE}/time-0.3.47 ]; then \
 		ln -sfn ${_RUST_CRATE_SHARE}/time-0.3.47 ${WRKDIR}/vendor/time-0.3.47; \
@@ -670,17 +669,6 @@ post-extract:
 	else \
 		echo "missing dep unicode-ident-1.0.24" >&2; exit 1; \
 	fi
-	@if [ -d ${_RUST_CRATE_SHARE}/foldhash-0.2.0 ]; then \
-		ln -sfn ${_RUST_CRATE_SHARE}/foldhash-0.2.0 ${WRKDIR}/vendor/foldhash-0.2.0; \
-	elif [ -f ${_RUST_CRATE_SHARE}/foldhash-0.2.0.tar.gz ]; then \
-		tar xzf ${_RUST_CRATE_SHARE}/foldhash-0.2.0.tar.gz -C ${WRKDIR}/vendor; \
-		if [ ! -d ${WRKDIR}/vendor/foldhash-0.2.0 ] && [ -d ${WRKDIR}/vendor/foldhash-0.2.0 ]; then \
-			mv ${WRKDIR}/vendor/foldhash-0.2.0 ${WRKDIR}/vendor/foldhash-0.2.0; \
-		fi; \
-		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/foldhash-0.2.0.tar.gz ${WRKDIR}/vendor/foldhash-0.2.0 2>/dev/null || true; \
-	else \
-		echo "missing dep foldhash-0.2.0" >&2; exit 1; \
-	fi
 	# Strip optional/dev deps from EVERY vendored Cargo.toml, drop feature
 	# activations that no longer exist on deps, and refresh
 	# .cargo-checksum.json (editing Cargo.toml invalidates the hash).
@@ -761,12 +749,12 @@ pre-build:
 	@cp -f ${_RUST_CRATE_LIBDIR}/once_cell-1.21.3/lib*.rlib ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@cp -f ${_RUST_CRATE_LIBDIR}/once_cell-1.21.3/lib*.so ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@cp -f ${_RUST_CRATE_LIBDIR}/once_cell-1.21.3/lib*.rmeta ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
-	@if [ -d ${_RUST_CRATE_LIBDIR}/plist-1.8.0/deps ]; then \
-		cp -Rp ${_RUST_CRATE_LIBDIR}/plist-1.8.0/deps/. ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true; \
+	@if [ -d ${_RUST_CRATE_LIBDIR}/plist-1.10.0/deps ]; then \
+		cp -Rp ${_RUST_CRATE_LIBDIR}/plist-1.10.0/deps/. ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true; \
 	fi
-	@cp -f ${_RUST_CRATE_LIBDIR}/plist-1.8.0/lib*.rlib ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
-	@cp -f ${_RUST_CRATE_LIBDIR}/plist-1.8.0/lib*.so ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
-	@cp -f ${_RUST_CRATE_LIBDIR}/plist-1.8.0/lib*.rmeta ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
+	@cp -f ${_RUST_CRATE_LIBDIR}/plist-1.10.0/lib*.rlib ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
+	@cp -f ${_RUST_CRATE_LIBDIR}/plist-1.10.0/lib*.so ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
+	@cp -f ${_RUST_CRATE_LIBDIR}/plist-1.10.0/lib*.rmeta ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@if [ -d ${_RUST_CRATE_LIBDIR}/regex-syntax-0.8.11/deps ]; then \
 		cp -Rp ${_RUST_CRATE_LIBDIR}/regex-syntax-0.8.11/deps/. ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true; \
 	fi
@@ -863,12 +851,12 @@ pre-build:
 	@cp -f ${_RUST_CRATE_LIBDIR}/indexmap-2.14.0/lib*.rlib ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@cp -f ${_RUST_CRATE_LIBDIR}/indexmap-2.14.0/lib*.so ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@cp -f ${_RUST_CRATE_LIBDIR}/indexmap-2.14.0/lib*.rmeta ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
-	@if [ -d ${_RUST_CRATE_LIBDIR}/quick-xml-0.38.3/deps ]; then \
-		cp -Rp ${_RUST_CRATE_LIBDIR}/quick-xml-0.38.3/deps/. ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true; \
+	@if [ -d ${_RUST_CRATE_LIBDIR}/quick-xml-0.41.0/deps ]; then \
+		cp -Rp ${_RUST_CRATE_LIBDIR}/quick-xml-0.41.0/deps/. ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true; \
 	fi
-	@cp -f ${_RUST_CRATE_LIBDIR}/quick-xml-0.38.3/lib*.rlib ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
-	@cp -f ${_RUST_CRATE_LIBDIR}/quick-xml-0.38.3/lib*.so ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
-	@cp -f ${_RUST_CRATE_LIBDIR}/quick-xml-0.38.3/lib*.rmeta ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
+	@cp -f ${_RUST_CRATE_LIBDIR}/quick-xml-0.41.0/lib*.rlib ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
+	@cp -f ${_RUST_CRATE_LIBDIR}/quick-xml-0.41.0/lib*.so ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
+	@cp -f ${_RUST_CRATE_LIBDIR}/quick-xml-0.41.0/lib*.rmeta ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@if [ -d ${_RUST_CRATE_LIBDIR}/time-0.3.47/deps ]; then \
 		cp -Rp ${_RUST_CRATE_LIBDIR}/time-0.3.47/deps/. ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true; \
 	fi
@@ -1019,12 +1007,6 @@ pre-build:
 	@cp -f ${_RUST_CRATE_LIBDIR}/unicode-ident-1.0.24/lib*.rlib ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@cp -f ${_RUST_CRATE_LIBDIR}/unicode-ident-1.0.24/lib*.so ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@cp -f ${_RUST_CRATE_LIBDIR}/unicode-ident-1.0.24/lib*.rmeta ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
-	@if [ -d ${_RUST_CRATE_LIBDIR}/foldhash-0.2.0/deps ]; then \
-		cp -Rp ${_RUST_CRATE_LIBDIR}/foldhash-0.2.0/deps/. ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true; \
-	fi
-	@cp -f ${_RUST_CRATE_LIBDIR}/foldhash-0.2.0/lib*.rlib ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
-	@cp -f ${_RUST_CRATE_LIBDIR}/foldhash-0.2.0/lib*.so ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
-	@cp -f ${_RUST_CRATE_LIBDIR}/foldhash-0.2.0/lib*.rmeta ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	# Package files are often mode 444; cargo must be able to write .d / replace units.
 	@chmod -R u+w ${MODCARGO_TARGET_DIR} 2>/dev/null || true
 

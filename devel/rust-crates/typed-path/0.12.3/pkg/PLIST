@@ -1,0 +1,3 @@
+share/modcargo-crates/typed-path-0.12.3.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/typed-path-0.12.3/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/typed-path-0.12.3/libtyped_path.rlib

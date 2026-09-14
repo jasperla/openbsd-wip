@@ -69,7 +69,7 @@ BUILD_DEPENDS +=	rust-crate-base64ct_1_8_0-0:devel/rust-crates/base64ct/1.8.0
 BUILD_DEPENDS +=	rust-crate-zeroize_derive_1_4_2-0:devel/rust-crates/zeroize_derive/1.4.2
 BUILD_DEPENDS +=	rust-crate-generic_array_0_14_7-0:devel/rust-crates/generic-array/0.14.7
 BUILD_DEPENDS +=	rust-crate-typenum_1_19_0-0:devel/rust-crates/typenum/1.19.0
-BUILD_DEPENDS +=	rust-crate-spin_0_9_8-0:devel/rust-crates/spin/0.9.8
+BUILD_DEPENDS +=	rust-crate-spin_0_9_9-0:devel/rust-crates/spin/0.9.9
 BUILD_DEPENDS +=	rust-crate-libc_0_2_186-0:devel/rust-crates/libc/0.2.186
 BUILD_DEPENDS +=	rust-crate-rand_chacha_0_3_1-0:devel/rust-crates/rand_chacha/0.3.1
 BUILD_DEPENDS +=	rust-crate-serde_1_0_228-0:devel/rust-crates/serde/1.0.228
@@ -387,16 +387,16 @@ post-extract:
 	else \
 		echo "missing dep typenum-1.19.0" >&2; exit 1; \
 	fi
-	@if [ -d ${_RUST_CRATE_SHARE}/spin-0.9.8 ]; then \
-		ln -sfn ${_RUST_CRATE_SHARE}/spin-0.9.8 ${WRKDIR}/vendor/spin-0.9.8; \
-	elif [ -f ${_RUST_CRATE_SHARE}/spin-0.9.8.tar.gz ]; then \
-		tar xzf ${_RUST_CRATE_SHARE}/spin-0.9.8.tar.gz -C ${WRKDIR}/vendor; \
-		if [ ! -d ${WRKDIR}/vendor/spin-0.9.8 ] && [ -d ${WRKDIR}/vendor/spin-0.9.8 ]; then \
-			mv ${WRKDIR}/vendor/spin-0.9.8 ${WRKDIR}/vendor/spin-0.9.8; \
+	@if [ -d ${_RUST_CRATE_SHARE}/spin-0.9.9 ]; then \
+		ln -sfn ${_RUST_CRATE_SHARE}/spin-0.9.9 ${WRKDIR}/vendor/spin-0.9.9; \
+	elif [ -f ${_RUST_CRATE_SHARE}/spin-0.9.9.tar.gz ]; then \
+		tar xzf ${_RUST_CRATE_SHARE}/spin-0.9.9.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/spin-0.9.9 ] && [ -d ${WRKDIR}/vendor/spin-0.9.9 ]; then \
+			mv ${WRKDIR}/vendor/spin-0.9.9 ${WRKDIR}/vendor/spin-0.9.9; \
 		fi; \
-		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/spin-0.9.8.tar.gz ${WRKDIR}/vendor/spin-0.9.8 2>/dev/null || true; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/spin-0.9.9.tar.gz ${WRKDIR}/vendor/spin-0.9.9 2>/dev/null || true; \
 	else \
-		echo "missing dep spin-0.9.8" >&2; exit 1; \
+		echo "missing dep spin-0.9.9" >&2; exit 1; \
 	fi
 	@if [ -d ${_RUST_CRATE_SHARE}/libc-0.2.186 ]; then \
 		ln -sfn ${_RUST_CRATE_SHARE}/libc-0.2.186 ${WRKDIR}/vendor/libc-0.2.186; \
@@ -773,12 +773,12 @@ pre-build:
 	@cp -f ${_RUST_CRATE_LIBDIR}/typenum-1.19.0/lib*.rlib ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@cp -f ${_RUST_CRATE_LIBDIR}/typenum-1.19.0/lib*.so ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@cp -f ${_RUST_CRATE_LIBDIR}/typenum-1.19.0/lib*.rmeta ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
-	@if [ -d ${_RUST_CRATE_LIBDIR}/spin-0.9.8/deps ]; then \
-		cp -Rp ${_RUST_CRATE_LIBDIR}/spin-0.9.8/deps/. ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true; \
+	@if [ -d ${_RUST_CRATE_LIBDIR}/spin-0.9.9/deps ]; then \
+		cp -Rp ${_RUST_CRATE_LIBDIR}/spin-0.9.9/deps/. ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true; \
 	fi
-	@cp -f ${_RUST_CRATE_LIBDIR}/spin-0.9.8/lib*.rlib ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
-	@cp -f ${_RUST_CRATE_LIBDIR}/spin-0.9.8/lib*.so ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
-	@cp -f ${_RUST_CRATE_LIBDIR}/spin-0.9.8/lib*.rmeta ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
+	@cp -f ${_RUST_CRATE_LIBDIR}/spin-0.9.9/lib*.rlib ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
+	@cp -f ${_RUST_CRATE_LIBDIR}/spin-0.9.9/lib*.so ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
+	@cp -f ${_RUST_CRATE_LIBDIR}/spin-0.9.9/lib*.rmeta ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@if [ -d ${_RUST_CRATE_LIBDIR}/libc-0.2.186/deps ]; then \
 		cp -Rp ${_RUST_CRATE_LIBDIR}/libc-0.2.186/deps/. ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true; \
 	fi

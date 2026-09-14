@@ -1,0 +1,3 @@
+Prebuilt Rust crate office_oxide 0.1.9 for offline grok-build.
+PKGNAME=rust-crate-office_oxide_0_1_9-0
+Installs share/modcargo-crates/office_oxide-0.1.9/ and lib/rust-crates/<arch>/office_oxide-0.1.9/ (rlib + cargo fingerprints).

@@ -52,21 +52,21 @@ COMMENT =		SpaceXAI grok (test: rust-crate-* seeds)
 # Keep memeic's xai-org base identical to stock whenever possible.
 # Both monorepo dumps live in distinfo; the inactive one is SUPDISTFILES so
 # checksum does not flag it as "extra" for the other flavor.
-_GROK_DUMP_STOCK =	xai-org-grok-build-bb7f39d5858cbf5e00de639367f59debbdcb0138.tar.gz
-_GROK_DUMP_MEMEIC =	toddfries-grok-build-125a7e2b4d60267589613655b1f7a0cb6e74b67d.tar.gz
+_GROK_DUMP_STOCK =	xai-org-grok-build-37949780c144e37df692e3d669051a21fec24f20.tar.gz
+_GROK_DUMP_MEMEIC =	toddfries-grok-build-746f66ccffa520e40c27954ac7e8b2064eb7e9d6.tar.gz
 
 .if ${FLAVOR:L:Mmemeic}
-DIST_TUPLE =		github toddfries grok-build 125a7e2b4d60267589613655b1f7a0cb6e74b67d .
+DIST_TUPLE =		github toddfries grok-build 746f66ccffa520e40c27954ac7e8b2064eb7e9d6 .
 # xai-org base for this dump: c2ad97f (matches stock pin).
 # PKGNAME without "memeic" so FLAVOR_EXT does not become -memeic-memeic.
-PKGNAME =		grok-build-test-1.0.13
-FULLPKGNAME =		grok-build-test-memeic-1.0.13
+PKGNAME =		grok-build-test-1.0.24
+FULLPKGNAME =		grok-build-test-memeic-1.0.24
 COMMENT =		SpaceXAI grok test memeic (rust-crate-* seeds)
 SUPDISTFILES +=		${_GROK_DUMP_STOCK}
 .else
-DIST_TUPLE =		github xai-org grok-build bb7f39d5858cbf5e00de639367f59debbdcb0138 .
+DIST_TUPLE =		github xai-org grok-build 37949780c144e37df692e3d669051a21fec24f20 .
 # Binary crate version at this dump: 1.0.8 (xai-grok-pager-bin; dump c2ad97f).
-PKGNAME =		grok-build-test-1.0.13
+PKGNAME =		grok-build-test-1.0.24
 SUPDISTFILES +=		${_GROK_DUMP_MEMEIC}
 .endif
 

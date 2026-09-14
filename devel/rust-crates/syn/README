@@ -2,3 +2,4 @@
 # Versions (build from rust-crates/ top Makefile):
 #   syn/1.0.109
 #   syn/2.0.117
+#   syn/3.0.4

@@ -1,3 +1,0 @@
-share/modcargo-crates/chacha20-0.10.0.tar.gz
-lib/rust-crates/${MACHINE_ARCH}/chacha20-0.10.0/crate-meta.txt
-lib/rust-crates/${MACHINE_ARCH}/chacha20-0.10.0/libchacha20.rlib

@@ -1,0 +1,3 @@
+share/modcargo-crates/jni-sys-macros-0.4.1.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/jni-sys-macros-0.4.1/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/jni-sys-macros-0.4.1/libjni_sys_macros.so

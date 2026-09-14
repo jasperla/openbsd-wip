@@ -28,7 +28,7 @@ dependencies = [
  "js-sys 0.3.91",
  "log 0.4.32",
  "wasm-bindgen 0.2.114",
- "windows-core 0.62.2",
+ "windows-core 0.61.2",
 ]
 
 [[package]]

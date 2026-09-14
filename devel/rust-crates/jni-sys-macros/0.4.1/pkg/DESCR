@@ -1,0 +1,3 @@
+Prebuilt Rust crate jni-sys-macros 0.4.1 for offline grok-build.
+PKGNAME=rust-crate-jni_sys_macros_0_4_1-0
+Installs share/modcargo-crates/jni-sys-macros-0.4.1/ and lib/rust-crates/<arch>/jni-sys-macros-0.4.1/ (rlib + cargo fingerprints).

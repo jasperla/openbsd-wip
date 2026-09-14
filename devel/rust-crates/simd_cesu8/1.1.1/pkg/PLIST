@@ -1,0 +1,3 @@
+share/modcargo-crates/simd_cesu8-1.1.1.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/simd_cesu8-1.1.1/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/simd_cesu8-1.1.1/libsimd_cesu8.rlib

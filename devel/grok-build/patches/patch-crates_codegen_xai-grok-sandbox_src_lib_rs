@@ -35,7 +35,7 @@ Index: crates/codegen/xai-grok-sandbox/src/lib.rs
  use nono::Sandbox;
  use std::path::Path;
  #[cfg(any(target_os = "linux", test))]
-@@ -178,12 +183,55 @@
+@@ -176,12 +181,55 @@
      }
      /// Apply the sandbox to the current process. **Irreversible.**
      /// Degrades gracefully if the platform doesn't support it.
@@ -92,7 +92,7 @@ Index: crates/codegen/xai-grok-sandbox/src/lib.rs
          if requires_hook_write_deny(&self.profile, workspace) {
              xai_grok_config::ensure_grok_hook_slots(paths::grok_home().as_path())
                  .map_err(|e| anyhow::anyhow!("hook write-deny ensure failed: {e}"))?;
-@@ -260,7 +308,15 @@
+@@ -258,7 +306,15 @@
              ),
          });
      }

@@ -11,7 +11,7 @@ dependencies = [
  "crc 3.3.0",
  "digest 0.10.7",
  "rustversion 1.0.22",
- "spin 0.10.0",
+ "spin 0.10.1",
 ]
 
 [[package]]
@@ -43,9 +43,9 @@ checksum = "b39cdef0fa800fc44525c84ccb54a029961a8215f9619753635a9c0d2538d46d"
 
 [[package]]
 name = "spin"
-version = "0.10.0"
+version = "0.10.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "d5fe4ccb98d9c292d56fec89a5e07da7fc4cf0dc11e156b41793132775d3e591"
+checksum = "023a211cb3138dbc438680b32560ad89f699977624c9f8dbb95a47d5b4c07dd3"
 dependencies = [
  "lock_api 0.4.14",
 ]

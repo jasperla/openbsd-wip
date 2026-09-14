@@ -50,7 +50,7 @@ BUILD_DEPENDS +=	rust-crate-memchr_2_8_2-0:devel/rust-crates/memchr/2.8.2
 BUILD_DEPENDS +=	rust-crate-regex_automata_0_4_13-0:devel/rust-crates/regex-automata/0.4.13
 BUILD_DEPENDS +=	rust-crate-same_file_1_0_6-0:devel/rust-crates/same-file/1.0.6
 BUILD_DEPENDS +=	rust-crate-walkdir_2_5_0-0:devel/rust-crates/walkdir/2.5.0
-BUILD_DEPENDS +=	rust-crate-crossbeam_epoch_0_9_18-0:devel/rust-crates/crossbeam-epoch/0.9.18
+BUILD_DEPENDS +=	rust-crate-crossbeam_epoch_0_9_20-0:devel/rust-crates/crossbeam-epoch/0.9.20
 BUILD_DEPENDS +=	rust-crate-crossbeam_utils_0_8_21-0:devel/rust-crates/crossbeam-utils/0.8.21
 BUILD_DEPENDS +=	rust-crate-aho_corasick_1_1_3-0:devel/rust-crates/aho-corasick/1.1.3
 BUILD_DEPENDS +=	rust-crate-bstr_1_12_1-0:devel/rust-crates/bstr/1.12.1
@@ -154,16 +154,16 @@ post-extract:
 	else \
 		echo "missing dep walkdir-2.5.0" >&2; exit 1; \
 	fi
-	@if [ -d ${_RUST_CRATE_SHARE}/crossbeam-epoch-0.9.18 ]; then \
-		ln -sfn ${_RUST_CRATE_SHARE}/crossbeam-epoch-0.9.18 ${WRKDIR}/vendor/crossbeam-epoch-0.9.18; \
-	elif [ -f ${_RUST_CRATE_SHARE}/crossbeam-epoch-0.9.18.tar.gz ]; then \
-		tar xzf ${_RUST_CRATE_SHARE}/crossbeam-epoch-0.9.18.tar.gz -C ${WRKDIR}/vendor; \
-		if [ ! -d ${WRKDIR}/vendor/crossbeam-epoch-0.9.18 ] && [ -d ${WRKDIR}/vendor/crossbeam-epoch-0.9.18 ]; then \
-			mv ${WRKDIR}/vendor/crossbeam-epoch-0.9.18 ${WRKDIR}/vendor/crossbeam-epoch-0.9.18; \
+	@if [ -d ${_RUST_CRATE_SHARE}/crossbeam-epoch-0.9.20 ]; then \
+		ln -sfn ${_RUST_CRATE_SHARE}/crossbeam-epoch-0.9.20 ${WRKDIR}/vendor/crossbeam-epoch-0.9.20; \
+	elif [ -f ${_RUST_CRATE_SHARE}/crossbeam-epoch-0.9.20.tar.gz ]; then \
+		tar xzf ${_RUST_CRATE_SHARE}/crossbeam-epoch-0.9.20.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/crossbeam-epoch-0.9.20 ] && [ -d ${WRKDIR}/vendor/crossbeam-epoch-0.9.20 ]; then \
+			mv ${WRKDIR}/vendor/crossbeam-epoch-0.9.20 ${WRKDIR}/vendor/crossbeam-epoch-0.9.20; \
 		fi; \
-		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/crossbeam-epoch-0.9.18.tar.gz ${WRKDIR}/vendor/crossbeam-epoch-0.9.18 2>/dev/null || true; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/crossbeam-epoch-0.9.20.tar.gz ${WRKDIR}/vendor/crossbeam-epoch-0.9.20 2>/dev/null || true; \
 	else \
-		echo "missing dep crossbeam-epoch-0.9.18" >&2; exit 1; \
+		echo "missing dep crossbeam-epoch-0.9.20" >&2; exit 1; \
 	fi
 	@if [ -d ${_RUST_CRATE_SHARE}/crossbeam-utils-0.8.21 ]; then \
 		ln -sfn ${_RUST_CRATE_SHARE}/crossbeam-utils-0.8.21 ${WRKDIR}/vendor/crossbeam-utils-0.8.21; \
@@ -371,12 +371,12 @@ pre-build:
 	@cp -f ${_RUST_CRATE_LIBDIR}/walkdir-2.5.0/lib*.rlib ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@cp -f ${_RUST_CRATE_LIBDIR}/walkdir-2.5.0/lib*.so ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@cp -f ${_RUST_CRATE_LIBDIR}/walkdir-2.5.0/lib*.rmeta ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
-	@if [ -d ${_RUST_CRATE_LIBDIR}/crossbeam-epoch-0.9.18/deps ]; then \
-		cp -Rp ${_RUST_CRATE_LIBDIR}/crossbeam-epoch-0.9.18/deps/. ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true; \
+	@if [ -d ${_RUST_CRATE_LIBDIR}/crossbeam-epoch-0.9.20/deps ]; then \
+		cp -Rp ${_RUST_CRATE_LIBDIR}/crossbeam-epoch-0.9.20/deps/. ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true; \
 	fi
-	@cp -f ${_RUST_CRATE_LIBDIR}/crossbeam-epoch-0.9.18/lib*.rlib ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
-	@cp -f ${_RUST_CRATE_LIBDIR}/crossbeam-epoch-0.9.18/lib*.so ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
-	@cp -f ${_RUST_CRATE_LIBDIR}/crossbeam-epoch-0.9.18/lib*.rmeta ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
+	@cp -f ${_RUST_CRATE_LIBDIR}/crossbeam-epoch-0.9.20/lib*.rlib ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
+	@cp -f ${_RUST_CRATE_LIBDIR}/crossbeam-epoch-0.9.20/lib*.so ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
+	@cp -f ${_RUST_CRATE_LIBDIR}/crossbeam-epoch-0.9.20/lib*.rmeta ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@if [ -d ${_RUST_CRATE_LIBDIR}/crossbeam-utils-0.8.21/deps ]; then \
 		cp -Rp ${_RUST_CRATE_LIBDIR}/crossbeam-utils-0.8.21/deps/. ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true; \
 	fi

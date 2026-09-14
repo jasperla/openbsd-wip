@@ -53,7 +53,7 @@ BUILD_DEPENDS +=	rust-crate-fastrace_macro_0_7_18-0:devel/rust-crates/fastrace-m
 BUILD_DEPENDS +=	rust-crate-parking_lot_0_12_5-0:devel/rust-crates/parking_lot/0.12.5
 BUILD_DEPENDS +=	rust-crate-pin_project_1_1_11-0:devel/rust-crates/pin-project/1.1.11
 BUILD_DEPENDS +=	rust-crate-rand_0_10_0-0:devel/rust-crates/rand/0.10.0
-BUILD_DEPENDS +=	rust-crate-rtrb_0_3_2-0:devel/rust-crates/rtrb/0.3.2
+BUILD_DEPENDS +=	rust-crate-rtrb_0_3_5-0:devel/rust-crates/rtrb/0.3.5
 BUILD_DEPENDS +=	rust-crate-serde_1_0_228-0:devel/rust-crates/serde/1.0.228
 BUILD_DEPENDS +=	rust-crate-value_bag_1_12_0-0:devel/rust-crates/value-bag/1.12.0
 BUILD_DEPENDS +=	rust-crate-futures_core_0_3_32-0:devel/rust-crates/futures-core/0.3.32
@@ -77,7 +77,7 @@ BUILD_DEPENDS +=	rust-crate-syn_2_0_117-0:devel/rust-crates/syn/2.0.117
 BUILD_DEPENDS +=	rust-crate-lock_api_0_4_14-0:devel/rust-crates/lock_api/0.4.14
 BUILD_DEPENDS +=	rust-crate-parking_lot_core_0_9_12-0:devel/rust-crates/parking_lot_core/0.9.12
 BUILD_DEPENDS +=	rust-crate-pin_project_internal_1_1_11-0:devel/rust-crates/pin-project-internal/1.1.11
-BUILD_DEPENDS +=	rust-crate-chacha20_0_10_0-0:devel/rust-crates/chacha20/0.10.0
+BUILD_DEPENDS +=	rust-crate-chacha20_0_10_2-0:devel/rust-crates/chacha20/0.10.2
 BUILD_DEPENDS +=	rust-crate-getrandom_0_4_1-0:devel/rust-crates/getrandom/0.4.1
 BUILD_DEPENDS +=	rust-crate-rand_core_0_10_0-0:devel/rust-crates/rand_core/0.10.0
 BUILD_DEPENDS +=	rust-crate-serde_core_1_0_228-0:devel/rust-crates/serde_core/1.0.228
@@ -235,16 +235,16 @@ post-extract:
 	else \
 		echo "missing dep rand-0.10.0" >&2; exit 1; \
 	fi
-	@if [ -d ${_RUST_CRATE_SHARE}/rtrb-0.3.2 ]; then \
-		ln -sfn ${_RUST_CRATE_SHARE}/rtrb-0.3.2 ${WRKDIR}/vendor/rtrb-0.3.2; \
-	elif [ -f ${_RUST_CRATE_SHARE}/rtrb-0.3.2.tar.gz ]; then \
-		tar xzf ${_RUST_CRATE_SHARE}/rtrb-0.3.2.tar.gz -C ${WRKDIR}/vendor; \
-		if [ ! -d ${WRKDIR}/vendor/rtrb-0.3.2 ] && [ -d ${WRKDIR}/vendor/rtrb-0.3.2 ]; then \
-			mv ${WRKDIR}/vendor/rtrb-0.3.2 ${WRKDIR}/vendor/rtrb-0.3.2; \
+	@if [ -d ${_RUST_CRATE_SHARE}/rtrb-0.3.5 ]; then \
+		ln -sfn ${_RUST_CRATE_SHARE}/rtrb-0.3.5 ${WRKDIR}/vendor/rtrb-0.3.5; \
+	elif [ -f ${_RUST_CRATE_SHARE}/rtrb-0.3.5.tar.gz ]; then \
+		tar xzf ${_RUST_CRATE_SHARE}/rtrb-0.3.5.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/rtrb-0.3.5 ] && [ -d ${WRKDIR}/vendor/rtrb-0.3.5 ]; then \
+			mv ${WRKDIR}/vendor/rtrb-0.3.5 ${WRKDIR}/vendor/rtrb-0.3.5; \
 		fi; \
-		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/rtrb-0.3.2.tar.gz ${WRKDIR}/vendor/rtrb-0.3.2 2>/dev/null || true; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/rtrb-0.3.5.tar.gz ${WRKDIR}/vendor/rtrb-0.3.5 2>/dev/null || true; \
 	else \
-		echo "missing dep rtrb-0.3.2" >&2; exit 1; \
+		echo "missing dep rtrb-0.3.5" >&2; exit 1; \
 	fi
 	@if [ -d ${_RUST_CRATE_SHARE}/serde-1.0.228 ]; then \
 		ln -sfn ${_RUST_CRATE_SHARE}/serde-1.0.228 ${WRKDIR}/vendor/serde-1.0.228; \
@@ -499,16 +499,16 @@ post-extract:
 	else \
 		echo "missing dep pin-project-internal-1.1.11" >&2; exit 1; \
 	fi
-	@if [ -d ${_RUST_CRATE_SHARE}/chacha20-0.10.0 ]; then \
-		ln -sfn ${_RUST_CRATE_SHARE}/chacha20-0.10.0 ${WRKDIR}/vendor/chacha20-0.10.0; \
-	elif [ -f ${_RUST_CRATE_SHARE}/chacha20-0.10.0.tar.gz ]; then \
-		tar xzf ${_RUST_CRATE_SHARE}/chacha20-0.10.0.tar.gz -C ${WRKDIR}/vendor; \
-		if [ ! -d ${WRKDIR}/vendor/chacha20-0.10.0 ] && [ -d ${WRKDIR}/vendor/chacha20-0.10.0 ]; then \
-			mv ${WRKDIR}/vendor/chacha20-0.10.0 ${WRKDIR}/vendor/chacha20-0.10.0; \
+	@if [ -d ${_RUST_CRATE_SHARE}/chacha20-0.10.2 ]; then \
+		ln -sfn ${_RUST_CRATE_SHARE}/chacha20-0.10.2 ${WRKDIR}/vendor/chacha20-0.10.2; \
+	elif [ -f ${_RUST_CRATE_SHARE}/chacha20-0.10.2.tar.gz ]; then \
+		tar xzf ${_RUST_CRATE_SHARE}/chacha20-0.10.2.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/chacha20-0.10.2 ] && [ -d ${WRKDIR}/vendor/chacha20-0.10.2 ]; then \
+			mv ${WRKDIR}/vendor/chacha20-0.10.2 ${WRKDIR}/vendor/chacha20-0.10.2; \
 		fi; \
-		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/chacha20-0.10.0.tar.gz ${WRKDIR}/vendor/chacha20-0.10.0 2>/dev/null || true; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/chacha20-0.10.2.tar.gz ${WRKDIR}/vendor/chacha20-0.10.2 2>/dev/null || true; \
 	else \
-		echo "missing dep chacha20-0.10.0" >&2; exit 1; \
+		echo "missing dep chacha20-0.10.2" >&2; exit 1; \
 	fi
 	@if [ -d ${_RUST_CRATE_SHARE}/getrandom-0.4.1 ]; then \
 		ln -sfn ${_RUST_CRATE_SHARE}/getrandom-0.4.1 ${WRKDIR}/vendor/getrandom-0.4.1; \
@@ -965,12 +965,12 @@ pre-build:
 	@cp -f ${_RUST_CRATE_LIBDIR}/rand-0.10.0/lib*.rlib ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@cp -f ${_RUST_CRATE_LIBDIR}/rand-0.10.0/lib*.so ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@cp -f ${_RUST_CRATE_LIBDIR}/rand-0.10.0/lib*.rmeta ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
-	@if [ -d ${_RUST_CRATE_LIBDIR}/rtrb-0.3.2/deps ]; then \
-		cp -Rp ${_RUST_CRATE_LIBDIR}/rtrb-0.3.2/deps/. ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true; \
+	@if [ -d ${_RUST_CRATE_LIBDIR}/rtrb-0.3.5/deps ]; then \
+		cp -Rp ${_RUST_CRATE_LIBDIR}/rtrb-0.3.5/deps/. ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true; \
 	fi
-	@cp -f ${_RUST_CRATE_LIBDIR}/rtrb-0.3.2/lib*.rlib ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
-	@cp -f ${_RUST_CRATE_LIBDIR}/rtrb-0.3.2/lib*.so ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
-	@cp -f ${_RUST_CRATE_LIBDIR}/rtrb-0.3.2/lib*.rmeta ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
+	@cp -f ${_RUST_CRATE_LIBDIR}/rtrb-0.3.5/lib*.rlib ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
+	@cp -f ${_RUST_CRATE_LIBDIR}/rtrb-0.3.5/lib*.so ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
+	@cp -f ${_RUST_CRATE_LIBDIR}/rtrb-0.3.5/lib*.rmeta ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@if [ -d ${_RUST_CRATE_LIBDIR}/serde-1.0.228/deps ]; then \
 		cp -Rp ${_RUST_CRATE_LIBDIR}/serde-1.0.228/deps/. ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true; \
 	fi
@@ -1109,12 +1109,12 @@ pre-build:
 	@cp -f ${_RUST_CRATE_LIBDIR}/pin-project-internal-1.1.11/lib*.rlib ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@cp -f ${_RUST_CRATE_LIBDIR}/pin-project-internal-1.1.11/lib*.so ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@cp -f ${_RUST_CRATE_LIBDIR}/pin-project-internal-1.1.11/lib*.rmeta ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
-	@if [ -d ${_RUST_CRATE_LIBDIR}/chacha20-0.10.0/deps ]; then \
-		cp -Rp ${_RUST_CRATE_LIBDIR}/chacha20-0.10.0/deps/. ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true; \
+	@if [ -d ${_RUST_CRATE_LIBDIR}/chacha20-0.10.2/deps ]; then \
+		cp -Rp ${_RUST_CRATE_LIBDIR}/chacha20-0.10.2/deps/. ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true; \
 	fi
-	@cp -f ${_RUST_CRATE_LIBDIR}/chacha20-0.10.0/lib*.rlib ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
-	@cp -f ${_RUST_CRATE_LIBDIR}/chacha20-0.10.0/lib*.so ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
-	@cp -f ${_RUST_CRATE_LIBDIR}/chacha20-0.10.0/lib*.rmeta ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
+	@cp -f ${_RUST_CRATE_LIBDIR}/chacha20-0.10.2/lib*.rlib ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
+	@cp -f ${_RUST_CRATE_LIBDIR}/chacha20-0.10.2/lib*.so ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
+	@cp -f ${_RUST_CRATE_LIBDIR}/chacha20-0.10.2/lib*.rmeta ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@if [ -d ${_RUST_CRATE_LIBDIR}/getrandom-0.4.1/deps ]; then \
 		cp -Rp ${_RUST_CRATE_LIBDIR}/getrandom-0.4.1/deps/. ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true; \
 	fi

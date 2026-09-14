@@ -47,12 +47,16 @@ BUILD_DEPENDS +=	rust-crate-bitflags_2_13_0-0:devel/rust-crates/bitflags/2.13.0
 BUILD_DEPENDS +=	rust-crate-libc_0_2_186-0:devel/rust-crates/libc/0.2.186
 BUILD_DEPENDS +=	rust-crate-libgit2_sys_0_18_2_1_9_1-0:devel/rust-crates/libgit2-sys/0.18.2_1.9.1
 BUILD_DEPENDS +=	rust-crate-log_0_4_32-0:devel/rust-crates/log/0.4.32
+BUILD_DEPENDS +=	rust-crate-openssl_probe_0_1_6-0:devel/rust-crates/openssl-probe/0.1.6
+BUILD_DEPENDS +=	rust-crate-openssl_sys_0_9_117-0:devel/rust-crates/openssl-sys/0.9.117
 BUILD_DEPENDS +=	rust-crate-url_2_5_8-0:devel/rust-crates/url/2.5.8
 BUILD_DEPENDS +=	rust-crate-serde_core_1_0_228-0:devel/rust-crates/serde_core/1.0.228
 BUILD_DEPENDS +=	rust-crate-cc_1_2_43-0:devel/rust-crates/cc/1.2.43
+BUILD_DEPENDS +=	rust-crate-libssh2_sys_0_3_1-0:devel/rust-crates/libssh2-sys/0.3.1
 BUILD_DEPENDS +=	rust-crate-libz_sys_1_1_22-0:devel/rust-crates/libz-sys/1.1.22
 BUILD_DEPENDS +=	rust-crate-pkg_config_0_3_32-0:devel/rust-crates/pkg-config/0.3.32
 BUILD_DEPENDS +=	rust-crate-value_bag_1_12_0-0:devel/rust-crates/value-bag/1.12.0
+BUILD_DEPENDS +=	rust-crate-vcpkg_0_2_15-0:devel/rust-crates/vcpkg/0.2.15
 BUILD_DEPENDS +=	rust-crate-form_urlencoded_1_2_2-0:devel/rust-crates/form_urlencoded/1.2.2
 BUILD_DEPENDS +=	rust-crate-idna_1_1_0-0:devel/rust-crates/idna/1.1.0
 BUILD_DEPENDS +=	rust-crate-percent_encoding_2_3_2-0:devel/rust-crates/percent-encoding/2.3.2
@@ -61,7 +65,6 @@ BUILD_DEPENDS +=	rust-crate-serde_derive_1_0_228-0:devel/rust-crates/serde_deriv
 BUILD_DEPENDS +=	rust-crate-find_msvc_tools_0_1_4-0:devel/rust-crates/find-msvc-tools/0.1.4
 BUILD_DEPENDS +=	rust-crate-jobserver_0_1_34-0:devel/rust-crates/jobserver/0.1.34
 BUILD_DEPENDS +=	rust-crate-shlex_1_3_0-0:devel/rust-crates/shlex/1.3.0
-BUILD_DEPENDS +=	rust-crate-vcpkg_0_2_15-0:devel/rust-crates/vcpkg/0.2.15
 BUILD_DEPENDS +=	rust-crate-idna_adapter_1_2_1-0:devel/rust-crates/idna_adapter/1.2.1
 BUILD_DEPENDS +=	rust-crate-smallvec_1_15_1-0:devel/rust-crates/smallvec/1.15.1
 BUILD_DEPENDS +=	rust-crate-utf8_iter_1_0_4-0:devel/rust-crates/utf8_iter/1.0.4
@@ -151,6 +154,28 @@ post-extract:
 	else \
 		echo "missing dep log-0.4.32" >&2; exit 1; \
 	fi
+	@if [ -d ${_RUST_CRATE_SHARE}/openssl-probe-0.1.6 ]; then \
+		ln -sfn ${_RUST_CRATE_SHARE}/openssl-probe-0.1.6 ${WRKDIR}/vendor/openssl-probe-0.1.6; \
+	elif [ -f ${_RUST_CRATE_SHARE}/openssl-probe-0.1.6.tar.gz ]; then \
+		tar xzf ${_RUST_CRATE_SHARE}/openssl-probe-0.1.6.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/openssl-probe-0.1.6 ] && [ -d ${WRKDIR}/vendor/openssl-probe-0.1.6 ]; then \
+			mv ${WRKDIR}/vendor/openssl-probe-0.1.6 ${WRKDIR}/vendor/openssl-probe-0.1.6; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/openssl-probe-0.1.6.tar.gz ${WRKDIR}/vendor/openssl-probe-0.1.6 2>/dev/null || true; \
+	else \
+		echo "missing dep openssl-probe-0.1.6" >&2; exit 1; \
+	fi
+	@if [ -d ${_RUST_CRATE_SHARE}/openssl-sys-0.9.117 ]; then \
+		ln -sfn ${_RUST_CRATE_SHARE}/openssl-sys-0.9.117 ${WRKDIR}/vendor/openssl-sys-0.9.117; \
+	elif [ -f ${_RUST_CRATE_SHARE}/openssl-sys-0.9.117.tar.gz ]; then \
+		tar xzf ${_RUST_CRATE_SHARE}/openssl-sys-0.9.117.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/openssl-sys-0.9.117 ] && [ -d ${WRKDIR}/vendor/openssl-sys-0.9.117 ]; then \
+			mv ${WRKDIR}/vendor/openssl-sys-0.9.117 ${WRKDIR}/vendor/openssl-sys-0.9.117; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/openssl-sys-0.9.117.tar.gz ${WRKDIR}/vendor/openssl-sys-0.9.117 2>/dev/null || true; \
+	else \
+		echo "missing dep openssl-sys-0.9.117" >&2; exit 1; \
+	fi
 	@if [ -d ${_RUST_CRATE_SHARE}/url-2.5.8 ]; then \
 		ln -sfn ${_RUST_CRATE_SHARE}/url-2.5.8 ${WRKDIR}/vendor/url-2.5.8; \
 	elif [ -f ${_RUST_CRATE_SHARE}/url-2.5.8.tar.gz ]; then \
@@ -184,6 +209,17 @@ post-extract:
 	else \
 		echo "missing dep cc-1.2.43" >&2; exit 1; \
 	fi
+	@if [ -d ${_RUST_CRATE_SHARE}/libssh2-sys-0.3.1 ]; then \
+		ln -sfn ${_RUST_CRATE_SHARE}/libssh2-sys-0.3.1 ${WRKDIR}/vendor/libssh2-sys-0.3.1; \
+	elif [ -f ${_RUST_CRATE_SHARE}/libssh2-sys-0.3.1.tar.gz ]; then \
+		tar xzf ${_RUST_CRATE_SHARE}/libssh2-sys-0.3.1.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/libssh2-sys-0.3.1 ] && [ -d ${WRKDIR}/vendor/libssh2-sys-0.3.1 ]; then \
+			mv ${WRKDIR}/vendor/libssh2-sys-0.3.1 ${WRKDIR}/vendor/libssh2-sys-0.3.1; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/libssh2-sys-0.3.1.tar.gz ${WRKDIR}/vendor/libssh2-sys-0.3.1 2>/dev/null || true; \
+	else \
+		echo "missing dep libssh2-sys-0.3.1" >&2; exit 1; \
+	fi
 	@if [ -d ${_RUST_CRATE_SHARE}/libz-sys-1.1.22 ]; then \
 		ln -sfn ${_RUST_CRATE_SHARE}/libz-sys-1.1.22 ${WRKDIR}/vendor/libz-sys-1.1.22; \
 	elif [ -f ${_RUST_CRATE_SHARE}/libz-sys-1.1.22.tar.gz ]; then \
@@ -216,6 +252,17 @@ post-extract:
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/value-bag-1.12.0.tar.gz ${WRKDIR}/vendor/value-bag-1.12.0 2>/dev/null || true; \
 	else \
 		echo "missing dep value-bag-1.12.0" >&2; exit 1; \
+	fi
+	@if [ -d ${_RUST_CRATE_SHARE}/vcpkg-0.2.15 ]; then \
+		ln -sfn ${_RUST_CRATE_SHARE}/vcpkg-0.2.15 ${WRKDIR}/vendor/vcpkg-0.2.15; \
+	elif [ -f ${_RUST_CRATE_SHARE}/vcpkg-0.2.15.tar.gz ]; then \
+		tar xzf ${_RUST_CRATE_SHARE}/vcpkg-0.2.15.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/vcpkg-0.2.15 ] && [ -d ${WRKDIR}/vendor/vcpkg-0.2.15 ]; then \
+			mv ${WRKDIR}/vendor/vcpkg-0.2.15 ${WRKDIR}/vendor/vcpkg-0.2.15; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/vcpkg-0.2.15.tar.gz ${WRKDIR}/vendor/vcpkg-0.2.15 2>/dev/null || true; \
+	else \
+		echo "missing dep vcpkg-0.2.15" >&2; exit 1; \
 	fi
 	@if [ -d ${_RUST_CRATE_SHARE}/form_urlencoded-1.2.2 ]; then \
 		ln -sfn ${_RUST_CRATE_SHARE}/form_urlencoded-1.2.2 ${WRKDIR}/vendor/form_urlencoded-1.2.2; \
@@ -304,17 +351,6 @@ post-extract:
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/shlex-1.3.0.tar.gz ${WRKDIR}/vendor/shlex-1.3.0 2>/dev/null || true; \
 	else \
 		echo "missing dep shlex-1.3.0" >&2; exit 1; \
-	fi
-	@if [ -d ${_RUST_CRATE_SHARE}/vcpkg-0.2.15 ]; then \
-		ln -sfn ${_RUST_CRATE_SHARE}/vcpkg-0.2.15 ${WRKDIR}/vendor/vcpkg-0.2.15; \
-	elif [ -f ${_RUST_CRATE_SHARE}/vcpkg-0.2.15.tar.gz ]; then \
-		tar xzf ${_RUST_CRATE_SHARE}/vcpkg-0.2.15.tar.gz -C ${WRKDIR}/vendor; \
-		if [ ! -d ${WRKDIR}/vendor/vcpkg-0.2.15 ] && [ -d ${WRKDIR}/vendor/vcpkg-0.2.15 ]; then \
-			mv ${WRKDIR}/vendor/vcpkg-0.2.15 ${WRKDIR}/vendor/vcpkg-0.2.15; \
-		fi; \
-		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/vcpkg-0.2.15.tar.gz ${WRKDIR}/vendor/vcpkg-0.2.15 2>/dev/null || true; \
-	else \
-		echo "missing dep vcpkg-0.2.15" >&2; exit 1; \
 	fi
 	@if [ -d ${_RUST_CRATE_SHARE}/idna_adapter-1.2.1 ]; then \
 		ln -sfn ${_RUST_CRATE_SHARE}/idna_adapter-1.2.1 ${WRKDIR}/vendor/idna_adapter-1.2.1; \
@@ -713,6 +749,18 @@ pre-build:
 	@cp -f ${_RUST_CRATE_LIBDIR}/log-0.4.32/lib*.rlib ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@cp -f ${_RUST_CRATE_LIBDIR}/log-0.4.32/lib*.so ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@cp -f ${_RUST_CRATE_LIBDIR}/log-0.4.32/lib*.rmeta ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
+	@if [ -d ${_RUST_CRATE_LIBDIR}/openssl-probe-0.1.6/deps ]; then \
+		cp -Rp ${_RUST_CRATE_LIBDIR}/openssl-probe-0.1.6/deps/. ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true; \
+	fi
+	@cp -f ${_RUST_CRATE_LIBDIR}/openssl-probe-0.1.6/lib*.rlib ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
+	@cp -f ${_RUST_CRATE_LIBDIR}/openssl-probe-0.1.6/lib*.so ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
+	@cp -f ${_RUST_CRATE_LIBDIR}/openssl-probe-0.1.6/lib*.rmeta ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
+	@if [ -d ${_RUST_CRATE_LIBDIR}/openssl-sys-0.9.117/deps ]; then \
+		cp -Rp ${_RUST_CRATE_LIBDIR}/openssl-sys-0.9.117/deps/. ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true; \
+	fi
+	@cp -f ${_RUST_CRATE_LIBDIR}/openssl-sys-0.9.117/lib*.rlib ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
+	@cp -f ${_RUST_CRATE_LIBDIR}/openssl-sys-0.9.117/lib*.so ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
+	@cp -f ${_RUST_CRATE_LIBDIR}/openssl-sys-0.9.117/lib*.rmeta ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@if [ -d ${_RUST_CRATE_LIBDIR}/url-2.5.8/deps ]; then \
 		cp -Rp ${_RUST_CRATE_LIBDIR}/url-2.5.8/deps/. ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true; \
 	fi
@@ -731,6 +779,12 @@ pre-build:
 	@cp -f ${_RUST_CRATE_LIBDIR}/cc-1.2.43/lib*.rlib ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@cp -f ${_RUST_CRATE_LIBDIR}/cc-1.2.43/lib*.so ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@cp -f ${_RUST_CRATE_LIBDIR}/cc-1.2.43/lib*.rmeta ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
+	@if [ -d ${_RUST_CRATE_LIBDIR}/libssh2-sys-0.3.1/deps ]; then \
+		cp -Rp ${_RUST_CRATE_LIBDIR}/libssh2-sys-0.3.1/deps/. ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true; \
+	fi
+	@cp -f ${_RUST_CRATE_LIBDIR}/libssh2-sys-0.3.1/lib*.rlib ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
+	@cp -f ${_RUST_CRATE_LIBDIR}/libssh2-sys-0.3.1/lib*.so ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
+	@cp -f ${_RUST_CRATE_LIBDIR}/libssh2-sys-0.3.1/lib*.rmeta ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@if [ -d ${_RUST_CRATE_LIBDIR}/libz-sys-1.1.22/deps ]; then \
 		cp -Rp ${_RUST_CRATE_LIBDIR}/libz-sys-1.1.22/deps/. ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true; \
 	fi
@@ -749,6 +803,12 @@ pre-build:
 	@cp -f ${_RUST_CRATE_LIBDIR}/value-bag-1.12.0/lib*.rlib ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@cp -f ${_RUST_CRATE_LIBDIR}/value-bag-1.12.0/lib*.so ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@cp -f ${_RUST_CRATE_LIBDIR}/value-bag-1.12.0/lib*.rmeta ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
+	@if [ -d ${_RUST_CRATE_LIBDIR}/vcpkg-0.2.15/deps ]; then \
+		cp -Rp ${_RUST_CRATE_LIBDIR}/vcpkg-0.2.15/deps/. ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true; \
+	fi
+	@cp -f ${_RUST_CRATE_LIBDIR}/vcpkg-0.2.15/lib*.rlib ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
+	@cp -f ${_RUST_CRATE_LIBDIR}/vcpkg-0.2.15/lib*.so ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
+	@cp -f ${_RUST_CRATE_LIBDIR}/vcpkg-0.2.15/lib*.rmeta ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@if [ -d ${_RUST_CRATE_LIBDIR}/form_urlencoded-1.2.2/deps ]; then \
 		cp -Rp ${_RUST_CRATE_LIBDIR}/form_urlencoded-1.2.2/deps/. ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true; \
 	fi
@@ -797,12 +857,6 @@ pre-build:
 	@cp -f ${_RUST_CRATE_LIBDIR}/shlex-1.3.0/lib*.rlib ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@cp -f ${_RUST_CRATE_LIBDIR}/shlex-1.3.0/lib*.so ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@cp -f ${_RUST_CRATE_LIBDIR}/shlex-1.3.0/lib*.rmeta ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
-	@if [ -d ${_RUST_CRATE_LIBDIR}/vcpkg-0.2.15/deps ]; then \
-		cp -Rp ${_RUST_CRATE_LIBDIR}/vcpkg-0.2.15/deps/. ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true; \
-	fi
-	@cp -f ${_RUST_CRATE_LIBDIR}/vcpkg-0.2.15/lib*.rlib ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
-	@cp -f ${_RUST_CRATE_LIBDIR}/vcpkg-0.2.15/lib*.so ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
-	@cp -f ${_RUST_CRATE_LIBDIR}/vcpkg-0.2.15/lib*.rmeta ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@if [ -d ${_RUST_CRATE_LIBDIR}/idna_adapter-1.2.1/deps ]; then \
 		cp -Rp ${_RUST_CRATE_LIBDIR}/idna_adapter-1.2.1/deps/. ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true; \
 	fi

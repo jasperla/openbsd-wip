@@ -102,8 +102,7 @@ BUILD_DEPENDS +=	rust-crate-colorchoice_1_0_4-0:devel/rust-crates/colorchoice/1.
 BUILD_DEPENDS +=	rust-crate-is_terminal_polyfill_1_70_2-0:devel/rust-crates/is_terminal_polyfill/1.70.2
 BUILD_DEPENDS +=	rust-crate-utf8parse_0_2_2-0:devel/rust-crates/utf8parse/0.2.2
 BUILD_DEPENDS +=	rust-crate-unicode_ident_1_0_24-0:devel/rust-crates/unicode-ident/1.0.24
-BUILD_DEPENDS +=	rust-crate-crossbeam_epoch_0_9_18-0:devel/rust-crates/crossbeam-epoch/0.9.18
-BUILD_DEPENDS +=	rust-crate-foldhash_0_2_0-0:devel/rust-crates/foldhash/0.2.0
+BUILD_DEPENDS +=	rust-crate-crossbeam_epoch_0_9_20-0:devel/rust-crates/crossbeam-epoch/0.9.20
 BUILD_DEPENDS +=	rust-crate-zerocopy_derive_0_8_48-0:devel/rust-crates/zerocopy-derive/0.8.48
 BUILD_DEPENDS +=	rust-crate-once_cell_polyfill_1_70_2-0:devel/rust-crates/once_cell_polyfill/1.70.2
 
@@ -769,27 +768,16 @@ post-extract:
 	else \
 		echo "missing dep unicode-ident-1.0.24" >&2; exit 1; \
 	fi
-	@if [ -d ${_RUST_CRATE_SHARE}/crossbeam-epoch-0.9.18 ]; then \
-		ln -sfn ${_RUST_CRATE_SHARE}/crossbeam-epoch-0.9.18 ${WRKDIR}/vendor/crossbeam-epoch-0.9.18; \
-	elif [ -f ${_RUST_CRATE_SHARE}/crossbeam-epoch-0.9.18.tar.gz ]; then \
-		tar xzf ${_RUST_CRATE_SHARE}/crossbeam-epoch-0.9.18.tar.gz -C ${WRKDIR}/vendor; \
-		if [ ! -d ${WRKDIR}/vendor/crossbeam-epoch-0.9.18 ] && [ -d ${WRKDIR}/vendor/crossbeam-epoch-0.9.18 ]; then \
-			mv ${WRKDIR}/vendor/crossbeam-epoch-0.9.18 ${WRKDIR}/vendor/crossbeam-epoch-0.9.18; \
+	@if [ -d ${_RUST_CRATE_SHARE}/crossbeam-epoch-0.9.20 ]; then \
+		ln -sfn ${_RUST_CRATE_SHARE}/crossbeam-epoch-0.9.20 ${WRKDIR}/vendor/crossbeam-epoch-0.9.20; \
+	elif [ -f ${_RUST_CRATE_SHARE}/crossbeam-epoch-0.9.20.tar.gz ]; then \
+		tar xzf ${_RUST_CRATE_SHARE}/crossbeam-epoch-0.9.20.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/crossbeam-epoch-0.9.20 ] && [ -d ${WRKDIR}/vendor/crossbeam-epoch-0.9.20 ]; then \
+			mv ${WRKDIR}/vendor/crossbeam-epoch-0.9.20 ${WRKDIR}/vendor/crossbeam-epoch-0.9.20; \
 		fi; \
-		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/crossbeam-epoch-0.9.18.tar.gz ${WRKDIR}/vendor/crossbeam-epoch-0.9.18 2>/dev/null || true; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/crossbeam-epoch-0.9.20.tar.gz ${WRKDIR}/vendor/crossbeam-epoch-0.9.20 2>/dev/null || true; \
 	else \
-		echo "missing dep crossbeam-epoch-0.9.18" >&2; exit 1; \
-	fi
-	@if [ -d ${_RUST_CRATE_SHARE}/foldhash-0.2.0 ]; then \
-		ln -sfn ${_RUST_CRATE_SHARE}/foldhash-0.2.0 ${WRKDIR}/vendor/foldhash-0.2.0; \
-	elif [ -f ${_RUST_CRATE_SHARE}/foldhash-0.2.0.tar.gz ]; then \
-		tar xzf ${_RUST_CRATE_SHARE}/foldhash-0.2.0.tar.gz -C ${WRKDIR}/vendor; \
-		if [ ! -d ${WRKDIR}/vendor/foldhash-0.2.0 ] && [ -d ${WRKDIR}/vendor/foldhash-0.2.0 ]; then \
-			mv ${WRKDIR}/vendor/foldhash-0.2.0 ${WRKDIR}/vendor/foldhash-0.2.0; \
-		fi; \
-		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/foldhash-0.2.0.tar.gz ${WRKDIR}/vendor/foldhash-0.2.0 2>/dev/null || true; \
-	else \
-		echo "missing dep foldhash-0.2.0" >&2; exit 1; \
+		echo "missing dep crossbeam-epoch-0.9.20" >&2; exit 1; \
 	fi
 	@if [ -d ${_RUST_CRATE_SHARE}/zerocopy-derive-0.8.48 ]; then \
 		ln -sfn ${_RUST_CRATE_SHARE}/zerocopy-derive-0.8.48 ${WRKDIR}/vendor/zerocopy-derive-0.8.48; \
@@ -1199,18 +1187,12 @@ pre-build:
 	@cp -f ${_RUST_CRATE_LIBDIR}/unicode-ident-1.0.24/lib*.rlib ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@cp -f ${_RUST_CRATE_LIBDIR}/unicode-ident-1.0.24/lib*.so ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@cp -f ${_RUST_CRATE_LIBDIR}/unicode-ident-1.0.24/lib*.rmeta ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
-	@if [ -d ${_RUST_CRATE_LIBDIR}/crossbeam-epoch-0.9.18/deps ]; then \
-		cp -Rp ${_RUST_CRATE_LIBDIR}/crossbeam-epoch-0.9.18/deps/. ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true; \
+	@if [ -d ${_RUST_CRATE_LIBDIR}/crossbeam-epoch-0.9.20/deps ]; then \
+		cp -Rp ${_RUST_CRATE_LIBDIR}/crossbeam-epoch-0.9.20/deps/. ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true; \
 	fi
-	@cp -f ${_RUST_CRATE_LIBDIR}/crossbeam-epoch-0.9.18/lib*.rlib ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
-	@cp -f ${_RUST_CRATE_LIBDIR}/crossbeam-epoch-0.9.18/lib*.so ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
-	@cp -f ${_RUST_CRATE_LIBDIR}/crossbeam-epoch-0.9.18/lib*.rmeta ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
-	@if [ -d ${_RUST_CRATE_LIBDIR}/foldhash-0.2.0/deps ]; then \
-		cp -Rp ${_RUST_CRATE_LIBDIR}/foldhash-0.2.0/deps/. ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true; \
-	fi
-	@cp -f ${_RUST_CRATE_LIBDIR}/foldhash-0.2.0/lib*.rlib ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
-	@cp -f ${_RUST_CRATE_LIBDIR}/foldhash-0.2.0/lib*.so ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
-	@cp -f ${_RUST_CRATE_LIBDIR}/foldhash-0.2.0/lib*.rmeta ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
+	@cp -f ${_RUST_CRATE_LIBDIR}/crossbeam-epoch-0.9.20/lib*.rlib ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
+	@cp -f ${_RUST_CRATE_LIBDIR}/crossbeam-epoch-0.9.20/lib*.so ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
+	@cp -f ${_RUST_CRATE_LIBDIR}/crossbeam-epoch-0.9.20/lib*.rmeta ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@if [ -d ${_RUST_CRATE_LIBDIR}/zerocopy-derive-0.8.48/deps ]; then \
 		cp -Rp ${_RUST_CRATE_LIBDIR}/zerocopy-derive-0.8.48/deps/. ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true; \
 	fi

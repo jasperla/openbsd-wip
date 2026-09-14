@@ -45,7 +45,9 @@ MAKE_ENV +=		CARGO_ENCODED_RUSTFLAGS=--cap-lints=allow
 
 BUILD_DEPENDS +=	rust-crate-cc_1_2_43-0:devel/rust-crates/cc/1.2.43
 BUILD_DEPENDS +=	rust-crate-libc_0_2_186-0:devel/rust-crates/libc/0.2.186
+BUILD_DEPENDS +=	rust-crate-libssh2_sys_0_3_1-0:devel/rust-crates/libssh2-sys/0.3.1
 BUILD_DEPENDS +=	rust-crate-libz_sys_1_1_22-0:devel/rust-crates/libz-sys/1.1.22
+BUILD_DEPENDS +=	rust-crate-openssl_sys_0_9_117-0:devel/rust-crates/openssl-sys/0.9.117
 BUILD_DEPENDS +=	rust-crate-pkg_config_0_3_32-0:devel/rust-crates/pkg-config/0.3.32
 BUILD_DEPENDS +=	rust-crate-find_msvc_tools_0_1_4-0:devel/rust-crates/find-msvc-tools/0.1.4
 BUILD_DEPENDS +=	rust-crate-jobserver_0_1_34-0:devel/rust-crates/jobserver/0.1.34
@@ -90,6 +92,17 @@ post-extract:
 	else \
 		echo "missing dep libc-0.2.186" >&2; exit 1; \
 	fi
+	@if [ -d ${_RUST_CRATE_SHARE}/libssh2-sys-0.3.1 ]; then \
+		ln -sfn ${_RUST_CRATE_SHARE}/libssh2-sys-0.3.1 ${WRKDIR}/vendor/libssh2-sys-0.3.1; \
+	elif [ -f ${_RUST_CRATE_SHARE}/libssh2-sys-0.3.1.tar.gz ]; then \
+		tar xzf ${_RUST_CRATE_SHARE}/libssh2-sys-0.3.1.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/libssh2-sys-0.3.1 ] && [ -d ${WRKDIR}/vendor/libssh2-sys-0.3.1 ]; then \
+			mv ${WRKDIR}/vendor/libssh2-sys-0.3.1 ${WRKDIR}/vendor/libssh2-sys-0.3.1; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/libssh2-sys-0.3.1.tar.gz ${WRKDIR}/vendor/libssh2-sys-0.3.1 2>/dev/null || true; \
+	else \
+		echo "missing dep libssh2-sys-0.3.1" >&2; exit 1; \
+	fi
 	@if [ -d ${_RUST_CRATE_SHARE}/libz-sys-1.1.22 ]; then \
 		ln -sfn ${_RUST_CRATE_SHARE}/libz-sys-1.1.22 ${WRKDIR}/vendor/libz-sys-1.1.22; \
 	elif [ -f ${_RUST_CRATE_SHARE}/libz-sys-1.1.22.tar.gz ]; then \
@@ -100,6 +113,17 @@ post-extract:
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/libz-sys-1.1.22.tar.gz ${WRKDIR}/vendor/libz-sys-1.1.22 2>/dev/null || true; \
 	else \
 		echo "missing dep libz-sys-1.1.22" >&2; exit 1; \
+	fi
+	@if [ -d ${_RUST_CRATE_SHARE}/openssl-sys-0.9.117 ]; then \
+		ln -sfn ${_RUST_CRATE_SHARE}/openssl-sys-0.9.117 ${WRKDIR}/vendor/openssl-sys-0.9.117; \
+	elif [ -f ${_RUST_CRATE_SHARE}/openssl-sys-0.9.117.tar.gz ]; then \
+		tar xzf ${_RUST_CRATE_SHARE}/openssl-sys-0.9.117.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/openssl-sys-0.9.117 ] && [ -d ${WRKDIR}/vendor/openssl-sys-0.9.117 ]; then \
+			mv ${WRKDIR}/vendor/openssl-sys-0.9.117 ${WRKDIR}/vendor/openssl-sys-0.9.117; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/openssl-sys-0.9.117.tar.gz ${WRKDIR}/vendor/openssl-sys-0.9.117 2>/dev/null || true; \
+	else \
+		echo "missing dep openssl-sys-0.9.117" >&2; exit 1; \
 	fi
 	@if [ -d ${_RUST_CRATE_SHARE}/pkg-config-0.3.32 ]; then \
 		ln -sfn ${_RUST_CRATE_SHARE}/pkg-config-0.3.32 ${WRKDIR}/vendor/pkg-config-0.3.32; \
@@ -233,12 +257,24 @@ pre-build:
 	@cp -f ${_RUST_CRATE_LIBDIR}/libc-0.2.186/lib*.rlib ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@cp -f ${_RUST_CRATE_LIBDIR}/libc-0.2.186/lib*.so ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@cp -f ${_RUST_CRATE_LIBDIR}/libc-0.2.186/lib*.rmeta ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
+	@if [ -d ${_RUST_CRATE_LIBDIR}/libssh2-sys-0.3.1/deps ]; then \
+		cp -Rp ${_RUST_CRATE_LIBDIR}/libssh2-sys-0.3.1/deps/. ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true; \
+	fi
+	@cp -f ${_RUST_CRATE_LIBDIR}/libssh2-sys-0.3.1/lib*.rlib ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
+	@cp -f ${_RUST_CRATE_LIBDIR}/libssh2-sys-0.3.1/lib*.so ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
+	@cp -f ${_RUST_CRATE_LIBDIR}/libssh2-sys-0.3.1/lib*.rmeta ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@if [ -d ${_RUST_CRATE_LIBDIR}/libz-sys-1.1.22/deps ]; then \
 		cp -Rp ${_RUST_CRATE_LIBDIR}/libz-sys-1.1.22/deps/. ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true; \
 	fi
 	@cp -f ${_RUST_CRATE_LIBDIR}/libz-sys-1.1.22/lib*.rlib ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@cp -f ${_RUST_CRATE_LIBDIR}/libz-sys-1.1.22/lib*.so ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@cp -f ${_RUST_CRATE_LIBDIR}/libz-sys-1.1.22/lib*.rmeta ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
+	@if [ -d ${_RUST_CRATE_LIBDIR}/openssl-sys-0.9.117/deps ]; then \
+		cp -Rp ${_RUST_CRATE_LIBDIR}/openssl-sys-0.9.117/deps/. ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true; \
+	fi
+	@cp -f ${_RUST_CRATE_LIBDIR}/openssl-sys-0.9.117/lib*.rlib ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
+	@cp -f ${_RUST_CRATE_LIBDIR}/openssl-sys-0.9.117/lib*.so ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
+	@cp -f ${_RUST_CRATE_LIBDIR}/openssl-sys-0.9.117/lib*.rmeta ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@if [ -d ${_RUST_CRATE_LIBDIR}/pkg-config-0.3.32/deps ]; then \
 		cp -Rp ${_RUST_CRATE_LIBDIR}/pkg-config-0.3.32/deps/. ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true; \
 	fi

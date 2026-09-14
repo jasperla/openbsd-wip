@@ -1,0 +1,3 @@
+share/modcargo-crates/zip-8.6.0.tar.gz
+lib/rust-crates/${MACHINE_ARCH}/zip-8.6.0/crate-meta.txt
+lib/rust-crates/${MACHINE_ARCH}/zip-8.6.0/libzip.rlib

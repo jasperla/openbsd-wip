@@ -43,7 +43,7 @@ MAKE_ENV +=		RUSTFLAGS=--cap-lints=allow
 MAKE_ENV +=		CARGO_ENCODED_RUSTFLAGS=--cap-lints=allow
 
 
-BUILD_DEPENDS +=	rust-crate-crossbeam_epoch_0_9_18-0:devel/rust-crates/crossbeam-epoch/0.9.18
+BUILD_DEPENDS +=	rust-crate-crossbeam_epoch_0_9_20-0:devel/rust-crates/crossbeam-epoch/0.9.20
 BUILD_DEPENDS +=	rust-crate-crossbeam_utils_0_8_21-0:devel/rust-crates/crossbeam-utils/0.8.21
 
 # Direct registry deps: seed their rlibs/fingerprints before building this crate.
@@ -59,16 +59,16 @@ post-extract:
 	@${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/crossbeam-deque-0.8.6.tar.gz \
 		${WRKDIR}/vendor/crossbeam-deque-0.8.6
 	# Dep sources from installed rust-crate-* packages (or fail if missing)
-	@if [ -d ${_RUST_CRATE_SHARE}/crossbeam-epoch-0.9.18 ]; then \
-		ln -sfn ${_RUST_CRATE_SHARE}/crossbeam-epoch-0.9.18 ${WRKDIR}/vendor/crossbeam-epoch-0.9.18; \
-	elif [ -f ${_RUST_CRATE_SHARE}/crossbeam-epoch-0.9.18.tar.gz ]; then \
-		tar xzf ${_RUST_CRATE_SHARE}/crossbeam-epoch-0.9.18.tar.gz -C ${WRKDIR}/vendor; \
-		if [ ! -d ${WRKDIR}/vendor/crossbeam-epoch-0.9.18 ] && [ -d ${WRKDIR}/vendor/crossbeam-epoch-0.9.18 ]; then \
-			mv ${WRKDIR}/vendor/crossbeam-epoch-0.9.18 ${WRKDIR}/vendor/crossbeam-epoch-0.9.18; \
+	@if [ -d ${_RUST_CRATE_SHARE}/crossbeam-epoch-0.9.20 ]; then \
+		ln -sfn ${_RUST_CRATE_SHARE}/crossbeam-epoch-0.9.20 ${WRKDIR}/vendor/crossbeam-epoch-0.9.20; \
+	elif [ -f ${_RUST_CRATE_SHARE}/crossbeam-epoch-0.9.20.tar.gz ]; then \
+		tar xzf ${_RUST_CRATE_SHARE}/crossbeam-epoch-0.9.20.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/crossbeam-epoch-0.9.20 ] && [ -d ${WRKDIR}/vendor/crossbeam-epoch-0.9.20 ]; then \
+			mv ${WRKDIR}/vendor/crossbeam-epoch-0.9.20 ${WRKDIR}/vendor/crossbeam-epoch-0.9.20; \
 		fi; \
-		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/crossbeam-epoch-0.9.18.tar.gz ${WRKDIR}/vendor/crossbeam-epoch-0.9.18 2>/dev/null || true; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/crossbeam-epoch-0.9.20.tar.gz ${WRKDIR}/vendor/crossbeam-epoch-0.9.20 2>/dev/null || true; \
 	else \
-		echo "missing dep crossbeam-epoch-0.9.18" >&2; exit 1; \
+		echo "missing dep crossbeam-epoch-0.9.20" >&2; exit 1; \
 	fi
 	@if [ -d ${_RUST_CRATE_SHARE}/crossbeam-utils-0.8.21 ]; then \
 		ln -sfn ${_RUST_CRATE_SHARE}/crossbeam-utils-0.8.21 ${WRKDIR}/vendor/crossbeam-utils-0.8.21; \
@@ -113,12 +113,12 @@ pre-build:
 	@mkdir -p ${MODCARGO_TARGET_DIR}/release/deps
 	@mkdir -p ${MODCARGO_TARGET_DIR}/release/.fingerprint
 	# Seed dep cargo artifacts so cargo often skips recompiling them.
-	@if [ -d ${_RUST_CRATE_LIBDIR}/crossbeam-epoch-0.9.18/deps ]; then \
-		cp -Rp ${_RUST_CRATE_LIBDIR}/crossbeam-epoch-0.9.18/deps/. ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true; \
+	@if [ -d ${_RUST_CRATE_LIBDIR}/crossbeam-epoch-0.9.20/deps ]; then \
+		cp -Rp ${_RUST_CRATE_LIBDIR}/crossbeam-epoch-0.9.20/deps/. ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true; \
 	fi
-	@cp -f ${_RUST_CRATE_LIBDIR}/crossbeam-epoch-0.9.18/lib*.rlib ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
-	@cp -f ${_RUST_CRATE_LIBDIR}/crossbeam-epoch-0.9.18/lib*.so ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
-	@cp -f ${_RUST_CRATE_LIBDIR}/crossbeam-epoch-0.9.18/lib*.rmeta ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
+	@cp -f ${_RUST_CRATE_LIBDIR}/crossbeam-epoch-0.9.20/lib*.rlib ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
+	@cp -f ${_RUST_CRATE_LIBDIR}/crossbeam-epoch-0.9.20/lib*.so ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
+	@cp -f ${_RUST_CRATE_LIBDIR}/crossbeam-epoch-0.9.20/lib*.rmeta ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@if [ -d ${_RUST_CRATE_LIBDIR}/crossbeam-utils-0.8.21/deps ]; then \
 		cp -Rp ${_RUST_CRATE_LIBDIR}/crossbeam-utils-0.8.21/deps/. ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true; \
 	fi

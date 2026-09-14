@@ -1,3 +1,5 @@
 # crates.io base64
 # Versions (build from rust-crates/ top Makefile):
+#   base64/0.21.7
 #   base64/0.22.1
+#   base64/0.23.1
