@@ -1,6 +1,6 @@
 COMMENT =	fast type checker and language server for Python
 
-VERSION =	1.3.0
+VERSION =	1.3.1
 
 DISTNAME =	pyrefly-${VERSION}
 
