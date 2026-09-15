@@ -173,7 +173,8 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/arc-swap-1.9.2/libarc_swap.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/arc-swap-1.9.2/deps/
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/arc-swap-1.9.2/deps/                INSTALL_DATA /arc-swap-1.9.2.tar.gz \n		/share/modcargo-crates/arc-swap-1.9.2.tar.gz
+
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libarc_swap-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

@@ -191,7 +191,8 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/crypto-common-0.2.1/libcrypto_common.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/crypto-common-0.2.1/deps/
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/crypto-common-0.2.1/deps/                INSTALL_DATA /crypto-common-0.2.1.tar.gz \n		/share/modcargo-crates/crypto-common-0.2.1.tar.gz
+
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libcrypto_common-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

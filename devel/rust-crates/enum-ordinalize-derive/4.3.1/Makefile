@@ -227,7 +227,8 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/enum-ordinalize-derive-4.3.1/libenum_ordinalize_derive.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/enum-ordinalize-derive-4.3.1/deps/
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/enum-ordinalize-derive-4.3.1/deps/                INSTALL_DATA /enum-ordinalize-derive-4.3.1.tar.gz \n		/share/modcargo-crates/enum-ordinalize-derive-4.3.1.tar.gz
+
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libenum_ordinalize_derive-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

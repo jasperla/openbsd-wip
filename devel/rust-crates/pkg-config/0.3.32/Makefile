@@ -158,7 +158,8 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/pkg-config-0.3.32/libpkg_config.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/pkg-config-0.3.32/deps/
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/pkg-config-0.3.32/deps/                INSTALL_DATA /pkg-config-0.3.32.tar.gz \n		/share/modcargo-crates/pkg-config-0.3.32.tar.gz
+
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libpkg_config-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

@@ -158,7 +158,8 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/streaming-iterator-0.1.9/libstreaming_iterator.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/streaming-iterator-0.1.9/deps/
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/streaming-iterator-0.1.9/deps/                INSTALL_DATA /streaming-iterator-0.1.9.tar.gz \n		/share/modcargo-crates/streaming-iterator-0.1.9.tar.gz
+
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libstreaming_iterator-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

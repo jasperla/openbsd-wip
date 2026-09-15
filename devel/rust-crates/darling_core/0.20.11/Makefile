@@ -281,7 +281,8 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/darling_core-0.20.11/libdarling_core.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/darling_core-0.20.11/deps/
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/darling_core-0.20.11/deps/                INSTALL_DATA /darling_core-0.20.11.tar.gz \n		/share/modcargo-crates/darling_core-0.20.11.tar.gz
+
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libdarling_core-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

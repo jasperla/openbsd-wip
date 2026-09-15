@@ -551,7 +551,8 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/tiff-0.11.3/libtiff.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/tiff-0.11.3/deps/
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/tiff-0.11.3/deps/                INSTALL_DATA /tiff-0.11.3.tar.gz \n		/share/modcargo-crates/tiff-0.11.3.tar.gz
+
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libtiff-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

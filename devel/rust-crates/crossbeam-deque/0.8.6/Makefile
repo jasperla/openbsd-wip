@@ -191,7 +191,8 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/crossbeam-deque-0.8.6/libcrossbeam_deque.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/crossbeam-deque-0.8.6/deps/
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/crossbeam-deque-0.8.6/deps/                INSTALL_DATA /crossbeam-deque-0.8.6.tar.gz \n		/share/modcargo-crates/crossbeam-deque-0.8.6.tar.gz
+
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libcrossbeam_deque-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

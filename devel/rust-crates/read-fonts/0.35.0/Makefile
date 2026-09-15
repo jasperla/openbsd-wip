@@ -281,7 +281,8 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/read-fonts-0.35.0/libread_fonts.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/read-fonts-0.35.0/deps/
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/read-fonts-0.35.0/deps/                INSTALL_DATA /read-fonts-0.35.0.tar.gz \n		/share/modcargo-crates/read-fonts-0.35.0.tar.gz
+
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libread_fonts-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

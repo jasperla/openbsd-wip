@@ -158,7 +158,8 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/futures-core-0.3.32/libfutures_core.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/futures-core-0.3.32/deps/
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/futures-core-0.3.32/deps/                INSTALL_DATA /futures-core-0.3.32.tar.gz \n		/share/modcargo-crates/futures-core-0.3.32.tar.gz
+
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libfutures_core-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

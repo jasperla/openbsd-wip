@@ -227,7 +227,8 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/num-derive-0.4.2/libnum_derive.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/num-derive-0.4.2/deps/
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/num-derive-0.4.2/deps/                INSTALL_DATA /num-derive-0.4.2.tar.gz \n		/share/modcargo-crates/num-derive-0.4.2.tar.gz
+
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libnum_derive-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

@@ -158,7 +158,8 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/anyhow-1.0.104/libanyhow.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/anyhow-1.0.104/deps/
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/anyhow-1.0.104/deps/                INSTALL_DATA /anyhow-1.0.104.tar.gz \n		/share/modcargo-crates/anyhow-1.0.104.tar.gz
+
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libanyhow-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

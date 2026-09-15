@@ -209,7 +209,8 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/syn-3.0.4/libsyn.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/syn-3.0.4/deps/
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/syn-3.0.4/deps/                INSTALL_DATA /syn-3.0.4.tar.gz \n		/share/modcargo-crates/syn-3.0.4.tar.gz
+
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libsyn-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

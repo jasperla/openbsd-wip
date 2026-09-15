@@ -191,7 +191,8 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/anstyle-wincon-3.0.10/libanstyle_wincon.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/anstyle-wincon-3.0.10/deps/
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/anstyle-wincon-3.0.10/deps/                INSTALL_DATA /anstyle-wincon-3.0.10.tar.gz \n		/share/modcargo-crates/anstyle-wincon-3.0.10.tar.gz
+
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libanstyle_wincon-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

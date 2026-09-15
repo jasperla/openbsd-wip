@@ -158,7 +158,8 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/multimap-0.10.1/libmultimap.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/multimap-0.10.1/deps/
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/multimap-0.10.1/deps/                INSTALL_DATA /multimap-0.10.1.tar.gz \n		/share/modcargo-crates/multimap-0.10.1.tar.gz
+
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libmultimap-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

@@ -158,7 +158,8 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/equivalent-1.0.2/libequivalent.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/equivalent-1.0.2/deps/
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/equivalent-1.0.2/deps/                INSTALL_DATA /equivalent-1.0.2.tar.gz \n		/share/modcargo-crates/equivalent-1.0.2.tar.gz
+
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libequivalent-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

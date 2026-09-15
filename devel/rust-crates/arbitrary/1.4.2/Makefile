@@ -245,7 +245,8 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/arbitrary-1.4.2/libarbitrary.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/arbitrary-1.4.2/deps/
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/arbitrary-1.4.2/deps/                INSTALL_DATA /arbitrary-1.4.2.tar.gz \n		/share/modcargo-crates/arbitrary-1.4.2.tar.gz
+
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libarbitrary-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

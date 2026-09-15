@@ -245,7 +245,8 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/strum_macros-0.27.2/libstrum_macros.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/strum_macros-0.27.2/deps/
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/strum_macros-0.27.2/deps/                INSTALL_DATA /strum_macros-0.27.2.tar.gz \n		/share/modcargo-crates/strum_macros-0.27.2.tar.gz
+
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libstrum_macros-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

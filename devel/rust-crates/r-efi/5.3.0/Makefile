@@ -158,7 +158,8 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/r-efi-5.3.0/libr_efi.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/r-efi-5.3.0/deps/
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/r-efi-5.3.0/deps/                INSTALL_DATA /r-efi-5.3.0.tar.gz \n		/share/modcargo-crates/r-efi-5.3.0.tar.gz
+
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libr_efi-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

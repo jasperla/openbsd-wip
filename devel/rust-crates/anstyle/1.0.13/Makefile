@@ -158,7 +158,8 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/anstyle-1.0.13/libanstyle.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/anstyle-1.0.13/deps/
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/anstyle-1.0.13/deps/                INSTALL_DATA /anstyle-1.0.13.tar.gz \n		/share/modcargo-crates/anstyle-1.0.13.tar.gz
+
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libanstyle-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

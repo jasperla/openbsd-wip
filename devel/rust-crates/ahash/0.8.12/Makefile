@@ -533,7 +533,8 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/ahash-0.8.12/libahash.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/ahash-0.8.12/deps/
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/ahash-0.8.12/deps/                INSTALL_DATA /ahash-0.8.12.tar.gz \n		/share/modcargo-crates/ahash-0.8.12.tar.gz
+
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libahash-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

@@ -158,7 +158,8 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/same-file-1.0.6/libsame_file.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/same-file-1.0.6/deps/
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/same-file-1.0.6/deps/                INSTALL_DATA /same-file-1.0.6.tar.gz \n		/share/modcargo-crates/same-file-1.0.6.tar.gz
+
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libsame_file-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

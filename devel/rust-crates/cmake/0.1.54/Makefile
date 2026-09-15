@@ -299,7 +299,8 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/cmake-0.1.54/libcmake.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/cmake-0.1.54/deps/
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/cmake-0.1.54/deps/                INSTALL_DATA /cmake-0.1.54.tar.gz \n		/share/modcargo-crates/cmake-0.1.54.tar.gz
+
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libcmake-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

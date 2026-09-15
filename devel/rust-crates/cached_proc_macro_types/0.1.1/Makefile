@@ -158,7 +158,8 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/cached_proc_macro_types-0.1.1/libcached_proc_macro_types.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/cached_proc_macro_types-0.1.1/deps/
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/cached_proc_macro_types-0.1.1/deps/                INSTALL_DATA /cached_proc_macro_types-0.1.1.tar.gz \n		/share/modcargo-crates/cached_proc_macro_types-0.1.1.tar.gz
+
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libcached_proc_macro_types-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

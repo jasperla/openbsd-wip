@@ -857,7 +857,8 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/p256-0.13.2/libp256.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/p256-0.13.2/deps/
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/p256-0.13.2/deps/                INSTALL_DATA /p256-0.13.2.tar.gz \n		/share/modcargo-crates/p256-0.13.2.tar.gz
+
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libp256-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

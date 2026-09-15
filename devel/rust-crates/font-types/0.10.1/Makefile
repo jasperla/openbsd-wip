@@ -263,7 +263,8 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/font-types-0.10.1/libfont_types.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/font-types-0.10.1/deps/
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/font-types-0.10.1/deps/                INSTALL_DATA /font-types-0.10.1.tar.gz \n		/share/modcargo-crates/font-types-0.10.1.tar.gz
+
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libfont_types-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

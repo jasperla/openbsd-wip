@@ -173,7 +173,8 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/log-0.4.32/liblog.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/log-0.4.32/deps/
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/log-0.4.32/deps/                INSTALL_DATA /log-0.4.32.tar.gz \n		/share/modcargo-crates/log-0.4.32.tar.gz
+
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/liblog-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

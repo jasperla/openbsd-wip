@@ -191,7 +191,8 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/unicode-normalization-0.1.25/libunicode_normalization.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/unicode-normalization-0.1.25/deps/
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/unicode-normalization-0.1.25/deps/                INSTALL_DATA /unicode-normalization-0.1.25.tar.gz \n		/share/modcargo-crates/unicode-normalization-0.1.25.tar.gz
+
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libunicode_normalization-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

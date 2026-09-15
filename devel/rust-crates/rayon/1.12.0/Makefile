@@ -245,7 +245,8 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/rayon-1.12.0/librayon.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/rayon-1.12.0/deps/
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/rayon-1.12.0/deps/                INSTALL_DATA /rayon-1.12.0.tar.gz \n		/share/modcargo-crates/rayon-1.12.0.tar.gz
+
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/librayon-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

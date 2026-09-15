@@ -158,7 +158,8 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/path-clean-1.0.1/libpath_clean.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/path-clean-1.0.1/deps/
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/path-clean-1.0.1/deps/                INSTALL_DATA /path-clean-1.0.1.tar.gz \n		/share/modcargo-crates/path-clean-1.0.1.tar.gz
+
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libpath_clean-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

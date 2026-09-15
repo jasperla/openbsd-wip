@@ -173,7 +173,8 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/document-features-0.2.12/libdocument_features.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/document-features-0.2.12/deps/
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/document-features-0.2.12/deps/                INSTALL_DATA /document-features-0.2.12.tar.gz \n		/share/modcargo-crates/document-features-0.2.12.tar.gz
+
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libdocument_features-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

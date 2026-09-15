@@ -317,7 +317,8 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/zvariant_utils-3.3.0/libzvariant_utils.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/zvariant_utils-3.3.0/deps/
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/zvariant_utils-3.3.0/deps/                INSTALL_DATA /zvariant_utils-3.3.0.tar.gz \n		/share/modcargo-crates/zvariant_utils-3.3.0.tar.gz
+
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libzvariant_utils-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

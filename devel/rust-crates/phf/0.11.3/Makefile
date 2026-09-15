@@ -461,7 +461,8 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/phf-0.11.3/libphf.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/phf-0.11.3/deps/
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/phf-0.11.3/deps/                INSTALL_DATA /phf-0.11.3.tar.gz \n		/share/modcargo-crates/phf-0.11.3.tar.gz
+
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libphf-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

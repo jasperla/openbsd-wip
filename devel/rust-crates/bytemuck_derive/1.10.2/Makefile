@@ -227,7 +227,8 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/bytemuck_derive-1.10.2/libbytemuck_derive.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/bytemuck_derive-1.10.2/deps/
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/bytemuck_derive-1.10.2/deps/                INSTALL_DATA /bytemuck_derive-1.10.2.tar.gz \n		/share/modcargo-crates/bytemuck_derive-1.10.2.tar.gz
+
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libbytemuck_derive-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

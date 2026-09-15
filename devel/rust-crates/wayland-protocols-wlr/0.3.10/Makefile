@@ -677,7 +677,8 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/wayland-protocols-wlr-0.3.10/libwayland_protocols_wlr.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/wayland-protocols-wlr-0.3.10/deps/
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/wayland-protocols-wlr-0.3.10/deps/                INSTALL_DATA /wayland-protocols-wlr-0.3.10.tar.gz \n		/share/modcargo-crates/wayland-protocols-wlr-0.3.10.tar.gz
+
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libwayland_protocols_wlr-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

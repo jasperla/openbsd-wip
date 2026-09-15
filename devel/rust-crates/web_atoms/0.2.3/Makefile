@@ -605,7 +605,8 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/web_atoms-0.2.3/libweb_atoms.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/web_atoms-0.2.3/deps/
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/web_atoms-0.2.3/deps/                INSTALL_DATA /web_atoms-0.2.3.tar.gz \n		/share/modcargo-crates/web_atoms-0.2.3.tar.gz
+
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libweb_atoms-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

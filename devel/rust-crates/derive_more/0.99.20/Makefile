@@ -227,7 +227,8 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/derive_more-0.99.20/libderive_more.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/derive_more-0.99.20/deps/
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/derive_more-0.99.20/deps/                INSTALL_DATA /derive_more-0.99.20.tar.gz \n		/share/modcargo-crates/derive_more-0.99.20.tar.gz
+
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libderive_more-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

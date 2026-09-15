@@ -227,7 +227,8 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/rand_core-0.9.3/librand_core.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/rand_core-0.9.3/deps/
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/rand_core-0.9.3/deps/                INSTALL_DATA /rand_core-0.9.3.tar.gz \n		/share/modcargo-crates/rand_core-0.9.3.tar.gz
+
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/librand_core-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

@@ -1019,7 +1019,8 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/two-face-0.4.5/libtwo_face.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/two-face-0.4.5/deps/
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/two-face-0.4.5/deps/                INSTALL_DATA /two-face-0.4.5.tar.gz \n		/share/modcargo-crates/two-face-0.4.5.tar.gz
+
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libtwo_face-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

@@ -317,7 +317,8 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/indexmap-2.14.0/libindexmap.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/indexmap-2.14.0/deps/
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/indexmap-2.14.0/deps/                INSTALL_DATA /indexmap-2.14.0.tar.gz \n		/share/modcargo-crates/indexmap-2.14.0.tar.gz
+
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libindexmap-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

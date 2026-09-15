@@ -158,7 +158,8 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/ryu-1.0.20/libryu.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/ryu-1.0.20/deps/
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/ryu-1.0.20/deps/                INSTALL_DATA /ryu-1.0.20.tar.gz \n		/share/modcargo-crates/ryu-1.0.20.tar.gz
+
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libryu-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

@@ -317,7 +317,8 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/darling-0.20.11/libdarling.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/darling-0.20.11/deps/
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/darling-0.20.11/deps/                INSTALL_DATA /darling-0.20.11.tar.gz \n		/share/modcargo-crates/darling-0.20.11.tar.gz
+
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libdarling-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

@@ -389,7 +389,8 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/parking_lot-0.12.5/libparking_lot.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/parking_lot-0.12.5/deps/
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/parking_lot-0.12.5/deps/                INSTALL_DATA /parking_lot-0.12.5.tar.gz \n		/share/modcargo-crates/parking_lot-0.12.5.tar.gz
+
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libparking_lot-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

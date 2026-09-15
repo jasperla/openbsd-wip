@@ -281,7 +281,8 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/deranged-0.5.5/libderanged.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/deranged-0.5.5/deps/
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/deranged-0.5.5/deps/                INSTALL_DATA /deranged-0.5.5.tar.gz \n		/share/modcargo-crates/deranged-0.5.5.tar.gz
+
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libderanged-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

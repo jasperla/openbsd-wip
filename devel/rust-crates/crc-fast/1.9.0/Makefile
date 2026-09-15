@@ -515,7 +515,8 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/crc-fast-1.9.0/libcrc_fast.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/crc-fast-1.9.0/deps/
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/crc-fast-1.9.0/deps/                INSTALL_DATA /crc-fast-1.9.0.tar.gz \n		/share/modcargo-crates/crc-fast-1.9.0.tar.gz
+
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libcrc_fast-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

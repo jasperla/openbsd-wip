@@ -191,7 +191,8 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/simplecss-0.2.2/libsimplecss.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/simplecss-0.2.2/deps/
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/simplecss-0.2.2/deps/                INSTALL_DATA /simplecss-0.2.2.tar.gz \n		/share/modcargo-crates/simplecss-0.2.2.tar.gz
+
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libsimplecss-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

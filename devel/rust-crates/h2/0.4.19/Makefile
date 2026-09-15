@@ -1001,7 +1001,8 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/h2-0.4.19/libh2.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/h2-0.4.19/deps/
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/h2-0.4.19/deps/                INSTALL_DATA /h2-0.4.19.tar.gz \n		/share/modcargo-crates/h2-0.4.19.tar.gz
+
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libh2-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

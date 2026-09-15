@@ -158,7 +158,8 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/byteorder-lite-0.1.0/libbyteorder_lite.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/byteorder-lite-0.1.0/deps/
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/byteorder-lite-0.1.0/deps/                INSTALL_DATA /byteorder-lite-0.1.0.tar.gz \n		/share/modcargo-crates/byteorder-lite-0.1.0.tar.gz
+
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libbyteorder_lite-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

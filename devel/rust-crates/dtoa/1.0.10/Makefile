@@ -158,7 +158,8 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/dtoa-1.0.10/libdtoa.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/dtoa-1.0.10/deps/
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/dtoa-1.0.10/deps/                INSTALL_DATA /dtoa-1.0.10.tar.gz \n		/share/modcargo-crates/dtoa-1.0.10.tar.gz
+
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libdtoa-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

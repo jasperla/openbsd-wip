@@ -191,7 +191,8 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/base64-simd-0.8.0/libbase64_simd.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/base64-simd-0.8.0/deps/
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/base64-simd-0.8.0/deps/                INSTALL_DATA /base64-simd-0.8.0.tar.gz \n		/share/modcargo-crates/base64-simd-0.8.0.tar.gz
+
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libbase64_simd-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

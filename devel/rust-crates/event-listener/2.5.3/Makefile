@@ -158,7 +158,8 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/event-listener-2.5.3/libevent_listener.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/event-listener-2.5.3/deps/
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/event-listener-2.5.3/deps/                INSTALL_DATA /event-listener-2.5.3.tar.gz \n		/share/modcargo-crates/event-listener-2.5.3.tar.gz
+
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libevent_listener-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

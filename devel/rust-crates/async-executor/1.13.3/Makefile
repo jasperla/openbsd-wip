@@ -335,7 +335,8 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/async-executor-1.13.3/libasync_executor.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/async-executor-1.13.3/deps/
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/async-executor-1.13.3/deps/                INSTALL_DATA /async-executor-1.13.3.tar.gz \n		/share/modcargo-crates/async-executor-1.13.3.tar.gz
+
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libasync_executor-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

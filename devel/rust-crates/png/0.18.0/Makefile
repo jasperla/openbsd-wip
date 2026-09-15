@@ -443,7 +443,8 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/png-0.18.0/libpng.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/png-0.18.0/deps/
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/png-0.18.0/deps/                INSTALL_DATA /png-0.18.0.tar.gz \n		/share/modcargo-crates/png-0.18.0.tar.gz
+
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libpng-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

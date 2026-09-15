@@ -1091,7 +1091,8 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/gix-lock-23.0.1/libgix_lock.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/gix-lock-23.0.1/deps/
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/gix-lock-23.0.1/deps/                INSTALL_DATA /gix-lock-23.0.1.tar.gz \n		/share/modcargo-crates/gix-lock-23.0.1.tar.gz
+
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libgix_lock-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

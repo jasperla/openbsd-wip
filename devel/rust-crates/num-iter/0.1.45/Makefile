@@ -227,7 +227,8 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/num-iter-0.1.45/libnum_iter.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/num-iter-0.1.45/deps/
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/num-iter-0.1.45/deps/                INSTALL_DATA /num-iter-0.1.45.tar.gz \n		/share/modcargo-crates/num-iter-0.1.45.tar.gz
+
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libnum_iter-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

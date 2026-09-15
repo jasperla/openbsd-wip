@@ -335,7 +335,8 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/rustix-0.38.44/librustix.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/rustix-0.38.44/deps/
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/rustix-0.38.44/deps/                INSTALL_DATA /rustix-0.38.44.tar.gz \n		/share/modcargo-crates/rustix-0.38.44.tar.gz
+
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/librustix-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

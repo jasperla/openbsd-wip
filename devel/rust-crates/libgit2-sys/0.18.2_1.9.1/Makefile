@@ -389,7 +389,8 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/libgit2-sys-0.18.2_1.9.1/liblibgit2_sys.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/libgit2-sys-0.18.2_1.9.1/deps/
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/libgit2-sys-0.18.2_1.9.1/deps/                INSTALL_DATA /libgit2-sys-0.18.2+1.9.1.tar.gz \n		/share/modcargo-crates/libgit2-sys-0.18.2_1.9.1.tar.gz
+
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/liblibgit2_sys-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

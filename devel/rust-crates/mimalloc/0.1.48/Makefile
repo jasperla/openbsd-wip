@@ -317,7 +317,8 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/mimalloc-0.1.48/libmimalloc.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/mimalloc-0.1.48/deps/
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/mimalloc-0.1.48/deps/                INSTALL_DATA /mimalloc-0.1.48.tar.gz \n		/share/modcargo-crates/mimalloc-0.1.48.tar.gz
+
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libmimalloc-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

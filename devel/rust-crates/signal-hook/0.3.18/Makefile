@@ -209,7 +209,8 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/signal-hook-0.3.18/libsignal_hook.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/signal-hook-0.3.18/deps/
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/signal-hook-0.3.18/deps/                INSTALL_DATA /signal-hook-0.3.18.tar.gz \n		/share/modcargo-crates/signal-hook-0.3.18.tar.gz
+
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libsignal_hook-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

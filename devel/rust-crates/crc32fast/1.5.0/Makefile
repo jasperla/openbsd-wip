@@ -173,7 +173,8 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/crc32fast-1.5.0/libcrc32fast.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/crc32fast-1.5.0/deps/
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/crc32fast-1.5.0/deps/                INSTALL_DATA /crc32fast-1.5.0.tar.gz \n		/share/modcargo-crates/crc32fast-1.5.0.tar.gz
+
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libcrc32fast-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

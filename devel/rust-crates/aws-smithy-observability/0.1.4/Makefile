@@ -1397,7 +1397,8 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/aws-smithy-observability-0.1.4/libaws_smithy_observability.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/aws-smithy-observability-0.1.4/deps/
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/aws-smithy-observability-0.1.4/deps/                INSTALL_DATA /aws-smithy-observability-0.1.4.tar.gz \n		/share/modcargo-crates/aws-smithy-observability-0.1.4.tar.gz
+
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libaws_smithy_observability-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

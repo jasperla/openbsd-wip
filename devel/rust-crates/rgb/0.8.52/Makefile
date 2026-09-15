@@ -263,7 +263,8 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/rgb-0.8.52/librgb.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/rgb-0.8.52/deps/
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/rgb-0.8.52/deps/                INSTALL_DATA /rgb-0.8.52.tar.gz \n		/share/modcargo-crates/rgb-0.8.52.tar.gz
+
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/librgb-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

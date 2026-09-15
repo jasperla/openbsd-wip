@@ -173,7 +173,8 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/errno-0.3.14/liberrno.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/errno-0.3.14/deps/
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/errno-0.3.14/deps/                INSTALL_DATA /errno-0.3.14.tar.gz \n		/share/modcargo-crates/errno-0.3.14.tar.gz
+
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/liberrno-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

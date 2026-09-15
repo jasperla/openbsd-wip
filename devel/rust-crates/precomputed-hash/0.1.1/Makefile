@@ -158,7 +158,8 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/precomputed-hash-0.1.1/libprecomputed_hash.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/precomputed-hash-0.1.1/deps/
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/precomputed-hash-0.1.1/deps/                INSTALL_DATA /precomputed-hash-0.1.1.tar.gz \n		/share/modcargo-crates/precomputed-hash-0.1.1.tar.gz
+
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libprecomputed_hash-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

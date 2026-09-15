@@ -158,7 +158,8 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/imagesize-0.14.0/libimagesize.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/imagesize-0.14.0/deps/
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/imagesize-0.14.0/deps/                INSTALL_DATA /imagesize-0.14.0.tar.gz \n		/share/modcargo-crates/imagesize-0.14.0.tar.gz
+
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libimagesize-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

@@ -443,7 +443,8 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/string_cache_codegen-0.5.4/libstring_cache_codegen.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/string_cache_codegen-0.5.4/deps/
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/string_cache_codegen-0.5.4/deps/                INSTALL_DATA /string_cache_codegen-0.5.4.tar.gz \n		/share/modcargo-crates/string_cache_codegen-0.5.4.tar.gz
+
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libstring_cache_codegen-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

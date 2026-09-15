@@ -443,7 +443,8 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/num_enum_derive-0.7.5/libnum_enum_derive.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/num_enum_derive-0.7.5/deps/
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/num_enum_derive-0.7.5/deps/                INSTALL_DATA /num_enum_derive-0.7.5.tar.gz \n		/share/modcargo-crates/num_enum_derive-0.7.5.tar.gz
+
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libnum_enum_derive-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

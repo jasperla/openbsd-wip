@@ -551,7 +551,8 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/gix-date-0.15.5/libgix_date.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/gix-date-0.15.5/deps/
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/gix-date-0.15.5/deps/                INSTALL_DATA /gix-date-0.15.5.tar.gz \n		/share/modcargo-crates/gix-date-0.15.5.tar.gz
+
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libgix_date-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

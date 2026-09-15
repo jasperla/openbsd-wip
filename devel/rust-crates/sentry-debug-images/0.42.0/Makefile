@@ -1559,7 +1559,8 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/sentry-debug-images-0.42.0/libsentry_debug_images.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/sentry-debug-images-0.42.0/deps/
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/sentry-debug-images-0.42.0/deps/                INSTALL_DATA /sentry-debug-images-0.42.0.tar.gz \n		/share/modcargo-crates/sentry-debug-images-0.42.0.tar.gz
+
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libsentry_debug_images-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

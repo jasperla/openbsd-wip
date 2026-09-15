@@ -158,7 +158,8 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/rustversion-1.0.22/librustversion.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/rustversion-1.0.22/deps/
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/rustversion-1.0.22/deps/                INSTALL_DATA /rustversion-1.0.22.tar.gz \n		/share/modcargo-crates/rustversion-1.0.22.tar.gz
+
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/librustversion-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

@@ -227,7 +227,8 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/async-trait-0.1.89/libasync_trait.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/async-trait-0.1.89/deps/
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/async-trait-0.1.89/deps/                INSTALL_DATA /async-trait-0.1.89.tar.gz \n		/share/modcargo-crates/async-trait-0.1.89.tar.gz
+
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libasync_trait-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

@@ -407,7 +407,8 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/petgraph-0.8.3/libpetgraph.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/petgraph-0.8.3/deps/
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/petgraph-0.8.3/deps/                INSTALL_DATA /petgraph-0.8.3.tar.gz \n		/share/modcargo-crates/petgraph-0.8.3.tar.gz
+
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libpetgraph-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

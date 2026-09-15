@@ -1685,7 +1685,8 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/sentry-anyhow-0.42.0/libsentry_anyhow.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/sentry-anyhow-0.42.0/deps/
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/sentry-anyhow-0.42.0/deps/                INSTALL_DATA /sentry-anyhow-0.42.0.tar.gz \n		/share/modcargo-crates/sentry-anyhow-0.42.0.tar.gz
+
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libsentry_anyhow-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

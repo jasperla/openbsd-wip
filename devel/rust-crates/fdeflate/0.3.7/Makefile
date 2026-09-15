@@ -173,7 +173,8 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/fdeflate-0.3.7/libfdeflate.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/fdeflate-0.3.7/deps/
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/fdeflate-0.3.7/deps/                INSTALL_DATA /fdeflate-0.3.7.tar.gz \n		/share/modcargo-crates/fdeflate-0.3.7.tar.gz
+
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libfdeflate-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

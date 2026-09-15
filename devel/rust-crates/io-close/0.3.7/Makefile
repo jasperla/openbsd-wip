@@ -173,7 +173,8 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/io-close-0.3.7/libio_close.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/io-close-0.3.7/deps/
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/io-close-0.3.7/deps/                INSTALL_DATA /io-close-0.3.7.tar.gz \n		/share/modcargo-crates/io-close-0.3.7.tar.gz
+
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libio_close-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

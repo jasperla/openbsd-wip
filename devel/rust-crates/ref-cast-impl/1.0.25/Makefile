@@ -227,7 +227,8 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/ref-cast-impl-1.0.25/libref_cast_impl.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/ref-cast-impl-1.0.25/deps/
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/ref-cast-impl-1.0.25/deps/                INSTALL_DATA /ref-cast-impl-1.0.25.tar.gz \n		/share/modcargo-crates/ref-cast-impl-1.0.25.tar.gz
+
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libref_cast_impl-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

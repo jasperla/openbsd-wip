@@ -173,7 +173,8 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/pem-rfc7468-0.7.0/libpem_rfc7468.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/pem-rfc7468-0.7.0/deps/
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/pem-rfc7468-0.7.0/deps/                INSTALL_DATA /pem-rfc7468-0.7.0.tar.gz \n		/share/modcargo-crates/pem-rfc7468-0.7.0.tar.gz
+
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libpem_rfc7468-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

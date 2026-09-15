@@ -158,7 +158,8 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/wildmatch-2.6.0/libwildmatch.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/wildmatch-2.6.0/deps/
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/wildmatch-2.6.0/deps/                INSTALL_DATA /wildmatch-2.6.0.tar.gz \n		/share/modcargo-crates/wildmatch-2.6.0.tar.gz
+
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libwildmatch-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

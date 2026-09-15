@@ -4295,7 +4295,8 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/nono-0.53.0/libnono.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/nono-0.53.0/deps/
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/nono-0.53.0/deps/                INSTALL_DATA /nono-0.53.0.tar.gz \n		/share/modcargo-crates/nono-0.53.0.tar.gz
+
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libnono-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

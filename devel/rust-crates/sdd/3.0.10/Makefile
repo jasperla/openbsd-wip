@@ -158,7 +158,8 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/sdd-3.0.10/libsdd.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/sdd-3.0.10/deps/
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/sdd-3.0.10/deps/                INSTALL_DATA /sdd-3.0.10.tar.gz \n		/share/modcargo-crates/sdd-3.0.10.tar.gz
+
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libsdd-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

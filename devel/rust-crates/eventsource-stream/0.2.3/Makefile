@@ -245,7 +245,8 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/eventsource-stream-0.2.3/libeventsource_stream.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/eventsource-stream-0.2.3/deps/
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/eventsource-stream-0.2.3/deps/                INSTALL_DATA /eventsource-stream-0.2.3.tar.gz \n		/share/modcargo-crates/eventsource-stream-0.2.3.tar.gz
+
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libeventsource_stream-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

@@ -263,7 +263,8 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/bitflags-2.13.0/libbitflags.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/bitflags-2.13.0/deps/
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/bitflags-2.13.0/deps/                INSTALL_DATA /bitflags-2.13.0.tar.gz \n		/share/modcargo-crates/bitflags-2.13.0.tar.gz
+
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libbitflags-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

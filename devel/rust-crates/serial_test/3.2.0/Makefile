@@ -749,7 +749,8 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/serial_test-3.2.0/libserial_test.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/serial_test-3.2.0/deps/
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/serial_test-3.2.0/deps/                INSTALL_DATA /serial_test-3.2.0.tar.gz \n		/share/modcargo-crates/serial_test-3.2.0.tar.gz
+
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libserial_test-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

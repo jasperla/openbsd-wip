@@ -371,7 +371,8 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/fast_image_resize-6.1.0/libfast_image_resize.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/fast_image_resize-6.1.0/deps/
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/fast_image_resize-6.1.0/deps/                INSTALL_DATA /fast_image_resize-6.1.0.tar.gz \n		/share/modcargo-crates/fast_image_resize-6.1.0.tar.gz
+
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libfast_image_resize-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

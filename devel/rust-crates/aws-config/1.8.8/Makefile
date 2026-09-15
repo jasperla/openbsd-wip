@@ -3413,7 +3413,8 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/aws-config-1.8.8/libaws_config.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/aws-config-1.8.8/deps/
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/aws-config-1.8.8/deps/                INSTALL_DATA /aws-config-1.8.8.tar.gz \n		/share/modcargo-crates/aws-config-1.8.8.tar.gz
+
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libaws_config-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

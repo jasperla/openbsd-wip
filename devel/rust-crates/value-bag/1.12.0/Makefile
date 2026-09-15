@@ -158,7 +158,8 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/value-bag-1.12.0/libvalue_bag.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/value-bag-1.12.0/deps/
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/value-bag-1.12.0/deps/                INSTALL_DATA /value-bag-1.12.0.tar.gz \n		/share/modcargo-crates/value-bag-1.12.0.tar.gz
+
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libvalue_bag-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

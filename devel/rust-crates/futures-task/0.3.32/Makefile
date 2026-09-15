@@ -158,7 +158,8 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/futures-task-0.3.32/libfutures_task.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/futures-task-0.3.32/deps/
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/futures-task-0.3.32/deps/                INSTALL_DATA /futures-task-0.3.32.tar.gz \n		/share/modcargo-crates/futures-task-0.3.32.tar.gz
+
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libfutures_task-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

@@ -173,7 +173,8 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/linkify-0.10.0/liblinkify.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/linkify-0.10.0/deps/
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/linkify-0.10.0/deps/                INSTALL_DATA /linkify-0.10.0.tar.gz \n		/share/modcargo-crates/linkify-0.10.0.tar.gz
+
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/liblinkify-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

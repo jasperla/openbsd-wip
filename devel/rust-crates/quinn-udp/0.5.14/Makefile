@@ -443,7 +443,8 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/quinn-udp-0.5.14/libquinn_udp.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/quinn-udp-0.5.14/deps/
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/quinn-udp-0.5.14/deps/                INSTALL_DATA /quinn-udp-0.5.14.tar.gz \n		/share/modcargo-crates/quinn-udp-0.5.14.tar.gz
+
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libquinn_udp-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

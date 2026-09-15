@@ -158,7 +158,8 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/cfg-if-1.0.4/libcfg_if.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/cfg-if-1.0.4/deps/
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/cfg-if-1.0.4/deps/                INSTALL_DATA /cfg-if-1.0.4.tar.gz \n		/share/modcargo-crates/cfg-if-1.0.4.tar.gz
+
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libcfg_if-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

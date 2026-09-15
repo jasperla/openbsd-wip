@@ -389,7 +389,8 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/chrono-0.4.44/libchrono.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/chrono-0.4.44/deps/
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/chrono-0.4.44/deps/                INSTALL_DATA /chrono-0.4.44.tar.gz \n		/share/modcargo-crates/chrono-0.4.44.tar.gz
+
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libchrono-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

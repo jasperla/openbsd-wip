@@ -227,7 +227,8 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/shellexpand-3.1.2/libshellexpand.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/shellexpand-3.1.2/deps/
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/shellexpand-3.1.2/deps/                INSTALL_DATA /shellexpand-3.1.2.tar.gz \n		/share/modcargo-crates/shellexpand-3.1.2.tar.gz
+
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libshellexpand-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

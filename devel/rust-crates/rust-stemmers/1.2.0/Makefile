@@ -281,7 +281,8 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/rust-stemmers-1.2.0/librust_stemmers.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/rust-stemmers-1.2.0/deps/
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/rust-stemmers-1.2.0/deps/                INSTALL_DATA /rust-stemmers-1.2.0.tar.gz \n		/share/modcargo-crates/rust-stemmers-1.2.0.tar.gz
+
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/librust_stemmers-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

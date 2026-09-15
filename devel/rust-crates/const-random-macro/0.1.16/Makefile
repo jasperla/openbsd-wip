@@ -281,7 +281,8 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/const-random-macro-0.1.16/libconst_random_macro.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/const-random-macro-0.1.16/deps/
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/const-random-macro-0.1.16/deps/                INSTALL_DATA /const-random-macro-0.1.16.tar.gz \n		/share/modcargo-crates/const-random-macro-0.1.16.tar.gz
+
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libconst_random_macro-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

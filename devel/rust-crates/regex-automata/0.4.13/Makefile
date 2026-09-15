@@ -209,7 +209,8 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/regex-automata-0.4.13/libregex_automata.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/regex-automata-0.4.13/deps/
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/regex-automata-0.4.13/deps/                INSTALL_DATA /regex-automata-0.4.13.tar.gz \n		/share/modcargo-crates/regex-automata-0.4.13.tar.gz
+
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libregex_automata-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

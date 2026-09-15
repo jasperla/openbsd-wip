@@ -158,7 +158,8 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/fastrand-2.3.0/libfastrand.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/fastrand-2.3.0/deps/
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/fastrand-2.3.0/deps/                INSTALL_DATA /fastrand-2.3.0.tar.gz \n		/share/modcargo-crates/fastrand-2.3.0.tar.gz
+
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libfastrand-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

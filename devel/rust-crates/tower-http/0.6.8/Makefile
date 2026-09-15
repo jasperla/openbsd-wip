@@ -1181,7 +1181,8 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/tower-http-0.6.8/libtower_http.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/tower-http-0.6.8/deps/
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/tower-http-0.6.8/deps/                INSTALL_DATA /tower-http-0.6.8.tar.gz \n		/share/modcargo-crates/tower-http-0.6.8.tar.gz
+
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libtower_http-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

@@ -173,7 +173,8 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/winnow-0.7.14/libwinnow.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/winnow-0.7.14/deps/
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/winnow-0.7.14/deps/                INSTALL_DATA /winnow-0.7.14.tar.gz \n		/share/modcargo-crates/winnow-0.7.14.tar.gz
+
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libwinnow-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

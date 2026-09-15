@@ -158,7 +158,8 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/similar-2.7.0/libsimilar.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/similar-2.7.0/deps/
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/similar-2.7.0/deps/                INSTALL_DATA /similar-2.7.0.tar.gz \n		/share/modcargo-crates/similar-2.7.0.tar.gz
+
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libsimilar-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

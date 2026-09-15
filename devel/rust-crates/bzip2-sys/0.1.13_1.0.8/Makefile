@@ -317,7 +317,8 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/bzip2-sys-0.1.13_1.0.8/libbzip2_sys.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/bzip2-sys-0.1.13_1.0.8/deps/
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/bzip2-sys-0.1.13_1.0.8/deps/                INSTALL_DATA /bzip2-sys-0.1.13+1.0.8.tar.gz \n		/share/modcargo-crates/bzip2-sys-0.1.13_1.0.8.tar.gz
+
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libbzip2_sys-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

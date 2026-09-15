@@ -191,7 +191,8 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/ordered-stream-0.2.0/libordered_stream.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/ordered-stream-0.2.0/deps/
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/ordered-stream-0.2.0/deps/                INSTALL_DATA /ordered-stream-0.2.0.tar.gz \n		/share/modcargo-crates/ordered-stream-0.2.0.tar.gz
+
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libordered_stream-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

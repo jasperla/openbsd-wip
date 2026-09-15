@@ -641,7 +641,8 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/rusqlite-0.37.0/librusqlite.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/rusqlite-0.37.0/deps/
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/rusqlite-0.37.0/deps/                INSTALL_DATA /rusqlite-0.37.0.tar.gz \n		/share/modcargo-crates/rusqlite-0.37.0.tar.gz
+
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/librusqlite-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

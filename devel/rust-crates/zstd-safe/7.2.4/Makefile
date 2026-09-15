@@ -335,7 +335,8 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/zstd-safe-7.2.4/libzstd_safe.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/zstd-safe-7.2.4/deps/
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/zstd-safe-7.2.4/deps/                INSTALL_DATA /zstd-safe-7.2.4.tar.gz \n		/share/modcargo-crates/zstd-safe-7.2.4.tar.gz
+
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libzstd_safe-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

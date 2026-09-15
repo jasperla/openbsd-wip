@@ -1055,7 +1055,8 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/bm25-2.3.2/libbm25.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/bm25-2.3.2/deps/
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/bm25-2.3.2/deps/                INSTALL_DATA /bm25-2.3.2.tar.gz \n		/share/modcargo-crates/bm25-2.3.2.tar.gz
+
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libbm25-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

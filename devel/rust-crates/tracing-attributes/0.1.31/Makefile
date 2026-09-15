@@ -227,7 +227,8 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/tracing-attributes-0.1.31/libtracing_attributes.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/tracing-attributes-0.1.31/deps/
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/tracing-attributes-0.1.31/deps/                INSTALL_DATA /tracing-attributes-0.1.31.tar.gz \n		/share/modcargo-crates/tracing-attributes-0.1.31.tar.gz
+
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libtracing_attributes-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

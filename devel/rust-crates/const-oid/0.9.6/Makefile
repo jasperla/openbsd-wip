@@ -158,7 +158,8 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/const-oid-0.9.6/libconst_oid.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/const-oid-0.9.6/deps/
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/const-oid-0.9.6/deps/                INSTALL_DATA /const-oid-0.9.6.tar.gz \n		/share/modcargo-crates/const-oid-0.9.6.tar.gz
+
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libconst_oid-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

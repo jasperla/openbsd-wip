@@ -425,7 +425,8 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/toml_edit-0.22.27/libtoml_edit.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/toml_edit-0.22.27/deps/
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/toml_edit-0.22.27/deps/                INSTALL_DATA /toml_edit-0.22.27.tar.gz \n		/share/modcargo-crates/toml_edit-0.22.27.tar.gz
+
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libtoml_edit-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

@@ -158,7 +158,8 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/futures-timer-3.0.3/libfutures_timer.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/futures-timer-3.0.3/deps/
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/futures-timer-3.0.3/deps/                INSTALL_DATA /futures-timer-3.0.3.tar.gz \n		/share/modcargo-crates/futures-timer-3.0.3.tar.gz
+
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libfutures_timer-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

@@ -371,7 +371,8 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/pulldown-cmark-0.13.0/libpulldown_cmark.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/pulldown-cmark-0.13.0/deps/
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/pulldown-cmark-0.13.0/deps/                INSTALL_DATA /pulldown-cmark-0.13.0.tar.gz \n		/share/modcargo-crates/pulldown-cmark-0.13.0.tar.gz
+
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libpulldown_cmark-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

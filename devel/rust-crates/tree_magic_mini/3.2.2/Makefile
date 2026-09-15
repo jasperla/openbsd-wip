@@ -461,7 +461,8 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/tree_magic_mini-3.2.2/libtree_magic_mini.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/tree_magic_mini-3.2.2/deps/
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/tree_magic_mini-3.2.2/deps/                INSTALL_DATA /tree_magic_mini-3.2.2.tar.gz \n		/share/modcargo-crates/tree_magic_mini-3.2.2.tar.gz
+
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libtree_magic_mini-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

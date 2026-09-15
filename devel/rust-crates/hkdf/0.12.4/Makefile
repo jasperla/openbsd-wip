@@ -425,7 +425,8 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/hkdf-0.12.4/libhkdf.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/hkdf-0.12.4/deps/
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/hkdf-0.12.4/deps/                INSTALL_DATA /hkdf-0.12.4.tar.gz \n		/share/modcargo-crates/hkdf-0.12.4.tar.gz
+
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libhkdf-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

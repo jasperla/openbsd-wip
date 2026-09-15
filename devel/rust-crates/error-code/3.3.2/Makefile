@@ -158,7 +158,8 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/error-code-3.3.2/liberror_code.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/error-code-3.3.2/deps/
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/error-code-3.3.2/deps/                INSTALL_DATA /error-code-3.3.2.tar.gz \n		/share/modcargo-crates/error-code-3.3.2.tar.gz
+
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/liberror_code-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

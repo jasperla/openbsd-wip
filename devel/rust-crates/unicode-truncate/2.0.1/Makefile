@@ -227,7 +227,8 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/unicode-truncate-2.0.1/libunicode_truncate.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/unicode-truncate-2.0.1/deps/
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/unicode-truncate-2.0.1/deps/                INSTALL_DATA /unicode-truncate-2.0.1.tar.gz \n		/share/modcargo-crates/unicode-truncate-2.0.1.tar.gz
+
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libunicode_truncate-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

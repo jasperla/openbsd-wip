@@ -173,7 +173,8 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/wait-timeout-0.2.1/libwait_timeout.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/wait-timeout-0.2.1/deps/
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/wait-timeout-0.2.1/deps/                INSTALL_DATA /wait-timeout-0.2.1.tar.gz \n		/share/modcargo-crates/wait-timeout-0.2.1.tar.gz
+
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libwait_timeout-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

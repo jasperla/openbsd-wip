@@ -353,7 +353,8 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/generator-0.8.9/libgenerator.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/generator-0.8.9/deps/
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/generator-0.8.9/deps/                INSTALL_DATA /generator-0.8.9.tar.gz \n		/share/modcargo-crates/generator-0.8.9.tar.gz
+
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libgenerator-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

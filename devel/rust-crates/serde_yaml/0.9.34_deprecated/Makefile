@@ -389,7 +389,8 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/serde_yaml-0.9.34_deprecated/libserde_yaml.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/serde_yaml-0.9.34_deprecated/deps/
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/serde_yaml-0.9.34_deprecated/deps/                INSTALL_DATA /serde_yaml-0.9.34+deprecated.tar.gz \n		/share/modcargo-crates/serde_yaml-0.9.34_deprecated.tar.gz
+
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libserde_yaml-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

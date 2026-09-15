@@ -227,7 +227,8 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/wezterm-dynamic-derive-0.1.1/libwezterm_dynamic_derive.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/wezterm-dynamic-derive-0.1.1/deps/
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/wezterm-dynamic-derive-0.1.1/deps/                INSTALL_DATA /wezterm-dynamic-derive-0.1.1.tar.gz \n		/share/modcargo-crates/wezterm-dynamic-derive-0.1.1.tar.gz
+
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libwezterm_dynamic_derive-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

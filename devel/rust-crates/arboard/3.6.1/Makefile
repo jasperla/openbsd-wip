@@ -1703,7 +1703,8 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/arboard-3.6.1/libarboard.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/arboard-3.6.1/deps/
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/arboard-3.6.1/deps/                INSTALL_DATA /arboard-3.6.1.tar.gz \n		/share/modcargo-crates/arboard-3.6.1.tar.gz
+
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libarboard-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

@@ -263,7 +263,8 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/serde_spanned-1.0.4/libserde_spanned.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/serde_spanned-1.0.4/deps/
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/serde_spanned-1.0.4/deps/                INSTALL_DATA /serde_spanned-1.0.4.tar.gz \n		/share/modcargo-crates/serde_spanned-1.0.4.tar.gz
+
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libserde_spanned-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

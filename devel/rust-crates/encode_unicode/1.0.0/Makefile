@@ -158,7 +158,8 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/encode_unicode-1.0.0/libencode_unicode.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/encode_unicode-1.0.0/deps/
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/encode_unicode-1.0.0/deps/                INSTALL_DATA /encode_unicode-1.0.0.tar.gz \n		/share/modcargo-crates/encode_unicode-1.0.0.tar.gz
+
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libencode_unicode-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

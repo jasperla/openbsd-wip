@@ -158,7 +158,8 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/arrayvec-0.7.6/libarrayvec.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/arrayvec-0.7.6/deps/
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/arrayvec-0.7.6/deps/                INSTALL_DATA /arrayvec-0.7.6.tar.gz \n		/share/modcargo-crates/arrayvec-0.7.6.tar.gz
+
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libarrayvec-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

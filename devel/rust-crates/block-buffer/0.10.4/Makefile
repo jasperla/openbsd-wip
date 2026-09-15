@@ -317,7 +317,8 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/block-buffer-0.10.4/libblock_buffer.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/block-buffer-0.10.4/deps/
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/block-buffer-0.10.4/deps/                INSTALL_DATA /block-buffer-0.10.4.tar.gz \n		/share/modcargo-crates/block-buffer-0.10.4.tar.gz
+
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libblock_buffer-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

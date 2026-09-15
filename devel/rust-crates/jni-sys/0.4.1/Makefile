@@ -245,7 +245,8 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/jni-sys-0.4.1/libjni_sys.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/jni-sys-0.4.1/deps/
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/jni-sys-0.4.1/deps/                INSTALL_DATA /jni-sys-0.4.1.tar.gz \n		/share/modcargo-crates/jni-sys-0.4.1.tar.gz
+
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libjni_sys-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

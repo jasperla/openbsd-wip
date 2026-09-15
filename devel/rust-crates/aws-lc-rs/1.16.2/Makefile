@@ -497,7 +497,8 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/aws-lc-rs-1.16.2/libaws_lc_rs.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/aws-lc-rs-1.16.2/deps/
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/aws-lc-rs-1.16.2/deps/                INSTALL_DATA /aws-lc-rs-1.16.2.tar.gz \n		/share/modcargo-crates/aws-lc-rs-1.16.2.tar.gz
+
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libaws_lc_rs-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

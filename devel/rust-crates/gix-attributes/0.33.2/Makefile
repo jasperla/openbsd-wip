@@ -1001,7 +1001,8 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/gix-attributes-0.33.2/libgix_attributes.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/gix-attributes-0.33.2/deps/
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/gix-attributes-0.33.2/deps/                INSTALL_DATA /gix-attributes-0.33.2.tar.gz \n		/share/modcargo-crates/gix-attributes-0.33.2.tar.gz
+
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libgix_attributes-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

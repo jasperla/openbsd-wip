@@ -2243,7 +2243,8 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/gix-diff-0.63.0/libgix_diff.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/gix-diff-0.63.0/deps/
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/gix-diff-0.63.0/deps/                INSTALL_DATA /gix-diff-0.63.0.tar.gz \n		/share/modcargo-crates/gix-diff-0.63.0.tar.gz
+
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libgix_diff-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

@@ -605,7 +605,8 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/rustls-webpki-0.103.13/libwebpki.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/rustls-webpki-0.103.13/deps/
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/rustls-webpki-0.103.13/deps/                INSTALL_DATA /rustls-webpki-0.103.13.tar.gz \n		/share/modcargo-crates/rustls-webpki-0.103.13.tar.gz
+
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libwebpki-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

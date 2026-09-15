@@ -158,7 +158,8 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/is_ci-1.2.0/libis_ci.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/is_ci-1.2.0/deps/
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/is_ci-1.2.0/deps/                INSTALL_DATA /is_ci-1.2.0.tar.gz \n		/share/modcargo-crates/is_ci-1.2.0.tar.gz
+
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libis_ci-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

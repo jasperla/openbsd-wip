@@ -317,7 +317,8 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/inotify-0.11.0/libinotify.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/inotify-0.11.0/deps/
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/inotify-0.11.0/deps/                INSTALL_DATA /inotify-0.11.0.tar.gz \n		/share/modcargo-crates/inotify-0.11.0.tar.gz
+
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libinotify-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

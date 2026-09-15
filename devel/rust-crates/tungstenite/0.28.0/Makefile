@@ -1199,7 +1199,8 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/tungstenite-0.28.0/libtungstenite.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/tungstenite-0.28.0/deps/
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/tungstenite-0.28.0/deps/                INSTALL_DATA /tungstenite-0.28.0.tar.gz \n		/share/modcargo-crates/tungstenite-0.28.0.tar.gz
+
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libtungstenite-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \
