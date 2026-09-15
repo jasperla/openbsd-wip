@@ -108,7 +108,7 @@ do-build:
 		${LOCALBASE}/bin/cargo build --release --offline \
 			--manifest-path Cargo.toml \
 			--config ${WRKDIR}/.cargo/config.toml \
-			
+			--no-default-features
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/modcargo-crates

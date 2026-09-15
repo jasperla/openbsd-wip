@@ -537,7 +537,7 @@ do-build:
 		${LOCALBASE}/bin/cargo build --release --offline \
 			--manifest-path Cargo.toml \
 			--config ${WRKDIR}/.cargo/config.toml \
-			--no-default-features --features deflate,bzip2,time,zstd
+			--no-default-features --features deflate,bzip2,time
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/modcargo-crates
