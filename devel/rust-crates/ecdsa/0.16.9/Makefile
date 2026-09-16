@@ -785,7 +785,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/ecdsa-0.16.9/libecdsa.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/ecdsa-0.16.9/deps/                INSTALL_DATA /ecdsa-0.16.9.tar.gz \n		/share/modcargo-crates/ecdsa-0.16.9.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/ecdsa-0.16.9/deps/ 
+ /ecdsa-0.16.9.tar.gz 
+		/share/modcargo-crates/ecdsa-0.16.9.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libecdsa-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

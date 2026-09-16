@@ -299,7 +299,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/anstream-0.6.21/libanstream.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/anstream-0.6.21/deps/                INSTALL_DATA /anstream-0.6.21.tar.gz \n		/share/modcargo-crates/anstream-0.6.21.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/anstream-0.6.21/deps/ 
+ /anstream-0.6.21.tar.gz 
+		/share/modcargo-crates/anstream-0.6.21.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libanstream-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

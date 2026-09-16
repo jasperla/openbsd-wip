@@ -173,7 +173,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/castaway-0.2.4/libcastaway.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/castaway-0.2.4/deps/                INSTALL_DATA /castaway-0.2.4.tar.gz \n		/share/modcargo-crates/castaway-0.2.4.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/castaway-0.2.4/deps/ 
+ /castaway-0.2.4.tar.gz 
+		/share/modcargo-crates/castaway-0.2.4.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libcastaway-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

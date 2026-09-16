@@ -1109,7 +1109,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/opentelemetry_sdk-0.32.1/libopentelemetry_sdk.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/opentelemetry_sdk-0.32.1/deps/                INSTALL_DATA /opentelemetry_sdk-0.32.1.tar.gz \n		/share/modcargo-crates/opentelemetry_sdk-0.32.1.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/opentelemetry_sdk-0.32.1/deps/ 
+ /opentelemetry_sdk-0.32.1.tar.gz 
+		/share/modcargo-crates/opentelemetry_sdk-0.32.1.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libopentelemetry_sdk-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

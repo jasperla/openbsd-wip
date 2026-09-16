@@ -299,7 +299,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/webpki-root-certs-1.0.3/libwebpki_root_certs.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/webpki-root-certs-1.0.3/deps/                INSTALL_DATA /webpki-root-certs-1.0.3.tar.gz \n		/share/modcargo-crates/webpki-root-certs-1.0.3.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/webpki-root-certs-1.0.3/deps/ 
+ /webpki-root-certs-1.0.3.tar.gz 
+		/share/modcargo-crates/webpki-root-certs-1.0.3.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libwebpki_root_certs-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

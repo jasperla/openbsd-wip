@@ -623,7 +623,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/sigstore-types-0.6.6/libsigstore_types.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/sigstore-types-0.6.6/deps/                INSTALL_DATA /sigstore-types-0.6.6.tar.gz \n		/share/modcargo-crates/sigstore-types-0.6.6.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/sigstore-types-0.6.6/deps/ 
+ /sigstore-types-0.6.6.tar.gz 
+		/share/modcargo-crates/sigstore-types-0.6.6.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libsigstore_types-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

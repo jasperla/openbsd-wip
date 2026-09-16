@@ -158,7 +158,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/dtor-proc-macro-0.0.5/libdtor_proc_macro.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/dtor-proc-macro-0.0.5/deps/                INSTALL_DATA /dtor-proc-macro-0.0.5.tar.gz \n		/share/modcargo-crates/dtor-proc-macro-0.0.5.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/dtor-proc-macro-0.0.5/deps/ 
+ /dtor-proc-macro-0.0.5.tar.gz 
+		/share/modcargo-crates/dtor-proc-macro-0.0.5.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libdtor_proc_macro-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

@@ -158,7 +158,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/humantime-2.3.0/libhumantime.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/humantime-2.3.0/deps/                INSTALL_DATA /humantime-2.3.0.tar.gz \n		/share/modcargo-crates/humantime-2.3.0.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/humantime-2.3.0/deps/ 
+ /humantime-2.3.0.tar.gz 
+		/share/modcargo-crates/humantime-2.3.0.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libhumantime-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

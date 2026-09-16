@@ -1379,7 +1379,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/fastrace-opentelemetry-0.18.1/libfastrace_opentelemetry.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/fastrace-opentelemetry-0.18.1/deps/                INSTALL_DATA /fastrace-opentelemetry-0.18.1.tar.gz \n		/share/modcargo-crates/fastrace-opentelemetry-0.18.1.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/fastrace-opentelemetry-0.18.1/deps/ 
+ /fastrace-opentelemetry-0.18.1.tar.gz 
+		/share/modcargo-crates/fastrace-opentelemetry-0.18.1.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libfastrace_opentelemetry-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

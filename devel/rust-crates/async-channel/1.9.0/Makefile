@@ -227,7 +227,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/async-channel-1.9.0/libasync_channel.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/async-channel-1.9.0/deps/                INSTALL_DATA /async-channel-1.9.0.tar.gz \n		/share/modcargo-crates/async-channel-1.9.0.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/async-channel-1.9.0/deps/ 
+ /async-channel-1.9.0.tar.gz 
+		/share/modcargo-crates/async-channel-1.9.0.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libasync_channel-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

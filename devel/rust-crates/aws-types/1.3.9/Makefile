@@ -1451,7 +1451,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/aws-types-1.3.9/libaws_types.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/aws-types-1.3.9/deps/                INSTALL_DATA /aws-types-1.3.9.tar.gz \n		/share/modcargo-crates/aws-types-1.3.9.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/aws-types-1.3.9/deps/ 
+ /aws-types-1.3.9.tar.gz 
+		/share/modcargo-crates/aws-types-1.3.9.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libaws_types-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

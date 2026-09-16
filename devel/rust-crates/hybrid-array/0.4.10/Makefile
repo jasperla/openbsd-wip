@@ -173,7 +173,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/hybrid-array-0.4.10/libhybrid_array.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/hybrid-array-0.4.10/deps/                INSTALL_DATA /hybrid-array-0.4.10.tar.gz \n		/share/modcargo-crates/hybrid-array-0.4.10.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/hybrid-array-0.4.10/deps/ 
+ /hybrid-array-0.4.10.tar.gz 
+		/share/modcargo-crates/hybrid-array-0.4.10.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libhybrid_array-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

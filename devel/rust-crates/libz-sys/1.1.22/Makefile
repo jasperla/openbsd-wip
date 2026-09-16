@@ -335,7 +335,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/libz-sys-1.1.22/liblibz_sys.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/libz-sys-1.1.22/deps/                INSTALL_DATA /libz-sys-1.1.22.tar.gz \n		/share/modcargo-crates/libz-sys-1.1.22.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/libz-sys-1.1.22/deps/ 
+ /libz-sys-1.1.22.tar.gz 
+		/share/modcargo-crates/libz-sys-1.1.22.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/liblibz_sys-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

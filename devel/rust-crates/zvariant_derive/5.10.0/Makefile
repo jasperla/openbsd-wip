@@ -461,7 +461,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/zvariant_derive-5.10.0/libzvariant_derive.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/zvariant_derive-5.10.0/deps/                INSTALL_DATA /zvariant_derive-5.10.0.tar.gz \n		/share/modcargo-crates/zvariant_derive-5.10.0.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/zvariant_derive-5.10.0/deps/ 
+ /zvariant_derive-5.10.0.tar.gz 
+		/share/modcargo-crates/zvariant_derive-5.10.0.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libzvariant_derive-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

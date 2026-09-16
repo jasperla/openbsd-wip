@@ -407,7 +407,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/hmac-0.12.1/libhmac.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/hmac-0.12.1/deps/                INSTALL_DATA /hmac-0.12.1.tar.gz \n		/share/modcargo-crates/hmac-0.12.1.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/hmac-0.12.1/deps/ 
+ /hmac-0.12.1.tar.gz 
+		/share/modcargo-crates/hmac-0.12.1.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libhmac-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

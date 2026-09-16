@@ -1937,7 +1937,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/gix-protocol-0.61.0/libgix_protocol.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/gix-protocol-0.61.0/deps/                INSTALL_DATA /gix-protocol-0.61.0.tar.gz \n		/share/modcargo-crates/gix-protocol-0.61.0.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/gix-protocol-0.61.0/deps/ 
+ /gix-protocol-0.61.0.tar.gz 
+		/share/modcargo-crates/gix-protocol-0.61.0.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libgix_protocol-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

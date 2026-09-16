@@ -317,7 +317,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/combine-4.6.7/libcombine.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/combine-4.6.7/deps/                INSTALL_DATA /combine-4.6.7.tar.gz \n		/share/modcargo-crates/combine-4.6.7.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/combine-4.6.7/deps/ 
+ /combine-4.6.7.tar.gz 
+		/share/modcargo-crates/combine-4.6.7.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libcombine-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

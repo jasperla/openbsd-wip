@@ -353,7 +353,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/rustix-openpty-0.2.0/librustix_openpty.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/rustix-openpty-0.2.0/deps/                INSTALL_DATA /rustix-openpty-0.2.0.tar.gz \n		/share/modcargo-crates/rustix-openpty-0.2.0.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/rustix-openpty-0.2.0/deps/ 
+ /rustix-openpty-0.2.0.tar.gz 
+		/share/modcargo-crates/rustix-openpty-0.2.0.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/librustix_openpty-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

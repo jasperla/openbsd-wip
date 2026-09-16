@@ -227,7 +227,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/fastrace-macro-0.7.18/libfastrace_macro.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/fastrace-macro-0.7.18/deps/                INSTALL_DATA /fastrace-macro-0.7.18.tar.gz \n		/share/modcargo-crates/fastrace-macro-0.7.18.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/fastrace-macro-0.7.18/deps/ 
+ /fastrace-macro-0.7.18.tar.gz 
+		/share/modcargo-crates/fastrace-macro-0.7.18.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libfastrace_macro-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

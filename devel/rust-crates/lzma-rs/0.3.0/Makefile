@@ -209,7 +209,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/lzma-rs-0.3.0/liblzma_rs.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/lzma-rs-0.3.0/deps/                INSTALL_DATA /lzma-rs-0.3.0.tar.gz \n		/share/modcargo-crates/lzma-rs-0.3.0.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/lzma-rs-0.3.0/deps/ 
+ /lzma-rs-0.3.0.tar.gz 
+		/share/modcargo-crates/lzma-rs-0.3.0.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/liblzma_rs-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

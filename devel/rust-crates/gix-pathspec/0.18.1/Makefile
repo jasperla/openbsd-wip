@@ -1037,7 +1037,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/gix-pathspec-0.18.1/libgix_pathspec.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/gix-pathspec-0.18.1/deps/                INSTALL_DATA /gix-pathspec-0.18.1.tar.gz \n		/share/modcargo-crates/gix-pathspec-0.18.1.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/gix-pathspec-0.18.1/deps/ 
+ /gix-pathspec-0.18.1.tar.gz 
+		/share/modcargo-crates/gix-pathspec-0.18.1.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libgix_pathspec-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

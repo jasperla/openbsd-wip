@@ -263,7 +263,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/fancy-regex-0.16.2/libfancy_regex.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/fancy-regex-0.16.2/deps/                INSTALL_DATA /fancy-regex-0.16.2.tar.gz \n		/share/modcargo-crates/fancy-regex-0.16.2.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/fancy-regex-0.16.2/deps/ 
+ /fancy-regex-0.16.2.tar.gz 
+		/share/modcargo-crates/fancy-regex-0.16.2.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libfancy_regex-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

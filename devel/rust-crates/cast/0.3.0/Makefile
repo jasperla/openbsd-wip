@@ -158,7 +158,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/cast-0.3.0/libcast.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/cast-0.3.0/deps/                INSTALL_DATA /cast-0.3.0.tar.gz \n		/share/modcargo-crates/cast-0.3.0.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/cast-0.3.0/deps/ 
+ /cast-0.3.0.tar.gz 
+		/share/modcargo-crates/cast-0.3.0.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libcast-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

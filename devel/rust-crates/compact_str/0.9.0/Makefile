@@ -263,7 +263,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/compact_str-0.9.0/libcompact_str.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/compact_str-0.9.0/deps/                INSTALL_DATA /compact_str-0.9.0.tar.gz \n		/share/modcargo-crates/compact_str-0.9.0.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/compact_str-0.9.0/deps/ 
+ /compact_str-0.9.0.tar.gz 
+		/share/modcargo-crates/compact_str-0.9.0.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libcompact_str-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

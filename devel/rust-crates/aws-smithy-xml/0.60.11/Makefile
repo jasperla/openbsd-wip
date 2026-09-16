@@ -173,7 +173,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/aws-smithy-xml-0.60.11/libaws_smithy_xml.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/aws-smithy-xml-0.60.11/deps/                INSTALL_DATA /aws-smithy-xml-0.60.11.tar.gz \n		/share/modcargo-crates/aws-smithy-xml-0.60.11.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/aws-smithy-xml-0.60.11/deps/ 
+ /aws-smithy-xml-0.60.11.tar.gz 
+		/share/modcargo-crates/aws-smithy-xml-0.60.11.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libaws_smithy_xml-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

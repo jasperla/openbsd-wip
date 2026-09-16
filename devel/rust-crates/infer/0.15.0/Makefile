@@ -497,7 +497,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/infer-0.15.0/libinfer.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/infer-0.15.0/deps/                INSTALL_DATA /infer-0.15.0.tar.gz \n		/share/modcargo-crates/infer-0.15.0.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/infer-0.15.0/deps/ 
+ /infer-0.15.0.tar.gz 
+		/share/modcargo-crates/infer-0.15.0.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libinfer-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

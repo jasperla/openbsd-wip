@@ -263,7 +263,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/zerofrom-0.1.6/libzerofrom.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/zerofrom-0.1.6/deps/                INSTALL_DATA /zerofrom-0.1.6.tar.gz \n		/share/modcargo-crates/zerofrom-0.1.6.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/zerofrom-0.1.6/deps/ 
+ /zerofrom-0.1.6.tar.gz 
+		/share/modcargo-crates/zerofrom-0.1.6.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libzerofrom-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

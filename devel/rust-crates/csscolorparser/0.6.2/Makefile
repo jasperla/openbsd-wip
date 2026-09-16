@@ -497,7 +497,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/csscolorparser-0.6.2/libcsscolorparser.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/csscolorparser-0.6.2/deps/                INSTALL_DATA /csscolorparser-0.6.2.tar.gz \n		/share/modcargo-crates/csscolorparser-0.6.2.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/csscolorparser-0.6.2/deps/ 
+ /csscolorparser-0.6.2.tar.gz 
+		/share/modcargo-crates/csscolorparser-0.6.2.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libcsscolorparser-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

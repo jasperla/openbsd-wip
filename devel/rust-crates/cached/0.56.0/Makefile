@@ -821,7 +821,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/cached-0.56.0/libcached.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/cached-0.56.0/deps/                INSTALL_DATA /cached-0.56.0.tar.gz \n		/share/modcargo-crates/cached-0.56.0.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/cached-0.56.0/deps/ 
+ /cached-0.56.0.tar.gz 
+		/share/modcargo-crates/cached-0.56.0.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libcached-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

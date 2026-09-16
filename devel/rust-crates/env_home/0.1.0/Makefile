@@ -158,7 +158,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/env_home-0.1.0/libenv_home.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/env_home-0.1.0/deps/                INSTALL_DATA /env_home-0.1.0.tar.gz \n		/share/modcargo-crates/env_home-0.1.0.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/env_home-0.1.0/deps/ 
+ /env_home-0.1.0.tar.gz 
+		/share/modcargo-crates/env_home-0.1.0.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libenv_home-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

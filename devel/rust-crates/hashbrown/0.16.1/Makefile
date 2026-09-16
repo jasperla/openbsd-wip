@@ -209,7 +209,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/hashbrown-0.16.1/libhashbrown.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/hashbrown-0.16.1/deps/                INSTALL_DATA /hashbrown-0.16.1.tar.gz \n		/share/modcargo-crates/hashbrown-0.16.1.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/hashbrown-0.16.1/deps/ 
+ /hashbrown-0.16.1.tar.gz 
+		/share/modcargo-crates/hashbrown-0.16.1.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libhashbrown-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

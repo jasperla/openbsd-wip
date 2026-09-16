@@ -227,7 +227,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/rhai_codegen-3.2.0/librhai_codegen.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/rhai_codegen-3.2.0/deps/                INSTALL_DATA /rhai_codegen-3.2.0.tar.gz \n		/share/modcargo-crates/rhai_codegen-3.2.0.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/rhai_codegen-3.2.0/deps/ 
+ /rhai_codegen-3.2.0.tar.gz 
+		/share/modcargo-crates/rhai_codegen-3.2.0.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/librhai_codegen-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

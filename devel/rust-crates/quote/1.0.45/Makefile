@@ -191,7 +191,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/quote-1.0.45/libquote.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/quote-1.0.45/deps/                INSTALL_DATA /quote-1.0.45.tar.gz \n		/share/modcargo-crates/quote-1.0.45.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/quote-1.0.45/deps/ 
+ /quote-1.0.45.tar.gz 
+		/share/modcargo-crates/quote-1.0.45.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libquote-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

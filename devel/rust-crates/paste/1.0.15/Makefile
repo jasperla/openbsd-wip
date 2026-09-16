@@ -158,7 +158,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/paste-1.0.15/libpaste.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/paste-1.0.15/deps/                INSTALL_DATA /paste-1.0.15.tar.gz \n		/share/modcargo-crates/paste-1.0.15.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/paste-1.0.15/deps/ 
+ /paste-1.0.15.tar.gz 
+		/share/modcargo-crates/paste-1.0.15.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libpaste-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

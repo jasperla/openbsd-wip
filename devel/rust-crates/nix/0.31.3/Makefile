@@ -335,7 +335,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/nix-0.31.3/libnix.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/nix-0.31.3/deps/                INSTALL_DATA /nix-0.31.3.tar.gz \n		/share/modcargo-crates/nix-0.31.3.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/nix-0.31.3/deps/ 
+ /nix-0.31.3.tar.gz 
+		/share/modcargo-crates/nix-0.31.3.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libnix-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

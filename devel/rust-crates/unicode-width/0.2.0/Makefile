@@ -158,7 +158,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/unicode-width-0.2.0/libunicode_width.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/unicode-width-0.2.0/deps/                INSTALL_DATA /unicode-width-0.2.0.tar.gz \n		/share/modcargo-crates/unicode-width-0.2.0.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/unicode-width-0.2.0/deps/ 
+ /unicode-width-0.2.0.tar.gz 
+		/share/modcargo-crates/unicode-width-0.2.0.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libunicode_width-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

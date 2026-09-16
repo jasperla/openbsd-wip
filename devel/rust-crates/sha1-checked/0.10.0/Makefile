@@ -479,7 +479,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/sha1-checked-0.10.0/libsha1_checked.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/sha1-checked-0.10.0/deps/                INSTALL_DATA /sha1-checked-0.10.0.tar.gz \n		/share/modcargo-crates/sha1-checked-0.10.0.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/sha1-checked-0.10.0/deps/ 
+ /sha1-checked-0.10.0.tar.gz 
+		/share/modcargo-crates/sha1-checked-0.10.0.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libsha1_checked-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

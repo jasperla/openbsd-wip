@@ -371,7 +371,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/time-0.3.47/libtime.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/time-0.3.47/deps/                INSTALL_DATA /time-0.3.47.tar.gz \n		/share/modcargo-crates/time-0.3.47.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/time-0.3.47/deps/ 
+ /time-0.3.47.tar.gz 
+		/share/modcargo-crates/time-0.3.47.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libtime-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

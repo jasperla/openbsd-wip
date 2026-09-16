@@ -749,7 +749,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/primeorder-0.13.6/libprimeorder.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/primeorder-0.13.6/deps/                INSTALL_DATA /primeorder-0.13.6.tar.gz \n		/share/modcargo-crates/primeorder-0.13.6.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/primeorder-0.13.6/deps/ 
+ /primeorder-0.13.6.tar.gz 
+		/share/modcargo-crates/primeorder-0.13.6.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libprimeorder-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

@@ -785,7 +785,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/rustls-platform-verifier-0.6.2/librustls_platform_verifier.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/rustls-platform-verifier-0.6.2/deps/                INSTALL_DATA /rustls-platform-verifier-0.6.2.tar.gz \n		/share/modcargo-crates/rustls-platform-verifier-0.6.2.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/rustls-platform-verifier-0.6.2/deps/ 
+ /rustls-platform-verifier-0.6.2.tar.gz 
+		/share/modcargo-crates/rustls-platform-verifier-0.6.2.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/librustls_platform_verifier-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

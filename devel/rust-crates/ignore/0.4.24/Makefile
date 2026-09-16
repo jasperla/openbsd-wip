@@ -515,7 +515,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/ignore-0.4.24/libignore.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/ignore-0.4.24/deps/                INSTALL_DATA /ignore-0.4.24.tar.gz \n		/share/modcargo-crates/ignore-0.4.24.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/ignore-0.4.24/deps/ 
+ /ignore-0.4.24.tar.gz 
+		/share/modcargo-crates/ignore-0.4.24.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libignore-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

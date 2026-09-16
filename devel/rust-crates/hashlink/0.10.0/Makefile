@@ -227,7 +227,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/hashlink-0.10.0/libhashlink.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/hashlink-0.10.0/deps/                INSTALL_DATA /hashlink-0.10.0.tar.gz \n		/share/modcargo-crates/hashlink-0.10.0.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/hashlink-0.10.0/deps/ 
+ /hashlink-0.10.0.tar.gz 
+		/share/modcargo-crates/hashlink-0.10.0.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libhashlink-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

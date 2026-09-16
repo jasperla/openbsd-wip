@@ -317,7 +317,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/aes-0.9.3/libaes.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/aes-0.9.3/deps/                INSTALL_DATA /aes-0.9.3.tar.gz \n		/share/modcargo-crates/aes-0.9.3.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/aes-0.9.3/deps/ 
+ /aes-0.9.3.tar.gz 
+		/share/modcargo-crates/aes-0.9.3.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libaes-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

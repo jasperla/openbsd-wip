@@ -245,7 +245,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/token-source-1.0.0/libtoken_source.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/token-source-1.0.0/deps/                INSTALL_DATA /token-source-1.0.0.tar.gz \n		/share/modcargo-crates/token-source-1.0.0.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/token-source-1.0.0/deps/ 
+ /token-source-1.0.0.tar.gz 
+		/share/modcargo-crates/token-source-1.0.0.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libtoken_source-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

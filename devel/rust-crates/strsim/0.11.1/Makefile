@@ -158,7 +158,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/strsim-0.11.1/libstrsim.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/strsim-0.11.1/deps/                INSTALL_DATA /strsim-0.11.1.tar.gz \n		/share/modcargo-crates/strsim-0.11.1.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/strsim-0.11.1/deps/ 
+ /strsim-0.11.1.tar.gz 
+		/share/modcargo-crates/strsim-0.11.1.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libstrsim-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

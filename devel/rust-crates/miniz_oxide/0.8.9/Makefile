@@ -191,7 +191,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/miniz_oxide-0.8.9/libminiz_oxide.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/miniz_oxide-0.8.9/deps/                INSTALL_DATA /miniz_oxide-0.8.9.tar.gz \n		/share/modcargo-crates/miniz_oxide-0.8.9.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/miniz_oxide-0.8.9/deps/ 
+ /miniz_oxide-0.8.9.tar.gz 
+		/share/modcargo-crates/miniz_oxide-0.8.9.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libminiz_oxide-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

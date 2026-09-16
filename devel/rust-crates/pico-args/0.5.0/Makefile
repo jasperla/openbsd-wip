@@ -158,7 +158,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/pico-args-0.5.0/libpico_args.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/pico-args-0.5.0/deps/                INSTALL_DATA /pico-args-0.5.0.tar.gz \n		/share/modcargo-crates/pico-args-0.5.0.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/pico-args-0.5.0/deps/ 
+ /pico-args-0.5.0.tar.gz 
+		/share/modcargo-crates/pico-args-0.5.0.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libpico_args-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

@@ -158,7 +158,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/unicase-2.8.1/libunicase.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/unicase-2.8.1/deps/                INSTALL_DATA /unicase-2.8.1.tar.gz \n		/share/modcargo-crates/unicase-2.8.1.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/unicase-2.8.1/deps/ 
+ /unicase-2.8.1.tar.gz 
+		/share/modcargo-crates/unicase-2.8.1.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libunicase-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

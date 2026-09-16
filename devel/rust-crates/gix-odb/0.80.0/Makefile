@@ -1757,7 +1757,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/gix-odb-0.80.0/libgix_odb.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/gix-odb-0.80.0/deps/                INSTALL_DATA /gix-odb-0.80.0.tar.gz \n		/share/modcargo-crates/gix-odb-0.80.0.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/gix-odb-0.80.0/deps/ 
+ /gix-odb-0.80.0.tar.gz 
+		/share/modcargo-crates/gix-odb-0.80.0.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libgix_odb-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

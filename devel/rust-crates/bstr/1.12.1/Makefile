@@ -353,7 +353,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/bstr-1.12.1/libbstr.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/bstr-1.12.1/deps/                INSTALL_DATA /bstr-1.12.1.tar.gz \n		/share/modcargo-crates/bstr-1.12.1.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/bstr-1.12.1/deps/ 
+ /bstr-1.12.1.tar.gz 
+		/share/modcargo-crates/bstr-1.12.1.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libbstr-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

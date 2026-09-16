@@ -299,7 +299,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/phf_macros-0.14.0/libphf_macros.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/phf_macros-0.14.0/deps/                INSTALL_DATA /phf_macros-0.14.0.tar.gz \n		/share/modcargo-crates/phf_macros-0.14.0.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/phf_macros-0.14.0/deps/ 
+ /phf_macros-0.14.0.tar.gz 
+		/share/modcargo-crates/phf_macros-0.14.0.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libphf_macros-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

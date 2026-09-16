@@ -911,7 +911,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/tracing-subscriber-0.3.23/libtracing_subscriber.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/tracing-subscriber-0.3.23/deps/                INSTALL_DATA /tracing-subscriber-0.3.23.tar.gz \n		/share/modcargo-crates/tracing-subscriber-0.3.23.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/tracing-subscriber-0.3.23/deps/ 
+ /tracing-subscriber-0.3.23.tar.gz 
+		/share/modcargo-crates/tracing-subscriber-0.3.23.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libtracing_subscriber-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

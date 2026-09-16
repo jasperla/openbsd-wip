@@ -641,7 +641,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/wayland-client-0.31.12/libwayland_client.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/wayland-client-0.31.12/deps/                INSTALL_DATA /wayland-client-0.31.12.tar.gz \n		/share/modcargo-crates/wayland-client-0.31.12.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/wayland-client-0.31.12/deps/ 
+ /wayland-client-0.31.12.tar.gz 
+		/share/modcargo-crates/wayland-client-0.31.12.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libwayland_client-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

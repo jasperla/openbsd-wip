@@ -158,7 +158,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/fiat-crypto-0.2.9/libfiat_crypto.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/fiat-crypto-0.2.9/deps/                INSTALL_DATA /fiat-crypto-0.2.9.tar.gz \n		/share/modcargo-crates/fiat-crypto-0.2.9.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/fiat-crypto-0.2.9/deps/ 
+ /fiat-crypto-0.2.9.tar.gz 
+		/share/modcargo-crates/fiat-crypto-0.2.9.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libfiat_crypto-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

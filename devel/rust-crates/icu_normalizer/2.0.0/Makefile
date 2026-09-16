@@ -659,7 +659,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/icu_normalizer-2.0.0/libicu_normalizer.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/icu_normalizer-2.0.0/deps/                INSTALL_DATA /icu_normalizer-2.0.0.tar.gz \n		/share/modcargo-crates/icu_normalizer-2.0.0.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/icu_normalizer-2.0.0/deps/ 
+ /icu_normalizer-2.0.0.tar.gz 
+		/share/modcargo-crates/icu_normalizer-2.0.0.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libicu_normalizer-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

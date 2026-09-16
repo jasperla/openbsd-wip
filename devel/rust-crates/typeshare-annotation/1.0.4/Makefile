@@ -227,7 +227,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/typeshare-annotation-1.0.4/libtypeshare_annotation.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/typeshare-annotation-1.0.4/deps/                INSTALL_DATA /typeshare-annotation-1.0.4.tar.gz \n		/share/modcargo-crates/typeshare-annotation-1.0.4.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/typeshare-annotation-1.0.4/deps/ 
+ /typeshare-annotation-1.0.4.tar.gz 
+		/share/modcargo-crates/typeshare-annotation-1.0.4.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libtypeshare_annotation-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

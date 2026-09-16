@@ -281,7 +281,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/serde_tokenstream-0.2.3/libserde_tokenstream.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/serde_tokenstream-0.2.3/deps/                INSTALL_DATA /serde_tokenstream-0.2.3.tar.gz \n		/share/modcargo-crates/serde_tokenstream-0.2.3.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/serde_tokenstream-0.2.3/deps/ 
+ /serde_tokenstream-0.2.3.tar.gz 
+		/share/modcargo-crates/serde_tokenstream-0.2.3.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libserde_tokenstream-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

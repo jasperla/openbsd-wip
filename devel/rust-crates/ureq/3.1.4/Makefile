@@ -947,7 +947,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/ureq-3.1.4/libureq.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/ureq-3.1.4/deps/                INSTALL_DATA /ureq-3.1.4.tar.gz \n		/share/modcargo-crates/ureq-3.1.4.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/ureq-3.1.4/deps/ 
+ /ureq-3.1.4.tar.gz 
+		/share/modcargo-crates/ureq-3.1.4.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libureq-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

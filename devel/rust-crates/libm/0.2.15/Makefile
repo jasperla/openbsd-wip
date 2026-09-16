@@ -158,7 +158,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/libm-0.2.15/liblibm.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/libm-0.2.15/deps/                INSTALL_DATA /libm-0.2.15.tar.gz \n		/share/modcargo-crates/libm-0.2.15.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/libm-0.2.15/deps/ 
+ /libm-0.2.15.tar.gz 
+		/share/modcargo-crates/libm-0.2.15.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/liblibm-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

@@ -3683,7 +3683,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/sigstore-verify-0.6.3/libsigstore_verify.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/sigstore-verify-0.6.3/deps/                INSTALL_DATA /sigstore-verify-0.6.3.tar.gz \n		/share/modcargo-crates/sigstore-verify-0.6.3.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/sigstore-verify-0.6.3/deps/ 
+ /sigstore-verify-0.6.3.tar.gz 
+		/share/modcargo-crates/sigstore-verify-0.6.3.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libsigstore_verify-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

@@ -158,7 +158,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/rustc-hash-1.1.0/librustc_hash.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/rustc-hash-1.1.0/deps/                INSTALL_DATA /rustc-hash-1.1.0.tar.gz \n		/share/modcargo-crates/rustc-hash-1.1.0.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/rustc-hash-1.1.0/deps/ 
+ /rustc-hash-1.1.0.tar.gz 
+		/share/modcargo-crates/rustc-hash-1.1.0.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/librustc_hash-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

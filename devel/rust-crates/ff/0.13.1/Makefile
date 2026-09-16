@@ -245,7 +245,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/ff-0.13.1/libff.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/ff-0.13.1/deps/                INSTALL_DATA /ff-0.13.1.tar.gz \n		/share/modcargo-crates/ff-0.13.1.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/ff-0.13.1/deps/ 
+ /ff-0.13.1.tar.gz 
+		/share/modcargo-crates/ff-0.13.1.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libff-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

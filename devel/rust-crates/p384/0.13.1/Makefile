@@ -857,7 +857,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/p384-0.13.1/libp384.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/p384-0.13.1/deps/                INSTALL_DATA /p384-0.13.1.tar.gz \n		/share/modcargo-crates/p384-0.13.1.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/p384-0.13.1/deps/ 
+ /p384-0.13.1.tar.gz 
+		/share/modcargo-crates/p384-0.13.1.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libp384-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

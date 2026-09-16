@@ -335,7 +335,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/simd_cesu8-1.1.1/libsimd_cesu8.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/simd_cesu8-1.1.1/deps/                INSTALL_DATA /simd_cesu8-1.1.1.tar.gz \n		/share/modcargo-crates/simd_cesu8-1.1.1.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/simd_cesu8-1.1.1/deps/ 
+ /simd_cesu8-1.1.1.tar.gz 
+		/share/modcargo-crates/simd_cesu8-1.1.1.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libsimd_cesu8-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

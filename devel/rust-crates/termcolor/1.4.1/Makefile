@@ -158,7 +158,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/termcolor-1.4.1/libtermcolor.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/termcolor-1.4.1/deps/                INSTALL_DATA /termcolor-1.4.1.tar.gz \n		/share/modcargo-crates/termcolor-1.4.1.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/termcolor-1.4.1/deps/ 
+ /termcolor-1.4.1.tar.gz 
+		/share/modcargo-crates/termcolor-1.4.1.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libtermcolor-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

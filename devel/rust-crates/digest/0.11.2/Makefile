@@ -245,7 +245,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/digest-0.11.2/libdigest.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/digest-0.11.2/deps/                INSTALL_DATA /digest-0.11.2.tar.gz \n		/share/modcargo-crates/digest-0.11.2.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/digest-0.11.2/deps/ 
+ /digest-0.11.2.tar.gz 
+		/share/modcargo-crates/digest-0.11.2.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libdigest-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

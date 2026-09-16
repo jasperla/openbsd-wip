@@ -158,7 +158,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/autocfg-1.5.0/libautocfg.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/autocfg-1.5.0/deps/                INSTALL_DATA /autocfg-1.5.0.tar.gz \n		/share/modcargo-crates/autocfg-1.5.0.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/autocfg-1.5.0/deps/ 
+ /autocfg-1.5.0.tar.gz 
+		/share/modcargo-crates/autocfg-1.5.0.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libautocfg-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

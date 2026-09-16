@@ -158,7 +158,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/utf8-width-0.1.7/libutf8_width.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/utf8-width-0.1.7/deps/                INSTALL_DATA /utf8-width-0.1.7.tar.gz \n		/share/modcargo-crates/utf8-width-0.1.7.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/utf8-width-0.1.7/deps/ 
+ /utf8-width-0.1.7.tar.gz 
+		/share/modcargo-crates/utf8-width-0.1.7.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libutf8_width-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

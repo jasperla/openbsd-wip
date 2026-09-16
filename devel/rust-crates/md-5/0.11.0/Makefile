@@ -281,7 +281,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/md-5-0.11.0/libmd5.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/md-5-0.11.0/deps/                INSTALL_DATA /md-5-0.11.0.tar.gz \n		/share/modcargo-crates/md-5-0.11.0.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/md-5-0.11.0/deps/ 
+ /md-5-0.11.0.tar.gz 
+		/share/modcargo-crates/md-5-0.11.0.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libmd5-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

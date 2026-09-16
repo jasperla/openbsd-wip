@@ -173,7 +173,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/encoding_rs-0.8.35/libencoding_rs.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/encoding_rs-0.8.35/deps/                INSTALL_DATA /encoding_rs-0.8.35.tar.gz \n		/share/modcargo-crates/encoding_rs-0.8.35.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/encoding_rs-0.8.35/deps/ 
+ /encoding_rs-0.8.35.tar.gz 
+		/share/modcargo-crates/encoding_rs-0.8.35.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libencoding_rs-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

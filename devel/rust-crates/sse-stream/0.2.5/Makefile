@@ -551,7 +551,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/sse-stream-0.2.5/libsse_stream.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/sse-stream-0.2.5/deps/                INSTALL_DATA /sse-stream-0.2.5.tar.gz \n		/share/modcargo-crates/sse-stream-0.2.5.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/sse-stream-0.2.5/deps/ 
+ /sse-stream-0.2.5.tar.gz 
+		/share/modcargo-crates/sse-stream-0.2.5.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libsse_stream-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

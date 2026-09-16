@@ -407,7 +407,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/stop-words-0.9.0/libstop_words.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/stop-words-0.9.0/deps/                INSTALL_DATA /stop-words-0.9.0.tar.gz \n		/share/modcargo-crates/stop-words-0.9.0.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/stop-words-0.9.0/deps/ 
+ /stop-words-0.9.0.tar.gz 
+		/share/modcargo-crates/stop-words-0.9.0.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libstop_words-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

@@ -263,7 +263,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/jpeg-decoder-0.3.2/libjpeg_decoder.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/jpeg-decoder-0.3.2/deps/                INSTALL_DATA /jpeg-decoder-0.3.2.tar.gz \n		/share/modcargo-crates/jpeg-decoder-0.3.2.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/jpeg-decoder-0.3.2/deps/ 
+ /jpeg-decoder-0.3.2.tar.gz 
+		/share/modcargo-crates/jpeg-decoder-0.3.2.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libjpeg_decoder-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

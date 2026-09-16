@@ -947,7 +947,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/rsa-0.9.10/librsa.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/rsa-0.9.10/deps/                INSTALL_DATA /rsa-0.9.10.tar.gz \n		/share/modcargo-crates/rsa-0.9.10.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/rsa-0.9.10/deps/ 
+ /rsa-0.9.10.tar.gz 
+		/share/modcargo-crates/rsa-0.9.10.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/librsa-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

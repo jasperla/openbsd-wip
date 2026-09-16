@@ -191,7 +191,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/image-webp-0.2.4/libimage_webp.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/image-webp-0.2.4/deps/                INSTALL_DATA /image-webp-0.2.4.tar.gz \n		/share/modcargo-crates/image-webp-0.2.4.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/image-webp-0.2.4/deps/ 
+ /image-webp-0.2.4.tar.gz 
+		/share/modcargo-crates/image-webp-0.2.4.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libimage_webp-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

@@ -227,7 +227,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/matchers-0.2.0/libmatchers.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/matchers-0.2.0/deps/                INSTALL_DATA /matchers-0.2.0.tar.gz \n		/share/modcargo-crates/matchers-0.2.0.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/matchers-0.2.0/deps/ 
+ /matchers-0.2.0.tar.gz 
+		/share/modcargo-crates/matchers-0.2.0.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libmatchers-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

@@ -767,7 +767,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/tui-scrollbar-0.2.2/libtui_scrollbar.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/tui-scrollbar-0.2.2/deps/                INSTALL_DATA /tui-scrollbar-0.2.2.tar.gz \n		/share/modcargo-crates/tui-scrollbar-0.2.2.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/tui-scrollbar-0.2.2/deps/ 
+ /tui-scrollbar-0.2.2.tar.gz 
+		/share/modcargo-crates/tui-scrollbar-0.2.2.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libtui_scrollbar-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

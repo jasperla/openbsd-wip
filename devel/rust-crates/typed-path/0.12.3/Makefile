@@ -158,7 +158,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/typed-path-0.12.3/libtyped_path.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/typed-path-0.12.3/deps/                INSTALL_DATA /typed-path-0.12.3.tar.gz \n		/share/modcargo-crates/typed-path-0.12.3.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/typed-path-0.12.3/deps/ 
+ /typed-path-0.12.3.tar.gz 
+		/share/modcargo-crates/typed-path-0.12.3.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libtyped_path-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

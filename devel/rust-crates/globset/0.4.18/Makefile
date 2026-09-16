@@ -407,7 +407,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/globset-0.4.18/libglobset.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/globset-0.4.18/deps/                INSTALL_DATA /globset-0.4.18.tar.gz \n		/share/modcargo-crates/globset-0.4.18.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/globset-0.4.18/deps/ 
+ /globset-0.4.18.tar.gz 
+		/share/modcargo-crates/globset-0.4.18.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libglobset-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

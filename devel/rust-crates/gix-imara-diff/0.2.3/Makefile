@@ -443,7 +443,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/gix-imara-diff-0.2.3/libgix_imara_diff.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/gix-imara-diff-0.2.3/deps/                INSTALL_DATA /gix-imara-diff-0.2.3.tar.gz \n		/share/modcargo-crates/gix-imara-diff-0.2.3.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/gix-imara-diff-0.2.3/deps/ 
+ /gix-imara-diff-0.2.3.tar.gz 
+		/share/modcargo-crates/gix-imara-diff-0.2.3.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libgix_imara_diff-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

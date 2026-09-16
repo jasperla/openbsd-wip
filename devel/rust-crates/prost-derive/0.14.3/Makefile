@@ -281,7 +281,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/prost-derive-0.14.3/libprost_derive.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/prost-derive-0.14.3/deps/                INSTALL_DATA /prost-derive-0.14.3.tar.gz \n		/share/modcargo-crates/prost-derive-0.14.3.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/prost-derive-0.14.3/deps/ 
+ /prost-derive-0.14.3.tar.gz 
+		/share/modcargo-crates/prost-derive-0.14.3.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libprost_derive-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

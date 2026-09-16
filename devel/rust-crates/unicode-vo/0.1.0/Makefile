@@ -158,7 +158,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/unicode-vo-0.1.0/libunicode_vo.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/unicode-vo-0.1.0/deps/                INSTALL_DATA /unicode-vo-0.1.0.tar.gz \n		/share/modcargo-crates/unicode-vo-0.1.0.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/unicode-vo-0.1.0/deps/ 
+ /unicode-vo-0.1.0.tar.gz 
+		/share/modcargo-crates/unicode-vo-0.1.0.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libunicode_vo-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

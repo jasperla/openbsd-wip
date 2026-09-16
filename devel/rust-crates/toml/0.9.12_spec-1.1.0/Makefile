@@ -443,7 +443,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/toml-0.9.12_spec-1.1.0/libtoml.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/toml-0.9.12_spec-1.1.0/deps/                INSTALL_DATA /toml-0.9.12+spec-1.1.0.tar.gz \n		/share/modcargo-crates/toml-0.9.12_spec-1.1.0.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/toml-0.9.12_spec-1.1.0/deps/ 
+ /toml-0.9.12+spec-1.1.0.tar.gz 
+		/share/modcargo-crates/toml-0.9.12_spec-1.1.0.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libtoml-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

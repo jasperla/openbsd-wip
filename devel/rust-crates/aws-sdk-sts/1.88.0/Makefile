@@ -2909,7 +2909,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/aws-sdk-sts-1.88.0/libaws_sdk_sts.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/aws-sdk-sts-1.88.0/deps/                INSTALL_DATA /aws-sdk-sts-1.88.0.tar.gz \n		/share/modcargo-crates/aws-sdk-sts-1.88.0.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/aws-sdk-sts-1.88.0/deps/ 
+ /aws-sdk-sts-1.88.0.tar.gz 
+		/share/modcargo-crates/aws-sdk-sts-1.88.0.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libaws_sdk_sts-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

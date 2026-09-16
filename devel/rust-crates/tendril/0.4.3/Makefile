@@ -227,7 +227,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/tendril-0.4.3/libtendril.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/tendril-0.4.3/deps/                INSTALL_DATA /tendril-0.4.3.tar.gz \n		/share/modcargo-crates/tendril-0.4.3.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/tendril-0.4.3/deps/ 
+ /tendril-0.4.3.tar.gz 
+		/share/modcargo-crates/tendril-0.4.3.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libtendril-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

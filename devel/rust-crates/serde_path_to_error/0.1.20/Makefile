@@ -299,7 +299,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/serde_path_to_error-0.1.20/libserde_path_to_error.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/serde_path_to_error-0.1.20/deps/                INSTALL_DATA /serde_path_to_error-0.1.20.tar.gz \n		/share/modcargo-crates/serde_path_to_error-0.1.20.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/serde_path_to_error-0.1.20/deps/ 
+ /serde_path_to_error-0.1.20.tar.gz 
+		/share/modcargo-crates/serde_path_to_error-0.1.20.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libserde_path_to_error-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

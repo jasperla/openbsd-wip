@@ -173,7 +173,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/fontconfig-parser-0.5.8/libfontconfig_parser.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/fontconfig-parser-0.5.8/deps/                INSTALL_DATA /fontconfig-parser-0.5.8.tar.gz \n		/share/modcargo-crates/fontconfig-parser-0.5.8.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/fontconfig-parser-0.5.8/deps/ 
+ /fontconfig-parser-0.5.8.tar.gz 
+		/share/modcargo-crates/fontconfig-parser-0.5.8.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libfontconfig_parser-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

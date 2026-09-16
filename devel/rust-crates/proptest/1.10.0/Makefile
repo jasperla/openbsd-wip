@@ -569,7 +569,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/proptest-1.10.0/libproptest.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/proptest-1.10.0/deps/                INSTALL_DATA /proptest-1.10.0.tar.gz \n		/share/modcargo-crates/proptest-1.10.0.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/proptest-1.10.0/deps/ 
+ /proptest-1.10.0.tar.gz 
+		/share/modcargo-crates/proptest-1.10.0.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libproptest-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

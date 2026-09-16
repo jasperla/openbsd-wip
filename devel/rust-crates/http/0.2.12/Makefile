@@ -335,7 +335,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/http-0.2.12/libhttp.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/http-0.2.12/deps/                INSTALL_DATA /http-0.2.12.tar.gz \n		/share/modcargo-crates/http-0.2.12.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/http-0.2.12/deps/ 
+ /http-0.2.12.tar.gz 
+		/share/modcargo-crates/http-0.2.12.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libhttp-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

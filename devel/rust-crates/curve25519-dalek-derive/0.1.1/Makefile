@@ -227,7 +227,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/curve25519-dalek-derive-0.1.1/libcurve25519_dalek_derive.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/curve25519-dalek-derive-0.1.1/deps/                INSTALL_DATA /curve25519-dalek-derive-0.1.1.tar.gz \n		/share/modcargo-crates/curve25519-dalek-derive-0.1.1.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/curve25519-dalek-derive-0.1.1/deps/ 
+ /curve25519-dalek-derive-0.1.1.tar.gz 
+		/share/modcargo-crates/curve25519-dalek-derive-0.1.1.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libcurve25519_dalek_derive-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

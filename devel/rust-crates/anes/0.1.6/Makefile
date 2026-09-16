@@ -158,7 +158,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/anes-0.1.6/libanes.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/anes-0.1.6/deps/                INSTALL_DATA /anes-0.1.6.tar.gz \n		/share/modcargo-crates/anes-0.1.6.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/anes-0.1.6/deps/ 
+ /anes-0.1.6.tar.gz 
+		/share/modcargo-crates/anes-0.1.6.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libanes-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

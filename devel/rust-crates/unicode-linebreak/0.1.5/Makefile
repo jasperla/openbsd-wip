@@ -158,7 +158,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/unicode-linebreak-0.1.5/libunicode_linebreak.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/unicode-linebreak-0.1.5/deps/                INSTALL_DATA /unicode-linebreak-0.1.5.tar.gz \n		/share/modcargo-crates/unicode-linebreak-0.1.5.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/unicode-linebreak-0.1.5/deps/ 
+ /unicode-linebreak-0.1.5.tar.gz 
+		/share/modcargo-crates/unicode-linebreak-0.1.5.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libunicode_linebreak-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

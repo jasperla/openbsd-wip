@@ -281,7 +281,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/rustls-pki-types-1.14.0/librustls_pki_types.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/rustls-pki-types-1.14.0/deps/                INSTALL_DATA /rustls-pki-types-1.14.0.tar.gz \n		/share/modcargo-crates/rustls-pki-types-1.14.0.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/rustls-pki-types-1.14.0/deps/ 
+ /rustls-pki-types-1.14.0.tar.gz 
+		/share/modcargo-crates/rustls-pki-types-1.14.0.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/librustls_pki_types-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

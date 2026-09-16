@@ -158,7 +158,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/unicode-segmentation-1.12.0/libunicode_segmentation.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/unicode-segmentation-1.12.0/deps/                INSTALL_DATA /unicode-segmentation-1.12.0.tar.gz \n		/share/modcargo-crates/unicode-segmentation-1.12.0.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/unicode-segmentation-1.12.0/deps/ 
+ /unicode-segmentation-1.12.0.tar.gz 
+		/share/modcargo-crates/unicode-segmentation-1.12.0.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libunicode_segmentation-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

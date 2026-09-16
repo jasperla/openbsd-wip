@@ -497,7 +497,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/notify-8.2.0/libnotify.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/notify-8.2.0/deps/                INSTALL_DATA /notify-8.2.0.tar.gz \n		/share/modcargo-crates/notify-8.2.0.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/notify-8.2.0/deps/ 
+ /notify-8.2.0.tar.gz 
+		/share/modcargo-crates/notify-8.2.0.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libnotify-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

@@ -158,7 +158,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/bytecount-0.6.9/libbytecount.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/bytecount-0.6.9/deps/                INSTALL_DATA /bytecount-0.6.9.tar.gz \n		/share/modcargo-crates/bytecount-0.6.9.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/bytecount-0.6.9/deps/ 
+ /bytecount-0.6.9.tar.gz 
+		/share/modcargo-crates/bytecount-0.6.9.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libbytecount-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

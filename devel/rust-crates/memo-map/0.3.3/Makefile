@@ -158,7 +158,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/memo-map-0.3.3/libmemo_map.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/memo-map-0.3.3/deps/                INSTALL_DATA /memo-map-0.3.3.tar.gz \n		/share/modcargo-crates/memo-map-0.3.3.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/memo-map-0.3.3/deps/ 
+ /memo-map-0.3.3.tar.gz 
+		/share/modcargo-crates/memo-map-0.3.3.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libmemo_map-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

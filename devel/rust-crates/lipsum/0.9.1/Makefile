@@ -389,7 +389,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/lipsum-0.9.1/liblipsum.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/lipsum-0.9.1/deps/                INSTALL_DATA /lipsum-0.9.1.tar.gz \n		/share/modcargo-crates/lipsum-0.9.1.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/lipsum-0.9.1/deps/ 
+ /lipsum-0.9.1.tar.gz 
+		/share/modcargo-crates/lipsum-0.9.1.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/liblipsum-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

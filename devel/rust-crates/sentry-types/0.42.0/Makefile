@@ -1397,7 +1397,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/sentry-types-0.42.0/libsentry_types.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/sentry-types-0.42.0/deps/                INSTALL_DATA /sentry-types-0.42.0.tar.gz \n		/share/modcargo-crates/sentry-types-0.42.0.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/sentry-types-0.42.0/deps/ 
+ /sentry-types-0.42.0.tar.gz 
+		/share/modcargo-crates/sentry-types-0.42.0.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libsentry_types-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

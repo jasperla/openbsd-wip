@@ -281,7 +281,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/async-stream-0.3.6/libasync_stream.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/async-stream-0.3.6/deps/                INSTALL_DATA /async-stream-0.3.6.tar.gz \n		/share/modcargo-crates/async-stream-0.3.6.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/async-stream-0.3.6/deps/ 
+ /async-stream-0.3.6.tar.gz 
+		/share/modcargo-crates/async-stream-0.3.6.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libasync_stream-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

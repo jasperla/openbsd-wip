@@ -227,7 +227,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/thiserror-impl-1.0.69/libthiserror_impl.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/thiserror-impl-1.0.69/deps/                INSTALL_DATA /thiserror-impl-1.0.69.tar.gz \n		/share/modcargo-crates/thiserror-impl-1.0.69.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/thiserror-impl-1.0.69/deps/ 
+ /thiserror-impl-1.0.69.tar.gz 
+		/share/modcargo-crates/thiserror-impl-1.0.69.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libthiserror_impl-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

@@ -158,7 +158,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/oorandom-11.1.5/liboorandom.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/oorandom-11.1.5/deps/                INSTALL_DATA /oorandom-11.1.5.tar.gz \n		/share/modcargo-crates/oorandom-11.1.5.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/oorandom-11.1.5/deps/ 
+ /oorandom-11.1.5.tar.gz 
+		/share/modcargo-crates/oorandom-11.1.5.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/liboorandom-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

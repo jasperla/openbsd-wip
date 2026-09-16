@@ -713,7 +713,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/typify-0.6.2/libtypify.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/typify-0.6.2/deps/                INSTALL_DATA /typify-0.6.2.tar.gz \n		/share/modcargo-crates/typify-0.6.2.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/typify-0.6.2/deps/ 
+ /typify-0.6.2.tar.gz 
+		/share/modcargo-crates/typify-0.6.2.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libtypify-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

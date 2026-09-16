@@ -407,7 +407,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/zerovec-0.11.4/libzerovec.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/zerovec-0.11.4/deps/                INSTALL_DATA /zerovec-0.11.4.tar.gz \n		/share/modcargo-crates/zerovec-0.11.4.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/zerovec-0.11.4/deps/ 
+ /zerovec-0.11.4.tar.gz 
+		/share/modcargo-crates/zerovec-0.11.4.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libzerovec-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

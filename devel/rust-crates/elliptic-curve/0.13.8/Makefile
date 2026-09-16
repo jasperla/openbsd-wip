@@ -731,7 +731,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/elliptic-curve-0.13.8/libelliptic_curve.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/elliptic-curve-0.13.8/deps/                INSTALL_DATA /elliptic-curve-0.13.8.tar.gz \n		/share/modcargo-crates/elliptic-curve-0.13.8.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/elliptic-curve-0.13.8/deps/ 
+ /elliptic-curve-0.13.8.tar.gz 
+		/share/modcargo-crates/elliptic-curve-0.13.8.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libelliptic_curve-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

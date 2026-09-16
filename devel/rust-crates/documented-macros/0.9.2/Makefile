@@ -371,7 +371,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/documented-macros-0.9.2/libdocumented_macros.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/documented-macros-0.9.2/deps/                INSTALL_DATA /documented-macros-0.9.2.tar.gz \n		/share/modcargo-crates/documented-macros-0.9.2.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/documented-macros-0.9.2/deps/ 
+ /documented-macros-0.9.2.tar.gz 
+		/share/modcargo-crates/documented-macros-0.9.2.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libdocumented_macros-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

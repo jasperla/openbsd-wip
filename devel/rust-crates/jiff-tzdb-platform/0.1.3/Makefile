@@ -173,7 +173,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/jiff-tzdb-platform-0.1.3/libjiff_tzdb_platform.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/jiff-tzdb-platform-0.1.3/deps/                INSTALL_DATA /jiff-tzdb-platform-0.1.3.tar.gz \n		/share/modcargo-crates/jiff-tzdb-platform-0.1.3.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/jiff-tzdb-platform-0.1.3/deps/ 
+ /jiff-tzdb-platform-0.1.3.tar.gz 
+		/share/modcargo-crates/jiff-tzdb-platform-0.1.3.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libjiff_tzdb_platform-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

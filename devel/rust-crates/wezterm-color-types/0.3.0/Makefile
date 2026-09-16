@@ -785,7 +785,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/wezterm-color-types-0.3.0/libwezterm_color_types.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/wezterm-color-types-0.3.0/deps/                INSTALL_DATA /wezterm-color-types-0.3.0.tar.gz \n		/share/modcargo-crates/wezterm-color-types-0.3.0.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/wezterm-color-types-0.3.0/deps/ 
+ /wezterm-color-types-0.3.0.tar.gz 
+		/share/modcargo-crates/wezterm-color-types-0.3.0.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libwezterm_color_types-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

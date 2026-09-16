@@ -227,7 +227,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/axum-macros-0.5.0/libaxum_macros.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/axum-macros-0.5.0/deps/                INSTALL_DATA /axum-macros-0.5.0.tar.gz \n		/share/modcargo-crates/axum-macros-0.5.0.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/axum-macros-0.5.0/deps/ 
+ /axum-macros-0.5.0.tar.gz 
+		/share/modcargo-crates/axum-macros-0.5.0.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libaxum_macros-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

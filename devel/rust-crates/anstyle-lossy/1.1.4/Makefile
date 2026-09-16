@@ -173,7 +173,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/anstyle-lossy-1.1.4/libanstyle_lossy.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/anstyle-lossy-1.1.4/deps/                INSTALL_DATA /anstyle-lossy-1.1.4.tar.gz \n		/share/modcargo-crates/anstyle-lossy-1.1.4.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/anstyle-lossy-1.1.4/deps/ 
+ /anstyle-lossy-1.1.4.tar.gz 
+		/share/modcargo-crates/anstyle-lossy-1.1.4.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libanstyle_lossy-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

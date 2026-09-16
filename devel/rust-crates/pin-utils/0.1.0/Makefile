@@ -158,7 +158,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/pin-utils-0.1.0/libpin_utils.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/pin-utils-0.1.0/deps/                INSTALL_DATA /pin-utils-0.1.0.tar.gz \n		/share/modcargo-crates/pin-utils-0.1.0.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/pin-utils-0.1.0/deps/ 
+ /pin-utils-0.1.0.tar.gz 
+		/share/modcargo-crates/pin-utils-0.1.0.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libpin_utils-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

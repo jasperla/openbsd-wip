@@ -158,7 +158,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/tower-layer-0.3.3/libtower_layer.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/tower-layer-0.3.3/deps/                INSTALL_DATA /tower-layer-0.3.3.tar.gz \n		/share/modcargo-crates/tower-layer-0.3.3.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/tower-layer-0.3.3/deps/ 
+ /tower-layer-0.3.3.tar.gz 
+		/share/modcargo-crates/tower-layer-0.3.3.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libtower_layer-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

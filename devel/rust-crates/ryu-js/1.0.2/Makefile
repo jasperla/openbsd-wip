@@ -158,7 +158,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/ryu-js-1.0.2/libryu_js.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/ryu-js-1.0.2/deps/                INSTALL_DATA /ryu-js-1.0.2.tar.gz \n		/share/modcargo-crates/ryu-js-1.0.2.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/ryu-js-1.0.2/deps/ 
+ /ryu-js-1.0.2.tar.gz 
+		/share/modcargo-crates/ryu-js-1.0.2.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libryu_js-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

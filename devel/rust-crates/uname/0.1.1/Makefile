@@ -173,7 +173,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/uname-0.1.1/libuname.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/uname-0.1.1/deps/                INSTALL_DATA /uname-0.1.1.tar.gz \n		/share/modcargo-crates/uname-0.1.1.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/uname-0.1.1/deps/ 
+ /uname-0.1.1.tar.gz 
+		/share/modcargo-crates/uname-0.1.1.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libuname-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

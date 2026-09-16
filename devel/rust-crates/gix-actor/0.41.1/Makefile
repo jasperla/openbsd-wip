@@ -569,7 +569,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/gix-actor-0.41.1/libgix_actor.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/gix-actor-0.41.1/deps/                INSTALL_DATA /gix-actor-0.41.1.tar.gz \n		/share/modcargo-crates/gix-actor-0.41.1.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/gix-actor-0.41.1/deps/ 
+ /gix-actor-0.41.1.tar.gz 
+		/share/modcargo-crates/gix-actor-0.41.1.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libgix_actor-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

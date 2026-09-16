@@ -821,7 +821,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/wezterm-blob-leases-0.1.1/libwezterm_blob_leases.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/wezterm-blob-leases-0.1.1/deps/                INSTALL_DATA /wezterm-blob-leases-0.1.1.tar.gz \n		/share/modcargo-crates/wezterm-blob-leases-0.1.1.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/wezterm-blob-leases-0.1.1/deps/ 
+ /wezterm-blob-leases-0.1.1.tar.gz 
+		/share/modcargo-crates/wezterm-blob-leases-0.1.1.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libwezterm_blob_leases-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

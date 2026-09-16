@@ -407,7 +407,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/assert-json-diff-2.0.2/libassert_json_diff.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/assert-json-diff-2.0.2/deps/                INSTALL_DATA /assert-json-diff-2.0.2.tar.gz \n		/share/modcargo-crates/assert-json-diff-2.0.2.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/assert-json-diff-2.0.2/deps/ 
+ /assert-json-diff-2.0.2.tar.gz 
+		/share/modcargo-crates/assert-json-diff-2.0.2.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libassert_json_diff-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

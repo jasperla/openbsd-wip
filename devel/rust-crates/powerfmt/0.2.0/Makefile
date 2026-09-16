@@ -158,7 +158,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/powerfmt-0.2.0/libpowerfmt.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/powerfmt-0.2.0/deps/                INSTALL_DATA /powerfmt-0.2.0.tar.gz \n		/share/modcargo-crates/powerfmt-0.2.0.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/powerfmt-0.2.0/deps/ 
+ /powerfmt-0.2.0.tar.gz 
+		/share/modcargo-crates/powerfmt-0.2.0.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libpowerfmt-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

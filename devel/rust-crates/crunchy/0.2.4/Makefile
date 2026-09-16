@@ -158,7 +158,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/crunchy-0.2.4/libcrunchy.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/crunchy-0.2.4/deps/                INSTALL_DATA /crunchy-0.2.4.tar.gz \n		/share/modcargo-crates/crunchy-0.2.4.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/crunchy-0.2.4/deps/ 
+ /crunchy-0.2.4.tar.gz 
+		/share/modcargo-crates/crunchy-0.2.4.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libcrunchy-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

@@ -209,7 +209,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/mio-1.2.1/libmio.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/mio-1.2.1/deps/                INSTALL_DATA /mio-1.2.1.tar.gz \n		/share/modcargo-crates/mio-1.2.1.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/mio-1.2.1/deps/ 
+ /mio-1.2.1.tar.gz 
+		/share/modcargo-crates/mio-1.2.1.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libmio-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

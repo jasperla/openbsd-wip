@@ -158,7 +158,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/borrow-or-share-0.2.2/libborrow_or_share.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/borrow-or-share-0.2.2/deps/                INSTALL_DATA /borrow-or-share-0.2.2.tar.gz \n		/share/modcargo-crates/borrow-or-share-0.2.2.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/borrow-or-share-0.2.2/deps/ 
+ /borrow-or-share-0.2.2.tar.gz 
+		/share/modcargo-crates/borrow-or-share-0.2.2.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libborrow_or_share-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

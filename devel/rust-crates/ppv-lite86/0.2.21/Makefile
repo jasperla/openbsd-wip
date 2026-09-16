@@ -263,7 +263,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/ppv-lite86-0.2.21/libppv_lite86.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/ppv-lite86-0.2.21/deps/                INSTALL_DATA /ppv-lite86-0.2.21.tar.gz \n		/share/modcargo-crates/ppv-lite86-0.2.21.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/ppv-lite86-0.2.21/deps/ 
+ /ppv-lite86-0.2.21.tar.gz 
+		/share/modcargo-crates/ppv-lite86-0.2.21.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libppv_lite86-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

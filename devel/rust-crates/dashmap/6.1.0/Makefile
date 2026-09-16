@@ -461,7 +461,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/dashmap-6.1.0/libdashmap.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/dashmap-6.1.0/deps/                INSTALL_DATA /dashmap-6.1.0.tar.gz \n		/share/modcargo-crates/dashmap-6.1.0.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/dashmap-6.1.0/deps/ 
+ /dashmap-6.1.0.tar.gz 
+		/share/modcargo-crates/dashmap-6.1.0.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libdashmap-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

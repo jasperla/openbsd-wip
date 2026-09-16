@@ -227,7 +227,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/synstructure-0.13.2/libsynstructure.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/synstructure-0.13.2/deps/                INSTALL_DATA /synstructure-0.13.2.tar.gz \n		/share/modcargo-crates/synstructure-0.13.2.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/synstructure-0.13.2/deps/ 
+ /synstructure-0.13.2.tar.gz 
+		/share/modcargo-crates/synstructure-0.13.2.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libsynstructure-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

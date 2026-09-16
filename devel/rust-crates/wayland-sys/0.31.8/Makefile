@@ -173,7 +173,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/wayland-sys-0.31.8/libwayland_sys.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/wayland-sys-0.31.8/deps/                INSTALL_DATA /wayland-sys-0.31.8.tar.gz \n		/share/modcargo-crates/wayland-sys-0.31.8.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/wayland-sys-0.31.8/deps/ 
+ /wayland-sys-0.31.8.tar.gz 
+		/share/modcargo-crates/wayland-sys-0.31.8.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libwayland_sys-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

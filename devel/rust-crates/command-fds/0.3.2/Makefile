@@ -677,7 +677,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/command-fds-0.3.2/libcommand_fds.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/command-fds-0.3.2/deps/                INSTALL_DATA /command-fds-0.3.2.tar.gz \n		/share/modcargo-crates/command-fds-0.3.2.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/command-fds-0.3.2/deps/ 
+ /command-fds-0.3.2.tar.gz 
+		/share/modcargo-crates/command-fds-0.3.2.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libcommand_fds-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

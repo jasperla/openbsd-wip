@@ -173,7 +173,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/inotify-sys-0.1.5/libinotify_sys.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/inotify-sys-0.1.5/deps/                INSTALL_DATA /inotify-sys-0.1.5.tar.gz \n		/share/modcargo-crates/inotify-sys-0.1.5.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/inotify-sys-0.1.5/deps/ 
+ /inotify-sys-0.1.5.tar.gz 
+		/share/modcargo-crates/inotify-sys-0.1.5.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libinotify_sys-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

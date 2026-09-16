@@ -158,7 +158,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/memchr-2.8.2/libmemchr.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/memchr-2.8.2/deps/                INSTALL_DATA /memchr-2.8.2.tar.gz \n		/share/modcargo-crates/memchr-2.8.2.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/memchr-2.8.2/deps/ 
+ /memchr-2.8.2.tar.gz 
+		/share/modcargo-crates/memchr-2.8.2.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libmemchr-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

@@ -209,7 +209,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/pxfm-0.1.25/libpxfm.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/pxfm-0.1.25/deps/                INSTALL_DATA /pxfm-0.1.25.tar.gz \n		/share/modcargo-crates/pxfm-0.1.25.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/pxfm-0.1.25/deps/ 
+ /pxfm-0.1.25.tar.gz 
+		/share/modcargo-crates/pxfm-0.1.25.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libpxfm-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

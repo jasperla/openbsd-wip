@@ -158,7 +158,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/web-time-1.1.0/libweb_time.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/web-time-1.1.0/deps/                INSTALL_DATA /web-time-1.1.0.tar.gz \n		/share/modcargo-crates/web-time-1.1.0.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/web-time-1.1.0/deps/ 
+ /web-time-1.1.0.tar.gz 
+		/share/modcargo-crates/web-time-1.1.0.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libweb_time-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

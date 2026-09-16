@@ -158,7 +158,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/fallible-iterator-0.3.0/libfallible_iterator.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/fallible-iterator-0.3.0/deps/                INSTALL_DATA /fallible-iterator-0.3.0.tar.gz \n		/share/modcargo-crates/fallible-iterator-0.3.0.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/fallible-iterator-0.3.0/deps/ 
+ /fallible-iterator-0.3.0.tar.gz 
+		/share/modcargo-crates/fallible-iterator-0.3.0.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libfallible_iterator-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

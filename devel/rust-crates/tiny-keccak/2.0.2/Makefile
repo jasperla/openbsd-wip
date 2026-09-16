@@ -173,7 +173,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/tiny-keccak-2.0.2/libtiny_keccak.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/tiny-keccak-2.0.2/deps/                INSTALL_DATA /tiny-keccak-2.0.2.tar.gz \n		/share/modcargo-crates/tiny-keccak-2.0.2.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/tiny-keccak-2.0.2/deps/ 
+ /tiny-keccak-2.0.2.tar.gz 
+		/share/modcargo-crates/tiny-keccak-2.0.2.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libtiny_keccak-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

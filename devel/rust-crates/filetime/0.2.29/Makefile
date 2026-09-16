@@ -191,7 +191,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/filetime-0.2.29/libfiletime.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/filetime-0.2.29/deps/                INSTALL_DATA /filetime-0.2.29.tar.gz \n		/share/modcargo-crates/filetime-0.2.29.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/filetime-0.2.29/deps/ 
+ /filetime-0.2.29.tar.gz 
+		/share/modcargo-crates/filetime-0.2.29.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libfiletime-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

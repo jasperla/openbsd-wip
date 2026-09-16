@@ -227,7 +227,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/equator-macro-0.4.2/libequator_macro.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/equator-macro-0.4.2/deps/                INSTALL_DATA /equator-macro-0.4.2.tar.gz \n		/share/modcargo-crates/equator-macro-0.4.2.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/equator-macro-0.4.2/deps/ 
+ /equator-macro-0.4.2.tar.gz 
+		/share/modcargo-crates/equator-macro-0.4.2.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libequator_macro-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

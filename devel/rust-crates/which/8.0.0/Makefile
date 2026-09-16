@@ -389,7 +389,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/which-8.0.0/libwhich.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/which-8.0.0/deps/                INSTALL_DATA /which-8.0.0.tar.gz \n		/share/modcargo-crates/which-8.0.0.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/which-8.0.0/deps/ 
+ /which-8.0.0.tar.gz 
+		/share/modcargo-crates/which-8.0.0.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libwhich-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

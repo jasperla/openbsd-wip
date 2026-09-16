@@ -245,7 +245,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/clap_derive-4.5.49/libclap_derive.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/clap_derive-4.5.49/deps/                INSTALL_DATA /clap_derive-4.5.49.tar.gz \n		/share/modcargo-crates/clap_derive-4.5.49.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/clap_derive-4.5.49/deps/ 
+ /clap_derive-4.5.49.tar.gz 
+		/share/modcargo-crates/clap_derive-4.5.49.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libclap_derive-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

@@ -353,7 +353,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/faster-hex-0.10.0/libfaster_hex.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/faster-hex-0.10.0/deps/                INSTALL_DATA /faster-hex-0.10.0.tar.gz \n		/share/modcargo-crates/faster-hex-0.10.0.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/faster-hex-0.10.0/deps/ 
+ /faster-hex-0.10.0.tar.gz 
+		/share/modcargo-crates/faster-hex-0.10.0.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libfaster_hex-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

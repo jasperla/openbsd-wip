@@ -1235,7 +1235,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/usvg-0.47.0/libusvg.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/usvg-0.47.0/deps/                INSTALL_DATA /usvg-0.47.0.tar.gz \n		/share/modcargo-crates/usvg-0.47.0.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/usvg-0.47.0/deps/ 
+ /usvg-0.47.0.tar.gz 
+		/share/modcargo-crates/usvg-0.47.0.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libusvg-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

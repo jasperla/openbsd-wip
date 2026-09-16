@@ -2279,7 +2279,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/gix-merge-0.16.0/libgix_merge.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/gix-merge-0.16.0/deps/                INSTALL_DATA /gix-merge-0.16.0.tar.gz \n		/share/modcargo-crates/gix-merge-0.16.0.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/gix-merge-0.16.0/deps/ 
+ /gix-merge-0.16.0.tar.gz 
+		/share/modcargo-crates/gix-merge-0.16.0.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libgix_merge-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

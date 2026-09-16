@@ -158,7 +158,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/quick-error-2.0.1/libquick_error.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/quick-error-2.0.1/deps/                INSTALL_DATA /quick-error-2.0.1.tar.gz \n		/share/modcargo-crates/quick-error-2.0.1.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/quick-error-2.0.1/deps/ 
+ /quick-error-2.0.1.tar.gz 
+		/share/modcargo-crates/quick-error-2.0.1.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libquick_error-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

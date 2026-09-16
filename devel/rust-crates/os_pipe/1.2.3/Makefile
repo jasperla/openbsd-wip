@@ -173,7 +173,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/os_pipe-1.2.3/libos_pipe.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/os_pipe-1.2.3/deps/                INSTALL_DATA /os_pipe-1.2.3.tar.gz \n		/share/modcargo-crates/os_pipe-1.2.3.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/os_pipe-1.2.3/deps/ 
+ /os_pipe-1.2.3.tar.gz 
+		/share/modcargo-crates/os_pipe-1.2.3.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libos_pipe-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

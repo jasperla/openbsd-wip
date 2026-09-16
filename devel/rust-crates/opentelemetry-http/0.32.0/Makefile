@@ -2945,7 +2945,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/opentelemetry-http-0.32.0/libopentelemetry_http.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/opentelemetry-http-0.32.0/deps/                INSTALL_DATA /opentelemetry-http-0.32.0.tar.gz \n		/share/modcargo-crates/opentelemetry-http-0.32.0.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/opentelemetry-http-0.32.0/deps/ 
+ /opentelemetry-http-0.32.0.tar.gz 
+		/share/modcargo-crates/opentelemetry-http-0.32.0.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libopentelemetry_http-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

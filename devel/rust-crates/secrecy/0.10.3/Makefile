@@ -317,7 +317,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/secrecy-0.10.3/libsecrecy.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/secrecy-0.10.3/deps/                INSTALL_DATA /secrecy-0.10.3.tar.gz \n		/share/modcargo-crates/secrecy-0.10.3.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/secrecy-0.10.3/deps/ 
+ /secrecy-0.10.3.tar.gz 
+		/share/modcargo-crates/secrecy-0.10.3.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libsecrecy-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

@@ -371,7 +371,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/rand-0.8.5/librand.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/rand-0.8.5/deps/                INSTALL_DATA /rand-0.8.5.tar.gz \n		/share/modcargo-crates/rand-0.8.5.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/rand-0.8.5/deps/ 
+ /rand-0.8.5.tar.gz 
+		/share/modcargo-crates/rand-0.8.5.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/librand-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

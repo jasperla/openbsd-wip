@@ -299,7 +299,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/skrifa-0.37.0/libskrifa.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/skrifa-0.37.0/deps/                INSTALL_DATA /skrifa-0.37.0.tar.gz \n		/share/modcargo-crates/skrifa-0.37.0.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/skrifa-0.37.0/deps/ 
+ /skrifa-0.37.0.tar.gz 
+		/share/modcargo-crates/skrifa-0.37.0.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libskrifa-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

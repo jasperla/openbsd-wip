@@ -281,7 +281,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/semver-1.0.28/libsemver.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/semver-1.0.28/deps/                INSTALL_DATA /semver-1.0.28.tar.gz \n		/share/modcargo-crates/semver-1.0.28.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/semver-1.0.28/deps/ 
+ /semver-1.0.28.tar.gz 
+		/share/modcargo-crates/semver-1.0.28.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libsemver-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

@@ -158,7 +158,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/file-id-0.2.3/libfile_id.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/file-id-0.2.3/deps/                INSTALL_DATA /file-id-0.2.3.tar.gz \n		/share/modcargo-crates/file-id-0.2.3.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/file-id-0.2.3/deps/ 
+ /file-id-0.2.3.tar.gz 
+		/share/modcargo-crates/file-id-0.2.3.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libfile_id-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

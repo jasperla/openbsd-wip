@@ -1001,7 +1001,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/async-compression-0.4.19/libasync_compression.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/async-compression-0.4.19/deps/                INSTALL_DATA /async-compression-0.4.19.tar.gz \n		/share/modcargo-crates/async-compression-0.4.19.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/async-compression-0.4.19/deps/ 
+ /async-compression-0.4.19.tar.gz 
+		/share/modcargo-crates/async-compression-0.4.19.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libasync_compression-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

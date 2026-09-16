@@ -158,7 +158,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/zlib-rs-0.5.5/libzlib_rs.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/zlib-rs-0.5.5/deps/                INSTALL_DATA /zlib-rs-0.5.5.tar.gz \n		/share/modcargo-crates/zlib-rs-0.5.5.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/zlib-rs-0.5.5/deps/ 
+ /zlib-rs-0.5.5.tar.gz 
+		/share/modcargo-crates/zlib-rs-0.5.5.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libzlib_rs-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

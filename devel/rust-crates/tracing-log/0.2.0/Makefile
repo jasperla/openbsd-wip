@@ -263,7 +263,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/tracing-log-0.2.0/libtracing_log.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/tracing-log-0.2.0/deps/                INSTALL_DATA /tracing-log-0.2.0.tar.gz \n		/share/modcargo-crates/tracing-log-0.2.0.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/tracing-log-0.2.0/deps/ 
+ /tracing-log-0.2.0.tar.gz 
+		/share/modcargo-crates/tracing-log-0.2.0.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libtracing_log-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

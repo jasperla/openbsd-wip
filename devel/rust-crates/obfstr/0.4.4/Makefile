@@ -158,7 +158,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/obfstr-0.4.4/libobfstr.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/obfstr-0.4.4/deps/                INSTALL_DATA /obfstr-0.4.4.tar.gz \n		/share/modcargo-crates/obfstr-0.4.4.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/obfstr-0.4.4/deps/ 
+ /obfstr-0.4.4.tar.gz 
+		/share/modcargo-crates/obfstr-0.4.4.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libobfstr-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

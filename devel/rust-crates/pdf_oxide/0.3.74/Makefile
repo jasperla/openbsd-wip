@@ -3233,7 +3233,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/pdf_oxide-0.3.74/libpdf_oxide.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/pdf_oxide-0.3.74/deps/                INSTALL_DATA /pdf_oxide-0.3.74.tar.gz \n		/share/modcargo-crates/pdf_oxide-0.3.74.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/pdf_oxide-0.3.74/deps/ 
+ /pdf_oxide-0.3.74.tar.gz 
+		/share/modcargo-crates/pdf_oxide-0.3.74.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libpdf_oxide-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

@@ -158,7 +158,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/ucd-trie-0.1.7/libucd_trie.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/ucd-trie-0.1.7/deps/                INSTALL_DATA /ucd-trie-0.1.7.tar.gz \n		/share/modcargo-crates/ucd-trie-0.1.7.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/ucd-trie-0.1.7/deps/ 
+ /ucd-trie-0.1.7.tar.gz 
+		/share/modcargo-crates/ucd-trie-0.1.7.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libucd_trie-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

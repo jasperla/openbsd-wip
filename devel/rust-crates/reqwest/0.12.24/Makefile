@@ -3125,7 +3125,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/reqwest-0.12.24/libreqwest.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/reqwest-0.12.24/deps/                INSTALL_DATA /reqwest-0.12.24.tar.gz \n		/share/modcargo-crates/reqwest-0.12.24.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/reqwest-0.12.24/deps/ 
+ /reqwest-0.12.24.tar.gz 
+		/share/modcargo-crates/reqwest-0.12.24.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libreqwest-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

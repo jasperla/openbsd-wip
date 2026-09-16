@@ -158,7 +158,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/vsimd-0.8.0/libvsimd.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/vsimd-0.8.0/deps/                INSTALL_DATA /vsimd-0.8.0.tar.gz \n		/share/modcargo-crates/vsimd-0.8.0.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/vsimd-0.8.0/deps/ 
+ /vsimd-0.8.0.tar.gz 
+		/share/modcargo-crates/vsimd-0.8.0.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libvsimd-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

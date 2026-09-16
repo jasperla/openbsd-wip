@@ -353,7 +353,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/der-0.7.10/libder.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/der-0.7.10/deps/                INSTALL_DATA /der-0.7.10.tar.gz \n		/share/modcargo-crates/der-0.7.10.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/der-0.7.10/deps/ 
+ /der-0.7.10.tar.gz 
+		/share/modcargo-crates/der-0.7.10.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libder-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

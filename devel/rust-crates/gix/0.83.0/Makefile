@@ -2765,7 +2765,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/gix-0.83.0/libgix.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/gix-0.83.0/deps/                INSTALL_DATA /gix-0.83.0.tar.gz \n		/share/modcargo-crates/gix-0.83.0.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/gix-0.83.0/deps/ 
+ /gix-0.83.0.tar.gz 
+		/share/modcargo-crates/gix-0.83.0.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libgix-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

@@ -281,7 +281,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/darling_macro-0.24.1/libdarling_macro.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/darling_macro-0.24.1/deps/                INSTALL_DATA /darling_macro-0.24.1.tar.gz \n		/share/modcargo-crates/darling_macro-0.24.1.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/darling_macro-0.24.1/deps/ 
+ /darling_macro-0.24.1.tar.gz 
+		/share/modcargo-crates/darling_macro-0.24.1.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libdarling_macro-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

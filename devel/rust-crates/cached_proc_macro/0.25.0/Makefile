@@ -335,7 +335,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/cached_proc_macro-0.25.0/libcached_proc_macro.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/cached_proc_macro-0.25.0/deps/                INSTALL_DATA /cached_proc_macro-0.25.0.tar.gz \n		/share/modcargo-crates/cached_proc_macro-0.25.0.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/cached_proc_macro-0.25.0/deps/ 
+ /cached_proc_macro-0.25.0.tar.gz 
+		/share/modcargo-crates/cached_proc_macro-0.25.0.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libcached_proc_macro-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

@@ -713,7 +713,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/idna-1.1.0/libidna.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/idna-1.1.0/deps/                INSTALL_DATA /idna-1.1.0.tar.gz \n		/share/modcargo-crates/idna-1.1.0.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/idna-1.1.0/deps/ 
+ /idna-1.1.0.tar.gz 
+		/share/modcargo-crates/idna-1.1.0.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libidna-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

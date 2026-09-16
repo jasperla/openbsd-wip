@@ -371,7 +371,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/instability-0.3.9/libinstability.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/instability-0.3.9/deps/                INSTALL_DATA /instability-0.3.9.tar.gz \n		/share/modcargo-crates/instability-0.3.9.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/instability-0.3.9/deps/ 
+ /instability-0.3.9.tar.gz 
+		/share/modcargo-crates/instability-0.3.9.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libinstability-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

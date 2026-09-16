@@ -353,7 +353,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/waitpid-any-0.3.0/libwaitpid_any.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/waitpid-any-0.3.0/deps/                INSTALL_DATA /waitpid-any-0.3.0.tar.gz \n		/share/modcargo-crates/waitpid-any-0.3.0.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/waitpid-any-0.3.0/deps/ 
+ /waitpid-any-0.3.0.tar.gz 
+		/share/modcargo-crates/waitpid-any-0.3.0.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libwaitpid_any-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

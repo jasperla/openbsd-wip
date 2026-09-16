@@ -533,7 +533,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/icu_provider-2.0.0/libicu_provider.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/icu_provider-2.0.0/deps/                INSTALL_DATA /icu_provider-2.0.0.tar.gz \n		/share/modcargo-crates/icu_provider-2.0.0.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/icu_provider-2.0.0/deps/ 
+ /icu_provider-2.0.0.tar.gz 
+		/share/modcargo-crates/icu_provider-2.0.0.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libicu_provider-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

@@ -245,7 +245,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/wayland-scanner-0.31.10/libwayland_scanner.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/wayland-scanner-0.31.10/deps/                INSTALL_DATA /wayland-scanner-0.31.10.tar.gz \n		/share/modcargo-crates/wayland-scanner-0.31.10.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/wayland-scanner-0.31.10/deps/ 
+ /wayland-scanner-0.31.10.tar.gz 
+		/share/modcargo-crates/wayland-scanner-0.31.10.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libwayland_scanner-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

@@ -245,7 +245,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/bytemuck-1.25.2/libbytemuck.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/bytemuck-1.25.2/deps/                INSTALL_DATA /bytemuck-1.25.2.tar.gz \n		/share/modcargo-crates/bytemuck-1.25.2.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/bytemuck-1.25.2/deps/ 
+ /bytemuck-1.25.2.tar.gz 
+		/share/modcargo-crates/bytemuck-1.25.2.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libbytemuck-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

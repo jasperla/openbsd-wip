@@ -191,7 +191,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/time-macros-0.2.27/libtime_macros.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/time-macros-0.2.27/deps/                INSTALL_DATA /time-macros-0.2.27.tar.gz \n		/share/modcargo-crates/time-macros-0.2.27.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/time-macros-0.2.27/deps/ 
+ /time-macros-0.2.27.tar.gz 
+		/share/modcargo-crates/time-macros-0.2.27.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libtime_macros-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

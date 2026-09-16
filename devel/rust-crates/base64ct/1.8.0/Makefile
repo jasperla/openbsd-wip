@@ -158,7 +158,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/base64ct-1.8.0/libbase64ct.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/base64ct-1.8.0/deps/                INSTALL_DATA /base64ct-1.8.0.tar.gz \n		/share/modcargo-crates/base64ct-1.8.0.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/base64ct-1.8.0/deps/ 
+ /base64ct-1.8.0.tar.gz 
+		/share/modcargo-crates/base64ct-1.8.0.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libbase64ct-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

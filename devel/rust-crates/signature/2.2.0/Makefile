@@ -479,7 +479,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/signature-2.2.0/libsignature.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/signature-2.2.0/deps/                INSTALL_DATA /signature-2.2.0.tar.gz \n		/share/modcargo-crates/signature-2.2.0.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/signature-2.2.0/deps/ 
+ /signature-2.2.0.tar.gz 
+		/share/modcargo-crates/signature-2.2.0.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libsignature-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

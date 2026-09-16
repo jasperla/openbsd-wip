@@ -389,7 +389,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/pulldown-cmark-to-cmark-21.1.0/libpulldown_cmark_to_cmark.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/pulldown-cmark-to-cmark-21.1.0/deps/                INSTALL_DATA /pulldown-cmark-to-cmark-21.1.0.tar.gz \n		/share/modcargo-crates/pulldown-cmark-to-cmark-21.1.0.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/pulldown-cmark-to-cmark-21.1.0/deps/ 
+ /pulldown-cmark-to-cmark-21.1.0.tar.gz 
+		/share/modcargo-crates/pulldown-cmark-to-cmark-21.1.0.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libpulldown_cmark_to_cmark-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

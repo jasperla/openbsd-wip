@@ -515,7 +515,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/rmcp-macros-3.2.0/librmcp_macros.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/rmcp-macros-3.2.0/deps/                INSTALL_DATA /rmcp-macros-3.2.0.tar.gz \n		/share/modcargo-crates/rmcp-macros-3.2.0.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/rmcp-macros-3.2.0/deps/ 
+ /rmcp-macros-3.2.0.tar.gz 
+		/share/modcargo-crates/rmcp-macros-3.2.0.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/librmcp_macros-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

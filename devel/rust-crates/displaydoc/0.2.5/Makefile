@@ -227,7 +227,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/displaydoc-0.2.5/libdisplaydoc.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/displaydoc-0.2.5/deps/                INSTALL_DATA /displaydoc-0.2.5.tar.gz \n		/share/modcargo-crates/displaydoc-0.2.5.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/displaydoc-0.2.5/deps/ 
+ /displaydoc-0.2.5.tar.gz 
+		/share/modcargo-crates/displaydoc-0.2.5.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libdisplaydoc-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

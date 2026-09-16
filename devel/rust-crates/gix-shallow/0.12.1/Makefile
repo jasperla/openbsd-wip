@@ -1469,7 +1469,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/gix-shallow-0.12.1/libgix_shallow.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/gix-shallow-0.12.1/deps/                INSTALL_DATA /gix-shallow-0.12.1.tar.gz \n		/share/modcargo-crates/gix-shallow-0.12.1.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/gix-shallow-0.12.1/deps/ 
+ /gix-shallow-0.12.1.tar.gz 
+		/share/modcargo-crates/gix-shallow-0.12.1.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libgix_shallow-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

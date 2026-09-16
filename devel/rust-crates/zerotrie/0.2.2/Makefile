@@ -407,7 +407,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/zerotrie-0.2.2/libzerotrie.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/zerotrie-0.2.2/deps/                INSTALL_DATA /zerotrie-0.2.2.tar.gz \n		/share/modcargo-crates/zerotrie-0.2.2.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/zerotrie-0.2.2/deps/ 
+ /zerotrie-0.2.2.tar.gz 
+		/share/modcargo-crates/zerotrie-0.2.2.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libzerotrie-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

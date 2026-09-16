@@ -623,7 +623,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/cssparser-0.34.0/libcssparser.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/cssparser-0.34.0/deps/                INSTALL_DATA /cssparser-0.34.0.tar.gz \n		/share/modcargo-crates/cssparser-0.34.0.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/cssparser-0.34.0/deps/ 
+ /cssparser-0.34.0.tar.gz 
+		/share/modcargo-crates/cssparser-0.34.0.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libcssparser-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

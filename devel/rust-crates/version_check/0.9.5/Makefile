@@ -158,7 +158,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/version_check-0.9.5/libversion_check.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/version_check-0.9.5/deps/                INSTALL_DATA /version_check-0.9.5.tar.gz \n		/share/modcargo-crates/version_check-0.9.5.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/version_check-0.9.5/deps/ 
+ /version_check-0.9.5.tar.gz 
+		/share/modcargo-crates/version_check-0.9.5.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libversion_check-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

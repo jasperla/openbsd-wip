@@ -4061,7 +4061,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/gcloud-auth-1.3.0/libgcloud_auth.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/gcloud-auth-1.3.0/deps/                INSTALL_DATA /gcloud-auth-1.3.0.tar.gz \n		/share/modcargo-crates/gcloud-auth-1.3.0.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/gcloud-auth-1.3.0/deps/ 
+ /gcloud-auth-1.3.0.tar.gz 
+		/share/modcargo-crates/gcloud-auth-1.3.0.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libgcloud_auth-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

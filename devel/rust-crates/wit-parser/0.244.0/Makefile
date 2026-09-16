@@ -605,7 +605,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/wit-parser-0.244.0/libwit_parser.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/wit-parser-0.244.0/deps/                INSTALL_DATA /wit-parser-0.244.0.tar.gz \n		/share/modcargo-crates/wit-parser-0.244.0.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/wit-parser-0.244.0/deps/ 
+ /wit-parser-0.244.0.tar.gz 
+		/share/modcargo-crates/wit-parser-0.244.0.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libwit_parser-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

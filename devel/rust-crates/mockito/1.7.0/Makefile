@@ -1631,7 +1631,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/mockito-1.7.0/libmockito.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/mockito-1.7.0/deps/                INSTALL_DATA /mockito-1.7.0.tar.gz \n		/share/modcargo-crates/mockito-1.7.0.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/mockito-1.7.0/deps/ 
+ /mockito-1.7.0.tar.gz 
+		/share/modcargo-crates/mockito-1.7.0.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libmockito-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

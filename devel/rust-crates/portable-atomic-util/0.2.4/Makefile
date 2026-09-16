@@ -173,7 +173,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/portable-atomic-util-0.2.4/libportable_atomic_util.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/portable-atomic-util-0.2.4/deps/                INSTALL_DATA /portable-atomic-util-0.2.4.tar.gz \n		/share/modcargo-crates/portable-atomic-util-0.2.4.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/portable-atomic-util-0.2.4/deps/ 
+ /portable-atomic-util-0.2.4.tar.gz 
+		/share/modcargo-crates/portable-atomic-util-0.2.4.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libportable_atomic_util-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

@@ -1811,7 +1811,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/gix-config-0.56.0/libgix_config.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/gix-config-0.56.0/deps/                INSTALL_DATA /gix-config-0.56.0.tar.gz \n		/share/modcargo-crates/gix-config-0.56.0.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/gix-config-0.56.0/deps/ 
+ /gix-config-0.56.0.tar.gz 
+		/share/modcargo-crates/gix-config-0.56.0.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libgix_config-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

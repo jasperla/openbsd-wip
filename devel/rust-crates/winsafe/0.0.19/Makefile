@@ -158,7 +158,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/winsafe-0.0.19/libwinsafe.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/winsafe-0.0.19/deps/                INSTALL_DATA /winsafe-0.0.19.tar.gz \n		/share/modcargo-crates/winsafe-0.0.19.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/winsafe-0.0.19/deps/ 
+ /winsafe-0.0.19.tar.gz 
+		/share/modcargo-crates/winsafe-0.0.19.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libwinsafe-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

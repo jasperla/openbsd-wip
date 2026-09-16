@@ -317,7 +317,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/tree-sitter-rust-0.24.2/libtree_sitter_rust.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/tree-sitter-rust-0.24.2/deps/                INSTALL_DATA /tree-sitter-rust-0.24.2.tar.gz \n		/share/modcargo-crates/tree-sitter-rust-0.24.2.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/tree-sitter-rust-0.24.2/deps/ 
+ /tree-sitter-rust-0.24.2.tar.gz 
+		/share/modcargo-crates/tree-sitter-rust-0.24.2.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libtree_sitter_rust-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

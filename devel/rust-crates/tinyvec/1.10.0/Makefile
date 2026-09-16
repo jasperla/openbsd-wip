@@ -173,7 +173,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/tinyvec-1.10.0/libtinyvec.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/tinyvec-1.10.0/deps/                INSTALL_DATA /tinyvec-1.10.0.tar.gz \n		/share/modcargo-crates/tinyvec-1.10.0.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/tinyvec-1.10.0/deps/ 
+ /tinyvec-1.10.0.tar.gz 
+		/share/modcargo-crates/tinyvec-1.10.0.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libtinyvec-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

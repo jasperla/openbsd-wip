@@ -158,7 +158,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/gix-trace-0.1.20/libgix_trace.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/gix-trace-0.1.20/deps/                INSTALL_DATA /gix-trace-0.1.20.tar.gz \n		/share/modcargo-crates/gix-trace-0.1.20.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/gix-trace-0.1.20/deps/ 
+ /gix-trace-0.1.20.tar.gz 
+		/share/modcargo-crates/gix-trace-0.1.20.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libgix_trace-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

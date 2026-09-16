@@ -191,7 +191,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/num_cpus-1.17.0/libnum_cpus.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/num_cpus-1.17.0/deps/                INSTALL_DATA /num_cpus-1.17.0.tar.gz \n		/share/modcargo-crates/num_cpus-1.17.0.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/num_cpus-1.17.0/deps/ 
+ /num_cpus-1.17.0.tar.gz 
+		/share/modcargo-crates/num_cpus-1.17.0.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libnum_cpus-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

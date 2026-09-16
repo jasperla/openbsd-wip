@@ -158,7 +158,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/num-cmp-0.1.0/libnum_cmp.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/num-cmp-0.1.0/deps/                INSTALL_DATA /num-cmp-0.1.0.tar.gz \n		/share/modcargo-crates/num-cmp-0.1.0.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/num-cmp-0.1.0/deps/ 
+ /num-cmp-0.1.0.tar.gz 
+		/share/modcargo-crates/num-cmp-0.1.0.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libnum_cmp-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

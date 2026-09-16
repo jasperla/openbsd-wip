@@ -1019,7 +1019,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/prost-build-0.14.1/libprost_build.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/prost-build-0.14.1/deps/                INSTALL_DATA /prost-build-0.14.1.tar.gz \n		/share/modcargo-crates/prost-build-0.14.1.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/prost-build-0.14.1/deps/ 
+ /prost-build-0.14.1.tar.gz 
+		/share/modcargo-crates/prost-build-0.14.1.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libprost_build-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

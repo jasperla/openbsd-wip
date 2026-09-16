@@ -461,7 +461,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/debugid-0.8.0/libdebugid.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/debugid-0.8.0/deps/                INSTALL_DATA /debugid-0.8.0.tar.gz \n		/share/modcargo-crates/debugid-0.8.0.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/debugid-0.8.0/deps/ 
+ /debugid-0.8.0.tar.gz 
+		/share/modcargo-crates/debugid-0.8.0.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libdebugid-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

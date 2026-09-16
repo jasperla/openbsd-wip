@@ -158,7 +158,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/plotters-backend-0.3.7/libplotters_backend.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/plotters-backend-0.3.7/deps/                INSTALL_DATA /plotters-backend-0.3.7.tar.gz \n		/share/modcargo-crates/plotters-backend-0.3.7.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/plotters-backend-0.3.7/deps/ 
+ /plotters-backend-0.3.7.tar.gz 
+		/share/modcargo-crates/plotters-backend-0.3.7.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libplotters_backend-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

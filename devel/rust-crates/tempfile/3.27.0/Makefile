@@ -479,7 +479,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/tempfile-3.27.0/libtempfile.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/tempfile-3.27.0/deps/                INSTALL_DATA /tempfile-3.27.0.tar.gz \n		/share/modcargo-crates/tempfile-3.27.0.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/tempfile-3.27.0/deps/ 
+ /tempfile-3.27.0.tar.gz 
+		/share/modcargo-crates/tempfile-3.27.0.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libtempfile-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

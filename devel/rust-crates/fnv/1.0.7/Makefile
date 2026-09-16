@@ -158,7 +158,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/fnv-1.0.7/libfnv.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/fnv-1.0.7/deps/                INSTALL_DATA /fnv-1.0.7.tar.gz \n		/share/modcargo-crates/fnv-1.0.7.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/fnv-1.0.7/deps/ 
+ /fnv-1.0.7.tar.gz 
+		/share/modcargo-crates/fnv-1.0.7.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libfnv-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

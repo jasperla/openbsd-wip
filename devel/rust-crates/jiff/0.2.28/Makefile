@@ -389,7 +389,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/jiff-0.2.28/libjiff.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/jiff-0.2.28/deps/                INSTALL_DATA /jiff-0.2.28.tar.gz \n		/share/modcargo-crates/jiff-0.2.28.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/jiff-0.2.28/deps/ 
+ /jiff-0.2.28.tar.gz 
+		/share/modcargo-crates/jiff-0.2.28.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libjiff-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

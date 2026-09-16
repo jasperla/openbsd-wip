@@ -173,7 +173,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/instant-0.1.12/libinstant.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/instant-0.1.12/deps/                INSTALL_DATA /instant-0.1.12.tar.gz \n		/share/modcargo-crates/instant-0.1.12.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/instant-0.1.12/deps/ 
+ /instant-0.1.12.tar.gz 
+		/share/modcargo-crates/instant-0.1.12.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libinstant-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

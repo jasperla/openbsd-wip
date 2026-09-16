@@ -695,7 +695,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/markup5ever-0.38.0/libmarkup5ever.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/markup5ever-0.38.0/deps/                INSTALL_DATA /markup5ever-0.38.0.tar.gz \n		/share/modcargo-crates/markup5ever-0.38.0.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/markup5ever-0.38.0/deps/ 
+ /markup5ever-0.38.0.tar.gz 
+		/share/modcargo-crates/markup5ever-0.38.0.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libmarkup5ever-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

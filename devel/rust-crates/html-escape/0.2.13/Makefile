@@ -173,7 +173,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/html-escape-0.2.13/libhtml_escape.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/html-escape-0.2.13/deps/                INSTALL_DATA /html-escape-0.2.13.tar.gz \n		/share/modcargo-crates/html-escape-0.2.13.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/html-escape-0.2.13/deps/ 
+ /html-escape-0.2.13.tar.gz 
+		/share/modcargo-crates/html-escape-0.2.13.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libhtml_escape-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

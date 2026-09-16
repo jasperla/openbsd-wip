@@ -158,7 +158,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/simdutf8-0.1.5/libsimdutf8.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/simdutf8-0.1.5/deps/                INSTALL_DATA /simdutf8-0.1.5.tar.gz \n		/share/modcargo-crates/simdutf8-0.1.5.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/simdutf8-0.1.5/deps/ 
+ /simdutf8-0.1.5.tar.gz 
+		/share/modcargo-crates/simdutf8-0.1.5.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libsimdutf8-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

@@ -317,7 +317,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/zstd-sys-2.0.16_zstd.1.5.7/libzstd_sys.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/zstd-sys-2.0.16_zstd.1.5.7/deps/                INSTALL_DATA /zstd-sys-2.0.16+zstd.1.5.7.tar.gz \n		/share/modcargo-crates/zstd-sys-2.0.16_zstd.1.5.7.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/zstd-sys-2.0.16_zstd.1.5.7/deps/ 
+ /zstd-sys-2.0.16+zstd.1.5.7.tar.gz 
+		/share/modcargo-crates/zstd-sys-2.0.16_zstd.1.5.7.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libzstd_sys-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

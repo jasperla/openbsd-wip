@@ -209,7 +209,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/heapless-0.8.0/libheapless.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/heapless-0.8.0/deps/                INSTALL_DATA /heapless-0.8.0.tar.gz \n		/share/modcargo-crates/heapless-0.8.0.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/heapless-0.8.0/deps/ 
+ /heapless-0.8.0.tar.gz 
+		/share/modcargo-crates/heapless-0.8.0.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libheapless-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

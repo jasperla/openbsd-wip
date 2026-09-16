@@ -173,7 +173,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/addr2line-0.25.1/libaddr2line.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/addr2line-0.25.1/deps/                INSTALL_DATA /addr2line-0.25.1.tar.gz \n		/share/modcargo-crates/addr2line-0.25.1.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/addr2line-0.25.1/deps/ 
+ /addr2line-0.25.1.tar.gz 
+		/share/modcargo-crates/addr2line-0.25.1.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libaddr2line-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

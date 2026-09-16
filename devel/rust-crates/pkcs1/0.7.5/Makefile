@@ -407,7 +407,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/pkcs1-0.7.5/libpkcs1.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/pkcs1-0.7.5/deps/                INSTALL_DATA /pkcs1-0.7.5.tar.gz \n		/share/modcargo-crates/pkcs1-0.7.5.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/pkcs1-0.7.5/deps/ 
+ /pkcs1-0.7.5.tar.gz 
+		/share/modcargo-crates/pkcs1-0.7.5.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libpkcs1-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

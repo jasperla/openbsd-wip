@@ -3359,7 +3359,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/fastrace-reqwest-0.2.0/libfastrace_reqwest.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/fastrace-reqwest-0.2.0/deps/                INSTALL_DATA /fastrace-reqwest-0.2.0.tar.gz \n		/share/modcargo-crates/fastrace-reqwest-0.2.0.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/fastrace-reqwest-0.2.0/deps/ 
+ /fastrace-reqwest-0.2.0.tar.gz 
+		/share/modcargo-crates/fastrace-reqwest-0.2.0.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libfastrace_reqwest-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

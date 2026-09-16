@@ -749,7 +749,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/backoff-0.4.0/libbackoff.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/backoff-0.4.0/deps/                INSTALL_DATA /backoff-0.4.0.tar.gz \n		/share/modcargo-crates/backoff-0.4.0.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/backoff-0.4.0/deps/ 
+ /backoff-0.4.0.tar.gz 
+		/share/modcargo-crates/backoff-0.4.0.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libbackoff-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

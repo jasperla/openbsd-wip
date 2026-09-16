@@ -1001,7 +1001,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/tracing-appender-0.2.4/libtracing_appender.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/tracing-appender-0.2.4/deps/                INSTALL_DATA /tracing-appender-0.2.4.tar.gz \n		/share/modcargo-crates/tracing-appender-0.2.4.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/tracing-appender-0.2.4/deps/ 
+ /tracing-appender-0.2.4.tar.gz 
+		/share/modcargo-crates/tracing-appender-0.2.4.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libtracing_appender-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

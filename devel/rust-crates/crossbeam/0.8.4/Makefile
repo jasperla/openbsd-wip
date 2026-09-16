@@ -245,7 +245,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/crossbeam-0.8.4/libcrossbeam.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/crossbeam-0.8.4/deps/                INSTALL_DATA /crossbeam-0.8.4.tar.gz \n		/share/modcargo-crates/crossbeam-0.8.4.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/crossbeam-0.8.4/deps/ 
+ /crossbeam-0.8.4.tar.gz 
+		/share/modcargo-crates/crossbeam-0.8.4.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libcrossbeam-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

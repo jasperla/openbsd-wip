@@ -569,7 +569,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/symbolic-demangle-12.16.3/libsymbolic_demangle.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/symbolic-demangle-12.16.3/deps/                INSTALL_DATA /symbolic-demangle-12.16.3.tar.gz \n		/share/modcargo-crates/symbolic-demangle-12.16.3.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/symbolic-demangle-12.16.3/deps/ 
+ /symbolic-demangle-12.16.3.tar.gz 
+		/share/modcargo-crates/symbolic-demangle-12.16.3.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libsymbolic_demangle-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

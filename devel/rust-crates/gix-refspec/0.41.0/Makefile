@@ -1613,7 +1613,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/gix-refspec-0.41.0/libgix_refspec.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/gix-refspec-0.41.0/deps/                INSTALL_DATA /gix-refspec-0.41.0.tar.gz \n		/share/modcargo-crates/gix-refspec-0.41.0.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/gix-refspec-0.41.0/deps/ 
+ /gix-refspec-0.41.0.tar.gz 
+		/share/modcargo-crates/gix-refspec-0.41.0.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libgix_refspec-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

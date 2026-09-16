@@ -1577,7 +1577,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/gix-traverse-0.57.0/libgix_traverse.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/gix-traverse-0.57.0/deps/                INSTALL_DATA /gix-traverse-0.57.0.tar.gz \n		/share/modcargo-crates/gix-traverse-0.57.0.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/gix-traverse-0.57.0/deps/ 
+ /gix-traverse-0.57.0.tar.gz 
+		/share/modcargo-crates/gix-traverse-0.57.0.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libgix_traverse-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

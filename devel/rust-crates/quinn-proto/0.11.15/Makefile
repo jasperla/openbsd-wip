@@ -1127,7 +1127,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/quinn-proto-0.11.15/libquinn_proto.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/quinn-proto-0.11.15/deps/                INSTALL_DATA /quinn-proto-0.11.15.tar.gz \n		/share/modcargo-crates/quinn-proto-0.11.15.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/quinn-proto-0.11.15/deps/ 
+ /quinn-proto-0.11.15.tar.gz 
+		/share/modcargo-crates/quinn-proto-0.11.15.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libquinn_proto-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

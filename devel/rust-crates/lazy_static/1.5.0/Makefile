@@ -173,7 +173,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/lazy_static-1.5.0/liblazy_static.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/lazy_static-1.5.0/deps/                INSTALL_DATA /lazy_static-1.5.0.tar.gz \n		/share/modcargo-crates/lazy_static-1.5.0.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/lazy_static-1.5.0/deps/ 
+ /lazy_static-1.5.0.tar.gz 
+		/share/modcargo-crates/lazy_static-1.5.0.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/liblazy_static-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

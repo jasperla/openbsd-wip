@@ -263,7 +263,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/serde-1.0.228/libserde.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/serde-1.0.228/deps/                INSTALL_DATA /serde-1.0.228.tar.gz \n		/share/modcargo-crates/serde-1.0.228.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/serde-1.0.228/deps/ 
+ /serde-1.0.228.tar.gz 
+		/share/modcargo-crates/serde-1.0.228.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libserde-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

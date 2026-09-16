@@ -1253,7 +1253,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/hyper-timeout-0.5.2/libhyper_timeout.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/hyper-timeout-0.5.2/deps/                INSTALL_DATA /hyper-timeout-0.5.2.tar.gz \n		/share/modcargo-crates/hyper-timeout-0.5.2.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/hyper-timeout-0.5.2/deps/ 
+ /hyper-timeout-0.5.2.tar.gz 
+		/share/modcargo-crates/hyper-timeout-0.5.2.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libhyper_timeout-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

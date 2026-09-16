@@ -158,7 +158,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/openssl-probe-0.1.6/libopenssl_probe.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/openssl-probe-0.1.6/deps/                INSTALL_DATA /openssl-probe-0.1.6.tar.gz \n		/share/modcargo-crates/openssl-probe-0.1.6.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/openssl-probe-0.1.6/deps/ 
+ /openssl-probe-0.1.6.tar.gz 
+		/share/modcargo-crates/openssl-probe-0.1.6.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libopenssl_probe-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

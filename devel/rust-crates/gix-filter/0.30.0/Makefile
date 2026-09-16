@@ -1667,7 +1667,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/gix-filter-0.30.0/libgix_filter.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/gix-filter-0.30.0/deps/                INSTALL_DATA /gix-filter-0.30.0.tar.gz \n		/share/modcargo-crates/gix-filter-0.30.0.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/gix-filter-0.30.0/deps/ 
+ /gix-filter-0.30.0.tar.gz 
+		/share/modcargo-crates/gix-filter-0.30.0.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libgix_filter-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

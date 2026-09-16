@@ -173,7 +173,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/proc-macro2-1.0.106/libproc_macro2.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/proc-macro2-1.0.106/deps/                INSTALL_DATA /proc-macro2-1.0.106.tar.gz \n		/share/modcargo-crates/proc-macro2-1.0.106.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/proc-macro2-1.0.106/deps/ 
+ /proc-macro2-1.0.106.tar.gz 
+		/share/modcargo-crates/proc-macro2-1.0.106.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libproc_macro2-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

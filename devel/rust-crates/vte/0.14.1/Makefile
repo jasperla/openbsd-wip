@@ -173,7 +173,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/vte-0.14.1/libvte.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/vte-0.14.1/deps/                INSTALL_DATA /vte-0.14.1.tar.gz \n		/share/modcargo-crates/vte-0.14.1.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/vte-0.14.1/deps/ 
+ /vte-0.14.1.tar.gz 
+		/share/modcargo-crates/vte-0.14.1.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libvte-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

@@ -245,7 +245,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/schemars_derive-0.8.22/libschemars_derive.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/schemars_derive-0.8.22/deps/                INSTALL_DATA /schemars_derive-0.8.22.tar.gz \n		/share/modcargo-crates/schemars_derive-0.8.22.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/schemars_derive-0.8.22/deps/ 
+ /schemars_derive-0.8.22.tar.gz 
+		/share/modcargo-crates/schemars_derive-0.8.22.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libschemars_derive-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

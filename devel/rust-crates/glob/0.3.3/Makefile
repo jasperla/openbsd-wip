@@ -158,7 +158,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/glob-0.3.3/libglob.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/glob-0.3.3/deps/                INSTALL_DATA /glob-0.3.3.tar.gz \n		/share/modcargo-crates/glob-0.3.3.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/glob-0.3.3/deps/ 
+ /glob-0.3.3.tar.gz 
+		/share/modcargo-crates/glob-0.3.3.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libglob-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \

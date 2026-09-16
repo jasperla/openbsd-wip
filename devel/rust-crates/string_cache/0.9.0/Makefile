@@ -479,7 +479,9 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/string_cache-0.9.0/libstring_cache.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/string_cache-0.9.0/deps/                INSTALL_DATA /string_cache-0.9.0.tar.gz \n		/share/modcargo-crates/string_cache-0.9.0.tar.gz
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/string_cache-0.9.0/deps/ 
+ /string_cache-0.9.0.tar.gz 
+		/share/modcargo-crates/string_cache-0.9.0.tar.gzgz
 
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libstring_cache-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
