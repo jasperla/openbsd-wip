@@ -25,10 +25,8 @@ DIST_TUPLE+=	github transmission fast_float \
 		d7417618f93d2c47e9bbde561510f9fc8bafe003 third-party/fast_float
 DIST_TUPLE+=	github transmission fmt \
 		407c905e45ad75fc29bf0f9bb7c5c2fd3475976f third-party/fmt
-#DIST_TUPLE+=	github google googletest \
-#		52eb8108c5bdec04579160ae17225d66034bd723 third-party/googletest
 DIST_TUPLE+=	github google googletest \
-		063de7e9578f82b369302001269680b4b1553359 third-party/googletest
+		52eb8108c5bdec04579160ae17225d66034bd723 third-party/googletest
 DIST_TUPLE+=	github transmission libb64 \
 		64ab5ed7693d7a063c43f9da64c7d8e4e9519ef4 third-party/libb64
 DIST_TUPLE+=	github transmission libdeflate \
@@ -118,6 +116,7 @@ RUN_DEPENDS-qt +=	${PKGNAME-main}:${BUILD_PKGPATH} \
 
 CONFIGURE_ARGS +=	-DENABLE_CLI=ON
 CONFIGURE_ARGS +=	-DRUN_CLANG_TIDY=OFF
+CONFIGURE_ARGS +=	-DUSE_SYSTEM_GTEST=ON
 
 .if ${BUILD_PACKAGES:M-gtk}
 CONFIGURE_ARGS +=	-DENABLE_GTK=ON \
