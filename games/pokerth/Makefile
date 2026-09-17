@@ -1,10 +1,8 @@
-BROKEN-i386 =	protobuf/abseil problems
+COMMENT =		texas holdem poker client, local or internet games
+COMMENT-legacy =	WxWidgets client only, required for i386
 
-COMMENT =	texas holdem poker client, local or internet games
-
-V =		2.1.8pl20260908
-DIST_TUPLE =	github pokerth pokerth 85c06b64141bfb051319b2211aa6db4c8ddc4029 .
-
+V =		2.1.9
+DIST_TUPLE =	github pokerth pokerth v${V} .
 PKGNAME =	pokerth-${V}
 
 CATEGORIES =	games
@@ -13,7 +11,6 @@ MAINTAINER =	Josh Grosse <josh@jggimi.net>
 
 # AGPLv3+
 PERMIT_PACKAGE =	Yes
-
 WANTLIB += ${COMPILER_LIBCXX} GL Qt6Core Qt6Gui Qt6Multimedia
 WANTLIB += Qt6Network Qt6OpenGL Qt6Qml Qt6Quick Qt6QuickControls2
 WANTLIB += Qt6Sql Qt6Svg Qt6Widgets Qt6Xml boost_atomic-mt boost_chrono-mt
@@ -26,7 +23,15 @@ MODULES =	devel/cmake \
 		x11/qt6
 SUBST_VARS +=	MODQT_QTDIR V
 
+FLAVORS =	legacy
+
 ALL_TARGET =	pokerth_client pokerth_qml-client
+
+FLAVOR?=
+.if ${MACHINE_ARCH:Mi386} || ${FLAVOR:Mlegacy}
+FLAVOR =	legacy
+ALL_TARGET =	pokerth_client
+.endif
 
 MODCMAKE_LDFLAGS +=	-L${LOCALBASE}/lib -liconv
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
