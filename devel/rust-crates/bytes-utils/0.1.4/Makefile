@@ -317,10 +317,7 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/bytes-utils-0.1.4/libbytes_utils.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/bytes-utils-0.1.4/deps/ 
- /bytes-utils-0.1.4.tar.gz 
-		/share/modcargo-crates/bytes-utils-0.1.4.tar.gzgz
-
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/bytes-utils-0.1.4/deps/
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libbytes_utils-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

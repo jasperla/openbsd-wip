@@ -191,10 +191,7 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/iana-time-zone-0.1.64/libiana_time_zone.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/iana-time-zone-0.1.64/deps/ 
- /iana-time-zone-0.1.64.tar.gz 
-		/share/modcargo-crates/iana-time-zone-0.1.64.tar.gzgz
-
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/iana-time-zone-0.1.64/deps/
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libiana_time_zone-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

@@ -713,10 +713,7 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/rustls-0.23.37/librustls.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/rustls-0.23.37/deps/ 
- /rustls-0.23.37.tar.gz 
-		/share/modcargo-crates/rustls-0.23.37.tar.gzgz
-
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/rustls-0.23.37/deps/
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/librustls-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

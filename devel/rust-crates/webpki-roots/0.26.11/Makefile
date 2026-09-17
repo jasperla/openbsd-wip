@@ -158,10 +158,7 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/webpki-roots-0.26.11/libwebpki_roots.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/webpki-roots-0.26.11/deps/ 
- /webpki-roots-0.26.11.tar.gz 
-		/share/modcargo-crates/webpki-roots-0.26.11.tar.gzgz
-
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/webpki-roots-0.26.11/deps/
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libwebpki_roots-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

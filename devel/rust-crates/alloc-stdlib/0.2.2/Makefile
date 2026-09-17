@@ -173,10 +173,7 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/alloc-stdlib-0.2.2/liballoc_stdlib.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/alloc-stdlib-0.2.2/deps/ 
- /alloc-stdlib-0.2.2.tar.gz 
-		/share/modcargo-crates/alloc-stdlib-0.2.2.tar.gzgz
-
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/alloc-stdlib-0.2.2/deps/
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/liballoc_stdlib-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

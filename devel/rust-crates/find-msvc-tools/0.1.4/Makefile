@@ -158,10 +158,7 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/find-msvc-tools-0.1.4/libfind_msvc_tools.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/find-msvc-tools-0.1.4/deps/ 
- /find-msvc-tools-0.1.4.tar.gz 
-		/share/modcargo-crates/find-msvc-tools-0.1.4.tar.gzgz
-
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/find-msvc-tools-0.1.4/deps/
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libfind_msvc_tools-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

@@ -158,10 +158,7 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/cfg_aliases-0.1.1/libcfg_aliases.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/cfg_aliases-0.1.1/deps/ 
- /cfg_aliases-0.1.1.tar.gz 
-		/share/modcargo-crates/cfg_aliases-0.1.1.tar.gzgz
-
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/cfg_aliases-0.1.1/deps/
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libcfg_aliases-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

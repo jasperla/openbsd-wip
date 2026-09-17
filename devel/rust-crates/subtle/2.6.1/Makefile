@@ -158,10 +158,7 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/subtle-2.6.1/libsubtle.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/subtle-2.6.1/deps/ 
- /subtle-2.6.1.tar.gz 
-		/share/modcargo-crates/subtle-2.6.1.tar.gzgz
-
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/subtle-2.6.1/deps/
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libsubtle-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

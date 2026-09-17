@@ -623,10 +623,7 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/num-bigint-dig-0.8.6/libnum_bigint_dig.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/num-bigint-dig-0.8.6/deps/ 
- /num-bigint-dig-0.8.6.tar.gz 
-		/share/modcargo-crates/num-bigint-dig-0.8.6.tar.gzgz
-
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/num-bigint-dig-0.8.6/deps/
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libnum_bigint_dig-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

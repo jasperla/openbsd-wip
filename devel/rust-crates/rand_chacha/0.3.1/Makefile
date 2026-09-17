@@ -353,10 +353,7 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/rand_chacha-0.3.1/librand_chacha.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/rand_chacha-0.3.1/deps/ 
- /rand_chacha-0.3.1.tar.gz 
-		/share/modcargo-crates/rand_chacha-0.3.1.tar.gzgz
-
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/rand_chacha-0.3.1/deps/
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/librand_chacha-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

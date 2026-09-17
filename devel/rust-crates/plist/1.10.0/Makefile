@@ -515,10 +515,7 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/plist-1.10.0/libplist.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/plist-1.10.0/deps/ 
- /plist-1.10.0.tar.gz 
-		/share/modcargo-crates/plist-1.10.0.tar.gzgz
-
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/plist-1.10.0/deps/
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libplist-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

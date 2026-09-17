@@ -173,10 +173,7 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/convert_case-0.8.0/libconvert_case.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/convert_case-0.8.0/deps/ 
- /convert_case-0.8.0.tar.gz 
-		/share/modcargo-crates/convert_case-0.8.0.tar.gzgz
-
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/convert_case-0.8.0/deps/
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libconvert_case-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

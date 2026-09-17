@@ -515,10 +515,7 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/simple_asn1-0.6.3/libsimple_asn1.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/simple_asn1-0.6.3/deps/ 
- /simple_asn1-0.6.3.tar.gz 
-		/share/modcargo-crates/simple_asn1-0.6.3.tar.gzgz
-
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/simple_asn1-0.6.3/deps/
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libsimple_asn1-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

@@ -173,10 +173,7 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/thread_local-1.1.9/libthread_local.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/thread_local-1.1.9/deps/ 
- /thread_local-1.1.9.tar.gz 
-		/share/modcargo-crates/thread_local-1.1.9.tar.gzgz
-
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/thread_local-1.1.9/deps/
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libthread_local-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

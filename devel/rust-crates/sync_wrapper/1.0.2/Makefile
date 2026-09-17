@@ -173,10 +173,7 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/sync_wrapper-1.0.2/libsync_wrapper.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/sync_wrapper-1.0.2/deps/ 
- /sync_wrapper-1.0.2.tar.gz 
-		/share/modcargo-crates/sync_wrapper-1.0.2.tar.gzgz
-
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/sync_wrapper-1.0.2/deps/
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libsync_wrapper-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

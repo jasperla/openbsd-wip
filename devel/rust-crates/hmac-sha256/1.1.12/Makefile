@@ -158,10 +158,7 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/hmac-sha256-1.1.12/libhmac_sha256.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/hmac-sha256-1.1.12/deps/ 
- /hmac-sha256-1.1.12.tar.gz 
-		/share/modcargo-crates/hmac-sha256-1.1.12.tar.gzgz
-
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/hmac-sha256-1.1.12/deps/
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libhmac_sha256-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

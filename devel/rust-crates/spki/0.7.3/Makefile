@@ -371,10 +371,7 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/spki-0.7.3/libspki.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/spki-0.7.3/deps/ 
- /spki-0.7.3.tar.gz 
-		/share/modcargo-crates/spki-0.7.3.tar.gzgz
-
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/spki-0.7.3/deps/
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libspki-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

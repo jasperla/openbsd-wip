@@ -515,10 +515,7 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/symbolic-common-12.16.3/libsymbolic_common.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/symbolic-common-12.16.3/deps/ 
- /symbolic-common-12.16.3.tar.gz 
-		/share/modcargo-crates/symbolic-common-12.16.3.tar.gzgz
-
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/symbolic-common-12.16.3/deps/
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libsymbolic_common-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

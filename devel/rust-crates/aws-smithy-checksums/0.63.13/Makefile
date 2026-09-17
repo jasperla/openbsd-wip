@@ -1793,10 +1793,7 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/aws-smithy-checksums-0.63.13/libaws_smithy_checksums.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/aws-smithy-checksums-0.63.13/deps/ 
- /aws-smithy-checksums-0.63.13.tar.gz 
-		/share/modcargo-crates/aws-smithy-checksums-0.63.13.tar.gzgz
-
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/aws-smithy-checksums-0.63.13/deps/
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libaws_smithy_checksums-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

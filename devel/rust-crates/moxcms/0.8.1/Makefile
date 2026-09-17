@@ -227,10 +227,7 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/moxcms-0.8.1/libmoxcms.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/moxcms-0.8.1/deps/ 
- /moxcms-0.8.1.tar.gz 
-		/share/modcargo-crates/moxcms-0.8.1.tar.gzgz
-
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/moxcms-0.8.1/deps/
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libmoxcms-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

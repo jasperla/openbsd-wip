@@ -158,10 +158,7 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/leb128fmt-0.1.0/libleb128fmt.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/leb128fmt-0.1.0/deps/ 
- /leb128fmt-0.1.0.tar.gz 
-		/share/modcargo-crates/leb128fmt-0.1.0.tar.gzgz
-
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/leb128fmt-0.1.0/deps/
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libleb128fmt-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

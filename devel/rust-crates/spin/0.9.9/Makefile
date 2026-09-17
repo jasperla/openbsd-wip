@@ -158,10 +158,7 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/spin-0.9.9/libspin.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/spin-0.9.9/deps/ 
- /spin-0.9.9.tar.gz 
-		/share/modcargo-crates/spin-0.9.9.tar.gzgz
-
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/spin-0.9.9/deps/
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libspin-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

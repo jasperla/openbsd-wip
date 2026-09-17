@@ -353,10 +353,7 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/jni-macros-0.22.4/libjni_macros.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/jni-macros-0.22.4/deps/ 
- /jni-macros-0.22.4.tar.gz 
-		/share/modcargo-crates/jni-macros-0.22.4.tar.gzgz
-
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/jni-macros-0.22.4/deps/
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libjni_macros-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

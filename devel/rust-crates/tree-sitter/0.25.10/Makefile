@@ -659,10 +659,7 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/tree-sitter-0.25.10/libtree_sitter.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/tree-sitter-0.25.10/deps/ 
- /tree-sitter-0.25.10.tar.gz 
-		/share/modcargo-crates/tree-sitter-0.25.10.tar.gzgz
-
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/tree-sitter-0.25.10/deps/
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libtree_sitter-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

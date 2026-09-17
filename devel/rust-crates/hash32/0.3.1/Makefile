@@ -173,10 +173,7 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/hash32-0.3.1/libhash32.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/hash32-0.3.1/deps/ 
- /hash32-0.3.1.tar.gz 
-		/share/modcargo-crates/hash32-0.3.1.tar.gzgz
-
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/hash32-0.3.1/deps/
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libhash32-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

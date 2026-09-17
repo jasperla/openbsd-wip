@@ -158,10 +158,7 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/utf-8-0.7.6/libutf8.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/utf-8-0.7.6/deps/ 
- /utf-8-0.7.6.tar.gz 
-		/share/modcargo-crates/utf-8-0.7.6.tar.gzgz
-
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/utf-8-0.7.6/deps/
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libutf8-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

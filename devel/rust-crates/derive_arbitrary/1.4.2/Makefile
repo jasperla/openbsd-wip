@@ -227,10 +227,7 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/derive_arbitrary-1.4.2/libderive_arbitrary.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/derive_arbitrary-1.4.2/deps/ 
- /derive_arbitrary-1.4.2.tar.gz 
-		/share/modcargo-crates/derive_arbitrary-1.4.2.tar.gzgz
-
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/derive_arbitrary-1.4.2/deps/
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libderive_arbitrary-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

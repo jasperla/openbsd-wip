@@ -1217,10 +1217,7 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/aws-smithy-json-0.61.6/libaws_smithy_json.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/aws-smithy-json-0.61.6/deps/ 
- /aws-smithy-json-0.61.6.tar.gz 
-		/share/modcargo-crates/aws-smithy-json-0.61.6.tar.gzgz
-
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/aws-smithy-json-0.61.6/deps/
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libaws_smithy_json-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

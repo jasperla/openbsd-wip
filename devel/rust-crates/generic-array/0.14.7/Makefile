@@ -299,10 +299,7 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/generic-array-0.14.7/libgeneric_array.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/generic-array-0.14.7/deps/ 
- /generic-array-0.14.7.tar.gz 
-		/share/modcargo-crates/generic-array-0.14.7.tar.gzgz
-
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/generic-array-0.14.7/deps/
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libgeneric_array-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

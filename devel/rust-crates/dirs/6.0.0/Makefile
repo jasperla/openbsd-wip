@@ -209,10 +209,7 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/dirs-6.0.0/libdirs.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/dirs-6.0.0/deps/ 
- /dirs-6.0.0.tar.gz 
-		/share/modcargo-crates/dirs-6.0.0.tar.gzgz
-
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/dirs-6.0.0/deps/
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libdirs-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

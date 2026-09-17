@@ -425,10 +425,7 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/uuid-1.23.1/libuuid.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/uuid-1.23.1/deps/ 
- /uuid-1.23.1.tar.gz 
-		/share/modcargo-crates/uuid-1.23.1.tar.gzgz
-
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/uuid-1.23.1/deps/
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libuuid-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

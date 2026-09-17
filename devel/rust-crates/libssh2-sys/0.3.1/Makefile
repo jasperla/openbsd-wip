@@ -371,10 +371,7 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/libssh2-sys-0.3.1/liblibssh2_sys.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/libssh2-sys-0.3.1/deps/ 
- /libssh2-sys-0.3.1.tar.gz 
-		/share/modcargo-crates/libssh2-sys-0.3.1.tar.gzgz
-
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/libssh2-sys-0.3.1/deps/
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/liblibssh2_sys-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

@@ -299,10 +299,7 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/rustc_version-0.4.1/librustc_version.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/rustc_version-0.4.1/deps/ 
- /rustc_version-0.4.1.tar.gz 
-		/share/modcargo-crates/rustc_version-0.4.1.tar.gzgz
-
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/rustc_version-0.4.1/deps/
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/librustc_version-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

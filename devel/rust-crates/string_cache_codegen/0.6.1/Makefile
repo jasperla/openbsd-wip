@@ -281,10 +281,7 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/string_cache_codegen-0.6.1/libstring_cache_codegen.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/string_cache_codegen-0.6.1/deps/ 
- /string_cache_codegen-0.6.1.tar.gz 
-		/share/modcargo-crates/string_cache_codegen-0.6.1.tar.gzgz
-
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/string_cache_codegen-0.6.1/deps/
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libstring_cache_codegen-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

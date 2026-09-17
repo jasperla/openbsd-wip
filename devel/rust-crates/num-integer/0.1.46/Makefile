@@ -209,10 +209,7 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/num-integer-0.1.46/libnum_integer.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/num-integer-0.1.46/deps/ 
- /num-integer-0.1.46.tar.gz 
-		/share/modcargo-crates/num-integer-0.1.46.tar.gzgz
-
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/num-integer-0.1.46/deps/
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libnum_integer-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

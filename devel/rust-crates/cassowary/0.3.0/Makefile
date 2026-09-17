@@ -158,10 +158,7 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/cassowary-0.3.0/libcassowary.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/cassowary-0.3.0/deps/ 
- /cassowary-0.3.0.tar.gz 
-		/share/modcargo-crates/cassowary-0.3.0.tar.gzgz
-
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/cassowary-0.3.0/deps/
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libcassowary-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

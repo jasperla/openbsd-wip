@@ -158,10 +158,7 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/weezl-0.1.10/libweezl.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/weezl-0.1.10/deps/ 
- /weezl-0.1.10.tar.gz 
-		/share/modcargo-crates/weezl-0.1.10.tar.gzgz
-
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/weezl-0.1.10/deps/
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libweezl-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

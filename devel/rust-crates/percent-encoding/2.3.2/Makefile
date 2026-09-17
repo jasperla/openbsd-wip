@@ -158,10 +158,7 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/percent-encoding-2.3.2/libpercent_encoding.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/percent-encoding-2.3.2/deps/ 
- /percent-encoding-2.3.2.tar.gz 
-		/share/modcargo-crates/percent-encoding-2.3.2.tar.gzgz
-
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/percent-encoding-2.3.2/deps/
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libpercent_encoding-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

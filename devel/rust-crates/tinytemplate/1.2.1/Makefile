@@ -407,10 +407,7 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/tinytemplate-1.2.1/libtinytemplate.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/tinytemplate-1.2.1/deps/ 
- /tinytemplate-1.2.1.tar.gz 
-		/share/modcargo-crates/tinytemplate-1.2.1.tar.gzgz
-
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/tinytemplate-1.2.1/deps/
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libtinytemplate-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

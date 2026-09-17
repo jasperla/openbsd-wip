@@ -335,10 +335,7 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/backtrace-0.3.76/libbacktrace.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/backtrace-0.3.76/deps/ 
- /backtrace-0.3.76.tar.gz 
-		/share/modcargo-crates/backtrace-0.3.76.tar.gzgz
-
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/backtrace-0.3.76/deps/
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libbacktrace-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

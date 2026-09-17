@@ -158,10 +158,7 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/utf8_iter-1.0.4/libutf8_iter.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/utf8_iter-1.0.4/deps/ 
- /utf8_iter-1.0.4.tar.gz 
-		/share/modcargo-crates/utf8_iter-1.0.4.tar.gzgz
-
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/utf8_iter-1.0.4/deps/
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libutf8_iter-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

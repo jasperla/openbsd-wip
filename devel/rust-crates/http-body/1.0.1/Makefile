@@ -335,10 +335,7 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/http-body-1.0.1/libhttp_body.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/http-body-1.0.1/deps/ 
- /http-body-1.0.1.tar.gz 
-		/share/modcargo-crates/http-body-1.0.1.tar.gzgz
-
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/http-body-1.0.1/deps/
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libhttp_body-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

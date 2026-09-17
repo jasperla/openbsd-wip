@@ -158,10 +158,7 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/mutate_once-0.1.2/libmutate_once.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/mutate_once-0.1.2/deps/ 
- /mutate_once-0.1.2.tar.gz 
-		/share/modcargo-crates/mutate_once-0.1.2.tar.gzgz
-
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/mutate_once-0.1.2/deps/
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libmutate_once-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

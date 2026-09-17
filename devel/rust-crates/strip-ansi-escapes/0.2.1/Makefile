@@ -191,10 +191,7 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/strip-ansi-escapes-0.2.1/libstrip_ansi_escapes.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/strip-ansi-escapes-0.2.1/deps/ 
- /strip-ansi-escapes-0.2.1.tar.gz 
-		/share/modcargo-crates/strip-ansi-escapes-0.2.1.tar.gzgz
-
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/strip-ansi-escapes-0.2.1/deps/
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libstrip_ansi_escapes-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

@@ -158,10 +158,7 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/debug_unsafe-0.1.3/libdebug_unsafe.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/debug_unsafe-0.1.3/deps/ 
- /debug_unsafe-0.1.3.tar.gz 
-		/share/modcargo-crates/debug_unsafe-0.1.3.tar.gzgz
-
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/debug_unsafe-0.1.3/deps/
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libdebug_unsafe-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

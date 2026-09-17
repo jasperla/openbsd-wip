@@ -227,10 +227,7 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/zerovec-derive-0.11.1/libzerovec_derive.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/zerovec-derive-0.11.1/deps/ 
- /zerovec-derive-0.11.1.tar.gz 
-		/share/modcargo-crates/zerovec-derive-0.11.1.tar.gzgz
-
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/zerovec-derive-0.11.1/deps/
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libzerovec_derive-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

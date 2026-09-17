@@ -245,10 +245,7 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/event-listener-strategy-0.5.4/libevent_listener_strategy.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/event-listener-strategy-0.5.4/deps/ 
- /event-listener-strategy-0.5.4.tar.gz 
-		/share/modcargo-crates/event-listener-strategy-0.5.4.tar.gzgz
-
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/event-listener-strategy-0.5.4/deps/
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libevent_listener_strategy-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

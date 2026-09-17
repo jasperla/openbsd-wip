@@ -3251,10 +3251,7 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/reqwest-eventsource-0.6.0/libreqwest_eventsource.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/reqwest-eventsource-0.6.0/deps/ 
- /reqwest-eventsource-0.6.0.tar.gz 
-		/share/modcargo-crates/reqwest-eventsource-0.6.0.tar.gzgz
-
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/reqwest-eventsource-0.6.0/deps/
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libreqwest_eventsource-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

@@ -281,10 +281,7 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/thin-vec-0.2.18/libthin_vec.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/thin-vec-0.2.18/deps/ 
- /thin-vec-0.2.18.tar.gz 
-		/share/modcargo-crates/thin-vec-0.2.18.tar.gzgz
-
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/thin-vec-0.2.18/deps/
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libthin_vec-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

@@ -443,10 +443,7 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/polling-3.11.0/libpolling.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/polling-3.11.0/deps/ 
- /polling-3.11.0.tar.gz 
-		/share/modcargo-crates/polling-3.11.0.tar.gzgz
-
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/polling-3.11.0/deps/
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libpolling-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

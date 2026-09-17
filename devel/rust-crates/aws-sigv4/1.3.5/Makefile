@@ -1721,10 +1721,7 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/aws-sigv4-1.3.5/libaws_sigv4.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/aws-sigv4-1.3.5/deps/ 
- /aws-sigv4-1.3.5.tar.gz 
-		/share/modcargo-crates/aws-sigv4-1.3.5.tar.gzgz
-
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/aws-sigv4-1.3.5/deps/
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libaws_sigv4-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

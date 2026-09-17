@@ -353,10 +353,7 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/clap_builder-4.5.53/libclap_builder.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/clap_builder-4.5.53/deps/ 
- /clap_builder-4.5.53.tar.gz 
-		/share/modcargo-crates/clap_builder-4.5.53.tar.gzgz
-
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/clap_builder-4.5.53/deps/
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libclap_builder-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

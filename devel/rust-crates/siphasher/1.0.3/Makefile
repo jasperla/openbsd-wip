@@ -158,10 +158,7 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/siphasher-1.0.3/libsiphasher.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/siphasher-1.0.3/deps/ 
- /siphasher-1.0.3.tar.gz 
-		/share/modcargo-crates/siphasher-1.0.3.tar.gzgz
-
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/siphasher-1.0.3/deps/
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libsiphasher-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

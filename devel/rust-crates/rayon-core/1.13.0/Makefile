@@ -209,10 +209,7 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/rayon-core-1.13.0/librayon_core.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/rayon-core-1.13.0/deps/ 
- /rayon-core-1.13.0.tar.gz 
-		/share/modcargo-crates/rayon-core-1.13.0.tar.gzgz
-
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/rayon-core-1.13.0/deps/
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/librayon_core-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

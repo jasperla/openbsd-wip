@@ -191,10 +191,7 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/sharded-slab-0.1.7/libsharded_slab.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/sharded-slab-0.1.7/deps/ 
- /sharded-slab-0.1.7.tar.gz 
-		/share/modcargo-crates/sharded-slab-0.1.7.tar.gzgz
-
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/sharded-slab-0.1.7/deps/
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libsharded_slab-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

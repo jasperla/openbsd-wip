@@ -158,10 +158,7 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/flagset-0.4.7/libflagset.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/flagset-0.4.7/deps/ 
- /flagset-0.4.7.tar.gz 
-		/share/modcargo-crates/flagset-0.4.7.tar.gzgz
-
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/flagset-0.4.7/deps/
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libflagset-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

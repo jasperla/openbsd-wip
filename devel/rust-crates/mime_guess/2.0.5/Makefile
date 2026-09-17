@@ -191,10 +191,7 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/mime_guess-2.0.5/libmime_guess.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/mime_guess-2.0.5/deps/ 
- /mime_guess-2.0.5.tar.gz 
-		/share/modcargo-crates/mime_guess-2.0.5.tar.gzgz
-
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/mime_guess-2.0.5/deps/
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libmime_guess-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

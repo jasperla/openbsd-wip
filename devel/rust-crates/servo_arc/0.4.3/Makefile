@@ -173,10 +173,7 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/servo_arc-0.4.3/libservo_arc.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/servo_arc-0.4.3/deps/ 
- /servo_arc-0.4.3.tar.gz 
-		/share/modcargo-crates/servo_arc-0.4.3.tar.gzgz
-
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/servo_arc-0.4.3/deps/
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libservo_arc-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

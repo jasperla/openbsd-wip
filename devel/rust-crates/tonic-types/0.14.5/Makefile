@@ -2945,10 +2945,7 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/tonic-types-0.14.5/libtonic_types.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/tonic-types-0.14.5/deps/ 
- /tonic-types-0.14.5.tar.gz 
-		/share/modcargo-crates/tonic-types-0.14.5.tar.gzgz
-
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/tonic-types-0.14.5/deps/
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libtonic_types-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

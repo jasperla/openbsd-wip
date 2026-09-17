@@ -173,10 +173,7 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/memmap2-0.9.11/libmemmap2.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/memmap2-0.9.11/deps/ 
- /memmap2-0.9.11.tar.gz 
-		/share/modcargo-crates/memmap2-0.9.11.tar.gzgz
-
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/memmap2-0.9.11/deps/
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libmemmap2-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

@@ -158,10 +158,7 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/hayro-ccitt-0.3.0/libhayro_ccitt.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/hayro-ccitt-0.3.0/deps/ 
- /hayro-ccitt-0.3.0.tar.gz 
-		/share/modcargo-crates/hayro-ccitt-0.3.0.tar.gzgz
-
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/hayro-ccitt-0.3.0/deps/
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libhayro_ccitt-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

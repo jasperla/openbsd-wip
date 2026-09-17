@@ -965,10 +965,7 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/wl-clipboard-rs-0.9.3/libwl_clipboard_rs.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/wl-clipboard-rs-0.9.3/deps/ 
- /wl-clipboard-rs-0.9.3.tar.gz 
-		/share/modcargo-crates/wl-clipboard-rs-0.9.3.tar.gzgz
-
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/wl-clipboard-rs-0.9.3/deps/
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libwl_clipboard_rs-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

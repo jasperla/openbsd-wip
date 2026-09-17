@@ -158,10 +158,7 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/unicode-properties-0.1.4/libunicode_properties.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/unicode-properties-0.1.4/deps/ 
- /unicode-properties-0.1.4.tar.gz 
-		/share/modcargo-crates/unicode-properties-0.1.4.tar.gzgz
-
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/unicode-properties-0.1.4/deps/
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libunicode_properties-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

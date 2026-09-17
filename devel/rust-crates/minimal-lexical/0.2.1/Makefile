@@ -158,10 +158,7 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/minimal-lexical-0.2.1/libminimal_lexical.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/minimal-lexical-0.2.1/deps/ 
- /minimal-lexical-0.2.1.tar.gz 
-		/share/modcargo-crates/minimal-lexical-0.2.1.tar.gzgz
-
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/minimal-lexical-0.2.1/deps/
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libminimal_lexical-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

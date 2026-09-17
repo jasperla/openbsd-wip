@@ -227,10 +227,7 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/serial_test_derive-3.2.0/libserial_test_derive.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/serial_test_derive-3.2.0/deps/ 
- /serial_test_derive-3.2.0.tar.gz 
-		/share/modcargo-crates/serial_test_derive-3.2.0.tar.gzgz
-
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/serial_test_derive-3.2.0/deps/
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libserial_test_derive-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

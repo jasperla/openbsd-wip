@@ -158,10 +158,7 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/static_assertions-1.1.0/libstatic_assertions.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/static_assertions-1.1.0/deps/ 
- /static_assertions-1.1.0.tar.gz 
-		/share/modcargo-crates/static_assertions-1.1.0.tar.gzgz
-
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/static_assertions-1.1.0/deps/
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libstatic_assertions-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

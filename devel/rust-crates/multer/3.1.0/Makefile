@@ -623,10 +623,7 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/multer-3.1.0/libmulter.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/multer-3.1.0/deps/ 
- /multer-3.1.0.tar.gz 
-		/share/modcargo-crates/multer-3.1.0.tar.gzgz
-
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/multer-3.1.0/deps/
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libmulter-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

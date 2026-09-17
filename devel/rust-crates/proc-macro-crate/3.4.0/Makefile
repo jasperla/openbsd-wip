@@ -425,10 +425,7 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/proc-macro-crate-3.4.0/libproc_macro_crate.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/proc-macro-crate-3.4.0/deps/ 
- /proc-macro-crate-3.4.0.tar.gz 
-		/share/modcargo-crates/proc-macro-crate-3.4.0.tar.gzgz
-
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/proc-macro-crate-3.4.0/deps/
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libproc_macro_crate-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

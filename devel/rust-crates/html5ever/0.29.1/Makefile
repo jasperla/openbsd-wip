@@ -857,10 +857,7 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/html5ever-0.29.1/libhtml5ever.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/html5ever-0.29.1/deps/ 
- /html5ever-0.29.1.tar.gz 
-		/share/modcargo-crates/html5ever-0.29.1.tar.gzgz
-
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/html5ever-0.29.1/deps/
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libhtml5ever-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

@@ -749,10 +749,7 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/markup5ever_rcdom-0.38.0_unofficial/libmarkup5ever_rcdom.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/markup5ever_rcdom-0.38.0_unofficial/deps/ 
- /markup5ever_rcdom-0.38.0+unofficial.tar.gz 
-		/share/modcargo-crates/markup5ever_rcdom-0.38.0_unofficial.tar.gzgz
-
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/markup5ever_rcdom-0.38.0_unofficial/deps/
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libmarkup5ever_rcdom-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

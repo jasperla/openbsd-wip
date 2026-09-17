@@ -173,10 +173,7 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/fs2-0.4.3/libfs2.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/fs2-0.4.3/deps/ 
- /fs2-0.4.3.tar.gz 
-		/share/modcargo-crates/fs2-0.4.3.tar.gzgz
-
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/fs2-0.4.3/deps/
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libfs2-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

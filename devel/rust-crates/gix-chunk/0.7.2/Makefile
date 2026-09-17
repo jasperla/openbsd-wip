@@ -389,10 +389,7 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/gix-chunk-0.7.2/libgix_chunk.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/gix-chunk-0.7.2/deps/ 
- /gix-chunk-0.7.2.tar.gz 
-		/share/modcargo-crates/gix-chunk-0.7.2.tar.gzgz
-
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/gix-chunk-0.7.2/deps/
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libgix_chunk-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

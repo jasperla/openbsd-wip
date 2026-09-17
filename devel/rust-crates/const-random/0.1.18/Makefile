@@ -299,10 +299,7 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/const-random-0.1.18/libconst_random.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/const-random-0.1.18/deps/ 
- /const-random-0.1.18.tar.gz 
-		/share/modcargo-crates/const-random-0.1.18.tar.gzgz
-
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/const-random-0.1.18/deps/
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libconst_random-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

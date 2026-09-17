@@ -158,10 +158,7 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/linux-raw-sys-0.12.1/liblinux_raw_sys.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/linux-raw-sys-0.12.1/deps/ 
- /linux-raw-sys-0.12.1.tar.gz 
-		/share/modcargo-crates/linux-raw-sys-0.12.1.tar.gzgz
-
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/linux-raw-sys-0.12.1/deps/
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/liblinux_raw_sys-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

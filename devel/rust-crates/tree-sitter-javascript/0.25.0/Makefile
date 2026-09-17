@@ -317,10 +317,7 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/tree-sitter-javascript-0.25.0/libtree_sitter_javascript.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/tree-sitter-javascript-0.25.0/deps/ 
- /tree-sitter-javascript-0.25.0.tar.gz 
-		/share/modcargo-crates/tree-sitter-javascript-0.25.0.tar.gzgz
-
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/tree-sitter-javascript-0.25.0/deps/
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libtree_sitter_javascript-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

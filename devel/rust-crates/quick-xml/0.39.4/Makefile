@@ -173,10 +173,7 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/quick-xml-0.39.4/libquick_xml.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/quick-xml-0.39.4/deps/ 
- /quick-xml-0.39.4.tar.gz 
-		/share/modcargo-crates/quick-xml-0.39.4.tar.gzgz
-
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/quick-xml-0.39.4/deps/
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libquick_xml-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

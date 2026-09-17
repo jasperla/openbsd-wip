@@ -245,10 +245,7 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/stringprep-0.1.5/libstringprep.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/stringprep-0.1.5/deps/ 
- /stringprep-0.1.5.tar.gz 
-		/share/modcargo-crates/stringprep-0.1.5.tar.gzgz
-
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/stringprep-0.1.5/deps/
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libstringprep-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

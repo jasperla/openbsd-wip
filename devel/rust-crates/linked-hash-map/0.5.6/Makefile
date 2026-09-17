@@ -158,10 +158,7 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/linked-hash-map-0.5.6/liblinked_hash_map.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/linked-hash-map-0.5.6/deps/ 
- /linked-hash-map-0.5.6.tar.gz 
-		/share/modcargo-crates/linked-hash-map-0.5.6.tar.gzgz
-
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/linked-hash-map-0.5.6/deps/
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/liblinked_hash_map-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

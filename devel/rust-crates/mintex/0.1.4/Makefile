@@ -158,10 +158,7 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/mintex-0.1.4/libmintex.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/mintex-0.1.4/deps/ 
- /mintex-0.1.4.tar.gz 
-		/share/modcargo-crates/mintex-0.1.4.tar.gzgz
-
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/mintex-0.1.4/deps/
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libmintex-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

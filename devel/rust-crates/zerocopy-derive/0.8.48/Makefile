@@ -227,10 +227,7 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/zerocopy-derive-0.8.48/libzerocopy_derive.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/zerocopy-derive-0.8.48/deps/ 
- /zerocopy-derive-0.8.48.tar.gz 
-		/share/modcargo-crates/zerocopy-derive-0.8.48.tar.gzgz
-
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/zerocopy-derive-0.8.48/deps/
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libzerocopy_derive-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

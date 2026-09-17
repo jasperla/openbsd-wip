@@ -227,10 +227,7 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/pin-project-internal-1.1.11/libpin_project_internal.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/pin-project-internal-1.1.11/deps/ 
- /pin-project-internal-1.1.11.tar.gz 
-		/share/modcargo-crates/pin-project-internal-1.1.11.tar.gzgz
-
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/pin-project-internal-1.1.11/deps/
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libpin_project_internal-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

@@ -209,10 +209,7 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/euclid-0.22.14/libeuclid.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/euclid-0.22.14/deps/ 
- /euclid-0.22.14.tar.gz 
-		/share/modcargo-crates/euclid-0.22.14.tar.gzgz
-
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/euclid-0.22.14/deps/
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libeuclid-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

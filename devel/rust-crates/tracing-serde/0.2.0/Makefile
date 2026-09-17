@@ -353,10 +353,7 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/tracing-serde-0.2.0/libtracing_serde.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/tracing-serde-0.2.0/deps/ 
- /tracing-serde-0.2.0.tar.gz 
-		/share/modcargo-crates/tracing-serde-0.2.0.tar.gzgz
-
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/tracing-serde-0.2.0/deps/
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libtracing_serde-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

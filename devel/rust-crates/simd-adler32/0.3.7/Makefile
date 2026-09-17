@@ -158,10 +158,7 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/simd-adler32-0.3.7/libsimd_adler32.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/simd-adler32-0.3.7/deps/ 
- /simd-adler32-0.3.7.tar.gz 
-		/share/modcargo-crates/simd-adler32-0.3.7.tar.gzgz
-
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/simd-adler32-0.3.7/deps/
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libsimd_adler32-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

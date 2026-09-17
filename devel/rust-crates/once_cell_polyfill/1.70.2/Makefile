@@ -158,10 +158,7 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/once_cell_polyfill-1.70.2/libonce_cell_polyfill.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/once_cell_polyfill-1.70.2/deps/ 
- /once_cell_polyfill-1.70.2.tar.gz 
-		/share/modcargo-crates/once_cell_polyfill-1.70.2.tar.gzgz
-
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/once_cell_polyfill-1.70.2/deps/
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libonce_cell_polyfill-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

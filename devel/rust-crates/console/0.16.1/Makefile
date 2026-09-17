@@ -245,10 +245,7 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/console-0.16.1/libconsole.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/console-0.16.1/deps/ 
- /console-0.16.1.tar.gz 
-		/share/modcargo-crates/console-0.16.1.tar.gzgz
-
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/console-0.16.1/deps/
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libconsole-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

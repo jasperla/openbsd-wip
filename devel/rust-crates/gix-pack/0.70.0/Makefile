@@ -1523,10 +1523,7 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/gix-pack-0.70.0/libgix_pack.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/gix-pack-0.70.0/deps/ 
- /gix-pack-0.70.0.tar.gz 
-		/share/modcargo-crates/gix-pack-0.70.0.tar.gzgz
-
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/gix-pack-0.70.0/deps/
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libgix_pack-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

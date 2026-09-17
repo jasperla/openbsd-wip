@@ -605,10 +605,7 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/icu_properties-2.0.1/libicu_properties.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/icu_properties-2.0.1/deps/ 
- /icu_properties-2.0.1.tar.gz 
-		/share/modcargo-crates/icu_properties-2.0.1.tar.gzgz
-
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/icu_properties-2.0.1/deps/
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libicu_properties-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

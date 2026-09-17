@@ -335,10 +335,7 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/ciborium-ll-0.2.2/libciborium_ll.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/ciborium-ll-0.2.2/deps/ 
- /ciborium-ll-0.2.2.tar.gz 
-		/share/modcargo-crates/ciborium-ll-0.2.2.tar.gzgz
-
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/ciborium-ll-0.2.2/deps/
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libciborium_ll-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

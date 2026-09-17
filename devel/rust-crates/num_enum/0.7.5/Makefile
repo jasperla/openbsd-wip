@@ -479,10 +479,7 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/num_enum-0.7.5/libnum_enum.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/num_enum-0.7.5/deps/ 
- /num_enum-0.7.5.tar.gz 
-		/share/modcargo-crates/num_enum-0.7.5.tar.gzgz
-
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/num_enum-0.7.5/deps/
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libnum_enum-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

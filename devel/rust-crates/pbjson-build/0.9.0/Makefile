@@ -443,10 +443,7 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/pbjson-build-0.9.0/libpbjson_build.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/pbjson-build-0.9.0/deps/ 
- /pbjson-build-0.9.0.tar.gz 
-		/share/modcargo-crates/pbjson-build-0.9.0.tar.gzgz
-
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/pbjson-build-0.9.0/deps/
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libpbjson_build-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

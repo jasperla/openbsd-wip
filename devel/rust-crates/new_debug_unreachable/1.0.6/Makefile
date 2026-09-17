@@ -158,10 +158,7 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/new_debug_unreachable-1.0.6/libdebug_unreachable.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/new_debug_unreachable-1.0.6/deps/ 
- /new_debug_unreachable-1.0.6.tar.gz 
-		/share/modcargo-crates/new_debug_unreachable-1.0.6.tar.gzgz
-
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/new_debug_unreachable-1.0.6/deps/
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libdebug_unreachable-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

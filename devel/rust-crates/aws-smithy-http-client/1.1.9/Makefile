@@ -2225,10 +2225,7 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/aws-smithy-http-client-1.1.9/libaws_smithy_http_client.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/aws-smithy-http-client-1.1.9/deps/ 
- /aws-smithy-http-client-1.1.9.tar.gz 
-		/share/modcargo-crates/aws-smithy-http-client-1.1.9.tar.gzgz
-
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/aws-smithy-http-client-1.1.9/deps/
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libaws_smithy_http_client-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

@@ -371,10 +371,7 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/tracing-0.1.44/libtracing.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/tracing-0.1.44/deps/ 
- /tracing-0.1.44.tar.gz 
-		/share/modcargo-crates/tracing-0.1.44.tar.gzgz
-
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/tracing-0.1.44/deps/
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libtracing-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

@@ -1397,10 +1397,7 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/quinn-0.11.9/libquinn.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/quinn-0.11.9/deps/ 
- /quinn-0.11.9.tar.gz 
-		/share/modcargo-crates/quinn-0.11.9.tar.gzgz
-
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/quinn-0.11.9/deps/
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libquinn-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

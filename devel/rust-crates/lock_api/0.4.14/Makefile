@@ -173,10 +173,7 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/lock_api-0.4.14/liblock_api.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/lock_api-0.4.14/deps/ 
- /lock_api-0.4.14.tar.gz 
-		/share/modcargo-crates/lock_api-0.4.14.tar.gzgz
-
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/lock_api-0.4.14/deps/
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/liblock_api-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

@@ -443,10 +443,7 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/tinystr-0.8.1/libtinystr.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/tinystr-0.8.1/deps/ 
- /tinystr-0.8.1.tar.gz 
-		/share/modcargo-crates/tinystr-0.8.1.tar.gzgz
-
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/tinystr-0.8.1/deps/
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libtinystr-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

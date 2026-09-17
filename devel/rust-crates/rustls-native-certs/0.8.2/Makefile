@@ -317,10 +317,7 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/rustls-native-certs-0.8.2/librustls_native_certs.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/rustls-native-certs-0.8.2/deps/ 
- /rustls-native-certs-0.8.2.tar.gz 
-		/share/modcargo-crates/rustls-native-certs-0.8.2.tar.gzgz
-
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/rustls-native-certs-0.8.2/deps/
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/librustls_native_certs-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

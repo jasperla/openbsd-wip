@@ -1235,10 +1235,7 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/aws-smithy-eventstream-0.60.18/libaws_smithy_eventstream.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/aws-smithy-eventstream-0.60.18/deps/ 
- /aws-smithy-eventstream-0.60.18.tar.gz 
-		/share/modcargo-crates/aws-smithy-eventstream-0.60.18.tar.gzgz
-
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/aws-smithy-eventstream-0.60.18/deps/
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libaws_smithy_eventstream-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

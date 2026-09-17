@@ -929,10 +929,7 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/tracing-chrome-0.7.2/libtracing_chrome.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/tracing-chrome-0.7.2/deps/ 
- /tracing-chrome-0.7.2.tar.gz 
-		/share/modcargo-crates/tracing-chrome-0.7.2.tar.gzgz
-
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/tracing-chrome-0.7.2/deps/
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libtracing_chrome-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

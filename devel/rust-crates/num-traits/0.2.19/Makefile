@@ -191,10 +191,7 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/num-traits-0.2.19/libnum_traits.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/num-traits-0.2.19/deps/ 
- /num-traits-0.2.19.tar.gz 
-		/share/modcargo-crates/num-traits-0.2.19.tar.gzgz
-
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/num-traits-0.2.19/deps/
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libnum_traits-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

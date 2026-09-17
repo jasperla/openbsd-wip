@@ -857,10 +857,7 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/referencing-0.30.0/libreferencing.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/referencing-0.30.0/deps/ 
- /referencing-0.30.0.tar.gz 
-		/share/modcargo-crates/referencing-0.30.0.tar.gzgz
-
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/referencing-0.30.0/deps/
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libreferencing-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

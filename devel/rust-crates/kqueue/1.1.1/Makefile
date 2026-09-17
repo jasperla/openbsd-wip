@@ -209,10 +209,7 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/kqueue-1.1.1/libkqueue.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/kqueue-1.1.1/deps/ 
- /kqueue-1.1.1.tar.gz 
-		/share/modcargo-crates/kqueue-1.1.1.tar.gzgz
-
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/kqueue-1.1.1/deps/
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libkqueue-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

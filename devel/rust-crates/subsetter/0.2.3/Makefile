@@ -623,10 +623,7 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/subsetter-0.2.3/libsubsetter.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/subsetter-0.2.3/deps/ 
- /subsetter-0.2.3.tar.gz 
-		/share/modcargo-crates/subsetter-0.2.3.tar.gzgz
-
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/subsetter-0.2.3/deps/
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libsubsetter-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

@@ -263,10 +263,7 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/toml_datetime-0.7.5_spec-1.1.0/libtoml_datetime.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/toml_datetime-0.7.5_spec-1.1.0/deps/ 
- /toml_datetime-0.7.5+spec-1.1.0.tar.gz 
-		/share/modcargo-crates/toml_datetime-0.7.5_spec-1.1.0.tar.gzgz
-
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/toml_datetime-0.7.5_spec-1.1.0/deps/
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libtoml_datetime-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

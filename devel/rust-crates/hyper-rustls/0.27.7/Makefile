@@ -1721,10 +1721,7 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/hyper-rustls-0.27.7/libhyper_rustls.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/hyper-rustls-0.27.7/deps/ 
- /hyper-rustls-0.27.7.tar.gz 
-		/share/modcargo-crates/hyper-rustls-0.27.7.tar.gzgz
-
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/hyper-rustls-0.27.7/deps/
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libhyper_rustls-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

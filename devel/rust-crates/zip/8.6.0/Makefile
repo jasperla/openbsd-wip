@@ -537,7 +537,7 @@ do-build:
 		${LOCALBASE}/bin/cargo build --release --offline \
 			--manifest-path Cargo.toml \
 			--config ${WRKDIR}/.cargo/config.toml \
-			--no-default-features --features deflate
+			--no-default-features --features deflate,bzip2,time
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/modcargo-crates
@@ -587,10 +587,7 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/zip-8.6.0/libzip.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/zip-8.6.0/deps/ 
- /zip-8.6.0.tar.gz 
-		/share/modcargo-crates/zip-8.6.0.tar.gzgz
-
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/zip-8.6.0/deps/
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libzip-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

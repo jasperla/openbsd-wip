@@ -173,10 +173,7 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/kstring-2.0.2/libkstring.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/kstring-2.0.2/deps/ 
- /kstring-2.0.2.tar.gz 
-		/share/modcargo-crates/kstring-2.0.2.tar.gzgz
-
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/kstring-2.0.2/deps/
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libkstring-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

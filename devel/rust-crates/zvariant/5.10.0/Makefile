@@ -1037,10 +1037,7 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/zvariant-5.10.0/libzvariant.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/zvariant-5.10.0/deps/ 
- /zvariant-5.10.0.tar.gz 
-		/share/modcargo-crates/zvariant-5.10.0.tar.gzgz
-
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/zvariant-5.10.0/deps/
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libzvariant-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

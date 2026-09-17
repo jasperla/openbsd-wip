@@ -158,10 +158,7 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/home-0.5.12/libhome.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/home-0.5.12/deps/ 
- /home-0.5.12.tar.gz 
-		/share/modcargo-crates/home-0.5.12.tar.gzgz
-
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/home-0.5.12/deps/
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libhome-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

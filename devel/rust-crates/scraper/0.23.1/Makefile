@@ -1145,10 +1145,7 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/scraper-0.23.1/libscraper.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/scraper-0.23.1/deps/ 
- /scraper-0.23.1.tar.gz 
-		/share/modcargo-crates/scraper-0.23.1.tar.gzgz
-
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/scraper-0.23.1/deps/
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libscraper-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

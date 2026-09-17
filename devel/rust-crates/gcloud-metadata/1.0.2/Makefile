@@ -2909,10 +2909,7 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/gcloud-metadata-1.0.2/libgcloud_metadata.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/gcloud-metadata-1.0.2/deps/ 
- /gcloud-metadata-1.0.2.tar.gz 
-		/share/modcargo-crates/gcloud-metadata-1.0.2.tar.gzgz
-
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/gcloud-metadata-1.0.2/deps/
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libgcloud_metadata-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

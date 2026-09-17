@@ -1073,10 +1073,7 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/gix-tempfile-23.0.1/libgix_tempfile.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/gix-tempfile-23.0.1/deps/ 
- /gix-tempfile-23.0.1.tar.gz 
-		/share/modcargo-crates/gix-tempfile-23.0.1.tar.gzgz
-
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/gix-tempfile-23.0.1/deps/
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libgix_tempfile-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

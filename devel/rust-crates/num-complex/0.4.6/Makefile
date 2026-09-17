@@ -209,10 +209,7 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/num-complex-0.4.6/libnum_complex.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/num-complex-0.4.6/deps/ 
- /num-complex-0.4.6.tar.gz 
-		/share/modcargo-crates/num-complex-0.4.6.tar.gzgz
-
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/num-complex-0.4.6/deps/
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libnum_complex-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

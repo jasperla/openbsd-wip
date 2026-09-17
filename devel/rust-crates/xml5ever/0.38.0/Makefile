@@ -713,10 +713,7 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/xml5ever-0.38.0/libxml5ever.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/xml5ever-0.38.0/deps/ 
- /xml5ever-0.38.0.tar.gz 
-		/share/modcargo-crates/xml5ever-0.38.0.tar.gzgz
-
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/xml5ever-0.38.0/deps/
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libxml5ever-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

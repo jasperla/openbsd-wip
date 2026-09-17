@@ -623,10 +623,7 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/tiny-skia-0.12.0/libtiny_skia.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/tiny-skia-0.12.0/deps/ 
- /tiny-skia-0.12.0.tar.gz 
-		/share/modcargo-crates/tiny-skia-0.12.0.tar.gzgz
-
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/tiny-skia-0.12.0/deps/
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libtiny_skia-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

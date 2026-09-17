@@ -173,10 +173,7 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/cpp_demangle-0.4.5/libcpp_demangle.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/cpp_demangle-0.4.5/deps/ 
- /cpp_demangle-0.4.5.tar.gz 
-		/share/modcargo-crates/cpp_demangle-0.4.5.tar.gzgz
-
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/cpp_demangle-0.4.5/deps/
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libcpp_demangle-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

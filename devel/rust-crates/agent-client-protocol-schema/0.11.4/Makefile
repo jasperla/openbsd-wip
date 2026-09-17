@@ -839,10 +839,7 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/agent-client-protocol-schema-0.11.4/libagent_client_protocol_schema.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/agent-client-protocol-schema-0.11.4/deps/ 
- /agent-client-protocol-schema-0.11.4.tar.gz 
-		/share/modcargo-crates/agent-client-protocol-schema-0.11.4.tar.gzgz
-
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/agent-client-protocol-schema-0.11.4/deps/
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libagent_client_protocol_schema-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

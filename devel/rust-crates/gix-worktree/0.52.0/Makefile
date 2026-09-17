@@ -2081,10 +2081,7 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/gix-worktree-0.52.0/libgix_worktree.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/gix-worktree-0.52.0/deps/ 
- /gix-worktree-0.52.0.tar.gz 
-		/share/modcargo-crates/gix-worktree-0.52.0.tar.gzgz
-
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/gix-worktree-0.52.0/deps/
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libgix_worktree-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

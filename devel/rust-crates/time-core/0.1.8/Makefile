@@ -158,10 +158,7 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/time-core-0.1.8/libtime_core.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/time-core-0.1.8/deps/ 
- /time-core-0.1.8.tar.gz 
-		/share/modcargo-crates/time-core-0.1.8.tar.gzgz
-
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/time-core-0.1.8/deps/
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libtime_core-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

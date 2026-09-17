@@ -3557,10 +3557,7 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/sigstore-tsa-0.6.6/libsigstore_tsa.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/sigstore-tsa-0.6.6/deps/ 
- /sigstore-tsa-0.6.6.tar.gz 
-		/share/modcargo-crates/sigstore-tsa-0.6.6.tar.gzgz
-
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/sigstore-tsa-0.6.6/deps/
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libsigstore_tsa-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

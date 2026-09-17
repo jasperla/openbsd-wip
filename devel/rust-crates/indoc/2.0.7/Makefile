@@ -173,10 +173,7 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/indoc-2.0.7/libindoc.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/indoc-2.0.7/deps/ 
- /indoc-2.0.7.tar.gz 
-		/share/modcargo-crates/indoc-2.0.7.tar.gzgz
-
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/indoc-2.0.7/deps/
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libindoc-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

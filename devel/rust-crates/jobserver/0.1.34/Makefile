@@ -227,10 +227,7 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/jobserver-0.1.34/libjobserver.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/jobserver-0.1.34/deps/ 
- /jobserver-0.1.34.tar.gz 
-		/share/modcargo-crates/jobserver-0.1.34.tar.gzgz
-
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/jobserver-0.1.34/deps/
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libjobserver-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

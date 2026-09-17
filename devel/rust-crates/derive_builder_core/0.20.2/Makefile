@@ -335,10 +335,7 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/derive_builder_core-0.20.2/libderive_builder_core.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/derive_builder_core-0.20.2/deps/ 
- /derive_builder_core-0.20.2.tar.gz 
-		/share/modcargo-crates/derive_builder_core-0.20.2.tar.gzgz
-
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/derive_builder_core-0.20.2/deps/
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libderive_builder_core-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

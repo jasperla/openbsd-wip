@@ -281,10 +281,7 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/strum-0.26.3/libstrum.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/strum-0.26.3/deps/ 
- /strum-0.26.3.tar.gz 
-		/share/modcargo-crates/strum-0.26.3.tar.gzgz
-
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/strum-0.26.3/deps/
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libstrum-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \

@@ -158,10 +158,7 @@ do-install:
 	${INSTALL_DATA} $$art \
 		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/endi-1.1.1/libendi.$$ext; \
 	${INSTALL_DATA} $$art \
-		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/endi-1.1.1/deps/ 
- /endi-1.1.1.tar.gz 
-		/share/modcargo-crates/endi-1.1.1.tar.gzgz
-
+		${PREFIX}/lib/rust-crates/${MACHINE_ARCH}/endi-1.1.1/deps/
 	@rmeta=`ls ${MODCARGO_TARGET_DIR}/release/deps/libendi-*.rmeta 2>/dev/null | head -1`; \
 	if [ -n "$$rmeta" ]; then \
 		${INSTALL_DATA} $$rmeta \
