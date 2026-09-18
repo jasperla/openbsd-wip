@@ -1,4 +1,4 @@
-SHA256 (astral-sh-ruff-c2cd236b9cc5b2149c74247e179d6567ec74066f.tar.gz) = GtzG2lrm1qxel15sIm8YufvyIsJKrmVqW0iZMbV4URA=
+SHA256 (astral-sh-ruff-160ffbf2cff30d7ff1c97f13d6f1ca9fe430fe48.tar.gz) = aFdvW8z8XHfC/jQHWOzfFeYdw3pnwTgvOElk08PN+uc=
 SHA256 (cargo/adler2-2.0.1.tar.gz) = MgEZV5/K2cIYhPXEhh0WF00OBiUGJSZvUP5omDQKvvo=
 SHA256 (cargo/aho-corasick-1.1.5.tar.gz) = yYJkL6noYGBWgo7pqFBXNyMBELsQmRU8ee/oZcWdEro=
 SHA256 (cargo/alloca-0.4.0.tar.gz) = 5afQXqaup+nmTSW5FWui/uP91lnjTkEGPNL8fNAg1/Q=
@@ -34,7 +34,7 @@ SHA256 (cargo/bitvec-1.1.1.tar.gz) = 3c7D0SxXnUCJj+Cpo1ioA8I+nFLKPEJXB/gclDYhGDc
 SHA256 (cargo/block-buffer-0.10.4.tar.gz) = MHjHYpti0/BDlRf6OUmWrKzFy8kcWiDYxljner1QOnE=
 SHA256 (cargo/block2-0.6.2.tar.gz) = zeudhwUWABRC42TFIg01dNLajcdlVUtKYXIw0z+ljvU=
 SHA256 (cargo/boxcar-0.2.14.tar.gz) = NvZL6uQKhNobSyb/J2GluJXBKtxB3CWq7hxPK7/pem4=
-SHA256 (cargo/bstr-1.13.0.tar.gz) = H33AlNcY8uHBVZrREOJ+6q4UpUZdPVbdbb15MHn71TA=
+SHA256 (cargo/bstr-1.13.1.tar.gz) = a7MbRsFCROIO6ZhLEb9cmSuR+2k5/qYW41Esi67Nvl8=
 SHA256 (cargo/bumpalo-3.19.0.tar.gz) = RsXkG1e4u6QqBGdtgcuJ6e6OhZoaZvgKWnLhy3azTUM=
 SHA256 (cargo/bytecheck-0.8.2.tar.gz) = DKozosDtygQZ0VrHI9/wPxlW95eDKbHjtf2qrtnTyos=
 SHA256 (cargo/bytecheck_derive-0.8.2.tar.gz) = iThegrXRgh0iGeCwle+izB8kbL+ZCA875GoahcDTktk=
@@ -417,7 +417,7 @@ SHA256 (cargo/urlencoding-2.1.3.tar.gz) = 2vjbo7frhwyvHd7te8nSoEnzz9+ufLUhsIfMM6
 SHA256 (cargo/utf8-width-0.1.7.tar.gz) = hr2NToldqFN+UxW4JUZk5rdpxP89sYMhspeh5wBDkuM=
 SHA256 (cargo/utf8_iter-1.0.4.tar.gz) = tsFAYg5/+7IsLe5Zyv5ghKWbX/wnqIWaXw1JS11Str4=
 SHA256 (cargo/utf8parse-0.2.2.tar.gz) = BqveNhFlet9m04PwCwk9f67Mf6VwccziV4ZgyfEBCCE=
-SHA256 (cargo/uuid-1.24.0.tar.gz) = vzkjpvXExjguC2U8QRf0jWMeoX847YbiqCjm90EvUjk=
+SHA256 (cargo/uuid-1.24.1.tar.gz) = LO/AP9NnwMbUMF3hsxLPACSMQRT0oEGM5qavdp47C9k=
 SHA256 (cargo/valuable-0.1.1.tar.gz) = unPqnPFqJd8MjKoWxRrLk31XEqhCnbeKPuKdXcrNOmU=
 SHA256 (cargo/version-ranges-0.1.1.tar.gz) = +NB5QVzrK+g/w1Wtutr+QBMH1cMJx+at5mOOb59C9C0=
 SHA256 (cargo/version_check-0.9.5.tar.gz) = C5KPM9l1/GrZ+GyPKDhTrSa91bELfxVCqi+hXiKJEFo=
@@ -504,8 +504,8 @@ SHA256 (cargo/zmij-1.0.10.tar.gz) = MODY3/uuPYQPZL2jjig5H672c6e1pgF4QPKhBsgUWGg=
 SHA256 (cargo/zstd-0.13.3.tar.gz) = 6R7jEaVpwycXFlFWbgeXIgDnb8/iJCpPpEYUmjiBwIo=
 SHA256 (cargo/zstd-safe-7.2.4.tar.gz) = j0nE1fCrtgKpP7hzavKk9N2VEuNvf1cNZuZf+GftO50=
 SHA256 (cargo/zstd-sys-2.0.16+zstd.1.5.7.tar.gz) = keGevCrcj4PkMDnnl3bj/ajKkZEy1oof7WpfrKJoN0g=
-SHA256 (ty-0.0.81.tar.gz) = GICGp7UJdn6gzVrLXhY4xes7Fe+aYCYtDvCLfd5AJZc=
-SIZE (astral-sh-ruff-c2cd236b9cc5b2149c74247e179d6567ec74066f.tar.gz) = 13660493
+SHA256 (ty-0.0.82.tar.gz) = X17XrA/z11s4/GFejYiIUSHnNGpJjStIxDE7eZdwNyM=
+SIZE (astral-sh-ruff-160ffbf2cff30d7ff1c97f13d6f1ca9fe430fe48.tar.gz) = 13776265
 SIZE (cargo/adler2-2.0.1.tar.gz) = 13366
 SIZE (cargo/aho-corasick-1.1.5.tar.gz) = 184315
 SIZE (cargo/alloca-0.4.0.tar.gz) = 4257
@@ -541,7 +541,7 @@ SIZE (cargo/bitvec-1.1.1.tar.gz) = 225850
 SIZE (cargo/block-buffer-0.10.4.tar.gz) = 10538
 SIZE (cargo/block2-0.6.2.tar.gz) = 34505
 SIZE (cargo/boxcar-0.2.14.tar.gz) = 28144
-SIZE (cargo/bstr-1.13.0.tar.gz) = 355737
+SIZE (cargo/bstr-1.13.1.tar.gz) = 356631
 SIZE (cargo/bumpalo-3.19.0.tar.gz) = 96414
 SIZE (cargo/bytecheck-0.8.2.tar.gz) = 12642
 SIZE (cargo/bytecheck_derive-0.8.2.tar.gz) = 8933
@@ -924,7 +924,7 @@ SIZE (cargo/urlencoding-2.1.3.tar.gz) = 6538
 SIZE (cargo/utf8-width-0.1.7.tar.gz) = 2977
 SIZE (cargo/utf8_iter-1.0.4.tar.gz) = 10437
 SIZE (cargo/utf8parse-0.2.2.tar.gz) = 13499
-SIZE (cargo/uuid-1.24.0.tar.gz) = 63882
+SIZE (cargo/uuid-1.24.1.tar.gz) = 63953
 SIZE (cargo/valuable-0.1.1.tar.gz) = 28679
 SIZE (cargo/version-ranges-0.1.1.tar.gz) = 13740
 SIZE (cargo/version_check-0.9.5.tar.gz) = 15554
@@ -1011,4 +1011,4 @@ SIZE (cargo/zmij-1.0.10.tar.gz) = 22288
 SIZE (cargo/zstd-0.13.3.tar.gz) = 30514
 SIZE (cargo/zstd-safe-7.2.4.tar.gz) = 29350
 SIZE (cargo/zstd-sys-2.0.16+zstd.1.5.7.tar.gz) = 775620
-SIZE (ty-0.0.81.tar.gz) = 2722107
+SIZE (ty-0.0.82.tar.gz) = 2723327
