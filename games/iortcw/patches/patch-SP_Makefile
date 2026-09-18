@@ -1,0 +1,13 @@
+Index: SP/Makefile
+--- SP/Makefile.orig
++++ SP/Makefile
+@@ -1101,7 +1101,8 @@ ifndef FULLBINEXT
+ endif
+ 
+ ifndef SHLIBNAME
+-  SHLIBNAME=$(FILE_ARCH).$(SHLIBEXT)
++  #SHLIBNAME=$(FILE_ARCH).$(SHLIBEXT)
++  SHLIBNAME=amd64.$(SHLIBEXT)
+ endif
+ 
+ ifneq ($(BUILD_SERVER),0)

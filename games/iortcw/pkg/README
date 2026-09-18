@@ -1,0 +1,48 @@
++-----------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-----------------------------------------------------------------------
+
+To play iortcw on OpenBSD, you need the original game files.
+Copy the game data to ~/.wolf/main/ folder.
+
+
+Macppc specifics
+================
+
+Additional configuration may be required, as noted below.
+
+OpenGL renderer
+---------------
+
+The opengl2 renderer is not available on many of the supported graphics cards
+and will prevent iortcw from starting with the default configuration.
+Specifiying seta cl_renderer "opengl1" in the config file will allow use of the
+opengl1 renderer.
+
+16-bit textures 
+---------------
+
+Graphical issues occur when using 16-bit textures on the Radeon 9200, 9600, and
+9700. 32-bit textures should be used if this happens.
+
+Radeon 9700
+-----------
+
+Weapons and fonts will not appear without specifying seta r_hdr "0" in the
+config file. The Radeon 9200 and 9600 do not have this issue.
+
+Extensions should also be turned off by specifying seta r_allowExtensions "0"
+in the config file.
+
+Radeon 9200
+-----------
+
+Fullscreen requires the X11 resolution to match the one specified in the
+iortcw config file. This has been tested in FVWM and Window Maker, and only
+Window Maker displays fullscreen correctly out of the 2.
+
+The fastest graphics preset should be used in iortcw. Resolution can then be
+modified from there for a playable game.
+
+The main menu in iortcw has poor performance that other parts of the game do
+not suffer from.
