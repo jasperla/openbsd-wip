@@ -43,7 +43,13 @@ MAKE_ENV +=		RUSTFLAGS=--cap-lints=allow
 MAKE_ENV +=		CARGO_ENCODED_RUSTFLAGS=--cap-lints=allow
 
 
+# dpb junks when depends_count >= 150 (default). post-extract/pre-build seed
+# vendor + rlibs from installed rust-crate packages; junking those first
+# fails with "missing dep". rmcp's subgraph is 216 BUILD_DEPENDS.
+DPB_PROPERTIES +=	nojunk
+
 BUILD_DEPENDS +=	rust-crate-crunchy_0_2_4-0:devel/rust-crates/crunchy/0.2.4
+RUN_DEPENDS +=	rust-crate-crunchy_0_2_4-0:devel/rust-crates/crunchy/0.2.4
 
 # Direct registry deps: seed their rlibs/fingerprints before building this crate.
 _RUST_CRATE_ARCH =	${MACHINE_ARCH}
@@ -66,6 +72,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/crunchy-0.2.4 ${WRKDIR}/vendor/crunchy-0.2.4; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/crunchy-0.2.4.tar.gz ${WRKDIR}/vendor/crunchy-0.2.4 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/crunchy-0.2.4.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/crunchy-0.2.4.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/crunchy-0.2.4 ] && [ -d ${WRKDIR}/vendor/crunchy-0.2.4 ]; then \
+			mv ${WRKDIR}/vendor/crunchy-0.2.4 ${WRKDIR}/vendor/crunchy-0.2.4; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/crunchy-0.2.4.tar.gz ${WRKDIR}/vendor/crunchy-0.2.4 2>/dev/null || true; \
 	else \
 		echo "missing dep crunchy-0.2.4" >&2; exit 1; \
 	fi

@@ -43,9 +43,17 @@ MAKE_ENV +=		RUSTFLAGS=--cap-lints=allow
 MAKE_ENV +=		CARGO_ENCODED_RUSTFLAGS=--cap-lints=allow
 
 
+# dpb junks when depends_count >= 150 (default). post-extract/pre-build seed
+# vendor + rlibs from installed rust-crate packages; junking those first
+# fails with "missing dep". rmcp's subgraph is 216 BUILD_DEPENDS.
+DPB_PROPERTIES +=	nojunk
+
 BUILD_DEPENDS +=	rust-crate-cast_0_3_0-0:devel/rust-crates/cast/0.3.0
+RUN_DEPENDS +=	rust-crate-cast_0_3_0-0:devel/rust-crates/cast/0.3.0
 BUILD_DEPENDS +=	rust-crate-itertools_0_10_5-0:devel/rust-crates/itertools/0.10.5
+RUN_DEPENDS +=	rust-crate-itertools_0_10_5-0:devel/rust-crates/itertools/0.10.5
 BUILD_DEPENDS +=	rust-crate-either_1_15_0-0:devel/rust-crates/either/1.15.0
+RUN_DEPENDS +=	rust-crate-either_1_15_0-0:devel/rust-crates/either/1.15.0
 
 # Direct registry deps: seed their rlibs/fingerprints before building this crate.
 _RUST_CRATE_ARCH =	${MACHINE_ARCH}
@@ -68,6 +76,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/cast-0.3.0 ${WRKDIR}/vendor/cast-0.3.0; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/cast-0.3.0.tar.gz ${WRKDIR}/vendor/cast-0.3.0 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/cast-0.3.0.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/cast-0.3.0.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/cast-0.3.0 ] && [ -d ${WRKDIR}/vendor/cast-0.3.0 ]; then \
+			mv ${WRKDIR}/vendor/cast-0.3.0 ${WRKDIR}/vendor/cast-0.3.0; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/cast-0.3.0.tar.gz ${WRKDIR}/vendor/cast-0.3.0 2>/dev/null || true; \
 	else \
 		echo "missing dep cast-0.3.0" >&2; exit 1; \
 	fi
@@ -79,6 +93,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/itertools-0.10.5 ${WRKDIR}/vendor/itertools-0.10.5; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/itertools-0.10.5.tar.gz ${WRKDIR}/vendor/itertools-0.10.5 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/itertools-0.10.5.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/itertools-0.10.5.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/itertools-0.10.5 ] && [ -d ${WRKDIR}/vendor/itertools-0.10.5 ]; then \
+			mv ${WRKDIR}/vendor/itertools-0.10.5 ${WRKDIR}/vendor/itertools-0.10.5; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/itertools-0.10.5.tar.gz ${WRKDIR}/vendor/itertools-0.10.5 2>/dev/null || true; \
 	else \
 		echo "missing dep itertools-0.10.5" >&2; exit 1; \
 	fi
@@ -90,6 +110,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/either-1.15.0 ${WRKDIR}/vendor/either-1.15.0; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/either-1.15.0.tar.gz ${WRKDIR}/vendor/either-1.15.0 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/either-1.15.0.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/either-1.15.0.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/either-1.15.0 ] && [ -d ${WRKDIR}/vendor/either-1.15.0 ]; then \
+			mv ${WRKDIR}/vendor/either-1.15.0 ${WRKDIR}/vendor/either-1.15.0; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/either-1.15.0.tar.gz ${WRKDIR}/vendor/either-1.15.0 2>/dev/null || true; \
 	else \
 		echo "missing dep either-1.15.0" >&2; exit 1; \
 	fi

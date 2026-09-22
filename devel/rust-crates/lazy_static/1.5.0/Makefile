@@ -43,7 +43,13 @@ MAKE_ENV +=		RUSTFLAGS=--cap-lints=allow
 MAKE_ENV +=		CARGO_ENCODED_RUSTFLAGS=--cap-lints=allow
 
 
+# dpb junks when depends_count >= 150 (default). post-extract/pre-build seed
+# vendor + rlibs from installed rust-crate packages; junking those first
+# fails with "missing dep". rmcp's subgraph is 216 BUILD_DEPENDS.
+DPB_PROPERTIES +=	nojunk
+
 BUILD_DEPENDS +=	rust-crate-spin_0_9_9-0:devel/rust-crates/spin/0.9.9
+RUN_DEPENDS +=	rust-crate-spin_0_9_9-0:devel/rust-crates/spin/0.9.9
 
 # Direct registry deps: seed their rlibs/fingerprints before building this crate.
 _RUST_CRATE_ARCH =	${MACHINE_ARCH}
@@ -66,6 +72,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/spin-0.9.9 ${WRKDIR}/vendor/spin-0.9.9; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/spin-0.9.9.tar.gz ${WRKDIR}/vendor/spin-0.9.9 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/spin-0.9.9.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/spin-0.9.9.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/spin-0.9.9 ] && [ -d ${WRKDIR}/vendor/spin-0.9.9 ]; then \
+			mv ${WRKDIR}/vendor/spin-0.9.9 ${WRKDIR}/vendor/spin-0.9.9; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/spin-0.9.9.tar.gz ${WRKDIR}/vendor/spin-0.9.9 2>/dev/null || true; \
 	else \
 		echo "missing dep spin-0.9.9" >&2; exit 1; \
 	fi

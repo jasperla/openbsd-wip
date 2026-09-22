@@ -43,13 +43,25 @@ MAKE_ENV +=		RUSTFLAGS=--cap-lints=allow
 MAKE_ENV +=		CARGO_ENCODED_RUSTFLAGS=--cap-lints=allow
 
 
+# dpb junks when depends_count >= 150 (default). post-extract/pre-build seed
+# vendor + rlibs from installed rust-crate packages; junking those first
+# fails with "missing dep". rmcp's subgraph is 216 BUILD_DEPENDS.
+DPB_PROPERTIES +=	nojunk
+
 BUILD_DEPENDS +=	rust-crate-phf_generator_0_13_1-0:devel/rust-crates/phf_generator/0.13.1
+RUN_DEPENDS +=	rust-crate-phf_generator_0_13_1-0:devel/rust-crates/phf_generator/0.13.1
 BUILD_DEPENDS +=	rust-crate-phf_shared_0_13_1-0:devel/rust-crates/phf_shared/0.13.1
+RUN_DEPENDS +=	rust-crate-phf_shared_0_13_1-0:devel/rust-crates/phf_shared/0.13.1
 BUILD_DEPENDS +=	rust-crate-proc_macro2_1_0_106-0:devel/rust-crates/proc-macro2/1.0.106
+RUN_DEPENDS +=	rust-crate-proc_macro2_1_0_106-0:devel/rust-crates/proc-macro2/1.0.106
 BUILD_DEPENDS +=	rust-crate-quote_1_0_45-0:devel/rust-crates/quote/1.0.45
+RUN_DEPENDS +=	rust-crate-quote_1_0_45-0:devel/rust-crates/quote/1.0.45
 BUILD_DEPENDS +=	rust-crate-fastrand_2_3_0-0:devel/rust-crates/fastrand/2.3.0
+RUN_DEPENDS +=	rust-crate-fastrand_2_3_0-0:devel/rust-crates/fastrand/2.3.0
 BUILD_DEPENDS +=	rust-crate-siphasher_1_0_3-0:devel/rust-crates/siphasher/1.0.3
+RUN_DEPENDS +=	rust-crate-siphasher_1_0_3-0:devel/rust-crates/siphasher/1.0.3
 BUILD_DEPENDS +=	rust-crate-unicode_ident_1_0_24-0:devel/rust-crates/unicode-ident/1.0.24
+RUN_DEPENDS +=	rust-crate-unicode_ident_1_0_24-0:devel/rust-crates/unicode-ident/1.0.24
 
 # Direct registry deps: seed their rlibs/fingerprints before building this crate.
 _RUST_CRATE_ARCH =	${MACHINE_ARCH}
@@ -72,6 +84,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/phf_generator-0.13.1 ${WRKDIR}/vendor/phf_generator-0.13.1; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/phf_generator-0.13.1.tar.gz ${WRKDIR}/vendor/phf_generator-0.13.1 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/phf_generator-0.13.1.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/phf_generator-0.13.1.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/phf_generator-0.13.1 ] && [ -d ${WRKDIR}/vendor/phf_generator-0.13.1 ]; then \
+			mv ${WRKDIR}/vendor/phf_generator-0.13.1 ${WRKDIR}/vendor/phf_generator-0.13.1; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/phf_generator-0.13.1.tar.gz ${WRKDIR}/vendor/phf_generator-0.13.1 2>/dev/null || true; \
 	else \
 		echo "missing dep phf_generator-0.13.1" >&2; exit 1; \
 	fi
@@ -83,6 +101,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/phf_shared-0.13.1 ${WRKDIR}/vendor/phf_shared-0.13.1; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/phf_shared-0.13.1.tar.gz ${WRKDIR}/vendor/phf_shared-0.13.1 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/phf_shared-0.13.1.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/phf_shared-0.13.1.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/phf_shared-0.13.1 ] && [ -d ${WRKDIR}/vendor/phf_shared-0.13.1 ]; then \
+			mv ${WRKDIR}/vendor/phf_shared-0.13.1 ${WRKDIR}/vendor/phf_shared-0.13.1; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/phf_shared-0.13.1.tar.gz ${WRKDIR}/vendor/phf_shared-0.13.1 2>/dev/null || true; \
 	else \
 		echo "missing dep phf_shared-0.13.1" >&2; exit 1; \
 	fi
@@ -94,6 +118,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/proc-macro2-1.0.106 ${WRKDIR}/vendor/proc-macro2-1.0.106; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/proc-macro2-1.0.106.tar.gz ${WRKDIR}/vendor/proc-macro2-1.0.106 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/proc-macro2-1.0.106.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/proc-macro2-1.0.106.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/proc-macro2-1.0.106 ] && [ -d ${WRKDIR}/vendor/proc-macro2-1.0.106 ]; then \
+			mv ${WRKDIR}/vendor/proc-macro2-1.0.106 ${WRKDIR}/vendor/proc-macro2-1.0.106; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/proc-macro2-1.0.106.tar.gz ${WRKDIR}/vendor/proc-macro2-1.0.106 2>/dev/null || true; \
 	else \
 		echo "missing dep proc-macro2-1.0.106" >&2; exit 1; \
 	fi
@@ -105,6 +135,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/quote-1.0.45 ${WRKDIR}/vendor/quote-1.0.45; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/quote-1.0.45.tar.gz ${WRKDIR}/vendor/quote-1.0.45 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/quote-1.0.45.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/quote-1.0.45.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/quote-1.0.45 ] && [ -d ${WRKDIR}/vendor/quote-1.0.45 ]; then \
+			mv ${WRKDIR}/vendor/quote-1.0.45 ${WRKDIR}/vendor/quote-1.0.45; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/quote-1.0.45.tar.gz ${WRKDIR}/vendor/quote-1.0.45 2>/dev/null || true; \
 	else \
 		echo "missing dep quote-1.0.45" >&2; exit 1; \
 	fi
@@ -116,6 +152,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/fastrand-2.3.0 ${WRKDIR}/vendor/fastrand-2.3.0; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/fastrand-2.3.0.tar.gz ${WRKDIR}/vendor/fastrand-2.3.0 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/fastrand-2.3.0.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/fastrand-2.3.0.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/fastrand-2.3.0 ] && [ -d ${WRKDIR}/vendor/fastrand-2.3.0 ]; then \
+			mv ${WRKDIR}/vendor/fastrand-2.3.0 ${WRKDIR}/vendor/fastrand-2.3.0; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/fastrand-2.3.0.tar.gz ${WRKDIR}/vendor/fastrand-2.3.0 2>/dev/null || true; \
 	else \
 		echo "missing dep fastrand-2.3.0" >&2; exit 1; \
 	fi
@@ -127,6 +169,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/siphasher-1.0.3 ${WRKDIR}/vendor/siphasher-1.0.3; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/siphasher-1.0.3.tar.gz ${WRKDIR}/vendor/siphasher-1.0.3 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/siphasher-1.0.3.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/siphasher-1.0.3.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/siphasher-1.0.3 ] && [ -d ${WRKDIR}/vendor/siphasher-1.0.3 ]; then \
+			mv ${WRKDIR}/vendor/siphasher-1.0.3 ${WRKDIR}/vendor/siphasher-1.0.3; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/siphasher-1.0.3.tar.gz ${WRKDIR}/vendor/siphasher-1.0.3 2>/dev/null || true; \
 	else \
 		echo "missing dep siphasher-1.0.3" >&2; exit 1; \
 	fi
@@ -138,6 +186,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/unicode-ident-1.0.24 ${WRKDIR}/vendor/unicode-ident-1.0.24; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/unicode-ident-1.0.24.tar.gz ${WRKDIR}/vendor/unicode-ident-1.0.24 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/unicode-ident-1.0.24.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/unicode-ident-1.0.24.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/unicode-ident-1.0.24 ] && [ -d ${WRKDIR}/vendor/unicode-ident-1.0.24 ]; then \
+			mv ${WRKDIR}/vendor/unicode-ident-1.0.24 ${WRKDIR}/vendor/unicode-ident-1.0.24; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/unicode-ident-1.0.24.tar.gz ${WRKDIR}/vendor/unicode-ident-1.0.24 2>/dev/null || true; \
 	else \
 		echo "missing dep unicode-ident-1.0.24" >&2; exit 1; \
 	fi

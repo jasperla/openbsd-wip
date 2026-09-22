@@ -43,8 +43,15 @@ MAKE_ENV +=		RUSTFLAGS=--cap-lints=allow
 MAKE_ENV +=		CARGO_ENCODED_RUSTFLAGS=--cap-lints=allow
 
 
+# dpb junks when depends_count >= 150 (default). post-extract/pre-build seed
+# vendor + rlibs from installed rust-crate packages; junking those first
+# fails with "missing dep". rmcp's subgraph is 216 BUILD_DEPENDS.
+DPB_PROPERTIES +=	nojunk
+
 BUILD_DEPENDS +=	rust-crate-log_0_4_32-0:devel/rust-crates/log/0.4.32
+RUN_DEPENDS +=	rust-crate-log_0_4_32-0:devel/rust-crates/log/0.4.32
 BUILD_DEPENDS +=	rust-crate-value_bag_1_12_0-0:devel/rust-crates/value-bag/1.12.0
+RUN_DEPENDS +=	rust-crate-value_bag_1_12_0-0:devel/rust-crates/value-bag/1.12.0
 
 # Direct registry deps: seed their rlibs/fingerprints before building this crate.
 _RUST_CRATE_ARCH =	${MACHINE_ARCH}
@@ -67,6 +74,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/log-0.4.32 ${WRKDIR}/vendor/log-0.4.32; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/log-0.4.32.tar.gz ${WRKDIR}/vendor/log-0.4.32 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/log-0.4.32.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/log-0.4.32.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/log-0.4.32 ] && [ -d ${WRKDIR}/vendor/log-0.4.32 ]; then \
+			mv ${WRKDIR}/vendor/log-0.4.32 ${WRKDIR}/vendor/log-0.4.32; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/log-0.4.32.tar.gz ${WRKDIR}/vendor/log-0.4.32 2>/dev/null || true; \
 	else \
 		echo "missing dep log-0.4.32" >&2; exit 1; \
 	fi
@@ -78,6 +91,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/value-bag-1.12.0 ${WRKDIR}/vendor/value-bag-1.12.0; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/value-bag-1.12.0.tar.gz ${WRKDIR}/vendor/value-bag-1.12.0 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/value-bag-1.12.0.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/value-bag-1.12.0.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/value-bag-1.12.0 ] && [ -d ${WRKDIR}/vendor/value-bag-1.12.0 ]; then \
+			mv ${WRKDIR}/vendor/value-bag-1.12.0 ${WRKDIR}/vendor/value-bag-1.12.0; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/value-bag-1.12.0.tar.gz ${WRKDIR}/vendor/value-bag-1.12.0 2>/dev/null || true; \
 	else \
 		echo "missing dep value-bag-1.12.0" >&2; exit 1; \
 	fi

@@ -43,7 +43,13 @@ MAKE_ENV +=		RUSTFLAGS=--cap-lints=allow
 MAKE_ENV +=		CARGO_ENCODED_RUSTFLAGS=--cap-lints=allow
 
 
+# dpb junks when depends_count >= 150 (default). post-extract/pre-build seed
+# vendor + rlibs from installed rust-crate packages; junking those first
+# fails with "missing dep". rmcp's subgraph is 216 BUILD_DEPENDS.
+DPB_PROPERTIES +=	nojunk
+
 BUILD_DEPENDS +=	rust-crate-sdd_3_0_10-0:devel/rust-crates/sdd/3.0.10
+RUN_DEPENDS +=	rust-crate-sdd_3_0_10-0:devel/rust-crates/sdd/3.0.10
 
 # Direct registry deps: seed their rlibs/fingerprints before building this crate.
 _RUST_CRATE_ARCH =	${MACHINE_ARCH}
@@ -66,6 +72,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/sdd-3.0.10 ${WRKDIR}/vendor/sdd-3.0.10; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/sdd-3.0.10.tar.gz ${WRKDIR}/vendor/sdd-3.0.10 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/sdd-3.0.10.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/sdd-3.0.10.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/sdd-3.0.10 ] && [ -d ${WRKDIR}/vendor/sdd-3.0.10 ]; then \
+			mv ${WRKDIR}/vendor/sdd-3.0.10 ${WRKDIR}/vendor/sdd-3.0.10; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/sdd-3.0.10.tar.gz ${WRKDIR}/vendor/sdd-3.0.10 2>/dev/null || true; \
 	else \
 		echo "missing dep sdd-3.0.10" >&2; exit 1; \
 	fi

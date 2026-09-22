@@ -43,11 +43,21 @@ MAKE_ENV +=		RUSTFLAGS=--cap-lints=allow
 MAKE_ENV +=		CARGO_ENCODED_RUSTFLAGS=--cap-lints=allow
 
 
+# dpb junks when depends_count >= 150 (default). post-extract/pre-build seed
+# vendor + rlibs from installed rust-crate packages; junking those first
+# fails with "missing dep". rmcp's subgraph is 216 BUILD_DEPENDS.
+DPB_PROPERTIES +=	nojunk
+
 BUILD_DEPENDS +=	rust-crate-unicode_bidi_0_3_18-0:devel/rust-crates/unicode-bidi/0.3.18
+RUN_DEPENDS +=	rust-crate-unicode_bidi_0_3_18-0:devel/rust-crates/unicode-bidi/0.3.18
 BUILD_DEPENDS +=	rust-crate-unicode_normalization_0_1_25-0:devel/rust-crates/unicode-normalization/0.1.25
+RUN_DEPENDS +=	rust-crate-unicode_normalization_0_1_25-0:devel/rust-crates/unicode-normalization/0.1.25
 BUILD_DEPENDS +=	rust-crate-unicode_properties_0_1_4-0:devel/rust-crates/unicode-properties/0.1.4
+RUN_DEPENDS +=	rust-crate-unicode_properties_0_1_4-0:devel/rust-crates/unicode-properties/0.1.4
 BUILD_DEPENDS +=	rust-crate-tinyvec_1_10_0-0:devel/rust-crates/tinyvec/1.10.0
+RUN_DEPENDS +=	rust-crate-tinyvec_1_10_0-0:devel/rust-crates/tinyvec/1.10.0
 BUILD_DEPENDS +=	rust-crate-tinyvec_macros_0_1_1-0:devel/rust-crates/tinyvec_macros/0.1.1
+RUN_DEPENDS +=	rust-crate-tinyvec_macros_0_1_1-0:devel/rust-crates/tinyvec_macros/0.1.1
 
 # Direct registry deps: seed their rlibs/fingerprints before building this crate.
 _RUST_CRATE_ARCH =	${MACHINE_ARCH}
@@ -70,6 +80,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/unicode-bidi-0.3.18 ${WRKDIR}/vendor/unicode-bidi-0.3.18; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/unicode-bidi-0.3.18.tar.gz ${WRKDIR}/vendor/unicode-bidi-0.3.18 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/unicode-bidi-0.3.18.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/unicode-bidi-0.3.18.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/unicode-bidi-0.3.18 ] && [ -d ${WRKDIR}/vendor/unicode-bidi-0.3.18 ]; then \
+			mv ${WRKDIR}/vendor/unicode-bidi-0.3.18 ${WRKDIR}/vendor/unicode-bidi-0.3.18; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/unicode-bidi-0.3.18.tar.gz ${WRKDIR}/vendor/unicode-bidi-0.3.18 2>/dev/null || true; \
 	else \
 		echo "missing dep unicode-bidi-0.3.18" >&2; exit 1; \
 	fi
@@ -81,6 +97,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/unicode-normalization-0.1.25 ${WRKDIR}/vendor/unicode-normalization-0.1.25; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/unicode-normalization-0.1.25.tar.gz ${WRKDIR}/vendor/unicode-normalization-0.1.25 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/unicode-normalization-0.1.25.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/unicode-normalization-0.1.25.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/unicode-normalization-0.1.25 ] && [ -d ${WRKDIR}/vendor/unicode-normalization-0.1.25 ]; then \
+			mv ${WRKDIR}/vendor/unicode-normalization-0.1.25 ${WRKDIR}/vendor/unicode-normalization-0.1.25; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/unicode-normalization-0.1.25.tar.gz ${WRKDIR}/vendor/unicode-normalization-0.1.25 2>/dev/null || true; \
 	else \
 		echo "missing dep unicode-normalization-0.1.25" >&2; exit 1; \
 	fi
@@ -92,6 +114,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/unicode-properties-0.1.4 ${WRKDIR}/vendor/unicode-properties-0.1.4; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/unicode-properties-0.1.4.tar.gz ${WRKDIR}/vendor/unicode-properties-0.1.4 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/unicode-properties-0.1.4.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/unicode-properties-0.1.4.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/unicode-properties-0.1.4 ] && [ -d ${WRKDIR}/vendor/unicode-properties-0.1.4 ]; then \
+			mv ${WRKDIR}/vendor/unicode-properties-0.1.4 ${WRKDIR}/vendor/unicode-properties-0.1.4; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/unicode-properties-0.1.4.tar.gz ${WRKDIR}/vendor/unicode-properties-0.1.4 2>/dev/null || true; \
 	else \
 		echo "missing dep unicode-properties-0.1.4" >&2; exit 1; \
 	fi
@@ -103,6 +131,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/tinyvec-1.10.0 ${WRKDIR}/vendor/tinyvec-1.10.0; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/tinyvec-1.10.0.tar.gz ${WRKDIR}/vendor/tinyvec-1.10.0 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/tinyvec-1.10.0.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/tinyvec-1.10.0.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/tinyvec-1.10.0 ] && [ -d ${WRKDIR}/vendor/tinyvec-1.10.0 ]; then \
+			mv ${WRKDIR}/vendor/tinyvec-1.10.0 ${WRKDIR}/vendor/tinyvec-1.10.0; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/tinyvec-1.10.0.tar.gz ${WRKDIR}/vendor/tinyvec-1.10.0 2>/dev/null || true; \
 	else \
 		echo "missing dep tinyvec-1.10.0" >&2; exit 1; \
 	fi
@@ -114,6 +148,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/tinyvec_macros-0.1.1 ${WRKDIR}/vendor/tinyvec_macros-0.1.1; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/tinyvec_macros-0.1.1.tar.gz ${WRKDIR}/vendor/tinyvec_macros-0.1.1 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/tinyvec_macros-0.1.1.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/tinyvec_macros-0.1.1.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/tinyvec_macros-0.1.1 ] && [ -d ${WRKDIR}/vendor/tinyvec_macros-0.1.1 ]; then \
+			mv ${WRKDIR}/vendor/tinyvec_macros-0.1.1 ${WRKDIR}/vendor/tinyvec_macros-0.1.1; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/tinyvec_macros-0.1.1.tar.gz ${WRKDIR}/vendor/tinyvec_macros-0.1.1 2>/dev/null || true; \
 	else \
 		echo "missing dep tinyvec_macros-0.1.1" >&2; exit 1; \
 	fi

@@ -43,8 +43,15 @@ MAKE_ENV +=		RUSTFLAGS=--cap-lints=allow
 MAKE_ENV +=		CARGO_ENCODED_RUSTFLAGS=--cap-lints=allow
 
 
+# dpb junks when depends_count >= 150 (default). post-extract/pre-build seed
+# vendor + rlibs from installed rust-crate packages; junking those first
+# fails with "missing dep". rmcp's subgraph is 216 BUILD_DEPENDS.
+DPB_PROPERTIES +=	nojunk
+
 BUILD_DEPENDS +=	rust-crate-memchr_2_8_2-0:devel/rust-crates/memchr/2.8.2
+RUN_DEPENDS +=	rust-crate-memchr_2_8_2-0:devel/rust-crates/memchr/2.8.2
 BUILD_DEPENDS +=	rust-crate-ucd_trie_0_1_7-0:devel/rust-crates/ucd-trie/0.1.7
+RUN_DEPENDS +=	rust-crate-ucd_trie_0_1_7-0:devel/rust-crates/ucd-trie/0.1.7
 
 # Direct registry deps: seed their rlibs/fingerprints before building this crate.
 _RUST_CRATE_ARCH =	${MACHINE_ARCH}
@@ -67,6 +74,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/memchr-2.8.2 ${WRKDIR}/vendor/memchr-2.8.2; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/memchr-2.8.2.tar.gz ${WRKDIR}/vendor/memchr-2.8.2 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/memchr-2.8.2.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/memchr-2.8.2.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/memchr-2.8.2 ] && [ -d ${WRKDIR}/vendor/memchr-2.8.2 ]; then \
+			mv ${WRKDIR}/vendor/memchr-2.8.2 ${WRKDIR}/vendor/memchr-2.8.2; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/memchr-2.8.2.tar.gz ${WRKDIR}/vendor/memchr-2.8.2 2>/dev/null || true; \
 	else \
 		echo "missing dep memchr-2.8.2" >&2; exit 1; \
 	fi
@@ -78,6 +91,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/ucd-trie-0.1.7 ${WRKDIR}/vendor/ucd-trie-0.1.7; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/ucd-trie-0.1.7.tar.gz ${WRKDIR}/vendor/ucd-trie-0.1.7 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/ucd-trie-0.1.7.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/ucd-trie-0.1.7.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/ucd-trie-0.1.7 ] && [ -d ${WRKDIR}/vendor/ucd-trie-0.1.7 ]; then \
+			mv ${WRKDIR}/vendor/ucd-trie-0.1.7 ${WRKDIR}/vendor/ucd-trie-0.1.7; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/ucd-trie-0.1.7.tar.gz ${WRKDIR}/vendor/ucd-trie-0.1.7 2>/dev/null || true; \
 	else \
 		echo "missing dep ucd-trie-0.1.7" >&2; exit 1; \
 	fi

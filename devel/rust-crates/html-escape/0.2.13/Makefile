@@ -43,7 +43,13 @@ MAKE_ENV +=		RUSTFLAGS=--cap-lints=allow
 MAKE_ENV +=		CARGO_ENCODED_RUSTFLAGS=--cap-lints=allow
 
 
+# dpb junks when depends_count >= 150 (default). post-extract/pre-build seed
+# vendor + rlibs from installed rust-crate packages; junking those first
+# fails with "missing dep". rmcp's subgraph is 216 BUILD_DEPENDS.
+DPB_PROPERTIES +=	nojunk
+
 BUILD_DEPENDS +=	rust-crate-utf8_width_0_1_7-0:devel/rust-crates/utf8-width/0.1.7
+RUN_DEPENDS +=	rust-crate-utf8_width_0_1_7-0:devel/rust-crates/utf8-width/0.1.7
 
 # Direct registry deps: seed their rlibs/fingerprints before building this crate.
 _RUST_CRATE_ARCH =	${MACHINE_ARCH}
@@ -66,6 +72,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/utf8-width-0.1.7 ${WRKDIR}/vendor/utf8-width-0.1.7; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/utf8-width-0.1.7.tar.gz ${WRKDIR}/vendor/utf8-width-0.1.7 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/utf8-width-0.1.7.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/utf8-width-0.1.7.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/utf8-width-0.1.7 ] && [ -d ${WRKDIR}/vendor/utf8-width-0.1.7 ]; then \
+			mv ${WRKDIR}/vendor/utf8-width-0.1.7 ${WRKDIR}/vendor/utf8-width-0.1.7; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/utf8-width-0.1.7.tar.gz ${WRKDIR}/vendor/utf8-width-0.1.7 2>/dev/null || true; \
 	else \
 		echo "missing dep utf8-width-0.1.7" >&2; exit 1; \
 	fi

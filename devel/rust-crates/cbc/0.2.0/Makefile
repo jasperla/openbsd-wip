@@ -43,12 +43,23 @@ MAKE_ENV +=		RUSTFLAGS=--cap-lints=allow
 MAKE_ENV +=		CARGO_ENCODED_RUSTFLAGS=--cap-lints=allow
 
 
+# dpb junks when depends_count >= 150 (default). post-extract/pre-build seed
+# vendor + rlibs from installed rust-crate packages; junking those first
+# fails with "missing dep". rmcp's subgraph is 216 BUILD_DEPENDS.
+DPB_PROPERTIES +=	nojunk
+
 BUILD_DEPENDS +=	rust-crate-cipher_0_5_1-0:devel/rust-crates/cipher/0.5.1
+RUN_DEPENDS +=	rust-crate-cipher_0_5_1-0:devel/rust-crates/cipher/0.5.1
 BUILD_DEPENDS +=	rust-crate-crypto_common_0_2_1-0:devel/rust-crates/crypto-common/0.2.1
+RUN_DEPENDS +=	rust-crate-crypto_common_0_2_1-0:devel/rust-crates/crypto-common/0.2.1
 BUILD_DEPENDS +=	rust-crate-inout_0_2_2-0:devel/rust-crates/inout/0.2.2
+RUN_DEPENDS +=	rust-crate-inout_0_2_2-0:devel/rust-crates/inout/0.2.2
 BUILD_DEPENDS +=	rust-crate-hybrid_array_0_4_10-0:devel/rust-crates/hybrid-array/0.4.10
+RUN_DEPENDS +=	rust-crate-hybrid_array_0_4_10-0:devel/rust-crates/hybrid-array/0.4.10
 BUILD_DEPENDS +=	rust-crate-block_padding_0_4_2-0:devel/rust-crates/block-padding/0.4.2
+RUN_DEPENDS +=	rust-crate-block_padding_0_4_2-0:devel/rust-crates/block-padding/0.4.2
 BUILD_DEPENDS +=	rust-crate-typenum_1_19_0-0:devel/rust-crates/typenum/1.19.0
+RUN_DEPENDS +=	rust-crate-typenum_1_19_0-0:devel/rust-crates/typenum/1.19.0
 
 # Direct registry deps: seed their rlibs/fingerprints before building this crate.
 _RUST_CRATE_ARCH =	${MACHINE_ARCH}
@@ -71,6 +82,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/cipher-0.5.1 ${WRKDIR}/vendor/cipher-0.5.1; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/cipher-0.5.1.tar.gz ${WRKDIR}/vendor/cipher-0.5.1 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/cipher-0.5.1.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/cipher-0.5.1.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/cipher-0.5.1 ] && [ -d ${WRKDIR}/vendor/cipher-0.5.1 ]; then \
+			mv ${WRKDIR}/vendor/cipher-0.5.1 ${WRKDIR}/vendor/cipher-0.5.1; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/cipher-0.5.1.tar.gz ${WRKDIR}/vendor/cipher-0.5.1 2>/dev/null || true; \
 	else \
 		echo "missing dep cipher-0.5.1" >&2; exit 1; \
 	fi
@@ -82,6 +99,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/crypto-common-0.2.1 ${WRKDIR}/vendor/crypto-common-0.2.1; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/crypto-common-0.2.1.tar.gz ${WRKDIR}/vendor/crypto-common-0.2.1 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/crypto-common-0.2.1.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/crypto-common-0.2.1.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/crypto-common-0.2.1 ] && [ -d ${WRKDIR}/vendor/crypto-common-0.2.1 ]; then \
+			mv ${WRKDIR}/vendor/crypto-common-0.2.1 ${WRKDIR}/vendor/crypto-common-0.2.1; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/crypto-common-0.2.1.tar.gz ${WRKDIR}/vendor/crypto-common-0.2.1 2>/dev/null || true; \
 	else \
 		echo "missing dep crypto-common-0.2.1" >&2; exit 1; \
 	fi
@@ -93,6 +116,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/inout-0.2.2 ${WRKDIR}/vendor/inout-0.2.2; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/inout-0.2.2.tar.gz ${WRKDIR}/vendor/inout-0.2.2 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/inout-0.2.2.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/inout-0.2.2.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/inout-0.2.2 ] && [ -d ${WRKDIR}/vendor/inout-0.2.2 ]; then \
+			mv ${WRKDIR}/vendor/inout-0.2.2 ${WRKDIR}/vendor/inout-0.2.2; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/inout-0.2.2.tar.gz ${WRKDIR}/vendor/inout-0.2.2 2>/dev/null || true; \
 	else \
 		echo "missing dep inout-0.2.2" >&2; exit 1; \
 	fi
@@ -104,6 +133,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/hybrid-array-0.4.10 ${WRKDIR}/vendor/hybrid-array-0.4.10; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/hybrid-array-0.4.10.tar.gz ${WRKDIR}/vendor/hybrid-array-0.4.10 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/hybrid-array-0.4.10.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/hybrid-array-0.4.10.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/hybrid-array-0.4.10 ] && [ -d ${WRKDIR}/vendor/hybrid-array-0.4.10 ]; then \
+			mv ${WRKDIR}/vendor/hybrid-array-0.4.10 ${WRKDIR}/vendor/hybrid-array-0.4.10; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/hybrid-array-0.4.10.tar.gz ${WRKDIR}/vendor/hybrid-array-0.4.10 2>/dev/null || true; \
 	else \
 		echo "missing dep hybrid-array-0.4.10" >&2; exit 1; \
 	fi
@@ -115,6 +150,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/block-padding-0.4.2 ${WRKDIR}/vendor/block-padding-0.4.2; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/block-padding-0.4.2.tar.gz ${WRKDIR}/vendor/block-padding-0.4.2 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/block-padding-0.4.2.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/block-padding-0.4.2.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/block-padding-0.4.2 ] && [ -d ${WRKDIR}/vendor/block-padding-0.4.2 ]; then \
+			mv ${WRKDIR}/vendor/block-padding-0.4.2 ${WRKDIR}/vendor/block-padding-0.4.2; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/block-padding-0.4.2.tar.gz ${WRKDIR}/vendor/block-padding-0.4.2 2>/dev/null || true; \
 	else \
 		echo "missing dep block-padding-0.4.2" >&2; exit 1; \
 	fi
@@ -126,6 +167,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/typenum-1.19.0 ${WRKDIR}/vendor/typenum-1.19.0; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/typenum-1.19.0.tar.gz ${WRKDIR}/vendor/typenum-1.19.0 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/typenum-1.19.0.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/typenum-1.19.0.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/typenum-1.19.0 ] && [ -d ${WRKDIR}/vendor/typenum-1.19.0 ]; then \
+			mv ${WRKDIR}/vendor/typenum-1.19.0 ${WRKDIR}/vendor/typenum-1.19.0; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/typenum-1.19.0.tar.gz ${WRKDIR}/vendor/typenum-1.19.0 2>/dev/null || true; \
 	else \
 		echo "missing dep typenum-1.19.0" >&2; exit 1; \
 	fi

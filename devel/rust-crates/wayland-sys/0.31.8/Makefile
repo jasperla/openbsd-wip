@@ -43,7 +43,13 @@ MAKE_ENV +=		RUSTFLAGS=--cap-lints=allow
 MAKE_ENV +=		CARGO_ENCODED_RUSTFLAGS=--cap-lints=allow
 
 
+# dpb junks when depends_count >= 150 (default). post-extract/pre-build seed
+# vendor + rlibs from installed rust-crate packages; junking those first
+# fails with "missing dep". rmcp's subgraph is 216 BUILD_DEPENDS.
+DPB_PROPERTIES +=	nojunk
+
 BUILD_DEPENDS +=	rust-crate-pkg_config_0_3_32-0:devel/rust-crates/pkg-config/0.3.32
+RUN_DEPENDS +=	rust-crate-pkg_config_0_3_32-0:devel/rust-crates/pkg-config/0.3.32
 
 # Direct registry deps: seed their rlibs/fingerprints before building this crate.
 _RUST_CRATE_ARCH =	${MACHINE_ARCH}
@@ -66,6 +72,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/pkg-config-0.3.32 ${WRKDIR}/vendor/pkg-config-0.3.32; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/pkg-config-0.3.32.tar.gz ${WRKDIR}/vendor/pkg-config-0.3.32 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/pkg-config-0.3.32.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/pkg-config-0.3.32.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/pkg-config-0.3.32 ] && [ -d ${WRKDIR}/vendor/pkg-config-0.3.32 ]; then \
+			mv ${WRKDIR}/vendor/pkg-config-0.3.32 ${WRKDIR}/vendor/pkg-config-0.3.32; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/pkg-config-0.3.32.tar.gz ${WRKDIR}/vendor/pkg-config-0.3.32 2>/dev/null || true; \
 	else \
 		echo "missing dep pkg-config-0.3.32" >&2; exit 1; \
 	fi

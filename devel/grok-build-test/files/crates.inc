@@ -5,6 +5,9 @@
 # PKGPATH layout: devel/rust-crates/<name>/<version>
 # Makefile: .include "${.CURDIR}/files/crates.inc"
 # 1244 registry crates
+# nojunk: dpb default junk=150 would pkg_delete these before extract.
+
+DPB_PROPERTIES +=	nojunk
 
 BUILD_DEPENDS +=	rust-crate-adler2_2_0_1-0:devel/rust-crates/adler2/2.0.1
 BUILD_DEPENDS +=	rust-crate-alloc_no_stdlib_2_0_4-0:devel/rust-crates/alloc-no-stdlib/2.0.4

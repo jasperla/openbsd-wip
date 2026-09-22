@@ -43,8 +43,15 @@ MAKE_ENV +=		RUSTFLAGS=--cap-lints=allow
 MAKE_ENV +=		CARGO_ENCODED_RUSTFLAGS=--cap-lints=allow
 
 
+# dpb junks when depends_count >= 150 (default). post-extract/pre-build seed
+# vendor + rlibs from installed rust-crate packages; junking those first
+# fails with "missing dep". rmcp's subgraph is 216 BUILD_DEPENDS.
+DPB_PROPERTIES +=	nojunk
+
 BUILD_DEPENDS +=	rust-crate-small_ctor_0_1_2-0:devel/rust-crates/small_ctor/0.1.2
+RUN_DEPENDS +=	rust-crate-small_ctor_0_1_2-0:devel/rust-crates/small_ctor/0.1.2
 BUILD_DEPENDS +=	rust-crate-web_time_1_1_0-0:devel/rust-crates/web-time/1.1.0
+RUN_DEPENDS +=	rust-crate-web_time_1_1_0-0:devel/rust-crates/web-time/1.1.0
 
 # Direct registry deps: seed their rlibs/fingerprints before building this crate.
 _RUST_CRATE_ARCH =	${MACHINE_ARCH}
@@ -67,6 +74,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/small_ctor-0.1.2 ${WRKDIR}/vendor/small_ctor-0.1.2; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/small_ctor-0.1.2.tar.gz ${WRKDIR}/vendor/small_ctor-0.1.2 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/small_ctor-0.1.2.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/small_ctor-0.1.2.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/small_ctor-0.1.2 ] && [ -d ${WRKDIR}/vendor/small_ctor-0.1.2 ]; then \
+			mv ${WRKDIR}/vendor/small_ctor-0.1.2 ${WRKDIR}/vendor/small_ctor-0.1.2; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/small_ctor-0.1.2.tar.gz ${WRKDIR}/vendor/small_ctor-0.1.2 2>/dev/null || true; \
 	else \
 		echo "missing dep small_ctor-0.1.2" >&2; exit 1; \
 	fi
@@ -78,6 +91,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/web-time-1.1.0 ${WRKDIR}/vendor/web-time-1.1.0; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/web-time-1.1.0.tar.gz ${WRKDIR}/vendor/web-time-1.1.0 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/web-time-1.1.0.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/web-time-1.1.0.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/web-time-1.1.0 ] && [ -d ${WRKDIR}/vendor/web-time-1.1.0 ]; then \
+			mv ${WRKDIR}/vendor/web-time-1.1.0 ${WRKDIR}/vendor/web-time-1.1.0; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/web-time-1.1.0.tar.gz ${WRKDIR}/vendor/web-time-1.1.0 2>/dev/null || true; \
 	else \
 		echo "missing dep web-time-1.1.0" >&2; exit 1; \
 	fi

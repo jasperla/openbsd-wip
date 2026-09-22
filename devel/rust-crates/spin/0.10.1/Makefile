@@ -43,8 +43,15 @@ MAKE_ENV +=		RUSTFLAGS=--cap-lints=allow
 MAKE_ENV +=		CARGO_ENCODED_RUSTFLAGS=--cap-lints=allow
 
 
+# dpb junks when depends_count >= 150 (default). post-extract/pre-build seed
+# vendor + rlibs from installed rust-crate packages; junking those first
+# fails with "missing dep". rmcp's subgraph is 216 BUILD_DEPENDS.
+DPB_PROPERTIES +=	nojunk
+
 BUILD_DEPENDS +=	rust-crate-lock_api_0_4_14-0:devel/rust-crates/lock_api/0.4.14
+RUN_DEPENDS +=	rust-crate-lock_api_0_4_14-0:devel/rust-crates/lock_api/0.4.14
 BUILD_DEPENDS +=	rust-crate-scopeguard_1_2_0-0:devel/rust-crates/scopeguard/1.2.0
+RUN_DEPENDS +=	rust-crate-scopeguard_1_2_0-0:devel/rust-crates/scopeguard/1.2.0
 
 # Direct registry deps: seed their rlibs/fingerprints before building this crate.
 _RUST_CRATE_ARCH =	${MACHINE_ARCH}
@@ -67,6 +74,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/lock_api-0.4.14 ${WRKDIR}/vendor/lock_api-0.4.14; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/lock_api-0.4.14.tar.gz ${WRKDIR}/vendor/lock_api-0.4.14 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/lock_api-0.4.14.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/lock_api-0.4.14.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/lock_api-0.4.14 ] && [ -d ${WRKDIR}/vendor/lock_api-0.4.14 ]; then \
+			mv ${WRKDIR}/vendor/lock_api-0.4.14 ${WRKDIR}/vendor/lock_api-0.4.14; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/lock_api-0.4.14.tar.gz ${WRKDIR}/vendor/lock_api-0.4.14 2>/dev/null || true; \
 	else \
 		echo "missing dep lock_api-0.4.14" >&2; exit 1; \
 	fi
@@ -78,6 +91,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/scopeguard-1.2.0 ${WRKDIR}/vendor/scopeguard-1.2.0; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/scopeguard-1.2.0.tar.gz ${WRKDIR}/vendor/scopeguard-1.2.0 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/scopeguard-1.2.0.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/scopeguard-1.2.0.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/scopeguard-1.2.0 ] && [ -d ${WRKDIR}/vendor/scopeguard-1.2.0 ]; then \
+			mv ${WRKDIR}/vendor/scopeguard-1.2.0 ${WRKDIR}/vendor/scopeguard-1.2.0; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/scopeguard-1.2.0.tar.gz ${WRKDIR}/vendor/scopeguard-1.2.0 2>/dev/null || true; \
 	else \
 		echo "missing dep scopeguard-1.2.0" >&2; exit 1; \
 	fi

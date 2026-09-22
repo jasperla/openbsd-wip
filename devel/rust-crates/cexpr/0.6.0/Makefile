@@ -43,9 +43,17 @@ MAKE_ENV +=		RUSTFLAGS=--cap-lints=allow
 MAKE_ENV +=		CARGO_ENCODED_RUSTFLAGS=--cap-lints=allow
 
 
+# dpb junks when depends_count >= 150 (default). post-extract/pre-build seed
+# vendor + rlibs from installed rust-crate packages; junking those first
+# fails with "missing dep". rmcp's subgraph is 216 BUILD_DEPENDS.
+DPB_PROPERTIES +=	nojunk
+
 BUILD_DEPENDS +=	rust-crate-nom_7_1_3-0:devel/rust-crates/nom/7.1.3
+RUN_DEPENDS +=	rust-crate-nom_7_1_3-0:devel/rust-crates/nom/7.1.3
 BUILD_DEPENDS +=	rust-crate-memchr_2_8_2-0:devel/rust-crates/memchr/2.8.2
+RUN_DEPENDS +=	rust-crate-memchr_2_8_2-0:devel/rust-crates/memchr/2.8.2
 BUILD_DEPENDS +=	rust-crate-minimal_lexical_0_2_1-0:devel/rust-crates/minimal-lexical/0.2.1
+RUN_DEPENDS +=	rust-crate-minimal_lexical_0_2_1-0:devel/rust-crates/minimal-lexical/0.2.1
 
 # Direct registry deps: seed their rlibs/fingerprints before building this crate.
 _RUST_CRATE_ARCH =	${MACHINE_ARCH}
@@ -68,6 +76,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/nom-7.1.3 ${WRKDIR}/vendor/nom-7.1.3; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/nom-7.1.3.tar.gz ${WRKDIR}/vendor/nom-7.1.3 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/nom-7.1.3.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/nom-7.1.3.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/nom-7.1.3 ] && [ -d ${WRKDIR}/vendor/nom-7.1.3 ]; then \
+			mv ${WRKDIR}/vendor/nom-7.1.3 ${WRKDIR}/vendor/nom-7.1.3; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/nom-7.1.3.tar.gz ${WRKDIR}/vendor/nom-7.1.3 2>/dev/null || true; \
 	else \
 		echo "missing dep nom-7.1.3" >&2; exit 1; \
 	fi
@@ -79,6 +93,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/memchr-2.8.2 ${WRKDIR}/vendor/memchr-2.8.2; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/memchr-2.8.2.tar.gz ${WRKDIR}/vendor/memchr-2.8.2 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/memchr-2.8.2.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/memchr-2.8.2.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/memchr-2.8.2 ] && [ -d ${WRKDIR}/vendor/memchr-2.8.2 ]; then \
+			mv ${WRKDIR}/vendor/memchr-2.8.2 ${WRKDIR}/vendor/memchr-2.8.2; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/memchr-2.8.2.tar.gz ${WRKDIR}/vendor/memchr-2.8.2 2>/dev/null || true; \
 	else \
 		echo "missing dep memchr-2.8.2" >&2; exit 1; \
 	fi
@@ -90,6 +110,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/minimal-lexical-0.2.1 ${WRKDIR}/vendor/minimal-lexical-0.2.1; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/minimal-lexical-0.2.1.tar.gz ${WRKDIR}/vendor/minimal-lexical-0.2.1 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/minimal-lexical-0.2.1.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/minimal-lexical-0.2.1.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/minimal-lexical-0.2.1 ] && [ -d ${WRKDIR}/vendor/minimal-lexical-0.2.1 ]; then \
+			mv ${WRKDIR}/vendor/minimal-lexical-0.2.1 ${WRKDIR}/vendor/minimal-lexical-0.2.1; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/minimal-lexical-0.2.1.tar.gz ${WRKDIR}/vendor/minimal-lexical-0.2.1 2>/dev/null || true; \
 	else \
 		echo "missing dep minimal-lexical-0.2.1" >&2; exit 1; \
 	fi

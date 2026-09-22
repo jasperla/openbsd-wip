@@ -43,9 +43,17 @@ MAKE_ENV +=		RUSTFLAGS=--cap-lints=allow
 MAKE_ENV +=		CARGO_ENCODED_RUSTFLAGS=--cap-lints=allow
 
 
+# dpb junks when depends_count >= 150 (default). post-extract/pre-build seed
+# vendor + rlibs from installed rust-crate packages; junking those first
+# fails with "missing dep". rmcp's subgraph is 216 BUILD_DEPENDS.
+DPB_PROPERTIES +=	nojunk
+
 BUILD_DEPENDS +=	rust-crate-alloc_no_stdlib_2_0_4-0:devel/rust-crates/alloc-no-stdlib/2.0.4
+RUN_DEPENDS +=	rust-crate-alloc_no_stdlib_2_0_4-0:devel/rust-crates/alloc-no-stdlib/2.0.4
 BUILD_DEPENDS +=	rust-crate-alloc_stdlib_0_2_2-0:devel/rust-crates/alloc-stdlib/0.2.2
+RUN_DEPENDS +=	rust-crate-alloc_stdlib_0_2_2-0:devel/rust-crates/alloc-stdlib/0.2.2
 BUILD_DEPENDS +=	rust-crate-brotli_decompressor_4_0_3-0:devel/rust-crates/brotli-decompressor/4.0.3
+RUN_DEPENDS +=	rust-crate-brotli_decompressor_4_0_3-0:devel/rust-crates/brotli-decompressor/4.0.3
 
 # Direct registry deps: seed their rlibs/fingerprints before building this crate.
 _RUST_CRATE_ARCH =	${MACHINE_ARCH}
@@ -68,6 +76,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/alloc-no-stdlib-2.0.4 ${WRKDIR}/vendor/alloc-no-stdlib-2.0.4; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/alloc-no-stdlib-2.0.4.tar.gz ${WRKDIR}/vendor/alloc-no-stdlib-2.0.4 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/alloc-no-stdlib-2.0.4.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/alloc-no-stdlib-2.0.4.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/alloc-no-stdlib-2.0.4 ] && [ -d ${WRKDIR}/vendor/alloc-no-stdlib-2.0.4 ]; then \
+			mv ${WRKDIR}/vendor/alloc-no-stdlib-2.0.4 ${WRKDIR}/vendor/alloc-no-stdlib-2.0.4; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/alloc-no-stdlib-2.0.4.tar.gz ${WRKDIR}/vendor/alloc-no-stdlib-2.0.4 2>/dev/null || true; \
 	else \
 		echo "missing dep alloc-no-stdlib-2.0.4" >&2; exit 1; \
 	fi
@@ -79,6 +93,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/alloc-stdlib-0.2.2 ${WRKDIR}/vendor/alloc-stdlib-0.2.2; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/alloc-stdlib-0.2.2.tar.gz ${WRKDIR}/vendor/alloc-stdlib-0.2.2 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/alloc-stdlib-0.2.2.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/alloc-stdlib-0.2.2.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/alloc-stdlib-0.2.2 ] && [ -d ${WRKDIR}/vendor/alloc-stdlib-0.2.2 ]; then \
+			mv ${WRKDIR}/vendor/alloc-stdlib-0.2.2 ${WRKDIR}/vendor/alloc-stdlib-0.2.2; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/alloc-stdlib-0.2.2.tar.gz ${WRKDIR}/vendor/alloc-stdlib-0.2.2 2>/dev/null || true; \
 	else \
 		echo "missing dep alloc-stdlib-0.2.2" >&2; exit 1; \
 	fi
@@ -90,6 +110,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/brotli-decompressor-4.0.3 ${WRKDIR}/vendor/brotli-decompressor-4.0.3; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/brotli-decompressor-4.0.3.tar.gz ${WRKDIR}/vendor/brotli-decompressor-4.0.3 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/brotli-decompressor-4.0.3.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/brotli-decompressor-4.0.3.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/brotli-decompressor-4.0.3 ] && [ -d ${WRKDIR}/vendor/brotli-decompressor-4.0.3 ]; then \
+			mv ${WRKDIR}/vendor/brotli-decompressor-4.0.3 ${WRKDIR}/vendor/brotli-decompressor-4.0.3; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/brotli-decompressor-4.0.3.tar.gz ${WRKDIR}/vendor/brotli-decompressor-4.0.3 2>/dev/null || true; \
 	else \
 		echo "missing dep brotli-decompressor-4.0.3" >&2; exit 1; \
 	fi

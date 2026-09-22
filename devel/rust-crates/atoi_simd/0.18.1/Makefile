@@ -43,8 +43,15 @@ MAKE_ENV +=		RUSTFLAGS=--cap-lints=allow
 MAKE_ENV +=		CARGO_ENCODED_RUSTFLAGS=--cap-lints=allow
 
 
+# dpb junks when depends_count >= 150 (default). post-extract/pre-build seed
+# vendor + rlibs from installed rust-crate packages; junking those first
+# fails with "missing dep". rmcp's subgraph is 216 BUILD_DEPENDS.
+DPB_PROPERTIES +=	nojunk
+
 BUILD_DEPENDS +=	rust-crate-debug_unsafe_0_1_3-0:devel/rust-crates/debug_unsafe/0.1.3
+RUN_DEPENDS +=	rust-crate-debug_unsafe_0_1_3-0:devel/rust-crates/debug_unsafe/0.1.3
 BUILD_DEPENDS +=	rust-crate-rustversion_1_0_22-0:devel/rust-crates/rustversion/1.0.22
+RUN_DEPENDS +=	rust-crate-rustversion_1_0_22-0:devel/rust-crates/rustversion/1.0.22
 
 # Direct registry deps: seed their rlibs/fingerprints before building this crate.
 _RUST_CRATE_ARCH =	${MACHINE_ARCH}
@@ -67,6 +74,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/debug_unsafe-0.1.3 ${WRKDIR}/vendor/debug_unsafe-0.1.3; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/debug_unsafe-0.1.3.tar.gz ${WRKDIR}/vendor/debug_unsafe-0.1.3 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/debug_unsafe-0.1.3.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/debug_unsafe-0.1.3.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/debug_unsafe-0.1.3 ] && [ -d ${WRKDIR}/vendor/debug_unsafe-0.1.3 ]; then \
+			mv ${WRKDIR}/vendor/debug_unsafe-0.1.3 ${WRKDIR}/vendor/debug_unsafe-0.1.3; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/debug_unsafe-0.1.3.tar.gz ${WRKDIR}/vendor/debug_unsafe-0.1.3 2>/dev/null || true; \
 	else \
 		echo "missing dep debug_unsafe-0.1.3" >&2; exit 1; \
 	fi
@@ -78,6 +91,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/rustversion-1.0.22 ${WRKDIR}/vendor/rustversion-1.0.22; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/rustversion-1.0.22.tar.gz ${WRKDIR}/vendor/rustversion-1.0.22 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/rustversion-1.0.22.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/rustversion-1.0.22.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/rustversion-1.0.22 ] && [ -d ${WRKDIR}/vendor/rustversion-1.0.22 ]; then \
+			mv ${WRKDIR}/vendor/rustversion-1.0.22 ${WRKDIR}/vendor/rustversion-1.0.22; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/rustversion-1.0.22.tar.gz ${WRKDIR}/vendor/rustversion-1.0.22 2>/dev/null || true; \
 	else \
 		echo "missing dep rustversion-1.0.22" >&2; exit 1; \
 	fi

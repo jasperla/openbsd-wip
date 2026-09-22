@@ -43,8 +43,15 @@ MAKE_ENV +=		RUSTFLAGS=--cap-lints=allow
 MAKE_ENV +=		CARGO_ENCODED_RUSTFLAGS=--cap-lints=allow
 
 
+# dpb junks when depends_count >= 150 (default). post-extract/pre-build seed
+# vendor + rlibs from installed rust-crate packages; junking those first
+# fails with "missing dep". rmcp's subgraph is 216 BUILD_DEPENDS.
+DPB_PROPERTIES +=	nojunk
+
 BUILD_DEPENDS +=	rust-crate-outref_0_5_2-0:devel/rust-crates/outref/0.5.2
+RUN_DEPENDS +=	rust-crate-outref_0_5_2-0:devel/rust-crates/outref/0.5.2
 BUILD_DEPENDS +=	rust-crate-vsimd_0_8_0-0:devel/rust-crates/vsimd/0.8.0
+RUN_DEPENDS +=	rust-crate-vsimd_0_8_0-0:devel/rust-crates/vsimd/0.8.0
 
 # Direct registry deps: seed their rlibs/fingerprints before building this crate.
 _RUST_CRATE_ARCH =	${MACHINE_ARCH}
@@ -67,6 +74,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/outref-0.5.2 ${WRKDIR}/vendor/outref-0.5.2; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/outref-0.5.2.tar.gz ${WRKDIR}/vendor/outref-0.5.2 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/outref-0.5.2.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/outref-0.5.2.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/outref-0.5.2 ] && [ -d ${WRKDIR}/vendor/outref-0.5.2 ]; then \
+			mv ${WRKDIR}/vendor/outref-0.5.2 ${WRKDIR}/vendor/outref-0.5.2; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/outref-0.5.2.tar.gz ${WRKDIR}/vendor/outref-0.5.2 2>/dev/null || true; \
 	else \
 		echo "missing dep outref-0.5.2" >&2; exit 1; \
 	fi
@@ -78,6 +91,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/vsimd-0.8.0 ${WRKDIR}/vendor/vsimd-0.8.0; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/vsimd-0.8.0.tar.gz ${WRKDIR}/vendor/vsimd-0.8.0 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/vsimd-0.8.0.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/vsimd-0.8.0.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/vsimd-0.8.0 ] && [ -d ${WRKDIR}/vendor/vsimd-0.8.0 ]; then \
+			mv ${WRKDIR}/vendor/vsimd-0.8.0 ${WRKDIR}/vendor/vsimd-0.8.0; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/vsimd-0.8.0.tar.gz ${WRKDIR}/vendor/vsimd-0.8.0 2>/dev/null || true; \
 	else \
 		echo "missing dep vsimd-0.8.0" >&2; exit 1; \
 	fi

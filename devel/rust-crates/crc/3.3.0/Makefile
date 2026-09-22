@@ -43,7 +43,13 @@ MAKE_ENV +=		RUSTFLAGS=--cap-lints=allow
 MAKE_ENV +=		CARGO_ENCODED_RUSTFLAGS=--cap-lints=allow
 
 
+# dpb junks when depends_count >= 150 (default). post-extract/pre-build seed
+# vendor + rlibs from installed rust-crate packages; junking those first
+# fails with "missing dep". rmcp's subgraph is 216 BUILD_DEPENDS.
+DPB_PROPERTIES +=	nojunk
+
 BUILD_DEPENDS +=	rust-crate-crc_catalog_2_4_0-0:devel/rust-crates/crc-catalog/2.4.0
+RUN_DEPENDS +=	rust-crate-crc_catalog_2_4_0-0:devel/rust-crates/crc-catalog/2.4.0
 
 # Direct registry deps: seed their rlibs/fingerprints before building this crate.
 _RUST_CRATE_ARCH =	${MACHINE_ARCH}
@@ -66,6 +72,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/crc-catalog-2.4.0 ${WRKDIR}/vendor/crc-catalog-2.4.0; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/crc-catalog-2.4.0.tar.gz ${WRKDIR}/vendor/crc-catalog-2.4.0 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/crc-catalog-2.4.0.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/crc-catalog-2.4.0.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/crc-catalog-2.4.0 ] && [ -d ${WRKDIR}/vendor/crc-catalog-2.4.0 ]; then \
+			mv ${WRKDIR}/vendor/crc-catalog-2.4.0 ${WRKDIR}/vendor/crc-catalog-2.4.0; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/crc-catalog-2.4.0.tar.gz ${WRKDIR}/vendor/crc-catalog-2.4.0 2>/dev/null || true; \
 	else \
 		echo "missing dep crc-catalog-2.4.0" >&2; exit 1; \
 	fi

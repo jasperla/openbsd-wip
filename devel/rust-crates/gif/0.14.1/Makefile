@@ -43,8 +43,15 @@ MAKE_ENV +=		RUSTFLAGS=--cap-lints=allow
 MAKE_ENV +=		CARGO_ENCODED_RUSTFLAGS=--cap-lints=allow
 
 
+# dpb junks when depends_count >= 150 (default). post-extract/pre-build seed
+# vendor + rlibs from installed rust-crate packages; junking those first
+# fails with "missing dep". rmcp's subgraph is 216 BUILD_DEPENDS.
+DPB_PROPERTIES +=	nojunk
+
 BUILD_DEPENDS +=	rust-crate-color_quant_1_1_0-0:devel/rust-crates/color_quant/1.1.0
+RUN_DEPENDS +=	rust-crate-color_quant_1_1_0-0:devel/rust-crates/color_quant/1.1.0
 BUILD_DEPENDS +=	rust-crate-weezl_0_1_10-0:devel/rust-crates/weezl/0.1.10
+RUN_DEPENDS +=	rust-crate-weezl_0_1_10-0:devel/rust-crates/weezl/0.1.10
 
 # Direct registry deps: seed their rlibs/fingerprints before building this crate.
 _RUST_CRATE_ARCH =	${MACHINE_ARCH}
@@ -67,6 +74,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/color_quant-1.1.0 ${WRKDIR}/vendor/color_quant-1.1.0; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/color_quant-1.1.0.tar.gz ${WRKDIR}/vendor/color_quant-1.1.0 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/color_quant-1.1.0.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/color_quant-1.1.0.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/color_quant-1.1.0 ] && [ -d ${WRKDIR}/vendor/color_quant-1.1.0 ]; then \
+			mv ${WRKDIR}/vendor/color_quant-1.1.0 ${WRKDIR}/vendor/color_quant-1.1.0; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/color_quant-1.1.0.tar.gz ${WRKDIR}/vendor/color_quant-1.1.0 2>/dev/null || true; \
 	else \
 		echo "missing dep color_quant-1.1.0" >&2; exit 1; \
 	fi
@@ -78,6 +91,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/weezl-0.1.10 ${WRKDIR}/vendor/weezl-0.1.10; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/weezl-0.1.10.tar.gz ${WRKDIR}/vendor/weezl-0.1.10 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/weezl-0.1.10.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/weezl-0.1.10.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/weezl-0.1.10 ] && [ -d ${WRKDIR}/vendor/weezl-0.1.10 ]; then \
+			mv ${WRKDIR}/vendor/weezl-0.1.10 ${WRKDIR}/vendor/weezl-0.1.10; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/weezl-0.1.10.tar.gz ${WRKDIR}/vendor/weezl-0.1.10 2>/dev/null || true; \
 	else \
 		echo "missing dep weezl-0.1.10" >&2; exit 1; \
 	fi

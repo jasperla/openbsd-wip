@@ -43,16 +43,31 @@ MAKE_ENV +=		RUSTFLAGS=--cap-lints=allow
 MAKE_ENV +=		CARGO_ENCODED_RUSTFLAGS=--cap-lints=allow
 
 
+# dpb junks when depends_count >= 150 (default). post-extract/pre-build seed
+# vendor + rlibs from installed rust-crate packages; junking those first
+# fails with "missing dep". rmcp's subgraph is 216 BUILD_DEPENDS.
+DPB_PROPERTIES +=	nojunk
+
 BUILD_DEPENDS +=	rust-crate-addr2line_0_25_1-0:devel/rust-crates/addr2line/0.25.1
+RUN_DEPENDS +=	rust-crate-addr2line_0_25_1-0:devel/rust-crates/addr2line/0.25.1
 BUILD_DEPENDS +=	rust-crate-cfg_if_1_0_4-0:devel/rust-crates/cfg-if/1.0.4
+RUN_DEPENDS +=	rust-crate-cfg_if_1_0_4-0:devel/rust-crates/cfg-if/1.0.4
 BUILD_DEPENDS +=	rust-crate-libc_0_2_186-0:devel/rust-crates/libc/0.2.186
+RUN_DEPENDS +=	rust-crate-libc_0_2_186-0:devel/rust-crates/libc/0.2.186
 BUILD_DEPENDS +=	rust-crate-miniz_oxide_0_8_9-0:devel/rust-crates/miniz_oxide/0.8.9
+RUN_DEPENDS +=	rust-crate-miniz_oxide_0_8_9-0:devel/rust-crates/miniz_oxide/0.8.9
 BUILD_DEPENDS +=	rust-crate-object_0_37_3-0:devel/rust-crates/object/0.37.3
+RUN_DEPENDS +=	rust-crate-object_0_37_3-0:devel/rust-crates/object/0.37.3
 BUILD_DEPENDS +=	rust-crate-rustc_demangle_0_1_26-0:devel/rust-crates/rustc-demangle/0.1.26
+RUN_DEPENDS +=	rust-crate-rustc_demangle_0_1_26-0:devel/rust-crates/rustc-demangle/0.1.26
 BUILD_DEPENDS +=	rust-crate-gimli_0_32_3-0:devel/rust-crates/gimli/0.32.3
+RUN_DEPENDS +=	rust-crate-gimli_0_32_3-0:devel/rust-crates/gimli/0.32.3
 BUILD_DEPENDS +=	rust-crate-adler2_2_0_1-0:devel/rust-crates/adler2/2.0.1
+RUN_DEPENDS +=	rust-crate-adler2_2_0_1-0:devel/rust-crates/adler2/2.0.1
 BUILD_DEPENDS +=	rust-crate-simd_adler32_0_3_7-0:devel/rust-crates/simd-adler32/0.3.7
+RUN_DEPENDS +=	rust-crate-simd_adler32_0_3_7-0:devel/rust-crates/simd-adler32/0.3.7
 BUILD_DEPENDS +=	rust-crate-memchr_2_8_2-0:devel/rust-crates/memchr/2.8.2
+RUN_DEPENDS +=	rust-crate-memchr_2_8_2-0:devel/rust-crates/memchr/2.8.2
 
 # Direct registry deps: seed their rlibs/fingerprints before building this crate.
 _RUST_CRATE_ARCH =	${MACHINE_ARCH}
@@ -75,6 +90,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/addr2line-0.25.1 ${WRKDIR}/vendor/addr2line-0.25.1; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/addr2line-0.25.1.tar.gz ${WRKDIR}/vendor/addr2line-0.25.1 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/addr2line-0.25.1.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/addr2line-0.25.1.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/addr2line-0.25.1 ] && [ -d ${WRKDIR}/vendor/addr2line-0.25.1 ]; then \
+			mv ${WRKDIR}/vendor/addr2line-0.25.1 ${WRKDIR}/vendor/addr2line-0.25.1; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/addr2line-0.25.1.tar.gz ${WRKDIR}/vendor/addr2line-0.25.1 2>/dev/null || true; \
 	else \
 		echo "missing dep addr2line-0.25.1" >&2; exit 1; \
 	fi
@@ -86,6 +107,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/cfg-if-1.0.4 ${WRKDIR}/vendor/cfg-if-1.0.4; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/cfg-if-1.0.4.tar.gz ${WRKDIR}/vendor/cfg-if-1.0.4 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/cfg-if-1.0.4.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/cfg-if-1.0.4.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/cfg-if-1.0.4 ] && [ -d ${WRKDIR}/vendor/cfg-if-1.0.4 ]; then \
+			mv ${WRKDIR}/vendor/cfg-if-1.0.4 ${WRKDIR}/vendor/cfg-if-1.0.4; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/cfg-if-1.0.4.tar.gz ${WRKDIR}/vendor/cfg-if-1.0.4 2>/dev/null || true; \
 	else \
 		echo "missing dep cfg-if-1.0.4" >&2; exit 1; \
 	fi
@@ -97,6 +124,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/libc-0.2.186 ${WRKDIR}/vendor/libc-0.2.186; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/libc-0.2.186.tar.gz ${WRKDIR}/vendor/libc-0.2.186 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/libc-0.2.186.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/libc-0.2.186.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/libc-0.2.186 ] && [ -d ${WRKDIR}/vendor/libc-0.2.186 ]; then \
+			mv ${WRKDIR}/vendor/libc-0.2.186 ${WRKDIR}/vendor/libc-0.2.186; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/libc-0.2.186.tar.gz ${WRKDIR}/vendor/libc-0.2.186 2>/dev/null || true; \
 	else \
 		echo "missing dep libc-0.2.186" >&2; exit 1; \
 	fi
@@ -108,6 +141,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/miniz_oxide-0.8.9 ${WRKDIR}/vendor/miniz_oxide-0.8.9; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/miniz_oxide-0.8.9.tar.gz ${WRKDIR}/vendor/miniz_oxide-0.8.9 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/miniz_oxide-0.8.9.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/miniz_oxide-0.8.9.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/miniz_oxide-0.8.9 ] && [ -d ${WRKDIR}/vendor/miniz_oxide-0.8.9 ]; then \
+			mv ${WRKDIR}/vendor/miniz_oxide-0.8.9 ${WRKDIR}/vendor/miniz_oxide-0.8.9; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/miniz_oxide-0.8.9.tar.gz ${WRKDIR}/vendor/miniz_oxide-0.8.9 2>/dev/null || true; \
 	else \
 		echo "missing dep miniz_oxide-0.8.9" >&2; exit 1; \
 	fi
@@ -119,6 +158,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/object-0.37.3 ${WRKDIR}/vendor/object-0.37.3; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/object-0.37.3.tar.gz ${WRKDIR}/vendor/object-0.37.3 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/object-0.37.3.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/object-0.37.3.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/object-0.37.3 ] && [ -d ${WRKDIR}/vendor/object-0.37.3 ]; then \
+			mv ${WRKDIR}/vendor/object-0.37.3 ${WRKDIR}/vendor/object-0.37.3; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/object-0.37.3.tar.gz ${WRKDIR}/vendor/object-0.37.3 2>/dev/null || true; \
 	else \
 		echo "missing dep object-0.37.3" >&2; exit 1; \
 	fi
@@ -130,6 +175,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/rustc-demangle-0.1.26 ${WRKDIR}/vendor/rustc-demangle-0.1.26; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/rustc-demangle-0.1.26.tar.gz ${WRKDIR}/vendor/rustc-demangle-0.1.26 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/rustc-demangle-0.1.26.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/rustc-demangle-0.1.26.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/rustc-demangle-0.1.26 ] && [ -d ${WRKDIR}/vendor/rustc-demangle-0.1.26 ]; then \
+			mv ${WRKDIR}/vendor/rustc-demangle-0.1.26 ${WRKDIR}/vendor/rustc-demangle-0.1.26; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/rustc-demangle-0.1.26.tar.gz ${WRKDIR}/vendor/rustc-demangle-0.1.26 2>/dev/null || true; \
 	else \
 		echo "missing dep rustc-demangle-0.1.26" >&2; exit 1; \
 	fi
@@ -141,6 +192,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/gimli-0.32.3 ${WRKDIR}/vendor/gimli-0.32.3; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/gimli-0.32.3.tar.gz ${WRKDIR}/vendor/gimli-0.32.3 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/gimli-0.32.3.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/gimli-0.32.3.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/gimli-0.32.3 ] && [ -d ${WRKDIR}/vendor/gimli-0.32.3 ]; then \
+			mv ${WRKDIR}/vendor/gimli-0.32.3 ${WRKDIR}/vendor/gimli-0.32.3; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/gimli-0.32.3.tar.gz ${WRKDIR}/vendor/gimli-0.32.3 2>/dev/null || true; \
 	else \
 		echo "missing dep gimli-0.32.3" >&2; exit 1; \
 	fi
@@ -152,6 +209,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/adler2-2.0.1 ${WRKDIR}/vendor/adler2-2.0.1; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/adler2-2.0.1.tar.gz ${WRKDIR}/vendor/adler2-2.0.1 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/adler2-2.0.1.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/adler2-2.0.1.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/adler2-2.0.1 ] && [ -d ${WRKDIR}/vendor/adler2-2.0.1 ]; then \
+			mv ${WRKDIR}/vendor/adler2-2.0.1 ${WRKDIR}/vendor/adler2-2.0.1; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/adler2-2.0.1.tar.gz ${WRKDIR}/vendor/adler2-2.0.1 2>/dev/null || true; \
 	else \
 		echo "missing dep adler2-2.0.1" >&2; exit 1; \
 	fi
@@ -163,6 +226,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/simd-adler32-0.3.7 ${WRKDIR}/vendor/simd-adler32-0.3.7; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/simd-adler32-0.3.7.tar.gz ${WRKDIR}/vendor/simd-adler32-0.3.7 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/simd-adler32-0.3.7.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/simd-adler32-0.3.7.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/simd-adler32-0.3.7 ] && [ -d ${WRKDIR}/vendor/simd-adler32-0.3.7 ]; then \
+			mv ${WRKDIR}/vendor/simd-adler32-0.3.7 ${WRKDIR}/vendor/simd-adler32-0.3.7; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/simd-adler32-0.3.7.tar.gz ${WRKDIR}/vendor/simd-adler32-0.3.7 2>/dev/null || true; \
 	else \
 		echo "missing dep simd-adler32-0.3.7" >&2; exit 1; \
 	fi
@@ -174,6 +243,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/memchr-2.8.2 ${WRKDIR}/vendor/memchr-2.8.2; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/memchr-2.8.2.tar.gz ${WRKDIR}/vendor/memchr-2.8.2 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/memchr-2.8.2.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/memchr-2.8.2.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/memchr-2.8.2 ] && [ -d ${WRKDIR}/vendor/memchr-2.8.2 ]; then \
+			mv ${WRKDIR}/vendor/memchr-2.8.2 ${WRKDIR}/vendor/memchr-2.8.2; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/memchr-2.8.2.tar.gz ${WRKDIR}/vendor/memchr-2.8.2 2>/dev/null || true; \
 	else \
 		echo "missing dep memchr-2.8.2" >&2; exit 1; \
 	fi

@@ -43,13 +43,25 @@ MAKE_ENV +=		RUSTFLAGS=--cap-lints=allow
 MAKE_ENV +=		CARGO_ENCODED_RUSTFLAGS=--cap-lints=allow
 
 
+# dpb junks when depends_count >= 150 (default). post-extract/pre-build seed
+# vendor + rlibs from installed rust-crate packages; junking those first
+# fails with "missing dep". rmcp's subgraph is 216 BUILD_DEPENDS.
+DPB_PROPERTIES +=	nojunk
+
 BUILD_DEPENDS +=	rust-crate-bit_set_0_5_3-0:devel/rust-crates/bit-set/0.5.3
+RUN_DEPENDS +=	rust-crate-bit_set_0_5_3-0:devel/rust-crates/bit-set/0.5.3
 BUILD_DEPENDS +=	rust-crate-regex_1_12_4-0:devel/rust-crates/regex/1.12.4
+RUN_DEPENDS +=	rust-crate-regex_1_12_4-0:devel/rust-crates/regex/1.12.4
 BUILD_DEPENDS +=	rust-crate-bit_vec_0_6_3-0:devel/rust-crates/bit-vec/0.6.3
+RUN_DEPENDS +=	rust-crate-bit_vec_0_6_3-0:devel/rust-crates/bit-vec/0.6.3
 BUILD_DEPENDS +=	rust-crate-aho_corasick_1_1_3-0:devel/rust-crates/aho-corasick/1.1.3
+RUN_DEPENDS +=	rust-crate-aho_corasick_1_1_3-0:devel/rust-crates/aho-corasick/1.1.3
 BUILD_DEPENDS +=	rust-crate-memchr_2_8_2-0:devel/rust-crates/memchr/2.8.2
+RUN_DEPENDS +=	rust-crate-memchr_2_8_2-0:devel/rust-crates/memchr/2.8.2
 BUILD_DEPENDS +=	rust-crate-regex_automata_0_4_13-0:devel/rust-crates/regex-automata/0.4.13
+RUN_DEPENDS +=	rust-crate-regex_automata_0_4_13-0:devel/rust-crates/regex-automata/0.4.13
 BUILD_DEPENDS +=	rust-crate-regex_syntax_0_8_11-0:devel/rust-crates/regex-syntax/0.8.11
+RUN_DEPENDS +=	rust-crate-regex_syntax_0_8_11-0:devel/rust-crates/regex-syntax/0.8.11
 
 # Direct registry deps: seed their rlibs/fingerprints before building this crate.
 _RUST_CRATE_ARCH =	${MACHINE_ARCH}
@@ -72,6 +84,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/bit-set-0.5.3 ${WRKDIR}/vendor/bit-set-0.5.3; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/bit-set-0.5.3.tar.gz ${WRKDIR}/vendor/bit-set-0.5.3 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/bit-set-0.5.3.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/bit-set-0.5.3.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/bit-set-0.5.3 ] && [ -d ${WRKDIR}/vendor/bit-set-0.5.3 ]; then \
+			mv ${WRKDIR}/vendor/bit-set-0.5.3 ${WRKDIR}/vendor/bit-set-0.5.3; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/bit-set-0.5.3.tar.gz ${WRKDIR}/vendor/bit-set-0.5.3 2>/dev/null || true; \
 	else \
 		echo "missing dep bit-set-0.5.3" >&2; exit 1; \
 	fi
@@ -83,6 +101,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/regex-1.12.4 ${WRKDIR}/vendor/regex-1.12.4; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/regex-1.12.4.tar.gz ${WRKDIR}/vendor/regex-1.12.4 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/regex-1.12.4.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/regex-1.12.4.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/regex-1.12.4 ] && [ -d ${WRKDIR}/vendor/regex-1.12.4 ]; then \
+			mv ${WRKDIR}/vendor/regex-1.12.4 ${WRKDIR}/vendor/regex-1.12.4; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/regex-1.12.4.tar.gz ${WRKDIR}/vendor/regex-1.12.4 2>/dev/null || true; \
 	else \
 		echo "missing dep regex-1.12.4" >&2; exit 1; \
 	fi
@@ -94,6 +118,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/bit-vec-0.6.3 ${WRKDIR}/vendor/bit-vec-0.6.3; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/bit-vec-0.6.3.tar.gz ${WRKDIR}/vendor/bit-vec-0.6.3 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/bit-vec-0.6.3.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/bit-vec-0.6.3.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/bit-vec-0.6.3 ] && [ -d ${WRKDIR}/vendor/bit-vec-0.6.3 ]; then \
+			mv ${WRKDIR}/vendor/bit-vec-0.6.3 ${WRKDIR}/vendor/bit-vec-0.6.3; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/bit-vec-0.6.3.tar.gz ${WRKDIR}/vendor/bit-vec-0.6.3 2>/dev/null || true; \
 	else \
 		echo "missing dep bit-vec-0.6.3" >&2; exit 1; \
 	fi
@@ -105,6 +135,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/aho-corasick-1.1.3 ${WRKDIR}/vendor/aho-corasick-1.1.3; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/aho-corasick-1.1.3.tar.gz ${WRKDIR}/vendor/aho-corasick-1.1.3 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/aho-corasick-1.1.3.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/aho-corasick-1.1.3.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/aho-corasick-1.1.3 ] && [ -d ${WRKDIR}/vendor/aho-corasick-1.1.3 ]; then \
+			mv ${WRKDIR}/vendor/aho-corasick-1.1.3 ${WRKDIR}/vendor/aho-corasick-1.1.3; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/aho-corasick-1.1.3.tar.gz ${WRKDIR}/vendor/aho-corasick-1.1.3 2>/dev/null || true; \
 	else \
 		echo "missing dep aho-corasick-1.1.3" >&2; exit 1; \
 	fi
@@ -116,6 +152,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/memchr-2.8.2 ${WRKDIR}/vendor/memchr-2.8.2; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/memchr-2.8.2.tar.gz ${WRKDIR}/vendor/memchr-2.8.2 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/memchr-2.8.2.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/memchr-2.8.2.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/memchr-2.8.2 ] && [ -d ${WRKDIR}/vendor/memchr-2.8.2 ]; then \
+			mv ${WRKDIR}/vendor/memchr-2.8.2 ${WRKDIR}/vendor/memchr-2.8.2; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/memchr-2.8.2.tar.gz ${WRKDIR}/vendor/memchr-2.8.2 2>/dev/null || true; \
 	else \
 		echo "missing dep memchr-2.8.2" >&2; exit 1; \
 	fi
@@ -127,6 +169,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/regex-automata-0.4.13 ${WRKDIR}/vendor/regex-automata-0.4.13; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/regex-automata-0.4.13.tar.gz ${WRKDIR}/vendor/regex-automata-0.4.13 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/regex-automata-0.4.13.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/regex-automata-0.4.13.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/regex-automata-0.4.13 ] && [ -d ${WRKDIR}/vendor/regex-automata-0.4.13 ]; then \
+			mv ${WRKDIR}/vendor/regex-automata-0.4.13 ${WRKDIR}/vendor/regex-automata-0.4.13; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/regex-automata-0.4.13.tar.gz ${WRKDIR}/vendor/regex-automata-0.4.13 2>/dev/null || true; \
 	else \
 		echo "missing dep regex-automata-0.4.13" >&2; exit 1; \
 	fi
@@ -138,6 +186,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/regex-syntax-0.8.11 ${WRKDIR}/vendor/regex-syntax-0.8.11; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/regex-syntax-0.8.11.tar.gz ${WRKDIR}/vendor/regex-syntax-0.8.11 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/regex-syntax-0.8.11.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/regex-syntax-0.8.11.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/regex-syntax-0.8.11 ] && [ -d ${WRKDIR}/vendor/regex-syntax-0.8.11 ]; then \
+			mv ${WRKDIR}/vendor/regex-syntax-0.8.11 ${WRKDIR}/vendor/regex-syntax-0.8.11; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/regex-syntax-0.8.11.tar.gz ${WRKDIR}/vendor/regex-syntax-0.8.11 2>/dev/null || true; \
 	else \
 		echo "missing dep regex-syntax-0.8.11" >&2; exit 1; \
 	fi

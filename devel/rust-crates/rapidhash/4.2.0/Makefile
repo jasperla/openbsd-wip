@@ -43,7 +43,13 @@ MAKE_ENV +=		RUSTFLAGS=--cap-lints=allow
 MAKE_ENV +=		CARGO_ENCODED_RUSTFLAGS=--cap-lints=allow
 
 
+# dpb junks when depends_count >= 150 (default). post-extract/pre-build seed
+# vendor + rlibs from installed rust-crate packages; junking those first
+# fails with "missing dep". rmcp's subgraph is 216 BUILD_DEPENDS.
+DPB_PROPERTIES +=	nojunk
+
 BUILD_DEPENDS +=	rust-crate-rustversion_1_0_22-0:devel/rust-crates/rustversion/1.0.22
+RUN_DEPENDS +=	rust-crate-rustversion_1_0_22-0:devel/rust-crates/rustversion/1.0.22
 
 # Direct registry deps: seed their rlibs/fingerprints before building this crate.
 _RUST_CRATE_ARCH =	${MACHINE_ARCH}
@@ -66,6 +72,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/rustversion-1.0.22 ${WRKDIR}/vendor/rustversion-1.0.22; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/rustversion-1.0.22.tar.gz ${WRKDIR}/vendor/rustversion-1.0.22 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/rustversion-1.0.22.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/rustversion-1.0.22.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/rustversion-1.0.22 ] && [ -d ${WRKDIR}/vendor/rustversion-1.0.22 ]; then \
+			mv ${WRKDIR}/vendor/rustversion-1.0.22 ${WRKDIR}/vendor/rustversion-1.0.22; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/rustversion-1.0.22.tar.gz ${WRKDIR}/vendor/rustversion-1.0.22 2>/dev/null || true; \
 	else \
 		echo "missing dep rustversion-1.0.22" >&2; exit 1; \
 	fi

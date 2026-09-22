@@ -43,61 +43,121 @@ MAKE_ENV +=		RUSTFLAGS=--cap-lints=allow
 MAKE_ENV +=		CARGO_ENCODED_RUSTFLAGS=--cap-lints=allow
 
 
+# dpb junks when depends_count >= 150 (default). post-extract/pre-build seed
+# vendor + rlibs from installed rust-crate packages; junking those first
+# fails with "missing dep". rmcp's subgraph is 216 BUILD_DEPENDS.
+DPB_PROPERTIES +=	nojunk
+
 BUILD_DEPENDS +=	rust-crate-cssparser_0_34_0-0:devel/rust-crates/cssparser/0.34.0
+RUN_DEPENDS +=	rust-crate-cssparser_0_34_0-0:devel/rust-crates/cssparser/0.34.0
 BUILD_DEPENDS +=	rust-crate-ego_tree_0_10_0-0:devel/rust-crates/ego-tree/0.10.0
+RUN_DEPENDS +=	rust-crate-ego_tree_0_10_0-0:devel/rust-crates/ego-tree/0.10.0
 BUILD_DEPENDS +=	rust-crate-getopts_0_2_24-0:devel/rust-crates/getopts/0.2.24
+RUN_DEPENDS +=	rust-crate-getopts_0_2_24-0:devel/rust-crates/getopts/0.2.24
 BUILD_DEPENDS +=	rust-crate-html5ever_0_29_1-0:devel/rust-crates/html5ever/0.29.1
+RUN_DEPENDS +=	rust-crate-html5ever_0_29_1-0:devel/rust-crates/html5ever/0.29.1
 BUILD_DEPENDS +=	rust-crate-precomputed_hash_0_1_1-0:devel/rust-crates/precomputed-hash/0.1.1
+RUN_DEPENDS +=	rust-crate-precomputed_hash_0_1_1-0:devel/rust-crates/precomputed-hash/0.1.1
 BUILD_DEPENDS +=	rust-crate-selectors_0_26_0-0:devel/rust-crates/selectors/0.26.0
+RUN_DEPENDS +=	rust-crate-selectors_0_26_0-0:devel/rust-crates/selectors/0.26.0
 BUILD_DEPENDS +=	rust-crate-tendril_0_4_3-0:devel/rust-crates/tendril/0.4.3
+RUN_DEPENDS +=	rust-crate-tendril_0_4_3-0:devel/rust-crates/tendril/0.4.3
 BUILD_DEPENDS +=	rust-crate-cssparser_macros_0_6_1-0:devel/rust-crates/cssparser-macros/0.6.1
+RUN_DEPENDS +=	rust-crate-cssparser_macros_0_6_1-0:devel/rust-crates/cssparser-macros/0.6.1
 BUILD_DEPENDS +=	rust-crate-dtoa_short_0_3_5-0:devel/rust-crates/dtoa-short/0.3.5
+RUN_DEPENDS +=	rust-crate-dtoa_short_0_3_5-0:devel/rust-crates/dtoa-short/0.3.5
 BUILD_DEPENDS +=	rust-crate-itoa_1_0_17-0:devel/rust-crates/itoa/1.0.17
+RUN_DEPENDS +=	rust-crate-itoa_1_0_17-0:devel/rust-crates/itoa/1.0.17
 BUILD_DEPENDS +=	rust-crate-phf_0_11_3-0:devel/rust-crates/phf/0.11.3
+RUN_DEPENDS +=	rust-crate-phf_0_11_3-0:devel/rust-crates/phf/0.11.3
 BUILD_DEPENDS +=	rust-crate-smallvec_1_15_1-0:devel/rust-crates/smallvec/1.15.1
+RUN_DEPENDS +=	rust-crate-smallvec_1_15_1-0:devel/rust-crates/smallvec/1.15.1
 BUILD_DEPENDS +=	rust-crate-unicode_width_0_2_0-0:devel/rust-crates/unicode-width/0.2.0
+RUN_DEPENDS +=	rust-crate-unicode_width_0_2_0-0:devel/rust-crates/unicode-width/0.2.0
 BUILD_DEPENDS +=	rust-crate-log_0_4_32-0:devel/rust-crates/log/0.4.32
+RUN_DEPENDS +=	rust-crate-log_0_4_32-0:devel/rust-crates/log/0.4.32
 BUILD_DEPENDS +=	rust-crate-mac_0_1_1-0:devel/rust-crates/mac/0.1.1
+RUN_DEPENDS +=	rust-crate-mac_0_1_1-0:devel/rust-crates/mac/0.1.1
 BUILD_DEPENDS +=	rust-crate-markup5ever_0_14_1-0:devel/rust-crates/markup5ever/0.14.1
+RUN_DEPENDS +=	rust-crate-markup5ever_0_14_1-0:devel/rust-crates/markup5ever/0.14.1
 BUILD_DEPENDS +=	rust-crate-match_token_0_1_0-0:devel/rust-crates/match_token/0.1.0
+RUN_DEPENDS +=	rust-crate-match_token_0_1_0-0:devel/rust-crates/match_token/0.1.0
 BUILD_DEPENDS +=	rust-crate-bitflags_2_13_0-0:devel/rust-crates/bitflags/2.13.0
+RUN_DEPENDS +=	rust-crate-bitflags_2_13_0-0:devel/rust-crates/bitflags/2.13.0
 BUILD_DEPENDS +=	rust-crate-derive_more_0_99_20-0:devel/rust-crates/derive_more/0.99.20
+RUN_DEPENDS +=	rust-crate-derive_more_0_99_20-0:devel/rust-crates/derive_more/0.99.20
 BUILD_DEPENDS +=	rust-crate-fxhash_0_2_1-0:devel/rust-crates/fxhash/0.2.1
+RUN_DEPENDS +=	rust-crate-fxhash_0_2_1-0:devel/rust-crates/fxhash/0.2.1
 BUILD_DEPENDS +=	rust-crate-new_debug_unreachable_1_0_6-0:devel/rust-crates/new_debug_unreachable/1.0.6
+RUN_DEPENDS +=	rust-crate-new_debug_unreachable_1_0_6-0:devel/rust-crates/new_debug_unreachable/1.0.6
 BUILD_DEPENDS +=	rust-crate-phf_codegen_0_11_3-0:devel/rust-crates/phf_codegen/0.11.3
+RUN_DEPENDS +=	rust-crate-phf_codegen_0_11_3-0:devel/rust-crates/phf_codegen/0.11.3
 BUILD_DEPENDS +=	rust-crate-servo_arc_0_4_3-0:devel/rust-crates/servo_arc/0.4.3
+RUN_DEPENDS +=	rust-crate-servo_arc_0_4_3-0:devel/rust-crates/servo_arc/0.4.3
 BUILD_DEPENDS +=	rust-crate-futf_0_1_5-0:devel/rust-crates/futf/0.1.5
+RUN_DEPENDS +=	rust-crate-futf_0_1_5-0:devel/rust-crates/futf/0.1.5
 BUILD_DEPENDS +=	rust-crate-utf_8_0_7_6-0:devel/rust-crates/utf-8/0.7.6
+RUN_DEPENDS +=	rust-crate-utf_8_0_7_6-0:devel/rust-crates/utf-8/0.7.6
 BUILD_DEPENDS +=	rust-crate-quote_1_0_45-0:devel/rust-crates/quote/1.0.45
+RUN_DEPENDS +=	rust-crate-quote_1_0_45-0:devel/rust-crates/quote/1.0.45
 BUILD_DEPENDS +=	rust-crate-syn_2_0_117-0:devel/rust-crates/syn/2.0.117
+RUN_DEPENDS +=	rust-crate-syn_2_0_117-0:devel/rust-crates/syn/2.0.117
 BUILD_DEPENDS +=	rust-crate-dtoa_1_0_10-0:devel/rust-crates/dtoa/1.0.10
+RUN_DEPENDS +=	rust-crate-dtoa_1_0_10-0:devel/rust-crates/dtoa/1.0.10
 BUILD_DEPENDS +=	rust-crate-phf_macros_0_11_3-0:devel/rust-crates/phf_macros/0.11.3
+RUN_DEPENDS +=	rust-crate-phf_macros_0_11_3-0:devel/rust-crates/phf_macros/0.11.3
 BUILD_DEPENDS +=	rust-crate-phf_shared_0_11_3-0:devel/rust-crates/phf_shared/0.11.3
+RUN_DEPENDS +=	rust-crate-phf_shared_0_11_3-0:devel/rust-crates/phf_shared/0.11.3
 BUILD_DEPENDS +=	rust-crate-serde_1_0_228-0:devel/rust-crates/serde/1.0.228
+RUN_DEPENDS +=	rust-crate-serde_1_0_228-0:devel/rust-crates/serde/1.0.228
 BUILD_DEPENDS +=	rust-crate-value_bag_1_12_0-0:devel/rust-crates/value-bag/1.12.0
+RUN_DEPENDS +=	rust-crate-value_bag_1_12_0-0:devel/rust-crates/value-bag/1.12.0
 BUILD_DEPENDS +=	rust-crate-string_cache_0_8_9-0:devel/rust-crates/string_cache/0.8.9
+RUN_DEPENDS +=	rust-crate-string_cache_0_8_9-0:devel/rust-crates/string_cache/0.8.9
 BUILD_DEPENDS +=	rust-crate-string_cache_codegen_0_5_4-0:devel/rust-crates/string_cache_codegen/0.5.4
+RUN_DEPENDS +=	rust-crate-string_cache_codegen_0_5_4-0:devel/rust-crates/string_cache_codegen/0.5.4
 BUILD_DEPENDS +=	rust-crate-proc_macro2_1_0_106-0:devel/rust-crates/proc-macro2/1.0.106
+RUN_DEPENDS +=	rust-crate-proc_macro2_1_0_106-0:devel/rust-crates/proc-macro2/1.0.106
 BUILD_DEPENDS +=	rust-crate-serde_core_1_0_228-0:devel/rust-crates/serde_core/1.0.228
+RUN_DEPENDS +=	rust-crate-serde_core_1_0_228-0:devel/rust-crates/serde_core/1.0.228
 BUILD_DEPENDS +=	rust-crate-byteorder_1_5_0-0:devel/rust-crates/byteorder/1.5.0
+RUN_DEPENDS +=	rust-crate-byteorder_1_5_0-0:devel/rust-crates/byteorder/1.5.0
 BUILD_DEPENDS +=	rust-crate-phf_generator_0_11_3-0:devel/rust-crates/phf_generator/0.11.3
+RUN_DEPENDS +=	rust-crate-phf_generator_0_11_3-0:devel/rust-crates/phf_generator/0.11.3
 BUILD_DEPENDS +=	rust-crate-stable_deref_trait_1_2_1-0:devel/rust-crates/stable_deref_trait/1.2.1
+RUN_DEPENDS +=	rust-crate-stable_deref_trait_1_2_1-0:devel/rust-crates/stable_deref_trait/1.2.1
 BUILD_DEPENDS +=	rust-crate-unicode_ident_1_0_24-0:devel/rust-crates/unicode-ident/1.0.24
+RUN_DEPENDS +=	rust-crate-unicode_ident_1_0_24-0:devel/rust-crates/unicode-ident/1.0.24
 BUILD_DEPENDS +=	rust-crate-siphasher_1_0_3-0:devel/rust-crates/siphasher/1.0.3
+RUN_DEPENDS +=	rust-crate-siphasher_1_0_3-0:devel/rust-crates/siphasher/1.0.3
 BUILD_DEPENDS +=	rust-crate-serde_derive_1_0_228-0:devel/rust-crates/serde_derive/1.0.228
+RUN_DEPENDS +=	rust-crate-serde_derive_1_0_228-0:devel/rust-crates/serde_derive/1.0.228
 BUILD_DEPENDS +=	rust-crate-parking_lot_0_12_5-0:devel/rust-crates/parking_lot/0.12.5
+RUN_DEPENDS +=	rust-crate-parking_lot_0_12_5-0:devel/rust-crates/parking_lot/0.12.5
 BUILD_DEPENDS +=	rust-crate-rand_0_8_5-0:devel/rust-crates/rand/0.8.5
+RUN_DEPENDS +=	rust-crate-rand_0_8_5-0:devel/rust-crates/rand/0.8.5
 BUILD_DEPENDS +=	rust-crate-lock_api_0_4_14-0:devel/rust-crates/lock_api/0.4.14
+RUN_DEPENDS +=	rust-crate-lock_api_0_4_14-0:devel/rust-crates/lock_api/0.4.14
 BUILD_DEPENDS +=	rust-crate-parking_lot_core_0_9_12-0:devel/rust-crates/parking_lot_core/0.9.12
+RUN_DEPENDS +=	rust-crate-parking_lot_core_0_9_12-0:devel/rust-crates/parking_lot_core/0.9.12
 BUILD_DEPENDS +=	rust-crate-libc_0_2_186-0:devel/rust-crates/libc/0.2.186
+RUN_DEPENDS +=	rust-crate-libc_0_2_186-0:devel/rust-crates/libc/0.2.186
 BUILD_DEPENDS +=	rust-crate-rand_chacha_0_3_1-0:devel/rust-crates/rand_chacha/0.3.1
+RUN_DEPENDS +=	rust-crate-rand_chacha_0_3_1-0:devel/rust-crates/rand_chacha/0.3.1
 BUILD_DEPENDS +=	rust-crate-rand_core_0_6_4-0:devel/rust-crates/rand_core/0.6.4
+RUN_DEPENDS +=	rust-crate-rand_core_0_6_4-0:devel/rust-crates/rand_core/0.6.4
 BUILD_DEPENDS +=	rust-crate-scopeguard_1_2_0-0:devel/rust-crates/scopeguard/1.2.0
+RUN_DEPENDS +=	rust-crate-scopeguard_1_2_0-0:devel/rust-crates/scopeguard/1.2.0
 BUILD_DEPENDS +=	rust-crate-cfg_if_1_0_4-0:devel/rust-crates/cfg-if/1.0.4
+RUN_DEPENDS +=	rust-crate-cfg_if_1_0_4-0:devel/rust-crates/cfg-if/1.0.4
 BUILD_DEPENDS +=	rust-crate-ppv_lite86_0_2_21-0:devel/rust-crates/ppv-lite86/0.2.21
+RUN_DEPENDS +=	rust-crate-ppv_lite86_0_2_21-0:devel/rust-crates/ppv-lite86/0.2.21
 BUILD_DEPENDS +=	rust-crate-getrandom_0_2_16-0:devel/rust-crates/getrandom/0.2.16
+RUN_DEPENDS +=	rust-crate-getrandom_0_2_16-0:devel/rust-crates/getrandom/0.2.16
 BUILD_DEPENDS +=	rust-crate-zerocopy_0_8_48-0:devel/rust-crates/zerocopy/0.8.48
+RUN_DEPENDS +=	rust-crate-zerocopy_0_8_48-0:devel/rust-crates/zerocopy/0.8.48
 BUILD_DEPENDS +=	rust-crate-zerocopy_derive_0_8_48-0:devel/rust-crates/zerocopy-derive/0.8.48
+RUN_DEPENDS +=	rust-crate-zerocopy_derive_0_8_48-0:devel/rust-crates/zerocopy-derive/0.8.48
 
 # Direct registry deps: seed their rlibs/fingerprints before building this crate.
 _RUST_CRATE_ARCH =	${MACHINE_ARCH}
@@ -120,6 +180,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/cssparser-0.34.0 ${WRKDIR}/vendor/cssparser-0.34.0; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/cssparser-0.34.0.tar.gz ${WRKDIR}/vendor/cssparser-0.34.0 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/cssparser-0.34.0.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/cssparser-0.34.0.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/cssparser-0.34.0 ] && [ -d ${WRKDIR}/vendor/cssparser-0.34.0 ]; then \
+			mv ${WRKDIR}/vendor/cssparser-0.34.0 ${WRKDIR}/vendor/cssparser-0.34.0; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/cssparser-0.34.0.tar.gz ${WRKDIR}/vendor/cssparser-0.34.0 2>/dev/null || true; \
 	else \
 		echo "missing dep cssparser-0.34.0" >&2; exit 1; \
 	fi
@@ -131,6 +197,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/ego-tree-0.10.0 ${WRKDIR}/vendor/ego-tree-0.10.0; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/ego-tree-0.10.0.tar.gz ${WRKDIR}/vendor/ego-tree-0.10.0 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/ego-tree-0.10.0.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/ego-tree-0.10.0.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/ego-tree-0.10.0 ] && [ -d ${WRKDIR}/vendor/ego-tree-0.10.0 ]; then \
+			mv ${WRKDIR}/vendor/ego-tree-0.10.0 ${WRKDIR}/vendor/ego-tree-0.10.0; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/ego-tree-0.10.0.tar.gz ${WRKDIR}/vendor/ego-tree-0.10.0 2>/dev/null || true; \
 	else \
 		echo "missing dep ego-tree-0.10.0" >&2; exit 1; \
 	fi
@@ -142,6 +214,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/getopts-0.2.24 ${WRKDIR}/vendor/getopts-0.2.24; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/getopts-0.2.24.tar.gz ${WRKDIR}/vendor/getopts-0.2.24 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/getopts-0.2.24.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/getopts-0.2.24.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/getopts-0.2.24 ] && [ -d ${WRKDIR}/vendor/getopts-0.2.24 ]; then \
+			mv ${WRKDIR}/vendor/getopts-0.2.24 ${WRKDIR}/vendor/getopts-0.2.24; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/getopts-0.2.24.tar.gz ${WRKDIR}/vendor/getopts-0.2.24 2>/dev/null || true; \
 	else \
 		echo "missing dep getopts-0.2.24" >&2; exit 1; \
 	fi
@@ -153,6 +231,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/html5ever-0.29.1 ${WRKDIR}/vendor/html5ever-0.29.1; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/html5ever-0.29.1.tar.gz ${WRKDIR}/vendor/html5ever-0.29.1 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/html5ever-0.29.1.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/html5ever-0.29.1.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/html5ever-0.29.1 ] && [ -d ${WRKDIR}/vendor/html5ever-0.29.1 ]; then \
+			mv ${WRKDIR}/vendor/html5ever-0.29.1 ${WRKDIR}/vendor/html5ever-0.29.1; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/html5ever-0.29.1.tar.gz ${WRKDIR}/vendor/html5ever-0.29.1 2>/dev/null || true; \
 	else \
 		echo "missing dep html5ever-0.29.1" >&2; exit 1; \
 	fi
@@ -164,6 +248,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/precomputed-hash-0.1.1 ${WRKDIR}/vendor/precomputed-hash-0.1.1; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/precomputed-hash-0.1.1.tar.gz ${WRKDIR}/vendor/precomputed-hash-0.1.1 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/precomputed-hash-0.1.1.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/precomputed-hash-0.1.1.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/precomputed-hash-0.1.1 ] && [ -d ${WRKDIR}/vendor/precomputed-hash-0.1.1 ]; then \
+			mv ${WRKDIR}/vendor/precomputed-hash-0.1.1 ${WRKDIR}/vendor/precomputed-hash-0.1.1; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/precomputed-hash-0.1.1.tar.gz ${WRKDIR}/vendor/precomputed-hash-0.1.1 2>/dev/null || true; \
 	else \
 		echo "missing dep precomputed-hash-0.1.1" >&2; exit 1; \
 	fi
@@ -175,6 +265,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/selectors-0.26.0 ${WRKDIR}/vendor/selectors-0.26.0; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/selectors-0.26.0.tar.gz ${WRKDIR}/vendor/selectors-0.26.0 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/selectors-0.26.0.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/selectors-0.26.0.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/selectors-0.26.0 ] && [ -d ${WRKDIR}/vendor/selectors-0.26.0 ]; then \
+			mv ${WRKDIR}/vendor/selectors-0.26.0 ${WRKDIR}/vendor/selectors-0.26.0; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/selectors-0.26.0.tar.gz ${WRKDIR}/vendor/selectors-0.26.0 2>/dev/null || true; \
 	else \
 		echo "missing dep selectors-0.26.0" >&2; exit 1; \
 	fi
@@ -186,6 +282,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/tendril-0.4.3 ${WRKDIR}/vendor/tendril-0.4.3; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/tendril-0.4.3.tar.gz ${WRKDIR}/vendor/tendril-0.4.3 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/tendril-0.4.3.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/tendril-0.4.3.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/tendril-0.4.3 ] && [ -d ${WRKDIR}/vendor/tendril-0.4.3 ]; then \
+			mv ${WRKDIR}/vendor/tendril-0.4.3 ${WRKDIR}/vendor/tendril-0.4.3; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/tendril-0.4.3.tar.gz ${WRKDIR}/vendor/tendril-0.4.3 2>/dev/null || true; \
 	else \
 		echo "missing dep tendril-0.4.3" >&2; exit 1; \
 	fi
@@ -197,6 +299,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/cssparser-macros-0.6.1 ${WRKDIR}/vendor/cssparser-macros-0.6.1; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/cssparser-macros-0.6.1.tar.gz ${WRKDIR}/vendor/cssparser-macros-0.6.1 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/cssparser-macros-0.6.1.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/cssparser-macros-0.6.1.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/cssparser-macros-0.6.1 ] && [ -d ${WRKDIR}/vendor/cssparser-macros-0.6.1 ]; then \
+			mv ${WRKDIR}/vendor/cssparser-macros-0.6.1 ${WRKDIR}/vendor/cssparser-macros-0.6.1; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/cssparser-macros-0.6.1.tar.gz ${WRKDIR}/vendor/cssparser-macros-0.6.1 2>/dev/null || true; \
 	else \
 		echo "missing dep cssparser-macros-0.6.1" >&2; exit 1; \
 	fi
@@ -208,6 +316,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/dtoa-short-0.3.5 ${WRKDIR}/vendor/dtoa-short-0.3.5; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/dtoa-short-0.3.5.tar.gz ${WRKDIR}/vendor/dtoa-short-0.3.5 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/dtoa-short-0.3.5.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/dtoa-short-0.3.5.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/dtoa-short-0.3.5 ] && [ -d ${WRKDIR}/vendor/dtoa-short-0.3.5 ]; then \
+			mv ${WRKDIR}/vendor/dtoa-short-0.3.5 ${WRKDIR}/vendor/dtoa-short-0.3.5; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/dtoa-short-0.3.5.tar.gz ${WRKDIR}/vendor/dtoa-short-0.3.5 2>/dev/null || true; \
 	else \
 		echo "missing dep dtoa-short-0.3.5" >&2; exit 1; \
 	fi
@@ -219,6 +333,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/itoa-1.0.17 ${WRKDIR}/vendor/itoa-1.0.17; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/itoa-1.0.17.tar.gz ${WRKDIR}/vendor/itoa-1.0.17 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/itoa-1.0.17.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/itoa-1.0.17.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/itoa-1.0.17 ] && [ -d ${WRKDIR}/vendor/itoa-1.0.17 ]; then \
+			mv ${WRKDIR}/vendor/itoa-1.0.17 ${WRKDIR}/vendor/itoa-1.0.17; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/itoa-1.0.17.tar.gz ${WRKDIR}/vendor/itoa-1.0.17 2>/dev/null || true; \
 	else \
 		echo "missing dep itoa-1.0.17" >&2; exit 1; \
 	fi
@@ -230,6 +350,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/phf-0.11.3 ${WRKDIR}/vendor/phf-0.11.3; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/phf-0.11.3.tar.gz ${WRKDIR}/vendor/phf-0.11.3 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/phf-0.11.3.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/phf-0.11.3.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/phf-0.11.3 ] && [ -d ${WRKDIR}/vendor/phf-0.11.3 ]; then \
+			mv ${WRKDIR}/vendor/phf-0.11.3 ${WRKDIR}/vendor/phf-0.11.3; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/phf-0.11.3.tar.gz ${WRKDIR}/vendor/phf-0.11.3 2>/dev/null || true; \
 	else \
 		echo "missing dep phf-0.11.3" >&2; exit 1; \
 	fi
@@ -241,6 +367,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/smallvec-1.15.1 ${WRKDIR}/vendor/smallvec-1.15.1; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/smallvec-1.15.1.tar.gz ${WRKDIR}/vendor/smallvec-1.15.1 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/smallvec-1.15.1.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/smallvec-1.15.1.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/smallvec-1.15.1 ] && [ -d ${WRKDIR}/vendor/smallvec-1.15.1 ]; then \
+			mv ${WRKDIR}/vendor/smallvec-1.15.1 ${WRKDIR}/vendor/smallvec-1.15.1; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/smallvec-1.15.1.tar.gz ${WRKDIR}/vendor/smallvec-1.15.1 2>/dev/null || true; \
 	else \
 		echo "missing dep smallvec-1.15.1" >&2; exit 1; \
 	fi
@@ -252,6 +384,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/unicode-width-0.2.0 ${WRKDIR}/vendor/unicode-width-0.2.0; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/unicode-width-0.2.0.tar.gz ${WRKDIR}/vendor/unicode-width-0.2.0 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/unicode-width-0.2.0.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/unicode-width-0.2.0.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/unicode-width-0.2.0 ] && [ -d ${WRKDIR}/vendor/unicode-width-0.2.0 ]; then \
+			mv ${WRKDIR}/vendor/unicode-width-0.2.0 ${WRKDIR}/vendor/unicode-width-0.2.0; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/unicode-width-0.2.0.tar.gz ${WRKDIR}/vendor/unicode-width-0.2.0 2>/dev/null || true; \
 	else \
 		echo "missing dep unicode-width-0.2.0" >&2; exit 1; \
 	fi
@@ -263,6 +401,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/log-0.4.32 ${WRKDIR}/vendor/log-0.4.32; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/log-0.4.32.tar.gz ${WRKDIR}/vendor/log-0.4.32 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/log-0.4.32.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/log-0.4.32.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/log-0.4.32 ] && [ -d ${WRKDIR}/vendor/log-0.4.32 ]; then \
+			mv ${WRKDIR}/vendor/log-0.4.32 ${WRKDIR}/vendor/log-0.4.32; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/log-0.4.32.tar.gz ${WRKDIR}/vendor/log-0.4.32 2>/dev/null || true; \
 	else \
 		echo "missing dep log-0.4.32" >&2; exit 1; \
 	fi
@@ -274,6 +418,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/mac-0.1.1 ${WRKDIR}/vendor/mac-0.1.1; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/mac-0.1.1.tar.gz ${WRKDIR}/vendor/mac-0.1.1 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/mac-0.1.1.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/mac-0.1.1.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/mac-0.1.1 ] && [ -d ${WRKDIR}/vendor/mac-0.1.1 ]; then \
+			mv ${WRKDIR}/vendor/mac-0.1.1 ${WRKDIR}/vendor/mac-0.1.1; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/mac-0.1.1.tar.gz ${WRKDIR}/vendor/mac-0.1.1 2>/dev/null || true; \
 	else \
 		echo "missing dep mac-0.1.1" >&2; exit 1; \
 	fi
@@ -285,6 +435,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/markup5ever-0.14.1 ${WRKDIR}/vendor/markup5ever-0.14.1; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/markup5ever-0.14.1.tar.gz ${WRKDIR}/vendor/markup5ever-0.14.1 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/markup5ever-0.14.1.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/markup5ever-0.14.1.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/markup5ever-0.14.1 ] && [ -d ${WRKDIR}/vendor/markup5ever-0.14.1 ]; then \
+			mv ${WRKDIR}/vendor/markup5ever-0.14.1 ${WRKDIR}/vendor/markup5ever-0.14.1; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/markup5ever-0.14.1.tar.gz ${WRKDIR}/vendor/markup5ever-0.14.1 2>/dev/null || true; \
 	else \
 		echo "missing dep markup5ever-0.14.1" >&2; exit 1; \
 	fi
@@ -296,6 +452,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/match_token-0.1.0 ${WRKDIR}/vendor/match_token-0.1.0; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/match_token-0.1.0.tar.gz ${WRKDIR}/vendor/match_token-0.1.0 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/match_token-0.1.0.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/match_token-0.1.0.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/match_token-0.1.0 ] && [ -d ${WRKDIR}/vendor/match_token-0.1.0 ]; then \
+			mv ${WRKDIR}/vendor/match_token-0.1.0 ${WRKDIR}/vendor/match_token-0.1.0; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/match_token-0.1.0.tar.gz ${WRKDIR}/vendor/match_token-0.1.0 2>/dev/null || true; \
 	else \
 		echo "missing dep match_token-0.1.0" >&2; exit 1; \
 	fi
@@ -307,6 +469,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/bitflags-2.13.0 ${WRKDIR}/vendor/bitflags-2.13.0; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/bitflags-2.13.0.tar.gz ${WRKDIR}/vendor/bitflags-2.13.0 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/bitflags-2.13.0.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/bitflags-2.13.0.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/bitflags-2.13.0 ] && [ -d ${WRKDIR}/vendor/bitflags-2.13.0 ]; then \
+			mv ${WRKDIR}/vendor/bitflags-2.13.0 ${WRKDIR}/vendor/bitflags-2.13.0; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/bitflags-2.13.0.tar.gz ${WRKDIR}/vendor/bitflags-2.13.0 2>/dev/null || true; \
 	else \
 		echo "missing dep bitflags-2.13.0" >&2; exit 1; \
 	fi
@@ -318,6 +486,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/derive_more-0.99.20 ${WRKDIR}/vendor/derive_more-0.99.20; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/derive_more-0.99.20.tar.gz ${WRKDIR}/vendor/derive_more-0.99.20 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/derive_more-0.99.20.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/derive_more-0.99.20.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/derive_more-0.99.20 ] && [ -d ${WRKDIR}/vendor/derive_more-0.99.20 ]; then \
+			mv ${WRKDIR}/vendor/derive_more-0.99.20 ${WRKDIR}/vendor/derive_more-0.99.20; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/derive_more-0.99.20.tar.gz ${WRKDIR}/vendor/derive_more-0.99.20 2>/dev/null || true; \
 	else \
 		echo "missing dep derive_more-0.99.20" >&2; exit 1; \
 	fi
@@ -329,6 +503,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/fxhash-0.2.1 ${WRKDIR}/vendor/fxhash-0.2.1; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/fxhash-0.2.1.tar.gz ${WRKDIR}/vendor/fxhash-0.2.1 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/fxhash-0.2.1.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/fxhash-0.2.1.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/fxhash-0.2.1 ] && [ -d ${WRKDIR}/vendor/fxhash-0.2.1 ]; then \
+			mv ${WRKDIR}/vendor/fxhash-0.2.1 ${WRKDIR}/vendor/fxhash-0.2.1; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/fxhash-0.2.1.tar.gz ${WRKDIR}/vendor/fxhash-0.2.1 2>/dev/null || true; \
 	else \
 		echo "missing dep fxhash-0.2.1" >&2; exit 1; \
 	fi
@@ -340,6 +520,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/new_debug_unreachable-1.0.6 ${WRKDIR}/vendor/new_debug_unreachable-1.0.6; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/new_debug_unreachable-1.0.6.tar.gz ${WRKDIR}/vendor/new_debug_unreachable-1.0.6 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/new_debug_unreachable-1.0.6.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/new_debug_unreachable-1.0.6.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/new_debug_unreachable-1.0.6 ] && [ -d ${WRKDIR}/vendor/new_debug_unreachable-1.0.6 ]; then \
+			mv ${WRKDIR}/vendor/new_debug_unreachable-1.0.6 ${WRKDIR}/vendor/new_debug_unreachable-1.0.6; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/new_debug_unreachable-1.0.6.tar.gz ${WRKDIR}/vendor/new_debug_unreachable-1.0.6 2>/dev/null || true; \
 	else \
 		echo "missing dep new_debug_unreachable-1.0.6" >&2; exit 1; \
 	fi
@@ -351,6 +537,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/phf_codegen-0.11.3 ${WRKDIR}/vendor/phf_codegen-0.11.3; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/phf_codegen-0.11.3.tar.gz ${WRKDIR}/vendor/phf_codegen-0.11.3 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/phf_codegen-0.11.3.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/phf_codegen-0.11.3.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/phf_codegen-0.11.3 ] && [ -d ${WRKDIR}/vendor/phf_codegen-0.11.3 ]; then \
+			mv ${WRKDIR}/vendor/phf_codegen-0.11.3 ${WRKDIR}/vendor/phf_codegen-0.11.3; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/phf_codegen-0.11.3.tar.gz ${WRKDIR}/vendor/phf_codegen-0.11.3 2>/dev/null || true; \
 	else \
 		echo "missing dep phf_codegen-0.11.3" >&2; exit 1; \
 	fi
@@ -362,6 +554,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/servo_arc-0.4.3 ${WRKDIR}/vendor/servo_arc-0.4.3; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/servo_arc-0.4.3.tar.gz ${WRKDIR}/vendor/servo_arc-0.4.3 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/servo_arc-0.4.3.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/servo_arc-0.4.3.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/servo_arc-0.4.3 ] && [ -d ${WRKDIR}/vendor/servo_arc-0.4.3 ]; then \
+			mv ${WRKDIR}/vendor/servo_arc-0.4.3 ${WRKDIR}/vendor/servo_arc-0.4.3; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/servo_arc-0.4.3.tar.gz ${WRKDIR}/vendor/servo_arc-0.4.3 2>/dev/null || true; \
 	else \
 		echo "missing dep servo_arc-0.4.3" >&2; exit 1; \
 	fi
@@ -373,6 +571,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/futf-0.1.5 ${WRKDIR}/vendor/futf-0.1.5; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/futf-0.1.5.tar.gz ${WRKDIR}/vendor/futf-0.1.5 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/futf-0.1.5.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/futf-0.1.5.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/futf-0.1.5 ] && [ -d ${WRKDIR}/vendor/futf-0.1.5 ]; then \
+			mv ${WRKDIR}/vendor/futf-0.1.5 ${WRKDIR}/vendor/futf-0.1.5; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/futf-0.1.5.tar.gz ${WRKDIR}/vendor/futf-0.1.5 2>/dev/null || true; \
 	else \
 		echo "missing dep futf-0.1.5" >&2; exit 1; \
 	fi
@@ -384,6 +588,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/utf-8-0.7.6 ${WRKDIR}/vendor/utf-8-0.7.6; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/utf-8-0.7.6.tar.gz ${WRKDIR}/vendor/utf-8-0.7.6 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/utf-8-0.7.6.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/utf-8-0.7.6.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/utf-8-0.7.6 ] && [ -d ${WRKDIR}/vendor/utf-8-0.7.6 ]; then \
+			mv ${WRKDIR}/vendor/utf-8-0.7.6 ${WRKDIR}/vendor/utf-8-0.7.6; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/utf-8-0.7.6.tar.gz ${WRKDIR}/vendor/utf-8-0.7.6 2>/dev/null || true; \
 	else \
 		echo "missing dep utf-8-0.7.6" >&2; exit 1; \
 	fi
@@ -395,6 +605,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/quote-1.0.45 ${WRKDIR}/vendor/quote-1.0.45; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/quote-1.0.45.tar.gz ${WRKDIR}/vendor/quote-1.0.45 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/quote-1.0.45.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/quote-1.0.45.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/quote-1.0.45 ] && [ -d ${WRKDIR}/vendor/quote-1.0.45 ]; then \
+			mv ${WRKDIR}/vendor/quote-1.0.45 ${WRKDIR}/vendor/quote-1.0.45; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/quote-1.0.45.tar.gz ${WRKDIR}/vendor/quote-1.0.45 2>/dev/null || true; \
 	else \
 		echo "missing dep quote-1.0.45" >&2; exit 1; \
 	fi
@@ -406,6 +622,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/syn-2.0.117 ${WRKDIR}/vendor/syn-2.0.117; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/syn-2.0.117.tar.gz ${WRKDIR}/vendor/syn-2.0.117 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/syn-2.0.117.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/syn-2.0.117.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/syn-2.0.117 ] && [ -d ${WRKDIR}/vendor/syn-2.0.117 ]; then \
+			mv ${WRKDIR}/vendor/syn-2.0.117 ${WRKDIR}/vendor/syn-2.0.117; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/syn-2.0.117.tar.gz ${WRKDIR}/vendor/syn-2.0.117 2>/dev/null || true; \
 	else \
 		echo "missing dep syn-2.0.117" >&2; exit 1; \
 	fi
@@ -417,6 +639,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/dtoa-1.0.10 ${WRKDIR}/vendor/dtoa-1.0.10; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/dtoa-1.0.10.tar.gz ${WRKDIR}/vendor/dtoa-1.0.10 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/dtoa-1.0.10.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/dtoa-1.0.10.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/dtoa-1.0.10 ] && [ -d ${WRKDIR}/vendor/dtoa-1.0.10 ]; then \
+			mv ${WRKDIR}/vendor/dtoa-1.0.10 ${WRKDIR}/vendor/dtoa-1.0.10; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/dtoa-1.0.10.tar.gz ${WRKDIR}/vendor/dtoa-1.0.10 2>/dev/null || true; \
 	else \
 		echo "missing dep dtoa-1.0.10" >&2; exit 1; \
 	fi
@@ -428,6 +656,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/phf_macros-0.11.3 ${WRKDIR}/vendor/phf_macros-0.11.3; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/phf_macros-0.11.3.tar.gz ${WRKDIR}/vendor/phf_macros-0.11.3 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/phf_macros-0.11.3.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/phf_macros-0.11.3.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/phf_macros-0.11.3 ] && [ -d ${WRKDIR}/vendor/phf_macros-0.11.3 ]; then \
+			mv ${WRKDIR}/vendor/phf_macros-0.11.3 ${WRKDIR}/vendor/phf_macros-0.11.3; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/phf_macros-0.11.3.tar.gz ${WRKDIR}/vendor/phf_macros-0.11.3 2>/dev/null || true; \
 	else \
 		echo "missing dep phf_macros-0.11.3" >&2; exit 1; \
 	fi
@@ -439,6 +673,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/phf_shared-0.11.3 ${WRKDIR}/vendor/phf_shared-0.11.3; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/phf_shared-0.11.3.tar.gz ${WRKDIR}/vendor/phf_shared-0.11.3 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/phf_shared-0.11.3.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/phf_shared-0.11.3.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/phf_shared-0.11.3 ] && [ -d ${WRKDIR}/vendor/phf_shared-0.11.3 ]; then \
+			mv ${WRKDIR}/vendor/phf_shared-0.11.3 ${WRKDIR}/vendor/phf_shared-0.11.3; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/phf_shared-0.11.3.tar.gz ${WRKDIR}/vendor/phf_shared-0.11.3 2>/dev/null || true; \
 	else \
 		echo "missing dep phf_shared-0.11.3" >&2; exit 1; \
 	fi
@@ -450,6 +690,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/serde-1.0.228 ${WRKDIR}/vendor/serde-1.0.228; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/serde-1.0.228.tar.gz ${WRKDIR}/vendor/serde-1.0.228 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/serde-1.0.228.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/serde-1.0.228.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/serde-1.0.228 ] && [ -d ${WRKDIR}/vendor/serde-1.0.228 ]; then \
+			mv ${WRKDIR}/vendor/serde-1.0.228 ${WRKDIR}/vendor/serde-1.0.228; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/serde-1.0.228.tar.gz ${WRKDIR}/vendor/serde-1.0.228 2>/dev/null || true; \
 	else \
 		echo "missing dep serde-1.0.228" >&2; exit 1; \
 	fi
@@ -461,6 +707,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/value-bag-1.12.0 ${WRKDIR}/vendor/value-bag-1.12.0; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/value-bag-1.12.0.tar.gz ${WRKDIR}/vendor/value-bag-1.12.0 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/value-bag-1.12.0.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/value-bag-1.12.0.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/value-bag-1.12.0 ] && [ -d ${WRKDIR}/vendor/value-bag-1.12.0 ]; then \
+			mv ${WRKDIR}/vendor/value-bag-1.12.0 ${WRKDIR}/vendor/value-bag-1.12.0; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/value-bag-1.12.0.tar.gz ${WRKDIR}/vendor/value-bag-1.12.0 2>/dev/null || true; \
 	else \
 		echo "missing dep value-bag-1.12.0" >&2; exit 1; \
 	fi
@@ -472,6 +724,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/string_cache-0.8.9 ${WRKDIR}/vendor/string_cache-0.8.9; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/string_cache-0.8.9.tar.gz ${WRKDIR}/vendor/string_cache-0.8.9 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/string_cache-0.8.9.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/string_cache-0.8.9.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/string_cache-0.8.9 ] && [ -d ${WRKDIR}/vendor/string_cache-0.8.9 ]; then \
+			mv ${WRKDIR}/vendor/string_cache-0.8.9 ${WRKDIR}/vendor/string_cache-0.8.9; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/string_cache-0.8.9.tar.gz ${WRKDIR}/vendor/string_cache-0.8.9 2>/dev/null || true; \
 	else \
 		echo "missing dep string_cache-0.8.9" >&2; exit 1; \
 	fi
@@ -483,6 +741,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/string_cache_codegen-0.5.4 ${WRKDIR}/vendor/string_cache_codegen-0.5.4; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/string_cache_codegen-0.5.4.tar.gz ${WRKDIR}/vendor/string_cache_codegen-0.5.4 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/string_cache_codegen-0.5.4.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/string_cache_codegen-0.5.4.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/string_cache_codegen-0.5.4 ] && [ -d ${WRKDIR}/vendor/string_cache_codegen-0.5.4 ]; then \
+			mv ${WRKDIR}/vendor/string_cache_codegen-0.5.4 ${WRKDIR}/vendor/string_cache_codegen-0.5.4; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/string_cache_codegen-0.5.4.tar.gz ${WRKDIR}/vendor/string_cache_codegen-0.5.4 2>/dev/null || true; \
 	else \
 		echo "missing dep string_cache_codegen-0.5.4" >&2; exit 1; \
 	fi
@@ -494,6 +758,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/proc-macro2-1.0.106 ${WRKDIR}/vendor/proc-macro2-1.0.106; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/proc-macro2-1.0.106.tar.gz ${WRKDIR}/vendor/proc-macro2-1.0.106 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/proc-macro2-1.0.106.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/proc-macro2-1.0.106.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/proc-macro2-1.0.106 ] && [ -d ${WRKDIR}/vendor/proc-macro2-1.0.106 ]; then \
+			mv ${WRKDIR}/vendor/proc-macro2-1.0.106 ${WRKDIR}/vendor/proc-macro2-1.0.106; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/proc-macro2-1.0.106.tar.gz ${WRKDIR}/vendor/proc-macro2-1.0.106 2>/dev/null || true; \
 	else \
 		echo "missing dep proc-macro2-1.0.106" >&2; exit 1; \
 	fi
@@ -505,6 +775,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/serde_core-1.0.228 ${WRKDIR}/vendor/serde_core-1.0.228; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/serde_core-1.0.228.tar.gz ${WRKDIR}/vendor/serde_core-1.0.228 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/serde_core-1.0.228.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/serde_core-1.0.228.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/serde_core-1.0.228 ] && [ -d ${WRKDIR}/vendor/serde_core-1.0.228 ]; then \
+			mv ${WRKDIR}/vendor/serde_core-1.0.228 ${WRKDIR}/vendor/serde_core-1.0.228; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/serde_core-1.0.228.tar.gz ${WRKDIR}/vendor/serde_core-1.0.228 2>/dev/null || true; \
 	else \
 		echo "missing dep serde_core-1.0.228" >&2; exit 1; \
 	fi
@@ -516,6 +792,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/byteorder-1.5.0 ${WRKDIR}/vendor/byteorder-1.5.0; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/byteorder-1.5.0.tar.gz ${WRKDIR}/vendor/byteorder-1.5.0 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/byteorder-1.5.0.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/byteorder-1.5.0.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/byteorder-1.5.0 ] && [ -d ${WRKDIR}/vendor/byteorder-1.5.0 ]; then \
+			mv ${WRKDIR}/vendor/byteorder-1.5.0 ${WRKDIR}/vendor/byteorder-1.5.0; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/byteorder-1.5.0.tar.gz ${WRKDIR}/vendor/byteorder-1.5.0 2>/dev/null || true; \
 	else \
 		echo "missing dep byteorder-1.5.0" >&2; exit 1; \
 	fi
@@ -527,6 +809,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/phf_generator-0.11.3 ${WRKDIR}/vendor/phf_generator-0.11.3; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/phf_generator-0.11.3.tar.gz ${WRKDIR}/vendor/phf_generator-0.11.3 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/phf_generator-0.11.3.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/phf_generator-0.11.3.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/phf_generator-0.11.3 ] && [ -d ${WRKDIR}/vendor/phf_generator-0.11.3 ]; then \
+			mv ${WRKDIR}/vendor/phf_generator-0.11.3 ${WRKDIR}/vendor/phf_generator-0.11.3; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/phf_generator-0.11.3.tar.gz ${WRKDIR}/vendor/phf_generator-0.11.3 2>/dev/null || true; \
 	else \
 		echo "missing dep phf_generator-0.11.3" >&2; exit 1; \
 	fi
@@ -538,6 +826,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/stable_deref_trait-1.2.1 ${WRKDIR}/vendor/stable_deref_trait-1.2.1; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/stable_deref_trait-1.2.1.tar.gz ${WRKDIR}/vendor/stable_deref_trait-1.2.1 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/stable_deref_trait-1.2.1.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/stable_deref_trait-1.2.1.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/stable_deref_trait-1.2.1 ] && [ -d ${WRKDIR}/vendor/stable_deref_trait-1.2.1 ]; then \
+			mv ${WRKDIR}/vendor/stable_deref_trait-1.2.1 ${WRKDIR}/vendor/stable_deref_trait-1.2.1; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/stable_deref_trait-1.2.1.tar.gz ${WRKDIR}/vendor/stable_deref_trait-1.2.1 2>/dev/null || true; \
 	else \
 		echo "missing dep stable_deref_trait-1.2.1" >&2; exit 1; \
 	fi
@@ -549,6 +843,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/unicode-ident-1.0.24 ${WRKDIR}/vendor/unicode-ident-1.0.24; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/unicode-ident-1.0.24.tar.gz ${WRKDIR}/vendor/unicode-ident-1.0.24 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/unicode-ident-1.0.24.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/unicode-ident-1.0.24.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/unicode-ident-1.0.24 ] && [ -d ${WRKDIR}/vendor/unicode-ident-1.0.24 ]; then \
+			mv ${WRKDIR}/vendor/unicode-ident-1.0.24 ${WRKDIR}/vendor/unicode-ident-1.0.24; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/unicode-ident-1.0.24.tar.gz ${WRKDIR}/vendor/unicode-ident-1.0.24 2>/dev/null || true; \
 	else \
 		echo "missing dep unicode-ident-1.0.24" >&2; exit 1; \
 	fi
@@ -560,6 +860,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/siphasher-1.0.3 ${WRKDIR}/vendor/siphasher-1.0.3; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/siphasher-1.0.3.tar.gz ${WRKDIR}/vendor/siphasher-1.0.3 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/siphasher-1.0.3.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/siphasher-1.0.3.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/siphasher-1.0.3 ] && [ -d ${WRKDIR}/vendor/siphasher-1.0.3 ]; then \
+			mv ${WRKDIR}/vendor/siphasher-1.0.3 ${WRKDIR}/vendor/siphasher-1.0.3; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/siphasher-1.0.3.tar.gz ${WRKDIR}/vendor/siphasher-1.0.3 2>/dev/null || true; \
 	else \
 		echo "missing dep siphasher-1.0.3" >&2; exit 1; \
 	fi
@@ -571,6 +877,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/serde_derive-1.0.228 ${WRKDIR}/vendor/serde_derive-1.0.228; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/serde_derive-1.0.228.tar.gz ${WRKDIR}/vendor/serde_derive-1.0.228 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/serde_derive-1.0.228.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/serde_derive-1.0.228.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/serde_derive-1.0.228 ] && [ -d ${WRKDIR}/vendor/serde_derive-1.0.228 ]; then \
+			mv ${WRKDIR}/vendor/serde_derive-1.0.228 ${WRKDIR}/vendor/serde_derive-1.0.228; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/serde_derive-1.0.228.tar.gz ${WRKDIR}/vendor/serde_derive-1.0.228 2>/dev/null || true; \
 	else \
 		echo "missing dep serde_derive-1.0.228" >&2; exit 1; \
 	fi
@@ -582,6 +894,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/parking_lot-0.12.5 ${WRKDIR}/vendor/parking_lot-0.12.5; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/parking_lot-0.12.5.tar.gz ${WRKDIR}/vendor/parking_lot-0.12.5 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/parking_lot-0.12.5.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/parking_lot-0.12.5.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/parking_lot-0.12.5 ] && [ -d ${WRKDIR}/vendor/parking_lot-0.12.5 ]; then \
+			mv ${WRKDIR}/vendor/parking_lot-0.12.5 ${WRKDIR}/vendor/parking_lot-0.12.5; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/parking_lot-0.12.5.tar.gz ${WRKDIR}/vendor/parking_lot-0.12.5 2>/dev/null || true; \
 	else \
 		echo "missing dep parking_lot-0.12.5" >&2; exit 1; \
 	fi
@@ -593,6 +911,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/rand-0.8.5 ${WRKDIR}/vendor/rand-0.8.5; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/rand-0.8.5.tar.gz ${WRKDIR}/vendor/rand-0.8.5 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/rand-0.8.5.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/rand-0.8.5.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/rand-0.8.5 ] && [ -d ${WRKDIR}/vendor/rand-0.8.5 ]; then \
+			mv ${WRKDIR}/vendor/rand-0.8.5 ${WRKDIR}/vendor/rand-0.8.5; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/rand-0.8.5.tar.gz ${WRKDIR}/vendor/rand-0.8.5 2>/dev/null || true; \
 	else \
 		echo "missing dep rand-0.8.5" >&2; exit 1; \
 	fi
@@ -604,6 +928,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/lock_api-0.4.14 ${WRKDIR}/vendor/lock_api-0.4.14; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/lock_api-0.4.14.tar.gz ${WRKDIR}/vendor/lock_api-0.4.14 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/lock_api-0.4.14.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/lock_api-0.4.14.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/lock_api-0.4.14 ] && [ -d ${WRKDIR}/vendor/lock_api-0.4.14 ]; then \
+			mv ${WRKDIR}/vendor/lock_api-0.4.14 ${WRKDIR}/vendor/lock_api-0.4.14; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/lock_api-0.4.14.tar.gz ${WRKDIR}/vendor/lock_api-0.4.14 2>/dev/null || true; \
 	else \
 		echo "missing dep lock_api-0.4.14" >&2; exit 1; \
 	fi
@@ -615,6 +945,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/parking_lot_core-0.9.12 ${WRKDIR}/vendor/parking_lot_core-0.9.12; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/parking_lot_core-0.9.12.tar.gz ${WRKDIR}/vendor/parking_lot_core-0.9.12 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/parking_lot_core-0.9.12.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/parking_lot_core-0.9.12.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/parking_lot_core-0.9.12 ] && [ -d ${WRKDIR}/vendor/parking_lot_core-0.9.12 ]; then \
+			mv ${WRKDIR}/vendor/parking_lot_core-0.9.12 ${WRKDIR}/vendor/parking_lot_core-0.9.12; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/parking_lot_core-0.9.12.tar.gz ${WRKDIR}/vendor/parking_lot_core-0.9.12 2>/dev/null || true; \
 	else \
 		echo "missing dep parking_lot_core-0.9.12" >&2; exit 1; \
 	fi
@@ -626,6 +962,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/libc-0.2.186 ${WRKDIR}/vendor/libc-0.2.186; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/libc-0.2.186.tar.gz ${WRKDIR}/vendor/libc-0.2.186 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/libc-0.2.186.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/libc-0.2.186.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/libc-0.2.186 ] && [ -d ${WRKDIR}/vendor/libc-0.2.186 ]; then \
+			mv ${WRKDIR}/vendor/libc-0.2.186 ${WRKDIR}/vendor/libc-0.2.186; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/libc-0.2.186.tar.gz ${WRKDIR}/vendor/libc-0.2.186 2>/dev/null || true; \
 	else \
 		echo "missing dep libc-0.2.186" >&2; exit 1; \
 	fi
@@ -637,6 +979,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/rand_chacha-0.3.1 ${WRKDIR}/vendor/rand_chacha-0.3.1; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/rand_chacha-0.3.1.tar.gz ${WRKDIR}/vendor/rand_chacha-0.3.1 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/rand_chacha-0.3.1.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/rand_chacha-0.3.1.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/rand_chacha-0.3.1 ] && [ -d ${WRKDIR}/vendor/rand_chacha-0.3.1 ]; then \
+			mv ${WRKDIR}/vendor/rand_chacha-0.3.1 ${WRKDIR}/vendor/rand_chacha-0.3.1; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/rand_chacha-0.3.1.tar.gz ${WRKDIR}/vendor/rand_chacha-0.3.1 2>/dev/null || true; \
 	else \
 		echo "missing dep rand_chacha-0.3.1" >&2; exit 1; \
 	fi
@@ -648,6 +996,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/rand_core-0.6.4 ${WRKDIR}/vendor/rand_core-0.6.4; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/rand_core-0.6.4.tar.gz ${WRKDIR}/vendor/rand_core-0.6.4 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/rand_core-0.6.4.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/rand_core-0.6.4.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/rand_core-0.6.4 ] && [ -d ${WRKDIR}/vendor/rand_core-0.6.4 ]; then \
+			mv ${WRKDIR}/vendor/rand_core-0.6.4 ${WRKDIR}/vendor/rand_core-0.6.4; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/rand_core-0.6.4.tar.gz ${WRKDIR}/vendor/rand_core-0.6.4 2>/dev/null || true; \
 	else \
 		echo "missing dep rand_core-0.6.4" >&2; exit 1; \
 	fi
@@ -659,6 +1013,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/scopeguard-1.2.0 ${WRKDIR}/vendor/scopeguard-1.2.0; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/scopeguard-1.2.0.tar.gz ${WRKDIR}/vendor/scopeguard-1.2.0 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/scopeguard-1.2.0.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/scopeguard-1.2.0.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/scopeguard-1.2.0 ] && [ -d ${WRKDIR}/vendor/scopeguard-1.2.0 ]; then \
+			mv ${WRKDIR}/vendor/scopeguard-1.2.0 ${WRKDIR}/vendor/scopeguard-1.2.0; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/scopeguard-1.2.0.tar.gz ${WRKDIR}/vendor/scopeguard-1.2.0 2>/dev/null || true; \
 	else \
 		echo "missing dep scopeguard-1.2.0" >&2; exit 1; \
 	fi
@@ -670,6 +1030,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/cfg-if-1.0.4 ${WRKDIR}/vendor/cfg-if-1.0.4; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/cfg-if-1.0.4.tar.gz ${WRKDIR}/vendor/cfg-if-1.0.4 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/cfg-if-1.0.4.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/cfg-if-1.0.4.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/cfg-if-1.0.4 ] && [ -d ${WRKDIR}/vendor/cfg-if-1.0.4 ]; then \
+			mv ${WRKDIR}/vendor/cfg-if-1.0.4 ${WRKDIR}/vendor/cfg-if-1.0.4; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/cfg-if-1.0.4.tar.gz ${WRKDIR}/vendor/cfg-if-1.0.4 2>/dev/null || true; \
 	else \
 		echo "missing dep cfg-if-1.0.4" >&2; exit 1; \
 	fi
@@ -681,6 +1047,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/ppv-lite86-0.2.21 ${WRKDIR}/vendor/ppv-lite86-0.2.21; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/ppv-lite86-0.2.21.tar.gz ${WRKDIR}/vendor/ppv-lite86-0.2.21 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/ppv-lite86-0.2.21.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/ppv-lite86-0.2.21.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/ppv-lite86-0.2.21 ] && [ -d ${WRKDIR}/vendor/ppv-lite86-0.2.21 ]; then \
+			mv ${WRKDIR}/vendor/ppv-lite86-0.2.21 ${WRKDIR}/vendor/ppv-lite86-0.2.21; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/ppv-lite86-0.2.21.tar.gz ${WRKDIR}/vendor/ppv-lite86-0.2.21 2>/dev/null || true; \
 	else \
 		echo "missing dep ppv-lite86-0.2.21" >&2; exit 1; \
 	fi
@@ -692,6 +1064,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/getrandom-0.2.16 ${WRKDIR}/vendor/getrandom-0.2.16; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/getrandom-0.2.16.tar.gz ${WRKDIR}/vendor/getrandom-0.2.16 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/getrandom-0.2.16.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/getrandom-0.2.16.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/getrandom-0.2.16 ] && [ -d ${WRKDIR}/vendor/getrandom-0.2.16 ]; then \
+			mv ${WRKDIR}/vendor/getrandom-0.2.16 ${WRKDIR}/vendor/getrandom-0.2.16; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/getrandom-0.2.16.tar.gz ${WRKDIR}/vendor/getrandom-0.2.16 2>/dev/null || true; \
 	else \
 		echo "missing dep getrandom-0.2.16" >&2; exit 1; \
 	fi
@@ -703,6 +1081,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/zerocopy-0.8.48 ${WRKDIR}/vendor/zerocopy-0.8.48; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/zerocopy-0.8.48.tar.gz ${WRKDIR}/vendor/zerocopy-0.8.48 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/zerocopy-0.8.48.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/zerocopy-0.8.48.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/zerocopy-0.8.48 ] && [ -d ${WRKDIR}/vendor/zerocopy-0.8.48 ]; then \
+			mv ${WRKDIR}/vendor/zerocopy-0.8.48 ${WRKDIR}/vendor/zerocopy-0.8.48; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/zerocopy-0.8.48.tar.gz ${WRKDIR}/vendor/zerocopy-0.8.48 2>/dev/null || true; \
 	else \
 		echo "missing dep zerocopy-0.8.48" >&2; exit 1; \
 	fi
@@ -714,6 +1098,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/zerocopy-derive-0.8.48 ${WRKDIR}/vendor/zerocopy-derive-0.8.48; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/zerocopy-derive-0.8.48.tar.gz ${WRKDIR}/vendor/zerocopy-derive-0.8.48 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/zerocopy-derive-0.8.48.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/zerocopy-derive-0.8.48.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/zerocopy-derive-0.8.48 ] && [ -d ${WRKDIR}/vendor/zerocopy-derive-0.8.48 ]; then \
+			mv ${WRKDIR}/vendor/zerocopy-derive-0.8.48 ${WRKDIR}/vendor/zerocopy-derive-0.8.48; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/zerocopy-derive-0.8.48.tar.gz ${WRKDIR}/vendor/zerocopy-derive-0.8.48 2>/dev/null || true; \
 	else \
 		echo "missing dep zerocopy-derive-0.8.48" >&2; exit 1; \
 	fi

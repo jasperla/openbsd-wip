@@ -43,19 +43,37 @@ MAKE_ENV +=		RUSTFLAGS=--cap-lints=allow
 MAKE_ENV +=		CARGO_ENCODED_RUSTFLAGS=--cap-lints=allow
 
 
+# dpb junks when depends_count >= 150 (default). post-extract/pre-build seed
+# vendor + rlibs from installed rust-crate packages; junking those first
+# fails with "missing dep". rmcp's subgraph is 216 BUILD_DEPENDS.
+DPB_PROPERTIES +=	nojunk
+
 BUILD_DEPENDS +=	rust-crate-fontconfig_parser_0_5_8-0:devel/rust-crates/fontconfig-parser/0.5.8
+RUN_DEPENDS +=	rust-crate-fontconfig_parser_0_5_8-0:devel/rust-crates/fontconfig-parser/0.5.8
 BUILD_DEPENDS +=	rust-crate-log_0_4_32-0:devel/rust-crates/log/0.4.32
+RUN_DEPENDS +=	rust-crate-log_0_4_32-0:devel/rust-crates/log/0.4.32
 BUILD_DEPENDS +=	rust-crate-memmap2_0_9_11-0:devel/rust-crates/memmap2/0.9.11
+RUN_DEPENDS +=	rust-crate-memmap2_0_9_11-0:devel/rust-crates/memmap2/0.9.11
 BUILD_DEPENDS +=	rust-crate-slotmap_1_0_7-0:devel/rust-crates/slotmap/1.0.7
+RUN_DEPENDS +=	rust-crate-slotmap_1_0_7-0:devel/rust-crates/slotmap/1.0.7
 BUILD_DEPENDS +=	rust-crate-tinyvec_1_10_0-0:devel/rust-crates/tinyvec/1.10.0
+RUN_DEPENDS +=	rust-crate-tinyvec_1_10_0-0:devel/rust-crates/tinyvec/1.10.0
 BUILD_DEPENDS +=	rust-crate-ttf_parser_0_25_1-0:devel/rust-crates/ttf-parser/0.25.1
+RUN_DEPENDS +=	rust-crate-ttf_parser_0_25_1-0:devel/rust-crates/ttf-parser/0.25.1
 BUILD_DEPENDS +=	rust-crate-roxmltree_0_20_0-0:devel/rust-crates/roxmltree/0.20.0
+RUN_DEPENDS +=	rust-crate-roxmltree_0_20_0-0:devel/rust-crates/roxmltree/0.20.0
 BUILD_DEPENDS +=	rust-crate-value_bag_1_12_0-0:devel/rust-crates/value-bag/1.12.0
+RUN_DEPENDS +=	rust-crate-value_bag_1_12_0-0:devel/rust-crates/value-bag/1.12.0
 BUILD_DEPENDS +=	rust-crate-libc_0_2_186-0:devel/rust-crates/libc/0.2.186
+RUN_DEPENDS +=	rust-crate-libc_0_2_186-0:devel/rust-crates/libc/0.2.186
 BUILD_DEPENDS +=	rust-crate-version_check_0_9_5-0:devel/rust-crates/version_check/0.9.5
+RUN_DEPENDS +=	rust-crate-version_check_0_9_5-0:devel/rust-crates/version_check/0.9.5
 BUILD_DEPENDS +=	rust-crate-tinyvec_macros_0_1_1-0:devel/rust-crates/tinyvec_macros/0.1.1
+RUN_DEPENDS +=	rust-crate-tinyvec_macros_0_1_1-0:devel/rust-crates/tinyvec_macros/0.1.1
 BUILD_DEPENDS +=	rust-crate-core_maths_0_1_1-0:devel/rust-crates/core_maths/0.1.1
+RUN_DEPENDS +=	rust-crate-core_maths_0_1_1-0:devel/rust-crates/core_maths/0.1.1
 BUILD_DEPENDS +=	rust-crate-libm_0_2_15-0:devel/rust-crates/libm/0.2.15
+RUN_DEPENDS +=	rust-crate-libm_0_2_15-0:devel/rust-crates/libm/0.2.15
 
 # Direct registry deps: seed their rlibs/fingerprints before building this crate.
 _RUST_CRATE_ARCH =	${MACHINE_ARCH}
@@ -78,6 +96,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/fontconfig-parser-0.5.8 ${WRKDIR}/vendor/fontconfig-parser-0.5.8; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/fontconfig-parser-0.5.8.tar.gz ${WRKDIR}/vendor/fontconfig-parser-0.5.8 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/fontconfig-parser-0.5.8.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/fontconfig-parser-0.5.8.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/fontconfig-parser-0.5.8 ] && [ -d ${WRKDIR}/vendor/fontconfig-parser-0.5.8 ]; then \
+			mv ${WRKDIR}/vendor/fontconfig-parser-0.5.8 ${WRKDIR}/vendor/fontconfig-parser-0.5.8; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/fontconfig-parser-0.5.8.tar.gz ${WRKDIR}/vendor/fontconfig-parser-0.5.8 2>/dev/null || true; \
 	else \
 		echo "missing dep fontconfig-parser-0.5.8" >&2; exit 1; \
 	fi
@@ -89,6 +113,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/log-0.4.32 ${WRKDIR}/vendor/log-0.4.32; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/log-0.4.32.tar.gz ${WRKDIR}/vendor/log-0.4.32 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/log-0.4.32.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/log-0.4.32.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/log-0.4.32 ] && [ -d ${WRKDIR}/vendor/log-0.4.32 ]; then \
+			mv ${WRKDIR}/vendor/log-0.4.32 ${WRKDIR}/vendor/log-0.4.32; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/log-0.4.32.tar.gz ${WRKDIR}/vendor/log-0.4.32 2>/dev/null || true; \
 	else \
 		echo "missing dep log-0.4.32" >&2; exit 1; \
 	fi
@@ -100,6 +130,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/memmap2-0.9.11 ${WRKDIR}/vendor/memmap2-0.9.11; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/memmap2-0.9.11.tar.gz ${WRKDIR}/vendor/memmap2-0.9.11 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/memmap2-0.9.11.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/memmap2-0.9.11.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/memmap2-0.9.11 ] && [ -d ${WRKDIR}/vendor/memmap2-0.9.11 ]; then \
+			mv ${WRKDIR}/vendor/memmap2-0.9.11 ${WRKDIR}/vendor/memmap2-0.9.11; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/memmap2-0.9.11.tar.gz ${WRKDIR}/vendor/memmap2-0.9.11 2>/dev/null || true; \
 	else \
 		echo "missing dep memmap2-0.9.11" >&2; exit 1; \
 	fi
@@ -111,6 +147,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/slotmap-1.0.7 ${WRKDIR}/vendor/slotmap-1.0.7; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/slotmap-1.0.7.tar.gz ${WRKDIR}/vendor/slotmap-1.0.7 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/slotmap-1.0.7.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/slotmap-1.0.7.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/slotmap-1.0.7 ] && [ -d ${WRKDIR}/vendor/slotmap-1.0.7 ]; then \
+			mv ${WRKDIR}/vendor/slotmap-1.0.7 ${WRKDIR}/vendor/slotmap-1.0.7; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/slotmap-1.0.7.tar.gz ${WRKDIR}/vendor/slotmap-1.0.7 2>/dev/null || true; \
 	else \
 		echo "missing dep slotmap-1.0.7" >&2; exit 1; \
 	fi
@@ -122,6 +164,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/tinyvec-1.10.0 ${WRKDIR}/vendor/tinyvec-1.10.0; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/tinyvec-1.10.0.tar.gz ${WRKDIR}/vendor/tinyvec-1.10.0 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/tinyvec-1.10.0.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/tinyvec-1.10.0.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/tinyvec-1.10.0 ] && [ -d ${WRKDIR}/vendor/tinyvec-1.10.0 ]; then \
+			mv ${WRKDIR}/vendor/tinyvec-1.10.0 ${WRKDIR}/vendor/tinyvec-1.10.0; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/tinyvec-1.10.0.tar.gz ${WRKDIR}/vendor/tinyvec-1.10.0 2>/dev/null || true; \
 	else \
 		echo "missing dep tinyvec-1.10.0" >&2; exit 1; \
 	fi
@@ -133,6 +181,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/ttf-parser-0.25.1 ${WRKDIR}/vendor/ttf-parser-0.25.1; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/ttf-parser-0.25.1.tar.gz ${WRKDIR}/vendor/ttf-parser-0.25.1 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/ttf-parser-0.25.1.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/ttf-parser-0.25.1.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/ttf-parser-0.25.1 ] && [ -d ${WRKDIR}/vendor/ttf-parser-0.25.1 ]; then \
+			mv ${WRKDIR}/vendor/ttf-parser-0.25.1 ${WRKDIR}/vendor/ttf-parser-0.25.1; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/ttf-parser-0.25.1.tar.gz ${WRKDIR}/vendor/ttf-parser-0.25.1 2>/dev/null || true; \
 	else \
 		echo "missing dep ttf-parser-0.25.1" >&2; exit 1; \
 	fi
@@ -144,6 +198,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/roxmltree-0.20.0 ${WRKDIR}/vendor/roxmltree-0.20.0; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/roxmltree-0.20.0.tar.gz ${WRKDIR}/vendor/roxmltree-0.20.0 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/roxmltree-0.20.0.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/roxmltree-0.20.0.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/roxmltree-0.20.0 ] && [ -d ${WRKDIR}/vendor/roxmltree-0.20.0 ]; then \
+			mv ${WRKDIR}/vendor/roxmltree-0.20.0 ${WRKDIR}/vendor/roxmltree-0.20.0; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/roxmltree-0.20.0.tar.gz ${WRKDIR}/vendor/roxmltree-0.20.0 2>/dev/null || true; \
 	else \
 		echo "missing dep roxmltree-0.20.0" >&2; exit 1; \
 	fi
@@ -155,6 +215,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/value-bag-1.12.0 ${WRKDIR}/vendor/value-bag-1.12.0; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/value-bag-1.12.0.tar.gz ${WRKDIR}/vendor/value-bag-1.12.0 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/value-bag-1.12.0.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/value-bag-1.12.0.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/value-bag-1.12.0 ] && [ -d ${WRKDIR}/vendor/value-bag-1.12.0 ]; then \
+			mv ${WRKDIR}/vendor/value-bag-1.12.0 ${WRKDIR}/vendor/value-bag-1.12.0; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/value-bag-1.12.0.tar.gz ${WRKDIR}/vendor/value-bag-1.12.0 2>/dev/null || true; \
 	else \
 		echo "missing dep value-bag-1.12.0" >&2; exit 1; \
 	fi
@@ -166,6 +232,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/libc-0.2.186 ${WRKDIR}/vendor/libc-0.2.186; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/libc-0.2.186.tar.gz ${WRKDIR}/vendor/libc-0.2.186 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/libc-0.2.186.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/libc-0.2.186.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/libc-0.2.186 ] && [ -d ${WRKDIR}/vendor/libc-0.2.186 ]; then \
+			mv ${WRKDIR}/vendor/libc-0.2.186 ${WRKDIR}/vendor/libc-0.2.186; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/libc-0.2.186.tar.gz ${WRKDIR}/vendor/libc-0.2.186 2>/dev/null || true; \
 	else \
 		echo "missing dep libc-0.2.186" >&2; exit 1; \
 	fi
@@ -177,6 +249,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/version_check-0.9.5 ${WRKDIR}/vendor/version_check-0.9.5; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/version_check-0.9.5.tar.gz ${WRKDIR}/vendor/version_check-0.9.5 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/version_check-0.9.5.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/version_check-0.9.5.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/version_check-0.9.5 ] && [ -d ${WRKDIR}/vendor/version_check-0.9.5 ]; then \
+			mv ${WRKDIR}/vendor/version_check-0.9.5 ${WRKDIR}/vendor/version_check-0.9.5; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/version_check-0.9.5.tar.gz ${WRKDIR}/vendor/version_check-0.9.5 2>/dev/null || true; \
 	else \
 		echo "missing dep version_check-0.9.5" >&2; exit 1; \
 	fi
@@ -188,6 +266,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/tinyvec_macros-0.1.1 ${WRKDIR}/vendor/tinyvec_macros-0.1.1; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/tinyvec_macros-0.1.1.tar.gz ${WRKDIR}/vendor/tinyvec_macros-0.1.1 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/tinyvec_macros-0.1.1.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/tinyvec_macros-0.1.1.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/tinyvec_macros-0.1.1 ] && [ -d ${WRKDIR}/vendor/tinyvec_macros-0.1.1 ]; then \
+			mv ${WRKDIR}/vendor/tinyvec_macros-0.1.1 ${WRKDIR}/vendor/tinyvec_macros-0.1.1; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/tinyvec_macros-0.1.1.tar.gz ${WRKDIR}/vendor/tinyvec_macros-0.1.1 2>/dev/null || true; \
 	else \
 		echo "missing dep tinyvec_macros-0.1.1" >&2; exit 1; \
 	fi
@@ -199,6 +283,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/core_maths-0.1.1 ${WRKDIR}/vendor/core_maths-0.1.1; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/core_maths-0.1.1.tar.gz ${WRKDIR}/vendor/core_maths-0.1.1 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/core_maths-0.1.1.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/core_maths-0.1.1.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/core_maths-0.1.1 ] && [ -d ${WRKDIR}/vendor/core_maths-0.1.1 ]; then \
+			mv ${WRKDIR}/vendor/core_maths-0.1.1 ${WRKDIR}/vendor/core_maths-0.1.1; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/core_maths-0.1.1.tar.gz ${WRKDIR}/vendor/core_maths-0.1.1 2>/dev/null || true; \
 	else \
 		echo "missing dep core_maths-0.1.1" >&2; exit 1; \
 	fi
@@ -210,6 +300,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/libm-0.2.15 ${WRKDIR}/vendor/libm-0.2.15; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/libm-0.2.15.tar.gz ${WRKDIR}/vendor/libm-0.2.15 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/libm-0.2.15.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/libm-0.2.15.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/libm-0.2.15 ] && [ -d ${WRKDIR}/vendor/libm-0.2.15 ]; then \
+			mv ${WRKDIR}/vendor/libm-0.2.15 ${WRKDIR}/vendor/libm-0.2.15; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/libm-0.2.15.tar.gz ${WRKDIR}/vendor/libm-0.2.15 2>/dev/null || true; \
 	else \
 		echo "missing dep libm-0.2.15" >&2; exit 1; \
 	fi

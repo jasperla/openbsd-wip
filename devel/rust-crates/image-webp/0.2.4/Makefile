@@ -43,8 +43,15 @@ MAKE_ENV +=		RUSTFLAGS=--cap-lints=allow
 MAKE_ENV +=		CARGO_ENCODED_RUSTFLAGS=--cap-lints=allow
 
 
+# dpb junks when depends_count >= 150 (default). post-extract/pre-build seed
+# vendor + rlibs from installed rust-crate packages; junking those first
+# fails with "missing dep". rmcp's subgraph is 216 BUILD_DEPENDS.
+DPB_PROPERTIES +=	nojunk
+
 BUILD_DEPENDS +=	rust-crate-byteorder_lite_0_1_0-0:devel/rust-crates/byteorder-lite/0.1.0
+RUN_DEPENDS +=	rust-crate-byteorder_lite_0_1_0-0:devel/rust-crates/byteorder-lite/0.1.0
 BUILD_DEPENDS +=	rust-crate-quick_error_2_0_1-0:devel/rust-crates/quick-error/2.0.1
+RUN_DEPENDS +=	rust-crate-quick_error_2_0_1-0:devel/rust-crates/quick-error/2.0.1
 
 # Direct registry deps: seed their rlibs/fingerprints before building this crate.
 _RUST_CRATE_ARCH =	${MACHINE_ARCH}
@@ -67,6 +74,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/byteorder-lite-0.1.0 ${WRKDIR}/vendor/byteorder-lite-0.1.0; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/byteorder-lite-0.1.0.tar.gz ${WRKDIR}/vendor/byteorder-lite-0.1.0 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/byteorder-lite-0.1.0.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/byteorder-lite-0.1.0.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/byteorder-lite-0.1.0 ] && [ -d ${WRKDIR}/vendor/byteorder-lite-0.1.0 ]; then \
+			mv ${WRKDIR}/vendor/byteorder-lite-0.1.0 ${WRKDIR}/vendor/byteorder-lite-0.1.0; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/byteorder-lite-0.1.0.tar.gz ${WRKDIR}/vendor/byteorder-lite-0.1.0 2>/dev/null || true; \
 	else \
 		echo "missing dep byteorder-lite-0.1.0" >&2; exit 1; \
 	fi
@@ -78,6 +91,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/quick-error-2.0.1 ${WRKDIR}/vendor/quick-error-2.0.1; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/quick-error-2.0.1.tar.gz ${WRKDIR}/vendor/quick-error-2.0.1 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/quick-error-2.0.1.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/quick-error-2.0.1.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/quick-error-2.0.1 ] && [ -d ${WRKDIR}/vendor/quick-error-2.0.1 ]; then \
+			mv ${WRKDIR}/vendor/quick-error-2.0.1 ${WRKDIR}/vendor/quick-error-2.0.1; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/quick-error-2.0.1.tar.gz ${WRKDIR}/vendor/quick-error-2.0.1 2>/dev/null || true; \
 	else \
 		echo "missing dep quick-error-2.0.1" >&2; exit 1; \
 	fi

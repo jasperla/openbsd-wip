@@ -43,8 +43,15 @@ MAKE_ENV +=		RUSTFLAGS=--cap-lints=allow
 MAKE_ENV +=		CARGO_ENCODED_RUSTFLAGS=--cap-lints=allow
 
 
+# dpb junks when depends_count >= 150 (default). post-extract/pre-build seed
+# vendor + rlibs from installed rust-crate packages; junking those first
+# fails with "missing dep". rmcp's subgraph is 216 BUILD_DEPENDS.
+DPB_PROPERTIES +=	nojunk
+
 BUILD_DEPENDS +=	rust-crate-mac_0_1_1-0:devel/rust-crates/mac/0.1.1
+RUN_DEPENDS +=	rust-crate-mac_0_1_1-0:devel/rust-crates/mac/0.1.1
 BUILD_DEPENDS +=	rust-crate-new_debug_unreachable_1_0_6-0:devel/rust-crates/new_debug_unreachable/1.0.6
+RUN_DEPENDS +=	rust-crate-new_debug_unreachable_1_0_6-0:devel/rust-crates/new_debug_unreachable/1.0.6
 
 # Direct registry deps: seed their rlibs/fingerprints before building this crate.
 _RUST_CRATE_ARCH =	${MACHINE_ARCH}
@@ -67,6 +74,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/mac-0.1.1 ${WRKDIR}/vendor/mac-0.1.1; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/mac-0.1.1.tar.gz ${WRKDIR}/vendor/mac-0.1.1 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/mac-0.1.1.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/mac-0.1.1.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/mac-0.1.1 ] && [ -d ${WRKDIR}/vendor/mac-0.1.1 ]; then \
+			mv ${WRKDIR}/vendor/mac-0.1.1 ${WRKDIR}/vendor/mac-0.1.1; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/mac-0.1.1.tar.gz ${WRKDIR}/vendor/mac-0.1.1 2>/dev/null || true; \
 	else \
 		echo "missing dep mac-0.1.1" >&2; exit 1; \
 	fi
@@ -78,6 +91,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/new_debug_unreachable-1.0.6 ${WRKDIR}/vendor/new_debug_unreachable-1.0.6; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/new_debug_unreachable-1.0.6.tar.gz ${WRKDIR}/vendor/new_debug_unreachable-1.0.6 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/new_debug_unreachable-1.0.6.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/new_debug_unreachable-1.0.6.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/new_debug_unreachable-1.0.6 ] && [ -d ${WRKDIR}/vendor/new_debug_unreachable-1.0.6 ]; then \
+			mv ${WRKDIR}/vendor/new_debug_unreachable-1.0.6 ${WRKDIR}/vendor/new_debug_unreachable-1.0.6; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/new_debug_unreachable-1.0.6.tar.gz ${WRKDIR}/vendor/new_debug_unreachable-1.0.6 2>/dev/null || true; \
 	else \
 		echo "missing dep new_debug_unreachable-1.0.6" >&2; exit 1; \
 	fi

@@ -43,10 +43,19 @@ MAKE_ENV +=		RUSTFLAGS=--cap-lints=allow
 MAKE_ENV +=		CARGO_ENCODED_RUSTFLAGS=--cap-lints=allow
 
 
+# dpb junks when depends_count >= 150 (default). post-extract/pre-build seed
+# vendor + rlibs from installed rust-crate packages; junking those first
+# fails with "missing dep". rmcp's subgraph is 216 BUILD_DEPENDS.
+DPB_PROPERTIES +=	nojunk
+
 BUILD_DEPENDS +=	rust-crate-concurrent_queue_2_5_0-0:devel/rust-crates/concurrent-queue/2.5.0
+RUN_DEPENDS +=	rust-crate-concurrent_queue_2_5_0-0:devel/rust-crates/concurrent-queue/2.5.0
 BUILD_DEPENDS +=	rust-crate-parking_2_2_1-0:devel/rust-crates/parking/2.2.1
+RUN_DEPENDS +=	rust-crate-parking_2_2_1-0:devel/rust-crates/parking/2.2.1
 BUILD_DEPENDS +=	rust-crate-pin_project_lite_0_2_16-0:devel/rust-crates/pin-project-lite/0.2.16
+RUN_DEPENDS +=	rust-crate-pin_project_lite_0_2_16-0:devel/rust-crates/pin-project-lite/0.2.16
 BUILD_DEPENDS +=	rust-crate-crossbeam_utils_0_8_21-0:devel/rust-crates/crossbeam-utils/0.8.21
+RUN_DEPENDS +=	rust-crate-crossbeam_utils_0_8_21-0:devel/rust-crates/crossbeam-utils/0.8.21
 
 # Direct registry deps: seed their rlibs/fingerprints before building this crate.
 _RUST_CRATE_ARCH =	${MACHINE_ARCH}
@@ -69,6 +78,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/concurrent-queue-2.5.0 ${WRKDIR}/vendor/concurrent-queue-2.5.0; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/concurrent-queue-2.5.0.tar.gz ${WRKDIR}/vendor/concurrent-queue-2.5.0 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/concurrent-queue-2.5.0.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/concurrent-queue-2.5.0.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/concurrent-queue-2.5.0 ] && [ -d ${WRKDIR}/vendor/concurrent-queue-2.5.0 ]; then \
+			mv ${WRKDIR}/vendor/concurrent-queue-2.5.0 ${WRKDIR}/vendor/concurrent-queue-2.5.0; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/concurrent-queue-2.5.0.tar.gz ${WRKDIR}/vendor/concurrent-queue-2.5.0 2>/dev/null || true; \
 	else \
 		echo "missing dep concurrent-queue-2.5.0" >&2; exit 1; \
 	fi
@@ -80,6 +95,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/parking-2.2.1 ${WRKDIR}/vendor/parking-2.2.1; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/parking-2.2.1.tar.gz ${WRKDIR}/vendor/parking-2.2.1 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/parking-2.2.1.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/parking-2.2.1.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/parking-2.2.1 ] && [ -d ${WRKDIR}/vendor/parking-2.2.1 ]; then \
+			mv ${WRKDIR}/vendor/parking-2.2.1 ${WRKDIR}/vendor/parking-2.2.1; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/parking-2.2.1.tar.gz ${WRKDIR}/vendor/parking-2.2.1 2>/dev/null || true; \
 	else \
 		echo "missing dep parking-2.2.1" >&2; exit 1; \
 	fi
@@ -91,6 +112,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/pin-project-lite-0.2.16 ${WRKDIR}/vendor/pin-project-lite-0.2.16; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/pin-project-lite-0.2.16.tar.gz ${WRKDIR}/vendor/pin-project-lite-0.2.16 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/pin-project-lite-0.2.16.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/pin-project-lite-0.2.16.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/pin-project-lite-0.2.16 ] && [ -d ${WRKDIR}/vendor/pin-project-lite-0.2.16 ]; then \
+			mv ${WRKDIR}/vendor/pin-project-lite-0.2.16 ${WRKDIR}/vendor/pin-project-lite-0.2.16; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/pin-project-lite-0.2.16.tar.gz ${WRKDIR}/vendor/pin-project-lite-0.2.16 2>/dev/null || true; \
 	else \
 		echo "missing dep pin-project-lite-0.2.16" >&2; exit 1; \
 	fi
@@ -102,6 +129,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/crossbeam-utils-0.8.21 ${WRKDIR}/vendor/crossbeam-utils-0.8.21; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/crossbeam-utils-0.8.21.tar.gz ${WRKDIR}/vendor/crossbeam-utils-0.8.21 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/crossbeam-utils-0.8.21.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/crossbeam-utils-0.8.21.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/crossbeam-utils-0.8.21 ] && [ -d ${WRKDIR}/vendor/crossbeam-utils-0.8.21 ]; then \
+			mv ${WRKDIR}/vendor/crossbeam-utils-0.8.21 ${WRKDIR}/vendor/crossbeam-utils-0.8.21; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/crossbeam-utils-0.8.21.tar.gz ${WRKDIR}/vendor/crossbeam-utils-0.8.21 2>/dev/null || true; \
 	else \
 		echo "missing dep crossbeam-utils-0.8.21" >&2; exit 1; \
 	fi

@@ -43,7 +43,13 @@ MAKE_ENV +=		RUSTFLAGS=--cap-lints=allow
 MAKE_ENV +=		CARGO_ENCODED_RUSTFLAGS=--cap-lints=allow
 
 
+# dpb junks when depends_count >= 150 (default). post-extract/pre-build seed
+# vendor + rlibs from installed rust-crate packages; junking those first
+# fails with "missing dep". rmcp's subgraph is 216 BUILD_DEPENDS.
+DPB_PROPERTIES +=	nojunk
+
 BUILD_DEPENDS +=	rust-crate-wasite_0_1_0-0:devel/rust-crates/wasite/0.1.0
+RUN_DEPENDS +=	rust-crate-wasite_0_1_0-0:devel/rust-crates/wasite/0.1.0
 
 # Direct registry deps: seed their rlibs/fingerprints before building this crate.
 _RUST_CRATE_ARCH =	${MACHINE_ARCH}
@@ -66,6 +72,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/wasite-0.1.0 ${WRKDIR}/vendor/wasite-0.1.0; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/wasite-0.1.0.tar.gz ${WRKDIR}/vendor/wasite-0.1.0 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/wasite-0.1.0.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/wasite-0.1.0.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/wasite-0.1.0 ] && [ -d ${WRKDIR}/vendor/wasite-0.1.0 ]; then \
+			mv ${WRKDIR}/vendor/wasite-0.1.0 ${WRKDIR}/vendor/wasite-0.1.0; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/wasite-0.1.0.tar.gz ${WRKDIR}/vendor/wasite-0.1.0 2>/dev/null || true; \
 	else \
 		echo "missing dep wasite-0.1.0" >&2; exit 1; \
 	fi

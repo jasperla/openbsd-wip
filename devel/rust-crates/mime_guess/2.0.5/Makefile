@@ -43,8 +43,15 @@ MAKE_ENV +=		RUSTFLAGS=--cap-lints=allow
 MAKE_ENV +=		CARGO_ENCODED_RUSTFLAGS=--cap-lints=allow
 
 
+# dpb junks when depends_count >= 150 (default). post-extract/pre-build seed
+# vendor + rlibs from installed rust-crate packages; junking those first
+# fails with "missing dep". rmcp's subgraph is 216 BUILD_DEPENDS.
+DPB_PROPERTIES +=	nojunk
+
 BUILD_DEPENDS +=	rust-crate-mime_0_3_17-0:devel/rust-crates/mime/0.3.17
+RUN_DEPENDS +=	rust-crate-mime_0_3_17-0:devel/rust-crates/mime/0.3.17
 BUILD_DEPENDS +=	rust-crate-unicase_2_8_1-0:devel/rust-crates/unicase/2.8.1
+RUN_DEPENDS +=	rust-crate-unicase_2_8_1-0:devel/rust-crates/unicase/2.8.1
 
 # Direct registry deps: seed their rlibs/fingerprints before building this crate.
 _RUST_CRATE_ARCH =	${MACHINE_ARCH}
@@ -67,6 +74,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/mime-0.3.17 ${WRKDIR}/vendor/mime-0.3.17; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/mime-0.3.17.tar.gz ${WRKDIR}/vendor/mime-0.3.17 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/mime-0.3.17.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/mime-0.3.17.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/mime-0.3.17 ] && [ -d ${WRKDIR}/vendor/mime-0.3.17 ]; then \
+			mv ${WRKDIR}/vendor/mime-0.3.17 ${WRKDIR}/vendor/mime-0.3.17; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/mime-0.3.17.tar.gz ${WRKDIR}/vendor/mime-0.3.17 2>/dev/null || true; \
 	else \
 		echo "missing dep mime-0.3.17" >&2; exit 1; \
 	fi
@@ -78,6 +91,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/unicase-2.8.1 ${WRKDIR}/vendor/unicase-2.8.1; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/unicase-2.8.1.tar.gz ${WRKDIR}/vendor/unicase-2.8.1 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/unicase-2.8.1.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/unicase-2.8.1.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/unicase-2.8.1 ] && [ -d ${WRKDIR}/vendor/unicase-2.8.1 ]; then \
+			mv ${WRKDIR}/vendor/unicase-2.8.1 ${WRKDIR}/vendor/unicase-2.8.1; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/unicase-2.8.1.tar.gz ${WRKDIR}/vendor/unicase-2.8.1 2>/dev/null || true; \
 	else \
 		echo "missing dep unicase-2.8.1" >&2; exit 1; \
 	fi

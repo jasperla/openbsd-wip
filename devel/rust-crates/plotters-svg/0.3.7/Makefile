@@ -43,7 +43,13 @@ MAKE_ENV +=		RUSTFLAGS=--cap-lints=allow
 MAKE_ENV +=		CARGO_ENCODED_RUSTFLAGS=--cap-lints=allow
 
 
+# dpb junks when depends_count >= 150 (default). post-extract/pre-build seed
+# vendor + rlibs from installed rust-crate packages; junking those first
+# fails with "missing dep". rmcp's subgraph is 216 BUILD_DEPENDS.
+DPB_PROPERTIES +=	nojunk
+
 BUILD_DEPENDS +=	rust-crate-plotters_backend_0_3_7-0:devel/rust-crates/plotters-backend/0.3.7
+RUN_DEPENDS +=	rust-crate-plotters_backend_0_3_7-0:devel/rust-crates/plotters-backend/0.3.7
 
 # Direct registry deps: seed their rlibs/fingerprints before building this crate.
 _RUST_CRATE_ARCH =	${MACHINE_ARCH}
@@ -66,6 +72,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/plotters-backend-0.3.7 ${WRKDIR}/vendor/plotters-backend-0.3.7; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/plotters-backend-0.3.7.tar.gz ${WRKDIR}/vendor/plotters-backend-0.3.7 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/plotters-backend-0.3.7.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/plotters-backend-0.3.7.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/plotters-backend-0.3.7 ] && [ -d ${WRKDIR}/vendor/plotters-backend-0.3.7 ]; then \
+			mv ${WRKDIR}/vendor/plotters-backend-0.3.7 ${WRKDIR}/vendor/plotters-backend-0.3.7; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/plotters-backend-0.3.7.tar.gz ${WRKDIR}/vendor/plotters-backend-0.3.7 2>/dev/null || true; \
 	else \
 		echo "missing dep plotters-backend-0.3.7" >&2; exit 1; \
 	fi

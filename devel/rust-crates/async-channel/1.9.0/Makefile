@@ -43,10 +43,19 @@ MAKE_ENV +=		RUSTFLAGS=--cap-lints=allow
 MAKE_ENV +=		CARGO_ENCODED_RUSTFLAGS=--cap-lints=allow
 
 
+# dpb junks when depends_count >= 150 (default). post-extract/pre-build seed
+# vendor + rlibs from installed rust-crate packages; junking those first
+# fails with "missing dep". rmcp's subgraph is 216 BUILD_DEPENDS.
+DPB_PROPERTIES +=	nojunk
+
 BUILD_DEPENDS +=	rust-crate-concurrent_queue_2_5_0-0:devel/rust-crates/concurrent-queue/2.5.0
+RUN_DEPENDS +=	rust-crate-concurrent_queue_2_5_0-0:devel/rust-crates/concurrent-queue/2.5.0
 BUILD_DEPENDS +=	rust-crate-event_listener_2_5_3-0:devel/rust-crates/event-listener/2.5.3
+RUN_DEPENDS +=	rust-crate-event_listener_2_5_3-0:devel/rust-crates/event-listener/2.5.3
 BUILD_DEPENDS +=	rust-crate-futures_core_0_3_32-0:devel/rust-crates/futures-core/0.3.32
+RUN_DEPENDS +=	rust-crate-futures_core_0_3_32-0:devel/rust-crates/futures-core/0.3.32
 BUILD_DEPENDS +=	rust-crate-crossbeam_utils_0_8_21-0:devel/rust-crates/crossbeam-utils/0.8.21
+RUN_DEPENDS +=	rust-crate-crossbeam_utils_0_8_21-0:devel/rust-crates/crossbeam-utils/0.8.21
 
 # Direct registry deps: seed their rlibs/fingerprints before building this crate.
 _RUST_CRATE_ARCH =	${MACHINE_ARCH}
@@ -69,6 +78,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/concurrent-queue-2.5.0 ${WRKDIR}/vendor/concurrent-queue-2.5.0; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/concurrent-queue-2.5.0.tar.gz ${WRKDIR}/vendor/concurrent-queue-2.5.0 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/concurrent-queue-2.5.0.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/concurrent-queue-2.5.0.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/concurrent-queue-2.5.0 ] && [ -d ${WRKDIR}/vendor/concurrent-queue-2.5.0 ]; then \
+			mv ${WRKDIR}/vendor/concurrent-queue-2.5.0 ${WRKDIR}/vendor/concurrent-queue-2.5.0; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/concurrent-queue-2.5.0.tar.gz ${WRKDIR}/vendor/concurrent-queue-2.5.0 2>/dev/null || true; \
 	else \
 		echo "missing dep concurrent-queue-2.5.0" >&2; exit 1; \
 	fi
@@ -80,6 +95,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/event-listener-2.5.3 ${WRKDIR}/vendor/event-listener-2.5.3; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/event-listener-2.5.3.tar.gz ${WRKDIR}/vendor/event-listener-2.5.3 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/event-listener-2.5.3.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/event-listener-2.5.3.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/event-listener-2.5.3 ] && [ -d ${WRKDIR}/vendor/event-listener-2.5.3 ]; then \
+			mv ${WRKDIR}/vendor/event-listener-2.5.3 ${WRKDIR}/vendor/event-listener-2.5.3; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/event-listener-2.5.3.tar.gz ${WRKDIR}/vendor/event-listener-2.5.3 2>/dev/null || true; \
 	else \
 		echo "missing dep event-listener-2.5.3" >&2; exit 1; \
 	fi
@@ -91,6 +112,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/futures-core-0.3.32 ${WRKDIR}/vendor/futures-core-0.3.32; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/futures-core-0.3.32.tar.gz ${WRKDIR}/vendor/futures-core-0.3.32 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/futures-core-0.3.32.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/futures-core-0.3.32.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/futures-core-0.3.32 ] && [ -d ${WRKDIR}/vendor/futures-core-0.3.32 ]; then \
+			mv ${WRKDIR}/vendor/futures-core-0.3.32 ${WRKDIR}/vendor/futures-core-0.3.32; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/futures-core-0.3.32.tar.gz ${WRKDIR}/vendor/futures-core-0.3.32 2>/dev/null || true; \
 	else \
 		echo "missing dep futures-core-0.3.32" >&2; exit 1; \
 	fi
@@ -102,6 +129,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/crossbeam-utils-0.8.21 ${WRKDIR}/vendor/crossbeam-utils-0.8.21; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/crossbeam-utils-0.8.21.tar.gz ${WRKDIR}/vendor/crossbeam-utils-0.8.21 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/crossbeam-utils-0.8.21.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/crossbeam-utils-0.8.21.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/crossbeam-utils-0.8.21 ] && [ -d ${WRKDIR}/vendor/crossbeam-utils-0.8.21 ]; then \
+			mv ${WRKDIR}/vendor/crossbeam-utils-0.8.21 ${WRKDIR}/vendor/crossbeam-utils-0.8.21; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/crossbeam-utils-0.8.21.tar.gz ${WRKDIR}/vendor/crossbeam-utils-0.8.21 2>/dev/null || true; \
 	else \
 		echo "missing dep crossbeam-utils-0.8.21" >&2; exit 1; \
 	fi

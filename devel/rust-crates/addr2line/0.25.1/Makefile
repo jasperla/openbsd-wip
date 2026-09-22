@@ -43,7 +43,13 @@ MAKE_ENV +=		RUSTFLAGS=--cap-lints=allow
 MAKE_ENV +=		CARGO_ENCODED_RUSTFLAGS=--cap-lints=allow
 
 
+# dpb junks when depends_count >= 150 (default). post-extract/pre-build seed
+# vendor + rlibs from installed rust-crate packages; junking those first
+# fails with "missing dep". rmcp's subgraph is 216 BUILD_DEPENDS.
+DPB_PROPERTIES +=	nojunk
+
 BUILD_DEPENDS +=	rust-crate-gimli_0_32_3-0:devel/rust-crates/gimli/0.32.3
+RUN_DEPENDS +=	rust-crate-gimli_0_32_3-0:devel/rust-crates/gimli/0.32.3
 
 # Direct registry deps: seed their rlibs/fingerprints before building this crate.
 _RUST_CRATE_ARCH =	${MACHINE_ARCH}
@@ -66,6 +72,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/gimli-0.32.3 ${WRKDIR}/vendor/gimli-0.32.3; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/gimli-0.32.3.tar.gz ${WRKDIR}/vendor/gimli-0.32.3 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/gimli-0.32.3.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/gimli-0.32.3.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/gimli-0.32.3 ] && [ -d ${WRKDIR}/vendor/gimli-0.32.3 ]; then \
+			mv ${WRKDIR}/vendor/gimli-0.32.3 ${WRKDIR}/vendor/gimli-0.32.3; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/gimli-0.32.3.tar.gz ${WRKDIR}/vendor/gimli-0.32.3 2>/dev/null || true; \
 	else \
 		echo "missing dep gimli-0.32.3" >&2; exit 1; \
 	fi
