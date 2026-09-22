@@ -1,0 +1,9 @@
+PicoClaw is a lightweight personal AI assistant written in Go. It runs as
+a single binary (agent CLI, gateway, Pico WebSocket channel) with JSON
+config under ~/.picoclaw.
+
+Official goreleaser builds do not include OpenBSD. This port compiles
+cmd/picoclaw from a pinned GitHub commit (CGO_ENABLED=0, goolm+stdjson)
+so the package matches the base libc on -current/8.0.
+
+https://github.com/sipeed/picoclaw
