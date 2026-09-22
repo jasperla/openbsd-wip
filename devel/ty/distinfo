@@ -1,4 +1,4 @@
-SHA256 (astral-sh-ruff-160ffbf2cff30d7ff1c97f13d6f1ca9fe430fe48.tar.gz) = aFdvW8z8XHfC/jQHWOzfFeYdw3pnwTgvOElk08PN+uc=
+SHA256 (astral-sh-ruff-e86121d0d16586508e38bbc52cef10a2e5f4c0f8.tar.gz) = Jlmj+BKmDS88203ikM8iIJNgBPlFYAmu/KdjVnZTk5I=
 SHA256 (cargo/adler2-2.0.1.tar.gz) = MgEZV5/K2cIYhPXEhh0WF00OBiUGJSZvUP5omDQKvvo=
 SHA256 (cargo/aho-corasick-1.1.5.tar.gz) = yYJkL6noYGBWgo7pqFBXNyMBELsQmRU8ee/oZcWdEro=
 SHA256 (cargo/alloca-0.4.0.tar.gz) = 5afQXqaup+nmTSW5FWui/uP91lnjTkEGPNL8fNAg1/Q=
@@ -198,8 +198,8 @@ SHA256 (cargo/kqueue-sys-1.0.4.tar.gz) = 7ZYl/9qHKbheRc8ECQA1rDaJJ7jOvDSJjnwSD1L
 SHA256 (cargo/lazy_static-1.5.0.tar.gz) = u9K8tMlj8t2uBqLvx+nzWRMSRzxQxmheHymAaDFuZv4=
 SHA256 (cargo/leb128fmt-0.1.0.tar.gz) = Ce3Z6LVOSeWH5PYpWn0pw+qU1GnLQKuMpwsogkioHbI=
 SHA256 (cargo/libc-0.2.189.tar.gz) = Pq8+3j/ubbGkwu4JG/iotNzNxtF/ZW+weJbucoZ2EvI=
-SHA256 (cargo/libcst-1.8.6.tar.gz) = aupxQ+Sg7Vm4eh7nHhmFAIifiwBTERNr4V6EyXpvzY0=
-SHA256 (cargo/libcst_derive-1.8.6.tar.gz) = CQMXPqMWw0pE0ElxYeBNkhCvRPX16Jvy9V2aJUyaDo0=
+SHA256 (cargo/libcst-1.9.0.tar.gz) = IbaNnGDLqcMz+JWW71xNO2yb0LfS5IqYEN9vp5dhAqM=
+SHA256 (cargo/libcst_derive-1.9.0.tar.gz) = V6Gsb7P73DQIovE45U0Rw90zjxLC78PbR0d8wiJ9icI=
 SHA256 (cargo/libm-0.2.16.tar.gz) = ttLOw+rpT59QnHZ7RZMvGtqDUMS9uFry/KtKPBSAeYE=
 SHA256 (cargo/libmimalloc-sys-0.1.49.tar.gz) = akWlL0PhwW9mfM/k3YyFt/fCBP1eO/RsWw25pcPAuOk=
 SHA256 (cargo/libredox-0.1.10.tar.gz) = QW9+cYvbBgAJZJYP+kO0M1rUASrouZBgJhqkqAiNXMs=
@@ -504,8 +504,8 @@ SHA256 (cargo/zmij-1.0.10.tar.gz) = MODY3/uuPYQPZL2jjig5H672c6e1pgF4QPKhBsgUWGg=
 SHA256 (cargo/zstd-0.13.3.tar.gz) = 6R7jEaVpwycXFlFWbgeXIgDnb8/iJCpPpEYUmjiBwIo=
 SHA256 (cargo/zstd-safe-7.2.4.tar.gz) = j0nE1fCrtgKpP7hzavKk9N2VEuNvf1cNZuZf+GftO50=
 SHA256 (cargo/zstd-sys-2.0.16+zstd.1.5.7.tar.gz) = keGevCrcj4PkMDnnl3bj/ajKkZEy1oof7WpfrKJoN0g=
-SHA256 (ty-0.0.82.tar.gz) = X17XrA/z11s4/GFejYiIUSHnNGpJjStIxDE7eZdwNyM=
-SIZE (astral-sh-ruff-160ffbf2cff30d7ff1c97f13d6f1ca9fe430fe48.tar.gz) = 13776265
+SHA256 (ty-0.0.83.tar.gz) = NPYn60arJ5p7T2rAgmAOwjdO52K6/JFiFiwV1uYRRxs=
+SIZE (astral-sh-ruff-e86121d0d16586508e38bbc52cef10a2e5f4c0f8.tar.gz) = 13831456
 SIZE (cargo/adler2-2.0.1.tar.gz) = 13366
 SIZE (cargo/aho-corasick-1.1.5.tar.gz) = 184315
 SIZE (cargo/alloca-0.4.0.tar.gz) = 4257
@@ -705,8 +705,8 @@ SIZE (cargo/kqueue-sys-1.0.4.tar.gz) = 7160
 SIZE (cargo/lazy_static-1.5.0.tar.gz) = 14025
 SIZE (cargo/leb128fmt-0.1.0.tar.gz) = 14138
 SIZE (cargo/libc-0.2.189.tar.gz) = 851502
-SIZE (cargo/libcst-1.8.6.tar.gz) = 111277
-SIZE (cargo/libcst_derive-1.8.6.tar.gz) = 11337
+SIZE (cargo/libcst-1.9.0.tar.gz) = 112798
+SIZE (cargo/libcst_derive-1.9.0.tar.gz) = 11335
 SIZE (cargo/libm-0.2.16.tar.gz) = 164243
 SIZE (cargo/libmimalloc-sys-0.1.49.tar.gz) = 500217
 SIZE (cargo/libredox-0.1.10.tar.gz) = 7332
@@ -1011,4 +1011,4 @@ SIZE (cargo/zmij-1.0.10.tar.gz) = 22288
 SIZE (cargo/zstd-0.13.3.tar.gz) = 30514
 SIZE (cargo/zstd-safe-7.2.4.tar.gz) = 29350
 SIZE (cargo/zstd-sys-2.0.16+zstd.1.5.7.tar.gz) = 775620
-SIZE (ty-0.0.82.tar.gz) = 2723327
+SIZE (ty-0.0.83.tar.gz) = 2728249
