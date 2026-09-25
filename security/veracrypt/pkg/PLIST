@@ -1,0 +1,7 @@
+@bin bin/veracrypt
+share/applications/veracrypt.desktop
+share/icons/hicolor/scalable/apps/veracrypt.svg
+share/pixmaps/
+share/pixmaps/veracrypt.xpm
+@tag update-desktop-database
+@tag gtk-update-icon-cache %D/share/icons/hicolor
