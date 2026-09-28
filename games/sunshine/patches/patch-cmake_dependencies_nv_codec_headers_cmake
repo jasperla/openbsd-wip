@@ -1,0 +1,12 @@
+Index: cmake/dependencies/nv_codec_headers.cmake
+--- cmake/dependencies/nv_codec_headers.cmake.orig
++++ cmake/dependencies/nv_codec_headers.cmake
+@@ -2,7 +2,7 @@
+ set(SUNSHINE_CPM_PACKAGE_LOCK_ENABLED "${CPM_PACKAGE_LOCK_ENABLED}")
+ set(CPM_PACKAGE_LOCK_ENABLED OFF)
+ 
+-if(NOT APPLE)
++if(NOT APPLE AND NOT OPENBSD)
+     set(SUNSHINE_PREPARED_NV_CODEC_HEADERS
+             "${FFMPEG_PREPARED_BINARIES}/include/ffnvcodec/nvEncodeAPI.h")
+ 

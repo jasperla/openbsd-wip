@@ -1,0 +1,14 @@
+XXX: we don't have libcbs
+
+Index: cmake/dependencies/ffmpeg.cmake
+--- cmake/dependencies/ffmpeg.cmake.orig
++++ cmake/dependencies/ffmpeg.cmake
+@@ -155,7 +155,7 @@ else()
+         "${FFMPEG_PREPARED_BINARIES}/lib/libavcodec.a"
+         "${FFMPEG_PREPARED_BINARIES}/lib/libswscale.a"
+         "${FFMPEG_PREPARED_BINARIES}/lib/libavutil.a"
+-        "${FFMPEG_PREPARED_BINARIES}/lib/libcbs.a"
++        #"${FFMPEG_PREPARED_BINARIES}/lib/libcbs.a"
+     )
+ 
+     # Add optional libraries if they exist (e.g., from prebuilt packages)

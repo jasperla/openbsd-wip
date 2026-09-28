@@ -1,0 +1,12 @@
+Index: cmake/compile_definitions/common.cmake
+--- cmake/compile_definitions/common.cmake.orig
++++ cmake/compile_definitions/common.cmake
+@@ -219,7 +219,7 @@ include_directories(
+         ${Boost_INCLUDE_DIRS}  # has to be the last, or we get runtime error on macOS ffmpeg encoder
+ )
+ 
+-if(NOT APPLE)
++if(NOT APPLE AND NOT OPENBSD)
+     include_directories(BEFORE SYSTEM "${NV_CODEC_HEADERS_13_1_INCLUDE_DIR}")
+ endif()
+ 

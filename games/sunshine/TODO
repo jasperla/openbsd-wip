@@ -1,0 +1,2 @@
+- figure out how to manage npm dependencies, esp. without needing
+  internet access (set -DNPM_OFFLINE=ON)

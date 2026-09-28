@@ -1,0 +1,19 @@
+XXX: stop hijacking FreeBSD pathways and use if (OPENBSD) where appropriate
+
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -36,8 +36,12 @@ if(NOT CMAKE_BUILD_TYPE AND NOT CMAKE_CONFIGURATION_TY
+     set(CMAKE_BUILD_TYPE "Release" CACHE STRING "Choose the type of build." FORCE)
+ endif()
+ 
+-if(CMAKE_SYSTEM_NAME STREQUAL "FreeBSD")
++if(CMAKE_SYSTEM_NAME STREQUAL "FreeBSD" OR CMAKE_SYSTEM_NAME STREQUAL "OpenBSD")
+     set(FREEBSD ON)
++endif()
++
++if (CMAKE_SYSTEM_NAME STREQUAL "OpenBSD")
++    set(OPENBSD ON)
+ endif()
+ 
+ # set the module path, used for includes
