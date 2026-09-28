@@ -10,8 +10,8 @@ COMMENT=	Code::Blocks C/C++ IDE
 #
 #EXTRACT_SUFX=	.tar.xz
 
-DIST_TUPLE =    github jggimi codeblocks 5b93eafce0b141b7e577cf6040e3e18e9ad917aa .
-SVN_REV = 	14025
+DIST_TUPLE =    github jggimi codeblocks 0fdb0f6465fc5b4d1df6da1852bab6b262ce39a4 .
+SVN_REV = 	14040
 SUBST_VARS +=	SVN_REV
 V =             25.03pl${SVN_REV}
 PKGNAME =       codeblocks-${V}
@@ -71,9 +71,10 @@ RUN_DEPENDS=	devel/desktop-file-utils \
 		misc/shared-mime-info \
 		x11/gtk+4,-guic
 
-# C++11
+# C++17
 COMPILER =		base-clang ports-gcc
 
+USE_GMAKE=		Yes
 AUTOCONF_VERSION=	2.71
 AUTOMAKE_VERSION=	1.15
 BUILD_DEPENDS +=	${MODGNU_AUTOCONF_DEPENDS} \
@@ -83,7 +84,7 @@ BUILD_DEPENDS +=	${MODGNU_AUTOCONF_DEPENDS} \
 CONFIGURE_STYLE=autoreconf
 AUTORECONF=	./bootstrap
 
-CXXFLAGS +=	-std=c++11
+CXXFLAGS +=	-std=c++17
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--with-contrib-plugins=all,-FileManager
