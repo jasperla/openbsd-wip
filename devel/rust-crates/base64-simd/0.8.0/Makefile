@@ -80,6 +80,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/outref-0.5.2 ${WRKDIR}/vendor/outref-0.5.2; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/outref-0.5.2.tar.gz ${WRKDIR}/vendor/outref-0.5.2 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/outref-0.5.2.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/outref-0.5.2.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/outref-0.5.2 ] && [ -d ${WRKDIR}/vendor/outref-0.5.2 ]; then \
+			mv ${WRKDIR}/vendor/outref-0.5.2 ${WRKDIR}/vendor/outref-0.5.2; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/outref-0.5.2.tar.gz ${WRKDIR}/vendor/outref-0.5.2 2>/dev/null || true; \
 	else \
 		echo "missing dep outref-0.5.2" >&2; exit 1; \
 	fi
@@ -91,6 +97,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/vsimd-0.8.0 ${WRKDIR}/vendor/vsimd-0.8.0; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/vsimd-0.8.0.tar.gz ${WRKDIR}/vendor/vsimd-0.8.0 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/vsimd-0.8.0.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/vsimd-0.8.0.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/vsimd-0.8.0 ] && [ -d ${WRKDIR}/vendor/vsimd-0.8.0 ]; then \
+			mv ${WRKDIR}/vendor/vsimd-0.8.0 ${WRKDIR}/vendor/vsimd-0.8.0; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/vsimd-0.8.0.tar.gz ${WRKDIR}/vendor/vsimd-0.8.0 2>/dev/null || true; \
 	elif [ -f ${FULLDISTDIR}/vsimd-0.8.0.tar.gz ]; then \
 		tar xzf ${FULLDISTDIR}/vsimd-0.8.0.tar.gz -C ${WRKDIR}/vendor; \
 		if [ ! -d ${WRKDIR}/vendor/vsimd-0.8.0 ] && [ -d ${WRKDIR}/vendor/vsimd-0.8.0 ]; then \

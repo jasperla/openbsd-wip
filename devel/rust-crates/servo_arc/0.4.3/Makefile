@@ -78,6 +78,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/stable_deref_trait-1.2.1 ${WRKDIR}/vendor/stable_deref_trait-1.2.1; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/stable_deref_trait-1.2.1.tar.gz ${WRKDIR}/vendor/stable_deref_trait-1.2.1 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/stable_deref_trait-1.2.1.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/stable_deref_trait-1.2.1.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/stable_deref_trait-1.2.1 ] && [ -d ${WRKDIR}/vendor/stable_deref_trait-1.2.1 ]; then \
+			mv ${WRKDIR}/vendor/stable_deref_trait-1.2.1 ${WRKDIR}/vendor/stable_deref_trait-1.2.1; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/stable_deref_trait-1.2.1.tar.gz ${WRKDIR}/vendor/stable_deref_trait-1.2.1 2>/dev/null || true; \
 	else \
 		echo "missing dep stable_deref_trait-1.2.1" >&2; exit 1; \
 	fi

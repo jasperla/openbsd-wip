@@ -80,6 +80,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/memchr-2.8.2 ${WRKDIR}/vendor/memchr-2.8.2; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/memchr-2.8.2.tar.gz ${WRKDIR}/vendor/memchr-2.8.2 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/memchr-2.8.2.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/memchr-2.8.2.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/memchr-2.8.2 ] && [ -d ${WRKDIR}/vendor/memchr-2.8.2 ]; then \
+			mv ${WRKDIR}/vendor/memchr-2.8.2 ${WRKDIR}/vendor/memchr-2.8.2; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/memchr-2.8.2.tar.gz ${WRKDIR}/vendor/memchr-2.8.2 2>/dev/null || true; \
 	else \
 		echo "missing dep memchr-2.8.2" >&2; exit 1; \
 	fi
@@ -91,6 +97,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/minimal-lexical-0.2.1 ${WRKDIR}/vendor/minimal-lexical-0.2.1; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/minimal-lexical-0.2.1.tar.gz ${WRKDIR}/vendor/minimal-lexical-0.2.1 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/minimal-lexical-0.2.1.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/minimal-lexical-0.2.1.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/minimal-lexical-0.2.1 ] && [ -d ${WRKDIR}/vendor/minimal-lexical-0.2.1 ]; then \
+			mv ${WRKDIR}/vendor/minimal-lexical-0.2.1 ${WRKDIR}/vendor/minimal-lexical-0.2.1; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/minimal-lexical-0.2.1.tar.gz ${WRKDIR}/vendor/minimal-lexical-0.2.1 2>/dev/null || true; \
 	elif [ -f ${FULLDISTDIR}/minimal-lexical-0.2.1.tar.gz ]; then \
 		tar xzf ${FULLDISTDIR}/minimal-lexical-0.2.1.tar.gz -C ${WRKDIR}/vendor; \
 		if [ ! -d ${WRKDIR}/vendor/minimal-lexical-0.2.1 ] && [ -d ${WRKDIR}/vendor/minimal-lexical-0.2.1 ]; then \

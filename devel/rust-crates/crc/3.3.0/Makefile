@@ -78,6 +78,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/crc-catalog-2.4.0 ${WRKDIR}/vendor/crc-catalog-2.4.0; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/crc-catalog-2.4.0.tar.gz ${WRKDIR}/vendor/crc-catalog-2.4.0 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/crc-catalog-2.4.0.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/crc-catalog-2.4.0.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/crc-catalog-2.4.0 ] && [ -d ${WRKDIR}/vendor/crc-catalog-2.4.0 ]; then \
+			mv ${WRKDIR}/vendor/crc-catalog-2.4.0 ${WRKDIR}/vendor/crc-catalog-2.4.0; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/crc-catalog-2.4.0.tar.gz ${WRKDIR}/vendor/crc-catalog-2.4.0 2>/dev/null || true; \
 	else \
 		echo "missing dep crc-catalog-2.4.0" >&2; exit 1; \
 	fi

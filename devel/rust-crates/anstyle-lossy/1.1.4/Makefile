@@ -78,6 +78,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/anstyle-1.0.13 ${WRKDIR}/vendor/anstyle-1.0.13; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/anstyle-1.0.13.tar.gz ${WRKDIR}/vendor/anstyle-1.0.13 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/anstyle-1.0.13.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/anstyle-1.0.13.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/anstyle-1.0.13 ] && [ -d ${WRKDIR}/vendor/anstyle-1.0.13 ]; then \
+			mv ${WRKDIR}/vendor/anstyle-1.0.13 ${WRKDIR}/vendor/anstyle-1.0.13; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/anstyle-1.0.13.tar.gz ${WRKDIR}/vendor/anstyle-1.0.13 2>/dev/null || true; \
 	else \
 		echo "missing dep anstyle-1.0.13" >&2; exit 1; \
 	fi

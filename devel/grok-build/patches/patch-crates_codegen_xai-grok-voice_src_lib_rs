@@ -15,9 +15,9 @@ Index: crates/codegen/xai-grok-voice/src/lib.rs
 +//! subprocess so the long-lived TUI never pays the platform audio stack's
 +//! permanent memory cost (see [`audio`] and [`maybe_run_capture_subprocess`]).
  
- #[cfg(feature = "audio")]
- pub mod audio;
-@@ -32,25 +34,39 @@ pub use probe::{
+ #![deny(clippy::indexing_slicing)]
+ 
+@@ -34,25 +36,39 @@ pub use probe::{
      run_streaming_probe,
  };
  
@@ -67,7 +67,7 @@ Index: crates/codegen/xai-grok-voice/src/lib.rs
      {
          // Skip argv[0] (binary) and argv[1] (subcommand); the rest are flags.
          let args: Vec<String> = argv
-@@ -60,11 +76,14 @@ pub fn maybe_run_capture_subprocess() -> Option<i32> {
+@@ -62,11 +78,14 @@ pub fn maybe_run_capture_subprocess() -> Option<i32> {
              .collect();
          Some(audio::run_capture_child_cli(args))
      }
@@ -86,7 +86,7 @@ Index: crates/codegen/xai-grok-voice/src/lib.rs
          use std::io::Write;
          let _ = writeln!(
              std::io::stdout(),
-@@ -74,8 +93,9 @@ pub fn maybe_run_capture_subprocess() -> Option<i32> {
+@@ -76,8 +95,9 @@ pub fn maybe_run_capture_subprocess() -> Option<i32> {
      }
  }
  

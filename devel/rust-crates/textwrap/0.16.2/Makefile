@@ -82,6 +82,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/smawk-0.3.2 ${WRKDIR}/vendor/smawk-0.3.2; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/smawk-0.3.2.tar.gz ${WRKDIR}/vendor/smawk-0.3.2 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/smawk-0.3.2.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/smawk-0.3.2.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/smawk-0.3.2 ] && [ -d ${WRKDIR}/vendor/smawk-0.3.2 ]; then \
+			mv ${WRKDIR}/vendor/smawk-0.3.2 ${WRKDIR}/vendor/smawk-0.3.2; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/smawk-0.3.2.tar.gz ${WRKDIR}/vendor/smawk-0.3.2 2>/dev/null || true; \
 	else \
 		echo "missing dep smawk-0.3.2" >&2; exit 1; \
 	fi
@@ -99,6 +105,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/unicode-linebreak-0.1.5 ${WRKDIR}/vendor/unicode-linebreak-0.1.5; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/unicode-linebreak-0.1.5.tar.gz ${WRKDIR}/vendor/unicode-linebreak-0.1.5 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/unicode-linebreak-0.1.5.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/unicode-linebreak-0.1.5.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/unicode-linebreak-0.1.5 ] && [ -d ${WRKDIR}/vendor/unicode-linebreak-0.1.5 ]; then \
+			mv ${WRKDIR}/vendor/unicode-linebreak-0.1.5 ${WRKDIR}/vendor/unicode-linebreak-0.1.5; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/unicode-linebreak-0.1.5.tar.gz ${WRKDIR}/vendor/unicode-linebreak-0.1.5 2>/dev/null || true; \
 	else \
 		echo "missing dep unicode-linebreak-0.1.5" >&2; exit 1; \
 	fi
@@ -110,6 +122,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/unicode-width-0.2.0 ${WRKDIR}/vendor/unicode-width-0.2.0; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/unicode-width-0.2.0.tar.gz ${WRKDIR}/vendor/unicode-width-0.2.0 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/unicode-width-0.2.0.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/unicode-width-0.2.0.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/unicode-width-0.2.0 ] && [ -d ${WRKDIR}/vendor/unicode-width-0.2.0 ]; then \
+			mv ${WRKDIR}/vendor/unicode-width-0.2.0 ${WRKDIR}/vendor/unicode-width-0.2.0; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/unicode-width-0.2.0.tar.gz ${WRKDIR}/vendor/unicode-width-0.2.0 2>/dev/null || true; \
 	elif [ -f ${FULLDISTDIR}/unicode-width-0.2.0.tar.gz ]; then \
 		tar xzf ${FULLDISTDIR}/unicode-width-0.2.0.tar.gz -C ${WRKDIR}/vendor; \
 		if [ ! -d ${WRKDIR}/vendor/unicode-width-0.2.0 ] && [ -d ${WRKDIR}/vendor/unicode-width-0.2.0 ]; then \

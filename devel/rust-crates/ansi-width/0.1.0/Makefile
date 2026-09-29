@@ -78,6 +78,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/unicode-width-0.1.14 ${WRKDIR}/vendor/unicode-width-0.1.14; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/unicode-width-0.1.14.tar.gz ${WRKDIR}/vendor/unicode-width-0.1.14 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/unicode-width-0.1.14.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/unicode-width-0.1.14.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/unicode-width-0.1.14 ] && [ -d ${WRKDIR}/vendor/unicode-width-0.1.14 ]; then \
+			mv ${WRKDIR}/vendor/unicode-width-0.1.14 ${WRKDIR}/vendor/unicode-width-0.1.14; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/unicode-width-0.1.14.tar.gz ${WRKDIR}/vendor/unicode-width-0.1.14 2>/dev/null || true; \
 	else \
 		echo "missing dep unicode-width-0.1.14" >&2; exit 1; \
 	fi

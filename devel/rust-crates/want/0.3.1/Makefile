@@ -78,6 +78,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/try-lock-0.2.5 ${WRKDIR}/vendor/try-lock-0.2.5; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/try-lock-0.2.5.tar.gz ${WRKDIR}/vendor/try-lock-0.2.5 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/try-lock-0.2.5.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/try-lock-0.2.5.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/try-lock-0.2.5 ] && [ -d ${WRKDIR}/vendor/try-lock-0.2.5 ]; then \
+			mv ${WRKDIR}/vendor/try-lock-0.2.5 ${WRKDIR}/vendor/try-lock-0.2.5; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/try-lock-0.2.5.tar.gz ${WRKDIR}/vendor/try-lock-0.2.5 2>/dev/null || true; \
 	else \
 		echo "missing dep try-lock-0.2.5" >&2; exit 1; \
 	fi

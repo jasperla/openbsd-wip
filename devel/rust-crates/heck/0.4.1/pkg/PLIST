@@ -1,3 +1,0 @@
-share/modcargo-crates/heck-0.4.1.tar.gz
-lib/rust-crates/${MACHINE_ARCH}/heck-0.4.1/crate-meta.txt
-lib/rust-crates/${MACHINE_ARCH}/heck-0.4.1/libheck.rlib

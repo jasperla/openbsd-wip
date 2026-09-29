@@ -78,6 +78,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/plotters-backend-0.3.7 ${WRKDIR}/vendor/plotters-backend-0.3.7; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/plotters-backend-0.3.7.tar.gz ${WRKDIR}/vendor/plotters-backend-0.3.7 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/plotters-backend-0.3.7.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/plotters-backend-0.3.7.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/plotters-backend-0.3.7 ] && [ -d ${WRKDIR}/vendor/plotters-backend-0.3.7 ]; then \
+			mv ${WRKDIR}/vendor/plotters-backend-0.3.7 ${WRKDIR}/vendor/plotters-backend-0.3.7; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/plotters-backend-0.3.7.tar.gz ${WRKDIR}/vendor/plotters-backend-0.3.7 2>/dev/null || true; \
 	else \
 		echo "missing dep plotters-backend-0.3.7" >&2; exit 1; \
 	fi

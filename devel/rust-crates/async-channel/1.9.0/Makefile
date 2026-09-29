@@ -84,6 +84,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/concurrent-queue-2.5.0 ${WRKDIR}/vendor/concurrent-queue-2.5.0; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/concurrent-queue-2.5.0.tar.gz ${WRKDIR}/vendor/concurrent-queue-2.5.0 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/concurrent-queue-2.5.0.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/concurrent-queue-2.5.0.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/concurrent-queue-2.5.0 ] && [ -d ${WRKDIR}/vendor/concurrent-queue-2.5.0 ]; then \
+			mv ${WRKDIR}/vendor/concurrent-queue-2.5.0 ${WRKDIR}/vendor/concurrent-queue-2.5.0; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/concurrent-queue-2.5.0.tar.gz ${WRKDIR}/vendor/concurrent-queue-2.5.0 2>/dev/null || true; \
 	else \
 		echo "missing dep concurrent-queue-2.5.0" >&2; exit 1; \
 	fi
@@ -95,6 +101,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/event-listener-2.5.3 ${WRKDIR}/vendor/event-listener-2.5.3; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/event-listener-2.5.3.tar.gz ${WRKDIR}/vendor/event-listener-2.5.3 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/event-listener-2.5.3.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/event-listener-2.5.3.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/event-listener-2.5.3 ] && [ -d ${WRKDIR}/vendor/event-listener-2.5.3 ]; then \
+			mv ${WRKDIR}/vendor/event-listener-2.5.3 ${WRKDIR}/vendor/event-listener-2.5.3; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/event-listener-2.5.3.tar.gz ${WRKDIR}/vendor/event-listener-2.5.3 2>/dev/null || true; \
 	elif [ -f ${FULLDISTDIR}/event-listener-2.5.3.tar.gz ]; then \
 		tar xzf ${FULLDISTDIR}/event-listener-2.5.3.tar.gz -C ${WRKDIR}/vendor; \
 		if [ ! -d ${WRKDIR}/vendor/event-listener-2.5.3 ] && [ -d ${WRKDIR}/vendor/event-listener-2.5.3 ]; then \
@@ -118,6 +130,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/futures-core-0.3.32 ${WRKDIR}/vendor/futures-core-0.3.32; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/futures-core-0.3.32.tar.gz ${WRKDIR}/vendor/futures-core-0.3.32 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/futures-core-0.3.32.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/futures-core-0.3.32.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/futures-core-0.3.32 ] && [ -d ${WRKDIR}/vendor/futures-core-0.3.32 ]; then \
+			mv ${WRKDIR}/vendor/futures-core-0.3.32 ${WRKDIR}/vendor/futures-core-0.3.32; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/futures-core-0.3.32.tar.gz ${WRKDIR}/vendor/futures-core-0.3.32 2>/dev/null || true; \
 	else \
 		echo "missing dep futures-core-0.3.32" >&2; exit 1; \
 	fi
@@ -129,6 +147,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/crossbeam-utils-0.8.21 ${WRKDIR}/vendor/crossbeam-utils-0.8.21; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/crossbeam-utils-0.8.21.tar.gz ${WRKDIR}/vendor/crossbeam-utils-0.8.21 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/crossbeam-utils-0.8.21.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/crossbeam-utils-0.8.21.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/crossbeam-utils-0.8.21 ] && [ -d ${WRKDIR}/vendor/crossbeam-utils-0.8.21 ]; then \
+			mv ${WRKDIR}/vendor/crossbeam-utils-0.8.21 ${WRKDIR}/vendor/crossbeam-utils-0.8.21; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/crossbeam-utils-0.8.21.tar.gz ${WRKDIR}/vendor/crossbeam-utils-0.8.21 2>/dev/null || true; \
 	elif [ -f ${FULLDISTDIR}/crossbeam-utils-0.8.21.tar.gz ]; then \
 		tar xzf ${FULLDISTDIR}/crossbeam-utils-0.8.21.tar.gz -C ${WRKDIR}/vendor; \
 		if [ ! -d ${WRKDIR}/vendor/crossbeam-utils-0.8.21 ] && [ -d ${WRKDIR}/vendor/crossbeam-utils-0.8.21 ]; then \

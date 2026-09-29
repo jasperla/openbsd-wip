@@ -80,6 +80,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/bitflags-1.3.2 ${WRKDIR}/vendor/bitflags-1.3.2; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/bitflags-1.3.2.tar.gz ${WRKDIR}/vendor/bitflags-1.3.2 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/bitflags-1.3.2.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/bitflags-1.3.2.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/bitflags-1.3.2 ] && [ -d ${WRKDIR}/vendor/bitflags-1.3.2 ]; then \
+			mv ${WRKDIR}/vendor/bitflags-1.3.2 ${WRKDIR}/vendor/bitflags-1.3.2; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/bitflags-1.3.2.tar.gz ${WRKDIR}/vendor/bitflags-1.3.2 2>/dev/null || true; \
 	else \
 		echo "missing dep bitflags-1.3.2" >&2; exit 1; \
 	fi
@@ -91,6 +97,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/libc-0.2.186 ${WRKDIR}/vendor/libc-0.2.186; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/libc-0.2.186.tar.gz ${WRKDIR}/vendor/libc-0.2.186 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/libc-0.2.186.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/libc-0.2.186.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/libc-0.2.186 ] && [ -d ${WRKDIR}/vendor/libc-0.2.186 ]; then \
+			mv ${WRKDIR}/vendor/libc-0.2.186 ${WRKDIR}/vendor/libc-0.2.186; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/libc-0.2.186.tar.gz ${WRKDIR}/vendor/libc-0.2.186 2>/dev/null || true; \
 	elif [ -f ${FULLDISTDIR}/libc-0.2.186.tar.gz ]; then \
 		tar xzf ${FULLDISTDIR}/libc-0.2.186.tar.gz -C ${WRKDIR}/vendor; \
 		if [ ! -d ${WRKDIR}/vendor/libc-0.2.186 ] && [ -d ${WRKDIR}/vendor/libc-0.2.186 ]; then \

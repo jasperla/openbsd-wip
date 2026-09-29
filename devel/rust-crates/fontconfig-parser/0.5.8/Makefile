@@ -78,6 +78,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/roxmltree-0.20.0 ${WRKDIR}/vendor/roxmltree-0.20.0; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/roxmltree-0.20.0.tar.gz ${WRKDIR}/vendor/roxmltree-0.20.0 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/roxmltree-0.20.0.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/roxmltree-0.20.0.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/roxmltree-0.20.0 ] && [ -d ${WRKDIR}/vendor/roxmltree-0.20.0 ]; then \
+			mv ${WRKDIR}/vendor/roxmltree-0.20.0 ${WRKDIR}/vendor/roxmltree-0.20.0; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/roxmltree-0.20.0.tar.gz ${WRKDIR}/vendor/roxmltree-0.20.0 2>/dev/null || true; \
 	else \
 		echo "missing dep roxmltree-0.20.0" >&2; exit 1; \
 	fi

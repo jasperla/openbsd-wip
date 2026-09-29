@@ -86,6 +86,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/futures-core-0.3.32 ${WRKDIR}/vendor/futures-core-0.3.32; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/futures-core-0.3.32.tar.gz ${WRKDIR}/vendor/futures-core-0.3.32 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/futures-core-0.3.32.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/futures-core-0.3.32.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/futures-core-0.3.32 ] && [ -d ${WRKDIR}/vendor/futures-core-0.3.32 ]; then \
+			mv ${WRKDIR}/vendor/futures-core-0.3.32 ${WRKDIR}/vendor/futures-core-0.3.32; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/futures-core-0.3.32.tar.gz ${WRKDIR}/vendor/futures-core-0.3.32 2>/dev/null || true; \
 	else \
 		echo "missing dep futures-core-0.3.32" >&2; exit 1; \
 	fi
@@ -97,6 +103,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/nom-7.1.3 ${WRKDIR}/vendor/nom-7.1.3; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/nom-7.1.3.tar.gz ${WRKDIR}/vendor/nom-7.1.3 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/nom-7.1.3.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/nom-7.1.3.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/nom-7.1.3 ] && [ -d ${WRKDIR}/vendor/nom-7.1.3 ]; then \
+			mv ${WRKDIR}/vendor/nom-7.1.3 ${WRKDIR}/vendor/nom-7.1.3; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/nom-7.1.3.tar.gz ${WRKDIR}/vendor/nom-7.1.3 2>/dev/null || true; \
 	elif [ -f ${FULLDISTDIR}/nom-7.1.3.tar.gz ]; then \
 		tar xzf ${FULLDISTDIR}/nom-7.1.3.tar.gz -C ${WRKDIR}/vendor; \
 		if [ ! -d ${WRKDIR}/vendor/nom-7.1.3 ] && [ -d ${WRKDIR}/vendor/nom-7.1.3 ]; then \
@@ -120,6 +132,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/pin-project-lite-0.2.16 ${WRKDIR}/vendor/pin-project-lite-0.2.16; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/pin-project-lite-0.2.16.tar.gz ${WRKDIR}/vendor/pin-project-lite-0.2.16 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/pin-project-lite-0.2.16.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/pin-project-lite-0.2.16.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/pin-project-lite-0.2.16 ] && [ -d ${WRKDIR}/vendor/pin-project-lite-0.2.16 ]; then \
+			mv ${WRKDIR}/vendor/pin-project-lite-0.2.16 ${WRKDIR}/vendor/pin-project-lite-0.2.16; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/pin-project-lite-0.2.16.tar.gz ${WRKDIR}/vendor/pin-project-lite-0.2.16 2>/dev/null || true; \
 	else \
 		echo "missing dep pin-project-lite-0.2.16" >&2; exit 1; \
 	fi
@@ -137,6 +155,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/memchr-2.8.2 ${WRKDIR}/vendor/memchr-2.8.2; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/memchr-2.8.2.tar.gz ${WRKDIR}/vendor/memchr-2.8.2 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/memchr-2.8.2.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/memchr-2.8.2.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/memchr-2.8.2 ] && [ -d ${WRKDIR}/vendor/memchr-2.8.2 ]; then \
+			mv ${WRKDIR}/vendor/memchr-2.8.2 ${WRKDIR}/vendor/memchr-2.8.2; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/memchr-2.8.2.tar.gz ${WRKDIR}/vendor/memchr-2.8.2 2>/dev/null || true; \
 	else \
 		echo "missing dep memchr-2.8.2" >&2; exit 1; \
 	fi
@@ -148,6 +172,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/minimal-lexical-0.2.1 ${WRKDIR}/vendor/minimal-lexical-0.2.1; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/minimal-lexical-0.2.1.tar.gz ${WRKDIR}/vendor/minimal-lexical-0.2.1 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/minimal-lexical-0.2.1.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/minimal-lexical-0.2.1.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/minimal-lexical-0.2.1 ] && [ -d ${WRKDIR}/vendor/minimal-lexical-0.2.1 ]; then \
+			mv ${WRKDIR}/vendor/minimal-lexical-0.2.1 ${WRKDIR}/vendor/minimal-lexical-0.2.1; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/minimal-lexical-0.2.1.tar.gz ${WRKDIR}/vendor/minimal-lexical-0.2.1 2>/dev/null || true; \
 	elif [ -f ${FULLDISTDIR}/minimal-lexical-0.2.1.tar.gz ]; then \
 		tar xzf ${FULLDISTDIR}/minimal-lexical-0.2.1.tar.gz -C ${WRKDIR}/vendor; \
 		if [ ! -d ${WRKDIR}/vendor/minimal-lexical-0.2.1 ] && [ -d ${WRKDIR}/vendor/minimal-lexical-0.2.1 ]; then \

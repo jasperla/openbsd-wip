@@ -88,6 +88,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/castaway-0.2.4 ${WRKDIR}/vendor/castaway-0.2.4; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/castaway-0.2.4.tar.gz ${WRKDIR}/vendor/castaway-0.2.4 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/castaway-0.2.4.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/castaway-0.2.4.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/castaway-0.2.4 ] && [ -d ${WRKDIR}/vendor/castaway-0.2.4 ]; then \
+			mv ${WRKDIR}/vendor/castaway-0.2.4 ${WRKDIR}/vendor/castaway-0.2.4; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/castaway-0.2.4.tar.gz ${WRKDIR}/vendor/castaway-0.2.4 2>/dev/null || true; \
 	else \
 		echo "missing dep castaway-0.2.4" >&2; exit 1; \
 	fi
@@ -99,6 +105,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/cfg-if-1.0.4 ${WRKDIR}/vendor/cfg-if-1.0.4; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/cfg-if-1.0.4.tar.gz ${WRKDIR}/vendor/cfg-if-1.0.4 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/cfg-if-1.0.4.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/cfg-if-1.0.4.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/cfg-if-1.0.4 ] && [ -d ${WRKDIR}/vendor/cfg-if-1.0.4 ]; then \
+			mv ${WRKDIR}/vendor/cfg-if-1.0.4 ${WRKDIR}/vendor/cfg-if-1.0.4; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/cfg-if-1.0.4.tar.gz ${WRKDIR}/vendor/cfg-if-1.0.4 2>/dev/null || true; \
 	elif [ -f ${FULLDISTDIR}/cfg-if-1.0.4.tar.gz ]; then \
 		tar xzf ${FULLDISTDIR}/cfg-if-1.0.4.tar.gz -C ${WRKDIR}/vendor; \
 		if [ ! -d ${WRKDIR}/vendor/cfg-if-1.0.4 ] && [ -d ${WRKDIR}/vendor/cfg-if-1.0.4 ]; then \
@@ -122,6 +134,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/itoa-1.0.17 ${WRKDIR}/vendor/itoa-1.0.17; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/itoa-1.0.17.tar.gz ${WRKDIR}/vendor/itoa-1.0.17 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/itoa-1.0.17.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/itoa-1.0.17.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/itoa-1.0.17 ] && [ -d ${WRKDIR}/vendor/itoa-1.0.17 ]; then \
+			mv ${WRKDIR}/vendor/itoa-1.0.17 ${WRKDIR}/vendor/itoa-1.0.17; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/itoa-1.0.17.tar.gz ${WRKDIR}/vendor/itoa-1.0.17 2>/dev/null || true; \
 	else \
 		echo "missing dep itoa-1.0.17" >&2; exit 1; \
 	fi
@@ -133,6 +151,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/rustversion-1.0.22 ${WRKDIR}/vendor/rustversion-1.0.22; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/rustversion-1.0.22.tar.gz ${WRKDIR}/vendor/rustversion-1.0.22 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/rustversion-1.0.22.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/rustversion-1.0.22.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/rustversion-1.0.22 ] && [ -d ${WRKDIR}/vendor/rustversion-1.0.22 ]; then \
+			mv ${WRKDIR}/vendor/rustversion-1.0.22 ${WRKDIR}/vendor/rustversion-1.0.22; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/rustversion-1.0.22.tar.gz ${WRKDIR}/vendor/rustversion-1.0.22 2>/dev/null || true; \
 	elif [ -f ${FULLDISTDIR}/rustversion-1.0.22.tar.gz ]; then \
 		tar xzf ${FULLDISTDIR}/rustversion-1.0.22.tar.gz -C ${WRKDIR}/vendor; \
 		if [ ! -d ${WRKDIR}/vendor/rustversion-1.0.22 ] && [ -d ${WRKDIR}/vendor/rustversion-1.0.22 ]; then \
@@ -156,6 +180,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/ryu-1.0.20 ${WRKDIR}/vendor/ryu-1.0.20; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/ryu-1.0.20.tar.gz ${WRKDIR}/vendor/ryu-1.0.20 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/ryu-1.0.20.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/ryu-1.0.20.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/ryu-1.0.20 ] && [ -d ${WRKDIR}/vendor/ryu-1.0.20 ]; then \
+			mv ${WRKDIR}/vendor/ryu-1.0.20 ${WRKDIR}/vendor/ryu-1.0.20; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/ryu-1.0.20.tar.gz ${WRKDIR}/vendor/ryu-1.0.20 2>/dev/null || true; \
 	else \
 		echo "missing dep ryu-1.0.20" >&2; exit 1; \
 	fi
@@ -167,6 +197,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/static_assertions-1.1.0 ${WRKDIR}/vendor/static_assertions-1.1.0; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/static_assertions-1.1.0.tar.gz ${WRKDIR}/vendor/static_assertions-1.1.0 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/static_assertions-1.1.0.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/static_assertions-1.1.0.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/static_assertions-1.1.0 ] && [ -d ${WRKDIR}/vendor/static_assertions-1.1.0 ]; then \
+			mv ${WRKDIR}/vendor/static_assertions-1.1.0 ${WRKDIR}/vendor/static_assertions-1.1.0; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/static_assertions-1.1.0.tar.gz ${WRKDIR}/vendor/static_assertions-1.1.0 2>/dev/null || true; \
 	elif [ -f ${FULLDISTDIR}/static_assertions-1.1.0.tar.gz ]; then \
 		tar xzf ${FULLDISTDIR}/static_assertions-1.1.0.tar.gz -C ${WRKDIR}/vendor; \
 		if [ ! -d ${WRKDIR}/vendor/static_assertions-1.1.0 ] && [ -d ${WRKDIR}/vendor/static_assertions-1.1.0 ]; then \

@@ -330,7 +330,7 @@ dependencies = [
  "js-sys 0.3.91",
  "log 0.4.32",
  "wasm-bindgen 0.2.114",
- "windows-core 0.61.2",
+ "windows-core 0.62.2",
 ]
 
 [[package]]
@@ -411,7 +411,7 @@ version = "0.17.14"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "a4689e6c2294d81e88dc6261c768b63bc4fcdb852be6d1352498b114f61383b7"
 dependencies = [
- "cc 1.2.43",
+ "cc 1.2.48",
  "cfg-if 1.0.4",
  "getrandom 0.2.16",
  "libc 0.2.186",
@@ -733,7 +733,7 @@ version = "0.39.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "83a25cf98105baa966497416dbd42565ce3a8cf8dbfd59803ec9ad46f3126399"
 dependencies = [
- "cc 1.2.43",
+ "cc 1.2.48",
  "cmake 0.1.54",
  "dunce 1.0.5",
  "fs_extra 1.3.0",
@@ -747,11 +747,11 @@ checksum = "a156c684c91ea7d62626509bce3cb4e1d9ed5c4d978f7b4352658f96a4c26b4a"
 
 [[package]]
 name = "cc"
-version = "1.2.43"
+version = "1.2.48"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "739eb0f94557554b3ca9a86d2d37bebd49c5e6d0c1d2bda35ba5bdac830befc2"
+checksum = "c481bdbf0ed3b892f6f806287d72acd515b352a4ec27a208489b8c1bc839633a"
 dependencies = [
- "find-msvc-tools 0.1.4",
+ "find-msvc-tools 0.1.13",
  "jobserver 0.1.34",
  "libc 0.2.186",
  "shlex 1.3.0",
@@ -822,6 +822,9 @@ name = "hashbrown"
 version = "0.17.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "4f467dd6dccf739c208452f8014c75c18bb8301b050ad1cfb27153803edb0f51"
+dependencies = [
+ "foldhash 0.2.0",
+]
 
 [[package]]
 name = "block-buffer"
@@ -1008,7 +1011,7 @@ dependencies = [
  "libc 0.2.186",
  "percent-encoding 2.3.2",
  "pin-project-lite 0.2.16",
- "socket2 0.5.10",
+ "socket2 0.6.4",
  "tokio 1.52.3",
  "tower-service 0.3.3",
  "tracing 0.1.44",
@@ -1049,7 +1052,7 @@ dependencies = [
  "quinn-udp 0.5.14",
  "rustc-hash 2.1.1",
  "rustls 0.23.37",
- "socket2 0.5.10",
+ "socket2 0.6.4",
  "thiserror 2.0.18",
  "tokio 1.52.3",
  "tracing 0.1.44",
@@ -1090,7 +1093,7 @@ dependencies = [
  "security-framework 3.5.1",
  "security-framework-sys 2.15.0",
  "webpki-root-certs 1.0.3",
- "windows-sys 0.52.0",
+ "windows-sys 0.61.2",
 ]
 
 [[package]]
@@ -1287,7 +1290,7 @@ version = "0.1.54"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "e7caa3f9de89ddbe2c607f4101924c5abec803763ae9534e4f4d7d8f84aa81f0"
 dependencies = [
- "cc 1.2.43",
+ "cc 1.2.48",
 ]
 
 [[package]]
@@ -1304,9 +1307,9 @@ checksum = "42703706b716c37f96a77aea830392ad231f44c9e9a67872fa5548707e11b11c"
 
 [[package]]
 name = "find-msvc-tools"
-version = "0.1.4"
+version = "0.1.13"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "52051878f80a721bb68ebfbc930e07b65ba72f2da88968ea5c06fd6ca3d3a127"
+checksum = "ef25905e51abafe4dcea6c15fec58c57b601cdbd0ee53d22ea1d3016c587d39b"
 
 [[package]]
 name = "jobserver"
@@ -1329,6 +1332,12 @@ name = "unicode-ident"
 version = "1.0.24"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "e6e4313cd5fcd3dad5cafa179702e2b244f760991f45397d14d4ebf38247da75"
+
+[[package]]
+name = "foldhash"
+version = "0.2.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "77ce24cb58228fbb8aa041425bb1050850ac19177686ea6e0f41a70416f56fdb"
 
 [[package]]
 name = "generic-array"
@@ -1472,12 +1481,12 @@ checksum = "469fb0b9cefa57e3ef31275ee7cacb78f2fdca44e4765491884a2b119d4eb130"
 
 [[package]]
 name = "socket2"
-version = "0.5.10"
+version = "0.6.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "e22376abed350d73dd1cd119b57ffccad95b4e585a7cda43e286245ce23c0678"
+checksum = "52d1cfed4120b4d927bf7c0f86d2087a4a7d6027c906d9f9d525a80573b9be51"
 dependencies = [
  "libc 0.2.186",
- "windows-sys 0.52.0",
+ "windows-sys 0.61.2",
 ]
 
 [[package]]
@@ -1523,9 +1532,9 @@ dependencies = [
  "cfg_aliases 0.2.1",
  "libc 0.2.186",
  "once_cell 1.21.3",
- "socket2 0.5.10",
+ "socket2 0.6.4",
  "tracing 0.1.44",
- "windows-sys 0.52.0",
+ "windows-sys 0.60.2",
 ]
 
 [[package]]
@@ -1579,16 +1588,6 @@ checksum = "c4db69cba1110affc0e9f7bcd48bbf87b3f4fc7c61fc9155afd4c469eb3d6c1b"
 dependencies = [
  "errno 0.3.14",
  "libc 0.2.186",
-]
-
-[[package]]
-name = "socket2"
-version = "0.6.4"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "52d1cfed4120b4d927bf7c0f86d2087a4a7d6027c906d9f9d525a80573b9be51"
-dependencies = [
- "libc 0.2.186",
- "windows-sys 0.60.2",
 ]
 
 [[package]]
@@ -1766,7 +1765,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "39cab71617ae0d63f51a36d69f866391735b51691dbda63cf6f96d042b63efeb"
 dependencies = [
  "libc 0.2.186",
- "windows-sys 0.52.0",
+ "windows-sys 0.61.2",
 ]
 
 [[package]]

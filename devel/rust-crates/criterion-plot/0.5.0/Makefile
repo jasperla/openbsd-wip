@@ -82,6 +82,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/cast-0.3.0 ${WRKDIR}/vendor/cast-0.3.0; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/cast-0.3.0.tar.gz ${WRKDIR}/vendor/cast-0.3.0 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/cast-0.3.0.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/cast-0.3.0.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/cast-0.3.0 ] && [ -d ${WRKDIR}/vendor/cast-0.3.0 ]; then \
+			mv ${WRKDIR}/vendor/cast-0.3.0 ${WRKDIR}/vendor/cast-0.3.0; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/cast-0.3.0.tar.gz ${WRKDIR}/vendor/cast-0.3.0 2>/dev/null || true; \
 	else \
 		echo "missing dep cast-0.3.0" >&2; exit 1; \
 	fi
@@ -99,6 +105,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/itertools-0.10.5 ${WRKDIR}/vendor/itertools-0.10.5; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/itertools-0.10.5.tar.gz ${WRKDIR}/vendor/itertools-0.10.5 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/itertools-0.10.5.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/itertools-0.10.5.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/itertools-0.10.5 ] && [ -d ${WRKDIR}/vendor/itertools-0.10.5 ]; then \
+			mv ${WRKDIR}/vendor/itertools-0.10.5 ${WRKDIR}/vendor/itertools-0.10.5; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/itertools-0.10.5.tar.gz ${WRKDIR}/vendor/itertools-0.10.5 2>/dev/null || true; \
 	else \
 		echo "missing dep itertools-0.10.5" >&2; exit 1; \
 	fi
@@ -110,6 +122,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/either-1.15.0 ${WRKDIR}/vendor/either-1.15.0; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/either-1.15.0.tar.gz ${WRKDIR}/vendor/either-1.15.0 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/either-1.15.0.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/either-1.15.0.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/either-1.15.0 ] && [ -d ${WRKDIR}/vendor/either-1.15.0 ]; then \
+			mv ${WRKDIR}/vendor/either-1.15.0 ${WRKDIR}/vendor/either-1.15.0; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/either-1.15.0.tar.gz ${WRKDIR}/vendor/either-1.15.0 2>/dev/null || true; \
 	elif [ -f ${FULLDISTDIR}/either-1.15.0.tar.gz ]; then \
 		tar xzf ${FULLDISTDIR}/either-1.15.0.tar.gz -C ${WRKDIR}/vendor; \
 		if [ ! -d ${WRKDIR}/vendor/either-1.15.0 ] && [ -d ${WRKDIR}/vendor/either-1.15.0 ]; then \

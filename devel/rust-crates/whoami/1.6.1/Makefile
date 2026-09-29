@@ -78,6 +78,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/wasite-0.1.0 ${WRKDIR}/vendor/wasite-0.1.0; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/wasite-0.1.0.tar.gz ${WRKDIR}/vendor/wasite-0.1.0 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/wasite-0.1.0.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/wasite-0.1.0.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/wasite-0.1.0 ] && [ -d ${WRKDIR}/vendor/wasite-0.1.0 ]; then \
+			mv ${WRKDIR}/vendor/wasite-0.1.0 ${WRKDIR}/vendor/wasite-0.1.0; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/wasite-0.1.0.tar.gz ${WRKDIR}/vendor/wasite-0.1.0 2>/dev/null || true; \
 	else \
 		echo "missing dep wasite-0.1.0" >&2; exit 1; \
 	fi

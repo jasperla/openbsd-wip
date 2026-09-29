@@ -84,6 +84,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/hashbrown-0.16.1 ${WRKDIR}/vendor/hashbrown-0.16.1; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/hashbrown-0.16.1.tar.gz ${WRKDIR}/vendor/hashbrown-0.16.1 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/hashbrown-0.16.1.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/hashbrown-0.16.1.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/hashbrown-0.16.1 ] && [ -d ${WRKDIR}/vendor/hashbrown-0.16.1 ]; then \
+			mv ${WRKDIR}/vendor/hashbrown-0.16.1 ${WRKDIR}/vendor/hashbrown-0.16.1; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/hashbrown-0.16.1.tar.gz ${WRKDIR}/vendor/hashbrown-0.16.1 2>/dev/null || true; \
 	else \
 		echo "missing dep hashbrown-0.16.1" >&2; exit 1; \
 	fi
@@ -95,6 +101,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/allocator-api2-0.2.21 ${WRKDIR}/vendor/allocator-api2-0.2.21; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/allocator-api2-0.2.21.tar.gz ${WRKDIR}/vendor/allocator-api2-0.2.21 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/allocator-api2-0.2.21.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/allocator-api2-0.2.21.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/allocator-api2-0.2.21 ] && [ -d ${WRKDIR}/vendor/allocator-api2-0.2.21 ]; then \
+			mv ${WRKDIR}/vendor/allocator-api2-0.2.21 ${WRKDIR}/vendor/allocator-api2-0.2.21; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/allocator-api2-0.2.21.tar.gz ${WRKDIR}/vendor/allocator-api2-0.2.21 2>/dev/null || true; \
 	elif [ -f ${FULLDISTDIR}/allocator-api2-0.2.21.tar.gz ]; then \
 		tar xzf ${FULLDISTDIR}/allocator-api2-0.2.21.tar.gz -C ${WRKDIR}/vendor; \
 		if [ ! -d ${WRKDIR}/vendor/allocator-api2-0.2.21 ] && [ -d ${WRKDIR}/vendor/allocator-api2-0.2.21 ]; then \
@@ -118,6 +130,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/equivalent-1.0.2 ${WRKDIR}/vendor/equivalent-1.0.2; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/equivalent-1.0.2.tar.gz ${WRKDIR}/vendor/equivalent-1.0.2 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/equivalent-1.0.2.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/equivalent-1.0.2.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/equivalent-1.0.2 ] && [ -d ${WRKDIR}/vendor/equivalent-1.0.2 ]; then \
+			mv ${WRKDIR}/vendor/equivalent-1.0.2 ${WRKDIR}/vendor/equivalent-1.0.2; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/equivalent-1.0.2.tar.gz ${WRKDIR}/vendor/equivalent-1.0.2 2>/dev/null || true; \
 	else \
 		echo "missing dep equivalent-1.0.2" >&2; exit 1; \
 	fi
@@ -129,6 +147,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/foldhash-0.2.0 ${WRKDIR}/vendor/foldhash-0.2.0; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/foldhash-0.2.0.tar.gz ${WRKDIR}/vendor/foldhash-0.2.0 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/foldhash-0.2.0.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/foldhash-0.2.0.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/foldhash-0.2.0 ] && [ -d ${WRKDIR}/vendor/foldhash-0.2.0 ]; then \
+			mv ${WRKDIR}/vendor/foldhash-0.2.0 ${WRKDIR}/vendor/foldhash-0.2.0; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/foldhash-0.2.0.tar.gz ${WRKDIR}/vendor/foldhash-0.2.0 2>/dev/null || true; \
 	elif [ -f ${FULLDISTDIR}/foldhash-0.2.0.tar.gz ]; then \
 		tar xzf ${FULLDISTDIR}/foldhash-0.2.0.tar.gz -C ${WRKDIR}/vendor; \
 		if [ ! -d ${WRKDIR}/vendor/foldhash-0.2.0 ] && [ -d ${WRKDIR}/vendor/foldhash-0.2.0 ]; then \

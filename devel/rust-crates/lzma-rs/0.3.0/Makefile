@@ -82,6 +82,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/byteorder-1.5.0 ${WRKDIR}/vendor/byteorder-1.5.0; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/byteorder-1.5.0.tar.gz ${WRKDIR}/vendor/byteorder-1.5.0 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/byteorder-1.5.0.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/byteorder-1.5.0.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/byteorder-1.5.0 ] && [ -d ${WRKDIR}/vendor/byteorder-1.5.0 ]; then \
+			mv ${WRKDIR}/vendor/byteorder-1.5.0 ${WRKDIR}/vendor/byteorder-1.5.0; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/byteorder-1.5.0.tar.gz ${WRKDIR}/vendor/byteorder-1.5.0 2>/dev/null || true; \
 	else \
 		echo "missing dep byteorder-1.5.0" >&2; exit 1; \
 	fi
@@ -99,6 +105,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/crc-3.3.0 ${WRKDIR}/vendor/crc-3.3.0; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/crc-3.3.0.tar.gz ${WRKDIR}/vendor/crc-3.3.0 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/crc-3.3.0.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/crc-3.3.0.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/crc-3.3.0 ] && [ -d ${WRKDIR}/vendor/crc-3.3.0 ]; then \
+			mv ${WRKDIR}/vendor/crc-3.3.0 ${WRKDIR}/vendor/crc-3.3.0; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/crc-3.3.0.tar.gz ${WRKDIR}/vendor/crc-3.3.0 2>/dev/null || true; \
 	else \
 		echo "missing dep crc-3.3.0" >&2; exit 1; \
 	fi
@@ -110,6 +122,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/crc-catalog-2.4.0 ${WRKDIR}/vendor/crc-catalog-2.4.0; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/crc-catalog-2.4.0.tar.gz ${WRKDIR}/vendor/crc-catalog-2.4.0 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/crc-catalog-2.4.0.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/crc-catalog-2.4.0.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/crc-catalog-2.4.0 ] && [ -d ${WRKDIR}/vendor/crc-catalog-2.4.0 ]; then \
+			mv ${WRKDIR}/vendor/crc-catalog-2.4.0 ${WRKDIR}/vendor/crc-catalog-2.4.0; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/crc-catalog-2.4.0.tar.gz ${WRKDIR}/vendor/crc-catalog-2.4.0 2>/dev/null || true; \
 	elif [ -f ${FULLDISTDIR}/crc-catalog-2.4.0.tar.gz ]; then \
 		tar xzf ${FULLDISTDIR}/crc-catalog-2.4.0.tar.gz -C ${WRKDIR}/vendor; \
 		if [ ! -d ${WRKDIR}/vendor/crc-catalog-2.4.0 ] && [ -d ${WRKDIR}/vendor/crc-catalog-2.4.0 ]; then \

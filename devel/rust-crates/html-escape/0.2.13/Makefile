@@ -78,6 +78,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/utf8-width-0.1.7 ${WRKDIR}/vendor/utf8-width-0.1.7; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/utf8-width-0.1.7.tar.gz ${WRKDIR}/vendor/utf8-width-0.1.7 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/utf8-width-0.1.7.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/utf8-width-0.1.7.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/utf8-width-0.1.7 ] && [ -d ${WRKDIR}/vendor/utf8-width-0.1.7 ]; then \
+			mv ${WRKDIR}/vendor/utf8-width-0.1.7 ${WRKDIR}/vendor/utf8-width-0.1.7; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/utf8-width-0.1.7.tar.gz ${WRKDIR}/vendor/utf8-width-0.1.7 2>/dev/null || true; \
 	else \
 		echo "missing dep utf8-width-0.1.7" >&2; exit 1; \
 	fi

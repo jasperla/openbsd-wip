@@ -8,7 +8,7 @@ version = "0.18.2+1.9.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "1c42fe03df2bd3c53a3a9c7317ad91d80c81cd1fb0caec8d7cc4cd2bfa10c222"
 dependencies = [
- "cc 1.2.43",
+ "cc 1.2.48",
  "libc 0.2.186",
  "libssh2-sys 0.3.1",
  "libz-sys 1.1.22",
@@ -18,11 +18,11 @@ dependencies = [
 
 [[package]]
 name = "cc"
-version = "1.2.43"
+version = "1.2.48"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "739eb0f94557554b3ca9a86d2d37bebd49c5e6d0c1d2bda35ba5bdac830befc2"
+checksum = "c481bdbf0ed3b892f6f806287d72acd515b352a4ec27a208489b8c1bc839633a"
 dependencies = [
- "find-msvc-tools 0.1.4",
+ "find-msvc-tools 0.1.13",
  "jobserver 0.1.34",
  "libc 0.2.186",
  "shlex 1.3.0",
@@ -40,7 +40,7 @@ version = "0.3.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "220e4f05ad4a218192533b300327f5150e809b54c4ec83b5a1d91833601811b9"
 dependencies = [
- "cc 1.2.43",
+ "cc 1.2.48",
  "libc 0.2.186",
  "libz-sys 1.1.22",
  "openssl-sys 0.9.117",
@@ -54,7 +54,7 @@ version = "1.1.22"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "8b70e7a7df205e92a1a4cd9aaae7898dac0aa555503cc0a649494d0d60e7651d"
 dependencies = [
- "cc 1.2.43",
+ "cc 1.2.48",
  "libc 0.2.186",
  "pkg-config 0.3.32",
  "vcpkg 0.2.15",
@@ -66,7 +66,7 @@ version = "0.9.117"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "b47e7e6bb2c38cd930d25a23b40fa52e068c10e85f3e03a7f5ba5aaca5713695"
 dependencies = [
- "cc 1.2.43",
+ "cc 1.2.48",
  "libc 0.2.186",
  "pkg-config 0.3.32",
  "vcpkg 0.2.15",
@@ -80,9 +80,9 @@ checksum = "7edddbd0b52d732b21ad9a5fab5c704c14cd949e5e9a1ec5929a24fded1b904c"
 
 [[package]]
 name = "find-msvc-tools"
-version = "0.1.4"
+version = "0.1.13"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "52051878f80a721bb68ebfbc930e07b65ba72f2da88968ea5c06fd6ca3d3a127"
+checksum = "ef25905e51abafe4dcea6c15fec58c57b601cdbd0ee53d22ea1d3016c587d39b"
 
 [[package]]
 name = "jobserver"

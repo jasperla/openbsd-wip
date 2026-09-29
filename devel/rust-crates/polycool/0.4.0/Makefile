@@ -78,6 +78,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/arrayvec-0.7.6 ${WRKDIR}/vendor/arrayvec-0.7.6; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/arrayvec-0.7.6.tar.gz ${WRKDIR}/vendor/arrayvec-0.7.6 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/arrayvec-0.7.6.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/arrayvec-0.7.6.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/arrayvec-0.7.6 ] && [ -d ${WRKDIR}/vendor/arrayvec-0.7.6 ]; then \
+			mv ${WRKDIR}/vendor/arrayvec-0.7.6 ${WRKDIR}/vendor/arrayvec-0.7.6; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/arrayvec-0.7.6.tar.gz ${WRKDIR}/vendor/arrayvec-0.7.6 2>/dev/null || true; \
 	else \
 		echo "missing dep arrayvec-0.7.6" >&2; exit 1; \
 	fi

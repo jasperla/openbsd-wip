@@ -80,6 +80,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/byteorder-lite-0.1.0 ${WRKDIR}/vendor/byteorder-lite-0.1.0; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/byteorder-lite-0.1.0.tar.gz ${WRKDIR}/vendor/byteorder-lite-0.1.0 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/byteorder-lite-0.1.0.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/byteorder-lite-0.1.0.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/byteorder-lite-0.1.0 ] && [ -d ${WRKDIR}/vendor/byteorder-lite-0.1.0 ]; then \
+			mv ${WRKDIR}/vendor/byteorder-lite-0.1.0 ${WRKDIR}/vendor/byteorder-lite-0.1.0; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/byteorder-lite-0.1.0.tar.gz ${WRKDIR}/vendor/byteorder-lite-0.1.0 2>/dev/null || true; \
 	else \
 		echo "missing dep byteorder-lite-0.1.0" >&2; exit 1; \
 	fi
@@ -91,6 +97,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/quick-error-2.0.1 ${WRKDIR}/vendor/quick-error-2.0.1; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/quick-error-2.0.1.tar.gz ${WRKDIR}/vendor/quick-error-2.0.1 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/quick-error-2.0.1.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/quick-error-2.0.1.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/quick-error-2.0.1 ] && [ -d ${WRKDIR}/vendor/quick-error-2.0.1 ]; then \
+			mv ${WRKDIR}/vendor/quick-error-2.0.1 ${WRKDIR}/vendor/quick-error-2.0.1; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/quick-error-2.0.1.tar.gz ${WRKDIR}/vendor/quick-error-2.0.1 2>/dev/null || true; \
 	elif [ -f ${FULLDISTDIR}/quick-error-2.0.1.tar.gz ]; then \
 		tar xzf ${FULLDISTDIR}/quick-error-2.0.1.tar.gz -C ${WRKDIR}/vendor; \
 		if [ ! -d ${WRKDIR}/vendor/quick-error-2.0.1 ] && [ -d ${WRKDIR}/vendor/quick-error-2.0.1 ]; then \

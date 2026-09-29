@@ -80,6 +80,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/color_quant-1.1.0 ${WRKDIR}/vendor/color_quant-1.1.0; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/color_quant-1.1.0.tar.gz ${WRKDIR}/vendor/color_quant-1.1.0 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/color_quant-1.1.0.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/color_quant-1.1.0.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/color_quant-1.1.0 ] && [ -d ${WRKDIR}/vendor/color_quant-1.1.0 ]; then \
+			mv ${WRKDIR}/vendor/color_quant-1.1.0 ${WRKDIR}/vendor/color_quant-1.1.0; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/color_quant-1.1.0.tar.gz ${WRKDIR}/vendor/color_quant-1.1.0 2>/dev/null || true; \
 	else \
 		echo "missing dep color_quant-1.1.0" >&2; exit 1; \
 	fi
@@ -91,6 +97,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/weezl-0.1.10 ${WRKDIR}/vendor/weezl-0.1.10; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/weezl-0.1.10.tar.gz ${WRKDIR}/vendor/weezl-0.1.10 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/weezl-0.1.10.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/weezl-0.1.10.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/weezl-0.1.10 ] && [ -d ${WRKDIR}/vendor/weezl-0.1.10 ]; then \
+			mv ${WRKDIR}/vendor/weezl-0.1.10 ${WRKDIR}/vendor/weezl-0.1.10; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/weezl-0.1.10.tar.gz ${WRKDIR}/vendor/weezl-0.1.10 2>/dev/null || true; \
 	elif [ -f ${FULLDISTDIR}/weezl-0.1.10.tar.gz ]; then \
 		tar xzf ${FULLDISTDIR}/weezl-0.1.10.tar.gz -C ${WRKDIR}/vendor; \
 		if [ ! -d ${WRKDIR}/vendor/weezl-0.1.10 ] && [ -d ${WRKDIR}/vendor/weezl-0.1.10 ]; then \

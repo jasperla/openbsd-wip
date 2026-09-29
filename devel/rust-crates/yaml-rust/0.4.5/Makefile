@@ -78,6 +78,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/linked-hash-map-0.5.6 ${WRKDIR}/vendor/linked-hash-map-0.5.6; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/linked-hash-map-0.5.6.tar.gz ${WRKDIR}/vendor/linked-hash-map-0.5.6 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/linked-hash-map-0.5.6.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/linked-hash-map-0.5.6.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/linked-hash-map-0.5.6 ] && [ -d ${WRKDIR}/vendor/linked-hash-map-0.5.6 ]; then \
+			mv ${WRKDIR}/vendor/linked-hash-map-0.5.6 ${WRKDIR}/vendor/linked-hash-map-0.5.6; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/linked-hash-map-0.5.6.tar.gz ${WRKDIR}/vendor/linked-hash-map-0.5.6 2>/dev/null || true; \
 	else \
 		echo "missing dep linked-hash-map-0.5.6" >&2; exit 1; \
 	fi

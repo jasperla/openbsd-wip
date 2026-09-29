@@ -80,6 +80,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/memchr-2.8.2 ${WRKDIR}/vendor/memchr-2.8.2; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/memchr-2.8.2.tar.gz ${WRKDIR}/vendor/memchr-2.8.2 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/memchr-2.8.2.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/memchr-2.8.2.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/memchr-2.8.2 ] && [ -d ${WRKDIR}/vendor/memchr-2.8.2 ]; then \
+			mv ${WRKDIR}/vendor/memchr-2.8.2 ${WRKDIR}/vendor/memchr-2.8.2; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/memchr-2.8.2.tar.gz ${WRKDIR}/vendor/memchr-2.8.2 2>/dev/null || true; \
 	else \
 		echo "missing dep memchr-2.8.2" >&2; exit 1; \
 	fi
@@ -91,6 +97,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/ucd-trie-0.1.7 ${WRKDIR}/vendor/ucd-trie-0.1.7; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/ucd-trie-0.1.7.tar.gz ${WRKDIR}/vendor/ucd-trie-0.1.7 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/ucd-trie-0.1.7.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/ucd-trie-0.1.7.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/ucd-trie-0.1.7 ] && [ -d ${WRKDIR}/vendor/ucd-trie-0.1.7 ]; then \
+			mv ${WRKDIR}/vendor/ucd-trie-0.1.7 ${WRKDIR}/vendor/ucd-trie-0.1.7; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/ucd-trie-0.1.7.tar.gz ${WRKDIR}/vendor/ucd-trie-0.1.7 2>/dev/null || true; \
 	elif [ -f ${FULLDISTDIR}/ucd-trie-0.1.7.tar.gz ]; then \
 		tar xzf ${FULLDISTDIR}/ucd-trie-0.1.7.tar.gz -C ${WRKDIR}/vendor; \
 		if [ ! -d ${WRKDIR}/vendor/ucd-trie-0.1.7 ] && [ -d ${WRKDIR}/vendor/ucd-trie-0.1.7 ]; then \

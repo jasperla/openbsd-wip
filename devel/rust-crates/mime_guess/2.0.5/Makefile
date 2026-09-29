@@ -80,6 +80,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/mime-0.3.17 ${WRKDIR}/vendor/mime-0.3.17; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/mime-0.3.17.tar.gz ${WRKDIR}/vendor/mime-0.3.17 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/mime-0.3.17.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/mime-0.3.17.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/mime-0.3.17 ] && [ -d ${WRKDIR}/vendor/mime-0.3.17 ]; then \
+			mv ${WRKDIR}/vendor/mime-0.3.17 ${WRKDIR}/vendor/mime-0.3.17; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/mime-0.3.17.tar.gz ${WRKDIR}/vendor/mime-0.3.17 2>/dev/null || true; \
 	else \
 		echo "missing dep mime-0.3.17" >&2; exit 1; \
 	fi
@@ -91,6 +97,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/unicase-2.8.1 ${WRKDIR}/vendor/unicase-2.8.1; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/unicase-2.8.1.tar.gz ${WRKDIR}/vendor/unicase-2.8.1 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/unicase-2.8.1.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/unicase-2.8.1.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/unicase-2.8.1 ] && [ -d ${WRKDIR}/vendor/unicase-2.8.1 ]; then \
+			mv ${WRKDIR}/vendor/unicase-2.8.1 ${WRKDIR}/vendor/unicase-2.8.1; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/unicase-2.8.1.tar.gz ${WRKDIR}/vendor/unicase-2.8.1 2>/dev/null || true; \
 	elif [ -f ${FULLDISTDIR}/unicase-2.8.1.tar.gz ]; then \
 		tar xzf ${FULLDISTDIR}/unicase-2.8.1.tar.gz -C ${WRKDIR}/vendor; \
 		if [ ! -d ${WRKDIR}/vendor/unicase-2.8.1 ] && [ -d ${WRKDIR}/vendor/unicase-2.8.1 ]; then \

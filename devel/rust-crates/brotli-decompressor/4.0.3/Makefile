@@ -80,6 +80,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/alloc-no-stdlib-2.0.4 ${WRKDIR}/vendor/alloc-no-stdlib-2.0.4; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/alloc-no-stdlib-2.0.4.tar.gz ${WRKDIR}/vendor/alloc-no-stdlib-2.0.4 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/alloc-no-stdlib-2.0.4.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/alloc-no-stdlib-2.0.4.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/alloc-no-stdlib-2.0.4 ] && [ -d ${WRKDIR}/vendor/alloc-no-stdlib-2.0.4 ]; then \
+			mv ${WRKDIR}/vendor/alloc-no-stdlib-2.0.4 ${WRKDIR}/vendor/alloc-no-stdlib-2.0.4; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/alloc-no-stdlib-2.0.4.tar.gz ${WRKDIR}/vendor/alloc-no-stdlib-2.0.4 2>/dev/null || true; \
 	else \
 		echo "missing dep alloc-no-stdlib-2.0.4" >&2; exit 1; \
 	fi
@@ -91,6 +97,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/alloc-stdlib-0.2.2 ${WRKDIR}/vendor/alloc-stdlib-0.2.2; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/alloc-stdlib-0.2.2.tar.gz ${WRKDIR}/vendor/alloc-stdlib-0.2.2 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/alloc-stdlib-0.2.2.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/alloc-stdlib-0.2.2.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/alloc-stdlib-0.2.2 ] && [ -d ${WRKDIR}/vendor/alloc-stdlib-0.2.2 ]; then \
+			mv ${WRKDIR}/vendor/alloc-stdlib-0.2.2 ${WRKDIR}/vendor/alloc-stdlib-0.2.2; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/alloc-stdlib-0.2.2.tar.gz ${WRKDIR}/vendor/alloc-stdlib-0.2.2 2>/dev/null || true; \
 	elif [ -f ${FULLDISTDIR}/alloc-stdlib-0.2.2.tar.gz ]; then \
 		tar xzf ${FULLDISTDIR}/alloc-stdlib-0.2.2.tar.gz -C ${WRKDIR}/vendor; \
 		if [ ! -d ${WRKDIR}/vendor/alloc-stdlib-0.2.2 ] && [ -d ${WRKDIR}/vendor/alloc-stdlib-0.2.2 ]; then \

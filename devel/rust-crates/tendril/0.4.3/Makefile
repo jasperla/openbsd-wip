@@ -84,6 +84,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/futf-0.1.5 ${WRKDIR}/vendor/futf-0.1.5; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/futf-0.1.5.tar.gz ${WRKDIR}/vendor/futf-0.1.5 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/futf-0.1.5.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/futf-0.1.5.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/futf-0.1.5 ] && [ -d ${WRKDIR}/vendor/futf-0.1.5 ]; then \
+			mv ${WRKDIR}/vendor/futf-0.1.5 ${WRKDIR}/vendor/futf-0.1.5; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/futf-0.1.5.tar.gz ${WRKDIR}/vendor/futf-0.1.5 2>/dev/null || true; \
 	else \
 		echo "missing dep futf-0.1.5" >&2; exit 1; \
 	fi
@@ -95,6 +101,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/mac-0.1.1 ${WRKDIR}/vendor/mac-0.1.1; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/mac-0.1.1.tar.gz ${WRKDIR}/vendor/mac-0.1.1 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/mac-0.1.1.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/mac-0.1.1.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/mac-0.1.1 ] && [ -d ${WRKDIR}/vendor/mac-0.1.1 ]; then \
+			mv ${WRKDIR}/vendor/mac-0.1.1 ${WRKDIR}/vendor/mac-0.1.1; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/mac-0.1.1.tar.gz ${WRKDIR}/vendor/mac-0.1.1 2>/dev/null || true; \
 	elif [ -f ${FULLDISTDIR}/mac-0.1.1.tar.gz ]; then \
 		tar xzf ${FULLDISTDIR}/mac-0.1.1.tar.gz -C ${WRKDIR}/vendor; \
 		if [ ! -d ${WRKDIR}/vendor/mac-0.1.1 ] && [ -d ${WRKDIR}/vendor/mac-0.1.1 ]; then \
@@ -118,6 +130,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/utf-8-0.7.6 ${WRKDIR}/vendor/utf-8-0.7.6; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/utf-8-0.7.6.tar.gz ${WRKDIR}/vendor/utf-8-0.7.6 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/utf-8-0.7.6.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/utf-8-0.7.6.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/utf-8-0.7.6 ] && [ -d ${WRKDIR}/vendor/utf-8-0.7.6 ]; then \
+			mv ${WRKDIR}/vendor/utf-8-0.7.6 ${WRKDIR}/vendor/utf-8-0.7.6; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/utf-8-0.7.6.tar.gz ${WRKDIR}/vendor/utf-8-0.7.6 2>/dev/null || true; \
 	else \
 		echo "missing dep utf-8-0.7.6" >&2; exit 1; \
 	fi
@@ -129,6 +147,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/new_debug_unreachable-1.0.6 ${WRKDIR}/vendor/new_debug_unreachable-1.0.6; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/new_debug_unreachable-1.0.6.tar.gz ${WRKDIR}/vendor/new_debug_unreachable-1.0.6 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/new_debug_unreachable-1.0.6.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/new_debug_unreachable-1.0.6.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/new_debug_unreachable-1.0.6 ] && [ -d ${WRKDIR}/vendor/new_debug_unreachable-1.0.6 ]; then \
+			mv ${WRKDIR}/vendor/new_debug_unreachable-1.0.6 ${WRKDIR}/vendor/new_debug_unreachable-1.0.6; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/new_debug_unreachable-1.0.6.tar.gz ${WRKDIR}/vendor/new_debug_unreachable-1.0.6 2>/dev/null || true; \
 	elif [ -f ${FULLDISTDIR}/new_debug_unreachable-1.0.6.tar.gz ]; then \
 		tar xzf ${FULLDISTDIR}/new_debug_unreachable-1.0.6.tar.gz -C ${WRKDIR}/vendor; \
 		if [ ! -d ${WRKDIR}/vendor/new_debug_unreachable-1.0.6 ] && [ -d ${WRKDIR}/vendor/new_debug_unreachable-1.0.6 ]; then \

@@ -78,6 +78,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/gimli-0.32.3 ${WRKDIR}/vendor/gimli-0.32.3; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/gimli-0.32.3.tar.gz ${WRKDIR}/vendor/gimli-0.32.3 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/gimli-0.32.3.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/gimli-0.32.3.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/gimli-0.32.3 ] && [ -d ${WRKDIR}/vendor/gimli-0.32.3 ]; then \
+			mv ${WRKDIR}/vendor/gimli-0.32.3 ${WRKDIR}/vendor/gimli-0.32.3; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/gimli-0.32.3.tar.gz ${WRKDIR}/vendor/gimli-0.32.3 2>/dev/null || true; \
 	else \
 		echo "missing dep gimli-0.32.3" >&2; exit 1; \
 	fi

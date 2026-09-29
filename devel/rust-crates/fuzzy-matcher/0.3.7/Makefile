@@ -80,6 +80,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/thread_local-1.1.9 ${WRKDIR}/vendor/thread_local-1.1.9; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/thread_local-1.1.9.tar.gz ${WRKDIR}/vendor/thread_local-1.1.9 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/thread_local-1.1.9.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/thread_local-1.1.9.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/thread_local-1.1.9 ] && [ -d ${WRKDIR}/vendor/thread_local-1.1.9 ]; then \
+			mv ${WRKDIR}/vendor/thread_local-1.1.9 ${WRKDIR}/vendor/thread_local-1.1.9; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/thread_local-1.1.9.tar.gz ${WRKDIR}/vendor/thread_local-1.1.9 2>/dev/null || true; \
 	else \
 		echo "missing dep thread_local-1.1.9" >&2; exit 1; \
 	fi
@@ -91,6 +97,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/cfg-if-1.0.4 ${WRKDIR}/vendor/cfg-if-1.0.4; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/cfg-if-1.0.4.tar.gz ${WRKDIR}/vendor/cfg-if-1.0.4 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/cfg-if-1.0.4.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/cfg-if-1.0.4.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/cfg-if-1.0.4 ] && [ -d ${WRKDIR}/vendor/cfg-if-1.0.4 ]; then \
+			mv ${WRKDIR}/vendor/cfg-if-1.0.4 ${WRKDIR}/vendor/cfg-if-1.0.4; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/cfg-if-1.0.4.tar.gz ${WRKDIR}/vendor/cfg-if-1.0.4 2>/dev/null || true; \
 	elif [ -f ${FULLDISTDIR}/cfg-if-1.0.4.tar.gz ]; then \
 		tar xzf ${FULLDISTDIR}/cfg-if-1.0.4.tar.gz -C ${WRKDIR}/vendor; \
 		if [ ! -d ${WRKDIR}/vendor/cfg-if-1.0.4 ] && [ -d ${WRKDIR}/vendor/cfg-if-1.0.4 ]; then \

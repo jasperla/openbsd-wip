@@ -78,6 +78,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/xmlparser-0.13.6 ${WRKDIR}/vendor/xmlparser-0.13.6; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/xmlparser-0.13.6.tar.gz ${WRKDIR}/vendor/xmlparser-0.13.6 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/xmlparser-0.13.6.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/xmlparser-0.13.6.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/xmlparser-0.13.6 ] && [ -d ${WRKDIR}/vendor/xmlparser-0.13.6 ]; then \
+			mv ${WRKDIR}/vendor/xmlparser-0.13.6 ${WRKDIR}/vendor/xmlparser-0.13.6; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/xmlparser-0.13.6.tar.gz ${WRKDIR}/vendor/xmlparser-0.13.6 2>/dev/null || true; \
 	else \
 		echo "missing dep xmlparser-0.13.6" >&2; exit 1; \
 	fi

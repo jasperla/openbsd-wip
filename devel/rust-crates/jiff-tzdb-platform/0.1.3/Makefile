@@ -78,6 +78,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/jiff-tzdb-0.1.4 ${WRKDIR}/vendor/jiff-tzdb-0.1.4; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/jiff-tzdb-0.1.4.tar.gz ${WRKDIR}/vendor/jiff-tzdb-0.1.4 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/jiff-tzdb-0.1.4.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/jiff-tzdb-0.1.4.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/jiff-tzdb-0.1.4 ] && [ -d ${WRKDIR}/vendor/jiff-tzdb-0.1.4 ]; then \
+			mv ${WRKDIR}/vendor/jiff-tzdb-0.1.4 ${WRKDIR}/vendor/jiff-tzdb-0.1.4; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/jiff-tzdb-0.1.4.tar.gz ${WRKDIR}/vendor/jiff-tzdb-0.1.4 2>/dev/null || true; \
 	else \
 		echo "missing dep jiff-tzdb-0.1.4" >&2; exit 1; \
 	fi

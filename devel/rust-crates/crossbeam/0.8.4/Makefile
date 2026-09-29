@@ -86,6 +86,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/crossbeam-channel-0.5.15 ${WRKDIR}/vendor/crossbeam-channel-0.5.15; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/crossbeam-channel-0.5.15.tar.gz ${WRKDIR}/vendor/crossbeam-channel-0.5.15 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/crossbeam-channel-0.5.15.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/crossbeam-channel-0.5.15.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/crossbeam-channel-0.5.15 ] && [ -d ${WRKDIR}/vendor/crossbeam-channel-0.5.15 ]; then \
+			mv ${WRKDIR}/vendor/crossbeam-channel-0.5.15 ${WRKDIR}/vendor/crossbeam-channel-0.5.15; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/crossbeam-channel-0.5.15.tar.gz ${WRKDIR}/vendor/crossbeam-channel-0.5.15 2>/dev/null || true; \
 	else \
 		echo "missing dep crossbeam-channel-0.5.15" >&2; exit 1; \
 	fi
@@ -97,6 +103,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/crossbeam-deque-0.8.6 ${WRKDIR}/vendor/crossbeam-deque-0.8.6; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/crossbeam-deque-0.8.6.tar.gz ${WRKDIR}/vendor/crossbeam-deque-0.8.6 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/crossbeam-deque-0.8.6.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/crossbeam-deque-0.8.6.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/crossbeam-deque-0.8.6 ] && [ -d ${WRKDIR}/vendor/crossbeam-deque-0.8.6 ]; then \
+			mv ${WRKDIR}/vendor/crossbeam-deque-0.8.6 ${WRKDIR}/vendor/crossbeam-deque-0.8.6; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/crossbeam-deque-0.8.6.tar.gz ${WRKDIR}/vendor/crossbeam-deque-0.8.6 2>/dev/null || true; \
 	elif [ -f ${FULLDISTDIR}/crossbeam-deque-0.8.6.tar.gz ]; then \
 		tar xzf ${FULLDISTDIR}/crossbeam-deque-0.8.6.tar.gz -C ${WRKDIR}/vendor; \
 		if [ ! -d ${WRKDIR}/vendor/crossbeam-deque-0.8.6 ] && [ -d ${WRKDIR}/vendor/crossbeam-deque-0.8.6 ]; then \
@@ -120,6 +132,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/crossbeam-epoch-0.9.20 ${WRKDIR}/vendor/crossbeam-epoch-0.9.20; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/crossbeam-epoch-0.9.20.tar.gz ${WRKDIR}/vendor/crossbeam-epoch-0.9.20 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/crossbeam-epoch-0.9.20.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/crossbeam-epoch-0.9.20.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/crossbeam-epoch-0.9.20 ] && [ -d ${WRKDIR}/vendor/crossbeam-epoch-0.9.20 ]; then \
+			mv ${WRKDIR}/vendor/crossbeam-epoch-0.9.20 ${WRKDIR}/vendor/crossbeam-epoch-0.9.20; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/crossbeam-epoch-0.9.20.tar.gz ${WRKDIR}/vendor/crossbeam-epoch-0.9.20 2>/dev/null || true; \
 	else \
 		echo "missing dep crossbeam-epoch-0.9.20" >&2; exit 1; \
 	fi
@@ -137,6 +155,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/crossbeam-queue-0.3.12 ${WRKDIR}/vendor/crossbeam-queue-0.3.12; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/crossbeam-queue-0.3.12.tar.gz ${WRKDIR}/vendor/crossbeam-queue-0.3.12 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/crossbeam-queue-0.3.12.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/crossbeam-queue-0.3.12.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/crossbeam-queue-0.3.12 ] && [ -d ${WRKDIR}/vendor/crossbeam-queue-0.3.12 ]; then \
+			mv ${WRKDIR}/vendor/crossbeam-queue-0.3.12 ${WRKDIR}/vendor/crossbeam-queue-0.3.12; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/crossbeam-queue-0.3.12.tar.gz ${WRKDIR}/vendor/crossbeam-queue-0.3.12 2>/dev/null || true; \
 	else \
 		echo "missing dep crossbeam-queue-0.3.12" >&2; exit 1; \
 	fi
@@ -148,6 +172,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/crossbeam-utils-0.8.21 ${WRKDIR}/vendor/crossbeam-utils-0.8.21; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/crossbeam-utils-0.8.21.tar.gz ${WRKDIR}/vendor/crossbeam-utils-0.8.21 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/crossbeam-utils-0.8.21.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/crossbeam-utils-0.8.21.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/crossbeam-utils-0.8.21 ] && [ -d ${WRKDIR}/vendor/crossbeam-utils-0.8.21 ]; then \
+			mv ${WRKDIR}/vendor/crossbeam-utils-0.8.21 ${WRKDIR}/vendor/crossbeam-utils-0.8.21; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/crossbeam-utils-0.8.21.tar.gz ${WRKDIR}/vendor/crossbeam-utils-0.8.21 2>/dev/null || true; \
 	elif [ -f ${FULLDISTDIR}/crossbeam-utils-0.8.21.tar.gz ]; then \
 		tar xzf ${FULLDISTDIR}/crossbeam-utils-0.8.21.tar.gz -C ${WRKDIR}/vendor; \
 		if [ ! -d ${WRKDIR}/vendor/crossbeam-utils-0.8.21 ] && [ -d ${WRKDIR}/vendor/crossbeam-utils-0.8.21 ]; then \

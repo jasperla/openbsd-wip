@@ -78,6 +78,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/litrs-1.0.0 ${WRKDIR}/vendor/litrs-1.0.0; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/litrs-1.0.0.tar.gz ${WRKDIR}/vendor/litrs-1.0.0 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/litrs-1.0.0.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/litrs-1.0.0.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/litrs-1.0.0 ] && [ -d ${WRKDIR}/vendor/litrs-1.0.0 ]; then \
+			mv ${WRKDIR}/vendor/litrs-1.0.0 ${WRKDIR}/vendor/litrs-1.0.0; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/litrs-1.0.0.tar.gz ${WRKDIR}/vendor/litrs-1.0.0 2>/dev/null || true; \
 	else \
 		echo "missing dep litrs-1.0.0" >&2; exit 1; \
 	fi

@@ -80,6 +80,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/hybrid-array-0.4.10 ${WRKDIR}/vendor/hybrid-array-0.4.10; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/hybrid-array-0.4.10.tar.gz ${WRKDIR}/vendor/hybrid-array-0.4.10 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/hybrid-array-0.4.10.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/hybrid-array-0.4.10.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/hybrid-array-0.4.10 ] && [ -d ${WRKDIR}/vendor/hybrid-array-0.4.10 ]; then \
+			mv ${WRKDIR}/vendor/hybrid-array-0.4.10 ${WRKDIR}/vendor/hybrid-array-0.4.10; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/hybrid-array-0.4.10.tar.gz ${WRKDIR}/vendor/hybrid-array-0.4.10 2>/dev/null || true; \
 	else \
 		echo "missing dep hybrid-array-0.4.10" >&2; exit 1; \
 	fi
@@ -91,6 +97,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/typenum-1.19.0 ${WRKDIR}/vendor/typenum-1.19.0; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/typenum-1.19.0.tar.gz ${WRKDIR}/vendor/typenum-1.19.0 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/typenum-1.19.0.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/typenum-1.19.0.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/typenum-1.19.0 ] && [ -d ${WRKDIR}/vendor/typenum-1.19.0 ]; then \
+			mv ${WRKDIR}/vendor/typenum-1.19.0 ${WRKDIR}/vendor/typenum-1.19.0; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/typenum-1.19.0.tar.gz ${WRKDIR}/vendor/typenum-1.19.0 2>/dev/null || true; \
 	elif [ -f ${FULLDISTDIR}/typenum-1.19.0.tar.gz ]; then \
 		tar xzf ${FULLDISTDIR}/typenum-1.19.0.tar.gz -C ${WRKDIR}/vendor; \
 		if [ ! -d ${WRKDIR}/vendor/typenum-1.19.0 ] && [ -d ${WRKDIR}/vendor/typenum-1.19.0 ]; then \

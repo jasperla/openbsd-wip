@@ -84,6 +84,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/itertools-0.13.0 ${WRKDIR}/vendor/itertools-0.13.0; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/itertools-0.13.0.tar.gz ${WRKDIR}/vendor/itertools-0.13.0 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/itertools-0.13.0.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/itertools-0.13.0.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/itertools-0.13.0 ] && [ -d ${WRKDIR}/vendor/itertools-0.13.0 ]; then \
+			mv ${WRKDIR}/vendor/itertools-0.13.0 ${WRKDIR}/vendor/itertools-0.13.0; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/itertools-0.13.0.tar.gz ${WRKDIR}/vendor/itertools-0.13.0 2>/dev/null || true; \
 	else \
 		echo "missing dep itertools-0.13.0" >&2; exit 1; \
 	fi
@@ -95,6 +101,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/unicode-segmentation-1.12.0 ${WRKDIR}/vendor/unicode-segmentation-1.12.0; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/unicode-segmentation-1.12.0.tar.gz ${WRKDIR}/vendor/unicode-segmentation-1.12.0 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/unicode-segmentation-1.12.0.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/unicode-segmentation-1.12.0.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/unicode-segmentation-1.12.0 ] && [ -d ${WRKDIR}/vendor/unicode-segmentation-1.12.0 ]; then \
+			mv ${WRKDIR}/vendor/unicode-segmentation-1.12.0 ${WRKDIR}/vendor/unicode-segmentation-1.12.0; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/unicode-segmentation-1.12.0.tar.gz ${WRKDIR}/vendor/unicode-segmentation-1.12.0 2>/dev/null || true; \
 	elif [ -f ${FULLDISTDIR}/unicode-segmentation-1.12.0.tar.gz ]; then \
 		tar xzf ${FULLDISTDIR}/unicode-segmentation-1.12.0.tar.gz -C ${WRKDIR}/vendor; \
 		if [ ! -d ${WRKDIR}/vendor/unicode-segmentation-1.12.0 ] && [ -d ${WRKDIR}/vendor/unicode-segmentation-1.12.0 ]; then \
@@ -118,6 +130,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/unicode-width-0.1.14 ${WRKDIR}/vendor/unicode-width-0.1.14; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/unicode-width-0.1.14.tar.gz ${WRKDIR}/vendor/unicode-width-0.1.14 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/unicode-width-0.1.14.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/unicode-width-0.1.14.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/unicode-width-0.1.14 ] && [ -d ${WRKDIR}/vendor/unicode-width-0.1.14 ]; then \
+			mv ${WRKDIR}/vendor/unicode-width-0.1.14 ${WRKDIR}/vendor/unicode-width-0.1.14; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/unicode-width-0.1.14.tar.gz ${WRKDIR}/vendor/unicode-width-0.1.14 2>/dev/null || true; \
 	else \
 		echo "missing dep unicode-width-0.1.14" >&2; exit 1; \
 	fi
@@ -129,6 +147,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/either-1.15.0 ${WRKDIR}/vendor/either-1.15.0; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/either-1.15.0.tar.gz ${WRKDIR}/vendor/either-1.15.0 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/either-1.15.0.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/either-1.15.0.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/either-1.15.0 ] && [ -d ${WRKDIR}/vendor/either-1.15.0 ]; then \
+			mv ${WRKDIR}/vendor/either-1.15.0 ${WRKDIR}/vendor/either-1.15.0; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/either-1.15.0.tar.gz ${WRKDIR}/vendor/either-1.15.0 2>/dev/null || true; \
 	elif [ -f ${FULLDISTDIR}/either-1.15.0.tar.gz ]; then \
 		tar xzf ${FULLDISTDIR}/either-1.15.0.tar.gz -C ${WRKDIR}/vendor; \
 		if [ ! -d ${WRKDIR}/vendor/either-1.15.0 ] && [ -d ${WRKDIR}/vendor/either-1.15.0 ]; then \

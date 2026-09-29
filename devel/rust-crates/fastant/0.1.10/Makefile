@@ -80,6 +80,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/small_ctor-0.1.2 ${WRKDIR}/vendor/small_ctor-0.1.2; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/small_ctor-0.1.2.tar.gz ${WRKDIR}/vendor/small_ctor-0.1.2 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/small_ctor-0.1.2.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/small_ctor-0.1.2.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/small_ctor-0.1.2 ] && [ -d ${WRKDIR}/vendor/small_ctor-0.1.2 ]; then \
+			mv ${WRKDIR}/vendor/small_ctor-0.1.2 ${WRKDIR}/vendor/small_ctor-0.1.2; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/small_ctor-0.1.2.tar.gz ${WRKDIR}/vendor/small_ctor-0.1.2 2>/dev/null || true; \
 	else \
 		echo "missing dep small_ctor-0.1.2" >&2; exit 1; \
 	fi
@@ -91,6 +97,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/web-time-1.1.0 ${WRKDIR}/vendor/web-time-1.1.0; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/web-time-1.1.0.tar.gz ${WRKDIR}/vendor/web-time-1.1.0 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/web-time-1.1.0.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/web-time-1.1.0.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/web-time-1.1.0 ] && [ -d ${WRKDIR}/vendor/web-time-1.1.0 ]; then \
+			mv ${WRKDIR}/vendor/web-time-1.1.0 ${WRKDIR}/vendor/web-time-1.1.0; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/web-time-1.1.0.tar.gz ${WRKDIR}/vendor/web-time-1.1.0 2>/dev/null || true; \
 	elif [ -f ${FULLDISTDIR}/web-time-1.1.0.tar.gz ]; then \
 		tar xzf ${FULLDISTDIR}/web-time-1.1.0.tar.gz -C ${WRKDIR}/vendor; \
 		if [ ! -d ${WRKDIR}/vendor/web-time-1.1.0 ] && [ -d ${WRKDIR}/vendor/web-time-1.1.0 ]; then \

@@ -78,6 +78,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/dtoa-1.0.10 ${WRKDIR}/vendor/dtoa-1.0.10; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/dtoa-1.0.10.tar.gz ${WRKDIR}/vendor/dtoa-1.0.10 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/dtoa-1.0.10.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/dtoa-1.0.10.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/dtoa-1.0.10 ] && [ -d ${WRKDIR}/vendor/dtoa-1.0.10 ]; then \
+			mv ${WRKDIR}/vendor/dtoa-1.0.10 ${WRKDIR}/vendor/dtoa-1.0.10; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/dtoa-1.0.10.tar.gz ${WRKDIR}/vendor/dtoa-1.0.10 2>/dev/null || true; \
 	else \
 		echo "missing dep dtoa-1.0.10" >&2; exit 1; \
 	fi

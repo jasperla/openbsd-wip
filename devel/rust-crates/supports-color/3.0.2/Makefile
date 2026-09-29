@@ -78,6 +78,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/is_ci-1.2.0 ${WRKDIR}/vendor/is_ci-1.2.0; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/is_ci-1.2.0.tar.gz ${WRKDIR}/vendor/is_ci-1.2.0 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/is_ci-1.2.0.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/is_ci-1.2.0.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/is_ci-1.2.0 ] && [ -d ${WRKDIR}/vendor/is_ci-1.2.0 ]; then \
+			mv ${WRKDIR}/vendor/is_ci-1.2.0 ${WRKDIR}/vendor/is_ci-1.2.0; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/is_ci-1.2.0.tar.gz ${WRKDIR}/vendor/is_ci-1.2.0 2>/dev/null || true; \
 	else \
 		echo "missing dep is_ci-1.2.0" >&2; exit 1; \
 	fi

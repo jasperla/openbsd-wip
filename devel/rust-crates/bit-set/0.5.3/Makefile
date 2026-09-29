@@ -78,6 +78,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/bit-vec-0.6.3 ${WRKDIR}/vendor/bit-vec-0.6.3; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/bit-vec-0.6.3.tar.gz ${WRKDIR}/vendor/bit-vec-0.6.3 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/bit-vec-0.6.3.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/bit-vec-0.6.3.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/bit-vec-0.6.3 ] && [ -d ${WRKDIR}/vendor/bit-vec-0.6.3 ]; then \
+			mv ${WRKDIR}/vendor/bit-vec-0.6.3 ${WRKDIR}/vendor/bit-vec-0.6.3; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/bit-vec-0.6.3.tar.gz ${WRKDIR}/vendor/bit-vec-0.6.3 2>/dev/null || true; \
 	else \
 		echo "missing dep bit-vec-0.6.3" >&2; exit 1; \
 	fi

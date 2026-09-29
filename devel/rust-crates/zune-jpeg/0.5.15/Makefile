@@ -78,6 +78,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/zune-core-0.5.1 ${WRKDIR}/vendor/zune-core-0.5.1; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/zune-core-0.5.1.tar.gz ${WRKDIR}/vendor/zune-core-0.5.1 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/zune-core-0.5.1.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/zune-core-0.5.1.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/zune-core-0.5.1 ] && [ -d ${WRKDIR}/vendor/zune-core-0.5.1 ]; then \
+			mv ${WRKDIR}/vendor/zune-core-0.5.1 ${WRKDIR}/vendor/zune-core-0.5.1; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/zune-core-0.5.1.tar.gz ${WRKDIR}/vendor/zune-core-0.5.1 2>/dev/null || true; \
 	else \
 		echo "missing dep zune-core-0.5.1" >&2; exit 1; \
 	fi

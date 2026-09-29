@@ -78,6 +78,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/base64ct-1.8.0 ${WRKDIR}/vendor/base64ct-1.8.0; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/base64ct-1.8.0.tar.gz ${WRKDIR}/vendor/base64ct-1.8.0 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/base64ct-1.8.0.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/base64ct-1.8.0.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/base64ct-1.8.0 ] && [ -d ${WRKDIR}/vendor/base64ct-1.8.0 ]; then \
+			mv ${WRKDIR}/vendor/base64ct-1.8.0 ${WRKDIR}/vendor/base64ct-1.8.0; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/base64ct-1.8.0.tar.gz ${WRKDIR}/vendor/base64ct-1.8.0 2>/dev/null || true; \
 	else \
 		echo "missing dep base64ct-1.8.0" >&2; exit 1; \
 	fi

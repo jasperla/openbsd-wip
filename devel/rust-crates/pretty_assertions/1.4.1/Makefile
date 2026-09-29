@@ -80,6 +80,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/diff-0.1.13 ${WRKDIR}/vendor/diff-0.1.13; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/diff-0.1.13.tar.gz ${WRKDIR}/vendor/diff-0.1.13 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/diff-0.1.13.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/diff-0.1.13.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/diff-0.1.13 ] && [ -d ${WRKDIR}/vendor/diff-0.1.13 ]; then \
+			mv ${WRKDIR}/vendor/diff-0.1.13 ${WRKDIR}/vendor/diff-0.1.13; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/diff-0.1.13.tar.gz ${WRKDIR}/vendor/diff-0.1.13 2>/dev/null || true; \
 	else \
 		echo "missing dep diff-0.1.13" >&2; exit 1; \
 	fi
@@ -91,6 +97,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/yansi-1.0.1 ${WRKDIR}/vendor/yansi-1.0.1; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/yansi-1.0.1.tar.gz ${WRKDIR}/vendor/yansi-1.0.1 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/yansi-1.0.1.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/yansi-1.0.1.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/yansi-1.0.1 ] && [ -d ${WRKDIR}/vendor/yansi-1.0.1 ]; then \
+			mv ${WRKDIR}/vendor/yansi-1.0.1 ${WRKDIR}/vendor/yansi-1.0.1; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/yansi-1.0.1.tar.gz ${WRKDIR}/vendor/yansi-1.0.1 2>/dev/null || true; \
 	elif [ -f ${FULLDISTDIR}/yansi-1.0.1.tar.gz ]; then \
 		tar xzf ${FULLDISTDIR}/yansi-1.0.1.tar.gz -C ${WRKDIR}/vendor; \
 		if [ ! -d ${WRKDIR}/vendor/yansi-1.0.1 ] && [ -d ${WRKDIR}/vendor/yansi-1.0.1 ]; then \

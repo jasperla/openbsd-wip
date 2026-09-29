@@ -1,0 +1,3 @@
+Prebuilt Rust crate tikv-jemalloc-sys 0.7.1+5.3.1-0-g81034ce1f1373e37dc865038e1bc8eeecf559ce8 for offline grok-build.
+PKGNAME=rust-crate-tikv_jemalloc_sys_0_7_1_5_3_1_0_g81034ce1f1373e37dc865038e1bc8eeecf559ce8-0
+Installs share/modcargo-crates/tikv-jemalloc-sys-0.7.1+5.3.1-0-g81034ce1f1373e37dc865038e1bc8eeecf559ce8/ and lib/rust-crates/<arch>/tikv-jemalloc-sys-0.7.1+5.3.1-0-g81034ce1f1373e37dc865038e1bc8eeecf559ce8/ (rlib + cargo fingerprints).

@@ -82,6 +82,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/ctor-proc-macro-0.0.6 ${WRKDIR}/vendor/ctor-proc-macro-0.0.6; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/ctor-proc-macro-0.0.6.tar.gz ${WRKDIR}/vendor/ctor-proc-macro-0.0.6 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/ctor-proc-macro-0.0.6.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/ctor-proc-macro-0.0.6.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/ctor-proc-macro-0.0.6 ] && [ -d ${WRKDIR}/vendor/ctor-proc-macro-0.0.6 ]; then \
+			mv ${WRKDIR}/vendor/ctor-proc-macro-0.0.6 ${WRKDIR}/vendor/ctor-proc-macro-0.0.6; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/ctor-proc-macro-0.0.6.tar.gz ${WRKDIR}/vendor/ctor-proc-macro-0.0.6 2>/dev/null || true; \
 	else \
 		echo "missing dep ctor-proc-macro-0.0.6" >&2; exit 1; \
 	fi
@@ -99,6 +105,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/dtor-0.0.6 ${WRKDIR}/vendor/dtor-0.0.6; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/dtor-0.0.6.tar.gz ${WRKDIR}/vendor/dtor-0.0.6 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/dtor-0.0.6.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/dtor-0.0.6.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/dtor-0.0.6 ] && [ -d ${WRKDIR}/vendor/dtor-0.0.6 ]; then \
+			mv ${WRKDIR}/vendor/dtor-0.0.6 ${WRKDIR}/vendor/dtor-0.0.6; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/dtor-0.0.6.tar.gz ${WRKDIR}/vendor/dtor-0.0.6 2>/dev/null || true; \
 	else \
 		echo "missing dep dtor-0.0.6" >&2; exit 1; \
 	fi
@@ -110,6 +122,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/dtor-proc-macro-0.0.5 ${WRKDIR}/vendor/dtor-proc-macro-0.0.5; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/dtor-proc-macro-0.0.5.tar.gz ${WRKDIR}/vendor/dtor-proc-macro-0.0.5 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/dtor-proc-macro-0.0.5.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/dtor-proc-macro-0.0.5.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/dtor-proc-macro-0.0.5 ] && [ -d ${WRKDIR}/vendor/dtor-proc-macro-0.0.5 ]; then \
+			mv ${WRKDIR}/vendor/dtor-proc-macro-0.0.5 ${WRKDIR}/vendor/dtor-proc-macro-0.0.5; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/dtor-proc-macro-0.0.5.tar.gz ${WRKDIR}/vendor/dtor-proc-macro-0.0.5 2>/dev/null || true; \
 	elif [ -f ${FULLDISTDIR}/dtor-proc-macro-0.0.5.tar.gz ]; then \
 		tar xzf ${FULLDISTDIR}/dtor-proc-macro-0.0.5.tar.gz -C ${WRKDIR}/vendor; \
 		if [ ! -d ${WRKDIR}/vendor/dtor-proc-macro-0.0.5 ] && [ -d ${WRKDIR}/vendor/dtor-proc-macro-0.0.5 ]; then \

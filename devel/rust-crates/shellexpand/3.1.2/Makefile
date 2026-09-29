@@ -84,6 +84,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/dirs-6.0.0 ${WRKDIR}/vendor/dirs-6.0.0; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/dirs-6.0.0.tar.gz ${WRKDIR}/vendor/dirs-6.0.0 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/dirs-6.0.0.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/dirs-6.0.0.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/dirs-6.0.0 ] && [ -d ${WRKDIR}/vendor/dirs-6.0.0 ]; then \
+			mv ${WRKDIR}/vendor/dirs-6.0.0 ${WRKDIR}/vendor/dirs-6.0.0; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/dirs-6.0.0.tar.gz ${WRKDIR}/vendor/dirs-6.0.0 2>/dev/null || true; \
 	else \
 		echo "missing dep dirs-6.0.0" >&2; exit 1; \
 	fi
@@ -95,6 +101,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/dirs-sys-0.5.0 ${WRKDIR}/vendor/dirs-sys-0.5.0; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/dirs-sys-0.5.0.tar.gz ${WRKDIR}/vendor/dirs-sys-0.5.0 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/dirs-sys-0.5.0.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/dirs-sys-0.5.0.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/dirs-sys-0.5.0 ] && [ -d ${WRKDIR}/vendor/dirs-sys-0.5.0 ]; then \
+			mv ${WRKDIR}/vendor/dirs-sys-0.5.0 ${WRKDIR}/vendor/dirs-sys-0.5.0; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/dirs-sys-0.5.0.tar.gz ${WRKDIR}/vendor/dirs-sys-0.5.0 2>/dev/null || true; \
 	elif [ -f ${FULLDISTDIR}/dirs-sys-0.5.0.tar.gz ]; then \
 		tar xzf ${FULLDISTDIR}/dirs-sys-0.5.0.tar.gz -C ${WRKDIR}/vendor; \
 		if [ ! -d ${WRKDIR}/vendor/dirs-sys-0.5.0 ] && [ -d ${WRKDIR}/vendor/dirs-sys-0.5.0 ]; then \
@@ -118,6 +130,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/libc-0.2.186 ${WRKDIR}/vendor/libc-0.2.186; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/libc-0.2.186.tar.gz ${WRKDIR}/vendor/libc-0.2.186 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/libc-0.2.186.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/libc-0.2.186.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/libc-0.2.186 ] && [ -d ${WRKDIR}/vendor/libc-0.2.186 ]; then \
+			mv ${WRKDIR}/vendor/libc-0.2.186 ${WRKDIR}/vendor/libc-0.2.186; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/libc-0.2.186.tar.gz ${WRKDIR}/vendor/libc-0.2.186 2>/dev/null || true; \
 	else \
 		echo "missing dep libc-0.2.186" >&2; exit 1; \
 	fi
@@ -129,6 +147,12 @@ post-extract:
 			mv ${WRKDIR}/vendor/option-ext-0.2.0 ${WRKDIR}/vendor/option-ext-0.2.0; \
 		fi; \
 		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/option-ext-0.2.0.tar.gz ${WRKDIR}/vendor/option-ext-0.2.0 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/option-ext-0.2.0.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/option-ext-0.2.0.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/option-ext-0.2.0 ] && [ -d ${WRKDIR}/vendor/option-ext-0.2.0 ]; then \
+			mv ${WRKDIR}/vendor/option-ext-0.2.0 ${WRKDIR}/vendor/option-ext-0.2.0; \
+		fi; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/option-ext-0.2.0.tar.gz ${WRKDIR}/vendor/option-ext-0.2.0 2>/dev/null || true; \
 	elif [ -f ${FULLDISTDIR}/option-ext-0.2.0.tar.gz ]; then \
 		tar xzf ${FULLDISTDIR}/option-ext-0.2.0.tar.gz -C ${WRKDIR}/vendor; \
 		if [ ! -d ${WRKDIR}/vendor/option-ext-0.2.0 ] && [ -d ${WRKDIR}/vendor/option-ext-0.2.0 ]; then \
