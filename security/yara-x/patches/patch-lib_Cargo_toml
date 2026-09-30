@@ -3,7 +3,7 @@ Disable doctest, otherwise tests fail
 Index: lib/Cargo.toml
 --- lib/Cargo.toml.orig
 +++ lib/Cargo.toml
-@@ -353,10 +353,13 @@ rayon = { workspace = true }
+@@ -416,10 +416,13 @@ rayon = { workspace = true }
  yara-x-proto = { workspace = true }
  zip = { workspace = true }
  
