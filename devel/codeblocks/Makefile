@@ -10,8 +10,8 @@ COMMENT=	Code::Blocks C/C++ IDE
 #
 #EXTRACT_SUFX=	.tar.xz
 
-DIST_TUPLE =    github jggimi codeblocks 0fdb0f6465fc5b4d1df6da1852bab6b262ce39a4 .
-SVN_REV = 	14040
+DIST_TUPLE =    github jggimi codeblocks 342bcd1bb98918b305b5381fdbb86a0d28376296 .
+SVN_REV = 	14042
 SUBST_VARS +=	SVN_REV
 V =             25.03pl${SVN_REV}
 PKGNAME =       codeblocks-${V}
@@ -86,7 +86,7 @@ AUTORECONF=	./bootstrap
 
 CXXFLAGS +=	-std=c++17
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L/usr/lib -L${X11BASE}/lib -L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--with-contrib-plugins=all,-FileManager
 CONFIGURE_ARGS += --enable-debug
 
@@ -94,7 +94,6 @@ post-patch:
 	cd ${WRKSRC} && \
 	${SUBST_CMD} src/plugins/compilergcc/compilergcc.cpp bootstrap && \
 	rm update_revision.sh
-	echo ending pre-configure
 
 post-install:
 	find ${PREFIX}/share/codeblocks -type f -perm 444 \
