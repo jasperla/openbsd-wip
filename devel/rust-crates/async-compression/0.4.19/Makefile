@@ -90,8 +90,8 @@ BUILD_DEPENDS +=	rust-crate-socket2_0_6_4-0:devel/rust-crates/socket2/0.6.4
 RUN_DEPENDS +=	rust-crate-socket2_0_6_4-0:devel/rust-crates/socket2/0.6.4
 BUILD_DEPENDS +=	rust-crate-tokio_macros_2_7_0-0:devel/rust-crates/tokio-macros/2.7.0
 RUN_DEPENDS +=	rust-crate-tokio_macros_2_7_0-0:devel/rust-crates/tokio-macros/2.7.0
-BUILD_DEPENDS +=	rust-crate-zstd_sys_2_0_16_zstd_1_5_7-0:devel/rust-crates/zstd-sys/2.0.16_zstd.1.5.7
-RUN_DEPENDS +=	rust-crate-zstd_sys_2_0_16_zstd_1_5_7-0:devel/rust-crates/zstd-sys/2.0.16_zstd.1.5.7
+BUILD_DEPENDS +=	rust-crate-zstd_sys_2_1_0_zstd_1_5_7-0:devel/rust-crates/zstd-sys/2.1.0_zstd.1.5.7
+RUN_DEPENDS +=	rust-crate-zstd_sys_2_1_0_zstd_1_5_7-0:devel/rust-crates/zstd-sys/2.1.0_zstd.1.5.7
 BUILD_DEPENDS +=	rust-crate-cfg_if_1_0_4-0:devel/rust-crates/cfg-if/1.0.4
 RUN_DEPENDS +=	rust-crate-cfg_if_1_0_4-0:devel/rust-crates/cfg-if/1.0.4
 BUILD_DEPENDS +=	rust-crate-zlib_rs_0_5_5-0:devel/rust-crates/zlib-rs/0.5.5
@@ -639,28 +639,28 @@ post-extract:
 	else \
 		echo "missing dep tokio-macros-2.7.0" >&2; exit 1; \
 	fi
-	@if [ -d ${_RUST_CRATE_SHARE}/zstd-sys-2.0.16_zstd.1.5.7 ]; then \
-		ln -sfn ${_RUST_CRATE_SHARE}/zstd-sys-2.0.16_zstd.1.5.7 ${WRKDIR}/vendor/zstd-sys-2.0.16+zstd.1.5.7; \
-	elif [ -f ${_RUST_CRATE_SHARE}/zstd-sys-2.0.16_zstd.1.5.7.tar.gz ]; then \
-		tar xzf ${_RUST_CRATE_SHARE}/zstd-sys-2.0.16_zstd.1.5.7.tar.gz -C ${WRKDIR}/vendor; \
-		if [ ! -d ${WRKDIR}/vendor/zstd-sys-2.0.16+zstd.1.5.7 ] && [ -d ${WRKDIR}/vendor/zstd-sys-2.0.16_zstd.1.5.7 ]; then \
-			mv ${WRKDIR}/vendor/zstd-sys-2.0.16_zstd.1.5.7 ${WRKDIR}/vendor/zstd-sys-2.0.16+zstd.1.5.7; \
+	@if [ -d ${_RUST_CRATE_SHARE}/zstd-sys-2.1.0_zstd.1.5.7 ]; then \
+		ln -sfn ${_RUST_CRATE_SHARE}/zstd-sys-2.1.0_zstd.1.5.7 ${WRKDIR}/vendor/zstd-sys-2.1.0+zstd.1.5.7; \
+	elif [ -f ${_RUST_CRATE_SHARE}/zstd-sys-2.1.0_zstd.1.5.7.tar.gz ]; then \
+		tar xzf ${_RUST_CRATE_SHARE}/zstd-sys-2.1.0_zstd.1.5.7.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/zstd-sys-2.1.0+zstd.1.5.7 ] && [ -d ${WRKDIR}/vendor/zstd-sys-2.1.0_zstd.1.5.7 ]; then \
+			mv ${WRKDIR}/vendor/zstd-sys-2.1.0_zstd.1.5.7 ${WRKDIR}/vendor/zstd-sys-2.1.0+zstd.1.5.7; \
 		fi; \
-		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/zstd-sys-2.0.16_zstd.1.5.7.tar.gz ${WRKDIR}/vendor/zstd-sys-2.0.16+zstd.1.5.7 2>/dev/null || true; \
-	elif [ -f ${FULLDISTDIR}/zstd-sys-2.0.16_zstd.1.5.7.tar.gz ]; then \
-		tar xzf ${FULLDISTDIR}/zstd-sys-2.0.16_zstd.1.5.7.tar.gz -C ${WRKDIR}/vendor; \
-		if [ ! -d ${WRKDIR}/vendor/zstd-sys-2.0.16+zstd.1.5.7 ] && [ -d ${WRKDIR}/vendor/zstd-sys-2.0.16_zstd.1.5.7 ]; then \
-			mv ${WRKDIR}/vendor/zstd-sys-2.0.16_zstd.1.5.7 ${WRKDIR}/vendor/zstd-sys-2.0.16+zstd.1.5.7; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/zstd-sys-2.1.0_zstd.1.5.7.tar.gz ${WRKDIR}/vendor/zstd-sys-2.1.0+zstd.1.5.7 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/zstd-sys-2.1.0_zstd.1.5.7.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/zstd-sys-2.1.0_zstd.1.5.7.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/zstd-sys-2.1.0+zstd.1.5.7 ] && [ -d ${WRKDIR}/vendor/zstd-sys-2.1.0_zstd.1.5.7 ]; then \
+			mv ${WRKDIR}/vendor/zstd-sys-2.1.0_zstd.1.5.7 ${WRKDIR}/vendor/zstd-sys-2.1.0+zstd.1.5.7; \
 		fi; \
-		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/zstd-sys-2.0.16_zstd.1.5.7.tar.gz ${WRKDIR}/vendor/zstd-sys-2.0.16+zstd.1.5.7 2>/dev/null || true; \
-	elif [ -f ${FULLDISTDIR}/zstd-sys-2.0.16+zstd.1.5.7.tar.gz ]; then \
-		tar xzf ${FULLDISTDIR}/zstd-sys-2.0.16+zstd.1.5.7.tar.gz -C ${WRKDIR}/vendor; \
-		if [ ! -d ${WRKDIR}/vendor/zstd-sys-2.0.16+zstd.1.5.7 ] && [ -d ${WRKDIR}/vendor/zstd-sys-2.0.16_zstd.1.5.7 ]; then \
-			mv ${WRKDIR}/vendor/zstd-sys-2.0.16_zstd.1.5.7 ${WRKDIR}/vendor/zstd-sys-2.0.16+zstd.1.5.7; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/zstd-sys-2.1.0_zstd.1.5.7.tar.gz ${WRKDIR}/vendor/zstd-sys-2.1.0+zstd.1.5.7 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/zstd-sys-2.1.0+zstd.1.5.7.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/zstd-sys-2.1.0+zstd.1.5.7.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/zstd-sys-2.1.0+zstd.1.5.7 ] && [ -d ${WRKDIR}/vendor/zstd-sys-2.1.0_zstd.1.5.7 ]; then \
+			mv ${WRKDIR}/vendor/zstd-sys-2.1.0_zstd.1.5.7 ${WRKDIR}/vendor/zstd-sys-2.1.0+zstd.1.5.7; \
 		fi; \
-		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/zstd-sys-2.0.16+zstd.1.5.7.tar.gz ${WRKDIR}/vendor/zstd-sys-2.0.16+zstd.1.5.7 2>/dev/null || true; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/zstd-sys-2.1.0+zstd.1.5.7.tar.gz ${WRKDIR}/vendor/zstd-sys-2.1.0+zstd.1.5.7 2>/dev/null || true; \
 	else \
-		echo "missing dep zstd-sys-2.0.16_zstd.1.5.7" >&2; exit 1; \
+		echo "missing dep zstd-sys-2.1.0_zstd.1.5.7" >&2; exit 1; \
 	fi
 	@if [ -d ${_RUST_CRATE_SHARE}/cfg-if-1.0.4 ]; then \
 		ln -sfn ${_RUST_CRATE_SHARE}/cfg-if-1.0.4 ${WRKDIR}/vendor/cfg-if-1.0.4; \
@@ -1395,12 +1395,12 @@ pre-build:
 	@cp -f ${_RUST_CRATE_LIBDIR}/tokio-macros-2.7.0/lib*.rlib ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@cp -f ${_RUST_CRATE_LIBDIR}/tokio-macros-2.7.0/lib*.so ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@cp -f ${_RUST_CRATE_LIBDIR}/tokio-macros-2.7.0/lib*.rmeta ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
-	@if [ -d ${_RUST_CRATE_LIBDIR}/zstd-sys-2.0.16_zstd.1.5.7/deps ]; then \
-		cp -Rp ${_RUST_CRATE_LIBDIR}/zstd-sys-2.0.16_zstd.1.5.7/deps/. ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true; \
+	@if [ -d ${_RUST_CRATE_LIBDIR}/zstd-sys-2.1.0_zstd.1.5.7/deps ]; then \
+		cp -Rp ${_RUST_CRATE_LIBDIR}/zstd-sys-2.1.0_zstd.1.5.7/deps/. ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true; \
 	fi
-	@cp -f ${_RUST_CRATE_LIBDIR}/zstd-sys-2.0.16_zstd.1.5.7/lib*.rlib ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
-	@cp -f ${_RUST_CRATE_LIBDIR}/zstd-sys-2.0.16_zstd.1.5.7/lib*.so ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
-	@cp -f ${_RUST_CRATE_LIBDIR}/zstd-sys-2.0.16_zstd.1.5.7/lib*.rmeta ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
+	@cp -f ${_RUST_CRATE_LIBDIR}/zstd-sys-2.1.0_zstd.1.5.7/lib*.rlib ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
+	@cp -f ${_RUST_CRATE_LIBDIR}/zstd-sys-2.1.0_zstd.1.5.7/lib*.so ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
+	@cp -f ${_RUST_CRATE_LIBDIR}/zstd-sys-2.1.0_zstd.1.5.7/lib*.rmeta ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@if [ -d ${_RUST_CRATE_LIBDIR}/cfg-if-1.0.4/deps ]; then \
 		cp -Rp ${_RUST_CRATE_LIBDIR}/cfg-if-1.0.4/deps/. ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true; \
 	fi

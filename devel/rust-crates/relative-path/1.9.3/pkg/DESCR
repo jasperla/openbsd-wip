@@ -1,0 +1,3 @@
+Prebuilt Rust crate relative-path 1.9.3 for offline grok-build.
+PKGNAME=rust-crate-relative_path_1_9_3-0
+Installs share/modcargo-crates/relative-path-1.9.3/ and lib/rust-crates/<arch>/relative-path-1.9.3/ (rlib + cargo fingerprints).

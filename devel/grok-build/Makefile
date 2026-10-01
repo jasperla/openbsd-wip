@@ -10,10 +10,10 @@ USE_NOEXECONLY =	Yes
 .endif
 
 COMMENT =		SpaceXAI terminal AI coding agent (grok)
-PKGNAME =		grok-build-1.0.41
+PKGNAME =		grok-build-1.0.45
 
 # Empty DISTNAME makes GH_DISTFILE "-….tar.gz".
-DIST_TUPLE =		github xai-org grok-build f0e3be1100ef5252488e3be8bb0e91cf68d8c305 .
+DIST_TUPLE =		github xai-org grok-build 2bdd1d6a6369de0e8c68132ea4539e9abd9e14a8 .
 
 # Offline cargo cannot fetch git deps.
 SITES.nucleo =		https://github.com/helix-editor/nucleo/archive/

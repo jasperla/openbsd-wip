@@ -180,8 +180,8 @@ BUILD_DEPENDS +=	rust-crate-tempfile_3_27_0-0:devel/rust-crates/tempfile/3.27.0
 RUN_DEPENDS +=	rust-crate-tempfile_3_27_0-0:devel/rust-crates/tempfile/3.27.0
 BUILD_DEPENDS +=	rust-crate-jiff_0_2_28-0:devel/rust-crates/jiff/0.2.28
 RUN_DEPENDS +=	rust-crate-jiff_0_2_28-0:devel/rust-crates/jiff/0.2.28
-BUILD_DEPENDS +=	rust-crate-hashbrown_0_17_0-0:devel/rust-crates/hashbrown/0.17.0
-RUN_DEPENDS +=	rust-crate-hashbrown_0_17_0-0:devel/rust-crates/hashbrown/0.17.0
+BUILD_DEPENDS +=	rust-crate-hashbrown_0_17_1-0:devel/rust-crates/hashbrown/0.17.1
+RUN_DEPENDS +=	rust-crate-hashbrown_0_17_1-0:devel/rust-crates/hashbrown/0.17.1
 BUILD_DEPENDS +=	rust-crate-gix_chunk_0_7_2-0:devel/rust-crates/gix-chunk/0.7.2
 RUN_DEPENDS +=	rust-crate-gix_chunk_0_7_2-0:devel/rust-crates/gix-chunk/0.7.2
 BUILD_DEPENDS +=	rust-crate-nonempty_0_12_0-0:devel/rust-crates/nonempty/0.12.0
@@ -1778,28 +1778,28 @@ post-extract:
 	else \
 		echo "missing dep jiff-0.2.28" >&2; exit 1; \
 	fi
-	@if [ -d ${_RUST_CRATE_SHARE}/hashbrown-0.17.0 ]; then \
-		ln -sfn ${_RUST_CRATE_SHARE}/hashbrown-0.17.0 ${WRKDIR}/vendor/hashbrown-0.17.0; \
-	elif [ -f ${_RUST_CRATE_SHARE}/hashbrown-0.17.0.tar.gz ]; then \
-		tar xzf ${_RUST_CRATE_SHARE}/hashbrown-0.17.0.tar.gz -C ${WRKDIR}/vendor; \
-		if [ ! -d ${WRKDIR}/vendor/hashbrown-0.17.0 ] && [ -d ${WRKDIR}/vendor/hashbrown-0.17.0 ]; then \
-			mv ${WRKDIR}/vendor/hashbrown-0.17.0 ${WRKDIR}/vendor/hashbrown-0.17.0; \
+	@if [ -d ${_RUST_CRATE_SHARE}/hashbrown-0.17.1 ]; then \
+		ln -sfn ${_RUST_CRATE_SHARE}/hashbrown-0.17.1 ${WRKDIR}/vendor/hashbrown-0.17.1; \
+	elif [ -f ${_RUST_CRATE_SHARE}/hashbrown-0.17.1.tar.gz ]; then \
+		tar xzf ${_RUST_CRATE_SHARE}/hashbrown-0.17.1.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/hashbrown-0.17.1 ] && [ -d ${WRKDIR}/vendor/hashbrown-0.17.1 ]; then \
+			mv ${WRKDIR}/vendor/hashbrown-0.17.1 ${WRKDIR}/vendor/hashbrown-0.17.1; \
 		fi; \
-		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/hashbrown-0.17.0.tar.gz ${WRKDIR}/vendor/hashbrown-0.17.0 2>/dev/null || true; \
-	elif [ -f ${FULLDISTDIR}/hashbrown-0.17.0.tar.gz ]; then \
-		tar xzf ${FULLDISTDIR}/hashbrown-0.17.0.tar.gz -C ${WRKDIR}/vendor; \
-		if [ ! -d ${WRKDIR}/vendor/hashbrown-0.17.0 ] && [ -d ${WRKDIR}/vendor/hashbrown-0.17.0 ]; then \
-			mv ${WRKDIR}/vendor/hashbrown-0.17.0 ${WRKDIR}/vendor/hashbrown-0.17.0; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/hashbrown-0.17.1.tar.gz ${WRKDIR}/vendor/hashbrown-0.17.1 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/hashbrown-0.17.1.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/hashbrown-0.17.1.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/hashbrown-0.17.1 ] && [ -d ${WRKDIR}/vendor/hashbrown-0.17.1 ]; then \
+			mv ${WRKDIR}/vendor/hashbrown-0.17.1 ${WRKDIR}/vendor/hashbrown-0.17.1; \
 		fi; \
-		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/hashbrown-0.17.0.tar.gz ${WRKDIR}/vendor/hashbrown-0.17.0 2>/dev/null || true; \
-	elif [ -f ${FULLDISTDIR}/hashbrown-0.17.0.tar.gz ]; then \
-		tar xzf ${FULLDISTDIR}/hashbrown-0.17.0.tar.gz -C ${WRKDIR}/vendor; \
-		if [ ! -d ${WRKDIR}/vendor/hashbrown-0.17.0 ] && [ -d ${WRKDIR}/vendor/hashbrown-0.17.0 ]; then \
-			mv ${WRKDIR}/vendor/hashbrown-0.17.0 ${WRKDIR}/vendor/hashbrown-0.17.0; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/hashbrown-0.17.1.tar.gz ${WRKDIR}/vendor/hashbrown-0.17.1 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/hashbrown-0.17.1.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/hashbrown-0.17.1.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/hashbrown-0.17.1 ] && [ -d ${WRKDIR}/vendor/hashbrown-0.17.1 ]; then \
+			mv ${WRKDIR}/vendor/hashbrown-0.17.1 ${WRKDIR}/vendor/hashbrown-0.17.1; \
 		fi; \
-		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/hashbrown-0.17.0.tar.gz ${WRKDIR}/vendor/hashbrown-0.17.0 2>/dev/null || true; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/hashbrown-0.17.1.tar.gz ${WRKDIR}/vendor/hashbrown-0.17.1 2>/dev/null || true; \
 	else \
-		echo "missing dep hashbrown-0.17.0" >&2; exit 1; \
+		echo "missing dep hashbrown-0.17.1" >&2; exit 1; \
 	fi
 	@if [ -d ${_RUST_CRATE_SHARE}/gix-chunk-0.7.2 ]; then \
 		ln -sfn ${_RUST_CRATE_SHARE}/gix-chunk-0.7.2 ${WRKDIR}/vendor/gix-chunk-0.7.2; \
@@ -2965,12 +2965,12 @@ pre-build:
 	@cp -f ${_RUST_CRATE_LIBDIR}/jiff-0.2.28/lib*.rlib ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@cp -f ${_RUST_CRATE_LIBDIR}/jiff-0.2.28/lib*.so ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@cp -f ${_RUST_CRATE_LIBDIR}/jiff-0.2.28/lib*.rmeta ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
-	@if [ -d ${_RUST_CRATE_LIBDIR}/hashbrown-0.17.0/deps ]; then \
-		cp -Rp ${_RUST_CRATE_LIBDIR}/hashbrown-0.17.0/deps/. ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true; \
+	@if [ -d ${_RUST_CRATE_LIBDIR}/hashbrown-0.17.1/deps ]; then \
+		cp -Rp ${_RUST_CRATE_LIBDIR}/hashbrown-0.17.1/deps/. ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true; \
 	fi
-	@cp -f ${_RUST_CRATE_LIBDIR}/hashbrown-0.17.0/lib*.rlib ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
-	@cp -f ${_RUST_CRATE_LIBDIR}/hashbrown-0.17.0/lib*.so ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
-	@cp -f ${_RUST_CRATE_LIBDIR}/hashbrown-0.17.0/lib*.rmeta ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
+	@cp -f ${_RUST_CRATE_LIBDIR}/hashbrown-0.17.1/lib*.rlib ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
+	@cp -f ${_RUST_CRATE_LIBDIR}/hashbrown-0.17.1/lib*.so ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
+	@cp -f ${_RUST_CRATE_LIBDIR}/hashbrown-0.17.1/lib*.rmeta ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@if [ -d ${_RUST_CRATE_LIBDIR}/gix-chunk-0.7.2/deps ]; then \
 		cp -Rp ${_RUST_CRATE_LIBDIR}/gix-chunk-0.7.2/deps/. ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true; \
 	fi

@@ -108,8 +108,8 @@ BUILD_DEPENDS +=	rust-crate-digest_0_10_7-0:devel/rust-crates/digest/0.10.7
 RUN_DEPENDS +=	rust-crate-digest_0_10_7-0:devel/rust-crates/digest/0.10.7
 BUILD_DEPENDS +=	rust-crate-equivalent_1_0_2-0:devel/rust-crates/equivalent/1.0.2
 RUN_DEPENDS +=	rust-crate-equivalent_1_0_2-0:devel/rust-crates/equivalent/1.0.2
-BUILD_DEPENDS +=	rust-crate-hashbrown_0_17_0-0:devel/rust-crates/hashbrown/0.17.0
-RUN_DEPENDS +=	rust-crate-hashbrown_0_17_0-0:devel/rust-crates/hashbrown/0.17.0
+BUILD_DEPENDS +=	rust-crate-hashbrown_0_17_1-0:devel/rust-crates/hashbrown/0.17.1
+RUN_DEPENDS +=	rust-crate-hashbrown_0_17_1-0:devel/rust-crates/hashbrown/0.17.1
 BUILD_DEPENDS +=	rust-crate-serde_1_0_228-0:devel/rust-crates/serde/1.0.228
 RUN_DEPENDS +=	rust-crate-serde_1_0_228-0:devel/rust-crates/serde/1.0.228
 BUILD_DEPENDS +=	rust-crate-serde_core_1_0_228-0:devel/rust-crates/serde_core/1.0.228
@@ -166,16 +166,14 @@ BUILD_DEPENDS +=	rust-crate-const_oid_0_9_6-0:devel/rust-crates/const-oid/0.9.6
 RUN_DEPENDS +=	rust-crate-const_oid_0_9_6-0:devel/rust-crates/const-oid/0.9.6
 BUILD_DEPENDS +=	rust-crate-subtle_2_6_1-0:devel/rust-crates/subtle/2.6.1
 RUN_DEPENDS +=	rust-crate-subtle_2_6_1-0:devel/rust-crates/subtle/2.6.1
-BUILD_DEPENDS +=	rust-crate-foldhash_0_2_0-0:devel/rust-crates/foldhash/0.2.0
-RUN_DEPENDS +=	rust-crate-foldhash_0_2_0-0:devel/rust-crates/foldhash/0.2.0
 BUILD_DEPENDS +=	rust-crate-serde_derive_1_0_228-0:devel/rust-crates/serde_derive/1.0.228
 RUN_DEPENDS +=	rust-crate-serde_derive_1_0_228-0:devel/rust-crates/serde_derive/1.0.228
 BUILD_DEPENDS +=	rust-crate-crc_catalog_2_4_0-0:devel/rust-crates/crc-catalog/2.4.0
 RUN_DEPENDS +=	rust-crate-crc_catalog_2_4_0-0:devel/rust-crates/crc-catalog/2.4.0
 BUILD_DEPENDS +=	rust-crate-value_bag_1_12_0-0:devel/rust-crates/value-bag/1.12.0
 RUN_DEPENDS +=	rust-crate-value_bag_1_12_0-0:devel/rust-crates/value-bag/1.12.0
-BUILD_DEPENDS +=	rust-crate-zstd_sys_2_0_16_zstd_1_5_7-0:devel/rust-crates/zstd-sys/2.0.16_zstd.1.5.7
-RUN_DEPENDS +=	rust-crate-zstd_sys_2_0_16_zstd_1_5_7-0:devel/rust-crates/zstd-sys/2.0.16_zstd.1.5.7
+BUILD_DEPENDS +=	rust-crate-zstd_sys_2_1_0_zstd_1_5_7-0:devel/rust-crates/zstd-sys/2.1.0_zstd.1.5.7
+RUN_DEPENDS +=	rust-crate-zstd_sys_2_1_0_zstd_1_5_7-0:devel/rust-crates/zstd-sys/2.1.0_zstd.1.5.7
 BUILD_DEPENDS +=	rust-crate-generic_array_0_14_7-0:devel/rust-crates/generic-array/0.14.7
 RUN_DEPENDS +=	rust-crate-generic_array_0_14_7-0:devel/rust-crates/generic-array/0.14.7
 BUILD_DEPENDS +=	rust-crate-typenum_1_19_0-0:devel/rust-crates/typenum/1.19.0
@@ -894,28 +892,28 @@ post-extract:
 	else \
 		echo "missing dep equivalent-1.0.2" >&2; exit 1; \
 	fi
-	@if [ -d ${_RUST_CRATE_SHARE}/hashbrown-0.17.0 ]; then \
-		ln -sfn ${_RUST_CRATE_SHARE}/hashbrown-0.17.0 ${WRKDIR}/vendor/hashbrown-0.17.0; \
-	elif [ -f ${_RUST_CRATE_SHARE}/hashbrown-0.17.0.tar.gz ]; then \
-		tar xzf ${_RUST_CRATE_SHARE}/hashbrown-0.17.0.tar.gz -C ${WRKDIR}/vendor; \
-		if [ ! -d ${WRKDIR}/vendor/hashbrown-0.17.0 ] && [ -d ${WRKDIR}/vendor/hashbrown-0.17.0 ]; then \
-			mv ${WRKDIR}/vendor/hashbrown-0.17.0 ${WRKDIR}/vendor/hashbrown-0.17.0; \
+	@if [ -d ${_RUST_CRATE_SHARE}/hashbrown-0.17.1 ]; then \
+		ln -sfn ${_RUST_CRATE_SHARE}/hashbrown-0.17.1 ${WRKDIR}/vendor/hashbrown-0.17.1; \
+	elif [ -f ${_RUST_CRATE_SHARE}/hashbrown-0.17.1.tar.gz ]; then \
+		tar xzf ${_RUST_CRATE_SHARE}/hashbrown-0.17.1.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/hashbrown-0.17.1 ] && [ -d ${WRKDIR}/vendor/hashbrown-0.17.1 ]; then \
+			mv ${WRKDIR}/vendor/hashbrown-0.17.1 ${WRKDIR}/vendor/hashbrown-0.17.1; \
 		fi; \
-		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/hashbrown-0.17.0.tar.gz ${WRKDIR}/vendor/hashbrown-0.17.0 2>/dev/null || true; \
-	elif [ -f ${FULLDISTDIR}/hashbrown-0.17.0.tar.gz ]; then \
-		tar xzf ${FULLDISTDIR}/hashbrown-0.17.0.tar.gz -C ${WRKDIR}/vendor; \
-		if [ ! -d ${WRKDIR}/vendor/hashbrown-0.17.0 ] && [ -d ${WRKDIR}/vendor/hashbrown-0.17.0 ]; then \
-			mv ${WRKDIR}/vendor/hashbrown-0.17.0 ${WRKDIR}/vendor/hashbrown-0.17.0; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/hashbrown-0.17.1.tar.gz ${WRKDIR}/vendor/hashbrown-0.17.1 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/hashbrown-0.17.1.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/hashbrown-0.17.1.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/hashbrown-0.17.1 ] && [ -d ${WRKDIR}/vendor/hashbrown-0.17.1 ]; then \
+			mv ${WRKDIR}/vendor/hashbrown-0.17.1 ${WRKDIR}/vendor/hashbrown-0.17.1; \
 		fi; \
-		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/hashbrown-0.17.0.tar.gz ${WRKDIR}/vendor/hashbrown-0.17.0 2>/dev/null || true; \
-	elif [ -f ${FULLDISTDIR}/hashbrown-0.17.0.tar.gz ]; then \
-		tar xzf ${FULLDISTDIR}/hashbrown-0.17.0.tar.gz -C ${WRKDIR}/vendor; \
-		if [ ! -d ${WRKDIR}/vendor/hashbrown-0.17.0 ] && [ -d ${WRKDIR}/vendor/hashbrown-0.17.0 ]; then \
-			mv ${WRKDIR}/vendor/hashbrown-0.17.0 ${WRKDIR}/vendor/hashbrown-0.17.0; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/hashbrown-0.17.1.tar.gz ${WRKDIR}/vendor/hashbrown-0.17.1 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/hashbrown-0.17.1.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/hashbrown-0.17.1.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/hashbrown-0.17.1 ] && [ -d ${WRKDIR}/vendor/hashbrown-0.17.1 ]; then \
+			mv ${WRKDIR}/vendor/hashbrown-0.17.1 ${WRKDIR}/vendor/hashbrown-0.17.1; \
 		fi; \
-		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/hashbrown-0.17.0.tar.gz ${WRKDIR}/vendor/hashbrown-0.17.0 2>/dev/null || true; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/hashbrown-0.17.1.tar.gz ${WRKDIR}/vendor/hashbrown-0.17.1 2>/dev/null || true; \
 	else \
-		echo "missing dep hashbrown-0.17.0" >&2; exit 1; \
+		echo "missing dep hashbrown-0.17.1" >&2; exit 1; \
 	fi
 	@if [ -d ${_RUST_CRATE_SHARE}/serde-1.0.228 ]; then \
 		ln -sfn ${_RUST_CRATE_SHARE}/serde-1.0.228 ${WRKDIR}/vendor/serde-1.0.228; \
@@ -1561,29 +1559,6 @@ post-extract:
 	else \
 		echo "missing dep subtle-2.6.1" >&2; exit 1; \
 	fi
-	@if [ -d ${_RUST_CRATE_SHARE}/foldhash-0.2.0 ]; then \
-		ln -sfn ${_RUST_CRATE_SHARE}/foldhash-0.2.0 ${WRKDIR}/vendor/foldhash-0.2.0; \
-	elif [ -f ${_RUST_CRATE_SHARE}/foldhash-0.2.0.tar.gz ]; then \
-		tar xzf ${_RUST_CRATE_SHARE}/foldhash-0.2.0.tar.gz -C ${WRKDIR}/vendor; \
-		if [ ! -d ${WRKDIR}/vendor/foldhash-0.2.0 ] && [ -d ${WRKDIR}/vendor/foldhash-0.2.0 ]; then \
-			mv ${WRKDIR}/vendor/foldhash-0.2.0 ${WRKDIR}/vendor/foldhash-0.2.0; \
-		fi; \
-		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/foldhash-0.2.0.tar.gz ${WRKDIR}/vendor/foldhash-0.2.0 2>/dev/null || true; \
-	elif [ -f ${FULLDISTDIR}/foldhash-0.2.0.tar.gz ]; then \
-		tar xzf ${FULLDISTDIR}/foldhash-0.2.0.tar.gz -C ${WRKDIR}/vendor; \
-		if [ ! -d ${WRKDIR}/vendor/foldhash-0.2.0 ] && [ -d ${WRKDIR}/vendor/foldhash-0.2.0 ]; then \
-			mv ${WRKDIR}/vendor/foldhash-0.2.0 ${WRKDIR}/vendor/foldhash-0.2.0; \
-		fi; \
-		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/foldhash-0.2.0.tar.gz ${WRKDIR}/vendor/foldhash-0.2.0 2>/dev/null || true; \
-	elif [ -f ${FULLDISTDIR}/foldhash-0.2.0.tar.gz ]; then \
-		tar xzf ${FULLDISTDIR}/foldhash-0.2.0.tar.gz -C ${WRKDIR}/vendor; \
-		if [ ! -d ${WRKDIR}/vendor/foldhash-0.2.0 ] && [ -d ${WRKDIR}/vendor/foldhash-0.2.0 ]; then \
-			mv ${WRKDIR}/vendor/foldhash-0.2.0 ${WRKDIR}/vendor/foldhash-0.2.0; \
-		fi; \
-		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/foldhash-0.2.0.tar.gz ${WRKDIR}/vendor/foldhash-0.2.0 2>/dev/null || true; \
-	else \
-		echo "missing dep foldhash-0.2.0" >&2; exit 1; \
-	fi
 	@if [ -d ${_RUST_CRATE_SHARE}/serde_derive-1.0.228 ]; then \
 		ln -sfn ${_RUST_CRATE_SHARE}/serde_derive-1.0.228 ${WRKDIR}/vendor/serde_derive-1.0.228; \
 	elif [ -f ${_RUST_CRATE_SHARE}/serde_derive-1.0.228.tar.gz ]; then \
@@ -1653,28 +1628,28 @@ post-extract:
 	else \
 		echo "missing dep value-bag-1.12.0" >&2; exit 1; \
 	fi
-	@if [ -d ${_RUST_CRATE_SHARE}/zstd-sys-2.0.16_zstd.1.5.7 ]; then \
-		ln -sfn ${_RUST_CRATE_SHARE}/zstd-sys-2.0.16_zstd.1.5.7 ${WRKDIR}/vendor/zstd-sys-2.0.16+zstd.1.5.7; \
-	elif [ -f ${_RUST_CRATE_SHARE}/zstd-sys-2.0.16_zstd.1.5.7.tar.gz ]; then \
-		tar xzf ${_RUST_CRATE_SHARE}/zstd-sys-2.0.16_zstd.1.5.7.tar.gz -C ${WRKDIR}/vendor; \
-		if [ ! -d ${WRKDIR}/vendor/zstd-sys-2.0.16+zstd.1.5.7 ] && [ -d ${WRKDIR}/vendor/zstd-sys-2.0.16_zstd.1.5.7 ]; then \
-			mv ${WRKDIR}/vendor/zstd-sys-2.0.16_zstd.1.5.7 ${WRKDIR}/vendor/zstd-sys-2.0.16+zstd.1.5.7; \
+	@if [ -d ${_RUST_CRATE_SHARE}/zstd-sys-2.1.0_zstd.1.5.7 ]; then \
+		ln -sfn ${_RUST_CRATE_SHARE}/zstd-sys-2.1.0_zstd.1.5.7 ${WRKDIR}/vendor/zstd-sys-2.1.0+zstd.1.5.7; \
+	elif [ -f ${_RUST_CRATE_SHARE}/zstd-sys-2.1.0_zstd.1.5.7.tar.gz ]; then \
+		tar xzf ${_RUST_CRATE_SHARE}/zstd-sys-2.1.0_zstd.1.5.7.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/zstd-sys-2.1.0+zstd.1.5.7 ] && [ -d ${WRKDIR}/vendor/zstd-sys-2.1.0_zstd.1.5.7 ]; then \
+			mv ${WRKDIR}/vendor/zstd-sys-2.1.0_zstd.1.5.7 ${WRKDIR}/vendor/zstd-sys-2.1.0+zstd.1.5.7; \
 		fi; \
-		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/zstd-sys-2.0.16_zstd.1.5.7.tar.gz ${WRKDIR}/vendor/zstd-sys-2.0.16+zstd.1.5.7 2>/dev/null || true; \
-	elif [ -f ${FULLDISTDIR}/zstd-sys-2.0.16_zstd.1.5.7.tar.gz ]; then \
-		tar xzf ${FULLDISTDIR}/zstd-sys-2.0.16_zstd.1.5.7.tar.gz -C ${WRKDIR}/vendor; \
-		if [ ! -d ${WRKDIR}/vendor/zstd-sys-2.0.16+zstd.1.5.7 ] && [ -d ${WRKDIR}/vendor/zstd-sys-2.0.16_zstd.1.5.7 ]; then \
-			mv ${WRKDIR}/vendor/zstd-sys-2.0.16_zstd.1.5.7 ${WRKDIR}/vendor/zstd-sys-2.0.16+zstd.1.5.7; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/zstd-sys-2.1.0_zstd.1.5.7.tar.gz ${WRKDIR}/vendor/zstd-sys-2.1.0+zstd.1.5.7 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/zstd-sys-2.1.0_zstd.1.5.7.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/zstd-sys-2.1.0_zstd.1.5.7.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/zstd-sys-2.1.0+zstd.1.5.7 ] && [ -d ${WRKDIR}/vendor/zstd-sys-2.1.0_zstd.1.5.7 ]; then \
+			mv ${WRKDIR}/vendor/zstd-sys-2.1.0_zstd.1.5.7 ${WRKDIR}/vendor/zstd-sys-2.1.0+zstd.1.5.7; \
 		fi; \
-		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/zstd-sys-2.0.16_zstd.1.5.7.tar.gz ${WRKDIR}/vendor/zstd-sys-2.0.16+zstd.1.5.7 2>/dev/null || true; \
-	elif [ -f ${FULLDISTDIR}/zstd-sys-2.0.16+zstd.1.5.7.tar.gz ]; then \
-		tar xzf ${FULLDISTDIR}/zstd-sys-2.0.16+zstd.1.5.7.tar.gz -C ${WRKDIR}/vendor; \
-		if [ ! -d ${WRKDIR}/vendor/zstd-sys-2.0.16+zstd.1.5.7 ] && [ -d ${WRKDIR}/vendor/zstd-sys-2.0.16_zstd.1.5.7 ]; then \
-			mv ${WRKDIR}/vendor/zstd-sys-2.0.16_zstd.1.5.7 ${WRKDIR}/vendor/zstd-sys-2.0.16+zstd.1.5.7; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/zstd-sys-2.1.0_zstd.1.5.7.tar.gz ${WRKDIR}/vendor/zstd-sys-2.1.0+zstd.1.5.7 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/zstd-sys-2.1.0+zstd.1.5.7.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/zstd-sys-2.1.0+zstd.1.5.7.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/zstd-sys-2.1.0+zstd.1.5.7 ] && [ -d ${WRKDIR}/vendor/zstd-sys-2.1.0_zstd.1.5.7 ]; then \
+			mv ${WRKDIR}/vendor/zstd-sys-2.1.0_zstd.1.5.7 ${WRKDIR}/vendor/zstd-sys-2.1.0+zstd.1.5.7; \
 		fi; \
-		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/zstd-sys-2.0.16+zstd.1.5.7.tar.gz ${WRKDIR}/vendor/zstd-sys-2.0.16+zstd.1.5.7 2>/dev/null || true; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/zstd-sys-2.1.0+zstd.1.5.7.tar.gz ${WRKDIR}/vendor/zstd-sys-2.1.0+zstd.1.5.7 2>/dev/null || true; \
 	else \
-		echo "missing dep zstd-sys-2.0.16_zstd.1.5.7" >&2; exit 1; \
+		echo "missing dep zstd-sys-2.1.0_zstd.1.5.7" >&2; exit 1; \
 	fi
 	@if [ -d ${_RUST_CRATE_SHARE}/generic-array-0.14.7 ]; then \
 		ln -sfn ${_RUST_CRATE_SHARE}/generic-array-0.14.7 ${WRKDIR}/vendor/generic-array-0.14.7; \
@@ -2049,12 +2024,12 @@ pre-build:
 	@cp -f ${_RUST_CRATE_LIBDIR}/equivalent-1.0.2/lib*.rlib ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@cp -f ${_RUST_CRATE_LIBDIR}/equivalent-1.0.2/lib*.so ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@cp -f ${_RUST_CRATE_LIBDIR}/equivalent-1.0.2/lib*.rmeta ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
-	@if [ -d ${_RUST_CRATE_LIBDIR}/hashbrown-0.17.0/deps ]; then \
-		cp -Rp ${_RUST_CRATE_LIBDIR}/hashbrown-0.17.0/deps/. ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true; \
+	@if [ -d ${_RUST_CRATE_LIBDIR}/hashbrown-0.17.1/deps ]; then \
+		cp -Rp ${_RUST_CRATE_LIBDIR}/hashbrown-0.17.1/deps/. ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true; \
 	fi
-	@cp -f ${_RUST_CRATE_LIBDIR}/hashbrown-0.17.0/lib*.rlib ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
-	@cp -f ${_RUST_CRATE_LIBDIR}/hashbrown-0.17.0/lib*.so ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
-	@cp -f ${_RUST_CRATE_LIBDIR}/hashbrown-0.17.0/lib*.rmeta ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
+	@cp -f ${_RUST_CRATE_LIBDIR}/hashbrown-0.17.1/lib*.rlib ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
+	@cp -f ${_RUST_CRATE_LIBDIR}/hashbrown-0.17.1/lib*.so ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
+	@cp -f ${_RUST_CRATE_LIBDIR}/hashbrown-0.17.1/lib*.rmeta ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@if [ -d ${_RUST_CRATE_LIBDIR}/serde-1.0.228/deps ]; then \
 		cp -Rp ${_RUST_CRATE_LIBDIR}/serde-1.0.228/deps/. ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true; \
 	fi
@@ -2223,12 +2198,6 @@ pre-build:
 	@cp -f ${_RUST_CRATE_LIBDIR}/subtle-2.6.1/lib*.rlib ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@cp -f ${_RUST_CRATE_LIBDIR}/subtle-2.6.1/lib*.so ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@cp -f ${_RUST_CRATE_LIBDIR}/subtle-2.6.1/lib*.rmeta ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
-	@if [ -d ${_RUST_CRATE_LIBDIR}/foldhash-0.2.0/deps ]; then \
-		cp -Rp ${_RUST_CRATE_LIBDIR}/foldhash-0.2.0/deps/. ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true; \
-	fi
-	@cp -f ${_RUST_CRATE_LIBDIR}/foldhash-0.2.0/lib*.rlib ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
-	@cp -f ${_RUST_CRATE_LIBDIR}/foldhash-0.2.0/lib*.so ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
-	@cp -f ${_RUST_CRATE_LIBDIR}/foldhash-0.2.0/lib*.rmeta ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@if [ -d ${_RUST_CRATE_LIBDIR}/serde_derive-1.0.228/deps ]; then \
 		cp -Rp ${_RUST_CRATE_LIBDIR}/serde_derive-1.0.228/deps/. ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true; \
 	fi
@@ -2247,12 +2216,12 @@ pre-build:
 	@cp -f ${_RUST_CRATE_LIBDIR}/value-bag-1.12.0/lib*.rlib ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@cp -f ${_RUST_CRATE_LIBDIR}/value-bag-1.12.0/lib*.so ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@cp -f ${_RUST_CRATE_LIBDIR}/value-bag-1.12.0/lib*.rmeta ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
-	@if [ -d ${_RUST_CRATE_LIBDIR}/zstd-sys-2.0.16_zstd.1.5.7/deps ]; then \
-		cp -Rp ${_RUST_CRATE_LIBDIR}/zstd-sys-2.0.16_zstd.1.5.7/deps/. ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true; \
+	@if [ -d ${_RUST_CRATE_LIBDIR}/zstd-sys-2.1.0_zstd.1.5.7/deps ]; then \
+		cp -Rp ${_RUST_CRATE_LIBDIR}/zstd-sys-2.1.0_zstd.1.5.7/deps/. ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true; \
 	fi
-	@cp -f ${_RUST_CRATE_LIBDIR}/zstd-sys-2.0.16_zstd.1.5.7/lib*.rlib ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
-	@cp -f ${_RUST_CRATE_LIBDIR}/zstd-sys-2.0.16_zstd.1.5.7/lib*.so ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
-	@cp -f ${_RUST_CRATE_LIBDIR}/zstd-sys-2.0.16_zstd.1.5.7/lib*.rmeta ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
+	@cp -f ${_RUST_CRATE_LIBDIR}/zstd-sys-2.1.0_zstd.1.5.7/lib*.rlib ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
+	@cp -f ${_RUST_CRATE_LIBDIR}/zstd-sys-2.1.0_zstd.1.5.7/lib*.so ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
+	@cp -f ${_RUST_CRATE_LIBDIR}/zstd-sys-2.1.0_zstd.1.5.7/lib*.rmeta ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@if [ -d ${_RUST_CRATE_LIBDIR}/generic-array-0.14.7/deps ]; then \
 		cp -Rp ${_RUST_CRATE_LIBDIR}/generic-array-0.14.7/deps/. ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true; \
 	fi

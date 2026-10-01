@@ -50,8 +50,8 @@ DPB_PROPERTIES +=	nojunk
 
 BUILD_DEPENDS +=	rust-crate-anyhow_1_0_104-0:devel/rust-crates/anyhow/1.0.104
 RUN_DEPENDS +=	rust-crate-anyhow_1_0_104-0:devel/rust-crates/anyhow/1.0.104
-BUILD_DEPENDS +=	rust-crate-itertools_0_14_0-0:devel/rust-crates/itertools/0.14.0
-RUN_DEPENDS +=	rust-crate-itertools_0_14_0-0:devel/rust-crates/itertools/0.14.0
+BUILD_DEPENDS +=	rust-crate-itertools_0_11_0-0:devel/rust-crates/itertools/0.11.0
+RUN_DEPENDS +=	rust-crate-itertools_0_11_0-0:devel/rust-crates/itertools/0.11.0
 BUILD_DEPENDS +=	rust-crate-proc_macro2_1_0_106-0:devel/rust-crates/proc-macro2/1.0.106
 RUN_DEPENDS +=	rust-crate-proc_macro2_1_0_106-0:devel/rust-crates/proc-macro2/1.0.106
 BUILD_DEPENDS +=	rust-crate-quote_1_0_45-0:devel/rust-crates/quote/1.0.45
@@ -99,28 +99,28 @@ post-extract:
 	else \
 		echo "missing dep anyhow-1.0.104" >&2; exit 1; \
 	fi
-	@if [ -d ${_RUST_CRATE_SHARE}/itertools-0.14.0 ]; then \
-		ln -sfn ${_RUST_CRATE_SHARE}/itertools-0.14.0 ${WRKDIR}/vendor/itertools-0.14.0; \
-	elif [ -f ${_RUST_CRATE_SHARE}/itertools-0.14.0.tar.gz ]; then \
-		tar xzf ${_RUST_CRATE_SHARE}/itertools-0.14.0.tar.gz -C ${WRKDIR}/vendor; \
-		if [ ! -d ${WRKDIR}/vendor/itertools-0.14.0 ] && [ -d ${WRKDIR}/vendor/itertools-0.14.0 ]; then \
-			mv ${WRKDIR}/vendor/itertools-0.14.0 ${WRKDIR}/vendor/itertools-0.14.0; \
+	@if [ -d ${_RUST_CRATE_SHARE}/itertools-0.11.0 ]; then \
+		ln -sfn ${_RUST_CRATE_SHARE}/itertools-0.11.0 ${WRKDIR}/vendor/itertools-0.11.0; \
+	elif [ -f ${_RUST_CRATE_SHARE}/itertools-0.11.0.tar.gz ]; then \
+		tar xzf ${_RUST_CRATE_SHARE}/itertools-0.11.0.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/itertools-0.11.0 ] && [ -d ${WRKDIR}/vendor/itertools-0.11.0 ]; then \
+			mv ${WRKDIR}/vendor/itertools-0.11.0 ${WRKDIR}/vendor/itertools-0.11.0; \
 		fi; \
-		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/itertools-0.14.0.tar.gz ${WRKDIR}/vendor/itertools-0.14.0 2>/dev/null || true; \
-	elif [ -f ${FULLDISTDIR}/itertools-0.14.0.tar.gz ]; then \
-		tar xzf ${FULLDISTDIR}/itertools-0.14.0.tar.gz -C ${WRKDIR}/vendor; \
-		if [ ! -d ${WRKDIR}/vendor/itertools-0.14.0 ] && [ -d ${WRKDIR}/vendor/itertools-0.14.0 ]; then \
-			mv ${WRKDIR}/vendor/itertools-0.14.0 ${WRKDIR}/vendor/itertools-0.14.0; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${_RUST_CRATE_SHARE}/itertools-0.11.0.tar.gz ${WRKDIR}/vendor/itertools-0.11.0 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/itertools-0.11.0.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/itertools-0.11.0.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/itertools-0.11.0 ] && [ -d ${WRKDIR}/vendor/itertools-0.11.0 ]; then \
+			mv ${WRKDIR}/vendor/itertools-0.11.0 ${WRKDIR}/vendor/itertools-0.11.0; \
 		fi; \
-		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/itertools-0.14.0.tar.gz ${WRKDIR}/vendor/itertools-0.14.0 2>/dev/null || true; \
-	elif [ -f ${FULLDISTDIR}/itertools-0.14.0.tar.gz ]; then \
-		tar xzf ${FULLDISTDIR}/itertools-0.14.0.tar.gz -C ${WRKDIR}/vendor; \
-		if [ ! -d ${WRKDIR}/vendor/itertools-0.14.0 ] && [ -d ${WRKDIR}/vendor/itertools-0.14.0 ]; then \
-			mv ${WRKDIR}/vendor/itertools-0.14.0 ${WRKDIR}/vendor/itertools-0.14.0; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/itertools-0.11.0.tar.gz ${WRKDIR}/vendor/itertools-0.11.0 2>/dev/null || true; \
+	elif [ -f ${FULLDISTDIR}/itertools-0.11.0.tar.gz ]; then \
+		tar xzf ${FULLDISTDIR}/itertools-0.11.0.tar.gz -C ${WRKDIR}/vendor; \
+		if [ ! -d ${WRKDIR}/vendor/itertools-0.11.0 ] && [ -d ${WRKDIR}/vendor/itertools-0.11.0 ]; then \
+			mv ${WRKDIR}/vendor/itertools-0.11.0 ${WRKDIR}/vendor/itertools-0.11.0; \
 		fi; \
-		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/itertools-0.14.0.tar.gz ${WRKDIR}/vendor/itertools-0.14.0 2>/dev/null || true; \
+		${LOCALBASE}/bin/cargo-generate-vendor ${FULLDISTDIR}/itertools-0.11.0.tar.gz ${WRKDIR}/vendor/itertools-0.11.0 2>/dev/null || true; \
 	else \
-		echo "missing dep itertools-0.14.0" >&2; exit 1; \
+		echo "missing dep itertools-0.11.0" >&2; exit 1; \
 	fi
 	@if [ -d ${_RUST_CRATE_SHARE}/proc-macro2-1.0.106 ]; then \
 		ln -sfn ${_RUST_CRATE_SHARE}/proc-macro2-1.0.106 ${WRKDIR}/vendor/proc-macro2-1.0.106; \
@@ -275,12 +275,12 @@ pre-build:
 	@cp -f ${_RUST_CRATE_LIBDIR}/anyhow-1.0.104/lib*.rlib ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@cp -f ${_RUST_CRATE_LIBDIR}/anyhow-1.0.104/lib*.so ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@cp -f ${_RUST_CRATE_LIBDIR}/anyhow-1.0.104/lib*.rmeta ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
-	@if [ -d ${_RUST_CRATE_LIBDIR}/itertools-0.14.0/deps ]; then \
-		cp -Rp ${_RUST_CRATE_LIBDIR}/itertools-0.14.0/deps/. ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true; \
+	@if [ -d ${_RUST_CRATE_LIBDIR}/itertools-0.11.0/deps ]; then \
+		cp -Rp ${_RUST_CRATE_LIBDIR}/itertools-0.11.0/deps/. ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true; \
 	fi
-	@cp -f ${_RUST_CRATE_LIBDIR}/itertools-0.14.0/lib*.rlib ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
-	@cp -f ${_RUST_CRATE_LIBDIR}/itertools-0.14.0/lib*.so ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
-	@cp -f ${_RUST_CRATE_LIBDIR}/itertools-0.14.0/lib*.rmeta ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
+	@cp -f ${_RUST_CRATE_LIBDIR}/itertools-0.11.0/lib*.rlib ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
+	@cp -f ${_RUST_CRATE_LIBDIR}/itertools-0.11.0/lib*.so ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
+	@cp -f ${_RUST_CRATE_LIBDIR}/itertools-0.11.0/lib*.rmeta ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true
 	@if [ -d ${_RUST_CRATE_LIBDIR}/proc-macro2-1.0.106/deps ]; then \
 		cp -Rp ${_RUST_CRATE_LIBDIR}/proc-macro2-1.0.106/deps/. ${MODCARGO_TARGET_DIR}/release/deps/ 2>/dev/null || true; \
 	fi
