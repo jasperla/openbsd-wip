@@ -1,0 +1,2 @@
+@bin bin/stm32flash
+@man man/man1/stm32flash.1
