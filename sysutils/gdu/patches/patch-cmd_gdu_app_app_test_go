@@ -3,7 +3,7 @@ Disable test for version
 Index: cmd/gdu/app/app_test.go
 --- cmd/gdu/app/app_test.go.orig
 +++ cmd/gdu/app/app_test.go
-@@ -25,18 +25,6 @@ func init() {
+@@ -28,18 +28,6 @@ func init() {
  	log.SetLevel(log.WarnLevel)
  }
  

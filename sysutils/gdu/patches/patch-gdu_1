@@ -5,8 +5,8 @@ Index: gdu.1
  .SH NAME
  gdu \- Pretty fast disk usage analyzer written in Go
  .SH SYNOPSIS
--\f[B]gdu [flags] [directory_to_scan]\f[R]
-+\f[B]godu [flags] [directory_to_scan]\f[R]
+-\f[B]gdu [flags] [directory_to_scan\&...]\f[R]
++\f[B]godu [flags] [directory_to_scan\&...]\f[R]
  .SH DESCRIPTION
  Pretty fast disk usage analyzer written in Go.
  .PP
