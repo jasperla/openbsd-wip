@@ -44,8 +44,6 @@ BUILD_DEPENDS =		devel/kf6/extra-cmake-modules
 LIB_DEPENDS =		net/curl \
 			security/qtkeychain,qt6 \
 			x11/qt6/qtbase
-#RUN_DEPENDS =		???
-#TEST_DEPENDS =		???
 
 CONFIGURE_ARGS =	-DUSE_VCPKG=0 -DENABLE_LOTTIE=0 \
 			-DALLOW_PLAIN_CURL=1
