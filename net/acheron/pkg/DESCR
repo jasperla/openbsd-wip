@@ -1,0 +1,25 @@
+acheron is an alternative discord client written in c++ using
+Qt6 Widgets that:
+
+* Not Electron
+* No, not Tauri either
+* Feature tuning for low memory usage
+* Cross-platform support (Win 7+, Linux, macOS)
+* Voice support (E2EE & noise suppression)
+* Multi-account support
+* Browser impersonation to avoid spam filter
+* Per-channel tabs
+* Discord-compatible markdown parsing
+* Embed support
+* File upload support
+* Unread and mention indicators
+* Guild folders
+* Edit, delete, pin, reply, react
+* Emoji support
+* Image viewer
+* Typing indicators
+* DMs and group DMs
+* Threads
+* Forums
+* QR code login
+* Animated emojis
