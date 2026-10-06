@@ -1,10 +1,10 @@
 COMMENT =	alternative Discord client made with C++ and Qt6 Widgets
 
 V =		0.0.0
-PKGNAME =	acheron-${V}pl20261005
+PKGNAME =	acheron-${V}pl20261006
 
 DIST_TUPLE +=	github ouwou acheron \
-		5064bbf09090015bd638b3e21fe3dbcf201fd217 .
+		e0191a1696e72c800c629527dbec5e0671ff654e .
 DIST_TUPLE +=	github google emoji-segmenter \
 		1cada87c62550446fca6a42a69743688b4539a4c \
 		vendor/emoji-segmenter
