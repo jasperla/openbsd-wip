@@ -33,8 +33,8 @@ MAINTAINER =	izzy Meyer <izder456@disroot.org>
 PERMIT_PACKAGE = Yes
 
 WANTLIB += ${COMPILER_LIBCXX} GL Qt6Concurrent Qt6Core Qt6DBus
-WANTLIB += Qt6Gui Qt6Network Qt6Sql Qt6Widgets c crypto curl m
-WANTLIB += qt6keychain z
+WANTLIB += Qt6Gui Qt6Network Qt6Sql Qt6Svg Qt6Widgets c crypto
+WANTLIB += curl m qt6keychain z
 
 COMPILER =		base-clang ports-gcc base-gcc
 

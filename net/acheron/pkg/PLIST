@@ -1,7 +1,12 @@
 @bin bin/acheron
+share/applications/
 share/applications/io.github.ouwou.acheron.desktop
 @tag update-desktop-database
 share/doc/pkg-readmes/${PKGSTEM}
 @tag gtk-update-icon-cache %D/share/share/icons/hicolor
+share/icons/
+share/icons/hicolor/
+share/icons/hicolor/scalable/
+share/icons/hicolor/scalable/apps/
 share/icons/hicolor/scalable/apps/io.github.ouwou.acheron.svg
 @tag gtk-update-icon-cache %D/share/icons/hicolor
