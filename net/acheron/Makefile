@@ -40,10 +40,13 @@ COMPILER =		base-clang ports-gcc base-gcc
 
 MODULES =		devel/cmake
 
-BUILD_DEPENDS =		devel/kf6/extra-cmake-modules
+BUILD_DEPENDS =		devel/kf6/extra-cmake-modules \
+			x11/qt6/qttools
 LIB_DEPENDS =		net/curl \
 			security/qtkeychain,qt6 \
-			x11/qt6/qtbase
+			x11/qt6/qtbase \
+			x11/qt6/qtsvg
+			
 
 CONFIGURE_ARGS =	-DUSE_VCPKG=0 -DENABLE_LOTTIE=0 \
 			-DALLOW_PLAIN_CURL=1
