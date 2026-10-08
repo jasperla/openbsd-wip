@@ -10,7 +10,7 @@ USE_NOEXECONLY =	Yes
 
 COMMENT =	next-generation test runner for Rust
 
-VERSION =	0.9.146
+VERSION =	0.9.148
 
 DISTNAME =	cargo-nextest-${VERSION}
 
