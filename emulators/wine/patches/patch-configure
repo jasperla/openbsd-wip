@@ -1,0 +1,372 @@
+Index: configure
+--- configure.orig
++++ configure
+@@ -633,6 +633,7 @@ EXTERNAL_SUBDIRS
+ RT_LIBS
+ WINELOADER_PROGRAMS
+ MSVCRTFLAGS
++UNWIND_LIBS
+ NETAPI_LIBS
+ NETAPI_CFLAGS
+ PROCSTAT_LIBS
+@@ -9597,6 +9598,47 @@ then :
+   as_fn_append ${wine_arch}_EXTRACFLAGS " -ffp-exception-behavior=maytrap"
+ fi }
+ 
++        { as_ac_var=`printf '%s\n' "ac_cv_${wine_arch}_cflags_-fno-ret-protector" | sed "$as_sed_sh"`
++{ printf '%s\n' "$as_me:${as_lineno-$LINENO}: checking whether $CC supports -fno-ret-protector" >&5
++printf %s "checking whether $CC supports -fno-ret-protector... " >&6; }
++if eval test \${$as_ac_var+y}
++then :
++  printf %s "(cached) " >&6
++else case e in #(
++  e) ac_wine_try_cflags_saved=$CFLAGS
++ac_wine_try_cflags_saved_exeext=$ac_exeext
++CFLAGS="$CFLAGS -nostdlib -nodefaultlibs -fno-ret-protector"
++ac_exeext=".exe"
++cat confdefs.h - <<_ACEOF >conftest.$ac_ext
++/* end confdefs.h.  */
++void *__os_arm64x_dispatch_ret = 0;
++const unsigned int _load_config_used[0x50] = { sizeof(_load_config_used) };
++#if defined(__clang_major__) && defined(MIN_CLANG_VERSION) && __clang_major__ < MIN_CLANG_VERSION
++#error Too old clang version
++#endif
++int __cdecl mainCRTStartup(void) { return 0; }
++_ACEOF
++if ac_fn_c_try_link "$LINENO"
++then :
++  eval "$as_ac_var=yes"
++else case e in #(
++  e) eval "$as_ac_var=no" ;;
++esac
++fi
++rm -f core conftest.err conftest.$ac_objext conftest.beam \
++    conftest$ac_exeext conftest.$ac_ext
++CFLAGS=$ac_wine_try_cflags_saved
++ac_exeext=$ac_wine_try_cflags_saved_exeext ;;
++esac
++fi
++eval ac_res=\$$as_ac_var
++	       { printf '%s\n' "$as_me:${as_lineno-$LINENO}: result: $ac_res" >&5
++printf '%s\n' "$ac_res" >&6; }
++if eval test \"x\$"$as_ac_var"\" = x"yes"
++then :
++  as_fn_append ${wine_arch}_EXTRACFLAGS " -fno-ret-protector"
++fi }
++
+         { as_ac_var=`printf '%s\n' "ac_cv_${wine_arch}_cflags_-fms-hotpatch -DMIN_CLANG_VERSION=18" | sed "$as_sed_sh"`
+ { printf '%s\n' "$as_me:${as_lineno-$LINENO}: checking whether $CC supports -fms-hotpatch -DMIN_CLANG_VERSION=18" >&5
+ printf %s "checking whether $CC supports -fms-hotpatch -DMIN_CLANG_VERSION=18... " >&6; }
+@@ -11726,6 +11768,9 @@ ac_fn_c_check_header_compile "$LINENO" "netinet/udp_va
+      #ifdef HAVE_NETINET_TCP_H
+      # include <netinet/tcp.h>
+      #endif
++     #ifdef __OpenBSD__
++     # include <netinet/tcp_timer.h>
++     #endif
+ "
+ if test "x$ac_cv_header_netinet_udp_var_h" = xyes
+ then :
+@@ -11758,6 +11803,9 @@ ac_fn_c_check_header_compile "$LINENO" "netinet/icmp_v
+      #ifdef HAVE_NETINET_TCP_H
+      # include <netinet/tcp.h>
+      #endif
++     #ifdef __OpenBSD__
++     # include <netinet/tcp_timer.h>
++     #endif
+ "
+ if test "x$ac_cv_header_netinet_icmp_var_h" = xyes
+ then :
+@@ -11790,6 +11838,9 @@ ac_fn_c_check_header_compile "$LINENO" "netinet/icmp6.
+      #ifdef HAVE_NETINET_TCP_H
+      # include <netinet/tcp.h>
+      #endif
++     #ifdef __OpenBSD__
++     # include <netinet/tcp_timer.h>
++     #endif
+ "
+ if test "x$ac_cv_header_netinet_icmp6_h" = xyes
+ then :
+@@ -11822,6 +11873,9 @@ ac_fn_c_check_header_compile "$LINENO" "netinet/tcp_va
+      #ifdef HAVE_NETINET_TCP_H
+      # include <netinet/tcp.h>
+      #endif
++     #ifdef __OpenBSD__
++     # include <netinet/tcp_timer.h>
++     #endif
+ "
+ if test "x$ac_cv_header_netinet_tcp_var_h" = xyes
+ then :
+@@ -12819,6 +12873,39 @@ fi
+             ;;
+         esac
+         ;;
++      openbsd*)
++        as_fn_append WINELOADER_LDFLAGS " -pie"
++                        { printf '%s\n' "$as_me:${as_lineno-$LINENO}: checking whether the compiler supports -Wl,-z,wxneeded" >&5
++printf %s "checking whether the compiler supports -Wl,-z,wxneeded... " >&6; }
++if test ${ac_cv_cflags__Wl__z_wxneeded+y}
++then :
++  printf %s "(cached) " >&6
++else case e in #(
++  e) ac_wine_try_cflags_saved=$CFLAGS
++CFLAGS="$CFLAGS -Wl,-z,wxneeded"
++cat confdefs.h - <<_ACEOF >conftest.$ac_ext
++/* end confdefs.h.  */
++int main(int argc, char **argv) { return 0; }
++_ACEOF
++if ac_fn_c_try_link "$LINENO"
++then :
++  ac_cv_cflags__Wl__z_wxneeded=yes
++else case e in #(
++  e) ac_cv_cflags__Wl__z_wxneeded=no ;;
++esac
++fi
++rm -f core conftest.err conftest.$ac_objext conftest.beam \
++    conftest$ac_exeext conftest.$ac_ext
++CFLAGS=$ac_wine_try_cflags_saved ;;
++esac
++fi
++{ printf '%s\n' "$as_me:${as_lineno-$LINENO}: result: $ac_cv_cflags__Wl__z_wxneeded" >&5
++printf '%s\n' "$ac_cv_cflags__Wl__z_wxneeded" >&6; }
++if test "x$ac_cv_cflags__Wl__z_wxneeded" = xyes
++then :
++  as_fn_append WINELOADER_LDFLAGS " -Wl,-z,wxneeded"
++fi
++        ;;
+       *)
+         case $HOST_ARCH in
+           i386|arm)
+@@ -17883,11 +17970,22 @@ else case e in #(
+ #ifdef HAVE_NETINET_IN_H
+ #include <netinet/in.h>
+ #endif
++#ifdef HAVE_ARPA_NAMESER_H
++#include <arpa/nameser.h>
++#endif
+ #include <resolv.h>
++#ifdef __OpenBSD__
++#define ns_c_in C_IN
++#endif
+ int
+ main (void)
+ {
+-if (!(_res.options & RES_INIT)) res_init(); res_query("foo",ns_c_in,0,0,0); ns_initparse(0,0,0)
++if (!(_res.options & RES_INIT)) res_init();
++res_query("foo",ns_c_in,0,0,0);
++#ifndef __OpenBSD__
++ns_initparse(0,0,0);
++#endif
++
+   ;
+   return 0;
+ }
+@@ -18168,17 +18266,7 @@ This is an error since --with-gettextpo was requested.
+ esac
+ 
+ fi
+-    if test "$srcdir" != .
+-then :
+-  case "x$with_gettextpo" in
+-  x)   as_fn_append wine_notices "|Rebuilding po files is not supported for out of tree builds." ;;
+-  xno) ;;
+-  *)   as_fn_error $? "Rebuilding po files is not supported for out of tree builds.
+-This is an error since --with-gettextpo was requested." "$LINENO" 5 ;;
+-esac
+-
+ fi
+-fi
+ 
+ if test "x$with_pulse" != "xno";
+ then
+@@ -18687,7 +18775,9 @@ do :
+ if test "x$ac_cv_header_SDL_h" = xyes
+ then :
+   printf '%s\n' "#define HAVE_SDL_H 1" >>confdefs.h
+- { printf '%s\n' "$as_me:${as_lineno-$LINENO}: checking for -lSDL2" >&5
++ case $host_os in #(
++  openbsd*) :
++    { printf '%s\n' "$as_me:${as_lineno-$LINENO}: checking for -lSDL2" >&5
+ printf %s "checking for -lSDL2... " >&6; }
+ if test ${ac_cv_lib_soname_SDL2+y}
+ then :
+@@ -18720,6 +18810,70 @@ if ac_fn_c_try_link "$LINENO"
+ then :
+   case "$LIBEXT" in
+     dll) ac_cv_lib_soname_SDL2=`$ac_cv_path_LDD conftest.exe | grep "SDL2" | sed -e "s/dll.*/dll/"';2,$d'` ;;
++    dylib) ac_cv_lib_soname_SDL2=`$OTOOL -L conftest$ac_exeext | grep "libSDL2\\.[0-9A-Za-z.]*dylib" | sed -e "s/^.*\/\(libSDL2\.[0-9A-Za-z.]*dylib\).*$/\1/"';2,$d'` ;;
++    *) ac_cv_lib_soname_SDL2=`$READELF -d conftest$ac_exeext | grep "NEEDED.*libSDL2\\.$LIBEXT" | sed -e "s/^.*\\[\\(libSDL2\\.$LIBEXT[^	 ]*\\)\\].*$/\1/"';2,$d'`
++       if ${ac_cv_lib_soname_SDL2:+false} :
++then :
++  ac_cv_lib_soname_SDL2=`$LDD conftest$ac_exeext | grep "libSDL2\\.$LIBEXT" | sed -e "s/^.*\(libSDL2\.$LIBEXT[^	 ]*\).*$/\1/"';2,$d'`
++fi ;;
++  esac
++else case e in #(
++  e) ac_cv_lib_soname_SDL2= ;;
++esac
++fi
++rm -f core conftest.err conftest.$ac_objext conftest.beam \
++    conftest$ac_exeext conftest.$ac_ext
++  LIBS=$ac_check_soname_save_LIBS ;;
++esac
++fi
++if ${ac_cv_lib_soname_SDL2:+false} :
++then :
++  { printf '%s\n' "$as_me:${as_lineno-$LINENO}: result: not found" >&5
++printf '%s\n' "not found" >&6; }
++
++else case e in #(
++  e) { printf '%s\n' "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_soname_SDL2" >&5
++printf '%s\n' "$ac_cv_lib_soname_SDL2" >&6; }
++
++printf '%s\n' "#define SONAME_LIBSDL2 \"$ac_cv_lib_soname_SDL2\"" >>confdefs.h
++
++        ;;
++esac
++fi ;; #(
++  *) :
++    { printf '%s\n' "$as_me:${as_lineno-$LINENO}: checking for -lSDL2" >&5
++printf %s "checking for -lSDL2... " >&6; }
++if test ${ac_cv_lib_soname_SDL2+y}
++then :
++  printf %s "(cached) " >&6
++else case e in #(
++  e) ac_check_soname_save_LIBS=$LIBS
++LIBS="-lSDL2  $LIBS"
++  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
++/* end confdefs.h.  */
++
++/* Override any GCC internal prototype to avoid an error.
++   Use char because int might match the return type of a GCC
++   builtin and then its argument prototype would still apply.
++   The 'extern "C"' is for builds by C++ compilers;
++   although this is not generally supported in C code supporting it here
++   has little cost and some practical benefit (sr 110532).  */
++#ifdef __cplusplus
++extern "C"
++#endif
++char SDL_Init (void);
++int
++main (void)
++{
++return SDL_Init ();
++  ;
++  return 0;
++}
++_ACEOF
++if ac_fn_c_try_link "$LINENO"
++then :
++  case "$LIBEXT" in
++    dll) ac_cv_lib_soname_SDL2=`$ac_cv_path_LDD conftest.exe | grep "SDL2" | sed -e "s/dll.*/dll/"';2,$d'` ;;
+     dylib) ac_cv_lib_soname_SDL2=`$OTOOL -L conftest$ac_exeext | grep "libSDL2-2.0*\\.[0-9A-Za-z.]*dylib" | sed -e "s/^.*\/\(libSDL2-2.0*\.[0-9A-Za-z.]*dylib\).*$/\1/"';2,$d'` ;;
+     *) ac_cv_lib_soname_SDL2=`$READELF -d conftest$ac_exeext | grep "NEEDED.*libSDL2-2.0*\\.$LIBEXT" | sed -e "s/^.*\\[\\(libSDL2-2.0*\\.$LIBEXT[^	 ]*\\)\\].*$/\1/"';2,$d'`
+        if ${ac_cv_lib_soname_SDL2:+false} :
+@@ -18749,8 +18903,9 @@ printf '%s\n' "#define SONAME_LIBSDL2 \"$ac_cv_lib_son
+ 
+         ;;
+ esac
++fi ;;
++esac
+ fi
+-fi
+ 
+ done
+ CPPFLAGS=$ac_save_pkg_CPPFLAGS
+@@ -19565,7 +19720,65 @@ esac
+ 
+ fi
+ 
++ac_fn_c_check_func "$LINENO" "_Unwind_Find_FDE" "ac_cv_func__Unwind_Find_FDE"
++if test "x$ac_cv_func__Unwind_Find_FDE" = xyes
++then :
+ 
++else case e in #(
++  e) { printf '%s\n' "$as_me:${as_lineno-$LINENO}: checking for _Unwind_Find_FDE in -lc++abi" >&5
++printf %s "checking for _Unwind_Find_FDE in -lc++abi... " >&6; }
++if test ${ac_cv_lib_cppabi__Unwind_Find_FDE+y}
++then :
++  printf %s "(cached) " >&6
++else case e in #(
++  e) ac_check_lib_save_LIBS=$LIBS
++LIBS="-lc++abi $PTHREAD_LIBS $LIBS"
++cat confdefs.h - <<_ACEOF >conftest.$ac_ext
++/* end confdefs.h.  */
++
++/* Override any GCC internal prototype to avoid an error.
++   Use char because int might match the return type of a GCC
++   builtin and then its argument prototype would still apply.
++   The 'extern "C"' is for builds by C++ compilers;
++   although this is not generally supported in C code supporting it here
++   has little cost and some practical benefit (sr 110532).  */
++#ifdef __cplusplus
++extern "C"
++#endif
++char _Unwind_Find_FDE (void);
++int
++main (void)
++{
++return _Unwind_Find_FDE ();
++  ;
++  return 0;
++}
++_ACEOF
++if ac_fn_c_try_link "$LINENO"
++then :
++  ac_cv_lib_cppabi__Unwind_Find_FDE=yes
++else case e in #(
++  e) ac_cv_lib_cppabi__Unwind_Find_FDE=no ;;
++esac
++fi
++rm -f core conftest.err conftest.$ac_objext conftest.beam \
++    conftest$ac_exeext conftest.$ac_ext
++LIBS=$ac_check_lib_save_LIBS ;;
++esac
++fi
++{ printf '%s\n' "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_cppabi__Unwind_Find_FDE" >&5
++printf '%s\n' "$ac_cv_lib_cppabi__Unwind_Find_FDE" >&6; }
++if test "x$ac_cv_lib_cppabi__Unwind_Find_FDE" = xyes
++then :
++  UNWIND_LIBS="-lc++abi"
++
++fi
++ ;;
++esac
++fi
++
++
++
+ if test "x$enable_winealsa_drv$enable_winecoreaudio_drv$enable_winepulse_drv$enable_wineoss_drv$enable_wineandroid_drv" = xnonononono -a \
+         "x$with_alsa$with_coreaudio$with_oss$with_pulse" != xnononono
+ then
+@@ -21556,6 +21769,7 @@ fi
+ 
+ 
+ ac_fn_c_check_member "$LINENO" "struct tcpstat" "tcps_connattempt" "ac_cv_member_struct_tcpstat_tcps_connattempt" "#include <sys/types.h>
++#include <sys/socket.h>
+ #ifdef HAVE_SYS_SOCKETVAR_H
+ #include <sys/socketvar.h>
+ #endif
+@@ -21565,6 +21779,9 @@ ac_fn_c_check_member "$LINENO" "struct tcpstat" "tcps_
+ #ifdef HAVE_NETINET_TCP_H
+ #include <netinet/tcp.h>
+ #endif
++#ifdef __OpenBSD__
++#include <netinet/tcp_timer.h>
++#endif
+ #ifdef HAVE_NETINET_TCP_VAR_H
+ #include <netinet/tcp_var.h>
+ #endif
+@@ -24287,6 +24504,7 @@ GSSAPI_LIBS = $GSSAPI_LIBS
+ PROCSTAT_LIBS = $PROCSTAT_LIBS
+ NETAPI_CFLAGS = $NETAPI_CFLAGS
+ NETAPI_LIBS = $NETAPI_LIBS
++UNWIND_LIBS = $UNWIND_LIBS
+ MSVCRTFLAGS = $MSVCRTFLAGS
+ WINELOADER_PROGRAMS = $WINELOADER_PROGRAMS
+ RT_LIBS = $RT_LIBS
+@@ -24717,5 +24935,3 @@ IFS="$ac_save_IFS"
+ printf '%s\n' "
+ $as_me: Finished.  Do '${MAKE-make}' to compile Wine.
+ " >&6
+-
+-

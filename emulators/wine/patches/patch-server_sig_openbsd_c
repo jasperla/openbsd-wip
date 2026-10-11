@@ -1,0 +1,121 @@
+Index: server/sig_openbsd.c
+--- server/sig_openbsd.c.orig
++++ server/sig_openbsd.c
+@@ -0,0 +1,117 @@
++/*
++ * Server-side thread signals on OpenBSD
++ *
++ * Copyright 2026 Andrii Yukhymchak
++ *
++ * This library is free software; you can redistribute it and/or
++ * modify it under the terms of the GNU Lesser General Public
++ * License as published by the Free Software Foundation; either
++ * version 2.1 of the License, or (at your option) any later version.
++ *
++ * This library is distributed in the hope that it will be useful,
++ * but WITHOUT ANY WARRANTY; without even the implied warranty of
++ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
++ * Lesser General Public License for more details.
++ *
++ * You should have received a copy of the GNU Lesser General Public
++ * License along with this library; if not, write to the Free Software
++ * Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA
++ */
++
++#include "config.h"
++
++#ifdef __OpenBSD__
++
++#include <fcntl.h>
++#include <stdarg.h>
++#include <stdio.h>
++#include <string.h>
++#include <unistd.h>
++#include <sys/mman.h>
++#include <sys/types.h>
++
++#include "ntstatus.h"
++#include "winternl.h"
++#include "file.h"
++#include "process.h"
++#include "request.h"
++#include "sig_openbsd.h"
++#include "thread.h"
++
++/* OpenBSD has no way to signal a given thread on a different process. send_thread_signal() signals
++ * the entire process, and then the thread that gets the signal (random thread) will re-emit that
++ * to the target thread. To tell which thread is the target, the server stores the Unix tid of
++ * the target in an array that is shared with the process. It is stored in the file `sig-{pid}`
++ * of the server directory, where {pid} is Windows process id.
++ *
++ * Entry 0 is special - anything in it will forward to all threads - basically an overflow flag
++ * Entry 1-64 hold tid's of the pending targets. 0 - free slot.
++ *
++ * Has to match froward_thread_signal() in ntdll half of the implementation
++ */
++
++#define SIGNAL_TARGETS_COUNT 64
++#define SIGNAL_TARGETS_SIZE (SIGNAL_TARGETS_COUNT * sizeof(int))
++
++static void get_signal_targets_name( struct process *process, char name[16] )
++{
++    snprintf( name, 16, "sig-%04x", process->id );
++}
++
++/* for a new process share an array of signal targets */
++void init_process_signal_targets( struct process *process )
++{
++    char name[16];
++    void *ptr;
++    int fd;
++
++    if (process->signal_targets) return;
++
++    get_signal_targets_name( process, name );
++    /* never reuse a leftover file. Some client might still map it */
++    unlinkat( server_dir_fd, name, 0 );
++    if ((fd = openat( server_dir_fd, name, O_RDWR | O_CREAT | O_EXCL | O_CLOEXEC, 0600 )) == -1)
++        return;
++
++    if (ftruncate( fd, SIGNAL_TARGETS_SIZE ) != -1 &&
++        (ptr = mmap( NULL, SIGNAL_TARGETS_SIZE, PROT_READ | PROT_WRITE, MAP_SHARED, fd, 0 )) != MAP_FAILED)
++        process->signal_targets = ptr;
++    else
++        unlinkat( server_dir_fd, name, 0 );
++
++    close(fd);
++}
++
++void finish_process_signal_targets( struct process *process )
++{
++    char name[16];
++
++    if (!process->signal_targets) return;
++    munmap( process->signal_targets, SIGNAL_TARGETS_SIZE );
++    process->signal_targets = NULL;
++    get_signal_targets_name( process, name );
++    unlinkat( server_dir_fd, name, 0 );
++}
++
++/* record target thread before signalling its process */
++void set_signal_target( struct thread *thread )
++{
++    int i, tid;
++    int free_slot = 0;
++    int *targets = thread->process->signal_targets;
++
++    if (!targets) return; /* notify everyone */
++
++    /* the client only clears slots, so a slot seen free stays free until server fills it */
++    for (i = 1; i < SIGNAL_TARGETS_COUNT; i++)
++    {
++        tid = __atomic_load_n( &targets[i], __ATOMIC_SEQ_CST );
++        if (tid == thread->unix_tid) return; /* still pending? */
++        if (!tid && !free_slot) free_slot = i; /* no break because we need the above check */
++    }
++
++    /* free_slot = 0 if we haven't found free slot, so we just save it in the overflow */
++    __atomic_store_n( &targets[free_slot], free_slot ? thread->unix_tid : 1, __ATOMIC_SEQ_CST);
++}
++
++#endif /* __OpenBSD__ */
