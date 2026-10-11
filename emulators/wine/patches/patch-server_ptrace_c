@@ -1,0 +1,29 @@
+Index: server/ptrace.c
+--- server/ptrace.c.orig
++++ server/ptrace.c
+@@ -247,6 +247,9 @@ void init_process_tracing( struct process *process )
+ /* terminate the per-process tracing mechanism */
+ void finish_process_tracing( struct process *process )
+ {
++#ifdef __OpenBSD__
++    finish_process_signal_targets( process );
++#endif
+ }
+ 
+ /* send a Unix signal to a specific thread */
+@@ -257,7 +260,15 @@ int send_thread_signal( struct thread *thread, int sig
+     if (thread->unix_tid != -1)
+     {
+         ret = tkill( thread->unix_pid, thread->unix_tid, sig );
++#ifdef __OpenBSD__
++        if (ret == -1 && errno == ENOSYS && sig != SIGQUIT)
++        {
++            set_signal_target( thread );
++            ret = kill( thread->unix_pid, sig );
++        }
++#else
+         if (ret == -1 && errno == ENOSYS) ret = kill( thread->unix_pid, sig );
++#endif
+     }
+     if (ret == -1 && errno == ESRCH) /* thread got killed */
+     {

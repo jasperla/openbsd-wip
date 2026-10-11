@@ -1,0 +1,187 @@
++-----------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-----------------------------------------------------------------------
+
+This experimental port runs 64-bit Windows applications on OpenBSD/amd64.
+It does not provide 32-bit Windows support.
+
+Initialize Wine
+===============
+
+Without WINEPREFIX, Wine stores its configuration in $HOME/.wine.
+To initialize this prefix:
+
+    wineboot -i
+    wineserver -w
+
+PulseAudio
+==========
+
+Wine uses PulseAudio, which sends audio to sndio on OpenBSD. Run it as the
+same user as Wine. To restart the user's PulseAudio daemon:
+
+    pulseaudio --kill
+    pulseaudio --start
+
+Inspect the server and its playback devices:
+
+    pactl info
+    pactl list short sinks
+
+The usual hardware output is sndio-sink. auto_null is a dummy output:
+audio sent there will not reach the speakers. If sndio-sink is listed:
+
+    pactl set-default-sink sndio-sink
+    pactl set-sink-mute sndio-sink 0
+    pactl set-sink-volume sndio-sink 100%
+
+Check the volume controls between PulseAudio and the audio device:
+
+    sndioctl
+
+The per-application control name can vary. Seeing PulseAudio in sndioctl
+confirms its connection to sndiod, but does not prove that Wine is sending
+audible samples.
+
+Steam
+=====
+
+The package installs wine-steam in ${LOCALBASE}/bin, with unzip and the
+Liberation fonts as dependencies. This helper prepares Steam for this
+64-bit-only port: it installs the client directly from Valve's update
+packages, without running the Windows installer, and applies the prefix,
+font and resource-limit settings described below.
+
+As your normal desktop user, start PulseAudio as described above, then run:
+
+    wine-steam
+
+On the first run, it creates $HOME/.wine-steam and initializes Wine without
+installing Mono or Gecko. It downloads the Windows 64-bit client packages
+listed in Valve's manifest, verifies their SHA-256 checksums and extracts
+them into:
+
+    $HOME/.wine-steam/drive_c/Steam
+
+An Internet connection is required for installation. No separate wineboot
+command is needed. The helper always uses this dedicated prefix, separate
+from the default $HOME/.wine prefix.
+
+At each launch, it registers Liberation replacements for Arial, Times New
+Roman and Courier New, raises the data-segment and open-file limits to the
+user's existing hard limits, then starts Steam with -cef-disable-sandbox
+(disabling the CEF browser sandbox).
+
+Run the same command to start Steam again. If installation was interrupted,
+run it again to retry. Additional command-line arguments are passed to Steam.
+
+Debugging
+=========
+
+WINEDEBUG selects Wine's diagnostic messages at process startup. Set it for
+one command, then reproduce the problem. Restart the application to change
+the selection; existing processes keep their settings.
+
+Each comma-separated option has the following form, without spaces:
+
+    [program.exe:][class]+channel
+    [program.exe:][class]-channel
+
+The optional class selects one kind of message:
+
+    err     A detected error; the application may still recover.
+    warn    A suspicious condition or a possible problem.
+    fixme   Missing or incomplete Wine functionality; not necessarily fatal.
+    trace   Detailed execution messages, usually much more verbose.
+
+These are independent classes, not verbosity levels. With WINEDEBUG unset,
+Wine enables err and fixme on all channels. Options modify these defaults:
+
+For an application that fails to start or crashes, begin with:
+
+    WINEDEBUG=+timestamp,+pid,+seh,+loaddll,+process \
+        wine-steam > "$HOME/wine.log" 2>&1
+
+The default err/fixme messages remain enabled.
+Replace wine-steam with wine /path/to/application.exe for another program.
+
+These options add context to message prefixes:
+
+- +timestamp: adds a time counter in seconds.milliseconds to measure delays.
+- +pid: adds the Windows process ID to distinguish Steam and its children.
+
+For example, 123.456:0020:0024: identifies the timestamp,
+process 0020 and thread 0024 (the thread ID is already printed by default).
+These IDs are hexadecimal Windows IDs, not the Unix process IDs shown by ps.
+
+These channels add diagnostic messages about specific operations:
+
+- +seh: traces exceptions and their handling.
+- +loaddll: shows which DLLs are loaded.
+- +process: traces process creation.
+
+An exception in a seh trace may be handled by the application; its presence
+alone does not prove a crash.
+
+For other symptoms, replace the three diagnostic channels above with a
+relevant group. Capture only the steps needed to reproduce the problem:
+
+- Missing sound: +mmdevapi,+pulse shows audio devices, stream creation and
+  communication with PulseAudio. Add +xaudio2 for a game using XAudio2.
+- Black screen or graphics errors: +dxgi,+d3d11 for display resources and
+  Direct3D 11 calls. Add +d3d for WineD3D, or +opengl,+wgl for OpenGL and
+  context creation. These traces can become very large while rendering.
+- Window management: +x11drv for the interaction between Wine and X11.
+- Video playback: +mfplat,+quartz for Media Foundation and DirectShow paths.
+- Missing fonts or slow font initialization: +font,+dwrite for GDI and
+  DirectWrite. Font enumeration can produce a large amount of output.
+- File access or registry problems: +file,+reg to see paths, keys and results.
+- Allocation or mapping failures: +virtual to inspect virtual address ranges
+  and protection changes. This is separate from heap validation below.
+- Network problems: +winsock,+dnsapi for sockets and DNS. Add +winhttp or
+  +wininet only when the application uses the corresponding HTTP API.
+- Suspected synchronization problems: +thread,+sync,+server for threads,
+  waits and Wine server requests. Use a short capture; idle waits are normal
+  and this output alone may not identify a deadlock.
+
+Avoid broad instrumentation
+---------------------------
+
+Do not use +all for routine diagnosis. It changes execution as well as
+logging: +relay instruments calls and returns through Wine DLL exports,
+while trace+heap enables full heap validation during heap operations.
+warn+heap also enables extra checks, so warn+all is not a neutral way to
+collect more messages. Heap checks add memory markers and delay some frees;
+they can greatly slow programs and expose different failures.
+
++all also enables d3d_sync, which forces WineD3D command serialization and
+synchronous OpenGL debug output. This changes graphics timing; enable it
+only when investigating synchronization in WineD3D.
+
+Use heap checks only when specifically investigating memory corruption,
+preferably with a small reproducer. trace-heap,warn-heap disables the checks
+enabled by those debug classes while preserving err/fixme heap messages.
+This only disables heap checks enabled by WINEDEBUG; checks requested through
+Windows registry settings or a debugger may remain active.
+
+Reserve +relay for short, targeted API investigations. It can produce
+gigabytes of output during font enumeration alone. +snoop is not useful on
+this amd64-only port: its call instrumentation is implemented for i386.
+
+Large logs can fill the disk. Deleted logs still occupy space while any
+process holds them open, even while sleeping. Use fstat(1) to find these
+processes, ps(1) to inspect them, and kill(1) to terminate them.
+
+Official Wine documentation
+--------------------------
+
+- Debug channels and WINEDEBUG:
+  https://gitlab.winehq.org/wine/wine/-/wikis/Debug-Channels
+- Developer's Guide (see "Debugging Wine"):
+  https://gitlab.winehq.org/wine/wine/-/wikis/Wine-Developer's-Guide
+- Documentation index:
+  https://gitlab.winehq.org/wine/wine/-/wikis/Documentation
+
+The installed wine(1) manual also documents WINEDEBUG under ENVIRONMENT
+VARIABLES. Its broad logging examples should be used with the heap and
+relay precautions above in mind.

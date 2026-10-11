@@ -1,0 +1,143 @@
+Index: dlls/ntdll/unix/sig_openbsd.c
+--- dlls/ntdll/unix/sig_openbsd.c.orig
++++ dlls/ntdll/unix/sig_openbsd.c
+@@ -0,0 +1,139 @@
++/*
++ * OpenBSD cross process thread signals
++ *
++ * Copyright (C) 2026 Andrii Yukhymchak
++ *
++ * This library is free software; you can redistribute it and/or
++ * modify it under the terms of the GNU Lesser General Public
++ * License as published by the Free Software Foundation; either
++ * version 2.1 of the License, or (at your option) any later version.
++ *
++ * This library is distributed in the hope that it will be useful,
++ * but WITHOUT ANY WARRANTY; without even the implied warranty of
++ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
++ * Lesser General Public License for more details.
++ *
++ * You should have received a copy of the GNU Lesser General Public
++ * License along with this library; if not, write to the Free Software
++ * Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA
++ */
++
++#if 0
++#pragma makedep unix
++#endif
++
++#include "config.h"
++
++#ifdef __OpenBSD__
++
++#include <fcntl.h>
++#include <stdarg.h>
++#include <stdio.h>
++#include <stdlib.h>
++#include <string.h>
++#include <unistd.h>
++#include <sys/mman.h>
++#include <sys/types.h>
++
++#include "ntstatus.h"
++#include "windef.h"
++#include "winternl.h"
++#include "unix_private.h"
++#include "sig_openbsd.h"
++#include "wine/debug.h"
++
++WINE_DEFAULT_DEBUG_CHANNEL(server);
++
++/* every thread Wine created for this process */
++#define MAX_SIGNAL_TIDS 4096
++static int signal_tids[MAX_SIGNAL_TIDS];
++
++/* the array shared with the server. Has to match server */
++#define SIGNAL_TARGETS_COUNT 64
++#define SIGNAL_TARGETS_SIZE (SIGNAL_TARGETS_COUNT * sizeof(int))
++static int *signal_targets;
++
++void add_signal_tid( int tid )
++{
++    unsigned int i;
++
++    for (i = 0; i < MAX_SIGNAL_TIDS; i++)
++    {
++        int expected = 0;
++        if (__atomic_compare_exchange_n( &signal_tids[i], &expected, tid, FALSE, __ATOMIC_SEQ_CST, __ATOMIC_SEQ_CST))
++            return;
++    }
++    WARN( "too many threads, signals will fail to reach thread %d\n", tid );
++}
++
++void remove_signal_tid(void)
++{
++    unsigned int i;
++    int tid = getthrid();
++
++    for (i = 0; i< MAX_SIGNAL_TIDS; i++)
++        if (__atomic_load_n( &signal_tids[i], __ATOMIC_SEQ_CST ) == tid)
++            __atomic_store_n( &signal_tids[i], 0, __ATOMIC_SEQ_CST );
++}
++
++BOOL is_signal_thread(void)
++{
++    unsigned int i;
++    int self = getthrid();
++
++    for (i = 0; i < MAX_SIGNAL_TIDS; i++)
++        if (__atomic_load_n( &signal_tids[i], __ATOMIC_SEQ_CST ) == self) return TRUE;
++    return FALSE;
++}
++
++BOOL forward_thread_signal( int sig )
++{
++    int tid;
++    unsigned int i;
++    BOOL for_self = FALSE;
++    int self = getthrid();
++
++    if (signal_targets && !__atomic_exchange_n( &signal_targets[0], 0, __ATOMIC_SEQ_CST ))
++    {
++        for (i = 1; i < SIGNAL_TARGETS_COUNT; i++)
++        {
++            if (!__atomic_load_n( &signal_targets[i], __ATOMIC_SEQ_CST )) continue;
++            /* another thread draining the array? */
++            if (!(tid = __atomic_exchange_n( &signal_targets[i], 0, __ATOMIC_SEQ_CST ))) continue;
++            if (tid == self) for_self = TRUE;
++            else thrkill( tid, sig, NULL );
++        }
++        return for_self;
++    }
++
++    /* handle overflows and global sends */
++
++    if (signal_targets)
++        for (i = 1; i < SIGNAL_TARGETS_COUNT; i++)
++            __atomic_store_n( &signal_targets[i], 0, __ATOMIC_SEQ_CST );
++
++    for (i = 0; i < MAX_SIGNAL_TIDS; i++)
++        if ((tid = __atomic_load_n( &signal_tids[i], __ATOMIC_SEQ_CST )) && tid != self)
++            thrkill( tid, sig, NULL );
++
++    return TRUE;
++}
++
++void init_signal_targets( const char *server_dir, unsigned int process_id )
++{
++    void *ptr;
++    int fd;
++    char *path = NULL;
++
++    if (!server_dir) return;
++    if (asprintf( &path, "%s/sig-%04x", server_dir, process_id ) == -1 ) return;
++
++    fd = open( path, O_RDWR | O_CLOEXEC );
++    free( path );
++    if (fd == -1) return; /* update server? */
++    ptr = mmap( NULL, SIGNAL_TARGETS_SIZE, PROT_READ | PROT_WRITE, MAP_SHARED, fd, 0 );
++    close( fd );
++    if (ptr != MAP_FAILED) signal_targets = ptr;
++}
++
++#endif /* __OpenBSD__ */
