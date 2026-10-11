@@ -1,0 +1,17 @@
+Preserve existing C and C++ compiler flags, including the port's include
+paths, when adding test coverage and debug flags.
+
+Index: tests/CMakeLists.txt
+--- tests/CMakeLists.txt.orig
++++ tests/CMakeLists.txt
+@@ -30,8 +30,8 @@ if(SUNSHINE_LLVM_COVERAGE)
+     add_compile_options(-fprofile-instr-generate -fcoverage-mapping -ggdb -O0)
+     add_link_options(-fprofile-instr-generate)
+ else()
+-    set(CMAKE_CXX_FLAGS "-fprofile-arcs -ftest-coverage -ggdb -O0")
+-    set(CMAKE_C_FLAGS "-fprofile-arcs -ftest-coverage -ggdb -O0")
++    string(APPEND CMAKE_CXX_FLAGS " -fprofile-arcs -ftest-coverage -ggdb -O0")
++    string(APPEND CMAKE_C_FLAGS " -fprofile-arcs -ftest-coverage -ggdb -O0")
+ endif()
+ 
+ set(SUNSHINE_TEST_GCOV_ROOT

@@ -1,0 +1,34 @@
+Skip libevdev detection and linking for OpenBSD's X11/XTest backend,
+while retaining thread support and optional XTest detection.
+
+Index: third-party/libvirtualhid/src/CMakeLists.txt
+--- third-party/libvirtualhid/src/CMakeLists.txt.orig
++++ third-party/libvirtualhid/src/CMakeLists.txt
+@@ -12,6 +12,7 @@ target_sources(${PROJECT_NAME}
+ 
+ if(LIBVIRTUALHID_USES_THREADS)
+     find_package(Threads REQUIRED)
++    if(NOT CMAKE_SYSTEM_NAME STREQUAL "OpenBSD")
+     if(LIBEVDEV_CUSTOM_INCLUDE_DIR AND LIBEVDEV_CUSTOM_LIBRARY)
+         add_library(PkgConfig::LIBEVDEV UNKNOWN IMPORTED)
+         set_target_properties(PkgConfig::LIBEVDEV PROPERTIES
+@@ -21,6 +22,8 @@ if(LIBVIRTUALHID_USES_THREADS)
+         find_package(PkgConfig REQUIRED)
+         pkg_check_modules(LIBEVDEV REQUIRED IMPORTED_TARGET libevdev)
+     endif()
++        target_link_libraries(${PROJECT_NAME} PRIVATE PkgConfig::LIBEVDEV)
++    endif()
+     if(LIBVIRTUALHID_ENABLE_XTEST)
+         find_package(X11 QUIET COMPONENTS Xtst)
+     endif()
+@@ -30,9 +33,7 @@ if(LIBVIRTUALHID_USES_THREADS)
+       "${CMAKE_CURRENT_SOURCE_DIR}/platform/linux/uhid_backend.cpp")
+     target_link_libraries(${PROJECT_NAME}
+       PUBLIC
+-      Threads::Threads
+-      PRIVATE
+-      PkgConfig::LIBEVDEV)
++      Threads::Threads)
+     if(LIBVIRTUALHID_ENABLE_XTEST AND X11_FOUND AND X11_XTest_FOUND)
+         set(LIBVIRTUALHID_USES_XTEST ON PARENT_SCOPE)
+         target_compile_definitions(${PROJECT_NAME}

@@ -1,0 +1,101 @@
+Use OpenBSD thread naming and omit Linux capability handling and headers.
+Skip RTKit on OpenBSD and fall back to process-wide setpriority().
+
+Index: src/platform/linux/misc.cpp
+--- src/platform/linux/misc.cpp.orig
++++ src/platform/linux/misc.cpp
+@@ -32,10 +32,13 @@
+ #include <sys/resource.h>  // For setpriority
+ #include <sys/socket.h>
+ 
+-#if !defined(__FreeBSD__)
++#if !defined(__FreeBSD__) && !defined(__OpenBSD__)
+   #include <sys/capability.h>
+   #include <sys/prctl.h>
+ #endif
++#ifdef __OpenBSD__
++  #include <pthread_np.h>
++#endif
+ #ifdef __FreeBSD__
+   #include <net/if_dl.h>  // For sockaddr_dl, LLADDR, and AF_LINK
+   #include <sys/syscall.h>  // For syscall: SYS_thr_self
+@@ -483,13 +486,9 @@ namespace platf {
+ 
+   /**
+    * @brief Apply the requested scheduling priority to the current thread.
++   * @note On OpenBSD, the setpriority fallback affects the entire process.
+    */
+   void adjust_thread_priority(thread_priority_e priority) {
+-#if defined(__FreeBSD__)
+-    pid_t tid = syscall(SYS_thr_self);
+-#else
+-    pid_t tid = syscall(SYS_gettid);
+-#endif
+     bool success = false;
+     int32_t linux_nice;
+ 
+@@ -512,6 +511,13 @@ namespace platf {
+         return;
+     }
+ 
++    // RTKit is unavailable on OpenBSD.
++#ifndef __OpenBSD__
++  #if defined(__FreeBSD__)
++    pid_t tid = syscall(SYS_thr_self);
++  #else
++    pid_t tid = syscall(SYS_gettid);
++  #endif
+     g_autoptr(GError) err = nullptr;
+     GDBusConnection *conn = g_bus_get_sync(G_BUS_TYPE_SYSTEM, nullptr, &err);
+ 
+@@ -539,8 +545,10 @@ namespace platf {
+       }
+     }
+ 
++#endif
++
+     if (!success) {
+-      // This will run on FreeBSD OR Linux if RTKit failed/was missing
++      // Fall back when RTKit is unavailable or the request failed.
+       if (setpriority(PRIO_PROCESS, 0, linux_nice) == -1) {
+         BOOST_LOG(warning) << "setpriority failed for nice "sv << linux_nice << ": "sv << strerror(errno);
+       } else {
+@@ -552,7 +560,11 @@ namespace platf {
+   void set_thread_name(std::string_view name) {
+     // Truncate name to fit in Linux/FreeBSD kernel's 16 byte limit
+     std::string tr_name {name.substr(0, 15)};
++#ifdef __OpenBSD__
++    pthread_set_name_np(pthread_self(), tr_name.c_str());
++#else
+     pthread_setname_np(pthread_self(), tr_name.c_str());
++#endif
+   }
+ 
+   /**
+@@ -1497,7 +1509,7 @@ namespace platf {
+     return detected.empty() ? "/dev/dri/renderD128" : detected;
+   }
+ 
+-#if !defined(__FreeBSD__)
++#if !defined(__FreeBSD__) && !defined(__OpenBSD__)
+   static constexpr cap_value_t FULL_CAPS[] = {CAP_SYS_ADMIN, CAP_SYS_NICE};
+   static constexpr cap_value_t ADMIN_CAPS[] = {CAP_SYS_ADMIN};
+ 
+@@ -1506,7 +1518,7 @@ namespace platf {
+ #endif
+ 
+   bool has_elevated_privileges(bool all_caps) {
+-#if !defined(__FreeBSD__)
++#if !defined(__FreeBSD__) && !defined(__OpenBSD__)
+     const auto caps_to_check = all_caps ? ELEVATED_PRIVILEGES_FULL : ELEVATED_PRIVILEGES_ADMIN;
+     const cap_t caps = cap_get_proc();
+     if (!caps) {
+@@ -1535,7 +1547,7 @@ namespace platf {
+   }
+ 
+   void drop_elevated_privileges(bool all_caps) {
+-#if !defined(__FreeBSD__)
++#if !defined(__FreeBSD__) && !defined(__OpenBSD__)
+     bool failed = false;
+     const auto caps_to_drop = all_caps ? ELEVATED_PRIVILEGES_FULL : ELEVATED_PRIVILEGES_ADMIN;
+     const cap_t caps = cap_get_proc();

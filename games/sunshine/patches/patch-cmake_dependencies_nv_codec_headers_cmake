@@ -1,3 +1,6 @@
+Skip NVIDIA codec header discovery and fetching on OpenBSD, where the
+NVENC backend is disabled.
+
 Index: cmake/dependencies/nv_codec_headers.cmake
 --- cmake/dependencies/nv_codec_headers.cmake.orig
 +++ cmake/dependencies/nv_codec_headers.cmake

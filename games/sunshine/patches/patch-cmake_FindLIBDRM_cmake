@@ -1,3 +1,6 @@
+Let CMake resolve libdrm using OpenBSD's library naming rules instead of
+requiring a literal libdrm.so filename.
+
 XXX: experimental: try finding libdrm.so without versioning requirement
 
 Index: cmake/FindLIBDRM.cmake

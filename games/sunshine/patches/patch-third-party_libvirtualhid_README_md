@@ -1,0 +1,14 @@
+Index: third-party/libvirtualhid/README.md
+--- third-party/libvirtualhid/README.md.orig
++++ third-party/libvirtualhid/README.md
+@@ -119,6 +119,10 @@ macOS currently provides a limited CoreGraphics synthe
+ keyboard and mouse only. It is not a virtual-HID backend and does not yet
+ support gamepads; native macOS virtual-HID gamepad support is planned.
+ 
++OpenBSD reuses the X11/XTest keyboard and mouse implementation from the
++Linux/FreeBSD backend. It requires an accessible X11 display with XTest enabled;
++virtual HID devices, gamepads, touch input, and force feedback are unsupported.
++
+ The library is designed around gamepad use first because remote streaming hosts
+ are the first consumer class. Non-gamepad device types are available through the
+ same API where the backend exposes them.

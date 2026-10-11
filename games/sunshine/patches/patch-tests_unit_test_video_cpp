@@ -1,0 +1,24 @@
+Exclude NVENC encoder parameters and the NVENC avcodec option test on
+OpenBSD, matching the disabled backend.
+
+Index: tests/unit/test_video.cpp
+--- tests/unit/test_video.cpp.orig
++++ tests/unit/test_video.cpp
+@@ -46,7 +46,7 @@ INSTANTIATE_TEST_SUITE_P(
+   EncoderVariants,
+   EncoderTest,
+   testing::Values(
+-#if !defined(__APPLE__)
++#if !defined(__APPLE__) && !defined(__OpenBSD__)
+     &video::nvenc,
+ #endif
+ #ifdef _WIN32
+@@ -66,7 +66,7 @@ INSTANTIATE_TEST_SUITE_P(
+   }
+ );
+ 
+-#if !defined(_WIN32) && !defined(__APPLE__)
++#if !defined(_WIN32) && !defined(__APPLE__) && !defined(__OpenBSD__)
+ TEST(NvencAvcodecOptionsTest, UsesVersionStablePresetAndSpatialAqNames) {
+   const std::array codecs {
+     &video::nvenc.av1,

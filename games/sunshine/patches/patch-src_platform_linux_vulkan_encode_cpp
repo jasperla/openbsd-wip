@@ -1,0 +1,15 @@
+Use the BSD system types header on OpenBSD instead of Linux's
+<sys/sysmacros.h>.
+
+Index: src/platform/linux/vulkan_encode.cpp
+--- src/platform/linux/vulkan_encode.cpp.orig
++++ src/platform/linux/vulkan_encode.cpp
+@@ -8,7 +8,7 @@
+ #include <cstdint>
+ #include <drm_fourcc.h>
+ #include <sys/stat.h>
+-#if defined(__FreeBSD__)
++#if defined(__FreeBSD__) || defined(__OpenBSD__)
+   #include <sys/types.h>
+ #else
+   #include <sys/sysmacros.h>
