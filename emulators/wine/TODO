@@ -2,6 +2,7 @@
 - fixing (or not) https://github.com/NethIafin/wine/issues/1 is left to the
   %gs stub reviewer (IMO), it affects stuff built with MINGW32 like the game
   Slay The Spire 2
+- add lea + sub 4 byte %GS, speedup MIMALLOC consumers
 - ongoing co-maintenance with Andrii Yukhymchak (NethIafin)
 - wider testing (lightly tested playing a few games and Steam)
 - README: Intel integrated GPU works, but some others don't. Ask users to bring
