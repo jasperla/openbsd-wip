@@ -1,14 +1,25 @@
-XXX: we don't have libcbs
+Link the port's shared FFmpeg libraries, using libavcodec.a only for
+private ff_cbs_* symbols and helpers absent from the shared library.
 
 Index: cmake/dependencies/ffmpeg.cmake
 --- cmake/dependencies/ffmpeg.cmake.orig
 +++ cmake/dependencies/ffmpeg.cmake
-@@ -155,7 +155,7 @@ else()
-         "${FFMPEG_PREPARED_BINARIES}/lib/libavcodec.a"
-         "${FFMPEG_PREPARED_BINARIES}/lib/libswscale.a"
-         "${FFMPEG_PREPARED_BINARIES}/lib/libavutil.a"
--        "${FFMPEG_PREPARED_BINARIES}/lib/libcbs.a"
-+        #"${FFMPEG_PREPARED_BINARIES}/lib/libcbs.a"
+@@ -135,6 +135,18 @@ if(NOT DEFINED FFMPEG_PREPARED_BINARIES)
+         ${HDR10_PLUS_LIBRARY}
+         ${FFMPEG_PLATFORM_LIBRARIES}
      )
- 
-     # Add optional libraries if they exist (e.g., from prebuilt packages)
++elseif(OPENBSD)
++    message(STATUS "Using OpenBSD FFmpeg libraries at ${FFMPEG_PREPARED_BINARIES}")
++
++    # Public libraries: pkg-config --libs-only-l libavcodec libswscale libavutil
++    # Keep shared libraries first, then use the archive only for the private
++    # ff_cbs_* symbols and their helpers, which libavcodec.so does not export.
++    set(FFMPEG_LIBRARIES
++        avcodec
++        swscale
++        avutil
++        "${FFMPEG_PREPARED_BINARIES}/lib/libavcodec.a"
++    )
+ else()
+     # User provided FFMPEG_PREPARED_BINARIES path
+     message(STATUS "Using user-specified FFmpeg binaries at ${FFMPEG_PREPARED_BINARIES}")

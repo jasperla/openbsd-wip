@@ -1,0 +1,31 @@
+Build the threaded backend on OpenBSD for X11/XTest keyboard and mouse
+input. Do not export a libevdev dependency: OpenBSD does not use uinput.
+
+Index: third-party/libvirtualhid/CMakeLists.txt
+--- third-party/libvirtualhid/CMakeLists.txt.orig
++++ third-party/libvirtualhid/CMakeLists.txt
+@@ -57,7 +57,7 @@ include(CMakePackageConfigHelpers)
+ include(GNUInstallDirs)
+ 
+ set(LIBVIRTUALHID_USES_THREADS OFF)
+-if(CMAKE_SYSTEM_NAME STREQUAL "Linux" OR CMAKE_SYSTEM_NAME STREQUAL "FreeBSD")
++if(CMAKE_SYSTEM_NAME STREQUAL "Linux" OR CMAKE_SYSTEM_NAME STREQUAL "FreeBSD" OR CMAKE_SYSTEM_NAME STREQUAL "OpenBSD")
+     set(LIBVIRTUALHID_USES_THREADS ON)
+ endif()
+ set(LIBVIRTUALHID_USES_XTEST OFF)
+@@ -161,9 +161,12 @@ if(LIBVIRTUALHID_INSTALL)
+     set(LIBVIRTUALHID_CONFIG_DEPENDENCIES "")
+     if(LIBVIRTUALHID_USES_THREADS)
+         string(APPEND LIBVIRTUALHID_CONFIG_DEPENDENCIES
+-          "find_dependency(Threads)\n"
+-          "find_dependency(PkgConfig)\n"
+-          "pkg_check_modules(LIBEVDEV REQUIRED IMPORTED_TARGET libevdev)\n")
++          "find_dependency(Threads)\n")
++        if(NOT CMAKE_SYSTEM_NAME STREQUAL "OpenBSD")
++            string(APPEND LIBVIRTUALHID_CONFIG_DEPENDENCIES
++              "find_dependency(PkgConfig)\n"
++              "pkg_check_modules(LIBEVDEV REQUIRED IMPORTED_TARGET libevdev)\n")
++        endif()
+     endif()
+     if(LIBVIRTUALHID_USES_XTEST)
+         string(APPEND LIBVIRTUALHID_CONFIG_DEPENDENCIES

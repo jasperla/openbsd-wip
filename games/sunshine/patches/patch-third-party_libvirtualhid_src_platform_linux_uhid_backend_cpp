@@ -1,0 +1,268 @@
+Reuse X11/XTest for OpenBSD keyboard and mouse input, excluding UHID/uinput.
+An accessible X11 display with XTest is required; gamepads, touchscreens,
+trackpads, pen tablets and force feedback remain unsupported.
+
+Index: third-party/libvirtualhid/src/platform/linux/uhid_backend.cpp
+--- third-party/libvirtualhid/src/platform/linux/uhid_backend.cpp.orig
++++ third-party/libvirtualhid/src/platform/linux/uhid_backend.cpp
+@@ -1,6 +1,6 @@
+ /**
+  * @file src/platform/linux/uhid_backend.cpp
+- * @brief Linux UHID backend definitions.
++ * @brief Linux/FreeBSD input backend with X11 XTest support on OpenBSD.
+  */
+ 
+ // standard includes
+@@ -40,8 +40,10 @@
+ #ifndef __user
+   #define __user
+ #endif
++#if !defined(__OpenBSD__)
+ #include <linux/input.h>
+ #include <linux/uinput.h>
++#endif
+ #if defined(__linux__)
+   #include <linux/uhid.h>
+ #endif
+@@ -58,8 +60,10 @@
+ #endif
+ 
+ // lib includes
++#if !defined(__OpenBSD__)
+ #include <libevdev/libevdev-uinput.h>
+ #include <libevdev/libevdev.h>
++#endif
+ 
+ // local includes
+ #include "core/backend.hpp"
+@@ -74,6 +78,11 @@
+ namespace lvh::detail {
+   namespace {  // NOSONAR(cpp:S1000): Linux backend internals need internal linkage; tests include this file with syscall overrides.
+ 
++#if !defined(__OpenBSD__) || defined(LIBVIRTUALHID_HAVE_XTEST)
++    constexpr auto absolute_axis_max = 65535;
++    constexpr std::int32_t mouse_scroll_units_per_detent = 120;
++
++#if !defined(__OpenBSD__)
+ #if defined(__linux__)
+     constexpr auto uhid_path = "/dev/uhid";
+ #endif
+@@ -82,7 +91,6 @@ namespace lvh::detail {
+ #else
+     constexpr std::array uinput_paths {"/dev/uinput"};
+ #endif
+-    constexpr auto absolute_axis_max = 65535;
+     constexpr auto touch_axis_max_x = 19200;
+     constexpr auto touch_axis_max_y = 10800;
+     constexpr auto touch_max_contacts = 16;
+@@ -91,7 +99,6 @@ namespace lvh::detail {
+     constexpr auto tablet_pressure_max = 4096;
+     constexpr auto tablet_distance_max = 1024;
+     constexpr auto tablet_resolution = 28;
+-    constexpr std::int32_t mouse_scroll_units_per_detent = 120;
+ #if defined(REL_WHEEL_HI_RES)
+     constexpr std::optional<std::uint16_t> vertical_high_resolution_scroll_code = REL_WHEEL_HI_RES;
+ #else
+@@ -978,6 +985,7 @@ namespace lvh::detail {
+     OperationStatus ioctl_status(const std::string &operation) {
+       return system_error_status(ErrorCode::backend_failure, operation, errno);
+     }
++#endif
+ 
+     template<typename Target, std::size_t Size>
+     std::optional<Target> mapped_keyboard_code(
+@@ -993,6 +1001,7 @@ namespace lvh::detail {
+       return it->second;
+     }
+ 
++#if !defined(__OpenBSD__)
+     int key_code_to_linux(KeyboardKeyCode key_code) {
+       static constexpr std::array<std::pair<KeyboardKeyCode, int>, 47> special_keys {{
+         {0x08, KEY_BACKSPACE},
+@@ -1160,6 +1169,7 @@ namespace lvh::detail {
+ 
+       return BTN_LEFT;
+     }
++#endif
+ 
+     int scale_absolute_axis(std::int32_t value, std::int32_t limit) {
+       if (limit <= 0) {
+@@ -1171,6 +1181,7 @@ namespace lvh::detail {
+       return static_cast<int>(numerator / limit);
+     }
+ 
++#if !defined(__OpenBSD__)
+     int scale_normalized_axis(float value, int maximum) {
+       return static_cast<int>(std::lround(std::clamp(value, 0.0F, 1.0F) * static_cast<float>(maximum)));
+     }
+@@ -1183,6 +1194,7 @@ namespace lvh::detail {
+       const auto radians = std::clamp(degrees, -90.0F, 90.0F) * static_cast<float>(std::numbers::pi) / 180.0F;
+       return static_cast<int>(std::lround(radians * tablet_resolution));
+     }
++#endif
+ 
+     std::vector<std::uint32_t> decode_utf8(std::string_view text) {
+       std::vector<std::uint32_t> codepoints;
+@@ -1307,6 +1319,7 @@ namespace lvh::detail {
+       return distance > 0 ? 1 : -1;
+     }
+ 
++#if !defined(__OpenBSD__)
+     struct LegacyScrollConversion {
+       std::int32_t detents = 0;
+       std::int32_t remainder = 0;
+@@ -2644,6 +2657,8 @@ namespace lvh::detail {
+       std::string device_name_;
+       PenToolType last_tool_ = PenToolType::unchanged;
+     };
++#endif
++#endif
+ 
+ #if defined(LIBVIRTUALHID_HAVE_XTEST)
+     KeySym key_code_to_keysym(KeyboardKeyCode key_code) {
+@@ -2901,6 +2916,7 @@ namespace lvh::detail {
+     }
+ #endif
+ 
++#if !defined(__OpenBSD__)
+     struct UinputRumbleEffect {
+       std::uint16_t start_weak_magnitude = 0;
+       std::uint16_t start_strong_magnitude = 0;
+@@ -3859,18 +3875,26 @@ namespace lvh::detail {
+       return effective_profile;
+ #endif
+     }
++#endif
+ 
+     /**
+-     * @brief Linux/FreeBSD platform backend backed by UHID and/or uinput.
++     * @brief Linux/FreeBSD UHID/uinput backend, using only XTest on OpenBSD.
+      */
+     class LinuxUhidBackend final: public Backend {
+     public:
+       LinuxUhidBackend() {
++#if defined(__OpenBSD__)
++        constexpr bool uhid_accessible = false;
++        constexpr bool uinput_accessible = false;
++#else
+         const auto uhid_accessible = can_access_uhid();
+         const auto uinput_accessible = can_access_uinput();
++#endif
+         const auto xtest_accessible = can_use_xtest();
+ #if defined(__FreeBSD__)
+         capabilities_.backend_name = "freebsd-uinput";
++#elif defined(__OpenBSD__)
++        capabilities_.backend_name = "openbsd-xtest";
+ #else
+         capabilities_.backend_name = "linux-uhid-uinput";
+ #endif
+@@ -3890,6 +3914,7 @@ namespace lvh::detail {
+       }
+ 
+       BackendGamepadCreationResult create_gamepad(DeviceId id, const CreateGamepadOptions &options) override {
++#if !defined(__OpenBSD__)
+ #if defined(__linux__)
+         if (prefers_uhid_gamepad_profile(options.profile.gamepad_kind)) {
+           const auto fd = system_open(uhid_path, O_RDWR | O_CLOEXEC | O_NONBLOCK);
+@@ -3931,12 +3956,13 @@ namespace lvh::detail {
+           OperationStatus::failure(ErrorCode::unsupported_profile, "gamepad profile requires Linux UHID"),
+           nullptr,
+         };
+-#else
+-        return {OperationStatus::failure(ErrorCode::unsupported_profile, "unsupported gamepad profile"), nullptr};
+ #endif
++#endif
++        return {OperationStatus::failure(ErrorCode::unsupported_profile, "unsupported gamepad profile"), nullptr};
+       }
+ 
+       BackendKeyboardCreationResult create_keyboard(DeviceId id, const CreateKeyboardOptions &options) override {
++#if !defined(__OpenBSD__)
+         const auto fd = open_uinput(O_RDWR | O_CLOEXEC | O_NONBLOCK);
+         if (fd < 0) {
+           return create_xtest_keyboard();
+@@ -3953,9 +3979,12 @@ namespace lvh::detail {
+         }
+ 
+         return {OperationStatus::success(), std::move(keyboard)};
++#endif
++        return create_xtest_keyboard();
+       }
+ 
+       BackendMouseCreationResult create_mouse(DeviceId id, const CreateMouseOptions &options) override {
++#if !defined(__OpenBSD__)
+         const auto relative_fd = open_uinput(O_RDWR | O_CLOEXEC | O_NONBLOCK);
+         if (relative_fd < 0) {
+           return create_xtest_mouse();
+@@ -3978,12 +4007,15 @@ namespace lvh::detail {
+         }
+ 
+         return {OperationStatus::success(), std::move(mouse)};
++#endif
++        return create_xtest_mouse();
+       }
+ 
+       BackendTouchscreenCreationResult create_touchscreen(
+         DeviceId id,
+         const CreateTouchscreenOptions &options
+       ) override {
++#if !defined(__OpenBSD__)
+         const auto fd = open_uinput(O_RDWR | O_CLOEXEC | O_NONBLOCK);
+         if (fd < 0) {
+           return {system_error_status(ErrorCode::backend_unavailable, "failed to open /dev/uinput", errno), nullptr};
+@@ -3996,9 +4028,12 @@ namespace lvh::detail {
+         }
+ 
+         return {OperationStatus::success(), std::move(touchscreen)};
++#endif
++        return {OperationStatus::failure(ErrorCode::backend_unavailable, "touchscreen requires uinput"), nullptr};
+       }
+ 
+       BackendTrackpadCreationResult create_trackpad(DeviceId id, const CreateTrackpadOptions &options) override {
++#if !defined(__OpenBSD__)
+         const auto fd = open_uinput(O_RDWR | O_CLOEXEC | O_NONBLOCK);
+         if (fd < 0) {
+           return {system_error_status(ErrorCode::backend_unavailable, "failed to open /dev/uinput", errno), nullptr};
+@@ -4011,9 +4046,12 @@ namespace lvh::detail {
+         }
+ 
+         return {OperationStatus::success(), std::move(trackpad)};
++#endif
++        return {OperationStatus::failure(ErrorCode::backend_unavailable, "trackpad requires uinput"), nullptr};
+       }
+ 
+       BackendPenTabletCreationResult create_pen_tablet(DeviceId id, const CreatePenTabletOptions &options) override {
++#if !defined(__OpenBSD__)
+         const auto fd = open_uinput(O_RDWR | O_CLOEXEC | O_NONBLOCK);
+         if (fd < 0) {
+           return {system_error_status(ErrorCode::backend_unavailable, "failed to open /dev/uinput", errno), nullptr};
+@@ -4026,6 +4064,8 @@ namespace lvh::detail {
+         }
+ 
+         return {OperationStatus::success(), std::move(pen_tablet)};
++#endif
++        return {OperationStatus::failure(ErrorCode::backend_unavailable, "pen tablet requires uinput"), nullptr};
+       }
+ 
+     private:
+@@ -4036,9 +4076,8 @@ namespace lvh::detail {
+           return {status, nullptr};
+         }
+         return {OperationStatus::success(), std::move(keyboard)};
+-#else
+-        return {OperationStatus::failure(ErrorCode::backend_unavailable, "failed to open /dev/uinput"), nullptr};
+ #endif
++        return {OperationStatus::failure(ErrorCode::backend_unavailable, "XTest keyboard support was not compiled in"), nullptr};
+       }
+ 
+       BackendMouseCreationResult create_xtest_mouse() {
+@@ -4048,9 +4087,8 @@ namespace lvh::detail {
+           return {status, nullptr};
+         }
+         return {OperationStatus::success(), std::move(mouse)};
+-#else
+-        return {OperationStatus::failure(ErrorCode::backend_unavailable, "failed to open /dev/uinput"), nullptr};
+ #endif
++        return {OperationStatus::failure(ErrorCode::backend_unavailable, "XTest mouse support was not compiled in"), nullptr};
+       }
+ 
+       BackendCapabilities capabilities_;

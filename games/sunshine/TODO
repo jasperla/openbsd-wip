@@ -1,2 +1,7 @@
-- figure out how to manage npm dependencies, esp. without needing
-  internet access (set -DNPM_OFFLINE=ON)
+- Finalize the Boost.Process closefrom() fix on OpenBSD.
+- TEST_IS_INTERACTIVE=x11 ?
+- Review depends and configure options (Xtst, libevdev).
+- Replace the FREEBSD alias with explicit OpenBSD checks.
+- Document OpenBSD requirements and limitations in pkg/README. (ujoy...?)
+- Check private FFmpeg CBS compatibility on updates. (Alternative?)
+- Skip installing Linux-only files (udev rules).
