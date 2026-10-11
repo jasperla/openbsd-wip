@@ -14,14 +14,17 @@ MAINTAINER =		Klemens Nanni <kn@openbsd.org>
 # Apache-2.0
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} c cares crypto m nghttp2 sqlite3
-WANTLIB += ssl yaml-0 zstd
+WANTLIB += ${COMPILER_LIBCXX} c cares crypto execinfo m msgpack-c
+WANTLIB += nghttp2 sqlite3 ssl yaml-0 zstd
 
 MODULES =		devel/cmake
+
+BUILD_DEPENDS =		devel/bison
 
 LIB_DEPENDS =		archivers/zstd \
 			databases/sqlite3 \
 			devel/libyaml \
+			devel/msgpack \
 			net/libcares \
 			www/nghttp2
 
@@ -29,19 +32,29 @@ LIB_DEPENDS =		archivers/zstd \
 
 CONFIGURE_ARGS =	-DFLB_PREFER_SYSTEM_LIBS=Yes
 
+# picked up automatically, but not needed (for now)
+IGNORE_PKGS =		Git \
+			PostgreSQL
+
 # WAMR not ported to OpenBSD
-CONFIGURE_ARGS +=	-DFLB_WASM=No
+DISABLE_OPTS =		WASM
 
 # cannot find its own "sql.h"
-CONFIGURE_ARGS +=	-DFLB_PROCESSOR_SQL=No
+DISABLE_OPTS +=		PROCESSOR_SQL
 
 # wants C++17
-CONFIGURE_ARGS +=	-DFLB_USE_SIMDUTF=No
+DISABLE_OPTS +=		USE_SIMDUTF
 
 # missing defines
-CONFIGURE_ARGS +=	-DFLB_IN_SERIAL=No
+DISABLE_OPTS +=		IN_SERIAL
 
 # wants OpenSSL-only functions
-CONFIGURE_ARGS +=	-DFLB_KAFKA=No
+DISABLE_OPTS +=		KAFKA
+
+# not available on octeon where i need fluent bit
+DISABLE_OPTS +=		LUAJIT
+
+CONFIGURE_ARGS +=	${IGNORE_PKGS:=-DCMAKE_DISABLE_FIND_PACKAGE_%=Yes}
+CONFIGURE_ARGS +=	${DISABLE_OPTS:=-DFLB_%=No}
 
 .include <bsd.port.mk>

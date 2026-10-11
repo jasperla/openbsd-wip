@@ -1,5 +1,4 @@
 @bin bin/fluent-bit
-@bin bin/luajit
 etc/
 etc/fluent-bit/
 etc/fluent-bit/fluent-bit.conf
@@ -187,12 +186,6 @@ include/fluent-bit/unicode/flb_wchar.h
 include/fluent-bit/wasm/
 include/fluent-bit/wasm/flb_wasm.h
 include/libco.h
-include/luajit/
-include/luajit/lauxlib.h
-include/luajit/lua.h
-include/luajit/luaconf.h
-include/luajit/luajit.h
-include/luajit/lualib.h
 include/monkey/
 include/monkey/mk_core/
 include/monkey/mk_core.h
@@ -225,4 +218,3 @@ include/monkey/mk_core/mk_win32_socketpair.h
 include/settings.h
 lib/fluent-bit/
 @lib lib/fluent-bit/libfluent-bit.so.${LIBfluent-bit_VERSION}
-@static-lib lib/libluajit.a
