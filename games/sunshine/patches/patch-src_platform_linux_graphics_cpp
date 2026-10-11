@@ -1,0 +1,42 @@
+Skip Linux capability headers and CAP_SYS_NICE handling on OpenBSD when
+creating EGL contexts.
+
+Index: src/platform/linux/graphics.cpp
+--- src/platform/linux/graphics.cpp.orig
++++ src/platform/linux/graphics.cpp
+@@ -14,7 +14,7 @@
+ #include "src/video.h"
+ 
+ // platform includes
+-#if !defined(__FreeBSD__)
++#if !defined(__FreeBSD__) && !defined(__OpenBSD__)
+   #include <sys/capability.h>
+ #endif
+ 
+@@ -338,7 +338,7 @@ namespace egl {
+ 
+   namespace {  // Keep privileged implementation details anonymous/local to this translation unit
+ 
+-#if !defined(__FreeBSD__)
++#if !defined(__FreeBSD__) && !defined(__OpenBSD__)
+     /**
+      * @brief Temporarily owns CAP_SYS_NICE while creating EGL contexts.
+      */
+@@ -398,7 +398,7 @@ namespace egl {
+         try {
+           return instance().run([display, config, share_context, attrib_list, &nice_warning] {
+             nice_warning = false;
+-#if !defined(__FreeBSD__)
++#if !defined(__FreeBSD__) && !defined(__OpenBSD__)
+             nice_warning = !egl::cap_sys_nice::verify_cap_sys_nice();
+ #endif
+ 
+@@ -454,7 +454,7 @@ namespace egl {
+         using R = std::invoke_result_t<F>;
+         auto task = std::make_shared<std::packaged_task<R()>>(
+           [f = std::forward<F>(f)]() mutable -> R {
+-#if !defined(__FreeBSD__)
++#if !defined(__FreeBSD__) && !defined(__OpenBSD__)
+             cap_sys_nice nice;
+ #endif
+             return f();

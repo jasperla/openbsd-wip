@@ -1,3 +1,6 @@
+Allow a compatible system Boost release instead of fetching the exact
+version pinned upstream.
+
 Index: cmake/dependencies/Boost_Sunshine.cmake
 --- cmake/dependencies/Boost_Sunshine.cmake.orig
 +++ cmake/dependencies/Boost_Sunshine.cmake
