@@ -1,0 +1,15 @@
+fix 'ld: error: undefined symbol: backtrace', lib/monkey/CMakeLists.txt
+picks up libexecinfo based on a header check regardless of -DFLB_BACKTRACE=OFF
+
+Index: lib/monkey/mk_server/CMakeLists.txt
+--- lib/monkey/mk_server/CMakeLists.txt.orig
++++ lib/monkey/mk_server/CMakeLists.txt
+@@ -56,7 +56,7 @@ if(MK_HAVE_LINUX_KQUEUE)
+ endif()
+ 
+ # FreeBSD backtrace
+-if (CMAKE_SYSTEM_NAME MATCHES "FreeBSD")
++if (CMAKE_SYSTEM_NAME MATCHES "OpenBSD")
+   target_link_libraries(monkey-core-static execinfo)
+ endif()
+ 

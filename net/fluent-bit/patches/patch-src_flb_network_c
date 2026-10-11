@@ -1,0 +1,40 @@
+- skip missing TCP_KEEP* socket options
+- skip SO_PEERCRED, wants struct ucred .pid member
+
+Index: src/flb_network.c
+--- src/flb_network.c.orig
++++ src/flb_network.c
+@@ -361,6 +361,7 @@ int flb_net_socket_tcp_keepalive(flb_sockfd_t fd, stru
+     ret = setsockopt(fd, SOL_SOCKET, SO_KEEPALIVE,
+                      (const void *) &enabled, sizeof(enabled));
+ 
++#if !defined(__OpenBSD__)
+     if (ret == 0 && time >= 0) {
+ #ifdef __APPLE__
+         ret = setsockopt(fd, IPPROTO_TCP, TCP_KEEPALIVE,
+@@ -378,6 +379,7 @@ int flb_net_socket_tcp_keepalive(flb_sockfd_t fd, stru
+         ret = setsockopt(fd, IPPROTO_TCP, TCP_KEEPCNT,
+                          (const void *) &probes, sizeof(probes));
+     }
++#endif
+ 
+     if (ret != 0) {
+         flb_error("[net] failed to configure TCP keepalive for connection #%i", fd);
+@@ -2031,7 +2033,7 @@ static int net_address_unix_socket_peer_pid_raw(flb_so
+                                                 int output_buffer_size,
+                                                 size_t *output_data_size)
+ {
+-#if !defined(FLB_SYSTEM_MACOS) && !defined(FLB_SYSTEM_FREEBSD)
++#if !defined(FLB_SYSTEM_MACOS) && !defined(FLB_SYSTEM_FREEBSD) && !defined(__OpenBSD__)
+     unsigned int peer_credentials_size;
+     struct ucred peer_credentials;
+ #endif
+@@ -2049,7 +2051,7 @@ static int net_address_unix_socket_peer_pid_raw(flb_so
+         return -1;
+     }
+ 
+-#if !defined(FLB_SYSTEM_MACOS) && !defined(FLB_SYSTEM_FREEBSD)
++#if !defined(FLB_SYSTEM_MACOS) && !defined(FLB_SYSTEM_FREEBSD) && !defined(__OpenBSD__)
+     peer_credentials_size = sizeof(struct ucred);
+ 
+     result = getsockopt(fd,
