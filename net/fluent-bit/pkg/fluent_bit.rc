@@ -1,0 +1,12 @@
+#!/bin/ksh
+
+daemon="/usr/local/bin/fluent-bit --daemon"
+daemon_flags="--quiet --enable-hot-reload --config ${SYSCONFDIR}/${CONFIG_FILE}"
+
+. /etc/rc.d/rc.subr
+
+rc_configtest() {
+	${daemon%% *} --dry-run ${daemon_flags}
+}
+
+rc_cmd $1

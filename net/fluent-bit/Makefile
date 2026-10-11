@@ -28,9 +28,14 @@ LIB_DEPENDS =		archivers/zstd \
 			net/libcares \
 			www/nghttp2
 
+EXAMPLES_DIR =		${PREFIX}/share/examples/${PKGSTEM}
+CONFIG_FILE =		${PKGSTEM}.yaml
+SUBST_VARS =		CONFIG_FILE
+
 # https://docs.fluentbit.io/manual/installation/downloads/source/build-and-install
 
-CONFIGURE_ARGS =	-DFLB_PREFER_SYSTEM_LIBS=Yes
+CONFIGURE_ARGS =	-DFLB_PREFER_SYSTEM_LIBS=Yes \
+			-DCMAKE_INSTALL_SYSCONFDIR=${EXAMPLES_DIR:H}
 
 # picked up automatically, but not needed (for now)
 IGNORE_PKGS =		Git \
@@ -56,5 +61,8 @@ DISABLE_OPTS +=		LUAJIT
 
 CONFIGURE_ARGS +=	${IGNORE_PKGS:=-DCMAKE_DISABLE_FIND_PACKAGE_%=Yes}
 CONFIGURE_ARGS +=	${DISABLE_OPTS:=-DFLB_%=No}
+
+post-install:
+	${INSTALL_DATA} ${FILESDIR}/${CONFIG_FILE} ${EXAMPLES_DIR}/
 
 .include <bsd.port.mk>

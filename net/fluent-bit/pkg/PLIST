@@ -1,9 +1,5 @@
+@rcscript ${RCDIR}/fluent_bit
 @bin bin/fluent-bit
-etc/
-etc/fluent-bit/
-etc/fluent-bit/fluent-bit.conf
-etc/fluent-bit/parsers.conf
-etc/fluent-bit/plugins.conf
 include/fluent-bit/
 include/fluent-bit.h
 include/fluent-bit/calyptia_constants.h
@@ -218,3 +214,9 @@ include/monkey/mk_core/mk_win32_socketpair.h
 include/settings.h
 lib/fluent-bit/
 @lib lib/fluent-bit/libfluent-bit.so.${LIBfluent-bit_VERSION}
+share/examples/fluent-bit/
+share/examples/fluent-bit/fluent-bit.conf
+share/examples/fluent-bit/${CONFIG_FILE}
+@sample ${SYSCONFDIR}/${CONFIG_FILE}
+share/examples/fluent-bit/parsers.conf
+share/examples/fluent-bit/plugins.conf
