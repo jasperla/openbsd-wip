@@ -7,7 +7,7 @@ CATEGORIES =		net sysutils
 
 SHARED_LIBS =		fluent-bit	0.0
 
-HOMEPAGE =		https:/fluentbit.io/
+HOMEPAGE =		https:/fluentbit.io
 
 MAINTAINER =		Klemens Nanni <kn@openbsd.org>
 

@@ -1,0 +1,14 @@
+do not treat read(2) returning zero as error
+
+Index: src/flb_scheduler.c
+--- src/flb_scheduler.c.orig
++++ src/flb_scheduler.c
+@@ -67,7 +67,7 @@ static inline int consume_byte(flb_pipefd_t fd)
+     ret = flb_pipe_r(fd, &val, sizeof(val));
+ 
+     /* ref: https://github.com/fluent/fluent-bit/pull/2463 */
+-#if defined(__APPLE__) || __FreeBSD__ >= 12
++#if defined(__APPLE__) || __FreeBSD__ >= 12 || defined(__OpenBSD__)
+     if (ret < 0) {
+ #else
+     if (ret <= 0) {
