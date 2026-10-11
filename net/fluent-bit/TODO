@@ -1,0 +1,31 @@
+libco coroutines need writable stack:
+
+[2026/10/11 20:07:19.675] [debug] [output:stdout:stdout.0] task_id=0 assigned to thread #0
+[fluent-bit]26797/59982 sp=3f5767f3ea0 inside 3f58b712000-3f58b791fff: not MAP_STACK
+[fluent-bit]26797/59982 sp=3f5767f3390 inside 3f58b712000-3f58b791fff: not MAP_STACK
+Segmentation fault (core dumped)
+
+
+settings.h (see patches) has an MPROTECT toggle, but that does not help:
+
+[2026/10/11 20:26:54.323] [ info] [output:stdout:stdout.0] worker #0 started
+[2026/10/11 20:27:10.324] [debug] [task] created task=0xd99e26fe880 id=0 OK
+[2026/10/11 20:27:10.325] [debug] [output:stdout:stdout.0] task_id=0 assigned to thread #0
+[2026/10/11 20:27:10] [engine] caught signal (SIGSEGV)
+ERROR: no stack trace because unwind library not available (0)
+Abort trap (core dumped)
+
+#0  thrkill () at /tmp/-:2
+#1  0xe49c3e9e414d938f in ?? ()
+#2  0x00000d9a57efe6db in _libc_abort () at /usr/src/lib/libc/stdlib/abort.c:51
+#3  0x00000d97585509e3 in flb_signal_handler (signal=11) at /usr/ports/pobj/fluent-bit-5.1.3/fluent-bit-5.1.3/src/fluent-bit.c:640
+#4  <signal handler called>
+#5  0x00000d97584faae0 in co_swap_function ()
+#6  0x00000d9758582b77 in output_params_set (out_flush=0xd99a11b90c0, coro=0xd995bcb68a0, config=0xd99af106650, task=<optimized out>, out_plugin=<optimized out>, out_context=<optimized out>)
+    at /usr/ports/pobj/fluent-bit-5.1.3/fluent-bit-5.1.3/include/fluent-bit/flb_output.h:751
+#7  flb_output_flush_create (o_ins=<optimized out>, config=0xd99af106650, task=<optimized out>, i_ins=<optimized out>) at /usr/ports/pobj/fluent-bit-5.1.3/fluent-bit-5.1.3/include/fluent-bit/flb_output.h:1303
+#8  output_thread (data=0xd9a44ce2980) at /usr/ports/pobj/fluent-bit-5.1.3/fluent-bit-5.1.3/src/flb_output_thread.c:307
+#9  0x00000d97585cea15 in step_callback (data=0xd99aae01140) at /usr/ports/pobj/fluent-bit-5.1.3/fluent-bit-5.1.3/src/flb_worker.c:43
+#10 0x00000d975888720c in mk_utils_worker_entry (data=<optimized out>) at /usr/ports/pobj/fluent-bit-5.1.3/fluent-bit-5.1.3/lib/monkey/mk_core/mk_utils.c:293
+#11 0x00000d9a39144932 in _rthread_start (v=0xd995bcb6168) at /usr/src/lib/librthread/rthread.c:99
+#12 0x00000d9a57eb295a in __tfork_thread () at /usr/src/lib/libc/arch/amd64/sys/tfork_thread.S:87

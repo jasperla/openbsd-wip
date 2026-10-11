@@ -1,4 +1,5 @@
 # ld: error: cannot place lib/monkey/library/libco.a(libco.c.o):(.text) into .text: --execute-only does not support intermingling data and code
+# XXX see TODO
 USE_NOEXECONLY =	Yes
 
 COMMENT =		fast and lightweight data forwarder

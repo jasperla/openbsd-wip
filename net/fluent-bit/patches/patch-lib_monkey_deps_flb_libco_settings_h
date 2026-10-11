@@ -1,0 +1,12 @@
+Index: lib/monkey/deps/flb_libco/settings.h
+--- lib/monkey/deps/flb_libco/settings.h.orig
++++ lib/monkey/deps/flb_libco/settings.h
+@@ -8,7 +8,7 @@
+  * Testing Fluent Bit on Windows when doing co_swap it crash if the
+  * option LIBCO_MPROTECT is not defined.
+  */
+-#ifdef _WIN32
++#ifdef __OpenBSD__
+ #define LIBCO_MPROTECT
+ #endif
+ 
