@@ -105,7 +105,7 @@ CONFIGURE_ARGS+=	--with-cups \
 			--with-pulse \
 			--with-sane \
 			--with-sdl \
-			--with-udev \
+			--without-udev \
 			--with-usb \
 			--with-va \
 			--with-vulkan \
