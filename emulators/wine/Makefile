@@ -1,6 +1,6 @@
 ONLY_FOR_ARCHS =	amd64
 DPB_PROPERTIES =	parallel
-USE_NOBTCFI =		Yes # wine run Windows programs built without protection
+USE_NOBTCFI =		Yes
 USE_WXNEEDED =		Yes
 
 COMMENT =		compatibility layer to run Windows applications
