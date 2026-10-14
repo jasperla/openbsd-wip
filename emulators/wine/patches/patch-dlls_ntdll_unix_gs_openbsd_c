@@ -25,7 +25,7 @@ Following approaches are implemented:
   stable but we have to specifically handle case when thread is being stopped
   inside of the stub.
   
-(3 SIGSEGV on every trip
+(3 SIGSEGV on every trap over that instruction
   Same as 2 but there was not enough space to replace it with a JMP REL 
   (5 bytes). We pay signal round trip every time but at least it works.
   The stub is basically the same but we are replacing a "replaced instruction" 
