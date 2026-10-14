@@ -1,0 +1,33 @@
+Exclude the NVENC header, encoder definition and registry entry on
+OpenBSD, where the NVENC backend is disabled.
+
+Index: src/video.cpp
+--- src/video.cpp.orig
++++ src/video.cpp
+@@ -19,7 +19,7 @@ extern "C" {
+ #include <libavutil/mastering_display_metadata.h>
+ #include <libavutil/opt.h>
+ #include <libavutil/pixdesc.h>
+-#if !defined(_WIN32) && !defined(__APPLE__)
++#if !defined(_WIN32) && !defined(__APPLE__) && !defined(__OpenBSD__)
+   #include <ffnvcodec/nvEncodeAPI.h>
+ #endif
+ }
+@@ -754,7 +754,7 @@ namespace video {
+     },
+     PARALLEL_ENCODING | REF_FRAMES_INVALIDATION | YUV444_SUPPORT | ASYNC_TEARDOWN  // flags
+   };
+-#elif !defined(__APPLE__)
++#elif !defined(__APPLE__) && !defined(__OpenBSD__)
+   encoder_t nvenc {
+     "nvenc"sv,
+     std::make_unique<encoder_platform_formats_avcodec>(
+@@ -1447,7 +1447,7 @@ namespace video {
+ #endif
+ 
+   static const std::vector encoders {
+-#ifndef __APPLE__
++#if !defined(__APPLE__) && !defined(__OpenBSD__)
+     &nvenc,
+ #endif
+ #ifdef _WIN32

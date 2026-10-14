@@ -1,0 +1,13 @@
+Add BUILD_WEB_UI so the port can supply prebuilt Web UI assets.
+
+Index: cmake/prep/options.cmake
+--- cmake/prep/options.cmake.orig
++++ cmake/prep/options.cmake
+@@ -9,6 +9,7 @@ set(SUNSHINE_PUBLISHER_ISSUE_URL "https://app.lizardby
+ 
+ option(BUILD_DOCS "Build documentation" ON)
+ option(BUILD_TESTS "Build tests" ON)
++option(BUILD_WEB_UI "Build the Web UI with npm; disable when supplying prebuilt assets" ON)
+ option(NPM_OFFLINE "Use offline npm packages. You must ensure packages are in your npm cache." OFF)
+ 
+ option(BUILD_WERROR "Enable -Werror flag." OFF)
