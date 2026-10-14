@@ -1,4 +1,13 @@
 Index: server/sig_openbsd.c
+
+This is server side of SIG handling in OpenBSD.
+See ntdll sig for details on why it is done.
+To tell what thread is the target tid in an array that is shared with the
+process. The Array lives in the file `sig-{pid}` where pid is Windows process
+id in hex format %04x.
+Slot 0 is left as overflow flag - anything sent to it will be broadcasted to
+everyone.
+
 --- server/sig_openbsd.c.orig
 +++ server/sig_openbsd.c
 @@ -0,0 +1,117 @@

@@ -1,4 +1,7 @@
 Index: dlls/ntdll/unix/system.c
+
+OpenBSD gives CPU and memory information differently.
+
 --- dlls/ntdll/unix/system.c.orig
 +++ dlls/ntdll/unix/system.c
 @@ -61,6 +61,9 @@
