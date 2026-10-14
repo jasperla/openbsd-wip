@@ -1,4 +1,8 @@
 Index: dlls/ntdll/unix/sig_openbsd.h
+
+This is an h file for signal on ntdll. This file and c file is here to simplify
+portability and migrations with upstream.
+
 --- dlls/ntdll/unix/sig_openbsd.h.orig
 +++ dlls/ntdll/unix/sig_openbsd.h
 @@ -0,0 +1,42 @@

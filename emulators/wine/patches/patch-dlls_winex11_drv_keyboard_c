@@ -1,4 +1,8 @@
 Index: dlls/winex11.drv/keyboard.c
+
+OpenBSD X server uses XFREE86 set, not evdev, and Wine only has evdev defined.
+We define XFREE86 keycodes and map them to scancodes.
+
 --- dlls/winex11.drv/keyboard.c.orig
 +++ dlls/winex11.drv/keyboard.c
 @@ -227,6 +227,71 @@ static WORD keyc2scan( unsigned int keycode, unsigned 

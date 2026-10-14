@@ -1,4 +1,17 @@
 Index: dlls/ntdll/unix/virtual.c
+
+OpenBSD specific memory handling:
+(1 MAP_TRYFIXED is defined as 0, so we need to use MAP_FIXED|__MAP_NOREPLACE.
+ mmap() will ignore address hints.
+(2 OpenBSD will kill a process that has %rsp outside of a MAP_STACK mapping.
+ We need to remap thread stacks with MAP_STACK.
+(3 Code patch generation for %gs stubs. Page under edit will be RW, so another
+ thread that tries to execute the stub (by hitting code mid patch) will fault
+ and retry. Stub slots are allocated rel32 away from the faulting code.
+(4 Process cannot ptrace other processes, so NTRead/WriteVirtualMemory has to
+ create a section, map it, and then send APC_COPY_MEMORY. Target process maps
+ same section and copies it. Server only passes the APC.
+
 --- dlls/ntdll/unix/virtual.c.orig
 +++ dlls/ntdll/unix/virtual.c
 @@ -55,6 +55,9 @@

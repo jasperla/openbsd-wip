@@ -1,4 +1,15 @@
 Index: dlls/ntdll/unix/server.c
+
+OpenBSD specific client-server setup:
+
+Cross-process memory access. In upstream Wine server can read/write another
+process's memory with ptrace. On OpenBSD you can only ptrace your decendants.
+Wine Processes are not descendants of WineServer so new APC_COPY_MEMORY memory
+has the target process do the copy itself between its own memory and a shared
+with the caller memory section.
+
+Added thread tid so server can name the target thread.
+
 --- dlls/ntdll/unix/server.c.orig
 +++ dlls/ntdll/unix/server.c
 @@ -705,6 +705,40 @@ static void invoke_system_apc( const union apc_call *c
