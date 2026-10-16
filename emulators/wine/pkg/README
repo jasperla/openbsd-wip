@@ -13,8 +13,33 @@ In that case, the program *can't* run.
 Common Problems
 ===============
 
+The first step if an application doesn't run should be to check
+
+	https://appdb.winehq.org/
+
+for an entry. Also make sure, no 32-bit binary or library is involved (see
+above).
+
 Many games need higher than default datasize (and potentially other)
 limits, see ksh(1) for ulimit.
+
+In case of audio issues, make sure to consult the pulseaudio(1) man page.
+
+Direct3D Translation Layers
+===========================
+
+${PKGSTEM}'s default Direct3D graphics support (Damawand) uses OpenGL.
+If Vulkan is installed and supported by your hardware, you can try
+alternative (faster) translation layers. DXVK for D3D8, 9, 10, and 11:
+
+	https://github.com/doitsujin/dxvk
+
+and/or VKD3D-Proton for D3D12:
+
+	https://github.com/HansKristian-Work/vkd3d-proton
+
+Both come with installation instructions and/or install scripts that
+install the dll's into the wine prefix and update winecfg.
 
 Steam
 =====
@@ -47,22 +72,7 @@ user's existing hard limits, then starts Steam with -cef-disable-sandbox
 Run the same command to start Steam again. If installation was interrupted,
 run it again to retry. Additional command-line arguments are passed to Steam.
 
-PulseAudio
-==========
-
-In case of audio issues, make sure to consult the pulseaudio(1) man page.
-
 Debugging
 =========
 
 See WINEDEBUG in wine(1).
-
-Issues
-======
-
-The first step if an application doesn't run should be to check
-
-https://appdb.winehq.org/
-
-for an entry. Also make sure, no 32-bit binary or library is involved (see
-above).
