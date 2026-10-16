@@ -82,7 +82,9 @@ SEPARATE_BUILD =	Yes
 
 USE_GMAKE =		Yes
 
-CONFIGURE_STYLE =	gnu
+# since we have the option, use autoconf rather than patching configure
+# script directly
+CONFIGURE_STYLE =	autoconf
 
 # PE compilation is already selected by --enable-archs; x86_64_CC uses clang-pe.
 CONFIGURE_ARGS =	--enable-archs=x86_64 --with-mingw
@@ -157,6 +159,9 @@ CONFIGURE_ENV+=		INOTIFY_LIBS="-L${LOCALBASE}/lib/inotify \
 			PCAP_CFLAGS="-I${LOCALBASE}/include/libpcap" \
 			PCAP_LIBS="-L${LOCALBASE}/lib/libpcap \
 			-Wl,-rpath,${LOCALBASE}/lib/libpcap -lpcap"
+
+AUTOCONF_VERSION =	2.73
+AUTOMAKE_VERSION =	1.18
 
 # Setup tests as _pbuild.
 # { printf 'add :1 . '; openssl rand -hex 16; } | xauth -f /tmp/wine-Xauthority
