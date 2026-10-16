@@ -1,0 +1,38 @@
+comment out procctl stuff
+
+Index: rare/commands/subreaper/subreaper_bsd.py
+--- rare/commands/subreaper/subreaper_bsd.py.orig
++++ rare/commands/subreaper/subreaper_bsd.py
+@@ -97,14 +97,14 @@ def subreaper(args: Namespace, other: list[str]) -> in
+     # Acquire Reaper Status
+     # FreeBSD equivalent of PR_SET_CHILD_SUBREAPER
+     # procctl(P_PID, getpid(), PROC_REAP_ACQUIRE, NULL)
+-    procctl = libc.procctl
++    #procctl = libc.procctl
+     # procctl.restype = c_int
+-    procctl.argtypes = [
+-        c_int,
+-        c_int,
+-        c_int,
+-        c_void_p,
+-    ]
++    #procctl.argtypes = [
++        #c_int,
++        #c_int,
++        #c_int,
++        #c_void_p,
++    #]
+ 
+     # Set Process Name (FreeBSD specific)
+     # FreeBSD prefers setproctitle over prctl for naming
+@@ -114,8 +114,8 @@ def subreaper(args: Namespace, other: list[str]) -> in
+     except AttributeError:
+         logger.debug('setproctitle not found in libc')
+ 
+-    procctl_res = procctl(P_PID, os.getpid(), PROC_REAP_ACQUIRE, None)
+-    logger.debug('procctl PROC_REAP_ACQUIRE exited with status: %s', procctl_res)
++    #procctl_res = procctl(P_PID, os.getpid(), PROC_REAP_ACQUIRE, None)
++    #logger.debug('procctl PROC_REAP_ACQUIRE exited with status: %s', procctl_res)
+ 
+     pid = os.fork()  # pylint: disable=E1101
+     if pid == -1:

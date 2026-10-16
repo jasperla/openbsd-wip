@@ -1,0 +1,12 @@
+Index: rare/commands/subreaper/__init__.py
+--- rare/commands/subreaper/__init__.py.orig
++++ rare/commands/subreaper/__init__.py
+@@ -2,6 +2,8 @@ import platform
+ 
+ if platform.system() == 'FreeBSD':
+     from .subreaper_bsd import subreaper
++if platform.system() == 'OpenBSD':
++    from .subreaper_bsd import subreaper
+ elif platform.system() == 'Linux':
+     from .subreaper_linux import subreaper
+ else:

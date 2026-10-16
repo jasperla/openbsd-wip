@@ -1,0 +1,12 @@
+Index: rare/components/tabs/library/details/compat.py
+--- rare/components/tabs/library/details/compat.py.orig
++++ rare/components/tabs/library/details/compat.py
+@@ -24,7 +24,7 @@ from rare.widgets.indicator_edit import (
+     IndicatorReasonsCommon,
+ )
+ 
+-if pf.system() in {'Linux', 'FreeBSD'}:
++if pf.system() in {'Linux', 'FreeBSD', 'OpenBSD'}:
+     from rare.components.tabs.settings.widgets.overlay import MangoHudSettings
+     from rare.components.tabs.settings.widgets.proton import ProtonSettings
+ 

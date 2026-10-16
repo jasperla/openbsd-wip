@@ -1,0 +1,12 @@
+Index: rare/utils/compat/utils.py
+--- rare/utils/compat/utils.py.orig
++++ rare/utils/compat/utils.py
+@@ -9,7 +9,7 @@ from logging import getLogger
+ from PySide6.QtCore import QProcess, QProcessEnvironment
+ 
+ if pf.system() != 'Windows':
+-    if pf.system() in {'Linux', 'FreeBSD'}:
++    if pf.system() in {'Linux', 'FreeBSD', 'OpenBSD'}:
+         pass
+ 
+ logger = getLogger('CompatUtils')

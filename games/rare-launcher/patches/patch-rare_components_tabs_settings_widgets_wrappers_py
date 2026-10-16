@@ -1,0 +1,12 @@
+Index: rare/components/tabs/settings/widgets/wrappers.py
+--- rare/components/tabs/settings/widgets/wrappers.py.orig
++++ rare/components/tabs/settings/widgets/wrappers.py
+@@ -37,7 +37,7 @@ from rare.shared import RareCore
+ from rare.utils.misc import qta_icon
+ from rare.widgets.dialogs import ButtonDialog, game_title
+ 
+-if pf.system() in {'Linux', 'FreeBSD'}:
++if pf.system() in {'Linux', 'FreeBSD', 'OpenBSD'}:
+     from rare.utils.compat import steam
+ 
+ logger = getLogger('WrapperSettings')

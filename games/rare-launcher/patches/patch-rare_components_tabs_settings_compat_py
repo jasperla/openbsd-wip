@@ -1,0 +1,12 @@
+Index: rare/components/tabs/settings/compat.py
+--- rare/components/tabs/settings/compat.py.orig
++++ rare/components/tabs/settings/compat.py
+@@ -13,7 +13,7 @@ from .widgets.overlay import DxvkConfigSettings, DxvkH
+ from .widgets.runner import RunnerSettingsBase, RunnerSettingsType
+ from .widgets.wine import WineSettings
+ 
+-if pf.system() in {'Linux', 'FreeBSD'}:
++if pf.system() in {'Linux', 'FreeBSD', 'OpenBSD'}:
+     from .widgets.overlay import MangoHudSettings
+     from .widgets.proton import ProtonSettings
+ 

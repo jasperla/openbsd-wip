@@ -1,0 +1,11 @@
+Rare is a graphical interface for Legendary, a command line alternative
+to Epic Games launcher, written in PySide6.
+
+- Runs natively, and supports most of the major platforms
+- Gets out of your way when you don't need it, allowing you to enjoy
+  your games
+- Tries to be as lightweight as we can make it while still offering a
+  feature-full experience
+- Integrates seamlessly with legendary as both projects are developed in
+  Python
+- Packages, packages everywhere

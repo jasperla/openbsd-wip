@@ -1,0 +1,12 @@
+Index: rare/components/tabs/settings/widgets/runner.py
+--- rare/components/tabs/settings/widgets/runner.py.orig
++++ rare/components/tabs/settings/widgets/runner.py
+@@ -13,7 +13,7 @@ from rare.utils import config_helper as lgd_config
+ 
+ from .wine import WineSettings
+ 
+-if pf.system() in {'Linux', 'FreeBSD'}:
++if pf.system() in {'Linux', 'FreeBSD', 'OpenBSD'}:
+     from .proton import ProtonSettings
+ 
+ 

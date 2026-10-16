@@ -1,0 +1,12 @@
+Index: rare/components/tabs/settings/widgets/envvars.py
+--- rare/components/tabs/settings/widgets/envvars.py.orig
++++ rare/components/tabs/settings/widgets/envvars.py
+@@ -18,7 +18,7 @@ from rare.utils.misc import qta_icon
+ if platform.system() != 'Windows':
+     from rare.utils.compat.wine import get_wine_environment
+ 
+-if platform.system() in {'Linux', 'FreeBSD'}:
++if platform.system() in {'Linux', 'FreeBSD', 'OpenBSD'}:
+     from rare.utils.compat.steam import get_steam_environment
+ 
+ 

@@ -1,0 +1,7 @@
++-------------------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-------------------------------------------------------------------------------
+
+Sometimes downloads stall indefinitely in the legendary backend. If you
+see no progress of a download, stop and restart it. This usually fixes
+it and resumes the download where it left off.
