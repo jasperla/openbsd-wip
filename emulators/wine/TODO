@@ -5,8 +5,6 @@
 - add lea + sub 4 byte %GS, speedup MIMALLOC consumers
 - README: Intel integrated GPU works, but some others don't. Ask users to bring
   issue directly to https://github.com/NethIafin/wine ?
-- README: explain 32-bit issue, stuff breaks for sure (Steam installer)
-- bundle winetricks? (likely needed for better support, alternative ... proton)
 - test: crashes, SIGQUIT, libinotify(kqueue limits?), network(ipv6?) ...
 - test: move Gecko/Mono MSI files to SUPDISTFILES
 - bikeshed (cut-down Makefile which is verbose atm)
