@@ -10,6 +10,12 @@ wine: failed to load L"\\??\\C:\\windows\\syswow64\\ntdll.dll" error[...]
 
 In that case, the program *can't* run.
 
+Common Problems
+===============
+
+Many games need higher than default datasize (and potentially other)
+limits, see ksh(1) for ulimit.
+
 Steam
 =====
 
