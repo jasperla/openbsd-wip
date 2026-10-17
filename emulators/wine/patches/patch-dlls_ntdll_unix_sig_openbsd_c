@@ -1,5 +1,3 @@
-Index: dlls/ntdll/unix/sig_openbsd.c
-
 Signals from wineserver to a client thread will always cross process boundary.
 On OpenBSD you can't signal one thread from another process. thrkill()
 works only inside one process.
@@ -10,6 +8,7 @@ Chromium/Electron is using this actively for sampling profiler and hang watcher
 
 Any changes here have to be reflected in the server's sig_openbsd.
 
+Index: dlls/ntdll/unix/sig_openbsd.c
 --- dlls/ntdll/unix/sig_openbsd.c.orig
 +++ dlls/ntdll/unix/sig_openbsd.c
 @@ -0,0 +1,139 @@

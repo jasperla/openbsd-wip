@@ -1,5 +1,3 @@
-Index: dlls/ntdll/unix/gs_openbsd.c
-
 Whenever we have a page fault, we need to see if the fault was caused by %gs 
 being pinned to 0 in OpenBSD. For this we parse the command assuming %gs was 0
 (fault was at "zero-page"), find if it is really %gs command and then rewrite
@@ -63,6 +61,8 @@ specialized just towards this one instruction and stub generation.
 Another notable method is gs_leave_stub that allows us to leave stub on SIGSEGV
 SIGUSR1/2, so outside it never looks like we are in a stub. This helps with 
 debug, signal handling and general sanity checks.
+
+Index: dlls/ntdll/unix/gs_openbsd.c
 --- dlls/ntdll/unix/gs_openbsd.c.orig
 +++ dlls/ntdll/unix/gs_openbsd.c
 @@ -0,0 +1,905 @@

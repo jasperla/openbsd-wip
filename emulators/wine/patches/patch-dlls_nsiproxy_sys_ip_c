@@ -1,5 +1,6 @@
-Index: dlls/nsiproxy.sys/ip.c
 OpenBSD does not have ip6s_exthdrtoolong in ip6stat
+
+Index: dlls/nsiproxy.sys/ip.c
 --- dlls/nsiproxy.sys/ip.c.orig
 +++ dlls/nsiproxy.sys/ip.c
 @@ -786,8 +786,15 @@ static NTSTATUS ipv6_ipstats_get_all_parameters( const

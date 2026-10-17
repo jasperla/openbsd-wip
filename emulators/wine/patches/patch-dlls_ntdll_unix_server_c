@@ -1,5 +1,3 @@
-Index: dlls/ntdll/unix/server.c
-
 OpenBSD specific client-server setup:
 
 Cross-process memory access. In upstream Wine server can read/write another
@@ -10,6 +8,7 @@ with the caller memory section.
 
 Added thread tid so server can name the target thread.
 
+Index: dlls/ntdll/unix/server.c
 --- dlls/ntdll/unix/server.c.orig
 +++ dlls/ntdll/unix/server.c
 @@ -705,6 +705,40 @@ static void invoke_system_apc( const union apc_call *c

@@ -1,9 +1,8 @@
-Index: dlls/ntdll/unix/unix_private.h
-
 These methods in headerfile help us create location in memory for stubs and
 also protect it for Write while removing Execution, so if something tries to
 execute while we are writing, it has to retry.
 
+Index: dlls/ntdll/unix/unix_private.h
 --- dlls/ntdll/unix/unix_private.h.orig
 +++ dlls/ntdll/unix/unix_private.h
 @@ -122,6 +122,9 @@ struct thread_data
