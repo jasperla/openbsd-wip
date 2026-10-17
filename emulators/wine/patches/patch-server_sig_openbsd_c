@@ -3,13 +3,13 @@ See ntdll sig for details on why it is done.
 To tell what thread is the target tid in an array that is shared with the
 process. The Array lives in the file `sig-{pid}` where pid is Windows process
 id in hex format %04x.
-Slot 0 is left as overflow flag - anything sent to it will be broadcasted to
-everyone.
+All 64 slots hold signal/tid pairs. If the table stays full after retries,
+the request is dropped without broadcasting.
 
 Index: server/sig_openbsd.c
 --- server/sig_openbsd.c.orig
 +++ server/sig_openbsd.c
-@@ -0,0 +1,117 @@
+@@ -0,0 +1,135 @@
 +/*
 + * Server-side thread signals on OpenBSD
 + *
@@ -35,6 +35,9 @@ Index: server/sig_openbsd.c
 +#ifdef __OpenBSD__
 +
 +#include <fcntl.h>
++#include <sched.h>
++#include <signal.h>
++#include <stdint.h>
 +#include <stdarg.h>
 +#include <stdio.h>
 +#include <string.h>
@@ -56,14 +59,18 @@ Index: server/sig_openbsd.c
 + * the target in an array that is shared with the process. It is stored in the file `sig-{pid}`
 + * of the server directory, where {pid} is Windows process id.
 + *
-+ * Entry 0 is special - anything in it will forward to all threads - basically an overflow flag
-+ * Entry 1-64 hold tid's of the pending targets. 0 - free slot.
++ * All 64 entries hold a signal in the high 32 bits and a Unix tid in the low
++ * 32 bits. Zero denotes a free slot; there is no overflow broadcast.
 + *
-+ * Has to match froward_thread_signal() in ntdll half of the implementation
++ * Has to match forward_thread_signal() in ntdll half of the implementation.
 + */
 +
 +#define SIGNAL_TARGETS_COUNT 64
-+#define SIGNAL_TARGETS_SIZE (SIGNAL_TARGETS_COUNT * sizeof(int))
++#define SIGNAL_TARGETS_SIZE (SIGNAL_TARGETS_COUNT * sizeof(uint64_t))
++#define SIGNAL_TARGET_RETRIES 100
++
++/* Requests are shared across processes and accessed from a signal handler; atomics must be lock-free. */
++C_ASSERT( __atomic_always_lock_free( sizeof(uint64_t), 0 ) );
 +
 +static void get_signal_targets_name( struct process *process, char name[16] )
 +{
@@ -105,25 +112,36 @@ Index: server/sig_openbsd.c
 +    unlinkat( server_dir_fd, name, 0 );
 +}
 +
-+/* record target thread before signalling its process */
-+void set_signal_target( struct thread *thread )
++/* Publish the complete request before notifying its process. */
++int set_signal_target( struct thread *thread, int sig )
 +{
-+    int i, tid;
-+    int free_slot = 0;
-+    int *targets = thread->process->signal_targets;
++    unsigned int attempt, i;
++    uint64_t request = ((uint64_t)(uint32_t)sig << 32) | (uint32_t)thread->unix_tid;
++    uint64_t *targets = thread->process->signal_targets;
 +
-+    if (!targets) return; /* notify everyone */
-+
-+    /* the client only clears slots, so a slot seen free stays free until server fills it */
-+    for (i = 1; i < SIGNAL_TARGETS_COUNT; i++)
++    if (!targets || thread->unix_tid <= 0 ||
++        (sig != SIGINT && sig != SIGUSR1 && sig != SIGQUIT))
 +    {
-+        tid = __atomic_load_n( &targets[i], __ATOMIC_SEQ_CST );
-+        if (tid == thread->unix_tid) return; /* still pending? */
-+        if (!tid && !free_slot) free_slot = i; /* no break because we need the above check */
++        fprintf( stderr, "wineserver: warning: cannot queue signal %d for tid %d, ignoring\n",
++                 sig, thread->unix_tid );
++        return 0;
 +    }
 +
-+    /* free_slot = 0 if we haven't found free slot, so we just save it in the overflow */
-+    __atomic_store_n( &targets[free_slot], free_slot ? thread->unix_tid : 1, __ATOMIC_SEQ_CST);
++    for (attempt = 0; attempt < SIGNAL_TARGET_RETRIES; attempt++)
++    {
++        for (i = 0; i < SIGNAL_TARGETS_COUNT; i++)
++        {
++            uint64_t expected = 0;
++
++            if (__atomic_compare_exchange_n( &targets[i], &expected, request, FALSE,
++                                              __ATOMIC_SEQ_CST, __ATOMIC_SEQ_CST ))
++                return 1;
++        }
++        sched_yield();
++    }
++    fprintf( stderr, "wineserver: warning: dropping signal %d for tid %d after %u attempts\n",
++             sig, thread->unix_tid, SIGNAL_TARGET_RETRIES );
++    return 0;
 +}
 +
 +#endif /* __OpenBSD__ */

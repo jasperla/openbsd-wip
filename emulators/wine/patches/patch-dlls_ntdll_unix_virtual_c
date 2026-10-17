@@ -440,7 +440,35 @@ Index: dlls/ntdll/unix/virtual.c
      mutex_unlock( &virtual_mutex );
      rec->ExceptionCode = ret;
      return ret;
-@@ -6426,7 +6771,59 @@ NTSTATUS WINAPI NtMapViewOfSection( HANDLE handle, HAN
+@@ -4857,8 +5202,13 @@ ssize_t virtual_locked_read( int fd, void *addr, size_
+     BOOL has_write_watch = FALSE;
+     int err = EFAULT;
+ 
++    /* OpenBSD read(2) can consume data on EFAULT; check write access first. */
++#ifdef __OpenBSD__
++    ssize_t ret = -1;
++#else
+     ssize_t ret = read( fd, addr, size );
+     if (ret != -1 || use_kernel_writewatch || errno != EFAULT) return ret;
++#endif
+ 
+     server_enter_uninterrupted_section( &virtual_mutex, &sigset );
+     if (!check_write_access( addr, size, &has_write_watch ))
+@@ -4908,8 +5258,13 @@ ssize_t virtual_locked_recvmsg( int fd, struct msghdr 
+     BOOL has_write_watch = FALSE;
+     int err = EFAULT;
+ 
++    /* OpenBSD recvmsg(2) can consume data on EFAULT; check write access first. */
++#ifdef __OpenBSD__
++    ssize_t ret = -1;
++#else
+     ssize_t ret = recvmsg( fd, hdr, flags );
+     if (ret != -1 || use_kernel_writewatch || errno != EFAULT) return ret;
++#endif
+ 
+     server_enter_uninterrupted_section( &virtual_mutex, &sigset );
+     for (i = 0; i < hdr->msg_iovlen; i++)
+@@ -6426,7 +6781,59 @@ NTSTATUS WINAPI NtMapViewOfSection( HANDLE handle, HAN
                                  offset_ptr, size_ptr, alloc_type, protect, 0 );
  }
  
@@ -500,7 +528,7 @@ Index: dlls/ntdll/unix/virtual.c
   *             NtMapViewOfSectionEx   (NTDLL.@)
   *             ZwMapViewOfSectionEx   (NTDLL.@)
   */
-@@ -6854,6 +7251,9 @@ NTSTATUS WINAPI NtReadVirtualMemory( HANDLE process, c
+@@ -6854,6 +7261,9 @@ NTSTATUS WINAPI NtReadVirtualMemory( HANDLE process, c
      }
      else
      {
@@ -510,7 +538,7 @@ Index: dlls/ntdll/unix/virtual.c
          SERVER_START_REQ( read_process_memory )
          {
              req->handle = wine_server_obj_handle( process );
-@@ -6862,6 +7262,7 @@ NTSTATUS WINAPI NtReadVirtualMemory( HANDLE process, c
+@@ -6862,6 +7272,7 @@ NTSTATUS WINAPI NtReadVirtualMemory( HANDLE process, c
              if ((status = wine_server_call( req ))) size = 0;
          }
          SERVER_END_REQ;
@@ -518,7 +546,7 @@ Index: dlls/ntdll/unix/virtual.c
      }
      if (bytes_read) *bytes_read = size;
      return status;
-@@ -6879,6 +7280,9 @@ NTSTATUS WINAPI NtWriteVirtualMemory( HANDLE process, 
+@@ -6879,6 +7290,9 @@ NTSTATUS WINAPI NtWriteVirtualMemory( HANDLE process, 
  
      if (virtual_check_buffer_for_read( buffer, size ))
      {
@@ -528,7 +556,7 @@ Index: dlls/ntdll/unix/virtual.c
          SERVER_START_REQ( write_process_memory )
          {
              req->handle     = wine_server_obj_handle( process );
-@@ -6888,6 +7292,7 @@ NTSTATUS WINAPI NtWriteVirtualMemory( HANDLE process, 
+@@ -6888,6 +7302,7 @@ NTSTATUS WINAPI NtWriteVirtualMemory( HANDLE process, 
              size = reply->written;
          }
          SERVER_END_REQ;

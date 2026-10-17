@@ -6,7 +6,6 @@ bin/regedit
 bin/regsvr32
 @bin bin/widl
 @bin bin/wine
-bin/wine-steam
 bin/wineboot
 @bin bin/winebuild
 bin/winecfg
