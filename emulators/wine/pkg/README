@@ -25,8 +25,8 @@ limits, see ksh(1) for ulimit.
 
 In case of audio issues, make sure to consult the pulseaudio(1) man page.
 
-Many games expect that executable is run from its directory and not a
-different location. So for path/to/program.exe, make sure to:
+Many games expect that the executable is run from its directory and not
+a different location. So for path/to/program.exe, make sure to:
 
 	$ cd path/to/
 	$ wine program.exe
