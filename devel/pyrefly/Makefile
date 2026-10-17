@@ -1,6 +1,6 @@
 COMMENT =	fast type checker and language server for Python
 
-VERSION =	1.3.2
+VERSION =	1.4.0
 
 DISTNAME =	pyrefly-${VERSION}
 
@@ -9,10 +9,8 @@ DISTFILES =     pyrefly-{/archive/refs/tags/}${VERSION}.tar.gz
 
 # Rust crates downloaded via git
 BACKTRACE =	df979dcf80027eb047d7bb9e0874710c15009f31
-LSPTYPES =	395d6bfcd6c3696a64cfe9cd93b86f981fb85112
 
 DIST_TUPLE +=	github rust-lang backtrace-rs ${BACKTRACE} ../backtrace-rs
-DIST_TUPLE +=	github astral-sh lsp-types ${LSPTYPES} ../lsp-types
 
 CATEGORIES =	devel
 
