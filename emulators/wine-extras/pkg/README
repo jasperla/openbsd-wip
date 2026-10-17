@@ -1,0 +1,33 @@
++-----------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-----------------------------------------------------------------------
+
+This package provides Winetricks and launchers for Steam and GOG Galaxy
+using the 64-bit Wine port. Applications requiring 32-bit Windows support
+may fail. Client binaries and Windows components are downloaded on demand
+and remain subject to their respective licenses.
+
+Run these commands as your normal desktop user:
+
+    wine-steam
+    wine-gog
+
+Both launchers use WINEPREFIX, defaulting to $HOME/.wine. To keep separate
+prefixes, use the same setting each time you launch the corresponding client:
+
+    WINEPREFIX="$HOME/.wine-steam" wine-steam
+    WINEPREFIX="$HOME/.wine-gog" wine-gog
+
+Steam is extracted from Valve's update packages after SHA-256 verification.
+GOG Galaxy is extracted from its installer after SHA-256 verification and
+uses Winetricks to install its MFC and DirectX components. Both launchers
+configure Liberation font replacements. Steam disables the CEF sandbox;
+GOG Galaxy disables the Qt WebEngine sandbox and selects OpenGL.
+
+To install components into a client's prefix, close its Windows applications
+and use the same WINEPREFIX with Winetricks, for example:
+
+    WINEPREFIX="$HOME/.wine-steam" winetricks arial
+
+See winetricks(1) for available recipes. The optional Winetricks GUI requires
+Zenity or KDialog, installed separately.
