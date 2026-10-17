@@ -1,0 +1,7 @@
+bin/wine-gog
+bin/wine-steam
+bin/winetricks
+@man man/man1/winetricks.1
+share/doc/pkg-readmes/${PKGSTEM}
+share/doc/winetricks/
+share/doc/winetricks/COPYING
