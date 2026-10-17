@@ -1,14 +1,13 @@
-Index: loader/main.c
-
-Add a 16 byte TLS slot to the loader. It is located just below %fs thread
-pointer and holds TEB pointer plus a single scratch slot for a register
-that is used in %gs patching.
+Add a 32 byte TLS slot to the loader. It is located just below %fs thread
+pointer and holds TEB pointer plus two scratch slots for registers
+that are used in %gs patching.
 The slot has to be in the loader since ld.so refuses static TLS in
 dlopen() libraries like ntdll.so.
 
+Index: loader/main.c
 --- loader/main.c.orig
 +++ loader/main.c
-@@ -164,6 +164,32 @@ static void *try_dlopen( const char *argv0 )
+@@ -164,6 +164,34 @@ static void *try_dlopen( const char *argv0 )
  }
  
  
@@ -23,9 +22,11 @@ dlopen() libraries like ntdll.so.
 +__asm__(    ".pushsection .tbss,\"awT\",@nobits\n\t"        /* .tbss: TLS, zero-init in every thread */
 +            ".p2align 4\n"                                  /* 16-byte aligned */
 +            "wine_teb_tls_slot:\n\t"
-+            ".zero 16 \n\t"                                 /* two words - TEB pointer of the current thread, and space for %gs stub to save a register */
++            ".zero 32 \n\t"                                 /* four words - TEB pointer of the current thread,
++                                                                and space for %gs stub to save a register
++                                                                and now a second one*/
 +            ".type wine_teb_tls_slot,@tls_object\n\t"
-+            ".size wine_teb_tls_slot,16\n\t"
++            ".size wine_teb_tls_slot,32\n\t"
 +            ".popsection" );
 +
 +/* offset of the slot from the %fs base. The value should be negative, because TLS blocks of the executable are just below the thread pointer */

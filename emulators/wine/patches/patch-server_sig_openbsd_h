@@ -1,9 +1,8 @@
-Index: server/sig_openbsd.h
-
 This is a header file for server side of sig handling
 This is mostly created to keep SIG+GS changes portable and easy to move from
 wine release to wine release.
 
+Index: server/sig_openbsd.h
 --- server/sig_openbsd.h.orig
 +++ server/sig_openbsd.h
 @@ -0,0 +1,45 @@
@@ -45,8 +44,8 @@ wine release to wine release.
 +/* clean up signals on finish process tracing */
 +extern void finish_process_signal_targets( struct process *process );
 +
-+/* record the target thread before we signal their process */
-+extern void set_signal_target( struct thread *thread );
++/* Publish a target and signal; return zero if the request was dropped. */
++extern int set_signal_target( struct thread *thread, int sig );
 +
 +
 +#endif /* __OpenBSD__ */

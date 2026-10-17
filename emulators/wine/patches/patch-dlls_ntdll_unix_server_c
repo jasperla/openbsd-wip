@@ -1,5 +1,3 @@
-Index: dlls/ntdll/unix/server.c
-
 OpenBSD specific client-server setup:
 
 Cross-process memory access. In upstream Wine server can read/write another
@@ -8,8 +6,19 @@ Wine Processes are not descendants of WineServer so new APC_COPY_MEMORY memory
 has the target process do the copy itself between its own memory and a shared
 with the caller memory section.
 
+The local NtReadVirtualMemory call handles both copy directions and faults:
+view to address for writes, address to view for reads.
+
 Added thread tid so server can name the target thread.
 
+Leave SIGUSR2 deliverable during server calls so waiting threads can
+still relay notifications; block it until the table and handlers are ready.
+
+For new threads, libpthread owns the native stack separately from Wine's
+signal-stack mapping. pthread_stackseg_np() returns the upper end; subtract
+the size to record the base used for Unix calls.
+
+Index: dlls/ntdll/unix/server.c
 --- dlls/ntdll/unix/server.c.orig
 +++ dlls/ntdll/unix/server.c
 @@ -705,6 +705,40 @@ static void invoke_system_apc( const union apc_call *c
@@ -62,7 +71,27 @@ Added thread tid so server can name the target thread.
  #endif
      return ret;
  }
-@@ -1680,6 +1716,9 @@ void server_init_process( struct thread_data *data )
+@@ -1641,9 +1677,18 @@ void server_init_process( struct thread_data *data )
+     sigaddset( &server_block_set, SIGHUP );
+     sigaddset( &server_block_set, SIGQUIT );
+     sigaddset( &server_block_set, SIGUSR1 );
+-    sigaddset( &server_block_set, SIGUSR2 );
+     sigaddset( &server_block_set, SIGCHLD );
++#ifdef __OpenBSD__
++    /* Block the relay during setup, leave it out of the server call mask. */
++    {
++        sigset_t sigset = server_block_set;
++        sigaddset( &sigset, SIGUSR2 );
++        pthread_sigmask( SIG_BLOCK, &sigset, NULL );
++    }
++#else
++    sigaddset( &server_block_set, SIGUSR2 );
+     pthread_sigmask( SIG_BLOCK, &server_block_set, NULL );
++#endif
+ 
+     /* receive the first thread request fd on the main socket */
+     data->request_fd = wine_server_receive_fd( &version );
+@@ -1680,6 +1725,9 @@ void server_init_process( struct thread_data *data )
      {
          req->unix_pid    = getpid();
          req->unix_tid    = get_unix_tid();
@@ -72,7 +101,7 @@ Added thread tid so server can name the target thread.
          req->reply_fd    = reply_pipe;
          req->wait_fd     = data->wait_fd[1];
          req->debug_level = (TRACE_ON(server) != 0);
-@@ -1706,6 +1745,18 @@ void server_init_process( struct thread_data *data )
+@@ -1706,6 +1754,18 @@ void server_init_process( struct thread_data *data )
  
      if (ret) server_protocol_error( "init_first_thread failed with status %x\n", ret );
  
@@ -91,7 +120,24 @@ Added thread tid so server can name the target thread.
      if (!supported_machines_count)
          fatal_error( "'%s' is a 64-bit installation, it cannot be used with a 32-bit wineserver.\n",
                       config_dir );
-@@ -1781,14 +1832,26 @@ void server_init_thread( struct thread_data *data )
+@@ -1757,6 +1817,16 @@ void server_init_process_done(void)
+     signal_init_process( data->teb );
+     init_teb_data( data );
+ 
++#ifdef __OpenBSD__
++    /* Enable the relay after setting up shared array and signal handlers. */
++    {
++        sigset_t sigset;
++        sigemptyset( &sigset );
++        sigaddset( &sigset, SIGUSR2 );
++        pthread_sigmask( SIG_UNBLOCK, &sigset, NULL );
++    }
++#endif
++
+     /* Signal the parent process to continue */
+     SERVER_START_REQ( init_process_done )
+     {
+@@ -1781,14 +1851,26 @@ void server_init_thread( struct thread_data *data )
  {
      int reply_pipe;
      TEB64 *teb64 = get_teb64( data->teb );

@@ -1,8 +1,7 @@
-Index: dlls/ntdll/unix/sig_openbsd.h
-
 This is an h file for signal on ntdll. This file and c file is here to simplify
 portability and migrations with upstream.
 
+Index: dlls/ntdll/unix/sig_openbsd.h
 --- dlls/ntdll/unix/sig_openbsd.h.orig
 +++ dlls/ntdll/unix/sig_openbsd.h
 @@ -0,0 +1,42 @@
@@ -40,8 +39,8 @@ portability and migrations with upstream.
 +extern void remove_signal_tid(void);
 +extern BOOL is_signal_thread(void);
 +
-+/* pass a signal onto thre thread(s) the server targeted. Returns TRUE if this thread is (one of) the target(s) */
-+extern BOOL forward_thread_signal( int sig );
++/* On SIGUSR2, drain server requests and relay SIGINT, SIGUSR1 or SIGQUIT to registered threads. */
++extern void forward_thread_signal(void);
 +
 +/* map the array the server leaves the targets in. server_dir - its directory */
 +extern void init_signal_targets( const char *server_dir, unsigned int process_id );
