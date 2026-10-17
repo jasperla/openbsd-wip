@@ -1,7 +1,6 @@
-Index: server/thread.c
-
 Server side of OpenBSD-only APC_COPY_MEMORY
 
+Index: server/thread.c
 --- server/thread.c.orig
 +++ server/thread.c
 @@ -1726,6 +1726,10 @@ DECL_HANDLER(init_first_thread)

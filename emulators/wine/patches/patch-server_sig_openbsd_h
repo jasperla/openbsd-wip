@@ -1,9 +1,8 @@
-Index: server/sig_openbsd.h
-
 This is a header file for server side of sig handling
 This is mostly created to keep SIG+GS changes portable and easy to move from
 wine release to wine release.
 
+Index: server/sig_openbsd.h
 --- server/sig_openbsd.h.orig
 +++ server/sig_openbsd.h
 @@ -0,0 +1,45 @@

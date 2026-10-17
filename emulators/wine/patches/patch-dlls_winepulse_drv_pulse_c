@@ -1,7 +1,6 @@
-Index: dlls/winepulse.drv/pulse.c
-
 Fixes pulseaudio stutted due to coarse OpenBSD kernel timer.
 
+Index: dlls/winepulse.drv/pulse.c
 --- dlls/winepulse.drv/pulse.c.orig
 +++ dlls/winepulse.drv/pulse.c
 @@ -244,7 +244,11 @@ static NTSTATUS pulse_process_attach(void *args)

@@ -1,8 +1,7 @@
-Index: dlls/ntdll/unix/gs_openbsd.h
-
 This is an h file for gs patcher. It is here to incapsulate gs logic into
 a separate file that is easy to port from wine release to wine release.
 
+Index: dlls/ntdll/unix/gs_openbsd.h
 --- dlls/ntdll/unix/gs_openbsd.h.orig
 +++ dlls/ntdll/unix/gs_openbsd.h
 @@ -0,0 +1,46 @@

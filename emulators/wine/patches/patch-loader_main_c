@@ -1,11 +1,10 @@
-Index: loader/main.c
-
 Add a 16 byte TLS slot to the loader. It is located just below %fs thread
 pointer and holds TEB pointer plus a single scratch slot for a register
 that is used in %gs patching.
 The slot has to be in the loader since ld.so refuses static TLS in
 dlopen() libraries like ntdll.so.
 
+Index: loader/main.c
 --- loader/main.c.orig
 +++ loader/main.c
 @@ -164,6 +164,32 @@ static void *try_dlopen( const char *argv0 )

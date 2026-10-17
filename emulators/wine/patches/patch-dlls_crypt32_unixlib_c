@@ -1,7 +1,6 @@
-Index: dlls/crypt32/unixlib.c
-
 OpenBSD uses cert.pem for SSL, wine needs to know about it
 
+Index: dlls/crypt32/unixlib.c
 --- dlls/crypt32/unixlib.c.orig
 +++ dlls/crypt32/unixlib.c
 @@ -952,6 +952,7 @@ static const char * const CRYPT_knownLocations[] = {

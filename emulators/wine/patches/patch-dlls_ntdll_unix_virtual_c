@@ -1,5 +1,3 @@
-Index: dlls/ntdll/unix/virtual.c
-
 OpenBSD specific memory handling:
 (1 MAP_TRYFIXED is defined as 0, so we need to use MAP_FIXED|__MAP_NOREPLACE.
  mmap() will ignore address hints.
@@ -12,6 +10,7 @@ OpenBSD specific memory handling:
  create a section, map it, and then send APC_COPY_MEMORY. Target process maps
  same section and copies it. Server only passes the APC.
 
+Index: dlls/ntdll/unix/virtual.c
 --- dlls/ntdll/unix/virtual.c.orig
 +++ dlls/ntdll/unix/virtual.c
 @@ -55,6 +55,9 @@
