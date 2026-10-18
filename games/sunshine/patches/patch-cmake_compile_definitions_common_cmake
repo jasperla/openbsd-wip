@@ -1,11 +1,33 @@
+Keep bundled headers, especially Moonlight's ENet fork, ahead of system
+dependencies. Do not add NVENC headers on OpenBSD.
+
 Index: cmake/compile_definitions/common.cmake
 --- cmake/compile_definitions/common.cmake.orig
 +++ cmake/compile_definitions/common.cmake
-@@ -219,7 +219,7 @@ include_directories(
+@@ -209,17 +209,22 @@ include_directories(BEFORE "${CMAKE_SOURCE_DIR}")
+ include_directories(
+         BEFORE
+         SYSTEM
+-        "${CMAKE_SOURCE_DIR}/third-party"
+-        "${CMAKE_SOURCE_DIR}/third-party/moonlight-common-c/enet/include"
+-        "${CMAKE_SOURCE_DIR}/third-party/moonlight-common-c/nanors"
+-        "${CMAKE_SOURCE_DIR}/third-party/moonlight-common-c/nanors/deps/obl"
+         ${OPENSSL_INCLUDE_DIR}
+         ${Opus_INCLUDE_DIR}
+         ${FFMPEG_INCLUDE_DIRS}
          ${Boost_INCLUDE_DIRS}  # has to be the last, or we get runtime error on macOS ffmpeg encoder
  )
  
 -if(NOT APPLE)
++include_directories(
++        BEFORE
++        SYSTEM
++        "${CMAKE_SOURCE_DIR}/third-party"
++        "${CMAKE_SOURCE_DIR}/third-party/moonlight-common-c/enet/include"
++        "${CMAKE_SOURCE_DIR}/third-party/moonlight-common-c/nanors"
++        "${CMAKE_SOURCE_DIR}/third-party/moonlight-common-c/nanors/deps/obl"
++)
++
 +if(NOT APPLE AND NOT OPENBSD)
      include_directories(BEFORE SYSTEM "${NV_CODEC_HEADERS_13_1_INCLUDE_DIR}")
  endif()

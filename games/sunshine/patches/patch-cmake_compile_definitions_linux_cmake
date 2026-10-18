@@ -1,0 +1,15 @@
+Use CMake's dynamic loader libraries instead of hardcoding -ldl;
+OpenBSD provides these functions in libc.
+
+Index: cmake/compile_definitions/linux.cmake
+--- cmake/compile_definitions/linux.cmake.orig
++++ cmake/compile_definitions/linux.cmake
+@@ -323,7 +323,7 @@ list(APPEND PLATFORM_TARGET_FILES
+         "${CMAKE_SOURCE_DIR}/src/platform/linux/audio.cpp")
+ 
+ list(APPEND PLATFORM_LIBRARIES
+-        dl
++        ${CMAKE_DL_LIBS}
+         pulse
+         pulse-simple)
+ 

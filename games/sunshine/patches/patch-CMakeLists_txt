@@ -1,3 +1,6 @@
+Reuse the FreeBSD build paths on OpenBSD and define OPENBSD for checks
+that need to distinguish the two systems.
+
 XXX: stop hijacking FreeBSD pathways and use if (OPENBSD) where appropriate
 
 Index: CMakeLists.txt
