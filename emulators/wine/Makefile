@@ -11,6 +11,9 @@ CATEGORIES =		emulators
 
 HOMEPAGE =		https://www.winehq.org/
 
+MAINTAINER =		Thomas Frohwein <thfr@openbsd.org>, \
+			Andrii Yukhymchak <NethIafin-obsd@proton.me>
+
 # LGPLv2.1+
 PERMIT_PACKAGE =	Yes
 
