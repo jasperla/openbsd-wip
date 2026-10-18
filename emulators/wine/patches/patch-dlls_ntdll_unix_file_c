@@ -1,3 +1,6 @@
+OpenBSD lacks xattrs; read symlink reparse data from regular files with
+Wine's '?' suffix, matching server/fd.c.
+
 Index: dlls/ntdll/unix/file.c
 --- dlls/ntdll/unix/file.c.orig
 +++ dlls/ntdll/unix/file.c

@@ -3,7 +3,15 @@ Fixes pulseaudio stutted due to coarse OpenBSD kernel timer.
 Index: dlls/winepulse.drv/pulse.c
 --- dlls/winepulse.drv/pulse.c.orig
 +++ dlls/winepulse.drv/pulse.c
-@@ -244,7 +244,11 @@ static NTSTATUS pulse_process_attach(void *args)
+@@ -169,6 +169,7 @@ static void free_phys_device_lists(void)
+             free(dev->name);
+             free(dev);
+         }
++        list_init(*list);
+     } while (*(++list));
+ }
+ 
+@@ -244,7 +245,11 @@ static NTSTATUS pulse_process_attach(void *args)
  
      pthread_mutexattr_init(&attr);
      pthread_mutexattr_setprotocol(&attr, PTHREAD_PRIO_INHERIT);
@@ -15,7 +23,7 @@ Index: dlls/winepulse.drv/pulse.c
  
      if (pthread_mutex_init(&pulse_mutex, &attr) != 0)
          pthread_mutex_init(&pulse_mutex, NULL);
-@@ -1081,7 +1085,12 @@ static HRESULT pulse_stream_connect(struct pulse_strea
+@@ -1081,7 +1086,12 @@ static HRESULT pulse_stream_connect(struct pulse_strea
      /* PulseAudio will fill in correct values */
      attr.minreq = attr.fragsize = period_bytes;
      attr.tlength = period_bytes * 3;
@@ -28,7 +36,7 @@ Index: dlls/winepulse.drv/pulse.c
      attr.prebuf = pa_frame_size(&stream->ss);
      dump_attr(&attr);
  
-@@ -1630,11 +1639,22 @@ static void pulse_timer_loop(void *args)
+@@ -1630,11 +1640,22 @@ static void pulse_timer_loop(void *args)
                      INT32 adjust = last_time + stream->mmdev_period_usec - now;
  
                      adv_usec = now - last_time;
@@ -52,7 +60,7 @@ Index: dlls/winepulse.drv/pulse.c
  
                      delay.QuadPart = -(stream->mmdev_period_usec + adjust) * 10;
  
-@@ -1658,7 +1678,13 @@ static void pulse_timer_loop(void *args)
+@@ -1658,7 +1679,13 @@ static void pulse_timer_loop(void *args)
              }
              else
              {

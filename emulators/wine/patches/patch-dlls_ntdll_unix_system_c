@@ -95,22 +95,26 @@ Index: dlls/ntdll/unix/system.c
  #else
  
  static NTSTATUS create_logical_proc_info(void)
-@@ -2633,8 +2711,23 @@ static void get_performance_info( SYSTEM_PERFORMANCE_I
+@@ -2633,8 +2711,27 @@ static void get_performance_info( SYSTEM_PERFORMANCE_I
              if (mem_available) freeram = mem_available;
          }
      }
 +#elif defined(__OpenBSD__)
 +    {
++        /* uvm_init(9), uvm_sysctl() */
 +        int mib[] = { CTL_VM, VM_UVMEXP };
 +        struct uvmexp uvm;
 +        size_t size = sizeof(uvm);
 +
 +        if (!sysctl( mib, ARRAY_SIZE(mib), &uvm, &size, NULL, 0 ) && size == sizeof(uvm))
 +        {
++            /* npages counts pages managed by UVM. */
 +            totalram = (ULONGLONG)uvm.npages * uvm.pagesize;
-+            /* Like _SC_AVPHYS_PAGES, exclude inactive pages that may still need paging out. */
++            /* free counts free pages, separately from inactive pages. */
 +            freeram = (ULONGLONG)uvm.free * uvm.pagesize;
++            /* swpages counts swap pages, each of size pagesize. */
 +            totalswap = (ULONGLONG)uvm.swpages * uvm.pagesize;
++            /* swpginuse counts used swap pages; subtract for free swap. */
 +            freeswap = (ULONGLONG)(uvm.swpages - uvm.swpginuse) * uvm.pagesize;
 +        }
 +    }

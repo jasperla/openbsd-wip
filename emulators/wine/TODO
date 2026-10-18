@@ -1,10 +1,27 @@
-- review patches (%gs stubs), add a few comments explaining limits & workarounds
-- fixing (or not) https://github.com/NethIafin/wine/issues/1 is left to the
-  %gs stub reviewer (IMO), it affects stuff built with MINGW32 like the game
-  Slay The Spire 2
-- add lea + sub 4 byte %GS, speedup MIMALLOC consumers
-- README: Intel integrated GPU works, but some others don't. Ask users to bring
-  issue directly to https://github.com/NethIafin/wine ?
-- test: crashes, SIGQUIT, libinotify(kqueue limits?), network(ipv6?) ...
-- test: move Gecko/Mono MSI files to SUPDISTFILES
-- bikeshed (cut-down Makefile which is verbose atm)
+Patches
+- Review OpenBSD patches, especially %gs stubs and thread signals.
+- Explore LEA + short %gs instruction patching for mimalloc/bun performance.
+
+Features to investigate
+- Executable path discovery (getexecpath): tools/tools.h, loader/main.c,
+  server/unicode.c.
+- Thread CPU times (get_thread_times): dlls/ntdll/unix/thread.c.
+- CPU performance and power information: SystemProcessorPerformanceInformation,
+  IdleTime, HW_CPUSPEED and /dev/apm in dlls/ntdll/unix/system.c.
+- Process information: review libprocstat-based code and OpenBSD KERN_PROC
+  equivalents in dlls/ntdll/process.c and server/process.c.
+- FAT filesystem handling (msdos/msdosfs): dlls/ntdll/unix/file.c.
+- Removable device detection (is_device_removable): server/fd.c.
+- Serial port discovery (/dev/cua* and /dev/cuau*): dlls/mountmgr.sys/unixlib.c.
+- Native sndio audio backend.
+
+Testing & fixes
+- Broaden testing beyond games.
+- Investigate tests failures and hangs.
+- Fix signal handler reentrancy issues.
+
+Packaging and maintenance
+- Move Gecko/Mono to SUPDISTFILES; preserve test fetching and checksums.
+  Or reconsider keeping tests.
+- Use an LLVM headers package instead of the full source archive.
+- Continue co-maintenance with Andrii Yukhymchak (NethIafin).

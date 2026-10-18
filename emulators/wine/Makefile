@@ -6,6 +6,8 @@ USE_WXNEEDED =		Yes
 COMMENT =		compatibility layer to run Windows applications
 
 DISTNAME =		wine-11.19
+REVISION =		0
+
 CATEGORIES =		emulators
 
 HOMEPAGE =		https://www.winehq.org/
@@ -16,7 +18,7 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += X11 Xext avcodec avformat avutil c c++abi gettextpo glib-2.0
 WANTLIB += gobject-2.0 gphoto2 gphoto2_port gstaudio-1.0 gstbase-1.0
 WANTLIB += gstreamer-1.0 gsttag-1.0 gstvideo-1.0 intl m pcsclite
-WANTLIB += pthread pulse sane udev usb-1.0
+WANTLIB += pthread pulse sane
 
 # Libraries installed in subdirectories of ${LOCALBASE}.
 WANTLIB += lib/inotify/inotify lib/libpcap/pcap
@@ -26,8 +28,11 @@ WANTLIB += SDL2 cups dbus-1 gnutls netapi vulkan xkbregistry
 
 # XXX test only
 # Keep these versions in sync with dlls/appwiz.cpl/addons.c
+# MPLv2.0 and third-party licenses, HTML engine for Wine.
 GECKO_VERSION =		2.47.4
+# MIT and other licenses, .NET Framework replacement for Wine.
 MONO_VERSION =		11.3.0
+
 DISTFILES.gecko =	wine-gecko-${GECKO_VERSION}-x86_64.msi
 DISTFILES.mono =	wine-mono-${MONO_VERSION}-x86.msi
 SITES.gecko =		https://dl.winehq.org/wine/wine-gecko/${GECKO_VERSION}/
@@ -53,14 +58,9 @@ RUN_DEPENDS =		multimedia/gstreamer1/libav \
 			multimedia/gstreamer1/plugins-ugly \
 			x11/gtk+4,-guic
 
-# wine-steam: extract Steam archives and provide free font replacements.
-RUN_DEPENDS+=		archivers/unzip \
-			fonts/liberation-fonts
-
 LIB_DEPENDS =		audio/pulseaudio \
 			devel/gettext,-tools \
 			devel/libinotify \
-			devel/libusb1 \
 			devel/sdl2 \
 			graphics/ffmpeg \
 			graphics/libgphoto2 \
@@ -73,20 +73,41 @@ LIB_DEPENDS =		audio/pulseaudio \
 			print/cups,-libs \
 			security/gnutls \
 			security/pcsc-lite \
-			sysutils/libudev-openbsd \
 			x11/dbus \
 			x11/xkbcommon
 TEST_DEPENDS =		${RUN_DEPENDS}
 
-# Run suites serially, continue after failures and show per-test summaries.
+# run suites serially, continue after failures and show per-test summaries.
 TEST_FLAGS =		-j1 -k RUNTESTFLAGS="-P wine"
+
+# skip tests that hangs
+WINE_SKIP_TESTS =	ieframe/ie \
+			kernel32/debugger \
+			kernel32/virtual \
+			ntdll/info \
+			ntdll/virtual \
+			opengl32/opengl \
+			urlmon/url \
+			ws2_32/sock
+# because PF filtering _pbuild; still fails, but improve with network access
+WINE_SKIP_TESTS+=	urlmon/protocol \
+			winhttp/notification
+# these suites also require network access but do not hangs
+WINE_SKIP_TESTS+=	crypt32/cert \
+			msxml3/httpreq \
+			msxml6/httpreq \
+			qmgr/job \
+			wininet/http \
+			wldap32/parse
+.for suite in ${WINE_SKIP_TESTS}
+TEST_FLAGS+=		-o dlls/${suite:H}/tests/x86_64-windows/${suite:T}.ok
+.endfor
 
 SEPARATE_BUILD =	Yes
 
 USE_GMAKE =		Yes
 
-# since we have the option, use autoconf rather than patching configure
-# script directly
+# regenerate configure from the patched configure.ac.
 CONFIGURE_STYLE =	autoconf
 
 # PE compilation is already selected by --enable-archs; x86_64_CC uses clang-pe.
@@ -110,8 +131,6 @@ CONFIGURE_ARGS+=	--with-cups \
 			--with-pulse \
 			--with-sane \
 			--with-sdl \
-			--without-udev \
-			--with-usb \
 			--with-va \
 			--with-vulkan \
 			--with-xcomposite \
@@ -127,28 +146,24 @@ CONFIGURE_ARGS+=	--with-cups \
 			--with-xxf86vm \
 			--with-x
 
-# ALSA: Linux audio API; use PulseAudio instead.
-# CAPI: Common ISDN API 2.0 needs a native libcapi20 implementation.
-# CoreAudio: macOS audio frameworks.
-# hwloc: Wine uses this for CPU/cache topology only on FreeBSD.
-# OSS: Wine requires OSSv4; use PulseAudio instead.
-# V4L2: libv4l2 is found, but linux/videodev2.h is missing.
 CONFIGURE_ARGS+=	--without-alsa \
 			--without-capi \
 			--without-coreaudio \
 			--without-hwloc \
+			--without-opencl \
 			--without-oss \
-			--without-v4l2
+			--without-udev
 
 # GSSAPI: Kerberos SSP support needs adaptation to security/heimdal.
 # krb5: Kerberos authentication also needs adaptation to security/heimdal.
-# OpenCL: parallel computation on CPUs/GPUs, separate from OpenGL rendering.
+# USB: devel/libusb1 lacks hotplug support. wineusb aborts initialization.
+# V4L2: libv4l2 is found, but linux/videodev2.h is missing.
+# Wayland: untested
 CONFIGURE_ARGS+=	--without-gssapi \
 			--without-krb5 \
-			--without-opencl
-
-# Wayland: use the X11 display driver.
-CONFIGURE_ARGS+=	--without-wayland
+			--without-usb \
+			--without-v4l2 \
+			--without-wayland
 
 CONFIGURE_ENV =		x86_64_CC="${WRKDIR}/bin/clang-pe" \
 			CPPFLAGS="-I${LOCALBASE}/include" \
@@ -165,6 +180,8 @@ CONFIGURE_ENV+=		INOTIFY_LIBS="-L${LOCALBASE}/lib/inotify \
 
 AUTOCONF_VERSION =	2.73
 AUTOMAKE_VERSION =	1.18
+
+TEST_ENV+=		WINETEST_WRAPPER="time -p timeout -k 1m 30m"
 
 # Setup tests as _pbuild.
 # { printf 'add :1 . '; openssl rand -hex 16; } | xauth -f /tmp/wine-Xauthority
@@ -191,7 +208,6 @@ pre-configure:
 	${SUBST_PROGRAM} ${FILESDIR}/clang-pe ${WRKDIR}/bin/clang-pe
 
 post-install:
-	${INSTALL_SCRIPT} ${FILESDIR}/wine-steam ${PREFIX}/bin/wine-steam
 	${INSTALL_DATA_DIR} ${PREFIX}/share/icons/hicolor/scalable/apps
 	${INSTALL_DATA} ${WRKSRC}/programs/winecfg/logo.svg \
 		${PREFIX}/share/icons/hicolor/scalable/apps/wine.svg

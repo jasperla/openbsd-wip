@@ -47,37 +47,6 @@ and/or VKD3D-Proton for D3D12:
 Both come with installation instructions and/or install scripts that
 install the dll's into the wine prefix and update winecfg.
 
-Steam
-=====
-
-The package installs wine-steam. This helper prepares Steam for this
-64-bit-only port: it installs the client directly from Valve's update
-packages, without running the Windows installer, and applies the prefix,
-font and resource-limit settings described below.
-
-As your normal desktop user, start PulseAudio as described above, then run:
-
-    wine-steam
-
-On the first run, it creates $HOME/.wine-steam and initializes Wine without
-installing Mono or Gecko. It downloads the Windows 64-bit client packages
-listed in Valve's manifest, verifies their SHA-256 checksums and extracts
-them into:
-
-    $HOME/.wine-steam/drive_c/Steam
-
-An Internet connection is required for installation. No separate wineboot
-command is needed. The helper always uses this dedicated prefix, separate
-from the default $HOME/.wine prefix.
-
-At each launch, it registers Liberation replacements for Arial, Times New
-Roman and Courier New, raises the data-segment and open-file limits to the
-user's existing hard limits, then starts Steam with -cef-disable-sandbox
-(disabling the CEF browser sandbox).
-
-Run the same command to start Steam again. If installation was interrupted,
-run it again to retry. Additional command-line arguments are passed to Steam.
-
 Debugging
 =========
 

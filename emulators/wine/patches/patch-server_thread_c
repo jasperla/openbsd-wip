@@ -25,7 +25,7 @@ Index: server/thread.c
 +
 +        if (process && process != current->process)
 +        {
-+            /* duplicate the destination process handle into the target process */
++            /* duplicate the shared section handle into the target process */
 +            obj_handle_t handle = duplicate_handle( current->process, apc->call.copy_memory.handle,
 +                                                    process, 0, 0, DUPLICATE_SAME_ACCESS);
 +
