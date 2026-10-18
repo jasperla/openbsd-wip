@@ -1628,7 +1628,6 @@ lib/wine/x86_64-unix/
 @so lib/wine/x86_64-unix/winegstreamer.so
 @so lib/wine/x86_64-unix/wineps.so
 @so lib/wine/x86_64-unix/winepulse.so
-@so lib/wine/x86_64-unix/wineusb.so
 @so lib/wine/x86_64-unix/winevulkan.so
 @so lib/wine/x86_64-unix/winex11.so
 @so lib/wine/x86_64-unix/winscard.so
@@ -2536,7 +2535,6 @@ lib/wine/x86_64-windows/winemine.exe
 lib/wine/x86_64-windows/winemsibuilder.exe
 lib/wine/x86_64-windows/winepath.exe
 lib/wine/x86_64-windows/wineps.drv
-lib/wine/x86_64-windows/wineusb.sys
 lib/wine/x86_64-windows/winevulkan.dll
 lib/wine/x86_64-windows/winex11.drv
 lib/wine/x86_64-windows/winexinput.sys
