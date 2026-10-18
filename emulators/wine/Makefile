@@ -19,10 +19,9 @@ WANTLIB += gobject-2.0 gphoto2 gphoto2_port gstaudio-1.0 gstbase-1.0
 WANTLIB += gstreamer-1.0 gsttag-1.0 gstvideo-1.0 intl m pcsclite
 WANTLIB += pthread pulse sane
 
-# Libraries installed in subdirectories of ${LOCALBASE}.
 WANTLIB += lib/inotify/inotify lib/libpcap/pcap
 
-# Loaded with dlopen(); keep WANTLIB for runtime library version checks.
+# loaded with dlopen()
 WANTLIB += SDL2 cups dbus-1 gnutls netapi vulkan xkbregistry
 
 # XXX test only
@@ -106,7 +105,7 @@ SEPARATE_BUILD =	Yes
 
 USE_GMAKE =		Yes
 
-# regenerate configure from the patched configure.ac.
+# regenerate configure from the patched configure.ac
 CONFIGURE_STYLE =	autoconf
 
 # PE compilation is already selected by --enable-archs; x86_64_CC uses clang-pe.
@@ -168,7 +167,6 @@ CONFIGURE_ENV =		x86_64_CC="${WRKDIR}/bin/clang-pe" \
 			CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
-# libinotify.pc supplies the headers but not the runtime library path.
 # Wine requests libpcap.pc; the OpenBSD port instead provides libepcap.pc
 # and installs its headers/libraries outside the default search paths.
 CONFIGURE_ENV+=		INOTIFY_LIBS="-L${LOCALBASE}/lib/inotify \
@@ -182,16 +180,18 @@ AUTOMAKE_VERSION =	1.18
 
 TEST_ENV+=		WINETEST_WRAPPER="time -p timeout -k 1m 30m"
 
-# Setup tests as _pbuild.
-# { printf 'add :1 . '; openssl rand -hex 16; } | xauth -f /tmp/wine-Xauthority
-# Xvfb :1 -screen 0 1280x1024x24 -noreset -auth /tmp/wine-Xauthority &
-# Then as usual.
-# DISPLAY=:1 XAUTHORITY=/tmp/wine-Xauthority make test
+# Setup tests as _pbuild the following way:
+#	$ { printf 'add :1 . '; openssl rand -hex 16; } \
+#		| xauth -f /tmp/wine-Xauthority
+# 	$ Xvfb :1 -screen 0 1280x1024x24 -noreset \
+#		-auth /tmp/wine-Xauthority &
+# Run tests with:
+# 	$ DISPLAY=:1 XAUTHORITY=/tmp/wine-Xauthority make test
 TEST_IS_INTERACTIVE =	x11
 PORTHOME =		${WRKDIR}
 
 # Keep the installed generated headers, and restore the upstream headers
-# removed by the LLVM port because they overlap with OpenBSD's libc headers.
+# (removed by LLVM port because they overlap with OpenBSD's libc headers).
 # Windows targets need the Clang versions, not the host's libc headers.
 CLANG_PE_RESOURCE =	${WRKDIR}/clang-pe
 LLVM_PREFIX =		${LOCALBASE}/llvm${MODCLANG_VERSION}
