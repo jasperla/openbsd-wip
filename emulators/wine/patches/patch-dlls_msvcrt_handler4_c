@@ -1,3 +1,17 @@
+Work around premature exception-object cleanup during a GOG Galaxy C++ rethrow.
+
+The core showed a NULL dereference in ucrtbase's __CxxUnregisterExceptionObject,
+inside the inlined _FindAndUnlinkFrame. The frame being unlinked had already
+been removed from the frame-info list.
+
+Tracing showed that unwinding to the inner __EXCEPT handler ran the outer
+__FINALLY cleanup before ctx.rethrow was set, then cleaned up the same frame
+again. Move the inner handler into a non-inlined function so it has a separate
+unwind frame.
+
+This is a workaround for the observed nested-handler unwinding behaviour,
+not a fix for its underlying cause.
+
 Index: dlls/msvcrt/handler4.c
 --- dlls/msvcrt/handler4.c.orig
 +++ dlls/msvcrt/handler4.c

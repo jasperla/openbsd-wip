@@ -1,3 +1,27 @@
+Disable OpenBSD Clang's return protection for PE modules: the added
+instrumentation is not suitable for Wine's Windows code and breaks startup.
+
+Include netinet/tcp_timer.h when checking BSD network headers on OpenBSD,
+so missing prerequisite declarations do not make configure reject them.
+
+Build the OpenBSD loader as PIE and mark it wxneeded so Windows code can
+request writable and executable memory.
+
+Adapt the resolver probe to OpenBSD's headers and C_IN constant. Do not
+require ns_initparse(), which is unavailable there, to detect res_query().
+
+Suppress the out-of-tree gettext notice for the port's separate build.
+This removes the configure diagnostic; it does not change po build rules.
+
+Detect OpenBSD's SDL2 soname without the libSDL2-2.0 naming restriction
+used on other systems.
+
+Find _Unwind_Find_FDE in libc++abi when it is not available without an
+extra library, and pass UNWIND_LIBS to ntdll's Unix library build.
+
+Include sys/socket.h and netinet/tcp_timer.h in the tcpstat member probe
+so the OpenBSD header prerequisites are satisfied.
+
 Index: configure.ac
 --- configure.ac.orig
 +++ configure.ac
