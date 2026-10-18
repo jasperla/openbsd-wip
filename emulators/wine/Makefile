@@ -33,8 +33,14 @@ DISTFILES.mono =	wine-mono-${MONO_VERSION}-x86.msi
 SITES.gecko =		https://dl.winehq.org/wine/wine-gecko/${GECKO_VERSION}/
 SITES.mono =		https://dl.winehq.org/wine/wine-mono/${MONO_VERSION}/
 
+# keep this in sync with MODCLANG_VERSION
+# source for updates/new releases: https://thfr.gothub.org/wine-clang-pe-headers
+CLANG_PE_HEADERS =		22.1.8
+DISTFILES.clang-pe-headers =	wine-clang-pe-headers-${CLANG_PE_HEADERS}.tar.gz
+SITES.clang-pe-headers =	https://thfr.info/distfiles/
+
 SITES =			https://dl.winehq.org/wine/source/11.x/
-EXTRACT_ONLY =		${DISTFILES}
+EXTRACT_ONLY =		${DISTFILES} ${DISTFILES.clang-pe-headers}
 EXTRACT_SUFX =		.tar.xz
 
 MODULES =		lang/clang
@@ -42,7 +48,6 @@ MODULES =		lang/clang
 # :patch makes the LLVM sources available under WRKDIR, without configuring
 # or building LLVM. The module also depends on the installed LLVM package.
 BUILD_DEPENDS =		devel/bison \
-			devel/llvm/${MODCLANG_VERSION}:patch \
 			devel/nasm
 RUN_DEPENDS =		multimedia/gstreamer1/libav \
 			multimedia/gstreamer1/plugins-bad \
@@ -183,7 +188,8 @@ SUBST_VARS+=		CLANG_PE_RESOURCE MODCLANG_VERSION
 pre-configure:
 	${INSTALL_DATA_DIR} ${CLANG_PE_RESOURCE}/include
 	cp -R ${CLANG_RESOURCE}/include/. ${CLANG_PE_RESOURCE}/include/
-	cp ${LLVM_SOURCE}/clang/lib/Headers/*.h ${CLANG_PE_RESOURCE}/include/
+	cp ${WRKDIR}/wine-clang-pe-headers-${CLANG_PE_HEADERS}/*.h \
+		${CLANG_PE_RESOURCE}/include/
 	ln -sfh ${CLANG_RESOURCE}/lib ${CLANG_PE_RESOURCE}/lib
 	${SUBST_PROGRAM} ${FILESDIR}/clang-pe ${WRKDIR}/bin/clang-pe
 
