@@ -45,8 +45,6 @@ EXTRACT_SUFX =		.tar.xz
 
 MODULES =		lang/clang
 
-# :patch makes the LLVM sources available under WRKDIR, without configuring
-# or building LLVM. The module also depends on the installed LLVM package.
 BUILD_DEPENDS =		devel/bison \
 			devel/nasm
 RUN_DEPENDS =		multimedia/gstreamer1/libav \
@@ -182,7 +180,6 @@ PORTHOME =		${WRKDIR}
 CLANG_PE_RESOURCE =	${WRKDIR}/clang-pe
 LLVM_PREFIX =		${LOCALBASE}/llvm${MODCLANG_VERSION}
 CLANG_RESOURCE =	${LLVM_PREFIX}/lib/clang/${MODCLANG_VERSION}
-LLVM_SOURCE =		${WRKDIR}/devel/llvm/${MODCLANG_VERSION}/llvm-project-*
 SUBST_VARS+=		CLANG_PE_RESOURCE MODCLANG_VERSION
 
 pre-configure:
