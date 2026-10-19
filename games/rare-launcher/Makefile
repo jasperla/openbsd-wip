@@ -22,6 +22,7 @@ BUILD_DEPENDS = converters/py-vdf \
 RUN_DEPENDS =	converters/py-vdf \
 		games/legendary \
 		textproc/py-orjson \
+		www/py-urllib3 \
 		x11/py-qtawesome \
 		x11/qt6/pyside6/pyside
 

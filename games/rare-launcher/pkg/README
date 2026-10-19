@@ -2,6 +2,7 @@
 | Running ${PKGSTEM} on OpenBSD
 +-------------------------------------------------------------------------------
 
-Sometimes downloads stall indefinitely in the legendary backend. If you
-see no progress of a download, stop and restart it. This usually fixes
-it and resumes the download where it left off.
+Sometimes downloads stall indefinitely in the legendary backend. This
+seems to be related to letting the legendary backend run with unlimited
+threads. Consider changing Settings -> Legendary -> Download settings
+-> Max workers to a low, non-zero number.

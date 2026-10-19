@@ -2,6 +2,9 @@
 | Running ${PKGSTEM} on OpenBSD
 +-----------------------------------------------------------------------
 
+Please note that the launchers require high openfiles limits, see
+login.conf(5).
+
 This package provides Winetricks and launchers for Steam and GOG Galaxy
 using the 64-bit Wine port. Applications requiring 32-bit Windows support
 may fail. Client binaries and Windows components are downloaded on demand
