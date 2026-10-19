@@ -30,12 +30,13 @@ NO_TEST =		Yes
 post-patch:
 	${SUBST_CMD} ${WRKSRC}/src/winetricks
 
+# wine-gog not functional at this point. Uncomment once it works.
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/src/winetricks ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/src/winetricks.1 ${PREFIX}/man/man1
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/winetricks
 	${INSTALL_DATA} ${WRKSRC}/COPYING ${PREFIX}/share/doc/winetricks
 	${SUBST_PROGRAM} ${FILESDIR}/wine-steam ${PREFIX}/bin/wine-steam
-	${SUBST_PROGRAM} ${FILESDIR}/wine-gog ${PREFIX}/bin/wine-gog
+	#${SUBST_PROGRAM} ${FILESDIR}/wine-gog ${PREFIX}/bin/wine-gog
 
 .include <bsd.port.mk>

@@ -2,35 +2,32 @@
 | Running ${PKGSTEM} on OpenBSD
 +-----------------------------------------------------------------------
 
-Please note that the launchers require high openfiles limits, see
-login.conf(5).
+Please note that the Steam launcher requires high openfiles limits, see
+login.conf(5). Tested with those set to openfiles=2048.
 
-This package provides Winetricks and launchers for Steam and GOG Galaxy
-using the 64-bit Wine port. Applications requiring 32-bit Windows support
-may fail. Client binaries and Windows components are downloaded on demand
-and remain subject to their respective licenses.
+This package provides Winetricks and a launcher for Steam using the
+64-bit Wine port. (Note that applications requiring 32-bit Windows
+support will fail). Client binaries and Windows components are
+downloaded on demand and remain subject to their respective licenses.
 
-Run these commands as your normal desktop user:
+Run this command as your normal desktop user:
 
     wine-steam
-    wine-gog
 
-Both launchers use WINEPREFIX, defaulting to $HOME/.wine. To keep separate
-prefixes, use the same setting each time you launch the corresponding client:
+The launcher uses WINEPREFIX, defaulting to $HOME/.wine. To keep
+separate prefixes, use the same setting each time you launch the client,
+like for example:
 
     WINEPREFIX="$HOME/.wine-steam" wine-steam
-    WINEPREFIX="$HOME/.wine-gog" wine-gog
 
-Steam is extracted from Valve's update packages after SHA-256 verification.
-GOG Galaxy is extracted from its installer after SHA-256 verification and
-uses Winetricks to install its MFC and DirectX components. Both launchers
-configure Liberation font replacements. Steam disables the CEF sandbox;
-GOG Galaxy disables the Qt WebEngine sandbox and selects OpenGL.
+Steam is extracted from Valve's update packages after SHA-256
+verification. The  launcher configures Liberation font replacements. It
+also disables the CEF sandbox;
 
-To install components into a client's prefix, close its Windows applications
-and use the same WINEPREFIX with Winetricks, for example:
+To install components into a client's prefix, close its Windows
+applications and use the same WINEPREFIX with Winetricks, for example:
 
     WINEPREFIX="$HOME/.wine-steam" winetricks arial
 
-See winetricks(1) for available recipes. The optional Winetricks GUI requires
-Zenity or KDialog, installed separately.
+See winetricks(1) for available recipes. The optional Winetricks GUI
+requires Zenity or KDialog, installed separately.
