@@ -9,6 +9,7 @@ DIST_TUPLE =		github Winetricks winetricks ${WINETRICKS_V} .
 
 CATEGORIES =		emulators
 HOMEPAGE =		https://github.com/Winetricks/winetricks
+MAINTAINER =		Thomas Frohwein <thfr@openbsd.org>
 
 # LGPLv2.1+ (Winetricks); clients are downloaded at runtime.
 PERMIT_PACKAGE =	Yes

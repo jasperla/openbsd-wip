@@ -1,5 +1,3 @@
-DEBUG
-
 Index: rare/commands/launcher/__init__.py
 --- rare/commands/launcher/__init__.py.orig
 +++ rare/commands/launcher/__init__.py
@@ -12,11 +10,3 @@ Index: rare/commands/launcher/__init__.py
              if self.console:
                  self.console.log(f'Dry run {self.rgame.app_title} ({self.rgame.app_name})')
                  self.console.log(f'{shlex.join((params.executable, *params.arguments))}')
-@@ -395,6 +395,7 @@ class RareLauncher(RareApp):
-                 QProcess.UnixProcessFlag.ResetSignalHandlers | QProcess.UnixProcessFlag.CreateNewSession
-             )
-         else:
-+            self.logger.info('DEBUG Command: %s %s', params.executable, ' '.join(params.arguments))
-             self.game_process.setProgram(params.executable)
-             self.game_process.setArguments(params.arguments)
- 
