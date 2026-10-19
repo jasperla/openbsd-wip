@@ -30,7 +30,12 @@ MODCARGO_INSTALL_TARGET_PATHS =	${MODCARGO_CARGOTOML:H}
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 DATA_DIR =		${VARBASE}/${PKGSTEM}
+DOC_DIR =		${PREFIX}/share/doc/${PKGSTEM}
 SUBST_VARS =		DATA_DIR
+
+post-install:
+	${INSTALL_DATA_DIR} ${DOC_DIR}
+	${INSTALL_DATA} ${WRKSRC}/docs/CONFIG.md ${DOC_DIR}/
 
 .include "crates.inc"
 .include <bsd.port.mk>

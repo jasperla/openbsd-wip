@@ -2,6 +2,8 @@
 @newuser _ferrofin:657:657::Ferrofin server:${DATA_DIR}:/sbin/nologin
 @rcscript ${RCDIR}/ferrofin
 @bin bin/ferrofin-server
+share/doc/ferrofin/
+share/doc/ferrofin/CONFIG.md
 share/examples/login.conf.d/ferrofin
 @sample ${SYSCONFDIR}/login.conf.d/ferrofin
 @mode 750
