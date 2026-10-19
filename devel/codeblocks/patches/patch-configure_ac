@@ -1,0 +1,15 @@
+undefined reference to `free' (-Wl,--no-undefined doesn't work
+properly on OpenBSD + ld.lld
+
+Index: configure.ac
+--- configure.ac.orig
++++ configure.ac
+@@ -48,8 +48,6 @@ AC_PROG_AWK
+ 
+ AX_CXX_COMPILE_STDCXX(17, noext)
+ 
+-CODEBLOCKS_CHECK_LINK_FLAG([-Wl,--no-undefined],[LDFLAGS="-Wl,--no-undefined $LDFLAGS"])
+-
+ CODEBLOCKS_SETUP_FOR_TARGET
+ 
+ dnl Checks for header files.
