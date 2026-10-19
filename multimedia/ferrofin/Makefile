@@ -1,3 +1,9 @@
+# aws-lc-sys has constants in .text
+# https://github.com/awslabs/s2n-bignum/pull/242
+.if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "aarch64"
+USE_NOEXECONLY =	Yes
+.endif
+
 COMMENT =		API compatible Jellyfin server in Rust
 DIST_TUPLE =		github	mangoleaf	ferrofin	v1.3.2	.
 CATEGORIES =		multimedia net
