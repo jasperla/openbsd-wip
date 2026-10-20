@@ -1,0 +1,180 @@
+Fix bare throw; in AttachFileToLoopDevice (readOnly not supported on OpenBSD).
+Implement GetHostDevices() using sysctl hw.disknames.
+Try msdos then exfat-fuse when auto-detecting filesystem type on mount.
+Call mount.exfat directly since OpenBSD mount -t expects mount_exfat (underscore)
+but exfat-fuse installs mount.exfat (dot convention).
+
+Index: Core/Unix/OpenBSD/CoreOpenBSD.cpp
+--- Core/Unix/OpenBSD/CoreOpenBSD.cpp.orig
++++ Core/Unix/OpenBSD/CoreOpenBSD.cpp
+@@ -15,11 +15,15 @@
+
+ #include <fstream>
+ #include <iostream>
++#include <sstream>
++#include <vector>
++#include <fcntl.h>
+ #include <stdio.h>
+ #include <unistd.h>
+ #include <sys/param.h>
+ #include <sys/ucred.h>
+ #include <sys/mount.h>
++#include <sys/sysctl.h>
+ #include <sys/wait.h>
+ #include "CoreOpenBSD.h"
+ #include "Core/Unix/CoreServiceProxy.h"
+@@ -40,7 +44,7 @@
+
+ 		if (readOnly)
+ 		{
+-			throw;
++			// vnconfig on OpenBSD does not support read-only mode
+ 		}
+
+ 		// find an available vnd
+@@ -102,10 +106,84 @@
+ 		}
+ 	}
+
+-	// not sure what this is used for
+ 	HostDeviceList CoreOpenBSD::GetHostDevices (bool pathListOnly) const
+ 	{
+-		throw;
++		HostDeviceList devices;
++
++		// Get disk names via sysctl hw.disknames
++		int mib[2] = { CTL_HW, HW_DISKNAMES };
++		size_t len = 0;
++		if (sysctl(mib, 2, NULL, &len, NULL, 0) == -1 || len == 0)
++			return devices;
++
++		vector<char> buf(len + 1, 0);
++		if (sysctl(mib, 2, buf.data(), &len, NULL, 0) == -1)
++			return devices;
++
++		// Parse "sd0:uid,sd1:uid,cd0:" format
++		string diskStr(buf.data());
++		stringstream ss(diskStr);
++		string entry;
++
++		while (getline(ss, entry, ','))
++		{
++			string diskName = entry.substr(0, entry.find(':'));
++			if (diskName.empty())
++				continue;
++
++			// Only enumerate sd and wd disk devices
++			if (diskName.compare(0, 2, "sd") != 0
++			    && diskName.compare(0, 2, "wd") != 0)
++				continue;
++
++			// Whole disk: 'c' partition on OpenBSD
++			string devPath = "/dev/" + diskName + "c";
++
++			if (!FilesystemPath(devPath).IsBlockDevice()
++			    && !FilesystemPath(devPath).IsCharacterDevice())
++				continue;
++
++			make_shared_auto(HostDevice, device);
++			device->Path = devPath;
++
++			if (!pathListOnly)
++			{
++				try { device->Size = GetDeviceSize(device->Path); }
++				catch (...) { device->Size = 0; }
++				device->MountPoint = GetDeviceMountPoint(device->Path);
++				device->SystemNumber = 0;
++			}
++
++			devices.push_back(device);
++
++			// Enumerate partitions a-p, skipping c (whole disk)
++			for (char p = 'a'; p <= 'p'; p++)
++			{
++				if (p == 'c')
++					continue;
++
++				string partPath = "/dev/" + diskName + string(1, p);
++
++				if (!FilesystemPath(partPath).IsBlockDevice()
++				    && !FilesystemPath(partPath).IsCharacterDevice())
++					continue;
++
++				make_shared_auto(HostDevice, partition);
++				partition->Path = partPath;
++
++				if (!pathListOnly)
++				{
++					try { partition->Size = GetDeviceSize(partition->Path); }
++					catch (...) { partition->Size = 0; }
++					partition->MountPoint = GetDeviceMountPoint(partition->Path);
++					partition->SystemNumber = 0;
++				}
++
++				device->Partitions.push_back(partition);
++			}
++		}
++
++		return devices;
+ 	}
+
+ 	MountedFilesystemList CoreOpenBSD::GetMountedFilesystems (const DevicePath &devicePath, const DirectoryPath &mountPoint) const
+@@ -145,18 +223,51 @@
+ 	{
+ 		(void) internalMountOnly;
+
+-		try
++		if (!filesystemType.empty())
+ 		{
+-			// Try to mount FAT by default as mount is unable to probe filesystem type on BSD
+-			CoreUnix::MountFilesystem (devicePath, mountPoint, filesystemType.empty() ? "msdos" : filesystemType, readOnly, systemMountOptions);
++			CoreUnix::MountFilesystem (devicePath, mountPoint, filesystemType, readOnly, systemMountOptions);
++			return;
+ 		}
+-		catch (ExecutedProcessFailed&)
++
++		// OpenBSD mount cannot auto-detect filesystem type.
++		// Try common types in order: msdos (FAT), then exfat, then
++		// fall back to unspecified (which tries ffs).
++		try
+ 		{
+-			if (!filesystemType.empty())
+-				throw;
++			CoreUnix::MountFilesystem (devicePath, mountPoint, "msdos", readOnly, systemMountOptions);
++			return;
++		}
++		catch (ExecutedProcessFailed&) { }
+
+-			CoreUnix::MountFilesystem (devicePath, mountPoint, filesystemType, readOnly, systemMountOptions);
++		// Try exfat-fuse directly (mount.exfat uses dot convention,
++		// not mount_exfat underscore convention expected by mount -t)
++		try
++		{
++			list <string> exfatArgs;
++			string options;
++			if (readOnly)
++				options = "ro";
++			if (!systemMountOptions.empty())
++			{
++				if (!options.empty())
++					options += ",";
++				options += systemMountOptions;
++			}
++			if (!options.empty())
++			{
++				exfatArgs.push_back ("-o");
++				exfatArgs.push_back (options);
++			}
++			exfatArgs.push_back ("--");
++			exfatArgs.push_back (devicePath);
++			exfatArgs.push_back (mountPoint);
++			Process::Execute ("mount.exfat", exfatArgs);
++			return;
+ 		}
++		catch (...) { }
++
++		// Last resort: let mount guess (typically ffs)
++		CoreUnix::MountFilesystem (devicePath, mountPoint, "", readOnly, systemMountOptions);
+ 	}
+
+ #ifdef TC_OPENBSD
