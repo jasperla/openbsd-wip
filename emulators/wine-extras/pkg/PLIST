@@ -1,4 +1,3 @@
-bin/wine-gog
 bin/wine-steam
 bin/winetricks
 @man man/man1/winetricks.1
