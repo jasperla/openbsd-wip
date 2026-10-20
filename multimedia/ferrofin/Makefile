@@ -37,17 +37,22 @@ MODCARGO_INSTALL_TARGET_PATHS =	${MODCARGO_CARGOTOML:H}
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
+CONF_FILE =		${SYSCONFDIR}/${PKGSTEM}.toml
 DATA_DIR =		${VARBASE}/${PKGSTEM}
 DOC_DIR =		${PREFIX}/share/doc/${PKGSTEM}
-# unversioned for stable service config
-WEB_DIR =		${PREFIX}/share/jellyfin-web
+EXAMPLES_DIR =		${PREFIX}/share/examples/${PKGSTEM}
+WEB_PATH =		share/jellyfin-web
+WEB_DIR =		${PREFIX}/${WEB_PATH}
 
-SUBST_VARS =		DATA_DIR
+SUBST_VARS =		CONF_FILE \
+			DATA_DIR \
+			WEB_PATH
 
 post-install:
-	${INSTALL_DATA_DIR} ${DOC_DIR} ${WEB_DIR}
+	${INSTALL_DATA_DIR} ${DOC_DIR} ${EXAMPLES_DIR} ${WEB_DIR}
 	${INSTALL_DATA} ${WRKSRC}/docs/CONFIG.md ${DOC_DIR}/
 	cd ${WRKDIR}/usr/share/jellyfin/web/ && pax -rw . ${WEB_DIR}
+	${SUBST_DATA} {${FILESDIR},${EXAMPLES_DIR}}/ferrofin.toml
 
 .include "crates.inc"
 .include <bsd.port.mk>
