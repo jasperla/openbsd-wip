@@ -1,3 +1,5 @@
+Add getexecpath() support.
+
 Add a 32 byte TLS slot to the loader. It is located just below %fs thread
 pointer and holds TEB pointer plus two scratch slots for registers
 that are used in %gs patching.
