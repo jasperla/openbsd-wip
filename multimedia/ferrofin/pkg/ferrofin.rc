@@ -1,6 +1,6 @@
 #!/bin/ksh
 
-daemon="/usr/local/bin/ferrofin-server"
+daemon="${TRUEPREFIX}/bin/ferrofin-server"
 daemon_flags="--config ${CONF_FILE}"
 daemon_logger="daemon.info"
 daemon_user="_ferrofin"
