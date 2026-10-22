@@ -1,3 +1,0 @@
-Ferrofin is a Rust implementation of the Jellyfin media server API.
-
-It adopts existing Jellyfin databases in place.
