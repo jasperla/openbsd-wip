@@ -27,8 +27,9 @@ PERMIT_PACKAGE =	Yes
 WANTLIB +=		c pthread
 
 MODULES =		lang/go
-# go.mod says go 1.27.3. The module path on dc-cumulative is still
-# github.com/sipeed/picoclaw (the afjcjsbx rename branch is not included).
+# go.mod says go 1.27.3. patches/patch-go_mod lowers that to 1.27.1 so
+# this builds with the system compiler (lang/go GOTOOLCHAIN=local).
+# The module path on dc-cumulative is still github.com/sipeed/picoclaw.
 MODGO_BUILDDEP =	No
 
 # Source is the GitHub archive, not proxy.golang.org. Keep GO111MODULE on
@@ -42,7 +43,6 @@ MODGO_LDFLAGS +=	-X github.com/sipeed/picoclaw/pkg/config.GitCommit=${COMMIT} \
 MAKE_ENV +=		CGO_ENABLED=0 \
 			GO111MODULE=on \
 			GOSUMDB=off \
-			GOTOOLCHAIN=go1.27.3 \
 			GOPROXY=file://${WRKDIR}/go_modules \
 			GOPATH=${WRKDIR}/go \
 			GOBIN=${WRKDIR}/go/bin \
@@ -64,13 +64,6 @@ DISTFILES.go +=		go_modules/{}${_modpath}/@v/${_modver}.mod
 .endfor
 SITES.go =		https://proxy.golang.org/
 
-# lang/go on this host is 1.27.1. go.mod requires 1.27.3, and the file
-# proxy cannot fetch a toolchain unless these three objects are distfiles.
-GOTOOLCHAIN_VER =	v0.0.1-go1.27.3.openbsd-amd64
-DISTFILES.go +=		go_modules/{}golang.org/toolchain/@v/${GOTOOLCHAIN_VER}.zip
-DISTFILES.go +=		go_modules/{}golang.org/toolchain/@v/${GOTOOLCHAIN_VER}.mod
-DISTFILES.go +=		go_modules/{}golang.org/toolchain/@v/${GOTOOLCHAIN_VER}.info
-
 post-extract:
 	mkdir -p ${WRKDIR}/go_modules
 	cd ${DISTDIR}/go_modules && pax -rw -pp . ${WRKDIR}/go_modules
@@ -79,7 +72,6 @@ do-build:
 	mkdir -p ${WRKDIR}/gocache ${WRKDIR}/gomodcache ${WRKDIR}/gotmp ${WRKDIR}/go/bin
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
 		CGO_ENABLED=0 GO111MODULE=on GOSUMDB=off \
-		GOTOOLCHAIN=go1.27.3 \
 		GOPROXY=file://${WRKDIR}/go_modules \
 		GOPATH=${WRKDIR}/go GOBIN=${WRKDIR}/go/bin \
 		go install -mod=readonly -trimpath -buildvcs=false \
