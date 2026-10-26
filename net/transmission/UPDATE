@@ -1,6 +1,6 @@
-For testing net/transmission beyond 4.1.1:
+For testing net/transmission beyond 4.1.4:
 
-submodules are now included in DIST_TUPLE, so no
-separate archive needs to be built manually.
+Upstream's submodules are included in DIST_TUPLEs.
+(The committed release port uses the upstream's full tarball.)
 
 Recommended; # pkg_delete transmission, $ make test, $ make install-all
