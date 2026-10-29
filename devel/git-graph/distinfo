@@ -49,7 +49,7 @@ SHA256 (cargo/lazy_static-1.5.1.tar.gz) = IIcPZJr3Bz1T44BnsqhDEhddVuoVIX4bFbyDUG
 SHA256 (cargo/libc-0.2.191.tar.gz) = Zc2HyabWBTZYCzFq2YVyYQRzClFRyZhF8kkEKO+RJAo=
 SHA256 (cargo/libgit2-sys-0.18.8+1.9.7.tar.gz) = f3xWiyXXSJvD+ymI7WmrER0pRNL1/sPVyYf+VF6pe1A=
 SHA256 (cargo/libredox-0.1.25.tar.gz) = Yf+QyvYHeoA6JA9i/b6IZFqJC7yknvgXTDywQENiFx0=
-SHA256 (cargo/libz-sys-1.1.30.tar.gz) = 9xCiPm2/GTIU/UbKVqnWhk5VCr6GICGEUyrnJ15G3hk=
+SHA256 (cargo/libz-sys-1.1.31.tar.gz) = /yAwjsq9Y1otwd1YNKhsRizKIO+6HV092rH4rqNFXLI=
 SHA256 (cargo/linux-raw-sys-0.12.1.tar.gz) = MqZpSeAw2gDox9RDSyUWcKkVVvQUSUHTdFJ2nCXVilM=
 SHA256 (cargo/litrs-1.0.1.tar.gz) = R0Tjg5WfDbhu3lFLgJscUyUYiQk4A8BSZ6zH1OcDDXA=
 SHA256 (cargo/lock_api-0.4.14.tar.gz) = IkOZ50uHtfNVdRHZjf+LFAibPa2vyra7k+q2fTqs6WU=
@@ -73,7 +73,7 @@ SHA256 (cargo/regex-1.13.1.tar.gz) = 8CAje2yO7ZPbLiy1PADGCo4bxz2n0HMZmhGAQBRQIY0
 SHA256 (cargo/regex-automata-0.4.18.tar.gz) = rYVTubJkEyUcvzDmIFlcekGziH8D2gRXnA5rDWoGtLI=
 SHA256 (cargo/regex-syntax-0.8.11.tar.gz) = 1vb/mjeEhbKYpShmVtpmW6dEE9NtsJeWMyddLnCBRdQ=
 SHA256 (cargo/rustc_version-0.4.1.tar.gz) = z8s6Iu9G6FtF3m7n550GMxnrtllPqvzxwiXqkqtum5I=
-SHA256 (cargo/rustix-1.1.5.tar.gz) = iR76ur5BhnB3XxmfDSM9hIQ8InoJSaiDzhWzfHjWYp0=
+SHA256 (cargo/rustix-1.1.6.tar.gz) = 5ednQuUpQVPU3eEgfb7Fvdge72+r3A0hGLq62r/YWKo=
 SHA256 (cargo/rustversion-1.0.23.tar.gz) = z1RxWlc7mayA3wvCBtoCK81ELJdJUse5cgBpNwhS4h8=
 SHA256 (cargo/scopeguard-1.2.0.tar.gz) = lBQ/N3JRCfksJi7Sz15ZvOdJjAG8wVAte5r+Q5pOn0k=
 SHA256 (cargo/semver-1.0.28.tar.gz) = inhS0C/ISJguDBZ+8WOq/5zZHcZAuoXiY8sc5G+uUc0=
@@ -100,7 +100,7 @@ SHA256 (cargo/toml_parser-1.1.5+spec-1.1.0.tar.gz) = uqaTqAMtfhytp9AEHpYSbfJDF5/
 SHA256 (cargo/toml_writer-1.1.3+spec-1.1.0.tar.gz) = Br29jPwFa40uLoXym1ajvb7LUnzvges54+e5ivRlJ3A=
 SHA256 (cargo/unicode-ident-1.0.27.tar.gz) = osdU1sM3laHDJHJ0KOWn3ttbBhlfmJC9vLp2DT4kZWM=
 SHA256 (cargo/unicode-segmentation-1.13.3.tar.gz) = xvXTw7G/CQJ6iKa8lh/ABJfWUQCVYLVGNmjcgbD6h6g=
-SHA256 (cargo/unicode-width-0.2.2.tar.gz) = tKwEjXHt5+521YVRet1F2lMGYO9DkOSbCYczxuiX8lQ=
+SHA256 (cargo/unicode-width-0.2.3.tar.gz) = ynGEcYdpkgWfJR4zqvwzQ0atoIBCt2Yd0f4xOpvO1Vc=
 SHA256 (cargo/utf8parse-0.2.2.tar.gz) = BqveNhFlet9m04PwCwk9f67Mf6VwccziV4ZgyfEBCCE=
 SHA256 (cargo/vcpkg-0.2.15.tar.gz) = rM1Opi97t6gv4jBm+wlX1I72d/buuCFfNy9S5IuzJCY=
 SHA256 (cargo/wasi-0.11.1+wasi-snapshot-preview1.tar.gz) = zPPsZRqEfrAd5zzK0V632Z+ASF3gQ++y83DNZU9OpEs=
@@ -121,7 +121,7 @@ SHA256 (cargo/windows-sys-0.61.2.tar.gz) = rhNyKby9bN8Pe4CjHfYXZhRQd930lBanKLAss
 SHA256 (cargo/winnow-0.7.15.tar.gz) = 33nZeSdoLS/YrbKWgtEUCzQ75KwPCP1ot3ZdnAWdOUU=
 SHA256 (cargo/winnow-1.0.4.tar.gz) = I7lzGfe4ND3xLMmJOOXD60NgZFJMjStOMKHTo27s34E=
 SHA256 (cargo/yansi-1.0.1.tar.gz) = z+U6Zlf9KA6qiQo7xZFSiS/6PjAQExnRaLeB7WUpsEk=
-SHA256 (git-graph-v0.8.2.tar.gz) = svkYSvJuIA6VLN4kkEuuilerz+tczTjFWujz9pPEFWk=
+SHA256 (git-graph-v0.8.3.tar.gz) = nJCXt9/hE+XsULvGI8hZIvgtBw1fQuIRbtLVrYAWKpw=
 SIZE (cargo/aho-corasick-1.1.5.tar.gz) = 184315
 SIZE (cargo/android_system_properties-0.1.6.tar.gz) = 5625
 SIZE (cargo/anstream-1.0.0.tar.gz) = 28916
@@ -173,7 +173,7 @@ SIZE (cargo/lazy_static-1.5.1.tar.gz) = 13937
 SIZE (cargo/libc-0.2.191.tar.gz) = 855401
 SIZE (cargo/libgit2-sys-0.18.8+1.9.7.tar.gz) = 1961890
 SIZE (cargo/libredox-0.1.25.tar.gz) = 10671
-SIZE (cargo/libz-sys-1.1.30.tar.gz) = 888063
+SIZE (cargo/libz-sys-1.1.31.tar.gz) = 888048
 SIZE (cargo/linux-raw-sys-0.12.1.tar.gz) = 3006116
 SIZE (cargo/litrs-1.0.1.tar.gz) = 47449
 SIZE (cargo/lock_api-0.4.14.tar.gz) = 29249
@@ -197,7 +197,7 @@ SIZE (cargo/regex-1.13.1.tar.gz) = 157118
 SIZE (cargo/regex-automata-0.4.18.tar.gz) = 628707
 SIZE (cargo/regex-syntax-0.8.11.tar.gz) = 359055
 SIZE (cargo/rustc_version-0.4.1.tar.gz) = 12245
-SIZE (cargo/rustix-1.1.5.tar.gz) = 425681
+SIZE (cargo/rustix-1.1.6.tar.gz) = 426484
 SIZE (cargo/rustversion-1.0.23.tar.gz) = 21013
 SIZE (cargo/scopeguard-1.2.0.tar.gz) = 11619
 SIZE (cargo/semver-1.0.28.tar.gz) = 33064
@@ -224,7 +224,7 @@ SIZE (cargo/toml_parser-1.1.5+spec-1.1.0.tar.gz) = 36159
 SIZE (cargo/toml_writer-1.1.3+spec-1.1.0.tar.gz) = 19114
 SIZE (cargo/unicode-ident-1.0.27.tar.gz) = 48807
 SIZE (cargo/unicode-segmentation-1.13.3.tar.gz) = 112325
-SIZE (cargo/unicode-width-0.2.2.tar.gz) = 282768
+SIZE (cargo/unicode-width-0.2.3.tar.gz) = 209503
 SIZE (cargo/utf8parse-0.2.2.tar.gz) = 13499
 SIZE (cargo/vcpkg-0.2.15.tar.gz) = 228735
 SIZE (cargo/wasi-0.11.1+wasi-snapshot-preview1.tar.gz) = 28477
@@ -245,4 +245,4 @@ SIZE (cargo/windows-sys-0.61.2.tar.gz) = 2517186
 SIZE (cargo/winnow-0.7.15.tar.gz) = 187092
 SIZE (cargo/winnow-1.0.4.tar.gz) = 188513
 SIZE (cargo/yansi-1.0.1.tar.gz) = 75497
-SIZE (git-graph-v0.8.2.tar.gz) = 43246
+SIZE (git-graph-v0.8.3.tar.gz) = 43478
