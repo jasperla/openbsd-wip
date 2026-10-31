@@ -1956,6 +1956,7 @@ share/shotcut/qml/filters/white/ui.qml
 share/shotcut/qml/modules/
 share/shotcut/qml/modules/Shotcut/
 share/shotcut/qml/modules/Shotcut/Controls/
+share/shotcut/qml/modules/Shotcut/Controls/AudioMixingAssistantTag.qml
 share/shotcut/qml/modules/Shotcut/Controls/Button.qml
 share/shotcut/qml/modules/Shotcut/Controls/ChannelMask.qml
 share/shotcut/qml/modules/Shotcut/Controls/ColorPicker.qml
