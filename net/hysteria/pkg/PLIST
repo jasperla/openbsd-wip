@@ -1,0 +1,9 @@
+@newgroup _hysteria:906
+@newuser _hysteria:906:_hysteria::Hysteria user:${LOCALSTATEDIR}/hysteria:/sbin/nologin
+@rcscript ${RCDIR}/hysteria
+@owner _hysteria
+@group _hysteria
+@sample ${LOCALSTATEDIR}/hysteria/
+@owner
+@group
+@bin bin/hysteria
