@@ -1,0 +1,3 @@
+hyprutils is a small C++ library containing utilities used across the
+Hyprland ecosystem, including smart pointers, signals, string utilities,
+and other common data structures.
