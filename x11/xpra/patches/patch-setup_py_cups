@@ -1,0 +1,13 @@
+$OpenBSD$
+
+Index: setup.py
+--- setup.py.orig
++++ setup.py
+@@ -2501,7 +2501,7 @@ class install_data_override(install_data):
+             if printing_ENABLED and POSIX:
+                 # install "/usr/lib/cups/backend" with 0700 permissions:
+                 lib_cups = "lib/cups"
+-                if FREEBSD:
++                if FREEBSD or OPENBSD:
+                     lib_cups = "libexec/cups"
+                 self.copytodir("fs/lib/cups/backend/xpraforwarder", f"{lib_cups}/backend", chmod=0o700)
