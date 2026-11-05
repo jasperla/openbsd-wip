@@ -1,11 +1,8 @@
 COMMENT =	dynamic tiling Wayland compositor
 
-V =		0.57.0
+V =		0.57.1
 DISTNAME =	source-v${V}
 PKGNAME =	hyprland-${V}
-
-# absl_borrowed_fixup_buffer
-# absl_crc_cpu_detect
 
 SITES =		https://github.com/hyprwm/Hyprland/releases/download/v${V}/
 
@@ -44,7 +41,7 @@ WANTLIB += absl_str_format_internal absl_strerror absl_strings
 WANTLIB += absl_strings_internal absl_symbolize absl_synchronization
 WANTLIB += absl_throw_delegate absl_time absl_time_zone absl_tracing_internal
 WANTLIB += absl_utf8_for_code_point absl_vlog_config_internal
-WANTLIB += aquamarine c cairo drm eis epoll-shim ereadline execinfo
+WANTLIB += aquamarine c cairo canberra drm eis epoll-shim ereadline execinfo
 WANTLIB += gbm gio-2.0 glib-2.0 glslang glslang-default-resource-limits
 WANTLIB += gobject-2.0 harfbuzz hyprcursor hyprgraphics hyprlang
 WANTLIB += hyprutils hyprwire input intl lib/inotify/inotify lcms2
@@ -90,6 +87,7 @@ LIB_DEPENDS =	wayland/aquamarine \
 		wayland/hyprwire \
 		wayland/libei \
 		devel/libinotify \
+		audio/libcanberra \
 		${MODLUA_LIB_DEPENDS}
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
