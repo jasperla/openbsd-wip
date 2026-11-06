@@ -1,0 +1,8 @@
+#!/bin/ksh
+
+daemon="${TRUEPREFIX}/bin/transmission-daemon"
+daemon_user="_transmission"
+
+. /etc/rc.d/rc.subr
+
+rc_cmd $1
