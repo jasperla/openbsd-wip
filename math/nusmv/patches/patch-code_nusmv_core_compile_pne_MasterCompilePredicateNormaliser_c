@@ -1,0 +1,12 @@
+Index: code/nusmv/core/compile/pne/MasterCompilePredicateNormaliser.c
+--- code/nusmv/core/compile/pne/MasterCompilePredicateNormaliser.c.orig
++++ code/nusmv/core/compile/pne/MasterCompilePredicateNormaliser.c
+@@ -325,7 +325,7 @@ void master_compile_predicate_normaliser_init(MasterCo
+                "Initializing all the predicate normaliser "
+                "within the given environment...\n");
+   }
+-  SLIST_FOREACH(predicate_normaliser_core_walkers, iter) {
++  _SLIST_FOREACH(predicate_normaliser_core_walkers, iter) {
+     PredicateNormaliserCore_ptr predicate_normaliser_core;
+     pn_core_walker = (PredicateNormaliserCoreWalker_ptr) Siter_element(iter);
+     predicate_normaliser_core =

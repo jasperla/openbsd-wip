@@ -1,0 +1,39 @@
+Index: code/nusmv/core/bmc/bmcTrace.c
+--- code/nusmv/core/bmc/bmcTrace.c.orig
++++ code/nusmv/core/bmc/bmcTrace.c
+@@ -168,7 +168,7 @@ Bmc_fill_trace_from_partial_cnf_model(const BeEnc_ptr 
+      - model variables;
+      - encoding variables (sub formulas, loop variables, ...)
+   */
+-  SLIST_FOREACH(cnf_model, genLiteral) {
++  _SLIST_FOREACH(cnf_model, genLiteral) {
+     int var_idx, ut_index, vtime;
+     node_ptr var, key;
+ 
+@@ -219,7 +219,7 @@ Bmc_fill_trace_from_partial_cnf_model(const BeEnc_ptr 
+                            ? ExprMgr_true(exprs) : ExprMgr_false(exprs));
+     }
+ 
+-  } /* SLIST_FOREACH (phase 1) */
++  } /* _SLIST_FOREACH (phase 1) */
+ 
+   { /* phase 2: iterate over elements of the hash table (i.e. scalar
+       vars) and populate the trace accordingly. */
+@@ -400,7 +400,7 @@ void bmc_trace_utils_append_input_state(Trace_ptr trac
+      - model variables;
+      - encoding variables (sub formulas, loop variables, ...)
+   */
+-  SLIST_FOREACH(cnf_model, genLiteral) {
++  _SLIST_FOREACH(cnf_model, genLiteral) {
+     int var_idx, ut_index, vtime;
+     node_ptr var;
+ 
+@@ -439,7 +439,7 @@ void bmc_trace_utils_append_input_state(Trace_ptr trac
+       insert_assoc(values, var,
+                    (beLiteral >= 0) ? ExprMgr_true(exprs) : ExprMgr_false(exprs));
+     }
+-  } /* SLIST_FOREACH (phase 1) */
++  } /* _SLIST_FOREACH (phase 1) */
+ 
+   { /* phase 2: iterate over elements of the values hash table and
+        populate the trace accordingly. */

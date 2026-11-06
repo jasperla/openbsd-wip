@@ -1,0 +1,21 @@
+Index: code/nusmv/core/hrc/hrcDump.c
+--- code/nusmv/core/hrc/hrcDump.c.orig
++++ code/nusmv/core/hrc/hrcDump.c
+@@ -232,7 +232,7 @@ static void hrc_dump_module_instance(HrcNode_ptr hrcNo
+     info->list_is_empty = Slist_is_empty(rev_child_stack);
+     _DUMP_SNIPPET_BEGIN_INDENT(HDS_LIST_MOD_INSTANCES, dumper, info);
+ 
+-    SLIST_FOREACH (rev_child_stack, iter) {
++    _SLIST_FOREACH (rev_child_stack, iter) {
+       HrcNode_ptr child = HRC_NODE(Siter_element(iter));
+ 
+       info->last_in_list = Siter_is_end(Siter_next(iter));
+@@ -610,7 +610,7 @@ static void hrc_dump_module_instance(HrcNode_ptr hrcNo
+   { /* Recursive creation of child modules. Reversed children stack
+        is used to preserve child definition order. */
+     Siter iter;
+-    SLIST_FOREACH(rev_child_stack, iter) {
++    _SLIST_FOREACH(rev_child_stack, iter) {
+       HrcNode_ptr child;
+       node_ptr assoc_key;
+       node_ptr child_module_name;

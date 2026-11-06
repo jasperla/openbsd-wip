@@ -1,0 +1,19 @@
+Index: scripts/meson-util.py
+--- scripts/meson-util.py.orig
++++ scripts/meson-util.py
+@@ -302,6 +302,7 @@ FORMAT_DEFAULT = {
+     'cygwin' : 'xztar',
+     'darwin' : 'xztar',
+     'linux'  : 'xztar',
++    'openbsd': 'gztar',
+     'windows': 'zip'  ,
+ }
+ 
+@@ -309,6 +310,7 @@ SYSTEMS = {
+     'cygwin' : 'linux64',
+     'darwin' : 'macosx' ,
+     'linux'  : 'linux64',
++    'openbsd': 'openbsd64',
+     'windows': 'win64'  ,
+ }
+ 

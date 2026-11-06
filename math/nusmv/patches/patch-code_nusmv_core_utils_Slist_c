@@ -1,0 +1,12 @@
+Index: code/nusmv/core/utils/Slist.c
+--- code/nusmv/core/utils/Slist.c.orig
++++ code/nusmv/core/utils/Slist.c
+@@ -467,7 +467,7 @@ void Slist_print(Slist_ptr const self,
+   MASTER_PRINTER_CHECK_INSTANCE(wffprint);
+   nusmv_assert(NULL != file);
+ 
+-  SLIST_FOREACH(self, iter) {
++  _SLIST_FOREACH(self, iter) {
+     void* element = Siter_element(iter);
+ 
+     if (NULL == printer) {
