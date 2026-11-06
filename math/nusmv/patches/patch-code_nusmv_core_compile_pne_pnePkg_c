@@ -1,0 +1,21 @@
+Index: code/nusmv/core/compile/pne/pnePkg.c
+--- code/nusmv/core/compile/pne/pnePkg.c.orig
++++ code/nusmv/core/compile/pne/pnePkg.c
+@@ -205,7 +205,7 @@ PnePkg_unregister_predicate_normaliser_walker(NuSMVEnv
+   }
+   //search predicate_normaliser_core_walker in predicate_normaliser_core_walkers Slist in th env
+   //solutions to optimize the following code are welcome
+-  SLIST_FOREACH(predicate_normaliser_core_walkers, iter) {
++  _SLIST_FOREACH(predicate_normaliser_core_walkers, iter) {
+     predicate_normaliser_core_walker = (PredicateNormaliserCoreWalker_ptr) Siter_element(iter);
+     if (strcmp(predicate_normaliser_core_walker->pncw_name, walker_name) == 0) {
+       return Slist_remove(predicate_normaliser_core_walkers, predicate_normaliser_core_walker);
+@@ -358,7 +358,7 @@ PnePkg_unregister_predicate_extractor_walker(NuSMVEnv_
+   }
+   //search predicate_extractor_core_walker in predicate_extractor_core_walkers Slist in th env
+   //solutions to optimize the following code are welcome
+-  SLIST_FOREACH(predicate_extractor_core_walkers, iter) {
++  _SLIST_FOREACH(predicate_extractor_core_walkers, iter) {
+     PredicateExtractorCoreWalker_ptr predicate_extractor_core_walker =
+       (PredicateExtractorCoreWalker_ptr) Siter_element(iter);
+ 

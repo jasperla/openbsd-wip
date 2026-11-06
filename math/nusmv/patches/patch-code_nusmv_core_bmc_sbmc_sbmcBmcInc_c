@@ -1,0 +1,37 @@
+Index: code/nusmv/core/bmc/sbmc/sbmcBmcInc.c
+--- code/nusmv/core/bmc/sbmc/sbmcBmcInc.c.orig
++++ code/nusmv/core/bmc/sbmc/sbmcBmcInc.c
+@@ -1106,7 +1106,7 @@ int Sbmc_zigzag_incr_assume(NuSMVEnv_ptr env,
+     nusmv_assert(NULL != assumptions_cnf);
+ 
+     /* assumptions for atoms */
+-    SLIST_FOREACH(assumptions, iterator) {
++    _SLIST_FOREACH(assumptions, iterator) {
+       node_ptr ass_name;
+       be_ptr ass_be;
+       int ass_ind, ass_lit, ass_cnf;
+@@ -1480,7 +1480,7 @@ int Sbmc_zigzag_incr_assume(NuSMVEnv_ptr env,
+ #ifndef SBMC_HAVENOSIMPLEPATH
+           /* is SimplePath part of the conflict? */
+           sp_in_conflict = false;
+-          SLIST_FOREACH(conflict_cnf, iterator) {
++          _SLIST_FOREACH(conflict_cnf, iterator) {
+             conf_cnflit = PTR_TO_INT(Siter_element(iterator));
+ 
+             if (ass_SimplePath_cnflit == conf_cnflit) {
+@@ -1497,13 +1497,13 @@ int Sbmc_zigzag_incr_assume(NuSMVEnv_ptr env,
+           nusmv_assert(NULL != *conflict);
+ 
+ #ifndef SBMC_HAVENOSIMPLEPATH
+-          SLIST_FOREACH(!sp_in_conflict ?
++          _SLIST_FOREACH(!sp_in_conflict ?
+                         conflict_cnf : assumptions_cnf, iterator) { /*1*/
+             conf_cnflit = PTR_TO_INT(Siter_element(iterator));
+ 
+             if (ass_SimplePath_cnflit != conf_cnflit)
+ #else
+-          SLIST_FOREACH(conflict_cnf, iterator) { /*1*/
++          _SLIST_FOREACH(conflict_cnf, iterator) { /*1*/
+             conf_cnflit = PTR_TO_INT(Siter_element(iterator));
+ #endif
+             { /*2*/

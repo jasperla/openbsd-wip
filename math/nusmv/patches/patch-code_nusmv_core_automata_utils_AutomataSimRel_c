@@ -1,0 +1,21 @@
+Index: code/nusmv/core/automata/utils/AutomataSimRel.c
+--- code/nusmv/core/automata/utils/AutomataSimRel.c.orig
++++ code/nusmv/core/automata/utils/AutomataSimRel.c
+@@ -249,7 +249,7 @@ void AutomataSimRel_insert_bisimilar_list(AutomataSimR
+ 
+   representant_id = AutomataLoc_get_id(representant);
+ 
+-  SLIST_FOREACH(bisimilar_locations, iter1) {
++  _SLIST_FOREACH(bisimilar_locations, iter1) {
+     AutomataLoc_ptr s1;
+     s1 = AUTOMATA_LOC(Siter_element(iter1));
+ 
+@@ -260,7 +260,7 @@ void AutomataSimRel_insert_bisimilar_list(AutomataSimR
+                                   representant);
+ 
+     /* Populates bisimulation relation */
+-    SLIST_FOREACH(bisimilar_locations, iter2) {
++    _SLIST_FOREACH(bisimilar_locations, iter2) {
+       AutomataLoc_ptr s2;
+       s2 = AUTOMATA_LOC(Siter_element(iter2));
+ 
