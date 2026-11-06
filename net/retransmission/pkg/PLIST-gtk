@@ -1,0 +1,25 @@
+@pkgpath net/transmission,-gui
+@bin bin/transmission-gtk
+@man man/man1/transmission-gtk.1
+share/applications/transmission-gtk.desktop
+share/locale/da/LC_MESSAGES/retransmission.mo
+share/locale/es/LC_MESSAGES/retransmission.mo
+share/locale/eu/LC_MESSAGES/retransmission.mo
+share/locale/fi/LC_MESSAGES/retransmission.mo
+share/locale/fr/LC_MESSAGES/retransmission.mo
+share/locale/he/LC_MESSAGES/retransmission.mo
+share/locale/hu/LC_MESSAGES/retransmission.mo
+share/locale/is/LC_MESSAGES/retransmission.mo
+share/locale/ja/LC_MESSAGES/retransmission.mo
+share/locale/nl/LC_MESSAGES/retransmission.mo
+share/locale/pl/LC_MESSAGES/retransmission.mo
+share/locale/ru/LC_MESSAGES/retransmission.mo
+share/locale/sv/LC_MESSAGES/retransmission.mo
+share/locale/tr/LC_MESSAGES/retransmission.mo
+share/locale/uk/LC_MESSAGES/retransmission.mo
+share/locale/zh_CN/LC_MESSAGES/retransmission.mo
+share/locale/zh_TW/LC_MESSAGES/retransmission.mo
+share/metainfo/
+share/metainfo/transmission-gtk.metainfo.xml
+@tag gtk-update-icon-cache %D/share/icons/hicolor
+@tag update-desktop-database

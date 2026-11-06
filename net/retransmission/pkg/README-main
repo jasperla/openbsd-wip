@@ -1,0 +1,15 @@
++-------------------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-------------------------------------------------------------------------------
+
+System resource limits
+======================
+When started from rc.d(8) (i.e. via pkg_scripts in rc.conf.local(5) or
+from "${RCDIR}/transmission_daemon start"), the transmission_daemon process
+runs in the login(1) class of "transmission_daemon".  You may need to adjust
+the limits in /etc/login.conf.d/transmission_daemon to match your needs.
+
+There is also a kernel limit on the number of open file descriptors,
+sysctl kern.maxfiles. In some circumstances you may also need to raise
+this; if this is required, pay particular attention to testing and
+monitoring your system.

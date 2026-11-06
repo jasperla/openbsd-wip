@@ -1,0 +1,5 @@
+CI for pre-release of the retransmission fork of transmission.
+
+Using a nightly tag, with a selected tarball that includes
+third-party submodules.  Due to Project naming conventions,
+DISTFILE and WRKSRC require editing by hand.
