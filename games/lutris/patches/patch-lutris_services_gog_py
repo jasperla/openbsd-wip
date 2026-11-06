@@ -1,0 +1,45 @@
+GOG: default to Windows files, but use innoextract for installation
+
+Index: lutris/services/gog.py
+--- lutris/services/gog.py.orig
++++ lutris/services/gog.py
+@@ -379,8 +379,9 @@ class GOGService(OnlineService):
+         # Prefer native Linux installers if available, otherwise fall back to Windows
+         # (scripts may need Windows installers for data extraction, engine reimplementations, etc.)
+         linux_installers = [installer for installer in gog_installers if installer["os"] == "linux"]
+-        if linux_installers:
+-            gog_installers = linux_installers
++        # OpenBSD: prefer Windows installers over Linux (no linux emulation)
++        #if linux_installers:
++            #gog_installers = linux_installers
+         return [
+             installer
+             for installer in gog_installers
+@@ -577,10 +578,11 @@ class GOGService(OnlineService):
+         details = json.loads(db_game["details"])
+         slug = details["slug"]
+         platforms = [platform.casefold() for platform, is_supported in details["worksOn"].items() if is_supported]
+-        if "linux" in platforms:
+-            return self._generate_installer(slug, "linux", db_game)
+-        else:
+-            return self._generate_installer(slug, "wine", db_game)
++        # OpenBSD: don't default to linux here
++        #if "linux" in platforms:
++            #return self._generate_installer(slug, "linux", db_game)
++        #else:
++        return self._generate_installer(slug, "wine", db_game)
+ 
+     def generate_installers(self, db_game: Dict[str, Any]) -> List[dict]:
+         details = json.loads(db_game["details"])
+@@ -589,8 +591,9 @@ class GOGService(OnlineService):
+ 
+         installers = []
+ 
+-        if "linux" in platforms:
+-            installers.append(self._generate_installer(slug, "linux", db_game))
++        # OpenBSD: don't default to linux here
++        #if "linux" in platforms:
++            #installers.append(self._generate_installer(slug, "linux", db_game))
+ 
+         if "windows" in platforms:
+             installers.append(self._generate_installer(slug, "wine", db_game))

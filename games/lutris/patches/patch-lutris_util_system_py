@@ -1,0 +1,21 @@
+Index: lutris/util/system.py
+--- lutris/util/system.py.orig
++++ lutris/util/system.py
+@@ -2,6 +2,7 @@
+ 
+ import hashlib
+ import os
++import platform
+ import re
+ import shutil
+ import stat
+@@ -607,6 +608,9 @@ def get_locale_list() -> List[str]:
+ 
+ 
+ def get_running_pid_list() -> List[int]:
++    if platform.system() == "OpenBSD":
++        result = subprocess.run(["ps", "-o", "pid"], stdout=subprocess.PIPE).stdout.decode("utf-8")
++        return [int(p) for p in result.splitlines() if p[-1].isdigit()]
+     """Return the list of PIDs from processes currently running"""
+     return [int(p) for p in os.listdir("/proc") if p[0].isdigit()]
+ 

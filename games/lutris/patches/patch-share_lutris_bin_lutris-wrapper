@@ -1,0 +1,23 @@
+we don't have prctl
+
+Index: share/lutris/bin/lutris-wrapper
+--- share/lutris/bin/lutris-wrapper.orig
++++ share/lutris/bin/lutris-wrapper
+@@ -7,6 +7,7 @@ gently tries to close other game processes when the ma
+ import ctypes
+ import logging
+ import os
++import platform
+ import signal
+ import subprocess
+ import sys
+@@ -53,6 +54,9 @@ def set_child_subreaper():
+     Some init(1) frameworks (e.g., systemd(1)) employ a subreaper
+     process for similar reasons.
+     """
++
++    if platform.system() == "OpenBSD":
++        return
+     clib = ctypes.CDLL(find_library('c'))
+     prctl = clib.prctl
+     prctl.restype = ctypes.c_int

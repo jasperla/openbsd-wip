@@ -1,0 +1,12 @@
+Index: lutris/util/magic.py
+--- lutris/util/magic.py.orig
++++ lutris/util/magic.py
+@@ -235,7 +235,7 @@ if not libmagic or not libmagic._name:
+         + glob.glob("/usr/local/Cellar/libmagic/*/lib/libmagic.dylib"),
+         "win32": windows_dlls,
+         "cygwin": windows_dlls,
+-        "linux": ["libmagic.so.1"],
++        "linux": ["libmagic.so"],
+         # fallback for some Linuxes (e.g. Alpine) where library search does not work
+     }
+     platform = "linux" if sys.platform.startswith("linux") else sys.platform

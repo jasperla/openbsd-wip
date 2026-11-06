@@ -1,0 +1,63 @@
+EXPERIMENTAL: use innoextract by default for .exe files (shotgun approach,
+XXX: reduce to a more maintainable single point in the extract algorithm)
+
+Index: lutris/util/extract.py
+--- lutris/util/extract.py.orig
++++ lutris/util/extract.py
+@@ -1,5 +1,6 @@
+ import gzip
+ import os
++import platform
+ import shutil
+ import subprocess
+ import tarfile
+@@ -90,7 +91,7 @@ def _guess_extractor(path):
+     elif path.endswith(".gz"):
+         extractor = "gzip"
+     elif path.endswith(".exe"):
+-        extractor = "exe"
++        extractor = "innoextract"
+     elif path.endswith(".deb"):
+         extractor = "deb"
+     elif path.casefold().endswith(".appimage"):
+@@ -118,7 +119,9 @@ def _get_archive_opener(extractor):
+     elif extractor == "gog":
+         opener = "innoextract"
+     elif extractor == "exe":
+-        opener = "exe"
++        opener = "innoextract"
++    elif extractor == "innoextract":
++        opener = "innoextract"
+     elif extractor == "deb":
+         opener = "deb"
+     elif extractor == "AppImage":
+@@ -139,7 +142,7 @@ def _do_extract(archive: str, dest: str, opener, mode:
+     elif opener == "7zip":
+         _extract_7zip(archive, dest, archive_type=extractor)
+     elif opener == "exe":
+-        _extract_exe(archive, dest)
++        _extract_gog(archive, dest)
+     elif opener == "innoextract":
+         _extract_gog(archive, dest)
+     elif opener == "deb":
+@@ -167,7 +170,10 @@ def _decompress_gz(file_path: str, dest_path: str):
+ 
+ 
+ def _extract_7zip(path: str, dest: str, archive_type: str = None) -> None:
+-    _7zip_path = os.path.join(settings.RUNTIME_DIR, "p7zip/7z")
++    if platform.system() == "OpenBSD":
++        _7zip_path = "/usr/local/bin/7z"
++    else:
++        _7zip_path = os.path.join(settings.RUNTIME_DIR, "p7zip/7z")
+     if not system.path_exists(_7zip_path):
+         _7zip_path = system.find_required_executable("7z")
+     command = [_7zip_path, "x", path, "-o{}".format(dest), "-aoa"]
+@@ -219,6 +225,8 @@ def _decompress_gog(file_path: str, destination_path: 
+ 
+ def _get_innoextract_path() -> str:
+     """Return the path where innoextract is installed"""
++    if platform.system() == "OpenBSD":
++        return "/usr/local/bin/innoextract"
+     inno_dirs = [path for path in os.listdir(settings.RUNTIME_DIR) if path.startswith("innoextract")]
+     for inno_dir in inno_dirs:
+         inno_path = os.path.join(settings.RUNTIME_DIR, inno_dir, "innoextract")

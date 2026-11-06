@@ -1,0 +1,12 @@
+Index: lutris/runners/dolphin.py
+--- lutris/runners/dolphin.py.orig
++++ lutris/runners/dolphin.py
+@@ -16,7 +16,7 @@ class dolphin(Runner):
+     human_name = _("Dolphin")
+     platforms = PLATFORMS
+     require_libs = [
+-        "libOpenGL.so.0",
++        "libOpenGL.so",
+     ]
+     runnable_alone = True
+     runner_executable = "dolphin/Dolphin_Emulator-2512-anylinux-x86_64.AppImage"
