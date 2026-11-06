@@ -441,7 +441,7 @@ SHA256 (cargo/zstd-0.14.0.tar.gz) = vwa9gWKvBzSzRHgN61W0KiQprkMIcNE/zBLyOOiA/m4=
 SHA256 (cargo/zstd-safe-7.3.0.tar.gz) = ZNgGSattudn2+cgKQL7NlI7aRxSgpayMTRV6MiMceII=
 SHA256 (cargo/zstd-safe-8.0.0.tar.gz) = rkLAVVBVeExwBY0Zuo4nVSjoqZpwZoSGis5dpOcWpKs=
 SHA256 (cargo/zstd-sys-2.1.0+zstd.1.5.7.tar.gz) = DvCoAn7D7nEwCrO8vNA5P0NKpyuRym1jWjmUHero7qA=
-SHA256 (pyrefly-1.4.0.tar.gz) = SRzvOn2vMCgjPOmh8is2vOUmcPKYSFWfmYxP1s8rS2E=
+SHA256 (pyrefly-1.4.1.tar.gz) = nukUeJJyf/CijVz8GPE0QPjSZ/oBghO/W5e+/yQts+Y=
 SHA256 (rust-lang-backtrace-rs-df979dcf80027eb047d7bb9e0874710c15009f31.tar.gz) = RpaM0sUNmpkWscyaKTYjEAoim3yRhpeDIip/f/R78rE=
 SIZE (cargo/addr2line-0.25.1.tar.gz) = 43134
 SIZE (cargo/adler2-2.0.1.tar.gz) = 13366
@@ -886,5 +886,5 @@ SIZE (cargo/zstd-0.14.0.tar.gz) = 33824
 SIZE (cargo/zstd-safe-7.3.0.tar.gz) = 26367
 SIZE (cargo/zstd-safe-8.0.0.tar.gz) = 29475
 SIZE (cargo/zstd-sys-2.1.0+zstd.1.5.7.tar.gz) = 781981
-SIZE (pyrefly-1.4.0.tar.gz) = 31847853
+SIZE (pyrefly-1.4.1.tar.gz) = 31856585
 SIZE (rust-lang-backtrace-rs-df979dcf80027eb047d7bb9e0874710c15009f31.tar.gz) = 99194
