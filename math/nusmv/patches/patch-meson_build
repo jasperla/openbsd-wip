@@ -1,0 +1,13 @@
+Index: meson.build
+--- meson.build.orig
++++ meson.build
+@@ -76,7 +76,8 @@ linux   = host_machine.system() == 'linux'
+ cygwin  = host_machine.system() == 'cygwin'
+ darwin  = host_machine.system() == 'darwin'
+ windows = host_machine.system() == 'windows'
+-unix    = linux or cygwin or darwin
++openbsd = host_machine.system() == 'openbsd'
++unix    = linux or cygwin or darwin or openbsd
+ 
+ ## C
+ cc = meson.get_compiler('c')

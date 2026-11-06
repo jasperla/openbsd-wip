@@ -1,0 +1,165 @@
+Index: code/nusmv/core/automata/Automaton.c
+--- code/nusmv/core/automata/Automaton.c.orig
++++ code/nusmv/core/automata/Automaton.c
+@@ -322,12 +322,12 @@ Automaton_build_predecessors_list(Automaton_ptr self)
+ 
+   predecessors = AutomataPredecessorsList_create(ABSTRACT_AUTOMATON(self)->location_count);
+ 
+-  SLIST_FOREACH(AbstractAutomaton_get_location_list(ABSTRACT_AUTOMATON(self)), location_siter) {
++  _SLIST_FOREACH(AbstractAutomaton_get_location_list(ABSTRACT_AUTOMATON(self)), location_siter) {
+     Siter trans_siter;
+     AutomataLoc_ptr location;
+ 
+     location = AUTOMATA_LOC(Siter_element(location_siter));
+-    SLIST_FOREACH(AutomataLoc_get_transitions(location), trans_siter) {
++    _SLIST_FOREACH(AutomataLoc_get_transitions(location), trans_siter) {
+       AutomataTransition_ptr trans;
+       AutomataLoc_ptr end_location;
+ 
+@@ -1006,7 +1006,7 @@ void Automaton_print_xmi(const Automaton_ptr self,
+   Automaton_compute_all_trans_source_location(self, trans2source);
+ 
+   /* Print the locations */
+-  SLIST_FOREACH(AbstractAutomaton_get_location_list(ABSTRACT_AUTOMATON(self)), siter_locations) {
++  _SLIST_FOREACH(AbstractAutomaton_get_location_list(ABSTRACT_AUTOMATON(self)), siter_locations) {
+     location = Siter_element(siter_locations);
+ 
+     /* compute name */
+@@ -1030,7 +1030,7 @@ void Automaton_print_xmi(const Automaton_ptr self,
+       outgoing_buffer = (char*)NULL;
+       buffer_size = 0;
+ 
+-      SLIST_FOREACH(AutomataLoc_get_transitions(location), siter) {
++      _SLIST_FOREACH(AutomataLoc_get_transitions(location), siter) {
+         trans = Siter_element(siter);
+ 
+         trans_id = NODE_TO_INT(find_assoc(trans_ptr2id_hash, NODE_PTR(trans)));
+@@ -1068,7 +1068,7 @@ void Automaton_print_xmi(const Automaton_ptr self,
+       incoming_buffer = (char*)NULL;
+       buffer_size = 0;
+ 
+-      SLIST_FOREACH(AutomataPredecessorsList_get_predecessor(predecessors,
++      _SLIST_FOREACH(AutomataPredecessorsList_get_predecessor(predecessors,
+                                                              location),
+                     siter) {
+         location_predecessor = Siter_element(siter);
+@@ -1231,12 +1231,12 @@ Automaton_compute_all_trans_source_location(Automaton_
+ {
+   Siter location_siter;
+ 
+-  SLIST_FOREACH(AbstractAutomaton_get_location_list(ABSTRACT_AUTOMATON(self)), location_siter) {
++  _SLIST_FOREACH(AbstractAutomaton_get_location_list(ABSTRACT_AUTOMATON(self)), location_siter) {
+     Siter trans_siter;
+     AutomataLoc_ptr location;
+ 
+     location = AUTOMATA_LOC(Siter_element(location_siter));
+-    SLIST_FOREACH(AutomataLoc_get_transitions(location), trans_siter) {
++    _SLIST_FOREACH(AutomataLoc_get_transitions(location), trans_siter) {
+       AutomataTransition_ptr trans;
+ 
+       trans = AUTOMATA_TRANSITION(Siter_element(trans_siter));
+@@ -1907,7 +1907,7 @@ Automaton_ptr automaton_kleene_plus(AutomataManager_pt
+ 
+         init_out_trans = AutomataLoc_get_transitions(Automaton_get_unique_init_loc(res_automaton));
+ 
+-        SLIST_FOREACH(init_out_trans, init_trans_iter) {
++        _SLIST_FOREACH(init_out_trans, init_trans_iter) {
+           AutomataTransition_ptr out_trans;
+           AutomataLoc_ptr dest_location;
+           AutomataLabel_ptr trans_label;
+@@ -2628,7 +2628,7 @@ Automaton_ptr automaton_prune_non_accepting_paths(Auto
+       automaton_mark_predecessors(s1, predecessors, reach_accepting);
+     }
+ 
+-    SLIST_FOREACH(AutomataLoc_get_transitions(s1), trans_iter) {
++    _SLIST_FOREACH(AutomataLoc_get_transitions(s1), trans_iter) {
+       AutomataTransition_ptr s1_trans;
+       AutomataLoc_ptr s1_dest;
+       int s1_dest_id;
+@@ -2834,7 +2834,7 @@ void automaton_new_transition(AutomataManager_ptr mana
+   /* Find src and dst location by id */
+   src_location = AUTOMATA_LOC(Nil);
+   dst_location = AUTOMATA_LOC(Nil);
+-  SLIST_FOREACH(ABSTRACT_AUTOMATON(A)->locations, iter) {
++  _SLIST_FOREACH(ABSTRACT_AUTOMATON(A)->locations, iter) {
+     AutomataLoc_ptr location;
+ 
+     location = AUTOMATA_LOC(Siter_element(iter));
+@@ -3129,7 +3129,7 @@ static Automaton_ptr automaton_copy_accepting_loc(Auto
+                                                           ExprMgr_false(exprs));
+       }
+ 
+-      SLIST_FOREACH(AutomataLoc_get_transitions(s1), trans_iter) {
++      _SLIST_FOREACH(AutomataLoc_get_transitions(s1), trans_iter) {
+         AutomataTransition_ptr s1_trans;
+         AutomataLoc_ptr s1_dest;
+         int s1_dest_id;
+@@ -4690,7 +4690,7 @@ automaton_mark_predecessors(AutomataLoc_ptr location,
+   predecessors = AutomataPredecessorsList_get_predecessor(predecessors_lists,
+                                                           location);
+ 
+-  SLIST_FOREACH(predecessors, iterator) {
++  _SLIST_FOREACH(predecessors, iterator) {
+     AutomataLoc_ptr predecessor;
+ 
+     predecessor = Siter_element(iterator);
+@@ -4721,7 +4721,7 @@ static void automaton_merge_transitions(Automaton_ptr 
+ {
+   Siter iter;
+ 
+-  SLIST_FOREACH(ABSTRACT_AUTOMATON(automaton)->locations, iter) {
++  _SLIST_FOREACH(ABSTRACT_AUTOMATON(automaton)->locations, iter) {
+     AutomataLoc_ptr location;
+ 
+     location = AUTOMATA_LOC(Siter_element(iter));
+@@ -4855,12 +4855,12 @@ static boolean automaton_compute_simrel_lists(Automata
+ 
+   is_sim_rel_changed = false;
+ 
+-  SLIST_FOREACH(locations_list, iter_b) {
++  _SLIST_FOREACH(locations_list, iter_b) {
+     Siter iter_a;
+     AutomataLoc_ptr location_b;
+     location_b = AUTOMATA_LOC(Siter_element(iter_b));
+ 
+-    SLIST_FOREACH(locations_list, iter_a) {
++    _SLIST_FOREACH(locations_list, iter_a) {
+       boolean a_sim_b;
+       AutomataLoc_ptr location_a;
+ 
+@@ -4878,7 +4878,7 @@ static boolean automaton_compute_simrel_lists(Automata
+            AutomataSimRel_has_key(sim_rel, location_a, location_b)) {
+         Siter trans_iter_b;
+ 
+-        SLIST_FOREACH(AutomataLoc_get_transitions(location_b), trans_iter_b) {
++        _SLIST_FOREACH(AutomataLoc_get_transitions(location_b), trans_iter_b) {
+           Siter trans_iter_a;
+           AutomataTransition_ptr trans_b;
+           AutomataLoc_ptr dest_location_b;
+@@ -4891,7 +4891,7 @@ static boolean automaton_compute_simrel_lists(Automata
+ 
+           found_true_label_a = false;
+ 
+-          SLIST_FOREACH(AutomataLoc_get_transitions(location_a),
++          _SLIST_FOREACH(AutomataLoc_get_transitions(location_a),
+                         trans_iter_a) {
+             AutomataTransition_ptr trans_a;
+             AutomataLoc_ptr dest_location_a;
+@@ -5002,7 +5002,7 @@ static void automaton_compute_simrel_preprocess(Automa
+   non_final_rep= AUTOMATA_LOC(Nil);
+ 
+   /* Finds location with no outgoing transitions */
+-  SLIST_FOREACH(ABSTRACT_AUTOMATON(self)->locations, iter) {
++  _SLIST_FOREACH(ABSTRACT_AUTOMATON(self)->locations, iter) {
+     AutomataLoc_ptr location;
+ 
+     location = AUTOMATA_LOC(Siter_element(iter));
+@@ -5113,7 +5113,7 @@ automaton_reduce_using_sim_rel(AutomataManager_ptr man
+                                         self,
+                                         representative);
+ 
+-    SLIST_FOREACH(AutomataLoc_get_transitions(representative),
++    _SLIST_FOREACH(AutomataLoc_get_transitions(representative),
+                   trans_iter) {
+       AutomataLoc_ptr dest_location;
+       AutomataLoc_ptr res_dest_location;
