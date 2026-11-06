@@ -1,0 +1,18 @@
+include/hyprgraphics/
+include/hyprgraphics/cairo/
+include/hyprgraphics/cairo/CairoSurface.hpp
+include/hyprgraphics/color/
+include/hyprgraphics/color/Color.hpp
+include/hyprgraphics/egl/
+include/hyprgraphics/egl/Egl.hpp
+include/hyprgraphics/image/
+include/hyprgraphics/image/Image.hpp
+include/hyprgraphics/resource/
+include/hyprgraphics/resource/AsyncResourceGatherer.hpp
+include/hyprgraphics/resource/resources/
+include/hyprgraphics/resource/resources/AsyncResource.hpp
+include/hyprgraphics/resource/resources/ImageResource.hpp
+include/hyprgraphics/resource/resources/StaticImageResource.hpp
+include/hyprgraphics/resource/resources/TextResource.hpp
+@lib lib/libhyprgraphics.so.${LIBhyprgraphics_VERSION}
+lib/pkgconfig/hyprgraphics.pc

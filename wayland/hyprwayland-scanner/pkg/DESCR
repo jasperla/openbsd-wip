@@ -1,0 +1,2 @@
+hyprwayland-scanner is a replacement for wayland-scanner, written in C++,
+used to generate C++ protocol bindings from Wayland XML protocol definitions.

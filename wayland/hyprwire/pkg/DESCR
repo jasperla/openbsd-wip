@@ -1,0 +1,3 @@
+hyprwire is an IPC library and protocol scanner for the Hyprland
+ecosystem. It provides tools and C++ bindings for implementing typed
+interprocess communication between Hyprland components.
