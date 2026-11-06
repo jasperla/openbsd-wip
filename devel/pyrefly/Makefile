@@ -1,6 +1,6 @@
 COMMENT =	fast type checker and language server for Python
 
-VERSION =	1.4.0
+VERSION =	1.4.1
 
 DISTNAME =	pyrefly-${VERSION}
 
@@ -22,6 +22,11 @@ MAINTAINER =	Laurent Cheylus <foxy@free.fr>
 # MIT
 PERMIT_PACKAGE=	Yes
 
+# Fix WRKSRC and WRKDIST
+# Errors with DIST_TUPLE for backtrace-rs if not set
+WRKSRC=${WRKDIR}/pyrefly-${VERSION}
+WRKDIST=${WRKSRC}
+
 WANTLIB =	${MODCARGO_WANTLIB} m zstd
 
 BUILD_DEPENDS+=	archivers/zstd
@@ -40,8 +45,8 @@ do-build:
 		--manifest-path ${WRKSRC}/pyrefly/Cargo.toml \
 		--release ${MODCARGO_BUILD_ARGS}
 
-# Tests results for v1.3.2
-# test result: FAILED. 8487 passed; 2 failed; 3 ignored; 0 measured; 0 filtered out; finished in 1182.22s
+# Tests results for v1.4.1
+# test result: FAILED. 9194 passed; 2 failed; 3 ignored; 0 measured; 0 filtered out; finished in 880.37s
 # failures:
 # test::lsp::lsp_interaction::diagnostic::test_missing_source_for_stubs_diagnostic
 # test::lsp::lsp_interaction::diagnostic::test_missing_source_with_config_diagnostic_has_errors
