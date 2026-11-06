@@ -1,0 +1,12 @@
+Index: lutris/util/graphics/vkquery.py
+--- lutris/util/graphics/vkquery.py.orig
++++ lutris/util/graphics/vkquery.py
+@@ -385,7 +385,7 @@ def _get_vk_instance():
+ 
+ 
+ def _get_vulkan():
+-    vulkan = CDLL("libvulkan.so.1")
++    vulkan = CDLL("libvulkan.so")
+ 
+     # Provide function signatures; this is required on platforms where var-args are
+     # passed in some other way than normal args, and is safer in general.

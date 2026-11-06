@@ -1,0 +1,23 @@
+disable esync and fsync by default
+(esync needs a ridiculous openfiles limit to work)
+
+Index: lutris/runners/wine.py
+--- lutris/runners/wine.py.orig
++++ lutris/runners/wine.py
+@@ -458,7 +458,7 @@ class wine(Runner):
+             "type": "bool",
+             "warning": _get_esync_warning,
+             "active": True,
+-            "default": True,
++            "default": False,
+             "help": _(
+                 "Enable eventfd-based synchronization (esync). "
+                 "This will increase performance in applications "
+@@ -472,6 +472,7 @@ class wine(Runner):
+             "default": is_fsync_supported(),
+             "warning": _get_fsync_warning,
+             "active": True,
++            "default": False,
+             "help": _(
+                 "Enable futex-based synchronization (fsync). "
+                 "This will increase performance in applications "

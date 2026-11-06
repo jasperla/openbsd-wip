@@ -1,0 +1,23 @@
+autosetup_gog_game: extract exe files with innoextract because the
+32bit installers can't run in 64bit-only wine
+
+Index: lutris/installer/commands.py
+--- lutris/installer/commands.py.orig
++++ lutris/installer/commands.py
+@@ -4,6 +4,7 @@ import glob
+ import json
+ import multiprocessing
+ import os
++import platform
+ import shlex
+ import shutil
+ from gettext import gettext as _
+@@ -627,6 +628,8 @@ class CommandsMixin:
+             self.installer.script["game"] = arguments
+             self.installer.runner = "scummvm"
+         else:
++            if platform.system() == "OpenBSD":
++                return self._extract_innosetup(file_id)
+             args = "/SP- /NOCANCEL"
+             if silent:
+                 args += " /SUPPRESSMSGBOXES /VERYSILENT /NOGUI"

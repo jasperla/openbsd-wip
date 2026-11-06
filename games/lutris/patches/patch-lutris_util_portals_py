@@ -1,0 +1,21 @@
+Index: lutris/util/portals.py
+--- lutris/util/portals.py.orig
++++ lutris/util/portals.py
+@@ -1,4 +1,5 @@
+ import os
++import platform
+ from gettext import gettext as _
+ from typing import Callable, Iterable, Optional
+ 
+@@ -50,7 +51,10 @@ class TrashPortal(GObject.Object):
+             fds_in = Gio.UnixFDList.new()
+ 
+             for file_path in self.file_paths:
+-                flags = os.O_RDONLY | os.O_PATH | os.O_CLOEXEC
++                if platform.system() == "OpenBSD":
++                    flags = os.O_RDONLY | os.O_CLOEXEC
++                else:
++                    flags = os.O_RDONLY | os.O_PATH | os.O_CLOEXEC
+                 # You'd think you could use O_NOFOLLOW for any file, but
+                 # I find TrashFile fails. We don't want to trash the link target
+                 # in any case.

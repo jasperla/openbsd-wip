@@ -1,0 +1,14 @@
+disable automatic updates
+
+Index: lutris/gui/config/updates_box.py
+--- lutris/gui/config/updates_box.py.orig
++++ lutris/gui/config/updates_box.py
+@@ -24,7 +24,7 @@ class UpdatesBox(BaseConfigBox):
+         update_runtime_box = self.get_setting_box(
+             "auto_update_runtime",
+             _("Automatically Update the Lutris runtime"),
+-            default=True,
++            default=False,
+             extra_widget=self.update_runtime_box,
+         )
+         self.pack_start(self._get_framed_options_list_box([update_runtime_box]), False, False, 0)
