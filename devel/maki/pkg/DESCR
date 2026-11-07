@@ -1,0 +1,4 @@
+Maki is a terminal coding agent written in Rust, built bottom up to spend as few
+tokens as possible without getting dumber. Point it at a repo, pick a provider,
+and it reads, searches, edits, and runs code for you.
+
