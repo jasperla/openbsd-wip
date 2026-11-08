@@ -38,8 +38,6 @@ CONFIGURE_STYLE =	cargo
 
 SEPARATE_BUILD=	Yes
 
-# NO_TEST =	Yes
-
 .include "crates.inc"
 
 .include <bsd.port.mk>
