@@ -9,13 +9,16 @@ Index: server/process.h
  #include "object.h"
  
  struct atom_table;
-@@ -90,6 +91,9 @@ struct process
+@@ -90,6 +91,12 @@ struct process
      struct list          rawinput_entry;  /* entry in the rawinput process list */
      struct list          kernel_object;   /* list of kernel object pointers */
      struct pe_image_info image_info;      /* main exe image info */
 +#ifdef __OpenBSD__
 +    uint64_t            *signal_targets;  /* pending (signal, Unix tid) pairs */
 +#endif
++    struct thread       *apc_thread;      /* system APC worker, while alive */
++    struct list          system_apc;      /* system APCs awaiting the worker */
++    int                  apc_shutdown;    /* reject work once APC dispatch is stopping */
  };
  
  /* process functions */

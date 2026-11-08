@@ -1,27 +1,85 @@
-Patches
-- Review OpenBSD patches, especially %gs stubs and thread signals.
-- Explore LEA + short %gs instruction patching for mimalloc/bun performance.
-
 Features to investigate
-- Executable path discovery (getexecpath): tools/tools.h, loader/main.c,
-  server/unicode.c.
-- Thread CPU times (get_thread_times): dlls/ntdll/unix/thread.c.
-- CPU performance and power information: SystemProcessorPerformanceInformation,
-  IdleTime, HW_CPUSPEED and /dev/apm in dlls/ntdll/unix/system.c.
-- Process information: review libprocstat-based code and OpenBSD KERN_PROC
-  equivalents in dlls/ntdll/process.c and server/process.c.
-- FAT filesystem handling (msdos/msdosfs): dlls/ntdll/unix/file.c.
-- Removable device detection (is_device_removable): server/fd.c.
-- Serial port discovery (/dev/cua* and /dev/cuau*): dlls/mountmgr.sys/unixlib.c.
-- Native sndio audio backend.
+- Native sndio backend
+- Thread/process CPU times and memory counters.
+  make retest TEST_SUITES='ntdll:info kernel32:thread'
+- CPU accounting, frequency and power.
+  make retest TEST_SUITES='ntdll:info kernel32:power'
+- XSAVE/XSTATE and CPU contexts.
+  make retest TEST_SUITES='ntdll:exception'
+- Hardware debug-register support.
+  make retest TEST_SUITES='ntdll:exception'
+- Partial NtWriteVirtualMemory copies.
+  make retest TEST_SUITES='kernel32:virtual'
+- Working-set information (QueryWorkingSetEx).
+  make retest TEST_SUITES='psapi:psapi_main'
+- WOW64 registry views.
+  make retest TEST_SUITES='advapi32:registry msi:action msi:install'
+- FAT case sensitivity (needs a FAT-backed Wine temp directory).
+  make retest TEST_SUITES='ntdll:directory kernel32:file'
+- Persistent DOS attributes without xattrs.
+  make retest TEST_SUITES='ntdll:directory ntdll:file scrrun:filesystem'
+- Directory reparse points, junctions and custom tags.
+  make retest TEST_SUITES='kernel32:file ntdll:file cmd.exe:batch'
+- Removable devices (smoke tests need mapped removable media).
+  make retest TEST_SUITES='kernel32:drive kernel32:volume'
+- Serial port discovery (tests need an accessible COM port).
+  make retest TEST_SUITES='kernel32:comm'
+- IPv6 routes and source selection.
+  make retest TEST_SUITES='iphlpapi:iphlpapi'
+- TCP socket reuse and UDP disconnection.
+  make retest TEST_SUITES='ntoskrnl.exe:ntoskrnl ws2_32:sock'
+- IPv4-mapped IPv6 and dual-stack sockets.
+  make retest TEST_SUITES='ws2_32:sock'
+- Winsock options and multicast reception.
+  make retest TEST_SUITES='ws2_32:sock wsdapi:discovery'
+- Kerberos/GSSAPI via Heimdal.
+  make retest TEST_SUITES='secur32:secur32'
+- LEA + short %gs patching for mimalloc/bun (functional baseline, no benchmark)
 
 Testing & fixes
 - Broaden testing beyond games.
-- Investigate tests failures and hangs.
-- Fix signal handler reentrancy issues.
+- Investigate test failures and hangs.
+- Run tests on a desktop using a dedicated user
+
+Failing tests to diagnose
+- crypt32:chain # certificate chain checks
+- dmusic:dmusic
+- dxgi:dxgi
+- kernel32:change
+- kernel32:loader
+- ntdll:change
+- ntdll:exception
+- ntdll:file
+- ntdll:pipe
+- ntoskrnl.exe:ntoskrnl
+- opengl32:opengl # timeout: 900s
+- quartz:mpegvideo # unexpected todo_wine success
+- user32:input # racy: mouse history
+- user32:msg # unexpected todo_wine success
+- user32:sysparams # native Xvfb mode at 0 Hz
+- win32u:d3dkmt
+- ws2_32:afd
+- ws2_32:protocol # unexpected todo_wine success
+- ws2_32:sock # timeout: 900s
+- wsdapi:address
+- wsdapi:discovery
+
+Missing features only
+- cmd.exe:batch
+- iphlpapi:iphlpapi
+- kernel32:file
+- kernel32:virtual
+- msi:action
+- msi:install
+- msvcp120:msvcp120
+- msvcp140:msvcp140
+- ntdll:directory
+- ntdll:info
+- psapi:psapi_main
+- scrrun:filesystem
+- secur32:secur32 # Kerberos disabled
 
 Packaging and maintenance
 - Move Gecko/Mono to SUPDISTFILES; preserve test fetching and checksums.
   Or reconsider keeping tests.
-- Use an LLVM headers package instead of the full source archive.
 - Continue co-maintenance with Andrii Yukhymchak (NethIafin).

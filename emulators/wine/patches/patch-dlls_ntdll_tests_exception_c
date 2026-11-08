@@ -1,0 +1,56 @@
+Skip WOW64 exception tests without their 32-bit helpers; validate other
+creation failures before using handles. Skip direct syscalls on OpenBSD
+to avoid its pinsyscalls restrictions.
+
+Index: dlls/ntdll/tests/exception.c
+--- dlls/ntdll/tests/exception.c.orig
++++ dlls/ntdll/tests/exception.c
+@@ -4632,7 +4632,13 @@ static void test_wow64_context(void)
+ 
+     sprintf( cmdline, "\"%s\" /c for /l %%n in () do @echo >nul", appname );
+     r = CreateProcessA( appname, cmdline, NULL, NULL, FALSE, CREATE_SUSPENDED, NULL, NULL, &si, &pi);
++    if (!r && GetLastError() == ERROR_FILE_NOT_FOUND)
++    {
++        skip("32-bit cmd.exe is not installed\n");
++        return;
++    }
+     ok( r, "failed to start %s err %lu\n", appname, GetLastError() );
++    if (!r) return;
+ 
+     ret = pRtlWow64GetThreadContext( pi.hThread, &ctx );
+     ok(ret == STATUS_SUCCESS, "got %#lx\n", ret);
+@@ -6189,7 +6195,20 @@ static void test_direct_syscalls(void)
+ 
+     HANDLE event;
+     NTSTATUS (WINAPI *func)(UINT32 syscall_nr, HANDLE h, LONG *prev_state);
++    void (CDECL *p_wine_get_host_version)(const char **, const char **);
++    const char *sysname;
+ 
++    p_wine_get_host_version = (void *)GetProcAddress(hntdll, "wine_get_host_version");
++    if (p_wine_get_host_version)
++    {
++        p_wine_get_host_version(&sysname, NULL);
++        if (!strcmp(sysname, "OpenBSD"))
++        {
++            skip("Direct syscalls are blocked by pinsyscalls(2) on OpenBSD.\n");
++            return;
++        }
++    }
++
+     event = CreateEventW(NULL, FALSE, FALSE, NULL);
+     memcpy(code_mem, code, sizeof(code));
+     func = code_mem;
+@@ -9350,7 +9369,13 @@ static void test_debug_registers_wow64(void)
+ 
+     si.cb = sizeof(si);
+     bret = CreateProcessA(cmdline, NULL, NULL, NULL, FALSE, 0, NULL, NULL, &si, &pi);
++    if (!bret && GetLastError() == ERROR_FILE_NOT_FOUND)
++    {
++        skip("32-bit msinfo32.exe is not installed\n");
++        return;
++    }
+     ok(bret, "CreateProcessA failed\n");
++    if (!bret) return;
+ 
+     bret = pIsWow64Process(pi.hProcess, &is_wow64);
+     ok(bret && is_wow64, "expected Wow64 process\n");

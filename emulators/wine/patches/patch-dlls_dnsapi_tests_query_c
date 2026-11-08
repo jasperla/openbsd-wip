@@ -1,0 +1,472 @@
+Initialize DNS query outputs and validate records and server counts before
+using them; free unexpected results to avoid secondary test crashes.
+
+Index: dlls/dnsapi/tests/query.c
+--- dlls/dnsapi/tests/query.c.orig
++++ dlls/dnsapi/tests/query.c
+@@ -67,43 +67,63 @@ static void test_DnsQuery(void)
+     DNS_STATUS status;
+ 
+     /* IP in name. */
++    rec = NULL;
+     status = DnsQuery_W(L" 192.168.111.11", DNS_TYPE_A, 0, NULL, &rec, NULL);
+     ok(status == DNS_ERROR_INVALID_NAME_CHAR, "got %lu.\n", status);
++    if (status == ERROR_SUCCESS && rec)
++        DnsRecordListFree(rec, DnsFreeRecordList);
++
++    rec = NULL;
+     status = DnsQuery_W(L"192.168.111.11 ", DNS_TYPE_A, 0, NULL, &rec, NULL);
+     ok(status == DNS_ERROR_INVALID_NAME_CHAR, "got %lu.\n", status);
++    if (status == ERROR_SUCCESS && rec)
++        DnsRecordListFree(rec, DnsFreeRecordList);
+ 
++    rec = NULL;
+     status = DnsQuery_W(L"192.168.111.11", DNS_TYPE_A, 0, NULL, &rec, NULL);
+-    ok(!status, "got %lu.\n", status);
+-    ok(rec->wType == DNS_TYPE_A, "got %u.\n", rec->wType);
+-    ok(rec->wDataLength == sizeof(rec->Data.A), "got %u.\n", rec->wDataLength);
+-    ok(rec->Data.A.IpAddress == 0x0b6fa8c0, "got %#lx.\n", rec->Data.A.IpAddress);
+-    ok(!rec->pNext, "got %p.\n", rec->pNext);
+-    ok(rec->dwTtl == 604800, "got %lu.\n", rec->dwTtl);
+-    ok(!wcscmp(rec->pName, L"192.168.111.11"), "got %s.\n", debugstr_w(rec->pName));
+-    ok(!rec->Flags.S.Section, "got %u.\n", rec->Flags.S.Section);
+-    ok(!rec->Flags.S.Delete, "got %u.\n", rec->Flags.S.Delete);
+-    ok(rec->Flags.S.CharSet == DnsCharSetUnicode, "got %u.\n", rec->Flags.S.CharSet);
+-    ok(!rec->Flags.S.Unused, "got %u.\n", rec->Flags.S.Unused);
+-    ok(rec->Flags.S.Reserved == 0x20, "got %u.\n", rec->Flags.S.Reserved);
+-    DnsRecordListFree(rec, DnsFreeRecordList);
++    ok(!status && rec, "got %lu, record %p.\n", status, rec);
++    if (!status && rec)
++    {
++        ok(rec->wType == DNS_TYPE_A, "got %u.\n", rec->wType);
++        ok(rec->wDataLength == sizeof(rec->Data.A), "got %u.\n", rec->wDataLength);
++        ok(rec->Data.A.IpAddress == 0x0b6fa8c0, "got %#lx.\n", rec->Data.A.IpAddress);
++        ok(!rec->pNext, "got %p.\n", rec->pNext);
++        ok(rec->dwTtl == 604800, "got %lu.\n", rec->dwTtl);
++        ok(!wcscmp(rec->pName, L"192.168.111.11"), "got %s.\n", debugstr_w(rec->pName));
++        ok(!rec->Flags.S.Section, "got %u.\n", rec->Flags.S.Section);
++        ok(!rec->Flags.S.Delete, "got %u.\n", rec->Flags.S.Delete);
++        ok(rec->Flags.S.CharSet == DnsCharSetUnicode, "got %u.\n", rec->Flags.S.CharSet);
++        ok(!rec->Flags.S.Unused, "got %u.\n", rec->Flags.S.Unused);
++        ok(rec->Flags.S.Reserved == 0x20, "got %u.\n", rec->Flags.S.Reserved);
++        DnsRecordListFree(rec, DnsFreeRecordList);
++    }
+ 
++    rec = NULL;
+     status = DnsQuery_W(L"2001:db8:3333:4444:5555:6666:7777:8888", DNS_TYPE_AAAA, 0, NULL, &rec, NULL);
+-    ok(!status, "got %lu.\n", status);
+-    ok(rec->wType == DNS_TYPE_AAAA, "got %u.\n", rec->wType);
+-    ok(rec->wDataLength == sizeof(rec->Data.AAAA), "got %u.\n", rec->wDataLength);
+-    ok(rec->Data.AAAA.Ip6Address.IP6Dword[0] == 0xb80d0120, "got %#lx.\n", rec->Data.AAAA.Ip6Address.IP6Dword[0]);
+-    ok(rec->Data.AAAA.Ip6Address.IP6Dword[1] == 0x44443333, "got %#lx.\n", rec->Data.AAAA.Ip6Address.IP6Dword[1]);
+-    ok(rec->Data.AAAA.Ip6Address.IP6Dword[2] == 0x66665555, "got %#lx.\n", rec->Data.AAAA.Ip6Address.IP6Dword[2]);
+-    ok(rec->Data.AAAA.Ip6Address.IP6Dword[3] == 0x88887777, "got %#lx.\n", rec->Data.AAAA.Ip6Address.IP6Dword[3]);
+-    ok(!rec->pNext, "got %p.\n", rec->pNext);
+-    ok(rec->dwTtl == 604800, "got %lu.\n", rec->dwTtl);
+-    ok(!wcscmp(rec->pName, L"2001:db8:3333:4444:5555:6666:7777:8888"), "got %s.\n", debugstr_w(rec->pName));
+-    ok(!rec->Flags.S.Section, "got %u.\n", rec->Flags.S.Section);
+-    ok(!rec->Flags.S.Delete, "got %u.\n", rec->Flags.S.Delete);
+-    ok(rec->Flags.S.CharSet == DnsCharSetUnicode, "got %u.\n", rec->Flags.S.CharSet);
+-    ok(!rec->Flags.S.Unused, "got %u.\n", rec->Flags.S.Unused);
+-    ok(rec->Flags.S.Reserved == 0x20, "got %u.\n", rec->Flags.S.Reserved);
+-    DnsRecordListFree(rec, DnsFreeRecordList);
++    ok(!status && rec, "got %lu, record %p.\n", status, rec);
++    if (!status && rec)
++    {
++        ok(rec->wType == DNS_TYPE_AAAA, "got %u.\n", rec->wType);
++        ok(rec->wDataLength == sizeof(rec->Data.AAAA), "got %u.\n", rec->wDataLength);
++        ok(rec->Data.AAAA.Ip6Address.IP6Dword[0] == 0xb80d0120, "got %#lx.\n",
++            rec->Data.AAAA.Ip6Address.IP6Dword[0]);
++        ok(rec->Data.AAAA.Ip6Address.IP6Dword[1] == 0x44443333, "got %#lx.\n",
++            rec->Data.AAAA.Ip6Address.IP6Dword[1]);
++        ok(rec->Data.AAAA.Ip6Address.IP6Dword[2] == 0x66665555, "got %#lx.\n",
++            rec->Data.AAAA.Ip6Address.IP6Dword[2]);
++        ok(rec->Data.AAAA.Ip6Address.IP6Dword[3] == 0x88887777, "got %#lx.\n",
++            rec->Data.AAAA.Ip6Address.IP6Dword[3]);
++        ok(!rec->pNext, "got %p.\n", rec->pNext);
++        ok(rec->dwTtl == 604800, "got %lu.\n", rec->dwTtl);
++        ok(!wcscmp(rec->pName, L"2001:db8:3333:4444:5555:6666:7777:8888"), "got %s.\n",
++            debugstr_w(rec->pName));
++        ok(!rec->Flags.S.Section, "got %u.\n", rec->Flags.S.Section);
++        ok(!rec->Flags.S.Delete, "got %u.\n", rec->Flags.S.Delete);
++        ok(rec->Flags.S.CharSet == DnsCharSetUnicode, "got %u.\n", rec->Flags.S.CharSet);
++        ok(!rec->Flags.S.Unused, "got %u.\n", rec->Flags.S.Unused);
++        ok(rec->Flags.S.Reserved == 0x20, "got %u.\n", rec->Flags.S.Reserved);
++        DnsRecordListFree(rec, DnsFreeRecordList);
++    }
+ 
+     rec = NULL;
+     status = DnsQuery_W(L"winehq.org", DNS_TYPE_A, DNS_QUERY_STANDARD, NULL, &rec, NULL);
+@@ -112,8 +132,9 @@ static void test_DnsQuery(void)
+         skip("query timed out\n");
+         return;
+     }
+-    ok(status == ERROR_SUCCESS, "got %ld\n", status);
+-    DnsRecordListFree(rec, DnsFreeRecordList);
++    ok(status == ERROR_SUCCESS && rec, "got %ld, record %p\n", status, rec);
++    if (status == ERROR_SUCCESS && rec)
++        DnsRecordListFree(rec, DnsFreeRecordList);
+ 
+     /* Show that DNS_TYPE_A returns CNAMEs too */
+     rec = NULL;
+@@ -124,38 +145,47 @@ static void test_DnsQuery(void)
+         skip("query timed out\n");
+         return;
+     }
+-    ok(status == ERROR_SUCCESS, "got %ld\n", status);
+-    if (status == ERROR_SUCCESS && winetest_debug > 1)
++    ok(status == ERROR_SUCCESS && rec, "got %ld, record %p\n", status, rec);
++    if (status == ERROR_SUCCESS && rec && winetest_debug > 1)
+     {
+         trace("DnsQuery DNS_TYPE_A:\n");
+         dump_dns_records(rec);
+     }
+ 
+-    ptr = rec; /* CNAMEs come first */
+-    ok(!wcscmp(domain, ptr->pName), "expected record name %s, got %s\n", wine_dbgstr_w(domain), wine_dbgstr_w(ptr->pName));
+-    ok(DNS_TYPE_CNAME == ptr->wType, "expected record type %u, got %u\n", DNS_TYPE_CNAME, ptr->wType);
+-    ok(ptr->wDataLength == sizeof(ptr->Data.CNAME), "got %u.\n", ptr->wDataLength);
+-    wcscpy(domain, L"test.winehq.org");
+-    if (ptr->wType == DNS_TYPE_CNAME)
+-        ok(!wcscmp(domain, ptr->Data.CNAME.pNameHost), "expected CNAME target %s, got %s\n", wine_dbgstr_w(domain),
+-           wine_dbgstr_w(ptr->Data.CNAME.pNameHost));
+-    ptr = ptr->pNext;
+-
+-    ok(!wcscmp(domain, ptr->pName), "expected record name %s, got %s\n", wine_dbgstr_w(domain), wine_dbgstr_w(ptr->pName));
+-    ok(DNS_TYPE_A == ptr->wType, "expected record type %u, got %u\n", DNS_TYPE_A, ptr->wType);
+-    ptr = ptr->pNext;
+-
+-    while (ptr)
++    if (status == ERROR_SUCCESS && rec)
+     {
+-        ok(wcscmp(domain, ptr->pName), "did not expect a record for %s\n",
+-           wine_dbgstr_w(ptr->pName));
+-        ok(ptr->wType == DNS_TYPE_A || ptr->wType == DNS_TYPE_AAAA || ptr->wType == DNS_TYPE_OPT,
+-           "unexpected record type %u\n", ptr->wType);
++        ptr = rec; /* CNAMEs come first */
++        ok(!wcscmp(domain, ptr->pName), "expected record name %s, got %s\n",
++            wine_dbgstr_w(domain), wine_dbgstr_w(ptr->pName));
++        ok(DNS_TYPE_CNAME == ptr->wType, "expected record type %u, got %u\n",
++            DNS_TYPE_CNAME, ptr->wType);
++        ok(ptr->wDataLength == sizeof(ptr->Data.CNAME), "got %u.\n", ptr->wDataLength);
++        wcscpy(domain, L"test.winehq.org");
++        if (ptr->wType == DNS_TYPE_CNAME)
++            ok(!wcscmp(domain, ptr->Data.CNAME.pNameHost), "expected CNAME target %s, got %s\n",
++                wine_dbgstr_w(domain), wine_dbgstr_w(ptr->Data.CNAME.pNameHost));
+         ptr = ptr->pNext;
++        ok(!!ptr, "expected an A record after the CNAME\n");
++        if (ptr)
++        {
++            ok(!wcscmp(domain, ptr->pName), "expected record name %s, got %s\n",
++                wine_dbgstr_w(domain), wine_dbgstr_w(ptr->pName));
++            ok(DNS_TYPE_A == ptr->wType, "expected record type %u, got %u\n",
++                DNS_TYPE_A, ptr->wType);
++            ptr = ptr->pNext;
++
++            while (ptr)
++            {
++                ok(wcscmp(domain, ptr->pName), "did not expect a record for %s\n",
++                    wine_dbgstr_w(ptr->pName));
++                ok(ptr->wType == DNS_TYPE_A || ptr->wType == DNS_TYPE_AAAA ||
++                    ptr->wType == DNS_TYPE_OPT, "unexpected record type %u\n", ptr->wType);
++                ptr = ptr->pNext;
++            }
++        }
++        DnsRecordListFree(rec, DnsFreeRecordList);
+     }
+ 
+-    DnsRecordListFree(rec, DnsFreeRecordList);
+-
+     /* DNS_TYPE_CNAME does not return a record for its target but it may still
+      * return other related records!
+      */
+@@ -172,65 +202,94 @@ static void test_DnsQuery(void)
+         skip("no CNAME records\n");
+         return;
+     }
+-    ok(status == ERROR_SUCCESS, "got %ld\n", status);
+-    if (status == ERROR_SUCCESS && winetest_debug > 1)
++    ok(status == ERROR_SUCCESS && rec, "got %ld, record %p\n", status, rec);
++    if (status == ERROR_SUCCESS && rec && winetest_debug > 1)
+     {
+         trace("DnsQuery DNS_TYPE_CNAME:\n");
+         dump_dns_records(rec);
+     }
+ 
+-    ptr = rec;
+-    ok(!wcscmp(domain, ptr->pName), "expected record name %s, got %s\n", wine_dbgstr_w(domain), wine_dbgstr_w(ptr->pName));
+-    ok(DNS_TYPE_CNAME == ptr->wType, "expected record type %u, got %u\n", DNS_TYPE_CNAME, ptr->wType);
+-    wcscpy(domain, L"test.winehq.org");
+-    if (ptr->wType == DNS_TYPE_CNAME)
+-        ok(!wcscmp(domain, ptr->Data.CNAME.pNameHost), "expected CNAME target %s, got %s\n", wine_dbgstr_w(domain), wine_dbgstr_w(ptr->Data.CNAME.pNameHost));
+-    DnsRecordListFree(rec, DnsFreeRecordList);
++    if (status == ERROR_SUCCESS && rec)
++    {
++        ptr = rec;
++        ok(!wcscmp(domain, ptr->pName), "expected record name %s, got %s\n",
++            wine_dbgstr_w(domain), wine_dbgstr_w(ptr->pName));
++        ok(DNS_TYPE_CNAME == ptr->wType, "expected record type %u, got %u\n",
++            DNS_TYPE_CNAME, ptr->wType);
++        wcscpy(domain, L"test.winehq.org");
++        if (ptr->wType == DNS_TYPE_CNAME)
++            ok(!wcscmp(domain, ptr->Data.CNAME.pNameHost), "expected CNAME target %s, got %s\n",
++                wine_dbgstr_w(domain), wine_dbgstr_w(ptr->Data.CNAME.pNameHost));
++        DnsRecordListFree(rec, DnsFreeRecordList);
++    }
+ 
++    rec = NULL;
+     status = DnsQuery_W(L"winehq.org", DNS_TYPE_MX, DNS_QUERY_STANDARD, NULL, &rec, NULL);
+-    ok(!status, "got %lu.\n", status);
+-    ok(rec->wType == DNS_TYPE_MX, "got %u.\n", rec->wType);
+-    ok(rec->wDataLength == sizeof(rec->Data.MX), "got %u.\n", rec->wDataLength);
+-    DnsRecordListFree(rec, DnsFreeRecordList);
++    ok(!status && rec, "got %lu, record %p.\n", status, rec);
++    if (!status && rec)
++    {
++        ok(rec->wType == DNS_TYPE_MX, "got %u.\n", rec->wType);
++        ok(rec->wDataLength == sizeof(rec->Data.MX), "got %u.\n", rec->wDataLength);
++        DnsRecordListFree(rec, DnsFreeRecordList);
++    }
+ 
+     size = sizeof(name);
+     status = DnsQueryConfig( DnsConfigHostName_W, 0, NULL, NULL, name, &size );
+     ok(status == ERROR_SUCCESS, "got %ld\n", status );
+ 
+-    status = DnsQuery_W(name, DNS_TYPE_A, DNS_QUERY_STANDARD, NULL, &rec, NULL);
+-    ok(!status, "got %lu\n", status);
+-    if (rec->wType == DNS_TYPE_CNAME)
++    if (status == ERROR_SUCCESS)
+     {
+-        ok(!wcsicmp(name, rec->pName), "got %s\n", wine_dbgstr_w(rec->pName));
+-        ok(rec->pNext->wType == DNS_TYPE_A, "got %u\n", rec->pNext->wType);
++        rec = NULL;
++        status = DnsQuery_W(name, DNS_TYPE_A, DNS_QUERY_STANDARD, NULL, &rec, NULL);
++        ok(!status && rec, "got %lu, record %p\n", status, rec);
++        if (!status && rec)
++        {
++            if (rec->wType == DNS_TYPE_CNAME)
++            {
++                ok(!wcsicmp(name, rec->pName), "got %s\n", wine_dbgstr_w(rec->pName));
++                ok(!!rec->pNext, "expected an A record after the CNAME\n");
++                if (rec->pNext)
++                    ok(rec->pNext->wType == DNS_TYPE_A, "got %u\n", rec->pNext->wType);
++            }
++            else if (rec->wType == DNS_TYPE_A)
++            {
++                ok(!wcsicmp(name, rec->pName), "got %s\n", wine_dbgstr_w(rec->pName));
++                ok(!rec->pNext, "got another record\n");
++            }
++            else
++                ok(0, "unexpected type %u\n", rec->wType);
++            DnsRecordListFree(rec, DnsFreeRecordList);
++        }
+     }
+-    else if (rec->wType == DNS_TYPE_A)
+-    {
+-        ok(!wcsicmp(name, rec->pName), "got %s\n", wine_dbgstr_w(rec->pName));
+-        ok(!rec->pNext, "got another record\n");
+-    }
+-    else ok(0, "unexpected type %u\n", rec->wType);
+-    DnsRecordListFree(rec, DnsFreeRecordList);
+ 
++    rec = NULL;
+     status = DnsQuery_W(L"", DNS_TYPE_SRV, DNS_QUERY_STANDARD, NULL, &rec, NULL);
+     ok(status == DNS_ERROR_RCODE_NAME_ERROR || status == DNS_INFO_NO_RECORDS || status == ERROR_INVALID_NAME /* XP */,
+        "got %ld\n", status);
++    if (status == ERROR_SUCCESS && rec)
++        DnsRecordListFree(rec, DnsFreeRecordList);
+ 
+     wcscpy(domain, L"_ldap._tcp.deadbeef");
++    rec = NULL;
+     status = DnsQuery_W(domain, DNS_TYPE_SRV, DNS_QUERY_STANDARD, NULL, &rec, NULL);
+     ok(status == DNS_ERROR_RCODE_NAME_ERROR || status == DNS_INFO_NO_RECORDS || status == ERROR_INVALID_NAME /* XP */,
+        "got %ld\n", status);
++    if (status == ERROR_SUCCESS && rec)
++        DnsRecordListFree(rec, DnsFreeRecordList);
+ 
+     wcscpy(domain, L"_ldap._tcp.dc._msdcs.");
+     size = ARRAY_SIZE(domain) - wcslen(domain);
+     ret = GetComputerNameExW(ComputerNameDnsDomain, domain + wcslen(domain), &size);
+     ok(ret, "GetComputerNameEx error %lu\n", GetLastError());
++    if (!ret)
++        return;
+     if (!size)
+     {
+         skip("computer is not in a domain\n");
+         return;
+     }
+ 
++    rec = NULL;
+     status = DnsQuery_W(domain, DNS_TYPE_SRV, DNS_QUERY_STANDARD, NULL, &rec, NULL);
+     trace("DnsQuery_W(%s) => %ld\n", wine_dbgstr_w(domain), status);
+     if (status != ERROR_SUCCESS)
+@@ -238,6 +297,9 @@ static void test_DnsQuery(void)
+         skip("domain %s doesn't have an SRV entry\n", wine_dbgstr_w(domain));
+         return;
+     }
++    ok(!!rec, "expected an SRV record\n");
++    if (!rec)
++        return;
+ 
+     trace("target %s, port %d\n", wine_dbgstr_w(rec->Data.Srv.pNameTarget), rec->Data.Srv.wPort);
+ 
+@@ -245,10 +307,14 @@ static void test_DnsQuery(void)
+     DnsRecordListFree(rec, DnsFreeRecordList);
+ 
+     /* IPv4 */
++    rec = NULL;
+     status = DnsQuery_W(name, DNS_TYPE_A, DNS_QUERY_STANDARD, NULL, &rec, NULL);
+     ok(status == ERROR_SUCCESS || status == DNS_ERROR_RCODE_NAME_ERROR, "DnsQuery_W(%s) => %ld\n",
+        wine_dbgstr_w(name), status);
+     if (status == ERROR_SUCCESS)
++        ok(!!rec, "expected an A record\n");
++
++    if (status == ERROR_SUCCESS && rec)
+     {
+         SOCKADDR_IN addr;
+         WCHAR buf[IP4_ADDRESS_STRING_LENGTH];
+@@ -265,10 +331,14 @@ static void test_DnsQuery(void)
+     }
+ 
+     /* IPv6 */
++    rec = NULL;
+     status = DnsQuery_W(name, DNS_TYPE_AAAA, DNS_QUERY_STANDARD, NULL, &rec, NULL);
+     ok(status == ERROR_SUCCESS || status == DNS_ERROR_RCODE_NAME_ERROR, "DnsQuery_W(%s) => %ld\n",
+        wine_dbgstr_w(name), status);
+     if (status == ERROR_SUCCESS)
++        ok(!!rec, "expected an AAAA record\n");
++
++    if (status == ERROR_SUCCESS && rec)
+     {
+         SOCKADDR_IN6 addr;
+         WCHAR buf[IP6_ADDRESS_STRING_LENGTH];
+@@ -306,7 +376,7 @@ static IP_ADAPTER_ADDRESSES *get_adapters(void)
+ static void test_DnsQueryConfig( void )
+ {
+     DNS_STATUS err;
+-    DWORD size, i, ipv6_count;
++    DWORD size, i, ipv4_count, ipv4a_count, ipv6_count;
+     WCHAR name[MAX_ADAPTER_NAME_LENGTH + 1];
+     IP_ADAPTER_ADDRESSES *adapters, *ptr;
+     DNS_ADDR_ARRAY *ipv4, *ipv6, *unspec;
+@@ -321,42 +391,59 @@ static void test_DnsQueryConfig( void )
+ 
+         size = 0;
+         err = DnsQueryConfig( DnsConfigDnsServersIpv4, 0, name, NULL, NULL, &size );
+-        if (err) continue;
+-        ipv4 = malloc( size );
+-        size--;
+-        err = DnsQueryConfig( DnsConfigDnsServersIpv4, 0, name, NULL, ipv4, &size );
+-        ok( err == ERROR_MORE_DATA, "got %ld\n", err );
+-        size++;
+-        err = DnsQueryConfig( DnsConfigDnsServersIpv4, 0, name, NULL, ipv4, &size );
+-        ok( !err, "got %ld\n", err );
++        ipv4_count = 0;
++        ipv4 = NULL;
++        if (!err)
++        {
++            ipv4 = malloc( size );
++            size--;
++            err = DnsQueryConfig( DnsConfigDnsServersIpv4, 0, name, NULL, ipv4, &size );
++            ok( err == ERROR_MORE_DATA, "got %ld\n", err );
++            size++;
++            err = DnsQueryConfig( DnsConfigDnsServersIpv4, 0, name, NULL, ipv4, &size );
++            ok( !err, "got %ld\n", err );
++        }
++        if (!err)
++        {
++            ok( ipv4->AddrCount == ipv4->MaxCount, "got %lu vs %lu\n",
++                ipv4->AddrCount, ipv4->MaxCount );
++            ok( !ipv4->Tag, "got %#lx\n", ipv4->Tag );
++            ok( !ipv4->Family, "got %d\n", ipv4->Family );
++            ok( !ipv4->WordReserved, "got %#x\n", ipv4->WordReserved );
++            ok( !ipv4->Flags, "got %#lx\n", ipv4->Flags );
++            ok( !ipv4->MatchFlag, "got %#lx\n", ipv4->MatchFlag );
++            ok( !ipv4->Reserved1, "got %#lx\n", ipv4->Reserved1 );
++            ok( !ipv4->Reserved2, "got %#lx\n", ipv4->Reserved2 );
++            ipv4_count = ipv4->AddrCount;
++        }
+ 
+-        ok( ipv4->AddrCount == ipv4->MaxCount, "got %lu vs %lu\n", ipv4->AddrCount, ipv4->MaxCount );
+-        ok( !ipv4->Tag, "got %#lx\n", ipv4->Tag );
+-        ok( !ipv4->Family, "got %d\n", ipv4->Family );
+-        ok( !ipv4->WordReserved, "got %#x\n", ipv4->WordReserved );
+-        ok( !ipv4->Flags, "got %#lx\n", ipv4->Flags );
+-        ok( !ipv4->MatchFlag, "got %#lx\n", ipv4->MatchFlag );
+-        ok( !ipv4->Reserved1, "got %#lx\n", ipv4->Reserved1 );
+-        ok( !ipv4->Reserved2, "got %#lx\n", ipv4->Reserved2 );
+-
+         size = 0;
+         err = DnsQueryConfig( DnsConfigDnsServerList, 0, name, NULL, NULL, &size );
+         ok( !err, "got %ld\n", err );
+-        ip4_array = malloc( size );
+-        err = DnsQueryConfig( DnsConfigDnsServerList, 0, name, NULL, ip4_array, &size );
+-        ok( !err, "got %ld\n", err );
++        ipv4a_count = 0;
++        ip4_array = NULL;
++        if (!err)
++        {
++            ip4_array = malloc( size );
++            err = DnsQueryConfig( DnsConfigDnsServerList, 0, name, NULL, ip4_array, &size );
++            ok( !err, "got %ld\n", err );
++            if (!err)
++                ipv4a_count = ip4_array->AddrCount;
++        }
+ 
+-        ok( ipv4->AddrCount == ip4_array->AddrCount, "got %lu vs %lu\n", ipv4->AddrCount, ip4_array->AddrCount );
++        ok( ipv4_count == ipv4a_count, "got %lu vs %lu\n", ipv4_count, ipv4a_count );
+ 
+-        for (i = 0; i < ipv4->AddrCount; i++)
++        if (ipv4 && ip4_array && ipv4_count == ipv4a_count)
+         {
+-            SOCKADDR_IN *sa = (SOCKADDR_IN *)ipv4->AddrArray[i].MaxSa;
+-
+-            ok( sa->sin_family == AF_INET, "got %d\n", sa->sin_family );
+-            ok( sa->sin_addr.s_addr == ip4_array->AddrArray[i], "got %#lx vs %#lx\n",
+-                sa->sin_addr.s_addr, ip4_array->AddrArray[i] );
+-            ok( ipv4->AddrArray[i].Data.DnsAddrUserDword[0] == sizeof(*sa), "got %lu\n",
+-                ipv4->AddrArray[i].Data.DnsAddrUserDword[0] );
++            for (i = 0; i < ipv4_count; i++)
++            {
++                SOCKADDR_IN *sa = (SOCKADDR_IN *)ipv4->AddrArray[i].MaxSa;
++                ok( sa->sin_family == AF_INET, "got %d\n", sa->sin_family );
++                ok( sa->sin_addr.s_addr == ip4_array->AddrArray[i], "got %#lx vs %#lx\n",
++                    sa->sin_addr.s_addr, ip4_array->AddrArray[i] );
++                ok( ipv4->AddrArray[i].Data.DnsAddrUserDword[0] == sizeof(*sa), "got %lu\n",
++                    ipv4->AddrArray[i].Data.DnsAddrUserDword[0] );
++            }
+         }
+ 
+         size = 0;
+@@ -369,18 +456,24 @@ static void test_DnsQueryConfig( void )
+             ipv6 = malloc( size );
+             err = DnsQueryConfig( DnsConfigDnsServersIpv6, 0, name, NULL, ipv6, &size );
+             ok( !err, "got %ld\n", err );
+-            ipv6_count = ipv6->AddrCount;
++            if (!err)
++                ipv6_count = ipv6->AddrCount;
+         }
+ 
+         size = 0;
+         err = DnsQueryConfig( DnsConfigDnsServersUnspec, 0, name, NULL, NULL, &size );
+         ok( !err, "got %ld\n", err );
+-        unspec = malloc( size );
+-        err = DnsQueryConfig( DnsConfigDnsServersUnspec, 0, name, NULL, unspec, &size );
+-        ok( !err, "got %ld\n", err );
+-
+-        ok( unspec->AddrCount == ipv4->AddrCount + ipv6_count, "got %lu vs %lu + %lu\n",
+-            unspec->AddrCount, ipv4->AddrCount, ipv6_count );
++        unspec = NULL;
++        if (!err)
++        {
++            unspec = malloc( size );
++            err = DnsQueryConfig( DnsConfigDnsServersUnspec, 0, name, NULL, unspec, &size );
++            ok( !err, "got %ld\n", err );
++            if (!err)
++                ok( unspec->AddrCount == ipv4_count + ipv6_count,
++                    "got %lu vs %lu + %lu\n",
++                    unspec->AddrCount, ipv4_count, ipv6_count );
++        }
+ 
+         free( ip4_array );
+         free( unspec );

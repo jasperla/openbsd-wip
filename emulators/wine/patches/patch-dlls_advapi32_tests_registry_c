@@ -1,0 +1,24 @@
+Delete only the test's Wine subkeys to preserve shared Interface parents.
+
+Index: dlls/advapi32/tests/registry.c
+--- dlls/advapi32/tests/registry.c.orig
++++ dlls/advapi32/tests/registry.c
+@@ -3142,10 +3142,6 @@ static void test_redirection(void)
+     RegDeleteKeyA( key64, "" );
+     RegCloseKey( key64 );
+ 
+-    RegDeleteKeyA( root64, "" );
+-    RegDeleteKeyA( root32, "" );
+-    RegDeleteKeyA( root, "" );
+-
+     RegCloseKey( root64 );
+     RegCloseKey( root32 );
+     RegCloseKey( root );
+@@ -3206,7 +3202,6 @@ static void test_redirection(void)
+     RegDeleteKeyA( key64, "" );
+     RegCloseKey( key64 );
+ 
+-    RegDeleteKeyA( root, "" );
+     RegCloseKey( root );
+ 
+     err = RegCreateKeyExA( root64, "Wine", 0, NULL, 0,

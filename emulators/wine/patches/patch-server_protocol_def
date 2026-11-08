@@ -39,3 +39,19 @@ Index: server/protocol.def
  };
  
  enum irp_type
+@@ -1216,6 +1231,7 @@ typedef volatile struct
+     int          wait_fd;      /* fd for blocking calls pipe */
+     client_ptr_t teb;          /* TEB of new thread (in thread address space) */
+     client_ptr_t entry;        /* entry point (in thread address space) */
++    int          is_apc_worker;/* is this the system APC worker? */
+ @REPLY
+     int          suspend;      /* is thread suspended? */
+ @END
+@@ -1495,6 +1511,7 @@ typedef volatile struct
+ #define SELECT_ALERTABLE           1
+ #define SELECT_INTERRUPTIBLE       2
+ #define SELECT_COOPERATIVE_SUSPEND 4
++#define SELECT_SYSTEM              8
+ 
+ 
+ /* Create an event */

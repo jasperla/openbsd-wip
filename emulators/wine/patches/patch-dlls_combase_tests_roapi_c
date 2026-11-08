@@ -1,0 +1,67 @@
+Pump STA messages until agile-reference workers exit, allowing callbacks
+and preventing premature object release.
+
+Index: dlls/combase/tests/roapi.c
+--- dlls/combase/tests/roapi.c.orig
++++ dlls/combase/tests/roapi.c
+@@ -39,21 +39,18 @@ static void _expect_ref(IUnknown* obj, ULONG ref, int 
+     ok_(__FILE__,line)(rc == ref, "expected refcount %ld, got %ld\n", ref, rc);
+ }
+ 
+-static void flush_events(void)
++static DWORD wait_for_thread(HANDLE thread)
+ {
+-    int diff = 200;
+-    DWORD time;
++    DWORD ret;
+     MSG msg;
+ 
+-    time = GetTickCount() + diff;
+-    while (diff > 0)
++    /* Keep dispatching apartment calls until the worker exits. */
++    while ((ret = MsgWaitForMultipleObjects(1, &thread, FALSE, INFINITE, QS_ALLINPUT)) == WAIT_OBJECT_0 + 1)
+     {
+-        if (MsgWaitForMultipleObjects(0, NULL, FALSE, 100, QS_ALLINPUT) == WAIT_TIMEOUT)
+-            break;
+         while (PeekMessageA(&msg, 0, 0, 0, PM_REMOVE))
+             DispatchMessageA(&msg);
+-        diff = time - GetTickCount();
+     }
++    return ret;
+ }
+ 
+ static void load_resource(const WCHAR *filename)
+@@ -770,9 +767,8 @@ static void test_RoGetAgileReference(void)
+                 param.unk_obj = &unk_obj.IUnknown_iface;
+                 param.obj_is_agile = FALSE;
+                 thread = CreateThread(NULL, 0, test_RoGetAgileReference_thread_proc, &param, 0, NULL);
+-                flush_events();
+-                ret = WaitForSingleObject(thread, 100);
+-                ok(!ret, "WaitForSingleObject failed, error %ld.\n", GetLastError());
++                ret = wait_for_thread(thread);
++                ok(!ret, "MsgWaitForMultipleObjects failed, error %ld.\n", GetLastError());
+             }
+ 
+             IUnknown_Release(unknown2);
+@@ -801,9 +797,8 @@ static void test_RoGetAgileReference(void)
+                 param.unk_obj = &unk_agile_obj.IUnknown_iface;
+                 param.obj_is_agile = TRUE;
+                 thread = CreateThread(NULL, 0, test_RoGetAgileReference_thread_proc, &param, 0, NULL);
+-                flush_events();
+-                ret = WaitForSingleObject(thread, 100);
+-                ok(!ret, "WaitForSingleObject failed, error %ld.\n", GetLastError());
++                ret = wait_for_thread(thread);
++                ok(!ret, "MsgWaitForMultipleObjects failed, error %ld.\n", GetLastError());
+             }
+ 
+             IUnknown_Release(unknown);
+@@ -837,8 +832,7 @@ static void test_RoGetAgileReference(void)
+             winetest_push_context("to_type=%d", to_type);
+             unk_ctx_impl->todo = TRUE;
+             thread = CreateThread(NULL, 0, test_agile_resolve_context, &params, 0, NULL);
+-            flush_events();
+-            ret = WaitForSingleObject(thread, INFINITE);
++            ret = wait_for_thread(thread);
+             ok(!ret, "got ret %lu\n", ret);
+             CloseHandle(thread);
+             unk_ctx_impl->todo = FALSE;

@@ -1,0 +1,47 @@
+Locate OpenBSD's loader mapping with dl_iterate_phdr() and PT_PHDR.
+Assume the main executable is the first object.
+
+Index: dlls/ntdll/unix/loader.c
+--- dlls/ntdll/unix/loader.c.orig
++++ dlls/ntdll/unix/loader.c
+@@ -1818,7 +1818,28 @@ static void load_wow64_ntdll( USHORT machine )
+ }
+ 
+ 
++#ifdef __OpenBSD__
+ /***********************************************************************
++ *           get_image_address_callback
++ */
++static int get_image_address_callback( struct dl_phdr_info *info, size_t size, void *data )
++{
++    ULONG_PTR *addr = data;
++    unsigned int i;
++
++    for (i = 0; i < info->dlpi_phnum; i++)
++    {
++        if (info->dlpi_phdr[i].p_type != PT_PHDR) continue;
++        *addr = (ULONG_PTR)info->dlpi_phdr - info->dlpi_phdr[i].p_offset;
++        break;
++    }
++
++    /* The main executable is the first object on OpenBSD. */
++    return 1;
++}
++#endif
++
++/***********************************************************************
+  *           get_image_address
+  */
+ static ULONG_PTR get_image_address(void)
+@@ -1836,6 +1857,11 @@ static ULONG_PTR get_image_address(void)
+         if (phdr->p_type == PT_PHDR) return phdr_addr - phdr->p_offset;
+         phdr = (ElfW(Phdr) *)((char *)phdr + size);
+     }
++#elif defined(__OpenBSD__)
++    ULONG_PTR addr = 0;
++
++    dl_iterate_phdr( get_image_address_callback, &addr );
++    return addr;
+ #elif defined(__APPLE__) && defined(TASK_DYLD_INFO)
+     struct task_dyld_info dyld_info;
+     mach_msg_type_number_t size = TASK_DYLD_INFO_COUNT;

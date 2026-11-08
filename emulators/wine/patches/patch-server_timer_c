@@ -1,0 +1,12 @@
+Index: server/timer.c
+--- server/timer.c.orig
++++ server/timer.c
+@@ -134,7 +134,7 @@ static int cancel_timer( struct timer *timer )
+     }
+     if (timer->thread)
+     {
+-        thread_cancel_apc( timer->thread, &timer->obj, APC_USER );
++        thread_cancel_user_apc( timer->thread, &timer->obj );
+         release_object( timer->thread );
+         timer->thread = NULL;
+     }

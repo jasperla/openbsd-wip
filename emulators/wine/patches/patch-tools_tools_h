@@ -3,7 +3,7 @@ getexecpath
 Index: tools/tools.h
 --- tools/tools.h.orig
 +++ tools/tools.h
-@@ -778,6 +778,14 @@ static inline char *get_bindir( const char *argv0 )
+@@ -780,6 +780,14 @@ static inline char *get_bindir( const char *argv0 )
  #if defined(__linux__) || defined(__FreeBSD_kernel__) || defined(__NetBSD__) \
          || defined(__CYGWIN__) || defined(__MSYS__)
      dir = realpath( "/proc/self/exe", NULL );

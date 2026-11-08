@@ -1,0 +1,16 @@
+Define STATUS_SYSTEM_APC for system APC dispatch, separate from the
+STATUS_KERNEL_APC async I/O path.
+
+Index: include/winternl.h
+--- include/winternl.h.orig
++++ include/winternl.h
+@@ -4102,6 +4102,9 @@ typedef struct _RTL_PROCESS_MODULE_INFORMATION_EX
+ 
+ #ifdef __WINESRC__
+ 
++/* Wine-specific status code: bit 0x20000000; never returned to applications. */
++#define STATUS_SYSTEM_APC        0x20000001
++
+ /* Wine-specific exceptions codes */
+ 
+ #define EXCEPTION_WINE_STUB       0x80000100  /* stub entry point called */

@@ -1,0 +1,15 @@
+Skip MapVirtualKeyW for virtual key zero in the DirectInput < 8 fallback
+to avoid shifting legacy keyboard enumeration.
+
+Index: dlls/dinput/keyboard.c
+--- dlls/dinput/keyboard.c.orig
++++ dlls/dinput/keyboard.c
+@@ -49,7 +49,7 @@ static inline struct keyboard *impl_from_IDirectInputD
+ 
+ static BYTE map_dik_code(DWORD scanCode, DWORD vkCode, DWORD subType, DWORD version)
+ {
+-    if (!scanCode && version < 0x0800)
++    if (!scanCode && vkCode && version < 0x0800)
+         scanCode = MapVirtualKeyW(vkCode, MAPVK_VK_TO_VSC);
+ 
+     if (subType == DIDEVTYPEKEYBOARD_JAPAN106)

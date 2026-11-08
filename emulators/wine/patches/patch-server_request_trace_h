@@ -1,0 +1,27 @@
+Index: server/request_trace.h
+--- server/request_trace.h.orig
++++ server/request_trace.h
+@@ -165,6 +165,7 @@ static void dump_init_thread_request( const struct ini
+     fprintf( stderr, ", wait_fd=%d", req->wait_fd );
+     dump_uint64( ", teb=", &req->teb );
+     dump_uint64( ", entry=", &req->entry );
++    fprintf( stderr, ", is_apc_worker=%d", req->is_apc_worker );
+ }
+ 
+ static void dump_init_thread_reply( const struct init_thread_reply *req )
+@@ -4566,6 +4567,7 @@ static const struct
+     { "INVALID_USER_BUFFER",         STATUS_INVALID_USER_BUFFER },
+     { "IO_REPARSE_DATA_INVALID",     STATUS_IO_REPARSE_DATA_INVALID },
+     { "IO_REPARSE_TAG_INVALID",      STATUS_IO_REPARSE_TAG_INVALID },
++    { "IO_REPARSE_TAG_MISMATCH",     STATUS_IO_REPARSE_TAG_MISMATCH },
+     { "IO_TIMEOUT",                  STATUS_IO_TIMEOUT },
+     { "KERNEL_APC",                  STATUS_KERNEL_APC },
+     { "KEY_DELETED",                 STATUS_KEY_DELETED },
+@@ -4623,6 +4625,7 @@ static const struct
+     { "SHARING_VIOLATION",           STATUS_SHARING_VIOLATION },
+     { "SHUTDOWN_IN_PROGRESS",        STATUS_SHUTDOWN_IN_PROGRESS },
+     { "SUSPEND_COUNT_EXCEEDED",      STATUS_SUSPEND_COUNT_EXCEEDED },
++    { "SYSTEM_APC",                  STATUS_SYSTEM_APC },
+     { "THREAD_IS_TERMINATING",       STATUS_THREAD_IS_TERMINATING },
+     { "THREAD_WAS_SUSPENDED",        STATUS_THREAD_WAS_SUSPENDED },
+     { "TIMEOUT",                     STATUS_TIMEOUT },

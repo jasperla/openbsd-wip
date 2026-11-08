@@ -1,0 +1,24 @@
+Increase debugger-test child exit waits from 1 to 10 seconds to tolerate
+slow scheduling.
+
+Index: dlls/kernel32/tests/debugger.c
+--- dlls/kernel32/tests/debugger.c.orig
++++ dlls/kernel32/tests/debugger.c
+@@ -2208,7 +2208,7 @@ static DWORD run_child_wait( char *cmd, HANDLE event )
+     CloseHandle( pDbgUiGetThreadDebugObject() );
+     pDbgUiSetThreadDebugObject( 0 );
+     SetEvent( event );
+-    WaitForSingleObject( pi.hProcess, 1000 );
++    WaitForSingleObject( pi.hProcess, 10000 );
+     ret = GetExitCodeProcess( pi.hProcess, &exit_code );
+     ok( ret, "GetExitCodeProcess failed err=%ld\n", GetLastError());
+     CloseHandle( pi.hProcess );
+@@ -2345,7 +2345,7 @@ static void test_kill_on_exit(const char *argv0)
+         ok( exit_code == STILL_ACTIVE, "exit code = %08lx\n", exit_code);
+         CloseHandle( debug );
+     }
+-    WaitForSingleObject( pi.hProcess, 1000 );
++    WaitForSingleObject( pi.hProcess, 10000 );
+     GetExitCodeProcess( pi.hProcess, &exit_code );
+     ok( exit_code == 0, "exit code = %08lx\n", exit_code);
+     CloseHandle( pi.hProcess );

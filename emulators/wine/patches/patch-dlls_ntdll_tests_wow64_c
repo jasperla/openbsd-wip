@@ -1,0 +1,40 @@
+Create the desktop before launching helpers to avoid explorer shutdown
+races. Skip mappings without syswow64/version.dll and validate other open
+failures before using handles.
+
+Index: dlls/ntdll/tests/wow64.c
+--- dlls/ntdll/tests/wow64.c.orig
++++ dlls/ntdll/tests/wow64.c
+@@ -941,6 +941,12 @@ static void test_peb_teb(void)
+     WOW64INFO *wow64info = (WOW64INFO *)buffer;
+     BOOLEAN wow64;
+ 
++    /* FIXME: Work around an explorer startup race. If the last desktop user
++     * exits before the desktop window owner is established, the shutdown
++     * timeout is not armed.
++     */
++    GetDesktopWindow();
++
+     Wow64DisableWow64FsRedirection( &redir );
+ 
+     if (CreateProcessA( "C:\\windows\\syswow64\\msinfo32.exe", NULL, NULL, NULL,
+@@ -1488,8 +1494,18 @@ static void test_image_mappings(void)
+     }
+     else if (native_machine == IMAGE_FILE_MACHINE_AMD64 || native_machine == IMAGE_FILE_MACHINE_ARM64)
+     {
++        DWORD err;
++
+         file = CreateFileA( "c:\\windows\\syswow64\\version.dll", GENERIC_READ, FILE_SHARE_READ, NULL, OPEN_EXISTING, 0, 0 );
+-        ok( file != INVALID_HANDLE_VALUE, "Failed to open version.dll\n" );
++        err = GetLastError();
++        if (file == INVALID_HANDLE_VALUE &&
++            (err == ERROR_FILE_NOT_FOUND || err == ERROR_PATH_NOT_FOUND))
++        {
++            skip( "32-bit version.dll is not available, error %lu\n", err );
++            return;
++        }
++        ok( file != INVALID_HANDLE_VALUE, "Failed to open syswow64/version.dll, error %lu\n", err );
++        if (file == INVALID_HANDLE_VALUE) return;
+ 
+         mapping = CreateFileMappingA( file, NULL, PAGE_READONLY | SEC_IMAGE, 0, 0, NULL );
+         ok( mapping != 0, "CreateFileMapping failed\n" );
