@@ -2,9 +2,9 @@ COMMENT-main=	fork of net/transmission
 COMMENT-gtk=	fork of net/transmission with GTK interfaces
 COMMENT-qt=	fork of net/transmission with Qt interface
 
-VER=		4.2.0pre20261106
-DISTNAME=	transmission-4.2.0-dev+rc778b9d67f-nightly.20261106
-WRKSRC=		/usr/ports/pobj/transmission-4.2.0-dev+rc778b9d67f-nightly.20261106/transmission-4.2.0-dev+rc778b9d67f
+VER=		4.2.0pre20261108
+DISTNAME=	transmission-4.2.0-dev+rd51d002c9c-nightly.20261108
+WRKSRC=		/usr/ports/pobj/transmission-4.2.0-dev+rd51d002c9c-nightly.20261108/transmission-4.2.0-dev+rd51d002c9c
 PKGNAME-main=	retransmission-${VER}
 PKGNAME-gtk=	retransmission-gtk-${VER}
 PKGNAME-qt=	retransmission-qt-${VER}
@@ -34,8 +34,9 @@ FLAVOR?=
 
 .include <bsd.port.arch.mk>
 
-WANTLIB-common =	${COMPILER_LIBCXX} c crypto curl deflate
-WANTLIB-common +=	m miniupnpc natpmp psl ssl intl
+WANTLIB-common =	${COMPILER_LIBCXX} c crypto curl 
+WANTLIB-common +=	m miniupnpc natpmp psl ssl intl z
+WANTLIB-common +=	archive simdutf
 
 WANTLIB-main =	${WANTLIB-common}
 
@@ -52,11 +53,12 @@ MODULES +=		devel/cmake \
 
 BUILD_DEPENDS +=	devel/fmt
 
-LIB_DEPENDS-common +=	archivers/libdeflate \
+LIB_DEPENDS-common +=	archivers/libarchive \
 			net/curl \
 			net/libpsl \
 			net/miniupnp/libnatpmp \
-			net/miniupnp/miniupnpc>=1.9
+			net/miniupnp/miniupnpc>=1.9 \
+			textproc/simdutf
 
 LIB_DEPENDS-main =	${LIB_DEPENDS-common}
 
