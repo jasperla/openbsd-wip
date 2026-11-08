@@ -1,0 +1,42 @@
+#!/bin/sh
+
+# Configure virtual Xvfb modes from WIDTHxHEIGHT@HZ specifications.
+set -eu
+
+if [ "$#" -lt 2 ]; then
+	echo "usage: $0 output desktop-mode [other-modes ...]" >&2
+	exit 1
+fi
+output=$1
+shift
+desktop=wine-test-${1%@*}-${1#*@}
+
+# Check access to the X server before creating modes.
+xrandr --query
+
+for spec do
+	case "$spec" in
+	*x*@*) ;;
+	*) echo "Invalid display mode: $spec" >&2; exit 1 ;;
+	esac
+	resolution=${spec%@*}
+	refresh=${spec#*@}
+	width=${resolution%x*}
+	height=${resolution#*x}
+	mode=wine-test-$resolution-$refresh
+	if ! xrandr --query | awk -v mode="$mode" '
+		$1 == mode { found = 1 }
+		END { exit !found }
+	'; then
+		# These synthetic modes are for Xvfb, not for a physical monitor.
+		clock=$(perl -e '
+		    printf "%.6f", $ARGV[0] * $ARGV[1] * $ARGV[2] / 1e6;
+		    ' -- $width $height $refresh)
+		xrandr --newmode $mode $clock \
+		    $width $width $width $width \
+		    $height $height $height $height
+	fi
+	xrandr --addmode $output $mode
+done
+
+xrandr --output $output --mode $desktop

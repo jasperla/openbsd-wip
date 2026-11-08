@@ -1,0 +1,27 @@
+On x86-64, stop EXCEPTION_TARGET_UNWIND at the __except scope matching
+TargetIp == ImageBase + JumpTarget. Preserve enclosing __finally scopes
+to prevent premature exception-object cleanup during C++ rethrows.
+
+Index: dlls/ntdll/unwind.c
+--- dlls/ntdll/unwind.c.orig
++++ dlls/ntdll/unwind.c
+@@ -2265,7 +2265,18 @@ EXCEPTION_DISPOSITION WINAPI __C_specific_handler( EXC
+         {
+             if (pc < base + table->ScopeRecord[i].BeginAddress) continue;
+             if (pc >= base + table->ScopeRecord[i].EndAddress) continue;
+-            if (table->ScopeRecord[i].JumpTarget) continue;
++            /* Nested __except, stop at the target scope.
++             * Avoid running enclosing __finally handlers before the target.
++             * __try { __try {throw} __except () {target} } __finally {}
++             */
++            if (table->ScopeRecord[i].JumpTarget)
++            {
++                if ((rec->ExceptionFlags & EXCEPTION_TARGET_UNWIND) &&
++                    dispatch->TargetIp ==
++                      base + table->ScopeRecord[i].JumpTarget)
++                    break;
++                continue;
++            }
+ 
+             if (rec->ExceptionFlags & EXCEPTION_TARGET_UNWIND &&
+                 dispatch->TargetIp >= base + table->ScopeRecord[i].BeginAddress &&

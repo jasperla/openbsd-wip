@@ -1,0 +1,24 @@
+Use CPU blits for overlapping, unscaled copies within one subresource.
+Avoid undefined OpenGL copies and llvmpipe's overlapping-memcpy abort.
+
+XXX for test only ?
+
+Index: dlls/wined3d/surface.c
+--- dlls/wined3d/surface.c.orig
++++ dlls/wined3d/surface.c
+@@ -1559,6 +1559,15 @@ HRESULT texture2d_blt(struct wined3d_texture *dst_text
+ 
+     TRACE("Colour blit.\n");
+ 
++    /* OpenGL overlapping image copies are undefined. Use the CPU blitter
++     * for plain copies; llvmpipe's overlapping memcpy aborts on OpenBSD. */
++    if (!scale && !(flags & ~WINED3D_BLT_RAW)
++            && src_texture == dst_texture
++            && src_sub_resource_idx == dst_sub_resource_idx
++            && src_rect.left < dst_rect.right && dst_rect.left < src_rect.right
++            && src_rect.top < dst_rect.bottom && dst_rect.top < src_rect.bottom)
++        goto cpu;
++
+     /* In principle this would apply to depth blits as well, but we don't
+      * implement those in the CPU blitter at the moment. */
+     if ((dst_sub_resource->locations & dst_texture->resource.map_binding)

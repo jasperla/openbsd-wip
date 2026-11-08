@@ -1,0 +1,24 @@
+Allow five seconds for debug events and two seconds for token-test child
+termination to tolerate slow scheduling.
+
+Index: dlls/ntdll/tests/info.c
+--- dlls/ntdll/tests/info.c.orig
++++ dlls/ntdll/tests/info.c
+@@ -2774,7 +2774,7 @@ static void test_query_process_debug_flags(int argc, c
+          * any EXIT_PROCESS_DEBUG_EVENT after a couple of events. */
+         for (j = 0; j < 100; j++)
+         {
+-            ret = WaitForDebugEvent(&ev, 1000);
++            ret = WaitForDebugEvent(&ev, 5000);
+             ok(ret || broken(GetLastError() == ERROR_SEM_TIMEOUT),
+                 "WaitForDebugEvent failed, last error %#lx.\n", GetLastError());
+             if (!ret) break;
+@@ -4383,7 +4383,7 @@ static void test_process_token(int argc, char **argv)
+     CloseHandle( their_token );
+ 
+     ResumeThread( pi.hThread );
+-    ret = WaitForSingleObject( pi.hProcess, 1000 );
++    ret = WaitForSingleObject( pi.hProcess, 2000 );
+     ok( !ret, "got %d\n", ret );
+ 
+     CloseHandle( pi.hProcess );

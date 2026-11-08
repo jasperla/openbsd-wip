@@ -1,3 +1,6 @@
+Synchronize generated declarations with server/protocol.def (version 971):
+APC_COPY_MEMORY, is_apc_worker and SELECT_SYSTEM.
+
 Index: include/wine/server_protocol.h
 --- include/wine/server_protocol.h.orig
 +++ include/wine/server_protocol.h
@@ -39,11 +42,28 @@ Index: include/wine/server_protocol.h
  };
  
  enum irp_type
-@@ -7184,6 +7199,6 @@ union generic_reply
+@@ -1241,6 +1256,8 @@ struct init_thread_request
+     int          wait_fd;
+     client_ptr_t teb;
+     client_ptr_t entry;
++    int          is_apc_worker;
++    char __pad_44[4];
+ };
+ struct init_thread_reply
+ {
+@@ -1663,6 +1680,7 @@ struct select_reply
+ #define SELECT_ALERTABLE           1
+ #define SELECT_INTERRUPTIBLE       2
+ #define SELECT_COOPERATIVE_SUSPEND 4
++#define SELECT_SYSTEM              8
+ 
+ 
+ 
+@@ -7201,6 +7219,6 @@ union generic_reply
      struct alpc_create_port_reply alpc_create_port_reply;
  };
  
--#define SERVER_PROTOCOL_VERSION 962
-+#define SERVER_PROTOCOL_VERSION 964
+-#define SERVER_PROTOCOL_VERSION 964
++#define SERVER_PROTOCOL_VERSION 971
  
  #endif /* __WINE_WINE_SERVER_PROTOCOL_H */

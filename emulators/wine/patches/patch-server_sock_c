@@ -1,7 +1,23 @@
+On OpenBSD, treat POLLHUP as writable and check SO_ERROR while connecting.
+Return ENOTCONN for unconnected sends; pair SO_REUSEADDR with SO_REUSEPORT.
+
 Index: server/sock.c
 --- server/sock.c.orig
 +++ server/sock.c
-@@ -1400,7 +1400,23 @@ static void sock_poll_event( struct fd *fd, int event 
+@@ -1123,6 +1123,12 @@ static int get_poll_flags( struct sock *sock, int even
+         flags |= is_oobinline( sock ) ? AFD_POLL_READ : AFD_POLL_OOB;
+     if (event & POLLOUT)
+         flags |= AFD_POLL_WRITE;
++#ifdef __OpenBSD__
++    /* OpenBSD poll() suppresses POLLOUT when reporting POLLHUP.
++     * Windows still reports reset connections as writable. */
++    if (sock->state == SOCK_CONNECTED && sock->reset)
++        flags |= AFD_POLL_WRITE;
++#endif
+     if (sock->state == SOCK_CONNECTED)
+         flags |= AFD_POLL_CONNECT;
+     if (event & POLLHUP)
+@@ -1400,7 +1406,23 @@ static void sock_poll_event( struct fd *fd, int event 
  
      if (event & (POLLERR | POLLHUP))
          error = sock_error( sock, &event );
@@ -25,7 +41,16 @@ Index: server/sock.c
      switch (sock->state)
      {
      case SOCK_UNCONNECTED:
-@@ -4052,7 +4068,13 @@ DECL_HANDLER(send_socket)
+@@ -3355,7 +3377,7 @@ static void sock_ioctl( struct fd *fd, ioctl_code_t co
+             ret = 0;
+         else
+             ret = setsockopt( unix_fd, SOL_SOCKET, SO_REUSEADDR, &reuse, sizeof(reuse) );
+-#ifdef __APPLE__
++#if defined(__APPLE__) || defined(__OpenBSD__)
+         if (!ret) ret = setsockopt( unix_fd, SOL_SOCKET, SO_REUSEPORT, &reuse, sizeof(reuse) );
+ #endif
+         if (ret)
+@@ -4052,7 +4074,13 @@ DECL_HANDLER(send_socket)
           * asyncs will not consume all available space; if there's no space
           * available, the current request won't be immediately satiable.
           */

@@ -1,0 +1,15 @@
+Increase the IShellWindows registration timeout from 1 to 5 seconds so
+SHOpenFolderAndSelectItems can wait for explorer startup.
+
+Index: dlls/shell32/shlfolder.c
+--- dlls/shell32/shlfolder.c.orig
++++ dlls/shell32/shlfolder.c
+@@ -641,7 +641,7 @@ HRESULT WINAPI SHOpenFolderAndSelectItems(PCIDLIST_ABS
+     SHELLEXECUTEINFOW sei = {0};
+     COPYDATASTRUCT cds = {0};
+     IDispatch *dispatch;
+-    int timeout = 1000;
++    int timeout = 5000;
+     unsigned char *ptr;
+     IShellWindows *sw;
+     BOOL ret = FALSE;

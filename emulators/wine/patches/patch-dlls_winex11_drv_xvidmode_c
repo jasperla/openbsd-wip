@@ -1,0 +1,22 @@
+Return -1 when XF86VidMode lacks gamma support so win32u uses its global
+gamma-ramp fallback.
+
+Index: dlls/winex11.drv/xvidmode.c
+--- dlls/winex11.drv/xvidmode.c.orig
++++ dlls/winex11.drv/xvidmode.c
+@@ -538,6 +538,7 @@ void X11DRV_XF86VM_Init(void)
+ UINT X11DRV_GetDeviceGammaRamp(PHYSDEV dev, LPVOID ramp)
+ {
+ #ifdef SONAME_LIBXXF86VM
++  if (xf86vm_major < 2) return -1; /* use default implementation */
+   return X11DRV_XF86VM_GetGammaRamp(ramp);
+ #else
+   return -1; /* use default implementation */
+@@ -550,6 +551,7 @@ UINT X11DRV_GetDeviceGammaRamp(PHYSDEV dev, LPVOID ram
+ UINT X11DRV_SetDeviceGammaRamp(PHYSDEV dev, LPVOID ramp)
+ {
+ #ifdef SONAME_LIBXXF86VM
++  if (xf86vm_major < 2) return -1; /* use default implementation */
+   return X11DRV_XF86VM_SetGammaRamp(ramp);
+ #else
+   return -1; /* use default implementation */

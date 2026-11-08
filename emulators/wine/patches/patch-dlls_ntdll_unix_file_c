@@ -1,10 +1,12 @@
 OpenBSD lacks xattrs; read symlink reparse data from regular files with
 Wine's '?' suffix, matching server/fd.c.
 
+Detect optical filesystems by cd9660/udf and terminate relative paths.
+
 Index: dlls/ntdll/unix/file.c
 --- dlls/ntdll/unix/file.c.orig
 +++ dlls/ntdll/unix/file.c
-@@ -1672,7 +1672,24 @@ static BOOL fd_is_mount_point( int fd, const struct st
+@@ -1372,7 +1372,24 @@ static BOOL fd_is_mount_point( int fd, const struct st
  
  static unsigned int server_get_unix_name( HANDLE handle, char **unix_name );
  
@@ -29,7 +31,7 @@ Index: dlls/ntdll/unix/file.c
  /* get the stat info and file attributes for a file (by file descriptor) */
  static int fd_get_file_info( HANDLE handle, int fd, unsigned int options,
                               struct stat *st, ULONG *attr, ULONG *reparse_tag )
-@@ -1696,7 +1713,23 @@ static int fd_get_file_info( HANDLE handle, int fd, un
+@@ -1396,7 +1413,23 @@ static int fd_get_file_info( HANDLE handle, int fd, un
          }
      }
  
@@ -53,7 +55,7 @@ Index: dlls/ntdll/unix/file.c
      if (attr_len >= 0 && attr_len >= sizeof(ULONG))
      {
          *attr |= FILE_ATTRIBUTE_REPARSE_POINT;
-@@ -1813,7 +1846,20 @@ static int get_file_info( const char *path, struct sta
+@@ -1513,7 +1546,20 @@ static int get_file_info( const char *path, struct sta
      }
      *attr |= get_file_attributes( st );
  
@@ -74,7 +76,31 @@ Index: dlls/ntdll/unix/file.c
      if (attr_len >= 0 && attr_len >= sizeof(ULONG))
      {
          *attr |= FILE_ATTRIBUTE_REPARSE_POINT;
-@@ -3851,6 +3897,7 @@ static NTSTATUS nt_to_unix_file_name( OBJECT_ATTRIBUTE
+@@ -1914,6 +1960,9 @@ static NTSTATUS get_full_size_info(int fd, FILE_FS_FUL
+ #else
+     struct statfs stfs;
+ #endif
++#ifdef __OpenBSD__
++    struct statfs fs;
++#endif
+ 
+ #ifdef __APPLE__
+     LONGLONG important_free_bytes;
+@@ -1936,7 +1985,13 @@ static NTSTATUS get_full_size_info(int fd, FILE_FS_FUL
+     if (important_free_bytes != -1) stfs.f_bavail = stfs.f_bfree = important_free_bytes / bsize;
+ #endif
+ 
++#ifdef __OpenBSD__
++    if (fstatfs( fd, &fs ) < 0) return errno_to_status( errno );
++    /* FFS can also use 2048-byte fragments. */
++    if (!strcmp( fs.f_fstypename, "cd9660" ) || !strcmp( fs.f_fstypename, "udf" ))
++#else
+     if (bsize == 2048)  /* assume CD-ROM */
++#endif
+     {
+         info->BytesPerSector = 2048;
+         info->SectorsPerAllocationUnit = 1;
+@@ -3541,6 +3596,7 @@ static NTSTATUS nt_to_unix_file_name( OBJECT_ATTRIBUTE
      unix_len = name_len * 3 + MAX_DIR_ENTRY_LEN + 3;
      if (!(unix_name = malloc( unix_len ))) return STATUS_NO_MEMORY;
      unix_name[0] = '.';
@@ -82,7 +108,7 @@ Index: dlls/ntdll/unix/file.c
  
      if (!(status = server_get_unix_fd( attr->RootDirectory, 0, &root_fd, &needs_close, &type, NULL )))
      {
-@@ -4107,10 +4154,17 @@ static NTSTATUS resolve_reparse_point( int fd, int roo
+@@ -3797,10 +3853,17 @@ static NTSTATUS resolve_reparse_point( int fd, int roo
  
      if (!(data = malloc( MAXIMUM_REPARSE_DATA_BUFFER_SIZE ))) return STATUS_NO_MEMORY;
  

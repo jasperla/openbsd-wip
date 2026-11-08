@@ -1,0 +1,53 @@
+Wake the next eligible hardware-message recipient after dequeue when
+threads share an input queue.
+
+Index: server/queue.c
+--- server/queue.c.orig
++++ server/queue.c
+@@ -198,6 +198,7 @@ static unsigned int cursor_history_latest;
+ 
+ static void queue_hardware_message( struct desktop *desktop, struct message *msg, int always_queue );
+ static void free_message( struct message *msg );
++static void wake_next_hardware_message( struct msg_queue *queue );
+ 
+ /* set the caret window in a given thread input, requires write lock on the thread input shared member */
+ static void set_caret_window( struct thread_input *input, input_shm_t *shared, user_handle_t win )
+@@ -1716,6 +1717,8 @@ static void release_hardware_message( struct msg_queue
+     update_thread_input_key_state( input, msg->msg, msg->wparam );
+     list_remove( &msg->entry );
+     free_message( msg );
++
++    wake_next_hardware_message( queue );
+ }
+ 
+ static int queue_hotkey_message( struct desktop *desktop, struct message *msg )
+@@ -1794,6 +1797,29 @@ static user_handle_t find_hardware_message_window( str
+     if (!*thread)
+         *thread = get_window_thread( win );
+     return win;
++}
++
++/* Re-evaluate the next recipient after removing a hardware message. */
++static void wake_next_hardware_message( struct msg_queue *queue )
++{
++    struct thread_input *input = queue->input;
++    struct message *msg;
++    struct thread *thread;
++    user_handle_t win;
++    unsigned int msg_code;
++
++    LIST_FOR_EACH_ENTRY( msg, &input->msg_list, struct message, entry )
++    {
++        win = find_hardware_message_window( input->desktop, input, msg, &msg_code, &thread );
++        if (!thread) continue;
++        if (win && thread->queue->input == input)
++        {
++            if (thread->queue != queue) set_queue_bits( thread->queue, get_hardware_msg_bit( msg->msg ) );
++            release_object( thread );
++            break;
++        }
++        release_object( thread );
++    }
+ }
+ 
+ static struct rawinput_device *find_rawinput_device( struct process *process, unsigned int usage )

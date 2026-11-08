@@ -1,0 +1,17 @@
+Guard optional sample timestamps against NULL in verbose allocator traces.
+
+Index: dlls/quartz/tests/mpegvideo.c
+--- dlls/quartz/tests/mpegvideo.c.orig
++++ dlls/quartz/tests/mpegvideo.c
+@@ -1249,7 +1249,10 @@ static HRESULT WINAPI allocator_GetBuffer(IMemAllocato
+     AM_MEDIA_TYPE mt;
+     HRESULT hr;
+ 
+-    if (winetest_debug > 1) trace("GetBuffer(%#I64x, %#I64x, %#lx)\n", *start_time, *end_time, flags);
++    if (winetest_debug > 1)
++        trace("GetBuffer(%s, %s, %#lx)\n",
++                start_time ? wine_dbgstr_longlong(*start_time) : "(null)",
++                end_time ? wine_dbgstr_longlong(*end_time) : "(null)", flags);
+ 
+     ok(!flags || flags == AM_GBF_PREVFRAMESKIPPED, "Got flags %#lx.\n", flags);
+ 

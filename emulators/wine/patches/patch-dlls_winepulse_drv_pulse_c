@@ -1,5 +1,9 @@
 Fixes pulseaudio stutted due to coarse OpenBSD kernel timer.
 
+Use six playback periods and server-selected minreq/prebuf.
+Initialize recording fragsize; reset device lists after freeing entries.
+Guard unsupported robust mutex attributes.
+
 Index: dlls/winepulse.drv/pulse.c
 --- dlls/winepulse.drv/pulse.c.orig
 +++ dlls/winepulse.drv/pulse.c
@@ -23,20 +27,29 @@ Index: dlls/winepulse.drv/pulse.c
  
      if (pthread_mutex_init(&pulse_mutex, &attr) != 0)
          pthread_mutex_init(&pulse_mutex, NULL);
-@@ -1081,7 +1086,12 @@ static HRESULT pulse_stream_connect(struct pulse_strea
+@@ -1078,11 +1083,21 @@ static HRESULT pulse_stream_connect(struct pulse_strea
+     pa_stream_set_buffer_attr_callback(stream->stream, pulse_attr_update, stream);
+     pa_stream_set_moved_callback(stream->stream, pulse_attr_update, stream);
+ 
++#ifdef __OpenBSD__
++    /* Buffer before playback to absorb coarse timer wakeups. Let the
++     * server choose its request size and prebuffer threshold. */
++    attr.maxlength = -1;
++    attr.minreq = -1;
++    attr.tlength = period_bytes * 6;
++    attr.prebuf = -1;
++    attr.fragsize = period_bytes;
++#else
      /* PulseAudio will fill in correct values */
      attr.minreq = attr.fragsize = period_bytes;
      attr.tlength = period_bytes * 3;
-+#ifdef __OpenBSD__
-+    /* Let PulseAudio sndio queue more than the app buffer. This is because OpenBSD's sndio pulls data in large bursts.*/
-+    attr.maxlength = -1;
-+#else
      attr.maxlength = stream->bufsize_frames * pa_frame_size(&stream->ss);
-+#endif
      attr.prebuf = pa_frame_size(&stream->ss);
++#endif
      dump_attr(&attr);
  
-@@ -1630,11 +1640,22 @@ static void pulse_timer_loop(void *args)
+     /* If specific device was requested, use it exactly */
+@@ -1630,11 +1645,22 @@ static void pulse_timer_loop(void *args)
                      INT32 adjust = last_time + stream->mmdev_period_usec - now;
  
                      adv_usec = now - last_time;
@@ -60,7 +73,7 @@ Index: dlls/winepulse.drv/pulse.c
  
                      delay.QuadPart = -(stream->mmdev_period_usec + adjust) * 10;
  
-@@ -1658,7 +1679,13 @@ static void pulse_timer_loop(void *args)
+@@ -1658,7 +1684,13 @@ static void pulse_timer_loop(void *args)
              }
              else
              {

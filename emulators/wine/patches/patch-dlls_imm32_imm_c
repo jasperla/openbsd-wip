@@ -1,0 +1,15 @@
+Initialize the IME character to zero when ToAscii/ToUnicodeEx fails,
+preventing spurious ImmTranslateMessage output.
+
+Index: dlls/imm32/imm.c
+--- dlls/imm32/imm.c.orig
++++ dlls/imm32/imm.c
+@@ -3117,7 +3117,7 @@ BOOL WINAPI ImmTranslateMessage( HWND hwnd, UINT msg, 
+     struct imc *data;
+     struct ime *ime;
+     BYTE state[256];
+-    WCHAR chr;
++    WCHAR chr = 0;
+ 
+     TRACE( "hwnd %p, msg %#x, wparam %#Ix, lparam %#Ix\n", hwnd, msg, wparam, lparam );
+ 

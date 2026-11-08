@@ -1,0 +1,22 @@
+Index: server/thread.h
+--- server/thread.h.orig
++++ server/thread.h
+@@ -62,7 +62,8 @@ struct thread
+     unsigned int           system_regs;   /* which system regs have been set */
+     struct msg_queue      *queue;         /* message queue */
+     struct thread_wait    *wait;          /* current wait condition if sleeping */
+-    struct list            system_apc;    /* queue of system async procedure calls */
++    struct thread_apc     *system_apc;    /* system APC assigned to this thread */
++    struct list            io_apc;        /* queue of async I/O APCs */
+     struct list            user_apc;      /* queue of user async procedure calls */
+     struct inflight_fd     inflight[MAX_INFLIGHT_FDS];  /* fds currently in flight */
+     unsigned int           error;         /* current error code */
+@@ -125,7 +126,7 @@ extern void remove_queue( struct object *obj, struct w
+ extern void kill_thread( struct thread *thread, int violent_death );
+ extern void wake_up( struct object *obj, int max );
+ extern int thread_queue_apc( struct process *process, struct thread *thread, struct object *owner, const union apc_call *call_data );
+-extern void thread_cancel_apc( struct thread *thread, struct object *owner, enum apc_type type );
++extern void thread_cancel_user_apc( struct thread *thread, struct object *owner );
+ extern int thread_add_inflight_fd( struct thread *thread, int client, int server );
+ extern int thread_get_inflight_fd( struct thread *thread, int client );
+ extern struct token *thread_get_impersonation_token( struct thread *thread );

@@ -1,6 +1,8 @@
 OpenBSD X server uses XFREE86 set, not evdev, and Wine only has evdev defined.
 We define XFREE86 keycodes and map them to scancodes.
 
+Reject virtual key zero before searching the scancode table.
+
 Index: dlls/winex11.drv/keyboard.c
 --- dlls/winex11.drv/keyboard.c.orig
 +++ dlls/winex11.drv/keyboard.c
@@ -76,3 +78,11 @@ Index: dlls/winex11.drv/keyboard.c
  #else
      FIXME( "evdev keycodes not available, scancode mapping is going to be broken\n" );
  #endif
+@@ -2428,6 +2493,7 @@ UINT X11DRV_MapVirtualKeyEx( UINT wCode, UINT wMapType
+     {
+         case MAPVK_VK_TO_VSC: /* vkey-code to scan-code */
+         case MAPVK_VK_TO_VSC_EX:
++            if (!wCode) break;
+             switch (wCode)
+             {
+                 case VK_SHIFT: wCode = VK_LSHIFT; break;

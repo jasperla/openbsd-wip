@@ -1,13 +1,64 @@
+Initialize OpenBSD signal targets and process-wide system APC state.
+Keep the worker until dispatch stops; terminate system threads after the
+last user thread exits, or all remaining threads if the worker dies.
+
 Index: server/process.c
 --- server/process.c.orig
 +++ server/process.c
-@@ -640,6 +640,9 @@ struct process *create_process( int fd, struct process
+@@ -640,6 +640,12 @@ struct process *create_process( int fd, struct process
      process->rawinput_device_count = 0;
      process->rawinput_mouse  = NULL;
      process->rawinput_kbd    = NULL;
 +#ifdef __OpenBSD__
 +    process->signal_targets  = NULL;
 +#endif
++    process->apc_thread      = NULL;
++    process->apc_shutdown    = 0;
++    list_init( &process->system_apc );
      memset( &process->image_info, 0, sizeof(process->image_info) );
      list_init( &process->rawinput_entry );
      list_init( &process->kernel_object );
+@@ -882,6 +888,9 @@ restart:
+     {
+         if (exit_code) thread->exit_code = exit_code;
+         if (thread == skip) continue;
++        /* Keep the worker available until the last user thread exits. */
++        if (thread == process->apc_thread && !process->apc_shutdown)
++            continue;
+         if (thread->state == TERMINATED) continue;
+         kill_thread( thread, 1 );
+         goto restart;
+@@ -923,6 +932,7 @@ void kill_console_processes( struct thread *renderer, 
+ static void process_killed( struct process *process )
+ {
+     assert( list_empty( &process->thread_list ));
++    process->is_terminating = 1;
+     process->end_time = current_time;
+     close_process_desktop( process );
+     process->winstation = 0;
+@@ -968,9 +978,15 @@ void add_process_thread( struct process *process, stru
+ /* remove a thread from a process running threads list */
+ void remove_process_thread( struct process *process, struct thread *thread )
+ {
++    int apc_thread = (thread == process->apc_thread);
++
++    if (apc_thread) process->apc_thread = NULL;
+     assert( process->running_threads > 0 );
+     assert( !list_empty( &process->thread_list ));
+ 
++    /* Keep the last user thread as the sender of the process exit event. */
++    if (!thread->is_system && process->user_threads == 1)
++        terminate_process( process, thread, thread->exit_code );
+     list_remove( &thread->proc_entry );
+     if (!thread->is_system) process->user_threads--;
+ 
+@@ -984,6 +1000,9 @@ void remove_process_thread( struct process *process, s
+     }
+     else if (!thread->is_system) generate_debug_event( thread, DbgExitThreadStateChange, thread );
+ 
++    /* A dead worker must not leave surviving callers waiting for APCs. */
++    if (apc_thread && !process->is_terminating && process->running_threads)
++        terminate_process( process, NULL, thread->exit_code );
+     release_object( thread );
+ }
+ 

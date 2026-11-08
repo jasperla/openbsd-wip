@@ -1,0 +1,42 @@
+Increase WM_COPYDATA and PrintWindow helper waits from 1 to 5 seconds to
+avoid spurious failures on slow scheduling.
+
+Index: dlls/user32/tests/msg.c
+--- dlls/user32/tests/msg.c.orig
++++ dlls/user32/tests/msg.c
+@@ -21371,7 +21371,7 @@ static void test_WM_COPYDATA(char **argv)
+         hwnd = FindWindowA("WmCopyDataWindowClass", "WmCopyDataWindow");
+         Sleep(100);
+         timeout += 100;
+-    } while (!hwnd && timeout < 1000);
++    } while (!hwnd && timeout < 5000);
+     ok(!!hwnd, "Failed to find test window.\n");
+ 
+     buffer = malloc(LARGE_DATA_SIZE);
+@@ -21401,7 +21401,7 @@ static void test_WM_COPYDATA(char **argv)
+     ok(ret, "WM_COPYDATA failed.\n");
+ 
+     free(buffer);
+-    ret = WaitForSingleObject(pi.hProcess, 1000);
++    ret = WaitForSingleObject(pi.hProcess, 5000);
+     ok(!ret, "WaitForSingleObject failed, error %ld.\n", GetLastError());
+     CloseHandle(pi.hProcess);
+     CloseHandle(pi.hThread);
+@@ -21797,7 +21797,7 @@ static void test_PrintWindow(char **argv)
+         hwnd = FindWindowA("PrintWindowChildClass", "test_PrintWindow_child");
+         Sleep(100);
+         timeout += 100;
+-    } while (!hwnd && timeout < 1000);
++    } while (!hwnd && timeout < 5000);
+     ok(!!hwnd, "Failed to find the test window.\n");
+ 
+     hdc = GetDC(hwnd);
+@@ -21832,7 +21832,7 @@ static void test_PrintWindow(char **argv)
+     ReleaseDC(hwnd, hdc);
+ 
+     PostMessageA(hwnd, WM_CLOSE, 0, 0);
+-    ret = WaitForSingleObject(pi.hProcess, 1000);
++    ret = WaitForSingleObject(pi.hProcess, 5000);
+     ok(!ret, "WaitForSingleObject failed, error %ld.\n", GetLastError());
+     CloseHandle(pi.hProcess);
+     CloseHandle(pi.hThread);

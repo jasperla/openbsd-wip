@@ -1,0 +1,77 @@
+Resolve OpenBSD directory paths with fchdir()/getcwd(), capped at PATH_MAX.
+Preserve errno; abort if cwd restore fails; accept readlink() EINVAL.
+
+Index: server/change.c
+--- server/change.c.orig
++++ server/change.c
+@@ -721,6 +721,44 @@ static char *get_path_from_fd( int fd, int sz )
+     if (!fcntl( fd, F_GETPATH, ret )) return ret;
+     free( ret );
+     return NULL;
++#elif defined(__OpenBSD__)
++    struct stat st;
++    char *ret;
++    int cwd_fd, saved_errno;
++
++    if (fstat( fd, &st ) == -1) return NULL;
++    if (!S_ISDIR( st.st_mode ))
++    {
++        errno = ENOTDIR;
++        return NULL;
++    }
++
++    if (!(ret = malloc( PATH_MAX + (size_t)sz ))) return NULL;
++    if ((cwd_fd = open( ".", O_RDONLY | O_DIRECTORY | O_CLOEXEC )) == -1)
++    {
++        free( ret );
++        return NULL;
++    }
++    if (fchdir( fd ) == -1)
++    {
++        saved_errno = errno;
++        close( cwd_fd );
++        free( ret );
++        errno = saved_errno;
++        return NULL;
++    }
++
++    saved_errno = getcwd( ret, PATH_MAX ) ? 0 : errno;
++    if (fchdir( cwd_fd ) == -1)
++        fatal_error( "Failed to restore current directory: %s\n", strerror( errno ) );
++    close( cwd_fd );
++    if (saved_errno)
++    {
++        free( ret );
++        errno = saved_errno;
++        return NULL;
++    }
++    return ret;
+ #else
+     return NULL;
+ #endif
+@@ -1016,7 +1054,15 @@ static char *get_basename( const char *link )
+ 
+         r = readlink( link, buffer, n );
+         if (r < 0)
++        {
++            free( buffer );
++            if (errno != EINVAL) return NULL;
++            /* The supplied path is not a symbolic link. */
++            if (!(buffer = strdup( link ))) return NULL;
++            r = strlen( buffer );
++            name = buffer;
+             break;
++        }
+ 
+         if (r < n)
+         {
+@@ -1034,8 +1080,7 @@ static char *get_basename( const char *link )
+         name[ r ] = 0;
+ 
+         name = strrchr( name, '/' );
+-        if (name)
+-            name = strdup( &name[1] );
++        if (r) name = strdup( name ? name + 1 : buffer );
+     }
+ 
+     free( buffer );

@@ -1,0 +1,13 @@
+Index: server/request_handlers.h
+--- server/request_handlers.h.orig
++++ server/request_handlers.h
+@@ -744,7 +744,8 @@ C_ASSERT( offsetof(struct init_thread_request, reply_f
+ C_ASSERT( offsetof(struct init_thread_request, wait_fd) == 20 );
+ C_ASSERT( offsetof(struct init_thread_request, teb) == 24 );
+ C_ASSERT( offsetof(struct init_thread_request, entry) == 32 );
+-C_ASSERT( sizeof(struct init_thread_request) == 40 );
++C_ASSERT( offsetof(struct init_thread_request, is_apc_worker) == 40 );
++C_ASSERT( sizeof(struct init_thread_request) == 48 );
+ C_ASSERT( offsetof(struct init_thread_reply, suspend) == 8 );
+ C_ASSERT( sizeof(struct init_thread_reply) == 16 );
+ C_ASSERT( offsetof(struct terminate_process_request, handle) == 12 );
