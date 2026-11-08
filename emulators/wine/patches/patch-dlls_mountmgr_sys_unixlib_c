@@ -1,0 +1,45 @@
+Use fstatfs types cd9660/udf to identify optical media on OpenBSD;
+FFS also has 2048-byte allocation units and must retain disk geometry.
+
+Index: dlls/mountmgr.sys/unixlib.c
+--- dlls/mountmgr.sys/unixlib.c.orig
++++ dlls/mountmgr.sys/unixlib.c
+@@ -31,6 +31,10 @@
+ #include <stdlib.h>
+ #include <sys/ioctl.h>
+ #include <sys/stat.h>
++#ifdef __OpenBSD__
++#include <sys/param.h>
++#include <sys/mount.h>
++#endif
+ #ifdef HAVE_SYS_STATFS_H
+ #include <sys/statfs.h>
+ #endif
+@@ -369,6 +373,9 @@ static NTSTATUS get_volume_size_info( void *args )
+ #else
+     struct statfs stfs;
+ #endif
++#ifdef __OpenBSD__
++    struct statfs fs;
++#endif
+ 
+ #ifdef __APPLE__
+     LONGLONG important_free_bytes;
+@@ -417,7 +424,17 @@ static NTSTATUS get_volume_size_info( void *args )
+     if (important_free_bytes != -1) stfs.f_bavail = stfs.f_bfree = important_free_bytes / bsize;
+ #endif
+ 
++#ifdef __OpenBSD__
++    if (fstatfs( fd, &fs ) < 0)
++    {
++        status = errno_to_status( errno );
++        goto done;
++    }
++    /* FFS can also use 2048-byte fragments. */
++    if (!strcmp( fs.f_fstypename, "cd9660" ) || !strcmp( fs.f_fstypename, "udf" ))
++#else
+     if (bsize == 2048)  /* assume CD-ROM */
++#endif
+     {
+         info->bytes_per_sector = 2048;
+         info->sectors_per_allocation_unit = 1;

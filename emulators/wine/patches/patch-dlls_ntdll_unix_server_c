@@ -18,10 +18,24 @@ For new threads, libpthread owns the native stack separately from Wine's
 signal-stack mapping. pthread_stackseg_np() returns the upper end; subtract
 the size to record the base used for Unix calls.
 
+Dispatch system APCs via STATUS_SYSTEM_APC/SELECT_SYSTEM and a dedicated
+worker. A pipe synchronizes startup while the initial thread is suspended.
+Normal waits also dispatch system APCs; async I/O retains SIGUSR1 delivery.
+
 Index: dlls/ntdll/unix/server.c
 --- dlls/ntdll/unix/server.c.orig
 +++ dlls/ntdll/unix/server.c
-@@ -705,6 +705,40 @@ static void invoke_system_apc( const union apc_call *c
+@@ -411,6 +411,9 @@ static void invoke_system_apc( const union apc_call *c
+ 
+         result->type = call->type;
+         status = call->async_io.status;
++        /* FIXME: Async I/O callbacks may run from SIGUSR1. Logging and helpers
++         * such as strerror() are not guaranteed async-signal-safe and may cause
++         * undefined behavior on reentry. */
+         if (user->callback( user, &info, &status ))
+         {
+             result->async_io.status = status;
+@@ -705,6 +708,40 @@ static void invoke_system_apc( const union apc_call *c
          if (!self) NtClose( wine_server_ptr_handle(call->dup_handle.dst_process) );
          break;
      }
@@ -62,7 +76,54 @@ Index: dlls/ntdll/unix/server.c
      default:
          server_protocol_error( "get_apc_request: bad type %d\n", call->type );
          break;
-@@ -1546,6 +1580,8 @@ static int get_unix_tid(void)
+@@ -764,7 +801,7 @@ unsigned int server_select( const union select_op *sel
+             }
+             SERVER_END_REQ;
+ 
+-            if (ret != STATUS_KERNEL_APC) break;
++            if (ret != STATUS_KERNEL_APC && ret != STATUS_SYSTEM_APC) break;
+             invoke_system_apc( &reply_data.call, &result, FALSE );
+ 
+             /* don't signal multiple times */
+@@ -776,7 +813,7 @@ unsigned int server_select( const union select_op *sel
+ 
+         ret = wait_select_reply( data->wait_fd, &cookie );
+     }
+-    while (ret == STATUS_USER_APC || ret == STATUS_KERNEL_APC);
++    while (ret == STATUS_USER_APC || ret == STATUS_KERNEL_APC || ret == STATUS_SYSTEM_APC);
+ 
+     if (ret == STATUS_USER_APC) *user_apc = reply_data.call.user;
+     if (reply_size > sizeof(reply_data.call))
+@@ -807,7 +844,7 @@ unsigned int server_wait( const union select_op *selec
+         abs_timeout -= now.QuadPart;
+     }
+ 
+-    ret = server_select( select_op, size, flags, abs_timeout, NULL, &apc );
++    ret = server_select( select_op, size, flags | SELECT_SYSTEM, abs_timeout, NULL, &apc );
+     if (ret == STATUS_USER_APC) return invoke_user_apc( NULL, &apc, ret );
+ 
+     /* A test on Windows 2000 shows that Windows always yields during
+@@ -858,7 +895,8 @@ NTSTATUS WINAPI NtContinueEx( CONTEXT *context, KCONTI
+ 
+     if (alertable)
+     {
+-        status = server_select( NULL, 0, SELECT_INTERRUPTIBLE | SELECT_ALERTABLE, 0, NULL, &apc );
++        status = server_select( NULL, 0, SELECT_INTERRUPTIBLE | SELECT_ALERTABLE | SELECT_SYSTEM,
++                                0, NULL, &apc );
+         if (status == STATUS_USER_APC) return invoke_user_apc( context, &apc, status );
+     }
+     return signal_set_full_context( context );
+@@ -873,7 +911,8 @@ NTSTATUS WINAPI NtTestAlert(void)
+     struct user_apc apc;
+     NTSTATUS status;
+ 
+-    status = server_select( NULL, 0, SELECT_INTERRUPTIBLE | SELECT_ALERTABLE, 0, NULL, &apc );
++    status = server_select( NULL, 0, SELECT_INTERRUPTIBLE | SELECT_ALERTABLE | SELECT_SYSTEM,
++                            0, NULL, &apc );
+     if (status == STATUS_USER_APC) invoke_user_apc( NULL, &apc, STATUS_SUCCESS );
+     return STATUS_SUCCESS;
+ }
+@@ -1546,6 +1585,8 @@ static int get_unix_tid(void)
      ret = lwpid;
  #elif defined(__DragonFly__)
      ret = lwp_gettid();
@@ -71,7 +132,7 @@ Index: dlls/ntdll/unix/server.c
  #endif
      return ret;
  }
-@@ -1641,9 +1677,18 @@ void server_init_process( struct thread_data *data )
+@@ -1641,9 +1682,18 @@ void server_init_process( struct thread_data *data )
      sigaddset( &server_block_set, SIGHUP );
      sigaddset( &server_block_set, SIGQUIT );
      sigaddset( &server_block_set, SIGUSR1 );
@@ -91,7 +152,7 @@ Index: dlls/ntdll/unix/server.c
  
      /* receive the first thread request fd on the main socket */
      data->request_fd = wine_server_receive_fd( &version );
-@@ -1680,6 +1725,9 @@ void server_init_process( struct thread_data *data )
+@@ -1680,6 +1730,9 @@ void server_init_process( struct thread_data *data )
      {
          req->unix_pid    = getpid();
          req->unix_tid    = get_unix_tid();
@@ -101,7 +162,7 @@ Index: dlls/ntdll/unix/server.c
          req->reply_fd    = reply_pipe;
          req->wait_fd     = data->wait_fd[1];
          req->debug_level = (TRACE_ON(server) != 0);
-@@ -1706,6 +1754,18 @@ void server_init_process( struct thread_data *data )
+@@ -1706,6 +1759,18 @@ void server_init_process( struct thread_data *data )
  
      if (ret) server_protocol_error( "init_first_thread failed with status %x\n", ret );
  
@@ -120,7 +181,65 @@ Index: dlls/ntdll/unix/server.c
      if (!supported_machines_count)
          fatal_error( "'%s' is a 64-bit installation, it cannot be used with a 32-bit wineserver.\n",
                       config_dir );
-@@ -1757,6 +1817,16 @@ void server_init_process_done(void)
+@@ -1732,6 +1797,57 @@ void server_init_process( struct thread_data *data )
+ 
+ 
+ /***********************************************************************
++ *           system_apc_thread
++ */
++static void WINAPI system_apc_thread( void *arg )
++{
++    NTSTATUS status = STATUS_SUCCESS;
++    int fd = (ULONG_PTR)arg;
++    ssize_t ret;
++
++    while ((ret = write( fd, &status, sizeof(status) )) < 0 && errno == EINTR);
++    close( fd );
++    if (ret != sizeof(status))
++        fatal_error( "cannot signal system APC readiness\n" );
++
++    for (;;)
++    {
++        status = server_select( NULL, 0, SELECT_SYSTEM, TIMEOUT_INFINITE, NULL, NULL );
++        if (status)
++            fatal_error( "system APC wait failed, status %x\n", status );
++    }
++}
++
++
++/***********************************************************************
++ *           start_system_apc_thread
++ */
++static void start_system_apc_thread(void)
++{
++    HANDLE thread;
++    NTSTATUS status;
++    int fds[2];
++    ssize_t ret;
++
++    if (server_pipe( fds ) == -1)
++        fatal_error( "cannot create system APC ready pipe\n" );
++    status = PsCreateSystemThread( &thread, SYNCHRONIZE, NULL, NULL, NULL,
++      system_apc_thread, (void *)(ULONG_PTR)fds[1] );
++    if (status)
++        fatal_error( "cannot create system APC thread, status %x\n", status );
++
++    /* Wait outside wineserver: the initial Windows thread may be suspended. */
++    while ((ret = read( fds[0], &status, sizeof(status) )) < 0 && errno == EINTR);
++    close( fds[0] );
++    NtClose( thread );
++    if (ret != sizeof(status))
++        fatal_error( "cannot read system APC readiness\n" );
++    if (status)
++        fatal_error( "system APC thread failed to initialize, status %x\n", status );
++}
++
++
++/***********************************************************************
+  *           server_init_process_done
+  */
+ void server_init_process_done(void)
+@@ -1757,6 +1873,17 @@ void server_init_process_done(void)
      signal_init_process( data->teb );
      init_teb_data( data );
  
@@ -133,13 +252,16 @@ Index: dlls/ntdll/unix/server.c
 +        pthread_sigmask( SIG_UNBLOCK, &sigset, NULL );
 +    }
 +#endif
++    start_system_apc_thread();
 +
      /* Signal the parent process to continue */
      SERVER_START_REQ( init_process_done )
      {
-@@ -1781,14 +1851,26 @@ void server_init_thread( struct thread_data *data )
+@@ -1780,20 +1907,35 @@ void server_init_process_done(void)
+ void server_init_thread( struct thread_data *data )
  {
      int reply_pipe;
++    NTSTATUS status;
      TEB64 *teb64 = get_teb64( data->teb );
 +#ifdef __OpenBSD__
 +    stack_t stack;
@@ -164,3 +286,11 @@ Index: dlls/ntdll/unix/server.c
          req->teb       = wine_server_client_ptr( teb64 ? (void *)teb64 : (void *)data->teb );
          req->reply_fd  = reply_pipe;
          req->wait_fd   = data->wait_fd[1];
+         if (data->teb) req->entry = wine_server_client_ptr( data->start );
+-        wine_server_call( req );
++        req->is_apc_worker = (data->start == system_apc_thread);
++        if ((status = wine_server_call( req )))
++            fatal_error( "init_thread failed, status %x\n", status );
+         data->suspend = reply->suspend;
+     }
+     SERVER_END_REQ;

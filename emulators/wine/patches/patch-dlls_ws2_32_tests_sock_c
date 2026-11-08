@@ -1,0 +1,34 @@
+Skip accept() after a synchronous TCP reconnect failure: OpenBSD cannot
+reuse the disconnected socket.
+
+Index: dlls/ws2_32/tests/sock.c
+--- dlls/ws2_32/tests/sock.c.orig
++++ dlls/ws2_32/tests/sock.c
+@@ -8815,7 +8815,7 @@ static void test_connect(void)
+     char buffer[1024];
+     BOOL bret;
+     DWORD dwret;
+-    int iret;
++    int iret, error;
+ 
+     memset(&overlapped, 0, sizeof(overlapped));
+ 
+@@ -9056,8 +9056,16 @@ static void test_connect(void)
+     ok(!iret, "failed to get address, error %u\n", WSAGetLastError());
+ 
+     iret = connect(connector, (struct sockaddr *)&address, sizeof(address));
+-    ok(iret == -1 && WSAGetLastError() == WSAEWOULDBLOCK, "unexpected iret %d, error %d.\n",
+-            iret, WSAGetLastError());
++    error = WSAGetLastError();
++    ok(iret == -1 && error == WSAEWOULDBLOCK, "unexpected iret %d, error %d.\n",
++            iret, error);
++    if (iret == SOCKET_ERROR && error != WSAEWOULDBLOCK)
++    {
++        skip("Cannot reuse the socket after a failed connect, skipping accept.\n");
++        closesocket(connector);
++        closesocket(listener);
++        return;
++    }
+     acceptor = accept(listener, NULL, NULL);
+     ok(acceptor != INVALID_SOCKET, "could not accept socket error %d\n", WSAGetLastError());
+ 

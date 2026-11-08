@@ -1,0 +1,27 @@
+Request DELETE access and remove the placeholder when CreateSymbolicLinkW
+fails to set a reparse point. Directory reparse support remains incomplete.
+
+Index: dlls/kernelbase/file.c
+--- dlls/kernelbase/file.c.orig
++++ dlls/kernelbase/file.c
+@@ -1087,7 +1087,7 @@ BOOLEAN WINAPI DECLSPEC_HOTPATCH CreateSymbolicLinkW( 
+         options |= FILE_NON_DIRECTORY_FILE;
+ 
+     InitializeObjectAttributes( &attr, &nt_link, OBJ_CASE_INSENSITIVE, 0, NULL );
+-    status = NtCreateFile( &file, GENERIC_WRITE, &attr, &io, NULL, 0, 0, FILE_CREATE, options, NULL, 0 );
++    status = NtCreateFile( &file, GENERIC_WRITE | DELETE, &attr, &io, NULL, 0, 0, FILE_CREATE, options, NULL, 0 );
+     RtlFreeUnicodeString( &nt_link );
+     if (status)
+     {
+@@ -1096,6 +1096,11 @@ BOOLEAN WINAPI DECLSPEC_HOTPATCH CreateSymbolicLinkW( 
+     }
+ 
+     status = NtDeviceIoControlFile( file, NULL, NULL, NULL, &io, FSCTL_SET_REPARSE_POINT, data, size, NULL, 0 );
++    if (status)
++    {
++        FILE_DISPOSITION_INFORMATION info = { TRUE };
++        NtSetInformationFile( file, &io, &info, sizeof(info), FileDispositionInformation );
++    }
+     HeapFree( GetProcessHeap(), 0, data );
+     NtClose( file );
+     return set_ntstatus( status );

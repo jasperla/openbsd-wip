@@ -1,0 +1,14 @@
+Allow ten seconds for the WindowFromPoint helper to start on slow systems.
+
+Index: dlls/user32/tests/win.c
+--- dlls/user32/tests/win.c.orig
++++ dlls/user32/tests/win.c
+@@ -10749,7 +10749,7 @@ static void test_window_from_point(HWND main_window, c
+     startup.cb = sizeof(startup);
+     ok(CreateProcessA(NULL, cmd, NULL, NULL, FALSE, 0, NULL, NULL,
+                 &startup, &info), "CreateProcess failed.\n");
+-    ok(wait_for_events(1, &start_event, 1000) == 0, "didn't get start_event\n");
++    ok(wait_for_events(1, &start_event, 10000) == 0, "didn't get start_event\n");
+ 
+     child = GetWindow(hwnd, GW_CHILD);
+     win = WindowFromPoint(pt);

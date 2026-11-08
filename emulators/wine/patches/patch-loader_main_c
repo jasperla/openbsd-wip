@@ -22,10 +22,11 @@ Index: loader/main.c
  #elif defined (__FreeBSD__) || defined(__DragonFly__)
      static int pathname[] = { CTL_KERN, KERN_PROC, KERN_PROC_PATHNAME, -1 };
      size_t path_size = PATH_MAX;
-@@ -163,6 +169,33 @@ static void *try_dlopen( const char *argv0 )
+@@ -163,6 +169,34 @@ static void *try_dlopen( const char *argv0 )
      return handle;
  }
  
++
 +#if defined(__OpenBSD__)
 +
 +/* OpenBSD can't use %gs, so %gs cannot point at the TEB.
