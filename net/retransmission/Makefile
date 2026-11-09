@@ -3,8 +3,8 @@ COMMENT-gtk=	fork of net/transmission with GTK interfaces
 COMMENT-qt=	fork of net/transmission with Qt interface
 
 VER=		4.2.0pre20261108
-DISTNAME=	transmission-4.2.0-dev+rd51d002c9c-nightly.20261108
-WRKSRC=		/usr/ports/pobj/transmission-4.2.0-dev+rd51d002c9c-nightly.20261108/transmission-4.2.0-dev+rd51d002c9c
+DISTNAME=	transmission-4.2.0-dev+ra4f79b5f77-nightly.20261108
+WRKSRC=		/usr/ports/pobj/transmission-4.2.0-dev+ra4f79b5f77-nightly.20261108/transmission-4.2.0-dev+ra4f79b5f77
 PKGNAME-main=	retransmission-${VER}
 PKGNAME-gtk=	retransmission-gtk-${VER}
 PKGNAME-qt=	retransmission-qt-${VER}
@@ -34,9 +34,8 @@ FLAVOR?=
 
 .include <bsd.port.arch.mk>
 
-WANTLIB-common =	${COMPILER_LIBCXX} c crypto curl 
-WANTLIB-common +=	m miniupnpc natpmp psl ssl intl z
-WANTLIB-common +=	archive simdutf
+WANTLIB-common += ${COMPILER_LIBCXX} archive c crypto curl intl m miniupnpc
+WANTLIB-common += natpmp psl simdutf ssl z
 
 WANTLIB-main =	${WANTLIB-common}
 
