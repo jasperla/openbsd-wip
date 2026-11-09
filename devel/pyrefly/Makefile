@@ -22,10 +22,8 @@ MAINTAINER =	Laurent Cheylus <foxy@free.fr>
 # MIT
 PERMIT_PACKAGE=	Yes
 
-# Fix WRKSRC and WRKDIST
 # Errors with DIST_TUPLE for backtrace-rs if not set
-WRKSRC=${WRKDIR}/pyrefly-${VERSION}
-WRKDIST=${WRKSRC}
+WRKDIST=${WRKDIR}/${DISTNAME}
 
 WANTLIB =	${MODCARGO_WANTLIB} m zstd
 
