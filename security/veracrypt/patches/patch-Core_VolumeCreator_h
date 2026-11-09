@@ -1,0 +1,17 @@
+Add OpenBSD filesystem formatter mappings:
+- newfs_ext2fs for ext2 (base system)
+- mkfs.exfat for exFAT (from exfat-fuse package)
+
+Index: Core/VolumeCreator.h
+--- Core/VolumeCreator.h.orig
++++ Core/VolumeCreator.h
+@@ -88,6 +88,9 @@
+ 				case VolumeCreationOptions::FilesystemType::MacOsExt:	return "newfs_hfs";
+ 				case VolumeCreationOptions::FilesystemType::exFAT:		return "newfs_exfat";
+ 				case VolumeCreationOptions::FilesystemType::APFS:		return "newfs_apfs";
++	#elif defined (TC_OPENBSD)
++				case VolumeCreationOptions::FilesystemType::Ext2:		return "newfs_ext2fs";
++				case VolumeCreationOptions::FilesystemType::exFAT:		return "mkfs.exfat";
+ 	#elif defined (TC_FREEBSD) || defined (TC_SOLARIS)
+ 				case VolumeCreationOptions::FilesystemType::UFS:		return "newfs" ;
+ 	#endif
