@@ -2,9 +2,9 @@ COMMENT-main=	fork of net/transmission
 COMMENT-gtk=	fork of net/transmission with GTK interfaces
 COMMENT-qt=	fork of net/transmission with Qt interface
 
-VER=		4.2.0pre20261108
-DISTNAME=	transmission-4.2.0-dev+ra4f79b5f77-nightly.20261108
-WRKSRC=		/usr/ports/pobj/transmission-4.2.0-dev+ra4f79b5f77-nightly.20261108/transmission-4.2.0-dev+ra4f79b5f77
+VER=		4.2.0pre20261110
+DISTNAME=	transmission-4.2.0-dev+r9321851241-nightly.20261110
+WRKSRC=		/usr/ports/pobj/transmission-4.2.0-dev+r9321851241-nightly.20261110/transmission-4.2.0-dev+r9321851241
 PKGNAME-main=	retransmission-${VER}
 PKGNAME-gtk=	retransmission-gtk-${VER}
 PKGNAME-qt=	retransmission-qt-${VER}
