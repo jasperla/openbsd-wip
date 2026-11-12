@@ -1,4 +1,4 @@
-@pkgpath math/pc
+@pkgpath math/numsv
 @bin bin/NuSMV
 @bin bin/ltl2smv
 include/nusmv/

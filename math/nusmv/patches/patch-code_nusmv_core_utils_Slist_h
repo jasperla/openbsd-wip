@@ -1,12 +1,14 @@
 Index: code/nusmv/core/utils/Slist.h
 --- code/nusmv/core/utils/Slist.h.orig
 +++ code/nusmv/core/utils/Slist.h
-@@ -75,7 +75,7 @@ typedef struct Slist_TAG* Slist_ptr;
+@@ -75,6 +75,10 @@ typedef struct Slist_TAG* Slist_ptr;
  
    \todo Missing description
  */
--#define SLIST_FOREACH(list, iter)                               \
-+#define _SLIST_FOREACH(list, iter)                               \
++
++#include <sys/queue.h>
++#undef SLIST_FOREACH
++
+ #define SLIST_FOREACH(list, iter)                               \
     for (iter=Slist_first(list); !Siter_is_end(iter); \
          iter=Siter_next(iter))
- 
