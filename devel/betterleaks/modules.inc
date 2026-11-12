@@ -13,7 +13,7 @@ MODGO_MODULES =	\
 	github.com/!google!cloud!platform/opentelemetry-operations-go/internal/resourcemapping	 v0.53.0 \
 	github.com/!masterminds/semver/v3							 v3.4.0 \
 	github.com/!s!t!a!r!r!y-!s/zip								 v0.2.3 \
-	github.com/andybalholm/brotli								 v1.2.1 \
+	github.com/andybalholm/brotli								 v1.2.7 \
 	github.com/betterleaks/go-re2								 v1.11.0-betterleaks.3 \
 	github.com/bodgit/plumbing								 v1.3.0 \
 	github.com/bodgit/sevenzip								 v1.6.2 \
@@ -126,6 +126,7 @@ MODGO_MODULES =	\
 
 MODGO_MODFILES =	\
 	github.com/andybalholm/brotli	 v1.2.0 \
+	github.com/andybalholm/brotli	 v1.2.1 \
 	github.com/bodgit/sevenzip	 v1.6.1 \
 	github.com/davecgh/go-spew	 v1.1.0 \
 	github.com/davecgh/go-spew	 v1.1.1 \

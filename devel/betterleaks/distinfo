@@ -1,4 +1,4 @@
-SHA256 (betterleaks-v1.10.0.zip) = mXTsHoUi0j1ByKO5aUEAgZ7TSRVaq953snnWl81EWAQ=
+SHA256 (betterleaks-v1.10.1.zip) = DFnfA58xu7UeTuoYZXKJZGfQmDsy8Pq9P329B+zu7zU=
 SHA256 (go_modules/cel.dev/expr/@v/v0.24.0.mod) = wMexfwVuWHervPsGdEz1I4y5oLChoI4ThM8mhaIhFNE=
 SHA256 (go_modules/cel.dev/expr/@v/v0.24.0.zip) = RFYYkxUTMTa3K/tAMS1zHIlXzOOKKAesIdCfUVglm7c=
 SHA256 (go_modules/cloud.google.com/go/@v/v0.121.6.mod) = c90XEwguvCf+oC0LwIcBdm+QeiJXXZETpfxnrYa4Bm8=
@@ -29,7 +29,8 @@ SHA256 (go_modules/github.com/!s!t!a!r!r!y-!s/zip/@v/v0.2.3.mod) = R7JTYA49pxFtS
 SHA256 (go_modules/github.com/!s!t!a!r!r!y-!s/zip/@v/v0.2.3.zip) = e3r1w0zcbUtVvjCe8Me/pRRwKfhITXmcCSvjFBRjp2s=
 SHA256 (go_modules/github.com/andybalholm/brotli/@v/v1.2.0.mod) = mDbtcFnmtr6dQuZmyGbe6oZG1YFSFvz2IWlmB0dEyx8=
 SHA256 (go_modules/github.com/andybalholm/brotli/@v/v1.2.1.mod) = mDbtcFnmtr6dQuZmyGbe6oZG1YFSFvz2IWlmB0dEyx8=
-SHA256 (go_modules/github.com/andybalholm/brotli/@v/v1.2.1.zip) = g9Vw7H8Yner4c3a6TzbS6YGg3E9wa/TYTPEcxO+xqFc=
+SHA256 (go_modules/github.com/andybalholm/brotli/@v/v1.2.7.mod) = mDbtcFnmtr6dQuZmyGbe6oZG1YFSFvz2IWlmB0dEyx8=
+SHA256 (go_modules/github.com/andybalholm/brotli/@v/v1.2.7.zip) = 57EF/XyjzDK+5GojEz6fwtgbMk/sJEDGmOt8yPA7/BM=
 SHA256 (go_modules/github.com/betterleaks/go-re2/@v/v1.11.0-betterleaks.3.mod) = B2soz9fUFNV3azE8Quck+VFyLnhDLK3SriEdxbixMYc=
 SHA256 (go_modules/github.com/betterleaks/go-re2/@v/v1.11.0-betterleaks.3.zip) = M9Zcn3x2hnqETBJ6cxO/PAxFXkvSNhj7pjX/gT2bQDM=
 SHA256 (go_modules/github.com/bodgit/plumbing/@v/v1.3.0.mod) = R8bnmgKF+6zOBglvD459cwqhSR1bewFcMZi6C4BkdXA=
@@ -309,7 +310,7 @@ SHA256 (go_modules/gopkg.in/check.v1/@v/v1.0.0-20190902080502-41f04d3bba15.zip) 
 SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.0-20200313102051-9f266ea9e77c.mod) = IVeYYKIDBvz0OxvSNNH7oxlJnHdhG3HAX5vzupDauTk=
 SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.mod) = IVeYYKIDBvz0OxvSNNH7oxlJnHdhG3HAX5vzupDauTk=
 SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.zip) = qrj7xOYwDqCOav4crqGKIckMefSJ9SxT4vIEMfGpoBU=
-SIZE (betterleaks-v1.10.0.zip) = 1924640
+SIZE (betterleaks-v1.10.1.zip) = 1924688
 SIZE (go_modules/cel.dev/expr/@v/v0.24.0.mod) = 231
 SIZE (go_modules/cel.dev/expr/@v/v0.24.0.zip) = 269497
 SIZE (go_modules/cloud.google.com/go/@v/v0.121.6.mod) = 2733
@@ -340,7 +341,8 @@ SIZE (go_modules/github.com/!s!t!a!r!r!y-!s/zip/@v/v0.2.3.mod) = 40
 SIZE (go_modules/github.com/!s!t!a!r!r!y-!s/zip/@v/v0.2.3.zip) = 80169
 SIZE (go_modules/github.com/andybalholm/brotli/@v/v1.2.0.mod) = 151
 SIZE (go_modules/github.com/andybalholm/brotli/@v/v1.2.1.mod) = 151
-SIZE (go_modules/github.com/andybalholm/brotli/@v/v1.2.1.zip) = 1918453
+SIZE (go_modules/github.com/andybalholm/brotli/@v/v1.2.7.mod) = 151
+SIZE (go_modules/github.com/andybalholm/brotli/@v/v1.2.7.zip) = 1952671
 SIZE (go_modules/github.com/betterleaks/go-re2/@v/v1.11.0-betterleaks.3.mod) = 197
 SIZE (go_modules/github.com/betterleaks/go-re2/@v/v1.11.0-betterleaks.3.zip) = 1138212
 SIZE (go_modules/github.com/bodgit/plumbing/@v/v1.3.0.mod) = 87
