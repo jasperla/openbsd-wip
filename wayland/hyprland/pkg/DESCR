@@ -1,0 +1,3 @@
+Hyprland is a dynamic tiling Wayland compositor that doesn't sacrifice
+on its looks. It provides tiling, floating, and tabbed window management
+with extensive customization, animations, and plugin support via Lua.

@@ -1,0 +1,3 @@
+include/hyprlang.hpp
+@lib lib/libhyprlang.so.${LIBhyprlang_VERSION}
+lib/pkgconfig/hyprlang.pc

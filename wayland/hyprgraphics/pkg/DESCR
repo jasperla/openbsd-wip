@@ -1,0 +1,3 @@
+hyprgraphics is a small C++ library containing graphics and resource
+utilities used across the Hyprland ecosystem, including image loading
+support for JPEG, PNG, WebP, JPEG XL, HEIF/AVIF, and SVG formats.
