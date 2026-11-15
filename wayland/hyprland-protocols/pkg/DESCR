@@ -1,0 +1,2 @@
+Hyprland-protocols is an extension to the Wayland protocols containing
+Hyprland-specific protocol extensions not yet in upstream Wayland.

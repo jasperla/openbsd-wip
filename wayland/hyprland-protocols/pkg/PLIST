@@ -1,0 +1,12 @@
+share/hyprland-protocols/
+share/hyprland-protocols/protocols/
+share/hyprland-protocols/protocols/hyprland-ctm-control-v1.xml
+share/hyprland-protocols/protocols/hyprland-focus-grab-v1.xml
+share/hyprland-protocols/protocols/hyprland-global-shortcuts-v1.xml
+share/hyprland-protocols/protocols/hyprland-input-capture-v1.xml
+share/hyprland-protocols/protocols/hyprland-lock-notify-v1.xml
+share/hyprland-protocols/protocols/hyprland-surface-v1.xml
+share/hyprland-protocols/protocols/hyprland-toplevel-export-v1.xml
+share/hyprland-protocols/protocols/hyprland-toplevel-mapping-v1.xml
+share/hyprland-protocols/protocols/hyprland-workspace-image-capture-source-v1.xml
+share/pkgconfig/hyprland-protocols.pc

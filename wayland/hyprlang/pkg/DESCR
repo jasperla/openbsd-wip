@@ -1,0 +1,3 @@
+hyprlang is a library to parse Hyprland configuration files. It provides
+a flexible configuration language used by Hyprland and other tools in the
+Hyprland ecosystem.

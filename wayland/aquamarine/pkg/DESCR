@@ -1,0 +1,3 @@
+Aquamarine is a lightweight Wayland rendering backend library that
+replaces wlroots for the Hyprland compositor. It provides DRM/KMS,
+libinput, and Wayland backend support.

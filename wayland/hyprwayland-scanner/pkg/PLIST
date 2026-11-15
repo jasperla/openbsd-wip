@@ -1,0 +1,5 @@
+@bin bin/hyprwayland-scanner
+lib/cmake/hyprwayland-scanner/
+lib/cmake/hyprwayland-scanner/hyprwayland-scanner-config-version.cmake
+lib/cmake/hyprwayland-scanner/hyprwayland-scanner-config.cmake
+lib/pkgconfig/hyprwayland-scanner.pc

@@ -1,0 +1,3 @@
+hyprcursor is a library and toolkit for the Hyprland cursor format,
+providing efficient cursor theme support with SVG-based rendering and
+a utility for creating and converting cursor themes.

@@ -1,0 +1,8 @@
+@bin bin/hyprcursor-util
+include/hyprcursor/
+include/hyprcursor.hpp
+include/hyprcursor/hyprcursor.h
+include/hyprcursor/hyprcursor.hpp
+include/hyprcursor/shared.h
+@lib lib/libhyprcursor.so.${LIBhyprcursor_VERSION}
+lib/pkgconfig/hyprcursor.pc
