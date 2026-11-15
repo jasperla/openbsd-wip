@@ -1,0 +1,2 @@
+NuSMV allows to check finite state systems against specifications in the temporal logic CTL5. The input language of NuSMV is
+designed to allow the description of finite state systems that range from completely synchronous to completely asynchronous.
