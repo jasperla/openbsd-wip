@@ -1,11 +1,10 @@
-asset:  transmission-4.2.0-dev+r853b772b2f-nightly.20261115.tar.xz
 COMMENT-main=	fork of net/transmission
 COMMENT-gtk=	fork of net/transmission with GTK interfaces
 COMMENT-qt=	fork of net/transmission with Qt interface
 
-VER=		4.2.0pre20261114
-DISTNAME=	transmission-4.2.0-dev+r853b772b2f-nightly.20261115
-WRKSRC=		/usr/ports/pobj/transmission-4.2.0-dev+r853b772b2f-nightly.20261115/transmission-4.2.0-dev+r853b772b2f
+VER=		4.2.0pre20261116
+DISTNAME=	transmission-4.2.0-dev+r9c3fcfb3aa-nightly.20261116
+WRKSRC=		/usr/ports/pobj/transmission-4.2.0-dev+r9c3fcfb3aa-nightly.20261116/transmission-4.2.0-dev+r9c3fcfb3aa
 PKGNAME-main=	retransmission-${VER}
 PKGNAME-gtk=	retransmission-gtk-${VER}
 PKGNAME-qt=	retransmission-qt-${VER}
