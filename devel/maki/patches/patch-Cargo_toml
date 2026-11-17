@@ -3,7 +3,7 @@ Use local crates
 Index: Cargo.toml
 --- Cargo.toml.orig
 +++ Cargo.toml
-@@ -245,5 +245,5 @@ lto = true
+@@ -253,5 +253,5 @@ codegen-units = 1
  # the pop its loop guard watches, so one such line pins a core at 100% for good.
  # Pinned to a v5.3.0 backport of trishume/syntect#706, remove once that ships.
  [patch.crates-io]
