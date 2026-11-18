@@ -1,0 +1,18 @@
+The package creates user and group _sl, the directory /var/sl
+(mode 0700, owner _sl:_sl), and /etc/sl.conf (mode 0640, owner
+root:_sl) from the sample.
+
+Initialize the database as that user, then start the daemon:
+
+# doas -u _sl slctl init
+# rcctl enable sld
+# rcctl start sld
+
+Replace the admin user and password, then restart so old logins stop:
+
+# doas -u _sl slctl passwd
+# rcctl restart sld
+
+sld does not create the database. A start before init exits before
+the daemon forks. PostgreSQL is optional and needs p5-DBD-Pg, which
+this package does not depend on.

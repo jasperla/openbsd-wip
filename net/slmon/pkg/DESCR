@@ -1,0 +1,3 @@
+sld records samples from a Starlink dish and serves them on a local
+HTTP listener. slctl initializes the database and prints one status
+document. The monitor is unofficial and is not a SpaceX program.

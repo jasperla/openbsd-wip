@@ -1,0 +1,50 @@
+@comment $OpenBSD$
+@newgroup _sl:907
+@newuser _sl:907:_sl:daemon:Starlink monitor:/var/sl:/sbin/nologin
+@mode 700
+@owner _sl
+@group _sl
+@sample /var/sl/
+@mode
+@owner
+@group
+@rcscript ${RCDIR}/sld
+${P5ARCH}/auto/SLMON/Dish/
+@so ${P5ARCH}/auto/SLMON/Dish/Dish.so
+${P5ARCH}/auto/SLMON/Imsg/
+@so ${P5ARCH}/auto/SLMON/Imsg/Imsg.so
+${P5SITE}/SLMON.pm
+${P5SITE}/SLMON/
+${P5SITE}/SLMON/Auth.pm
+${P5SITE}/SLMON/Config.pm
+${P5SITE}/SLMON/DB.pm
+${P5SITE}/SLMON/DB/
+${P5SITE}/SLMON/DB/Pg.pm
+${P5SITE}/SLMON/DB/SQLite.pm
+${P5SITE}/SLMON/Dash.pm
+${P5SITE}/SLMON/Dish.pm
+${P5SITE}/SLMON/DishProc.pm
+${P5SITE}/SLMON/History.pm
+${P5SITE}/SLMON/Http.pm
+${P5SITE}/SLMON/Imsg.pm
+${P5SITE}/SLMON/Obstruction.pm
+${P5SITE}/SLMON/Parent.pm
+${P5SITE}/SLMON/Rollup.pm
+${P5SITE}/SLMON/StatusMap.pm
+${P5SITE}/SLMON/Watchdog.pm
+${P5SITE}/SLMON/Weather.pm
+@man man/man5/sl.conf.5
+@man man/man8/sld.8
+@man man/man8/slctl.8
+sbin/sld
+sbin/slctl
+share/examples/slmon/
+@owner root
+@group _sl
+@mode 640
+share/examples/slmon/sl.conf
+@sample ${SYSCONFDIR}/sl.conf
+@mode
+@owner
+@group
+share/doc/pkg-readmes/${PKGSTEM}

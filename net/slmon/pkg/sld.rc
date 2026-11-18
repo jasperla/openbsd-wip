@@ -1,0 +1,17 @@
+#!/bin/ksh
+#
+# sld forks itself. rc waits for that parent to exit.
+# pexp matches the process title rcctl check and rcctl stop look up.
+
+daemon="/usr/local/sbin/sld"
+daemon_flags="-c /etc/sl.conf"
+daemon_user="_sl"
+pexp="sld: parent"
+
+. /etc/rc.d/rc.subr
+
+rc_configtest() {
+	rc_exec "${daemon} -n -c /etc/sl.conf"
+}
+
+rc_cmd $1
