@@ -1,7 +1,7 @@
-@conflict transmission-*
-@pkgpath net/transmission
+@pkgpath net/retransmission
 @newgroup _transmission:662
 @newuser _transmission:662:662::Transmission Account:/var/transmission:/sbin/nologin
+@rcscript ${RCDIR}/retransmission_daemon
 @mode 750
 @owner _transmission
 @group _transmission
@@ -9,7 +9,6 @@
 @mode
 @owner
 @group
-@rcscript ${RCDIR}/retransmission_daemon
 @bin bin/transmission-cli
 @bin bin/transmission-create
 @bin bin/transmission-daemon
@@ -77,19 +76,14 @@ share/doc/retransmission/news/news-5.0.0-draft.md
 share/doc/retransmission/rpc-spec.md
 share/doc/retransmission/send-email-when-torrent-done.sh
 share/examples/login.conf.d/retransmisison_daemon
-@sample ${SYSCONFDIR}/login.conf.d/retransmisison_daemon
+@sample /etc/login.conf.d/retransmisison_daemon
+@comment remove from -main:
 @comment share/icons/
 @comment share/icons/hicolor/
 @comment share/icons/hicolor/scalable/
 @comment share/icons/hicolor/scalable/apps/
-share/icons/hicolor/scalable/apps/retransmission-gtk-devel.svg
-share/icons/hicolor/scalable/apps/retransmission-gtk.svg
-share/icons/hicolor/scalable/apps/retransmission-qt-devel.svg
-share/icons/hicolor/scalable/apps/retransmission-qt.svg
 @comment share/icons/hicolor/symbolic/
 @comment share/icons/hicolor/symbolic/apps/
-share/icons/hicolor/symbolic/apps/retransmission-gtk-symbolic.svg
-share/icons/hicolor/symbolic/apps/retransmission-qt-symbolic.svg
 share/retransmission/
 share/retransmission/public_html/
 share/retransmission/public_html/images/
@@ -102,37 +96,5 @@ share/retransmission/public_html/transmission-app.css.LEGAL.txt
 share/retransmission/public_html/transmission-app.css.map
 share/retransmission/public_html/transmission-app.js
 share/retransmission/public_html/transmission-app.js.LEGAL.txt
-share/retransmission/translations/
-share/retransmission/translations/transmission_af.qm
-share/retransmission/translations/transmission_ca.qm
-share/retransmission/translations/transmission_da.qm
-share/retransmission/translations/transmission_de.qm
-share/retransmission/translations/transmission_el.qm
-share/retransmission/translations/transmission_en.qm
-share/retransmission/translations/transmission_es.qm
-share/retransmission/translations/transmission_eu.qm
-share/retransmission/translations/transmission_fi.qm
-share/retransmission/translations/transmission_fr.qm
-share/retransmission/translations/transmission_he.qm
-share/retransmission/translations/transmission_hu.qm
-share/retransmission/translations/transmission_id.qm
-share/retransmission/translations/transmission_is.qm
-share/retransmission/translations/transmission_it.qm
-share/retransmission/translations/transmission_ja.qm
-share/retransmission/translations/transmission_ka.qm
-share/retransmission/translations/transmission_kk.qm
-share/retransmission/translations/transmission_ko.qm
-share/retransmission/translations/transmission_lt.qm
-share/retransmission/translations/transmission_nb.qm
-share/retransmission/translations/transmission_nl.qm
-share/retransmission/translations/transmission_pl.qm
-share/retransmission/translations/transmission_pt.qm
-share/retransmission/translations/transmission_pt_BR.qm
-share/retransmission/translations/transmission_pt_PT.qm
-share/retransmission/translations/transmission_ru.qm
-share/retransmission/translations/transmission_sl.qm
-share/retransmission/translations/transmission_sv.qm
-share/retransmission/translations/transmission_tr.qm
-share/retransmission/translations/transmission_uk.qm
-share/retransmission/translations/transmission_zh_CN.qm
-share/retransmission/translations/transmission_zh_TW.qm
+@comment remove from -main:
+@comment share/retransmission/translations/

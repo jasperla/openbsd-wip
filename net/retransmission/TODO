@@ -1,5 +1,7 @@
 CI for pre-release of the retransmission fork of transmission.
 
 Using a nightly tag, with a selected tarball that includes
-third-party submodules.  Due to Project naming conventions,
-DISTFILE and WRKSRC require editing by hand.
+third-party submodules.  The project's "nightly" tag changes
+with every successfully tested commit, and github deletes
+the old assets, so the Makefile may need to be updated
+before you can fetch the most recent nightly asset.
