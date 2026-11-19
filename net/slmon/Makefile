@@ -1,10 +1,10 @@
 COMMENT =	unofficial Starlink dish monitor
 
-V =		0.1
-REVISION =	1
-DISTNAME =	slmon-${V}
+V =		0.2
+COMMIT =	df795481c359d17c85b4bc08d39c2a01f3b9d2d7
+DIST_TUPLE =	github toddfries slmon ${COMMIT} .
+PKGNAME =	slmon-0.2
 
-SITES =		file:///tlaptop.f/todd/distfiles/
 
 CATEGORIES =	net
 MAINTAINER =	Todd T. Fries <todd@fries.net>
