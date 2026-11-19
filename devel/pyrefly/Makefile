@@ -1,6 +1,6 @@
 COMMENT =	fast type checker and language server for Python
 
-VERSION =	1.4.1
+VERSION =	1.5.0
 
 DISTNAME =	pyrefly-${VERSION}
 
@@ -28,7 +28,7 @@ WRKDIST=${WRKDIR}/${DISTNAME}
 WANTLIB =	${MODCARGO_WANTLIB} m zstd
 
 BUILD_DEPENDS+=	archivers/zstd
-LIB_DEPENDS +=	${BUILD_DEPENDS}
+LIB_DEPENDS +=	archivers/zstd
 
 MODULES =	lang/python
 MODPY_PYBUILD =	maturin
@@ -43,8 +43,8 @@ do-build:
 		--manifest-path ${WRKSRC}/pyrefly/Cargo.toml \
 		--release ${MODCARGO_BUILD_ARGS}
 
-# Tests results for v1.4.1
-# test result: FAILED. 9194 passed; 2 failed; 3 ignored; 0 measured; 0 filtered out; finished in 880.37s
+# Tests results for v1.5.0
+# test result: FAILED. 10958 passed; 2 failed; 3 ignored; 0 measured; 0 filtered out; finished in 1128.15s
 # failures:
 # test::lsp::lsp_interaction::diagnostic::test_missing_source_for_stubs_diagnostic
 # test::lsp::lsp_interaction::diagnostic::test_missing_source_with_config_diagnostic_has_errors
