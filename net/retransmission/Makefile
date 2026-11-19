@@ -1,10 +1,33 @@
+asset:  transmission-4.2.0-dev+ra378628696-nightly.20261117.tar.xz
+
 COMMENT-main=	fork of net/transmission
 COMMENT-gtk=	fork of net/transmission with GTK interfaces
 COMMENT-qt=	fork of net/transmission with Qt interface
 
 VER=		4.2.0pre20261116
-DISTNAME=	transmission-4.2.0-dev+r9c3fcfb3aa-nightly.20261116
-WRKSRC=		/usr/ports/pobj/transmission-4.2.0-dev+r9c3fcfb3aa-nightly.20261116/transmission-4.2.0-dev+r9c3fcfb3aa
+DISTNAME=	transmission-4.2.0-dev+ra378628696-nightly.20261117
+FOLDER=		transmission-4.2.0-dev+ra378628696
+
+WRKSRC=		${WRKOBJDIR}/${DISTNAME}/${FOLDER}
+
+PSEUDO_FLAVORS=	no_gtk no_qt
+FLAVOR?=
+
+.if !empty(FLAVOR)
+.  if ${FLAVOR:Mno_gtk}
+WRKSRC=		${WRKOBJDIR}/${DISTNAME}-no_gtk/${FOLDER}
+.  endif
+.  if ${FLAVOR:Mno_qt}
+WRKSRC=		${WRKOBJDIR}/${DISTNAME}-no_qt/${FOLDER}
+.  endif
+.  if ${FLAVOR} == "no_gtk no_qt"
+WRKSRC=		${WRKOBJDIR}/${DISTNAME}-no_gtk-no_qt/${FOLDER}
+.  endif
+.  if ${FLAVOR} == "no_qt no_gtk"
+WRKSRC=		${WRKOBJDIR}/${DISTNAME}-no_gtk-no_qt/${FOLDER}
+.  endif
+.endif
+
 PKGNAME-main=	retransmission-${VER}
 PKGNAME-gtk=	retransmission-gtk-${VER}
 PKGNAME-qt=	retransmission-qt-${VER}
@@ -27,10 +50,6 @@ MULTI_PACKAGES=	-main -gtk -qt
 
 # gnu++17
 COMPILER =	base-clang ports-gcc
-
-
-PSEUDO_FLAVORS=	no_gtk no_qt
-FLAVOR?=
 
 .include <bsd.port.arch.mk>
 
