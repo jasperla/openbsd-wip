@@ -12,7 +12,7 @@ COMMENT =	efficient AI coding agent extendable by Lua plugins
 
 GH_ACCOUNT =	tontinton
 GH_PROJECT =	maki
-GH_TAGNAME =	v0.7.2
+GH_TAGNAME =	v0.7.3
 
 # Rust crates downloaded via git
 CROSSTERM =	94ed7154e35d24a2f643c61760e1eb05b8ca9e63
