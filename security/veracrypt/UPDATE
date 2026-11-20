@@ -1,0 +1,32 @@
+Update security/veracrypt to 1.26.29
+
+This is an update to the existing port in the main tree (1.25.9),
+
+Changes from upstream 1.26.29:
+- Argon2id KDF support
+- Reproducible build infrastructure
+- OpenBSD File::Length() fix (proper per-partition size via DIOCGDINFO)
+- OpenBSD doas/FUSE fixes
+- vnconfig -c flag removal (adapted to current OpenBSD)
+- wxWidgets Forms.cpp regenerated (fixes wxALIGN+wxEXPAND conflicts)
+
+Patches carried (5):
+- patch-Makefile: don't hardcode -O2, inject port CFLAGS/CXXFLAGS,
+  make LFLAGS conditionally assignable
+- patch-Core_Unix_OpenBSD_CoreOpenBSD_cpp: fix bare throw; in
+  AttachFileToLoopDevice, implement GetHostDevices() via sysctl
+  hw.disknames, mount fallback chain (msdos -> exfat-fuse -> ffs)
+- patch-Core_VolumeCreator_h: OpenBSD filesystem formatters
+- patch-Main_Forms_VolumeFormatOptionsWizardPage_cpp: filesystem
+  type UI choices for OpenBSD
+- patch-Setup_FreeBSD_veracrypt_desktop: fix Exec path
+
+Patches dropped (fixed upstream):
+- patch-Platform_Unix_File_cpp (device size calculation)
+- patch-Main_Forms_Forms_cpp (wxWidgets alignment)
+
+New dependency: sysutils/exfat-fuse (RUN_DEPENDS) for exFAT volume
+mounting. Calls mount.exfat directly since OpenBSD mount -t expects
+mount_exfat (underscore) but exfat-fuse uses dot convention.
+
+Tested on amd64/OpenBSD-CURRENT (June 12, 2026 Snapshot)

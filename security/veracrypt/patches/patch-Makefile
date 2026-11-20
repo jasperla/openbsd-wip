@@ -1,0 +1,36 @@
+- don't hardcode -O2
+- inject port infrastructure's cflags/cxxflags
+- make LFLAGS conditionally assignable
+
+Index: Makefile
+--- Makefile.orig	Mon Jun 22 17:58:16 2026
++++ Makefile	Mon Jun 22 17:58:22 2026
+@@ -50,7 +50,7 @@
+ export CXXFLAGS := -Wall -Wno-unused-parameter
+ C_CXX_FLAGS := -MMD -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGE_FILES -I$(BASE_DIR) -I$(BASE_DIR)/Crypto -DARGON2_NO_THREADS -I$(BASE_DIR)/Crypto/Argon2/include
+ export ASFLAGS := -D __GNUC__ -D __YASM__
+-export LFLAGS :=
++export LFLAGS ?=
+ 
+ export PKG_CONFIG ?= pkg-config
+ export PKG_CONFIG_PATH ?= /usr/local/lib/pkgconfig
+@@ -111,7 +111,7 @@
+ 
+ ifeq "$(TC_BUILD_CONFIG)" "Release"
+ 
+-	C_CXX_FLAGS += -O2 -fno-strict-aliasing  # Do not enable strict aliasing
++	C_CXX_FLAGS += -fno-strict-aliasing  # Do not enable strict aliasing
+ 	export WX_BUILD_DIR ?= $(BASE_DIR)/wxrelease
+ 	WX_CONFIGURE_FLAGS += --disable-debug_flag --disable-debug_gdb --disable-debug_info
+ 
+@@ -585,8 +585,8 @@
+ 
+ #------ Common configuration ------
+ 
+-CFLAGS := $(C_CXX_FLAGS) $(CFLAGS) $(TC_EXTRA_CFLAGS)
+-CXXFLAGS := $(C_CXX_FLAGS) $(CXXFLAGS) $(TC_EXTRA_CXXFLAGS)
++CFLAGS := $(C_CXX_FLAGS) $(CFLAGS) $(TC_EXTRA_CFLAGS) $(PORT_CFLAGS)
++CXXFLAGS := $(C_CXX_FLAGS) $(CXXFLAGS) $(TC_EXTRA_CXXFLAGS) $(PORT_CXXFLAGS)
+ LFLAGS := $(LFLAGS) $(TC_EXTRA_LFLAGS)
+ 
+ #------ Reproducible build configuration ------
