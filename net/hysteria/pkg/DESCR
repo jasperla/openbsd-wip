@@ -1,0 +1,5 @@
+Hysteria is a high-performance proxy application designed 
+to bypass network censorship effectively. It implements 
+a custom QUIC-based protocol that excels on unstable 
+or lossy connections, delivering superior speed 
+compared to traditional proxies. 
