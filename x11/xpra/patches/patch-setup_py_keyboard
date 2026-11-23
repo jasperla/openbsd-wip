@@ -1,0 +1,13 @@
+$OpenBSD$
+
+Index: setup.py
+--- setup.py.orig
++++ setup.py
+@@ -2845,7 +2845,7 @@
+         ace("xpra.x11.bindings.fixes", "xfixes")
+         ace("xpra.x11.bindings.cursor", "xcursor")
+-        ace("xpra.x11.bindings.keyboard", "xkbfile")
++        ace("xpra.x11.bindings.keyboard", "xkbfile,x11")
+         ace("xpra.x11.bindings.res", "xres")
+         ace("xpra.x11.bindings.composite", "xcomposite")
+         ace("xpra.x11.bindings.xkb", "xkbfile,x11")

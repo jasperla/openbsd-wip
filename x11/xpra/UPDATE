@@ -1,0 +1,21 @@
+CHANGES:
+* update from 2.3 to 6.5.5
+* switch to Python 3 (MODPY_VERSION = ${MODPY_DEFAULT_VERSION_3})
+* use MODPY_PYBUILD = setuptools, drop MODPY_SETUPTOOLS
+* refresh WANTLIB for the new GTK3/GTK3-based build
+* add LIB_DEPENDS on x11/gnome/at-spi2-core and devel/gettext
+  (fixes broken devel/at-spi2-core and devel/gettext-runtime paths)
+* build without Xdummy, uinput, pam, service, sd_listen, wayland
+  client/server, v4l2 and wireshark
+* install configuration under share/examples/xpra
+* replace patch-setup_py and patch-xpra_buffers_memalign_c with
+  patch-setup_py_cups and patch-setup_py_keyboard
+* regenerate PLIST
+
+TESTING:
+Builds, packages and runs on OpenBSD 8.0/amd64.  "xpra start :99"
+reports "xpra seamless server version 6.5.5-r0" and "xpra info :99"
+returns session information.  "make update-plist" is idempotent and
+"make lib-depends-check" is clean.
+
+Signed-off-by: andreoss <andreoss@sdf.org>
