@@ -1,0 +1,17 @@
+Index: idlib/DataQueue.h
+--- idlib/DataQueue.h.orig
++++ idlib/DataQueue.h
+@@ -109,8 +109,11 @@ bool idDataQueue< maxItems, maxBuffer >::Append( int s
+ 	item.dataOffset = dataLength;
+ 	memcpy( data + dataLength, b1, b1Len );
+ 	dataLength += b1Len;
+-	memcpy( data + dataLength, b2, b2Len );
+-	dataLength += b2Len;
++	if( b2 != NULL )
++	{
++		memcpy( data + dataLength, b2, b2Len );
++		dataLength += b2Len;
++	}
+ 	return true;
+ }
+ 

@@ -1,0 +1,22 @@
+Index: renderer/OpenGL/RenderBackend_GL.cpp
+--- renderer/OpenGL/RenderBackend_GL.cpp.orig
++++ renderer/OpenGL/RenderBackend_GL.cpp
+@@ -48,7 +48,7 @@ If you have questions concerning this license or the a
+ #include "../RenderBackend.h"
+ #include "../../framework/Common_local.h"
+ 
+-#include "../../imgui/imgui.h"
++#include "../../imgui/BFGimgui.h"
+ 
+ idCVar r_drawFlickerBox( "r_drawFlickerBox", "0", CVAR_RENDERER | CVAR_BOOL, "visual test for dropping frames" );
+ idCVar stereoRender_warp( "stereoRender_warp", "0", CVAR_RENDERER | CVAR_ARCHIVE | CVAR_BOOL, "use the optical warping renderprog instead of stereoDeGhost" );
+@@ -252,7 +252,8 @@ static void R_CheckPortableExtensions()
+ 	}
+ 	else
+ 	{
+-		glConfig.textureCompressionAvailable = GLEW_ARB_texture_compression != 0 && GLEW_EXT_texture_compression_s3tc != 0;
++		//glConfig.textureCompressionAvailable = GLEW_ARB_texture_compression != 0 && GLEW_EXT_texture_compression_s3tc != 0;
++		glConfig.textureCompressionAvailable = true;
+ 	}
+ 	// GL_EXT_texture_filter_anisotropic
+ 	glConfig.anisotropicFilterAvailable = GLEW_EXT_texture_filter_anisotropic != 0;
