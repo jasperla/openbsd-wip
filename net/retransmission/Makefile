@@ -1,12 +1,12 @@
-asset:  transmission-4.2.0-dev+r5225c899ae-nightly.20261121.tar.xz
+asset:  transmission-4.2.0-dev+re0cb8dfa27-nightly.20261122.tar.xz
 
 COMMENT-main=	fork of net/transmission
 COMMENT-gtk=	fork of net/transmission with GTK interfaces
 COMMENT-qt=	fork of net/transmission with Qt interface
 
-VER=		4.2.0pre20261121
-DISTNAME=	transmission-4.2.0-dev+r5225c899ae-nightly.20261121
-FOLDER=		transmission-4.2.0-dev+r5225c899ae
+VER=		4.2.0pre20261122
+DISTNAME=	transmission-4.2.0-dev+re0cb8dfa27-nightly.20261122
+FOLDER=		transmission-4.2.0-dev+re0cb8dfa27
 
 WRKSRC=		${WRKOBJDIR}/${DISTNAME}/${FOLDER}
 WRKDIST=	${WRKSRC}
