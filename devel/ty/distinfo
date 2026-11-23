@@ -1,4 +1,4 @@
-SHA256 (astral-sh-ruff-0528644c0d85c8f49f2018a4ca13d969a35d40c3.tar.gz) = 2vWFp/GZ3MZOk/d+K1Pjwlce3E5HLEjHzOMfVAZsNOw=
+SHA256 (astral-sh-ruff-83fb4c4f8405d8e60a7cbdc71c206851d5d157c5.tar.gz) = 2H8C8DKzbwep6Szc8wukG30iTQsX6Shx2JBNEmq8qmo=
 SHA256 (cargo/adler2-2.0.1.tar.gz) = MgEZV5/K2cIYhPXEhh0WF00OBiUGJSZvUP5omDQKvvo=
 SHA256 (cargo/aho-corasick-1.1.5.tar.gz) = yYJkL6noYGBWgo7pqFBXNyMBELsQmRU8ee/oZcWdEro=
 SHA256 (cargo/alloca-0.4.0.tar.gz) = 5afQXqaup+nmTSW5FWui/uP91lnjTkEGPNL8fNAg1/Q=
@@ -202,6 +202,7 @@ SHA256 (cargo/libz-rs-sys-0.5.5.tar.gz) = wQUB54Bc7iPaF8d5DlnfKHDA1AQ+xtA/Z9MeK1
 SHA256 (cargo/linux-raw-sys-0.12.1.tar.gz) = MqZpSeAw2gDox9RDSyUWcKkVVvQUSUHTdFJ2nCXVilM=
 SHA256 (cargo/litemap-0.8.0.tar.gz) = JB6u9f0SyIcFoB/BBmxIxLNuDdQ3fc3H7DlCzqemmVY=
 SHA256 (cargo/lock_api-0.4.14.tar.gz) = IkOZ50uHtfNVdRHZjf+LFAibPa2vyra7k+q2fTqs6WU=
+SHA256 (cargo/lock_api-0.5.0.tar.gz) = ZdkbItoXlhPc9Nbsg0lWP1KjY/aEngOwDdChhexKWa8=
 SHA256 (cargo/log-0.4.34.tar.gz) = +fi9PlbOTfwVPPRw//v6mMdiCVizEspcOkuNUYH9E8Y=
 SHA256 (cargo/lsp-server-0.10.0.tar.gz) = PuJaMfLlceQm7vKJYXlFDK/H4vW+ANipOxwtIcD/dlY=
 SHA256 (cargo/manyhow-0.14.1.tar.gz) = 8XBLBzMWJypnhbcFmfkfc7SQIsLikLBlWR7muRCe2Mc=
@@ -238,6 +239,8 @@ SHA256 (cargo/os_pipe-1.2.2.tar.gz) = 2zNfR2CxTq1ikBFvJCe/M6FNTwYX1J94okbeEMGDEi
 SHA256 (cargo/os_str_bytes-7.1.1.tar.gz) = Y+zre111cBGofQjrISPbFdh/sMKB9l0QHOMKHpbDrVw=
 SHA256 (cargo/page_size-0.6.0.tar.gz) = MNWyGU7RMZHBmZrgcEt4OfsYOE+iLkm1fuqpfXnOQNo=
 SHA256 (cargo/parking_lot-0.12.5.tar.gz) = k4V0UyUOMHe9cf+YtqZepmIaGbsPVZqFJIlVrBLEWho=
+SHA256 (cargo/parking_lot-0.13.0.tar.gz) = qc+TfKTh0LdXh4RVkGNCL8Oa58WgDwJHHyYU1Uhv0iY=
+SHA256 (cargo/parking_lot_core-0.10.0.tar.gz) = nP/wYAaMwYqngVAQ/K+Axox/uehfx/XA+b8ULCHRmCY=
 SHA256 (cargo/parking_lot_core-0.9.12.tar.gz) = JiFoWYWi6/HFFogcAmAyrH3q/NoaLJt4UNyB49/LZME=
 SHA256 (cargo/paste-1.0.15.tar.gz) = V8DXt0tWO0nTja4AoMN9TW3ptDI4KyiS8FdN3K5z/Qo=
 SHA256 (cargo/path-absolutize-4.0.1.tar.gz) = +Ah0KXV5RwNGn2eijdFLHRAJoXQ8GLA1O0uVHbsAaK0=
@@ -300,6 +303,7 @@ SHA256 (cargo/rand_core-0.6.4.tar.gz) = 7AvkeV4vaigGm+wLX/PirJuvyZ5qmn3DVHmWxcgW
 SHA256 (cargo/rayon-1.12.0.tar.gz) = +zmxZngfktSCU070tLGyVo9CYTtT5bbBYOJM+/owkm0=
 SHA256 (cargo/rayon-core-1.13.0.tar.gz) = IuGLDwBi0w1CMLLoX/d/3+Qyb+sFS5eDo0YNhDXIq5E=
 SHA256 (cargo/redox_syscall-0.5.17.tar.gz) = VAdGVgD7BUjxRC7fcd0gaDxu0yYgCs5LHvB2NSG7O3c=
+SHA256 (cargo/redox_syscall-0.9.5.tar.gz) = WAyHWEW0HssVZK0a5HAwRM73dBRePXqU3Cs/p8l4aP0=
 SHA256 (cargo/redox_users-0.5.2.tar.gz) = pOYIxmOLnBiXewC0dawfKNFOhLJ9jUL3Dgvx497BJ6w=
 SHA256 (cargo/ref-cast-1.0.25.tar.gz) = 81QwCuZvdvHIXF+EaT8M6B10fiw/IaRf70lticlgv30=
 SHA256 (cargo/ref-cast-impl-1.0.25.tar.gz) = txhgBtyyGSCZAJPzDj3qY7fW6Xe/Ela+IMNWOl2wcNo=
@@ -317,9 +321,9 @@ SHA256 (cargo/rustc-stable-hash-0.1.2.tar.gz) = eBRC8pFwxck7cYWtVZSSYBrNxx1bsHBv
 SHA256 (cargo/rustix-1.1.5.tar.gz) = iR76ur5BhnB3XxmfDSM9hIQ8InoJSaiDzhWzfHjWYp0=
 SHA256 (cargo/rustversion-1.0.22.tar.gz) = s5ze8PqAD8RFJchMy1SgKZYaghX5YZdTY1qcDSU41G0=
 SHA256 (cargo/ryu-1.0.20.tar.gz) = KNOysTZuwgmU8f0Yw8WU8Fxd1LxE2LsMHGMsjWgpSB8=
-SHA256 (cargo/salsa-0.28.5.tar.gz) = J9Lm4Z45WRzZnAGsQUFUS00BLP0IMTSGKbgYf6n+bTQ=
-SHA256 (cargo/salsa-macro-rules-0.28.5.tar.gz) = uvkKVRw48l7YSJER09WCeqGOG4WWP15qKYUFsdHiy34=
-SHA256 (cargo/salsa-macros-0.28.5.tar.gz) = ad13+G7BDnLjFPTd98RMjTSec83/Gq1SS6lmhgP7BUk=
+SHA256 (cargo/salsa-0.28.6.tar.gz) = cbthIu60VlEtEc4nnL4etfbioj9wgu9fL7GtcunIVTM=
+SHA256 (cargo/salsa-macro-rules-0.28.6.tar.gz) = G8X3vwkBhF2/Yef3zlhvdCCadiGnwwxFPOyrm5KxWWk=
+SHA256 (cargo/salsa-macros-0.28.6.tar.gz) = bW3NYD1qmbCu+rrAlhlXqTEa5/tX2yM+xjHvR1Jq2ps=
 SHA256 (cargo/same-file-1.0.6.tar.gz) = k/wdw6qpv+2V4C5urau0uvfjB4sL0bTXtrC2g3iQBQI=
 SHA256 (cargo/schemars-1.2.3.tar.gz) = q1CIJvdKd8qdWrpv8ZtSJYPuPq8ooZOE/z0OWDX6324=
 SHA256 (cargo/schemars_derive-1.2.3.tar.gz) = 4cOpIJT6fWGqEkZFhE+strVU38eXE20PX9H4kOK//Gk=
@@ -491,8 +495,8 @@ SHA256 (cargo/zmij-1.0.10.tar.gz) = MODY3/uuPYQPZL2jjig5H672c6e1pgF4QPKhBsgUWGg=
 SHA256 (cargo/zstd-0.14.3.tar.gz) = 2zrpv5CvbkAZe+92fu78Rq1jl0IP6HODC9heX7v7PHA=
 SHA256 (cargo/zstd-safe-8.2.0.tar.gz) = 3tUg8Wsp4am3ccciIhsrCgOYwjFtm7PEK0WKVBTXQ0s=
 SHA256 (cargo/zstd-sys-2.1.2+zstd.1.5.7.tar.gz) = SBranFQ7IyPLt7vbtSSRd/vwGI7ZWe0sFeSyJCHITtM=
-SHA256 (ty-0.0.107.tar.gz) = TRxs6XEPntgKKYrzo0KgwpCc3SM0zKAXHb8lnW1ABW0=
-SIZE (astral-sh-ruff-0528644c0d85c8f49f2018a4ca13d969a35d40c3.tar.gz) = 14950128
+SHA256 (ty-0.0.108.tar.gz) = zBcTran3V9P5YMZZiHCu33IKSPOkfle/w/dYTyD29ZY=
+SIZE (astral-sh-ruff-83fb4c4f8405d8e60a7cbdc71c206851d5d157c5.tar.gz) = 14982256
 SIZE (cargo/adler2-2.0.1.tar.gz) = 13366
 SIZE (cargo/aho-corasick-1.1.5.tar.gz) = 184315
 SIZE (cargo/alloca-0.4.0.tar.gz) = 4257
@@ -696,6 +700,7 @@ SIZE (cargo/libz-rs-sys-0.5.5.tar.gz) = 47927
 SIZE (cargo/linux-raw-sys-0.12.1.tar.gz) = 3006116
 SIZE (cargo/litemap-0.8.0.tar.gz) = 34344
 SIZE (cargo/lock_api-0.4.14.tar.gz) = 29249
+SIZE (cargo/lock_api-0.5.0.tar.gz) = 44935
 SIZE (cargo/log-0.4.34.tar.gz) = 53395
 SIZE (cargo/lsp-server-0.10.0.tar.gz) = 18327
 SIZE (cargo/manyhow-0.14.1.tar.gz) = 24032
@@ -732,6 +737,8 @@ SIZE (cargo/os_pipe-1.2.2.tar.gz) = 10810
 SIZE (cargo/os_str_bytes-7.1.1.tar.gz) = 28828
 SIZE (cargo/page_size-0.6.0.tar.gz) = 8479
 SIZE (cargo/parking_lot-0.12.5.tar.gz) = 46735
+SIZE (cargo/parking_lot-0.13.0.tar.gz) = 49448
+SIZE (cargo/parking_lot_core-0.10.0.tar.gz) = 38357
 SIZE (cargo/parking_lot_core-0.9.12.tar.gz) = 34110
 SIZE (cargo/paste-1.0.15.tar.gz) = 18374
 SIZE (cargo/path-absolutize-4.0.1.tar.gz) = 6430
@@ -794,6 +801,7 @@ SIZE (cargo/rand_core-0.6.4.tar.gz) = 22666
 SIZE (cargo/rayon-1.12.0.tar.gz) = 183391
 SIZE (cargo/rayon-core-1.13.0.tar.gz) = 73151
 SIZE (cargo/redox_syscall-0.5.17.tar.gz) = 30002
+SIZE (cargo/redox_syscall-0.9.5.tar.gz) = 29079
 SIZE (cargo/redox_users-0.5.2.tar.gz) = 17280
 SIZE (cargo/ref-cast-1.0.25.tar.gz) = 15192
 SIZE (cargo/ref-cast-impl-1.0.25.tar.gz) = 10167
@@ -811,9 +819,9 @@ SIZE (cargo/rustc-stable-hash-0.1.2.tar.gz) = 20359
 SIZE (cargo/rustix-1.1.5.tar.gz) = 425681
 SIZE (cargo/rustversion-1.0.22.tar.gz) = 21096
 SIZE (cargo/ryu-1.0.20.tar.gz) = 48738
-SIZE (cargo/salsa-0.28.5.tar.gz) = 307086
-SIZE (cargo/salsa-macro-rules-0.28.5.tar.gz) = 21135
-SIZE (cargo/salsa-macros-0.28.5.tar.gz) = 44427
+SIZE (cargo/salsa-0.28.6.tar.gz) = 315984
+SIZE (cargo/salsa-macro-rules-0.28.6.tar.gz) = 21456
+SIZE (cargo/salsa-macros-0.28.6.tar.gz) = 44718
 SIZE (cargo/same-file-1.0.6.tar.gz) = 10183
 SIZE (cargo/schemars-1.2.3.tar.gz) = 94602
 SIZE (cargo/schemars_derive-1.2.3.tar.gz) = 31435
@@ -985,4 +993,4 @@ SIZE (cargo/zmij-1.0.10.tar.gz) = 22288
 SIZE (cargo/zstd-0.14.3.tar.gz) = 52615
 SIZE (cargo/zstd-safe-8.2.0.tar.gz) = 46799
 SIZE (cargo/zstd-sys-2.1.2+zstd.1.5.7.tar.gz) = 785774
-SIZE (ty-0.0.107.tar.gz) = 3320633
+SIZE (ty-0.0.108.tar.gz) = 3327737
