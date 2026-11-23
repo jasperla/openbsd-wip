@@ -1,0 +1,17 @@
+Add filesystem format options for OpenBSD: Ext2 and exFAT.
+
+Index: Main/Forms/VolumeFormatOptionsWizardPage.cpp
+--- Main/Forms/VolumeFormatOptionsWizardPage.cpp.orig
++++ Main/Forms/VolumeFormatOptionsWizardPage.cpp
+@@ -50,6 +50,11 @@
+ 		FilesystemTypeChoice->Append (L"exFAT",				(void *) VolumeCreationOptions::FilesystemType::exFAT);
+ 		if (wxPlatformInfo::Get().CheckOSVersion (10, 13))
+ 			FilesystemTypeChoice->Append (L"APFS",			(void *) VolumeCreationOptions::FilesystemType::APFS);
++#elif defined (TC_OPENBSD)
++		if (VolumeCreationOptions::FilesystemType::IsFsFormatterPresent (VolumeCreationOptions::FilesystemType::Ext2))
++			FilesystemTypeChoice->Append (L"Linux Ext2",		(void *) VolumeCreationOptions::FilesystemType::Ext2);
++		if (VolumeCreationOptions::FilesystemType::IsFsFormatterPresent (VolumeCreationOptions::FilesystemType::exFAT))
++			FilesystemTypeChoice->Append (L"exFAT",				(void *) VolumeCreationOptions::FilesystemType::exFAT);
+ #elif defined (TC_FREEBSD) || defined (TC_SOLARIS)
+ 		FilesystemTypeChoice->Append (L"UFS",				(void *) VolumeCreationOptions::FilesystemType::UFS);
+ #endif
