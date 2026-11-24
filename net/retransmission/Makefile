@@ -1,15 +1,20 @@
-asset:  transmission-4.2.0-dev+r0821d48052-nightly.20261123.tar.xz
+asset:  transmission-4.2.0-dev+re478c77115-nightly.20261124.tar.xz
 
 COMMENT-main=	fork of net/transmission
 COMMENT-gtk=	fork of net/transmission with GTK interfaces
 COMMENT-qt=	fork of net/transmission with Qt interface
 
-VER=		4.2.0pre20261122
-DISTNAME=	transmission-4.2.0-dev+r0821d48052-nightly.20261123
-FOLDER=		transmission-4.2.0-dev+r0821d48052
+DATE=		20261124
+DISTNAME=	transmission-4.2.0-dev+re478c77115-nightly.20261124
+FOLDER=		transmission-4.2.0-dev+re478c77115
+
+SITES=		https://github.com/retransmission/retransmission/releases/download/nightly/
+SITES+=		https://jggimi.net/distfiles/
 
 WRKSRC=		${WRKOBJDIR}/${DISTNAME}/${FOLDER}
 WRKDIST=	${WRKSRC}
+
+VER=		4.2.0pre${DATE}
 
 PSEUDO_FLAVORS=	no_gtk no_qt
 FLAVOR?=
@@ -44,7 +49,6 @@ DEBUG_PACKAGES=${BUILD_PACKAGES}
 # GPLv2+
 PERMIT_PACKAGE=	Yes
 
-SITES=	https://github.com/retransmission/retransmission/releases/download/nightly/
 EXTRACT_SUFX=	.tar.xz
 
 MULTI_PACKAGES=	-main -gtk -qt
