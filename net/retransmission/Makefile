@@ -1,12 +1,12 @@
-asset:  transmission-4.2.0-dev+re478c77115-nightly.20261124.tar.xz
+asset:  transmission-4.2.0-dev+r9f6e4e27e0-nightly.20261124.tar.xz
 
 COMMENT-main=	fork of net/transmission
 COMMENT-gtk=	fork of net/transmission with GTK interfaces
 COMMENT-qt=	fork of net/transmission with Qt interface
 
 DATE=		20261124
-DISTNAME=	transmission-4.2.0-dev+re478c77115-nightly.20261124
-FOLDER=		transmission-4.2.0-dev+re478c77115
+DISTNAME=	transmission-4.2.0-dev+r9f6e4e27e0-nightly.${DATE}
+FOLDER=		transmission-4.2.0-dev+r9f6e4e27e0
 
 SITES=		https://github.com/retransmission/retransmission/releases/download/nightly/
 SITES+=		https://jggimi.net/distfiles/
